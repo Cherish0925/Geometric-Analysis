@@ -1,56 +1,51 @@
 # Geometric Analysis
 
-四维 Einstein 几何、曲率变分、定量刚性与几何退化的研究档案。
+四维 Einstein 几何：积分间隙、曲率变分、几何退化与几乎 Kähler 刚性。
 
-核心问题是：给定光滑流形及其拓扑、规范或几何结构，Einstein 方程能被满足或逼近到什么程度；相应曲率泛函的下确界、达到性和退化结构由什么决定？主要对象包括
+本研究讨论光滑四维流形上 Einstein 度量的存在与逼近，以及拓扑、规范结构和相容闭二形式对曲率极值与刚性的限制。
 
-
+设 $M$ 为闭、定向、连通的光滑四维流形，$\mathscr G(M)$ 为其全部光滑 Riemannian 度量。记
 $$
-P_*(M)=\inf_g\int_M|\operatorname{Ric}^{\circ}_g|^2\,dV_g,
-\qquad
-\alpha(M)=\inf_g\inf_{\lambda\ne0}
-\frac{\int_M|\operatorname{Ric}_g-\lambda g|^2\,dV_g}
-{\lambda^2\operatorname{Vol}_g(M)}.
+P(g)=\int_M|\operatorname{Ric}^{\circ}_g|_g^2\,dV_g,
+\qquad \operatorname{Ric}^{\circ}_g=\operatorname{Ric}_g-\frac{s_g}{4}g,
 $$
+$$
+\mathcal E(g)=\inf_{\lambda\in\mathbb R\setminus\{0\}}
+\frac{\int_M|\operatorname{Ric}_g-\lambda g|_g^2\,dV_g}
+{\lambda^2\operatorname{Vol}_g(M)},\qquad
+P_*(M)=\inf_{g\in\mathscr G(M)}P(g),\quad
+\alpha(M)=\inf_{g\in\mathscr G(M)}\mathcal E(g).
+$$
+$P(g)=0$ 等价于 $g$ 为 Einstein 度量。$\mathcal E$ 采用非零 Einstein 常数归一化；Ricci-flat 度量满足 $P=0$、$\mathcal E=4$。
 
+主要问题是确定这些泛函的正下界、匹配上界、下确界的取得性及近极小序列的退化结构。分析部分利用规范场方程与曲率微分恒等式之间的相容性；构造部分研究轨形解消、拓扑手术及背景曲率的相互作用；几乎 Kähler 分支研究 Einstein 条件下相容辛结构的可积性。
 
-规范场、相容闭二形式与曲率微分恒等式提供全局约束；真实度量构造检验最优性；精确 Einstein 与几乎 Kähler 研究进一步分析可实现性和刚性。各分支共享几何问题与分析方法，保留各自实际输入和证明依赖。
+## 研究内容
 
-## 阅读路径
-
-| 目的 | 入口 |
-|---|---|
-| 掌握各分支的证明联系 | [研究图谱](docs/RESEARCH_MAP.md) |
-| 共同思想、方法作用与原始文献 | [方法与文献](docs/METHODS_AND_LITERATURE.md) |
-| 点态逼近、解消、周期、慢模态及精确实现 | [构造与实现](docs/CONSTRUCTIONS_AND_REALIZATION.md) |
-| 原积分 gap、N1、I40/I41、O10、双取向与 Kodaira | [间隙与端点](docs/GAPS_AND_ENDPOINTS.md) |
-| 严格低成本构造、全部度量极值、Q1–Q3 与取得性 | [曲率变分](docs/CURVATURE_VARIATION.md) |
-| 完备非紧实例、Fino 问题、零点及闭负 Goldberg | [几乎 Kähler–Einstein 几何](docs/GOLDBERG.md) |
-| 版本演化、改正与跨会话接续 | [研究沿革](docs/RESEARCH_HISTORY.md) |
-| 原件、文件哈希与包内材料 | [来源索引](catalog/README.md) · [收录范围](docs/COVERAGE.md) · [来源元数据](catalog/sources.json) · [解包目录](catalog/packages.json) · [包内文件索引](catalog/archive_members.json) |
-
-专题导航直接链接原始证明及程序。连续阅读可从 [00_All_Recent_Research.tex](archive/originals/2026-10-07/00_All_Recent_Research.tex) 进入早期汇总，再接 [01_Research_Synthesis.tex](archive/originals/2026-10-08/01_Research_Synthesis.tex)、[03_Subsequent_Mathematical_Developments(1).tex](archive/originals/2026-10-08/03_Subsequent_Mathematical_Developments.tex) 及 [Goldberg_Two_Conversations_Merged_20261015.tex](research/packages/Goldberg_Two_Conversations_Merged_20261015--5a0ab1f2/Goldberg_Two_Conversations_Merged_20261015.tex)；具体成果的最新状态以专题导航中的后续修订为准。
-
-## 主要结果与未完成问题
-
-| 研究部分 | 原稿中已写出的结果 | 仍需解决 |
+| 主题 | 原稿中的主要结论 | 进一步问题 |
 |---|---|---|
-| 点态构造与实现 | 固定轨形解消、固定剪切流形逼近、周期与慢模态；有界几何和所列陈数边界下的精确实现 | 固定对象的全部 Einstein 存在性、一般退化下的精确实现 |
-| 统一积分障碍 | 单解参数分析回接 N1 无迹 Ricci gap；有界类平方短缺；I40/I41 线性强制 | 更自然的真实输入、最佳依赖及新的实际适用对象 |
-| 弱积分端点 | 任意固定有限 Euler 密度下的 O10；N1 与 FD 的地理分区覆盖若干密度可无界的手术族 | 原全部输入下不受地理或密度限制的统一常数，或实际闭反例 |
-| 双取向应用 | 以固定密度 **FD2** 为前置，得到曲面丛统一间隙、Kodaira 斜率统一远离 3；后续允许一侧凸包及配对短缺 | 最佳宽度；更一般真实双取向供给 |
-| 构造与最优值 | 完整单元的严格节省、严格次四恢复、一般负 KE 背景推广、共形 Kähler 类分离 | 全部竞争度量的匹配下界和最优值 |
-| 全局极小元 | 明确候选、真实下降方向、秩刚性、退化例以及部分 AE/ALE 核心排除 | 非 Bach-flat 光滑全局极小元的取得实例 |
-| 几乎 Kähler–Einstein | 完备非紧严格例子及其 Fino 问句对应；扭率零点结构、行列式和 Green 势刚性 | 闭四维负 Goldberg 的一般证明或闭反例 |
+| 积分间隙 | 单解参数估计、N1 无迹 Ricci 间隙、类平方短缺估计、I40/I41 线性强制及规范理论应用 | 弱化解存在性条件、确定最佳常数依赖、扩大适用流形类 |
+| 参数端点 | 对每个固定有限 $B$，在 $\chi/A\le B$ 下得到 $c(B)>0$；由拓扑数关系进一步得到所列手术族的统一常数 | 一般无密度条件下的统一估计或闭流形反例 |
+| 双取向应用 | 固定密度端点 FD2 与交叉配对给出曲面丛间隙及 Kodaira 斜率分离；推广至一侧凸包与配对短缺 | 最佳分离常数及更一般的双取向规范结构 |
+| 曲率极值 | 严格低于标准手术能量的构造、相应族的严格次四上界、一般负 Kähler–Einstein 背景推广 | 全部光滑度量上的匹配下界与精确极值 |
+| 极小值取得性 | 共形 Kähler 类的能量分离、候选度量的下降方向与临界点排除、谐和秩刚性及部分 AE/ALE 退化分析 | 非 Bach-flat 光滑全局极小元的存在 |
+| 点态逼近与精确实现 | 固定轨形解消、固定剪切流形上的逼近序列、周期与慢模态分析，以及所列有界几何条件下的 Einstein 实现 | 固定对象的全部 Einstein 存在性及一般退化下的实现 |
+| 几乎 Kähler–Einstein 几何 | 完备非紧严格例子、扭率零点结构、行列式符号与 Green 势刚性条件 | 闭四维负 Goldberg 猜想 |
 
-这些结果按原稿的完整假设和后续修正整理。Kodaira 推论保留 FD2 前置；严格低成本构造已经改变其适用族中“标准系数 4 最优”的候选答案；完备非紧例子回答相应存在性问句，闭 Goldberg 仍是独立的全局刚性问题。
+各结论的假设、常数依赖及证明来源列于下述专题。Kodaira 分离依赖 FD2；严格次四构造适用于相应恢复族；非紧存在性与闭流形刚性分别处理。
 
-## 档案结构
+## 阅读顺序
 
-- `archive/originals/`：原始文件和压缩包，按来源时间保存；同名版本由目录与来源记录区分。
-- `research/packages/`：压缩包展开的数学正文、笔记、程序、计算证书和文献材料。
-- `docs/`：按数学对象组织的阅读导航、证明联系和版本沿革。
-- `catalog/`：来源身份、哈希、解包对应与取得情况。
-- `tools/`：归档与检索辅助程序。
+1. [研究结构与定理关系](docs/RESEARCH_MAP.md)：问题之间的联系、定理依赖与未完成命题。
+2. [方法与文献](docs/METHODS_AND_LITERATURE.md)：相容性估计、变分、构造、极限方法及其文献基础。
+3. [间隙与端点](docs/GAPS_AND_ENDPOINTS.md)：N1、I40/I41、O10、双取向与 Kodaira 应用。
+4. [点态构造与精确实现](docs/CONSTRUCTIONS_AND_REALIZATION.md)：解消、固定流形、周期、慢模态及存在性。
+5. [曲率变分](docs/CURVATURE_VARIATION.md)：O11、严格上界、Q1–Q3 与极小值取得性。
+6. [几乎 Kähler–Einstein 几何](docs/GOLDBERG.md)：Fino 存在性问题、零点结构与闭负 Goldberg。
+7. [研究沿革](docs/RESEARCH_HISTORY.md)：主要推导的先后关系及修正。
 
-原稿中的旧结论、更正和失败路线一并保存。导航指出已被更新的状态；原始文件不因后续整理而覆盖。会话沿革根据可取得的文件和记录重建，不等同于全部历史会话的逐字导出。
+连续数学正文见 [10月7日研究总稿](archive/originals/2026-10-07/00_All_Recent_Research.tex)、[四题综述](archive/originals/2026-10-08/01_Research_Synthesis.tex)、[后续数学进展](archive/originals/2026-10-08/03_Subsequent_Mathematical_Developments.tex) 及 [Goldberg 合并稿](research/packages/Goldberg_Two_Conversations_Merged_20261015--5a0ab1f2/Goldberg_Two_Conversations_Merged_20261015.tex)。
+
+## 原稿与程序
+
+`archive/originals/` 保存原始文稿和资料包；`research/packages/` 保存展开后的证明、笔记、程序、计算数据与文献。各版本及其修正同时保留。全部文件见[来源索引](catalog/README.md)，材料范围见[收录说明](docs/COVERAGE.md)。

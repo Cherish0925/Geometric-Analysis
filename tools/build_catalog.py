@@ -83,7 +83,7 @@ def write_source_index(root: Path, sources: list[dict], packages: list[dict]) ->
         f"- Source entries: **{len(sources):,}**.",
         f"- Package records: **{len(packages):,}**.",
         "- [Source metadata](sources.json), [package metadata](packages.json), "
-        "[extracted member hashes](archive_members.json), and [complete file inventory](files.json).",
+        "[archive member records](archive_members.json), and [complete file inventory](files.json).",
         "",
         "## Original sources",
         "",

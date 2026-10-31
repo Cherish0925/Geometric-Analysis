@@ -4,7 +4,7 @@ This index links every source entry and extracted package recorded in the archiv
 
 - Source entries: **336**.
 - Package records: **71**.
-- [Source metadata](sources.json), [package metadata](packages.json), [extracted member hashes](archive_members.json), and [complete file inventory](files.json).
+- [Source metadata](sources.json), [package metadata](packages.json), [archive member records](archive_members.json), and [complete file inventory](files.json).
 
 ## Original sources
 

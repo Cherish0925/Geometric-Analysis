@@ -65,3 +65,13 @@ flowchart TD
 | Goldberg 只作形式局部计算 | 完整非紧例子、闭零点结构与精确 Green 势关系 | `Q4_Complete_Example_and_Fino_Question.tex`；`Goldberg_Two_Conversations_Merged_20261015.tex` |
 
 历史证明和后续修订同时保留，见 [研究沿革](RESEARCH_HISTORY.md)。
+
+## 点态逼近与精确实现
+
+早期构造分支从固定轨形解消和固定曲面丛出发，得到点态近 Einstein 度量；周期与慢模态解释退化如何保留全局变化。受控紧性、完整核心及修正方程在各自条件下产生同一光滑流形上的精确解。它与积分正间隙形成直接限制关系，与曲率极值共享构造；固定对象的全部存在性仍不能由一个逼近序列单独决定。详见[构造与实现](CONSTRUCTIONS_AND_REALIZATION.md)。
+
+## 早期相邻问题
+
+原研究交接还包含 Yau19 的四维 Pontryagin 形式局部实现与障碍，以及 Yau23 的 K3／Kummer 修正显式化。这些方案保留在[yau_problem_set_handoff.md](../archive/originals/2026-09-09/yau_problem_set_handoff.md) 与 [yau_problem_set_ai_research_handoff.md](../archive/originals/2026-09-15/yau_problem_set_ai_research_handoff.md)。所取得材料主要记录研究计划和方法入口，不能将其登记为已完成的独立证明。
+
+共同分析及文献继承见[方法与文献](METHODS_AND_LITERATURE.md)。

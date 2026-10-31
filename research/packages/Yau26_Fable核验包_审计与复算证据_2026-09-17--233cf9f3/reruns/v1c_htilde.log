@@ -1,0 +1,10 @@
+Gdot ODE residual: 0  Gdot(1)= 0
+rr diff: 0
+12 diff: 0
+33 diff: 0
+h_12 - H*_12 = 5/144    (metric weight r^2/4 -> relative O(r^-2))
+h_33 - H*_33 = (9*r**4 - 12*r**2 + 5)/(144*r**4)
+h_rr series: 1/(3*r**4) - 7/(36*r**2) + O(r**(-6), (r, oo))
+ON-frame deviations: rr: (5 - 7*r**2)/(36*r**2*(r**2 + 1))  12: 5/(36*r**2)  33: (9*r**4 - 12*r**2 + 5)/(36*r**2*(r**4 - 1))
+
+STDERR:

@@ -1,0 +1,109 @@
+% CORRECTED Quantitative 4D Analysis for Yau Problem 26
+% S0910A03 Step 2 — Updated with Ishida-LeBrun Proposition 4
+% SUPERSEDES step2_quantitative_4d_analysis.tex (Theorem A' section)
+
+\section{Critical Correction: Proposition 4 vs Theorem A}
+
+The earlier Theorem A' (based solely on LeBrun 1998 Theorem A, coefficient 32/57)
+is \textbf{superseded} by the stronger Ishida--LeBrun Proposition 4 (coefficient 2/3).
+
+\textbf{Proposition 4 (LeBrun, stated in Ishida--LeBrun 2001):}
+For any compact oriented 4-manifold $M$ with monopole class 
+$a \in H^2(M, \mathbb{Z})/\mathrm{torsion}$ and any Riemannian metric $g$:
+\[
+\frac{1}{4\pi^2}\int_M\left(\frac{s^2}{24} + 2|W_+|^2\right)d\mu \geq \frac{2}{3}(a^+)^2
+\]
+where $a^+$ is the self-dual harmonic projection of $a$.
+
+\textbf{Source}: Ishida--LeBrun, \emph{Spin Manifolds, Einstein Metrics, and Differential 
+Topology}, arxiv:math/0107111, Proposition 4 (citing LeBrun 1998 [17]).
+
+\textbf{Derivation (independent verification):}
+\begin{enumerate}
+\item From the Weitzenb\"ock formula for self-dual 2-forms applied to $F_A^+$
+(the SW curvature), dropping the non-negative gradient term:
+\[
+\int(-W^+)(F_A^+, F_A^+) \geq \frac{|s|}{6}\int|F_A^+|^2.
+\]
+\item The trace-free property of $W^+$ on $\Omega^+$ gives
+$|W^+|\cdot|F_A^+|^2 \geq \sqrt{3/2}\cdot(-W^+)(F_A^+, F_A^+)$.
+\item Cauchy--Schwarz + the pointwise bound $|F_A^+|^2 = |\Phi|^4/8 \leq s^2/8$:
+\[
+\left(\int|W^+|^2\right)^{1/2} \geq \frac{1}{\sqrt{3}}\left(\int|F_A^+|^2\right)^{1/2}
+\geq \frac{2\pi}{\sqrt{3}}|a^+|.
+\]
+\item Squaring: $\int|W^+|^2 \geq \frac{4\pi^2}{3}(a^+)^2$.
+\item Adding $\int s^2/24 \geq 0$: 
+$2\int|W^+|^2 + \int s^2/24 \geq \frac{8\pi^2}{3}(a^+)^2 = \frac{2}{3}\cdot 4\pi^2(a^+)^2$.
+\end{enumerate}
+
+This is \textbf{$\beta$-independent}, unlike LeBrun 1998 Theorem A which trades $I_+$ against 
+$E_s$ through the parameter $\beta = \int s^2/(32\pi^2(c_1^+)^2)$ and finds a spurious minimum 
+at $\beta_0 = (24/19)^2$ giving the weaker coefficient $32/57$.
+
+
+\section{Corrected Main Theorem}
+
+\textbf{Theorem A'' (Corrected).} Let $X$ be a minimal compact complex surface of general type 
+with $A = c_1^2(X) > 0$, and let $M = X \# k\overline{\mathbb{CP}}^2$ with $k \geq 1$.
+Suppose $M$ carries a Riemannian metric $g$ with 
+$\|\mathrm{Ric}_g + g\|_{\mathrm{op}} \leq \delta < 1/(1+\sqrt{3})$.
+Then:
+\[
+\boxed{\frac{k}{A} \leq \frac{1}{3} + \frac{2\delta^2}{(1-\delta)^2}}.
+\]
+
+\textbf{Proof.} From the CGB identity for $2\chi + 3\tau$:
+$2I_+ + E_s - E_R = 4\pi^2(A-k)$, so $E_R = (2I_+ + E_s) - 4\pi^2(A-k)$.
+
+By Proposition 4 with $(a^+)^2 \geq A$ (LeBrun sign trick):
+$2I_+ + E_s \geq (8\pi^2/3)A$, hence $E_R \geq 4\pi^2(k - A/3)$.
+
+Using the pointwise ratio bound $E_R \leq (3\delta^2/(1-\delta)^2)E_s$
+and $E_s \leq 4\pi^2(A-k)/(1-3\delta^2/(1-\delta)^2)$ from CGB with $I_+ \geq 0$:
+\[
+\frac{3\delta^2}{(1-\delta)^2} \cdot \frac{4\pi^2(A-k) \cdot (1-\delta)^2}{(1-\delta)^2-3\delta^2} 
+\geq 4\pi^2(k-A/3).
+\]
+Simplifying: $\frac{2}{3}\cdot\frac{3\delta^2}{(1-\delta)^2} \geq \frac{k}{A} - \frac{1}{3}$,
+giving $k/A \leq 1/3 + 2\delta^2/(1-\delta)^2$. $\square$
+
+\textbf{Corollary (Uniform gap for LeBrun manifolds):}
+If $M = X \# k\overline{\mathbb{CP}}^2$ with $k \geq (25/57)A$ (no Einstein metric by 
+LeBrun 1998 Theorem B), then any metric on $M$ with $\|\mathrm{Ric}+g\|_{\mathrm{op}} \leq \delta$ 
+must satisfy:
+\[
+\delta \geq \frac{1}{1+\sqrt{19}} \approx 0.187.
+\]
+This is \textbf{independent of $A$} and eliminates the entire LeBrun family from 
+negative-branch Yau 26 counterexamples.
+
+
+\section{Updated Route Assessment}
+
+\begin{center}
+\begin{tabular}{|l|c|l|}
+\hline
+\textbf{Manifold family} & \textbf{$\delta_-$ gap} & \textbf{Status} \\
+\hline
+$2\chi \leq 3|\tau|$ (HT violators) & $\geq 0.366$ & Eliminated (Thm B) \\
+LeBrun, $k/A \geq 2/3$ & $\geq 0.290$ & Eliminated (Prop 4 + CW) \\
+LeBrun, $25/57 \leq k/A < 2/3$ & $\geq 0.187$ & Eliminated (Prop 4 + CW) \\
+LeBrun, $1/3 < k/A < 25/57$ & $> 0$ & Einstein may exist! \\
+LeBrun, $k/A \leq 1/3$ & $0$ & Einstein not excluded \\
+\hline
+Non-LeBrun, simplicial vol. & $?$ & Require $\pi_1$ infinite \\
+Dimension $\geq 5$ & $?$ & No SW/Chern--Weil tools \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Central conclusion:} All known 4-dimensional no-Einstein obstructions based on 
+Seiberg--Witten invariants (LeBrun 1996/1998, Ishida--LeBrun 2001) produce manifolds with 
+a \textbf{uniform positive pinching gap}: they cannot admit metrics with 
+$\mathrm{Ric}_g \approx -g$. The negative branch $P_4^-$ of Yau 26 is therefore 
+\textbf{consistent with truth} for all known counterexample candidates.
+
+Combined with the positive branch analysis (tight positive pinching eliminates 
+Hitchin--Thorpe and SW obstructions), the evidence strongly supports $Q_4$ true.
+\end{center}

@@ -1,0 +1,106 @@
+1463: 设完整四维度量具有自由、等距、正交传递的$T^2$作用，
+1464: 商为$S^1\times\mathbb R$，写
+1465: \[
+1466:  g=\gamma_B+e^\sigma M_{ab}d\xi^ad\xi^b,
+1467:  \quad\det M=1,\quad
+1468:  U:B\to SL(2,\mathbb R)/SO(2),\quad e=|dU|^2.
+1469: \]
+1470: 两端必须在紧集外\emph{精确向外扩张}：
+1471: $\gamma_B=dt_\pm^2+e^{2t_\pm}dz_\pm^2$、
+1472: $\rho=e^\sigma=c_\pm e^{2t_\pm}$、$U$常值。
+1473: 假设$\|\Ric+3g\|_{\op,\infty}\le\epsilon$。
+1474: \begin{theorem}[完整双外扩端的OT障碍]\label{thm:OT}
+1475: 在上述几何条件下，
+1476: \[
+1477:  12-8\epsilon\le
+1478:  \mathcal B(\epsilon):=
+1479:  \left[\frac{4\epsilon}{\sqrt{3+\epsilon}}
+1480:  +\sqrt{2(3+\epsilon)+\frac{20\epsilon^2}{3+\epsilon}}\right]^2.
+1481: \]
+1482: 因此存在唯一正数$\epsilon_*$满足
+1483: $12-8\epsilon_*=\mathcal B(\epsilon_*)$，使$\epsilon<\epsilon_*$时不存在这种度量。
+1484: \end{theorem}
+1485: \begin{proof}
+1486: 先构造极小分隔面。辅助度量$\widehat\gamma=\rho^2\gamma_B$在端部为
+1487: $c_\pm^2(e^{4t_\pm}dt_\pm^2+e^{6t_\pm}dz_\pm^2)$。
+1488: 本原环路整体移向端部时长度发散；从固定紧集远行又返回的径向长度也发散。
+1489: 故本原自由同伦类的极小化序列留在一个紧环带内，弧长参数化和下半连续性
+1490: 给最短闭测地线；去除交叉段可取嵌入代表$C$。
+1491: 由
+1492: $\Vol_3(\pi^{-1}C)=\operatorname{Vol}(T^2_{\mathrm{coord}})
+1493:  \int_C\rho\,ds_{\gamma_B}$的第一变分，其提升$\Sigma$极小。
+1494: 
+1495: 取$\mathcal E=\Ric+3g$、$D=\tr\mathcal E-2\mathcal E(\nu,\nu)$、
+1496: $h=\partial_s\log\rho$。沿$C$记
+1497: $\langle f\rangle_C=(\int_C f\rho ds)/(\int_C\rho ds)$。
+1498: 诱导标量曲率满足
+1499: $R_\Sigma=-2h_s-\frac32h^2-\frac12|U_s|^2$，而
+1500: $\int_C\rho h_sds=-\int_C\rho h^2ds$。
+1501: 与Gauss方程$R_\Sigma=-6+D-|\mathrm{II}|^2$合并，得
+1502: \[
+1503:  \langle |U_s|^2\rangle_C=12-2\langle D\rangle_C
+1504:  +2\langle|\mathrm{II}|^2\rangle_C+\langle h^2\rangle_C
+1505:  \ge12-8\epsilon.
+1506: \]
+1507: 故$\sup_Be\ge12-8\epsilon$。这里反射不是假设，两端向外扩张却不可省略。
+1508: 
+1509: 再求能量上界。轨道方程给$|F|=|\tau_\sigma(U)|\le2\epsilon$。
+1510: 取$L=\Delta+\langle\nabla\sigma,\nabla\cdot\rangle$，
+1511: 真正的有限维带权Ricci为
+1512: \[
+1513:  \Ric^4_f=\Ric_B-\nabla^2\sigma-\tfrac12d\sigma^2
+1514:  =-3\gamma_B+\tfrac12U^*h_{\mathbb H^2}+\mathcal E_B
+1515:  \ge-(3+\epsilon)\gamma_B.
+1516: \]
+1517: 置$A=U^*h_{\mathbb H^2}$、$V(X)=\langle dU(X),F\rangle$。
+1518: 带权Bochner恒等式中目标曲率项为$2\det A$，且
+1519: $\langle dU,\nabla F\rangle=\operatorname{div}_\sigma V-|F|^2$。
+1520: 由$\frac12\tr(A^2)+2\det A\ge\frac12e^2$得到
+1521: \[
+1522:  \tfrac12Le\ge |DdU|^2+\operatorname{div}_\sigma V
+1523:    -4\epsilon^2+\tfrac12e^2-(3+\epsilon)e.
+1524: \]
+1525: 记$K=3+\epsilon$、$\kappa=2K$，配方$2\kappa e-e^2\le\kappa^2$给
+1526: \[
+1527:  (-L+\kappa)e\le\kappa^2+8\epsilon^2
+1528:                  -2\operatorname{div}_\sigma V.
+1529: \]
+1530: 为处理散度源，令$p_t(x,y)$为$L$相对于$d\mu_\sigma=e^\sigma d\mu_B$的热核。
+1531: 完整的$CD(-K,N)$空间上，$N=4$，热核质量为一，Fisher信息
+1532: $I(t)=\int p_t|\nabla_y\log p_t|^2d\mu_\sigma$满足
+1533: \[
+1534:  I'=-2\int p_t\Gamma_2(\log p_t)d\mu_\sigma
+1535:  \le2KI-\frac2N I^2.
+1536: \]
+1537: 这里用到$\Gamma_2\ge-K\Gamma+(L\cdot)^2/N$、
+1538: $\int p_tL\log p_t=-I$及Jensen不等式。由正时间光滑化后比较Riccati方程，
+1539: \[
+1540:  I(t)\le\frac{NK}{1-e^{-2Kt}}.
+1541: \]
+1542: 于是对$G_\kappa=\int_0^\infty e^{-\kappa t}p_t\,dt$，
+1543: Cauchy--Schwarz与$u=1-e^{-2Kt}$换元给
+1544: \[
+1545:  \sup_x\int|\nabla_yG_\kappa(x,y)|d\mu_\sigma(y)
+1546:  \le\frac{\sqrt{NK}}{2K}
+1547:        B\!\left(\frac{\kappa}{2K},\frac12\right)
+1548:  =\frac2{\sqrt{3+\epsilon}}.
+1549: \]
+1550: 轨道能量和$V$在精确端部为零，故有界且散度分部积分无端部贡献。
+1551: 对$(-L+\kappa)e$作热半群Duhamel比较，再令时间趋于无穷，
+1552: 残余项$e^{-\kappa T}P_Te$消失。由于$|V|\le2\epsilon\sqrt e$，令$B_0=\sup e$，得到
+1553: \[
+1554:  B_0\le2(3+\epsilon)+\frac{4\epsilon^2}{3+\epsilon}
+1555:             +\frac{8\epsilon}{\sqrt{3+\epsilon}}\sqrt{B_0}.
+1556: \]
+1557: 解关于$\sqrt{B_0}$的二次不等式得$B_0\le\mathcal B(\epsilon)$。
+1558: 与分隔面下界合并即得结论。$\mathcal B$在非负半轴严格递增，
+1559: 且$\mathcal B(0)=6<12$，故交点唯一并为正。
+1560: \end{proof}
+1561: 数值$\epsilon_*\approx0.24625$可由\path{step87_resolvent_corrected.py}计算；
+1562: 正间隙本身不依赖数值近似。在$\Ric\approx-g$规范下阈值除以3。
+1563: 该定理不覆盖有联络twist、奇异轨道、一般非对称图流形度量或$S^3$连接颈。
+1564: 有twist时，
+1565: twist张力导数的$-Qe$抵消漂移曲率中的$+Qe$，剩余项无定号。
+1566: 极小分隔面下界本身仍可保留，失败的是未经重算的上界。
+1567: 
+1568: \section{带荷连接器：稳定性、局部构造与全局匹配}

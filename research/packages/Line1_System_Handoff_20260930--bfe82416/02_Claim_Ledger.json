@@ -1,0 +1,866 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-30",
+  "scope": "current handoff consolidation; historical atlas retained unchanged",
+  "status_legend": {
+    "proof_present": "source includes a written proof under its stated assumptions; inherited analytic inputs remain explicit",
+    "identity": "exact calculation, not by itself a new global bound",
+    "conditional_interface": "valid only with stated additional hypotheses or missing structural input",
+    "literature_interface": "classical theorem interface, not a new project theorem",
+    "method_obstruction": "a shortcut fails in the stated scope; not a counterexample to the target",
+    "numerical_no_improvement": "uncertified numerical exploration without an admissible improved competitor",
+    "superseded_scope": "historical range later covered by a broader recorded result",
+    "open": "not solved in available material"
+  },
+  "nodes": [
+    {
+      "id": "CORE_INPUT",
+      "title": "实际供给与单解量词",
+      "status": "proof_present",
+      "source": "sources/outputs/Line1_Atlas_20260928/03_N1_Complete_Inheritance.md",
+      "locator": "§§1,4.1",
+      "proof_dependencies": [],
+      "claim": "逐负Yamabe类的真实单解；全度量应用逐类供给",
+      "boundary": "不从单个度量可解推出全度量可解",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "CORE_PARAMETER",
+      "title": "单解有限参数估计",
+      "status": "proof_present",
+      "source": "sources/outputs/Line1_Atlas_20260928/03_N1_Complete_Inheritance.md",
+      "locator": "§2; 原I51",
+      "proof_dependencies": [
+        "CORE_INPUT"
+      ],
+      "claim": "保留同场参数余项与类平方成本",
+      "boundary": "D_beta/(beta V)不是O10的D_beta/V",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "CORE_N1",
+      "title": "N1无迹Ricci gap回接",
+      "status": "proof_present",
+      "source": "sources/outputs/Line1_Atlas_20260928/03_N1_Complete_Inheritance.md",
+      "locator": "§2",
+      "proof_dependencies": [
+        "CORE_PARAMETER"
+      ],
+      "claim": "J+(T/A−2/3)+≥epsilon；恢复旧E-gap",
+      "boundary": "A>0；Ricci-flat另用实际标量预算排除",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "CORE_N1Y",
+      "title": "N1有界类平方短缺版",
+      "status": "proof_present",
+      "source": "sources/outputs/Line1_Atlas_20260928/03_N1_Complete_Inheritance.md",
+      "locator": "§5",
+      "proof_dependencies": [
+        "CORE_PARAMETER"
+      ],
+      "claim": "J+(T/A−2/3)+≥c/(1+y)",
+      "boundary": "无界y的无损常数及最优依赖未证",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "CORE_I41",
+      "title": "I40/I41线性强制",
+      "status": "proof_present",
+      "source": "sources/outputs/Line1_Atlas_20260928/appendices/01_Core_and_Development.md",
+      "locator": "共同核心",
+      "proof_dependencies": [
+        "CORE_INPUT"
+      ],
+      "claim": "Sigma与(p−T)+由Pi+sqrt(PiY)控制",
+      "boundary": "单独P线性支付还需对应双手性窗口",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "CORE_CLASSICAL",
+      "title": "四类经典供应者继承",
+      "status": "proof_present",
+      "source": "sources/outputs/Line1_Atlas_20260928/appendices/02_Classical_Inheritance.md",
+      "locator": "四类对应表",
+      "proof_dependencies": [
+        "CORE_N1",
+        "CORE_I41"
+      ],
+      "claim": "普通/special/BF/Pin对应范围的定量加强",
+      "boundary": "不是包含每篇前人论文全部结论",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "CORE_COVER",
+      "title": "Pin双覆盖下降",
+      "status": "proof_present",
+      "source": "sources/outputs/Line1_Atlas_20260928/03_N1_Complete_Inheritance.md",
+      "locator": "§3,4.1",
+      "proof_dependencies": [
+        "CORE_N1"
+      ],
+      "claim": "齐次积分和预算同倍缩放，归一化不损失常数",
+      "boundary": "真实扭曲解及提升条件必须成立",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "CORE_LINEAR",
+      "title": "原族线性阶与恢复上界",
+      "status": "proof_present",
+      "source": "sources/upload/27b3cef6-aeed-442c-9e66-fef1a757828e.tex",
+      "locator": "手术变分、I41应用",
+      "proof_dependencies": [
+        "CORE_I41"
+      ],
+      "claim": "c h≤alpha≤4h/(1+h)",
+      "boundary": "不决定平衡族最优系数",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "CORE_REDUCTION",
+      "title": "全曲率/P变分与近极小转移",
+      "status": "proof_present",
+      "source": "sources/outputs/Qiushi_Line1_Continuation_Review_20260928/00_Research_Report.md",
+      "locator": "全局变分及单解附录",
+      "proof_dependencies": [
+        "CORE_LINEAR"
+      ],
+      "claim": "alpha=4 infP/(8pi²A)+O(h²)",
+      "boundary": "只在原族及明示输入；o(V)不能代o(Q)",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "CORE_EXACTSUB",
+      "title": "只添柄与k=o(Q)精确子范围",
+      "status": "proof_present",
+      "source": "sources/outputs/Line1_Atlas_20260928/appendices/04_Geometry_and_Variation.md",
+      "locator": "I44相关",
+      "proof_dependencies": [
+        "CORE_INPUT"
+      ],
+      "claim": "由实际标量预算、signature与经典恢复得到只添柄精确值及k=o(Q)首项4",
+      "boundary": "独立于I40/I41一般线性gap；不覆盖k/Q→2/9的原平衡族",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "CORE_CORECOST",
+      "title": "I47指定完整核心成本",
+      "status": "proof_present",
+      "source": "sources/outputs/Line1_Atlas_20260928/appendices/04_Geometry_and_Variation.md",
+      "locator": "I47",
+      "proof_dependencies": [],
+      "claim": "指定取向/锥领口下混合泛函锐利成本",
+      "boundary": "不是任意ALE的P或全部拓扑收费",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "CORE_REALIZATION",
+      "title": "受控精确实现与固定构造",
+      "status": "proof_present",
+      "source": "sources/outputs/Line1_Atlas_20260928/appendices/05_Realization_and_Global_Structure.md",
+      "locator": "§§2–4",
+      "proof_dependencies": [],
+      "claim": "受控范围的实现、覆盖、慢模态和填充结果",
+      "boundary": "原条件不能从gap消失自动删除",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O10_THRESHOLD",
+      "title": "早期密度阈值推进",
+      "status": "superseded_scope",
+      "source": "sources/outputs/Line1_Continuation_20260929B/O10_Strengthened_Endpoint.md",
+      "locator": "主要定理",
+      "proof_dependencies": [
+        "CORE_PARAMETER",
+        "O10_R1"
+      ],
+      "claim": "3/8、50/3和39/4等历史阈值范围",
+      "boundary": "更广有限B已有；旧短证明可复用",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O10_R1",
+      "title": "强流/正旋量临界梯度升级",
+      "status": "proof_present",
+      "source": "sources/outputs/Line1_O10_O11_20260929/01_O10_Strong_Current.md",
+      "locator": "强流与慢梯度测试",
+      "proof_dependencies": [
+        "CORE_PARAMETER"
+      ],
+      "claim": "端点实际场幅度、Dirac和类型余项的强控制",
+      "boundary": "不等于负旋量Hessian无W−预算",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O10_RESOLVENT",
+      "title": "同丛有界resolvent",
+      "status": "proof_present",
+      "source": "sources/outputs/Line1_Continuation_20260929C/O10_Direct_Resolvent_Prerequisite.md",
+      "locator": "§2",
+      "proof_dependencies": [
+        "O10_R1"
+      ],
+      "claim": "有界v、Lv，保持实际扭率H1近似",
+      "boundary": "辅助v不是新的SW解",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O10_PROLONG",
+      "title": "有限预算第一延拓",
+      "status": "proof_present",
+      "source": "sources/outputs/Line1_Continuation_20260929B/O10_Resolvent_Prolongation.md",
+      "locator": "§§2–4",
+      "proof_dependencies": [
+        "O10_RESOLVENT"
+      ],
+      "claim": "移除指定导数分量",
+      "boundary": "不能删除该证明的有限曲率预算",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O10_BFINITE",
+      "title": "任意固定有限Euler密度",
+      "status": "proof_present",
+      "source": "sources/outputs/Line1_Continuation_20260929C/O10_All_Finite_Density.md",
+      "locator": "§§1–4",
+      "proof_dependencies": [
+        "O10_RESOLVENT"
+      ],
+      "claim": "每个有限B有c(B)>0",
+      "boundary": "不推出inf_B c(B)>0",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O10_LINE5",
+      "title": "第五线丛正势排除",
+      "status": "proof_present",
+      "source": "sources/upload/O10_Finite_Density_Fifth_Line(1).md",
+      "locator": "§§3–6",
+      "proof_dependencies": [
+        "O10_RESOLVENT",
+        "O10_PROLONG"
+      ],
+      "claim": "L5弱CR与+10/3势，在所列预算下排除零端",
+      "boundary": "网页证明必需第一延拓；非消失质量、截断与弱测试均不可省",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O10_GROWTH",
+      "title": "允许无界b的条件排除",
+      "status": "proof_present",
+      "source": "sources/outputs/Line1_Continuation_20260929D/O10_Alternative_Global.md",
+      "locator": "误差清单、主要命题",
+      "proof_dependencies": [
+        "O10_LINE5"
+      ],
+      "claim": "e_D(1+b)^(3/2)→0时排除实际零端",
+      "boundary": "e_D不等于原kappa",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O10_LOGRATE",
+      "title": "增长能量陈数/指数下界",
+      "status": "proof_present",
+      "source": "sources/upload/O10_Quantitative_Escape_and_O11_Boundary(1).md",
+      "locator": "线丛对数引理和误差转接",
+      "proof_dependencies": [
+        "O10_RESOLVENT"
+      ],
+      "claim": "原缺陷受指数型密度下界；保留继承前置",
+      "boundary": "仍允许更快增长；不是无密度结论",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O10_POLYRATE",
+      "title": "原缺陷多项式下界转接",
+      "status": "proof_present",
+      "source": "sources/outputs/Line1_Continuation_20260930E/O10_Primitive_Rate_Audit.md",
+      "locator": "完整误差清单与幂次",
+      "proof_dependencies": [
+        "O10_R1",
+        "O10_GROWTH"
+      ],
+      "claim": "x≥c(1+b)^−p，有限B常数相应下控",
+      "boundary": "非最优指数；未删除b",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O10_WEIGHTED",
+      "title": "双重带权测试",
+      "status": "proof_present",
+      "source": "sources/outputs/Line1_Continuation_20260930E/O10_Double_Weighted_Test.md",
+      "locator": "主要引理",
+      "proof_dependencies": [
+        "O10_RESOLVENT"
+      ],
+      "claim": "若v,Lv有界，||e gradv||2≤C||e||H1；控制指定Hessian配对",
+      "boundary": "不适用于只有L2小的系数；不自动控三阶测试",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O10_MASS",
+      "title": "实际扭率幅度H1转移",
+      "status": "proof_present",
+      "source": "sources/outputs/Line1_Continuation_20260930F/O10_Actual_Mass_Transfer.md",
+      "locator": "§§1–2",
+      "proof_dependencies": [
+        "O10_WEIGHTED"
+      ],
+      "claim": "|| |v|²−|u|² ||H1≤C||v−u||H1",
+      "boundary": "径向缺陷仍可存在于实际场",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O10_LOWAMP",
+      "title": "逆幅度矩与深零幅度能量",
+      "status": "proof_present",
+      "source": "sources/upload/O10_Low_Amplitude_Energy_and_O11_Scope(1).md",
+      "locator": "§§1–3",
+      "proof_dependencies": [
+        "O10_RESOLVENT"
+      ],
+      "claim": "固定theta,eps先j极限；低幅能量≤2e t log(m*/t)",
+      "boundary": "中间幅度层径向集中未排除",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O10_TESTMASS",
+      "title": "测试下二次能量关系",
+      "status": "proof_present",
+      "source": "sources/upload/O10_Low_Amplitude_Energy_and_O11_Scope(1).md",
+      "locator": "§4",
+      "proof_dependencies": [
+        "O10_RESOLVENT"
+      ],
+      "claim": "avg(q−2m*)|w|²→0于合法测试",
+      "boundary": "不能将q直接替换第五线丛水平质量",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O10_RADIALMODEL",
+      "title": "形式径向能量测度",
+      "status": "method_obstruction",
+      "source": "sources/upload/O10_Low_Amplitude_Energy_and_O11_Scope(1).md",
+      "locator": "§3.2",
+      "proof_dependencies": [
+        "O10_LOWAMP"
+      ],
+      "claim": "lambda dt、2lambda t dt满足已用矩并保留径向能量",
+      "boundary": "不是实际场/闭流形反例",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O10_EXACTHESS",
+      "title": "精确正旋量Hessian预算",
+      "status": "identity",
+      "source": "sources/outputs/Line1_Continuation_20260930F/O10_Exact_Hessian_Budget_Check.md",
+      "locator": "全文",
+      "proof_dependencies": [
+        "O10_R1"
+      ],
+      "claim": "32/27转换为既有2m*总梯度预算",
+      "boundary": "无独立径向强制；不得重复计算",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O10_RADIALSYSTEM",
+      "title": "完整径向一形式方程",
+      "status": "identity",
+      "source": "sources/outputs/Line1_Continuation_20260930F/O10_Radial_Matrix_Identity.md",
+      "locator": "§§1–5",
+      "proof_dependencies": [
+        "O10_RESOLVENT"
+      ],
+      "claim": "B=v wedge gradv；完整d/c系统、−3/+1势",
+      "boundary": "未控制负径向、四次源及曲率误差配对",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O10_LOCALMODEL",
+      "title": "精确局部模型范围纠正",
+      "status": "method_obstruction",
+      "source": "sources/outputs/Line1_Continuation_20260930E/O10_Local_Model_And_Prolongation_Audit.md",
+      "locator": "局部相容性审计",
+      "proof_dependencies": [],
+      "claim": "实际双曲局部SW核心不是完整精确零端主体",
+      "boundary": "不能由局部小积分代价直接作闭反例",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O10_OPEN",
+      "title": "无密度O10",
+      "status": "open",
+      "source": "sources/upload/27b3cef6-aeed-442c-9e66-fef1a757828e.tex",
+      "locator": "第25节",
+      "proof_dependencies": [],
+      "claim": "原假设下普适gap或合法实际闭流形反例",
+      "boundary": "本包没有完整答案；已有有限B不等于无密度",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O11_SELECTION",
+      "title": "真正近极小的弱驻点/稳定选择",
+      "status": "proof_present",
+      "source": "sources/outputs/Line1_O10_O11_20260929/02_O11_Variational_Selection.md",
+      "locator": "§§2–4",
+      "proof_dependencies": [
+        "CORE_REDUCTION"
+      ],
+      "claim": "临界测试预算中DP=o(Q),D²P≥−o(Q)",
+      "boundary": "不是任意序列；不是强L2 Euler-Lagrange残差",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O11_FULLCLASSES",
+      "title": "普通原族完整monopole预算",
+      "status": "proof_present",
+      "source": "sources/outputs/Line1_O10_O11_20260929/03_O11_Classical_Budget.md",
+      "locator": "§3",
+      "proof_dependencies": [
+        "CORE_INPUT"
+      ],
+      "claim": "全凸包与period-minimax均为A",
+      "boundary": "不覆盖另一个BF连通和族；非全g点态预算",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O11_YW",
+      "title": "Yamabe–Weyl斜率接口",
+      "status": "conditional_interface",
+      "source": "sources/outputs/Line1_O10_O11_20260929/03_O11_Classical_Budget.md",
+      "locator": "§§4–6",
+      "proof_dependencies": [
+        "CORE_REDUCTION"
+      ],
+      "claim": "目标需要DeltaW≥−DeltaS/24−o(Q)",
+      "boundary": "经典Ricci只给−DeltaS/6；固定M边界值不足",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O11_ADAPTIVE",
+      "title": "自适应真实变分及正曲率补偿",
+      "status": "proof_present",
+      "source": "sources/outputs/Line1_Continuation_20260929B/O11_Positive_Curvature_Compensation.md",
+      "locator": "主要推导",
+      "proof_dependencies": [
+        "O11_SELECTION"
+      ],
+      "claim": "合法有界测试与同尺度曲率补偿",
+      "boundary": "未给8pi²Q拓扑锐利关系",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O11_WALSH",
+      "title": "全符号同场精确分解",
+      "status": "identity",
+      "source": "sources/outputs/Line1_Continuation_20260929D/O11_Global_Sharp.md",
+      "locator": "主要恒等式",
+      "proof_dependencies": [
+        "CORE_INPUT"
+      ],
+      "claim": "P−8pi²Q=Acal−4平均K，Acal≥0",
+      "boundary": "补偿符号未证；换解不改变差值",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O11_CRLINE",
+      "title": "解间比较线丛",
+      "status": "method_obstruction",
+      "source": "sources/outputs/Line1_Continuation_20260929D/O11_Global_Sharp.md",
+      "locator": "比较线丛部分",
+      "proof_dependencies": [
+        "O11_WALSH"
+      ],
+      "claim": "KE端零阶势趋零",
+      "boundary": "不能套O10固定+10/3正势",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O11_ANDERSON",
+      "title": "既有理想极小序列接口",
+      "status": "literature_interface",
+      "source": "sources/outputs/Line1_Continuation_20260930E/O11_Ideal_Minimizer.md",
+      "locator": "定理接口与两种极限",
+      "proof_dependencies": [
+        "CORE_REDUCTION"
+      ],
+      "claim": "可选序列的结构与下半连续性可用",
+      "boundary": "原拓扑标记对应未供给；非任意序列保证",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O11_AE",
+      "title": "完整负定AE核心费用",
+      "status": "proof_present",
+      "source": "sources/upload/O10_Low_Amplitude_Energy_and_O11_Scope(1).md",
+      "locator": "§5.1",
+      "proof_dependencies": [],
+      "claim": "相对公式给b2与b1+e−1收费",
+      "boundary": "一般ALE必须保留Gamma与eta修正",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O11_MARKED",
+      "title": "原标记总收费",
+      "status": "open",
+      "source": "sources/upload/O10_Low_Amplitude_Energy_and_O11_Scope(1).md",
+      "locator": "§5.2",
+      "proof_dependencies": [],
+      "claim": "在所选原族极小序列上合计支付8pi²Q−o(Q)",
+      "boundary": "不是Anderson定理或单核心恒等式的现成结论",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O11_STANDARD",
+      "title": "标准更换主体/合并核心不改首项",
+      "status": "method_obstruction",
+      "source": "sources/outputs/Line1_Continuation_20260929D/O11_Competitors.md",
+      "locator": "全文",
+      "proof_dependencies": [],
+      "claim": "标准恢复方案受相应不变量限制",
+      "boundary": "不排除全部整体几何变化",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O11_ENTROPY",
+      "title": "未加权熵捷径失败",
+      "status": "method_obstruction",
+      "source": "sources/outputs/Line1_Continuation_20260930E/O11_BCG_Test.md",
+      "locator": "全文",
+      "proof_dependencies": [],
+      "claim": "原非本质手术不产生所需正熵费用",
+      "boundary": "熵近极小不是P近极小；不是O11反例",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O11_CRITICAL",
+      "title": "光滑闭稳定临界度量变分",
+      "status": "conditional_interface",
+      "source": "sources/outputs/Line1_Continuation_20260930F/O11_Critical_Stability_Attempt.md",
+      "locator": "§§1–3",
+      "proof_dependencies": [],
+      "claim": "Schur共形消元约束；Ricci方向一阶相消",
+      "boundary": "额外光滑闭临界条件；没有Q级负方向",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O11_FLATCOLLAR",
+      "title": "全部完整平直外领口填充下界",
+      "status": "proof_present",
+      "source": "sources/outputs/Line1_Continuation_20260930F/O11_Constructive_Audit.md",
+      "locator": "§1",
+      "proof_dependencies": [],
+      "claim": "P=8pi²(m+4ell)+S/12+4Wplus",
+      "boundary": "有限尺度CH边界有额外项；不是全族下界",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O11_NUMERIC",
+      "title": "三向核心数值搜索",
+      "status": "numerical_no_improvement",
+      "source": "sources/outputs/Line1_Continuation_20260930F/O11_Constructive_Audit.md",
+      "locator": "§3",
+      "proof_dependencies": [],
+      "claim": "没有合法阈值穿越，保留参数与复算记录",
+      "boundary": "浮点、迭代上限，不认证局部极小或全局界",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "O11_OPEN",
+      "title": "原平衡族最佳首项",
+      "status": "open",
+      "source": "sources/upload/27b3cef6-aeed-442c-9e66-fef1a757828e.tex",
+      "locator": "第25节",
+      "proof_dependencies": [],
+      "claim": "匹配下界与真实构造决定alpha/h的极限或上下极限",
+      "boundary": "本包没有提高最终区间；不预设4",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "OTHER_NEWSUPPLY",
+      "title": "更弱输入的新自然对象",
+      "status": "open",
+      "source": "sources/outputs/Line1_Atlas_20260928/03_N1_Complete_Inheritance.md",
+      "locator": "§6",
+      "proof_dependencies": [],
+      "claim": "兑现单解削弱为旧范围外的实际应用",
+      "boundary": "独立于本次O10/O11的闭合",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "OTHER_BF",
+      "title": "BF完整类预算与原创性比较",
+      "status": "open",
+      "source": "sources/outputs/Line1_Atlas_20260928/03_N1_Complete_Inheritance.md",
+      "locator": "§4.4",
+      "proof_dependencies": [],
+      "claim": "全体类的o(Ah)预算比较",
+      "boundary": "与普通O11全类预算已完成不同",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "OTHER_ED",
+      "title": "固定E_D全部Einstein存在性",
+      "status": "open",
+      "source": "sources/outputs/Line1_Atlas_20260928/appendices/05_Realization_and_Global_Structure.md",
+      "locator": "§4",
+      "proof_dependencies": [],
+      "claim": "构造或排除全部精确负Einstein候选",
+      "boundary": "现有逼近和邻域修复失败不足",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "OTHER_CHBOUND",
+      "title": "去直径陈数边界实现",
+      "status": "open",
+      "source": "sources/outputs/Line1_Atlas_20260928/appendices/05_Realization_and_Global_Structure.md",
+      "locator": "§§2–3",
+      "proof_dependencies": [],
+      "claim": "在保留其他原假设下判断全局精确实现",
+      "boundary": "不是两个主目标的前置",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    },
+    {
+      "id": "OTHER_PHYSICS",
+      "title": "物理演绎与迁移档案",
+      "status": "conditional_interface",
+      "source": "sources/outputs/Line1_Atlas_20260928/appendices/06_Physics_and_Literature.md",
+      "locator": "§§2–4",
+      "proof_dependencies": [
+        "CORE_I41"
+      ],
+      "claim": "五组明确公式接口；保留物理模型条件",
+      "boundary": "不登记BPS/AdS/瞬子猜想为已解决",
+      "evidence_level": "status read from specified proof record; not a fresh independent certification of every upstream PDE proof"
+    }
+  ],
+  "edges": [
+    {
+      "from": "CORE_INPUT",
+      "to": "CORE_PARAMETER",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "CORE_PARAMETER",
+      "to": "CORE_N1",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "CORE_PARAMETER",
+      "to": "CORE_N1Y",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "CORE_INPUT",
+      "to": "CORE_I41",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "CORE_N1",
+      "to": "CORE_CLASSICAL",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "CORE_I41",
+      "to": "CORE_CLASSICAL",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "CORE_N1",
+      "to": "CORE_COVER",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "CORE_I41",
+      "to": "CORE_LINEAR",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "CORE_LINEAR",
+      "to": "CORE_REDUCTION",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "CORE_PARAMETER",
+      "to": "O10_THRESHOLD",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "O10_R1",
+      "to": "O10_THRESHOLD",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "CORE_PARAMETER",
+      "to": "O10_R1",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "O10_R1",
+      "to": "O10_RESOLVENT",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "O10_RESOLVENT",
+      "to": "O10_PROLONG",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "O10_RESOLVENT",
+      "to": "O10_BFINITE",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "O10_RESOLVENT",
+      "to": "O10_LINE5",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "O10_LINE5",
+      "to": "O10_GROWTH",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "O10_RESOLVENT",
+      "to": "O10_LOGRATE",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "O10_R1",
+      "to": "O10_POLYRATE",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "O10_GROWTH",
+      "to": "O10_POLYRATE",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "O10_RESOLVENT",
+      "to": "O10_WEIGHTED",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "O10_WEIGHTED",
+      "to": "O10_MASS",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "O10_RESOLVENT",
+      "to": "O10_LOWAMP",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "O10_RESOLVENT",
+      "to": "O10_TESTMASS",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "O10_LOWAMP",
+      "to": "O10_RADIALMODEL",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "O10_R1",
+      "to": "O10_EXACTHESS",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "O10_RESOLVENT",
+      "to": "O10_RADIALSYSTEM",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "CORE_REDUCTION",
+      "to": "O11_SELECTION",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "CORE_INPUT",
+      "to": "O11_FULLCLASSES",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "CORE_REDUCTION",
+      "to": "O11_YW",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "O11_SELECTION",
+      "to": "O11_ADAPTIVE",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "CORE_INPUT",
+      "to": "O11_WALSH",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "O11_WALSH",
+      "to": "O11_CRLINE",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "CORE_REDUCTION",
+      "to": "O11_ANDERSON",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "CORE_I41",
+      "to": "OTHER_PHYSICS",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "O10_BFINITE",
+      "to": "O10_THRESHOLD",
+      "relation": "supersedes_scope_not_proof"
+    },
+    {
+      "from": "O10_LOWAMP",
+      "to": "O10_OPEN",
+      "relation": "unclosed_research_interface"
+    },
+    {
+      "from": "O10_RADIALSYSTEM",
+      "to": "O10_OPEN",
+      "relation": "unclosed_research_interface"
+    },
+    {
+      "from": "O11_ANDERSON",
+      "to": "O11_MARKED",
+      "relation": "unclosed_research_interface"
+    },
+    {
+      "from": "O11_AE",
+      "to": "O11_MARKED",
+      "relation": "unclosed_research_interface"
+    },
+    {
+      "from": "O11_MARKED",
+      "to": "O11_OPEN",
+      "relation": "conditional_route_if_sufficient_marked_payment_proved"
+    },
+    {
+      "from": "O11_ADAPTIVE",
+      "to": "O11_OPEN",
+      "relation": "unclosed_research_interface"
+    },
+    {
+      "from": "CORE_INPUT",
+      "to": "CORE_EXACTSUB",
+      "relation": "uses_in_recorded_proof"
+    },
+    {
+      "from": "O10_PROLONG",
+      "to": "O10_LINE5",
+      "relation": "uses_in_recorded_proof"
+    }
+  ],
+  "explicit_non_implications": [
+    "O10 finite B does not imply unrestricted O10",
+    "O10 does not automatically solve O11",
+    "N1 and I41 do not depend on completion of O10/O11",
+    "full ordinary monopole budget A does not compute the distinct BF connected-sum budget",
+    "O10 o(V) errors do not imply O11 o(Q) errors"
+  ]
+}

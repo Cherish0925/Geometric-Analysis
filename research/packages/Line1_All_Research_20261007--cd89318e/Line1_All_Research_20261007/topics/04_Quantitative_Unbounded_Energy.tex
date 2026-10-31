@@ -1,0 +1,510 @@
+\documentclass[UTF8,11pt,fontset=none]{ctexart}
+\usepackage[a4paper,margin=23mm,headheight=15pt,footskip=11mm]{geometry}
+\usepackage{fontspec}
+\IfFontExistsTF{TeX Gyre Termes}{\setmainfont{TeX Gyre Termes}}{\setmainfont{lmroman10-regular.otf}[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf,BoldItalicFont=lmroman10-bolditalic.otf]}
+\IfFontExistsTF{TeX Gyre Heros}{\setsansfont{TeX Gyre Heros}}{\setsansfont{lmsans10-regular.otf}[BoldFont=lmsans10-bold.otf,ItalicFont=lmsans10-oblique.otf]}
+\IfFontExistsTF{DejaVu Sans Mono}{\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]}{\setmonofont{lmmono10-regular.otf}}
+\IfFontExistsTF{Noto Serif CJK SC}{\setCJKmainfont{Noto Serif CJK SC}[AutoFakeSlant=0.15]}{\setCJKmainfont{FandolSong-Regular.otf}[BoldFont=FandolSong-Bold.otf,ItalicFont=FandolKai-Regular.otf]}
+\IfFontExistsTF{Noto Sans CJK SC}{\setCJKsansfont{Noto Sans CJK SC}}{\setCJKsansfont{FandolHei-Regular.otf}}
+\IfFontExistsTF{Noto Sans Mono CJK SC}{\setCJKmonofont{Noto Sans Mono CJK SC}}{\setCJKmonofont{FandolFang-Regular.otf}}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,esint,bm}
+\usepackage{booktabs,longtable,array,calc}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=1.7em,topsep=3pt}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,fontsize=\small}
+\usepackage{xurl}
+\usepackage[unicode,hidelinks,bookmarksnumbered]{hyperref}
+\usepackage{bookmark}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small 第一科学主线：近期研究全稿}
+\fancyhead[R]{\small 2026-10-07}\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\providecommand{\tightlist}{\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\avint}{\fint}
+\newcommand{\Jcal}{\mathcal J}
+\newcommand{\Ecal}{\mathcal E}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\Rea}{\operatorname{Re}}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{3pt plus 1pt}
+\setlength{\emergencystretch}{3em}
+\linespread{1.10}\allowdisplaybreaks[2]
+\setlength{\abovedisplayskip}{8pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{8pt plus 2pt minus 2pt}
+\renewcommand{\arraystretch}{1.12}
+\setcounter{tocdepth}{1}\setcounter{secnumdepth}{2}
+\pdfstringdefDisableCommands{\def\fint{int}\def\mathcal#1{#1}\def\mathfrak#1{#1}\def\mathscr#1{#1}\def\operatorname#1{#1}\def\varepsilon{epsilon}\def\chi{chi}\def\beta{beta}\def\rho{rho}\def\tau{tau}\def\Phi{Phi}\def\sigma{sigma}\def\kappa{kappa}\def\nabla{D}\def\mathbb#1{#1}\def\({}\def\){}\def\textsuperscript#1{#1}\def\textsubscript#1{#1}}
+\title{增长能量下的对数陈数约束与逃逸速率}
+\author{第一科学主线·近期研究分卷}
+\date{2026年10月7日}
+\begin{document}
+\maketitle
+\noindent\textbf{原稿编号：}R04。
+
+本章保留增长的 Dirichlet 能量，证明定量的线丛对数约束，再接回 O10 的实际误差与反手性曲率。这里区分原始缺陷 \(\eta\) 和派生误差 \(\mathfrak e\)，并保留二者之间的幂次推导。\cite{R04,Strong,FD}
+
+\section{主要结论与误差尺度}\label{ch4:ux4e3bux8981ux7ed3ux8bbaux4e0eux8befux5deeux5c3aux5ea6}
+
+在本章列出的同解参数预算、R1 和幂次输入下，令 \[
+\eta=\kappa_\beta+\beta^{-2},\qquad
+\kappa_\beta=(P+D_\beta)/V,\qquad b=\fint|W^-|^2.
+\] 对 \(s=-4\)、\(\beta\ge4\) 有 \[
+\eta\ge c\exp[-C(1+b)^2].\tag{4.1}\label{eq:r4:1}
+\] 对全部原允许度量与 \(\beta\ge2\)，相应有限密度常数可取 \[
+\frac{\chi(M)}A\le B\quad\Longrightarrow\quad
+\kappa_\beta(g)\ge c_1e^{-C_1(1+B)^2}
+\frac{(\beta-2)^2}{\beta^2}.\tag{4.2}\label{eq:r4:2}
+\] 因而 \(b=o(\sqrt{\log(1/\eta)})\) 的零端增长不能发生。本章保留独立的线丛引理，以及从 \(\eta\) 到派生实际误差 \(\mathfrak e\) 的完整连接。
+
+\section{线丛的定量对数障碍：允许 Dirichlet 能量增长}\label{ch4:ux7ebfux4e1bux7684ux5b9aux91cfux5bf9ux6570ux969cux788dux5141ux8bb8-dirichlet-ux80fdux91cfux589eux957f}
+
+以下平均均为 \(V^{-1}\int_M\)，包括在子集上积分。所有范数按这个概率测度计算。
+
+\subsection{1 命题}\label{ch4:ux547dux9898}
+
+设 \((M^4,g)\) 为闭定向光滑四流形，\(K\to M\) 为 Hermitian 线丛，带 unitary 联络 \(\nabla\)。记其实曲率为 \(F=-iF^K\)。假设 \[
+\fint|\operatorname{Ric}|^2\le C_R,
+\qquad F=F_0+e_F,
+\qquad |F_0|\le C_F.
+\tag{4.3}\label{eq:r4:3}
+\] 不要求 \(F_0\) 闭。曲率 \(F\) 本身闭。
+
+设 \(s\) 为光滑截面，满足 \[
+|s|\le M_0,\qquad \ell>0,
+\qquad \mathsf E:=1+\fint|\nabla s|^2\ge1.
+\] 其中 \(M_0,\ell,C_R,C_F\) 固定，而 \(\mathsf E\) 允许任意增长。置 \[
+d=\fint(|s|-\ell)^2,
+\qquad \Delta=d+\fint|e_F|^2.
+\tag{4.4}\label{eq:r4:4}
+\] 当 \(0<\Delta\le e^{-4}\) 时，存在只依赖上述固定常数和维数的 \(C\)，使 \[
+\boxed{
+\frac{|c_1(K)^2[M]|}{V}
+\le \frac{C\mathsf E}{\sqrt{\log(1/\Delta)}}.
+}
+\tag{4.5}\label{eq:r4:5}
+\] 若 \(\Delta=0\)，截面处处具有非零常模，线丛平凡，左边为零。
+
+特别地，若左边至少为固定 \(q_0>0\)，则 \[
+\boxed{
+\log(1/\Delta)\le C_{q_0}\mathsf E^2.
+}
+\tag{4.6}\label{eq:r4:6}
+\] 这里既不要求非塌缩，也不使用统一 Sobolev 常数、直径、注入半径或全 Riemann 曲率预算。
+
+\subsection{2 谱参数的选择}\label{ch4:ux8c31ux53c2ux6570ux7684ux9009ux62e9}
+
+令 \(L=\nabla^*\nabla\ge0\)，以及 \[
+u_\varepsilon=(I+\varepsilon L)^{-1}s,
+\qquad K(\varepsilon)=\fint|Lu_\varepsilon|^2.
+\] 最大值原理与谱计算给出 \[
+|u_\varepsilon|\le M_0,
+\qquad \fint|u_\varepsilon-s|^2\le\varepsilon\mathsf E,
+\qquad \fint|\nabla u_\varepsilon|^2\le\mathsf E.
+\tag{4.7}\label{eq:r4:7}
+\] 每个特征值 \(\lambda\ge0\) 满足 \[
+\int_0^\infty\frac{\lambda^2}{(1+\varepsilon\lambda)^2}\,d\varepsilon=\lambda.
+\] 因而 \[
+\int_0^\infty K(\varepsilon)\,d\varepsilon
+=\fint|\nabla s|^2\le\mathsf E.
+\tag{4.8}\label{eq:r4:8}
+\] 在区间 \([\Delta^{1/2},\Delta^{1/4}]\) 上按 \(d\varepsilon/\varepsilon\) 平均，存在 \(\varepsilon\) 使 \[
+\Delta^{1/2}\le\varepsilon\le\Delta^{1/4},
+\qquad
+\varepsilon K(\varepsilon)\le
+\frac{4\mathsf E}{\log(1/\Delta)}.
+\tag{4.9}\label{eq:r4:9}
+\] 这里没有先假设 \(\mathsf E\) 一致有界。
+
+\subsection{3 Hessian 换指标估计}\label{ch4:hessian-ux6362ux6307ux6807ux4f30ux8ba1}
+
+对固定有界截面 \(u\)，令 \(I=\int|\nabla^2u|^2\)、\(J=\int|\nabla u|^4\)。精确 Hessian 换指标后，联络曲率项不带导数，切空间曲率只通过 Ricci 缩并出现。因此 \[
+I\le C\int|Lu|^2+C M_0^2\int|F|^2
++C\int(|\operatorname{Ric}|+|F|)|\nabla u|^2.
+\tag{4.10}\label{eq:r4:10}
+\] 直接对 \(|\nabla u|^2\operatorname{Re}\langle u,\nabla u\rangle\) 作散度积分，得到 \[
+J\le C M_0^2 I.
+\tag{4.11}\label{eq:r4:11}
+\] 用 Cauchy--Schwarz、Young 在 \eqref{eq:r4:10} 中吸收 \(I\)，得到 \[
+\fint\bigl(|\nabla^2u|^2+|\nabla u|^4\bigr)
+\le C\left(\fint|Lu|^2+\fint|\operatorname{Ric}|^2+\fint|F|^2\right).
+\tag{4.12}\label{eq:r4:12}
+\] 由于 \(\Delta\le e^{-4}\)，\eqref{eq:r4:3} 保证此处最后两项有统一常数界。于是对所选 \(u=u_\varepsilon\)， \[
+\fint|\nabla u|^4\le C(K(\varepsilon)+1).
+\tag{4.13}\label{eq:r4:13}
+\] 此估计不使用任何统一坐标图。
+
+\subsection{4 低幅度区与 Chern 配对}\label{ch4:ux4f4eux5e45ux5ea6ux533aux4e0e-chern-ux914dux5bf9}
+
+令 \(Z=\{|u|\le3\ell/4\}\)。由 \eqref{eq:r4:4}、\eqref{eq:r4:7}， \[
+\mu(Z):=\frac{\operatorname{Vol}(Z)}V
+\le C(d+\varepsilon\mathsf E)
+\le C\varepsilon\mathsf E.
+\tag{4.14}\label{eq:r4:14}
+\] 最后一步用 \(d\le\Delta\le\varepsilon\)、\(\mathsf E\ge1\)。即使右边超过1，这仍是合法上界，不需要 \(\varepsilon\mathsf E\to0\)。
+
+选固定光滑 \(\chi\)，在 \(|u|\le\ell/2\) 为0，在 \(|u|\ge3\ell/4\) 为1。置 \[
+a=|u|^2,\qquad j_u=\operatorname{Im}\langle u,\nabla u\rangle,
+\qquad\theta=\chi(a)j_u/a.
+\] 它在零点附近为零，因此全局光滑。线丛上的精确局部恒等式为 \[
+d\theta=\chi F+\chi'\,da\wedge j_u/a.
+\tag{4.15}\label{eq:r4:15}
+\] 由于 \(dF=0\)，Stokes 给出 \[
+\left|\fint F\wedge F\right|
+\le C\fint_Z|F|^2+C\fint_Z|F|\,|\nabla u|^2.
+\tag{4.16}\label{eq:r4:16}
+\] 将 \(F\) 分为有界模型和小误差，利用 \eqref{eq:r4:13}---\eqref{eq:r4:14}，得到 \[
+\left|\fint F\wedge F\right|
+\le C\left[
+\varepsilon\mathsf E+\Delta
++\sqrt{\varepsilon\mathsf E(K+1)}
++\sqrt{\Delta(K+1)}\right].
+\tag{4.17}\label{eq:r4:17}
+\] 所有常数独立于 \(\mathsf E\)、\(\Delta\) 及所选谱参数。
+
+写 \(\mathsf L=\log(1/\Delta)\ge4\)。由 \eqref{eq:r4:9}，右边至多 \[
+C\left[
+\mathsf E\Delta^{1/4}+\Delta
++\frac{2\mathsf E}{\sqrt{\mathsf L}}
++\sqrt{\mathsf E}\Delta^{1/8}
++\frac{2\sqrt{\mathsf E}\Delta^{1/4}}{\sqrt{\mathsf L}}
++\sqrt\Delta\right].
+\] 因为 \(\mathsf E\ge1\)，指数小量均可由固定常数乘 \(\mathsf E/\sqrt{\mathsf L}\) 控制。再用 \[
+c_1(K)^2[M]/V=(4\pi^2)^{-1}\fint F\wedge F
+\] 即得 \eqref{eq:r4:5}。这也证明 \eqref{eq:r4:6}。
+
+\section{O10 的辅助截面：保留增长常数，而不假设其一致有界}\label{ch4:o10-ux7684ux8f85ux52a9ux622aux9762ux4fddux7559ux589eux957fux5e38ux6570ux800cux4e0dux5047ux8bbeux5176ux4e00ux81f4ux6709ux754c}
+
+本节只使用已给强流系统、同丛 resolvent 和本章定量线丛引理。\textbf{不使用 Nijenhuis 第一括号延拓，不调用弱 CR 第五幂线丛证明。}
+
+在 \(s=-4\) 的实际代表上，令 \[
+\eta=\kappa_\beta+\beta^{-2},\quad
+\rho=|\Phi|^2,\quad\rho_*=4/3,\quad
+\tau=t_\Phi\in S^-\otimes L,\quad m_*=128/81.
+\] 记 \(T=\nabla_{3A}^*\nabla_{3A}\)。使用附件的有界截断和 \[
+v=3(I+T)^{-1}u.
+\tag{4.18}\label{eq:r4:18}
+\] 其构造不需要 \(W^-\) 上界，给出统一的 \[
+|\Phi|+|v|+|Tv|\le C,\quad
+\fint|\nabla\Phi|^4\le C,\quad
+\fint|\nabla v|^2\le C.
+\tag{4.19}\label{eq:r4:19}
+\] 把接下来所需的实际小量合成 \[
+\begin{aligned}
+\mathfrak e={}&
+\|\rho-\rho_*\|_2+
+\||v|^2-m_*\|_2+
+\|Tv-2v\|_2+
+\|D^-_{3A}v\|_2\\
+&+\|N_v\|_{2,\{\rho\ge c_0\}}
++\|f-K_{\mathrm{fit}}\|_2
++\|\operatorname{Ric}+g\|_2,
+\end{aligned}
+\tag{4.20}\label{eq:r4:20}
+\] 其中 \(0<c_0<\rho_*/4\) 固定，\(f=-iF_A^-\)，\(K_{\mathrm{fit}}\) 是原有界同场拟合，\(N_v=(\nabla v)^{1,0}_{J_+}\)。\(N_v\) 只在正旋量非零的区域使用；零区通过后述低幅度估计处理。
+
+这些量沿 O10 零端都趋零，而不需 \(b:=\fint|W^-|^2\) 有界。下文从原有定量前置给出一个保守的统一幂次率。先不使用该速率，仅假定 \(0<\mathfrak e\le1\)。
+
+置 \[
+\mathsf K=1+b\ge1.
+\] 负手性联络完整曲率满足 \[
+\fint|F^{S^-\otimes L}|^2\le C\mathsf K.
+\] 由 \eqref{eq:r4:10}---\eqref{eq:r4:12} 的同秩向量丛版本， \[
+\boxed{
+\fint\bigl(|\nabla^2v|^2+|\nabla v|^4\bigr)\le C\mathsf K.
+}
+\tag{4.21}\label{eq:r4:21}
+\] 这里的 \(C\) 独立于 \(b\)。不能把 \eqref{eq:r4:21} 写成没有 \(\mathsf K\) 的一致界。
+
+\section{定量幅度---相位---Dirac 归约}\label{ch4:ux5b9aux91cfux5e45ux5ea6ux76f8ux4f4ddirac-ux5f52ux7ea6}
+
+令 \[
+a=|v|^2,\quad q=|\nabla v|^2,\quad q_*=2m_*.
+\] 由 \(Tv=2v+r_v\)，\(\|r_v\|_2\le\mathfrak e\)，有 \[
+\Delta a=4a-2q+r_a,\qquad
+\|r_a\|_2\le C\mathfrak e,
+\tag{4.22}\label{eq:r4:22}
+\] 其中 \(\Delta=d^*d\)。因 \(v\) 有界，\(r_a=2\operatorname{Re}\langle v,r_v\rangle\)。同时 \[
+\left|\fint q-q_*\right|\le C\mathfrak e.
+\tag{4.23}\label{eq:r4:23}
+\]
+
+\subsection{1 径向导数}\label{ch4:ux5f84ux5411ux5bfcux6570}
+
+测试 \eqref{eq:r4:22} 对 \(a-m_*\)： \[
+\boxed{
+\|da\|_2^2\le C\mathfrak e\mathsf K^{1/2}.
+}
+\tag{4.24}\label{eq:r4:24}
+\] 因为 \(\|q\|_2\le C\mathsf K^{1/2}\)。这一步明确保留了增长能量的依赖。
+
+\subsection{2 梯度密度的协方差}\label{ch4:ux68afux5ea6ux5bc6ux5ea6ux7684ux534fux65b9ux5dee}
+
+取 \(\mathcal T(q)=q/(1+q)\)。有 \[
+|d\mathcal T(q)|\le C|\nabla^2v|,
+\] 故 \[
+\left|\fint\langle da,d\mathcal T(q)\rangle\right|
+\le C\mathfrak e^{1/2}\mathsf K^{3/4}.
+\] 将 \eqref{eq:r4:22} 与 \(\mathcal T(q)\) 配对，再减去常数 \(\mathcal T(q_*)\) 乘 \eqref{eq:r4:23}，使用 \[
+(\mathcal T(q)-\mathcal T(q_*))(q-q_*)
+=\frac{(q-q_*)^2}{(1+q)(1+q_*)},
+\] 得到 \[
+\boxed{
+\fint\frac{(q-q_*)^2}{1+q}
+\le C\mathfrak e^{1/2}\mathsf K^{3/4}.
+}
+\tag{4.25}\label{eq:r4:25}
+\] 因此 \[
+\boxed{
+\|q-q_*\|_1\le C\mathfrak e^{1/4}\mathsf K^{3/8}.
+}
+\tag{4.26}\label{eq:r4:26}
+\] 最后使用 \(\fint q\le C\)，不是用一个随 \(b\) 增长的 \(L^1\) 界。
+
+\subsection{3 低幅度区及剩余导数分量}\label{ch4:ux4f4eux5e45ux5ea6ux533aux53caux5269ux4f59ux5bfcux6570ux5206ux91cf}
+
+取 \(G=\{\rho\ge c_0,\ a\ge m_*/4\}\)。由 \eqref{eq:r4:20}， \[
+\mu(M\setminus G)\le C\mathfrak e^2,
+\qquad
+\fint_{M\setminus G}q\le C\mathfrak e\mathsf K^{1/2}.
+\tag{4.27}\label{eq:r4:27}
+\] 第二式来自 \eqref{eq:r4:21} 与 Cauchy--Schwarz，不能无依据忽略坏集合。
+
+写 \(j_v=\operatorname{Im}\langle v,\nabla v\rangle\)。原实际型投影的代数关系为 \[
+|j_v+J_+da/2|^2\le2a|N_v|^2.
+\] 由 \eqref{eq:r4:24}、\eqref{eq:r4:27} 得 \[
+\|j_v\|_2^2\le C\mathfrak e\mathsf K^{1/2}.
+\tag{4.28}\label{eq:r4:28}
+\] 在 \(G\) 的适配局部标架中，令 \[
+A_i=\nabla_{Z_i}v,\quad B=\nabla_{\bar Z_1}v,\quad C_2^{\rm vec}=\nabla_{\bar Z_2}v.
+\] 这里最后一个符号是二分量旋量，不是 Chen 类；下文写其第二分量为 \(c_2\)。
+
+由 \(N_v\) 小、\((\nabla v)_1=(da/2+ij_v)/\sqrt a\)、以及 \[
+D^-v=((A_1)_1-(A_2)_2,B_2+(C_2^{\rm vec})_1),
+\] 除 \(c_2=(\nabla_{\bar Z_2}v)_2\) 外的分量，其总二次能量不超过 \[
+C\mathfrak e\mathsf K^{1/2}.
+\tag{4.29}\label{eq:r4:29}
+\] 这些论证只使用代数投影、质量与 Dirac 残差，不使用未控制的括号导数。
+
+\section{第五幂线丛的定量质量与能量}\label{ch4:ux7b2cux4e94ux5e42ux7ebfux4e1bux7684ux5b9aux91cfux8d28ux91cfux4e0eux80fdux91cf}
+
+定义全局光滑多项式截面 \[
+\sigma=\Phi\wedge t(v)\in\Gamma(L^5).
+\tag{4.30}\label{eq:r4:30}
+\] 在同时适配 \(\Phi=\sqrt\rho(1,0)\)、\(v=\sqrt a(1,0)\) 的标架上，项目 Clifford 规范给 \[
+t(v)_2=a\,c_2,
+\qquad |\sigma|^2=\rho a^2|c_2|^2.
+\tag{4.31}\label{eq:r4:31}
+\] 四个复方向的导数规范满足 \[
+2q=|A_1|^2+|A_2|^2+|B|^2+|C_2^{\rm vec}|^2.
+\] 因此 \eqref{eq:r4:29} 控制 \(|\sigma|^2-2\rho a^2q\) 的 \(L^1\) 误差。用 \eqref{eq:r4:26}，并以 \(\|q\|_2\le C\sqrt{\mathsf K}\) 处理系数 \(\rho a^2-\rho_*m_*^2\)，得到 \[
+\left\||\sigma|^2-\ell_*^2\right\|_1
+\le C\left(\mathfrak e^{1/4}\mathsf K^{3/8}
++\mathfrak e\mathsf K^{1/2}\right)
+\le C\mathfrak e^{1/4}\mathsf K,
+\tag{4.32}\label{eq:r4:32}
+\] 其中 \[
+\ell_*^2=4\rho_*m_*^3=\frac{33554432}{1594323}>0.
+\] 在 \(M\setminus G\) 上使用全局多项式界 \(|\sigma|^2\le Cq\) 及 \eqref{eq:r4:27}，所以 \eqref{eq:r4:32} 没有省略零点区。
+
+又因为 \(\Phi,v\) 一致有界， \[
+|\nabla^{5A}\sigma|
+\le C\left(|\nabla\Phi|\,|\nabla v|
++|\nabla v|^2+|\nabla^2v|\right),
+\] 故 \[
+\boxed{1+\fint|\nabla^{5A}\sigma|^2\le C\mathsf K.}
+\tag{4.33}\label{eq:r4:33}
+\] 同样，这里没有把右边的 \(\mathsf K\) 删掉。
+
+对 \(\sigma\) 作一个固定有界径向 cap，在 \(\ell_*\) 附近恒等，得 \(s\in L^5\)。它满足 \[
+|s|\le M_*,\qquad
+\mathsf E_s:=1+\fint|\nabla s|^2\le C\mathsf K,
+\] \[
+d_s:=\fint(|s|-\ell_*)^2
+\le C\mathfrak e^{1/4}\mathsf K.
+\tag{4.34}\label{eq:r4:34}
+\] 这里使用 \((x-\ell)^2\le|x^2-\ell^2|\) 以及 cap 的固定 Lipschitz 性。
+
+\(L^5\) 的实曲率是 \(5(-iF_A)\)。其有界模型与误差只来自原行列式场，不含 \(W^-\)： \[
+\|e_{F^{L^5}}\|_2\le C\mathfrak e,
+\qquad
+\Delta_s:=d_s+\|e_{F^{L^5}}\|_2^2
+\le C\mathsf K\mathfrak e^{1/4}.
+\tag{4.35}\label{eq:r4:35}
+\] 同一实际曲率恒等式给 \[
+\frac{c_1(L^5)^2[M]}V\longrightarrow\frac{25}{6\pi^2}.
+\tag{4.36}\label{eq:r4:36}
+\] 因此，在足够小实际误差范围，此值至少 \(25/(12\pi^2)\)。下文的幂次推导说明这里也有统一的误差阈值。
+
+将定量线丛引理应用于 \eqref{eq:r4:34}---\eqref{eq:r4:36}：若 \(\Delta_s<e^{-4}\)， \[
+\log(1/\Delta_s)\le C\mathsf K^2.
+\] 而 \eqref{eq:r4:35} 给 \[
+\log(1/\Delta_s)\ge\tfrac14\log(1/\mathfrak e)-\log(C\mathsf K).
+\] 故 \[
+\boxed{\log(1/\mathfrak e)\le C\mathsf K^2.}
+\tag{4.37}\label{eq:r4:37}
+\] 若 \(C\mathsf K\mathfrak e^{1/4}\ge e^{-4}\)，直接由该不等式也得到 \eqref{eq:r4:37}，调整常数即可。不能仅用 \(\Delta_s\le C\mathsf K\mathfrak e^{1/4}\) 而逆转其对数方向。
+
+在尚未使用上游幂次率时，已经得到：\textbf{第五幂线丛实际误差与反手性曲率增长必须满足 \eqref{eq:r4:37}。}
+
+\section{从原始 O10 误差得到保守的幂次率}\label{ch4:ux4eceux539fux59cb-o10-ux8befux5deeux5f97ux5230ux4fddux5b88ux7684ux5e42ux6b21ux7387}
+
+本节把 \(\mathfrak e\) 与原始 \(\eta=\kappa_\beta+\beta^{-2}\) 连接；不允许任意挑一个子列，事后假定误差比增长的 \(\mathsf K\) 更快衰减。
+
+令 \(0<\epsilon_0\le1\) 为已给 R1 的固定慢梯度指数，置 \[
+\gamma=\frac{\epsilon_0}{1+\epsilon_0}\in(0,1/2],
+\qquad \vartheta=\gamma/16>0.
+\] 下面得到的较强中间指数，最终统一减弱为 \(\vartheta\)。常数仅来自已给同解预算及 R1，不依赖 \(b\)。
+
+\subsection{1 明确继承的定量输入}\label{ch4:ux660eux786eux7ee7ux627fux7684ux5b9aux91cfux8f93ux5165}
+
+写 \(q_\Phi=|\nabla_A\Phi|^2\)、\(m=|\tau|^2\)、\(S=m_*+2\rho^2q_\Phi\)。所用输入是 \[
+\fint\left(|\rho-\rho_*|^2+|\zeta|^2+|\operatorname{Ric}^{\circ}|^2\right)\le C\eta,
+\] \[
+\fint\frac{(S-2m_*)^2}{S}\le C\sqrt\eta,
+\qquad
+\|f-K_{\mathrm{fit}}\|_2^2\le C\sqrt\eta,
+\tag{4.38}\label{eq:r4:38}
+\] 以及 \(0\le\rho\le2\)、\(m\le8q_\Phi\)、\(\nu=2\rho^2q_\Phi-m\le4\rho|\zeta|^2\)。这些式子见整合稿 \texttt{sec:endpoint-covariance} 的 \eqref{eq:r4:4}---\eqref{eq:r4:5} 及强流前置第3.2节。
+
+R1 给 \[
+\fint_{q_\Phi>L^2}q_\Phi^2
+\le C L^{-2\epsilon_0}+C\sqrt\eta.
+\tag{4.39}\label{eq:r4:39}
+\] 取 \(L=\eta^{-1/(2+2\epsilon_0)}\)，将 \(|\zeta|^2q_\Phi\) 分到 \(q_\Phi\le L^2\) 及其补集，得到 \[
+\fint|\zeta|^2q_\Phi+\fint|\zeta|^4\le C\eta^\gamma.
+\tag{4.40}\label{eq:r4:40}
+\] 这里用 \(|\zeta|^2\le2q_\Phi\)。因 \(\gamma\le1/2\)，R1 中的 \(\sqrt\eta\) 余项已被保留在右边。
+
+\subsection{2 扭率质量的定量强收敛}\label{ch4:ux626dux7387ux8d28ux91cfux7684ux5b9aux91cfux5f3aux6536ux655b}
+
+由 \eqref{eq:r4:38}、\(\fint S\le C\) 及 \(\fint\nu\le C\eta\)， \[
+\|m-m_*\|_1\le C\eta^{1/4}.
+\] 在 \(m\le M\) 上，以 \(CM\|m-m_*\|_1\) 控制平方误差；在 \(m>M\) 上，用 \(m\le8q_\Phi\) 和 \eqref{eq:r4:39}。取 \(M=\eta^{-1/[4(1+\epsilon_0)]}\)，得到 \[
+\boxed{\|m-m_*\|_2\le C\eta^{\gamma/8}.}
+\tag{4.41}\label{eq:r4:41}
+\] 此外 \(\|\nu\|_2\le C\eta^{\gamma/2}\)。
+
+实际三次 Dirac 方程及轴向抵消给 \[
+\|D^-_{3A}\tau\|_2\le C\eta^{\gamma/2}.
+\tag{4.42}\label{eq:r4:42}
+\] 本式不是从弱 Dirac 收敛中凭空得到的速率；使用的是强流前置中明确的平方估计及 \eqref{eq:r4:40}。
+
+\subsection{3 电流和完整第一扭率投影}\label{ch4:ux7535ux6d41ux548cux5b8cux6574ux7b2cux4e00ux626dux7387ux6295ux5f71}
+
+原多项式曲率式为 \[
+\rho^3f+2Q=2\rho^2(d\operatorname{Im}\zeta)^-+\mathcal R,
+\qquad
+|\mathcal R|\le C\left(\rho^3|\operatorname{Ric}^{\circ}|
++\rho^{3/2}|\zeta|\,|\nabla\Phi|\right).
+\] 令 \(S=m_*+m+\nu\)。\(S\ge m_*\)、\(m\le S\)，且 \[
+\|S-2m_*\|_2\le C\eta^{\gamma/8}.
+\] 使用有界系数 \(2-(9/8)\rho^6/S\)，先把 \(m\) 写成 \(m_*+(m-m_*)\)，便可用 \eqref{eq:r4:41} 控制与 \(Q\) 的乘积，不需要对两个任意 \(L^2\) 量作错误乘积估计。由此 \[
+\|\rho^2(d\operatorname{Im}\zeta)^-\|_2\le C\eta^{\gamma/8}.
+\] 在 \(\rho\ge c_0\) 上除以 \(\rho^2\)。在 \(\rho<c_0\) 上，体积比例为 \(O(\eta)\)，并用 \[
+|d\zeta|\le C\left(q_\Phi+\rho|F^{S^+}|\right).
+\] R1 通过阈值分割给出 \[
+\fint_{\rho<c_0}q_\Phi^2
+\le C\eta^{\epsilon_0/(2+\epsilon_0)}+C\sqrt\eta.
+\] \(F^{S^+}\) 的有界模型加 \(L^2\) 小误差也控制另一项。因此 \[
+\|d\operatorname{Im}\zeta\|_2\le C\eta^{\gamma/8}.
+\] 这里由 Stokes 使两手性 exterior derivative 能量相等。对1-form和标量 \(\rho\) 使用 Bochner 时，只出现 Ricci 与 \(|\zeta|^2\)、\(|d\rho|^2\) 的配对，\eqref{eq:r4:40} 控制这些误差；同样对 \(q_\Phi-4/9\) 的有界 \(\rho\) 区及低 \(\rho\) 区分割给 \(L^2\) 误差 \(O(\eta^{\gamma/8})\)。遂得 \[
+\boxed{\|\nabla\zeta\|_2+\|N_\tau\|_2\le C\eta^{\gamma/8}.}
+\tag{4.43}\label{eq:r4:43}
+\] 完整 \(N_\tau\) 使用原给定多项式投影式；不把它只解释成 Dirac 迹。
+
+\subsection{4 上幅度截断和 resolvent 的速率}\label{ch4:ux4e0aux5e45ux5ea6ux622aux65adux548c-resolvent-ux7684ux901fux7387}
+
+对固定大阈值测试扭率 Lichnerowicz 公式，正的径向项保留在左边。右边由 \eqref{eq:r4:41}---\eqref{eq:r4:42} 和 \(\|f-K_{\rm fit}\|_2\) 控制。因阈值与 \(m_*\) 有固定正距离， \[
+\fint_{m>L}|\nabla\tau|^2\le C\eta^{\gamma/4}
+\] （调整固定阈值后使用）。因此有界径向 cap \(u\) 满足 \[
+\|u-\tau\|_{H^1}\le C\eta^{\gamma/8},
+\quad \|Du\|_2+\|(\mathcal V+2)u\|_2\le C\eta^{\gamma/8}.
+\] 对 \eqref{eq:r4:18}，精确恒等式 \[
+(I+T)(v-u)=-D^*Du+(\mathcal V+2)u
+\] 和能量配对给 \[
+\|v-u\|_{H^1}\le C\eta^{\gamma/8}.
+\] \(v,u\) 均一致有界，所以 \(\||v|^2-m_*\|_2\le C\eta^{\gamma/8}\)；同时 \(Tv-2v=3(u-v)\)，且 \(N_v-N_\tau\) 在 \(\rho\ge c_0\) 上由 \(\nabla(v-\tau)\) 控制。综上，可保守地统一写为 \[
+\boxed{\mathfrak e\le C\eta^\vartheta,\qquad
+\vartheta=\frac{\epsilon_0}{16(1+\epsilon_0)}>0.}
+\tag{4.44}\label{eq:r4:44}
+\] 这些前置速率全部独立于 \(b\)。\(b\) 第一次以增长预算进入本证明，是 \eqref{eq:r4:21} 中对负手性辅助截面的完整 Hessian 控制。
+
+\subsection{5 特征数的统一正下界}\label{ch4:ux7279ux5f81ux6570ux7684ux7edfux4e00ux6b63ux4e0bux754c}
+
+\(\fint|F_A^+|^2\to8/9\) 由 \(\rho\) 的速率直接得到。\(K_{\rm fit}\) 的范数平方是 \(\rho,m,S\) 的有界有理表达式，分母 \(S\ge m_*\)，故 \eqref{eq:r4:41} 控制其平均误差。再用 \(f-K_{\rm fit}\) 的 \(L^2\) 误差，得到 \[
+\frac{a^2[M]}V=\frac1{4\pi^2}\fint\left(|F_A^+|^2-|F_A^-|^2\right)
+=\frac1{6\pi^2}+O(\eta^\vartheta).
+\] 故 \(c_1(L^5)^2/V\ge25/(12\pi^2)\) 在一个普适的小 \(\eta\) 范围内成立。
+
+把 \eqref{eq:r4:44} 代入 \eqref{eq:r4:37} 得 \[
+\vartheta\log(1/\eta)-\log C
+\le\log(1/\mathfrak e)\le C\mathsf K^2.
+\] 整理即得 \eqref{eq:r4:1}。若 \(\eta\) 不小，缩小前面的普适 \(c\) 使 \eqref{eq:r4:1} 自动成立。
+
+\section{全参数及原度量上的显式有限密度常数}\label{ch4:ux5168ux53c2ux6570ux53caux539fux5ea6ux91cfux4e0aux7684ux663eux5f0fux6709ux9650ux5bc6ux5ea6ux5e38ux6570}
+
+在 \(s=-4\)、\(\kappa\le1\)、\(\chi/A\le B\) 时，原标量预算给 \(A/V\le1/(2\pi^2)\)。Gauss--Bonnet 因而给 \[
+b\le4B-\frac23+\frac{P}{2V}\le C(1+B).
+\] \eqref{eq:r4:1} 遂给 \[
+\kappa+\beta^{-2}\ge m_B,
+\qquad m_B=c_0e^{-C_0(1+B)^2},
+\tag{4.45}\label{eq:r4:45}
+\] 可先缩小 \(c_0\) 使 \(m_B\le1/8\)。置 \(\beta_B=(2/m_B)^{1/2}\ge4\)。
+
+\begin{itemize}
+\tightlist
+\item
+  当 \(\beta\ge\beta_B\)，有 \(\kappa\ge m_B/2\)。
+\item
+  当 \(2\le\beta\le\beta_B\)，使用原有限参数估计 \[
+  \kappa\ge r+D_\beta/(\beta V)
+  \ge c_f(\beta-2)^2/\beta^4
+  \ge(c_fm_B/2)(\beta-2)^2/\beta^2.
+  \]
+\end{itemize}
+
+\(\kappa\ge1\) 分支显然足够。故得到标量代表上的 \eqref{eq:r4:2}。对于原度量，若 \(\kappa_g<1/16\)，原精确共形比较使 \[
+\kappa_{\widehat g}\le
+\frac{\kappa_g}{1-\sqrt{\kappa_g}-\kappa_g/16}\le2\kappa_g.
+\] 大缺陷分支直接处理。\(p,a^2,A,\chi/A\) 的原供给与拓扑条件沿这一比较保留。由此得到 \eqref{eq:r4:2} 对全部原允许度量成立。
+
+\textbf{这一推论不要求按 \(B\) 重新证明一次几何紧性。它只依赖明确显示的指数损失，不能将损失删掉。}
+
+\section{为什么这仍然不是无条件 O10：一个独立边界检验}\label{ch4:ux4e3aux4ec0ux4e48ux8fd9ux4ecdux7136ux4e0dux662fux65e0ux6761ux4ef6-o10ux4e00ux4e2aux72ecux7acbux8fb9ux754cux68c0ux9a8c}
+
+\eqref{eq:r4:1} 允许 \(b\) 至少以 \(\sqrt{\log(1/\eta)}\) 的规模增长。原 O10 的输入没有禁止例如 \(b\) 为 \(\log(1/\eta)\) 量级；本文没有证明这样的实际序列存在，也没有证明它被排除。
+
+不能仅把本章的定量线丛引理加强成``不管 Dirichlet 能量多大都使陈数消失''。在固定紧几何上，取具有正平方的线丛及一个具有横截零除子的光滑截面 \(s_0\)，令 \[
+s_\varepsilon=\frac{s_0}{\sqrt{|s_0|^2+\varepsilon^2}}.
+\] 固定曲率保持不变，\(|s_\varepsilon|\to1\) 于 \(L^2\)，但在横截的实余维2零集附近，相位导数产生 \(O(|\log\varepsilon|)\) 的能量增长。陈数当然不会随截面改变。这是线丛分析的范围检验，\textbf{不是}满足 O10 实际 SW 与 Ricci 条件的反例。
+
+因此要彻底删除密度，必须继续使用实际 O10 方程，阻止 \eqref{eq:r4:1} 允许的快速增长机制，或构造满足原始全部假设的真实逃逸。单纯再次正则化一个能量任意增长的线丛截面，并不能自动完成这件事。
+
+\section{与后续多项式版本的关系}\label{ch4:ux4e0eux540eux7eedux591aux9879ux5f0fux7248ux672cux7684ux5173ux7cfb}
+
+收到的续研 E 进一步将其固定误差清单接为 \[
+\kappa_\beta+\beta^{-2}\ge c(1+b)^{-p},
+\qquad p=24/\gamma,\quad\gamma=\epsilon_0/(1+\epsilon_0).
+\] 该多项式界在它列明的同一前置和误差转接成立时强于上文指数界。本章对数引理本身仍独立保留；不同记录中的误差符号只有在范数清单对应后才能比较。\cite{WeightedReport}
+
+\begin{thebibliography}{P99}
+\small
+\bibitem[R04]{R04} 本会话研究原稿，\emph{增长能量下的对数陈数约束与逃逸速率}，2026-09-29。\path{O10_Quantitative_Escape_and_O11_Boundary.md}。
+
+\bibitem[P03]{Strong} 所提供网页续研，\emph{O10 Strong Current}，2026-09-29，R1--R2 及同解曲率拟合。
+
+\bibitem[P05]{FD} 所提供网页续研，\emph{O10 closes at every fixed finite Euler density}，2026-09-29，\path{O10_All_Finite_Density.md}。
+
+\bibitem[P07]{WeightedReport} 所提供网页续研 E，\emph{O10/O11 本轮直接研究、效率问题与准确结果}，第2节；原始误差的多项式转接。
+
+\end{thebibliography}
+\end{document}

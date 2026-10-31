@@ -1,0 +1,451 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=26mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,mathrsfs,esint,booktabs,array,enumitem}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black,citecolor=blue!50!black]{hyperref}
+\usepackage{xcolor}
+\setlist{nosep}
+\setlength{\parskip}{4pt}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\vol}{\operatorname{Vol}}
+\newcommand{\av}{\mathop{\fint}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cC}{\mathscr C}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\dd}{\,dV}
+\title{Einstein Gaps on Four-Manifolds\\\large Mathematical continuation of the four-problem manuscript}
+\author{Research continuation prepared from the two supplied manuscripts}
+\date{8 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We connect the supplied Ricci-sector insertion corrector to its corrected critical-background remainder theorem, extend strict insertion savings uniformly over arbitrary covers of a fixed general-type surface, and remove the standard-sphere cap assumption in a low-energy AE branch using the Chang--Gursky--Yang sphere theorem. Two additional consequences concern the Ricci energy of hypothetical Einstein metrics and the average torsion of negative Einstein almost-K\"ahler metrics. We also correct a Hodge-projection inference in A02.64. These are continuations of explicitly identified inputs, not complete answers to the four global questions. The unrestricted Einstein existence question, the optimal curvature infimum, smooth non-Bach-flat global attainment, and negative Goldberg remain unresolved by this document.
+\end{abstract}
+\tableofcontents
+
+\section{Questions, conventions, and proof dependencies}
+The inputs, supplied on 8 October, are
+\begin{itemize}
+\item \texttt{01\_Research\_Synthesis.tex};
+\item \texttt{02\_Mathematical\_Source\_Companion.tex}.
+\end{itemize}
+Labels such as A01.53R and A02.59D refer to their internal research records.
+The present document does not silently replace an inherited theorem by a new proof.
+
+For a closed oriented four-manifold set
+\[
+ P=\int|\Ric^\circ|^2\dd,\quad S=\int s^2\dd,\quad
+ R=\int|\Ric|^2\dd=P+S/4,\quad
+ W_\pm=\int|W^\pm|_{\mathrm{op}}^2\dd.
+\]
+The Weyl norm is the Hilbert--Schmidt norm on curvature operators. Thus
+\[
+ |W_{(0,4)}|^2=4|W_{\mathrm{op}}|^2,\qquad
+ 4\pi^2(2\chi\pm3\tau)=S/24+2W_\pm-P/2.
+\]
+Write $\cR^+=W^++sI/12$, $p_*(M)=\inf_gP(g)$, and
+\[
+ D_\beta=(1+\beta^{-1})S+6(\beta+1)W_+-72\pi^2p,
+ \qquad p=(a_g^+)^2.
+\]
+The four targets are distinct:
+\begin{enumerate}
+\item Q1: Einstein existence on $X\#k\overline{\CP}^2$ for minimal general-type $X$ and $k>0$, especially small $k/c_1^2(X)$.
+\item Q2: the unrestricted $P$ infimum, or matching asymptotic bounds, on these smooth manifolds.
+\item Q3: a smooth closed non-Bach-flat global minimizer of $P$, as opposed to a critical metric or an ideal orbifold limit.
+\item Q4: integrability of every closed negative Einstein almost-K\"ahler four-manifold.
+\end{enumerate}
+
+\begin{center}\small
+\begin{tabular}{p{.27\linewidth}p{.31\linewidth}p{.32\linewidth}}
+\toprule
+Input & Connection established here & What it does not supply\\\midrule
+A01.53R and corrected A02.59D & General critical-background insertion with no Ricci-sector restriction & Global reconstruction or smooth attainment\\
+General KE insertion and ADE recovery & Uniform strict saving on arbitrary fixed-base covers & Matching lower bound\\
+Scalar-flat AE geometry and CGY & Standard smooth cap below $16\pi^2$ & Nontrivial ALE groups or collapse exclusion\\
+I40/I41 and classical Ricci infimum & Separation of Einstein candidates from the Ricci minimum & Einstein nonexistence\\
+FD and AK identities & Separation from maximal average torsion & Vanishing of torsion\\\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Burns insertion on general critical backgrounds}
+\begin{theorem}[Connection of A01.53R with A02.59D]\label{thm:insert}
+Assume the corrected remainder theorem A02.59D, including its fixed-corrector expansion, holds in the conventions of the supplied manuscript. Let $g$ be smooth and $P$-critical throughout the support of the insertion. At the insertion point choose a unit eigenvector $\zeta\in\Lambda^+$ of $\cR^+$, with eigenvalue $\mu$, and put
+\[
+ T_\zeta=(\cR^+|_{\zeta^\perp})^\circ.
+\]
+There is an actual smooth competitor, equal to $g$ outside the insertion ball, on the blowup, satisfying
+\begin{align}
+ P(g_\eps)={}&P(g)+8\pi^2-8\pi^2\mu\eps\notag\\
+ &+4\pi^2\{-\mu(\mu-s/8)-|T_\zeta|^2\}
+ \eps^2\log(1/\eps)+O(\eps^2).\label{eq:insert}
+\end{align}
+No Einstein or small trace-free Ricci assumption is needed for this competitor statement. The remainder depends on the fixed background and fixed insertion data.
+\end{theorem}
+
+\subsection{The Ricci-sector corrector with the actual Burns tail}
+Set $u=|x|^2$, $J=J_\zeta$, and use the invariant tail
+\[
+ B=\frac{uI-xx^T-(Jx)(Jx)^T}{u^2}.
+\]
+This avoids the quaternionic-index inconsistency in the printed A01.53R formula. In the A01.52 frame with $J=J_3$, the numerator is $v_1v_1^T+v_2v_2^T$, not $v_0v_0^T+v_1v_1^T$ when $v_0=x$.
+
+For $E\in\operatorname{Sym}^2_0$, let
+\[
+ q=x^TEx,\quad E_H=(E+J^TEJ)/2,\quad q_H=x^TE_Hx,
+\]
+\[
+ f=-q/4,\quad V=-uEx/12+qx/6,\quad
+ h_E=-\tfrac16\{uE+qI-(Ex)x^T-x(Ex)^T\}.
+\]
+Direct differentiation gives $h_E=\mathcal L_V\delta+2f\delta$ and
+\[
+ \tr B=2/u,\quad \operatorname{div}B=-2x/u^2,
+ \quad \operatorname{div}B-\tfrac12d\tr B=0.
+\]
+For the coordinate Laplacian $\Delta=\sum_i\partial_i^2$,
+\[
+ \Delta'_B f=-q_H/u^2,\qquad
+ \Delta\left(-\frac{q_H}{8u}\right)=q_H/u^2.
+\]
+Indeed $q_H$ is harmonic homogeneous quadratic and
+$\Delta(q_H/u)=-8q_H/u^2$. Hence
+\[
+ f_z=f-zq_H/(8u),\qquad \Delta_{\delta+zB}f_z=O(z^2)
+\]
+on fixed annuli. Define the degree-zero corrector
+\[
+ K_E=\mathcal L_VB-\frac q2B-\frac{q_H}{4u}\delta.
+\]
+Then
+\[
+ \mathcal L_V(\delta+zB)+2f_z(\delta+zB)
+ =h_E+zK_E+O(z^2).
+\]
+The Burns background is scalar-flat and anti-self-dual. Naturality of Weyl curvature and the conformal scalar-curvature variation therefore imply, with
+$\cC=(2W^+,s/\sqrt{12})$,
+\begin{equation}
+ D\cC_{\delta+zB}[h_E+zK_E]=O(z^2).\label{eq:riccorrect}
+\end{equation}
+This is the explicit cancellation required for the trace-free Ricci sector.
+
+\subsection{Why cross terms do not restore a Ricci obstruction}
+The corrected corner functional is the full integrated coefficient
+\[
+ \Phi(h,K)=\frac1{8\pi^2}\int_{S^3}[z^2]
+ |D\cC_{\delta+zB}[h+zK]|^2_{\delta+zB}\,dV_{\delta+zB}.
+\]
+It includes the varying tensor norm and volume form. It is a quadratic form invariant under $SU(2)_-$, which fixes the self-dual structures and $B$.
+Under this group, $(s,W^+)$ is trivial, $W^-$ is spin $2$, and
+$E\cong\Lambda^+\otimes\Lambda^-$ is three copies of spin $1$.
+The explicit corrector maps are equivariant. Polarization and Schur orthogonality therefore kill every cross term between these three sectors in the \emph{complete integrated coefficient}.
+
+Equation \eqref{eq:riccorrect} kills the pure Ricci-sector coefficient. The supplied A01.50/A02.59D computation kills the pure $W^-$ sector. Choose the sum of these two correctors and the supplied eigenvector-sector corrector. Only the latter contributes, giving
+\[
+ \Phi=-\mu(\mu-s/8)-|T_\zeta|^2.
+\]
+A02.59D supplies the actual remainder for every fixed corrector and the linear flux $-8\pi^2\mu\eps$. It therefore yields \eqref{eq:insert}. This argument establishes an attained coefficient for this explicit construction; it does not assert optimization over every possible neck metric.
+
+\subsection{Conditional consequence for an ideal minimizer}
+Suppose an ideal minimizing configuration has an exact energy identity and a Burns component that can be relocated to regular points of a critical bulk while preserving the original smooth topology and controlling reconstruction error. At every accessible point, \eqref{eq:insert} implies
+\[
+ \cR^+\le0,\qquad
+ \ker\cR^+\ne0\ \Longrightarrow\
+ \operatorname{spec}(\cR^+)=(0,s/8,s/8).
+\]
+The first assertion follows from a positive eigenvalue and its first-order saving. The second follows from the negative logarithmic term at a kernel direction unless $T_\zeta=0$.
+This now applies to non-Einstein critical bulks as well. It does not exclude $\cR^+<0$, prove reconstruction, or extend arguments using $\delta W^+=0$ from Einstein metrics to arbitrary critical metrics.
+
+\section{Uniform strict upper bounds over general-type covers}
+\begin{theorem}\label{thm:cover}
+Let $X_0$ be a fixed minimal complex surface of general type. Assume the general KE insertion theorem and canonical-model ADE recovery recorded in A01.52/A02.59D. Let $X_j\to X_0$ be arbitrary finite unramified covers of degree $d_j\to\infty$, and let $1\le k_j=o(d_j)$. There exists $\delta_{X_0}>0$, independent of the particular covering sequence, such that eventually
+\[
+ p_*(X_j\#k_j\overline{\CP}^2)
+ \le8\pi^2(1-\delta_{X_0})k_j.
+\]
+The covers need not be normal or nested.
+\end{theorem}
+\begin{proof}
+Choose a fixed contractible ball and collar in the regular locus of the canonical model of $X_0$. The negative KE metric has scalar curvature $s\ne0$ and
+$\cR^+=\operatorname{diag}(s/4,0,0)$. For a kernel insertion,
+$|T_\zeta|^2=s^2/32$, so
+\[
+ I(\eps)=8\pi^2-\frac{\pi^2s^2}{8}\eps^2\log(1/\eps)+O(\eps^2).
+\]
+Fix $\eps$ small enough that $I(\eps)=8\pi^2-\sigma$ for some $\sigma>0$.
+Each cover contains $d_j$ disjoint isometric lifts of the ball. Eventually $k_j\le d_j$; insert this same fixed metric in $k_j$ lifts. The differences add exactly because all supports are disjoint and collars agree exactly.
+
+If $K_{X_0}$ is ample, the lifted background has $P=0$. Otherwise use the supplied smooth ADE recovery metrics $g_\lambda$, identical to the KE background on the chosen collar, with $P(g_\lambda)\to0$. Fixing the insertion scale \emph{first}, choose $\lambda_j$ so that
+\[
+ d_jP(g_{\lambda_j})\le\sigma k_j/2.
+\]
+The total is at most $(8\pi^2-\sigma/2)k_j$. Take
+$\delta_{X_0}=\sigma/(16\pi^2)$.
+\end{proof}
+
+For the project defect
+\[
+ \mathcal E(g)=\inf_{\lambda\ne0}
+ \frac{\int|\Ric-\lambda g|^2\dd}{\lambda^2\vol(g)},\qquad
+ \alpha(M)=\inf_g\mathcal E(g),
+\]
+put $A_j=d_jc_1^2(X_0)$ and $h_j=k_j/A_j$. Actual sign-class supply gives a negative Yamabe representative $\widehat g$ in each relevant conformal class, with
+\[
+ P(\widehat g)\le P(g),\quad S(\widehat g)\ge32\pi^2A_j,
+ \quad\mathcal E(\widehat g)=4P(\widehat g)/R(\widehat g).
+\]
+Thus the constructed metrics imply directly
+\[
+ \limsup_j\frac{\alpha(M_j)}{h_j}\le4(1-\delta_{X_0})<4.
+\]
+This avoids importing a balanced-family comparison into a pure-blowup family. It is an upper bound, not a matching asymptotic formula.
+
+\begin{proposition}[Limitation of uniformly shrinking independent cells]
+For disjoint kernel insertions in a uniformly controlled family of background balls, if all scales tend uniformly to zero, then
+\[
+ \frac{P(g_{\boldsymbol\eps})-P(g)}{8\pi^2k}\longrightarrow1.
+\]
+\end{proposition}
+\begin{proof}
+Add \eqref{eq:insert} with $\mu=0$, divide by $k$, and bound the averaged correction by a fixed constant times
+$\max_i\{\eps_i^2\log(1/\eps_i)+\eps_i^2\}\to0$.
+\end{proof}
+Consequently this independent shrinking-cell construction cannot produce $o(k)$, including $k^2/A$ when $k/A\to0$. That scale would require a different geometric mechanism. This is not a restriction on all competing metrics.
+
+\section{A standard smooth cap in the low-energy AE branch}
+\begin{theorem}\label{thm:cap}
+Let $(N^4,g)$ be connected, oriented, complete and scalar-flat, with one asymptotically Euclidean end of trivial group. Assume
+\[
+ |\partial^j(g-\delta)|\le Cr^{-\tau-j}\quad(j=0,1,2),\qquad\tau>0,
+\]
+$b_1(N)=b_2(N)=0$, and $P(g)<16\pi^2$. Then the smooth one-point cap $\widehat N$ is diffeomorphic to the standard $S^4$.
+\end{theorem}
+\begin{proof}
+The one-point cap has $\chi=2$, so $\chi(N)=1$. Relative Gauss--Bonnet, whose AE boundary contribution is $1$, gives
+\[
+ 8\pi^2(\chi(N)-1)=\int|W_{\mathrm{op}}|^2-P/2=0.
+\]
+Therefore $\int|W_{(0,4)}|^2=2P<32\pi^2$.
+
+Truncate the end to the exact Euclidean metric outside $2R$, using
+$g_R=\delta+\zeta(r/R)(g-\delta)$ and retaining $g$ inside $R$.
+Its transition curvature is $O(R^{-2-\tau})$, so
+\[
+ \|(s_{g_R})_-\|_2=O(R^{-\tau}),\quad
+ \int|W_{(0,4),g_R}|^2=2P+o(1).
+\]
+A fixed connected AE manifold has a homogeneous Sobolev inequality
+\[
+ \|f\|_4^2\le C_S\int|df|^2\quad(f\in C_c^\infty(N)).
+\]
+For completeness, control the compact-interior $L^2$ term by the gradient and an annular $L^2$ term using Poincar\'e with annular mean. On the Euclidean end, radial integration from a fixed radius to infinity and Cauchy--Schwarz with weight $r^3$ control that annular term by the gradient. Patching with the Euclidean Sobolev inequality proves the displayed estimate. The uniformly equivalent $g_R$ have a common constant $C'_S$.
+Consequently, for large $R$,
+\[
+ 6\int|df|_{g_R}^2+\int s_{g_R}f^2
+ \ge(6-C'_S\|(s_{g_R})_-\|_2)\int|df|_{g_R}^2
+ \ge\frac3{C'_S}\|f\|_{4,g_R}^2.
+\]
+Choose a positive conformal factor equal to $r^{-2}$ beyond $3R$.
+The metric extends smoothly over the added point by Euclidean inversion, since the far tail was made exactly Euclidean. Conformal covariance and the zero $H^1$ capacity of a point transfer the preceding positive Yamabe inequality to the smooth cap. Weyl energy is unchanged by this conformal change. Hence, for large $R$,
+\[
+ Y(\widehat N,[\bar g_R])>0,\qquad
+ \int_{\widehat N}|W_{(0,4),\bar g_R}|^2<32\pi^2
+ =16\pi^2\chi(\widehat N).
+\]
+Chang--Gursky--Yang's Theorem A \cite{CGY} identifies the cap with $S^4$ or $\mathbb{RP}^4$. Orientation and Euler characteristic select $S^4$.
+\end{proof}
+
+This uses classical sphere rigidity to remove a particular project hypothesis; it is not a new sphere theorem. The Sobolev constant belongs to a fixed AE space. No uniform Sobolev hypothesis on the original minimizing sequence has been inserted.
+
+The supplied AE charge inequality is
+\[
+ P(N)/(8\pi^2)\ge4(e-1)+4b_1+b^--5b^+.
+\]
+Once an independent argument establishes $b^+=0$, a bound $P<8\pi^2$ forces $e=1$ and $b_1=b_2=0$, so Theorem~\ref{thm:cap} applies. Thus the standard-sphere assumption in this branch can be removed.
+
+The result does not identify nontrivial ALE end groups with trivial groups. Ricci-flat ALE spaces can have nonzero second homology and zero $P$. Nor does it choose the compact smooth branch from Anderson's ideal minimizing alternatives \cite{Anderson}. Smooth attainment remains the missing global step in Q3.
+
+\section{What the existing coercivity implies for Einstein candidates}
+Put $M=X\#k\overline{\CP}^2$, $A=c_1^2(X)$, and $T=A-k$.
+Assume the supplied actual sign-class input $p\ge A$, $a^2=T$, and I40/I41 in the form
+\[
+ \Sigma\le C(P+D_2),\qquad \Sigma=S-32\pi^2p.
+\]
+Enlarge $C$ if necessary so $C>8/9$ and set $\theta=8/(9C-8)$.
+\begin{proposition}
+Any Einstein metric on $M$ satisfies
+\[
+ R(g_E)\ge8\pi^2[A+(1+\theta)k].
+\]
+\end{proposition}
+\begin{proof}
+For $P=0$, Chern--Weil gives
+\[
+ D_2=\tfrac98\Sigma-36\pi^2(p-T).
+\]
+Thus $(9C/8-1)\Sigma\ge36\pi^2C(p-T)$, or
+$\Sigma\ge32\pi^2(1+\theta)(p-T)$.
+Use $R=S/4$, $p\ge A$, and $p-T\ge k$.
+\end{proof}
+The classical exact Ricci infimum is $\inf R=8\pi^2(A+k)$ \cite{LeBrunRicci}; hence
+\[
+ R(g_E)-\inf_gR(g)\ge8\pi^2\theta k.
+\]
+This separates Einstein candidates from a different curvature minimum. An Einstein metric minimizes $P$, but need not minimize $R$. Therefore this separation does not prove Q1. Similarly, Burns insertion changes the smooth manifold and gives $P<8\pi^2$, not a negative-$P$ competitor on the original manifold.
+
+\section{An exact obstruction to closing Q1--Q2 by scalar budgets alone}
+This section gives formal numerical data, not a metric or a field solution.
+Let $0<h=k/A\le1/24$ and assign
+\begin{gather*}
+ \chi=A/3+k,\quad\tau=A/9-k,\quad a^2=T=A-k,\quad p=A,\quad P=0,\\
+ S=32\pi^2(A+5k),\quad V=2\pi^2(A+5k),\quad s=-4,\\
+ W_+=\tfrac{4\pi^2}{3}(A-4k),\qquad W_-=\tfrac{20\pi^2}{3}k.
+\end{gather*}
+Both Chern--Weil identities hold and all energies are nonnegative. In the abstract intersection space, put the minimal canonical class in $H^+$ and all exceptional classes in $H^-$. The sign classes then have $p=A$ and square $A-k$; this says nothing about geometric realization of the assigned energies.
+
+Direct substitution gives
+\begin{equation}
+ \frac{D_\beta}{\beta V}
+ =\frac{4(1-4h)(\beta-2)^2+144h}{(1+5h)\beta^2}.
+ \label{eq:formal}
+\end{equation}
+Moreover, for all $\beta\ge2$,
+\begin{equation}
+ D_\beta/V\ge8(\beta-2)^2/\beta^2.\label{eq:fdformal}
+\end{equation}
+To verify this, set $x=\beta-2$. The numerator of the difference after multiplication by $(1+5h)\beta^2/4$ is
+\[
+ (1-4h)x^3-18hx^2+36hx+72h.
+\]
+Since $2x^2\le x^3+x$ for $x\ge0$, this is at least
+$(1-13h)x^3+27hx+72h\ge0$.
+
+A compact negative KE ball quotient at $h=0$ satisfies
+$D_\beta/V=4(\beta-2)^2/\beta$. Thus any universal FD constant in the displayed form, for a density bound including this calibration, is at most $8$, by $\beta\downarrow2$.
+Consequently even the best constant in that scalar FD conclusion cannot exclude \eqref{eq:formal}. Also
+\[
+ \Sigma=160\pi^2k,\quad D_2=144\pi^2k,\quad
+ \Sigma/(P+D_2)=10/9,
+\]
+so current nonsharp I41 constants $C\ge10/9$ allow these data. N1 permits them when its stated small constant is at most $1/3-h$.
+
+The conclusion is precise: these listed scalar consequences do not alone imply $P>0$ in the small-blowup range. Additional differential or realization information is required. This calculation neither constructs an Einstein metric nor disproves a sharper field estimate.
+
+\section{A finite-density consequence for negative Goldberg}
+Normalize $\Ric=-g$, so $s=-4$, and let $(g,J,\omega)$ be closed almost-K\"ahler with $|\omega|^2=2$. Set
+\[
+ T=2\chi+3\tau=c_1(J)^2>0,\quad u=|\nabla\omega|^2/4,
+ \quad\eta=W^+(\omega)-(-2/3+u)\omega,
+\]
+\[
+ x=\av u,\quad z=\av u^2,\quad e=\av|\eta|^2,
+ \quad w=\av|W_3^+|^2,\quad v=z-x^2.
+\]
+The supplied AK identity, in these norm conventions, is
+\[
+ 3z+e+2w=2x.
+\]
+It implies $0\le x\le2/3$. With $\delta=2/3-x$,
+\begin{equation}
+ e+2w+3v=2\delta-3\delta^2,\qquad
+ \av|W^+|^2=\delta+e/2\le2\delta-\tfrac32\delta^2.
+ \label{eq:akbalance}
+\end{equation}
+Indeed the Weyl decomposition gives
+$|W^+|^2=(-4+6u)^2/24+|\eta|^2+|W_3^+|^2$.
+
+\subsection{Actual canonical supply and its projection}
+For $a=c_1(J)$ the canonical connection has
+\[
+ [iF_{\mathcal A}]=2\pi a,\qquad
+ (iF_{\mathcal A})^+=(-1+u/2)\omega+\eta.
+\]
+Pairing with the harmonic form $\omega$ yields
+\[
+ 2\pi a\cdot[\omega]=V(-2+x),\qquad
+ p=(a^+)^2\ge\frac{V}{8\pi^2}(2-x)^2.
+\]
+Taubes supply gives an ordinary actual solution for the canonical Spin$^c$ structure when $b^+>1$. For $b^+=1$, the chamber must be retained: $a\cdot[\omega]<0$, whereas the path of perturbations $t\omega$, $t\ge0$, lies on the other side of the reducible wall $\varphi_H=2\pi a^+$. Thus the Taubes chamber reaches zero perturbation without crossing a wall in LeBrun's convention \cite{LeBrunAK}. Compactness supplies an unperturbed solution. The same argument works throughout the conformal class, whose self-dual harmonic subspace is unchanged.
+The resulting solution is not necessarily the distinguished constant canonical spinor. Its curvature has the transverse term $\eta$, which cannot be omitted.
+
+\begin{theorem}[Conditional on the supplied FD theorem]\label{thm:torsion}
+If $\chi/T\le B<\infty$, then
+\[
+ \av\frac{|\nabla\omega|^2}{4}
+ \le\frac23-\min\left\{\frac1{12},\frac{c_{\rm FD}(B)^2}{12288}\right\}.
+\]
+Here $c_{\rm FD}(B)$ is the constant in the project's finite-density endpoint theorem.
+\end{theorem}
+\begin{proof}
+Take $A=p$ in FD. Since $p\ge a^2=T>0$ and $\chi>0$, its density condition holds. The Einstein residual is zero, so
+\[
+ D_\beta/V\ge c_{\rm FD}(B)(\beta-2)^2/\beta^2.
+\]
+Use \eqref{eq:akbalance} and the projection bound to obtain
+\begin{align*}
+ D_\beta/V
+ &\le16(1+\beta^{-1})
+ +6(\beta+1)(2\delta-3\delta^2/2)-9(4/3+\delta)^2\\
+ &=16/\beta+(12\beta-12)\delta-(9\beta+18)\delta^2\\
+ &\le16/\beta+12\beta\delta.
+\end{align*}
+If $\delta=0$, send $\beta$ to infinity for a contradiction. If
+$0<\delta\le1/12$, choose $\beta=2/\sqrt{3\delta}\ge4$. Then
+$c_{\rm FD}(B)/4\le16\sqrt{3\delta}$, yielding
+$\delta\ge c_{\rm FD}(B)^2/12288$. The other branch is immediate.
+\end{proof}
+
+The theorem excludes approach to the maximal average-torsion endpoint. It leaves the interval $0<x\le2/3-\eps(B)$ and does not prove integrability. In particular an averaged negative star-scalar bound does not imply the pointwise hypothesis of LeBrun's symplectic minimality theorem \cite{LeBrunAK}.
+Apostolov--Armstrong--Dr\u aghici already show that, in the negative Einstein case, $\eta\equiv0$ is sufficient for K\"ahlerness \cite{AAD}. What remains is to derive this vanishing from the unrestricted closed-manifold equations; no such derivation is supplied here.
+
+\section{Correction to the diffuse-state inference in A02.64}
+The source infers near-minimal \emph{full} twist norm from $P=o(k)$. Hodge projection alone gives less. Write
+\[
+ \gamma_J^-=\rho_0^J+t_J^-,\qquad
+ \mathsf H^-(t_J^-)=2\pi a^--\mathsf H^-(\rho_0^J),
+ \qquad\|\rho_0^J\|_2\le\sqrt{P/2}.
+\]
+Orthogonality gives the exact relation
+\[
+ \|t_J^-\|_2^2
+ =\|2\pi a^--\mathsf H^-(\rho_0^J)\|_2^2
+ +\|(1-\mathsf H^-)t_J^-\|_2^2.
+\]
+Therefore, when $|a^-|^2=k+\Pi$ and $P=o(k)$,
+\[
+ \|t_J^-\|_2\ge2\pi\sqrt{k+\Pi}-o(\sqrt k).
+\]
+Equality up to $o(\sqrt k)$, or proximity of the full twist to $2\pi a^-$, requires an additional estimate on its nonharmonic part. The source's lower RMS torsion conclusion remains valid. A near-harmonic diffuse construction remains a possible candidate, but is not the mandatory form of every cheap competitor.
+
+\section{The remaining mathematical work, stated without changing the targets}
+\begin{description}[leftmargin=0pt,labelwidth=0pt,labelsep=0pt,style=nextline]
+\item[Q1: exact Einstein existence.]
+The coercivity gives a new restriction on any candidate's Ricci energy, not nonexistence. The formal scalar data show why the listed integral budgets cannot finish the small-blowup case. An argument must use further differential information or construct an actual Einstein metric.
+\item[Q2: optimal curvature energy.]
+The strict upper bound now transfers to arbitrary covers of a fixed general-type base. No matching lower bound or exact asymptotic order has been proved. Uniformly shrinking independent Burns cells cannot yield the proposed quadratic scale. The complete competing geometry remains relevant.
+\item[Q3: smooth global attainment.]
+The standard-cap condition can be deleted in the stated low-energy AE branch, and the insertion expansion now constrains general critical bulks. Nontrivial ALE groups, partial collapse, and selection of a compact smooth minimizing branch still need a proof. A critical metric does not by itself solve the global minimization question.
+\item[Q4: negative Goldberg.]
+FD excludes a maximal-torsion endpoint. The transverse component $\eta$ has not been shown to vanish. The canonical spinor cannot be substituted into the ordinary SW equations while discarding that very component.
+\end{description}
+
+The new connections should be inserted into the existing proof dependency graph at these positions. They neither invalidate the established main coercivity theorem nor establish complete solutions of the four public problems. Originality beyond these connections requires a theorem-by-theorem comparison; applications of CGY and of the classical actual-field supply have been identified as such.
+
+\begin{thebibliography}{9}
+\bibitem{Inputs} Supplied project manuscripts, \emph{Research Synthesis} and \emph{Mathematical Source Companion}, 8 October 2026. Internal inputs: A01.50, A01.52, A01.53R; corrected A02.59D; A02.58, A02.63--64; I40/I41 and FD.
+\bibitem{CGY} S.-Y. A. Chang, M. J. Gursky and P. C. Yang, \emph{A conformally invariant sphere theorem in four dimensions}, Theorem A and tensor-norm convention. \url{https://arxiv.org/abs/math/0309287}.
+\bibitem{Anderson} M. T. Anderson, \emph{Canonical metrics on 3-manifolds and 4-manifolds}, Theorem 4.10, equations (4.43), (4.45), Remark 4.12. \url{https://arxiv.org/abs/math/0511034}.
+\bibitem{LeBrunRicci} C. LeBrun, \emph{Ricci Curvature, Minimal Volumes, and Seiberg--Witten Theory}. \url{https://arxiv.org/abs/math/0003068}.
+\bibitem{LeBrunAK} C. LeBrun, \emph{Einstein Metrics, Symplectic Minimality, and Pseudo-Holomorphic Curves}, Proposition 2.1, Theorem A, and the chamber discussion following Theorem 3.4. \url{https://arxiv.org/abs/math/0409290}.
+\bibitem{AAD} V. Apostolov, J. Armstrong and T. Dr\u aghici, \emph{Local models and integrability of certain almost K\"ahler 4-manifolds}, Theorem 1. \url{https://arxiv.org/abs/math/0109098}.
+\end{thebibliography}
+\end{document}

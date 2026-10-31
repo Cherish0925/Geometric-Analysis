@@ -1,0 +1,56 @@
+{
+ "symbolic": {
+  "nu": "-sqrt(x)*w(x)/(2*(x + 1)**(5/2))",
+  "lambda": "-(x**2*Derivative(w(x), x) - 3*x*w(x) + x*Derivative(w(x), x) + 2*w(x))/(2*(x + 1)**3)",
+  "L_AK": "x*(x**4*Derivative(w(x), x)**2 - 6*x**3*w(x)*Derivative(w(x), x) + 2*x**3*Derivative(w(x), x)**2 + 6*x**2*w(x)**2 - 2*x**2*w(x)*Derivative(w(x), x) + x**2*Derivative(w(x), x)**2 - 15*x*w(x)**2 + 4*x*w(x)*Derivative(w(x), x) + 4*w(x)**2)/(4*(x + 1)**6)",
+  "mu": "x**3/(4*(x + 1)**4)",
+  "A": "-x**2*(3*x - 2)/(4*(x + 1)**5)",
+  "identity_residual": "0",
+  "statement": "L_AK = mu*(dw/dx)^2 + d(A*w^2)/dx"
+ },
+ "mass_mode": {
+  "rho": 10.0,
+  "w": 1.0,
+  "raw_Ricci_action": 0.0,
+  "AK_tail_action": 0.004346449261414086,
+  "entry_interface_Aw2": -0.004346449261414086,
+  "AK_plus_entry_interface": 0.0,
+  "interpretation": "Einstein mass mode has zero raw action; nonzero AK tail is exactly cancelled by interface flux."
+ },
+ "profile": {
+  "evaluation_scope": "CH quadratic bridge reconstructed from the nonlinear profile; not the exact nonlinear tail action",
+  "record": "data/perp_direct/lm3_x00.038_X128_d24.json",
+  "rho": 10.0,
+  "X": 128.0,
+  "entrance": {
+   "q": 0.0025112948503122397,
+   "w": -1.008590980334897,
+   "wp": -0.03576333569476137,
+   "nu": 0.003973775899172981,
+   "lambda_AK": -0.009130946853100256,
+   "A": -0.004346449261414086
+  },
+  "exit": {
+   "q": 0.0,
+   "w": 0.0,
+   "A": -4.3800066298335346e-05
+  },
+  "raw_tail_from_profile": 0.0001474972096527144,
+  "AK_tail_from_profile": 0.004568947930143581,
+  "boundary_Aw2_exit_minus_entry": 0.004421450571117446,
+  "bridge_residual_profile": 1.493734207505537e-10,
+  "exterior_response": {
+   "m": -0.004150900579028495,
+   "delta": -0.00047112677945498633,
+   "I": 0.0042303634676796546,
+   "lambda_costate": 0.11136791981455872,
+   "E_ext_inf": 5.246840939683421e-05,
+   "E_ext_finite_X": 0.00014357009992111612,
+   "finite_nu": 5.1460044368518894e-05,
+   "finite_lambda": 0.18292658654898777
+  },
+  "AK_tail_predicted_finite_from_response_and_flux": 0.004565020671038563,
+  "AK_tail_predicted_infinite_from_response_and_entry_flux": 0.004473918980514281,
+  "note": "Finite-X prediction uses the same entrance trace and exact collar endpoint; infinite prediction assumes A*w^2 -> 0."
+ }
+}

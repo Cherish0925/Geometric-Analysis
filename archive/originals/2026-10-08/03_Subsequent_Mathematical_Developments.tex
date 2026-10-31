@@ -1,0 +1,1665 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage[margin=25mm]{geometry}
+\usepackage{booktabs,tabularx,longtable,array,enumitem}
+\usepackage{xcolor,hyperref,microtype}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black}
+\setlength{\emergencystretch}{3em}
+\setlist{nosep,leftmargin=*}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diver}{\operatorname{div}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\Met}{\operatorname{Met}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\dd}{\,dV_g}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\pstar}{\mathfrak p_*}
+\newcommand{\src}[1]{\textsf{[#1]}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{question}[theorem]{Question}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\title{Einstein Gaps on Four-Manifolds\\[4pt]
+\large Subsequent Mathematical Developments:\\
+Explicit Almost-K\"ahler Geometry, Harmonic Flux,\\
+Variational Descent, and Global Upper Bounds}
+\author{}
+\date{8 October 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This continuation records the mathematics developed after the morning
+handoff of 8 October. The new material comprises an explicit rational
+negative Einstein strictly almost-K\"ahler metric and its end geometry;
+an exact harmonic-flux decomposition of traceless Ricci energy, including
+its equality structure; a constrained local variational formulation and
+actual descending deformations of products of negatively curved surfaces;
+and global upper bounds for the relative Einstein defect, with an exact
+unit-level calculation on a topological range. The constructions and
+identities are proved in the text. Conditional local estimates state their
+remaining geometric hypotheses. Earlier Burns insertion and gauge-theoretic
+gap theorems enter only where needed as explicit inputs. The distinction
+between an improved competitor, a local variation, and an unrestricted
+global minimizer is retained throughout.
+\end{abstract}
+
+\paragraph{Relation to the preceding manuscript.}
+The baseline is the pair
+\path{01_Research_Synthesis.tex} and
+\path{02_Mathematical_Source_Companion.tex}, whose mathematical cutoff was
+8 October 2026, 09:58 CST. This file treats A01 Steps 56--58 and A02
+Steps 65--72, including the completed Weyl-deficit argument and the
+corrected proof versions.
+It is independently compilable and contains no external input files.
+Source identifiers are resolved in Appendix~\ref{app:sources}.
+``Subsequent'' refers to this research interval, not to a claim that every
+identity below is new to the literature.
+
+\tableofcontents
+
+\section{Objects, conventions, and the new connections}
+\label{sec:conventions}
+
+Unless stated otherwise, $M$ is a smooth closed connected oriented
+four-manifold, and all infima are over all smooth Riemannian metrics.
+Set
+\begin{align}
+ P(g)&=\int_M|\Ric^\circ|^2\dd,&
+ S(g)&=\int_Ms^2\dd,&
+ R(g)&=P(g)+\frac14S(g),\label{eq:energies}\\
+ V(g)&=\Vol_g(M),& T_s(g)&=\int_Ms\dd,&
+ L_s(g)&=S(g)-\frac{T_s(g)^2}{V(g)}.
+\end{align}
+The norm on two-forms is the form norm, so
+$|e^{12}+e^{34}|^2=2$. The Weyl and full-curvature norms are curvature-operator
+norms. Thus, with $T_\pm=2\chi(M)\pm3\tau(M)$,
+\begin{equation}
+ 4\pi^2T_\pm=\frac{S}{24}+2W_\pm-\frac P2,
+ \qquad W_\pm=\int_M|W^\pm|^2\dd,
+ \qquad \int_M|\Rm_{\rm op}|^2\dd=8\pi^2\chi(M)+P.
+ \label{eq:cw}
+\end{equation}
+Use different notation for the two variational problems:
+\begin{equation}
+ p(g)=\frac{P(g)}{8\pi^2},\qquad
+ \pstar(M)=\inf_g p(g),\qquad
+ P_*(M)=8\pi^2\pstar(M),
+ \label{eq:pstar}
+\end{equation}
+and
+\begin{equation}
+ \cE(g)=\inf_{\lambda\ne0}
+ \frac{\int_M|\Ric-\lambda g|^2\dd}{\lambda^2 V},
+ \qquad \alpha(M)=\inf_g\cE(g).
+ \label{eq:alpha}
+\end{equation}
+For $R>0$,
+\begin{equation}
+ \cJ(g)=\frac{4P}{R},\qquad
+ \cE(g)=4-\frac{T_s^2}{VR}
+        =\cJ(g)+\frac{L_s}{R}.
+ \label{eq:EJ}
+\end{equation}
+In particular $\cE=\cJ$ for constant scalar curvature. If $T_s\ne0$,
+the optimizing constant is $\lambda=R/T_s$. If $T_s=0$, the infimum
+in~\eqref{eq:alpha} is $4$; for a Ricci-flat metric it is also $4$.
+The exclusion of $\lambda=0$ is therefore mathematically consequential.
+
+The developments fit into four connections:
+\[
+\begin{array}{c}
+ \text{actual almost-K\"ahler equations}
+ \longrightarrow \text{explicit complete noncompact geometry},\\[2pt]
+ \text{harmonic Chern pairing}
+ \longrightarrow \text{exact Ricci-energy decomposition and equality},\\[2pt]
+ \text{equality geometry}
+ \longrightarrow \text{local Hessians and genuine descending metrics},\\[2pt]
+ \text{global competitors and topology}
+ \longrightarrow \text{relative-gap upper bounds and exact unit levels}.
+\end{array}
+\]
+These connections sharpen different parts of the same problem. None
+identifies a local almost-K\"ahler solution with a closed Goldberg
+counterexample, or a descending family with a global minimizer.
+
+\section{An intrinsic equation and an explicit negative Einstein model}
+\label{sec:ake}
+
+\subsection{The actual almost-K\"ahler system}
+
+Let $(g,J,\Omega)$ be almost-K\"ahler, with $|\Omega|^2=2$.
+The Levi-Civita connection on $\Lambda^+$ has self-dual curvature precisely
+when $g$ is Einstein. In an adapted frame $(\Omega,\phi,J\phi)$,
+write its connection vector as $(b,Ja,a)$ and its curvature as
+\begin{equation}
+ F_1=db-a\wedge Ja=-\mathcal R(\Omega),\quad
+ F_2=d(Ja)+a\wedge b=-\mathcal R(\phi),\quad
+ F_3=da-Ja\wedge b=-\mathcal R(J\phi).
+ \label{eq:frame-curvature}
+\end{equation}
+Here $\mathcal R$ denotes the curvature operator; these are the adapted-frame
+Ricci identities of~\cite{AAD}. Put $\sigma=\Omega/\sqrt2$ and let
+$\mathscr L=\sigma^\perp\subset\Lambda^+$ be the associated complex line.
+The off-diagonal connection form $\zeta\in\Omega^1(\mathscr L)$ satisfies
+\begin{equation}
+ (d_b^*+d_b^-)\zeta=(2\eta,0),\qquad
+ \zeta\in\Omega_J^{0,1}(\mathscr L),
+ \label{eq:soldered}
+\end{equation}
+where the normalization of $\eta$ is fixed by
+\[
+ \nabla^*\nabla\Omega=2\eta+\tfrac12|\nabla\Omega|^2\Omega.
+\]
+The complex structure in the type condition is determined by the very
+section being differentiated. This coupling distinguishes
+\eqref{eq:soldered} from an arbitrary linear instanton deformation equation.
+
+The canonical line connection is not, in general, a sourceless Maxwell
+field. The first component of Bianchi is
+\begin{equation}
+ d^*F_1=\iota_{Ja}F_3-\iota_aF_2=:j.
+ \label{eq:sourced}
+\end{equation}
+For constant $s$, the closed form
+$\beta=-F_1-a\wedge Ja-(s/4)\Omega$ therefore satisfies
+\[
+ d^*\beta=-j-d^*(a\wedge Ja).
+\]
+In the Einstein almost-K\"ahler normalization used in \src{A01.56},
+write $\beta=H+d\xi$, with $H$ harmonic, and put $q=|\nabla\Omega|^2$.
+The self-dual/anti-self-dual components give
+\begin{equation}
+ \|d\xi\|_2^2=\frac1{16}\int q^2\dd-2\|H^-\|_2^2
+ =\frac1{16}\int q^2\dd-8\pi^2\|c_1^{-,h}\|_2^2.
+ \label{eq:hodge-remainder}
+\end{equation}
+Thus a Hodge decomposition does not remove the current in
+\eqref{eq:sourced} or produce a uniform inverse estimate for $d+d^*$.
+
+There is also a useful distinction between two differentiated tests.
+Testing the transverse Bianchi identity against $\nabla_{JX}\Omega$
+pairs its Weyl contribution with the skew Hessian, hence with curvature.
+Testing against $\nabla_{h(X)}\Omega$, for harmonic $h\in\Omega^-$,
+instead leaves
+\begin{equation}
+ \int\!\langle W_3^+,(\operatorname{Sym}_0\nabla^2\Omega)\circ h\rangle
+ \quad\text{and}\quad
+ \int\!\langle W_3^+,\nabla\Omega\circ\nabla h\rangle.
+ \label{eq:unclosed-components}
+\end{equation}
+The second term sees the twistor component of $\nabla h$, even though
+$dh=d^*h=0$. The first is not fixed by a commutator formula alone.
+Consequently these tests identify concrete additional derivative information,
+not an automatic sign for the harmonic twist pairing.
+
+\subsection{Rational Bianchi VIII construction}
+\label{sec:explicit}
+
+Choose invariant one-forms on $\mathrm{SL}(2,\R)$ satisfying
+\begin{equation}
+ d\sigma_1=-2\sigma_2\wedge\sigma_3,\quad
+ d\sigma_2=2\sigma_3\wedge\sigma_1,\quad
+ d\sigma_3=2\sigma_1\wedge\sigma_2.
+ \label{eq:VIII}
+\end{equation}
+For $1/3<x<1$, put $D=1+3x^2$ and define
+\begin{align}
+ G&=\frac{4D}{(1-x)^2(1+x)^2(3x-1)(3x+1)},\notag\\
+ A_1&=\frac{4(3x-1)D}{3(1-x)(1+x)^2},&
+ A_2&=\frac{4(3x+1)D}{3(1-x)^2(1+x)},&
+ A_3&=\frac{64x^2}{(1-x)(1+x)D},\label{eq:VIII-metric}\\
+ X_1&=\frac{(1-x)^3(3x+1)}{16x^3},&
+ X_2&=\frac{(1+x)^3(3x-1)}{16x^3}.\label{eq:VIII-X}
+\end{align}
+Let
+\[
+ g=G\,dx^2+A_1\sigma_1^2+A_2\sigma_2^2+A_3\sigma_3^2,
+ \quad e^0=\sqrt G\,dx,\quad e^i=\sqrt{A_i}\sigma_i,
+\]
+and $\omega_i=e^{0i}+e^{jk}$ for cyclic $(i,j,k)$.
+
+\begin{proposition}[An actual strictly almost-K\"ahler Einstein pair]
+\label{prop:VIII}
+The form
+\begin{equation}
+ \Omega=\sqrt{X_1}\,\omega_1+\sqrt{X_2}\,\omega_2
+ \label{eq:VIII-Omega}
+\end{equation}
+obeys
+\begin{equation}
+ d\Omega=0,\qquad |\Omega|^2=2,\qquad
+ \Ric_g=-3g,\qquad W^-=0,
+ \label{eq:VIII-properties}
+\end{equation}
+and
+\begin{equation}
+ q=|\nabla\Omega|^2
+ =\frac{36(1-x^2)^3}{(1+3x^2)^3}>0.
+ \label{eq:VIII-q}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Here is a rational verification which does not require evaluating square
+roots numerically. Write $dt=\sqrt G\,dx$, $v=dx/dt$, and
+$h_i=(\log\sqrt{A_i})^{\boldsymbol\cdot}=vH_i$, where a dot denotes
+$d/dt$ and a prime below denotes $d/dx$. Then
+\begin{align*}
+ v^2&=\frac{(1-x^2)^2(9x^2-1)}{4D},\qquad
+ \ell=(\log v)'=-\frac{2x}{1-x^2}+\frac{9x}{9x^2-1}-\frac{3x}{D},\\
+ H_1&=\frac12\left(\frac3{3x-1}+\frac{6x}{D}
+               +\frac1{1-x}-\frac2{1+x}\right),\\
+ H_2&=\frac12\left(\frac3{3x+1}+\frac{6x}{D}
+               +\frac2{1-x}-\frac1{1+x}\right),\\
+ H_3&=\frac1x+\frac{x}{1-x^2}-\frac{3x}{D}.
+\end{align*}
+Define the signed orbit coefficients
+$w_i=n_i\sqrt{A_i/(A_jA_k)}=vV_i$, where
+$(n_1,n_2,n_3)=(-1,1,1)$. Explicitly,
+\begin{equation}
+ V_1=-\frac{D}{4x(1+x)(3x+1)},\quad
+ V_2=\frac{D}{4x(1-x)(3x-1)},\quad
+ V_3=\frac{12x}{(9x^2-1)D}.
+ \label{eq:VIII-V}
+\end{equation}
+The diagonal Ricci equations and their radial constraint reduce to
+\begin{align}
+ v^2\left[H_i'+\ell H_i+H_i\sum_jH_j
+              -2\{V_i^2-(V_j-V_k)^2\}\right]&=3,\label{eq:VIII-ricci-cert}\\
+ v^2\left[\sum_{i<j}H_iH_j+\sum_iV_i^2
+                         -2\sum_{i<j}V_iV_j\right]&=3.\label{eq:VIII-ham-cert}
+\end{align}
+Substitution and a common denominator make each identity exact. Equivalently,
+$\Ric_{00}=-\sum_i(\dot h_i+h_i^2)$ and
+$\Ric_{ii}=-\dot h_i-h_i\sum_jh_j+2(w_i^2-(w_j-w_k)^2)$ are all $-3$.
+
+The identity $X_1+X_2=1$ proves the length assertion.
+Closure reduces, for $i=1,2$, to
+\begin{equation}
+ \mu_i:=2w_i-h_j-h_k=\frac v2(\log X_i)'.
+ \label{eq:VIII-closure-cert}
+\end{equation}
+Let $C_i=w_i-w_j-w_k$ and $b_i=h_i+C_i$. Direct covariant
+differentiation gives
+\[
+ q=2\{X_1\mu_1^2+X_2\mu_2^2+b_3^2+X_1b_2^2+X_2b_1^2\},
+\]
+which simplifies to~\eqref{eq:VIII-q}. Finally,
+\begin{equation}
+ (h_i-C_i)^{\boldsymbol\cdot}+h_i(h_i-C_i)=1
+ \quad (i=1,2,3)
+ \label{eq:VIII-Wminus-cert}
+\end{equation}
+is again a rational identity. Together with the Einstein equations it says
+that $\mathcal R|_{\Lambda^-}=-\Id=(s/12)\Id$, proving $W^-=0$.
+All denominators used above are nonzero on the specified interval.
+\end{proof}
+
+\subsection{End geometry and the role of compactness}
+\label{sec:ends}
+
+Let $r$ be geodesic distance from the $x=1/3$ end. Expanding the exact
+radial equation gives
+\begin{align}
+ x-\tfrac13&=\tfrac29r^2-\tfrac2{81}r^4+O(r^6),\notag\\
+ A_1&=r^2+\tfrac29r^4+O(r^6),&
+ A_2&=6+7r^2+O(r^4),& A_3&=6+7r^2+O(r^4),\notag\\
+ A_2-A_3&=\tfrac{10}{3}r^4+O(r^6),&
+ X_2&=\tfrac83r^2+O(r^4).\label{eq:bolt-series}
+\end{align}
+The square roots and all coefficient quotients in these expressions are
+analytic in $r^2$. Smoothness uses the compact circle in
+$\mathrm{SL}(2,\R)$ with period $2\pi$. Its adjoint action on
+$(\sigma_2,\sigma_3)$ has weight two. A period-$\pi$ quotient with the
+same metric coefficients instead has cone angle $\pi$ at the collapsed
+circle.
+
+Locally write
+$\sigma_1=d\psi+\beta$ and
+$\sigma_2+i\sigma_3=e^{2i\psi}\zeta_0$, and set $z=re^{i\psi}$.
+The combinations $dr\pm ir\sigma_1$ are expressed by
+$dz+iz\beta$ and its conjugate with weight-one factors. In the metric,
+the weight-four anisotropy $\sigma_2^2-\sigma_3^2$ is multiplied by
+$r^4$ times a smooth even function. To check the mixed part of $\Omega$
+explicitly, write $a_i=\sqrt{A_i}$, $a_1=r b(r^2)$ and $x_i=\sqrt{X_i}$.
+It is
+\[
+ c_+\operatorname{Re}((dr+ir\sigma_1)\wedge(\sigma_2+i\sigma_3))
+ +c_-\operatorname{Re}((dr-ir\sigma_1)\wedge(\sigma_2+i\sigma_3)),
+ \qquad c_\pm=\tfrac12x_2(a_2\pm b a_3).
+\]
+Here $c_+=rF(r^2)$ and $c_-=r^3H(r^2)$, so their angular weights
+become $z$ and $z^3$.
+The radial--circle and horizontal area terms extend as well. These are
+precisely the polar smoothness conditions; both $g$ and $\Omega$ extend
+over the disk-bundle zero section.
+
+Take a torsion-free cocompact surface-group lift
+$\Gamma\subset\mathrm{SL}(2,\R)$ not containing $-I$.
+The quotient principal orbits have the required $2\pi$ circle, so this
+construction gives a smooth bolt over the compact hyperbolic surface.
+At the other end, with $y=1-x$,
+\begin{equation}
+ G\sim\frac1{2y^2},\qquad
+ A_1\sim\frac8{3y},\qquad
+ A_2\sim\frac{32}{3y^2},\qquad
+ A_3\sim\frac8y.
+ \label{eq:infinite-end}
+\end{equation}
+The radial distance diverges, so the completed metric is complete and
+noncompact. Its volume is infinite. More precisely,
+\begin{equation}
+ dV=\frac{64x(1+3x^2)}{3(1-x^2)^3}\,dx\wedge\sigma_1\wedge\sigma_2\wedge\sigma_3.
+ \label{eq:VIII-volume}
+\end{equation}
+If $V_\Gamma=\int_{\Gamma\backslash\mathrm{SL}(2,\R)}\sigma_{123}$,
+then direct one-variable integration gives
+\begin{equation}
+ \int q\,dV=64V_\Gamma,\qquad
+ \int q^2\,dV=\frac{512}{3}V_\Gamma.
+ \label{eq:VIII-integrals}
+\end{equation}
+For the above lift of a genus-$g$ surface,
+$V_\Gamma=2\pi^2(g-1)$ in normalization~\eqref{eq:VIII}.
+Thus $64$ and $512/3$ are radial integrals per unit invariant orbit volume.
+
+The model has $q>0$ at every finite point and $q\to0$ at infinity.
+It cannot descend, as this metric--form pair, to a compact quotient:
+a positive continuous function on such a quotient would have a positive
+minimum. It supplies an actual noncompact solution against which putative
+pointwise negative-scalar integrability estimates must be tested.
+Comparison with Armstrong's ansatz~\cite{ArmstrongAnsatz} is needed before
+ascribing literature novelty to the family.
+
+\begin{proposition}[A zero required in every closed candidate]
+\label{prop:zero}
+On a closed almost-K\"ahler four-manifold with $\Ric=\lambda g$,
+$\lambda\ne0$, the Nijenhuis tensor vanishes somewhere. Equivalently,
+$|\nabla\Omega|$ vanishes somewhere.
+\end{proposition}
+\begin{proof}
+A nowhere-zero Nijenhuis tensor gives
+$5\chi+6\tau=0$ by the characteristic-class calculation in
+\cite{ArmstrongThesis}: it is a section of
+$\Lambda^{0,2}T^*M\otimes T^{1,0}M$, whose second Chern number is
+$c_2+2c_1^2=5\chi+6\tau$. In the almost-K\"ahler orientation this implies
+$2\chi+3\tau=-\chi/2$. But Einstein Chern--Weil gives
+$\chi>0$ when $s\ne0$, and~\eqref{eq:cw} gives
+$2\chi+3\tau\ge0$. This is a contradiction.
+\end{proof}
+The topological input is classical. Its relevance here is to isolate what
+the explicit solution lacks: a closed candidate must contain a torsion zero.
+No propagation theorem proving that one such zero forces
+$\nabla\Omega\equiv0$ has been obtained.
+
+\section{Harmonic flux and the exact decomposition of Ricci energy}
+\label{sec:flux}
+
+\subsection{A metric quantity detected by every compatible field}
+
+Write the curvature operator as
+\begin{equation}
+ \mathcal R=
+ \begin{pmatrix}W^++s/12&B^*\\B&W^-+s/12\end{pmatrix},
+ \qquad B:\Lambda^+\longrightarrow\Lambda^-,
+ \qquad |\Ric^\circ|^2=4|B|^2.
+ \label{eq:block}
+\end{equation}
+Let $a\in H^2(M;\R)$ and let $h_a^-$ be the anti-self-dual part of
+its harmonic representative. Fix a nonzero harmonic anti-self-dual form $h$
+and suppose
+\[
+ H=\|h\|_2^2,\qquad q_h=(h_a^-,h)>0.
+\]
+Parentheses are $L^2$ pairings: $(h_a^-,h)=-a\cdot[h]$, rather than
+the intersection pairing itself.
+
+For a $g$-orthogonal orientation-compatible almost-complex structure $J$
+with $c_1(J)=a$, its canonical frame-curvature form obeys
+\begin{equation}
+ \gamma_J=\mathcal R(\Omega)+t_J,\qquad
+ [\gamma_J]=2\pi a.
+ \label{eq:canonical}
+\end{equation}
+Here $t_J$ is the quadratic intrinsic-torsion term. For example, in a
+local adapted frame with
+$\nabla\Omega=\alpha\otimes\phi+\beta\otimes J\phi$,
+the signs can be fixed so that $t_J=\alpha\wedge\beta$.
+Taking the anti-self-dual part of~\eqref{eq:canonical} and pairing gives
+\begin{equation}
+ (t_J^-,h)=2\pi q_h-\int_M\langle\Omega,B^*h\rangle\dd.
+ \label{eq:chern-flux}
+\end{equation}
+Define quantities depending only on $g,a,h$ by
+\begin{equation}
+ \mathfrak F_h=\sqrt2\int_M|B^*h|\dd,\qquad
+ \delta_h=1-\frac{\mathfrak F_h}{2\pi q_h},\qquad
+ L_h=\frac{P/2-\mathfrak F_h^2/H}{4\pi^2}.
+ \label{eq:flux-def}
+\end{equation}
+
+\begin{proposition}[Exact flux decomposition]
+\label{prop:flux}
+One has
+\begin{equation}
+ \boxed{p=\frac{q_h^2}{H}(1-\delta_h)^2+L_h,\qquad L_h\ge0,}
+ \label{eq:flux-decomposition}
+\end{equation}
+and every $J$ in~\eqref{eq:canonical} satisfies
+\begin{equation}
+ (t_J^-,h)\ge2\pi q_h\delta_h.
+ \label{eq:twist-lower}
+\end{equation}
+Off the zero set $Z(h)$, put
+\[
+ \beta_h=\frac{B^*h}{|h|^2},\quad
+ B_\parallel(v)=\langle\beta_h,v\rangle h,\quad
+ B_\perp=B-B_\parallel,\quad
+ c=H^{-1}\int_M|\beta_h||h|^2\dd.
+\]
+Then
+\begin{equation}
+ \boxed{L_h=\frac1{2\pi^2}\left[
+ \|B_\perp\|_2^2+
+ \int_M(|\beta_h|-c)^2|h|^2\dd\right].}
+ \label{eq:rank-amplitude}
+\end{equation}
+\end{proposition}
+\begin{proof}
+The norm bound $|\Omega|=\sqrt2$ proves~\eqref{eq:twist-lower}.
+Cauchy--Schwarz yields
+\[
+ \mathfrak F_h^2
+ \le2\left(\int|B||h|\dd\right)^2
+ \le2\|B\|_2^2H=\frac P2H.
+\]
+Substitution proves~\eqref{eq:flux-decomposition}.
+Pointwise orthogonal projection gives
+$|B|^2=|B_\perp|^2+|\beta_h|^2|h|^2$.
+The weighted variance identity
+\[
+ \int|\beta_h|^2|h|^2-
+ H^{-1}\left(\int|\beta_h||h|^2\right)^2
+ =\int(|\beta_h|-c)^2|h|^2
+\]
+then proves~\eqref{eq:rank-amplitude}. The zero set has measure zero,
+so the displayed integrals are unchanged by its omission.
+\end{proof}
+
+For the unit form $\widehat h=h/\|h\|_2$ and
+$q=(h_a^-,\widehat h)>0$, abbreviate $\delta=\delta_{\widehat h}$,
+$L=L_{\widehat h}$. The formulas become
+\begin{equation}
+ p=q^2(1-\delta)^2+L,\quad
+ \mathfrak F_{\widehat h}\le2\pi\sqrt p,\quad
+ p<q^2\Longrightarrow\delta>0.
+ \label{eq:unit-flux}
+\end{equation}
+Thus a saving below the squared harmonic projection requires a positive
+metric flux deficit. The nonnegative remainder separates loss of rank
+alignment from variation of the aligned amplitude.
+
+The direction
+$\Omega_{\rm Ric}=\sqrt2 B^*\widehat h/|B^*\widehat h|$
+pointwise saturates the flux bound where defined. It need not extend to
+a smooth global structure of Chern class $a$. Formula~\eqref{eq:twist-lower}
+is valid for all class-$a$ structures without assuming this extension or
+identifying an infimum over such structures with the pointwise bound.
+
+\subsection{Equality and removable harmonic-form zeros}
+\label{sec:flux-equality}
+
+We regard two-forms as skew endomorphisms when writing their composition.
+For a self-dual form $\phi$ and closed anti-self-dual form $h$,
+\begin{equation}
+ \diver(\phi\circ h)=h(d^*\phi),\qquad
+ h^2=-\tfrac12|h|^2\Id.
+ \label{eq:div-product}
+\end{equation}
+For example, in normal coordinates the derivative falling on $h$ in
+$\nabla^a(\phi_{ac}h_{cb})$ vanishes by $dh=0$ and opposite duality;
+the remaining term is $h_{bc}(d^*\phi)_c$.
+
+\begin{theorem}[Constant-scalar equality structure]
+\label{thm:flux-equality}
+Assume $s$ is constant. If $L_h=0$, either $g$ is Einstein or it admits a
+smooth compatible almost-K\"ahler structure $J_0$ with $J_0$-invariant
+Ricci tensor and primitive Ricci form $\rho_0$ a constant multiple of $h$.
+Conversely, any such almost-K\"ahler structure has $L_h=0$.
+\end{theorem}
+\begin{proof}
+Equality in~\eqref{eq:rank-amplitude} implies
+\[
+ B(v)=c\langle\widehat\Omega_0,v\rangle h,
+ \qquad |\widehat\Omega_0|=1,
+\]
+off $Z(h)$, with $c\ge0$ constant. If $c=0$, then $B=0$.
+Otherwise let $\Omega_0=\sqrt2\widehat\Omega_0$.
+The block--tensor correspondence is
+\[
+ B(v)=\langle\beta_h,v\rangle h
+ \quad\Longrightarrow\quad
+ \Ric^\circ=-2\beta_h\circ h=c'\Omega_0\circ h,
+ \qquad c'=-\sqrt2c.
+\]
+Contracted Bianchi and~\eqref{eq:div-product} give
+\[
+ c'h(d^*\Omega_0)=\tfrac14ds=0.
+\]
+Since $h$ is invertible off its zero set, $d^*\Omega_0=0$ there; self-duality
+also gives $d\Omega_0=0$.
+
+The nodal-set theorem for the Hodge--Dirac operator~\cite{Baer} gives
+$\dim_{\rm H}Z(h)\le2$, hence $\mathcal H^3(Z(h))=0$.
+Covering this set by balls with arbitrarily small sum of cubed radii
+produces cutoffs $\chi_j$ with $\|d\chi_j\|_{L^1}\to0$.
+Because $|\Omega_0|=\sqrt2$, the cutoff boundary terms in its weak closed
+and coclosed equations vanish. Elliptic regularity extends $\Omega_0$
+smoothly across $Z(h)$. Its constant nonzero length persists.
+The endomorphism product shows $J_0$-invariance of Ricci, and
+$\rho_0=B\Omega_0=\sqrt2c\,h$ is harmonic.
+
+Conversely, for an almost-K\"ahler structure the identity
+$d\rho=*(Jd^*\Ric'')$ of~\cite{AAD} implies $d\rho_0=0$ when
+$s$ is constant and $\Ric''=0$. Here $\Ric''$ is the $J$-anti-invariant
+part of Ricci. The curvature block is
+$B(v)=\tfrac12\langle\Omega,v\rangle\rho_0$.
+If $\rho_0$ is a constant multiple of $h$, both terms
+of~\eqref{eq:rank-amplitude} vanish.
+\end{proof}
+
+The theorem describes an equality set. It does not construct a deformation
+joining a K\"ahler member to an Einstein member. Its strictly almost-K\"ahler
+part is a constrained instance of the negative-scalar Blair--Ianus
+integrability question, with prescribed harmonic alignment.
+
+\subsection{The weaker rank-aligned system}
+
+If only $B_\perp=0$, put $\phi_h=-2\beta_h$. Then
+$\Ric^\circ=\phi_h\circ h$, and constant scalar curvature implies
+$d\phi_h=d^*\phi_h=0$ off $Z(h)$.
+If $\phi_h$ is locally bounded near $Z(h)$, the preceding removability
+argument applies. The global two-form $F=\phi_h+h$ then satisfies
+\begin{equation}
+ dF=d^*F=0,\qquad
+ \Ric^\circ=\tfrac12(F\circ F)_0.
+ \label{eq:EM}
+\end{equation}
+Indeed, squares of self-dual or anti-self-dual skew endomorphisms are scalar,
+and opposite-duality endomorphisms commute. Equivalently
+$\widetilde F=(\phi_h-h)/\sqrt2$ obeys
+$(\Ric+\widetilde F\circ\widetilde F)_0=0$.
+This specifies the Einstein--Maxwell normalization.
+Rank alignment alone controls $\int|\phi_h|^2|h|^2$, which does not
+establish the boundedness needed at zeros. Full equality $L_h=0$ supplies
+that boundedness through its constant amplitude.
+
+For approximate alignment write
+$\Ric^\circ=\phi_h\circ h+R_\perp$. If $s$ is constant, then for test
+one-forms supported away from $Z(h)$,
+\begin{equation}
+ |(d^*\phi_h,\xi)|\le
+ \|R_\perp\|_2\|\nabla(h^{-1}\xi)\|_2,
+ \qquad \|R_\perp\|_2^2=8\pi^2L_{\rm rank}.
+ \label{eq:weak-alignment}
+\end{equation}
+This follows by integrating
+$h(d^*\phi_h)=-\diver R_\perp$.
+It is a weighted weak estimate. The inverse $h^{-1}$ explains precisely
+why small $L$ does not yet imply an unweighted global closeness theorem.
+
+\subsection{Signed torsion and the scalar-curvature sign}
+\label{sec:torsion}
+
+On the almost-K\"ahler equality branch, take $\|\widehat h\|_2=1$ and
+write $\rho_0=f\widehat h$, with $f$ constant and signed. Set
+\[
+ b=c_1(J),\qquad D_t=(t^-,\widehat h),\qquad
+ \Phi_b=2\pi(h_b^-,\widehat h)=f+D_t.
+\]
+Then $P=2f^2$. If $\Phi_b\ne0$, define $d_b=D_t/\Phi_b$.
+Unlike $\delta$ in~\eqref{eq:flux-def}, this definition uses signed flux:
+\begin{equation}
+ p=\frac{\Phi_b^2}{4\pi^2}(1-d_b)^2.
+ \label{eq:signed-deficit}
+\end{equation}
+The coefficient equals $|b^-|^2$ only when
+$\widehat h$ is parallel to $h_b^-$.
+
+Let $u=|\nabla\Omega|^2/4$. In the present form norms,
+$|t^-|^2=u^2/2$. The almost-K\"ahler Chern--Weil identity
+\cite{AAD}, specialized to $\Ric''=0$, is
+\[
+ P=2\|\gamma^-\|_2^2+
+ \int u(5u+s)\dd+2\|\rho_*''\|_2^2+4\|W_3^+\|_2^2.
+\]
+Here $\rho_*''$ is the anti-invariant star-Ricci component and $W_3^+$
+is the tracefree Weyl block on $\Omega^\perp$. Substituting
+$\gamma^-=\rho_0+t^-$ gives the exact balance
+\begin{equation}
+ \boxed{4fD_t+\int u(6u+s)\dd
+       +2\|\rho_*''\|_2^2+4\|W_3^+\|_2^2=0.}
+ \label{eq:torsion-balance}
+\end{equation}
+This calculation retains the sign of the harmonic pairing rather than
+replacing it by the norm of the twist.
+
+If $s\ge0$ and $\Phi_b>0$, Cauchy--Schwarz gives
+$D_t^2\le\tfrac12\int u^2$, whence
+\[
+ 4fD_t\le-6\int u^2\le-12D_t^2.
+\]
+Using $f=\Phi_b-D_t$ yields
+\begin{equation}
+ -\tfrac12\le d_b\le0,\qquad
+ p\ge\frac{\Phi_b^2}{4\pi^2}.
+ \label{eq:positive-s-twist}
+\end{equation}
+Here $d_b=0$ forces $u=0$ and hence K\"ahlerness. For constant $s<0$,
+the same computation instead gives
+\begin{equation}
+ \boxed{-s\int u\dd\ge4\Phi_b^2d_b(1+2d_b).}
+ \label{eq:negative-s-twist}
+\end{equation}
+In particular, if $\widehat h\parallel h_b^-$ and
+$p\le(1-\eta)^2|b^-|^2$ for $0<\eta<1$, then
+$\eta\le d_b\le2-\eta$ and
+\[
+ -s\int u\dd\ge4\Phi_b^2\eta(1+2\eta).
+\]
+Thus a prescribed saving requires an actual amount of nonintegrability.
+At negative scalar curvature, $d_b=0$ alone no longer implies integrability.
+
+\subsection{What the low-cost cell measures}
+
+The already constructed perpendicular cell can be used to evaluate the
+decomposition, rather than only its total energy. For the retained cell
+with parameters $x_0=0.03$ and $X=128$, floating quadrature gives
+\[
+ p\simeq0.995663,\quad H\simeq0.99897,\quad
+ \delta_{\rm metric}\simeq0.00541,\quad
+ H^{-1}(1-\delta_{\rm metric})^2\simeq0.99023,\quad
+ L\simeq0.00543.
+\]
+Here the relative pairing is normalized to $q_h=1$. The exact bookkeeping
+identity is
+\[
+ 1-p=2\delta-\delta^2-L-(1-\delta)^2(H^{-1}-1).
+\]
+These are numerical diagnostics on a previously certified cell, not
+interval bounds for the flux variables. They show why the energy decrease
+cannot be inferred from the twist alone: its contribution is offset by
+misalignment and the harmonic normalization. The geometric identities
+above, rather than these particular numbers, are the reusable result.
+
+\section{Local variational geometry at a constant-scalar K\"ahler metric}
+\label{sec:variation}
+
+\subsection{Stationarity of the corrected functional}
+
+Let $(g_0,J_0,\omega)$ be constant-scalar K\"ahler, with
+$a=c_1(J_0)$ and $\rho_0=2\pi h_a^-\ne0$.
+For nearby metrics take
+$\widehat h_g=h_{a,g}^-/\|h_{a,g}^-\|_2$ and
+$q_g=\|h_{a,g}^-\|_2$. At $g_0$ the flux decomposition gives
+$\delta=L=0$. The natural local functional is
+\begin{equation}
+ \mathscr D_a(g)=p(g)-|a_g^-|^2
+ =C_+(g)-|a_g^+|^2,
+ \quad
+ C_+(g)=\frac1{2\pi^2}\int|W^+|^2\dd+
+                 \frac1{96\pi^2}\int s^2\dd.
+ \label{eq:corrected-functional}
+\end{equation}
+The second identity follows from~\eqref{eq:cw} and
+$|a^+|^2-|a^-|^2=a^2=2\chi+3\tau$ for this almost-complex class.
+
+\begin{proposition}[Stationarity under unrestricted metric variations]
+\label{prop:stationarity}
+At a constant-scalar K\"ahler metric,
+\begin{equation}
+ D\delta=DL=0,\qquad D\mathscr D_a=0.
+ \label{eq:stationarity}
+\end{equation}
+The statement about $\mathscr D_a$ also holds in the K\"ahler--Einstein
+case, where the normalized deficit itself is undefined.
+\end{proposition}
+\begin{proof}
+Along any two-sided smooth metric variation $g_t$, orthogonalize $J_0$
+to obtain a compatible $J_t$ in the same homotopy class. Its intrinsic
+torsion is $O(t)$, so the quadratic form $t_{J_t}$ in
+\eqref{eq:canonical} is $O(t^2)$. Inequality~\eqref{eq:twist-lower}
+therefore gives $\delta(g_t)\le C t^2$.
+Differentiability at zero and both signs of $t$ give $D\delta=0$.
+The norm integral is differentiable here even if $h_a^-$ has zeros:
+its zero set has measure zero and the derivative is dominated by the
+smooth variation of $B^*\widehat h$.
+Nonnegativity and $L(g_0)=0$ give $DL=0$.
+Finally
+\[
+ \mathscr D_a=L-2q_g^2\delta+q_g^2\delta^2
+\]
+proves stationarity. At a K\"ahler--Einstein metric,
+$P=|a^-|^2=0$, and both have zero first derivative separately.
+\end{proof}
+This is stationarity of $p-|a^-|^2$, not stationarity of $P$ at every
+constant-scalar K\"ahler metric.
+
+\subsection{The period obstruction in a local coercivity argument}
+
+The following formulation separates the established linear analysis from
+the cohomological input which it still needs. Work on the linear space
+\[
+ \mathcal S=\{k:\beta_{g_0}k=0,\quad s'_0(k)
+                    \text{ is spatially constant}\},
+\]
+where $\beta$ is Bianchi gauge. Let $d_2(k)$ and $\ell_2(k)$ be the
+coefficients of $t^2$ in $\delta(g_0+tk)$ and $L(g_0+tk)$.
+They are coefficients, not second derivatives. Then
+\begin{equation}
+ (\mathscr D_a)_2(k)=\ell_2(k)-2q_0^2d_2(k),\qquad
+ c_K=\inf_{d_2(k)>0}\frac{\ell_2(k)}{q_0^2d_2(k)}.
+ \label{eq:cK}
+\end{equation}
+
+An $\ell_2$-null direction follows the moving harmonic line, not a fixed
+background form. Its alignment equation includes
+\[
+ B'_0=\dot\Phi\otimes h_0+\Phi_0\otimes\dot h
+\]
+with the metric-induced bundle identifications understood. Linearized
+Bianchi and the amplitude condition then give an aligned pair to first
+order:
+\begin{equation}
+ \Ric_t^\circ=\Phi_t\circ h_t+O(t^2),\quad
+ d\Omega_t=O(t^2),\quad (\Ric'')'_0=0.
+ \label{eq:first-order-pair}
+\end{equation}
+To compare this pair with a K\"ahler variation one must also match the
+cohomology class of the varying closed form. Define
+\begin{equation}
+ \mathcal P_\omega:H^{0,1}(T^{1,0}M)\longrightarrow H^{0,2}(M),
+ \quad [\mu]\longmapsto[\mu\mathbin{\lrcorner}\omega],\qquad
+ \Xi(k)=[\dot\Omega_k]^{0,2}\pmod{\operatorname{im}\mathcal P_\omega}.
+ \label{eq:Xi}
+\end{equation}
+Vanishing of $\Xi(k)$ supplies a first-order K\"ahler comparison with
+the same class variation. After subtracting that comparison, a Moser
+correction removes the exact form variation. In the form norms used here,
+the fixed-symplectic Blair--Ianus identities are
+\begin{equation}
+ E_\omega=\int|\nabla\omega|^2\dd,\qquad
+ \int s\dd=4\pi c_1\cdot[\omega]-\tfrac12E_\omega,\qquad
+ DE_\omega(k)=2\int\langle\Ric'',k\rangle\dd.
+ \label{eq:blair}
+\end{equation}
+At a K\"ahler metric,
+$\operatorname{Hess}E_\omega(k,k)=2\|(\nabla\omega)'_k\|_2^2$.
+Equation~\eqref{eq:first-order-pair} therefore makes a null direction with
+$\Xi(k)=0$ first-order K\"ahler; it lies in the radical of $d_2$.
+
+\begin{proposition}[Conditional local coercivity]
+\label{prop:conditional-local}
+Suppose $h_{a,g_0}^-$ is zero-free. Put
+$K=\ker\ell_2\cap\mathcal S$. The augmented alignment, scalar, and
+Bianchi system is elliptic and $K$ is finite-dimensional. If
+$\Xi|_K=0$, then $c_K>0$, and for every $0<c<c_K$,
+\begin{equation}
+ L(g_0+k)\ge c q_0^2\delta(g_0+k)
+                   -C\|k\|_{C^{2,\gamma}}^3,
+ \qquad k\in\mathcal S\text{ sufficiently small},\quad0<\gamma<1.
+ \label{eq:local-coercivity}
+\end{equation}
+\end{proposition}
+\begin{proof}
+On the Bianchi-symbol kernel the Ricci symbol is
+$\tfrac12|\xi|^2k$. Vanishing of the augmented symbol gives
+\[
+ k^\circ=\sigma\circ\widehat h,quad \sigma\perp\omega,\quad
+ \tr k=0,\quad (\sigma\circ\widehat h)\xi=0.
+\]
+Opposite duality implies
+$(\sigma\circ\widehat h)^2=\tfrac14|\sigma|^2|\widehat h|^2\Id$.
+Since $\widehat h$ is zero-free, the symbol is injective. The resulting
+elliptic estimate on the closed manifold is
+\[
+ \ell_2(k)\ge c_1\|k-\pi_Kk\|_{H^2}^2.
+\]
+The first-order K\"ahler comparisons just described put $K$ in the
+radical of $d_2$. The positive part of the torsion quadratic form is
+first order, giving
+\[
+ d_2(k)\le C\|k-\pi_Kk\|_{H^1}^2\le C'\ell_2(k).
+\]
+Taylor expansion of $L$ and $\delta$ proves~\eqref{eq:local-coercivity}.
+\end{proof}
+The required conclusion $\Xi|_K=0$ has not been proved in general.
+Nor is $\mathcal S$ itself a nonlinear constant-scalar slice; use of
+\eqref{eq:local-coercivity} on that locus requires its parametrization
+and the quadratic correction. Along a ray with $d_2>0$, a cubic remainder
+is generally of order $\delta^{3/2}$, not $\delta^2$.
+
+One further formula records the moving-frame term in this analysis.
+For $v_t=B_t^*\widehat h_t$, $e_t=\Omega_t^{\rm ref}/\sqrt2$ and
+$w_1=P_{e_0^\perp}v'_0-|v_0|e'_0$,
+\begin{equation}
+ 2\pi q_0d_2=\tau_{{\rm ref},2}
+             -\frac1{\sqrt2}\int\frac{|w_1|^2}{|v_0|}\dd.
+ \label{eq:delta-Hessian}
+\end{equation}
+Here $\tau_{{\rm ref},2}$ is the quadratic coefficient of the reference
+torsion pairing. On $K^\perp$, in the $\ell_2$ Hilbert norm, this is an
+operator of the form $T-N$, with $T$ compact self-adjoint and $N\ge0$
+bounded. Its positive spectrum is discrete; compactness of the entire
+operator is neither needed nor supplied.
+
+\subsection{A genuine descending family on products of curves}
+\label{sec:product}
+
+The local constant cannot be uniform over degenerating backgrounds, as
+an explicit calculation shows. Let
+\[
+ M=\Sigma_1(K_1)\times\Sigma_2(K_2),\qquad K_1,K_2<0,quad K_1\ne K_2,
+\]
+with constant-curvature factor metrics. Let $Q\ne0$ be the real tensor
+of a holomorphic quadratic differential on $\Sigma_1$, and take
+$\Delta_2f=\mu f$, $\mu>0$, with nonnegative Laplacian. Set
+$A=g_1^{-1}Q$ and consider the actual metrics
+\begin{equation}
+ g_t=g_1(e^{tfA}\,\cdot,\cdot)\oplus g_2.
+ \label{eq:product-family}
+\end{equation}
+Since $A$ is tracefree, both area forms remain fixed. Consequently
+$\omega_1-\omega_2$ remains harmonic anti-self-dual and
+$q_t^2=|c_1^-|_{g_t}^2$ is constant. The tangent $k=fQ$ is transverse
+traceless and $s'_0=0$.
+
+\begin{proposition}[Product Hessian]
+\label{prop:product}
+The Taylor coefficient of order two is
+\begin{equation}
+ \boxed{8\pi^2(\mathscr D_a)_2
+      =\frac\mu4(\mu+K_1-K_2)\|fQ\|_2^2.}
+ \label{eq:product-Hessian}
+\end{equation}
+If $K_1<K_2$ and $0<\mu<K_2-K_1$, this gives strict local descent.
+The descent persists after making scalar curvature exactly constant.
+\end{proposition}
+\begin{proof}
+Let $G_t$ denote the first metric block and $K_t$ its Gaussian curvature
+at a fixed point of the second factor. The block connection, through the
+terms required at order two, gives
+\[
+ \Ric_V=K_tG_t+\frac{t\mu f}{2}G_tA,
+ \qquad
+ \Ric_H=K_2g_2-\frac{t^2}{4}|Q|^2df\otimes df,
+\]
+and mixed Ricci has no term of order one. With
+$n_t=t^2|Q|^2|df|^2/4$, this implies
+\[
+ |\Ric^\circ|^2=(K_t-K_2)^2
+       +\frac{t^2\mu^2f^2}{4}|Q|^2+(K_t-K_2)n_t+O(t^3).
+\]
+The transverse-traceless property gives $K'_0=0$. For each second-factor
+point, Gauss--Bonnet and the fixed area form give
+$\int_{\Sigma_1}(K_t-K_1)dA_1=0$. Hence the integrated order-two
+contribution from $(K_t-K_2)^2$ is zero. Finally
+$\int|df|^2=\mu\int f^2$ yields~\eqref{eq:product-Hessian}.
+
+Since $s_0<0$, the linearized conformal scalar operator
+$6\Delta-2s_0$ is invertible. An $O(t^2)$ conformal correction therefore
+makes scalar curvature constant. Stationarity of $\mathscr D_a$ leaves
+its second coefficient unchanged. Hodge decomposition on two-forms is
+conformally invariant, so the conclusion also gives the stated decrease
+in $P$ along the corrected family.
+\end{proof}
+
+The separate coefficients of the flux decomposition are
+\begin{equation}
+ \ell_2(k)=\frac{\mu^2}{32\pi^2}\|k\|_2^2,
+ \qquad
+ q_0^2d_2(k)=\frac{(K_2-K_1)\mu}{64\pi^2}\|k\|_2^2.
+ \label{eq:product-split}
+\end{equation}
+For example, the form-norm calculation gives
+$|(\nabla\omega)'|^2=|Q|^2|df|^2/2$ and
+$\int u_2=\mu\|k\|_2^2/8$, consistent with these constants.
+Thus
+\begin{equation}
+ \boxed{c_K\le\frac{2\lambda_1(\Sigma_2)}{K_2-K_1}.}
+ \label{eq:spectral-degeneration}
+\end{equation}
+Pinching a separating geodesic produces $\lambda_1(\Sigma_2)\to0$:
+test with a function nearly constant on the two thick components and
+varying across their increasingly long collar. The gradient energy tends
+to zero while its mean-zero $L^2$ norm stays positive. Therefore there is
+no positive uniform lower bound for $c_K$ even at fixed product topology
+and fixed unequal curvature scales.
+
+The modes in~\eqref{eq:product-split} have $\ell_2>0$, so they do not
+decide $\Xi$ on the nullspace. For products of curves of genus at least
+two, $\mathcal P_\omega=0$: there are no cross-factor holomorphic vector
+fields, and the factor deformations preserve the type of their area
+classes. It remains to determine whether the constrained nullspace has
+a nonzero $\Xi$ component. Also, descent below $|c_1^-|^2$ on this
+product is not a construction below the blow-up cost $k$: the latter
+problem has the additional projection contribution in
+$|c_1^-|^2=k+\Pi$.
+
+\section{From actual competitors to global normalized upper bounds}
+\label{sec:upper}
+
+\subsection{The optimized Yamabe conversion}
+
+Let $Y([g])$ be the Yamabe constant, and $\widehat g$ a minimizing
+Yamabe representative. In a negative Yamabe class,
+\begin{equation}
+ S(\widehat g)=Y([g])^2,
+ \qquad P(g)-P(\widehat g)=\tfrac1{12}(S(g)-Y([g])^2)\ge0.
+ \label{eq:Yamabe-P}
+\end{equation}
+The equality uses conformal invariance of Weyl energy and
+\eqref{eq:cw}. For a direct positive-remainder formula, write
+$g=v^2\widehat g$, $s_{\widehat g}=s_0<0$. With all integrals and
+derivatives on the right taken in $\widehat g$,
+\begin{equation}
+ S(g)-Y([g])^2
+ =36\int\left(\frac{\Delta v}{v}\right)^2dV_{\widehat g}
+       -12s_0\int\frac{|\nabla v|^2}{v^2}dV_{\widehat g}.
+ \label{eq:Yamabe-exact}
+\end{equation}
+This follows by squaring
+$s_g=v^{-3}(6\Delta v+s_0v)$ and integrating by parts.
+
+\begin{proposition}[Conversion of a $P$ competitor]
+\label{prop:conversion}
+For every $g$ with $Y([g])<0$,
+\begin{equation}
+ \boxed{\alpha(M)\le
+ \frac{16P(g)}{4P(g)+Y([g])^2}.}
+ \label{eq:P-to-alpha}
+\end{equation}
+If every conformal class has negative Yamabe constant and
+$Y([g])^2\ge32\pi^2A$ with the same $A>0$, then
+\begin{equation}
+ \boxed{\alpha(M)\le\frac{4\pstar(M)}{A+\pstar(M)}.}
+ \label{eq:global-P-upper}
+\end{equation}
+For either orientation with $T_\pm>0$, one also has the unconditional
+lower comparison
+\begin{equation}
+ \boxed{\alpha(M)\ge
+ \frac{\pstar(M)}{\pstar(M)+3T_\pm/4}.}
+ \label{eq:global-P-lower}
+\end{equation}
+\end{proposition}
+\begin{proof}
+At $\widehat g$, minimizing in $\lambda$ gives
+\[
+ \cE(\widehat g)=\frac{16P(\widehat g)}{4P(\widehat g)+Y([g])^2}.
+\]
+Monotonicity in $P$, followed by~\eqref{eq:Yamabe-P}, proves
+\eqref{eq:P-to-alpha}; take a $P$-minimizing sequence for
+\eqref{eq:global-P-upper}. For the lower bound,~\eqref{eq:cw} implies
+\[
+ R=4P+24\pi^2T_\pm-12W_\pm\le4P+24\pi^2T_\pm.
+\]
+Combine this with $\cE\ge4P/R$ and monotonicity in $P$.
+If a Ricci-flat metric is present, it has $\cE=4$, which also satisfies
+the proposed lower bound.
+\end{proof}
+
+The numerator $16P/Y^2$ is only the trial value at $\lambda=s/4$,
+not the optimized expression. The denominator in
+\eqref{eq:P-to-alpha} is essential even for a constant-scalar metric.
+On the stated supply manifolds with $T_+>0$, the two comparisons imply
+\begin{equation}
+ \alpha(M)=0\quad\Longleftrightarrow\quad P_*(M)=0.
+ \label{eq:conditional-zero-equivalence}
+\end{equation}
+They do not assert equality of the two functionals or a sharp small-gap
+coefficient.
+
+For
+$M=X\#k\overline{\CP}^{\,2}\#\ell(S^1\times S^3)$,
+where $X$ is minimal of general type and $A=c_1^2(X)>0$,
+the polarized scalar supply in LeBrun's Proposition 3.2~\cite{LeBrun}
+provides the input to~\eqref{eq:global-P-upper}. The relevant statement
+includes handles and the appropriate $b^+=1$ polarization; one must not
+replace it by the false assertion that every general-type surface has
+$b^+>1$.
+
+\subsection{The new consequence of the earlier Burns construction}
+
+The morning manuscript already contains the following construction input:
+for every minimal general-type surface $X$ and every $k\ge1$,
+\begin{equation}
+ \text{there is a smooth metric on }X\#k\overline{\CP}^{\,2}
+ \text{ with }P<8\pi^2k.
+ \label{eq:inherited-Burns}
+\end{equation}
+On a negative K\"ahler--Einstein host this comes from the perpendicular
+Burns insertion, whose normalized cost at $s=-4$ is
+\[
+ 1-\tfrac14\varepsilon^2\log(1/\varepsilon)+O(\varepsilon^2).
+\]
+If the canonical model has ADE points, the saving is fixed first and the
+ALE resolution scales are then made sufficiently small. This order is
+part of the inherited construction, not a new result here.
+
+Applying Proposition~\ref{prop:conversion} gives its strengthened
+normalized consequence:
+\begin{equation}
+ \boxed{\alpha(X\#k\overline{\CP}^{\,2})
+               <\frac{4k}{A+k}.}
+ \label{eq:strict-general-type-upper}
+\end{equation}
+The new point is the passage to the optimized relative functional without
+separate scalar-variance or volume estimates.
+
+\subsection{A nonasymptotic law on all further finite covers}
+\label{sec:cover-law}
+
+The retained interval certificate for the complex-hyperbolic blow-up cell
+has upper endpoint
+\begin{equation}
+ p_c=\frac{338806471362324583565914367157197246841}{2^{128}}
+       =0.995662732771114200\ldots<1.
+ \label{eq:pc}
+\end{equation}
+For every $\epsilon>0$ it supplies a smooth cell of topology
+$D^4\#\overline{\CP}^{\,2}$, exactly complex hyperbolic near its
+outer boundary, with $P/(8\pi^2)\le p_c+\epsilon$.
+Fix its support radius $R_c$. A handle cell with the same outer collar
+has costs approaching $P=32\pi^2$.
+
+Let $Y=\Gamma\backslash\mathbb B^2$ be a compact ball quotient normalized
+by $\Ric=-g$. Choose a compact fundamental set $F$, $x_0\in\mathbb B^2$,
+and $D_F=\sup_{x\in F}d(x_0,x)$. Residual finiteness yields a normal
+finite-index subgroup excluding all nonidentity elements satisfying
+\[
+ d(x_0,\gamma x_0)\le4R_c+2D_F.
+\]
+If an element of this subgroup had displacement at most $4R_c$ at any
+point, conjugate that point into $F$; normality and the triangle inequality
+would contradict this exclusion. The resulting cover $X'$ thus has
+$\operatorname{inj}(X')>2R_c$ everywhere. Every finite cover $X\to X'$
+inherits the same bound.
+
+A maximal $2R_c$-separated set in $X$ has disjoint $R_c$-balls and its
+$2R_c$-balls cover $X$. Since $\Vol(X)=2\pi^2A$, $A=c_1^2(X)$, the
+number $N(X)$ of such centers satisfies
+\begin{equation}
+ N(X)\ge\frac{2\pi^2A}{v_{\rm CH}(2R_c)}.
+ \label{eq:packing}
+\end{equation}
+
+\begin{theorem}[Finite-cover upper law]
+\label{thm:cover-law}
+For every finite cover $X\to X'$ and every integer $n\ge1$ with
+$15n\le N(X)$, set
+\[
+ M=X\#8n\overline{\CP}^{\,2}\#7n(S^1\times S^3),\quad
+ Q=36n,\quad h=Q/A.
+\]
+Then
+\begin{equation}
+ \boxed{\frac{\alpha(M)}h\le
+  \frac{C_c}{1+C_ch/4},\qquad
+ C_c=\frac{28}{9}+\frac89p_c
+     =3.9961446513521015108\ldots<4.}
+ \label{eq:cover-upper}
+\end{equation}
+The topology satisfies $T_+=A-Q$ and $T_-=(A+Q)/3$.
+\end{theorem}
+\begin{proof}
+Insert $8n$ blow-up and $7n$ handle cells in the chosen disjoint balls.
+The complement is Einstein, so locality of the $P$ integral and arbitrarily
+small smoothing errors give
+\[
+ \pstar(M)\le8np_c+28n=\frac{C_cQ}{4}.
+\]
+Substitute into~\eqref{eq:global-P-upper}. The displayed topological
+formulas follow from $T_+(X)=A$, $T_-(X)=A/3$, a change $(-1,+5)$
+per blow-up, and $(-4,-4)$ per handle.
+\end{proof}
+There is one preliminary cover, followed by universal quantifiers over
+all further finite covers and all admissible $n$. Neither nesting nor an
+$h\to0$ limit is needed. The estimate concerns an infimum, so it does
+not claim that one smoothed metric attains the interval endpoint.
+
+The complete handle insertion has a useful scale calculation. Take the
+scalar-flat conformally flat asymptotically Euclidean Green-function
+metric on $(S^1\times S^3)\setminus\{p\}$. Its single-end
+Gauss--Bonnet formula gives $P=32\pi^2$. Insert a copy scaled by $\delta$
+and match at radius $t=\sqrt\delta$. The background normal-coordinate
+error is $O(t^2)$ and the scaled AE error is $O(\delta^2t^{-2})$.
+After two derivatives and integration over the annulus,
+\begin{equation}
+ P_{\rm annulus}=O(t^4+\delta^4t^{-4})=O(\delta^2).
+ \label{eq:handle-error}
+\end{equation}
+The omitted tail contributes $O((\delta/t)^4)$ and the removed background
+ball contributes $O(t^4)$. Thus on any fixed smooth background
+\[
+ P(\widetilde g)=P(g)+32\pi^2+O(\delta^2).
+\]
+All constants here may depend on that background; the estimate is not a
+uniform gluing theorem for arbitrary degenerating backgrounds.
+
+\subsection{Fixed negative K\"ahler--Einstein hosts}
+
+On a fixed negative K\"ahler--Einstein surface, choose finitely many
+disjoint normal-coordinate balls and a fixed sufficiently small Burns
+parameter giving saving $\eta_X>0$. Each lifted ball in any finite
+Riemannian cover has the same jets and the same error constants.
+For $k$ blow-ups and $\ell$ handles within this packing capacity, put
+$Q=k+4\ell$, $h=Q/A$, and $\theta=k/Q$. The same argument gives
+\begin{equation}
+ \frac{\alpha(M)}h\le
+ \frac{4(1-\theta\eta_X)}{1+h(1-\theta\eta_X)}.
+ \label{eq:KE-cover-upper}
+\end{equation}
+This statement applies to covers that exist; it does not posit an
+unbounded tower on a simply connected surface.
+
+It is also different from balanced small-$h$ asymptotics.
+If the fixed host is not a ball quotient, then
+$\Delta_X=3\chi(X)-c_1^2(X)>0$; under unramified covers,
+$\Delta/A=\Delta_X/A_X$ stays fixed. In the earlier balance parameter
+\[
+ \sigma=\frac{4\Delta}{Q}+18\theta
+        =\frac{4\Delta_X}{hA_X}+18\theta,
+\]
+one has $\sigma\to\infty$ as $h\to0$.
+The upper construction still applies, but the fixed balanced small-$h$
+window does not follow from these towers. Varying hosts with
+$\Delta/A\to0$ require the separate ramified-cover construction.
+
+\section{The unit level and a global conformal variational formula}
+\label{sec:weyl-law}
+
+\subsection{A smooth long-cylinder competitor on every manifold}
+
+\begin{theorem}[Universal upper bound]
+\label{thm:universal}
+For every closed connected smooth four-manifold,
+\begin{equation}
+                    0\le\alpha(M)\le1.
+ \label{eq:universal}
+\end{equation}
+\end{theorem}
+\begin{proof}
+Choose a fixed smooth rotationally symmetric cap $C\cong D^4$ with
+metric $dr^2+f(r)^2g_{S^3(1)}$, where $f=\sin r$ near the center and
+$f=1$ near the boundary. A smooth cutoff constant to all orders at its
+ends gives such a cap. Join two copies by $[0,L]\times S^3(1)$.
+The result is a smooth metric on $S^4$. Replace a fixed ball in one cap
+by a fixed punctured copy of $M$ through a fixed smooth neck. This is
+$M\#S^4\cong M$. The complement $\Omega$ of the length-$L$ cylinder
+is literally independent of $L$.
+
+On the cylinder,
+\[
+ \Ric=(0,2,2,2),\quad s=6,\quad
+ |\Ric|^2=12,\quad |\Ric^\circ|^2=3.
+\]
+Writing $a_3=\Vol(S^3)=2\pi^2$, the integrals therefore have the form
+\[
+ V=a_3L+v_0,\quad T_s=6a_3L+t_0,\quad
+ R=12a_3L+r_0,\quad P=3a_3L+p_0.
+\]
+Put $b=\int_\Omega(s-6)dV$ and $J_0=\int_\Omega(s-6)^2dV$.
+Then exactly
+\[
+ \overline s=6+b/V,\qquad L_s=J_0-b^2/V=O(1).
+\]
+Thus $\cE(g_L)=(4P+L_s)/R\to1$. There is no change of topology and
+no growing contribution from a transition region.
+\end{proof}
+
+The special long-circle construction on
+$N\#(S^1\times Y^3)$, with $Y$ spherical or hyperbolic, uses the same
+fixed-complement calculation. The spherical dumbbell shows that a handle
+summand is unnecessary. This is a statement about the relative functional:
+$P(g_L)$ itself tends to infinity.
+
+\subsection{Exact values at and beyond the topological wall}
+
+Combining~\eqref{eq:EJ} and~\eqref{eq:cw}, for $R>0$,
+\begin{equation}
+ \cE(g)-1=
+ \frac{12W_\pm+L_s-24\pi^2T_\pm}{R}.
+ \label{eq:unit-wall}
+\end{equation}
+Let $T_{\min}=2\chi-3|\tau|$.
+
+\begin{corollary}[Value and attainment]
+\label{cor:unit-wall}
+If $T_{\min}\le0$, then $\alpha(M)=1$.
+If $T_{\min}<0$, the infimum is not attained.
+If $T_{\min}=0$, an attaining metric is exactly a half-conformally-flat
+metric of nonzero constant scalar curvature, with the vanishing Weyl half
+selected by the orientation for which $T_\pm=0$.
+\end{corollary}
+\begin{proof}
+All terms in the numerator of~\eqref{eq:unit-wall} are nonnegative
+in the stated orientation. Theorem~\ref{thm:universal} gives equality
+at the infimum. If $T_{\min}<0$, every $R>0$ metric satisfies
+\[
+ \cE(g)\ge1+\frac{24\pi^2|T_{\min}|}{R}>1.
+\]
+A Ricci-flat metric has $\cE=4$, so it cannot attain $1$ either.
+If $T_{\min}=0$, equality requires $W_\pm=0$ and $L_s=0$.
+The constant scalar curvature cannot be zero:~\eqref{eq:cw} would then
+give $P=0$, and the original definition would give $\cE=4$.
+The converse follows directly from~\eqref{eq:unit-wall}.
+\end{proof}
+
+For $T_{\min}<0$, every minimizing sequence necessarily has
+$R\to\infty$, $W_\pm=o(R)$, and $L_s=o(R)$.
+For $T_{\min}=0$, attainment is equivalently the existence of a
+half-conformally-flat conformal class with nonzero Yamabe constant.
+If $\tau=0$, the signature identity makes this full conformal flatness.
+In the positive-scalar equality case, the harmonic-form Weitzenb\"ock
+formula gives $b_+=0$, so $b_-=4-4b_1$; no conclusion of simple
+connectivity follows from this Betti-number calculation.
+
+Some resulting values and examples are
+\begin{equation}
+ \alpha(K3)=\alpha(T^4)=\alpha(S^2\times T^2)=1,
+ \qquad \alpha(\#_n\overline{\CP}^{\,2})=1\quad(n\ge4).
+ \label{eq:unit-examples}
+\end{equation}
+The first three values do not by themselves decide attainment.
+Products $S^1\times(S^3/\Gamma)$ and orientation-preserving isometric
+mapping tori of closed hyperbolic three-manifolds attain $1$ with their
+locally product metrics. Their Euler characteristic is zero; an Einstein
+metric would consequently be flat, contrary to their fundamental groups.
+LeBrun's positive-Yamabe half-flat conformal classes on
+$\#_4\overline{\CP}^{\,2}$~\cite{LNN} give another attained example.
+These examples are Bach-flat. They do not supply the non-Bach-flat
+global $P$-minimizer sought in the third public problem.
+
+The parameter $h=(k+4\ell)/A$ alone does not characterize the unit level.
+For a ball quotient with $k=0$ and $A/12<\ell<A/4$,
+\[
+ h<1,\qquad T_-=A/3-4\ell<0,
+\]
+so $\alpha=1$ nonetheless. Thus a converse to
+``$h\ge1$ implies $\alpha=1$'' is false for mixed surgery families.
+
+\subsection{The orientation-free Weyl deficit}
+\label{sec:weyl-deficit}
+
+Let
+\begin{equation}
+ \mathcal W([g])=\int_M|W|^2\dd=W_++W_-,\qquad
+ d([g])=8\pi^2\chi(M)-\mathcal W([g]).
+ \label{eq:d-def}
+\end{equation}
+Both are conformal invariants in dimension four. Gauss--Bonnet gives
+\begin{equation}
+ P=\frac S{12}-2d,\qquad R=\frac S3-2d,
+ \qquad
+ \boxed{\cE(g)=1+\frac{L_s(g)-6d([g])}{R(g)}}\quad(R>0).
+ \label{eq:orientation-free}
+\end{equation}
+This removes the orientation from~\eqref{eq:unit-wall} and exhibits
+the actual two-variable conformal problem.
+
+\begin{lemma}[Conformal minimization below the unit level]
+\label{lem:conformal-min}
+Every representative of a conformal class satisfies $S(g)\ge Y([g])^2$.
+If $d([g])>0$, then $Y([g])\ne0$, and a Yamabe representative
+minimizes $\cE$ in that class. Its value is
+\begin{equation}
+ \cE(\widehat g)=1-\frac{6d([g])}{Y([g])^2/3-2d([g])}.
+ \label{eq:class-value}
+\end{equation}
+\end{lemma}
+\begin{proof}
+If $Y>0$, the test function $1$ in the Yamabe quotient gives
+$Y\le T_s/\sqrt V\le\sqrt S$.
+If $Y\le0$, H\"older's inequality gives, for every nonzero test function,
+\[
+ \frac{\int(6|\nabla u|^2+su^2)\dd}{(\int u^4\dd)^{1/2}}
+ \ge-\|s_-\|_2.
+\]
+Taking the infimum yields $|Y|\le\|s_-\|_2\le\sqrt S$.
+At a Yamabe representative $P=Y^2/12-2d\ge0$.
+Consequently $d>0$ implies $Y^2\ge24d>0$ and
+$R(\widehat g)=Y^2/3-2d\ge6d>0$.
+For every representative $R(g)\ge R(\widehat g)$ and
+\[
+ \cE(g)\ge1-\frac{6d}{R(g)}
+          \ge1-\frac{6d}{R(\widehat g)}=\cE(\widehat g).
+\]
+Equality requires $L_s=0$ and $S=Y^2$.
+\end{proof}
+
+\begin{theorem}[Global conformal variational law]
+\label{thm:global-law}
+On every closed oriented four-manifold,
+\begin{equation}
+ \boxed{\alpha(M)=1-6\sup\left(
+ \{0\}\cup\left\{
+ \frac{d([g])}{Y([g])^2/3-2d([g])}:d([g])>0
+ \right\}\right).}
+ \label{eq:global-law}
+\end{equation}
+Each displayed positive ratio belongs to $(0,1/6]$.
+Writing $\mathcal W_*(M)=\inf_g\int|W|^2\dd$, one has
+\begin{equation}
+ \boxed{\alpha(M)<1
+       \quad\Longleftrightarrow\quad
+       \mathcal W_*(M)<8\pi^2\chi(M).}
+ \label{eq:weyl-threshold}
+\end{equation}
+\end{theorem}
+\begin{proof}
+Classes with $d\le0$ have $\cE\ge1$ by~\eqref{eq:orientation-free};
+any Ricci-flat representative has value $4$.
+Classes with $d>0$ are treated by Lemma~\ref{lem:conformal-min}.
+The universal competitor in Theorem~\ref{thm:universal} supplies the
+value $1$ as an infimum even if the set of positive-deficit classes is empty.
+This proves~\eqref{eq:global-law} including that case.
+A positive supremum is equivalent to the existence of one
+positive-deficit class, which is~\eqref{eq:weyl-threshold}.
+\end{proof}
+
+This formula has no monopole or negative-Yamabe hypothesis. It is a
+variational characterization, not a computation of its supremum on
+every manifold. In particular the infimum of Weyl energy alone decides
+whether $\alpha<1$, but it does not determine the amount below $1$;
+the Yamabe value of the same conformal class enters the denominator.
+The joint Yamabe--Weyl viewpoint has classical antecedents~\cite{ABKS}.
+
+On the negative-Yamabe supply manifolds of
+Proposition~\ref{prop:conversion}, put
+$p_Y=P(\widehat g)/(8\pi^2)$ and
+$\upsilon=Y([g])^2/(32\pi^2)-A$. Then
+\begin{equation}
+ \alpha(M)=\min\left\{1,
+       \inf_{[g]}\frac{4p_Y}{p_Y+A+\upsilon}\right\}.
+ \label{eq:supply-quotient}
+\end{equation}
+The exact conformal reduction below $1$ was already present in the
+earlier manuscript. The new formula~\eqref{eq:global-law} removes that
+supply restriction and includes the unit-level alternative.
+
+\subsection{Connected sums and an exact Weyl threshold}
+
+The standard small-neck construction for Weyl energy gives
+\begin{equation}
+ \mathcal W_*(M\#N)\le\mathcal W_*(M)+\mathcal W_*(N).
+ \label{eq:W-subadd}
+\end{equation}
+One can see the estimate directly: make each fixed metric Euclidean in
+a sufficiently small normal ball. Since $g_{ij}-\delta_{ij}=O(r^2)$,
+this costs $o(1)$ Weyl energy. Join the flat collars by a conformally
+flat rotationally symmetric neck, which has zero Weyl energy.
+Take nearly minimizing metrics first and then send the ball radii to zero.
+
+For $d_*(M)=8\pi^2\chi(M)-\mathcal W_*(M)$,
+Euler-characteristic additivity now gives
+\begin{equation}
+ \boxed{d_*(M\#N)\ge d_*(M)+d_*(N)-16\pi^2.}
+ \label{eq:deficit-sum}
+\end{equation}
+The neck loses $16\pi^2$ of Euler contribution. For $S^4$,
+$d_*=16\pi^2$, so a sphere summand is neutral as it must be.
+For $\overline{\CP}^{\,2}$, reversed Fubini--Study and the signature
+bound give $\mathcal W_*=12\pi^2$, $d_*=12\pi^2$.
+Induction and the same signature lower bound yield
+\begin{equation}
+ \mathcal W_*(\#_n\overline{\CP}^{\,2})=12n\pi^2,\qquad
+ d_*(\#_n\overline{\CP}^{\,2})=4\pi^2(4-n).
+ \label{eq:ncp-W}
+\end{equation}
+Hence, for $n\ge1$,
+\begin{equation}
+ \alpha(\#_n\overline{\CP}^{\,2})<1\quad(n\le3),\qquad
+ \alpha(\#_n\overline{\CP}^{\,2})=1\quad(n\ge4).
+ \label{eq:ncp-threshold}
+\end{equation}
+This threshold combines classical Weyl-energy information with the
+relative-functional characterization; it is not a new construction of
+the classical half-flat metrics.
+
+For a smooth negative K\"ahler--Einstein surface $X$ with $A=c_1^2(X)$,
+the Einstein metric has $d=4\pi^2A/3$. Consequently
+\begin{equation}
+ d_*(X\#k\overline{\CP}^{\,2})\ge4\pi^2(A/3-k).
+ \label{eq:KE-deficit}
+\end{equation}
+Canonical models with ADE points require the separate orbifold/ALE
+transfer, rather than this smooth-KE argument alone.
+For any such blow-up, the identity $T_+=A-k$ and the signature formula
+give the exact reformulation
+\begin{equation}
+ \boxed{\alpha(X\#k\overline{\CP}^{\,2})<1
+ \quad\Longleftrightarrow\quad
+ \inf_g\int|W_g^+|^2dV_g<2\pi^2(A-k).}
+ \label{eq:blowup-W}
+\end{equation}
+Thus the intermediate range $A/3\le k<A$ contains a definite
+all-conformal-class Weyl-energy question. The strict construction
+\eqref{eq:strict-general-type-upper} already gives $\alpha<1$ for
+$k\le A/3$ when that integer endpoint is present; it does not compute
+the remaining values in this intermediate range.
+
+\subsection{What a zero-infimum statement must control}
+
+Formula~\eqref{eq:EJ} gives the exact criterion
+\[
+ \cE(g_j)\to0\quad\Longleftrightarrow\quad
+ \frac{4P(g_j)+L_s(g_j)}{R(g_j)}\to0
+\]
+when $R(g_j)>0$. A Ricci-flat bulk with $P\to0$ can fail this criterion.
+For example $P_*(K3)=P_*(T^4)=0$, whereas~\eqref{eq:unit-examples}
+gives $\alpha=1$. Collapsing the flat factor of
+$S^2\times T^2$ similarly gives $P_*=0$, not $\alpha=0$.
+
+For a sequence with $\cE(g_j)\to0$, rescale by its nonzero optimizing
+Einstein constant so that $\lambda_{\rm opt}=\pm1$. Then
+\begin{equation}
+ R=|T_s|=(4-\cE)V,
+ \qquad
+ 48\pi^2\chi=6\mathcal W+L_s+(4-\cE)(1-\cE)V.
+ \label{eq:normalized-small}
+\end{equation}
+The second equality follows by substituting the first in Gauss--Bonnet.
+In particular $V\le12\pi^2\chi(1+o(1))$.
+A bubble-free, globally bounded-curvature total collapse of this same
+normalized sequence would force $\chi=0$, contradicting
+\eqref{eq:normalized-small} for subunit metrics. This observation does
+not transfer a compactness theorem for a specially selected
+$P$-minimizing sequence to arbitrary $\cE$-minimizing sequences.
+
+Likewise, an ALE gluing estimate for $P$ becomes a relative-gap rate only
+after controlling $L_s$ and the nonzero bulk limit of $R$. In the
+previous Eguchi--Hanson calculation the proposed $a^4/6$ coefficient
+requires $L_s=o(a^4)$; the $P$-rate alone does not supply it.
+
+\section{The mathematical questions now exposed}
+\label{sec:questions}
+
+The increment supplies an actual negative Einstein nonintegrable model,
+an equality theory for the harmonic-flux remainder, descending closed
+metrics, stronger global upper-bound quantifiers, and a general
+Weyl--Yamabe expression for $\alpha$. Their relation to the four original
+questions can be stated without introducing another research programme.
+
+\begin{center}\small
+\begin{tabularx}{\textwidth}{@{}p{.20\textwidth}XX@{}}
+\toprule
+Question & What the increment supplies & What remains to be proved\\
+\midrule
+Einstein existence on nonminimal general-type surfaces &
+Exact flux/equality structure and a global conformal characterization &
+Exclusion or construction of Einstein metrics in the remaining small-blow-up range\\
+Optimal total curvature &
+Product descent, stronger normalized recovery bounds, and exact relative-gap values in the unit region &
+The unrestricted $P_*$, or matching asymptotics, on the target blow-up and balanced families\\
+Non-Bach-flat global $P$-minimizer &
+A more precise local variational problem, including the period obstruction &
+A smooth attaining metric with the required non-Bach-flat property, or an exclusion theorem\\
+Closed negative Goldberg &
+A complete noncompact rational solution and the necessary closed torsion zero &
+A compact integrability argument or a closed strictly almost-K\"ahler Einstein example\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Four concrete connections would change these conclusions.
+
+\begin{question}[The compact zero and differentiated compatibility]
+Can the actual equations near a zero of the Nijenhuis tensor, together
+with a global identity, force integrability? A successful estimate must
+handle the two components in~\eqref{eq:unclosed-components} and remain
+consistent with Proposition~\ref{prop:VIII}. A purely pointwise
+negative-scalar sign argument cannot exclude that actual solution.
+\end{question}
+
+\begin{question}[Coercivity after alignment]
+Can the weighted estimate~\eqref{eq:weak-alignment} be strengthened across
+the harmonic zero set, and can $\Xi|_K$ be decided on the relevant
+blow-ups? Equation~\eqref{eq:spectral-degeneration} shows that constants
+uniform over arbitrary degenerating products cannot be obtained by
+ignoring the small spectrum. The remaining information must come from
+the target geometry or an additional global relation.
+\end{question}
+
+\begin{question}[A sharp joint conformal bound]
+On $X\#k\overline{\CP}^{\,2}$, determine the supremum in
+\eqref{eq:global-law}, rather than optimizing $P$ and $Y$ independently.
+In particular, in the unresolved intermediate range, can one decide
+\eqref{eq:blowup-W}? In a balanced small-$h$ family, can an all-metric
+lower bound match a genuine recovery construction with coefficient below
+$4$? The current cell coefficient is an upper bound, not a prescribed
+answer.
+\end{question}
+
+\begin{question}[From a local critical structure to a global minimum]
+Which compactness or direct global comparison turns the corrected
+Hessian information into a statement about all competing metrics?
+For nonzero-scale orbifold limits, the scalar-variance term must be
+estimated at the same order as the traceless-Ricci energy. For the
+non-Bach-flat problem, an attained relative gap at $1$ is not a substitute
+for a global minimizer of $P$.
+\end{question}
+
+\appendix
+\section{Mathematical source map}
+\label{app:sources}
+
+Project paths below are relative to the research archive;
+\path{Sessions/} paths are relative to the Sessions' user workspace.
+The manuscript does not require these files to compile.
+\begingroup\small\raggedright
+\begin{description}[style=nextline]
+\item[Baseline]
+\path{handoff/20261008_Einstein_Gaps_Four_Problems/01_Research_Synthesis.tex}
+and \path{02_Mathematical_Source_Companion.tex} in the same directory.
+The negative-background Burns saving and its ADE extension are inherited
+from this pair. The older exact conformal comparison is also in
+\path{skills/geometric-analysis/research/Curvature_Realizability.tex},
+Proposition \texttt{vg-conformal-infimum}.
+\item[A01.56]
+\path{Sessions/S1003A01/workspace/notes/step56_soldered_instanton_and_SU2_AKE.md}.
+Adapted-connection system, sourced current, Hodge remainder and the
+two differentiated Bianchi tests. The symmetry constraint-tower calculations
+lead into the following rational construction.
+\item[A01.57--58]
+\path{Sessions/S1003A01/workspace/notes/step57_bianchiVIII_strict_AKE_negative.md};
+\path{Sessions/S1003A01/workspace/notes/step58_verified_bianchiVIII_AKE_and_closed_zero_locus.md}.
+The complete rational and polar-extension proofs are in
+\path{Sessions/S1003A01/trace/ttcs/results/step58_ttcs01_verifier1_integration.md}
+and \path{step58_ttcs01_sub4_verifier.md} in that directory.
+The exact calculation is reproduced by
+\path{Sessions/S1003A01/workspace/scripts/step58_exact_bianchiVIII_fast.py}.
+Equations~\eqref{eq:VIII-ricci-cert}--\eqref{eq:VIII-Wminus-cert}
+retain the rational identities in the present standalone file.
+\item[A02.65--66]
+\path{Sessions/S1003A02/workspace/notes/step65_cell_exceptional_flux_ledger.md};
+\path{Sessions/S1003A02/workspace/notes/step66_rank_one_exceptional_ricci_rigidity.md},
+with its Section 7 corrections and
+\path{Sessions/S1003A02/trace/ttcs/results/step66_ttcs01_verifier1_integration.md}.
+These provide the flux decomposition, removable equality structure,
+Einstein--Maxwell normalization and signed torsion balance.
+\item[A02.67--68]
+\path{Sessions/S1003A02/workspace/notes/step67_cK_local_coercivity_at_cscK.md};
+\path{Sessions/S1003A02/workspace/notes/step68_product_cscK_saddle_verification.md}.
+The final constants and period condition are in
+\path{Sessions/S1003A02/trace/ttcs/results/step68_ttcs01_verifier1_integration.md}
+and \path{step68_ttcs01_verifier2_integration.md} in that directory.
+\item[A02.69]
+\path{Sessions/S1003A02/workspace/notes/step69_P_form_upper_law_balanced_towers.md},
+Section 6 and
+\path{Sessions/S1003A02/trace/ttcs/results/step69_ttcs01_verifier1_integration.md}.
+The inherited cell interval endpoint is in
+\path{Sessions/S1003A01/workspace/data/step33/rigorous_x00.03_X128_d20_P_exact.json}.
+\item[A02.71--72]
+\path{Sessions/S1003A02/workspace/notes/step71_functional_split_and_unit_wall.md};
+\path{Sessions/S1003A02/workspace/notes/step72_orientation_free_weyl_deficit_law.md},
+including its final conformal-minimization argument in
+\path{Sessions/S1003A02/trace/ttcs/results/step72_ttcs02_verifier1_integration.md}.
+The smooth long-cylinder proof, both signs of the Yamabe comparison,
+and the complete global formula are written out in
+Section~\ref{sec:weyl-law} above.
+\end{description}
+\endgroup
+
+\begin{thebibliography}{10}
+\bibitem{AAD}
+V. Apostolov, J. Armstrong and T. Dr\u aghici,
+\emph{Local models and integrability of certain almost K\"ahler 4-manifolds},
+Math. Ann. \textbf{323} (2002), 633--666.
+\href{https://arxiv.org/abs/math/0109098}{arXiv:math/0109098}.
+\bibitem{ArmstrongThesis}
+J. Armstrong, \emph{Almost-K\"ahler Geometry}, doctoral thesis.
+\href{https://johnarmstrongmaths.com/publications/resources/thesis.pdf}{Author's full text}.
+The characteristic-class obstruction is used in Proposition~\ref{prop:zero}.
+\bibitem{ArmstrongAnsatz}
+J. Armstrong, \emph{An ansatz for almost-K\"ahler, Einstein 4-manifolds},
+J. Reine Angew. Math. \textbf{542} (2002), 53--84.
+\href{https://doi.org/10.1515/crll.2002.009}{doi:10.1515/crll.2002.009}.
+\bibitem{Baer}
+C. B\"ar, \emph{Zero sets of solutions to semilinear elliptic systems
+of first order}, Invent. Math. \textbf{138} (1999), 183--202.
+\href{https://arxiv.org/abs/math/9805065}{arXiv:math/9805065}.
+\bibitem{LeBrun}
+C. LeBrun, \emph{Ricci curvature, minimal volumes, and Seiberg--Witten theory}.
+\href{https://arxiv.org/abs/math/0003068}{arXiv:math/0003068}.
+Proposition 3.2 supplies the polarized scalar estimate used in
+Section~\ref{sec:upper}.
+\bibitem{Optimal}
+C. LeBrun, \emph{Curvature Functionals, Optimal Metrics, and the
+Differential Topology of 4-Manifolds}.
+\href{https://arxiv.org/abs/math/0404251}{arXiv:math/0404251}.
+\bibitem{LNN}
+C. LeBrun, S. Nayatani and T. Nitta,
+\emph{Self-dual manifolds with positive Ricci curvature}.
+\href{https://arxiv.org/abs/dg-ga/9411001}{arXiv:dg-ga/9411001}.
+\bibitem{ABKS}
+K. Akutagawa, B. Botvinnik, O. Kobayashi and H. Seshadri,
+\emph{The Weyl functional near the Yamabe invariant},
+J. Geom. Anal. \textbf{13} (2003), 1--20.
+\href{https://arxiv.org/abs/math/0201153}{arXiv:math/0201153}.
+\end{thebibliography}
+\end{document}

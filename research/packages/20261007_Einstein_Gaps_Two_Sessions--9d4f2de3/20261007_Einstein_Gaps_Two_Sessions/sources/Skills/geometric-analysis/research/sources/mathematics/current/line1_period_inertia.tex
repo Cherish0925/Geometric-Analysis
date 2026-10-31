@@ -1,0 +1,433 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{mathrsfs}
+\usepackage{esint}
+\setmathfont{Asana Math}
+\setlength{\emergencystretch}{3em}
+
+\author{}
+\date{23 September 2026}
+
+\begin{document}
+
+\hypertarget{simultaneous-endpoint-saturation-and-the-positive-inertia-of-chern-periods}{%
+\section{Simultaneous endpoint saturation and the positive inertia of
+Chern
+periods}\label{simultaneous-endpoint-saturation-and-the-positive-inertia-of-chern-periods}}
+
+23 September 2026. Baseline: \texttt{8113dd1}. This note deduces a
+global constraint on actual Chern classes from the bounded-form endpoint
+theorem. The conclusion concerns the positive part of the intersection
+form. No equal-square, nonnegative-square, topological-square, or
+negative-square budget is imposed on the classes.
+
+\hypertarget{statement-from-actual-geometric-inputs}{%
+\subsection{1. Statement from actual geometric
+inputs}\label{statement-from-actual-geometric-inputs}}
+
+Let \texttt{(M,g)} be a closed connected oriented smooth four-manifold,
+with the Einstein target normalized to \texttt{Ric\ =\ -g}. Let
+\texttt{a\_1,...,a\_m}, \texttt{m\ \textgreater{}=\ 2}, be real first
+Chern classes of specified Spin\^{}c structures whose unperturbed
+Seiberg--Witten equations are solvable for every metric conformal to
+\texttt{g}. Each structure is held fixed during conformal variation. The
+classes need not be linearly independent or have equal squares. Put
+
+\[
+ V=\operatorname{Vol}(g),\quad
+ p_i=(a_{i,g}^+)^2>0,\quad
+ r=\fint|\operatorname{Ric}+g|^2,\quad w=\sqrt6|W^+|,
+\] \[
+ \delta_i=\frac32\int(s^2+2w^2)-72\pi^2p_i\ge0,
+ \qquad \kappa=\max_i\{r+\delta_i/V\}\le1/2880.
+ \tag{1}
+\] Let \texttt{lambda\_1\textgreater{}0} be the first positive
+scalar-Laplacian eigenvalue and set
+
+\[
+ G(\kappa)=13\kappa+4\sqrt{2\kappa},\qquad
+ J=\left(300\sqrt\kappa+
+                  12\sqrt{G(\kappa)/\lambda_1}\right)^2.
+ \tag{2}
+\] For \texttt{kappa=0}, set \texttt{J=0}.
+
+\textbf{Theorem (signed periods and positive inertia).} There are
+constant signs \texttt{s\_1=1,s\_2,...,s\_m} such that, for every
+\texttt{i},
+
+\[
+ \boxed{\frac{2\pi^2}{V}
+             \bigl((a_i-s_i a_1)_g^+\bigr)^2\le J.}
+ \tag{3}
+\] Consequently, for every real vector \texttt{t} with
+\texttt{sum\_i\ t\_i\ s\_i=0},
+
+\[
+ \boxed{\frac{2\pi^2}{V}\left(\sum_i t_i a_i\right)^2
+       \le J\left(\sum_{i=2}^m|t_i|\right)^2
+       \le(m-1)J\sum_i t_i^2.}
+ \tag{4}
+\] The first square in (3) is the positive Hodge norm; the square in (4)
+is the full, indefinite cup-product square.
+
+The following matrix form records more of the structure. Define the
+normalized cup and positive-period matrices
+
+\[
+ Q_{ij}=\frac{2\pi^2}{V}a_i\cdot a_j,\qquad
+ P_{ij}=\frac{2\pi^2}{V}a_{i,g}^+\cdot a_{j,g}^+,
+ \qquad q_1=P_{11}.
+\] There are positive semidefinite matrices \texttt{R,N} and a real
+vector \texttt{alpha} such that
+
+\[
+ \boxed{P=q_1\alpha\alpha^{\mathsf T}+R,
+ \quad Q=q_1\alpha\alpha^{\mathsf T}+R-N,
+ \quad \operatorname{tr}R\le(m-1)J,}
+ \tag{5}
+\] \[
+ \alpha_1=1,\qquad
+ |\alpha_i-s_i|\le\sqrt{J/q_1},\qquad
+ \frac12\le q_1\le\frac32.
+ \tag{6}
+\] The positive-period matrix itself has the sharper entrywise estimate
+
+\[
+ \boxed{\max_{i,j}|P_{ij}-q_1s_i s_j|\le\kappa/36+2J.}
+ \tag{6a}
+\] This uses the exact common-functional relation among the class
+lengths, not merely Cauchy--Schwarz applied to the \texttt{L\^{}2}
+approximation. In particular, if \texttt{nu\_2(Q)} denotes the second
+largest eigenvalue,
+
+\[
+ \boxed{\nu_2(Q)\le(m-1)J.}
+ \tag{7}
+\] No smallness of \texttt{J} is needed for these finite inequalities.
+They become restrictive when \texttt{kappa} and
+\texttt{G(kappa)/lambda\_1} are small. In particular,
+\texttt{lambda\_1\ \textgreater{}\textgreater{}\ sqrt(kappa)} is
+sufficient along a sequence; a fixed positive lower bound for
+\texttt{lambda\_1} is stronger than necessary.
+
+\hypertarget{two-useful-cup-product-obstructions}{%
+\subsection{2. Two useful cup-product
+obstructions}\label{two-useful-cup-product-obstructions}}
+
+For two classes \texttt{a,c}, (3) immediately gives
+
+\[
+ \boxed{\frac{2\pi^2}{V}
+       \bigl(a^2+c^2-2|a\cdot c|\bigr)\le J.}
+ \tag{8}
+\] Thus positive cup square for both \texttt{a-c} and \texttt{a+c}
+obstructs simultaneous saturation when the scalar gap is large relative
+to the error. This criterion does not require either class individually
+to have positive square. It may be vacuous, which is correctly reported
+by a nonpositive left side.
+
+More generally, if \texttt{nu\_2(Q)\textgreater{}=theta\textgreater{}0}
+and
+
+\[
+ \kappa\le\frac{\theta}{360000(m-1)},
+\] then (7) gives the explicit alternative
+
+\[
+ \boxed{\lambda_1\le\frac{576(m-1)G(\kappa)}{\theta}.}
+ \tag{9}
+\] Indeed, (7) implies
+\texttt{sqrt(theta/(m-1))\ \textless{}=\ 300\ sqrt(kappa)+12\ sqrt(G/lambda\_1)};
+the first summand is at most half the left side. If \texttt{kappa=0}, a
+positive \texttt{theta} is impossible. These statements obstruct a
+proposed metric and its specified actual classes; they do not rule out
+all Einstein metrics on an arbitrary smooth manifold.
+
+For fixed classes and bounded volume, a positive second eigenvalue of
+their unnormalized cup matrix therefore excludes a sequence with
+\texttt{kappa\ -\textgreater{}\ 0} and
+\texttt{G(kappa)/lambda\_1\ -\textgreater{}\ 0}. If volume grows, the
+necessary normalization in (7) must be retained: positive inertia alone,
+without a quantitative positive eigenvalue divided by volume, is
+insufficient.
+
+\hypertarget{an-elementary-phase-lemma-with-a-squared-error}{%
+\subsection{3. An elementary phase lemma with a squared
+error}\label{an-elementary-phase-lemma-with-a-squared-error}}
+
+All expectations below use normalized volume. Let \texttt{u,v} be smooth
+sections of the same Euclidean rank-three bundle, with
+\texttt{\textbar{}u\textbar{},\textbar{}v\textbar{}\textless{}=sqrt(6)}.
+Write
+
+\[
+ a=|u|^2,\quad b=|v|^2,\quad h=\langle u,v\rangle,\quad
+ \mathcal Q(u)=u\otimes u-\frac{|u|^2}{3}I,
+ \quad \sigma=\operatorname{sign}h\in\{-1,1\},
+\] resolving \texttt{h=0} by \texttt{sigma=1}. Pointwise,
+
+\[
+ |\mathcal Q(u)-\mathcal Q(v)|^2
+       =\frac23(a-b)^2+2(ab-h^2).                 \tag{10}
+\] Two useful estimates, including at zeros, are
+
+\[
+ |u-\sigma v|^2
+ \le2\bigl((a-1)^2+(b-1)^2\bigr)
+                    +2|\mathcal Q(u)-\mathcal Q(v)|^2,\tag{11}
+\] \[
+ |h-\sigma|^2
+ \le2\bigl((a-1)^2+(b-1)^2\bigr)
+                       +|\mathcal Q(u)-\mathcal Q(v)|^2.\tag{12}
+\]
+
+For (11), if \texttt{a+b\textgreater{}=1}, use
+
+\[
+ |u-\sigma v|^2
+ =\frac{(a-b)^2+4(ab-h^2)}{a+b+2|h|}
+ \le2|\mathcal Q(u)-\mathcal Q(v)|^2.
+\] If \texttt{a+b\textless{}1}, the left side is at most \texttt{a+b},
+whereas
+\texttt{2((a-1)\^{}2+(b-1)\^{}2)\textgreater{}=(a+b-2)\^{}2\textgreater{}=a+b}.
+For (12), let \texttt{z=sqrt(ab)} and, when \texttt{z\textgreater{}0},
+\texttt{t=\textbar{}h\textbar{}/z}. Then
+\texttt{0\textless{}=t\textless{}=1} and
+
+\[
+ (zt-1)^2\le2(z-1)^2+2z^2(1-t)^2,
+ \quad (z-1)^2\le(a-1)^2+(b-1)^2,
+ \quad 2z^2(1-t)^2\le2(ab-h^2).
+\] The middle inequality follows because \texttt{sqrt(ab)} lies between
+\texttt{a} and \texttt{b}; the zero case follows directly. Equation (10)
+completes the proof.
+
+Suppose \texttt{E\textbar{}h-sigma\textbar{}\^{}2\textless{}=T} and
+\texttt{E\textbar{}dh\textbar{}\^{}2\textless{}=D}. Poincare and the
+triangle inequality for orthogonal projection off the constants give
+
+\[
+ \sqrt{\operatorname{Var}\sigma}
+ \le\sqrt{\operatorname{Var}h}+\|h-\sigma\|_2
+ \le\sqrt{D/\lambda_1}+\sqrt T.                  \tag{13}
+\] There is a constant sign \texttt{s} with
+
+\[
+ \mathbb E|\sigma-s|^2
+ =2(1-|\mathbb E\sigma|)
+ \le2\operatorname{Var}\sigma.                  \tag{14}
+\] If \texttt{E\textbar{}u-sigma\ v\textbar{}\^{}2\textless{}=F}, it
+follows that
+
+\[
+ \|u-sv\|_2
+ \le\sqrt F+\sqrt{12}\bigl(\sqrt{D/\lambda_1}+\sqrt T\bigr).
+ \tag{15}
+\] All norms here are normalized \texttt{L\^{}2} norms. No derivative of
+the measurable sign, unit eigenvector, or normalized form is taken. The
+argument only needs the Poincare estimate for these finitely many smooth
+scalar functions \texttt{h}; a gap on the whole scalar spectrum is a
+convenient sufficient condition.
+
+\hypertarget{applying-the-lemma-to-the-actual-endpoint-forms}{%
+\subsection{4. Applying the lemma to the actual endpoint
+forms}\label{applying-the-lemma-to-the-actual-endpoint-forms}}
+
+Let \texttt{H\_i} represent \texttt{a\_\{i,g\}\^{}+} harmonically and
+put \texttt{xi\_i=-sqrt(2)\ pi\ H\_i}. The actual bounded-form theorem
+in \href{line1_composed_application.md}{the endpoint application},
+equations (2)--(4), gives smooth \texttt{u\_i=omega\_i/sqrt(2)} with
+arbitrarily small simultaneous smoothing allowances. Suppressing those
+allowances until the limiting step, it gives
+
+\[
+ \begin{split}
+ |u_i|&\le\sqrt6,\qquad
+ \mathbb E|u_i-\xi_i|^2\le49\kappa/2,\\
+ \mathbb E(|u_i|^2-1)^2&\le180\kappa,\qquad
+ \mathbb E|W^++\mathcal Q(u_i)|^2\le720\kappa,\\
+ \mathbb E|\nabla u_i|^2&\le G(\kappa)/2.
+ \end{split}                                                   \tag{16}
+\] The same Weyl tensor occurs for every class, so
+
+\[
+ \mathbb E|\mathcal Q(u_i)-\mathcal Q(u_1)|^2\le2880\kappa.
+ \tag{17}
+\] Equations (11)--(12), and the differential estimate
+\texttt{\textbar{}d\textless{}u\_i,u\_1\textgreater{}\textbar{}\^{}2\ \textless{}=12(\textbar{}nabla\ u\_i\textbar{}\^{}2+\textbar{}nabla\ u\_1\textbar{}\^{}2)},
+give
+
+\[
+ F=6480\kappa,\qquad T=3600\kappa,\qquad D=12G(\kappa).
+ \tag{18}
+\] Thus (15), followed by the two harmonic-alignment errors, gives a
+constant sign \texttt{s\_i} with
+
+\[
+ \|\xi_i-s_i\xi_1\|_2
+ \le\left(7\sqrt2+36\sqrt5+120\sqrt3\right)\sqrt\kappa
+                  +12\sqrt{G(\kappa)/\lambda_1}
+ \le300\sqrt\kappa+12\sqrt{G(\kappa)/\lambda_1}.       \tag{19}
+\] The coefficient estimate is elementary: use
+\texttt{sqrt(2)\textless{}3/2}, \texttt{sqrt(5)\textless{}9/4}, and
+\texttt{sqrt(3)\textless{}26/15}, giving an upper bound \texttt{299.5}.
+
+To restore the allowances rigorously, choose a sequence of positive
+allowances tending to zero, obtaining one finite sign vector for each
+choice. Pass to a subsequence with constant sign vector. The harmonic
+forms, their norms, and the scalar eigenvalue are fixed. All the errors
+in (16)--(19) tend to their displayed bounds. No convergence of spinors,
+connections, or measurable sign functions is asserted. This proves (3).
+Since a full cup square is at most its positive Hodge square, summing
+the signed differences proves (4).
+
+For completeness, (16) implies
+
+\[
+ \left(\sqrt{1-\sqrt{180\kappa}}-7\sqrt{\kappa/2}\right)^2
+ \le q_1\le
+ \left(\sqrt{1+\sqrt{180\kappa}}+7\sqrt{\kappa/2}\right)^2.
+ \tag{20}
+\] The lower parenthesis is positive on
+\texttt{kappa\textless{}=1/2880}, and this interval gives
+\texttt{1/2\textless{}=q\_1\textless{}=3/2}.
+
+\hypertarget{the-matrix-decomposition-and-its-precise-limitation}{%
+\subsection{5. The matrix decomposition and its precise
+limitation}\label{the-matrix-decomposition-and-its-precise-limitation}}
+
+Use the Hilbert space of self-dual forms with normalized \texttt{L\^{}2}
+inner product. Orthogonally split
+
+\[
+ \xi_i=\alpha_i\xi_1+\eta_i,\qquad
+ \alpha_i=\frac{\langle\xi_i,\xi_1\rangle_{L^2(d\mu/V)}}{q_1},
+ \quad \langle\eta_i,\xi_1\rangle=0.
+\] Here \texttt{alpha\_1=1}, \texttt{eta\_1=0}, and (3) gives
+\texttt{\textbar{}\textbar{}eta\_i\textbar{}\textbar{}\_2\^{}2\textless{}=J}
+and \texttt{\textbar{}alpha\_i-s\_i\textbar{}\textless{}=sqrt(J/q\_1)}.
+Set \texttt{R\_ij=\textless{}eta\_i,eta\_j\textgreater{}} and let
+\texttt{N} be the normalized positive Gram matrix of the anti-self-dual
+harmonic representatives. Then \texttt{R,N\textgreater{}=0},
+\texttt{tr\ R\textless{}=\ (m-1)J}, and Hodge decomposition gives (5)
+exactly. On the codimension-one subspace perpendicular to
+\texttt{alpha}, the quadratic form of \texttt{Q} is at most
+\texttt{\textbar{}\textbar{}R\textbar{}\textbar{}\_op\textless{}=tr\ R}.
+The min--max principle proves (7).
+
+To prove (6a), put \texttt{q\_i=P\_ii}. Subtracting the definitions of
+the deficits in (1) gives the exact identity
+
+\[
+ q_i-q_1=-\frac{\delta_i-\delta_1}{36V},\qquad
+ |q_i-q_1|\le\kappa/36.                            \tag{21}
+\] The signed forms \texttt{s\_i\ xi\_i} are each within
+\texttt{sqrt(J)} of \texttt{xi\_1}, so the squared distance between any
+two is at most \texttt{4J}. Polarization therefore gives
+
+\[
+ q_1-\kappa/36-2J\le s_i s_jP_{ij}
+                       \le q_1+\kappa/36,
+\] proving (6a). No extra square root of \texttt{J} is lost in the
+positive Gram matrix estimate.
+
+It would be incorrect to delete \texttt{N} or replace (5) by closeness
+of \texttt{Q} to a rank-one sign matrix. The bounded-form estimates
+control the positive projections. For example, in an abstract
+intersection space of signature \texttt{(1,m)}, choose an orthonormal
+positive vector \texttt{e\_0} and negative vectors \texttt{e\_i}, and
+let \texttt{a\_i=e\_0+L\ e\_i}. Their positive Gram matrix is exactly
+\texttt{11\^{}T}, while their full Gram matrix is
+\texttt{11\^{}T-L\^{}2\ I}. This illustrates the missing negative
+information even when positive-period alignment is exact. It is an
+algebraic test of the implication, \textbf{not} an assertion that these
+classes are actual monopoles on a metric saturating (1). Classical gauge
+equality rigidity can impose further restrictions at exact saturation.
+
+Similarly, distinct Spin\^{}c labels, torsion differences, or the pair
+\texttt{a,-a} do not by themselves supply a positive period obstruction.
+An integral lattice alone gives no lower bound on the positive Hodge
+norm of all nonzero vectors; one must use a verified positive cup
+square, a quantitative positive eigenvalue, or additional period data.
+
+\hypertarget{exact-increment-over-the-earlier-arguments}{%
+\subsection{6. Exact increment over the earlier
+arguments}\label{exact-increment-over-the-earlier-arguments}}
+
+\href{round18_periods.md}{Round 18}, Sections 1--4, assumes common
+positive square \texttt{a\_i\^{}2=A\textgreater{}=2chi+3tau} and uses
+scalar-energy saturation to control the \textbf{full} determinant
+curvatures. It obtains an intersection sign-correlation polytope and low
+scalar eigenvalues from covariance. Those remain stronger in their
+particular regime and are not new here. \href{round2_rigidity.md}{Round
+2}, Sections 3--4, already handles measurable line alignment and Walsh
+phase separation at a different calibration.
+
+The added result is (3)--(7) for the actual all-scalar endpoint input,
+with arbitrary individual squares and no negative-square budget. It
+extracts a positive-inertia obstruction from harmonic Chern periods,
+while preserving the uncontrolled negative Gram matrix. The squared
+phase estimates (11)--(14) yield an \texttt{O(kappa+G(kappa)/lambda\_1)}
+error, rather than losing a square root simply by estimating the mean of
+the inner product. The common-functional identity (21) preserves that
+order in the positive Gram matrix. No growing low-mode cluster theorem
+is being claimed.
+
+The classical scalar--Weyl curvature bound and its equality geometry
+come from C. LeBrun, \emph{Ricci Curvature, Minimal Volumes, and
+Seiberg--Witten Theory},
+\href{https://arxiv.org/abs/math/0003068}{Theorem 2.3 and Proposition
+4.1}. The local endpoint application provides the quantitative
+all-scalar harmonic alignment used here.
+
+\texttt{line1\_period\_inertia\_check.py} checks the exact tensor
+identities, phase inequalities' algebra, constants, and a finite model
+of (5). It does not certify gauge solvability or replace Poincare, Hodge
+theory, the smoothing argument, or the analytic endpoint theorem.
+
+\end{document}

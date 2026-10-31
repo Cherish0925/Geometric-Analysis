@@ -1,0 +1,380 @@
+\documentclass[UTF8,11pt,fontset=none]{ctexart}
+\usepackage[a4paper,margin=25mm,headheight=15pt,footskip=13mm]{geometry}
+\usepackage{fontspec}
+\IfFontExistsTF{TeX Gyre Termes}{\setmainfont{TeX Gyre Termes}}{\setmainfont{TeXGyreTermes}}
+\IfFontExistsTF{TeX Gyre Heros}{\setsansfont{TeX Gyre Heros}}{\setsansfont{TeXGyreHeros}}
+\IfFontExistsTF{DejaVu Sans Mono}{\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]}{\setmonofont{Latin Modern Mono}}
+\IfFontExistsTF{Noto Serif CJK SC}{\setCJKmainfont{Noto Serif CJK SC}[AutoFakeSlant=0.15]}{\setCJKmainfont{FandolSong-Regular.otf}[BoldFont=FandolSong-Bold.otf,ItalicFont=FandolKai-Regular.otf]}
+\IfFontExistsTF{Noto Sans CJK SC}{\setCJKsansfont{Noto Sans CJK SC}}{\setCJKsansfont{FandolHei-Regular.otf}}
+\IfFontExistsTF{Noto Sans Mono CJK SC}{\setCJKmonofont{Noto Sans Mono CJK SC}}{\setCJKmonofont{FandolFang-Regular.otf}}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,esint,bm}
+\usepackage{booktabs,longtable,array,calc}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=1.7em,topsep=4pt}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,fontsize=\small}
+\usepackage{xurl}
+\usepackage[unicode,hidelinks,bookmarksnumbered]{hyperref}
+\usepackage{bookmark}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 第一科学主线：近期数学补充}
+\fancyhead[R]{\small 2026-10-07}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\setlength{\emergencystretch}{3em}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{3.5pt plus 1pt}
+\linespread{1.12}
+\setlength{\abovedisplayskip}{10pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{10pt plus 2pt minus 2pt}
+\allowdisplaybreaks[2]
+\renewcommand{\arraystretch}{1.15}
+\let\cleardoublepage\clearpage
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{2}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{assumption}[theorem]{前置}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{说明}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\id}{\operatorname{Id}}
+\newcommand{\dd}{\,\mathrm d}
+\pdfstringdefDisableCommands{\def\fint{int}\def\mathcal#1{#1}\def\mathfrak#1{#1}\def\mathscr#1{#1}\def\operatorname#1{#1}\def\texorpdfstring#1#2{#2}}
+
+\renewcommand{\thesection}{5.\arabic{section}}
+\title{第一科学主线：近期研究补充\\[6pt]\large 5．任意固定复双曲领口中的解析低成本单吹起构造}
+\author{数学研究交接稿}\date{2026年10月7日}
+\begin{document}
+\maketitle
+\tableofcontents
+\clearpage
+本分卷收录显式三轴族、完整相对曲率恒等式、两尺度因子化及内外匹配余项。负对数系数及常模最小点属于两会话原稿已识别内容；续研所补的是任意固定领口下的完整光滑构造和统一 \(O_R(\epsilon^2)\) 余项。来源给出了下面的构造证明；本汇编保存其推导，不将有限代数或浮点检查代替几何分析。\cite{R04,B04}
+
+记 \(J_6(g)=\int |\operatorname{Ric}_g+6g|^2\)、\(P(g)=\int |\operatorname{Ric}_g^{\circ}|^2\)。Weyl 范数使用原稿曲率算子规范。下面使用 SU(2) 左不变一形式 \(d\sigma _i=2\sigma _j\wedge \sigma _k\)，且 \(\int _{S^3}\sigma _1\wedge \sigma _2\wedge \sigma _3=2\pi ^2\)。取向 \(dt\wedge \sigma _1\wedge \sigma _2\wedge \sigma _3\)。
+
+\textbf{构造命题。} 对任意 R\textgreater0，存在 \(\epsilon _R>0\) 和一族 \(\epsilon \in (0,\epsilon _R)\) 对应的光滑普通负单吹起单元 \(g_\epsilon\)，它在 \(t\ge R\) 精确等于 \(\operatorname{Ric}=-6g\) 的复双曲度量，且
+
+\[
+\frac{P(g_\epsilon)}{8\pi^2}
+=1-9\epsilon^2\log(1/\epsilon)+O_R(\epsilon^2),
+\] \[
+\frac{J_6(g_\epsilon)}{8\pi^2}
+=1-9\epsilon^2\log(1/\epsilon)+O_R(\epsilon^2).
+\tag{5.A}
+\]
+
+积分可取到任意位于精确 CH 区域的外边界；该区域的 P 和 \(J_6\) 均为零。特别是，两项成本均严格小于 \(8\pi ^2\)，对所有充分小的正 \(\epsilon\) 成立。
+
+(5.A)是原续研明确匹配构造的结论，不是任意竞争度量的下界，不是任意负 KE 背景的二阶响应定理。没有将固定半径余项常数说成与 R 无关。
+
+\section{一个明确的光滑度量族}\label{v5-ux4e00ux4e2aux660eux786eux7684ux5149ux6ed1ux5ea6ux91cfux65cf}
+
+令 \(T=R/2\)。固定 \(\chi \in C^\infty ([0,\infty ))\)，\(0\le \chi \le 1\)，\(\chi =0\) 于 {[}0,1{]}，\(\chi =1\) 于 \([2,\infty )\)。例如在 1\textless x\textless2 可取
+
+\[
+\chi(x)=\frac{e^{-1/(x-1)}}{e^{-1/(x-1)}+e^{-1/(2-x)}}.
+\]
+
+设 \(\epsilon <T^2/16\)。写
+
+\[
+S(t)=\sinh t,\quad C(t)=\cosh t,\quad
+\mathbf c_*=(9/4,3/4,1/2).
+\]
+
+三组轨道半径为
+
+\[
+\mathbf a^B=(\sqrt{t^2+\epsilon},\sqrt{t^2+\epsilon},t),
+\] \[
+\mathbf a^H=(S,SC,S),
+\] \[
+\mathbf a^N=
+\left(\sqrt{S^2+\epsilon}e^{9\epsilon/4},
+\sqrt{S^2+\epsilon}\,C e^{3\epsilon/4},
+S e^{\epsilon/2}\right).
+\]
+
+上标分别表示平直端 Burns 核心、复双曲背景、所选颈部。
+
+令 \(\chi _{\mathrm{in}}(t)=\chi (t/\sqrt{\epsilon })\)、\(\chi _{\mathrm{out}}(t)=1-\chi (t/T)\)。对 t\textgreater0 定义
+
+\[
+ a_i(t)=a_i^H(t)\exp\left\{
+ \chi_{out}(t)\left[
+ \log\frac{a_i^B(t)}{a_i^H(t)}+
+ \chi_{in}(t)\log\frac{a_i^N(t)}{a_i^B(t)}
+ \right]\right\},
+\] \[
+ g_\epsilon=dt^2+\sum_{i=1}^3a_i(t)^2\sigma_i^2.
+\tag{5.1.1}
+\]
+
+所有半径在 t\textgreater0 正。该公式分别给出：
+
+\begin{itemize}
+\tightlist
+\item
+  \(t\le \sqrt{\epsilon }\)：精确 Burns 核心；
+\item
+  \(2\sqrt{\epsilon }\le t\le T\)：精确选定颈部 \(a^N\)；
+\item
+  \(t\ge 2T=R\)：精确复双曲背景 \(a^H\)。
+\end{itemize}
+
+在 \(t=0\) 附近，\(a_1=a_2=\sqrt{t^2+\epsilon }\)，\(a_3=t\)，是普通 Hopf bolt 的标准光滑形式。不存在 bolt 处的截断或分母问题。崩塌 \(\sigma _3\) 圆的全周期给普通 O(-1) 拓扑；外 CH 的 Kähler 纤维为 \(\sigma _2\) 方向，故是与内核 Kähler 方向正交的插入。沿用原档案已核验的普通吹起边界标记，不改变手术数。
+
+各区间之间的 \(\chi\) 在端点平坦，故度量全局 \(C^\infty\)。这不是先构造 \(C^2\) 度量再要求额外光滑化证书。
+
+\section{完整曲率代价的精确校准}\label{v5-ux5b8cux6574ux66f2ux7387ux4ee3ux4ef7ux7684ux7cbeux786eux6821ux51c6}
+
+令循环指标 (i,j,k)，定义
+
+\[
+ u_i=\dot a_i-\frac{a_j^2+a_k^2-a_i^2}{a_ja_k},\qquad
+ H_i=u_i+\frac12u_ju_k,\qquad
+ \lambda_i=\frac{a_ja_k}{a_i}.
+\]
+
+原稿 Cartan 公式给
+
+\[
+\frac{P}{8\pi^2}=\int\sum_i\frac{\lambda_i}{4}
+ \left(\dot u_i-\frac{2H_i}{\lambda_i}\right)^2dt.
+\tag{5.2.1}
+\]
+
+定义相对密度
+
+\[
+\begin{aligned}
+\mathscr L_P={}&\frac{\lambda_1}{4}
+(\dot u_1+2H_1/\lambda_1)^2\\
+&+\frac{\lambda_2}{4}
+(\dot u_2-(2u_2-u_1u_3)/\lambda_2)^2\\
+&+\frac{\lambda_3}{4}
+(\dot u_3+2H_3/\lambda_3)^2
++\frac{2u_1u_2u_3}{\lambda_2}.
+\end{aligned}
+\]
+
+逐项展开得到
+
+\[
+ \mathscr L_P-\sum_i\frac{\lambda_i}{4}
+ (\dot u_i-2H_i/\lambda_i)^2
+ =\frac d{dt}(u_1^2+u_3^2+u_1u_2u_3).
+\]
+
+bolt 端 \(u=(0,0,-1)\)，外 CH 端 \(u=(0,3\sinh ^2t,0)\)。故
+
+\[
+\boxed{\frac{P}{8\pi^2}=1+\int_0^R\mathscr L_P\,dt.}
+\tag{5.2.2}
+\]
+
+这条恒等式保留了整个核心、过渡与外边界，不能以一段颈部积分代替它。
+
+再令
+
+\[
+ \Sigma=\sum_i\left(\frac{\dot u_i}{a_i}
+ +\frac{2H_i}{a_ja_k}\right),\qquad s=-2\Sigma.
+\]
+
+因为 \(dV=2\pi ^2a_1a_2a_3dt\)，且 \(J_6=P+\int (s+24)^2/4\)，故
+
+\[
+ \frac{J_6}{8\pi^2}
+ =1+\int_0^R\mathscr L_Jdt,\qquad
+ \mathscr L_J=\mathscr L_P+
+ \frac{a_1a_2a_3}{4}(\Sigma-12)^2.
+\tag{5.2.3}
+\]
+
+\section{颈部的两尺度解析因子化}\label{v5-ux9888ux90e8ux7684ux4e24ux5c3aux5ea6ux89e3ux6790ux56e0ux5b50ux5316}
+
+在 \(2\sqrt{\epsilon }\le t\le T\)，置
+
+\[
+ z=\epsilon/t^2,\quad y=t^2,
+ \mathfrak s(y)=\frac{\sinh\sqrt y}{\sqrt y},\quad
+ \mathfrak c(y)=\cosh\sqrt y.
+\]
+
+其中 \(0\le z\le 1/4\)、\(0\le y\le T^2\)，且在 \(y=0\) 连续解析延拓。写 \(a_i=t A_i(z,y)\)，则
+
+\[
+ A_1=\sqrt{\mathfrak s^2+z}\,e^{zyc_1},\quad
+ A_2=\sqrt{\mathfrak s^2+z}\,\mathfrak c\,e^{zyc_2},\quad
+ A_3=\mathfrak s\,e^{zyc_3}.
+\]
+
+先允许任意固定 \(c=(c_1,c_2,c_3)\)。所有函数在所述实矩形附近实解析且半径为正。以固定 \(\epsilon\) 微分时，
+
+\[
+ t\frac d{dt}=2y\partial_y-2z\partial_z.
+\]
+
+因而 \(u_i=U_i(z,y)\)、\(\lambda _i=t\Lambda _i(z,y)\) 均可在该矩形解析表示。
+
+在 \(z=0\) 上是精确 CH，\(U_1=U_3=0\)；在 \(y=0\) 上是缩放后的平直 Burns 数据，
+
+\[
+ U_1=U_2=0,\quad U_3=-\frac z{1+z},\quad
+ (\Lambda_1,\Lambda_2,\Lambda_3)=(1,1,1+z).
+\]
+
+由这两条精确边界校准：
+
+首先，\(U_1\) 可被 yz 整除；\(U_2\) 可被 y 整除；\(U_3\) 可被 z 整除。 其次，定义
+
+\[
+\begin{aligned}
+B_1&=2(yU_{1,y}-zU_{1,z})+2H_1/\Lambda_1,\\
+B_2&=2(yU_{2,y}-zU_{2,z})-(2U_2-U_1U_3)/\Lambda_2,\\
+B_3&=2(yU_{3,y}-zU_{3,z})+2H_3/\Lambda_3.
+\end{aligned}
+\]
+
+每个 \(B_i\) 在 \(z=0\) 与 \(y=0\) 都为零，故 \(B_i=yz b_i\)，\(b_i\) 解析。 最后，\(\Sigma\) 可写为 \(y^{-1}B_s\)；\(B_s\) 在 \(y=0\) 为零，而 \(B_s(0,y)=12y\)。因此 \(\Sigma -12=z b_s(z,y)\)，\(b_s\) 解析。
+
+这些因子给出\textbf{完整且无形式余项的表示}
+
+\[
+\boxed{\mathscr L_P=\frac{\epsilon^2}{t}F_P(z,y;c),\qquad
+\mathscr L_J=\frac{\epsilon^2}{t}F_J(z,y;c),}
+\tag{5.3.1}
+\]
+
+\(F_P,F_J\) 在整个所述矩形上光滑。由普通均值估计，
+
+\[
+ |F_\bullet(z,y;c)-F_\bullet(0,0;c)|\le C_{R,c}(z+y).
+\tag{5.3.2}
+\]
+
+这一步控制的是下端 \(z=\epsilon /t^2\) 可能并不极小的整个颈部，不是把固定 t 的 \(\epsilon\) 展开直接积分到 \(t\approx \sqrt{\epsilon }\)。
+
+\section{角点系数与严格余项}\label{v5-ux89d2ux70b9ux7cfbux6570ux4e0eux4e25ux683cux4f59ux9879}
+
+系数可由固定 t 的一阶半径变化计算：
+
+\[
+\frac{\partial_\epsilon a_i}{a_i}\Big|_{\epsilon=0}
+=\left(\frac1{2\sinh^2t}+c_1,
+\frac1{2\sinh^2t}+c_2,c_3\right).
+\]
+
+源笔记的符号计算得到
+
+\[
+\begin{aligned}
+F_P(0,0;c)={}&11\sum_i c_i^2
+ -10(c_1c_2+c_1c_3+c_2c_3)\\
+&-37c_1+11c_2+19c_3+59/4,\\
+F_J(0,0;c)={}&F_P(0,0;c)+(2c_1+2c_2+2c_3-7)^2/4.
+\end{aligned}
+\]
+
+令 \(d=c-(9/4,3/4,1/2)\)。它们等价于
+
+\[
+F_P=-18+16|d|^2-5(d_1+d_2+d_3)^2,
+\] \[
+F_J=-18+16|d|^2-4(d_1+d_2+d_3)^2.
+\]
+
+两者唯一最小点同为 \(c_*\)，值 -18。这个常模最小值原稿已有；原续研脚本作了独立复算，不宣称第一次发现该系数。
+
+选择 \(c=c_*\)。由(5.3.1)--(5.3.2)，
+
+\[
+\begin{aligned}
+\int_{2\sqrt\epsilon}^{T}\mathscr L_\bullet dt
+&=-18\epsilon^2\log\frac{T}{2\sqrt\epsilon}
+ +O_R\left(\epsilon^2\int_{2\sqrt\epsilon}^{T}
+ \frac{t^2+\epsilon/t^2}{t}\,dt\right)\\
+&=-9\epsilon^2\log(1/\epsilon)+O_R(\epsilon^2).
+\end{aligned}
+\]
+
+误差积分确实有与 \(\epsilon\) 无关的上界：
+
+\[
+\int_{2\sqrt\epsilon}^{T}t\,dt\le T^2/2,\qquad
+\int_{2\sqrt\epsilon}^{T}\epsilon t^{-3}dt\le1/8.
+\]
+
+因此负对数项不是被一个 \(O(\epsilon ^2log(1/\epsilon ))\) 的未知余项掩盖。
+
+\section{\texorpdfstring{内核与外过渡都只支付 \(O_R(\epsilon ^2)\)}{内核与外过渡都只支付 O\_R(\textbackslash epsilon \^{}2)}}\label{v5-ux5185ux6838ux4e0eux5916ux8fc7ux6e21ux90fdux53eaux652fux4ed8-o_repsilon-2}
+
+**内核。\(** t\le \sqrt{\epsilon }\) 上精确 Burns，\(L_P=0\)。标量项的归一化积分恰为 \(27\epsilon ^2\)。
+
+在 \(\sqrt{\epsilon }\le t\le 2\sqrt{\epsilon }\) 上令 \(t=\sqrt{\epsilon  }r\)。缩放后度量 \(\epsilon ^{-1}g_\epsilon\) 是固定 Burns 核心在 \(1\le r\le 2\) 上的 \(C^2\) 扰动，大小 \(O(\epsilon )\)。其 \(u_1,u_2=O(\epsilon )\)，而 Burns 的三个校准平方都为零。于是校准平方与三次项的积分全部为 \(O(\epsilon ^2)\)。标量曲率在原尺度为 O(1)，该区域体积为 \(O(\epsilon ^2)\)，故 \(J_6-P\) 也为 \(O(\epsilon ^2)\)。内区临界处没有裸的一阶 \(\epsilon\) 费用。
+
+**外过渡。\(** T\le t\le 2T\) 是固定紧环带。\(g_\epsilon -g_H=O_R(\epsilon )\) 于 \(C^2\)，\(g_H\) 为 \(\operatorname{Ric}=-6g\)。故 \(|\operatorname{Ric}+6g|=O_R(\epsilon )\)，其积分费用 \(O_R(\epsilon ^2)\)。同样 \(P=O_R(\epsilon ^2)\)。也可以直接在(5.2.2)中看到：\(u_1,u_3=O_R(\epsilon )\)，每个校准平方为 \(O_R(\epsilon ^2)\)，三次项 \(u_1u_2u_3\) 也为 \(O_R(\epsilon ^2)\)。
+
+合并三段证明(5.A)。光滑性、正定性、普通吹起拓扑与完整标记领口均已在构造中满足。
+
+\section{归一化与每个预定覆盖塔}\label{v5-ux5f52ux4e00ux5316ux4e0eux6bcfux4e2aux9884ux5b9aux8986ux76d6ux5854}
+
+缩放 \(\widetilde g=6g\) 后，背景 \(\operatorname{Ric}=-\widetilde g\)，且 \(J_1(\widetilde g)=J_6(g)\)。若用几何异常面积 \(x=\operatorname{Area}(E)/\pi\) 作为参数，则 \(x=6\epsilon\)，故
+
+\[
+\frac{J_1}{8\pi^2}
+=1-\frac{x^2}{4}\log(1/x)+O_R(x^2).
+\]
+
+考虑一个固定紧复双曲曲面 \(X_0\)，以及任意有限非分歧覆盖序列 \(X_j\to X_0\)，度数 \(d_j\to \infty\)。选定 \(X_0\) 上一个小嵌入球并留足缓冲；(5.A)提供适合这个球的固定光滑单元 C，满足
+
+\[
+ J_1(C)=8\pi^2(1-\delta_{X_0}),\qquad\delta_{X_0}>0.
+\]
+
+每个覆盖含 \(d_j\) 个互不相交的提升球。对原比例
+
+\[
+ Q_j=k_j+4\ell_j,\quad h_j=Q_j/A_j\to0,\quad
+ k_j/Q_j\to2/9,\quad \ell_j/Q_j\to7/36,
+\]
+
+因 \(A_j=d_jA_0\)，\(k_j+2\ell _j=o(d_j)\)，所以充分大指标下有足够的提升球放置所有固定吹起单元和缩小的手柄部分。使用原供给及复制公式，得到
+
+\[
+\boxed{
+\limsup_j\frac{\alpha(M_j)}{h_j}
+\le\frac{28}{9}+\frac{J_1(C)}{9\pi^2}
+=4-\frac89\delta_{X_0}<4.
+}
+\tag{5.6.1}
+\]
+
+此处不要求先将给定覆盖塔替换为容纳大半径数值单元的特殊覆盖塔。常数 \(\delta _{X0}\) 可依赖固定基底和选定球；没有证明它对所有不同基底统一。
+
+\textbf{极限次序至关重要。} 先固定球，再选取一个足够小但固定的 \(\epsilon\)，然后令 \(j\to \infty\)。若让 \(\epsilon _j\to 0\)，节省也趋零，便不能据此获得严格小于4的固定首项界。
+
+\begin{thebibliography}{E99}
+\small
+\bibitem[R04]{R04} 本会话构造补充，\emph{任意固定复双曲领口中的解析低成本单吹起构造}，2026-10-07。\path{source_notes/R04_Arbitrary_Collar_Construction.md}。
+
+\bibitem[B04]{B04} S1003A02，\emph{Theorem package v1}；常模二次型、标记单元次可加性与原复制公式。\path{source_notes/B04_Original_Theorem_Package.md}。
+
+\end{thebibliography}
+
+\end{document}

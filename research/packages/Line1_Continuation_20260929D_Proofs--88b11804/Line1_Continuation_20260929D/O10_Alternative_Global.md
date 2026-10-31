@@ -1,0 +1,261 @@
+# O10: an unbounded-curvature rate exclusion from the fifth-line test
+
+2026-09-29. This note continues the existing O10 endpoint analysis. It does not prove the density-free uniform gap. Unlike a fixed-density theorem, its hypothesis allows the normalized opposite Weyl energy to tend to infinity. Its quantitative conclusion is an obstruction to a definite class of simultaneous endpoint-error/curvature blow-up rates.
+
+## 1. Primitive hypotheses and what is not assumed
+
+All integrals and norms use normalized volume. Write
+\[
+ b_j=\fint|W^-_j|^2,\qquad H_j=(1+b_j)^{1/2},\qquad a_j=|v_j|^2,\qquad q_j=|\nabla v_j|^2.
+\]
+The inherited strong-current and bounded-resolvent results supply, without a bound on \(b_j\),
+\[
+ |\Phi_j|+|v_j|+|\nabla^*\nabla v_j|\le C,
+ \quad \|\nabla\Phi_j\|_4+\|\nabla^2\Phi_j\|_2\le C,
+ \quad \|\nabla v_j\|_2\le C.
+\]
+Fix the lower-amplitude cutoffs once and for all, using thresholds strictly below \(\rho_*\) and \(m_*\). Define \(\eta_j\) to be the **sum** of the following measured primitive error norms (and \(\beta_j^{-1}\)); by the inherited conclusions it tends to zero. This is a fixed error aggregate, not a freely enlarged sequence with an adjustable decay rate:
+
+- \(\|a_j-m_*\|_2\), \(\|\rho_j-\rho_*\|_2\), with \(\rho=|\Phi|^2\), \(m_*=128/81\), \(\rho_*=4/3\);
+- \(\|(\nabla^*\nabla-2)v_j\|_2\), \(\|D^-v_j\|_2\), and the small \((1,0)\)-projection \(N_{v_j}\) on a fixed positive-\(\rho\) region;
+- \(\|v_j-\tau_j\|_{H^1}+\|v_j-\tau_j\|_4\); the positive-spinor phase norm \(\|\chi_\rho p_j\|_2\); and \(\|\chi_\rho\chi_a\epsilon_{\eta,j}\|_2\), where \(\epsilon_\eta=\eta_{\rm conn}-[\sqrt a/(2\rho^{3/2})]\theta_1\) on the fixed positive-amplitude region. These norms are invariant under the compatible adapted-frame phase changes; the cutoffs make their global definition smooth.
+- the actual determinant-curvature fit \(\| -iF_A^-+(27/32)Q_v\|_2\), the traceless Ricci error, and the positive-block curvature errors used in the inherited Cartan formulas.
+
+The second bullet is inherited from the actual first-order system and the \(H^1\) closeness of \(v\) to \(\tau\). The first-connection error in the third bullet is obtained algebraically from the actual cubic formula and \(v-\tau\); it is not a derivative of the negative-spinor connection. Those approximation errors are explicitly included in the fixed sum above. An equivalent maximum of this same finite list changes only absolute constants.
+
+**The definition does not include** \(da_j\), the negative-spinor phase \(j_{v_j}\), the first prolongation error \(\epsilon_b\), \(D_5c_j\), or any claimed convergence of \(q_j\). Those are conclusions below. No rate formula expressing \(\eta_j\) in terms of the original scalar defect \(\kappa_j\) is established in this note.
+
+The derivative-interchange estimate gives, with an absolute inherited constant,
+\[
+ \|\nabla^2v_j\|_2+\|\nabla v_j\|_4^2\le C H_j. \tag{1}
+\]
+This is an estimate on each smooth member, not a uniform bound along the sequence.
+
+## 2. Result
+
+Subject to the inherited first-order identities and the fifth-line Cartan/symbol identities, an actual endpoint sequence cannot satisfy
+\[
+ \boxed{\eta_j(1+b_j)^{3/2}=\eta_j H_j^3\longrightarrow0.} \tag{2}
+\]
+Thus a hypothetical unrestricted O10 escape must have, for this primitive error aggregate,
+\[
+ \liminf_j\eta_j(1+b_j)^{3/2}>0. \tag{3}
+\]
+This is a sequence restriction, not a constant independent of density in the original O10 inequality. Its exponent is sufficient for the proof; no claim of optimality is made.
+
+## 3. Radial derivative and the surviving connection component
+
+The exact scalar identity is
+\[
+ \Delta a=4a-2q+e_a,\qquad \|e_a\|_2\le C\eta.
+\]
+Using (1), \(\|\Delta a\|_2\le C H\). Testing with \(a-m_*\) therefore gives
+\[
+ \boxed{\|da\|_2^2\le C\eta H.} \tag{4}
+\]
+The exact mass-phase identity on the fixed positive-\(\rho\) region gives
+\[
+ |j_v+\tfrac12J_+da|\le C|N_v|.
+\]
+The exceptional sets where \(\rho\) or \(a\) lies below a fixed positive cutoff have normalized measure at most \(C\eta^2\). By (1),
+\[
+ \fint_{\mathrm{bad}}|\nabla v|^2
+ \le \mu(\mathrm{bad})^{1/2}\|\nabla v\|_4^2
+ \le C\eta H. \tag{5}
+\]
+Consequently
+\[
+ \|j_v\|_2\le C(\eta+\eta^{1/2}H^{1/2}).
+\]
+The same mass-phase-Dirac reduction as in the finite-density proof now gives, on the fixed positive-amplitude regions,
+\[
+ b=c_0\theta_2+\epsilon_b,
+ \qquad \|\epsilon_b\|_2\le C(\eta+\eta^{1/2}H^{1/2}). \tag{6}
+\]
+Here \(b\) is the off-diagonal connection one-form, not the scalar Weyl budget. Formula (6) follows from the small \((1,0)\) derivative, the first spinor components \((da/2+ij_v)/\sqrt a\), and the Dirac trace. It does not require differentiating \(N_v\), or a Nijenhuis bracket estimate.
+
+Define the global cut-off fifth-line section exactly as in the supplied proof:
+\[
+ c=\chi_\rho(\rho)\chi_a(a)
+ \left(-\frac{\Phi\wedge t(v)}{2\sqrt\rho\,a^{3/2}}\right)\in\Gamma(L^5).
+\]
+It satisfies
+\[
+ \|c\|_2\le C,\qquad \|c\|_4\le C H^{1/2},
+ \qquad \|D_5c\|_2\le C H. \tag{7}
+\]
+The bounded denominators in this assertion are imposed by the fixed cutoffs; there is no division at an uncontrolled zero.
+
+## 4. A covariance estimate prevents loss of the fifth-line mass into its tail
+
+Set \(q_*=2m_*\) and \(T(q)=q/(1+q)\). Then
+\[
+ |dT(q)|\le C|\nabla^2v|.
+\]
+Testing the scalar identity with \(T(q)-T(q_*)\), and using (1), (4), gives
+\[
+ \boxed{\fint\frac{(q-q_*)^2}{1+q}
+ \le C\bigl(\eta+\eta^{1/2}H^{3/2}\bigr).} \tag{8}
+\]
+The term with \(da\) is bounded by
+\(\|da\|_2\|dT(q)\|_2\le C\eta^{1/2}H^{3/2}\). This is the largest power of \(H\) in the argument.
+
+Since \(\fint q\le C\), Cauchy--Schwarz gives
+\[
+ \|q-q_*\|_1
+ \le C\left(\eta+\eta^{1/2}H^{3/2}\right)^{1/2}\longrightarrow0 \tag{9}
+\]
+under (2). This step needs neither a uniform \(L^2\) bound on \(q\) nor a fixed bound on \(b\).
+
+The surviving-component norm identity, (4)--(6), and
+\[
+ \fint|a-m_*||c|^2\le\|a-m_*\|_2\|c\|_4^2\le C\eta H
+\]
+use the exact orthogonal-projection identity \( |b|^2=2|c_0|^2+|\epsilon_b|^2 \). On the positive-amplitude region,
+\[
+ q-2a|c_0|^2=|da|^2/(4a)+a|q_{\mathrm{phase}}|^2+a|\epsilon_b|^2\ge0.
+\]
+Equations (4)--(6) and the cutoff-region estimate give \(\|q-2m_*|c|^2\|_1\le C\eta H\). They therefore imply the explicit estimate
+\[
+ \||c|^2-1\|_1\le C\left[(\eta+\eta^{1/2}H^{3/2})^{1/2}+\eta H\right].
+\]
+In particular,
+\[
+ \boxed{\||c|^2-1\|_1\longrightarrow0.} \tag{10}
+\]
+This is more useful here than the old tail estimate \(\int_{|c|>M}|c|^2\le C_b/M^2\), whose constant blows up. For every fixed \(M>1\), (10) gives
+\[
+ \fint_{|c|>M}|c|^2
+ \le (1-M^{-2})^{-1}\||c|^2-1\|_1\longrightarrow0. \tag{11}
+\]
+Therefore the positive line resolvent may retain a **fixed** truncation level, even though \(b_j\to\infty\).
+
+## 5. The weak CR errors still vanish in this regime
+
+Use the same exact Cartan equation and symbol identity as the supplied fifth-line proof:
+\[
+ (D_5c_0\wedge\theta_2)^+
+ =-(d_{3A}\epsilon_b)^++G,
+ \qquad \mathcal L^*\mathcal D\mathcal L=I-iJ_-.
+\]
+Let \(w\in\Gamma(L^5)\) satisfy fixed bounds on
+\(\|w\|_\infty+\|D_5w\|_4+\|D_5^2w\|_2\).
+Tracking the factors rather than replacing them by \(C_b\) gives:
+
+| Error | Bound up to a test-dependent absolute constant |
+|---|---|
+| Derivative moved off \(\epsilon_b\), hitting \(D_5w\) | \(\eta+\eta^{1/2}H^{1/2}\) |
+| Derivative hitting the adapted tensor map | \((\eta+\eta^{1/2}H^{1/2})(1+H^{1/2})\) |
+| Negative phase times \(c\), paired with \(D_5w\) | \((\eta+\eta^{1/2}H^{1/2})H^{1/2}\) |
+| \(c\,d\chi\) on a low-amplitude transition region | \(\mu(\mathrm{bad})^{1/4}\|c\|_4\|d\chi\|_4\le C\eta^{1/2}H\) |
+| Replacing \(J_-\) by \(\bar J=(a/m_*)J_-\) | \(\|a-m_*\|_4\|D_5c\|_2\le C\eta^{1/2}H\) |
+| Bochner drift \(\delta\bar\Omega\,c\,D_5w\) | \(C(\eta+\eta^{1/2}H^{1/2})H^{1/2}\) |
+
+Here \(\|a-m_*\|_4\le C\eta^{1/2}\), because \(v\) is uniformly bounded. The positive-spinor derivative factors have fixed \(L^4\) bounds. The potential error is \(O(\eta)\), paired with \(c\in L^2\) and bounded \(w\).
+
+All displayed errors tend to zero under (2). Hence the weak conclusion survives:
+\[
+ \Re\fint\langle c,(\Delta_{5A}+10/3)w\rangle\longrightarrow0. \tag{12}
+\]
+This calculation does **not** make (12) valid for an arbitrary unrestricted sequence. Without a relation such as (2), the factor \(\epsilon_b\nabla v\,D_5w\) remains uncontrolled.
+
+## 6. Fixed-level resolvent contradiction
+
+Fix \(M>2\) and solve
+\[
+ (\Delta_{5A}+10/3)w=T_M(c).
+\]
+The right side is uniformly bounded by \(2M\). The maximum principle, the original Ricci-energy bound, and the controlled curvature \(5F_A\) give all the fixed test bounds required above, with no \(b_j\)-dependence. Thus (12) gives
+\[
+ \Re\fint\langle c,T_M(c)\rangle\longrightarrow0.
+\]
+But (10)--(11) imply the left side tends to 1. This contradiction proves (2) is impossible.
+
+## 7. Exact scope and a rejected shortcut
+
+This calculation isolates two distinct difficulties in the fully unrestricted problem:
+
+1. radial/derivative concentration prevents \(|c|^2\) from having a nonzero uniformly integrable limit;
+2. critical weak CR products couple a small first-order error to a growing fourth-power derivative budget.
+
+The covariance estimate controls the first and the explicit product estimates control the second under the same sufficient condition (2). This is a quantitative extension beyond a fixed finite density, but it is not a density-free theorem until the actual equations force (2), or supply a different contradiction in its complement.
+
+No explicit modulus \(\eta\le\omega(\kappa,\beta^{-1})\) with a power rate is claimed here. The inherited strong-current argument supplies smallness; extracting a modulus requires tracing its truncation and resolvent choices. Even an explicit modulus alone would not bound \(b\) or force (2).
+
+A possible shorter route through the positive-spinor curvature was checked and fails algebraically. In the ideal adapted configuration \(\eta_{\rm conn}=\kappa\theta_1\), \(b=c\theta_2\), the exact Cartan formula is
+\[
+ d\theta_1=-i(\mathfrak a+p-q)\wedge\theta_1+\kappa\Xi_+,
+ \qquad \Xi_+=e^{13}-e^{24}+i(e^{14}+e^{23}).
+\]
+The two real components of \(c\) cancel exactly. Consequently
+\[
+ (F^{S^+})_{21}
+ =d\kappa\wedge\theta_1+i\kappa(q-3p)\wedge\theta_1+\kappa^2\Xi_+.
+\]
+The controlled positive curvature does not directly bound or eliminate the surviving \(c\). This finite algebra was independently checked using the Clifford-to-Cartan script; it prevents mistaking a missing negative-curvature estimate for an immediately available positive-curvature one.
+
+## 8. Exact obstruction to the proposed amplitude-weighted shortcut
+
+The following is an exact local calculation in the zero-error first-order system, retaining the radial derivatives rather than assuming them small. It explains why the proposed replacement of \(c\) by \(m^{-3/2}c\) does not yet remove the density dependence. It is not a new limiting argument.
+
+Write \(m=|v|^2>0\), \(m_i=e_i(m)\), and use the full directional fields \(e_1-ie_2,e_3-ie_4\); changing both to half-sized fields does not change the final real-component formulas. In an adapted frame \(v=\sqrt m(1,0)\), the equations \(N_v=0\), \(D^-v=0\) give
+\[
+ q_{\rm ph}=\frac1{2m}(m_2,-m_1,m_4,-m_3)
+ =-\frac{J_+dm}{2m},
+\]
+\[
+ \boxed{b=d\,\theta_1+c\,\theta_2,
+ \qquad d=-\frac{m_3+i m_4}{2m}.} \tag{14}
+\]
+In particular, one may not begin this calculation with \(b=c\theta_2\): doing so already discards the plane-two radial derivative.
+
+The additional \(d\)-terms in the exact Clifford-to-Cartan conversion are
+\[
+ d\theta_1=-i(\mathfrak a+p-q_{\rm ph})\wedge\theta_1
+             +\kappa\Xi_+-d\,\overline{\Xi_+},
+\]
+\[
+ d\theta_2=i(2\mathfrak a-p-q_{\rm ph})\wedge\theta_2
+             -\bar c\Xi_- -2i\bar d\,e^{12}.
+ \tag{15}
+\]
+Here \(\overline{\Xi_+}=\theta_1\wedge\theta_2\). The added coefficients were checked separately on the real and imaginary basis directions of \(d\).
+
+Set \(\rho=\rho_*\), \(p=0\), and \(\kappa=\sqrt m/(2\rho_*^{3/2})\), to isolate the proposed mass mechanism. The positive off-diagonal curvature is
+\[
+ (F^{S^+})_{21}
+ =(d\kappa+i\kappa q_{\rm ph})\wedge\theta_1
+  +\kappa^2\Xi_+-\kappa d\,\overline{\Xi_+}.
+\]
+Since
+\[
+ dm-iJ_+dm=(m_1+i m_2)\theta_1+(m_3+i m_4)\theta_2,
+\]
+its first term equals
+\(-\kappa(m_3+i m_4)\overline{\Xi_+}/(2m)\). The last term has the opposite coefficient by (14). Thus
+\[
+ \boxed{(F^{S^+})_{21}=\kappa^2\Xi_+.} \tag{16}
+\]
+**The radial term cancels too.** The controlled positive curvature therefore does not first force \((dm)_{\{3,4\}}\) to be small. Such a prior conclusion cannot be used to replace \(J_+dm\) by \(J_-dm\) and absorb the entire phase into \(m^{-3/2}c\).
+
+The independent mass problem is equally explicit. Put
+\(E_1=m_1^2+m_2^2\), \(E_2=m_3^2+m_4^2\). The full first-jet norm in (14) is
+\[
+ \boxed{|\nabla v|^2=\frac{E_1+2E_2}{2m}+2m|c|^2.} \tag{17}
+\]
+In the exact eigenvalue equation \(\nabla^*\nabla v=2v\), testing
+\(\Delta m=4m-2|\nabla v|^2\) with \(m\) consequently gives
+\[
+ \boxed{2\int E_1+3\int E_2+4\int m^2|c|^2
+             =4\int m^2.} \tag{18}
+\]
+A lower bound for \(\int m|\nabla v|^2\) alone therefore does not produce a positive lower bound for \(\int m^2|c|^2\). The radial terms can pay the entire right side of (18). This is exactly the term that the finite-density mass-gradient estimate removes; a positive polynomial weight does not silently remove it.
+
+More generally, the same formal exact system gives for positive integer \(p\)
+\[
+ (p+1)\int m^{p-1}E_1+(p+2)\int m^{p-1}E_2
+       +4\int m^{p+1}|c|^2=4\int m^{p+1}.
+\]
+These identities do not by themselves contradict an amplitude concentration defect: for example their limiting radial moment budget with no \(c\)-mass is algebraically compatible with the positive measure \(d\mu_1(t)=4t\,dt\) on \([0,m_*]\), \(\mu_2=0\). This is only an illustration of what the moment identities fail to exclude, **not** a construction of actual metrics or fields.
+
+Accordingly the weighted shortcut is not closed. Its exact unresolved terms are the plane-two radial coefficient in the Cartan equation and the radial concentration contribution in the mass identity. Neither is an omitted harmless cutoff error.

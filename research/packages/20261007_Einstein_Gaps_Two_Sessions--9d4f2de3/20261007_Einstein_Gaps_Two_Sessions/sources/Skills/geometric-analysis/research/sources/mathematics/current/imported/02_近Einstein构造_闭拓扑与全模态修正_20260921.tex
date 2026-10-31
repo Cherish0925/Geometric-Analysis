@@ -1,0 +1,608 @@
+% !TeX program = xelatex
+% Standalone: compile twice with XeLaTeX. No external .bib, image or input file required.
+\documentclass[UTF8,fontset=fandol,zihao=-4]{ctexart}
+\usepackage[a4paper,top=24mm,bottom=25mm,left=24mm,right=24mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,esint,bm,mathrsfs}
+\usepackage{booktabs,longtable,array,enumitem,xcolor,fancyhdr,microtype,xurl}
+\usepackage[unicode,colorlinks=true,linkcolor=blue!45!black,citecolor=blue!40!black,urlcolor=blue!40!black]{hyperref}
+\DeclareMathOperator{\Ric}{Ric}\DeclareMathOperator{\Rm}{Rm}
+\DeclareMathOperator{\Vol}{Vol}\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\inj}{inj}\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Id}{Id}\DeclareMathOperator{\Hess}{Hess}
+\DeclareMathOperator{\Div}{div}\DeclareMathOperator{\Met}{Met}
+\DeclareMathOperator{\Diff}{Diff}\DeclareMathOperator{\Isom}{Isom}
+\DeclareMathOperator{\dist}{dist}\DeclareMathOperator{\Orb}{Orb}
+\DeclareMathOperator{\sech}{sech}\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Hom}{Hom}\DeclareMathOperator{\Sym}{Sym}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}\newcommand{\Z}{\mathbb Z}
+\newcommand{\CP}{\mathbb{CP}}\newcommand{\cE}{\mathcal E}\newcommand{\cF}{\mathcal F}
+\newcommand{\dd}{\,d\mu_g}\newcommand{\op}{\mathrm{op}}
+\newcommand{\HS}{\mathrm{HS}}\newcommand{\TT}{\mathrm{TT}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\avg}[1]{\fint_M #1\,d\mu_g}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newtheoremstyle{cn}{7pt}{7pt}{\normalfont}{0pt}{\bfseries}{。}{.5em}{}
+\theoremstyle{cn}
+\newtheorem{result}{原稿结果}[section]
+\newtheorem{deduction}[result]{直接推论}
+\newtheorem{lemma}[result]{引理}
+\newtheorem{criterion}[result]{条件性准则}
+\newtheorem{problem}[result]{研究问题}
+\renewcommand{\proofname}{证明}
+\newcommand{\src}[2]{\par\smallskip{\small\textcolor{black!68}{原始证明入口：\nolinkurl{#1}，#2。}}\par\smallskip}
+\newcommand{\newidea}{\par\noindent\textbf{进一步研究（尚待证明）。}}
+\setlength{\parskip}{.3em}\setlength{\emergencystretch}{3em}
+\linespread{1.10}\allowdisplaybreaks[3]
+\setlist{nosep,leftmargin=2em,topsep=4pt}
+\setcounter{tocdepth}{2}\numberwithin{equation}{section}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small Yau 26：十二轮后的深化与开放研究}
+\fancyhead[R]{\small 主线二 · 构造}\fancyfoot[C]{\thepage}
+\hypersetup{pdftitle={点态近Einstein构造：闭拓扑、跨尺度与全模态修正},pdfauthor={Qiushi研究资料综合稿}}
+\title{点态近Einstein构造：闭拓扑、跨尺度与全模态修正\\[3mm]\large 旧Skill与十二轮研究的整合、关键推导与开放拓展}
+\author{Qiushi Yau26研究续接稿}
+\date{资料与外部检索截至2026年9月21日}
+\begin{document}\maketitle
+\begin{abstract}
+
+本稿以“在真实固定光滑拓扑上降低全域Ricci缺陷，并判定能否进一步精确修正”为构造主线。旧Skill的$A_1$/log-Weyl与$E_D$两套机制，十二轮的完整非紧Einstein模型、更大闭修正邻域障碍、两端近似族以及固定剪切产品块构造，均保留其对象、规范、误差和边界。下一阶段的重点不是只把一个已经趋零的残差再降一阶，而是扩大实际可逼近拓扑、建立含全部模态与外部响应的约化、寻找完全非对称的精确解，或证明足够广的修正不可能性。正文补充条件性的Schur补与验证型Newton准则，提出可比较、可反驳的研究问题，并保留正分支、ADE与高维扩展的入口。
+
+\end{abstract}\begingroup\small\setlength{\parskip}{0pt}\tableofcontents\endgroup\newpage
+
+\section{共同问题、量词与本稿的使用方式}
+\subsection{最高目标不由当前三个方向限定}
+以闭、连通、光滑实流形为研究范畴，本文采用项目已经固定的Yau26工作命题：对每个$n\ge2$，是否存在仅依赖$n$的实常数$c_n<C_n$，使任何承载
+\[
+ c_ng\le\Ric_g\le C_ng
+\]
+的$n$维流形，都承载某个光滑正定Einstein度量$h$，即$\Ric_h=\lambda h$？输出$h$无需接近$g$，无需保持其Ricci符号、复结构、纤维化或对称性。1982年题页与重编本的逐字对应仍依原资料的来源核对状态；本稿不以历史编号替代上述准确命题。
+
+设
+\[
+ \delta_\sigma(g)=\norm{g^{-1}\Ric_g-\sigma\Id}_{L^\infty,\op},\qquad
+ e_\sigma(M)=\inf_{g\in\Met(M)}\delta_\sigma(g),\quad\sigma=\pm1.
+\]
+记$P_n^\sigma$为该符号下存在维数一致的正阈值，足以推出同一光滑流形的Einstein存在性。则
+\begin{equation}\label{eq:Q}
+ Q_n\ \Longleftrightarrow\ P_n^+\lor P_n^-.
+\end{equation}
+理由是常数缩放$\widehat g=ag$保持协变Ricci不变，将Ricci端同态除以$a$；任一非退化区间都有一个非零内点及其同号邻域。反向直接选以$\pm1$为中心的小区间即可。
+
+因此，全维肯定解需要每个维数至少一支成立；完整否定只需在同一个维数击败两支，允许使用不同流形或变化拓扑的序列。一个固定$M$上$e_\sigma(M)=0$加上全部Einstein不存在性，就给出该分支反例。高维机制缺失是全维肯定证明的缺口，不是固定维数完整否定还必须通过的额外关卡。
+
+\subsection{三种研究层次必须允许相互转化}
+积分刚性负责寻找不依赖退化控制的障碍；构造负责在真正光滑对象上实现原题范数下的小残差；全局判定负责决定同一对象上的全部精确输出。它们是当前研究重心，不是固定角色，更不是对未来方法的排他规定。一个新的存在性论证、反例、等价归约或不同不变量，只要能准确返回\eqref{eq:Q}，都应进入研究。
+
+本稿的\textbf{“原稿结果”}重述上传资料中的结论，完整假设与原证明入口一并保留；不因本次排版而获得额外正确性或首创性认证。\textbf{“直接推论／条件性准则”}给出在明确前提下可直接检查的演算。\textbf{“研究问题”}是本稿新增或深化的探索目标，尚未被证明。近期外部文献是有适用条件的输入或研究线索，不与项目成果混计。
+
+\subsection{规范、尺度和闭／非紧边界}
+四维记$s=\tr_g\Ric$、$E^\circ=\Ric-sg/4$。$W^\pm$取在$\Lambda^2_\pm$上的Hilbert--Schmidt算子范数，$\Rm_{\rm full}$取四指标张量范数：
+\begin{align}
+8\pi^2\chi&=\int_M\left(|W^+|^2+|W^-|^2+\frac{s^2}{24}-\frac{|E^\circ|^2}{2}\right)\dd,\label{eq:CGB}\\
+12\pi^2\tau&=\int_M(|W^+|^2-|W^-|^2)\dd,\\
+\int_M|\Rm_{\rm full}|^2\dd&=32\pi^2\chi+4\int_M|E^\circ|^2\dd.\label{eq:fullenergy}
+\end{align}
+$\Ric\approx-3g$时令$\widehat g=3g$，则$\delta_-(\widehat g)=\norm{g^{-1}\Ric+3\Id}_\infty/3$。EH的$12\pi^2$曲率能量采用曲率算子规范；四指标规范为$48\pi^2$。不得把$L^p$小量、加权小量或小支持体积替换成全域无权上确界；非紧完备解也不是闭流形反例。
+
+\section{构造能力的真实进展与研究重心}
+旧Skill已有两个不同中心：$A_1$核心的Weyl对数匹配，与固定Dehn-twist曲面丛的慢插值。十二轮没有重新发明它们，而是进一步完成非紧模型的实际非线性解、控制更大的闭修正邻域，并把近似输入扩展到含整数剪切的新固定闭拓扑。
+
+应同时问三个问题：\emph{构造了哪个真正光滑对象；误差在哪个全域范数中趋零；这种逼近对精确Einstein存在性提供了什么新信息。} 小残差、局部补空间修正和完整精确解是三个不同结论。既不能因最后一项未完成而否定前两项，也不能把前两项相加宣布最后一项。
+
+新的闭剪切对象有潜在精确输出必须破坏全部局部连续对称的全局定理，详见第三稿。这使“继续在原来的圆不变类中求闭精确解”失去意义，但不排除非常小的非对称修正。下一步应保留全部角模、核、外部响应和真实拓扑数据，而不是把更多复杂性一律称为噪声。
+\src{proofs/SYNTHESIS.md; proofs/round11_closed_gluing.md; proofs/round12_symmetry.md}{构造与全局判定的最新共同对象}
+
+\section{第一套旧核心：固定\texorpdfstring{$A_1$}{A1}解消的点态逼近}
+\subsection{准确对象与结果}
+\begin{result}[固定标记的$A_1$构造]
+设$(M_0,g_0)$为固定闭定向Einstein四维轨形，$\Ric_{g_0}=\sigma g_0$，有限个$A_1$点。固定局部等变正规坐标、EH端部取向与实际光滑填充。若平滑核心修正满足
+\[
+ D\Ric_{g_{\rm EH}}\widetilde h=g_{\rm EH},\qquad
+ \widetilde h=H_*+O_2(\rho^{-2}),
+\]
+二次渐近项与外部处于同一径向规范，则固定解消$M$上有光滑正定$g_a$，
+\[
+ \delta_\sigma(g_a)\le C/|\log a|\to0.
+\]
+并有GH极限$(M_0,g_0)$与重标度EH核心极限。常数允许依赖固定有限数据，不依赖$a\to0$。
+\end{result}
+
+a priori条件有显式核心提供，不是任意ALE模型都自动满足。附近精确解消受阻不排除远处Einstein度量；通用$A_1$定理也不自动识别任意边界标记的光滑类型。
+\src{baseline/research/20260916_construction.tex}{固定A1定理、核心与三区域证明}
+
+\subsection{核心修正不是缩小一个Ricci-flat球泡}
+裸核心$a^2g_{\rm EH}$满足
+\[
+ (a^2g_{\rm EH})^{-1}(\Ric-\sigma a^2g_{\rm EH})=-\sigma I,
+\]
+故小体积不帮助无权最大误差。原稿在$\mathcal O(-2)$圆盘丛上使用双轴族
+\begin{align}
+ c_\Lambda&=(1-\Lambda/4)^2-1,\\
+ G_\Lambda(r)&=\frac{\sqrt{1+c_\Lambda r^2}}{r^4}
+ \int_1^r\frac{s^3(4-\Lambda s^2)}{(1+c_\Lambda s^2)^{3/2}}\,ds,\\
+ F_\Lambda&=(1+c_\Lambda r^2)G_\Lambda,\\
+ q_\Lambda&=F_\Lambda^{-1}dr^2+
+ \frac{r^2}{4}(\sigma_1^2+\sigma_2^2+G_\Lambda\sigma_3^2).
+\end{align}
+有效域、bolt平滑与角周期均固定。ODE
+\[
+ r(1+c_\Lambda r^2)G_\Lambda'+(4+3c_\Lambda r^2)G_\Lambda
+ =4-\Lambda r^2
+\]
+及Bianchi关系给$\Ric(q_\Lambda)=\Lambda q_\Lambda$。在$\Lambda=0$微分后减去$V=\frac5{72}(r^3-r^{-1})\partial_r$的规范项，得到所需$\widetilde h$及$O_2$尾界。单项极坐标系数在bolt看似发散，不等于几何奇点，必须改用实际平滑坐标。
+
+相对$O(a^2)$的核心修正经过二阶导数和升指标缩放，可产生原尺度$O(1)$的Ricci补偿。在$G_a=a^2(k+a^2\sigma\widetilde h)$、$r=a\rho$上，原稿得到
+\[
+ \|G_a^{-1}\Ric(G_a)-\sigma I\|_{\op}\le C(a^2+r^2).
+\]
+这是构造必须正面解决的首个问题。
+
+\subsection{共同规范与全Weyl核的缓慢过渡}
+若内外正规二次项$H_0,H_1$具有相同Ricci缩并，\emph{在共同径向规范中}其差才是
+\[
+ K_{ij}=-\frac13C_{ikjl}x^kx^l
+\]
+的纯Weyl二次项。它满足$\tr K=\Div K=\Delta K=0$与$K(x,\cdot)=0$，覆盖$\Sym^2_0(\Lambda^+)\oplus\Sym^2_0(\Lambda^-)$的全部十维，而不只是双轴截面。
+
+令$t=\log r$，则任意光滑径向截断满足
+\begin{equation}\label{eq:log}
+ D\Ric_e[\eta(\log r)K]
+ =-\frac{\eta_{tt}+6\eta_t}{2r^2}K.
+\end{equation}
+取$a\ll b=a^{1/2}\ll R=a^{1/4}\ll1$、$L=\log(R/8b)$，使$\eta_t=O(L^{-1})$、$\eta_{tt}=O(L^{-2})$；再分别控制核心、ALE尾匹配环带及外部正规余项，才得到全域$C/L$。线性恒等式本身不代替所有非线性误差。
+
+首ALE障碍在\emph{指定固定匹配}下升指标仍为阶一；对数过渡改变的是允许的匹配机制，所以两种结论并不矛盾。Ozuch已使用对数截断，也已明确提出球面商的$L^\infty$Ricci逼近问题\cite{OzuchII}；首创性应比较完整范数、标记和几何极限，不比较自造术语。
+
+\subsection{已知拓展与仍应保留的分析}
+ADE共线Kronheimer周期要处理完整$3b_2$维余核；type-T、Wahl下降需要覆盖、周期、有限平均与核条件；商的$b_2=0$不意味着线性核为空。常标量修正的加权指数须避开真实端点近核，不能将某个$0<\mu<2$估计延伸到$\mu=2$。高阶四次匹配使用新的延拓与尾界，不是低阶构造已经证明它。
+
+球面悬挂、两极手性和产品四节点的具体光滑类型应由实际等变／Kirby数据确认\cite{OR}。Fable补充的同号两极应用与负号GH分离可作为明确推论；原有$S^2\times S^2$应用不重新计数。指定轮廓的$L\delta\to1/3$、其他受限最优模型的$1/8$或常标量$1/6$，各自依赖截断、规范和尺度；不能相互冒称普适锐常数。
+\src{baseline/research/20260912.tex}{第1--4章；通量、ADE/type-T/Wahl、标量修正及标准光滑模型}
+
+\section{第二套旧核心：固定曲面丛的慢插值与三阶修正}
+\subsection{固定单值拓扑，而非改变拓扑后得到平凡乘积}
+固定纤维$F=\Sigma_p$、基底$B=\Sigma_q$，$p,q\ge2$，非分离Dehn twist $D$。在固定纤维领圈上
+\[
+ h_z=du^2+a(u)^2(ds+z\zeta'(u)du)^2,
+ \quad a=a_0\cosh u,\quad 0\le z\le1.
+\]
+每个$h_z$双曲、面积形式相同，$h_1=D^*h_0$。非整数$z$的局部坐标变换不必延拓为整个纤维的同痕；这正是单值变换没有被误消去的原因。
+
+基底短曲线长$\ell\to0$，领口度量为$dt^2+b(t)^2d\theta^2$，$b=\ell\cosh t$，半长$L$按双曲领口定理增长。取$z(t)=\eta(t/L)$，领圈内
+\[
+ G_\ell=dt^2+b^2d\theta^2+h_{z(t)},
+\]
+外部为产品，端部按固定$D$粘合。原稿得到的是\emph{同一个}闭$E_D$上的度量，不是每次参数改变都更换总空间。
+
+\subsection{完整Ricci矩阵说明什么变化真的变小}
+令$j=\tanh u,k=\tanh t,Q=a\zeta',v=Qz'$，取正交余标架$(dt,b\,d\theta,du,a(ds+z\zeta' du))$。原稿计算
+\begin{equation}\label{eq:EDmatrix}
+ (\Ric+G_\ell)_{\rm ON}=
+ \begin{pmatrix}
+ -v^2/2&0&0&(v_u+2jv)/2\\
+ 0&0&0&0\\
+ 0&0&-v^2/2&-(v_t+kv)/2\\
+ (v_u+2jv)/2&0&-(v_t+kv)/2&v^2/2
+ \end{pmatrix}.
+\end{equation}
+$S$的协变时间导数含标架旋转的二次对角项，不能只微分矩阵系数。所有混合项也要计算。由$z'=O(1/L),z''=O(1/L^2)$得全域最大误差$O(1/L)$，而不是仅积分误差小。
+
+原构造同时满足
+\[
+ \Vol=V_0=16\pi^2(p-1)(q-1),\quad
+ \|\nabla^m\Rm\|_\infty\le C_m,
+ \quad\|\nabla^m(\Ric+G_\ell)\|_\infty\le C_m/L.
+\]
+注入半径趋零、直径增长；剪切区域有正截面$K(e_0,e_3)=v^2/4$。因此有界完整曲率不能替代全局紧性，也不能套用要求处处负截面曲率的精确修正定理。
+\src{baseline/research/20260912.tex}{第6章BUN:slow、BUN:ricci-matrix、BUN:slow-geometric}
+
+\subsection{双领口平衡不只是提高数值精度}
+同时捏缩纤维$\varepsilon$与基底$\beta=\varepsilon^2$，平衡两个混合源项，原稿得到
+\[
+ \delta_-(G_\varepsilon)=2\varepsilon^2/\pi^4+O(\varepsilon^4).
+\]
+三个标量校正方程及真实尾界使同一闭流形上的残差降为$O(\varepsilon^3)$；修正一般不再保持原投影为Riemannian下沉。全局TT配对和共形Ricci方程刻画指定修正邻域及共形类的下界。其科学内容是“构造能力与修正能力的边界”，不是宣称全部度量的缺陷至少是三阶。
+
+\section{十二轮的精确非紧模型：从形式展开走到实际解}
+\subsection{八个有界不变方向的完整非线性族}
+令
+\[
+ g_0=dt^2+\cosh^2t\,dy^2+du^2+\cosh^2u\,dx^2,
+ \quad J(v)=\arctan(\sinh v).
+\]
+两角周期固定。原稿使用面积形式固定的精确双曲柱面块
+\[
+ h_{\alpha,\gamma}(v,\theta)=
+ \frac{\cosh^2v}{\sinh^2v+e^{-\alpha}}dv^2+
+ (\sinh^2v+e^{-\alpha})(d\theta+\gamma\sech^3v\,dv)^2.
+\]
+令$\alpha,\gamma$分别随另一个径向变量线性依赖$J$，得到八参数参考族$g[z]$。在权重$W=\cosh t\cosh u$、$\delta=1/4$的指定Sobolev空间，稿件构造解析$k[z]=O(|z|^2)$，使
+\[
+ G[z]=g[z]+k[z],\quad\Ric(G[z])=-G[z],\quad
+ \beta_{g[z]}k[z]=0,
+\]
+且$|\nabla_0^jk[z]|\le C_j|z|^2W^{-3/4}$。它是实际完整Einstein族，不仅二阶形式解；八参数是已标记边界／核参数，不是已证明八个互不等距的模参数。
+
+其核心证据是把\emph{整个非线性残差}写成端点变量中的乘积零因子。紧化变量$\xi=J(t),\eta=J(u)$，$p=\cos\xi,q=\cos\eta$后，残差在四边恒零，Hadamard除法给$E[z]=pqR[z]$，再进入反演空间。移动参考规范避免不衰减的边界gauge源。最后还要通过Bianchi消除规范项，而不是仅解DeTurck方程。
+\src{proofs/round2_construction.md; proofs/round3_construction.md}{完整十块、八个有界Jacobi方向与实际非线性完成}
+
+\subsection{非线性电荷关系不是完整端部响应算子}
+对真实$T^2$不变精确解写
+\[
+ G=h+H_{ab}(d\theta^a+\mathcal A^a)(d\theta^b+\mathcal A^b),
+ \quad v=\sqrt{\det H},\quad F^a=f^a dA_h,
+ \quad\mathfrak q=vHf.
+\]
+混合Ricci方程给$d\mathfrak q=0$。第4轮进一步证明
+\[
+ \frac{\pi^2}{2}(-b_1,B_1)^{\mathsf T}
+ =\mathsf M[z]\mathfrak q[z],\qquad
+ \mathsf M[z]=\int v^{-1}H^{-1}dA_h>0.
+\]
+矩阵有限、正定、解析。它确切描述标记扭转的两通道电荷关系，但不是全张量的Dirichlet-to-Neumann映射。实提升差不能只按环面值相等就当成零。非零荷核心也不能原封不动嵌在任意闭Einstein度量中；解析延拓给的限制不是小扰动的定量下界。
+\src{proofs/round4_construction.md; proofs/round4_exact_core.md; proofs/round3_matching_next.md}{电荷散射与实际外部响应}
+
+\section{十二轮的闭修正障碍：控制接收量，而非幻想一致最大范数逆}
+\subsection{更大邻域的准确结论}
+\begin{result}[第6轮闭曲面丛上的线性尺度排除球]
+对原平衡背景$G_\varepsilon$，存在$c_*,c_1,\varepsilon_0>0$，任意光滑对称张量$h$若
+\[
+ \|h\|_{C^2(G_\varepsilon)}\le c_*\varepsilon,
+ \quad0<\varepsilon<\varepsilon_0,
+\]
+则$G_\varepsilon+h$正定并满足
+\[
+ \delta_-(G_\varepsilon+h)\ge c_1\varepsilon^3.
+\]
+没有对称、支撑、块结构或规范限制。对$h=o(\varepsilon)$还保留
+$\liminf\delta_-/\varepsilon^3\ge[16\pi^4(p-1)]^{-1}$。配合已有三阶构造得到该允许邻域的量级锐性。
+\end{result}
+原稿通过缩小常数并重标度，也处理附近的其他Einstein常数。但球半径趋零，所以不排除远处或超出该尺度的精确度量。
+\src{proofs/round6_construction.md}{§1及完整有限领口误差账本}
+
+\subsection{接收量选择的测度}
+原全局TT接收张量$Q_\varepsilon$满足
+\[
+ \beta^{-1}\int\langle\Ric(G_\varepsilon)+G_\varepsilon,Q_\varepsilon\rangle
+ =-\frac{\varepsilon^3}{2\pi^2}(1+o(1)),\quad
+ \beta^{-1}\|J_GQ_\varepsilon\|_1\le C\varepsilon^2.
+\]
+核心比较产品取实际闭纤维$F_\varepsilon$，而非无限薄圆柱代替全纤维。接收量的自然测度是
+\[
+ d\nu=\sech t\,dt\,dA_{F_\varepsilon},
+\quad \|U\|_{H^j_\nu}^2=\sum_{i\le j}\int|\nabla^iU|^2d\nu.
+\]
+其总量统一，且捕获接收张量质量。\emph{最大范数逆不一致}与\emph{足够的接收量加权逆一致}可以同时为真。
+
+对$2L=\nabla^*\nabla-2\mathring R$，原稿证明
+\[
+ V=K+r,\quad K=f(aT+bS)+A+JB,\quad
+ \|r\|_{H^2_\nu}\le C\|LV\|_{L^2_\nu},
+\]
+其中$f=\sech^2t$、$J=\arctan(\sinh t)$，$A,B$是\emph{实际闭纤维}的TT张量。转移方向$JB$必须保留，不需要把它错误积分成全局丛参数。
+
+单个非分离捏缩的纤维标量谱隙统一为正；这依赖厚部连通。分离捏缩时不能沿用。水平共振块通过
+\[
+ D_1=\partial_t+2\tanh t,\quad D_2=-\partial_t+\tanh t,
+\]
+及$D_2D_1$、$D_1D_2$伙伴分解转为强制估计；剩余核的\emph{有符号二次接收量}阻止消去所需残差。外部、角模、非零gauge源和端截断均要进入同一账本。
+\src{proofs/round6_weighted_inverse.md; proofs/round6_receiver_review.md}{完整核与加权估计；经典谱背景见\cite{Ji}}
+
+\subsection{新的增长方向不能只是“再提高一个常数”}
+下一个有意义的问题是扩大到$\|h\|\le C\varepsilon$任意固定$C$、更一般$o(1)$球或完全不同参数族；这些都需要新的核接收符号，而非只把逆常数算精确。另一方向是故意允许突破原三阶接收约束的更大非对称变化，寻找精确解。两条方向都科学，不能预设必须无解。
+
+\section{最新闭构造：整数剪切与映射类变化分别被几何吸收}
+\subsection{真实固定的图块粘合}
+固定有限个带边曲面$B_v$，$\chi(B_v)<0$，及同亏格闭曲面$F_v$，所有边界按连通图两两粘合。每条边固定
+\[
+ \Psi_e(\phi,x)=(-\phi+u_e(x),f_e(x)),
+\]
+$u_e$为$\R/2\pi\Z$值光滑映射，$f_e$保定向，可有无限阶且互不交换的映射类。所得闭四流形$M$从一开始固定。
+\begin{result}[第11轮剪切产品块闭逼近]
+存在$G_\ell$满足
+\begin{align}
+ \norm{G_\ell^{-1}\Ric_{G_\ell}+3I}_\infty
+ &\le C(|\log\ell|^{-1}+\ell)\to0,\\
+ \Vol(G_\ell)&=4\pi^2\chi(M)/9,\qquad
+ \|\nabla^j\Rm_{G_\ell}\|_\infty\le C_j\quad(j\ge0).
+\end{align}
+固定阶残差导数也具有对应小量。对稿件所列族还有正阶曲率导数趋零的加强；不得把它转为所有近Einstein输入的正则性。
+\end{result}
+取$\widehat G_\ell=3G_\ell$即为原题负号规范，体积为$4\pi^2\chi(M)$。
+\src{proofs/round11_closed_gluing.md}{§1--5及曲率加强}
+
+\subsection{第一操作：用长领口吸收映射类}
+基底与纤维曲率取$-3$，边界长$\ell$，
+\[
+ a_\ell(t)=\frac\ell{2\pi}\cosh(\sqrt3t),\qquad
+ L_\ell=\frac1{2\sqrt3}\operatorname{arsinh}
+           \frac1{\sinh(\sqrt3\ell/2)}.
+\]
+在$[-L_\ell,-1]$选固定双曲度量路径$h_z$连接$h_v$与$f_e^*h_w$，$z'=O(1/L_\ell)$。记$S=\frac12h^{-1}\dot h$、$H=\tr S$、$k=a'/a$，完整误差块为
+\begin{align}
+ E_{tt}&=-\dot H-\tr S^2,& E_{UU}&=-kH,\\
+ E_{FF}^{\sharp}&=-D_tS-(k+H)S,& E_{tF}&=\Div_hS-dH,
+\end{align}
+其他涉及圆方向的混合项为零。路径无需共同点态面积形式，但每个双曲纤维的总面积固定。有限固定路径给$O(1/L_\ell)$，不存在隐藏$1/\ell$损失。
+
+\subsection{第二操作：塌缩喉部吸收非零整数剪切}
+令$\beta_e=-u_e^*d\phi$，它闭且周期属$2\pi\Z$，不要求是全局恰当形式。$[0,1]$上固定$h=f_e^*h_w$、$z_s$从0过渡到1，取
+\[
+ g=dt^2+a_\ell^2(d\phi+z_s\beta_e)^2+h.
+\]
+设$b=\beta_e,D=\Div_hb$，非零误差为
+\begin{align}
+ E_{tt}&=-a^2(z_s')^2|b|^2/2,&E_{UU}&=a^2(z_s')^2|b|^2/2,\\
+ E_{XY}&=-a^2(z_s')^2b(X)b(Y)/2,&E_{tU}&=az_s'D/2,\\
+ E_{XU}&=-a(z_s''+3kz_s')b(X)/2,&E_{tX}&=0.
+\end{align}
+由于该固定区间$a=O(\ell)$，完整算子误差$O(\ell)$。$3k$来自实际联络，不能漏掉。两操作支撑分离，边界轮廓恒值，右端精确等于$\Psi_e$拉回数据，所有导数匹配。体积由固定双曲块面积决定；无需保留体积发散的AH核心。
+
+这里的创造是\emph{拓扑效应保留，而其Ricci代价消失}。非零剪切类不是坐标噪声；某些特殊粘合可归回旧曲面丛，只有新拓扑证明成立的对象才算范围扩大。
+
+\section{完整近似两端与精确排除的相容性}
+第10轮在固定$\R_u\times S^1_\phi\times\Sigma$，$K_{h_\Sigma}=-1$，取$y=d\cosh u$，给显式
+\begin{equation}\label{eq:kottler}
+ g_d=\frac{1+y}{3+y}du^2+
+ \frac{y^2(y+3)}{3(y+1)}d\phi^2+
+ \frac{(1+y)^2}{3}h_\Sigma.
+\end{equation}
+两端光滑AH、拓扑、角周期和共形边界固定，且
+\[
+ \norm{g_d^{-1}\Ric_{g_d}+3I}_\infty
+ =\frac{d(2d+3)}{(1+d)^2}<3d\to0.
+\]
+最小圆半径$\sim d$，各固定阶曲率导数有界。另有两外部精确Kottler的变体；非平凡圆丛的加倍也有独立构造，但不能套用平凡丛的精确残差公式。
+
+这与第9轮自由圆作用精确负Einstein边界连通定理共同展示：同一非紧对称类没有精确双端解，残差下确界仍可为零。它不是闭流形反例，截面是$S^1\times\Sigma$而非$T^3$，也不应误称自由$T^2$反例。边界圆对称未必延拓为内部等距作用，所需相对基本群条件不能删。
+\src{proofs/round10_kottler.md; proofs/round10_cusp_doubling.md; proofs/round10_connector.md}{显式双端、Chern数与电荷泄漏}
+
+\section{从当前构造走向全部模态的精确修正}
+\subsection{不能只解一个看起来有利的张量块}
+在固定规范中写$F_g(h)=r+Lh+N(h)$，$r=F_g(0)$。选择低模空间$K$与补空间$X_1$，令$h=z+v$，必须同时解
+\[
+ \Pi_1F_g(z+v)=0,\qquad \Pi_0F_g(z+v)=0.
+\]
+$K$应包含真正核、退化近核、全局参数、标架和规范相关必要变量。仅保留TT核、删掉标量完整核、或把转移模式改名为gauge，都会改变问题。
+
+\begin{criterion}[线性Schur补的精确作用]
+设$L_{11}$在已声明域、范数和边界条件下可逆。对线性系统
+\[
+ L_{00}z+L_{01}v=-r_0,\qquad L_{10}z+L_{11}v=-r_1,
+\]
+它等价于
+\[
+ (L_{00}-L_{01}L_{11}^{-1}L_{10})z
+ =-r_0+L_{01}L_{11}^{-1}r_1,
+\quad v=-L_{11}^{-1}(r_1+L_{10}z).
+\]
+\end{criterion}
+这是初等消元，不是已经证明的Einstein约化。其研究价值是提醒：外部补空间会反馈到低模方程和有效源，不能只计算$L_{00}$或$r_0$就宣布障碍非零。非线性版本还需一致可微解$v(z)$、高阶余项和规范恢复。
+
+\subsection{角模的强制性与长领口近核必须一起处理}
+\newidea
+在半径$a(t)$的局部圆方向，非零Fourier模有$a^{-2}m^2$的主导代价，可能帮助反演；但零模、长领口转移及几何联络耦合仍可退化。应建立分模能量与混合各向异性范数：高模由主符号控制，低模保留真实端部传播，块外部通过Dirichlet-to-Neumann响应回馈。主符号有利不等于整个Einstein算子正定，更不等于忽略规范和负势。
+
+闭剪切对象上的完全精确解不能保留任何局部Killing场，所以应当允许角模在所有区域非零，即使其振幅极小。把高模压成零可能恰好删除唯一可能的精确输出。
+
+\subsection{真实双端数据不是两个独立成功的半核}
+\newidea
+用相同参数描述两端诱导度量、第二基本形式、连接holonomy及约束，建立两侧可实现Cauchy数据集合，再研究它们在实际拓扑标记下是否相交。Einstein是椭圆方程，不能任意指定全部Dirichlet与Neumann数据；“六项端点值可以调”必须由一个具有正确指标的边值问题证明。
+
+可以先在有限截断域证明边界响应算子及其主符号、余核、参数导数，再控制域长趋无穷时的响应。若只证明有限域可解但逆界增长快于残差下降，就没有完成闭构造。这个方向同时服务图流形、新产品块和轨形多节点，而不要求它们拥有相同几何模型。
+
+\section{具体研究方向：把近似能力转成新对象或精确结果}
+\subsection{扩大\texorpdfstring{$A_1$}{A1}到真实其他ALE数据}
+\newidea
+先选择具体ADE、type-T或非共线周期的完整核心，计算所有余核对二次源的像，证明可解条件及尾项。只有实际满足条件的周期和有限商才进入全局定理。负Einstein高维轨形的近期障碍\cite{Yao}提供对照：其非塌缩、统一能量和光滑Ricci-flat ALE泡假设必须保留，不能据此宣布所有高维解消已分类。
+
+对每个候选同时比较：无权残差可否趋零、精确解消是否受阻、全局光滑类型是否已知Einstein。这样产生的是可判定的理论，不是越来越长的ALE名称表。
+
+\subsection{直接攻正分支，而非只积累负侧例子}
+\newidea
+球面商与产品商的明确标记解消可给$P_4^+$测试对象。若继续有限维耦合，须把源、接收、同手性、跨手性、邻接、对角和自作用全部放进同一约化。$t^3$项不能由$O(t^{5/2})$余项判号；应推到$o(t^3)$，或将同阶对数项显式列出。严格谱尾和连续算子误差优先于再增加小数位。
+
+即使得到局部精确解消障碍，仍需第三线排除其他Einstein度量；若找到真正零点及横截性，则是新的存在性方向。不要预设mixed rows一定无解。
+
+\subsection{剪切与映射类能否更一般地共同变化}
+\newidea
+当前构造故意分离两种支撑以确保误差闭合。进一步可研究重叠过渡、多个非交换连接方向、节点网络反馈，目标是扩大光滑拓扑或得到更好的精确修正方程，而非只改善常数。每次须保持整数剪切类与标记固定；若让$f_\ell$变化，必须说明总空间是否仍同胚／微分同胚，或明确是在构造变化拓扑的反例候选序列。
+
+一个可执行问题是：固定粘合图上，能否把所有低模的有效方程写成带真实拓扑holonomy的非线性网络？边变量来自几何PDE，不可独立任意指定。网络若只有必要条件，不能直接算作存在性定理。
+
+\subsection{近局部对称而全局必须不对称：允许指数小的修正}
+\newidea
+当前无局部Killing场定理没有给对称破缺振幅下界。完全非对称的精确解可能只用很小的角向成分连接不同局部产品块。应研究这种成分是否通过长领口呈指数小的边界传输、其二次反馈是否恰好消去接收障碍。若证明它不能，则形成定量局部刚性；若能则提供精确Einstein的新构造机制。不能以“看起来太小”删掉这一通道。
+
+\subsection{越过原邻域，而非无限重复同一个排除球}
+\newidea
+对$E_D$考虑$h\sim C\varepsilon$、变化背景模参数、不同共形类乃至并非近原构造的度量。原第6轮控制小固定倍球，超出范围不保证可解但也未被排除。可以改变比较背景，使某个转移模式进入参考族，再重新计算原全局TT配对；不允许在参考族改变后继续使用旧背景的常数和符号。
+
+\section{一条可验证的精确解路径：完整算子的后验准则}
+\begin{criterion}[Banach空间后验修正]
+设$F:X\supset B(x_0,r)\to Y$连续可微，$A:Y\to X$有界且单射。若
+\[
+ \|AF(x_0)\|\le Y_0,\quad
+ \|I-ADF(x_0)\|\le Z_0,
+\]
+并在球内有
+\[
+ \|A(DF(x)-DF(y))\|\le Z_2\|x-y\|,
+\]
+且
+\[
+ Y_0+Z_0r+\tfrac12Z_2r^2\le r,
+ \qquad Z_0+Z_2r<1,
+\]
+则球中存在唯一的$T(x)=x-AF(x)$不动点，且$F(x)=0$。
+\end{criterion}
+\begin{proof}
+Taylor积分余项给$\|T(x)-x_0\|\le Y_0+Z_0r+Z_2r^2/2$，所以球不变；导数界给收缩。单射$A$把$AF=0$变为$F=0$。唯一性是在该球及该规范中，不是所有Einstein度量的分类。
+\end{proof}
+应用需要证明正定性、完整边界条件、规范恢复与所有连续谱尾。有限矩阵逆不是$A$在完整函数空间中的单射或误差界；浮点残差不是区间证书。Wang的非紧负Einstein构造提供了一个已有的可行例：严格数值产生局部近似，定点方法修正后再证明完整AH延拓\cite{Wang}。本项目不能因此跳过自己的边界、核和闭拓扑问题。此准则是可复用分析工具，不是本稿已经产生了新精确Einstein解。
+
+\newidea
+可先对一个明确非对称离散候选构造“低模数值逆＋高模解析逆”，以区间方法认证$Y_0,Z_0,Z_2$；若无法满足不等式，记录失败究竟是离散候选差、核漏项、条件数退化还是非线性太大。不要把后验准则失败说成数学无解。
+
+\section{两个可具体展开的全模态研究计划}
+\subsection{计划A：新闭剪切族的完整低能量方程}
+固定一个$M(h,g;u,f)$，使用原近似度量$G_\ell$作为第一参考，而不把其圆对称作为未知度量的约束。选DeTurck或Bianchi规范后，对$L_\ell=DF_{G_\ell}(0)$建立三个相互衔接的区域问题：厚产品块、映射类长领口、剪切喉部。
+
+厚部的核来自真实产品形变、全局规范和参数；不能用局部坐标数代替。长领口要保留纤维TT转移、常数与小谱模，喉部要保留连接的所有混合分量。边界传输以实际$\Psi_e$匹配，不因两端面积相同就删除holonomy。
+
+\newidea
+第一项可证明目标是：在一个声明完整的混合范数中，得到$X=K_\ell\oplus X_{1,\ell}$以及补空间逆界$B_\ell$；低模维数是否统一本身也需要证明。第二项是完整有效障碍$\mathcal O_\ell(z)=0$，包含补空间反馈、所有节点自作用和外部响应。第三项才是比较$B_\ell$、残差、非线性与正定半径，完成精确解或一个量化的排除球。
+
+如果$B_\ell$增长很快，不要立即认定无法修正；可以换更合适的参考参数，使最危险低模进入$z$，或采用第6轮的接收量加权反演。相反，如果只是某个有限矩阵数值可逆，也不能跳过连续余谱和规范恢复。这样每一步都会产生新的数学对象，而不是无限循环“再运行优化”。
+
+\subsection{计划B：跨节点或跨边的消去能否产生真正零点}
+在四节点轨形和有限粘合图上，局部首项相同不意味着全局响应相同。应保留一个统一的参数空间$z$：尺度比、角度、有限核、真实背景形变与必要的标架变量。允许几何对称简化，但只能在证明相应等变性后取商。
+
+\newidea
+若有$\mathcal O(t,z)=t^k\mathcal O_k(z)+\mathcal R(t,z)$，首先寻找$\mathcal O_k$的真实零点与横截性。需要$\|\mathcal R\|_{C^1}=o(t^k)$才能用稳定的有限维论证；若存在同阶对数，必须把它写进主项。只有一个固定$z$处非零，最多排除该邻域；如果零点受拓扑或标记禁阻，需说明禁阻作用于整个允许参数空间。
+
+有些模式的响应在接收方向之外，不能因为接收值为零就把源置零；有些配对需要$23/32$物理对称化，不能用有序分量作独立障碍。保存原四节点纠错的理由，避免在更复杂图上重现相同归一化错误。
+
+\section{构造与全局判定之间的一组可检验接口}
+\subsection{从固定对象到变化拓扑：不同的统一性任务}
+对每个固定$M_r$已有$e_\sigma(M_r)=0$时，可以对角选择使残差统一趋零；但这不提供任何$M_r$的Einstein不存在性。若只是得到拓扑依赖的正下界$c(M_r)\to0$，也不能倒过来推出存在达到该下界的度量。
+
+\newidea
+对一个手术或粘合参数$r$，同时建立可实现的上界与全局下界，比较其是否同量级、是否在同一范数。若上界和下界保持严格正余量，候选被排除；若上下界一致趋零但每个对象仍无Einstein，则可能提供变化拓扑分支反例。下界的数值趋零只是这一路线不被该障碍阻止，不是上界。
+
+\subsection{保持一个精确对照与一个退化对照}
+每个新模型至少应有能够完整检查的极限：零剪切应回到已知产品或标准解消；单节点应回到实际核心；固定非零剪切应保留整数周期；高阶余项在其声明尺度下应小于主项。另一组对照是已知退化精确Einstein族，它检测“反演常数统一”“小局部源必为零”之类过强假设。
+
+科学计算应从完整度量直接重算Ricci与Bianchi，而不是只用待验证方程反算残差。数值搜索发现候选后，先恢复正定性、光滑端点、固定标记和全域最大误差，再讨论认证。严格有限维证书和分析尾界可以合作，不要求所有数学都转成暴力枚举。
+
+\subsection{构造也可以提示全新的障碍}
+新剪切族说明一个非零整数类可以有趋零的Ricci代价。若一种拟议全局障碍只依赖该整数和普通$L^p$大小，它必须解释为什么没有被此构造反驳。真正可能有效的量应看到同一Einstein输出的完整PDE、跨块反馈或不可消去的拓扑耦合，而非只数剪切次数。
+
+这类反向推理很重要：不是构造线只负责制造例子、全局线只负责否定。构造的精确公式能决定哪些新不等式有可能成立，哪些方向应该立即修正。
+
+\section{近期外部进展给出的可用比较}
+\subsection{负KE二阶形变应帮助核算，而非消灭所有高阶障碍}
+Nagy 2026年工作在紧负Kähler--Einstein背景上给出规范化二阶公式，其$J$不变部分由$h_1^2$确定，反不变部分受Kodaira--Spencer括号散度控制\cite{Nagy}。这可用于重算产品块的真实二次核响应。它不直接适用于有边界、非紧或非KE新闭对象；移植时必须处理端项、允许域与退化常数，也不证明三阶障碍自动消失。
+
+\subsection{不依赖直径的稳定性仍可有很强的其他条件}
+Jäckel的有效负曲率稳定性定理\cite{Jackel}不以直径或总体积上界为条件，但要求严格负截面曲率、薄部精确双曲、Ricci导数及$C^0/L^2$误差控制。$E_D$和新剪切族有正截面或不同薄部结构，不能直接代入。可把它作为控制例：寻找一个新构造真的满足这些条件，或明确证明为何本族必要逃出其范围。不要写“所有前人稳定性都需要直径界”。
+
+\subsection{新去奇点理论保留光滑类型问题}
+Antonelli--Székelyhidi 2026年的结果研究$L^\infty$Einstein奇点的去除，在四维摘要所列余维条件下允许\emph{改变光滑结构}\cite{AS}。这是几何极限恢复的重要线索，但原题要求同一光滑流形；只有额外证明恢复类型与输入相同，才能推进Yau26。其全文假设须在应用时核准，本文不将摘要作为新的已使用黑箱。
+
+\section{保持构造研究的广度与论文的中心}
+构造主线至少有三个可独立组织的中心：固定轨形的点态解消；曲面丛的逼近与精确修正障碍；新剪切闭拓扑的全域逼近及非对称精确输出问题。非紧八参数模型、电荷关系和Kottler双端可以服务其中，也可能在查新后独立成文。不能为保持“恰好三篇论文”而拆薄同一结果，也不能把所有构造塞进一篇没有主定理的长稿。
+
+当前更强研究的判据不是残差的指数单调提高，而是至少改变一项：适用光滑拓扑、允许标记与奇点、严格连续误差、精确可修正范围、全局输出判定。每种构造都应带一个明确同一对象的$\mathsf P_\sigma$标签，并交给全局线检查$\mathsf N$或实际Einstein存在；不能把反例所需的另一半无限推迟而仍宣称已接近完成原题。
+
+\paragraph{科学选择而非固定路线。}
+若一个当前模型被严格排除，应保存其有效公式和失败机制，然后允许换拓扑、换参考背景、引入全部模态或完全不同构造。若得到精确Einstein存在，也应作为正面成果而非“没有找到反例”。若只有有限阶消去，则继续决定完整方程的余项是否可控，不把形式无障碍等同于实际可积。这样的双向研究，比预设每条路线只能得到无解更接近原题。
+\appendix
+\section{原始研究入口与继承边界}
+本稿使用上传的十二轮总包\nolinkurl{c183a8f7-4a6d-4d57-a7d5-6c4ee6a8b941.zip}，其中\nolinkurl{baseline/}为原Skill快照，\nolinkurl{proofs/}为原始与第2--12轮续稿，\nolinkurl{research/}为原包三条专题。以下记录保留原包覆盖表的来源与状态；它是数学来源索引，不是独立定理或首创性的计数。历史“下一步”若已被更强结果取代，以正文准确命题为准，但有效估计仍保留。
+
+三份新稿可单独编译与阅读，但不复制全部原脚本、原始实验输出和每轮审读全文。使用具体模块时应恢复所列原证明，特别是估计的参数依赖、真实核、边界规范和光滑标记。本次未重跑原包全部57个程序，也未新认定所有原结论均已通过全球查新。
+
+\small
+\begin{longtable}{L{.34\textwidth}L{.59\textwidth}}
+\toprule 原始文件 & 原包所标示的内容／适用状态\\\midrule\endhead
+\nolinkurl{baseline/research/20260916_construction.tex} & A1 theorem and core/logarithmic-annulus/exterior estimates; E\_D balanced construction. inherited: two complete approximation mechanisms retained as starting hypotheses, not counted as new-round constructions\\
+\nolinkurl{baseline/research/20260912.tex} & Bundle chapter; slow-geometric; balanced collars; third-order correction; global-pairings. inherited: fixed E\_D geometry, explicit residual, correction and actual global TT detector supply the closed repair proof\\
+\nolinkurl{baseline/research/20260916_global.tex} & bundle-input; Stable centers with nonzero charge and a two-variable local expansion. inherited: geometric free-group monodromy and nonzero-charge stable Koiso germ were already present; corrects earlier incomplete attribution\\
+\nolinkurl{construction.md} & 1–3; 4–5 base-TT response and correction scales. superseded in strength: exact polarized base-TT cancellation remains useful; later whole-fibre theorem removes its dominant-base-mode restriction\\
+\nolinkurl{independent_review.md} & 2–3 base-TT identity and geometric C2 Taylor remainders; coefficient qualification. review: fixes contractions and background measure; distinguishes achieved cubic order from unproved optimal leading constant\\
+\nolinkurl{round2_construction.md} & 1–3 all ten tensor blocks, complete bounded invariant kernel and invariant L2 gap. current: proof input for full nonlinear complete family; bounded modes are not L2 modes\\
+\nolinkurl{round2_construction.md} & 4–6 exact cylinder parametrization, quadratic sources, all-block second-order repair. superseded as existence endpoint by round3 nonlinear theorem; source and flux calculations remain proof components\\
+\nolinkurl{round2_construction.md} & 7–8 physical scales and collapsing-normalization counterexample. current failed-route analysis: identical thick-mouth values and unnormalized o(1) L2 error do not kill the pointed transfer\\
+\nolinkurl{round2_construction_review.md} & 1–3 nonseparable classification, linear repair, normalization. review: checks complete kernel scope and distinguishes complete-model repair from fixed closed topology\\
+\nolinkurl{round3_construction.md} & 1–4 weighted nonlinear source, explicit inverse, moving gauge, contraction and Bianchi removal. current main proof: complete exact invariant Einstein family with eight boundary parameters, not eight inequivalent moduli\\
+\nolinkurl{round3_construction.md} & 5–6 actual end models and individual second-variation receiver fluxes. current: source of analytic decay and boundary flux used in nonlinear charge and matching\\
+\nolinkurl{round3_construction.md} & 7–8 closed E\_D boundary and prior-work comparison. current scope: noncompact product inverse is not a uniform closed-manifold inverse; standard deformation method acknowledged\\
+\nolinkurl{round3_construction_review.md} & 1–5 nonlinear target space, weight coercivity, moving reference, gauge removal, end scope. review: checks the analytic steps beyond finite formal Ricci calculations\\
+\nolinkurl{round3_matching_next.md} & 1–3 bounded second-order repair, movable end parameters, conditional matching matrix. current conditional result: opposite flux shifts preserve net receiver; zero exterior response is an additional unproved premise\\
+\nolinkurl{round3_matching_next.md} & 4–6 exterior adjoint defect, physical periods, fixed marking and closed detector. current: retains exterior source/gauge terms and the actual global horizontal detector; does not invent a global vertical detector\\
+\nolinkurl{round4_construction.md} & 1–3 conserved charge, finite positive scattering matrix, constant-twist gauge and nonlinear boundary energy. current: exact nonlinear identities for the existing complete family, not a full metric Dirichlet-to-Neumann operator\\
+\nolinkurl{round4_construction.md} & 4–5 cubic coefficients and exact matching consequences. current supporting calculation: higher coefficients refine the same charge mechanism; not counted as an independent construction\\
+\nolinkurl{round4_exact_core.md} & 1–5 analytic cocompactness obstruction and extension of local isometries. current: nonzero-charge exact core cannot remain unchanged in any closed Einstein manifold; approximate gluing remains open\\
+\nolinkurl{round4_review_construction.md} & 1 exact-core argument. review: checks fixed-radius decay, arbitrary cocompact groups and analytic continuation; no uniform small-repair claim\\
+\nolinkurl{round5_construction.md} & 1–4 whole-fibre tightness, arbitrary perturbations, weak quadratic convergence and bounded gauge. superseded in radius by round6 but retained proof: excludes every fixed epsilon\textasciicircum{}(3/2) ball without symmetry or support assumptions\\
+\nolinkurl{round5_construction.md} & 5–7 full bounded whole-fibre kernel and signed quadratic receiver. current mechanism: nonpositive transfer response prevents cancellation of positive required closed pairing\\
+\nolinkurl{round5_receiver_independent.md} & 1–5 independent full-kernel and determinant-preserving receiver derivation. review/proof: confirms whole-fibre TT modes and sign without reducing to a thin cylinder or coordinate-only ansatz\\
+\nolinkurl{round5_construction_rigidity_review.md} & 1–5 tight detector mass, C1 convergence, gauge contribution and classification. review: verifies no unjustified strong C2 convergence or discarded exterior receiver\\
+\nolinkurl{round5_rank_obstruction.md} & Rank-one receiver obstruction, full-fibre correction pairing, and perturbative repair boundary. current supporting obstruction: excludes the stated repair class; not an all-metric Einstein nonexistence theorem\\
+\nolinkurl{round5_modulation.md} & 1–3 actual reference tangents and a logarithmic approximate TT mode. current counterexample: uniform maximum-norm modulation fails modulo reference parameters and arbitrary infinitesimal diffeomorphisms\\
+\nolinkurl{round5_modulation.md} & 4–5 polynomial-accuracy interpretation and proposed weighted modulation route. superseded strategy: logarithmic obstruction is too large to be an exact repair; round6 uses a weaker sufficient weighted inverse rather than the proposed full modulation theorem\\
+\nolinkurl{round6_weighted_inverse.md} & 1–4 nonseparating fibre scalar gap, weighted block operators, factorization and TT transfer domain. current analytic input: uniform H2 receiver-weighted inverse modulo complete kernel; no maximum-norm inverse\\
+\nolinkurl{round6_weighted_inverse.md} & 5 gauge and signed quadratic receiver. current: controls positive nonlinear response while retaining all transfer directions\\
+\nolinkurl{round6_construction.md} & 1–3 closed theorem, actual marked comparison product and finite-collar forcing. current main proof: fixed-small-multiple linear-size C2 exclusion ball for arbitrary smooth tensor perturbations\\
+\nolinkurl{round6_construction.md} & 4–7 angular error, nonzero gauge forcing, weighted kernel and complete error ledger. current: every same-order error retained; small coefficient chosen once before epsilon tends to zero\\
+\nolinkurl{round6_construction.md} & 8 scope beyond the linear-size ball. current gap: large fixed multiples of epsilon and arbitrary o(1) repairs require new signed information, not merely a better inverse constant\\
+\nolinkurl{round6_receiver_review.md} & 1–5 weighted domains, scalar-gap hypotheses, actual collar and gauge ledger. review: scalar gap is for the specified nonseparating degeneration; Lie derivative of nonzero forcing cannot be dropped\\
+\nolinkurl{round6_global.md} & 1 charged analytic germ with genuine periodic quotient and all constraints. refinement of inherited theorem: explicit parameters and geometry, not first nonzero-charge Koiso local existence\\
+\nolinkurl{round6_global.md} & 2 local support-volume example. supporting limitation: local stability and scalar constraints do not yield a general lower volume for the transition region\\
+\nolinkurl{round6_global.md} & 3–4 complete one-ended bolt, exact hyperbolic end and charge/curvature concentration. current constructive result: full operator error O(R\textasciicircum{}-3) on D2 x T2; wrong topology for a two-ended torus connector\\
+\nolinkurl{round6_global.md} & 5–6 continuation target and conditional AH-end flattening. conditional route superseded as existence target: exact two-ended free-circle continuation is later excluded; local flattening does not yield fixed closed gluing\\
+\nolinkurl{round7_endpoint.md} & 1–4 general concentration identity, scalar cap and critical-ratio defect. current cross-line selection rule: inherited log-Weyl inputs constrain monopole capacity; concentration is not automatically useful for a global obstruction\\
+\nolinkurl{round7_endpoint.md} & 5 onward locally symmetric bulk and reversed KE slope condition. current boundary: no bulk realizing the required geometry and monopole saturation is constructed; special-monopole gap cannot be contradicted by the same assumptions\\
+\nolinkurl{round8_multitwist.md} & 1–4 fixed marked bundles, free-quotient gluing and full Ricci estimates. inherited metric mechanism made explicit on selected members; not a new general slow-interpolation theorem\\
+\nolinkurl{round8_multitwist.md} & 5–7 rank-one curve killing, representation volumes and full-generator example. current cross-line application: new group/representation information attached to actual near-Einstein inputs; global arbitrary Einstein remains undecided\\
+\nolinkurl{round9_connector.md} & Exact free-circle two-ended conformally compact obstruction. current external chapter dependency: used only in its free-circle smooth-boundary scope; not applied to the product asymptotics of section 2\\
+\nolinkurl{round10_kottler.md} & 1–4 explicit smooth double, exact Ricci eigenvalues and exact-end cutoff. current main construction: fixed noncompact manifold and conformal data, full unweighted defect tends to zero with bounded curvature\\
+\nolinkurl{round10_kottler.md} & 5 optical zero mode and endpoint localization. current counterexample mechanism: error times physical length tends to zero because normalized ground-state boundary overlap also tends to zero\\
+\nolinkurl{round10_kottler.md} & 6 limits and isometry-extension hypotheses. current correction: disconnected-boundary relative fundamental-group hypothesis fails; arbitrary nonsymmetric Einstein filling is not excluded\\
+\nolinkurl{round10_kottler.md} & 7 non-gauge approximate infinitesimal deformation. current auxiliary result: parameter derivative has unit-scale distance from infinitesimal gauge and O(d) linearized error; no weighted or boundary-fixed inverse conclusion\\
+\nolinkurl{round10_cusp_doubling.md} & 1 source hypotheses and doubling theorem. current deduction from existing Li–Liu sources: same fixed principal circle bundle, two unchanged PE ends, no original-source priority claim\\
+\nolinkurl{round10_cusp_doubling.md} & 2–4 complete central Ricci blocks, relative two-jets and nonlinear seam estimate. current proof: constant-curvature connection is global on the bundle; collapse creates no uncontrolled coordinate norm loss\\
+\nolinkurl{round10_cusp_doubling.md} & 5 quantized curvature and cusp-type limits. current scope: fixed nonzero Chern flux costs a\textasciicircum{}2|F|\textasciicircum{}2; flat AH and ACH Nil cusps are not covered by the same substitution\\
+\nolinkurl{round10_bundle.md} & 1–5 classical Kodaira base changes and exact harmonic/Hodge formulas. current control family: disproves an overbroad normalized harmonic-gap strategy but does not preserve E\_D zero signature or establish new KE existence theory\\
+\nolinkurl{round11_closed_gluing.md} & 1–2 finite marked product blocks and actual hyperbolic collars. current main closed construction: fixed smooth manifold and all boundary/shear data retained\\
+\nolinkurl{round11_closed_gluing.md} & 3 arbitrary mapping-class path and complete Gauss–Codazzi blocks. current proof: slow variation controls all Ricci components, including nonzero fibre-area trace terms\\
+\nolinkurl{round11_closed_gluing.md} & 4 integral shear and complete horizontal/vertical/mixed circle Ricci blocks. current proof: fixed-width throat has O(ell) mixed error; 3k coefficient and circle-valued endpoint gluing are essential\\
+\nolinkurl{round11_closed_gluing.md} & 5 smooth closed assembly, exact volume and almost-parallel curvature. current: finite disjoint supports and all-jet matching; fixed total fibre area suffices for volume identity\\
+\nolinkurl{round11_closed_gluing.md} & 6 two orientations and endpoint-fixed auxiliary-parameter Moser argument. current: compatible almost Kähler structures, no claim of complex integrability\\
+\nolinkurl{round11_closed_gluing.md} & 7 comparison with inherited surface bundles. current attribution boundary: identity/finite-isometry cases are not automatically new topology\\
+\nolinkurl{round11_graph_topology.md} & 1–4 self-gluing HNN group and no-surface-bundle examples. current external chapter dependency: nonzero shear plus infinite mapping class provides objects outside all oriented surface bundles\\
+\nolinkurl{round11_graph_topology.md} & 5 applicable and inapplicable global Einstein obstructions. current boundary: hyperbolic-surface fibres and nonamenable walls are outside cited infranil higher-graph classes\\
+\nolinkurl{round12_repair.md} & 1–4 exact scalar constraint, positive receiver and marked Teichmuller displacement. current restricted repair theorem: parameter-independent obstruction in circle-invariant unit-normal-foliation sector\\
+\nolinkurl{round12_repair.md} & 5 exact connection transport and backreaction. current supporting identity: shear transport cannot cancel positive receiver energy; no global cokernel identification\\
+\nolinkurl{round12_repair.md} & 6 spatial orbit radius and common-area rigidity. current: Laplacian is a genuine escape; common-area exact sector nevertheless forces local product geometry\\
+\nolinkurl{round12_symmetry.md} & 1–6 discrete universal-cover isometries and analytic local-symmetry breaking. current external chapter dependency: every hypothetical exact Einstein metric must lack all local Killing germs; no quantitative asymmetric gap\\
+\nolinkurl{round6_verification.md} & Construction and weighted-inverse checks. computational evidence: symbolic and scaling checks supplement, not replace, the analytic proof\\
+\nolinkurl{round10_verification.md} & Kottler, coordinate Ricci and cusp-doubling checks. computational evidence: exact component checks and negative controls; not a full PDE existence certificate\\
+\nolinkurl{round11_verification.md} & Closed path/shear all-block checks and topology consistency. computational evidence: independent coordinate derivation with deliberate wrong formulas rejected\\
+\nolinkurl{round12_verification.md} & Repair identity and prescribed scope. computational evidence: complete scalar-difference formula including spatial lapse terms; does not certify arbitrary all-metric exclusion\\
+\bottomrule\end{longtable}\normalsize
+\paragraph{复算与历史审读。}
+有限代数、符号Ricci、整数拓扑记账和数值采样分别解决不同问题。原包的\nolinkurl{proofs/*check*.py}、各轮\nolinkurl{*verification.md}及\nolinkurl{reproduction/}应保持与证明版本绑定；程序通过不替代连续谱尾、非线性余项和全局PDE。Fable核验中可保留的OT拓扑推广、具体手性应用、负号GH分离与独立坐标计算，与问题W的失败拼接和指定截断$1/3$首项应分开登记。原资料和旧会话保留为来源，不由本稿覆盖。
+\begin{thebibliography}{99}
+\bibitem{LeBrunSurvey} Claude LeBrun. \emph{An Overview of Einstein 4-Manifolds}. 2026年9月2日预印本，\url{https://arxiv.org/abs/2609.03033}. 本稿用作近期领域地图，不把综述元数据当作逐条查新的替代。
+
+\bibitem{OzuchII} Tristan Ozuch. \emph{Noncollapsed degeneration of Einstein 4-manifolds II}. Geom. Topol. (2022). 特别见\S7.3的点态Ricci逼近问题及Remark 51。\url{https://arxiv.org/abs/1909.12960}.
+
+\bibitem{OzuchInt} Tristan Ozuch. \emph{Integrability of Einstein deformations and desingularizations}. \url{https://arxiv.org/abs/2105.13193}.
+
+\bibitem{Biquard} Olivier Biquard. \emph{Désingularisation de métriques d’Einstein. I}. Invent. Math. (2013). \url{https://arxiv.org/abs/1105.4904}.
+
+\bibitem{HO} Yuanqi Huang and Tristan Ozuch. \emph{Regularity of Einstein 5-manifolds via 4-dimensional gap theorems}. \url{https://arxiv.org/html/2512.21317v2}.
+
+\bibitem{OR} Peter Orlik and Frank Raymond. \emph{Actions of the torus on 4-manifolds. I}. \url{https://webhomes.maths.ed.ac.uk/~v1ranick/papers/orlikraymond1.pdf}.
+
+\bibitem{Rupflin} Melanie Rupflin and Peter Topping. \emph{Horizontal curves of hyperbolic metrics}. Appendix A. \url{https://arxiv.org/abs/1605.06691}.
+
+\bibitem{Ji} Lizhen Ji and Richard Wentworth. \emph{Spectral convergence on degenerating surfaces}. \url{https://math.umd.edu/~raw/papers/spectrum.pdf}.
+
+\bibitem{Nagy} Paul-Andi Nagy. \emph{Einstein deformations of Kähler Einstein metrics}. 2026年3月，\url{https://arxiv.org/html/2603.09028v1}.
+
+\bibitem{Yao} Yichen Yao. \emph{Resolution of compact Einstein orbifolds in general dimensions}. 2026年预印本，第2版。\url{https://arxiv.org/html/2603.14929v2}.
+
+\bibitem{Jackel} Urs Jäckel. \emph{Effective stability of negatively curved Einstein metrics in dimensions at least 4}. \url{https://arxiv.org/abs/2502.16692}. 本稿对照第2版的额外截面曲率、薄部及Ricci导数条件。
+
+\bibitem{AS} Gioacchino Antonelli and Gábor Székelyhidi. \emph{Removability of non-isolated singularities for Einstein metrics and RCD spaces}. 2026年9月预印本。\url{https://arxiv.org/abs/2609.01464}; 作者上传记录\url{https://cvgmt.sns.it/paper/7959/}. 本稿引用摘要层面的适用范围，使用前需复核全文定理。
+
+\bibitem{LiLiu} Mingyang Li and Hongyi Liu. \emph{Poincaré--Einstein 4-manifolds with cusps}. 2026年5月25日预印本，\url{https://arxiv.org/abs/2605.25462}.
+
+\bibitem{FW} Benson Farb and Shmuel Weinberger. \emph{Isometries, rigidity and universal covers}. Ann. of Math. 168 (2008). \url{https://math.uchicago.edu/~farb/papers/isoms.pdf}.
+
+\bibitem{Wang} Qiu Shi Wang. \emph{Computer-assisted construction of $SU(2)$-invariant negative Einstein metrics}. Ann. Global Anal. Geom. 69 (2026), no. 3, Paper 18. \url{https://arxiv.org/abs/2504.21644}.
+
+\end{thebibliography}
+\end{document}

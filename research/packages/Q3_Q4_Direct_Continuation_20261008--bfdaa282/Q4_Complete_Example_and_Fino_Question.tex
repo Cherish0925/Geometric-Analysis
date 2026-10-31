@@ -1,0 +1,337 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\DeclareMathOperator{\Ric}{Ric}
+\DeclareMathOperator{\tr}{tr}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Id}{\mathrm{Id}}
+\setlength{\emergencystretch}{2em}
+\title{A complete negative Einstein strictly almost-K\"ahler four-manifold:\\verification and a connection to Fino's existence question}
+\author{Research continuation note}
+\date{8 October 2026}
+\begin{document}
+\maketitle
+
+The explicit metric and two-form below are the construction recorded by
+the user's research system, session A01, in Section~2 of
+\texttt{03\_Subsequent\_Mathematical\_Developments.tex}.
+This note supplies an independent full curvature calculation, the
+simply connected complete extension, and an explicit connection to a
+published existence question. It does not attribute the construction
+to the present continuation.
+
+\section{The geometric statement}
+
+Let $G_0=\mathrm{SL}(2,\R)$ and let $K\cong\mathrm{SO}(2)$ be its
+maximal compact subgroup, with angular parameter of period $2\pi$.
+Choose left-invariant forms such that
+\begin{equation}\label{eq:MC}
+ d\sigma_1=-2\sigma_2\wedge\sigma_3,\qquad
+ d\sigma_2=2\sigma_3\wedge\sigma_1,\qquad
+ d\sigma_3=2\sigma_1\wedge\sigma_2.
+\end{equation}
+For $1/3<x<1$, put $D=1+3x^2$ and
+\begin{align}
+ G&=\frac{4D}{(1-x)^2(1+x)^2(3x-1)(3x+1)},\notag\\
+ A_1&=\frac{4(3x-1)D}{3(1-x)(1+x)^2},&
+ A_2&=\frac{4(3x+1)D}{3(1-x)^2(1+x)},&
+ A_3&=\frac{64x^2}{(1-x)(1+x)D},\label{eq:metric-functions}\\
+ X_1&=\frac{(1-x)^3(3x+1)}{16x^3},&
+ X_2&=\frac{(1+x)^3(3x-1)}{16x^3}.\label{eq:X}
+\end{align}
+Write
+\[
+ g=G\,dx^2+A_1\sigma_1^2+A_2\sigma_2^2+A_3\sigma_3^2,
+ \qquad e^0=\sqrt G\,dx,\quad e^i=\sqrt{A_i}\sigma_i.
+\]
+With $\omega_i=e^0\wedge e^i+e^j\wedge e^k$ for cyclic $(i,j,k)$, set
+\begin{equation}\label{eq:Omega}
+ \Omega=\sqrt{X_1}\,\omega_1+\sqrt{X_2}\,\omega_2.
+\end{equation}
+
+\begin{theorem}\label{thm:main}
+The pair $(g,\Omega)$ extends smoothly over the zero section of
+\[
+ E=G_0\times_K\R^2\longrightarrow G_0/K\cong\mathbb H^2,
+\]
+where $K$ acts with weight one on $\R^2$. The resulting Riemannian
+manifold is complete and diffeomorphic to $\R^4$. It satisfies
+\[
+ d\Omega=0,\qquad |\Omega|_g^2=2,\qquad
+ \Ric_g=-3g,\qquad W_g^-=0,
+\]
+and
+\begin{equation}\label{eq:q}
+ |\nabla\Omega|^2=\frac{36(1-x^2)^3}{(1+3x^2)^3}>0
+\end{equation}
+at every point, including the zero section by continuous extension.
+In particular this is a strictly almost-K\"ahler Einstein structure.
+The metric itself is not homogeneous.
+\end{theorem}
+
+Here the orientation is the one induced by $\Omega$, so that
+``self-dual'' means $W^-=0$. The scalar curvature is $-12$.
+Neither neutral signature nor a conformal change of an Einstein metric
+is involved.
+
+\section{Independent curvature and closure calculation}
+
+The calculation used here starts with the frame brackets and Koszul's
+formula; it does not assume the reduced Einstein or self-duality
+equations of the source manuscript. Put $dt=\sqrt G\,dx$, $v=dx/dt$,
+$h_i=vH_i$, and $w_i=vV_i$. Directly from
+\eqref{eq:MC}--\eqref{eq:metric-functions},
+\begin{align*}
+ v^2&=\frac{(1-x^2)^2(9x^2-1)}{4D},\\
+ \ell:=\frac{v'}v&=-\frac{2x}{1-x^2}+
+ \frac{9x}{9x^2-1}-\frac{3x}{D},\\
+ H_1&=\frac12\left(\frac3{3x-1}+\frac{6x}{D}
+       +\frac1{1-x}-\frac2{1+x}\right),\\
+ H_2&=\frac12\left(\frac3{3x+1}+\frac{6x}{D}
+       +\frac2{1-x}-\frac1{1+x}\right),\\
+ H_3&=\frac1x+\frac{x}{1-x^2}-\frac{3x}{D},\\
+ V_1&=-\frac{D}{4x(1+x)(3x+1)},\\
+ V_2&=\frac{D}{4x(1-x)(3x-1)},\\
+ V_3&=\frac{12x}{(9x^2-1)D}.
+\end{align*}
+For the dual orthonormal frame, write $[E_a,E_b]=v c_{ab}^{\ d}E_d$.
+Its only independent nonzero coefficients are
+\[
+ c_{0i}^{\ i}=-H_i,\qquad c_{jk}^{\ i}=-2V_i
+ \quad ((i,j,k)\text{ cyclic}).
+\]
+If $\nabla_{E_a}E_b=v\gamma_{ab}^{\ d}E_d$, Koszul's formula gives
+\begin{equation}\label{eq:koszul}
+ \gamma_{ab}^{\ d}=\tfrac12
+ (c_{ab}^{\ d}-c_{bd}^{\ a}+c_{da}^{\ b}).
+\end{equation}
+With the convention
+$R(X,Y)Z=\nabla_X\nabla_YZ-\nabla_Y\nabla_XZ-\nabla_{[X,Y]}Z$,
+the full curvature follows from
+\begin{align}\label{eq:full-R}
+ \langle R(E_a,E_b)E_c,E_d\rangle
+ =v^2\bigg[&\delta_{a0}(\gamma_{bc}^{\ d\prime}+\ell\gamma_{bc}^{\ d})
+ -\delta_{b0}(\gamma_{ac}^{\ d\prime}+\ell\gamma_{ac}^{\ d})\notag\\
+ &+\sum_e(\gamma_{bc}^{\ e}\gamma_{ae}^{\ d}
+ -\gamma_{ac}^{\ e}\gamma_{be}^{\ d}-c_{ab}^{\ e}\gamma_{ec}^{\ d})\bigg].
+\end{align}
+Rational substitution yields $\Ric_{ab}=-3\delta_{ab}$.
+In the orthonormal bases $(e^{0i}\pm e^{jk})/\sqrt2$, the curvature
+operator has zero mixed block and
+\begin{equation}\label{eq:Rblocks}
+ \mathcal R^-=-\Id,
+ \qquad\mathcal R^+=\operatorname{diag}(r_1,r_2,r_3),
+\end{equation}
+where
+\begin{align*}
+ r_1&=-\frac{3(x-1)^2(21x^4+18x^3+12x^2-2x-1)}{D^3},\\
+ r_2&=-\frac{3(x+1)^2(21x^4-18x^3+12x^2+2x-1)}{D^3},\\
+ r_3&=\frac{9(x-1)^2(x+1)^2(5x^2-1)}{D^3}.
+\end{align*}
+Their sum is $-3$. Thus $s=-12$ and
+$W^-=\mathcal R^--(s/12)\Id=0$.
+
+For completeness, closure can be checked without curvature:
+if $f_i=\sqrt{X_i}$, the $i$th summand satisfies
+\[
+ d(f_i\omega_i)=
+ [\dot f_i+(h_j+h_k-2w_i)f_i]e^{0jk}=0.
+\]
+The derivative formula
+\[
+ v^{-1}(\nabla_{E_a}\Omega)_{bc}
+ =\delta_{a0}\Omega_{bc}'-
+ \sum_e(\gamma_{ab}^{\ e}\Omega_{ec}
+        +\gamma_{ac}^{\ e}\Omega_{be})
+\]
+then gives \eqref{eq:q} by summing over $a$ and $b<c$.
+The identity $X_1+X_2=1$ gives $|\Omega|^2=2$.
+A self-dual two-form of length $\sqrt2$ defines an orthogonal
+almost-complex structure. Since it is closed and not parallel, that
+structure is strictly almost-K\"ahler. The accompanying SymPy script
+implements \eqref{eq:koszul} and \eqref{eq:full-R} directly and checks
+these identities with exact rational arithmetic.
+
+\section{Smooth extension and completeness}
+
+Define the geodesic radial coordinate $r$ by $r=0$ at $x=1/3$ and
+$dr=\sqrt G\,dx$. The exact radial equation gives analytic functions
+of $r^2$ with expansions
+\begin{align*}
+ x-\tfrac13&=\tfrac29r^2-\tfrac2{81}r^4+O(r^6),&
+ A_1&=r^2+\tfrac29r^4+O(r^6),\\
+ A_2&=6+7r^2+O(r^4),&A_3&=6+7r^2+O(r^4),\\
+ A_2-A_3&=\tfrac{10}{3}r^4+O(r^6),&X_2&=\tfrac83r^2+O(r^4).
+\end{align*}
+Analyticity follows by first using $u=\sqrt{x-1/3}$: $r$ is an odd
+analytic function of $u$ with nonzero linear coefficient, and hence has
+an odd analytic inverse.
+
+Locally over $G_0/K$, take
+\[
+ \sigma_1=d\psi+\beta,\qquad
+ \sigma_2+i\sigma_3=e^{2i\psi}\zeta_0,\qquad z=re^{i\psi}.
+\]
+The right $K$-action rotates the horizontal coframe with weight two.
+The normal circle has period $2\pi$ and weight one. Thus
+\[
+ dr+ir\sigma_1=e^{-i\psi}(dz+iz\beta),\quad
+ dr-ir\sigma_1=e^{i\psi}(d\bar z-i\bar z\beta).
+\]
+The leading normal metric is $|dz+iz\beta|^2$. Its correction has
+coefficient $O(r^4)\sigma_1^2$, which is smooth because
+$r^2\sigma_1=\operatorname{Im}(\bar z\,dz)+r^2\beta$ is smooth.
+The horizontal trace is a smooth function of $r^2$ times
+$\sigma_2^2+\sigma_3^2$. Its weight-four anisotropy has coefficient
+$r^4$ times a smooth even function, and is therefore smooth as well.
+
+To check $\Omega$, write $a_i=\sqrt{A_i}$, $a_1=rb(r^2)$ and
+$x_i=\sqrt{X_i}$. Its mixed component is
+\begin{align*}
+ &c_+\operatorname{Re}((dr+ir\sigma_1)\wedge(\sigma_2+i\sigma_3))\\
+ &\qquad+c_-\operatorname{Re}((dr-ir\sigma_1)\wedge(\sigma_2+i\sigma_3)),
+ \quad c_\pm=\tfrac12x_2(a_2\pm ba_3).
+\end{align*}
+Here $c_+=rF(r^2)$ and $c_-=r^3H(r^2)$. The two expressions become
+\[
+ \operatorname{Re}[zF(r^2)(dz+iz\beta)\wedge\zeta_0],\qquad
+ \operatorname{Re}[z^3H(r^2)(d\bar z-i\bar z\beta)\wedge\zeta_0],
+\]
+which are smooth. The remaining radial--circle and horizontal area
+terms are smooth. These expressions describe the extension on the
+associated disk bundle, and are compatible under changes of local
+trivialization. The metric is positive definite at the bolt;
+self-duality and $|\Omega|^2=2$ continue there. At the bolt,
+$q=32/3>0$.
+
+For $\Gamma=\{1\}$ the base is the contractible hyperbolic plane.
+The oriented real plane bundle $E$ is therefore trivial and
+$E\cong\mathbb H^2\times\R^2\cong\R^4$.
+To prove completeness, let $g_B=\sigma_2^2+\sigma_3^2$ denote the
+invariant complete metric on $G_0/K$. On every radial compact interval
+$0\le r\le R$, the functions $A_2,A_3$ have a common positive lower
+bound $c_R$. Consequently
+\[
+ g\ge dr^2+c_R\pi^*g_B\quad (0\le r\le R).
+\]
+In fact $A_2,A_3\ge6$ here, but the interval-dependent bound suffices.
+As $x\uparrow1$, with $y=1-x$, one has
+\[
+ G\sim\frac1{2y^2},\qquad
+ A_1\sim\frac8{3y},\quad A_2\sim\frac{32}{3y^2},\quad A_3\sim\frac8y.
+\]
+Thus $r\to\infty$. A path of finite length has bounded $r$ and
+bounded base distance by the displayed metric inequality. It remains
+in a disk bundle of bounded radius over a compact base ball, which is
+compact. No finite-length path escapes. Equivalently, closed metric
+balls are compact, and Hopf--Rinow proves completeness.
+
+\section{Nonhomogeneity and comparison with the classical ansatz}
+
+Since $s/12=-1$, the eigenvalues of $W^+$ are $w_i=r_i+1$.
+The intrinsic metric invariant, in curvature-operator norm, is
+\begin{equation}\label{eq:Wnorm}
+ \tr((W^+)^2)=
+ \frac{96(81x^{12}-54x^{10}+315x^8-168x^6+99x^4-18x^2+1)}{(1+3x^2)^6}.
+\end{equation}
+At the bolt its value is $2/3$, whereas its limit at infinity is $6$.
+It is nonconstant on the regular open set as well. The metric itself,
+and not merely the metric--form pair, is therefore nonhomogeneous.
+In particular it is not a left-invariant metric for any transitive
+Lie-group presentation.
+
+The example also lies outside the weakly $*$-Einstein class treated
+by Armstrong's ansatz~\cite{Armstrong}. In the orthonormal self-dual
+basis $\omega_i/\sqrt2$, put $\sigma=\Omega/\sqrt2$. Directly,
+\begin{equation}\label{eq:offdiag}
+ \left|\operatorname{pr}_{\sigma^\perp}(W^+\sigma)\right|^2
+ =X_1X_2(w_1-w_2)^2
+ =\frac{9(1-x^2)^3(9x^2-1)}{(1+3x^2)^4}>0.
+\end{equation}
+Thus $\Omega$ is not a Weyl eigenform; the weakly $*$-Einstein
+condition in the Einstein almost-K\"ahler case fails. This is an
+explicit distinction from that classified subclass.
+
+\section{The precise published question answered}
+
+Fino~\cite{Fino}, immediately after Corollary~2.1 in the published
+version, asks whether a real four-dimensional Lie group can admit a
+non-invariant, non-Ricci-flat Einstein strictly almost-K\"ahler metric.
+The question follows the nonexistence theorem for \emph{left-invariant}
+Einstein strictly almost-K\"ahler structures. It contains no compactness
+or completeness requirement. The published paragraph is important:
+the 2003 arXiv version has the invariant nonexistence statement as
+Remark~2.2, but does not contain this subsequent question.
+
+\begin{corollary}\label{cor:Fino}
+The metric--form pair in Theorem~\ref{thm:main} supplies an affirmative
+answer to Fino's stated existence question. It supplies one even with
+the additional requirement of completeness, on the Lie group
+$(\R^4,+)$, with a non-left-invariant metric.
+\end{corollary}
+\begin{proof}
+Choose a diffeomorphism $\R^4\to E$ and pull back the complete pair.
+The Einstein and almost-K\"ahler properties are invariant under
+diffeomorphism. Negative Ricci curvature excludes Ricci flatness,
+\eqref{eq:q} excludes K\"ahlerness, and the nonconstant invariant
+\eqref{eq:Wnorm} excludes metric homogeneity. In particular the metric
+is not translation invariant on $(\R^4,+)$.
+\end{proof}
+
+There is an even shorter answer if completeness is not requested:
+the regular domain $(1/3,1)\times\mathrm{SL}(2,\R)$ is diffeomorphic
+to the four-dimensional Lie group $\R\times\mathrm{SL}(2,\R)$.
+Pulling back the displayed formulas gives the required non-invariant
+Einstein strictly almost-K\"ahler metric there. This regular-domain
+metric is incomplete at the missing bolt; the complete example above
+uses a different underlying manifold.
+
+Two distinctions fix the literature comparison. First,
+Apostolov--Dr\u aghici's survey~\cite{AD}, Section~6, Remark~1, discusses
+the absence at that time of a negative-scalar self-dual strictly
+almost-K\"ahler Einstein four-dimensional example. The present example
+has exactly these properties. The \emph{specific} question in that
+remark asks whether the canonical complex hyperbolic plane has such
+a local almost-K\"ahler structure. That specific question was answered
+negatively by Di Scala--Nagy~\cite{DSN}, Corollary~1.1: it is not the
+question answered here, since \eqref{eq:Wnorm} is nonconstant and this
+metric is not locally complex hyperbolic.
+
+Second, the construction answers the stated existence question
+mathematically; the present comparison does not claim it is the first
+answer in the entire subsequent literature. An affirmative mathematical
+example and a claim of historical priority are different assertions.
+
+The example is noncompact, with infinite volume. Thus it does not
+settle the closed negative-scalar Goldberg problem. The mathematical
+conclusion established here is a complete positive-definite
+four-dimensional example and its exact relationship to the recorded
+non-invariant existence question.
+
+\begin{thebibliography}{9}
+\bibitem{Fino} A.~Fino,
+\emph{Almost K\"ahler 4-dimensional Lie groups with $J$-invariant Ricci tensor},
+Differential Geometry and its Applications \textbf{23} (2005), 26--37.
+Question immediately following Corollary~2.1.
+\href{https://doi.org/10.1016/j.difgeo.2005.03.003}{doi:10.1016/j.difgeo.2005.03.003}.
+\bibitem{Armstrong} J.~Armstrong,
+\emph{An ansatz for almost-K\"ahler, Einstein 4-manifolds},
+J. Reine Angew. Math. \textbf{542} (2002), 53--84.
+\href{https://doi.org/10.1515/crll.2002.009}{doi:10.1515/crll.2002.009}.
+\bibitem{AD} V.~Apostolov and T.~Dr\u aghici,
+\emph{The curvature and the integrability of almost-K\"ahler manifolds:
+a survey}, Fields Institute Communications \textbf{35} (2003), 25--53.
+\url{https://faculty.fiu.edu/~draghici/research/paperfiles/survey-web.pdf}.
+\bibitem{DSN} A.~J.~Di Scala and P.-A.~Nagy,
+\emph{On the uniqueness of almost-K\"ahler structures},
+C. R. Math. Acad. Sci. Paris \textbf{348} (2010), 423--425.
+\href{https://doi.org/10.1016/j.crma.2010.01.005}{doi:10.1016/j.crma.2010.01.005}.
+\url{https://www.numdam.org/item/10.1016/j.crma.2010.01.005.pdf}.
+\end{thebibliography}
+\end{document}

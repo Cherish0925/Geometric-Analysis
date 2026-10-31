@@ -1,0 +1,299 @@
+# A compactified functional pencil and a two-sided Einstein energy window
+
+23 September 2026. Baseline: `4401d28`.
+
+This note extends the finite-parameter non-saturation theorem to its
+vanishing-Weyl endpoint, with an explicit degenerating weight. It then
+obtains the upper, as well as the lower, quantitative energy envelope.
+The analytic input is the existing bounded-form compatibility theorem;
+the classical feasible energy interval is not a new curvature inequality.
+
+## 1. Uniformity on the unbounded parameter interval
+
+Let \((M,g)\) be closed, connected, oriented and four-dimensional. Fix an
+actual Spin\(^c\) structure whose ordinary Seiberg--Witten equations are solvable
+for every metric conformal to \(g\). Write
+\[
+ p=(a_g^+)^2>0,\quad V=\operatorname{Vol}(g),\quad
+ r=\fint|\operatorname{Ric}+g|^2,\quad b_a=(-a^2)_+/V,
+\]
+\[
+ D_\beta=\frac{\beta+1}{\beta}\int(s^2+6\beta|W^+|^2)
+                 -72\pi^2p,\qquad \beta\ge2.
+\]
+The conventions are tensor Ricci norm and Hilbert--Schmidt Weyl
+endomorphism norm. The class is fixed while the conformal weight varies.
+
+**Theorem 1.** There is a universal \(c>0\) such that, for every finite
+\(\beta\ge2\),
+\[
+ \boxed{(1+b_a)(r+D_\beta/V)
+       \ge c\frac{(\beta-2)^2}{\beta^4}.}                 \tag{1}
+\]
+If \(a^2\ge T=2\chi+3\tau\), the factor \(1+b_a\) can be removed, after reducing
+the universal constant. Unlike the earlier coefficient \(c_L\), the constant
+in (1) does not depend on a parameter cutoff. Its explicit weight vanishes
+at both the Kähler endpoint and the vanishing-Weyl endpoint.
+
+**Proof.** Put \(w=\sqrt6|W^+|\), \(q=-s+w\), \(e_s=s+4\),
+\(z=s+\beta w\), and \(\kappa=r+D_\beta/V\). The exact nonnegative decomposition
+in [the finite-parameter proof](line1_functional_pencil.md), Section 2,
+implies
+\[
+ \fint e_s^2\le4r,\quad \fint z^2\le\beta D_\beta/V,
+ \quad\Delta_+/V\le D_\beta/V.
+\]
+Consequently
+\[
+ \fint(w-4/\beta)^2
+ \le2D_\beta/(\beta V)+8r/\beta^2\le3\kappa,
+\]
+\[
+ \fint(q-q_\beta)^2\le14\kappa,
+ \qquad q_\beta=4+4/\beta\in[4,6].                       \tag{2}
+\]
+In particular the normalized Ricci, scalar and \(W^+\) squared energies
+are bounded by \(C(1+\kappa)\), uniformly for \(\beta\ge2\).
+
+Here is the required tracking of the form-production constants; uniformity
+is not inferred merely by sending \(L\) to infinity. The truncated weight
+\(Q=\max(q,3)\), \(f_0=\max(\sqrt Q,(-s)_+/4)\) is independent of \(\beta\).
+The inherited moment argument gives the same bounds \(|\psi|\le4\),
+\(D_0\le4S/27+o(1)\) and the same amplitude control, with
+\(S\le117V\kappa\). Its errors involve only \(e_s\), \(\Delta_+\) and \(Q\).
+For the normalized form and Weyl model the coefficients are
+\[
+ c_\beta^2=\frac{9\beta}{8(\beta+1)}\in[3/4,9/8],\quad
+ \alpha_\beta=\frac9{8(\beta+1)}\le3/8,\quad
+ t=1/\beta\in(0,1/2].
+\]
+Set \(\omega=c_\beta\psi\) and
+\(A_{\omega,t}=t(|\omega|^2I/3-\omega\otimes\omega)\).
+The polynomial fit identity is
+\[
+ |W^+-A_{\omega,t}|^2
+ =\tfrac16(w-2\alpha_\beta|\psi|^2)^2
+                                  +2\alpha_\beta E_\lambda.
+\]
+The amplitude estimate, (2), and
+\(2\alpha_\beta|\psi|^2=u^2/(\beta+1)\) therefore yield, with one smooth
+actual solution and an arbitrarily small allowance,
+\[
+ \|\omega\|_\infty\le3\sqrt2,\quad
+ d_t:=\fint\bigl(|\operatorname{Ric}+g|^2
+   +|W^+-A_{\omega,t}|^2+(|\omega|^2-2)^2\bigr)
+                       \le C\kappa+o(1).                 \tag{3}
+\]
+No inverse power of \(t\) is used here. The determinant energy identity
+and the bounded-spinor Hessian estimate then give
+\[
+ B_\omega:=\fint|\Delta_H\omega|^2
+                   \le C(1+\kappa+b_a)+o(1),             \tag{4}
+\]
+again uniformly: the needed curvature energies are bounded by (2), and
+the normalization of the quadratic spinor map is bounded above. This is
+exactly the estimate proved in Sections 3--5 of the finite-parameter
+paper, with every parameter-dependent coefficient now bounded explicitly.
+
+The bounded-form compatibility theorem, with the fixed parameter range
+\(0\le t\le1/2\), gives
+\[
+ t^2(1-2t)^2\le C\kappa(1+\kappa+b_a).                   \tag{5}
+\]
+For \(\kappa\le1\) this proves (1); for \(\kappa>1\) use
+\(t^2(1-2t)^2\le1/64\). Let the smoothing allowance tend to zero.
+If \(a^2\ge T\), Chern--Weil gives
+\(b_a\le r/(8\pi^2)\), and the same split removes the square-cost factor.
+This proves the theorem. No derivative estimate for the harmonic
+projection is asserted uniformly as \(t\to0\). \(\square\)
+
+## 2. A pencil with an actual endpoint at zero
+
+Define on \(0\le t\le1/2\)
+\[
+ P_t=t(1+t)\int s^2+6(1+t)\int|W^+|^2-72\pi^2tp.
+                                                               \tag{6}
+\]
+For \(t>0\), this is \(tD_{1/t}\); at zero it is exactly
+\(P_0=6\int|W^+|^2\). Hence \(P_t\ge0\) on the closed interval.
+Multiplying (1) by \(t\), and using \(r+tD/V\ge t(r+D/V)\), proves
+\[
+ \boxed{(1+b_a)(r+P_t/V)\ge c t^3(1-2t)^2.}             \tag{7}
+\]
+The same square-cost removal applies when \(a^2\ge T\). At \(t=0\) the
+inequality is trivial and supplies no nonzero lower amplitude or actual
+anti-self-dual Einstein existence. At \(t=1/2\), the endpoint includes
+negative Kähler--Einstein metrics. The cubic decay in (7) is a proved
+sufficient rate from this transfer, not an optimality claim.
+
+For a normalized negative Kähler--Einstein metric and its canonical class,
+\[
+ P_t/V=4(1-2t)^2.
+\]
+This provides an actual normalization check. It does not establish
+sharpness at the other endpoint.
+
+## 3. The missing upper energy envelope
+
+Assume now that \(A>0\),
+\[
+ T=2\chi+3\tau=A(1-h),\qquad 1/4<h<1/3,                 \tag{8}
+\]
+and for every metric one can choose an actual conformally solvable class
+with \(p\ge A\) and \(a^2\ge T\). Put
+\[
+ e=\frac{\int|\operatorname{Ric}|^2}{8\pi^2A},\quad
+ F(h)=\frac{(4-\sqrt{1-3h})^2}{9},\quad
+ G(h)=\frac{(4+\sqrt{1-3h})^2}{9},
+\]
+\[
+ t_*(h)=\frac{1-2\sqrt{1-3h}}{8+2\sqrt{1-3h}}\in(0,1/8),
+ \qquad \Theta(h)=t_*^3(1-2t_*)^2.                       \tag{9}
+\]
+Use the all-sign relative defect
+\[
+ \mathcal E(g)=\inf_{\lambda\ne0}
+ \frac{\int|\operatorname{Ric}-\lambda g|^2}{\lambda^2V}.
+\]
+
+**Theorem 2.** There is a universal \(c_*>0\) such that every smooth metric
+under (8) satisfies
+\[
+ \boxed{\mathcal E(g)+(G(h)-e)_+\ge c_*\Theta(h).}        \tag{10}
+\]
+Combining with the inherited lower-envelope theorem, every Einstein
+candidate must satisfy the strictly smaller energy window
+\[
+ \boxed{F(h)+\varepsilon h^2\le e
+                       \le G(h)-c_*\Theta(h).}          \tag{11}
+\]
+Ricci-flat and positive Einstein metrics are independently excluded by
+the positive actual monopole scalar estimate. Equation (11) concerns all
+remaining Einstein metrics, not just minimizers or a gluing neighborhood.
+
+**Proof.** Write \(R=\int|\operatorname{Ric}|^2\),
+\(P=\int|\operatorname{Ric}^{\circ}|^2\), \(C_A=8\pi^2A\).
+The exact Chern--Weil reduction of (6) is
+\[
+ P_t=k(t)R+\ell(t)P+12\pi^2(1+t)T-72\pi^2tp,
+\]
+\[
+ k(t)=\frac{(1+t)(8t-1)}2,\qquad
+ \ell(t)=2(1+t)(1-2t).                                  \tag{12}
+\]
+For \(t=t_*(h)\), direct substitution gives
+\[
+ k(t)G(h)+\tfrac32(1+t)(1-h)-9t=0,
+\]
+and therefore
+\[
+ P_t=C_A k(t)(e-G(h))+\ell(t)P-72\pi^2t(p-A)
+       \le C_A|k(t)|(G(h)-e)_++\ell(t)P.                \tag{13}
+\]
+This is the opposite sign of the coefficient in the lower-envelope
+argument. It is why the finite-parameter range beyond \(\beta=8\) controls
+an upper energy wall.
+
+First fix the target to \(\operatorname{Ric}=-g\) and
+\(r=\fint|\operatorname{Ric}+g|^2\le1\).
+The scalar monopole bound and the trace estimate imply
+\[
+ C_A/V\le(2+\sqrt r)^2\le9,\qquad P/V\le r.
+\]
+On \(0\le t\le1/8\), \(|k(t)|\le1/2\) and \(0\le\ell(t)\le2\).
+Using (7), with its square-cost factor removed, in (13) gives
+\[
+ c\Theta(h)\le3r+\tfrac92(G(h)-e)_+
+              \le\tfrac92\{r+(G(h)-e)_+\}.             \tag{14}
+\]
+For \(r>1\) the desired estimate follows by decreasing the constant.
+Constant rescaling and taking the infimum over negative target constants
+prove (10) for the negative-target infimum \(\mathcal E_-\).
+
+The passage to all signs needs a different argument from the earlier
+lower-envelope transfer: a very large \(e\) now makes the energy excess
+zero. Here the upper Chern--Weil budget closes that possibility.
+Let \(I=\int s\). If \(I\le0\), direct minimization gives
+\(\mathcal E_+=4\). If \(I>0\), it gives
+\(\mathcal E_+=\mathcal E=4-I^2/(RV)\).
+The signed scalar estimate \(\int s_-^2\ge4C_A\) implies
+\[
+ \mathcal E_+\ge4/e.                                   \tag{15}
+\]
+If \(\mathcal E_+<1/2\), the chirality upper bound gives
+\[
+ e(1-\mathcal E_+)\le
+ U=3\min(2\chi+3\tau,2\chi-3\tau)/A\le3,
+\]
+so \(e\le6\). Equation (15) would imply \(\mathcal E_+\ge2/3\),
+a contradiction. Thus \(\mathcal E_+\ge1/2\). Since \(\Theta\) is bounded,
+this proves (10) also for the positive target infimum, after reducing
+\(c_*\); take the minimum of the two signwise bounds. \(\square\)
+
+## 4. Geometry of the two endpoints and an actual application
+
+The classical Einstein constraints are, with nonnegative \(x,y\),
+\[
+ x^2=4e,\quad x^2+8y^2=12(1-h),\quad x\ge2,\quad x+y\ge3.
+\]
+When \(1/4<h<1/3\), the ellipse has \(x<3\). Solving these inequalities
+gives the full classical interval \(F(h)\le e\le G(h)\). Thus the interval
+itself is classical; the positive quantitative margins in (11) are the
+new application of the differential non-saturation mechanism.
+
+At \(h\downarrow1/4\), the upper optimal parameter tends to \(t=0\),
+and \(\Theta(h)\sim(8/27)(h-1/4)^3\). At \(h\uparrow1/3\), both optimal
+parameters meet \(t=1/8\); the interval collapses, consistently with the
+old critical gap. At the lower-envelope endpoint \(h\downarrow0\), the
+optimal parameter instead tends to the allowed Kähler value \(t=1/2\).
+These are different geometric degeneracies; they cannot be treated as
+one compact parameter range with a fixed forbidden distance.
+
+For an actual example, let
+\[
+ M=(\Sigma_2\times\Sigma_3)\#5\overline{\mathbb{CP}}^{\,2}.
+\]
+Its polarized actual classes give \(A=16\), \(h=5/16\), \(a^2=T=11\).
+Here
+\[
+ F=25/16,\qquad G=289/144,\qquad t_*=1/17,
+ \qquad \Theta=225/17^5.
+\]
+Any Einstein metric, if one exists, must consequently satisfy
+\[
+ \frac{25}{16}+\varepsilon\frac{25}{256}
+ \le\frac{R}{128\pi^2}
+ \le\frac{289}{144}-c_*\frac{225}{17^5}.                 \tag{16}
+\]
+This is not a nonexistence claim for this example. Its bare
+two-chirality upper bound is only \(e\le33/16\), so the upper envelope
+contains information not supplied by that bound alone. The actual
+monopole selection is the same established polarized input as in the
+main paper; no new gauge existence theorem is asserted here.
+
+## 5. Relation to the research goal
+
+The first-line theorem now supplies a two-sided restriction on the entire
+energy spectrum of possible Einstein outputs in the displayed regime.
+It does not merely study an energy-minimizing sequence. For a pointwise
+input, \(\mathcal E\le4\delta_\sigma^2\) converts (10) into the corresponding
+upper-energy constraint on that input; a small residual alone does not
+force the input energy into a forbidden region.
+
+This note neither classifies the allowed spectra of all Einstein metrics
+nor constructs an Einstein metric. The separate Bauer--Furuta application
+in this increment is the new topological-category result. The present
+contribution is the closed-parameter formulation and its upper-wall
+application, using the existing analytic mechanism.
+
+Sources: [LeBrun's scalar--Weyl inequalities and Chern--Weil reduction](
+https://arxiv.org/abs/math/0003068); the local
+[functional-pencil proof](line1_functional_pencil.md), Sections 2--6;
+[bounded-form compatibility](round21_analytic.md), Section 6;
+[lower energy envelope](line1_energy_envelope_gap.md); and
+[two-chirality upper bound](line1_two_chirality_topology.md).
+
+`check_line1_compactified_pencil.py` verifies the exact coefficients,
+both envelope roots, endpoint rates, actual example, and several deliberate
+sign errors. These checks do not substitute for the written uniform
+analytic estimates or actual gauge-solvability inputs.

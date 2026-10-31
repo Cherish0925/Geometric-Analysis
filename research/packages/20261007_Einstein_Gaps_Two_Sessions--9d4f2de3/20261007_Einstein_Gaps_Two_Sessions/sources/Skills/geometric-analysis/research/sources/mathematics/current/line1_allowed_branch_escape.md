@@ -1,0 +1,343 @@
+# Exact negative-Einstein spectral degeneration on non-virtually-Kähler manifolds
+
+23 September 2026. This note proves a global escape alternative for the
+allowed branch. It does not assert that small Weyl splitting always vanishes.
+The main argument combines the previously proved signed harmonic-Weyl estimate
+with classical smooth Einstein compactness and an actual smooth-topological
+obstruction. Its scope is all exact outputs satisfying the stated geometric
+bounds, not a neighbourhood of a selected approximate construction.
+
+**Strengthening for the actual aspherical family.** The subsequent
+[aspherical no-bubble theorem](line1_aspherical_no_bubbles.md) removes
+the opposite-Weyl bound from the self-gluing application below. In that
+family, vanishing splitting forces diameter escape alone. Theorem 1
+and the general degeneration discussion remain useful for other
+non-virtually-Kähler types where asphericity is not available.
+
+## 1. Hypotheses and the new conclusion
+
+Let \(M\) be a closed connected oriented smooth four-manifold for which no
+connected cover of degree at most two admits a Kähler structure compatible
+with the lifted orientation. Suppose there is \(A>0\) such that each metric
+under consideration has an actual polarized monopole class \(a_g\) with
+\((a_g^+)^2\ge A\). The class may depend on the metric. The scalar monopole
+estimate, not an assumption about a formal cohomology vector, is required.
+
+Consider exact metrics \(\operatorname{Ric}_g=-g\). Order the eigenvalues of
+\(W_g^+\) and set
+\[
+ \lambda_1<\lambda_2\le\lambda_3,\qquad
+ t=-\frac34\lambda_1,\quad b=\lambda_3-\lambda_2,\quad
+ z=\frac b{4t}.
+\]
+Fix \(m>0\) and \(0\le\theta<1/\sqrt3\), and impose
+\[
+                 t\ge m,\qquad z\le\theta.                 \tag{1}
+\]
+Define the normalized splitting energy
+\[
+                      \mathscr S(g)=\fint_M b^2.
+\]
+
+**Theorem 1 (global bounded-geometry splitting gap).** For every \(D,K>0\)
+there is \(\varepsilon=\varepsilon(A,m,\theta,D,K)>0\) such that every metric
+above satisfying
+\[
+              \operatorname{diam}(M,g)\le D,
+              \qquad \|W_g^-\|_\infty\le K                 \tag{2}
+\]
+satisfies
+\[
+                         \mathscr S(g)\ge\varepsilon.       \tag{3}
+\]
+The constant can be chosen uniformly over all smooth types satisfying the
+same hypotheses and the same positive budget \(A\). No independent volume,
+injectivity-radius, full-curvature or Sobolev hypothesis is needed.
+
+**Corollary 2 (escape alternative).** On a fixed such \(M\), if exact
+negative-Einstein metrics satisfy (1) and \(\mathscr S(g_j)\to0\), then
+\[
+       \operatorname{diam}(M,g_j)+\|W^-_{g_j}\|_\infty
+                         \longrightarrow\infty.            \tag{4}
+\]
+More precisely, every fixed bounded rectangle in these two quantities
+contains only metrics with a positive lower splitting energy. It is not
+claimed that each summand in (4) tends to infinity separately.
+
+This conclusion changes a global decision at the canonical shear ratio
+\(T/A=1\): the earlier monopole splitting bound proportional to
+\((1-T/A)^2\) vanishes there, while (3) is strictly positive under (2).
+It does not exclude arbitrary outputs escaping (2).
+
+## 2. Derivation of the geometric compactness, with no redundant inputs
+
+Since \(s=-4\), the actual scalar monopole inequality gives
+\[
+ 16\operatorname{Vol}(g)=\int_M s^2
+       \ge32\pi^2(a_g^+)^2\ge32\pi^2A,
+ \qquad \operatorname{Vol}(g)\ge2\pi^2A.                    \tag{5}
+\]
+The maximum-principle result in
+[the Einstein spectral application](line1_einstein_spectral_application.md)
+gives
+\[
+        t\le M_\theta=\frac1{2(1-3\theta^2)}.              \tag{6}
+\]
+Moreover,
+\[
+ |W^+|^2=\frac83t^2+\frac12b^2
+       \le\left(\frac83+8\theta^2\right)M_\theta^2.        \tag{7}
+\]
+Consequently the bound on \(W^-\), together with the Einstein equation,
+gives a full sectional-curvature bound depending only on \(\theta,K\).
+
+With \(\operatorname{Ric}=-g\), Bishop comparison and the diameter bound
+also give an upper volume bound depending only on \(D\). In addition,
+relative Bishop comparison and (5) give a uniform lower bound for the
+volume of every ball of any fixed positive radius at most \(D\).
+The sectional bound and these bounds imply the standard uniform
+injectivity-radius estimate. Thus every sequence satisfying (1)--(2)
+has, after a subsequence and pull-back by orientation-preserving
+diffeomorphisms, a smooth Einstein limit on a closed smooth manifold.
+Here smoothness follows by elliptic bootstrapping of the exact Einstein
+equation after Cheeger--Gromov compactness. This is classical compactness,
+not a new regularity theorem.
+
+## 3. Proof of the splitting gap
+
+If (3) failed, take a sequence with \(\mathscr S(g_j)\to0\) and use the
+preceding smooth compactness. The ordered Weyl eigenvalues converge
+uniformly. In the limit, \(b_\infty=0\) everywhere and
+\(t_\infty\ge m\). Thus the lowest Weyl eigenline remains smooth and
+separated from its two-dimensional complement.
+
+One can already finish with the exact Derdziński theorem. Equivalently,
+the proved [signed harmonic-Weyl estimate](line1_signed_harmonic_weyl.md)
+gives, for the normalized lowest eigenform on its orientation cover,
+\[
+ \fint\left(|dt_j|^2+(t_j-\tfrac12)^2+|\nabla\omega_j|^2\right)
+                        \le C_{m,\theta}\mathscr S(g_j).    \tag{8}
+\]
+The line bundles converge under the diffeomorphisms: the uniform spectral
+gap makes their spectral projections smoothly convergent, and sufficiently
+close real line bundles are isomorphic. Their orientation covers are
+therefore identified with the limit orientation cover. This is a cover of
+degree at most two, not an assumed global choice of eigenform on \(M\).
+
+Passing to the smooth limit in (8) gives
+\(t_\infty=1/2\) and a parallel self-dual form
+\(|\omega_\infty|^2=2\). The corresponding orthogonal almost complex
+structure is parallel, hence integrable and Kähler. The lifted metric is
+negative Kähler--Einstein. Since smooth convergence preserves the
+diffeomorphism type, this contradicts the topological hypothesis for
+every sufficiently late manifold of the sequence. This also proves the
+claimed uniformity across smooth types. Corollary 2 is its contrapositive.
+
+## 4. Actual application and removal of the lower amplitude assumption
+
+For the self-gluings
+\[
+ M=M(q,g;u,f),\qquad
+ (\phi,x)\longmapsto(-\phi+u(x),f(x)),\quad [u]\ne0,
+ \quad q\ge1,\quad g\ge2,\quad f\in\operatorname{Diff}^+(\Sigma_g),
+\]
+the inherited [virtual Kähler theorem](round11_kahler.md) excludes all
+finite Kähler covers. The [canonical-class calculation](round12_global.md)
+supplies an actual canonical monopole class \(a\) with
+\[
+ a^2=2\chi(M)>0,\qquad (a_g^+)^2\ge a^2.
+\]
+Thus Theorem 1 applies with \(A=2\chi(M)\), to every negative Einstein
+metric in its stated spectral class, independently of the original gluing
+coordinates or of its position in the Einstein moduli space.
+
+For these objects \(\tau=0\) and \(T=A\). Hence the previously proved
+topological splitting estimate involving \((1-T/A)^2\) is zero. The
+present positive bound instead uses the obstruction to a degree-two
+Kähler cover. It is therefore not an algebraic restatement of that earlier
+estimate. No assertion is made that this compactness corollary is new in
+the published literature.
+
+The known almost-Einstein sequences on these manifolds do not contradict
+the theorem: they are not exact Einstein and their long thin geometry
+leaves the compact regime. The result still permits a non-Kähler exact
+Einstein metric of appreciable Weyl splitting.
+
+In fact this actual family allows removal of the lower amplitude bound.
+This strengthening uses both its signature and its fundamental group,
+not an assumption that the selected eigenline cannot disappear.
+
+**Theorem 3 (shear-family gap without lower Weyl amplitude).** Fix
+\(A_0>0\), \(D,K>0\), and \(0\le\theta<1/\sqrt3\). For every member of
+the shear family with \(2\chi(M)\ge A_0\), every exact
+\(\operatorname{Ric}_g=-g\) metric satisfying
+\[
+ b\le4\theta t,\qquad \operatorname{diam}(g)\le D,
+ \qquad\|W^-\|_\infty\le K
+\]
+has \(\mathscr S(g)\ge\varepsilon(A_0,\theta,D,K)>0\).
+Here ordered eigenvalues define \(t,b\) everywhere, and \(W^+=0\)
+is allowed. There is no prescribed \(m>0\). In particular, any exact
+sequence in this relative pinching class with vanishing splitting energy
+must satisfy the diameter/opposite-Weyl escape conclusion (4).
+The later [Theorem 3](line1_aspherical_no_bubbles.md) strengthens this
+to \(\operatorname{diam}(g_j)\to\infty\), with a uniform splitting
+gap depending only on \(D,\theta\), and without assuming \(K\).
+
+**Proof.** At any positive maximum of \(t\), the lowest eigenvalue is
+simple because \(\lambda_2-\lambda_1=2t-b/2\ge2(1-\theta)t>0\).
+The previous maximum-principle calculation therefore proves (6) even
+when \(W^+\) has zeros. If \(t\equiv0\), (6) is immediate. Thus all
+the compactness conclusions of Section 2 remain available, uniformly
+using \(A_0\) in (5).
+
+If a gap failed, the smooth limit would be a compact negative Einstein
+metric with \(\lambda_2=\lambda_3\) everywhere. Derdziński's Proposition
+5(iv) and Theorem 2 give two relevant alternatives: \(W^+\equiv0\), or
+a Kähler--Einstein metric on a cover of degree at most two. The possible
+non-Kähler conformally Kähler case of that classical classification has
+a nonzero Killing field; a compact negative Einstein metric has none by
+the integrated Bochner formula. Thus it does not provide another case
+here. The KE alternative contradicts the virtual Kähler obstruction.
+
+In the ASD alternative, the inherited signature \(\tau(M)=0\) and the
+signature formula give \(\int|W^-|^2=0\). Both Weyl halves vanish,
+so the limit has constant sectional curvature \(-1/3\). But the
+injected vertex group \(\pi_1(F_{q,2})\times\pi_1(\Sigma_g)\)
+contains \(\mathbb Z^2\). This contradicts Preissmann's theorem for
+closed strictly negatively curved manifolds. Both alternatives are
+excluded on every smooth type in the limiting subsequence. This proves
+the theorem. In particular the argument controls the possible vanishing
+of the lowest Weyl amplitude instead of hiding it in a nondegeneracy
+hypothesis.
+
+Under the original lower-amplitude hypothesis, the spectral assumptions
+themselves also force the endpoint
+volume if the splitting tends to zero; endpoint volume is not a premise
+of Theorem 1. Einstein Chern--Weil gives
+\[
+ \frac{2\pi^2T}{V}=\frac13+\fint|W^+|^2
+     =1+\frac83\fint(t^2-\tfrac14)+\frac12\mathscr S.
+                                                               \tag{10}
+\]
+By (6) and (8), the last two terms are bounded in absolute value by
+\(C\sqrt{\mathscr S}+\mathscr S/2\). When \(T=A\), (5) also gives
+\(V\ge2\pi^2T\). Consequently, for sufficiently small splitting,
+\[
+ 0\le\frac{V}{2\pi^2T}-1\le C_{m,\theta}\sqrt{\mathscr S}.
+                                                               \tag{11}
+\]
+Thus the hypotheses cover the full volume window before showing that a
+vanishing-splitting sequence must approach its lower end. They do not
+exclude candidates whose splitting is bounded away from zero.
+
+## 5. Opposite-Weyl degeneration without the aspherical input
+
+There is a more precise necessary degeneration picture in the general
+fixed-topology, bounded-diameter case. This is no longer a remaining
+possibility for the aspherical self-gluings: the
+[compact-core obstruction](line1_aspherical_no_bubbles.md) excludes
+their bubbles directly, without proving compatibility of complex
+fillings. Suppose \(g_j\) are exact Einstein,
+satisfy (1), \(\mathscr S(g_j)\to0\), and have bounded diameter, but no
+uniform \(W^-\) bound.
+
+The volume lower bound is still (5). The four-dimensional Einstein
+Chern--Gauss--Bonnet identity gives
+\[
+ 8\pi^2\chi(M)=\int_M\left(|W^+|^2+|W^-|^2+\frac23\right),
+ \qquad \operatorname{Vol}(g_j)\le12\pi^2\chi(M).           \tag{9}
+\]
+Thus the full curvature energy is bounded and relative Bishop comparison
+gives noncollapse. Classical Einstein orbifold compactness supplies an
+Einstein orbifold limit with smooth convergence off finitely many points,
+together with the usual ALE rescaling analysis at concentrations.
+
+Because (9) bounds total volume, the unnormalized splitting integral also
+tends to zero. On the regular part of the limit, (8) gives
+\[
+ t_\infty=\tfrac12,\qquad \nabla\omega_\infty=0.
+\]
+The lowest eigenline extends as an orbifold eigenline since its eigenvalue
+stays simple and nonzero. Its orientation orbifold cover therefore carries
+the induced negative Kähler--Einstein orbifold metric.
+
+At a curvature blow-up scale \(\rho_j\to0\), the rescaled metrics are
+\(\rho_j^{-2}g_j\). Their Ricci constant tends to zero, while (7) gives
+\[
+       \|W^+_{\rho_j^{-2}g_j}\|_\infty
+                     \le C_\theta\rho_j^2\longrightarrow0.
+\]
+Consequently any smooth nonflat ALE bubble obtained in this process is
+Ricci-flat and anti-self-dual in the original orientation. Wright's
+classification shows that such smooth bubbles are hyperkähler or suitable
+cyclic quotients of Gibbons--Hawking spaces, and are Kähler.
+
+This is **not** a proof that the original \(M\) is Kähler. A Kähler
+orbifold and Kähler ALE pieces do not by themselves provide compatible
+complex structures across the actual marked necks, a global complex
+smoothing, or the original smooth type. Intermediate bubble-tree objects
+can themselves be orbifolds. No assertion that all bubbles are simply
+connected, nor that a global complex smoothing is unobstructed, is used.
+Thus, in the absence of an additional topological argument,
+opposite-chirality concentration remains a genuine mechanism; it is not
+silently removed by the word "resolution". On the actual aspherical
+self-gluings, the later compact-core argument supplies precisely such
+an additional argument and rules it out.
+
+The lower amplitude hypothesis is used in this specific KE-orbifold
+description. Without that hypothesis, an orbifold limit in a general
+family can instead have \(W^+\equiv0\).
+One may not transfer \(\tau(M)=0\) directly to its orbifold signature
+and repeat the smooth-limit hyperbolicity argument: bubble and boundary
+correction terms intervene. The smooth gap of Theorem 3 is unaffected.
+
+## 6. Why the universal small-splitting vanishing theorem remains open here
+
+The signed identity in the preceding work equates positive connection
+energy to positive splitting energy. It does not force either to vanish.
+At the negative KE curvature model the splitting reaction has coefficient
+\(-6\), so there is no immediate positive-mass absorption proof.
+
+Near a fixed negative KE metric, Dai--Wang--Wei, Theorem 3.6, prove that
+nearby Einstein metrics remain KE when all infinitesimal complex
+deformations are integrable. This is a genuine sufficient geometric
+condition, not an invertibility assumption. It does not give a uniform
+statement over degenerating moduli or over obstructed complex structures.
+Nagy's 2026 second- and third-order deformation results are finite-order
+results; they cannot be substituted for all-order local integrability.
+
+The present theorem avoids that unresolved local issue by using actual
+non-virtual-Kähler topology. It excludes smooth compact limits on those
+objects regardless of the deformation theory of any hypothetical KE
+limit. Diameter escape is not removed by either this note or its
+aspherical strengthening. The marked ALE compatibility problem is not
+solved here in general; the later aspherical result bypasses it for the
+actual self-gluings by proving that an ALE core cannot embed at all.
+
+## 7. Primary sources and provenance
+
+- A. Derdziński, *Self-dual Kähler manifolds and Einstein manifolds of
+  dimension four*, Compositio Math. 49 (1983), Proposition 5 and Theorem 2:
+  <https://www.numdam.org/article/CM_1983__49_3_405_0.pdf>.
+- M. T. Anderson, *Orbifold compactness for spaces of Riemannian metrics
+  and applications*, including the recalled Einstein compactness case:
+  <https://arxiv.org/abs/math/0312111>.
+- E. P. Wright, *Quotients of gravitational instantons*, Theorem A:
+  <https://arxiv.org/abs/1102.2442>.
+- A. Preissmann, *Quelques propriétés globales des espaces de Riemann*,
+  Comment. Math. Helv. 15, 175--216, original scan:
+  <https://www.e-periodica.ch/cntmng?pid=com-001%3A1942%3A15%3A%3A15>.
+- X. Dai, X. Wang, G. Wei, *On the Variational Stability of Kähler-Einstein
+  Metrics*, Theorem 3.6 in the inspected author manuscript:
+  <https://web.math.ucsb.edu/~dai/paper/dww3.pdf>.
+- P.-A. Nagy, second-order and third-order negative KE deformation results:
+  <https://arxiv.org/abs/2603.09028> and
+  <https://arxiv.org/abs/2606.04501>.
+
+The application uses the complete hypotheses of the inherited shear
+topology and actual monopole results. The new content of this note is
+their composition with the spectral structure estimate to obtain the
+global escape alternative, including the explicit zero-budget-ratio
+application. It introduces neither a new compactness theorem nor a
+general Einstein nonexistence result.

@@ -1,0 +1,381 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}[proposition]{Remark}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\calC}{\mathcal C}
+\title{Q3: The Zero Mode and the Proposed Horikawa Candidate}
+\author{Continuation of the supplied October 8 research}
+\date{8 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We continue the search for a smooth closed non-Bach-flat absolute minimizer
+of $P(g)=\int|\Ric_g^\circ|^2$. The newly proposed Horikawa surface gives
+a valid fixed attainment problem, but its defining equation explicitly
+contains both $(-3)$-sphere and ADE vanishing-cycle topology. For the
+surviving $\mathcal O(-3)$ degeneration of the previous continuation,
+we solve the zero-mode radial inner problem exactly, including its finite
+renormalized quadratic minimum. We also compute the mixed bulk variation:
+an interior Euler--Lagrange term cancels an apparent point-jet shortcut.
+The inner minimum is negative, but the sign of the complete closed-manifold
+replacement is still undetermined. No smooth attainment theorem is asserted.
+\end{abstract}
+
+\section{The fixed target and the new candidate}
+The target is a smooth absolute minimizer of $P$ which is not Bach-flat.
+It suffices to prove attainment on a fixed manifold where all conformal
+classes are Yamabe-negative and no Einstein metric exists. Indeed a closed
+$P$-critical metric has constant scalar curvature; when this constant is
+nonzero, Bach-flatness and $P$-criticality together imply Einstein.
+These variational facts are inherited from the preceding work.
+
+The user-provided proposal is
+\[
+ X_0=\{w^2+z^5+x^{10}+y^{10}=0\}\subset\mathbb P(1,1,2,5),
+ \qquad M_H=X_0\#\overline{\CP^2}.
+\]
+The affine-cone gradient vanishes only at the origin; $X_0$ avoids the
+two singular coordinate points of the ambient weighted projective space.
+Weighted adjunction gives $K=\mathcal O_{X_0}(1)$ and
+$K^2=10/(1\cdot1\cdot2\cdot5)=1$. The standard weighted hypersurface
+calculation gives $p_g=2,q=0$; this is the classical $(1,2)$ family
+\cite{CP}. Consequently
+\[
+ \chi(M_H)=36,\qquad \tau(M_H)=-24,\qquad
+ (b^+,b^-)=(5,29),\qquad 2\chi+3\tau=0.
+\]
+The ordinary sign classes $K\pm E$ provide a projection budget at least
+one for every metric. Combining the classical mixed monopole curvature
+bound \cite{LeBrun} with the supplied strict negative-KE insertion gives
+\begin{equation}
+ \frac{16\pi^2}{3}\le\inf_{g\in\operatorname{Met}(M_H)}P(g)<8\pi^2.
+ \label{eq:interval}
+\end{equation}
+The upper bound here is an inherited project result, not re-proved in
+this note. The positive actual monopole budget excludes nonnegative
+scalar-curvature representatives. Thus every conformal class is
+Yamabe-negative, and the lower bound excludes Einstein metrics.
+Horikawa therefore gives the same attainment reduction as the previously
+selected Godeaux blowup, with the advantage $b^+>1$ for ordinary
+Seiberg--Witten chamber bookkeeping.
+
+\begin{proposition}[Explicit topology in this particular Horikawa model]
+The surface $X_0$ contains an embedded smooth $(-3)$-sphere $C$ with
+$K\cdot C=1$. It also contains five disjoint $A_4$ Milnor-fibre regions;
+their vanishing-cycle lattices pair trivially with $K$. The blowup can
+be taken away from these configurations.
+\end{proposition}
+\begin{proof}
+Choose $c^5=-1$ and $\epsilon\in\{1,-1\}$. The map
+\[
+ [u:v]\longmapsto[u:v:cv^2:\epsilon i u^5]
+\]
+respects the coordinate weights and lies in $X_0$, since
+$-u^{10}-v^{10}+u^{10}+v^{10}=0$. Its first two coordinates recover
+$[u:v]$, so it embeds $\CP^1$. The curve lies in the weight-one charts,
+and $\mathcal O(1)$ restricts with degree one. Adjunction gives
+$-2=C^2+K\cdot C$, hence $C^2=-3$.
+
+For the second assertion, consider the proper family
+\[
+ X_a=\{w^2+z^5+x^{10}+y^{10}+ax^5y^5=0\}.
+\]
+The singularity equations force $w=z=0$, $x,y\ne0$, and
+$2x^5+ay^5=2y^5+ax^5=0$. Thus the only singular parameters are
+$a=\pm2$. At $a=2$ there are five singular points,
+$w=z=0$, $x^5+y^5=0$. In local analytic coordinates their equation is
+\[
+ u^2+v^2+z^5=0,
+\]
+the $A_4$ singularity. A nearby smooth fibre contains five disjoint
+Milnor fibres with the negative $A_4$ intersection matrix. Smooth fibres
+are diffeomorphic along paths in $\mathbb C\setminus\{-2,2\}$, giving
+these regions in $X_0$. Their local canonical bundle is trivial, so $K$
+pairs to zero on their vanishing spheres. A blowup outside the chosen
+regions leaves all these pairings unchanged.
+\end{proof}
+
+The $(-3)$ filling supports scalar-flat K\"ahler ALE metrics with
+$P=8\pi^2/3$, while the $A_4$ topology supports hyperk\"ahler ALE
+metrics with $P=0$ \cite{Kronheimer,Suvaina}. This proves that these
+topological possibilities are present; it does not prove that minimizing
+sequences develop them. Neither the interval \eqref{eq:interval} nor the
+displayed sign-class pairings alone excludes them. A change to Horikawa
+therefore does not supply the missing compactness theorem.
+
+\section{The remaining first-order zero mode}
+The previous continuation combined classical ALE mass flexibility with
+the supplied A02.59D boundary flux. For a marked $\mathcal O(-3)$
+replacement at a smooth $\frac13(1,1)$ orbifold point of a $P$-critical
+bulk, it obtained
+\begin{equation}
+ P(g_{\lambda,m})=P(g)+\frac{8\pi^2}{3}
+       -24\pi^2m\mu\lambda^2+o(\lambda^2),
+ \label{eq:mass}
+\end{equation}
+where $m$ is Hein--LeBrun mass and
+$\mu=\langle(W^++sI/12)\zeta,\zeta\rangle$ on the invariant
+self-dual axis. Both mass signs are available on the same marked filling
+at the same complete $P$-energy. Under the stated marked local convergence
+and replacement hypotheses, minimality thus requires $\mu=0$.
+
+The scalar isotropy then gives
+\[
+ R^+=W^++\frac{s}{12}I=\operatorname{diag}(\nu,\nu,0),
+ \qquad \nu=s/8.
+\]
+The previously computed radial logarithmic term vanishes at this block.
+The next calculation treats its finite inner term. It uses the radial
+LeBrun filling, not the nonradial Stein fillings used for mass flexibility.
+
+\section{Exact solution of the radial inner problem}
+Normalize the $\mathcal O(-3)$ bolt radius to one and write
+\[
+ g_0=\frac{dr^2}{G}+r^2(\sigma_1^2+\sigma_2^2+G\sigma_3^2),
+ \qquad G=1+r^{-2}-2r^{-4}.
+\]
+The angular volume is $2\pi^2/3$. For
+\[
+ F=G+tu+O(t^2),\qquad H=G+tv+O(t^2),\qquad d=u-v,
+\]
+use $g_t=dr^2/H+r^2(\sigma_1^2+\sigma_2^2+F\sigma_3^2)$.
+The previously derived radial Cartan formulas give the linearized
+self-dual curvature eigenvalues
+\begin{align}
+ L_1&=\frac{d'}{4r}+\frac d{2r^2},\label{eq:L1}\\
+ L_3&=-\frac{u''}{4}-\frac{7u'}{4r}-\frac{2u}{r^2}+L_1
+ +\frac{d'G'}{8G}
+ +d\left(\frac{G'}{rG}+\frac{G''}{4G}
+                    -\frac{(G')^2}{8G^2}\right).\label{eq:L3}
+\end{align}
+Smoothness at the fixed bolt requires $F(1)=H(1)=0$ and
+$F'(1)H'(1)=36$. At first order this reads
+\[
+ u(1)=v(1)=0,\qquad u'(1)+v'(1)=0.
+\]
+Higher-order corrections can enforce the exact bolt product; they do not
+change the quadratic chiral energy on any fixed compact inner region,
+since $R^+(g_0)=0$.
+
+\begin{proposition}[Radial linear response]
+Let $x=r^2$. The smooth-bolt linear problem $L_1=\nu$, $L_3=0$
+has the solution
+\begin{align}
+ d_0&=\nu(x-x^{-1}),\label{eq:d}\\
+ u_0&=\nu\left[
+ \frac x6-\frac12+
+ \frac{2+\tfrac12\log((x+2)/3)}x+
+ \frac{-\tfrac53-2\log((x+2)/3)}{x^2}\right],\label{eq:u}\\
+ v_0&=u_0-d_0.\nonumber
+\end{align}
+It has the prescribed quadratic background
+$u_0\sim\nu x/6$, $v_0\sim-5\nu x/6$.
+\end{proposition}
+\begin{proof}
+Equation \eqref{eq:L1} is $(d_x+d/x)/2=\nu$. The bolt value fixes
+the integration constant and gives \eqref{eq:d}. Substitution in
+\eqref{eq:L3} reduces $L_3=0$ to
+\[
+ xu_{xx}+4u_x+2u/x
+   =\nu\frac{2x^2+6x+1}{2(x+2)^2},
+ \qquad u(1)=0,\quad u_x(1)=\nu.
+\]
+The substitution $u=y/x$ gives an elementary second-order equation;
+integration yields \eqref{eq:u}. Direct differentiation verifies
+$u_x(1)=\nu$, $v_x(1)=-\nu$ and the equation. At infinity,
+\[
+ u_0=\nu\left[\frac x6-\frac12+
+ \frac{\frac12\log x+2-\frac12\log3}{x}
+ +\frac{-2\log x-\frac23+2\log3}{x^2}+O(x^{-3})\right].
+\]
+In particular the constant first correctors agree, as required by the
+vanishing logarithmic chiral-energy term.
+\end{proof}
+
+\section{The exact finite inner minimum}
+Use the operator norm for Weyl curvature and put
+\[
+ \calC=\int(4|W^+|^2+s^2/12)\,dV=4\int|R^+|^2\,dV.
+\]
+On a closed manifold $P=\calC-8\pi^2(2\chi+3\tau)$.
+For $X=R^2$, the coefficient of $t^2$ in the inner chiral integral is
+\[
+ \mathcal Q_X(u,d)=\frac{2\pi^2}{3}
+ \int_1^X\left[x(d_x+d/x)^2+2xL_3^2\right]dx.
+\]
+The corresponding background orbifold ball contributes
+$(2\pi^2/3)2\nu^2X^2$. Define the renormalized coefficient by
+subtracting this expression and then letting $X\to\infty$.
+
+\begin{proposition}[A minimum with fixed full asymptotic data]
+For smooth-bolt competitors for which
+$z=x(d-d_0)$ satisfies $z(1)=z(\infty)=0$ and the following integrals
+converge,
+\begin{equation}
+ \mathcal Q_{\rm ren}(u,d)+\frac{4\pi^2}{3}\nu^2
+ =\frac{2\pi^2}{3}\int_1^\infty
+       \left[\frac{(z')^2}{x}+2xL_3(u,d)^2\right]dx\ge0.
+ \label{eq:square}
+\end{equation}
+Equality holds for \eqref{eq:d}--\eqref{eq:u}. Thus the exact minimum is
+\begin{equation}
+ \boxed{\mathcal Q_{\rm ren,min}=-\frac{4\pi^2}{3}\nu^2
+                              =-\frac{\pi^2s^2}{48}.}
+ \label{eq:inner}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Since $d_x+d/x=2\nu+z'/x$,
+\[
+ x(d_x+d/x)^2=4\nu^2x+4\nu z'+(z')^2/x.
+\]
+Integration cancels the cross term by the two endpoint values of $z$.
+For the displayed solution, $L_3=0$ and
+$\mathcal Q_X=(2\pi^2/3)2\nu^2(X^2-1)$, proving the finite constant.
+The remaining homogeneous solutions for $u$ are $x^{-1}$ and $x^{-2}$;
+the zero bolt value and required derivative fix their coefficients.
+\end{proof}
+
+\paragraph{Boundary dependence.}
+If $d=\nu x+c/x+o(x^{-1})$ instead, the right side of
+\eqref{eq:square} acquires
+\[
+ \frac{2\pi^2}{3}\,4\nu(c+\nu).
+\]
+Thus the matching data at infinity are essential to the finite minimum.
+Equation \eqref{eq:inner} is an inner, successive-limit calculation:
+first differentiate at $t=0$ on each fixed inner ball, then take its
+radius to infinity. For squared physical scale $\varepsilon=\lambda^2$
+it corresponds to an inner contribution
+$-\pi^2s^2\varepsilon^2/48$. It is not yet the coefficient of a
+complete closed-manifold competitor. The outer response and the
+subleading matching terms have the same order. For example, simply
+cutting off a mass tail at radius $r_0$ allows an error of size
+$O(\varepsilon^2r_0^{-4})$. The previously proved $o(\lambda^2)$
+remainder in \eqref{eq:mass} does not control order $\lambda^4$.
+
+\section{The full mixed variation and its cancellation}
+One might try to change the bulk curvature jet slightly so that
+$\mu\ne0$ and then apply \eqref{eq:mass}. This loses bulk criticality.
+The missing term can be written explicitly.
+
+Let $E_g$ denote the variational gradient of $\calC$, with
+$D\calC_g[h]=\int\langle E_g,h\rangle$. Use the invariant mass tensor
+\[
+ B(x)=\frac{r^2I-xx^{\mathsf T}-(J_0x)(J_0x)^{\mathsf T}}{r^4},
+ \qquad H_m=9m\chi B,
+\]
+with a fixed cutoff $\chi=1$ near the puncture. The punctured first
+variation which gave \eqref{eq:mass} has, for a noncritical bulk,
+\begin{equation}
+ a(g,m)=-24\pi^2m\mu(g,p)+\int\langle E_g,H_m\rangle\,dV.
+ \label{eq:noncritical}
+\end{equation}
+The latter integral is locally integrable. At a critical base metric,
+writing $L_g=DE_g$, its derivative is
+\begin{equation}
+ \ell_m(h)=D_ga[h]=-24\pi^2mD\mu_g[h]
+                         +\int\langle L_gh,H_m\rangle\,dV.
+ \label{eq:mixed}
+\end{equation}
+Contractions, volume and transported coordinate choices contribute no
+additional gradient term there, because $E_g=0$.
+
+Here is the consequence for a concentrated jet. Let
+$h_r(x)=r^2h_1(x/r)$, with $h_1$ invariant, compactly supported and
+quadratic near zero. Its curvature variation $D\mu[h_r]$ can stay
+nonzero as $r\downarrow0$. If $K_0=D(R^+)_\delta$, then
+\[
+ D^2\calC_g[h_r,h_r]
+       =8r^4\int|K_0h_1|^2+O(r^6).
+\]
+Nevertheless the complete coefficient satisfies
+\begin{equation}
+ |\ell_m(h_r)|\le C|m|r^2.\label{eq:localbound}
+\end{equation}
+Indeed $K_0B=0$ away from zero: $B$ is the infinitesimal scalar-flat
+K\"ahler tail. In normal coordinates $g-\delta=O(|x|^2)$, so
+$D(R^+)_g[H_m]=O(|m||x|^{-2})$. Its product with $K_gh_r$ integrates
+to $O(|m|r^2)$. The other mixed terms are a bounded background
+curvature times $h_r\partial^2H_m$, $H_m\partial^2h_r$, or
+$\partial h_r\partial H_m$; they have the same integrable bound.
+This accounts for the moving norms and volume as well. Equivalently,
+integration by parts in the second term of \eqref{eq:mixed} cancels
+the apparent point-evaluation term in the first.
+
+For a nonzero principal quadratic form the resulting ratio is bounded:
+\[
+ \frac{|\ell_m(h_r)|^2}{D^2\calC_g[h_r,h_r]}=O(m^2).
+\]
+It does not diverge like $r^{-4}$. Thus a local point-jet variation
+cannot be used to overwhelm every finite gluing coefficient.
+
+\section{The actual remaining comparison}
+If a complete uniform expansion can be established at $\mu=0$,
+it must have the form
+\[
+ P(G_{\lambda,t})-P(g)-\frac{8\pi^2}{3}
+ =\frac12t^2Q(h,h)+t\lambda^2\ell_m(h)+\lambda^4b_m
+           +o(t^2+|t|\lambda^2+\lambda^4).
+\]
+For $Q(h,h)>0$, optimizing $t$ then gives the finite coefficient
+\[
+ b_m-\frac{\ell_m(h)^2}{2Q(h,h)}.
+\]
+The negative number in \eqref{eq:inner} supplies one computable inner
+part, under its specified matching conditions. It does not determine
+$b_m$, which must include the exterior Jacobi response, all boundary
+terms and the higher background jets. A nonnegative Hessian alone does
+not determine this total sign. No uniform fourth-order expansion or
+negative total coefficient has been established here.
+
+For completeness, a return to purely explicit K\"ahler or homogeneous
+ansatzes does not give an immediate alternative. A closed K\"ahler
+$P$-critical metric has constant scalar curvature. When $s\ne0$, varying
+the K\"ahler class makes $(c_1\cdot\Omega)^2/\Omega^2$ stationary,
+forcing $c_1\parallel\Omega$; harmonicity of the Ricci form then makes
+the metric Einstein. When $s=0$ it is scalar-flat ASD. The complete
+homogeneous classification \cite{BCGV}, Remark 1.5, likewise implies
+that a locally homogeneous $P=F_{-1/4}$ critical four-metric is Einstein
+or an opposite-curvature surface product. These candidates are all
+Bach-flat.
+
+The fixed goal remains smooth global attainment. This continuation
+establishes explicit topology in the proposed alternative surface and
+an exact radial inner minimum; it also identifies the necessary mixed
+variation. The zero mode, other ALE topologies and general degeneration
+have not been excluded. No answer to Q3 is claimed.
+
+\begin{thebibliography}{9}
+\bibitem{CP} S. Coughlan and R. Pignatelli,
+\emph{Simple fibrations in $(1,2)$-surfaces},
+Forum Math. Sigma 11 (2023), e43.
+\href{https://doi.org/10.1017/fms.2023.41}{doi:10.1017/fms.2023.41}.
+\bibitem{LeBrun} C. LeBrun,
+\emph{Ricci Curvature, Minimal Volumes, and Seiberg--Witten Theory},
+\href{https://arxiv.org/abs/math/0003068}{arXiv:math/0003068}.
+\bibitem{Kronheimer} P. B. Kronheimer,
+\emph{The construction of ALE spaces as hyper-K\"ahler quotients},
+J. Differential Geom. 29 (1989), 665--683.
+\bibitem{Suvaina} I. \c{S}uvaina,
+\emph{ALE Ricci-flat K\"ahler metrics and deformations of quotient
+surface singularities},
+\href{https://arxiv.org/abs/1102.2672}{arXiv:1102.2672}.
+\bibitem{BCGV} M. Brozos-V\'azquez, S. Caeiro-Oliveira,
+E. Garc\'ia-R\'io and R. V\'azquez-Lorenzo,
+\emph{Four-dimensional homogeneous critical metrics for quadratic
+curvature functionals},
+\href{https://arxiv.org/abs/2309.02108}{arXiv:2309.02108}.
+\bibitem{Prior} \emph{Q3: Mass Variation and a Cyclic Degeneration
+Obstruction}, preceding October 8 continuation. Its first-order formula
+uses the supplied A02.59D boundary-flux calculation. The radial operators
+in \eqref{eq:L1}--\eqref{eq:L3} were derived in the preceding radial
+LeBrun analysis. This note independently differentiates the displayed
+solution and verifies the square-difference identity exactly.
+\end{thebibliography}
+\end{document}

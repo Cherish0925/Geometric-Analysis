@@ -1,0 +1,901 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{space}{xeCJK}
+%
+\documentclass[
+  11pt,
+  a4paper,
+  fontset=none]{ctexart}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{TeXGyrePagella}
+  \ifXeTeX
+    \usepackage{xeCJK}
+    \setCJKmainfont[]{Noto Serif CJK SC}
+    \setCJKmonofont[]{Noto Sans Mono CJK SC}
+          \fi
+  \ifLuaTeX
+    \usepackage[]{luatexja-fontspec}
+    \setmainjfont[]{Noto Serif CJK SC}
+  \fi
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[top=25mm,bottom=24mm,left=24mm,right=24mm]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{fancyhdr}
+\newcommand{\avgint}{\mathchoice{\displaystyle\int\!\!\!\!-}{\textstyle\int\!\!\!-}{\scriptstyle\int\!\!\!-}{\scriptscriptstyle\int\!\!\!-}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\setlength{\emergencystretch}{3em}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Yau26：第一科学主线}
+\fancyhead[R]{\small 第21轮后的理论结构与文献整合}
+\fancyfoot[C]{\small\thepage}
+\setlength{\headheight}{15pt}
+\setcounter{tocdepth}{1}
+\ctexset{section={format=\Large\bfseries,beforeskip=1.0ex,afterskip=0.5ex},subsection={format=\large\bfseries}}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={四维 Einstein 方程的定量谱刚性},
+  pdfauthor={研究综合与数学推导},
+  pdflang={zh-CN},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{四维 Einstein 方程的定量谱刚性}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{第21轮之后的第一科学主线：已有成果、文献连接与面向 Yau26
+的研究问题}
+\author{研究综合与数学推导}
+\date{2026年9月22日}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+}
+\clearpage
+\section{阅读依据与结论定位}\label{ux9605ux8bfbux4f9dux636eux4e0eux7ed3ux8bbaux5b9aux4f4d}
+
+本文是研究专论与续接文件，不是已经完成的新定理论文。它基于当前可读取的
+\nolinkurl{qiushi-yau26 (3).zip} 中的旧
+Skill、十二轮证明及专题稿，结合用户提供的第13---21轮研究报告，以及下列一手论文和出版记录。第21轮的
+\nolinkurl{round21_analytic.md}、\nolinkurl{round21_comparison.md}
+和第13轮完整证明本轮未取得；连接仓库没有返回提交
+\nolinkurl{5d8f86c}。因此，第21轮定理及第13轮扩展在本文中标作``本轮报告''，不标作本次独立审读已确认。本文的代数推论、条件推论及研究建议与这些来源分别说明。
+
+当前应当保留三个层次：已有积分单极子刚性是主成果；第21轮报告把解析机制扩展为一个带二阶预算的谱选择定理；将这种解析定理转成新拓扑族上的原题结论，还需要真实的辅助二形式、误差预算及全局存在／不存在论证。文献可以为这些步骤提供输入，但不同论文的结论不能仅凭名称相关便直接串联。
+
+本文不重复将已经报告完成的 \(b_+=1\)
+扩展列为待发现成果。第13轮的完成状态来自最新报告；正式投稿时仍应核对其
+chamber、权重可解性和逐度量类选择的原始证明。本文也不把``尚未搜到等价定理''解释为首创性已经确认。
+
+\section{一、第一主线的科学中心应当怎样表述}\label{ux4e00ux7b2cux4e00ux4e3bux7ebfux7684ux79d1ux5b66ux4e2dux5fc3ux5e94ux5f53ux600eux6837ux8868ux8ff0}
+
+最有内容的中心是：
+
+\begin{quote}
+光滑拓扑与辅助几何方程，能否在不先恢复整个退化几何的条件下，决定哪些
+Einstein
+曲率模式可以被逼近、哪些不能；对于允许的模式，是否能够进一步决定同一光滑流形上的精确实现？
+\end{quote}
+
+这比``继续改进一个 \(1/3\) 常数''更宽，也比``建立包含全部 Einstein
+几何的大一统理论''更准确。它允许继承 Seiberg--Witten
+理论，也允许研究不由单极子产生的实际二形式、曲率联络和极限结构。
+
+第一主线不应仅负责替一个剪切领口计算障碍；也不需要为了保持广度不断更换对象。合理的研究单位是一项可独立陈述的数学问题：扩大某个定理的输入；消除一个真正的二阶预算；判断一个允许的谱支；或完成一个新拓扑族的几何判定。
+
+\subsection{1.1
+原题的工作版本与量词}\label{ux539fux9898ux7684ux5de5ux4f5cux7248ux672cux4e0eux91cfux8bcd}
+
+沿用项目明确固定的工作版本：对每个维数 \(n\)，是否存在只依赖 \(n\)
+的非退化 Ricci 夹逼区间，使任何满足夹逼的闭连通光滑流形承载某个 Einstein
+度量？输出度量不要求接近输入，不要求同一对称、复或纤维结构，也不限
+Einstein 常数的符号。这里不是重新认证1982年原书的逐字题文。
+
+定义 \[
+\delta_\sigma(g)=\|g^{-1}\operatorname{Ric}_g-\sigma I\|_{L^\infty,\mathrm{op}},
+\qquad e_\sigma(M)=\inf_g\delta_\sigma(g),\quad\sigma=\pm1.
+\] 固定维数的命题等价于 \(P_n^+\lor P_n^-\)，其中 \[
+P_n^\sigma:\quad\exists\epsilon_n>0\quad
+\delta_\sigma(g)<\epsilon_n\Longrightarrow
+M\text{承载某个 Einstein 度量}.
+\]
+证明任一符号分支可解决该维数；否定该维数需要两个分支都失败，允许两个分支使用不同流形，也允许流形随序列变化。一个符号反例并非完整否定，但本身可以是重要结果。
+
+令 \(\mathcal N_n\) 为不承载任何 Einstein 度量的闭光滑 \(n\)
+维流形类，则问题也可以写为：每个 \(n\) 是否至少有一个符号满足 \[
+\Delta_n^\sigma=
+\inf_{M\in\mathcal N_n}\inf_g\delta_\sigma(g)>0?
+\] 这一写法强调全局覆盖要求，并不要求先找到 \(\mathcal N_n\) 的分类。
+
+\subsection{1.2
+不同``接近''不是同一个问题}\label{ux4e0dux540cux63a5ux8fd1ux4e0dux662fux540cux4e00ux4e2aux95eeux9898}
+
+项目研究的相对积分量为 \[
+\mathcal E(g)=\inf_{\lambda\ne0}
+\frac{\int_M|\operatorname{Ric}_g-\lambda g|^2\,d\mu_g}
+{\lambda^2\operatorname{Vol}(g)}.
+\] 在 \(R_2=\int|\operatorname{Ric}|^2>0\) 时，记 \(S=\int s\)，有 \[
+\mathcal E(g)=4-\frac{S^2}{\operatorname{Vol}(g)R_2}
+=\frac{4\int|\operatorname{Ric}^{\circ}|^2+\int(s-\bar s)^2}{R_2}.
+\]
+在四维，\(\mathcal E(g)\le4\delta_\sigma(g)^2\)。这允许积分障碍产生原题的点态障碍，但不允许反向推理。Ricci-flat
+时原定义给出 \(\mathcal E=4\)，因为排除了 \(\lambda=0\)；因此``所有
+Einstein
+度量都是零缺陷''不是无条件真话。实际正投影单极子范畴可以另由标量不等式排除
+Ricci-flat。
+
+同样，方程残差小、GH距离小、相对 \(C^0\)
+度量距离小，以及处于可用的椭圆扰动邻域，是四种不同信息。原题只规定第一种输入，而结论甚至不要求输出靠近它。
+
+\section{二、已有研究应如何成为稳定起点}\label{ux4e8cux5df2ux6709ux7814ux7a76ux5e94ux5982ux4f55ux6210ux4e3aux7a33ux5b9aux8d77ux70b9}
+
+\subsection{2.1
+旧的积分刚性主定理}\label{ux65e7ux7684ux79efux5206ux521aux6027ux4e3bux5b9aux7406}
+
+第4---5轮原稿在实际单极子可解性、正投影与平方条件下给出积分刚性。对特殊实际类构成的正周期平面预算
+\(\alpha_{\rm sp}^2>0\)，记 \(T_M=2\chi+3\tau\)，原稿陈述 \[
+\mathcal E(g)+\left(\frac{T_M}{\alpha_{\rm sp}^2}-\frac23\right)_+
+\ge\epsilon_0>0.
+\] 这里 special 表示原稿明确的平方条件；不能把普通类、generic
+类、SW基本类、Bauer--Furuta检测类和任意上同调向量混用。第5轮已经讨论凸包预算、周期平面最小值，以及一般普通类所需的负平方代价。{[}S1--S3{]}
+
+吹起应用为 \[
+M=X\#k\overline{\mathbb{CP}}^{\,2},\quad A=c_1^2(X)>0,
+\qquad
+\mathcal E(g)+\left(\frac13-\frac{k}{A}\right)_+\ge c_*.
+\] 可读取的原稿将 \(b_+(X)>1\) 写入应用；最新报告称第13轮已经覆盖
+\(b_+=1\)。应将第13轮原证明与这一主定理合并核对，而不是再次把该扩展当作未知研究目标。
+
+现有第5轮也已处理具有适当真实输入的负定连接和，涉及
+\(b_2(N)+4b_1(N)\)。下一步可以扩大真实输入或统一比较，却不能把这一已经存在的连接和公式重新计为创新。
+
+\subsection{2.2
+已经获得的分析机制}\label{ux5df2ux7ecfux83b7ux5f97ux7684ux5206ux6790ux673aux5236}
+
+原稿的主要机制是：重标度方程产生有界旋量；截断权重额外代价由标量平方误差支付；协变分部积分取得二阶控制；光滑二形式构造多项式
+Weyl 模型；最后用弱 Bianchi 自测试及 Hodge
+恒等式制造积分矛盾。{[}S1--S3{]}
+
+它不需要先证明旧的退化局部流共同存在时间。新方法绕过旧缺口，不等于旧平滑定理因此成立。旧的精确统一间隙、允许塌缩的局部展开和平均传输仍可作为替代证明及几何应用保留。
+
+\subsection{2.3
+后续结果改变了什么}\label{ux540eux7eedux7ed3ux679cux6539ux53d8ux4e86ux4ec0ux4e48}
+
+按第15---20轮报告，已有积累还包括：双取向的产品曲率近等号结构；特殊近最小体积精确序列的退化；多个实际类交叉配对强迫低谱；投影预算看不见某些周期方向；相对积分缺陷在变化拓扑中可趋零而无任何
+Einstein 度量；以及新的忠实 Torelli 曲面丛对象。{[}S4{]}
+
+这些报告有三种作用：扩大可研究的结构；为后续分析提供完整模型；排除过强的普适结论。它们不全部是积分间隙的推论，也不全部属于同一拓扑族。尤其是变化流形上的积分反例若成立，便禁止将
+\(\mathcal E\) 的正下界无条件推广到所有无 Einstein 四流形。
+
+\section{三、第21轮：从一个禁谱推进到定量的允许谱选择}\label{ux4e09ux7b2c21ux8f6eux4eceux4e00ux4e2aux7981ux8c31ux63a8ux8fdbux5230ux5b9aux91cfux7684ux5141ux8bb8ux8c31ux9009ux62e9}
+
+\subsection{3.1
+按报告原样保留的定理}\label{ux6309ux62a5ux544aux539fux6837ux4fddux7559ux7684ux5b9aux7406}
+
+设 \(M\) 闭、定向、四维，\(\psi\) 是光滑自对偶二形式，\(t\)
+是实常数，\(\sigma=\pm1\)。定义 \[
+A_{\psi,t}=t\left(\frac{|\psi|^2}{3}I-\psi\otimes\psi\right),
+\qquad B=\avgint_M|\Delta_H\psi|^2,
+\] \[
+d_{\sigma,t}=\avgint_M\left(
+|\operatorname{Ric}-\sigma g|^2+
+|W^+-A_{\psi,t}|^2+(|\psi|^2-2)^2\right).
+\] 报告陈述：若
+\(\|\psi\|_\infty\le K\)、\(|t|\le T\)、\(d_{\sigma,t}\le1\)，则 \[
+\boxed{
+\operatorname{dist}\!\left(t,\{0,-\sigma/2\}\right)^2
+\le C(K,T)(1+B)d_{\sigma,t}.
+}
+\tag{R21}
+\] 报告另称，离开零谱支时可控制形式的平均协变导数，且零缺陷非零谱支给出
+Kähler--Einstein。后一个微分结论依赖报告中额外的散度论证，不应仅从参数不等式本身推得。
+
+\subsection{3.2
+两个根不是任意的常数}\label{ux4e24ux4e2aux6839ux4e0dux662fux4efbux610fux7684ux5e38ux6570}
+
+这是从模型直接得到的代数解释。若 \(|\psi|^2=2\)，\(A_{\psi,t}\) 的谱为
+\[
+\left(-\frac{4t}{3},\frac{2t}{3},\frac{2t}{3}\right).
+\] Kähler曲面在复取向下满足 \[
+\operatorname{spec}(W^+)=\left(\frac{s}{6},-\frac{s}{12},-\frac{s}{12}\right).
+\] 对 \(\operatorname{Ric}=\sigma g\)，\(s=4\sigma\)，故非零根恰为
+\(t=-\sigma/2\)。另一个根 \(t=0\) 对应 \(W^+=0\)
+的半共形平坦支，不是完整曲率为零，更不控制 \(W^-\)。{[}R6--R9{]}
+
+旧负侧参数 \(\sigma=-1,t=1/8\) 到允许根 \(\{0,1/2\}\) 的距离是
+\(1/8\)。因而 (R21) 给出 \[
+d_{-,1/8}\ge\frac{1}{64C(K,T)(1+B)}.
+\]
+这说明旧禁谱可以嵌入新的解析叙事。但要恢复旧的无几何条件拓扑间隙，仍需旧单极子论证提供足够的
+\(K\)、\(B\) 与各项误差控制。
+
+必须强调：这是在贴近指定秩一二重谱模型的条件下选择谱支，不是证明任意四维Einstein度量只有半共形平坦或Kähler两类。一般Weyl张量可以有三个不同特征值；能否取得这种模型贴合，本身就是待证明的几何输入。
+
+\subsection{3.3
+真正的弱控制条件是乘积，而不只是``二阶预算有界''}\label{ux771fux6b63ux7684ux5f31ux63a7ux5236ux6761ux4ef6ux662fux4e58ux79efux800cux4e0dux53eaux662fux4e8cux9636ux9884ux7b97ux6709ux754c}
+
+(R21) 的有效量是 \[
+\mathfrak Q=(1+B)d.
+\] 即使 \(d\to0\)，\(B\) 也可能按 \(d^{-1}\)
+或更快增长。此时该式不能迫使谱接近允许根。没有单极子假设不等于没有微分预算；给定有界形式、Weyl贴合与二阶误差是实际输入。
+
+但也无需把研究局限为 \(B\le B_0\)。直接由 (R21) 可得：只要 \(d_j\to0\)
+且 \(B_j=o(d_j^{-1})\)，仍有 \[
+\operatorname{dist}(t_j,\{0,-\sigma/2\})\to0.
+\] 若预期禁谱距离至少为 \(\eta>0\)，而可以证明 \[
+B\le C_0d^{-\alpha},\qquad0\le\alpha<1,
+\] 则在 \(d\le1\) 下 \[
+\boxed{
+ d\ge\left[\frac{\eta^2}{C(K,T)(1+C_0)}\right]^{1/(1-\alpha)}.
+}
+\]
+这是条件性代数推论，不是本文重新证明了(R21)。它建议优先寻找足够好的增长率，而不应因无法取得完全一致的
+\(B\) 就过早放弃一条真实形式构造。
+
+\section{四、从解析结论接到原题：需要什么样的实际输入}\label{ux56dbux4eceux89e3ux6790ux7ed3ux8bbaux63a5ux5230ux539fux9898ux9700ux8981ux4ec0ux4e48ux6837ux7684ux5b9eux9645ux8f93ux5165}
+
+\subsection{4.1
+一个可以直接检验的条件性拓扑推论}\label{ux4e00ux4e2aux53efux4ee5ux76f4ux63a5ux68c0ux9a8cux7684ux6761ux4ef6ux6027ux62d3ux6251ux63a8ux8bba}
+
+假设对某个明确流形族的每个候选度量 \(g\)，能够实际选择 \(\psi,t\)，满足
+\[
+\|\psi\|_\infty\le K,\quad |t|\le T,\quad B\le B_0,
+\] \[
+ d_{\sigma,t}\le C_1\delta_\sigma(g)^2,
+ \qquad \operatorname{dist}(t,\{0,-\sigma/2\})\ge\eta>0.
+\] 所有常数对该族统一。则当误差小到 \(C_1\delta^2\le1\) 时，(R21)推出 \[
+\delta_\sigma(g)\ge
+\frac{\eta}{\sqrt{C(K,T)C_1(1+B_0)}}.
+\]
+这就是原题所需类型的点态障碍。其难处不在最后代入，而在为什么对所有候选都能得到这些实际几何输入。
+
+因此，本阶段最有决定性的工作可以是：在一类此前未覆盖、且确有数学意义的光滑流形上，证明这样的形式供给；或者证明形式必落入允许支，并由另一个完整理论处理精确实现。不能把``存在一个代数模型''代替``存在全局光滑的
+\(\psi\)''。
+
+\subsection{4.2
+一条不依赖(R21)的Hodge预算校准}\label{ux4e00ux6761ux4e0dux4f9dux8d56r21ux7684hodgeux9884ux7b97ux6821ux51c6}
+
+对任意闭流形上的光滑二形式，采用非负Hodge拉普拉斯， \[
+\avgint(|d\psi|^2+|d^*\psi|^2)
+=\avgint\langle\Delta_H\psi,\psi\rangle
+\le \sqrt B\left(\avgint|\psi|^2\right)^{1/2}.
+\] 所以 \(B\to0\) 可以直接控制Hodge一阶能量；只有 \(B\)
+有界则不能。第21轮若能在 \(B\) 仅受控的情形、借助Weyl贴合推出
+\(\nabla\psi\to0\)，其新增内容恰在这种耦合，而不在普通Hodge分部积分。
+
+\subsection{4.3
+特征密度提供一个可计算的分支比较}\label{ux7279ux5f81ux5bc6ux5ea6ux63d0ux4f9bux4e00ux4e2aux53efux8ba1ux7b97ux7684ux5206ux652fux6bd4ux8f83}
+
+以下是本文的直接计算，使用四维标准Weyl算子Hilbert--Schmidt范数。在
+\(d\le1\)、\(\|\psi\|_\infty\le K\)、\(|t|\le T\) 下， \[
+\left|\frac{4\pi^2(2\chi+3\tau)}{\operatorname{Vol}(g)}
+-\left(\frac23+\frac{16}{3}t^2\right)\right|
+\le C(K,T)\sqrt d.
+\tag{CW}
+\] 证明只需 \(q=|\psi|^2\)、\(|A_{\psi,t}|^2=\frac23t^2q^2\)、
+\(\avgint(q-2)^2\le d\)，以及 \[
+4\pi^2(2\chi+3\tau)=
+\int\left(2|W^+|^2+\frac{s^2}{24}-\frac{|\operatorname{Ric}^{\circ}|^2}{2}\right).
+\] 由 \(q\le K^2\) 得
+\(\avgint q^2=4+O_K(\sqrt d)\)；由Cauchy--Schwarz控制 \(W^+-A\)
+的交叉项，得到 \(\avgint|W^+|^2=8t^2/3+O_{K,T}(\sqrt d)\)。又
+\(|s-4\sigma|\le2|\operatorname{Ric}-\sigma g|\)，故标量项为
+\(2/3+O(\sqrt d)\)，无迹Ricci项为 \(O(d)\)，即得(CW)。
+
+零缺陷时，\(t=0\) 给 \(V=6\pi^2(2\chi+3\tau)\)，非零KE根给
+\(V=2\pi^2(2\chi+3\tau)\)。这可以用来检验候选分支与体积、拓扑预算是否相容，却不证明所有Einstein输出必须处于这些体积，也不由一个极值序列推得整个模空间的覆盖。
+
+\section{五、文献主干一：Seiberg--Witten曲率理论不是从2001年停止的}\label{ux4e94ux6587ux732eux4e3bux5e72ux4e00seibergwittenux66f2ux7387ux7406ux8bbaux4e0dux662fux4ece2001ux5e74ux505cux6b62ux7684}
+
+\subsection{5.1
+已经继承的结构}\label{ux5df2ux7ecfux7ee7ux627fux7684ux7ed3ux6784}
+
+LeBrun2001的关键成果包括曲率积分不等式、Ricci能量极值与Einstein障碍；其
+\(1/3\)
+阈值本来就对所述族统一。新研究应比较的是统一的正缺陷间隙，而不是宣称首次把一个逐例常数变成统一常数。{[}R1{]}
+
+Ishida--LeBrun把稳定上同伦细化用于连接和及曲率问题；Kotschick区分实际、generic和special
+monopole信息；LeBrun后续用周期平面与凸包重新组织曲率估计。{[}R2--R5{]}
+这些正是第5轮原稿的输入，而不是本次才发现、系统此前完全没有参考的文献。
+
+\subsection{5.2
+当前最值得精确补全的比较}\label{ux5f53ux524dux6700ux503cux5f97ux7cbeux786eux8865ux5168ux7684ux6bd4ux8f83}
+
+第一，逐条比较LeBrun
+Proposition3.2、Theorem3.3、Corollary3.4的拓扑范围、类平方与适用chamber，而不是只比较标题。第二，将第13轮的
+\(b_+=1\)
+证明作为已报告结果合并，核准逐度量选类之后是否在所用正权重／共形族中始终实际可解；避免把某个正拓扑量下的polarization论证误写成任意扰动的无条件chamber独立性。第三，严格处理Ricci-flat输出以及
+\(\gamma<c_*\) 的闭区间端点。{[}S1--S4,R1--R5{]}
+
+逐度量选类足以支持静态不等式，却不自动给随度量光滑变化的类或方程解；若要沿Ricci流或模空间微分，需要另证选择的连续性或改用不依赖选择的量。\(b_+=1\)的具体chamber扩展，也不自动把第5轮只在\(b_+\ge2\)写出的全局类集合有限性和所有凸包不变量一并推广。
+
+完成这一比较以后，可以陈述``覆盖了相应经典Einstein障碍的定量稳定化''。它仍不自动蕴含LeBrun的所有绝对Ricci能量及最小体积公式。定理之间的逻辑覆盖和整篇论文之间的价值比较是两回事。
+
+\subsection{5.3
+真正值得继续推广的地方}\label{ux771fux6b63ux503cux5f97ux7ee7ux7eedux63a8ux5e7fux7684ux5730ux65b9}
+
+真正的新输入可以是：不由现有有限类集合直接提供、但能解决加权方程的类；对实际周期平面而非所有形式正平面的更精确控制；多个类所决定的空间分布；或能把负平方代价控制在次临界尺度的选择机制。第20轮已经提醒：改善被测方向的常数不控制未被探测的方向。
+
+不能仅从类的凸包或Betti数猜测全局方程可解，也不能把非阿贝尔耦合系统的形式解当成其实际解。若引入新辅助方程，应一并研究可解性、紧性、归一化、零集和进入(R21)的预算。
+
+\section{六、文献主干二：Weyl谱、Hodge理论与Kähler刚性}\label{ux516dux6587ux732eux4e3bux5e72ux4e8cweylux8c31hodgeux7406ux8bbaux4e0ekuxe4hlerux521aux6027}
+
+\subsection{6.1
+Derdziński---LeBrun---Sekigawa提供的参照}\label{derdziux144skilebrunsekigawaux63d0ux4f9bux7684ux53c2ux7167}
+
+Derdziński把调和Weyl张量的特殊谱与共形Kähler结构联系起来；LeBrun继续研究调和二形式、谱条件与共形几何；Sekigawa在非负标量的紧Einstein
+almost-Kähler范畴给出重要刚性。{[}R6--R9{]}
+三条传统分别处理谱、形式与almost-Kähler方程，不等于``任意有界自对偶形式''都能迫使KE。
+
+第21轮若成立，其比较重点是：在零阶积分误差与显式二阶预算下，定量区分允许的谱幅，而不先假设精确Einstein或形式闭合。它不能仅因精确极限是KE，就声称囊括所有上述精确结构定理。
+
+\subsection{6.2
+2026年的直接对照：Catino--Dameno}\label{ux5e74ux7684ux76f4ux63a5ux5bf9ux7167catinodameno}
+
+Catino--Dameno2026对精确Einstein或调和 \(W^+\)
+的度量，在最大特征值简单等写明条件下推出双覆盖后的共形Kähler结构；还处理一致谱条件下的零集。证明结合共形归一化、加权散度方程和新的特征值一阶恒等式。{[}R10{]}
+
+与第21轮应逐式比较的，是散度怎样控制特征形式导数、哪些项因精确方程消失、零集怎样处理。不同之处也很实在：该文允许符合条件的变幅谱与共形Kähler输出；(R21)目前用一个常数
+\(t\)、近常模长形式及特定二重谱模型。前者不能直接用于任意近Einstein输入，后者也没有自动覆盖Page或Chen--LeBrun--Weber等非Kähler的Hermitian
+Einstein度量。
+
+下一项有数学内容的推广可以是 \(t=t(x)\) 的带源版本。此时 \[
+\nabla A_{\psi,t}=dt\otimes A_{\psi,1}+t\nabla A_{\psi,1},
+\] 散度与二阶测试都产生 \(dt,\nabla^2t\)
+的源项。要么找到自然共形权重吸收它们，要么把它们写成独立预算；不能在旧常数参数定理中暗自令
+\(t\) 随位置变化。
+
+\subsection{6.3
+正、负支不应被强行做成同一种刚性}\label{ux6b63ux8d1fux652fux4e0dux5e94ux88abux5f3aux884cux505aux6210ux540cux4e00ux79cdux521aux6027}
+
+\(\sigma=+1\) 的KE根是 \(t=-1/2\)，其最大Weyl特征值简单；\(\sigma=-1\)
+的KE根是
+\(t=1/2\)，其最大特征值重复。它们与现代最大特征值简单条件的关系不同。精确负KE不是正支谱定理的反例，因为其谱假设不满足。
+
+一个统一解析不等式能够同时写
+\(\sigma=\pm1\)，不意味着两个符号的拓扑输入、复结构存在性和全局分类因此相同。正支的普通单极子障碍与正标量曲率的关系也必须保留，不可机械平移负支证明。
+
+\section{七、一个更具体的跨领域连接：定号曲率联络}\label{ux4e03ux4e00ux4e2aux66f4ux5177ux4f53ux7684ux8de8ux9886ux57dfux8fdeux63a5ux5b9aux53f7ux66f2ux7387ux8054ux7edc}
+
+\subsection{7.1
+负支两个允许根对应不同的联络几何}\label{ux8d1fux652fux4e24ux4e2aux5141ux8bb8ux6839ux5bf9ux5e94ux4e0dux540cux7684ux8054ux7edcux51e0ux4f55}
+
+Levi--Civita联络诱导 \(\Lambda^+\) 上的 \(SO(3)\) 联络。其自对偶曲率块为
+\[
+\mathcal R^+=W^++\frac{s}{12}I,
+\] 另一块由无迹Ricci控制。精确Einstein时相应反自对偶曲率块为零。对
+\(\sigma=-1\)、\(s=-4\)，两个允许根给出 \[
+t=0:\quad\mathcal R^+=-\frac13I;
+\qquad
+t=\frac12:\quad\operatorname{spec}(\mathcal R^+)=(-1,0,0).
+\] 前者严格负定，后者位于退化边界。这是从(R21)模型得到的直接代数联系。
+
+\subsection{7.2
+为什么值得联系Fine--Krasnov--Panov与Fine--Krasnov--Singer}\label{ux4e3aux4ec0ux4e48ux503cux5f97ux8054ux7cfbfinekrasnovpanovux4e0efinekrasnovsinger}
+
+Fine--Krasnov--Panov发展了用定号联络描述四维Einstein方程的规范理论形式；Fine--Krasnov--Singer证明了精确紧Einstein度量在
+\(\mathcal R^+\)
+负定、固定归一化时的局部刚性，使用联络作用量模规范后的Hessian正性。{[}R11,R12{]}
+
+因此，第一主线允许出现两种不同后续：在零Weyl支，研究何时能把积分接近提升为足以保留定号性的点态或局部覆盖控制，再研究适当联络规范中的稳定性；在KE支，则承认定号性退化，转而保留复结构／Teichmüller模态和非线性障碍。这不是给两支贴名字，而是说明它们为何需要不同分析。
+
+\subsection{7.3
+不能省去的步骤}\label{ux4e0dux80fdux7701ux53bbux7684ux6b65ux9aa4}
+
+\(L^2\)接近负定矩阵不保证每一点负定。现有局部刚性定理针对精确背景，不从任意近似联络自动产生Einstein度量。联络、所诱导度量与原Levi--Civita数据之间的相容性还需证明；新的Hessian下界也未被证明能跨任意塌缩序列统一。
+
+值得尝试的目标是一个明确范畴内的后验存在性或排除定理，而不是``改用联络，所以所有近Einstein都能解''。允许Kähler支作为必须保留的退化边界，也有助于避免要求一个实际上为假的全域统一可逆性。
+
+\section{八、真正的拓扑扩展瓶颈：如何产生合格二形式}\label{ux516bux771fux6b63ux7684ux62d3ux6251ux6269ux5c55ux74f6ux9888ux5982ux4f55ux4ea7ux751fux5408ux683cux4e8cux5f62ux5f0f}
+
+\subsection{8.1
+实际monopole形式：已经有来源，但还可优化预算}\label{ux5b9eux9645monopoleux5f62ux5f0fux5df2ux7ecfux6709ux6765ux6e90ux4f46ux8fd8ux53efux4f18ux5316ux9884ux7b97}
+
+既有旋量二次映射提供全局光滑自对偶二形式，避免直接选择Weyl特征向量的符号和零点问题。下一步应精确计算它进入(R21)时的
+\(K,B,d,t\)，而非只说``有SW解''。重点可以从 \(B\) 必须有界，放宽到
+\((1+B)d\) 足够小；但所有权重修改、归一化和类选择都需记入实际误差。
+
+\subsection{\texorpdfstring{8.2
+调和二形式：\(B=0\)，但另外两项并不免费}{8.2 调和二形式：B=0，但另外两项并不免费}}\label{ux8c03ux548cux4e8cux5f62ux5f0fb0ux4f46ux53e6ux5916ux4e24ux9879ux5e76ux4e0dux514dux8d39}
+
+若
+\(\Delta_H\psi=0\)，二阶预算为零。然而调和代表未必一致有界、近常模长、处处非零或接近所需Weyl特征线。仅有
+\(b_+>0\)
+不供给这些条件。要产生新应用，需要利用真实近等号、周期信息或零集理论完成这些控制。
+
+对谐和形式进行截断一般会失去调和性和闭合性；非闭形式不能直接当作原陈类代表。可以单独保留原闭形式和截断模型，并估计两者差及全部导数源，但不能声称截断后的形式自动保留相同de
+Rham类。
+
+\subsection{8.3
+谱投影：局部自然，全球并不自动}\label{ux8c31ux6295ux5f71ux5c40ux90e8ux81eaux7136ux5168ux7403ux5e76ux4e0dux81eaux52a8}
+
+若Weyl简单特征值与其余谱分离，局部可定义光滑秩一投影。投影未必给全局定向特征线；在零集与重谱集附近更需要额外处理。双覆盖、线丛值形式和带边局部模型分别是不同对象，(R21)若要求普通全局二形式，就不能静默替换。
+
+更有价值的工作是证明一个投影版本的自测试，保留其联络与拓扑扭转，并推导到真实全局形式的充分条件。这有可能扩大范围，也可能精确识别一个新的障碍。
+
+\subsection{8.4
+热流和谱截断：可做工具，不能变成预算黑箱}\label{ux70edux6d41ux548cux8c31ux622aux65adux53efux505aux5de5ux5177ux4e0dux80fdux53d8ux6210ux9884ux7b97ux9ed1ux7bb1}
+
+固定度量上的Hodge热流有
+\(L^2\)谱平滑效应；形式热核不在任意曲率下自动具有标量热流那样的最大值收缩。平滑后
+\(B\)
+可降低，并不保证模长与Weyl贴合误差仍小。应寻找一个同一时间尺度上同时成立的预算不等式，而不是分别展示每一项在不同尺度下都能小。
+
+\subsection{8.5
+新规范或变分方程：先证明可解性}\label{ux65b0ux89c4ux8303ux6216ux53d8ux5206ux65b9ux7a0bux5148ux8bc1ux660eux53efux89e3ux6027}
+
+Yang--Mills、定号联络、spin-c
+Dirac、近Kähler投影等方向都能提供候选辅助结构。价值取决于它们是否在指定光滑类型上实际存在，且能提供足够小的联合预算。不能把构造一个形式能量泛函，等同于其极小值取得、临界点存在或满足原来的Einstein方程。
+
+\section{九、从允许的KE模式到全局几何：最值得攻的不是再排除一次禁谱}\label{ux4e5dux4eceux5141ux8bb8ux7684keux6a21ux5f0fux5230ux5168ux5c40ux51e0ux4f55ux6700ux503cux5f97ux653bux7684ux4e0dux662fux518dux6392ux9664ux4e00ux6b21ux7981ux8c31}
+
+\subsection{9.1
+一个允许支需要正面的研究}\label{ux4e00ux4e2aux5141ux8bb8ux652fux9700ux8981ux6b63ux9762ux7684ux7814ux7a76}
+
+(R21)若把候选限制到
+\(t\approx-\sigma/2\)，正确问题是：近乎平行的形式能否产生可用的全局复／辛结构，或者原题允许的另一Einstein度量？``允许''只是没有被该检验排除，不表示实际解已经存在。
+
+\(\avgint|\nabla\psi|^2\to0\) 不保证 \(\psi\)
+处处非零、\(d\psi=0\)、全局可积，也不保证局部结构沿长环路无漂移。需要解决零集、闭合误差、周期、Holonomy与非线性可积性。若取得新的复结构并证明相应存在性，输出可以与原输入不同，这完全符合原题。
+
+\subsection{9.2
+双取向形式的确切结果与近似缺口}\label{ux53ccux53d6ux5411ux5f62ux5f0fux7684ux786eux5207ux7ed3ux679cux4e0eux8fd1ux4f3cux7f3aux53e3}
+
+在精确零缺陷并取得两侧非零平行形式时，它们定义平行的相容与反相容复结构
+\(J_+,J_-\)。它们交换，\(P=-J_+J_-\)
+为平行对称对合，给出两个实秩二子丛。完备单连通覆盖因此分裂为二维Einstein因子，负归一化时局部为
+\(\mathbb H^2\times\mathbb H^2\)。
+
+这是精确平行结构的推论。全局商仍可能由不分裂的格点产生，不能自动断言原流形是曲面乘积或曲面丛。近似
+\(\nabla P\)
+的平均小量更不直接推出平行分裂；长距离传输与整数粘合可以保留非平凡信息。
+
+因此，已有剪切例子不是应该被抹去的麻烦，而是任何``近乎平行立即全局乘积''的推广必须通过的真实测试。
+
+\subsection{9.3
+不要把KE等同局部对称}\label{ux4e0dux8981ux628akeux7b49ux540cux5c40ux90e8ux5bf9ux79f0}
+
+负Kähler--Einstein几何本身具有丰富的非局部对称例子。Guenancia--Hamenstädt的近期构造给出严格负截面曲率的KE空间而非球商。{[}R33{]}
+一般Einstein存在性也能出现在不承载局部对称度量的拓扑上，例如Hamenstädt--Jäckel的Gromov--Thurston型结果。{[}R32{]}
+
+这些不提供当前候选上的直接解，却是研究中的必要正面对照：没有局部对称、不是某个产品商、或者既有规范障碍失效，都不等于无Einstein。
+
+\section{十、正则性文献怎样真正接入，而不是把缺口藏在引文里}\label{ux5341ux6b63ux5219ux6027ux6587ux732eux600eux6837ux771fux6b63ux63a5ux5165ux800cux4e0dux662fux628aux7f3aux53e3ux85cfux5728ux5f15ux6587ux91cc}
+
+\subsection{10.1
+精确Einstein与一般Ricci控制必须分开}\label{ux7cbeux786eeinsteinux4e0eux4e00ux822cricciux63a7ux5236ux5fc5ux987bux5206ux5f00}
+
+Cheeger--Tian的四维精确Einstein小绝对曲率能量正则性可以处理塌缩；Ge--Jiang对相关定理和临界度量差异有明确讨论。{[}R13,R14{]}
+这里``精确Einstein''``绝对局部能量''``适当曲率常数归一化''都是输入。全局平均缺陷小不直接给任意球上的绝对曲率能量小。
+
+Cheeger--Naber及Jiang--Naber在非塌缩、有界Ricci等条件下提供重要的正则性与曲率积分控制。{[}R15,R16{]}
+它们可以帮助在合适片上建立规范、比较或极限，但不会仅凭一个低阶误差直接在原光滑流形上产生精确Einstein度量。
+
+\subsection{10.2
+Naber--Zhang的最大秩结论应读到正确层级}\label{naberzhangux7684ux6700ux5927ux79e9ux7ed3ux8bbaux5e94ux8bfbux5230ux6b63ux786eux5c42ux7ea7}
+
+Naber--Zhang研究有界Ricci、局部GH近于低维模型和纤维基本群秩之间的关系。最大秩为局部展开和共轭／弱调和半径提供控制；其点态全曲率结论需要精确Einstein或另加Ricci导数等条件。{[}R17,Theorem1.1及Remark1.1{]}
+
+因此，先前``最大秩直接恢复一般近Einstein度量的全曲率界''是过强简述，不能作为接续证明。可研究的是：现有二形式自测试能否利用弱半径与局部覆盖，而不要求跨越到尚未取得的全曲率点态控制。
+
+\subsection{10.3
+Uhlenbeck规范理论的实际位置}\label{uhlenbeckux89c4ux8303ux7406ux8bbaux7684ux5b9eux9645ux4f4dux7f6e}
+
+四维诱导联络的曲率临界能量与小能量规范理论有自然联系。{[}R18{]}
+但经典局部Coulomb规范以合适坐标域和小临界范数为前提；任意塌缩流形的统一常数不能从局部欧氏定理自动继承。
+
+一个值得研究的精确目标是：在被拓扑或平均能量选择出的覆盖片中，以联络规范完成弱Bianchi测试及模型传输，同时控制重数、归一化质量和边界通量。局部小能量、弱规范与全局曲率分支的连接是新任务，不是经典定理已经替我们完成的部分。
+
+\section{十一、退化与去奇异化：要把``附近所有精确解''与``任意输入''分开}\label{ux5341ux4e00ux9000ux5316ux4e0eux53bbux5947ux5f02ux5316ux8981ux628aux9644ux8fd1ux6240ux6709ux7cbeux786eux89e3ux4e0eux4efbux610fux8f93ux5165ux5206ux5f00}
+
+Biquard和Ozuch为精确Einstein轨形退化、误差空间、粘合与障碍提供了系统理论。{[}R19--R22{]}
+关键价值不止于有一个构造，而在特定范畴中将全部相关精确解纳入可分析的粘合描述。
+
+它们与第一主线可以双向合作：积分或谱结构负责识别哪些精确极限可能出现；去奇异化理论负责判断这种极限是否能由同一光滑类型的精确度量逼近。另一方面，log-Weyl点态近似构造可以显示精确与近似的区别。
+
+但一列非Einstein输入即使GH趋于Einstein轨形，也不直接满足``精确Einstein序列''的所有结论。只分析一个轨形附近，也不排除同一流形上的远处解。需要额外覆盖定理、全局极值强制或别的拓扑论证，才能将邻域结论升级。
+
+LeBrun--Ozuch2026的结果要求正Einstein序列、Hermitian轨形极限及适当ASD泡，进而强迫相应KE结构。{[}R23{]}
+不能把它直接用于负侧或任意近Einstein序列。Huang--Ozuch用四维精确Einstein轨形间隙推进五维极限正则性，说明低维间隙可以跨维度产生作用；这为第一主线的高维应用提供范例，但其精确极限假设必须重新满足。{[}R24{]}
+
+\section{十二、Ricci流与形变理论：不止一种从近似走向精确的途径}\label{ux5341ux4e8cricciux6d41ux4e0eux5f62ux53d8ux7406ux8bbaux4e0dux6b62ux4e00ux79cdux4eceux8fd1ux4f3cux8d70ux5411ux7cbeux786eux7684ux9014ux5f84}
+
+\subsection{12.1
+三个不同命题}\label{ux4e09ux4e2aux4e0dux540cux547dux9898}
+
+``原流形承载Einstein''``当前近似度量附近承载Einstein''``从当前输入出发的Ricci流收敛''并不等价。Ye的稳定与夹逼研究是正面输入；Farrell--Ontaneda的高维结果则展示，底层承载双曲度量也不保证从给定近双曲输入出发的Ricci流平滑收敛。{[}R25,R26{]}
+
+因此，不能把某种流失败当成全局不存在；也不能把一个稳定背景附近的流定理当成原题的普适解。原题允许非构造存在性和不同的输出度量。
+
+\subsection{12.2
+动态规范理论可以提供怎样的新联系}\label{ux52a8ux6001ux89c4ux8303ux7406ux8bbaux53efux4ee5ux63d0ux4f9bux600eux6837ux7684ux65b0ux8054ux7cfb}
+
+Fang--Zhang--Zhang、Ishida及Ishida--Răsdeaconu--Şuvaina、Baykur--Ishida研究长期归一化Ricci流的几何与拓扑障碍。{[}R27--R30{]}
+Baldauf把调和旋量／加权单极子与Ricci流及熵相联系。{[}R31{]}
+这些与当前静态积分误差有真实交叉，但各文的加权对象、流存在时间和曲率预算不同。
+
+有价值的具体目标是：证明某个静态自测试量沿一个确实存在的流保留可控预算；或者用短时演化产生合格辅助形式而不要求度量流收敛。必须写出归一化、误差演化、边界与二阶项，不可凭``Perelman熵会下降''替代所需不等式。
+
+\subsection{12.3
+现成稳定性比``都要求非塌缩''更细}\label{ux73b0ux6210ux7a33ux5b9aux6027ux6bd4ux90fdux8981ux6c42ux975eux584cux7f29ux66f4ux7ec6}
+
+Hamenstädt--Jäckel及Jäckel近期结果研究负曲率近Einstein的有效稳定性，部分结论已经不要求直径、体积上界或注入半径下界，但保留负截面曲率、薄部精确双曲及对应误差控制。{[}R34,R35{]}
+这些不是当前产品薄部和任意Ricci夹逼的定理。
+
+相应原理对第一主线的意义是：若能从谱选择与额外数据识别一类适合这些稳定性结论的几何，就可以获得允许分支中的真实存在性。若是KE产品薄部，则需面对Teichmüller与标量慢模的耦合；Kröncke的乘积形变与Ricci流稳定理论提供可比较的谱及可积性输入。{[}R36,R37{]}
+
+\section{十三、怎样把各文献连接成可证明的数学，而不是一张过强的分类图}\label{ux5341ux4e09ux600eux6837ux628aux5404ux6587ux732eux8fdeux63a5ux6210ux53efux8bc1ux660eux7684ux6570ux5b66ux800cux4e0dux662fux4e00ux5f20ux8fc7ux5f3aux7684ux5206ux7c7bux56fe}
+
+不能预设任意近Einstein序列都已经属于``单极子可测、非塌缩、塌缩、轨形、其他''几个可分别解决的互斥类别。它们既可能重叠，也尚无覆盖结论；``其他''更不是一个可调用的定理。
+
+更准确的连接方式，是逐次选择一个能完成的命题：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  若某类候选确能供给(R21)输入，则取得谱限制或明确缺陷下界。
+\item
+  若允许支还满足某篇正则性定理的全部条件，则取得相应局部几何；不自行升级结论等级。
+\item
+  若该局部几何能被延拓、拼合或证明决定同一smooth
+  type，再调用精确存在／不存在性。
+\item
+  不能接上的地方就是当前数学问题，允许绕过，不要求强行沿同一链走到末端。
+\end{enumerate}
+
+一个重要的归纳是：有三种不同的未知需要被解决。第一是辅助形式的存在与预算；第二是允许谱到足够强几何结构的提升；第三是局部或退化信息到同一光滑流形上的全部精确解。第21轮主要加强的是中间的解析判据，而不是自动填平另外两项。
+
+\section{十四、建议优先研究的五组实质问题}\label{ux5341ux56dbux5efaux8baeux4f18ux5148ux7814ux7a76ux7684ux4e94ux7ec4ux5b9eux8d28ux95eeux9898}
+
+以下不是必须按序执行的固定路线。各组可产生独立定理、反例或足够明确的应用；应按实际证据调整。
+
+\subsection{A.
+将第21轮写成完整解析定理并恢复旧主结果}\label{a.-ux5c06ux7b2c21ux8f6eux5199ux6210ux5b8cux6574ux89e3ux6790ux5b9aux7406ux5e76ux6062ux590dux65e7ux4e3bux7ed3ux679c}
+
+核准规范、常数参数、Hodge与Weyl范数、零集、所有二阶项、\(t\to0\)退化及准确的导数控制。明确旧单极子形式如何满足新假设，而不是只比较目标谱。将已报告完成的第13轮纳入应用，实际恢复LeBrun相应原范围；不重新计数其完成。
+
+成果目标是一个独立可审读的定理：不仅排除单点谱，还定量说明非零允许支的几何，并解释为什么(R21)的二阶代价确实可接受。此组可以与首篇论文成文同步推进，不必等待所有后续方向。
+
+\subsection{B.
+寻找新的实际形式供给，目标是联合预算而非绝对二阶界}\label{b.-ux5bfbux627eux65b0ux7684ux5b9eux9645ux5f62ux5f0fux4f9bux7ed9ux76eeux6807ux662fux8054ux5408ux9884ux7b97ux800cux975eux7eddux5bf9ux4e8cux9636ux754c}
+
+优先选一个能明确说明``此前没有被覆盖''的族。对每个候选度量，构造实际
+\(\psi\)，推导 \(K\)、贴合误差和 \(B\) 的同一尺度控制。可接受的成功包括
+\(B=o(1/d)\)，而不局限完全有界。
+
+若来源是调和形式，攻近常模长与谱对齐；若来自单极子，攻新的类与权重；若来自谱投影，攻全局定向、零集与联络项；若来自新方程，先证明可解性。忠实Torelli曲面丛目前只有新拓扑与方法范围信息，不能假装它已有近Einstein输入，也不能仅凭签名为零调用旧慢领口构造。
+
+\subsection{C.
+允许KE支的全局实现与障碍}\label{c.-ux5141ux8bb8keux652fux7684ux5168ux5c40ux5b9eux73b0ux4e0eux969cux788d}
+
+研究近平行形式在真实近Einstein输入上能否转成闭、非退化或可积结构，或证明这个转化必需某个可计算的全局兼容量。围绕一个明确对象，决定它会产生Einstein存在性，还是其周期／单值化不容许这种结构。
+
+近常模长、导数平均小与长环路漂移要同时处理。新剪切流形、精确双曲乘积、非局部对称负KE与有限／无限单值对象提供相互不同的测试。不得由``没有Kähler结构''直接排除全部非Kähler
+Einstein输出。
+
+\subsection{D.
+零Weyl支与定号联络}\label{d.-ux96f6weylux652fux4e0eux5b9aux53f7ux8054ux7edc}
+
+在负侧识别能够保留 \(\mathcal R^+<0\)
+的实际范畴。研究局部覆盖、联络规范和纯联络Hessian能否给出可验证的稳定性或障碍，明确受控对象是完整联络还是原度量。
+
+这一路径与KE支的模态分析互补，不应试图用同一个强制逆估计覆盖退化的KE根。若只有精确背景的局部刚性，就按其真实范围完成结果；要对近似输入取得存在性，补空间、规范及非线性估计仍须成立。
+
+\subsection{E.
+局部化、低谱与高维作用}\label{e.-ux5c40ux90e8ux5316ux4f4eux8c31ux4e0eux9ad8ux7ef4ux4f5cux7528}
+
+先在有限覆盖片上建立带边自测试，保留绝对与平均能量、重数和边界通量；再研究多个形式的交叉配对能否产生不依赖预设颈部的谱约束。小特征值本身不是负Einstein矛盾，需额外空间结构或相容性。
+
+高维可考察真正具有四维横截面结构的极限或束，将四维谱禁区与横向耦合误差结合。Huang--Ozuch是可参考的低维间隙影响高维正则性范例，不是保证当前(R21)无条件推广到所有维数的证明。无需为了全维目标先把所有四维方法逐项复制到每个维数。
+
+\section{十五、已有反例与正面对照应当怎样参与创新}\label{ux5341ux4e94ux5df2ux6709ux53cdux4f8bux4e0eux6b63ux9762ux5bf9ux7167ux5e94ux5f53ux600eux6837ux53c2ux4e0eux521bux65b0}
+
+一个理论必须保留其允许的真实几何，而不只是列出失败路线。以下对照有明确用途：
+
+\begin{itemize}
+\tightlist
+\item
+  负KE与双曲乘积：非零允许根必须存活，不能把所有低谱或小导数变成矛盾。
+\item
+  零Weyl的Einstein支：不能由控制一半Weyl推出另一半也小，或推出曲率常数。
+\item
+  log-Weyl尖峰与剪切逼近：点态Ricci控制不提供全部曲率或全局积结构。
+\item
+  第18轮报告的积分稀释反例：纯相对积分间隙不能无条件代替Yau26。
+\item
+  Farrell--Ontaneda：流失败不等于光滑类型无Einstein。
+\item
+  新负曲率Einstein与非球商KE：无局部对称并非全局不存在性。
+\item
+  第20轮Torelli对象：签名为零不等于自由群分解，旧构造的拓扑前提必须成立。
+\end{itemize}
+
+这些对照不是让研究保守，而是帮助选择能够被证明的更强命题。真正的推广可以改变范数、预算、辅助对象或成功结论，不需要执着于删除所有假设。
+
+\section{十六、第一篇论文怎样既有高度又保持集中}\label{ux5341ux516dux7b2cux4e00ux7bc7ux8bbaux6587ux600eux6837ux65e2ux6709ux9ad8ux5ea6ux53c8ux4fddux6301ux96c6ux4e2d}
+
+已有工作可以围绕``Einstein方程的统一积分障碍及其谱机制''成文。完整研究计划可以更广，第一篇论文不应承担所有文献的所有任务。
+
+一种自然次序是：问题与规范；第21轮解析谱选择（取得全文并核准后）；单极子给出的实际输入与二阶预算；抽象实际类的缺陷间隙；包含第13轮的完整经典范围；真实新增拓扑应用；精确与点态推论；必要范围与反例。
+
+Derdziński、现代Weyl结构、定号联络和允许分支可以进入说明及必要应用。尚未证明的KE全局实现、一般塌缩分类、Torelli输入和普适Yau26，只能作为清楚的研究问题，不应借图示暗示已闭合。
+
+标题可保留
+\nolinkurl{Uniform Integral Ricci Gaps from Seiberg–Witten Theory}，若新解析定理成为真正独立的主结果，也可以由最终论文内容重新确定重心。无需在每轮讨论中不断更换``更顶级''的题名。
+
+科学贡献应由主定理的量词、新机制承担的困难和实际应用说明。完成一项重要限定范畴的定理，已经可以成文；不必为了显得更全面而将几十篇背景文献和全部未完成模型塞入主证明。与此同时，论文成文也不应停止更广的研究。
+
+\section{十七、第一主线对Yau26可以作出的最强准确承诺}\label{ux5341ux4e03ux7b2cux4e00ux4e3bux7ebfux5bf9yau26ux53efux4ee5ux4f5cux51faux7684ux6700ux5f3aux51c6ux786eux627fux8bfa}
+
+现有积分间隙及第21轮谱判据，可以在写明的输入范畴中排除近Einstein序列。它们与原题的联系是真实的，因为
+\(\mathcal E\le4\delta^2\)，并且(R21)允许直接建立点态障碍的条件推论。
+
+但原题还允许没有现成单极子输入、没有全球非零自对偶形式，以及处于允许谱支的光滑类型。不存在``没有被SW排除，所以存在Einstein''的逻辑。也不存在``若把每种塌缩都分类，就自然得到原光滑类型的Einstein解''的逻辑；分类后的几何与smooth
+type恢复仍需证明。
+
+完整四维肯定结果，需要一个符号对全部输入的判定；完整反例可以由一个固定维数的两个符号序列见证。第一主线既可成为肯定路线的障碍模块，也可为构造线筛选真正无Einstein的候选。它不必独自吞并整个问题，也不应被限制为只服务于一个小模型。
+
+当前最有前景的新增信息是：把``拓扑产生合格形式''``解析筛选允许谱''``允许支的精确实现''分开建立并真正连接。这个连接不是已经完成的理论，而是可以用准确命题持续推进的研究目标。
+
+\clearpage
+\raggedright
+\section{十八、来源与文献索引}\label{ux5341ux516bux6765ux6e90ux4e0eux6587ux732eux7d22ux5f15}
+
+\subsection{18.1 项目材料}\label{ux9879ux76eeux6750ux6599}
+
+{[}S1{]}
+\nolinkurl{references/rounds/round4_rigidity.md}：积分校准、截断权重与二阶预算。当前归档版本来自
+\nolinkurl{qiushi-yau26 (3).zip}。
+
+{[}S2{]}
+\nolinkurl{references/rounds/round4_all_sign_gap.md}：全符号相对缺陷、逐度量选类与吹起推论。
+
+{[}S3{]}
+\nolinkurl{references/rounds/round5_rigidity.md}：special类、凸包及周期平面预算、负平方代价、负定连接和应用。本文已读取该原稿。
+
+{[}S4{]}
+用户在当前对话提供的第13---21轮摘要，尤其第21轮公式及第13轮已完成
+\(b_+=1\)
+的状态。未取得其全部证明；\nolinkurl{round21_analytic.md}、\nolinkurl{round21_comparison.md}
+不在本次可用原包中。
+
+{[}S5{]}
+\nolinkurl{research/20260921_rigidity.tex}、\nolinkurl{20260916_rigidity.tex}、\nolinkurl{20260916_uniform_gap.tex}、\nolinkurl{20260910.tex}、\nolinkurl{20260912.tex}
+及同包构造／全局专论，用于研究沿革、原题工作版本与不能混用的旧接口。
+
+\subsection{18.2
+一手文献：基础与直接对照}\label{ux4e00ux624bux6587ux732eux57faux7840ux4e0eux76f4ux63a5ux5bf9ux7167}
+
+下列编号用于追踪相关事实与下一步精读入口，不表示已经完整核验每篇论文的每项证明。标注``全文重点''表示本轮查阅了相关定理或段落；``摘要／出版记录''表示本轮只支持论文主题及摘要明确结论。预印本与正式出版版本有差别时，以具体使用的版本重新核准定理。
+
+{[}R1{]} Claude LeBrun. \emph{Ricci Curvature, Minimal Volumes, and
+Seiberg--Witten Theory}. Inventiones Mathematicae 145 (2001), 279--316.
+arXiv:math/0003068.
+全文重点：Proposition3.2、Theorem3.3、Corollary3.4及曲率泛函；\href{https://arxiv.org/abs/math/0003068}{原文}。
+
+{[}R2{]} Claude LeBrun. \emph{Four-Manifolds, Curvature Bounds, and
+Convex Geometry}. arXiv:math/0611450.
+全文重点：实际类、凸包、正权重重标度Lemma3.7；\href{https://arxiv.org/abs/math/0611450}{原文}。
+
+{[}R3{]} Dieter Kotschick. \emph{Monopole Classes and Einstein Metrics}.
+IMRN (2004), 593--609; arXiv:math/0306022.
+实际／generic／special类及其区别；\href{https://arxiv.org/abs/math/0306022}{原文}。
+
+{[}R4{]} Masashi Ishida and Claude LeBrun. \emph{Curvature, Connected
+Sums, and Seiberg--Witten Theory}. arXiv:math/0111228.
+连接和、稳定上同伦输入与曲率不变量；\href{https://arxiv.org/abs/math/0111228}{原文}。
+
+{[}R5{]} Claude LeBrun. \emph{Einstein Metrics, Four-Manifolds, and
+Differential Topology}. arXiv:math/0404359.
+周期平面与四维Einstein障碍背景；\href{https://arxiv.org/abs/math/0404359}{原文}。
+
+{[}R6{]} Andrzej Derdziński. \emph{Self-dual Kähler Manifolds and
+Einstein Manifolds of Dimension Four}. Compositio Mathematica 49 (1983),
+405--433.
+原始出版记录及后续论文中明确引用的结构命题；\href{https://www.numdam.org/item/CM_1983__49_3_405_0/}{原文入口}。
+
+{[}R7{]} Kouei Sekigawa. \emph{On Some Compact Einstein Almost Kähler
+Manifolds}. Journal of the Mathematical Society of Japan 39 (1987),
+677--684.
+精确almost-Kähler／非负标量范围；\href{https://doi.org/10.2969/jmsj/03940677}{DOI}。
+
+{[}R8{]} Claude LeBrun. \emph{Einstein Metrics, Harmonic Forms, and
+Symplectic Four-Manifolds}. arXiv:1408.1078.
+调和形式与光滑拓扑，使用时保留全部零集／符号条件；\href{https://arxiv.org/abs/1408.1078}{原文}。
+
+{[}R9{]} Claude LeBrun. \emph{Einstein Metrics, Harmonic Forms, and
+Conformally Kähler Geometry}. arXiv:1903.00956.
+谱、形式与共形几何；\href{https://arxiv.org/abs/1903.00956}{原文}。
+
+{[}R10{]} Giovanni Catino and Davide Dameno. \emph{Conformal Kähler
+Rigidity of Einstein Four-Manifolds}. arXiv:2607.21538v1, 23 July 2026.
+全文重点：Theorems1.1、1.2、1.4，Corollary1.7及特征形式一阶恒等式；\href{https://arxiv.org/html/2607.21538v1}{原文}。
+
+{[}R11{]} Joel Fine, Kirill Krasnov and Dmitri Panov. \emph{A Gauge
+Theoretic Approach to Einstein 4-Manifolds}. New York Journal of
+Mathematics 20 (2014), 293--323; arXiv:1312.2831.
+出版摘要与理论入口；\href{https://nyjm.albany.edu/j/2014/20-18.html}{原文入口}。
+
+{[}R12{]} Joel Fine, Kirill Krasnov and Michael Singer. \emph{Local
+Rigidity of Einstein 4-Manifolds Satisfying a Chiral Curvature
+Condition}. arXiv:1910.09790v2; Mathematische Annalen 379 (2021),
+569--588. 摘要明确的负定 \(\mathcal R^+\)
+局部刚性；\href{https://arxiv.org/abs/1910.09790}{原文}。
+
+\subsection{18.3
+正则性、塌缩与模空间}\label{ux6b63ux5219ux6027ux584cux7f29ux4e0eux6a21ux7a7aux95f4}
+
+{[}R13{]} Jeff Cheeger and Gang Tian. \emph{Curvature and Injectivity
+Radius Estimates for Einstein 4-Manifolds}. JAMS 19 (2006), 487--525.
+本轮出版记录及{[}R14{]}中精确复述；\href{https://doi.org/10.1090/S0894-0347-05-00511-4}{DOI}。
+
+{[}R14{]} Yuxin Ge and Wenshuai Jiang. \emph{An ε-Regularity Theorem on
+4-Dimensional Shrinking Ricci Solitons and Ricci Flows}.
+arXiv:1707.05511.
+精确Einstein小能量输入与其他方程范畴的区别；\href{https://arxiv.org/abs/1707.05511}{原文}。
+
+{[}R15{]} Jeff Cheeger and Aaron Naber. \emph{Regularity of Einstein
+Manifolds and the Codimension 4 Conjecture}. Annals of Mathematics 182
+(2015), 1093--1165.
+非塌缩框架；\href{https://annals.math.princeton.edu/2015/182-3/p05}{期刊}。
+
+{[}R16{]} Wenshuai Jiang and Aaron Naber. \emph{\(L^2\) Curvature Bounds
+on Manifolds with Bounded Ricci Curvature}. Annals of Mathematics 193
+(2021), 107--222.
+非塌缩与有界Ricci条件；\href{https://annals.math.princeton.edu/2021/193-1/p02}{期刊}。
+
+{[}R17{]} Aaron Naber and Ruobing Zhang. \emph{Topology and ε-Regularity
+Theorems on Collapsed Manifolds with Ricci Curvature Bounds}.
+arXiv:1412.1326; Geometry \& Topology 20 (2016).
+全文及截图重点：Theorem1.1、Remark1.1，最大秩、半径与附加导数／Einstein条件；\href{https://arxiv.org/abs/1412.1326}{原文}。
+
+{[}R18{]} Karen Uhlenbeck. \emph{Connections with \(L^p\) Bounds on
+Curvature}. Communications in Mathematical Physics 83 (1982), 31--42.
+本轮原始出版元数据与作者著作索引；本文只引用经典局部小临界能量规范思想，不声称已核准退化几何的推广；\href{https://doi.org/10.1007/BF01947069}{DOI}。
+
+{[}R19{]} Olivier Biquard. \emph{Désingularisation de métriques
+d'Einstein. I}. arXiv:1105.4904; Inventiones Mathematicae (2013).
+精确去奇异化与曲率障碍；\href{https://arxiv.org/abs/1105.4904}{原文}。
+
+{[}R20{]} Tristan Ozuch. \emph{Noncollapsed Degeneration of Einstein
+4-Manifolds I}. arXiv:1909.12957.
+精确退化与几何控制；\href{https://arxiv.org/abs/1909.12957}{原文}。
+
+{[}R21{]} Tristan Ozuch. \emph{Noncollapsed Degeneration of Einstein
+4-Manifolds II}. arXiv:1909.12960; Geometry \& Topology 26 (2022),
+1529--1634.
+精确解的粘合---扰动描述及第7.3节的近似问题；\href{https://arxiv.org/abs/1909.12960}{原文}。
+
+{[}R22{]} Tristan Ozuch. \emph{Integrability of Einstein Deformations
+and Desingularizations}. arXiv:2105.13193.
+精确障碍与高阶可积性；\href{https://arxiv.org/abs/2105.13193}{原文}。
+
+{[}R23{]} Claude LeBrun and Tristan Ozuch. \emph{Desingularizations of
+Conformally Kähler, Einstein Orbifolds}. arXiv:2601.19215v2, 2026.
+本轮核对摘要：正Einstein、Hermitian轨形极限与ASD泡下的KE刚性；\href{https://arxiv.org/abs/2601.19215}{原文}。
+
+{[}R24{]} Yiqi Huang and Tristan Ozuch. \emph{Regularity of Einstein
+5-Manifolds via 4-Dimensional Gap Theorems}. arXiv:2512.21317v2.
+本轮全文重点：四维Einstein轨形间隙对五维Einstein极限正则性的应用；\href{https://arxiv.org/abs/2512.21317}{原文}。
+
+\subsection{18.4
+动态与存在性对照}\label{ux52a8ux6001ux4e0eux5b58ux5728ux6027ux5bf9ux7167}
+
+{[}R25{]} Rugang Ye. \emph{Ricci Flow, Einstein Metrics and Space
+Forms}. Transactions of the AMS 338 (1993), 871--896.
+本轮核对出版元数据及后继原文的引用，未据此臆写普适夹逼阈值；\href{https://doi.org/10.1090/S0002-9947-1993-1108615-3}{DOI}。
+
+{[}R26{]} F. Thomas Farrell and Pedro Ontaneda. \emph{A Caveat on the
+Convergence of the Ricci Flow for Pinched Negatively Curved Manifolds}.
+arXiv:math/0311176v2.
+全文与定理截图：高维输入流不收敛不等于底层无双曲度量；\href{https://arxiv.org/abs/math/0311176}{原文}。
+
+{[}R27{]} Fuquan Fang, Yuguang Zhang and Zhenlei Zhang.
+\emph{Non-singular Solutions to the Normalized Ricci Flow Equation}.
+arXiv:math/0609254.
+长期流与拓扑限制；\href{https://arxiv.org/abs/math/0609254}{原文}。
+
+{[}R28{]} Masashi Ishida. \emph{The Normalized Ricci Flow on
+Four-Manifolds and Exotic Smooth Structures}. arXiv:0807.2169.
+动态SW障碍；\href{https://arxiv.org/abs/0807.2169}{原文}。
+
+{[}R29{]} Masashi Ishida, Rareș Răsdeaconu and Ioana Şuvaina. \emph{On
+Normalized Ricci Flow and Smooth Structures on Four-Manifolds with
+\(b^+=1\)}. arXiv:0810.2465.
+此处只作相关动态chamber问题的原文入口，不当作当前静态加权输入已经完成的证明；\href{https://arxiv.org/abs/0810.2465}{原文}。
+
+{[}R30{]} R. İnanç Baykur and Masashi Ishida. \emph{Families of
+4-Manifolds with Nontrivial Stable Cohomotopy Seiberg--Witten
+Invariants, and Normalized Ricci Flow}. arXiv:1011.2744.
+稳定上同伦与流的障碍；\href{https://arxiv.org/abs/1011.2744}{原文}。
+
+{[}R31{]} Julius Baldauf. \emph{Harmonic Spinors in the Ricci Flow}.
+Journal of Geometric Analysis 34 (2024), 235; arXiv:2210.14198.
+旋量、加权方程与熵；\href{https://doi.org/10.1007/s12220-024-01665-y}{DOI}。
+
+{[}R32{]} Ursula Hamenstädt and Frieder Jäckel. \emph{Negatively Curved
+Einstein Metrics on Gromov--Thurston Manifolds}. arXiv:2411.12956v2.
+精确负Einstein且不承载局部对称度量的拓扑对照；\href{https://arxiv.org/abs/2411.12956}{原文}。
+
+{[}R33{]} Henri Guenancia and Ursula Hamenstädt. \emph{Kähler--Einstein
+Metrics of Negative Curvature}. arXiv:2503.02838v3, 3 May 2026.
+非球商的负曲率KE对照；\href{https://arxiv.org/abs/2503.02838}{原文}。
+
+{[}R34{]} Ursula Hamenstädt and Frieder Jäckel. \emph{Stability of
+Einstein Metrics and Effective Hyperbolization in Large Hempel
+Distance}. arXiv:2206.10438.
+近双曲稳定性方法；\href{https://arxiv.org/abs/2206.10438}{原文}。
+
+{[}R35{]} Frieder Jäckel. \emph{Effective Stability of Negatively Curved
+Einstein Metrics in Dimensions at Least Four}. Journal of Geometric
+Analysis (2026), DOI:10.1007/s12220-026-02563-1.
+本轮核对正式发表摘要，负截面曲率与薄部精确双曲等条件须保留；早期预印本版本维数范围不同，引用不能混合；\href{https://doi.org/10.1007/s12220-026-02563-1}{期刊}。
+
+{[}R36{]} Klaus Kröncke. \emph{On Infinitesimal Einstein Deformations}.
+arXiv:1508.00721.
+乘积谱、核与形变理论；\href{https://arxiv.org/abs/1508.00721}{原文}。
+
+{[}R37{]} Klaus Kröncke. \emph{Stability of Einstein Metrics under Ricci
+Flow}. arXiv:1312.2224.
+局部稳定、可积性与熵方法；\href{https://arxiv.org/abs/1312.2224}{原文}。
+
+\subsection{18.5
+本文没有据此宣布的事项}\label{ux672cux6587ux6ca1ux6709ux636eux6b64ux5ba3ux5e03ux7684ux4e8bux9879}
+
+没有完成全世界等价命题的穷尽查新；没有取得第21轮完整证明并重新核算其PDE步骤；没有将第13轮的报告状态升级成独立复核；没有证明所有近Einstein输入都具有(R21)形式；没有把精确Weyl、局部规范、塌缩半径或去奇异化理论拼成未经证明的普遍分类；没有修改Skill、运行会话或服务器。
+
+本文件的用途是把已有强结果、最新解析主张和可实际使用的外部理论连接为可继续证明的数学问题。它不以研究轮数、引文数量、审读赞同次数或期刊名称代替数学增量。
+
+\end{document}

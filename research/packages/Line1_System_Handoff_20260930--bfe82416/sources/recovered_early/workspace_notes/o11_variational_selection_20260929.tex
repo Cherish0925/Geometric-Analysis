@@ -1,0 +1,353 @@
+% Standalone insertion fragment. Requires amsmath, amssymb, and amsthm.
+% All notation is defined below; no project-specific macros are used.
+% This fragment does not assert a solution of the unrestricted coefficient problem.
+
+\section{Variational selection at the topological defect scale}
+\label{sec:o11-variational-selection-20260929}
+
+We extract additional variational information from a sufficiently accurate
+minimizing sequence. The argument uses finite metric variations directly;
+it does not require a smooth minimizer, an Ekeland principle, or geometric
+compactness. The test class is critical under four-dimensional scaling and
+therefore admits variations supported on shrinking regions.
+
+\paragraph{Setting and inherited estimates.}
+Let
+\[
+ M_j=X_j\mathbin{\#}k_j\overline{\mathbb{CP}}^{\,2}
+       \mathbin{\#}\ell_j(S^1\times S^3),
+ \qquad A_j=c_1^2(X_j),\quad Q_j=k_j+4\ell_j>0,
+ \quad h_j=Q_j/A_j\longrightarrow0,
+\]
+be the balanced complex-hyperbolic surgery family. For a smooth metric set
+\[
+ P(g)=\int_{M_j}|\operatorname{Ric}^{\circ}_g|^2\,dV_g,
+ \qquad R(g)=\int_{M_j}|\operatorname{Ric}_g|^2\,dV_g,
+ \qquad S(g)=\int_{M_j}s_g^2\,dV_g.
+\]
+Ricci norms are tensor norms. Curvature and Weyl norms below are the
+Hilbert--Schmidt norms of their operators on two-forms. Define
+\[
+ p_j=\inf_{g\text{ on }M_j}P(g),\qquad
+ \mathcal E(g)=4-
+ \frac{\bigl(\int_{M_j}s_g\,dV_g\bigr)^2}
+      {\operatorname{Vol}(g)R(g)},\qquad
+ \alpha_j=\inf_{g\text{ on }M_j}\mathcal E(g).
+\]
+We use the following established properties of this family:
+\begin{enumerate}
+\item Every conformal class is negative Yamabe. Passing to its negative
+Yamabe representative does not increase $P$, since
+\[
+ P(g)-P(\widehat g)=\frac{S(g)-S(\widehat g)}{12}\ge0.
+\]
+The representative can be scaled to $s_{\widehat g}=-4$ without changing
+$P$.
+\item The recovery construction gives $p_j\le8\pi^2Q_j$. For every metric,
+\[
+ 8\pi^2A_j+P(g)\le R(g)
+ \le8\pi^2A_jU_j+4P(g),\qquad U_j=1+O(h_j).
+\]
+\item The variational comparison gives
+\[
+ \alpha_j=\frac{4p_j}{8\pi^2A_j}+O(h_j^2).
+\]
+Moreover, $\chi(M_j)=A_j/3+O(Q_j)$ and
+\[
+ \int_{M_j}|\operatorname{Rm}_g|^2\,dV_g
+       =8\pi^2\chi(M_j)+P(g).
+\]
+\end{enumerate}
+All constants in these inherited estimates are uniform along the family.
+The new argument below is conditional only on these displayed inputs.
+
+\paragraph{Critical test budget.}
+For a smooth symmetric covariant two-tensor $H$, put
+\[
+ \mathfrak D_g(H)=\int_M
+      \bigl(|\nabla^2H|_g^2+|\nabla H|_g^4\bigr)\,dV_g.
+\]
+Under $(g,H)\mapsto(\lambda^2g,\lambda^2H)$, both
+$\|H\|_{L^\infty(g)}$ and $\mathfrak D_g(H)$ remain unchanged.
+In particular no pointwise bound on the derivatives of $H$ is imposed.
+
+\paragraph{Lemma 1 (uniform finite-variation remainders).}
+Suppose $g$ is a smooth metric on a closed four-manifold and
+\[
+ \int_M|\operatorname{Rm}_g|^2\,dV_g\le KA.
+\]
+If
+\[
+ \|H\|_{L^\infty(g)}\le1,\qquad \mathfrak D_g(H)\le A,
+\]
+then $g_t=g+tH$ is positive definite for $|t|\le t_0$, where $t_0>0$
+is dimensional, and
+\begin{equation}
+ \left|\frac{d^m}{dt^m}P(g_t)\right|\le C_K A,
+ \qquad m=2,3,\quad |t|\le t_0.
+ \label{eq:o11-var-remainder-20260929}
+\end{equation}
+The constants do not require a diameter bound, injectivity-radius bound,
+Sobolev inequality, or noncollapsing hypothesis.
+
+\begin{proof}
+The amplitude bound makes $g_t$ uniformly equivalent to $g$. In terms of
+the background connection $\nabla=\nabla^g$, the difference tensor is
+\[
+ (\nabla^{g_t}-\nabla^g)^k{}_{ab}
+ =\frac t2(g_t)^{kc}
+   \bigl(\nabla_aH_{bc}+\nabla_bH_{ac}-\nabla_cH_{ab}\bigr).
+\]
+The curvature difference is the covariant derivative of this tensor plus
+its quadratic product. Thus it consists of contractions of
+\[
+ t\,g_t^{-1}\nabla^2H
+ \quad\text{and}\quad
+ t^2g_t^{-1}g_t^{-1}\nabla H\nabla H.
+\]
+Changing contractions or lowering indices also involves the background
+curvature and the uniformly equivalent metrics. Differentiating in $t$
+through order three only inserts further uniformly bounded inverse
+metrics and copies of $H$. Consequently the curvature, traceless Ricci
+tensor, and their required $t$-derivatives are bounded pointwise by
+\[
+ C_m\bigl(|\operatorname{Rm}_g|+|\nabla^2H|+|\nabla H|^2\bigr).
+\]
+The volume density relative to $dV_g$, together with its first three
+$t$-derivatives, is uniformly bounded. Differentiating
+$|\operatorname{Ric}^{\circ}_{g_t}|_{g_t}^2dV_{g_t}$ and applying Young's
+inequality to the cross terms bounds each integral in
+\eqref{eq:o11-var-remainder-20260929} by
+\[
+ C\int_M\bigl(|\operatorname{Rm}_g|^2
+                  +|\nabla^2H|^2+|\nabla H|^4\bigr)\,dV_g
+ \le C_KA.
+\]
+No coordinate neighborhood of a uniform radius is used.
+\end{proof}
+
+\paragraph{Proposition 2 (weak stationarity and stability at scale $Q_j$).}
+For every prescribed sequence $\varepsilon_j>0$ there are smooth metrics
+$g_j$ on $M_j$ such that
+\[
+ s_{g_j}=-4,\qquad 0\le P(g_j)-p_j\le\varepsilon_j,
+ \qquad P(g_j)-p_j\longrightarrow0,
+ \qquad \mathcal E(g_j)-\alpha_j=o(h_j),
+\]
+and, uniformly over all smooth symmetric two-tensors satisfying
+\[
+ \|H\|_{L^\infty(g_j)}\le1,\qquad
+ \mathfrak D_{g_j}(H)\le A_j,
+\]
+one has
+\begin{equation}
+ |DP_{g_j}[H]|=o(Q_j),\qquad
+ D^2P_{g_j}[H,H]\ge-o(Q_j).
+ \label{eq:o11-var-selection-20260929}
+\end{equation}
+Here $D^2P_{g_j}[H,H]$ means the second derivative along $g_j+tH$.
+It is not being identified with an intrinsic Hessian at an assumed
+critical point.
+
+\begin{proof}
+Choose any $\eta_j\downarrow0$ and set
+\begin{equation}
+ \delta_j=\min\left\{
+       \varepsilon_j,j^{-1},\eta_j^3\frac{Q_j^3}{A_j^2}
+                    \right\}.
+ \label{eq:o11-var-delta-20260929}
+\end{equation}
+The definition of the infimum supplies a smooth metric with $P\le
+p_j+\delta_j$. Replace it by the negative Yamabe representative and
+scale to $s=-4$. The inherited conformal formula and scale invariance
+preserve
+\begin{equation}
+             0\le P(g_j)-p_j\le\delta_j.
+ \label{eq:o11-var-gap-20260929}
+\end{equation}
+Since $p_j\le8\pi^2Q_j$ and $\delta_j=o(Q_j)$, these metrics satisfy
+$P(g_j)=O(Q_j)$. The two-sided Ricci estimate yields
+\[
+ R(g_j)=8\pi^2A_j+O(Q_j).
+\]
+At scalar curvature $-4$, $R=P+4\operatorname{Vol}$, and hence
+\[
+ \operatorname{Vol}(g_j)=2\pi^2A_j+O(Q_j).
+\]
+The curvature identity and Euler-characteristic estimate then give
+\[
+ \int_{M_j}|\operatorname{Rm}_{g_j}|^2\,dV_{g_j}=O(A_j).
+\]
+Thus Lemma 1 applies uniformly to the stated test class.
+
+For such an $H$, put $F(t)=P(g_j+tH)$. Every $g_j+tH$ with
+$|t|\le t_0$ is an admissible global competitor, so
+\[
+                  F(t)\ge p_j\ge F(0)-\delta_j.
+\]
+Taylor expansion for both signs of $t$, using $|F''|\le CA_j$, gives
+\[
+ |F'(0)|\le\frac{\delta_j}{t}+CA_jt,
+ \qquad 0<t\le t_0.
+\]
+Choosing $t$ comparable to $\sqrt{\delta_j/A_j}$ gives
+\begin{equation}
+ |DP_{g_j}[H]|\le C\sqrt{A_j\delta_j}
+       \le C\eta_j^{3/2}Q_j\sqrt{h_j}=o(Q_j).
+ \label{eq:o11-var-first-20260929}
+\end{equation}
+To estimate the second variation, add the inequalities for $t$ and $-t$.
+The bound $|F'''|\le CA_j$ gives
+\[
+ F''(0)\ge-\frac{2\delta_j}{t^2}-CA_jt.
+\]
+Taking $t$ comparable to $(\delta_j/A_j)^{1/3}$, which is at most a
+constant times $\eta_jh_j$, yields
+\begin{equation}
+ D^2P_{g_j}[H,H]\ge-CA_j^{2/3}\delta_j^{1/3}
+                        \ge-C\eta_jQ_j.
+ \label{eq:o11-var-second-20260929}
+\end{equation}
+Because $\eta_j\to0$, this is the asserted lower bound $-o(Q_j)$.
+Both estimates are uniform over the entire test class.
+
+Finally, constant scalar curvature gives $\mathcal E=4P/R$. The Ricci
+estimate implies
+\[
+ \mathcal E(g_j)=\frac{4P(g_j)}{8\pi^2A_j}+O(h_j^2).
+\]
+Comparing with the inherited formula for $\alpha_j$ and using
+\eqref{eq:o11-var-gap-20260929} gives
+\[
+ 0\le\mathcal E(g_j)-\alpha_j
+       =O(h_j^2)+O(\delta_j/A_j)=o(h_j).
+\]
+The prescribed absolute accuracy and convergence to zero follow from
+\eqref{eq:o11-var-delta-20260929}.
+\end{proof}
+
+The conclusion is a selection statement about sufficiently accurate
+global near-minimizers. It does not say that every competitive sequence
+with $P=O(Q)$ is approximately stationary or stable.
+
+\paragraph{The resulting weak equation.}
+Write $W_+(g)=\int|W_g^+|^2\,dV_g$ and $T_+=2\chi+3\tau$.
+Chern--Weil gives
+\[
+                 P=4W_++S/12-8\pi^2T_+.
+\]
+At a closed constant-scalar-curvature metric with $s=-4$, the scalar
+square variation is
+\[
+ DS_g[H]=8\int_M\langle\operatorname{Ric}^{\circ}_g,H\rangle_g\,dV_g.
+\]
+Indeed the general scalar variation, integrated against the constant
+scalar curvature, has no surviving divergence terms; its gradient is
+$-2s\operatorname{Ric}^{\circ}$.
+Proposition 2 therefore yields
+\begin{equation}
+ 4DW_{+,g_j}[H]
+ +\frac23\int_{M_j}
+       \langle\operatorname{Ric}^{\circ}_{g_j},H\rangle_{g_j}\,dV_{g_j}
+       =o(Q_j)
+ \label{eq:o11-var-weak-equation-20260929}
+\end{equation}
+uniformly in the critical test class. Keeping the Weyl first variation
+in this form avoids importing a separate Bach-tensor sign or norm
+convention.
+
+\paragraph{Shrinking supports.}
+For a test tensor of fixed amplitude on a region of radius $r$ with
+controlled rescaled geometry, the estimates
+\[
+ |\nabla H|=O(r^{-1}),\qquad |\nabla^2H|=O(r^{-2}),\qquad
+ \operatorname{Vol}(\operatorname{supp}H)=O(r^4)
+\]
+give $\mathfrak D_g(H)=O(1)$, even when $r\to0$.
+This illustrates how a microscopic test can satisfy the budget. The
+controlled rescaled geometry in this illustration is not a hypothesis
+of Proposition 2. A fixed constant multiple of the displayed budget
+can also be allowed by multiplying $H$ by a fixed sufficiently small
+constant.
+
+\paragraph{Corollary 3 (disjoint-region selection without smooth precompactness).}
+Let $g_j$ be selected as in Proposition 2. For each $j$, let
+$H_{ji}$ be finitely many smooth symmetric two-tensors with pairwise
+disjoint supports, and suppose
+\[
+ \|H_{ji}\|_{L^\infty(g_j)}\le1,
+ \qquad \sum_i\mathfrak D_{g_j}(H_{ji})\le A_j.
+\]
+Then
+\begin{equation}
+ \sum_i|DP_{g_j}[H_{ji}]|=o(Q_j),\qquad
+ \sum_i\bigl(-D^2P_{g_j}[H_{ji},H_{ji}]\bigr)_+=o(Q_j).
+ \label{eq:o11-var-multiregion-20260929}
+\end{equation}
+
+\begin{proof}
+Choose signs $\epsilon_i\in\{-1,1\}$ to make
+$DP[\epsilon_iH_{ji}]\ge0$, and put $H=\sum_i\epsilon_iH_{ji}$.
+Disjointness makes the amplitude bound persist and the derivative
+budgets add. The linearity of the first variation and Proposition 2 give
+the first conclusion.
+
+For the second conclusion, sum only the tensors whose second variations
+are negative. The functional $P$ is the integral of a local expression
+in the second jet of the metric. Mixed second variations therefore
+vanish for disjoint supports. The second variation along the sum is
+exactly the sum of the negative second variations. Proposition 2 again
+gives the result.
+\end{proof}
+
+This corollary assumes neither a fixed smooth compact family of cell
+metrics nor uniform collar geometry or cell scale. It does require the
+actual test tensors to satisfy the total critical budget. In particular,
+a family of defects admitting definite descent per unit defect cannot
+have positive $Q_j$-density if its descent tests satisfy that budget.
+The existence of such tests for all potentially inexpensive defects has
+not been proved here.
+
+\paragraph{An unresolved instability criterion for the sharp coefficient.}
+The following is a sufficient criterion, not an established curvature
+inequality. Suppose that for every fixed $\epsilon\in(0,1)$ there are
+$c_\epsilon>0$ and $j_\epsilon$ such that every smooth metric on $M_j$,
+$j\ge j_\epsilon$, satisfying
+\[
+ s_g=-4,\qquad P(g)\le8\pi^2(1-\epsilon)Q_j
+\]
+admits a smooth symmetric tensor with
+\[
+ \|H\|_{L^\infty(g)}\le1,\qquad \mathfrak D_g(H)\le A_j,
+\]
+for which at least one of
+\begin{equation}
+ |DP_g[H]|\ge c_\epsilon Q_j,
+ \qquad
+ D^2P_g[H,H]\le-c_\epsilon Q_j
+ \label{eq:o11-var-open-instability-20260929}
+\end{equation}
+holds. Then
+\[
+ \frac{p_j}{8\pi^2Q_j}\longrightarrow1,
+ \qquad \frac{\alpha_j}{h_j}\longrightarrow4.
+\]
+
+\begin{proof}[Proof of the conditional implication]
+If the lower limit of $p_j/(8\pi^2Q_j)$ were less than one, choose a
+subsequence with a fixed strict gap below one. The selected metrics of
+Proposition 2 remain below a slightly weaker fixed threshold, because
+$P(g_j)-p_j=o(Q_j)$. Both alternatives in
+\eqref{eq:o11-var-open-instability-20260929} contradict the corresponding
+uniform estimates in Proposition 2. Hence the lower limit is at least
+one. The recovery upper bound gives the first limit, and the inherited
+variational comparison gives the second.
+\end{proof}
+
+Proving \eqref{eq:o11-var-open-instability-20260929}, or constructing
+genuine metrics with a smaller first-order cost, remains the substantive
+unrestricted problem. In particular, one cannot insert
+$H=\operatorname{Ric}^{\circ}$ in the preceding weak equation without
+checking its amplitude and critical derivative budget. Nor do these
+selection statements establish smooth convergence, a bubble-tree
+decomposition, or the signed-curvature compensation inequality.

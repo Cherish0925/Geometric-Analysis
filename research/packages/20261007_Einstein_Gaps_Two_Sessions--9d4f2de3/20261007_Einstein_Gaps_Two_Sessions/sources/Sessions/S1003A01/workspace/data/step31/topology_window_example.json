@@ -1,0 +1,36 @@
+{
+ "symbolic": {
+  "chi": "A/3 + D/3",
+  "tau": "A/9 - 2*D/9",
+  "Tplus": "A - k - 4*l",
+  "Tminus": "A/3 + 4*D/3 + 5*k - 4*l",
+  "exact_equal_chirality_solution": {
+   "k": "-2*D/9 + 2*Q/9",
+   "l": "D/18 + 7*Q/36"
+  },
+  "full_window_solution": {
+   "k": "(A*FF + 3*A*h - A - 4*D)/18",
+   "l": "(-A*FF + 15*A*h + A + 4*D)/72"
+  }
+ },
+ "example_parameters": {
+  "A": 1000000000,
+  "Delta": 10000,
+  "Q": 1000000,
+  "out": null
+ },
+ "integer_choice": {
+  "k": 220000,
+  "l": 195000,
+  "Q": 1000000,
+  "h": 0.001,
+  "Tplus": 999000000,
+  "Tminus": 333666666.6666666,
+  "U_top": 1.001,
+  "U_minus_1_minus_h": -1.1015494072452725e-16,
+  "balance_residual": 0,
+  "k_over_Q": 0.22,
+  "l_over_Q": 0.195
+ },
+ "interpretation": "If Delta=o(Q), Q=o(A), and rounding is O(1), then k/Q->2/9, l/Q->7/36 and U_top=1+h+o(h)."
+}

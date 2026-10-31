@@ -1,0 +1,141 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage[margin=1in]{geometry}
+\title{Yau26 Core Formula Sheet}
+\date{2026-09-16}
+\begin{document}
+\maketitle
+
+\section*{Normalized Ricci defect}
+\[
+\delta_\sigma(g)=
+\left\|g^{-1}(\operatorname{Ric}_g-\sigma g)\right\|_{L^\infty,\mathrm{op}},
+\qquad \sigma\in\{\pm1\}.
+\]
+
+\section*{Calabi/MV core scaling}
+\[
+g_t=t h_t,\qquad h_t=g_{\rm cal}+th,
+\]
+\[
+\operatorname{Ric}(h_t)
+=t\Lambda h_t+t\lambda o+R_t,
+\qquad |R_t|_{g_{\rm cal}}\le Ct^2\rho^2,
+\]
+\[
+g_t^{-1}\bigl(\operatorname{Ric}(g_t)-\Lambda g_t\bigr)
+=
+\lambda h_t^{-1}o+t^{-1}h_t^{-1}R_t.
+\]
+
+\section*{Ishida--LeBrun mixed inequality}
+\[
+\frac1{4\pi^2}\int_M
+\left(\frac{s^2}{24}+2|W^+|^2\right)d\mu
+\ge\frac23(a^+)^2.
+\]
+
+\section*{Critical calibrated profile}
+\[
+\frac{\operatorname{Vol}(g_i)}{A}\to\frac{32\pi^2}{9},
+\]
+\[
+\frac1{\pi^2A}\int|W_i^+|^2\to\frac4{27},
+\qquad
+\frac1{\pi^2A}\int|\operatorname{Ric}_i^\circ|^2\to0,
+\]
+\[
+\frac1{\pi^2A}\int|\operatorname{Ric}_i|^2\to\frac{128}{9},
+\]
+\[
+\int(s_i+8\sqrt6|W_i^+|)^2=O(A\delta_i^2).
+\]
+
+\section*{Terminal recalibration}
+\[
+D_{\rm av}
+=
+J-q-\frac23\sum_\ell|e_\ell^+|^2
+\le J\le\frac{Q}{8\pi^2},
+\]
+\[
+\Phi=
+|\operatorname{Ric}+g|^2+(s+4)^2
++(s+8\sqrt6|W^+|)^2+\mathcal G_{\rm gap},
+\]
+\[
+\int_M\Phi\le119Q.
+\]
+
+\section*{Sobolev--energy cancellation}
+\[
+\|u\|_4^2
+\le
+\mathcal S(\|\nabla u\|_2^2+r^{-2}\|u\|_2^2),
+\qquad
+\mathcal S\asymp\frac{r^2}{\sqrt V},
+\]
+\[
+K_2\le K_0V
+\quad\Longrightarrow\quad
+\mathcal S K_2^{1/2}\lesssim r^2\sqrt{K_0}.
+\]
+
+\section*{Weighted Moser exponent}
+\[
+p_{k+1}=\frac32p_k,
+\qquad
+\sum_{k=0}^\infty\frac1{p_k}=\frac3{p_0}.
+\]
+
+\section*{Eguchi--Hanson ALE energy}
+\[
+\frac1{8\pi^2}\int_X|\operatorname{Rm}|^2
+=
+\chi(X)-\frac1{|\Gamma|},
+\]
+hence for Eguchi--Hanson
+\[
+\int_X|\operatorname{Rm}|^2=12\pi^2.
+\]
+
+\section*{Eguchi--Hanson angular modes}
+\[
+(pF')'-qF=0,
+\quad
+p=\rho^3(1-\rho^{-4}),
+\]
+\[
+q=l(l+2)\rho+
+4m^2\rho\bigl((1-\rho^{-4})^{-1}-1\bigr),
+\]
+\[
+\frac{F_{l,m}(\rho)}{F_{l,m}(R)}
+\le
+\left(\frac{\rho}{R}\right)^l
+\le
+\left(\frac{\rho}{R}\right)^2.
+\]
+
+\section*{Positive obstruction bridge target}
+\[
+\int\langle\operatorname{Ric}(g_i)-g_i,\Phi_i\rangle
+=
+t_i\mathcal O(R_+(p_i),\mathrm{orientation/rotation})
++o(t_i),
+\]
+\[
+\|\Phi_i\|_{L^1}=O(t_i).
+\]
+
+\section*{Higher-dimensional critical scaling}
+\[
+A_U\|\operatorname{Rm}\|_{L^{n/2}}
+\lesssim
+r^2
+\left(
+\fint_U|\operatorname{Rm}|^{n/2}
+\right)^{2/n}.
+\]
+
+\end{document}

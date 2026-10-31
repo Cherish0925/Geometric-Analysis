@@ -1,0 +1,1638 @@
+\documentclass[UTF8,a4paper,11pt,fontset=fandol]{ctexart}
+\usepackage[margin=23mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{booktabs,longtable,tabularx,array,enumitem}
+\usepackage{xurl}
+\urlstyle{same}
+\usepackage[hidelinks,bookmarksnumbered]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{点态近Einstein构造与Weyl匹配}\fancyfoot[C]{\thepage}
+\setlength{\parskip}{4pt}\linespread{1.13}
+\setlength{\emergencystretch}{3em}
+\setlist{itemsep=2pt,topsep=4pt,parsep=0pt,leftmargin=2em}
+\setcounter{tocdepth}{1}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\newtheorem{target}[theorem]{研究目标}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{remark}[theorem]{说明}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\spec}{\operatorname{Spec}}
+\newcommand{\Met}{\operatorname{Met}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\dd}{\,d\mu_g}
+\newcommand{\avgint}{\mathop{\rlap{\,\raisebox{0.1ex}{\tiny$-$}}\int}\nolimits}
+\newcommand{\fint}{\mathop{\rlap{\,\raisebox{0.1ex}{\tiny$-$}}\int}\nolimits}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{点态近Einstein构造与跨尺度Weyl匹配\\[0.5em]{\large 局部解消、通量、四节点约化与全局平滑}}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+研究固定四维轨形解消上的无权点态Ricci逼近。通过显式Eguchi--Hanson核心修正、共同径向规范及十维Weyl二次项的对数插值，构造Ricci端同态缺陷为 $O(|\log a|^{-1})$ 的光滑度量，并证明其Gromov--Hausdorff极限。齐次张量的Green通量解释二次模式的对数临界性及高阶模式的不同阈值。随后分析球面乘积商的完整线性算子核、张量多极到曲率jet的响应，以及四节点模型的手性配对。最后给出曲率尖峰、条件有限覆盖放大和一个乘积商的全局Einstein存在性证明。局部精确解消障碍与同一光滑流形上的全局Einstein不存在性始终作为不同命题处理。
+\end{abstract}
+\begingroup
+\small\linespread{1.0}\selectfont\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\section{Ricci夹逼问题与归一化}
+考虑如下Ricci夹逼问题：对每个维数 $n\ge2$，是否存在只依赖 $n$ 的实常数 $c_n<C_n$，使任意闭、连通、光滑实流形 $M^n$ 只要承载一个度量 $g$ 满足
+\begin{equation}\label{eq:Q}
+ c_ng\le\Ric_g\le C_ng,
+\end{equation}
+就承载某个光滑 Einstein 度量 $h$，即 $\Ric_h=\lambda h$，$\lambda\in\R$？不要求 $h$ 接近 $g$，不要求 $h$ 与 $g$ 的 Ricci 符号相同；结论针对同一\emph{光滑流形}，不是仅同胚类型。
+
+这一问题与Yau的问题表第26题相关\cite{Yau1982}。以下一律采用式\eqref{eq:Q}的量词和结论，特别是不限制所得Einstein度量的符号或其与输入度量的距离。
+
+定义
+\begin{equation}\label{eq:defect}
+ \delta_\sigma(g)=\norm{g^{-1}\Ric_g-\sigma\Id}_{L^\infty,\op},\qquad
+ e_\sigma(M)=\inf_{g\in\Met(M)}\delta_\sigma(g),\qquad \sigma\in\{+1,-1\}.
+\end{equation}
+$P_n^\sigma$ 表示存在仅依赖 $n$ 的 $\varepsilon_n>0$，使 $\delta_\sigma(g)<\varepsilon_n$ 推出 $M$ 承载某个 Einstein 度量。上述命题记为 $Q_n$，并满足
+\begin{equation}\label{eq:branches}
+ Q_n\quad\Longleftrightarrow\quad P_n^+\ \lor\ P_n^-.
+\end{equation}
+证明只用缩放：$\widehat g=ag$ 时，作为 $(0,2)$ 张量的 Ricci 不变，Ricci 端同态变为 $a^{-1}g^{-1}\Ric_g$。任一非退化区间都有一个非零内点 $\mu$ 及同号小邻域；将 $\Ric\approx\operatorname{sign}(\mu)g$ 的度量按 $1/|\mu|$ 缩放即可进入该邻域。反向直接取以 $\pm1$ 为中心的小区间。
+
+因此，一个固定维数的\emph{证明}只需要完成其中一个符号分支；\emph{完整反驳}要在同一维数击败两个符号分支，可以使用不同流形。每个流形都必须排除任意符号的全部 Einstein 度量。构造 $e_\sigma(M)=0$ 本身是一项独立结论，但它只有与该 $M$ 的全部 Einstein 不存在性相结合，才构成分支反例。
+
+二维由一致化定理解决；三维正分支由Hamilton的正Ricci定理解决。以下主要讨论四维，所得局部构造和全局障碍各有其维数与符号条件。
+
+\subsection{曲率范数与四维特征数}
+下列 $W^\pm$ 与签名公式在定向四维范畴内使用；非定向情形须另行处理定向双覆盖及等变下降，不能由覆盖的Einstein存在直接推出原流形结论。四维设 $s=\tr_g\Ric$、$E=\Ric-\frac{s}{4}g$。本文件的 $W^\pm$ 使用在 $\Lambda^2_\pm$ 上的曲率\emph{算子}范数；$E$ 和 Ricci 使用张量范数。于是
+\begin{align}
+8\pi^2\chi(M)&=\int_M\left(|W^+|^2+|W^-|^2+\frac{s^2}{24}-\frac{|E|^2}{2}\right)\dd,\label{eq:CGB}\\
+12\pi^2\tau(M)&=\int_M(|W^+|^2-|W^-|^2)\dd,\label{eq:signature}\\
+|\Rm_{\rm full}|^2&=4(|W^+|^2+|W^-|^2)+2|E|^2+\frac{s^2}{6}.
+\end{align}
+若写 $\mathcal R$ 表示完整曲率算子，则 $|\Rm_{\rm full}|^2=4|\mathcal R|^2$。精确 Einstein 时分别有 $\int|\mathcal R|^2=8\pi^2\chi$ 和 $\int|\Rm_{\rm full}|^2=32\pi^2\chi$。Eguchi--Hanson 的 $12\pi^2$ 能量采用前一种规范；后一种为 $48\pi^2$。
+
+$\delta_\sigma\le\delta$ 给出
+\begin{equation}
+ |s-4\sigma|\le4\delta,\qquad |E|^2\le4\delta^2,\qquad
+ |\Ric-\sigma g|^2\le4\delta^2.
+\end{equation}
+全文不把小 $L^p$ 积分、小加权范数、局部精确解，替换成原题要求的全域无权 Ricci 端同态上确界。
+
+精确Einstein度量的统一拓扑间隙与一般近Einstein输入的Ricci夹逼间隙并不等价；前者见\href{20260916_uniform_gap.tex}{《四维Einstein度量的统一间隙》}。这里研究的是构造侧的另一机制：同Ricci、不同Weyl的二次项可在长对数环带上缓慢连接。
+
+\section{固定A1解消上的点态Ricci逼近}
+\begin{theorem}[固定标记的 $A_1$ 解消]\label{thm:A1}
+设 $(M_0,g_0)$ 为固定闭定向 Einstein 四维轨形，$\Ric_{g_0}=\sigma g_0$，只有有限个 $A_1$ 奇点。固定局部等变正规坐标、EH端部标记、取向及光滑填充数据。假设构造所用平滑核心修正 $\widetilde h$ 满足
+\[
+D\Ric_{g_{\rm EH}}\widetilde h=g_{\rm EH},
+\]
+并满足 $\widetilde h=H_*+O_2(\rho^{-2})$，即对 $j=0,1,2$ 有
+$|\nabla^j(\widetilde h-H_*)|\le C\rho^{-2-j}$，且其二次渐近项与环境正规二次项置于同一径向规范。在相应固定光滑标记解消 $M$ 上，构造给出光滑正定度量族 $g_a$，使
+\begin{equation}\label{eq:A1}
+\delta_\sigma(g_a)\le\frac{C}{|\log a|}\longrightarrow0.
+\end{equation}
+$C$ 可依赖固定轨形、节点和标记，但不依赖 $a\to0$。此外，$(M,g_a)$ GH收敛到 $(M_0,g_0)$，以 $a^{-2}$ 放大的各核心收敛到所选EH度量。
+\end{theorem}
+
+该结论在每个适用的固定 $M$ 上直接给 $e_\sigma(M)=0$，是原题所要求的同一无权逐点范数。因此它可以独立成文，不需要先证明 $M$ 无Einstein。但是，$M$ 上不存在\emph{任何}Einstein度量是另一个命题，不能由式\eqref{eq:A1}推出；附近精确解消受阻，也不能替代这个全局命题。
+
+\section{与精确Einstein解消的关系}
+Biquard建立了 $A_1$ Einstein去奇异化的曲率障碍和特定非退化情形下的构造；Morteza--Viaclovsky研究高维Calabi模型；Ozuch发展精确Einstein退化、加权匹配、模障碍构造与高阶障碍理论\cite{Biquard,MV,OzuchI,OzuchII,OzuchHigher,OzuchIntegrability}。这些理论中的误差范数和精确方程，与定理\ref{thm:A1}的两侧无权 $L^\infty$ Ricci逼近有所不同。
+
+Ozuch在\cite[\S7.3]{OzuchII}给出有限 $L^p$ Ricci逼近，并用对数截断处理单侧Ricci控制；其球面商问题询问是否存在指定EH解消上的度量，使
+\begin{equation}\label{eq:football}
+\norm{g_i^{-1}\Ric_{g_i}-3\Id}_{\infty,\op}\longrightarrow0,
+\qquad (M,g_i)\xrightarrow{GH}(S^4/\Z_2,g_{\rm round}).
+\end{equation}
+对于定理\ref{thm:A1}所允许的标准端部标记，下面的直径估计同时给GH极限。归一化只需令 $h_0=3g_{\rm round}$，对 $\Ric_{h_0}=h_0$ 使用构造后再取 $g_i=h_i/3$；端同态缺陷乘3，仍趋零。若另指定填充或边界标记，必须先验证它给出同一光滑解消，不能只凭有理Betti数识别。这一应用也不排除 $M$ 上另有精确Einstein度量。
+
+\section{完整构造的数学结构}
+\subsection{裸核心为何失败，修正核心为何仍然可能}
+直接缩放Ricci-flat核心 $a^2g_{\rm EH}$，有
+\[
+(a^2g_{\rm EH})^{-1}\bigl(\Ric(a^2g_{\rm EH})-\sigma a^2g_{\rm EH}\bigr)=-\sigma\Id.
+\]
+缺陷恒为1，缩小体积不起作用。但在核心上加入相对 $O(a^2)$ 的度量修正，经二阶导数与逆度量缩放可在原尺度产生 $O(1)$ 的Ricci修正。因此“裸核心失败”不是“所有修正核心失败”。
+
+在 $\mathcal O(-2)$ 圆盘丛上考虑以下双轴Einstein度量。采用 $\sigma_3=d\psi+\cos\theta\,d\phi$、$\psi$周期 $2\pi$，令
+\begin{align}
+c_\Lambda&=(1-\Lambda/4)^2-1,\\
+G_\Lambda(r)&=\frac{\sqrt{1+c_\Lambda r^2}}{r^4}
+\int_1^r\frac{s^3(4-\Lambda s^2)}{(1+c_\Lambda s^2)^{3/2}}\,ds,
+\qquad F_\Lambda=(1+c_\Lambda r^2)G_\Lambda,\\
+q_\Lambda&=F_\Lambda^{-1}dr^2+
+\frac{r^2}{4}(\sigma_1^2+\sigma_2^2+G_\Lambda\sigma_3^2).
+\end{align}
+有效域要求 $1+c_\Lambda r^2>0$、$4-\Lambda r^2>0$。双轴方程化为
+\[
+r(1+c_\Lambda r^2)G_\Lambda'+(4+3c_\Lambda r^2)G_\Lambda
+=4-\Lambda r^2.
+\]
+积分因子为 $r^4/\sqrt{1+c_\Lambda r^2}$，$G_\Lambda(1)=0$ 给上述解。更具体地，测地径向坐标中写
+$q=dt^2+\alpha(t)^2(\sigma_1^2+\sigma_2^2)+\beta(t)^2\sigma_3^2$，
+其中 $\alpha=r/2$。条件 $F=(1+cr^2)G$ 使 $00$ 与 $33$ Ricci分量相同，记作 $Q$；上述ODE给 $11=22=\Lambda$。收缩Bianchi恒等式成为
+\[
+Q'+2\frac{\alpha'}{\alpha}(Q-\Lambda)=\tfrac12(2Q+2\Lambda)'=Q',
+\]
+所以 $Q=\Lambda$。这验证 $\Ric(q_\Lambda)=\Lambda q_\Lambda$；双轴方程亦见\cite[\S4.1]{CGLP}。bolt处有
+\[
+F_\Lambda'(1)=4-\Lambda,
+\quad G_\Lambda'(1)=\frac{4-\Lambda}{1+c_\Lambda},
+\quad \frac{(4-\Lambda)^2}{16(1+c_\Lambda)}=1,
+\]
+故与固定 $2\pi$ 周期相容，无圆锥角缺口。在 $\Lambda=0$ 微分，再减去由
+\[
+V=\frac5{72}(r^3-r^{-1})\partial_r
+\]
+产生的规范项，得到
+\begin{align}
+\widetilde h={}&-\frac{r^2(7r^2-5)}{36(r^2-1)(r^2+1)^2}\,dr^2
+-\frac{5(r^4-1)}{144}(\sigma_1^2+\sigma_2^2)\\
+&+\left(-\frac{r^4}{72}+\frac1{16}-\frac{r^{-2}}{12}
++\frac{5r^{-4}}{144}\right)\sigma_3^2,\nonumber\\
+H_*={}&-\frac5{36}\bigl(r^2e-(x\cdot dx)^2\bigr)
++\frac1{12}\langle Jx,dx\rangle^2.
+\end{align}
+于是 $D\Ric_{\rm EH}\widetilde h=g_{\rm EH}$、$\widetilde h=H_*+O_2(r^{-2})$，且 $H_*(x,\cdot)=0$。表面上的极坐标分母须按平滑bolt坐标理解，不能以单项极坐标系数判定几何奇点。
+
+这个核心同时满足固定bolt处的光滑性、真实Ricci线性化方程及二阶渐近控制；后两者用于下面的非线性误差估计。
+
+\subsection{共同径向规范使二次项之差真正成为Weyl方向}
+环境与核心远场的二次项分别记为 $H_0,H_1$。如果两者是同一欧氏度量下的正规二次曲率张量，且Ricci收缩相同，那么
+\[
+K=H_0-H_1,\qquad
+K_{ij}=-\tfrac13 C_{ikjl}x^kx^l
+\]
+由代数Weyl张量 $C$ 给出。任意两个二次对称张量即使Ricci线性化相同，也未必已在这个规范中；必须先处理三次坐标变换和Bianchi规范，不能直接宣称差值纯Weyl。
+
+四维Weyl空间为
+\[
+\mathcal W=\operatorname{Sym}^2_0(\Lambda^+)\oplus
+\operatorname{Sym}^2_0(\Lambda^-).
+\]
+对每个三维因子，一组基可取
+\[
+\operatorname{diag}(1,-1,0),\quad
+\operatorname{diag}(1,1,-2),\quad
+E_{12}+E_{21},\quad E_{13}+E_{31},\quad E_{23}+E_{32}.
+\]
+两组共十维，覆盖任意代数Weyl张量，而非仅双轴或对角扇区。以下计算只用曲率对称性与无迹性，因此同时适用于全部十维。
+
+\subsection{任意光滑径向截断的解析恒等式}
+对上述 $K$，曲率对称性和无迹性给
+\[
+\tr_eK=0,\quad \operatorname{div}_eK=0,\quad
+\Delta_eK=0,\quad K(x,\cdot)=0.
+\]
+令 $u=\log r$，$\eta=\eta(u)$，则 $\eta K$ 仍无迹、无散度，因为径向导数项与 $K(x,\cdot)$ 配对为零。采用本稿平坦Ricci线性化规范，
+\begin{align}
+D\Ric_e(\eta K)&=-\tfrac12\Delta_e(\eta K),\\
+\Delta_e(\eta K)&=\left(\eta_{rr}+\frac7r\eta_r\right)K
+=\frac{\eta_{uu}+6\eta_u}{r^2}K.
+\end{align}
+故
+\begin{equation}\label{eq:logidentity}
+\boxed{D\Ric_e[\eta(\log r)K]=-
+\frac{\eta_{uu}+6\eta_u}{2r^2}K.}
+\end{equation}
+这是对任意光滑径向 $\eta$ 的证明，不是从检查 $r^p$ 的有限样本归纳而来。因为 $K=O(r^2)$，当 $\eta_u=O(L^{-1})$、$\eta_{uu}=O(L^{-2})$ 时，线性Ricci代价为 $O(L^{-1})$。
+
+\subsection{三个尺度上的完整非线性估计}
+取长度尺度 $a$，令
+\begin{equation}
+a\ll b=a^{1/2}\ll R=a^{1/4}\ll1,\qquad
+L=\log\frac{R}{8b}=\tfrac14|\log a|-\log8.
+\end{equation}
+核心坐标记为 $\rho$，物理半径为 $r=a\rho$。下面证明定理\ref{thm:A1}。
+
+\paragraph{修正核心。}
+设 $k=g_{\rm EH}$、$h=\sigma\widetilde h$，在 $\rho\le2b/a$ 取
+\[
+G_a=a^2(k+a^2h).
+\]
+显式公式给 $|\nabla_k^jh|\le C(1+\rho)^{2-j}$，$j=0,1,2$。由于
+$a^2|h|_k\le Cb^2=o(1)$，$k+a^2h$ 一致正定且与 $k$ 可比。Ricci的真实Taylor展开及 $D\Ric_kh=\sigma k$ 给
+\[
+\Ric(k+a^2h)=\sigma a^2k+\mathcal Q_a,\qquad
+|\mathcal Q_a|_k\le Ca^4(1+\rho)^2.
+\]
+这里二阶余项由
+$a^4(|h||\nabla^2h|+|\nabla h|^2+|\Rm_k||h|^2)$ 控制；
+EH曲率在无穷远衰减，固定bolt附近的各项光滑有界。
+常数缩放不改变 $(0,2)$ Ricci，故
+\[
+|\Ric(G_a)-\sigma G_a|_k\le Ca^4(1+\rho)^2.
+\]
+升指标时必须乘 $a^{-2}$，于是
+\begin{equation}\label{eq:coreestimate}
+\|G_a^{-1}\Ric(G_a)-\sigma I\|_{\op}
+\le C a^2(1+\rho)^2\le C(a^2+r^2).
+\end{equation}
+相对核心扰动趋零，且 $h$ 在bolt处光滑，故核心保持原光滑填充。
+
+\paragraph{内截断。}
+在物理Cartesian坐标中，EH尾项和核心修正尾项分别给
+\[
+G_a=e+H_1+\mathcal T_a,\qquad
+|\partial^j\mathcal T_a|
+\le C\bigl(a^4r^{-4-j}+a^4r^{-2-j}\bigr),\quad j\le2,
+\qquad H_1=\sigma H_*.
+\]
+在 $b\le r\le2b$ 用固定形状的光滑截断去掉 $\mathcal T_a$；
+截断的第 $j$ 阶导数为 $O(b^{-j})$。
+Ricci的二阶项因此增加
+$O(a^4b^{-6}+a^4b^{-4})$。
+剩余二次模型 $e+H_1$ 的非线性残差是 $O(b^2)$，所以总端同态误差为
+\begin{equation}\label{eq:innercutoff}
+C(b^2+a^4b^{-6}+a^4b^{-4})=O(a).
+\end{equation}
+
+\paragraph{对数环带。}
+取光滑函数 $\psi$，在0的邻域为0、在1的邻域为1，并设
+\[
+\eta(r)=\psi\!\left(\frac{\log(r/(4b))}{L}\right),\qquad
+q=H_1+\eta K,\qquad g=e+q,\qquad 4b<r<R/2.
+\]
+由齐次性，
+\[
+|q|\le Cr^2,\quad
+|\partial q|\le Cr(1+L^{-1}),\quad
+|\partial^2q|\le C(1+L^{-1}+L^{-2}).
+\]
+当 $R$ 足够小时，$g$ 与 $e$ 一致可比。写
+$\Ric(e+q)=D\Ric_e q+\mathcal N(q)$，则Christoffel公式给
+\[
+|\mathcal N(q)|\le C\bigl(|q||\partial^2q|+|\partial q|^2\bigr)
+\le Cr^2(1+L^{-1}+L^{-2})^2.
+\]
+利用 $D\Ric_eH_1=\sigma e$ 和式\eqref{eq:logidentity}，
+\[
+|\Ric(g)-\sigma g|
+\le C(L^{-1}+r^2),\qquad
+\|g^{-1}\Ric(g)-\sigma I\|_{\op}
+\le C(L^{-1}+R^2).
+\]
+此估计是任意角向Weyl二次项的完整非线性估计，不要求核心全曲率小。
+
+\paragraph{外截断与全局度量。}
+$A_1$局部群作用是 $x\mapsto-x$，故等变正规坐标中
+$g_0=e+H_0+E_4$，且
+$|\partial^jE_4|\le Cr^{4-j}$，$j\le2$。
+在 $r\asymp R$ 加回 $E_4$，其截断Ricci代价为 $O(R^2)$。
+有限个节点的修改球在小 $a$ 时互不相交，外部保持 $g_0$；
+Ricci是局部算子，故此近似构造没有节点间的额外误差。
+取有限个固定常数的最大值得
+\[
+\delta_\sigma(g_a)\le C(L^{-1}+a^{1/2})
+\le C'|\log a|^{-1}.
+\]
+各过渡段都与正定的二次模型一致可比；核心已单独验证正定和光滑，所以拼接度量全局光滑正定。
+
+\paragraph{GH极限和泡极限。}
+每个核心到半径 $2b$ 的径向长度为 $O(b)$；
+其余过渡区与欧氏环带可比，直径为 $O(R)$。
+把这些区域压到对应轨形节点，在区域外使用恒等识别，所得对应的距离失真为 $O(R)$。
+因此 $(M,g_a)$ GH收敛到 $(M_0,g_0)$。
+在固定核心紧集上 $a^{-2}G_a=k+a^2h\to k$，给所选EH泡极限。
+证明中的常数依赖固定背景、节点及标记；节点数或背景也变化时需要另证一致性。
+
+\subsection{尺度选择与给定误差的构造参数}\label{sec:scalechoice}
+前面的半径选择不是独立的经验参数。保留一般的
+$b=a^\gamma$、$R=a^\kappa$，同一逐区域估计给
+\begin{equation}\label{eq:scalebudget}
+\delta_\sigma(g_a)\le C\left[
+\frac1{(\gamma-\kappa)|\log a|-\log8}
++a^{2\gamma}+a^{4-6\gamma}+a^{4-4\gamma}+a^{2\kappa}\right].
+\end{equation}
+这里 $a/b\to0$ 保证确实处在EH远场，$b/R\to0$ 保证对数环带变长，
+$a^4b^{-6}\to0$ 则是去掉EH尾项时的二阶导数要求。
+三者与 $R\to0$ 一起由
+\[
+0<\kappa<\gamma<\frac23
+\]
+保证。令 $\nu=\min\{2\kappa,4-6\gamma\}>0$，其余两个代数幂次更大，
+故式\eqref{eq:scalebudget}右侧可写为 $C(L^{-1}+a^\nu)$。
+取 $(\gamma,\kappa)=(1/2,1/4)$，内截断为 $O(a)$，外截断为
+$O(a^{1/2})$；最终最慢的一项仍是 $L^{-1}$。
+
+更具体地，先固定这些指数及使坐标、正定性和节点分离有效的阈值 $a_*$。
+若 $C$ 已按上述估计统一选定，要使缺陷不超过 $\varepsilon>0$，可取
+$a=e^{-s}\le a_*$，并要求
+\begin{equation}\label{eq:targetscale}
+s\ge\max\left\{
+\frac{\log8+2C/\varepsilon}{\gamma-\kappa},\,
+\frac1\nu\log\frac{2C}{\varepsilon}\right\}.
+\end{equation}
+这把误差目标、EH长度尺度和两道截断半径联系起来。
+它是依赖固定背景常数的选择规则；未计算 $C,a_*$ 时，不能据此给一个经过验证的数值半径。
+尤其，$a$ 可以随 $\varepsilon$ 指数级缩小，这正是只给
+$\delta\gtrsim1/|\log a|$ 的通量下界无法排除此构造的原因。
+
+\section{EH径向修正的方程、最小二乘试验与失效原因}\label{sec:eh-ls}
+显式核心修正之前的径向试验提供了另一组有用的方程及反向检验。
+以下完整写出它所解的问题；有限网格上的小残差不作为定理\ref{thm:A1}的证明。
+令 $k=g_{\rm EH}$、$W=1-r^{-4}$，采用正交余标架
+\[
+e_0=W^{-1/2}dr,\quad e_1=\frac r2\sigma_1,\quad
+e_2=\frac r2\sigma_2,\quad e_3=\frac{r\sqrt W}{2}\sigma_3,
+\qquad
+h=f_1e_0^2+f_2(e_1^2+e_2^2)+f_3e_3^2.
+\]
+目标是 $D\Ric_kh=\Lambda k$，并另行满足bolt光滑性与指定远场二次项。
+这里的 $r$ 是未缩放EH半径；它不同于前节的物理半径。
+
+\subsection{真实Ricci线性化及其兼容约束}
+写一般双轴度量为
+\[
+q=X(r)dr^2+Y(r)(\sigma_1^2+\sigma_2^2)+Z(r)\sigma_3^2,
+\quad ds=\sqrt X\,dr,\quad \alpha=\sqrt Y,\quad\beta=\sqrt Z.
+\]
+点表示对 $s$ 求导。以该度量自己的正交标架计算，三个Ricci特征值是
+\begin{align}
+\mathscr R_0&=-2\frac{\ddot\alpha}{\alpha}-\frac{\ddot\beta}{\beta},\nonumber\\
+\mathscr R_1=\mathscr R_2
+&=\frac1{\alpha^2}-\frac{\beta^2}{2\alpha^4}
+-\frac{\ddot\alpha}{\alpha}-\frac{\dot\alpha^2}{\alpha^2}
+-\frac{\dot\alpha\dot\beta}{\alpha\beta},\label{eq:biaxialRicci}\\
+\mathscr R_3&=\frac{\beta^2}{2\alpha^4}
+-\frac{\ddot\beta}{\beta}-2\frac{\dot\alpha\dot\beta}{\alpha\beta}.
+\nonumber
+\end{align}
+例如径向截面曲率为 $-\ddot\alpha/\alpha,-\ddot\beta/\beta$，
+轨道内的两类截面曲率为
+$\alpha^{-2}-3\beta^2/(4\alpha^4)-\dot\alpha^2/\alpha^2$ 与
+$\beta^2/(4\alpha^4)-\dot\alpha\dot\beta/(\alpha\beta)$；
+逐方向求和即得式\eqref{eq:biaxialRicci}，因而没有漏掉角向联络项。
+
+在此式代入
+\[
+X_\epsilon=\frac{1+\epsilon f_1}{W},\qquad
+Y_\epsilon=\frac{r^2}{4}(1+\epsilon f_2),\qquad
+Z_\epsilon=\frac{r^2W}{4}(1+\epsilon f_3)
+\]
+并在 $\epsilon=0$ 微分。因为背景Ricci为零，标架变化不产生额外的一阶项。
+置 $z=r^{-4}$，所得 $D\Ric_kh$ 的三个标架分量为
+\begin{align}
+\mathscr L_0f={}&\frac{3-z}{2r}f_1'-Wf_2''-\frac W2f_3''
+-\frac2r f_2'-\frac{1+2z}{r}f_3',\nonumber\\
+\mathscr L_1f={}&-\frac W2f_2''+\frac W{2r}(f_1'-f_3')
+-\frac{5-z}{2r}f_2'
++\frac2{r^2}\bigl[(1+z)f_1-2zf_2-Wf_3\bigr],\label{eq:eh-radial-linear}\\
+\mathscr L_3f={}&-\frac W2f_3''+\frac{1+z}{2r}(f_1'-2f_2')
+-\frac{2+z}{r}f_3'+\frac{2W}{r^2}(f_1-2f_2+f_3).
+\nonumber
+\end{align}
+这些是完整Ricci的线性化，不能替换成未处理规范项的粗Laplacian。
+例如 $\Delta_kr^2=8$，但令 $f_1=f_2=f_3=cr^2$，得到
+\[
+(\mathscr L_0f,\mathscr L_1f,\mathscr L_3f)
+=c(-6-2r^{-4},-6+2r^{-4},-6-2r^{-4}).
+\]
+不存在非零常数 $c$ 使三个分量处处同时等于非零的 $\Lambda$。
+
+把未知最高阶量排成 $(f_1',f_2'',f_3'')$，系数矩阵为
+\[
+M(r)=\begin{pmatrix}
+(3-z)/(2r)&-W&-W/2\\
+W/(2r)&-W/2&0\\
+(1+z)/(2r)&0&-W/2
+\end{pmatrix}.
+\]
+在 $r>1$，$\operatorname{rank}M=2$，且 $(-1,2,1)M=0$。
+因此三个方程 $\mathscr L_\alpha f=\Lambda$ 必须满足
+\begin{equation}\label{eq:eh-radial-constraint}
+\begin{split}
+0={}&\Lambda r^6-(3r^4+1)f_1+2(r^4+1)f_2+2r^5f_2'\\
+&+(r^4-1)f_3+(r^5-r)f_3'.
+\end{split}
+\end{equation}
+可用 $11,33$ 方程解 $f_2'',f_3''$，但还须选规范并保持这一约束。
+在任意低阶数据上把三项最高导数当作独立未知量，增广矩阵一般秩为3，
+因而并非一个可直接求逆的三方程常规边值问题。
+
+在EH背景上，bolt处 $s=\sqrt{r-1}+O((r-1)^{3/2})$。
+对固定周期 $2\pi$，平滑变分至少要求 $f_1(1)=f_3(1)$、
+系数在平滑极坐标中具有相应偶展开，且 $f_1-f_3=O(s^2)$。
+$r$ 导数 $f_i'(1)$ 不必为零；在 $r=1+0.015$ 强加近似Neumann条件不能替代bolt展开。
+无穷远令 $f_i=c_ir^2+o(r^2)$ 并有相应的一、二阶渐近估计，
+式\eqref{eq:eh-radial-linear}的常数阶只给
+\begin{equation}\label{eq:eh-quadratic-relation}
+3(c_1-2c_2-c_3)=\Lambda.
+\end{equation}
+这一个标量关系没有指定完整的环境二次张量，也没有固定所有坐标自由度。
+
+\subsection{K\"ahler势化简为何不能跨过bolt}
+对固定EH复结构，令 $\mathscr D\phi$ 表示下列K\"ahler型对称张量，
+其对应的实 $(1,1)$ 形式采用这里的 $i\partial\bar\partial$ 规范。
+写 $q=\phi'$，则
+\[
+\mathscr D\phi=A_\phi(e_0^2+e_3^2)+B_\phi(e_1^2+e_2^2),\quad
+A_\phi=Wq'+\frac{1+3r^{-4}}r q,\quad B_\phi=\frac{2W}r q.
+\]
+有 $A_\phi+B_\phi=\Delta_k\phi$，此处径向Laplacian为
+$\Delta_k\phi=r^{-3}(r^3W\phi')'$。
+把 $f_1=f_3=A_\phi,f_2=B_\phi$ 代入式\eqref{eq:eh-radial-linear}，
+整理各阶导数后得到精确恒等式
+\begin{equation}\label{eq:eh-kahler-identity}
+D\Ric_k(\mathscr D\phi)=-\tfrac12\mathscr D(\Delta_k\phi).
+\end{equation}
+径向函数 $r^2$ 给 $A=4+4r^{-4}$、$B=4-4r^{-4}$，所以其对应形式并非常数倍的K\"ahler形式
+$\omega=e_0\wedge e_3+e_1\wedge e_2$。
+真正使 $A=B=4$ 的端部势为
+\[
+\phi_*(r)=r^2+\frac12\log\frac{r^2-1}{r^2+1},\qquad
+\phi_*'=\frac{2r^5}{r^4-1}.
+\]
+它在bolt有对数奇性。更本质地，若 $\phi$ 全局光滑且
+$D\Ric_k(\mathscr D\phi)=\Lambda k$，则对应的形式方程为
+$-\frac12i\partial\bar\partial(\Delta_k\phi)=\Lambda\omega$。
+左侧在bolt二球上的积分为零，右侧为
+$\Lambda\int_{S^2}\omega\ne0$，矛盾。
+因此该化简可用于端部计算，却不能给非零源方程的全局光滑势解。
+截断奇异势会在核心或过渡区留下必须重新求解的张量源；
+一般非K\"ahler修正 $\widetilde h$ 不受这一势表示限制。
+
+\subsection{实际离散问题、边界行与保存的残差}
+最小二乘试验采用 $N=180$ 个等距节点
+$r_k=1.015+k\Delta r$、$R_0=8$、$\Delta r=(8-1.015)/179$，
+未知数为 $F_{i,k}\simeq f_i(r_k)$，并取 $\Lambda=1$。
+内部差分为
+\[
+(D_1F)_k=\frac{F_{k+1}-F_{k-1}}{2\Delta r},\qquad
+(D_2F)_k=\frac{F_{k+1}-2F_k+F_{k-1}}{(\Delta r)^2}.
+\]
+以 $D_1,D_2$ 替换式\eqref{eq:eh-radial-linear}中的导数，记为
+$\mathscr L_\alpha^{\Delta r}$。实际拟合的目标是
+\begin{align}
+J(F)={}&\sum_{k=2}^{N-3}\sum_{\alpha=0,1,3}
+|\mathscr L_\alpha^{\Delta r}F(r_k)-1|^2
++20^2|F_{1,0}-F_{3,0}|^2\nonumber\\
+&+5^2\sum_{i=1}^3|(D_1F_i)_0|^2
++10^2\sum_{i=1}^3|B_{R_0}^{\Delta r}F_i|^2\label{eq:eh-ls-objective}\\
+&+30^2\left|\frac{F_{1,N-1}-2F_{2,N-1}-F_{3,N-1}}{R_0^2}
+-\frac13\right|^2.\nonumber
+\end{align}
+这里边界的 $D_1$ 使用三点单边差分。
+需要区别原拟采用的 $B_{R_0}f=f'-2f/R_0$ 与保存程序的实际行：
+构造稀疏行时，末点导数系数 $3/(2\Delta r)$ 被值系数覆盖，得到
+\begin{equation}\label{eq:eh-ls-boundary}
+B_{R_0}^{\Delta r}F
+=\frac{F_{N-3}-4F_{N-2}}{2\Delta r}-\frac2{R_0}F_{N-1},
+\end{equation}
+而非 $(D_1F)_{N-1}-2F_{N-1}/R_0$。
+因此保存的输出连预定的外端Robin惩罚也未实现；不能将它解释成相应连续边值问题的近似解。
+即使修正此离散行，式\eqref{eq:eh-ls-objective}仍只是内部采样方程与有限权重的边界惩罚。
+
+原计算在20000次迭代上限停止，记录的条件数估计约 $1.02\times10^7$、
+加权残差二范数约 $0.09195$。把求得的网格值重新代入同一差分算子，
+全网格缺陷最大值约为 $4683.885$、中位数为 $5.20\times10^{-4}$；
+去掉两端各四个节点后，最大值为 $0.0125163$、中位数为 $4.97\times10^{-4}$。
+这组数据展示了端点失控与内区拟合同时发生，不能用后一个数字替代前一个数字。
+
+\subsection{非线性缩放与尚缺的连续控制}
+对同一网格数据取三次样条插值 $h$，令
+$\widehat g_\epsilon=k+\epsilon h$、$g_\epsilon=\epsilon\widehat g_\epsilon$。
+由式\eqref{eq:biaxialRicci}可直接计算 $\widehat g_\epsilon$ 的三个Ricci特征值；
+物理输入的缺陷是
+\begin{equation}\label{eq:eh-ls-physical}
+\delta_+(g_\epsilon)
+=\sup_r\max_{\alpha=0,1,3}
+\left|\epsilon^{-1}\mathscr R_\alpha(\widehat g_\epsilon)-1\right|.
+\end{equation}
+这一步还必须验证 $1+\epsilon f_i>0$。
+保存的非线性试验在
+$[1.02,\min\{8,\epsilon^{-1/4}\}]$ 上采样1000点，得到
+\begin{center}
+\small
+\begin{tabular}{c c c c}
+\toprule
+$\epsilon$ & 全采样区最大缺陷 & $r>1.2$ 最大缺陷 & $r>1.2$ 中位缺陷\\\midrule
+$10^{-2}$ & $18.6592$ & $0.687814$ & $0.101221$\\
+$10^{-3}$ & $20.3107$ & $0.652323$ & $0.0134248$\\
+$3\times10^{-4}$ & $20.3633$ & $0.646286$ & $0.00417983$\\
+$10^{-4}$ & $10491.754$ & $10491.754$ & $0.00168435$\\\bottomrule
+\end{tabular}
+\end{center}
+最后一行的采样区到达原外端 $r=8$，此前被排除的外端大误差进入最大值。
+上述数字均是已保存的有限采样结果，不是连续上界。
+
+这种现象也由缩放本身解释。在固定光滑紧域上写
+$\Ric(k+\epsilon h)=\epsilon D\Ric_kh+\epsilon^2Q_\epsilon(h)$，则
+\begin{equation}\label{eq:eh-ls-linear-floor}
+g_\epsilon^{-1}\Ric(g_\epsilon)-I
+=\widehat g_\epsilon^{-1}(D\Ric_kh-k)
++\epsilon\widehat g_\epsilon^{-1}(Q_\epsilon(h)-h).
+\end{equation}
+固定的线性残差没有因缩小核心而消失。若要求它趋零，需要一族连续修正
+$h_\epsilon$ 的真实线性残差趋零，并同时控制Taylor余项、正定性、bolt及外端匹配。
+对一个已覆盖的径向区间，网格值成为上界还至少需要例如
+\[
+\|\mathscr L_\alpha h-1\|_\infty
+\le\max_k|\mathscr L_\alpha h(r_k)-1|
++\frac{\Delta r}{2}\|\partial_r(\mathscr L_\alpha h)\|_\infty
+\]
+这样的插值余项；它涉及第三阶控制，在bolt附近须改用平滑坐标。
+本试验既未覆盖bolt，也未提供该连续余项，更未完成闭流形上的拼接。
+
+另一个独立限制来自角向数据。乘积背景的正规二次项为
+\begin{equation}\label{eq:product-quadratic-jet}
+H_0=-\frac\Lambda3\left[
+(x_2dx_1-x_1dx_2)^2+(x_4dx_3-x_3dx_4)^2\right].
+\end{equation}
+它对两因子各自旋转不变，却不对混合两个复坐标的整个 $U(2)$ 不变：
+平面 $\langle e_1,e_2\rangle$ 的截面曲率为 $\Lambda$，
+将其用酉变换送到
+$\langle(e_1+e_3)/\sqrt2,(e_2+e_4)/\sqrt2\rangle$ 后，曲率变为 $\Lambda/2$。
+所以三函数径向修正即使精确解出，也没有因此匹配这个完整环境jet。
+对数构造以共同规范中的Weyl差另行连接两端，所解决的问题与强制一个径向profile直接匹配所有角模不同。
+
+本节方程与数值分别对应计算附录中的
+\path{step66_ode_matrix_extract.py}、\path{step66_ode_compatibility.py}、
+\path{step66_kahler_substitute_step65.py}、\path{step66_least_squares_h_profile.py}
+及\path{step66_audit_ls_profile_nonlinear.py}；其数学结论及失败机制已在上文写出。
+
+\section{首障碍、通量与对数尺度}
+经典refined模型的写法为
+\[
+g_t=t h_t,\quad h_t=g_{\rm cal}+th,\quad
+\Ric(h_t)=t\Lambda h_t+t\lambda o+R_t,
+\quad |R_t|_{g_{\rm cal}}\le Ct^2\rho^2.
+\]
+升指标后
+\begin{equation}\label{eq:firstobs}
+g_t^{-1}(\Ric(g_t)-\Lambda g_t)
+=\lambda h_t^{-1}o+t^{-1}h_t^{-1}R_t.
+\end{equation}
+在固定核心紧集，余项趋零，非零 $\lambda$ 则留下阶一各向异性；过渡区按 $\rho\sim t^{-1/4}$ 有余项 $O(t^{1/2})$。这是\emph{此固定渐近匹配框架}中的可靠结论，直接解释为什么小加权或有限 $L^p$ 误差不等于原题的无权夹逼\cite{MV,Biquard}。
+
+对数构造改变跨尺度二次项的匹配方式，故式\eqref{eq:firstobs}只约束固定渐近匹配的refined族，并非任意点态近Einstein解消的必要条件。首障碍已经为零时，refined近似可有更快的点态误差率。
+
+\subsection{通量的精确边界}
+若某条环带论证只给 $\delta\ge c/L$，而 $L\to\infty$，它就不给统一Ricci间隙。条件性投影理论中出现
+\[
+|\mathcal O_i|\le C\delta_i\log(1/t_i)+o(1).
+\]
+只有证明 $\delta_i\log(1/t_i)\to0$，才可能强迫该障碍消失。尺度 $t_i\lesssim e^{-c/\delta_i}$ 是需要研究的允许逃逸，而不是可直接剔除的“病态参数”。
+
+完整通量传递尚要控制环境高阶项、规范、坏集、非线性余项和内外端的同一归一化。干净锥环带上的Wronskian恒等式，不等于实际任意气泡树上的投影定理。二次 $\ell=2$ 模的对数临界性可作为机制分析；更高模式的幂次行为也须说明模型与尺度，不能凭此声称所有高阶精确障碍都被近似夹逼消去。
+
+\subsection{一般齐次模式：对数分母为何只出现在二次阶}\label{sec:ellflux}
+设 $d\ge4$，有限群 $\Gamma\subset O(d)$ 在球面上自由作用，$A=\{b<r<R\}/\Gamma$。取非零、$\Gamma$不变的对称二张量 $K_\ell$，其Cartesian分量齐次次数为整数 $\ell\ge2$，并满足
+\[
+K_\ell(rx)=r^\ell K_\ell(x),\qquad
+\tr K_\ell=0,\quad\operatorname{div}K_\ell=0,\quad
+\Delta K_\ell=0,\quad K_\ell(x,\cdot)=0.
+\]
+定义对偶模式及两个球面积分
+\[
+o_\ell=r^{-(d+2\ell-2)}K_\ell,\qquad
+I_{K_\ell}=\int_{S^{d-1}/\Gamma}|K_\ell|^2,\qquad
+J_{K_\ell}=\int_{S^{d-1}/\Gamma}\|K_\ell\|_*.
+\]
+球面积分均在 $r=1$ 上；$\|\cdot\|_*$ 为对称矩阵的核范数，即特征值绝对值之和，与算子范数对偶。$o_\ell$ 同样无迹、无散度、调和且径向为零：调和性由齐次调和张量分量的Kelvin变换给出，新增径向导数在散度中与 $K_\ell(x,\cdot)$ 配对为零。
+
+若光滑 $u$ 在内边界邻域为零、外边界邻域为 $K_\ell$，则无须对 $u$ 预设Bianchi规范，就有
+\begin{equation}\label{eq:ellflux}
+\int_A\langle D\Ric_e u,o_\ell\rangle
+=-\frac{d+2\ell-2}{2}I_{K_\ell}.
+\end{equation}
+证明中，$D\Ric_eu$ 的规范梯度项分部积分后为零，因为 $o_\ell$ 无散度且其法向收缩为零。剩余 $-\frac12\Delta u$ 与调和 $o_\ell$ 的Green公式只留下外边界Wronskian。那里
+$\partial_rK_\ell=\ell r^{-1}K_\ell$、
+$\partial_ro_\ell=-(d+\ell-2)r^{-1}o_\ell$，相减恰给系数 $d+2\ell-2$；径向幂次与面积元抵消，得到式\eqref{eq:ellflux}。
+
+无权对偶质量须完整保留：
+\begin{align}
+\int_A\|o_\ell\|_*\,dV_e
+&=J_{K_\ell}H_\ell(b,R),\\
+H_\ell(b,R)&=\int_b^Rr^{1-\ell}\,dr
+=\begin{cases}
+\log(R/b),&\ell=2,\\[1mm]
+\dfrac{b^{2-\ell}-R^{2-\ell}}{\ell-2},&\ell>2.
+\end{cases}
+\end{align}
+因此
+\begin{equation}\label{eq:ellfluxbound}
+\|D\Ric_eu\|_{\infty,\op}
+\ge\frac{(d+2\ell-2)I_{K_\ell}}{2J_{K_\ell}H_\ell(b,R)}.
+\end{equation}
+在 $b/R\to0$ 时，二次模式给 $c/\log(R/b)$，高次模式给 $cb^{\ell-2}$。对所有 $\ell\ge2$，改用加权范数 $\sup_A r^{2-\ell}|D\Ric_eu|_{\op}$ 才又得到 $c/\log(R/b)$；原题并不控制这个额外权重。上述结论只比较所声明的平锥模式；将锥次数 $\ell$ 与精确解消障碍塔的阶数对应，以及把线性公式传到实际几何，仍需各自的匹配和误差论证。
+
+\subsection{非线性配对与加权能量}
+设 $g=e+q$，内外边界邻域分别为 $e+H_1,e+H_0$，其中
+$D\Ric_eH_i=\sigma e$、$K=H_0-H_1$。假设
+$|q|\le Br^2$、$|Dq|\le Br$、$BR^2\le1/2$。
+Ricci展开为
+\[
+\Ric(e+q)-\sigma(e+q)=D\Ric_e(q-H_1)
++A(q)*D^2q+C(q)*(Dq)^2-\sigma q,
+\]
+其中 $A(q)=O(q)$，$C(q)$一致有界。与 $o=r^{-d-2}K$ 配对时，线性项积分为 $-(d+2)I_K/2$。
+最高阶余项只需积分分部一次：
+\[
+\int A(q)*D^2q*o
+=\int_{\partial A}A(q)*Dq*o
+-\int DA(q)*Dq*o-\int A(q)*Dq*Do.
+\]
+$|o|=O(r^{-d})$、$|Do|=O(r^{-d-1})$，故体积分由
+$CB^2\int_b^Rr\,dr$ 控制，边界项为 $O(B^2(R^2+b^2))$，目标项为 $O(BR^2)$。
+度量比较和算子/核范数对偶给
+\[
+\left|\int\langle\Ric(g)-\sigma g,o\rangle_e\right|
+\le\delta_\sigma(g)J_K(L+CBR^2).
+\]
+因此不需内部 $D^2q$ 界，就有
+\begin{equation}\label{eq:nonlinearflux}
+\delta_\sigma(g)\ge
+\frac{(d+2)I_K/2-C_K(B^2+B)R^2}
+{J_K(L+CBR^2)}.
+\end{equation}
+若端点有相对 $C^1$ 误差 $\epsilon_\pm$，分子另减 $C_K(\epsilon_-+\epsilon_+)$。
+
+还可用固定小 $C^0$ 界和能量
+$\mathcal E=\int_A r^{-d}|Dq|^2$ 代替上述点态一阶界。
+沿射线积分分部给
+\[
+2\int_b^Rr^{-3}|q|^2\,dr
+=\bigl[-r^{-2}|q|^2\bigr]_b^R+
+2\int_b^Rr^{-2}\langle q,\partial_rq\rangle\,dr.
+\]
+内端 $q=O(b^2)$，略去外端负项，应用Cauchy不等式后对球面积分，得
+\[
+\int_A r^{-d-2}|q|^2\le2\mathcal E+Cb^2,\qquad
+\int_A r^{-d}|q|\le CR(\sqrt{\mathcal E}+b).
+\]
+将它们代入上述配对，分别控制
+$|Dq|^2r^{-d}$、$|q||Dq|r^{-d-1}$和$|q|r^{-d}$，得到
+\begin{equation}\label{eq:energyflux}
+\delta_\sigma(g)\ge
+\frac{(d+2)I_K/2-C(\epsilon+\mathcal E+R\sqrt{\mathcal E}+R^2)}
+{J_KL+CR(\sqrt{\mathcal E}+R)}.
+\end{equation}
+这里保留相对 $C^1$ 端点控制；$\mathcal E,R,\epsilon\to0$ 时首项不变。
+无权坐标范数的小量并不自动给这种加权能量。
+
+\subsection{球面失配的锐系数}
+球面外项与EH内项之差满足
+\[
+Q=K/r^2,\qquad \operatorname{spec}(Q)=(0,-\sigma/18,\sigma/36,\sigma/36).
+\]
+令 $v_\Gamma=\Vol(S^3/\Gamma)$，则
+$I_K=v_\Gamma/216$、$J_K=v_\Gamma/9$。
+四维通量为 $3I_K$，无标量约束的首项下界因此是 $1/(8L)$。
+取
+\[
+q=H_1+\eta K+\frac{\sigma}{144}\eta' r^2e,\qquad t=\log(r/b),
+\]
+撇号表示 $t$ 导数。对常数 $f$ 有
+$D\Ric_e(fr^2e)=-6f e$，故主残差为
+$\eta'(-3Q-\sigma e/24)$，其算子范数恰为 $|\eta'|/8$。
+两端各用 $O(\sqrt L)$ 的缓变平台，可令
+$\max\eta'=L^{-1}+O(L^{-3/2})$、$\eta''=O(L^{-3/2})$，
+更高导数亦为低阶项；这在线性模型中达到 $1/(8L)+o(L^{-1})$。
+非线性族再取 $R^2=o(L^{-1})$ 及相容尾项即可保留该首项。
+
+精确常标量 $s=4\sigma$ 时，$T=\Ric_g-\sigma g$ 对 $g$ 无迹、无散度。
+径向投影 $P_r$ 与 $Jx$ 方向的秩一投影 $P_J$ 满足
+\[
+r^{-4}(e-4P_r)=-\tfrac12\operatorname{Hess}_e(r^{-2}),\qquad
+Q-\frac{\sigma}{144}(e-4P_r)-\frac{\sigma}{48}e=-\frac{\sigma}{12}P_J.
+\]
+在测试张量中减去迹与Hessian项：前者配对为零，后者积分分部只留边界。
+由 $g$ 到 $e$ 的转换按式\eqref{eq:nonlinearflux}控制；
+固定二次端点的残差为 $O(r^2)$，边界项为 $O(R^2+b^2)$。
+新测试张量的质量首项为 $v_\Gamma L/12$，通量首项仍为 $v_\Gamma/72$，故
+\[
+\delta_\sigma(g)\ge
+\frac{v_\Gamma/72-O(\epsilon_-+\epsilon_++(B^2+B)R^2)}
+{v_\Gamma L/12+O(1+BR^2)}.
+\]
+这些误差趋零时 $\liminf L\delta_\sigma(g)\ge1/6$。
+纯Weyl插值的主残差算子范数为 $|\eta'|/6$；
+若另有 $o(L^{-1})$ 的常标量修正，即达到该首项。
+球面双解消中这一修正的径向Hessian证明见
+\href{20260912.tex}{《局部构造与代数平滑》}中“球面模型的锐系数与常标量代价”。
+这些常数衡量指定匹配的效率，不是维数统一的正缺陷。
+
+\subsection{高阶障碍塔的尺度阈值}
+锥次数 $\ell$ 与精确解消展开阶数 $k$ 是不同指标。
+式\eqref{eq:ellfluxbound}给出
+$\delta L\ge c+o(1)$（$\ell=2$）或
+$\delta b^{2-\ell}\ge c+o(1)$（$\ell>2$）。
+因此强迫相应系数消失需有 $\delta L\to0$ 或
+$\delta b^{2-\ell}\to0$，单独 $\delta\to0$ 不足。
+
+另一方面，若固定核心紧集上
+\[
+g_t=t h_t,\quad h_t\to h_0,\quad
+\Ric(g_t)-\sigma g_t=t^k\Theta_k+o(t^k),
+\]
+则
+\[
+g_t^{-1}(\Ric(g_t)-\sigma g_t)
+=t^{k-1}h_t^{-1}\Theta_k+o(t^{k-1}).
+\]
+$k=1$ 的固定非零系数留下阶一缺陷；$k\ge2$ 的固定非零系数却与缺陷趋零相容。
+$t=a^2$ 时 $a^{2(k-1)}|\log a|\to0$，所以后者比对数拼接允许的误差更小。
+要读出 $\Theta_k=0$，须控制相应投影中的端同态残差为 $o(t^{k-1})$。
+这排除了仅凭零阶近Einstein估计消去全部高阶障碍的推理，
+但并不独自证明某一几何族确有非零高阶障碍；还须给实际展开和源识别。
+
+\subsection{仅使用零阶Ricci缺陷的配对目标及其质量限制}\label{sec:c0pairing}
+考虑另一种只依赖零阶Ricci缺陷的障碍检测方式。设四维近正Einstein输入满足 $\delta_i=\|g_i^{-1}\Ric_{g_i}-I\|_{\infty,\op}\to0$；用 $a_i$ 表示长度尺度、$t_i=a_i^2$ 表示度量尺度。希望在实际度量上构造对称二张量 $\Phi_i$，使
+\begin{equation}\label{eq:c0pairing}
+\int\langle\Ric_{g_i}-g_i,\Phi_i\rangle_{g_i}\,d\mu_{g_i}
+=t_i\mathcal O_i+o(t_i),\qquad
+\|\Phi_i\|_{L^1,*}=O(t_i).
+\end{equation}
+这里 $L^1,*$ 积分相对 $g_i$ 升指标后的核范数；固定维数下也可采用等价范数并保留其常数。算子范数的对偶估计直接给
+\[
+\left|\int\langle\Ric_{g_i}-g_i,\Phi_i\rangle_{g_i}\,d\mu_{g_i}\right|
+\le\delta_i\|\Phi_i\|_{L^1,*}=O(\delta_it_i).
+\]
+若式\eqref{eq:c0pairing}的全部误差成立，除以 $t_i$ 才能推出 $\mathcal O_i\to0$，且无需对Ricci缺陷求导。
+
+$L^1$尺度不能只凭维数断言：在固定缩放坐标域上，$g_i\sim a_i^2e$，一个有界 $(0,2)$ 试探张量的范数为 $O(a_i^{-2})$，体积元为 $O(a_i^4)$，因而质量为 $O(a_i^2)=O(t_i)$。但EH的ADM质量为零，相关远场项在 $\rho^{-4}$ 阶；普通质量、平移或旋转通量未必检测所需二次曲率系数。若改用二次增长的锥场，扩大环带后的积分会被外端主导，上述固定域 $L^1$ 估计不再足够。此时需要实际的边界通量、正确的余核模式，或带完整长环带质量账本的配对。
+
+还须证明截断和传输误差为 $o(t_i)$、识别 $\mathcal O_i$ 的曲率块/标记含义，并控制规范、外端与非线性项。式\eqref{eq:ellfluxbound}的对数质量正说明这不是所有近Einstein输入都已具备的接口；不能同时保留对数逃逸构造，又把这个未证配对当成普遍首障碍消失定理。
+
+\section{EH非恒定角模的径向比较}
+对EH度量取
+\[
+g_{\rm EH}=A^{-1}d\rho^2+\frac{\rho^2}{4}
+(\sigma_1^2+\sigma_2^2+A\sigma_3^2),\qquad A=1-\rho^{-4}.
+\]
+在偶数 $l\ge2$、Hopf频率 $m$ 的\emph{标量分离方程}中，正的bolt正则径向支满足
+\[
+(pF')'-qF=0,\quad p=\rho^3A,\quad
+q=l(l+2)\rho+4m^2\rho(A^{-1}-1).
+\]
+令 $z=\rho^l$，直接计算
+\[
+\mathcal Lz=-l(l-2)\rho^{l-3}-4m^2\rho^{l+1}(A^{-1}-1)\le0.
+\]
+$J=p(zF'-z'F)$ 满足 $J'=-F\mathcal Lz\ge0$；正则边界给 $J\to0$。因此
+\begin{equation}\label{eq:angular}
+\frac{F(\rho)}{F(R)}\le\left(\frac{\rho}{R}\right)^l
+\le\left(\frac{\rho}{R}\right)^2,\qquad1\le\rho\le R.
+\end{equation}
+这里使用了解的正性、bolt正则性和所给角频率规范。该结果统一处理这类标量方程的非恒定模式，不包含 $l=0$，也不是整个Lichnerowicz张量系统的全频谱可逆性。合理用途是核心/边界估计的一个模块，而不是宣布Einstein非线性匹配已经全部解决。
+
+\section{球面乘积商的多节点约化}
+\subsection{曲率块与固定标记}
+$(S^2\times S^2)/\Z_2$ 的四节点乘积背景在所用曲率规范下具有
+\[
+R_+=R_-=\operatorname{diag}(\Lambda,0,0).
+\]
+它不是共形平坦背景，也不由 $\det R_\pm=0$ 推出K\"ahler存在性。全规范固定算子的核与TT核必须区分。采用 $P=\frac12\nabla^*\nabla-\mathring R$ 时，形状方向满足
+\[
+P(g_A-g_B)=-\Lambda(g_A-g_B),
+\]
+所以不能把整个Green配对当成正定。乘积谱的分母为 $(\lambda_A+\lambda_B+\text{shift})^{-1}$，不是两个静态Green核分母相乘。
+
+用 $M_{\boldsymbol\epsilon}$ 记录\emph{实际标记解消}，而不是提前替换为标准连通和。标准固定标记下的有理不变量 $\chi=8$、$(b_+,b_-)=(1+r,5-r)$ 只能在相同取向计数约定下使用；奇偶性、spin及微分同胚类型需要整数交叉形式和实际边界粘合/handle证明。相同有理不变量不识别smooth type。
+
+\subsection{完整算子核、TT切片与节点反射}\label{sec:fullkernel}
+令两个圆球的截面曲率均为 $\Lambda>0$，采用
+$P=\frac12\nabla^*\nabla-\mathring R$、$\Delta_E=2P$。
+乘积上的对称二张量正交分解为两个因子的纯迹部分、两个因子的无迹对称部分及混合一形式部分，$P$保持这一分解。
+
+在第一纯迹部分 $f(x,y)g_A$ 上，$\mathring R(fg_A)=\Lambda fg_A$，所以
+\[
+P(fg_A)=\left(\tfrac12\Delta f-\Lambda f\right)g_A;
+\]
+第二纯迹部分相同。两球的标量谱是
+$\lambda_\ell=\Lambda\ell(\ell+1)$，故零特征值条件为
+$\lambda_{\ell_A}+\lambda_{\ell_B}=2\Lambda$，即
+$(\ell_A,\ell_B)=(1,0)$或$(0,1)$。
+
+对支撑在一个球因子上的无迹二张量 $h$，常曲率公式给
+$\mathring Rh=-\Lambda h$，从而
+$\langle Ph,h\rangle=\frac12\|\nabla h\|^2+\Lambda\|h\|^2>0$。
+在混合一形式扇区曲率作用为零。球面一形式的Hodge谱从 $2\Lambda$ 起，Weitzenböck公式给粗Laplacian谱从 $\Lambda$ 起，因此乘积混合扇区的 $P$ 谱至少为 $\Lambda$。这些扇区均不含零模。
+
+商作用 $\rho(z,w)=(-z,-w)$ 在每个第一谐函数空间中仅保留轴向函数，分别记为 $u,v$。于是商上完整的核恰为
+\begin{equation}\label{eq:fullkernel}
+\ker P=\operatorname{span}\{ug_A,ug_B,vg_A,vg_B\}.
+\end{equation}
+若
+$h=(Au+Bv)g_A+(Cu+Dv)g_B$
+属于TT，则散度方程给 $A\,du+D\,dv=0$，故 $A=D=0$；
+迹方程再给 $Bv+Cu=0$，故 $B=C=0$。因此
+\begin{equation}\label{eq:ttkernel}
+\ker(P|_{TT})=0.
+\end{equation}
+等价地，对球面第一谐函数 $f$，
+$\nabla^2f=-\Lambda fg_A$，所以形式
+$Afg_A+Bfg_B+C\nabla^2f$
+中的Hessian与共形项不独立；TT条件强迫整个张量为零。这一点是使用一般乘积变形公式\cite{Kroncke}时的球面特例。
+
+平行相对缩放模满足
+\[
+P(g_A-g_B)=-\Lambda(g_A-g_B),
+\]
+它是负模而不是零模。因而TT核平凡不等于完整算子可逆，也不等于逆算子正定。Green算子需投影掉式\eqref{eq:fullkernel}的四维核，并在约化方程中保留相应核投影及其参数变化。
+
+反射 $c(z,w)=(\bar z,w)$ 与 $\rho$ 交换、固定四节点且反转乘积取向，因此交换 $\Lambda^+$与$\Lambda^-$。
+单节点两种手性的数据由整个度量芽的等距变换共轭，故所有阶的局部零集、秩和标量不变量共轭。
+在同时变换背景、端部标记与所有局部数据时，反向节点集 $S$ 被送到 $S^c$；
+若约化按这一变换等变定义，相应模型方程共轭。这里不是已经构造了完整约化系统，
+也不是在保留原定向与原粘合标记时证明两种填充等价。因而下面固定正背景的表中
+一个与三个反向节点仍分别列出；两个反向节点还须区分相邻、对角及粘合标记。
+固定基下的系数数组不必逐项相等。
+
+\subsection{乘积谱的全部张量类型与归一化}\label{sec:productspectrum}
+完整核的计算还可展开为具体的谱表示。此处球面谱使用非负Laplacian
+$\Delta=-\operatorname{div}\nabla$。取每个球面上的单位标量谐函数
+$Y_{\ell m}$，$\Delta Y_{\ell m}=\lambda_\ell Y_{\ell m}$，
+$\lambda_\ell=\Lambda\ell(\ell+1)$。一形式模由
+$dY_{\ell m}$、$*dY_{\ell m}$ 给出，$\ell\ge1$；
+Weitzenböck公式给其粗Laplacian特征值 $\lambda_\ell-\Lambda$。
+无迹对称二张量的电、磁模可取
+\[
+E_f=\nabla^2f+\frac{\lambda_\ell}{2}fg,
+\qquad M_f=\mathcal L_{(*df)^\sharp}g,\qquad \ell\ge2.
+\]
+对 $\|f\|_2=1$，Bochner积分与 $\tr\nabla^2f=-\lambda_\ell f$ 给
+\begin{equation}\label{eq:spherical-tensor-norms}
+\|E_f\|_2^2=\frac12\lambda_\ell(\lambda_\ell-2\Lambda),
+\qquad \|M_f\|_2^2=4\|E_f\|_2^2.
+\end{equation}
+第二式来自二维无迹张量上 $M_f=\pm2JE_f$，其中 $J$ 平行且保范数。
+因此使用完整Lie导数的磁模时，不能一面把其极点幅度乘2，一面仍用电模的范数平方。
+当 $\ell=1$，$E_f=0$，且 $(*df)^\sharp$ 为Killing场，故 $M_f=0$。
+
+常曲率的导数交换给
+\[
+\nabla^*\nabla E_f=(\lambda_\ell-4\Lambda)E_f,
+\qquad \nabla^*\nabla M_f=(\lambda_\ell-4\Lambda)M_f.
+\]
+例如对Hessian使用
+$\nabla^*\nabla(\nabla^2f)=
+(\lambda_\ell-4\Lambda)\nabla^2f-2\Lambda\lambda_\ell fg$，
+加上纯迹修正即得第一式；$J$平行给第二式。
+于是完整乘积张量空间的各类模式具有同一形式的 $P$ 特征值
+\begin{equation}\label{eq:product-spectrum}
+\mu_{\ell k}=\frac{\lambda_\ell+\lambda_k}{2}-\Lambda,
+\end{equation}
+但允许的次数不同：
+\begin{center}
+\small
+\begin{tabular}{c c c}
+\toprule
+张量类型 & 模式 & 次数\\\midrule
+两种纯迹 & $Y_{\ell m}Y_{kn}g_A,\ Y_{\ell m}Y_{kn}g_B$ & $\ell,k\ge0$\\
+AA无迹 & $E_{Y_{\ell m}}Y_{kn},\ M_{Y_{\ell m}}Y_{kn}$ & $\ell\ge2,\ k\ge0$\\
+BB无迹 & $Y_{\ell m}E_{Y_{kn}},\ Y_{\ell m}M_{Y_{kn}}$ & $\ell\ge0,\ k\ge2$\\
+AB混合 & $\alpha_{\ell m}\otimes\beta_{kn}+\beta_{kn}\otimes\alpha_{\ell m}$ & $\ell,k\ge1$\\\bottomrule
+\end{tabular}
+\end{center}
+最后一行的 $\alpha,\beta$ 各自遍取恰当与余恰当一形式。
+纯迹模式的曲率作用为 $+\Lambda$，无迹AA/BB模式为 $-\Lambda$，
+AB为零；与上述粗谱相加，逐行验证式\eqref{eq:product-spectrum}。
+这些类型没有预先施加TT条件。其完备性来自乘积张量分解、球面标量展开和一形式Hodge分解；
+二维无迹张量在电、磁模之外的正交余项必须散度为零，
+而球面没有非零TT二张量，等价于 $\CP^1$ 上没有全纯二次微分。
+
+商作用是在两因子上同时旋转角 $\pi$，不是对跖映射。
+以复谐函数记号写，它保留 $m+n$ 为偶数的乘积模；
+$d,*$、Hessian及Lie导数均与该保向旋转交换，故相同规则适用于以上各行。
+若一个不变模 $\psi_\alpha$ 未重新归一化，其商上范数平方是
+\[
+N_\alpha=\|\psi_\alpha\|_{L^2((S^2\times S^2)/\Z_2)}^2
+=\frac12\|\psi_\alpha\|_{L^2(S^2\times S^2)}^2.
+\]
+所有 $\mu_{\ell k}=0$ 的项须按式\eqref{eq:fullkernel}投影去掉；
+有限个负特征值不能因计算只循环 $\mu>0$ 而从完整逆中删除。
+纯迹、无迹张量和AB扇区使用同一分母，也仍各有自己的源收缩、接收jet及归一化。
+
+\subsection{张量多极、投影Green算子与二阶jet}\label{sec:greenjet}
+令 $\Pi$ 为完整 $L^2$ 核投影，$G_P^\perp$ 为核正交补上的逆：
+\[
+P G_P^\perp=G_P^\perp P=I-\Pi,\qquad
+\Pi G_P^\perp=0.
+\]
+源节点 $p_i$ 的EH尾项 $H^4(\zeta_i)$ 决定一个张量多极分布 $\mathcal S_i$。
+其系数、分布导数和Bianchi条件必须与实际尾项匹配。
+若 $\bar h_i^4=G_P^\perp\mathcal S_i$，则分布意义下
+\[
+P\bar h_i^4=\mathcal S_i-\Pi\mathcal S_i.
+\]
+因此在节点外仅当 $\Pi\mathcal S_i=0$ 时才有 $P\bar h_i^4=0$；
+否则核投影项必须保留在有限维方程中。
+
+在另一节点 $p_j$ 附近，偶性给
+$\bar h_i^4(x)=H_{ij,0}+H_{ij,2}(x)+O(r_j^4)$。
+通过线性坐标变换归一化常数项时，必须同时变换背景的二次项。
+记所得规范化二次jet为 $\mathcal J_{2,j}$，则曲率响应由
+\begin{equation}\label{eq:greenjet}
+H_{ij,2}^{\rm norm}
+=\mathcal J_{2,j}\!\left(G_P^\perp\mathcal S_i[H^4(\zeta_i)]\right)
+\end{equation}
+决定。在固定坐标、常数项已为零的情形，
+$\mathcal J_{2,j}h(x)=\frac12D^2h(p_j)[x,x]$。
+对已归一化jet再应用线性曲率算子，才得到接收端的 $R_\pm$ 响应。
+
+若 $P\psi_\alpha=\lambda_\alpha\psi_\alpha$，则在可合法求导的分布/谱意义下
+\[
+G_P^\perp\mathcal S_i
+=\sum_{\lambda_\alpha\ne0}
+\frac{\langle\mathcal S_i,\psi_\alpha\rangle}{\lambda_\alpha}\psi_\alpha .
+\]
+若 $\mathcal S_i=\sum_{|\beta|\le m}C_\beta\,\partial^\beta\delta_{p_i}$，
+则源收缩为
+$\sum_\beta(-1)^{|\beta|}C_\beta:\partial^\beta\psi_\alpha(p_i)$；
+接收端还须作用 $\mathcal J_{2,j}$。
+这说明源端多极导数、接收端二阶导数及完整核投影缺一不可。
+乘积本征值分母是 $\lambda_A+\lambda_B+\mathrm{shift}$，
+不是两个球面Green分母的乘积；单纯的值到值Green级数也不计算这个曲率响应。
+实际几何应用还要求证明分布源识别、规范相容和级数/余项收敛。
+
+\subsection{热截断计算与需要控制的三个误差}\label{sec:spectralerrors}
+已有节点间计算采用热因子与有限次数截断。为说明这些数字究竟近似什么，
+令 $U\in\operatorname{Sym}^2(K_i)$ 为源核平面上的对称张量，
+$\mathcal S_i[U]$ 为上一节要求识别的物理多极源。
+记 $\mathscr C_{j,\varepsilon_j}$ 为接收节点归一化二阶jet到其
+$\varepsilon_j$ 手性曲率块、再限制到核平面 $K_j$ 的线性映射，置
+\[
+A_{\alpha j}=\mathscr C_{j,\varepsilon_j}\mathcal J_{2,j}\psi_\alpha,
+\qquad B_{\alpha i}[U]=\langle\mathcal S_i[U],\psi_\alpha\rangle.
+\]
+对 $i\ne j$，完整响应及其正则化应分别为
+\begin{align}
+\mathcal T_{ji}[U]&=
+\mathscr C_{j,\varepsilon_j}\mathcal J_{2,j}G_P^\perp\mathcal S_i[U],\nonumber\\
+\mathcal T_{ji}^{\tau,L}[U]&=
+\sum_{\substack{\ell,k\le L\\\mu_{\ell k}\ne0}}
+\frac{e^{-\tau\mu_{\ell k}}}{\mu_{\ell k}N_\alpha}
+A_{\alpha j}B_{\alpha i}[U],\qquad\tau>0.\label{eq:heat-response}
+\end{align}
+求和还包括所有允许的次数内重数、张量类型和商不变性条件。
+在实正交模基中此式不需额外共轭；用复模时内积中的共轭必须保留。
+前一节的四维核投影、负模以及归一化常数项对背景二次项的影响，均包含在这一定义中。
+
+令 $\mathcal T_{ji}^{\tau}$ 表示不截断次数的热正则化响应，
+$\widehat{\mathcal T}_{ji}^{\tau,L}$ 为机器计算的有限和。
+对统一的源、接收范数，必需估计的是
+\begin{equation}\label{eq:spectral-error-budget}
+\begin{split}
+\|\mathcal T_{ji}-\widehat{\mathcal T}_{ji}^{\tau,L}\|
+\le{}&\underbrace{\|\mathcal T_{ji}-\mathcal T_{ji}^{\tau}\|}_{\text{热正则化误差}}
++\underbrace{\|\mathcal T_{ji}^{\tau}-\mathcal T_{ji}^{\tau,L}\|}_{\text{遗漏次数的谱尾}}\\
+&+\underbrace{\|\mathcal T_{ji}^{\tau,L}-
+\widehat{\mathcal T}_{ji}^{\tau,L}\|}_{\text{有限计算误差}}.
+\end{split}
+\end{equation}
+这条拆分已经假设实际物理源、完整模式及接收规范均识别正确；
+若只计算某些AA/BB或AB模式，未纳入的源分量与曲率jet不是可默认为零的谱尾。
+源是分布的导数，接收端又取二阶jet，故高频项带有导数增长。
+固定 $\tau$ 的指数衰减不能自动给 $\tau\downarrow0$ 后的误差上界；
+去掉热因子后的逐项绝对值和也未必是有效的有限界。
+应对不同节点的投影Green核及其所需导数证明相应离对角估计，
+或在严格的逐谱层相消后估计剩余尾项。
+
+已保存的AA/BB阶梯使用
+$(\tau,L)=(0.08,80),(0.04,120),(0.02,180),(0.01,260)$。
+相邻阶梯接近只能检验这些有限和的一致性，不能同时替代
+式\eqref{eq:spectral-error-budget}中的三个界。
+后文 $c_{\rm adj},c_{\rm diag},q_{\rm adj}$ 的严格符号判断，
+需要把这些界转成\emph{物理归一化后}的系数误差。
+例如若三项系数误差分别不超过
+$\epsilon_a,\epsilon_d,\epsilon_q$，且规定模型中的 $q_{\rm diag}=0$ 已由代数证明，
+那么相邻平衡行的数值裕量只有在
+\[
+\epsilon_a+\epsilon_d+\epsilon_q<0.019426476
+\]
+时才保留严格正号；只见相邻异手性源的各行则要求
+$\epsilon_a+\epsilon_q<0.054879997$。
+这是节点间模型的误差要求，仍不控制式\eqref{eq:LS}中的其余几何项。
+
+\subsection{节点权重与物理源锥}
+节点稳定子的权重是约化方程的一部分。$SO(2)$等变性本身不强迫一个映射为零，例如 $z\mapsto f(|z|)z$。只有在明确整个稳定子表示后，才能用权重排除特定次数的项。EH物理源的参数还限制在秩一正锥 $t^2uu^{\mathsf T}$，不能替换为任意对称矩阵。以下给出一个张量--标量节点间模型；它不包含AB一形式扇区或节点自作用。
+
+\subsection{AA/BB双线性表与两个消去案例}\label{sec:chiralitytable}
+考虑以下有限维配对。AA表示第一球上的张量模乘第二球上的标量模，BB交换两因子。接收端固定为NN，源端为NS、SN或SS。令
+\[
+D=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\qquad
+O=\begin{pmatrix}0&1\\1&0\end{pmatrix},\qquad
+I=\begin{pmatrix}1&0\\0&1\end{pmatrix}.
+\]
+以下 $R_\pm(T,X)$、$S_\pm(T,X)$ 是核平面上的接收/源\emph{双线性映射}，并非前文三维曲率块 $R_\pm$。第一自变量为张量极化，第二个为标量Hessian。为完全指定这些映射，令 $E_{ij}=e_i e_j^{\mathsf T}-e_j e_i^{\mathsf T}$，切空间指标取 $0,1,2,3$，置
+\[
+\Omega^+=(E_{01}+E_{23},E_{02}-E_{13},E_{03}+E_{12}),\quad
+\Omega^-=(E_{01}-E_{23},E_{02}+E_{13},E_{03}-E_{12}),
+\]
+\[
+C_{ab}=\tfrac12\bigl(\Omega_a^+\Omega_b^-+
+(\Omega_a^+\Omega_b^-)^{\mathsf T}\bigr),\qquad 1\le a,b\le3.
+\]
+对 $H_{ijpq}$（前两指标为张量，后两指标为二阶导数），取核平面指标 $\alpha,\beta=2,3$，定义
+\begin{align*}
+R_\varepsilon[H]_{\alpha\beta}
+&=\frac1{16}\sum_{a,b,c,d=0}^3
+(\Omega_\alpha^\varepsilon)_{ab}(\Omega_\beta^\varepsilon)_{cd}
+(H_{adbc}+H_{bcad}-H_{acbd}-H_{bdac}),\\
+S_+[H]_{\alpha\beta}
+&=-\frac1{16}\sum_{b=1}^3\sum_{i,j,p,q=0}^3
+(C_{\alpha b})_{ij}(C_{\beta b})_{pq}H_{ijpq},\\
+S_-[H]_{\alpha\beta}
+&=-\frac1{16}\sum_{b=1}^3\sum_{i,j,p,q=0}^3
+(C_{b\alpha})_{ij}(C_{b\beta})_{pq}H_{ijpq}.
+\end{align*}
+AA嵌入为 $H_{ac,\,2+p,\,2+q}=T_{ac}X_{pq}$，
+BB嵌入为 $H_{2+p,\,2+q,\,a,c}=T_{pq}X_{ac}$，其中 $a,c,p,q=0,1$，其余分量为零。
+对 $I,D,O$ 逐项代入，得到完整双线性表
+\begin{center}
+\small
+\begin{tabular}{c c c c c c c}
+\toprule
+$(T,X)$ & $R_+^{AA/BB}$ & $S_+^{AA/BB}$ & $R_-^{AA}$ & $S_-^{AA}$ & $R_-^{BB}$ & $S_-^{BB}$\\\midrule
+$(D,D)$ & $-D/2$ & $-D/4$ & $-D/2$ & $-D/4$ & $-D/2$ & $-D/4$\\
+$(D,O)$ & $-O/2$ & $-O/4$ & $-O/2$ & $-O/4$ & $+O/2$ & $+O/4$\\
+$(O,D)$ & $-O/2$ & $-O/4$ & $+O/2$ & $+O/4$ & $-O/2$ & $-O/4$\\
+$(O,O)$ & $+D/2$ & $+D/4$ & $-D/2$ & $-D/4$ & $-D/2$ & $-D/4$\\
+$(I,I)$ & $-I/2$ & $0$ & $-I/2$ & $0$ & $-I/2$ & $0$\\
+$(D,I)$ & $0$ & $0$ & $0$ & $0$ & $0$ & $0$\\
+$(O,I)$ & $0$ & $0$ & $0$ & $0$ & $0$ & $0$\\
+$(I,D)$ & $0$ & $0$ & $0$ & $0$ & $0$ & $0$\\
+$(I,O)$ & $0$ & $0$ & $0$ & $0$ & $0$ & $0$\\\bottomrule
+\end{tabular}
+\end{center}
+AA与BB的minus表在两个交叉条目上符号相反，这是固定因子嵌入和二形式基产生的区别。同手性积中这些号成对出现，所以下面的消去结论在两扇区均成立。
+
+张量的四种极化为
+\[
+(E,c_2)\mapsto D,\quad(E,s_2)\mapsto O,\quad
+(M,c_2)\mapsto O,\quad(M,s_2)\mapsto-D.
+\]
+规定节点传输如下：张量从N到S的四个源值依次为
+$\sigma_tD,-\sigma_tO,\sigma_tO,\sigma_tD$，其中 $\sigma_t$ 是张量极点的共同号。相反标量极点的 $c_2,s_2$ 号分别记为 $\eta_s,-\eta_s$，不与张量号混用。下面假设每对极化的总谱系数相同，包括归一化、Green分母、重数、商因子与各向同性权重；标量 $c_2,s_2$ 权重也相同。
+
+这里把极点传输和相等谱权重作为模型假设。普通球面对跖作用对同次数实谐函数给相同的 $(-1)^\ell$ 奇偶号，不独自推出相反的 $c_2/s_2$ 号。因此，将本模型用于几何Green算子还须证明所选\emph{定向节点标架传输}产生上述规则；以下代数消去不代替这一几何识别。
+
+\paragraph{案例一：张量位于不同极点。}
+对应AA的SN、SS以及BB的NS、SS。对每个固定标量模式，接收/源两端的标量Hessian记为 $X,Y$。由双线性，极化对 $(E,c_2),(M,s_2)$ 的和为
+\[
+R_\varepsilon(D,X)\otimes S_{\varepsilon'}(\sigma_tD,Y)
++R_\varepsilon(-D,X)\otimes S_{\varepsilon'}(\sigma_tD,Y)=0;
+\]
+极化对 $(E,s_2),(M,c_2)$ 的和为
+\[
+R_\varepsilon(O,X)\otimes
+\bigl[S_{\varepsilon'}(-\sigma_tO,Y)+S_{\varepsilon'}(\sigma_tO,Y)\bigr]=0.
+\]
+这个消去在每个标量模式求和之前成立，且在上述相等权重下不要求两端手性相同。
+
+\paragraph{案例二：张量位于同一极点。}
+对应AA的NS以及BB的SN，因源节点不同，标量两端位于相反极点。对固定标量Hessian $X$，定义
+\[
+\mathcal B_X^{\varepsilon\varepsilon'}=
+2\bigl[R_\varepsilon(D,X)\otimes S_{\varepsilon'}(D,X)
++R_\varepsilon(O,X)\otimes S_{\varepsilon'}(O,X)\bigr].
+\]
+$X=I$ 时全部条目为零。对 $X=D,O$，完整表直接给两扇区共同的等式
+\begin{equation}\label{eq:samechiralityblocks}
+\mathcal B_D^{++}=\mathcal B_O^{++}
+=\mathcal B_D^{--}=\mathcal B_O^{--}
+=\frac14(D\otimes D+O\otimes O).
+\end{equation}
+例如AA的minus条目给
+\[
+\mathcal B_D^{--}=2\bigl[(-D/2)\otimes(-D/4)
++(O/2)\otimes(O/4)\bigr],
+\]
+而 $\mathcal B_O^{--}$ 用 $(-O/2,-O/4)$ 和 $(-D/2,-D/4)$，得到同一矩阵；BB的交叉号同时翻转，也保持乘积。因此以共同权重 $w$ 求和得到
+\[
+w\eta_s\mathcal B_D^{\varepsilon\varepsilon}
+-w\eta_s\mathcal B_O^{\varepsilon\varepsilon}=0,
+\qquad\varepsilon=+,-.
+\]
+若标量次数为0或1，没有 $m=2$ 模；剩余的 $I$ 型贡献已经单独为零。这补全了规定模型中 $B_{++}=B_{--}=0$ 的两个案例，并不依赖无穷谱尾估计。
+
+交叉手性可以保留非零项，但不能据此说每个节点对都非零。例如AA同张量极点情形有
+\[
+\mathcal B_D^{+-}=\frac14(D\otimes D-O\otimes O),\qquad
+\mathcal B_O^{+-}=-\mathcal B_D^{+-},
+\]
+于是具有真实 $m=2$ 内容和非零谱权重时，两标量模式相加为 $2w\eta_s\mathcal B_D^{+-}$。BB应使用本表自己的minus交叉号；案例一仍然消去。EH尾项的定手性解释了这种代数结构，却不能代替全局投影Green响应的证明。
+
+\subsection{对角张量消去与四节点互易窗}
+将四节点按 $1=\mathrm{NN},2=\mathrm{NS},3=\mathrm{SN},4=\mathrm{SS}$ 编号。相邻对为 $12,13,24,34$，对角对为 $14,23$。在上述节点间模型中，将接收端核平面识别为复直线，响应写为
+\[
+\xi_j\longmapsto P_j\xi_j+Q_j\bar\xi_j,
+\qquad P_j\in\R.
+\]
+非零 $\xi_j$ 的必要条件是 $|P_j|=|Q_j|$；对未知源方向使用 $|P_j|\le |Q_j|_{\rm upper}$ 只是更弱的必要条件，不可误写为完整几何系统的充分条件。
+
+枚举采用保持上述邻接关系的正方形节点置换，将固定正背景下零、一个、两个和三个反向核分别归类。
+两个反向核分为对角与相邻两类，故所列五行是
+$++++$、$+++-$、$+--+$、$++--$、$+---$：一行相容、四行混合。
+这里不把整体手性反转视为已证明的几何等价；$----$ 未列入此枚举。
+若只研究忽略背景的二色方形并再商掉整体换色，单反向与三反向会合并，
+得到另一种计数。五行表因此不是所有带标记填充的五种混合配置。
+
+对该模型的谱截断计算给出交手性系数近似值
+\[
+c_{\rm adj}\simeq0.06288499464,\quad
+c_{\rm diag}\simeq-0.035453521442,\quad
+q_{\rm adj}\simeq0.0080049973185,\quad q_{\rm diag}=0.
+\]
+前三个数值尚无严格谱尾误差界。$q_{\rm diag}=0$ 则是在上一节的传输和权重假设下逐谱层得到的恒等式：配对的 $\cos2\phi,\sin2\phi$ 源号相反，幅度相同，故成对抵消。此结论只针对规定的AA/BB张量通道。
+
+数值复算须分别输入核平面二阶对称张量的迹、无迹对角及非对角方向。
+保存矩阵的输入编码是 $(S_{22},S_{33},2S_{23})$，输出编码是
+$(R_{22},R_{33},R_{23})$；源端的2来自对称指标 $23,32$ 的共同缩并。
+三个实际对称张量方向可取 $I$、$\operatorname{diag}(1,-1)$、
+$\begin{psmallmatrix}0&1\\1&0\end{psmallmatrix}$，其 Hilbert--Schmidt 范数均为 $\sqrt2$，
+对应的输入向量分别为 $(1,1,0)$、$(1,-1,0)$、$(0,0,2)$。
+旧程序以第一种输入测量无迹响应，所得零值不检验后两种方向；这项校验已被替代。
+保存的相邻矩阵实际为
+$q\begin{psmallmatrix}1&-1&0\\-1&1&0\\0&0&-1\end{psmallmatrix}$，
+作用于三种输入分别给零、$(2q,-2q,0)$、$(0,0,-2q)$。
+若另外使用迹与双角坐标 $(x,y,z)=(S_{22}+S_{33},S_{22}-S_{33},2S_{23})$，
+接收端 $(X,Y,Z)=(R_{22}+R_{33},R_{22}-R_{33},2R_{23})$，
+则传输矩阵为 $\operatorname{diag}(0,2q,-2q)$；令
+$\zeta=(Y+iZ)/2$、$w=y+iz$，即 $\zeta=q\bar w$。
+这些有限矩阵检查与上段的条件代数恒等式、尚待建立的无穷谱尾估计是不同事项。
+
+互易窗可不用泛泛的“交换对称所以相交于1”来论证。令
+$a=c_{\rm adj}>0$、$b=-c_{\rm diag}>0$、$q=q_{\rm adj}\ge0$。
+相邻平衡行 $(+,+,-,-)$ 的两个接收端，分别给
+\[
+|au_3-bu_4|\le qu_3,\qquad |au_4-bu_3|\le qu_4,
+\qquad u_3,u_4>0.
+\]
+相加并用 $|x|+|y|\ge|x+y|$，得到必要条件
+\[
+|a-b|\le q.
+\]
+等价地，单端允许的比例 $r=u_4/u_3$ 落在
+$[(a-q)/b,(a+q)/b]$，另一端要求 $1/r$ 也在该区间。这里的区间结构才保证“有交集则1可行”，不是任意互易集合都如此。
+上述近似值给 $a-b-q\simeq0.019426476$；一个反向核、三个反向核和对角平衡行具有只见相邻异手性源的接收端，其必要条件为 $a\le q$，相应数值裕量约 $0.054879997$。
+
+若严格谱尾界小于上述裕量，则这些不等式排除相应节点间首项模型的混合行零点。完整几何系统还包含自作用、全局形变、投影器变化、补空间Schur项，以及可能同阶的余项与退化尺度比。全同手性K\"ahler--Einstein族不能自动消掉混合行的这些项，非K\"ahler也不推出非Einstein。
+
+\subsection{决定性证明对象}
+\begin{target}[完整有限维约化，而非仅一个节点间系数]
+在明确标记、全核切片及全部尺度/方向参数下，建立
+\begin{equation}\label{eq:LS}
+F_i=F_i^{\rm self}+F_i^{\rm deform}+F_i^{\rm inter}
++F_i^{\rm complement}+\mathcal R_i=0,
+\end{equation}
+其中每一项的阶数、参数依赖与余项估计均有证明，再判断零点是否存在。
+\end{target}
+如果目标项是 $t^3$，而只有 $\mathcal R=O(t^{5/2})$，则 $t^{-3}\mathcal R$ 的现有上界发散，系数符号没有裁决力。需要 $o(t^3)$ 或含已知同阶项的完整展开；同时处理尺度比退化、方向倾斜及可能的对数项。不能用“某个全同手性K\"ahler--Einstein族存在”自动抵消每个混合情形的自作用和背景变形。
+
+若完整系统有零点且逆估计成立，可以得到新的精确Einstein度量；若完整系统无零点，得到的是相应退化邻域内的不存在性。后者只有在全局模空间覆盖、另一项全局障碍或拓扑理由补上后，才能排除同一流形上的所有Einstein度量。局部模空间的这一信息尚不足以作全局不存在性推论。
+
+\section{小Ricci缺陷与全曲率尖峰}
+在 $S^2\times S^2$ 远离轴的乘积坐标片中，取紧支撑扰动
+\[
+g_u=dx^2+dy^2+e^{2(F_1+u)}d\theta^2+e^{2(F_2-u)}d\varphi^2,
+\quad F_1=\log\sin x,\quad F_2=\log\sin y.
+\]
+相反翘曲使部分Ricci分量中的完整Hessian相消，而混合Riemann分量仍看到 $u_{xy}$。令
+\[
+w_\sigma(X,Y)=-\tfrac12XY\log(X^2+Y^2+\sigma^2).
+\]
+直接微分得到
+\begin{equation}\label{eq:CZ}
+\Delta w_\sigma=-\frac{2XY[3\sigma^2+2(X^2+Y^2)]}{(X^2+Y^2+\sigma^2)^2},
+\qquad (w_\sigma)_{XY}(0)=\log(1/\sigma).
+\end{equation}
+在固定紧片上Laplacian和梯度一致有界，而混合Hessian可发散。取固定光滑截断、$u_j=\Lambda_j^{-2/3}\psi w_{e^{-\Lambda_j}}$，可得到 $\delta_+(g_j)=O(\Lambda_j^{-2/3})$ 与中心全曲率至少 $c\Lambda_j^{1/3}$。令 $f=F_1+u$、$h=F_2-u$。双翘曲公式为
+\[
+\Ric_B=-\nabla^2f-df\otimes df-\nabla^2h-dh\otimes dh,\quad
+\frac{\Ric_{\theta\theta}}{g_{\theta\theta}}
+=-\Delta f-\langle df,d(f+h)\rangle,
+\]
+另一垂直分量交换 $f,h$。因为 $f+h=F_1+F_2$，基底中的 $\nabla^2u$ 完全相消，而垂直项只剩 $\pm\Delta u$ 及一阶项。固定支撑远离轴，故
+\[
+\delta_+(g_u)\le C(\|\Delta u\|_\infty+\|du\|_\infty+\|du\|_\infty^2).
+\]
+式\eqref{eq:CZ}及固定截断给右侧 $O(\Lambda_j^{-2/3})$。
+取截断在中心恒为1，则混合曲率分量
+$R_{x\theta y\theta}/g_{\theta\theta}
+=-(f_{xy}+f_xf_y)$ 仍含
+$-(u_j)_{xy}(0)=-\Lambda_j^{1/3}$，其余项有界。
+指数翘曲始终正定；扰动紧支撑于固定坐标片，片外为原乘积度量，故全局光滑。
+
+这个模型不反驳Yau26，因为底层本来承载Einstein度量；它反驳的是过强的输入正则性推断。
+令 $g_0$ 为未扰动乘积度量，在固定坐标域 $U$ 上用同一背景张量范数比较。
+固定截断下的 $L^2$ 椭圆估计给
+$\|\nabla^2u_j\|_{L^2(U,g_0)}\to0$；结合一阶项及度量的一致收敛，得到
+$\|\Rm(g_j)-\Rm(g_0)\|_{L^2(U,g_0)}\to0$。
+因而固定域上的\emph{总}曲率能量趋向背景能量
+$\int_U|\Rm(g_0)|_{g_0}^2d\mu_{g_0}>0$，不是趋零。
+片外度量不变，同样不能声称整个闭流形的总能量趋零。
+如果要使局部总能量足够小，应先选择足够小的固定背景区域，再令扰动参数趋于极限；
+这是区域大小与序列参数的两个选择，不能混为同一个趋零结论。
+同一体积密度的保持也不把它变成塌缩例。
+
+Brendle--Kapouleas的混合EH构造也出现Ricci曲率与全曲率的不同尺度行为\cite{BK}，但其归一化和构造不同。Einstein度量的存在性与给定近Einstein输入的全曲率控制是两个不同问题。
+
+\section{正分支的条件有限覆盖放大}\label{sec:coveramplifier}
+使用Cheeger--Naber的四维非塌缩有限性定理\cite[Theorem 1.12]{CN}：闭四维流形在 $|\Ric|\le3$、统一正的单位球体积下界和统一直径上界下，只有有限个微分同胚类型。两侧Ricci界和非塌缩都是该输入的条件。
+
+\begin{corollary}[有体积下界的正夹逼有限型]
+固定 $0<\delta_0<1$ 和 $v>0$。闭四维流形上满足
+$\delta_+(g)\le\delta_0$、$\Vol(M,g)\ge v$ 的度量，其底层流形只有有限多个微分同胚类型。
+\end{corollary}
+\begin{proof}
+Myers给 $\diam\le\pi\sqrt{3/(1-\delta_0)}$。
+双边Ricci端同态界也控制张量范数；在四维二者至多相差因子2。
+将整个族乘以只依赖 $\delta_0$ 的固定尺度以匹配所引定理的Ricci规范，
+体积下界与直径上界仍统一，故可应用该有限性定理。
+\end{proof}
+这是经典定理的应用，不给原流形上的Einstein度量，也不保证极限无奇点。
+Myers和Bishop比较本身没有提供这里假设的总体积下界。
+
+\begin{proposition}[单连通体积下界的有限覆盖放大]
+固定 $0<\delta_0<1/2$。假设存在 $v_0>0$，使每个闭、单连通、光滑四维流形上的度量只要满足 $\delta_+(g)\le\delta_0$，就有 $\Vol(g)\ge v_0$。在上述非塌缩有限性输入下，存在 $v_1=v_1(\delta_0,v_0)>0$，使所有闭、连通、光滑四维流形（允许非定向）上的同样夹逼度量都满足 $\Vol(g)\ge v_1$，而且这些流形只有有限个微分同胚类型。
+\end{proposition}
+\begin{proof}
+由 $\Ric\ge(1-\delta_0)g>0$，Myers给有限基本群及
+\[
+\diam(M),\ \diam(\widetilde M)\le
+D(\delta_0):=\pi\sqrt{\frac3{1-\delta_0}},
+\]
+其中 $\widetilde M$ 为普适覆盖并取提升度量。提升保持点态夹逼；它闭且单连通，所以假设给 $\Vol(\widetilde M)\ge v_0$。在四维中
+$|\Ric|_{\mathrm{HS}}\le2(1+\delta_0)<3$；Bishop--Gromov比较和直径界把总量下界变成每个单位球的下界 $v'(\delta_0,v_0)>0$。
+
+故非塌缩有限性适用于所有这些普适覆盖。取有限类型中Euler示性数的最大值 $X=X(\delta_0,v_0)$，有
+\[
+2\le\chi(\widetilde M)=2+b_2(\widetilde M)\le X.
+\]
+注意 $X$ 是有限类型的Euler数最大值，不能把类型个数直接当作Betti数界。令覆盖度 $d=|\pi_1(M)|$。有限覆盖的Euler乘法公式给
+\[
+\chi(\widetilde M)=d\,\chi(M).
+\]
+即使 $M$ 非定向，$\chi(M)$ 仍为正整数，故 $d\le\chi(\widetilde M)\le X$。于是
+\[
+\Vol(M)=\frac{\Vol(\widetilde M)}d\ge\frac{v_0}{X}=:v_1>0.
+\]
+再次对 $M$ 使用同样的Ricci、直径及单位球体积控制，有限性输入给出最后结论。
+\end{proof}
+命题的单连通体积下界仍是假设；它不由正Ricci自动给出。即使命题适用，所得也是非塌缩与拓扑有限性，不是Einstein度量存在。覆盖上另有Einstein度量也未必对甲板群不变，不能直接下降。
+
+\section{其他ALE填充、标量修正与光滑类型}
+以下扩展使用同一匹配机制，但各有独立的周期、余核和规范条件。
+较长的逐项证明见同目录
+\href{20260912.tex}{《局部构造与代数平滑》}相应章节。
+
+\subsection{ADE、type T、Wahl与完整核}
+\begin{itemize}
+\item 完整核心估计：完整精确核 $a^2q_{\sigma a^2}$ 取消内截断，给
+\[
+\delta_\sigma\le C(L^{-1}+R^2+a^4b^{-4}+a^4R^{-6}),
+\quad b=a^\gamma,\ R=a^\kappa,
+\quad0<\kappa<\min(\gamma,2/3),\ \gamma<1.
+\]
+这里以物理EH度量为背景，不能继续要求全环带欧氏误差都是 $O(r^2)$。
+\item 第2章“ADE、周期与type T核”：固定共线Kronheimer周期、避开根超平面时，处理完整 $3b_2$ 维余核的首项像而非仅三个模式；恢复Bianchi后得到 $D\Ric_kh_\sigma=\sigma k$ 与 $O(r^{-2}\log r)$ 尾项。一般群没有 $-I$ 时，外余项为 $O(r^3)$，相应外截断代价为 $O(R)$。
+\item 零K\"ahler周期的平面周期核及循环type T
+$\frac1{dm^2}(1,dmq-1)$：先在覆盖上消去全部余核、有限平均后下降；商的 $b_2=0$ 不意味着线性核为空。KE外部匹配完整二次项时可免对数过渡，可得一般外端 $O(a^{4/7})$、含 $-I$ 外端 $O(a)$。
+\item Wahl $1/4(1,1)$ 的最短证明：$Q=\{xy=z^2-1\}$ 上自由对合 $(x,y,z)\mapsto(-x,-y,-z)$，商为 $T^*\mathbb{RP}^2$；源方程借EH线性延拓与有限平均得到，半径 $b=a^{1/2}$ 给 $O(a)$。
+\item 四次匹配：$O(a^{8/5})$ 的增强明确以四次延拓 $k_4$、规范相容及逐阶尾界为输入，不是最低阶 $O(a)$ 构造的必需前提。
+\end{itemize}
+
+\subsection{常标量修正、变分与锐通量}
+在 $0<\mu<2$ 的加权空间可建立标量逆，并单列正分支的高度函数核与反射偶空间、负分支自动无核。标量逆的权重不能直接取为2：EH调和函数 $\rho^2\cos\theta$ 的缓慢截断给真实近核。局部齐次方程则给出可扰动Hessian端点；它与失败的全局端点不是矛盾。
+
+常负标量修正后，Wahl二次与四次匹配分别保留 $O(a)$、$O(a^{8/5})$。体积变分利用
+\[
+V'(a)=\frac12\int\langle E,\partial_a\widehat g_a\rangle,
+\qquad \widehat g_a=u_a^2g_a,
+\]
+中纯迹的 $\partial_a u_a$ 项与 $E$ 正交，得到依赖已声明参数速度的体积速率。构造退化极小化序列不排除另有光滑极小值点。
+
+上文的通量公式对任意角向变化、无需预设规范的线性Ricci算子给
+\[
+\int_A\langle D\Ric_eu,r^{-n-2}K\rangle
+=-\frac{n+2}{2}I_K,
+\qquad
+\|D\Ric_eu\|_{\op,\infty}\ge\frac{(n+2)I_K}{2LJ_K}.
+\]
+式\eqref{eq:nonlinearflux}、\eqref{eq:energyflux}给各自弱导数假设下的非线性版本。指定球面/EH失配无标量约束的锐首项为 $1/(8L)$；精确常标量时为 $1/(6L)$。这是模型内最优代价，不是对所有度量统一的正Ricci缺陷。
+
+“临界导数能量”一节给出
+$W^{1,4},W^{2,2},W^{3,4/3}$ 残差趋零、指定非零Weyl失配下四阶 $L^1$ 导数不趋零的区别。阶数、端点与函数空间是结论的一部分。
+
+\subsection{光滑类型、连接器障碍与代数结构}
+对固定反射标记，光滑环面作用分类将球面悬挂 $A_r$ 双消解识别为 $\#r(S^2\times S^2)$；也列出四节点乘积商全部标准标记行。这一微分同胚识别使用实际端部标记，不只是有理Betti数；结论不覆盖任意未指定边界粘合。
+
+同一专论第3章讨论固定宽度Lohkamp与任意紧夹逼的差别、去核后仍趋零的乘积谱隙、高频Ricci导数、平坦与Heisenberg颈下界、一般解析非齐次精确Einstein领圈、Berger小核及其有限距离奇性、普通点把手的覆盖体积障碍、有限边界平均曲率阈值。它们各自限制某种方案，不是一道总禁令。变化拓扑熵候选的下界趋零尚未提供达到它的度量。
+
+第4章讨论高度四椭圆曲面与Wahl平滑：典范覆盖栈、低次关系控制全部Artin平滑参数、$\dim\operatorname{Ext}^1=38$与$\operatorname{Ext}^2=0$、等模例中 $h^2(\Theta)$ 可为2或3、一维Wahl障碍商、自然形变与模栈下降的明确条件接口。复平滑被阻与任意实Einstein不存在之间的桥梁仍未建立。
+
+\section{一个乘积商的全局平滑与Einstein度量}
+局部近Einstein构造不决定所得流形是否承载精确Einstein度量。
+下面通过改变复结构产生精确解，说明消解复结构中的 $-2$ 曲线不是任意Einstein不存在性的证书。
+
+取 $G=\Z_4^2$，两个 $G$-覆盖 $C_i\to\CP^1$ 的分支三元组为
+\[
+S_1=((1,3),(1,0),(2,1)),\qquad
+S_2=((3,2),(0,1),(1,1)).
+\]
+三元组各自生成 $G$、和为零，各元素阶为4。
+Riemann--Hurwitz给
+$2g(C_i)-2=16[-2+3(1-1/4)]=4$，故 $g(C_i)=3$。
+令 $Y=C_1\times C_2$、$X=Y/G$、$S\to X$ 为最小解消。
+
+两组分支稳定子只在阶2子群相交，三个共同非零元素是
+$(2,0),(0,2),(2,2)$。每个在两曲线上各固定4点，
+在乘积上共给 $3\cdot16=48$ 个非自由点；
+各轨道有8点，稳定子在切空间作用为 $(-1,-1)$，所以商有六个 $A_1$ 点。
+又 $K_X^2=K_Y^2/16=8(3-1)^2/16=2$。
+
+\begin{proposition}\label{prop:bcgp-smooth-einstein}
+上述最小解消 $S$ 的底层光滑四维流形承载负Einstein度量。
+更确切地，对附近光滑纤维 $X_t$ 存在微分同胚 $\phi_t:S\to X_t$，
+使拉回复结构 $J_t=\phi_t^*J_{X_t}$ 下的 $S$ 承载负K\"ahler--Einstein度量；
+这里 $J_t$ 不同于最小解消原有的复结构 $J_{\rm res}$。
+\end{proposition}
+\begin{proof}
+首先证明 $T_X^0=(\pi_*T_Y)^G$。
+作用在两曲线因子上均忠实，因此商映射 $\pi$ 在余维一无分歧，等式在光滑处由有限\'etale下降成立。
+两边都是反射层：$T_X^0=(\Omega_X^1)^\vee$ 在正常曲面上反射；
+$A=\mathcal O_{X,x}$ 的一组参数也是上方各正则局部环的参数，
+所以 $\pi_*T_Y$ 作为 $A$-模深度为2。
+Reynolds投影将不变部分分裂为直和因子，保持深度2与无挠性。
+反射层由去掉余维2集合后的限制唯一决定，得到全局等式。
+
+有限推前无高阶直像，Reynolds投影与上同调相容，故
+$H^2(X,T_X^0)=H^2(Y,T_Y)^G$。
+等变Serre对偶及K\"unneth分解给
+\[
+\bigl(H^2(Y,T_Y)^G\bigr)^*\cong
+\bigl[H^0(2K_{C_1})\otimes H^0(K_{C_2})
+\oplus H^0(K_{C_1})\otimes H^0(2K_{C_2})\bigr]^G.
+\]
+用 $(a,b)\in(\Z/4)^2$ 标记字符，取使Chevalley--Weil公式写成
+\[
+m_{(a,b)}=-1+\sum_{s\in S_i}
+\left\{\frac{a s_1+b s_2}{4}\right\},\qquad (a,b)\ne(0,0)
+\]
+的作用约定；平凡字符重数为0。
+代入16个字符得各重数为1的集合
+\[
+K_1:(2,3),(3,0),(3,1),\qquad
+K_2:(0,3),(1,2),(3,3).
+\]
+两曲线均非超椭圆：若超椭圆对合属于 $G$，应固定8点，
+但任一阶2元素只在一个分支纤维固定4点，矛盾。
+若不属于 $G$，则 $G$ 忠实作用于超椭圆商 $\CP^1$；
+有限阿贝尔子群只能是循环群或Klein四元群，也不可能含 $\Z_4^2$。
+因此典范像为平面四次曲线，没有二次关系，
+乘法给等变同构 $\operatorname{Sym}^2H^0(K_{C_i})\cong H^0(2K_{C_i})$。
+将上述三字符取六个无序两两和，得
+\begin{align*}
+2K_1&:(0,2),(1,0),(1,3),(2,0),(2,1),(2,2),\\
+2K_2&:(0,1),(0,2),(1,1),(2,0),(2,2),(3,2).
+\end{align*}
+前一集合与 $-K_2=\{(0,1),(3,2),(1,1)\}$ 不交，
+后一集合与 $-K_1=\{(2,1),(1,0),(1,3)\}$ 不交。
+两个张量积均无不变量，故 $H^2(X,T_X^0)=0$。
+
+局部到全局 $\mathbb Q$-Gorenstein平滑定理
+\cite[Proposition 2.4(2)]{LeePark}
+将六个 $A_1$ 局部平滑 $xy-z^2=\tau_i$ 同时延拓为实际全局族。
+取所有分量非零的切向量，可令
+$\tau_i(t)=a_it+O(t^2)$、$a_i\ne0$；小 $t\ne0$ 时 $X_t$ 全部光滑。
+这里使用实际形变的无障碍性，而非仅切空间维数。
+
+$\pi$在余维一无分歧，故 $\pi^*K_X=K_Y$。
+$K_Y$ ample，有限满射下的ample下降给 $K_X$ ample。
+相对典范的适当幂是线丛，ample性在平坦真族中开放，故光滑纤维 $K_{X_t}$ ample。
+Aubin--Yau定理给 $\Ric(h_t)=-h_t$。
+最后，$A_1$平滑经有限基变换允许同时解消；
+六节点不交，取共同有限基变换后得到光滑真族，
+中心纤维为 $S$，其他纤维为 $X_t$。
+Ehresmann定理给微分同胚 $\phi_t:S\to X_t$。令
+\begin{equation}\label{eq:bcgp-pullback-ke}
+J_t=\phi_t^*J_{X_t},\qquad g_t=\phi_t^*h_t,
+\qquad \Ric(g_t)=-g_t;
+\end{equation}
+则 $g_t$ 对 $J_t$ 为K\"ahler度量。
+对原复结构 $J_{\rm res}$，六条例外有理曲线 $E_i$ 满足
+$E_i^2=-2$，伴随公式给 $K_{(S,J_{\rm res})}\cdot E_i=0$。
+因此原典范丛不ample，而负K\"ahler--Einstein度量要求典范丛ample；
+$(S,J_t)$ 与 $(S,J_{\rm res})$ 不双全纯。
+\end{proof}
+
+证明只覆盖上述分支数据和复方向标准解消，不覆盖混合手性的实填充。
+其他行即使 $H^2(T_X^0)\ne0$，也只是这里的充分条件失效，不直接意味着实际平滑受阻。
+更一般的超椭圆双覆盖平滑
+$w^2=f(x)q(z)+tF$、同时消解及拓扑识别见
+\href{20260912.tex}{《局部构造与代数平滑》}的“负号构造的过滤器”。
+
+\subsection{经典七线Campedelli的六节点模型}\label{sec:campedelli-seven-lines}
+这里另取 $G_{\rm Cam}=\mathbb F_2^3$，构造到 $\CP^2$ 的八重覆盖，
+不是上面的 $\Z_4^2$ 曲线乘积商。
+在齐次坐标 $[x:y:z]$ 中，七条分支线 $D_i=(\ell_i=0)$ 及其惯性群生成元为
+\begin{equation}\label{eq:campedelli-lines}
+\begin{array}{c|rrrrrrr}
+i&1&2&3&4&5&6&7\\ \hline
+\ell_i&x&y&z&x-y&y-z&x-z&x-y+z\\
+g_i&001&010&011&100&101&111&110
+\end{array}
+\end{equation}
+其中三位二进制串表示 $\mathbb F_2^3$ 向量。
+前六线是 $A_3$ 反射排列，第七线穿过其中两个二重点，将它们变为三重点。
+
+先说明覆盖本身。对每个非零字符 $\chi:G_{\rm Cam}\to\mathbb F_2$，
+恰有四个 $g_i$ 满足 $\chi(g_i)=1$，所以覆盖的构造线丛可取
+$L_\chi=\mathcal O_{\CP^2}(2)$，满足
+$L_\chi^{\otimes2}\simeq\mathcal O(\sum_{\chi(g_i)=1}D_i)$。
+更显式地，令 $\mathcal A_0=\mathcal O$、
+$\mathcal A_\chi=\mathcal O(-2)$（$\chi\ne0$），并在局部生成元上定义
+\begin{equation}\label{eq:campedelli-cover-algebra}
+\mathcal A=\bigoplus_{\chi\in G_{\rm Cam}^*}\mathcal A_\chi,
+\qquad
+e_\chi e_\eta=
+\left(\prod_{\chi(g_i)=\eta(g_i)=1}\ell_i\right)e_{\chi+\eta},
+\quad e_0=1,
+\qquad X_{\rm Cam}=\operatorname{Spec}_{\CP^2}\mathcal A.
+\end{equation}
+当 $\chi=\eta\ne0$ 时乘积有四个一次因子，当两者不同且非零时有两个；
+因而乘法与线丛次数相容。对每条线，结合律就是二进制加法的进位恒等式，
+故这确实给出有限平坦八重覆盖。所有非零惯性标记生成 $G_{\rm Cam}$，覆盖连通。
+这是阿贝尔覆盖构造关系在本例中的具体实现\cite[\S2.2]{AlexeevPardini}。
+
+逐对取线系数向量的叉积，得到如下全部三重点；最后一列在 $\mathbb F_2^3$ 中求和：
+\begin{equation}\label{eq:campedelli-incidences}
+\begin{array}{c|c|c}
+p&\{i:p\in D_i\}&\sum_{i:\,p\in D_i}g_i\\ \hline
+{[0:0:1]}&\{1,2,4\}&111\\
+{[0:1:0]}&\{1,3,6\}&101\\
+{[0:1:1]}&\{1,5,7\}&010\\
+{[1:0:0]}&\{2,3,5\}&100\\
+{[1:1:0]}&\{3,4,7\}&001\\
+{[1:1:1]}&\{4,5,6\}&110
+\end{array}
+\end{equation}
+其余交点为 $[1:0:1]$、$[1:0:-1]$、$[1:2:1]$，
+分别在 $\{D_2,D_6\}$、$\{D_2,D_7\}$、$\{D_6,D_7\}$ 上。
+这九点满足 $6\binom32+3\binom22=\binom72=21$，穷尽全部线对，没有四线共点。
+三个位于不同线上的非零标记不可能有长度1或2的线性关系，
+所以三者和非零等价于它们构成 $\mathbb F_2^3$ 的一组基；表中六行均满足此条件。
+对固定七线遍历 $7!$ 个标记排列，满足全部六个条件的共有1680个；
+这里只需表\eqref{eq:campedelli-lines}给出的一个。
+
+局部类型可直接由方程读出。普通分支点的局部覆盖为
+$(u,v)\mapsto(u^2,v)$；二重点的两个标记独立，局部有两份
+$(u,v)\mapsto(u^2,v^2)$，均光滑。
+在三重点，适当选取底面局部坐标，使三条线为 $a=0,b=0,a+b=0$。
+因三个标记构成基，局部完整八重覆盖是
+\begin{equation}\label{eq:campedelli-local-node}
+u^2=a,\qquad v^2=b,\qquad w^2=a+b,
+\qquad\text{即}\quad w^2=u^2+v^2.
+\end{equation}
+它在三重点上方只有一点；令 $U=w+u,V=w-u,Z=v$，得 $UV=Z^2$，即 $A_1$。
+其余四条分支线在该邻域不消失，可开平方吸收其单位因子。
+若改取满足 $g_i+g_j+g_k=0$ 的三重标记，局部惯性群仅有四个元素，
+上方有两个点；每点的模型是式\eqref{eq:campedelli-local-node}
+再除以 $(u,v,w)\mapsto(-u,-v,-w)$。
+用 $(U,V,Z)=(s^2,t^2,st)$ 表示 $A_1=\mathbb C^2/\{\pm1\}$，
+这一变号提升为 $(s,t)\mapsto(is,it)$，故商为 $\frac14(1,1)$ 而非 $A_1$
+\cite[Table~1, cases~3.1, 3.3]{AlexeevPardiniCovers}。
+因此本例恰有六个 $A_1$，没有其他奇点。
+
+记 $H$ 为平面直线类，Hurwitz公式与推前分解给
+\begin{equation}\label{eq:campedelli-invariants}
+2K_{X_{\rm Cam}}=\pi^*(2K_{\CP^2}+\textstyle\sum_iD_i)=\pi^*H,
+\qquad K_{X_{\rm Cam}}^2=8\left(\frac12\right)^2=2,
+\qquad p_g=q=0.
+\end{equation}
+最后一式来自 $H^j(\CP^2,\mathcal O)=H^j(\CP^2,\mathcal O(-2))=0$（$j=1,2$）。
+$A_1$ 是Gorenstein有理奇点，所以 $K_{X_{\rm Cam}}$ 是线丛，
+由 $2K_{X_{\rm Cam}}=\pi^*H$ 知其ample；最小解消保持 $K^2,p_g,q$。
+
+全局平滑在这个模型中可以直接写成移动七条线：取
+$\ell_i(t)=\ell_i+t m_i$，其中 $m_i$ 为一般一次形式。
+令每个原三重点的三行系数行列式在 $t=0$ 的导数非零，
+是关于七个 $m_i$ 的六个非空开条件；原矩阵秩为2，故每个导数确为非零线性形式。
+其余三线行列式在 $t=0$ 已非零，
+于是充分小的 $t\ne0$ 时七线处于一般位置。
+将 $\ell_i$ 换为 $\ell_i(t)$ 代入式\eqref{eq:campedelli-cover-algebra}，
+便得到秩8局部自由代数定义的实际平坦真族。
+每个节点附近方程变为 $w^2=u^2+v^2+\tau_p(t)$，
+其中 $\tau_p(0)=0$、$\tau_p'(0)\ne0$，故六节点同时平滑；
+光滑纤维仍有 $2K=\pi_t^*H$，典范丛ample。
+这与七线覆盖的形变描述一致\cite[\S3.3]{AlexeevPardini}。
+
+令 $S_{\rm Cam}\to X_{\rm Cam}$ 为复方向最小解消。
+有限基变换后的同时解消与Ehresmann定理把它的底层光滑四维流形识别为附近光滑纤维；
+Aubin--Yau于是给 $S_{\rm Cam}$ 上的负Einstein度量，
+该度量对从光滑纤维拉回的复结构为K\"ahler，原解消复结构仍有六条 $-2$ 曲线。
+这个例子将“六个 $A_1$ 的局部平滑可同时全局实现”落实为一族有方程的覆盖，
+不需要先计算 $H^2(T^0)$ 来检验平滑充分条件。
+精确组合计算所核实的是线的交点与标记；覆盖类型、平滑和度量结论由上述几何论证得到。
+它与命题\ref{prop:bcgp-smooth-einstein}的乘积商之间尚未建立模空间分支或微分同胚识别，
+也没有涉及混合手性的实填充。
+
+\appendix
+\section{乘积、对称约化与缩放}
+\subsection{乘积传播只保留输入夹逼}
+若 $\Ric_h=\sigma h$，则乘积度量满足
+\[
+(g\oplus h)^{-1}\Ric_{g\oplus h}-\sigma\Id
+=(g^{-1}\Ric_g-\sigma\Id)\oplus0.
+\]
+因此 $\delta_\sigma(g\oplus h)=\delta_\sigma(g)$。从四维正分支向 $n\ge6$ 传播时，可在 $S^{n-4}$ 上取 $h=(n-5)g_{\rm round}$；$n=5$ 的圆周Ricci为零，不能作同号精确因子。负分支可采用维数至少2的闭负Einstein因子。此结论只产生近Einstein输入：即使原因子无Einstein度量，也不能由此排除乘积流形上的非乘积Einstein度量。
+
+\subsection{环面轨道体积方程}
+在自由 $T^k$ 作用的局部区域，令
+\[
+g=g_B+h_{ab}(d\theta^a+A^a)(d\theta^b+A^b),\qquad
+w=\sqrt{\det h},\qquad F^a=dA^a.
+\]
+所有系数只依赖底空间。取 $|F|^2=\frac12h_{ab}F^a_{ij}F^{b\,ij}$，则垂直Ricci的迹为
+\begin{equation}\label{eq:orbitvolume}
+\tr_h\Ric^V=-\frac{\Delta_Bw}{w}+\frac12|F|^2 .
+\end{equation}
+确切地，令 $L_i=h^{-1}\partial_i h$，则
+$\partial_i\log w=\frac12\tr L_i$。垂直迹的导数部分是
+$-\frac12\nabla^i\tr L_i-\frac14(\tr L_i)(\tr L^i)
+=-\Delta_B\log w-|d\log w|^2=-w^{-1}\Delta_Bw$；
+连接曲率部分为 $\frac14h_{ab}F^a_{ij}F^{b\,ij}$，得到式\eqref{eq:orbitvolume}。
+精确Einstein时
+\[
+(-\Delta_B+|F|^2/2)w=k\lambda w.
+\]
+该标量方程并不代替水平无迹方程、边界杆的周期、角点光滑性或全局正定性。底空间面积下界也不直接给轨道加权体积 $\int_Bw$ 的下界。
+
+\subsection{中心Killing场的积分限制}
+在闭流形上，真正的Killing场 $Z$ 满足
+\[
+\int_M|\nabla Z|^2=\int_M\Ric(Z,Z).
+\]
+若 $\Ric\le(\Lambda+\delta)g$，则右侧不超过
+$(\Lambda+\delta)\int|Z|^2$。在具有中心圆作用的左不变Heisenberg纤维中，取正交基
+$[E_1,E_2]=bE_3$，$Z=fE_3$，其中 $f$ 沿纤维为常数。Koszul公式给
+$\nabla^F_{E_1}E_3=-bE_2/2$、
+$\nabla^F_{E_2}E_3=bE_1/2$、
+$\nabla^F_{E_3}E_3=0$，故
+\[
+|\nabla^FZ|^2=\frac{b^2}{2}|Z|^2
+\le|\nabla Z|^2,\qquad
+\int_Mb^2|Z|^2\le2(\Lambda+\delta)\int_M|Z|^2.
+\]
+这是加权积分限制，不是 $b$ 的点态界。它要求中心作用确实产生全局Killing场；近似局部对称、一般扭曲或任意nilpotent塌缩不能直接代入。若 $\Ric<0$，同一Bochner等式迫使所有全局Killing场为零。
+
+\subsection{常数缩放的几何证明与形式化}
+设 $\alpha>0$ 为常数。Koszul公式表明 $g$ 和 $\alpha g$ 有同一Levi--Civita联络，因此同一 $(1,3)$ 曲率张量；对线性映射
+$z\mapsto R(z,v)w$ 取迹，得到
+\[
+\Ric_{\alpha g}(v,w)=\Ric_g(v,w).
+\]
+若 $0<c<C$，取
+\[
+\alpha=\frac{c+C}{2},\qquad \varepsilon=\frac{C-c}{C+c};
+\]
+则 $cg\le\Ric_g\le Cg$ 等价于
+$(1-\varepsilon)\alpha g\le\Ric_{\alpha g}\le(1+\varepsilon)\alpha g$。
+若 $c<C<0$，取
+$\alpha=-(c+C)/2$、
+$\varepsilon=(C-c)/[-(c+C)]$，同理得到以 $-1$ 为中心的夹逼。
+端点方程唯一确定这些缩放，尺度不是其中点的倒数。
+
+\path{MetricScalingNormalization.lean}在实际光滑Riemann度量及切丛联络对象上构造 $\alpha g$，证明同一联络的度量相容性，并由曲率的线性迹证明 $(0,2)$ Ricci张量场不变。其几何输入是一条光滑、无挠、度量相容的联络以及实现联络交换子的曲率张量；该文件没有证明这些对象的存在。它形式化的是二次型夹逼和上述端点归一化，尚未形式化Ricci对称性及升指标后算子范数与二次型夹逼的等价。
+
+上述形式化文件以及下列程序均收入
+\href{../references/computations.md}{计算附录}。
+有限Weyl基和双线性表的代数实现分别为
+\path{step83_full_weyl_log_annulus_audit.py}与
+\path{step100_chirality_cancellation_proof.py}。
+这些有限计算检验系数；上文的任意径向截断恒等式、非线性估计和全局存在性另有各自的证明。
+\clearpage
+\begin{thebibliography}{99}
+\bibitem{Yau1982} S.-T. Yau, \emph{Problem Section}, in \emph{Seminar on Differential Geometry}, Annals of Mathematics Studies 102, Princeton University Press, 1982, 669--706.
+\bibitem{Biquard} O. Biquard, \emph{D\'esingularisation de m\'etriques d'Einstein. I}, Invent. Math. (2013). \url{https://arxiv.org/abs/1105.4904}.
+\bibitem{MV} P. Morteza and J. A. Viaclovsky, \emph{The Calabi metric and desingularization of Einstein orbifolds}, J. Eur. Math. Soc. 22 (2020), 1201--1245. \url{https://arxiv.org/abs/1610.02428}.
+\bibitem{OzuchI} T. Ozuch, \emph{Noncollapsed degeneration of Einstein 4-manifolds, I}, Geom. Topol. (2022). \url{https://arxiv.org/abs/1909.12957}.
+\bibitem{OzuchII} T. Ozuch, \emph{Noncollapsed degeneration of Einstein 4-manifolds, II}, Geom. Topol. 26 (2022). \url{https://arxiv.org/abs/1909.12960}.
+\bibitem{OzuchHigher} T. Ozuch, \emph{Higher order obstructions to the desingularization of Einstein metrics}. \url{https://arxiv.org/abs/2012.13316}.
+\bibitem{OzuchIntegrability} T. Ozuch, \emph{Integrability of Einstein deformations and desingularizations}. \url{https://arxiv.org/abs/2105.13193}.
+\bibitem{BK} S. Brendle and N. Kapouleas, \emph{Gluing Eguchi--Hanson metrics and a question of Page}, Comm. Pure Appl. Math. 70 (2017), 1366--1401. \url{https://arxiv.org/abs/1405.0056}.
+\bibitem{CN} J. Cheeger and A. Naber, \emph{Regularity of Einstein manifolds and the codimension 4 conjecture}. \url{https://arxiv.org/abs/1406.6534}.
+\bibitem{Kroncke} K. Kr\"oncke, \emph{On infinitesimal Einstein deformations}. \url{https://arxiv.org/abs/1508.00721}.
+\bibitem{CGLP} M. Cveti\v c, G. Gibbons, H. L\"u and C. Pope, \emph{Bianchi IX self-dual Einstein metrics and singular $G_2$ manifolds}. \url{https://arxiv.org/abs/hep-th/0206151}.
+\bibitem{LeePark} Y. Lee and J. Park, \emph{A construction of Horikawa surface via $\mathbb Q$-Gorenstein smoothings}. \url{https://arxiv.org/abs/0708.3319}.
+\bibitem{AlexeevPardini} V. Alexeev and R. Pardini, \emph{Explicit compactifications of moduli spaces of Campedelli and Burniat surfaces}, arXiv:0901.4431v4 (2025). \url{https://arxiv.org/abs/0901.4431v4}.
+\bibitem{AlexeevPardiniCovers} V. Alexeev and R. Pardini, \emph{Non-normal abelian covers}, Compos. Math. 148 (2012), 1051--1084. \url{https://arxiv.org/abs/1102.4184}.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,268 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\RR}{\mathcal R_+}
+\title{A Determinant-Sign Case of the Four-Dimensional\\Negative Goldberg Problem}
+\author{}
+\date{13 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+A closed negative Einstein almost-K\"ahler four-manifold is K\"ahler if
+$\det(W^++s\Id/12)\le0$ everywhere in its almost-complex orientation.
+The proof combines the classical Einstein Weyl--Weitzenb\"ock equation with
+Armstrong's existence of a torsion zero. A scalar maximum principle first
+forces the shifted curvature operator to be nonpositive. The torsion zero
+then places a second elementary symmetric function on the boundary of its
+positive cone; the strong maximum principle forces a parallel rank-one
+operator and finally the parallelness of the given fundamental form.
+The determinant assumption is additional: the general negative Goldberg
+problem remains the case not covered by this sign condition.
+\end{abstract}
+
+\section{Statement and normalization}
+All manifolds below are smooth, closed (compact without boundary), connected,
+and four-dimensional. Curvature on two-forms is normalized by
+\[
+ \mathcal R=\begin{pmatrix}W^++s\Id/12&B^*\\ B&W^-+s\Id/12\end{pmatrix}.
+\]
+Weyl norms are Hilbert--Schmidt norms of endomorphisms. The scalar and rough
+Laplacians are nonnegative: $\Delta=-\operatorname{div}\nabla$ and
+$\nabla^*\nabla$. Set
+\[
+ \Ric=-a g,\qquad a>0,\qquad s=-4a,\qquad
+ \RR=W^+-\frac a3\Id.
+\]
+
+\begin{theorem}\label{thm:main}
+Let $(M,g,J,\Omega)$ be almost-K\"ahler and Einstein with $\Ric=-a g$,
+$a>0$. Choose the orientation induced by $J$. If
+\[
+                 \det\RR\le0\quad\hbox{everywhere on }M,
+\]
+then $\nabla\Omega=0$. In fact, for $n=\Omega/\sqrt2$,
+\[
+                    \RR=-a\,n\otimes n.
+\]
+\end{theorem}
+
+The hypothesis involves the full self-dual curvature block, not merely
+$W^+$, not the determinant of the full six-dimensional curvature operator,
+and not sectional-curvature negativity. The proof below uses neither
+project FD/N1 estimates nor a uniform compactness assumption over a family
+of metrics. The inputs are classical identities and Armstrong's topological
+observation; no literature priority is asserted for their composition here.
+
+\section{The scalar equation that supplies the sign}
+Put
+\[
+ A=-\RR=\frac a3\Id-W^+,\qquad \tr A=a,
+ \qquad u=\sigma_2(A)=\frac{a^2-|A|^2}{2}
+                  =\frac{a^2}{3}-\frac12|W^+|^2.
+\]
+These definitions are smooth even at repeated curvature eigenvalues.
+
+\begin{lemma}\label{lem:scalar}
+For every closed oriented Einstein four-manifold with $\Ric=-ag$, one has
+\begin{equation}\label{eq:scalar}
+ \boxed{(\Delta+2a)u=|\nabla A|^2+18\det A.}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Write $W=W^+$. The classical Einstein Weyl--Weitzenb\"ock equation is
+\begin{equation}\label{eq:weyl}
+ \nabla^*\nabla W+\frac s2W-6W^2+2|W|^2\Id=0.
+\end{equation}
+See Derdzi\'nski~\cite{Derdzinski}; the same operator convention is written
+explicitly in \cite[Lemma 2.5, $f=1$]{CD}.
+Since $\tr W=0$ and $\tr(W^3)=3\det W$,
+\[
+ \Delta|W|^2=-s|W|^2+36\det W-2|\nabla W|^2.
+\]
+The shift $W=a\Id/3-A$ gives
+\[
+ |W|^2=\frac{2a^2}{3}-2u,
+ \qquad
+ \det W=-\frac{2a^3}{27}+\frac a3u-\det A.
+\]
+As $\Delta u=-\tfrac12\Delta|W|^2$, substitution gives
+$\Delta u=-2au+18\det A+|\nabla A|^2$, as asserted.
+\end{proof}
+
+\begin{lemma}\label{lem:cone}
+If $\det\RR\le0$ everywhere, then $A\succeq0$ everywhere.
+If, in addition, $u(p)=0$ at any point, then
+\[
+ u\equiv0,\qquad \nabla A=0,\qquad A^2=aA,
+ \qquad\operatorname{rank}A=1.
+\]
+\end{lemma}
+\begin{proof}
+Since the block has odd rank, the determinant assumption is precisely
+$\det A\ge0$. Equation~\eqref{eq:scalar} implies
+$(\Delta+2a)u\ge0$. A negative minimum of $u$ would satisfy
+$\Delta u\le0$ and $2au<0$, a contradiction. Hence $u\ge0$.
+
+We use the following elementary fact: a real symmetric $3\times3$ matrix
+with positive trace, nonnegative $\sigma_2$, and nonnegative determinant
+is positive semidefinite. If there is exactly one negative eigenvalue and
+the other two are positive, the determinant is negative. If they are
+$-x,-y,a+x+y$ with $x,y>0$, then
+\[
+ \sigma_2=xy-(x+y)(a+x+y)<0.
+\]
+If one eigenvalue is zero, a negative eigenvalue and positive trace likewise
+force $\sigma_2<0$. The remaining cases are incompatible with positive
+trace. Applying this fact proves $A\succeq0$.
+
+If $u(p)=0$, the strong minimum principle, applied to the nonnegative
+function $u$ with $(\Delta+2a)u\ge0$, gives $u\equiv0$.
+Equation~\eqref{eq:scalar} then gives $\nabla A=0$ and $\det A=0$.
+A positive semidefinite matrix of trace $a$ and $\sigma_2=0$ has eigenvalues
+$(a,0,0)$, proving the remaining assertions.
+\end{proof}
+
+Thus, on this closed negative Einstein class, the global determinant-sign
+condition is equivalent to $\RR\preceq0$. This equivalence uses the
+Einstein equation and the maximum principle; it is false for arbitrary
+pointwise symmetric matrices with negative trace.
+
+\section{A torsion zero forces the rigid boundary case}
+We recall the classical global input in the precise form needed.
+
+\begin{lemma}[Armstrong]\label{lem:zero}
+A closed Einstein almost-K\"ahler four-manifold with $s\ne0$ has a point
+where $\nabla\Omega=0$.
+\end{lemma}
+\begin{proof}
+The Nijenhuis tensor is a section of the complex rank-two bundle
+\[
+ \mathcal N=\Lambda^{0,2}T^*M\otimes T^{1,0}M.
+\]
+Its second Chern number is
+\[
+ c_2(\mathcal N)[M]=2c_1(TM,J)^2+c_2(TM,J)=5\chi+6\tau.
+\]
+If it were nowhere zero, this number would vanish. On an Einstein
+four-manifold with nonzero scalar curvature, Chern--Weil gives
+\[
+ 8\pi^2\chi=\int\left(|W^+|^2+|W^-|^2+\frac{s^2}{24}\right)>0,
+\]
+\[
+ 4\pi^2(2\chi+3\tau)=\int\left(2|W^+|^2+\frac{s^2}{24}\right)>0.
+\]
+Consequently $5\chi+6\tau=\chi+2(2\chi+3\tau)>0$, a contradiction.
+On an almost-K\"ahler manifold, vanishing of the Nijenhuis tensor at a point
+is equivalent to vanishing of $\nabla\Omega$ there. This is
+\cite[Theorem 2.2.4]{Armstrong}, whose topological proof is reproduced here.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Let $n=\Omega/\sqrt2$. It is a harmonic self-dual two-form of unit length.
+The harmonic-form Weitzenb\"ock equation gives
+\begin{equation}\label{eq:n}
+ \nabla^*\nabla n=2W^+n-\frac s3n=2(a\Id-A)n.
+\end{equation}
+Since $|n|=1$, putting $q=|\nabla\Omega|^2=2|\nabla n|^2$ yields
+\begin{equation}\label{eq:rayleigh}
+                     q=4\bigl(a-\langle An,n\rangle\bigr).
+\end{equation}
+Choose $p$ from Lemma~\ref{lem:zero}. Lemma~\ref{lem:cone} gives $A\succeq0$;
+equation~\eqref{eq:rayleigh} gives
+$\langle A(p)n(p),n(p)\rangle=a=\tr A(p)$.
+It follows that
+\[
+ A(p)=a\,n(p)\otimes n(p),\qquad u(p)=0.
+\]
+The second part of Lemma~\ref{lem:cone} now applies. In particular,
+$\Pi=A/a$ is a globally defined parallel orthogonal rank-one projection.
+
+Define $v=\Pi n$ without making any orientation choice for the image line
+bundle. By~\eqref{eq:n} and $A^2=aA$,
+\[
+ \nabla^*\nabla v=\Pi\nabla^*\nabla n
+                =2\Pi(a\Id-A)n=0.
+\]
+Integration over the closed manifold gives $\nabla v=0$.
+At $p$, $v(p)=n(p)$, so $|v|\equiv1$. Since $|n|\equiv1$ and $\Pi$ is an
+orthogonal projection, $n=v$ everywhere. Therefore $\nabla n=0$, hence
+$\nabla\Omega=0$. The relation $\RR=-a\,n\otimes n$ follows as well.
+\end{proof}
+
+\section{Actual consequences and the remaining case}
+\begin{corollary}\label{cor:positive}
+Every closed strictly almost-K\"ahler negative Einstein four-manifold would
+have an open set on which $\det\RR>0$. On that set the signature of
+$\RR$ is $(+,-,-)$.
+\end{corollary}
+\begin{proof}
+The first statement is the contrapositive of the theorem and continuity.
+The determinant is positive, while $\tr\RR=-a<0$, so exactly one eigenvalue
+is positive and the other two are negative.
+\end{proof}
+
+\begin{corollary}\label{cor:definite}
+A closed negative Einstein four-manifold with $\RR\prec0$ everywhere has
+no compatible almost-K\"ahler structure in the stated orientation.
+\end{corollary}
+\begin{proof}
+Such a structure would imply $\RR=-a\,n\otimes n$, which has two zero
+eigenvalues. Alternatively, strict negativity makes the right side of
+\eqref{eq:rayleigh} positive everywhere, contradicting Lemma~\ref{lem:zero}.
+\end{proof}
+
+Fine--Premoselli construct compact, negatively curved, non-locally-homogeneous
+Einstein four-metrics and explicitly state that their examples satisfy
+$W^++s\Id/12\prec0$~\cite[Theorem 1.2 and following discussion]{FP}.
+Corollary~\ref{cor:definite} applies to those metrics in that orientation.
+This concerns compatibility with the specified metrics, not nonexistence
+of symplectic forms or Einstein metrics on the underlying smooth manifolds.
+No claim about the opposite orientation is needed here.
+
+In the preceding harmonic-product representation, this says that under the
+determinant condition every positive trace-one rank-one element of the
+harmonic multiplication kernel comes from a parallel form. In the strictly
+negative-definite case there is no such rank-one element at all. The
+Einstein PDE, rather than positivity of the finite-dimensional matrices
+alone, supplies this conclusion.
+
+\paragraph{Scope.}
+The original Q4 hypotheses do not include $\det\RR\le0$. No derivation of
+that sign from those hypotheses is given here. The proof settles this
+specified curvature-sign case and identifies a necessary open
+indefinite-curvature region in any hypothetical strict closed example.
+It neither proves full negative Goldberg nor supplies a closed counterexample.
+
+\begin{thebibliography}{9}
+\bibitem{Derdzinski}
+A. Derdzi\'nski,
+\emph{Self-dual K\"ahler manifolds and Einstein manifolds of dimension four},
+Compositio Math. \textbf{49} (1983), 405--433.
+\url{https://archive.numdam.org/item/CM_1983__49_3_405_0/}.
+\bibitem{CD}
+G. Catino and D. Dameno,
+\emph{Conformal K\"ahler Rigidity of Einstein Four-Manifolds},
+arXiv:2607.21538v1 (2026), Lemma 2.5.
+\url{https://arxiv.org/html/2607.21538v1}.
+Only the classical Weyl--Weitzenb\"ock identity is used.
+\bibitem{Armstrong}
+J. Armstrong, \emph{Almost-K\"ahler Geometry}, D.Phil. thesis, Oxford (1998),
+Theorem 2.2.4.
+\url{https://johnarmstrongmaths.com/publications/resources/thesis.pdf}.
+\bibitem{FP}
+J. Fine and B. Premoselli,
+\emph{Examples of compact Einstein four-manifolds with negative curvature},
+arXiv:1802.00608, Theorem 1.2 and the curvature inequality following it.
+\url{https://arxiv.org/html/1802.00608}.
+\end{thebibliography}
+\end{document}

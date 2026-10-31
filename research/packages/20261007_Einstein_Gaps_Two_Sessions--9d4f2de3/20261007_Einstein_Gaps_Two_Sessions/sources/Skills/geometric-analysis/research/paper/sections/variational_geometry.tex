@@ -1,0 +1,699 @@
+\section{Surgery limits and the first-order variational problem}\label{sec:variational-geometry}
+
+We apply the linear estimate to an explicit sequence of closed manifolds.
+The surgery construction gives a recovery sequence, but does not by itself
+determine the best first-order constant.  We first retain the geometric
+information needed for that construction, and then identify the unrestricted
+variational problem to which the constant belongs.
+
+\subsection{An actual surgery class and its curvature budgets}
+
+Let $X$ be a closed complex-hyperbolic surface, with its complex orientation,
+and put $A=c_1^2(X)>0$.  Normalize its complex-hyperbolic metric $g_X$ by
+$\Ric_{g_X}=-g_X$.  Its characteristic numbers and curvature integrals are
+\begin{equation}\label{eq:vg-background}
+ \begin{gathered}
+ \chi(X)=\frac A3,\qquad \tau(X)=\frac A9,\qquad
+ \Vol(g_X)=2\pi^2A,\\
+ s_{g_X}=-4,\qquad W^-_{g_X}=0,
+ \qquad \int_X|W^+_{g_X}|^2=\frac{4\pi^2A}{3}.
+ \end{gathered}
+\end{equation}
+Here and below Ricci norms are tensor norms, whereas Weyl norms are
+Hilbert--Schmidt norms of endomorphisms of two-forms.  The volume formula
+follows from $[\omega_X]=-2\pi c_1(X)$ and
+$\Vol(g_X)=\frac12[\omega_X]^2$.  The Weyl formula follows from the
+K\"ahler identity $|W^+|^2=s^2/24$.
+
+For integers $k,\ell\geq0$, define
+\begin{equation}\label{eq:vg-surgery-data}
+ \begin{gathered}
+ M=X\#k\overline{\mathbb{CP}}^{\,2}\#\ell(S^1\times S^3),
+ \qquad Q=k+4\ell,\qquad h=\frac QA,\\
+ T_+=2\chi(M)+3\tau(M)=A-Q,\qquad
+ T_-=2\chi(M)-3\tau(M)=\frac A3+5k-4\ell,\\
+ U=\frac{3\min\{T_+,T_-\}}A.
+ \end{gathered}
+\end{equation}
+Indeed, a blow-up increases $\chi$ by one and decreases $\tau$ by one,
+whereas an $S^1\times S^3$ summand decreases $\chi$ by two and leaves
+$\tau$ unchanged.  Thus
+$\chi(M)=A/3+k-2\ell$ and $\tau(M)=A/9-k$, which give
+\eqref{eq:vg-surgery-data}.
+
+The gauge-theoretic input on these manifolds is an actual polarized
+Seiberg--Witten class, not just a characteristic element of the intersection
+form.  For each metric $g$, set $H=H_g^+$ and pull
+$c=-K_X$ back to $M$.  Choose signs of the exceptional generators so that
+\begin{equation}\label{eq:vg-sign-selection}
+ E_i\cdot E_j=-\delta_{ij},\qquad c\cdot E_i=0,
+ \qquad c_H^+\cdot E_i\leq0.
+\end{equation}
+The polarized blow-up and handle construction in
+\cite[Proposition~3.2 and its proof]{LeBrun2001} supplies a
+Spin$^c$ structure with determinant class
+\begin{equation}\label{eq:vg-actual-class}
+ a_H=c-\sum_{i=1}^k E_i.
+\end{equation}
+Its invariant is nonzero, with the $\ell$ degree-one loop insertions from
+the handle summands.  Consequently its unperturbed monopole equations
+are solvable for every $H$-adapted metric.  When $b^+=1$, this assertion
+uses the chamber selected in that polarized construction.  It is not an
+assertion of chamber-independent nonvanishing for an arbitrary class.
+For the canonical class on $X$, its positive square keeps the canonical
+small-perturbation chamber away from the wall; the sign choice in
+\eqref{eq:vg-sign-selection} preserves that chamber on the connected sum.
+
+The numerical consequences, with the structure now fixed, are
+\begin{equation}\label{eq:vg-actual-budget}
+ \begin{split}
+ p:=(a_H^+)^2
+   &=(c_H^+)^2-2\sum_i c_H^+\cdot E_i
+                        +\left|\sum_iE_i^+\right|^2
+     \geq(c_H^+)^2\geq A,\\
+ a_H^2&=A-k\geq A-k-4\ell=T_+.
+ \end{split}
+\end{equation}
+Since the Hodge star on two-forms is conformally invariant, $H$ and the
+chosen Spin$^c$ structure remain fixed throughout the conformal class.
+In particular this is the actual conformal supply required by
+Theorem~\ref{thm:linear-window}.  A different initial metric is allowed
+to select a different structure.  The handles contribute to $T_+$, but
+do not decrease the square in \eqref{eq:vg-actual-budget}.
+
+For use in this section, write
+\begin{equation}\label{eq:vg-energies}
+ \begin{gathered}
+ V=\Vol(g),\qquad I=\int_Ms_g\,d\mu_g,\qquad
+ S=\int_Ms_g^2\,d\mu_g,\\
+ P=\int_M|\Ric_g^\circ|^2\,d\mu_g,\qquad
+ R=\int_M|\Ric_g|^2\,d\mu_g=P+\frac S4,\qquad
+ L_s=S-\frac{I^2}{V}=\int_M(s_g-I/V)^2\,d\mu_g.
+ \end{gathered}
+\end{equation}
+The scalar monopole estimate is
+\begin{equation}\label{eq:vg-scalar-budget}
+ S\geq32\pi^2p\geq32\pi^2A.
+\end{equation}
+With the normalization $|\mathfrak q(\Phi)|^2=|\Phi|^4/8$, the
+unperturbed equations and the integrated spinor formula give
+\[
+ 32\pi^2p\leq H_\Phi:=\int_M|\Phi|^4,
+ \qquad
+ 4\int_M|\nabla_{\mathcal A}\Phi|^2
+       +\int_Ms|\Phi|^2+H_\Phi=0.
+\]
+The first inequality is the harmonic projection bound for the self-dual
+determinant curvature.  Cauchy--Schwarz in the second gives
+$H_\Phi\leq S^{1/2}H_\Phi^{1/2}$.  Since $p>0$, one has $H_\Phi>0$,
+and \eqref{eq:vg-scalar-budget} follows.  In particular $R>0$ for every
+metric under consideration.
+
+Minimizing the quadratic in $1/\lambda$ yields
+\begin{equation}\label{eq:vg-defect-formulas}
+ \E(g)=\inf_{\lambda\ne0}
+   \frac{\int_M|\Ric_g-\lambda g|^2\,d\mu_g}{\lambda^2V}
+   =4-\frac{I^2}{VR}
+   =\frac{4P+L_s}{R},\qquad
+ \J(g)=\frac{4P}{R}\leq\E(g).
+\end{equation}
+Indeed, the expression to be minimized is
+$4-2I/(\lambda V)+R/(\lambda^2V)$.  If $I=0$, the value four is
+an infimum as $|\lambda|\to\infty$; the same formula therefore applies.
+
+The two Chern--Weil identities read
+\begin{equation}\label{eq:vg-chiral-identities}
+ W_\pm:=\int_M|W_g^\pm|^2\,d\mu_g
+       =2\pi^2T_\pm-\frac{R}{12}+\frac P3.
+\end{equation}
+Their nonnegativity and \eqref{eq:vg-scalar-budget} imply, for every metric,
+\begin{equation}\label{eq:vg-two-sided-R}
+ 8\pi^2A+P\leq R\leq8\pi^2AU+4P.
+\end{equation}
+Equivalently, with $e=R/(8\pi^2A)$, the upper bound is
+\begin{equation}\label{eq:vg-topological-ceiling}
+ e(1-\J)\leq U.
+\end{equation}
+The second chirality has been used only through $W_-\geq0$; no monopole
+class in the opposite orientation has been assumed.
+
+\subsection{Recovery by shrinking the surgery regions}
+
+\begin{proposition}[Surgery recovery]\label{prop:vg-recovery}
+On every fixed manifold \eqref{eq:vg-surgery-data} there are smooth metrics
+$g_\varepsilon$, $\varepsilon\downarrow0$, for which
+\begin{equation}\label{eq:vg-recovery-limits}
+ \begin{gathered}
+ V_\varepsilon\longrightarrow2\pi^2A,\qquad
+ I_\varepsilon\longrightarrow-8\pi^2A,\qquad
+ S_\varepsilon\longrightarrow32\pi^2A,\\
+ W_{+,\varepsilon}\longrightarrow\frac{4\pi^2A}{3},\qquad
+ R_\varepsilon\longrightarrow8\pi^2(A+Q),\qquad
+ P_\varepsilon\longrightarrow8\pi^2Q.
+ \end{gathered}
+\end{equation}
+Consequently
+\begin{equation}\label{eq:vg-recovery-bound}
+ \inf_g\E(g)\leq\frac{4h}{1+h}.
+\end{equation}
+Neither this inequality nor its construction asserts attainment.
+\end{proposition}
+
+\begin{proof}
+We use the scalar-flat anti-self-dual insertions in the proof of
+\cite[Theorem~4.3]{LeBrun2001}, and record the additional limits needed
+for \eqref{eq:vg-defect-formulas}.  Equip
+$\overline{\mathbb{CP}}^{\,2}$ with the oppositely oriented Fubini--Study
+metric, and $S^1\times S^3$ with a round product metric.  These metrics
+have positive scalar curvature and $W^+=0$.  Multiplication by the square
+of a positive Green function of the conformal Laplacian at a point gives
+a complete scalar-flat anti-self-dual metric on the punctured manifold.
+In asymptotically Euclidean coordinates $y$ it has the expansion
+\[
+ h_{ab}(y)=\delta_{ab}+O(|y|^{-2}),\qquad
+ \partial^m(h_{ab}-\delta_{ab})=O(|y|^{-2-m}),\quad m=1,2.
+\]
+These are the models used in the cited construction.
+
+Multiply each model by $\varepsilon^4$ and use coordinates
+$x=\varepsilon^2y$ on its end.  Its coefficients then satisfy
+\begin{equation}\label{eq:vg-scaled-model}
+ \partial^m(h_{\varepsilon,ab}-\delta_{ab})
+       =O(\varepsilon^4|x|^{-2-m}),\qquad m=0,1,2.
+\end{equation}
+Choose $k+\ell$ distinct points in $X$ and disjoint normal-coordinate
+balls about them.  At each point remove a ball of radius $\varepsilon$
+and attach the appropriate model, truncated at its end.  On
+$\varepsilon\leq r=|x|\leq2\varepsilon$, use
+\[
+ g_\varepsilon
+   =f(r/\varepsilon)h_\varepsilon
+       +(1-f(r/\varepsilon))g_X,
+\]
+where $f$ is a fixed smooth cutoff equal to one near the inner boundary
+and zero near the outer boundary.  Away from these annuli the metric
+is the model or $g_X$, respectively.  The asymptotic charts and the
+orientation of the attachments give precisely the connected sum in
+\eqref{eq:vg-surgery-data}.
+
+In the normal coordinates, $g_X=\delta+O(r^2)$, with first derivative
+$O(r)$ and second derivative $O(1)$.  Equation
+\eqref{eq:vg-scaled-model} gives the same orders on $r\asymp\varepsilon$.
+Differentiating the cutoff twice therefore shows that the interpolated
+metric is uniformly equivalent to the Euclidean metric, has first
+derivatives $O(\varepsilon)$ and second derivatives $O(1)$ on the
+annulus.  Its curvature is consequently $O(1)$ there, and the annular
+volume is $O(\varepsilon^4)$.  The constants here may depend on the
+fixed manifold and the finite set of attachment points, which is all
+that is required.
+
+The inserted region also has volume $O(\varepsilon^4)$.  To see this,
+the unscaled region extends to $|y|=O(\varepsilon^{-1})$ and has volume
+$O(\varepsilon^{-4})$ by its Euclidean asymptotics; multiplication of a
+four-dimensional metric by $\varepsilon^4$ multiplies volume by
+$\varepsilon^8$.  The compact part of the model has still smaller
+volume $O(\varepsilon^8)$.  On this entire inserted region $s=0$ and
+$W^+=0$.  The exterior is unchanged and exhausts $X$ up to balls of
+vanishing volume.  These observations prove the first four limits of
+\eqref{eq:vg-recovery-limits}, including the signed integral $I$.
+
+Solving \eqref{eq:vg-chiral-identities} for $P$ and $R$ gives
+\[
+ P=4W_++\frac S{12}-8\pi^2T_+,
+ \qquad R=4W_++\frac S3-8\pi^2T_+.
+\]
+Together with $T_+=A-Q$, the first four limits give
+$R_\varepsilon\to8\pi^2(A+Q)$ and
+$P_\varepsilon\to8\pi^2Q$.  Finally,
+\[
+ \lim_{\varepsilon\downarrow0}\E(g_\varepsilon)
+ =4-\frac{(8\pi^2A)^2}{(2\pi^2A)(8\pi^2(A+Q))}
+ =\frac{4Q}{A+Q},
+\]
+which proves \eqref{eq:vg-recovery-bound}.
+\end{proof}
+
+\subsection{An integer-valued family in the two-chirality window}
+
+Define
+\begin{equation}\label{eq:vg-F}
+ F(t)=\frac{(4-\sqrt{1-3t})^2}{9},\qquad 0\leq t<\frac13.
+\end{equation}
+
+\begin{theorem}[Balanced surgery family]\label{thm:vg-balanced-family}
+There are finite unramified covers $X_j$ of a fixed closed
+complex-hyperbolic surface, and nonnegative integers $k_j,\ell_j$, such
+that, with the notation \eqref{eq:vg-surgery-data} on
+\[
+ M_j=X_j\#k_j\overline{\mathbb{CP}}^{\,2}\#\ell_j(S^1\times S^3),
+\]
+one has
+\begin{equation}\label{eq:vg-balanced-window}
+ \begin{gathered}
+ h_j\longrightarrow0,\qquad Q_j\longrightarrow\infty,
+ \qquad 0<U_j-F(h_j)=o(h_j^2),\\
+ \frac{k_j}{Q_j}\longrightarrow\frac29,
+ \qquad \frac{\ell_j}{Q_j}\longrightarrow\frac7{36}.
+ \end{gathered}
+\end{equation}
+There is a constant $c_*>0$, independent of $j$, such that for all
+sufficiently large $j$,
+\begin{equation}\label{eq:vg-linear-sandwich}
+ c_*h_j\leq\inf_g\J(g)\leq\inf_g\E(g)
+                         \leq\frac{4h_j}{1+h_j}.
+\end{equation}
+In particular none of these sufficiently late $M_j$ admits an Einstein
+metric, although their integral defects tend to zero.
+\end{theorem}
+
+\begin{proof}
+Write the base surface as $X_0=\mathbb{CH}^2/\Gamma$.
+The group $\Gamma$ is infinite and finitely generated, and its adjoint
+representation is faithful and linear in characteristic zero.  It is
+residually finite by Mal'cev's theorem \cite{Malcev1940}.
+Its finite-index subgroups have unbounded indices: otherwise finite
+generation would give only finitely many such subgroups, since each
+subgroup of index $d$ arises from an action on $d$ points and there are
+only finitely many homomorphisms from a finitely generated group to
+$\mathfrak S_d$.  Their intersection would then have finite index.
+Residual finiteness says that this intersection is trivial, contradicting
+the infinitude of $\Gamma$.  Choose connected covers $X_j\to X_0$
+with
+\[
+ A_j=c_1^2(X_j)=[\Gamma:\pi_1(X_j)]c_1^2(X_0)\geq j^4.
+\]
+No prescribed cover degree or divisibility condition is needed.
+
+Put $\eta_j=1/j$, and for $t>0$ small define
+\begin{equation}\label{eq:vg-rounding-choice}
+ x(t)=\frac{F(t)-1+3t}{18},\qquad
+ y(t)=\frac{15t-F(t)+1}{72},\qquad
+ k_j=\lfloor A_jx(\eta_j)\rfloor,
+ \quad \ell_j=\lfloor A_jy(\eta_j)\rfloor-2.
+\end{equation}
+Taylor expansion gives
+\[
+ F(t)=1+t+t^2+O(t^3),\qquad
+ x(t)=\frac29t+O(t^2),\qquad
+ y(t)=\frac7{36}t+O(t^2).
+\]
+Since $A_j\eta_j\geq j^3$, both integers are nonnegative for large $j$.
+Let $a_j,b_j\in[0,1)$ be the fractional parts of $A_jx(\eta_j)$ and
+$A_jy(\eta_j)$, respectively.  The exact identities
+\[
+ x(t)+4y(t)=t,\qquad 1+15x(t)-12y(t)=F(t)
+\]
+give
+\begin{equation}\label{eq:vg-rounding-errors}
+ h_j=\eta_j-\frac{a_j+4b_j+8}{A_j},\qquad
+ U_j=F(\eta_j)+\frac{-15a_j+12b_j+24}{A_j}.
+\end{equation}
+For the second equality, $k_j/A_j\to0$, so
+$\tau(M_j)=A_j/9-k_j>0$ for large $j$.  Hence the smaller quantity in
+the definition of $U_j$ really is $T_{-,j}$.
+
+For $0\leq t\leq19/300$,
+\[
+ 0<F'(t)=\frac{4-\sqrt{1-3t}}{3\sqrt{1-3t}}<2.
+\]
+Also $0<\eta_j-h_j<13/A_j$ and
+$9<-15a_j+12b_j+24<36$.  The mean value theorem applied to
+\eqref{eq:vg-rounding-errors} therefore yields
+\[
+ 0<U_j-F(h_j)<\frac{36+26}{A_j}
+                    =\frac{62}{A_j}=o(h_j^2).
+\]
+Here $h_j\sim1/j$, because $A_j\geq j^4$.
+The definitions also give $Q_j=A_jh_j\to\infty$ and the two ratios
+in \eqref{eq:vg-balanced-window}.  In particular,
+\begin{equation}\label{eq:vg-U-expansion}
+ U_j=1+h_j+O(h_j^2).
+\end{equation}
+
+For every metric on $M_j$, the actual class
+\eqref{eq:vg-actual-class} satisfies the hypotheses of
+Theorem~\ref{thm:linear-window}.  Its linear estimate gives
+\[
+ \J(g)+(U_j-1-h_j)_+\geq c h_j.
+\]
+By \eqref{eq:vg-U-expansion}, the second term is $O(h_j^2)$, independently
+of the metric.  After discarding finitely many indices this proves
+$\J(g)\geq(c/2)h_j$ for every $g$.  Proposition~\ref{prop:vg-recovery}
+and $\J\leq\E$ supply the other inequalities in
+\eqref{eq:vg-linear-sandwich}.  An Einstein metric with nonzero Ricci
+curvature has $\J=0$, contradicting the lower bound; Ricci-flatness
+is separately excluded by \eqref{eq:vg-scalar-budget}.
+\end{proof}
+
+The recovery is performed on each fixed $M_j$.  Choosing its surgery
+parameter after $j$ gives a diagonal sequence whose defect differs from
+$4h_j/(1+h_j)$ by any prescribed $o(h_j)$ error.  No uniform lower
+bound on the attachment radii is needed.  Conversely, these integral
+estimates make no assertion that the pointwise Ricci error tends to zero.
+
+\subsection{Conformal minimization and the traceless-Ricci problem}
+
+The following comparison applies whenever every conformal class has an
+actual positive monopole projection, and hence applies to all the surgery
+manifolds above.
+
+\begin{proposition}[Exact conformal comparison]\label{prop:vg-conformal-infimum}
+Suppose that every conformal class on a closed four-manifold $M$ contains
+an actual conformally solvable Spin$^c$ structure with positive self-dual
+square.  Every conformal class then has a unique representative
+$\widehat g$ with scalar curvature $-4$.  If
+$\alpha=\inf_g\E(g)$, then
+\begin{equation}\label{eq:vg-infima-exact}
+ \inf_g\J(g)=\min\{1,\alpha\}.
+\end{equation}
+In particular, if $\alpha<1$, the infima of $\E$ and $\J$ coincide,
+and both may be computed on the scalar-$-4$ representatives.
+For $g=u^2\widehat g$, set $\delta=S(g)-S(\widehat g)$.  One has the
+exact identities
+\begin{equation}\label{eq:vg-conformal-scalar}
+ \delta=48\int_Mu^{-2}|du|_{\widehat g}^2\,d\mu_{\widehat g}
+       +36\int_M(u^{-1}\Delta_{\widehat g}u)^2\,d\mu_{\widehat g},
+\end{equation}
+\begin{equation}\label{eq:vg-conformal-P-R}
+ P(g)=P(\widehat g)+\frac\delta{12},\qquad
+ R(g)=R(\widehat g)+\frac\delta3,
+\end{equation}
+and, when $\alpha<1$,
+\begin{equation}\label{eq:vg-conformal-excess}
+ \E(g)-\alpha
+ =\frac{R(\widehat g)}{R(g)}\bigl(\J(\widehat g)-\alpha\bigr)
+     +(1-\alpha)\frac{\delta}{3R(g)}+\frac{L_s(g)}{R(g)}.
+\end{equation}
+All three terms on the right of \eqref{eq:vg-conformal-excess} are
+nonnegative.
+\end{proposition}
+
+\begin{proof}
+The Yamabe theorem \cite{LeeParker1987} gives a constant-scalar-curvature representative in
+each conformal class.  Its scalar curvature cannot be nonnegative:
+the unperturbed Weitzenb\"ock formula would force the spinor to vanish,
+then its self-dual determinant curvature would vanish, contradicting
+the positive self-dual square.  A constant rescaling therefore gives
+$s_{\widehat g}=-4$.  For uniqueness, if both $\widehat g$ and
+$u^2\widehat g$ have scalar curvature $-4$, then, with
+$\Delta=d^*d$,
+\begin{equation}\label{eq:vg-conformal-scalar-law}
+ -4u^3=6\Delta_{\widehat g}u-4u.
+\end{equation}
+At a maximum of $u$ the positive Laplacian is nonnegative, so $u\leq1$;
+at a minimum it is nonpositive, so $u\geq1$.  Thus $u=1$.
+
+For a general $g=u^2\widehat g$, the transformation law is
+$s_gu^3=6\Delta_{\widehat g}u-4u$.  Squaring it and using
+$d\mu_g=u^4d\mu_{\widehat g}$ yields
+\[
+ S(g)=16\Vol(\widehat g)-48\int_Mu^{-1}\Delta_{\widehat g}u
+                   +36\int_M(u^{-1}\Delta_{\widehat g}u)^2.
+\]
+Integration by parts gives
+$\int u^{-1}\Delta u=-\int u^{-2}|du|^2$, proving
+\eqref{eq:vg-conformal-scalar}.  In particular $\delta\geq0$, with
+equality exactly when $u$ is constant.  The conformal invariance of
+$W_+$ and \eqref{eq:vg-chiral-identities} give
+$P(g)-P(\widehat g)=\delta/12$, and then $R=P+S/4$ gives the other
+identity in \eqref{eq:vg-conformal-P-R}.  Consequently
+\begin{equation}\label{eq:vg-J-convex}
+ \J(g)=\frac{R(\widehat g)\J(\widehat g)+\delta/3}
+                   {R(\widehat g)+\delta/3}.
+\end{equation}
+Thus $\J(g)$ lies between $\J(\widehat g)$ and one.  Since
+$\E(\widehat g)=\J(\widehat g)$, whenever $\J(g)<1$ we obtain
+\begin{equation}\label{eq:vg-Yamabe-improves}
+ \E(\widehat g)=\J(\widehat g)\leq\J(g)\leq\E(g).
+\end{equation}
+
+We also need to see that the endpoint one in
+\eqref{eq:vg-J-convex} can be approached.  Choose a coordinate ball,
+a smooth cutoff $\chi$ supported in it and equal to one on a smaller
+ball, and a fixed $0<\epsilon<1/2$.  The positive functions
+$u_n=1+\epsilon\chi\sin(nx^1)$ are bounded above and below independently
+of $n$.  On the smaller ball the leading term of
+$\Delta_{\widehat g}u_n$ is
+$\epsilon n^2\widehat g^{11}\sin(nx^1)$, and its remainder is $O(n)$
+in $L^2$.  The integral of
+$(\widehat g^{11})^2\sin^2(nx^1)$ on that ball tends to half the
+integral of $(\widehat g^{11})^2$, by integration of the oscillatory
+cosine term.  It is therefore bounded below by a positive constant for
+large $n$.  Hence
+$\int(u_n^{-1}\Delta u_n)^2\to\infty$ and \eqref{eq:vg-conformal-scalar}
+gives $\delta_n\to\infty$.  Equation \eqref{eq:vg-J-convex} now shows
+$\J(u_n^2\widehat g)\to1$.
+
+It follows, first within a fixed class, that
+\begin{equation}\label{eq:vg-class-infimum}
+ \inf_{g\in[\widehat g]}\J(g)=\min\{\J(\widehat g),1\}.
+\end{equation}
+If $\J(\widehat g)<1$, the minimum is attained exactly by constant
+rescalings of $\widehat g$; if $\J(\widehat g)=1$, every conformal metric
+has $\J=1$; and if $\J(\widehat g)>1$, the infimum one is not attained.
+Globally, $\J\leq\E$ and the preceding sequence give
+$\inf\J\leq\min\{\alpha,1\}$.  On the other hand, a metric with
+$\J(g)<\min\{\alpha,1\}$ would, by
+\eqref{eq:vg-Yamabe-improves}, produce
+$\E(\widehat g)<\alpha$, which is impossible.  This proves
+\eqref{eq:vg-infima-exact} and the restriction to scalar-$-4$ metrics
+when $\alpha<1$.
+
+Finally, add $L_s/R$ to \eqref{eq:vg-J-convex}, subtract $\alpha$, and
+use $R=R(\widehat g)+\delta/3$.  The result is
+\eqref{eq:vg-conformal-excess}.  The first term is nonnegative because
+$\J(\widehat g)=\E(\widehat g)\geq\alpha$, and the other two are
+nonnegative by their definitions.
+\end{proof}
+
+In particular, for an $\E$-minimizing sequence on a fixed such manifold
+with $\alpha<1$, \eqref{eq:vg-conformal-excess} gives
+\[
+ \frac{\delta}{R}\longrightarrow0,\qquad
+ \frac{L_s}{R}\longrightarrow0,\qquad
+ \frac{R(\widehat g)}R\longrightarrow1,
+ \qquad \J(\widehat g)\longrightarrow\alpha.
+\]
+Its late terms may be replaced by their scalar-$-4$ representatives
+without increasing the defect.  These conclusions control discarded
+energies; they do not assert convergence of the conformal factors or
+compactness of the resulting metrics.
+
+\begin{theorem}[Reduction to traceless and full curvature energy]
+\label{thm:vg-first-order-reduction}
+For the family in Theorem~\ref{thm:vg-balanced-family}, put
+\begin{equation}\label{eq:vg-alpha-rho}
+ \alpha_j=\inf_{g\text{ on }M_j}\E(g),\qquad
+ \rho_j=\frac{1}{8\pi^2A_j}
+                    \inf_{g\text{ on }M_j}\int_{M_j}|\Ric_g^\circ|^2.
+\end{equation}
+For all sufficiently large $j$,
+\begin{equation}\label{eq:vg-rho-bounds}
+ \inf_g\J(g)=\alpha_j,\qquad
+ \frac{4\rho_j}{U_j+4\rho_j}
+                  \leq\alpha_j\leq\frac{4\rho_j}{1+\rho_j}.
+\end{equation}
+Consequently
+\begin{equation}\label{eq:vg-alpha-four-rho}
+ \rho_j=O(h_j),\qquad \alpha_j=4\rho_j+O(h_j^2).
+\end{equation}
+If $\Rm$ denotes the curvature operator on $\Lambda^2$, with its
+Hilbert--Schmidt norm, then
+\begin{equation}\label{eq:vg-full-curvature-infimum}
+ \inf_g\int_{M_j}|\Rm_g|^2
+      =8\pi^2\chi(M_j)+8\pi^2A_j\rho_j.
+\end{equation}
+In particular, the assertion $\alpha_j/h_j\to4$ is equivalent to either
+of the assertions
+\begin{equation}\label{eq:vg-open-equivalences}
+ \inf_g\int_{M_j}|\Ric_g^\circ|^2
+          =8\pi^2Q_j+o(Q_j),\qquad
+ \inf_g\int_{M_j}|\Rm_g|^2
+          =8\pi^2\chi(M_j)+8\pi^2Q_j+o(Q_j).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The recovery bound makes $\alpha_j<1$ for large $j$, so
+Proposition~\ref{prop:vg-conformal-infimum} gives the first equality in
+\eqref{eq:vg-rho-bounds}.  Fix such a $j$, temporarily suppress its
+index, and put $x=P/(8\pi^2A)$.  Equation \eqref{eq:vg-two-sided-R}
+implies
+\[
+ \frac{4x}{U+4x}\leq\J(g)\leq\frac{4x}{1+x}.
+\]
+Both functions of $x$ are continuous and increasing on $[0,\infty)$,
+since $U>0$.  Their infima over the metric values of $x$ are therefore
+their values at $\rho$.  More explicitly, $x\geq\rho$ gives the lower
+bound, and a sequence with $x\downarrow\rho$ gives the upper bound
+after taking the infimum of $\J$.  No common minimizing metric for
+$P$ and $\J$ is required.  This proves \eqref{eq:vg-rho-bounds}.
+
+Its lower inequality and $\alpha<1$ give
+\[
+ \rho\leq\frac{\alpha U}{4(1-\alpha)}.
+\]
+Since $\alpha=O(h)$ and $U=1+O(h)$ by
+\eqref{eq:vg-linear-sandwich} and \eqref{eq:vg-U-expansion}, this proves
+$\rho=O(h)$.  Both outer terms of \eqref{eq:vg-rho-bounds} are now
+$4\rho+O(h^2)$, which proves \eqref{eq:vg-alpha-four-rho}.
+
+The orthogonal decomposition of the curvature operator and the
+Chern--Gauss--Bonnet formula give, respectively,
+\[
+ \int_M|\Rm_g|^2=W_++W_-+\frac S{24}+\frac P2,
+ \qquad
+ 8\pi^2\chi(M)=W_++W_-+\frac S{24}-\frac P2.
+\]
+Subtracting gives the exact identity
+$\int_M|\Rm_g|^2=8\pi^2\chi(M)+P$ for every metric, and hence
+\eqref{eq:vg-full-curvature-infimum}.  If curvature is instead regarded
+as a covariant four-tensor with the full tensor norm, its squared norm
+is four times the operator norm used here; the constants in
+\eqref{eq:vg-full-curvature-infimum} must then also be multiplied by four.
+Finally divide \eqref{eq:vg-alpha-four-rho} by $h_j$, use
+$A_jh_j=Q_j$, and then apply \eqref{eq:vg-full-curvature-infimum}.
+This proves the two equivalences in \eqref{eq:vg-open-equivalences}.
+\end{proof}
+
+\subsection{An exact subfamily and the unresolved balanced coefficient}
+
+The upper coefficient can be determined when handles dominate the surgery.
+This fact does not determine it for the balanced family.
+
+\begin{proposition}[A scalar--Weyl identity]\label{prop:vg-handle-identity}
+For the manifold \eqref{eq:vg-surgery-data}, set
+\[
+ \theta=\frac{4\ell-5k}{A}=h-\frac{6k}{A},\qquad
+ S_0=32\pi^2A,\qquad B=\int_M|W^-_g|^2.
+\]
+If $0\leq\theta\leq1/3$, every smooth metric satisfies
+\begin{equation}\label{eq:vg-handle-identity}
+ \E(g)-\frac{4\theta}{1+\theta}
+ =\frac{(1-3\theta)(S-S_0)/3+16B+(1+\theta)L_s}
+                   {(1+\theta)R}.
+\end{equation}
+In particular, for all values of $k,\ell$,
+\begin{equation}\label{eq:vg-piecewise-bound}
+ \E(g)\geq
+ \begin{cases}
+ 0,&\theta\leq0,\\
+ 4\theta/(1+\theta),&0\leq\theta\leq1/3,\\
+ 1,&\theta\geq1/3.
+ \end{cases}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The signature formula and \eqref{eq:vg-chiral-identities} give
+\[
+ W_+=B+12\pi^2(A/9-k),\qquad
+ P=4W_++S/12-8\pi^2(A-k-4\ell).
+\]
+Thus
+\begin{equation}\label{eq:vg-P-theta}
+ P=\frac S{12}+4B+8\pi^2A\left(\theta-\frac13\right).
+\end{equation}
+By \eqref{eq:vg-defect-formulas}, the numerator of
+$(1+\theta)R\bigl(\E-4\theta/(1+\theta)\bigr)$ is
+\[
+ (1+\theta)(4P+L_s)-4\theta(P+S/4)
+ =4P-\theta S+(1+\theta)L_s.
+\]
+Substitution of \eqref{eq:vg-P-theta} turns this into
+$(1-3\theta)(S-S_0)/3+16B+(1+\theta)L_s$, proving
+\eqref{eq:vg-handle-identity}.  Every term is nonnegative when
+$0\leq\theta\leq1/3$, by \eqref{eq:vg-scalar-budget}.  For
+$\theta\geq1/3$, the same substitution gives instead
+\[
+ \E-1=\frac{3P-S/4+L_s}{R}
+       =\frac{8\pi^2A(3\theta-1)+12B+L_s}{R}\geq0.
+\]
+For $\theta\leq0$ the definition of $\E$ gives the stated bound.
+\end{proof}
+
+\begin{theorem}[Exact handle-only infimum]\label{thm:vg-handle-sharp}
+If $k=0$ and $0\leq h=4\ell/A\leq1/3$, then
+\begin{equation}\label{eq:vg-handle-sharp}
+ \inf_g\E(g)=\inf_g\J(g)=\frac{4h}{1+h}.
+\end{equation}
+For $h=0$, the complex-hyperbolic metric attains the infima.
+For $0<h<1/3$, neither infimum is attained by a smooth metric.
+The argument below makes no assertion of attainment or nonattainment
+at $h=1/3$.
+\end{theorem}
+
+\begin{proof}
+Here $\theta=h$, so \eqref{eq:vg-handle-identity} is an all-metric lower
+bound $\E\geq4h/(1+h)$.  Proposition~\ref{prop:vg-recovery} gives
+the matching upper bound on the same smooth manifold.  Since its value
+is at most one, \eqref{eq:vg-infima-exact} gives the assertion about
+$\inf\J$ as well.  If $h=0$, $M=X$ and $g_X$ has zero defect.
+
+Suppose now that $0<h<1/3$ and equality is attained for $\E$.
+The coefficients in \eqref{eq:vg-handle-identity} force
+$S=S_0$, $B=0$ and $L_s=0$.  Take the actual ordinary monopole
+structure supplied above; since there are no exceptional summands,
+its determinant class $a$ has $a^2=A$.  For a solution $(\mathcal A,\Phi)$,
+the inequalities used to prove \eqref{eq:vg-scalar-budget} become
+\[
+ S_0\leq32\pi^2p\leq H_\Phi\leq S=S_0.
+\]
+Every inequality is therefore an equality.  The Weitzenb\"ock formula
+then forces $\int|\nabla_{\mathcal A}\Phi|^2=0$.  Hence $\Phi$ is a
+nonzero parallel positive spinor and is nowhere zero.
+
+For the positive spinor bundle of a Spin$^c$ structure with determinant
+class $a$, the characteristic-class identity is
+\[
+ 4c_2(S_a^+)[M]=a^2-(2\chi(M)+3\tau(M)).
+\]
+For example, it follows directly from
+$\mathfrak{su}(S_a^+)\cong\Lambda^+$, together with
+$p_1(\mathfrak{su}(E))=c_1(E)^2-4c_2(E)$ for a complex rank-two bundle
+and $p_1(\Lambda^+)[M]=2\chi(M)+3\tau(M)$.
+Here it gives $c_2(S_a^+)[M]=\ell>0$.  A nowhere-zero section of a
+complex rank-two bundle spans a trivial line subbundle, so its second
+Chern class vanishes, a contradiction.  Thus $\E$ cannot attain its
+infimum.  If $\J$ attained that same value, which is less than one,
+\eqref{eq:vg-Yamabe-improves} would produce an $\E$-minimizer, again a
+contradiction.  At $h=1/3$ the coefficient of $S-S_0$ vanishes, so the
+preceding scalar-equality argument is not available.
+\end{proof}
+
+More generally, if $h_j\downarrow0$ and $k_j=o(Q_j)$ in any such surgery
+sequence, then $\theta_j/h_j=1-6k_j/Q_j\to1$.
+For large $j$, $0<\theta_j<1/3$, and
+\eqref{eq:vg-piecewise-bound} and \eqref{eq:vg-recovery-bound} give
+\begin{equation}\label{eq:vg-handle-dominant}
+ \frac{4\theta_j}{h_j(1+\theta_j)}
+   \leq\frac{\inf_g\E(g)}{h_j}\leq\frac4{1+h_j}.
+\end{equation}
+Both outer terms tend to four.  Thus the first-order coefficient is four
+on these handle-dominant sequences.
+
+For the balanced family, in contrast,
+$k_j/Q_j\to2/9$, so $\theta_j/h_j\to-1/3$.
+The elementary estimate \eqref{eq:vg-piecewise-bound} is then only
+the trivial lower bound zero.  Theorem~\ref{thm:linear-window} supplies
+the positive linear order in \eqref{eq:vg-linear-sandwich}, but it does
+not determine the best coefficient.  The remaining variational question
+is to determine the asymptotic value, or the distinct lower and upper
+limits if no limit exists, of
+\begin{equation}\label{eq:vg-open-coefficient}
+ \frac{\alpha_j}{h_j}
+ =\frac1{h_j}\inf_{g\text{ on }M_j}\E(g)
+ =\frac1{h_j}\inf_{g\text{ on }M_j}\J(g).
+\end{equation}
+What is proved is
+\[
+ 0<c_*\leq\liminf_{j\to\infty}\frac{\alpha_j}{h_j}
+     \leq\limsup_{j\to\infty}\frac{\alpha_j}{h_j}\leq4.
+\]
+The assertion that both limits are four is precisely the all-metric
+energy assertion \eqref{eq:vg-open-equivalences}; it is not a consequence
+of the recovery sequence.  Conversely, an upper construction with a
+smaller coefficient would require a matching lower analysis to determine
+the new optimum.  A classification of all degenerations or a full
+limiting variational theory would be stronger conclusions, not premises
+of the equivalences proved here.

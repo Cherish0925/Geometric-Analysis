@@ -1,0 +1,278 @@
+% Step 7 historical note: exact orbit-volume model calculations
+% S0910A03 Agent2 (Constructor) — Explore
+%
+% CORRECTED IN STEP 8. The exact identities below remain useful only under
+% their stated symmetry and base hypotheses. The total-deficit transport,
+% capacity, exhaustive-collapse, unconditional interval nil^3, and bounded
+% cusp-length statements are superseded by
+% step8_cover_mean_transport_and_model_scope_corrections.md.
+% No fixed-topology pinching gap follows from this note.
+%
+% Sources: Lott (arxiv:1708.06780) eq. (2.9), Prop. 2.10;
+%   Cheeger--Naber (Ann. Math. 2015); Naber--Zhang (Geom. Topol. 2016).
+
+\section{The orbit-volume equation for negative Einstein metrics}
+
+Let $M^{n+N}$ carry an adapted metric with free local isometric
+$\mathbb R^N$-action:
+\[
+ \bar g=\sum_{I,J}G_{IJ}(dx^I+A^I)(dx^J+A^J)+g_B,
+\]
+where $G_{IJ}$ is a positive-definite symmetric matrix on the base $B^n$,
+$A^I$ are connection one-forms, and $g_B$ is a Riemannian metric on $B$.
+Put $v=\sqrt{\det G}$ (the orbit-volume function) and
+$|F|^2=g^{\alpha\gamma}g^{\beta\delta}G_{IJ}F_{\alpha\beta}^I F_{\gamma\delta}^J$.
+
+\textbf{Lott's equation} \cite[eq.\ (2.9)]{Lott2020}:
+if $\operatorname{Ric}(\bar g)=\lambda\bar g$, then
+\begin{equation}\label{eq:lott}
+ \Delta_B v=\Bigl(\frac{|F|^2}{4}-\lambda N\Bigr)v.
+\end{equation}
+(The Laplacian is the geometer's $\Delta=\operatorname{tr}\nabla^2$, so
+$\Delta v\ge0$ means $v$ is subharmonic.)
+
+For the \textbf{negative normalized branch} $\lambda=-1$,
+\begin{equation}\label{eq:negein}
+ \Delta_B v=\Bigl(\frac{|F|^2}{4}+N\Bigr)v.
+\end{equation}
+Since $|F|^2\ge0$ and $N\ge1$, the coefficient is
+$\ge N\ge1>0$.  Therefore:
+\begin{quote}
+\emph{Wherever $v>0$, the orbit-volume function $v$ is strictly
+subharmonic.}
+\end{quote}
+
+This is qualitatively different from the Ricci-flat case $\lambda=0$,
+where $\Delta v=(|F|^2/4)v\ge0$ merely forces $v$ constant and $F=0$
+on parabolic bases, permitting nontrivial semiflat K\"ahler collapse
+(K3 examples exist).
+
+\section{Exclusion of free abelian negative Einstein collapse}
+
+\textbf{Proposition.}  Let $(B^n,g_B)$ be a connected Riemannian manifold
+(or orbifold), and let $\mathcal X$ be a Riemannian groupoid over $B$
+with free abelian $\mathbb R^N$ symmetry ($N\ge1$) and
+$\operatorname{Ric}_{\mathcal X}=\lambda g_{\mathcal X}$ with $\lambda<0$.
+If $B$ is parabolic and $\det G$ is bounded above, then the free abelian
+structure is impossible: no such $\mathcal X$ exists.
+
+\textit{Proof.}
+From \eqref{eq:negein}, $v=\sqrt{\det G}\ge0$ satisfies
+$\Delta v\ge(-\lambda N)v$ with $-\lambda N>0$.
+On the open set $\{v>0\}$, $v$ is strictly subharmonic.
+Since $v\ge0$ everywhere and $\det G$ bounded above implies $v$ bounded
+above, on a parabolic base a bounded-above subharmonic function is
+constant (see \cite[Thm.\ 5.1]{Grigoryan1999}).
+If $v=c>0$ is constant, then $\Delta v=0$ but the right side
+$(-\lambda N)c>0$: contradiction.
+If $v\equiv0$, then $\det G\equiv0$, contradicting the free abelian
+structure (which requires positive-definite $G$). \qed
+
+\subsection*{Scope in four dimensions}
+For an exact adapted model, the proposition applies in any orbit dimension
+provided its hypotheses are independently verified.  In base dimensions two
+or three, a punctured compact smooth/orbifold base with polar punctures is a
+standard parabolic case, but finite total four-volume does \emph{not} imply
+that $v$ is bounded.  Thus no general free-circle or free-$T^2$ collapse
+exclusion follows from volume alone.  For a circle base, periodic integration
+excludes the exact abelian model.  For an interval, endpoint behavior must be
+specified.  If the abelian action is transitive ($N=4$), the adapted metric is
+left-invariant on an abelian group and hence flat, so it cannot satisfy
+$\operatorname{Ric}=-g$.
+\section{The quantitative near-Einstein identity under an exact adapted action}
+
+Suppose the actual metric $g_i$ itself carries an exact local free isometric
+$\mathbb R^N$-action and adapted decomposition.  This is an additional model
+hypothesis; it is not supplied by the pinching assumption or by an unverified
+Cheeger--Tian regular region.
+If the region carries a local free $\mathbb R^N$-action adapted to $g_i$,
+the vertical trace of $\operatorname{Ric}_{g_i}=-g_i+E_i$ gives
+\[
+ N\lambda_i+\operatorname{tr}_{\rm vert}E_i
+ =-\frac12 g^{\alpha\beta}G^{IJ}G_{IJ;\alpha\beta}+\cdots+\frac{|F|^2}{4}
+\]
+with $\lambda_i=-1$ and $|\operatorname{tr}_{\rm vert}E_i|\le N\delta_i$.
+Hence the near-Einstein orbit-volume inequality is
+\begin{equation}\label{eq:nearein}
+ \Delta_B v\ge\Bigl(\frac{|F|^2}{4}+N(1-\delta_i)\Bigr)v
+ \ge N(1-\delta_i)\,v.
+\end{equation}
+For $\delta_i<1$, the coefficient $c_i=N(1-\delta_i)>0$.
+
+\subsection*{Capacity estimate (RETRACTED)}
+\emph{The capacity estimate ``$c\int\eta^2\le\int|\nabla\eta|^2$''
+claimed in an earlier draft is false.  The IPP/AM--GM derivation has
+a sign error: the squared term in the expansion has the wrong direction
+to absorb the cross term.  Counterexample: $v=e^{\sqrt c\,x}$ on
+$\mathbb R$ satisfies $v''=cv$ but $c\int\eta_R^2\asymp R$ while
+$\int|\eta_R'|^2=O(1)$.  Only those parabolic or periodic arguments whose
+separate global hypotheses are verified remain valid.}
+
+\section{Weighted volume and corrected mean transport}
+
+This historical calculation motivates the issue; the rigorous normal-cover
+mean lemma and its hypotheses are in the Step~8 correction.
+
+\subsection*{Volume pushdown}
+On a regular abelian region, the total-space volume element pushes down
+to the base as
+\[
+ d\mu_M=v\cdot(\text{lattice factors})\cdot d\mu_B.
+\]
+If $\mathcal F$ is a nonneg pointwise scalar on $M$ (e.g., a Ricci
+or curvature defect), its integral over a tube $\pi^{-1}(U)$ is
+\[
+ \int_{\pi^{-1}(U)}\mathcal F\,d\mu_M
+ =\int_U\Bigl(\int_{\text{fiber}}\mathcal F\Bigr)\,v\,d\mu_B
+ =\int_U\overline{\mathcal F}\cdot v\,d\mu_B,
+\]
+where $\overline{\mathcal F}$ denotes the fiberwise average.
+
+\subsection*{Deficit amplification under unwrapping}
+When the torus fiber of length $\sim v^{1/N}$ is unwrapped by a local
+normal cover $\hat\pi:\hat M\to M$, the covering degree is $\sim1/v$
+(in appropriate units).  A noncollapsed ball $\hat B$ on the cover
+satisfies
+\[
+ \operatorname{Vol}(\hat B)\sim1
+ \quad(\text{noncollapsed}).
+\]
+The pullback of $\mathcal F$ satisfies
+\[
+ \fint_{\hat B}\hat\pi^*\mathcal F
+ \sim\frac{1}{v}\cdot\fint_{B}\mathcal F\cdot v\,d\mu_B.
+\]
+Thus \textbf{small $v$ amplifies pointwise defects on the cover}, as the
+Strategist noted: a region with tiny fiber volume may carry little
+base-space error ($\overline{\mathcal F}\cdot v$ small) yet substantial
+error on the noncollapsed cover chart ($\overline{\mathcal F}$ itself
+large).
+
+\subsection*{Correct object: a local mean}
+The covering-degree identity does \emph{not} imply that the cover integral is
+bounded by the total downstairs deficit: the degree may diverge.  For complete
+finite covers, numerator and volume both multiply, preserving the mean; for
+cover balls, multiplicity is nonconstant.  Step~8 proves a normal-cover
+mean-transfer lemma using disjoint deck translates and Bishop--Gromov
+comparison.  Absolute global integral smallness alone is insufficient.
+
+\subsection*{No capacity consequence}
+The retracted capacity inequality gives no volume or boundary-cost estimate.
+Subharmonicity retains only the conditional Liouville statement for an exact
+adapted action over a parabolic base with bounded $v$.  It does not classify
+the collapsed regime or force the surviving geometry to be cusp-like.
+
+\section{Why these model identities do not yet apply to the pinched sequence}
+
+Fixing a critical Ishida--LeBrun manifold gives absolute calibrated deficit
+convergence and, by Step~6, everywhere unit-scale collapse for a hypothetical
+sequence.  It does \emph{not} give the Einstein-only Cheeger--Tian curvature
+decomposition asserted in an earlier draft: an $L^\infty$ bound on
+$\operatorname{Ric}+g$ does not control its derivatives and therefore does not
+produce bounded-curvature CFG regions or a smooth Einstein groupoid by that
+route.
+
+Even if an exact adapted abelian limit model were available, the parabolic
+argument would still require a genuinely parabolic base with polar ends and a
+bounded orbit-volume function; finite total volume supplies only an $L^1$
+condition.  Hence the exact abelian model theorem cannot be counted as an
+exclusion of the actual collapsed sequence.
+
+The valid replacement is the Step~8 cover-mean theorem.  At points satisfying
+uniform Naber--Zhang low-dimensional GH control, maximal fibered nilpotency
+rank, and a nondegenerating model scale, the local universal cover has fixed
+harmonic radius.  A sheet-independent mean-transfer inequality then carries a
+small base-ball calibrated mean to the cover chart, where the forbidden local
+Einstein spectrum gives a contradiction.  What remains open is the volume
+occupied by points failing these uniform Naber--Zhang hypotheses.
+
+\section{The nil$^3$ case: corrected analysis}
+
+For 4D collapse with $\operatorname{nil}^3$ (Heisenberg) local symmetry,
+the base is 1-dimensional and the fiber is a nilmanifold with
+$[e_1,e_2]=e_3$.  From the hypersurface Ricci formula
+and the Milnor fiber eigenvalues $r_1=r_2=-\mu$, $r_3=+\mu$
+where $\mu=a_3^2/(2a_1^2a_2^2)$, the orbit-volume equation becomes
+\begin{equation}\label{eq:nil3}
+ v''=\Bigl(3-\mu\Bigr)v
+ =\Bigl(3-\frac{a_3^2}{2a_1^2a_2^2}\Bigr)v.
+\end{equation}
+The Heisenberg structure constant \textbf{reduces} the coefficient from~3,
+because the fiber scalar curvature $-\mu$ is negative.  The competing
+$3+\mu$ formula in an earlier peer message had swapped the horizontal and
+central fiber-Ricci signs; the peer has since retracted it.  The
+$\mathbb{CH}^2$ cusp and \texttt{verify\_nil3\_sign\_check.py} independently
+verify the displayed sign.
+
+\subsection*{Circle base exclusion via maximum principle}
+The full Einstein ODE system includes
+$\rho'=2\rho D$ where $D=f_3-f_1-f_2$ and $\rho=2\mu$.
+At an interior maximum of $\rho$, $D=0$ and
+$\rho''=2\rho D'=\rho(3\rho-2)$.  Since $\rho''\le0$ at a maximum,
+$\rho\le2/3$.  On a circle, $\rho$ attains its maximum in the interior,
+so $\rho\le2/3$ everywhere, hence $\mu\le1/3$ and
+\[
+ v''\ge\frac83v>0.
+\]
+Integrating: $0=\int v''\ge\frac83\int v>0$, contradiction.
+
+\subsection*{Interval base: cusps exist}
+On a half-line, the standard $\mathbb{CH}^2$ horospherical metric
+\[
+ g=ds^2+e^{2s/\sqrt6}(\theta_1^2+\theta_2^2)
+   +\tfrac23e^{4s/\sqrt6}\theta_3^2,
+ \qquad\mu=\tfrac13,
+\]
+satisfies $\operatorname{Ric}=-g$ with $v\sim e^{4s/\sqrt6}$.
+Taking a lattice quotient in the Heisenberg fiber gives a finite-volume
+nil cusp.  This is a genuine negative Einstein solution with
+$\text{nil}^3$ structure.  A two-ended finite interval is excluded by
+convexity only when the endpoint behavior controls $\rho=2\mu$ (for example
+$\limsup_{\partial I}\rho<6$) and $v\to0$ at both finite-distance endpoints.
+If $\rho$ diverges at an endpoint, the interior maximum argument gives no
+global convexity estimate.  A cusp can have infinite base length and finite
+volume; see the Step~8 correction.
+
+\subsection*{Unresolved singular and inaccessible regimes}
+The model equations do not control rank-drop strata, singular fibers,
+residual four-dimensional cores, curvature concentration, or regions whose
+local covers become regular only at scales tending to zero.  Chern--Gauss--Bonnet
+gives a fixed total $L^2$ curvature budget on fixed topology, but bounded Ricci
+alone does not decompose the manifold into finitely many blowup balls and a
+bounded-curvature complement.  The supported Step~8 statement instead excludes
+positive-volume families of points satisfying uniform Naber--Zhang cover
+hypotheses.  Determining the volume occupied by the complementary failure modes
+is open.
+
+\subsection*{Updated summary of the four-dimensional negative critical route}
+\begin{center}
+\begin{tabular}{ll}
+\textbf{Regime} & \textbf{Status} \\
+\hline
+Noncollapsed regular patches & Excluded (Step~6 local spectral contradiction) \\
+Exact abelian model, parabolic base & Excluded if $v$ bounded and action adapted \\
+Exact abelian model, circle base & Excluded by periodic integration \\
+Exact abelian model, interval base & Requires endpoint data \\
+Exact $\text{nil}^3$ model, circle base & Excluded ($\rho\le2/3$, $v''\ge\frac83v$) \\
+Exact $\text{nil}^3$ model, finite interval & Excluded only with endpoint $\limsup\rho<6$ and $v\to0$ \\
+$\mathbb{CH}^2$ nil cusp & Exists; finite volume and infinite base length \\
+Actual collapsed near-Einstein sequence & Open; exact models do not exhaust it \\
+Positive branch, all dimensions & Open (separate mechanisms) \\
+\end{tabular}
+\end{center}
+
+These are exact-model statements relevant to the four-dimensional negative
+branch.  They do not classify a fixed critical Ishida--LeBrun near-Einstein
+sequence and do not establish a pinching gap.
+
+\medskip
+\noindent\textbf{Key files:}
+\texttt{step6\_local\_projector\_obstruction\_and\_collapse\_reduction.tex}
+(local spectral exclusion),
+\texttt{step6\_collapsed\_unwrapping\_route.md}
+(collapse route plan),
+\texttt{scripts/verify\_orbit\_volume\_negative\_einstein.py}
+(algebraic verification).
+This note:
+\texttt{step7\_orbit\_volume\_negative\_einstein\_collapse.tex}.
+\end{LaTeX}

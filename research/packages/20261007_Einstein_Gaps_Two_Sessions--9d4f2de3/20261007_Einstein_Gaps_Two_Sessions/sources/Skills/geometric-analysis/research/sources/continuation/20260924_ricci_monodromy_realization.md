@@ -1,0 +1,280 @@
+# From pointwise Ricci control to finite monodromy and exact realization
+
+24 September 2026. This is a composition theorem for a specified geometric
+class, not a theorem that arbitrary near-Einstein four-manifolds admit a
+surface fibration. Its global input is the thick-fiber cycle theorem in
+[the companion note](20260924_cycle_holonomy_realization.md).
+Its curvature identity is classical and was already used in
+[Round 20, Sections 5–7](../mathematics/current/round20_construction.md).
+The new project-level conclusion is a quantitative **sufficient condition
+for exact existence**, including zero-signature bundles: small pointwise
+Ricci error detects finite mapping-class monodromy, instead of assuming it.
+
+## 1. Statement
+
+Let
+\[
+        \Sigma_f\longrightarrow M\xrightarrow{\pi}B
+\]
+be a smooth oriented surface bundle, with fiber genus \(f\ge2\) and closed
+oriented base of genus at least two. A Riemannian metric \(g\) makes
+\(\pi:(M,g)\to(B,b)\) a Riemannian submersion. Write \(h_y\) for its
+vertical metric, \(\mathcal H\) for its orthogonal horizontal distribution,
+and \(K_b\) for the Gaussian curvature of the base. Assume the fibers are
+minimal. They need not be totally geodesic, intrinsically hyperbolic, or
+mutually isometric. The horizontal distribution need not be integrable.
+
+Fix a reference fiber over \(y_0\). Uniformize its conformal class to
+curvature \(-1\), and assume its hyperbolic systole is at least \(\iota>0\).
+Define
+\[
+\begin{split}
+ \delta&=\|\operatorname{Ric}_g^{\sharp}+I\|_{L^\infty,\mathrm{op}},\\
+ \eta&=\|(K_b+1)_+\|_{L^\infty(B)},\qquad
+ D_B=\operatorname{diam}(B,b).
+\end{split}                                                    \tag{1}
+\]
+The positive part in \(\eta\) is intentional; no two-sided curvature
+closeness of the base is needed for the estimate below.
+
+**Theorem 1 (Ricci-to-monodromy realization).** There is
+\(\epsilon_{f,\iota}>0\), depending only on fiber genus and the reference
+systole, such that
+\[
+                 2D_B\sqrt{\delta+\eta}<\epsilon_{f,\iota}       \tag{2}
+\]
+implies that the mapping-class monodromy of the bundle has finite image.
+Consequently the **same oriented smooth manifold** \(M\) carries a
+negative Kähler–Einstein metric \(\widehat g\), with
+\[
+ \operatorname{Ric}_{\widehat g}=-\widehat g,
+ \qquad (\widetilde M,\widetilde{\widehat g})
+          \cong\mathbb H^2\times\mathbb H^2.                  \tag{3}
+\]
+The theorem imposes no bound on total-space diameter, total volume,
+injectivity radius, full curvature, or a spectral inverse. It does not
+assert closeness of \(\widehat g\) to \(g\).
+
+In particular, when \(K_b=-1\), condition (2) is simply
+\[
+          \delta<\frac{\epsilon_{f,\iota}^2}{4D_B^2}.          \tag{4}
+\]
+Thus, within this explicitly specified input class, the output is already
+the Einstein existence requested by the negative side of Yau26. The
+additional fibration, minimality, thickness and base-scale hypotheses are
+the restriction; obtaining KE rather than a general Einstein metric is
+not a defect of the existence conclusion.
+
+## 2. Horizontal Ricci controls conformal deformation
+
+For a horizontal vector \(X\), define the symmetric vertical endomorphism
+\(S_X\) by
+\[
+            h(S_XU,V)=\langle(\nabla_UV)^{\mathcal H},X\rangle.
+\]
+Let \(A_XY=\tfrac12[X,Y]^{\mathcal V}\) for basic horizontal vector
+fields. Minimality is exactly \(\operatorname{tr}S_X=0\) for every
+horizontal \(X\). For a unit horizontal vector, O'Neill's contracted
+curvature formulas give
+\[
+ \operatorname{Ric}_g(X,X)
+       =K_b-|S_X|_{\mathrm{HS}}^2
+                -2\sum_a|A_Xe_a|^2.                         \tag{5}
+\]
+Here \(e_a\) is a horizontal orthonormal basis. The derivative of the
+fiber mean-curvature vector in the general formula is zero because that
+vector is identically zero, not because its integral vanishes. To check
+the coefficients, horizontal sectional curvatures contribute
+\(K_b-3\sum_a|A_Xe_a|^2\); the mixed sectional curvatures contribute
+\(\sum_a|A_Xe_a|^2-|S_X|_{\mathrm{HS}}^2\). This is the same identity
+used in Round 20; our sign choice for \(S\) has no effect on (5).
+The primary source is O'Neill,
+[*The fundamental equations of a submersion*](https://doi.org/10.1307/mmj/1028999604).
+
+Since the horizontal compression of \(\operatorname{Ric}_g+g\) has
+operator norm at most \(\delta\), (5) yields, pointwise,
+\[
+\begin{split}
+ |S_X|_{\mathrm{HS}}^2+2\sum_a|A_Xe_a|^2
+   &=(K_b+1)-(\operatorname{Ric}_g+g)(X,X)\\
+   &\le\eta+\delta.
+\end{split}                                                \tag{6}
+\]
+In particular, for an arbitrary horizontal vector,
+\[
+                 |S_X|_{\mathrm{op}}
+           \le\sqrt{\delta+\eta}\,|X|.                    \tag{7}
+\]
+No vertical or mixed Ricci equation is discarded in the hypothesis: the
+full Ricci defect in (1) implies the horizontal bound. Conversely we
+make no claim that the horizontal bound alone makes an arbitrary trial
+metric near-Einstein. Intrinsic fiber curvature is absent from (5), which
+is why no fiber uniformization hypothesis is required away from \(y_0\).
+
+## 3. Integrating the actual deformation around a loop
+
+Let \(\gamma:[0,1]\to B\) be a piecewise smooth loop based at \(y_0\).
+Its horizontal transport \(P_t:F_{y_0}\to F_{\gamma(t)}\) is defined for
+the entire interval because the bundle is compact. Set
+\(k_t=P_t^*h_{\gamma(t)}\). Differentiating on the fixed marked fiber,
+\[
+                 k_t^{-1}\dot k_t=-2P_t^*S_{\dot\gamma^{\mathcal H}}.
+                                                                  \tag{8}
+\]
+The trace is zero by minimality. Write \(x_t\) for the corresponding
+point in Teichmüller space, with metric normalized by
+\(d_T=\tfrac12\inf\log K\).
+
+For clarity the deformation estimate does not require differentiating
+the uniformization map. For any nonzero tangent vector on the reference
+fiber,
+\[
+ \left|\frac{d}{dt}\log |v|_{k_t}\right|
+       \le\sup_{F_{\gamma(t)}}|S_{\dot\gamma^{\mathcal H}}|_{\mathrm{op}}.
+\]
+After integration, the ratio between the largest and smallest singular
+stretch of the identity map is at most
+\(\exp(2\int\sup|S|\,dt)\). This ratio is its quasiconformal
+dilatation. It follows that
+\[
+\begin{split}
+ d_T(x_0,x_1)
+ &\le\int_0^1\sup_{F_{\gamma(t)}}
+            |S_{\dot\gamma^{\mathcal H}}|_{\mathrm{op}}\,dt\\
+ &\le\sqrt{\delta+\eta}\,\operatorname{Length}_b(\gamma).
+\end{split}                                                     \tag{9}
+\]
+The endpoint is the action on \(x_0\) of the monodromy class, or its
+inverse according to the marking convention. Distances are the same.
+Connection holonomy itself need not be a homomorphism into
+diffeomorphisms when the connection is curved; its **mapping-class**
+holonomy is the topological monodromy homomorphism. Formula (9) controls
+that homomorphism without falsely imposing flatness of the connection.
+
+## 4. Short generators and a common finite group
+
+We use the following elementary global fact.
+
+**Lemma 2.** For a closed connected Riemannian manifold \(B\), any
+basepoint \(y_0\), and \(a>0\), its fundamental group has a finite
+generating set represented by loops of length less than
+\(2\operatorname{diam}(B)+a\).
+
+**Proof.** Subdivide any based loop into arcs of length less than \(a\).
+Join each subdivision vertex to \(y_0\) by a minimizing path of length
+at most \(D_B\). The original loop is the product of the resulting
+triangular based loops; cancellation is literal along the joining paths.
+Each triangular loop has length less than \(2D_B+a\). Only finitely
+many based homotopy classes admit a representative with that length
+bound: lifting to the complete universal cover associates each class to
+a distinct deck translate of a fixed lift of \(y_0\) in a compact ball.
+The deck orbit is discrete and the action is proper. Thus the collection
+of all these short classes is a finite generating set. \(\square\)
+
+The companion theorem supplies the following precise Teichmüller fact:
+for every \(f,\iota\), there exists \(\epsilon_{f,\iota}>0\) such that,
+at every marked hyperbolic surface of systole at least \(\iota\), the
+subgroup generated by **all** mapping classes moving it less than
+\(\epsilon_{f,\iota}\) is finite. This is stronger than saying that
+each such class separately has finite order. It follows from proper
+discontinuity of the mapping-class action and compactness of the thick
+moduli quotient, using neighborhoods of a **common** finite stabilizer.
+The companion note proves the uniform statement and treats the possible
+ineffective finite kernel in genus two.
+
+By the strict inequality (2), choose \(a>0\) sufficiently small that
+\[
+              (2D_B+a)\sqrt{\delta+\eta}<\epsilon_{f,\iota}.
+\]
+Apply (9) to the finite generating set of Lemma 2. All its monodromy
+elements lie in the same finite subgroup supplied by the thick-point
+lemma. Therefore the entire monodromy image is finite. This is the
+global step that a pointwise estimate for \(S\) alone does not provide.
+
+## 5. Realization on the original smooth bundle
+
+Let \(G\) be the finite monodromy image. Nielsen realization gives a
+hyperbolic metric \(h_F\) on the model fiber and an action
+\(G\hookrightarrow\operatorname{Isom}^+(\Sigma_f,h_F)\) realizing
+those mapping classes. Let \(\widehat B\to B\) be the connected regular
+cover corresponding to the kernel of monodromy. Its deck group is
+\(G\). Uniformize any conformal structure on the oriented base to a
+hyperbolic metric \(\widehat b\) and lift it to \(\widehat B\).
+Then
+\[
+          (\widehat B\times\Sigma_f)/G                     \tag{10}
+\]
+is a smooth diagonal quotient; the action is free because it is free on
+the base factor. It carries the quotient of the product metric, with
+Ricci tensor equal to minus the metric, and the quotient complex
+structure is Kähler.
+
+The identity component of the orientation-preserving diffeomorphism
+group of a closed surface of genus at least two is contractible. Thus
+oriented smooth surface bundles are classified by their mapping-class
+monodromy; there is no additional identity-component twisting over
+\(B\). The quotient bundle (10) and the original bundle are smoothly
+isomorphic, since their monodromy representations coincide. Pulling
+back the quotient metric proves (3) on the original \(M\).
+The companion note gives the classical Nielsen and surface-diffeomorphism
+references. Neither the original horizontal distribution nor its full
+diffeomorphism holonomy has to agree with the resulting product quotient.
+
+## 6. A quantified escape alternative
+
+Taking the contrapositive gives a useful theorem about actual inputs,
+not an assertion of general Einstein nonexistence.
+
+**Corollary 3.** If the mapping-class monodromy image is infinite and
+the reference fiber is \(\iota\)-thick, then every minimal-submersion
+metric as above satisfies
+\[
+          (\delta+\eta)D_B^2\ge\frac{\epsilon_{f,\iota}^2}{4}.
+                                                               \tag{11}
+\]
+For hyperbolic bases and \(\delta_j\to0\), a sequence of such metrics
+with fixed fiber genus and a uniformly thick reference fiber therefore
+has
+\[
+          D_{B,j}\ge\frac{\epsilon_{f,\iota}}{2\sqrt{\delta_j}}
+                   \longrightarrow\infty.                  \tag{12}
+\]
+Since a Riemannian submersion is distance nonincreasing,
+\(\operatorname{diam}(M,g)\ge D_B\). Alternatively, with bounded
+\(D_B\), infinite monodromy and vanishing defect force the reference
+conformal systole to approach zero along any subsequence for which it
+could otherwise have a positive lower bound.
+
+These alternatives distinguish two real escape mechanisms: long
+horizontal transport and thin fiber conformal geometry. The companion
+note supplies Dehn-twist examples separating them. They do not say that
+the same smooth manifold has no Einstein metric outside this submersion
+class, nor that every near-Einstein manifold has either of these two
+geometric descriptions.
+
+## 7. What changes, and what does not
+
+Round 20 already proved a signature-energy obstruction for minimal
+hyperbolic-fiber submersions and recovered the classical exact adapted
+Einstein classification. For a signature-zero bundle its signature
+lower bound vanishes. The present argument instead uses the actual
+mapping-class action and one thick conformal fiber. It can detect
+infinite monodromy even when signature is zero; more importantly, it
+proves existence when the smallness threshold is met.
+
+This is not a new construction of bidisk quotients: those are classical.
+It is a geometric criterion that **recognizes** their smooth bundle
+types from the input metric, with finite monodromy deduced rather than
+assumed. No assertion of worldwide priority is made. The first-line
+connection is that local or average Kähler-type structure requires
+global transport information to produce existence. Here that
+information is obtained from a definite horizontal Ricci identity and
+a thick-point monodromy threshold, rather than from another local
+calibration coefficient.
+
+The remaining step toward arbitrary Yau26 inputs is substantial:
+neither an actual surface submersion nor fiber minimality nor thickness
+is supplied by the general pointwise Ricci hypothesis. The existing
+collapsed-bulk theorem does not automatically supply them across its
+exceptional set. This theorem completes the existence argument for the
+stated input class without claiming that missing classification.

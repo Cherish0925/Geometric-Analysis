@@ -1,0 +1,205 @@
+\section{Linear coercivity from one Yamabe monopole}
+\label{sec:single-solution-coercivity}
+
+The constant-weight identity also supplies the retained estimates
+needed by the calibrated-background argument.  This gives the scalar
+and topological conclusions of Section~\ref{sec:linear-coercivity}
+under the single-monopole hypothesis of
+Definition~\ref{def:trf-input}.  The proof uses the exact field
+decomposition at $\beta=2$, in addition to the Hessian and weak
+Bianchi argument.
+
+\subsection{Retained estimates for the constant-weight solution}
+
+Work first on a metric with $s=-4$.  Suppose it admits an ordinary
+solution, written as
+\[
+ D_{\mathcal A}\Phi_2=0,\qquad
+ F_{\mathcal A}^+=2i\sigma(\Phi_2).
+\]
+Put $\rho_2=|\Phi_2|^2$,
+$\psi_2=2\sqrt2\sigma(\Phi_2)$,
+$\zeta_2=\langle\Phi_2,\nabla_{\mathcal A}\Phi_2\rangle$, and
+$J_+=\|F_{\mathcal A}^+-(F_{\mathcal A}^+)_H\|_2^2$.
+The maximum principle gives $0\le\rho_2\le2$.
+Write $D=D_2$, $\Sigma=16V-32\pi^2p$, and
+$\Pi=P+D$, using the energies defined earlier.
+
+At $\beta=2$, the same-solution identity
+\eqref{proof:single-parameter:e2.9a} is
+\begin{equation}\label{eq:ssc-exact-decomposition}
+ \frac D{18}=J_++2\int_M|\zeta_2|^2
+       +\int_M|W^+-W_0|^2
+       +\frac12\int_M C_2(\rho_2)(\rho_2-2)^2,
+\end{equation}
+where
+\[
+ C_2(t)=t+1-\frac{(t+2)^2}{12}\ge\frac23
+       \quad(0\le t\le2),\qquad
+ W_0=\frac14\left(\frac{\rho_2^2}{3}I-
+                                    \psi_2\otimes\psi_2\right).
+\]
+In particular $D\ge0$ for this one solution.
+
+To match the normalization of Section~\ref{sec:linear-coercivity}, set
+\begin{equation}\label{eq:ssc-spinor-rescaling}
+ \Phi=\left(\frac2{\sqrt6}\right)^{1/2}\Phi_2,
+ \qquad c=\sqrt6,
+ \qquad \rho=|\Phi|^2=\frac2{\sqrt6}\rho_2,
+ \qquad \rho_0=\frac4{\sqrt6}.
+\end{equation}
+This is the same connection and the same solution after constant
+spinor rescaling.  It satisfies
+\[
+ D_{\mathcal A}\Phi=0,\qquad
+ F_{\mathcal A}^+=ic\sigma(\Phi),\qquad
+ 4\nabla_{\mathcal A}^*\nabla_{\mathcal A}\Phi+U\Phi=0,
+ \qquad U=-4+c\rho.
+\]
+Define $\psi=2\sqrt2\sigma(\Phi)$,
+$\zeta=\langle\Phi,\nabla_{\mathcal A}\Phi\rangle$,
+$\omega=(\sqrt3/2)\psi$, and $v=|\omega|^2=3\rho^2/4$.
+The model is unchanged by this rescaling:
+\[
+ W_0=\frac38\left(\frac{\rho^2}{3}I-\psi\otimes\psi\right)
+     =\frac12\left(\frac v3I-\omega\otimes\omega\right).
+\]
+It is exactly the model in \eqref{eq:lc-reference}.
+
+\begin{lemma}[Constant-weight retained estimates]
+\label{lem:ssc-retained}
+The rescaled solution satisfies
+\begin{equation}\label{eq:ssc-retained}
+ J_++\int_M\left(|\rho-\rho_0|^2+|U|^2+|d\rho|^2
+         +|\operatorname{Im}\zeta|^2+|W^+-W_0|^2\right)
+ \le CD.
+\end{equation}
+If $K=\int_M|\nabla_{\mathcal A}\Phi|^2$, then
+\begin{equation}\label{eq:ssc-low-slack}
+ \int_{\{\rho\le1\}}|\nabla_{\mathcal A}\Phi|^2\le CD,
+ \qquad
+ \Sigma=8\sqrt6K+\int_M|U|^2+8J_+.
+\end{equation}
+All constants are universal.
+\end{lemma}
+
+\begin{proof}
+Equation~\eqref{eq:ssc-exact-decomposition}, the constant rescaling,
+and $d\rho=2\operatorname{Re}\zeta$ prove
+\eqref{eq:ssc-retained}; here $U=c(\rho-\rho_0)$.
+Fix $1<b<4/3<\rho_0$ and a smooth nonincreasing cutoff $\chi$
+equal to one on $[0,1]$ and zero on $[b,\infty)$.
+The amplitude estimate gives $\Vol\{\rho<b\}\le CD$.
+Testing the spinor equation with $\chi(\rho)\Phi$ gives
+\[
+ 4\int_M\chi|\nabla_{\mathcal A}\Phi|^2
+       +2\int_M\chi'|d\rho|^2+\int_M\chi U\rho=0.
+\]
+The second term has absolute value at most $CD$.  The third is
+bounded by $b\|U\|_2\Vol\{\rho<b\}^{1/2}\le CD$.
+This proves the low-amplitude estimate, including the spinor zero set.
+
+Finally, the integrated spinor equation and harmonic projection give
+\[
+ 4K-4\int_M\rho+c\int_M\rho^2=0,
+ \qquad c^2\int_M\rho^2=32\pi^2p+8J_+.
+\]
+Expanding $\int(-4+c\rho)^2$ and substituting these identities yields
+$\int|U|^2=16V-8cK-32\pi^2p-8J_+$, which proves
+the exact slack formula in \eqref{eq:ssc-low-slack}.
+\end{proof}
+
+\subsection{The calibrated-background argument and conformal transfer}
+
+\begin{theorem}[Single-solution scalar and topological coercivity]
+\label{thm:ssc-coercivity}
+Suppose $[g]$ satisfies Definition~\ref{def:trf-input}, and use its
+selected class $a$ for
+\[
+ \Sigma(g)=S(g)-32\pi^2p,\qquad
+ \Pi(g)=P(g)+D_2(g,a),\qquad Y=(T-a^2)_+.
+\]
+There are universal constants $C,C_T>0$ such that
+\begin{equation}\label{eq:ssc-coercivity}
+ 0\le\Sigma(g)\le C\left(\Pi(g)+\sqrt{\Pi(g)Y}\right),\qquad
+ (p-T)_+\le C_T\left(\Pi(g)+\sqrt{\Pi(g)Y}\right).
+\end{equation}
+In particular $a^2\ge T$ gives $\Sigma(g)\le C\Pi(g)$ and
+$0\le p-T\le C_T\Pi(g)$.
+\end{theorem}
+
+\begin{proof}
+First work on $\widehat g$, suppressing hats temporarily.  Since
+$s=-4$, the negative-target error obeys $rV=P$.
+Lemma~\ref{lem:ssc-retained} therefore supplies every estimate used in
+Lemma~\ref{lem:lc-retained} with
+$f=c=\sqrt6$, $\Theta=\Pi=P+D$, and no approximation allowance.
+In particular $|\Phi|\le2$, the model $W_0$ is exactly the same,
+and $|\Sigma-8\sqrt6K|\le CD$.
+
+We can consequently apply the calibrated-background calculation in
+Lemma~\ref{lem:lc-hessian} to this solution.  Its proof uses the
+retained estimates and the displayed spinor equation; it does not
+require the majorant construction once those estimates hold.
+With $B=\|F_{\mathcal A}^-\|_2^2$, it gives
+\[
+ \|\nabla_{\mathcal A}^2\Phi\|_2^2+
+       \|\nabla_{\mathcal A}\Phi\|_4^4\le C(K+\Pi+B).
+\]
+The same determinant and Chern--Weil identities give
+\[
+ B=4\pi^2(p-a^2)+J_+\le\sqrt6K+C\Pi+4\pi^2Y.
+\]
+The polynomial divergence identity, weak Bianchi test, and
+low-amplitude estimate used in
+\eqref{eq:lc-bianchi-upper}--\eqref{eq:lc-K-closed} now give
+\[
+ K\le C\Pi+C\sqrt{\Pi(K+\Pi+Y)}
+   \le C\Pi+C\sqrt{\Pi K}+C\sqrt{\Pi Y}.
+\]
+Young's inequality absorbs the middle term.  Combining with the exact
+slack formula proves the scalar estimate whenever $\Pi/V\le1$,
+the range required by the stated normalized theorem.  If $\Pi/V>1$,
+the direct bound $0\le\Sigma\le16V<16\Pi$ proves it instead.
+Finally
+\[
+ 36\pi^2(p-T)=\frac92P+\frac98\Sigma-D
+\]
+proves the topological estimate on $\widehat g$.
+
+For the original metric, Lemma~\ref{lem:trf-conformal} gives
+$\delta=S(g)-S(\widehat g)\ge0$.  The exact conformal identities are
+\[
+ P(g)=P(\widehat g)+\frac\delta{12},\qquad
+ D_2(g,a)=D_2(\widehat g,a)+\frac32\delta,\qquad
+ \Sigma(g)=\Sigma(\widehat g)+\delta.
+\]
+The projection $p$, class square $a^2$, and $Y$ do not change.
+Thus
+\[
+ \Pi(g)=\Pi(\widehat g)+\frac{19}{12}\delta,
+ \qquad \Pi(\widehat g)\le\Pi(g),\qquad
+ \delta\le\frac{12}{19}\Pi(g).
+\]
+These inequalities transfer the representative-level estimate to
+\eqref{eq:ssc-coercivity}.  They also show $D_2(g,a)\ge0$ and
+$\Sigma(g)\ge0$.  If $a^2\ge T$, then
+$p=a^2+\|(a_g)^-\|^2\ge T$, giving the final assertion.
+\end{proof}
+
+The lower energy wall and traceless-Ricci window use only
+\eqref{eq:ssc-coercivity}, $D_2\ge0$, the positive projection budget,
+and Chern--Weil.  Hence they hold under this single-solution input.
+In particular, if $h=1-T/A\in(0,1/3]$, $y=Y/A$, and
+$U=3\min\{T_+,T_-\}/A$, then
+\begin{equation}\label{eq:ssc-linear-window}
+ \J(g)+(U-1-h)_+\ge c\frac{h^2}{h+y}.
+\end{equation}
+When $a^2\ge T$ the right side is $ch$.  The same conclusions hold
+with $\E$ in place of $\J$.  For an all-metric statement, each
+conformal class must supply its own actual solution on its negative
+Yamabe representative, with the common positive budget $A$ and the
+stated class-square bound.  The finite-cover argument of
+Proposition~\ref{prop:trf-cover} preserves these conclusions: only
+the lifted representative and its one ordinary solution enter, and
+$\Pi,Y,A$ scale by the same covering degree.

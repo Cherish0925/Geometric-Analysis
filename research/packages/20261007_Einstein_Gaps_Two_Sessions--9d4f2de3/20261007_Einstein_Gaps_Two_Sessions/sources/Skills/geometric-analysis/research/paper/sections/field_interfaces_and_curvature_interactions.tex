@@ -1,0 +1,207 @@
+\section{Actual-field interfaces and curvature interactions}
+\label{sec:field-interfaces}
+
+The common problem is the realizability of curvature under actual field
+constraints. A numerical curvature budget, a differential compatibility
+estimate, and a construction attaining a limiting budget answer different
+parts of that problem. The analytical interface can be separated from
+monopole supply, while the variational question requires comparing all
+curvature costs on the same constructed metric.
+
+\subsection{An analytical interface before the choice of supplier}
+For a smooth self-dual two-form $\psi$ set
+\[
+ q=|\psi|^2,\qquad
+ A_\psi=\frac{q}{24}\Id-\frac18\psi\otimes\psi,
+ \qquad B_\psi=\fint_M|\Delta_H\psi|^2,
+\]
+and
+\[
+ d_\psi=\fint_M\bigl(
+ |\Ric+g|^2+|W^+-A_\psi|^2+(q-2)^2\bigr).
+\]
+Section~\ref{sec:bounded-forms} proves that, on a closed oriented
+four-manifold, $\|\psi\|_\infty\le K$ implies
+\begin{equation}\label{eq:interfaces-bounded-form}
+ (1+B_\psi)d_\psi\ge c(K)>0.
+\end{equation}
+This statement does not assume a spin structure or a monopole class.
+It retains a specific polynomial curvature model, an amplitude bound,
+and the actual Hodge-source cost. These are the quantities that a
+different field equation would have to supply. In particular, the
+fixed model in \eqref{eq:interfaces-bounded-form} is not the zero-Weyl
+limit of the parameter theorem.
+
+Ordinary and special monopole classes, stable cohomotopy
+\cite{BauerFuruta2004I,Bauer2004II}, and the twisted theory
+\cite{IMN2016} provide distinct solvability statements.
+The single-solution results of Sections~\ref{sec:tracefree-gap} and
+\ref{sec:single-solution-coercivity} use one actual solution on each
+relevant negative Yamabe representative. The finite-density theorem
+retains its own conformal supply assumptions. Neither the abstract
+form criterion nor the name of a supplier identifies these quantifiers.
+The finer cancellation in the linear theorem also uses the spinor
+curvature action and the determinant-square identity, beyond
+\eqref{eq:interfaces-bounded-form} alone.
+
+\subsection{Spectral defects and simultaneous differential constraints}
+For a smooth angle $\theta:M\to\mathbb R/(2\pi\mathbb Z)$,
+Furuta--Matsuo define \cite[(8)]{FurutaMatsuo2016}
+\begin{equation}\label{eq:interfaces-spectral-defect}
+ \lambda_\theta(g)=
+ \inf_{0\ne\sigma\in H^1(\Lambda^+)}
+ \frac{\|(d+d^*)(\sin\theta\,\sigma)\|_2^2
+       +\|\nabla(\cos\theta\,\sigma)\|_2^2
+       +2\|d|\sigma|\|_2^2}{\|\sigma\|_2^2}.
+\end{equation}
+Their differential inequality applies to smooth connection--spinor
+pairs; their topological curvature conclusions additionally use
+perturbed Seiberg--Witten solvability. These are separate interfaces.
+In particular, the vanishing of
+\eqref{eq:interfaces-spectral-defect} imposes simultaneous differential
+conditions, rather than only a scalar energy equality. Comparing those
+conditions with the same-field Hessian and Bianchi identities is a
+concrete possible extension; no uniform spectral gap across degenerating
+metrics is assumed here.
+
+The relation between exact structure and weak-error estimates is also
+visible in the compact integrability theorem under the third Gray
+curvature condition \cite{ApostolovArmstrongDraghici2002}. Its full
+almost-K\"ahler and curvature hypotheses must be retained. Exact
+integrability by itself is not a uniform weak-error theorem.
+The broader curvature and Einstein background is surveyed in
+\cite{LeBrunOverview2026}; the common starting point remains the
+classical actual-field and convex-body estimates
+\cite{LeBrun2001,LeBrunConvex}.
+
+\subsection{The joint cost of a Weyl-lowering construction}
+Write
+\[
+ \mathcal W_{\mathrm{op}}(g)
+   =\int_M\bigl(|W^+|^2+|W^-|^2\bigr),\qquad
+ \mathcal W_{\mathrm{ten}}(g)
+   =\int_M W_{ijkl}W^{ijkl}=4\mathcal W_{\mathrm{op}}(g).
+\]
+Here $|W^\pm|$ is the Hilbert--Schmidt norm on two-forms. The
+Chern--Gauss--Bonnet identity gives the exact relation
+\begin{equation}\label{eq:interfaces-joint-cost}
+ P=2\mathcal W_{\mathrm{op}}+\frac{S}{12}-16\pi^2\chi(M)
+  =\frac12\mathcal W_{\mathrm{ten}}+\frac{S}{12}-16\pi^2\chi(M).
+\end{equation}
+Consequently, for two metrics on the same closed smooth manifold,
+\begin{equation}\label{eq:interfaces-fixed-topology}
+ \Delta P=2\Delta\mathcal W_{\mathrm{op}}+\frac{\Delta S}{12}
+         =\frac12\Delta\mathcal W_{\mathrm{ten}}+\frac{\Delta S}{12}.
+\end{equation}
+Thus $\Delta\mathcal W_{\mathrm{ten}}<0$ lowers $P$ exactly when
+$\Delta S<-6\Delta\mathcal W_{\mathrm{ten}}$. A comparison with two
+separate summands has a different topological term: if
+$Y=M\# Z$ and $\Delta_\# H=H(g_Y)-H(g_M)-H(g_Z)$, then
+\begin{equation}\label{eq:interfaces-connected-sum}
+ \Delta_\# P=\frac12\Delta_\#\mathcal W_{\mathrm{ten}}
+             +\frac{\Delta_\# S}{12}+32\pi^2.
+\end{equation}
+Indeed, $\chi(M\# Z)=\chi(M)+\chi(Z)-2$. A strict Weyl
+subadditivity theorem therefore is not, by itself, subadditivity for $P$.
+
+Malchiodi--Malizia \cite[Theorem 1.1]{MalchiodiMalizia2025}
+construct strict Weyl-energy competitors on the prescribed oriented
+connected sum of two closed non-locally-conformally-flat four-manifolds,
+provided they are not both self-dual or both anti-self-dual.
+This applies to a complex-oriented complex-hyperbolic surface and
+$\overline{\CP}^{\,2}$ with the reversed Fubini--Study metric:
+the former is self-dual, the latter anti-self-dual, and neither is
+locally conformally flat. Thus the theorem already supplies Weyl
+competitors on the relevant blowup topology. Its small-neck gain does
+not supply the joint scalar cost in
+\eqref{eq:interfaces-fixed-topology}, or a uniform per-surgery saving
+at the first-order scale of the balanced problem.
+
+The revised locally-conformally-flat gluing theorem
+\cite[Theorem 1.1]{MalchiodiMalizia2026} instead assumes a Bach-flat
+factor that is neither self-dual nor anti-self-dual, and a positive-Yamabe
+locally conformally flat factor not globally conformal to the round
+sphere. A complex-hyperbolic factor is half-self-dual and does not
+satisfy that theorem's hypothesis. The two results provide different
+interaction mechanisms; neither may be substituted for the other's
+assumptions. Both papers use $\mathcal W_{\mathrm{ten}}$.
+
+For the original surgery family
+\[
+ M_j=X_j\# k_j\overline{\CP}^{\,2}\#\ell_j(S^1\times S^3),
+ \quad A_j=c_1^2(X_j),\quad Q_j=k_j+4\ell_j,
+ \quad h_j=Q_j/A_j,
+\]
+one can make the comparison independent of any chosen gluing scheme.
+The classical recovery limits are
+\[
+ S_j^{\mathrm{ref}}=32\pi^2A_j,\qquad
+ \mathcal W_{\mathrm{op},j}^{\mathrm{ref}}
+       =\frac{4\pi^2}{3}A_j+12\pi^2k_j,
+ \qquad \chi(M_j)=A_j/3+k_j-2\ell_j.
+\]
+Substitution in \eqref{eq:interfaces-joint-cost} gives, for every
+smooth metric on $M_j$,
+\begin{equation}\label{eq:interfaces-recovery-comparison}
+ P(g)-8\pi^2Q_j
+  =\frac{S(g)-S_j^{\mathrm{ref}}}{12}
+   +2\bigl(\mathcal W_{\mathrm{op}}(g)
+                 -\mathcal W_{\mathrm{op},j}^{\mathrm{ref}}\bigr).
+\end{equation}
+These reference values are simultaneous limits, not a claim that a
+smooth metric realizes all of them. Formula
+\eqref{eq:interfaces-recovery-comparison} isolates exactly what a
+new interaction construction must improve. It does not subtract two
+independently optimized functionals.
+
+\subsection{Replication and first-order gain}
+The effect of a cheaper cell depends on how many cells can actually be
+replaced. Suppose $m_j$ blowup sites admit a fully matched construction
+giving actual metrics with
+\begin{equation}\label{eq:interfaces-replicated-cost}
+ P(g_j)\le8\pi^2(Q_j-\delta m_j)+o(Q_j),
+ \qquad 0<\delta<1,
+ \qquad \frac{m_j}{k_j}\longrightarrow\theta\in(0,1].
+\end{equation}
+All transition and exterior errors are included in this hypothesis.
+The balanced ratio is $k_j/Q_j\to2/9$. Theorem
+\ref{thm:vg-first-order-reduction} therefore implies
+\begin{equation}\label{eq:interfaces-replication-fraction}
+ \limsup_j\frac{\inf_g\E(g)}{h_j}
+     \le4-\frac89\theta\delta.
+\end{equation}
+To see this, divide the established relation
+$\inf_g\E(g)=4\inf_gP(g)/(8\pi^2A_j)+O(h_j^2)$ by $h_j$,
+insert \eqref{eq:interfaces-replicated-cost}, and use
+$m_j/Q_j\to2\theta/9$. The bound $4-8\delta/9$ requires
+$\theta=1$, or a saving $\delta$ already averaged over all blowup
+sites. A saving tending to zero with the neck scale need not change
+the leading coefficient.
+
+This is a conditional consequence of an actual metric construction,
+not the existence of such a construction. The all-metric monopole
+supply on the original family supplies new solutions for a new metric;
+it does not require a competitor to preserve the original glued
+spinor. This leaves room for coupled curvature interactions while
+keeping the same variational problem.
+
+\subsection{Structure and realization retain their own roles}
+The period constraints of Sections~\ref{sec:period-inertia} and
+\ref{sec:joint-matrix}, the realization results of
+Sections~\ref{sec:chern-boundary} and \ref{sec:virtual-realization},
+and the slow-field and fixed-bundle constructions of
+Sections~\ref{sec:slow-moduli} and \ref{sec:fixed-bundle-geometry}
+describe geometric information beyond a numerical gap. Whole marked
+fillings in Section~\ref{sec:whole-core} carry relative data not
+determined by a terminal ALE space alone. Relating them to ideal
+minimizing configurations \cite{Anderson2005} requires the relevant
+topological matching and energy accounting. Such a relation may help
+either a lower bound or a competing construction; it is not prescribed
+as a prerequisite for every direct proof.
+
+The density-independent endpoint and the balanced optimal coefficient
+are precise tests of the present theory. They do not define the entire
+space of actual suppliers or compatible geometries. A new supplier,
+a stronger simultaneous-field constraint, or an exact realization is
+an extension when it yields a conclusion beyond the already proved
+range, with the required differential and global data supplied.

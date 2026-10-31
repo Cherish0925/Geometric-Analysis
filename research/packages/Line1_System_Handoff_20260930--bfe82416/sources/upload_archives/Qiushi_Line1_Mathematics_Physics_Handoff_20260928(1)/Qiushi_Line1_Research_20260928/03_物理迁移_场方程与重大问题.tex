@@ -1,0 +1,623 @@
+% Compile with XeLaTeX. This file is standalone; references are mapped in section 4 of the package.
+\documentclass[UTF8,a4paper,11pt,fontset=fandol]{ctexart}
+\usepackage[left=23mm,right=23mm,top=25mm,bottom=24mm,headheight=16pt]{geometry}
+\usepackage{fontspec}
+\setmainfont{lmroman10-regular.otf}[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf,BoldItalicFont=lmroman10-bolditalic.otf]
+\setsansfont{lmsans10-regular.otf}[BoldFont=lmsans10-bold.otf,ItalicFont=lmsans10-oblique.otf,BoldItalicFont=lmsans10-boldoblique.otf]
+\setmonofont{lmmono10-regular.otf}[Scale=0.84,ItalicFont=lmmono10-italic.otf,BoldFont=lmmonolt10-bold.otf]
+\usepackage{amsmath,amssymb,mathtools,bm,esint,mathrsfs}
+\usepackage{longtable,booktabs,array,calc,etoolbox}
+\usepackage{graphicx}
+\usepackage{fancyvrb}
+\usepackage{xurl}
+\usepackage{fancyhdr,lastpage}
+\usepackage[unicode,hidelinks]{hyperref}
+\hypersetup{pdftitle={物理迁移：场方程、作用量与重大问题},pdfauthor={Qiushi Engine research handoff},pdfsubject={Quantitative Einstein compatibility and mathematical physics}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\setlength{\emergencystretch}{3em}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.22}
+\AtBeginEnvironment{longtable}{\small}
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{2}
+\ctexset{
+ section={format=\Large\bfseries\raggedright,beforeskip=1.3em,afterskip=0.6em},
+ subsection={format=\large\bfseries\raggedright,beforeskip=1em,afterskip=0.4em},
+ subsubsection={format=\normalsize\bfseries\raggedright,beforeskip=0.8em,afterskip=0.3em}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily Qiushi Engine · 第一科学主线}
+\fancyhead[R]{\small 2026-09-28}
+\fancyfoot[C]{\small \thepage\ / \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\newcommand{\handoffpart}[1]{\clearpage\section{#1}}
+\begin{document}
+\begin{titlepage}
+\thispagestyle{empty}
+\vspace*{2cm}
+{\large\sffamily QIUSHI ENGINE\par}
+\vspace{1.3cm}
+{\Huge\bfseries 物理迁移：场方程、作用量与重大问题\par}
+\vspace{0.8cm}
+{\Large 从四维定量相容性到规范---引力系统的真实新结论\par}
+\vspace{1.2cm}
+{\large 跨会话研究综合与证明方案\par}
+\vfill
+{\normalsize 原稿状态基线：2026年9月27日，快照 \texttt{844e62f}\par}
+\vspace{0.35cm}
+{\normalsize 整理日期：2026年9月28日\par}
+\vspace{1cm}
+{\small 保留已取得的强结论，沿真实方程继续推进全局数学与物理问题。\par}
+\end{titlepage}
+\tableofcontents
+\clearpage
+\section{1.
+物理母问题：局部允许的场，为什么不能全局兼容}\label{ux7269ux7406ux6bcdux95eeux9898ux5c40ux90e8ux5141ux8bb8ux7684ux573aux4e3aux4ec0ux4e48ux4e0dux80fdux5168ux5c40ux517cux5bb9}
+
+最值得从第一主线迁移的，不是``Einstein
+方程''这个名称，而是一个更深的问题：\textbf{局部或代数上分别允许的结构，要求同时来自同一个全局几何和同一组实际场时，是否必须产生非零代价？}
+
+第一主线已经在指定四维规范输入下证明：单独的曲率数值预算不能描述全部可实现性；实际场的微分相容性会增加新的强制限制。这给物理留下三种明确入口。
+
+一是将几何定理送入真实的物质---引力方程，得到反作用下界。二是把相容性代价放进实际曲率平方作用量，研究最低作用量及其达到方式。三是把背景对校准场的作用消去，迁移到真实超对称变分或有效场方程中，建立新的定量兼容性定理。
+
+最高目标不是发表若干``数学结果的物理解释''，而是在一个重要物理问题上证明过去无法得到的结论：新非存在范围、新精确解、新锐利代价、受控的退化态，或新的有效理论。所谓广度，应来自同一机制在不同系统中的实质成功，而不是同时列出很多物理名词。
+
+\section{2.
+四维为什么提供真正的交叉结构}\label{ux56dbux7ef4ux4e3aux4ec0ux4e48ux63d0ux4f9bux771fux6b63ux7684ux4ea4ux53c9ux7ed3ux6784}
+
+在定向四维正定黎曼几何中，二形式分裂为
+
+\[
+\Lambda^2=\Lambda^2_+\oplus\Lambda^2_-.
+\]
+
+曲率算子在这两个三维空间上具有块结构
+
+\[
+\mathcal R=
+\begin{pmatrix}
+W^++\dfrac{s}{12}I&B\\
+B^*&W^-+\dfrac{s}{12}I
+\end{pmatrix}.
+\tag{P1}
+\]
+
+其中 \(B\) 对应无迹 Ricci 张量。因此 Einstein 条件不仅是 Ricci
+的一种比例关系，也等价于曲率算子不再混合两种二形式手性。{[}R6{]}
+
+采用二形式的标准正交基和曲率算子 Hilbert--Schmidt 范数，有
+
+\[
+\boxed{|B|_{\mathrm{HS}}^2=\frac14|\operatorname{Ric}^{\circ}|^2.}
+\tag{P2}
+\]
+
+一个直接核对方法是对角化 \(\operatorname{Ric}^{\circ}\)，令特征值为
+\(q_1,\ldots,q_4\)，\(\sum q_i=0\)。适配基下 \(B\) 的三个对角元为
+\((q_1+q_2)/2\)、\((q_1+q_3)/2\)、\((q_1+q_4)/2\)，平方求和即得式(P2)。
+
+Levi-Civita 联络分别诱导 \(\Lambda^2_+\)、\(\Lambda^2_-\)
+上的联络。在相应规范下，它们曲率的``错误手性部分''由 \(B\) 与 \(B^*\)
+给出。经典 Atiyah--Hitchin--Singer 结构将 Einstein
+条件与这些诱导联络的相应自对偶性联系起来。{[}R6{]}
+
+因此，第一主线的 \(P\)
+下界还可以读作：\textbf{要求两套手性规范结构同时来自一个真实度量时，某些拓扑输入强迫不可消除的相容性缺陷。}精确地说，定义
+
+\[
+\mathscr D_{\mathrm{LC}}(g)=4\int|B|_{\mathrm{HS}}^2\,dV_g,
+\]
+
+则 \(\mathscr D_{\mathrm{LC}}=P\)。若改用规范曲率的 Lie
+代数迹范数，只需明确对应的固定表示常数，不能混用归一化。
+
+这提供了一个比泛称``拓扑荷产生能量''更具体的研究对象：\textbf{受共同度量约束的手性联络空间，与独立规范联络空间之间的可实现性差别。}经典等价关系本身不是本项目创新；新增内容是近似情形的强制尺度与真实几何应用。
+
+必须固定签名：在四维欧氏情形，二形式上 \(*^2=+1\)；在通常 Lorentzian
+签名下则为
+\(*^2=-1\)。后者没有相同的实自对偶分解，正定范数估计也不能原样延拓。因此，本文件的第一批迁移目标是欧氏场方程。若转向物理时空，必须重新建立实结构、方程和正性，而不是只把坐标中的一个符号改掉。
+
+\section{3.
+四维的临界缩放：核心代价为何不会随体积消失}\label{ux56dbux7ef4ux7684ux4e34ux754cux7f29ux653eux6838ux5fc3ux4ee3ux4ef7ux4e3aux4f55ux4e0dux4f1aux968fux4f53ux79efux6d88ux5931}
+
+把一个固定核心按 \(g_r=r^2g\) 缩小。曲率大小按 \(r^{-2}\)
+缩放，四维体积按 \(r^4\) 缩放，因此
+
+\[
+\int|\mathrm{Rm}_{g_r}|^2\,dV_{g_r}
+=\int|\mathrm{Rm}_g|^2\,dV_g.
+\tag{P3}
+\]
+
+相反，Einstein--Hilbert 曲率项和体积项分别按
+
+\[
+\int s_{g_r}\,dV_{g_r}=r^2\int s_g\,dV_g,
+\qquad V(g_r)=r^4V(g)
+\tag{P4}
+\]
+
+缩放。一般 \(m\) 次曲率项的量级为 \(r^{4-2m}\)。
+
+这解释了为什么第一主线的完整核心能有很小体积却保留有限曲率平方代价，也解释了为什么局部集中必须被认真处理。它同时告诉我们物理迁移应优先匹配\textbf{曲率平方作用量}，而不能把
+I47 的代价直接当成普通 Einstein--Hilbert 作用量。
+
+若二次引力只是低能有效理论，继续缩小核心会使更高阶曲率项变得重要。要在物理中讨论任意小核心，必须选择完整模型或保持在已控制的有效理论尺度内。这不是形式问题：不同模型对同一个小核心的作用量定价可能完全不同。{[}R9--R10；式(P3)--(P4)为直接缩放推导{]}
+
+\section{4.
+已可推导的第一接口：一族真实二次曲率作用量的正间隙}\label{ux5df2ux53efux63a8ux5bfcux7684ux7b2cux4e00ux63a5ux53e3ux4e00ux65cfux771fux5b9eux4e8cux6b21ux66f2ux7387ux4f5cux7528ux91cfux7684ux6b63ux95f4ux9699}
+
+沿用数学文件中的实际输入：\(p\ge A>0\)、\(a^2\ge T_+\)、\(T_+=A(1-h)\)、\(h>0\)，以及
+
+\[
+\Sigma\le C(P+D_2),\qquad
+36\pi^2(p-T_+)=\frac92P+\frac98\Sigma-D_2.
+\]
+
+定义 \(K_C=9/2+9C/8\)。数学文件式(M7)给
+
+\[
+P+D_2\ge\frac{36\pi^2}{K_C}Ah.
+\tag{P5}
+\]
+
+现在选定两个正的无量纲耦合 \(u,v>0\)，研究一个明确的欧氏局部曲率泛函
+
+\[
+\mathscr I_{u,v}(g)=
+ u\int|\operatorname{Ric}^{\circ}|^2
+ +v\left(\frac32\int s^2+18\int|W^+|^2\right).
+\tag{P6}
+\]
+
+由于 \(D_2=(3/2)\int s^2+18\int|W^+|^2-72\pi^2p\)，直接分解为
+
+\[
+\mathscr I_{u,v}=uP+vD_2+72\pi^2vp.
+\]
+
+各缺陷非负、\(p\ge A\)，于是
+
+\[
+\boxed{
+\mathscr I_{u,v}(g)-72\pi^2vA
+\ge\min\{u,v\}\frac{36\pi^2}{K_C}Ah.
+}
+\tag{P7}
+\]
+
+\textbf{式(P7)是本次整理补充的直接推论，不是已经完成查新的独立物理定理。}它的优点在于：左侧是明确的局部曲率平方作用量减去固定拓扑预算，而不是把随度量变化的
+\(p\) 擅自当成拓扑常数。
+
+在闭定向四维流形上，按本套范数约定，签名公式给
+
+\[
+\int|W^+|^2=\frac12\int|W|^2+6\pi^2\tau.
+\]
+
+所以式(P6)等于
+
+\[
+uP+\frac32v\int s^2+9v\int|W|^2+108\pi^2v\tau.
+\tag{P8}
+\]
+
+最后一项在固定拓扑上是常数。因而这不是人为加入一个不可测的规范损失，而是一族标准二次曲率项的特定耦合组合。二次曲率引力的量子一致性和高导数问题仍属于模型本身的独立问题，本推论不对它们作结论。{[}R9--R10{]}
+
+\subsection{真正值得完成的物理研究}\label{ux771fux6b63ux503cux5f97ux5b8cux6210ux7684ux7269ux7406ux7814ux7a76}
+
+固定作用量、耦合与拓扑扇区后，决定式(P7)所界定的最低作用量是否锐利；若不锐利，找出真实首项；判断极小值由光滑鞍点／极小态实现，还是只能经核心缩小、颈部或塌缩逼近；研究耦合改变时，主导几何是否改变。
+
+这样一篇论文的中心可以是：\textbf{拓扑对四维二次引力的最低作用量及退化态施加新的定量限制。}它比``将
+\(P\)
+称为引力能量''更完整，也比在尚不存在解族的物质系统中先猜饱和态更直接。
+
+如果加入 Einstein--Hilbert
+项、宇宙学项或物质项，应对整个作用量重新处理约束、符号和变分问题。式(P7)不能单独消除欧氏引力的共形不适定性，也不能替代完整场方程。
+
+\section{5. 第二接口：Einstein--matter
+中的最小无迹反作用}\label{ux7b2cux4e8cux63a5ux53e3einsteinmatter-ux4e2dux7684ux6700ux5c0fux65e0ux8ff9ux53cdux4f5cux7528}
+
+固定欧氏 Einstein--matter 方程
+
+\[
+\operatorname{Ric}-\frac12s\,g+\Lambda g=\kappa T,
+\tag{P9}
+\]
+
+并固定耦合 \(\kappa\) 与应力张量归一化。取无迹部分，恒等地有
+
+\[
+\operatorname{Ric}^{\circ}=\kappa T^{\circ},\qquad
+P=\kappa^2\int|T^{\circ}|^2.
+\tag{P10}
+\]
+
+在数学文件式(M9)适用的真实族上，得到
+
+\[
+\boxed{\int|T^{\circ}|^2\,dV_g\ge\frac{C_0}{\kappa^2}Ah.}
+\tag{P11}
+\]
+
+这句话的准确物理内容是：在该拓扑与实际规范供给范围内，满足耦合方程的物质不能任意接近纯各向同性应力；非
+Einstein 性必须由非零无迹应力支撑。
+
+它不是一般的质量或总能量下界，也不单独给宇宙学常数下界。其价值在于，I41
+去掉标量方差后，反作用不能只被解释为应力迹或标量曲率的波动。{[}S0，卷01；式(P9)--(P11)为直接推导{]}
+
+若物质迹为零，则 \(s=4\Lambda\) 为常数，而
+
+\[
+R=P+4\Lambda^2V.
+\]
+
+设在选定族上已有 \(\mathcal J\ge c_{\mathrm J}h\)，且
+\(0<c_{\mathrm J}h<4\)、\(\Lambda\ne0\)，可以进一步得到
+
+\[
+\boxed{
+\frac{P}{\Lambda^2V}
+\ge\frac{4c_{\mathrm J}h}{4-c_{\mathrm J}h}.
+}
+\tag{P12}
+\]
+
+这是相对宇宙学曲率尺度的无量纲反作用下界。对带正单极子投影预算的当前范畴，非负常标量曲率本身受到规范方程限制，因而不能未经检查将这里的负分支模型移到正宇宙学常数真空。
+
+\section{6.
+Einstein--Maxwell：手性重叠的完整推导}\label{einsteinmaxwellux624bux6027ux91cdux53e0ux7684ux5b8cux6574ux63a8ux5bfc}
+
+采用实欧氏二形式 \(F\)，将电磁耦合吸收入其归一化，令
+
+\[
+T_{\mu\nu}=F_{\mu\rho}F_\nu{}^\rho
+-\frac14g_{\mu\nu}F_{\rho\sigma}F^{\rho\sigma},
+\quad dF=0,\quad d{*F}=0.
+\tag{P13}
+\]
+
+二形式范数取 \(|F|^2=\tfrac12F_{\mu\nu}F^{\mu\nu}\)。写
+\(F=F^++F^-\)，则
+
+\[
+\boxed{|T|^2=4|F^+|^2|F^-|^2.}
+\tag{P14}
+\]
+
+验证不需要猜测：在一点选取正交基使 \(F=a\,e^{12}+b\,e^{34}\)，则
+
+\[
+|F^+|^2=\frac{(a+b)^2}{2},\quad
+|F^-|^2=\frac{(a-b)^2}{2},
+\]
+
+而 \(T\) 的四个对角元为 \((a^2-b^2)/2\)
+的两个正值与两个负值，故式(P14)成立。
+
+结合式(P10)--(P11)，有
+
+\[
+\boxed{
+\int|F^+|^2|F^-|^2\,dV_g
+\ge\frac{C_0}{4\kappa^2}Ah.
+}
+\tag{P15}
+\]
+
+因此，在适用拓扑扇区的真实 Einstein--Maxwell 解上，Maxwell
+场不能是单一实手性，也不能在这个乘积积分意义下任意接近无应力的自对偶状态。
+
+需要准确理解``强迫混合''：式(P15)控制两手性的重叠，不分别给出每个
+\(L^2\)
+能量的统一下界。一个分量趋小、另一个集中或增大时，仍可能保持乘积；要排除这种机制，必须使用
+Maxwell 方程、通量量子化和适当能量控制。
+
+\subsection{与前人工作的真实关系}\label{ux4e0eux524dux4ebaux5de5ux4f5cux7684ux771fux5b9eux5173ux7cfb}
+
+Einstein--Maxwell、极值 Kähler 度量与 Seiberg--Witten 曲率估计的关系已有
+LeBrun 的直接研究。{[}R8{]} 因此，本项目的新增内容不可能只是再次写出
+\(\operatorname{Ric}^{\circ}=\kappa T\)。应当展示新的退化无关下界、经典估计看不到的参数范围、真实解族上的锐利代价，或此前未知的非存在结论。
+
+\subsection{第一项可执行任务}\label{ux7b2cux4e00ux9879ux53efux6267ux884cux4efbux52a1}
+
+选定一个满足当前实际供给条件的具体流形族，并固定 \(\Lambda,\kappa\)
+及磁通类。先判断该耦合问题是否非空；随后在同一类解中最小化式(P15)的量，或者证明指定通量不可能支撑任何解。证明需要覆盖完整场方程，而不是只在保
+Kähler 或保纤维 ansatz 内优化。
+
+若所选族没有已知解，不应将``对所有解的下界''写成已经发现新的物理态。此时有两种同样有效的结果：构造解并证明新反作用规律，或以独立理由建立新的完整非存在性判定。
+
+\section{7.
+非阿贝尔规范场：可推广，但应力会发生抵消}\label{ux975eux963fux8d1dux5c14ux89c4ux8303ux573aux53efux63a8ux5e7fux4f46ux5e94ux529bux4f1aux53d1ux751fux62b5ux6d88}
+
+对 Einstein--Yang--Mills，式(P10)仍然适用，只要 \(T\)
+是相应理论的真实应力。选择规范 Lie 代数的正内积后，\(T\)
+由各颜色分量的手性交叉双线性项相加。
+
+非阿贝尔情形不能照抄式(P14)为等号，因为不同颜色分量可能抵消。由阿贝尔点态恒等式及
+Cauchy--Schwarz，按相同归一化可得
+
+\[
+|T|\le2|F^+|\,|F^-|,
+\tag{P16}
+\]
+
+因此式(P11)仍能推出总手性乘积的下界。耦合常数与迹归一化改变时，系数须一并调整。
+
+下一步研究应关注规范束拓扑、完整 Yang--Mills
+方程及颜色抵消如何改变最低反作用。独立 Yang--Mills
+瞬子的能量量子化不等于本项目已取得 Yang--Mills
+质量隙；后者涉及量子理论与谱，不是经典欧氏曲率积分能够直接决定的问题。
+
+\section{8.
+完整核心如何进入引力瞬子与奇点解析}\label{ux5b8cux6574ux6838ux5fc3ux5982ux4f55ux8fdbux5165ux5f15ux529bux77acux5b50ux4e0eux5947ux70b9ux89e3ux6790}
+
+I47 给出
+
+\[
+\inf\int_\Omega\mathscr Q\,dV
+=4\pi^2(1-1/n),\qquad
+\mathscr Q=|\operatorname{Ric}^{\circ}|^2+4|W^+|^2+s^2/12,
+\tag{P17}
+\]
+
+适用于指定取向与外锥领口。它表明：局部共振商模型能够出现，不代表可以无代价地把其尖点填成光滑几何。{[}S0，卷03；R5{]}
+
+物理上可以选择含 \(\mathscr Q\)
+的明确曲率平方作用量，固定渐近／边界数据，研究完整光滑解析所需的最小作用量。此时
+\(4\pi^2(1-1/n)\)
+是候选核心贡献，但必须包含作用量的耦合、边界项及拓扑项。它随 \(n\)
+变化，不是等间隔的普遍能量量子，也不是已经定义的粒子张力。
+
+更值得研究的是达到方式。I47 的匹配上界由完整 ALE
+解截断、展平领口和缩放得到，未必在严格平坦锥领口的紧填充问题上存在光滑极小元。\textbf{锐利下确界与存在一个物理鞍点是不同结论。}如果能证明某种耦合或边界数据使极小态存在，或证明所有近极小态必须出现特定的
+ALE 核心，这将产生真正新的引力几何信息。
+
+\section{9.
+微观核心到宏观缺陷：有效理论的正确物理含义}\label{ux5faeux89c2ux6838ux5fc3ux5230ux5b8fux89c2ux7f3aux9677ux6709ux6548ux7406ux8bbaux7684ux6b63ux786eux7269ux7406ux542bux4e49}
+
+已有宏观事实是指定族中
+\(\inf\mathcal E\asymp h\)，已有微观事实是特定核心的式(P17)。二者之间还缺一项传递定理：原序列中哪些核心真实存在，带着什么标记，如何跨尺度匹配，哪些代价会抵消或耦合。
+
+因此，``缺陷张力''``拓扑化学势''``稀薄缺陷气体''目前是启发性语言。要将其变成物理量，至少需要：选定真实作用量与参考态；定义拓扑或磁通扇区；指定
+\(h\to0\)
+的实际极限；证明宏观最小作用量的展开及相应态结构。\(\mathcal E/h\)
+的极限本身是无量纲几何响应系数，不自动具有物理张力的量纲和共轭意义。
+
+一个可争取的完整成果是：从有标记几何与场的变分极限，推导
+
+\[
+\mathscr I_j-\mathscr I_{\mathrm{ref},j}
+\longrightarrow
+\mathscr I_{\mathrm{eff}}(\text{核心、颈部、通量、慢模态}),
+\tag{P18}
+\]
+
+并由 \(\mathscr I_{\mathrm{eff}}\)
+决定最小代价、相互作用与态的选择。极限是否可加、是否局部、是否存在相变，都应由证明产生，不预先限定为``若干正项之和''。{[}R12；S2，§§5--6{]}
+
+\section{10.
+由可实现曲率区域到耦合空间：真正的统一工具}\label{ux7531ux53efux5b9eux73b0ux66f2ux7387ux533aux57dfux5230ux8026ux5408ux7a7aux95f4ux771fux6b63ux7684ux7edfux4e00ux5de5ux5177}
+
+令 \(\mathfrak D_M\)
+表示固定流形、实际场范畴和归一化下可实现的曲率／场能量向量集合。例如包含
+\(P,S_2,\int|W^+|^2,\int|W^-|^2\)
+及必要的物质项。它不是任意代数允许集合。
+
+一个线性组合型作用量在此集合上的最低值为
+
+\[
+I_{\min}(\mathbf c)=\inf_{\mathbf x\in\mathfrak D_M}
+\mathbf c\cdot\mathbf x.
+\tag{P19}
+\]
+
+已有几何不等式提供 \(\mathfrak D_M\)
+的外部约束；真实构造提供内部可实现点。于是，新的强制估计可以成为整个耦合区域中作用量下界的证书，而不只是某个特选模型的算术代入。
+
+但线性泛函只看得到相应的闭凸包信息。能量可行域的非凸结构、极小值达到性和几何分支，仍需要实际解与退化理论。只有耦合变化确实引起主导态改变或适当非解析行为，才有理由讨论物理相变。
+
+这条路线把``泛化''变成具体任务：确定哪一片耦合空间继承新间隙，在哪些边界上由哪一种真实几何饱和。它也为符号消元、精确半正定证书和数值构造提供了清楚的工作接口。
+
+\section{11. 超对称与 BPS：迁移证明机制，而不是给 SW
+场改名}\label{ux8d85ux5bf9ux79f0ux4e0e-bpsux8fc1ux79fbux8bc1ux660eux673aux5236ux800cux4e0dux662fux7ed9-sw-ux573aux6539ux540d}
+
+Witten
+的工作把四维超对称规范理论与单极子方程、四流形不变量联系起来；这种物理来源是经典事实。{[}R7{]}
+但原稿中检测几何的 SW 旋量，并不自动是某个超引力模型的 Killing spinor。
+
+真实超对称背景由特定模型的费米场变分决定，例如
+
+\[
+\delta\psi_\mu=\mathcal D_\mu(g,F,\varphi,\ldots)\epsilon,
+\qquad
+\delta\lambda=\mathcal B(g,F,\varphi,\ldots)\epsilon.
+\tag{P20}
+\]
+
+原有 Einstein 缺陷测量的是
+\(\operatorname{Ric}-\lambda g\)，超引力完整场方程还包含物质、通量和辅助场。刚性曲空间超对称也不要求背景一定
+Einstein；辅助场可能承担相容性条件。{[}R11{]}
+
+真正有价值的目标是：在一个固定的四维欧氏超引力模型、实结构或积分轮廓、拓扑扇区和边界条件下，证明拓扑对完整超对称／场方程残差施加定量限制。可先研究有明确经典分类的欧氏
+Einstein--Maxwell 超对称背景，而不是同时覆盖所有超引力。{[}R16--R17{]}
+
+\subsection{需要建立的研究命题}\label{ux9700ux8981ux5efaux7acbux7684ux7814ux7a76ux547dux9898}
+
+设 \(\mathfrak E\) 为完整引力方程残差，\(\mathfrak M\)
+为规范及物质方程残差，\(\epsilon\)
+为适当归一化的非零旋量。希望在一个明确范畴内建立
+
+\[
+\|\mathfrak E\|^2+\|\mathfrak M\|^2
++\|\delta\psi\|^2+\|\delta\lambda\|^2
+\ge\Phi(\text{拓扑／通量／边界数据}).
+\tag{P21}
+\]
+
+式(P21)是研究目标，不是由 I40 自动推出。范数、尺度与 \(\epsilon\)
+归一化必须固定，否则旋量可以缩为零，或残差可以被尺度变化人为稀释。
+
+可从 I40
+迁移的具体步骤是：计算超协变曲率在目标旋量上的作用；寻找完整背景的消去；保留
+Hessian 交换中的 flux 项；通过真实 Bianchi／Maxwell
+方程控制剩余项；用全局规范与拓扑数据完成吸收。这个流程成功后，才可能得到某类背景不能任意逼近
+BPS 的新定理。
+
+即使式(P21)成立，它首先也是背景方程的定量相容性结果。要称为``自发超对称破缺能''``真空能下界''或``质量隙''，还需要相应
+Lorentzian
+量子理论、超荷代数和能谱的连接。研究的真正高价值在于完成这些连接之一，而不是提前使用这些名称。
+
+\section{12. 单值变换、Kaluza--Klein
+与模态有效理论}\label{ux5355ux503cux53d8ux6362kaluzaklein-ux4e0eux6a21ux6001ux6709ux6548ux7406ux8bba}
+
+固定 \(E_D\)、Dehn twist、Teichmüller
+慢场及连接变量提供了另一个自然入口：\textbf{局部低能模态怎样受到全局单值变换约束，是否因此阻止精确真空？}
+
+这里有两个不同问题。其一，四维总空间作为曲面丛，构造受控的二维基底有效方程。其二，将四维流形作为某个更高维理论的内部紧化空间，研究外部真空。它们的作用量、时间方向和场内容不同，不能混为同一模型。
+
+在选定模型中，可能出现模空间值场 \(m(x)\)
+的梯度项、纤维体积模、连接场和势项。真正需要推导的是完整有效作用量及误差，而不是只写一个
+Teichmüller 路径。典型目标形式为
+
+\[
+I_{\mathrm{eff}}=
+\int_B\sqrt{g_B}\,
+\left(\text{基底曲率项}
++G_{AB}(m)\partial m^A\partial m^B
++V_{\mathrm{eff}}+\text{连接／通量项}\right),
+\tag{P22}
+\]
+
+其中各系数和符号必须从原理论计算，不能由式(P22)的示意结构指定。
+
+当前慢模态工作的限制正好对应有效理论中的关键问题：法向模式能否一致消去，是否遗漏了越来越轻的模式，完整低能方程是否允许连接或混合张量抵消单值变换代价。{[}S3，§10{]}
+
+如果能证明某类无限单值变换在完整方程中具有不可消除的相容性代价，可能同时推进固定
+\(E_D\) 的 Einstein 判定和模态有效理论。若找到新的非保纤维 Einstein
+解，则同样会改变现有几何与紧化理解。仅证明某个截断 ansatz
+无解，不等于证明原物理系统没有真空。
+
+\section{13. Sigma-model 重整化流：有准确接口，但不是自动的 CFT
+禁止定理}\label{sigma-model-ux91cdux6574ux5316ux6d41ux6709ux51c6ux786eux63a5ux53e3ux4f46ux4e0dux662fux81eaux52a8ux7684-cft-ux7981ux6b62ux5b9aux7406}
+
+二维非线性 sigma model 的一圈度量 beta 函数与 Ricci
+曲率有关，这一联系已有直接量子场论研究。{[}R18{]}
+在不含其他背景场、固定重整化约定的一圈近似中，可写
+
+\[
+\beta^{(1)}_{ij}=\alpha'\operatorname{Ric}_{ij}.
+\]
+
+对一个固定度量，只投影掉整体尺度方向，直接得到
+
+\[
+\boxed{
+\inf_{\lambda\in\mathbb R}\int|\beta^{(1)}-\lambda g|^2
+=\alpha'^2\left(P+\frac14\left(S_2-\frac{S_1^2}{V}\right)\right).
+}
+\tag{P23}
+\]
+
+因此第一主线可约束这个\textbf{去整体尺度方向的一圈几何流残差}。
+
+但负 Einstein 度量在普通未归一化 sigma-model 流中一般沿尺度演化，不是
+\(\beta=0\) 的固定点。物理冗余还包括坐标变换；若允许
+\(\mathcal L_Xg\)，式(P23)并没有自动控制其商空间上的最小残差。加入
+\(B\)-场、dilaton 和高圈项后还会出现其他抵消。
+
+所以值得研究的问题应写成：固定物理归一化和允许背景场后，能否把几何强制估计提升为对真实
+RG 残差的下界，并控制高阶项不消除它？需要分别检查
+\(\alpha'|\mathrm{Rm}|\ll1\)
+与缺陷尺度之间的关系。当前结论不足以宣称某种拓扑不存在任何共形场论或弦真空。
+
+这条线保留为后续候选，不宜在二次引力与耦合场方程尚未建立真实实例时，先用它作为旗舰物理结论。
+
+\section{14.
+欧氏量子引力与拓扑求和：经典下界能贡献什么}\label{ux6b27ux6c0fux91cfux5b50ux5f15ux529bux4e0eux62d3ux6251ux6c42ux548cux7ecfux5178ux4e0bux754cux80fdux8d21ux732eux4ec0ux4e48}
+
+若已经选定作用量、边界条件和积分轮廓，并找到相应的真实欧氏鞍点，半经典展开会包含作用量指数因子及涨落行列式。核心下界或拓扑作用量下界可以影响不同候选鞍点的经典权重。
+
+但 \(\inf I\)
+的下界本身不等于配分函数或隧穿率：还要知道极小值是否达到、鞍点是否有适当负模、测度与规范固定怎样处理、涨落和态数是否可控。欧氏经典曲率正下界也不推出量子谱质量隙。
+
+较好的研究出口是一个完成度更高、范围更清楚的命题：\textbf{在指定边界和拓扑扇区，哪些欧氏鞍点存在，其最小重整化作用量是多少，退化边界怎样影响半经典展开。}这与现有核心、标记和作用量工作相接，不需要先宣称解决整个量子引力路径积分。
+
+\section{15.
+哪些重大问题真正与当前机制相接}\label{ux54eaux4e9bux91cdux5927ux95eeux9898ux771fux6b63ux4e0eux5f53ux524dux673aux5236ux76f8ux63a5}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+问题
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+已有连接
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+决定性新工作
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Yau 26 的纯 Ricci 负号分支 & 固定 \(E_D\) 的逐点逼近构造 & 排除所有负
+Einstein 度量，或构造新的精确解 \\
+四维二次引力的拓扑扇区最低作用量 & 式(P7)的正耦合区域下界、I47核心代价 &
+锐利值、达到性、实际鞍点和退化态 \\
+Einstein--Maxwell 的拓扑反作用限制 & 式(P15)的手性重叠下界 &
+固定磁通与耦合的真实解族、最优代价或新非存在性 \\
+受几何约束的规范瞬子相容性 & 式(P1)--(P2)及 I41 &
+与独立联络问题区分，建立新可实现性或近极小结构 \\
+超对称背景的定量排除 & I40的校准消去方法、经典欧氏超对称方程 &
+在完整模型中证明式(P21)，不是仅做名称替换 \\
+单值变换与紧化真空 & \(E_D\) 和慢模态工作 &
+全模态有效理论与所有候选解的判定 \\
+\end{longtable}
+
+这里没有已经核实``当前结果直接解决某个著名物理猜想''的结论。应先锁定一个精确、重要且确实仍未解决的物理命题，建立其与现有机制的逐项对应，再以完整证明或构造攻克。不能从``量子引力''``BPS''或``拓扑''三个词直接跳到任意著名难题。
+
+\section{16.
+怎样形成一系列真正独立的高水平成果}\label{ux600eux6837ux5f62ux6210ux4e00ux7cfbux5217ux771fux6b63ux72ecux7acbux7684ux9ad8ux6c34ux5e73ux6210ux679c}
+
+第一阶段集中在\textbf{二次曲率作用量与 Einstein--Maxwell
+两个直接入口}。前者能立即定义非空的全度量变分问题，后者能把无迹 Ricci
+直接接到真实物理应力。先完成一个模型的全部连接，不要求两条都在同一轮闭合。
+
+第二阶段利用数学主线取得的最佳首项、标记传递或真实新构造，建立更完整的有效缺陷理论。此时``微观核心到宏观代价''才可能由图像变成定理。
+
+第三阶段迁移到超引力或完整紧化系统，争取解决一个原先缺少定量相容性工具的重大问题。RG与量子拓扑求和根据前两阶段真实成果决定是否继续，不按话题数量分配资源。
+
+不同论文应分别贡献不同科学内容：数学论文给出新强制机制；物理模型论文给出新作用量或反作用判定；有效理论论文解释极限与态结构；更广模型论文证明新的场方程机制。它们可以共享思想，但不能共享同一结论后只更换术语。
+
+\section{17.
+顶级目标怎样落实为可判断的科学内容}\label{ux9876ux7ea7ux76eeux6807ux600eux6837ux843dux5b9eux4e3aux53efux5224ux65adux7684ux79d1ux5b66ux5185ux5bb9}
+
+追求能够影响诺贝尔奖或菲尔兹奖级别发现的研究深度，可以作为长期志向；实际任务应落实到：一个新的基础机制、一个重要开放问题的完整解决，或一类过去不被理解的物理态与约束。奖项、期刊与``统一理论''的名称不进入证明。
+
+对于
+PRL、PRX，目标应是明确的重要物理推进或具有关键意义的新联系；两刊的官方标准也以此为中心。{[}R14--R15{]}
+对 Nature
+Physics、Nature、Science，应进一步能够说明新结果改变了哪一项重要科学判断，以及为何相关读者必须重新思考原问题。这是研究策略，不是对录用的预测。
+
+数学广度本身不能代替物理意义；物理解释也不必依赖实验才有价值。决定性的理论非存在性、新精确解、普适尺度律或受控有效理论，都可能有很高价值。关键在于结论确实属于选定物理系统，且相对于前人解决了一个真实困难。
+
+\section{18.
+给接收会话的物理研究指令}\label{ux7ed9ux63a5ux6536ux4f1aux8bddux7684ux7269ux7406ux7814ux7a76ux6307ux4ee4}
+
+先继承数学文件中最强的实际输入与公式，不重新回到``AI适不适合几何''的讨论。以式(P7)和式(P15)作为已经写清楚的演绎入口，逐条查验模型的作用量、符号、通量、边界条件和非空性。
+
+优先选择一个无需任意附加结构、与现有真实流形族相接、能够给出新判定的物理对象。构造与证明并行：一方寻找真实解、近极小态或最坏退化；另一方从完整场方程推导下界与刚性。二者必须使用相同耦合和同一拓扑／边界数据。
+
+物理迁移的阶段交付应是一条连续链：\textbf{明确模型 → 真实输入 →
+新估计或新构造 → 全局物理结论 →
+与最近邻文献的精确差异。}如果链条只到一个代数恒等式，就继续连接；如果完整系统否定原来的漂亮图像，就让反例决定新的理论。
+
+最终应争取的，不是宣称``所有拓扑都产生某种能量''，而是发现：\textbf{哪些全局结构迫使哪些真实场方程支付什么代价，这个代价在最坏退化中是否仍然存在，以及它如何选择物理上允许的解与态。}
+\end{document}

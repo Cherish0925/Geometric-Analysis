@@ -1,0 +1,243 @@
+% Qiushi Book Template
+% Compile with LuaLaTeX.
+% If the LuaLaTeX font cache is unavailable, prefix the compile command with TEXMFVAR=/tmp/qiushi_texmf_var.
+% Keep figure files under figures/ or ../../workspace/figures/.
+% Use refs.bib with \cite{...} when references are used.
+% LaTeX supplies section numbers; section titles contain title text only.
+% Chapters can be written directly after \mainmatter or included from separate files.
+\documentclass[11pt,a4paper,openany]{ctexbook}
+
+\usepackage{iftex}
+\ifPDFTeX
+  \PackageError{qiushi}{This template requires LuaLaTeX}{Compile with latexmk -lualatex.}
+\fi
+
+\usepackage[
+  inner=24mm,
+  outer=19mm,
+  top=22mm,
+  bottom=24mm,
+  headheight=24pt,
+  headsep=6mm,
+  footskip=9mm
+]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{siunitx}
+\usepackage{booktabs,tabularx,longtable,array,makecell,multirow}
+\usepackage{tikz}
+\usepackage{caption,subcaption}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=BookBlue,citecolor=BookAccent,urlcolor=BookBlue]{hyperref}
+\usepackage{bookmark}
+\usepackage{cleveref}
+
+\definecolor{BookBlue}{HTML}{123A63}
+\definecolor{BookAccent}{HTML}{9B5A2E}
+\definecolor{BookMuted}{HTML}{667085}
+\definecolor{BookRule}{HTML}{D7DEE8}
+\definecolor{BookLight}{HTML}{F3F7FB}
+\definecolor{BookWarm}{HTML}{FBF6EF}
+\definecolor{QiushiBlue}{HTML}{003F88}
+\definecolor{CodeBg}{HTML}{F7F7F4}
+
+\newcommand{\BookTitle}{Qiushi 研究型图书模板}
+\newcommand{\BookSubtitle}{面向自主科研系统的长篇专著与教材排版}
+\newcommand{\BookAuthor}{Qiushi Discovery Engine}
+\newcommand{\BookPublisher}{Qiushi Discovery Engine}
+\newcommand{\BookEdition}{研究版}
+\newcommand{\BookDate}{2026}
+\newcommand{\BookDescription}{图书描述。}
+
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.08em plus 0.04em}
+\linespread{1.12}
+\raggedbottom
+\emergencystretch=4em
+\allowdisplaybreaks
+\sloppy
+\clubpenalty=10000
+\widowpenalty=10000
+\Urlmuskip=0mu plus 2mu
+\sisetup{detect-all=true,per-mode=symbol}
+\graphicspath{{figures/}{./}{../../workspace/figures/}}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash\hspace{0pt}}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash\hspace{0pt}}p{#1}}
+\DeclareUrlCommand\SafePath{\urlstyle{tt}\small}
+\DeclareUrlCommand\SafeURL{\urlstyle{same}\small}
+\DeclareUrlCommand\SafeCode{\urlstyle{tt}\small}
+\newcommand{\SafeImage}[2][]{\includegraphics[max width=\linewidth,keepaspectratio,#1]{#2}}
+\newcommand{\SafeWideImage}[2][]{\includegraphics[max width=\textwidth,keepaspectratio,#1]{#2}}
+\newcommand{\QiushiTableFont}{\small}
+\NewDocumentEnvironment{SafeTabularX}{m +b}{%
+  \begingroup\QiushiTableFont
+  \setlength{\tabcolsep}{4pt}%
+  \renewcommand{\arraystretch}{1.10}%
+  \begin{tabularx}{\linewidth}{#1}#2\end{tabularx}%
+  \endgroup
+}{}
+\NewDocumentEnvironment{SafeLongTable}{m +b}{%
+  \begingroup\QiushiTableFont
+  \setlength{\tabcolsep}{4pt}%
+  \renewcommand{\arraystretch}{1.10}%
+  \begin{longtable}{#1}#2\end{longtable}%
+  \endgroup
+}{}
+\newcommand{\dd}{\mathop{}\!\mathrm{d}}
+\newcommand{\dv}[2]{\frac{\dd #1}{\dd #2}}
+\newcommand{\pdv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\operatorname{Var}}
+
+\ctexset{
+  chapter = {
+    format = {\Huge\bfseries\color{BookBlue}},
+    nameformat = {\Large\bfseries\color{BookAccent}},
+    numberformat = {\Large\bfseries\color{BookAccent}},
+    titleformat = {\Huge\bfseries\color{BookBlue}},
+    aftername = \quad,
+    beforeskip = 1.4em,
+    afterskip = 1.8em
+  },
+  section = {
+    format = {\Large\bfseries\color{BookBlue}}
+  },
+  subsection = {
+    format = {\large\bfseries}
+  }
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\color{BookMuted}\nouppercase{\leftmark}}
+\fancyhead[RO]{\small\color{BookMuted}\nouppercase{\rightmark}}
+\fancyfoot[L]{\small\color{QiushiBlue}\bfseries Qiushi Engine}
+\fancyfoot[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{BookRule}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrulewidth}{0.35pt}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{BookRule}\leaders\hrule height \footrulewidth\hfill}}
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyfoot[L]{\small\color{QiushiBlue}\bfseries Qiushi Engine}
+  \fancyfoot[R]{\small\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0.35pt}
+}
+
+\captionsetup{
+  font=small,
+  labelfont={bf,color=BookBlue},
+  labelsep=period,
+  justification=raggedright,
+  singlelinecheck=false
+}
+\setlist{itemsep=0.18em,topsep=0.4em,parsep=0.05em}
+\lstset{
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{CodeBg},
+  breaklines=true,
+  breakatwhitespace=false,
+  columns=fullflexible,
+  keepspaces=true,
+  frame=single,
+  rulecolor=\color{BookRule},
+  numbers=left,
+  numberstyle=\tiny\color{BookMuted},
+  keywordstyle=\color{BookBlue}\bfseries,
+  commentstyle=\color{BookMuted},
+  stringstyle=\color{BookAccent},
+  showstringspaces=false
+}
+
+\newtheoremstyle{bookplain}
+  {0.7em}{0.7em}{\itshape}{}{\bfseries\color{BookBlue}}{.}{0.5em}{}
+\newtheoremstyle{bookdefinition}
+  {0.7em}{0.7em}{}{}{\bfseries\color{BookBlue}}{.}{0.5em}{}
+\theoremstyle{bookplain}
+\newtheorem{theorem}{定理}[chapter]
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{proposition}[theorem]{命题}
+\theoremstyle{bookdefinition}
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{example}{例}[chapter]
+\theoremstyle{remark}
+\newtheorem{remark}{注}[chapter]
+\renewcommand{\proofname}{证明}
+
+\newcommand{\MakeQiushiBookTitle}{%
+\begin{titlepage}
+\centering
+\vspace*{12mm}
+{\color{BookAccent}\rule{\textwidth}{1.1pt}}\par
+\vspace{24mm}
+{\bfseries\fontsize{30}{34}\selectfont\color{BookBlue}\BookTitle\par}
+\vspace{8mm}
+{\Large\color{BookMuted}\BookSubtitle\par}
+\vspace{18mm}
+{\Large\BookAuthor\par}
+\vspace{8mm}
+{\normalsize\color{BookAccent}\BookEdition\par}
+\vfill
+\begin{minipage}{0.72\textwidth}
+\centering
+\small\color{BookMuted}\BookDescription
+\end{minipage}
+\vfill
+{\small \BookPublisher\quad|\quad \BookDate\par}
+\vspace{8mm}
+{\color{BookAccent}\rule{0.52\textwidth}{0.75pt}}\par
+\end{titlepage}}
+
+\begin{document}
+
+\frontmatter
+\MakeQiushiBookTitle
+\tableofcontents
+
+\mainmatter
+
+\chapter{章节标题}
+
+正文。
+
+\section{小节标题}
+
+正文。
+
+\begin{equation}
+  \mathcal{L}u = f .
+\end{equation}
+
+\begin{figure}[htbp]
+\centering
+\fbox{\rule{0pt}{1.8in}\rule{0.85\textwidth}{0pt}}
+\caption{图注。}
+\end{figure}
+
+\begin{table}[htbp]
+\caption{表注。}
+\begin{tabularx}{\textwidth}{YYY}
+\toprule
+列 A & 列 B & 列 C \\
+\midrule
+-- & -- & -- \\
+-- & -- & -- \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\backmatter
+
+\IfFileExists{refs.bib}{%
+  \bibliographystyle{unsrt}
+  \bibliography{refs}}{}
+
+\end{document}
+

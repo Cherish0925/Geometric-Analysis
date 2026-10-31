@@ -1,0 +1,414 @@
+# Exact nonlinear slow-mode energy and fixed-amplitude adiabatic metrics
+
+24 September 2026. This note replaces a linearized fiber deformation by an
+actual horizontal curve of hyperbolic metrics. It determines every Ricci
+block, the complete nonlinear slow equation, and its normal feedback. The
+resulting energy identity remains valid at fixed, nonzero moduli amplitude.
+On cyclic covers it produces pointwise and unnormalized integral Ricci
+errors tending to zero while that amplitude does not shrink.
+
+The full-mode theorem in
+[I33](20260924_integrable_kernel_cyclic_repair.md) concerns arbitrary
+tensor perturbations in a shrinking neighborhood and measures distance to
+**all** normalized Einstein metrics. The present theorem treats a larger
+nonlinear, geometrically specified family, but its fixed-distance conclusion
+concerns fiber-preserving product outputs. Neither conclusion replaces the
+other. The underlying smooth products already carry exact Einstein metrics.
+
+The submersion identities and the exact adapted rigidity statement were
+already available in [Round 20](../mathematics/current/round20_construction.md).
+They are not counted as new results. The additions here are the exact
+arclength equation, the full residual-energy identity including normal
+acceleration, and its fixed-amplitude application. The companion
+[actual-gauge identity](20260924_moduli_energy_gauge.md) places these metrics
+inside the first line's actual bilateral monopole near-saturation regime.
+
+## 1. An actual, horizontally marked hyperbolic family
+
+Let \(F\) be a closed oriented surface of genus at least two. Fix a smooth
+curve \(h_v\), defined on an open interval containing a compact interval
+\(J\), of metrics of Gaussian curvature \(-1\). Require
+\[
+ k_v=\partial_vh_v,\qquad
+ \operatorname{tr}_{h_v}k_v=0,\qquad
+ \operatorname{div}_{h_v}k_v=0,\qquad
+ \int_F|k_v|_{h_v}^2\,dA_{h_v}=1.
+ \tag{1}
+\]
+Such nonconstant curves exist. A regular curve in Teichmüller space has a
+horizontal lift; after reparametrization by its real-tensor \(L^2\)
+arclength it satisfies (1). Rupflin--Topping, Definition 1.1 and the
+discussion of equation (1.1) in
+[*Horizontal curves of hyperbolic metrics*](https://link.springer.com/article/10.1007/s00526-018-1386-y),
+give the horizontal decomposition. Horizontality is equivalently the real
+part of a holomorphic quadratic differential. Its length is a fixed
+normalization of Weil--Petersson length; no conventional WP constant is
+silently inserted into (1).
+
+Pointwise trace-freeness implies that all \(h_v\) have the **same area
+form**, not just the same total area. Write this form as \(dA_F\), and set
+\[
+ V_F=\int_FdA_F=4\pi(\operatorname{genus}(F)-1),\qquad
+ N_v=\partial_vk_v-k_vh_v^{-1}k_v,
+\]
+\[
+ C_4(v)=\int_F|k_v|_{h_v}^4dA_F,\qquad
+ C_N(v)=\int_F|N_v|_{h_v}^2dA_F,\qquad
+ \Xi(v)=\frac{C_4(v)}{16}+\frac{C_N(v)}4.
+ \tag{2}
+\]
+Here a juxtaposition such as \(k_vh_v^{-1}k_v\) denotes contraction as
+bilinear forms. All these are tensors and functions of the actual marked
+metrics on \(F\), not only formal Teichmüller coordinates. Differentiating
+the trace and unit-speed conditions gives
+\[
+ \operatorname{tr}_{h_v}N_v=0,\qquad
+ \int_F\langle N_v,k_v\rangle_{h_v}dA_F=0,
+ \qquad \Xi(v)\ge\frac1{16V_F}.
+ \tag{3}
+\]
+For example, with \(A=h_v^{-1}k_v\), differentiation of the squared
+\(L^2\) norm yields
+\(0=2\int_F(\langle\partial_vk_v,k_v\rangle-\operatorname{tr}A^3)\).
+This proves the middle identity. The last follows from Cauchy--Schwarz and
+\(\int_F|k_v|^2=1\). These identities do not assume that the curve is a
+WP geodesic. In particular, its normal acceleration is not discarded.
+
+Let \((B,\gamma)\) be any closed connected oriented Riemannian surface,
+and let \(v:B\to J\) be smooth. On the original smooth product define
+\[
+             G=\gamma+h_{v(x)},\qquad E=\operatorname{Ric}_G+G.
+ \tag{4}
+\]
+The marking in (1) defines a flat horizontal distribution. Throughout,
+\(\Delta_\gamma=-\operatorname{div}_\gamma\nabla\) is nonnegative,
+and tensor norms without an indicated average are unnormalized norms.
+
+## 2. Complete nonlinear equation and residual energy
+
+**Theorem A.** For (1)--(4), all Ricci-error blocks are exactly
+\[
+ \begin{aligned}
+ E_{HH}&=(K_\gamma+1)\gamma
+                      -\tfrac14|k_v(y)|_{h_v}^2\,dv\otimes dv,\\
+ E_{HV}&=0,\\
+ E_{VV}&=\tfrac12 k_v\Delta_\gamma v
+                         -\tfrac12N_v|dv|_\gamma^2.
+ \end{aligned}
+ \tag{5}
+\]
+Consequently the retained slow equation and its entire transverse
+component along this family are
+\[
+ \int_F\langle E_{VV},k_v\rangle dA_F
+            =\tfrac12\Delta_\gamma v,
+ \qquad
+ E_{VV}-k_v\int_F\langle E_{VV},k_v\rangle dA_F
+            =-\tfrac12N_v|dv|^2.
+ \tag{6}
+\]
+They give the exact global identity
+\[
+ \boxed{\begin{aligned}
+ \int_{B\times F}|E|_G^2dV_G
+ =\int_B\bigg[&\frac14(\Delta_\gamma v)^2
+  +2V_F\left(K_\gamma+1-\frac{|dv|^2}{8V_F}\right)^2\\
+  &+\left(\Xi(v)-\frac1{32V_F}\right)|dv|^4\bigg]dA_\gamma.
+ \end{aligned}}
+ \tag{7}
+\]
+In particular, for an arbitrary base metric,
+\[
+ \int|E|^2\ge\frac14\int_B(\Delta_\gamma v)^2dA_\gamma
+                  +\frac1{32V_F}\int_B|dv|^4dA_\gamma.
+ \tag{8}
+\]
+If \(K_\gamma=-1\), the simpler identity is
+\[
+ \boxed{\quad
+ \int|E|^2=\frac14\int_B(\Delta_\gamma v)^2dA_\gamma
+                    +\int_B\Xi(v)|dv|^4dA_\gamma.
+ \quad}
+ \tag{9}
+\]
+There is no potential term depending only on \(v\), and no uncomputed
+\(O(v^2)\) error. The exact family of hyperbolic fibers is responsible
+for this cancellation.
+
+**Proof.** In base coordinates \(x^i\) and fiber coordinates \(y^a\),
+put \(S_i=\tfrac12h^{-1}\partial_i h=\tfrac12h^{-1}k_v\partial_i v\).
+Its trace is zero. The mixed Christoffel symbols of the block metric are
+\[
+ \Gamma^a_{ib}=\tfrac12(h^{-1}k_v)^a{}_b\partial_i v,
+ \qquad
+ \Gamma^i_{ab}=-\tfrac12\gamma^{ij}(k_v)_{ab}\partial_jv;
+ \tag{10}
+\]
+the remaining nonzero symbols within each factor are its intrinsic
+Christoffel symbols. Substitution into Ricci, or the full flat-connection
+identities in Round 20, gives
+\[
+ (\operatorname{Ric}_G)_{ij}
+    =K_\gamma\gamma_{ij}-\operatorname{tr}(S_iS_j),
+ \qquad (\operatorname{Ric}_G)_{ia}
+    =(\operatorname{div}_{h_v}S_i)_a,
+\]
+\[
+  (E_{VV})^\sharp=-\gamma^{ij}D_iS_j,
+  \quad
+  D_iS_j=\partial_iS_j+[S_i,S_j]-\Gamma^\ell_{ij}(\gamma)S_\ell.
+ \tag{11}
+\]
+The mixed term vanishes by (1). The commutator vanishes because every
+\(S_i\) is a scalar multiple of the same endomorphism. Differentiating
+\(h^{-1}k_v\) gives \(h^{-1}N_v\). Since
+\(\gamma^{ij}(\partial_i\partial_jv-\Gamma^\ell_{ij}\partial_\ell v)
+=-\Delta_\gamma v\), (11) proves all of (5).
+
+Equation (3) now proves (6) and
+\[
+ \int_F|E_{VV}|^2dA_F
+           =\tfrac14(\Delta_\gamma v)^2
+                          +\tfrac14C_N(v)|dv|^4.
+ \tag{12}
+\]
+Set \(c=K_\gamma+1\), \(X=|dv|^2\). Since
+\(|dv\otimes dv|^2=X^2\) and \(\langle\gamma,dv\otimes dv\rangle=X\),
+the horizontal norm integrated over a fiber is
+\[
+ 2V_Fc^2-\tfrac12cX+\tfrac1{16}C_4(v)X^2.
+ \tag{13}
+\]
+Completing this scalar square and using (12) proves (7). Equations
+(8)--(9) follow from (3) and \(c=0\), respectively. \(\square\)
+
+**Corollary A1 (forced slow energy and exact classification).** Define
+\(f(x)=\int_F\langle E_{VV},k_v\rangle dA_F\). Then, for any constant
+\(c\),
+\[
+ \Delta_\gamma v=2f,\qquad
+ \int_B|dv|^2dA_\gamma=2\int_B(v-c)f\,dA_\gamma,
+\]
+\[
+ \|v-\bar v\|_{L^2(B)}
+       \le\frac{2}{\lambda_1(B,\gamma)}\|E\|_{L^2(B\times F)}.
+ \tag{14}
+\]
+Here \(\lambda_1>0\) is the first nonzero scalar eigenvalue, and the last
+inequality follows from \(\|f\|_2\le\|E_{VV}\|_2\). No scalar spectral
+gap has been silently made uniform in the base.
+
+If \(G\) is Einstein with **any** constant \(\lambda\), then
+\(\operatorname{tr}_{VV}\operatorname{Ric}_G=-2\) by (3),(5), so
+\(\lambda=-1\). Equivalently, pairing the Einstein equation with \(k_v\)
+in (6) already implies \(\Delta v=0\). Connectedness of the closed base
+gives \(v\) constant, and then (5) forces \(K_\gamma=-1\). Thus the
+exact solutions in this entire block family are precisely the products.
+This recovers the relevant inherited adapted rigidity, while (6)--(14)
+supply its quantitative nonlinear equation and full residual energy.
+
+**Corollary A2 (local stress and global amplitude).** Put
+\(\delta=\|G^{-1}E\|_{\infty,\mathrm{op}}\). For an arbitrary base,
+\[
+ |dv|^2\le8V_F\delta,
+ \qquad
+ \operatorname{osc}_B v\le\sqrt{8V_F\delta}\,
+                                  \operatorname{diam}(B,\gamma).
+ \tag{15}
+\]
+When \(K_\gamma=-1\), 8 can be replaced by 4. Indeed, the trace-free
+part of the horizontal block has operator norm
+\(|k_v|^2|dv|^2/8\); its norm is at most \(\delta\) in dimension two.
+Taking a fiber maximum and using \(\int_F|k_v|^2=1\) proves the first
+bound. For a hyperbolic base the whole horizontal error has norm
+\(|k_v|^2|dv|^2/4\). Integrating along a minimizing base geodesic proves
+the amplitude estimate. Base-curvature adjustment therefore cannot remove
+the rank-one trace-free stress.
+
+## 3. Fixed-amplitude cyclic-cover construction
+
+Fix a closed hyperbolic surface \((B,b)\) and a primitive class in
+\(H^1(B;\mathbb Z)\). Let \(\eta\) be its harmonic representative,
+normalized to have integral periods. On the associated infinite cyclic
+cover \(B_\infty\), write \(dz=\eta\), with
+\(z(\tau x)=z(x)+1\) for a deck generator \(\tau\). The function \(z\)
+is harmonic. Let \(B_m=B_\infty/\langle\tau^m\rangle\), with the lifted
+hyperbolic metric \(b_m\).
+
+Fix \(a>0\) with \([-a,a]\subset J\), and suppose the two marked
+hyperbolic structures \([h_{-a}]\) and \([h_a]\) are different. This is
+achievable on an arbitrarily short regular horizontal arc. Define the
+actual metrics
+\[
+ v_m=a\cos(2\pi z/m),\qquad
+ M_m=B_m\times F,\qquad G_m=b_m+h_{v_m}.
+ \tag{16}
+\]
+The amplitude \(a\) is fixed independently of \(m\).
+
+**Theorem B.** This sequence has uniform local smooth bounded geometry
+and is noncollapsed on a fixed local scale. For every fixed integer
+\(j\ge0\) and \(0<\alpha<1\), in the uniformly lifted product charts,
+\[
+ \|\operatorname{Ric}_{G_m}+G_m\|_{C^{j,\alpha}_{\mathrm{uloc}}}
+                  \le C_{a,j,\alpha}m^{-2},
+ \qquad
+ c_a m^{-2}\le\delta_-(G_m)\le C_a m^{-2},
+ \tag{17}
+\]
+\[
+ c_a m^{-3}\le
+       \int_{M_m}|\operatorname{Ric}_{G_m}+G_m|^2dV_{G_m}
+                 \le C_a m^{-3},\qquad
+ \operatorname{osc}_{B_m}v_m=2a.
+ \tag{18}
+\]
+The constants depend on the fixed surfaces, harmonic form, and fixed
+horizontal curve, not on the covering degree. The volume is exactly
+\(m\operatorname{Area}(B,b)V_F\), and diameter is comparable to \(m\).
+In particular, even unnormalized \(L^2\) Ricci error tends to zero.
+
+**Proof.** The harmonic chain rule gives exactly
+\[
+ dv_m=-a\frac{2\pi}{m}\sin(2\pi z/m)\eta,
+ \qquad
+ \Delta_{b_m}v_m=\left(\frac{2\pi}{m}\right)^2
+                                      |\eta|^2v_m.
+ \tag{19}
+\]
+All derivatives of the lifted \(\eta\) are uniformly bounded. Every
+fixed number of derivatives of \(|dv_m|^2\) and \(\Delta v_m\) is
+therefore \(O(m^{-2})\). The compact smooth hyperbolic path has uniform
+bounds of every fixed order, so (5) proves the first part of (17).
+Although the Hessian of \(v_m\) need only be \(O(m^{-1})\), the complete
+Ricci formula involves its **trace** in (19); there is no missing
+\(O(m^{-1})\) mixed block, because horizontality makes it vanish exactly.
+
+The metrics \(G_m\) are uniformly equivalent to \(b_m+h_0\), with all
+local coefficient derivatives uniformly bounded. Lift a fixed finite
+atlas on \(B\) and a fixed finite atlas on \(F\), shrinking its charts
+once if necessary. These charts give local ellipticity, curvature bounds
+and a fixed-radius ball-volume lower bound independent of \(m\). The
+same argument provides uniform harmonic-coordinate bounds if those are
+desired, but harmonic coordinates are not needed for (17).
+
+A connected compact fundamental cell for \(B_\infty\) has bounded
+diameter. The cyclic chain of \(m\) cells gives
+\(\operatorname{diam}(B_m)\le C m\). The circle-valued function \(z\)
+modulo \(m\) has uniformly bounded differential and is onto the circle
+of length \(m\), giving the reverse bound. Projection to \(B_m\) is
+distance nonincreasing; a horizontal path at fixed fiber coordinate and
+then a uniformly bounded fiber path prove the corresponding statements
+for \(G_m\). Surjectivity also gives \(\operatorname{osc}v_m=2a\).
+Equation (15) now gives the lower bound in (17).
+
+For completeness the integral rate in (18) is exact in order, not only
+an upper bound. For \(m\ge5\), deck summation gives
+\[
+ \sum_{r=0}^{m-1}\cos^2(\theta+2\pi r/m)=\frac m2,
+ \quad
+ \sum_{r=0}^{m-1}\sin^4(\theta+2\pi r/m)=\frac{3m}{8}.
+ \tag{20}
+\]
+Write \(I_\eta=\int_B|\eta|^4dA_b>0\). It follows that
+\[
+ \int_{B_m}(\Delta v_m)^2dA_{b_m}
+       =\frac{a^2(2\pi)^4}{2m^3}I_\eta,
+ \qquad
+ \int_{B_m}|dv_m|^4dA_{b_m}
+       =\frac{3a^4(2\pi)^4}{8m^3}I_\eta.
+ \tag{21}
+\]
+Insert these into (9), using the positive lower and finite upper bounds
+of \(\Xi\) on \([-a,a]\), to prove (18). \(\square\)
+
+This construction is an actual nonlinear continuation of the low channel
+\(q(y)f(x)\); it is not a new smooth-topology supply theorem. It sharpens
+the earlier shrinking-amplitude test by eliminating the spurious quadratic
+potential of a linear metric interpolation. Its residual has no fixed
+amplitude floor because every constant parameter gives an exact Einstein
+product. All normal acceleration nevertheless remains visible in (9).
+
+## 4. A precise fixed-distance statement, and its scope
+
+Let \(\mathscr P_m\) be the metrics on \(B_m\times F\) obtained by
+pulling back a hyperbolic product \(\gamma'+h_*\) through any smooth
+fiber-preserving diffeomorphism
+\(\Phi(x,y)=(\varphi(x),\phi_x(y))\), with orientation-preserving fiber
+maps. Neither the product parameters nor the diffeomorphisms are fixed.
+Set
+\[
+ d_0(G_m,\mathscr P_m)
+  =\inf_{H\in\mathscr P_m}\|G_m^{-1}H-I\|_{\infty,\mathrm{op}},
+ \quad
+ D_T=d_T([h_{-a}],[h_a])>0,
+ \tag{22}
+\]
+where \(d_T=\tfrac12\inf\log K\) is Teichmüller distance.
+
+**Theorem C.** For every \(m\),
+\[
+                       d_0(G_m,\mathscr P_m)\ge\tanh D_T>0.
+ \tag{23}
+\]
+**Proof.** If \(\varepsilon=\|G_m^{-1}H-I\|_\infty\ge1\), the claim
+is automatic. Otherwise \((1-\varepsilon)G_m\le H\le(1+\varepsilon)G_m\).
+Restricting to a vertical tangent space gives the same comparison between
+\(h_{v_m(x)}\) and \(\phi_x^*h_*\), even when \(H\) has cross terms.
+The mapping class of \(\phi_x\) is constant on connected \(B_m\), so
+all the latter fiber metrics represent a single marked Teichmüller point
+\(t_*\). The identity on a fiber has dilatation at most
+\(\sqrt{(1+\varepsilon)/(1-\varepsilon)}\), whence
+\[
+ d_T([h_{v_m(x)}],t_*)
+             \le\frac14\log\frac{1+\varepsilon}{1-\varepsilon}.
+ \tag{24}
+\]
+Use fibers where \(v_m=\pm a\) and the triangle inequality. Then
+\(D_T\le\tfrac12\log((1+\varepsilon)/(1-\varepsilon))
+=\operatorname{arctanh}\varepsilon\), proving (23). \(\square\)
+
+Thus no estimate \(d_0(G,\mathscr P)\le\rho(\|\operatorname{Ric}_G+G\|)\)
+with \(\rho(t)\to0\) can be uniform over these cyclic covers, even for
+fixed arbitrarily small but nonzero moduli amplitude, uniform local
+geometry, and unnormalized \(L^2\) residual tending to zero. The omitted
+global information is the slow coefficient, not a local curvature spike.
+
+Theorem C does **not** replace \(\mathscr P_m\) by the set of all Einstein
+metrics or permit arbitrary non-fiber-preserving diffeomorphisms. Such a
+replacement would need a theorem showing that every sufficiently close
+Einstein metric has the required global structure. Round 18 proves local
+completeness for each fixed background; I33 gives a shrinking uniform
+neighborhood. Neither supplies that missing fixed-amplitude coverage.
+The manifolds \(M_m\) have the explicit exact output \(b_m+h_0\), so
+these examples do not refute any existence conclusion of Yau26.
+
+## 5. What has been retained rather than projected away
+
+The scalar equation (6) is exact for the actual geometric family. Its
+normal term is retained in (5), contributes the nonnegative \(C_N\) term
+in (7), and can be nonzero. Solving \(\Delta v=0\) alone is not asserted
+to solve an arbitrary full tensor perturbation problem. Within this family,
+it makes \(v\) constant and then all the written vertical and mixed
+equations vanish; the remaining base equation is precisely \(K_\gamma=-1\).
+
+This supplies a complete nonlinear energy for a genuine slow family and
+a sharp global-size obstruction to uniform adapted repair. It is
+compatible with the first-line obstruction/existence distinction:
+local smallness and actual near-saturation may coexist with macroscopic
+moduli oscillation, although the same smooth topology has an exact output.
+The companion gauge calculation identifies the actual harmonic classes
+and their curvature deficits; those are additional verified information,
+not a presumption that every slow-moduli problem is controlled by them.
+
+## 6. Reproducible finite checks
+
+`check_nonlinear_slow_moduli.py` recomputes a four-dimensional Ricci matrix
+from Christoffel symbols for a two-base-variable area-preserving family,
+checks the normal-acceleration term, arclength pairing and completed-square
+coefficients, verifies the harmonic-coordinate cancellation and the cyclic
+averages in (20), and includes negative controls for dropping acceleration
+or replacing the scalar Laplacian by a Hessian norm. The local coordinate
+test is not a closed hyperbolic family; the global family is supplied by
+the horizontal-lift argument above. These finite checks do not certify the
+Teichmüller theory or any unrestricted Einstein classification.

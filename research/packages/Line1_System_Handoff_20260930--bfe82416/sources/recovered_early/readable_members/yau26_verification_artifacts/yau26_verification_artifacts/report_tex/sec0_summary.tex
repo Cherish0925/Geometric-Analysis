@@ -1,0 +1,11 @@
+\begin{abstract}
+本报告对上传的《qiushi-yau26》资料包（六篇研究稿、两份计算附录与复算程序）作了逐项独立核验，并在此基础上给出关于 Yau 第 26 题的一个完整的\emph{现状判定}：哪些结论已被严格证明，哪些问题仍然开放，以及原题的最终解决在逻辑上等价于（或蕴含）哪些公认的公开问题。
+
+\textbf{判定。}工作命题 $Q_n$（存在仅依赖维数的 Ricci 夹逼区间，使满足夹逼的闭流形必承载某个 Einstein 度量）在 $n=2,3$ 成立；在 $n\ge4$ \emph{目前无法被证明或否定}。这不是资料不足造成的：本报告证明（定理~\ref{thm:R}），$Q_4$ 成立将推出 $\CPb\#\CPb$ 等一批具体四维流形承载 Einstein 度量（或负分支的对应结论），而否定 $Q_4$ 则（据我们所知）要求对承载正数量曲率度量的四维流形建立全新的 Einstein 不存在性障碍；两者都是四维几何中公认的公开问题。$n\ge5$ 时，否定 $Q_n$ 以“存在不承载 Einstein 度量的闭 $n$ 维流形”为前提，而这样的流形目前一个也不知道。\textbf{因此本报告不宣称原题已解决}；它给出的是经过核验的定理、新的推论与精确的归约。
+
+\textbf{已严格成立并经独立核验的主要结论。}（i）固定 $A_1$ 轨形解消上的 log-Weyl 构造：$\delta_\sigma(g_a)\le C/|\log a|\to0$（定理~\ref{thm:A1}；本报告用独立的符号与高精度数值计算复核，球面悬挂情形实测 $L\,\delta\to1/3$，与理论首项一致）；（ii）固定 Dehn-twist 曲面丛上的 $\delta_-\to0$ 构造；（iii）精确 Einstein 度量的统一拓扑间隙与近临界序列的必要塌缩；（iv）Hitchin--Thorpe、Seiberg--Witten、BCG 熵三类障碍与紧夹逼之间的定量关系（HT 与固定超临界 SW 比例被紧夹逼排除；SW 边界带与熵等号型流形既未构造也未排除）；（v）正交传递 $T^2$ 连接器的定量障碍。
+
+\textbf{本次工作的新增内容。}（a）推论~\ref{cor:football}：$e_+(S^2\times S^2)=e_+(\CPb\#\CPb)=0$，并且相应度量族 GH 收敛到 $S^4/\Z_2$；这对 Ozuch（据其 2021 年报告）提出的 $L^\infty$ 夹逼公开问题给出肯定回答，同时说明“近 Einstein $\Rightarrow$ 附近有 Einstein 度量”的稳定性形式在四维两个符号分支均不成立（推论~\ref{cor:stability}）。（b）命题~\ref{prop:morse}：用 Morse 论证把正交传递障碍推广为底曲面的完全分类。（c）定理~\ref{thm:R}（归约定理）与定理~\ref{thm:W}（条件定理：若存在具有两个渐近双曲端的 $T^3\times\R$ 上的 Einstein 度量，则负分支 $P_4^-$ 不成立）。（d）对资料包主要定理的审稿式核验结论与勘误建议（第~\ref{sec:verification}节）。
+\end{abstract}
+
+\paragraph{阅读约定。}每个结论后标注其状态：\status{已证}表示本报告给出完整证明或已逐步核验资料包中的完整证明；\status{引用}表示依赖所列文献的定理；\status{条件}表示依赖明确列出的未证假设；\status{开放}表示未解决。范数约定：$\delta_\sigma(g)=\sup_M\|g^{-1}\Ric_g-\sigma\Id\|_{\op}$，$e_\sigma(M)=\inf_g\delta_\sigma(g)$，$\sigma\in\{+1,-1\}$。

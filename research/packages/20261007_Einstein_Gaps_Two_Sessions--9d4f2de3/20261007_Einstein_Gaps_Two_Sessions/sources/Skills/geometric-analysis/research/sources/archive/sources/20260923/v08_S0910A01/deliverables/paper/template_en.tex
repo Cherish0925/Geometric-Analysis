@@ -1,0 +1,176 @@
+% Qiushi Engine default English research-paper template.
+% Target: APS Physical Review Letters in REVTeX 4.2 reprint (two-column) form.
+% Build with: latexmk -lualatex -interaction=nonstopmode -halt-on-error main.tex
+% If the LuaLaTeX font cache is not writable, prefix that command with
+% TEXMFVAR=/tmp/qiushi_texmf_var (or another session-writable cache directory).
+%
+% Keep this class line, page geometry, typography, and column behavior intact for
+% PRL output. Add field-specific packages only when the manuscript genuinely needs
+% them and compile immediately after doing so. Keep figures under figures/ or
+% ../../workspace/figures/, and keep verified bibliography records in refs.bib.
+%
+% Before final delivery: remove every placeholder; resolve all citations and cross
+% references; inspect the log for errors, missing assets/glyphs, stuck floats, and
+% overfull content; then render and inspect every page at its final size. A clean
+% compile alone does not establish readable figures, tables, equations, or pages.
+\documentclass[aps,prl,reprint,superscriptaddress,nofootinbib,longbibliography]{revtex4-2}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{amsthm}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xurl}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+
+\graphicspath{{figures/}{../figures/}{./}{../../workspace/figures/}}
+\sisetup{detect-all=true,per-mode=symbol}
+\Urlmuskip=0mu plus 2mu
+\emergencystretch=1.5em
+
+\providecommand{\dd}{\mathop{}\!\mathrm{d}}
+\providecommand{\dv}[2]{\frac{\dd #1}{\dd #2}}
+\providecommand{\pdv}[2]{\frac{\partial #1}{\partial #2}}
+\providecommand{\vect}[1]{\boldsymbol{#1}}
+\providecommand{\mat}[1]{\mathbf{#1}}
+\providecommand{\E}{\mathbb{E}}
+\providecommand{\Var}{\operatorname{Var}}
+\providecommand{\argmin}{\operatorname*{arg\,min}}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+% Layout contract:
+% - Use figure/table when the complete object remains legible at one-column width.
+% - Use figure*/table* for genuinely dense multi-panel or comparison objects that
+%   need both columns. Do not make every object full width by habit.
+% - Prefer vector PDF for plots and line art; use sufficient-resolution raster media
+%   when the source is intrinsically raster. All labels must remain readable at the
+%   final printed size, with consistent symbols, units, panel order, and captions.
+% - Build multi-panel graphics as one intentional scientific composition. Avoid
+%   subfigure packages that fight REVTeX; place panel labels in the source artwork.
+% - Break equations semantically with aligned, split, or multline first. Use
+%   widetext only when one inseparable mathematical structure needs full page width.
+% - Use ruledtabular/booktabs conventions, explicit units and uncertainties, and no
+%   decorative vertical rules. Redesign a crowded table instead of shrinking it.
+% - Never conceal crowding with resizebox, arbitrary negative spacing, forced [H]
+%   placement, altered margins, or unreadably small text.
+% - Section structure follows the scientific argument. Rename, merge, or omit the
+%   sample sections as the work requires; do not preserve headings as empty shells.
+
+\begin{document}
+
+\title{Article Title}
+
+\author{Qiushi Engine}
+\noaffiliation
+% Add \affiliation{...}, \email{...}, or additional authors only when the
+% corresponding real, user-approved metadata is available. Never repeat the
+% author name as a fictional affiliation.
+
+\date{\today}
+
+\begin{abstract}
+Abstract text.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+Text.
+
+\section{Methods}
+
+Text.
+
+\begin{equation}
+  \begin{aligned}
+    \mathcal{L}u &= f, \\
+    \mathcal{M}v &= g .
+  \end{aligned}
+  \label{eq:column-example}
+\end{equation}
+
+\begin{figure}[t]
+  \centering
+  % Replace the box with \includegraphics[width=\columnwidth]{figure_1.pdf}.
+  \fbox{\rule{0pt}{1.25in}\rule{0.88\columnwidth}{0pt}}
+  \caption{State what is shown, define encodings and conditions, and explain the
+  result needed for the argument.\label{fig:single-column}}
+\end{figure}
+
+\section{Results}
+
+Text.
+
+\begin{figure*}[t]
+  \centering
+  % Replace the box with \includegraphics[width=\textwidth]{figure_2.pdf}.
+  \fbox{\rule{0pt}{1.55in}\rule{0.96\textwidth}{0pt}}
+  \caption{Use both columns only when the full scientific composition and its
+  labels cannot remain readable in one column.\label{fig:two-column}}
+\end{figure*}
+
+\begin{widetext}
+\begin{equation}
+  \mathcal{K}(x,y;t)
+  = \int_{\Omega} A(x,z;t)B(z,y;t)\,\dd z
+  + \int_{0}^{t}\!\int_{\Omega} C(x,z;t-s)D(z,y;s)\,\dd z\,\dd s .
+  \label{eq:full-width-example}
+\end{equation}
+\end{widetext}
+
+\begin{table}[b]
+  \caption{A compact one-column comparison with quantities, units, and uncertainty
+  defined in the caption or headings.\label{tab:single-column}}
+  \begin{ruledtabular}
+  \begin{tabular}{lcc}
+  Case & Value A & Value B \\
+  \colrule
+  A & -- & -- \\
+  B & -- & -- \\
+  \end{tabular}
+  \end{ruledtabular}
+\end{table}
+
+\begin{table*}[t]
+  \caption{A comparison whose natural width and information density genuinely
+  require both columns.\label{tab:two-column}}
+  \begin{ruledtabular}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccccc@{}}
+  Method & Assumption & Observable & Control & Uncertainty & Result \\
+  \colrule
+  A & -- & -- & -- & -- & -- \\
+  B & -- & -- & -- & -- & -- \\
+  \end{tabular*}
+  \end{ruledtabular}
+\end{table*}
+
+\section{Discussion}
+
+Text.
+
+\section{Conclusion}
+
+Text.
+
+\begin{acknowledgments}
+Acknowledgment text.
+\end{acknowledgments}
+
+\IfFileExists{refs.bib}{\bibliographystyle{apsrev4-2}\bibliography{refs}}{}
+
+\end{document}

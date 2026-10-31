@@ -1,0 +1,643 @@
+\section{Variational selection and the global curvature cost}
+\label{sec:variational-selection-global-cost}
+
+The recovery metrics of Section~\ref{sec:variational-geometry} give an
+upper bound for the first-order cost.  We now extract additional
+information from genuine near-minimality and distinguish it from
+classical curvature minimization and simultaneous monopole identities.
+These results do not determine the unrestricted first-order coefficient.
+
+Use the balanced family of Theorem~\ref{thm:vg-balanced-family}:
+\begin{equation}\label{webvar:family}
+ M_j=X_j\#k_j\overline{\mathbb{CP}}^{\,2}\#\ell_j(S^1\times S^3),
+ \quad A_j=c_1^2(X_j),\quad Q_j=k_j+4\ell_j,\quad h_j=Q_j/A_j.
+\end{equation}
+Here $h_j\to0$, $Q_j\to\infty$, and $U_j=1+O(h_j)$.  Write
+\begin{equation}\label{webvar:infima}
+ P(g)=\int|\Ric_g^\circ|^2\,d\mu_g,\qquad
+ p_j=\inf_gP(g),\qquad \alpha_j=\inf_g\E(g).
+\end{equation}
+Ricci norms are tensor norms; curvature and Weyl norms are
+Hilbert--Schmidt norms of operators on two-forms.  The recovery and
+Theorem~\ref{thm:vg-first-order-reduction} give
+\begin{equation}\label{webvar:reduction}
+ p_j\le8\pi^2Q_j,\qquad
+ \alpha_j=\frac{4p_j}{8\pi^2A_j}+O(h_j^2),\qquad
+ \int|\Rm_g|^2\,d\mu_g=8\pi^2\chi(M_j)+P(g).
+\end{equation}
+Thus the unresolved coefficient-four assertion is
+$p_j\ge8\pi^2Q_j-o(Q_j)$.  The all-class and simultaneous-field
+statements use $b_+(M_j)\ge2$, so that all ordinary sign classes
+are supplied without a chamber choice.  They are not assertions
+about arbitrary chamber-dependent data.
+
+\subsection{The full ordinary monopole budget}
+
+Fix $M=X\#k\overline{\mathbb{CP}}^{\,2}\#\ell(S^1\times S^3)$
+with $b_+(M)\ge2$, and suppress $j$.  Let $\mathcal C(M)$ be the
+finite set of real cohomology classes of all ordinary monopole
+determinants.  Following the convex-geometric comparison in
+\cite{LeBrunConvex}, define
+\begin{equation}\label{webvar:all-class-definitions}
+ \mathfrak b^2(M)=\max_{v\in\operatorname{conv}(\mathcal C(M))}v^2,
+ \qquad
+ \mathfrak a^2(M)=\inf_H\max_{a\in\mathcal C(M)}(a_H^+)^2,
+\end{equation}
+where $H$ ranges over maximal positive subspaces of $H^2(M;\mathbb R)$.
+These symbols are separate from the variational infimum $\alpha_j$.
+
+\begin{proposition}[Full ordinary class budget]
+\label{webvar:all-class-budget}
+On this surgery manifold,
+\begin{equation}\label{webvar:all-class-value}
+ \mathfrak b^2(M)=\mathfrak a^2(M)=A.
+\end{equation}
+No classification of $\mathcal C(M)$ is required.
+\end{proposition}
+\begin{proof}
+The ordinary blow-up and handle supply contains all classes
+\[
+ a_\epsilon=c+\sum_{i=1}^k\epsilon_iE_i,\qquad
+ c^2=A,\quad c\cdot E_i=0,\quad E_i\cdot E_m=-\delta_{im},
+ \quad\epsilon_i\in\{-1,1\};
+\]
+see Section~\ref{sec:variational-geometry} and
+\cite[Proposition~3.2]{LeBrun2001}.  Their average is $c$, whence
+$\mathfrak b^2(M)\ge c^2=A$.  For any positive plane $H$ and any
+convex combination $v=\sum_\nu t_\nu a_\nu$,
+\[
+ v^2\le |v_H^+|^2
+ \le\left(\sum_\nu t_\nu|(a_\nu)_H^+|\right)^2
+ \le\max_{a\in\mathcal C(M)}(a_H^+)^2.
+\]
+Maximizing over $v$ and then taking the infimum over $H$ gives
+$\mathfrak b^2(M)\le\mathfrak a^2(M)$.
+
+The recovery metrics of Proposition~\ref{prop:vg-recovery}, coming
+from \cite[Theorem~4.3]{LeBrun2001}, satisfy
+$S(g_\varepsilon)\to32\pi^2A$.  Every class in $\mathcal C(M)$
+has an ordinary solution on the same metric $g_\varepsilon$.
+The scalar monopole inequality thus holds simultaneously for all
+these classes:
+\[
+ \max_{a\in\mathcal C(M)}(a_{g_\varepsilon}^+)^2
+       \le S(g_\varepsilon)/(32\pi^2).
+\]
+The Hodge plane is admissible in \eqref{webvar:all-class-definitions},
+so $\mathfrak a^2(M)\le A$.  This completes the comparison.
+\end{proof}
+
+This is an application of the classical recovery and convex-budget
+method.  Additional ordinary classes cannot raise either uniform
+budget above $A$, although their projected squares at a specified
+metric may exceed $A$.  It does not compute the full class budget
+of the different Bauer--Furuta connected sums in
+Section~\ref{sec:bf-budget-comparison}; there only the supplied sign
+family has been completely evaluated.
+
+The classical energy result is
+\cite[Propositions~4.1--4.2 and Theorem~4.3]{LeBrun2001}
+\begin{equation}\label{webvar:classical-infima}
+ \inf_gR(g)=8\pi^2(A+Q),\qquad \inf_gS(g)=32\pi^2A.
+\end{equation}
+One cannot subtract these infima to obtain a lower bound for
+$P=R-S/4$.  Explicitly, with $W=W_++W_-$, set
+\[
+ \Delta_S=S-32\pi^2A,\qquad
+ \Delta_W=W-\left(4\pi^2A/3+12\pi^2k\right).
+\]
+The reference Weyl value is its value along the same recovery.
+Since $P=S/12+2W-16\pi^2\chi$ and $\chi=A/3+k-2\ell$,
+\begin{equation}\label{webvar:joint-energies}
+ P=8\pi^2Q+\Delta_S/12+2\Delta_W,\qquad
+ R=8\pi^2(A+Q)+\Delta_S/3+2\Delta_W.
+\end{equation}
+The classical Ricci bound gives only $\Delta_W\ge-\Delta_S/6$.
+The desired first-order bound requires
+$\Delta_W\ge-\Delta_S/24-o(Q)$ on true near-minimizers.
+This is a reformulation, not a proof of the missing inequality.
+The distinction between total-curvature and Ricci-energy infima
+is already explicit in \cite[Section~11]{LeBrun2004}.  The exact
+handle-only value in Section~\ref{sec:variational-geometry} remains
+a previously proved special case; it does not settle the balanced
+family with $k_j/Q_j\to2/9$.
+
+\subsection{Selection with a critical derivative budget}
+
+For a smooth symmetric covariant two-tensor $H$, define
+\begin{equation}\label{webvar:test-budget}
+ \mathfrak D_g(H)=\int_M
+       (|\nabla^2H|_g^2+|\nabla H|_g^4)\,d\mu_g,\qquad
+ \mathcal T(g,A)=
+ \{H:\|H\|_{\infty,g}\le1,\ \mathfrak D_g(H)\le A\}.
+\end{equation}
+Both conditions are unchanged when $g$ and $H$ are multiplied by
+the same positive constant.  They allow tests on shrinking regions.
+
+\begin{lemma}[Uniform finite-variation remainder]
+\label{webvar:variation-remainder}
+Suppose $g$ is smooth on a closed four-manifold and
+$\int|\Rm_g|^2\,d\mu_g\le K A$.  There are a dimensional $t_0>0$
+and $C_K<\infty$ depending only on $K$ and the dimension such that,
+for $H\in\mathcal T(g,A)$ and $|t|\le t_0$, $g_t=g+tH$ is a metric
+and
+\begin{equation}\label{webvar:remainder-bound}
+ \left|\frac{d^m}{dt^m}P(g_t)\right|\le C_K A,\qquad m=2,3.
+\end{equation}
+The constants require no injectivity-radius, diameter, Sobolev,
+or pointwise derivative bound.
+\end{lemma}
+\begin{proof}
+The eigenvalues of $g^{-1}H$ lie in $[-1,1]$, so $|t|\le1/2$
+gives $g/2\le g_t\le3g/2$.  Relative to the connection of $g$,
+\[
+ (\nabla^{g_t}-\nabla^g)^a{}_{bc}
+ =\frac t2(g_t)^{ad}
+       (\nabla_bH_{cd}+\nabla_cH_{bd}-\nabla_dH_{bc}).
+\]
+Spatial differentiation expresses the curvature difference as fixed
+contractions of $t g_t^{-1}*\nabla^2H$ and
+$t^2g_t^{-1}*g_t^{-1}*\nabla H*\nabla H$.
+Here $*$ denotes tensor contractions with fixed coefficients.
+Changing metric contractions also introduces the original $\Rm_g$.
+Differentiating in $t$ up to order three adds bounded contractions
+with $g_t^{-1}$ and $H$, since
+$\partial_tg_t^{-1}=-g_t^{-1}Hg_t^{-1}$.
+The curvature, trace-free Ricci tensor, and required $t$ derivatives
+are therefore bounded in the fixed $g$ norm by
+\[
+ C_m(|\Rm_g|+|\nabla^2H|+|\nabla H|^2).
+\]
+The volume-density ratio and its first three derivatives are bounded
+as well.  Differentiating the integral defining $P$ and applying
+Young's inequality to all cross terms bounds both derivatives by
+\[
+ C\int_M(|\Rm_g|^2+|\nabla^2H|^2+|\nabla H|^4)\,d\mu_g\le C_K A.
+\]
+No uniform coordinate radius was used.
+\end{proof}
+
+\begin{proposition}[Critical-budget selection of near-minimizers]
+\label{webvar:selection}
+For any prescribed positive sequence $\varepsilon_j$, there are
+smooth metrics $g_j$ on the balanced family satisfying
+\begin{equation}\label{webvar:selection-energy}
+ s_{g_j}=-4,\quad 0\le P(g_j)-p_j\le\varepsilon_j,\quad
+ P(g_j)-p_j\to0,\quad \E(g_j)-\alpha_j=o(h_j).
+\end{equation}
+They can be chosen so that, uniformly for $H\in\mathcal T(g_j,A_j)$,
+\begin{equation}\label{webvar:selection-variations}
+ |DP_{g_j}[H]|=o(Q_j),\qquad D^2P_{g_j}[H,H]\ge-o(Q_j).
+\end{equation}
+The second derivative is along $g_j+tH$; no critical metric is assumed.
+\end{proposition}
+\begin{proof}
+Choose any $\eta_j\downarrow0$ and set
+\begin{equation}\label{webvar:selection-precision}
+ \delta_j=\min\{\varepsilon_j,j^{-1},\eta_j^3Q_j^3/A_j^2\}>0.
+\end{equation}
+Choose a smooth metric with $P-p_j\le\delta_j$ and replace it by
+its scalar-$-4$ Yamabe representative.  Every conformal class is
+negative Yamabe, and Proposition~\ref{prop:vg-conformal-infimum} gives
+\[
+ P(g)-P(\widehat g)
+       =\bigl(S(g)-S(\widehat g)\bigr)/12\ge0.
+\]
+Scale invariance of $P$ therefore leaves
+$0\le P(g_j)-p_j\le\delta_j$.  Recovery gives $P(g_j)=O(Q_j)$.
+The two-sided budget \eqref{eq:vg-two-sided-R}, $R=P+4V$, and
+\eqref{webvar:reduction} give
+\begin{equation}\label{webvar:selected-budgets}
+ R(g_j)=8\pi^2A_j+O(Q_j),\quad
+ V(g_j)=2\pi^2A_j+O(Q_j),\quad
+ \int|\Rm_{g_j}|^2\,d\mu_{g_j}=O(A_j).
+\end{equation}
+For the last assertion use $\chi(M_j)=A_j/3+O(Q_j)$.
+Thus Lemma~\ref{webvar:variation-remainder} applies with fixed $K$.
+
+For any allowed $H$, put $F(t)=P(g_j+tH)$.  Global near-minimality gives
+\begin{equation}\label{webvar:finite-minimality}
+ F(t)\ge p_j\ge F(0)-\delta_j\qquad(|t|\le t_0).
+\end{equation}
+Taylor expansion at both $t$ and $-t$, with $|F''|\le C A_j$, yields
+$|F'(0)|\le\delta_j/t+C A_jt$.  Take
+$t=(\delta_j/A_j)^{1/2}$, eventually below $t_0$, to get
+\begin{equation}\label{webvar:first-variation-bound}
+ |DP_{g_j}[H]|\le C(A_j\delta_j)^{1/2}
+       \le C\eta_j^{3/2}Q_j\sqrt{h_j}=o(Q_j).
+\end{equation}
+Adding the second-order Taylor expansions and using $|F'''|\le C A_j$
+gives $F''(0)\ge-2\delta_j/t^2-C A_jt$.  Choosing
+$t=(\delta_j/A_j)^{1/3}\le\eta_jh_j$ gives
+\begin{equation}\label{webvar:second-variation-bound}
+ D^2P_{g_j}[H,H]\ge-C A_j^{2/3}\delta_j^{1/3}\ge-C\eta_jQ_j.
+\end{equation}
+Every constant is independent of $H$.  Finally, at $s=-4$ one has
+$\E=4P/R$, so \eqref{webvar:reduction} and
+\eqref{webvar:selected-budgets} imply
+\[
+ 0\le\E(g_j)-\alpha_j\le C(h_j^2+\delta_j/A_j)=o(h_j).
+\]
+The remaining precision assertions follow from
+$\delta_j\le\varepsilon_j$ and $\delta_j\le j^{-1}$.
+\end{proof}
+
+At $s=-4$, the first variation of $S$ on the closed manifold is
+\[
+ DS_g[H]=\int\langle-2s\Ric+(s^2/2)g,H\rangle\,d\mu_g
+         =8\int\langle\Ric^\circ,H\rangle\,d\mu_g.
+\]
+The derivative terms vanish by integration by parts since $s$ is constant.
+Using $P=4W_++S/12-8\pi^2T_+$, the selection therefore gives
+\begin{equation}\label{webvar:weak-equation}
+ 4DW_{+,g_j}[H]+\frac23\int
+       \langle\Ric_{g_j}^\circ,H\rangle\,d\mu_{g_j}=o(Q_j),
+       \qquad H\in\mathcal T(g_j,A_j),
+\end{equation}
+uniformly.  Variational notation for $DW_+$ avoids a convention-dependent
+Bach sign.  This weak identity gives no residual regularity and does
+not justify $H=\Ric^\circ$ without its amplitude and derivative bounds.
+
+\begin{corollary}[Disjoint regions]\label{webvar:disjoint-regions}
+For the selected $g_j$, let finitely many $H_{ji}$ have pairwise disjoint
+supports, $\|H_{ji}\|_{\infty,g_j}\le1$, and
+$\sum_i\mathfrak D_{g_j}(H_{ji})\le A_j$.  Then
+\begin{equation}\label{webvar:disjoint-sums}
+ \sum_i|DP_{g_j}[H_{ji}]|=o(Q_j),\qquad
+ \sum_i(-D^2P_{g_j}[H_{ji},H_{ji}])_+=o(Q_j).
+\end{equation}
+\end{corollary}
+\begin{proof}
+Choose signs $\epsilon_i$ so that
+$\epsilon_iDP[H_{ji}]=|DP[H_{ji}]|$.  Disjointness gives
+$H=\sum_i\epsilon_iH_{ji}\in\mathcal T(g_j,A_j)$, since amplitude
+does not increase and both integrals in $\mathfrak D$ add.
+Linearity and \eqref{webvar:selection-variations} give the first claim.
+For the second, sum only tensors with negative second variation.
+The density defining $P$ is local in the metric's second jet, so
+mixed second variations on disjoint supports vanish.  Thus the
+second variation of this admissible sum is precisely the sum of
+the negative values, and \eqref{webvar:selection-variations} applies.
+\end{proof}
+
+A bounded test on a region of radius $r$ with smoothly controlled
+rescaled geometry has $|\nabla H|=O(r^{-1})$,
+$|\nabla^2H|=O(r^{-2})$, and support volume $O(r^4)$.
+Its critical budget is $O(1)$ as $r\to0$.  This admits microscopic
+and degenerating regions beyond the fixed $C^4$ compact cell
+families in Section~\ref{sec:signed-selection}.  Rescaled control
+verifies this example's test budget; it is not an extra assumption
+of Proposition~\ref{webvar:selection}.  A fixed multiple of the
+budget $A_j$ is also allowed after a fixed rescaling of the tests.
+An actual descent direction with this controlled budget is still needed.
+
+\begin{proposition}[Conditional instability criterion]
+\label{webvar:instability-criterion}
+Suppose that for every $\epsilon>0$ some $c_\epsilon>0$ has this
+property: for all large $j$, every scalar-$-4$ metric with
+$P(g)\le8\pi^2(1-\epsilon)Q_j$ admits $H\in\mathcal T(g,A_j)$ such that
+\begin{equation}\label{webvar:missing-instability}
+ |DP_g[H]|\ge c_\epsilon Q_j
+ \quad\text{or}\quad D^2P_g[H,H]\le-c_\epsilon Q_j.
+\end{equation}
+Then $p_j/(8\pi^2Q_j)\to1$ and $\alpha_j/h_j\to4$.
+\end{proposition}
+\begin{proof}
+Otherwise a subsequence has $p_j\le8\pi^2(1-2\epsilon)Q_j$ for
+some $\epsilon>0$.  Proposition~\ref{webvar:selection} supplies metrics
+eventually satisfying the threshold in \eqref{webvar:missing-instability},
+while both alternatives contradict \eqref{webvar:selection-variations}.
+The lower limit is therefore at least one; recovery and
+\eqref{webvar:reduction} give both limits.
+\end{proof}
+
+Hypothesis~\eqref{webvar:missing-instability} is not established here.
+Selection needs no attained minimum or compactness theorem.  It concerns
+the selected sequence, not all metrics with $P=O(Q)$, and supplies
+neither a strong stationary equation nor an ideal geometric limit.
+
+\subsection{A simultaneous-field identity for the exceptional cost}
+
+Fix $s_g=-4$ on one surgery manifold with the chamber-independent
+ordinary supply.  For each $\epsilon\in\{-1,1\}^k$, choose an actual
+solution on this same metric with determinant class
+$a_\epsilon=c+\sum_i\epsilon_iE_i$.  In the normalization of
+Section~\ref{sec:single-solution-coercivity},
+\begin{equation}\label{webvar:ordinary-fields}
+ D_{\mathcal A_\epsilon}\Phi_\epsilon=0,\qquad
+ F_{\mathcal A_\epsilon}^+=2i\sigma(\Phi_\epsilon),\qquad
+ \rho_\epsilon=|\Phi_\epsilon|^2\in[0,2].
+\end{equation}
+Set
+\[
+ f_\epsilon=-iF_{\mathcal A_\epsilon},\quad
+ [f_\epsilon/(2\pi)]=a_\epsilon,\quad
+ K_\epsilon=\int|\nabla_{\mathcal A_\epsilon}\Phi_\epsilon|^2,\quad
+ \zeta_\epsilon=\langle\Phi_\epsilon,
+                    \nabla_{\mathcal A_\epsilon}\Phi_\epsilon\rangle.
+\]
+All integrals and norms in this subsection use $g$.  Let
+$\mathbb E_\epsilon$ be the uniform sign average, and define
+\begin{equation}\label{webvar:walsh-forms}
+ f_I=\mathbb E_\epsilon\left[
+       \left(\prod_{i\in I}\epsilon_i\right)f_\epsilon\right],
+       \qquad I\subset\{1,\ldots,k\}.
+\end{equation}
+These average real closed curvature forms, not connections on
+different determinant bundles.
+
+\begin{lemma}[Exact exceptional contribution]\label{webvar:walsh-identity}
+\begin{equation}\label{webvar:walsh-energy}
+ \mathbb E_\epsilon\|f_\epsilon^-\|_2^2
+ =4\pi^2k+\|f_\varnothing^-\|_2^2
+                   +\sum_{I\ne\varnothing}\|f_I^+\|_2^2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Sign orthogonality gives
+$[f_\varnothing/(2\pi)]=c$, $[f_{\{i\}}/(2\pi)]=E_i$, and
+$[f_I]=0$ for $|I|\ge2$ in real cohomology.  Parseval gives
+$\mathbb E_\epsilon\|f_\epsilon^\pm\|_2^2=\sum_I\|f_I^\pm\|_2^2$.
+Chern--Weil gives $\|f_I^-\|_2^2-\|f_I^+\|_2^2=4\pi^2$
+for a singleton and zero for $|I|\ge2$.
+Substitution proves the identity, with no exponential factor in $k$.
+\end{proof}
+
+For each solution put
+\[
+ \begin{gathered}
+ p_\epsilon=(a_{\epsilon,g}^+)^2,\quad
+ J_\epsilon=\|f_\epsilon^+-(f_\epsilon^+)_H\|_2^2,\quad
+ \Sigma_\epsilon=16V-32\pi^2p_\epsilon,\quad
+ D_\epsilon=24V+18W_+-72\pi^2p_\epsilon,\\
+ \psi_\epsilon=2\sqrt2\sigma(\Phi_\epsilon),\qquad
+ W_{0,\epsilon}=\frac14\left(\frac{\rho_\epsilon^2}{3}\Id
+                         -\psi_\epsilon\otimes\psi_\epsilon\right).
+ \end{gathered}
+\]
+The subscript $H$ denotes harmonic projection.  Define
+\begin{equation}\label{webvar:amplitude-polynomials}
+ C(t)=t+1-\frac{(t+2)^2}{12},\qquad
+ b(t)=2C(t)-1=\frac{-t^2+8t+2}{6}\ge\frac13
+ \quad(0\le t\le2).
+\end{equation}
+
+\begin{proposition}[Simultaneous signed cost identity]
+\label{webvar:simultaneous-cost}
+For every choice of the actual solutions,
+\begin{equation}\label{webvar:field-cost}
+ P(g)-8\pi^2Q=\mathscr A(g,\boldsymbol\Phi)
+                         -4\mathbb E_\epsilon K_\epsilon,
+\end{equation}
+where
+\begin{equation}\label{webvar:positive-field-cost}
+ \begin{split}
+ \mathscr A={}&2\|f_\varnothing^-\|_2^2
+                 +2\sum_{I\ne\varnothing}\|f_I^+\|_2^2\\
+ &+\mathbb E_\epsilon\left[
+ 8\|\zeta_\epsilon\|_2^2+4\|W^+-W_{0,\epsilon}\|_2^2
+       +\int b(\rho_\epsilon)(\rho_\epsilon-2)^2\right]\ge0.
+ \end{split}
+\end{equation}
+All these identities are exact for the fixed metric.
+\end{proposition}
+\begin{proof}
+Equations~\eqref{eq:ssc-exact-decomposition} and
+\eqref{eq:ssc-low-slack}, for the same solution in this normalization, are
+\begin{align}
+ D_\epsilon/18
+ &=J_\epsilon+2\|\zeta_\epsilon\|_2^2+\|W^+-W_{0,\epsilon}\|_2^2
+       +\tfrac12\int C(\rho_\epsilon)(\rho_\epsilon-2)^2,
+       \label{webvar:single-decomposition}\\
+ \Sigma_\epsilon
+ &=16K_\epsilon+4\int(\rho_\epsilon-2)^2+8J_\epsilon.
+       \label{webvar:single-slack}
+\end{align}
+For the second equation, \eqref{eq:ssc-spinor-rescaling} gives
+$K_{\rm rescaled}=(2/\sqrt6)K_\epsilon$ and therefore
+$8\sqrt6K_{\rm rescaled}=16K_\epsilon$.
+Since $|f_\epsilon^+|^2=\rho_\epsilon^2/2$, harmonic projection gives
+\begin{equation}\label{webvar:spinor-hodge}
+ \int\rho_\epsilon^2=8\pi^2p_\epsilon+2J_\epsilon.
+\end{equation}
+Consequently
+$4W_++4V/3-\int\rho_\epsilon^2
+ =2D_\epsilon/9-\Sigma_\epsilon/4-2J_\epsilon$.
+Substitute \eqref{webvar:single-decomposition} and
+\eqref{webvar:single-slack}.  The $J_\epsilon$ terms cancel, leaving
+\begin{equation}\label{webvar:signed-single-remainder}
+ \begin{split}
+ 4W_++4V/3-\int\rho_\epsilon^2
+  ={}&8\|\zeta_\epsilon\|_2^2+4\|W^+-W_{0,\epsilon}\|_2^2\\
+    &+\int b(\rho_\epsilon)(\rho_\epsilon-2)^2-4K_\epsilon.
+ \end{split}
+\end{equation}
+Also $a_\epsilon^2=A-k$ implies
+$\|f_\epsilon^+\|_2^2-\|f_\epsilon^-\|_2^2=4\pi^2(A-k)$.
+Together with $P=4W_++4V/3-8\pi^2(A-Q)$, this gives
+\begin{equation}\label{webvar:chern-single-cost}
+ P=32\pi^2\ell+2\|f_\epsilon^-\|_2^2
+                    +4W_++4V/3-\int\rho_\epsilon^2.
+\end{equation}
+It also reflects $c_2(S^+_{a_\epsilon})[M]=(a_\epsilon^2-T_+)/4=\ell$.
+Averaging, applying \eqref{webvar:walsh-energy}, and substituting
+\eqref{webvar:signed-single-remainder} proves \eqref{webvar:field-cost},
+since $32\pi^2\ell+8\pi^2k=8\pi^2Q$.
+Nonnegativity follows from \eqref{webvar:amplitude-polynomials}.
+\end{proof}
+
+The determinant part also equals
+\begin{equation}\label{webvar:walsh-classical-comparison}
+ 2\|f_\varnothing^-\|_2^2+2\sum_{I\ne\varnothing}\|f_I^+\|_2^2
+ =8\pi^2(\mathbb E_\epsilon p_\epsilon-A)
+                                  +2\mathbb E_\epsilon J_\epsilon.
+\end{equation}
+Indeed, average
+$\|f_\epsilon^-\|_2^2=4\pi^2(p_\epsilon-A+k)+J_\epsilon$
+and use \eqref{webvar:walsh-energy}.  Thus the simultaneous organization
+does not itself improve the averaged classical projection budget.
+
+If $P\le8\pi^2(1-\delta)Q$, with $\delta>0$, then necessarily
+\begin{equation}\label{webvar:necessary-kinetic-cost}
+ \mathbb E_\epsilon K_\epsilon\ge2\pi^2\delta Q+\mathscr A/4.
+\end{equation}
+The missing sharp estimate on a selected near-minimizing sequence is
+\begin{equation}\label{webvar:missing-field-inequality}
+ 4\mathbb E_\epsilon K_\epsilon\le\mathscr A+o(Q).
+\end{equation}
+Estimates with unspecified constants and errors of order $Q$ do
+not prove this signed inequality.  Solution selection alone cannot
+improve it: every choice at fixed $g$ satisfies
+$4\mathbb E K_\epsilon-\mathscr A=8\pi^2Q-P(g)$.
+Even a smooth branch of actual fields along a metric variation
+would merely recover $DP$ and $D^2P$ by differentiation, without
+determining the missing constant in the value.
+
+For $k>0$, the averaged form $f_\varnothing$ cannot supply a new
+ordinary monopole equation: $c\cdot E_i=0$ but $E_i^2=-1$ is odd,
+so $c$ is not characteristic and cannot be a Spin$^c$ determinant
+class on this blow-up.  Curvature averaging does not remove this obstruction.
+
+For comparison, retain the signed density of
+Section~\ref{sec:signed-selection}:
+\begin{equation}\label{webvar:signed-density}
+ \begin{gathered}
+ f_g=\frac{s_g^2/12+4|W_g^+|^2-|\Ric_g^\circ|^2}{8\pi^2},
+ \qquad N(g)=\int(f_g)_-\,d\mu_g,\\
+ Z(g)=\int_{\{f_g\ge0\}}|\Ric_g^\circ|^2\,d\mu_g
+       +\int_{\{f_g<0\}}(s_g^2/12+4|W_g^+|^2)\,d\mu_g.
+ \end{gathered}
+\end{equation}
+The sign partition gives $P=8\pi^2N+Z$: on $\{f_g<0\}$,
+$8\pi^2(f_g)_-=|\Ric_g^\circ|^2-s_g^2/12-4|W_g^+|^2$,
+while the complement contributes to $Z$.
+Thus \eqref{webvar:missing-field-inequality} is equivalent on the
+same sequence to the unproved compensation
+\begin{equation}\label{webvar:missing-geometric-inequality}
+ Z(g_j)\ge8\pi^2(Q_j-N(g_j))-o(Q_j).
+\end{equation}
+This retains the payment by $Z$ when $N<Q$, without assuming the
+stronger selection $N\ge Q-o(Q)$ for every competitive metric.
+Neither exact decomposition proves the compensation.
+
+\subsection{Ideal minimizers and whole asymptotically Euclidean cores}
+
+By \eqref{webvar:reduction}, $P$ and total curvature have the same
+minimizing sequences on a fixed closed manifold.  Anderson's classical
+ideal-minimizer theorem \cite[Theorem~4.10]{Anderson2005} gives selected
+minimizing sequences with critical orbifold limits.  The compact
+alternative includes an energy equality with all ALE bubbles; the
+open or collapsing alternative gives an inequality.  The regular
+limit minimizes against compact perturbations.  Completeness and
+finitely many components in the open alternative are not supplied
+by that theorem \cite[Remark~4.12]{Anderson2005}.  It does not identify
+the regular bulk with $X$ or turn quotient-ended bubbles into whole
+Euclidean-ended cores.  Yamabe replacement preserves the minimizing
+value asymptotically, but need not preserve a given ideal decomposition.
+
+The following relative calculation states what whole cores would
+supply.  AE means that all end groups are trivial; ALE permits
+nontrivial finite end groups.
+
+\begin{lemma}[Relative curvature cost with end corrections]
+\label{webvar:ale-cost}
+Let $N$ be a connected smooth oriented four-manifold with finitely
+many ALE ends, finite-dimensional homology, and negative-definite
+intersection form.  Assume finite curvature energy and decay
+sufficient for the relative Gauss--Bonnet and signature formulas.
+Set $e=\#\{\text{ends}\}$, $m=b_2(N)$, $r=b_1(N)$, and
+$q_\infty=\sum_{a=1}^e|\Gamma_a|^{-1}$.
+Fix the signature-correction convention by
+\begin{equation}\label{webvar:signature-convention}
+ W_N^+-W_N^-=12\pi^2(\tau(N)+\eta_\infty).
+\end{equation}
+With $P_N=\int_N|\Ric^\circ|^2$ and $S_N=\int_Ns^2$,
+\begin{equation}\label{webvar:ale-exact-cost}
+ P_N=8\pi^2m+32\pi^2r+16\pi^2(e-2+q_\infty)
+           -24\pi^2\eta_\infty+4W_N^++S_N/12.
+\end{equation}
+For AE ends this becomes
+\begin{equation}\label{webvar:ae-cost}
+ P_N=8\pi^2b_2(N)+32\pi^2(b_1(N)+e-1)+4W_N^++S_N/12.
+\end{equation}
+No Einstein or scalar-flat assumption is imposed.
+\end{lemma}
+\begin{proof}
+Let $K$ be the compact core.  Its boundary components are rational
+homology three-spheres.  The exact sequence of $(K,\partial K)$
+and Poincar\'e--Lefschetz duality over $\mathbb R$ give
+\[
+ 0\longrightarrow H_4(K,\partial K)\cong\mathbb R
+ \longrightarrow H_3(\partial K)\cong\mathbb R^e
+ \longrightarrow H_3(K)
+ \longrightarrow H_3(K,\partial K)\cong H^1(K)
+ \longrightarrow0.
+\]
+Thus $b_3(N)=e-1+r$ and
+\begin{equation}\label{webvar:core-topology}
+ \chi(N)=2-e-2r+m,\qquad \tau(N)=-m.
+\end{equation}
+The intersection form is nondegenerate because the boundary is a
+union of rational homology spheres, and its signature is $-m$ by
+negative definiteness.  The classical relative Gauss--Bonnet formula is
+\begin{equation}\label{webvar:relative-gb}
+ 8\pi^2(\chi(N)-q_\infty)
+       =W_N^++W_N^--P_N/2+S_N/24.
+\end{equation}
+Use $W_N^-=W_N^++12\pi^2(m-\eta_\infty)$ from
+\eqref{webvar:signature-convention} and substitute
+\eqref{webvar:core-topology}.  The result is
+$P_N=4W_N^++24\pi^2(m-\eta_\infty)+S_N/12
+ -16\pi^2(2-e-2r+m-q_\infty)$, which is
+\eqref{webvar:ale-exact-cost}.  For AE ends,
+$q_\infty=e$ and $\eta_\infty=0$, proving \eqref{webvar:ae-cost}.
+\end{proof}
+
+The classical Eguchi--Hanson metric \cite{EguchiHanson1978},
+oriented with negative intersection form, has
+$m=1$, $r=0$, $e=1$, $\Gamma=\mathbb Z_2$, and $P_N=S_N=0$.
+The signature correction of its round $\mathbb{RP}^3$ end is zero.
+Formula~\eqref{webvar:ale-exact-cost} gives
+$8\pi^2+16\pi^2(-1+1/2)=0$ for the topological part, agreeing with
+Ricci-flatness.  The AE bound $P_N\ge8\pi^2m$ would be false here.
+Terminal quotient-ended bubbles cannot replace whole cores with
+their outer marking.
+
+\begin{proposition}[Conditional sharp cost from whole AE cores]
+\label{webvar:whole-ae-sharpness}
+Fix $M=X\#k\overline{\mathbb{CP}}^{\,2}\#\ell(S^1\times S^3)$.
+Suppose a minimizing configuration for
+$\mathcal R(g)=\int|\Rm_g|^2$ consists of a smooth closed bulk
+$(B,g_B)$ diffeomorphic to $X$ and finitely many connected complete
+whole AE cores $N_\nu$ satisfying Lemma~\ref{webvar:ale-cost}.
+Assume that their compact cores attach to the punctured bulk along
+all their Euclidean end spheres and this marked gluing gives $M$.
+If the curvature accounting satisfies
+\begin{equation}\label{webvar:whole-ae-accounting}
+ \inf_g\mathcal R(g)\ge\mathcal R(g_B)+\sum_\nu\mathcal R(N_\nu),
+\end{equation}
+then
+\begin{equation}\label{webvar:whole-ae-result}
+ \inf_gP(g)=8\pi^2(k+4\ell).
+\end{equation}
+An energy equality in \eqref{webvar:whole-ae-accounting} is unnecessary.
+\end{proposition}
+\begin{proof}
+Write $m_\nu=b_2(N_\nu)$, $r_\nu=b_1(N_\nu)$, and $e_\nu$ for
+the end count.  The gluing spheres have $H_1=H_2=0$, so
+Mayer--Vietoris gives a direct sum on second homology.  In first
+homology it adds the cycles of the gluing graph.  The graph has
+one bulk vertex, one vertex per core, and $e_\nu$ edges from
+core $\nu$ to the bulk, hence first Betti number
+$\sum_\nu(e_\nu-1)$.  Comparison with the prescribed connected sum gives
+\begin{equation}\label{webvar:marked-counts}
+ k=\sum_\nu m_\nu,\qquad
+ \ell=\sum_\nu(r_\nu+e_\nu-1).
+\end{equation}
+The curvature decomposition and \eqref{webvar:relative-gb} give
+$\mathcal R(N_\nu)=8\pi^2(\chi(N_\nu)-e_\nu)+P_{N_\nu}$.
+Equations~\eqref{webvar:core-topology} and \eqref{webvar:ae-cost} yield
+\[
+ \mathcal R(N_\nu)
+ =16\pi^2(m_\nu+r_\nu+e_\nu-1)+4W_{N_\nu}^++S_{N_\nu}/12
+ \ge16\pi^2(m_\nu+r_\nu+e_\nu-1).
+\]
+The closed bulk satisfies
+$\mathcal R(g_B)=8\pi^2\chi(X)+P(g_B)\ge8\pi^2\chi(X)$ without
+an Einstein assumption.  Thus
+\[
+ \inf_gP(g)\ge8\pi^2\chi(X)+16\pi^2(k+\ell)-8\pi^2\chi(M)
+            =8\pi^2(k+4\ell),
+\]
+because $\chi(M)=\chi(X)+k-2\ell$.  Recovery gives the reverse bound.
+\end{proof}
+
+For the varying balanced family the same proof gives
+$p_j\ge8\pi^2Q_j-o(Q_j)$ if the marked count identities, curvature
+accounting, and all relative boundary terms have total errors
+$o(Q_j)$.  Then \eqref{webvar:reduction} gives $\alpha_j/h_j\to4$.
+Extra nonnegative energy outside the chosen pieces helps the lower
+bound; unaccounted topology does not.  Anderson's theorem supplies
+neither these marked whole AE cores nor the required $o(Q_j)$
+precision from an $O(A_j)$ budget.  The conditional deduction
+therefore leaves the unrestricted O11 coefficient open.

@@ -1,0 +1,228 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{esint}
+\setmathfont{Asana Math}
+\setlength{\emergencystretch}{3em}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\hypertarget{global-structure-and-the-scales-of-exact-realization}{%
+\section{Global structure and the scales of exact
+realization}\label{global-structure-and-the-scales-of-exact-realization}}
+
+24 September 2026. Three continuations strengthen different parts of the
+first-line allowed-geometry/realization mechanism. They extend the
+\href{20260924_global_data_realization.md}{preceding results}, rather
+than repeat the integral calibration or replace the earlier obstruction
+theory. The four proof manuscripts below contain the arguments; this
+entry states their changes in scope and their relationship to Yau26.
+
+\hypertarget{fiber-thickness-becomes-a-conclusion-from-global-irreducibility}{%
+\subsection{1. Fiber thickness becomes a conclusion from global
+irreducibility}\label{fiber-thickness-becomes-a-conclusion-from-global-irreducibility}}
+
+The \href{20260924_thin_monodromy_alternative.md}{thin-monodromy
+theorem} removes the thick reference fiber from I32. Small actual
+conformal deformation around based generators implies a global
+alternative: \[
+ \boxed{\text{finite monodromy}\quad\text{or}\quad
+        \text{one common invariant essential multicurve}.}
+\] The constant depends only on fiber genus, not on generator count. The
+key point is simultaneous preservation: a gap among the finitely many
+short hyperbolic curve lengths supplies a single multicurve preserved by
+every generator. It is not an inference from individually reducible
+generators to reducibility of the group.
+
+For a minimal Riemannian surface submersion with base and fiber genera
+at least two, let \[
+ \delta=\|\operatorname{Ric}^{\sharp}+I\|_{\infty,\mathrm{op}},
+ \quad \eta=\|(K_B+1)_+\|_\infty.
+\] The complete implication is \[
+ \begin{gathered}
+ 2\operatorname{diam}(B)\sqrt{\delta+\eta}<\mu_f,
+ \qquad\text{irreducible monodromy}\\
+ \Longrightarrow\quad
+ \boxed{M\text{ admits an exact negative KE metric}.}
+ \end{gathered}
+\] Its universal cover is the hyperbolic bidisk. The output is on the
+original smooth bundle, by Nielsen realization and surface-bundle
+classification. The input does not assume a thick fiber, hyperbolic
+intrinsic fiber metrics, a flat connection, or actual gauge classes. It
+does assume the displayed global fibration and minimal submersion.
+
+In the reducible case the multicurve has a genuine smooth realization
+through the entire bundle. A bounded-degree base cover labels its curves
+and sides and cuts the total space into surface bundles with boundary.
+Component representations and annular twists remain in the problem; they
+have not been shown to admit compatible Einstein matching.
+
+The actual thin Dehn-twist family realizes this alternative, whereas
+signature-zero bundles with infinite irreducible monodromy obey a new
+thickness-independent base-scale lower bound. These are tests of the
+stated input theorem, not unrestricted Einstein nonexistence assertions.
+
+\hypertarget{full-nonlinear-slow-equations-connect-directly-to-actual-gauge-energy}{%
+\subsection{2. Full nonlinear slow equations connect directly to actual
+gauge
+energy}\label{full-nonlinear-slow-equations-connect-directly-to-actual-gauge-energy}}
+
+The \href{20260924_nonlinear_slow_moduli.md}{nonlinear slow-moduli
+theorem} uses genuine horizontal hyperbolic fiber paths \(h_v\), rather
+than linear tensors with an artificial quadratic amplitude error.
+Normalize the actual path tangent \(k_v\) by \(\int_F|k_v|^2=1\), and
+put \(G=\gamma+h_{v(x)}\). All Ricci blocks, including the normal
+acceleration of the path, are computed. The slow equation is exactly \[
+ \int_F\langle(\operatorname{Ric}_G+G)_{VV},k_v\rangle
+                     =\tfrac12\Delta_\gamma v.
+\] For hyperbolic base its \textbf{full}, not projected, energy is \[
+ \boxed{\int_M|\operatorname{Ric}_G+G|^2
+       =\tfrac14\int_B(\Delta v)^2+\int_B\Xi(v)|dv|^4,
+       \qquad\Xi(v)\ge\frac1{16\operatorname{Area}(F)}.}
+\] The manuscript also gives the complete square decomposition for
+variable base curvature. Curvature adjustment cannot cancel the rank-one
+trace-free stress. Every exact Einstein metric in this entire block
+family has constant \(v\) and hyperbolic base.
+
+The \href{20260924_moduli_energy_gauge.md}{actual-gauge companion} shows
+that the two canonical classes are actual monopole inputs and, for
+hyperbolic base, their harmonic forms are exactly
+\(-(dA_B\pm dA_F)/(2\pi)\) at the representative level. There is no
+period error or zero set. Writing \(r=\fint|\operatorname{Ric}+G|^2\)
+and \(q_\pm=\mathfrak D_{2,\pm}/V\), it proves \[
+ \boxed{q_+=q_-=\frac9{4V}\int_B|dv|^2+\frac92r
+                 =\frac92\left(\fint|\nabla\omega_\pm|^2+r\right).}
+\] Thus the first-line functional defect measures an actual global
+moduli energy in this family. With variable base curvature the exact
+formula retains both the base-curvature variance and the nonzero
+negative projection of the canonical classes. In this family pointwise
+negative Ricci pinching itself implies \(q_\pm\le54\delta+9\delta^2\);
+no auxiliary-form existence assumption remains.
+
+On genuine cyclic covers, fixed \(a>0\) and \(v_m=a\cos(2\pi z/m)\) give
+\[
+ \delta_-(G_m)=\Theta(m^{-2}),\quad
+ \mathcal E(G_m)=\Theta(m^{-4}),\quad
+ q_{\pm,m}=\Theta(m^{-2}),\quad
+ \int|\operatorname{Ric}+G_m|^2=\Theta(m^{-3}),
+\] while \(\operatorname{Var}(v_m)=a^2/2\) stays fixed. The metrics
+remain a fixed distance from every fiber-preserving product output. The
+scalar scale \(\lambda_1(B_m)\asymp m^{-2}\), not a local curvature
+spike or missing gauge field, accounts for this behavior.
+
+This extends the previous shrinking-amplitude test but has a different
+scope: it does \textbf{not} prove fixed-distance separation from all
+Einstein metrics and arbitrary diffeomorphisms. The smooth products
+already have Einstein outputs. The complete scalar equation and retained
+normal term, rather than that unproved stronger exclusion, are the new
+nonlinear tool.
+
+\hypertarget{original-defects-now-give-a-quantitative-test-for-whole-core-zeros}{%
+\subsection{3. Original defects now give a quantitative test for
+whole-core
+zeros}\label{original-defects-now-give-a-quantitative-test-for-whole-core-zeros}}
+
+The \href{20260924_harmonic_zero_scale.md}{harmonic-zero scale theorem}
+replaces I34's qualitative nonvanishing premise by a quantitative
+metric-scale test. For the actual self-dual harmonic class
+representative \(H\), inherited form supply gives \[
+ \int_M\bigl(|-2\pi H|-\sqrt2\bigr)^2
+                    \le818(r+q)V.
+\] On a coordinate ball of radius \(\rho\) with fixed rescaled
+\(C^{1,\alpha}\) metric control, the first-order Hodge equation gives \[
+ H(x)=0\quad\Longrightarrow\quad
+ \int_{U_{x,\rho}}\bigl(|-2\pi H|-\sqrt2\bigr)^2\ge c\rho^4.
+\] No derivative of Ricci or extra pointwise bound on \(H\) is assumed.
+If every point of a \textbf{whole} singular filling has such a supplied
+coordinate scale at least \(\rho_{\rm core}\), then \[
+ (r+q)V<c_0\rho_{\rm core}^4
+       \quad\Longrightarrow\quad H\text{ has no zeros on the core}.
+\] Under the retained A1/Betti or rational-ball hypotheses this forces
+the whole filling to be the appropriate \textbf{boundary-marked} Milnor
+fiber; the rational-ball case forces Wahl type. A separate global
+Q-Gorenstein smoothing then yields negative KE on the same smooth
+manifold. The coordinate scale may tend to zero; the comparison uses
+total defect, not merely its average.
+
+A classical zero-circle birth, rescaled on a fixed negative KE product,
+provides actual harmonic representatives of the same canonical class
+with unchanged periods and arbitrarily small average form errors but
+persisting zeros. It proves that those form data alone are insufficient.
+Its pointwise Ricci defect is large, so it is not a counterexample to
+automatic matching under the full near-Einstein equation. Whether that
+equation itself forces the displayed core-scale ratio remains open.
+
+\hypertarget{mathematical-position-and-retained-work}{%
+\subsection{4. Mathematical position and retained
+work}\label{mathematical-position-and-retained-work}}
+
+The first result enlarges an exact existence input class. The second
+solves a genuine nonlinear slow family and identifies its gauge energy
+and sharp global scale. The third gives a raw-defect-to-marked-filling
+criterion, with a model explaining why a scale is needed. These are
+three result families, not one universal obstruction/existence theorem.
+
+Earlier uniform integral obstacles, parameterized non-saturation,
+two-chirality topology, and their actual gauge suppliers remain intact.
+Neither these continuations nor the absence of an obstruction settles
+general Einstein existence on the shear manifolds. They do not finish a
+complete Yau26 sign branch. The next unresolved information is now
+explicit: residual component/twist matching, non-adapted slow-mode
+coverage, and the core defect/scale relation under the full Ricci
+equation.
+
+Reproducibility:
+\href{../verification/20260924_structure_scales_checks.json}{bounded
+checks} and
+\href{../verification/20260924_structure_scales_review.md}{proof-integration
+record}. Local source commits and the exact checked scope are recorded
+there.
+
+\end{document}

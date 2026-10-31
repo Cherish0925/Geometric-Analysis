@@ -1,0 +1,1219 @@
+% !TeX program = xelatex
+% Standalone article. Compile twice; no external bibliography or images.
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,esint,mathrsfs}
+\usepackage{booktabs,longtable,array,xurl}
+\usepackage[unicode,colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\usepackage{xcolor}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{problem}[theorem]{Open problem}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\DeclareMathOperator{\Ric}{Ric}
+\DeclareMathOperator{\Rm}{Rm}
+\DeclareMathOperator{\Vol}{Vol}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\Orb}{Orb}
+\DeclareMathOperator{\Met}{Met}
+\DeclareMathOperator{\Hull}{Hull}
+\DeclareMathOperator{\Gr}{Gr}
+\newcommand{\R}{\mathbb R}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\dd}{\,d\mu_g}
+\newcommand{\avg}[1]{\fint_M #1\dd}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\HS}{\mathrm{HS}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\roundref}[2]{\href{run:../references/rounds/#1}{#2}}
+\newcommand{\baseref}[2]{\href{run:#1}{#2}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\numberwithin{equation}{section}
+\setlength{\emergencystretch}{3em}
+\allowdisplaybreaks
+\hypersetup{pdftitle={Integral Ricci Rigidity: Uniform Obstructions and Extensions},pdfauthor={Qiushi Yau26 research}}
+\title{Integral Ricci Rigidity:\\ Uniform Obstructions and Extensions}
+\author{Qiushi Yau26 research}
+\date{21 September 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We develop the integral near-equality obstruction obtained from actual
+rescaled Seiberg--Witten monopoles. A bounded spinor admits an intrinsic
+second-derivative estimate; its quadratic form produces a smooth Weyl
+model whose divergence can be used to test the weak Bianchi identity.
+The resulting upper estimate contradicts a positive weighted Hodge
+energy near the critical Weyl orbit. The argument yields a uniform
+all-sign Ricci-energy gap for special monopole classes, with blow-ups
+and suitable connected sums as applications. We include the class-square
+cost, scalar truncation, topology transfer, and compatibility calculations
+needed to use the result. We then formulate further questions concerning
+economical class selection, boundary and source defects, multiple
+calibrating fields, positive Ricci pinching, and higher dimensions.
+These questions remain open. Throughout, the objective is the full
+dimension-dependent Einstein-existence question, whose two sign branches
+and unrestricted output metric must be kept distinct from the range of
+this particular obstruction.
+\end{abstract}
+\tableofcontents
+
+\section{The underlying problem and its quantifiers}\label{sec:problem}
+\subsection{The full objective}\label{sub:full-objective}
+The working formulation of Yau26 in this project is the following.
+For each integer $n\ge2$, do there exist real constants $c_n<C_n$,
+depending only on $n$, such that every closed connected smooth
+$n$-manifold carrying a Riemannian metric $g$ with
+\[
+                 c_ng\le\Ric_g\le C_ng
+\]
+admits a smooth positive-definite Einstein metric $h$?
+The metric $h$ is unrestricted: it need not be close to $g$, have the
+same Ricci sign, or preserve a complex structure, fibration, or symmetry.
+We denote this statement by $Q_n$. The exact historical correspondence
+between the 1982 problem page and later renumberings remains a separate
+source question; the mathematical statement above fixes our quantifiers.
+
+For $\sigma\in\{+1,-1\}$ put
+\[
+ \delta_\sigma(g)=\norm{g^{-1}\Ric_g-\sigma\Id}_{L^\infty,\op},
+ \qquad e_\sigma(M)=\inf_{g\in\Met(M)}\delta_\sigma(g).
+\]
+Let $P_n^\sigma$ assert the existence of a dimension-uniform positive
+threshold for $\delta_\sigma$ implying Einstein existence on the same
+smooth manifold. Then
+\begin{equation}\label{eq:branches}
+                         Q_n\iff P_n^+\lor P_n^-.
+\end{equation}
+Indeed, $\widehat g=ag$ leaves covariant Ricci unchanged and divides its
+endomorphism by $a$. Every nondegenerate interval has a nonzero interior
+point, and contains a small interval of its sign. Rescale a sufficiently
+small interval about $\sigma$ into that subinterval. Conversely, an
+interval about $+1$ or $-1$ supplied by $P_n^\sigma$ proves $Q_n$.
+
+An affirmative answer in all dimensions needs at least one sign in each
+dimension. A negative answer needs both signs to fail in one dimension;
+the two failures may use different manifolds or sequences of topologies.
+A fixed $M$ with $e_\sigma(M)=0$ and no Einstein metric of any sign
+disproves that sign branch. Missing higher-dimensional mechanisms are
+therefore an obstacle to an all-dimensional affirmative proof, not an
+extra requirement for a complete counterexample in one dimension.
+
+\subsection{Rigidity, construction, and global existence}\label{sub:research-roles}
+Integral rigidity excludes approximate inputs on certain topologies.
+Construction must realize small error in the original, global
+$L^\infty$ operator norm on actual smooth closed objects. A global
+argument must decide every possible Einstein output on the same object.
+These tasks can exchange methods and conclusions. An existence theorem,
+a new invariant, a counterexample, or an equivalent reduction is relevant
+whenever it returns to \eqref{eq:branches}; the current division into
+three subjects imposes no restriction on future routes.
+
+\subsection{Norms, scaling, and the closed category}\label{sub:conventions}
+In dimension four write $s=\tr_g\Ric$ and
+$E^\circ=\Ric-sg/4$. Weyl norms are Hilbert--Schmidt operator norms on
+$\Lambda^2_\pm$; $\Rm_{\rm full}$ has the four-index tensor norm. Thus
+\begin{align}
+8\pi^2\chi&=\int_M\left(|W^+|^2+|W^-|^2+
+                   \frac{s^2}{24}-\frac{|E^\circ|^2}{2}\right)\dd,
+                                                        \label{eq:CGB}\\
+12\pi^2\tau&=\int_M(|W^+|^2-|W^-|^2)\dd,\label{eq:signature}\\
+\int_M|\Rm_{\rm full}|^2\dd&=32\pi^2\chi+
+                                      4\int_M|E^\circ|^2\dd.
+                                                        \label{eq:full-energy}
+\end{align}
+The associated Weyl four-tensor has squared norm $4|W^\pm|^2$.
+The Eguchi--Hanson energy is $12\pi^2$ in curvature-operator norm and
+$48\pi^2$ in full tensor norm. If $\Ric_g\approx-3g$, then
+$\widehat g=3g$ satisfies
+$\delta_-(\widehat g)=\norm{g^{-1}\Ric_g+3\Id}_\infty/3$.
+An integral or weighted smallness statement, or a small-volume error
+region, does not imply the required global supremum bound. Complete
+noncompact examples do not settle the question in the closed category.
+
+\section{Relative integral Einstein defect}\label{sec:energy}
+\subsection{From exact gaps to integral gaps}\label{sub:analytic-change}
+The preserved baseline established an exact Einstein gap under a
+metricwise monopole projection lower bound and a relative Euler budget.
+Its proof used regularity for exact Einstein geometry, fixed-scale local
+developments allowing collapse, and an excluded curvature spectrum.
+Approximate versions had additional local regularity or degeneration
+hypotheses. The first round examined local spectral polynomials and
+invariant scalar multipliers. Its sign obstruction and Cotton examples
+showed why small Ricci error could not simply be differentiated or fed
+into a scalar maximum principle. Round 2 then built a global spinor Weyl
+model and established first-order orbit coercivity and weak Bianchi
+control. The remaining obstacle was an endpoint product: a bounded
+$W^{1,2}$ field with an $L^2$-small remainder did not provide enough
+regularity to test the divergence against itself.
+
+Rounds 3--4 changed the analytic mechanism: an actual bounded
+spinor on the original metric supplies the derivative control needed for
+an integral contradiction. First the covariant Hessian estimate closed
+the argument under pointwise Ricci control. Then scalar clipping
+preserved the spinor amplitude and the topology-sensitive moment deficit
+using only quadratic Ricci error. This removed the remaining pointwise
+hypothesis. Round 5 already extended that mechanism to
+the polarization capacity of actual special monopole classes.
+
+This excludes candidate approximate inputs, rather than constructing
+Einstein metrics. To prove a branch of \eqref{eq:branches}, one would
+still need a sufficiently exhaustive topological exclusion or an
+independent existence theorem for the remaining cases. The corresponding
+proofs are \roundref{round3_rigidity.md}{round 3},
+\roundref{round4_rigidity.md}{round 4}, and
+\roundref{round5_rigidity.md}{round 5}.
+
+\subsection{Exact optimization over the Einstein constant}\label{sub:energy-optimization}
+Set $V=\Vol_g(M)$, $R_2=\int_M|\Ric|^2\dd$, $S=\int_Ms\dd$, and
+\begin{equation}\label{eq:energy-definition}
+ \cE(g)=\inf_{\lambda\in\R\setminus\{0\}}
+       \frac{\int_M|\Ric-\lambda g|^2\dd}{\lambda^2V}.
+\end{equation}
+\begin{proposition}\label{prop:optimization}
+If $R_2>0$, then
+\begin{equation}\label{eq:energy-fraction}
+ \cE(g)=4-\frac{S^2}{VR_2}
+ =\frac{4\int|E^\circ|^2\dd+\int(s-\bar s)^2\dd}{R_2},
+ \qquad \bar s=S/V.
+\end{equation}
+For $S\ne0$ the minimizer is $\lambda=R_2/S$. If $S=0$ and $R_2>0$,
+the infimum is $4$ and is not attained at a finite nonzero $\lambda$.
+For a Ricci-flat metric the original definition also gives $4$.
+\end{proposition}
+\begin{proof}
+Writing $t=1/\lambda$ transforms the quotient into
+$R_2t^2/V-2St/V+4$. Complete the square and use
+$R_2=\int|E^\circ|^2+\frac14\int s^2$.
+If $R_2=S=0$ the quotient equals $4$ for every allowed $\lambda$.
+\end{proof}
+Thus zero defect characterizes Einstein metrics with a nonzero Einstein
+constant, not all Einstein metrics. The positive monopole-projection
+hypotheses below exclude Ricci-flat metrics separately. The functional
+differs from the absolute Ricci-energy infimum studied in
+\cite{LeBrun01}: a positive lower bound on total Ricci energy does not
+give a positive proportion of non-Einstein energy.
+
+\section{The integral calibration theorem and its applications}\label{sec:theorems}
+\subsection{The actual-class calibration gap}\label{sub:core-theorem}
+For a closed oriented smooth four-manifold put
+\begin{gather*}
+ E=\Ric+g,\quad e=s+4,\quad
+ \mathcal O_0=\Orb\operatorname{diag}(-1/6,1/12,1/12),\\
+ F=\dist_{\HS}(W^+,\mathcal O_0)^2,
+ \quad\mathcal C=\int_M(|E|^2+F)\dd.
+\end{gather*}
+The orbit is taken under oriented orthonormal changes of frame; no
+global eigenframe is presumed. An actual monopole class is a real first
+Chern class of a spin$^c$ structure whose unperturbed Seiberg--Witten
+equations have a solution for every smooth metric. For the analytic
+argument, it suffices that the associated rescaled equations are solvable
+at the metric under study for every smooth positive weight; an actual
+monopole class supplies this by conformal covariance. Let $a$ be such a
+class and set
+\begin{gather}
+ p=(a_g^+)^2>0,\qquad q=-s+\sqrt6|W^+|,\qquad q_+=\max(q,0),\notag\\
+ \Delta_+=\int_M q_+^2\dd-72\pi^2p,\qquad
+ \kappa=\frac{\mathcal C+\Delta_+}{V},\qquad
+ B_a=\frac{(-a^2)_+}{V}.\label{eq:defects}
+\end{gather}
+Here $a_g^+$ is the self-dual harmonic projection and $x_+=\max(x,0)$.
+
+\begin{theorem}[Integral calibration gap, round 4]\label{thm:core}
+There is a universal $c>0$ such that
+\begin{equation}\label{eq:core-gap}
+                         (1+B_a)\kappa\ge c.
+\end{equation}
+No pointwise curvature or scalar-sign condition, Ricci lower bound,
+volume or diameter bound, noncollapse, Sobolev constant, or
+curvature-derivative bound is assumed.
+\end{theorem}
+The actual equation and the class-square factor are hypotheses of the
+result. If $w$ is the least Weyl eigenvalue, then
+$w\ge-\sqrt{2/3}|W^+|$, and the actual-monopole inequalities are
+\begin{equation}\label{eq:spectral-input}
+ \int_M(2s/3+2w)_-^2\dd\ge32\pi^2p,
+ \qquad \int_Ms_-^2\dd\ge32\pi^2p.
+\end{equation}
+Since $(-(2s/3+2w))_+\le(2/3)q_+$, they imply $\Delta_+\ge0$.
+The negative part is indispensable when scalar curvature changes sign.
+The proof of Theorem~\ref{thm:core} occupies
+Sections~\ref{sec:hessian}--\ref{sec:self-test}. The rescaled-equation
+input is derived in \roundref{round3_monopole_input.md}{the monopole input
+note}, building on \cite{LeBrun01,LeBrunConvex}.
+
+\subsection{Topology transfer and the original norm}\label{sub:topology-transfer}
+Write $T=2\chi+3\tau$. Suppose each metric admits a selected actual class
+with $(a_g^+)^2\ge A>0$ and either
+\begin{equation}\label{eq:square-hypotheses}
+ a^2\ge-C_AA\qquad\hbox{or}\qquad a^2\ge T-C_AA,
+ \qquad C_A\ge0.
+\end{equation}
+The constant depends only on $C_A$. In particular special classes,
+defined by $a^2\ge T$, supply a universal version. The negative-normalized
+variables are
+\[
+ r=\avg{|\Ric+g|^2},\qquad d=(T/A-2/3)_+.
+\]
+For completeness, the transfer estimates can be written without a
+scalar-sign restriction. Set
+\begin{gather*}
+ \alpha=\sqrt{2/3}|W^+|,\quad w=\lambda_{\min}(W^+),\quad
+ t=s+8\sqrt6|W^+|,\quad b=2s/3+2w,\\
+ G=(2s/3-2\alpha)^2-b_-^2\ge0.
+\end{gather*}
+Using \eqref{eq:spectral-input} and
+\begin{equation}\label{eq:T-budget}
+ 4\pi^2T=\int_M\left(\frac{s^2}{24}+2|W^+|^2-
+                                      \frac12|E^\circ|^2\right)\dd,
+\end{equation}
+the identities
+\[
+ t^2+18G=216(s^2/24+2|W^+|^2)-18b_-^2,
+ \qquad27(s^2/24+2|W^+|^2)-q^2=t^2/8
+\]
+give
+\begin{align}
+ \int(|E|^2+e^2+t^2+G)\dd
+       &\le109\int|E|^2\dd+864\pi^2Ad,\notag\\
+ F&\le e^2+t^2+G,\notag\\
+ \kappa&\le\frac{245}{2}r+972\pi^2(A/V)d,
+ \qquad \frac AV\le\frac{4+r}{4\pi^2}.\label{eq:transfer}
+\end{align}
+The pointwise estimate for $F$ separates $s\le-3$ and $s>-3$.
+For $r\le1$, \eqref{eq:transfer} yields
+$\kappa\le1215(r+d)$. Under the first condition in
+\eqref{eq:square-hypotheses}, $B_a\le5C_A/(4\pi^2)$. Under the second,
+first restrict to $r\le1/4$; then
+\[
+ 4\pi^2T\ge\left(\frac{(4-2\sqrt r)^2}{24}-\frac r2\right)V
+                      \ge V/4>0,
+\]
+so the first condition follows. The complementary $r>1/4$ branch is
+already separated from zero. Hence Theorem~\ref{thm:core} gives a
+positive bound for $r+d$.
+
+The positive normalization uses classical inequalities alone. With
+$r_+=\avg{|\Ric-g|^2}$, \eqref{eq:spectral-input} implies
+$A/V\le r_+/(8\pi^2)$. If $r_+\le1/4$, then
+$4\pi^2T/V\ge1/4$; if also $d\le1/4$, the preceding upper bound and
+$T/A\le11/12$ instead give $4\pi^2T/V\le11/96$.
+Thus $r_++d>1/4$. Rescale each sign and apply
+Proposition~\ref{prop:optimization} to obtain
+\begin{equation}\label{eq:general-gap}
+                  \cE(g)+(T/A-2/3)_+\ge c(C_A)>0.
+\end{equation}
+Details are in \roundref{round4_rigidity.md}{round 4, Sections 7--8}
+and \roundref{round4_all_sign_gap.md}{the all-sign corollary}.
+
+\begin{corollary}[Blow-up family]\label{cor:blowups}
+Let $X$ be a closed minimal complex surface of general type with
+$b_+(X)>1$, $A=c_1^2(X)>0$, and
+$M=X\#k\overline{\CP}^{\,2}$. There is $c_*>0$, independent of
+$X,k,g$, such that
+\begin{equation}\label{eq:blowup-gap}
+                      \cE(g)+(1/3-k/A)_+\ge c_*.
+\end{equation}
+\end{corollary}
+\begin{proof}
+The full-sign blow-up classes have square $A-k=T$. Averaging their
+self-dual projection squares supplies, for each metric, an actual class
+with $(a_g^+)^2\ge A$. Apply \eqref{eq:general-gap} with $C_A=0$ in
+the second square condition.
+\end{proof}
+For either sign, evaluating \eqref{eq:energy-definition} at
+$\lambda=\sigma$ gives $\cE(g)\le4\delta_\sigma(g)^2$. Consequently
+\[
+ 4\delta_\sigma(g)^2+d\ge c_*,\qquad d=(1/3-k/A)_+.
+\]
+If $d\le c_*/2$, then $\delta_\sigma(g)\ge\sqrt{c_*/8}$.
+An Einstein metric forces $d\ge c_*$, since the scalar monopole
+inequality excludes the Ricci-flat exception. Taking width $c_*/2$
+gives a closed nonexistence band without confusing strict endpoints.
+The constants are not asserted to be optimal. The earlier conditional
+smoothing principle, denoted (SC) in the baseline, has been bypassed;
+it has not been proved by this argument.
+
+\section{Bounded sections and intrinsic second derivatives}\label{sec:hessian}
+\subsection{Covariant integration by parts}\label{sub:hessian-identity}
+Let $v$ be a smooth section of a Hermitian bundle with a compatible
+connection over a closed four-manifold. Write
+$K=\norm v_\infty$, $H=\nabla^2v$, and
+$\mathscr F_{ij}=[\nabla_i,\nabla_j]$ on the bundle. Curvature norm means
+$|\mathscr F|^2=\sum_{ij}|\mathscr F_{ij}|_{\HS}^2$, with ordered indices.
+Integrating the divergence of
+$|\nabla v|^2\langle v,\nabla v\rangle^\sharp$ gives
+\begin{equation}\label{eq:interpolation}
+                       \norm{\nabla v}_4^2\le4K\norm H_2.
+\end{equation}
+Indeed, the differentiated gradient factor contributes at most
+$2K|H||\nabla v|^2$ and the trace Hessian at most
+$2K|H||\nabla v|^2$. This uses the amplitude bound, not a uniform
+Sobolev constant on a possibly degenerating family.
+
+Commuting covariant derivatives and integrating once yields
+\begin{align}
+ \int|\nabla^2v|^2\dd={}&\int|\nabla^*\nabla v|^2\dd
+   -\int\Ric_{ij}\langle\nabla_iv,\nabla_jv\rangle\dd\notag\\
+ &+\sum_{ij}\int\langle\mathscr F_{ij}\nabla_jv,\nabla_iv\rangle\dd
+   +\frac12\sum_{ij}\int|\mathscr F_{ij}v|^2\dd.
+                                                        \label{eq:hessian-identity}
+\end{align}
+Real parts of Hermitian products are understood. H\"older and
+\eqref{eq:interpolation} bound the two curvature-gradient terms by
+$4K(\norm{\Ric}_2+\norm{\mathscr F}_2)\norm H_2$.
+Young's inequality therefore gives
+\begin{equation}\label{eq:hessian-bound}
+ \norm{\nabla^2v}_2^2\le2\norm{\nabla^*\nabla v}_2^2
+             +32K^2\norm{\Ric}_2^2+33K^2\norm{\mathscr F}_2^2.
+\end{equation}
+No derivative of curvature occurs and no curvature smallness is needed.
+The complete commutator calculation and independent check are preserved
+in \roundref{round3_rigidity.md}{round 3} and
+\roundref{round3_rigidity_second_review.md}{its second review}.
+
+\subsection{The positive-spin curvature budget}\label{sub:spin-curvature}
+The curvature of the positive spin connection involves $W^+$, scalar
+curvature, the relevant trace-free Ricci block, and the determinant
+connection. The $W^-$ spin factor acts trivially. This representation
+fact does not declare $W^-$ irrelevant to the whole geometry; it identifies
+the curvature actually needed in \eqref{eq:hessian-bound}.
+
+The rescaled monopole equation controls $F_A^+$. Chern--Weil supplies
+the other half through the real first Chern class:
+\begin{equation}\label{eq:determinant-budget}
+ \norm{F_A}_2^2=2\norm{F_A^+}_2^2-4\pi^2a^2
+             \le4\int f^2\dd+4\pi^2(-a^2)_+,
+\end{equation}
+where the last inequality uses the spinor bound obtained below.
+This explains the negative-square cost. It is a consequence of the
+actual determinant curvature, not a removable notation choice.
+
+\section{A scalar-safe weight and near-equality information}\label{sec:weight}
+\subsection{Truncation with a quadratic cost}\label{sub:clipping}
+For every smooth positive $f$, solve
+\begin{equation}\label{eq:rescaled-SW}
+ D_A\Phi=0,\qquad -iF_A^+=f\sigma(\Phi),\qquad
+ \psi=2\sqrt2\,\sigma(\Phi),\quad
+ \rho=|\Phi|^2=|\psi|,\quad u=3\rho/2,
+\end{equation}
+with $|\sigma(\Phi)|^2=|\Phi|^4/8$. One obtains existence by solving the
+ordinary equations at $\widehat g=f^{-2}g$ and using the conformal spinor
+weight $\Phi=f^{-3/2}\widehat\Phi$; see \cite{LeBrunConvex}, Lemma 3.7.
+Existence here requires an actual monopole class.
+
+Set
+\begin{equation}\label{eq:weight}
+ Q=\max(q,3),\qquad f_0=\max\{\sqrt Q,(-s)_+/4\}.
+\end{equation}
+On each fixed compact $(M,g)$ choose smooth majorants $f_j\ge f_0$
+converging uniformly to $f_0$, and solve \eqref{eq:rescaled-SW} with
+$f=f_j$. The maximum principle gives $f_j\rho\le-s$ at a positive
+maximum of $\rho$, hence
+\begin{equation}\label{eq:amplitude-bound}
+                         0\le\rho\le4,\qquad0\le u\le6.
+\end{equation}
+The weight has controlled costs
+\begin{equation}\label{eq:clipping-cost}
+ 0\le Q^2-q_+^2\le9(s+4)^2,
+ \qquad0\le f_0^2-Q\le\frac9{16}(s+4)^2.
+\end{equation}
+The additional amplitude control therefore consumes only the allowed
+scalar $L^2$ error. Direct use of $\int f_j^4$ would ask for an
+unavailable fourth moment. Smooth approximation is completed for fixed
+$(g,a)$ before taking a diagonal choice along a contradiction sequence;
+derivatives of $f_j$ need no uniform bound across that sequence.
+
+\subsection{Actual and ideal moments}\label{sub:moments}
+Subtracting the spinor and self-dual-form Weitzenb\"ock formulas produces
+four nonnegative defects:
+\begin{align}
+ D_{\rm amp}&=2\int|d\rho|^2\dd,\notag\\
+ D_{\rm quad}&=\int(4\rho|\nabla_A\Phi|^2-|\nabla\psi|^2)\dd,\notag\\
+ D_H&=\int(|d\psi|^2+|d^*\psi|^2)\dd,\notag\\
+ D_{\rm eig}&=2\int\left(\langle W^+\psi,\psi\rangle+
+                                 \sqrt{2/3}|W^+|\rho^2\right)\dd.
+                                                        \label{eq:four-defects}
+\end{align}
+The second follows from the quadratic spinor-map derivative estimate,
+the fourth from the least-eigenvalue bound. Their sum $D_0$ satisfies
+\begin{equation}\label{eq:exact-defect}
+                   \frac{27}{8}D_0=\int(qu^2-f_ju^3)\dd.
+\end{equation}
+Define the ideal moments
+$C=\int Qu^2\dd$, $Z=\int\sqrt Q\,u^3\dd$, and
+$E_Q=\int Q^2\dd$. Then
+\[
+ P:=C-Z=\frac{27}{8}D_0+
+       \int(Q-q)u^2\dd+\int(f_j-\sqrt Q)u^3\dd\ge\frac{27}{8}D_0.
+\]
+Topology controls a different quantity:
+\begin{equation}\label{eq:actual-moment}
+ C_{\rm act}=\int f_j^2u^2\dd=18\norm{F_A^+}_2^2\ge72\pi^2p.
+\end{equation}
+The comparison needed to transfer that bound is
+\[
+ 0\le C_{\rm act}-C\le\frac{81}{4}\int(s+4)^2\dd+o(1).
+\]
+By H\"older, $C\le E_Q^{1/3}Z^{2/3}$; since $Z\le C$,
+\[
+ 0\le E_Q-C\le S_0+o(1),\qquad
+ S_0=\Delta_++\frac{117}{4}\int(s+4)^2\dd.
+\]
+With $\theta=(Z/E_Q)^{1/3}$ and $H_0=E_Q^{1/3}Z^{2/3}-C$,
+\[
+ E_Q-C=H_0+\frac{1+\theta}{\theta^2}(P+H_0)\ge2P.
+\]
+The positive projection excludes the identically zero spinor, so these
+moment expressions are legitimate. Applying the corresponding moment
+identity to $Q^2\dd/E_Q$ gives
+\begin{align}
+ D_0&\le\frac4{27}S_0+o(1),\notag\\
+ \int Q(u-\sqrt Q)^2\dd&\le S_0+o(1),\notag\\
+ \norm{d\rho}_2^2,\ \norm{d\psi}_2^2&\le\frac2{27}S_0+o(1).
+                                                        \label{eq:moment-estimates}
+\end{align}
+These control amplitude, derivatives, and the eigenline simultaneously.
+Every $o(1)$ is first made arbitrarily small on the fixed metric, and
+small relative to $V$ when metrics vary. No convergence of solutions as
+$j\to\infty$ is asserted. The complete algebra is in
+\roundref{round4_rigidity.md}{round 4, Sections 3--4}.
+
+\section{The smooth Weyl model and the Bianchi self-test}\label{sec:self-test}
+\subsection{A polynomial model through the spinor zero set}\label{sub:Weyl-model}
+Use the global smooth tensor
+\begin{equation}\label{eq:model}
+                 A_\psi=\frac{\rho^2}{24}\Id-\frac18\psi\otimes\psi.
+\end{equation}
+At $\rho^2=2$ its spectrum is $(-1/6,1/12,1/12)$; at $\rho=0$
+the same polynomial remains smooth. There is no division by amplitude.
+
+The error ledger gives $\int(q-9/2)^2\dd\le12\mathcal C$;
+clipping at $3$ does not increase this distance. Thus
+\eqref{eq:moment-estimates} controls $\rho-\sqrt2$ in $L^2$.
+Choose a measurable least-eigenline projection $\Pi$. On
+$\{F\le1/256\}$ its spectral gap is at least $1/8$, while the
+complement has volume at most $256\int F\dd$. The eigenline defect
+and $\rho\le4$ control $(I-\Pi)\psi$ globally. For
+$A_0=I/12-\Pi/4$,
+\[
+ |A_\psi-A_0|^2\le\frac{\rho^2}{16}|(I-\Pi)\psi|^2+
+                                      \frac{(\rho^2-2)^2}{48}.
+\]
+Consequently
+\begin{equation}\label{eq:model-error}
+ R=W^+-A_\psi,\qquad
+                   \norm R_2^2\le2\Delta_++8500\mathcal C+o(1).
+\end{equation}
+The coefficient $8500$ is sufficient, not optimized.
+
+Apply \eqref{eq:hessian-bound} to $\Phi$. Its rough Laplacian is
+controlled by $s$, $f_j$, and \eqref{eq:amplitude-bound}; its connection
+curvature is controlled by \eqref{eq:determinant-budget} and the positive
+spin representation. Hence
+\begin{equation}\label{eq:second-derivatives}
+ \int\left(|\nabla_A^2\Phi|^2+|\nabla_A\Phi|^4+
+                                  |\nabla^2A_\psi|^2\right)\dd
+       \le C\bigl(V+\mathcal C+(-a^2)_+\bigr)+o(1).
+\end{equation}
+The last term uses the quartic spinor polynomial in \eqref{eq:model}.
+All terms are unnormalized before division by $V$.
+
+\subsection{Incompatible divergence-energy bounds}\label{sub:contradiction}
+Let $\mathcal W$ denote the identification with a Weyl four-tensor, and
+$J_\psi=\diver\mathcal W(A_\psi)$. Contracted Bianchi,
+$W^+=A_\psi+R$, and integration by parts give, for smooth test tensors $U$,
+\begin{equation}\label{eq:weak-Bianchi}
+ \left|\int\langle J_\psi,U\rangle\dd\right|
+       \le C(\norm E_2+\norm R_2)\norm{\nabla U}_2.
+\end{equation}
+This is an intrinsic negative-order estimate for the current metric.
+Equation~\eqref{eq:second-derivatives} permits $U=J_\psi$, and therefore
+\begin{equation}\label{eq:J-upper}
+ \avg{|J_\psi|^2}\le C\sqrt\kappa\sqrt{1+\kappa+B_a}+o(1).
+\end{equation}
+The weighted Hodge identity, including amplitude derivatives, is
+\begin{align}
+ \int|J_\psi|^2\dd={}&-\frac1{64}\int\rho^2B_\psi\dd
+          +\frac1{16}\int\rho^2|d\psi|^2\dd
+          -\frac5{96}\int\rho^2|d\rho|^2\dd\notag\\
+ &+\frac18\int\rho\langle\iota_{\nabla\rho}\psi,*d\psi\rangle\dd,
+                                                        \label{eq:weighted-Hodge}\\
+ B_\psi={}&(s/3)\rho^2-2\langle W^+\psi,\psi\rangle.\notag
+\end{align}
+The curvature contribution equals
+\[
+ -\frac{\rho^2B_\psi}{64}
+ =-\frac{s\rho^4}{192}-\frac{\rho^6}{384}
+                    +\frac{\rho^2\langle R\psi,\psi\rangle}{32}.
+\]
+At $s=-4$, $\rho^2=2$, and $R=0$ it is $1/16$.
+The four defects control the differential and mixed terms, so
+\begin{equation}\label{eq:J-lower}
+ \avg{|J_\psi|^2}\ge\frac1{16}-C(\sqrt\kappa+\kappa)+o(1).
+\end{equation}
+If $(1+B_a)\kappa\to0$, the upper bound tends to zero while the lower
+bound tends to $1/16$. This proves Theorem~\ref{thm:core}.
+The first-jet contraction and weighted Hodge calculation are in
+\roundref{round3_monopole_input.md}{the monopole-input appendices};
+the integral closure is in \roundref{round4_rigidity.md}{round 4,
+Sections 5--7}.
+
+A bounded $W^{1,2}$ model, an $L^2$-small remainder, and a small
+$H^{-1}$ divergence alone do not control derivative energy. The weighted
+identity by itself merely retains the positive energy at calibration.
+The additional derivative in \eqref{eq:second-derivatives} is what makes
+the Bianchi self-test a contradiction without extracting a regular
+limit manifold.
+
+\subsection{A portable conditional criterion}\label{sub:portable-criterion}
+\begin{proposition}[Positive-energy self-test]\label{prop:self-test}
+Suppose $\kappa,B\ge0$ and a legitimately testable field $J$ satisfy
+\[
+ \avg{|J|^2}\le C_1\sqrt\kappa\sqrt{1+\kappa+B},\qquad
+ \avg{|J|^2}\ge m-C_2(\sqrt\kappa+\kappa),\quad m>0.
+\]
+Then $(1+B)\kappa\ge c>0$, where $c$ depends only on $m,C_1,C_2$.
+\end{proposition}
+\begin{proof}
+Choose $c\le1$ so that
+$C_1\sqrt{c+c^2}\le m/4$ and $C_2(\sqrt c+c)\le m/2$.
+If $(1+B)\kappa<c$, then $\kappa<c$ and
+$\kappa(1+\kappa+B)<c+c^2$. The upper bound is at most $m/4$
+and the lower bound at least $m/2$, a contradiction.
+\end{proof}
+The implication is elementary. Extending it to another geometric
+equation requires an actual solution, a field $J$, an intrinsically
+controlled second derivative, and a strictly positive retained energy
+$m$. The proposition alone supplies none of those geometric inputs.
+
+\section{Actual class sets and topological scope}\label{sec:classes}
+\subsection{Special and ordinary monopoles}\label{sub:special}
+A special class satisfies $a^2\ge T$. Nonzero chamber-independent
+Seiberg--Witten data and suitable nonzero Bauer--Furuta data supply
+generic monopoles under their precise hypotheses
+\cite{Kotschick,Ishida,IL}. Generic perturbations have expected dimension
+$(a^2-T)/4$, so persistence and transversality imply the special condition.
+Metricwise existence for the unperturbed equations alone does not
+justify that argument. Ordinary and special sets must remain distinct.
+
+For a finite nonempty set $\mathscr C_0$ of actual classes define
+\begin{equation}\label{eq:capacities}
+ \beta_0^2=\max_{v\in\Hull(\mathscr C_0)}v^2,\qquad
+ \alpha_0^2=\inf_{H\in\Gr^+_{b_+}}
+                       \max_{a\in\mathscr C_0}(a_H^+)^2.
+\end{equation}
+All maximal positive subspaces occur in the infimum, without assuming
+that every one is realized by a metric. If $v=\sum_i t_i a_i$ is a
+convex combination, then
+\[
+ v^2\le(v_H^+)^2\le\sum_i t_i(a_{i,H}^+)^2
+                                     \le\max_i(a_{i,H}^+)^2.
+\]
+Thus $\beta_0^2\le\alpha_0^2$. The finite maximum selects a class
+for each metric; the Grassmannian infimum need not be attained.
+
+\begin{theorem}[Special-monopole gap, round 5]\label{thm:special}
+Suppose $b_+(M)\ge2$ and the set of actual special monopole classes has
+$\alpha_{\rm sp}^2>0$. There is a universal $\varepsilon_0>0$ such that
+\begin{equation}\label{eq:special-gap}
+ \cE(g)+\left(T/\alpha_{\rm sp}^2-2/3\right)_+\ge\varepsilon_0
+\end{equation}
+for every metric. The same conclusion holds with any positive
+$A\le\alpha_{\rm sp}^2$, including $A=\beta_{\rm sp}^2$ when positive.
+\end{theorem}
+\begin{proof}
+For each metric select a class attaining the largest self-dual projection.
+It has $p\ge A$ and $a^2\ge T$. Apply \eqref{eq:general-gap}.
+Finiteness of the real monopole set for $b_+\ge2$ is the classical
+result in \cite{LeBrunConvex}; no bound on its cardinality is needed.
+\end{proof}
+For all ordinary classes on a fixed manifold one instead keeps
+$C_M=\max_a(-a^2)_+/\alpha_{\rm all}^2$ and a constant depending on
+$C_M$. Convex geometry alone cannot eliminate it: in signature $(2,1)$,
+the vectors $\pm(1,0,L),\pm(1,0,-L)$ have
+$\alpha^2=\beta^2=1$ and squares $1-L^2$. They are an algebraic
+countermodel to the inference, not a realized smooth monopole family.
+
+\subsection{Connected sums and actual gluing input}\label{sub:connected-sums}
+Suppose $X$ supports a relevant nonzero chamber-independent SW class $c$,
+$b_+(X)\ge2$, and $A=c^2>0$. Let $b_+(N)=0$ and assume an applicable
+actual-monopole gluing theorem supplies the full-sign classes
+$a_\epsilon=c+\sum_i\epsilon_i e_i$, with
+$e_i e_j=-\delta_{ij}$. Put $k=b_2(N)$, $\ell=b_1(N)$, and
+$D=k+4\ell$. Then
+\[
+ T(X\#N)=T(X)-D,\qquad
+ a_\epsilon^2=A-k\ge T(X)-D,
+\]
+because $A\ge T(X)$. Averaging projected squares supplies $p\ge A$;
+thus
+\begin{equation}\label{eq:surgery-gap}
+ \cE(g)+\left((T(X)-D)/A-2/3\right)_+\ge\varepsilon_0.
+\end{equation}
+Ishida's Proposition 6 in \cite{Ishida} gives the relevant source input;
+the standard family is
+$N=k\overline{\CP}^{\,2}\#\ell(S^1\times S^3)$.
+See \roundref{round5_rigidity.md}{round 5, Section 4} for the full
+hypotheses. Betti numbers and a formal surgery formula do not manufacture
+solutions. Graph-block self-gluing is a different operation from a
+spherical connected sum; a local circle or sphere does not identify the
+global surgery.
+
+\section{Compatibility with actual approximate constructions}\label{sec:compatibility}
+\subsection{Ratio one and the critical ratio}\label{sub:ratios}
+The slow-twist surface bundles $E_D$ and the specified closed sheared
+objects of rounds 11--12 have $\tau=0$ and $\alpha^2=2\chi$.
+For the indicated $E_D$ examples, both orientations satisfy
+\[
+ \alpha_{\rm all}^2=\beta_{\rm all}^2
+ =\alpha_{\rm sp}^2=\beta_{\rm sp}^2=T.
+\]
+Their ratio is $1$, whereas \eqref{eq:special-gap} concerns the region
+near $2/3$. Their $e_-=0$ is compatible with the obstruction.
+The class computation for the one-block self-gluings is in
+\roundref{round12_global.md}{round 12}; their variational infima are
+computed in \roundref{round11_variational.md}{round 11}. Attainment of
+the full-curvature infimum there is equivalent to the unresolved
+Einstein-existence question. It cannot be inferred from an infimum value.
+
+For a fixed resolution of a real-hyperbolic $A_1$ orbifold, assume an
+actual uniformly near-negative-Einstein sequence with a fixed
+$\Ric=-g$ exterior, limiting volume $V_0$, and replacement-region
+volume tending to zero. Set $B=V_0/(6\pi^2)$ and let $m$ count the
+positive-signature contributions of the Eguchi--Hanson replacements.
+The accounting in \roundref{round5_rigidity.md}{round 5, Section 6} gives
+\[
+ T=B+6m,\quad\lim\int|W^+|^2\dd=12\pi^2m,
+ \quad\alpha_{\rm all}^2\le\frac43B+m,
+ \quad T/\alpha_{\rm all}^2\ge\frac34
+\]
+when the capacity is positive. The $L^1$ Weyl contribution of the
+vanishing-volume regions tends to zero.
+
+The filling-independent version requires a fixed smooth $M$, uniform
+Ricci defect tending to zero, $V\to V_0$, replacement volume tending
+to zero, a fixed negative Einstein orbifold exterior $O$, and convergence
+of the exterior first and second moments of $|W^+|$. Gromov--Hausdorff
+convergence alone supplies none of the moment assumptions. Write
+$w_0=|W_O^+|$ and let $E_{\rm bub}\ge0$ be limiting self-dual Weyl
+energy in the replacement regions. Define
+\begin{gather*}
+ T_0=\frac1{4\pi^2}\int_O(2/3+2w_0^2),\qquad
+ J_0=\frac1{72\pi^2}\int_O(4+\sqrt6w_0)^2,\\
+ D_{\rm orb}=J_0+\frac{E_{\rm bub}}{12\pi^2}.
+\end{gather*}
+Then
+\begin{gather}
+ T=T_0+\frac{E_{\rm bub}}{2\pi^2},\qquad
+ \alpha_{\rm all}^2\le\min\{V_0/(2\pi^2),D_{\rm orb}\},\notag\\
+ T-\frac23D_{\rm orb}
+ =\frac4{9\pi^2}\left[
+       \int_O\left(w_0-\frac1{2\sqrt6}\right)^2+E_{\rm bub}\right].
+                                                        \label{eq:concentration}
+\end{gather}
+The bubble contribution has ratio six, so adding concentration does not
+move these data toward the critical ratio. Near-criticality requires
+vanishing normalized bubble energy, the calibrated bulk Weyl modulus,
+and saturation by actual monopole classes simultaneously.
+
+Real-hyperbolic, complex-hyperbolic, and bidisk bulks remain at ratio at
+least $3/4$ in both orientations under these hypotheses. A K\"ahler bulk
+in its complex orientation has the stronger bound
+$1+E_{\rm bub}/V_0$. In the opposite orientation the formal critical
+Chern slope is $c_1^2/c_2=32/11$. It is a selection condition, not a
+constructed or monopole-saturated example. A constant Weyl norm alone
+does not impose the forbidden eigenvalue spectrum. These calculations
+are in \roundref{round7_endpoint.md}{round 7's endpoint note}.
+
+\subsection{Joint design on the same smooth object}\label{sub:joint-design}
+A construction and obstruction must use the same topology, actual class
+set, gluing marking, capacity, and full Ricci norm. If surgery moves
+$T/\alpha^2$ toward $2/3$, its Ricci cost and the persistence of the
+actual classes must be recomputed together. For example, when
+$A=T(X)>0$, \eqref{eq:surgery-gap} prevents connected sums with $D/A$
+near or above $1/3$ from retaining arbitrarily tight near-Einstein
+metrics. This constrains the modified object, not the original $E_D$.
+The first incompatible identity may yield a useful surgery-cost or
+class-failure theorem.
+
+\section{Independent uses of the earlier rigidity tools}\label{sec:legacy}
+\subsection{Exact gaps, local developments, and failed shortcuts}\label{sub:legacy-local}
+The baseline hypothesis $\mathrm{MP}(A)$ means a metricwise actual
+monopole projection lower bound $A$; together with $\chi\le LA$, its
+exact Einstein gap has a scope not identical to the new selected-class
+square bounds. The preserved
+\baseref{20260916_rigidity.tex}{rigidity baseline} and
+\baseref{20260916_uniform_gap.tex}{uniform-gap baseline} retain
+low-energy regions, path lifting, covering multiplicity, and transfer
+of averaged defects. The relevant exact-geometry regularity sources
+include \cite{CT,CN,JN}. Earlier necessary collapse or diameter escape
+statements become vacuous inside a band now excluded outright, but may
+still have content under their broader or different hypotheses.
+
+Several analytic distinctions also survive. In the negative double-root
+ray $u\operatorname{diag}(-2,1,1)/\sqrt6$, the proposed global invariant
+scalar multiplier would require
+$(u^{2/3}\varphi'(u))'\ge0$, hence $\varphi'\ge0$, while the required
+reaction has the opposite sign. This excludes those sign requirements
+for that scalar strategy, not every maximum principle. A local spectral
+polynomial still excludes a sufficiently small spectral box when
+$s=-4$ and $\diver W^+=0$.
+
+An actual oscillatory metric perturbation of size $\epsilon/k^2$ on a
+closed negative Einstein background has Ricci error $O(\epsilon)$
+and bounded full curvature but Cotton energy at least
+$c\epsilon^2k^2$. Thus small Ricci error need not control Cotton energy.
+Separate algebraic examples show that quadratic calibration defect
+cannot automatically control cubic Weyl concentration; they are not
+claimed to be metric curvature examples. Bounded fields and small
+$L^2$ remainders likewise do not control the endpoint product
+$R\nabla a$ in $H^{-1}$. The actual spinor Hessian estimate supplies
+the missing information. See \roundref{rigidity.md}{the first rigidity
+note} and \roundref{round2_rigidity.md}{round 2}.
+
+For each fixed full-curvature bound $K$, the independent geometric result
+\[
+ |\Rm|\le K\quad\Longrightarrow\quad
+ \avg{|\Ric+g|^2+\dist(W^+,\mathcal O_0)^2}\ge c(K)>0
+\]
+allows collapse. Its proof uses buffered exponential developments,
+multiplicity bounds, and elliptic estimates. On already controlled
+charts the Weyl-divergence symbol satisfies
+$|\sigma_D(\xi)A|^2=|\xi|^2|A|_{\HS}^2$ and permits strong local
+$L^2$ transfer without an $L^2$ Cotton bound; see
+\roundref{round2_weak_curvature.md}{the weak-curvature note}.
+The localized degeneration conclusion concerns fixed-radius
+neighborhoods of high-curvature sets occupying asymptotically all volume,
+not positive volume of the high-curvature set itself.
+
+For comparison, the exact Ricci-box estimate for eigenvalues
+$-1+a_i$, $|a_i|\le d\le1$, is
+\[
+ \frac{s^2}{24}-\frac12|E^\circ|^2\ge
+ \begin{cases}
+ \frac23(1-d)^2,&0\le d\le1/3,\\
+ \frac23(1+d)(1-2d),&1/3\le d\le1.
+ \end{cases}
+\]
+Thus $d<1/2$ implies strict Hitchin--Thorpe. Connector-volume bounds
+require a genuine match between the retained end volume and the closed
+Chern--Weil budget. For the fixed blow-up ratio $p=k/A>1/3$ the
+algebraic quotient optimization yields
+\[
+ d\ge\begin{cases}
+ \sqrt{(3p-1)/(p+5)},&1/3<p\le2\sqrt3-3,\\
+ [\sqrt{(3p-1)(3p+15)}-(3p-1)]/8,&2\sqrt3-3\le p<1,
+ \end{cases}
+\]
+and $d\ge1/2$ for $p\ge1$. These are algebraic optima, not claims of
+metric attainment; they vanish at the critical ratio and do not replace
+\eqref{eq:blowup-gap}. See \roundref{curvature_box.md}{the curvature box}
+and \roundref{fixed_ratio.md}{the fixed-ratio calculation}.
+
+\subsection{Localized flow as an independent possible tool}\label{sub:legacy-flow}
+The baseline flow calculations retain support buffers, the choice
+$a=\chi^2$ with $|da|^2/a=4|d\chi|^2$, signed Hessian integration by
+parts, shifted curvature $\mathsf T=\Rm+G$ and $U=a\mathsf T$,
+energies at all exponents, critical-to-subcritical Moser estimates,
+first-exit estimates on common supports, and terminal calibration.
+Highest cutoff derivatives, background-connection control, a common
+regularization time, and existence of the limiting flow require separate
+proofs. This remains a possible tool for objects beyond the integral
+argument. It is not a prerequisite for the completed gap theorem.
+
+\section{Extending the topology covered by the integral theorem}\label{sec:cost-directions}
+\subsection{Economical metric-dependent class selection}\label{sub:class-selection}
+\begin{problem}\label{prob:selection}
+For a finite set $\mathscr C$ of actual classes and a target $A>0$, define
+\begin{equation}\label{eq:Theta}
+ \Theta_A(g)=\min\left\{\frac{(-a^2)_+}{A}:a\in\mathscr C,
+                                      (a_g^+)^2\ge A\right\}.
+\end{equation}
+When the eligible set is nonempty, can actual class geometry bound
+$\Theta_A(g)$ uniformly, or sufficiently along near-critical sequences?
+\end{problem}
+This asks less than bounding the most negative square of every class.
+Finite surgery families, signed Bauer--Furuta families, and symplectic
+classes in both orientations offer finite projection-selection problems.
+One must first verify that the proposed classes are actual. A bound
+depending on $M$ yields a per-manifold result; a family-uniform conclusion
+needs control as the topology changes. Exact linear algebra can solve
+the finite selection step but cannot prove metric realization of every
+formal positive subspace.
+
+\subsection{Can another positive energy absorb negative-square growth?}\label{sub:cost-compensation}
+The cost $B_a$ measures determinant anti-self-dual energy. One may ask
+whether large $B_a$ forces an additional topological or spatial
+phase-separation cost for actual solutions. A possible target is an
+inequality $\kappa\Xi(B_a)\ge c$ for which near-critical data control
+$\Xi(B_a)$, or a second contradiction when $B_a\to\infty$.
+There is no reason for $F_A^-$ to become small automatically. A candidate
+joint inequality must survive both the formal convex countermodel in
+Section~\ref{sub:special} and tests on actual known monopole families.
+
+\subsection{Effective widths and geometric sharpness}\label{sub:effective-constants}
+Tracing every sufficient constant in \eqref{eq:J-upper} and
+\eqref{eq:J-lower} can produce a computable, possibly tiny, gap useful
+for finite examples and reproduction. The more structural question is
+whether its smallness reflects estimation loss or a sequence of actual
+objects approaching equality. Optimizing permitted spectra, amplitudes,
+Hodge energy, and topology jointly may address this. An optimal matrix
+calculation alone is not a sharp geometric constant.
+
+\subsection{Boundary and localized relative obstructions}\label{sub:boundary}
+Closedness removes the boundary terms in the self-test. A connector
+problem instead needs a domain or cutoff version with explicit
+$\nabla\chi$, $\nabla^2\chi$, and actual boundary Cauchy data.
+A concrete objective is a relative self-test identity with a computed
+flux, followed by a determination of whether surrounding global geometry
+controls that flux. A total energy bound does not ensure a region with
+both small cutoff errors and the correct topological information.
+No boundary-free application of \eqref{eq:core-gap} to a connector is
+justified by the present theorem.
+
+\section{Other geometric mechanisms and coupled equations}\label{sec:other-mechanisms}
+\subsection{Realizable calibration orbits}\label{sub:other-orbits}
+Replacing $\mathcal O_0$ requires three new inputs: an actual equation
+or topological inequality forcing the candidate orbit, a global smooth
+replacement tensor, and a positive Hodge--Bianchi self-test energy.
+Negative K\"ahler--Einstein products, real-hyperbolic metrics, and
+complex-hyperbolic metrics are essential controls. An orbit already
+realized by an Einstein metric cannot produce the same universal
+contradiction.
+
+The product-like geometry of the ratio-one sheared examples should
+instead motivate a global transition question. Can monodromy or shear
+force a nonzero flux or cost when locally permitted geometries are
+assembled? Such a result could link integral estimates with global
+topology without forcing the examples into the $2/3$ calibration.
+
+\subsection{Several actual classes and a common differential system}\label{sub:multiple-classes}
+For monopole-induced forms $\psi_\alpha$, consider their Gram matrix,
+projection fields, and common covariant derivatives. Simply summing
+scalar Weitzenb\"ock inequalities can cancel the dependence on $b_+$.
+New information would have to come from simultaneously realizable
+phases, cross derivatives, or transfer through zero sets.
+
+A testable aim is to derive the equation for a joint projection tensor
+$P$, keeping all sources in $\nabla P$, and ask whether topology-forced
+rank changes have a quantitative cost. Products, K\"ahler--Einstein
+metrics, and the actual sheared families test whether that cost can
+concentrate and disappear. No such joint-rank obstruction is proved here.
+
+\subsection{Source defects and nonabelian systems}\label{sub:sources-nonabelian}
+For perturbed Dirac, curvature, or Hodge equations, every source must
+enter its correct dual norm. An $H^{-1}$ source needs a controlled
+$H^1$ test field; an $L^2$ source cannot be differentiated without a
+further bound. An explicit source version of
+Proposition~\ref{prop:self-test}, followed by an actual geometric system
+supplying its budgets, is a concrete extension problem.
+
+The nonabelian work has partial results that identify what remains.
+\roundref{round8_nonabelian.md}{Round 8} gives a Chern--Weil lower bound
+for projective-line curvature or second-fundamental-form energy.
+\roundref{round9_nonabelian.md}{Round 9} constructs anisotropic seeds
+solving the Dirac and determinant-trace equations, leaving trace-free
+curvature unsolved. \roundref{round10_nonabelian.md}{Round 10} shows a
+small-residual obstruction for balanced full-rank seeds with small
+anti-self-dual curvature. \roundref{round11_rankone.md}{Round 11} retains
+the line second-fundamental-form term at rank one, without forcing the
+Dirac right inverse to become singular.
+
+\roundref{round12_uniformization.md}{Round 12} corrects the determinant
+central term in an explicit Clifford-block connection and tracks graded
+energy. An indefinite Hermitian connection cannot use a positive-unitary
+energy argument without that extra identity. The resulting classification
+is conditional on solving the explicitly defined system. Ordinary SW
+classes are not known to supply those coupled solutions, and the system
+has not been identified with every convention in published nonabelian
+uniformization converses. The earlier literal rank-one calculation in
+\roundref{round7_rigidity.md}{round 7} has the same convention limitation.
+The \roundref{round12_control.md}{Schoen-surface control} shows that
+negative Einstein geometry, ordinary SW information, and signature zero
+do not alone force local symmetry. Moduli invariants or deformation
+paths supplying the missing existence input remain possible directions.
+
+\section{Positive Ricci pinching and higher dimensions}\label{sec:positive-higher}
+\subsection{The positive branch}\label{sub:positive}
+Tight positive Ricci pinching gives positive scalar curvature. The usual
+nonzero monopole projection therefore is not an available input for
+these candidate manifolds. One can investigate harmonic two-forms of a
+putative Einstein output, Gram tensors, curvature actions, or spectral
+thresholds, but the identities must be compatible with actual Einstein
+metrics on $\CP^2$, suitable del Pezzo surfaces, and $S^2\times S^2$.
+It must first be shown that an identity retains topological rank
+information before it can yield a rank obstruction.
+
+When $b_+=1$, chamber choice, metric dependence of classes, and wall
+crossing require a new argument. The all-positive-weight existence used
+above cannot be transferred from the high-$b_+$ setting without proof.
+A theorem in a specified chamber may have value while leaving the full
+metric quantifier in $P_n^+$ untouched.
+
+\subsection{Actual systems in higher dimensions}\label{sub:higher}
+For $n$ dimensions and $p>0$ define
+\begin{equation}\label{eq:higher-energy}
+ \cE_{n,p}(g)=\inf_{\lambda\ne0}
+ \frac{\int_M|\Ric-\lambda g|^p\,d\mu_g}{|\lambda|^p\Vol_g(M)}.
+\end{equation}
+This is invariant under constant scaling with the corresponding change
+of $\lambda$. The exponent $p=n/2$ is curvature-critical, but choosing it
+does not provide a higher-dimensional substitute for actual monopoles.
+Possible routes involve Dirac indices, special structures, codimension-four
+ALE families, or genuinely solvable coupled gauge equations. Each route
+needs existence, bounded amplitude, second-derivative estimates, and a
+positive test quantity. The exponent matching in the four-dimensional
+$L^2$ Hessian absorption must be rederived.
+
+An independent affirmative route could prove Einstein existence for all
+remaining candidates or on covers with a valid descent mechanism.
+It need not encode every topology in an obstruction theorem. These
+existence and nonexistence routes remain open alternatives within the
+same objective.
+
+\section{Three concrete mathematical experiments}\label{sec:experiments}
+\subsection{Comparing the costs of actual class choices}\label{sub:experiment-A}
+Writing $D=\mathcal C+\Delta_+$, the core theorem is
+\[
+          \left(1+\frac{(-a^2)_+}{V}\right)\frac DV\ge c.
+\]
+In the fixed negative normalization, follow the four ratios
+$D/V$, $(-a^2)_+/V$, $A/V$, and $T/A$ separately along a proposed
+counterexample. If the first tends to zero while the second diverges,
+investigate whether a different actual class avoids the divergence,
+whether determinant energy must concentrate, or whether another bounded
+test section is needed.
+
+For an explicit finite signed family and a fixed positive subspace $H$,
+compute every $(a_H^+)^2$ and $a^2$, then select high projection at low
+negative-square cost. Only afterwards seek uniform control as $H$
+ranges over actual metric polarizations. A formal sequence $H_i$ with
+divergent selection cost is not yet a geometric counterexample: metric
+realization is a separate problem. Either a broader uniform gap or an
+actual failure of capacity-only stability would resolve a new issue.
+
+\subsection{A local spectral criterion retaining all sources}\label{sub:experiment-B}
+The early scalar multiplier, Cotton, cubic concentration, and endpoint
+product examples in Section~\ref{sub:legacy-local} show what cannot be
+discarded. For a new actual equation, first derive the first-order symbol
+of its orbit restriction and then its full second-order error equation.
+With the convention $R=W^+-A$, the schematic identity must read
+\begin{equation}\label{eq:source-identity}
+ \diver\mathcal W(A)
+       =-\diver\mathcal W(R)+\mathcal T(E)+\mathcal S.
+\end{equation}
+Here $\mathcal T$ is the explicitly derived first-order Ricci operator;
+$\mathcal S$ must come from the actual auxiliary equation. The minus
+sign follows from $W^+=A+R$. Any different sign requires redefining $R$.
+Writing $J=\diver\mathcal W(A)$, a useful sufficient target is
+\begin{equation}\label{eq:source-absorption}
+ |\langle\mathcal S,J\rangle|\le o(V)+\theta\norm J_2^2,
+                      \qquad 0\le\theta<1,
+\end{equation}
+where the pairing is the appropriate integral or dual pairing. This is
+a proposed estimate, not a consequence of an unspecified weak norm.
+If the source-free Bianchi estimate and \eqref{eq:source-absorption}
+both hold, the factor $1-\theta$ can be absorbed in the upper self-test
+bound. A uniform conclusion needs $\theta$ bounded away from $1$ and
+$o(V)/V\to0$.
+
+Test a proposed source budget on closed K\"ahler--Einstein manifolds,
+hyperbolic products, the actual sheared constructions, and local curvature
+spikes. A budget that excludes a known exact Einstein control has failed
+either in its hypotheses or in the proposed estimate.
+
+\subsection{The same-object intersection of rigidity and flexibility}\label{sub:experiment-C}
+For the closed sheared manifolds, $E_D$, negative-orbifold resolutions,
+and critical surgery families, compare on each object the quantities
+$T$, actual special classes, all ordinary classes, capacities,
+$e_\sigma$, and restrictions on exact Einstein outputs.
+For a proposed surgery changing $T/\alpha^2$, the input metric change,
+extension of actual monopoles, and exclusion or survival of every
+Einstein output must be proved together. If these demands conflict,
+identify the first incompatible formula and formulate a surgery-cost
+or class-failure statement. A different success could combine a
+non-monopole global obstruction with the existing ratio-one
+constructions. The integral theory then explains why it permits the
+approximate input; it need not force every counterexample into its own
+critical band.
+
+\section{Literature and comparison of hypotheses}\label{sec:literature}
+LeBrun's 2026 survey \cite{LeBrunSurvey} provides a current map of
+Einstein four-manifolds. The curvature functionals, actual-monopole
+rescaling, convex geometry, and connected-sum inputs used here come from
+\cite{LeBrun01,LeBrunConvex,IL,Ishida,Kotschick}. Comparisons should
+identify the object, actual class hypothesis, error norm, constant
+dependence, and attainment question.
+
+Baldauf's weighted monopoles and harmonic spinors in Ricci flow
+\cite{Baldauf} suggest comparisons between amplitude weights and dynamic
+entropy. Those equations and conclusions differ from the fixed-metric
+clipping and self-test here. The regularity tools in \cite{CT,CN,JN}
+continue to apply to controlled regions and exact limits. Huang--Ozuch
+\cite{HO} prove isolation results for spherical and hyperbolic Einstein
+four-orbifolds as an input to five-dimensional regularity; that is not an
+isolation theorem for arbitrary metrics with small $L^2$ Ricci error.
+The author is Yiqi Huang. The cited Ishida paper is \emph{Einstein metrics
+and exotic smooth structures}; its title is corrected here.
+
+No bibliographic search or theorem count determines priority. A proposed
+extension needs comparison at the level of precise propositions, and
+an elementary reorganization such as Proposition~\ref{prop:self-test}
+should not be confused with supplying its geometric hypotheses.
+
+\section{Further outcomes and the full problem}\label{sec:outcomes}
+The integral near-equality theorem, its selected-class cost, and its
+special-capacity form provide a complete starting argument. Further
+mathematical outcomes may enlarge the actual class or topology range,
+produce a realized countermodel to an attempted extension, establish a
+source or boundary self-test for a different equation, or connect a
+construction or existence argument to a sign branch of
+\eqref{eq:branches}. None of these outcomes prescribes a fixed priority
+or requires retaining the current proof architecture.
+
+For any proposed object, determine whether its actual classes and square
+bounds satisfy the existing theorem. If so, its prohibited approximate
+input is already excluded. If not, identify the missing hypothesis and
+investigate selection cost, transition cost, another equation, or direct
+existence. Exact and degenerating control examples are useful for every
+new mechanism. The full Yau26 objective remains open in this article;
+the integral obstruction is a proved component of the supplied research,
+with an explicitly delimited scope.
+
+\appendix
+\section{Source arguments and inheritance}\label{sec:sources}
+The standalone argument above integrates the September 21 rigidity
+manuscript and the connected English synthesis of the twelve rounds.
+The original round files remain unchanged under
+\texttt{../references/rounds/}; the September 16 baseline remains in this
+research directory. The following source map retains independent proofs,
+qualified results, reviews, and open mechanisms. Source scripts verify
+finite algebra, coefficients, and examples; they do not replace PDE
+existence, nonlinear remainders, or global topology.
+
+\small
+\begin{longtable}{L{.35\textwidth}L{.59\textwidth}}
+\toprule Source & Content and scope\\\midrule\endhead
+\baseref{20260916_rigidity.tex}{20260916\_rigidity.tex};
+\baseref{20260916_uniform_gap.tex}{20260916\_uniform\_gap.tex};
+\baseref{20260916.md}{20260916.md} & Exact gap, approximate conditional
+routes, local flow calculations, and original quantifiers. Retained
+independently of the selected-class integral theorem.\\
+\roundref{rigidity.md}{rigidity.md};
+\roundref{rigidity_review.md}{rigidity\_review.md} & Local spectral
+polynomial, scalar multiplier obstruction, Cotton counterexample, cubic
+concentration, and norm/first-jet review.\\
+\roundref{fixed_ratio.md}{fixed\_ratio.md};
+\roundref{curvature_box.md}{curvature\_box.md} & Exact finite-dimensional
+Ricci-box optimizations; connector consequences require matched budgets.\\
+\roundref{round2_rigidity.md}{round2\_rigidity.md};
+\roundref{round2_rigidity_review.md}{round2\_rigidity\_review.md} & Harmonic
+and eigenline localization, Walsh phase averaging, spinor model, endpoint
+failure, surviving energy, full-curvature-bounded geometric gap.\\
+\roundref{round2_weak_curvature.md}{round2\_weak\_curvature.md};
+\roundref{round2_weak_review.md}{round2\_weak\_review.md} & Injective Weyl
+symbol, first-jet coercivity, weak Cotton, controlled-chart transfer,
+buffered developments and multiplicity. No arbitrary-collapse regularity.\\
+\roundref{round3_monopole_input.md}{round3\_monopole\_input.md} & Conformal
+rescaling, four defects, moments, lowest-eigenvalue inequality, quadratic
+spinor differentiation, weighted Hodge and first-jet identities.\\
+\roundref{round3_rigidity.md}{round3\_rigidity.md};
+\roundref{round3_joint_gap.md}{round3\_joint\_gap.md};
+\roundref{round3_general_monopole.md}{round3\_general\_monopole.md} &
+Intrinsic Hessian closure, blow-up selection, and controlled-square
+extension; pointwise Ricci hypotheses subsequently weakened.\\
+\roundref{round3_rigidity_review.md}{round3\_rigidity\_review.md};
+\roundref{round3_rigidity_second_review.md}{round3\_rigidity\_second\_review.md}
+& Hessian and nonabelian commutator audits, curvature representation,
+smoothing order, determinant budget, legitimate self-test.\\
+\roundref{round4_rigidity.md}{round4\_rigidity.md};
+\roundref{round4_all_sign_gap.md}{round4\_all\_sign\_gap.md} & Main integral
+proof, clipped weight, actual/ideal moments, topology transfer, and
+all-sign optimization.\\
+\roundref{round4_rigidity_review_global.md}{round4\_rigidity\_review\_global.md};
+\roundref{round4_global_all_sign_review.md}{round4\_global\_all\_sign\_review.md}
+& Unrestricted scalar signs, constants and alternative-square branch;
+only the latter file's all-sign part enters this proof.\\
+\roundref{round5_rigidity.md}{round5\_rigidity.md} & Ordinary/generic/special
+distinction, minimax, convex countermodel, connected sums, ratio-one
+bundles, and hyperbolic $A_1$ accounting.\\
+\roundref{round5_construction_rigidity_review.md}{\nolinkurl{round5_construction_rigidity_review.md}}
+& Receiver tightness and detector convergence; construction-side review,
+not an input to the integral theorem.\\
+\roundref{round7_endpoint.md}{round7\_endpoint.md} & Filling-independent
+concentration identity, bulk moment hypotheses, symmetric bulks,
+opposite K\"ahler slope, and modulus-versus-spectrum distinction.\\
+\roundref{round7_rigidity.md}{round7\_rigidity.md} & Conditional
+nonabelian reduction and literal projection algebra; identification with
+all published conventions remains unresolved.\\
+\roundref{round8_nonabelian.md}{round8\_nonabelian.md};
+\roundref{round9_nonabelian.md}{round9\_nonabelian.md};
+\roundref{round10_nonabelian.md}{round10\_nonabelian.md} & Line curvature
+cost, partial Dirac/trace seeds, and full-rank residual limitation;
+none establishes existence of the full coupled system.\\
+\roundref{round11_rankone.md}{round11\_rankone.md};
+\roundref{round11_variational.md}{round11\_variational.md} & Rank-one
+mixing and second fundamental form; exact variational infima with
+distinct attainment questions.\\
+\roundref{round12_global.md}{round12\_global.md};
+\roundref{round12_uniformization.md}{round12\_uniformization.md};
+\roundref{round12_control.md}{round12\_control.md} & Basic classes and
+capacities, corrected central block connection and graded energy,
+conditional classification, and Schoen-surface control.\\
+\bottomrule
+\end{longtable}
+\normalsize
+The paired \texttt{*check*.py} and \texttt{*verification.md} files preserve
+the coefficient and finite-dimensional checks with their source versions.
+The historical Fable material separately distinguishes the valid OT
+topology extension, chirality applications, negative-sign GH separation,
+and independent coordinate calculations from the failed problem-W
+patching and its specified-cutoff $1/3$ leading term. None is promoted
+to an unrestricted construction or a proof of the present main theorem.
+
+\begin{thebibliography}{99}
+\bibitem{LeBrun01} C.~LeBrun, \emph{Ricci Curvature, Minimal Volumes, and
+Seiberg--Witten Theory}, Invent. Math. 145 (2001), 279--316.
+\url{https://arxiv.org/abs/math/0003068}.
+\bibitem{LeBrunConvex} C.~LeBrun, \emph{Four-Manifolds, Curvature Bounds,
+and Convex Geometry}. \url{https://arxiv.org/abs/math/0611450}.
+\bibitem{LeBrunSurvey} C.~LeBrun, \emph{An Overview of Einstein
+4-Manifolds}, preprint, 2 September 2026.
+\url{https://arxiv.org/abs/2609.03033}.
+\bibitem{Ishida} M.~Ishida, \emph{Einstein metrics and exotic smooth
+structures}, Pacific J. Math. 258 (2012), 327--349.
+\url{https://msp.org/pjm/2012/258-2/pjm-v258-n2-p05-s.pdf}.
+\bibitem{IL} M.~Ishida and C.~LeBrun, \emph{Curvature, Connected Sums,
+and Seiberg--Witten Theory}. \url{https://arxiv.org/abs/math/0111228}.
+\bibitem{Kotschick} D.~Kotschick, \emph{Monopole classes and Einstein
+metrics}. \url{https://arxiv.org/abs/math/0306022}.
+\bibitem{CT} J.~Cheeger and G.~Tian, \emph{Curvature and injectivity
+radius estimates for Einstein 4-manifolds}, J. Amer. Math. Soc. 19 (2006).
+\url{https://doi.org/10.1090/S0894-0347-05-00511-4}.
+\bibitem{CN} J.~Cheeger and A.~Naber, \emph{Regularity of Einstein
+Manifolds and the Codimension 4 Conjecture}.
+\url{https://arxiv.org/abs/1406.6534}.
+\bibitem{JN} W.~Jiang and A.~Naber, \emph{$L^2$ curvature bounds on
+manifolds with bounded Ricci curvature}, Ann. of Math. 193 (2021).
+\url{https://annals.math.princeton.edu/2021/193-1/p02}.
+\bibitem{Derd} A.~Derdzi\'nski, \emph{Self-dual K\"ahler manifolds and
+Einstein manifolds of dimension four}, Compositio Math. 49 (1983), 405--433.
+\url{https://www.numdam.org/item/CM_1983__49_3_405_0/}.
+\bibitem{Baldauf} J.~Baldauf, \emph{Harmonic spinors in the Ricci flow},
+J. Geom. Anal. (2024).
+\url{https://arxiv.org/abs/2210.14198};
+\url{https://doi.org/10.1007/s12220-024-01665-y}.
+\bibitem{HO} Yiqi Huang and T.~Ozuch, \emph{Regularity of Einstein
+5-manifolds via 4-dimensional gap theorems}, version 2, 16 February 2026.
+\url{https://arxiv.org/abs/2512.21317v2}.
+\end{thebibliography}
+\end{document}

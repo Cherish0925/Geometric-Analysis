@@ -1,0 +1,297 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}[proposition]{Corollary}
+\newtheorem{lemma}[proposition]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[proposition]{Remark}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Om}{\Omega}
+\newcommand{\dd}{\,dV_g}
+\title{Q4: Canonical Orthogonality and a Positive-Multiplier Criterion}
+\author{}
+\date{12 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We combine the canonical-divisor theorem for closed real
+\(J\)-anti-invariant forms with the canonical curvature formula for
+Einstein almost-K\"ahler four-manifolds. The transverse Weyl form is
+\(L^2\)-orthogonal to every closed \(J\)-anti-invariant form. Consequently,
+a globally smooth positive integrating factor for the transverse Weyl form
+forces K\"ahlerness. No Betti-number or Seiberg--Witten chamber hypothesis
+is needed. We also compute the obstruction to such a factor on the
+project's explicit noncompact model: its Lee form has nonzero exterior
+derivative on every regular open set. The general existence of a positive
+factor on a closed Einstein candidate is not established.
+\end{abstract}
+
+\section{Data and the exact global pairing}
+Let \((M^4,g,J,\Om)\) be closed and connected, with
+\[
+ d\Om=0,\qquad \Om(X,Y)=g(JX,Y),\qquad |\Om|^2=2,\qquad
+ \Ric=\frac{s}{4}g.
+\]
+The orientation is that of \(J\), and \(s\) is constant.
+Distinguish the Hodge splitting \(\Lambda_g^\pm\) from the
+\(J\)-type splitting \(\Lambda_J^\pm\). In dimension four,
+\[
+ \Lambda_J^-\subset\Lambda_g^+,\qquad
+ \Lambda_g^+=\mathbb R\Om\oplus\Lambda_J^-,
+ \qquad
+ \Lambda_J^+=\mathbb R\Om\oplus\Lambda_g^-.
+\]
+Write \(K=-c_1(TM,J)\), \(q=|\nabla\Om|^2\), and
+\[
+ \eta=W^+(\Om)-\left(\frac{s}{6}+\frac q4\right)\Om
+ \in\Gamma(\Lambda_J^-).
+\]
+LeBrun's Proposition 2.1 \cite{LeBrun} gives the real canonical
+Chern form \(\rho=iF_{\mathcal A}\), with
+\[
+ [\rho]=-2\pi K,\qquad
+ \rho=\eta+\left(\frac s4+\frac q8\right)\Om-\frac q8\widehat\Om .
+ \tag{1}
+\]
+Here \(\widehat\Om\) is anti-self-dual where \(q\ne0\).
+The product \(q\widehat\Om\) extends smoothly through \(q=0\);
+all subsequent expressions use that smooth product, not division by \(q\).
+The project supplied exactly this normalization.
+
+Set
+\[
+ \beta=\rho-\frac{s}{4}\Om,\qquad
+ [\beta]=-2\pi K-\frac{s}{4}[\Om].
+ \tag{2}
+\]
+Then \(d\beta=0\), and its \(J\)-anti-invariant part is \(\eta\).
+The other part is \(J\)-invariant, so for every
+\(\alpha\in\Gamma(\Lambda_J^-)\),
+\[
+ \beta\wedge\alpha=\langle\eta,\alpha\rangle\dd.
+ \tag{3}
+\]
+
+\begin{lemma}[Canonical pairing]
+On a closed connected almost-complex four-manifold,
+every closed real \(J\)-anti-invariant form \(\alpha\) satisfies
+\[
+ K\cdot[\alpha]=0.
+ \tag{4}
+\]
+\end{lemma}
+\begin{proof}
+There is nothing to prove if \(\alpha=0\).
+If \(\alpha\) is nowhere zero, it trivializes the complex line underlying
+\(\Lambda_J^-\), and hence \(K=0\).
+Otherwise the canonical-divisor theorem of Bonthrone--Zhang
+\cite[Theorem 1.1]{BZ} gives a finite \(J\)-holomorphic
+one-subvariety \(\Theta_\alpha\), supported on the zero set of \(\alpha\),
+whose Poincar\'e dual is \(K\). Thus
+\[
+ K\cdot[\alpha]=\int_{\Theta_\alpha}\alpha=0.
+\]
+Multiplicities and singular points do not change this evaluation.
+\end{proof}
+
+\begin{proposition}[Orthogonality of the transverse Weyl form]
+For the closed Einstein almost-K\"ahler data above,
+\[
+ \boxed{\int_M\langle\eta,\alpha\rangle\dd=0
+ \quad\text{for every }\alpha\in\Gamma(\Lambda_J^-),\ d\alpha=0.}
+ \tag{5}
+\]
+\end{proposition}
+\begin{proof}
+Because \(\Om\wedge\alpha=0\) pointwise, equations (2)--(4) give
+\[
+ \int_M\langle\eta,\alpha\rangle\dd
+ =[\beta]\cdot[\alpha]
+ =-2\pi K\cdot[\alpha]-\frac{s}{4}[\Om]\cdot[\alpha]=0.
+\]
+The argument is independent of the value of \(b_2^+\).
+\end{proof}
+
+\section{A positive-multiplier criterion}
+\begin{corollary}
+Suppose \(f\in C^\infty(M)\), \(f>0\), and \(d(f\eta)=0\).
+Then \(\eta=0\), and \((g,J,\Om)\) is K\"ahler.
+In particular, \(d\eta=0\) is sufficient.
+\end{corollary}
+\begin{proof}
+Use \(\alpha=f\eta\) in (5). It gives
+\[
+ 0=\int_M f|\eta|^2\dd.
+ \tag{6}
+\]
+Since \(f>0\), one has \(\eta=0\).
+Thus \(\Om\) is an eigenform of \(W^+\).
+The Einstein condition supplies \(J\)-invariant Ricci, so the compact
+third-Gray theorem of Apostolov--Armstrong--Dr\u aghici
+\cite[Theorem 2]{AAD} gives \(\nabla\Om=0\).
+\end{proof}
+
+This is a combination of the cited theorems with (1), not a proof that
+the multiplier exists under the unaugmented negative Goldberg hypotheses.
+It yields the exact equivalence, on the stated closed Einstein class,
+\[
+ \nabla\Om=0
+ \ \Longleftrightarrow\ \eta=0
+ \ \Longleftrightarrow\ d\eta=0
+ \ \Longleftrightarrow\
+ \exists f\in C^\infty(M),\ f>0,\ d(f\eta)=0.
+ \tag{7}
+\]
+Existence of \(f\), not the implications in (7), remains the issue
+when this criterion is used to approach Q4.
+
+\section{What the multiplier equation really requires}
+On \(U=\{|\eta|>0\}\), the form \(\eta\) is nondegenerate because
+\(\eta\wedge\eta=|\eta|^2dV_g\).
+There is a unique smooth one-form \(\vartheta_\eta\) on \(U\) such that
+\[
+ d\eta=\vartheta_\eta\wedge\eta.
+ \tag{8}
+\]
+The map \(\xi\mapsto\xi\wedge\eta\) from one-forms to three-forms
+is an isomorphism at each point of \(U\).
+Therefore
+\[
+ d(f\eta)=0\quad\Longleftrightarrow\quad
+ d\log f=-\vartheta_\eta\quad\text{on }U.
+ \tag{9}
+\]
+Local existence requires \(d\vartheta_\eta=0\); on a non-simply-connected
+component it also requires vanishing periods. For the corollary,
+the resulting \(f\) must extend smoothly and positively over \(M\).
+Although \(d^2\eta=0\) gives
+\[
+ d\vartheta_\eta\wedge\eta=0,
+\]
+this is only a primitive-curvature condition and does not say
+\(d\vartheta_\eta=0\).
+Likewise, if \(\sigma=\beta-\eta\), then
+\[
+ d\eta=-d\sigma
+\]
+follows from \(d\beta=0\), not \(d\eta=0\).
+
+\section{Exact computation on the supplied noncompact model}
+This section uses the project's existing metric and curvature blocks
+\cite{Project,ProjectCurv}. It does not construct another example or
+re-prove their Einstein equations.
+
+Put \(1/3<x<1\), \(D=1+3x^2\), and use invariant one-forms with
+\[
+ d\sigma_1=-2\sigma_2\wedge\sigma_3,\quad
+ d\sigma_2=2\sigma_3\wedge\sigma_1,\quad
+ d\sigma_3=2\sigma_1\wedge\sigma_2.
+\]
+The source model has
+\[
+ \Om=\sqrt{X_1}\,\omega_1+\sqrt{X_2}\,\omega_2,\quad
+ X_1=\frac{(1-x)^3(3x+1)}{16x^3},\quad
+ X_2=\frac{(1+x)^3(3x-1)}{16x^3},
+\]
+where \(\omega_i=e^{0i}+e^{jk}\), and the source curvature eigenvalues satisfy
+\[
+ r_1-r_2=\frac{48x^3}{D^2}.
+\]
+Consequently
+\[
+ \eta=(r_1-r_2)
+ \left(X_2\sqrt{X_1}\,\omega_1-X_1\sqrt{X_2}\,\omega_2\right).
+ \tag{10}
+\]
+In the invariant coframe, set \(F=\sqrt3/(x^{3/2}D)\). Then
+\[
+ \eta=F\bigl(a\,dx\wedge\sigma_1+b\,dx\wedge\sigma_2
+              +c\,\sigma_2\wedge\sigma_3+d\,\sigma_3\wedge\sigma_1\bigr),
+ \tag{11}
+\]
+with
+\[
+ \begin{split}
+ a&=(x+1)(3x-1),\qquad b=(x-1)(3x+1),\\
+ c&=\frac{4x(x+1)^2(9x^2-1)}D,\qquad
+ d=-\frac{4x(x-1)^2(9x^2-1)}D.
+ \end{split}
+\]
+The form is nonzero throughout this regular interval; indeed
+\[
+ |\eta|^2=\frac{18(1-x^2)^3(9x^2-1)}{D^4}>0.
+\]
+A direct exterior differentiation of (11) gives
+\[
+ \boxed{
+ \vartheta_\eta=
+ -\frac{3(x^2-1)}{xD}\,dx+\frac{12(x^2-1)}D\,\sigma_3,
+ }\tag{12}
+\]
+and hence
+\[
+ \boxed{
+ d\vartheta_\eta=
+ \frac{96x}{D^2}\,dx\wedge\sigma_3+
+ \frac{24(x^2-1)}D\,\sigma_1\wedge\sigma_2\ne0.
+ }\tag{13}
+\]
+For a reproducible verification, with
+\(u=-3(x^2-1)/(xD)\), \(v=12(x^2-1)/D\) and
+\(\ell=(\log F)'=-3/(2x)-6x/D\), the two nonzero coefficients of
+\(d\eta-\vartheta_\eta\wedge\eta\), after division by \(F\), are
+\[
+ c'+\ell c+2a-uc-vb=0,\qquad
+ d'+\ell d-2b-ud+va=0.
+\]
+These are exact rational identities. The remaining coefficients vanish.
+Differentiating \(v\) gives \(v'=96x/D^2\), proving (13).
+
+It follows that no nonvanishing smooth multiplier, radial or otherwise,
+can make the source \(\eta\) closed on any nonempty regular open set.
+This does not contradict the compact criterion: the source is noncompact.
+It shows that a multiplier cannot follow from the local Einstein and
+almost-K\"ahler equations alone. A proposed global proof must supply
+additional information using closedness.
+
+\section{The remaining Q4 connection}
+The canonical-divisor input upgrades a nonnegative curve pairing to the
+exact vanishing (5). It finishes the implication from a positive
+closed multiple of \(\eta\) to K\"ahlerness, uniformly in the Betti-number
+cases and without the project's FD or N1 estimates.
+What is not supplied is a proof that an arbitrary closed negative
+Einstein almost-K\"ahler candidate has such a multiplier, or an independent
+argument forcing \([\beta]^2=0\).
+The general closed negative Goldberg conclusion and the other three
+original questions are not resolved by this note.
+
+\begin{thebibliography}{9}
+\bibitem{BZ}
+L.~Bonthrone and W.~Zhang,
+\emph{\(J\)-holomorphic curves from closed \(J\)-anti-invariant forms},
+arXiv:1808.09356v2 (2020), Theorem 1.1.
+\url{https://arxiv.org/abs/1808.09356}
+\bibitem{LeBrun}
+C.~LeBrun, \emph{Einstein Metrics, Symplectic Minimality, and
+Pseudo-Holomorphic Curves}, arXiv:math/0409290, Proposition 2.1.
+\url{https://arxiv.org/abs/math/0409290}
+\bibitem{AAD}
+V.~Apostolov, J.~Armstrong and T.~Dr\u aghici,
+\emph{Local models and integrability of certain almost K\"ahler
+four-manifolds}, Math.\ Ann.\ 323 (2002), 633--666, Theorem 2.
+\url{https://arxiv.org/abs/math/0109098}
+\bibitem{Project}
+Supplied project manuscript,
+\emph{03\_Subsequent\_Mathematical\_Developments(1).tex},
+8 October 2026, Section 2: source metric, almost-K\"ahler form and invariant
+coframe. The \(\beta\) normalization is also in
+\emph{01\_Research\_Synthesis(1).tex}, Goldberg section.
+\bibitem{ProjectCurv}
+Supplied continuation,
+\emph{Pair\_Gap\_and\_Pinched\_Example.tex},
+8 October 2026, source curvature blocks.
+\end{thebibliography}
+\end{document}

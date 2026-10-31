@@ -1,0 +1,612 @@
+% !TeX program = xelatex
+\documentclass[UTF8,fontset=fandol,zihao=-4]{ctexart}
+\usepackage[a4paper,margin=25mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,esint,booktabs,longtable,array}
+\usepackage{xcolor,enumitem,fancyhdr,microtype,xurl}
+\usepackage[unicode,colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\hypersetup{pdftitle={Yau 26研究续篇：统一拓扑间隙与近Einstein度量的必要塌缩}}
+\newtheoremstyle{cn}{8pt}{8pt}{\normalfont}{0pt}{\bfseries}{。}{.4em}{}
+\theoremstyle{cn}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{corollary}[theorem]{推论}
+\newtheorem{remark}[theorem]{说明}
+\renewcommand{\proofname}{证明}
+\DeclareMathOperator{\Ric}{Ric}
+\DeclareMathOperator{\Rm}{Rm}
+\DeclareMathOperator{\Vol}{Vol}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Id}{Id}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\dd}{\,d\mu}
+\newcommand{\av}{\fint}
+\newcommand{\Dcal}{\mathcal D}
+\numberwithin{equation}{section}
+\setlength{\parskip}{.3em}
+\setlength{\emergencystretch}{3em}
+\linespread{1.12}
+\allowdisplaybreaks[2]
+\setlist{nosep,topsep=5pt,leftmargin=2em}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Yau 26：统一间隙与必要塌缩}
+\fancyhead[R]{\small 研究证明稿}
+\fancyfoot[C]{\thepage}
+\title{Yau 26 研究续篇\\[2mm]\large Einstein 拓扑边界的统一间隙\\与近 Einstein 度量的必要塌缩}
+\author{会话研究整理稿}
+\date{2026年9月14日}
+\begin{document}
+\maketitle
+\begin{abstract}
+本稿给出两组可逐步核查的推论及其完整证明。第一，四维流形若具有统一正的 monopole 类下界，且 Euler 特征数与该下界的比值有界，则其 Einstein 度量所允许的拓扑比值与经典 LeBrun 边界之间存在统一正间隙。证明只对精确 Einstein 度量使用 Cheeger--Tian 的四维、无体积下界的曲率正则性。
+
+第二，构造一个非负曲率密度，并证明在有界 Ricci 曲率的非塌缩球上，该密度的平均值具有正下界。结合 monopole 曲率不等式，这说明：极小一般型复曲面吹起族中，若 Ricci 缺陷趋零而吹起比例趋近经典边界，则每一固定尺度的不塌缩中心集合所占体积比例趋零，且直径趋于无穷。后一结果也适用于有界 Ricci 曲率下的平均平方 Ricci 缺陷。
+
+两组结果均不使用尚未完整核准的塌缩情形弱坐标接口。本文没有证明一般 Yau 26 的存在性或反例；具体组合的文献首创性尚未确认，也未经同行评审。已有经典不等式、局部禁谱机制和正则性定理均明确归属。
+\end{abstract}
+\tableofcontents
+
+\section{范围、主结论与证据等级}
+
+本稿承接第93、94、95号附件及已有补篇中的校准密度与静态抽取方向。只收入这轮已经形成完整论证的结论，以及一个清楚标明条件的延伸；不重复旧稿中的连接区模型和正分支节点计算。
+
+\subsection{原问题与本稿子问题}
+
+沿用附件的工作表述：固定维数 $n$，是否存在实常数 $c<C$，使任意闭连通光滑 $n$ 维流形只要承载
+\[
+cg\le\Ric_g\le Cg,
+\]
+就承载某个 Einstein 度量？原始1982年问题章的第26题题页尚未在本次资料中取得，因此这里明确给出所研究的量词，不把它当作已核准的逐字引文。
+
+将输入归一化到 $\Ric\approx\sigma g$，$\sigma\in\{+1,-1\}$，上述存在某个夹逼区间的命题等价于两个符号分支中至少一个存在维数阈值。理由是任一非退化区间都含严格同号子区间，再作常数缩放。因此否定这一工作表述须在同一固定维数否定两个分支；输出的 Einstein 度量无须接近输入，符号也不限。
+
+本稿只处理四维负分支中的一类拓扑约束。主结论不是全维存在性定理，也没有构造不承载 Einstein 度量但 Ricci 缺陷任意小的流形序列。
+
+\subsection{主结论的直接形式}
+
+设 $X$ 是闭极小一般型复曲面，$b_+(X)>1$，置
+\[
+A=c_1^2(X)>0,\qquad M=X\#k\overline{\mathbf{CP}}^{,2},\qquad k\in\mathbf Z_{\ge0}.
+\]
+其中 $A$ 是正整数，采用复定向。本文证明如下结果。
+
+\begin{theorem}[精确 Einstein 的统一吹起间隙]\label{thm:intro-exact}
+存在与 $X,k$ 无关的 $\gamma>0$，使
+\[
+k\ge\left(\frac13-\gamma\right)c_1^2(X)
+\quad\Longrightarrow\quad
+M\text{ 不承载任何 Einstein 度量}.
+\]
+常数没有显式数值。这里的统一性允许 $A$、总体积、总曲率能量及直径无界。
+\end{theorem}
+
+\begin{theorem}[近边界序列的必要退化]\label{thm:intro-collapse}
+令 $M_i=X_i\#k_i\overline{\mathbf{CP}}^{,2}$ 属于上述族，$g_i$ 为任意光滑度量，并设
+\[
+\delta_i=\|g_i^{-1}\Ric_{g_i}+\Id\|_{\infty,\op}\longrightarrow0,
+\qquad d_i=\left(\frac13-\frac{k_i}{A_i}\right)_+\longrightarrow0.
+\]
+则对每个固定 $r,v>0$，
+\begin{equation}\label{eq:intro-collapse}
+\frac{\Vol_{g_i}\{p\in M_i:\Vol_{g_i}B_r(p)\ge v\}}
+{\Vol_{g_i}M_i}\longrightarrow0,
+\end{equation}
+并且 $\diam(M_i,g_i)\to\infty$。
+\end{theorem}
+
+式 \eqref{eq:intro-collapse} 是关于归一化体积测度的陈述，不断言每一点一致塌缩，不断言某个指定的 Gromov--Hausdorff 极限已经存在，也不证明这样的候选序列确实存在。
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{.26\textwidth}>{\raggedright\arraybackslash}p{.37\textwidth}>{\raggedright\arraybackslash}p{.29\textwidth}@{}}
+\toprule
+内容 & 本稿状态 & 适用边界\\\midrule\endhead
+monopole 曲率不等式、局部禁谱 & 已有文献输入，列出精确形式 & 不计为原创结果\\
+精确 Einstein 统一拓扑间隙 & 下文给出完整推导 & 要求 monopole 下界及相对 Euler 界\\
+非塌缩局部密度下界 & 下文给出完整推导 & 常数依赖局部体积下界\\
+近边界必要塌缩、直径发散 & 上述结果的无条件推论 & 只针对指定曲面吹起族\\
+无体积下界的近 Einstein 统一间隙 & 条件推论 & 原度量弱坐标接口仍待完整核准\\
+一般 Yau 26 & 未解决 & 两个符号、一般拓扑与一般维数尚未覆盖\\
+\bottomrule
+\end{longtable}
+
+\section{范数、monopole 输入与校准密度}
+
+\subsection{范数与拓扑公式}
+
+以下 $M$ 总是闭、连通、定向、光滑四维流形；局部命题另行允许完整非紧流形。对对称二阶张量 $T$，$|T|$ 为度量诱导的 Hilbert--Schmidt 范数，$|T|_{\op}$ 为相对特征值的最大绝对值。
+
+对 $W^+$ 使用其在 $\Lambda^+$ 上的 Hilbert--Schmidt \emph{算子}范数，记
+\[
+u=|W^+|,\qquad w=\lambda_{\min}(W^+).
+\]
+对 $\Rm$ 使用完整四指标张量范数。因此四指标 Weyl 范数平方是相应算子范数平方的四倍。记
+\[
+s=\tr_g\Ric_g,\quad \Ric^\circ=\Ric-\frac{s}{4}g,\quad
+T(M)=2\chi(M)+3\tau(M).
+\]
+Chern--Weil 公式在这些约定下为
+\begin{align}
+4\pi^2T(M)&=\int_M\left(\frac{s^2}{24}+2u^2-\frac{|\Ric^\circ|^2}{2}\right)\dd,\label{eq:cw}\\
+\int_M|\Rm|^2\dd&=32\pi^2\chi(M)+4\int_M|\Ric^\circ|^2\dd.\label{eq:fullrm}
+\end{align}
+特别是 Einstein 度量满足 $\int|\Rm|^2=32\pi^2\chi$。
+
+\subsection{统一 monopole 下界}
+
+采用如下假设，记为 $\mathrm{MP}(A)$，其中 $A>0$：
+\begin{quote}
+$b_+(M)>1$，且对每个光滑度量 $g$，存在 monopole 类 $a_g$，满足 $(a_g^+)^2\ge A$。上标 $+$ 表示关于 $g$ 的自对偶调和投影。
+\end{quote}
+类可以随度量变化；$A$ 不变。标准 Seiberg--Witten Weitzenböck 论证及 LeBrun 曲率估计给出\cite{lebrun2001,lebrun2004}
+\begin{align}
+&M\text{ 不承载标量曲率处处非负的度量},\label{eq:no-psc}\\
+&\int_Ms^2\dd\ge32\pi^2A,\label{eq:scalar}\\
+&\int_M\left(\frac23s+2w\right)_{-}^{\!2}\dd\ge32\pi^2A.\label{eq:spectral}
+\end{align}
+此处 $x_-:=\min\{x,0\}$。非负标量曲率排除不能仅从式 \eqref{eq:spectral} 推出；它使用真正的 monopole 类和非零自对偶投影。这一点对排除零、正 Einstein 常数必不可少。
+
+对曲面吹起族，标准 Seiberg--Witten 吹起类具有所有例外类符号组合。其由 $X$ 拉回的规范类部分 $a$ 满足 $a^2=A$，故 $(a^+)^2\ge A$；对所有例外符号取平均，交叉项消失，至少一个组合的自对偶平方不小于 $A$。于是该族满足 $\mathrm{MP}(A)$。同时
+\begin{equation}\label{eq:blow-top}
+T(M)=A-k,\qquad \chi(M)=\chi(X)+k.
+\end{equation}
+
+\subsection{非负密度及精确预算}
+
+定义
+\begin{gather}
+E=\Ric+g,\quad e=s+4=\tr E,\quad
+f=\frac{2s}{3}-2\sqrt{\frac23}\,u,\quad b=\frac{2s}{3}+2w,\label{eq:defs}\\
+G=f^2-b_-^2,\qquad
+\Dcal=|E|^2+e^2+(s+8\sqrt6u)^2+G.\label{eq:density}
+\end{gather}
+因为 $W^+$ 是无迹实对称三阶算子，$w\ge-\sqrt{2/3}\,u$，故 $f\le b$。若 $b<0$，则 $f^2\ge b^2$；若 $b\ge0$，则 $G=f^2$。所以 $G\ge0$，$\Dcal\ge0$，不必先假定 $s<0$。
+
+置
+\[
+Q=\int|E|^2,\quad P=\int|E^\circ|^2,\quad
+Z=\int e^2,\quad B=\int(s+8\sqrt6u)^2.
+\]
+所有未标体积元的积分均关于 $g$。正交分解给出 $Q=P+Z/4$。直接展开得到点态恒等式
+\begin{equation}\label{eq:calibration}
+(s+8\sqrt6u)^2+18G
+=216\left(\frac{s^2}{24}+2u^2\right)-18b_-^2.
+\end{equation}
+用式 \eqref{eq:cw}、\eqref{eq:spectral}，得到
+\begin{equation}\label{eq:budget-raw}
+B+18\int G\le108P+864\pi^2\left(T(M)-\frac23A\right).
+\end{equation}
+由于 $G\ge0$，又有
+\begin{align}
+\int\Dcal
+&\le Q+Z+108P+864\pi^2\left(T(M)-\frac23A\right)_+\notag\\
+&\le109Q+864\pi^2\left(T(M)-\frac23A\right)_+.\label{eq:budget-general}
+\end{align}
+最后一步用 $Q+Z+108P=5Q+104P\le109Q$。
+
+对吹起族，记 $d=(1/3-k/A)_+$。由式 \eqref{eq:blow-top}，上式化为
+\begin{equation}\label{eq:budget-blow}
+\int\Dcal\le109\int|\Ric+g|^2+864\pi^2Ad.
+\end{equation}
+若 $|\Ric|_{\op}\le K$，则 $|s|\le4K$。式 \eqref{eq:scalar} 给
+\begin{equation}\label{eq:l2-budget}
+V\ge\frac{2\pi^2A}{K^2},\qquad
+\av_M\Dcal\le109\av_M|\Ric+g|^2+432K^2d.
+\end{equation}
+
+对 $\delta=\|g^{-1}\Ric+\Id\|_{\infty,\op}\le1/4$，有 $|E|^2\le4\delta^2$、$|s|\le5$，于是
+\begin{equation}\label{eq:delta-budget}
+V\ge\frac{32\pi^2}{25}A,\qquad
+\boxed{\av_M\Dcal\le436\delta^2+675d.}
+\end{equation}
+这些数值只是透明的粗常数，不声称最优。
+
+\section{共同的局部矛盾与平均传输工具}
+
+\subsection{经典禁谱机制}
+
+\begin{lemma}[局部零密度不可能]\label{lem:forbidden}
+不存在非空开集上的光滑定向四维度量，使 $\Dcal\equiv0$。
+\end{lemma}
+\begin{proof}
+零密度先给 $\Ric=-g$，故 $s=-4$。再由 $s+8\sqrt6u=0$ 得 $u^2=1/24$，从而 $f=-3$。$G=0$ 给 $b_-=-3$，即 $w=-1/6$。迹为零与范数平方为 $1/24$ 联立，得到
+\begin{equation}\label{eq:forbidden-spectrum}
+\operatorname{spec}(W^+)=\left(-\frac16,\frac1{12},\frac1{12}\right).
+\end{equation}
+Einstein 条件蕴含 $\delta W^+=0$。在一个更小开集，取单特征值的局部单位自对偶二形式 $\omega$，则
+\[
+W^+=\frac1{12}\Id-\frac14\omega\otimes\omega.
+\]
+补成局部正交标架 $(\omega,\eta,\theta)$，写 $\nabla\omega=a\otimes\eta+c\otimes\theta$。对 $\delta W^+=0$ 在第二个二形式因子分别投影到 $\eta,\theta$，得到 $\iota_{a^\sharp}\omega=0$ 和 $\iota_{c^\sharp}\omega=0$。非零自对偶二形式非退化，故 $a=c=0$，$\omega$ 平行。乘适当常数后 $\omega$ 定义局部平行复结构，度量因而局部 Kähler。
+
+同定向 Kähler 四维度量满足 $|W^+|^2=s^2/24=2/3$，与 $1/24$ 矛盾。这是 Derdziński 的局部结构及 LeBrun 严格不等式中的经典机制\cite{derd,lebrun2004}，不是本稿发明的禁谱现象。
+\end{proof}
+
+\subsection{平均算子的有界性}
+
+对 $\Ric\ge-3\kappa g$，记 $v_{-\kappa}(r)$ 为常截面曲率 $-\kappa$ 的四维模型球体积，定义
+\[
+A_rH(p)=\av_{B_r(p)}H,\qquad
+D_\kappa(r)=\frac{v_{-\kappa}(2r)}{v_{-\kappa}(r)}.
+\]
+\begin{lemma}[Fubini 与体积倍增]\label{lem:fubini}
+闭流形上任意非负可积函数 $H$ 满足
+\begin{equation}\label{eq:average-fubini}
+\int_M A_rH\dd\le D_\kappa(r)\int_MH\dd.
+\end{equation}
+若 $\av_M|\Rm|^2\le C_0$，则
+\begin{equation}\label{eq:absolute-fubini}
+\int_M\left(\int_{B_R(p)}|\Rm|^2\dd\right)\dd(p)
+\le v_{-\kappa}(R)C_0V.
+\end{equation}
+\end{lemma}
+\begin{proof}
+若 $d(p,q)<r$，球包含与 Bishop--Gromov 比较给
+$\Vol B_r(q)\le\Vol B_{2r}(p)\le D_\kappa(r)\Vol B_r(p)$。
+交换积分次序后，积分核关于 $p\in B_r(q)$ 的积分至多 $D_\kappa(r)$，得第一式。第二式交换积分后，内层为 $\Vol B_R(q)$，再用模型球上界即可。
+\end{proof}
+
+\subsection{允许重叠的局部等距展开}
+
+\begin{lemma}[平均密度的重数传输]\label{lem:transfer}
+设 $\pi:(\widetilde U,h)\to(M,g)$ 为局部等距映射，$\pi(\tilde p)=p$，且源度量的闭球 $\overline B^h_{3s}(\tilde p)$ 紧包含于 $\widetilde U$。对 $H\ge0$，
+\begin{equation}\label{eq:transfer}
+\av_{B_s^h(\tilde p)}\pi^*H
+\le\frac{\Vol_h B_{3s}^h(\tilde p)}{\Vol_h B_s^h(\tilde p)}\av_{B_s^g(p)}H.
+\end{equation}
+\end{lemma}
+\begin{proof}
+记 $m_a(q)=\#(\pi^{-1}(q)\cap B_{as}^h(\tilde p))$。任意 $q,y\in B_s^g(p)$ 可由经 $p$、总长小于 $2s$ 的路径连接。从 $B_s^h(\tilde p)$ 中每个 $q$ 的原像出发，该路径都能唯一提升：提升始终留在 $B_{3s}^h(\tilde p)$，紧包含保证不会在源边界中断。不同起点产生不同终点，否则反向提升的唯一性矛盾。因此 $m_1(q)\le m_3(y)$。
+
+对 $y\in B_s^g(p)$ 积分，得到
+\[
+m_1(q)\Vol_gB_s(p)\le\int_{B_s(p)}m_3(y)\dd(y)
+\le\Vol_hB_{3s}^h(\tilde p).
+\]
+乘 $H(q)$ 再积分，应用面积公式，得到 \eqref{eq:transfer}。源中紧闭球上的纤维离散且闭，故重数有限；不需要重数对整个序列统一有界，不需要正规覆盖或 deck 变换。
+\end{proof}
+
+若源为欧氏球 $B_\rho(0)$，且 $Q_0^{-1}I\le h\le Q_0I$，取 $3s\sqrt{Q_0}<\rho$，即可满足缓冲条件，并有
+\[
+B^{\mathrm{Euc}}_{s/\sqrt{Q_0}}\subset B_s^h(0),\qquad
+\frac{\Vol_hB_{3s}^h}{\Vol_hB_s^h}\le3^4Q_0^8.
+\]
+这同时提供一个固定欧氏域用于后续极限。
+
+\section{精确 Einstein 度量的统一拓扑间隙}
+
+\begin{theorem}[相对 Euler 界下的统一间隙]\label{thm:exact}
+给定 $L>0$，存在 $\eta(L)>0$。若 $M$ 满足 $\mathrm{MP}(A)$ 及 $\chi(M)\le LA$，且承载任意 Einstein 度量，则
+\begin{equation}\label{eq:exact-gap}
+\frac{2\chi(M)+3\tau(M)}A\ge\frac23+\eta(L).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+\textbf{归一化及平均曲率预算。}
+由 \eqref{eq:no-psc}，任何 Einstein 度量的 Einstein 常数都为负。常数缩放后可设 $\Ric=-g$，$s=-4$。由 \eqref{eq:scalar}、\eqref{eq:fullrm}，
+\begin{equation}\label{eq:exact-curv-budget}
+V\ge2\pi^2A,\qquad \av_M|\Rm|^2\le16L.
+\end{equation}
+这只是平均曲率预算，总能量可以无界。
+
+\textbf{把拓扑边界转换成局部密度。}
+此时 $b=-8/3+2w<0$。定义
+\[
+F=(-4+8\sqrt6u)^2+18(f^2-b^2)\ge0.
+\]
+由 \eqref{eq:calibration} 及 \eqref{eq:budget-raw}，置 $t=T(M)/A-2/3$，有
+\begin{equation}\label{eq:exact-F}
+0\le\int_MF\dd\le864\pi^2At,\qquad \av_MF\le432t.
+\end{equation}
+特别 $t\ge0$。若 \eqref{eq:exact-gap} 不成立，可选序列 $t_i\to0$。
+
+\textbf{固定尺度选择低能量球。}
+Cheeger--Tian 的四维 Einstein 正则性\cite{ct,gejiang}给出普适 $\varepsilon_*,C_*>0$：当 $|\lambda|\le3$、$\Ric=\lambda g$、$R\le1$，
+\begin{equation}\label{eq:CT}
+\int_{B_R(p)}|\Rm|^2\le\varepsilon_*
+\quad\Longrightarrow\quad
+\sup_{B_{R/2}(p)}|\Rm|\le C_*R^{-2}.
+\end{equation}
+它不要求球体积下界；四指标范数只改变普适常数。取只依赖 $L$ 的固定 $R\le1$，使
+\[
+16L\,v_{-1}(R)\le\varepsilon_*/4.
+\]
+由 \eqref{eq:absolute-fubini}，每个 $M_i$ 至少 $3/4$ 的体积由满足小能量条件的球心组成。记该集合为 $\mathcal G_i$。对这些球，\eqref{eq:CT} 给统一曲率界 $K_R=C_*R^{-2}$。
+
+\textbf{在塌缩球中展开并传递平均密度。}
+选固定 $\rho<R/4$，使 $\rho\sqrt{K_R}<\pi/4$。对任意 $p\in\mathcal G_i$，指数映射
+\[
+\pi_{i,p}=\exp_p:B_\rho(0)\subset T_pM_i\longrightarrow M_i
+\]
+由无共轭点估计成为局部微分同胚。拉回度量 $h_{i,p}=\pi_{i,p}^*g_i$ 由 Rauch 比较一致椭圆；Gauss 引理给源中心到 $v$ 的距离恰为 $|v|$。所以源中心有固定的注入半径和内域余量，即使底流形注入半径趋零也不受影响。
+
+取统一足够小的 $s>0$，使源的 $3s$ 球紧包含于 $B_\rho(0)$。由 \eqref{eq:average-fubini}，可在 $\mathcal G_i$ 中选 $p_i$，使
+\[
+A_sF_i(p_i)\le\frac43D_1(s)\av_{M_i}F_i\longrightarrow0.
+\]
+用引理 \ref{lem:transfer}，源上 $s$ 球的平均 $F_i$ 也趋零。
+
+\textbf{光滑极限与矛盾。}
+源上仍为 $\Ric=-h_i$，且曲率、中心注入半径和缓冲域统一受控。标准局部 Einstein 调和坐标紧致性给出更小固定域上的光滑收敛子序列；这些坐标图均保持定向，并取图像包含在上述源的 $s$ 球内。传输后的密度非负且积分趋零，因此极限满足 $F_\infty\equiv0$。由于极限已经 Einstein，$F=0$ 与 $\Dcal=0$ 等价。引理 \ref{lem:forbidden} 给矛盾，从而 $t$ 具有只依赖 $L$ 的正下界。
+\end{proof}
+
+\begin{remark}
+证明没有把奇异 Einstein 极限解消回原流形；它只需在一个局部展开片中得到不可能的光滑极限。局部片可以重叠，因而不需要全局非塌缩、总体积上界、直径上界或总曲率能量上界。
+\end{remark}
+
+\subsection{对一般型复曲面吹起的应用}
+
+\begin{proof}[定理 \ref{thm:intro-exact} 的证明]
+若 $M$ 有 Einstein 度量，式 \eqref{eq:budget-raw} 在 $P=0$ 时先给 $k\le A/3$。极小一般型复曲面的 Noether 不等式为 $A\ge2p_g-4$\cite{liedtke}。利用
+\[
+\chi(\mathcal O_X)=1-q(X)+p_g\le A/2+3,
+\qquad \chi(X)=12\chi(\mathcal O_X)-A,
+\]
+得到 $\chi(X)\le5A+36$。因为 $A\ge1$，
+\[
+\frac{\chi(M)}A\le41+\frac13<42.
+\]
+定理 \ref{thm:exact} 可取 $L=42$，于是
+\[
+1-\frac{k}{A}\ge\frac23+\eta(42),\qquad
+\frac{k}{A}\le\frac13-\eta(42).
+\]
+取 $\gamma=\min\{\eta(42)/2,1/12\}>0$ 即得结论。这里先用非严格经典界取得 $L$，再用统一间隙，论证没有循环。
+\end{proof}
+
+\begin{corollary}[接近边界时的地理逃逸]
+若一列 Einstein 四维流形满足 $\mathrm{MP}(A_i)$，且
+$T(M_i)/A_i\to2/3$，则 $\chi(M_i)/A_i\to\infty$。
+\end{corollary}
+\begin{proof}
+否则存在比值有界的子序列，与定理 \ref{thm:exact} 矛盾。
+\end{proof}
+
+\section{有界 Ricci 曲率下的非塌缩局部密度下界}
+
+本节不假定 monopole 类，不假定度量已经 Einstein，也不假定平均全曲率预算。
+
+\begin{theorem}[局部正密度]\label{thm:local}
+对任意 $K,r,v>0$，存在 $\eta_0(K,r,v)>0$，使完整光滑定向四维流形若满足
+\[
+|\Ric|_{\op}\le K,\qquad \Vol B_r(p)\ge v,
+\]
+就有
+\begin{equation}\label{eq:local-floor}
+\av_{B_{2r}(p)}\Dcal\ge\eta_0(K,r,v).
+\end{equation}
+如果参数使前提不可能满足，命题按空情形理解。
+\end{theorem}
+
+\begin{proof}
+反设存在满足前提的序列，其左侧趋零。Ricci 下界给 $\Vol B_{2r}(p_i)\le v_{-K/3}(2r)$，所以
+\begin{equation}\label{eq:local-int-small}
+\int_{B_{2r}(p_i)}\Dcal_i\longrightarrow0.
+\end{equation}
+
+\textbf{从非塌缩取得一个统一调和片。}
+固定
+\[
+0<\rho\le\min\{r/4,\sqrt{3/(2K)}/2,1\}.
+\]
+体积比较给 $\Vol B_\rho(p_i)\ge v\,v_{-K/3}(\rho)/v_{-K/3}(r)$。缩放 $\tilde g_i=\rho^{-2}g_i$ 后，Hilbert--Schmidt 范数满足 $|\Ric|_{\tilde g_i}\le2K\rho^2\le3$，且 $\Vol_{\tilde g_i}B_1(p_i)\ge v_0>0$，其中 $v_0$ 只依赖 $K,r,v$。
+
+Cheeger--Naber 定理1.13\cite{cn}对原度量调和半径 $r_h$ 给出
+\begin{equation}\label{eq:CN}
+\Vol\bigl(T_t\{x\in B_1(p_i):r_h(x)\le t\}\bigr)\le C(v_0/2)t^4.
+\end{equation}
+选固定 $0<t<1/4$，使右端小于 $v_0/2$。坏点集不可能覆盖 $B_1(p_i)$，故存在 $q_i\in B_\rho(p_i)$，其原度量调和半径至少 $t\rho$。缩小固定比例后，得到同一欧氏球 $\Omega$ 上的嵌入调和图，图像包含于 $B_{2r}(p_i)$。
+
+调和半径的定义先给统一椭圆性及一阶界。有界 Ricci 方程再给任意固定 $p>4$ 的 $W^{2,p}$ 和 $C^{1,\alpha}$ 内域界，见同文式(7.12)--(7.14)。这一输入不需要 $\nabla\Ric$ 界；原文加入该导数界是为了更强的点态曲率尺度，不能混同。
+
+\textbf{用密度而不是 Ricci 导数取得强收敛。}
+记拉回度量为 $h_i$，使图保持指定定向。在略小固定域，抽取
+\[
+h_i\to h_\infty\text{ 于 }C^{1,\beta},\qquad
+h_i\rightharpoonup h_\infty\text{ 于 }W^{2,p},\quad0<\beta<\alpha<1.
+\]
+由 \eqref{eq:local-int-small} 和嵌入性，$E_i=\Ric(h_i)+h_i\to0$ 于 $L^2$。由于 $|E_i|\le2(K+1)$ 且坐标一致椭圆，对任意有限 $p\ge2$，插值给 $E_i\to0$ 于 $L^p$。
+
+调和坐标中的方程为
+\begin{equation}\label{eq:ricci-pde}
+-\frac12h_i^{ab}\partial_a\partial_b(h_i)_{jk}
++\mathcal N_{jk}(h_i^{-1},\partial h_i)
+=-(h_i)_{jk}+(E_i)_{jk},
+\end{equation}
+其中 $\mathcal N$ 关于一阶导数为二次式。极限先弱满足 $\Ric(h_\infty)=-h_\infty$，再由椭圆正则性光滑。两方程相减，右端的 $E_i$、$h_i-h_\infty$、$\mathcal N_i-\mathcal N_\infty$ 及主系数差乘 $\partial^2h_\infty$ 全部在 $L^p$ 中趋零。统一内域 $W^{2,p}$ 估计遂给
+\[
+h_i\longrightarrow h_\infty\quad\text{强 }W^{2,p}.
+\]
+因此曲率强 $L^p$ 收敛。
+
+\textbf{传递平方曲率密度。}
+用随度量连续变化的定向正交标架识别 $\Lambda^+$。对称矩阵特征值的 Lipschitz 连续性给 $s_i,u_i,w_i$ 强 $L^2$ 收敛；负部函数也是 Lipschitz。由
+\[
+\|a_i^2-a^2\|_{L^1}\le\|a_i-a\|_{L^2}(\|a_i\|_{L^2}+\|a\|_{L^2}),
+\]
+得 $\Dcal_i\to\Dcal_\infty$ 强 $L^1$，体积元也一致收敛。式 \eqref{eq:local-int-small} 迫使极限非空开域上 $\Dcal_\infty=0$，与引理 \ref{lem:forbidden} 矛盾。
+\end{proof}
+
+\begin{remark}
+在上面的论证中，弱曲率收敛不够，强 $W^{2,p}$ 升级是不可省略的一步。统一点态 Ricci 界使 $E_i$ 的 $L^2$ 小量可以升级为所有有限 $L^p$ 小量，恰好避免另加 Ricci 导数假设。
+\end{remark}
+
+\section{定量塌缩、有界直径间隙及其限制}
+
+记
+\[
+N_{r,v}(g)=\{p\in M:\Vol_gB_r(p)\ge v\}.
+\]
+体积阈值 $v$ 是固定正数；若偏好 $\Vol B_r\ge\nu r^4$，只需在所有结论中令 $v=\nu r^4$。
+
+\begin{theorem}[非塌缩中心的体积比例]\label{thm:proportion}
+对闭定向四维度量，若 $|\Ric|_{\op}\le K$，则
+\begin{equation}\label{eq:proportion}
+\frac{\Vol N_{r,v}(g)}V
+\le C(K,r,v)\av_M\Dcal,
+\qquad C(K,r,v)=\frac{D_{K/3}(2r)}{\eta_0(K,r,v)}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+在 $N_{r,v}$ 上，定理 \ref{thm:local} 给 $A_{2r}\Dcal\ge\eta_0$。在此集合积分，并用式 \eqref{eq:average-fubini}，得到
+$\eta_0\Vol N_{r,v}\le D_{K/3}(2r)\int_M\Dcal$。
+\end{proof}
+
+\begin{corollary}[吹起族的 $L^2$ 和最大缺陷版本]\label{cor:quant-collapse}
+对第1节的吹起族，若 $|\Ric|_{\op}\le K$，则
+\begin{equation}\label{eq:proportion-L2}
+\frac{\Vol N_{r,v}}V\le C(K,r,v)
+\left[109\av_M|\Ric+g|^2+432K^2\left(\frac13-\frac{k}{A}\right)_+\right].
+\end{equation}
+若 $\delta\le1/4$，可固定 $K=5/4$，从而
+\begin{equation}\label{eq:proportion-delta}
+\boxed{\frac{\Vol N_{r,v}}V\le C(r,v)(436\delta^2+675d).}
+\end{equation}
+\end{corollary}
+\begin{proof}
+分别把 \eqref{eq:l2-budget}、\eqref{eq:delta-budget} 代入 \eqref{eq:proportion}。
+\end{proof}
+
+\begin{proof}[定理 \ref{thm:intro-collapse} 的证明]
+式 \eqref{eq:proportion-delta} 立即给 \eqref{eq:intro-collapse}。若直径不趋于无穷，则存在子序列 $\diam(M_i,g_i)\le D$。由于 $A_i\ge1$，\eqref{eq:delta-budget} 给
+$V_i\ge V_*:=32\pi^2/25$。$\Ric\ge-3g$ 与 Bishop--Gromov 比较于是对每个球心给
+\[
+\Vol B_1(p)\ge V_*\frac{v_{-1}(1)}{v_{-1}(D+1)}=:v_D>0.
+\]
+故 $N_{1,v_D}=M_i$，与体积比例趋零矛盾。
+\end{proof}
+
+\begin{corollary}[有界直径的近 Einstein 间隙]\label{cor:diam}
+对每个 $D>0$，存在 $c(D)>0$，使吹起族上的度量若满足 $\delta\le1/4$、$\diam(M,g)\le D$，则
+\begin{equation}\label{eq:diam-gap}
+\delta^2+\left(\frac13-\frac{k}{A}\right)_+\ge c(D).
+\end{equation}
+更一般地，在 $|\Ric|_{\op}\le K$、$\diam\le D$ 下，存在 $c(K,D)>0$，使
+\begin{equation}\label{eq:diam-L2}
+\av_M|\Ric+g|^2+\left(\frac13-\frac{k}{A}\right)_+\ge c(K,D).
+\end{equation}
+\end{corollary}
+\begin{proof}
+前一证明中的体积下界使 \eqref{eq:proportion-delta} 左端为1；吸收两个数值系数即得 \eqref{eq:diam-gap}。一般情形用 $V\ge2\pi^2/K^2$、Ricci 下界 $-Kg$ 和 \eqref{eq:proportion-L2} 重复同一论证。
+\end{proof}
+
+还可从体积测度塌缩推出，对每个固定 $r>0$，
+\begin{equation}\label{eq:mean-ball}
+\av_{M_i}\Vol B_r(p)\dd(p)\longrightarrow0.
+\end{equation}
+事实上，将积分分为 $N_{r,v}$ 与其补集，前者用统一模型球上界及其体积比例趋零控制，后者被 $v$ 控制，再令 $v\downarrow0$。它不意味着 $\sup_p\Vol B_r(p)\to0$。
+
+这里最关键的限制是：$C(K,r,v)$ 依赖 $v$。不能将 $v$ 替换成趋零的 $v_i$ 后仍当作统一常数。有界直径推论的阈值依赖 $D$，也不能被称为只依赖维数的 Yau 26 阈值。
+
+\section{从非塌缩到任意塌缩：尚未关闭的接口}
+
+\subsection{精确 Einstein 与近 Einstein 的分界}
+
+定理 \ref{thm:exact} 使用的 \eqref{eq:CT} 已有完整且直接的定理陈述。把它用于仅满足有界 Ricci 曲率的原度量是不合法的；一般情形也不应期待由有界 Ricci 直接得到同样的点态全曲率界。
+
+本研究需要的其实较弱：在小能量球内存在原度量的统一弱调和片，允许片映射到流形时重叠。以下把尚待完整核准的接口明确写出，记为 (SC)。
+
+\begin{quote}
+存在普适 $\varepsilon,c,Q_0>0$ 及 $\alpha\in(0,1)$，使完整四维度量在 $|\Ric|\le3$、$\int_{B_1(p)}|\Rm|^2<\varepsilon$ 时，可在 $B_{1/2}(p)$ 某点找到保持定向的局部微分同胚 $\pi:B_c(0)\to M$。原度量拉回 $h=\pi^*g$ 在此片上有统一椭圆性和调和 $C^{1,\alpha}$ 控制，常数与底球体积无关。
+\end{quote}
+
+源中缓冲域可以由缩小欧氏片取得；$W^{2,p}$ 界再由有界 Ricci 方程推出，不必另作独立输入。单位尺度版本若成立，四维能量的尺度不变性给所有较小尺度版本；无需再虚设一个独立的尺度阈值难题。
+
+现有文献对该方向有实质支持\cite{li,lott,liu}，但本轮未取得 Li 第一篇完整定理及相关范数定义，故不凭二手摘要或交叉引文宣告这一接口已被精确覆盖。\emph{未完成原文核准是本研究的证据限制，不等于声称 (SC) 是学界新公开问题，也不是发现了反例。}
+
+\begin{proposition}[明确以 (SC) 为条件的延伸]\label{prop:conditional}
+若 (SC) 成立，则对每个 $K,C_0>0$，存在 $\eta_1(K,C_0)>0$，使闭定向四维度量在
+\[
+|\Ric|_{\op}\le K,\qquad\av_M|\Rm|^2\le C_0
+\]
+下满足 $\av_M\Dcal\ge\eta_1(K,C_0)$。
+\end{proposition}
+\begin{proof}
+反设平均密度趋零。用引理 \ref{lem:fubini} 选固定小尺度的低能量中心，使该球上的平均密度也趋零，再调用 (SC)。若片中心从原球心移到固定内球中的另一点，体积比较和球包含仍将其固定小球平均密度控制在原球平均的统一倍数内。
+
+用引理 \ref{lem:transfer} 把平均密度传到弱片。原度量有界 Ricci 加 $\int\Dcal\to0$ 给 $E\to0$ 于所有有限 $L^p$。定理 \ref{thm:local} 中的强 $W^{2,p}$ 极限论证可逐字应用，产生禁谱矛盾。
+\end{proof}
+
+该条件推论没有包含在本稿前六节的无条件结论中。即使今后核准 (SC)，它仍只是把指定地理预算下的近边界候选排除，不会自动解答一般 Yau 26。
+
+\subsection{一个已闭合的选点改进}
+
+在 $\av_M|\Rm|^2\le C_0$ 下，平均算子估计还直接给出
+\begin{equation}\label{eq:normalized-choice}
+\Vol\left\{p:R^4\av_{B_R(p)}|\Rm|^2>\varepsilon\right\}
+\le\frac{D_\kappa(R)C_0R^4}{\varepsilon}V.
+\end{equation}
+取固定小 $R$ 即得到正体积比例的归一化低能量中心。对其任意 $y\in B_{R/2}(p)$、$0<r\le R/2$，体积比较进一步给
+\begin{equation}\label{eq:subball}
+r^4\av_{B_r(y)}|\Rm|^2
+\le C(\kappa,R)R^4\av_{B_R(p)}|\Rm|^2.
+\end{equation}
+证明只需 $B_r(y)\subset B_R(p)$ 和
+$\Vol B_r(y)\ge c(\kappa,R)(r/R)^4\Vol B_R(p)$。
+
+因此本任务可以直接选到所有内部子球都具有临界归一化小能量的球，绕过从绝对小能量改进到归一化小能量的某些步骤。但从这些估计到原度量统一弱调和片仍须证明，不能把选点引理本身等同于正则性定理。
+
+\section{研究价值、未证明事项及核查清单}
+
+本稿采用的思路是把\emph{全局拓扑边界的近等号}转换为\emph{局部不可能曲率谱的近等号}，再寻找足够强的局部极限。这一路径不用把输入度量全局修正成 Einstein 度量，也不用先构造奇点解消。它的产出是不存在性间隙和退化必要条件，而不是一般存在性机制。
+
+两类正则性用途严格不同：精确 Einstein 的四维小能量定理允许塌缩；一般有界 Ricci 的 Cheeger--Naber 调和半径估计在本稿中使用固定体积下界。前者关闭了精确 Einstein 的统一间隙；后者关闭了非塌缩区域的近 Einstein 排除。把这两种用途混同，会伪造最关键的剩余一步。
+
+\begin{enumerate}
+\item 已给出所有新陈述的假设、量词、范数约定与证明。两项主要结果的常数非显式，不能据此列出新的具体最小吹起整数。
+\item $b_+>1$ 保留以避开 Seiberg--Witten 腔室问题；没有把结论未经处理地扩展到 $b_+=1$。
+\item 体积测度塌缩只约束可能序列。没有构造满足该退化的近 Einstein 度量，也没有证明退化自身一定导致矛盾。
+\item 这里的复曲面族具有非负标量曲率障碍，因而不能提供正分支的近 $+1$ Ricci 反例。
+\item 本稿的完整推导与文献首创性是两项不同判断。尚未完成穷尽性先例检索，不宜据本稿直接宣称已经解决知名问题或取得经认证的原创定理。
+\end{enumerate}
+
+下一项具体工作应优先核准或替代 (SC) 的原度量弱坐标结论，并检查其是否确实允许本文使用的局部能量及体积量词。另一条独立任务是研究前述体积测度塌缩能否与指定 monopole 地理同时发生。二者都是待证明任务，不是已知成立、只需依次执行的待办清单。
+
+\appendix
+\section{主要外部输入的定位与归属}
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{.23\textwidth}>{\raggedright\arraybackslash}p{.39\textwidth}>{\raggedright\arraybackslash}p{.30\textwidth}@{}}
+\toprule
+输入 & 核查定位 & 本稿用途\\\midrule\endhead
+LeBrun monopole 曲率估计 & \cite{lebrun2001} 的标量估计及 Theorem2.3 证明中的最小 $W^+$ 特征值估计；\cite{lebrun2004} 的 Lemmas16--17 & \eqref{eq:scalar}、\eqref{eq:spectral} 及经典严格性机制\\
+Derdziński 局部结构 & \cite{derd} Proposition5；Kähler 曲率关系见 Proposition2 & 局部禁谱，无全局复结构假设\\
+Cheeger--Tian 正则性 & 原论文\cite{ct}；完整可读陈述见\cite{gejiang} Theorem1.1 & 仅精确 Einstein 分支的无体积下界曲率控制\\
+Cheeger--Naber 正则性 & \cite{cn} Theorem1.13、式(7.12)--(7.14) & 非塌缩球内寻找原度量调和片\\
+Noether 不等式 & 经典复曲面不等式；\cite{liedtke} Theorem2.1 亦记述更一般版本 & 将吹起族的相对 Euler 界固定为42\\
+Li、Lott、Liu & \cite{li,lott,liu} 的相关塌缩几何讨论 & 支持后续接口核查；未充作无条件证明输入\\
+\bottomrule
+\end{longtable}
+
+\begin{thebibliography}{99}
+\bibitem{lebrun2001}
+C. LeBrun, \emph{Ricci Curvature, Minimal Volumes, and Seiberg--Witten Theory}, Invent. Math. 145 (2001), 279--316.
+\url{https://arxiv.org/abs/math/0003068}.
+\bibitem{lebrun2004}
+C. LeBrun, \emph{Einstein Metrics, Four-Manifolds, and Differential Topology}, Surveys in Differential Geometry 8 (2003), 235--255; arXiv version (2004).
+\url{https://arxiv.org/abs/math/0404359}.
+\bibitem{derd}
+A. Derdziński, \emph{Self-dual Kähler manifolds and Einstein manifolds of dimension four}, Compositio Math. 49 (1983), 405--433.
+\url{https://www.numdam.org/item/CM_1983__49_3_405_0/}.
+\bibitem{ct}
+J. Cheeger and G. Tian, \emph{Curvature and injectivity radius estimates for Einstein 4-manifolds}, J. Amer. Math. Soc. 19 (2006), 487--525.
+\url{https://doi.org/10.1090/S0894-0347-05-00511-4}.
+\bibitem{gejiang}
+H. Ge and W. Jiang, \emph{$\epsilon$-Regularity for Shrinking Ricci Solitons and Ricci Flows}, arXiv:1707.05511.
+\url{https://arxiv.org/abs/1707.05511}.
+\bibitem{cn}
+J. Cheeger and A. Naber, \emph{Regularity of Einstein manifolds and the codimension 4 conjecture}, Ann. of Math. 182 (2015), 1093--1165.
+\url{https://arxiv.org/abs/1406.6534}.
+\bibitem{liedtke}
+C. Liedtke, \emph{Algebraic Surfaces of General Type with Small $c_1^2$ in Positive Characteristic}, arXiv:math/0702548.
+\url{https://arxiv.org/abs/math/0702548}.
+\bibitem{li}
+Y. Li, \emph{Smoothing Riemannian metrics with bounded Ricci curvatures in dimension four}, Adv. Math. 223 (2010), 1924--1957.
+\url{https://doi.org/10.1016/j.aim.2009.10.014}.
+\bibitem{lott}
+J. Lott, \emph{The collapsing geometry of almost Ricci-flat 4-manifolds}, Section3.1, arXiv:1708.06780.
+\url{https://arxiv.org/abs/1708.06780}.
+\bibitem{liu}
+H. Liu, \emph{A compactness theorem for hyperkähler 4-manifolds with boundary}, arXiv:2202.07151, Remark5.5.
+\url{https://arxiv.org/abs/2202.07151}.
+\end{thebibliography}
+\end{document}

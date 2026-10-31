@@ -1,0 +1,292 @@
+% Step 10: correction of the Taub--NUT--AdS test and a multiscale
+% accessibility / diffuse Pontryagin program for the negative branch.
+
+\section{Scope and corrected quantifier}
+
+Fix a critical Ishida--LeBrun four-manifold and suppose, for contradiction,
+that
+\[
+ \delta_i=\|g_i^{-1}(\Ric_{g_i}+g_i)\|_{L^\infty,\mathrm{op}}\to0.
+\]
+The global near-equality analysis supplies a collection of nonnegative
+curvature/monopole deficits.  Let $F_i$ denote a scalar package containing at
+least the Ricci, scalar--Weyl completion, and algebraic lowest-eigenvalue
+terms needed for the forbidden-germ passage; its precise monopole components
+are those in the Step--8 and Codex notes.  Its integral tends to zero, and
+maximal-function selection gives a set of fixed positive volume on which,
+for every $0<r\le1$,
+\[
+ \fint_{B_r(p)}|\Rm_i|^2\le K,
+ \qquad \fint_{B_r(p)}F_i\le\varepsilon_i\to0.       \tag{1}
+\]
+Here and below the curvature norm convention must be fixed; changing between
+the curvature-operator and four-index tensor conventions only changes $K$.
+
+The covering domain is part of the geometric choice.  The universal cover of
+a large ball, restricted to a smaller sub-ball, is generally not the
+universal cover of that sub-ball.  If a short fiber contracts only after a
+larger core is included, a smaller buffered domain can still unwrap it.  The
+correct fixed-scale question is therefore whether, for some radius bounded
+below in terms of $K$, one can first choose a buffered domain and then take a
+normal cover which is noncollapsed and has positive harmonic radius.
+
+\section{Taub--NUT--AdS: exact correction}
+
+For
+\[
+ g_\nu={dr^2\over F_\nu}+(r^2-\nu^2)d\Omega_2^2
+ +4\nu^2F_\nu(d\psi+\cos\theta\,d\phi)^2,
+\]
+\[
+ F_\nu={r-\nu\over r+\nu}
+ \left(1+{(r-\nu)(r+3\nu)\over3}\right),
+\]
+the symbolic computation in
+\texttt{workspace/scripts/compute\_taub\_nut\_ads\_curvature.py} gives
+\[
+ \Ric=-g,
+ \qquad
+ |W|_{(0,4)}^2={32\nu^2(4\nu^2-3)^2\over3(r+\nu)^6}.             \tag{2}
+\]
+In the coframe orientation used by that script,
+\[
+ W^+=0,
+\]
+while
+\[
+ \Spec(W^-)=\left(
+ {2\nu(4\nu^2-3)\over3(r+\nu)^3},
+ {2\nu(4\nu^2-3)\over3(r+\nu)^3},
+ {-4\nu(4\nu^2-3)\over3(r+\nu)^3}
+ \right).                                                       \tag{3}
+\]
+Thus the family is half-conformally flat, as in the primary Taub--NUT--AdS
+source \cite{akbar2002classical}.  Reversing orientation swaps the two
+halves.  The four-index norm is four times the Hilbert--Schmidt norm of the
+nonzero Weyl block.
+
+At the NUT,
+\[
+ |W|_{(0,4)}^2={ (4\nu^2-3)^2\over6\nu^4}
+ \sim{3\over2\nu^4}.                                          \tag{4}
+\]
+The NUT is smooth for each $\nu$, but its curvature is not uniform as
+$\nu\to0$.  The complete-orbit radial volume density is
+\[
+ {dV\over dr}=32\pi^2\nu(r^2-\nu^2),                            \tag{5}
+\]
+and the cumulative full-Weyl energy is
+\[
+ E_\nu^W(R)={32\pi^2(4\nu^2-3)^2\over9}
+ { (R-\nu)^2(R^2+6R\nu+17\nu^2)\over(R+\nu)^4}.                 \tag{6}
+\]
+Consequently $E_\nu^W(\infty)\to32\pi^2$.  On a fixed physical
+neighborhood reaching the NUT, volume is $O(\nu)$ but Weyl energy tends to a
+positive constant, so its mean curvature energy diverges like $\nu^{-1}$.
+On the NUT scale it diverges like $\nu^{-4}$.  This corrects the Step--9
+statement that the all-radius curvature maximal function stayed bounded.
+
+Let $p_\nu$ have distance $1/2$ from the NUT.  For radii at most $1/3$, its
+balls lie in a fixed annulus; there $|W|^2=O(\nu^2)$ and their volumes are
+$\Theta(\nu)$.  If instead a ball radius exceeds $1/2$, it sees the NUT core
+and its curvature mean diverges.  Moreover:
+\begin{itemize}
+\item the universal cover of a large domain containing the NUT does not
+unwrap the short Hopf circle, because that circle contracts through the NUT;
+\item if one first chooses a fixed buffered radius $R_0<1/2$ around $p_\nu$,
+the domain misses the NUT, lies over a contractible annular base patch, and
+its universal cover unwraps the circle at a fixed scale.
+\end{itemize}
+Hence Taub--NUT--AdS refutes neither the adjustable-buffer covering question
+nor the simultaneous input (1).
+
+On the unwrapped annulus, with $z=2\nu\psi$,
+\[
+ g_\nu\to {dr^2\over1+r^2/3}+r^2d\Omega_2^2+(1+r^2/3)dz^2,
+                                                                    \tag{7}
+\]
+which is real hyperbolic four-space of sectional curvature $-1/3$.  Thus
+$s=-4$, $W^+=0$, and
+\[
+ (s+8\sqrt6|W^+|)^2=16.                                       \tag{8}
+\]
+The standard NUT profile cannot occur on the calibrated good set.  Near its
+core curvature is too large for (1); on fixed annuli its scalar--Weyl deficit
+is macroscopically positive; the calibrated Weyl magnitude occurs only in a
+transition shell of radius comparable to $\nu^{1/3}$ and not on all centered
+scales.
+
+\section{Homothetic scaling of the forbidden germ}
+
+If $\widehat g=a^2g$, then the $(0,2)$ Ricci tensor and the $(1,3)$ Weyl
+tensor are unchanged, but the corresponding endomorphisms scale by $a^{-2}$:
+\[
+ \widehat g^{-1}\Ric_{\widehat g}=a^{-2}g^{-1}\Ric_g,
+ \qquad W^\pm_{\widehat g}=a^{-2}W^\pm_g.                       \tag{9}
+\]
+Therefore the calibrated germ at negative Einstein scale $\kappa>0$ is
+\[
+ \Ric=-\kappa g,
+ \qquad
+ \Spec(W^+)=\left(-{\kappa\over6},{\kappa\over12},{\kappa\over12}\right).
+                                                                    \tag{10}
+\]
+The constant-spectrum projector identity gives $\nabla W^+=0$, while the
+Einstein--Weyl identity requires
+\[
+ |\nabla W^+|^2={\kappa^3\over16}>0.                            \tag{11}
+\]
+Thus the contradiction survives every fixed rescaling.  It degenerates only
+when the available covering radius tends to zero and hence $\kappa\to0$.
+The Step--9 phrase that the numerical spectrum was invariant under homothety
+is withdrawn.
+
+\section{The corrected fixed-scale accessibility target}
+
+For a buffered scale $\rho$ and constants $A>1$, $0<\eta<1$, define
+\[
+ \Gamma(p;\rho,A,\eta)=\Image\left[
+ \pi_1(B_{\eta\rho}(p))\longrightarrow\pi_1(B_{A\rho}(p))
+ \right].                                                       \tag{12}
+\]
+Changing $A\rho$ changes the group: enlarging the domain can kill a short
+fiber by admitting a contraction core.  Naber--Zhang's result
+\cite{naber2016topology}, and the related buffered normal-cover statement in
+\cite{huang2020ricci}, show that a low-dimensional GH model, nondegenerate
+model scale, and maximal rank of (12) yield cover noncollapse and harmonic
+radius at a definite smaller scale.  Combined with normal-cover mean
+transport, (1), and (10)--(11), any positive-volume set with this package is
+excluded.
+
+A theorem of the following strength would settle this fixed-topology negative
+branch:
+
+\medskip
+\noindent\textbf{Calibrated fixed-scale cover theorem.}
+For each finite $K$, there are fixed buffer and regularity constants such
+that every sequence satisfying (1) contains, at a good point, a scale
+$\rho\ge r_*(K)>0$ and a buffered normal cover chosen after fixing
+$B_{A\rho}(p)$, whose lifted smaller ball has a uniform four-dimensional
+volume ratio and harmonic radius.  The mean-transfer radius must fit inside
+the chosen buffer (for example a $3a$ core as in Step 8).
+
+\medskip
+Equivalently, one may prove a multiscale rank-recovery statement: persistent
+rank loss for every $\rho\in[r_*(K),1]$ forces either a positive centered
+mean of $F$, model-scale degeneration, or a quantified curvature/topology
+cost.  Taub--NUT supplies only a single threshold at the distance to its core;
+below that threshold rank recovers.  A genuine countermodel must arrange a
+nested or diffuse family of contraction/twist mechanisms at every fixed
+scale while maintaining the calibrated Weyl profile and (1).
+
+\section{Diffuse Pontryagin density}
+
+Let $E=\Lambda^2_+M$ and let $A_+^{LC}$ be its induced $SO(3)$ connection.
+The Chern--Weil representative in our convention is
+\[
+ \rho_+={1\over4\pi^2}\left(
+ {s^2\over24}+2|W^+|^2-{1\over2}|\Ric^\circ|^2
+ \right),
+ \qquad \int_M\rho_+\,d\mu=2\chi+3\tau={2A\over3}.             \tag{13}
+\]
+The calibrated profile gives the stronger localizable fact
+\[
+ \left\|\rho_+-{3\over16\pi^2}\right\|_{L^1}\to0.             \tag{14}
+\]
+Consequently, for every measurable $U_i$,
+\[
+ \int_{U_i}\rho_{+,i}\,d\mu_i
+ ={3\over16\pi^2}\Vol(U_i)+o(1),                               \tag{15}
+\]
+where the same global $o(1)$ bounds the error for every $U_i$.  Thus
+characteristic mass follows volume.  It cannot be assigned only to
+vanishing-volume NUT cores, and counting integer local charges is not the
+correct first move.
+
+On a regular collapse region choose a basic or split comparison connection
+$B$ and put $a=A_+^{LC}-B$, $A_t=B+ta$.  For the normalized quadratic
+invariant polynomial $P$,
+\[
+ P(F_A)-P(F_B)=dT_P(A,B),                                      \tag{16}
+\]
+\[
+ T_P(A,B)=2P(a,F_B)+P(a,d_Ba)+{1\over3}P(a,[a,a]).              \tag{17}
+\]
+If $B$ is pulled back from a base of dimension at most three,
+$P(F_B)=0$ as a four-form.  Hence on $U$,
+\[
+ \int_U\rho_+\,d\mu=\int_{\partial U}T_P(A,B).                \tag{18}
+\]
+This is a continuous Chern--Simons flux, not a local integer without extra
+boundary data.  Equations (15) and (18) show that a positive-volume collapsed
+bulk must support persistent non-basic connection data or persistent flux
+through its interfaces.
+
+For an invariant rank-one circle collapse write, using a unit vertical
+one-form $\eta$,
+\[
+ F_A=F_H+\eta\wedge\Xi,
+ \qquad \Xi=\iota_VF_A.                                       \tag{19}
+\]
+Horizontal dimension is three, so
+\[
+ P(F_A)=2\eta\wedge P(\Xi,F_H).                                \tag{20}
+\]
+In a standard inner-product normalization this gives the robust inequality
+\[
+ \left|\int_U\rho_+\,d\mu\right|^2
+ \le C_P\left(\int_U|F_H|^2\right)
+          \left(\int_U|\Xi|^2\right).                          \tag{21}
+\]
+If the horizontal curvature mean is bounded by $K$, (15) yields
+\[
+ \fint_U|\Xi|^2\ge c(K)-o(1).                                 \tag{22}
+\]
+Thus the calibrated bulk cannot be basic: mixed vertical--horizontal
+curvature survives at order one in mean.
+
+This still does not imply that ordinary fiber holonomy is far from the
+identity.  If the fiber length is $\ell$ and
+$A=A_H+\Phi\vartheta$ with $\eta=\ell\vartheta$, then schematically
+\[
+ \Xi=\ell^{-1}D_H\Phi+\mathcal E_{\rm O'Neill}.                 \tag{23}
+\]
+The ordinary holonomy may vary only by $O(\ell)$ while its scaled logarithm
+has order-one derivative.  Therefore diffuse Pontryagin mass can in principle
+be carried throughout a collapsed bulk by scaled holonomy, O'Neill tensors,
+nil commutators, or vertical frame twisting.  It does not by itself prove
+fiber survival in the buffered fundamental group.
+
+The next analytic object is an estimate decomposing the mixed curvature into
+fixed-scale accessibility and contraction/twist costs,
+\[
+ \int_U|\Xi|^2
+ \le C\big(E_{\rm accessible}+E_{\rm fill}
+                 +E_{\rm O'Neill/nil}\big)+o(1),               \tag{24}
+\]
+with $E_{\rm fill}$ measuring curvature needed to contract short fibers in a
+buffered domain.  Combined with (22), such an estimate would force a positive
+volume of fixed-scale accessible points unless the filling/twisting terms
+remain diffuse.  The alternative is equally informative: a counterexample
+must solve a reduced mixed-curvature equation with diffuse Chern--Simons flux,
+not merely attach finitely many NUT caps.
+
+\section{Implications beyond the negative test family}
+
+This step does not settle either normalized branch.  It repairs a false
+route exclusion and identifies a sharper common collapse question.  The
+positive branch also cannot derive pointwise curvature control from a
+$C^0$ Ricci defect: the opposite-warping Calder\'on--Zygmund spike constructed
+by S0910A02 keeps the Ricci defect small while its mixed Riemann curvature
+spikes.  Thus both signs require harmonic-coordinate/cover methods,
+$L^p$ control, smoothing, or weak test-field identities rather than a direct
+$L^\infty$ Ricci-to-curvature implication.
+
+Finally, the logical reduction is
+\[
+ Q_n\Longleftrightarrow P_n^+\lor P_n^-.
+\]
+To refute $Q_n$ one must refute both normalized branches in the same
+dimension, but the two witnessing manifolds or sequences need not be the
+same.  Earlier notes requiring a single manifold to realize both failures
+imposed an unnecessary strengthening and are superseded on this point.

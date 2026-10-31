@@ -1,0 +1,64 @@
+{
+  "date": "2026-09-29",
+  "source": {
+    "path": "/workspace/scratch/e82e2d951212/upload/27b3cef6-aeed-442c-9e66-fef1a757828e.tex",
+    "size_bytes": 2216877,
+    "sha256": "2f935ed0cfe210b905504e39df3acdc7ba4072ed034dc85372a34d177705b030",
+    "modified": false
+  },
+  "results": [
+    {
+      "id": "R1-R2",
+      "status": "derived and cross-checked relative to manuscript inputs",
+      "name": "O10 slow gradient truncation and strong-current upgrade",
+      "inputs": [
+        "sec:single-parameter (2.5), (2.13), (2.14a)",
+        "sec:endpoint-covariance (1.2)-(1.3)",
+        "proof:zero-end-geometry:e14.2"
+      ],
+      "new_conclusions": [
+        "normalized uniform integrability of |nabla Phi|^4",
+        "strong L2 convergence of D tau, |tau|^2, |nabla Phi|^2, nabla zeta, N"
+      ],
+      "does_not_prove": [
+        "uniform integrability of all |nabla^2 Phi|^2",
+        "control of quartic derivatives of tau",
+        "O10 uniform endpoint gap"
+      ]
+    },
+    {
+      "id": "R3",
+      "status": "derived and independently cross-checked relative to surgery-family inputs",
+      "name": "O11 critical-integral weak stationarity and stability selection",
+      "inputs": [
+        "original balanced surgery family",
+        "negative Yamabe monotonicity of P",
+        "P recovery upper bound and two-chirality energy budgets",
+        "alpha vs inf P comparison"
+      ],
+      "does_not_prove": [
+        "all competitive sequences are stationary",
+        "subthreshold instability",
+        "optimal first coefficient"
+      ]
+    },
+    {
+      "id": "C1",
+      "status": "direct corollary, not a new analytic mechanism",
+      "name": "complete monopole convex-hull/minimax budget equals A on original ordinary surgery family with b+>=2",
+      "does_not_prove": [
+        "complete class budget of separate BF connected-sum family"
+      ]
+    }
+  ],
+  "open_targets": {
+    "O10": "not solved; critical torsion flux and calibrated exterior remain uncontrolled",
+    "O11": "not solved; no matching global lower bound or lower-cost genuine recovery construction"
+  },
+  "review_scope": "New proofs and direct dependencies; not a recertification of the entire source or a global novelty certification",
+  "validation": {
+    "proof_review": "independent mathematical checks of the two main derivations and their direct manuscript inputs",
+    "latex": "pdflatex completed; final log has no warnings or overfull boxes",
+    "claim_limit": "Neither O10 nor O11 is claimed solved"
+  }
+}

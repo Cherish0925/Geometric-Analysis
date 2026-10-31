@@ -1,0 +1,826 @@
+\section{Weak curvature sources and the limits of first-order control}
+\label{sec:analytic-limitations}
+
+This section separates three kinds of information: a small Ricci residual,
+weak control of the divergence of curvature, and strong control of a
+geometrically selected test field.  The examples below show that none of
+the relevant transitions follows from a formal integration by parts or
+from the displayed first-order norms alone.  The positive results identify
+precisely what controlled coordinate geometry supplies.
+
+Throughout this section, two-forms have their exterior-algebra norm and
+$W^\pm$ have their Hilbert--Schmidt endomorphism norm.  The norm of $\Rm$
+is the full four-index tensor norm.  Write
+\[
+ Z=\Ric+g,\qquad z=\operatorname{tr}_g Z=s+4,
+ \qquad A_0=\operatorname{diag}(-1/6,1/12,1/12),
+\]
+and let $\mathscr O_0$ be the orthogonal orbit of $A_0$ in
+$\operatorname{Sym}^2_0(\Lambda^+)$.  The four-index tensor associated
+with a Weyl endomorphism $A$ will be denoted by $\mathcal W(A)$; thus
+$|\mathcal W(A)|^2=4|A|^2$.
+
+\subsection{The Cotton source: a weak estimate and an actual metric example}
+
+Use the Cotton convention
+\begin{equation}\label{eq:al-cotton}
+ C_{ijk}=\nabla_k Z_{ij}-\nabla_j Z_{ik}
+ -\frac16\bigl((\nabla_k z)g_{ij}-(\nabla_j z)g_{ik}\bigr).
+\end{equation}
+With the corresponding divergence sign,
+$\operatorname{div}\mathcal W(W^+)=-C^+/2$.  The sign will not matter
+in norm estimates.  In particular, the integrated Weyl identity, in these
+norms, is
+\begin{equation}\label{eq:al-weyl-integral}
+ 0=\int_M\left\{|\nabla W^+|^2
+ -|\operatorname{div}\mathcal W(W^+)|^2
+ +\frac{s}{2}|W^+|^2-18\det W^+\right\}.
+\end{equation}
+This is the usual integrated Weyl--Weitzenb\"ock identity: dividing its
+four-index form by four gives the gradient term above, while
+$W^+_{ijkl}W^+_{ijpq}W^+_{klpq}=24\det W^+$.  Consequently integration
+does not discard the derivative of Ricci; it retains a squared Cotton
+term.
+
+For a tensor bundle on a closed metric four-manifold, set
+\[
+ \|\phi\|_{H^1,\mathrm{av}}^2
+ =\frac1V\int_M(|\phi|^2+|\nabla\phi|^2),\qquad
+ \|T\|_{H^{-1},\mathrm{av}}
+ =\sup_{\|\phi\|_{H^1,\mathrm{av}}\le1}
+ \left|\frac1V\langle T,\phi\rangle\right|.
+\]
+The distribution pairing in this definition is unnormalized before the
+factor $V^{-1}$.  These norms belong to the same metric; their definition
+does not identify spaces belonging to different manifolds.
+
+\begin{lemma}[Multiplication of the weak Cotton source]
+\label{lem:al-weak-source}
+Let $a$ be a bounded tensor with $\nabla a\in L^2$ on a closed smooth
+four-manifold.  For any fixed tensor contraction of $a$ with $C$,
+\begin{equation}\label{eq:al-multiplied-source}
+ \|a*C\|_{H^{-1},\mathrm{av}}
+ \le c\|Z\|_\infty
+ \left(\|a\|_\infty+\|\nabla a\|_{2,\mathrm{av}}\right).
+\end{equation}
+The constant depends only on the contraction and dimension.  Also,
+\begin{equation}\label{eq:al-unmultiplied-source}
+ \|\operatorname{div}\mathcal W(W^+)\|_{H^{-1},\mathrm{av}}
+ \le c\|Z\|_{2,\mathrm{av}}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+All metric contractions and the Hodge projections are covariantly
+parallel.  Insert \eqref{eq:al-cotton} and move its derivative onto
+$a*\phi$.  The absolute value of the normalized pairing is bounded by
+\[
+ c\|Z\|_\infty\left(
+ \|a\|_\infty\|\nabla\phi\|_{2,\mathrm{av}}
+ +\|\nabla a\|_{2,\mathrm{av}}\|\phi\|_{2,\mathrm{av}}\right).
+\]
+Here normalized Cauchy--Schwarz also bounds the normalized $L^1$ norm
+of $\nabla\phi$ by its normalized $L^2$ norm.  Taking the supremum proves
+\eqref{eq:al-multiplied-source}.  With no variable multiplier, use
+$\|Z\|_2\|\nabla\phi\|_2$ instead.  Approximation, or the weak product
+rule directly, proves the assertion for bounded $W^{1,2}$ tensors.
+\end{proof}
+
+\begin{proposition}[A bounded-curvature metric sequence with large Cotton energy]
+\label{prop:al-cotton-example}
+There are smooth metrics $g_j$ on one closed four-manifold such that
+\[
+ \|\Ric_{g_j}+g_j\|_\infty\longrightarrow0,
+ \qquad \sup_j\|\Rm_{g_j}\|_\infty<\infty,
+ \qquad \int_M|C^+_{g_j}|^2\longrightarrow\infty.
+\]
+The sequence may be chosen to converge in $C^1$ to a fixed negative
+Einstein metric.
+\end{proposition}
+
+\begin{proof}
+Take a closed negative Einstein four-metric $g_0$ with $\Ric_{g_0}=-g_0$;
+a product of two closed curvature-minus-one surfaces is an example.
+On a fixed coordinate patch choose a smooth phase $\theta$ with
+$d\theta\ne0$.  Choose a smooth symmetric tensor $q$ satisfying
+\[
+ \operatorname{tr}_{g_0}q=0,
+ \qquad q(\nabla^{g_0}\theta,\cdot)=0,
+\]
+whose Cotton principal symbol is nonzero on a smaller patch.  Such a
+choice is explicit: in an oriented orthonormal frame with
+$d\theta=|d\theta|e^1$, use $q=\operatorname{diag}(0,1,-1,0)$ and
+extend this frame smoothly after shrinking the patch.  For the index
+$i=2$, the skew derivative symbol in \eqref{eq:al-cotton} contains a
+nonzero multiple of $e^1\wedge e^2$.  Its self-dual projection is nonzero.
+Choose a compactly supported cutoff $\chi$ equal to one on a nonempty
+subpatch, and put
+\[
+ g_{\varepsilon,k}
+ =g_0+\frac{\varepsilon}{k^2}\chi\sin(k\theta)q.
+\]
+These are positive definite for $0<\varepsilon\le\varepsilon_0$ and
+large integers $k$, and agree with $g_0$ outside the patch.
+
+The principal symbol of linearized Ricci on a tensor transverse and
+trace-free relative to $d\theta$ is $-\tfrac12|d\theta|^2\partial_\theta^2$.
+More explicitly, its second-derivative terms are
+\[
+ \frac12g_0^{ab}
+ (\partial_a\partial_i h_{bj}+\partial_a\partial_j h_{bi}
+ -\partial_a\partial_b h_{ij}-\partial_i\partial_j h_{ab}),
+\]
+and the first, second, and fourth principal terms vanish for the chosen
+$q$.  It follows, uniformly on the fixed patch, that
+\begin{equation}\label{eq:al-ricci-expansion}
+ \Ric_{g_{\varepsilon,k}}+g_{\varepsilon,k}
+ =\frac\varepsilon2|d\theta|^2\chi\sin(k\theta)q
+ +O\left(\frac\varepsilon k+\frac{\varepsilon^2}{k^2}\right).
+\end{equation}
+Indeed $h=O(\varepsilon k^{-2})$, $\partial h=O(\varepsilon k^{-1})$,
+and $\partial^2h=O(\varepsilon)$; the nonlinear second-order terms are
+$h*\partial^2h$ and $\partial h*\partial h$.  The same expansion after
+one differentiation has remainder $O(\varepsilon+\varepsilon^2/k)$.
+The leading scalar term vanishes because $q$ is trace-free.  Thus
+\[
+ C^+_{g_{\varepsilon,k}}
+ =\varepsilon k\cos(k\theta)\,\mathcal T
+ +O(\varepsilon+\varepsilon^2/k),
+\]
+where the fixed smooth tensor $\mathcal T$ is nonzero on a subpatch.
+Integration in a coordinate having $\theta$ as one coordinate gives
+\[
+ \int\cos^2(k\theta)|\mathcal T|^2\,d\mu_{g_0}
+ \longrightarrow\frac12\int|\mathcal T|^2\,d\mu_{g_0}>0.
+\]
+The volume forms of the perturbed metrics converge uniformly to that of
+$g_0$.  Consequently
+$\int|C^+_{g_{\varepsilon,k}}|^2\ge c\varepsilon^2k^2$ for sufficiently
+large $k$, uniformly for $0<\varepsilon\le\varepsilon_0$.
+The coordinate curvature formula and the derivative bounds on $h$ give
+$\|\Rm_{g_{\varepsilon,k}}\|_\infty\le C$.  Finally take
+$\varepsilon_j=j^{-1}$ and $k_j=j^2$.  Equation
+\eqref{eq:al-ricci-expansion} proves the residual assertion, while the
+Cotton energy is at least $cj^2$.
+\end{proof}
+
+The example does not approach the forbidden Weyl orbit: its limiting
+metric is an ordinary negative Einstein product.  It disproves a bound
+for Cotton energy from small Ricci residual and bounded curvature, not
+the calibrated obstruction theorem.
+
+\subsection{Two critical concentration tests}
+
+For $A\in\operatorname{Sym}^2_0(\mathbb R^3)$ and $s\in\mathbb R$, put
+\[
+ f=\frac{2s}{3}-2\sqrt{\frac23}|A|,
+ \quad b=\frac{2s}{3}+2\lambda_{\min}(A),
+ \quad G=f^2-b_-^2,\qquad b_-:=\min(b,0).
+\]
+Since $f\le b$, $G\ge0$.  The scalar--spectral density is
+\begin{equation}\label{eq:al-density}
+ \mathscr D=|Z|^2+(s+4)^2+(s+8\sqrt6|A|)^2+G.
+\end{equation}
+For $Z=0$, $s=-4$, and $A=A_0$, this density is zero.
+
+\begin{proposition}[Quadratic control does not control the cubic invariant]
+\label{prop:al-cubic-concentration}
+On a fixed unit-volume Euclidean domain there are smooth algebraic Weyl
+fields $A_j$ with
+\[
+ \int\mathscr D_j\longrightarrow0,
+ \qquad \|A_j-A_0\|_2\longrightarrow0,
+ \qquad \int(\det A_j-\det A_0)\longrightarrow+\infty.
+\]
+Here the Ricci and scalar entries of the algebraic curvature tensor are
+fixed to be $-g$ and $-4$.  No metric realizing these curvature fields is
+asserted.
+\end{proposition}
+
+\begin{proof}
+Let $\eta\ge0$ be a nonzero smooth bump supported in the unit ball, and
+take $t_j\to\infty$, $r_j=t_j^{-5/8}$, and
+\[
+ B=\operatorname{diag}(2,-1,-1),\qquad
+ A_j=A_0+t_j\eta(x/r_j)B.
+\]
+For large $j$ the support lies inside the domain.  Its volume is
+$O(r_j^4)=O(t_j^{-5/2})$.  Outside that support the density vanishes;
+inside, every summand in \eqref{eq:al-density} is bounded by
+$C(1+t_j^2\eta(x/r_j)^2)$.  Thus $\int\mathscr D_j=O(t_j^{-1/2})$.
+Writing $c_m=\int\eta^m$, one has exactly
+\[
+ \|A_j-A_0\|_2^2=6c_2t_j^2r_j^4=6c_2t_j^{-1/2}.
+\]
+Since $A_0=-B/12$ and $\det B=2$, expansion of the determinant gives
+\[
+ \int(\det A_j-\det A_0)
+ =r_j^4\left(2c_3t_j^3-\frac{c_2}2t_j^2
+                         +\frac{c_1}{24}t_j\right)
+ =2c_3t_j^{1/2}+o(1).
+\]
+The usual curvature-operator block decomposition realizes these entries
+as algebraic curvature tensors pointwise.  It imposes no differential
+Bianchi identity, which is why this construction makes no geometric
+realizability claim.
+\end{proof}
+
+\begin{proposition}[A small $L^1$ commutator with a non-small $H^{-1}$ norm]
+\label{prop:al-commutator}
+On a fixed Euclidean four-ball there are smooth functions $a_r,R_r$,
+compactly supported in a ball of radius $O(r)$, such that
+\[
+ \|a_r\|_\infty\le C,\qquad
+ \|\nabla a_r\|_2+\|R_r\|_2=O(r^{1/2}),\qquad
+ \|R_r\partial_1a_r\|_1=O(r),
+\]
+but $\liminf_{r\downarrow0}\|R_r\partial_1a_r\|_{H^{-1}}>0$.
+Here $H^{-1}$ is the dual of the inhomogeneous $H^1_0$ norm on the fixed
+ball.
+\end{proposition}
+
+\begin{proof}
+Choose a nonzero smooth compactly supported bump $\chi$ and a smooth
+compactly supported $\zeta$ which is positive on its support.  Set
+\[
+ a_r(x)=\chi(x/r)\sin(x_1/r^{3/2}),\quad
+ R_r(x)=r^{-3/2}\chi(x/r)\cos(x_1/r^{3/2}),\quad
+ \phi_r(x)=r^{-1}\zeta(x/r).
+\]
+The change of variables $x=ry$ gives
+$\|\phi_r\|_2=O(r)$, $\|\nabla\phi_r\|_2=O(1)$, and the claimed
+bounds on $a_r,R_r$.  The main derivative of $a_r$ has size $r^{-3/2}$
+on volume $O(r^4)$; the cutoff derivative has size $r^{-1}$.
+Cauchy--Schwarz therefore gives the $L^1$ bound.  On the other hand,
+\[
+ \int R_r(\partial_1a_r)\phi_r
+ =\int\chi(y)^2\zeta(y)\cos^2(y_1/\sqrt r)\,dy+O(r^{1/2})
+ \longrightarrow\frac12\int\chi^2\zeta>0.
+\]
+The uniformly bounded $H^1_0$ test norms prove the lower bound.
+\end{proof}
+
+The angle $a_r$ can be used in a unit-vector rotation
+$(\cos a_r,\sin a_r)$, or in a unit self-dual-form rotation in a fixed
+parallel frame.  Its amplitude is then exactly constant, and its
+covariant derivative and exterior derivative tend to zero in $L^2$.
+The example still imposes neither the metric curvature equation nor a
+monopole equation.  It excludes the inference
+$R\nabla a\to0$ in $H^{-1}$ from the stated norms alone.  In contrast,
+\eqref{eq:al-multiplied-source} exploits the fact that Cotton is a
+derivative of the \emph{bounded} Ricci residual.
+
+\subsection{Global rank-one alignment without a global eigenvalue gap}
+
+The following statement uses the actual monopole supply in
+Section~\ref{sec:early-walsh}: every specified sign class admits the
+rescaled monopole solutions required there.  A collection of formal
+cohomology classes does not suffice.  All norms in this subsection are
+unnormalized.
+
+\begin{lemma}[Good-set alignment and bad-set mass]
+\label{lem:al-global-phase}
+Assume $\delta=\|g^{-1}\Ric+I\|_{\infty,\mathrm{op}}\le1/64$.
+Let $x_1,\ldots,x_N$ be harmonic self-dual two-forms such that every
+$H_\epsilon=\sum_r\epsilon_rx_r$, $\epsilon\in\{-1,1\}^N$, is the
+harmonic self-dual representative of a specified actual monopole class
+with the solvability hypothesis just stated.  Put
+\[
+ \begin{gathered}
+ q=-s+\sqrt6|W^+|,\quad
+ Q=\int q^2,\quad \kappa=\frac{Q}{72\pi^2},\quad
+ \Delta_\epsilon=Q-72\pi^2\|H_\epsilon\|_2^2,\\
+ L=\frac{q}{6\sqrt2\pi},\quad c_* =\frac3{4\sqrt2\pi},\quad
+ d_{\rm cal}=\int\mathscr D,\quad
+ \overline\Delta=2^{-N}\sum_\epsilon\Delta_\epsilon,\quad
+ B_0=\frac{\overline\Delta+37d_{\rm cal}}{\pi^2},
+ \end{gathered}
+\]
+where $\mathscr D$ is \eqref{eq:al-density} with $A=W^+$.
+There is a measurable orthogonal projection $P$, of rank one on
+$U=\{\mathscr D\le1/64\}$ and zero on its complement, such that
+\begin{equation}\label{eq:al-global-projection}
+ \|(I-P)H_\epsilon\|_2^2
+ \le\frac{\Delta_\epsilon+37d_{\rm cal}}{\pi^2},
+ \qquad \sum_r\|(I-P)x_r\|_2^2\le B_0.
+\end{equation}
+Locally write $Px_r=\alpha_rv$ for a unit section $v$ of its image, and
+set $\alpha_r=0$ off $U$.  The sign-independent products obey
+\begin{align}
+ \left\|\sum_r\alpha_r^2-L^2\right\|_1
+ &\le2\sqrt{\frac{\kappa\overline\Delta}{18\pi^2}}+B_0,
+ \label{eq:al-phase-mass}\\
+ \|\alpha_p\alpha_q\|_1
+ &\le\sqrt{\frac{\kappa\overline\Delta}{18\pi^2}}+\frac{B_0}{2}
+ \quad(p\ne q).
+ \label{eq:al-phase-products}
+\end{align}
+One may replace $L^2$ by $c_*^2$ in \eqref{eq:al-phase-mass} at the
+additional cost
+\begin{equation}\label{eq:al-constant-phase-target}
+ (\sqrt\kappa+c_*\sqrt V)
+       \sqrt{\frac{41d_{\rm cal}}{2304\pi^2}}.
+\end{equation}
+The constants are independent of the size of the sign cube.
+\end{lemma}
+
+\begin{proof}
+The amplitude and spectral-deficit estimates of
+Section~\ref{sec:early-walsh}, in precisely this normalization, give
+$\Delta_\epsilon\ge0$ and
+\begin{equation}\label{eq:al-phase-input}
+ \||H_\epsilon|-L\|_2^2\le\frac{\Delta_\epsilon}{18\pi^2}.
+\end{equation}
+On a measurable region where the lowest eigenvalue gap is at least
+$\gamma$ and $q\le F^2$, they also give
+\[
+ \int|\Pi^\perp H_\epsilon|^2
+ \le\left(\frac1{36\pi^2}
+                  +\frac{F^2}{216\gamma\pi^2}\right)\Delta_\epsilon.
+\]
+These inequalities follow by smooth positive approximation of
+$\sqrt q$; the harmonic forms are fixed during approximation, so the
+displayed inequalities have no remaining allowance.
+
+Write $a=\sqrt{2/3}|W^+|$, $w=\lambda_{\min}(W^+)$, and
+$\zeta=w+a\ge0$.  On $U$, $|t|\le1/8$, where $t=s+24a$, and
+$|z|=|s+4|\le1/16$.  Hence
+\[
+ |a-1/6|\le1/128,\qquad \frac{61}{384}\le a\le\frac{67}{384}.
+\]
+Since $s<-3$ and $w\le0$, the quantity $b$ is negative and
+$G=4\zeta(-2s/3+2a-\zeta)\ge8\zeta$.
+In particular $\zeta\le1/512$ on $U$.  Trace-freeness gives
+$\lambda_{2,3}=-w/2\mp\tfrac12\sqrt{2|W^+|^2-3w^2}$, so
+\[
+ \lambda_2-w
+ \ge\frac32\left(\frac{61}{384}-\frac1{512}\right)
+       -\frac12\sqrt{\frac{6\cdot67}{384\cdot512}}>\frac18.
+\]
+Also $q=-s+3a\le587/128<5$.  The spectral estimate thus applies on
+$U$ with $\gamma=1/8$ and $F^2=5$, giving
+\[
+ \int_U|\Pi^\perp H_\epsilon|^2
+       \le\frac{23\Delta_\epsilon}{108\pi^2}.
+\]
+Take $P=\Pi$ there and $P=0$ on $B=M\setminus U$.
+
+Chebyshev's inequality gives $\Vol(B)\le64d_{\rm cal}$.  More
+importantly, the exact scalar identity $q-9/2=(t-9z)/8$ gives
+\[
+ \|q-9/2\|_2^2\le\frac{41}{32}d_{\rm cal},\qquad
+ \||H_\epsilon|-c_*\|_2^2
+ \le\frac{\Delta_\epsilon}{9\pi^2}
+                +\frac{41d_{\rm cal}}{1152\pi^2}.
+\]
+Therefore the entire harmonic mass on the bad set satisfies
+\[
+ \int_B|H_\epsilon|^2
+ \le2\||H_\epsilon|-c_*\|_2^2+2c_*^2\Vol(B)
+ \le\frac1{\pi^2}\left\{\frac29\Delta_\epsilon
+                       +\left(36+\frac{41}{576}\right)d_{\rm cal}\right\}.
+\]
+Adding the good-set estimate proves the first part of
+\eqref{eq:al-global-projection}, since $23/108+2/9=47/108<1$.
+This step needs neither a maximum bound for $H_\epsilon$ nor a
+Sobolev inequality.
+
+Write $y_r=(I-P)x_r$ and average over independent signs.  Walsh
+orthogonality yields
+$\sum_r\|y_r\|_2^2=2^{-N}\sum_\epsilon\|(I-P)H_\epsilon\|_2^2$,
+proving the second assertion.  Since $\|H_\epsilon\|_2\le\sqrt\kappa$
+and $\|L\|_2=\sqrt\kappa$, \eqref{eq:al-phase-input} implies
+\[
+ \||H_\epsilon|^2-L^2\|_1
+ \le2\sqrt{\frac{\kappa\Delta_\epsilon}{18\pi^2}}.
+\]
+The constant and pairwise sign coefficients of $|H_\epsilon|^2$ are
+$\sum_r|x_r|^2$ and $2\langle x_p,x_q\rangle$, respectively.
+Taking their $L^1$ norms and using the sign average of
+$\sqrt{\Delta_\epsilon}$ at most $\sqrt{\overline\Delta}$ gives
+the corresponding bounds $2\sqrt{\kappa\overline\Delta/(18\pi^2)}$
+and $\sqrt{\kappa\overline\Delta/(18\pi^2)}$.
+The decompositions $x_r=Px_r+y_r$ are orthogonal pointwise.
+Subtract $\sum_r|y_r|^2$ for \eqref{eq:al-phase-mass}, and
+$\langle y_p,y_q\rangle$ for \eqref{eq:al-phase-products}, using
+$\|y_p\|_2\|y_q\|_2\le B_0/2$.
+Finally $\|L-c_*\|_2^2\le41d_{\rm cal}/(2304\pi^2)$, and
+Cauchy--Schwarz applied to $(L-c_*)(L+c_*)$ proves
+\eqref{eq:al-constant-phase-target}.
+\end{proof}
+
+For example, the volume on which $|\alpha_p|,|\alpha_q|\ge h>0$
+is at most $h^{-2}$ times the right side of
+\eqref{eq:al-phase-products}.  These are global mass and overlap
+estimates.  The projection is only measurable: its derivative is never
+taken, and no global unit eigenvector is chosen.  Thus the lemma does
+not assert a common controlled coordinate patch or exclude separated
+phases connected through regions of small measure.
+
+\subsection{The bounded Weyl model has an exact Hodge cancellation}
+
+For a smooth self-dual two-form $\psi$, write $\rho=|\psi|$ and define
+\begin{equation}\label{eq:al-polynomial-model}
+ A_\psi=\frac{\rho^2}{24}I-\frac18\psi\otimes\psi,
+ \qquad B_\psi=\operatorname{div}\mathcal W(A_\psi),
+ \qquad K_\psi=\frac{s}{3}\rho^2-2\langle W^+\psi,\psi\rangle.
+\end{equation}
+The operator is smooth even at zeros of $\psi$.
+
+\begin{lemma}[Exact model identity]\label{lem:al-hodge-cancellation}
+For every smooth self-dual two-form on a closed oriented four-manifold,
+\begin{equation}\label{eq:al-model-identity}
+ \int_M\left\{|\nabla A_\psi|^2-|B_\psi|^2
+       +\frac{s}{2}|A_\psi|^2
+       -6\operatorname{tr}(W^+A_\psi^2)\right\}=0.
+\end{equation}
+This identity is a weighted two-form Hodge identity and imposes no
+additional equation on $\psi$.
+\end{lemma}
+
+\begin{proof}
+The pointwise first-derivative calculation in the stated tensor norms is
+\begin{align}
+ |\nabla A_\psi|^2-|B_\psi|^2
+ &=\frac{\rho^2}{64}(|\nabla\psi|^2-2|d\psi|^2)
+   +\frac{\rho^2}{32}|d\rho|^2
+   -\frac{\rho}{16}\langle\iota_{\nabla\rho}\psi,*d\psi\rangle.
+ \label{eq:al-first-jet}
+\end{align}
+Here is an explicit way to perform the contraction.  At a point where
+$\rho>0$, choose an orthonormal basis $e_a=\omega_a/\sqrt2$ of
+$\Lambda^+$, with
+\[
+ \omega_1=dx^{01}+dx^{23},\quad
+ \omega_2=dx^{02}+dx^{31},\quad
+ \omega_3=dx^{03}+dx^{12},
+\]
+and put $\psi=\rho e_1$ and
+$\nabla_i\psi=a_i e_1+b_i e_2+c_i e_3$.  Thus $a=d\rho$.
+In this basis,
+\[
+ \nabla_iA_\psi=\rho
+ \begin{pmatrix}
+ -a_i/6&-b_i/8&-c_i/8\\
+ -b_i/8&a_i/12&0\\
+ -c_i/8&0&a_i/12
+ \end{pmatrix},\qquad
+ (B_\psi)_{jkl}
+ =\frac12\sum_{i,a,b}(\nabla_iA_\psi)_{ab}
+                         (\omega_a)_{ij}(\omega_b)_{kl}.
+\]
+Use $\sum_{kl}(\omega_a)_{kl}(\omega_b)_{kl}=4\delta_{ab}$,
+$d\psi=\sum_i dx^i\wedge\nabla_i\psi$, and
+$*(\xi\wedge\psi)=\iota_{\xi^\sharp}\psi$.
+Squaring the two displayed expressions and collecting the radial,
+transverse, and mixed terms gives \eqref{eq:al-first-jet}.  In particular
+the same matrix gives
+\begin{equation}\label{eq:al-model-gradient}
+ |\nabla A_\psi|^2
+ =\frac{\rho^2}{32}|\nabla\psi|^2
+  +\frac{\rho^2}{96}|d\rho|^2.
+\end{equation}
+All weighted expressions extend across zeros: $\rho\,d\rho
+=\tfrac12d(\rho^2)$ and $\rho^2|d\rho|^2=|d(\rho^2)|^2/4$.
+
+The eigenvalues of $A_\psi$ are
+$-\rho^2/12,\rho^2/24,\rho^2/24$.  Therefore
+\[
+ |A_\psi|^2=\frac{\rho^4}{96},\qquad
+ \operatorname{tr}(W^+A_\psi^2)
+ =\frac{\rho^2}{192}\langle W^+\psi,\psi\rangle,
+\]
+so the last two terms of \eqref{eq:al-model-identity} equal
+$\rho^2K_\psi/64$.
+
+Finally test
+$\Delta_H\psi=\nabla^*\nabla\psi+(s/3)\psi-2W^+\psi$
+against $w\psi$, where $w=\rho^2$.  Self-duality gives
+\[
+ \langle d\psi,d(w\psi)\rangle
+ +\langle d^*\psi,d^*(w\psi)\rangle
+ =2w|d\psi|^2+2\langle*d\psi,\iota_{\nabla w}\psi\rangle.
+\]
+The rough-Laplacian pairing is
+$w|\nabla\psi|^2+|dw|^2/2$.  Hence
+\begin{equation}\label{eq:al-weighted-hodge}
+ \int\rho^2(|\nabla\psi|^2+K_\psi-2|d\psi|^2)
+ =4\int\rho\langle\iota_{\nabla\rho}\psi,*d\psi\rangle
+  -2\int\rho^2|d\rho|^2.
+\end{equation}
+Substituting this equality into \eqref{eq:al-first-jet} cancels both
+remaining terms and proves \eqref{eq:al-model-identity}.
+\end{proof}
+
+\begin{corollary}[A weakly vanishing divergence can retain energy]
+\label{cor:al-surviving-energy}
+Suppose $(M_j,g_j,\psi_j)$ is a sequence of closed oriented metric
+four-manifolds with smooth self-dual forms, and, in normalized norms,
+\[
+ \sup_j\|\rho_j\|_\infty<\infty,\qquad
+ \rho_j\longrightarrow\sqrt2\text{ in }L^2,\qquad
+ \|d\rho_j\|_2+\|d\psi_j\|_2+\|Z_j\|_2
+       +\|W^+_j-A_{\psi_j}\|_2\longrightarrow0.
+\]
+Then the normalized energies satisfy
+\[
+ \|\nabla\psi_j\|_2^2\longrightarrow2,\quad
+ \frac1{V_j}\int\rho_j^2|\nabla\psi_j|^2\longrightarrow4,
+ \quad \|\nabla A_{\psi_j}\|_2^2\longrightarrow\frac18,
+ \quad \|B_{\psi_j}\|_2^2\longrightarrow\frac1{16},
+\]
+although $\|B_{\psi_j}\|_{H^{-1},\mathrm{av}}\to0$.
+\end{corollary}
+
+\begin{proof}
+Put $R_j=W^+_j-A_{\psi_j}$.  Since
+$A_\psi\psi=-\rho^2\psi/12$,
+\[
+ K_{\psi_j}=(s_j/3)\rho_j^2+\rho_j^4/6
+                   -2\langle R_j\psi_j,\psi_j\rangle.
+\]
+Bounded amplitudes and their normalized $L^2$ convergence imply convergence
+of every finite amplitude moment.  Also $s_j\to-4$ in normalized $L^2$.
+Consequently the mean of $K_{\psi_j}$ tends to $-2$, and the mean of
+$\rho_j^2K_{\psi_j}$ tends to $-4$.  The unweighted Hodge identity gives
+the first limit.  In \eqref{eq:al-weighted-hodge} the two right-hand terms
+tend to zero by Cauchy--Schwarz, giving the second.  Equation
+\eqref{eq:al-model-gradient} then gives $1/8$, and
+\eqref{eq:al-first-jet} gives $1/16$.  No uniform integrability of the
+gradient energy has been used to interchange a weight and a limit.
+Finally
+\[
+ B_{\psi_j}=\operatorname{div}\mathcal W(W^+_j)
+             -\operatorname{div}\mathcal W(R_j),
+\]
+and integration by parts, together with
+\eqref{eq:al-unmultiplied-source}, bounds its negative norm by
+$c(\|Z_j\|_{2,\mathrm{av}}+\|R_j\|_{2,\mathrm{av}})$.
+\end{proof}
+
+This is a conditional implication, not the construction of such a
+sequence.  It identifies the information lost by replacing a weak Bianchi
+source with a small $L^2$ quantity.  The covariant Hessian self-test of
+Section~\ref{sec:intrinsic-calibration} supplies information beyond these
+first-order identities.
+
+\subsection{The single-chirality symbol and controlled-chart transfer}
+
+\begin{lemma}[The Weyl-half divergence symbol]\label{lem:al-symbol}
+In oriented Euclidean four-space let
+\[
+ \mathcal W(A)_{ijkl}
+ =\frac12\sum_{a,b}A_{ab}(\omega_a)_{ij}(\omega_b)_{kl},
+ \qquad DA=\partial^i\mathcal W(A)_{ijkl},
+\]
+using the forms $\omega_a$ in the proof of
+Lemma~\ref{lem:al-hodge-cancellation}.  For every covector $\xi$,
+\begin{equation}\label{eq:al-symbol}
+ |\sigma_D(\xi)A|^2=|\xi|^2|A|^2.
+\end{equation}
+On the constant-spectrum orbit $\mathscr O_0$, the complete covariant
+first jet satisfies
+\begin{equation}\label{eq:al-orbit-jet}
+ \frac12|\nabla A|^2
+ \le|\operatorname{div}\mathcal W(A)|^2
+ \le\frac32|\nabla A|^2.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+By orthogonal covariance it suffices to take $\xi=dx^0$.  The vectors
+$((\omega_a)_{0j})_j$ are orthonormal, whereas the squared tensor inner
+products of the $\omega_b$ are $4\delta_{bd}$.  Contraction in the formula
+for $\mathcal W$ gives \eqref{eq:al-symbol}.
+
+At a diagonal point of the orbit, each derivative has the form
+\[
+ H_i=\begin{pmatrix}0&u_i&v_i\\u_i&0&0\\v_i&0&0\end{pmatrix}.
+\]
+The divergence tensor is
+\[
+ \frac12\left\{
+ (\iota_u\omega_1)\otimes\omega_2
+ +(\iota_v\omega_1)\otimes\omega_3
+ +(\iota_u\omega_2+\iota_v\omega_3)\otimes\omega_1\right\}.
+\]
+Its squared norm is
+$2(|u|^2+|v|^2)+2\langle\iota_u\omega_2,\iota_v\omega_3\rangle$.
+Each map $u\mapsto\iota_u\omega_a$ is an isometry.  Bounding the cross
+term by $|u||v|$ places this expression between
+$|u|^2+|v|^2$ and $3(|u|^2+|v|^2)$.  Since
+$\sum_i|H_i|^2=2(|u|^2+|v|^2)$, this proves
+\eqref{eq:al-orbit-jet}.
+\end{proof}
+
+For example, on a flat torus Fourier transformation gives the exact
+identity $\|A-\overline A\|_2^2=\|DA\|_{\dot H^{-1}}^2$, omitting the
+zero Fourier mode.  Nevertheless, if $W^+=A+R$, a small $L^2$ norm of
+$R$ controls its divergence only weakly.  Expressing that divergence in a
+varying eigenframe introduces precisely a product of the type in
+Proposition~\ref{prop:al-commutator}.
+
+\begin{proposition}[Strong curvature transfer on controlled charts]
+\label{prop:al-chart-transfer}
+Let $U$ be a fixed coordinate ball and let $g_j$ be smooth metrics,
+uniformly elliptic and bounded in $C^{1,\alpha}(U)$ for some $\alpha>0$.
+Suppose $g_j\to g_\infty$ in $C^1(U)$ and
+\[
+ \|\Ric(g_j)+g_j\|_{L^2(U)}\longrightarrow0.
+\]
+After the algebraic metric-dependent identifications of the two self-dual
+bundles, $W^+(g_j)$ converges strongly in $L^2(U')$ for every $U'\Subset U$.
+The limit metric is a smooth negative Einstein metric in its harmonic
+coordinates.  A separate $L^2$ curvature bound is unnecessary.
+\end{proposition}
+
+\begin{proof}
+All norms in this proof are fixed coordinate norms; uniform ellipticity
+makes them equivalent to the metric norms.  In algebraically selected
+orthonormal frames the divergence operator is
+$D_j=P_j^a\partial_a+Q_j$, with $P_j\to P_\infty$ in $C^1$ and
+$Q_j\to Q_\infty$ uniformly.  Integration by parts gives, on fixed
+interior supports,
+\begin{equation}\label{eq:al-operator-convergence}
+ \|(D_j-D_\infty)u\|_{H^{-1}}=o(1)\|u\|_2,
+ \qquad \|D_jW^+(g_j)\|_{H^{-1}}
+       \le C\|\Ric(g_j)+g_j\|_2.
+\end{equation}
+The second estimate is \eqref{eq:al-cotton} integrated against an $H^1_0$
+test tensor.  The derivatives of the volume density and tensor
+coefficients are bounded by the assumed coordinate control.
+
+The injective symbol in \eqref{eq:al-symbol} gives the negative-order
+interior estimate
+\begin{equation}\label{eq:al-negative-elliptic}
+ \|u\|_2\le C\bigl(\|D_\infty u\|_{H^{-1}}
+                           +\|u\|_{H^{-1}}\bigr)
+\end{equation}
+for fields supported in a fixed compact subset of $U$.  For constant
+coefficients this follows by Fourier transformation; the second term
+accounts for low frequencies.  To obtain the variable-coefficient
+estimate, use finitely many small coordinate balls and freeze the
+principal coefficients.  Writing
+$(P(x)-P(x_0))\partial u
+=\partial((P(x)-P(x_0))u)-\partial P(x)u$,
+the first term costs at most the oscillation of $P$ times $\|u\|_2$.
+The remaining zeroth-order maps from $L^2$ to $H^{-1}$ are compact,
+including the localization commutators.  Each satisfies
+\[
+ \|Ku\|_{H^{-1}}\le\eta\|u\|_2+C_\eta\|u\|_{H^{-1}}.
+\]
+Indeed a contrary normalized sequence would converge weakly to zero
+in $L^2$ and strongly to zero in $H^{-1}$, while its compact image did
+not converge to zero.  Absorb both the coefficient oscillation and these
+$\eta$ terms to prove \eqref{eq:al-negative-elliptic}.
+
+Set $A_j=W^+(g_j)$.  The curvature formula
+$\partial\Gamma_j+\Gamma_j*\Gamma_j$ and $C^1$ convergence of the
+metrics show first that $A_j$ converges strongly in $H^{-1}$ locally,
+to a distribution $A_\infty$.  Contraction coefficients and the frame
+identifications converge in $C^1$, so multiplication by them is continuous
+on $H^{-1}$.  This argument does not presuppose an $L^2$ curvature bound.
+For an interior cutoff $\chi$,
+\[
+ D_\infty(\chi A_j)
+ =(D_\infty-D_j)(\chi A_j)+\chi D_jA_j+[D_j,\chi]A_j.
+\]
+Apply \eqref{eq:al-negative-elliptic}.  The first term is
+$o(1)\|\chi A_j\|_2$ and is absorbed.  The second tends to zero by
+\eqref{eq:al-operator-convergence}.  The commutator is multiplication by
+$P_j^a\partial_a\chi$, bounded in $C^1$, so its negative norm is bounded
+by the already established local $H^{-1}$ control of curvature.
+Thus $\|\chi A_j\|_2$ is uniformly bounded.  Repeat the estimate on
+$\chi(A_j-A_k)$.  Operator differences now tend to zero using this
+$L^2$ bound; the sources tend to zero; and the commutators converge in
+$H^{-1}$ using the $C^1$ convergence of their coefficients.  The sequence
+is therefore Cauchy in $L^2$ on the region where $\chi=1$.
+
+Distributional convergence identifies the limit with $W^+(g_\infty)$
+and gives $\Ric(g_\infty)=-g_\infty$.  The $C^{1,\alpha}$ bound passes
+to the limit.  Construct harmonic coordinates for this limit metric on
+a smaller ball by solving its scalar Dirichlet problems.  Shrinking the
+ball gives an invertible coordinate differential.  In those coordinates
+the weak Ricci equation is a uniformly elliptic system, with principal
+part $-\tfrac12g_\infty^{ab}\partial_a\partial_b g_\infty$ and lower-order
+terms quadratic in first derivatives.  The divergence formulation first
+gives interior $W^{2,p}$ regularity, and Schauder estimates then bootstrap
+to smoothness.  Only the limit is put in harmonic coordinates; a common
+harmonic gauge for all $g_j$ was not assumed.
+\end{proof}
+
+\subsection{A geometric gap under bounded full curvature}
+
+\begin{theorem}[A collapse-tolerant bounded-curvature gap]
+\label{thm:al-bounded-curvature-gap}
+For every finite $K\ge0$ there is $c(K)>0$ such that every closed oriented
+smooth four-manifold with $|\Rm|\le K$ satisfies
+\begin{equation}\label{eq:al-bounded-curvature-gap}
+ \frac1V\int_M\left(|\Ric+g|^2+
+                     \operatorname{dist}(W^+,\mathscr O_0)^2\right)
+ \ge c(K).
+\end{equation}
+No volume, diameter, injectivity-radius, Cotton, or Ricci-derivative bound
+is imposed.  In particular, if
+$\delta=\|g^{-1}\Ric+I\|_{\infty,\mathrm{op}}$, then
+$\delta^2+V^{-1}\int\operatorname{dist}(W^+,\mathscr O_0)^2\ge c(K)/4$.
+\end{theorem}
+
+\begin{proof}
+Choose $\rho=1/(100\sqrt{1+K})$.  The exponential map at any point $p$
+has no conjugate points on the tangent ball of radius $\rho$.  On this
+ball its pullback metric $h$ satisfies
+$Q^{-1}I\le h\le QI$, with a universal $Q$, by Rauch comparison.
+The map need not be injective into $M$.  In the source, however,
+Gauss's lemma gives $d_h(0,v)=|v|$.  Every sufficiently small interior
+source ball satisfies
+\[
+ \Vol_h B_t(x)\ge Q^{-4}\omega_4t^4,
+\]
+because it contains the Euclidean ball of radius $t/\sqrt Q$ and the
+volume density is at least $Q^{-2}$.  Together with the curvature bound
+on a buffered larger ball, the interior bounded-geometry harmonic-radius
+estimate used in Section~\ref{sec:early-local-rigidity} supplies uniform
+$C^{1,\alpha}$ harmonic charts on a smaller fixed ball.  This application
+uses source noncollapse and the buffer, not injectivity radius on $M$.
+
+Fix $s>0$ sufficiently smaller than $\rho$, so that the closed source
+$3s$-ball lies in this development.  The buffered local-isometry transfer
+lemma of Section~\ref{sec:early-local-rigidity} states, for $H\ge0$,
+\begin{equation}\label{eq:al-buffer-transfer}
+ \frac1{\Vol_hB_s(0)}\int_{B_s(0)}\exp_p^*H
+ \le\frac{\Vol_h B_{3s}(0)}{\Vol_h B_s(0)}
+       \frac1{\Vol_g B_s(p)}\int_{B_s(p)}H.
+\end{equation}
+Its multiplicity argument compares preimages by lifting paths of length
+less than $2s$ inside the compact buffer; it assumes neither a covering
+map nor a uniform multiplicity bound.  The source volume ratio is bounded
+by $3^4Q^8$.
+
+If the theorem were false, choose a sequence with the left side of
+\eqref{eq:al-bounded-curvature-gap} tending to zero, and denote its
+nonnegative integrand by $H_j$.  Ricci has a uniform lower bound.
+Bishop--Gromov comparison and Fubini yield
+\[
+ \int_M\left(\frac1{\Vol B_s(p)}\int_{B_s(p)}H_j\right)d\mu(p)
+ \le D(K,s)\int_M H_j.
+\]
+Indeed, if $q\in B_s(p)$, then $B_s(q)\subset B_{2s}(p)$, whose volume
+is at most $D(K,s)\Vol B_s(p)$; exchange the two integrations.
+Choose a center with ball average at most $D(K,s)$ times the global
+average.  Equation \eqref{eq:al-buffer-transfer} transfers its vanishing
+average to the fixed, noncollapsed source ball.  On a smaller fixed
+harmonic chart the metrics have a $C^1$ convergent subsequence and
+$\|\Ric+g\|_2\to0$.  Proposition~\ref{prop:al-chart-transfer} gives
+strong $L^2$ Weyl convergence and a smooth negative Einstein limit.
+Distance to a fixed closed orbit is Lipschitz, so the limit takes values
+in $\mathscr O_0$ on a nonempty open set.
+
+An Einstein Weyl tensor has zero divergence.  Inequality
+\eqref{eq:al-orbit-jet} makes this constant-spectrum Weyl tensor parallel.
+Writing it as $I/12-(n\otimes n)/4$ shows that its simple eigenline is
+parallel.  On a smaller simply connected patch its unit self-dual section
+therefore defines a parallel complex structure.  The metric is locally
+K\"ahler and must satisfy $|W^+|^2=s^2/24=2/3$, whereas the prescribed
+orbit has squared norm $1/24$.  This contradiction proves the theorem.
+The final assertion follows from $|\Ric+g|^2\le4\delta^2$.
+\end{proof}
+
+For clarity, the scalar--spectral density directly controls the distance
+used in this theorem when $s\le-3$.  Put
+$u=|W^+|$, $\alpha=\sqrt{2/3}\,u$, $\zeta=\lambda_{\min}(W^+)+\alpha$,
+and $t=s+8\sqrt6u$.  Then $0\le\zeta\le\alpha$ and
+\[
+ \operatorname{dist}(W^+,\mathscr O_0)^2
+ =\left(u-\frac1{2\sqrt6}\right)^2+\frac\zeta2
+ \le\frac{t^2+(s+4)^2}{192}+\frac G{16}.
+\]
+The equality follows by projecting onto the lowest eigenline.  For the
+last inequality use $t-(s+4)=8\sqrt6u-4$ and
+$G=4\zeta(-2s/3+2\alpha-\zeta)\ge8\zeta$.
+Consequently $|\Ric+g|^2+\operatorname{dist}(W^+,\mathscr O_0)^2
+\le\mathscr D$.  The actual monopole density estimate proved in
+Section~\ref{sec:early-local-rigidity},
+$V^{-1}\int\mathscr D\le436\delta^2+675d$, therefore gives
+\[
+ \delta^2+d\ge\frac{c(K)}{675}
+\]
+under its specified monopole and topology hypotheses, with
+$d=(T/A-2/3)_+$ and $\delta\le1/4$.
+
+There is also a localized consequence.  If $\delta_j\to0$ and
+$V_j^{-1}\int\operatorname{dist}(W_j^+,\mathscr O_0)^2\to0$, then for
+every fixed $K,R>0$,
+\begin{equation}\label{eq:al-localized-degeneration}
+ \frac{\Vol\{p:\sup_{B_R(p)}|\Rm_{g_j}|\le K\}}{V_j}
+ \longrightarrow0.
+\end{equation}
+Otherwise a positive volume proportion of such centers remains.  Choose
+the development radius above also less than $R/4$.  Fubini restricted to
+that set selects a center with vanishing calibration average, at the cost
+of the reciprocal of its positive volume fraction.  The same buffered
+development and limiting argument give a contradiction.  Statement
+\eqref{eq:al-localized-degeneration} concerns fixed-radius neighborhoods
+of concentration, not pointwise blowup at every center.  None of these
+controlled-geometry arguments replaces the intrinsic Hessian estimate
+when such charts and curvature bounds are unavailable.

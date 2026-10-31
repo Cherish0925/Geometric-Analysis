@@ -1,0 +1,24 @@
+{
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "compile": {
+    "ok": true,
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\"caption\":\"\",\"data\":\"'QiushiPerp.qiushi_minus_riccati' depends on axioms: [propext, Classical.choice, Quot.sound]\",\"endPos\":{\"column\":6,\"line\":42},\"fileName\":\"/qiushi-env/tmp/qiushi-yau26-lean-rb6edr9t/Audit.lean\",\"isSilent\":false,\"keepFullRange\":false,\"kind\":\"[anonymous]\",\"pos\":{\"column\":0,\"line\":42},\"severity\":\"information\"}\n"
+  },
+  "declaration": "QiushiPerp.qiushi_minus_riccati",
+  "observed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "rejected_axioms": [],
+  "scope": "named Lean theorem only; mathematical statement correspondence and imported artifact trust remain separate",
+  "source_sha256": "5351cc631e3ab94215929abd217fbe85ce10cf9ef861fe91aa81f6ec30c2bce4",
+  "status": "dependency_checked",
+  "verification": "fresh_process_compilation_and_transitive_axiom_policy"
+}

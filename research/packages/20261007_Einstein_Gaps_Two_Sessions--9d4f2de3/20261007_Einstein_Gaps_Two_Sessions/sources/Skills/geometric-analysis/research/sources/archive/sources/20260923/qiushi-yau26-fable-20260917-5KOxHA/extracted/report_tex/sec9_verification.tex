@@ -1,0 +1,50 @@
+\section{核验记录与勘误建议}\label{sec:verification}
+
+\subsection{范围与方法}
+输入：\path{qiushi-engine-yau26.zip}，其 SHA-256 为
+\begin{center}\texttt{\small f28ebf9e2f7e0fd450fbefd7346644d054ed58dcef5f82222509f45a1a4d4c44}\end{center}
+通读了研究总论、研究地图与六篇研究稿的主体；两份计算附录（约 10\,MB）只按需检索。核验分三层：（1）运行随包程序 \path{scripts/reproduce.py}，五组检查（\texttt{uniform\_gap}、\texttt{weyl10}、\texttt{ed\_ricci}、\texttt{cz\_spike}、\texttt{four\_node}）全部通过；（2）本报告作者从定义出发另写的符号与高精度数值程序（不调用随包代码）；（3）四个相互独立的审稿式核查（统一间隙稿、曲面丛一章、七项定量障碍命题、文献陈述），每个核查都逐式重推并另写程序；（4）对本报告自身新增论断的一次对抗式终审（\path{final_review/}），其指出的措辞过强之处（SW 边界带、monopole 类的表述、SW 窗口推论的适用范围、不可定向底面）均已在正文中更正。
+
+\subsection{独立计算及结果}
+\begin{longtable}{L{0.22\textwidth}L{0.48\textwidth}L{0.22\textwidth}}
+\toprule 程序 & 内容 & 结果\\\midrule\endhead
+\path{v1_core.py} & 一般双轴 Bianchi IX 度量的 Ricci 张量（坐标 Christoffel 符号，符号计算）；标架对角性 & 残差恒为 $0$\\
+\path{v1b_family.py} & $q_\Lambda$ 族满足 $\Ric=\Lambda q_\Lambda$（用 ODE 消元） & 三个特征值 $-\Lambda\equiv0$\\
+\path{v1c_htilde.py} & $\partial_\Lambda G|_0$、规范场 $V$、$\tilde h$ 的三个分量与渐近式 $H_*$ & 与引理~\ref{lem:core}逐项相等\\
+\path{v2_logidentity.py} & 式~\eqref{eq:logid}，$d=4,5$，随机代数 Weyl 张量、任意 $\eta$ & 残差恒为 $0$\\
+\path{v3b_football.py} & $S^4/\Z_2$ 及负曲率局部模型上 $g_a$ 的精确 Ricci 特征值，$a=10^{-8},\dots,10^{-128}$，精度 $3\,\mathrm{ex}+60$ 位 & $L\delta\to0.33334$（表~\ref{tab:football}；$a=10^{-128}$ 时 $\delta=0.0046554$）\\
+\path{v4_tail.py} & 尾部 $dr^2+e^{2r}(dz^2+e^{v}dx^2+e^{-v}dy^2)$ 的全部 Ricci 缺陷分量 & 与资料包式 \texttt{eq:explicit-tail} 相等\\
+\path{audit_bundle/*.py} & 曲面丛 (C1)--(C4)：完整 Ricci 矩阵（两条路线）、双领圈首系数、线性化算子、两个标量 PDE 的数值解、共形恒等式 & 全部吻合；$L\sup\|\Phi\|\to0.985$；$\sup|\Phi(G_\varepsilon)|/\varepsilon^2=0.02053\approx2/\pi^4$\\
+\path{audit_obstructions/*.py} & HT、SW 窗口、BCG 阈值、$W$ 与截面曲率不等式、Gaussian Ricci 公式、螺旋标架 ODE、OT 定理的 Bochner 恒等式与热核积分 & 全部吻合；$\epsilon_*=0.2462498$\\
+\bottomrule
+\end{longtable}
+
+\subsection{审稿结论}
+\begin{longtable}{L{0.34\textwidth}L{0.58\textwidth}}
+\toprule 对象 & 结论\\\midrule\endhead
+统一间隙稿：\texttt{thm:exact}、\texttt{thm:local}、\texttt{thm:proportion}/\texttt{cor:diam}、\texttt{prop:conditional} & 未发现实质缺口。校准恒等式与常数 $109,436,675,42$ 均复核；LeBrun 的负部形式 $\int(\frac23s+2w)_-^2\ge32\pi^2(a^+)^2$ 确为其 Theorem 2.3 证明中的不等式；Cheeger--Tian 无体积下界的 $\varepsilon$-正则性按缩放正确使用；重数传输引理的路径提升论证正确。条件命题的证明为梗概，(SC) 未证（原稿已明示）。\\
+曲面丛一章 (C1)--(C4) & 未发现错误。(C1)、(C2) 完全验证；(C3)、(C4) 的全部代数与数值成分验证，所依赖的标准椭圆估计为断言式陈述；一处外部引理（Rupflin--Topping）未能取得原文核对。$e_-(E_D)=0$ 无条件成立。\\
+七项定量命题（HT、SW 窗口、BCG、图流形预算、Gaussian 公式与中心收缩、螺旋标架、OT 定理） & 全部正确；需小修处见下。\\
+log-Weyl 定理 \texttt{thm:A1} & 正确；本报告第~\ref{sec:logweyl}节给出自足证明并以独立数值确认首项常数。\\
+\bottomrule
+\end{longtable}
+
+\subsection{勘误与修订建议（供成文时采用）}
+\begin{enumerate}
+\item 基础篇 \texttt{prop:gap} 的阈值 $1/(1+\sqrt3)$ 有效但非最优；应与长稿 \texttt{FND:HT} 的端点 $1/2$ 统一（见命题~\ref{prop:HT}）。
+\item 统一间隙稿：定义“monopole 类”与 $W^+$ 在 $\Lambda^+$ 上的作用约定；注明谱估计是 LeBrun Theorem 2.3 证明中的中间不等式；写明 Cheeger--Tian 定理的缩放（$\Ric=-g$ 到 $|\lambda|\le3$ 规范）；为展开球上的调和半径界补引文（Jost--Karcher/Anderson）；Cheeger--Naber 的式号 (7.12)--(7.14) 未能核对，建议改引其 Definition 2.9 后的注记；“极限已经 Einstein”应改为“极限满足 $\Ric=-h_\infty$”；$s,\delta,p,\eta,A,D$ 等记号重载需清理。
+\item 长稿曲面丛一章：双领圈结论的“充分小 $\varepsilon$”实际约为 $\varepsilon\lesssim10^{-3}$（截断带常数约 $14$），宜写明；\texttt{BUN:JQ} 存在前向引用；$u,Q,D,K,a,L$ 记号重载。
+\item 全局篇：第 78 行“曲率算子范数”与 Ricci 的 $\|\cdot\|_{\op}$ 冲突，应写 Hilbert--Schmidt（$\|W\|_\infty\ge(1-3\delta)/\sqrt3$ 对谱范数不成立）；Preissmann 步骤需一行引文（$\Z^3$ 边群单射）；\texttt{thm:OT} 的热核部分应引 Bakry--Gentil--Ledoux 或 Erbar--Kuwada--Sturm，并可删去“质量为一”的假设；$\chi_N=2,4,10$ 仅为数值示例。
+\item 长稿 \texttt{FND:SWgap}：应显式写出“$\mathcal E\mapsto\mathcal E/(4\pi^2T+\mathcal E/2)$ 在 $T>0$ 时单调”这一步（这是 $K<c$ 的唯一用处）；“$\delta<1/2$”可放宽。
+\item Cai--Galloway 定理的衰减条件是对 Ricci 张量（$\Ric=-ng+o(r^2)$）而非数量曲率；$dr^2+\cosh^2r\,g_{T^3}$ 是 $O(r^2)$ 而非 $o(r^2)$ 的例子，与该定理不矛盾。
+\item 构造篇引用 Ozuch 的球面商问题时，建议同时引其 2021 年报告幻灯片中明确的表述（“Open question: With $\|\Ric(g_t)-3g_t\|_{L^\infty(g_t)}\to0$?”）；论文正文 \S7.3 的原文本次未能取得。
+\end{enumerate}
+
+\subsection{文献核对的边界}
+未能核对：Yau 1982 年原书第 26 题的逐字文本；Ozuch（G\&T 2022）\S7.3 的正文；Rupflin--Topping 引理的编号。经检索得到但本报告未读原文的新文献：Li--Liu（\cite{LiLiu}，报道 $(0,\infty)\times T^3$ 上一端 Poincaré--Einstein、另一端 AH 尖点的完备反自对偶 Einstein 度量，共形无穷远为 Yamabe 负）；它与问题 W 相关（说明 Yamabe 负环面无穷远的 Einstein 填充确实存在），但不给出两端外扩的解。检索未发现任何给出 $L^\infty$ 夹逼解消或“对数 Weyl 插值”的已有工作。
+
+\subsection{关于问题 W 的一次探索性数值试验（无结论）}
+本次另写了 $T^2$ 对称、Gaussian 规范下的 Einstein 演化程序（\path{wormhole/evolve.py}：$\partial_rq=2qS$，$\partial_rS=q^{-1}\Ric(q)+3I-(\tr S)S$，$z$ 方向 Fourier 拟谱；三维 Ricci 例程通过对角公式与剪切不变性单元测试，误差 $10^{-13}$），并构造了带扭转荷的时间对称喉部初值（Hamilton 约束化为 Ermakov--Pinney 型周期方程，存在性要求 Hill 算子 $-\partial_s^2+\frac94-\frac3{16}v_s^2$ 的最低特征值为负，这与 $\langle e\rangle\ge12$ 一致）。在精确双曲尖点的“波纹切片”上验证表明：约束破坏按最高保留模的速率 $e^{kr/\ell}$ 增长（椭圆 Cauchy 问题不适定），低模截断虽可积分到 $r=6$ 但约束误差为 $O(1)$。因此打靶法不能区分真实奇性与数值失稳，\emph{不支持任何关于问题 W 的结论}；这也解释了资料包中全矩阵试验停滞的原因。建议的替代表述见第~\ref{sec:open}节。
+
+\subsection{产物清单与 SHA-256}
+\input{hashes}

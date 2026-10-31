@@ -1,0 +1,360 @@
+# Harmonic Chern representatives at the realizable Einstein calibration
+
+23 September 2026. This application starts with a metric and an actual
+conformally solvable Spin\(^c\) structure. No auxiliary form, scalar
+band, spectral gap, or second-order budget is assumed. Its conclusion
+is not another Einstein obstruction: the specified harmonic Chern
+representative is quantitatively close to a bounded almost-parallel
+form and to low connection-Laplacian modes.
+
+## 1. Raw hypotheses and statement
+
+Let \((M,g)\) be a closed connected oriented smooth four-manifold,
+normalized relative to the target \(\operatorname{Ric}=-g\).
+Fix a Spin\(^c\) structure with real first Chern class \(a\), whose
+unperturbed Seiberg–Witten equations are solvable for every metric in
+\([g]\). The structure may depend on \(g\), but remains fixed when
+the conformal weight varies. Write
+\[
+ V=\operatorname{Vol}(g),\quad p=(a_g^+)^2>0,\quad
+ r=\fint|\operatorname{Ric}+g|^2,\quad b=\frac{(-a^2)_+}{V},
+ \quad w=\sqrt6|W^+|,
+\]
+\[
+ \delta=\frac32\int(s^2+2w^2)-72\pi^2p\ge0,
+ \qquad \kappa=r+\delta/V.
+ \tag{1}
+\]
+Ricci uses tensor norms, forms use exterior-algebra norms, and Weyl
+operators use Hilbert–Schmidt norms. The deficit equals
+\(144\pi^2D_{\rm LB}\), or the parameter \(\beta=2\) in
+`line1_functional_pencil.md`. Assume \(\kappa\le1/2880\).
+
+Let \(H\) be the harmonic self-dual representative of \(a_g^+\),
+with \(\|H\|_2^2=p\), and set \(\zeta=-2\pi H\).
+Our curvature convention is
+\(\operatorname{proj}_{\mathcal H^+}(iF_A^+)=2\pi H\).
+Put \(G(\kappa)=13\kappa+4\sqrt{2\kappa}\).
+
+**Theorem.** For each \(0<\eta\le1/4\), there is a smooth actual
+weighted-monopole form \(\omega\in\Omega^+(M)\) such that
+\[
+ \|\omega\|_\infty\le2\sqrt3,
+ \qquad \boxed{\fint|\omega-\zeta|^2\le49\kappa+\eta,}
+ \tag{2}
+\]
+\[
+ \boxed{\fint|\nabla\omega|^2\le G(\kappa)+\eta,\qquad
+ \fint|d\omega|^2\le\frac{13}{2}\kappa+\eta.}
+ \tag{3}
+\]
+Define
+\[
+ A_{\omega,1/2}=\frac12
+       \left(\frac{|\omega|^2}{3}I-\omega\otimes\omega\right),
+\]
+\[
+ d_\omega=\fint\left(|\operatorname{Ric}+g|^2
+       +|W^+-A_{\omega,1/2}|^2+(|\omega|^2-2)^2\right),
+ \quad B_\omega=\fint|\Delta_H\omega|^2.
+\]
+The same smooth form satisfies, with universal constants,
+\[
+ d_\omega\le720\kappa+\eta,\qquad
+ B_\omega\le C(1+\kappa+b),\qquad
+ (1+B_\omega)d_\omega\le C(1+\kappa+b)(\kappa+\eta).
+ \tag{4}
+\]
+Here \(d\omega\) is exterior differentiation and \(\Delta_H\)
+is the nonnegative Hodge Laplacian. The first-order conclusions
+(2)–(3) do not depend on \(b\); that cost enters only (4).
+
+Let \(\mathscr L=\nabla^*\nabla\) on \(\Lambda^+\), let
+\(\mu_0\ge0\) be its bottom eigenvalue, including zero, and let
+\(\Pi_{\le\Lambda}\) project onto eigenvalues at most \(\Lambda>0\).
+Then the input harmonic representative satisfies
+\[
+ \boxed{
+ \mu_0\le\frac{G(\kappa)}{2-\sqrt{720\kappa}},\qquad
+ \fint|(I-\Pi_{\le\Lambda})\zeta|^2
+       \le98\kappa+\frac{2G(\kappa)}{\Lambda}.}
+ \tag{5}
+\]
+No scalar or Hodge spectral gap, scalar-curvature sign, noncollapse,
+Sobolev constant, or full-curvature bound is used. In particular (2)
+does not follow from small exterior derivative via a uniform Hodge
+inverse; its harmonic class comes from the actual curvature equation.
+
+## 2. Producing the bounded form and its zeroth-order budget
+
+Put \(q=-s+w\), \(e=s+4\), \(z=s+2w\), and
+\(q_\pm=\max(\pm q,0)\). The signed monopole estimate gives
+\(\Delta_+:=\int q_+^2-72\pi^2p\ge0\). Completing the square,
+\[
+ \delta=\Delta_++\int q_-^2+\tfrac12\int z^2,
+ \qquad q-6=(z-3e)/2,\quad w-2=(z-e)/2.
+ \tag{6}
+\]
+Since \(e^2\le4|\operatorname{Ric}+g|^2\),
+\[
+ \fint(q-6)^2\le\delta/V+18r\le18\kappa,
+ \qquad \fint(w-2)^2\le\delta/V+2r\le2\kappa.
+ \tag{7}
+\]
+Set \(Q=\max(q,3)\) and
+\(f_0=\max\{\sqrt Q,(-s)_+/4\}\). Choose smooth majorants
+\(f_j\ge f_0\) converging uniformly to \(f_0\). Conformal
+solvability supplies
+\[
+ D_A\Phi=0,\quad -iF_A^+=f_j\sigma(\Phi),\quad
+ \psi=2\sqrt2\sigma(\Phi),\quad
+ \rho=|\Phi|^2=|\psi|,\quad u=3\rho/2,
+ \quad \omega=\sqrt3\psi/2.
+ \tag{8}
+\]
+With \(|\sigma(\Phi)|^2=|\Phi|^4/8\), the maximum principle
+gives \(\rho\le4\) and \(u\le6\).
+
+We record the moment inputs, including their truncation cost. Write
+\[
+ \begin{split}
+ D_0={}&2\int|d\rho|^2
+ +\int(4\rho|\nabla_A\Phi|^2-|\nabla\psi|^2)\\
+ &+2\int|d\psi|^2+2\int E_\lambda,\qquad
+ E_\lambda=\langle W^+\psi,\psi\rangle+w\rho^2/3\ge0.
+ \end{split}
+\]
+All its summands are nonnegative, and
+\(27D_0/8=\int(qu^2-f_ju^3)\). For
+\(C=\int Qu^2\), \(Z=\int\sqrt Q\,u^3\),
+\(E_Q=\int Q^2\), and \(C_{\rm act}=\int f_j^2u^2\),
+\[
+ C-Z\ge27D_0/8,\quad C\le E_Q^{1/3}Z^{2/3},\quad
+ C_{\rm act}\ge72\pi^2p,\quad
+ C_{\rm act}-C\le\tfrac{81}{4}\int e^2+o(1).
+\]
+The last estimate uses
+\(Q^2-q_+^2\le9e^2\) and \(f_0^2-Q\le9e^2/16\).
+Consequently, with
+\(S=\Delta_++117\int e^2/4\le117\kappa V\),
+\[
+ D_0\le4S/27+o(1),\quad
+ \int Q(u-\sqrt Q)^2\le S+o(1),\quad
+ 0\le C_{\rm act}-72\pi^2p\le S+o(1).
+ \tag{9}
+\]
+These are the truncated Hölder moment estimates proved in the
+functional-pencil note, Section 3, and Round 4, Section 4. All errors
+here concern weight approximation on a fixed \((g,a)\); no limiting
+spinor or common smoothing rate for a family is assumed.
+
+The explicit zeroth-order bound follows without an eigenline choice:
+\[
+ \fint(u^2-6)^2
+ \le[234(1+2\sqrt3)^2+36]\kappa+o(1)
+ \le4800\kappa+o(1),
+ \tag{10}
+\]
+because \(|u^2-Q|\le(1+2\sqrt3)\sqrt Q|u-\sqrt Q|\), and
+clipping does not increase distance from six. Since
+\(|\omega|^2=u^2/3\), its amplitude error is at most
+\(4800\kappa/9+o(1)\). The exact trace-free matrix identity is
+\[
+ |W^+-A_{\omega,1/2}|^2
+ =\tfrac16(w-u^2/3)^2+\tfrac34 E_\lambda.
+ \tag{11}
+\]
+By (7), (9), and \(\int E_\lambda\le2S/27+o(1)\), its
+normalized integral is at most
+\((2/3+4800/27+13/2)\kappa+o(1)\). Adding amplitude and Ricci
+errors gives \(d_\omega\le720\kappa+o(1)\).
+
+## 3. Differential and harmonic information
+
+The self-dual Weitzenböck formula and (9) give directly
+\[
+ \begin{split}
+ \int|\nabla\psi|^2
+ &=2\int|d\psi|^2+2\int E_\lambda-\tfrac13\int z\rho^2\\
+ &\le4S/27+(16/3)\sqrt{V\int z^2}+o(1).
+ \end{split}
+ \tag{12}
+\]
+Multiplying by \(3/4\) proves (3). This controls the full covariant
+derivative, without a Hessian estimate or Chern-square budget.
+
+The actual curvature has harmonic projection
+\(\operatorname{proj}_{\mathcal H^+}(f_j\psi)=-4\sqrt2\pi H\).
+Thus
+\[
+ \|f_j\psi+4\sqrt2\pi H\|_2^2
+ =\tfrac49(C_{\rm act}-72\pi^2p)\le4S/9+o(1).
+ \tag{13}
+\]
+Moreover \((f_0-\sqrt Q)^2\le f_0^2-Q\), so
+\[
+ \fint|f_j-\sqrt6|^2
+ \le\tfrac92r+
+ \frac{2(\delta/V+18r)}{(\sqrt3+\sqrt6)^2}+o(1)
+ \le9\kappa+o(1).
+ \tag{14}
+\]
+Use the identity
+\[
+ 2\sqrt2(\omega+2\pi H)
+ =(\sqrt6-f_j)\psi+(f_j\psi+4\sqrt2\pi H)
+\]
+and \(|\psi|\le4\). The squared triangle inequality gives
+\[
+ \fint|\omega+2\pi H|^2
+ \le4\fint|f_j-\sqrt6|^2+S/(9V)+o(1)
+ \le49\kappa+o(1),
+ \tag{15}
+\]
+which identifies the prescribed harmonic Chern representative.
+
+## 4. Second-order budget and smoothing
+
+Equations (6)–(7) bound the normalized squared integrals of
+\(\operatorname{Ric},s,W^+\) by \(C(1+\kappa)\), and the cutoff
+bounds \(\fint f_j^2\le C(1+\kappa)+o(1)\). Hence
+\[
+ \int|F_A|^2=2\int|F_A^+|^2-4\pi^2a^2
+ \le CV(1+\kappa+b)+o(1).
+\]
+The positive-spinor connection curvature is controlled by
+\(W^+,s,\operatorname{Ric}^{\circ},F_A\); \(W^-\) does not act
+on this representation. Apply the inherited bounded-section estimate
+\[
+ \|\nabla^2v\|_2^2\le2\|\nabla^*\nabla v\|_2^2
+ +32\|v\|_\infty^2\|\operatorname{Ric}\|_2^2
+ +33\|v\|_\infty^2\|\mathscr F\|_2^2,
+ \quad \|\nabla v\|_4^2\le4\|v\|_\infty\|\nabla^2v\|_2
+\]
+to \(\Phi\), whose rough Laplacian is controlled by
+\((s+f_j\rho)\Phi\). Twice differentiating the parallel quadratic
+map and using the self-dual Hodge formula gives
+\(B_\omega\le C(1+\kappa+b)\). This is the second-order argument
+in the functional-pencil note, Section 5, and Round 21, Section 2;
+it differentiates neither the weight nor the Ricci error.
+
+For each fixed metric and class, select one sufficiently large \(j\)
+so that all normalized approximation errors meet their allotted
+fractions of \(\eta\). All estimates hold for the same smooth
+actual solution. The second-order bound holds for every sufficiently
+close majorant. This proves (2)–(4), with no limiting-solution claim.
+
+## 5. Connection spectrum and smooth approximate projections
+
+The amplitude bound implies
+\(\fint|\omega|^2\ge2-\sqrt{720\kappa+\eta}>1\), which gives
+the Rayleigh bound on \(\mu_0\). The spectral theorem gives
+\[
+ \|(I-\Pi_{\le\Lambda})\omega\|_2^2
+ \le\|\nabla\omega\|_2^2/\Lambda.
+\]
+By (2)–(3), the normalized tail of \(\zeta\) is at most
+\(98\kappa+2G(\kappa)/\Lambda+2\eta(1+1/\Lambda)\).
+The harmonic representative and the spectral projection are fixed
+as \(\eta\downarrow0\), proving (5) without convergence of spinors.
+
+For a sequence with \(\kappa_j\to0\), even if \(b_j\to\infty\),
+\(\fint|\zeta_j|^2=4\pi^2p_j/V_j\to2\).
+Choose \(\Lambda_j\to0\) with \(G(\kappa_j)/\Lambda_j\to0\).
+Then all its normalized \(L^2\) mass lies asymptotically in the low
+connection-Laplacian subspace. This does not assert a pointwise bound
+on \(H_j\), nor is it a scalar-Laplacian cluster statement.
+
+The same form defines \(P_\omega=\omega\otimes\omega/2\). Algebra gives
+\[
+ \begin{aligned}
+ \fint|W^++P_\omega-I/3|^2&\le d_\omega,\\
+ \fint|P_\omega^2-P_\omega|^2&\le9d_\omega,\\
+ \fint|\nabla P_\omega|^2&\le12(G(\kappa)+\eta).
+ \end{aligned}
+ \tag{16}
+\]
+Outside \(\{|\omega|^2\le1\}\), of relative volume at most
+\(d_\omega\), the endomorphism
+\(\omega\otimes\omega/|\omega|^2\) is a rank-one projection
+with derivative energy at most \(2V(G(\kappa)+\eta)\).
+This does not remove the exceptional set or give an everywhere
+nonvanishing closed form. An \(L^2\) approximation also does not
+permit substituting the potentially unbounded \(\zeta\) for
+\(\omega\) in the quadratic Weyl model.
+
+## 6. An actual family outside every fixed negative scalar band
+
+Take a closed negative Kähler–Einstein surface \((M,h)\), with
+\(\operatorname{Ric}_h=-h\), carrying an actual canonical monopole
+class; a product of two closed hyperbolic surfaces is an example.
+In normal coordinates centered at \(x_0\), choose
+\(\phi\in C_c^\infty(B_1(0))\) with
+\(\phi(0)=0\), \(d\phi(0)=0\), and
+\(\Delta_{\mathrm{Eucl}}\phi(0)>0\), for the nonnegative-Laplacian
+sign convention. Set
+\[
+ f_\varepsilon(x)=\varepsilon\phi(x/\varepsilon),\qquad
+ g_\varepsilon=e^{2f_\varepsilon}h,
+\]
+extending the bump by zero outside its coordinate ball. In dimension
+four,
+\[
+ \int|\nabla_h^2f_\varepsilon|^2=O(\varepsilon^2),\quad
+ \int|df_\varepsilon|^4=O(\varepsilon^4),\quad
+ \|f_\varepsilon\|_\infty=O(\varepsilon).
+\]
+The conformal Ricci formula, and cancellation of conformal factors in
+the four-dimensional squared norm integral of a covariant two-tensor,
+give \(\int|\operatorname{Ric}_{g_\varepsilon}+g_\varepsilon|^2
+=O(\varepsilon^2)\). Volumes converge to \(\operatorname{Vol}(h)\).
+Both \(p\) and \(\int|W^+|^2\) are conformally invariant. Since
+\[
+ s_{g_\varepsilon}=e^{-2f_\varepsilon}
+       (-4+6\Delta_hf_\varepsilon-6|df_\varepsilon|^2),
+\]
+integration of \(\Delta_h f_\varepsilon\) gives
+\[
+ \int s_{g_\varepsilon}^2-\int s_h^2
+ =36\int(\Delta_hf_\varepsilon-|df_\varepsilon|^2)^2
+       +48\int|df_\varepsilon|^2=O(\varepsilon^2).
+\]
+Thus \(\delta_\varepsilon=O(\varepsilon^2)\) and
+\(\kappa_\varepsilon\to0\), while
+\[
+ s_{g_\varepsilon}(x_0)
+ =-4+6\varepsilon^{-1}\Delta_{\mathrm{Eucl}}\phi(0)
+ \longrightarrow+\infty.
+\]
+The application therefore genuinely includes metrics outside every
+fixed negative scalar band. These are integral-error examples, not
+pointwise Ricci-pinched Yau26 inputs, and not new smooth topologies.
+
+## 7. Increment and scope
+
+The supplied form lies at the allowed Round-21 parameter \(t=1/2\),
+where spectral non-saturation gives no contradiction. The moment and
+Hessian mechanisms are inherited. Their all-scalar composition removes
+the scalar band from the earlier actual-form supply. No scalar spectral
+gap is needed when integral Ricci error is an input; this does not
+remove the spectral-gap term from the different theorem deriving
+Ricci control from period data alone. Identity (12) also removes the
+negative-square cost from its first-order and low-mode conclusions.
+The useful added output is
+the canonically identified harmonic alignment and spectral/projection
+information, not a new topological obstruction or existence theorem.
+
+At zero defect this recovers the realizable negative Kähler–Einstein
+equality case. At positive defect it supplies quantitative integral
+structure, not global Kähler integrability or geometric compactness.
+
+### Proof sources and verification
+
+- `line1_functional_pencil.md`, Sections 2–5: actual all-scalar form
+  production, specialized to parameter two.
+- `round4_rigidity.md`, Sections 2–4: cutoff and moment estimates.
+- `round21_analytic.md`, Section 2: the bundle Hessian estimate.
+- `line1_scalar_band_remainder.md`, equations (9)–(10): earlier
+  scalar-band differential and weighted harmonic remainders.
+- `line1_composed_application_check.py`: exact finite coefficients
+  and tensor identities, not certification of gauge solvability or PDE.

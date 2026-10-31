@@ -1,0 +1,447 @@
+% !TeX program = pdflatex
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[margin=25mm]{geometry}
+\usepackage{booktabs,enumitem,xurl}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{2em}
+\setlist{nosep,leftmargin=*}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\Met}{\operatorname{Met}}
+\newcommand{\PD}{\operatorname{PD}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\pair}[2]{\langle #1,#2\rangle}
+\title{Global period constraints for the Q3 minimizing problem\\[3pt]
+\large Marked negative lattices, cyclic bubbles, and the Godeaux blowup}
+\author{Qiushi research continuation}
+\date{8 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We keep the smooth-attainment problem for the trace-free Ricci functional on
+one blowup of the classical Godeaux surface. A marked negative lattice whose
+self-dual periods vanish forces the pullback canonical class to have a larger
+self-dual square. Combining this fact with the classical monopole curvature
+inequality gives a global energy restriction on a minimizing sequence, without
+an energy identity or a monopole extension across the limiting orbifold.
+In particular, two distinct degree-one $(-3)$ classes of the classical
+Godeaux configuration cannot both enter such a degeneration below $8\pi^2$.
+A single such class requires total energy at least $64\pi^2/9$, including
+when the mass-replacement eigenvalue is zero. A further corollary restricts
+canonically marked negative cyclic chains. The results do not establish smooth
+attainment: canonical-orthogonal bubbles, a single permitted charged chain,
+and other degeneration channels remain.
+\end{abstract}
+
+\section{Fixed problem and the classical input}
+Let $X$ be the classical Godeaux surface and choose the blowup point outside
+its fifteen degree-one rational curves. Put
+\[
+ M=X\#\overline{\CP}^{\,2},\qquad
+ K=\pi^*c_1(K_X),\qquad E^2=-1,\quad K\cdot E=0,\quad K^2=1.
+\]
+All cohomology calculations are in $H^2(M;\mathbb R)$, so torsion is omitted.
+For a metric $g$ let
+\[
+ P(g)=\int_M|\Ric_g^\circ|^2dV_g,\qquad
+ p_*(M)=\inf_{g\in\Met(M)}P(g),\qquad T=2\chi(M)+3\tau(M)=0.
+\]
+The supplied Q3 construction gives the strict upper bound
+\begin{equation}\label{eq:upper}
+ \frac{16\pi^2}{3}\le p_*(M)<8\pi^2.
+\end{equation}
+The strict inequality is an input from the general negative-K\"ahler--Einstein
+insertion construction in the supplied October 8 manuscripts. It is not
+reproved here. All conformal classes on this $M$ are Yamabe-negative; a
+smooth $P$-minimizer would have constant negative scalar curvature and,
+if Bach-flat, would be Einstein. The positive lower bound excludes this
+last alternative. Thus smooth attainment on this fixed $M$ would answer Q3.
+These are the same reductions used in the supplied mass-variation note
+\cite{Source,MassNote}.
+
+We use tensor norms for Ricci curvature and the Hilbert--Schmidt
+curvature-operator norm for Weyl curvature. The classical estimate for an
+actual monopole class $a$ is
+\[
+ \frac1{4\pi^2}\int_M\left(\frac{s^2}{24}+2|W^+|^2\right)dV_g
+ \ge\frac23\|a_g^+\|^2.
+\]
+Together with Chern--Weil this gives
+\begin{equation}\label{eq:classical}
+ P(g)\ge\frac{16\pi^2}{3}\|a_g^+\|^2-8\pi^2T.
+\end{equation}
+The usual blowup supply selects an actual sign class with self-dual
+square at least $\|K_g^+\|^2$; this is the projection argument in
+LeBrun's Proposition 3.2, not just its final numerical bound
+\cite{LeBrun}. In our case the classes are $K\pm E$, up to an overall sign.
+Consequently the only geometric input needed for the main argument is
+\begin{equation}\label{eq:Kbound}
+ \boxed{P(g)\ge\frac{16\pi^2}{3}\|K_g^+\|^2.}
+\end{equation}
+This keeps the actual-supply and, where relevant, chamber conventions of that
+classical argument. It does not require FD, the O10 endpoint theorem, or any
+new equation on the limiting orbifold.
+
+\section{A marked lattice changes the global projection budget}
+Let $C_1,\ldots,C_r\in H^2(M;\mathbb R)$ be linearly independent marked
+classes with negative-definite matrix
+\[
+ Q=(C_i\cdot C_j),\qquad d_i=K\cdot C_i.
+\]
+Define
+\begin{equation}\label{eq:beta}
+ v=Q^{-1}d,\qquad L=\sum_i v_iC_i,\qquad
+ \beta_Q(K)=-d^{\mathsf T}Q^{-1}d\ge0,\qquad K_\perp=K-L.
+\end{equation}
+These are intersection-form projections, not metric-dependent Hodge
+projections. Directly,
+\begin{equation}\label{eq:perp}
+ K_\perp\cdot C_i=0,\qquad L^2=-\beta_Q(K),\qquad
+ K_\perp^2=1+\beta_Q(K).
+\end{equation}
+
+\begin{theorem}[Finite-metric period bound]\label{thm:finite}
+For every smooth metric on the fixed $M$,
+\begin{equation}\label{eq:finite}
+ \boxed{
+ P(g)\ge\frac{16\pi^2}{3}
+ \left(\sqrt{1+\beta_Q(K)}-\|L_g^+\|\right)_+^2.
+ }
+\end{equation}
+In particular, if $g_j$ is any sequence for which
+$\|(C_i)^+_{g_j}\|\to0$ for every $i$, then
+\begin{equation}\label{eq:limit}
+ \boxed{\liminf_jP(g_j)\ge
+ \frac{16\pi^2}{3}\left(1+\beta_Q(K)\right).}
+\end{equation}
+\end{theorem}
+\begin{proof}
+Hodge decomposition gives
+\[
+ \|(K_\perp)^+_g\|^2
+ =K_\perp^2+\|(K_\perp)^-_g\|^2\ge1+\beta_Q(K).
+\]
+Since $K^+=(K_\perp)^++L^+$, the triangle inequality yields
+\[
+ \|K_g^+\|\ge
+ \left(\sqrt{1+\beta_Q(K)}-\|L_g^+\|\right)_+.
+\]
+Use \eqref{eq:Kbound}. For the second conclusion,
+$\|L_{g_j}^+\|\le\sum_i|v_i|\|(C_i)^+_{g_j}\|\to0$.
+\end{proof}
+
+\begin{corollary}[Restriction on a minimizing degeneration]\label{cor:budget}
+If the periods in Theorem~\ref{thm:finite} vanish along a minimizing
+sequence, then
+\begin{equation}\label{eq:budget}
+ \boxed{\beta_Q(K)\le\frac{3p_*(M)}{16\pi^2}-1<\frac12.}
+\end{equation}
+Equivalently, any marked negative lattice with $\beta_Q(K)\ge1/2$
+is excluded from this kind of degeneration.
+\end{corollary}
+\begin{proof}
+Combine \eqref{eq:limit} with \eqref{eq:upper}.
+\end{proof}
+
+The estimate is on the original closed manifold. In particular, it is
+not obtained by adding a global lower bound to the energy of a bubble:
+that would in general count some curvature twice. No energy equality,
+compactness of the exterior, or existence of a bulk Einstein metric
+occurs in its proof.
+
+\subsection{The variant retaining the complete sign pair}
+When both sign classes are available for the metric under consideration,
+the same argument keeps possible intersections with the new exceptional
+class. Set $d_E=(E\cdot C_i)_i$ and, for $|t|\le1$, let
+\[
+ B_Q(t)=1-t^2-(d+td_E)^{\mathsf T}Q^{-1}(d+td_E).
+\]
+Since $K+tE$ is a convex combination of $K+E$ and $K-E$,
+\[
+ \|(K+tE)^+\|^2\le
+ \max\{\|(K+E)^+\|^2,\|(K-E)^+\|^2\}.
+\]
+Projecting $K+tE$ off the negative lattice as above gives, when its
+marked self-dual periods vanish,
+\begin{equation}\label{eq:fullsign}
+ \liminf_jP(g_j)\ge
+ \frac{16\pi^2}{3}\max_{-1\le t\le1}B_Q(t).
+\end{equation}
+Here the maximum is of an explicit quadratic polynomial on a compact
+interval. If $d_E=0$, its maximum is $1+\beta_Q(K)$, so it reduces to
+\eqref{eq:limit}. The displayed sign-pair hypothesis should be retained
+when \eqref{eq:fullsign} is applied outside the present example.
+
+\section{From a genuine ALE region to vanishing self-dual periods}
+We now give a sufficient geometric hypothesis for the periods above.
+It concerns an identified marked ALE limit; it does not assert that every
+minimizing sequence has such a limit.
+
+\begin{lemma}[Compactly supported almost anti-self-dual representatives]
+Let $(N,h)$ be a smooth oriented complete ALE four-manifold with
+negative-definite compact intersection form. Every compactly supported
+cohomology class has representatives $\omega_R$, closed and supported
+in a compact truncation of the end, with
+\[
+ \|\omega_R^+\|_{L^2(h)}\longrightarrow0.
+\]
+\end{lemma}
+\begin{proof}
+On an ALE four-manifold, $H^2_c(N;\mathbb R)\to H^2(N;\mathbb R)$ is an
+isomorphism, and its classes have unique $L^2$ harmonic representatives
+\cite[Lemma 1.7]{HL}. The middle-dimensional $L^2$ pairing agrees with
+the compact-support intersection form. A nonzero self-dual harmonic form
+would give a positive square, so negative definiteness implies that all
+these harmonic representatives $\Omega$ are anti-self-dual.
+
+On an annulus $A_R=\{R<r<2R\}$, $H^2(A_R;\mathbb R)=0$ because the link
+is a spherical space form. Choose $\alpha_R$ with $d\alpha_R=\Omega$.
+The fixed-annulus Hodge estimate, after scaling and using the ALE
+convergence of the metric, permits the choice
+\[
+ \|\alpha_R\|_{L^2(A_R)}\le C R\|\Omega\|_{L^2(A_R)}.
+\]
+One may enlarge the annulus slightly for the support of a cutoff.
+Let $\chi_R$ be zero near its inner boundary and one near its outer
+boundary, with $|d\chi_R|\le C/R$. Put $\omega_R=\Omega$ inside,
+$\omega_R=\Omega-d(\chi_R\alpha_R)$ on the annulus, and zero outside.
+This is a smooth compactly supported closed representative of the same
+class. Its self-dual part is confined to the annulus and satisfies
+\[
+ \|\omega_R^+\|_2
+ \le C\|\Omega\|_{L^2(A_R)}\longrightarrow0.
+\]
+The last limit follows from the finite $L^2$ norm. This also shows why
+no uniform curvature bound on the exterior of a bubble is needed.
+\end{proof}
+
+\begin{proposition}[Marked ALE concentration implies the required periods]
+Suppose that a fixed finite collection of marked compact classes in $M$
+is carried by smooth negative-definite ALE limits, with smooth rescaled
+convergence on every fixed compact truncation and with the compact-support
+classes identified with the specified $C_i$. Then
+\begin{equation}\label{eq:vanish}
+ \|(C_i)^+_{g_j}\|\longrightarrow0.
+\end{equation}
+The assertion applies in particular to a genuine marked smooth
+$\mathcal O(-3)$ ALE bubble. It requires neither an energy equality nor
+regularity of the entire limiting bulk.
+\end{proposition}
+\begin{proof}
+Fix $R$ and pull $\omega_R$ from the lemma into $M$ through the marked
+convergence map; extend by zero. The result is a closed representative
+of $C_i$. On a closed manifold the norm of the harmonic self-dual
+projection is at most the self-dual norm of any closed representative.
+Moreover, the $L^2$ norm of a two-form and the Hodge star on two-forms
+are unchanged by constant metric scaling in dimension four. Consequently,
+\[
+ \limsup_j\|(C_i)^+_{g_j}\|\le\|\omega_R^+\|_{L^2(h)}.
+\]
+Now let $R\to\infty$.
+\end{proof}
+
+For a tree with orbifold intermediate levels, the relevant markings and
+period limits must still be obtained on the original manifold. The
+proposition covers smooth ALE pieces or any other region for which
+\eqref{eq:vanish} has been established; it does not turn an arbitrary
+orbifold or collapsed limit into such a piece.
+
+\section{Consequences for the classical Godeaux configuration}
+\subsection{One or two \texorpdfstring{$(-3)$}{(-3)} classes}
+A degree-one rational curve $C$ in $X$ has
+\[
+ C^2=-3,\qquad K\cdot C=1,\qquad E\cdot C=0.
+\]
+For its rank-one lattice, $Q=[-3]$ and $\beta_Q(K)=1/3$. Hence:
+\begin{corollary}\label{cor:one}
+If this marked class enters a degeneration covered by
+\eqref{eq:vanish}, then
+\begin{equation}\label{eq:one}
+ \liminf_jP(g_j)\ge\frac{64\pi^2}{9}
+ =\frac89(8\pi^2).
+\end{equation}
+This includes the first-order zero-mode case of the mass-replacement
+argument.
+\end{corollary}
+For two disjoint such classes the charge is $2/3$, so instead
+\begin{equation}\label{eq:two}
+ \liminf_jP(g_j)\ge\frac{80\pi^2}{9}
+ =\frac{10}{9}(8\pi^2)>8\pi^2.
+\end{equation}
+This contradicts the inherited strict upper bound for a minimizing
+sequence. Although two separate scalar-flat K\"ahler $\mathcal O(-3)$
+fillings have combined local $P$-energy only $16\pi^2/3$, their
+simultaneous marked degeneration is globally excluded by
+\eqref{eq:two}.
+
+\subsection{At most one of the fifteen original degree-one lines}
+The classical Godeaux surface has fifteen degree-one rational curves
+$L_i^m$, with $m\in\{-1,0,1\}$ and $i\in\mathbb Z/5$. Their intersections
+are computed in \cite[Proposition 4.3]{Godeaux}. Distinct curves have
+intersection $s\in\{0,1,2,5\}$; each has square $-3$ and canonical
+degree one. If $s<3$, the pair matrix is negative definite and
+\[
+ \beta_Q(K)=\frac2{3-s}.
+\]
+Thus the lower bounds, normalized by $8\pi^2$, are
+\[
+\begin{array}{c|ccc}
+s&0&1&2\\\hline
+\beta_Q(K)&2/3&1&2\\
+\displaystyle\liminf P/(8\pi^2)&10/9&4/3&2
+\end{array}
+\]
+and are all incompatible with a minimizing sequence. If $s=5$, then
+$(C+D)^2=4$, so $\|(C+D)^+\|\ge2$ for every metric; the two self-dual
+periods cannot both tend to zero even without an energy estimate.
+
+\begin{corollary}\label{cor:15}
+Along a minimizing sequence on this marked Godeaux blowup, at most one
+of the fifteen original degree-one rational-curve classes can have
+vanishing self-dual period. In particular at most one can enter the
+negative-definite ALE degenerations described in the previous section.
+\end{corollary}
+The statement refers to these fixed classes, not to a classification of
+all embedded spheres or all possible markings on $M$.
+
+\section{Canonically marked cyclic chains}
+For a proposed cyclic plumbing let
+\[
+ Q_{ii}=-n_i,\quad Q_{i,i+1}=Q_{i+1,i}=1,\quad n_i\ge2,
+ \qquad K\cdot C_i=n_i-2,
+ \qquad E\cdot C_i=0.
+\]
+The pairings are part of the marking hypothesis. They hold by adjunction
+for a rational curve configuration inherited from the unblown surface;
+they must not be assigned to an arbitrary smooth bubble without proof.
+Assume these periods tend to zero along a minimizing sequence.
+
+\begin{theorem}[Restriction on cyclic chain data]\label{thm:chain}
+Every connected chain with a nonzero canonical pairing must have the form
+\[
+ [-3,\underbrace{-2,\ldots,-2}_{r-1}]
+\]
+or its reversal. For this chain,
+\begin{equation}\label{eq:chain}
+ \beta_Q(K)=\frac{r}{2r+1},\qquad
+ \liminf_j\frac{P(g_j)}{8\pi^2}\ge1-\frac1{6r+3}.
+\end{equation}
+At most one mutually orthogonal component can have a nonzero canonical
+pairing. Chains of $(-2)$ classes are not excluded by this theorem.
+\end{theorem}
+\begin{proof}
+Write $A=-Q$, so $A$ has diagonal $n_i$ and off-diagonal $-1$, and set
+$d_i=n_i-2\ge0$. Its charge has the variational expression
+\[
+ d^{\mathsf T}A^{-1}d
+ =\max_z\{2d^{\mathsf T}z-z^{\mathsf T}Az\}.
+\]
+Testing with $z_i=d_i/n_i$ gives
+\[
+ \beta_Q(K)\ge\sum_i\frac{(n_i-2)^2}{n_i}.
+\]
+If some $n_i\ge4$, the right side is at least one. If two weights are
+at least three, it is at least $2/3$. Both contradict
+\eqref{eq:budget}. Hence there is exactly one weight three and all other
+weights are two.
+
+Let the two $(-2)$ tails have lengths $l$ and $r'$. The endpoint diagonal
+entry of the inverse $A_l$ Cartan matrix is $l/(l+1)$, as follows directly
+from the tridiagonal recurrence. Its Schur complement gives
+\[
+ \beta_Q(K)=
+ \frac1{3-l/(l+1)-r'/(r'+1)}.
+\]
+If both tails are nonempty, this is at least $1/2$, again excluded. The
+three must therefore be an end vertex. With total length $r$ the charge
+is $r/(2r+1)$, and Theorem~\ref{thm:finite} gives \eqref{eq:chain}.
+For orthogonal components the charges add. Each nonzero component has
+charge at least $1/3$, so two would violate \eqref{eq:budget}.
+\end{proof}
+
+For lengths $r=1,2,3,4$, the normalized thresholds are respectively
+$8/9,14/15,20/21,26/27$. A verified upper bound $p_*/(8\pi^2)\le U<1$
+restricts any such surviving chain to
+\[
+ 6r+3\le\frac1{1-U}.
+\]
+This is a restriction on specified marked cyclic data, not an assertion
+that all minimizing bubbles are cyclic or canonically marked.
+
+\section{Relation to the mass zero mode and to attainment}
+The supplied mass-variation result uses a different input: a smooth
+$P$-critical orbifold point, marked matching, and either a global energy
+identity or the stated local lower comparison. It gives
+\[
+ P(g_{\lambda,t})=P(g_{\rm orb})+\frac{8\pi^2}{3}
+ -24\pi^2m(g_t)\mu\lambda^2+o(\lambda^2),
+\]
+where positive and negative masses are available on the same filling.
+Under those hypotheses, a minimizing degeneration requires $\mu=0$
+\cite{MassNote}. The present period argument neither changes this
+expansion nor uses its coefficient. It imposes an independent condition
+on the same marked degeneration:
+\[
+ \boxed{\mu=0,\qquad p_*(M)\ge64\pi^2/9}
+\]
+when both sets of hypotheses apply. Two of the original $(-3)$ classes
+cannot occur together, regardless of their local values of $\mu$.
+
+The single surviving charged case is not excluded because
+$64\pi^2/9<8\pi^2$. If a future strict upper bound below $64\pi^2/9$ is
+proved on this same $M$, all rank-one canonical-degree-one $(-3)$
+degenerations satisfying the period hypothesis will then be excluded.
+No such upper bound is proved here.
+
+If $K$ pairs trivially with a negative lattice, its charge in
+\eqref{eq:beta} is zero. Thus the method does not exclude canonical-orthogonal
+ADE lattices or bubbles with no real second cohomology. It also does not
+establish marked convergence for every minimizing sequence or rule out
+partial collapse. The separate zero-mode calculation found in the
+companion research records likewise retains an undetermined full
+fourth-order gluing coefficient \cite{ZeroMode}; a negative inner
+coefficient alone cannot remove this final case.
+
+The current fixed task is unchanged: obtain smooth global attainment on
+$M$. The increment proved here is a constraint on which actual marked
+negative-lattice degenerations a minimizing sequence could have. It
+uses the original closed-manifold monopole inequalities throughout,
+rather than presupposing an extension of those inequalities to an
+unknown orbifold bulk.
+
+\begin{thebibliography}{9}
+\bibitem{LeBrun} C. LeBrun, \emph{Ricci Curvature, Minimal Volumes, and
+Seiberg--Witten Theory}, Invent. Math. \textbf{145} (2001), 279--316.
+Propositions 3.1--3.2 and Corollary 3.4.
+\url{https://arxiv.org/abs/math/0003068}.
+\bibitem{HL} H.-J. Hein and C. LeBrun, \emph{Mass in K\"ahler Geometry},
+Comm. Math. Phys. \textbf{347} (2016), 183--221. Lemma 1.7.
+\url{https://arxiv.org/abs/1507.08885}.
+\bibitem{Godeaux} C. B\"ohning, H.-C. Graf von Bothmer and P. Sosna,
+\emph{On the derived category of the classical Godeaux surface},
+Adv. Math. \textbf{243} (2013), 203--231. Section 4, Proposition 4.3.
+\url{https://arxiv.org/abs/1206.1830}.
+\bibitem{Source} Supplied project manuscripts,
+\emph{Four Public Problems: Overnight Results, Proof Mechanisms,
+Remaining Connections, and Questions for Further Research}, and
+\emph{Mathematical Source Companion}, 8 October 2026.
+The strict upper construction and the Q3 variational reduction are inputs.
+\bibitem{MassNote} Supplied continuation,
+\emph{Q3: Mass Variation and a Cyclic Degeneration Obstruction},
+8 October 2026, Sections 2--5.
+\bibitem{ZeroMode} Related continuation,
+\emph{Q3: The Zero Mode and the Proposed Horikawa Candidate},
+8 October 2026, Sections 4--6.
+\end{thebibliography}
+\end{document}

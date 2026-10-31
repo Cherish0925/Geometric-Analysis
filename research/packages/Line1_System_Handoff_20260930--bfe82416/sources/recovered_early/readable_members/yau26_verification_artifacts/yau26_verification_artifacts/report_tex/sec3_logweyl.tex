@@ -1,0 +1,149 @@
+\section{四维的第一类构造：固定 $A_1$ 解消上的 log-Weyl 度量}\label{sec:logweyl}
+
+本节给出资料包中 \texttt{thm:A1} 的自足陈述与证明，并记录本次独立核验。机制是：Ricci 线性化算子“看不见”Weyl 型二次项，因而可以在长度为 $L\sim|\log a|$ 的对数环带上以 $O(1/L)$ 的点态 Ricci 代价，把轨形节点处的 Weyl 曲率缓慢地换成 Eguchi--Hanson（EH）核心所要求的 Weyl 曲率。
+
+\subsection{陈述}
+设 $(M_0,g_0)$ 为闭四维 Einstein 轨形，$\Ric_{g_0}=\sigma g_0$，$\sigma\in\{\pm1\}$，奇点为有限个点 $p_1,\dots,p_m$，每点的局部群均为 $\{\pm1\}\subset O(4)$（$A_1$ 型）。EH 空间 $N=T^*S^2$ 的端部渐近于 $(\R^4\setminus B)/\{\pm1\}$；因 $-1$ 位于 $O(4)$ 的中心，任一 $A\in O(4)$ 都给出端部与轨形坐标卡之间的等距识别（\emph{标记}）。$O(4)$ 的两个连通分支对应两种\emph{手性}：相对于节点处给定的定向，EH 的零截面自交数分别为 $-2$ 与 $+2$。对每个节点选定标记后，把锥邻域换成 $N$ 的圆盘丛，得到光滑闭流形 $M$；其微分同胚型只依赖各节点的手性。
+
+\begin{theorem}[log-Weyl 构造]\status{已证}\label{thm:A1}
+对上述任意 $(M_0,g_0)$ 与任意手性选择，相应的光滑流形 $M$ 上存在光滑度量族 $g_a$（$0<a<a_0$），满足
+\begin{equation}\label{eq:A1bound}
+\delta_\sigma(g_a)\le\frac{C}{|\log a|}\xrightarrow[a\to0]{}0,
+\end{equation}
+$(M,g_a)$ Gromov--Hausdorff 收敛到 $(M_0,g_0)$，且各核心按 $a^{-2}$ 放大后光滑收敛到 EH 度量。常数 $C$ 依赖 $(M_0,g_0)$ 与标记，不依赖 $a$。特别地 $e_\sigma(M)=0$。
+\end{theorem}
+
+\subsection{三个引理}
+取 EH 度量 $k=W^{-1}d\rho^2+\frac{\rho^2}{4}(\sigma_1^2+\sigma_2^2+W\sigma_3^2)$，$W=1-\rho^{-4}$，$\rho\ge1$，其中 $\sigma_i$ 为 $SU(2)$ 的左不变 1-形式，$\sigma_3=d\psi+\cos\theta\,d\phi$，$\psi$ 的周期为 $2\pi$。在端部的渐近坐标 $x$（$|x|=\rho$）中，欧氏度量 $e=d\rho^2+\frac{\rho^2}{4}(\sigma_1^2+\sigma_2^2+\sigma_3^2)$，$k=e+O(\rho^{-4})$，并有 $\langle Jx,dx\rangle=\frac{\rho^2}{2}\sigma_3$，$J$ 为使零截面全纯的复结构。
+
+\begin{lemma}[显式核心修正]\status{已证}\label{lem:core}
+令
+\begin{align*}
+\tilde h={}&-\frac{\rho^2(7\rho^2-5)}{36(\rho^2-1)(\rho^2+1)^2}\,d\rho^2-\frac{5(\rho^4-1)}{144}(\sigma_1^2+\sigma_2^2)
++\Bigl(-\frac{\rho^4}{72}+\frac1{16}-\frac{1}{12\rho^{2}}+\frac{5}{144\rho^{4}}\Bigr)\sigma_3^2,\\
+H_*={}&-\frac5{36}\bigl(\rho^2e-(x\cdot dx)^2\bigr)+\frac1{12}\langle Jx,dx\rangle^2 .
+\end{align*}
+则 $\tilde h$ 是 $T^*S^2$ 上的光滑对称二张量，$D\Ric_k(\tilde h)=k$，且 $|\nabla_k^j(\tilde h-H_*)|_k\le C\rho^{-2-j}$、$|\nabla_k^j\tilde h|_k\le C(1+\rho)^{2-j}$（$j=0,1,2$）。
+\end{lemma}
+\begin{proof}
+考虑双轴度量族 $q_\Lambda=F_\Lambda^{-1}d\rho^2+\frac{\rho^2}{4}(\sigma_1^2+\sigma_2^2+G_\Lambda\sigma_3^2)$，其中 $c_\Lambda=(1-\Lambda/4)^2-1$，$F_\Lambda=(1+c_\Lambda\rho^2)G_\Lambda$，$G_\Lambda$ 是
+\[
+\rho(1+c_\Lambda\rho^2)G'+(4+3c_\Lambda\rho^2)G=4-\Lambda\rho^2,\qquad G(1)=0
+\]
+的解。对一般双轴度量 $X\,d\rho^2+Y(\sigma_1^2+\sigma_2^2)+Z\sigma_3^2$ 直接计算 Ricci 张量（它在标架 $d\rho,\sigma_1,\sigma_2,\sigma_3$ 下对角），代入上式并用该 ODE 消去 $G',G''$，三个 Ricci 特征值恒等于 $\Lambda$，即 $\Ric(q_\Lambda)=\Lambda q_\Lambda$。在 bolt $\rho=1$ 处 $F'_\Lambda(1)=4-\Lambda$，$G'_\Lambda(1)=(4-\Lambda)/(1+c_\Lambda)$，故 $F'_\Lambda(1)G'_\Lambda(1)=16$ 对所有 $\Lambda$ 成立；这正是固定周期 $2\pi$ 下无锥角的条件，于是 $q_\Lambda$ 是同一光滑流形上关于 $\Lambda$ 光滑的光滑度量族，$q_0=k$。对 $\Ric(q_\Lambda)=\Lambda q_\Lambda$ 在 $\Lambda=0$ 求导得 $D\Ric_k(\partial_\Lambda q_\Lambda|_0)=k$。由 ODE 解出 $\partial_\Lambda G|_0=\frac{\rho^2}{12}+\frac1{4\rho^2}-\frac1{3\rho^4}$。取在 bolt 处为零的光滑向量场 $V=\frac5{72}(\rho^3-\rho^{-1})\partial_\rho$；因 $\Ric(k)=0$，$D\Ric_k(\mathcal L_Vk)=0$。直接计算表明 $\tilde h=\partial_\Lambda q_\Lambda|_0-\mathcal L_Vk$ 恰为所述公式，并在正交标架中
+\[
+\tilde h-H_*:\quad \frac{5-7\rho^2}{36\rho^2(\rho^2+1)},\quad \frac5{36\rho^2},\quad \frac{9\rho^4-12\rho^2+5}{36\rho^2(\rho^4-1)}
+\]
+（分别为 $\rho\rho$、$11=22$、$33$ 分量），从而得到衰减估计。全部代数由本报告的脚本 \texttt{v1\_core.py}、\texttt{v1b\_family.py}、\texttt{v1c\_htilde.py} 以计算机代数独立验证。
+\end{proof}
+
+\begin{lemma}[共同径向规范与 Weyl 型差]\status{已证}\label{lem:weylgauge}
+记 $R^{(1)}_{ikjl}=\delta_{ij}\delta_{kl}-\delta_{il}\delta_{jk}$，$B_{ikjl}=J_{ij}J_{kl}-J_{il}J_{kj}+2J_{ik}J_{jl}$。则 $H_*=-\frac13R^*_{ikjl}x^kx^l\,dx^idx^j$，其中 $R^*=\frac5{12}R^{(1)}-\frac1{12}B$ 是 Ricci 缩并等于 $e$ 的代数曲率张量。因此，若 $g_0$ 在节点处等变正规坐标下写作 $g_0=e+H_0+E_4$，$H_0=-\frac13\Rm_{g_0}(p)_{ikjl}x^kx^l$，$|\partial^jE_4|\le Cr^{4-j}$，则对任意标记 $A\in O(4)$，
+\[
+K:=H_0-\sigma A^*H_*=-\tfrac13C_{ikjl}x^kx^l\,dx^idx^j,\qquad C:=\Rm_{g_0}(p)-\sigma A^*R^*,
+\]
+其中 $C$ 是 Ricci 缩并为零的代数曲率张量（代数 Weyl 张量）。从而
+\[
+\tr_eK=0,\qquad \operatorname{div}_eK=0,\qquad \Delta_eK=0,\qquad K(x,\cdot)=0 .
+\]
+\end{lemma}
+\begin{proof}
+$R^{(1)}_{ikjl}x^kx^l=r^2\delta_{ij}-x_ix_j$，$B_{ikjl}x^kx^l=3(Jx)_i(Jx)_j$（用 $x^{\mathsf T}Jx=0$），故 $-\frac13R^*xx=-\frac5{36}(r^2e-x\otimes x)+\frac1{12}Jx\otimes Jx=H_*$。$R^{(1)}$ 与 $B$ 的 Ricci 缩并均为 $3e$，所以 $\Ric(R^*)=(\frac{15}{12}-\frac3{12})e=e$。$g_0$ 的 Einstein 条件给 $\Ric(\Rm_{g_0}(p))=\sigma e$，故 $C$ 无迹。四个等式由 $C$ 的曲率对称性与无迹性逐项得到：$\partial_iK_{ij}=-\frac13(C_{iijl}x^l+C_{ikji}x^k)=0$（第一项由反对称性为零，第二项是 Ricci 型缩并），$\Delta K_{ij}=-\frac23C_{ikjk}=0$，$\tr K=-\frac13C_{ikil}x^kx^l=0$，$K_{ij}x^j=-\frac13C_{ikjl}x^kx^lx^j=0$。同样的逐项计算对任意代数曲率张量 $R$ 给出：$H_R:=-\frac13R_{ikjl}x^kx^l\,dx^idx^j$ 满足 $H_R(x,\cdot)=0$ 与
+\begin{equation}\label{eq:DRicHR}
+D\Ric_e(H_R)=\Ric(R)\quad(\text{常值张量}),
+\end{equation}
+这里 $\Delta H_R=-\frac23\Ric(R)$，$\partial_i\operatorname{div}(H_R)_j=\frac13\Ric(R)_{ij}$，$\nabla^2\tr H_R=-\frac23\Ric(R)$。特别地 $D\Ric_e(\sigma A^*H_*)=\sigma e$。$A_1$ 群作用 $x\mapsto-x$ 保持一切偶次张量，故上述对象均下降到商。
+\end{proof}
+
+\begin{remark}
+$R^*$ 的自对偶 Weyl 部分为 $-\frac1{12}(B-R^{(1)})$，在 $\omega_J$ 上的特征值为 $-s/12$（$s=4$），恰使 $\mathbf R_+(\omega_J)=(W_++\frac s{12})\omega_J=0$；（约定：取使 $\omega_J$ 自对偶的定向，即 $J$ 的复定向，此时零截面自交数为 $-2$；曲率算子以单位球面为 $\Id$ 归一化；则 $W(R^*)=W^+(R^*)$，谱为 $(-\frac13,\frac16,\frac16)$。）这与 Biquard \cite{Biquard} 的一阶去奇异化障碍 $\mathbf R_+(\omega_J)=0$ 一致：核心修正只有在远场曲率满足该条件时才存在。log-Weyl 构造并不要求环境轨形满足该条件，差额由下一引理的慢插值吸收。
+\end{remark}
+
+\begin{lemma}[对数插值恒等式]\status{已证}\label{lem:logid}
+设 $d\ge3$，$K$ 为 $\R^d$ 上满足引理~\ref{lem:weylgauge}中四个等式的二次齐次对称二张量，$\eta$ 为 $u=\log r$ 的任意光滑函数，则
+\begin{equation}\label{eq:logid}
+D\Ric_e\bigl[\eta(\log r)K\bigr]=-\frac{\eta''+(d+2)\eta'}{2r^2}\,K .
+\end{equation}
+\end{lemma}
+\begin{proof}
+$D\Ric_e(h)=\frac12(-\Delta h+\nabla\operatorname{div}h+(\nabla\operatorname{div}h)^{\mathsf T}-\nabla^2\tr h)$。$\eta K$ 无迹；$\operatorname{div}(\eta K)=\eta'r^{-2}K(x,\cdot)+\eta\operatorname{div}K=0$。故 $D\Ric_e(\eta K)=-\frac12\Delta(\eta K)=-\frac12\bigl[(\Delta\eta)K+2\partial_r\eta\,\partial_rK\bigr]$，其中 $\partial_rK=2K/r$，$\Delta\eta=(\eta''+(d-2)\eta')/r^2$，合并即得。（$d=4,5$ 时另由 \texttt{v2\_logidentity.py} 对随机 Weyl 张量符号验证。）
+\end{proof}
+
+\subsection{定理~\ref{thm:A1}的证明}
+取 $a\ll b=a^{1/2}\ll R=a^{1/4}\ll1$，$L=\log\frac{R}{8b}=\frac14|\log a|-\log8$。在每个节点的等变正规坐标 $x$（$r=|x|$）中，记 $h=\sigma\tilde h$（于是 $D\Ric_kh=\sigma k$），$H_1=\sigma A^*H_*$，$K=H_0-H_1$。取定 $[0,1]$ 上的光滑台阶函数 $\psi$（在 $0$ 附近为 $0$，在 $1$ 附近为 $1$）。分区定义 $g_a$：
+
+\textbf{（I）核心 $r\le b$。}$g_a=G_a:=a^2(k+a^2h)$，核心坐标 $y=x/a$。因 $a^2|h|_k\le Cb^2\to0$，$k+a^2h$ 一致正定。Taylor 展开并利用 $\Ric(k)=0$、$D\Ric_kh=\sigma k$：
+\[
+\Ric(k+a^2h)=\sigma a^2k+\mathcal Q,\qquad |\mathcal Q|_k\le Ca^4\bigl(|h||\nabla^2h|+|\nabla h|^2+|\Rm_k||h|^2\bigr)\le Ca^4(1+\rho)^2 .
+\]
+常数缩放不改变 $(0,2)$ 型 Ricci，升指标乘 $a^{-2}$，故 $\|G_a^{-1}\Ric(G_a)-\sigma\Id\|_{\op}\le Ca^2(1+\rho)^2\le C(a^2+r^2)\le Ca$。
+
+\textbf{（II）内截断 $b\le r\le2b$。}在物理坐标中 $G_a=e+H_1+\mathcal T_a$，$|\partial^j\mathcal T_a|\le C(a^4r^{-4-j}+a^4r^{-2-j})$（EH 尾项与引理~\ref{lem:core}的衰减）。令 $g_a=e+H_1+(1-\chi)\mathcal T_a$，$\chi$ 为 $[b,2b]$ 上的标准截断。截断使 Ricci 改变 $O(a^4b^{-6}+a^4b^{-4})$，二次模型 $e+H_1$ 自身的非线性残差为 $O(b^2)$，合计 $O(a)$。
+
+\textbf{（III）对数环带 $4b\le r\le R/2$}（$2b\le r\le4b$ 上取 $g_a=e+H_1$）。令 $\eta=\psi(\log(r/4b)/L)$，$g_a=e+q$，$q=H_1+\eta K$。由齐次性 $|q|\le Cr^2$，$|\partial q|\le Cr$，$|\partial^2q|\le C$，故 $\Ric(e+q)=D\Ric_e(q)+\mathcal N(q)$，$|\mathcal N(q)|\le C(|q||\partial^2q|+|\partial q|^2)\le Cr^2$。由式~\eqref{eq:DRicHR} 有 $D\Ric_e(H_1)=\sigma e$，再由式~\eqref{eq:logid}（$d=4$）：
+\[
+\bigl|\Ric(g_a)-\sigma g_a\bigr|\le\frac{|\eta''+6\eta'|}{2r^2}|K|+Cr^2\le C\bigl(L^{-1}+R^2\bigr).
+\]
+
+\textbf{（IV）外截断 $R/2\le r\le R$ 与外部。}此处 $\eta\equiv1$，$e+H_1+K=e+H_0$；令 $g_a=e+H_0+\chi'E_4$，截断代价 $O(R^2)$；$r\ge R$ 处 $g_a=g_0$。
+
+各区的二次模型与 $e$ 一致可比，核心在 bolt 处光滑，故 $g_a$ 是 $M$ 上的光滑正定度量；节点有限，修改球在 $a$ 小时互不相交，Ricci 是局部算子。取最大值得 $\delta_\sigma(g_a)\le C(L^{-1}+a^{1/2})\le C'/|\log a|$。被修改区域的直径为 $O(R)$，把它压到节点给出失真 $O(R)$ 的对应，故 $(M,g_a)\to(M_0,g_0)$（GH）；在核心的固定紧集上 $a^{-2}G_a=k+a^2h\to k$。\qed
+
+\subsection{独立数值核验：球面悬挂 $S^4/\Z_2$}\label{sec:football}
+对圆球 $S^4$（$\Ric=g$）在 $\R^4\oplus\R$ 中按 $(x,t)\mapsto(-x,t)$ 作商得到的“橄榄球”轨形（两个 $A_1$ 节点，$\sigma=+1$），以及负曲率类比的局部模型（$\sigma=-1$，节点邻域为双曲锥），整个构造落在 $U(2)$ 不变的双轴类中：此时 $H_0=-\frac{\sigma}{9}(r^2e-(x\cdot dx)^2)$，$K=\frac{\sigma r^4}{144}(\sigma_1^2+\sigma_2^2-2\sigma_3^2)$。本报告用计算机代数得到 $g_a$ 在五个区域的精确表达式及其 Ricci 特征值的精确公式，再以 $3\,\mathrm{ex}+60$ 位十进制精度（$a=10^{-\mathrm{ex}}$）在每区 400 个对数等距点上取值（$\sigma=+1$ 另算了 $a=10^{-128}$；脚本 \texttt{v3b\_football.py}；台阶函数取 $\psi=f(t)/(f(t)+f(1-t))$，$f=e^{-1/t}$，$\max\psi'=2$）。结果见表~\ref{tab:football}：上确界总在对数环带内取得，$L\,\delta_\sigma(g_a)\to1/3=\max\psi'/6$，与资料包给出的纯 Weyl 插值主项 $|\eta'|/6$ 完全一致；其余各区的误差为 $O(a)$ 或 $O(R^2)$，与证明中的估计同阶。
+
+\begin{table}[ht]\centering\small
+\caption{$S^4/\Z_2$ 上 log-Weyl 度量的点态 Ricci 缺陷（采样上确界；$\sigma=\pm1$ 的数值在所列位数内相同）}\label{tab:football}
+\begin{tabular}{cccccccc}
+\toprule
+$a$ & $L$ & $\delta_\sigma(g_a)$ & $L\,\delta_\sigma$ & 核心 & 内截断 & 对数环带 & 外截断\\\midrule
+$10^{-8}$ & $2.526$ & $0.135117$ & $0.34127$ & $1.6\times10^{-9}$ & $1.8\times10^{-8}$ & $0.1351$ & $1.3\times10^{-5}$\\
+$10^{-16}$ & $7.131$ & $0.046850$ & $0.33408$ & $1.6\times10^{-17}$ & $1.8\times10^{-16}$ & $0.04685$ & $1.3\times10^{-9}$\\
+$10^{-32}$ & $16.341$ & $0.020407$ & $0.33347$ & $1.5\times10^{-33}$ & $1.8\times10^{-32}$ & $0.02041$ & $1.3\times10^{-17}$\\
+$10^{-64}$ & $34.762$ & $0.0095899$ & $0.33336$ & $1.4\times10^{-65}$ & $1.8\times10^{-64}$ & $0.00959$ & $1.3\times10^{-33}$\\
+$10^{-128}$ & $71.603$ & $0.0046554$ & $0.33334$ & $1.2\times10^{-129}$ & $1.8\times10^{-128}$ & $0.004655$ & $1.3\times10^{-65}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{推论：具体流形与 Ozuch 问题}
+\begin{corollary}[球面悬挂的两种解消]\status{已证}\label{cor:football}
+$S^4/\Z_2$ 的两个节点各有两种手性，所得光滑流形恰有两个微分同胚型：
+\[
+S^2\times S^2\qquad\text{与}\qquad \CPb\#\CPb\ \ (\cong\CP^2\#\CP^2\ \text{的反定向}).
+\]
+两者都满足 $e_+=0$，且实现 $e_+=0$ 的度量族 GH 收敛到 $(S^4/\Z_2,g_{\rm round})$。
+\end{corollary}
+\begin{proof}
+$M=D_1\cup_\phi D_2$，$D_i$ 为 $S^2$ 上 Euler 数 $e_i\in\{\pm2\}$（相对 $M$ 的一个整体定向）的圆盘丛，沿 $\R P^3$ 粘合。$\R P^3$ 的保向微分同胚同痕于恒同（Bonahon \cite{Bonahon}；亦为广义 Smale 猜想的推论），故 $M$ 的定向微分同胚型只依赖 $(e_1,e_2)$。$M$ 单连通，$b_2=2$；Mayer--Vietoris 序列表明两个零截面张成 $H_2(M;\Z)$ 的指数 $2$ 子格，其上交叉形式为 $\operatorname{diag}(e_1,e_2)$。圆球与 EH 的 $U(2)$ 对称性含公共的 $T^2$，两种手性的粘合均可取为 $T^2$ 等变，故 $M$ 承载有效光滑 $T^2$ 作用；由 Orlik--Raymond 分类 \cite{OR}，$M$ 是 $S^4,\pm\CP^2,S^2\times S^2$ 的连通和，$b_2=2$ 时只能是 $S^2\times S^2$、$\CP^2\#\CPb$、$\pm(\CP^2\#\CP^2)$。若 $e_1e_2<0$，形式不定；$\operatorname{diag}(1,-1)$ 中无平方为 $\pm2$ 的向量（$x^2-y^2=\pm2$ 无整数解），故形式为偶的双曲形式，$M\cong S^2\times S^2$。若 $e_1e_2>0$，形式定号，$M\cong\pm(\CP^2\#\CP^2)$。关于轨形的保向等距（交换两极）与反向等距（过两极的反射）表明四种标记恰给出这两型。$e_+=0$ 与 GH 收敛由定理~\ref{thm:A1}。
+\end{proof}
+
+\begin{remark}[Kirby 演算的独立验证]
+$M=D_{-2}\cup(\text{沿 }-2\text{ 框平凡结的子午线、框数 }f\text{ 的 2-柄})\cup(\text{4-柄})$；两种 Hopf 纤维化在 $\R P^3$ 中共用同一圆周而框数相差 $1$。边界为 $S^3$ 要求 $|-2f-1|=1$，即 $f\in\{0,-1\}$：$(-2,0)$ 给 $S^2\times S^2$；$(-2,-1)$ 吹落 $-1$ 分支后给 $\CPb\#\CPb$。终审中另以 $T^2$ 权重独立复核了推论~\ref{cor:models}(1) 的奇偶性结论（翻转相对两节点得 spin 流形 $\#3(S^2\times S^2)$，翻转相邻两节点得 $3\CP^2\#3\CPb$）。
+\end{remark}
+
+\begin{remark}[与 Ozuch 问题的关系]
+Ozuch \cite{OzuchII} 证明了：$M=T^*S^2\#S^4/\Z_2\#T^*S^2$ 上存在度量 $g_t\to S^4/\Z_2$（GH），满足 $\Ric(g_t)\ge3g_t$ 与 $\|\Ric(g_t)-3g_t\|_{L^p}\to0$（任意 $p<\infty$），但不存在满足 $\Ric=3g$ 的 Einstein 度量序列收敛到该轨形；据其 2021 年报告幻灯片（其中把 $M$ 写作 $S^2\times S^2$），他明确提出公开问题：能否做到 $\|\Ric(g_t)-3g_t\|_{L^\infty}\to0$？推论~\ref{cor:football}（归一化换为 $\Ric\approx3g$ 只需缩放 $g_a/3$）对\emph{两种}手性的解消都给出\textbf{肯定回答}，速率为 $O(1/|\log a|)$；再作缩放 $(1-\delta_a)g_a$ 还可同时保持单侧条件 $\Ric\ge3g$。文献检索未发现已有工作给出该结论或使用“对数 Weyl 插值”（混合手性 EH 粘合此前出现在 Brendle--Kapouleas \cite{BK} 关于 $T^4/\Z_2$ 的工作中，目标与结论不同）；资料包的构造稿应属新结果，建议单独成文。
+\end{remark}
+
+\begin{corollary}[更多模型]\status{已证；表中拓扑识别引自资料包}\label{cor:models}
+（1）$\mathcal O=(S^2\times S^2)/\langle(r_\pi,r_\pi)\rangle$（四个 $A_1$ 节点，乘积 Einstein 度量）的各手性解消满足 $e_+=0$；资料包以拟环面分类给出其微分同胚型：$\CP^2\#5\CPb$、$2\CP^2\#4\CPb$、$3\CP^2\#3\CPb$、$\#3(S^2\times S^2)$ 及其反定向。
+（2）对超椭圆曲线 $C_g,C_h$（$g,h\ge2$），$\mathcal O_{g,h}=(C_g\times C_h)/\langle\iota_g\times\iota_h\rangle$ 有 $4(g+1)(h+1)$ 个 $A_1$ 节点和 $\Ric=-g$ 的乘积轨形度量；其任意手性解消满足 $e_-=0$。全部取复方向的标准解消已承载负 Kähler--Einstein 度量（经整体平滑 $w^2=fq+tF$ 与同时解消）；含反手性节点的混合解消是否承载 Einstein 度量未知。
+（3）只具有孤立 $\R^4/\{\pm1\}$ 奇点的紧双曲四维轨形（存在性见引理~\ref{lem:hyporb}）的 EH 解消满足 $e_-=0$。
+\end{corollary}
+
+\begin{lemma}[所需双曲轨形的存在性]\status{已证}\label{lem:hyporb}
+存在紧、可定向的双曲四维轨形，其奇点全为孤立点且局部群均为 $\{\pm1\}$。
+\end{lemma}
+\begin{proof}
+取 $k=\mathbb Q(\sqrt2)$，$f=x_1^2+\cdots+x_4^2-\sqrt2x_0^2$。$f$ 在恒同嵌入下符号为 $(4,1)$，在共轭嵌入下正定，故 $\Gamma=O'(f,\mathcal O_k)$ 是 $\operatorname{Isom}(\HH^4)$ 中的余紧算术格。取剩余特征 $p\ge5$ 且使主同余子群 $\Gamma(I)$ 无挠、保向的素理想 $I$。点反射 $s=\operatorname{diag}(-1,-1,-1,-1,1)\in\Gamma$ 正规化 $\Gamma(I)$，令 $\Gamma'=\Gamma(I)\rtimes\langle s\rangle$。$\Gamma'$ 的挠元必形如 $\gamma s$ 且为对合；$\gamma s\equiv s\pmod I$ 给 $\tr(\gamma s)\equiv-3$。保持 $\HH^4$ 的对合的 $+1$ 特征空间含类时向量，维数 $m\ge1$，迹为 $2m-5$；$2(m-1)\in I$ 且 $p\ge5$ 迫使 $m=1$，即 $\gamma s$ 是点反射，不动点孤立，在切空间上作用为 $-\Id$（保向）。同一点至多是一个点反射的不动点，故各稳定化子恰为 $\Z_2$。$\HH^4/\Gamma'$ 即为所求。
+\end{proof}
+
+\begin{corollary}[稳定性形式不成立]\status{已证（依赖所引隔离定理）}\label{cor:stability}
+设 $\sigma=\pm1$。不存在函数 $\eta(\varepsilon)\to0$ 使得：$\delta_\sigma(g)\le\varepsilon$ 蕴含存在闭 Einstein 四维流形 $(N,h)$，$\Ric_h=\sigma h$，$d_{GH}((M,g),(N,h))\le\eta(\varepsilon)$。事实上，对推论~\ref{cor:football}（$\sigma=+1$）与推论~\ref{cor:models}(3)（$\sigma=-1$）中的 $g_a$，存在 $\eta_0>0$，使 $a$ 充分小时一切这样的 $(N,h)$ 满足 $d_{GH}\ge\eta_0$。
+\end{corollary}
+\begin{proof}
+Ozuch（\cite{OzuchCPAM}，Theorem 0.9）证明：至少含一个 $\R^4/\Z_2$ 奇点的球面或双曲四维轨形不是光滑 Einstein 度量（固定 Einstein 常数）的 GH 极限；Huang--Ozuch（\cite{HuangOzuch}，Theorem 1.1）进一步给出这类轨形在 $\Ric=\pm3g$ 的 Einstein 轨形中的 GH 隔离。而 $(M,g_a)$ GH 收敛到该轨形，三角不等式即得结论。
+\end{proof}
+
+注意推论~\ref{cor:stability}在 $S^2\times S^2$ 上成立，而该流形承载乘积 Einstein 度量：\emph{输入度量附近无精确解}与\emph{底层流形无精确解}是两个命题，原题问的是后者。

@@ -1,0 +1,351 @@
+# Bilateral gauge saturation on genuinely collapsed local covers
+
+24 September 2026. This note connects the actual-form estimates to a
+collapsed regularity theorem. It does not replace base noncollapse by a
+renamed base-volume hypothesis. Instead, maximal local nilpotency rank
+supplies harmonic charts **after local rewinding**, and a covering-average
+estimate transfers the gauge information to those charts. The output is
+local product geometry outside a quantitatively small-volume set, not a
+global Einstein repair or a classification of all collapsed regions.
+
+## 1. A collapse-tolerant structure statement
+
+Use the bilateral actual conformal Spin\(^c\) inputs and conventions of
+[bilateral realization](20260924_bilateral_realization.md), Section 1.
+Thus \(a_+\) is actual in the given orientation and \(a_-\) in the
+opposite orientation; their positive projected energies satisfy
+\(p_+,p_->0\). Define
+\[
+ \delta=\|\operatorname{Ric}^\sharp+I\|_{\infty,\mathrm{op}},
+ \quad r=\fint|\operatorname{Ric}+g|^2,
+ \quad q_\pm=\frac{\frac32\int(s^2+12|W^\pm|^2)-72\pi^2p_\pm}{V},
+ \quad K=2r+q_++q_-.
+ \tag{1}
+\]
+The \(q_\pm\) are nonnegative; Weyl norms are endomorphism norms.
+There is **no** lower bound on \(p_\pm\), total volume, or the volume of
+base balls in the result below.
+
+Fix a scale \(0<\rho\le1\). Let \(\epsilon_N,h_N>0\) be the
+four-dimensional Euclidean-model constants in Naber–Zhang's Proposition
+6.4, reduced if needed so that \(h_N<1\). Define \(\mathcal G_\rho\)
+to consist of points \(x\) for which, for some \(k\in\{1,2,3,4\}\),
+\[
+ d_{GH}(B_{2\rho}(x),B_{2\rho}(0^k))<\epsilon_N\rho,
+ \qquad
+ \operatorname{rank}\operatorname{Image}
+ [\pi_1(B_{\epsilon_N\rho}(x))\to\pi_1(B_{2\rho}(x))]=4-k.
+ \tag{2}
+\]
+The rank is the Hirsch rank of a finite-index nilpotent subgroup, not a
+Betti number or the rank of \(\pi_1(M)\). The small group in (2) is
+almost nilpotent under these hypotheses. Closedness supplies the local
+completeness required by the classical theorem. A fixed measurable
+subset of the points satisfying (2) can be used if desired.
+
+Let \(\pi_x:U_x\to B_\rho(x)\) be the **local universal cover** with
+its pulled-back metric, and choose a lift \(\widetilde x\). The metric
+space \(U_x\) is generally incomplete at the lifted outer boundary.
+All balls used below stay a definite distance from that boundary. We do
+not identify \(U_x\) with a subset of the universal cover of \(M\).
+
+**Theorem A (rewound product structure on the bulk).** Fix
+\(\rho\in(0,1]\) and \(\alpha\in(0,1)\). There are \(a>0\),
+\(C<\infty\), and a modulus \(\Psi(t)\to0\) as \(t\downarrow0\),
+depending only on \(\rho,\alpha\) and the fixed classical constants,
+with the following property. Suppose \(M\) is a closed connected oriented smooth
+four-manifold with the actual inputs above,
+\(\delta\le1/2\), and \(0<K\le1/2880\). Then there is a measurable
+set \(\mathcal E\subset M\) satisfying
+\[
+                  \frac{\operatorname{Vol}(\mathcal E)}{V}
+                         \le C K^{1/4},                 \tag{3}
+\]
+such that, for each \(x\in\mathcal G_\rho\setminus\mathcal E\), a
+neighbourhood of \(\widetilde x\) containing its radius-\(a\) ball is
+\(\Psi(\delta+K^{1/4})\)-close in pointed geometric \(C^{1,\alpha}\)
+to a neighbourhood in
+\[
+                         \mathbb H^2_{-1}\times\mathbb H^2_{-1}.
+ \tag{4}
+\]
+One may define this closeness using a pointed embedding of a fixed
+slightly larger model ball, whose image contains \(B_a(\widetilde x)\),
+and the scaled \(C^{1,\alpha}\) norm of the difference of the pulled-back
+metrics. Shrinking \(a\) by a fixed factor makes these equivalent usual
+local definitions interchangeable.
+
+Equivalently, along any sequence with \(\delta_j\to0\),
+\(K_j\to0\), there are exceptional sets of relative volume tending to
+zero, and all the indicated rewound balls converge uniformly in this
+local geometric sense to product balls. For \(K=0\), the equality case
+already makes \(g\) Einstein and Kähler in both orientations, so the
+product statement is exact.
+
+This theorem does not assume bounded diameter, \(\pi_2=0\), a
+class-square cost, or base injectivity radius. It allows genuine rank-one
+or rank-two collapse; Section 6 gives an exact rank-two example. The
+classical rank/model test (2) is not proved to hold everywhere. The
+exceptional-volume estimate is relative to the whole manifold, not to
+each arbitrarily small thin component.
+
+## 2. The covering-average lemma: multiplicity is not free
+
+**Lemma 1.** Suppose \(\operatorname{Ric}\ge-3g\),
+\(\pi:U\to B_R(x)\) is a connected normal Riemannian covering, and
+\(4b<R\), \(b\le1\). For any nonnegative measurable function \(F\)
+on \(B_R(x)\),
+\[
+ \fint_{B_b(\widetilde x)}\pi^*F
+       \le C_1\fint_{B_b(x)}F,
+ \qquad C_1\le\frac{V_{-1}(3b)}{V_{-1}(b)}\le C(4).
+ \tag{5}
+\]
+The constant does not depend on the number of sheets, a base-ball volume,
+or an injectivity radius. Both sides are **averages**.
+
+**Proof.** Choose a Dirichlet fundamental domain based at
+\(\widetilde x\). Its part \(D_b\) projecting to \(B_b(x)\) has
+volume \(\operatorname{Vol}B_b(x)\) and lies in
+\(B_b(\widetilde x)\), apart from measure-zero choices on its boundary.
+Indeed a minimizing base geodesic from \(x\) to any point of \(B_b(x)\)
+lifts inside that ball, and the Dirichlet representative is no farther.
+
+If a point of \(B_b(x)\) has \(m\) lifts in
+\(B_b(\widetilde x)\), each is a translate of its representative in
+\(D_b\). Its deck transformation moves \(\widetilde x\) by less than
+\(2b\). Denote the number of such deck transformations by \(N\).
+The sets \(\gamma D_b\) for these transformations are disjoint up to
+measure zero and contained in \(B_{3b}(\widetilde x)\). Therefore
+\[
+ m\le N\le
+ \frac{\operatorname{Vol}B_{3b}(\widetilde x)}
+      {\operatorname{Vol}B_b(x)}.
+ \tag{6}
+\]
+The balls have compact closure away from the boundary of the cover;
+proper discontinuity makes the relevant orbit count finite. The area
+formula and (6) bound the lifted integral by
+\(\operatorname{Vol}B_{3b}(\widetilde x)\fint_{B_b(x)}F\).
+Divide by \(\operatorname{Vol}B_b(\widetilde x)\) and apply the local
+Bishop–Gromov comparison, which is valid since \(3b<R\). This proves
+(5). \(\square\)
+
+In contrast, an estimate for an unnormalized integral lifts with the
+multiplicity in (6), which can diverge. A global small average does not
+say that every local base average is small. The next step quantifies
+exactly this second issue rather than suppressing it.
+
+## 3. Global gauge error gives small local averages off a small set
+
+The inherited actual-form theorem gives global forms
+\(\omega_\pm\in\Omega^\pm(M)\), with
+\(\|\omega_\pm\|_\infty\le2\sqrt3\). Put
+\[
+ F=\sum_{\sigma=\pm}
+     \bigl[(|\omega_\sigma|^2-2)^2+|\nabla\omega_\sigma|^2\bigr].
+ \tag{7}
+\]
+Use the smoothing tolerance \(K/4\) for each form and write
+\(\kappa_\sigma=r+q_\sigma\), so \(\kappa_++\kappa_-=K\).
+The actual estimates give
+\[
+ \fint F\le734K+8\sqrt K\le750\sqrt K.
+ \tag{8}
+\]
+The first-order bound and the uniform amplitude, not the second-order
+Hodge estimate, are used. There is no hidden negative-square cost.
+
+For any fixed \(b\le1\), let
+\(\mathcal A_bF(x)=\fint_{B_b(x)}F\). Local volume doubling under the
+Ricci lower bound implies
+\[
+ \int_M\mathcal A_bF(x)\,d\mu(x)\le C_2\int_MF.
+ \tag{9}
+\]
+To see this explicitly, if \(d(x,y)<b\), then
+\(B_b(y)\subset B_{2b}(x)\), hence
+\(\operatorname{Vol}B_b(y)\le C_2\operatorname{Vol}B_b(x)\).
+Fubini applied to the ball-averaging kernel now proves (9).
+Consequently, for every \(t>0\),
+\[
+ \frac{\operatorname{Vol}\{x:\mathcal A_bF(x)>t\}}{V}
+              \le\frac{750C_2\sqrt K}{t}.              \tag{10}
+\]
+Take \(t=K^{1/4}\). This proves (3). At every remaining point,
+Lemma 1 transfers the small base average to its local universal cover:
+\[
+               \fint_{B_b(\widetilde x)}\pi_x^*F
+                         \le C_1K^{1/4}.               \tag{11}
+\]
+The potentially enormous covering multiplicity has cancelled against
+the correct local volume normalization. No inequality asserting
+\(\int\pi_x^*F\le C\int_MF\) is used.
+
+## 4. Maximal rank supplies regularity; the forms identify the limit
+
+For \(x\in\mathcal G_\rho\), apply Naber–Zhang, Proposition 6.4,
+to \(\rho^{-2}g\). Since \(\delta\le1/2\), the Ricci tensor norm of
+\(g\) is at most three, and rescaling preserves the required bound.
+The conclusion supplies a uniform harmonic radius at the lift of \(x\)
+in the universal cover of \(B_\rho(x)\), at least \(h_N\rho\).
+This is a classical theorem used with its rank condition, not a new
+claim that Ricci bounds alone give regular local covers.
+
+Choose \(b\) to be a fixed sufficiently small multiple of
+\(h_N\rho\), with \(4b<\rho\). The covering metric has controlled
+harmonic coordinates on a neighbourhood larger than \(B_b(\widetilde x)\).
+The harmonic metric equation and bounded Ricci give uniform finite
+\(W^{2,p}\) bounds on smaller charts and hence \(C^{1,\beta}\)
+precompactness for every \(\beta<1\). No derivative of Ricci is needed.
+
+We give the argument for the qualitative uniform modulus in Theorem A.
+If it failed, there would be good points with \(\delta_j\to0\),
+\(K_j^{1/4}\to0\), and controlled cover charts that stay a fixed
+distance from product geometry. The charts have a convergent subsequence.
+In harmonic coordinates
+\[
+ g^{ab}\partial_a\partial_b g_{ij}
+            =-2\operatorname{Ric}_{ij}+Q_{ij}(g,\partial g).
+ \tag{12}
+\]
+Pointwise \(\operatorname{Ric}+g\to0\) makes the limit a smooth exact
+negative Einstein metric. Subtracting its equation improves convergence
+to strong finite \(W^{2,p}\), and therefore to the prescribed
+\(C^{1,\alpha}\) on still smaller charts.
+
+Lift the actual forms to these charts. Their uniform bounds and (11)
+give fixed-chart \(H^1\) bounds. Rellich compactness and convergence of
+connections yield two smooth parallel limiting forms, one self-dual and
+one anti-self-dual, both of norm \(\sqrt2\). The associated parallel
+complex structures commute. Their product is a symmetric trace-zero
+involution, with two rank-two parallel eigenspaces. Local de Rham
+splitting and \(\operatorname{Ric}=-g\) make both factors hyperbolic
+surfaces of curvature \(-1\). On a fixed smaller ball this is exactly
+(4), contradicting the assumed failure of uniform closeness.
+This proves Theorem A. \(\square\)
+
+The limit assertion uses neither global compactness nor an ALE theorem.
+It also does not identify the limiting local deck transformations across
+different points or across the exceptional set. That missing global
+information is precisely why Theorem A is not a global realization result.
+
+## 5. Why this changes the scope, and where it stops
+
+The earlier bounded-diameter bilateral theorem obtains one compact
+smooth limit and hence an exact metric on the original manifold. The
+present theorem removes diameter and **base noncollapse** at the cost of
+a different conclusion: quantitative product geometry in local covers
+on the maximal-rank bulk. The two conclusions are not interchangeable.
+
+There are two distinct failure mechanisms left visible:
+
+1. A point can fail the rank/model condition (2). Small global gauge
+   deficit does not prove maximal nilpotent rank or a smooth collapsed
+   base. Naber–Zhang's singular-fibre examples explain why that topology
+   cannot simply be omitted from their theorem.
+2. A point can belong to \(\mathcal E\). The global bounds control its
+   volume, not its topology, its monodromy, or the tensor modes needed to
+   solve the global Einstein equation.
+
+Even if (2) holds everywhere and the exceptional-volume bound tends to
+zero, no assertion here controls a full global tensor inverse or glues
+local exact product limits into a single metric on \(M\). The
+[diameter-free repair criterion](20260924_local_to_global_scope.md)
+cannot be invoked by replacing its base-ball Moser estimate with an
+unexplained cover estimate: the inverse and the global residual norm
+need their own covering-compatible control. Theorem A supplies genuine
+collapsed local geometry, not that missing global solver.
+
+## 6. Actual collapse tests and a sharp failure of unnormalized transfer
+
+### 6.1 Exact bilateral saturation allows rank-two thin geometry
+
+Take two closed hyperbolic surfaces of fixed genera at least two, each
+with a separating geodesic of length \(\ell\to0\), and their product
+metric \(g_\ell\). The canonical classes of the two product complex
+structures are actual in both orientations, and
+\[
+                    \delta_\ell=q_{+,\ell}=q_{-,\ell}=0.
+ \tag{13}
+\]
+Near the two short geodesics the metric is exactly
+\[
+ dt_1^2+\ell^2\cosh^2(t_1)d\theta_1^2
+ +dt_2^2+\ell^2\cosh^2(t_2)d\theta_2^2,
+ \tag{14}
+\]
+where each \(\theta_i\) has period one. Collar widths tend to infinity.
+At their common waist, fixed-radius base-ball volumes are \(O(\ell^2)\).
+The balls converge to Euclidean two-dimensional balls, and the fibre
+group in (2) is \(\mathbb Z^2\), of maximal rank \(4-2\). Unwrapping
+the two circles gives exact hyperbolic-product geometry. These are real
+negative Einstein and gauge-saturated examples excluded by any uniform
+base-ball volume lower bound, but covered by Theorem A.
+
+This is not a new Einstein construction. It is an exact test showing
+that the theorem's changed input regime includes genuine collapse, not
+merely a reformulated noncollapsed condition.
+
+### 6.2 Absolute integral errors need not stay small after rewinding
+
+On the same actual metrics choose a fixed nonzero nonnegative smooth
+function \(f(t_1,t_2)\), supported in \(|t_i|<b/10\), independent of
+\(\theta_1,\theta_2\), and extend it by zero. Then
+\[
+ \int_M f\,d\mu_{g_\ell}
+ =\ell^2\int f\cosh t_1\cosh t_2\,dt_1dt_2\to0.
+ \tag{15}
+\]
+On the local universal cover use \(u_i=\ell\theta_i\). The lifted
+metric is
+\(dt_1^2+\cosh^2(t_1)du_1^2+dt_2^2+\cosh^2(t_2)du_2^2\),
+independent of \(\ell\). Its lifted function is the same nonzero
+\(f(t_1,t_2)\). Its integral over a fixed suitably chosen lifted ball
+is bounded below by a positive constant. Thus no universal estimate
+of the form
+\[
+            \int_{B_b(\widetilde x)}\pi^*f\le C\int_M f
+ \tag{16}
+\]
+can hold, even when the underlying metrics have exact Einstein and
+bilateral gauge equality. This counterexample concerns an inference
+between integral norms. The function \(f\) is not asserted to be an
+actual monopole defect on the equality metrics, where those defects
+are zero. It pinpoints why a proof based only on their global integral
+bounds cannot freely lift such bounds without a local-normalization step.
+
+### 6.3 Local and global universal covers are different objects
+
+For example, a Hopf circle in \(S^3\) is contractible in \(S^3\),
+but represents the infinite cyclic fibre group over a small disk in
+the Hopf base. A local cover of that tube unwraps the circle; the global
+universal cover does not. Taking a product with \(S^1\) gives a
+four-dimensional example with \(\pi_2=0\) exhibiting this distinction.
+This elementary example is not claimed to satisfy the negative
+Einstein/gauge hypotheses. It shows why even \(\pi_2(M)=0\) does not
+justify embedding every rewound local ball into \(\widetilde M\).
+Theorem A works entirely on the local cover and never makes that inference.
+
+## 7. Source and status
+
+- Naber–Zhang, [*Topology and epsilon-regularity Theorems on Collapsed Manifolds with Ricci Curvature Bounds*](https://arxiv.org/html/1412.1326),
+  Proposition 6.4, supplies the maximal-rank harmonic-radius theorem on
+  the local universal cover; its Proposition 6.5 requires the exact
+  Einstein equation or Ricci-derivative control for curvature bounds.
+  Only Proposition 6.4 is used here. We specialize its model to Euclidean
+  space so its constants do not hide a varying limit-space dependence.
+- The [actual-form theorem](../mathematics/current/line1_composed_application.md)
+  supplies (7)–(8); [bilateral realization](20260924_bilateral_realization.md)
+  gives the opposite-handed form algebra. The present theorem does not
+  require the second-order form estimate.
+- The [preserved collar construction](../mathematics/current/round11_closed_gluing.md),
+  Section 2, records the classical hyperbolic collar formula and its
+  primary reference. The product tests above use these classical metrics,
+  not a new gluing construction.
+
+The new project bridge is the combination of actual gauge supply,
+covering averages, and maximal-rank collapsed regularity. Its bad-set
+bound is proved by a direct averaging argument; its local geometric
+modulus is qualitative compactness. It neither proves maximal rank from
+saturation nor settles global Einstein existence in the collapsing regime.

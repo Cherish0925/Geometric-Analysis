@@ -1,0 +1,335 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,microtype,enumitem}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\calC}{\mathcal C}
+\title{Q3: Mass Variation and a Cyclic Degeneration Obstruction}
+\author{Research continuation based on the supplied October 8 manuscripts}
+\date{8 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+The fixed objective is a smooth closed, non-Bach-flat global minimizer of
+the squared trace-free Ricci functional. We identify a useful freedom in
+one surviving degeneration: the marked smooth $\mathcal O(-3)$ filling
+admits scalar-flat K\"ahler ALE metrics of either mass sign at the same
+curvature integral. Combining this classical existence theory with the
+supplied critical-background boundary flux gives a first-order replacement
+formula. In a smooth critical orbifold limit, a marked
+$\frac13(1,1)$ degeneration of this topology can remain minimizing only
+if a specific self-dual curvature eigenvalue vanishes. This is an
+obstruction to a degeneration, not a proof of smooth attainment.
+\end{abstract}
+
+\section{The fixed existence problem}
+For an oriented smooth closed four-manifold, put
+\[
+ P(g)=\int_M|\Ric_g^\circ|^2\,dV_g,
+ \qquad p_*(M)=\inf_{g\in\operatorname{Met}(M)}P(g).
+\]
+Here Weyl curvature has the Hilbert--Schmidt curvature-operator norm.
+The fixed candidate remains $M=X\#\overline{\CP^{2}}$, with $X$ the
+classical Godeaux surface, $K_X^2=1$. The preceding work gives
+\[
+ 2\chi(M)+3\tau(M)=0,\qquad
+ \frac{16\pi^2}{3}\le p_*(M)<8\pi^2.
+ \tag{1}
+\]
+The lower bound is the classical monopole estimate; the strict upper
+bound uses the supplied complete negative-K\"ahler--Einstein insertion
+construction. Equation (1) is inherited here.
+
+All conformal classes in this example have negative Yamabe constant.
+A smooth $P$-minimizer has constant scalar curvature. If it were
+Bach-flat, its remaining Euler--Lagrange equation would give
+$s\Ric^\circ=0$, hence it would be Einstein. But $T=2\chi+3\tau=0$
+and the Chern--Weil formula would then force $s=W^+=0$, contrary to
+the positive monopole scalar budget. Thus \emph{smooth attainment},
+without computation of $p_*(M)$, would answer Q3.
+
+The preceding round found an actual embedded $(-3)$-sphere in $X$,
+disjoint from the chosen blowup. Its tubular neighbourhood is the
+disk bundle $\mathcal O(-3)$, with end $S^3/\mathbb Z_3$. Its usual
+scalar-flat K\"ahler ALE metric has $P=8\pi^2/3$; simply comparing this
+number with (1) does not exclude a bubble. The present calculation tests
+\emph{replacement at finite scale}, rather than adding independent
+lower bounds for the core and the bulk.
+
+\section{A fixed filling with arbitrary mass sign}
+Let $N$ be the oriented smooth total space of $\mathcal O(-3)$, with
+generator $C\in H_2(N;\mathbb Z)$, $C^2=-3$, and scalar end group
+$\Gamma=\frac13(1,1)$.
+
+\begin{proposition}[Consequence of classical ALE existence and mass theorems]
+There is a Stein complex structure $J$ on this fixed marked smooth
+manifold such that, for every $t\in\mathbb R$, an ALE scalar-flat
+K\"ahler metric $g_t$ exists with
+\[
+ \int_C\omega_t=t,\qquad
+ c_1(N,J)\cdot C=-1,\qquad
+ m(g_t)=-\frac{t}{9\pi},\qquad
+ P(g_t)=\frac{8\pi^2}{3}.
+ \tag{2}
+\]
+Mass is normalized as in Hein--LeBrun \cite{HL}.
+\end{proposition}
+
+\begin{proof}
+In $\mathbb F_1$, write $\Gamma_0^2=-1$, $f^2=0$, $\Gamma_0f=1$.
+Choose a smooth section $D\in|\Gamma_0+2f|$. It is ample and has
+$D^2=3$. Its complement is affine, hence Stein, and is an affine
+$\mathbb C$-bundle with underlying smooth bundle $\mathcal O(-3)$.
+Honda's Theorem 1.2 \cite{Honda} realizes this complex structure in
+the ALE scalar-flat K\"ahler deformation family of the same smooth
+space. The compact generator has image $C=\Gamma_0-f$ in
+$H_2(\mathbb F_1)$, so
+\[
+ C^2=-3,\qquad
+ c_1\cdot C=(2\Gamma_0+3f)(\Gamma_0-f)=-1.
+\]
+Han--Viaclovsky's Theorem 1.13 \cite{HV} explicitly includes the
+group $\frac13(1,1)$ and supplies a scalar-flat K\"ahler ALE metric
+in \emph{every} K\"ahler class for each complex structure in this
+Artin family. Their Remark 6.1 identifies the ALE K\"ahler cone of
+this Stein surface with all of $H^2(N;\mathbb R)$. Hence the period
+$t$ is unrestricted. Positivity of a K\"ahler form does not require
+$t>0$: $C$ is not holomorphic in the Stein complex structure.
+
+The intersection matrix is $Q=[-3]$. Hein--LeBrun's Theorem 4.3 gives
+\[
+ m=-\frac1{3\pi}(-1)Q^{-1}t=-\frac{t}{9\pi}.
+\]
+The Ricci form $\varrho$ is anti-self-dual and represents $2\pi c_1$.
+The relative square is $c_1^2=-1/3$. Its ALE decay permits the
+relative Chern--Weil pairing, and therefore
+\[
+ P=2\int_N|\varrho|^2=-2\int_N\varrho\wedge\varrho
+   =-8\pi^2c_1^2=\frac{8\pi^2}{3}.
+\]
+The end marking is retained by the smooth bundle identification and
+the fixed ALE background used in the all-class existence theorem.
+\end{proof}
+
+This proposition imports a concrete freedom from established theory;
+it is not a claim that mass-sign flexibility is historically new.
+Its relevance is that a replacement metric need not stay within the
+radial negative-mass LeBrun family.
+
+\section{The leading tail and its normalization}
+Let $J_0$ be the standard complex structure on the end, and set
+\[
+ B(x)=\frac{|x|^2 I-xx^{\mathsf T}-(J_0x)(J_0x)^{\mathsf T}}{|x|^4}.
+ \tag{3}
+\]
+Han--Viaclovsky, Remark 2.2, supplies differentiated decay
+$g-\delta=O(r^{-2})$, $J-J_0=O(r^{-3})$.
+Yao's Theorem D(ii) \cite{Yao} then gives a logarithmic K\"ahler
+potential whose coefficient is determined by mass, with
+$O(r^{-3})$ metric remainder. In suitable end coordinates,
+\[
+ g_t=\delta+9m(g_t)B+q_t,\qquad
+ |\partial^j q_t|\le C_jr^{-3-j}.
+ \tag{4}
+\]
+This assertion concerns a fixed chosen $g_t$; no uniform estimates
+over all $t$ are required.
+
+The coefficient in (4) is also checked directly. For $h=aB$,
+\[
+ \partial_jh_{ij}-\partial_i\operatorname{tr}h
+       =\frac{2ax_i}{r^4}.
+\]
+The ADM flux with coefficient $1/(12\pi^2)$ on
+$S^3/\mathbb Z_n$ is $a/(3n)$. For $n=3$, $a=9m$.
+Yao's cone-link convention uses $m_Y=3m$ for this end; (4) avoids
+any ambiguity from this different convention or from $d^c$.
+
+The $O(r^{-3})$ terms may contribute at later orders, but there is
+no independent leading $r^{-2}$ tensor whose sign needs to be
+guessed. This is why the mass formula can be used in the full
+metric replacement, not merely in a radial model.
+
+\section{Replacement of a smooth critical orbifold point}
+Write
+\[
+ R^+=W^++\frac{s}{12}I,\qquad
+ \calC(g)=\int\left(4|W^+|^2+\frac{s^2}{12}\right)dV
+          =4\int|R^+|^2dV.
+\]
+On a closed manifold, $P=\calC-8\pi^2T$, $T=2\chi+3\tau$;
+on pieces the corresponding boundary terms must be retained.
+
+\begin{proposition}[First-order replacement; inherited flux normalization]
+Let $g$ be a smooth orbifold metric near a point of type
+$\frac13(1,1)$, and suppose it is $P$-critical on a neighbourhood
+containing the full support of the modification. Let $\zeta$ be the
+unit self-dual form singled out by the isotropy representation, and put
+\[
+ \mu=\langle R^+\zeta,\zeta\rangle_p.
+\]
+Replace the point by the marked filling $(N,g_t)$ at length scale
+$\lambda$. There are smooth matched competitors, equal to $g$
+outside that neighbourhood, for which
+\[
+ P(g_{\lambda,t})=P(g)+\frac{8\pi^2}{3}
+       -24\pi^2m(g_t)\mu\lambda^2+o(\lambda^2)
+ =P(g)+\frac{8\pi^2}{3}
+       +\frac{8\pi}{3}t\mu\lambda^2+o(\lambda^2).
+ \tag{5}
+\]
+Here the linear boundary flux is the corrected critical-background
+flux from supplied source A02.59D. The following proof verifies the
+transfer to the nonradial filling (4) and the error order.
+\end{proposition}
+
+\begin{proof}
+In orbifold normal coordinates, $g=\delta+H_2+O(r^3)$, with $H_2$
+the quadratic curvature jet. The scaled ALE end is
+\[
+ g_{t,\lambda}=\delta+9m\lambda^2B+q_{t,\lambda},\qquad
+ |\partial^j q_{t,\lambda}|\le C_j\lambda^3r^{-3-j}.
+\]
+Choose $\rho=\lambda^{3/7}$. On the inner piece use the exact
+scalar-flat K\"ahler metric, add the background jet, and extend
+that jet smoothly over the core. In unscaled core coordinates this
+extension is $O(\lambda^2)$ with bounded derivatives. Its physical
+chiral curvature is $O(1)$ on a region of volume $O(\lambda^4)$.
+On the end, relative to the common background chiral curvature,
+the errors are $O(\lambda^2r^{-2})+O(\lambda^3r^{-3})+O(r)$.
+
+After subtracting the removed bulk integral, the inner error is bounded by
+\[
+ C\left(\lambda^4+\lambda^2\rho^2+\lambda^3\rho
+            +\lambda^4|\log\lambda|+\rho^5\right).
+ \tag{6}
+\]
+This subtraction is essential: the common $O(\rho^4)$ background
+term is present in both integrals. Metric norms and volume factors
+contribute to the displayed bounds as well.
+
+In the outer region, expand about the exact bulk metric. Its interior
+first variation vanishes by criticality. The mass term therefore gives
+only the inner boundary flux. The supplied value $-8\pi^2\mu$ for
+a unit Burns tail is linear in its coefficient, and quotient integration
+divides by three. Thus the leading boundary term is
+\[
+ -\frac{8\pi^2}{3}(9m)\mu\lambda^2.
+\]
+Changing the curvature on the inner sphere to its value at $p$ costs
+$O(\lambda^2\rho)$. The outer quadratic remainder is
+$O(\lambda^4\rho^{-4})$. The differentiated remainder in (4)
+has linear flux $O(\lambda^3/\rho)$, squared error
+$O(\lambda^6\rho^{-6})$, and mixed error bounded by
+$O(\lambda^5\rho^{-5})$. All are $o(\lambda^2)$, as are (6):
+for example, $\rho^5=\lambda^{15/7}$ and
+$\lambda^4\rho^{-4}=\lambda^{16/7}$.
+
+Finally, the relative $T$ contribution of the filling is $-1/3$.
+Consequently the fixed difference between the $P$ and chiral-functional
+comparisons is $8\pi^2/3$. This proves (5). The argument uses a fixed
+mass and a fixed filling before $\lambda\downarrow0$; it does not
+exchange these limits or assume an Einstein bulk.
+\end{proof}
+
+\section{The necessary condition for a minimizing degeneration}
+\begin{corollary}
+Suppose an ideal minimizing configuration has a smooth critical orbifold
+bulk with a $\frac13(1,1)$ point, energy equality, and a reconstruction
+on the original manifold using a marked $\mathcal O(-3)$ filling.
+Then
+\[
+                    \boxed{\mu=0.}                 \tag{7}
+\]
+\end{corollary}
+\begin{proof}
+The relative identity gives $P(N)\ge8\pi^2/3$ for any admissible
+filling with this topology and asymptotics, since its chiral energy is
+nonnegative. Replacing it by (2) shows that an ideal minimizer must use
+exactly this value. If $\mu>0$, use a positive-mass filling; if
+$\mu<0$, use a negative-mass filling. For fixed such mass, (5) is
+strictly below the ideal energy for all sufficiently small positive
+$\lambda$, contradicting minimality on the same smooth manifold.
+Other resolved pieces can be recovered afterwards with error smaller
+than this fixed improvement.
+\end{proof}
+
+The same comparison is local. A full global energy identity can be
+replaced by the following precise local hypotheses: the excised regions
+in the minimizing sequence have the marked $\mathcal O(-3)$ topology,
+their boundary data converge smoothly to the orbifold-ball boundary,
+and
+\[
+ \liminf_jP(U_j)\ge P_g(B_r/\Gamma)+8\pi^2/3.        \tag{8}
+\]
+For any fixed small $\lambda$, (5) supplies a filling matching $g$
+near that boundary with a fixed strict saving. Smooth boundary
+convergence permits matching to $g_j$ with error tending to zero.
+Leaving the exterior unchanged contradicts minimizing energy. Relative
+Chern--Weil and lower semicontinuity of the nonnegative chiral density
+yield (8) when the stated marking and boundary convergence are available.
+This argument does not require compactness of the exterior.
+
+\section{What is still required for Q3}
+For scalar $\mathbb Z_3$ isotropy, the self-dual block at the fixed point is
+\[
+ R^+=\operatorname{diag}(\mu,\nu,\nu),\qquad
+ \mu+2\nu=s/4.
+\]
+Equation (7) reduces the surviving block to
+\[
+                  R^+=\operatorname{diag}(0,s/8,s/8).       \tag{9}
+\]
+For $s<0$ this is a legitimate algebraic curvature block. Negative
+scalar curvature alone does not exclude it. In the radial LeBrun
+calculation, the attained second-order logarithmic coefficient is
+proportional to $-\mu(\mu-s/8)$, so it vanishes in (9). That calculation
+must not be assigned without proof to all the nonradial fillings of
+Section 2. Their later-order interaction remains to be determined.
+
+The result also does not identify every bubble with $\mathcal O(-3)$,
+establish smooth orbifold extension for every selected limit, or exclude
+Ricci-flat ALE and open or partially collapsed limits. Those are still
+part of the attainment problem. No smooth closed global minimizer has
+been constructed in this continuation.
+
+The proved input from the literature is (2)--(4). The new comparison
+developed here is (5), using the specified inherited critical flux;
+its consequence is (7) under the stated limit and reconstruction
+hypotheses. Its concrete use is to replace the former one-sided
+restriction $\mu\ge0$ by the equality $\mu=0$, without altering the
+core energy or the marked smooth filling.
+
+\begin{thebibliography}{9}
+\bibitem{Honda} N. Honda, \emph{Deformation of LeBrun's ALE metrics
+with negative mass}, Theorem 1.2.\newline
+\url{https://arxiv.org/abs/1204.4857}
+\bibitem{HV} J. Han and J. A. Viaclovsky, \emph{Existence and
+compactness theory for ALE scalar-flat K\"ahler surfaces}, Forum Math.
+Sigma 8 (2020), e1. Theorem 1.13; Remarks 2.2 and 6.1.\newline
+\url{https://arxiv.org/abs/1901.05611}
+\bibitem{HL} H.-J. Hein and C. LeBrun, \emph{Mass in K\"ahler geometry},
+Comm. Math. Phys. 347 (2016), 183--221. Theorem 4.3.\newline
+\url{https://arxiv.org/abs/1507.08885}
+\bibitem{Yao} Q. Yao, \emph{Mass and Expansion of Asymptotically
+Conical K\"ahler Metrics}, Theorem D(ii).\newline
+\url{https://arxiv.org/abs/2206.06505}
+\bibitem{LeBrun} C. LeBrun, \emph{Curvature Functionals, Optimal
+Metrics, and the Differential Topology of 4-Manifolds}, Section 11.\newline
+\url{https://arxiv.org/abs/math/0404251}
+\bibitem{source} Supplied research manuscripts:
+\texttt{01\_Research\_Synthesis.tex} and
+\texttt{02\_Mathematical\_Source\_Companion.tex}, 8 October 2026.
+In particular, A02.59D for the corrected critical-background flux;
+the preceding continuation supplies its general critical-background
+form. These are project inputs, distinct from the published sources above.
+\end{thebibliography}
+\end{document}

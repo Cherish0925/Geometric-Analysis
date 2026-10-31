@@ -1,0 +1,306 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{mathrsfs}
+\usepackage{esint}
+\setmathfont{Asana Math}
+\setlength{\emergencystretch}{3em}
+
+\author{}
+\date{23 September 2026}
+
+\begin{document}
+
+\hypertarget{a-uniform-ricci-energy-gap-above-the-classical-einstein-envelope}{%
+\section{A uniform Ricci-energy gap above the classical Einstein
+envelope}\label{a-uniform-ricci-energy-gap-above-the-classical-einstein-envelope}}
+
+23 September 2026. This is an application of the parameterized
+functional theorem, with actual polarized monopole classes. The
+elementary energy envelope below follows from classical inequalities.
+The added conclusion is a uniform positive separation from that
+envelope, persisting under integral Einstein error. No new topological
+nonexistence theorem is asserted.
+
+\hypertarget{statement-on-a-realized-family}{%
+\subsection{1. Statement on a realized
+family}\label{statement-on-a-realized-family}}
+
+Let \[
+ M=X\#k\overline{\mathbb {CP}}^{\,2}\#m(S^1\times S^3),\qquad
+ A=c_1^2(X)>0,\quad h=\frac{k+4m}{A},\quad 0<h<\frac13,
+ \tag{1}
+\] where \(X\) is a minimal complex surface of general type. Put \[
+ R=\int_M|\operatorname{Ric}|^2,\qquad
+ e=\frac{R}{8\pi^2A},\qquad
+ F(h)=\frac{(4-\sqrt{1-3h})^2}{9},
+\] \[
+ \mathcal E(g)=\inf_{\lambda\ne0}
+ \frac{\int_M|\operatorname{Ric}-\lambda g|^2}
+      {\lambda^2\operatorname{Vol}(g)}.
+ \tag{2}
+\] Both \(e\) and \(\mathcal E\) are invariant under constant rescaling.
+
+\textbf{Theorem.} Relative to Theorem 1 of
+\href{line1_functional_pencil.md}{the functional-pencil proof}, there is
+a universal \(\varepsilon>0\), independent of \(X,k,m,h,g\), such that
+\[
+ \boxed{\mathcal E(g)+(e-F(h))_+\ge\varepsilon h^2.}
+ \tag{3}
+\] Thus, for example, \(\mathcal E(g)\le\varepsilon h^2/2\) implies
+\(e\ge F(h)+\varepsilon h^2/2\). Every Einstein metric on \(M\), if one
+exists, necessarily satisfies \[
+ \boxed{\frac{R}{8\pi^2A}\ge F(h)+\varepsilon h^2.}
+ \tag{4}
+\] An actual nonzero monopole projection excludes Einstein constants
+zero and positive, so (4) concerns all Einstein candidates, not just a
+chosen sign.
+
+The same theorem holds whenever \(T=2\chi+3\tau=A(1-h)\) and each metric
+admits an actual conformally solvable Spin\(^c\) structure with
+\(p=(a_g^+)^2\ge A\) and \(a^2\ge T\). No regularity of the class
+selection in \(g\) is needed. In (1), the polarized sign selection gives
+\[
+ p\ge A,\qquad a^2=A-k\ge A-k-4m=T.
+ \tag{5}
+\] This is gauge-theoretic input, not just an intersection-form
+calculation; the conformal class keeps its polarization and its selected
+structure. For \(b_+=1\), the small-perturbation chamber and, for
+handles, the loop insertions are those in the
+\href{lebrun_stability_closure.md}{polarized closure}. The source is
+\href{https://arxiv.org/pdf/math/0003068}{LeBrun, Proposition 3.2 and
+its proof}.
+
+For a concrete family without chamber issues, take
+\(X=\Sigma_g\times\Sigma_q\), \(g,q\ge2\). Then \(A=8(g-1)(q-1)\) and
+\(b_+>1\). In particular,
+\((\Sigma_2\times\Sigma_2)\#2\overline{\mathbb {CP}}^{\,2}\) has
+\(A=8,h=1/4\). Formula (3) applies to every smooth metric on this actual
+closed manifold. Any Einstein metric on it would satisfy \[
+ \frac{R}{64\pi^2}\ge\frac{49}{36}+\frac{\varepsilon}{16}.
+\] We do not assume or produce an Einstein metric on it.
+
+\hypertarget{the-classical-envelope-is-not-the-new-result}{%
+\subsection{2. The classical envelope is not the new
+result}\label{the-classical-envelope-is-not-the-new-result}}
+
+For an Einstein metric, set \[
+ x^2=\frac{\int s^2}{8\pi^2A},\qquad
+ y^2=\frac{6\int|W^+|^2}{8\pi^2A}.
+\] The classical scalar and scalar--Weyl inequalities and Chern--Weil
+give \[
+ x\ge2,\qquad x+y\ge3,\qquad x^2+8y^2=12(1-h),\qquad e=x^2/4.
+ \tag{6}
+\] These imply \(x\ge(8-2\sqrt{1-3h})/3\), hence \(e\ge F(h)\). Equality
+is feasible in this finite relaxation; it is not claimed to be realized
+by a metric. The constraints are the scalar estimate,
+\href{https://arxiv.org/pdf/math/0003068}{LeBrun's Theorem 2.3}, and the
+exact Chern--Weil identity. This optimization is entirely classical.
+
+The all-metrics infimum in (1) is \(\inf e=1+h\), by
+\href{https://arxiv.org/pdf/math/0003068}{LeBrun's Theorem 4.3}. One has
+the exact comparison \[
+ F(h)-(1+h)=\frac{4h^2}{(1+\sqrt{1-3h})^2}>0.
+ \tag{7}
+\] The new term in (4) is therefore an additional uniform energy
+separation above the already optimized classical restriction, not the
+separation in (7). Classical equality rigidity already excludes exact
+Einstein saturation away from the Kähler--Einstein endpoint; it does not
+alone give a uniform gap for varying manifolds or almost-Einstein
+metrics.
+
+\hypertarget{exact-chernweil-reduction-and-the-proof}{%
+\subsection{3. Exact Chern--Weil reduction and the
+proof}\label{exact-chernweil-reduction-and-the-proof}}
+
+Use tensor Ricci norms and Hilbert--Schmidt Weyl operator norms. Write
+\[
+ P=\int|\operatorname{Ric}^{\circ}|^2,\quad S_2=\int s^2,\quad
+ W_2=\int|W^+|^2.
+\] The identities \[
+ S_2=4(R-P),\qquad W_2=2\pi^2T-R/12+P/3
+\] turn the functional in the companion theorem into \[
+ \mathfrak D_\beta
+ =K_\beta R+L_\beta P+12\pi^2(\beta+1)T-72\pi^2p,
+ \tag{8}
+\] where \[
+ K_\beta=\frac{(\beta+1)(8-\beta)}{2\beta},\qquad
+ L_\beta=\frac{2(\beta+1)(\beta-2)}{\beta}.
+\] Let \(z=\sqrt{1-3h}\) and choose \[
+ \beta=\beta(h)=\frac{8-2z}{1+2z}\in(2,8).
+ \tag{9}
+\] Direct substitution gives \[
+ K_\beta F(h)+\tfrac32(\beta+1)(1-h)-9=0.
+\] Using (5) in (8), with no discarded negative error, yields \[
+ \mathfrak D_\beta
+ =8\pi^2A K_\beta(e-F(h))+L_\beta P-72\pi^2(p-A)
+ \le8\pi^2A K_\beta(e-F(h))+L_\beta P.
+ \tag{10}
+\]
+
+First fix the Einstein target to \(-g\), and let
+\(V=\operatorname{Vol}(g)\), \(r=V^{-1}\int|\operatorname{Ric}+g|^2\).
+The functional-pencil theorem, with \(L=8\) and \(a^2\ge T\), supplies a
+universal \(c>0\) such that \[
+ c(\beta-2)^2\le r+\mathfrak D_\beta/V.
+\] Since \(P/V\le r\), equation (10) implies \[
+ c(\beta-2)^2
+ \le (1+L_\beta)r+
+ K_\beta\frac{8\pi^2A}{V}(e-F(h)).
+ \tag{11}
+\] The scalar monopole bound and the trace inequality give \[
+ 32\pi^2A\le S_2,\qquad
+ \sqrt{S_2/V}\le4+2\sqrt r,
+ \qquad \frac{8\pi^2A}{V}\le(2+\sqrt r)^2.
+ \tag{12}
+\] For \(r\le1\), replace the last factor in (11) by its positive part
+before using (12). On \([2,8]\), \[
+ 0\le K_\beta\le9/2,\qquad 0\le L_\beta\le27/2.
+\] Consequently \[
+ c(\beta-2)^2\le\frac{81}{2}\bigl[r+(e-F(h))_+\bigr].
+ \tag{13}
+\] Finally, \[
+ \beta(h)-2
+ =\frac{18h}{(1+z)(1+2z)}\ge3h.
+\] Thus (3), with \(r\) in place of \(\mathcal E\), holds for \(r\le1\)
+with coefficient \(2c/9\). For \(r>1\) it is immediate after choosing
+\(\varepsilon=\min\{2c/9,1\}\), because \(h^2<1/9\). For any
+\(\lambda<0\), apply this result to \((-\lambda)g\): its normalized
+error is the corresponding quotient in (2), while \(e\) and \(h\) are
+unchanged. Taking the infimum proves (3) first for \(\mathcal E_-\), the
+infimum restricted to negative \(\lambda\).
+
+To include positive target constants, put \(C=8\pi^2A\), \(I=\int s\),
+and let \(\mathcal E_+\) be the infimum for \(\lambda>0\). The signed
+scalar estimate is \[
+ \int s_-^2\ge32\pi^2p\ge4C,\qquad s_-:=\max\{-s,0\}.
+ \tag{14}
+\] For clarity, it follows directly from an ordinary monopole solution:
+with \(\rho=|\Phi|^2\), the integrated spinor identity gives
+\(\int\rho^2\le\int s_-\rho\), while Hodge projection gives
+\(\int\rho^2\ge32\pi^2p\); apply Cauchy--Schwarz. If \(I>0\), then \[
+ \frac{I^2}{V}\le\int s_+^2\le S_2-4C\le4R-4C,
+ \qquad \mathcal E_+=4-\frac{I^2}{RV}\ge\frac4e.
+\] If \(I\le0\), direct minimization gives \(\mathcal E_+=4\). When
+\(e\le F(h)+1\le25/9\), therefore, \(\mathcal E_+\ge36/25>1\). When
+\(e>F(h)+1\), the energy excess alone exceeds one. Hence
+\(\mathcal E_++(e-F(h))_+\ge1\ge\varepsilon h^2\). Together with
+\(\mathcal E=\min\{\mathcal E_-,\mathcal E_+\}\), this proves (3) for
+all target signs.
+
+Only the functional-pencil theorem is the nonclassical analytic input.
+There is no geometric compactness, scalar band, auxiliary-form
+assumption, or additional square-cost budget in this transfer.
+
+\hypertarget{why-the-parameter-eight-does-not-give-this-energy-separation}{%
+\subsection{4. Why the parameter eight does not give this energy
+separation}\label{why-the-parameter-eight-does-not-give-this-energy-separation}}
+
+At \(\beta=8\), \(K_8=0\). Equation (8) loses \(R\) altogether: \[
+ \mathfrak D_8=108\pi^2(T-2p/3)+27P/2.
+ \tag{15}
+\] This is the old topological gap. Varying \(\beta\) retains the
+independent energy coordinate and gives the separation in (3).
+
+There is an exact algebraic non-implication check. At \(h=1/4\), set
+\(p=A\), \(a^2=T=3A/4\), \(P=0\), \(s=-4\), and prescribe the constant
+Weyl norm \(w=\sqrt6|W^+|=8/7\). Choose \[
+ V=2\pi^2A(49/36),\qquad R=4V.
+\] These moment data satisfy Chern--Weil, the scalar inequality, every
+classical bound \(\mathfrak D_\gamma\ge0\), \(\gamma>0\), and
+\(e=F(1/4)=49/36\). However, \[
+ \mathfrak D_{7/2}=0,\qquad \mathfrak D_8/V=162/49.
+ \tag{16}
+\] They violate the new parameter-\(7/2\) estimate. They do not violate
+any possible universal coefficient in the global parameter-eight member
+\(r+\mathfrak D_8/V\ge36c_8\): necessarily \(c_8\le1/11\). Indeed, for
+an actual negative Kähler--Einstein metric \(g_0\), the rescalings
+\(g=tg_0\) give \[
+ r+\mathfrak D_8/V=4(1-1/t)^2+18/t^2
+ \ge36/11,
+\] with equality at \(t=11/2\). Yet \(162/49>36/11\). This proves
+independence from the parameter-eight numerical inequality even at the
+largest coefficient it could possibly have.
+
+The data in (16) are a formal curvature-moment model, not a metric
+construction. The manifold and its actual monopole-class selection in
+Section 1 are realized; realizing the forbidden moments would contradict
+the theorem. This argument does not claim independence from every
+possible use of the old differential proof machinery.
+
+\hypertarget{the-remaining-topological-input-is-precise}{%
+\subsection{5. The remaining topological input is
+precise}\label{the-remaining-topological-input-is-precise}}
+
+Equation (3) does not exclude all energies on any new smooth topology.
+For normalized Einstein metrics, the missing independent number is \[
+ e=\frac{R}{8\pi^2A}=\frac{V}{2\pi^2A}.
+ \tag{17}
+\] It is not fixed by \(T\), \(A\), or \(p\). Chern--Weil fixes a linear
+combination of scalar and Weyl energies, not this scalar/volume
+coordinate. An independently proved upper bound
+\(e<F(h)+\varepsilon h^2\) for every Einstein candidate would convert
+(4) into a new topological obstruction; no such bound is supplied here.
+An all-metrics energy \emph{infimum} cannot serve as that upper bound.
+
+For the pointwise negative Ricci input
+\(\delta_-=\|\operatorname{Ric}^{\sharp}+I\|_{\infty,\mathrm{op}}\), (3)
+implies the raw consequence \[
+ 4\delta_-^2+(e-F(h))_+\ge\varepsilon h^2.
+ \tag{18}
+\] Thus a construction with controlled energy below the strengthened
+envelope cannot be arbitrarily Ricci-pinched. This is a restriction on
+such input metrics, not a proof that their smooth manifold has no
+Einstein metric at a different energy.
+
+\texttt{check\_line1\_energy\_envelope\_gap.py} checks the exact
+identities, envelope optimization, constants, scale transformation, and
+formal non-implication witness. These finite checks do not certify
+Seiberg--Witten solvability or the inherited differential theorem. No
+priority claim over unexamined later literature is made.
+
+\end{document}

@@ -1,0 +1,124 @@
+\documentclass[UTF8,11pt,fontset=none]{ctexart}
+\usepackage[a4paper,margin=23mm,headheight=15pt,footskip=11mm]{geometry}
+\usepackage{fontspec}
+\IfFontExistsTF{TeX Gyre Termes}{\setmainfont{TeX Gyre Termes}}{\setmainfont{lmroman10-regular.otf}[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf,BoldItalicFont=lmroman10-bolditalic.otf]}
+\IfFontExistsTF{TeX Gyre Heros}{\setsansfont{TeX Gyre Heros}}{\setsansfont{lmsans10-regular.otf}[BoldFont=lmsans10-bold.otf,ItalicFont=lmsans10-oblique.otf]}
+\IfFontExistsTF{DejaVu Sans Mono}{\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]}{\setmonofont{lmmono10-regular.otf}}
+\IfFontExistsTF{Noto Serif CJK SC}{\setCJKmainfont{Noto Serif CJK SC}[AutoFakeSlant=0.15]}{\setCJKmainfont{FandolSong-Regular.otf}[BoldFont=FandolSong-Bold.otf,ItalicFont=FandolKai-Regular.otf]}
+\IfFontExistsTF{Noto Sans CJK SC}{\setCJKsansfont{Noto Sans CJK SC}}{\setCJKsansfont{FandolHei-Regular.otf}}
+\IfFontExistsTF{Noto Sans Mono CJK SC}{\setCJKmonofont{Noto Sans Mono CJK SC}}{\setCJKmonofont{FandolFang-Regular.otf}}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,esint,bm}
+\usepackage{booktabs,longtable,array,calc}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=1.7em,topsep=3pt}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,fontsize=\small}
+\usepackage{xurl}
+\usepackage[unicode,hidelinks,bookmarksnumbered]{hyperref}
+\usepackage{bookmark}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small 第一科学主线：近期研究全稿}
+\fancyhead[R]{\small 2026-10-07}\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\providecommand{\tightlist}{\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\avint}{\fint}
+\newcommand{\Jcal}{\mathcal J}
+\newcommand{\Ecal}{\mathcal E}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\Rea}{\operatorname{Re}}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{3pt plus 1pt}
+\setlength{\emergencystretch}{3em}
+\linespread{1.10}\allowdisplaybreaks[2]
+\setlength{\abovedisplayskip}{8pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{8pt plus 2pt minus 2pt}
+\renewcommand{\arraystretch}{1.12}
+\setcounter{tocdepth}{1}\setcounter{secnumdepth}{2}
+\pdfstringdefDisableCommands{\def\fint{int}\def\mathcal#1{#1}\def\mathfrak#1{#1}\def\mathscr#1{#1}\def\operatorname#1{#1}\def\varepsilon{epsilon}\def\chi{chi}\def\beta{beta}\def\rho{rho}\def\tau{tau}\def\Phi{Phi}\def\sigma{sigma}\def\kappa{kappa}\def\nabla{D}\def\mathbb#1{#1}\def\({}\def\){}\def\textsuperscript#1{#1}\def\textsubscript#1{#1}}
+\title{归属、节省机制与全局连接}
+\author{第一科学主线·近期研究分卷}
+\date{2026年10月7日}
+\begin{document}
+\maketitle
+\section{最新系统成果与本会话增量的分界}\label{ch11:ux6700ux65b0ux7cfbux7edfux6210ux679cux4e0eux672cux4f1aux8bddux589eux91cfux7684ux5206ux754c}
+
+用户系统已经得到严格低成本单元及区间证书 \[
+J/(8\pi^2)\in[0.995670030344086466\ldots,
+0.995670030355130639\ldots],
+\] 以及选定覆盖族上的严格次四恢复。系统还已识别颈部常模二次型的最小系数 \(-18\)。第8、9章分别新增覆盖量词、已有 \(P\) 证书的组合使用，以及任意领口的完整匹配渐近。最初的严格次四发现及原系数归属于系统。\cite{System,CellSource,R08,R09}
+
+系统的一般背景 Burns 插入给 \[
+P(\hat g_x)=P(g)+8\pi^2\{1-xR_p^+(\zeta,\zeta)\}+O(x^{6/5}),
+\qquad R^+=W^++\frac{s}{12}I.
+\] 一阶中性不自动给出高阶负项。第9章是在精确复双曲背景和所构造族内，将负对数项与完整余项接通。
+
+\section{实际非可积性与节省}\label{ch11:ux5b9eux9645ux975eux53efux79efux6027ux4e0eux8282ux7701}
+
+系统在同一常标量度量及其实际符号族上得到 \[
+\mathfrak S:=8\pi^2Q-P=\frac12R_N-\mathcal B,
+\qquad\mathcal B\ge0,
+\] \[
+R_N=\mathbb E_\epsilon\int\rho_\epsilon^2
+|\nabla n_\epsilon|_{\mathcal W_2}^2.
+\] \(\mathcal B\) 保留幅度、相位／Lee、Weyl 模型与 Walsh 损失。固定比例节省因此要求同尺度加权 Nijenhuis 能量，但该等式本身不控制可获得的最大节省。\cite{Field,System}
+
+在 \(Q=0\) 时，它只给 \(-P\le R_N/2\)，不能推出 \(2P\le R_N\)。同样，改变固定度量上的实际解选择，不改变 \(\mathcal B-R_N/2=P-8\pi^2Q\)。这些关系决定哪些变分或比较能够增加新的信息。
+
+\section{两个实际类与多个实际类}\label{ch11:ux4e24ux4e2aux5b9eux9645ux7c7bux4e0eux591aux4e2aux5b9eux9645ux7c7b}
+
+对同一度量和多个真实类 \(a_1,\ldots,a_m\)，令 \[
+Q_{ij}=a_i\cdot a_j,\qquad
+G_{ij}^+=\langle a_i^+,a_j^+\rangle,
+\qquad G_{ij}^-=\langle a_i^-,a_j^-\rangle.
+\] 必有 \(Q=G^+-G^-\)，且 \(G^\pm\) 为半正定矩阵。第10章利用了一个具体双取向实例中的交叉项，而不只是两个平方。
+
+一般矩阵型定量障碍尚需额外的实际供给和解析约束；这里保留的是共同极化的精确代数和已经完成的双类推导，不把未建立的一般距离估计记为定理。
+
+\section{保留的证明边界}\label{ch11:ux4fddux7559ux7684ux8bc1ux660eux8fb9ux754c}
+
+O10 各章的增强依次涉及低密度阈值、曲率尾部、每个固定有限密度、增长速率、低幅度层，以及指定地理范畴。它们没有把 \(\forall B\,\exists c(B)>0\) 改成无条件的 \(\exists c>0\,\forall B\)。
+
+第五线丛的正势需要与同一测试下的非消失质量配合；深低幅度能量排除不等于中间幅度径向集中消失。完整平方差和有符号通量不等于独立的非负下界。
+
+O11 的近驻点、近稳定选择对真正下确界有效。严格次四构造出现后，不能再以标准系数 \(4\) 为固定参照，宣称所有次四几何都有 \(Q\) 级不稳定方向。尚需决定的是与真实构造匹配的最优首项。
+
+单元费用和闭流形下确界也保持区别：第8、9章给恢复上界；相反方向需要全局几何的实际下界，不能从局部费用的次可加性自动推出。
+
+\section{当前两个全局问题}\label{ch11:ux5f53ux524dux4e24ux4e2aux5168ux5c40ux95eeux9898}
+
+一般 O10：在原实际输入、\(p\ge A>0\) 和 \(a^2\ge T_+\) 下，是否存在与拓扑密度无关的正数 \(c\)，使 \[
+\kappa_\beta\ge c(\beta-2)^2/\beta^2?
+\] 完整结论也可以由满足全部原假设的真实反例作出否定判定。
+
+O11：对准确指定的原平衡族，决定 \(\alpha_j/h_j\) 的极限或精确上下极限，并给出匹配下界与恢复构造。由继承归约，若该值为 \(\gamma_*\)，相应目标为 \[
+\inf_gP(g)=2\pi^2\gamma_*Q_j+o(Q_j).
+\] 已证严格次四上界作用于其明确的覆盖与实际供给范围；其常数不是目前已知的精确最优值。
+
+\section{本汇编的内容对应}\label{ch11:ux672cux6c47ux7f16ux7684ux5185ux5bb9ux5bf9ux5e94}
+
+R01--R10 分别对应十份本会话研究原稿。N1、强流、另一有限密度证明、双重带权引理和系统的低成本证书属于直接输入。外部稿件的正流分裂、核--余核约化及 Ricci 流延拓保留其自身条件；其中定量 Ricci 流推论已经写出组合证明，其余接口按第6章所述范围使用。
+
+本稿保留完整推导，合并重复的目标说明和同一公式，不重复收录运行日志、文件统计、鼓励性表述或多次相同的价值评价。
+
+\begin{thebibliography}{P99}
+\small
+\bibitem[P08]{System} S1003A01、S1003A02，\emph{Mathematical Synthesis}，2026-10-07；\path{20261007_Einstein_Gaps_Two_Sessions(1).zip} 中 \path{01_Mathematical_Synthesis.md}。
+
+\bibitem[P09]{CellSource} S1003A01 Step10；S1003A02 Step11；\emph{Theorem package v1}，完整三轴单元、颈部二次型与严格次四恢复。
+
+\bibitem[R08]{R08} 本会话研究原稿，\emph{统一手术端点与预定覆盖塔恢复}，2026-10-07。\path{Line1_Uniform_Endpoint_and_Residual_Tower_Recovery.md}。
+
+\bibitem[R09]{R09} 本会话研究原稿，\emph{任意复双曲领口中的解析低成本构造}，2026-10-07。\path{O11_Arbitrary_Collar_Logarithmic_Construction.md}。
+
+\bibitem[P11]{Field} S1003A02 Step40，\emph{Nijenhuis form, Weyl form, and pointwise exhaustion}；Step44 对应修正。
+
+\end{thebibliography}
+\end{document}

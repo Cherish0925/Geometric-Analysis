@@ -1,0 +1,90 @@
+{
+  "scope": "exact symbolic curvature symmetries and linearized Ricci on all 10 Weyl directions, with arbitrary radial jets",
+  "provenance": [
+    "step83_full_weyl_log_annulus_audit.py",
+    "research/20260916_construction.tex: full Weyl log interpolation"
+  ],
+  "normalization": "orientation 0123; unnormalized self/anti-self-dual two-forms; C=sum A_ab omega_a tensor omega_b /4; K_ij=-C_ikjl xk xl/3",
+  "basis_rank": 10,
+  "radial_identity": "DRic_e[eta(log r) K]=-(eta_tt+6 eta_t) K/(2 r^2), r>0",
+  "checks_per_direction": [
+    "curvature symmetries and Bianchi",
+    "Ricci trace zero",
+    "trace/divergence/Laplacian/radial gauge of K zero",
+    "DRic K zero",
+    "arbitrary eta(|x|^2) radial identity",
+    "p=1,2,-1 coefficients"
+  ],
+  "directions": [
+    {
+      "chirality": "W_plus",
+      "mode": "diag_1_-1_0",
+      "status": "passed",
+      "nonzero_K_entries": 16
+    },
+    {
+      "chirality": "W_plus",
+      "mode": "diag_1_1_-2",
+      "status": "passed",
+      "nonzero_K_entries": 16
+    },
+    {
+      "chirality": "W_plus",
+      "mode": "off_01",
+      "status": "passed",
+      "nonzero_K_entries": 16
+    },
+    {
+      "chirality": "W_plus",
+      "mode": "off_02",
+      "status": "passed",
+      "nonzero_K_entries": 16
+    },
+    {
+      "chirality": "W_plus",
+      "mode": "off_12",
+      "status": "passed",
+      "nonzero_K_entries": 16
+    },
+    {
+      "chirality": "W_minus",
+      "mode": "diag_1_-1_0",
+      "status": "passed",
+      "nonzero_K_entries": 16
+    },
+    {
+      "chirality": "W_minus",
+      "mode": "diag_1_1_-2",
+      "status": "passed",
+      "nonzero_K_entries": 16
+    },
+    {
+      "chirality": "W_minus",
+      "mode": "off_01",
+      "status": "passed",
+      "nonzero_K_entries": 16
+    },
+    {
+      "chirality": "W_minus",
+      "mode": "off_02",
+      "status": "passed",
+      "nonzero_K_entries": 16
+    },
+    {
+      "chirality": "W_minus",
+      "mode": "off_12",
+      "status": "passed",
+      "nonzero_K_entries": 16
+    }
+  ],
+  "limits": "Does not estimate nonlinear gluing remainders, solve the ALE core equation, or prove global coverage.",
+  "negative_controls": [
+    {
+      "mutation": "radial first-derivative coefficient 8 replaced by 7",
+      "rejected": true
+    }
+  ],
+  "group": "weyl10",
+  "status": "passed",
+  "elapsed_seconds": 2.6759282730001814
+}

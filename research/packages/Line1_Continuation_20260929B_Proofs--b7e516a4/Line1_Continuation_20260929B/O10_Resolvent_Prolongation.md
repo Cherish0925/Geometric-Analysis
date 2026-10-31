@@ -1,0 +1,219 @@
+# Resolvent torsion closes the first actual prolongation test
+
+2026-09-29. This is a further consequence at an arbitrary **fixed finite** Euler-density bound. It strengthens the derivative information about the regularized torsion. It does not, by itself, close general O10.
+
+## 1. Inputs and exact scope
+
+Consider an actual endpoint sequence with scalar curvature −4, beta tending to infinity, endpoint defect tending to zero, and a fixed bound on chi/A. Use the manuscript's actual positive monopole Phi, its cubic torsion tau in E = S− tensor L, rho = |Phi|², and the resolvent section v constructed in `O10_Critical_Density.md`.
+
+All norms below use normalized volume. The finite-density bounds and resolvent construction give
+
+\[
+ \|v\|_\infty+\|\nabla v\|_4+\|\nabla^2v\|_2\le C_B,
+ \qquad v-\tau\longrightarrow0\text{ in }H^1,
+ \qquad D^-_{3A}v\longrightarrow0\text{ in }L^2.
+\]
+
+The actual positive-field gradient theorem gives \(|\nabla\Phi|^4\) uniformly integrable, \(\nabla^2\Phi\) bounded in normalized \(L^2\), and \(m=|\tau|^2\to m_*=128/81\) in normalized \(L^2\). Consequently \(v-\tau\to0\) also in normalized \(L^4\): its fourth powers are uniformly integrable and it converges to zero in measure.
+
+Unlike the small-opposite-Weyl theorem, the present argument also uses the full strong-current upgrade
+
+\[
+ N_\tau=(\nabla\tau)^{1,0}_{J_+}\longrightarrow0\text{ in }L^2.
+\]
+
+It follows that
+
+\[
+ \mathcal A_v=(\nabla v)^{1,0}_{J_+}\longrightarrow0\text{ in }L^2.
+\tag{1}
+\]
+
+The almost-complex structure \(J_+\) here is the actual one selected by Phi. It is used only where rho is bounded away from zero. Low-rho sets will be removed at the end, not ignored.
+
+## 2. Replacing the bracket coefficient, without changing the actual bracket
+
+The exact actual tensor identity in the manuscript is
+
+\[
+ \partial_\nabla\mathcal A_v+
+ \mu_{\rm act}(\nabla v)^{0,1}
+ =(F^E)^{2,0}v.
+\tag{2}
+\]
+
+It holds for every section v of E. The coefficient mu_act is the actual Nijenhuis tensor of J+. In a compatible positive-spinor frame its components depend linearly on the conjugate of tau/rho^(3/2); this is the manuscript's exact cubic bracket identity, not a new almost-complex structure.
+
+Define the **comparison tensor** mu_v by substituting v for tau in that algebraic formula. This does not assert that mu_v itself is a Nijenhuis tensor. Fix a smooth cutoff f(rho), zero for rho at most c and one for rho at least 2c, with 0 < 2c < 4/3. On its support,
+
+\[
+ |\mu_v|\le C_c,
+ \quad |\nabla\mu_v|\le C_c(|\nabla v|+|\nabla\Phi|),
+ \quad |\nabla J_+|+|df|\le C_c|\nabla\Phi|.
+\tag{3}
+\]
+
+Here v is bounded, and all coefficients involving rho or the unit positive spinor are smooth with bounded derivatives on rho at least c. Moreover
+
+\[
+ \|\mu_{\rm act}-\mu_v\|_{4,\{\rho\ge c\}}\to0.
+\]
+
+Therefore
+
+\[
+ R=(\mu_{\rm act}-\mu_v)(\nabla v)^{0,1}
+ \longrightarrow0\text{ in }L^2\text{ on }\{\rho\ge c\}.
+\tag{4}
+\]
+
+Equation (2) becomes
+
+\[
+ \partial_\nabla\mathcal A_v+ B_v=(F^E)^{2,0}v-R,
+ \qquad B_v=\mu_v(\nabla v)^{0,1}.
+\tag{5}
+\]
+
+The actual curvature identity gives
+
+\[
+ |(F^E)^{2,0}v|\le C|\operatorname{Ric}^{\circ}|\,|v|,
+\]
+
+so this forcing tends to zero in normalized L2. No opposite-Weyl derivative or opposite-Weyl smallness enters it.
+
+## 3. The formerly missing adjoint estimate is now available
+
+From (3), the resolvent budgets and Hölder,
+
+\[
+ \|\partial_\nabla^*(f^2B_v)\|_2\le C_{B,c}.
+\tag{6}
+\]
+
+Indeed differentiation produces only the following types of factors:
+
+\[
+ f^2\mu_v\nabla^2v,\quad
+ f^2(\nabla\mu_v)\nabla v,\quad
+ f\,df\,\mu_v\nabla v,\quad
+ f^2\nabla J_+\,\mu_v\nabla v.
+\]
+
+The first is L2 bounded; each other factor is a product of two L4-bounded tensors and bounded coefficients. All moving-frame/type-projection terms are included in the last type. This is precisely the estimate unavailable for the unregularized tau in the old prolongation attempt.
+
+Pair (5) with f² B_v and integrate over the closed manifold. Since f vanishes before rho reaches zero, this is a globally legitimate integration by parts. We obtain
+
+\[
+ \int f^2|B_v|^2
+ =\operatorname{Re}\int f^2\langle(F^E)^{2,0}v-R,B_v\rangle
+ -\operatorname{Re}\int
+ \langle\mathcal A_v,\partial_\nabla^*(f^2B_v)\rangle.
+\tag{7}
+\]
+
+The first term is o(V), because its first factor tends to zero in normalized L2 and B_v is L2 bounded. The second is o(V) by (1) and (6). Thus
+
+\[
+ \boxed{\fint f^2|\mu_v(\nabla v)^{0,1}|^2\longrightarrow0.}
+\tag{8}
+\]
+
+## 4. Exactly which derivative has now been removed
+
+On rho > 0 and v nonzero, choose compatible frames in which v = sqrt(a) e1, where a = |v|². Put Z1 = e1 − i e2 and Z2 = e3 − i e4, as in the original prolongation section. The algebraic comparison tensor satisfies
+
+\[
+ (\mu_v(\nabla v)^{0,1})(Z_1,Z_2)
+ =\frac{\sqrt a}{\rho^{3/2}}\nabla_{\bar Z_1}v.
+\]
+
+With the manuscript's tensor norms this reads
+
+\[
+ |\mu_v(\nabla v)^{0,1}|^2
+ =\frac{a}{4\rho^3}|\nabla_{\bar Z_1}v|^2.
+\tag{9}
+\]
+
+Both rho and a converge in measure to strictly positive constants. On the exceptional low-amplitude sets, the L4 bound on grad v gives
+
+\[
+ \fint_E|\nabla v|^2
+ \le\left(\fint|\nabla v|^4\right)^{1/2}
+     \left(\frac{\operatorname{Vol}(E)}V\right)^{1/2}\to0.
+\]
+
+Hence (8)–(9), followed by this exceptional-set estimate, imply
+
+\[
+ A_1=\nabla_{Z_1}v\to0,
+ \qquad A_2=\nabla_{Z_2}v\to0,
+ \qquad B=\nabla_{\bar Z_1}v\to0
+ \quad\text{in normalized }L^2.
+\tag{10}
+\]
+
+These assertions mean the invariant corresponding projections on the region of definition, extended with cutoffs; no globally chosen frame is required.
+
+Let C = grad_(bar Z2) v. The original Clifford matrices give, up to an irrelevant simultaneous Dirac sign,
+
+\[
+ D^-v=((A_1)_1-(A_2)_2,\ B_2+C_1).
+\]
+
+Thus also C1 tends to zero. The only derivative component not eliminated is the complex horizontal component C2.
+
+## 5. Two tempting continuations do not close the argument
+
+### 5.1 Reversing the almost-complex structure selects the wrong direction
+
+In the ideal remaining configuration, the negative spinor connection has off-diagonal form
+
+\[
+ b=(0,0,c,-ic),
+\]
+
+while the actual positive connection has off-diagonal form
+
+\[
+ \eta=(\kappa,-i\kappa,0,0),\qquad \kappa\ne0.
+\]
+
+For the opposite structure with (1,0) frame (Z1, bar Z2), the Clifford matrices give
+
+\[
+ (\nabla Z_1)^{0,1}_-= -b\,Z_2,
+ \qquad(\nabla\bar Z_2)^{0,1}_-= b\,\bar Z_1.
+\]
+
+Therefore
+
+\[
+ [Z_1,\bar Z_2]^{0,1}_-
+ =b(Z_1)\bar Z_1+b(\bar Z_2)Z_2
+ =2c\,Z_2.
+\]
+
+The positive spinor already has small derivative in the Z2 direction. A second copy of the same bracket test consequently does **not** force c to vanish. Replacing this direction by bar Z1 would be an incorrect chirality computation.
+
+### 5.2 The next cubic spinor lies in the negative-potential line
+
+The invariant cubic definition is t(Phi) = Clifford(det(Phi,grad Phi)) Phi. For v = sqrt(a) e1 of the opposite chirality, with off-diagonal derivative components k_j, the adjoint Clifford matrices give
+
+\[
+ t(v)=a(k_1-ik_2,\ k_3+ik_4).
+\]
+
+In the remaining configuration k = (0,0,c sqrt(a),−i c sqrt(a)), this is
+
+\[
+ t(v)=(0,2a^{3/2}c).
+\]
+
+It points along the orthogonal positive-spinor line J Phi, not along Phi. Its determinant-nine-A Lichnerowicz potential therefore tends to −7 on this line, not +5. The proposed positive-potential vanishing argument does not apply. These algebraic checks identify the remaining component; they do not construct an endpoint counterexample.
+
+## 6. Research status
+
+The first prolongation estimate (8)–(10) is a genuine new consequence made possible by resolvent regularization. It works for each fixed finite Euler density and removes one full additional anti-holomorphic derivative. General O10 still requires control of C2, or another global incompatibility using this stronger derivative structure. No such final incompatibility is claimed in this note.

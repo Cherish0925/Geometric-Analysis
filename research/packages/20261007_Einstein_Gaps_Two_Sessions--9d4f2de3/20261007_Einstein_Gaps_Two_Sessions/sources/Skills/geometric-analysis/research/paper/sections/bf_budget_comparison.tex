@@ -1,0 +1,120 @@
+\subsection{The exact budget of the supplied sign family}
+\label{sec:bf-budget-comparison}
+
+The comparison with classical curvature inequalities can be made exact
+for the classes supplied by the preceding construction.  The two
+optimizations below are the convex and positive-plane budgets of
+\cite{LeBrunConvex}, restricted to that specified set of classes.
+
+Let $r\in\{2,3\}$, and suppose that the simply connected symplectic
+summands $X_i$ satisfy the stable-cohomotopy hypotheses of
+Section~\ref{sec:bf-geography}, including $b_+(X_i)\equiv3\pmod4$.
+Assume in addition that $A_i=c_1^2(X_i)>0$ for each $i$, as in both
+realized families above.  On
+\[
+ M=\Bigl(\#_{i=1}^rX_i\Bigr)\#k\overline{\mathbb{CP}}^{\,2}
+                         \#m(S^1\times S^3),
+ \qquad A=\sum_{i=1}^rA_i,
+\]
+write $c_i=c_1(X_i)$ and let $E_1,\ldots,E_k$ be the exceptional
+generators.  The connected-sum splitting gives
+\[
+ c_i\cdot c_j=\delta_{ij}A_i,\qquad
+ c_i\cdot E_j=0,\qquad E_i\cdot E_j=-\delta_{ij}.
+\]
+The actual nonvanishing theorem supplies every member of
+\begin{equation}\label{eq:bf-supplied-sign-set}
+ \mathcal C_0=
+ \left\{\sum_{i=1}^r\epsilon_i c_i+
+              \sum_{j=1}^k\eta_jE_j:
+             \epsilon_i,\eta_j\in\{-1,1\}\right\}.
+\end{equation}
+Thus the algebraic set used here consists of actual monopole classes.
+
+\begin{proposition}[Classical budgets of the supplied classes]
+\label{prop:bf-sign-budgets}
+For a maximal positive subspace $H\subset H^2(M;\mathbb R)$, let
+$a_H^+$ be the orthogonal projection with respect to the intersection
+form.  Define
+\[
+ \beta_{\mathcal C_0}^2
+    =\max_{v\in\operatorname{conv}(\mathcal C_0)}v^2,
+ \qquad
+ \alpha_{\mathcal C_0}^2
+    =\inf_H\max_{a\in\mathcal C_0}(a_H^+)^2.
+\]
+Then
+\begin{equation}\label{eq:bf-sign-budgets}
+ \beta_{\mathcal C_0}^2=\alpha_{\mathcal C_0}^2=A.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The convex hull is the box of vectors
+$v=\sum_i t_ic_i+\sum_j u_jE_j$ with $|t_i|,|u_j|\le1$.
+Orthogonality gives
+\[
+ v^2=\sum_i A_it_i^2-\sum_j u_j^2\le A.
+\]
+The vector $\sum_i c_i$ belongs to the hull, by averaging the
+exceptional signs, and has square $A$.  This proves the first equality.
+
+For any maximal positive $H$, averaging the projected squares over
+all independent signs gives
+\[
+ \max_{a\in\mathcal C_0}(a_H^+)^2
+ \ge\sum_i(c_{i,H}^+)^2+\sum_j(E_{j,H}^+)^2
+ \ge\sum_i c_i^2=A.
+\]
+For the reverse inequality, the orthogonal complement of the negative
+space spanned by the $E_j$ contains the positive space spanned by the
+$c_i$.  Extend the latter to a maximal positive subspace $H_0$ in that
+orthogonal complement.  Then $c_i\in H_0$, $E_{j,H_0}^+=0$, and every
+member of $\mathcal C_0$ has projected square $A$.  This proves the
+second equality.  The optimization ranges over abstract positive
+subspaces; it makes no assertion that $H_0$ is realized by a metric.
+\end{proof}
+
+The full set $\mathcal C(M)$ of monopole classes may be larger than
+$\mathcal C_0$.  Let $B$ denote either of the analogous full-set
+budgets, so that $B\ge A$.  Each is a uniform projection budget:
+for every metric $g$,
+\[
+ \max_{a\in\mathcal C(M)}(a_g^+)^2\ge B.
+\]
+For the positive-plane budget this follows from its definition.  For
+the convex budget, projection, the triangle inequality, and
+$v^2\le(v_g^+)^2$ show that every convex combination has square at
+most the largest projected square of its constituent classes.
+
+Write $B=A(1+\delta)$ with $\delta\ge0$, and retain
+$T_+=A(1-h)$ and $U=3\min\{T_+,T_-\}/A$.  The classical
+Ricci-energy inequality, in the present tensor-Ricci normalization, is
+\begin{equation}\label{eq:bf-complete-budget-ricci}
+ R\ge8\pi^2(2p-T_+).
+\end{equation}
+Indeed, its deficit is precisely
+$D_2=\tfrac92\{R-8\pi^2(2p-T_+)\}\ge0$.
+Choosing a class with $p\ge B$ gives
+\[
+ e:=\frac{R}{8\pi^2A}\ge1+h+2\delta.
+\]
+For an Einstein metric $P=0$, the two chiral Chern--Weil identities
+also give $e\le U$.  Thus the full classical budget imposes the
+necessary condition
+\begin{equation}\label{eq:bf-complete-budget-necessary}
+ \boxed{1+h+2\delta\le U.}
+\end{equation}
+
+Proposition~\ref{prop:bf-sign-budgets} proves that optimizing over all
+of the supplied signs leaves the budget equal to $A$.  It does not
+bound the increment $B-A$ from additional monopole classes.  For the
+linear family of Section~\ref{sec:bf-linear}, where
+$U-1-h=\theta h+O(h^2)$, an increment of order $Ah$ can change this
+classical comparison.  An upper estimate such as $B-A=o(Ah)$ would
+remove that uncertainty at first order; it remains a separate
+mathematical question about the complete class set.  The separation
+theorem uses the supplied actual classes and does not require such an
+upper estimate.  Its comparison is therefore with the explicitly
+computed budgets of $\mathcal C_0$, without a claim that every
+classical obstruction on these smooth manifolds has been exhausted.

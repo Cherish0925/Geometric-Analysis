@@ -1,0 +1,1941 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  10pt,
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[a4paper,margin=18mm]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{esint}
+\usepackage{xeCJK}
+\setmainfont{DejaVu Serif}
+\setmonofont{DejaVu Sans Mono}
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKmonofont{Noto Sans Mono CJK SC}
+\setmathfont{Asana Math}
+\setmathfont{Latin Modern Math}[range=\lrcorner]
+\setlength{\emergencystretch}{3em}
+\allowdisplaybreaks
+\hypersetup{hypertexnames=false}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\hypertarget{prior-verification-records-current-scope-and-source-map}{%
+\section{Prior verification records, current scope, and source
+map}\label{prior-verification-records-current-scope-and-source-map}}
+
+Research snapshot: 844e62f7304d9f890914a6a4370ec39291ddc26e.
+
+Full internal review records, not executable scripts or logs. They
+report the checks actually performed at the time; historical open
+statements are updated by the present guide. Finite checks, proof review
+and priority comparison are distinct.
+
+Read 00\_READ\_FIRST.md for superseded statements. Each source below is
+complete and byte-preserved. Original local links remain relative to
+their source; locate other texts using Volume 6. Formula numbers restart
+in each source.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{source-1-20260927_linear_cost.md}{%
+\subsection{Source 1:
+20260927\_linear\_cost.md}\label{source-1-20260927_linear_cost.md}}
+
+Original path: verification/20260927\_linear\_cost.md
+
+SHA-256:
+6b5cba75dfa7d6ae1a59d563dcf11bf133273ffe147d077bf6c4e86f7dc1fbdf
+
+BEGIN COMPLETE SOURCE
+
+\hypertarget{linear-beta2-cost-proof-continuation-and-checks}{%
+\section{Linear beta=2 cost: proof continuation and
+checks}\label{linear-beta2-cost-proof-continuation-and-checks}}
+
+27 September 2026. Base
+\texttt{168bea5269692fce531c4fea72d51a0a5766bb54}. Local task branch:
+\texttt{local/yau26-mixed-flux-20260927}. Main proof:
+\href{../continuation/20260927_mixed_current_and_signed_cores.md}{linear
+cost and small-h order}.
+
+\hypertarget{what-changed-mathematically}{%
+\subsection{What changed
+mathematically}\label{what-changed-mathematically}}
+
+I38 localized the positive topological cost of a hypothetical E=o(h)
+sequence but did not exclude it. The new proof, I40, does exclude it.
+The bounded KE model annihilates the calibrated actual spinor. Retaining
+that cancellation in the exact Hessian identity removes the old additive
+volume term. The class-square condition controls determinant ASD energy
+by the unknown gradient energy plus the actual defect. Weak Bianchi then
+absorbs that unknown energy, rather than assuming its smallness.
+
+This yields Sigma,p-T+ \textless=C(rV+D2), the required mixed-term
+estimate, and the all-metric window E+(U-1-h)+\textgreater=c h. The
+previously realized small-h family consequently has inf E comparable to
+h. An explicit square-shortfall variant retains linear order when the
+shortfall is O(Ah). The main theorem does not use the stronger, still
+open estimate Sigma\textless=C(P\_Ric+D2). Its rV term includes scalar
+variation.
+
+The construction-side calculation separately proves a reverse-surgery
+cap-energy inequality, with coefficient4 sharp in its specified
+cheap-cap class. This is not a claim of optimal coefficient over all
+metrics. Nearby-beta transfer and signed-current square completion are
+direct corollaries/identities, not additional independent main
+discoveries.
+
+\hypertarget{sources-and-actual-dependencies}{%
+\subsection{Sources and actual
+dependencies}\label{sources-and-actual-dependencies}}
+
+The new downloaded note was read completely and preserved byte-for-byte;
+see
+\href{../guidance/source/20260927_mixed_current_receipt.json}{receipt}.
+Its mixed-current refinement, axial cancellation and actual curvature
+equation retain their source attribution in Sections1--3 of the proof.
+
+The proof uses the inherited functional pencil's actual conformal
+supply, same-solution amplitude, phase and curvature-model bounds; the
+preceding actual-cost proof's low-amplitude estimate and scalar-slack
+identity; and the bounded-form criterion's exact Hessian, polynomial
+divergence and weak-Bianchi formulas. All are linked from the proof.
+None requires the not-yet-proved linear conclusion. Classical
+upper-bound gluing is used only for the upper half of the final order
+comparison.
+
+The project mathematical Skill was read in full. It guided preservation
+of the actual-class quantifiers and the separation of analytic proof,
+finite calculation, scope and priority. It did not supply an automatic
+theorem or authorize changing an installed Skill or live research
+system.
+
+\hypertarget{parallel-work-and-targeted-independent-re-derivations}{%
+\subsection{Parallel work and targeted independent
+re-derivations}\label{parallel-work-and-targeted-independent-re-derivations}}
+
+Three clean-context agents used the owner's requested
+\texttt{gpt-6-astra}, \texttt{max}, read-only, on bounded tasks. Root
+owned all file edits.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{direct\_mixed\_20260927}: derived the refined Hessian--Bianchi
+  closure, checked the low-amplitude/phase dependencies and the
+  square-shortfall extension. It did not assume a Sobolev constant or a
+  curvature derivative.
+\item
+  \texttt{signed\_flux\_20260927}: independently checked the polynomial
+  model's action, exact Hessian signs and curvature norms, Chern--Weil
+  constants, noncircularity and signed-current completion; derived
+  nearby-beta transfer.
+\item
+  \texttt{actual\_construction\_20260927}: independently derived the
+  all-metric sign/rescaling branches, constants49/112, feasible
+  frontier, exact family asymptotics and reverse-surgery cost.
+  Construction attempts did not produce an actual sublinear metric in
+  the stated family.
+\end{itemize}
+
+After integration, all three read the relevant complete sections, not
+just the proposed conclusion. Their specific corrections were
+incorporated: the family is in §3, Theorem5 of the boundary proof;
+uniform torsion bounds require bounded kappa; the shortfall variant
+explicitly drops the square condition; and coefficient4 requires
+h-\textgreater0 and diagonal gluing errors o(h). Root separately checked
+the same-solution dependencies and each absorption. These are internal
+mathematical checks, not external peer review.
+
+\hypertarget{finite-checks}{%
+\subsection{Finite checks}\label{finite-checks}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{python3\ tools/check\_mixed\_current.py}: 13 tests passed.
+\item
+  \texttt{python3\ tools/check\_actual\_topological\_cost.py}: 7 tests
+  passed.
+\item
+  \texttt{python3\ tools/check\_boundary\_compatibility.py}: 7 tests
+  passed.
+\end{itemize}
+
+The new checks cover exact graded exterior algebra in transgression,
+signed square completion, primitive derivatives, model roots, mass,
+topological bootstrap constants, all-metric conversion, surgery identity
+and the auxiliary Eguchi--Hanson radial profile. They do not certify PDE
+existence, integration estimates, all-metric quantifiers or originality.
+The finite tests supplement, rather than replace, Sections4--5's proof.
+
+The result catalogue's 85 IDs were checked for uniqueness, dependency
+resolution and existing proof paths. Local links in changed
+proof/navigation files were checked; the source note's bytes and SHA-256
+match the download. \texttt{git\ diff\ -\/-check} passed. These are
+archival checks, not mathematical evidence.
+
+\hypertarget{retained-construction-side-tests-not-premises-of-i40}{%
+\subsection{Retained construction-side tests, not premises of
+I40}\label{retained-construction-side-tests-not-premises-of-i40}}
+
+The bounded-spinor Liouville shortcut was rejected. On the standard
+Eguchi--Hanson space X=O(-2), the canonical section s\_Z of E=O(Z), with
+\textbar s\_Z\textbar\^{}2=(r\^{}2-a\^{}2)/(r\^{}2+a\^{}2), has an ASD
+Chern connection: the radial calculation is r\^{}3(1-a\^{}4/r\^{}4)
+d(log\textbar s\_Z\textbar\^{}2)/dr=4a\^{}2. Tensoring it with a
+parallel positive spinor gives a bounded, nonparallel twisted harmonic
+spinor. In the framing used by the construction analysis its relative
+charge is -2 and determinant ASD energy is 32pi\^{}2. Its cubic torsion
+is zero because Phi wedge nabla Phi=0. This is an ideal core, not a
+solution of the full positive-weight SW curvature equation, and its
+charge has the wrong sign to pay a handle's positive charge. The metric
+and twisted-mode background is
+\href{https://arxiv.org/abs/2309.08453}{Franchetti--Krasnov}.
+
+The same analysis found a useful approximate-core flux certificate. On
+annuli of radii r\_i where
+\textbar Phi\textbar\textgreater=m\textgreater0, put
+w\_i=Vol(A\_i)/r\_i\^{}4, f\_i=int\_Ai\textbar F\_\{S+\}\textbar\^{}2
+and q\_i=int\_Ai\textbar nabla Phi\textbar\^{}4. Coarea and Holder give
+suitable boundary radii with total absolute flux at most C(sum
+w\_i)\^{}(1/4){[}m\^{}(-1)(sum f\_i)\^{}(1/2)(sum q\_i)\^{}(1/4)
++m\^{}(-3)(sum q\_i)\^{}(3/4){]}. Thus O(Ah) annular volume-ratio and
+curvature budgets plus o(Ah) quartic budget suffice for o(Ah) flux. The
+hypotheses were not derived from arbitrary near-Einstein input and are
+not silently inserted into I40. The actual proof instead closes the
+global spinor budget.
+
+\hypertarget{continuation-and-remaining-boundaries}{%
+\subsection{Continuation and remaining
+boundaries}\label{continuation-and-remaining-boundaries}}
+
+The previous saved trajectory ended after a local commit and a final
+response. The inspected record did not exhibit a quota or scheduler
+error, and it did not establish an independently running continuation
+process. No such process or automatic between-turn persistence is
+claimed here. In this turn, intermediate current and core results were
+followed by the next sufficient estimate, which led to the main closure
+and its cost variant.
+
+Zero-Weyl weak rigidity remains distinct: beta=2 model annihilation does
+not persist there, and a small Dirac residual alone is insufficient. The
+stronger scalar-variance-free estimate and the global optimal
+coefficient are open; neither is needed for the completed linear-order
+theorem. No fixed-E\_D Einstein decision, diameter-free realization or
+full Yau26 solution is claimed. A further clean-context agent was
+assigned the zero-end coupled equations, not another review of the
+completed small-h theorem.
+
+That continuation produced Section8 after the main closure was committed
+as \texttt{b2653dc}. Agent \texttt{zero\_endpoint\_system\_20260927}
+derived a regularized coupled Lichnerowicz test at the available norms.
+Root introduced the reciprocal scalar test and its Jensen defect; the
+agent independently checked it and added the growing-weight scalar test.
+They give strong torsion-length convergence in all normalized Lq below2,
+small-torsion volume O(sqrt eta), and a net derivative balance with
+limit64/27. All statements retain a possible concentrated derivative
+defect and possible topological charge on the low-torsion region. The
+construction does not require the unweighted Dirac residual to converge
+in L2. Root independently checked the test derivatives and curvature
+signs; the Clifford defect inequality, reciprocal identity and
+derivative square completion have additional finite checks. These extend
+I39, not a new zero-end gap theorem.
+
+The signed-flux agent then independently read all of Section8, verified
+both scalar-test norms, the weighted Dirac commutator, curvature duality
+factor4, smoothness at zeros, the quartic sign and limits64/27 and1/27.
+No mathematical correction was needed. It confirmed separately why the
+positive S+ ideal-core sign cannot be transferred to S- tensor L: the
+latter contains positive uncontrolled opposite-Weyl curvature. This
+precise remaining boundary is recorded in (8.12), not hidden by the new
+length-concentration conclusion.
+
+Everything remains local. No push, external publication, service or
+Session change, installed Skill modification or inherited proof
+overwrite occurred. The frozen eight-volume package was not regenerated.
+Current navigation identifies I40 separately, so older exported
+statements do not silently become the latest research state.
+
+END COMPLETE SOURCE
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{source-2-20260927_conformal_and_endpoint.md}{%
+\subsection{Source 2:
+20260927\_conformal\_and\_endpoint.md}\label{source-2-20260927_conformal_and_endpoint.md}}
+
+Original path: verification/20260927\_conformal\_and\_endpoint.md
+
+SHA-256:
+ff105d8c73aa129938dfdf21b46a4e5d84c9db3dd8a278d2fb0ee4da54b4e1ca
+
+BEGIN COMPLETE SOURCE
+
+\hypertarget{conformal-separation-and-endpoint-continuation-evidence-record}{%
+\section{Conformal separation and endpoint continuation: evidence
+record}\label{conformal-separation-and-endpoint-continuation-evidence-record}}
+
+27 September 2026. Base: \texttt{1b9a80d}. Local branch:
+\texttt{local/yau26-endpoint-continuation-20260927}. Proof:
+\href{../continuation/20260927_conformal_separation_and_zero_end.md}{conformal
+separation and zero-end system}.
+
+\hypertarget{changes-to-mathematical-conclusions}{%
+\subsection{Changes to mathematical
+conclusions}\label{changes-to-mathematical-conclusions}}
+
+I41 removes scalar variance from the inherited I40 slack theorem by
+passing to the negative Yamabe representative and transferring exact
+conformal energies back. It is global, retains square shortfall
+explicitly, and strengthens the defect to traceless-Ricci anisotropy J.
+The BF application is an actual geography/supply family outside the old
+quadratic band, not a formal intersection matrix. The new conformal
+excess identity also reduces sub-unit minimizing sequences to
+scalar-normalized metrics.
+
+I42 first proves local coercivity using bounded-Ricci regular charts and
+exact ASD/almost-Kaehler incompatibility. Exponential lifting and
+geodesic flow averaging remove any base injectivity premise.
+Cheeger--Tian then supplies a positive fraction of curvature-regular
+balls from bounded Euler density for EXACT Einstein metrics. The
+resulting upper-energy margin stays positive through h=1/4. A separate
+approximate-input result retains its bounded-diameter hypotheses.
+
+The direct torsion continuation saturates determinant ASD energy against
+a bounded model, cancels the opposite-Weyl bulk in the signed Chern
+identity, and locates the remaining cost in a critical mixed transition
+term. The construction arm solves both local positive-weight gauge
+equations and realizes a positive relative charge, with vanishing
+quadratic energies but a nonvanishing quartic radial cost. This
+establishes an actual local mechanism, not a closed-manifold endpoint
+counterexample. The construction was then extended by perturbed right
+inverses to a fixed hyperbolic background: Ric=-g, W\^{}pm=0, canonical
+weight2 and both local gauge equations hold exactly. Winding,
+normal-derivative and determinant curvature matching still require a
+global exterior.
+
+\hypertarget{proof-dependencies-and-classical-sources}{%
+\subsection{Proof dependencies and classical
+sources}\label{proof-dependencies-and-classical-sources}}
+
+Part I depends on the preceding refined beta=2 theorem, not on an
+assumed sharp coefficient. Negative Yamabe theory, conformal invariance,
+and Chern--Weil identities remain classical inputs. The exact
+variational comparison does not assert pointwise Ricci preservation
+under conformal change. The BF family checks the movable geography
+threshold, the full Ishida--LeBrun supply hypotheses, all relevant
+parity conditions and the class-square inequality.
+
+The geometric proof was checked against the following primary sources:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://arxiv.org/pdf/1406.6534}{Cheeger--Naber}, Theorem 1.13
+  and Definition 2.9, for bounded-Ricci harmonic-radius input.
+\item
+  \href{https://johnarmstrongmaths.com/publications/resources/thesis.pdf}{Armstrong's
+  thesis}, Section 3.3.3, for the local exact incompatibility.
+\item
+  \href{https://arxiv.org/html/2601.16176v1\#S2.SS3}{Normal exponential
+  cover geometry}, for the fixed-scale lifted metric, with no assertion
+  of a global covering map.
+\item
+  \href{https://sites.duke.edu/scshgap/files/2016/08/dim4dukebeamer.pdf}{Cheeger's
+  author presentation}, slides 2--3, for the unnormalized,
+  collapse-independent Einstein epsilon regularity used in Theorem 10,
+  and slide 13 for the curvature convention. The original paper is
+  \href{https://doi.org/10.1090/S0894-0347-05-00511-4}{Cheeger--Tian}.
+  Its full publisher PDF was not retrieved in this run; the cited
+  theorem statement was read in the author's presentation. No
+  bounded-Ricci-only replacement is inferred from that statement.
+\item
+  \href{https://ocw.mit.edu/courses/18-156-differential-analysis-spring-2004/pages/lecture-notes/}{Dirichlet
+  Schauder theory}, lectures 11--17, for the local construction's
+  fixed-ball right inverses.
+\end{itemize}
+
+The BF comparison uses
+\href{https://arxiv.org/html/math/0111228}{Ishida--LeBrun} and
+\href{https://arxiv.org/pdf/math/0306021}{Braungardt--Kotschick}, with
+the already preserved actual-supply proof. Classical shrinking-core
+upper bounds retain their LeBrun attribution.
+
+\hypertarget{parallel-work-and-internal-checks}{%
+\subsection{Parallel work and internal
+checks}\label{parallel-work-and-internal-checks}}
+
+Three Astra/max research roles worked read-only while root integrated
+the proofs in one local manuscript. They were given successive concrete
+tasks, not repeated requests for a new general roadmap.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{endpoint\_actual\_bubbles}: local geometric coercivity,
+  exponential averaging, exact Einstein Euler-density extension and
+  uniform wall; then checked whether the wall forces new actual
+  topology-only exclusions.
+\item
+  \texttt{torsion\_signed\_topology}: determinant saturation, signed
+  localization, full projected torsion derivatives, positive relative
+  flux, and actual local gauge construction.
+\item
+  \texttt{zero\_endpoint\_system\_20260927}: conformal/BF and
+  approximate-wall derivations, independent checking of the local
+  construction, and the reduced sharp-coefficient problem.
+\end{itemize}
+
+Corrections retained in the text include the reciprocal-mean
+contribution to the saturation rate; ordinary versus invariant-weight
+cover inputs; moving geography thresholds; the distinction between
+Hessian norm and squared integral; actual versus formal examples; and
+exact versus approximate Einstein regularity. Agent agreement is not
+itself evidence of global correctness; the displayed arguments and
+source hypotheses are what a further mathematical review must examine.
+
+\hypertarget{finite-checks-1}{%
+\subsection{Finite checks}\label{finite-checks-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{python3\ tools/check\_mixed\_current.py}: 22 tests passed.
+\item
+  \texttt{python3\ tools/check\_actual\_topological\_cost.py}: 7 tests
+  passed.
+\item
+  \texttt{python3\ tools/check\_boundary\_compatibility.py}: 7 tests
+  passed.
+\item
+  \texttt{git\ diff\ -\/-check}: passed.
+\item
+  Result catalogue: 87 distinct IDs; all source paths and dependencies
+  present. Final integration checked 289 local links across the seven
+  changed entry/proof/evidence documents; none were broken.
+\end{itemize}
+
+The new finite tests check conformal energy identities, the linear wall,
+moving BF arithmetic, determinant-saturation coefficients, exact and
+approximate upper-wall reductions, Clifford projection identities,
+right-inverse symbols, local torsion polynomials, signed radial
+integrals and their limiting constants. These do not prove elliptic
+compactness, contraction estimates, actual gauge nonvanishing, or global
+topology.
+
+\hypertarget{continuation-boundary}{%
+\subsection{Continuation boundary}\label{continuation-boundary}}
+
+The unrestricted weak-error zero endpoint, the all-metric optimal
+small-h coefficient, and fixed E\_D's Einstein decision remain open. The
+local core does not close the exterior matching problem. The uniform
+upper energy wall does not by itself force existing smooth families into
+that wall: the recorded topology gives an upper bound, not the missing
+lower pinning.
+
+Section 3.2 further reduces coefficient4 to a precise first-order
+three-loss estimate on actual scalar-normalized sequences. Genuine cscK
+products bound the existing isotropic estimate's coefficient and show
+that merely optimizing it cannot establish4. The sharper three-loss
+comparison is retained as unproved, not promoted to the theorem
+registry.
+
+The project mathematical Skill was read in full and used to preserve
+actual input quantifiers, normalization, proof dependencies and the
+separation of local construction from global realization. Frozen
+research originals, installed Skills and running systems were not
+modified. No new web packet, external synchronization or publication was
+made.
+
+END COMPLETE SOURCE
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{source-3-20260927_covering_and_sharpness.md}{%
+\subsection{Source 3:
+20260927\_covering\_and\_sharpness.md}\label{source-3-20260927_covering_and_sharpness.md}}
+
+Original path: verification/20260927\_covering\_and\_sharpness.md
+
+SHA-256:
+c4ca515a57a270cb5afda344679595405142e0cac46c9ae72419acb51c4da35b
+
+BEGIN COMPLETE SOURCE
+
+\hypertarget{covering-sharpness-and-ale-matching-proof-and-verification-record}{%
+\section{Covering, sharpness and ALE matching: proof and verification
+record}\label{covering-sharpness-and-ale-matching-proof-and-verification-record}}
+
+27 September 2026. Base \texttt{46e7efc}. Local branch:
+\texttt{local/yau26-global-cost-20260927}. Unified
+\href{../continuation/20260927_covering_geometry_and_sharp_subfamilies.md}{proof}.
+
+\hypertarget{mathematical-changes}{%
+\subsection{Mathematical changes}\label{mathematical-changes}}
+
+I43 strengthens base collapse to collapse of genuine local universal
+covers, in normalized upper mean. Its proof averages the covering-ball
+contradiction by original-metric geodesic flow, with no sheet bound. CFG
+comparison covers and bilipschitz path lifting allow the geometric input
+to be supplied by a different, uniformly equivalent metric. Li II
+smoothing then gives a genuine approximate-input gap under uniform
+fixed-scale local L2 nonconcentration, and hence under uniform local
+L\^{}(2+eta) control. Actual fields are never moved to the smoothed
+metric. The same gap strengthens the upper energy wall without diameter.
+Maximal local fibered rank and specified elliptic curvature equations
+give two other rigorously scoped geometric inputs.
+
+I44 determines the exact all-metric infimum on the real handle-only
+complex-hyperbolic surgery family, including nonattainment for
+0\textless h\textless1/3. This is an explicit deduction from classical
+budgets and gluing, not a claim to a new gluing method. For general
+blowup/handle metrics, signature cancellation removes all scalar cap
+cost from a sufficient coefficient-four criterion. Relative
+transgression computes the precise minimum for full conformal CH
+collars. An explicit smooth four-ball example proves that round induced
+boundary alone cannot give a cheap full-collar-compatible cap.
+
+The I39 extension begins with the actual local positive-charge cores and
+asks about global matching. It excludes a global first-order ALE limit
+with finite first-order curvature energy and bounded physical
+derivative, retaining all connection sources. The initial pointwise
+decay assumption was removed using an L4 primitive for exact L2 chiral
+forms. Root then weakened exact Einstein to first-order trace-free Ricci
+o(epsilon); physical bounded Ricci supplies that condition. The two
+reviewers checked the stronger formulation and its scale factors. Global
+first-order compactness and same-scale matching remain hypotheses.
+
+\hypertarget{primary-source-scope-checks}{%
+\subsection{Primary-source scope
+checks}\label{primary-source-scope-checks}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://arxiv.org/pdf/1412.1326}{Naber--Zhang}, Proposition 5.9,
+  printed pp.53--54: specified Ricci-limit model and maximal fibered
+  fundamental-group rank imply local covering volume. Not their stronger
+  harmonic-radius theorem with different splitting requirements.
+\item
+  \href{https://www.ihes.fr/~gromov/wp-content/uploads/2018/08/384.pdf}{Cheeger--Fukaya--Gromov},
+  definition (1.1.4)--(1.1.5), p.331; Theorem 1.3, p.332; proof of cover
+  injectivity, p.365. Genuine normal covers are essential here.
+\item
+  \href{https://arxiv.org/pdf/0911.3104}{Li II preprint}, Theorem 1.1,
+  Section 3 and (3.8): fixed-scale small unnormalized full-curvature
+  energy, definite-time smoothing, and factor-two metric comparison. The
+  preprint is worded for complete noncompact metrics. The
+  \href{https://link.springer.com/article/10.1007/s10455-011-9290-0}{published
+  abstract} explicitly states the compact version; its full publisher
+  text was not retrieved. The proof records the direct compact bootstrap
+  adaptation and its proper-ball safeguard. No inaccessible statement is
+  silently treated as fully read.
+\item
+  \href{https://nyjm.albany.edu/j/2017/23-64p.pdf}{Weber}, Theorem 1.1:
+  collapse-independent small-energy regularity for the specified
+  elliptic metric classes, not all bounded-Ricci metrics.
+\item
+  \href{https://arxiv.org/abs/math/0003068}{LeBrun}: scalar/projection
+  budget, Ricci-energy gluing and its upper sequence remain classical
+  inputs. The precise inherited scalar/volume limits are used, not
+  merely the Ricci-energy infimum without a compatible sequence.
+\end{itemize}
+
+The full Li I local theorem was not obtained in the bounded source
+search. The general approximate Euler-density-only extension therefore
+remains unproved; the local-smoothing abstract does not certify it.
+
+\hypertarget{parallel-derivation-and-cross-review}{%
+\subsection{Parallel derivation and
+cross-review}\label{parallel-derivation-and-cross-review}}
+
+Three clean-context GPT-6 Astra/max agents worked read-only. Root alone
+edited the local project, preserving the frozen source tree and avoiding
+concurrent file overwrites.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{endpoint\_geometry\_20260927b}: genuine covering volume,
+  source scope, comparison-metric bridge, Li smoothing and supercritical
+  input. After the first result, continued to weaker geometric
+  hypotheses and reviewed the completed Sections 1--4.1.
+\item
+  \texttt{sharp\_cost\_20260927b}: all-metric handle formula, signature
+  cancellation, exact conformal-collar cost and explicit round-boundary
+  obstruction. Subsequently reviewed the sourced ALE proof and its
+  finite-energy upgrade independently.
+\item
+  \texttt{global\_torsion\_20260927b}: signed-degree matching,
+  first-order sourced ALE theorem, replacement of pointwise decay by
+  finite energy, and the approximate-Ricci extension. Subsequently
+  checked the cover averaging and sharp surgery identities.
+\end{itemize}
+
+Root independently checked the main algebra, Cartan sign/normalization,
+ALE primitive construction, and primary-source hypotheses. Review fixes
+included upper integrals rather than unsupported measurability, full
+Spin-c trivialization rather than an unspecified flat determinant twist,
+physical versus rescaled Ricci norms, and preserving the scalar branch
+of the canonical weight.
+
+Subagent agreement is not external mathematical certification. The
+arguments, scopes and citations above are the reviewable evidence.
+
+\hypertarget{finite-validation}{%
+\subsection{Finite validation}\label{finite-validation}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{python3\ tools/check\_mixed\_current.py}: 26 tests passed,
+  including four new checks for handle/signature defect, Weyl-only cap
+  cancellation, curvature/Euler normalization and the explicit
+  round-boundary flux.
+\item
+  \texttt{python3\ tools/check\_actual\_topological\_cost.py}: 7 tests
+  passed.
+\item
+  \texttt{python3\ tools/check\_boundary\_compatibility.py}: 7 tests
+  passed.
+\end{itemize}
+
+These check finite identities only. They do not prove compactness,
+Ricci-flow estimates, actual nonvanishing or worldwide novelty. Separate
+integration checks passed: 89 distinct catalogue IDs with existing proof
+paths and dependencies; 242 local links across the six changed Markdown
+entry/proof/evidence documents; no unexpected control characters; and
+\texttt{git\ diff\ -\/-check}. A literal form-feed in an initial formula
+draft was detected and corrected before these final checks.
+
+\hypertarget{continuation-boundary-1}{%
+\subsection{Continuation boundary}\label{continuation-boundary-1}}
+
+The balanced family's all-metric coefficient is still open, even though
+its linear order is already proved and a different subfamily now has an
+exact infimum. The general weak zero-Weyl endpoint is open outside the
+newly verified geometric/first-order classes. First-order ALE hypotheses
+are not deduced from normalized global budgets. Intrinsic round boundary
+does not prescribe the full extrinsic collar, and a costly prescribed
+cut does not exclude a better cut. Fixed E\_D and full Yau26 remain
+open.
+
+The project mathematics Skill guided actual-class/weight quantifiers,
+normalization and local-to-global distinctions. No installed Skill,
+immutable source, live service or external destination was changed. No
+new web-upload packet was prepared.
+
+END COMPLETE SOURCE
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{source-4-20260927_local_geometry_and_extrema.md}{%
+\subsection{Source 4:
+20260927\_local\_geometry\_and\_extrema.md}\label{source-4-20260927_local_geometry_and_extrema.md}}
+
+Original path: verification/20260927\_local\_geometry\_and\_extrema.md
+
+SHA-256:
+8ffa8cc1fe50f6583564caed6e9fa95358d7598e5111697771d4f5dfcc758b41
+
+BEGIN COMPLETE SOURCE
+
+\hypertarget{local-geometry-marked-annuli-and-variational-extrema}{%
+\section{Local geometry, marked annuli and variational
+extrema}\label{local-geometry-marked-annuli-and-variational-extrema}}
+
+27 September 2026. Base \texttt{cee6c6b}. Local branch:
+\texttt{local/yau26-variational-global-20260927}. Unified
+\href{../continuation/20260927_local_geometry_and_variational_extrema.md}{proof}.
+No web-upload package was produced.
+
+\hypertarget{mathematical-changes-1}{%
+\subsection{Mathematical changes}\label{mathematical-changes-1}}
+
+\textbf{I45} closes the bounded-Ricci Euler-density endpoint theorem
+left open by I43. The new use of Cheeger--Tian's bounded-Ricci covering
+extension removes all-center small-energy and special elliptic-metric
+premises. Euler/Fubini selects a positive-volume set of low-energy
+centers; local isometries and original-metric Liouville measure transfer
+the forbidden mode back to the closed manifold. Splicing the tail with
+the inherited finite pencil improves its exponent from beta\^{}\{-4\} to
+beta\^{}\{-2\}, with the stated numerator. The corresponding
+compactified weight is t rather than t\^{}3. Pointwise Ricci and the
+Euler-density bound remain in scope.
+
+Continuation after that proof derives the Euler budget from the
+topological ratio chi/T\_+ in the small-defect regime. Noether's
+inequality then supplies a universal ratio bound on the entire
+subcritical minimal-general-type surgery family. Combining with the old
+critical-band obstruction proves the universal pointwise pencil
+inequality for every metric and all surgery counts in that actual-input
+family. A separate characteristic calculation locates the remaining
+bounded-Ricci escape in divergent negative-chiral Chern/Weyl density and
+chi/T\_+; it cannot occur on fixed topology. The pure integral problem
+is still different.
+
+\textbf{I46} directly controls marked quotient annuli without
+first-order ALE compactness. Calibration supplies the uniform
+integrability needed for critical Dirac compactness. The limiting pair
+of parallel spinors allows exactly odd cyclic 1/n(1,-2), with two
+determinant classes. Forbidden positive-spinor lifts yield stronger
+counts: individually amplitude- calibrated annuli cannot occur with
+positive density, regardless of their small radii. Equivariant local
+solutions of the actual weighted equations on hyperbolic quotient balls
+realize both allowed lifts. Their losses vanish uniformly across all
+inner annular scales, so these exceptions cannot be removed by another
+local inequality of the proposed kind.
+
+The coefficient work extends I41/I44, rather than counting every formula
+as a separate result. The infimum below one is exactly the sharp
+positivity parameter of a quadratic-curvature functional. Hypothetical
+smooth minimizers have a specific constant-scalar stationary equation
+and cannot be Bach-flat, Kahler or Ricci-parallel when their defect lies
+in (0,1). Directional-cost formulas apply to weak unit forms and
+arbitrary smooth self-dual forms, including their zeros. They prove the
+coefficient-four bound for all Hermitian metrics, but do not supply
+small directional cost for the balanced surgery family.
+
+\hypertarget{sources-and-analytic-scope}{%
+\subsection{Sources and analytic
+scope}\label{sources-and-analytic-scope}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://doi.org/10.1090/S0894-0347-05-00511-4}{Cheeger--Tian},
+  Theorem 0.8, printed p.489, and Remark 8.22, p.515; covering geometry
+  in Remarks 2.7 and 4.8, pp.501 and 507. Relevant original pages were
+  read from the
+  \href{https://www.math.stonybrook.edu/Courses/MAT683/201001/MAT683S10.pdf}{institutional
+  collection}. Theorem 0.8 is a one-ball hypothesis; no global collapse
+  assumption is imported. Remark 8.22 gives C1-alpha/W2-q covering
+  geometry for bounded Ricci, not a full pointwise curvature estimate.
+\item
+  \href{https://math.berkeley.edu/~lott/4d3.pdf}{Lott, Section 3.1}
+  independently uses Theorem 0.8 and Remark 8.22 in the bounded-Ricci
+  context. This was corroboration, not a replacement for reading
+  Cheeger--Tian.
+\item
+  \href{https://johnarmstrongmaths.com/publications/resources/thesis.pdf}{Armstrong,
+  Theorem 3.3.5 and pp.70--72}: the ASD Einstein almost-Kahler
+  obstruction used here is local. It is not a claim to the general
+  negative Goldberg conjecture.
+\item
+  \href{https://haydys.net/misc/IntroGaugeTheory_LectNotes.pdf}{Haydys,
+  Example 121(b)}: the Spin-c(4) representation convention. The
+  exceptional cyclic types and determinant restrictions are computed
+  explicitly in the proof.
+\item
+  \href{https://www.mate.polimi.it/wp-content/themes/mymate/send_new.php?file=qdd205\&tipo=1}{Catino,
+  Section 2}: classical quadratic-curvature first variations. Its
+  tau\textgreater=-1/4 rigidity range does not cover the new variational
+  parameter tau\textless-1/4.
+\item
+  \href{https://arxiv.org/pdf/math/0702548}{Liedtke, Theorem 2.1} and
+  \href{https://www.mathe8.uni-bayreuth.de/de/team/prof-fabrizio-catanese-old/pdf/101.pdf}{Bauer--Catanese--Pignatelli,
+  p.5}: the full minimal-general-type Noether inequality and
+  characteristic identities, with no regularity or ampleness premise.
+  They provide the automatic Euler-ratio bound, not a new gauge
+  solvability theorem.
+\end{itemize}
+
+The direct compactness argument inside the CT charts is included in the
+proof. Bounded Ricci upgrades the vanishing L2 residual to each finite
+Lp; harmonic-coordinate elliptic estimates give strong interior metric
+convergence. No Ricci derivative estimate or complete extension of the
+upstairs chart is required. The model parameter is constant. The fixed
+physical scale chosen from the density bound is not discarded by a false
+scale-invariance claim for the entire residual.
+
+\hypertarget{parallel-derivation-and-independent-checks}{%
+\subsection{Parallel derivation and independent
+checks}\label{parallel-derivation-and-independent-checks}}
+
+Three clean-context GPT-6 Astra/max agents worked read-only while root
+alone edited this task's branch.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{local\_smoothing\_euler\_20260927c} developed the
+  bounded-Ricci Euler extension, checked the full parameter splice, and
+  independently audited Sections 2--2.4. A second pass re-read the
+  precise original regularity and Armstrong hypotheses and verified the
+  local-isometry averaging.
+\item
+  \texttt{multiscale\_matching\_20260927c} developed the annular
+  compactness and packing argument, classified all free quotient
+  holonomies, continued to the one-spinor marked-class count, and
+  constructed both local resonant solutions. It also independently
+  checked the variational identities in Section 1.
+\item
+  \texttt{balanced\_coefficient\_20260927c} developed the directional
+  and weak-form coefficient criteria, checked Section 1, then
+  independently reviewed critical compactness, packing scales, marked
+  characters, and the actual equivariant contraction and long-neck
+  estimates.
+\end{itemize}
+
+Root checked the primary regularity input, integrated the proofs, and
+derived/checked the algebra and final scope. Review corrections included
+explicit constant t and closedness, retaining harmonic-chart regularity,
+distinguishing the S\^{}- representation from S\^{}- tensor L,
+preserving physical orientation, and using outer-scale rather than
+inner-scale errors in the local long-neck construction. No unresolved
+analytic objection from these reviews was promoted to a theorem. This is
+internal proof review, not external certification or a worldwide
+priority finding.
+
+\hypertarget{finite-and-integration-validation}{%
+\subsection{Finite and integration
+validation}\label{finite-and-integration-validation}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{python\ tools/check\_mixed\_current.py}: 35 tests passed. Nine
+  additional checks cover the variational parameter, directional costs,
+  form scaling, compactified exponent, cyclic characters, Clifford seed,
+  physical annular exponents, surgery Euler ratio, and the
+  opposite-bundle densities.
+\item
+  \texttt{python\ tools/check\_actual\_topological\_cost.py}: 7 tests
+  passed.
+\item
+  \texttt{python\ tools/check\_boundary\_compatibility.py}: 7 tests
+  passed.
+\end{itemize}
+
+These are finite algebra checks, not proofs of compactness, regularity,
+actual global solvability or novelty. Catalogue, links and whitespace
+passed separately: 91 distinct catalogue IDs with existing proof paths
+and dependencies, 269 local links in the six changed Markdown files, no
+unexpected control characters or repeated equation tags, Python AST
+parsing, and \texttt{git\ diff\ -\/-check}. Links are rechecked after
+final additions.
+
+\hypertarget{exact-continuation-boundary}{%
+\subsection{Exact continuation
+boundary}\label{exact-continuation-boundary}}
+
+The unrestricted integral-Ricci zero-end theorem remains open. The new
+bounded-Ricci theorem forces chi/V to diverge in a hypothetical endpoint
+sequence in that class; it does not create pointwise Ricci control. The
+annular theorem does not supply a global neck decomposition, its
+markings, bounded overlap or amplitude calibration. The local exceptions
+still need smooth filling and global matching. The balanced-family
+all-metric coefficient remains undetermined; the new cost formulas
+identify a sufficient directional estimate, not its automatic validity.
+Fixed E\_D, diameter-free exact realization and full Yau26 are not
+decided.
+
+The project Skill was used for actual-class/weight quantifiers and norm
+conventions, not as a restriction on methods. No immutable manuscript,
+installed Skill, live service or external repository was changed.
+
+END COMPLETE SOURCE
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{source-5-20260927_full_core_and_extrema.md}{%
+\subsection{Source 5:
+20260927\_full\_core\_and\_extrema.md}\label{source-5-20260927_full_core_and_extrema.md}}
+
+Original path: verification/20260927\_full\_core\_and\_extrema.md
+
+SHA-256:
+efe4444250e3bd8b1771c8c98ef329ccb3bd501794812bc6304347ecd4a21f54
+
+BEGIN COMPLETE SOURCE
+
+\hypertarget{full-core-cost-elliptic-endpoint-and-extrema-verification-record}{%
+\section{Full-core cost, elliptic endpoint and extrema: verification
+record}\label{full-core-cost-elliptic-endpoint-and-extrema-verification-record}}
+
+27 September 2026. Base \texttt{0c8059f}; local branch
+\texttt{local/yau26-resonant-fillings-20260927}.
+\href{../continuation/20260927_full_core_cost_and_extremal_metrics.md}{Unified
+proof}. No web package, external upload, live runtime change or
+installed Skill edit.
+
+\hypertarget{what-changed-mathematically-1}{%
+\subsection{What changed
+mathematically}\label{what-changed-mathematically-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  I47 determines the all-smooth-core curvature-cost infimum for the
+  physical resonant quotient left by I46, including arbitrary interior
+  topology. Classical scalar-flat Kahler ALE truncations match the lower
+  bound. Retaining its sign gives pure-Ricci atoms for
+  minimal-resolution and lower-integer branches. A separate
+  faithful-flat-line argument removes first-order expansion hypotheses
+  from the corresponding ALE exclusion.
+\item
+  I48 replaces pointwise Ricci control by a specific elliptic inequality
+  and a small normalized local integral lower-Ricci budget. Neither
+  input is inferred from arbitrary L2 closeness. Euler density is still
+  required.
+\item
+  The I44 extension retains all ordinary-SW remainders and links them to
+  the full quadratic-curvature gradient. Stationary balanced low-level
+  competitors have explicit pointwise and fourth-moment concentration;
+  pointwise-near-Einstein csc competitors have a relative gradient lower
+  bound. The balanced coefficient and attainment remain undecided.
+\end{itemize}
+
+These are manuscript results with complete arguments in the linked file.
+Independent agent review is a check, not external mathematical
+certification or a priority finding. No theorem is justified by the
+number of files/tests.
+
+\hypertarget{primary-inputs-actually-checked}{%
+\subsection{Primary inputs actually
+checked}\label{primary-inputs-actually-checked}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://msp.org/gt/2016/20-3/gt-v20-n3-p13-s.pdf}{Lock--Viaclovsky},
+  (1-5), (3-1), (3-5): positive-cotangent eta convention and ALE
+  formulas. The boundary sign is fixed explicitly; reversing orientation
+  changes the conclusion. Weyl norms are Hilbert--Schmidt endomorphism
+  norms.
+\item
+  \href{https://arxiv.org/pdf/math/0206229}{Calderbank--Singer}, Theorem
+  A and Section 4.1: scalar-flat Kahler ALE metrics on cyclic minimal
+  resolutions. This is the matching classical construction, not a new
+  gluing claim.
+\item
+  \href{https://arxiv.org/pdf/1102.2672}{Suvaina}, Lemmas 4.1--4.2,
+  Remark 4.3: ALE covering context. The proof instead displays its
+  volume-rigidity argument; it does not need a full ALE classification.
+\item
+  \href{https://moroianu.perso.math.cnrs.fr/tex/1997cmp.pdf}{Moroianu},
+  Lemma 3.1: parallel Spin-c curvature identity, hence flat determinant
+  when Ricci=0.
+\item
+  \href{https://web.math.ucsb.edu/~wei/paper/Dai-Wei-Zhang.pdf}{Dai--Wei--Zhang},
+  Theorem 1.1, Corollary 1.5, (2.5)--(2.6), Remark 1.2: normalized
+  Sobolev, small local lower-Ricci budget and proper-ball conditions.
+  Finite budget alone is not their hypothesis.
+\item
+  \href{https://arxiv.org/pdf/math/0310302}{Tian--Viaclovsky}, early
+  Section 3 integration-by-parts lemmas: the local bootstrap is written
+  out with one fixed outer-ball probability measure. Later global
+  hypotheses are not borrowed implicitly.
+\item
+  \href{https://www.math.stonybrook.edu/Courses/MAT683/201001/MAT683S10.pdf}{Cheeger--Tian,
+  original institutional collection}, Theorem 0.8 and Remark 8.22,
+  independently re-read: compactly contained balls suffice, and the
+  bounded-Ricci extension gives covering geometry, not pointwise
+  full-curvature bounds. Apply it inside the good neighborhood where
+  Ricci has already been bounded. No ambient global Ricci bound is
+  needed at that step.
+\item
+  \href{https://arxiv.org/abs/1404.0569}{Catino}, Propositions 2.1 and
+  4.1: Euler--Lagrange and Cotton identities. The parameter is held
+  fixed during variation, the tensor Laplacian sign and full Cotton norm
+  are specified.
+\item
+  \href{https://arxiv.org/pdf/math/0003068}{LeBrun}, ordinary
+  SW/Weitzenbock normalization: the present remainder decomposition
+  keeps the losses from one ordinary solution; it does not claim a new
+  nonvanishing theorem.
+\end{itemize}
+
+\hypertarget{parallel-work-and-cross-review}{%
+\subsection{Parallel work and
+cross-review}\label{parallel-work-and-cross-review}}
+
+Three clean-context \texttt{gpt-6-astra} agents at \texttt{max} effort
+worked read-only; the root integrated proofs in this single branch.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{resonant\_filling\_20260927d}: full-core eta argument,
+  faithful determinant, independent checks of root's
+  sharpness/pure-Ricci extensions; then reviewed the normalized elliptic
+  bridge, proper-ball dichotomy, original CT scope and local-only
+  Liouville averaging.
+\item
+  \texttt{sharp\_coefficient\_20260927d}: same ordinary-solution
+  remainders and Cotton concentration; then independently checked root's
+  nonstationary gradient extension, its sign and the unrestricted
+  variation normalization.
+\item
+  \texttt{weak\_endpoint\_20260927d}: integral-Ricci elliptic bridge;
+  then independently derived the ordinary-SW coefficients in a Clifford
+  frame and checked the weighted Weyl/Cotton constants and oriented
+  topological budget.
+\end{enumerate}
+
+Review changes incorporated: explicitly connected manifold; radii in
+(3.14) restricted to \texttt{(0,1{]}}; \texttt{u\_minus=3T\_minus/A}
+distinguished from the minimum of two orientations; low-level hypothesis
+retained; τ frozen during variation; Hilbert--Schmidt and spectral norms
+distinguished.
+
+\hypertarget{executed-checks}{%
+\subsection{Executed checks}\label{executed-checks}}
+
+\begin{verbatim}
+python3 tools/check_full_core_and_extrema.py
+Ran 21 tests ... OK
+
+python3 tools/check_mixed_current.py
+Ran 35 tests ... OK
+\end{verbatim}
+
+New checks use exact rational Dedekind sums for odd orders 3--101,
+continued fractions, oriented counterchecks, Chern-Weil normalization,
+resolution energies, binary/trivalent boundary arithmetic, the full
+Clifford-frame Dirac/Hopf coefficients, polynomial loss identities, the
+signed coefficient balance, Weyl Cauchy constants, parameter/gradient
+normalization and the small-diameter constants. They do not verify the
+PDE bootstrap, compactness, ALE existence or full theorem correctness by
+computation.
+
+\texttt{tools/library.py\ verify} also passed: 884 inherited files,
+10,191 source records and 648 navigation links, with no failures. The
+result catalogue has 93 distinct IDs, all proof paths and dependencies
+present. These counts measure archive integrity and navigation, not
+mathematical contribution. \texttt{git\ diff\ -\/-check} passed.
+
+\hypertarget{remaining-decisive-steps}{%
+\subsection{Remaining decisive steps}\label{remaining-decisive-steps}}
+
+The raw weak input does not yet force an embedded complete marked-core
+decomposition. Uniform full-core cost does not bound Euler
+characteristic when quotient orders grow, and normalized counts do not
+exclude finitely many cores in growing volume. The elliptic equation and
+small local Lp budget are not supplied for general approximate metrics.
+The signed balance (4.16) still needs a proof or a same-family
+construction changing its sign at scale Ah. No fixed Dehn-twist Einstein
+decision, unrestricted integral endpoint theorem, balanced optimal
+coefficient or full Yau26 solution is recorded.
+
+END COMPLETE SOURCE
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{source-6-20260927_signed_balance_and_flow.md}{%
+\subsection{Source 6:
+20260927\_signed\_balance\_and\_flow.md}\label{source-6-20260927_signed_balance_and_flow.md}}
+
+Original path: verification/20260927\_signed\_balance\_and\_flow.md
+
+SHA-256:
+2c5a5b3a335b43dd5168b27e2429c141dad9a4689eaa50954a8db11e605a1e5e
+
+BEGIN COMPLETE SOURCE
+
+\hypertarget{signed-balance-and-conformal-flow-proof-and-verification-record}{%
+\section{Signed balance and conformal flow: proof and verification
+record}\label{signed-balance-and-conformal-flow-proof-and-verification-record}}
+
+27 September 2026. Base commit 754bc3a; local branch
+local/yau26-signed-balance-20260927.
+\href{../continuation/20260927_signed_balance_and_conformal_flow.md}{Unified
+proof}. No upload packet, external publication, running-service change
+or installed Skill update was made. The frozen mathematical baseline is
+unchanged.
+
+\hypertarget{mathematical-changes-2}{%
+\subsection{Mathematical changes}\label{mathematical-changes-2}}
+
+\textbf{I49: actual evolution from static budgets.} The classical
+scalar-preserving conformal Ricci flow has volume derivative minus
+trace-free Ricci energy. The established all-metric gap, classical Ricci
+lower bound and opposite Chern--Weil wall give three simultaneous
+differential inequalities. Their explicit integration bounds maximal
+smooth lifetime uniformly for the realized balanced small-h family, even
+though its integral gap tends to zero. The starting near-minimizing
+metrics exist with an explicit slack; an attained minimizer or preserved
+pinching is not assumed.
+
+The Cotton/actual-field argument additionally gives genuine flow descent
+inside a specified pointwise tube. A finite tube-escape time is not a
+description of the eventual singularity and is not ordinary Ricci-flow
+convergence.
+
+\textbf{X06: a real sharp boundary for signed spinor payment.}
+Anti-Hermitian TT deformations of negative KE products, followed by
+negative Yamabe normalization, admit actual unperturbed ordinary SW
+solutions. The gauge-fixed linearization is checked both by the
+classical divisor description and by an explicit sum-of-squares
+identity. Its metric source vanishes at first order; mixed connection
+variation produces nonzero directional spinor energy.
+
+On one fixed smooth product, degenerating the second surface gives
+actual small Laplace eigenvalues. A diagonal small perturbation then
+gives signed remainder/Weyl loss tending to two and Ricci/Weyl loss
+tending to zero. Together with the exact upper bound at h=0, this
+determines the sharp coefficient of the Weyl payment even allowing a
+fixed Ricci term. The construction has h=0,U=3; it does not refute the
+balanced h\textgreater0 coefficient-four target.
+
+\textbf{Variational and endpoint interfaces.} The full Hessian is
+completed in TT/conformal variables, without substituting an
+Einstein-background formula at a non-Einstein critical metric. Pure
+conformal directions are positive and stability reduces to a specified
+TT quadratic form.
+
+The stationary endpoint theorem retains a global Sobolev inequality and
+explicit topology bounds; its elliptic equation is derived from the
+actual quadratic-curvature Euler--Lagrange equation. A separate
+noncollapsed maximal-curvature extraction gives terminal Ricci-flat ASD
+ALE metric cores. Same-scale nonzero field control and an entire surgery
+core are not inferred from this metric extraction.
+
+\hypertarget{primary-inputs-checked}{%
+\subsection{Primary inputs checked}\label{primary-inputs-checked}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://arxiv.org/pdf/1109.5377}{Lu--Qing--Zheng, A Note on
+  Conformal Ricci Flow}, Theorem 1.1, equations (1.1), (1.2), (2.3):
+  short-time existence, pressure equation and classical volume
+  variation. Laplacian signs and scalar-minus-four normalization were
+  converted explicitly.
+\item
+  \href{https://library.slmath.org/books/Book37/files/okonek.pdf}{Okonek--Teleman},
+  Theorem 3.1.2, printed pp.~413--414: canonical negative-Kahler
+  empty-divisor solution. The proof also supplies a direct kernel
+  calculation; nonlinear uniqueness alone is not used as regularity.
+\item
+  \href{https://www.numdam.org/item/10.5802/aif.2640.pdf}{Scala},
+  Theorem 3.3 and Section 4, printed pp.~1274--1276: metric derivatives
+  of Dirac and SW curvature equations. The path tensor and the
+  endomorphism variation have the requisite factor of two.
+\item
+  \href{https://arxiv.org/pdf/1404.0569}{Catino}, equation (2.1):
+  quadratic-curvature critical equation. Constant scalar is retained,
+  including the parameter where the trace equation alone degenerates.
+\item
+  \href{https://arxiv.org/pdf/math/0312111}{Anderson}, Theorem 1.1 and
+  Proposition 3.5: Sobolev/energy compactness for the stated elliptic
+  Ricci system. This is not Einstein compactness applied directly to
+  arbitrary approximate metrics.
+\item
+  \href{https://doi.org/10.1007/BF01389045}{Bando--Kasue--Nakajima}: ALE
+  structure is invoked only after obtaining a complete exact Ricci-flat
+  limit with finite curvature energy and Euclidean growth.
+\end{itemize}
+
+The hyperbolic collar and Rayleigh construction is written explicitly.
+Classical existence/regularity results are inputs, not claimed as new.
+The catalogue records manuscript proofs, not global priority or external
+certification.
+
+\hypertarget{parallel-construction-and-independent-checks}{%
+\subsection{Parallel construction and independent
+checks}\label{parallel-construction-and-independent-checks}}
+
+Three clean-context GPT-6 Astra agents at max effort worked read-only.
+The root wrote and integrated the proof in this single task branch.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  signed\_spinor\_balance\_20260927e constructed the genuine SW
+  deformation, proved the signed simplification, and continued from a
+  fixed-background positive ratio to a fixed-smooth-manifold sharp
+  Weyl-payment sequence.
+\item
+  variational\_attainment\_20260927e derived the conformal flow
+  equations and full Hessian. It independently checked the actual SW
+  path, invertibility, variation coefficients and sharpness ratios, then
+  reviewed Sections 1--4 of the written proof.
+\item
+  core\_extraction\_20260927e proved the stationary/Sobolev endpoint and
+  maximal-curvature core extraction. It independently rederived the flow
+  cancellations, all wall integrals and the tube estimate, then reviewed
+  written Sections 1, 2, 5 and 6.
+\end{enumerate}
+
+Review changes incorporated:
+
+\begin{itemize}
+\tightlist
+\item
+  use an actual nonempty near-minimizing initial window with slack, not
+  an upper infimum that might be unattained;
+\item
+  distinguish the specified opposite-orientation budget from an
+  unlabelled minimum;
+\item
+  freeze the quadratic-functional parameter during each variation;
+\item
+  prove the ratio bound at every smooth flow time, not only initially;
+\item
+  retain shrinking individual SW implicit-function radii in the
+  degenerating-background construction;
+\item
+  pass to a convergent positive-volume subsequence before restoring
+  physical scale in the compactness argument;
+\item
+  justify the Ricci-flat limit's single end and the whole-truncation
+  signed-energy bound;
+\item
+  do not transfer a metric blow-up to a normalized nonzero spinor
+  without the required rescaled error estimate.
+\end{itemize}
+
+The project Skill was read for the actual-class, auxiliary-weight and
+norm conventions. It was neither edited nor treated as a restriction on
+new proof methods.
+
+\hypertarget{executed-finite-and-integrity-checks}{%
+\subsection{Executed finite and integrity
+checks}\label{executed-finite-and-integrity-checks}}
+
+The commands below both passed:
+
+\begin{verbatim}
+python3 tools/check_signed_balance_and_flow.py
+Ran 18 tests ... OK
+
+python3 tools/check_full_core_and_extrema.py
+Ran 21 tests ... OK
+\end{verbatim}
+
+The new checks cover pressure/gradient cancellations, defect evolution,
+wall normalization and intersection order, integration and asymptotic
+time constants, nonempty-window slack, the tube rate, actual remainder
+polynomials, the canonical solution square completion, mixed connection
+norms, sharpness ratios, the collar integral, full Hessian completion,
+and endpoint volume/model constants. They do not prove PDE existence,
+compactness or correctness of the entire theorem by computation.
+
+The result catalogue has 95 distinct IDs with all proof paths and
+dependencies present. A formatting check finds no control characters and
+balanced inline/display mathematical delimiters in the new proof.
+Archive integrity and local navigation are checked by the existing
+library verifier; its machine-readable receipt is
+\href{../catalog/verification.json}{catalog/verification.json}. The
+final run passed: 884 inherited files, 10,191 source records and 654
+local navigation links, with no failures. These are preservation counts,
+not counts of mathematical contributions. The initial navigation check
+preceded this receipt's creation and reported that one missing link;
+after writing the receipt, verification passed. The final whitespace
+check also passed.
+
+\hypertarget{exact-remaining-questions}{%
+\subsection{Exact remaining questions}\label{exact-remaining-questions}}
+
+The balanced h\textgreater0 coefficient requires its full signed
+comparison at scale Ah, or a different argument controlling all metrics.
+The h=0 sharp model proves the universal shortcut false, not this target
+false. The reduced TT Hessian has not been proved indefinite.
+
+For the unrestricted weak zero endpoint, neither exact stationarity nor
+the stated Sobolev/noncollapse assumptions follow from raw averaged
+budgets. A metric terminal core and an actual calibrated field on that
+core are distinct outputs. The field-survival estimate and full marked
+matching remain open.
+
+The flow bound does not classify the forced breakdown, give a uniform
+lower existence time, or settle fixed E\_D. No complete Yau26 conclusion
+is claimed.
+
+END COMPLETE SOURCE
+
+\hypertarget{current-result-scope-and-source-coverage}{%
+\section{Current result scope and source
+coverage}\label{current-result-scope-and-source-coverage}}
+
+These catalogue entries are reading metadata, not additional proofs.
+
+The snapshot catalogue had one missing JSON comma at I48. It is repaired
+in this packaging branch without changing any mathematical text.
+
+\hypertarget{commits-since-the-last-baseline}{%
+\subsection{Commits since the last
+baseline}\label{commits-since-the-last-baseline}}
+
+b2653dc Prove linear small-surgery Einstein separation by refined spinor
+self-test 1b9a80d Continue zero-end equations with torsion length
+concentration and weighted balance 46e7efc Extend conformal Einstein
+separation and geometric zero-end theory cee6c6b Extend Yau26 covering
+coercivity, sharp surgery costs and ALE matching 0c8059f Prove
+bounded-Ricci endpoint bridge and actual annular matching bounds 754bc3a
+Prove sharp full-core costs and connect actual fields to extrema 844e62f
+Connect integral gaps to conformal flow and prove sharp actual Weyl
+payment
+
+\hypertarget{i38-actual-weighted-spinor-cost-and-signed-chern-concentration}{%
+\subsection{I38: Actual weighted-spinor cost and signed Chern
+concentration}\label{i38-actual-weighted-spinor-cost-and-signed-chern-concentration}}
+
+status: manuscript-theorem
+
+scope: The inherited actual beta=2 conformal-monopole supply and small
+normalized kappa=r+D2/V, with its fixed class through all positive
+weights. The small-h consequence uses precisely the previously realized
+two-chirality-window family.
+
+statement: An exact constant-rescaling identity gives
+8sqrt(6)K\_A=Sigma+O(kappa V). Signed Chern transgression gives
+c2(S+)\textless=C(kappa+epsilon)V+C
+integral\_\{1/2\textless rho\textless1\}\textbar nabla\_A
+Phi\textbar\^{}4. Thus E=o(h) on the specified family requires leading
+projective L2 energy outside the small-amplitude set and quartic energy
+at least cAh in a transition layer of volume and L2 energy o(Ah),
+forcing gradient blowup there.
+
+boundary: This result was a necessary-concentration theorem. I40
+subsequently excludes that concentration under the stated actual beta=2
+square/window hypotheses and proves the linear lower bound. Its
+refinement to a radial/phase mixed term is attributed to the 27
+September web note, not counted as an independent local discovery.
+
+\hypertarget{i39-actual-cubic-torsion-and-opposite-spinor-weak-dirac-bridge}{%
+\subsection{I39: Actual cubic torsion and opposite-spinor weak Dirac
+bridge}\label{i39-actual-cubic-torsion-and-opposite-spinor-weak-dirac-bridge}}
+
+status: manuscript-theorem
+
+scope: The same actual weighted positive spinors along a hypothetical
+beta-\textgreater infinity, kappa-\textgreater0 sequence, with
+a\^{}2\textgreater=T+ for the inherited uniform Hessian budget. A
+separate local construction solves the actual positive-weight equations
+on shrinking Euclidean or fixed negative-hyperbolic balls, without
+global class supply or boundary matching.
+
+statement: The smooth cubic torsion obeys an exact opposite-spinor Dirac
+identity and a coupled actual curvature relation. Its Dirac residual
+vanishes in normalized Lq, q\textless2. New scalar tests strengthen its
+mean mass to \textbar t\textbar\^{}2-\textgreater128/81 in every
+normalized Lq, q\textless2, at the zero endpoint, and bound the relative
+volume of small torsion by C sqrt(eta). A globally regularized coupled
+Lichnerowicz identity identifies a net derivative cost tending to64/27
+without presuming a small critical L2 residual.
+
+boundary: Local actual positive-charge cores remain possible. The latest
+continuation excludes matching through a global first-order hyperkahler
+ALE limit with trivial full positive background, finite first-order
+curvature energy and bounded physical derivative (or torsion/current).
+Exact Einstein is unnecessary; physical bounded Ricci suffices for
+first-order chirality. The first-order/global hypotheses are not
+supplied by averaged endpoint budgets. Bare signed degree is only the
+relative Euler obstruction for sections, not actual differential
+matching. No closed counterexample or unrestricted endpoint gap follows.
+
+\hypertarget{i40-linear-actual-spinor-cost-and-sharp-small-h-einstein-separation}{%
+\subsection{I40: Linear actual-spinor cost and sharp small-h Einstein
+separation}\label{i40-linear-actual-spinor-cost-and-sharp-small-h-einstein-separation}}
+
+status: manuscript-theorem
+
+scope: Closed oriented four-manifolds with actual conformal monopole
+supply fixed through all auxiliary weights. Beta=2, p\textgreater0,
+a\^{}2\textgreater=T+, kappa=r+D2/V\textless=1 for the analytic theorem;
+metricwise p\textgreater=A and T+=A(1-h), 0\textless h\textless=1/3 for
+the all-metric conclusion.
+
+statement: The bounded KE curvature model annihilates the calibrated
+spinor, yielding Hessian-plus-quartic energy \textless=C(K+Theta+B). The
+square condition bounds B by K+Theta; weak Bianchi and polynomial
+divergence coercivity absorb K. Thus Sigma,p-T+\textless=C(rV+D2) and
+mixed critical energy \textless=CTheta. Every metric satisfies
+E+(U-1-h)+\textgreater=c h. The realized h-\textgreater0 family has c1
+h\textless=inf E\textless=4h/(1+h). A class-square shortfall y gives c
+h\^{}2/(h+y); low-cost reverse surgery identifies coefficient4 only
+within its stated replacement class.
+
+boundary: This determines order, not the optimal leading coefficient
+over all metrics or publication priority. I40 itself retains scalar
+variance in rV; I41 subsequently removes it by conformal transfer.
+Beta=2 model annihilation does not settle the zero-Weyl endpoint. Actual
+gauge suppliers remain explicit; no compactness or new supplier is
+presumed.
+
+\hypertarget{i41-scalar-free-conformal-separation-and-realized-linear-energy-windows}{%
+\subsection{I41: Scalar-free conformal separation and realized linear
+energy
+windows}\label{i41-scalar-free-conformal-separation-and-realized-linear-energy-windows}}
+
+status: manuscript-theorem
+
+scope: Actual positive conformal-monopole input with p\textgreater0;
+arbitrary smooth metrics and explicit square shortfall Y=(T-a\^{}2)+.
+All-metric applications use metricwise p\textgreater=A, T=A(1-h).
+Necessary invariant-weight covering input is retained.
+
+statement: Negative Yamabe transfer of I40 proves
+Sigma\textless=C(P+D2+sqrt((P+D2)Y)) without scalar variance or a
+small-error premise. If Y=0,
+e(1+J/18)\textgreater=1+(1+c0)h+(2+c0)(p/A-1), J=4P/R. Chiral
+elimination strengthens the all-metric gap to J; an actual BF geography
+family lies outside the old quadratic strip but inside the new linear
+one. Conformal energy identities exactly characterize sub-unit
+minimizing sequences of E and J.
+
+boundary: The new BF family is an actual exclusion relative to the
+recorded old window, not a worldwide priority finding or a constructed
+near-Einstein upper sequence. Conformal control does not preserve
+pointwise Ricci error. The later positivity-parameter bridge does not
+prove attainment: any smooth minimizer with 0\textless inf E\textless1
+would be negative csc and neither Bach-flat, Kahler nor Ricci-parallel.
+The balanced-family coefficient remains open.
+
+\hypertarget{i42-zero-end-geometric-coercivity-curvature-scale-degeneration-and-euler-density-gap}{%
+\subsection{I42: Zero-end geometric coercivity, curvature-scale
+degeneration and Euler-density
+gap}\label{i42-zero-end-geometric-coercivity-curvature-scale-degeneration-and-euler-density-gap}}
+
+status: manuscript-theorem
+
+scope: Bounded self-dual near-closed forms and constant Weyl-model
+amplitude t in {[}0,1/4{]}. Local bounded-Ricci noncollapse; or bounded
+sectional curvature with no injectivity premise; or EXACT negative
+Einstein with bounded chi/V. Actual applications use p\textgreater0 and
+the same supplied form.
+
+statement: Local incompatibility controls the noncollapsed volume
+fraction. Exponential lifting and Liouville averaging control the
+curvature-regular fraction without a sheet bound, excluding
+bounded-curvature collapse. Cheeger-Tian plus Fubini proves
+D\_beta/V\textgreater=epsilon(chi/V bound) for exact Einstein and
+beta\textgreater=4, without diameter, volume, noncollapse or
+class-square bounds. A budget chi/A\textless=B yields
+e\textless=G(h)-c(B) uniformly through h=1/4. Separately
+bounded-diameter pointwise inputs satisfy
+delta\_-\^{}2+(G(h)-e)+\textgreater=c(D) under their stated
+projection/square input.
+
+boundary: The curvature radius, not pointwise curvature everywhere,
+tends to zero in measure. I42 itself treated the Euler-density case only
+for exact Einstein; I45 now supplies the bounded-Ricci approximate
+extension. Neither gives an unrestricted integral endpoint gap, exact
+realization or fixed-ED decision.
+
+\hypertarget{i43-covering-volume-coercivity-and-smoothing-to-endpoint-separation}{%
+\subsection{I43: Covering-volume coercivity and smoothing-to-endpoint
+separation}\label{i43-covering-volume-coercivity-and-smoothing-to-endpoint-separation}}
+
+status: manuscript-theorem
+
+scope: Bounded Ricci and bounded actual self-dual forms, model parameter
+t in {[}0,1/4{]}. Fixed positive fraction of local universal covering
+volume; or complete uniformly equivalent bounded-sectional comparison
+metric; or pointwise negative near-Einstein input with uniformly small
+fixed-scale local full-curvature L2 energy. Specified elliptic metrics
+separately allow bounded Euler density.
+
+statement: Geodesic-flow averaging bounds the good-cover volume fraction
+by the actual deficit with no sheet count. Zero-end sequences must have
+local-cover volume tending to zero in upper mean. CFG plus bilipschitz
+path lifting and Li II smoothing give a diameter-free beta\textgreater=4
+gap and upper-energy margin under local nonconcentration, including
+uniform local L\^{}(2+eta) budgets. Naber-Zhang maximal local fibered
+rank provides another explicit covering input. Weber supplies a distinct
+elliptic-metric Euler-density extension.
+
+boundary: I43's uniform small local L2 premise is stronger than averaged
+energy density; I45 removes it in the bounded-Ricci class using the
+original metric's CT covering regularity. Ricci flow in I43 supplies
+only a comparison metric; actual fields/errors stay in the original
+metric. No exact realization or fixed-ED decision follows.
+
+\hypertarget{i44-sharp-surgery-subfamilies-and-the-chiral-cost-of-compatible-blowdown}{%
+\subsection{I44: Sharp surgery subfamilies and the chiral cost of
+compatible
+blowdown}\label{i44-sharp-surgery-subfamilies-and-the-chiral-cost-of-compatible-blowdown}}
+
+status: manuscript-theorem
+
+scope: The established actual class on M=X\#k CPbar2\#ell(S1xS3), X
+closed complex hyperbolic, A=c1\^{}2(X), h=(k+4ell)/A. Cap results
+retain full marked collar compatibility. Exact infimum uses k=0 and
+0\textless=h\textless=1/3.
+
+statement: The handle-only family has inf\_all\_metrics E=4h/(1+h),
+unattained for 0\textless h\textless1/3; k=o(Ah) gives asymptotic
+coefficient4. Signed signature cancellation gives
+E\textgreater=4h/(1+h)-2Cplus/{[}pi\^{}2 A(1+h)\^{}2{]}, with no scalar
+cap cost. Every E/h-\textgreater c\textless4 sequence forces cap cost at
+least pi\^{}2(4-c)/2 per Ah. Full conformal CH collars have exactly
+computable positive minimum cap cost; round intrinsic boundary alone
+permits arbitrarily large compulsory cost via an explicit smooth ball
+metric.
+
+boundary: The exact subfamily formula uses classical
+bounds/construction, not new gluing or a priority finding. Directional
+estimates give coefficient4 for Hermitian/conditional weak-form inputs.
+Low-level stationary balanced metrics have liminf
+delta\_minus\textgreater=1/(4sqrt2); pointwise-near-Einstein csc
+competitors have relative quadratic gradient liminf\textgreater=1/3. The
+full Hessian is strictly positive on nonconstant pure conformal
+directions; possible instability is in the unresolved reduced TT form.
+X06 forbids universally discarding the Weyl payment, not balanced
+coefficient4. I49 uses the budgets dynamically without attainment.
+Balanced coefficient4 remains open.
+
+\hypertarget{i45-bounded-ricci-euler-density-endpoint-gap-and-improved-entire-pencil}{%
+\subsection{I45: Bounded-Ricci Euler-density endpoint gap and improved
+entire
+pencil}\label{i45-bounded-ricci-euler-density-endpoint-gap-and-improved-entire-pencil}}
+
+status: manuscript-theorem
+
+scope: Closed oriented smooth four-manifolds,
+\textbar Ric\textbar\textless=K, bounded smooth self-dual form, constant
+t in {[}0,1/4{]}, and bounded Euler density. Small defect derives that
+density from chi/T+; actual p\textgreater=A and chi/A\textless=B is
+another source. The classical general-type surgery family supplies a
+uniform bound automatically by Noether's inequality.
+
+statement: avg Z\_t\textgreater=c(K,L,Lambda0), without diameter, base
+noncollapse, a global Sobolev bound, Einsteinness, or all-center small
+energy. CT bounded-Ricci covering regularity, Euler/Fubini selection and
+Liouville averaging give the proof. The actual entire pencil improves to
+(1+b\_a)(r+D\_beta/V)\textgreater=c(beta-2)\^{}2/beta\^{}2; special
+square control removes b\_a. For every metric and all surgery counts on
+the eligible minimal-general-type blowup/handle family,
+delta\_-\^{}2+D\_beta/V\textgreater=c(beta-2)\^{}2/beta\^{}2 with
+universal c.~Bounded-Ricci zero-end escape must have
+chi/T+-\textgreater infinity and opposite-spinor Chern density
+diverging, not fixed topology.
+
+boundary: Pointwise Ricci remains part of the general geometric theorem;
+the pointwise defect supplies it in applications. Euler density may be
+derived from the stated topology, not from unrestricted integral Ricci.
+Constants are non-effective; improved decay is not claimed optimal. The
+pointwise family theorem is not an all-metric integral zero-end theorem
+or a general realization/priority claim.
+
+\hypertarget{i46-actual-annular-holonomy-costs-marked-class-counts-and-resonant-local-solutions}{%
+\subsection{I46: Actual annular holonomy costs, marked-class counts and
+resonant local
+solutions}\label{i46-actual-annular-holonomy-costs-marked-class-counts-and-resonant-local-solutions}}
+
+status: manuscript-theorem
+
+scope: Orientation-preserving C2-close flat quotient annuli, fixed
+finite family of free groups and actual restricted Spin-c lifts.
+Inherited bounded actual spinor and torsion/curvature budgets; bounded
+overlap for packing conclusions.
+
+statement: Two constant-norm parallel limits are possible exactly on odd
+cyclic 1/n(1,-2) with the two specified determinant classes. All other
+marked lifts pay a normalized calibration, determinant-energy or
+torsion-Dirac cost; critical compactness uses calibration uniform
+integrability and Vitali. A forbidden positive-spinor lift alone pays
+amplitude/curvature cost, giving a radius-independent density exclusion
+for amplitude-calibrated annuli. Both allowed lifts have genuine local
+weighted solutions on negative-hyperbolic quotient necks, with losses
+vanishing uniformly across arbitrary inner scales.
+
+boundary: The original averaged budgets do not themselves supply a
+marked annular decomposition or bounded overlap. Constants are not
+uniform over unbounded quotient orders. Actual local resonant solutions
+have an orbifold apex, not a smooth filling or a closed endpoint
+sequence. Neither a universal endpoint gap nor full global matching
+follows.
+
+\hypertarget{i47-sharp-full-core-cost-of-the-actual-resonant-quotient-and-faithful-determinant-obstruction}{%
+\subsection{I47: Sharp full-core cost of the actual resonant quotient
+and faithful determinant
+obstruction}\label{i47-sharp-full-core-cost-of-the-actual-resonant-quotient-and-faithful-determinant-obstruction}}
+
+status: manuscript-theorem
+
+scope: Entire smooth compact oriented cores with outward conical collar
+of physical quotient 1/n(1,-2), odd n\textgreater=3; or lifted rescaled
+C2-close collars. Interior topology and quotient order unrestricted.
+Separate complete Ric\textgreater=0 ALE theorem with faithful flat line
+at infinity.
+
+statement: The infimum over all smooth exact-collar fillings of
+integral(Ric0\^{}2+4Wplus\^{}2+s\^{}2/12) is 4pi\^{}2(n-1)/n.~The lower
+bound uses boundary integrality; classical scalar-flat Kahler ALE
+truncations match it on minimal resolutions. Approximate collars cost
+O(delta\^{}2/n). Small-volume cores force raw actual-defect atoms and
+bounded-overlap density bounds. Nonpositive integer branches force pure
+Ricci atoms with no gauge or volume premise. A faithful flat determinant
+cannot extend over nontrivial smooth Ric\textgreater=0 ALE; hence a
+parallel positive actual spinor alone excludes resonant Ricci-flat ALE
+filling without first-order hypotheses.
+
+boundary: This is a sharp filling/actual-cost connection using classical
+models, not a new ALE construction or priority claim. Intrinsic boundary
+geometry or an orbifold apex is not an entire smooth filling. An actual
+terminal ALE truncation can be such a filling, but is not thereby the
+full exceptional/handle surgery region. Cost does not uniformly control
+Euler number when n grows. Original weak input still does not supply the
+core decomposition.
+
+\hypertarget{i48-integral-endpoint-gaps-in-explicit-elliptic-curvature-classes}{%
+\subsection{I48: Integral endpoint gaps in explicit elliptic curvature
+classes}\label{i48-integral-endpoint-gaps-in-explicit-elliptic-curvature-classes}}
+
+status: manuscript-theorem
+
+scope: Closed connected oriented four-manifolds and bounded smooth
+self-dual form. First version: bounded Euler density,
+\textbar rough-Laplacian
+Ric\textbar\textless=A\textbar Rm\textbar\textbar Ric\textbar, and small
+k\_p(r0)=r0\^{}2 sup\_x(avg\_Br0 rho\_minus\^{}p)\^{}(1/p),
+p\textgreater2; threshold depends on dimension and p, gap also on r0,A
+and remaining budgets. Alternative version: exact scalar-minus-four
+Q\_theta-critical metrics, bounded theta, global Sobolev inequality with
+coefficient V\^{}(-1/2), 0\textless T\_plus\textless=T0 and
+chi\textless=chi0. These are different sufficient hypotheses, not
+automatic consequences of small L2 error.
+
+statement: The first version obtains local Ricci sup bounds and a
+zero-end gap via normalized Sobolev absorption, curvature bootstrap,
+Euler/Fubini selection, proper-ball/small-diameter dichotomy and
+covering averaging, without diameter or noncollapse premises. Escaping
+elliptic sequences must have normalized lower-Ricci concentration at
+every fixed scale. The alternative derives two-sided volume and
+curvature-energy bounds from small model error plus topology, then uses
+the actual elliptic critical equation and Anderson compactness to obtain
+an impossible regular-chart limit. In both versions avg
+Z\_t\textgreater=c for 0\textless=t\textless=1/4; actual supply gives
+the corresponding endpoint pencil. On fixed topology, stationary
+endpoint escape must lose the specified global Sobolev control.
+
+boundary: The local budget must be small, not just finite. The
+stationary alternative retains its global Sobolev and absolute
+topological bounds, not merely chi/T\_plus. Neither stationarity nor
+these budgets follows from Yamabe normalization or minimizing-sequence
+status. The unrestricted integral endpoint and beta=2 balanced
+coefficient remain open.
+
+\hypertarget{i49-uniform-finite-conformal-flow-time-from-vanishing-integral-gaps-and-two-energy-walls}{%
+\subsection{I49: Uniform finite conformal-flow time from vanishing
+integral gaps and two energy
+walls}\label{i49-uniform-finite-conformal-flow-time-from-vanishing-integral-gaps-and-two-energy-walls}}
+
+status: manuscript-theorem
+
+scope: Closed scalar-minus-four initial metrics on the realized balanced
+small-h family; actual all-metric scalar/Ricci budgets and
+E\textgreater=c1 h, 0\textless c1\textless4; U=1+h+O(h\^{}2) and initial
+b=P/(4V)\textless=h+o(h). Genuine initial metrics exist with
+E\textless=4h/(1+h)+h\^{}2.
+
+statement: Conformal Ricci flow satisfies V'=-P. With y=V/(2pi\^{}2 A),
+every smooth time obeys
+-y'\textgreater=max\{4mu*y/(4-mu),4(1+h-y),4(y-U)/3\}. Explicit
+integration gives limsup Tmax\textless=1+log(4/c1), although the
+integral defect gap vanishes. The separate actual SW/Cotton estimate
+gives relative E descent until pointwise exit or loss of smooth
+continuation, with no continuous choice of gauge class.
+
+boundary: This is conformal Ricci flow, not normalized Ricci flow. The
+all-time comparison does not preserve or need initial pinching. It
+bounds maximal classical smooth time, not a specific singularity
+mechanism or sharp lifetime. The flow result neither settles balanced
+coefficient4 nor turns failure of a flow into an independent all-metrics
+nonexistence proof.
+
+\hypertarget{x06-actual-ordinary-sw-deformations-attain-the-sharp-weyl-payment-coefficient}{%
+\subsection{X06: Actual ordinary-SW deformations attain the sharp
+Weyl-payment
+coefficient}\label{x06-actual-ordinary-sw-deformations-attain-the-sharp-weyl-payment-coefficient}}
+
+status: counterexample
+
+scope: One fixed smooth product of closed hyperbolic surfaces, the
+second of genus two, with its canonical Spin-c class; h=0,U=3.
+Anti-Hermitian TT deformations are Yamabe-normalized and supplied with
+genuine unperturbed SW solutions.
+
+statement: For H=f h1 and Delta f=lambda f, actual solutions satisfy
+P/K-\textgreater lambda, signed S/K-\textgreater1 and
+F/K-\textgreater(lambda+2)/4. Degenerating the second factor and taking
+a diagonal perturbation gives S/F-\textgreater2 and P/F-\textgreater0.
+The exact h=0 identity gives S\textless=2F, so every proposed universal
+S\textless=cF+CP with c\textless2 and fixed finite C fails.
+
+boundary: The actual solution is unperturbed, not a formal class.
+Individual implicit-function radii may shrink. This is not the balanced
+h\textgreater0 surgery family and does not refute its coefficient4
+target; it proves that the Weyl payment cannot be universally discarded
+or reduced.
+
+\hypertarget{o10-weak-error-exclusion-at-the-zero-weyl-endpoint}{%
+\subsection{O10: Weak-error exclusion at the zero-Weyl
+endpoint}\label{o10-weak-error-exclusion-at-the-zero-weyl-endpoint}}
+
+status: open
+
+scope: General bounded smooth self-dual forms with normalized L2 Hodge
+budget, and separately the narrower actual weighted-monopole supplier
+with a\^{}2\textgreater=T+, without geometric compactness assumptions.
+
+statement: Determine whether the sum of normalized Ric+g, W+, length and
+closedness errors has a positive lower bound depending only on those two
+budgets.
+
+boundary: I45 closes the bounded-Ricci Euler-density case. I48 has
+local-integral and alternative stationary/global-Sobolev versions. Exact
+quadratic-critical noncollapsed curvature blow-up now supplies actual
+terminal metric cores with vanishing signed cost, excluding I47's
+physical resonant types. It does not supply a same-scale nonzero field,
+the full surgery core, or a bubble tree. The unrestricted integral
+target remains open.
+
+\hypertarget{o11-optimal-all-metric-small-h-coefficient}{%
+\subsection{O11: Optimal all-metric small-h
+coefficient}\label{o11-optimal-all-metric-small-h-coefficient}}
+
+status: open
+
+scope: Actual conformal monopole input with
+p\textgreater=A\textgreater0, a\^{}2\textgreater=T\_+=A(1-h), and small
+E+D2/R.
+
+statement: Determine the optimal leading coefficient of inf E/h over all
+metrics on the realized family. I41 proves the formerly requested
+stronger estimate Sigma\textless=C(P\_Ric+D2), globally and with a
+square-shortfall version. Its Section 3.2 reduces coefficient4 to the
+first-order actual remainder bound
+Sigma\textless=(8/9)D2+32pi\^{}2(p-A)+o(Ah); that sharper bound remains
+unproved. Genuine cscK products show improving the isotropic constant
+alone cannot yield4.
+
+boundary: Order and scalar-variance-free slack are closed; the balanced
+coefficient is not. Retain the signed target (S-2F)\_+=o(Ah): X06
+forbids universally dropping 2F even with Ricci allowance. I44's Hessian
+reduces stability to an unresolved TT form, not a conformal negative
+mode. I49 yields actual finite flow time for genuine near-minimizers
+without attainment; no singularity classification or coefficient4
+follows.
+
+\hypertarget{o12-diameter-free-realization-on-the-complex-hyperbolic-numerical-boundary}{%
+\subsection{O12: Diameter-free realization on the complex-hyperbolic
+numerical
+boundary}\label{o12-diameter-free-realization-on-the-complex-hyperbolic-numerical-boundary}}
+
+status: open
+
+scope: Actual conformal monopole supply,
+p\textgreater=T\_+=3T\_-\textgreater0 with bounded T\_+, and
+sufficiently small pointwise negative Ricci defect, without a diameter
+bound.
+
+statement: Determine whether these inputs force a complex-hyperbolic
+metric on the same smooth manifold, or identify an actual counterexample
+with all hypotheses.
+
+boundary: Automatic saturation and volume control do not yet control
+long ends and fillings. Tau-zero shear examples do not lie on this
+numerical boundary.
+
+\hypertarget{o02-unrestricted-einstein-existence-on-ed-and-nonzero-shear-closed-inputs}{%
+\subsection{O02: Unrestricted Einstein existence on ED and nonzero-shear
+closed
+inputs}\label{o02-unrestricted-einstein-existence-on-ed-and-nonzero-shear-closed-inputs}}
+
+status: open
+
+scope: All smooth Einstein metrics, not just adapted, symmetric, nearby
+or near-minimal-volume ones.
+
+statement: A negative nonsymmetric Einstein output has not been
+constructed or excluded on the designated input manifolds.
+Full-curvature minimum attainment is one equivalent formulation in the
+specified families.
+
+boundary: Local repair and spectral/diameter restrictions do not exhaust
+these outputs.
+
+\hypertarget{complete-source-locations}{%
+\subsection{Complete source locations}\label{complete-source-locations}}
+
+\begin{itemize}
+\tightlist
+\item
+  continuation/20260927\_mixed\_current\_and\_signed\_cores.md →
+  01\_linear\_gap\_and\_actual\_applications.md, source 1; 36865 bytes;
+  SHA-256
+  ea0c4955b56edf70fc5a19d5fd5f4553a1c0c8962a442cdd8c43362b6aabcf79.
+\item
+  continuation/20260927\_conformal\_separation\_and\_zero\_end.md →
+  01\_linear\_gap\_and\_actual\_applications.md, source 2; 67263 bytes;
+  SHA-256
+  8f37b7ceb8fce5ce2f33ad6a87f5a8afcfe4cfd0b19282ed6ea8ae3689aebca9.
+\item
+  continuation/20260927\_covering\_geometry\_and\_sharp\_subfamilies.md
+  → 02\_endpoint\_covering\_and\_sharp\_subfamilies.md, source 1; 41289
+  bytes; SHA-256
+  fdbfa874d5611fe54ad75ad00cd0a2f05946777c2598b6d4922abf09df40ad76.
+\item
+  continuation/20260927\_local\_geometry\_and\_variational\_extrema.md →
+  02\_endpoint\_covering\_and\_sharp\_subfamilies.md, source 2; 50890
+  bytes; SHA-256
+  68abdebe39870e7e984169eb9b434a88b0a974b98da8e10b7effa494e7c1b7e6.
+\item
+  continuation/20260927\_full\_core\_cost\_and\_extremal\_metrics.md →
+  03\_full\_cores\_signed\_extrema\_and\_flow.md, source 1; 41263 bytes;
+  SHA-256
+  4625dbfb968571ae91292fc6944d4c969b8a4db681cb8a6cea114ee2529b9302.
+\item
+  continuation/20260927\_signed\_balance\_and\_conformal\_flow.md →
+  03\_full\_cores\_signed\_extrema\_and\_flow.md, source 2; 31580 bytes;
+  SHA-256
+  9d726a0c5653f223eedb424d985704918dd1fdf8ac0d01317d5d063a6cc39dd7.
+\item
+  mathematics/current/line1\_integral\_rigidity\_paper.md →
+  04\_analytic\_foundations.md, source 1; 43113 bytes; SHA-256
+  ca664aa1f07d2907c8bd0b346d4e0b824cb858335fa2a8d15c9cce33ba7e3d54.
+\item
+  mathematics/current/round21\_analytic.md →
+  04\_analytic\_foundations.md, source 2; 20154 bytes; SHA-256
+  9e39e932ae9f109d9ab3f959a243046e243beb20900c3f4e95be8dc424f5eb22.
+\item
+  mathematics/current/line1\_functional\_pencil.md →
+  04\_analytic\_foundations.md, source 3; 18863 bytes; SHA-256
+  13f0324dab4999ffba998cd60e8a1d8c152b97aae6f40218aca599230c4201ae.
+\item
+  mathematics/current/line1\_compactified\_pencil.md →
+  04\_analytic\_foundations.md, source 4; 12073 bytes; SHA-256
+  0d971e1519c9d8b5edddcbd71f158c3ca08acf943d5ae4a7eb3f359af2628bed.
+\item
+  mathematics/current/line1\_energy\_envelope\_gap.md →
+  04\_analytic\_foundations.md, source 5; 10305 bytes; SHA-256
+  8cd0c429b2f403b1c31bb24333efc7397afba5742394a2951dd56aa5e24c3ad4.
+\item
+  mathematics/current/line1\_two\_chirality\_topology.md →
+  05\_actual\_topology\_and\_prior\_field\_equations.md, source 1; 12028
+  bytes; SHA-256
+  91eb14bc07220c6d66e2b97af97501d324bc1dad999ba7b9d2f41368217fa5a6.
+\item
+  mathematics/current/line1\_bauer\_furuta\_geography.md →
+  05\_actual\_topology\_and\_prior\_field\_equations.md, source 2; 13266
+  bytes; SHA-256
+  1ef42b7981722b1ec8a4325e85e460cc5dda1805b64827def3c7d4afe07de3e9.
+\item
+  mathematics/current/round14\_twisted\_rigidity.md →
+  05\_actual\_topology\_and\_prior\_field\_equations.md, source 3; 11854
+  bytes; SHA-256
+  77b52d2c7a8b3e8a9fd6a71f0109cbebcd825e34d428b1be30dffaf1bb505bc8.
+\item
+  continuation/20260926\_boundary\_compatibility.md →
+  05\_actual\_topology\_and\_prior\_field\_equations.md, source 4; 22633
+  bytes; SHA-256
+  e182615cd26b7031d4275ae9c5930e244e6088cbad39ac9770c835ba7f5bca19.
+\item
+  continuation/20260926\_actual\_topological\_cost.md →
+  05\_actual\_topology\_and\_prior\_field\_equations.md, source 5; 26796
+  bytes; SHA-256
+  5b189c3143977efe8ab65b4f22c06ef2e8d354d30faa69180a0f07eadf95772b.
+\item
+  verification/20260927\_linear\_cost.md →
+  06\_review\_records\_and\_source\_map.md, source 1; 9283 bytes;
+  SHA-256
+  6b5cba75dfa7d6ae1a59d563dcf11bf133273ffe147d077bf6c4e86f7dc1fbdf.
+\item
+  verification/20260927\_conformal\_and\_endpoint.md →
+  06\_review\_records\_and\_source\_map.md, source 2; 7304 bytes;
+  SHA-256
+  ff105d8c73aa129938dfdf21b46a4e5d84c9db3dd8a278d2fb0ee4da54b4e1ca.
+\item
+  verification/20260927\_covering\_and\_sharpness.md →
+  06\_review\_records\_and\_source\_map.md, source 3; 7121 bytes;
+  SHA-256
+  c4ca515a57a270cb5afda344679595405142e0cac46c9ae72419acb51c4da35b.
+\item
+  verification/20260927\_local\_geometry\_and\_extrema.md →
+  06\_review\_records\_and\_source\_map.md, source 4; 8602 bytes;
+  SHA-256
+  8ffa8cc1fe50f6583564caed6e9fa95358d7598e5111697771d4f5dfcc758b41.
+\item
+  verification/20260927\_full\_core\_and\_extrema.md →
+  06\_review\_records\_and\_source\_map.md, source 5; 6660 bytes;
+  SHA-256
+  efe4444250e3bd8b1771c8c98ef329ccb3bd501794812bc6304347ecd4a21f54.
+\item
+  verification/20260927\_signed\_balance\_and\_flow.md →
+  06\_review\_records\_and\_source\_map.md, source 6; 8619 bytes;
+  SHA-256
+  2c5a5b3a335b43dd5168b27e2429c141dad9a4689eaa50954a8db11e605a1e5e.
+\end{itemize}
+
+\hypertarget{deliberately-deferred-material}{%
+\subsection{Deliberately deferred
+material}\label{deliberately-deferred-material}}
+
+\begin{itemize}
+\tightlist
+\item
+  mathematics/current/line1\_energy\_selection.md;
+  mathematics/current/line1\_yamabe\_endpoint.md: The new
+  conformal-separation paper rederives the required conformal identities
+  and normalization. These remain historical/source references rather
+  than missing local proof steps.
+\item
+  mathematics/current/lebrun\_stability\_closure.md;
+  mathematics/current/round21\_chambers.md: The included independent
+  integral-rigidity paper Sections 9-10 already contains the needed
+  chamber, loop-insertion and classical-family arguments.
+\item
+  Old eight-volume realization, monodromy, ED and slow-mode papers:
+  Independent preserved branches already in the earlier reading package;
+  not prerequisites for the present sharp actual-SW construction or flow
+  theorem. Not withdrawn.
+\item
+  External primary literature, computation scripts, numerical logs and
+  runtime traces: Primary theorem links and locations stay in the
+  proofs/review records. Executable assets remain local and can be
+  supplied for a specific requested calculation. No external PDF or
+  runtime data is bundled.
+\end{itemize}
+
+\end{document}

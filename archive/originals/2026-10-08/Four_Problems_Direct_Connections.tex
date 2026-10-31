@@ -1,0 +1,623 @@
+% !TeX program = pdflatex
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,esint}
+\usepackage[margin=25mm,headheight=14pt]{geometry}
+\usepackage{microtype,booktabs,array,enumitem,xurl}
+\usepackage[unicode,hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{Four-dimensional Einstein geometry}\fancyhead[R]{8 October 2026}\fancyfoot[C]{\thepage}
+\setlength{\emergencystretch}{3em}
+\setlist{nosep,leftmargin=*}
+\allowdisplaybreaks[2]
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}\newtheorem{hypothesis}[theorem]{Input}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Met}{\operatorname{Met}}
+\newcommand{\CK}{\operatorname{CK}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\kerop}{\operatorname{ker}}
+\newcommand{\imop}{\operatorname{im}}
+\title{Four Questions in Einstein Geometry:\\[3pt]
+Conformal-K\"ahler Separation, the Einstein Weyl Channel,\\
+and the Complete Darboux Ricci Symbol}
+\author{Mathematical continuation of the Qiushi 8 October handoff}
+\date{8 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We use the corrected statements in the two-session handoff of 8 October.
+The background-sensitive strict Burns saving is an input of that handoff.
+A scalar-energy argument extends the comparison barrier to all globally
+conformally K\"ahler metrics, without fixing their complex structure, and
+separates subthreshold minimizing sequences from that entire class.
+A concrete Horikawa blowup removes Einstein nonexistence from the list of
+unproved requirements for one possible minimizer example.
+An exact inversion of the recorded classical Weyl bound identifies the
+Weyl deficit forced on an Einstein competitor; it is a reformulation of the
+classical envelope, not an improved unrestricted lower bound.
+Finally, we calculate the full image, kernel, gauge coercivity, and a right
+inverse of the Darboux-compatible Ricci principal symbol.  The kernel is
+exactly the Hamiltonian gauge direction.  These statements provide concrete
+inputs for the four questions, but neither smooth global attainment nor the
+negative Goldberg conclusion follows from them.
+\end{abstract}
+
+\section{The four questions and the source inputs}
+
+The present questions are those of \cite[Section 1]{Synthesis}:
+Einstein existence on $M=X\#k\overline{\CP}^{\,2}$ with $X$ minimal of
+general type and $k\ge1$; the unrestricted infimum of $P$; a smooth closed
+non-Bach-flat global minimizer of $P$; and compact negative Einstein
+almost-K\"ahler integrability in dimension four.  The older O10/O11 labels
+are not substituted for these four specifications.
+
+On a closed oriented four-manifold set
+\begin{equation}
+ P(g)=\int_M|\Ric_g^\circ|^2\,dV_g,\qquad
+ S(g)=\int_M s_g^2\,dV_g,\qquad
+ W_\pm(g)=\int_M|W_g^\pm|^2\,dV_g,
+ \quad T_\pm=2\chi\pm3\tau.
+\end{equation}
+Weyl norms are Hilbert--Schmidt norms on two-forms, while Ricci is a
+symmetric-tensor norm.  The identities used throughout are
+\begin{equation}\label{eq:CW}
+ P=\frac S{12}+4W_\pm-8\pi^2T_\pm,
+ \qquad \int_M|\Rm_{\rm op}|^2=8\pi^2\chi+P.
+\end{equation}
+Write $p_*(M)=\inf_{g\in\Met(M)}P(g)$; the normalized relative Einstein
+functional is not denoted by $p_*$.
+
+For a minimal general-type model $X$ let $A=c_1^2(X)>0$.
+The classical scalar budget on its blowup is
+\begin{equation}\label{eq:scalar}
+ S(g)\ge32\pi^2A\quad\text{for every smooth metric }g.
+\end{equation}
+This follows, for example, from the classical scalar-curvature invariant
+of a general-type surface \cite[Introduction]{LeBrun}.
+Applications below may instead take \eqref{eq:scalar} as their explicit
+input.  The negative Yamabe property, when used, is stated separately.
+
+The new overnight manuscript proves, in its stated geometric range,
+\begin{equation}\label{eq:source-saving}
+ p_*(X\#k\overline{\CP}^{\,2})<8\pi^2 k.
+\end{equation}
+Its mechanism is the optimized Burns response
+\begin{equation}
+ P(g_\varepsilon)=P(g)+8\pi^2
+ -8\pi^2\varepsilon\mathbf R^+_p(\zeta,\zeta)
+ +4\pi^2\Phi\varepsilon^2\log(1/\varepsilon)+O(\varepsilon^2),
+\end{equation}
+with $\Phi=-|T|^2$ on an Einstein kernel direction.  In the KE case the
+coefficient is $-s^2/32$ before multiplication by $4\pi^2$.
+We inherit \eqref{eq:source-saving} and its complete-support, background,
+matching, and resolution hypotheses from \cite[Section 3]{Synthesis},
+\cite[A01.52 and corrected A02.59D]{Companion}.  None of the arguments below
+reproves the logarithmic construction.
+
+\section{An energy barrier for the entire conformally K\"ahler class}
+
+Let $\CK_+(M)$ be the set of smooth metrics globally conformal to a smooth
+K\"ahler metric inducing the chosen orientation of $M$.  The complex
+structure and the positive conformal factor are both allowed to vary.
+Define $\CK_-(M)$ using the opposite orientation.  This definition does not
+include merely locally conformally K\"ahler metrics or singular conformal
+factors.
+
+\begin{theorem}\label{thm:CK}
+Assume \eqref{eq:scalar}.  If $g=u^2h$, with $u>0$ smooth and $h$ a smooth
+K\"ahler metric of orientation $\epsilon\in\{+,-\}$, then
+\begin{equation}\label{eq:CKexact}
+ \boxed{P(g)-8\pi^2(A-T_\epsilon)
+ =\frac{S(g)-32\pi^2A}{12}
+  +\frac{S(h)-32\pi^2A}{6}\ge0.}
+\end{equation}
+In particular, on $M=X\#k\overline{\CP}^{\,2}$ with its complex orientation,
+\begin{equation}\label{eq:CKbarrier}
+ \inf_{g\in\CK_+(M)}P(g)\ge8\pi^2 k.
+\end{equation}
+If additionally $\tau(M)\ge0$, then
+\begin{equation}\label{eq:bothCK}
+ \inf_{g\in\CK_+(M)\cup\CK_-(M)}P(g)\ge8\pi^2k.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For a K\"ahler surface with its complex orientation,
+$|W^+_h|^2=s_h^2/24$.  This pointwise identity is classical
+\cite[Introduction]{LeBrun}.  The integrated chiral Weyl energy is
+conformally invariant in dimension four.  Consequently
+\[
+ W_\epsilon(g)=W_\epsilon(h)=S(h)/24.
+\]
+Substitution in \eqref{eq:CW} gives
+\[
+ P(g)=S(g)/12+S(h)/6-8\pi^2T_\epsilon.
+\]
+Subtract $8\pi^2(A-T_\epsilon)$ and use \eqref{eq:scalar} for both metrics.
+This proves \eqref{eq:CKexact} without any assumption on how their complex
+structure relates to the original one on $X$.
+For a blowup, $T_+=A-k$.  If $\tau(M)\ge0$, then $T_-\le T_+$, so the
+opposite-orientation lower bound is at least as large.
+\end{proof}
+
+\begin{corollary}[Separation of genuine minimizing sequences]\label{cor:separation}
+Assume the input \eqref{eq:source-saving} and let $g_{\rm test}$ be a fixed
+smooth competitor satisfying
+\[
+ P(g_{\rm test})\le8\pi^2k-\delta_0,\qquad \delta_0>0.
+\]
+Every minimizing sequence $P(g_j)\to p_*(M)$ eventually satisfies
+\begin{equation}
+ P(g_j)\le8\pi^2k-\delta_0/2
+\end{equation}
+and therefore lies outside $\CK_+(M)$.  If $\tau(M)\ge0$, it eventually
+lies outside both conformally K\"ahler classes.  The same exclusion applies
+to a smooth global minimizer whenever one exists.
+\end{corollary}
+
+\begin{proof}
+The test metric gives $p_*(M)\le8\pi^2k-\delta_0$.  Convergence of the
+energies gives the displayed bound for large $j$, while Theorem
+\ref{thm:CK} excludes membership in the indicated classes.
+\end{proof}
+
+The separation is visible in a conformal invariant.  For any smooth $g$
+with $P(g)\le8\pi^2k-\delta$, $\delta>0$, equation \eqref{eq:CW} and the
+scalar budget imply
+\begin{equation}\label{eq:Weylseparation}
+ \boxed{W_+(g)\le\frac{4\pi^2A}{3}-\frac\delta4,
+ \qquad W_+(h)\ge\frac{4\pi^2A}{3}\quad(h\in\CK_+(M)).}
+\end{equation}
+Thus changing a positive conformal factor cannot turn the low-cost metric
+into a K\"ahler one.  This is a separation in Weyl energy, not a claimed
+distance between metrics in a prescribed metric-space topology.
+
+For a complex-hyperbolic $X$, $\tau(X)=A/9$, so the two-orientation statement
+applies when $k\le A/9$.  The topology formulas are
+\[
+ T_+(M)=A-k,\qquad T_-(M)=A/3+5k,\qquad \tau(M)=A/9-k.
+\]
+The $+5k$ sign in $T_-$ is essential.
+
+\paragraph{What this contributes to Q2 and Q3.}
+The handoff's strict upper bound and Theorem \ref{thm:CK} give an energy
+separation from the entire indicated conformally K\"ahler locus, not merely
+from a fixed K\"ahler cone.  The theorem is a short consequence of classical
+identities and the scalar budget; it is not represented as a new analytic
+coercivity theorem or as a proof of smooth attainment.  No statement about
+arbitrary Hermitian or locally conformally K\"ahler metrics is inferred.
+
+\section{Exact Einstein candidates must overshoot the nominal Weyl threshold}
+
+In the source's negative Yamabe representative, put
+\begin{equation}
+ \kappa=\frac A2-\frac{3W_+}{8\pi^2},\qquad
+ \upsilon=\frac{S}{32\pi^2}-A,\qquad p=\frac P{8\pi^2}.
+\end{equation}
+These are exactly the Weyl-channel variables of
+\cite[Section 7]{Synthesis}; $\kappa$ is not the O10 parameter defect.
+We use the two recorded relations
+\begin{align}
+ p&=k-\frac43\kappa+\frac13\upsilon,\label{eq:channel}\\
+ 2\sqrt{A+\upsilon}+\sqrt{A-2\kappa}&\ge3\sqrt A.
+ \label{eq:classical}
+\end{align}
+Dropping the nonnegative extra projection budget only weakens the second
+inequality.  Its source is the classical combined scalar--Weyl estimate
+\cite{LeBrun}, not a new lower bound.
+
+\begin{proposition}[Inverting the classical feasible region]\label{prop:overshoot}
+Let $\ell=k-p$ and suppose $0<\ell<A/3$.  Every competitor satisfying
+\eqref{eq:channel}--\eqref{eq:classical} obeys
+\begin{equation}\label{eq:overshoot}
+ \boxed{\kappa\ge r_-(\ell)
+ :=\frac{2A+6\ell-2\sqrt{A^2-3A\ell}}9
+ =\ell+\frac{\ell^2}{A(1+\sqrt{1-3\ell/A})^2}.}
+\end{equation}
+Consequently, an Einstein metric in the range $0<k<A/3$ must have
+\begin{equation}\label{eq:Einsteinkappa}
+ \boxed{\kappa\ge k+
+ \frac{k^2}{A(1+\sqrt{1-3k/A})^2}>k.}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+If $\kappa\le0$, then $\upsilon\ge0$ and \eqref{eq:channel} give $p\ge k$,
+contrary to $\ell>0$.  For $0\le\kappa\le A/2$, solving
+\eqref{eq:classical} for $\upsilon$ gives the source bound
+\[
+ p\ge L_A(k,\kappa)
+ =k-\kappa+\frac12\{A-\kappa-\sqrt{A^2-2A\kappa}\}.
+\]
+This function is strictly decreasing up to $\kappa=4A/9$ and then
+increasing.  Its smaller intersection with $p=k-\ell$ solves
+\[
+ \sqrt{A^2-2A\kappa}=A-3\kappa+2\ell,
+\]
+whose smaller root is the first expression for $r_-$.  For
+$0<\ell<A/3$, this root lies in $(0,4A/9)$ and the unsquared right side is
+positive there.  Thus $\kappa<r_-(\ell)$ is impossible.  Any $\kappa>4A/9$
+already satisfies the desired lower bound.  Writing
+$t=\sqrt{1-3\ell/A}$ gives
+\[
+ r_-(\ell)-\ell=\frac A9(1-t)^2
+ =\frac{\ell^2}{A(1+t)^2},
+\]
+which proves the second expression.  For Einstein $P=0$, so $\ell=k$.
+\end{proof}
+
+This calculation fixes a precise target for an \emph{Einstein-specific}
+upper estimate: it would be enough to prove $\kappa<r_-(k)$ on those exact
+Einstein candidates.  Such an upper estimate has not been obtained here.
+The stronger requirement $\kappa\le k$ for \emph{all} metrics would imply
+it but is not necessary for Q1.  This distinction avoids making a full Q2
+lower-bound theorem a prerequisite for every approach to Q1.
+
+The restriction is still only classical feasibility.  For example, for
+$0<k/A\le1/4$ the formal data
+\begin{equation}
+ P=0,\qquad \kappa=2k,\qquad \upsilon=5k
+\end{equation}
+satisfy both \eqref{eq:channel} and \eqref{eq:classical}.  To check the latter,
+write $h=k/A$; it is
+$2\sqrt{1+5h}+\sqrt{1-4h}\ge3$, which, after one legitimate squaring,
+reduces to $\sqrt{1-4h}\ge1-4h$.
+They are not a metric or an actual-field counterexample.  They show exactly
+why inversion of the old budget cannot alone answer Q1.
+
+\section{The attainment requirement in Q3}
+
+Put $\mathcal W(g)=W_+(g)+W_-(g)$ and let $\mathfrak B$ denote its
+$L^2$ gradient, with respect to variations of the covariant metric.  It is
+a fixed nonzero multiple of the Bach tensor.  This definition avoids mixing
+normalizations of the Bach tensor across references.
+
+From \eqref{eq:CW},
+\begin{equation}\label{eq:PtotalW}
+ P=2\mathcal W+S/12-16\pi^2\chi.
+\end{equation}
+For a conformal variation $g_t=e^{2tf}g$ in dimension four,
+\begin{equation}\label{eq:conformalP}
+ \frac{d}{dt}\bigg|_{t=0}P(g_t)=-\int_M f\,\Delta s\,dV,
+\end{equation}
+where $\Delta=\nabla^i\nabla_i$.  Thus a smooth closed critical metric has
+constant scalar curvature.  At such a metric,
+$\nabla S=-2s\Ric^\circ$; hence criticality of \eqref{eq:PtotalW} gives
+\begin{equation}\label{eq:Bach}
+ \boxed{\mathfrak B=\frac{s}{12}\Ric^\circ.}
+\end{equation}
+These identities follow as well from the full quadratic-curvature
+variation formulas in \cite[Section 2]{GV}.
+
+On a manifold with negative Yamabe invariant a constant-scalar metric has
+$s<0$.  Equation \eqref{eq:Bach} then yields
+\begin{equation}
+ \text{smooth $P$-critical and Bach-flat}\quad\Longleftrightarrow\quad
+ \text{Einstein}.
+\end{equation}
+Therefore a valid route to a Q3 example on one chosen $M$ is
+\[
+ \text{smooth attainment on $M$}
+ +\text{Einstein nonexistence on $M$}
+ +\mathcal Y(M)<0.
+\]
+Theorem \ref{thm:CK} excludes conformally K\"ahler competitors below the
+standard barrier, but it proves neither of the first two requirements.
+Anderson's selected-minimizer framework \cite{Anderson} does not turn
+orbifold or partly collapsed convergence into smooth attainment on the
+original differentiable manifold without the further connections specified
+in \cite[Section 4]{Synthesis}.
+
+
+\subsection{A concrete candidate that does not depend on unresolved small-blowup nonexistence}
+
+For an existence question such as Q3, the background need not be a large
+ball quotient whose one-point blowup lies in the unresolved Q1 range.
+The following classical surface gives a concrete alternative.
+Let
+\begin{equation}\label{eq:Horikawa}
+ X=\{w^2+z^5+x^{10}+y^{10}=0\}
+ \subset\mathbb P(1,1,2,5),\qquad M=X\#\overline{\CP}^{\,2}.
+\end{equation}
+The coordinates have weights $(1,1,2,5)$.  The affine cone is smooth away
+from the origin, since the four partial derivatives vanish simultaneously
+only there.  The hypersurface avoids the two singular points of the weighted
+projective space, and hence is a smooth surface.  Weighted adjunction gives
+$K_X=\mathcal O_X(1)$, an ample line bundle, with
+\[
+ K_X^2=\frac{10}{1\cdot1\cdot2\cdot5}=1,\qquad p_g(X)=2,\qquad q(X)=0.
+\]
+These are the classical $(1,2)$ Horikawa surfaces; their weighted
+hypersurface description and invariants are recalled in
+\cite[Introduction]{CP}.  In particular $X$ has a negative KE metric, and
+its unperturbed monopole supply is in the $b^+>1$ range.
+Noether's formula and the signature formula give
+\begin{equation}
+ \chi(X)=35,\quad\tau(X)=-23,\qquad
+ \chi(M)=36,\quad\tau(M)=-24,\quad T_+(M)=0.
+\end{equation}
+The all-metric scalar and combined scalar--Weyl budgets for the blowup
+use $A=1$.  The classical parameter inequality at $\beta=8$ is
+\[
+ D_8=\frac{27}{2}P+108\pi^2T_+-72\pi^2p_{\rm SW}\ge0,
+ \qquad p_{\rm SW}\ge1.
+\]
+Thus the source's general-KE strict upper bound gives the explicit interval
+\begin{equation}\label{eq:HorikawaWindow}
+ \boxed{\frac{16\pi^2}{3}\le p_*(M)<8\pi^2.}
+\end{equation}
+The lower bound is classical.  The strict upper bound is the overnight
+construction \eqref{eq:source-saving}, applied to this fixed smooth
+negative KE background.  This combination does not determine $p_*(M)$.
+
+Since $p_*(M)>0$, this $M$ carries no Einstein metric.  It also has negative
+Yamabe invariant by the standard general-type scalar theory.  Consequently
+\begin{equation}\label{eq:concrete-Q3}
+ \boxed{\text{If $P$ attains its infimum smoothly on this $M$, then the
+ minimizer is non-Bach-flat.}}
+\end{equation}
+Theorem \ref{thm:CK} additionally excludes globally conformally K\"ahler
+minimizers inducing the displayed orientation.  No opposite-orientation
+conclusion is asserted here, since $\tau(M)<0$.
+
+This choice removes the unresolved Q1 Einstein alternative from this one
+Q3 attempt.  What remains is a genuine attainment problem.  The strict
+upper bound excludes a separate standard Burns loss of energy $8\pi^2$
+under the stated additive-energy hypotheses, but does not exclude cheaper
+ALE channels, Ricci-flat bubbles, or partial collapse.  Therefore
+\eqref{eq:concrete-Q3} is not an example of an attained minimum.  Its value
+is to isolate attainment on a concrete smooth manifold using already
+available nonexistence and upper-bound information.
+
+\section{The complete Darboux Ricci principal symbol}
+
+This section supplies a concrete replacement for an ill-conditioned local
+jet block.  It works at a single point and nonzero real cotangent vector;
+it does not assert formal integrability to all orders.
+
+Let $(V,g,J)$ be a Hermitian real four-space.  Identify a symmetric tensor
+$H$ with its $g$-symmetric endomorphism and set
+\[
+ \mathcal E_J=\{H:H J+JH=0\},\qquad \dim_\mathbb R\mathcal E_J=6.
+\]
+For a real covector $\xi$, identified with its dual vector, define the Ricci
+symbol in the source's convention by
+\begin{equation}\label{eq:Ric-symbol}
+ S_\xi(H)=\frac12\{
+ \xi\otimes H\xi+H\xi\otimes\xi-|\xi|^2H\}.
+\end{equation}
+A simultaneous change of sign does not affect the statements about
+kernel, image, or norms.
+
+\begin{theorem}\label{thm:symbol}
+For every $\xi\ne0$,
+\begin{align}
+ \kerop S_\xi&=\mathbb R(\xi\otimes J\xi+J\xi\otimes\xi),\label{eq:kernel}\\
+ \imop S_\xi&=\left\{K\in\Sym^2V^*:
+ K\xi-\tfrac12(\tr K)\xi=0,\quad
+ K(J\xi,J\xi)-\tfrac12|\xi|^2\tr K=0\right\}.
+ \label{eq:image}
+\end{align}
+In particular the image has dimension five: the four contracted-Bianchi
+conditions and the additional scalar Darboux condition are the complete
+linear conditions at this fixed real covector.
+Moreover
+\begin{equation}\label{eq:coercivity}
+ \boxed{|S_\xi(H)|^2+\frac14|H(\xi,J\xi)|^2
+ \ge\frac18|\xi|^4|H|^2.}
+\end{equation}
+The constant $1/8$ is sharp.
+\end{theorem}
+
+\begin{proof}
+By unitary covariance and homogeneity, it is enough to take $\xi=e_1$,
+$Je_1=e_2$, $Je_3=e_4$.  Every $H\in\mathcal E_J$ has the form
+\begin{equation}\label{eq:Hmatrix}
+ H=\begin{pmatrix}
+ a&b&c&d\\ b&-a&d&-c\\ c&d&e&f\\ d&-c&f&-e
+ \end{pmatrix}.
+\end{equation}
+Direct substitution gives
+\begin{equation}\label{eq:Smatrix}
+ S_{e_1}(H)=\frac12\begin{pmatrix}
+ a&0&0&0\\0&a&-d&c\\0&-d&-e&-f\\0&c&-f&e
+ \end{pmatrix}.
+\end{equation}
+The only absent variable is $b$, which proves \eqref{eq:kernel} and the
+rank-five statement.  Conversely, the equations on the right of
+\eqref{eq:image} force
+$K_{12}=K_{13}=K_{14}=0$, $K_{11}=K_{22}$, $K_{44}=-K_{33}$.
+These leave precisely the five entries in \eqref{eq:Smatrix}, so there is
+no further image condition at this covector.
+Finally,
+\begin{align*}
+ |S_{e_1}(H)|^2&=\tfrac12(a^2+c^2+d^2+e^2+f^2),\\
+ |H|^2&=2(a^2+b^2+e^2+f^2)+4(c^2+d^2),\\
+ H(e_1,Je_1)&=b.
+\end{align*}
+Consequently the difference between the left side and the right side of
+\eqref{eq:coercivity} is exactly
+$\tfrac14(a^2+e^2+f^2)\ge0$.  Equality holds, for example, when only $c$
+is nonzero.  This proves sharpness and the theorem.
+\end{proof}
+
+\subsection{An explicit image projection and right inverse}
+For a general symmetric matrix $K$ at $\xi=e_1$, its orthogonal projection
+onto \eqref{eq:image} is
+\begin{equation}
+ \mathbb P K=
+ \begin{pmatrix}
+ t&0&0&0\\0&t&K_{23}&K_{24}\\
+ 0&K_{23}&u&K_{34}\\0&K_{24}&K_{34}&-u
+ \end{pmatrix},\qquad
+ t=\frac{K_{11}+K_{22}}2,\quad u=\frac{K_{33}-K_{44}}2.
+\end{equation}
+The gauge-fixed right inverse $\mathbb R$ on the image is obtained in
+\eqref{eq:Hmatrix} by
+\begin{equation}
+ a=2K_{11},\quad b=0,\quad c=2K_{24},\quad
+ d=-2K_{23},\quad e=-2K_{33},\quad f=-2K_{34}.
+\end{equation}
+It satisfies $S_{e_1}\mathbb R K=K$ on the image and
+$|\mathbb R K|\le\sqrt8|K|$.
+For unit $\xi$, the squared singular values of $S_\xi$ are
+\begin{equation}
+ 0,\quad \tfrac18,\quad\tfrac18,\quad
+ \tfrac14,\quad\tfrac14,\quad\tfrac14.
+\end{equation}
+These formulas permit explicit treatment of the image and gauge rather
+than repeatedly inferring them from a nearly singular numerical Jacobian.
+
+\subsection{Hamiltonian meaning and the nonlinear metric parametrization}
+For a fixed Darboux symplectic form, Hamiltonian vector fields have symbol
+$X_f=J\xi f$; the metric variation $\mathcal L_{X_f}g$ has principal part
+$\xi\otimes J\xi+J\xi\otimes\xi$, up to the Fourier sign.  Thus the kernel
+in \eqref{eq:kernel} is genuine gauge freedom, not evidence of a strictly
+almost-K\"ahler Einstein deformation.  A scalar gauge with principal symbol
+$H(\xi,J\xi)$ removes it; its action on the Hamiltonian potential has a
+nonzero multiple of $|\xi|^4$ as symbol.
+
+There is also a direct way to remove the algebraic metric constraints.
+In a fixed Darboux frame choose $J_0^2=-I$ and use
+\begin{equation}
+ G=\exp H,\qquad H^T=H,\qquad HJ_0+J_0H=0.
+\end{equation}
+Then $G$ is positive definite, $\det G=1$, and
+\begin{equation}
+ GJ_0G=J_0.
+\end{equation}
+The compatible metric constraint and closure of the fixed symplectic form
+are exact; they need not be reintroduced as soft numerical residuals.
+This supplies six unconstrained coefficient functions before Hamiltonian
+gauge fixing.  It is a local parametrization, not an imposed global
+trivialization of the tangent bundle.
+
+\subsection{What the symbol calculation does not imply}
+The extra Darboux compatibility relation and the correction of the degree-15
+count are already in \cite[A01.55]{Companion}.  Theorem \ref{thm:symbol}
+adds the full fixed-covector kernel/image calculation, explicit right
+inverse and norm control.  It does not show that a nonlinear lower-jet
+source lies in the prolonged image, that the system is involutive, or that
+a formal solution converges.  Curvature sign is absent from this principal
+symbol; an obstruction distinguishing negative Einstein data from KE and
+Ricci-flat controls must enter lower-order resolved compatibility or global
+geometry.  The classical formal-integrability perspective is discussed in
+\cite[Section 4]{ADsurvey}.
+
+
+\subsection{A reproducible highest-order block calculation}
+
+The accompanying script constructs the integer matrix of the homogeneous
+highest-order operator $2D\Ric_\delta$ from degree-$N$ compatible tensor
+polynomials to degree-$(N-2)$ symmetric tensor polynomials.  A run in this
+turn gave the following ranks over both primes $65521$ and $65519$:
+\begin{center}
+\begin{tabular}{rrrrr}
+\toprule
+$N$ & Rows & Columns & Rank modulo each prime & Kernel minus Hamiltonian count\\
+\midrule
+4 &100&210&83&43\\
+5 &200&336&156&60\\
+6 &350&504&260&79\\
+7 &560&720&400&100\\
+\bottomrule
+\end{tabular}
+\end{center}
+These agree with the corrected count $N^2+8N-5$ already recorded in
+\cite[A01.55]{Companion}.  The degree-seven integer matrix occupies
+3,225,600 bytes in this implementation.  Agreement modulo two primes is a
+check of these finite matrices; it is not alone a proof of the rational
+rank in every degree or of nonlinear prolongation compatibility.
+
+The computation is deliberately different from solving the complete
+nonlinear finite-jet equations: the known linear image, Hamiltonian gauge,
+and compatibility conditions are separated first.  At each degree a new
+nonlinear forcing term must still lie in the prolonged image.  Testing that
+membership, and calculating any resulting lower-order condition, cannot be
+replaced by the fixed-covector inverse above.
+
+\section{Consequences for the four research tasks}
+
+The following dependencies keep the four questions distinct.
+\begin{enumerate}
+\item A positive unrestricted lower bound for $P$ on one $M$ excludes its
+Einstein metrics.  Q1 can also be approached directly at $P=0$, without
+first computing $p_*(M)$.  Proposition \ref{prop:overshoot} gives the exact
+classical Weyl threshold that such an argument must improve.
+\item The strict upper bound in the handoff, together with Theorem
+\ref{thm:CK}, places low-energy competition outside an entire conformally
+K\"ahler class.  A matching lower bound remains necessary to determine
+$p_*$; a conformal modification cannot remove this competition.
+\item Q3 requires smooth attainment and exclusion of the Einstein
+alternative on the same smooth manifold.  For the concrete manifold
+\eqref{eq:Horikawa}, the Einstein alternative is already excluded and
+\eqref{eq:HorikawaWindow} gives an explicit energy window.  Smooth attainment
+remains unproved; the Bach identity is an implication, not an existence theorem.
+\item Q4 still needs a new resolved global or lower-order compatibility
+constraint, or a complete closed counterexample.  The complete symbol
+calculation changes the numerical formulation and prevents counting gauge
+and known identities as mathematical obstructions.
+\end{enumerate}
+
+No result here declares Q1, Q2, Q3, or Q4 fully solved.  The additions are the
+complete conformally K\"ahler separation argument, the explicit inversion of
+the source's classical envelope, and the gauge-resolved Ricci-symbol
+calculation.  The general-background negative logarithmic construction
+remains the system's result, and the scalar, curvature-variation and symbol
+background remains classical.  These provenance distinctions are part of
+the mathematical statement, not separate research objectives.
+
+\begin{thebibliography}{9}
+\bibitem{Synthesis}
+Qiushi Sessions S1003A01 and S1003A02,
+\emph{Einstein Gaps on Four-Manifolds: Four Public Problems},
+8 October 2026, supplied file \texttt{01\_Research\_Synthesis(1).tex}.
+The sections on the four tasks, the insertion theorem, minimizers,
+Weyl coordinates, and Goldberg compatibility specify the four tasks, the corrected Burns theorem,
+attainment conditions, Weyl-channel bounds, and Goldberg corrections.
+\bibitem{Companion}
+Same sessions, \emph{Mathematical Source Companion}, supplied file
+\texttt{02\_Mathematical\_Source\_Companion(1).tex}.
+Source keys A01.52, A01.55, A02.58, A02.59D, A02.62--64.
+\bibitem{LeBrun}
+C. LeBrun, \emph{Ricci curvature, minimal volumes, and Seiberg--Witten theory},
+Invent. Math. 145 (2001), 279--316.
+\url{https://arxiv.org/abs/math/0003068}.
+\bibitem{CP}
+S. Coughlan and R. Pignatelli,
+\emph{Simple fibrations in $(1,2)$-surfaces},
+Forum of Mathematics, Sigma (2023).
+\url{https://doi.org/10.1017/fms.2023.41}.
+The introduction recalls the classical Horikawa surface description;
+no new surface-existence theorem is claimed here.
+\bibitem{GV}
+M. J. Gursky and J. A. Viaclovsky,
+\emph{Rigidity and stability of Einstein metrics for quadratic curvature
+functionals}, arXiv:1105.4648v2 (2013).
+\url{https://arxiv.org/abs/1105.4648}.
+\bibitem{Anderson}
+M. T. Anderson, \emph{Canonical metrics on 3-manifolds and 4-manifolds},
+Asian J. Math. 10 (2006), 127--163.
+\url{https://arxiv.org/abs/math/0511034}.
+\bibitem{ADsurvey}
+V. Apostolov and T. Dr\u aghici,
+\emph{The curvature and the integrability of almost-K\"ahler manifolds:
+a survey}, 2003.
+\url{https://arxiv.org/abs/math/0302152}.
+\bibitem{AAD}
+V. Apostolov, J. Armstrong and T. Dr\u aghici,
+\emph{Local models and integrability of certain almost K\"ahler 4-manifolds},
+Math. Ann. 323 (2002), 633--666.
+\url{https://arxiv.org/abs/math/0109098}.
+\end{thebibliography}
+\end{document}

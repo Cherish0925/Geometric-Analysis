@@ -1,0 +1,464 @@
+# Endpoint supply, joint-class certificates, and an actual small-topology limit
+
+26 September 2026. This is a continuation of I08, I09 and I12, not a new
+independent PDE engine. It incorporates and extends the owner's two supplied
+web analyses: [eight-volume synthesis](../guidance/source/20260926_web_eight_volume_synthesis.zh.md)
+and [boundary proof program](../guidance/source/20260926_web_boundary_proof_program.zh.md).
+The latter supplied the joint-matrix argument and the scalar-slack target;
+the former supplied the varying-topology rounding construction. The exact
+coercive PDE premises remain those of the inherited manuscripts. No global
+priority or external certification of those premises is asserted.
+
+The increments below are: a uniform near-closedness consequence of the actual
+field construction; an explicit classical-budget dominance theorem for the
+proposed joint certificate; and a same-scope small-h family with an explicit
+upper bound from classical gluing. The zero-Weyl weak-gap and optimal h-order
+questions remain open. No theorem of unrestricted Einstein realization is
+claimed here.
+
+## 1. Actual near-closedness at the zero-Weyl endpoint
+
+Use tensor Ricci norms and endomorphism Weyl norms. Let an actual Spin^c
+structure on a closed oriented four-manifold be monopole-solvable for every
+metric conformal to g, with the structure fixed during all weight changes.
+Put
+\[
+ V=\operatorname{Vol}(g),\quad p=(a_g^+)^2>0,\quad
+ r=\fint|\operatorname{Ric}+g|^2,\quad
+ D_\beta=\frac{\beta+1}{\beta}\int(s^2+6\beta|W^+|^2)-72\pi^2p,
+ \quad \kappa=r+D_\beta/V.
+\]
+Here beta is any finite number at least two, and t=1/beta.
+
+**Proposition 1 (the same supplied field is nearly closed).** The bounded
+smooth forms used in [the compactified pencil](../mathematics/current/line1_compactified_pencil.md)
+can simultaneously be chosen with arbitrarily small allowance such that
+\[
+ \fint|d\omega|^2\le\frac{39}{4}\kappa+o(1).                 \tag{1.1}
+\]
+The constant is independent of beta, volume, diameter and Sobolev constants.
+This is a consequence of existing estimates, not a new regularity theorem.
+
+**Proof.** In [the actual-field proof](../mathematics/current/line1_functional_pencil.md),
+equations (11)--(13), the nonnegative quantity D_0 satisfies
+\[
+ 2\int|d\psi|^2\le D_0\le4S_0/27+o(1),\qquad S_0\le117V\kappa.
+\]
+The same smooth solution supplies omega=c_beta psi, with
+\(c_\beta^2=9\beta/[8(\beta+1)]\le9/8\). Multiplying proves (1.1).
+The allowance tends to zero for the fixed metric and class; no uniform rate
+of smoothing over a family is used. In particular, the beta=2 almost-parallel
+estimate is not being applied at other beta values. QED.
+
+The inherited bounds, on this same form, are
+\[
+ \|\omega\|_\infty\le3\sqrt2,\quad
+ \fint\bigl(|\operatorname{Ric}+g|^2+|W^+-A_{\omega,t}|^2
+                    +( |\omega|^2-2)^2\bigr)\le C\kappa+o(1),
+\]
+\[
+ A_{\omega,t}=t(|\omega|^2I/3-\omega\otimes\omega),\qquad
+ \fint|\Delta_H\omega|^2\le C(1+\kappa+(-a^2)_+/V)+o(1).    \tag{1.2}
+\]
+If a^2>=T_+=2chi+3tau, Chern--Weil implies
+\((-a^2)_+/V\le r/(8\pi^2)\). For kappa<=1 the last budget is thus
+bounded by an absolute B_0. Also
+\[
+ \fint|W^+|^2\le C\kappa+432t^2+o(1),                    \tag{1.3}
+\]
+because \(|A_{\omega,t}|^2=(2/3)t^2|\omega|^4\).
+
+### The remaining endpoint theorem is not proved
+
+The new report asks whether, for a smooth self-dual two-form on a closed
+oriented Riemannian four-manifold and fixed K and B_0, the assumptions
+\(\|\omega\|_\infty\le K\) and
+\(\fint|\Delta_H\omega|^2\le B_0\) imply a positive universal lower bound
+for
+\[
+ Z=\fint\bigl(|\operatorname{Ric}+g|^2+|W^+|^2
+                     +( |\omega|^2-2)^2+|d\omega|^2\bigr). \tag{1.4}
+\]
+The exact zero system is impossible: it would give a negative Einstein,
+anti-self-dual, almost-Kaehler four-manifold. Armstrong's local obstruction is
+recorded in Apostolov--Draghici, [Corollaries 2--3](https://arxiv.org/pdf/math/0302152).
+Exact impossibility is not a proof of a positive infimum in this noncompact
+class of geometries.
+
+There is also a useful non-parallelism conclusion. For a self-dual form with
+Z as in (1.4), the integrated Weitzenboeck identity gives
+\[
+ \left|\fint|\nabla\omega|^2-\frac83\right|
+ \le2Z+\left(\frac43+\frac{8K^2}{3}\right)\sqrt Z.         \tag{1.5}
+\]
+To see this, use
+\(\fint|\nabla\omega|^2=2\fint|d\omega|^2+
+2\fint\langle W^+\omega,\omega\rangle-(1/3)\fint s|\omega|^2\),
+the trace bound \((\fint|s+4|^2)^{1/2}\le2\sqrt Z\), and the amplitude bound K.
+Thus a hypothetical zero-defect sequence here has derivative energy tending
+to 8/3, not to zero. The near-parallel KE-end mechanism is not the appropriate
+endpoint argument.
+
+There is a concrete analytical distinction. The inherited bounded-form
+estimates control a Hessian in L2 and the first derivative in L4. Armstrong's
+prolongation argument uses the additional structure generated by the first
+derivative of the almost-complex form; repeating curvature commutation there
+acts on its cotangent index as well. The original Lambda+ curvature budget
+cannot simply be reused as a bound for that tensor connection. Neither a
+third derivative estimate nor the corresponding opposite-Weyl contractions
+has been supplied. See [Armstrong's thesis, section 3.3.3](https://johnarmstrongmaths.com/publications/resources/thesis.pdf).
+This identifies an unfinished route, not a counterexample to (1.4) and not a
+proof that such extra hypotheses are necessary for every possible proof.
+
+**Conditional consequence.** If (1.4) has a lower bound eta(K,B_0)>0,
+then, under the above actual input and a^2>=T_+,
+\[
+ r+D_\beta/V\ge c\frac{(\beta-2)^2}{\beta^2},\qquad
+ r+P_t/V\ge ct(1-2t)^2,\quad P_t=tD_{1/t}.               \tag{1.6}
+\]
+Indeed (1.1)--(1.3) give Z<=C kappa+432t^2+o(1). Fix t_0 small
+enough to absorb the t^2 term. For t<t_0 a positive kappa gap follows.
+For t>=t_0 the already proved compactified estimate is at least a fixed
+multiple of (1-2t)^2. The case kappa>1 is immediate. Finally
+r+tD/V>=t(r+D/V). This proves only the implication (1.4)=>(1.6).
+It would improve the upper-wall endpoint margin from cubic to linear in
+h-1/4, since the existing optimal parameter satisfies
+t_*(h)~(2/3)(h-1/4). Neither improvement is recorded as achieved.
+
+## 2. Joint-field certificates without fixing a global sign
+
+Assume exactly the multiple actual conformal-class inputs of
+[I12](../mathematics/current/line1_period_inertia.md): classes a_1,...,a_m
+are each supplied by a fixed actual structure throughout the conformal class,
+p_i>0, and
+\[
+ \kappa=\max_i(r+D_2(g,a_i)/V)\le1/2880.
+\]
+Define the topological pairing matrix and the sign support function by
+\[
+ Q_{ij}=\frac{2\pi^2}{V}a_i\cdot a_j,\qquad
+ H(Y)=\max_{\sigma\in\{\pm1\}^m}\sigma^T Y\sigma,\qquad
+ A(Y)=\left(\sum_i\sqrt{Y_{ii}}\right)^2,
+ \quad Y\succeq0.
+\]
+Let CUT_m be the convex hull of the matrices sigma sigma^T, and
+K_m=CUT_m-PSD_m. The negative Hodge part is retained in this set.
+
+**Proposition 2 (the supplied web certificate).** Under these hypotheses,
+\[
+ \operatorname{tr}(YQ)\le
+       \bigl(\sqrt{H(Y)}+\sqrt{27000\kappa A(Y)}\bigr)^2.   \tag{2.1}
+\]
+No first scalar eigenvalue, common class square, or bound on the negative
+Hodge Gram matrix is assumed.
+
+**Proof.** With normalized L2 inner product, let xi_i=-sqrt(2) pi H_i,
+where H_i is the self-dual harmonic representative of a_i. I12 gives bounded
+u_i with
+\[
+ \mathbb E|u_i-\xi_i|^2\le49\kappa/2,
+ \quad\mathbb E(|u_i|^2-1)^2\le180\kappa,
+ \quad\mathbb E|u_i-\sigma_i u_1|^2\le6480\kappa,
+\]
+up to arbitrarily small simultaneous allowances; sigma_i is the measurable
+sign of the inner product with u_1, with sign(0)=+1. Choose n=u_1/|u_1| away from its zero
+set and any measurable unit section on that set. Then
+\(\mathbb E|u_1-n|^2\le180\kappa\), and two triangle inequalities give
+\[
+ \mathbb E|\xi_i-\sigma_i n|^2
+       \le (49+26640)\kappa=26689\kappa\le27000\kappa.    \tag{2.2}
+\]
+No measurable sign or normalized section is differentiated.
+
+Let P be the Gram matrix of the xi_i, C that of sigma_i n, and E_err
+that of their differences. Thus C is in CUT_m and Q=P-N for N>=0.
+For the column operators into the L2 Hilbert space, the Hilbert--Schmidt
+triangle inequality after multiplication by sqrt(Y) gives
+\[
+ \sqrt{\operatorname{tr}(YP)}\le\sqrt{\operatorname{tr}(YC)}
+                                      +\sqrt{\operatorname{tr}(YE_{\rm err})}.
+\]
+The terms on the right are at most sqrt(H(Y)) and
+sqrt(27000 kappa A(Y)), respectively; the latter follows from (2.2) and
+\(|Y_{ij}|\le\sqrt{Y_{ii}Y_{jj}}\). Since tr(YN)>=0, (2.1) follows.
+Letting the allowances tend to zero is done for fixed Y; no convergence
+of monopole solutions or signs is required. QED.
+
+In particular, tr(YQ)>H(Y) implies
+\[
+ \kappa\ge
+ \frac{(\sqrt{\operatorname{tr}(YQ)}-\sqrt{H(Y)})^2}{27000A(Y)}. \tag{2.3}
+\]
+For fixed m, if kappa tends to zero and Q has a finite limit, that limit lies in K_m:
+the column error bound gives
+\(\|P-C\|_{\rm op}\le m(27000\kappa+2\sqrt{27000\kappa})+o(1)\),
+and CUT_m is compact. The conclusion is not rank-one convergence.
+
+### 2.1 A precise limitation for standard signed suppliers
+
+**Proposition 3 (classical scalar budgets dominate these certificates).**
+Suppose the actual selected classes have pairings of the form
+\[
+ Q=\sum_{j=1}^{n_+} w_j s_js_j^T-B,\qquad
+ w_j\ge0,\ s_j\in\{\pm1\}^m,\ B\succeq0.                \tag{2.4}
+\]
+Write S_w=sum w_j. Assume the same metric also has an actual scalar
+monopole supplier with projected square at least A_+, where
+S_w=2pi^2 A_+/V. Then, with L(r)=(1+sqrt(r)/2)^2,
+\[
+ Q/L(r)\in K_m,\qquad
+ \operatorname{tr}(YQ)\le L(r)H(Y)\quad(Y\succeq0).      \tag{2.5}
+\]
+This conclusion requires no common endpoint saturation.
+
+**Proof.** The classical signed scalar estimate yields
+\[
+ 32\pi^2 A_+\le\int s_-^2,
+ \quad\|s_-\|_{L^2(d\mu/V)}\le4+\|s+4\|_2\le4+2\sqrt r.
+\]
+Hence S_w<=L(r). A convex combination of the sign matrices with weights
+w_j/L(r), completed to total weight one with any other sign matrix, gives
+C in CUT_m with C-Q/L(r)>=0. This proves both statements. QED.
+
+For Y nonzero, H(Y)>0. A proposed separation t=tr(YQ)>H(Y) already
+forces, by this classical estimate alone,
+\[
+ r\ge4\frac{(\sqrt t-\sqrt{H(Y)})^2}{H(Y)}.              \tag{2.6}
+\]
+Since H(Y)<=A(Y) and r<=kappa, this is stronger than (2.3) on this supplier
+family. Thus finding such a certificate here does not demonstrate an
+application beyond the scalar projection budget.
+
+The hypotheses apply to the standard actual signed connected-sum suppliers
+with positive orthogonal blocks b_j^2>0 and a negative-definite exceptional
+block. Their cup matrix has (2.4), with w_j=2pi^2 b_j^2/V. Full independent
+sign supply guarantees A_+=sum b_j^2: average the positive Hodge squares
+over all signs; the result is the sum of the individual projected squares,
+at least sum b_j^2. Some sign choice therefore supplies that budget.
+Alternatively, use the already established metricwise selected supplier.
+This includes the relevant [BF application](../mathematics/current/line1_bauer_furuta_geography.md)
+and ordinary blow-ups. A twisted version requires one common real local
+system, its actual pairing and its established scalar estimate; no cross
+pairing between unrelated local systems is asserted.
+
+For a full independent sign cube with a diagonal negative exceptional block,
+the statement has an exact algebraic version: Q belongs to K_m if and only
+if S_w<=1. Sufficiency is the preceding convex argument. For necessity,
+let Y be the orthogonal projection onto the span of the positive sign
+coordinate columns. These Walsh columns have squared norm m and are
+orthogonal to all exceptional columns. Hence tr(YQ)=m S_w, while
+H(Y)=m (a positive coordinate column attains the maximum). Membership in
+K_m implies m S_w<=m. This necessity is not asserted for arbitrary subsets
+of sign rows or arbitrary negative matrices B.
+
+The report's higher slow-spectrum estimate is a separate conditional-field
+consequence, not a new scalar-gap-free topological obstruction. Round18
+already contains a spectral-cluster mechanism; the later assumptions allow
+unequal squares and an uncontrolled negative Hodge part. No actual family
+with a new separation beyond established budgets is supplied in this note.
+
+### 2.2 An actual matrix realization which does not increase obstruction scope
+
+The formal three-by-three example in the supplied report can in fact be
+realized by actual BF classes, but not in its required small-error regime.
+Let X be a smooth degree-eight hypersurface in CP^3. Adjunction gives
+c_1^2=128 and p_g=35; Lefschetz gives b_1=0, hence b_+=71, congruent to
+three modulo four. On
+\(M=X\#X\#X\#128\overline{\mathbb{CP}}^2\), the established three-block
+BF supply gives the independent canonical and exceptional sign classes.
+Choose positive sign rows (-,+,+), (+,-,+), (+,+,-). Choose exceptional
+sign rows by repeating each of the vectors (1,1,1,1), (1,1,-1,-1),
+(1,-1,1,-1) thirty-two times. The three exceptional rows are orthogonal.
+The resulting actual classes have diagonal square 256 and off-diagonal
+pairing -128. At volume 512pi^2 their Q is exactly
+\[
+ Q_* = \begin{pmatrix}1&-1/2&-1/2\\-1/2&1&-1/2\\-1/2&-1/2&1\end{pmatrix}.
+\]
+Thus Y=I-11^T/3 has tr(YQ_*)=3>8/3=H(Y). However A_+=384 and
+S_w=3/2, so (2.5) already forces r>=10-4sqrt(6)>0.202. In particular,
+the common small-kappa premise cannot hold. Also h=(128+8)/384>1/3;
+the classical BF Einstein obstruction already applies. The precise supplier
+and obstruction are [Ishida--LeBrun, Proposition 10, Corollary 11 and Theorem D](https://arxiv.org/pdf/math/0111228).
+This example separates actual realizability of the intersection matrix from
+a genuinely new application of its certificate. It supplies the former only.
+
+## 3. Small h in the actual two-chirality window
+
+Define E(g)=inf over nonzero lambda of
+\(\int|\operatorname{Ric}-\lambda g|^2/(\lambda^2 V)\).
+For R=int|Ric|^2>0 and I=int s, minimization in 1/lambda gives
+\[
+ \mathcal E=4-I^2/(VR).                                  \tag{3.1}
+\]
+This includes I=0 as an infimum, not necessarily a minimum.
+
+**Proposition 4 (explicit upper bound from classical gluing).** If X is a
+compact complex-hyperbolic surface, A=c_1^2(X), and
+\(M=X\#k\overline{\mathbb{CP}}^2\#\ell(S^1\times S^3)\), then
+\[
+ \inf_g\mathcal E(g)\le\frac{4h}{1+h},\qquad h=(k+4\ell)/A. \tag{3.2}
+\]
+The upper bound does not assert attainment.
+
+**Proof.** Normalize Ric=-g on X. The scalar-flat anti-self-dual
+insertions in [LeBrun, Theorem 4.3 and its proof](https://arxiv.org/html/math/0003068)
+give, on each fixed M, metrics with
+\[
+ V_\epsilon\to2\pi^2A,\quad I_\epsilon\to-8\pi^2A,
+ \quad R_\epsilon\to8\pi^2A(1+h).                        \tag{3.3}
+\]
+For the first two limits, the exterior converges to the normalized background,
+the inserted scalar-flat regions have vanishing volume, and the transition
+annuli have bounded scalar curvature and vanishing volume. These are features
+of that construction, not consequences of the Ricci-energy infimum alone.
+Substitution in (3.1) proves (3.2). QED.
+
+The no-handle limit 4k/(A+k) was already recorded in the project's
+[Kaehler controls, section 5](../mathematics/current/line1_kahler_energy.md).
+The present use includes handles and places the bound in the same numerical
+window as I08; it is not a newly invented gluing construction.
+
+**Theorem 5 (same-scope vanishing family, conditional on I08).** There are
+actual ordinary-monopole manifolds M_j, with h_j tending to zero, such that
+\[
+ 0<U_j-F(h_j)=o(h_j^2),\qquad
+ c_1h_j^2\le\inf_g\mathcal E(g)\le\frac{4h_j}{1+h_j}\to0.  \tag{3.4}
+\]
+All sufficiently late M_j admit no Einstein metric of any sign.
+Here F(h)=(4-sqrt(1-3h))^2/9 and U=3min(T_+,T_-)/A, precisely as in I08.
+
+**Proof.** Use connected finite unramified covers X_j of a fixed compact
+complex-hyperbolic surface, taking a subsequence with A_j>=j^4. Their
+existence is explained in the retained [two-chirality construction, section 3](../mathematics/current/line1_two_chirality_topology.md):
+the infinite finitely generated lattice is linear and residually finite.
+No prescribed cover degree or divisibility is required. Put eta_j=1/j and,
+eventually, 0<eta_j<=19/300. Define
+\[
+ x(\eta)=\frac{F(\eta)-1+3\eta}{18},\qquad
+ y(\eta)=\frac{15\eta-F(\eta)+1}{72},
+ \quad k_j=\lfloor A_jx(\eta_j)\rfloor,\quad
+ \ell_j=\lfloor A_jy(\eta_j)\rfloor-2.                   \tag{3.5}
+\]
+They are nonnegative for large j, since x~2eta/9 and y~7eta/36.
+Let M_j be the indicated connected sum. Write the two fractional parts as
+alpha_j,beta_j in [0,1). The identities x+4y=eta and
+1+15x-12y=F(eta) imply
+\[
+ h_j=\eta_j-(\alpha_j+4\beta_j+8)/A_j,
+ \quad U_j=F(\eta_j)+(-15\alpha_j+12\beta_j+24)/A_j.       \tag{3.6}
+\]
+For the second identity, tau(M_j)=A_j/9-k_j>0 eventually, so the smaller
+chiral budget is T_-; the absolute value in U has not been omitted.
+Since 0<F'<2 on [0,19/300],
+\[
+ 0<U_j-F(h_j)<(36+26)/A_j=62/A_j=o(h_j^2),\quad h_j\sim1/j.
+\]
+Ordinary polarized supply gives, for every metric, a class with
+p>=A_j and a^2=A_j-k_j>=T_+=A_j-k_j-4ell_j, fixed through its
+conformal weights. Handle additions do not decrease this class square;
+their contribution to T_+ is a separate topological term.
+I08 therefore yields E>=c h_j^2-62/A_j>=(c/2)h_j^2 for large j.
+Apply Proposition 4 to each fixed M_j for the upper bound. Nonzero Einstein
+constants have E=0. Ricci-flat metrics are independently excluded by
+\(\int s_-^2\ge32\pi^2A_j>0\). QED.
+
+An actual diagonal sequence can approximate (3.2) on each M_j to any chosen
+o(h_j) error. Alternatively the fixed-radius surgery construction in the
+supplied synthesis gives O(h_j) directly. Neither gives pointwise-small
+Ricci error. Thus (3.4) disproves an h-independent positive integral gap
+in this same class, but proves neither h^2 sharpness nor a Yau26 counterexample.
+
+## 4. What is actually missing for linear h-order
+
+Put S=int s^2, P=int|Ric^circ|^2, Sigma=S-32pi^2 p>=0 and D=D_2.
+Classical Chern--Weil gives the exact identity
+\[
+ 36\pi^2(p-T_+)=\frac92P+\frac98\Sigma-D.                \tag{4.1}
+\]
+The proposed strengthening Sigma<=C(P+D) would yield a linear h lower
+bound on (3.4). It is not proved by the existing parameter inequalities.
+
+A precise estimate that does follow is
+\[
+ \Sigma\le\frac49D+\frac{4\sqrt2}{3}\sqrt{RD}.            \tag{4.2}
+\]
+Indeed let z=s+2sqrt(6)|W^+|. The completed-square inequality gives
+int z^2<=2D, and direct substitution gives
+\(\Sigma=(4/9)D+(2/3)\int sz-(1/3)\int z^2\).
+Cauchy--Schwarz and S<=4R prove (4.2). For a Kaehler metric in its complex
+orientation, |W^+|^2=s^2/24 gives the stronger identity
+Sigma=(4/9)D, for any p used in these definitions. The general input is
+not assumed Kaehler, so this special identity cannot be transplanted.
+
+Here is an algebraic test isolating the missing differential information.
+Write C_A=8pi^2 A and, for small positive h, prescribe formal moments
+\[
+ T_+=A(1-h),\quad p=A,\quad
+ R=C_A(1+h+2h^2),\quad P=C_Ah^2,\quad
+ S=4C_A(1+h+h^2),\quad W_+:=\int|W^+|^2=C_A(1-h)^2/6.
+\]
+Choose constant formal scalar curvature so that I^2/V=S. These data obey
+the plus Chern--Weil identity, the scalar bound and all scalar--Weyl pencil
+nonnegativity tests: with x=2sqrt(1+h+h^2) and y=1-h, x>=2 and x+y>=3.
+For U=F(h)+o(h^2), the minus Weyl energy is also positive for small h,
+because it equals C_A[U-1-h+2h^2]/12. Yet
+\[
+ D=9C_Ah^2,\quad\Sigma=4C_Ah(1+h),\quad
+ \mathcal E+D/R=\frac{13h^2}{1+h+2h^2},\qquad
+ \frac{\Sigma}{P+D}=\frac{2(1+h)}{5h}\to\infty.           \tag{4.3}
+\]
+These are not actual metrics or monopole solutions, and so are not a
+counterexample to the proposed inequality. They prove a narrower useful
+fact: the displayed numerical identities and near-Einstein moment conditions
+alone cannot prove that inequality. A proof would need additional actual-field
+or differential compatibility information. The topology in (3.4) is real;
+the moments in (4.3) are only a feasibility test and are not identified with
+the metrics used in (3.3).
+
+For precision, the implication of the proposed linear inequality has no
+additional hidden small-deficit branch. Suppose Sigma<=C(P+D) holds for a
+selected Spin^c structure whose unperturbed equations are solvable for every
+metric conformal to g, fixed through all weights, with A>0, p>=A,
+a^2>=T_+=A(1-h), and E+D/R<eta_0, with uniform C and eta_0.
+On the family (3.4), eventually
+U<=1+h+3h^2. If E<1/2, the classical lower Ricci budget and the chiral upper
+budget give 1+h<=e<=U/(1-E)<=3. Since
+\[
+ D/C_A=\frac92\{e-(1+h)-2(p/A-1)\},\qquad P/C_A\le eE/4,
+\]
+one may use the loose bounds D/C_A<=27h^2+18E and P/C_A<=3E/4.
+It follows that E+D/R<=19E+27h^2. If the small-deficit hypothesis fails,
+small enough h forces E>=eta_0/38. If it holds, (4.1) and p-T_+>=Ah
+give h<=K(E+h^2), hence E>=h/(2K) for sufficiently small h. The case
+E>=1/2 is immediate. Together with (3.2), the proposed inequality would
+therefore imply inf E asymptotic to h up to two fixed positive multiplicative
+constants. Its unproved ingredient is exactly the scalar-slack inequality,
+not the conversion from that inequality to an all-metric conclusion.
+
+## 5. Realization and the fixed-manifold question remain separate
+
+The supplied off-boundary identity is correct classical algebra:
+\[
+ D_2+72\pi^2(p-T_+)+54\int|W^-|^2
+      =18P+144\pi^2(\chi-3\tau).                         \tag{5.1}
+\]
+At p>=T_+ and chi=3tau it supplies the saturation used in I26. It does
+not remove diameter or identify the filling of a long thin end. The suggested
+diameter-free numerical-boundary realization and the quantitative W^{2,p}
+repair rate remain targets, not consequences established in this continuation.
+
+The fixed Dehn-twist bundle E_D is already registered as C02/O02. Its
+reported pointwise approximations, virtual non-Kaehler restrictions and
+candidate Einstein volume window belong to the retained cross-line proofs.
+This continuation neither reconstructs its full pointwise sequence nor
+excludes all its negative Einstein outputs. Its global existence question
+is not replaced by the small-h integral family above, where topology varies.
+The existing elimination of nonnegative Einstein outputs is a separate
+topological/scalar argument; no failure of one repair algorithm supplies the
+remaining negative-output exclusion.
+
+The current common problem is therefore stable: use actual fields to decide
+which numerical boundaries are geometrically realizable. Sections 1--4 make
+specific parts of that question more precise. They do not combine the
+obstruction, compact realization and unrestricted Yau26 statements into an
+unproved exhaustive dichotomy.

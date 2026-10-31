@@ -1,0 +1,670 @@
+\hypertarget{o10strength:a-strengthened-opposite-chirality-gap-and-o10-through-euler-density-394}{%
+\section{A strengthened opposite-chirality gap and O10 through Euler
+density
+39/4}\label{o10strength:a-strengthened-opposite-chirality-gap-and-o10-through-euler-density-394}}
+
+2026-09-29. This proof strengthens the earlier critical-density result
+by combining the bounded resolvent section with its full actual
+first-torsion projection, a Hopf-form identity, and a sharp
+three-dimensional spectral inequality. The earlier \(3/8\) theorem
+remains a shorter-dependency special case. The strengthened theorem uses
+the full strong-current conclusion \(N_\tau\to0\), but does not use the
+subsequent first-prolongation estimate.
+
+\hypertarget{o10strength:statement}{%
+\subsection{1. Statement}\label{o10strength:statement}}
+
+Retain O10's actual conformal monopole supply, \(p\ge A>0\), and
+\(a^2\ge T_+\). There is an absolute \(\eta_*>0\) such that every actual
+scalar-minus-four input and every \(\beta\ge4\) satisfy
+
+\[
+ \boxed{\kappa_\beta+\beta^{-2}+
+ \left(\fint|W^-|^2-\frac{50}{3}\right)_+\ge\eta_*},
+ \qquad \kappa_\beta=P/V+D_\beta/V.
+\tag{0}
+\]
+
+This primary theorem has no Euler-density hypothesis. Consequently there
+are absolute \(\delta_*>0\) and \(c_*>0\) such that
+
+\[
+ \frac{\chi(M)}A\le\frac{39}{4}+\delta_*
+ \quad\Longrightarrow\quad
+ \boxed{\fint|\operatorname{Ric}+g|^2+\frac{D_\beta}V
+ \ge c_*\frac{(\beta-2)^2}{\beta^2}\quad(\beta\ge2)}.
+\tag{1}
+\]
+
+The second statement holds for all original admissible metrics. No
+pointwise curvature, diameter, Sobolev, noncollapse, volume, or
+injectivity-radius bound is added. The constants are existential
+absolute constants; numerical values for their positive margins are not
+asserted.
+
+If (0) failed, its three nonnegative summands would give a sequence
+satisfying
+
+\[
+ \beta_j\to\infty,\qquad\kappa_j\to0,\qquad
+ b_j:=\fint|W_j^-|^2\le50/3+o(1).
+\tag{2a}
+\]
+
+We exclude precisely this sequence. Its opposite-Weyl energy is bounded
+from the start; no Euler-density assumption is needed in the sequential
+proof.
+
+\hypertarget{o10strength:inputs-from-the-actual-endpoint-system}{%
+\subsection{2. Inputs from the actual endpoint
+system}\label{o10strength:inputs-from-the-actual-endpoint-system}}
+
+All integral norms in this proof use \(dV/V\). Work with one actual
+solution
+
+\[
+ s=-4,\qquad D_A\Phi=0,\qquad F_A^+=2i\sigma(\Phi),
+ \qquad \rho=|\Phi|^2\le2.
+\]
+
+Write \(\tau=t_\Phi\in\Gamma(E)\), where \(E=S^-\otimes L\), and put
+
+\[
+ m=|\tau|^2,\quad \rho_*=4/3,\quad m_*=128/81,
+ \quad S=m_*+2\rho^2|\nabla_A\Phi|^2,
+ \quad Q=-iq_-(\tau),
+\]
+
+\[
+ f=-iF_A^-,\qquad K=-\frac98\frac{\rho^3Q}{S}.
+\]
+
+The original manuscript proves \(|K|\le C\), \(f-K\to0\) in normalized
+\(L^2\), and the scalar/curvature/current budgets. The strong-current
+upgrade proved on 2026-09-29 additionally gives
+
+\[
+ \rho\to\rho_*\text{ in }L^2,\quad
+ m\to m_*\text{ in }L^2,\quad
+ D^-_{3A}\tau\to0\text{ in }L^2,\quad
+ \|\nabla_{3A}\tau\|_2\le C.
+\tag{2}
+\]
+
+The slow-gradient theorem for the original positive field first gives
+the short chain
+
+\[
+ |\nabla_A\Phi|^4\text{ uniformly integrable}
+ \Longrightarrow D\tau\to0\text{ in }L^2,\quad m\to m_*\text{ in }L^2.
+\]
+
+The strengthened argument additionally uses the complete previously
+established strong-current chain, ending in
+
+\[
+ N_\tau=(\nabla\tau)^{1,0}_{J_+}\longrightarrow0
+ \quad\text{in normalized }L^2.
+\tag{2b}
+\]
+
+It is enough to use this projection on sets where rho is bounded away
+from zero. The omitted low-rho regions have relative volume tending to
+zero and will be controlled by the fourth-power gradient bound of the
+resolvent section. The strong-current chain uses the positive-spinor
+curvature blocks and the actual curvature fit; it does not assume
+smallness of the opposite-Weyl block. The earlier \(3/8\) proof did not
+need (2b); the present stronger statement does.
+
+Let \(D=D^-_{3A}\). Its Lichnerowicz potential is
+
+\[
+ D^*D=T+\mathcal V,\quad
+ T=\nabla_{3A}^*\nabla_{3A},\quad
+ \mathcal V=-I+\frac32c(F_A^-).
+\tag{3}
+\]
+
+The connection curvature of \(E\) is
+
+\[
+ F^E=F^{S^-}_{\rm LC}+\frac32F_A I.
+\]
+
+Initially (2a) gives only a uniform normalized L2 bound on the full
+curvature of E. The scalar block and determinant curvature model are
+bounded, while the opposite-Weyl block is L2 bounded. After proving the
+sharp spectral constraint in Section 6, we shall improve this to
+
+\[
+ F^E=F_0+\mathcal E_F,\qquad |F_0|\le C,
+ \qquad\|\mathcal E_F\|_{2,\rm avg}\to0.
+\tag{4}
+\]
+
+It would be circular to assume (4) before that spectral step. The
+resolvent construction in Sections 3--5 does not require it.
+
+\hypertarget{o10strength:a-bounded-truncation-with-small-dirac-residual}{%
+\subsection{3. A bounded truncation with small Dirac
+residual}\label{o10strength:a-bounded-truncation-with-small-dirac-residual}}
+
+Fix \(L>m_*\). Choose a smooth nondecreasing \(\varphi\), zero for
+\(m\le L\), one for \(m\ge2L\), with \(m\varphi'\) bounded. Test (3)
+against \(\varphi(m)\tau\). The exact identity is
+
+\[
+ \int\varphi|\nabla\tau|^2+
+ \frac12\int\varphi'|dm|^2
+ =\int\varphi|D\tau|^2+
+ \int\operatorname{Re}\langle D\tau,c(d\varphi)\tau\rangle
+ -\int\varphi\langle\mathcal V\tau,\tau\rangle.
+\tag{5}
+\]
+
+The mixed term is bounded by
+
+\[
+ \frac14\int\varphi'|dm|^2+
+ C\int m\varphi'|D\tau|^2.
+\]
+
+The potential term tends to zero after division by \(V\). For its
+bounded-model part, \(m\to m_*\) in \(L^2\) and \(L>m_*\) imply
+\(\fint_{m>L}m\to0\). Its remaining part is bounded by
+\(C\|f-K\|_{2,\rm avg}\|m\|_{2,\rm avg}\to0\). Thus (2) and (5) give
+
+\[
+ \fint_{m\ge2L}|\nabla\tau|^2\longrightarrow0.
+\tag{6}
+\]
+
+Choose a smooth radial cap \(b(m)\) equal to one on \([0,2L]\), equal to
+a fixed constant times \(m^{-1/2}\) above \(3L\), and with
+\(|b|+m|b'|\le C_L\). Set
+
+\[
+ u=b(m)\tau.
+\]
+
+This is a globally smooth section, uniformly bounded in norm. Equations
+(2), (6) and the product rule give
+
+\[
+ \|u-\tau\|_{2,\rm avg}+\|\nabla(u-\tau)\|_{2,\rm avg}\to0,
+ \qquad \|Du\|_{2,\rm avg}\to0,
+ \qquad |u|^2\to m_*\text{ in }L^2_{\rm avg}.
+\tag{7}
+\]
+
+The stronger last assertion also follows directly from boundedness of
+\(u\), (2), and convergence in measure.
+
+\hypertarget{o10strength:the-potential-acts-on-this-bounded-section-as--2}{%
+\subsection{\texorpdfstring{4. The potential acts on this bounded
+section as
+\(-2\)}{4. The potential acts on this bounded section as -2}}\label{o10strength:the-potential-acts-on-this-bounded-section-as--2}}
+
+The cap \(u\) is collinear with \(\tau\). The exact Hopf identity
+\(c(q_-(\tau))\tau=(m/2)\tau\) implies
+
+\[
+ \left[-I+\frac32c(iK)\right]u
+ =-\left(1+\frac{27}{32}\frac{\rho^3m}{S}\right)u.
+\tag{8}
+\]
+
+The displayed coefficient is uniformly bounded, because \(m\le S\) and
+\(\rho\le2\). By the actual calibration and (2), it tends in measure to
+
+\[
+ 1+\frac{27}{32}\frac{\rho_*^3}{2}=2.
+\]
+
+Boundedness of \(u\), together with \(f-K\to0\) in \(L^2\), therefore
+gives
+
+\[
+ \boxed{\|(\mathcal V+2I)u\|_{2,\rm avg}\to0.}\tag{9}
+\]
+
+Equations (3), (7), and (9) say that \(Tu-2u\) tends to zero in the
+actual normalized \(H^{-1}\) norm. This negative-norm statement is used
+only in the following coercive resolvent equation.
+
+\hypertarget{o10strength:rough-laplacian-resolvent-bounded-forcing-and-strong-h1-approximation}{%
+\subsection{\texorpdfstring{5. Rough-Laplacian resolvent: bounded
+forcing and strong \(H^1\)
+approximation}{5. Rough-Laplacian resolvent: bounded forcing and strong H\^{}1 approximation}}\label{o10strength:rough-laplacian-resolvent-bounded-forcing-and-strong-h1-approximation}}
+
+Define, on each actual closed manifold and bundle,
+
+\[
+ v=3(I+T)^{-1}u.
+\tag{10}
+\]
+
+The positive operator \(I+T\) is invertible on a closed manifold. The
+connection-Laplacian maximum principle (or its scalar Kato inequality)
+gives
+
+\[
+ \|v\|_\infty\le3\|u\|_\infty.
+\tag{11}
+\]
+
+In particular \(v\) is a smooth bounded section and
+
+\[
+ Tv=3u-v=:h,\qquad \|h\|_\infty\le C.
+\tag{12}
+\]
+
+Put \(z=v-u\). From (3),
+
+\[
+ (I+T)z=2u-Tu=-D^*Du+(\mathcal V+2I)u.
+\]
+
+Pair with \(z\). Since pointwise \(|Dz|\le2|\nabla z|\),
+
+\[
+ \|z\|_{2,\rm avg}^2+\|\nabla z\|_{2,\rm avg}^2
+ \le2\|Du\|_{2,\rm avg}\|\nabla z\|_{2,\rm avg}
+ +\|(\mathcal V+2I)u\|_{2,\rm avg}\|z\|_{2,\rm avg}.
+\]
+
+Thus
+
+\[
+ \boxed{\|v-u\|_{H^1_{\rm avg}}\to0,\qquad
+               |v|^2\to m_*\text{ in }L^2_{\rm avg}.}\tag{13}
+\]
+
+The same equations give the stronger residuals
+
+\[
+ \|Dv\|_{2,\rm avg}\to0,\qquad
+ \|Tv-2v\|_{2,\rm avg}=3\|u-v\|_{2,\rm avg}\to0.\tag{13a}
+\]
+
+The first follows from \(v-u\to0\) in \(H^1\) and \(Du\to0\); the second
+is the exact resolvent equation. These are valid even at arbitrary fixed
+Euler density. The rough-Laplacian residual is genuinely \(L^2\), rather
+than only \(H^{-1}\).
+
+No spectral gap for \(T\) was used; the identity term in its resolvent
+supplies a universal coercivity constant. No derivative of \(Du\), of
+Ricci, or of bundle curvature was estimated.
+
+\hypertarget{o10strength:bounded-rough-laplacian-suffices-for-critical-gradient-control}{%
+\subsection{6. Bounded rough Laplacian suffices for critical gradient
+control}\label{o10strength:bounded-rough-laplacian-suffices-for-critical-gradient-control}}
+
+We record the exact extension of the slow-truncation lemma used here.
+Let \(v\) be a smooth bounded section with bounded
+\(h=\nabla^*\nabla v\). Suppose Ricci and bundle curvature are each a
+uniformly bounded tensor plus an error whose normalized \(L^2\) norm
+tends to zero. Then, for some fixed \(\epsilon>0\),
+
+\[
+ \fint\left(\frac{|\nabla v|^2}{R^2+|\nabla v|^2}\right)^\epsilon
+       \bigl(|\nabla^2v|^2+|\nabla v|^4\bigr)
+ \le CR^{-2\epsilon}+o(1),\quad R\ge1.
+\tag{14}
+\]
+
+In particular \(|\nabla v|^4\) is uniformly integrable relative to
+normalized volume.
+
+\hypertarget{o10strength:proof-of-the-extension}{%
+\subsubsection{Proof of the extension}\label{o10strength:proof-of-the-extension}}
+
+Put \(P=\nabla v\), \(H=\nabla P\), \(q=|P|^2\), and use
+
+\[
+ w=\left(\frac{q+\delta}{R^2+q+\delta}\right)^\epsilon,
+ \quad |dw|\sqrt q\le2\epsilon w|H|.
+\]
+
+The derivative-free Hessian interchange starts with
+
+\[
+ \int w|H|^2
+ =\int w\operatorname{Re}\langle H_{ij},H_{ji}\rangle
+      +\frac12\int w\sum_{i,j}|F_{ij}v|^2.
+\]
+
+Integrating once and commuting derivatives on the covector-valued \(P\)
+produces the potential term \(\int w\langle P,\nabla h\rangle\), the
+Ricci and connection-curvature pairings with \(P^2\), and the weight
+derivative. Integrate this potential term once more:
+
+\[
+ \int w\operatorname{Re}\langle P,\nabla h\rangle
+ =\int w|h|^2-\int\operatorname{Re}\langle dw\otimes P,h\rangle.
+\tag{15}
+\]
+
+Boundedness of \(h\), the displayed weight derivative estimate, and
+Young's inequality absorb the resulting \(C\epsilon\int w|H|\) term into
+a small multiple of \(\int w|H|^2\) plus \(C\int w\). The weighted
+bounded-section interpolation remains
+
+\[
+ \int wq^2\le C\int wq+C\int wq|H|
+ \le C_1\left(\int w|H|^2+\int wq\right).
+\tag{16}
+\]
+
+The curvature errors pair with \(wq\); Young gives a small multiple of
+\(\int wq^2\) plus the normalized curvature-error squares. Thus the two
+inequalities jointly give
+
+\[
+ \int w(|H|^2+q^2)\le C\int w(1+q)+o(V).
+\tag{17}
+\]
+
+First take \(w=1\). Since \(\int q=\int\langle v,h\rangle\le CV\), this
+proves the uniform fourth-power gradient and Hessian budget. Next use
+the displayed slow weight: \(w\le R^{-2\epsilon}(q+\delta)^\epsilon\),
+and the budget controls the average of \((q+\delta)^\epsilon(1+q)\) for
+\(\epsilon\le1\). Let \(\delta\downarrow0\). This proves (14). The proof
+uses bounded \(h\), not its derivative.
+
+For the present proof, first use only the \textbf{unweighted} part of
+this calculation. It works with a uniformly bounded normalized L2
+curvature norm; the curvature-error term is bounded rather than small.
+Equations (11)--(12) and (2a) therefore give
+
+\[
+ \|\nabla^2v\|_{2,\rm avg}+\|\nabla v\|_{4,\rm avg}\le C.
+\tag{17a}
+\]
+
+This step does not assert uniform integrability of fourth-power
+gradients.
+
+\hypertarget{o10strength:amplitude-and-phase-control}{%
+\subsubsection{6.1 Amplitude and phase
+control}\label{o10strength:amplitude-and-phase-control}}
+
+Put \(a=|v|^2\) and \(j_v=\operatorname{Im}\langle v,\nabla v\rangle\).
+Since v and Tv are bounded,
+
+\[
+ \Delta a=2\operatorname{Re}\langle v,Tv\rangle-2|\nabla v|^2
+\]
+
+is bounded in normalized L2 by (17a). Pair it with \(a-m_*\to0\) in L2
+to get
+
+\[
+ \|da\|_{2,\rm avg}^2
+ =\fint(a-m_*)\Delta a\longrightarrow0.
+\tag{17b}
+\]
+
+The strong H1 approximation and (2b) give
+\(N_v=(\nabla v)^{1,0}_{J_+}\to0\) in L2. The elementary complex
+decomposition of \(\langle v,\nabla v\rangle\) yields, away from rho
+zero,
+
+\[
+ |j_v|\le C\bigl(|v|\,|N_v|+|da|\bigr).
+\]
+
+The low-rho sets have relative volume tending to zero. Their
+gradient-square integral tends to zero by (17a), so they cause no loss.
+Consequently
+
+\[
+ \|j_v\|_{2,\rm avg}\longrightarrow0.
+\tag{17c}
+\]
+
+\hypertarget{o10strength:the-hopf-form-forces-an-exact-average-weyl-pairing}{%
+\subsubsection{6.2 The Hopf form forces an exact average Weyl
+pairing}\label{o10strength:the-hopf-form-forces-an-exact-average-weyl-pairing}}
+
+Let \(Q_v=-iq_-(v)\), an ordinary real ASD two-form. The Hopf identities
+in the manuscript's conventions are
+
+\[
+ |Q_v|^2=a^2/8,\qquad
+ |\nabla Q_v|^2=\frac a2|\nabla v|^2-\frac12|j_v|^2,
+ \qquad
+ \delta Q_v=-\frac12j_v+E_v,
+ \quad |E_v|\le C|v|\,|Dv|.
+\tag{17d}
+\]
+
+Thus \(\delta Q_v\to0\) in L2, and ASD gives
+\(\|dQ_v\|_2=\|\delta Q_v\|_2\to0\). From (13a),
+
+\[
+ \fint|\nabla v|^2=\fint\operatorname{Re}\langle v,Tv\rangle
+ \longrightarrow2m_*.
+\]
+
+The factor a can be replaced by m* in its product with \(|\nabla v|^2\):
+its L2 error tends to zero and the latter has a bounded L2 norm by
+(17a). Hence
+
+\[
+ \fint|Q_v|^2\to m_*^2/8,\qquad
+ \fint|\nabla Q_v|^2\to m_*^2.
+\tag{17e}
+\]
+
+The ASD Bochner identity at s = −4 gives
+
+\[
+ 2\fint\langle W^-Q_v,Q_v\rangle
+ =\fint|\nabla Q_v|^2-\frac43\fint|Q_v|^2
+ -\fint(|dQ_v|^2+|\delta Q_v|^2).
+\]
+
+Therefore
+
+\[
+ \boxed{\fint\langle W^-Q_v,Q_v\rangle\longrightarrow
+                       \frac{5m_*^2}{12}.}
+\tag{17f}
+\]
+
+For a trace-free symmetric operator on a three-dimensional Euclidean
+space, \(\langle Wx,x\rangle\le\sqrt{2/3}|W|\,|x|^2\). Because a is
+bounded and converges in measure to m*, the fourth moment of Q\_v tends
+to \(m_*^4/64\). Applying Hölder to this sharp pointwise bound and using
+(17f) shows
+
+\[
+ \liminf b_j\ge50/3.
+\tag{17g}
+\]
+
+Together with (2a), this forces \(b_j\to50/3\).
+
+\hypertarget{o10strength:equality-forces-a-smooth-bounded-full-weyl-model}{%
+\subsubsection{6.3 Equality forces a smooth bounded full-Weyl
+model}\label{o10strength:equality-forces-a-smooth-bounded-full-weyl-model}}
+
+There is no need to divide by \(|Q_v|\) or choose eigenvectors. Put
+\(q_0^2=m_*^2/8\) and define the globally smooth bounded trace-free
+operator
+
+\[
+ W_0=\frac5{q_0^2}
+       \left(Q_v\otimes Q_v-\frac{|Q_v|^2}{3}I_{\Lambda^-}\right).
+\tag{17h}
+\]
+
+The exact algebraic identities and (17f) give
+
+\[
+ \fint|W_0|^2\longrightarrow50/3,
+ \qquad\fint\langle W^-,W_0\rangle\longrightarrow50/3.
+\]
+
+Since \(b_j\to50/3\),
+
+\[
+ \boxed{\fint|W^--W_0|^2\longrightarrow0.}
+\tag{17i}
+\]
+
+This proves the previously postponed bounded-model decomposition (4):
+include W\_0, the scalar block, the actual bounded self-dual determinant
+curvature and the bounded ASD model K in F\_0. The error consists of W−
+minus W\_0, the trace-free Ricci block, and f minus K.
+
+Now, and only now, apply the slow-weight conclusion (14) to v. It gives
+uniform integrability of \(|\nabla v|^4\), exactly as required for the
+Chern localization below.
+
+\hypertarget{o10strength:the-chern-transgression-now-has-vanishing-normalized-cost}{%
+\subsection{7. The Chern transgression now has vanishing normalized
+cost}\label{o10strength:the-chern-transgression-now-has-vanishing-normalized-cost}}
+
+Choose \(d>0\) with \(4d^2<m_*\). The standard rank-two transgression
+applied to \(v/|v|\), with a smooth amplitude cutoff equal to one near
+zero and zero above \(2d\), gives
+
+\[
+ |c_2(E)[M]|
+ \le C_d\left[
+ \int_{\{|v|<2d\}}|F^E|^2+
+ \int_{\{d<|v|<2d\}}|\nabla v|^4\right].
+\tag{18}
+\]
+
+The cutoff vanishes before any division by \(|v|\) is made at a zero, so
+this is a global identity/estimate with all zero-set flux retained. It
+does not require transverse zeros.
+
+By (13), both sets in (18) have relative volume tending to zero. The
+curvature squares are uniformly integrable by (4). The derivative fourth
+powers are uniformly integrable by (14). Divide (18) by \(V\):
+
+\[
+ \boxed{c_2(E)[M]/V\longrightarrow0.}\tag{19}
+\]
+
+On the other hand, the actual Chern--Weil formula is
+
+\[
+ 16\pi^2\frac{c_2(E)[M]}V
+ =\fint\left[
+ 2|W^-|^2+\frac{s^2}{24}
+ -\frac12|\operatorname{Ric}^{\circ}|^2
+ +9|F_A^+|^2-9|F_A^-|^2\right].
+\]
+
+The actual endpoint limits are \(\fint|F_A^+|^2\to8/9\),
+\(\fint|F_A^-|^2\to2/9\), \(s=-4\),
+\(\fint|\operatorname{Ric}^{\circ}|^2\to0\), and the spectral argument
+gives \(\fint|W^-|^2\to50/3\). Therefore
+
+\[
+ \boxed{\frac{c_2(E)[M]}V\longrightarrow
+                   \frac{5}{2\pi^2}>0.}\tag{20}
+\]
+
+Equations (19) and (20) contradict each other. This proves the sequence
+exclusion.
+
+The auxiliary section \(v\) need not retain the actual cubic definition.
+Its sole role in (18) is as a genuine section of the same bundle \(E\).
+The actual field equations have already supplied its bounded approximate
+eigenmode \(u\), while the resolvent supplies the critical regularity.
+No field has been substituted into a monopole equation that it does not
+satisfy.
+
+\hypertarget{o10strength:the-universal-excess-gap-and-the-density-corollary}{%
+\subsection{8. The universal excess gap and the density
+corollary}\label{o10strength:the-universal-excess-gap-and-the-density-corollary}}
+
+The excluded sequence was precisely (2a). Therefore the nonnegative left
+side of (0) has a universal positive infimum. This proves the primary
+excess-energy gap.
+
+Chern--Gauss--Bonnet and the actual endpoint amplitude/Hodge bounds
+give, under chi/A at most B,
+
+\[
+ \limsup\fint|W^-|^2\le\frac{16B}{9}-\frac23.
+\tag{21}
+\]
+
+At \(B=39/4\), the right side equals \(50/3\), already excluded. There
+is a nonzero absolute interval above this B as well. Indeed, if every
+such interval admitted endpoint sequences, choose one with
+\(B_n\le39/4+1/n\), then choose sufficiently deep terms to make beta
+tend to infinity, kappa tend to zero, and the finite-error terms in (21)
+tend to zero. This gives the forbidden sequence (2a). Equivalently, one
+may use the positive margin in (0) directly.
+
+For this fixed larger density interval, failure of the all-parameter
+scalar-minus-four estimate would produce
+\(\kappa_j\beta_j^2/(\beta_j-2)^2\to0\). The established
+finite-parameter theorem, with the class-square cost removed, excludes
+bounded beta. Hence beta tends to infinity and kappa tends to zero, a
+contradiction. Finally the exact conformal comparison
+
+\[
+ \widehat\kappa\le\frac{\kappa}{1-\sqrt\kappa-\kappa/16}
+\]
+
+transfers the gap to every original admissible metric. The small-kappa
+denominator is uniformly positive; metrics with kappa bounded below
+satisfy (1) after reducing its constant. The actual supplier, class
+square, positive budget, and Euler-density hypothesis are preserved by
+the original comparison. This proves (1).
+
+\hypertarget{o10strength:a-global-topological-cost-form-valid-on-every-original-admissible-metric}{%
+\subsubsection{A global topological-cost form, valid on every original
+admissible
+metric}\label{o10strength:a-global-topological-cost-form-valid-on-every-original-admissible-metric}}
+
+The density corollary can equivalently be packaged as another uniform
+integral obstruction, without imposing a separate density restriction:
+
+\[
+ \boxed{\fint|\operatorname{Ric}+g|^2+\frac{D_\beta}V
+ +\left(\frac{\chi(M)}A-\frac{39}{4}\right)_+
+ \ge c'\frac{(\beta-2)^2}{\beta^2}\quad(\beta\ge2),}
+\tag{22}
+\]
+
+where \(c'=\min\{c_*,\delta_*\}>0\). To verify it, put
+\(f_\beta=(\beta-2)^2/\beta^2\le1\). If chi/A is at most
+\(39/4+\delta_*\), use (1); otherwise the topology-excess term is larger
+than \(\delta_*\ge\delta_* f_\beta\). Both other terms are nonnegative.
+This proves (22) on the original admissible metric without needing a
+conformal comparison for its opposite-Weyl energy.
+
+Formula (22) preserves the meaning of the result: either the
+Einstein/parameter defect or the explicit topological excess pays a
+uniform amount. It does \textbf{not} delete that excess term from
+unrestricted O10.
+
+\hypertarget{o10strength:what-this-proves-and-what-remains}{%
+\subsection{9. What this proves and what
+remains}\label{o10strength:what-this-proves-and-what-remains}}
+
+The theorem extends the fully controlled Euler-density range from the
+earlier strict bound B \textless{} 3/8 to an absolute open interval
+beyond 39/4. Its main statement (0) is stronger than a density-only
+corollary: an actual weak zero endpoint must carry strictly more than
+50/3 of normalized opposite-Weyl energy.
+
+It does not prove an upper bound on that energy for arbitrary topology.
+For sequences with a strictly larger opposite-Weyl energy, the
+polynomial model (17h) need not have a vanishing L2 fitting error. The
+Chern localization can then retain curvature and fourth-power derivative
+concentration. Removing this excess-energy alternative remains the
+unclosed part of general O10. The subsequent first-prolongation theorem
+is a further valid input toward that problem, but is not part of the
+proof above.

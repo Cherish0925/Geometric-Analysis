@@ -1,0 +1,382 @@
+% !TeX program = xelatex
+% Standalone UTF-8 source. Compile twice with XeLaTeX; no external figures or .bib files.
+\documentclass[UTF8,fontset=fandol,zihao=-4]{ctexart}
+\usepackage[a4paper,margin=25mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,esint,booktabs,longtable,array}
+\usepackage{xurl,enumitem,fancyhdr,tocloft}
+\usepackage[unicode,hidelinks]{hyperref}
+\newtheoremstyle{research}{7pt}{7pt}{\normalfont}{0pt}{\bfseries}{。}{.4em}{}
+\theoremstyle{research}
+\newtheorem{result}{原稿结果}[section]
+\newtheorem{lemma}[result]{引理}
+\newtheorem{problem}[result]{研究问题}
+\renewcommand{\proofname}{论证}
+\DeclareMathOperator{\Ric}{Ric}
+\DeclareMathOperator{\Rm}{Rm}
+\DeclareMathOperator{\Vol}{Vol}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\spec}{spec}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\Hess}{Hess}
+\DeclareMathOperator{\Met}{Met}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\C}{\mathbb C}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\dd}{\,d\mu_g}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\Dcal}{\mathcal D}
+\newcommand{\owedge}{\mathbin{\bigcirc\mkern-15mu\wedge}}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\numberwithin{equation}{section}
+\setlength{\parskip}{.35em}
+\setlength{\emergencystretch}{3em}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.18}
+\linespread{1.10}
+\setlist{nosep,topsep=4pt,leftmargin=2em}
+\setcounter{tocdepth}{1}
+\setlength{\cftbeforesecskip}{3pt}
+\renewcommand{\cftsecfont}{\small}
+\renewcommand{\cftsecpagefont}{\small}
+\allowdisplaybreaks[2]
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Ricci夹逼与Einstein存在性}
+\fancyhead[R]{\small 三主线研究综合}
+\fancyfoot[C]{\thepage}
+
+\title{科学主线一：统一拓扑间隙\\[2mm]与近Einstein几何的定量刚性}
+\author{Qiushi--Yau26研究资料综合}
+\date{2026年9月17日}
+\begin{document}
+\maketitle
+\begin{abstract}
+本主线以“拓扑近等号能否被Einstein几何实现”为中心，将monopole估计、非负校准密度、固定尺度平均传输和局部禁谱连接起来。先整理原稿已有的相对Euler预算统一间隙及吹起族推论，再说明近Einstein必要退化和有界直径间隙。旋量与Walsh分析、退化局部流、临界规范工具作为同一机制的深入内容保留。继续研究的中心是任意塌缩下密度信息能否到达受控局部片，而不是把未完成近似方程误写为已完成的精确定理。
+\end{abstract}
+\tableofcontents
+\clearpage
+
+\section{共同问题：研究结论必须落在哪里}
+以下沿用最新Skill明确采用的Yau26工作命题，而不改写其量词：对每个$n\ge2$，是否存在仅依赖维数的实常数$c_n<C_n$，使任意闭、连通、光滑$n$维流形$M$上的度量$g$若满足
+\[
+c_ng\le\Ric_g\le C_ng,
+\]
+则同一光滑流形上存在某个$h$，满足$\Ric_h=\lambda h$，其中$\lambda\in\R$任意。输出不要求接近输入、不要求同号、不要求保留复结构、纤维化或对称性。历史题文与重编本的区别，沿用基础稿的来源说明\cite{F,Overview}。
+
+定义
+\[
+\delta_\sigma(g)=\norm{g^{-1}\Ric_g-\sigma\Id}_{L^\infty,\op},\qquad
+e_\sigma(M)=\inf_{g\in\Met(M)}\delta_\sigma(g),\quad\sigma=\pm1.
+\]
+$P_n^\sigma$表示存在仅依赖$n$的$\varepsilon_n>0$，使$\delta_\sigma(g)<\varepsilon_n$推出$M$承载某个Einstein度量。固定维数的区间命题为
+\[
+Q_n\ \Longleftrightarrow\ P_n^+\lor P_n^-.
+\]
+常数缩放$\widehat g=ag$保留协变Ricci张量，使Ricci端同态除以$a$。任意非退化区间含以非零$\mu$为中心的小子区间；把近$\operatorname{sign}\mu$输入乘以$1/|\mu|$便放入该子区间。反向直接选$\pm1$附近的小区间。故每维证明一支即可；完整否定须在同一维数击败两支，允许使用不同流形或流形序列。\cite{F}（\path{prop:branches}）
+
+特别地，固定无Einstein流形上$e_\sigma(M)=0$只否定相应符号分支。对每个固定$M$证明$e_\sigma(M)>0$，也不自动给跨流形统一的$\varepsilon_n$。全维肯定证明需要高维机制；固定维数的两分支反例则不需要先处理其他维数。
+
+\paragraph{材料与本文的角色。}
+本文依据上传的\path{qiushi-yau26 (1).zip}，以六份数学正文、总论和研究地图为依据。标为“原稿结果”的陈述保留其原有证明状态与假设；本文提供连续推导、来源定位和研究综合，不把编译或有限复算当作全部数学的重新认证。\textbf{“综合判断”段落是本次组织与判断，不是新增定理、首创性认证或对原会话的强制任务。}参考文献沿用源稿，不声称本次进行了新的全领域查新。
+
+\section{第一主线的中心：把逐个严格性变成族统一分离}
+这条线研究两种不同距离。第一种是\emph{允许精确Einstein度量的拓扑比值，离经典边界多远}；第二种是\emph{无Einstein流形上的Ricci残差，能否任意趋零}。精确拓扑间隙回答前者，近Einstein联合间隙回答后者。两者相关，但不能互相替代。\cite{Overview}（§2.1）
+
+\textbf{综合判断。}最值得突出的方法不是“增加一个平方恒等式”，而是把全局拓扑近等号转为一个\emph{局部不能持续成立的微分几何模式}，然后找到能保留该模式的局部极限。这使证明无需先恢复整个极限流形的光滑拓扑，也无需把每个输入度量全局流到Einstein。
+
+\subsection{先写一般结果，再写吹起族的应用}
+记$T(M)=2\chi(M)+3\tau(M)$。原稿假设$\mathrm{MP}(A)$：$b_+(M)>1$，对每个度量$g$存在适用的monopole类$a_g$，满足$(a_g^+)^2\ge A>0$。类可以随$g$改变，正下界$A$不变。
+\begin{result}[相对Euler预算下的精确间隙，U的\texttt{thm:exact}]
+给定$L>0$，存在$\eta(L)>0$。若闭定向四流形满足$\mathrm{MP}(A)$、$\chi(M)\le LA$并承载Einstein度量，则
+\[
+\frac{T(M)}A\ge\frac23+\eta(L).
+\]
+\end{result}
+这一一般陈述已在原稿中，不是本次额外推广。它说明真正统一的量是$\chi/A$预算，而不仅是某一个复曲面的名字。\cite{U}（\path{thm:exact}）
+
+\begin{result}[指定吹起族的统一拓扑间隙]
+设$X$为闭极小一般型复曲面，$b_+(X)>1$，$A=c_1^2(X)>0$，$M=X\#k\overline{\CP}^{\,2}$，$k\ge0$。原稿证明存在与$X,k$无关的$\gamma>0$，使
+\[
+k\ge(1/3-\gamma)A\quad\Longrightarrow\quad M\text{不承载任何Einstein度量}.
+\]
+常数非显式；允许拓扑复杂度、总体积、总曲率能量和直径无界。
+\end{result}
+这里的新加强对象是原稿与LeBrun经典$1/3$边界的比较；不把未完成的文献首创性核查写成定理。\cite{U}（\path{thm:intro-exact}）
+
+\section{从拓扑到非负密度：整条证明的代数基础}
+\subsection{统一范数，避免四倍因子混用}
+对$W^+$取其作用在$\Lambda^+$上的Hilbert--Schmidt算子范数；对$\Rm$取完整四指标张量范数。对二阶张量用度量诱导的Hilbert--Schmidt范数。令
+\[
+s=\tr_g\Ric,\quad E^\circ=\Ric-\frac{s}{4}g,\quad u=|W^+|,\quad w=\lambda_{\min}(W^+).
+\]
+在U的约定下，
+\begin{align}
+4\pi^2T(M)&=\int\left(\frac{s^2}{24}+2u^2-\frac{|E^\circ|^2}{2}\right)\dd,\\
+\int|\Rm|^2\dd&=32\pi^2\chi(M)+4\int|E^\circ|^2\dd.
+\end{align}
+$\mathrm{MP}(A)$提供三个输入：无处处非负标量曲率度量、$\int s^2\ge32\pi^2A$，以及
+\[
+\int\left(\frac23s+2w\right)_{-}^{2}\dd\ge32\pi^2A.
+\]
+这里$x_-:=\min(x,0)$。非负标量曲率的排除还使用真正monopole类，不能仅由最后一个数值不等式代替。\cite{U}（§2）
+
+\subsection{联合密度与可核对的预算}
+定义
+\[
+E_-=\Ric+g,\quad e=s+4,\quad f=\frac23s-2\sqrt{\frac23}u,\quad b=\frac23s+2w,
+\]
+\[
+\mathcal G=f^2-b_-^2,\qquad
+\Dcal=|E_-|^2+e^2+(s+8\sqrt6u)^2+\mathcal G.
+\]
+无迹对称三阶算子满足$w\ge-\sqrt{2/3}u$，所以$f\le b$。分别考虑$b<0$和$b\ge0$，得$\mathcal G\ge0$，从而$\Dcal\ge0$。不需要先假定$s<0$。
+
+决定性的联合恒等式是
+\[
+(s+8\sqrt6u)^2+18\mathcal G
+=216\left(\frac{s^2}{24}+2u^2\right)-18b_-^2.
+\]
+记$Q=\int|E_-|^2$、$P=\int|E^\circ|^2$、$Z=\int e^2$，则$Q=P+Z/4$。积分后用拓扑和monopole估计，得到
+\begin{align}
+\int(s+8\sqrt6u)^2+18\int\mathcal G
+&\le108P+864\pi^2\bigl(T(M)-2A/3\bigr),\\
+\int\Dcal&\le109Q+864\pi^2\bigl(T(M)-2A/3\bigr)_+.
+\end{align}
+第二式来自$Q+Z+108P=5Q+104P\le109Q$。对吹起族$T=A-k$，令$d=(1/3-k/A)_+$。若$\delta_-\le1/4$，则$|E_-|^2\le4\delta_-^2$、$\Vol M\ge32\pi^2A/25$，所以
+\begin{equation}\label{eq:budget}
+\boxed{\fint_M\Dcal\le436\delta_-^2+675d.}
+\end{equation}
+这些是原稿的粗常数，不声称最优。R中的较粗$119Q$估计保留其密度定义与范畴；不能把不同年代定义相近的密度直接换名。\cite{U}（\path{eq:calibration},\path{eq:delta-budget}）
+
+\section{零密度为何不可能：代数谱与微分方程的冲突}
+如果$\Dcal=0$在非空开集成立，首先有$\Ric=-g$、$s=-4$，然后
+\[
+u^2=1/24,\quad w=-1/6,\quad
+\spec W^+=(-1/6,1/12,1/12).
+\]
+这个谱作为\emph{单点代数数据}并不被排除；矛盾来自它在Einstein开集上持续成立。
+
+取单特征线的局部单位自对偶二形式$\omega$，则
+\[
+W^+=\frac1{12}\Id-\frac14\omega\otimes\omega.
+\]
+Einstein给$\delta W^+=0$。将$\nabla\omega$投到另外两个二形式方向，散度方程使其系数与$\omega$的缩并为零。非零自对偶二形式在四维非退化，故$\nabla\omega=0$，得到局部Kähler结构。而同定向Kähler四度量满足
+\[
+|W^+|^2=s^2/24=2/3,
+\]
+与$1/24$矛盾。源稿给了这一局部证明，并以Derdziński理论作为经典依据。局部禁谱机制本身不包装为新基础定理；新结果依赖于如何\emph{定量强迫和传递}该模式。\cite{U}（\path{lem:forbidden}）\cite{Derdzinski}
+
+\section{精确统一间隙的完整证明路线}
+\subsection{平均预算与固定尺度}
+假设存在逼近边界的Einstein序列。monopole输入排除非负Einstein常数，归一化为$\Ric=-g$。于是
+\[
+\Vol M\ge2\pi^2A,\qquad \fint_M|\Rm|^2\le16L.
+\]
+置$t=T(M)/A-2/3$，原稿的精确密度
+\[
+F=(-4+8\sqrt6u)^2+18(f^2-b^2)\ge0
+\]
+满足$\fint F\le432t$。若无统一间隙，可取$t_i\to0$。
+
+在Ricci下界下，Fubini与体积比较给
+\[
+\int_M\left(\int_{B_R(p)}|\Rm|^2\dd\right)d\mu(p)
+\le v_{-1}(R)\int_M|\Rm|^2\dd.
+\]
+取\emph{只依赖$L$}的固定$R\le1$，使$16L v_{-1}(R)\le\varepsilon_*/4$。则至少$3/4$体积的中心满足$\int_{B_R(p)}|\Rm|^2\le\varepsilon_*$。
+
+\subsection{精确方程允许底空间塌缩}
+原稿调用的Cheeger--Tian输入是：精确四维Einstein、常数受控、小绝对$L^2$能量，推出
+\[
+\sup_{B_{R/2}(p)}|\Rm|\le C_*R^{-2},
+\]
+不要求该球体积下界。这里不能把“精确Einstein”改成“小$C^0$残差”。这一外部定理的实际用途与Ge--Jiang的重述在U中分别定位。\cite{CT,GeJiang}
+
+曲率受控后，在统一小切空间球上使用指数映射。Rauch与Gauss引理提供无共轭、拉回度量统一椭圆和源中心的固定尺度控制；不需要底空间的指数映射全局单射。
+
+\subsection{重叠展开如何保留小平均缺陷}
+对于局部等距$\pi:(\widetilde U,h)\to(M,g)$，设$\overline B_{3s}^h(\tilde p)\Subset\widetilde U$。对$H\ge0$，原稿证明
+\begin{equation}\label{eq:transfer}
+\fint_{B_s^h(\tilde p)}\pi^*H
+\le\frac{\Vol_h B_{3s}^h(\tilde p)}{\Vol_h B_s^h(\tilde p)}
+\fint_{B_s^g(p)}H.
+\end{equation}
+其理由是：任意$q,y\in B_s(p)$可由长度小于$2s$的路径连接。从源$s$球中各个$q$原像出发唯一提升，终点都在源$3s$球中，且不同起点不能有相同终点。因此$m_1(q)\le m_3(y)$。积分重数关系，再用面积公式，即得\eqref{eq:transfer}。缓冲条件防止提升在源边界中断。\cite{U}（\path{lem:transfer}）
+
+再用平均算子的$L^1$界，在低能量中心集合内选一个同时具有小平均$F$的中心；\eqref{eq:transfer}把小平均搬到\emph{同一个}受控展开片。局部Einstein紧性给光滑极限，非负密度积分趋零使极限$F=0$，触发禁谱矛盾。故$t\ge\eta(L)>0$。
+
+\subsection{吹起族为何给同一个常数}
+若$M=X\#k\overline{\CP}^{\,2}$有Einstein度量，先用经典非严格界得$k\le A/3$。Noether输入给
+\[
+\chi(X)\le5A+36,\quad A\ge1,\quad
+\frac{\chi(M)}A\le41+\frac13<42.
+\]
+用$L=42$得到$k/A\le1/3-\eta(42)$；原稿取$\gamma=\min\{\eta(42)/2,1/12\}$。先由旧界建立统一预算，再用新间隙，没有循环。更一般地，若精确Einstein序列$T/A\to2/3$，则$\chi/A\to\infty$。\cite{U}（§4）
+
+\textbf{综合判断。}这一步把“塌缩会不会破坏统一性”转成可操作的固定尺度选点问题。它不需要全局无塌缩，也不需要完成整个奇异极限的解消。因此第一条线的论文中心应是\emph{拓扑近等号如何被局部微分刚性统一隔开}，而不只把吹起阈值写成一项数字改进。
+
+\section{近Einstein结果：已经达到哪里，尚缺哪里}
+\subsection{非塌缩局部正密度}
+原稿对完整定向四度量证明：在$|\Ric|_{\op}\le K$和$\Vol B_r(p)\ge v>0$下，有
+\[
+\fint_{B_{2r}(p)}\Dcal\ge\eta_0(K,r,v)>0.
+\]
+不需要monopole输入，因为它是局部密度定理。证明先由Cheeger--Naber在非塌缩球内选出一个固定谐和片，而非获得整球处处曲率界。\cite{U}（\path{thm:local}）\cite{CN}
+
+若密度平均趋零，有界Ricci与$E_-\to0$于$L^2$使所有有限$p$的$L^p$误差趋零。在共同谐和坐标中
+\[
+-\tfrac12g_i^{ab}\partial_a\partial_b(g_i)_{jk}+\mathcal N(g_i^{-1},\partial g_i)
+=-(g_i)_{jk}+(E_{-,i})_{jk}.
+\]
+先取弱极限并证明极限Einstein，再对差方程做内点估计，得到\emph{强}$W^{2,p}$收敛。最小特征值的Lipschitz性与平方项的$L^1$收敛才允许传递$\Dcal$。不能用弱曲率收敛直接传递平方曲率。
+
+\subsection{体积比例退化及有界直径间隙}
+令$N_{r,v}=\{p:\Vol B_r(p)\ge v\}$。局部下界结合Fubini给
+\[
+\frac{\Vol N_{r,v}}{\Vol M}\le C(K,r,v)\fint_M\Dcal.
+\]
+对吹起族由\eqref{eq:budget}得到
+\[
+\frac{\Vol N_{r,v}}{\Vol M}\le C(r,v)(436\delta_-^2+675d).
+\]
+故$\delta_-\to0,d\to0$时，每个固定尺度非塌缩中心的体积比例趋零。又$A\ge1$给总体积正下界，若直径有界，Bishop--Gromov使所有单位球有统一体积下界，矛盾。因此直径趋无穷；并得到
+\[
+\delta_-^2+d\ge c(D)>0\qquad(\diam M\le D).
+\]
+没有推出每点一致塌缩，没有构造该序列，也没有将$c(D)$变成维数常数。\cite{U}（§§5--6）
+
+\subsection{超临界区已有更强的显式下界}
+长稿对适用LeBrun假设的
+$M=X\#k\overline{\CP}^{\,2}\#\ell(S^1\times S^3)$，记$c=c_1^2(X)$、$K_0=k+4\ell$、$r=K_0/c-1/3$。在$c/3\le K_0<c$，它给
+\[
+\delta_-(g)\ge\Phi(r)=
+\begin{cases}
+\sqrt{r/2},&0\le r\le2(2-\sqrt3)^2,\\
+2\sqrt r/(\sqrt6+\sqrt r),&2(2-\sqrt3)^2\le r<2/3.
+\end{cases}
+\]
+原理是精确优化Ricci特征值箱体上的$|E^\circ|^2/s^2$，再与曲率积分下界比较。它比早期分式估计更强，但保留上述参数范围。下界随$r\downarrow0$消失，不产生逼近度量。\cite{L}（\path{FND:SWgap}）
+
+\section{不能丢掉的近等号理论：从旋量到空间相分离}
+旧IL连接和族为$M=(\#_{j=1}^mX_j)\#N$，$m=2,3$，其参数是
+\[
+A=\sum_jc_1^2(X_j),\quad D=4m-(2\chi+3\tau)(N),\quad T(M)=A-D.
+\]
+$D$在具体例中可为$k+4$或$k+8$，不是一律$k$。全符号monopole性质有独立来源假设。临界分析给$\Vol/A\to32\pi^2/9$、$\int|W^+|^2/(\pi^2A)\to4/27$，并约束正负调和投影。\cite{R}（连接和范畴与Seiberg--Witten近等号各节）
+
+两次Hölder、Hodge投影、振幅和本征线余项将总缺陷拆成非负项。令有符号调和形式$H_\epsilon=\sum_r\epsilon_rx_r$，Walsh恒等式给
+\[
+\operatorname{Av}_\epsilon|H_\epsilon|^2=\sum_r|x_r|^2,\qquad
+\operatorname{Av}_\epsilon\epsilon_p\epsilon_q|H_\epsilon|^2=2\langle x_p,x_q\rangle.
+\]
+若所有符号顶点近定长，这先给\emph{空间近正交}；再由最低Weyl特征线的谱隙获得近共线。两者并存，迫使不同规范方向的质量避免在同一区域重叠，而不是使所有形式相等。
+
+在固定紧性极限中，连续性、连通性和唯一延拓可把相分离变成矛盾。没有共同正则性时，过渡区能退化，积分结论本身还不产生全局辛结构。固定有限符号立方体的平均趋零能控制每个顶点；维数增长时不能未经估计同时控制所有顶点。\cite{R}（\path{eq:walsh},\path{sec:walsh-phases}）
+
+\textbf{综合判断。}这些不是独立堆积的“许多突破”，而是第一主线的细部几何语言：拓扑方向能否在退化区域交换、集中或逃逸。后续若要加强刚性，应使用它们提供的约束，而不是重新仅凭总能量猜测非塌缩。
+
+\section{退化局部流：有效分析与真正未完成的连接}
+\subsection{目标是制造足够的正则片，不一定使全流形收敛}
+取单一全局截断$a=\zeta^2$，考虑
+\[
+\partial_tg=-2a(\Ric+g).
+\]
+用曲率移位$G=g\owedge g/[2(n-1)]$、$T=\Rm+G$、$U=aT$，有$\Ric(T)=\Ric+g$、$\Ric(U)=a(\Ric+g)$。它将归一化速度、连接变化和高阶截断项放在同一个系统中。源稿全过程需保持同一曲率缩并规范。\cite{R}（\path{app:flow}）
+
+\subsection{支撑与临界体积抵消}
+从$\int F_T^2\le CA$、$\Vol M\asymp A$出发，截断最大函数选好点，$r$网与相对体积比较控制邻接度，着色后取$B_{7r}$两两不交的支撑。平台取$B_{5r}$，主截断支撑在$B_{6r}$，辅助截断在$B_{7r}$。关键是平台\emph{总体积占固定比例}，不是每个球绝对非塌缩。
+
+以平方形式写相对Sobolev系数$S$，临界吸收量为$S\sqrt{H_2}$。源稿已把记号中$S$或$S^2$的不同约定逐项区分；脱离所写Sobolev式比较这两个记号会重现旧错误。体积因子在相对不等式与初始种子中抵消，不等于存在全局无权统一Sobolev常数。
+
+\subsection{实指数Moser与共同bootstrap}
+对已存在的光滑精确流，采用混合权重
+\[
+J_p=\int\eta^2a^{p-2}|E_-|^p,\qquad
+z_p=\eta a^{(p-1)/2}|E_-|^{p/2}.
+\]
+正确升阶为$H_{3p/2}\le H_p^{1/2}\norm{z_p}_4^2$，不能把$\norm{z_p}_3^3$误认成$H_{3p/2}$。原稿经三因子吸收、$J_6$种子和时间迭代取得条件性端点
+\[
+\norm{aE_-(t)}_\infty\le C\delta(r^2/t)^{1/3},\qquad
+\norm{aF_T(t)}_\infty\le C\gamma_0/t.
+\]
+第一式从零可积，给漂移预算$\mathcal V(t)=\int_0^t\norm{aE_-}_\infty$，继而控制度量可比性和$S(t)\le e^{8\mathcal V(t)}S(0)$。它与小能量$\Gamma(t)$组成同一首次退出论证。\cite{R}（\path{eq:realp},\path{eq:weighted-endpoint}）
+
+高阶延拓还保留有符号Hessian的一次分部积分、$U_m$与$T_m$同阶耦合、最高截断jet及固定背景连接转换。范数Kato正则化不等于主系数$a\mapsto a+\varepsilon$；后者使原静止区演化，不能直接继承支撑消去。
+
+\subsection{终端校准为什么能绕过逐形式运输}
+若同一个终端闭度量已存在，$Q(T)/A\to0$且平台有统一曲率与固定比例体积，则直接在终端重新应用monopole预算。IL范畴$q=D-A/3\ge0$给$\int\Dcal\le109Q(T)$；吹起族低于边界时需保留$Ad$项。
+
+Liouville不变性与平台内的Rauch比较控制指数球平均算子，对$\Vol(P_i)\ge cA_i$的中心集选择同一个小密度展开片。$\int\Dcal=o(A_i)$中的$A_i$与平台体积相消。该终端链不要求把所有初始旋量逐个演化。\cite{R}（\path{sec:terminal-liouville}）
+
+\textbf{当前边界。}给定光滑解上的能量估计、逐数据局部存在、序列统一的观察时间及全阶延拓，是不同命题。R保留共同时间与退化正则化尚缺的连接，U的精确拓扑间隙不依赖此未完成流。后续可以证明这条流，也可以构造具有相同终端性质的原度量弱片或直接弱测试估计。
+
+\section{其他已保留的刚性工具及其科学位置}
+\begin{longtable}{P{.25\textwidth}P{.67\textwidth}}
+\toprule 工具簇 & 已有内容、研究作用与范围\\\midrule\endhead
+一般SW饱和与全部类 & L第5章在固定外部收敛和核心同调假设下识别普通monopole类、给四项体积账本及首阶能量比例；不以抽象拓扑数据替代外部收敛。\\
+临界丛分析与Kuranishi & 有界曲率酉丛梯度、完整有限泡树的Hessian临界估计、低次典范Dirac谱和条件性Lorentz--Kuranishi回缩；各自的背景、核与可积性保留。\\
+外部Jacobi与泡周期 & L第5章给固定背景奇异外部响应、双典范残值、局部KE参考抵消、Stokes周期与全奇点评价；有界直径体积间隙还需评价单射和极限分类。\\
+Weyl特征线与源项 & L第7章区分严格闭性和带源平衡；慢插值的源虽趋零却能占首阶，不能把它当成相对误差可忽略。\\
+Nil和圆约化 & R的对称域公式保留$v''=(3-\mu)v$、周期限制、实际负Einstein cusp与手性变量。它们需要真实局部作用，不穷尽一般塌缩。\\
+正则性反例 & C的CZ尖峰否定任意小$C^0$Ricci缺陷自动控制全曲率；不否定带小校准密度的特殊局部正则性目标。\\\bottomrule
+\end{longtable}
+这些工具有交叉用途。它们由第一主线组织，不意味着全部都是独立原创论文；源稿中保留的经典推论仍应标为经典推论。\cite{Map,L,R,C}
+
+\section{下一层结果：三个有不同内容的方向}
+\begin{problem}[无直径假设的联合间隙]
+在指定吹起族中，证明或否定存在统一$c_*>0$，使$\delta_-\le1/4$时
+\[
+\delta_-^2+(1/3-k/A)_+\ge c_*.
+\]
+\end{problem}
+该问题是R的明确目标，不是U已证明结论。一个足够的途径是在低平均缺陷和能量预算下得到\emph{原度量}固定尺度弱谐和片，并将小平均缺陷传到同一片。U将一个更普遍的充分条件记为(SC)，没有把Li、Naber--Zhang或覆盖几何的文献等同于(SC)。
+
+第二个方向是不先取得全曲率点态界，借弱配对、谱线或Hodge信息直接证明正密度下界。必须把Ricci误差导数移到受控测试场，而非写$\diver W=O(\delta)$的无根据点态式。
+
+第三个方向是反向构造：在已知无Einstein拓扑上实现$\delta_-\to0$。特别是新禁止带内部\emph{固定}的$k/A<1/3$，不满足$d\to0$；必要退化定理不能原样覆盖它。应重新检验其构造兼容性，不预设结论偏真或偏假。\cite{R}（近似方程的三个分析问题）
+
+\section{论文主线、与系统总论的差别及交叉关系}
+已有独立论文最清楚的中心是“一般monopole--Euler预算下的统一分离定理，及吹起应用和近边界退化”。论文可按\emph{一般主定理---密度---固定尺度展开---吹起应用---近似方程的必要退化}展开；(SC)、退化流和更强目标另列，不与已闭合证明混排。
+
+\textbf{综合判断。}相对原系统总论，本文不新增研究身份或强制路线，而做三项强调：首先把一般$\mathrm{MP}(A)$定理置于吹起推论之前；其次区分“局部禁止模式的取得”和“全局正则性”的不同强度；最后明确近似方程可以通过流、原度量弱片或直接弱配对三种途径继续，并保留反向构造。其关键技术未知量是\emph{足以保留密度的几何可达性}，不是研究文件或平方恒等式的数量。
+
+与第二主线的联系是检验具体构造是否进入所需密度区间；与第三主线的联系是把间隙应用在\emph{同一个}具有已知全局Einstein状态的流形上。一般$P_4^-$、正分支和高维并未由指定族自动覆盖。
+
+\section{来源定位与继续阅读}
+\begin{longtable}{P{.28\textwidth}P{.64\textwidth}}
+\toprule 本文内容 & 最新Skill中的完整来源\\\midrule\endhead
+一般与吹起统一间隙 & U：\path{thm:exact}、\path{thm:intro-exact}、\path{lem:transfer}、\path{lem:forbidden}。\\
+非塌缩密度与必要退化 & U：\path{thm:local}、\path{thm:proportion}、\path{cor:diam}、\path{prop:conditional}。\\
+显式超临界下界 & L第1章：\path{FND:SWgap}，含参数范围与分段优化。\\
+旋量、Walsh与流 & R：\path{eq:walsh}、\path{sec:walsh-phases}、\path{app:flow}、\path{sec:tame-start}、\path{sec:terminal-liouville}。\\
+长稿独立刚性块 & L第5章的\path{GAU:ordinary}、\path{GAU:four-term}、\path{GAU:Kuranishi}、\path{GAU:period-local}、\path{GAU:gap-conditional}；第7章\path{WYL:source}。\\
+原研究沿革 & 研究地图：A01 Step1--48、54--70；A03 Step1--61。各自原Step100交接与当前工作区继续保留，不被本文重启或覆盖。\\\bottomrule
+\end{longtable}
+
+\begingroup\small
+\begin{thebibliography}{99}
+\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}\setlength{\parsep}{0pt}
+\bibitem{Overview} Qiushi--Yau26，\emph{Ricci夹逼与Einstein度量：研究总论}，\path{research/20260916.md}。版本依据：上传\path{qiushi-yau26 (1).zip}。
+\bibitem{Map} Qiushi--Yau26，\emph{Ricci夹逼研究地图}，\path{references/research-map.md}；来源清单\path{references/source-coverage.json}。十二主题及独立证明块是导航，不是独立成果计数。
+\bibitem{F} Qiushi--Yau26，\emph{问题与研究基础}，\path{research/20260910.tex}。
+\bibitem{L} Qiushi--Yau26，\emph{长篇构造与分析}，\path{research/20260912.tex}。十章累积长稿；其网页累计章节号与三个Session的Step不同。
+\bibitem{U} Qiushi--Yau26，\emph{Einstein拓扑边界的统一间隙与近Einstein度量的必要塌缩}，\path{research/20260916_uniform_gap.tex}。
+\bibitem{R} Qiushi--Yau26，\emph{刚性与退化专论}，\path{research/20260916_rigidity.tex}。
+\bibitem{C} Qiushi--Yau26，\emph{近Einstein构造专论}，\path{research/20260916_construction.tex}。
+\bibitem{G} Qiushi--Yau26，\emph{全局几何与拓扑专论}，\path{research/20260916_global.tex}。
+\bibitem{Computations} Qiushi--Yau26，\path{references/computations.md}、\path{references/experiments.md}与\path{references/reproduction.md}。历史更正须与原输出一起读取；有限检查与无穷维分析的证明范围分开。
+
+\bibitem{LeBrun} C. LeBrun, \emph{Ricci Curvature, Minimal Volumes, and Seiberg--Witten Theory}, Invent. Math. 145 (2001), 279--316. \url{https://arxiv.org/abs/math/0003068}.
+\bibitem{Derdzinski} A. Derdziński, \emph{Self-dual Kähler manifolds and Einstein manifolds of dimension four}, Compositio Math. 49 (1983), 405--433, Proposition 5.
+\bibitem{CT} J. Cheeger and G. Tian, \emph{Curvature and injectivity radius estimates for Einstein 4-manifolds}, J. Amer. Math. Soc. 19 (2006), 487--525.
+\bibitem{CN} J. Cheeger and A. Naber, \emph{Regularity of Einstein manifolds and the codimension 4 conjecture}, Ann. of Math. 182 (2015), 1093--1165. \url{https://arxiv.org/abs/1406.6534}.
+\bibitem{GeJiang} H. Ge and W. Jiang, \emph{$\epsilon$-Regularity for Shrinking Ricci Solitons and Ricci Flows}, arXiv:1707.05511，源稿用于重述Cheeger--Tian定理。
+\bibitem{Li} Y. Li, \emph{Smoothing Riemannian metrics with bounded Ricci curvatures in dimension four}, Adv. Math. 223 (2010), 1924--1957.
+\bibitem{NZ} A. Naber and R. Zhang, \emph{Topology and $\epsilon$-regularity theorems on collapsed manifolds with Ricci curvature bounds}, Geom. Topol. 20 (2016), 2575--2664.
+
+\end{thebibliography}
+\endgroup
+\end{document}

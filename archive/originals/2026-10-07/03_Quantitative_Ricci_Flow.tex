@@ -1,0 +1,327 @@
+\documentclass[UTF8,11pt,fontset=none]{ctexart}
+\usepackage[a4paper,margin=25mm,headheight=15pt,footskip=13mm]{geometry}
+\usepackage{fontspec}
+\IfFontExistsTF{TeX Gyre Termes}{\setmainfont{TeX Gyre Termes}}{\setmainfont{TeXGyreTermes}}
+\IfFontExistsTF{TeX Gyre Heros}{\setsansfont{TeX Gyre Heros}}{\setsansfont{TeXGyreHeros}}
+\IfFontExistsTF{DejaVu Sans Mono}{\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]}{\setmonofont{Latin Modern Mono}}
+\IfFontExistsTF{Noto Serif CJK SC}{\setCJKmainfont{Noto Serif CJK SC}[AutoFakeSlant=0.15]}{\setCJKmainfont{FandolSong-Regular.otf}[BoldFont=FandolSong-Bold.otf,ItalicFont=FandolKai-Regular.otf]}
+\IfFontExistsTF{Noto Sans CJK SC}{\setCJKsansfont{Noto Sans CJK SC}}{\setCJKsansfont{FandolHei-Regular.otf}}
+\IfFontExistsTF{Noto Sans Mono CJK SC}{\setCJKmonofont{Noto Sans Mono CJK SC}}{\setCJKmonofont{FandolFang-Regular.otf}}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,esint,bm}
+\usepackage{booktabs,longtable,array,calc}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=1.7em,topsep=4pt}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,fontsize=\small}
+\usepackage{xurl}
+\usepackage[unicode,hidelinks,bookmarksnumbered]{hyperref}
+\usepackage{bookmark}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 第一科学主线：近期数学补充}
+\fancyhead[R]{\small 2026-10-07}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\setlength{\emergencystretch}{3em}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{3.5pt plus 1pt}
+\linespread{1.12}
+\setlength{\abovedisplayskip}{10pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{10pt plus 2pt minus 2pt}
+\allowdisplaybreaks[2]
+\renewcommand{\arraystretch}{1.15}
+\let\cleardoublepage\clearpage
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{2}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{assumption}[theorem]{前置}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{说明}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\id}{\operatorname{Id}}
+\newcommand{\dd}{\,\mathrm d}
+\pdfstringdefDisableCommands{\def\fint{int}\def\mathcal#1{#1}\def\mathfrak#1{#1}\def\mathscr#1{#1}\def\operatorname#1{#1}\def\texorpdfstring#1#2{#2}}
+
+\renewcommand{\thesection}{3.\arabic{section}}
+\title{第一科学主线：近期研究补充\\[6pt]\large 3．全度量 Ricci 间隙的定量动态后果}
+\author{数学研究交接稿}\date{2026年10月7日}
+\begin{document}
+\maketitle
+\tableofcontents
+\clearpage
+本分卷保留续研中给出的完整组合证明。前提是一个真正的全度量正 \(P\)-gap、负 Yamabe 不变量，以及指定外部四维 Ricci 流延拓定理。它是下游应用，不被登记为无密度 O10 或 O11 最优首项的解答。来源中的推导在下文完整保留。\cite{R02,OAI351Flow,Ishida2008}
+
+\section{统一的静态输入}\label{v3-ux7edfux4e00ux7684ux9759ux6001ux8f93ux5165}
+
+令 M 为闭连通光滑四流形，设
+
+\[
+ P(g)=\int_M|\operatorname{Ric}^{\circ}_g|^2\,dV_g\ge p_0>0
+ \quad\text{对 M 上每一个光滑度量成立},
+ \qquad \mathcal Y(M)<0.
+\]
+
+这两项输入必须在对应实际供给范围内验证。只有 \(P+D_2\) 的正下界不够。
+
+第一主线的一个直接输入方式是：存在统一 \(A>0\) 与 \(j_0>0\)，使每个竞争度量满足
+
+\[
+ \mathcal J(g)=\frac{4P(g)}{R(g)}\ge j_0,
+ \qquad S_2(g)=\int s_g^2\ge32\pi^2A,
+ \qquad R(g)=P(g)+\frac14S_2(g).
+\]
+
+于是可以取
+
+\[
+ \boxed{p_0=2\pi^2 A j_0.}
+\]
+
+例如从 N1 取得 \(j_0\) 时，必须保留拓扑超额项：\(\mathcal J+d\ge\varepsilon\) 只有在 \(\varepsilon-d>0\) 时给出正 \(j_0\)。短缺版同理。小 h 平衡族则使用已经证明的线性正 \(\mathcal J\)-下界。
+
+若同一全度量正投影供给还给出负 Yamabe 上界
+
+\[
+ \mathcal Y(M)\le-4\pi\sqrt{2A},
+\]
+
+则下文可以取 \(a=4\pi\sqrt{2A/V}\)。这可由各个负 Yamabe 代表上的标量预算得到，并非只从任意一个度量的标量积分得到。
+
+\section{外部输入：四维有限时间标量延拓}\label{v3-ux5916ux90e8ux8f93ux5165ux56dbux7ef4ux6709ux9650ux65f6ux95f4ux6807ux91cfux5ef6ux62d3}
+
+采用 openai/math 第351族中的下述结果。
+
+\textbf{外部定理 F。} 若闭光滑四流形上的未归一化 Ricci 流 \(\partial_\tau\widetilde g=-2\operatorname{Ric}(\widetilde g)\) 在有限区间 \([0,\widetilde T)\) 满足 \(\sup|s_{\widetilde g}|<\infty\)，则它在原光滑流形上可以光滑延拓。
+
+精确源文件： \path{preprints/Bounded-scalar-curvature-and-smooth-extension-of-four-dimensional-Ricci-flow-September-24-2026/build/sections/01-introduction.tex}，\texttt{thm:extension}。
+
+这里借用外部定理的实际结论，不把其证明中要求的 Ricci 流时空估计改名成静态 O10 的已知预算。
+
+\section{定量阈值定理}\label{v3-ux5b9aux91cfux9608ux503cux5b9aux7406}
+
+考虑体积归一化 Ricci 流
+
+\[
+ \partial_t g=-2\operatorname{Ric}+\frac12\bar s\,g,
+ \qquad \bar s(t)=\fint_M s_{g(t)},
+ \qquad V=\operatorname{Vol}_{g(0)}M.
+\]
+
+定义初始数据
+
+\[
+ m_0=\min_Ms_{g(0)},\qquad b_0=-m_0>0,
+ \qquad \bar s_0=\fint_Ms_{g(0)}.
+\]
+
+任选 \(a>0\) 使
+
+\[
+ \mathcal Y(M)\le-a\sqrt V.
+\]
+
+则 \(b_0\ge a\)。对任意 \(K>\max\{0,\max_Ms_{g(0)}\}\)，令
+
+\[
+ \tau_K=\inf\{t:\max_Ms_{g(t)}\ge K\}.
+\]
+
+\textbf{定理 A（原续研组合推导）。} 在第1节静态输入及外部定理 F 下，\(\tau_K\) 在最大光滑时间之前存在，且
+
+\[
+ \boxed{
+ \tau_K\le\frac{V}{2p_0}
+ \left[
+ K\left(1+\log\frac{b_0}{a}\right)-\bar s_0+b_0-a
+ \right].
+ }
+\tag{3.A}
+\]
+
+它既不预设流永生，也不预设曲率、直径或 Sobolev 常数统一有界。
+
+\subsection{Yamabe 上界约束标量最小值}\label{v3-yamabe-ux4e0aux754cux7ea6ux675fux6807ux91cfux6700ux5c0fux503c}
+
+令 \(m(t)=\min s_{g(t)}\)。由于 Yamabe 不变量为负，每个时刻有 \(m(t)<0\)。对于任意非零正函数 u，
+
+\[
+ \frac{\int(6|du|^2+s u^2)}{(\int u^4)^{1/2}}
+ \ge m(t)\frac{\int u^2}{(\int u^4)^{1/2}}
+ \ge m(t)\sqrt V.
+\]
+
+最后一个方向使用 \(m(t)<0\) 与 Hölder。取下确界并使用 \(Y([g(t)])\le\mathcal Y(M)\)，得
+
+\[
+ \boxed{m(t)\le-a<0.}
+\tag{3.3.1}
+\]
+
+\subsection{两条精确演化关系}\label{v3-ux4e24ux6761ux7cbeux786eux6f14ux5316ux5173ux7cfb}
+
+使用 \(\Delta=\operatorname{div}\nabla\)，标量演化为
+
+\[
+ \partial_t s=\Delta s+2|\operatorname{Ric}^{\circ}|^2
+             +\frac12s(s-\bar s).
+\]
+
+最小值是局部 Lipschitz 函数；在其几乎处处可微处，最大值原理给
+
+\[
+ m'\ge\frac{-m}{2}(\bar s-m)\ge0.
+\tag{3.3.2}
+\]
+
+因此 \(m_0\le m(t)\le-a\)。
+
+另一方面，\(\partial_t dV=(\bar s-s)dV\)，故
+
+\[
+ \boxed{
+ \bar s'=\frac{2P(g(t))}{V}-\frac12\operatorname{Var}(s),
+ \quad \operatorname{Var}(s)=\fint(s-\bar s)^2.
+ }
+\tag{3.3.3}
+\]
+
+\subsection{有界标量区间最多能持续多久}\label{v3-ux6709ux754cux6807ux91cfux533aux95f4ux6700ux591aux80fdux6301ux7eedux591aux4e45}
+
+在任意满足 \(s\le K\)、\(K\ge0\) 的光滑时间区间 \([0,t]\) 内，点态 \((s-m)(K-s)\ge0\) 给
+
+\[
+ \operatorname{Var}(s)\le(K-\bar s)(\bar s-m)
+                      \le(K-m)(\bar s-m).
+\]
+
+由式(3.3.2)，
+
+\[
+ \frac12\operatorname{Var}(s)
+ \le\left(1+\frac{K}{-m}\right)m'.
+\]
+
+令 \(u_t=-m(t)\)，积分得
+
+\[
+ \frac12\int_0^t\operatorname{Var}(s)\,du
+ \le K\log\frac{b_0}{u_t}+b_0-u_t
+ \le K\log\frac{b_0}{a}+b_0-a.
+\tag{3.3.4}
+\]
+
+这里最后一步使用 \(u_t\ge a\) 和 \(K\ge0\)。将式(3.3.4)与(3.3.3)积分合并，并使用 \(P\ge p_0\)、\(\bar s(t)\le K\)，得到
+
+\[
+ \boxed{
+ \frac{2p_0}{V}t
+ \le K\left(1+\log\frac{b_0}{a}\right)-\bar s_0+b_0-a.
+ }
+\tag{3.3.5}
+\]
+
+这条不等式本身不使用新延拓定理。
+
+\subsection{新延拓定理排除提前终止的分支}\label{v3-ux65b0ux5ef6ux62d3ux5b9aux7406ux6392ux9664ux63d0ux524dux7ec8ux6b62ux7684ux5206ux652f}
+
+若流在达到 K 之前已有有限最大时间 T，则在 \([0,T)\) 上 \(m_0\le s\le K\)。因此 \(\bar s\) 有界。
+
+定义
+
+\[
+ c(t)=\exp\left(-\frac12\int_0^t\bar s(u)du\right),
+ \quad \widetilde t=\int_0^t c(u)du,
+ \quad \widetilde g(\widetilde t)=c(t)g(t).
+\]
+
+在有限区间上 c 有正的上下界。直接求导可核对 \(\partial_{\widetilde t}\widetilde g=-2\operatorname{Ric}(\widetilde g)\)， 且 \(s_{\widetilde g}=s_g/c\) 有界。外部定理 F 允许延拓 \(\widetilde g\)，再按其体积归一化即可延拓 g，矛盾。
+
+若永远没有达到 K，且流永生，则式(3.3.5)与 \(t\to\infty\) 矛盾。因此 \(\tau_K<T_{\max}\) 存在；在 \(t<\tau_K\) 使用(3.3.5)，令 \(t\uparrow\tau_K\)，得到(3.A)。证毕。
+
+\section{两项直接后果}\label{v3-ux4e24ux9879ux76f4ux63a5ux540eux679c}
+
+\subsection{永生时，历史最大正标量至少线性增长}\label{v3-ux6c38ux751fux65f6ux5386ux53f2ux6700ux5927ux6b63ux6807ux91cfux81f3ux5c11ux7ebfux6027ux589eux957f}
+
+定义
+
+\[
+ K(t)=\max\left\{0,\sup_{0\le u\le t}\max_Ms_{g(u)}\right\}.
+\]
+
+将 K(t) 用作式(3.3.5)的区间上界，有
+
+\[
+ \boxed{
+ K(t)\ge
+ \frac{(2p_0/V)t+\bar s_0-b_0+a}
+ {1+\log(b_0/a)}.
+ }
+\tag{3.4.1}
+\]
+
+因而若流永生，
+
+\[
+ \liminf_{t\to\infty}\frac{K(t)}t
+ \ge\frac{2p_0/V}{1+\log(b_0/a)}>0.
+\]
+
+这是历史最大值的增长，不是每个时刻 \(\max_Ms_{g(t)}\) 都单调，也不是有限时间爆破率。
+
+\subsection{第一主线的显式拓扑版本}\label{v3-ux7b2cux4e00ux4e3bux7ebfux7684ux663eux5f0fux62d3ux6251ux7248ux672c}
+
+若使用 \(p_0=2\pi^2Aj_0\)、\(a=4\pi\sqrt{2A/V}\)，则
+
+\[
+ \boxed{
+ \tau_K\le\frac{V}{4\pi^2Aj_0}
+ \left[K\left(1+\log\frac{b_0}{a}\right)-\bar s_0+b_0-a\right].
+ }
+\tag{3.4.2}
+\]
+
+若初始度量已归一化为 \(s=-4\)，则 \(b_0=4\)、\(\bar s_0=-4\)、\(a\le4\)，从而
+
+\[
+ \boxed{
+ \tau_K\le\frac{V}{2p_0}
+ \left[K\left(1+\log\frac4a\right)+8-a\right].
+ }
+\tag{3.4.3}
+\]
+
+对原平衡族，已经成立的线性 \(\mathcal J\)-gap 给 \(p_{0,j}\ge cA_jh_j\)。对选定的 \(s=-4\) 初始代表，若已有 \(V_j\le C A_j\)，则 a 有统一正下界，故
+
+\[
+ \boxed{\tau_{K,j}\le\frac{C_K}{h_j}.}
+\tag{3.4.4}
+\]
+
+原稿可选的低缺陷代表满足这一体积预算：由 \(8\pi^2A+P\le R\le8\pi^2AU+4P\)， \(U=1+O(h)\)、\(\mathcal J=O(h)\)，得 \(R=O(3.A)\)，再用 \(s=-4\) 的 \(V=(R-P)/4\)。
+
+式(3.4.4)是上界，不是精确寿命公式，也不决定 O11 的系数。它使用已证线性阶，不需要先完成无密度 O10 或 O11。
+
+\begin{thebibliography}{E99}
+\small
+\bibitem[R02]{R02} 本会话证明补充，\emph{新外部定理的实际接入与定量 Ricci 流推论}，2026-10-07。\path{source_notes/R02_Quantitative_Ricci_Flow.md}。
+
+\bibitem[E03]{OAI351Flow} OpenAI，\emph{Bounded scalar curvature and smooth extension of four-dimensional Ricci flow}，2026-09-24。同一指定版本目录：\path{preprints/Bounded-scalar-curvature-and-smooth-extension-of-four-dimensional-Ricci-flow-September-24-2026/}；主定理 \path{thm:extension}。
+
+\bibitem[E05]{Ishida2008} M. Ishida，\emph{The Normalized Ricci Flow on Four-Manifolds and Exotic Smooth Structures}，arXiv:0807.2169，§§2--3。\url{https://arxiv.org/abs/0807.2169}。
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,548 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}[proposition]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[proposition]{Remark}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\E}{\mathcal E}
+\newcommand{\J}{\mathcal J}
+\newcommand{\avint}{\frac{1}{V}\int_M}
+\title{Classical Curvature Bounds and Quantitative Einstein Gaps\\
+\large Inheritance, differential coercivity, and extremal constructions}
+\author{}
+\date{4 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Classical monopole estimates already imply normalized Einstein gaps away
+from a critical topological ratio, and classical surgery constructions
+already provide matching bounds for certain unnormalized curvature
+functionals. We derive these implications in a common normalization and
+identify the additional content of uniform critical separation and linear
+coercivity. Explicit formal integral data distinguish the latter from the
+listed classical numerical inequalities. We also record the subsequent
+finite-scale construction that lowers the candidate balanced coefficient
+below four, without identifying it with the unrestricted optimum.
+\end{abstract}
+
+\section{The common problem and the objects being compared}
+
+The problem is how closely a smooth metric can satisfy the Einstein
+equation under specified topological and actual-field constraints.
+Topology supplies integral relations. An actual field also supplies
+differential relations with the curvature of the \emph{same} metric.
+The question is whether these coupled relations impose quantitative
+constraints beyond the numerical curvature budgets, and which geometries
+realize the resulting bounds. Obstructions, constructions, variation,
+degeneration and exact realization address different parts of this question.
+
+On a closed oriented smooth four-manifold, write
+\begin{gather}
+ V=\Vol(M,g),\quad I=\int_Ms\,dV_g,\quad
+ S=\int_Ms^2\,dV_g,\quad P=\int_M|\Ric^\circ|^2\,dV_g,\\
+ R=\int_M|\Ric|^2\,dV_g=P+S/4,\qquad
+ W_\pm=\int_M|W^\pm|^2\,dV_g,\qquad T_\pm=2\chi\pm3\tau.
+\end{gather}
+Weyl norms are Hilbert--Schmidt norms of operators on two-forms, not
+four-index tensor norms. Thus
+\begin{equation}\label{eq:cw}
+ 4\pi^2T_\pm=S/24+2W_\pm-P/2,
+ \qquad \int_M|\mathrm{Rm}_{\mathrm{op}}|^2=8\pi^2\chi+P.
+\end{equation}
+Set
+\begin{equation}
+ \E(g)=\inf_{\lambda\ne0}
+ \frac{\int_M|\Ric-\lambda g|^2}{\lambda^2V},
+ \qquad \J(g)=\frac{4P}{R}\quad(R>0).
+\end{equation}
+For $R>0$, completing the square in $1/\lambda$ gives
+\begin{equation}\label{eq:defects}
+ \E=4-\frac{I^2}{VR}
+     =\J+\frac{S-I^2/V}{R}\ge\J.
+\end{equation}
+This remains an infimum identity when $I=0$, although no finite
+$\lambda$ minimizes the expression. Constant scalar curvature gives
+$\E=\J$. For a Ricci-flat metric, $R=0$, $\J$ is undefined and
+$\E=4$; exclusions of Ricci-flat metrics in positive-budget gauge
+applications therefore use the actual equations separately.
+
+In particular, $\inf R$, $\inf P$ and $\inf\J$ are different variational
+problems. The pointwise identity $P(g)=R(g)-S(g)/4$ does not imply
+\begin{equation}\label{eq:not-inf}
+ \inf_gP(g)=\inf_gR(g)-\tfrac14\inf_gS(g).
+\end{equation}
+A common recovery sequence gives an upper bound on $\inf P$, not a
+lower bound against other competitors.
+
+\section{Normalized gaps already implied by classical estimates}
+
+Let $a$ be an actual determinant class with
+$p=(a_g^+)^2\ge A>0$. In the monopole or conformal-solvability range of
+the classical estimates \cite{LeBrunRicci}, one has
+\begin{equation}\label{eq:classical}
+ S\ge32\pi^2p,\qquad
+ \sqrt S+\sqrt{6W_+}\ge6\sqrt2\,\pi\sqrt p.
+\end{equation}
+These bounds do not require a diameter, noncollapse or uniform Sobolev
+assumption. They already use actual Seiberg--Witten equations and
+Weitzenb\"ock identities.
+
+Weighted Cauchy--Schwarz yields, for every $\beta>0$,
+\begin{equation}\label{eq:Dbeta}
+ D_\beta=(1+\beta^{-1})S+6(\beta+1)W_+-72\pi^2p\ge0.
+\end{equation}
+With $T=T_+$, substitution of \eqref{eq:cw} gives exactly
+\begin{equation}\label{eq:Dcw}
+ D_\beta=(\beta+1)
+ \left[\frac{8-\beta}{8\beta}S+\frac32P+12\pi^2T\right]
+ -72\pi^2p.
+\end{equation}
+
+\begin{proposition}[A classical subcritical ratio bound]
+If $0<t:=T/A<2/3$ and \eqref{eq:classical} holds, then
+\begin{equation}\label{eq:old-gap}
+ \J(g)\ge\frac{2-3t}{2-t}.
+\end{equation}
+If $T\le0$ and $R>0$, then $\J(g)\ge1$ directly from
+\eqref{eq:cw}.
+\end{proposition}
+\begin{proof}
+Choose $\beta+1=6/t$, so $\beta>8$ and
+$12\pi^2(\beta+1)T=72\pi^2A\le72\pi^2p$. Consequently
+\[
+ 0\le D_\beta\le(\beta+1)
+ \left[\frac{8-\beta}{8\beta}S+\frac32P\right],
+ \qquad \frac PS\ge\frac{\beta-8}{12\beta}.
+\]
+Here $S>0$ by the scalar estimate. Substituting in
+$\J=4(P/S)/(P/S+1/4)$ proves \eqref{eq:old-gap}.
+For $T\le0$, \eqref{eq:cw} gives $P\ge S/12+4W_+$, hence
+$R\le4P$.
+\end{proof}
+Thus, for $0<\delta\le2/3$,
+\begin{equation}
+ T/A\le2/3-\delta\quad\Longrightarrow\quad
+ \J\ge\frac{9\delta}{4+3\delta}.
+\end{equation}
+This is an algebraic consequence of classical joint estimates, not a new
+analytic theorem. A lower bound for $P$ alone cannot simply be divided by
+an uncontrolled $R$, but the \emph{joint} classical estimates do give a
+normalized ratio bound.
+
+\section{The critical separation and its precise input}
+
+At $t=2/3$, the preceding lower bound vanishes. The aligned parameter is
+$\beta=8$, for which
+\begin{equation}\label{eq:D8}
+ D_8=108\pi^2(T-2p/3)+\frac{27}{2}P.
+\end{equation}
+When $p=A$ and $T=2A/3$, the numerical statement $D_8\ge0$ reduces to
+$P\ge0$.
+
+Classical equality analysis is stronger than this numerical statement.
+The convex-hull theory identifies the relevant equality geometries
+\cite{LeBrunConvex}; the strict inequality in Theorem 7.5 of the 2026
+overview \cite{LeBrunOverview} excludes equality in its curvature bound
+when its convex budget is positive. That theorem does not state a uniform
+positive improvement. The distinction is
+\[
+ (\forall g)\ \J(g)>0\quad\not\Longrightarrow\quad
+ \inf_g\J(g)>0.
+\]
+The 2006 convex-geometry paper and the 2026 overview are different
+references; Theorem 7.5 belongs to the latter.
+
+\subsection*{The quantitative input supplied by the current manuscript}
+On a negative Yamabe representative $\widehat g$ with $s_{\widehat g}=-4$,
+the single-solution parameter theorem supplies
+\begin{equation}\label{eq:raw}
+ (1+b)\left(r+\frac{D_8}{8V}\right)\ge c_{8,\mathrm{raw}}>0,
+ \quad r=P(\widehat g)/V,\quad b=\frac{(-a^2)_+}{V}.
+\end{equation}
+Its input is the actual unperturbed monopole solution for the specified
+structure, with $p\ge A>0$; the same structure is retained throughout
+the argument. This analytic theorem, not \eqref{eq:Dbeta} alone, is the
+additional ingredient. The full input and proof are in
+\path{research/paper/sections/tracefree_gap.tex} and
+\path{research/paper/sections/single_solution_coercivity.tex}, relative
+to the Skill root.
+
+For completeness, the algebraic transfer is short. Put
+$d=(T/A-2/3)_+$ and $\nu=(-a^2)_+/A$. The scalar budget gives
+$A/V\le1/(2\pi^2)$, and \eqref{eq:D8} implies
+\begin{equation}\label{eq:raw-upper}
+ r+\frac{D_8}{8V}\le\frac{43}{16}r+\frac{27}{4}d.
+\end{equation}
+For $\delta=S(g)-S(\widehat g)\ge0$, conformal invariance of Weyl
+energy and \eqref{eq:cw} give
+\begin{equation}\label{eq:conformal}
+ P(g)=P(\widehat g)+\delta/12,\quad
+ R(g)=R(\widehat g)+\delta/3,
+\end{equation}
+\[
+ \J(g)=\frac{R(\widehat g)}{R(\widehat g)+\delta/3}\J(\widehat g)
+        +\frac{\delta/3}{R(\widehat g)+\delta/3}.
+\]
+If $\J(g)<1$, this yields $\J(\widehat g)\le\J(g)<1$ and
+$r=4\J(\widehat g)/(4-\J(\widehat g))\le4\J(g)/3$.
+Since $b\le\nu/(2\pi^2)$, \eqref{eq:raw}--\eqref{eq:raw-upper}
+give the manuscript's N1 conclusion
+\begin{equation}\label{eq:N1}
+ \boxed{\J(g)+d\ge\frac{c_*}{1+\nu/(2\pi^2)},\qquad
+ c_*:=\min\{1,4c_{8,\mathrm{raw}}/27\}.}
+\end{equation}
+The branch $\J(g)\ge1$ is immediate. In particular $a^2\ge0$
+already removes this negative-square cost; requiring $a^2\ge T$ is
+sufficient in the previously stated version but is not necessary for
+\eqref{eq:N1}.
+
+The relative-shortfall version is also available. With
+$y=(T-a^2)_+/A$, \eqref{eq:cw} yields
+\[
+ \frac{(-T)_+}{V}\le\frac r{8\pi^2},\qquad
+ b\le\frac r{8\pi^2}+\frac y{2\pi^2}.
+\]
+In the $\J<1$ branch $r<4/3$, so the same proof gives
+\begin{equation}\label{eq:N1-y}
+ \J(g)+d\ge\frac{c}{1+y}.
+\end{equation}
+The positive gap for $\J$ itself is the right-hand side minus $d$.
+For example a uniform $\varepsilon$ in the zero-cost branch gives
+$\J\ge\varepsilon/2$ when $T/A\le2/3+\varepsilon/2$.
+Thus the additional conclusion concerns a neighborhood of the critical
+ratio, not only equality at one value.
+
+An all-metric application must supply the stated solution on every
+negative Yamabe representative with uniform budgets. Older conformal
+supply and positive projection imply Yamabe negativity by the ordinary
+monopole Weitzenb\"ock identity: a nonnegative constant-scalar
+representative forces the spinor to vanish, then $p=0$.
+Pin-minus descent uses actual lifted solutions and lifted metrics; it
+does not require arbitrary non-invariant solutions on the cover.
+
+\section{Classical recovery and what it does not minimize}
+
+For a minimal complex surface of general type $X$, put
+\[
+ M=X\#k\overline{\CP}^{\,2}\#\ell(S^1\times S^3),\qquad
+ A=c_1^2(X),\quad Q=k+4\ell,\quad h=Q/A.
+\]
+LeBrun's Theorem 4.3 \cite{LeBrunRicci} gives
+\begin{equation}
+ \inf_gR(g)=8\pi^2(A+Q).
+\end{equation}
+The recovery construction simultaneously has
+\[
+ S\longrightarrow32\pi^2A,\qquad
+ P\longrightarrow8\pi^2Q,
+\]
+and vanishing scalar variance in the corresponding normalized recovery.
+Consequently
+\begin{equation}\label{eq:old-upper}
+ \inf_g\J(g)\le\frac{4h}{1+h},\qquad
+ \inf_g\E(g)\le\frac{4h}{1+h}.
+\end{equation}
+These upper bounds inherit classical constructions. Related BF
+connected-sum results also compute Ricci-energy infima by matching
+lower estimates and constructions \cite{IshidaLeBrun}.
+
+For the handle-free case, the full-curvature bounds in Section 11 of
+\cite{LeBrunOptimal}, combined with \eqref{eq:cw}, imply
+\begin{equation}
+ 8\pi^2\max\{0,k-A/3\}\le\inf_gP(g)\le8\pi^2k.
+\end{equation}
+Neither this interval nor the exact value of $\inf R$ determines
+$\inf P$. Equation \eqref{eq:not-inf} cannot be used to close that gap.
+
+\begin{proposition}[Equality of the two low-defect infima]
+Suppose all conformal classes under consideration are negative Yamabe
+classes and the class of admissible metrics is closed under their
+Yamabe replacements. If $\inf_g\E(g)<1$, then
+$\inf_g\E(g)=\inf_g\J(g)$.
+\end{proposition}
+\begin{proof}
+Equation \eqref{eq:defects} gives $\inf\J\le\inf\E<1$.
+Take a $\J$-minimizing sequence eventually below one. The convex
+combination in \eqref{eq:conformal} gives
+$\J(\widehat g_i)\le\J(g_i)$. Since
+$\E(\widehat g_i)=\J(\widehat g_i)$, the reverse inequality of
+infima follows.
+\end{proof}
+In the inherited small-$h$ family, \eqref{eq:old-upper} makes this
+applicable for $h<1/3$. This is not an unrestricted identity of infima
+for all manifolds or energy ranges.
+
+\section{Why the linear constraint contains additional information}
+
+The manuscript's I40/I41 chain and its single-solution continuation give
+\begin{equation}\label{eq:linear}
+ \Sigma\le C\{\Pi+\sqrt{\Pi Y}\},\qquad
+ \Sigma=S-32\pi^2p,\quad\Pi=P+D_2,\quad Y=(T-a^2)_+.
+\end{equation}
+When $a^2\ge T$, this becomes $\Sigma\le C(P+D_2)$.
+Its analytic mechanism is the cancellation of a non-small compatible
+background in the same actual spinor's Hessian identity, followed by
+the determinant budget and a same-field weak Bianchi test. It rules
+out transferring the entire cost into independent scalar relaxation.
+
+The following exact algebraic test isolates this additional content.
+It is not a metric or a monopole construction.
+
+\begin{proposition}[Formal budgets do not force linear order]
+Fix $A>0$. For $0<h\le1/4$, the formal data
+\begin{align}
+ p&=A,&T_+&=A(1-h),&T_-&=A(1+h)/3,\\
+ P&=8\pi^2Ah^2,&S&=32\pi^2A(1+h+2h^2),\\
+ W_-&=\tfrac23\pi^2Ah^2,&
+ W_+&=\tfrac43\pi^2A(1-2h)+\tfrac23\pi^2Ah^2
+\end{align}
+satisfy both Chern--Weil identities, $W_\pm>0$, the scalar lower
+bound, and $D_\beta>0$ for every $\beta>0$. Nevertheless
+\begin{equation}\label{eq:formal-small}
+ \J=\frac{4h^2}{1+h+3h^2}=o(h).
+\end{equation}
+\end{proposition}
+\begin{proof}
+The Chern--Weil and positivity statements follow by substitution.
+Set $X=2\sqrt{1+h+2h^2}$ and
+$Z=\sqrt{1-2h+h^2/2}$. Then
+\[
+ \frac{D_\beta}{8\pi^2A}
+ =\left(\frac X{\sqrt\beta}-\sqrt\beta Z\right)^2+(X+Z)^2-9.
+\]
+For $0<h\le1/4$, $9-X^2-Z^2=4-2h-17h^2/2>0$, and
+\[
+ 4X^2Z^2-(9-X^2-Z^2)^2
+ =\tfrac94h^2(32-40h-25h^2)>0.
+\]
+Thus $2XZ>9-X^2-Z^2$, proving $(X+Z)^2>9$.
+Finally $R=8\pi^2A(1+h+3h^2)$ gives \eqref{eq:formal-small}.
+\end{proof}
+For these data,
+\begin{equation}
+ D_2=108\pi^2Ah^2,\quad
+ \Pi=116\pi^2Ah^2,\quad
+ \Sigma=32\pi^2A(h+2h^2).
+\end{equation}
+Assigning the formal square $a^2=T_+$ gives $Y=0$; then
+\eqref{eq:linear} fails for small $h$ with any fixed $C$.
+Hence \eqref{eq:linear} is not a consequence of the \emph{listed
+numerical constraints}. This does not establish realizability of the
+formal data, integrality of their topology, or non-derivability from
+every possible classical geometric theorem. It identifies exactly the
+extra information needed from the actual equations.
+
+In the specified actual balanced family, the resulting conclusion is
+\[
+ c h_j\le\alpha_j:=\inf_g\E(g)=\inf_g\J(g)
+ \le\frac{4h_j}{1+h_j}.
+\]
+The linear scale is established in that range. It concerns
+$T_+/A=1-h$, whereas the critical N1 comparison concerns $T_+/A=2/3$;
+these are different parameter regions of the shared theory.
+
+\section{The subsequent extremal construction changes the candidate value}
+\label{sec:subfour}
+
+The web comparison predates the strict finite-scale cell construction.
+The 4 October continuation now supplies a once-blown-up complex-hyperbolic
+ball with complete transition region included. In background
+normalization $\Ric=-6g$, its explicit profile has
+\begin{equation}\label{eq:cell-ball}
+ \frac{J_6}{8\pi^2}:=
+ \frac{1}{8\pi^2}\int|\Ric+6g|^2
+ \in[0.999116243135324311\pm2.24\cdot10^{-19}]<1.
+\end{equation}
+The input coefficients are exact dyadic rationals. Removable bolt
+singularities are eliminated algebraically before complex-ball
+quadrature. Third-order matching at the outer boundary admits smooth
+exact-collar replacement with an $O(\delta^3)$ change in $J_6$.
+Scaling the metric by six gives the same integrated cost $J_1$ on
+the $\Ric=-g$ background. The complete derivation and dated continuation
+notes are retained in the accompanying \path{sources/20261004/} directory.
+
+Here is the global implication, independent of optimizer convergence.
+Let a complete cell have topology
+ $C=D\#k\overline{\CP}^{\,2}\#\ell(S^1\times S^3)$, exact CH
+outer collar, and $q=k+4\ell>0$. Write $d=\Vol(D)$,
+$v=\Vol(C)$, $I_C=\int_Cs$, $t_C=I_C+4v$, and
+$J=\int_C|\Ric+g|^2$. Inserting $n_j=o(A_j)$ copies in covers
+with volume $2\pi^2A_j$ gives
+\begin{gather}
+ V_j=2\pi^2A_j+n_j(v-d),\\
+ I_j=-4V_j+n_jt_C,\qquad R_j=4V_j+n_j(J-2t_C),\\
+ \E(g_j)=\frac{4n_jJ-n_j^2t_C^2/V_j}
+ {4V_j+n_j(J-2t_C)},\qquad
+ \frac{\E(g_j)}{n_jq/A_j}\longrightarrow\frac{J}{2\pi^2q}.
+\end{gather}
+This is the inherited complete-cell transfer, including volume and
+total scalar curvature, not only a local Ricci estimate.
+
+For balanced proportions $k_j/Q_j\to2/9$ and
+$\ell_j/Q_j\to7/36$, replace the blowups by the new cells and use
+standard shrinking handles. A suitable cover tower supplies disjoint
+fixed-radius CH balls at a positive density; $Q_j=o(A_j)$ ensures
+enough sites. Thus, choosing a sufficiently small smoothing width,
+\begin{equation}\label{eq:subfour}
+ \limsup_j\frac{\alpha_j}{h_j}
+ \le\frac{28}{9}+\frac{J_1}{9\pi^2}<3.999215<4.
+\end{equation}
+This disproves universal optimality of the candidate four in this
+admissible family. It does not automatically apply to an arbitrary
+previously fixed tower, compute the unrestricted optimum, or prove
+that all near-minimizers split into these cells.
+
+\subsection*{A further distinction in the latest continuation}
+Pure-handle cells cannot achieve the analogous isolated saving. For
+$C=D\#\ell(S^1\times S^3)$, the relative identities give
+\begin{equation}
+ J-32\pi^2\ell=
+ \frac{S_C-16d}{12}+4(W_-)_C+\frac14\int_C(s+4)^2\ge0.
+\end{equation}
+Indeed, insertion into a CH cover and the classical scalar bound give
+$S_C\ge16d$. Shrinking handles approach the threshold. However,
+this does \emph{not} imply additivity of the optimal costs for mixed
+blowup--handle cells: such a cell need not split along exact CH collars.
+Nor is a mixed-cell infimum automatically the unrestricted global
+infimum. These distinctions preserve the global variational question
+without assigning a new mandatory route.
+
+Strict curvature-energy savings through gluing have precedents, including
+the Weyl-energy theorem of Malchiodi--Malizia \cite{MalchiodiMalizia}.
+A Weyl saving alone does not imply \eqref{eq:cell-ball}: the scalar and
+Ricci costs must be paid on the same metric. At fixed topology,
+\[
+ \Delta P=2\Delta(W_++W_-)+\Delta S/12.
+\]
+Thus the contribution to compare is the complete coupled cost and its
+global transfer, not the general idea of gluing-induced energy reduction.
+
+\section{Scope, suppliers, and the remaining global information}
+
+Classical monopoles, special monopoles, BF nonvanishing and actual
+Pin-minus lifting supply different topological and solvability inputs
+\cite{Kotschick,IshidaLeBrun,Pin}. They enter common analysis only after
+their quantifiers, projection budgets, class squares and covering
+normalizations are satisfied. BF is not independent of monopole supply
+merely because its nonvanishing theorem has a different name. A formal
+twisted class is not a Pin-minus solution.
+
+The established finite-density endpoint has the form
+\begin{equation}
+ p\ge A>0,\quad a^2\ge T_+,\quad\chi/A\le B<\infty
+ \quad\Longrightarrow\quad
+ \kappa_\beta:=\avint|\Ric+g|^2+\frac{D_\beta}{V}
+ \ge c(B)\frac{(\beta-2)^2}{\beta^2},
+\end{equation}
+under its original actual conformal-supply assumptions. The manuscript
+also gives a nonoptimal polynomial lower control on $c(B)$.
+This is different from the single-solution finite-parameter estimate,
+which uses $D_\beta/(\beta V)$. Every fixed finite density is covered;
+a density-independent constant still requires additional information.
+In particular the bounded-density balanced family is already within
+the former theorem's scope.
+
+\begin{center}\small
+\begin{tabularx}{\textwidth}{@{}p{0.29\textwidth}X@{}}\toprule
+Statement & Mathematical position after the 4 October continuation\\\midrule
+Subcritical normalized bound \eqref{eq:old-gap} &
+Direct consequence of classical joint curvature estimates.\\
+Recovery upper bound \eqref{eq:old-upper} &
+Inherited classical construction, not a newly supplied lower bound.\\
+N1 and square-loss versions &
+Uniform quantitative non-saturation from the stated actual-solution theorem.\\
+I40/I41 linear coercivity &
+Additional same-field constraint, not implied by the displayed classical numerical budgets.\\
+Linear order in the balanced range &
+Established; the best first coefficient is not determined.\\
+Universal candidate coefficient four &
+Disproved by the finite-scale construction on suitable balanced cover towers.\\
+O10 &
+Every fixed finite-density version established; density-independent version open.\\
+Full BF classical comparison &
+Known supplied-class comparison is available; the complete class budget on the different BF families remains a separate issue.\\
+Exact realization &
+Existing conditional realization theorems remain valid; vanishing gap alone is not an existence theorem.\\\bottomrule
+\end{tabularx}
+\end{center}
+
+The common scientific statement is therefore precise: where classical
+budgets degenerate or fail to determine the defect scale, the actual-field
+equations can provide further uniform coercivity; real constructions
+test its scale, sharpness and geometric scope. The single-cell result
+is one such test, not a replacement for the all-metric theory.
+
+This comparison supplements ongoing research; it does not set an order
+of tasks or prescribe a decomposition, symmetry class, numerical ansatz
+or proof technology. A new identity, a broader actual supplier, a sharp
+global bound, a counterexample or an exact realization may each change
+the mathematics. Local information becomes a global conclusion only
+through a proved implication at the required scale.
+
+\section*{Reading connections}
+Paths below are relative to the Geometric Analysis Skill root.
+\begin{itemize}
+\item Conventions and current statements:
+\path{references/conventions-and-literature.md} and
+\path{references/results-and-questions.md}.
+\item N1: \path{research/paper/sections/tracefree_gap.tex}.
+Linear analysis: \path{research/paper/sections/linear_coercivity.tex}
+and \path{research/paper/sections/single_solution_coercivity.tex}.
+\item Finite-density endpoint:
+\path{research/paper/sections/finite_density_endpoint.tex} and
+\path{research/paper/sections/web_primitive_rate.tex}.
+\item Global extremal reduction:
+\path{research/paper/sections/variational_geometry.tex}.
+Complete-cell transfer:
+\path{research/sources/continuation/20260928_relative_cell_cost.md},
+Sections 1--2.
+\item Latest construction and its further distinctions:
+\path{research/supplements/sources/20261004/}, containing the original
+construction and review texts, frozen coefficients and integration code.
+\end{itemize}
+This supplement derives the comparison formulas and formal-budget test
+above. N1, I40/I41 and the endpoint are used with their original proofs
+and inputs; they are not re-proved by a literature comparison. The latest
+construction is a dated addition, not a claim to have exhausted related
+literature or all subsequent research.
+
+\begin{thebibliography}{9}
+\bibitem{LeBrunRicci} C. LeBrun,
+\emph{Ricci Curvature, Minimal Volumes, and Seiberg--Witten Theory},
+\href{https://arxiv.org/abs/math/0003068}{arXiv:math/0003068},
+especially Sections 2--4 and Theorem 4.3.
+\bibitem{LeBrunConvex} C. LeBrun,
+\emph{Four-Manifolds, Curvature Bounds, and Convex Geometry},
+\href{https://arxiv.org/abs/math/0611450}{arXiv:math/0611450} (2006),
+Theorem A and Theorem 4.10.
+\bibitem{LeBrunOverview} C. LeBrun,
+\emph{An Overview of Einstein 4-Manifolds},
+\href{https://arxiv.org/abs/2609.03033v1}{arXiv:2609.03033v1} (2026),
+Theorems 7.4--7.5.
+\bibitem{LeBrunOptimal} C. LeBrun,
+\emph{Curvature Functionals, Optimal Metrics, and the Differential
+Topology of 4-Manifolds},
+\href{https://arxiv.org/abs/math/0404251}{arXiv:math/0404251}, Section 11.
+\bibitem{IshidaLeBrun} M. Ishida and C. LeBrun,
+\emph{Curvature, Connected Sums, and Seiberg--Witten Theory},
+\href{https://arxiv.org/abs/math/0111228v2}{arXiv:math/0111228v2},
+especially Section 5.
+\bibitem{Kotschick} D. Kotschick,
+\emph{Monopole Classes and Einstein Metrics},
+\href{https://arxiv.org/abs/math/0306022}{arXiv:math/0306022}.
+\bibitem{Pin} M. Ishida, S. Matsuo and N. Nakamura,
+\emph{Yamabe Invariants and the $\mathrm{Pin}^{-}(2)$-Monopole Equations},
+\href{https://arxiv.org/abs/1505.05948}{arXiv:1505.05948}.
+\bibitem{MalchiodiMalizia} A. Malchiodi and F. Malizia,
+\emph{Weyl Energy and Connected Sums of Four-Manifolds},
+\href{https://arxiv.org/abs/2505.17752v1}{arXiv:2505.17752v1},
+Theorem 1.1.
+\end{thebibliography}
+\end{document}

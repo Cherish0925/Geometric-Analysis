@@ -1,0 +1,271 @@
+% Qiushi Research Report Template
+% Compile with LuaLaTeX.
+% If the LuaLaTeX font cache is unavailable, prefix the compile command with TEXMFVAR=/tmp/qiushi_texmf_var.
+% Keep figure files under figures/ or ../../workspace/figures/.
+% Use refs.bib with \cite{...} when references are used.
+% LaTeX supplies section numbers; section titles contain title text only.
+% Long paths, URLs, and commands can use \qpath, \qurl, and \qcode.
+\documentclass[11pt,a4paper]{ctexart}
+
+% ── 报告元信息 ─────────────────────────────────────────────
+\providecommand{\ReportTitle}{报告标题}
+\providecommand{\ReportSubtitle}{副标题（可选）}
+\providecommand{\ReportAuthor}{Qiushi Discovery Engine}
+\providecommand{\ReportOrganization}{Qiushi Discovery Engine}
+\providecommand{\ReportClassification}{公开}
+\providecommand{\ReportVersion}{v1.0}
+\providecommand{\ReportDate}{\today}
+
+% ── 数学与单位 ─────────────────────────────────────────────
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}\sisetup{detect-all=true,per-mode=symbol}
+
+% ── 图形 ──────────────────────────────────────────────────
+\usepackage{graphicx}
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}\pgfplotsset{compat=1.18}
+\graphicspath{{figures/}{../../workspace/figures/}}
+
+% ── 表格 ──────────────────────────────────────────────────
+\usepackage{booktabs,longtable,array,tabularx,multirow,makecell,threeparttable}
+
+% ── 引用守卫 ──────────────────────────────────────────────
+\newif\ifQiushiHasCitations
+\let\QiushiOriginalCite\cite
+\renewcommand{\cite}{\global\QiushiHasCitationstrue\QiushiOriginalCite}
+\let\QiushiOriginalNocite\nocite
+\renewcommand{\nocite}{\global\QiushiHasCitationstrue\QiushiOriginalNocite}
+
+% ── 版式 ──────────────────────────────────────────────────
+\usepackage[inner=2.5cm,outer=2.5cm,top=2.6cm,bottom=2.7cm,headheight=24pt]{geometry}
+\usepackage{setspace}\setstretch{1.22}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.4em plus 0.1em}
+\raggedbottom
+\emergencystretch=2em
+\clubpenalty=10000
+\widowpenalty=10000
+
+\usepackage{microtype}
+\usepackage{caption,subcaption}
+\usepackage{enumitem}\setlist{itemsep=0.3em,topsep=0.5em,parsep=0.1em}
+\usepackage{float}
+\usepackage{afterpage}
+\usepackage{listings}
+
+% ── 配色 ──────────────────────────────────────────────────
+\definecolor{ReportPrimary}{HTML}{1F3A5F}
+\definecolor{ReportAccent}{HTML}{8A5A2B}
+\definecolor{ReportMuted}{HTML}{6F7782}
+\definecolor{ReportLight}{HTML}{F4F7FA}
+\definecolor{ReportRule}{HTML}{D6DDE5}
+\definecolor{ReportFinding}{HTML}{2D5A87}
+\definecolor{ReportRecommend}{HTML}{2D7A4F}
+\definecolor{ReportRisk}{HTML}{B7472A}
+\definecolor{ReportInsight}{HTML}{6B4E94}
+\definecolor{QiushiBlue}{HTML}{003F88}      % 浙大求是蓝（页脚品牌色）
+
+% ── 中文 section 用 ctexset，不叠 titlesec ─────────────────
+\ctexset{
+  section/format = {\Large\bfseries\color{ReportPrimary}},
+  section/aftertitle = {\par\vspace{0.1em}{\color{ReportRule}\rule{\textwidth}{0.4pt}}\par},
+  subsection/format = {\large\bfseries\color{ReportPrimary}},
+  subsubsection/format = {\normalsize\bfseries}
+}
+
+% ── 页脚（Nature 标准：左品牌 + 右页码 + 上方细线） ────────
+% 页脚：Qiushi Engine | <页码>，靠一根细线与正文分隔。
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[L]{\small\color{QiushiBlue}\textbf{Qiushi Engine}}
+\fancyfoot[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{ReportRule}\leaders\hrule height \footrulewidth\hfill}}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[L]{\small\color{QiushiBlue}\textbf{Qiushi Engine}}%
+  \fancyfoot[R]{\small\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0.4pt}%
+  \renewcommand{\footrule}{\hbox to\headwidth{\color{ReportRule}\leaders\hrule height \footrulewidth\hfill}}%
+}
+
+% ── 图表注 ──────────────────────────────────────────────
+\captionsetup{font=small,labelfont={bf,color=ReportPrimary},labelsep=quad,skip=0.5em}
+
+% ── 默认 banded rows ─────────────────────────────────────
+\rowcolors{2}{ReportLight}{white}
+
+% ── 链接 ──────────────────────────────────────────────────
+\usepackage{xurl}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=ReportPrimary,citecolor=ReportAccent,urlcolor=ReportPrimary,
+            pdftitle={\ReportTitle}}
+\usepackage{bookmark}
+\usepackage{cleveref}
+\DeclareUrlCommand\qpath{\urlstyle{tt}\small}
+\DeclareUrlCommand\qurl{\urlstyle{same}\small}
+\newcommand{\qcode}[1]{{\small\ttfamily\detokenize{#1}}}
+\Urlmuskip=0mu plus 2mu
+\newcolumntype{Y}{>{\raggedright\arraybackslash\hspace{0pt}}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash\hspace{0pt}}p{#1}}
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  breakatwhitespace=false,
+  columns=fullflexible,
+  keepspaces=true
+}
+\crefname{section}{节}{节}
+\crefname{subsection}{小节}{小节}
+\crefname{table}{表}{表}
+\crefname{figure}{图}{图}
+\crefname{equation}{式}{式}
+
+% ── 科学说明框：核心发现 / 洞察 / 建议 / 注意 ─────────────
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{breakable,skins}
+\newtcolorbox{keyfindingbox}[1][关键发现]{
+  breakable, enhanced,
+  colback=ReportFinding!7, colframe=ReportFinding,
+  coltitle=white, fonttitle=\bfseries,
+  title=#1, boxrule=0.6pt, arc=2mm,
+  left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{insightbox}[1][洞察]{
+  breakable, enhanced,
+  colback=ReportInsight!7, colframe=ReportInsight,
+  coltitle=white, fonttitle=\bfseries,
+  title=#1, boxrule=0.6pt, arc=2mm,
+  left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{recommendbox}[1][建议]{
+  breakable, enhanced,
+  colback=ReportRecommend!7, colframe=ReportRecommend,
+  coltitle=white, fonttitle=\bfseries,
+  title=#1, boxrule=0.6pt, arc=2mm,
+  left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{riskbox}[1][注意]{
+  breakable, enhanced,
+  colback=ReportRisk!7, colframe=ReportRisk,
+  coltitle=white, fonttitle=\bfseries,
+  title=#1, boxrule=0.6pt, arc=2mm,
+  left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newcommand{\QiushiCallout}[2]{\begin{keyfindingbox}[#1]#2\end{keyfindingbox}}
+% 示例：
+% \QiushiCallout{关键结果}{用连续文字写出一个中心结果或解释。}
+% \begin{insightbox}[洞察] 写出深刻解释或核心理解。\end{insightbox}
+
+% ── 封面 ──────────────────────────────────────────────────
+\providecommand{\MakeReportCover}{%
+  \begin{titlepage}
+  \pagecolor{ReportPrimary}\afterpage{\nopagecolor}
+  \color{white}
+  \vspace*{2.5cm}
+  \begin{flushleft}
+    {\Huge\bfseries \ReportTitle\par}\vspace{0.6cm}
+    {\Large\color{ReportLight}\ReportSubtitle\par}\vspace{1.5cm}
+    {\color{ReportLight}\rule{6cm}{0.6pt}}
+  \end{flushleft}
+  \vfill
+  \begin{flushleft}
+    {\large \ReportAuthor\par}\vspace{0.2cm}
+    {\normalsize\color{ReportLight}\ReportOrganization\par}\vspace{0.6cm}
+    {\normalsize\color{ReportLight}\ReportDate\par}\vspace{0.4cm}
+    {\small\color{ReportLight}机密等级：\ReportClassification\quad|\quad\ReportVersion\par}
+  \end{flushleft}
+  \end{titlepage}}
+
+% ============================================================
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\MakeReportCover
+\hypersetup{pageanchor=true}
+\setcounter{page}{1}
+
+\thispagestyle{plain}
+\tableofcontents
+\newpage
+
+\section*{摘要}
+\addcontentsline{toc}{section}{摘要}
+
+用连续、自洽的文字概括研究问题、核心思想、主要方法、关键证据、中心结果和科学意义。
+不要把摘要写成清单，也不要写成项目日志。
+
+\newpage
+
+\section{研究背景与问题定义}
+
+说明研究背景、开放问题、问题的重要性，以及本报告真正回答的科学问题。定义读者理解全文
+所需的主要对象、变量、物理或数学设定和适用条件。
+
+\section{核心思想与关键贡献}
+
+提出本工作的中心洞察和真实贡献。说明它为什么不是已有方法的简单重述，它改变了什么理解，
+以及哪些结果或产物承载了这个贡献。
+
+\section{理论与方法}
+
+展开研究所需的理论、模型、方法、算法、证明结构、物理图像或数学推导。理解中心结果所必需
+的核心数学和物理推导应保留在主报告中。
+
+% 公式插入范式：
+% \begin{equation}
+%   \mathcal{L}u = f .
+%   \label{eq:main-example-zh}
+% \end{equation}
+
+\section{实验与验证}
+
+说明用于检验核心思想的仿真、物理实验、证明、数据、对照、控制实验或验证流程。解释测量或
+计算了什么，以及为什么这些证据能够回答研究问题。
+
+\begin{figure}[htbp]
+\centering
+\fbox{\rule{0pt}{1.8in}\rule{0.85\textwidth}{0pt}}
+\caption{将该占位图替换为真正承载科学结果的图。图表应在相关科学论证中解释其意义，不要
+单独制造逐图详读目录。}
+\label{fig:report-example-zh}
+\end{figure}
+
+\begin{table}[htbp]
+\caption{表注。}
+\label{tab:report-example-zh}
+\begin{tabularx}{\textwidth}{YYY}
+\toprule
+列 A & 列 B & 列 C \\
+\midrule
+-- & -- & -- \\
+-- & -- & -- \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{结果分析与讨论}
+
+用连续文字分析结果。将图、表、公式、测量和计算结果与科学问题联系起来；比较不同方案，
+解释数学或物理意义，并说明证据真正支持了什么。
+
+\section{结论、意义与应用}
+
+总结最终科学结果、为什么重要、以及在确有依据时可以如何使用。结论必须精确并由证据支撑。
+
+\appendix
+\section{复现说明与附录}
+
+在这里放简洁复现信息、辅助推导、实现细节、文献注释或扩展表格。不要把理解研究必需的中心
+理论、物理解释、结果分析或应用讨论移出主报告。
+
+% 这些标题是功能角色，不是制造大量嵌套小标题的许可。主报告应是连续的科学论述，
+% 不是 notes 扩写、博客体、工程日志、文献摘录、实现记录或凑页数材料。
+
+\ifQiushiHasCitations
+  \IfFileExists{refs.bib}{%
+    \bibliographystyle{unsrt}
+    \bibliography{refs}}{}
+\fi
+
+\end{document}

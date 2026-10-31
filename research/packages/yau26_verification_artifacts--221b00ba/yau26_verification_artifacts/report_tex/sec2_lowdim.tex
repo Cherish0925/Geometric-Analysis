@@ -1,0 +1,19 @@
+\section{已解决的维数：$n=2$ 与 $n=3$}\label{sec:lowdim}
+
+\begin{theorem}\status{已证（依赖所引经典定理）}\label{thm:lowdim}
+$Q_2$ 与 $Q_3$ 成立。更精确地：
+\begin{enumerate}
+\item $n=2$：每个闭曲面承载常曲率度量，故任意区间 $[a,b]$ 均可。
+\item $n=3$，正分支：任意 $0<a<b$ 均可（$P_3^+$ 对一切 $\varepsilon<1$ 成立）。
+\item $n=3$，负分支：$P_3^-$ 对一切 $\varepsilon<1/3$ 成立。
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+（1）一致化定理；二维 Einstein 度量即常 Gauss 曲率度量。
+
+（2）Hamilton 定理 \cite{Hamilton}：闭三维流形上 $\Ric>0$ 的度量沿（归一化）Ricci 流收敛到常正截面曲率度量，后者是 Einstein 度量。
+
+（3）三维中 Weyl 张量为零，曲率算子在 Ricci 特征标架下对角，截面曲率为 $K_{ij}=\frac12(r_i+r_j-r_k)$。若 $r_i\in[-1-\varepsilon,-1+\varepsilon]$ 且 $\varepsilon<1/3$，则一切二平面的截面曲率 $\le\frac12(-1+3\varepsilon)<0$。闭的负截面曲率三维流形是非球面的、不可约的，其基本群不含 $\Z^2$（Preissmann），由几何化定理（Perelman \cite{Perelman}）它承载双曲度量，即 $\Ric=-2g_{\mathrm{hyp}}$ 的 Einstein 度量。
+\end{proof}
+
+三维的论证依赖“Ricci 控制全曲率”；从四维起 Weyl 张量不受 Ricci 夹逼的代数控制，这正是第~\ref{sec:logweyl}节构造所利用的自由度。

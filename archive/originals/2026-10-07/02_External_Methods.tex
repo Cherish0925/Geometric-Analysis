@@ -1,0 +1,213 @@
+\documentclass[UTF8,11pt,fontset=none]{ctexart}
+\usepackage[a4paper,margin=25mm,headheight=15pt,footskip=13mm]{geometry}
+\usepackage{fontspec}
+\IfFontExistsTF{TeX Gyre Termes}{\setmainfont{TeX Gyre Termes}}{\setmainfont{TeXGyreTermes}}
+\IfFontExistsTF{TeX Gyre Heros}{\setsansfont{TeX Gyre Heros}}{\setsansfont{TeXGyreHeros}}
+\IfFontExistsTF{DejaVu Sans Mono}{\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]}{\setmonofont{Latin Modern Mono}}
+\IfFontExistsTF{Noto Serif CJK SC}{\setCJKmainfont{Noto Serif CJK SC}[AutoFakeSlant=0.15]}{\setCJKmainfont{FandolSong-Regular.otf}[BoldFont=FandolSong-Bold.otf,ItalicFont=FandolKai-Regular.otf]}
+\IfFontExistsTF{Noto Sans CJK SC}{\setCJKsansfont{Noto Sans CJK SC}}{\setCJKsansfont{FandolHei-Regular.otf}}
+\IfFontExistsTF{Noto Sans Mono CJK SC}{\setCJKmonofont{Noto Sans Mono CJK SC}}{\setCJKmonofont{FandolFang-Regular.otf}}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,esint,bm}
+\usepackage{booktabs,longtable,array,calc}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=1.7em,topsep=4pt}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,fontsize=\small}
+\usepackage{xurl}
+\usepackage[unicode,hidelinks,bookmarksnumbered]{hyperref}
+\usepackage{bookmark}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 第一科学主线：近期数学补充}
+\fancyhead[R]{\small 2026-10-07}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\setlength{\emergencystretch}{3em}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{3.5pt plus 1pt}
+\linespread{1.12}
+\setlength{\abovedisplayskip}{10pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{10pt plus 2pt minus 2pt}
+\allowdisplaybreaks[2]
+\renewcommand{\arraystretch}{1.15}
+\let\cleardoublepage\clearpage
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{2}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{assumption}[theorem]{前置}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{说明}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\id}{\operatorname{Id}}
+\newcommand{\dd}{\,\mathrm d}
+\pdfstringdefDisableCommands{\def\fint{int}\def\mathcal#1{#1}\def\mathfrak#1{#1}\def\mathscr#1{#1}\def\operatorname#1{#1}\def\texorpdfstring#1#2{#2}}
+
+\renewcommand{\thesection}{2.\arabic{section}}
+\title{第一科学主线：近期研究补充\\[6pt]\large 2．外部新定理、集中流分裂与多尺度约化}
+\author{数学研究交接稿}\date{2026年10月7日}
+\begin{document}
+\maketitle
+\tableofcontents
+\clearpage
+本分卷整理此前对 openai/math 的定理阅读和方法迁移，不进行新的网络查新。版本沿用来源记录中的提交 \texttt{adc7f1241b42e322a6451854ab7e4b4c146bf78a}。外部结果按照指定稿件的陈述列为输入；本汇编不将它们的验证状态、固定背景假设或形式化范围扩大。以下方法接口与已经接通的第三卷动态推论分开。\cite{R01,R02}
+
+\section{第342族：固定几乎复结构的驯服与相容}\label{v2-ux7b2c342ux65cfux56faux5b9aux51e0ux4e4eux590dux7ed3ux6784ux7684ux9a6fux670dux4e0eux76f8ux5bb9}
+
+\textbf{外部主定理。} 设 \(J\) 为闭光滑四流形上的光滑几乎复结构。若存在驯服 \(J\) 的辛形式，则存在与同一个 \(J\) 相容的辛形式。一般不保证保持原上同调类，不断言 \(J\) 可积，也不给出新度量的曲率能量比较。\cite{OAI342}
+
+\subsection{分离对象保留了几何方向}\label{v2-ux5206ux79bbux5bf9ux8c61ux4fddux7559ux4e86ux51e0ux4f55ux65b9ux5411}
+
+源文的反证从正二维流 \(\mathscr P\) 及 \(J\)-反不变的 \(L^2\) 修正 \(\mathscr Q\) 出发，使 \[
+ \mathscr T=\mathscr P+\mathscr Q
+\] 满足其规定的闭性和对闭形式的消去关系。正流由复直线方向上的测度 \(\lambda(x,\ell)\) 表示，投影质量为 \(\mu\)。源文先得到 \[
+ \mu(B_r(x))\le Cr^2,
+\] 以及角度二阶矩 \[
+ \mathcal A_r=
+ \iint_{d(x,y)<r}|\ell-\tau_{yx}m|^2\,
+ d\lambda(x,\ell)\,d\lambda(y,m)=O(r^4).
+\tag{2.1}
+\] 标量能量测度只有质量，没有自动包含这里的定向二维平面、正性或闭性。
+
+\subsection{正密度部分的闭性}\label{v2-ux6b63ux5bc6ux5ea6ux90e8ux5206ux7684ux95edux6027}
+
+令 \(E\) 为正二维密度点集。源文证明 \[
+ \boxed{\mathscr P_E=\mathbf1_E\mathscr P\quad\text{仍然闭合}.}
+\tag{2.2}
+\] 取光滑径向核 \(h\)，定义正则化密度 \[
+ f_r(x)=r^{-2}\int h(d_g(x,y)^2/r^2)\,d\mu(y).
+\] 它在固定背景上光滑、有界，并趋于密度的固定倍数。将 \(b(f_r)\mathscr T\) 用作截断流后，边界项分成修正 \(\mathscr Q\) 的全导数项与正流 \(\mathscr P\) 的切向导数项。
+
+对修正部分，令 \(M_r(x)=\mu(B_r(x))\)，源文使用 \[
+ r^{-3}\int |\mathscr Q|M_r
+ \le
+ \left(\int|\mathscr Q|^2r^{-2}M_r\right)^{1/2}
+ \left(\int r^{-4}M_r\right)^{1/2}\longrightarrow0.
+\] 第二因子由 Fubini 与四维球体积控制；第一因子使用密度在体积几乎处处为零及控制收敛。
+
+对正流部分，闭性把切向微分转为法向微分。所得主误差同时包含方向差 \(\delta=|\ell-\tau_{yx}m|\) 与横向位移 \(z^\perp/r\)，不能先拆掉这种乘积结构。以 \(\mathcal T_r=o(r^2)\) 表示横向矩，源文得到 \[
+ Cr^{-3}\sqrt{\mathcal A_r}\sqrt{\mathcal T_r}
+ =r^{-3}O(r^2)o(r)=o(2.1).
+\tag{2.3}
+\] 这使 \(b(c_h\theta)\mathscr P\) 闭合；再取 \(b_n(s)=1-e^{-ns}\)，先令 \(r\downarrow0\)，再令 \(n\to\infty\)，得到式(2.2)。不需要关于 \(n\) 一致的 \(b'_n\) 上界。
+
+\subsection{最后不是自配对，而是原流与残余流的交叉配对}\label{v2-ux6700ux540eux4e0dux662fux81eaux914dux5bf9ux800cux662fux539fux6d41ux4e0eux6b8bux4f59ux6d41ux7684ux4ea4ux53c9ux914dux5bf9}
+
+去掉正密度部分，置 \[
+ \mathscr P'=\mathscr P-\mathscr P_E,\qquad
+ \mathscr T'=\mathscr T-\mathscr P_E=\mathscr P'+\mathscr Q.
+\] \(\mathscr T'\) 仍闭合。第二个正因子现在位于零密度中心，因此正则化的负尾误差趋零，而 \[
+ \liminf_{r\downarrow0}
+ \langle S_r\mathscr P,*S_r\mathscr P'\rangle_{L^2}\ge0.
+\] 源文的零配对关系展开为 \[
+ \begin{aligned}
+ 0={}&\langle S_r\mathscr P,*S_r\mathscr P'\rangle
+ +\langle S_r\mathscr P,*S_r\mathscr Q\rangle\\
+ &+\langle S_r\mathscr Q,*S_r\mathscr P'\rangle
+ +\|S_r\mathscr Q\|_2^2.
+ \end{aligned}
+\tag{2.4}
+\] 混合项消失，式(2.4)迫使 \(\mathscr Q=0\)。于是 \(\mathscr P=\mathscr T\) 消去全部闭形式，却又必须与给定驯服形式严格正配对，矛盾。这里摘录的是来源的关键闭合机制，不替代它的质量、热核及角度估计全证明。
+
+\subsection{O10 的具体接入条件}\label{v2-o10-ux7684ux5177ux4f53ux63a5ux5165ux6761ux4ef6}
+
+原实际正旋量在非零处选定 \(J\)，并有 \[
+ \Lambda_J^- =\omega_J^\perp\cap\Lambda^+,\qquad
+ \Lambda_J^+=\mathbb R\omega_J\oplus\Lambda^-.
+\] \(F_{\mathcal A}^+\) 已沿 \(\omega_J\)，所以 \(F_{\mathcal A}\) 在该处已经 \(J\)-不变。剩余问题是零点、处处正性与退化，而非再作一次不变投影。
+
+尤其原混合手术族满足 \[
+ a_\epsilon^2=A-k,\quad T_+=A-k-4\ell,\quad
+ c_2(S^+_{a_\epsilon})[M]=\ell.
+\tag{2.5}
+\] 当 \(\ell>0\) 时，这个具体正旋量丛没有处处非零截面。不能将它无条件正规化成全局单位旋量来套用外部主定理。
+
+尚未完成的接入有两项：从 O10 的实际集中取得源文要求的定向正二维流及其质量、角度、闭性；再取得同一个对象被要求为正且被实际方程迫使为零的配对。固定背景的热核、坐标和投影常数不能未经证明视为对退化几何统一。闭流本身可以代表非零同调类，故闭性单独不产生矛盾。\cite{R01,R02}
+
+\section{第351族：退化 Ricci-flat 树上的椭圆约化}\label{v2-ux7b2c351ux65cfux9000ux5316-ricci-flat-ux6811ux4e0aux7684ux692dux5706ux7ea6ux5316}
+
+\textbf{外部设置。} 固定有限的四维 Ricci-flat 根树，根部 ALE 衰减阶 \(q>1\)，每个拼接商群非平凡，并固定端部识别。指定顶点上的光滑收敛、至二十阶的端部度量控制，以及至十阶的尺度化加权 Ricci 误差 \(M\to0\)。源定理允许不同颈长以互不相关的速率趋于无穷。\cite{OAI351Tree}
+
+控制的量是长度量纲为二的重整化 Einstein--Hilbert 泛函 \[
+ \mathscr H(g)=\lim_{R\to\infty}
+ \left[\int_{r<R}s_g\,dV_g-
+ \int_{r=R}(\partial_jg_{ij}-\partial_ig_{jj})n_i\,dS\right].
+\] 源结论为 \(\mathscr H(g_j)=o(M_j)\)。它不同于四维尺度不变的 \(P\)、\(\mathcal E\)，也不为所有不同树提供统一常数。
+
+\subsection{保留核、余核和临界颈模态}\label{v2-ux4fddux7559ux6838ux4f59ux6838ux548cux4e34ux754cux9888ux6a21ux6001}
+
+有限个核心测试区分核；紧支撑源保留余核；颈部临界球面通道作为匹配数据保留。通过规范选择和一致逆估计，构造真实的模障碍族 \(h_*(L,z)\)，并取得 \[
+ \|g-h_*\|\le CM,\qquad
+ \|\operatorname{Ric}(h_*)\|\le CM,\qquad
+ |\mathscr H(g)-\mathscr H(h_*)|\le CM^2.
+\tag{2.6}
+\] 范数采用源文的尺度化加权定义。这里没有先假设线性化可逆，亦未要求全部无穷小 Ricci-flat 变形可积。
+
+\subsection{幂--对数展开与合法路径选择}\label{v2-ux5e42ux5bf9ux6570ux5c55ux5f00ux4e0eux5408ux6cd5ux8defux5f84ux9009ux62e9}
+
+颈长变量的无穷远不是普通解析坐标邻域。将 \(t=e^{-L}\) 代入，并不自动使幂--对数渐近成为收敛幂级数。源文要求递归系数在同一个普通参数域内全纯，指数集局部有限，且每一阶余项具有严格更好的指数阶。
+
+在该精确函数类中，路径选择保留有限组符号和极限关系，并得到 \[
+ \int\left(\sum_\alpha|dz_\alpha|+
+ \sum_e e^{-cL_e}|dL_e|\right)<\infty.
+\tag{2.7}
+\] 设 \(F=\mathscr H(h_*)\)，\(J\) 为源文的非负平方 Ricci 观测量，则 \[
+ |dF|\le C\sqrt J\left(\sum|dz|+\sum e^{-cL}|dL|\right).
+\tag{2.8}
+\] 若定理失败，源文的比较产生 \(F\ne0\)、\(F\to0\)、\(F^2\ge c_0J\)。沿保持这些关系的路径，式(2.8)给 \(\log|F|\) 的总变差有限，却要求 \(\log|F|\to-\infty\)，矛盾。
+
+\subsection{O11 接口：必须保留正确的零阶参考值}\label{v2-o11-ux63a5ux53e3ux5fc5ux987bux4fddux7559ux6b63ux786eux7684ux96f6ux9636ux53c2ux8003ux503c}
+
+要用于 O11，尚须建立目标 \(P\) 的对应约化，保留原手术标记及真正零阶参考值，并使总误差达到 \(o(Q_j)\)。近驻点选择并不自动提供高阶加权界或固定有限树；收费核心可以标量平坦而非 Ricci-flat，普通 AE 端还可能有平凡群。数量随 \(j\) 增长的核心不能仅逐个获得小误差而不控制总和。
+
+最新严格次四构造已经否定相应族的标准首项最优性。因此，这里不能以引用树定理为名，重新预设全局参考值就是 \(8\pi^2Q\)。
+
+同族 Ricci 流论文还有一种闭合形态：保留最外层集中尺度与全部子尺度，最终取得 \[
+ cK^2\le o(2.1)(K+1)^2,
+\] 直接迫使 \(K\to0\)，而非先假设 \(K\) 有界。它的方法价值是保留坏量参与同一矛盾；其时空估计不能换符号后用于静态 O10。\cite{R01,R02}
+
+\section{第348族及其他直接套用的边界}\label{v2-ux7b2c348ux65cfux53caux5176ux4ed6ux76f4ux63a5ux5957ux7528ux7684ux8fb9ux754c}
+
+第348族的 \(L^2\) Einstein gap 假设闭、单连通、四维且 \(\sec\ge0\)。原文先用 \[
+ |\operatorname{Rm}|\le Cs
+\] 及几何比较建立初始控制，再传播动态阈值尾部 \[
+ w(t)=(|\operatorname{Rm}|-K(t))_+,
+ \quad K'=C_qK^2,
+ \quad\int w(t)^2\le e^{Ct}\int w(0)^2.
+\] 负 Einstein 的积分逼近不提供这种曲率符号控制。其标题接近本项目，不能据此认为它已经覆盖 O10。\cite{OAI348,R01}
+
+其余在来源中筛过的接口亦保留：hypersymplectic 变形需要三条全局闭正二形式，多个 SW 解不自动满足；标量平方与实单纯体积的下界不能通过相减独立下确界变成 \(P\) 的锐利下界；\(-4\Delta+s\ge1\) 在 \(s=-4\) 的闭代表上被常数函数直接否定；CAT(0)、截面曲率和 RCD 假设不能由当前积分残差自动获得。
+
+\section{外部源的归属与验证范围}\label{v2-ux5916ux90e8ux6e90ux7684ux5f52ux5c5eux4e0eux9a8cux8bc1ux8303ux56f4}
+
+上述结果是源文陈述和机制摘录。此前记录核对过第342族的形式化入口及 comparator 指向，但没有运行整个 Lean 库；第348族的形式化说明所覆盖的精确分类，不自动覆盖同族后来增加的全部 \(L^2\)-gap 分析。源仓库计数和验证状态属于指定版本元数据，不作为本项目数学结论。
+
+只有第三卷中明确调用的四维有限时间标量延拓定理，已经在这些续研中接成完整下游推论。正流与树约化到 O10/O11 的最终接口仍未建立，不计作已完成定理。
+
+\begin{thebibliography}{E99}
+\small
+\bibitem[R01]{R01} 本会话研究记录，\emph{openai/math 对 O10/O11 的研究接口}，2026-10-07。\path{source_notes/R01_External_Research_Transfer.md}。
+
+\bibitem[R02]{R02} 本会话证明补充，\emph{新外部定理的实际接入与定量 Ricci 流推论}，2026-10-07。\path{source_notes/R02_Quantitative_Ricci_Flow.md}。
+
+\bibitem[E01]{OAI342} OpenAI，\emph{Taming implies compatibility on four-manifolds}，2026-09-23。指定版本下目录：\path{preprints/Taming-implies-compatibility-on-four-manifolds-September-23-2026/}；特别是 \path{build/sections/06-splitting.tex} 与 \path{07-conclusion.tex}。版本入口：\url{https://github.com/openai/math/tree/adc7f1241b42e322a6451854ab7e4b4c146bf78a}。
+
+\bibitem[E02]{OAI351Tree} OpenAI，\emph{Path selection and an elliptic inequality on degenerating Ricci-flat trees}，2026-09-24。同一指定版本目录：\path{preprints/Path-selection-and-an-elliptic-inequality-on-degenerating-Ricci-flat-trees-September-24-2026/}。
+
+\bibitem[E04]{OAI348} OpenAI，\emph{An \(L^2\) Einstein Gap for Nonnegatively Curved Four-Manifolds}，2026-10-05。同一指定版本目录：\path{preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/}。
+
+\end{thebibliography}
+
+\end{document}

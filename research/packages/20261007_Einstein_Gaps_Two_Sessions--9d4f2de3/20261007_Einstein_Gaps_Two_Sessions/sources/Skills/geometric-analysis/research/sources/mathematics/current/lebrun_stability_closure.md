@@ -1,0 +1,489 @@
+---
+title: "Polarized closure of the integral Einstein obstruction"
+subtitle: "Gauge input, uniform constants, and all Einstein signs"
+date: "22 September 2026"
+fontsize: 11pt
+geometry: margin=1in
+header-includes:
+  - \usepackage{mathrsfs}
+  - \setlength{\emergencystretch}{3em}
+---
+
+# Statement and analytic dependency
+
+Let \(X\) be a closed connected oriented smooth four-manifold, let
+
+\[
+T_X=2\chi(X)+3\tau(X)>0,
+\qquad M=X\#k\overline{\mathbb{CP}}^{\,2}
+                 \#\ell(S^1\times S^3),\qquad D=k+4\ell.
+\]
+
+Assume that a Spin\(^c\) structure with real first Chern class \(c\) has
+a nonzero ordinary Seiberg--Witten invariant, with its insertion retained
+if the expected dimension is positive. When \(b_+(X)=1\), nonvanishing is
+in the small-perturbation chamber, not an arbitrarily chosen chamber.
+Write \(A=c^2\ge T_X>0\), and define
+
+\[
+\mathcal E(g)=\inf_{\lambda\ne0}
+ \frac{\int_M|\operatorname{Ric}_g-\lambda g|_g^2\,d\mu_g}
+ {\lambda^2\operatorname{Vol}_g(M)}.
+\]
+
+**Stability theorem, relative to the integral calibration lemma below.**
+There is a universal constant \(\varepsilon>0\) such that every smooth
+metric on \(M\) satisfies both
+
+\[
+\mathcal E(g)+\left(\frac{T_X-D}{A}-\frac23\right)_+
+ \ge\varepsilon,
+\qquad
+\mathcal E(g)+\left(\frac13-\frac D{T_X}\right)_+
+ \ge\varepsilon.                                      \tag{1}
+\]
+
+In particular, if \(X\) is any minimal complex surface of general type,
+including \(b_+(X)=1\), then \(A=T_X=c_1^2(X)>0\), and
+
+\[
+\boxed{\mathcal E(g)+
+ \left(\frac13-\frac{k+4\ell}{c_1^2(X)}\right)_+
+ \ge\varepsilon.}                                    \tag{2}
+\]
+
+This note proves the gauge-to-obstruction implication, including its
+constants and the zero Einstein constant. Its nonclassical analytic input
+is stated precisely in Section 3. The full proof of that lemma remains
+the integral calibration manuscript; restating it here is not an
+independent verification of its Hessian and weak-Bianchi arguments.
+Neither a universal supply of special monopole classes on arbitrary
+four-manifolds nor positivity of a universal special-class invariant is
+assumed.
+
+# The actual polarized class and every auxiliary weight
+
+## Sign selection and the chamber
+
+Fix \(g\), and let \(H=H_g^+\) be its positive harmonic subspace. Pull
+\(c\) back to \(M\). Choose exceptional generators \(E_{j,H}\), **with
+signs chosen at this \(H\)**, so that
+
+\[
+E_{i,H}\cdot E_{j,H}=-\delta_{ij},\qquad
+c\cdot E_{j,H}=0,\qquad c_H^+\cdot E_{j,H}\le0.
+\]
+
+Polarized Seiberg--Witten gluing supplies an actual Spin\(^c\) structure
+with
+
+\[
+a_H=c-\sum_j E_{j,H}                                  \tag{3}
+\]
+
+and nonzero invariant at \(H\). Thus its unperturbed equations are
+solvable for every \(H\)-adapted metric. The classical input is the
+construction in LeBrun's Proposition 3.2 [L01], not a consequence merely
+of the following intersection-form calculation:
+
+\[
+\begin{split}
+(a_H^+)^2
+ &=(c_H^+)^2-2\sum_j c_H^+\cdot E_{j,H}
+                  +\left|\sum_j E_{j,H}^+\right|^2
+ \ge(c_H^+)^2\ge A,\\
+a_H^2&=A-k\ge T_X-k-4\ell=T_M.
+\end{split}                                           \tag{4}
+\]
+
+For \(b_+=1\), choose the positive generator \(\omega_H\) so that
+\(c\cdot\omega_H>0\). This is possible because \(c^2>0\). The sign
+selection implies
+
+\[
+a_H\cdot\omega_H=c\cdot\omega_H-\sum_j E_{j,H}\cdot\omega_H>0.
+\]
+
+The corresponding base projection of \(\omega_H\) has positive square.
+Hence the small-perturbation chamber agrees with the one in the
+chamber-compatible blow-up formula. Handle additions do not change the
+intersection form. If the base invariant uses an insertion \(z\), retain
+it and add the \(\ell\) degree-one loop insertions. Indeed,
+
+\[
+\frac{a_H^2-T_M}{4}=\frac{A-T_X}{4}+\ell.
+\]
+
+The surgery and insertion statements used here are classical gauge
+theory [OS]; this dimension equality alone would not prove nonvanishing.
+
+For a minimal general-type complex surface, the canonical Spin\(^c\)
+structure has \(c=-K_X\), \(K_X^2>0\), and \(K_X\cdot[\omega]>0\) for a
+Kähler form. When \(b_+=1\), put \(K_X\) in the forward cone. Its pairing
+with every unit forward positive generator is at least \(\sqrt{K_X^2}>0\).
+The zero-perturbation discriminant for \(-K_X\) is therefore negative,
+identifying the small chamber with the canonical symplectic chamber
+where nonvanishing holds [LL]. This is why \(b_+=1\) is included. A
+symplectic structure without this chamber verification would not suffice.
+
+## Conformal covariance, with the bundle identification explicit
+
+Let \(\mathfrak q_g\) denote the quadratic spinor-to-self-dual-two-form
+map, normalized by \(|\mathfrak q_g(\Phi)|^2=|\Phi|^4/8\).
+For any smooth \(f>0\), set
+
+\[
+\widehat g=f^{-2}g=e^{2u}g,\qquad u=-\log f.
+\]
+
+The Hodge star on two-forms is unchanged, so
+\(H_{\widehat g}^+=H_g^+=H\). Use the **same** Spin\(^c\) structure
+from (3) to solve the unperturbed equations for \(\widehat g\):
+
+\[
+D_{\mathcal A}^{\widehat g}\widehat\Phi=0,\qquad
+-iF_{\mathcal A}^+=\mathfrak q_{\widehat g}(\widehat\Phi).
+\]
+
+Let \(\beta:S_g\to S_{\widehat g}\) be the fibrewise unitary spinor
+identification. The conformal identities are
+
+\[
+D_{\mathcal A}^{\widehat g}(e^{-3u/2}\beta\Phi)
+ =e^{-5u/2}\beta D_{\mathcal A}^{g}\Phi,
+\qquad
+\mathfrak q_{\widehat g}(\beta v)=e^{2u}\mathfrak q_g(v),
+\]
+
+where the second equality compares covariant two-forms. With
+\(\Phi=f^{-3/2}\beta^{-1}\widehat\Phi\), they give
+
+\[
+D_{\mathcal A}^{g}\Phi=0,\qquad
+\mathfrak q_g(\Phi)=f^{-1}\mathfrak q_{\widehat g}(\widehat\Phi),
+\qquad -iF_{\mathcal A}^+=f\mathfrak q_g(\Phi).           \tag{5}
+\]
+
+This is the conformal computation underlying [L06, Lemma 3.7], applied
+only to the one conformal class needed here. The exact order is
+
+\[
+\forall g\ \exists\mathfrak s_g\ \forall f\in C^\infty(M,(0,\infty))
+\ \exists(\mathcal A_f,\Phi_f)\text{ solving (5)}.       \tag{6}
+\]
+
+No continuity of \(g\mapsto\mathfrak s_g\) is required. The class may
+change between metrics; it is held fixed while \(f\) varies. Ordinary
+solvability just at \(g\) would not establish (6).
+
+# The analytic input and the uniform constant
+
+All Ricci norms below are tensor Hilbert--Schmidt norms. The norm on
+\(W^+\) is its Hilbert--Schmidt norm as an endomorphism of
+\(\Lambda^+\). Put \(V=\operatorname{Vol}(g)\), \(T=T_M\), and
+
+\[
+\begin{gathered}
+\mathscr O=\operatorname{Orb}\operatorname{diag}(-1/6,1/12,1/12),
+F=\operatorname{dist}(W^+,\mathscr O)^2,\qquad
+q=-s+\sqrt6|W^+|,\qquad p=(a_H^+)^2,\\
+\Delta=\int q_+^2-72\pi^2p,\qquad
+\kappa=\frac1V\left(\int(|\operatorname{Ric}+g|^2+F)+\Delta\right),
+\qquad B=\frac{(-a_H^2)_+}{V}.
+\end{gathered}
+\]
+
+**Integral calibration lemma (the nonclassical input).** For an actual
+structure satisfying (6) and \(p>0\), the signed spectral monopole
+inequality gives \(\Delta\ge0\), and a universal \(c_{\rm cal}>0\)
+satisfies
+
+\[
+                    (1+B)\kappa\ge c_{\rm cal}.         \tag{7}
+\]
+
+The proof in the integral calibration manuscript constructs bounded
+weighted spinors, obtains a covariant Hessian estimate using integral
+Ricci and connection curvature, forms a smooth polynomial Weyl tensor,
+and tests weak Bianchi against its divergence. Its hypotheses involve
+the selected structure at the metric under consideration, not an
+all-metric invariant. This note uses (7) explicitly; it does not replace
+that proof by an appeal to a previous round's conclusion.
+
+We next give the complete constant transfer. Put
+
+\[
+r=V^{-1}\int|\operatorname{Ric}+g|^2,\qquad
+d=(T/A-2/3)_+.
+\]
+
+The algebraic comparison detailed in the appendix yields
+
+\[
+\kappa\le\frac{245}{2}r+972\pi^2\frac AVd.              \tag{8}
+\]
+
+The scalar monopole bound gives
+
+\[
+32\pi^2A\le\int s_-^2\le\int s^2\le32V+8rV,
+\qquad A/V\le(4+r)/(4\pi^2).
+\]
+
+Consequently \(r\le1\) implies \(\kappa\le1215(r+d)\).
+For \(r\le1/4\), Chern--Weil and the reverse triangle inequality give
+
+\[
+\begin{split}
+4\pi^2T/V
+&=V^{-1}\int\left(s^2/24+2|W^+|^2
+                    -|\operatorname{Ric}^{\circ}|^2/2\right)\\
+&\ge(4-2\sqrt r)^2/24-r/2\ge1/4.
+\end{split}                                           \tag{9}
+\]
+
+Since \(a_H^2\ge T>0\), we have \(B=0\) in this branch, even when the
+family allows arbitrarily many blow-ups. Equations (7)--(9) imply
+
+\[
+r+d\ge\varepsilon,\qquad
+\varepsilon=\min\{1/4,c_{\rm cal}/1215\}>0.             \tag{10}
+\]
+
+For \(r>1/4\), (10) is immediate. This proves uniformity with respect to
+the manifold, the metric, the number of exceptional classes, and their
+selection. Smooth approximations of the auxiliary weight are taken with
+\(g,a_H\) fixed before their approximation error tends to zero; no
+uniform rate of smoothing across metrics is used.
+
+For the positive normalization, set \(r_+=V^{-1}\int|\operatorname{Ric}-g|^2\).
+On the scalar-negative set, \(s_-^2\le(s-4)^2\), whence
+
+\[
+A/V\le r_+/(8\pi^2).
+\]
+
+If \(r_+\le1/4\) and \(d\le1/4\), the analogue of (9) gives
+\(4\pi^2T/V\ge1/4\), whereas \(T\le A(2/3+d)\) gives
+
+\[
+4\pi^2T/V\le(r_+/2)(2/3+d)\le11/96<1/4.
+\]
+
+Thus \(r_++d>1/4\). For any \(\lambda\ne0\), apply the appropriate
+normalization to \(\widetilde g=|\lambda|g\). Constant rescaling
+preserves \(H\), (4), and the weighted input. In dimension four,
+
+\[
+\frac1{V_{\widetilde g}}\int
+ |\operatorname{Ric}_{\widetilde g}-\operatorname{sign}(\lambda)
+             \widetilde g|_{\widetilde g}^2
+=\frac{\int|\operatorname{Ric}_g-\lambda g|_g^2}{\lambda^2V_g}.
+\]
+
+Taking the infimum proves the first inequality in (1). Apply the same
+argument with the smaller positive projection budget \(T_X\le A\) to
+obtain the second. No comparison of ratios with a potentially negative
+numerator is necessary. Equation (2) follows by \(A=T_X\).
+
+# Scalar-flat exclusion and all Einstein constants
+
+With \(f=1\), the spinor Weitzenböck formula, integrated on the closed
+manifold, gives
+
+\[
+0=\int(4|\nabla_{\mathcal A}\Phi|^2+s|\Phi|^2+|\Phi|^4).
+\]
+
+Writing \(\rho=|\Phi|^2\), Cauchy--Schwarz and the curvature equation
+yield
+
+\[
+\int s_-^2\ge\int\rho^2
+=8\int|F_{\mathcal A}^+|^2
+\ge32\pi^2(a_H^+)^2\ge32\pi^2A>0.                     \tag{11}
+\]
+
+The spinor cannot vanish identically because \(p>0\). In particular,
+there are no scalar-flat metrics in this family, for any \(k,\ell\).
+
+For \(\operatorname{Ric}_g=\lambda_0g\) with \(\lambda_0\ne0\), the
+definition gives \(\mathcal E(g)=0\). For a Ricci-flat metric it instead
+gives \(\mathcal E(g)=4\), since \(|\lambda g|_g^2=4\lambda^2\).
+The Ricci-flat case is therefore excluded by (11), not by assigning it
+zero defect.
+
+Choose \(\gamma=\varepsilon/2\). From (1) and (11),
+
+\[
+\boxed{D\ge(1/3-\gamma)T_X
+\quad\Longrightarrow\quad
+M\text{ admits no Einstein metric of any sign}.}        \tag{12}
+\]
+
+The sharper necessary inequality for a nonzero Einstein constant is
+\(D/T_X\le1/3-\varepsilon\). The closed threshold (12) uses a smaller
+constant intentionally; equality at \(1/3-\varepsilon\) is not excluded
+by (1) alone.
+
+For general-type \(X\) and \(\ell=0\), (12) contains every case of
+LeBrun's Corollary 3.4. In its closed band, every metric also satisfies
+
+\[
+\mathcal E(g)\ge\varepsilon/2,\qquad
+\delta_\sigma(g)\ge\sqrt{\varepsilon/8},\quad
+\delta_\sigma(g)=\|g^{-1}\operatorname{Ric}_g-\sigma I\|_{\infty,\rm op},
+\quad \sigma=\pm1,
+\]
+
+because \(\mathcal E(g)\le4\delta_\sigma(g)^2\).
+
+# Theorem 3.3: the positive budget and the zero corner
+
+The positive-budget connected-sum setting of Theorem 3.3 is covered by
+(1) and (12), including its handle term and the specified chamber. No
+new gauge theorem is required beyond its polarized input.
+
+For nonpositive budgets, use Chern--Weil directly. If \(T_M<0\), the
+identity in (9) excludes Einstein metrics. There is also an elementary
+integral bound that does not require any monopole input. Set
+
+\[
+R_2=\int|\operatorname{Ric}|^2,\quad S=\int s,\quad
+L=\int(s-S/V)^2,\quad W_2=\int|W^+|^2.
+\]
+
+When \(R_2>0\), optimization in \(1/\lambda\) gives
+
+\[
+\mathcal E=4-\frac{S^2}{VR_2}
+=1+\frac{12W_2-24\pi^2T_M+L}{R_2}.                     \tag{13}
+\]
+
+Thus \(T_M\le0\) implies \(\mathcal E\ge1\), with the case \(R_2=0\)
+handled by \(\mathcal E=4\). This is a classical algebraic consequence,
+not a new calibration theorem.
+
+If \(T_X<0\), or \(T_X=0<D\), then \(T_M=T_X-D<0\), and the exact
+nonexistence conclusion follows. However, **\(T_X=D=0\) is different**:
+an Einstein metric is then forced to be Ricci-flat and anti-self-dual,
+not impossible. K3 with its complex orientation is an actual example.
+It has nonzero Seiberg--Witten invariant and admits Ricci-flat metrics.
+
+The inspected author-hosted PDF and arXiv v1 of [L01] are the March 2000
+preprint, not the journal typesetting. Their unrestricted wording of
+Theorem 3.3 must not be imported across this zero corner. The journal's
+publication metadata alone does not establish how that corner was worded
+in its final text. Our precise claim is the quantitative extension for
+\(T_X>0\), together with the classical \(T_M<0\) exclusion. This
+qualification does not narrow Corollary 3.4: there \(T_X=c_1^2(X)>0\).
+
+# What is strengthened
+
+The additional threshold interval contains actual members of the
+general-type family. Let
+
+\[
+X_m=\Sigma_2\times\Sigma_m,\qquad A_m=8(m-1),\qquad
+k_m=\lceil A_m/3\rceil-1,\qquad m\ge2.
+\]
+
+These are minimal general-type bases and
+
+\[
+0<1/3-k_m/A_m\le1/A_m\longrightarrow0.
+\]
+
+For all sufficiently large \(m\), their blow-ups satisfy (12), although
+\(k_m<A_m/3\). Their Euler characteristics tend to infinity. Thus the
+strengthening is not merely an enlargement of unattained real parameter
+values. This does not assert novelty over every other obstruction in the
+literature, nor produce an explicit first \(m\) without an explicit
+calibration constant.
+
+The correct implication is **integral stability plus scalar-flat
+exclusion implies the classical exact obstruction**. The exact
+obstruction alone would not imply a uniform integral gap. LeBrun's
+absolute Ricci-energy infima and minimal-volume results are different
+conclusions, not consequences established by this note.
+
+# Appendix: algebra behind the constant transfer
+
+Write \(e=s+4\), \(\alpha=\sqrt{2/3}|W^+|\),
+\(w=\lambda_{\min}(W^+)\), \(t=s+24\alpha\), and
+
+\[
+b=2s/3+2w,\quad
+G=(2s/3-2\alpha)^2-b_-^2\ge0,\quad
+P=\int|\operatorname{Ric}^{\circ}|^2.
+\]
+
+The signed spectral monopole bound is \(\int b_-^2\ge32\pi^2p\).
+Here \(v_+=\max(v,0)\) and \(v_-=\max(-v,0)\) for a real number \(v\).
+The pointwise identity
+
+\[
+t^2+18G=216(s^2/24+2|W^+|^2)-18b_-^2
+\]
+
+therefore gives
+
+\[
+\int(t^2+18G)\le108P+864\pi^2Ad.
+\]
+
+Also \(F\le e^2+t^2+G\). One direct verification sets
+\(z=w+\alpha\in[0,\alpha]\), so
+
+\[
+F=\tfrac32(\alpha-1/6)^2+z/2,\qquad
+\alpha=(t-e+4)/24.
+\]
+
+For \(s\le-3\), \(b<0\) and \(G\ge8z\), giving
+\(F\le(t^2+e^2)/192+G/16\). For \(s>-3\), \(e>1\), and
+\(z\le\alpha\), \(4-e\le3e^2\), \(t\le(t^2+1)/2\) give
+\(F\le(t^2+5e^2)/64\). Hence
+
+\[
+\int(|\operatorname{Ric}+g|^2+F)
+ \le109rV+864\pi^2Ad.
+\]
+
+Finally,
+\(27(s^2/24+2|W^+|^2)-q^2=t^2/8\), so \(q_+^2\le q^2\) and
+\(p\ge A\) yield
+
+\[
+\Delta\le(27/2)rV+108\pi^2Ad.
+\]
+
+Adding proves (8). These estimates involve only the selected class's
+projection bound and its square; neither a finite class set nor a
+continuous selection is hidden in the constants.
+
+# References and proof locations
+
+- [L01] C. LeBrun, *Ricci Curvature, Minimal Volumes, and Seiberg--Witten
+  Theory*, Invent. Math. **145** (2001), 279--316.
+  [Author-hosted preprint](https://www.math.stonybrook.edu/~claude/min.pdf),
+  Definition 1, Proposition 3.2, Theorem 3.3, Corollary 3.4;
+  [publication record](https://doi.org/10.1007/s002220100148).
+- [L06] C. LeBrun, *Four-manifolds, curvature bounds, and convex geometry*,
+  [preprint](https://arxiv.org/abs/math/0611450), Lemma 3.7.
+- [LL] T.-J. Li and A.-K. Liu, *Uniqueness of symplectic canonical class,
+  surface cone and symplectic cone of 4-manifolds with \(b^+=1\)*,
+  [arXiv:math/0012048](https://arxiv.org/abs/math/0012048), Section 2.1.
+- [OS] P. Ozsváth and Z. Szabó, *Higher type adjunction inequalities in
+  Seiberg--Witten theory*,
+  [arXiv:math/0005268](https://arxiv.org/abs/math/0005268), Proposition 2.2,
+  Remark 2.3, Theorem 3.2.
+
+The package's analytic proof of (7) is
+[Integral calibration](round4_rigidity.md), Sections 1--6; the exact
+spinor and weighted Hodge identities are in
+[Monopole input](round3_monopole_input.md), Sections 6--8.
+The earlier [polarized proof](round13_chamber.md) and
+[chamber analysis](round21_chambers.md) remain intact. The present note
+consolidates their interfaces; it is not a new independent main theorem
+or an audit of every analytic identity in those manuscripts.

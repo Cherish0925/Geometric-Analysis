@@ -1,0 +1,501 @@
+% !TeX program = xelatex
+% Standalone UTF-8 source. Compile twice with XeLaTeX; no external figures or .bib files.
+\documentclass[UTF8,fontset=fandol,zihao=-4]{ctexart}
+\usepackage[a4paper,margin=25mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,esint,booktabs,longtable,array}
+\usepackage{xurl,enumitem,fancyhdr,tocloft}
+\usepackage[unicode,hidelinks]{hyperref}
+\newtheoremstyle{research}{7pt}{7pt}{\normalfont}{0pt}{\bfseries}{。}{.4em}{}
+\theoremstyle{research}
+\newtheorem{result}{原稿结果}[section]
+\newtheorem{lemma}[result]{引理}
+\newtheorem{problem}[result]{研究问题}
+\renewcommand{\proofname}{论证}
+\DeclareMathOperator{\Ric}{Ric}
+\DeclareMathOperator{\Rm}{Rm}
+\DeclareMathOperator{\Vol}{Vol}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\spec}{spec}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\Hess}{Hess}
+\DeclareMathOperator{\Met}{Met}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\C}{\mathbb C}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\dd}{\,d\mu_g}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\Dcal}{\mathcal D}
+\newcommand{\owedge}{\mathbin{\bigcirc\mkern-15mu\wedge}}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\numberwithin{equation}{section}
+\setlength{\parskip}{.35em}
+\setlength{\emergencystretch}{3em}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.18}
+\linespread{1.10}
+\setlist{nosep,topsep=4pt,leftmargin=2em}
+\setcounter{tocdepth}{1}
+\setlength{\cftbeforesecskip}{3pt}
+\renewcommand{\cftsecfont}{\small}
+\renewcommand{\cftsecpagefont}{\small}
+\allowdisplaybreaks[2]
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Ricci夹逼与Einstein存在性}
+\fancyhead[R]{\small 三主线研究综合}
+\fancyfoot[C]{\thepage}
+
+\title{科学主线三：同一光滑流形上的\\[2mm]Einstein判定与Yau26全局闭合}
+\author{Qiushi--Yau26研究资料综合}
+\date{2026年9月17日}
+\begin{document}
+\maketitle
+\begin{abstract}
+本主线研究近Einstein输入与任意Einstein存在性在同一光滑对象上的关系。围绕曲面丛、固定轨形解消、指定图流形、双曲连接和及代数平滑，整理已知输入、全局不变量、受限障碍和真正的未解问题。重点保留$E_D$的精确变分值与一般度量边界、完整连接器Ricci与约束、周边格点与相对CGB、OT和带荷模型、双端匹配、正分支杆角点及高维限制。该主线既允许反例，也允许通过新的精确度量排除伪反例；不把局部无解或某个共形类的无解扩大为全局不存在性。
+\end{abstract}
+\tableofcontents
+\clearpage
+
+\section{共同问题：研究结论必须落在哪里}
+以下沿用最新Skill明确采用的Yau26工作命题，而不改写其量词：对每个$n\ge2$，是否存在仅依赖维数的实常数$c_n<C_n$，使任意闭、连通、光滑$n$维流形$M$上的度量$g$若满足
+\[
+c_ng\le\Ric_g\le C_ng,
+\]
+则同一光滑流形上存在某个$h$，满足$\Ric_h=\lambda h$，其中$\lambda\in\R$任意。输出不要求接近输入、不要求同号、不要求保留复结构、纤维化或对称性。历史题文与重编本的区别，沿用基础稿的来源说明\cite{F,Overview}。
+
+定义
+\[
+\delta_\sigma(g)=\norm{g^{-1}\Ric_g-\sigma\Id}_{L^\infty,\op},\qquad
+e_\sigma(M)=\inf_{g\in\Met(M)}\delta_\sigma(g),\quad\sigma=\pm1.
+\]
+$P_n^\sigma$表示存在仅依赖$n$的$\varepsilon_n>0$，使$\delta_\sigma(g)<\varepsilon_n$推出$M$承载某个Einstein度量。固定维数的区间命题为
+\[
+Q_n\ \Longleftrightarrow\ P_n^+\lor P_n^-.
+\]
+常数缩放$\widehat g=ag$保留协变Ricci张量，使Ricci端同态除以$a$。任意非退化区间含以非零$\mu$为中心的小子区间；把近$\operatorname{sign}\mu$输入乘以$1/|\mu|$便放入该子区间。反向直接选$\pm1$附近的小区间。故每维证明一支即可；完整否定须在同一维数击败两支，允许使用不同流形或流形序列。\cite{F}（\path{prop:branches}）
+
+特别地，固定无Einstein流形上$e_\sigma(M)=0$只否定相应符号分支。对每个固定$M$证明$e_\sigma(M)>0$，也不自动给跨流形统一的$\varepsilon_n$。全维肯定证明需要高维机制；固定维数的两分支反例则不需要先处理其他维数。
+
+\paragraph{材料与本文的角色。}
+本文依据上传的\path{qiushi-yau26 (1).zip}，以六份数学正文、总论和研究地图为依据。标为“原稿结果”的陈述保留其原有证明状态与假设；本文提供连续推导、来源定位和研究综合，不把编译或有限复算当作全部数学的重新认证。\textbf{“综合判断”段落是本次组织与判断，不是新增定理、首创性认证或对原会话的强制任务。}参考文献沿用源稿，不声称本次进行了新的全领域查新。
+
+\section{第三主线的中心：把两种性质放到同一个光滑对象上}
+第一主线限制Einstein可实现的拓扑与近等号几何，第二主线制造最大Ricci缺陷趋零的输入。第三主线负责判断它们能否在同一对象上结合：
+\[
+\mathsf P_\sigma(M):e_\sigma(M)=0,
+\qquad\mathsf N(M):M\text{不承载任何Einstein度量}.
+\]
+分支反例需要$\mathsf P_\sigma(M)\land\mathsf N(M)$。反之，构造某个Einstein度量就否定$\mathsf N(M)$，即使它与原输入很不相似。这是原题的全局量词，不是某一种拼接方法的量词。\cite{G}（近似输入与全局不存在性）
+
+\begin{longtable}{P{.25\textwidth}P{.32\textwidth}P{.33\textwidth}}
+\toprule 对象 & 已有的数学一端 & 尚需判断的另一端\\\midrule\endhead
+指定一般型吹起族 & 精确统一拓扑间隙、近边界必要退化 & 任意近似输入的统一间隙，或在无Einstein拓扑上的输入构造\\
+固定$A_1$标记解消 & 在列明条件下$e_\sigma(M)=0$ & 全部Einstein存在性或不存在性\\
+固定Dehn-twist曲面丛$E_D$ & $e_-(E_D)=0$、三阶校正、共形障碍、精确变分值 & 任意非适配、非Kähler的Einstein度量是否存在\\
+指定extended graph四流形 & 来源支持的全部Einstein不存在性 & 全域最大Ricci缺陷趋零的真实闭度量\\
+闭双曲$N$的$N\#N$ & 全局不存在性与依赖$\chi(N)$的正夹逼间隙 & 变化$N$时是否存在达到小误差的输入\\
+指定BCGP与Campedelli模型 & 原稿通过平滑得到负Einstein度量 & 适用范围及新例查新；不再作为同一对象的无Einstein候选\\\bottomrule
+\end{longtable}
+\textbf{综合判断。}本主线的工作不是把几个“还缺全局性”的项目放在一起，而是对\emph{各个实际光滑对象}建立完整判定。$E_D$的输入与图流形的不存在性不属于同一个$M$；不能把两半成功相加。局部障碍、某共形类障碍和全部度量障碍也不能互相替代。
+
+\section{曲面丛：已有全局信息远多于“缺不存在性”}
+\subsection{原稿的拓扑与精确变分值}
+固定$E_D$由非分离Dehn twist生成，纤维和基底亏格$p,q\ge2$，记$V_0=16\pi^2(p-1)(q-1)$。原稿给出
+\[
+\chi(E_D)=4(p-1)(q-1),\quad\tau(E_D)=0,
+\quad b_1(E_D)=2p+2q-1.
+\]
+其有限覆盖、群和单值变换分析还排除覆盖上的可积复结构与非正截面曲率度量。后两个结论限制特殊几何，不排除一般Einstein度量。\cite{L}（\path{BUNTOP:covers},\path{BUNTOP:object}）
+
+对$d$重连通覆盖，令$V_*=dV_0$。原稿的全局变分值为
+\begin{align}
+Y(M)&=-4\sqrt{V_*},& \inf_g\int s_g^2\dd&=16V_*,\\
+\inf_g\int|\Ric_g|^2\dd&=4V_*,&
+\inf_{s_g\ge-4}\Vol_gM&=V_*,\\
+\inf_{\Ric_g\ge-g}\Vol_gM&=V_*,&
+\inf_g\int|\Rm_{\rm full}|^2\dd&=8V_*.
+\end{align}
+这里$\Rm_{\rm full}$是四指标范数，不能把它与曲率算子能量混用。\cite{L}（\path{BUNTOP:global-values}）
+
+前面几类极值的等号会强迫Kähler结构，原稿据此判定不取到；\emph{最后一个全曲率能量的等号恰等价于存在Einstein度量，其达到性仍未知}。这是不同泛函的不同等号结构，不是互相矛盾。两个取向的monopole凸包与相应极化量可由同一输入序列饱和，因此简单“多加几个基本类”不自动产生新严格余量。
+
+假想Einstein度量的常数必须为负，归一化$\Ric=-g$后，原稿还给
+\[
+V_*<\Vol_gM<3V_*.
+\]
+它必须含正截面曲率平面，两半Weyl各在共同开稠密集上有三个不同特征值。归一化的连通精确Einstein路径上体积恒定，但这不排除另一体积分支或离散序列。\cite{L}（\path{BUNTOP:Einstein-necessary}）\cite{G}（曲面丛全局不变量）
+
+\textbf{综合判断。}这已经把潜在Einstein几何限制在非Kähler、有混合截面曲率、非特殊Weyl谱的范畴。它不是一句“无复结构所以无Einstein”；剩下的恰好是这些经典分类不覆盖的一般解。
+
+\subsection{端点退化是一项条件性结构，而不是所有精确解的归宿}
+另假设存在\emph{精确}Einstein序列且体积趋$V_*$，原稿得到有界曲率和厚点、非紧有限体积$\mathbb H^2\times\mathbb H^2$极限，并排除不可约格点分支；可约核心带整数周期、闭因子基本群单射与亏格整除约束。但存在相容的闭乘积核心，且未证明极限捕获全部体积或整个核心基本群都单射。
+
+这些结果不能从已有近似序列的体积$V_0$，推出任意未知Einstein度量也有相同体积。相关完整来源为\texttt{BUNTOP:endpoint}与\texttt{BUNTOP:reducible-core}。\cite{L,G}
+
+\subsection{谐和方法真正剩下的数学问题}
+若假想Einstein度量\emph{适配}某个下沉，水平可积或平均曲率basic时，原稿利用全部曲率块得到乘积刚性。给定纤维丛拓扑却不强迫任意度量适配原投影；因此这些是条件性全局定理，不是$E_D$不存在性证明。\cite{L}（\path{SUB:blocks},\path{SUB:integrable},\path{SUB:basic}）
+
+对$\Ric_G=-cG$和曲率$-1$的曲面目标，调和代表满足
+\[
+\int|\nabla df|^2+2\int J_f^2=c\int|df|^2.
+\]
+要从它得到所需乘积结构，须实现相应等号或更强结构条件，不能只用调和性。面积拉回闭不等于余闭；Hodge投影不保持逐点可分解性；Euler与杯积配对可能看不到正合误差。优化目标Teichmüller结构给积分TT平稳，而非逐点水平共形。原稿甚至给出闭近Einstein源的最优目标映射仍不共形的反向例。\cite{L}（\path{SUB:harmonic-bochner}、\path{SUB:area-counterexample}、\path{SUB:cup-product-bound}、\path{SUB:optimal-nonconformal}）
+
+Weyl特征线的无源刚性也不能直接搬到慢插值输入。原稿的带源关系为
+\[
+q=\tfrac32\ell_1-\eta H_1,
+\qquad (9+4\eta^2)D-4\eta^2N=4|q|^2+8\eta\langle q,H_1\rangle.
+\]
+这些变量沿用L第7章定义。源$q$在慢插值中为$O(L^{-1})$，而欲忽略它所需的相对目标可能仅为$O(L^{-2})$。绝对小量不等于相对小量，近闭不能自动删除谐和压缩核。\cite{L}（\path{WYL:source}）
+
+WP有效方程有类似分界：循环Dehn twist的长度下降可排除无强迫有效解，但带源时只剩
+\[
+\int w\,d\ell(\mathcal R)=-\int w\Hess\ell(du,du).
+\]
+必须从同一个四维Einstein方程得到足以裁决该抵消的源项，不能把有效模型的无源假设当成事实。\cite{L}（\path{GLB:WPsource},\path{GLB:WPbalance}）
+
+可以继续研究单值化强迫的调和结构、能量缺口或全局模空间；也可反向构造一般非Kähler Einstein度量。原稿已经排除的“换一种可积复结构”不应被重新列为$E_D$的自由选项。
+
+\section{代数平滑：证明存在的全局路径}
+\subsection{BCGP指定乘积商的实际证明链}
+取$G=\Z_4^2$，两条$G$覆盖曲线到$\CP^1$的分支三元组为
+\[
+S_1=((1,3),(1,0),(2,1)),\qquad
+S_2=((3,2),(0,1),(1,1)).
+\]
+各元素阶4，各组三元组生成$G$且和为0。Riemann--Hurwitz给两曲线亏格3。乘积商$X=(C_1\times C_2)/G$有六个$A_1$点，$K_X^2=2$。令$S\to X$为最小解消。
+
+原稿证明$S$的\emph{底层光滑流形}承载负Einstein度量，链条如下。商在余维一无分歧，通过反射层延拓与Reynolds分裂得
+\[
+T_X^0=(\pi_*T_{C_1\times C_2})^G,
+\qquad H^2(X,T_X^0)=H^2(C_1\times C_2,T)^G.
+\]
+等变Serre对偶和Künneth把后者化为
+\[
+\bigl[H^0(2K_{C_1})\otimes H^0(K_{C_2})
+\oplus H^0(K_{C_1})\otimes H^0(2K_{C_2})\bigr]^G.
+\]
+源稿的字符约定给
+\[
+K_1:(2,3),(3,0),(3,1),\qquad
+K_2:(0,3),(1,2),(3,3).
+\]
+两曲线非超椭圆，故$H^0(2K)=\operatorname{Sym}^2H^0(K)$；二次字符与另一因子的相反字符没有交集，得$H^2(X,T_X^0)=0$。
+
+实际QG无障碍平滑使全部六节点同时消失；$\pi^*K_X=K_{C_1\times C_2}$丰沛，因而邻近平滑纤维$K$丰沛。Aubin--Yau给负KE。有限基变换后的同时解消及Ehresmann给$\phi_t:S\to X_t$微分同胚，故
+\[
+g_t=\phi_t^*h_t,\qquad J_t=\phi_t^*J_{X_t},\qquad\Ric(g_t)=-g_t.
+\]
+$g_t$对$J_t$为Kähler；不对原解消复结构作相同断言。原结构含$-2$曲线，典范丛不丰沛。\cite{C}（\path{prop:bcgp-smooth-einstein}）\cite{LeePark}
+
+这一结果覆盖列明的分支数据，不是整个BCGP分类。其他行$H^2\ne0$只使此充分条件失效，不能直接断言平滑不存在。
+
+\subsection{七线Campedelli是另一个具体对象，不与BCGP合并}
+取$G=\mathbb F_2^3$的八重覆盖，七条线为
+\[
+x,\ y,\ z,\ x-y,\ y-z,\ x-z,\ x-y+z,
+\]
+对应惯性标记
+\[
+001,\ 010,\ 011,\ 100,\ 101,\ 111,\ 110.
+\]
+六个三线交点为$124,136,157,235,347,456$，各点三个标记线性独立，产生六个$A_1$点；其余三个为普通双交。定义覆盖代数
+\[
+\mathcal O_{\CP^2}\oplus\bigoplus_{\chi\ne0}\mathcal O_{\CP^2}(-2),
+\qquad
+ e_\chi e_\eta=
+ \left(\prod_{\chi(g_i)=\eta(g_i)=1}\ell_i\right)e_{\chi+\eta}.
+\]
+完整规范化和局部奇点检查见C。典范公式给$K^2=2$；变动分支线消去三交、得到丰沛典范的光滑纤维。再经节点同时解消和Ehresmann，得到相同光滑类型的负Einstein度量。
+
+此处保留的是经典框架中的具体六节点构造与平滑论证，不声称Campedelli曲面这个类别由本项目首次发现。\cite{C}（\path{sec:campedelli-seven-lines}）\cite{AP}
+
+\subsection{高度四典范环和QG形变：保留更广的代数内容}
+L第4章还包含高度四椭圆曲面与Wahl平滑的显式典范覆盖栈、低次关系控制全Artin参数、指定模型$\dim\operatorname{Ext}^1=38$和$\operatorname{Ext}^2=0$。等模例中的$h^2(\Theta)=2,3$已替代“整族恒为1”的旧概括。自然形变、实际QG平滑、全模栈下降与重构各有不同接口。
+
+这些结果对识别哪些复消解可产生同一光滑类型的Einstein度量有价值；但复平滑受阻仍不等于任意实Einstein度量不存在。\cite{L}（\path{ALG:allartinlocal}、\path{ALG:ext38}、\path{ALG:allartinring}、\path{ALG:isotrivial}、\path{ALG:naturalconditional}）
+
+\section{图流形：局部极限允许，困难在全局粘合代价}
+\subsection{指定范畴、体积与Weyl预算}
+采用Di Cerbo定义的闭定向extended graph四流形，满足其块、仿射粘合与周边子群条件，并含至少一个纯实双曲块。没有非平凡拼接的闭双曲流形不属于这里的无Einstein对象。设截面曲率$-1$的纯块总体积为$V_0$；原稿引用的背景结果给
+\[
+\tau(M)=0,\quad\chi(M)=\frac{3V_0}{4\pi^2},
+\quad\operatorname{MinVol}_{\Ric\ge-3g}=V_0,
+\]
+及该范畴全部Einstein不存在性。\cite{G}（扩展图流形的几何范畴）\cite{DiCerbo}
+
+改用$\Ric\approx-g$，令$V_*=9V_0=12\pi^2\chi(M)$。若$\delta=\delta_-(g)\le1/3$，由最小Ricci体积和四特征值盒约束下的CGB优化，得
+\begin{align}
+\frac{V_*}{(1+\delta)^2}&\le\Vol M\le\frac{V_*}{(1-\delta)^2},\\
+0\le\int|W|^2&\le8\pi^2\chi(M)
+\left[1-\left(\frac{1-\delta}{1+\delta}\right)^2\right],\\
+\fint_M|W|^2&\le\frac83\delta,
+\qquad\norm W_\infty\ge\frac{1-3\delta}{\sqrt3}.
+\end{align}
+这里$W$取曲率算子范数。最后一项源于截面曲率上界$K(\Pi)\le-1/3+\delta+|W|/\sqrt3$与周边$\Z^2$：若所有截面严格负，Preissmann给矛盾。固定$M$时Weyl总能量趋零，变化拓扑时只得到相对能量小。\cite{G}（\path{eq:graphvol},\path{eq:graphW},\path{eq:graphconcentration}）
+
+\textbf{综合判断。}这与第一主线有根本差别：图流形允许真双曲局部Einstein极限，不能复用“每个低缺陷局部片都不可能”的禁谱。这里必须证明非双曲粘合拓扑不可避免地付出某种\emph{不能消失的全局代价}，或构造它确实可以集中到小区域。
+
+若另加$\norm{\nabla W}_\infty\le L$，可把Weyl幅度传播到球并结合体积比较得到对数直径代价；该导数界是额外条件，不来自零阶Ricci夹逼。它与原稿的有界导数$E_D$例也应按具体拓扑分别使用。
+
+\subsection{双曲连接和的已闭合固定目标间隙}
+另取闭双曲四流形$N$，$\sec=-1$，$\chi_N\ge2$，$V_N=4\pi^2\chi_N/3$。$N\#N\to N$有度二映射；BCG和Ricci下界给
+\[
+\Vol(N\#N,g)\ge\frac{2V_N}{(1+\varepsilon)^2}
+\]
+其中$-3(1+\varepsilon)g\le\Ric_g$。若另有上界$\Ric\le-3(1-\varepsilon)g$且$\varepsilon\le1/3$，CGB给
+\[
+\Vol(N\#N,g)\le\frac{2V_N(1-1/\chi_N)}{(1-\varepsilon)^2}.
+\]
+从而
+\[
+\boxed{\varepsilon\ge
+\frac{1-\sqrt{1-1/\chi_N}}{1+\sqrt{1-1/\chi_N}}
+\sim\frac1{4\chi_N}.}
+\]
+该阈值小于$1/3$，所以较大误差时也自然满足下界。精确负Einstein被排除，非负Einstein与正体积熵矛盾。这是全局、固定目标的结论；阈值随$\chi_N\to\infty$趋零，不等于存在达到它的度量。\cite{G}（\path{eq:bcg-threshold}）\cite{BCG}
+
+\section{完整连接器方程：只解法向或切向都不够}
+\subsection{Gaussian表示及约束}
+本节在$\Ric\approx-3g$规范下工作，写
+\[
+g=dr^2+q(r,x),\quad K=\tfrac12q_r,\quad S=q^{-1}K,\quad H=\tr S,
+\quad\mathsf E=\Ric_g+3g.
+\]
+则
+\begin{align}
+\mathsf E_{rr}&=3-\tr(q^{-1}K_r)+\tr(S^2)=3-H'-|S|^2,\\
+\mathsf E_{ri}&=q^{jk}\nabla_jK_{ki}-\partial_iH,\\
+\mathsf E_{ij}&=(\Ric_q)_{ij}+3q_{ij}-(K_r)_{ij}
+-HK_{ij}+2(Kq^{-1}K)_{ij}.
+\end{align}
+并有
+\[
+R_q=-6+H^2-|S|^2+\tr_q\mathsf E_T-\mathsf E_{rr},
+\quad\diver_qK-dH=\mathsf E_r.
+\]
+$q^{-1}$的导数与$S'$必须同步：$S'=q^{-1}K_r-2S^2$。坐标矩阵的残差要用真实度量转到正交标架；若$g=LL^{\mathsf T}$，应计算$L^{-1}\mathsf E L^{-\mathsf T}$的特征值，而非欧氏化对称$g^{-1}\mathsf E$。\cite{G}（\path{eq:fullRic},\path{eq:gaussian-constraint}）
+
+若切片$q$与环面坐标无关，它本身平坦，迹Gauss给$H^2\ge9-6\epsilon$，可排除相应平切片反转。对一般$q(r,x)$不能删去$\Ric_q$：Koiso解析Cauchy理论允许标量$-6$的解析$T^3$中心、$K(0)=0$，产生局部精确$\Ric=-3g$芽，其$H'(0)=3$。
+
+这同时保留了一个受限障碍和一个局部存在性结果。它们不矛盾；局部芽存在也不保证延拓到两个指定端部。\cite{G}（Koiso中心与平切片障碍）\cite{Koiso}
+
+\subsection{端点数据与非交换矩阵参数化}
+用$q=B e^{X(r,x)}B$保证正定时，非交换导数必须用
+\[
+D\exp_X[Y]=\int_0^1e^{(1-s)X}Y e^{sX}\,ds,
+\]
+以及
+\begin{align}
+\frac{d^2}{dr^2}e^{X(r)}
+={}&D\exp_X[X'']\\
+&+2\int_0^1\int_0^s
+ e^{(1-s)X}X'e^{(s-t)X}X'e^{tX}\,dt\,ds.
+\end{align}
+不能一般写成$e^X X'$。两端$q,q',q''$形成六组真实jet条件；外法向号、同一个中心数据、周边格点及仿射粘合必须统一。后处理覆写端点不等于解析匹配，更不能掩盖邻近残差峰。\cite{G}（\path{eq:exp-first},\path{eq:exp-second},\path{eq:hermite-matrix}）
+
+\subsection{加权法向平衡揭示长度代价}
+置$B_S=S-I$、$b=H-3$，得到
+\[
+b'+2b+|B_S|^2=-\mathsf E_{rr}.
+\]
+故
+\begin{equation}\label{eq:normalbalance}
+e^{2R}b(R)-b(0)+\int_0^Re^{2r}|S-I|^2dr
+=-\int_0^Re^{2r}\mathsf E_{rr}\,dr.
+\end{equation}
+反射中心$H(0)=0$且出口$H(R)=3-\eta$时，$\norm{\mathsf E}_\op\le\epsilon$要求
+\[
+e^{2R}\eta+\frac\epsilon2(e^{2R}-1)
+\ge3+\int_0^Re^{2r}|S-I|^2dr.
+\]
+长$R$允许法向残差很小；但迟来的固定宽度剪切可能有不可忽略加权代价。该恒等式不控制全部切向、混合方程，也不证明精确核心自动趋向cusp。\cite{G}（加权法向恒等式）
+
+\subsection{确有可用的外扩尾部，但要有可达的出口}
+原稿的尾部模块从一个大的、接近各向同性的外扩出口出发，沿受控路径$\bar q(u)$连接到平坦端，取
+\[
+q(r)=e^{2a(r)}\bar q((r-r_0)/K).
+\]
+若路径曲率与直到二阶导数有界、真实端点jet匹配、$a(r_0)=a_0\to\infty$且$a'$接近1，则
+\[
+\norm{\Ric_g+3g}_{\infty,\op}
+\le C(\epsilon+K^{-1}+K^{-2}+e^{-2a_0}).
+\]
+这是一个带明确入口条件的尾部构造；核心是否到达该出口仍是独立问题。若入口剪切为$P$，路径导数需满足实际比例关系，例如$J(0)=2KP$，不能任取长$K$同时假定$J$统一小。\cite{G}（尾部构造及整体拼接条件）
+
+\section{周边格点、共同缩放与相对Chern--Gauss--Bonnet}
+\subsection{格点缩小不改变局部Ricci，却必须真实来自覆盖}
+对单尖端双曲块$P$，周边$\Lambda\cong\Z^3$。若本原$\phi:\pi_1(P)\to\Z$在周边像为$d\Z$，取与$d$互素的$N$，模$N$循环覆盖只有一个尖端，周边格点为$(N,1,1)$类型。非互素时尖端数为$\gcd(N,d)$，不能省略。
+
+原稿对具体$24cdc1.1$记录$H_1=\Z\oplus\Z_3\oplus\Z_{13}$、$H_3=0$及周边正秩依据；具体primitive character和格点基在真正粘合时仍要与模型对应。截到深度$\log N$后格点成为$(1,N^{-1},N^{-1})$，与各向异性中心商匹配；这是商周期变化，不是把归一化曲率核心整体同位缩小。\cite{G}（\path{eq:peripheral-rank},\path{eq:cusp-cover-scale}）\cite{RT24}
+
+若入口到出口还需长$R$，共同参数满足
+\[
+T=\log N-R+O(1),\qquad N\gg e^R.
+\]
+尖端截面面积$A(T)=A_*e^{-3T}$、剩余尖端体积$A(T)/3$。不能让一半用$T=\log N$，另一半又独立选择任意$R$。
+
+\subsection{相对CGB约束的是同一个闭拼接}
+在原稿规定的闭拼接及精确外部条件下，对连接器$N$、其体积$V_N$和被替换尖端体积$V_{\rm rem}$，令$e=\tr_g\mathsf E$，$\mathsf E^\circ$为无迹部分，得
+\begin{equation}\label{eq:relativeCGB}
+2\int_N|W|^2+12(V_N-V_{\rm rem})
+=\int_N\left(|\mathsf E^\circ|^2+2e-e^2/12\right).
+\end{equation}
+若$\norm{\mathsf E}_\op\le\epsilon$，右侧绝对值不超过$(8\epsilon+4\epsilon^2)V_N$。外部只是近似时，还要加入外部有符号曲率与体积差。\cite{G}（\path{eq:relative},\path{eq:relativebound}）
+
+它要求体积缺口与Weyl能量共同相容，而不自动产生矛盾。格点商让体积和相应积分共同乘$N^{-2}$；约去共同因子后，相容条件没有因此变弱。局部自由环面作用也不使整个闭图流形$\chi=0$。
+
+\section{带荷与无twist连接器：不能把一个模型的障碍推广到另一个}
+\subsection{无twist完整双端模型的独立结果}
+自由等距且正交可积的$T^2$作用，把轨道形状写成到$\mathbb H^2=SL(2,\R)/SO(2)$的映射$U$，轨道面积为$e^\sigma$。原稿在\emph{完整、双外扩、指定精确端部}条件下，结合最小分隔面给$\sup|dU|^2\ge12-8\epsilon$，再由带权Bochner与散度源的resolvent估计给上界$\mathcal B(\epsilon)$，$\mathcal B(0)=6$。两者推出该模型中的正间隙。
+
+该论证有实际几何及热核估计，不只是数值扫描；但不涵盖twist、奇异轨道、非对称度量或球面连接颈。加入荷后必须重算上界。\cite{G}（\path{thm:OT}）
+
+\subsection{坐标荷不等于物理荷}
+一般自由等距$T^2$主区写为
+\[
+g=\gamma_B+G_{ab}(d\xi^a+\mathcal A^a)(d\xi^b+\mathcal A^b),
+\quad G=\rho M,\quad\rho=e^\sigma,\quad\det M=1.
+\]
+$U$描述$M$，目标度量为$|dU|^2=\tfrac12\tr(M^{-1}dM M^{-1}dM)$。若$d\mathcal A^a=f^a d\mu_B$，定义
+\[
+\mathfrak q=\rho^2Mf,\qquad
+Q=\tfrac12e^{-3\sigma}\mathfrak q^{\mathsf T}M^{-1}\mathfrak q.
+\]
+混合Ricci控制的是
+\[
+e^{-3\sigma}M^{ab}\langle d\mathfrak q_a,d\mathfrak q_b\rangle
+=4|\mathsf E_{\rm mix}|^2,
+\]
+不是无权$|d\mathfrak q|\le C\epsilon$。精确方程使坐标荷常数；精确OT开端可迫使它为零，但$Q\to0$的渐近端不等于存在一个精确零twist开区。\cite{G}（\path{eq:charged-dictionary},\path{eq:physical-charge-source}）
+
+\subsection{稳定分隔面能控制什么}
+在轨道加权度量中取最短分隔曲线$C$，其提升为极小三维环面。Jacobi二次型包含
+\[
+V=|\mathrm{II}|^2=\kappa^2+\tfrac12h_\nu^2+\tfrac12e_\nu+Q,
+\]
+并有
+\[
+\int_C\rho V\varphi^2
+\le\int_C\rho\bigl((\varphi_s)^2+(3-\mathsf E_{\nu\nu})\varphi^2\bigr).
+\]
+取$\varphi=\rho^{-1/2}y$可转为一维Schrödinger控制。原稿结合Maxwell源得到长度无关的\emph{分隔面荷上界}，不是全底面$Q\to0$，也不自动给法向能量输运界。非零荷的稳定Koiso芽说明不能用稳定性单独禁止局部荷。\cite{G}（\path{eq:separator-jacobi},\path{eq:separator-Q-bound}）
+
+\subsection{真正有用的是完整有源恒等式}
+令$\mathcal L=\Delta+\langle d\sigma,d\cdot\rangle$。精确荷模型有
+\[
+\mathcal L\log Q=-18-4Q+e_\perp,\qquad e_\perp\ge0.
+\]
+在最大点右侧允许为负，不能推出先前声称的统一最大原理上界。带权Bochner中，张力导数的$-Q|dU|^2$会抵消曲率项的$+Q|dU|^2$；丢掉一个再沿用OT上界是错误的。
+
+更完整的Noether组织为
+\begin{align}
+H&=\Ric_B-\Hess\sigma-\tfrac12d\sigma^2-\tfrac12U^*h-Q\gamma_B+3\gamma_B,\\
+T&=\mathcal L\sigma-6-Q,\quad Z=\tau_\sigma U+\nabla_UQ,\quad
+m_{\mathfrak q}=e^{-3\sigma}\langle M^{-1}\mathfrak q,d\mathfrak q\rangle,\\
+2\diver_\sigma H-d\tr H&=-dT-Td\sigma-\langle Z,dU\rangle-m_{\mathfrak q}.
+\end{align}
+对适当支撑测试场$X$，转为
+\begin{align}
+\int m_{\mathfrak q}(X)d\mu_\sigma
+=\int\bigl[2H:\operatorname{sym}\nabla X
+-(\tr H)\diver_\sigma X
++T\diver X-\langle Z,dU(X)\rangle\bigr]d\mu_\sigma.
+\end{align}
+这把残差导数移到测试场，但仍需控制测试场、体积和$U$能量；恒等式本身不是全局障碍。标量红移模型只检验某些方程和估计，未解轨道/水平完整系统时不叫Einstein反例。\cite{G}（\path{eq:charged-noether},\path{eq:charged-pairing}）
+
+\subsection{双端问题必须共享数据}
+两半的Dirichlet-to-Neumann返回应在同一个中心、荷、尺度、轨道holonomy和周边粘合上相等。完整主符号的单射检验只给局部椭圆性信息，不给带端条件的Fredholm性、余核或长度一致逆界。真正可闭合的结果是：证明同一数据有双端解；或找一个对允许自由度都成立的伴随配对障碍。
+
+\section{正分支：整数拓扑与完整方程必须一起满足}
+\subsection{杆、角点与实际光滑类型}
+环面轨道空间的相邻边带本原整数杆$v_i\in\Z^2$。平滑角点要求$\det(v_i,v_{i+1})=\pm1$，还要有单位角周期对应的法向斜率和高阶偶性条件。
+
+源稿周期交替杆链有$m=2k+2$条边，通过整数基得到交叉形式$kH$，再用光滑环面作用分类识别为$\#_k(S^2\times S^2)$。经典六边形Delzant杆是另一个对象，对应$\CP^2\#3\overline{\CP}^2$，不能与六边形周期交替链混同。\cite{G}（\path{eq:toric-integral-chain},\path{eq:toric-hexagon-form}）\cite{OR}
+
+\subsection{无twist对角模型的完整方程}
+在固定全局圆方向的对角模型$g=h+p^2d\theta^2+q^2d\phi^2$中，
+\begin{align}
+\Ric_B&=K_hh-p^{-1}\Hess p-q^{-1}\Hess q,\\
+\Ric_{\theta\theta}^{\rm ON}&=-\Delta p/p-\langle dp,dq\rangle/(pq),\\
+\Ric_{\phi\phi}^{\rm ON}&=-\Delta q/q-\langle dp,dq\rangle/(pq).
+\end{align}
+精确$\Ric=g$要求
+\begin{align}
+\Delta p&=(K_h-1)p,&\Delta q&=(K_h-1)q,\\
+\langle dp,dq\rangle&=-K_hpq,&
+(p^{-1}\Hess p+q^{-1}\Hess q)_0&=0.
+\end{align}
+令$w=pq$、$v=\log(p/q)$，可得
+\[
+-\Delta w=2w,\qquad\diver(w\nabla v)=0,
+\qquad K_h=\tfrac14(|dv|^2-|d\log w|^2).
+\]
+只解轨道行列式的本征函数方程，未必满足水平无迹式、角点和整数粘合。\cite{G}（\path{eq:toric-diagonal-Ricci}）
+
+原稿进一步保留杆ODE、通量体积关系、角点展开、分离变量精确芽及多杆参数族。角点五阶的$A(3A+1)/20$残差排除指定两条同一常曲率杆的旧匹配；分离芽两端的锥角不相容限制该全局填充。参数族满足必要积分尺度，不等于已经得到闭近Einstein度量。它们是具体研究结果，不是所有正分支构造的总障碍。
+
+\subsection{非塌缩、覆盖与高维的真实范围}
+正Ricci夹逼给Myers直径上界；在四维再有总体积下界时，可用经典有界Ricci有限型结果。有限型不构造Einstein度量，也不保证极限无奇点。原稿还给一项\emph{以单连通族统一体积下界为假设}的覆盖放大；不能删掉该假设。
+
+覆盖上若得到某个Einstein度量，必须证明它对实际甲板群等变才可下降。输入是非定向时，同样不能用定向双覆盖的结论自动替代原流形。\cite{C}（\path{sec:coveramplifier}）\cite{CN}
+
+$n\ge5$缺少四维的$\Lambda^2_\pm$、SW和临界CGB机制。原稿保留临界$L^{n/2}$预算、余维四ALE族、核丛与切向连接、特殊holonomy、谱及新拓扑障碍的可能方向，未把它们写成一般定理。产品传播只给输入的
+\[
+\delta_\sigma(g_1\oplus g_2)=\max\{\delta_\sigma(g_1),\delta_\sigma(g_2)\},
+\]
+不传播全部Einstein不存在性；未知Einstein度量不必分裂，正Einstein球因子至少二维还使这种直接方式跳过五维。\cite{G}（正分支、覆盖与高维乘积）
+
+\section{论文式贯穿、下一步与本次综合的区别}
+\textbf{综合判断。}第三主线宜按“对象---已知两端---精确等号与尺度---全局判定”展开，而不是按工具名拼接。$E_D$的核心是一般Einstein能否存在于已知变分窗口；图流形的核心是非双曲拓扑能否以消失Weyl能量完成拼接；代数平滑的核心是改变复结构但保留光滑类型；正环面模型的核心是整数拓扑与全部Ricci方程的共同满足。
+
+与系统总论相比，本文突出三项已经存在但容易被压缩的内容：$E_D$不同泛函的精确达到性区别；graph与IL的局部极限机制完全不同；带荷模型的正确对象是全部源、约束和两端返回，而非一个局部标量上界。这里没有新增一个“第三项已完成大突破”，但有多项可独立陈述的全局不变量、具体存在性结果和受限模型定理。
+
+继续推进可以产生三类完整论文：其一，某个固定输入对象的一般Einstein存在或不存在定理；其二，对指定graph/双端范畴的全域构造或真正覆盖所有允许自由度的障碍；其三，具有独立应用价值的精确全局变分、平滑或受限刚性结果。范围准确的完整子定理可以成文；不能为期刊定位把范围扩大。
+
+若任一无Einstein对象上终于构造$e_\sigma=0$，得到相应分支反例；若证明某一维度任意无Einstein流形的某符号$e_\sigma$具有统一正下界，得到该维度肯定结论。正负两支反例是否能在同一维数并列，仍是完整否定的最后量词。这个逻辑始终高于具体模型的成功或失败。
+
+\section{来源定位：三条主线之外的基础内容也有去向}
+\begin{longtable}{P{.28\textwidth}P{.64\textwidth}}
+\toprule 研究块 & 最新Skill中的详细正文\\\midrule\endhead
+曲面丛全局值及端点 & L：\path{BUNTOP:covers}、\path{BUNTOP:global-values}、\path{BUNTOP:all-monopoles}、\path{BUNTOP:endpoint}、\path{BUNTOP:reducible-core}；G曲面丛节。\\
+QG与真实Einstein存在 & C：\path{prop:bcgp-smooth-einstein}、\path{sec:campedelli-seven-lines}；L第4章全Artin参数、等模例外及形变接口。\\
+下沉、谐和和Weyl源 & L第7--9章全部\path{WYL:}、\path{SUB:}相关块，包括负协方差、高频与闭延拓反检验；第10章WP有源平衡。\\
+Graph与目标依赖间隙 & G：\path{eq:graphvol}、\path{eq:graphW}、\path{eq:graphconcentration}、\path{eq:bcg-threshold}。\\
+完整连接器及尾部 & G：\path{eq:fullRic}、\path{eq:gaussian-constraint}、\path{eq:exp-first}、\path{eq:exp-second}、\path{eq:hermite-matrix}；中心、尾部、两端匹配。\\
+周边与相对CGB & G：\path{eq:peripheral-rank}、\path{eq:cusp-tail}、\path{eq:cusp-cover-scale}、\path{eq:RN}、\path{eq:relative}。\\
+OT与带荷模型 & G：\path{thm:OT}、\path{eq:charged-dictionary}、\path{eq:separator-Q-bound}、\path{eq:charged-noether}、\path{eq:charged-pairing}。\\
+正分支杆与高维 & G：\path{sec:toric-rods}、\path{eq:toric-lattice-corner}、\path{eq:toric-corner-mismatch}、\path{eq:toric-separated-first}；C的覆盖放大。\\
+短把手、Berger与源记录 & L：\path{FND:short-handle}、\path{FND:covervolume}、\path{FND:boundarymean}、\path{FND:berger}；R圆与Nil约化。A03原Step100及全部历史指纹保留在来源表。\\\bottomrule
+\end{longtable}
+三份综合稿相互有意重复原题与关键尺度，以便各自独立阅读；但不取代最新Skill原证明、计算来源和各会话实际交接。共同理论基础及研究历史不因归并为三个问题而删除。
+
+\begingroup\small
+\begin{thebibliography}{99}
+\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}\setlength{\parsep}{0pt}
+\bibitem{Overview} Qiushi--Yau26，\emph{Ricci夹逼与Einstein度量：研究总论}，\path{research/20260916.md}。版本依据：上传\path{qiushi-yau26 (1).zip}。
+\bibitem{Map} Qiushi--Yau26，\emph{Ricci夹逼研究地图}，\path{references/research-map.md}；来源清单\path{references/source-coverage.json}。十二主题及独立证明块是导航，不是独立成果计数。
+\bibitem{F} Qiushi--Yau26，\emph{问题与研究基础}，\path{research/20260910.tex}。
+\bibitem{L} Qiushi--Yau26，\emph{长篇构造与分析}，\path{research/20260912.tex}。十章累积长稿；其网页累计章节号与三个Session的Step不同。
+\bibitem{U} Qiushi--Yau26，\emph{Einstein拓扑边界的统一间隙与近Einstein度量的必要塌缩}，\path{research/20260916_uniform_gap.tex}。
+\bibitem{R} Qiushi--Yau26，\emph{刚性与退化专论}，\path{research/20260916_rigidity.tex}。
+\bibitem{C} Qiushi--Yau26，\emph{近Einstein构造专论}，\path{research/20260916_construction.tex}。
+\bibitem{G} Qiushi--Yau26，\emph{全局几何与拓扑专论}，\path{research/20260916_global.tex}。
+\bibitem{Computations} Qiushi--Yau26，\path{references/computations.md}、\path{references/experiments.md}与\path{references/reproduction.md}。历史更正须与原输出一起读取；有限检查与无穷维分析的证明范围分开。
+
+\bibitem{LeBrun} C. LeBrun, \emph{Ricci Curvature, Minimal Volumes, and Seiberg--Witten Theory}, Invent. Math. 145 (2001), 279--316.
+\bibitem{BCG} G. Besson, G. Courtois and S. Gallot, \emph{Entropies et rigidités des espaces localement symétriques de courbure strictement négative}, Geom. Funct. Anal. 5 (1995), 731--799.
+\bibitem{DiCerbo} L. F. Di Cerbo, \emph{Extended graph 4-manifolds, and Einstein metrics}. \url{https://arxiv.org/abs/2106.13279}.
+\bibitem{Koiso} B. Ammann, A. Moroianu and S. Moroianu, \emph{The Cauchy problems for Einstein metrics and parallel spinors}. \url{https://arxiv.org/abs/1106.2066}.
+\bibitem{LeePark} Y. Lee and J. Park, \emph{A construction of Horikawa surface via $\mathbb Q$-Gorenstein smoothings}. \url{https://arxiv.org/abs/0708.3319}.
+\bibitem{AP} V. Alexeev and R. Pardini, \emph{Explicit compactifications of moduli spaces of Campedelli and Burniat surfaces}. 源稿引用arXiv:0901.4431v4。
+\bibitem{OR} P. Orlik and F. Raymond, \emph{Actions of the torus on 4-manifolds. I}, Trans. Amer. Math. Soc. 152 (1970), 531--559.
+\bibitem{CN} J. Cheeger and A. Naber, \emph{Regularity of Einstein manifolds and the codimension 4 conjecture}, Ann. of Math. 182 (2015), 1093--1165.
+\bibitem{RT24} J. G. Ratcliffe and S. T. Tschantz, \emph{Hyperbolic 24-cell 4-manifolds with one cusp}. \url{https://arxiv.org/abs/2004.07284}.
+
+\end{thebibliography}
+\endgroup
+\end{document}

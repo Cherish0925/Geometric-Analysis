@@ -1,0 +1,33 @@
+\section{问题、量词与分支归约}\label{sec:problem}
+
+\subsection{题文与工作命题}
+资料包 \cite{Pkg} 所据的题文（出自用户提供的重编本，第 26 题；原始出处为 \cite{Yau}）为：
+\begin{quote}
+Find for each $N$ constants $c_N<C_N$ so that if the Ricci curvature of a compact manifold satisfies $c_N\delta_{ij}\le R_{ij}\le C_N\delta_{ij}$ then the manifold admits an Einstein metric.
+\end{quote}
+（重编本的评注指向 Anderson \cite{Anderson89} 在附加几何假设下的近 Einstein 存在定理。）本次文献检索未能取得 1982 年原书（Yau, \emph{Problem section}, Ann. of Math. Studies 102）的页面，故与资料包一致，\emph{不宣称}上述文字与原页逐字相同；以下全部结论针对如下明确的数学表述。
+
+全文中 $M$ 表示闭（紧、无边）、连通、光滑 $n$ 维流形，$g$ 为光滑 Riemann 度量；$ag\le\Ric_g\le bg$ 按二次型逐点理解。“$M$ 承载 Einstein 度量”指存在光滑度量 $h$ 与常数 $\lambda\in\R$ 使 $\Ric_h=\lambda h$；不要求 $h$ 接近 $g$，也不限制 $\lambda$ 的符号。
+
+\begin{definition}
+对 $n\ge2$ 与 $\sigma\in\{+1,-1\}$，定义
+\begin{align*}
+Q_n&:\ \exists a<b\ \ \forall (M^n,g):\ ag\le\Ric_g\le bg\ \Longrightarrow\ M\text{ 承载 Einstein 度量};\\
+P_n^\sigma&:\ \exists\varepsilon\in(0,1)\ \ \forall (M^n,g):\ \delta_\sigma(g)\le\varepsilon\ \Longrightarrow\ M\text{ 承载 Einstein 度量}.
+\end{align*}
+\end{definition}
+
+\begin{proposition}[分支归约]\status{已证}\label{prop:branches}
+对每个 $n\ge2$，$Q_n\iff P_n^+\lor P_n^-$。
+\end{proposition}
+\begin{proof}
+常数缩放 $\hat g=cg$（$c>0$）不改变 $(0,2)$ 型 Ricci 张量，故 $\hat g^{-1}\Ric_{\hat g}=c^{-1}g^{-1}\Ric_g$。若 $P_n^\sigma$ 以 $\varepsilon$ 成立，取 $[a,b]=[\sigma-\varepsilon,\sigma+\varepsilon]$ 即得 $Q_n$。反之设 $Q_n$ 对 $[a,b]$ 成立；任取 $[u,v]\subset[a,b]$，$u<v$，$uv>0$，令 $\mu=(u+v)/2$，$\sigma=\operatorname{sign}\mu$，$\varepsilon=(v-u)/|u+v|\in(0,1)$。若 $\delta_\sigma(h)\le\varepsilon$，则 $g=h/|\mu|$ 的 Ricci 特征值落在 $[u,v]$ 内，于是 $M$ 承载 Einstein 度量；这就是 $P_n^\sigma$。
+\end{proof}
+
+\begin{corollary}\label{cor:logic}
+（1）证明 $Q_n$ 只需证明一个符号分支；（2）否定 $Q_n$ 必须在\emph{同一维数}同时否定 $P_n^+$ 与 $P_n^-$，两支可用不同流形；（3）否定 $P_n^\sigma$ 等价于存在闭流形序列 $(M_j^n,g_j)$，$\delta_\sigma(g_j)\to0$，且每个 $M_j$ 不承载\emph{任何}符号的 Einstein 度量。特别地，若某个不承载 Einstein 度量的固定流形满足 $e_\sigma(M)=0$，则 $P_n^\sigma$ 不成立。
+\end{corollary}
+
+\begin{remark}[含零区间与固定宽度]
+若 $a<0<b$，任何度量放大后都满足夹逼，故含零内点的区间在存在无 Einstein 流形的维数中不可能有效。另一方面，Lohkamp 定理 \cite{Lohkamp} 给出仅依赖维数的 $a(n)>b(n)>0$，使\emph{每个} $n\ge3$ 维流形承载 $-a(n)g<\Ric<-b(n)g$ 的度量；因此四维中任何有效的负区间 $[-C,-c]$ 必须满足 $C/c<a(4)/b(4)$，而资料包还证明了 $a(4)/b(4)>3$（$S^1\times S^3$ 上严格 Hitchin--Thorpe 端点的推论）。这些只限制区间的宽度，不触及“任意紧夹逼”的原题。
+\end{remark}

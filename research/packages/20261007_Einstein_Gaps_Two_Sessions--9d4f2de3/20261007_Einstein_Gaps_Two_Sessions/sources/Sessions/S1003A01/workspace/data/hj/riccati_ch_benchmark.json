@@ -1,0 +1,487 @@
+{
+ "checks": {
+  "riccati_residual_plus": "0",
+  "riccati_residual_minus": "0",
+  "conventions": {
+   "seed": {
+    "K": "-A",
+    "Y": "-A/2"
+   },
+   "zero": {
+    "K": "0",
+    "Y": "A/2"
+   }
+  },
+  "dtn": {
+   "Kplus": "-2/Delta_plus",
+   "Kminus": "-2(1+x)^5/Delta_minus",
+   "target_x": 1,
+   "general_target": "K_pm^X(rho)=-1/[f_pm(rho)^2 int_rho^X ds/(s(1+s)f_pm(s)^2)]"
+  }
+ },
+ "seed_graph_evolution": [
+  {
+   "rho": 0.003,
+   "channel": "plus",
+   "factor": 1.0,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -1981757.1186726715,
+   "n": 10242,
+   "homogeneous_multiplier_f_squared": "x^2(1+x)",
+   "ode_integrating_factor_f_inverse_squared": "1/[x^2(1+x)]"
+  },
+  {
+   "rho": 0.003,
+   "channel": "minus",
+   "factor": 1.0,
+   "pole": 0.05251870229537074,
+   "endpoint": 0.05251870229537074,
+   "z_endpoint": 5.724587470723463e-17,
+   "n": 198,
+   "homogeneous_multiplier_f_squared": "x^2/(1+x)^5",
+   "ode_integrating_factor_f_inverse_squared": "(1+x)^5/x^2"
+  },
+  {
+   "rho": 0.003,
+   "channel": "plus",
+   "factor": 0.99,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -6660408.783221691,
+   "n": 10281,
+   "homogeneous_multiplier_f_squared": "x^2(1+x)",
+   "ode_integrating_factor_f_inverse_squared": "1/[x^2(1+x)]"
+  },
+  {
+   "rho": 0.003,
+   "channel": "minus",
+   "factor": 0.99,
+   "pole": 19.9806206894718,
+   "endpoint": 19.9806206894718,
+   "z_endpoint": 3.0954819057408406e-18,
+   "n": 10168,
+   "homogeneous_multiplier_f_squared": "x^2/(1+x)^5",
+   "ode_integrating_factor_f_inverse_squared": "(1+x)^5/x^2"
+  },
+  {
+   "rho": 0.003,
+   "channel": "plus",
+   "factor": 0.985,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -9035358.866747342,
+   "n": 10290,
+   "homogeneous_multiplier_f_squared": "x^2(1+x)",
+   "ode_integrating_factor_f_inverse_squared": "1/[x^2(1+x)]"
+  },
+  {
+   "rho": 0.003,
+   "channel": "minus",
+   "factor": 0.985,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -0.028401958973550398,
+   "n": 10200,
+   "homogeneous_multiplier_f_squared": "x^2/(1+x)^5",
+   "ode_integrating_factor_f_inverse_squared": "(1+x)^5/x^2"
+  },
+  {
+   "rho": 0.01,
+   "channel": "plus",
+   "factor": 1.0,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -541630.0096139611,
+   "n": 10152,
+   "homogeneous_multiplier_f_squared": "x^2(1+x)",
+   "ode_integrating_factor_f_inverse_squared": "1/[x^2(1+x)]"
+  },
+  {
+   "rho": 0.01,
+   "channel": "minus",
+   "factor": 1.0,
+   "pole": 0.10825597810240159,
+   "endpoint": 0.10825597810240159,
+   "z_endpoint": -8.673617379884035e-18,
+   "n": 175,
+   "homogeneous_multiplier_f_squared": "x^2/(1+x)^5",
+   "ode_integrating_factor_f_inverse_squared": "(1+x)^5/x^2"
+  },
+  {
+   "rho": 0.01,
+   "channel": "plus",
+   "factor": 0.99,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -955464.4965129247,
+   "n": 10167,
+   "homogeneous_multiplier_f_squared": "x^2(1+x)",
+   "ode_integrating_factor_f_inverse_squared": "1/[x^2(1+x)]"
+  },
+  {
+   "rho": 0.01,
+   "channel": "minus",
+   "factor": 0.99,
+   "pole": 0.21114079509759484,
+   "endpoint": 0.21114079509759484,
+   "z_endpoint": -4.0332320816460765e-17,
+   "n": 197,
+   "homogeneous_multiplier_f_squared": "x^2/(1+x)^5",
+   "ode_integrating_factor_f_inverse_squared": "(1+x)^5/x^2"
+  },
+  {
+   "rho": 0.01,
+   "channel": "plus",
+   "factor": 0.985,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -1165532.7639740314,
+   "n": 10172,
+   "homogeneous_multiplier_f_squared": "x^2(1+x)",
+   "ode_integrating_factor_f_inverse_squared": "1/[x^2(1+x)]"
+  },
+  {
+   "rho": 0.01,
+   "channel": "minus",
+   "factor": 0.985,
+   "pole": 0.5194742019565617,
+   "endpoint": 0.5194742019565617,
+   "z_endpoint": 1.1709383462843448e-17,
+   "n": 322,
+   "homogeneous_multiplier_f_squared": "x^2/(1+x)^5",
+   "ode_integrating_factor_f_inverse_squared": "(1+x)^5/x^2"
+  },
+  {
+   "rho": 0.03,
+   "channel": "plus",
+   "factor": 1.0,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -148019.05791304578,
+   "n": 10064,
+   "homogeneous_multiplier_f_squared": "x^2(1+x)",
+   "ode_integrating_factor_f_inverse_squared": "1/[x^2(1+x)]"
+  },
+  {
+   "rho": 0.03,
+   "channel": "minus",
+   "factor": 1.0,
+   "pole": 0.22632285403427718,
+   "endpoint": 0.22632285403427718,
+   "z_endpoint": -1.8214596497756474e-17,
+   "n": 151,
+   "homogeneous_multiplier_f_squared": "x^2/(1+x)^5",
+   "ode_integrating_factor_f_inverse_squared": "(1+x)^5/x^2"
+  },
+  {
+   "rho": 0.03,
+   "channel": "plus",
+   "factor": 0.99,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -191813.4065340138,
+   "n": 10068,
+   "homogeneous_multiplier_f_squared": "x^2(1+x)",
+   "ode_integrating_factor_f_inverse_squared": "1/[x^2(1+x)]"
+  },
+  {
+   "rho": 0.03,
+   "channel": "minus",
+   "factor": 0.99,
+   "pole": 0.2685402194333505,
+   "endpoint": 0.2685402194333505,
+   "z_endpoint": -2.2768245622195593e-17,
+   "n": 168,
+   "homogeneous_multiplier_f_squared": "x^2/(1+x)^5",
+   "ode_integrating_factor_f_inverse_squared": "(1+x)^5/x^2"
+  },
+  {
+   "rho": 0.03,
+   "channel": "plus",
+   "factor": 0.985,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -214044.04035175257,
+   "n": 10070,
+   "homogeneous_multiplier_f_squared": "x^2(1+x)",
+   "ode_integrating_factor_f_inverse_squared": "1/[x^2(1+x)]"
+  },
+  {
+   "rho": 0.03,
+   "channel": "minus",
+   "factor": 0.985,
+   "pole": 0.2973627794737166,
+   "endpoint": 0.2973627794737166,
+   "z_endpoint": 1.0408340855860843e-17,
+   "n": 180,
+   "homogeneous_multiplier_f_squared": "x^2/(1+x)^5",
+   "ode_integrating_factor_f_inverse_squared": "(1+x)^5/x^2"
+  },
+  {
+   "rho": 0.1,
+   "channel": "plus",
+   "factor": 1.0,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -27225.225175723997,
+   "n": 9962,
+   "homogeneous_multiplier_f_squared": "x^2(1+x)",
+   "ode_integrating_factor_f_inverse_squared": "1/[x^2(1+x)]"
+  },
+  {
+   "rho": 0.1,
+   "channel": "minus",
+   "factor": 1.0,
+   "pole": 0.5956039197593419,
+   "endpoint": 0.5956039197593419,
+   "z_endpoint": 4.640385298237959e-17,
+   "n": 253,
+   "homogeneous_multiplier_f_squared": "x^2/(1+x)^5",
+   "ode_integrating_factor_f_inverse_squared": "(1+x)^5/x^2"
+  },
+  {
+   "rho": 0.1,
+   "channel": "plus",
+   "factor": 0.99,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -30578.92022902865,
+   "n": 9962,
+   "homogeneous_multiplier_f_squared": "x^2(1+x)",
+   "ode_integrating_factor_f_inverse_squared": "1/[x^2(1+x)]"
+  },
+  {
+   "rho": 0.1,
+   "channel": "minus",
+   "factor": 0.99,
+   "pole": 0.6280573068961698,
+   "endpoint": 0.6280573068961698,
+   "z_endpoint": -4.9873299934333204e-17,
+   "n": 268,
+   "homogeneous_multiplier_f_squared": "x^2/(1+x)^5",
+   "ode_integrating_factor_f_inverse_squared": "(1+x)^5/x^2"
+  },
+  {
+   "rho": 0.1,
+   "channel": "plus",
+   "factor": 0.985,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -32281.303504818014,
+   "n": 9962,
+   "homogeneous_multiplier_f_squared": "x^2(1+x)",
+   "ode_integrating_factor_f_inverse_squared": "1/[x^2(1+x)]"
+  },
+  {
+   "rho": 0.1,
+   "channel": "minus",
+   "factor": 0.985,
+   "pole": 0.645530519220307,
+   "endpoint": 0.645530519220307,
+   "z_endpoint": -2.7321894746634712e-17,
+   "n": 277,
+   "homogeneous_multiplier_f_squared": "x^2/(1+x)^5",
+   "ode_integrating_factor_f_inverse_squared": "(1+x)^5/x^2"
+  },
+  {
+   "rho": 0.3,
+   "channel": "plus",
+   "factor": 1.0,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -3600.042141406793,
+   "n": 9853,
+   "homogeneous_multiplier_f_squared": "x^2(1+x)",
+   "ode_integrating_factor_f_inverse_squared": "1/[x^2(1+x)]"
+  },
+  {
+   "rho": 0.3,
+   "channel": "minus",
+   "factor": 1.0,
+   "pole": 2.0598159359617694,
+   "endpoint": 2.0598159359617694,
+   "z_endpoint": 3.415236843329339e-18,
+   "n": 881,
+   "homogeneous_multiplier_f_squared": "x^2/(1+x)^5",
+   "ode_integrating_factor_f_inverse_squared": "(1+x)^5/x^2"
+  },
+  {
+   "rho": 0.3,
+   "channel": "plus",
+   "factor": 0.99,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -3850.1113569932595,
+   "n": 9852,
+   "homogeneous_multiplier_f_squared": "x^2(1+x)",
+   "ode_integrating_factor_f_inverse_squared": "1/[x^2(1+x)]"
+  },
+  {
+   "rho": 0.3,
+   "channel": "minus",
+   "factor": 0.99,
+   "pole": 2.0976905361057177,
+   "endpoint": 2.0976905361057177,
+   "z_endpoint": 7.115076756936123e-19,
+   "n": 901,
+   "homogeneous_multiplier_f_squared": "x^2/(1+x)^5",
+   "ode_integrating_factor_f_inverse_squared": "(1+x)^5/x^2"
+  },
+  {
+   "rho": 0.3,
+   "channel": "plus",
+   "factor": 0.985,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -3977.050045108229,
+   "n": 9852,
+   "homogeneous_multiplier_f_squared": "x^2(1+x)",
+   "ode_integrating_factor_f_inverse_squared": "1/[x^2(1+x)]"
+  },
+  {
+   "rho": 0.3,
+   "channel": "minus",
+   "factor": 0.985,
+   "pole": 2.116993638406093,
+   "endpoint": 2.116993638406093,
+   "z_endpoint": -2.314771638256552e-17,
+   "n": 910,
+   "homogeneous_multiplier_f_squared": "x^2/(1+x)^5",
+   "ode_integrating_factor_f_inverse_squared": "(1+x)^5/x^2"
+  },
+  {
+   "rho": 0.5,
+   "channel": "plus",
+   "factor": 1.0,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -1114.9824626333407,
+   "n": 9753,
+   "homogeneous_multiplier_f_squared": "x^2(1+x)",
+   "ode_integrating_factor_f_inverse_squared": "1/[x^2(1+x)]"
+  },
+  {
+   "rho": 0.5,
+   "channel": "minus",
+   "factor": 1.0,
+   "pole": 5.694987103474927,
+   "endpoint": 5.694987103474927,
+   "z_endpoint": -6.173176119589341e-18,
+   "n": 2600,
+   "homogeneous_multiplier_f_squared": "x^2/(1+x)^5",
+   "ode_integrating_factor_f_inverse_squared": "(1+x)^5/x^2"
+  },
+  {
+   "rho": 0.5,
+   "channel": "plus",
+   "factor": 0.99,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -1179.6289272797994,
+   "n": 9752,
+   "homogeneous_multiplier_f_squared": "x^2(1+x)",
+   "ode_integrating_factor_f_inverse_squared": "1/[x^2(1+x)]"
+  },
+  {
+   "rho": 0.5,
+   "channel": "minus",
+   "factor": 0.99,
+   "pole": 5.751289277915226,
+   "endpoint": 5.751289277915226,
+   "z_endpoint": -4.018324301774401e-18,
+   "n": 2627,
+   "homogeneous_multiplier_f_squared": "x^2/(1+x)^5",
+   "ode_integrating_factor_f_inverse_squared": "(1+x)^5/x^2"
+  },
+  {
+   "rho": 0.5,
+   "channel": "plus",
+   "factor": 0.985,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -1212.4443915673426,
+   "n": 9752,
+   "homogeneous_multiplier_f_squared": "x^2(1+x)",
+   "ode_integrating_factor_f_inverse_squared": "1/[x^2(1+x)]"
+  },
+  {
+   "rho": 0.5,
+   "channel": "minus",
+   "factor": 0.985,
+   "pole": 5.779783379151106,
+   "endpoint": 5.779783379151106,
+   "z_endpoint": 1.7618285302889447e-18,
+   "n": 2641,
+   "homogeneous_multiplier_f_squared": "x^2/(1+x)^5",
+   "ode_integrating_factor_f_inverse_squared": "(1+x)^5/x^2"
+  },
+  {
+   "rho": 0.65,
+   "channel": "plus",
+   "factor": 1.0,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -571.4834681996374,
+   "n": 9677,
+   "homogeneous_multiplier_f_squared": "x^2(1+x)",
+   "ode_integrating_factor_f_inverse_squared": "1/[x^2(1+x)]"
+  },
+  {
+   "rho": 0.65,
+   "channel": "minus",
+   "factor": 1.0,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -0.026839890855615493,
+   "n": 9678,
+   "homogeneous_multiplier_f_squared": "x^2/(1+x)^5",
+   "ode_integrating_factor_f_inverse_squared": "(1+x)^5/x^2"
+  },
+  {
+   "rho": 0.65,
+   "channel": "plus",
+   "factor": 0.99,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -602.2966352436622,
+   "n": 9677,
+   "homogeneous_multiplier_f_squared": "x^2(1+x)",
+   "ode_integrating_factor_f_inverse_squared": "1/[x^2(1+x)]"
+  },
+  {
+   "rho": 0.65,
+   "channel": "minus",
+   "factor": 0.99,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -0.027412622694166,
+   "n": 9677,
+   "homogeneous_multiplier_f_squared": "x^2/(1+x)^5",
+   "ode_integrating_factor_f_inverse_squared": "(1+x)^5/x^2"
+  },
+  {
+   "rho": 0.65,
+   "channel": "plus",
+   "factor": 0.985,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -617.937836788852,
+   "n": 9677,
+   "homogeneous_multiplier_f_squared": "x^2(1+x)",
+   "ode_integrating_factor_f_inverse_squared": "1/[x^2(1+x)]"
+  },
+  {
+   "rho": 0.65,
+   "channel": "minus",
+   "factor": 0.985,
+   "pole": null,
+   "endpoint": 20.0,
+   "z_endpoint": -0.02770334951576569,
+   "n": 9677,
+   "homogeneous_multiplier_f_squared": "x^2/(1+x)^5",
+   "ode_integrating_factor_f_inverse_squared": "(1+x)^5/x^2"
+  }
+ ],
+ "interpretation": "The exact DtN solutions have their hard-target graph pole at x=1. Any earlier seed pole records loss of the K=P X^{-1} chart; the linear Jacobi/Lagrangian plane remains defined and Step-7 ground states exclude a negative compactly supported CH mode. A pole can still obstruct one smooth quadratic graph and carries focal/Maslov information; admissible matching to the outgoing plane must be checked. null means no pole before xmax=20 only."
+}

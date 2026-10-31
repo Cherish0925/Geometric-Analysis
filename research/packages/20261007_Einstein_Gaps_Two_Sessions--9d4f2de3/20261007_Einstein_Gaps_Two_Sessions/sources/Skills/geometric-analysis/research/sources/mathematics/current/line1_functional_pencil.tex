@@ -1,0 +1,545 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{mathrsfs}
+\usepackage{esint}
+\setmathfont{Asana Math}
+\setlength{\emergencystretch}{3em}
+
+\author{}
+\date{23 September 2026}
+
+\begin{document}
+
+\hypertarget{quantitative-non-saturation-of-scalarweyl-functionals-near-negative-einstein-metrics}{%
+\section{Quantitative non-saturation of scalar--Weyl functionals near
+negative Einstein
+metrics}\label{quantitative-non-saturation-of-scalarweyl-functionals-near-negative-einstein-metrics}}
+
+23 September 2026
+
+\hypertarget{main-theorem}{%
+\subsection{1. Main theorem}\label{main-theorem}}
+
+Let \((M,g)\) be a closed connected oriented smooth four-manifold. Fix a
+Spin\(^c\) structure, with real first Chern class \(a\), whose
+unperturbed Seiberg--Witten equations have a solution for every metric
+conformal to \(g\). The structure can depend on \(g\); it is fixed while
+the conformal weight varies. Write \[
+V=\operatorname{Vol}_g(M),\qquad p=(a_g^+)^2>0,\qquad
+r=\fint_M|\operatorname{Ric}+g|^2,\qquad
+b_a=\frac{(-a^2)_+}{V}.
+\] Ricci uses the tensor norm, two-forms the exterior-algebra norm, and
+\(W^+\) the Hilbert--Schmidt norm as an endomorphism of \(\Lambda^+\).
+Set \(w=\sqrt6|W^+|\). For a constant \(\beta>0\), define the
+dimensionless, nonnegative functional deficit \[
+\mathfrak D_\beta(g,a)
+=\frac{\beta+1}{\beta}\int_M(s^2+\beta w^2)
+-72\pi^2p.
+\tag{1}
+\] Here dimensionless means invariant under constant metric rescaling;
+\(\mathfrak D_\beta/V\), like \(r\), is measured after fixing the
+Einstein target to \(-g\).
+
+\textbf{Theorem 1 (functional non-saturation).} For every finite \(L>2\)
+there is \(c_L>0\) such that, simultaneously for \(2\le\beta\le L\), \[
+\boxed{
+(1+b_a)\left(r+\frac{\mathfrak D_\beta(g,a)}V\right)
+\ge c_L(\beta-2)^2.
+}
+\tag{2}
+\] There is no scalar-curvature band, Sobolev constant,
+injectivity-radius, diameter, volume, or full-curvature hypothesis.
+Actual conformal monopole solvability and the displayed square cost are
+the inputs.
+
+If the selected class additionally satisfies
+\(a^2\ge T:=2\chi(M)+3\tau(M)\), there is \(c'_L>0\) with \[
+\boxed{
+r+\frac{\mathfrak D_\beta(g,a)}V\ge c'_L(\beta-2)^2.
+}
+\tag{3}
+\] In particular, for an exact metric \(\operatorname{Ric}=-g\) and such
+a class, \[
+\int(s^2+6\beta|W^+|^2)
+\ge\frac{72\pi^2\beta}{\beta+1}p
++c'_L\frac{\beta}{\beta+1}(\beta-2)^2V.
+\tag{4}
+\]
+
+The endpoint \(\beta=2\) must remain: a negative Kähler--Einstein
+surface with its canonical Spin\(^c\) structure has \(r=0\) and
+\(\mathfrak D_2=0\). Thus (2) is a compatibility theorem, not a
+prohibition of the Kähler--Einstein branch.
+
+The proof supplies all auxiliary forms and their joint analytic budget
+from (1). It extends the former calibration at \(\beta=8\) to a
+parameter family of curvature functionals. It does not, by itself,
+identify a new smooth topology with no Einstein metric.
+
+\hypertarget{the-exact-deficit-decomposition}{%
+\subsection{2. The exact deficit
+decomposition}\label{the-exact-deficit-decomposition}}
+
+Put \[
+q=-s+w,\quad q_+=\max(q,0),\quad q_-=\max(-q,0),\quad
+\Delta_+=\int q_+^2-72\pi^2p.
+\] The signed monopole estimate gives \(\Delta_+\ge0\). The relevant
+classical inequality follows from the rescaled equations; the positive
+part is needed when scalar curvature changes sign. Completing a square
+gives the exact identity \[
+\boxed{
+\mathfrak D_\beta
+=\Delta_++\int q_-^2+\frac1\beta\int(s+\beta w)^2.
+}
+\tag{5}
+\] Indeed
+\((\beta+1)(s^2+\beta w^2)/\beta =(-s+w)^2+(s+\beta w)^2/\beta\).
+
+Write \(e=s+4\), \(z=s+\beta w\), and \[
+q_\beta=4\frac{\beta+1}{\beta},\qquad
+\kappa=r+\mathfrak D_\beta/V.
+\] Then \[
+w-4/\beta=(z-e)/\beta,\qquad
+q-q_\beta=z/\beta-(1+1/\beta)e,\qquad
+\int e^2\le4Vr.
+\tag{6}
+\] Consequently, uniformly for \(2\le\beta\le L\), \[
+\int\bigl[(q-q_\beta)^2+(w-4/\beta)^2\bigr]
+\le C_L V\kappa,
+\quad
+\int(|\operatorname{Ric}|^2+s^2+|W^+|^2)
+\le C_L V(1+\kappa).
+\tag{7}
+\] These bounds control the Weyl norm, not its eigenspaces. The latter
+come from the actual monopole below.
+
+\hypertarget{actual-bounded-spinors-with-no-scalar-band}{%
+\subsection{3. Actual bounded spinors with no scalar
+band}\label{actual-bounded-spinors-with-no-scalar-band}}
+
+Set \[
+Q=\max(q,3),\qquad
+f_0=\max\{\sqrt Q,(-s)_+/4\}.
+\] Choose smooth positive majorants \(f_j\to f_0\) uniformly on the
+fixed compact manifold. Conformal covariance, applied to
+\(\widehat g=f_j^{-2}g\), supplies solutions \[
+D_A\Phi=0,\quad -iF_A^+=f_j\sigma(\Phi),\quad
+\psi=2\sqrt2\sigma(\Phi),\quad
+\rho=|\Phi|^2=|\psi|,\quad u=3\rho/2.
+\tag{8}
+\] We use \(|\sigma(\Phi)|^2=|\Phi|^4/8\). The spinor equation is
+\(4\nabla_A^*\nabla_A\Phi+(s+f_j\rho)\Phi=0\). At a maximum of \(\rho\),
+\(f_j\rho\le-s\), so \[
+0\le\rho\le4,\qquad 0\le u\le6.
+\tag{9}
+\] Every approximation error below tends to zero for the fixed \(g,a\).
+No uniform smoothing rate along a sequence and no bounds on derivatives
+of \(f_j\) are required.
+
+The cutoff costs only scalar error: \[
+0\le Q^2-q_+^2\le9e^2,\qquad
+0\le f_0^2-Q\le\frac9{16}e^2.
+\tag{10}
+\] For the second inequality, a nonzero difference forces
+\((-s)_+>4\sqrt3>6\), whence \((-s)_+\le3|e|\). For the first, \(q<3\)
+implies \(s>-3\), hence \(e>1\).
+
+Define nonnegative defects \[
+\begin{split}
+D_0={}&2\int|d\rho|^2
++\int(4\rho|\nabla_A\Phi|^2-|\nabla\psi|^2)\\
+&+2\int|d\psi|^2+2\int E_\lambda,\qquad
+E_\lambda=\langle W^+\psi,\psi\rangle+w\rho^2/3\ge0.
+\end{split}
+\tag{11}
+\] Nonnegativity uses the differential inequality for the parallel
+spinor quadratic map and \(\lambda_{\min}(W^+)\ge-w/3\). The spinor and
+self-dual-form Weitzenböck identities, subtracted after testing the
+spinor against \(\rho\Phi\), give \[
+\frac{27}{8}D_0=\int(qu^2-f_j u^3).
+\tag{12}
+\]
+
+For completeness, the moment argument that retains the truncation cost
+is as follows. Set \[
+C=\int Qu^2,\quad Z=\int\sqrt Q\,u^3,\quad E_Q=\int Q^2.
+\] Then \(C-Z\ge27D_0/8\ge0\), while the curvature equation gives \[
+C_{\rm act}:=\int f_j^2u^2=18\|F_A^+\|_2^2\ge72\pi^2p,
+\quad 0\le C_{\rm act}-C\le\frac{81}{4}\int e^2+o(1).
+\] Hölder gives \(C\le E_Q^{1/3}Z^{2/3}\), hence \[
+0\le E_Q-C\le S+o(1),\qquad
+S:=\Delta_++\frac{117}{4}\int e^2\le117V\kappa.
+\] If \(\theta=(Z/E_Q)^{1/3}\), the nonnegative Hölder slack implies
+\(E_Q-C\ge2(C-Z)\). The associated amplitude estimate is
+\(\int Q(u-\sqrt Q)^2\le E_Q-C\): with probability measure
+\(Q^2d\mu/E_Q\), let \(h=u/\sqrt Q\), \(c=\mathbb E h^2\),
+\(z_3=\mathbb E h^3\), and \(m=\mathbb E h\). Then
+\(z_3\le c\le z_3^{2/3}\), so \(c\le1\); Cauchy--Schwarz gives
+\(c^2\le m z_3\le mc\), and hence \(m\ge c\). Thus
+\(\mathbb E(h-1)^2\le1-c\). We have proved \[
+D_0\le\frac{4S}{27}+o(1),\qquad
+\int Q(u-\sqrt Q)^2\le S+o(1).
+\tag{13}
+\]
+
+\hypertarget{produce-the-full-calibrated-form-including-its-weyl-direction}{%
+\subsection{4. Produce the full calibrated form, including its Weyl
+direction}\label{produce-the-full-calibrated-form-including-its-weyl-direction}}
+
+Because \(Q\ge3\), \(u\le6\), and \((Q-q)^2\le e^2\), (13) yields \[
+\int(q-u^2)^2
+\le2(1+2\sqrt3)^2S+2\int e^2+o(1)
+\le C V\kappa+o(1).
+\tag{14}
+\] The middle inequality uses
+\(|Q-u^2|\le(1+2\sqrt3)\sqrt Q\,|\sqrt Q-u|\). Together with (7), this
+controls \(\int(u^2-q_\beta)^2\).
+
+Now choose the normalization, rather than assuming it: \[
+c_\beta^2=\frac{9\beta}{8(\beta+1)},\qquad
+\omega=c_\beta\psi,\qquad t_\beta=1/\beta,\qquad
+\alpha_\beta=\frac9{8(\beta+1)}.
+\] It follows that \[
+\|\omega\|_\infty\le3\sqrt2,\qquad
+\int(|\omega|^2-2)^2\le C_L V\kappa+o(1).
+\tag{15}
+\] Define the smooth polynomial model \[
+A_{\omega,t}=t\left(\frac{|\omega|^2}{3}I-\omega\otimes\omega\right).
+\] The exact identity for arbitrary \(\psi\), including its zeros, is \[
+\left|W^+-\alpha_\beta
+       \left(\frac{\rho^2}{3}I-\psi\otimes\psi\right)\right|^2
+=\frac16(w-2\alpha_\beta\rho^2)^2
++2\alpha_\beta E_\lambda.
+\tag{16}
+\] This identity uses only trace-freeness of \(W^+\), not an eigenline
+selection. The tensor on its left is exactly \(W^+-A_{\omega,1/\beta}\).
+Also \(2\alpha_\beta\rho^2=u^2/(\beta+1)\), and \[
+w-\frac{u^2}{\beta+1}
+=\left(w-\frac4\beta\right)
+-\frac{u^2-q_\beta}{\beta+1}.
+\] Equations (7), (13)--(16) give, for the same smooth solution, \[
+d_\beta:=\fint\left(
+ |\operatorname{Ric}+g|^2+|W^+-A_{\omega,1/\beta}|^2
++(|\omega|^2-2)^2\right)
+\le C_L\kappa+o(1).
+\tag{17}
+\] In particular the small Weyl-direction error has been proved from the
+actual gauge equations. It is not a hidden geometric hypothesis.
+
+\hypertarget{supply-the-second-order-budget}{%
+\subsection{5. Supply the second-order
+budget}\label{supply-the-second-order-budget}}
+
+For a bounded section \(v\) of a metric bundle with compatible
+connection curvature \(\mathscr F\), covariant integration by parts on a
+closed four-manifold gives \[
+\|\nabla v\|_4^2\le4\|v\|_\infty\|\nabla^2v\|_2,
+\] \[
+\|\nabla^2v\|_2^2
+\le2\|\nabla^*\nabla v\|_2^2
++32\|v\|_\infty^2\|\operatorname{Ric}\|_2^2
++33\|v\|_\infty^2\|\mathscr F\|_2^2.
+\tag{18}
+\] The curvature convention is
+\(|\mathscr F|^2=\sum_{ij} |\mathscr F_{ij}|_{\rm HS}^2\). These are the
+inherited Hessian identities, not a Sobolev embedding. One first
+interchanges Hessian slots and then commutes on \(\nabla v\); no
+derivative of curvature is introduced.
+
+Equations (7), (10) give \(\int f_j^2\le C_L V(1+\kappa)+o(1)\). The
+determinant Chern--Weil identity and (9) imply \[
+\|F_A\|_2^2=2\|F_A^+\|_2^2-4\pi^2a^2
+\le4\int f_j^2+4\pi^2(-a^2)_+.
+\] The curvature of the positive-spinor connection is bounded in norm by
+the \(W^+,s,\operatorname{Ric}^{\circ},F_A\) blocks; \(W^-\) acts
+trivially on this representation. Its squared integral is therefore at
+most \(C_LV(1+\kappa+b_a)+o(1)\). The spinor equation and \(|\Phi|\le2\)
+likewise bound \(\int|\nabla_A^*\nabla_A\Phi|^2\) by
+\(C_LV(1+\kappa)+o(1)\).
+
+Apply (18) to \(\Phi\), and twice differentiate the parallel quadratic
+map \(\Phi\mapsto\omega\). The resulting terms are bounded by
+\(C(|\Phi||\nabla_A^2\Phi|+|\nabla_A\Phi|^2)\). Finally use
+\(\Delta_H\omega=\nabla^*\nabla\omega+(s/3)\omega-2W^+\omega\). This
+proves \[
+B_\omega:=\fint|\Delta_H\omega|^2
+\le C_L(1+\kappa+b_a)+o(1),
+\] \[
+\boxed{(1+B_\omega)d_\beta
+\le C_L\kappa(1+\kappa+b_a)+o(1).}
+\tag{19}
+\] All the forms are smooth actual solutions. None of these estimates
+differentiates the smoothing weight.
+
+\hypertarget{spectral-compatibility-and-completion-of-the-proof}{%
+\subsection{6. Spectral compatibility and completion of the
+proof}\label{spectral-compatibility-and-completion-of-the-proof}}
+
+The bounded self-dual-form compatibility theorem states that, for
+\(\|\omega\|_\infty\le K\) and bounded constant \(t\), \[
+|t|\,|1-2t|
+\le C\sqrt{d_t(1+B_\omega+d_t)},
+\tag{20}
+\] where \(d_t\) is as in (17). Its proof is recorded in full in
+\href{round21_analytic.md}{the analytic criterion}, Sections 2, 3 and 6.
+The mechanism relevant to its use here is worth making explicit. The
+same Hessian estimate bounds second derivatives of \(A_{\omega,t}\). The
+weak contracted Bianchi identity, tested against
+\(J_t=\operatorname{div}W(A_{\omega,t})\), gives \[
+\fint|J_t|^2\le C|t|\sqrt{d_t(1+B_\omega+d_t)}.
+\] If \(v=|\omega|^2\), the polynomial pointwise contraction gives \[
+t^2v(|\nabla\omega|^2+|d\omega|^2)
+\le |J_t|^2+\tfrac43t^2|dv|^2,
+\quad
+\fint|dv|^2\le C\sqrt{d_t(1+B_\omega+d_t)}.
+\] Testing the self-dual Hodge equation against \(v\omega\) gives an
+algebraic term \(16t^2(1-2t)/3\); all its derivative terms are
+controlled by the preceding two displays. The zeroth-order errors cost
+at most \(Ct^2\sqrt{d_t}\). Thus \[
+\left|\frac{16}{3}t^2(1-2t)\right|
+\le7\fint|J_t|^2+C t^2\sqrt{d_t(1+B_\omega+d_t)}.
+\] Division by \(|t|\), with the case \(t=0\) separate, proves (20). The
+argument neither differentiates the Ricci error nor assumes
+\(d\omega=0\).
+
+Substitute the produced form, with \(t=1/\beta\), into (20). Using
+(17)--(19), then letting its smoothing allowance tend to zero, \[
+\frac{(\beta-2)^2}{\beta^4}
+\le C_L\kappa(1+\kappa+b_a).
+\tag{21}
+\] Absorb \(\beta^4\le L^4\) into the constant. When \(\kappa\le1\), the
+right side is bounded by \(2C_L(1+b_a)\kappa\). When \(\kappa>1\), (2)
+is immediate after choosing \(c_L\le(L-2)^{-2}\). This proves (2).
+
+For (3), Chern--Weil gives \[
+4\pi^2T=\int\left(2|W^+|^2+s^2/24
+-|\operatorname{Ric}^{\circ}|^2/2\right)
+\ge-\tfrac12 Vr.
+\] Hence \(a^2\ge T\) implies \(b_a\le r/(8\pi^2)\). For \(\kappa\le1\)
+this is bounded by \(1/(8\pi^2)\); for \(\kappa>1\) use the same trivial
+split. Equation (4) is (3) with \(r=0\), after multiplying by
+\(\beta V/(\beta+1)\).
+
+\hypertarget{the-allowed-endpoint-without-a-scalar-curvature-band}{%
+\subsection{7. The allowed endpoint without a scalar-curvature
+band}\label{the-allowed-endpoint-without-a-scalar-curvature-band}}
+
+The same construction has a structural consequence even when the
+parameter approaches the allowed endpoint. It is not obtained by
+declaring that endpoint forbidden.
+
+Let \(H\) be the harmonic self-dual representative of \(a_g^+\), with
+convention \(\operatorname{proj}_{\mathcal H^+}(iF_A^+)=2\pi H\). Set \[
+\zeta_\beta=-\frac{3\pi\beta}{\beta+1}H.
+\] \textbf{Theorem 2 (actual harmonic alignment).} Under the hypotheses
+of Theorem 1, if \(\kappa\le1\), the same smooth forms can be chosen
+with arbitrarily small allowance \(\eta>0\) so that \[
+\fint|\omega-\zeta_\beta|^2\le C_L\kappa+\eta,
+\quad
+\fint|\nabla\omega|^2
+\le C_L\sqrt{\kappa(1+\kappa+b_a)}+\eta.
+\tag{22}
+\] The amplitude, polynomial Weyl fit and Hodge-Laplacian bounds remain
+(15), (17) and (19). In particular, at \(\beta=2\), the harmonic target
+is \(-2\pi H\), and \(\kappa=r+144\pi^2D_{\rm LB}/V\). This conclusion
+needs neither a scalar band nor a scalar spectral gap.
+
+\textbf{Proof.} Retain the actual curvature moment from Section 3. Since
+\(C\le E_Q\), its Hodge remainder satisfies \[
+18\|iF_A^+-2\pi H\|_2^2
+=C_{\rm act}-72\pi^2p\le S+o(1).
+\] The curvature equation therefore gives \[
+\|f_j\psi+4\sqrt2\pi H\|_2^2\le4S/9+o(1).
+\tag{23}
+\] Furthermore \[
+\int(f_j-\sqrt{q_\beta})^2
+\le2\int(f_j-\sqrt Q)^2
++2\int(\sqrt Q-\sqrt{q_\beta})^2
+\le C_LV\kappa+o(1).
+\] Here \((f_0-\sqrt Q)^2\le f_0^2-Q\le9e^2/16\), and the square-root
+map is uniformly Lipschitz on \([3,\infty)\). Use \(|\psi|\le4\) and
+multiply (23) by \(c_\beta^2/q_\beta\). The identity
+\(4\sqrt2\pi c_\beta/\sqrt{q_\beta} =3\pi\beta/(\beta+1)\) proves the
+first estimate in (22).
+
+For the second, the derivative conclusion of the bounded-form theorem on
+\(1/L\le t\le1/2\) is
+\(\fint|\nabla\omega|^2\le C_L\sqrt{d_t(1+B_\omega+d_t)}\) when
+\(d_t\le1\). If \(\kappa\) is small, (17) ensures this. For the
+remaining compact range of \(\kappa\le1\), the integrated Hodge equation
+and the bound on \(B_\omega\) give
+\(\fint|\nabla\omega|^2\le C_L\sqrt{1+b_a}\); enlarging the constant
+recovers (22). All allowances are taken small simultaneously for the
+same solution.
+
+The harmonic form need not have a uniform maximum bound. Thus (22) does
+not license replacing \(\omega\) by \(\zeta_\beta\) inside the quadratic
+Weyl model. It does give a precise global spectral conclusion: if
+\(\Pi_{>\lambda}\) is the spectral projection of the rough Laplacian on
+self-dual forms, then for every \(\lambda>0\), \[
+\fint|\Pi_{>\lambda}\zeta_\beta|^2
+\le C_L\left[\kappa+
+\frac{\sqrt{\kappa(1+\kappa+b_a)}}{\lambda}\right].
+\tag{24}
+\] Indeed, project \(\zeta_\beta-\omega\) and use
+\(\|\Pi_{>\lambda}\omega\|_2^2 \le\lambda^{-1}\|\nabla\omega\|_2^2\),
+then let the allowance tend to zero. This controls an actual specified
+harmonic class; it does not assert global Kähler topology or exact
+metric correction.
+
+At \(\beta=2\), there is a stronger direct estimate, independent of
+\(b_a\). In the notation of (11), the retained Hodge identity is \[
+\int|\nabla\psi|^2
+=2\int|d\psi|^2+2\int E_\lambda
+-\tfrac13\int(s+2w)\rho^2.
+\] Since \(\rho\le4\), \(\int(s+2w)^2\le2\mathfrak D_2\), and
+\(c_2^2=3/4\), this gives simultaneously \[
+\fint|\nabla\omega|^2\le G(\kappa)+\eta,
+\quad G(\kappa)=13\kappa+4\sqrt{2\kappa},
+\quad
+\fint|d\omega|^2\le13\kappa/2+\eta.
+\tag{25}
+\] The preceding harmonic-alignment estimate can likewise be made
+explicit: \[
+\fint|\omega+2\pi H|^2\le49\kappa+\eta.
+\tag{26}
+\] For (26), (6) gives \(\fint(q-6)^2\le18\kappa\). The cutoff estimate
+implies \(\fint(f_j-\sqrt6)^2\le9\kappa+o(1)\), and (23) then costs at
+most \(4\cdot9\kappa+S/(9V)\le49\kappa\). Thus in (24) the endpoint
+right side can be replaced by \(98\kappa+2G(\kappa)/\lambda\), with no
+square-cost hypothesis. The
+\href{line1_composed_application.md}{endpoint application} gives this
+statement and its spectral consequences separately.
+
+\hypertarget{what-is-strengthened-and-what-is-not}{%
+\subsection{8. What is strengthened, and what is
+not}\label{what-is-strengthened-and-what-is-not}}
+
+At \(\beta=2\), \[
+\mathfrak D_2=144\pi^2D_{\rm LB},\qquad
+D_{\rm LB}=\frac1{4\pi^2}\int(s^2/24+|W^+|^2/2)-p/2.
+\] The classical equality set is negative cscK, compatible with the
+selected Spin\(^c\) structure, not necessarily Einstein. Equation (2)
+does not turn its zero deficit into an unconditional Ricci estimate.
+
+At \(\beta=8\), Chern--Weil gives \[
+\mathfrak D_8
+=108\pi^2(T-2p/3)+\frac{27}{2}\int|\operatorname{Ric}^{\circ}|^2.
+\tag{27}
+\] Thus the old topological calibration is one member of the family. For
+other parameters, (2) controls a different scalar--Weyl functional, with
+its own genuine angular calibration supplied in Section 4. This is a
+functional extension of the method, not a second discovery of the old
+\(1/3\) blow-up obstruction.
+
+An exact negative Kähler--Einstein metric with canonical class has
+\(s=-4,w=2,p=V/(2\pi^2)\). Direct substitution yields \[
+\frac{\mathfrak D_\beta}{V}
+=\frac{4(\beta-2)^2}{\beta}.
+\tag{28}
+\] The quadratic vanishing at the allowed endpoint is consequently the
+correct order; the theorem does not claim an optimal coefficient.
+
+For \(0<\beta\le2\), the classical scalar and scalar--Weyl bounds
+already provide a stronger elementary bound. If \(x=\|s\|_2,y=\|w\|_2\),
+then \(x\ge\sqrt{32\pi^2p}\) and \(x+y\ge\sqrt{72\pi^2p}\). Minimizing
+\(x^2+\beta y^2\) on these constraints gives
+\(\int(s^2+\beta w^2) \ge8\pi^2p(4+\beta)\). Thus this range does not
+need the new compatibility argument. For \(\beta>2\), that scalar
+constraint is inactive at the classical relaxed minimizer. The
+additional obstruction in (2) is differential, through weak Bianchi and
+the actual bounded form.
+
+For the Yau26 negative input, \(r\le4\delta_-(g)^2\). Under
+\(a^2\ge T\), (3) therefore gives the usable estimate \[
+4\delta_-(g)^2+\mathfrak D_\beta/V
+\ge c'_L(\beta-2)^2.
+\tag{29}
+\] To obtain a new purely topological application one must additionally
+force \(\mathfrak D_\beta/V\) small from independently justified
+topological or geometric data. No such new topology is asserted here.
+Neither (29) nor the allowed-root form supply proves existence of an
+Einstein metric on an arbitrary smooth manifold.
+
+\hypertarget{sources-and-verification}{%
+\subsection{Sources and verification}\label{sources-and-verification}}
+
+\begin{itemize}
+\tightlist
+\item
+  C. LeBrun, \emph{Ricci Curvature, Minimal Volumes, and Seiberg--Witten
+  Theory}, \href{https://arxiv.org/abs/math/0003068}{Theorem 2.3 and
+  Propositions 3.1, 4.1}: the classical curvature inequalities and cscK
+  equality set.
+\item
+  C. LeBrun, \emph{Four-manifolds, curvature bounds, and convex
+  geometry}, \href{https://arxiv.org/abs/math/0611450}{Lemma 3.7}:
+  weighted equations.
+\item
+  \href{round4_rigidity.md}{Integral truncated-weight proof}, Sections
+  2--4: the inherited cutoff and moment estimates, reproduced above.
+\item
+  \href{round21_analytic.md}{Bounded-form spectral theorem}: the
+  analytic compatibility theorem, including its polynomial contractions.
+\item
+  \href{line1_scalar_band_remainder.md}{Scalar-band supply}: the prior
+  allowed cscK branch, which is not itself a forbidden-spectrum
+  application.
+\end{itemize}
+
+Exact Einstein saturation forcing Kähler--Einstein structure already
+appears in LeBrun's Corollary 2.5; it is not a new classification here.
+The quantitative persistence under integral Ricci error, and the actual
+all-scalar form-production estimates, are the assertions at issue.
+
+The parameterized all-scalar functional estimate (2) is the claim proved
+in this note. Its finite algebra is checked separately; those checks do
+not replace the gauge-solvability hypothesis or the analytic proofs. No
+comprehensive priority claim over later literature is made.
+
+\end{document}

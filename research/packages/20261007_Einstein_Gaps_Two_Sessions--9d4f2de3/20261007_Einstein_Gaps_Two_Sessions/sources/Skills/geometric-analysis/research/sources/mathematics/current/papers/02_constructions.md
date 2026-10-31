@@ -1,0 +1,719 @@
+# Pointwise Einstein approximation, exact models, and closed gluing
+
+## 1. The construction problem and the inherited results
+
+The relevant error is the unweighted endomorphism norm
+\[
+\delta_\sigma(g)=\|g^{-1}\operatorname{Ric}_g-\sigma I\|_{L^\infty,\mathrm{op}},
+\qquad \sigma\in\{-1,1\}.
+\]
+On a fixed closed smooth manifold, constructing \(\delta_\sigma(g_j)\to0\)
+establishes \(e_\sigma(M)=0\). It does not decide whether another metric on
+\(M\) is Einstein. An exact metric on an open model, a family on a fixed
+closed manifold, and an obstruction to repairs in a specified neighborhood
+are different results. This chapter develops their connections.
+
+The baseline already contains two complete approximation mechanisms.
+The first resolves a fixed Einstein four-orbifold with marked \(A_1\)
+fillings. A corrected Eguchi--Hanson core has the prescribed nonzero
+Einstein source. In a common radial gauge, its quadratic mismatch with
+the exterior is a pure Weyl tensor
+\[
+K_{ij}=-\tfrac13 C_{ikjl}x^kx^l,\qquad
+\operatorname{tr}K=\operatorname{div}K=\Delta K=0.
+\]
+For \(s=\log r\),
+\[
+D\operatorname{Ric}_e[\eta(s)K]
+ =-\frac{\eta''+6\eta'}{2r^2}K.
+\]
+Since \(K=O(r^2)\), interpolation over a logarithmic interval of length
+\(L\) costs \(O(L^{-1})\) in the required norm. The core, annulus, and
+exterior estimates give \(\delta_\sigma(g_a)\le C/|\log a|\) on the fixed
+marked resolution. Core correction and nonlinear tail hypotheses are
+part of that theorem, not consequences of the linear identity.
+See the [baseline construction manuscript, §§2–5](../baseline/research/20260916_construction.tex).
+
+The second mechanism fixes a surface bundle \(E_D\) with Dehn-twist
+monodromy and interpolates hyperbolic fibre metrics along a long
+hyperbolic base collar. The complete Ricci matrix has error \(O(L^{-1})\);
+the shrinking angular direction creates no loss because coefficients
+are angularly invariant. The baseline also permits monodromy through a
+geometric free-group quotient, including noncommuting mapping classes.
+Its balanced double-collar family has fibre waist \(\varepsilon\),
+base waist \(\beta=\varepsilon^2\), and
+\[
+\delta_-(G_\varepsilon)=\frac{2}{\pi^4}\varepsilon^2+O(\varepsilon^4).
+\]
+An \(O(\varepsilon^2)\) global correction reduces the defect to
+\(O(\varepsilon^3)\). These are inherited constructions, not results
+first obtained in the subsequent twelve rounds.
+See [the detailed bundle chapter](../baseline/research/20260912.tex)
+and [the baseline global manuscript, section bundle-input](../baseline/research/20260916_global.tex).
+
+The subsequent work has four centers: a complete exact double-cylinder
+family; nonlinear small-repair obstructions on closed \(E_D\); complete
+two-ended approximate metrics with fixed circle topology; and closed
+sheared product-block metrics beyond surface bundles.
+No publication-priority claim is made for the constructions or methods.
+
+## 2. The complete invariant double-cylinder problem
+
+### 2.1. All bounded invariant Jacobi fields
+
+On \(X=(\mathbb R\times S^1)^2\), fix angular periods and put
+\[
+g_0=dt^2+\cosh^2t\,dy^2+du^2+\cosh^2u\,dx^2,\quad
+f=\operatorname{sech}^2t,\quad r=\operatorname{sech}^2u,\quad
+J(v)=\arctan(\sinh v),\quad W=\cosh t\cosh u.
+\]
+Use the orthonormal coframe
+\((e^0,e^1,e^2,e^3)=(dt,\cosh t\,dy,du,\cosh u\,dx)\).
+Let \(T_1=(e^0)^2-(e^1)^2\), \(S_1=e^0e^1+e^1e^0\), and similarly
+\(T_2,S_2\) on the second factor. The Bianchi-gauged operator is
+\(L=(\nabla^*\nabla-2\mathring R)/2\).
+Writing \(P_t=\partial_t^2+\tanh t\,\partial_t\), its ten tensor blocks are
+
+| Block | Operator \(2L\) |
+| --- | --- |
+| Two factor traces | \(-P_t-P_u+2\) |
+| \(T_1,S_1\) | \(-P_t-P_u+2-4f\) |
+| \(T_2,S_2\) | \(-P_t-P_u+2-4r\) |
+| Four mixed polarizations | \(-P_t-P_u+2-f-r\) |
+
+Every bounded angularly invariant Jacobi field, initially allowing
+arbitrary joint \((t,u)\)-dependence, is
+\[
+H[z]=f[(a_0+a_1J(u))T_1+(b_0+b_1J(u))S_1]
+ +r[(A_0+A_1J(t))T_2+(B_0+B_1J(t))S_2].
+\tag{2.1}
+\]
+The classification is not a separated-variables assumption. The block
+estimates exclude the remaining bounded modes. On the full invariant
+\(L^2(W\,dt\,du)\) domain there is instead a positive gap:
+\[
+\langle Lv,v\rangle\ge\tfrac18\|v\|_2^2.
+\tag{2.2}
+\]
+The eight bounded fields in (2.1) are not \(L^2\) on the whole product.
+See [the kernel and gap proof](../round2_construction.md) and its
+[independent review](../round2_construction_review.md).
+
+### 2.2. Integrating the entire nonlinear source
+
+For constant parameters define a complete curvature-\(-1\) cylinder
+\[
+h_{\alpha,\gamma}
+=\frac{\cosh^2v}{\sinh^2v+e^{-\alpha}}\,dv^2
++(\sinh^2v+e^{-\alpha})(d\theta+\gamma\operatorname{sech}^3v\,dv)^2.
+\]
+Let the first parameters depend on \(u\) through \(a_0+a_1J(u)\),
+\(b_0+b_1J(u)\), and the second pair analogously on \(t\).
+Their sum defines \(g[z]\), with first variation \(H[z]\) and
+determinant one in the background frame.
+
+**Exact model theorem.** For sufficiently small \(z\in\mathbb R^8\), there is
+an analytic correction \(k[z]\) satisfying
+\[
+G[z]=g[z]+k[z],\qquad \operatorname{Ric}_{G[z]}=-G[z],\qquad
+\beta_{g[z]}k[z]=0,\qquad
+\|k[z]\|_{H^{m+2}_{1/4}}\le C|z|^2
+\tag{2.3}
+\]
+for \(m=4\), with higher regularity and
+\(|\nabla^jk[z]|\le C_j|z|^2W^{-3/4}\) for every fixed \(j\).
+The metrics are complete, smooth, and invariant under both rotations.
+Uniqueness is in the stated gauge and correction space, not modulo
+arbitrary diffeomorphisms. Eight distinct moduli are not asserted.
+
+Here \(H^m_\delta\) means \(W^\delta\) times the tensor belongs to the
+background invariant Sobolev space. The analytic proof has five steps.
+
+1. Compactify by \(\xi=J(t)\), \(\eta=J(u)\). All frame coefficients
+   extend smoothly to the closed square, with radial derivatives
+   \(\cos\xi\,\partial_\xi\), \(\cos\eta\,\partial_\eta\).
+2. The exact nonlinear residual vanishes on every face and corner.
+   Hadamard division gives
+   \(E[z]=(\cos\xi\cos\eta)R[z]\), with \(R[z]=O(|z|^2)\) smooth.
+   Every nonlinear order therefore lies in \(H^m_\delta\), \(\delta<1/2\).
+3. Conjugate \(L\) by \(W^\delta\). Its drift and linear zeroth-order
+   terms are skew-adjoint together; \(|\nabla\log W|^2\le2\) gives
+   \(\operatorname{Re}\langle L_\delta v,v\rangle
+   \ge(1/8-\delta^2)\|v\|^2\).
+   At \(\delta=1/4\), Lax--Milgram and regularity give the full inverse.
+4. Solve
+   \(\operatorname{Ric}(g[z]+k)+g[z]+k+
+   \delta^*_{g[z]+k}\beta_{g[z]}k=0\)
+   by contraction in a ball of radius \(C|z|^2\).
+5. The \(L^2\) Bianchi one-form obeys
+   \((\nabla^*\nabla-\operatorname{Ric})\omega=0\).
+   Negative Ricci already follows from \(C^2\) proximity; cutoff
+   integration forces \(\omega=0\).
+
+A moving reference is essential. A constant cylinder length change has
+a fixed-background Bianchi defect independent of the other radial
+coordinate, hence not \(L^2\); its quadratic size does not fix that.
+The [nonlinear proof](../round3_construction.md) and
+[review](../round3_construction_review.md) check the whole source,
+spaces, inverse, positivity, and gauge removal.
+The general deformation method is established prior work; the specified
+degenerate cylinder factors and end data are treated directly here.
+
+## 3. Nonlinear charge, boundary flux, and exact insertion
+
+Write the exact metric in mechanical-connection form
+\[
+G=h+H_{ab}(d\theta^a+\mathcal A^a)(d\theta^b+\mathcal A^b),\quad
+v=\sqrt{\det H},\quad F=d\mathcal A,\quad q=vH*_hF.
+\]
+Use angular generators \((\partial_y,\partial_x)\) and quotient orientation
+\(dt\wedge du\). The mixed Einstein equation gives \(dq=0\).
+Neither \(H\) nor \(h\) is assumed diagonal. Set \(c=\pi^2/2\) and
+\[
+M[z]=\int_{\mathbb R^2}v^{-1}H^{-1}\,dA_h,\qquad
+S[z]=c(-b_1,B_1)^T.
+\]
+Then
+\[
+\int_{\mathbb R^2}F=S[z]=M[z]q[z],\qquad M[z]>0,\qquad M[0]=cI.
+\tag{3.1}
+\]
+The matrix density is dominated by
+\(\operatorname{diag}(\operatorname{sech}^3t\operatorname{sech}u,
+\operatorname{sech}t\operatorname{sech}^3u)\).
+The correction changes the connection by a form whose boundary integral
+over expanding squares tends to zero, also after fixed parameter
+derivatives. Stokes computes the total curvature from actual end markings.
+
+The finite nonlinear twist energy is
+\[
+\mathcal E_{\rm tw}=q^TMq=q\cdot S=S^TM^{-1}S
+=\lim_{R\to\infty}\int_{\partial[-R,R]^2}q\cdot\mathcal A.
+\tag{3.2}
+\]
+It vanishes exactly when \(b_1=B_1=0\). Constant twists \(b_0,B_0\) are
+removed by angular shifts using \(\int_0^v\operatorname{sech}^3w\,dw\);
+they are exact gauge in this family, though end markings change.
+These identities are not a full metric Dirichlet-to-Neumann operator.
+See [the charge and energy proof](../round4_construction.md).
+
+The quadratic two-face calculation remains useful. Its net sources are
+\[
+I_1=\tfrac{\pi^2}{8}(a_1^2-3b_1^2-A_1^2-B_1^2),\quad
+I_2=\tfrac{\pi^2}{8}(A_1^2-3B_1^2-a_1^2-b_1^2).
+\]
+Homogeneous second-order end shifts change opposite face fluxes but not
+their sum \(-I_i\). Vanishing net exterior response would imply
+\(b_1=B_1=0\), \(a_1^2=A_1^2\). That hypothesis is not known on \(E_D\).
+The true exterior equation retains its source and the detector's adjoint
+defect; physical periods multiply every source and flux by the same factor.
+Local convergence alone does not discard these normalized terms.
+See [the conditional matching law](../round3_matching_next.md).
+
+There is an unconditional exact-insertion obstruction. If
+\((b_1,B_1)\ne0\), no nonempty open piece of \(G[z]\) is locally isometric
+to an open piece of a connected closed Einstein four-manifold.
+Its complete universal cover has fixed-radius balls escaping to product
+geometry, with \(\nabla\mathrm{Rm}\to0\). A cocompact isometry group would
+translate them into a compact set, force \(\nabla\mathrm{Rm}=0\) on an
+open ball, then everywhere by analyticity. The cover would be
+\(\mathbb H^2\times\mathbb H^2\). Every locally free two-dimensional abelian
+Killing action there has integrable orthogonal complement, so \(F=0\),
+contradicting (3.1). Analytic continuation of a local isometry between
+complete simply connected analytic covers transfers any proposed closed
+insertion to this contradiction.
+The [proof](../round4_exact_core.md) excludes unchanged exact cores, not
+closed metrics converging to the model or corrections on every open set.
+
+## 4. A nonlinear repair obstruction on the actual closed bundle
+
+### 4.1. The closed detector and the whole fibre
+
+Let \(p\) be the fibre genus. The global TT tensor \(Q_\varepsilon\),
+from a concentrated base quadratic differential, satisfies
+\[
+\beta^{-1}\!\int\langle E(G_\varepsilon),Q_\varepsilon\rangle
+=-c_0\varepsilon^3(1+o(1)),\quad c_0=\frac1{2\pi^2},\quad E(g)=\operatorname{Ric}_g+g,
+\]
+\[
+\beta^{-1}\|J_GQ_\varepsilon\|_1\le C\varepsilon^2,\qquad
+\beta^{-1}\!\int|Q_\varepsilon|_*\longrightarrow M_0=8\pi^2(p-1).
+\tag{4.1}
+\]
+The nuclear norm is dual to the operator norm. The baseline Taylor
+estimate bounds arbitrary quadratic responses but does not give their sign.
+Base-TT quadratic responses vanish; other perturbations can cancel this
+single pairing while enlarging the full defect.
+[Round 1](../construction.md) retains that distinction.
+
+Round 5 passes to the whole finite-area fibre limit, preserving both cusps
+and the thick part. A formal double-cylinder limit could lose detector
+mass. Classifying the bounded whole-fibre Jacobi response proves its
+quadratic pairing nonpositive, hence for every
+\(h_\varepsilon=O_{C^2}(\varepsilon^{3/2})\),
+\[
+\liminf\varepsilon^{-3}\delta_-(G_\varepsilon+h_\varepsilon)
+\ge\frac1{16\pi^4(p-1)}.
+\]
+No symmetry, support, or gauge condition is imposed.
+See [the whole-fibre proof](../round5_construction.md) and
+[independent receiver derivation](../round5_receiver_independent.md).
+
+### 4.2. A uniform inverse in the receiver's measure
+
+On the comparison product of the base cylinder and the actual closed
+pinching fibre \(F_\varepsilon\), after angular averaging, set
+\[
+d\nu=\operatorname{sech}t\,dt\,dA_{F_\varepsilon},\qquad
+K=f(aT+bS)+A+J(t)B,\quad A,B\in\mathrm{TT}(F_\varepsilon).
+\]
+The uniform weighted estimate is
+\[
+V=K+r,\qquad \|r\|_{H^2_\nu}\le C\|LV\|_{L^2_\nu}.
+\tag{4.2}
+\]
+It uses the scalar gap of the specified nonseparating one-node degeneration:
+the thick complement remains connected. A separating pinch need not obey
+that gap. Off fibre TT tensors the fibre operator has gap two.
+Horizontal resonances are handled by
+\[
+(-\partial_t+\tanh t)(\partial_t+2\tanh t)=-P_t+2-4f,
+\]
+whose reversed product is the coercive mixed operator \(-P_t+2-f\).
+The vertical TT equation retains both solutions \(A+JB\), instead of
+discarding transfers as nonintegrable in a different measure.
+
+For every kernel element,
+\[
+\mathcal B(K,K):=\frac12\int
+\langle D^2E[K,K],Q_0\rangle
+=-\frac{\pi}{8}\|B\|_{L^2(F_\varepsilon)}^2\le0.
+\tag{4.3}
+\]
+A determinant-preserving fibre path gives the sign: its horizontal Ricci
+variation is minus the squared fibre velocity. The bilinear estimate
+\(|\mathcal B(U,V)|\le C\|U\|_{H^2_\nu}\|V\|_{H^2_\nu}\)
+controls the positive response by \(C\|LV\|(\|V\|+\|LV\|)\).
+This is not a uniform maximum-norm inverse or a parametrization of all
+global bundle deformations. See [the weighted proof](../round6_weighted_inverse.md).
+
+### 4.3. Arbitrary closed perturbations and the linear-size ball
+
+Put \(a=\|h\|_{C^2(G_\varepsilon)}\) and
+\(\eta=\delta_-(G_\varepsilon+h)+\varepsilon^2+\varepsilon a+a^2\).
+The actual base collar is a marked product with angular period \(\beta\);
+twist clutching occurs at a radial face, not at angular periodicity.
+Cutoff, averaging, and product comparison produce forcing \(O(\eta)\).
+The oscillatory part has \(\|V_{\rm osc}\|_{H^1_\nu}^2\le C\beta a^2\).
+Boundary flux is estimated, not set to zero.
+
+Gauge removal has a nonzero forcing term. If \(H=V+\mathcal L_Xg_*\)
+and \(F=DE(H)\), naturality gives
+\[
+D^2E[H,H]-D^2E[V,V]=2\mathcal L_XF-DE[W].
+\]
+The first term costs \(Ca\eta\); only the second disappears against the
+exact detector. Including it, background comparison, exterior detector
+mass, and the cubic remainder gives
+\[
+\begin{split}
+\beta^{-1}\!\int\langle E(G+h),Q_\varepsilon\rangle
+\le -c_0\varepsilon^3(1+o(1))
++C[\varepsilon^2a+a\eta+\eta^2+(\varepsilon+\beta)a^2+a^3].
+\end{split}
+\tag{4.4}
+\]
+Choose \(a\le c_*\varepsilon\) with sufficiently small fixed \(c_*>0\).
+The error is then smaller than half the source, and (4.1) gives
+\[
+\boxed{\ \|h\|_{C^2(G_\varepsilon)}\le c_*\varepsilon
+\Longrightarrow\delta_-(G_\varepsilon+h)\ge c_1\varepsilon^3.\ }
+\tag{4.5}
+\]
+For \(h=o(\varepsilon)\), the coefficient remains \(c_0/M_0\).
+After reducing the radius by a fixed factor, rescaling excludes all
+Einstein constants in this ball. The inherited \(O(\varepsilon^2)\)
+correction achieves cubic order: (4.5) is an optimal-order statement
+in this neighborhood. See [the closed proof](../round6_construction.md)
+and [review](../round6_receiver_review.md).
+
+A uniform \(C^0\) modulation inverse is false. A global TT field
+\(U_\varepsilon=a_\varepsilon Q_\varepsilon\), varying across the fibre
+collar, has unit maximum size, residual \(\Theta(1/|\log\varepsilon|)\),
+and stays a fixed distance from reference tangents plus arbitrary
+infinitesimal diffeomorphisms. This [counterexample](../round5_modulation.md)
+explains the receiver measure. Its much larger residual does not defeat
+(4.5). Neither argument decides large \(C\varepsilon\), arbitrary \(o(1)\),
+or distant repairs. At \(a=C\varepsilon\), several cubic-scale terms in
+(4.4) compete, and their combined sign is not established.
+
+## 5. Charged local geometry and complete one-ended charge release
+
+The baseline already proves stable Koiso Einstein germs with nonzero
+conserved charge, all Cauchy constraints, and periodic torus data.
+Round 6 supplies an explicit parametrization, not first charged existence.
+It uses \(M(\theta)=R_\theta\operatorname{diag}(e^a,e^{-a})R_\theta^T\),
+\(Q_0=q^TM^{-1}q/2\), and \(b=2\sinh a/\sqrt{12+2Q_0}\).
+The analytic \(\operatorname{Ric}=-3g\) evolution has central \(H=0\),
+\(H'=3-Q_0\), positive orbit-plane curvature \(3+Q_0/2\), and a strictly
+stable center when \(\max Q_0<3\). It is a local analytic germ, not
+smooth Cauchy well-posedness or continuation to complete ends.
+Compare [the baseline charged-center subsection](../baseline/research/20260916_global.tex)
+with [the explicit refinement](../round6_global.md).
+
+A separate complete construction releases charge with small full Ricci error.
+For fixed smooth \(\chi=1\) on \([0,1]\), \(\chi=0\) on \([2,\infty)\), put
+\[
+m_R(r)=\chi(r/R),\quad V_R=r^2-m_R/r,\quad
+g_R=\frac{dr^2}{V_R}+V_Rd\vartheta^2+r^2(dx^2+dy^2),\quad r\ge1.
+\]
+Period \(4\pi/3\) for \(\vartheta\) makes \(r=1\) a smooth bolt.
+The topology is \(D^2\times T^2\); \(r\le R\) is exact toral
+Einstein black-hole geometry and \(r\ge2R\) is exactly hyperbolic.
+The Ricci-error eigenvalues are
+\[
+m_R''/(2r),\quad m_R''/(2r),\quad m_R'/r^2,\quad m_R'/r^2,
+\]
+so the global defect is \(O(R^{-3})\).
+For integral torus generators \(\partial_x+c\partial_\vartheta,\partial_y\),
+the charge is \((c(3m_R-rm_R'),0)\); small mixed Ricci error changes it
+through the transition. This [one-ended construction](../round6_global.md)
+and its concentration estimates do not provide a two-ended torus connector.
+
+## 6. Complete two-ended approximation with fixed circle topology
+
+### 6.1. Explicit doubled extremal Kottler geometry
+
+Fix a closed curvature-\(-1\) surface \((\Sigma,h_\Sigma)\) and a
+\(2\pi\)-periodic circle. On \(\mathbb R_u\times S^1_\phi\times\Sigma\), put
+\[
+y=d\cosh u,\qquad
+g_d=\frac{1+y}{3+y}\,du^2+
+\frac{y^2(y+3)}{3(y+1)}\,d\phi^2+\frac{(1+y)^2}{3}h_\Sigma .
+\tag{6.1}
+\]
+For \(0<d<1/2\), it is smooth and complete, with free circle action and
+two smooth AH ends of fixed conformal metric \(d\phi^2+h_\Sigma\).
+Its exact global defect is
+\[
+\|\operatorname{Ric}_{g_d}+3g_d\|_{\infty,\mathrm{op}}
+=\frac{d(2d+3)}{(1+d)^2}<3d.
+\tag{6.2}
+\]
+Indeed, set \(r=(1+y)/\sqrt3\),
+\(F=r^2-1+2/(3\sqrt3r)\), \(q=F(1-d^2/y^2)\).
+Then \(g_d=dr^2/q+Fd\phi^2+r^2h_\Sigma\), doubled at \(y=d\).
+The radial and tangential Ricci errors are exactly
+\[
+-\frac{3d^2}{y(1+y)^2},\qquad
+\frac{d^2(2y+3)}{y(1+y)^2}\quad\text{(multiplicity three)}.
+\]
+The latter dominates and decreases with \(y\), proving the continuous
+supremum, not a sampled maximum.
+Replacing \(d^2/y^2\) by \(d^2\chi(y)/y^2\), supported below \(y=2\)
+and unchanged below \(y=1\), makes both far ends exactly extremal Kottler.
+The fixed transition error is \(O(d^2)\), the center error \(O(d)\),
+and the physical error-support length \(O(\log(1/d))\).
+Curvature and its fixed-order derivatives stay bounded; the circle radius
+\(\sim d\) collapses. See [the full calculation](../round10_kottler.md).
+
+This realizes optical ground-state localization geometrically.
+For \(w=b/a=(1+y)^{3/2}/(y\sqrt{y+3})\), the radial Neumann index
+operator has positive zero mode \(w\). Normalized by its maximum,
+the sum of its boundary values is
+\(2d\sqrt{d+3}/(1+d)^{3/2}\to0\), while error times support length tends
+to zero. Thus an error-length gap without ground-state overlap is false.
+The [exact connector theorem](../round9_connector.md) excludes exact
+two-ended fillings in this free-circle class. It does not exclude
+nonsymmetric fillings, nor is this an OT \(T^3\) connector: the boundary
+is \(S^1\times\Sigma\).
+Boundary symmetry cannot fill the missing hypothesis of an isometry-
+extension theorem; its relative fundamental-group condition fails here
+because the conformal boundary is disconnected.
+
+### 6.2. Doubling a surface cusp on any fixed circle bundle
+
+Let \(P_m\to\Sigma\) have Chern number \(m\in\mathbb Z\).
+Suppose an invariant exact \(\operatorname{Ric}=-3g\) source has one PE end
+and one cusp with model
+\[
+G_0=\tfrac13dr^2+c_0^2e^{-2r}\theta^2+h,\quad
+h=\tfrac13h_\Sigma,\quad d\theta=f\,dA_h,\quad
+f\operatorname{Area}(h)=2\pi m,
+\]
+and relative covariant derivatives through order two of \(G-G_0\) are
+\(O(e^{-\beta r})\). Li--Liu's theorem supplies such sources for every
+\(m\); that source theorem constructs one PE end and one cusp.
+Join two copies through
+\[
+g_C=dt^2+a(t)^2\theta^2+h,\qquad a=d\cosh(\sqrt3t).
+\]
+Its error eigenvalues are \(0,a^2f^2/2,-a^2f^2/2,-a^2f^2/2\);
+all mixed components vanish. Match where \(a(T)=a_0\).
+On a fixed-width overlap the relative two-jet difference from the outward
+exponential cusp is \(O(d^2/a_0^2)\), while the source error is
+\(O(a_0^\beta)\). A cutoff and the exact connection-difference formula give
+\[
+\delta_{-3}(g_{a_0,d})\le C(a_0^\beta+a_0^2+d^2/a_0^2).
+\tag{6.3}
+\]
+Taking \(d=a_0^2\) produces complete approximate metrics on the same
+\(\mathbb R\times P_m\), with both PE ends unchanged and conformal data fixed.
+The connection is global on \(P_m\); no global potential on \(\Sigma\)
+is assumed. Circle collapse suppresses \(a^2|F|^2\) while the negatively
+curved quotient surface remains fixed.
+The [gluing proof](../round10_cusp_doubling.md) uses nonlinear relative
+estimates, not an inverse depending on injectivity radius.
+The same substitution does not handle flat \(T^3\) AH or ACH Nil cusps:
+additional collapsing directions change their curvature balance.
+
+## 7. Fixed closed metrics from sheared product blocks
+
+### 7.1. The object and theorem
+
+Take finitely many oriented compact surfaces \(B_v\) with nonempty
+boundary and \(\chi(B_v)<0\), and closed surfaces \(F_v\) of common
+genus \(p\ge2\). Pair every block boundary in a connected graph by
+\[
+\Psi_e(\phi,x)=(-\phi+u_e(x),f_e(x)),
+\tag{7.1}
+\]
+where \(u_e:F_v\to\mathbb R/2\pi\mathbb Z\) and the orientation-preserving
+\(f_e\) are fixed. Mapping classes need not be finite-order, commuting,
+or extendible over the blocks. The resulting closed smooth \(M\) is fixed.
+
+**Closed gluing theorem.** There are smooth metrics \(G_\ell\) with
+\[
+\|\operatorname{Ric}_{G_\ell}+3G_\ell\|_{\infty,\mathrm{op}}
+\le C(|\log\ell|^{-1}+\ell)\to0,\qquad
+\operatorname{Vol}(G_\ell)=\frac{4\pi^2}{9}\chi(M).
+\tag{7.2}
+\]
+All fixed derivatives of the defect have the same order bound; curvature
+and its fixed derivatives stay bounded. Constants depend on the finite
+marked data, not \(\ell\). Scaling by three gives \(e_-(M)=0\) and volume
+\(4\pi^2\chi(M)\). The [proof](../round11_closed_gluing.md) uses the
+following separated operations.
+
+### 7.2. Mapping classes and integral shear on disjoint supports
+
+Give both surface factors curvature-\(-3\) metrics and prescribe every
+base boundary length to be \(\ell\). The collar lemma supplies
+\[
+dt^2+a_\ell(t)^2d\phi^2,\qquad
+a_\ell=\frac{\ell}{2\pi}\cosh(\sqrt3t),\qquad L_\ell\asymp|\log\ell|.
+\]
+On a signed collar \([-L_\ell,L_\ell]\), the right product pulls back to
+\(dt^2+a_\ell^2(d\phi+\beta_e)^2+f_e^*h_w\), with
+\(\beta_e=-u_e^*d\phi\) closed and integral, not necessarily exact.
+
+Choose a fixed smooth hyperbolic path \(h_v\to f_e^*h_w\), constant near
+parameter endpoints, and traverse it slowly on \([-L_\ell,-1]\).
+There is no connection shear there. Write
+\(S=\tfrac12h^{-1}\dot h\), \(H=\operatorname{tr}S\), \(k=a_\ell'/a_\ell\),
+\(U=a_\ell^{-1}\partial_\phi\). All blocks of \(E=\operatorname{Ric}+3g\) are
+\[
+E_{tt}=-\dot H-\operatorname{tr}S^2,\quad E_{UU}=-kH,\quad
+E_{FF}^{\sharp}=-D_tS-(k+H)S,\quad
+E_{tF}=\operatorname{div}S-dH,\quad E_{tU}=E_{UF}=0.
+\tag{7.3}
+\]
+The path is a fixed compact smooth family:
+\(S,H,\operatorname{div}S,dH=O(L_\ell^{-1})\),
+\(D_tS,\dot H=O(L_\ell^{-2})\), and \(|k|\le\sqrt3\).
+No common pointwise area form is needed. Angular invariance prevents
+inverse-circle-radius losses.
+
+After the path finishes, use \(0\le t\le1\) for
+\(g=dt^2+a_\ell^2(d\phi+z(t)\beta_e)^2+h\), keeping \(h=f_e^*h_w\) fixed.
+For \(b=\beta_e\), \(D=\operatorname{div}_h b\), and a fixed smooth step \(z\),
+\[
+\begin{aligned}
+E_{tt}&=-a^2(z')^2|b|^2/2,& E_{UU}&=a^2(z')^2|b|^2/2,\\
+E_{XY}&=-a^2(z')^2b(X)b(Y)/2,& E_{tU}&=az'D/2,\\
+E_{XU}&=-a(z''+3kz')b(X)/2,& E_{tX}&=0 .
+\end{aligned}
+\tag{7.4}
+\]
+The \(3k\) coefficient comes from the divergence of \(a^3F\).
+Since \(a=O(\ell)\) on this fixed interval, the full operator error is
+\(O(\ell)\), including the mixed entries.
+Outside it the connection is flat; the right endpoint is exactly the
+pullback by the actual circle-valued gluing, not an invented real primitive.
+
+### 7.3. Smoothness, volume, curvature, and symplectic forms
+
+Profiles are constant near every interface, so all metric jets match.
+There are finitely many disjoint active collars. Their maximum estimates
+prove (7.2). Shear preserves determinant; every hyperbolic fibre metric
+has the same total area. Gauss--Bonnet therefore gives exactly
+\[
+\operatorname{Vol}(G_\ell)
+=\sum_v\operatorname{Area}(B_v)\operatorname{Area}(F_v)
+=\frac{4\pi^2}{9}\sum_v\chi(B_v)\chi(F_v)
+=\frac{4\pi^2}{9}\chi(M).
+\]
+Pointwise constancy of fibre area is unnecessary for this identity.
+
+Let \(\mathcal R_0\) be the algebraic tensor of two curvature-\(-3\)
+planes in the actual local splitting, and \(P\) its plane projection.
+For \(\epsilon_\ell=L_\ell^{-1}+\ell\), the Gauss, Codazzi, and circle
+formulas give
+\[
+|\nabla^j(\mathrm{Rm}-\mathcal R_0)|\le C_j\epsilon_\ell,\qquad
+|\nabla^jP|\le C_j\epsilon_\ell\quad(j\ge1).
+\]
+The only mixing terms are \(S=O(L_\ell^{-1})\) or \(az'\beta_e=O(\ell)\).
+Consequently
+\[
+-3-C\epsilon_\ell\le\sec\le C\epsilon_\ell,\qquad
+\|\nabla^j\mathrm{Rm}\|_\infty\to0\quad(j\ge1).
+\tag{7.5}
+\]
+Neither diameter nor injectivity radius is controlled; almost parallel
+curvature does not imply a locally symmetric metric on the closed manifold.
+
+The metrics may also be made almost Kähler in both orientations.
+Isotope each \(f_e\) to preserve the chosen fibre area forms; a boundary
+isotopy extends over a collar, so the smooth type stays fixed.
+For a path with equal endpoint areas \(\omega\), choose
+\(d\sigma_z=\omega_z-\omega\) by a fixed linear primitive operator.
+Then \(\sigma_0=\sigma_1=0\).
+Moser's argument in an auxiliary parameter on
+\((1-s)\omega+s\omega_z\) produces a common-area path with identity
+pullback maps at both endpoints. This avoids a spurious endpoint holonomy.
+The forms
+\[
+\Omega_\pm=a_\ell dt\wedge(d\phi+z\beta_e)\pm\omega
+\]
+match the product forms on the blocks, are closed, and have
+\(\Omega_\pm^2=\pm2a_\ell dt\wedge(d\phi+z\beta_e)\wedge\omega\ne0\).
+They are compatible with the two orthogonal metric planes.
+Their complex structures are not asserted integrable.
+
+### 7.4. Which smooth objects are genuinely beyond the baseline
+
+If all \(f_e\) are identities, projection to a common \(F\) survives:
+this is an old multitwist surface-bundle mechanism after interchanging
+the two surface roles. Finite isometry holonomy also requires care.
+Instead self-glue \(F_{h,2}\times\Sigma_g\), \(h\ge1,g\ge2\), with
+nonzero \(u\) and infinite-order \(f\). The group has presentation
+\[
+\langle A\times\Gamma,t\mid tc_1t^{-1}=c_2^{-1},\
+t\gamma t^{-1}=c_2^{u(\gamma)}f_*(\gamma)\rangle .
+\]
+The [group proof](../round11_graph_topology.md) rules out every extension
+of one closed hyperbolic surface group by another.
+Asphericity and positive Euler characteristic exclude the remaining
+oriented closed surface-bundle alternatives.
+These examples are not merely renamed \(E_D\)'s.
+They are also not the infranil-fibre higher graph manifolds of existing
+Einstein obstruction theorems: their walls have nonamenable group
+\(\mathbb Z\times\Pi_g\), and their pieces are products of hyperbolic surfaces.
+
+## 8. What exact repair of the new closed inputs must change
+
+On a circle-invariant collar write
+\[
+g=dt^2+h_t+a^2\theta^2,\quad S=\tfrac12h^{-1}\dot h,\quad H=\operatorname{tr}S,
+\quad d\theta=dt\wedge\beta+B,\quad Q=|\beta|^2+\tfrac14|B|_{\rm tens}^2.
+\]
+The exact vertical-minus-normal Ricci identity is
+\[
+D=\operatorname{Ric}(U,U)-\operatorname{Ric}(T,T)
+=H'-(a_t/a)H+|S|^2-\Delta_ha/a+a^2Q.
+\tag{8.1}
+\]
+For an Einstein metric \(D=0\), irrespective of its constant.
+When \(a=a(t)\), its positive receiver is
+\[
+\int_{-L}^L(|S|^2/a+aQ)\,dt=H(-L)/a(-L)-H(L)/a(L).
+\tag{8.2}
+\]
+Let \(I_a=\int a\,dt\), and let \(C_\partial\) be the maximum norm of
+the right side. Logarithmic length variation and Cauchy--Schwarz give
+\(d_{\mathcal T}([h_-],[h_+])^2\le I_aC_\partial\).
+For radii comparable within factor \(\Lambda\) to the cosh radius,
+and endpoint \(|H|\le\eta\),
+\[
+\eta\ge\frac{\sqrt3}{4\Lambda^2}d_{\mathcal T}([h_-],[h_+])^2.
+\tag{8.3}
+\]
+The collapsing scale cancels. Pseudo-Anosov gluing has translation length
+\(\log\lambda(f)>0\), even if the reference conformal structure varies.
+This parameter-independent obstruction concerns an invariant,
+unit-normal-foliation sector, unlike the arbitrary-tensor result of §4.
+
+Spatial radius variation is a real escape:
+\(\int_F\Delta a/a^2=2\int_F|\nabla a|^2/a^3\), not zero.
+In the common-area sector \(H\equiv0\), multiplying (8.1) by \(a\)
+and integrating over the closed fibre forces \(S=d\theta=0\);
+then \(\Delta a=0\), and the exact metric is locally a product of
+equal-curvature surfaces. See [the full repair proof](../round12_repair.md).
+
+The separate [global symmetry theorem](../round12_symmetry.md) says that,
+for these self-glued examples with \(u\ne0\), every metric has discrete
+universal-cover isometry group and every Einstein metric has no nonzero
+local Killing germ anywhere.
+Any exact solution must therefore break circle symmetry on every open
+neck, not merely abandon \(a=a(t)\).
+This qualitative theorem is not a distance bound from asymmetric solutions.
+
+## 9. Applications, unsuccessful connections, and the global gap
+
+The inherited free-quotient mechanism realizes independent twists and
+the noncommuting full-generator bundle \(E_{\rm full}\).
+The [multitwist study](../round8_multitwist.md) adds exact representation
+calculations on those same objects: every rank-one representation of
+\(E_{\rm full}\) factors through the base.
+This is not a new slow-interpolation mechanism or an arbitrary Einstein
+obstruction.
+
+The log-Weyl route also acquired a selection rule. Under pointwise
+approximation, exterior convergence, and vanishing replacement volume,
+[the concentration theorem](../round7_endpoint.md) gives
+\[
+T=T_0+E/(2\pi^2),\qquad
+\alpha^2(M)\le\min\{V_0/(2\pi^2),J_0+E/(12\pi^2)\},
+\]
+where \(E\ge0\) is concentrated self-dual Weyl energy and \(T=2\chi+3\tau\).
+Thus \(T-\tfrac23(J_0+E/(12\pi^2))=F_0+4E/(9\pi^2)\), \(F_0\ge0\).
+Concentration cannot simply move locally symmetric bulk into the critical
+monopole range. The same special-monopole hypotheses cannot simultaneously
+violate the separately established near-Einstein gap.
+This is a restriction on compatible inputs and obstructions, not a new metric.
+
+Two failed shortcuts remain relevant. Complete-model face flux cannot be
+discarded from compact convergence: shrinking physical periods and the
+exterior receiver matter. Growing AH cores also cannot be inserted into
+fixed closed topology without scale and volume matching.
+The construction in §7 solves a marked compact gluing problem instead
+of invoking that unproved AH-to-cusp closure.
+Classical Kodaira fibrations supply [exact Einstein control families](../round10_bundle.md)
+with infinite monodromy and normalized harmonic gap tending to zero.
+Their positive signature differs from \(E_D\); they refute an overbroad
+strategy, not the zero-signature problem.
+
+The final closed inputs include manifolds outside all oriented surface
+bundles, with \(e_-(M)=0\), bounded curvature, and almost parallel curvature.
+Separate topology excludes nonnegative Einstein constants and several
+special negative geometries. The remaining question is the existence
+or nonexistence of a completely nonsymmetric negative Einstein metric on
+those same smooth manifolds.
+Closing it would settle a negative-branch instance, not both signs of
+the project's disjunctive Yau26 formulation.
+
+## 10. Computation and proof boundaries
+
+The source notes include independent coordinate Ricci calculations for
+the cylinders, all tensor blocks, Kottler family, circle-cusp core, and
+both regions of the closed gluing. The elliptic inverses, analytic
+continuation, topology, and existence arguments are mathematical proofs,
+not conclusions certified by a finite script.
+Checks reject missing trace terms, incorrect mixed coefficients, and
+omitted gauge responses. Their scope and historical execution appear in
+[Round 6](../round6_verification.md), [Round 10](../round10_verification.md),
+[Round 11](../round11_verification.md), and [Round 12](../round12_verification.md).
+This chapter reorganizes those results; it does not report a fresh
+execution of every program. Its coverage table identifies each supporting
+proof, review, refinement, and superseded intermediate route.

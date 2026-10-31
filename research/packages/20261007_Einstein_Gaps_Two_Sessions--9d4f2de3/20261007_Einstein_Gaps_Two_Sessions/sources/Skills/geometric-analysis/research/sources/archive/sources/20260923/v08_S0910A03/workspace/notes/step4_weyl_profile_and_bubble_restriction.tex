@@ -1,0 +1,278 @@
+% Step 4 research note: Weyl profile concentration, bubble restriction,
+% and the Armstrong--LeBrun tension
+% S0910A03 Agent2 (Constructor) — Explore
+%
+% This note extends the Step 3 near-equality analysis with three new results:
+% (A) L² concentration of |W+| at the calibrated value 1/(2√6),
+% (B) restriction of noncollapsed smooth blow-up limits to locally hyperkähler,
+% (C) identification of a structural contradiction between the profile and
+%     the equality-mechanism limit via Armstrong's theorem.
+
+\section{The Weyl profile concentration}
+
+\noindent\textbf{Proposition A} (Weyl profile \(L^2\) concentration).
+\emph{Under the hypotheses and notation of the Step~3 near-equality analysis
+(critical Ishida--LeBrun family, \(\delta_i\to0\), and the energy profile (3)--(7)),}
+\[
+  \int_M\Bigl(|W_{+,i}|-\tfrac{1}{2\sqrt6}\Bigr)^2d\mu_i
+  =O(A\delta_i^2).                                          \tag{A1}
+\]
+
+\begin{proof}
+The completion-square identity (Step~3, equation~(4)) gives
+\[
+  \frac{1}{864\pi^2}\int_M(s_i+8\sqrt6\,|W_{+,i}|)^2\,d\mu_i\to0.
+\]
+We write \(w_i=|W_{+,i}|\).  Since \(8\sqrt6\cdot\tfrac{1}{2\sqrt6}=4\),
+\[
+  s_i+8\sqrt6\,w_i
+  =(s_i+4)+8\sqrt6\bigl(w_i-\tfrac{1}{2\sqrt6}\bigr).
+\]
+Squaring, integrating, and using \(|s_i+4|\le4\delta_i\):
+\[
+  384\int(w_i-\tfrac{1}{2\sqrt6})^2\,d\mu_i
+  \le\int(s_i+8\sqrt6\,w_i)^2\,d\mu_i
+    +16\delta_i^2\,\operatorname{Vol}_i
+    +64\sqrt6\,\delta_i\,\operatorname{Vol}_i^{1/2}
+    \Bigl[\int(w_i-\tfrac{1}{2\sqrt6})^2\Bigr]^{1/2}.
+\]
+Setting \(Y_i=\int(w_i-\tfrac{1}{2\sqrt6})^2\) and using
+\(\operatorname{Vol}_i\to32\pi^2A/9=O(A)\), this is a quadratic
+\[
+  384Y_i-C_1A^{1/2}\delta_i Y_i^{1/2}-C_2A\delta_i^2\le0,
+\]
+which forces \(Y_i^{1/2}=O(A^{1/2}\delta_i)\), hence \(Y_i=O(A\delta_i^2)\).
+\end{proof}
+
+\noindent\textbf{Interpretation.}
+The ``calibrated value'' \(1/(2\sqrt6)\approx0.204\) is the unique pointwise
+Weyl magnitude compatible with \(s\to-4\) and the completion-square residual
+vanishing.  It is exactly \(\tfrac14\) of the K\"ahler--Einstein value
+\(|W_+|_{\rm KE}=2/\sqrt6\approx0.816\) for metrics with \(\operatorname{Ric}=-g\).
+
+\section{Exclusion of K\"ahler--Einstein bulk and other known geometries}
+
+\noindent\textbf{Corollary B1} (K\"ahler--Einstein exclusion).
+\emph{Any subset \(U_i\subset M_i\) on which \(|W_{+,i}|\to2/\sqrt6\) uniformly
+satisfies}
+\[
+  \operatorname{Vol}(U_i)/\operatorname{Vol}(M_i)=O(\delta_i^2)\to0.
+\]
+
+\begin{proof}
+On \(U_i\), \((|W_{+,i}|-\tfrac{1}{2\sqrt6})^2
+\ge(\tfrac{2}{\sqrt6}-\tfrac{1}{2\sqrt6})^2
+=\tfrac{9}{24}=\tfrac38\).
+Hence \(\tfrac38\operatorname{Vol}(U_i)\le Y_i=O(A\delta_i^2)\),
+giving \(\operatorname{Vol}(U_i)\le(8/3)O(A\delta_i^2)\),
+and the volume fraction against \(\operatorname{Vol}(M_i)=O(A)\) is \(O(\delta_i^2)\).
+\end{proof}
+
+\noindent\textbf{Remark.}  This rules out more than the scalar-flat connector
+in the familiar integral-minimizing constructions of Ishida--LeBrun~2003:
+the negative K\"ahler--Einstein orbifold \emph{bulk} is also incompatible
+with the Weyl profile.  For any region converging to a K\"ahler metric of
+any scalar curvature \(s_0<0\), the Weyl magnitude is
+\(|W_+|_{\rm K\"ahler}=|s_0|/(2\sqrt6)\), and the discrepancy from the
+calibrated value \(1/(2\sqrt6)\) is \((|s_0|-1)/(2\sqrt6)\).
+With \(s_0\to-4\), this is \(3/(2\sqrt6)\), giving the above exclusion.
+
+Similarly, any region converging to \emph{real hyperbolic geometry}
+(constant curvature \(-1/3\), \(W_+=0\)) has discrepancy
+\(1/(2\sqrt6)\), hence occupies volume fraction at most \(O(A\delta_i^2\cdot24)
+=O(A\delta_i^2)\) -- also vanishing.
+
+\section{Bubble restriction to locally hyperk\"ahler}
+
+\noindent\textbf{Corollary B2} (bubble restriction).
+\emph{Suppose \(A\) is fixed (fixed manifold in the critical family).
+Let \(U_i\subset M_i\) with \(\operatorname{Vol}(U_i)\to0\).
+Then the self-dual Weyl energy vanishes:
+\(\int_{U_i}|W_{+,i}|^2\,d\mu_i\to0\).}
+
+\emph{Consequently, every smooth noncollapsed rescaling limit arising from
+a vanishing-scale sequence is both Ricci-flat and self-dually flat
+(\(W_+=0\)), hence locally hyperk\"ahler.}
+
+\begin{proof}
+\[
+  \int_{U_i}|W_{+,i}|^2
+  \le 2\int_{U_i}\bigl(|W_{+,i}|-\tfrac{1}{2\sqrt6}\bigr)^2
+  +\tfrac{1}{12}\operatorname{Vol}(U_i)
+  \le 2Y_i+\tfrac{1}{12}\operatorname{Vol}(U_i).
+\]
+With fixed \(A\): \(Y_i=O(A\delta_i^2)\to0\) and
+\(\operatorname{Vol}(U_i)\to0\).
+
+For a blow-up at scale \(\ell_i\to0\): rescale \(\hat g_i=\ell_i^{-2}g_i\).
+The Weyl tensor is conformally invariant (as endomorphism of \(\Lambda^2_+\)),
+hence \(|W_+(\hat g_i)|^2=\ell_i^4|W_+(g_i)|^2\) pointwise.
+But the volume form scales as \(d\mu_{\hat g_i}=\ell_i^{-4}d\mu_{g_i}\),
+so
+\[
+  \int_{B_{\hat g_i}(p,R)}|W_+(\hat g_i)|^2\,d\mu_{\hat g_i}
+  =\int_{B_{g_i}(p,\ell_iR)}|W_+(g_i)|^2\,d\mu_{g_i}\to0
+\]
+since \(\operatorname{Vol}_{g_i}(B_{g_i}(p,\ell_iR))\to0\).  A smooth
+convergent limit has \(W_+=0\) on every ball, hence globally.  Combined with
+\(\operatorname{Ric}(\hat g_i)\to0\) (from the Step~3 scaling argument), the
+limit is Ricci-flat and self-dually flat.  In four real dimensions, this forces
+holonomy \(\subseteq\mathrm{SU}(2)\), i.e.\ locally hyperk\"ahler.
+\end{proof}
+
+\noindent\textbf{Remark} (varying topology).
+If \(A_i\to\infty\), the bound becomes
+\(\int_{U_i}|W_+|^2\le2A_i\delta_i^2+\operatorname{Vol}(U_i)/12\).
+Absolute vanishing requires \(A_i\delta_i^2\to0\).  If
+\(\delta_i\sim A_i^{-1/2}\), a bubble might carry finite \(W_+\) energy;
+the restriction to hyperk\"ahler then fails and more exotic bubbles could
+appear.  This quantifier distinction separates fixed-family rigidity from the
+uniform statement needed for the original problem.
+
+\section{Near-equality eigenvalue structure and the Armstrong tension}
+
+The near-equality conditions from LeBrun~2006 Proposition~3.8 impose:
+in the exact equality case, \(s-\sqrt6|W_+|=\text{const}<0\), the SW spinor
+\(\Phi\) has \(|\Phi|^2=\text{const}\), and the self-dual 2-form
+\(\sigma(\Phi)\) defines an almost-K\"ahler form \(\omega\) in the lowest
+eigenspace of \(W_+\), with the two largest \(W_+\) eigenvalues equal.
+
+At the calibrated values \(s=-4\), \(|W_+|=1/(2\sqrt6)\):
+\begin{align}
+  s-\sqrt6|W_+|&=-4-\tfrac12=-\tfrac92, \tag{E1}\\
+  |W_+|^2&=\tfrac{1}{24},\quad
+  \text{eigenvalues}\; (\tfrac{1}{12},\tfrac{1}{12},-\tfrac{1}{6}). \tag{E2}
+\end{align}
+The star-scalar curvature is
+\[
+  s^*=\tfrac{s}{3}+2W_+(\omega,\omega)
+  =\tfrac{s}{3}-2\sqrt{\tfrac{3}{2}}|W_+|
+  =-\tfrac43-\sqrt{\tfrac{3}{2}}\cdot\tfrac{1}{2\sqrt6}
+\]
+or equivalently from
+\[
+  s+s^*=\tfrac{4}{3}(s-\sqrt6|W_+|)=\tfrac43\cdot(-\tfrac92)=-6,
+\]
+giving \(s^*=-6-(-4)=-2\ne-4=s\).
+For a K\"ahler metric, \(s^*=s\); hence this saturated almost-K\"ahler metric
+is \emph{strictly almost-K\"ahler} (\(J\) not integrable).
+
+\medskip
+\noindent\textbf{Corollary C} (Armstrong--LeBrun tension).
+\emph{If the near-equality sequence converged smoothly to a limit metric
+\(g_\infty\) on any fixed critical manifold, then:}
+\begin{enumerate}
+\item \(g_\infty\) is Einstein (\(\operatorname{Ric}=-g\)) by smooth
+  convergence of Ricci.
+\item \(g_\infty\) saturates the scalar--Weyl estimate (\(K\to A\)
+  reaches equality).
+\item By Proposition~3.8, \(g_\infty\) is a saturated almost-K\"ahler metric.
+\item By Corollary~2.5 (Armstrong's theorem),
+  an Einstein saturated almost-K\"ahler metric must be K\"ahler--Einstein.
+\item But \(|W_+|^2(g_\infty)=1/24\), whereas any K\"ahler metric with
+  \(s=-4\) has \(|W_+|^2=s^2/24=2/3\).  Contradiction.
+\end{enumerate}
+\emph{Therefore, no sequence with \(\delta_i\to0\) on a fixed critical manifold
+can converge smoothly to a single limit.}
+
+\noindent\textbf{Remark.}  This is not yet a complete theorem excluding
+\(\delta_i\to0\): we have not established the smooth convergence
+hypothesis.  What the argument shows is that \emph{any mechanism allowing
+\(\delta_i\to0\) must involve failure of smooth compactness}: either
+collapsing, curvature concentration, or bubbling.  The bubble restriction
+(Corollary~B2) limits the allowed degenerations to hyperk\"ahler ALE models
+(Eguchi--Hanson, multi-Eguchi--Hanson, or more general crepant-resolution
+models), but does not exclude all possibilities.
+
+\section{Implication for the integral extremizing constructions}
+
+The Ishida--LeBrun~2003 extremizers use three geometric pieces:
+\begin{enumerate}
+\item Negative K\"ahler--Einstein orbifold bulk (carrying most volume):
+  \(|W_+|_{\rm KE}=2/\sqrt6\), discrepancy \(3/(2\sqrt6)\) from profile.
+  \textbf{Ruled out by Corollary~B1}: volume fraction \(O(\delta^2)\).
+\item Scalar-flat anti-self-dual connectors:
+  \(|s+4|=4\), \(\delta\ge1\).
+  \textbf{Already ruled out} (Step~3).
+\item Ricci-flat gravitational instantons (ALE caps):
+  these are Ricci-flat and can have \(W_+=0\)
+  (hyperk\"ahler) or \(W_+\ne0\).  The profile allows
+  only hyperk\"ahler caps with \(W_+=0\).
+\end{enumerate}
+
+None of these pieces can serve as the \emph{bulk} geometry of a
+hypothetical \(\delta\to0\) sequence.  A sequence achieving the calibrated
+Weyl profile must be supported by a fundamentally different geometric
+construction --- one that is neither K\"ahler--Einstein, real hyperbolic,
+conformally flat, nor anti-self-dual, but rather occupies the specific
+intermediate state with \(W_+\) eigenvalues \((1/12,1/12,-1/6)\).
+
+\section{Maximum-principle control on Seiberg--Witten data}
+
+The Weitzenb\"ock formula
+\[
+  0=2\Delta|\Phi|^2+4|\nabla_A\Phi|^2+s|\Phi|^2+|\Phi|^4
+\]
+and the maximum principle give the pointwise bound
+\[
+  |\Phi|^2\le\max(-s,0)\le4(1+\delta_i)\quad\text{on }M_i.
+\]
+Hence \(|F_A^+|=|\Phi|^4/8\le(4+4\delta_i)^2/8\).
+
+Both \(|\Phi|\) and \(|F_A^+|\) are uniformly bounded by the Ricci
+pinching alone, \emph{without} any sectional curvature or harmonic-radius
+hypothesis.  The near-equality further forces
+\(|\Phi|^2\to|s|=4\) in \(L^6\) (from Proposition~3.8's H\"older
+chain).  The remaining gap is between this \(L^6\) convergence and
+pointwise \emph{non-vanishing} of \(|\Phi|\), which would give a
+global almost-K\"ahler form.
+
+\section{Summary and open quantitative problems}
+
+The Weyl profile concentration (A1) provides a new geometric filter
+on any hypothetical \(\delta\to0\) sequence:
+\begin{itemize}
+\item Known integral extremizers fail the filter (both KE bulk and
+  scalar-flat connectors violate the profile).
+\item Smooth noncollapsed blow-ups are restricted to hyperk\"ahler ALE
+  (for fixed topology).
+\item Smooth global convergence to a single limit is contradicted
+  by Armstrong's theorem.
+\end{itemize}
+
+The precise open problems for completing the analysis are:
+\begin{enumerate}
+\item \textbf{Sobolev/harmonic-radius from Ricci pinching.}
+  Can the uniform Ricci bound \(|\operatorname{Ric}+g|\le\delta g\)
+  (with \(\delta\) small) together with the calibrated volume \(O(A)\)
+  give a uniform Sobolev constant or harmonic-radius lower bound?
+  If so, the smooth-convergence hypothesis in Corollary~C becomes
+  automatic.
+\item \textbf{Upgrade of \(|\Phi|^2\) convergence.}
+  The \(L^6\) near-constancy of \(|\Phi|^2\) and the uniform \(L^\infty\)
+  bound together require controlling the gradient of \(|\Phi|^2\).  The
+  Weitzenb\"ock identity provides an equation for \(|\Phi|^2\), and
+  Moser iteration or De~Giorgi--Nash--Moser estimates might yield
+  H\"older continuity under the Ricci pinching alone.
+\item \textbf{Non-vanishing of the almost-K\"ahler form.}
+  If \(|\Phi|\to\text{const}\ne0\) pointwise, the self-dual form
+  \(\sigma(\Phi)\) gives an almost-K\"ahler form with the forbidden
+  Chern class on the critical manifold.  The zero set of \(|\Phi|\) is
+  the obstruction; its codimension and topological structure are unknown
+  under the present hypotheses.
+\item \textbf{Phase separation vs.\ collapse topology.}
+  If the almost-K\"ahler form cannot be made globally nonvanishing,
+  the canonical classes must phase-separate across macroscopic regions,
+  with transitions through thin topology cores.  Characterize these
+  cores and determine whether the required topology can be carried
+  through them while maintaining the Weyl profile.
+\end{enumerate}
+
+\medskip
+\noindent\textbf{Files.}
+Verification script:
+\texttt{workspace/scripts/verify\_weyl\_profile.py}.
+Step~3 base note:
+\texttt{workspace/notes/step3\_boundary\_near\_saturation.tex}.
+Step~3 constants:
+\texttt{workspace/scripts/verify\_step3\_boundary\_constants.py} (passed).

@@ -1,0 +1,3108 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  10pt,
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[a4paper,margin=18mm]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{esint}
+\providecommand{\Ric}{\operatorname{Ric}}
+\usepackage{fvextra}
+\usepackage{array}
+\fvset{breaklines=true,breakanywhere=true}
+\usepackage{xeCJK}
+\setmainfont{DejaVu Serif}
+\setmonofont{DejaVu Sans Mono}
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKmonofont{Noto Sans Mono CJK SC}
+\setmathfont{Asana Math}
+\setmathfont{Latin Modern Math}[range=\lrcorner]
+\setlength{\emergencystretch}{3em}
+\allowdisplaybreaks
+\hypersetup{hypertexnames=false}
+\pdfstringdefDisableCommands{\def\nolinkurl#1{#1}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\hypertarget{ux7b2cux4e94ux5377ux7ee7ux627fux7684ux7ebfux6027ux5f3aux5236ux6838ux5fc3ux4e0eux5b9eux9645ux5168ux5ea6ux91cfux5e94ux7528}{%
+\section{第五卷：继承的线性强制核心与实际全度量应用}\label{ux7b2cux4e94ux5377ux7ee7ux627fux7684ux7ebfux6027ux5f3aux5236ux6838ux5fc3ux4e0eux5b9eux9645ux5168ux5ea6ux91cfux5e94ux7528}}
+
+Research snapshot: 0b1490791be560203b86a7d9834dcdc3cbc83b41.
+
+I40/I41完整前置证明，已在上次包内，不重复计为本轮新增。早稿将无标量方差估计列为开放的文字，由后稿§1取代。保存实际权重、类平方、同一解及共形归约的量词。
+
+Read \nolinkurl{00_READ_FIRST.md} for superseded statements. Each source below is
+complete and byte-preserved. Original local links remain relative to
+their source; locate other texts using \nolinkurl{10_source_map_and_history.md}.
+Formula numbers restart in each source.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{source-1-20260927_mixed_current_and_signed_cores.md}{%
+\subsection{Source 1:
+\nolinkurl{20260927_mixed_current_and_signed_cores.md}}\label{source-1-20260927_mixed_current_and_signed_cores.md}}
+
+Original path:
+\nolinkurl{continuation/20260927_mixed_current_and_signed_cores.md}
+
+SHA-256:
+\nolinkurl{ea0c4955b56edf70fc5a19d5fd5f4553a1c0c8962a442cdd8c43362b6aabcf79}
+
+BEGIN COMPLETE SOURCE
+
+\hypertarget{linear-einstein-separation-at-the-small-surgery-boundary}{%
+\section{Linear Einstein separation at the small-surgery
+boundary}\label{linear-einstein-separation-at-the-small-surgery-boundary}}
+
+27 September 2026. Continues
+\href{20260926_actual_topological_cost.md}{the actual-cost proof},
+commit \texttt{168bea5}. The
+\href{../guidance/source/20260927_web_critical_mixed_term.zh.md}{new web
+contribution} is preserved verbatim. \textbf{The main result is proved
+in Sections 4--5:} a refined same-spinor Hessian estimate closes the
+beta=2 weak-Bianchi bootstrap, gives linear topological cost, and
+determines the order of the relative Einstein defect on the previously
+constructed small-h family. Sections 1--3 below incorporate the web
+note's mixed-current estimate, model cancellation and curvature
+identity, with explicit attribution; they are not claimed as newly
+discovered here. Subsequent sections record further proof work. All
+actual-solvability hypotheses remain those of the inherited functional
+pencil. No conjectured linear gap is a premise. The zero-Weyl endpoint
+and general Einstein realization remain separate problems.
+
+For precision, the actual input on a closed connected oriented smooth
+four-manifold (M,g) is a Spin\^{}c structure whose unperturbed
+Seiberg--Witten equations are solvable for every metric conformal to g.
+Its real Chern class a is fixed throughout the auxiliary weights; it may
+be selected anew when the original metric changes. Put
+
+\[
+ p=(a_g^+)^2>0,\quad r=V^{-1}\int|\operatorname{Ric}+g|^2,\quad
+ D_2=\frac32\int(s^2+12|W^+|^2)-72\pi^2p\ge0.
+\]
+
+Norms and the rescaled equations are those of the
+\href{../mathematics/current/line1_functional_pencil.md}{functional
+pencil}, Sections 1--3. There is no diameter, noncollapse, Sobolev,
+injectivity-radius or full-curvature assumption. The new beta=2 proof
+uses the supplied actual-field estimates, not an arbitrary approximately
+closed form.
+
+Write rho=\textbar Phi\textbar\^{}2, zeta=\textless Phi,nabla\_A
+Phi\textgreater, with the Hermitian pairing linear in its second entry,
+P=nabla\_A Phi, and Theta=(kappa+epsilon)V. Curvature two-form norms use
+sum\_\{i\textless j\}\textbar F\_ij\textbar\_HS\^{}2. The selectable
+smoothing error epsilon belongs to one actual weighted solution, not a
+comparison of two solutions.
+
+\hypertarget{the-full-rank-two-transgression-and-the-mixed-bound}{%
+\subsection{1. The full rank-two transgression and the mixed
+bound}\label{the-full-rank-two-transgression-and-the-mixed-bound}}
+
+On \{rho\textgreater0\}, use u=Phi/sqrt(rho) and a local unitary
+complement v. In this frame let the connection matrix and the connection
+fixing u be
+
+\[
+ \mathcal A=\begin{pmatrix}a&-\bar b\\b&d\end{pmatrix},
+ \qquad \mathcal A^0=\begin{pmatrix}0&0\\0&d\end{pmatrix}.
+\]
+
+Here a is an imaginary one-form, not the topological class. Set
+B\_c=mathcal A-mathcal A\^{}0 and F\^{}t the curvature of mathcal
+A\^{}0+tB\_c. The global transgression on the nonzero set is
+
+\[
+ T_u=\frac1{4\pi^2}\int_0^1
+ [\operatorname{tr}(B_c\wedge F^t)
+       -\operatorname{tr}B_c\wedge\operatorname{tr}F^t]dt,
+ \qquad dT_u=c_2(F).
+\]
+
+The web note's exact expansion is
+
+\[
+ 4\pi^2T_u=-a\wedge F_{22}
+ +\tfrac12(b\wedge F_{12}-\bar b\wedge F_{21})
+ +a\wedge\bar b\wedge b.                         \tag{1.1}
+\]
+
+Indeed F\^{}0\_22=F\_22-bar b wedge b, and
+F\^{}t=(1-t)F\^{}0+tF-t(1-t)B\_c wedge B\_c; substitution and
+integration in t give (1.1). This calculation retains the matrix order
+and wedge signs. The expression is invariant under changing v by a unit
+complex scalar.
+
+For beta=2 put T=\{1/2\textless rho\textless1\}. On T,
+
+\[
+ \zeta=\tfrac12d\rho+\rho a,\quad
+ |d\rho|\le2|\zeta|,\quad |a|\le2|\zeta|,
+ \quad |b|\le\sqrt2|P|.                             \tag{1.2}
+\]
+
+Choose chi=(1-eta)\^{}2 with eta=0 below 1/2, eta=1 above 1 and
+\textbar eta'\textbar\textless=4. The inherited signed identity and the
+zero-set extension give
+
+\[
+ c_2(S^+)[M]=\int\chi c_2(F)+\int d\chi\wedge T_u,
+ \quad
+ 16\pi^2c_2(F)=
+ (|F_A^+|^2-|F_A^-|^2-2|\Omega^+|^2+2|\Omega^-|^2)d\mu.
+                                                               \tag{1.3}
+\]
+
+Let G\^{}2=\textbar Omega\textbar\^{}2+\textbar F\_A\^{}+\textbar\^{}2.
+The actual estimates already give
+int\_\{rho\textless=1\}G\^{}2\textless=CTheta and the same bound for the
+positive part in (1.3). Since off-diagonal curvature has no central
+part, (1.1) yields
+
+\[
+ |d\chi\wedge T_u|\le C|\chi'|
+ (G|\zeta||P|+|F_A^-||\zeta|^2+|\zeta|^2|P|^2).
+\]
+
+Young's inequality controls the central term by
+chi\textbar F\_A\^{}-\textbar\^{}2/(32pi\^{}2)+C(chi')\^{}2\textbar zeta\textbar\^{}4/chi.
+The first summand is absorbed by the negative term in (1.3). The ratio
+(chi')\^{}2/chi\textless=64 and
+\textbar zeta\textbar\^{}2\textless=rho\textbar P\textbar\^{}2\textless=\textbar P\textbar\^{}2
+on T control the second. Consequently:
+
+\textbf{Proposition 1 (web mixed-current refinement).}
+
+\[
+ \boxed{c_2(S^+)[M]\le C\Theta+C\int_T|\zeta|^2|P|^2.} \tag{1.4}
+\]
+
+In the exact small-h family of the preceding continuation, any E=o(h)
+therefore requires
+int\_T\textbar zeta\textbar\^{}2\textbar P\textbar\^{}2\textgreater=cAh.
+This is stronger than the coarser quartic concentration criterion, but
+does not exclude that concentration.
+
+There is a further exact simplification useful for retaining the sign.
+Since F\_11=da-bar b wedge b and tr F=F\_A,
+
+\[
+ \boxed{4\pi^2T_u=a\wedge da-a\wedge F_A
+ +\tfrac12(b\wedge F_{12}-\bar b\wedge F_{21}).}       \tag{1.5}
+\]
+
+In particular the two diagonal terms in the cutoff flux are exactly
+
+\[
+ \frac{\chi'(\rho)}{\rho^2}d\rho\wedge\zeta\wedge d\zeta
+ -\frac{\chi'(\rho)}\rho d\rho\wedge\zeta\wedge F_A.  \tag{1.6}
+\]
+
+The real exact part of zeta drops out after wedging with d rho. Formula
+(1.6) is signed; its first term is not asserted nonpositive. Replacing
+it by its absolute value loses the current's phase/radial correlation.
+
+\hypertarget{axial-model-cancellation-in-the-actual-torsion-equation}{%
+\subsection{2. Axial model cancellation in the actual torsion
+equation}\label{axial-model-cancellation-in-the-actual-torsion-equation}}
+
+Keep the globally smooth cubic field
+
+\[
+ t_\Phi=\sum_i c(e^i)\Phi\otimes(\Phi\wedge P_i)\in S^-\otimes L.
+\]
+
+The preceding exact calculation gives D\^{}-\emph{\{3A\}t\_Phi=-4 sum\_i
+P\_i tensor(Phi wedge P\_i)+mathcal K(W\^{}+,Phi). For the actual axial
+model W\_0=A}\{omega,1/beta\}, the web note observes
+
+\[
+ \mathcal K(W_0,\Phi)=0.                              \tag{2.1}
+\]
+
+To verify this, at Phi!=0 choose J\_1 Phi=iPhi. Its wedge factor is
+zero. The other model eigenvalues coincide and J\_3 Phi=+/-iJ\_2 Phi, so
+the other tensor factors cancel by 1+i\^{}2=0. At Phi=0 the polynomial
+vanishes. Thus throughout the actual finite-parameter range
+
+\[
+ D^-_{3A}t_\Phi=-4\sum_i P_i\otimes(\Phi\wedge P_i)
+       +\mathcal K(W^+-W_0,\Phi).                     \tag{2.2}
+\]
+
+With the inherited uniform Hessian budget (in particular
+a\^{}2\textgreater=T\_+), and kappa\textless=1 with a sufficiently small
+chosen epsilon,
+
+\[
+ \|D^-_{3A}t_\Phi\|_{4/3,\mathrm{avg}}
+       \le C\sqrt{\kappa+\varepsilon},\qquad
+ \|D^-_{3A}t_\Phi\|_{2,\mathrm{avg}}^2
+       \le C\left(\kappa+\varepsilon+\fint|\zeta|^2|P|^2\right).
+                                                               \tag{2.3}
+\]
+
+Unlike the previous coarse estimate, (2.3) has no beta\^{}\{-1\} term.
+It does not assert nonzero torsion at the KE endpoint.
+
+The mass calculation also has an all-parameter form. Write
+q\_beta=4(1+1/beta), rho\_beta=2sqrt(q\_beta)/3 and
+U\_beta=(4/3)(2/beta-1). The previous identities give, uniformly,
+
+\[
+ \boxed{\fint|t_\Phi|^2
+ =\frac{16q_\beta^{3/2}}{81}(1-2/\beta)
+       +O(\sqrt{\kappa+\varepsilon}).}                \tag{2.4}
+\]
+
+Indeed \textbar t\textbar\^{}2 differs from (rho/2)\textbar nabla
+psi\textbar\^{}2 by an integrable error O(Theta); replacing rho by
+rho\_beta costs O(sqrt(kappa+epsilon)) in the average, using the L4
+gradient budget. Also avg\textbar nabla psi\textbar\^{}2=4rho\_beta
+K\_A/V+O(sqrt(kappa+epsilon)), and K\_A/V=-U\_beta
+rho\_beta/4+O(sqrt(kappa+epsilon)). Their product is -U\_beta
+rho\_beta\^{}3/2, which is (2.4). The zero-end value is 128/81, whereas
+the exact beta=2 leading term is zero.
+
+\hypertarget{the-additional-actual-curvature-equation-and-its-sign}{%
+\subsection{3. The additional actual curvature equation and its
+sign}\label{the-additional-actual-curvature-equation-and-its-sign}}
+
+The web note supplies a further equation, not an ordinary new monopole.
+Use the imaginary-valued quadratic map q\_- such that
+c(q\_-(t))t=(\textbar t\textbar\^{}2/2)t. Then
+
+\[
+ \rho^3F_A^-+2q_-(t_\Phi)=2\rho^2(d\zeta)^-+\mathcal R,
+ \quad
+ |\mathcal R|\le C\left(\rho^3|\operatorname{Ric}^\circ|
+                  +\rho^{3/2}|\zeta||P|\right).       \tag{3.1}
+\]
+
+Here is a pointwise normalization check and derivation. On
+rho\textgreater0 write Phi=sqrt(rho)u, P=alpha u+beta v,
+alpha=zeta/sqrt(rho). Decompose beta=beta\_N+beta\_L using the kernel of
+c(.)v. The Dirac equation gives
+\textbar beta\_L\textbar\textless=\textbar alpha\textbar. In the
+Clifford matrices of the previous proof this kernel consists of
+beta\_N=(iz,z,iw,w), with t=2i rho(z,-w) on the kernel part. Directly,
+q\_-(t)=rho\^{}2(bar beta\_N wedge beta\_N)\^{}-.
+
+Now use (d
+zeta)\_ij=\textless P\_i,P\_j\textgreater-\textless P\_j,P\_i\textgreater+\textless Phi,F\^{}S+\_ij
+Phi\textgreater. The anti-self-dual central curvature contributes rho
+F\_A\^{}-/2 and the traceless contribution is bounded by C
+rho\textbar Ric\^{}circ\textbar. All terms in bar beta wedge beta-bar
+beta\_N wedge beta\_N, and in bar alpha wedge alpha, are bounded by
+C\textbar alpha\textbar\textbar P\textbar. Multiplication by 2rho\^{}2
+gives (3.1). Both sides extend polynomially through zeros; the bound
+extends by continuity.
+
+For completeness the same scalar-potential spinor equation also gives
+
+\[
+ \delta\zeta=-|P|^2-U\rho/4,\qquad
+ \delta\operatorname{Im}\zeta=0,\qquad
+ \Delta\rho=-2|P|^2-U\rho/2.                         \tag{3.2}
+\]
+
+The Laplacian convention is Delta=d\emph{d\textgreater=0. The first
+equation follows by differentiating \textless Phi,P\textgreater{} and
+using nabla} nabla Phi=-U Phi/4. These are additional actual equations,
+not independent free fields.
+
+The derivative term in (3.1) can be written rho\^{}2 d zeta=d(rho\^{}2
+zeta)-2rho d rho wedge zeta. Its first part is the derivative of a small
+L2 field, the second is small in L1. This does not justify testing by an
+uncontrolled derivative of q\_-(t).
+
+Even a vanishing L2 Dirac residual would not finish the argument:
+
+\[
+ \int|D^-_{3A}t|^2=\int|\nabla t|^2+\int(s/4)|t|^2
+       +\tfrac32\int\langle c(F_A^-)t,t\rangle.       \tag{3.3}
+\]
+
+The scalar term is negative here. The sign in (3.1) is opposite the
+ordinary monopole sign. In particular no positive vanishing theorem is
+being invoked. Actual U(1)-twisted Dirac modes on Eguchi--Hanson space
+are also known; see
+\href{https://arxiv.org/abs/2309.08453}{Franchetti--Krasnov}.
+
+\hypertarget{removing-the-background-volume-from-the-second-order-budget}{%
+\subsection{4. Removing the background volume from the second-order
+budget}\label{removing-the-background-volume-from-the-second-order-budget}}
+
+This is the decisive new step. The previous coarse Hessian estimate paid
+O(V) for all background curvature. At beta=2 the bounded KE curvature
+model annihilates the distinguished spinor at its calibrated amplitude.
+Keeping this fact in the exact Hessian identity, and then using the
+existing weak-Bianchi self-test again, closes the remaining estimate.
+
+We distinguish the spinor gradient P\_i from the scalar Ricci energy
+P\_Ric=int\textbar Ric\^{}circ\textbar\^{}2. Set
+
+\[
+ T_+=2\chi+3\tau,\quad p=(a_g^+)^2,\quad
+ K=\int|\nabla_A\Phi|^2,\quad B=\int|F_A^-|^2,
+ \quad \Xi=rV+D_2,\quad\Theta=\Xi+\varepsilon V.
+\]
+
+The actual beta=2 supplied solution satisfies, with universal constants,
+
+\[
+ |\Phi|\le2,\quad \rho_0=4/\sqrt6,\quad c=\sqrt6,
+\] \[
+ \int\bigl((\rho-\rho_0)^2+(f-c)^2+U^2+|d\rho|^2
+       +|\operatorname{Im}\zeta|^2+|W^+-W_0|^2
+       +|\operatorname{Ric}+g|^2\bigr)\le C\Theta,
+ \quad J_+\le C\Theta.                              \tag{4.1}
+\]
+
+Here U=s+f rho, W\_0=A\_\{omega,1/2\}, omega=sqrt(3)psi/2. These are the
+inherited estimates, with their exact same-solution quantifiers,
+collected in Sections 1--3 of the preceding actual-cost proof. Its
+localized equation and remainder identity also give
+
+\[
+ \int_{\{\rho\le1\}}|\nabla_A\Phi|^2\le C\Theta,
+ \qquad |8\sqrt6 K-\Sigma|\le C\Theta.               \tag{4.2}
+\]
+
+\hypertarget{a-refined-hessian-lemma}{%
+\subsubsection{4.1 A refined Hessian
+lemma}\label{a-refined-hessian-lemma}}
+
+\textbf{Lemma 2.} The same solution obeys
+
+\[
+ \boxed{\int\bigl(|\nabla_A^2\Phi|^2+|\nabla_A\Phi|^4\bigr)
+               \le C(K+\Theta+B).}                  \tag{4.3}
+\]
+
+\textbf{Proof.} Form an algebraic positive-spinor curvature F\_b using
+s\_b=-4, Ric\_b\^{}circ=0, W\_b\^{}+=W\_0, F\_\{A,b\}\^{}+=i c
+sigma(Phi), and F\_\{A,b\}\^{}-=0. It need not itself be the curvature
+of a connection; it is used only algebraically inside the actual Hessian
+identity. Since Phi is bounded, \textbar F\_b\textbar\textless=C, and
+(4.1) gives
+
+\[
+ \|F^{S^+}-F_b\|_2^2\le C(\Theta+B).                \tag{4.4}
+\]
+
+The more important bound is
+
+\[
+                  |F_b\Phi|^2\le C(\rho-\rho_0)^2.  \tag{4.5}
+\]
+
+For an explicit check choose the self-dual basis along psi. W\_0 has
+eigenvalues -rho\^{}2/4,rho\^{}2/8,rho\^{}2/8. With the
+Clifford/curvature conventions of the supplied equations, the axis and
+transverse coefficients of F\_b Phi, up to their common fixed
+normalizations, are
+
+\[
+ \rho^2/4+1/3-c\rho/4
+     =\tfrac14(\rho-4/\sqrt6)(\rho-2/\sqrt6),
+ \qquad
+ \rho^2/8-1/3
+     =\tfrac18(\rho-4/\sqrt6)(\rho+4/\sqrt6).
+\]
+
+They vanish at rho\_0; bounded rho proves (4.5), including zeros.
+Equivalently one can split off the unit-amplitude KE model on the
+nonzero set, which annihilates Phi exactly. No derivative of either
+model is used in this step.
+
+Put H=nabla\_A\^{}2 Phi and L=tr H. The exact covariant identity is
+
+\[
+ \|H\|_2^2=\|L\|_2^2
+ -\int\operatorname{Ric}_{ij}\operatorname{Re}\langle P_i,P_j\rangle
+ +\sum_{ij}\int\operatorname{Re}\langle F_{ij}^{S^+}P_j,P_i\rangle
+ +\tfrac12\sum_{ij}\|F_{ij}^{S^+}\Phi\|_2^2.         \tag{4.6}
+\]
+
+The sums in (4.6) are double sums; their norms differ by a fixed factor
+from the exterior-curvature norm used elsewhere. The identity follows by
+interchanging Hessian slots before commuting on P. It differentiates
+neither curvature nor f.~Bounded-section integration by parts also gives
+\textbar\textbar P\textbar\textbar\_4\^{}2\textless=8\textbar\textbar H\textbar\textbar\_2.
+Now \textbar\textbar L\textbar\textbar\_2\^{}2\textless=CTheta by the
+actual spinor equation. Split Ric=-g+(Ric+g), and F=F\_b+(F-F\_b). The
+bounded background terms cost CK, the error terms cost C
+sqrt(Theta+B)\textbar\textbar H\textbar\textbar\_2, and (4.4)--(4.5)
+give \textbar\textbar F Phi\textbar\textbar\_2\^{}2\textless=C(Theta+B).
+Thus
+
+\[
+ \|H\|_2^2\le C(K+\Theta+B)
+                 +C\sqrt{\Theta+B}\,\|H\|_2.
+\]
+
+Young's inequality and the bounded-section interpolation prove (4.3).
+There is no additive V term. QED.
+
+\hypertarget{the-square-condition-absorbs-the-remaining-determinant-energy}{%
+\subsubsection{4.2 The square condition absorbs the remaining
+determinant
+energy}\label{the-square-condition-absorbs-the-remaining-determinant-energy}}
+
+Assume a\^{}2\textgreater=T\_+. The determinant and Chern--Weil
+identities, with all constants retained, are
+
+\[
+ B=4\pi^2(p-a^2)+J_+,
+ \qquad
+ 36\pi^2(p-T_+)=\tfrac92P_{\rm Ric}+\tfrac98\Sigma-D_2.
+                                                               \tag{4.7}
+\]
+
+Consequently
+
+\[
+ B\le\tfrac12P_{\rm Ric}+\tfrac18\Sigma-D_2/9+J_+
+       \le\sqrt6 K+C\Theta.                          \tag{4.8}
+\]
+
+This is not a smallness assumption on B: it bounds B by the unknown
+spinor energy that the next self-test will absorb. We used
+P\_Ric\textless=rV, D\_2\textgreater=0 and (4.1)--(4.2). Thus (4.3)
+improves to
+
+\[
+             \|H\|_2^2+\|P\|_4^4\le C(K+\Theta).   \tag{4.9}
+\]
+
+\hypertarget{closing-the-weak-bianchi-bootstrap}{%
+\subsubsection{4.3 Closing the weak-Bianchi
+bootstrap}\label{closing-the-weak-bianchi-bootstrap}}
+
+Let J=div W(W\_0), where W(W\_0) is the Weyl four-tensor corresponding
+to the smooth polynomial W\_0. The inherited weak contracted Bianchi
+identity gives
+
+\[
+ \|J\|_2^2\le C\sqrt\Theta\,\|\nabla J\|_2.
+\]
+
+W\_0 is a parallel polynomial of degree four in bounded Phi.
+Consequently \textbar nabla J\textbar\textless=C\textbar nabla\^{}2
+W\_0\textbar{} and (4.9) give
+
+\[
+                    \|J\|_2^2\le C\sqrt{\Theta(K+\Theta)}.
+                                                               \tag{4.10}
+\]
+
+No commutation of these derivatives, and hence no new full-curvature
+term, is needed. The same actual J is the test field.
+
+The pointwise polynomial divergence identity from the existing
+\href{../mathematics/current/round21_analytic.md}{bounded-form
+criterion}, Section 6, with t=1/2 and
+v=\textbar omega\textbar\^{}2=3rho\^{}2/4, gives
+
+\[
+ \tfrac14 v(|\nabla\omega|^2+|d\omega|^2)
+       \le |J|^2+\tfrac13|dv|^2.                     \tag{4.11}
+\]
+
+On \{rho\textgreater1\}, use \textbar nabla
+omega\textbar\^{}2=3rho\textbar P\textbar\^{}2-3\textbar Im
+zeta\textbar\^{}2 and dv=(3/2)rho d rho. Equations (4.1), (4.2), (4.11)
+yield
+
+\[
+                       K\le C(\Theta+\|J\|_2^2).    \tag{4.12}
+\]
+
+The low-amplitude integral in (4.2) is essential: we did not divide by
+rho at its zeros. Combining (4.10)--(4.12) and applying Young once more,
+
+\[
+ K\le C\Theta+C\sqrt{\Theta K}\quad\Longrightarrow\quad
+                         \boxed{K\le C\Theta.}       \tag{4.13}
+\]
+
+This proves the mixed-term smallness sought in the web brief as a
+consequence of the original self-test with a sharper budget, rather than
+an assumed regularity theorem for the mixed term itself.
+
+\textbf{Theorem 3 (linear beta=2 cost).} Under the inherited actual
+conformal monopole hypotheses, p\textgreater0 and
+a\^{}2\textgreater=T\_+, every normalized metric with
+kappa=r+D\_2/V\textless=1 has supplied smooth solutions with any
+sufficiently small chosen allowance epsilon, for which
+
+\[
+ K+B+\int(|\nabla_A^2\Phi|^2+|\nabla_A\Phi|^4)
+             +\int|\zeta|^2|\nabla_A\Phi|^2\le C\Theta. 
+                                                               \tag{4.14}
+\]
+
+Moreover, the solution-independent quantities satisfy
+
+\[
+ \boxed{0\le\Sigma\le C(rV+D_2),\qquad
+         0\le p-T_+\le C_T(rV+D_2).}                 \tag{4.15}
+\]
+
+The nonnegative scalar slack follows from the classical scalar estimate;
+p\textgreater=a\^{}2\textgreater=T\_+. Bounds (4.8), (4.9), (4.13) and
+\textbar zeta\textbar\textless=2\textbar P\textbar{} prove (4.14).
+Equations (4.2), (4.7) prove (4.15) after letting epsilon tend to zero
+on the fixed metric and class. No convergence of the actual solutions is
+asserted or needed. In particular,
+
+\[
+                     c_2(S^+)[M]\le C(rV+D_2).       \tag{4.16}
+\]
+
+For the transition set, (4.14) gives
+int\_T\textbar zeta\textbar\^{}2\textbar P\textbar\^{}2\textless=CTheta.
+Choosing epsilon=o(h) proves the web brief's required o(hV) bound when
+kappa=o(h). This now contradicts the positive-charge necessity (1.4).
+
+The theorem controls rV, including scalar variance and normalization
+error; it does \textbf{not} assert the stronger unproved inequality
+Sigma\textless=C(P\_Ric+D\_2).
+
+A square-cost variant also follows from the same proof. Retain Theorem
+3's hypotheses except a\^{}2\textgreater=T\_+. If Y=(T\_+-a\^{}2)\_+,
+replace (4.8) by B\textless=sqrt6 K+CTheta+4pi\^{}2Y. Then
+
+\[
+ K+\Sigma+(p-T_+)_+\le C(\Theta+\sqrt{\Theta Y}),
+ \quad
+ B+\|\nabla_A^2\Phi\|_2^2+\|\nabla_A\Phi\|_4^4
+                   \le C(\Theta+Y).                 \tag{4.17}
+\]
+
+The mixed term is controlled by the second, not the first, bound in
+(4.17). Thus a square shortfall remains a genuine cost. No such cost
+appears in (4.14)--(4.16).
+
+\hypertarget{transfer-to-parameters-near-the-ke-endpoint}{%
+\subsubsection{4.4 Transfer to parameters near the KE
+endpoint}\label{transfer-to-parameters-near-the-ke-endpoint}}
+
+This transfer uses no new field or gauge hypothesis. For
+2\textless=beta\textless=3 let delta=beta-2 and Xi\_beta=rV+D\_beta. The
+exact deficit decomposition D\_beta=A\_0+beta\^{}(-1)int z\^{}2, where
+z=s+beta w and A\_0=Delta\_++int q\_-\^{}2\textgreater=0, gives
+
+\[
+ D_2=A_0+\tfrac12\int(z-\delta w)^2
+       \le\beta D_\beta+\delta^2\int w^2.
+\]
+
+Since w=(z-(s+4)+4)/beta, two applications of the squared triangle
+inequality give
+
+\[
+ \int w^2\le\frac4\beta D_\beta+
+                \frac{16}{\beta^2}rV+\frac{32}{\beta^2}V
+             \le2D_\beta+4rV+8V.
+\]
+
+Consequently
+
+\[
+                    \Xi_2\le5\Xi_\beta+8(\beta-2)^2V. \tag{4.18}
+\]
+
+Whenever kappa\_2\textless=1, Theorem 3 controls all its spinor
+quantities by C{[}Xi\_beta+(beta-2)\^{}2V+epsilon V{]}. The majorant
+f\_0=max(sqrt(max(-s+w,3)),(-s)\_+/4) does not depend on beta, so the
+same smooth majorants and actual solutions serve this comparison. This
+is a nearby-parameter corollary, not an estimate at
+beta-\textgreater infinity.
+
+\hypertarget{a-linear-two-chirality-gap-and-the-optimal-small-h-order}{%
+\subsection{5. A linear two-chirality gap and the optimal small-h
+order}\label{a-linear-two-chirality-gap-and-the-optimal-small-h-order}}
+
+Assume that for every smooth metric on M one can choose a single actual
+conformally solvable Spin\^{}c structure with
+
+\[
+ p\ge A>0,\quad a^2\ge T_+=A(1-h),\quad 0<h\le1/3.
+\]
+
+As before put
+
+\[
+ U=\frac{3\min(T_+,T_-)}A,\quad
+ e=\frac{R}{8\pi^2A},\quad R=\int|\operatorname{Ric}|^2,
+ \quad\mathcal E=\inf_{\lambda\ne0}
+       \frac{\int|\operatorname{Ric}-\lambda g|^2}{\lambda^2V}.
+\]
+
+\textbf{Theorem 4 (linear topological window).} There is a universal
+c\textgreater0 such that every smooth metric under these hypotheses
+satisfies
+
+\[
+              \boxed{\mathcal E+(U-1-h)_+\ge c h.}    \tag{5.1}
+\]
+
+\textbf{Proof.} R\textgreater0 by the positive actual scalar budget. If
+U\textless=0, e(1-E)\textless=U gives E\textgreater=1 and the conclusion
+is immediate. Otherwise U\textless=3. Set Delta=(U-1-h)\_+. If
+E+Delta\textgreater=1/49, then E+Delta\textgreater=(3/49)h. It remains
+to consider the smaller branch, in particular E\textless1/2.
+
+Let I=int s. If I\textgreater=0, the negative scalar estimate gives
+32pi\^{}2A\textless=int s\_-\^{}2\textless=L\_s\textless=RE, so
+4\textless=eE. Combining with e(1-E)\textless=U gives
+E\textgreater=4/(U+4)\textgreater=4/7, a contradiction. Thus
+I\textless0. Rescale by -R/I so that r=E and V=R/(4-E); p,D\_2,R,P\_Ric
+are unchanged. Write z=p/A-1\textgreater=0. The exact identity is
+
+\[
+          D_2/A=36\pi^2[e-(1+h)-2z].                 \tag{5.2}
+\]
+
+Hence e\textgreater=1+h, e\textless=U/(1-E)\textless=6, and
+
+\[
+ D_2/A\le72\pi^2\Delta+96\pi^2E,\quad
+ rV/A=\frac{8\pi^2eE}{4-E}\le\frac{96}{7}\pi^2E.
+\]
+
+Also A/V=(4-E)/(8pi\^{}2e)\textless=1/(2pi\^{}2). Thus
+
+\[
+ \Xi/A\le112\pi^2(E+\Delta),\qquad
+ \kappa\le49(E+\Delta)<1.                            \tag{5.3}
+\]
+
+The second bound in (5.3) follows directly from r=E and
+D\_2/V\textless=36Delta+48E, not from the coarser first bound alone. Now
+p-T\_+\textgreater=Ah and Theorem 3 give h\textless=C\_T
+Xi/A\textless=112pi\^{}2 C\_T(E+Delta). Take c=min(3/49,1/(112pi\^{}2
+C\_T)). This is independent of topology, volume, class choice and
+metric. QED.
+
+This uses the same chiral upper budget as the preceding h\^{}2 theorem.
+Its new content comes from (4.15), not from a new Chern--Weil identity.
+The old optimized F(h) inequality remains valid; (5.1) supplies a
+linear-width exclusion near the classical Ricci-energy boundary 1+h. It
+is not a claim that (5.1) dominates every previous inequality at every
+parameter value.
+
+\textbf{Corollary 5 (sharp order on the realized family).} On the exact
+complex-hyperbolic-cover blowup/handle family constructed in Section 3,
+Theorem 5 of \href{20260926_boundary_compatibility.md}{the boundary
+continuation},
+
+\[
+ \boxed{c_1h_j\le\inf_g\mathcal E(g)
+                   \le\frac{4h_j}{1+h_j}\le4h_j}
+                  \qquad\text{for all sufficiently large }j. \tag{5.4}
+\]
+
+Indeed U\_j-F(h\_j)=o(h\_j\^{}2), and
+F(h)-1-h=4h\^{}2/(1+sqrt(1-3h))\^{}2. Therefore
+(U\_j-1-h\_j)\_+=O(h\_j\^{}2); absorb it into ch\_j/2 in (5.1). The
+upper bound is the previously established consequence of LeBrun's actual
+shrinking-core construction, not a new gluing theorem. Thus the optimal
+\textbf{order} on this family is linear. The optimal leading constant
+over all metrics has not been determined.
+
+Combining E\textless=4delta\_sigma\^{}2 with (5.4) yields
+delta\_sigma\textgreater=c sqrt(h) on this family for either sign. This
+is a pointwise-input obstruction, not a pointwise near-Einstein
+construction or a full solution of Yau26.
+
+There is also a more informative feasible-frontier consequence. On the
+optimally negative-normalized branch with kappa\textless=1, set
+alpha=(36pi\^{}2 C\_T)\^{}(-1). From p-T\_+=A(h+z) and (4.15),
+
+\[
+ e\left(1+\frac{2\mathcal E}{9(4-\mathcal E)}\right)
+ \ge 1+(1+\alpha)h+(2+\alpha)z,\qquad z=p/A-1\ge0.
+                                                               \tag{5.5}
+\]
+
+For E\textless1, combining with e(1-E)\textless=U gives
+
+\[
+ U\ge\frac{(1-\mathcal E)[1+(1+\alpha)h]}
+                 {1+2\mathcal E/[9(4-\mathcal E)]}.  \tag{5.6}
+\]
+
+These formulas use precisely the same hypotheses as the small-kappa
+branch, not arbitrary metrics with uncontrolled D\_2/V. In particular,
+at an exact negative Einstein metric in that branch they force
+U\textgreater=1+(1+alpha)h. The all-metric statement remains (5.1),
+whose separate large-defect branch supplies the needed global
+quantifier.
+
+\hypertarget{relaxing-the-class-square-hypothesis-without-losing-the-order}{%
+\subsubsection{5.1 Relaxing the class-square hypothesis without losing
+the
+order}\label{relaxing-the-class-square-hypothesis-without-losing-the-order}}
+
+The square-cost estimate (4.17) gives a genuine scope extension. Retain
+the hypotheses of Theorem 4 except a\^{}2\textgreater=T\_+, and, for the
+actual class selected at g, put y=(T\_+-a\^{}2)\_+/A. Then
+
+\[
+ \boxed{\mathcal E(g)+(U-1-h)_+\ge c\frac{h^2}{h+y}.} \tag{5.7}
+\]
+
+To prove it, the negative-average and rescaling arguments of Theorem 4
+use p\textgreater=A, not the class-square condition. In the small branch
+let x=Xi/A. Since p-T\_+\textgreater=Ah, (4.17), with epsilon sent to
+zero, gives h\textless=C(x+sqrt(xy)). If x\textless=h, squaring gives
+h\^{}2\textless=2C\^{}2 x(x+y)\textless=2C\^{}2 x(h+y). If
+x\textgreater h, then x\textgreater h\textgreater=h\^{}2/(h+y). Combine
+with x\textless=112pi\^{}2(E+Delta). In the large branch use
+h\^{}2/(h+y)\textless=h\textless=1/3. This proves (5.7) with a universal
+positive constant.
+
+In particular a metricwise actual supply with
+(T\_+-a\^{}2)\_+\textless=L A h, for a fixed L\textgreater=0, still
+gives
+
+\[
+               \mathcal E(g)+(U-1-h)_+\ge c h/(1+L). \tag{5.8}
+\]
+
+This replaces the exact square inequality by a controlled shortfall at
+the surgery scale. It does not assert the existence of any additional
+gauge supplier. The realized family of Corollary 5 has y=0.
+
+\hypertarget{construction-side-scope-inverse-surgery-curvature-costs}{%
+\subsection{6. Construction-side scope: inverse-surgery curvature
+costs}\label{construction-side-scope-inverse-surgery-curvature-costs}}
+
+The parallel construction analysis gives a separate geometric
+explanation of why local insertion alone cannot beat the linear order.
+It is not used to prove Theorem 3.
+
+Let N be a common oriented exterior in M and X, where T\_+(X)=A and
+T\_+(M)=A(1-h). Suppose a smooth metric ghat on X agrees with g on N.
+Write C\_X=X\textbackslash N, C\_M=M\textbackslash N and
+H\_g=s\_g\^{}2/24+2\textbar W\_g\^{}+\textbar\^{}2. Global Chern--Weil
+on the two closed manifolds gives the exact identity
+
+\[
+ P_M=P_X+2\int_{C_M}H_g-2\int_{C_X}H_{\widehat g}
+                              +8\pi^2Ah.             \tag{6.1}
+\]
+
+Every term other than the cap energy has the displayed favorable sign.
+Let gamma=(4pi\^{}2A)\^{}\{-1\}int\_\{C\_X\}H\_ghat and b=4(h-gamma)\_+.
+For U\textgreater0 the chiral upper bound consequently gives
+
+\[
+                         \mathcal E(g)\ge\frac b{U+b}.
+                                                               \tag{6.2}
+\]
+
+For E\textless1 this follows from E\textgreater=4P\_M/R\textgreater=b/e
+and e(1-E)\textless=U; E\textgreater=1 is immediate. No closeness to a
+complex-hyperbolic exterior is assumed. Thus low-energy inverse-surgery
+caps with energy o(Ah) would force liminf E/h\textgreater=4 when
+h-\textgreater0 and U-\textgreater1. Conversely every such replacement
+of a hypothetical sublinear metric would have to cost at least
+4pi\^{}2Ah-o(Ah). The main theorem now excludes that sublinear case in
+the stated gauge/window family independently of the existence of caps.
+
+Here is an explicit sufficient geometric criterion for cheap caps. On
+disjoint spherical collars suppose, in coordinates at arbitrary scales
+ell\_i, g=ell\_i\^{}2(delta+q\_i), with
+\textbar\textbar q\_i\textbar\textbar\_\{C\^{}2(1\textless\textbar x\textbar\textless2)\}
+\textless=epsilon\_i\textless=epsilon\_0. A fixed radial cutoff which is
+zero for r\textless=5/4 and one for r\textgreater=7/4 extends the metric
+to a Euclidean inner ball, unchanged at the exterior. The scaled
+curvature is O(epsilon\_i), volume is bounded, and dimension-four
+scaling cancels; hence
+
+\[
+                         \int_{\mathrm{cap}_i}H\le C\epsilon_i^2.
+                                                               \tag{6.3}
+\]
+
+Thus sum epsilon\_i\^{}2=o(Ah) suffices, even with unbounded numbers of
+collars and arbitrarily small individual scales. An exactly unchanged
+normalized complex-hyperbolic exterior outside removed volume v has cap
+energy 2v, since H\_CH=2. The classical shrinking-core upper sequence
+lies in this class: choose its gluing scales diagonally so that the
+defect approximation error is o(h\_j) and cap energy is o(\nolinkurl{A_jh_j}). It
+then matches coefficient 4 asymptotically as h\_j-\textgreater0. This
+proves coefficient sharpness \textbf{within that replacement class}, not
+among all metrics on M.
+
+Actual spinor budgets alone were not shown to produce these C2 collars:
+they do not control the full opposite Weyl curvature or injectivity
+radius. No such geometric conclusion is needed for the weak-Bianchi
+proof above.
+
+\hypertarget{retaining-the-signed-current-an-independent-exact-identity}{%
+\subsection{7. Retaining the signed current: an independent exact
+identity}\label{retaining-the-signed-current-an-independent-exact-identity}}
+
+This records the parallel flux route without presenting it as a second
+proof of Theorem 3. Let Gamma=Im zeta and F\_A=iF, with F real and
+closed. Use the cutoff chi of Section 1, and define, for rho\textless1,
+
+\[
+ B_\chi(\rho)=-\int_\rho^1\frac{\chi'(t)}{t^2}dt,
+ \qquad C_\chi(\rho)=-\int_\rho^1\frac{\chi'(t)}t dt.
+\]
+
+Both functions are constant below 1/2 and zero above 1. Cauchy--Schwarz
+against the positive measure -chi'(t)dt proves C\_chi\^{}2\textless=chi
+B\_chi. Their derivatives are chi'/rho\^{}2 and chi'/rho, respectively.
+On the closed manifold, (1.6) integrates to int{[}B\_chi dGamma wedge
+dGamma-C\_chi dGamma wedge F{]}. Combining with the central curvature in
+(1.3) and completing a square gives
+
+\[
+\begin{aligned}
+16\pi^2c_2(S^+)[M]=\int\bigl[&4B_\chi(|Z^+|^2-|Z^-|^2)
+ +\lambda(|F^+|^2-|F^-|^2)\\
+ &+2\chi(|\Omega^-|^2-|\Omega^+|^2)\bigr]d\mu+R_{\rm off},
+\end{aligned}                                                     \tag{7.1}
+\]
+
+where Z=dGamma-C\_chi F/(2B\_chi),
+lambda=chi-C\_chi\^{}2/B\_chi\textgreater=0 and R\_off=2int chi' d rho
+wedge(b wedge F12-bar b wedge F21). Where B\_chi=0 all weighted terms
+are defined by their continuous limit; C\_chi=chi=0 there. The identity
+extends through spinor zeros because Gamma is globally smooth and the
+weights are constant near rho=0; the off-diagonal expression is
+supported away from those zeros.
+
+The central anti-self-dual terms in (7.1) have nonpositive sign. This
+does not make the full topological flux nonpositive: its self-dual
+current energy remains. The new estimate (4.14), however, now bounds
+that current on the beta=2 square-controlled branch. Indeed dGamma is
+the sum of a quadratic spinor-gradient term and
+Im\textless Phi,F\^{}\{S+\}Phi\textgreater; (4.4)--(4.5), (4.8) and
+(4.14) bound its L2 energy by CTheta. Thus the signed identity is
+consistent with the linear positive-charge bound; it supplies no
+independent zero-end vanishing theorem.
+
+\hypertarget{continuing-the-zero-end-system-torsion-length-and-a-coupled-balance}{%
+\subsection{8. Continuing the zero-end system: torsion length and a
+coupled
+balance}\label{continuing-the-zero-end-system-torsion-length-and-a-coupled-balance}}
+
+This section continues the zero-end problem after the linear theorem.
+All norms here are normalized by V. Assume the inherited actual supply
+with a\^{}2\textgreater=T\_+, beta\textgreater=4, and
+eta=kappa+epsilon\textless=1. Write P=nabla\_A Phi, H=nabla\_A P,
+t=t\_Phi and m=\textbar t\textbar\^{}2. Its uniform budget gives
+
+\[
+ \|P\|_4+\|H\|_2+\|t\|_4+\|\nabla t\|_2\le C,\quad
+ \|\zeta\|_2+\|d\rho\|_2\le C\sqrt\eta,
+\] \[
+ \|\rho-\rho_\beta\|_2+\|U-U_\beta\|_2
+ +\|s+4\|_2+\|\operatorname{Ric}^{\circ}\|_2\le C\sqrt\eta,
+\]
+
+where rho\_beta and U\_beta are as in Section2. Set
+
+\[
+ m_\beta=-U_\beta\rho_\beta^3/2
+ =\frac{16[4(1+1/\beta)]^{3/2}}{81}(1-2/\beta),\quad
+ S=m_\beta+2\rho^2|P|^2,\qquad u=t/\sqrt S.            \tag{8.1}
+\]
+
+For beta\textgreater=4, m\_beta has uniform positive lower and upper
+bounds. All these fields are globally smooth, including at spinor zeros.
+The pointwise Dirac-compatible decomposition used in Section3 gives
+
+\[
+       0\le d:=2\rho^2|P|^2-m\le4\rho|\zeta|^2.      \tag{8.2}
+\]
+
+Indeed write P=alpha v\_1+gamma\_N v\_2+gamma\_L v\_2 using the
+orthogonal kernel decomposition there. Then
+m=2rho\^{}2\textbar gamma\_N\textbar\^{}2,
+\textbar gamma\_L\textbar\textless=\textbar alpha\textbar{} and
+\textbar alpha\textbar\^{}2=\textbar zeta\textbar\^{}2/rho. The
+inequality extends through zeros. Thus S=m\_beta+m+d,
+\textbar u\textbar\textless=1, and avg d\textless=C eta. The inherited
+fourth-order and same-solution mass estimates imply
+
+\[
+ \fint S=2m_\beta+O(\sqrt\eta),\qquad \fint S^2\le C. \tag{8.3}
+\]
+
+\textbf{Proposition 6 (actual torsion-length concentration).} Uniformly
+under these assumptions,
+
+\[
+ \fint\frac{(S-2m_\beta)^2}{S}\le C\sqrt\eta,\qquad
+ \|m-m_\beta\|_{3/2,\mathrm{avg}}\le C\eta^{1/4},
+                                                               \tag{8.4}
+\] \[
+ \frac{\operatorname{Vol}\{m\le m_\beta/4\}}V
+                                      \le C\sqrt\eta. \tag{8.5}
+\]
+
+In particular, along beta-\textgreater infinity, eta-\textgreater0,
+\textbar t\textbar\^{}2 tends to 128/81 strongly in every normalized Lq,
+1\textless=q\textless2, not merely in mean.
+
+\textbf{Proof.} Test the actual equation Delta
+rho=-2\textbar P\textbar\^{}2-U rho/2 against a=2rho\^{}2/S. Direct
+differentiation cancels its leading terms:
+
+\[
+ da=\frac{4m_\beta\rho}{S^2}d\rho
+       -\frac{8\rho^4}{S^2}\operatorname{Re}\langle P,H\rangle.
+\]
+
+The coefficients of d rho and H are uniformly bounded. For the latter,
+put z=rho\textbar P\textbar, so
+rho\^{}4\textbar P\textbar/S\^{}2=rho\^{}3
+z/(m\_beta+2z\^{}2)\^{}2\textless=C. Hence
+\textbar\textbar da\textbar\textbar\_2\textless=C and
+\textbar avg\textless da,d rho\textgreater\textbar\textless=C sqrt eta.
+The equation gives
+
+\[
+ \fint(2-2m_\beta/S+U\rho^3/S)=O(\sqrt\eta).
+\]
+
+Replace U rho\^{}3 by U\_beta rho\_beta\^{}3=-2m\_beta, at cost O(sqrt
+eta). It follows that avg(1/S)=1/(2m\_beta)+O(sqrt eta). The exact
+nonnegative Jensen defect avg{[}(S-2m\_beta)\^{}2/S{]}=avg
+S-4m\_beta+4m\_beta\^{}2 avg(1/S) and (8.3) prove the first part of
+(8.4).
+
+For its stronger norm assertion, test instead with b=rho\^{}2 sqrt S.
+Direct differentiation gives
+\textbar db\textbar\textless=C{[}(1+\textbar P\textbar)\textbar d
+rho\textbar+\textbar H\textbar{]}. Since \textbar d
+rho\textbar\textless=4\textbar P\textbar, the inherited L4/Hessian
+budget still gives \textbar\textbar db\textbar\textbar\_2\textless=C.
+Therefore
+
+\[
+ \fint(S-2m_\beta)\sqrt S=O(\sqrt\eta).
+\]
+
+The replacement error is at most \textbar\textbar U
+rho\^{}3+2m\_beta\textbar\textbar\_2 \textbar\textbar sqrt
+S\textbar\textbar\_2\textless=C sqrt eta. Subtract sqrt(2m\_beta) times
+the first identity of (8.3). With G=(S-2m\_beta)(sqrt
+S-sqrt(2m\_beta))\textgreater=0, obtain avg G\textless=C sqrt eta.
+Holder yields
+
+\[
+ \fint|S-2m_\beta|^{3/2}
+ \le(\fint G)^{3/4}
+       [\fint(\sqrt S+\sqrt{2m_\beta})^3]^{1/4}
+ \le C\eta^{3/8}.
+\]
+
+The last factor is bounded by (8.3). From (8.2), interpolation of the
+small L2 and bounded L4 norms of zeta gives
+\textbar\textbar d\textbar\textbar\_\{3/2\}\textless=C eta\^{}\{1/3\}.
+Since m-m\_beta=S-2m\_beta-d, (8.4) follows. Interpolate with the
+bounded L2 norms to obtain every q\textless2, not q=2.
+
+Finally, split \{m\textless=m\_beta/4\} into
+\{d\textgreater m\_beta/4\}, of volume O(eta)V, and its complement. On
+the complement S\textless=3m\_beta/2 and
+(S-2m\_beta)\^{}2/S\textgreater=m\_beta/6; (8.5) follows. QED.
+
+\hypertarget{using-both-the-dirac-and-actual-curvature-equations}{%
+\subsubsection{8.1 Using both the Dirac and actual curvature
+equations}\label{using-both-the-dirac-and-actual-curvature-equations}}
+
+The equations of Sections2--3 imply an additional quantitative identity:
+
+\[
+ \boxed{\fint\left(\rho^3|\nabla u|^2-
+            \frac{\rho^3m|dS|^2}{4S^3}\right)
+       =\rho_\beta^3(1-1/\beta)+O(\sqrt\eta).}         \tag{8.6}
+\]
+
+In particular, the left side tends to 64/27 at the zero endpoint. Here
+is the proof, including the critical tests.
+
+Write Dt=R\_D+E, with
+\textbar R\_D\textbar\textless=C\textbar zeta\textbar\textbar P\textbar{}
+and \textbar\textbar E\textbar\textbar\_2\textless=C sqrt eta. Let w=1/S
+and W=rho\^{}3/S. Testing the twisted Lichnerowicz identity against Wt
+gives, with real Hermitian pairings,
+
+\[
+\begin{aligned}
+ \int W|Dt|^2+\int\langle Dt,c(dW)t\rangle
+  ={}&\int W|\nabla t|^2+\tfrac12\int\langle dW,dm\rangle\\
+    &+\tfrac14\int sWm
+      +\tfrac32\int W\langle c(F_A^-)t,t\rangle.       
+\end{aligned}\tag{8.7}
+\]
+
+The two left integrals are O(sqrt eta V): use
+rho\^{}3\textbar P\textbar\^{}2/S\textless=C, and the bounds
+\textbar t\textbar\textbar dW\textbar+\textbar P\textbar\textbar t\textbar\textbar dW\textbar\textless=C(\textbar d
+rho\textbar+\textbar H\textbar). Their coefficients reduce to bounded
+functions of z=rho\textbar P\textbar{} and S=m\_beta+2z\^{}2, so no
+division by rho occurs.
+
+The gradient term containing d(rho\^{}3) is also O(sqrt eta V), since
+rho\^{}2\textbar t\textbar/S is bounded. The rest completes exactly as
+
+\[
+ w|\nabla t|^2+\tfrac12\langle dw,dm\rangle
+   =|\nabla(t/\sqrt S)|^2-\frac{m|dS|^2}{4S^3}.       \tag{8.8}
+\]
+
+The scalar term is -int rho\^{}3 m/S+O(sqrt eta V). Substitute the
+actual curvature equation (3.1) in the last term of (8.7). The identity
+c(q\_-(t))t=(m/2)t gives
+
+\[
+ -\tfrac32\int m^2/S
+ +3\int\frac{\rho^2}{S}\langle c((d\zeta)^-)t,t\rangle
+ +\tfrac32\int\frac{\langle c(\mathcal R)t,t\rangle}{S}. \tag{8.9}
+\]
+
+The quartic term is negative in the original Lichnerowicz equation. The
+last integrand is bounded by
+C(\textbar Ric\^{}circ\textbar+\textbar zeta\textbar\textbar P\textbar),
+so its normalized integral is O(sqrt eta). For the middle term, Clifford
+duality gives
+\textless c(xi)t,t\textgreater=4\textless xi,q\_-(t)\textgreater{} for
+imaginary anti-self-dual xi. Integrating by parts turns it into
+
+\[
+       12\int\left\langle\zeta,
+              \delta\left(\frac{\rho^2q_-(t)}S\right)\right\rangle.
+\]
+
+The test is smooth globally. Its derivative satisfies
+
+\[
+ \left|\nabla\left(\frac{\rho^2q_-(t)}S\right)\right|
+       \le C(|\nabla t|+|H|+|d\rho|).                \tag{8.10}
+\]
+
+Indeed \textbar q(t)\textbar\textless=Cm, \textbar nabla
+q(t)\textbar\textless=C\textbar t\textbar\textbar nabla t\textbar, and
+differentiating S reduces the needed coefficients to
+rho\^{}2\textbar t\textbar/S, rho m/S,
+rho\^{}3m\textbar P\textbar\^{}2/S\^{}2, and
+rho\^{}4m\textbar P\textbar/S\^{}2. All are bounded by
+m\textless=2rho\^{}2\textbar P\textbar\^{}2 and bounded rho. Thus this
+current term is O(sqrt eta V), without assuming the unweighted critical
+Dirac residual small.
+
+Combining (8.7)--(8.10) proves
+
+\[
+ \fint\left(\rho^3|\nabla u|^2-\frac{\rho^3m|dS|^2}{4S^3}\right)
+  =\fint\left(\frac{\rho^3m}{S}+\frac{3m^2}{2S}\right)
+      +O(\sqrt\eta).
+\]
+
+From S=m\_beta+m+d, avg d=O(eta), and the reciprocal test,
+avg(m/S)=1/2+O(sqrt eta) and avg(m\^{}2/S)=m\_beta/2+O(sqrt eta). For
+the latter replace m by S-m\_beta at cost at most 2 avg d and use
+(S-m\_beta)\^{}2/S=S-2m\_beta+m\_beta\^{}2/S. Replace rho\^{}3 by
+rho\_beta\^{}3 in the first potential term, whose multiplier m/S is
+bounded. The result is
+rho\_beta\^{}3/2+3m\_beta/4=rho\_beta\^{}3(1-1/beta), proving (8.6).
+
+Both derivative integrals have uniform budgets; in particular rho\^{}3
+m\textbar dS\textbar\^{}2/S\^{}3\textless=C(\textbar d
+rho\textbar\^{}2+\textbar H\textbar\^{}2). Since the subtracted term is
+nonnegative, the zero-end consequence is
+
+\[
+             \liminf\fint|\nabla u|^2\ge1/27.        \tag{8.11}
+\]
+
+We used rho\^{}3\textless=64, not an unjustified replacement of rho by
+its limiting constant inside a derivative integral. The more precise
+weighted lower bound is liminf avg rho\^{}3\textbar nabla
+u\textbar\^{}2\textgreater=64/27.
+
+This is a full coupled identity at the available norms and a strong
+subcritical length statement. It is not zero-freeness, critical L2
+convergence of m, or a zero-end gap. The derivative defect in (8.6) need
+not vanish; curvature/topological charge may still concentrate on the
+shrinking low-torsion region. That localized charge, rather than mean
+mass alone, remains to be controlled.
+
+There is a concrete chirality distinction at this remaining step. For
+B=S\^{}- tensor L the signed density is
+
+\[
+ 16\pi^2c_2(B)=
+ \left(9|F_A^+|^2-9|F_A^-|^2
+       +2|W^-|^2+s^2/24-\tfrac12|\operatorname{Ric}^{\circ}|^2\right)d\mu.
+                                                               \tag{8.12}
+\]
+
+Thus an ideal Ricci-flat core with W\^{}+=F\_A=0 has \emph{positive}
+bulk density \textbar W\^{}-\textbar\^{}2/(8pi\^{}2) for this bundle.
+The positive-spinor negative-charge argument does not transfer to it.
+This is a bulk sign calculation, not a complete marked filling or an
+actual counterexample. The next sufficient exclusion would have to
+control this positive curvature contribution together with the boundary
+flux on the low-torsion region in (8.5), or a construction would have to
+realize that entire coupled region and its exterior. Small volume by
+itself settles neither alternative.
+
+END COMPLETE SOURCE
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{source-2-20260927_conformal_separation_and_zero_end.md}{%
+\subsection{Source 2:
+\nolinkurl{20260927_conformal_separation_and_zero_end.md}}\label{source-2-20260927_conformal_separation_and_zero_end.md}}
+
+Original path:
+\nolinkurl{continuation/20260927_conformal_separation_and_zero_end.md}
+
+SHA-256:
+\nolinkurl{8f37b7ceb8fce5ce2f33ad6a87f5a8afcfe4cfd0b19282ed6ea8ae3689aebca9}
+
+BEGIN COMPLETE SOURCE
+
+\hypertarget{conformal-separation-realized-linear-windows-and-the-zero-end-system}{%
+\section{Conformal separation, realized linear windows, and the zero-end
+system}\label{conformal-separation-realized-linear-windows-and-the-zero-end-system}}
+
+27 September 2026. This is a mathematical continuation of
+\href{20260927_mixed_current_and_signed_cores.md}{the linear-cost
+proof}, not a new export or a replacement for the inherited manuscripts.
+The beta=2 refined Hessian theorem is the analytic premise of Part I.
+Part II continues the actual zero-Weyl equations and proves geometric
+endpoint exclusions under their stated hypotheses. The unrestricted
+integral-error endpoint gap remains open.
+
+Throughout, manifolds are closed, connected, oriented, smooth and
+four-dimensional unless a local limit is explicitly specified. Curvature
+norms and actual conformal monopole solvability have exactly the
+conventions of the
+\href{../mathematics/current/line1_functional_pencil.md}{functional
+pencil}. In particular, one genuine Spin\^{}c structure is fixed while
+the metric varies within its conformal class. A different original
+metric may select a different structure. Constants are universal unless
+a dependence is displayed.
+
+\hypertarget{part-i.-removing-scalar-variance-and-enlarging-the-actual-energy-window}{%
+\subsection{Part I. Removing scalar variance and enlarging the actual
+energy
+window}\label{part-i.-removing-scalar-variance-and-enlarging-the-actual-energy-window}}
+
+\hypertarget{a-scale-invariant-scalar-slack-theorem}{%
+\subsubsection{1. A scale-invariant scalar-slack
+theorem}\label{a-scale-invariant-scalar-slack-theorem}}
+
+For one such actual structure, put
+
+\[
+\begin{gathered}
+ p=(a_g^+)^2>0,\quad T=2\chi+3\tau,\quad
+ P=\int|\operatorname{Ric}^{\circ}|^2,\quad S_2=\int s^2,\\
+ D=\frac32S_2+18\int|W^+|^2-72\pi^2p,\quad
+ \Sigma=S_2-32\pi^2p,\quad Y=(T-a^2)_+,\quad \Pi=P+D.
+\end{gathered}                                                     \tag{1.1}
+\]
+
+The actual scalar and functional inequalities give
+Sigma,D\textgreater=0.
+
+\textbf{Theorem 1.} For every such metric, with no small-error
+condition,
+
+\[
+ \boxed{\Sigma\le C\bigl(\Pi+\sqrt{\Pi Y}\bigr),\qquad
+ (p-T)_+\le C_T\bigl(\Pi+\sqrt{\Pi Y}\bigr).}             \tag{1.2}
+\]
+
+In particular, when a\^{}2\textgreater=T,
+
+\[
+ \boxed{\Sigma\le C(P+D),\qquad (p-T)_+\le C_T(P+D).}     \tag{1.3}
+\]
+
+There is no scalar-variance term, normalized target Ricci error,
+diameter, Sobolev constant or noncollapse assumption in (1.2).
+
+\textbf{Proof.} The positive actual projection excludes a nonnegative
+constant scalar-curvature representative: the unperturbed spinor
+Weitzenboeck formula would force the spinor and the self-dual
+determinant curvature to vanish, contradicting p\textgreater0. The
+Yamabe representative in {[}g{]} therefore has negative constant scalar
+curvature. Rescale it to obtain s\_hat=-4, and denote it by g\_hat. The
+same actual structure remains available throughout this conformal class.
+Hodge star on two-forms is conformally invariant, so p is unchanged.
+Class squares and Y are unchanged as well.
+
+For clarity, the conformal energy comparison is exact, not a claim that
+the conformal factor is small. Write g=u\^{}2 g\_hat and use
+Delta=d*d.~The scalar transformation law gives s\_g u\^{}3=6 Delta\_hat
+u-4u. Squaring and integrating, then using int u\^{}\{-1\}Delta u=-int
+u\^{}\{-2\}\textbar du\textbar\^{}2, gives
+
+\[
+ \delta:=S_2-\widehat S_2
+ =48\int_{\widehat g}u^{-2}|du|^2
+       +36\int_{\widehat g}(u^{-1}\Delta u)^2\ge0.        \tag{1.4}
+\]
+
+Conformal invariance of the Weyl energy and Chern--Weil give
+
+\[
+ P-\widehat P=\delta/12,\quad
+ D-\widehat D=3\delta/2,\quad
+ \Sigma-\widehat\Sigma=\delta.                          \tag{1.5}
+\]
+
+Both hatted energies P\_hat,D\_hat are nonnegative. On g\_hat the
+normalized Einstein residual satisfies r\_hat V\_hat=P\_hat. If
+(P\_hat+D\_hat)/V\_hat\textless=1, the refined actual theorem and its
+square-shortfall version in Sections 4--5 of the preceding proof give
+
+\[
+ \widehat\Sigma\le C_0\left(\widehat\Pi+
+                             \sqrt{\widehat\Pi Y}\right).
+\]
+
+The selectable smoothing allowance is sent to zero for this fixed metric
+and actual structure. If instead Pi\_hat\textgreater V\_hat, the
+elementary inequality
+0\textless=Sigma\_hat=16V\_hat-32pi\^{}2p\textless=16V\_hat gives the
+same estimate with constant 16. Thus it holds in both cases, with
+C\textgreater=max(C\_0,16). Now Pi=Pi\_hat+(19/12)delta, and (1.5)
+immediately transfers the bound to g. Finally use the exact identity
+
+\[
+ 36\pi^2(p-T)=\frac92P+\frac98\Sigma-D.                 \tag{1.6}
+\]
+
+This proves (1.2). QED.
+
+The conformal identities were already available in
+\href{../mathematics/current/line1_energy_selection.md}{energy
+selection, Section 4} and
+\href{../mathematics/current/line1_yamabe_endpoint.md}{Yamabe
+normalization, Section 1}. The new inference is their combination with
+the refined beta=2 theorem. No pointwise Ricci preservation under a
+conformal change is used or claimed. Nor does (1.2) transfer the hatted
+spinor's estimates to a particular weighted spinor on the original
+metric: its conclusions are curvature energies.
+
+\hypertarget{an-unconditional-lower-ricci-energy-wall}{%
+\subsubsection{2. An unconditional lower Ricci-energy
+wall}\label{an-unconditional-lower-ricci-energy-wall}}
+
+Assume, for the metric under consideration,
+
+\[
+ p\ge A>0,\qquad T=A(1-h),\qquad h>0.
+\]
+
+Write
+
+\[
+ R=\int|\operatorname{Ric}|^2,\quad
+ e=\frac{R}{8\pi^2A},\quad
+ \mathcal J=\frac{4P}{R},\quad z=p/A-1\ge0,\quad y=Y/A.
+\]
+
+The scalar budget makes R positive. Always 0\textless=J\textless=4 and
+J\textless=E, where E is the project's relative Einstein defect. The two
+exact reductions are
+
+\[
+ \frac DA=36\pi^2[e-1-h-2z],\qquad
+ \frac PA=2\pi^2e\mathcal J.                           \tag{2.1}
+\]
+
+In particular e\textgreater=1+h+2z. Theorem 1 now has the following
+consequence.
+
+\textbf{Theorem 2.} If a\^{}2\textgreater=T, there is c\_0\textgreater0,
+independent of h and e, such that
+
+\[
+ \boxed{e(1+\mathcal J/18)
+       \ge1+(1+c_0)h+(2+c_0)z.}                       \tag{2.2}
+\]
+
+In general there is c\_s\textgreater0 such that
+
+\[
+ \boxed{e(1+\mathcal J/18)
+       \ge1+h+2z+c_s\frac{(h+z)^2}{h+z+y}.}            \tag{2.3}
+\]
+
+The estimates require no upper energy budget from the other chirality.
+In particular every non-Ricci-flat Einstein candidate in the
+square-controlled case satisfies e\textgreater=1+(1+c\_0)h.
+
+\textbf{Proof.} In the square-controlled case, (1.3) gives
+A(h+z)\textless=C\_T(P+D). Substitute (2.1), and take c\_0=(36pi\^{}2
+C\_T)\^{}\{-1\}. For the general case put x=Pi/A and v=h+z. The
+inequality v\textless=C\_T(x+sqrt(xy)) implies x\textgreater=c
+v\^{}2/(v+y): if x\textgreater=v this is immediate; otherwise square and
+use x\textless v. Substitution proves (2.3). QED.
+
+For 0\textless h\textless=1/3, (2.2) also gives J+(e-1-h)\textgreater=c
+h. Indeed if e-1-h\textgreater=h/2 there is nothing to prove; otherwise
+e\textless=3/2 and e-1-h+J/12\textgreater=c\_0h. This is a global
+energy-versus-anisotropy statement, not merely an exact Einstein
+inequality.
+
+\hypertarget{a-stronger-chiral-window-and-the-small-h-variational-problem}{%
+\subsubsection{3. A stronger chiral window and the small-h variational
+problem}\label{a-stronger-chiral-window-and-the-small-h-variational-problem}}
+
+Put U=3 min(T\_+,T\_-)/A. Chern--Weil yields directly
+
+\[
+ e(1-\mathcal J)\le U.                                 \tag{3.1}
+\]
+
+Unlike the older formula with E, no scalar variance has been discarded
+here. Let L\_h=1+(1+c\_0)h. If U\textgreater0, combining (2.2) and (3.1)
+gives
+
+\[
+ \boxed{\mathcal J\ge
+       \frac{(L_h-U)_+}{L_h+U/18}.}                    \tag{3.2}
+\]
+
+For J\textless1 this follows by eliminating e. For J\textgreater=1 the
+right side is at most one, so it remains true. If U\textless=0, (3.1)
+itself gives J\textgreater=1. Thus for 0\textless h\textless=1/3,
+
+\[
+ \mathcal J+(U-1-h)_+\ge c h.                          \tag{3.3}
+\]
+
+The analogous square-shortfall result has right side c h\^{}2/(h+y), or
+c h/(1+L) when y\textless=Lh. All statements also hold with E in place
+of J.
+
+On the already constructed actual small-h family in
+\href{20260926_boundary_compatibility.md}{Section 3 of the boundary
+continuation}, U\_j=1+h\_j+O(h\_j\^{}2), y\_j=0. Consequently
+
+\[
+ \boxed{c_1h_j\le\inf_g\mathcal J(g)
+                  \le\frac{4h_j}{1+h_j}.}              \tag{3.4}
+\]
+
+The upper bound uses the previously justified classical shrinking-core
+metrics and J\textless=E. The lower bound applies to every smooth
+metric. The linear order is therefore forced by traceless Ricci itself;
+scalar variance cannot be the sole payment of the topological cost.
+
+Here is a useful exact variational comparison. From (1.5),
+
+\[
+ R-\widehat R=\delta/3,\qquad
+ \mathcal J(g)=
+ \frac{\mathcal J(\widehat g)\widehat R+\delta/3}
+      {\widehat R+\delta/3}.                           \tag{3.5}
+\]
+
+Thus J(g) lies between J(g\_hat) and 1. Since the normalized negative
+Yamabe metric has constant scalar curvature, E(g\_hat)=J(g\_hat).
+Whenever J(g)\textless1,
+
+\[
+ \mathcal E(\widehat g)=\mathcal J(\widehat g)
+                 \le\mathcal J(g)\le\mathcal E(g).      \tag{3.6}
+\]
+
+If the manifold has the stipulated actual supply for every metric and
+inf\_g J(g)\textless1, it follows that
+
+\[
+                    \inf_g\mathcal E(g)=\inf_g\mathcal J(g).
+                                                               \tag{3.7}
+\]
+
+This applies to the small-h family for all sufficiently large j. It
+concerns infima, not attainment, pointwise closeness, or uniqueness of
+Einstein metrics.
+
+\hypertarget{conformal-minimization-and-minimizing-sequences}{%
+\paragraph{3.1 Conformal minimization and minimizing
+sequences}\label{conformal-minimization-and-minimizing-sequences}}
+
+The comparison can be sharpened without further analytic input. Fix a
+negative conformal class, and put J\_Y=J(g\_hat), R\_Y=R(g\_hat).
+Formula (3.5) shows
+
+\[
+             \inf_{g\in[g_0]}\mathcal J(g)=\min\{J_Y,1\}.
+                                                               \tag{3.8}
+\]
+
+To justify the possibly unattained endpoint 1, choose a coordinate ball
+and a compactly supported smooth cutoff chi which is one on a smaller
+ball. For fixed sufficiently small epsilon\textgreater0 let
+u\_n=1+epsilon chi sin(nx\^{}1). These are uniformly positive, bounded
+conformal factors. The n\^{}2 term in Delta\_hat u\_n has nonzero
+squared integral of order n\^{}4 on the smaller ball, while the
+lower-order terms are O(n); hence the nonnegative expression (1.4) tends
+to infinity. Formula (3.5) tends to 1. If J\_Y\textless1, (3.8) is
+attained exactly by constant conformal rescalings of the Yamabe metric.
+If J\_Y=1, every metric in the class has J=1. If J\_Y\textgreater1, the
+infimum 1 is not attained.
+
+If every conformal class on M is negative (as follows from the
+all-metric actual positive supply), write alpha=inf\_g E(g). Since
+J\textless=E, while (3.6) would produce an E-value below alpha from any
+J-value below min(alpha,1),
+
+\[
+                 \boxed{\inf_g\mathcal J(g)=\min\{1,\alpha\}.}
+                                                               \tag{3.9}
+\]
+
+When alpha\textless1 there is an exact useful excess decomposition.
+Define L\_s=int(s-s\_bar)\^{}2 and delta=S\_2-S\_Y. Since E=(4P+L\_s)/R
+and E(g\_hat)=J\_Y\textgreater=alpha, (3.5) gives
+
+\[
+ \boxed{\mathcal E(g)-\alpha=
+   \frac{R_Y}{R}(J_Y-\alpha)
+   +(1-\alpha)\frac{\delta}{3R}+\frac{L_s}{R}.}          \tag{3.10}
+\]
+
+Every summand is nonnegative. In particular
+delta/R\textless=3(E-alpha)/(1-alpha) and L\_s/R\textless=E-alpha. Every
+E-minimizing sequence therefore has delta/R-\textgreater0,
+R\_Y/R-\textgreater1, and J\_Y-\textgreater alpha. Its late terms may be
+replaced by their scalar-normalized Yamabe metrics with no larger E.
+This reduces the low-defect variational problem to constant-scalar
+metrics and controls the conformal energy discarded in the reduction. It
+does not supply convergence of conformal factors, geometric compactness,
+or attainment of the infimum.
+
+\hypertarget{the-remaining-sharp-coefficient-is-a-specific-remainder-problem}{%
+\paragraph{3.2 The remaining sharp coefficient is a specific remainder
+problem}\label{the-remaining-sharp-coefficient-is-a-specific-remainder-problem}}
+
+For the realized family with U=1+h+O(h\^{}2), h-\textgreater0, the upper
+bound tends to zero. The preceding reduction therefore permits
+restricting the variational infimum to the actual scalar -4 Yamabe
+representatives. Put
+
+\[
+ x=\frac{P}{8\pi^2A},\quad d=\frac{D}{36\pi^2A},\quad
+ \sigma=\frac{\Sigma}{32\pi^2A},\quad z=p/A-1.
+\]
+
+All are nonnegative, and exact identities give
+
+\[
+\begin{gathered}
+ e=1+h+2z+d,\qquad V/(2\pi^2 A)=1+z+\sigma,\\
+ x=h+z+d-\sigma,\qquad
+ \mathcal E=\mathcal J=\frac{4(h+z+d-\sigma)}{1+h+2z+d},\\
+                 d+2z\le4x+(U-1-h).
+\end{gathered}                                                     \tag{3.11}
+\]
+
+The minimization is over triples realized by these actual metrics and
+classes, not arbitrary nonnegative numbers satisfying (3.11).
+
+For the same class take an actual ordinary solution with weight one.
+This is available for the present actual family. It is a separately
+supplied solution, not the variable-weight spinor silently rescaled.
+Write rho=\textbar Phi\textbar\^{}2, K=int\textbar nabla\_A
+Phi\textbar\^{}2, Q=int(4-rho)\^{}2, and
+J\_+=\textbar\textbar F\_A\^{}+-(F\_A\^{}+)\_H\textbar\textbar\_2\^{}2.
+The maximum principle gives rho\textless=4, and the same-solution
+identities give
+
+\[
+ 4K=\int(4-\rho)\rho,\quad
+ \int\rho^2=32\pi^2p+8J_+,\quad
+ \boxed{\Sigma=8K+Q+8J_+.}                             \tag{3.12}
+\]
+
+The last formula is the ordinary-weight specialization of the
+\href{20260926_actual_topological_cost.md}{actual remainder identity},
+not a new gauge estimate. It holds for every such solution, so changing
+the solution does not alter the sum of these three losses.
+
+Along any actual candidate sequence with E=O(h), (3.1) and
+e\textgreater=1+h+2z+d imply e=1+O(h). Thus x,z,d,sigma=O(h), and (3.11)
+gives E/h=4-4(sigma-z-d)/h+O(h). Consequently
+
+\[
+ \boxed{\liminf\frac{\mathcal E}{h}\ge4
+ \quad\Longleftrightarrow\quad
+ \frac{[K+Q/8+J_+-D/9-4\pi^2(p-A)]_+}{Ah}\longrightarrow0.}
+                                                               \tag{3.13}
+\]
+
+Equivalently, the still-unproved first-order estimate is
+
+\[
+                 \Sigma\le\frac89D+32\pi^2(p-A)+o(Ah)
+                                                               \tag{3.14}
+\]
+
+on these candidate sequences. Obtaining it for all such sequences would
+determine coefficient4, in view of the known upper construction. It is
+not asserted for arbitrary manifolds or as a consequence of Theorem 1.
+On a sharp minimizing sequence it asks for sigma=z+d+o(h), not for each
+slack separately to vanish. Controlling K alone loses the other two
+nonnegative terms in (3.12).
+
+There is an actual obstruction to reaching this coefficient merely by
+optimizing C\_T in (1.3). Take a product of closed surfaces of genera
+g\_1,g\_2\textgreater=2, with Gaussian curvatures -(1+t), -(1-t),
+0\textless t\textless1. Set A\_0=T=8(g\_1-1)(g\_2-1). The product is a
+negative Yamabe cscK metric with s=-4 and actual canonical input. Direct
+product calculations give
+
+\[
+ p=\frac{A_0}{1-t^2},\quad
+ P=\frac{8\pi^2 A_0t^2}{1-t^2},\qquad D=\Sigma=0.
+                                                               \tag{3.15}
+\]
+
+The canonical ordinary solution is parallel with rho=4, so K=Q=J\_+=0.
+Thus p-T=P/(8pi\^{}2), forcing C\_T\textgreater=1/(8pi\^{}2) and
+c\_0\textless=2/9. The slope certified by (3.2) when U=1+h+O(h\^{}2) is
+18c\_0/19, at most 4/19. Improving that isotropic constant alone cannot
+yield 4. This product test has h=0 for the common budget A=A\_0; it is
+not a counterexample in the tight small-h window or to (3.14).
+
+Finally Yamabe replacement does not improve the known classical upper
+coefficient. For each fixed surgery manifold it decreases Ricci energy,
+while LeBrun's absolute lower bound prevents it falling below the same
+infimum. Hence e-\textgreater1+h, and (2.1) forces z,d-\textgreater0.
+The classical completed square bound
+Sigma\textless=4D/9+(4sqrt(2)/3)sqrt(RD) then gives Sigma-\textgreater0.
+A sufficiently accurate diagonal sequence has z,d,sigma=o(h), still
+yielding E/h-\textgreater4. The unresolved improvement must therefore
+control the actual combined remainder in (3.13), not merely discard
+scalar variance.
+
+\hypertarget{a-realized-bf-family-outside-the-old-quadratic-strip}{%
+\subsubsection{4. A realized BF family outside the old quadratic
+strip}\label{a-realized-bf-family-outside-the-old-quadratic-strip}}
+
+This application changes the region actually excluded by the project. It
+is not a claim that these smooth manifolds have never been obstructed
+elsewhere. The actual class supply and symplectic geography are
+classical; their precise versions are recorded in
+\href{../mathematics/current/line1_bauer_furuta_geography.md}{the
+existing BF geography proof}. See also
+\href{https://arxiv.org/html/math/0111228}{Ishida--LeBrun} and
+\href{https://arxiv.org/pdf/math/0306021}{Braungardt--Kotschick, Theorem
+4}.
+
+Fix theta=min(c\_0/2,1/2)\textgreater0 and eta\_j=1/j. For sufficiently
+large j choose an even integer N\_j, increasing as fast as necessary,
+with N\_j\textgreater=j\^{}6 and
+N\_j\textgreater=2c(eta\_j\^{}2/2)/eta\_j\^{}2, where c(epsilon) is the
+geography constant. Set
+
+\[
+ d_j=\lceil\eta_j^2N_j\rceil,\quad a_j=9N_j-d_j,
+ \quad A_j=2a_j.
+\]
+
+The geography theorem supplies a simply connected minimal symplectic
+X\_j with chi\_h(X\_j)=N\_j and c\_1\^{}2(X\_j)=a\_j: indeed
+a\_j\textless=(9-eta\_j\^{}2/2)N\_j-c(eta\_j\^{}2/2). Choose N\_j
+additionally large enough for the theorem's lattice-range condition. Its
+invariants are
+
+\[
+ \chi(X_j)=3N_j+d_j,\quad \tau(X_j)=N_j-d_j,\quad
+ b_+(X_j)=2N_j-1\equiv3\pmod4,\quad b_-(X_j)=N_j+d_j-1.
+\]
+
+For the pair of building blocks define
+
+\[
+ u_j=3-18\frac{2\tau(X_j)}{A_j}
+     =1+\frac{16d_j}{a_j}=1+O(\eta_j^2),\qquad
+ U_j^*=1+(1+\theta)\eta_j,
+\] \[
+ x_j=\frac{U_j^*-u_j+3\eta_j}{18},\qquad
+ y_j=\frac{\eta_j-x_j}{4}.
+\]
+
+They are positive for large j, with x\_j/eta\_j-\textgreater(4+theta)/18
+and y\_j/eta\_j-\textgreater(14-theta)/72. Take even surgery counts
+
+\[
+ k_j=2\lfloor A_jx_j/2\rfloor,\qquad
+ m_j=2\lfloor A_jy_j/2\rfloor-4,
+\]
+
+and form the actual smooth manifold
+
+\[
+ M_j=X_j\#X_j\#k_j\overline{\mathbb {CP}}^{\,2}
+                         \#m_j(S^1\times S^3).         \tag{4.1}
+\]
+
+\textbf{Theorem 3.} On this family, for all sufficiently large j,
+
+\[
+ \inf_g\mathcal J(g)\ge c_2h_j>0,\qquad
+ U_j-F(h_j)\sim\theta h_j,
+ \qquad h_j\longrightarrow0,                           \tag{4.2}
+\]
+
+where h\_j=(4+k\_j+4m\_j)/A\_j and F(h)=(4-sqrt(1-3h))\^{}2/9. The
+manifolds have no Einstein metric of any sign, ordinary SW invariants
+vanish, and neither orientation admits an almost-complex structure. Both
+strict Hitchin--Thorpe inequalities hold.
+
+\textbf{Proof.} Write k\_j=\nolinkurl{A_jx_j}-alpha\_j and m\_j=\nolinkurl{A_jy_j}-beta\_j-4
+with alpha\_j,beta\_j in {[}0,2). The exact topology gives
+
+\[
+ h_j=\eta_j-\frac{12+\alpha_j+4\beta_j}{A_j},\qquad
+ U_j=U_j^*+\frac{36-15\alpha_j+12\beta_j}{A_j}.          \tag{4.3}
+\]
+
+Here the signature is positive for large j, so the smaller chirality
+really is T\_-. In particular T\_+\textgreater0 and T\_-\textgreater0.
+The correction in U is positive and O(A\_j\^{}\{-1\}); the correction in
+h is negative and O(A\_j\^{}\{-1\}). Since
+A\_j\^{}\{-1\}=o(eta\_j\^{}2), and F(h)=1+h+h\^{}2+O(h\^{}3),
+
+\[
+ U_j-F(h_j)=\theta\eta_j+O(\eta_j^2),\qquad
+ L_{h_j}-U_j=(c_0-\theta)\eta_j+o(\eta_j).              \tag{4.4}
+\]
+
+BF nonvanishing supplies the actual canonical-sum and exceptional-sign
+structures. For the four-input formulation of Ishida--LeBrun's theorem,
+one may add auxiliary X\_3=X\_4=K3: the total b\_+ is 4N\_j+4, congruent
+to 4 modulo 8, and the theorem's m=2 conclusion concerns just the two
+target summands. The auxiliary K3 surfaces are not included in M\_j. As
+in the existing proof, averaging the independent exceptional signs
+selects, for every metric, an actual class with p\textgreater=A\_j and
+a\^{}2=A\_j-k\_j\textgreater=T\_+=A\_j-4-k\_j-4m\_j. Thus (3.2) applies
+and proves the first claim in (4.2). Nonzero Einstein constants have
+J=0; Ricci-flatness is also excluded directly by the positive actual
+scalar budget.
+
+Finally, b\_1(M\_j)=m\_j, b\_+(M\_j)=4N\_j-2, and
+b\_-(M\_j)=2N\_j+2d\_j-2+k\_j are all even. An almost-complex
+four-manifold has (chi+tau)/4=(1-b\_1+b\_+)/2 integral, which is
+impossible here, in either orientation. Ordinary SW vanishing follows
+from the positive-b\_+ connected-sum decomposition. Increasing N\_j
+ensures distinct b\_+ and hence pairwise nonhomeomorphism. QED.
+
+This is outside the old \emph{quantitative} strip:
+(U\_j-F(h\_j))/h\_j\^{}2-\textgreater infinity, so the old inequality
+E+(U-F(h))\_+\textgreater=c\_old h\^{}2 does not by itself give a
+positive E on this family. The classical optimized energy interval also
+allows e between F(h\_j) and U\_j. The new linear wall excludes it. The
+old near-1/3 estimate does not apply effectively as h\_j-\textgreater0,
+and the old upper wall concerned h\textgreater1/4. No assertion of an
+upper near-Einstein construction on these symplectic BF manifolds is
+made.
+
+\hypertarget{cover-compatible-inputs-are-retained-not-strengthened}{%
+\subsubsection{5. Cover-compatible inputs are retained, not
+strengthened}\label{cover-compatible-inputs-are-retained-not-strengthened}}
+
+The preceding arguments extend to the invariant-weight version of the
+actual input in
+\href{../mathematics/current/round14_twisted_rigidity.md}{the Pin-minus
+proof}. Suppose pi:M\_tilde-\textgreater M is a finite regular oriented
+cover, g\_tilde=pi\^{}*g, and one ordinary structure upstairs supplies
+every positive deck-invariant weight required by the proof. The beta=2
+refined argument only uses these weights and therefore holds upstairs
+without requiring all other weights.
+
+The normalized negative Yamabe representative upstairs is deck-invariant
+by uniqueness of the scalar -4 representative in a negative conformal
+class. It descends to M. Every further auxiliary weight used on that
+representative is still deck-invariant, so the same actual supply
+remains valid. Apply Theorems 1--2 upstairs, divide the extensive
+energies and topology by the covering degree, and keep the normalized
+quantities e,J,E unchanged. The square-shortfall term divides correctly:
+sqrt(Pi\_tilde Y\_tilde)/degree=sqrt(\nolinkurl{Pi_per_sheet} \nolinkurl{Y_per_sheet}).
+There is no degree-dependent loss.
+
+For a genuine Pin-minus double-cover input, the inherited lifting
+theorem gives p\_tilde=2p, a\_tilde\^{}2=2a\^{}2 and T\_tilde=2T, so all
+statements above apply to the twisted budgets downstairs. This is the
+actual lifting input of
+\href{https://arxiv.org/pdf/1505.05948}{Ishida--Matsuo--Nakamura}, not a
+claim that an arbitrary formal local-system class has solutions. The
+conclusion does not require the covering manifold to solve arbitrary
+non-invariant weights or metrics.
+
+\hypertarget{part-ii.-the-remaining-zero-weyl-endpoint}{%
+\subsection{Part II. The remaining zero-Weyl
+endpoint}\label{part-ii.-the-remaining-zero-weyl-endpoint}}
+
+The following continuation uses the actual torsion system and length
+estimates in Section 8 of the preceding proof. Unlike Part I, it has not
+yet produced a universal zero-end gap. Further results are recorded
+below as their proofs close, without turning them into an export or a
+completion claim.
+
+\hypertarget{saturation-of-determinant-curvature-not-just-torsion-length}{%
+\subsubsection{6. Saturation of determinant curvature, not just torsion
+length}\label{saturation-of-determinant-curvature-not-just-torsion-length}}
+
+Use the actual fields and notation of the preceding proof, Section 8:
+P\_spin=nabla\_A Phi, rho=\textbar Phi\textbar\^{}2,
+zeta=\textless Phi,P\_spin\textgreater, t=t\_Phi,
+m=\textbar t\textbar\^{}2, eta=kappa+epsilon, beta\textgreater=4, and
+a\^{}2\textgreater=T\_+. Set rho\_beta=2sqrt(4(1+1/beta))/3,
+U\_beta=(4/3)(2/beta-1), m\_beta=-U\_beta rho\_beta\^{}3/2, and
+S=m\_beta+2rho\^{}2\textbar P\_spin\textbar\^{}2. All norms in this
+section are normalized by V. The quadratic map q\_- obeys
+\textbar q\_-(t)\textbar\^{}2=m\^{}2/8. Define bounded smooth fields
+
+\[
+ Q=\frac{\rho^3q_-(t)}S,\qquad
+ A_\beta=\frac{4m_\beta}{\rho_\beta^6}Q.                \tag{6.1}
+\]
+
+There is no division by rho or m. S has a universal positive lower
+bound.
+
+\textbf{Theorem 4.} Under these actual hypotheses,
+
+\[
+ \boxed{\|F_A^-+A_\beta\|_{2,\mathrm{avg}}^2
+       +\frac{4\pi^2(a^2-T_+)}V
+       \le\frac8{3\beta}(1-2/\beta)+C\sqrt\eta.}       \tag{6.2}
+\]
+
+Consequently, along beta-\textgreater infinity and eta-\textgreater0,
+
+\[
+ \fint|F_A^-|^2\longrightarrow\frac29,
+ \qquad (a^2-T_+)/V\longrightarrow0.                   \tag{6.3}
+\]
+
+More quantitatively, for any measurable B subset M,
+
+\[
+ \fint_B|F_A^-|^2\le
+ C\left(\frac{\operatorname{Vol}(B)}V+\beta^{-1}
+                                      +\sqrt\eta\right),        \tag{6.4}
+\]
+
+where fint\_B in (6.4) means V\^{}\{-1\}int\_B, not normalization by
+Vol(B). Thus determinant ASD energy cannot concentrate at the normalized
+volume scale in the hypothetical endpoint sequence.
+
+\textbf{Proof.} Pair the actual curvature equation
+
+\[
+ \rho^3F_A^-+2q_-(t)=2\rho^2(d\zeta)^-+\mathcal R
+\]
+
+with q\_-(t)/S. The derivative test rho\^{}2 q\_-(t)/S has bounded
+normalized L2 derivative by (8.10) of the preceding proof. Integration
+by parts against zeta therefore costs O(sqrt eta), and the remainder
+costs the same. Hence
+
+\[
+ \fint\langle F_A^-,Q\rangle
+     =-\fint\frac{m^2}{4S}+O(\sqrt\eta)
+     =-m_\beta/8+O(\sqrt\eta).                         \tag{6.5}
+\]
+
+The reciprocal scalar test also implies
+
+\[
+ \fint |Q|^2=\rho_\beta^6/32+O(\sqrt\eta).             \tag{6.6}
+\]
+
+For the error rate, write S=m\_beta+m+d, avg d=O(eta). The Jensen defect
+avg{[}(S-2m\_beta)\^{}2/S{]}=O(sqrt eta), together with
+S\textgreater=m\_beta, controls avg(1/S-1/(2m\_beta))\^{}2 by O(sqrt
+eta). It follows that avg(m/S)\^{}2=1/4+O(sqrt eta): here one also uses
+the independently proved mean identity avg(1/S)=1/(2m\_beta)+O(sqrt
+eta), and avg(d/S)=O(eta). The squared fluctuation alone would not give
+this error rate. Replacing rho\^{}6 by rho\_beta\^{}6 is legitimate
+because m/S\textless=1 and rho is bounded with small L2 amplitude error.
+This proves (6.6), not merely convergence without a rate.
+
+The actual positive-curvature fit and Chern--Weil give
+
+\[
+ \fint|F_A^+|^2=\frac89(1+1/\beta)^2+O(\sqrt\eta),
+\] \[
+ \frac{4\pi^2T_+}V=\frac23+\frac{16}{3\beta^2}
+                                         +O(\sqrt\eta).
+\]
+
+Using
+int(\textbar F\_A\^{}+\textbar\^{}2-\textbar F\_A\^{}-\textbar\^{}2)=4pi\^{}2a\^{}2
+yields the exact upper-budget expansion
+
+\[
+ \fint|F_A^-|^2+\frac{4\pi^2(a^2-T_+)}V
+ =\frac{2+16/\beta-40/\beta^2}{9}+O(\sqrt\eta).          \tag{6.7}
+\]
+
+Completing the square with (6.5)--(6.6) subtracts
+m\_beta\^{}2/(2rho\_beta\^{}6)=2(1-2/beta)\^{}2/9. The difference is
+exactly 8(1-2/beta)/(3beta), proving (6.2). The square term and the
+class-square term are both nonnegative. Since A\_beta is uniformly
+bounded, (6.4) follows by the elementary squared triangle inequality.
+Its total norm and (6.2) give (6.3). QED.
+
+For a sequence with bounded total volume, the nonnegative integer
+(a\^{}2-T\_+)/4=c\_2(S\^{}+){[}M{]} must eventually be zero. This does
+not make the particular spinor section zero-free. With unbounded volume,
+(6.2) gives a density conclusion only; individual bubbles can still
+carry finite energy.
+
+\hypertarget{opposite-weyl-bulk-cancels-leaving-compulsory-signed-transition-flux}{%
+\subsubsection{7. Opposite-Weyl bulk cancels, leaving compulsory signed
+transition
+flux}\label{opposite-weyl-bulk-cancels-leaving-compulsory-signed-transition-flux}}
+
+Let E\_-=S\^{}- tensor L, whose determinant connection is 3A. Its signed
+density is
+
+\[
+ 16\pi^2c_2(E_-)=\bigl(2|W^-|^2+k\bigr)d\mu,
+\quad k=9(|F_A^+|^2-|F_A^-|^2)+s^2/24
+                                      -|\operatorname{Ric}^{\circ}|^2/2.
+                                                               \tag{7.1}
+\]
+
+Choose a smooth theta(m) equal to zero for m\textless=m\_beta/16 and one
+for m\textgreater=m\_beta/8, with uniformly bounded derivative, and put
+chi=1-theta\^{}2. Let
+T\_beta=\{m\_beta/16\textless m\textless m\_beta/8\}. The actual
+torsion-length theorem gives Vol\{chi!=0\}/V\textless=C sqrt eta. By
+Theorem 4 and the other bounded-model fits,
+
+\[
+ \fint k=20/3+O(\beta^{-1}+\sqrt\eta),\qquad
+ V^{-1}\int\chi|k|\le C(\beta^{-1}+\sqrt\eta).          \tag{7.2}
+\]
+
+On \{t!=0\}, let T\_t be the rank-two Chern transgression for
+t/\textbar t\textbar, using the same normalization as Section 1 of the
+preceding proof. Since chi=1 near every zero, its localization is
+globally legitimate:
+
+\[
+ \boxed{2\int\theta^2|W^-|^2+\int\theta^2 k
+                  =16\pi^2\int d\chi\wedge T_t.}       \tag{7.3}
+\]
+
+In particular, even an arbitrarily large positive W\^{}- bulk charge in
+the small-torsion region is not an independent payment of the
+obstruction: the identical term occurs in the global characteristic
+number and cancels from (7.3). The right side must supply a positive
+signed flux of order V.
+
+\textbf{Theorem 5.} With xi=\textless t,nabla t\textgreater, the actual
+endpoint fields satisfy
+
+\[
+ \boxed{C V^{-1}\int_{T_\beta}|\xi|^2|\nabla t|^2
+    \ge\frac{20}{3}-C(\beta^{-1}+\sqrt\eta)
+                          +V^{-1}\int\theta^2|W^-|^2.}          \tag{7.4}
+\]
+
+Thus a hypothetical zero-end sequence necessarily has
+V\^{}\{-1\}int\_\{T\_beta\}\textbar\textless t,nabla
+t\textgreater\textbar\^{}2\textbar nabla
+t\textbar\^{}2\textgreater=c\textgreater0 on regions of vanishing
+relative volume. No upper bound for W\^{}- is required for this
+statement.
+
+\textbf{Proof.} In the unit t-frame write the connection as
+{[}{[}alpha,-bar b{]},{[}b,d{]}{]}. On T\_beta its amplitude is bounded
+above and away from zero, so
+\textbar alpha\textbar\textless=C\textbar xi\textbar,
+\textbar b\textbar\textless=C\textbar nabla t\textbar, and
+\textbar dm\textbar\textless=2\textbar xi\textbar. The transgression is
+
+\[
+ 4\pi^2T_t=-\alpha\wedge F_{22}
+   +\tfrac12(b\wedge F_{12}-\bar b\wedge F_{21})
+   +\alpha\wedge\bar b\wedge b.
+\]
+
+Moreover \textbar chi'\textbar\textless=C theta. The curvature of E\_-
+is bounded algebraically by
+C(\textbar W\^{}-\textbar+\textbar s\textbar+\textbar Ric\^{}circ\textbar+\textbar F\_A\textbar).
+Young's inequality therefore gives, for any fixed
+epsilon\_1\textgreater0,
+
+\[
+\begin{aligned}
+16\pi^2\left|\int d\chi\wedge T_t\right|
+ \le{}&\epsilon_1\int\theta^2|W^-|^2
+       +C_{\epsilon_1}\int_{T_\beta}|\xi|^2|\nabla t|^2\\
+      &+C_{\epsilon_1}\int_{T_\beta}
+              (s^2+|\operatorname{Ric}^{\circ}|^2+|F_A|^2).
+\end{aligned}                                                     \tag{7.5}
+\]
+
+For example the W\^{}- term is bounded by C theta
+\textbar W\^{}-\textbar\textbar xi\textbar\textbar nabla t\textbar; the
+cubic connection term by C theta \textbar xi\textbar\^{}2\textbar nabla
+t\textbar\^{}2. All other curvature terms use the same Young inequality
+without needing an absorption sign. The last line is
+O((beta\^{}\{-1\}+sqrt eta)V), by (6.4), the positive-curvature and
+scalar fits, and the small volume of T\_beta. Take epsilon\_1=1 in
+(7.5), use (7.2)--(7.3), and rearrange. QED.
+
+This also forces int\_\{T\_beta\}\textbar nabla
+t\textbar\^{}4\textgreater=cV and sup\_\{T\_beta\}\textbar nabla
+t\textbar\textgreater=c eta\^{}\{-1/8\} along a zero-end sequence. It
+does not prove the needed mixed energy is uniformly integrable. Uniform
+integrability of this particular transition density would suffice to
+exclude the endpoint; it is not an added premise in any earlier theorem.
+
+\hypertarget{a-local-compatibility-gap-and-collapse-in-measure}{%
+\subsubsection{8. A local compatibility gap and collapse in
+measure}\label{a-local-compatibility-gap-and-collapse-in-measure}}
+
+This section gives an independent geometric consequence with a
+bounded-Ricci hypothesis. It does not replace the no-compactness,
+integral-Ricci endpoint question. The two classical inputs are the local
+harmonic-radius estimate of
+\href{https://arxiv.org/pdf/1406.6534}{Cheeger--Naber, Theorem 1.13 and
+Definition 2.9}, and the local nonexistence of negative Einstein ASD
+almost-Kaehler metrics in
+\href{https://johnarmstrongmaths.com/publications/resources/thesis.pdf}{Armstrong,
+Theorem 3.3.5}. The proof below connects them to the actual
+approximate-form supply.
+
+Fix K,L,v\textgreater0. Let g be a complete oriented four-metric with
+\textbar Ric\textbar\textless=K, let omega be a smooth self-dual
+two-form with \textbar omega\textbar\textless=L, and let the constant
+parameter t belong to {[}0,1/4{]}. Define
+
+\[
+ Z_t=|\operatorname{Ric}+g|^2+
+ |W^+-t(|\omega|^2I/3-\omega\otimes\omega)|^2
+                  +( |\omega|^2-2)^2+|d\omega|^2.       \tag{8.1}
+\]
+
+\textbf{Theorem 6 (local coercivity).} There is
+epsilon(K,L,v)\textgreater0 such that
+
+\[
+       \operatorname{Vol}B_1(x)\ge v
+            \quad\Longrightarrow\quad
+       \int_{B_2(x)}Z_t\ge\epsilon(K,L,v).             \tag{8.2}
+\]
+
+\textbf{Proof.} Otherwise take a sequence whose local integral tends to
+zero. Volume comparison gives a fixed lower volume for B\_\{1/2\}(x).
+The local harmonic-radius estimate supplies a point in B\_\{1/2\}(x)
+with harmonic radius at least r\_0(K,v)\textgreater0. In a fixed-size
+chart compactly contained in B\_1(x), the metrics have uniform
+C\^{}\{1,alpha\} and W\^{}\{2,p\} bounds for each finite p. Pass on
+smaller charts to C\^{}\{1,alpha'\} and weak W\^{}\{2,p\} convergence.
+
+The local L2 Ricci residual tends to zero. Its pointwise norm is bounded
+by K+2, so interpolation gives convergence to zero in every finite Lp.
+The harmonic-coordinate metric equation shows the limit is a weak
+Einstein metric with Ric=-g, hence smooth. Subtracting that equation
+from the sequence and using interior elliptic estimates improves the
+metric convergence to strong W\^{}\{2,p\} on smaller charts. In
+particular the Weyl operators converge strongly in L2. No Ricci
+derivative bound is assumed.
+
+Self-duality gives \textbar delta\_g omega\textbar=\textbar d
+omega\textbar. Interior estimates for d+delta in the uniformly
+C1-controlled charts give a uniform H1 bound for omega; Rellich
+compactness gives strong L2 convergence on a smaller ball. The limit is
+weakly closed and coclosed, hence smooth, self-dual, and of squared
+length two. Bounded amplitude also makes its polynomial model converge
+strongly in L2. Passing to a subsequence t-\textgreater t\_infinity
+yields
+
+\[
+ \operatorname{Ric}=-g,\quad d\omega=0,\quad |\omega|^2=2,
+ \quad W^+=t_\infty(2I/3-\omega\otimes\omega).          \tag{8.3}
+\]
+
+If t\_infinity=0 this is the locally forbidden ASD Einstein
+almost-Kaehler system. If t\_infinity\textgreater0, the Einstein Bianchi
+identity gives div W\^{}+=0. Differentiating (8.3), using constant
+length and delta omega=0, gives omega\_\{ij\}nabla\^{}i omega\_\{kl\}=0.
+The two-form is nondegenerate, so nabla omega=0. The two-form
+Weitzenboeck equation now implies W\^{}+omega=(s/6)omega=-(2/3)omega.
+But (8.3) gives W\^{}+omega=-(4t\_infinity/3)omega, forcing
+t\_infinity=1/2, outside {[}0,1/4{]}. Both cases contradict existence of
+the limit. QED.
+
+\textbf{Corollary 7 (collapse in measure).} On a closed manifold put
+S\_v=\{x:Vol B\_1(x)\textgreater=v\}. Then
+
+\[
+ \boxed{\frac{\operatorname{Vol}(S_v)}V
+       \le C(K,L,v)\fint Z_t.}                        \tag{8.4}
+\]
+
+Indeed integrate (8.2) over S\_v. Fubini and the Bishop upper bound
+b\_K(2) for a radius-two ball give
+
+\[
+ \epsilon\operatorname{Vol}(S_v)
+ \le\int_M Z_t(y)\operatorname{Vol}(S_v\cap B_2(y))d\mu(y)
+ \le b_K(2)\int_M Z_t.
+\]
+
+There is no packing multiplicity, total-volume upper bound or diameter
+assumption. In particular, for the actual supplier, beta\textgreater=4,
+p\textgreater0, and \textbar Ric\textbar\textless=K, its SAME bounded
+near-closed form has L=3sqrt2, t=1/beta and avg
+Z\_t\textless=C(r+D\_beta/V)+o(1). Sending the selectable allowance to
+zero yields
+
+\[
+ \boxed{\frac{\operatorname{Vol}\{x:\operatorname{Vol}B_1(x)\ge v\}}V
+       \le C(K,v)(r+D_\beta/V).}                      \tag{8.5}
+\]
+
+No class-square or Hessian budget is needed for (8.5). Hence any
+bounded-Ricci sequence with actual compactified-pencil defect tending to
+zero must collapse in measure at unit scale, for every fixed
+v\textgreater0. A single noncollapsed point is not excluded when total
+volume tends to infinity; the assertion concerns its volume fraction.
+Uniform unit-ball noncollapse, or a fixed positive fraction of
+noncollapsed points, gives a uniform defect gap.
+
+\hypertarget{a-diameter-consequence-for-the-original-pointwise-ricci-input}{%
+\subsubsection{9. A diameter consequence for the original pointwise
+Ricci
+input}\label{a-diameter-consequence-for-the-original-pointwise-ricci-input}}
+
+Let
+delta=\textbar\textbar Ric\^{}sharp+I\textbar\textbar{}\emph{\{infinity,op\},
+diam(g)\textless=D, and suppose the actual class has p\textgreater0 and
+a\^{}2\textgreater=T}+. There is epsilon(D)\textgreater0 such that
+
+\[
+                  \boxed{\delta^2+D_\beta/V\ge\epsilon(D),
+                              \qquad\beta\ge4.}       \tag{9.1}
+\]
+
+To prove this it suffices to consider delta\textless=1/4. Then
+\textbar Ric\textbar\textless=5/2, r\textless=4delta\^{}2, and
+Chern--Weil gives
+
+\[
+ T_+\ge\frac{V}{4\pi^2}
+       \left[\frac23(1-\delta)^2-2\delta^2\right]
+       \ge V/(16\pi^2)>0.
+\]
+
+Integrality gives T\_+\textgreater=1, hence a\^{}2\textgreater=1 and
+p\textgreater=1. The actual scalar bound and
+\textbar s\textbar\textless=4(1+delta) give
+V\textgreater=2pi\^{}2/(1+delta)\^{}2. Ricci lower bound and bounded
+diameter then imply Vol B\_1(x)\textgreater=v(D)\textgreater0 at every
+x. Apply (8.5), and absorb the remaining delta\textgreater=1/4 case by
+decreasing epsilon(D) below 1/16.
+
+Alternatively, replace the square condition by an explicit
+p\textgreater=A\_0\textgreater0; the same proof gives epsilon(D,A\_0).
+It is the noncollapse produced by these inputs that matters. The result
+excludes actual near-saturation in this range; it neither constructs
+Einstein metrics nor proves the unrestricted integral endpoint gap. It
+does not assume asphericity, vanishing pi\_2, bilateral saturation, or
+an opposite-Weyl energy bound.
+
+\hypertarget{a-nonvanishing-upper-energy-margin-at-the-zero-weyl-corner}{%
+\subsubsection{10. A nonvanishing upper-energy margin at the zero-Weyl
+corner}\label{a-nonvanishing-upper-energy-margin-at-the-zero-weyl-corner}}
+
+Consider an exact metric Ric=-g satisfying the actual hypotheses of
+Section 9, with diam(g)\textless=D. Put T\_+=A(1-h),
+p\textgreater=A\textgreater0 and e=R/(8pi\^{}2 A). Then V=2pi\^{}2 A e.
+Write z=p/A\textgreater=1 and d=3(1-h)-e\textgreater=0; the last
+inequality is the positive-chirality Chern--Weil identity. Direct
+substitution gives
+
+\[
+ \frac{D_\beta}{V}=16+\frac{16}{\beta}-\frac{36z}{e}
+                         +\frac{2(\beta+1)d}{e}.       \tag{10.1}
+\]
+
+Let epsilon=epsilon(D) in (9.1), decreased to at most one. Set
+
+\[
+ \beta_0=32/\epsilon,\quad a_0=\epsilon-16/\beta_0=\epsilon/2,
+ \quad H=2(\beta_0-7)+a_0,\quad
+ \gamma=\frac{9a_0}{4H}>0.
+\]
+
+\textbf{Corollary 8.} All these exact candidates obey
+
+\[
+ \boxed{e\le U_D(h):=
+       \frac{6(\beta_0+1)(1-h)-36}{H}
+       =\frac94-\gamma-
+          \frac{6(\beta_0+1)}H(h-\tfrac14).}           \tag{10.2}
+\]
+
+Indeed D\_beta0/V\textgreater=epsilon by (9.1); use z\textgreater=1 in
+(10.1), multiply by e, substitute d, and rearrange. H is positive. In
+particular h\textgreater=1/4 forces e\textless=9/4-gamma. Let
+
+\[
+ G(h)=\frac{(4+\sqrt{1-3h})^2}{9},\qquad
+ \eta_D=\min\{1/24,\gamma/10\}.
+\]
+
+Since G(1/4)=9/4 and \textbar G'\textbar\textless=5 on {[}1/4,7/24{]},
+(10.2) gives
+
+\[
+ \boxed{e\le G(h)-\gamma/2,
+              \qquad 1/4\le h\le1/4+\eta_D.}          \tag{10.3}
+\]
+
+The positive margin does not vanish as h approaches 1/4. It depends on
+D; it is not an all-diameter improvement of the earlier upper envelope.
+The alternative p\textgreater=A\_0 hypothesis gives the corresponding
+D,A\_0 dependence.
+
+There is also a diameter-free conclusion about any hypothetical sequence
+at this corner. Suppose exact negative Einstein metrics with actual
+p\_j\textgreater=A\_j satisfy h\_j-\textgreater1/4 and
+e\_j-\textgreater9/4. Then d\_j-\textgreater0. Choose
+beta\_j-\textgreater infinity so slowly that beta\_j d\_j-\textgreater0.
+Equation (10.1), z\_j\textgreater=1, and D\_beta\textgreater=0 imply
+\nolinkurl{D_beta_j}/V\_j-\textgreater0. Applying (8.5) proves, for every fixed
+v\textgreater0,
+
+\[
+ \frac{\operatorname{Vol}\{x:\operatorname{Vol}B_1(x)\ge v\}}{V_j}
+                        \longrightarrow0.            \tag{10.4}
+\]
+
+Thus approaching this energy corner would force collapse in measure, not
+merely unbounded diameter. This is a necessary degeneration statement,
+not the construction of a sequence realizing the corner.
+
+\hypertarget{local-exponential-averaging-excluding-bounded-curvature-collapse}{%
+\subsubsection{11. Local exponential averaging: excluding
+bounded-curvature
+collapse}\label{local-exponential-averaging-excluding-bounded-curvature-collapse}}
+
+The collapse conclusion in Section 8 need not be the endpoint. A second
+averaging argument removes the noncollapse condition when sectional
+curvature is bounded. Crucially, it does not assume that an exponential
+chart is a regular covering or has uniformly bounded multiplicity.
+
+Fix K,L\textgreater0 and a radius r\_0\textgreater0 with
+4r\_0\textless pi/(2sqrt(max(K,1))). On a closed oriented four-manifold
+let omega and t satisfy the field conditions of (8.1). Define the
+curvature-regular set
+
+\[
+ G_{K,r_0}=\{x: |\sec_g|\le K\text{ on }B_{4r_0}(x)\}.
+\]
+
+\textbf{Theorem 9.} Without any curvature assumption outside these
+balls,
+
+\[
+ \boxed{\frac{\operatorname{Vol}(G_{K,r_0})}{V}
+                   \le C(K,L,r_0)\fint Z_t.}           \tag{11.1}
+\]
+
+In particular, if \textbar sec\textbar\textless=K globally then avg
+Z\_t\textgreater=c(K,L)\textgreater0. For the actual conformal monopole
+supplier with p\textgreater0, this yields
+
+\[
+ \boxed{r_{\rm Ric}+D_\beta/V\ge c(K)>0,
+                 \qquad |\sec|\le K,\quad\beta\ge4.}  \tag{11.2}
+\]
+
+There is no diameter, injectivity-radius, volume or class-square
+condition in (11.2). The extra curvature hypothesis is explicit; (11.2)
+does not replace the unrestricted integral-Ricci problem.
+
+\textbf{Proof.} For x in G, pull back the metric and form by exp\_x to
+the tangent ball of radius 4r\_0. The map is nonsingular by the
+conjugate-radius estimate. The pullback metric has controlled sectional
+curvature and interior injectivity, hence a fixed-size harmonic chart on
+a smaller ball. These normal-cover facts require no curvature
+derivatives or injectivity on M; one precise formulation is
+\href{https://arxiv.org/html/2601.16176v1\#S2.SS3}{Deleporte--Lagace--Rouveyrol,
+Proposition 2.6}. Its proof is local, so bounds on B\_\{4r\_0\}(x)
+suffice.
+
+The contradiction proof of Theorem 6 on such a chart, with fixed r\_0,
+gives epsilon\_loc(K,L,r\_0)\textgreater0 such that
+
+\[
+ E_{r_0}(x):=\int_{|v|<r_0\subset T_xM}
+                Z_t(\exp_xv)\,d\mu_{\exp_x^*g}(v)
+                              \ge\epsilon_{\rm loc}. \tag{11.3}
+\]
+
+This uses the exact same lifted self-dual form. If (11.3) failed, the
+interior harmonic chart would give the forbidden smooth system (8.3).
+The local cover is used only for that compactness argument, not to
+impose any new gauge solvability assumption.
+
+Let J\_x(s,theta) be its polar volume density. Rauch comparison gives
+J\_x(s,theta)\textless=C(K,r\_0)s\^{}3 for 0\textless s\textless r\_0.
+Therefore
+
+\[
+\begin{aligned}
+ \epsilon_{\rm loc}\operatorname{Vol}(G)
+ &\le C(K,r_0)\int_0^{r_0}s^3
+          \int_G\int_{S_xM}Z_t(\exp_x(s\theta))d\theta d\mu(x)ds\\
+ &\le C(K,r_0)|S^3|\frac{r_0^4}{4}\int_M Z_t.
+\end{aligned}                                                     \tag{11.4}
+\]
+
+For the second line first drop the nonnegative center restriction G. The
+geodesic flow preserves Liouville measure on the unit tangent bundle, so
+for each s the integral over all (x,theta) is
+\textbar S\^{}3\textbar int\_M Z\_t. This identity is valid even when
+geodesics close or exp\_x has many sheets. It avoids both a false
+uniform multiplicity bound and any deck-normality requirement. Equations
+(11.1)--(11.2) follow, sending the actual supplier's selectable
+allowance to zero. QED.
+
+Define the sectional-curvature radius
+
+\[
+ r_{\sec}(x)=\sup\{0<r\le1:\sup_{B_r(x)}|\sec|\le r^{-2}\}.
+\]
+
+For any fixed a\textgreater0 the set \{r\_sec\textgreater=a\} is
+contained in one G\_\{K,r\_0\}, with K,r\_0 depending only on a; choose
+a smaller radius if the supremum is not attained. Consequently an actual
+sequence with r\_Ric+D\_beta/V-\textgreater0 and beta\textgreater=4
+satisfies
+
+\[
+       \frac{\operatorname{Vol}\{r_{\sec}\ge a\}}V\to0
+                                  \quad\text{for every }a>0.    \tag{11.5}
+\]
+
+This forces curvature scale to vanish in measure, not merely injectivity
+scale. It does not say pointwise curvature tends to infinity everywhere:
+a high-curvature set can have large metric neighborhoods. In particular,
+the exact energy-corner sequence in (10.4), if it existed, would also
+obey (11.5). Section 10's nonvanishing energy-wall margin holds with a
+K-dependent constant under \textbar sec\textbar\textless=K, without its
+diameter or square hypothesis, by substituting (11.2) for (9.1).
+
+\hypertarget{exact-einstein-metrics-replacing-curvature-bounds-by-euler-density}{%
+\subsubsection{12. Exact Einstein metrics: replacing curvature bounds by
+Euler
+density}\label{exact-einstein-metrics-replacing-curvature-bounds-by-euler-density}}
+
+The preceding argument can be continued once more. For exact Einstein
+metrics, the curvature-regular fraction follows from an integral
+curvature budget, even when balls collapse. This uses the unnormalized
+small-energy theorem of Cheeger--Tian, not a regularity assertion for
+arbitrary small Ricci residuals. The theorem is stated explicitly in
+\href{https://sites.duke.edu/scshgap/files/2016/08/dim4dukebeamer.pdf}{Cheeger's
+author presentation, pages 2--3} of the
+\href{https://doi.org/10.1090/S0894-0347-05-00511-4}{2006 paper}.
+
+Use the Hilbert--Schmidt norm of the full curvature operator R\_op on
+Lambda\^{}2; fixed norm factors can be absorbed into the classical
+constants. For Ric=-g, Chern--Gauss--Bonnet gives
+
+\[
+          \int|R_{\rm op}|^2=8\pi^2\chi(M),\qquad
+          \Lambda=8\pi^2\chi(M)/V.                    \tag{12.1}
+\]
+
+\textbf{Theorem 10.} Given Lambda\_0,L\textgreater0, every closed Ric=-g
+four-manifold with Lambda\textless=Lambda\_0, and every bounded
+self-dual form and t in {[}0,1/4{]} as in (8.1), satisfies
+
+\[
+                         \fint Z_t\ge c(\Lambda_0,L)>0.
+                                                               \tag{12.2}
+\]
+
+For actual conformal monopole input with p\textgreater0 this gives
+
+\[
+       \boxed{D_\beta/V\ge c(\Lambda_0)>0,
+                       \qquad \beta\ge4.}            \tag{12.3}
+\]
+
+No diameter, total-volume, noncollapse, derivative, or class-square
+bound is imposed. Here the Einstein equation is exact.
+
+\textbf{Proof.} Cheeger--Tian supply constants epsilon\_CT,C\_CT such
+that for 0\textless R\textless=1,
+
+\[
+ \int_{B_R(x)}|R_{\rm op}|^2\le\epsilon_{\rm CT}
+        \quad\Longrightarrow\quad
+ \sup_{B_{R/2}(x)}|R_{\rm op}|\le C_{\rm CT}R^{-2}.    \tag{12.4}
+\]
+
+This implication has no lower ball-volume premise. Put
+F\_R(x)=int\_\{B\_R(x)\}\textbar R\_op\textbar\^{}2. Bishop comparison
+for Ric=-g and Fubini give, with a dimensional B and R\textless=1,
+
+\[
+ \int_M F_R(x)d\mu(x)
+ =\int_M|R_{\rm op}(y)|^2\operatorname{Vol}B_R(y)d\mu(y)
+                         \le B R^4\Lambda V.          \tag{12.5}
+\]
+
+Choose R=min\{1,{[}epsilon\_CT/(2B Lambda\_0){]}\^{}\{1/4\}\}. At least
+half the volume then consists of centers with F\_R\textless=epsilon\_CT.
+On each corresponding B\_\{R/2\} the sectional curvature is bounded by
+C\_CT R\^{}\{-2\}. Choose a fixed small theta\_0\textgreater0, depending
+only on C\_CT, and put r\_0=theta\_0 R, K=max(C\_CT,1)R\^{}\{-2\}.
+Choose theta\_0 so that 4r\_0\textless R/2 and
+4r\_0\textless pi/(2sqrt(K)). All these centers belong to G\_\{K,r\_0\}.
+Theorem 9 therefore yields 1/2\textless=C(K,L,r\_0)avg Z\_t, proving
+(12.2). Apply the same actual form and send its selectable allowance to
+zero to obtain (12.3). QED.
+
+The proof also gives, for each fixed 0\textless R\textless=1, a useful
+tradeoff
+
+\[
+           1\le C_0\Lambda R^4+C_1(R,L)\fint Z_t.      \tag{12.6}
+\]
+
+Indeed the high-energy centers have fraction at most C\_0 Lambda R\^{}4,
+and all remaining centers are in the curvature-regular set controlled by
+Theorem 9. Thus any exact Einstein actual zero-end sequence must have
+chi(M\_j)/V\_j-\textgreater infinity. Curvature scale tending to zero is
+not a free escape at bounded Euler density.
+
+For the topological energy variables, e=V/(2pi\^{}2
+A)\textgreater=p/A\textgreater=1 by the scalar monopole inequality.
+Therefore
+
+\[
+                   \Lambda=4\frac{\chi/A}{e}.
+\]
+
+An independently checkable budget chi/A\textless=B\_0 supplies
+Lambda\textless=4B\_0. The energy-wall proof of Section 10 consequently
+holds with an epsilon depending only on B\_0, and with no diameter
+assumption. In particular the corner h-\textgreater1/4,
+e-\textgreater9/4 cannot be approached by these exact candidates.
+
+This budget is automatic in the complex-hyperbolic surgery family: if X
+is a closed complex-hyperbolic surface, A=c\_1\^{}2(X)=3chi(X), and
+M=X\#k CPbar\^{}2\#ell(S\^{}1 x S\^{}3), then
+
+\[
+ \chi(M)/A=1/3+k/A-2\ell/A\le1/3+h,
+                    \qquad h=(k+4\ell)/A.             \tag{12.7}
+\]
+
+Thus for 1/4\textless=h\textless=1/3 the density threshold is uniform
+over all such actual inputs, their covers and all normalized exact
+Einstein candidates. This excludes an energy region for arbitrary exact
+outputs on the smooth types, not just for a chosen gluing family. It
+does not claim that the entire remaining energy interval is realizable
+or that these topologies are all non-Einstein solely from the upper
+wall.
+
+\hypertarget{a-uniform-forbidden-band-for-approximate-pointwise-inputs}{%
+\subsubsection{13. A uniform forbidden band for approximate pointwise
+inputs}\label{a-uniform-forbidden-band-for-approximate-pointwise-inputs}}
+
+The energy-wall conclusion can be made robust without discarding scalar
+variance. In this section retain the bounded-diameter hypotheses of
+Section 9, with p\textgreater=A\textgreater0, T\_+=A(1-h), and
+1/4\textless=h\textless=1/3. Either a\^{}2\textgreater=T\_+ or the
+alternative p\textgreater=A\_0 is required. Let epsilon\_* denote the
+resulting constant in (9.1), decreased to at most 1/16.
+
+\textbf{Theorem 11.} There is c(D)\textgreater0 (or
+c(D,A\_0)\textgreater0 for the alternative input) such that
+
+\[
+ \boxed{\delta_-^2+(G(h)-e)_+\ge c(D),
+                       \qquad 1/4\le h\le1/3.}        \tag{13.1}
+\]
+
+One may take c=min\{1/64,epsilon\_*\^{}2/80000\}. In particular this is
+a uniform forbidden neighborhood of the zero-Weyl upper-energy corner
+for approximately Einstein input metrics, not just for exact outputs.
+
+\textbf{Proof.} Put J=4P/R, ell=R/(4V), z=p/A-1\textgreater=0, B=3(1-h),
+and b=B/e-1+J=12 int\textbar W\^{}+\textbar\^{}2/R\textgreater=0. Exact
+Chern--Weil gives
+
+\[
+ \frac{D_\beta}{V}
+  =\ell\left[16-4J-\frac{36(1+z)}e+2b+2\beta b
+                                      +\frac{16-4J}{\beta}\right].
+                                                               \tag{13.2}
+\]
+
+The scalar mean and variance are retained through
+
+\[
+ \ell=\frac{\bar s^2+L_s/V}{16(1-J/4)}
+      =1-\tfrac12\fint(s+4)+\tfrac14r_{\rm Ric}.
+\]
+
+Let s\_0=(G(h)-e)\emph{+. If delta}-\textgreater1/8 or
+s\_0\textgreater1/16, (13.1) follows immediately with the stated smaller
+c.~Otherwise
+
+\[
+ J\le4\delta_-^2/(1-\delta_-)^2\le4/49,\quad
+ 247/144\le e\le49/20,\quad
+ 3/2\le e_0:=e(1-J)\le9/4.
+\]
+
+Here the upper bound on e follows from positive-chirality Chern--Weil,
+e(1-J)\textless=B, and G\textgreater=16/9 gives its lower bound. Set
+b\_0=B/e\_0-1. Then 0\textless=b\_0\textless=1/2 and
+b=(1-J)b\_0\textless=(4-J)/8. Minimizing (13.2) over beta\textgreater=4
+is therefore permitted at beta=sqrt(2(4-J)/b); for b=0 take the limit
+beta-\textgreater infinity. The result is ell F\_\{J,z\}, where
+
+\[
+ F_{J,z}=16-4J-36(1+z)/e+2b+4\sqrt{2(4-J)b}.
+\]
+
+Define, for 3/2\textless=v\textless=B,
+
+\[
+ F_0(h,v)=16-36/v+2(B/v-1)+8\sqrt{2(B/v-1)}.
+\]
+
+Direct expansion yields
+
+\[
+ F_{J,0}-F_0(h,e_0)
+ =J(-4+36/e_0-2b_0)
+       +4\sqrt{2b_0}\,[\sqrt{(4-J)(1-J)}-2]\le20J.    \tag{13.3}
+\]
+
+Also vF\_0={[}4sqrt(v)+sqrt(2(B-v)){]}\^{}2-36. Its upper zero is G(h),
+F\_0\textless=0 for v\textgreater=G(h), and elementary square-root
+comparison gives F\_0(h,v)\textless=30sqrt((G(h)-v)\emph{+) on the
+displayed compact v-range. Since (G-e\_0)}+\textless=s\_0+(49/20)J,
+ell\textless=81/64, ell/e\textgreater=5/16, and
+J\textless=256delta\_-\^{}2/49, (13.3) gives the convenient uniform
+bound
+
+\[
+ \delta_-^2+\inf_{\beta\ge4}D_\beta/V
+        \le200(\delta_-+\sqrt{s_0})-45z/4.
+\]
+
+The lower bound (9.1) holds for every beta, so
+epsilon\_*+45z/4\textless=200(delta\_-+sqrt(s\_0)). Squaring and using
+(delta\_-+sqrt(s\_0))\^{}2\textless=2(delta\_-\^{}2+s\_0) proves the
+claim. QED.
+
+For exact Einstein metrics this proof also applies with epsilon\_* from
+Theorem 10 instead of (9.1). Thus chi/A\textless=B\_0, actual
+p\textgreater=A, and 1/4\textless=h\textless=1/3 imply
+
+\[
+                      e\le G(h)-c(B_0),                \tag{13.4}
+\]
+
+without a diameter or class-square bound. In the complex-hyperbolic
+surgery family (12.7), B\_0=2/3 suffices. The approximate-input version
+of (13.4) does not follow from Cheeger--Tian: exact Einstein regularity
+was essential in Theorem 10. These are distinct quantified extensions,
+not a single unconditional estimate.
+
+For exact metrics a shorter optimization gives the better explicit
+margin c(B\_0)=epsilon\^{}2/288, where epsilon=min\{1,c(4B\_0)\} from
+(12.3). Put a=3(1-h), d=a-e, and Delta=G(h)-e. If
+beta\_*=sqrt(8e/d)\textgreater=4, minimizing (10.1), using
+p/A\textgreater=1, gives
+
+\[
+ \epsilon e\le 14e+2a-36+8\sqrt{2e(a-e)}=:P_a(e).
+\]
+
+The upper zero of P\_a is G. Thus e\textless=G, and
+e(a-e)\textless=G(a-G)+G Delta implies P\_a(e)\textless=8sqrt(2G Delta)
+\textless=12sqrt(2Delta). Since e\textgreater=1,
+Delta\textgreater=epsilon\^{}2/288. If beta\_*\textless4 then
+e\textless2a/3 and G-2a/3\textgreater=4/9, which is stronger. The d=0
+case follows by taking beta-\textgreater infinity. Therefore
+
+\[
+                 e\le G(h)-\epsilon^2/288.             \tag{13.5}
+\]
+
+The main improvement over the inherited upper wall is uniformity at
+h=1/4, not the first appearance of a strict upper wall for fixed
+h\textgreater1/4. As a secondary recovery of the previously studied
+near-1/3 obstruction, choose
+beta\_c=(14-epsilon+sqrt((14-epsilon)\^{}2+128))/4 in {[}7,8{]}. Its
+e-independent term in (10.1) equals epsilon, so the remaining numerator
+must be nonnegative. This gives
+h\textless=1-6/(beta\_c+1)\textless=1/3-8epsilon/243. It is not counted
+as a separate new obstruction mechanism.
+
+\hypertarget{what-the-upper-wall-does-and-does-not-decide-topologically}{%
+\paragraph{13.1 What the upper wall does and does not decide
+topologically}\label{what-the-upper-wall-does-and-does-not-decide-topologically}}
+
+The new fixed margin excludes candidate energy levels, not automatically
+new smooth topologies. The recorded Chern--Weil budgets give upper
+bounds e\textless=U, not a lower pinning of e near G. This matters for
+the realized families. For instance take complex-hyperbolic covers with
+A\_j-\textgreater infinity, let k\_j=ceil(A\_j/4), and make no S1xS3
+surgery. The actual exceptional-sign classes give p\textgreater=A\_j and
+a\^{}2=T\_+=A\_j-k\_j, while
+
+\[
+ h_j\ge1/4,\quad h_j\to1/4,\qquad
+ \chi(M_j)/A_j\to7/12,\qquad U_j=3(1-h_j)\to9/4.
+\]
+
+At the limiting topological data, the formal candidate e=7/4, p/A=1 has
+W\^{}+/(2pi\^{}2 A)=1/6 and W\^{}-/(2pi\^{}2 A)=1, where W\^{}pm here
+denote their integrated squared energies. The scalar budget and every
+classical pencil inequality are positive at this value; it stays
+distance 1/2 below G(1/4). Thus these known inequalities do not force
+candidates into the new forbidden upper strip. This is a witness about
+implication between inequalities, NOT an Einstein metric or a
+counterexample to a theorem.
+
+More generally the known lower roots and the I41 wall remain separated
+from G near h=1/4. After the harmless caps on the recorded constants, on
+{[}1/4,7/24{]} their maximum is at most 19/12, whereas
+G-1/288\textgreater7/4. Replacing the old upper root by (13.5) therefore
+need not make the numeric feasible interval empty. An additional genuine
+lower-volume/energy input would be needed for that use. In contrast, the
+BF family in Section 4 already has an actual all-metric exclusion from
+the LOWER linear wall; that application does not depend on such an
+unproved upper-corner pinning.
+
+\hypertarget{the-torsion-transition-cannot-be-closed-by-a-dirac-null-form-shortcut}{%
+\subsubsection{14. The torsion transition cannot be closed by a Dirac
+null-form
+shortcut}\label{the-torsion-transition-cannot-be-closed-by-a-dirac-null-form-shortcut}}
+
+This section records a targeted construction, not an actual gauge
+counterexample. It explains why the signed transition flux in Theorem 5
+still needs the full curvature equation or a global argument. The simple
+pointwise Dirac constraints do not force its positive quartic component
+to cancel.
+
+Use Clifford matrices mapping S\^{}+ to S\^{}-:
+
+\[
+ C_1=I,\quad C_2=\operatorname{diag}(i,-i),\quad
+ C_3=\begin{pmatrix}0&1\\-1&0\end{pmatrix},\quad
+ C_4=\begin{pmatrix}0&-i\\-i&0\end{pmatrix}.
+\]
+
+Reverse Clifford action is -C\_j\^{}*. At a point Phi=sqrt(rho)e\_1,
+write H\_\{ji\}=(h\_\{ji\},k\_\{ji\}) and K\_\{ij\}=k\_\{ij\}-k\_\{ji\}.
+Differentiated D Phi=0 has components
+
+\[
+ d_{1j}=h_{j1}+ih_{j2}+k_{j3}-ik_{j4}=0,\quad
+ d_{2j}=-h_{j3}-ih_{j4}+k_{j1}-ik_{j2}=0.              \tag{14.1}
+\]
+
+The linear Hessian contribution to nabla\_j t is
+rho(k\_\{j1\}+ik\_\{j2\},-k\_\{j3\}-ik\_\{j4\}). The projected
+derivative N\_\{bc\}=sum\_j(C\_j\^{}*)\_\{1b\}(nabla\_j t)\_c/sqrt(2)
+can be written as
+
+\[
+ N=\sqrt{\rho/2}\,\mathcal L(\nabla\zeta)+\mathcal R_N,
+ \quad |\mathcal R_N|\le C[\rho^{3/2}(|\operatorname{Ric}^{\circ}|
+                        +|W^+-W_0|)+|\zeta||P_{\rm spin}|],      \tag{14.2}
+\]
+
+where
+
+\[
+\mathcal L(Z)=\begin{pmatrix}
+ Z_{13}-Z_{24}+i(Z_{14}+Z_{23})&-Z_{33}+Z_{44}-i(Z_{34}+Z_{43})\\
+ Z_{11}-Z_{22}+i(Z_{12}+Z_{21})&-Z_{31}+Z_{42}-i(Z_{32}+Z_{41})
+\end{pmatrix}.
+\]
+
+For verification the Hessian expression is rho(L(h)+C(K))/sqrt(2),
+modulo (14.1), with
+
+\[
+\mathcal C(K)=\begin{pmatrix}
+2iK_{12}&-K_{13}-iK_{14}+iK_{23}-K_{24}\\
+K_{13}+iK_{23}-iK_{14}+K_{24}&2iK_{34}
+\end{pmatrix}.
+\]
+
+Central curvature, scalar curvature and the axial W\_0 model cancel in
+this projection. Substitute sqrt(rho)h\_ji=nabla\_j
+zeta\_i-\textless P\_j,P\_i\textgreater; the remaining quadratic
+expression vanishes for the pure kernel component (iz,z,iw,w), while the
+other terms are bounded by
+C\textbar zeta\textbar\textbar P\_spin\textbar. This proves (14.2)
+directly from the actual prolonged equations, not by discarding all
+components except the Dirac trace.
+
+In a compatible frame with t=sqrt(m)e\_1, writing x\_j=(nabla\_j t)\_1
+gives the first column of N as (x\_1-ix\_2,-x\_3+ix\_4)/sqrt(2), while
+dm=2sqrt(m) Re x. Hence
+
+\[
+                 |\langle t,\nabla t\rangle|^2
+                      \le\tfrac34|dm|^2+4m|N|^2.      \tag{14.3}
+\]
+
+Determinant-curvature saturation does not directly control N, since that
+curvature has canceled from (14.2). More decisively, even N=0 does not
+remove the radial derivative in (14.3). Take h=0 and the symmetric
+trace-free Hessian increment
+
+\[
+k=\frac12\begin{pmatrix}
+1&-i&0&0\\-i&-1&0&0\\0&0&-1&i\\0&0&i&1
+\end{pmatrix}.
+\]
+
+It satisfies (14.1), preserves curvature commutators and trace, and
+gives nabla t/rho={[}(1,0),(-i,0),(0,1),(0,-i){]}. Its real Jacobian
+determinant is positive one while N=0. These are exact Clifford-algebra
+checks.
+
+There is an actual local Dirac field realizing this increment. On flat
+C\^{}2 with A=0, put z\_1=x\_1+ix\_2, z\_2=x\_3+ix\_4, g\_0=(bar
+z\_1\^{}2-bar z\_2\^{}2)/4, and
+
+\[
+ \Phi_\epsilon(x)=(1,\epsilon g_0(x/\epsilon)),\qquad
+ t_\epsilon(x)=(\bar z_1/\epsilon,\bar z_2/\epsilon).
+                                                               \tag{14.4}
+\]
+
+Direct differentiation gives D\^{}+Phi\_epsilon=0 and
+D\^{}-t\_epsilon=0, and t\_epsilon is exactly the cubic torsion of
+Phi\_epsilon, not an independently chosen field. On
+\textbar x\textbar\textless=R\_0 epsilon, for fixed R\_0,
+rho=1+O(epsilon\^{}2), \textbar zeta\textbar=O(epsilon), \textbar d
+zeta\textbar=O(1), and int\textbar nabla t\textbar\^{}2=O(epsilon\^{}2).
+Yet its isolated torsion zero has positive index and can carry unit
+signed transition flux.
+
+Indeed at t=(r,0), write nabla t=(x+iy,z+iw) as real one-forms. In the
+flat rank-two connection the transgression in Section 7 gives
+
+\[
+        d\chi(m)\wedge T_t
+             =-\frac{\chi'(m)}{\pi^2m}
+                       x\wedge y\wedge z\wedge w.      \tag{14.5}
+\]
+
+For (14.4) the real Jacobian is epsilon\^{}\{-4\} and
+m=\textbar x\textbar\^{}2/epsilon\^{}2. If chi equals one near zero and
+vanishes before m=R\_0\^{}2, polar integration gives int dchi wedge
+T\_t=-int\_0\^{}\{R\_0\^{}2\}chi'(m)dm=1. Thus small current, the two
+exact Dirac equations, and a small integrated first-derivative budget
+cannot alone cancel the signed flux.
+
+This field is NOT an actual positive-weight monopole: F\_A\^{}+=0 while
+f sigma(Phi\_epsilon) is nonzero for f\textgreater0. Nor does flat
+curvature satisfy the normalized negative Einstein target on a global
+fixed-volume manifold. It rules out precisely the proposed
+Dirac-only/null-form deduction, not the zero-end gap and not the full
+actual equations. It leaves the new geometric exclusions in Sections
+8--13 intact.
+
+\hypertarget{the-positive-transition-core-persists-for-the-actual-local-gauge-equation}{%
+\subsubsection{15. The positive transition core persists for the actual
+local gauge
+equation}\label{the-positive-transition-core-persists-for-the-actual-local-gauge-equation}}
+
+The preceding construction can be continued to solve the positive-weight
+Seiberg--Witten equations themselves. This strengthens the local test:
+the missing global estimate cannot be obtained merely by declaring that
+the critical transition scaling violates the local gauge PDE.
+
+\textbf{Theorem 12 (local actual core).} Fix f\_*\textgreater0 and
+a\textgreater0. For every sufficiently small epsilon\textgreater0 there
+is a smooth unitary determinant connection A\_epsilon and positive
+spinor Phi\_epsilon on the Euclidean ball B\_\{2epsilon\} such that
+
+\[
+ D_{A_\epsilon}\Phi_\epsilon=0,\qquad
+       -iF_{A_\epsilon}^+=f_*\sigma(\Phi_\epsilon).
+                                                               \tag{15.1}
+\]
+
+On smaller fixed-proportion balls their cubic torsion t\_epsilon has
+exactly one positive-index zero, at the center. There is a cutoff
+chi(\textbar t\_epsilon\textbar\^{}2), one near its zero and zero near
+the boundary, for which
+
+\[
+ \int d\chi\wedge T_{t_\epsilon}=1+O(\epsilon^4).      \tag{15.2}
+\]
+
+The physical-coordinate estimates are
+
+\[
+\begin{gathered}
+ |\Phi_\epsilon|^2=a^2+O(\epsilon^2),\quad
+ |\langle\Phi_\epsilon,\nabla_A\Phi_\epsilon\rangle|=O(\epsilon),
+ \quad |\nabla_A\Phi_\epsilon|=O(1),\quad |F_A|=O(1),\\
+ \int|\nabla_A^2\Phi_\epsilon|^2+
+       \int|\nabla_{3A}t_\epsilon|^2=O(\epsilon^2),\quad
+ \int|F_A|^2=O(\epsilon^4).
+\end{gathered}                                                     \tag{15.3}
+\]
+
+The signed transition flux nevertheless has order one, as does its
+corresponding quartic transition energy. All these are unnormalized
+local integrals. The flat core also has
+int\textbar Ric+g\textbar\^{}2=O(epsilon\^{}4).
+
+\textbf{Proof of existence.} Work first on the fixed Euclidean ball B\_2
+in y-coordinates. Let lambda=epsilon\^{}2 and Phi\_0=a e\_1+epsilon
+g\_0(y)e\_2, with g\_0 from (14.4). Thus D\^{}+Phi\_0=0. On
+imaginary-valued forms put T=(d\^{}\emph{,sqrt(2)d\^{}+). In flat space
+TT\^{}}=Delta on Omega\^{}0 direct-sum Omega\^{}2\_+, with Delta
+nonnegative. Let G\_D be the componentwise Dirichlet inverse of Delta on
+this smooth ball, and define
+
+\[
+ R_A=T^*G_D,\qquad R_D=D^-G_D.
+\]
+
+Then TR\_A=Id and D\^{}+R\_D=Id. On C\^{}\{k,alpha\} for fixed
+k\textgreater=3, 0\textless alpha\textless1, both are bounded operators
+gaining one derivative, by the classical
+\href{https://ocw.mit.edu/courses/18-156-differential-analysis-spring-2004/pages/lecture-notes/}{Dirichlet
+Schauder estimates, lectures 11--17}. Their boundary traces are not
+prescribed independently; only their right-inverse property is used. For
+a spinor Phi in a fixed bounded C\^{}\{k,alpha\} neighborhood of Phi\_0
+set
+
+\[
+ A(\Phi)=R_A(0,\sqrt2\lambda i f_*\sigma(\Phi)),\qquad
+ \mathcal T(\Phi)=\Phi_0-\tfrac12R_D[c(A(\Phi))\Phi]. \tag{15.4}
+\]
+
+Products and the quadratic spinor map are locally Lipschitz in this
+Banach space. A(Phi)=O(lambda) and the Lipschitz constant of T is
+O(lambda), uniformly for small epsilon. A ball of radius C lambda about
+Phi\_0 is mapped to itself for fixed sufficiently large C; for
+sufficiently small epsilon, T is a contraction. Its fixed point and the
+associated A satisfy
+
+\[
+ d^*A=0,\quad F_A^+=\lambda i f_*\sigma(\Phi),\quad D_A\Phi=0,
+ \quad \|A\|_{C^{k+1,\alpha}}+
+        \|\Phi-\Phi_0\|_{C^{k,\alpha}}\le C\epsilon^2.
+\]
+
+The fixed-point identities and elliptic regularity bootstrap to
+smoothness. Rescale x=epsilon y, setting Phi\_x(x)=Phi\_y(x/epsilon) and
+A\_x(x)=epsilon\^{}\{-1\}A\_y(x/epsilon) in components. The Dirac
+equation scales by epsilon\^{}\{-1\}, the curvature by
+epsilon\^{}\{-2\}; lambda=epsilon\^{}2 cancels the latter factor. This
+proves (15.1) with the fixed positive f\_*.
+
+\textbf{Torsion and charge.} In y-coordinates the physical torsion obeys
+
+\[
+        t_\epsilon(\epsilon y)
+           =a^2(\bar z_1,\bar z_2)+O(\epsilon)
+                                      \quad\text{in }C^1(B_1).
+                                                               \tag{15.5}
+\]
+
+This follows directly from the cubic formula: its leading derivative of
+epsilon g\_0 cancels the physical epsilon\^{}\{-1\}, and all fixed-point
+and connection corrections are O(epsilon). The leading real linear map
+is invertible with positive determinant a\^{}8. Small C1 perturbation
+makes the map injective on a smaller convex ball. The degree on its
+boundary is positive one, so it has exactly one zero. In fact Phi\_0 is
+even under y-\textgreater-y. The Dirichlet inverse preserves parity,
+whereas T\^{}* and D\^{}- reverse it. Thus the contraction preserves
+even Phi and produces odd A; the fixed point has these parities. Its
+torsion is odd, placing its unique zero exactly at the center. The
+bounds (15.3) follow by differentiating (15.4) and rescaling. In
+particular the squared Hessian L2 integral is O(epsilon\^{}2); its L2
+norm is O(epsilon), not O(epsilon\^{}2).
+
+In the extending flat spin frame, E\_-=S\^{}- tensor L has curvature
+(3/2)F\_A I and c\_2(E\_-)=-9F\_A wedge F\_A/(16pi\^{}2). Removing a
+small sphere about the torsion zero, the transgression convention of
+Section 7 gives
+
+\[
+ \int_B c_2(E_-)-\int_{\partial B}T_t=1,
+ \qquad
+ \int_B d\chi\wedge T_t=1-\int_B\chi c_2(E_-).
+\]
+
+Since F\_A=O(1) and Vol(B)=O(epsilon\^{}4), (15.2) follows. On a fixed
+torsion-amplitude transition annulus, (15.5) also gives the order-one
+quartic cost directly. QED.
+
+The costs can be identified more precisely. The constant-source part of
+the Dirichlet calculation gives, in y-components,
+
+\[
+ A_y=\epsilon^2 A_0+O(\epsilon^3),\qquad
+ A_0=\frac{if_*}{2}\iota_y\sigma(ae_1).
+\]
+
+Consequently the physical curvature is if\_*sigma(ae\_1)+O(epsilon), its
+ASD part is O(epsilon), and
+
+\[
+ \int_{B_{2\epsilon}}|F_A|^2
+    =\pi^2f_*^2a^4\epsilon^4+O(\epsilon^5).
+                                                               \tag{15.6}
+\]
+
+For fixed 0\textless m\_1\textless m\_2\textless4a\^{}4 let
+T\_epsilon=\{m\_1\textless\textbar t\_epsilon\textbar\^{}2\textless m\_2\}.
+The C1 convergence in (15.5), valid on B\_2, and rescaling imply
+
+\[
+\begin{aligned}
+ \int_{T_\epsilon}|\nabla t|^4
+       &\longrightarrow8\pi^2(m_2^2-m_1^2),\\
+ \int_{T_\epsilon}|\langle t,\nabla t\rangle|^2|\nabla t|^2
+       &\longrightarrow\frac{8\pi^2}{3}(m_2^3-m_1^3),\\
+ \int_{T_\epsilon}|dm|^2|\nabla t|^2
+       &\longrightarrow\frac{16\pi^2}{3}(m_2^3-m_1^3).
+\end{aligned}                                                   \tag{15.7}
+\]
+
+Indeed the limiting y-field has m=a\^{}4\textbar y\textbar\^{}2,
+\textbar dt\textbar\^{}2=4a\^{}4,
+\textbar\textless t,dt\textgreater\textbar\^{}2=2a\^{}8\textbar y\textbar\^{}2
+and \textbar dm\textbar\^{}2=4a\^{}8\textbar y\textbar\^{}2; integrate
+with the four-dimensional polar factor 2pi\^{}2 r\^{}3 dr. The limiting
+level spheres are regular, so replacing the exact transition region by
+its limiting annulus is justified by this C1 convergence.
+
+The leading anti-complex-linear derivative has N=0 in Section 14's
+projection. The actual Phi-adapted frame differs by O(epsilon), while
+the physical derivative is O(epsilon\^{}\{-1\}); hence N=O(1) and
+
+\[
+       \int_{T_\epsilon}m|N|^2|\nabla t|^2=O(\epsilon^2).
+                                                               \tag{15.8}
+\]
+
+Thus the positive charge survives while this projected contribution
+tends to zero. The critical radial mass term, not an uncontrolled N
+term, can carry the transition cost. Even
+int\textbar dm\textbar\^{}2=O(epsilon\^{}2) does not remove it.
+
+For the flat metric the inherited majorant weight is exactly sqrt(3), so
+f\_*=sqrt(3) is an allowed concrete choice; there is no zero-weight
+limit. Choosing a\^{}2=4/3 and radius R\_0 epsilon with R\_0=2sqrt(2)/3
+makes the leading boundary torsion mass a\^{}4 R\_0\^{}2=128/81 equal to
+the zero-end mass. This is amplitude matching only. Its outgoing normal
+mass derivative is 2a\^{}4 R\_0/epsilon+O(1), and its unit torsion
+boundary map has degree +1 in the extending trivialization. It cannot be
+joined through a zero-free collar to a regular nonzero torsion field
+extending over a ball, whose boundary degree is zero. Compensating zeros
+or a nontrivial marked bundle identification would be necessary.
+
+No such exterior, clutching, fixed closed manifold, or conformally
+solvable global class system is produced here. The flat scalar curvature
+and weight also differ from the negative Einstein exterior model.
+Consequently this is an exact local concentration mechanism with its
+relative charge, not a counterexample to O10, not a closed near-Einstein
+construction, and not a reversal of the geometric exclusions above. It
+does establish that the remaining work must use global matching or
+information beyond the local weighted gauge equations and the displayed
+integral budgets alone.
+
+\hypertarget{removing-the-local-metric-and-weight-mismatch}{%
+\paragraph{15.1 Removing the local metric and weight
+mismatch}\label{removing-the-local-metric-and-weight-mismatch}}
+
+The local core also exists on a FIXED hyperbolic background with
+sectional curvature -1/3. It then satisfies Ric=-g, W\^{}pm=0 and the
+canonical weight f\_0=2 exactly; the two mismatches just noted are not
+local obstructions. Here is the perturbation argument, including its
+boundary convention.
+
+Fix a point p.~In geodesic coordinates x=epsilon y set
+g\_epsilon=epsilon\^{}\{-2\}(exp\_p(epsilon dot))\^{}*g on B\_2. In
+polar and Cartesian coordinates, respectively,
+
+\[
+\begin{aligned}
+ g_\epsilon&=dr^2+\frac3{\epsilon^2}
+                    \sinh^2(\epsilon r/\sqrt3)g_{S^3},\\
+ (g_\epsilon)_{ij}
+  &=\delta_{ij}+\frac{\epsilon^2}{9}
+             (|y|^2\delta_{ij}-y_i y_j)+O(\epsilon^4).
+\end{aligned}                                                     \tag{15.9}
+\]
+
+In every fixed C\^{}\{k,alpha\} norm this is an O(epsilon\^{}2)
+perturbation of the Euclidean metric. Use the positive-square-root
+orthonormal coframe and its spin lift. The spin connections and
+coefficients of D\_epsilon-D\_0 are O(epsilon\^{}2), the latter as a
+first-order operator. For T\_epsilon=(d*\_epsilon,sqrt(2)d+\_epsilon)
+the exact identity T\_epsilon T\_epsilon\^{}*=Delta\_H remains valid on
+Omega\^{}0 direct-sum Lambda+\_epsilon. Identify that target with a
+fixed trivial bundle. Both this second-order operator and D+\_epsilon
+D-\_epsilon have the form
+
+\[
+          L_\epsilon=\Delta_0+O(\epsilon^2)\partial^2
+                             +O(\epsilon^2)\partial+O(\epsilon^2).
+\]
+
+Their auxiliary Dirichlet inverses exist by the convergent Neumann
+series
+
+\[
+ G_\epsilon=G_0[I+(L_\epsilon-\Delta_0)G_0]^{-1}.
+\]
+
+The norm here is C\^{}\{k,alpha\}-\textgreater C\^{}\{k,alpha\} for the
+bracketed operator; G\_0 maps into C\^{}\{k+2,alpha\} with zero boundary
+trace. Thus the new right inverses R\_A=T\_epsilon\^{}*G\_A and
+R\_D=D-\_epsilon G\_D gain one derivative uniformly. No boundary
+condition on A or Phi is asserted.
+
+The flat seed Phi\_0=a e\_1+epsilon g\_0 e\_2 is no longer exactly
+harmonic, but the corrected seed
+
+\[
+       \widehat\Phi_0=\Phi_0-R_D D_\epsilon^+\Phi_0
+\]
+
+is: D+\emph{epsilon \nolinkurl{Phi_hat_0}=0, and
+\nolinkurl{Phi_hat_0}-Phi\_0=O(epsilon\^{}2). Apply the same contraction (15.4)
+with this seed, the curved right inverses, lambda=epsilon\^{}2 and
+f}*=2. The result obeys the exact physical equations
+
+\[
+            D_{A,g}\Phi=0,\qquad F_A^+=2i\sigma_g(\Phi).
+                                                               \tag{15.10}
+\]
+
+The physical metric is the original fixed g, not g\_epsilon. It has
+s=-4, W\^{}pm=0 and q=4, so the inherited majorant is indeed f\_0=2. All
+fields differ from the flat seed in rescaled coordinates by
+O(epsilon\^{}2). The physical cubic torsion therefore still has the C1
+expansion (15.5), giving one positive simple zero and the same limiting
+transition costs (15.7)--(15.8). Only its O(epsilon\^{}2) displacement
+in physical coordinates is needed here; no parity assertion is
+necessary.
+
+Take a\^{}2=4/3. The physical determinant curvature has
+F\_A\^{}-=O(epsilon) and
+\textbar F\_A\^{}+\textbar\^{}2=8/9+O(epsilon\^{}2). The full bundle
+E\_-=S\^{}- tensor L now includes the nonflat spin connection. Its
+characteristic density is
+
+\[
+ 16\pi^2c_2(E_-)
+   =\left[9(|F_A^+|^2-|F_A^-|^2)+\frac23\right]d\mu_g
+   =\left[\frac{26}{3}+O(\epsilon^2)\right]d\mu_g.
+\]
+
+It is bounded; the relative formula still gives int dchi wedge
+T\_t=1+O(epsilon\^{}4). The Ricci and Weyl error terms vanish
+identically on the core. The form-closure term does NOT vanish
+identically, and no normalized full defect on these shrinking balls is
+claimed to tend to zero. Quadratic derivative costs remain
+O(epsilon\^{}2), whereas the critical radial transition cost has a
+positive limit.
+
+This removes the metric and canonical-weight mismatches, but not the
+boundary winding, O(epsilon\^{}\{-1\}) outgoing torsion derivative,
+determinant ASD matching, or global conformally solvable class. In
+particular, the core's F\_A\^{}- is small while the globally calibrated
+endpoint exterior requires its squared mean to approach 2/9. Exact local
+Einstein and gauge equations admit the core; producing a closed endpoint
+degeneration still requires the entire exterior and its matching.
+Theorem 10 excludes that global construction at bounded Euler density,
+so it is not contradicted.
+
+END COMPLETE SOURCE
+
+\end{document}

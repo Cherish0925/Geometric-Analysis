@@ -1,0 +1,95 @@
+{
+ "field": [
+  "ym",
+  "eta",
+  "y3",
+  "-ym*(y3 + 2*ym) + 2*(exp(de) + exp(-de))*exp(-2*m) - 2*exp(2*L3 - 4*m) + 6",
+  "-eta*(y3 + 2*ym) - 4*(exp(de) - exp(-de))*exp(-2*m) + 4*(exp(2*de) - exp(-2*de))*exp(-2*L3)",
+  "-y3*(y3 + 2*ym) - 2*(exp(de) - exp(-de))**2*exp(-2*L3) + 2*exp(2*L3 - 4*m) + 6",
+  "0"
+ ],
+ "symbolic_difference": [
+  "0",
+  "0",
+  "0",
+  "0",
+  "0",
+  "0",
+  "0"
+ ],
+ "random_state_max_rel_err": 1.3894954893363847e-14,
+ "flow_compare": [
+  {
+   "t": 0.060000000000000005,
+   "max_abs_diff": 1.1740200825394176e-12,
+   "max_width": 5.764517471218769e-11,
+   "float_in_box": true
+  },
+  {
+   "t": 0.31,
+   "max_abs_diff": 1.4645223228582083e-10,
+   "max_width": 7.19036680196794e-09,
+   "float_in_box": true
+  },
+  {
+   "t": 0.56,
+   "max_abs_diff": 7.43867106800522e-10,
+   "max_width": 3.65227544596447e-08,
+   "float_in_box": true
+  },
+  {
+   "t": 0.8100000000000003,
+   "max_abs_diff": 1.8100173582169532e-09,
+   "max_width": 8.8924036301119e-08,
+   "float_in_box": true
+  },
+  {
+   "t": 1.0600000000000005,
+   "max_abs_diff": 3.0860989319592136e-09,
+   "max_width": 1.521937020854125e-07,
+   "float_in_box": true
+  },
+  {
+   "t": 1.3100000000000007,
+   "max_abs_diff": 4.639817530183166e-09,
+   "max_width": 2.3109968261270097e-07,
+   "float_in_box": true
+  },
+  {
+   "t": 1.560000000000001,
+   "max_abs_diff": 7.02339753022585e-09,
+   "max_width": 3.5476638882148137e-07,
+   "float_in_box": true
+  },
+  {
+   "t": 1.8100000000000012,
+   "max_abs_diff": 1.1025874435688365e-08,
+   "max_width": 5.647229635030726e-07,
+   "float_in_box": true
+  },
+  {
+   "t": 2.060000000000001,
+   "max_abs_diff": 1.7743692293237245e-08,
+   "max_width": 9.19955916334203e-07,
+   "float_in_box": true
+  },
+  {
+   "t": 2.31,
+   "max_abs_diff": 2.8906932847405642e-08,
+   "max_width": 1.5152317547340033e-06,
+   "float_in_box": true
+  },
+  {
+   "t": 2.559999999999999,
+   "max_abs_diff": 4.736267622540424e-08,
+   "max_width": 2.508313751814484e-06,
+   "float_in_box": true
+  },
+  {
+   "t": 2.7,
+   "max_abs_diff": 6.253046880289048e-08,
+   "max_width": 3.331586685861865e-06,
+   "float_in_box": true
+  }
+ ]
+}

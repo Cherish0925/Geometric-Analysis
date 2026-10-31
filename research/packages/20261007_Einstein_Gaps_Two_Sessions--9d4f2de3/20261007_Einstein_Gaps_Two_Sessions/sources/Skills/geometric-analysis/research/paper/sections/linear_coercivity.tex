@@ -1,0 +1,850 @@
+\section{Calibrated curvature and linear coercivity}\label{sec:linear-coercivity}
+
+The K\"ahler value of the curvature pencil admits a stronger estimate than
+non-saturation away from that value.  Its curvature model is not small, but
+its action on the calibrated spinor vanishes.  Retaining this cancellation
+in the covariant Hessian identity removes the background-volume term from
+the second-order estimate.  A weak Bianchi test then bounds the spinor
+energy linearly by the curvature deficit.  Conformal normalization turns
+this estimate into a scale-invariant inequality involving only traceless
+Ricci energy and the scalar--Weyl deficit.
+
+\subsection{Actual input and the retained weighted identities}
+
+Let $(M,g)$ be a closed, connected, oriented smooth four-manifold.  Fix a
+Spin$^c$ structure whose unperturbed Seiberg--Witten equations are solvable
+for every metric conformal to $g$, and let $a\in H^2(M;\mathbb R)$ be its
+real first Chern class.  Throughout the argument this one structure is
+fixed while the auxiliary conformal weights vary.  In an application
+quantified over all metrics, the selected structure may depend on the
+original metric.  Set
+\begin{equation}\label{eq:lc-energies}
+\begin{gathered}
+ V=\Vol_g(M),\qquad p=(a_g^+)^2>0,\qquad
+ T_\pm=2\chi(M)\pm3\tau(M),\qquad T=T_+,\\
+ S_2=\int_M s^2\,d\mu,\qquad
+ P=\int_M|\Ric^\circ|^2\,d\mu,\qquad
+ R=\int_M|\Ric|^2\,d\mu=P+\frac14S_2,\\
+ D=D_2=\frac32 S_2+18\int_M|W^+|^2\,d\mu-72\pi^2p,\qquad
+ \Sigma=S_2-32\pi^2p,\qquad Y=(T-a^2)_+.
+\end{gathered}
+\end{equation}
+All unqualified integrals and norms in this section use $g$.  Ricci
+curvature has the tensor norm, two-forms have the exterior-algebra norm,
+and $W^+$ has the Hilbert--Schmidt norm as an endomorphism of $\Lambda^+$.
+The classical scalar estimate and the actual weighted pencil of
+Sections~\ref{sec:intrinsic-calibration} and~\ref{sec:weighted-pencil} give
+\begin{equation}\label{eq:lc-nonnegative}
+ \int_M s_-^2\,d\mu\ge32\pi^2p,\qquad \Sigma\ge0,\qquad D\ge0.
+\end{equation}
+In particular $R>0$.  No diameter, injectivity-radius, Sobolev,
+noncollapse, or full-curvature bound is imposed.
+
+First fix the negative target $\Ric=-g$ and write
+\begin{equation}\label{eq:lc-normalized-error}
+ r=\frac1V\int_M|\Ric+g|^2\,d\mu,\qquad
+ \Xi=rV+D,\qquad \kappa=\frac{\Xi}{V},\qquad
+ \Theta=\Xi+\varepsilon V.
+\end{equation}
+Here $\varepsilon>0$ is a freely selectable allowance in the smooth
+weight approximation.  It is chosen after the metric and structure
+have been fixed.  Unless explicitly stated otherwise, the weighted
+spinor estimates below are used with $\kappa\le1$ and $\varepsilon\le1$.
+
+For clarity we specify the actual solution and the information retained
+from the pencil.  Put
+\begin{equation}\label{eq:lc-weight}
+ w=\sqrt6|W^+|,\qquad q=-s+w,\qquad Q=\max\{q,3\},\qquad
+ f_0=\max\{\sqrt Q,s_-/4\}.
+\end{equation}
+Smooth positive majorants $f$ of $f_0$ can be chosen with arbitrarily
+small approximation allowance.  Conformal covariance supplies an actual
+solution
+\begin{equation}\label{eq:lc-sw}
+ D_A\Phi=0,\qquad F_A^+=if\sigma(\Phi),\qquad
+ 4\nabla_A^*\nabla_A\Phi+(s+f|\Phi|^2)\Phi=0.
+\end{equation}
+The normalization of the quadratic map is
+$|\sigma(\Phi)|^2=|\Phi|^4/8$.  Define
+\begin{equation}\label{eq:lc-spinor-notation}
+\begin{gathered}
+ \rho=|\Phi|^2,\qquad \psi=2\sqrt2\sigma(\Phi),\qquad
+ \zeta=\langle\Phi,\nabla_A\Phi\rangle,\qquad U=s+f\rho,\\
+ K=\int_M|\nabla_A\Phi|^2\,d\mu,\qquad
+ B=\int_M|F_A^-|^2\,d\mu,\qquad
+ J_+=\|F_A^+-(F_A^+)_H\|_2^2.
+\end{gathered}
+\end{equation}
+The Hermitian pairing is conjugate-linear in its first entry.  The
+maximum principle gives $0\le\rho\le4$, hence $|\Phi|\le2$.
+Subscript $H$ denotes harmonic projection.  This definition of $J_+$
+is independent of the harmless sign convention for the imaginary
+representative of the Chern class.
+
+At $\beta=2$ the reference weight and spinor amplitude are
+\begin{equation}\label{eq:lc-reference}
+ c=\sqrt6,\qquad \rho_0=\frac4{\sqrt6},\qquad
+ \omega=\frac{\sqrt3}{2}\psi,\qquad
+ v=|\omega|^2=\frac34\rho^2,\qquad
+ W_0=\frac12\left(\frac v3 I-\omega\otimes\omega\right).
+\end{equation}
+In particular $c\rho_0=4$.  The expression $W_0$ is a globally smooth
+polynomial in $\Phi$, including at its zeros.
+
+\begin{lemma}[Retained estimates for one actual solution]\label{lem:lc-retained}
+The majorant in \eqref{eq:lc-sw} may be selected so that the same solution
+satisfies
+\begin{equation}\label{eq:lc-retained}
+\begin{split}
+ J_++\int_M\bigl(&|\rho-\rho_0|^2+|f-c|^2+|U|^2+|d\rho|^2
+       +|\operatorname{Im}\zeta|^2\\
+       &+|W^+-W_0|^2+|\Ric+g|^2\bigr)\,d\mu\le C\Theta.
+\end{split}
+\end{equation}
+It also satisfies
+\begin{equation}\label{eq:lc-low-and-slack}
+ \int_{\{\rho\le1\}}|\nabla_A\Phi|^2\,d\mu\le C\Theta,
+ \qquad |8\sqrt6K-\Sigma|\le C\Theta.
+\end{equation}
+The constants are universal.  No comparison between solutions at
+different weights is involved.
+\end{lemma}
+
+\begin{proof}
+We first record precisely the estimates from Section~\ref{sec:weighted-pencil}
+that are used.  Set $u=3\rho/2$ and $e=s+4$.  Its deficit decomposition,
+moment estimate, and retained nonnegative derivative terms give
+\begin{equation}\label{eq:lc-moment-input}
+\begin{gathered}
+ \int_M|q-6|^2\,d\mu\le C\Xi,\qquad
+ \int_M e^2\,d\mu\le4rV,\qquad
+ \int_M Q(u-\sqrt Q)^2\,d\mu\le C\Theta,\\
+ D_0\le C\Theta,\qquad
+ 0\le C_{\mathrm{act}}-72\pi^2p\le C\Theta,
+ \qquad C_{\mathrm{act}}=\int_M f^2u^2\,d\mu,
+\end{gathered}
+\end{equation}
+where the derivative remainder is
+\begin{equation}\label{eq:lc-D0}
+\begin{split}
+ D_0={}&2\int_M|d\rho|^2\,d\mu
+ +\int_M(4\rho|\nabla_A\Phi|^2-|\nabla\psi|^2)\,d\mu\\
+ &+2\int_M|d\psi|^2\,d\mu+2\int_M E_\lambda\,d\mu,
+ \qquad
+ E_\lambda=\langle W^+\psi,\psi\rangle+\frac w3\rho^2\ge0.
+\end{split}
+\end{equation}
+These are estimates for the actual solution of \eqref{eq:lc-sw} with
+the chosen smooth majorant.  All its approximation terms are included
+in $\varepsilon V$.
+
+Clipping at $3$ does not increase the distance to $6$, so
+$\|\sqrt Q-c\|_2^2\le C\Xi$.  Since $Q\ge3$, the moment estimate
+also bounds $\|u-\sqrt Q\|_2^2$ by $C\Theta$.  Their sum controls
+$\|\rho-\rho_0\|_2^2$.  The elementary clipping estimate
+\[
+ (f_0-\sqrt Q)^2\le f_0^2-Q\le\frac9{16}e^2
+\]
+then gives $\|f-c\|_2^2\le C\Theta$.  The potential is
+$U=e+c(\rho-\rho_0)+(f-c)\rho$, so $\rho\le4$ gives its claimed
+$L^2$ bound.  Direct differentiation of the quadratic map gives
+\begin{equation}\label{eq:lc-hopf}
+ d\rho=2\operatorname{Re}\zeta,\qquad
+ |\nabla\psi|^2=4\rho|\nabla_A\Phi|^2-4|\operatorname{Im}\zeta|^2.
+\end{equation}
+Consequently \eqref{eq:lc-D0} controls both displayed first-order errors.
+
+For the full Weyl error one retains the exact square identity
+\begin{equation}\label{eq:lc-weyl-square}
+ |W^+-W_0|^2
+ =\frac16\left(w-\frac34\rho^2\right)^2+\frac34E_\lambda.
+\end{equation}
+Indeed $W_0=(3/8)(\rho^2 I/3-\psi\otimes\psi)$.  The deficit
+decomposition controls $w-2$ in $L^2$, and the bounded amplitude
+estimate controls $3\rho^2/4-2$.  Thus \eqref{eq:lc-weyl-square}
+is bounded by $C\Theta$ after integration.  Finally Hodge projection
+and the curvature equation give
+\begin{equation}\label{eq:lc-two-retained-identities}
+ 4K+\int_M s\rho\,d\mu+\int_M f\rho^2\,d\mu=0,
+ \qquad
+ \int_M f^2\rho^2\,d\mu=32\pi^2p+8J_+.
+\end{equation}
+In particular $8J_+=(4/9)(C_{\mathrm{act}}-72\pi^2p)$, completing
+\eqref{eq:lc-retained}.
+
+To prove the low-amplitude estimate, fix $1<b<4/3$ and a smooth
+nonincreasing function $\chi$ equal to $1$ on $[0,1]$ and to $0$
+on $[b,\infty)$.  The amplitude estimate gives
+$\Vol\{\rho<b\}\le C\Theta$.  Testing the last equation in
+\eqref{eq:lc-sw} against $\chi(\rho)\Phi$ gives the exact identity
+\begin{equation}\label{eq:lc-local-spinor-test}
+ 4\int_M\chi|\nabla_A\Phi|^2\,d\mu
+ +2\int_M\chi'|d\rho|^2\,d\mu
+ +\int_M\chi U\rho\,d\mu=0.
+\end{equation}
+The second integral is bounded in absolute value by $C\Theta$.
+The last one is at most
+$b\|U\|_2\Vol\{\rho<b\}^{1/2}\le C\Theta$.  This proves the
+first estimate in \eqref{eq:lc-low-and-slack} without dividing by
+$\rho$ at a zero.
+
+For every constant $c>0$, expansion of a square and substitution of
+\eqref{eq:lc-two-retained-identities} give
+\begin{equation}\label{eq:lc-exact-slack}
+ \Sigma+\int_M(f-c)^2\rho^2\,d\mu
+ =\|s+c\rho\|_2^2+8cK+8J_+.
+\end{equation}
+The coefficient of $\rho^2$ after the scalar--spinor cross term is
+eliminated is $f^2-2cf+c^2$.  Thus the term on the left is retained
+for a variable weight.  With $c=\sqrt6$, the identity
+$s+c\rho=e+c(\rho-\rho_0)$ and \eqref{eq:lc-retained} bound all
+terms in \eqref{eq:lc-exact-slack} except $8cK$ and $\Sigma$ by
+$C\Theta$.  This proves the second estimate.  No derivative of $f$
+has been taken.
+\end{proof}
+
+\subsection{The curvature model and the refined Hessian estimate}
+
+\begin{lemma}[Hessian estimate with retained background action]\label{lem:lc-hessian}
+The actual solution of Lemma~\ref{lem:lc-retained} satisfies
+\begin{equation}\label{eq:lc-refined-hessian}
+ \|\nabla_A^2\Phi\|_2^2+\|\nabla_A\Phi\|_4^4
+ \le C(K+\Theta+B).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Let $\mathcal F$ be the curvature of the connection on the positive
+spinor bundle.  Define an algebraic comparison curvature $\mathcal F_b$
+by inserting
+\begin{equation}\label{eq:lc-background}
+ s_b=-4,\qquad \Ric_b^\circ=0,\qquad W_b^+=W_0,
+ \qquad F_{A,b}^+=ic\sigma(\Phi),\qquad F_{A,b}^-=0
+\end{equation}
+into the positive-spinor curvature decomposition.  It is used as an
+algebraic tensor; it need not be the curvature of another connection.
+The $W^-$ block does not act on positive spinors.  Since $\rho\le4$,
+this comparison satisfies $|\mathcal F_b|\le C$, and
+\eqref{eq:lc-retained} gives
+\begin{equation}\label{eq:lc-background-error}
+ \|\mathcal F-\mathcal F_b\|_2^2\le C(\Theta+B).
+\end{equation}
+For example, the determinant self-dual difference is
+$i(f-c)\sigma(\Phi)$ and is controlled by the retained weight
+estimate; its anti-self-dual difference contributes exactly $B$.
+
+The action of $\mathcal F_b$ is smaller than its norm.  In a compatible
+self-dual frame with its first axis along $\psi$, the eigenvalues of
+$W_0$ are $-\rho^2/4,\rho^2/8,\rho^2/8$.  In the curvature and
+Clifford conventions of \eqref{eq:lc-sw}, the axial and transverse
+coefficients of $\mathcal F_b\Phi$, up to fixed common normalization
+factors, are
+\begin{equation}\label{eq:lc-annihilation-factors}
+\begin{split}
+ \frac{\rho^2}{4}+\frac13-\frac{c\rho}{4}
+ &=\frac14\left(\rho-\frac4{\sqrt6}\right)
+               \left(\rho-\frac2{\sqrt6}\right),\\
+ \frac{\rho^2}{8}-\frac13
+ &=\frac18\left(\rho-\frac4{\sqrt6}\right)
+               \left(\rho+\frac4{\sqrt6}\right).
+\end{split}
+\end{equation}
+Both vanish at $\rho_0$.  Boundedness of $\rho$ therefore proves
+\begin{equation}\label{eq:lc-background-annihilates}
+ |\mathcal F_b\Phi|^2\le C|\rho-\rho_0|^2,
+ \qquad \|\mathcal F\Phi\|_2^2\le C(\Theta+B).
+\end{equation}
+The estimate extends through $\Phi=0$ because the expressions are
+polynomial.  No derivative of $\mathcal F_b$ is used here.
+
+Write $\Pi_i=\nabla_{A,i}\Phi$, $H_{ij}=\nabla_{A,i}\nabla_{A,j}\Phi$
+with its Levi--Civita correction, and $L=\operatorname{tr}H$.
+The exact covariant identity is
+\begin{equation}\label{eq:lc-exact-hessian}
+\begin{split}
+ \|H\|_2^2={}&\|L\|_2^2
+ -\int_M\Ric_{ij}\operatorname{Re}\langle\Pi_i,\Pi_j\rangle\,d\mu\\
+ &+\sum_{i,j}\int_M\operatorname{Re}
+                  \langle\mathcal F_{ij}\Pi_j,\Pi_i\rangle\,d\mu
+ +\frac12\sum_{i,j}\|\mathcal F_{ij}\Phi\|_2^2.
+\end{split}
+\end{equation}
+To see why no curvature derivative appears, first use
+$H_{ij}-H_{ji}=\mathcal F_{ij}\Phi$ to write
+\[
+ \|H\|_2^2
+ =\sum_{i,j}\int_M\operatorname{Re}\langle H_{ij},H_{ji}\rangle\,d\mu
+  +\frac12\sum_{i,j}\|\mathcal F_{ij}\Phi\|_2^2.
+\]
+Integrate the mixed Hessian term once, commute derivatives on the
+bundle-valued one-form $\Pi$, and integrate the resulting trace term
+once more.  The cotangent curvature contracts to Ricci, and the bundle
+curvature acts on $\Pi$, giving \eqref{eq:lc-exact-hessian}.  The
+sums displayed there are double sums, whereas exterior two-form norms
+use $i<j$; the final factor $1/2$ accounts for this distinction.
+
+The bounded-section interpolation used in
+Section~\ref{sec:intrinsic-calibration} also follows directly here.
+Integration of the divergence of
+$|\Pi|^2\operatorname{Re}\langle\Phi,\Pi\rangle^\sharp$, followed
+by $|L|\le2|H|$, yields
+\[
+ \int_M|\Pi|^4\,d\mu
+ \le4\|\Phi\|_\infty\int_M|H||\Pi|^2\,d\mu.
+\]
+Thus
+\begin{equation}\label{eq:lc-interpolation}
+ \|\Pi\|_4^2\le4\|\Phi\|_\infty\|H\|_2\le8\|H\|_2.
+\end{equation}
+This uses integration by parts, not a Sobolev inequality.
+
+Equation~\eqref{eq:lc-sw} gives $L=U\Phi/4$ and hence
+$\|L\|_2^2\le C\Theta$.  In \eqref{eq:lc-exact-hessian}, split
+$\Ric=-g+(\Ric+g)$ and
+$\mathcal F=\mathcal F_b+(\mathcal F-\mathcal F_b)$.
+The two bounded background contributions cost at most $CK$.
+H\"older's inequality and \eqref{eq:lc-interpolation} bound the
+remaining terms quadratic in $\Pi$ by
+$C\sqrt{\Theta+B}\,\|H\|_2$.  The last term in
+\eqref{eq:lc-exact-hessian} is bounded by
+\eqref{eq:lc-background-annihilates}.  Therefore
+\[
+ \|H\|_2^2\le C(K+\Theta+B)
+                 +C\sqrt{\Theta+B}\,\|H\|_2.
+\]
+Young's inequality absorbs the last factor into the left side.
+Equation~\eqref{eq:lc-interpolation} then proves
+\eqref{eq:lc-refined-hessian}.  In particular no additive multiple
+of $V$ remains.
+\end{proof}
+
+\subsection{Class-square absorption and the weak Bianchi bootstrap}
+
+The determinant and chiral Chern--Weil identities have the following
+useful exact form:
+\begin{equation}\label{eq:lc-chern-identities}
+ B=4\pi^2(p-a^2)+J_+,
+ \qquad
+ 36\pi^2(p-T)=\frac92P+\frac98\Sigma-D.
+\end{equation}
+For the second identity, substitute \eqref{eq:lc-energies} into
+\[
+ 4\pi^2T=\int_M\left(2|W^+|^2+\frac{s^2}{24}
+                              -\frac12|\Ric^\circ|^2\right)d\mu.
+\]
+Consequently, for $Y=(T-a^2)_+$,
+\begin{equation}\label{eq:lc-absorb-B}
+\begin{split}
+ B&\le\frac12P+\frac18\Sigma-\frac19D+J_++4\pi^2Y\\
+  &\le\sqrt6K+C\Theta+4\pi^2Y.
+\end{split}
+\end{equation}
+We used $P\le rV$, $D\ge0$, and
+\eqref{eq:lc-low-and-slack}.  This estimates $B$ by an as yet unknown
+spinor energy; it does not assume that $B$ is small.  Lemma~\ref{lem:lc-hessian}
+now gives
+\begin{equation}\label{eq:lc-hessian-after-square}
+ \|\nabla_A^2\Phi\|_2^2+\|\nabla_A\Phi\|_4^4
+ \le C(K+\Theta+Y).
+\end{equation}
+
+Let $\mathcal W(W_0)$ be the Weyl four-tensor corresponding to the
+endomorphism $W_0$, and put
+$\mathfrak j=\operatorname{div}\mathcal W(W_0)$.  The weak contracted
+Bianchi identity from Section~\ref{sec:intrinsic-calibration}, applied
+to any smooth test tensor $Z$, says
+\begin{equation}\label{eq:lc-weak-bianchi}
+ \left|\int_M\langle\mathfrak j,Z\rangle\,d\mu\right|
+ \le C\bigl(\|W^+-W_0\|_2+\|\Ric+g\|_2\bigr)\|\nabla Z\|_2.
+\end{equation}
+Indeed, split the divergence into the difference from the actual
+self-dual Weyl tensor and its actual divergence.  Integrate the former
+by parts.  The latter is the self-dual projection of a fixed linear
+combination of derivatives of Ricci and scalar curvature.  Since
+$\nabla g=0$ and $s+4=\operatorname{tr}(\Ric+g)$, another integration
+by parts gives precisely the right side of
+\eqref{eq:lc-weak-bianchi}.  No estimate of a derivative of Ricci
+is assumed.
+
+The polynomial $W_0$ has degree four in the bounded spinor.  Since its
+defining algebraic maps are parallel,
+\[
+ |\nabla^2W_0|\le C\bigl(|\nabla_A^2\Phi|+|\nabla_A\Phi|^2\bigr),
+ \qquad |\nabla\mathfrak j|\le C|\nabla^2W_0|.
+\]
+No derivative commutation is required.  Taking $Z=\mathfrak j$ in
+\eqref{eq:lc-weak-bianchi} and using
+\eqref{eq:lc-hessian-after-square} gives
+\begin{equation}\label{eq:lc-bianchi-upper}
+ \|\mathfrak j\|_2^2\le C\sqrt{\Theta(K+\Theta+Y)}.
+\end{equation}
+
+The same test controls $K$ from below.  The polynomial divergence
+contraction in Section~\ref{sec:intrinsic-calibration}, specialized
+to \eqref{eq:lc-reference}, is
+\begin{equation}\label{eq:lc-divergence-exact}
+ |\mathfrak j|^2
+ =\frac14v|\nabla\omega|^2+\frac12v|d\omega|^2
+       -\frac1{12}|dv|^2
+       +\frac12\langle\iota_{\nabla v}\omega,*d\omega\rangle.
+\end{equation}
+It is valid for an arbitrary smooth self-dual form, including at a
+zero.  The last term is bounded in absolute value by
+$\tfrac12\sqrt v\,|dv||d\omega|$.  Young's inequality therefore gives
+\begin{equation}\label{eq:lc-divergence-coercive}
+ \frac14v\bigl(|\nabla\omega|^2+|d\omega|^2\bigr)
+ \le|\mathfrak j|^2+\frac13|dv|^2.
+\end{equation}
+On $\{\rho>1\}$, equations~\eqref{eq:lc-reference} and
+\eqref{eq:lc-hopf} read
+\[
+ |\nabla\omega|^2=3\rho|\nabla_A\Phi|^2
+                         -3|\operatorname{Im}\zeta|^2,
+ \qquad dv=\frac32\rho\,d\rho.
+\]
+Here $v\ge3/4$.  Integrating \eqref{eq:lc-divergence-coercive} and
+using the retained current and amplitude derivatives gives
+\[
+ \int_{\{\rho>1\}}|\nabla_A\Phi|^2\,d\mu
+ \le C\bigl(\|\mathfrak j\|_2^2+\Theta\bigr).
+\]
+Adding the low-amplitude estimate in
+\eqref{eq:lc-low-and-slack} proves
+\begin{equation}\label{eq:lc-bianchi-lower}
+ K\le C\bigl(\Theta+\|\mathfrak j\|_2^2\bigr).
+\end{equation}
+The low-amplitude term is essential: no inverse power of $\rho$ has
+been extended across its zero set.
+
+Combining \eqref{eq:lc-bianchi-upper} and
+\eqref{eq:lc-bianchi-lower}, and separating the three terms under
+the square root, gives
+\[
+ K\le C\Theta+C\sqrt{\Theta K}+C\sqrt{\Theta Y}.
+\]
+Absorbing the middle term by Young's inequality yields
+\begin{equation}\label{eq:lc-K-closed}
+ K\le C\bigl(\Theta+\sqrt{\Theta Y}\bigr).
+\end{equation}
+
+\begin{theorem}[Normalized linear coercivity]\label{thm:lc-normalized}
+Suppose the actual input above satisfies $\kappa\le1$.  For every
+sufficiently small selected allowance $\varepsilon>0$, the same
+weighted solution satisfies
+\begin{equation}\label{eq:lc-shortfall-fields}
+\begin{split}
+ K+\Sigma+(p-T)_+&\le C\bigl(\Theta+\sqrt{\Theta Y}\bigr),\\
+ B+\|\nabla_A^2\Phi\|_2^2+\|\nabla_A\Phi\|_4^4
+       +\int_M|\zeta|^2|\nabla_A\Phi|^2\,d\mu
+       &\le C(\Theta+Y).
+\end{split}
+\end{equation}
+In particular, if $a^2\ge T$, every term displayed is bounded by
+$C\Theta$, and the solution-independent quantities obey
+\begin{equation}\label{eq:lc-normalized-topology}
+ 0\le\Sigma\le C(rV+D),\qquad
+ 0\le p-T\le C_T(rV+D).
+\end{equation}
+Without that square condition they obey
+\begin{equation}\label{eq:lc-normalized-shortfall}
+ \Sigma+(p-T)_+
+ \le C\bigl(rV+D+\sqrt{(rV+D)Y}\bigr).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Equation~\eqref{eq:lc-K-closed} and the slack comparison in
+\eqref{eq:lc-low-and-slack} bound $K$ and $\Sigma$ as stated.
+The second identity in \eqref{eq:lc-chern-identities}, with
+$P\le rV\le\Theta$ and $D\ge0$, gives the bound for $(p-T)_+$.
+Equations~\eqref{eq:lc-absorb-B} and
+\eqref{eq:lc-hessian-after-square}, together with
+$\sqrt{\Theta Y}\le(\Theta+Y)/2$, give the second line.
+Finally $|\zeta|^2\le\rho|\nabla_A\Phi|^2\le4|\nabla_A\Phi|^2$
+controls its mixed term.  If $a^2\ge T$, then
+$p=a^2+\|(a_g)^-\|^2\ge T$, so the second quantity in
+\eqref{eq:lc-normalized-topology} is nonnegative.  Sending the freely
+selected allowance to zero for the fixed metric and fixed class proves
+the solution-independent assertions.  No convergence of the selected
+solutions is required.
+\end{proof}
+
+\begin{remark}\label{rem:lc-square-cost}
+The shortfall has two different effects.  The scalar and topological
+conclusions pay $\sqrt{\Xi Y}$, whereas the determinant, Hessian,
+and mixed fourth-order energies can pay $Y$ itself.  The first line of
+\eqref{eq:lc-shortfall-fields} cannot be substituted for the second
+when estimating the mixed current.  In the square-controlled case,
+the Chern identity $4c_2(S^+)[M]=a^2-T$ also gives
+$c_2(S^+)[M]\le C\Xi$; its positivity is not needed for the analytic
+bootstrap.
+\end{remark}
+
+There is a useful nearby-parameter consequence which preserves the
+same actual solution.  For $2\le\beta\le3$, let
+$\delta=\beta-2$ and $\Xi_\beta=rV+D_\beta$.  The exact decomposition
+from Section~\ref{sec:weighted-pencil} is
+\[
+ D_\beta=A_0+\frac1\beta\int_M(s+\beta w)^2\,d\mu,
+ \qquad A_0\ge0.
+\]
+Writing $z=s+\beta w$ gives
+\[
+ D_2=A_0+\frac12\int_M(z-\delta w)^2\,d\mu
+       \le\beta D_\beta+\delta^2\int_Mw^2\,d\mu.
+\]
+Since $w=(z-(s+4)+4)/\beta$, successive squared triangle
+inequalities imply
+\[
+ \int_Mw^2\,d\mu
+ \le\frac4\beta D_\beta+\frac{16}{\beta^2}rV
+                         +\frac{32}{\beta^2}V
+ \le2D_\beta+4rV+8V.
+\]
+Consequently
+\begin{equation}\label{eq:lc-nearby-pencil}
+ \Xi_2\le5\Xi_\beta+8(\beta-2)^2V.
+\end{equation}
+Whenever $\Xi_2/V\le1$, Theorem~\ref{thm:lc-normalized} applies
+with this bound.  The majorant \eqref{eq:lc-weight} is independent
+of $\beta$, so these inequalities compare deficits of one chosen
+weighted solution.  This observation concerns $\beta$ near $2$.
+
+\subsection{A global relative-defect window}
+
+We next show how the normalized theorem gives an all-metric statement,
+including metrics outside its small-error range.  Suppose that for
+every smooth metric on $M$ one can choose actual input as above with
+\begin{equation}\label{eq:lc-all-metric-input}
+ p\ge A>0,\qquad T_+=A(1-h),\qquad 0<h\le\frac13.
+\end{equation}
+The constant $A$ and the topological parameter $h$ are fixed for the
+manifold.  Write
+\begin{equation}\label{eq:lc-global-notation}
+ U_{\mathrm{top}}=\frac{3\min\{T_+,T_-\}}A,\qquad
+ e=\frac{R}{8\pi^2A},\qquad
+ \E(g)=\inf_{\lambda\ne0}
+       \frac{\int_M|\Ric-\lambda g|^2\,d\mu}{\lambda^2V}.
+\end{equation}
+With $I=\int_Ms\,d\mu$ and
+$L_s=\int_M(s-I/V)^2\,d\mu$, minimizing the quadratic polynomial in
+$1/\lambda$ gives
+\begin{equation}\label{eq:lc-E-formula}
+ \E=4-\frac{I^2}{VR}=\frac{4P+L_s}{R}.
+\end{equation}
+The formula remains valid when $I=0$, in which case the infimum is
+$4$ and need not be attained at a finite target.  The two chiral
+Chern--Weil identities give
+\begin{equation}\label{eq:lc-chiral-E}
+ e(1-\E)\le U_{\mathrm{top}}.
+\end{equation}
+For example,
+$R-4P=24\pi^2T_+-12\int_M|W^+|^2\,d\mu$; the analogous formula
+for $W^-$ and $\E\ge4P/R$ prove \eqref{eq:lc-chiral-E}.
+
+\begin{theorem}[Linear relative-defect window]\label{thm:lc-E-window}
+Under \eqref{eq:lc-all-metric-input}, let
+$y=(T_+-a^2)_+/A$ for the class selected at $g$.  A universal $c_*>0$
+satisfies
+\begin{equation}\label{eq:lc-E-shortfall-window}
+ \E(g)+(U_{\mathrm{top}}-1-h)_+
+       \ge c_*\frac{h^2}{h+y}.
+\end{equation}
+In particular, $a^2\ge T_+$ gives the lower bound $c_*h$.
+More generally, $y\le Lh$ gives $c_*h/(1+L)$.
+\end{theorem}
+
+\begin{proof}
+Set $\Delta=(U_{\mathrm{top}}-1-h)_+$.  If
+$U_{\mathrm{top}}\le0$, equation~\eqref{eq:lc-chiral-E} implies
+$\E\ge1$, which suffices because $h^2/(h+y)\le h\le1/3$.
+Otherwise $0<U_{\mathrm{top}}\le3$.  If $\E+\Delta\ge1/49$,
+then $\E+\Delta\ge3h/49$, again sufficient after fixing a smaller
+universal constant.  It remains to treat
+\begin{equation}\label{eq:lc-small-global-branch}
+ \E+\Delta<\frac1{49}.
+\end{equation}
+
+The sign of the scalar average in this branch follows from the actual
+input.  If $I\ge0$, then on $\{s<0\}$ one has
+$s_-^2\le(s-I/V)^2$.  The negative scalar estimate and
+\eqref{eq:lc-E-formula} imply
+\[
+ 32\pi^2A\le\int_Ms_-^2\,d\mu\le L_s\le R\E,
+ \qquad 4\le e\E.
+\]
+Since $\E<1$, combining this with \eqref{eq:lc-chiral-E} yields
+$4(1-\E)\le U_{\mathrm{top}}\E$, hence
+$\E\ge4/(U_{\mathrm{top}}+4)\ge4/7$, contradicting
+\eqref{eq:lc-small-global-branch}.  Thus $I<0$.
+
+Rescale the metric by the positive constant $-R/I$.  The minimizing
+negative target becomes $-g$, and the rescaled quantities satisfy
+\begin{equation}\label{eq:lc-optimal-rescaling}
+ r=\E,\qquad V=\frac{R}{4-\E}.
+\end{equation}
+The integrals $R,P,D$, the projection $p$, and the class square are
+unchanged by this constant rescaling in dimension four.  Relabel the
+rescaled metric as $g$, and put $z=p/A-1\ge0$.  Direct elimination
+of the Weyl energy gives
+\begin{equation}\label{eq:lc-D-energy}
+ \frac DA=36\pi^2\{e-(1+h)-2z\}.
+\end{equation}
+It follows that $e\ge1+h$, while
+$e\le U_{\mathrm{top}}/(1-\E)\le6$.  More precisely,
+\[
+ e-(1+h)\le\frac{\Delta+(1+h)\E}{1-\E}
+               \le2\Delta+\frac83\E.
+\]
+Therefore
+\begin{equation}\label{eq:lc-global-error-comparison}
+ \frac DA\le72\pi^2\Delta+96\pi^2\E,
+ \qquad
+ \frac{rV}{A}=\frac{8\pi^2e\E}{4-\E}
+                     \le\frac{96}{7}\pi^2\E.
+\end{equation}
+In particular
+\begin{equation}\label{eq:lc-Xi-global}
+ \frac\Xi A\le112\pi^2(\E+\Delta),\qquad
+ \kappa\le49(\E+\Delta)<1.
+\end{equation}
+For the second inequality use
+$A/V=(4-\E)/(8\pi^2e)\le1/(2\pi^2)$ directly in the first
+inequality of \eqref{eq:lc-global-error-comparison}; it gives
+$D/V\le36\Delta+48\E$, and $r=\E$ supplies the last term.
+
+Now $p-T_+=A(h+z)\ge Ah$.  The normalized shortfall estimate
+\eqref{eq:lc-normalized-shortfall}, after the allowance has been
+sent to zero, gives, with $x=\Xi/A$,
+\[
+ h\le C\bigl(x+\sqrt{xy}\bigr).
+\]
+If $x\ge h$, then $x\ge h^2/(h+y)$.  If $x<h$, squaring yields
+$h^2\le2C^2x(x+y)\le2C^2x(h+y)$.  Thus
+$x\ge c h^2/(h+y)$ in either case.  Combining with
+\eqref{eq:lc-Xi-global} proves the theorem on the small branch.
+The two preceding branches complete its all-metric quantifier.
+\end{proof}
+
+\subsection{Conformal transfer without scalar variance}
+
+\begin{theorem}[Scale-invariant scalar and topological coercivity]\label{thm:lc-scalar-free}
+For every metric with the actual conformal supply specified above,
+without a small-error assumption, there are universal constants
+$C,C_T>0$ such that
+\begin{equation}\label{eq:lc-scalar-free}
+ \Sigma\le C\bigl(P+D+\sqrt{(P+D)Y}\bigr),\qquad
+ (p-T)_+\le C_T\bigl(P+D+\sqrt{(P+D)Y}\bigr).
+\end{equation}
+If $a^2\ge T$, this reduces to
+\begin{equation}\label{eq:lc-scalar-free-square}
+ \Sigma\le C(P+D),\qquad p-T\le C_T(P+D).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The conformal class has negative Yamabe constant.  Otherwise its
+constant-scalar-curvature representative would have $s\ge0$.  For
+the actual ordinary monopole supplied on that representative, the
+integrated spinor equation would force the spinor and its self-dual
+curvature to vanish.  This contradicts $p>0$.  Let $\widehat g$
+be the negative Yamabe representative rescaled to
+$\widehat s=-4$.  The same Spin$^c$ structure is available there.
+The Hodge star on two-forms is conformally invariant in dimension
+four, so the harmonic decomposition of $a$, the value of $p$, and
+$Y$ are unchanged.
+
+Write $g=u^2\widehat g$, $u>0$, and use the nonnegative Laplacian
+$\widehat\Delta=d^*d$.  The scalar transformation law is
+$s_g u^3=6\widehat\Delta u-4u$.  Thus
+\[
+ S_2=16\widehat V-48\int_Mu^{-1}\widehat\Delta u\,d\widehat\mu
+             +36\int_M(u^{-1}\widehat\Delta u)^2\,d\widehat\mu.
+\]
+Since
+$\int_Mu^{-1}\widehat\Delta u\,d\widehat\mu
+ =-\int_Mu^{-2}|du|_{\widehat g}^2\,d\widehat\mu$, it follows that
+\begin{equation}\label{eq:lc-conformal-delta}
+ \delta:=S_2-\widehat S_2
+ =48\int_Mu^{-2}|du|_{\widehat g}^2\,d\widehat\mu
+  +36\int_M(u^{-1}\widehat\Delta u)^2\,d\widehat\mu\ge0.
+\end{equation}
+The integrated Weyl energy is conformally invariant.  Chiral
+Chern--Weil and \eqref{eq:lc-energies} therefore give the exact
+comparisons
+\begin{equation}\label{eq:lc-conformal-energies}
+ P-\widehat P=\frac\delta{12},\qquad
+ D-\widehat D=\frac32\delta,\qquad
+ \Sigma-\widehat\Sigma=\delta.
+\end{equation}
+These are energy identities and do not require a small conformal factor.
+
+Put $\Pi=P+D$ and $\widehat\Pi=\widehat P+\widehat D$.
+On $\widehat g$, the negative target residual satisfies
+$\widehat r\widehat V=\widehat P$.  If
+$\widehat\Pi/\widehat V\le1$, Theorem~\ref{thm:lc-normalized}
+and its allowance limit give
+\[
+ \widehat\Sigma\le C_0\bigl(\widehat\Pi+
+                                      \sqrt{\widehat\Pi Y}\bigr).
+\]
+If $\widehat\Pi/\widehat V>1$, then instead
+\[
+ 0\le\widehat\Sigma=16\widehat V-32\pi^2p
+                  \le16\widehat V<16\widehat\Pi.
+\]
+The same bound holds in both branches after enlarging the universal
+constant.  Equation~\eqref{eq:lc-conformal-energies}
+gives
+$\Pi=\widehat\Pi+(19/12)\delta$.  Hence
+$\widehat\Pi\le\Pi$ and $\delta\le12\Pi/19$, and the first
+inequality in \eqref{eq:lc-scalar-free} follows from
+$\Sigma=\widehat\Sigma+\delta$.
+
+Finally, the exact topological identity in
+\eqref{eq:lc-chern-identities} gives
+\[
+ 36\pi^2(p-T)\le\frac92P+\frac98\Sigma.
+\]
+The right side is nonnegative; bounding it by the first inequality
+proves the assertion for $(p-T)_+$.  If $a^2\ge T$, then $Y=0$
+and $p\ge a^2\ge T$, proving \eqref{eq:lc-scalar-free-square}.
+\end{proof}
+
+The conclusion is about the original metric's curvature energies.
+The proof neither preserves a pointwise Ricci bound under the
+conformal change nor identifies the hatted spinor with a weighted
+spinor on the original metric.
+
+\subsection{The lower energy wall and the traceless-Ricci window}
+
+For a metric with $p\ge A>0$ and $T=A(1-h)$, where $h>0$, define
+\begin{equation}\label{eq:lc-J-definition}
+ \J(g)=\frac{4P}{R},\qquad z=\frac pA-1\ge0,
+ \qquad y=\frac YA.
+\end{equation}
+Then $0\le\J\le4$ and $\J\le\E$.  Equations
+\eqref{eq:lc-D-energy} and \eqref{eq:lc-J-definition} give
+\begin{equation}\label{eq:lc-Pi-reduction}
+ \frac PA=2\pi^2e\J,\qquad
+ \frac{P+D}{A}
+   =36\pi^2\left[e\left(1+\frac\J{18}\right)-1-h-2z\right].
+\end{equation}
+In particular $D\ge0$ gives $e\ge1+h+2z$.
+
+\begin{theorem}[Lower Ricci-energy wall]\label{thm:lc-energy-wall}
+If $a^2\ge T_+$, there is a universal $c_0>0$ such that
+\begin{equation}\label{eq:lc-wall-square}
+ e\left(1+\frac\J{18}\right)
+          \ge1+(1+c_0)h+(2+c_0)z.
+\end{equation}
+For an arbitrary square shortfall there is a universal $c_s>0$ such that
+\begin{equation}\label{eq:lc-wall-shortfall}
+ e\left(1+\frac\J{18}\right)
+    \ge1+h+2z+c_s\frac{(h+z)^2}{h+z+y}.
+\end{equation}
+These assertions require $h>0$, but no upper bound on $h$ or $e$ and
+no upper energy budget from the opposite chirality.
+\end{theorem}
+
+\begin{proof}
+In the square-controlled case,
+$A(h+z)=p-T\le C_T(P+D)$ by
+Theorem~\ref{thm:lc-scalar-free}.  Substitute
+\eqref{eq:lc-Pi-reduction} and take
+$c_0=(36\pi^2C_T)^{-1}$.  For the general case set
+$x=(P+D)/A$ and $v_0=h+z>0$.  The same theorem gives
+$v_0\le C_T(x+\sqrt{xy})$.  If $x\ge v_0$ then
+$x\ge v_0^2/(v_0+y)$.  Otherwise, squaring shows
+$v_0^2\le2C_T^2x(x+y)\le2C_T^2x(v_0+y)$.
+Thus $x\ge c v_0^2/(v_0+y)$ in both cases.  Substitution into
+\eqref{eq:lc-Pi-reduction} proves the claim after dividing the
+constant by $36\pi^2$.
+\end{proof}
+
+In the range $0<h\le1/3$, equation~\eqref{eq:lc-wall-square} also
+implies $\J+(e-1-h)\ge ch$.  Indeed, if $e-1-h\ge h/2$ this is
+immediate.  Otherwise $e<1+3h/2\le3/2$, and
+$e-1-h+\J/12\ge c_0h$ follows by dropping $z$.
+For an Einstein metric allowed by the input one has $\J=0$, so the
+same lower wall gives $e\ge1+(1+c_0)h$.  Ricci-flat metrics have
+already been excluded by \eqref{eq:lc-nonnegative}.
+
+The two chiral identities now retain the stronger upper budget
+\begin{equation}\label{eq:lc-chiral-J}
+ e(1-\J)\le U_{\mathrm{top}}.
+\end{equation}
+No scalar variance has been discarded in this inequality.
+
+\begin{theorem}[Traceless-Ricci linear window]\label{thm:linear-window}
+Under \eqref{eq:lc-all-metric-input} and $a^2\ge T_+$, put
+$L_h=1+(1+c_0)h$.  If $U_{\mathrm{top}}>0$, then
+\begin{equation}\label{eq:lc-J-explicit}
+ \J\ge\frac{(L_h-U_{\mathrm{top}})_+}
+                    {L_h+U_{\mathrm{top}}/18}.
+\end{equation}
+If $U_{\mathrm{top}}\le0$, then $\J\ge1$.  In particular,
+\begin{equation}\label{eq:lc-J-linear}
+ \J+(U_{\mathrm{top}}-1-h)_+\ge ch.
+\end{equation}
+Without the square condition the corresponding bound is
+\begin{equation}\label{eq:lc-J-shortfall}
+ \J+(U_{\mathrm{top}}-1-h)_+
+       \ge c\frac{h^2}{h+y}.
+\end{equation}
+Every assertion remains valid with $\E$ in place of $\J$.
+\end{theorem}
+
+\begin{proof}
+Suppose first that $U_{\mathrm{top}}>0$ and $\J<1$.
+Equations~\eqref{eq:lc-wall-square} and \eqref{eq:lc-chiral-J}
+give
+\[
+ L_h(1-\J)\le U_{\mathrm{top}}(1+\J/18).
+\]
+Rearrangement proves \eqref{eq:lc-J-explicit}.  For $\J\ge1$
+its right side is at most $1$, so the assertion still holds.
+If $U_{\mathrm{top}}\le0$, equation~\eqref{eq:lc-chiral-J}
+and $e>0$ directly give $\J\ge1$.
+
+For the linear bound put $\Delta=(U_{\mathrm{top}}-1-h)_+$.
+If $\Delta\ge c_0h/2$, the result follows from that term alone.
+Otherwise $L_h-U_{\mathrm{top}}\ge c_0h/2$.  Since
+$0<U_{\mathrm{top}}\le3$ and $h\le1/3$, the denominator in
+\eqref{eq:lc-J-explicit} is at most $3/2+c_0/3$.
+This proves \eqref{eq:lc-J-linear} in the remaining branch.
+
+For a shortfall, the function $v_0\mapsto v_0^2/(v_0+y)$ is
+nondecreasing for $v_0>0$.  Dropping $z$ in
+\eqref{eq:lc-wall-shortfall} therefore gives the lower wall
+$1+h+c_s h^2/(h+y)$.  Repeat the preceding argument with
+$c_0h$ replaced by $c_s h^2/(h+y)$; this quantity is at most
+$c_sh$, so the denominator remains uniformly bounded.
+This proves \eqref{eq:lc-J-shortfall}, including the branches
+$\J\ge1$ and $U_{\mathrm{top}}\le0$.  Finally $\E\ge\J$
+proves all relative-defect versions.
+\end{proof}
+
+\subsection{The meaning of linear order}
+
+The sharpness consequence separates the analytic lower bound from its
+construction input.  Suppose a sequence of actual supplied manifolds has
+$h_j\to0$, $a^2\ge T_+$ for its selected classes,
+$U_{\mathrm{top},j}=1+h_j+O(h_j^2)$, and independently constructed
+metrics with
+$\inf_g\E(g)\le4h_j/(1+h_j)$.  Theorem~\ref{thm:linear-window}
+then gives, for all sufficiently large $j$,
+\begin{equation}\label{eq:lc-sharp-order}
+ c_1h_j\le\inf_g\J(g)=\inf_g\E(g)
+                     \le\frac{4h_j}{1+h_j}.
+\end{equation}
+Indeed the $O(h_j^2)$ chiral allowance is absorbed in half of the
+linear lower bound, and the upper bound is eventually less than $1$,
+so the conformal-infimum reduction in
+Section~\ref{sec:variational-geometry} identifies the two infima.
+The construction used for the upper bound is logically separate
+from the coercivity proof.  Equation~\eqref{eq:lc-sharp-order}
+determines the order and does not determine the optimal leading
+coefficient over all metrics.  The estimate also concerns the
+K\"ahler calibration $\beta=2$; no nondegenerate estimate at the
+zero-Weyl end of the pencil is asserted here.

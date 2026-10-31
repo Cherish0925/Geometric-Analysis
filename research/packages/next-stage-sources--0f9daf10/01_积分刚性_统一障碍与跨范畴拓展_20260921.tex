@@ -1,0 +1,544 @@
+% !TeX program = xelatex
+% Standalone: compile twice with XeLaTeX. No external .bib, image or input file required.
+\documentclass[UTF8,fontset=fandol,zihao=-4]{ctexart}
+\usepackage[a4paper,top=24mm,bottom=25mm,left=24mm,right=24mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,esint,bm,mathrsfs}
+\usepackage{booktabs,longtable,array,enumitem,xcolor,fancyhdr,microtype,xurl}
+\usepackage[unicode,colorlinks=true,linkcolor=blue!45!black,citecolor=blue!40!black,urlcolor=blue!40!black]{hyperref}
+\DeclareMathOperator{\Ric}{Ric}\DeclareMathOperator{\Rm}{Rm}
+\DeclareMathOperator{\Vol}{Vol}\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\inj}{inj}\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Id}{Id}\DeclareMathOperator{\Hess}{Hess}
+\DeclareMathOperator{\Div}{div}\DeclareMathOperator{\Met}{Met}
+\DeclareMathOperator{\Diff}{Diff}\DeclareMathOperator{\Isom}{Isom}
+\DeclareMathOperator{\dist}{dist}\DeclareMathOperator{\Orb}{Orb}
+\DeclareMathOperator{\sech}{sech}\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Hom}{Hom}\DeclareMathOperator{\Sym}{Sym}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}\newcommand{\Z}{\mathbb Z}
+\newcommand{\CP}{\mathbb{CP}}\newcommand{\cE}{\mathcal E}\newcommand{\cF}{\mathcal F}
+\newcommand{\dd}{\,d\mu_g}\newcommand{\op}{\mathrm{op}}
+\newcommand{\HS}{\mathrm{HS}}\newcommand{\TT}{\mathrm{TT}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\avg}[1]{\fint_M #1\,d\mu_g}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newtheoremstyle{cn}{7pt}{7pt}{\normalfont}{0pt}{\bfseries}{。}{.5em}{}
+\theoremstyle{cn}
+\newtheorem{result}{原稿结果}[section]
+\newtheorem{deduction}[result]{直接推论}
+\newtheorem{lemma}[result]{引理}
+\newtheorem{criterion}[result]{条件性准则}
+\newtheorem{problem}[result]{研究问题}
+\renewcommand{\proofname}{证明}
+\newcommand{\src}[2]{\par\smallskip{\small\textcolor{black!68}{原始证明入口：\nolinkurl{#1}，#2。}}\par\smallskip}
+\newcommand{\newidea}{\par\noindent\textbf{进一步研究（尚待证明）。}}
+\setlength{\parskip}{.3em}\setlength{\emergencystretch}{3em}
+\linespread{1.10}\allowdisplaybreaks[3]
+\setlist{nosep,leftmargin=2em,topsep=4pt}
+\setcounter{tocdepth}{2}\numberwithin{equation}{section}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small Yau 26：十二轮后的深化与开放研究}
+\fancyhead[R]{\small 主线一 · 刚性}\fancyfoot[C]{\thepage}
+\hypersetup{pdftitle={积分Ricci刚性：统一障碍与跨范畴拓展},pdfauthor={Qiushi研究资料综合稿}}
+\title{积分Ricci刚性：统一障碍与跨范畴拓展\\[3mm]\large 旧Skill与十二轮研究的整合、关键推导与开放拓展}
+\author{Qiushi Yau26研究续接稿}
+\date{资料与外部检索截至2026年9月21日}
+\begin{document}\maketitle
+\begin{abstract}
+
+本稿把第一主线从旧的“精确Einstein拓扑间隙”更新为十二轮已经写出证明的“积分Ricci统一间隙”，同时保留旧的局部几何、近等号和退化分析作为互补工具。核心是实际重标度单极子、有界旋量的二阶估计、光滑Weyl模型与弱Bianchi自测试；指定吹起族只是应用之一，第5轮的special-monopole抽象化也已纳入。研究继续面向原题：扩大实际拓扑覆盖、理解负平方代价、寻找非单极子或正号机制，并将刚性与实际近似构造在同一对象上比较。本文给出精确来源、关键演算、可证伪的拓展问题和适用边界，不把研究目标当成既得定理，也不把当前方法设为唯一道路。
+
+\end{abstract}\begingroup\small\setlength{\parskip}{0pt}\tableofcontents\endgroup\newpage
+
+\section{共同问题、量词与本稿的使用方式}
+\subsection{最高目标不由当前三个方向限定}
+以闭、连通、光滑实流形为研究范畴，本文采用项目已经固定的Yau26工作命题：对每个$n\ge2$，是否存在仅依赖$n$的实常数$c_n<C_n$，使任何承载
+\[
+ c_ng\le\Ric_g\le C_ng
+\]
+的$n$维流形，都承载某个光滑正定Einstein度量$h$，即$\Ric_h=\lambda h$？输出$h$无需接近$g$，无需保持其Ricci符号、复结构、纤维化或对称性。1982年题页与重编本的逐字对应仍依原资料的来源核对状态；本稿不以历史编号替代上述准确命题。
+
+设
+\[
+ \delta_\sigma(g)=\norm{g^{-1}\Ric_g-\sigma\Id}_{L^\infty,\op},\qquad
+ e_\sigma(M)=\inf_{g\in\Met(M)}\delta_\sigma(g),\quad\sigma=\pm1.
+\]
+记$P_n^\sigma$为该符号下存在维数一致的正阈值，足以推出同一光滑流形的Einstein存在性。则
+\begin{equation}\label{eq:Q}
+ Q_n\ \Longleftrightarrow\ P_n^+\lor P_n^-.
+\end{equation}
+理由是常数缩放$\widehat g=ag$保持协变Ricci不变，将Ricci端同态除以$a$；任一非退化区间都有一个非零内点及其同号邻域。反向直接选以$\pm1$为中心的小区间即可。
+
+因此，全维肯定解需要每个维数至少一支成立；完整否定只需在同一个维数击败两支，允许使用不同流形或变化拓扑的序列。一个固定$M$上$e_\sigma(M)=0$加上全部Einstein不存在性，就给出该分支反例。高维机制缺失是全维肯定证明的缺口，不是固定维数完整否定还必须通过的额外关卡。
+
+\subsection{三种研究层次必须允许相互转化}
+积分刚性负责寻找不依赖退化控制的障碍；构造负责在真正光滑对象上实现原题范数下的小残差；全局判定负责决定同一对象上的全部精确输出。它们是当前研究重心，不是固定角色，更不是对未来方法的排他规定。一个新的存在性论证、反例、等价归约或不同不变量，只要能准确返回\eqref{eq:Q}，都应进入研究。
+
+本稿的\textbf{“原稿结果”}重述上传资料中的结论，完整假设与原证明入口一并保留；不因本次排版而获得额外正确性或首创性认证。\textbf{“直接推论／条件性准则”}给出在明确前提下可直接检查的演算。\textbf{“研究问题”}是本稿新增或深化的探索目标，尚未被证明。近期外部文献是有适用条件的输入或研究线索，不与项目成果混计。
+
+\subsection{规范、尺度和闭／非紧边界}
+四维记$s=\tr_g\Ric$、$E^\circ=\Ric-sg/4$。$W^\pm$取在$\Lambda^2_\pm$上的Hilbert--Schmidt算子范数，$\Rm_{\rm full}$取四指标张量范数：
+\begin{align}
+8\pi^2\chi&=\int_M\left(|W^+|^2+|W^-|^2+\frac{s^2}{24}-\frac{|E^\circ|^2}{2}\right)\dd,\label{eq:CGB}\\
+12\pi^2\tau&=\int_M(|W^+|^2-|W^-|^2)\dd,\\
+\int_M|\Rm_{\rm full}|^2\dd&=32\pi^2\chi+4\int_M|E^\circ|^2\dd.\label{eq:fullenergy}
+\end{align}
+$\Ric\approx-3g$时令$\widehat g=3g$，则$\delta_-(\widehat g)=\norm{g^{-1}\Ric+3\Id}_\infty/3$。EH的$12\pi^2$曲率能量采用曲率算子规范；四指标规范为$48\pi^2$。不得把$L^p$小量、加权小量或小支持体积替换成全域无权上确界；非紧完备解也不是闭流形反例。
+
+\section{新的科学中心：哪些拓扑连弱积分Einstein逼近也不容许？}
+\subsection{十二轮究竟改变了什么}
+旧Skill中最成熟的是：在统一monopole投影下界与相对Euler预算下，精确Einstein几何与临界拓扑值保持正距离。证明依靠精确Einstein的允许塌缩正则性、固定尺度展开及禁止曲率谱。一般近Einstein情形仍有局部片或退化流的条件。
+
+第3--4轮换了证明架构：不要求先把坏度量平滑成统一受控几何，而是在原度量上制造不可兼容的积分信息。第5轮已经把它推广到实际special monopole类的极化容量。因此“先尝试抽象化”不再是未经开始的未来计划；真正的下一步是检查现有抽象的精确范围，并突破尚被负平方、真实方程可解性或四维结构限制的部分。
+
+这条线不是一项普遍Einstein存在性定理。它首先证明一些拓扑不可能产生某种近似输入，因此支持原题的\emph{排除候选}一侧；只有扩大到全部潜在无Einstein对象，或与独立存在性分类结合，才可能通向$P_n^\sigma$。
+\src{proofs/round3_rigidity.md; proofs/round4_rigidity.md; proofs/round5_rigidity.md}{各稿主定理与适用范围}
+
+\subsection{相对积分缺陷的准确含义}
+令$V=\Vol_g(M)$、$R_2=\int|\Ric|^2\dd$、$S=\int s\dd$。定义
+\begin{equation}\label{eq:energy}
+ \cE(g)=\inf_{\lambda\in\R\setminus\{0\}}
+ \frac{\int_M|\Ric-\lambda g|^2\dd}{\lambda^2V}.
+\end{equation}
+\begin{deduction}[有符号常数的精确优化]
+当$R_2>0$时，
+\begin{align}
+ \cE(g)&=4-\frac{S^2}{VR_2}\label{eq:fraction}\\
+ &=\frac{4\int|E^\circ|^2\dd+\int(s-\bar s)^2\dd}{R_2},\quad \bar s=S/V.
+\end{align}
+若$S\ne0$，极小常数为$\lambda=R_2/S$；若$S=0$，下确界为4，未必在有限$\lambda$处达到。Ricci-flat度量的原定义\eqref{eq:energy}也等于4，不能用分母为零的\eqref{eq:fraction}，更不能把$\cE=0$说成对所有Einstein度量的判据。
+\end{deduction}
+\begin{proof}
+展开分子，令$t=1/\lambda$，得到$R_2t^2/V-2St/V+4$。配方求极小，再用$R_2=\int|E^\circ|^2+\frac14\int s^2$即得。非Ricci-flat情形的零缺陷恰为非零Einstein常数；本稿实际正平方monopole范畴排除了非负标量度量，故Ricci-flat例外不会被误用。
+\end{proof}
+
+这不是绝对Ricci能量的下界。LeBrun的$\inf\int|\Ric|^2$与\eqref{eq:energy}度量的是不同问题：前者控制总量，后者控制其中不能解释为一个全局常数倍度量的比例\cite{LeBrun01}。总量有正下界，不推出相对非Einstein部分有正比例。
+
+\section{作为起点的最强原稿定理}
+\subsection{实际类的积分校准定理}
+在闭定向光滑四流形上设$E=\Ric+g$、$e=s+4$，取
+\[
+ \mathcal O_0=\Orb\operatorname{diag}(-1/6,1/12,1/12),\quad
+ F=\dist_{\HS}(W^+,\mathcal O_0)^2,
+ \quad\mathcal C=\int(|E|^2+F)\dd.
+\]
+这里$\operatorname{diag}$仅表示对角算子，轨道按定向正交基变化；距离不是到一个预先存在的全局特征框架。设$a$为\emph{实际}monopole类，对每个光滑正权重具有所需重标度SW解，$p=(a^+)^2>0$，并令
+\begin{align}
+ q&=-s+\sqrt6|W^+|,\quad q_+=\max(q,0),\\
+ \Delta_+&=\int q_+^2\dd-72\pi^2p\ge0,\\
+ \kappa&=\frac{\mathcal C+\Delta_+}{V},\qquad
+ B_a=\frac{(-a^2)_+}{V}.
+\end{align}
+\begin{result}[第4轮积分校准间隙]\label{res:core}
+存在普适$c>0$，使
+\begin{equation}\label{eq:coregap}
+ (1+B_a)\kappa\ge c.
+\end{equation}
+不添加点态曲率、标量符号、Ricci下界、体积、直径、非塌缩、Sobolev或曲率导数假设。实际方程的可解性和$B_a$因子是结论的一部分。
+\end{result}
+最低特征值$w$满足$w\ge-\sqrt{2/3}|W^+|$。实际monopole的有符号谱估计
+$\int(2s/3+2w)_-^2\ge32\pi^2p$给$\Delta_+\ge0$，不能删掉负部记号后任意扩展标量符号。
+\src{proofs/round4_rigidity.md}{§1；谱输入见round3\_monopole\_input.md §6}
+
+\subsection{从抽象校准返回拓扑与原题}
+记$T=2\chi+3\tau$。若每个度量可选实际类使$(a^+)^2\ge A>0$，且类的平方满足原稿规定的统一下界，那么近等号预算把$\kappa$控制在
+\[
+ r+d_T,\qquad r=\fint_M|\Ric+g|^2\dd,\quad
+ d_T=(T/A-2/3)_+
+\]
+的常数倍以内，负平方因子也由相同预算控制。于是得到族一致的$r+d_T$正间隙，再与正号积分障碍合并并优化常数$\lambda$。
+
+\begin{result}[吹起族的全符号积分间隙]
+设$X$为闭极小一般型复曲面，$b_+(X)>1$，$A=c_1^2(X)>0$，$M=X\#k\overline{\CP}^{\,2}$。原稿给出与$X,k,g$无关的$c_*>0$，使
+\begin{equation}\label{eq:blowupgap}
+ \boxed{\cE(g)+(1/3-k/A)_+\ge c_* .}
+\end{equation}
+常数不是已算出的最佳值，也不是对所有四流形的常数。
+\end{result}
+\begin{deduction}[点态版本已经是推论，而非旧待办]
+对任意$\sigma=\pm1$，$\cE(g)\le4\delta_\sigma(g)^2$。因此在\eqref{eq:blowupgap}范围内
+\[
+ 4\delta_\sigma(g)^2+d\ge c_*,\qquad d=(1/3-k/A)_+.
+\]
+例如$d\le c_*/2$时，$\delta_\sigma(g)\ge\sqrt{c_*/8}$。精确Einstein情形则有$d\ge c_*$；为使用闭的不存在性带，可取较小宽度$c_*/2$，避免将严格与非严格端点混写。
+\end{deduction}
+这是指定临界带的真实近似输入排除。它没有证明原来假设的(SC)，而是\emph{绕过了对(SC)的依赖}。
+\src{proofs/round4_all_sign_gap.md; proofs/round3_joint_gap.md}{全符号优化与吹起类选择}
+
+\section{证明核心之一：有界截面如何代替统一几何正则性}
+\subsection{协变分部积分与二阶控制}
+令$u$为Hermitian丛的光滑有界截面，$K=\|u\|_\infty$，连接曲率为$\mathscr F_{ij}$，其范数按所有有序指标求和。闭性、度量相容性和分部积分给
+\begin{equation}\label{eq:interp}
+ \|\nabla u\|_4^2\le4K\|\nabla^2u\|_2.
+\end{equation}
+这是一项依赖有界振幅的插值式，不是在任意退化流形上偷偷调用统一Sobolev常数。相应Hessian恒等式为
+\begin{align}
+\int|\nabla^2u|^2={}&\int|\nabla^*\nabla u|^2
+-\int\Ric_{ij}\langle\nabla_i u,\nabla_j u\rangle\notag\\
+&+\sum_{ij}\int\langle\mathscr F_{ij}\nabla_j u,\nabla_i u\rangle
++\frac12\sum_{ij}\int|\mathscr F_{ij}u|^2 .\label{eq:hessian}
+\end{align}
+Hermitian内积取实部。Hölder、\eqref{eq:interp}与Young不等式得到
+\begin{equation}\label{eq:Hbound}
+ \|\nabla^2u\|_2^2\le
+ 2\|\nabla^*\nabla u\|_2^2+
+ 32K^2\|\Ric\|_2^2+33K^2\|\mathscr F\|_2^2.
+\end{equation}
+真正的问题随之改变：不是先控制整个几何，而是产生一个\emph{既有统一振幅、又保留拓扑近等号信息}的截面。
+\src{proofs/round3_rigidity.md; proofs/round4_rigidity.md}{丛Hessian恒等式与§2的纯积分估计}
+
+\subsection{为什么只用正旋量连接的曲率}
+正旋量连接的曲率作用按四维表示分解读取$W^+$、标量、无迹Ricci的相应块及行列式连接。不能要求一个原证明未控制的$W^-$预算，也不能把“正旋量不直接看到某一块”说成整个几何的$W^-$不重要。
+
+重标度方程控制行列式曲率的自对偶部分；Chern--Weil用$a^2$恢复反自对偶能量。由此出现$(-a^2)_+$，而不是可以任意删去的技术常数。\eqref{eq:Hbound}的真正使用范围由\emph{实际类、其平方与方程}共同决定。这正是后续扩大拓扑族时首先应检查的量，而不是只看$\alpha^2$是否正。
+
+\section{证明核心之二：权重改变不能丢失近等号信息}
+\subsection{截断的设计与代价}
+设
+\[
+ Q=\max(q,3),\qquad f_0=\max\{\sqrt Q,(-s)_+/4\}.
+\]
+对每个固定度量取光滑上逼近$f_j\ge f_0$，均匀趋于$f_0$，求解
+\[
+ D_A\Phi=0,\quad -iF_A^+=f_j\sigma(\Phi),\quad
+ \psi=2\sqrt2\sigma(\Phi),\quad \rho=|\Phi|^2=|\psi|,
+ \quad u=3\rho/2.
+\]
+最大值原理给$0\le\rho\le4$。对应重标度存在性来自实际monopole的共形变换，完整外部条件见LeBrun\cite{LeBrunConvex}。光滑逼近先在固定$(g,a)$上完成，再沿反证序列对角选择；没有一项推理需要$f_j$导数跨序列一致有界。
+
+权重的两个代价是
+\[
+0\le Q^2-q_+^2\le9(s+4)^2,\qquad
+0\le f_0^2-Q\le\frac9{16}(s+4)^2.
+\]
+所以追加的振幅控制只消耗已经允许的标量$L^2$误差。若直接使用$\int f_j^4$，就可能需要不具备的四次可积控制，原稿的设计恰好避免它。
+\src{proofs/round4_rigidity.md}{§3}
+
+\subsection{实际矩与理想矩分开记账}
+四个非负缺陷分别控制振幅导数、二次旋量映射、Hodge误差和最低特征线误差：
+\begin{align}
+D_{\rm amp}&=2\int|d\rho|^2,\qquad
+D_{\rm quad}=\int(4\rho|\nabla_A\Phi|^2-|\nabla\psi|^2),\notag\\
+D_H&=\int(|d\psi|^2+|d^*\psi|^2),\notag\\
+D_{\rm eig}&=2\int(\langle W^+\psi,\psi\rangle+\sqrt{2/3}|W^+|\rho^2),\quad
+D_0=\sum D_\bullet.
+\end{align}
+精确的Weitzenböck相减为
+\[
+ \frac{27}{8}D_0=\int(qu^2-f_j u^3).
+\]
+理想矩$C=\int Qu^2$、$Z=\int\sqrt Q\,u^3$、$\mathcal E_Q=\int Q^2$满足
+\[
+ C-Z\ge27D_0/8,
+\]
+而拓扑下界真正施加于
+\[
+ C_{\rm act}=\int f_j^2u^2=18\|F_A^+\|_2^2\ge72\pi^2p.
+\]
+必须保留
+\[
+0\le C_{\rm act}-C\le\frac{81}{4}\int(s+4)^2+o(1).
+\]
+Hölder后得到，令$S_0=\Delta_++117\int(s+4)^2/4$，
+\[
+ D_0\le4S_0/27+o(1),\qquad
+ \int Q(u-\sqrt Q)^2\le S_0+o(1).
+\]
+这些不是只证明“某个积分近饱和”：它们具体指明了哪些导数、振幅和特征线误差可以同时变小。
+\src{proofs/round4_rigidity.md}{§4；四缺陷的原始推导见其所引单极子输入稿}
+
+\section{证明核心之三：光滑Weyl模型与弱Bianchi自测试}
+\subsection{不在旋量零点处除以振幅}
+用全局光滑多项式
+\begin{equation}\label{eq:Apsi}
+ A_\psi=\frac{\rho^2}{24}\Id-\frac18\psi\otimes\psi
+\end{equation}
+代替可能不光滑的最低Weyl特征线。当$\rho^2=2$时，它的谱正是$(-1/6,1/12,1/12)$。在$\rho=0$处它仍光滑，避免了先假设旋量无零点的循环。
+
+记$R=W^+-A_\psi$。原稿从振幅、谱与近等号误差得
+\[
+ \|R\|_2^2\le2\Delta_++8500\mathcal C+o(1).
+\]
+数值8500是足够常数，不是最佳常数或成果大小的指标。更重要的是它只用当前误差账本。
+
+\subsection{两个不兼容的散度能量极限}
+令$J_\psi=\Div W(A_\psi)$。\eqref{eq:Hbound}及正旋量曲率预算使$\nabla J_\psi$可在$L^2$中控制。由真实曲率的缩并Bianchi恒等式，任意合适测试张量$T$满足
+\[
+ \left|\int\langle J_\psi,T\rangle\right|
+ \le C(\|E\|_2+\|R\|_2)\|\nabla T\|_2.
+\]
+取$T=J_\psi$是\emph{二阶控制的结论}，不是从小Ricci残差直接假设导数小。得到
+\begin{equation}\label{eq:Jup}
+ \fint|J_\psi|^2\le C\sqrt\kappa\sqrt{1+\kappa+B_a}.
+\end{equation}
+另一方面，原稿的加权Hodge恒等式保留振幅导数和混合项：
+\begin{align}
+\int|J_\psi|^2={}&-\frac1{64}\int\rho^2B_\psi
++\frac1{16}\int\rho^2|d\psi|^2
+-\frac5{96}\int\rho^2|d\rho|^2\notag\\
+&+\frac18\int\rho\langle\iota_{\nabla\rho}\psi,*d\psi\rangle,\label{eq:Jhod}
+\end{align}
+其中$B_\psi=(s/3)\rho^2-2\langle W^+\psi,\psi\rangle$。理想处$s=-4$、$\rho^2=2$、$R=0$，曲率项的平均值为$1/16$。其余项由四缺陷控制，给
+\begin{equation}\label{eq:Jlow}
+ \fint|J_\psi|^2\ge\frac1{16}-C(\sqrt\kappa+\kappa).
+\end{equation}
+若$(1+B_a)\kappa\to0$，\eqref{eq:Jup}趋零而\eqref{eq:Jlow}趋于$1/16$，矛盾。这完成\eqref{eq:coregap}的逻辑闭环。
+\src{proofs/round4_rigidity.md}{§5--7；round3\_monopole\_input.md的加权Hodge附录}
+
+\subsection{一个可以迁移的条件性形式，而非已证的普适范式}
+\begin{criterion}[保留正量的自测试准则]\label{crit:selftest}
+若一类对象有非负误差$\kappa$、代价$B\ge0$及可合法测试的量$J$，满足
+\[
+ \fint|J|^2\le C_1\sqrt\kappa\sqrt{1+\kappa+B},\quad
+ \fint|J|^2\ge m-C_2(\sqrt\kappa+\kappa),\quad m>0,
+\]
+则存在只依赖$m,C_1,C_2$的$c>0$，使$(1+B)\kappa\ge c$。
+\end{criterion}
+\begin{proof}
+否则取$(1+B_i)\kappa_i\to0$，便有$\kappa_i\to0$及$\kappa_i(1+\kappa_i+B_i)\to0$；上下界趋向0与$m$，矛盾。有效常数可选足够小$c$，使上界不超过$m/4$、下界至少$m/2$。
+\end{proof}
+这个整理本身只是初等逻辑。新的科研任务不是给准则起名字，而是在其他实际方程中找到$J$、正量$m$、真实可解性及足够二阶控制。少任何一项都不能移植。
+
+\section{已完成的抽象化与尚未控制的拓扑范围}
+\subsection{special类与普通类不是同一个集合}
+原稿使用special monopole类满足$a^2\ge T$。非零一般位置SW/Bauer--Furuta数据可在相应文献条件下供应这类输入\cite{Ishida,IL,Kotschick}，但“对每个度量有某个普通monopole解”不能未经论证自动给$a^2\ge T$。
+
+对一个有限实际类集合$\mathscr C_0$定义
+\[
+ \beta_0^2=\max_{v\in\operatorname{Hull}(\mathscr C_0)}v^2,
+ \quad
+ \alpha_0^2=\inf_{H\in\operatorname{Gr}^+_{b_+}}
+                    \max_{a\in\mathscr C_0}(a_H^+)^2.
+\]
+由投影和凸性，$\beta_0^2\le\alpha_0^2$。$H$可遍历所有最大正子空间，不预设每个都可由度量实现。有限集合确保对每个实际度量可选最大投影类，Grassmann下确界不必达到。
+
+\begin{result}[第5轮special-monopole统一结论]
+$b_+\ge2$，实际special集合的$\alpha_{\rm sp}^2>0$时，存在普适$\varepsilon_0>0$，使
+\[
+ \boxed{\cE(g)+(T/\alpha_{\rm sp}^2-2/3)_+\ge\varepsilon_0.}
+\]
+同一结果可由适当凸包下界或已核准的连接和实际类推出具体版本。
+\end{result}
+对所有普通monopole类，原稿保留负平方相关常数；不能用同一个普适$\varepsilon_0$替换而不证明额外事实。交叉形式空间中的凸集可以保持$\alpha=\beta=1$，而组成向量的平方趋$-\infty$；这说明仅有凸几何预算不足。该代数反模型不是宣称已经实现的光滑monopole例子。
+\src{proofs/round5_rigidity.md}{§1--4及普通类／special类区别}
+
+\subsection{手术输入与连接和的真实约束}
+对支持实际类$c$的$X$与$b_+(N)=0$的连接和，若有适用的实际monopole粘合定理，记$A=c^2>0$、$D=b_2(N)+4b_1(N)$，则$T(X\#N)=T(X)-D$。符号类平均可给投影下界，平方条件由实际类逐项核对。于是对应间隙使用
+\[
+ \cE(g)+\bigl((T(X)-D)/A-2/3\bigr)_+.
+\]
+不能仅凭一个形式上的手术公式制造monopole解。新图块自粘合与这一球面连接和是不同的操作；在局部颈上看到圈或球，也不决定全局手术类型。
+
+\section{与实际构造的相容性：为什么还没有反例相撞}
+\subsection{比值1与临界2/3之间不能删掉}
+$E_D$及第11--12轮指定闭剪切对象有$\tau=0$、$\alpha^2=2\chi$，所以$T/\alpha^2=1$。新间隙控制的是接近$2/3$的区域。它们能有$e_-=0$与此完全相容。不能把这些对象的构造与另一个临界带中的不存在性拼在一起。
+
+第7轮还分析了固定负Einstein轨形外部与集中填充的关系。设实际近似族满足所列体积及外部Weyl一、二阶矩收敛，泡区体积趋零。其校准差中包含
+\[
+ \frac4{9\pi^2}\left[
+ \int_{\rm bulk}\Bigl(|W^+|-\frac1{2\sqrt6}\Bigr)^2
+ +E_{\rm bubble}\right].
+\]
+泡能量以非负项进入；在这组输入下“多加一些曲率集中就逼近临界”并不成立。局部对称负曲率外部还有明确比值下界。相反取向的非局部对称KE外部只能提供条件性的候选斜率分析，尚非实际饱和的构造。
+\src{proofs/round7_endpoint.md; proofs/round12_global.md}{填充相容性与新闭对象容量}
+
+\subsection{应当做联合设计，而不是先分别优化两端}
+真正的跨主线对象设计应同时记录：光滑拓扑、实际类集合、$T$与容量、粘合标记、全Ricci误差、构造中是否破坏实际类输入。若一种手术把比值推向$2/3$，就必须立即重算其夹逼代价；若夹逼代价趋零，必须检查实际monopole是否仍存在。此处的不相容有可能揭示新的定理，而不是研究失败应被掩盖。
+
+\section{旧Skill的理论资产怎样继续使用}
+\subsection{精确拓扑间隙和局部展开仍有独立范围}
+旧$\mathrm{MP}(A)+\chi\le LA$的精确Einstein间隙，使用每度量投影下界与平均能量，不完全等同于新实际类的负平方控制。因此它不能仅因新积分定理出现就被删去。其CT低能量片、路径提升、覆盖重数和平均缺陷传输，可用于不具备新旋量闭合条件的精确问题\cite{CT,CN,JN}。
+
+旧必要塌缩／直径逃逸结论在被新定理彻底排除的更小带中成为条件上的空情形，但在原文较广预算或不同类条件下仍有信息；“被更强结论覆盖”不等于原证明错误。弱Cotton负阶估计、受控坐标上的强$L^2$传递、相分离与局部禁谱，同样保留。
+
+\subsection{临界局部流是备用工具，不再是积分主定理的必经门槛}
+保留支撑缓冲、$a=\chi^2$、$|da|^2/a=4|d\chi|^2$、有符号Hessian分部积分、移位曲率$T=\Rm+G$与$U=aT$、全指数能量、临界到次临界Moser、共同支撑first-exit与终端校准。它们可以发展为其他近似问题的工具；但最高截断导数、背景联络控制、正则化的共同时间与极限流存在必须分开证明。
+
+不存在性论文不需要为了“统一叙事”再次背负这条尚未完全闭合的流动。若未来选用流动，应当因为它解决某个积分自测试不能覆盖的对象，而非因为历史已投入很多步骤。
+\src{baseline/research/20260916_rigidity.tex; proofs/round2_weak_curvature.md}{受控片、流动与旧正则性范围}
+
+\section{深化方向一：真正扩大积分理论的适用范围}
+\subsection{度量依赖的最经济类选择}
+\begin{problem}[选择平方代价，而不是粗暴使用最坏类]
+对已知有限实际类集合$\mathscr C$及投影目标$A$，定义
+\[
+ \Theta_A(g)=\min\left\{\frac{(-a^2)_+}{A}:a\in\mathscr C,
+                                      (a_g^+)^2\ge A\right\}.
+\]
+在集合非空的度量上，能否由真实类几何给$\Theta_A(g)$的统一上界，或只在近临界序列上给足够上界？
+\end{problem}
+这比控制所有类的最负平方弱，也比删掉$B_a$诚实。可先在两取向辛类、有限手术族和明确BF符号族上求解半代数的投影选择问题，再检查这些候选类是否真实。若仅得依赖$M$的界，形成逐流形结果；要升级为族一致，必须控制该界随拓扑变化的行为。
+
+\subsection{保留负平方爆炸，能否由另一项正能量抵消？}
+\newidea
+原证明的$B_a$来自行列式曲率的反自对偶能量。可以研究它是否必须与另一种全局拓扑代价或空间相分离能量共同出现，从而在$B_a\to\infty$时产生另一条矛盾。目标不是希望$F_A^-$自动小，而是建立对\emph{实际解}的联合不等式，如$\kappa\Xi(B_a)\ge c$且$\Xi$可由近临界数据控制。任何候选式须在原第5轮凸几何反模型和真实已知monopole族上分别测试。
+
+\subsection{临界带宽、有效常数与等号轨道}
+\newidea
+把\eqref{eq:Jup}、\eqref{eq:Jlow}的足够常数沿原证明追踪，可得可计算但很小的$c$。这能支持有限实例排除和证明复现，却不自动提高主结论的重要性。更有价值的问题是：$c$的小性是估计损失，还是存在一列实际对象接近界？应同步探索允许谱轨道、旋量振幅、Hodge能量与拓扑可实现性的联合优化，不能把有限矩阵最优值直接称为几何锐常数。
+
+\subsection{边界、局部化与相对障碍}
+\newidea
+闭性使自测试没有边界项。若要裁决连接器，须在有边界域或cutoff上重新推导，逐项保留$\nabla\chi$、$\nabla^2\chi$及真实边界Cauchy数据。可先证明一个带明确通量项的相对自测试恒等式，再问是否由全局周边数据确定该通量。只知总能量有界，不能保证选到同时具有小切断误差和正确拓扑信息的区域。
+
+\section{深化方向二：从一个禁谱模型走向更多几何机制}
+\subsection{其他校准轨道必须先检查可实现性}
+\newidea
+把当前轨道$\mathcal O_0$替换成某个候选谱集合，需要三个新输入：实际拓扑或方程逼出该集合；能构造全局光滑替代张量；Hodge／Bianchi自测试产生严格正量。产品负KE、实双曲、复杂双曲等精确度量是必要反向测试。如果目标轨道本来由Einstein度量实现，就不能期待同号的普适矛盾。
+
+特别是新闭对象比值1对应的近产品几何，不应继续强行压成$2/3$禁谱。值得研究的是局部允许几何之间的\emph{全局转换代价}：有无与单值化或剪切有关的通量，迫使过渡区域产生不可消除的误差？这将连接第一、第三主线，而不是机械复用一个最低特征值公式。
+
+\subsection{多个实际类的共同PDE，而非重新求和一个已饱和不等式}
+\newidea
+对一组旋量诱导二形式$\psi_\alpha$研究Gram矩阵、投影场及其共同协变导数。旧研究显示，简单把Weitzenböck不等式求和可能使$b_+$完全抵消；新的信息若存在，应来自同时可实现的相位、交叉导数或零集转移，而非重复一次标量Cauchy--Schwarz。
+
+一个可检验目标是：对实际有符号monopole族，推导其共同投影张量$P$的方程，保留$\nabla P$中的所有源项，再问拓扑迫使的秩变化是否有定量成本。先在产品、KE和已构造剪切族上检测该成本是否能够集中而消失；这些构造是对拟议普适不等式最有力的反例测试。
+
+\subsection{带源版本与非阿贝尔方程}
+\newidea
+研究带残差的Dirac、曲率和Hodge方程时，每个源必须出现在正确的对偶范数中。若源只在$H^{-1}$小，合法测试要求对应二阶量；若只知$L^2$小，不能任意对源求导。应先建立\eqref{crit:selftest}的显式带源版本，再看某个几何系统能否供应这些源预算。
+
+第7--12轮非阿贝尔探索已经给出Clifford块、行列式中心修正、秩一与满秩部分解，以及明确系统的等号分类。它\emph{没有}证明普通SW类保证该耦合系统可解，也没有把所定义的系统等同于文献中每一种统一化系统。可继续寻找真实的模空间不变量或变形路径；不能把一个条件分类当作无条件Einstein分类。
+\src{proofs/round12_uniformization.md; proofs/round12_control.md}{显式系统与Schoen曲面反向测试}
+
+\section{向正分支和高维开放，但不跳过新的数学}
+\subsection{正分支不能靠负侧monopole照搬}
+足够紧的正Ricci夹逼给正标量曲率，通常的非零SW障碍因此并非正侧候选的现成输入。可研究真正Einstein输出的调和二形式、Gram张量、曲率作用或谱阈值，但必须与CP$^2$、del Pezzo、$S^2\times S^2$等精确存在例相容。先判断一个恒等式是否真的保留拓扑秩信息，再谈新障碍。
+
+$b_+=1$还涉及chamber、类的度量依赖和墙穿越；普通高$b_+$的“每正权重可解”条件不能未经重建直接使用。一个限定chamber的稳定性定理可以有独立价值，但不自动覆盖原题全部度量。
+
+\subsection{高维需要实际可解系统和新的正量}
+维数$n$中可定义
+\[
+ \cE_{n,p}(g)=\inf_{\lambda\ne0}
+ \frac{\int|\Ric-\lambda g|^p}{|\lambda|^p\Vol(g)},
+\]
+它在常数缩放下不变；$p=n/2$是曲率临界指数，但“选择临界指数”不提供高维SW替代物。高维路线可从Dirac指数、特殊结构、余维四ALE族或真实耦合规范方程入手，逐项证明存在性、振幅、二阶估计和正测试量。四维$L^2$ Hessian吸收中的指数配合也须重新推导，不能只把4改成$n$。
+
+另一条完全不同的肯定方向，是证明所有剩余候选流形的Einstein存在性或可下降的覆盖存在性；它不要求把所有拓扑都塞进一个障碍框架。本主线应允许与第二、第三线交换这两种逻辑方向。
+
+\section{三个更具体的理论试验：从已知机制走向未知机制}
+\subsection{试验A：把所有隐含代价暴露成可比较的无量纲量}
+令$D=\mathcal C+\Delta_+$。原核心定理可写成
+\[
+ \left(1+\frac{(-a^2)_+}{V}\right)\frac{D}{V}\ge c.
+\]
+对于一列拟反例，分别跟踪$D/V$、$(-a^2)_+/V$、$A/V$与$T/A$。如果$D/V\to0$而负平方因子爆炸，不能仅记录“失去统一性”；应问该爆炸是否可由\emph{实际类的选择}避免，是否迫使新的行列式能量集中，或者是否提示要使用不同的自测试截面。
+
+\newidea
+在明确有限符号族上，先固定一个正子空间$H$，计算所有实际候选$a$的$(a_H^+)^2$与$a^2$，寻找同时高投影、低负平方代价的类。这个有限选择问题可用精确线性代数辅助；随后才研究$H$跨所有度量的控制。若得到一列形式$H_i$使选择成本发散，应再研究其是否由该光滑流形的实际度量实现，不能直接把形式反例宣布成几何反例。
+
+所得研究可能是一个更广的族一致间隙，也可能是“投影容量不足以控制曲率稳定性”的实际反例。两者都会比继续重复已完成的special类情形增加认识。
+
+\subsection{试验B：保留所有源项的局部谱判据}
+旧第1轮已经发现：简单对$|W^+|^2$用Weitzenböck或寻找全局不变标量乘子，可能遇到错误符号；二次密度也不能仅凭代数自动控制三次集中。第2轮的一阶谱轨道强制性与弱Cotton估计，需要实际坐标或更高阶控制才能完成传递。第3--4轮用真实旋量补上这一缺口，而不是证明那些抽象反例都不存在。
+
+\newidea
+选择另一个实际几何方程后，先推导其轨道限制的一阶符号，再构造完整的二阶误差方程。把不可忽略的源列成
+\[
+ \Div W(A)=\Div R+\mathcal T(E)+\mathcal S,
+\]
+其中$\mathcal T$为明确的一阶Ricci算子，$\mathcal S$必须从实际辅助方程导出。若想用自测试，至少需要能估计$\langle\mathcal S,J\rangle$，而不只是$\mathcal S$某个非对偶范数小。一个可证的充分形式是
+\[
+ |\langle\mathcal S,J\rangle|
+ \le o(V)+\theta\|J\|_2^2,\qquad \theta<1;
+\]
+这是待建立目标，不是任意弱源的性质。
+
+可先在闭KE、双曲产品、已构造剪切族及局部曲率尖峰上同时检验候选源预算。若同一个候选预算错误地排除已有精确Einstein控制例，应修改其对象或假设，而不是在“形式正确”的方程后隐藏一个不成立的不等式。
+\src{proofs/rigidity.md; proofs/round2_weak_curvature.md}{不变标量乘子、Cotton项与三次集中}
+
+\subsection{试验C：在正确对象上寻找强刚性与可塑性的真正交点}
+把新闭剪切流形、$E_D$、负轨形解消及临界手术族列在同一张\emph{数学}表中：$T$、实际特殊类、全部普通类、$\alpha^2$、$e_\sigma$、精确输出已知限制。不要按研究会话分开处理这些量。
+
+\newidea
+尝试一个能改变$T/\alpha^2$的具体手术时，同步要求三件事：原输入度量如何修改；实际monopole如何延拓；任意精确Einstein输出为何被排除或仍可能存在。若这三件事不能同时满足，找出首个不相容公式，并将其写成手术成本或类失效定理。\emph{构造与刚性冲突本身是有信息的}，但必须冲突于同一个对象、同一个范数和同一组实际前提。
+
+这也允许完全不同的成功路径：找到一个不依赖monopole的全局不存在性，与现有比值1的构造连接。此时第一主线的作用是准确说明为什么它自身没有排除该输入，而不是要求所有反例都进入自己的禁带。
+
+\section{近期文献怎样帮助，而不替代证明}
+LeBrun 2026年综述提供四维Einstein问题的近期地图\cite{LeBrunSurvey}。既有曲率泛函、实际monopole与连接和理论是本结果的来源\cite{LeBrun01,LeBrunConvex,IL}；本稿不声称“二十五年领域停滞”，也不声称一个间隙包含前人的全部极值公式。
+
+Baldauf的加权monopole与Ricci流工作\cite{Baldauf}可帮助比较振幅权重与动态熵，但它研究的方程和结论不同。应对照权重作用、度量演化和误差范数，不因都出现“weighted”而判断重复或首创。
+
+Cheeger--Tian、Cheeger--Naber、Jiang--Naber\cite{CT,CN,JN}仍为受控区域和精确极限提供重要工具。新积分证明确实不以它们为必经步骤，但不存在“所有旧方法只能依赖紧性”的历史判断。Huang--Ozuch的精确轨形隔离\cite{HO}可作为近似／精确对照，而不是任意$L^2$近似度量的同一个定理。
+
+对每项扩展应做命题级查新：对象、真实类、范数、常数依赖、达到性和证明增量分别比较。搜索不到自造术语，既不证明首创，也不证明一个问题没有人在研究。
+
+\section{从现有成果通向更强论文与原题：可接受的不同终点}
+最集中的现成主论文中心是“实际单极子的积分近等号刚性”，以\eqref{eq:coregap}及special容量定理为主，吹起、连接和和点态间隙为应用。旧局部流、所有数值实验不应为了显示工作量而塞进主证明。其首创性与证明核验应独立完成，而不是用某个期刊名称替代内容判断。
+
+继续研究有四种同样科学的产出：扩大实际类或拓扑范畴的定理；找到当前机制不可推广的真实反模型；建立可用于另一类方程的带源或局部化自测试；与存在性或构造线结合，改变某个原题分支的判定。新结果不必沿现有证法，但必须清楚增加了哪一个结论。
+
+\paragraph{启动后的首批数学选择。}
+先以原稿最强定理作为已给研究起点，检查当前拟研究对象是否真的满足其类与平方条件。若满足，不重复制造被间隙禁止的输入；若不满足，明确失败在哪一项，再决定研究类选择、转换代价、不同方程或正面存在性。对发现的每个新机制同时找一个精确控制例和一个退化控制例。已有推导可以被简化、重组或推翻，但应由具体数学证据决定，而非被“三条主线”的标题限制。
+\appendix
+\section{原始研究入口与继承边界}
+本稿使用上传的十二轮总包\nolinkurl{c183a8f7-4a6d-4d57-a7d5-6c4ee6a8b941.zip}，其中\nolinkurl{baseline/}为原Skill快照，\nolinkurl{proofs/}为原始与第2--12轮续稿，\nolinkurl{research/}为原包三条专题。以下记录保留原包覆盖表的来源与状态；它是数学来源索引，不是独立定理或首创性的计数。历史“下一步”若已被更强结果取代，以正文准确命题为准，但有效估计仍保留。
+
+三份新稿可单独编译与阅读，但不复制全部原脚本、原始实验输出和每轮审读全文。使用具体模块时应恢复所列原证明，特别是估计的参数依赖、真实核、边界规范和光滑标记。本次未重跑原包全部57个程序，也未新认定所有原结论均已通过全球查新。
+
+\small
+\begin{longtable}{L{.34\textwidth}L{.59\textwidth}}
+\toprule 原始文件 & 原包所标示的内容／适用状态\\\midrule\endhead
+\nolinkurl{20260916_rigidity.tex} & Installed exact Einstein gap; monopole calibration and deficit inputs; conditional approximate scope. baseline: exact gap is inherited, not counted as new\\
+\nolinkurl{20260916_uniform_gap.tex} & Exact blow-up gap; bounded-diameter and conditional collapsing-chart routes. baseline: replaced analytically under the final controlled-square hypotheses, not proved false\\
+\nolinkurl{20260916.md} & Installed synthesis and original problem scope. baseline: historical comparison and quantifier boundary\\
+\nolinkurl{rigidity.md} & Local spectral polynomial; global invariant multiplier obstruction; homogeneous corollary; integrated Cotton term; metric spike; algebraic cubic concentration. current: independent supporting theorems and limitations; algebraic examples are not asserted to be metrics\\
+\nolinkurl{rigidity_review.md} & Independent first-jet and multiplier audit; norm conventions; Cotton counterexample scope. verification: review supports the stated analytic identities, not publication priority\\
+\nolinkurl{fixed_ratio.md} & Exact Ricci-box quotient optimization and piecewise fixed-ratio gap. current: sharp algebraic quotient, not sharp metric attainability; vanishes at the critical ratio\\
+\nolinkurl{curvature_box.md} & Exact Ricci-box minimum; strict Hitchin-Thorpe; volume/core budgets; connector threshold. current: connector conclusions conditional on matched closed budgets\\
+\nolinkurl{round2_rigidity.md} & Global harmonic/eigenline localization; Walsh phase separation; smooth spinor Weyl model; endpoint product failure; surviving energy; bounded-curvature gap; localized degeneration. current: supporting estimates; first-derivative-only closure limitation superseded by actual spinor Hessian control\\
+\nolinkurl{round2_rigidity_review.md} & Quantitative constants; approximation errors; intrinsic Bianchi; weighted energy and norm normalization. verification: preserved source correction and weak-versus-strong distinction\\
+\nolinkurl{round2_weak_curvature.md} & Single-Weyl-half injective symbol; orbit first-jet coercivity; weak Cotton; controlled-chart strong L2 transfer; forbidden Einstein germ. conditional: controlled charts required; not a general collapse-regularity theorem\\
+\nolinkurl{round2_weak_review.md} & Negative-order estimate; local curvature recovery; weak Einstein regularity; buffered exponential development and multiplicity supplement. verification: geometric full-curvature gap retains pointwise full-curvature hypothesis\\
+\nolinkurl{round3_monopole_input.md} & Conformal rescaling; quantSW defects; amplitude moment; eigenline estimate; lowest-eigenvalue inequality; weighted-Hodge and first-jet appendices. current: self-contained analytic inputs, no live Skill dependency\\
+\nolinkurl{round3_rigidity.md} & Bounded-section interpolation; bundle Hessian identity; positive-spin curvature budget; strong divergence closure. current: core mechanism; pointwise Ricci assumption weakened in round4\\
+\nolinkurl{round3_joint_gap.md} & Actual blow-up class selection; topology and volume budgets; uniform pointwise near-Einstein family gap. current but strengthened: final integral all-sign theorem implies the qualitative family obstruction\\
+\nolinkurl{round3_general_monopole.md} & Metricwise class projection and negative-square control; family constant independent of Euler ratio. current but strengthened: final theorem replaces pointwise Ricci error by scale-invariant energy\\
+\nolinkurl{round3_rigidity_review.md} & Hessian identity; curvature representation; smoothing quantifiers; Bianchi closure; all-metric blow-up constants. verification: no chart or unrecorded volume hypothesis imported\\
+\nolinkurl{round3_rigidity_second_review.md} & Independent nonabelian commutator audit; no small-curvature requirement; determinant budget; self-test legitimacy. verification: actual PDE input distinguishes the result from functional counterexamples\\
+\nolinkurl{round4_rigidity.md} & L2-Ricci Hessian; clipped scalar weight; actual versus ideal moments; smooth Weyl approximation; intrinsic contradiction; topological and scale transfer. current: central analytic proof; actual class and square hypotheses retained\\
+\nolinkurl{round4_all_sign_gap.md} & Positive-normalization scalar obstruction; optimization over signed Einstein constants; explicit energy fraction. current: classical corollary combined with new negative-branch analysis\\
+\nolinkurl{round4_rigidity_review_global.md} & Hessian and Hodge constants; unrestricted scalar signs; negative-part density; scaling; alternative-square quarter branch. verification: substantive quantifier and normalization checks\\
+\nolinkurl{round4_global_all_sign_review.md} & Section 2: positive normalization and all-sign energy fraction; section 1 belongs to global Nil analysis. verification: only the all-sign portion is used in this chapter\\
+\nolinkurl{round5_rigidity.md} & Special/generic versus ordinary monopoles; minimax and convex hull; connected sums; ED ratio one; A1 accounting; general orbifold caution. current: broad actual-invariant scope and same-object compatibility; no uniform square claim for all ordinary classes\\
+\nolinkurl{round5_construction_rigidity_review.md} & Whole-fibre receiver tightness; C1 detector convergence; gauge and Einstein-sign scope. cross-chapter verification: not used as an input to the integral monopole theorem\\
+\nolinkurl{round7_endpoint.md} & Filling-independent concentration identity; bulk first/second moment assumptions; symmetric-bulk separation; opposite Kahler slope; norm-versus-spectrum boundary. current: classical-identity compatibility theorem; candidate slope is not constructed or monopole-saturated\\
+\nolinkurl{round7_rigidity.md} & Conditional nonabelian uniformization reduction and literal projection algebra. conditional: published-system sign transfer unverified; unconditional rank-one no-transfer inference withheld\\
+\nolinkurl{round8_nonabelian.md} & Line curvature and second fundamental form Chern-Weil lower bounds; reducible ansatz obstruction. current: auxiliary-connection constraint, not existence of coupled monopoles\\
+\nolinkurl{round9_nonabelian.md} & Anisotropic full-rank Dirac and determinant-trace seeds; remaining trace-free curvature PDE. current: partial equations solved in declared conventions; full system not solved\\
+\nolinkurl{round10_nonabelian.md} & Full-rank curvature residual identity; balanced seed lower bound; rank-one right inverse. current: perturbative seed limitation, not moduli-space emptiness\\
+\nolinkurl{round11_rankone.md} & Rank-one line block and Dirac mixing equations; cohomological second-fundamental-form residual; slow-twist specialization. current: exact differential constraint; conditional geometric specialization not arbitrary Einstein input\\
+\nolinkurl{round11_variational.md} & Exact variational infima and distinct attainment statements on closed sheared gluings. current: classical inequalities applied to new objects; full-curvature attainment remains equivalent to Einstein existence\\
+\nolinkurl{round12_global.md} & Ordinary basic classes and all-monopole capacities of the one-block self-gluings. current: topology/class computation; does not enter the critical two-thirds band\\
+\nolinkurl{round12_uniformization.md} & Central determinant correction; explicit Clifford-block equations; harmonic trace obstruction; graded energy; classification for declared system. current for explicit system: no identification with every published converse and no invariant-forced existence\\
+\nolinkurl{round12_control.md} & Schoen-surface control: negative Einstein plus ordinary SW plus signature zero need not be locally symmetric. current literature control: not a new surface construction\\
+\bottomrule\end{longtable}\normalsize
+\paragraph{复算与历史审读。}
+有限代数、符号Ricci、整数拓扑记账和数值采样分别解决不同问题。原包的\nolinkurl{proofs/*check*.py}、各轮\nolinkurl{*verification.md}及\nolinkurl{reproduction/}应保持与证明版本绑定；程序通过不替代连续谱尾、非线性余项和全局PDE。Fable核验中可保留的OT拓扑推广、具体手性应用、负号GH分离与独立坐标计算，与问题W的失败拼接和指定截断$1/3$首项应分开登记。原资料和旧会话保留为来源，不由本稿覆盖。
+\begin{thebibliography}{99}
+\bibitem{LeBrun01} Claude LeBrun. \emph{Ricci Curvature, Minimal Volumes, and Seiberg--Witten Theory}. Invent. Math. 145 (2001), 279--316. \url{https://arxiv.org/abs/math/0003068}.
+
+\bibitem{LeBrunConvex} Claude LeBrun. \emph{Four-Manifolds, Curvature Bounds, and Convex Geometry}. \url{https://arxiv.org/abs/math/0611450}. 重标度方程、实际monopole类及凸包输入须用原文的完整条件。
+
+\bibitem{LeBrunSurvey} Claude LeBrun. \emph{An Overview of Einstein 4-Manifolds}. 2026年9月2日预印本，\url{https://arxiv.org/abs/2609.03033}. 本稿用作近期领域地图，不把综述元数据当作逐条查新的替代。
+
+\bibitem{Ishida} Masashi Ishida. \emph{The normalized Ricci flow on four-manifolds and exotic smooth structures}. Pacific J. Math. 258 (2012). 特别见Proposition 6的连接和monopole输入。\url{https://msp.org/pjm/2012/258-2/pjm-v258-n2-p05-s.pdf}.
+
+\bibitem{IL} Masashi Ishida and Claude LeBrun. \emph{Curvature, Connected Sums, and Seiberg--Witten Theory}. \url{https://arxiv.org/abs/math/0111228}.
+
+\bibitem{Kotschick} Dieter Kotschick. \emph{Monopole classes and Einstein metrics}. \url{https://arxiv.org/abs/math/0306022}.
+
+\bibitem{CT} Jeff Cheeger and Gang Tian. \emph{Curvature and injectivity radius estimates for Einstein 4-manifolds}. J. Amer. Math. Soc. 19 (2006). \url{https://doi.org/10.1090/S0894-0347-05-00511-4}.
+
+\bibitem{CN} Jeff Cheeger and Aaron Naber. \emph{Regularity of Einstein manifolds and the codimension 4 conjecture}. \url{https://arxiv.org/abs/1406.6534}.
+
+\bibitem{JN} Wenshuai Jiang and Aaron Naber. \emph{L2 curvature bounds on manifolds with bounded Ricci curvature}. Ann. of Math. 193 (2021). \url{https://annals.math.princeton.edu/2021/193-1/p02}.
+
+\bibitem{Derd} Andrzej Derdziński. \emph{Self-dual Kähler manifolds and Einstein manifolds of dimension four}. Compositio Math. 49 (1983), 405--433. \url{https://www.numdam.org/item/CM_1983__49_3_405_0/}.
+
+\bibitem{Baldauf} Julius Baldauf. \emph{Harmonic Spinors in the Ricci Flow}. J. Geom. Anal. (2024). \url{https://arxiv.org/abs/2210.14198}; \url{https://doi.org/10.1007/s12220-024-01665-y}.
+
+\bibitem{HO} Yuanqi Huang and Tristan Ozuch. \emph{Regularity of Einstein 5-manifolds via 4-dimensional gap theorems}. \url{https://arxiv.org/html/2512.21317v2}.
+
+\end{thebibliography}
+\end{document}

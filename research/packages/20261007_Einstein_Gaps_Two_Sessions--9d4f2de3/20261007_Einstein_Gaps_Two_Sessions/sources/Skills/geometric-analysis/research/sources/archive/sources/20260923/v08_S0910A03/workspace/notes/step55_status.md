@@ -1,0 +1,7 @@
+# Step 55 status after Step 56 correction
+
+The direct nonlinear metric–transport architecture remains the preferred short-time construction, because it removes the frozen-input derivative loss.  The Step 55 text itself must not be cited as a proof of Theorem 9.1: its arbitrary-order derivative split is false for growing order, its original global-Q appendix omitted the stationary unsmoothed remainder, and it incorrectly inferred sequence-uniform lifespan from curvature-to-volume bounds.
+
+The replacement is `step56_tame_direct_flow_repair.md`.  It uses a genuine Gagliardo–Nirenberg/Moser tame allocation, a doubly strongly parabolic $(\varepsilon,\nu)$ approximation, one datum-dependent low-order bootstrap interval, linear propagation of every higher energy on that same interval, and diagonal smooth compactness.  Its exact-flow interface restores unweighted $H_2$, adds $Q_{\rm rest}$, and obtains common observation time through first exit plus positive-time continuation rather than through uniform initial Sobolev norms.
+
+The restricted Ishida–LeBrun route still requires independent verification of the exact unweighted $H_2$, $Y$, $J_6$, local/global $Q$, Moser, and terminal-density chain on this flow.  The full Yau 26 goal remains open.

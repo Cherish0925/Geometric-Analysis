@@ -1,0 +1,132 @@
+\section{Endpoint and extremal questions}
+\label{sec:open-problems}
+The preceding conclusions leave two specific questions in the obstruction
+theory. They do not enter the proofs of the finite-parameter separation or
+linear coercivity theorems. They are tests of endpoint completeness and
+optimal cost, not a claim that all further field interfaces or geometric
+realization problems reduce to these two questions.
+
+\begin{problem}[The density-independent weak zero-Weyl endpoint]
+Assume the original actual conformal monopole supply, $p\ge A>0$,
+$a^2\ge T_+$. Does there exist a universal $c>0$ such that, for every
+admissible metric and every $\beta\ge2$,
+\[
+ \kappa_\beta:=\fint_M|\Ric+g|^2+\frac{D_\beta}{V}
+ \ge c\frac{(\beta-2)^2}{\beta^2}?
+\]
+Here no upper bound for $\chi(M)/A$ is prescribed.
+\end{problem}
+Every fixed finite-density version is proved in
+Section~\ref{sec:finite-density-endpoint}; a constant
+$c_0(1+B)^{-N}$ is supplied in Section~\ref{sec:web-primitive-rate}.
+Thus a sequence violating the remaining target must leave every fixed
+density class. The bounded-density theorem is no longer an open
+intermediate step.
+In particular, Corollary~\ref{cor:finite-density-original-family}
+already settles the endpoint uniformly on the original balanced
+surgery family. The density-independent question enlarges that
+topological range; the first-order question below concerns the
+optimal cost within the original family.
+The $D_\beta/V$ normalization here differs from the finite-parameter
+quantity $D_\beta/(\beta V)$. The unknown case is a sequence with
+$\beta\to\infty$ and $\kappa_\beta\to0$ in which the exterior geometry
+degenerates together with the core. A counterexample must be a sequence
+of closed metrics with the full stated actual supply and budgets.
+Local actual cores or formal curvature tensors alone do not supply it.
+For the bounded self-dual forms associated with this limit, the Hodge
+identity forces
+\[
+ \fint_M|\nabla\omega|^2\longrightarrow\frac83,
+\]
+not parallelism. Sections~\ref{sec:web-double-weighted} and
+\ref{sec:web-mass-transfer} remove several mixed error terms and
+transfer the radial defect back to the actual torsion. The inverse
+amplitude tests in Section~\ref{sec:web-inverse-amplitude} exclude
+gradient energy deep in arbitrarily low amplitude wells. They do not
+exclude transition layers in a fixed intermediate amplitude band.
+The full radial one-form in Section~\ref{sec:web-radial-matrix}
+has an indefinite zeroth-order term, so it does not inherit the
+fifth-line positive-potential contradiction without further information.
+
+After the scalar-minus-four Yamabe reduction, one sufficient, narrower
+route is to find fixed cutoffs defining fifth-line
+sections $c_j$, and a fixed radial cap $T_M$, for which
+\[
+ \liminf_j\operatorname{Re}\fint\langle c_j,T_M(c_j)\rangle>0,
+ \qquad (\Delta_{5A_j}+10/3)w_j=T_M(c_j),
+\]
+while the complete actual weak equation gives
+\[
+ \operatorname{Re}\fint
+ \langle c_j,(\Delta_{5A_j}+10/3)w_j\rangle\longrightarrow0.
+\]
+These two conclusions would contradict each other. Both the retained
+mass and the full weak equation must be supplied at unbounded density;
+vanishing of one radial derivative or one selected mixed error is not
+by itself the required pair of conclusions. A different direct signed
+identity, or an actual closed escaping construction, remains possible.
+
+\begin{problem}[The balanced first-order coefficient]
+For the balanced family in Section~\ref{sec:variational-geometry}, let
+$Q_j=A_jh_j$ and $\alpha_j=\inf_g\E(g)$. Determine
+$\liminf\alpha_j/h_j$ and $\limsup\alpha_j/h_j$, with matching recovery
+sequences. Equivalently, determine the first-order asymptotics of
+$\inf_gP(g)$.
+\end{problem}
+The exact variational reduction gives
+\[
+ \alpha_j=4\frac{\inf_gP(g)}{8\pi^2A_j}+O(h_j^2).
+\]
+Consequently a coefficient of $4$ is equivalent to
+$\inf_gP(g)=8\pi^2Q_j+o(Q_j)$. A lower-cost construction on the same
+family is an equally legitimate alternative. The required precision is
+$o(Q_j)$, not merely $o(V_j)$. A near-minimizer cannot retain a positive
+density of removable over-costly cells; that fact by itself does not
+exclude cheaper cells or diffuse competing geometry. The signed
+characteristic formulas make this distinction explicit. In the notation
+of \eqref{proof:signed-selection:e5.1},
+\[
+ P=8\pi^2N+Z.
+\]
+The sufficient compensated estimate on genuine near-minimizers is
+\begin{equation}\label{eq:open-compensated}
+ Z\ge8\pi^2(Q-N)-o(Q),
+\end{equation}
+as in \eqref{proof:signed-selection:e5.3}. Separate lower bounds for
+$N$ and $Z$ are not necessary. Competitive metrics that violate an
+uncompensated selection rule need not be near-minimizers, and do not by
+themselves decide the optimal coefficient.
+
+Section~\ref{sec:variational-selection-global-cost} supplies
+near-minimizing sequences with $o(Q)$ first- and second-variation
+control against the critical integral test class. Their admissible
+tests need not have fixed pointwise derivative bounds. This does not
+make an arbitrary curvature tensor an admissible test or turn weak
+near-stationarity into a strong critical-metric equation. The
+simultaneous actual-field decomposition gives an alternative sufficient
+target: control its kinetic term by its nonnegative remainder up to
+$o(Q)$. The ideal-minimizer route must instead recover enough of the
+original marked topology and all end corrections. Neither the
+AE cost for a complete ordinary filling nor a compact orbifold
+decomposition supplies that conclusion in every ALE or collapsing case.
+
+The associated existence questions are separate. At the Chern boundary
+$T_+=3T_->0$, it remains to determine whether the diameter hypothesis in
+the complex-hyperbolic realization theorem can be removed. On the fixed
+single-Dehn-twist surface bundle $E_D$, the constructed metrics satisfy
+\[
+ \delta_-(G_\ell)\longrightarrow0,\qquad
+ \Vol(G_\ell)=16\pi^2(p-1)(q-1)
+\]
+for fiber and base genera $p,q\ge2$. The value $16\pi^2$ is the
+genus-two case in both factors. Whether the same smooth manifold admits
+any negative Einstein metric is not decided by failure of a local repair
+procedure or by nonattainment of one variational infimum.
+
+Finally, the weaker single-solution hypothesis raises an application
+question: identify a natural family not covered by the previous actual
+suppliers but covered by the new hypothesis. For the stable-cohomotopy
+examples, a comparison with every possible monopole class requires an
+upper bound for the complete classical budget, not only the supplied
+sign family. These are precise extensions of the theorems, rather than
+additional assumptions in their proofs.

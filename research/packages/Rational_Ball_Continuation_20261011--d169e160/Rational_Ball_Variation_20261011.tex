@@ -1,0 +1,296 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\dd}{\,d}
+\newcommand{\EH}{\mathrm{EH}}
+\newcommand{\fint}{\operatorname{av}}
+\newtheorem{proposition}{Proposition}
+\title{Ricci-defect variation at a rational-ball end\\\large Exact inner minimization and a cutoff-dependent comparison}
+\author{Research continuation}
+\date{11 October 2026}
+\begin{document}
+\maketitle
+\noindent
+The target remains a smooth closed global minimizer of
+\[
+ P(g)=\int_M|E_g|^2\dd V_g,\qquad E_g=\Ric_g-\tfrac14s_g g,
+\]
+which is not Bach-flat. This note computes two precise parts of the remaining
+rational-ball smoothing problem. It does not establish smooth attainment.
+The first calculation is an exact minimum for a prescribed quadratic
+asymptotic jet. The second includes an entire cutoff annulus and shows why
+an isolated negative finite part is not the insertion coefficient of a fixed
+critical orbifold.
+
+\section{The zero-energy core and its quadratic response}
+Let
+\[
+ G=1-r^{-4},\qquad
+ g_0=G^{-1}dr^2+r^2(\sigma_1^2+\sigma_2^2+G\sigma_3^2),\qquad r\ge1.
+\]
+The forms are normalized so that $\sum\sigma_i^2$ is the unit round
+three-sphere metric. Take the usual free involution of $\EH$ covering the
+antipodal map of the bolt. Its quotient is the ordinary oriented rational
+ball $B_2$, with link $S^3/\mathbb Z_4$. Write
+\[
+ L=\Vol(S^3/\mathbb Z_4)=\pi^2/2.
+\]
+The marking and quotient action are fixed throughout. The metric is
+Ricci-flat and anti-self-dual. More generally, an ALE scalar-flat K\"ahler
+rational homology ball is Ricci-flat, and has zero mass
+\cite{Wright,HeinLeBrun}. Thus the variable scalar-flat K\"ahler mass available
+on other fillings is absent in this class.
+
+Consider the biaxial variation
+\[
+ g_t=H^{-1}dr^2+r^2(\sigma_1^2+\sigma_2^2+F\sigma_3^2),\quad
+ F=G+tu+O(t^2),\quad H=G+tv+O(t^2).
+\]
+At a fixed bolt, the linear smoothness conditions are
+\[
+ u(1)=v(1)=0,\qquad u_r'(1)+v_r'(1)=0.
+\]
+Higher order boundary corrections impose $F'(1)H'(1)=16$. They do not
+change the quadratic $P$ coefficient on a fixed compact region, since
+$E_{g_0}=0$. Put $x=r^2$ and set
+\begin{align}
+ u&=\frac{\nu-\mu}{6}x+\frac{\nu+\mu}{2x}
+               -\frac{2\nu+\mu}{3x^2},\label{response}\\
+ v&=u-\nu(x-x^{-1}).\nonumber
+\end{align}
+This is a smooth quotient-invariant linear response. In the curvature
+operator convention $R^+=W^++sI/12$, its first variation satisfies
+\[
+ DR^+[h]=\operatorname{diag}(\nu,\nu,\mu),\qquad
+ Ds[h]=4(2\nu+\mu),\qquad h=\dot g_0.
+\]
+The homogeneous quadratic jet is Einstein at the cone vertex:
+$\Ric(p)=(2\nu+\mu)g(p)$. This restriction is stronger than mere
+$\mathbb Z_4$ invariance; arbitrary trace-free Ricci jets are not included.
+
+\begin{proposition}[Exact inner minimum]
+For the quadratic jet specified by \eqref{response},
+\[
+ DE_{g_0}[h]=\mu o,\qquad
+ o=r^{-4}\operatorname{diag}(1,-1,-1,1)
+\]
+in the $g_0$-orthonormal frame. In particular,
+\begin{equation}
+ \int_{B_2}|DE[h]|^2=\frac{\pi^2}{2}\mu^2.\label{square}
+\end{equation}
+If $k$ is a smooth quotient-invariant correction with
+$k=O_2(r^{2-\delta})$, $\delta>0$, and $DE[k]\in L^2$, then
+\begin{equation}
+ \int_{B_2}|DE[h+k]|^2
+ =\frac{\pi^2}{2}\mu^2+\int_{B_2}|DE[k]|^2.\label{minimum}
+\end{equation}
+Thus \eqref{square} is the minimum in this specified class, including
+non-biaxial corrections.
+\end{proposition}
+\begin{proof}
+Direct calculation of sectional curvatures gives
+\[
+ D\Ric[h]=(2\nu+\mu)I+
+ \mu r^{-4}\operatorname{diag}(1,-1,-1,1).
+\]
+For example, with $x$ derivatives,
+\begin{align*}
+ K_{01}=K_{02}&=-H_x,&
+ K_{12}&=(4-3F-H)/x,\\
+ K_{13}=K_{23}&=(F-H)/x-HF_x/F,\\
+ K_{03}&=-H(3F_x/F+2xF_{xx}/F-xF_x^2/F^2)
+              -H_x(1+xF_x/F).
+\end{align*}
+Substitution of \eqref{response} proves the asserted Ricci variation.
+Since $dV_{g_0}=r^3dr\,d\omega$,
+\[
+ \|o\|_2^2=4L\int_1^\infty r^{-5}dr=L.
+\]
+The tensor $o$ is the smooth transverse-traceless scale Jacobi field;
+$(\nabla^*\nabla-2\mathring R)o=0$, as in the classical
+Eguchi--Hanson deformation calculation \cite{Biquard}.
+Pairing $DE[k]$ with $o$ removes the gauge and trace terms. Green's
+identity gives zero: there is no bolt boundary, and the boundary at
+radius $R$ is $O(R^{-\delta})$. Expanding the square proves
+\eqref{minimum}.
+\end{proof}
+
+There is no logarithmic divergence in \eqref{square}. Under an inner
+expansion $g_a=a^2(g_0+a^2h+O(a^4))$, it contributes
+$a^4L\mu^2$ on expanding rescaled cores, subject to matching estimates.
+It is not a complete closed-manifold expansion. When $\mu=0$, this
+quadratic obstruction vanishes; it supplies no strict exclusion of that
+degeneration.
+
+\section{An angular mode: inner finite part versus the full cutoff}
+Use
+\[
+ \sigma_1^2+\sigma_2^2=\tfrac14(d\theta^2+\sin^2\theta\,d\phi^2),
+ \qquad \sigma_3=\tfrac12(d\psi+\cos\theta\,d\phi).
+\]
+A harmonic Gibbons--Hawking moment coordinate is
+\[
+ f=\sqrt{r^4-1}\,Y,\qquad Y=\sin\theta\cos\psi,
+ \qquad f_0=r^2Y.
+\]
+Choose the free involution preserving this moment coordinate; $f$ then
+descends to $B_2$. The angular average is $\fint Y^2=1/3$.
+The vertical-angle term is essential: the radial equation is
+\[
+ r^{-3}(r^3GA')'-r^{-2}\{8+4(G^{-1}-1)\}A=0,
+ \qquad A=\sqrt{r^4-1}.
+\]
+One obtains
+\[
+ \fint|df|^2=4r^2-\frac4{3r^2},\qquad
+ \int_{r\le R}|\nabla^2 f|^2
+   =L\left(4R^4-\frac83-\frac4{3R^4}\right)
+\]
+by the Ricci-flat Bochner identity. For $h_f=2fg_0$,
+$DE[h_f]=-2\nabla^2f$, and hence
+\begin{equation}
+ \lim_{R\to\infty}\left\{
+ \int_{r\le R}|DE[h_f]|^2-
+ \int_{r\le R}|DE_{\mathrm{flat}}[2f_0g_{\mathrm{flat}}]|^2
+ \right\}=-\frac{32L}{3}=-\frac{16\pi^2}{3}.\label{negative}
+\end{equation}
+At the same time $Ds[h_f]=0$ and $DW^+[h_f]=0$.
+The finite part \eqref{negative} therefore cannot be identified with
+the chiral bulk integral while discarding its boundary term.
+
+This can be checked with an entire smooth cutoff, not merely the inner
+ball. Let $\chi(\rho)=1$ near $\rho=0$ and $\chi=0$ for large $\rho$,
+and define $f_R=\chi(r/R)f$ and $f_{0,R}=\chi(r/R)f_0$.
+For compactly supported conformal changes of either Ricci-flat model,
+Chern--Weil and the scalar transformation law give exactly
+\[
+ P(e^{2tu}g_0)=3\int(t\Delta u+t^2|du|^2)^2\dd V_{g_0}.
+\]
+Here $P(g_0)=0$, and the conformal change is identical outside a compact
+set, so the boundary correction does not change.
+
+\begin{proposition}[Complete cutoff comparison]
+Let $[t^2]$ denote the coefficient of $t^2$, rather than the second
+derivative. Then
+\begin{align}
+ \lim_{R\to\infty}[t^2]\{P(e^{2tf_R}g_0)
+  -P(e^{2tf_{0,R}}g_{\mathrm{flat}})\}
+  =-3L\int_0^\infty
+      \bigl(\rho^3(\chi'')^2+3\rho(\chi')^2\bigr)\dd\rho.
+ \label{cutoff}
+\end{align}
+The right side depends on the cutoff profile.
+\end{proposition}
+\begin{proof}
+Write $B_0=\rho^2\chi''+7\rho\chi'$. The exact radial product rule gives
+\[
+ \Delta(\chi(r/R)f)
+ =\left(AG\chi_{rr}+A(7/r+r^{-5})\chi_r\right)Y.
+\]
+On the fixed support of the derivatives of $\chi$, this equals
+\[
+ \left[B_0+R^{-4}\left(-\tfrac32\rho^{-2}\chi''
+                         -\tfrac52\rho^{-3}\chi'\right)
+       +O(R^{-8})\right]Y.
+\]
+Both models have radial volume $r^3dr\,d\omega$.
+The limit of the difference of their squared-Laplacian integrals is
+\[
+ \frac L3\int\{-3\rho^3(\chi'')^2
+             -26\rho^2\chi''\chi'-35\rho(\chi')^2\}\dd\rho
+ =-L\int\{\rho^3(\chi'')^2+3\rho(\chi')^2\}\dd\rho.
+\]
+Multiplication by $3$ proves \eqref{cutoff}.
+\end{proof}
+With $z=\log\rho$ and $\psi(z)=\chi(e^z)$, the profile integral is
+\[
+ \int_{\mathbb R}\bigl((\psi'')^2+4(\psi')^2\bigr)\dd z.
+\]
+If $\psi(z)=\psi_1(z/T)$ is a transition of logarithmic width $T$,
+this becomes $T^{-3}\|\psi_1''\|_2^2+4T^{-1}\|\psi_1'\|_2^2$.
+It tends to zero as $T\to\infty$. In particular the isolated number in
+\eqref{negative} is not the answer to the fixed-bulk insertion problem.
+The backgrounds in \eqref{cutoff} are being varied with $\chi$ and $R$;
+they have not been required to be closed $P$-critical metrics.
+
+\section{The remaining closed-manifold comparison}
+The inner minimization and the cutoff calculation answer distinct parts
+of the same question. A closed $P$-critical orbifold has a fixed exterior
+geometry. Its Euler--Lagrange equation removes the interior first-variation
+pairing, but a singular ALE tail leaves a boundary concomitant. The
+subleading inner tail, angular components, and higher exterior jets must
+be matched before the finite $a^4$ coefficient has an invariant meaning.
+Neither \eqref{square} nor \eqref{negative} has determined that coefficient.
+
+There is a concrete reason not to set that boundary term to zero using
+stationarity. The leading flat-coordinate Eguchi--Hanson tail is
+\[
+ h^\infty_{ij}=\frac{x_i x_j-(Jx)_i(Jx)_j}{r^6}
+ =\tfrac18(\partial_{ij}-J_i{}^kJ_j{}^l\partial_{kl})r^{-2}.
+\]
+Its distributional linearized Ricci defect pairs with a trace-free,
+divergence-free test tensor through the contraction
+$J_i{}^kJ_j{}^l\partial_{kl}E_{ij}(0)$, whereas the flat principal
+critical equation controls $\Delta E$. These are different contractions.
+For example, take $Je_1=e_3$, $Je_2=e_4$ and
+\[
+ E=(x_1^2-x_2^2)\operatorname{diag}(0,0,1,-1).
+\]
+Then $\tr E=\operatorname{div}E=\Delta E=0$, but
+$J_i{}^kJ_j{}^l\partial_{kl}E_{ij}=4$.
+It is generated by the TT quartic metric jet
+$h_4=-(x_1^4-x_2^4)\operatorname{diag}(0,0,1,-1)/6$ through
+$DE[h_4]=-\Delta h_4/2=E$.
+This is a statement about the principal jet equations, not a construction
+of a global critical metric. It identifies information that those equations
+alone do not eliminate.
+
+Two existing tools do not supply this missing comparison. With tensor
+Weyl norm, set $\mathcal B_t=\int|W|^2+t\int s^2$. Then
+\[
+ 2P=\mathcal B_{1/6}-32\pi^2\chi(M).
+\]
+At a closed $\mathcal B_t$-critical metric with $t\ne0$,
+\[
+ \nabla P=(t-1/6)sE.
+\]
+Thus the non-Einstein gluing constructions at the different parameters
+in \cite{GV} do not furnish $P$-critical metrics. Also, for an order-four
+Ricci-flat ALE end, inversion gives
+\[
+ \bar g=\delta+O_2(\rho^4),\qquad W_{\bar g}(p)=0.
+\]
+The compactification-point Weyl interaction in \cite{MM} therefore
+vanishes for this end. Higher asymptotic curvature interactions remain,
+and any comparison for $P$ must include the scalar-square term as well.
+
+The unresolved statement is a strict closed-manifold energy comparison
+against the singular minimizing configurations that can actually occur,
+together with control of the other compactness alternatives. No smooth
+global non-Bach-flat minimizer has been produced in this continuation.
+
+\begin{thebibliography}{9}
+\bibitem{LeBrun} C. LeBrun, \emph{Curvature Functionals, Optimal Metrics,
+and the Differential Topology of 4-Manifolds}, Section 11.
+\href{https://arxiv.org/abs/math/0404251}{arXiv:math/0404251}.
+\bibitem{Biquard} O. Biquard, \emph{D\'esingularisation de m\'etriques
+d'Einstein. I}, Sections 1--3.
+\href{https://arxiv.org/abs/1105.4904}{arXiv:1105.4904}.
+\bibitem{Wright} E. Wright, \emph{Quotients of gravitational instantons},
+Corollary C. \href{https://arxiv.org/abs/1102.2442}{arXiv:1102.2442}.
+\bibitem{HeinLeBrun} H.-J. Hein and C. LeBrun, \emph{Mass in K\"ahler
+geometry}. \href{https://arxiv.org/abs/1507.08885}{arXiv:1507.08885}.
+\bibitem{GV} M. J. Gursky and J. A. Viaclovsky, \emph{Critical metrics
+on connected sums of Einstein four-manifolds}.
+\href{https://arxiv.org/abs/1303.0827}{arXiv:1303.0827}.
+\bibitem{MM} A. Malchiodi and F. Malizia, \emph{Weyl energy and connected
+sums of four-manifolds}, (1.6)--(1.7).
+\href{https://arxiv.org/abs/2505.17752}{arXiv:2505.17752}.
+\end{thebibliography}
+\end{document}

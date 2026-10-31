@@ -1,0 +1,323 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,hyperref,microtype}
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=blue}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\Conv}{\operatorname{Conv}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\orb}{\mathrm{orb}}
+\title{Einstein Defect at the Orbifold Boundary:\\Multiple-Core Obstructions and Actual Subthreshold Degeneration}
+\author{Research continuation}
+\date{9 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We continue the smooth-attainment question for the four-dimensional functional
+$P(g)=\int|\Ric_g^\circ|^2$. Actual monopole supply transfers to every metric
+on a fixed orbifold obtained by replacing finitely many Ricci-flat ALE cores.
+The entire supplied-class span has anti-self-dual restrictions on each core;
+this preserves the convex-hull budget and yields an orientation-sensitive
+curvature obstruction. Conversely, ordinary-orientation rational balls really
+embed in every single blow-up. Combining a classical Godeaux degeneration with
+the project's negative K\"ahler--Einstein Burns insertion gives a fixed
+non-Einstein closed manifold with bubbling sequences strictly below
+$8\pi^2$. This separates a strict upper bound from smooth attainment.
+No global minimum or resolution of the four outstanding questions is asserted.
+\end{abstract}
+
+\section{Definitions and inputs}
+All manifolds are oriented. Curvature norms are fixed by
+\begin{align}
+8\pi^2\chi(M)&=\int_M\left(|W^+|^2+|W^-|^2+\frac{s^2}{24}
+                           -\frac{|\Ric^\circ|^2}{2}\right),\label{eq:gb}\\
+12\pi^2\tau(M)&=\int_M(|W^+|^2-|W^-|^2).
+\end{align}
+Write $T(M)=2\chi(M)+3\tau(M)$ and
+$P_*(M)=\inf_g P(g)$, with the infimum over all smooth metrics.
+For an orbifold, $\chi_{\rm curv}$ and $\tau_{\rm curv}$ denote the
+corresponding curvature integrals. In particular $\tau_{\rm curv}$ is
+\emph{not} necessarily the signature of its real intersection form.
+
+The inherited analytic input for Section~\ref{sec:subthreshold} is the
+project's strict Burns insertion on a negative K\"ahler--Einstein background.
+Its statement is in the supplied \emph{01\_Research\_Synthesis.tex},
+Section~3, equations (insertion), (phi), and (kernel): in a kernel direction of
+$\mathsf R^+=W^++sI/12$,
+\begin{equation}
+ P(g_\varepsilon)=P(g)+8\pi^2
+ -4\pi^2|T_p|^2\varepsilon^2\log(1/\varepsilon)+O(\varepsilon^2).
+ \label{eq:burns}
+\end{equation}
+Here $T_p$ is the trace-free restriction of $\mathsf R^+$ to the orthogonal
+two-plane. On a K\"ahler--Einstein surface, the eigenvalues of $\mathsf R^+$
+are $(s/4,0,0)$, so $|T_p|^2=s^2/32>0$ when $s<0$.
+We use this project result as an input, not as a newly verified literature theorem.
+
+\section{Actual monopole supply through several ALE cores}
+Let $\mathcal C$ be a finite collection of determinant classes of fixed
+spin$^c$ structures on $M$, each admitting an unperturbed Seiberg--Witten
+solution for every smooth metric. Suppose compact cores of finitely many
+oriented Ricci-flat ALE spaces $(N_i,g_i)$ embed disjointly in $M$.
+Their ends are $S^3/\Gamma_i$, with positive ALE decay order and two
+differentiated estimates. Replacing the cores by their marked quotient cones
+gives a compact orbifold $O$ with isolated quotient singularities.
+We use compatible orbifold spin$^c$ extensions of the boundary structures;
+the finite isotropy representations are retained throughout.
+
+Because the links are real homology spheres, there is an orthogonal splitting
+\[
+H^2(M;\R)=H^2_{\orb}(O;\R)\oplus\bigoplus_i H^2(N_i;\R).
+\]
+Write $v=(v_0;v_1,\ldots,v_r)$ and set
+\[
+B_O=\max_{v\in\Conv(\mathcal C)}v_0^2,
+\qquad D_i=\frac{1}{2\pi^2}\int_{N_i}|W^+|^2.
+\]
+
+\begin{theorem}\label{thm:transfer}
+Assume $B_O>0$. The restriction to each $N_i$ of the entire real span of
+$\mathcal C$ is represented by $L^2$ anti-self-dual harmonic two-forms.
+Consequently
+\begin{equation}
+ B_O\ge\max_{v\in\Conv(\mathcal C)}v^2.
+ \label{eq:convex}
+\end{equation}
+Every smooth orbifold metric $g$ on $O$ satisfies
+\begin{equation}
+\boxed{P_{\orb}(g)\ge8\pi^2\left(\frac23 B_O-T(M)+\sum_iD_i\right).}
+\label{eq:main}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Fix an arbitrary orbifold metric $g$. Near each quotient point its lift has
+$g=\delta+O(r^2)$ in normal coordinates, with two differentiated bounds.
+If the ALE order is $\nu>0$, its rescaling by $a^2$ has error
+$O(a^\nu r^{-\nu})$. Choose $r_a=a^q$ with
+$0<q\le\nu/(\nu+2)$ and use a radial cutoff on
+$r_a<r<2r_a$. The annular curvature satisfies
+\[
+ |\Rm|\le C\left[1+a^\nu r_a^{-\nu-2}
+                 +(r_a+a^\nu r_a^{-\nu-1})^2\right]\le C.
+\]
+The resulting smooth metrics $g_a$ on $M$ have uniformly bounded volume,
+a uniform lower scalar-curvature bound, and vanishing annular curvature
+energy. The exact inner metrics are Ricci-flat, hence
+\begin{equation}
+ P(g_a)\longrightarrow P_{\orb}(g).
+ \label{eq:smoothing}
+\end{equation}
+These are direct metric interpolations, not Einstein desingularizations.
+
+Choose actual solutions for every supplied class. The maximum principle
+bounds the spinors uniformly, hence bounds $F_A^+$ pointwise. The identity
+\[
+ \int_M(|F_A^+|^2-|F_A^-|^2)=4\pi^2a^2
+\]
+then bounds the determinant curvature in $L^2$. On compact subsets of
+$O_{\rm reg}$, abelian gauge compactness and the equations give smooth
+subsequential limits. On each covering ball an isolated point is removable:
+finite-energy abelian curvature permits a $W^{1,2}$ Coulomb gauge, and the
+bounded spinor and the elliptic equations bootstrap the fields across the
+point. The extension respects the finite deck action; trivial holonomy is
+not assumed. The limiting real classes are the restrictions $a_0$.
+Since $g$ was arbitrary, this supplies actual fields for every orbifold
+metric, including the conformal representatives used below.
+
+On a rescaled core the same two-form satisfies
+$|F_A^+|_{g_i}\le Ca^2\to0$. Its scale-invariant $L^2$ bound gives a
+weak limit $F_i$ with $dF_i=0$ and $F_i^+=0$.
+Elliptic regularity makes it an $L^2$ harmonic form.
+Pairing against compactly supported closed two-forms identifies its class
+as $a_i$. ALE $L^2$ Hodge theory identifies this cohomology with
+$\operatorname{im}(H_c^2(N_i)\to H^2(N_i))$, which here equals $H^2(N_i)$.
+In particular $a_i^2\le0$. A finite diagonal extraction places the limits
+of all supplied classes on the same fixed core metrics. Their real linear
+combinations are also anti-self-dual, so $v_i^2\le0$ for every
+$v\in\operatorname{span}_{\R}\mathcal C$. This proves \eqref{eq:convex}.
+
+For each core define
+\[
+ e_i=\frac1{8\pi^2}\int_{N_i}(|W^+|^2+|W^-|^2),\qquad
+ t_i=\frac1{12\pi^2}\int_{N_i}(|W^+|^2-|W^-|^2).
+\]
+Passing to the limit in the closed characteristic identities along $g_a$
+gives $\chi_{\rm curv}(O)=\chi(M)-\sum e_i$ and
+$\tau_{\rm curv}(O)=\tau(M)-\sum t_i$.
+Thus
+\begin{equation}
+ T_{\rm curv}(O)=T(M)-\sum_i(2e_i+3t_i)=T(M)-\sum_iD_i.
+ \label{eq:charge}
+\end{equation}
+
+For any fixed $g$, convexity of the norm on $H_g^+$ implies that some
+supplied class has self-dual square at least $B_O$.
+The classical mixed monopole inequality, applied in invariant orbifold
+charts, is
+\[
+ \int_O(s-\sqrt6|W^+|)^2\ge72\pi^2B_O.
+\]
+Weighted Cauchy--Schwarz gives
+\[
+ \int_O\left(\frac{s^2}{24}+2|W^+|^2\right)
+ \ge\frac{8\pi^2}{3}B_O.
+\]
+Finally $4\pi^2T_{\rm curv}(O)$ equals the last integral minus
+$P_{\orb}/2$. Combining with \eqref{eq:charge} proves \eqref{eq:main}.
+\end{proof}
+
+The ingredients are classical curvature inequalities, abelian compactness,
+removability and ALE Hodge theory. The content assembled here is the
+full-span restriction, the preserved convex budget and the multiple-core
+obstruction. No classification of all Ricci-flat ALE spaces is used.
+
+\begin{corollary}
+Suppose $M=X\#k\overline{\CP}^{\,2}$ has all supplied sign classes
+$K+\sum_{j=1}^k\epsilon_jE_j$, where $K^2=A>0$,
+$K\cdot E_j=0$, $E_i\cdot E_j=-\delta_{ij}$ and $T(M)=A-k$.
+Set $\Delta_K=-\sum_i K_i^2\ge0$. Then
+\[
+ P_{\orb}\ge8\pi^2\left(k-\frac A3+\sum_iD_i+\frac23\Delta_K\right).
+\]
+Consequently a sequence with $\limsup P<8\pi^2k$ cannot have this
+smooth compact orbifold limit if
+$\sum D_i+\frac23\Delta_K\ge A/3$.
+\end{corollary}
+Indeed the average sign class is $K$, and lower semicontinuity on compact
+regular subsets gives $P_{\orb}\le\liminf P$. A neck energy equality is
+unnecessary. For $r$ reversed Ricci-flat ASD rational balls with end groups
+of orders $d_i^2$, the criterion becomes
+\begin{equation}
+ A\le12\sum_{i=1}^r(1-d_i^{-2});\qquad A\le9r\ \text{suffices}.
+ \label{eq:reverse}
+\end{equation}
+
+\section{Ordinary rational balls are actual competing topologies}
+\begin{proposition}
+Every $X\#\overline{\CP}^{\,2}$ contains the ordinary oriented rational
+ball $B_{n,1}$ for each odd $n\ge3$. Its fundamental group maps trivially
+into that of the ambient manifold. It carries a Ricci-flat K\"ahler ALE
+metric in the indicated orientation with
+\[
+ P(N)=0,\qquad W^+=0,\qquad
+ \int_N|W^-|^2=8\pi^2(1-n^{-2}).
+\]
+\end{proposition}
+\begin{proof}
+Reversing the orientation of a nonsingular conic in $\CP^2$ gives a sphere
+of square $-4$ in the $\overline{\CP}^{\,2}$ summand, disjoint from the
+connected-sum ball. Khodorovskiy's theorem embeds $B_{n,1}$ into its
+normal disk bundle $V_{-4}$ for odd $n\ge3$. This bundle is simply
+connected, proving the claim about fundamental groups. Suvaina's theorem
+supplies the Ricci-flat K\"ahler ALE metric with end group of order $n^2$.
+Scalar-flat K\"ahler geometry gives $W^+=0$ and ALE Gauss--Bonnet gives
+the displayed energy.
+\end{proof}
+This combines classical theorems; it is not a new rational-ball embedding.
+The smoothing \eqref{eq:smoothing} produces actual fixed-manifold
+degenerations through each such core. Both correction terms in the
+corollary vanish: $D_i=0$ and $H^2(N_i;\R)=0$.
+Thus ordinary ASD rational balls are invisible to these two improvements,
+whereas reversed ones satisfy \eqref{eq:reverse}.
+
+\section{An actual subthreshold bubbling sequence}\label{sec:subthreshold}
+\begin{proposition}[Using the inherited strict insertion theorem]
+There is a numerical Godeaux surface $Y$ with $H_1(Y;\mathbb Z)=\mathbb Z_4$
+such that $M=Y\#\overline{\CP}^{\,2}$ admits smooth metrics $g_a$ and a
+constant $q_0$ satisfying
+\[
+ \frac{16\pi^2}{3}\le P_*(M)\le q_0<8\pi^2,
+ \qquad P(g_a)\longrightarrow q_0,
+\]
+while a nonflat ordinary Ricci-flat rational-ball bubble forms.
+The manifold $M$ admits no Einstein metric.
+\end{proposition}
+\begin{proof}
+Kazanova's Proposition 2.6 constructs a $\mathbb Q$-Gorenstein degeneration
+of such a smooth $Y$ to a surface $Z$ with ample canonical divisor and
+exactly one Wahl singularity $\frac14(1,1)$. Its local smoothing is the
+ordinary $B_{2,1}$. Orbifold Aubin--Yau gives a negative K\"ahler--Einstein
+metric $h_0$ on $Z$. At a different, smooth point apply \eqref{eq:burns}
+inside a fixed ordinary chart. The negative logarithmic term gives a
+metric $h$ on the one-point blow-up orbifold $O$ with
+$q_0=P_{\orb}(h)<8\pi^2$. It equals $h_0$ near the Wahl point.
+The insertion is local, so its proof is unaffected by the distant quotient
+point.
+
+Insert the scale-$a$ Ricci-flat ALE smoothing of $B_{2,1}$ at that point.
+Its order-four expansion and the bulk normal-coordinate expansion are
+\[
+ a^2g_N=\delta+O(a^4r^{-4}),\qquad h=\delta+O(r^2).
+\]
+Matching at $\rho=a^{1/2}$ gives annular curvature $O(1)$ and annular
+energy $o(1)$. The exact inner region has $P=0$; the removed bulk ball
+also has $P=0$. Hence $P(g_a)\to q_0$. The smoothing topology and the
+blow-up away from the singular point give the same fixed smooth manifold
+$M$ for all small $a>0$. After rescaling, the inserted region exhausts
+the nonflat ALE metric, so curvature is unbounded in the fixed bulk scale.
+
+Here $K_Y^2=A=1$ and $T(M)=0$. The classical all-metric monopole bound
+is $P(g)\ge8\pi^2(\frac23A-T)=16\pi^2/3$, excluding Einstein metrics.
+This bound and the constructed sequence prove the claimed interval.
+\end{proof}
+
+The example is a torsion-$\mathbb Z_4$ Godeaux surface, not the classical
+torsion-$\mathbb Z_5$ surface. Kazanova's Corollary 2.5 excludes this
+particular ample-canonical single-Wahl degeneration for the latter family.
+That algebraic exclusion alone says nothing about all smooth embeddings
+or all Riemannian degenerations on it.
+
+\section{The remaining comparison is variational}
+The preceding proposition shows that the sublevel $P<8\pi^2$ need not be
+smoothly compact even on a fixed non-Einstein example. It does not say that
+$q_0=P_*(M)$, so it is neither a nonattainment theorem nor a solution of Q3.
+
+For a specified orbifold boundary obtained by these Ricci-flat smoothings,
+\eqref{eq:smoothing} gives
+\[
+ P_*(M)\le P_{*,\orb}(O).
+\]
+If a genuine minimizing sequence has this compact orbifold limit, lower
+semicontinuity gives the reverse comparison through its limit metric.
+Thus that branch requires equality with an optimized singular problem.
+To exclude it one needs a strict variational comparison, or information
+about genuine minimizing sequences that is absent from an arbitrary
+sublevel bound. Partial collapse remains a separate possible branch.
+
+The multiple-core theorem strengthens the range already excluded. The
+subthreshold construction proves that the complementary orientation is a
+real possibility at the relevant energy scale. These are complementary
+conclusions about the same attainment problem, not two new research topics.
+
+\begin{thebibliography}{9}
+\bibitem{LeBrun} C. LeBrun, \emph{Ricci Curvature, Minimal Volumes, and
+Seiberg--Witten Theory}, \href{https://arxiv.org/abs/math/0003068}{arXiv:math/0003068};
+\emph{Four-Manifolds, Curvature Bounds, and Convex Geometry},
+\href{https://arxiv.org/abs/math/0611450}{arXiv:math/0611450}.
+\bibitem{HHM} T. Hausel, E. Hunsicker and R. Mazzeo,
+\emph{Hodge cohomology of gravitational instantons}, Duke Math. J. 122
+(2004), 485--548, \href{https://arxiv.org/abs/math/0207169}{arXiv:math/0207169}.
+\bibitem{Khod} T. Khodorovskiy, \emph{Smooth Embeddings of Rational Homology
+Balls}, Topology Appl. 161 (2014), 386--396, Theorems 1.2--1.3,
+\href{https://arxiv.org/abs/1212.4391}{arXiv:1212.4391}.
+\bibitem{Owens} B. Owens, \emph{Equivariant embeddings of rational homology
+balls}, Theorem 2, \href{https://www.maths.gla.ac.uk/~bowens/papers/balls.pdf}{author manuscript}.
+\bibitem{Suvaina1} I. Suvaina, \emph{ALE Ricci-flat K\"ahler metrics and
+deformations of quotient surface singularities}, Ann. Global Anal. Geom. 41
+(2012), 109--123, Proposition 3.3,
+\href{https://arxiv.org/abs/1102.2672}{arXiv:1102.2672}.
+\bibitem{Suvaina2} I. Suvaina, \emph{The Yamabe invariant of a class of
+symplectic 4-manifolds}, Proposition 2.4 and Section 3,
+\href{https://arxiv.org/abs/1410.1236}{arXiv:1410.1236}.
+\bibitem{Wright} E. P. Wright, \emph{Quotients of gravitational instantons},
+Theorem A and Section 8, \href{https://arxiv.org/abs/1102.2442}{arXiv:1102.2442}.
+\bibitem{Kazanova} A. Kazanova, \emph{Degenerations of Godeaux surfaces and
+exceptional vector bundles}, Proposition 2.6 and Corollary 2.5,
+\href{https://arxiv.org/abs/1402.0254}{arXiv:1402.0254}.
+\end{thebibliography}
+\end{document}

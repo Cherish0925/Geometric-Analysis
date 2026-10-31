@@ -1,0 +1,321 @@
+% Compile with XeLaTeX. Requires Fandol fonts (included in standard TeX Live/CTeX).
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\setmainfont{FandolSong-Regular.otf}[BoldFont=FandolSong-Bold.otf,ItalicFont=FandolKai-Regular.otf]
+\setsansfont{FandolHei-Regular.otf}[BoldFont=FandolHei-Bold.otf]
+\setmonofont{DejaVu Sans Mono}[Scale=.83]
+\newfontfamily\latin{Latin Modern Roman}
+\emergencystretch=3em
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip=0pt plus 1pt
+\usepackage[margin=22mm,top=22mm,bottom=23mm]{geometry}
+\usepackage{amsmath,amssymb,mathtools,esint,booktabs,tabularx,array,enumitem,xcolor,fancyhdr,hyperref}
+\definecolor{ink}{HTML}{173C52}
+\definecolor{muted}{HTML}{526572}
+\hypersetup{colorlinks=true,linkcolor=ink,urlcolor=ink,citecolor=ink,pdftitle={实际场、曲率相容性与 Einstein 几何},pdfauthor={Qiushi research handoff}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\linespread{1.17}
+\setlist{nosep,leftmargin=1.5em,topsep=4pt}
+\renewcommand{\arraystretch}{1.2}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{muted}Qiushi\quad 实际场与 Einstein 几何}
+\fancyhead[R]{\small\color{muted}科学概要\quad 2026.10.03}
+\fancyfoot[C]{\small\thepage}
+\setlength{\headheight}{15pt}
+\renewcommand{\headrulewidth}{.3pt}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\avint}{\mathop{\fint}}
+\newcommand{\key}[1]{\textbf{\color{ink}#1}}
+\newcommand{\subhead}[1]{\par\medskip{\sffamily\bfseries\color{ink}#1}\par}
+\newcommand{\refentry}[4]{\par\smallskip\noindent\textbf{[#1]} #2\par\nobreak{\small\href{#3}{#3}}\par\nobreak #4\par}
+\begin{document}
+\thispagestyle{empty}
+{\sffamily\color{muted}\small QIUSHI RESEARCH\quad /\quad SCIENTIFIC SYNOPSIS}
+\vspace{7mm}
+
+{\sffamily\bfseries\color{ink}\LARGE 实际场、曲率相容性与 Einstein 几何}
+
+{\sffamily\Large 共同思想、最强成果与继续生长的数学连接}
+
+\vspace{3mm}
+\key{供研究系统接续的科学概要}\hfill 2026年10月3日
+
+\vspace{3mm}\hrule\vspace{3mm}
+
+第一科学主线已经形成了一组可以相互支撑的数学思想：实际场选择曲率结构，微分相容性限制几何退化，拓扑把这些限制转成全局代价，构造与极值分析再检验代价是否最优。统一积分 gap、无迹 Ricci 强制、参数端点、真实手术族、周期约束和精确实现，都在推进这一共同认识。
+
+\key{其中最有解释力的问题是：一组在数值预算上允许的曲率与拓扑数据，究竟能否由同一个光滑几何和实际场实现？若不能，最低缺陷是多少；若能逼近边界，哪些结构承担代价，又有哪些精确几何能够出现？}
+
+这是一条可以继续扩展的研究线索。积分障碍给出它目前最成熟的定量表达；更一般的场、多个场的联合约束、完整核心与全局实现，则提供进一步统一和发现新几何的空间。O10、O11 是当前两项高度集中的检验，它们的答案会增强这套理论，也可能改变对最佳几何的预期。
+
+\subhead{当前最值得保存的整体认识}
+
+\textbf{实际场带来的信息超过一个拓扑数字。} 旋量或微分形式同时具有幅度、方向、联络和导数，必须满足真实方程。这些信息可以检验纯积分预算尚未决定的相容性。共同分析已经既有抽象二形式版本，也有使用单个实际 SW 解的精细版本。
+
+\textbf{允许的背景与不相容的偏差需要区别计算。} 校准背景可能很大，却对指定旋量恰好作用为零。保留这一结构，能够把强制估计集中到真正需要支付的部分；I40/I41 的线性尺度正体现了这种分析选择的力量。
+
+\textbf{退化是理论的检验场。} 不先预设几何紧性，使问题直接面对集中、塌缩和跨尺度传递。近期第五幂线丛机制已把一般弱端点推进到任意固定有限 Euler 密度；这表明实际场信息确实能够在尚无完整几何极限时产生全局约束。
+
+\textbf{下界与构造共同决定理论的形状。} 线性阶已有匹配；最佳首项仍须让全部竞争几何接受检验。研究应同时容纳更强的普适不等式与更便宜的真实几何，而不把标准恢复构造预先当成唯一最优形态。
+
+\vfill
+{\small\color{muted}本文是数学脉络与接续入口的概要。项目结果按已有原稿的陈述范围归纳；文献比较采用直接查阅的一手来源。正文保留已证结论、开放问题与研究启发之间的区别，同时不预先限定后续理论的最终形式。}
+
+\newpage
+\section*{一、共同机制：从实际结构到全局强制}
+
+经典 Chern--Weil 恒等式把曲率积分与拓扑相连；实际场方程进一步限制哪些曲率组合能共同出现。本项目的共同分析可理解为四个彼此衔接的环节：\textbf{场选定模型、协变导数预算、微分相容性测试、全局定量结论。} 每个环节都有可以独立复用的内容。
+
+旋量产生的多项式二形式与 Weyl 模型，提供了随场光滑变化的测试对象；Hessian 换指标、分部积分与有界幅度控制，使部分关键估计避开统一 Sobolev 常数；同一个实际场的弱 Bianchi 测试，把模型和真正的曲率微分恒等式放进同一计算。精细校准又消去对旋量作用为零的背景，避免将其全部计入误差。
+
+\subhead{一个已经存在、值得前置的抽象表达}
+
+底稿的有界自对偶二形式判据并不把 spin 结构或单极子类列为输入。对闭定向四流形上的光滑自对偶二形式 $\psi$，按原稿规范记
+\[
+q=|\psi|^2,\qquad
+\mathsf A_\psi=\frac q{24}I-\frac18\psi\otimes\psi,
+\]
+\[
+d=\avint_M\!\left(|\Ric+g|^2+|W^+-\mathsf A_\psi|^2+(q-2)^2\right),
+\qquad B_\psi=\avint_M|\Delta_H\psi|^2.
+\]
+在 $\|\psi\|_\infty\le K$ 下，原稿得到
+\[
+\boxed{(1+B_\psi)d\ge c(K)>0.}
+\]
+它表达的是一个特定校准结构与近 Einstein 条件之间的定量不相容性；形式的幅度、源项与 Weyl 拟合都保留在公式里。\key{因此，拓展输入具有明确的数学入口：新的方程若能自然提供这些场与预算，就有机会进入同一分析，而不必从头复制全部单极子理论。}
+
+\subhead{实际供给与分析后果可以分别发展}
+
+普通／special monopole 类、Bauer--Furuta 稳定上同伦、以及 $\mathrm{Pin}^-(2)$ 的实际提升，提供了不同的真实解来源。经典文献本身已经重视“解的存在”与“检测解的不变量”之间的区别 [2--5,9]。本项目沿这个接口传递更强估计，并研究单解输入、类平方损失及覆盖归一化。
+
+这使理论的通用性有可操作的内容：可以削弱核心分析所需的场输入，可以替换实际供给的来源，可以量化假设不足造成的损失，也可以引入多个场之间的联合信息。\textbf{这些方向相互促进，却不要求所有结论都被压进同一条公式。}
+
+\subhead{与前人最值得深究的连续性}
+
+LeBrun 的工作已经包含强曲率积分估计、凸包优化和 almost-K{\latin\char"00E4}hler 等号分析；Furuta--Matsuo 又引入谱缺陷的加强 [1,7,8]。值得继续发展的连接，是把这些饱和／近饱和结构中的微分信息，转成\textbf{对可能退化的实际几何仍有效、具有明确尺度的强制性}。已有方法可能提供更短证明、更弱假设或更好的常数，应直接吸收到共同理论中。
+
+\newpage
+\section*{二、目前最强的定量主干怎样连接}
+
+以下统一记
+\[
+P=\int_M|\Ric^\circ|^2,\quad S=\int_Ms^2,\quad
+R=\int_M|\Ric|^2=P+\tfrac14S,\quad
+\mathcal J=\frac{4P}{R},\quad T=2\chi+3\tau.
+\]
+在相应负 Yamabe 共形类中取 $s_{\widehat g}=-4$，使用一个未扰动实际 SW 解，记其类为 $a$、投影平方 $p=(a^+_{\widehat g})^2\ge A>0$。逐度量结果通过共形比较转回原度量；全度量应用则由相应实际供给逐共形类兑现。
+
+\subhead{有限参数理论与原积分障碍的严格回接}
+
+参数余量为
+\[
+D_\beta=(1+\beta^{-1})S+6(\beta+1)\int|W^+|^2-72\pi^2p.
+\]
+当 $\beta=8$，其系数与 Chern--Weil 组合精确对齐：
+\[
+D_8=108\pi^2(T-2p/3)+\tfrac{27}{2}P.
+\]
+它把单解非饱和估计转成 N1：在 $a^2\ge T$ 下，
+\[
+\boxed{\mathcal J(g)+\left(T/A-2/3\right)_+\ge\varepsilon_0>0.}
+\]
+该结论加强并恢复原 $\mathcal E$ 积分障碍，因为在适用范围内
+\[
+\mathcal E(g):=\inf_{\lambda\ne0}
+\frac{\int|\Ric-\lambda g|^2}{\lambda^2V}\ge\mathcal J(g).
+\]
+底稿还已量化类平方不足。令 $d=(T/A-2/3)_+$，
+\[
+\boxed{\mathcal J+d\ge\frac{c_*}{1+\nu/(2\pi^2)},\quad
+\nu=\frac{(-a^2)_+}{A};\qquad
+\mathcal J+d\ge\frac{c_y}{1+y},\quad y=\frac{(T-a^2)_+}{A}.}
+\]
+这两种损失互补。例如 $a^2\ge0$ 时第一式不再损失常数，即使 $a^2<T$。因此，相应泛化已经写入现有理论，不能仍把全部陈述停留在最早的硬性类平方条件。
+
+\subhead{I40/I41：允许校准端附近的精细强制}
+
+令 $\Sigma=S-32\pi^2p$、$\Pi=P+D_2$、$Y=(T-a^2)_+$。共同核心给出
+\[
+\boxed{\Sigma\le C\{\Pi+\sqrt{\Pi Y}\}.}
+\]
+与双手性拓扑预算结合，这一估计让无迹 Ricci 本身承担线性代价。它与 N1 处理不同的参数位置：N1 在临界拓扑比例附近给出分离；I40/I41 控制允许的 K{\latin\char"00E4}hler 校准端附近如何付出最小代价。\textbf{两者已在共同参数与实际场机制下连接，同时保留各自不可替代的分析内容。}
+
+\newpage
+\section*{三、从定量障碍到真实几何：已有成果的整体位置}
+
+原平衡族具有复双曲主体及普通吹起、连接柄：
+\[
+M_j=X_j\#k_j\overline{\mathbb{CP}}{}^2\#\ell_j(S^1\times S^3),\quad
+Q_j=k_j+4\ell_j,\quad h_j=Q_j/A_j\longrightarrow0.
+\]
+在原实际供给和平衡条件下，下界与恢复构造已确定
+\[
+\boxed{c_1h_j\le\alpha_j:=\inf_g\mathcal E(g)=\inf_g\mathcal J(g)
+\le\frac{4h_j}{1+h_j}.}
+\]
+线性尺度具有实际含义：与主体相比，手术密度虽趋零，其必要缺陷仍按一阶累积。最新变分归约进一步把这一量与最优全曲率连接起来：
+\[
+\alpha_j=4\frac{\inf_g P(g)}{8\pi^2A_j}+O(h_j^2),\qquad
+\int|\Rm_{\mathrm{op}}|^2=8\pi^2\chi(M_j)+P(g).
+\]
+这里采用原稿的曲率算子范数。因而 O11 的最佳首项是在研究\textbf{光滑拓扑手术改变最优全曲率的真实一阶费用}，也直接接续经典最优度量问题 [1,5,6]。
+
+\subhead{一般弱端点已取得的范围升级}
+
+近期新增证明在原 O10 供给、$p\ge A>0$、$a^2\ge T$ 下得到：每个固定有限 $B$ 对应
+\[
+\boxed{\frac{\chi(M)}A\le B\ \Longrightarrow\
+\avint_M|\Ric_g+g|^2+\frac{D_\beta(g)}{V_g}
+\ge c(B)\frac{(\beta-2)^2}{\beta^2},\quad\beta\ge2.}
+\]
+常数已有多项式密度损失的下控；不附加点态 Ricci、直径、非塌缩或统一 Sobolev 控制。原平衡族的 $\chi/A\to1/3$，已经处在这一范围。
+
+证明的关键是同一实际场产生的强流与同丛 resolvent，把剩余导数结构送入第五行列式线丛 $L^{\otimes5}$ 的截面 $\Phi\wedge t(v)$。一条路线以陈数局部化矛盾结束，另一条以弱 CR 关系及正势线丛测试结束。\textbf{两种结束方式共享实际结构，却不必互相依赖；其共同价值是无需先得到完整几何收敛就能限制拓扑隐藏。}
+
+\subhead{同一积累还包含哪些不可丢失的内容}
+
+\begin{tabularx}{\linewidth}{@{}p{.22\linewidth}Y@{}}
+\toprule
+\textbf{已有研究层面}&\textbf{对共同科学问题增加的信息}\\\midrule
+多实际类与周期矩阵&交形式、惯性指数、符号关联记录多个场能否同时实现；为超越单一最大投影预算提供接口。\\
+完整标记核心&相对拓扑、端群与边界 transgression 记录完整区域的费用及尺度传递，避免把所有气泡视作同价单元。\\
+受控边界与精确实现&在原条件下识别复双曲／双圆盘等边界几何；将积分饱和与全局实现之间的连接具体化。\\
+固定 $E_D$ 与慢模态&固定流形的逐点逼近、Teichmüller 慢场及全局修正，检验近似解何时能变成精确 Einstein 几何。\\
+\bottomrule
+\end{tabularx}
+
+\newpage
+\section*{四、文献带来的三条有力连接}
+
+\subhead{1. 等号刚性、谱缺陷与退化中的定量相容性}
+
+LeBrun 的凸几何理论已经把全部单极子类整合进统一预算，并以 almost-K{\latin\char"00E4}hler 典范联络分析等号 [7]。Apostolov、Armstrong、Dr{\latin\char"0103}ghici 的工作进一步展示：局部非 K{\latin\char"00E4}hler 模型可以存在，而完整曲率条件、唯一延拓和全局拓扑共同迫使紧流形可积 [11]。这对本项目的启发是\textbf{保留完整结构的联立约束}，而不只分别估计每个误差。
+
+Furuta--Matsuo 的加强尤其值得与共同分析直接对接 [8]。其谱量
+\[
+\lambda_\theta(g)=\inf_{\sigma\ne0}
+\frac{\|(d+d^*)(\sin\theta\,\sigma)\|_2^2+
+\|\nabla(\cos\theta\,\sigma)\|_2^2+2\|d|\sigma|\|_2^2}
+{\|\sigma\|_2^2}
+\]
+测量一组微分条件偏离饱和的程度。原文既有对光滑联络—旋量成立的微分估计，也有依赖非零 SW 与扰动解族的拓扑推论。\key{一个具体而开放的连接是：用本项目同场相容性控制谱退化，或用谱结构缩短强制估计、削弱输入。} 单解分支与扰动族分支可以在共享部分先比较，而不必预先认定其中一方完全包含另一方。
+
+\subhead{2. 拼接区能够产生有利相互作用}
+
+Malchiodi--Malizia 的2025年定理要求两个闭定向因子均非局部共形平坦，且不同时自对偶或同时反自对偶 [13]。\textbf{复定向的复双曲曲面与反向 Fubini--Study $\overline{\mathbb{CP}}^{\,2}$ 满足这些条件}，故已在原吹起拓扑上提供 Weyl 严格降能的竞争度量。2026年修订定理则要求 Bach-flat 非半自对偶主体，以及非圆球共形类的正 Yamabe、局部共形平坦因子；不直接适用于半自对偶的复双曲主体 [14]。
+
+它提示 O11 可以主动寻找\textbf{完整过渡区带来的节省}。对同一闭流形的两个度量，采用二形式算子范数 $\mathcal W=\int|W_{\rm op}|^2$，有
+\[
+\boxed{\Delta P=2\Delta\mathcal W+\frac1{12}\Delta S.}
+\]
+两篇论文的四阶张量范数满足 $\mathcal W_{\rm ten}=4\mathcal W$；相应判据是 $\Delta S<-6\Delta\mathcal W_{\rm ten}$。尚需控制同一构造的标量成本、可复制的一阶节省及全部过渡误差。与两个分离因子相比，连通和另有 $32\pi^2$ 的 Euler 修正，不能直接用同拓扑差分式。\textbf{严格降低 Weyl 能量已成立；是否降低原平衡族的最佳首项，仍是联合费用问题。}
+
+\subhead{3. 最优几何与实际标记的联合描述}
+
+Anderson 的理想极小序列提供轨形、ALE 与塌缩部分的组织方式 [12]。本项目的场、相对类与完整核心信息可以向这种几何描述加入标记约束：\textbf{哪些拓扑必须留在主体，哪些可以移向核心，边界修正如何改变费用？} 这既可能帮助锐利下界，也可能揭示新的廉价构造。研究可以采用分解，也可以在原流形上直接建立全局估计；两种途径的共同目标是决定真实可实现性。
+
+\newpage
+\section*{五、接续研究最有价值的数学空间}
+
+\subhead{O10：把完整相容性带过集中区}
+
+有限密度版本已经建立，当前更强目标是删除密度损失，或找到满足完整输入的真实逃逸。已有深低幅度估计排除了能量全部落入最深零幅度区；中间幅度过渡层仍可能携带径向能量。完整径向—相位系统保留了标量矩测试看不到的耦合。
+
+这里值得追求的是一个\textbf{能够同时保住有效质量与全局相容性的结论}。它可能来自完整有符号配对、典范曲率关系、跨尺度拓扑，也可能由实际逃逸构造揭示理论边界。第五线丛正势测试提供了可用的终端工具，新的信息需要在真实场向这一测试传递的过程中产生。经典精确刚性和当前近似方程之间的差别，正是可以继续创造的数学空间。
+
+\subhead{O11：让全部竞争几何决定最佳费用}
+
+候选首项 $4$ 等价于
+\[
+\inf_g P(g)=8\pi^2Q+o(Q).
+\]
+已有临界测试范数下的近驻点、近稳定选择及同场能量分解，为真正的几何变分提供了输入。下一条决定性连接可以是：低于候选费用的几何必有可用的下降／不稳定方向；也可以是直接拓扑下界，或改变最佳值的完整构造。
+
+例如，一个能在原背景中完整匹配的普通吹起块，若全部费用为 $8\pi^2(1-\delta)$，且可替换 $m_j$ 个位置、$m_j/k_j\to\theta\in(0,1]$，则在 $k_j/Q_j\to2/9$ 下得到
+\[
+\limsup_j\alpha_j/h_j\le4-\frac89\theta\delta.
+\]
+这里的完整匹配与 $o(Q)$ 总误差是构造的一部分；$\theta=1$ 才恢复 $4-8\delta/9$。已有全度量供给允许新竞争度量重新取得实际解，不必额外指定同一个拼接旋量。\textbf{这一点可以释放构造空间，同时保持原数学问题。}
+
+\subhead{继续增强共同理论，而不只延长两个证明}
+
+更自然的实际输入、多类之间尚未被单一预算利用的相容性、类平方损失的最佳依赖，以及边界附近的真实几何，都可以反过来加强主干。抽象二形式接口值得与其他自然场系统比较；周期、慢模态与完整核心应当在能产生新约束或新构造时直接进入证明。
+
+物理方向同样可以沿明确方程生长。例如，Einstein--matter 方程的无迹部分将 $P$ 下界转成相应应力的积分下界；正耦合二次曲率作用量也具有直接的变分接口。真正值得展开的是这些模型中新的解限制与饱和几何，而非提前指定某个物理名称作为主线终点。
+
+\key{整套研究的进一步力量，可以来自更少输入下的更强控制，也可以来自此前没有看到的几何实现方式。文献、证明与构造应共同决定下一步最简洁、最有解释力的理论，而不预先限定它只能保持现有形状。}
+
+\newpage
+\begingroup\small\setlength{\parskip}{4pt}\linespread{1.10}\selectfont
+\section*{六、原始文献与可直接利用的内容}
+{\small 以下文献均已查阅原始论文或作者综述。注释指出与本项目的具体连接，便于研究系统按问题深入。编号对应正文；2026年条目保留版本信息。}
+
+\refentry{1}{C. LeBrun, \emph{Ricci Curvature, Minimal Volumes, and Seiberg--Witten Theory}. Invent. Math. 145 (2001), 279--316.}{https://arxiv.org/abs/math/0003068}{Proposition 2.1、Theorem 2.3 区分实际单解与共形供给；Proposition 3.1 给曲率预算；Theorem 4.3 精确计算相应手术族的 Ricci 平方下确界。恢复构造及 $k+4\ell$ 费用是重要继承基础。}
+
+\refentry{2}{D. Kotschick, \emph{Monopole Classes and Einstein Metrics}. IMRN 2004(12), 593--609.}{https://arxiv.org/abs/math/0306022}{special 类与预期维数、实际类的分析后果、Einstein 障碍。它清楚展示为何可把供给来源与实际解的几何用途分别研究。}
+
+\refentry{3}{S. Bauer, M. Furuta, \emph{A Stable Cohomotopy Refinement of Seiberg--Witten Invariants: I}. Invent. Math. 155 (2004), 1--19.}{https://arxiv.org/abs/math/0204340}{稳定上同伦精化为普通计数之外的实际供给提供基础；与后续分析结合，可以扩大真实应用集合。}
+
+\refentry{4}{S. Bauer, \emph{A Stable Cohomotopy Refinement of Seiberg--Witten Invariants: II}. Invent. Math. 155 (2004), 21--40.}{https://arxiv.org/abs/math/0204267}{连通和的 smash product 公式及非消失应用。可据此寻找具有不同实际类配置的自然试验族，并保留各非消失条件。}
+
+\refentry{5}{M. Ishida, C. LeBrun, \emph{Curvature, Connected Sums, and Seiberg--Witten Theory}. Comm. Anal. Geom. 11 (2003), 809--836.}{https://arxiv.org/abs/math/0111228}{将 BF 供给、曲率下界与恢复构造结合；分别计算适用连通和族的 Yamabe／标量泛函与 Ricci 泛函。为多种曲率在同一几何中的联合最优性提供参照。}
+
+\refentry{6}{C. LeBrun, \emph{Curvature Functionals, Optimal Metrics, and the Differential Topology of 4-Manifolds} (2004).}{https://arxiv.org/abs/math/0404251}{尤其第11节：最优全曲率、极小值是否达到及光滑结构依赖。O11 通过 $\int|\Rm_{\rm op}|^2=8\pi^2\chi+P$ 直接进入这条经典变分问题。}
+
+\refentry{7}{C. LeBrun, \emph{Four-Manifolds, Curvature Bounds, and Convex Geometry} (2009；预印本2006).}{https://arxiv.org/abs/math/0611450}{Theorem A／4.6 以全部单极子类凸包组织统一估计；Theorem 4.10 用 almost-K{\latin\char"00E4}hler 典范曲率分析饱和几何。应与 N1、I41 的同假设、同尺度结论深入比较。}
+
+\newpage
+\section*{原始文献与可直接利用的内容（续）}
+
+\refentry{8}{M. Furuta, S. Matsuo, \emph{The Perturbation of the Seiberg--Witten Equations Revisited}. J. Math. Soc. Japan 68 (2016), 1655--1668.}{https://arxiv.org/abs/1405.1219}{式(7)--(9)、Proposition 1 与 Theorems 8--9：谱缺陷 $\lambda_\theta$、其零点几何与加强曲率估计。任意光滑场的微分部分可先与单解分析衔接；拓扑推论另保留扰动供给条件。}
+
+\refentry{9}{M. Ishida, S. Matsuo, N. Nakamura, \emph{Yamabe Invariants and the $\mathrm{Pin}^-(2)$-Monopole Equations}. Math. Res. Lett. 23(4) (2016).}{https://arxiv.org/abs/1505.05948}{扭曲基本类、实际解提升到双覆盖、曲率估计与等号结构。它为覆盖兼容及非普通 SW 应用提供直接来源。}
+
+\refentry{10}{C. LeBrun, \emph{An Overview of Einstein 4-Manifolds}. arXiv:2609.03033v1，2026-09-02.}{https://arxiv.org/abs/2609.03033}{第7节总结凸包曲率预算和等号几何，第3节讨论两手性 Levi-Civita 联络。可用于把实际场、曲率与 Einstein 存在性放回当前领域全景。}
+
+\refentry{11}{V. Apostolov, J. Armstrong, T. Dr{\latin\char"0103}ghici, \emph{Local Models and Integrability of Certain Almost K{\latin\char"00E4}hler 4-Manifolds}. math/0109098v2.}{https://arxiv.org/abs/math/0109098}{局部模型、唯一延拓与全局可积性；Theorem 2 在第三 Gray 曲率条件下证明紧 almost-K{\latin\char"00E4}hler 四流形为 K{\latin\char"00E4}hler。为 O10 的完整结构相容性提供精确模型与方法参照。}
+
+\refentry{12}{M. T. Anderson, \emph{Canonical Metrics on 3-Manifolds and 4-Manifolds}. math/0511034 (2005).}{https://arxiv.org/abs/math/0511034}{Theorem 4.10、Remark 4.12及拓扑讨论：理想极小几何与轨形／塌缩分支。原手术标记在这些部分中的分配仍需另外分析。}
+
+\refentry{13}{A. Malchiodi, F. Malizia, \emph{Weyl Energy and Connected Sums of Four-Manifolds}. arXiv:2505.17752v1 (2025).}{https://arxiv.org/abs/2505.17752}{Theorem 1.1 与能量展开：用颈部 Weyl 相互作用和双调和插值得到严格次可加。为超出标准恢复的完整竞争构造提供新近范例。}
+
+\refentry{14}{A. Malchiodi, F. Malizia, \emph{Decreasing Weyl's Energy by Connected Sums with Locally Conformally Flat Manifolds}. arXiv:2604.17547v2，2026-08-14修订.}{https://arxiv.org/abs/2604.17547}{Bach-flat 非半自对偶主体与正 Yamabe 局部共形平坦因子的降能。采用修订版条件；对 O11 的启发在相互作用机制，实际迁移须联合控制标量成本。}
+
+\endgroup
+\newpage
+\section*{七、与现有研究档案的衔接}
+
+本文围绕已形成的数学联系组织，不按发现日期重排全部笔记。接续时可按下表找到原命题及直接前置；正文公式的完整假设、范数和常数以相应原稿为准。
+
+\begin{tabularx}{\linewidth}{@{}p{.30\linewidth}Y@{}}
+\toprule
+\textbf{数学内容}&\textbf{现行连续英文稿的对应入口}\\\midrule
+有界二形式接口&\texttt{sec:bounded-forms}。\\
+N1、负类平方与短缺损失&同稿 \texttt{thm:trf-gap}、\texttt{cor:trf-nu}、\texttt{cor:trf-y}。\\
+I40/I41 与单解强制&同稿 \texttt{sec:linear-coercivity}、\texttt{sec:single-solution-coercivity}。\\
+实际输入、BF 与扭曲应用&同稿 \texttt{sec:cover-obstructions}、\texttt{sec:twisted-supply}、\texttt{sec:bf-linear}。\\
+周期与多类联合&同稿 \texttt{sec:actual-forms}、\texttt{sec:period-inertia}、\texttt{sec:joint-matrix}。\\
+边界、慢模态、固定流形&同稿 \texttt{sec:chern-boundary}、\texttt{sec:virtual-realization}、\texttt{sec:slow-moduli}、\texttt{sec:fixed-bundle-geometry}。\\
+完整核心与标记&同稿 \texttt{sec:whole-core}、\texttt{sec:marked-charge}、\texttt{sec:actual-core-fit}。\\
+近期端点与变分新增&\texttt{sec:finite-density-endpoint}；\texttt{sec:variational-selection-global-cost}；原包 A--F 及 \texttt{other\_web} 正文同时保留。\\
+\bottomrule
+\end{tabularx}
+
+\subhead{当前状态的必要更新}
+
+有限密度 O10 已从开放目标转为现有稿件中的结果；N1 的两种类平方损失也已在底稿证明。原普通手术族的完整单极子类预算已在近期增量中计算，它与其他 BF 连通和族尚未确定的完整预算应分别使用。O11 的最佳首项、完全无密度 O10、固定 $E_D$ 的全部 Einstein 存在性等，各保留原来的量词和完成标准。
+
+这些区别使既有成果能够累积：新研究可以直接站在已完成的连接上，同时自由改变未完成部分的方法、构造和主定理组织。完整论文可由几条互相支撑的主定理、实际应用与匹配构造组成；共同思想来自它们共同回答的几何问题。
+
+\subhead{资料范围说明}
+
+网页原稿依据9月29日英文稿、9月29--30日增量及上述文献。本地整合版已将各节接入10月1日连续正文；新英文节 \texttt{sec:field-interfaces} 补明谱缺陷、Weyl 联合成本与复制比例。完整稿现为 \texttt{20261003\_Einstein\_Compatibility\_Integrated\_Manuscript.tex}；原网页文件独立保存在来源目录，七节对应与14篇文献入口见 \texttt{catalog/web\_increment\_20261003.json}。本文仍是概要，不替代连续正文中的证明。
+
+\vspace{4mm}
+\key{值得继续追求的统一，是让实际结构、定量相容性和真实几何构造彼此解释：更自然的输入带来更强的结论；最优构造揭示必要假设和最佳尺度；退化与实现进一步说明拓扑如何决定几何。现有积累为这一方向提供了多种具体入口，后续研究仍有空间形成比当前表述更简洁、更有力量的理论。}
+
+\end{document}

@@ -1,0 +1,1197 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{esint}
+\setmathfont{Asana Math}
+\setlength{\emergencystretch}{3em}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\hypertarget{marked-determinant-charge-and-signed-first-order-cost}{%
+\section{Marked determinant charge and signed first-order
+cost}\label{marked-determinant-charge-and-signed-first-order-cost}}
+
+27 September 2026. Continues \texttt{fbe5404} and the I40--I49 proofs.
+The external reviews are preserved under \texttt{guidance/source/};
+their proposed general no-loss theorem is a research target, not a
+premise here.
+
+The new connection is between a marked \textbf{whole smooth core} and
+the actual determinant connection, without requiring a nonzero spinor
+inside the rescaled core. Its relative charge is controlled at every
+finite tree depth. This is not yet control of the opposite-spinor second
+Chern number: an explicit classical family distinguishes those charges.
+A separate signed localization below identifies the flux needed to
+improve the balanced small-h coefficient.
+
+\hypertarget{a-marked-determinant-atom}{%
+\subsection{1. A marked determinant
+atom}\label{a-marked-determinant-atom}}
+
+Use the complex (physical) orientation of \(\Gamma_n=\frac1n(1,-2)\),
+where \(n=2k+1\ge3\). The generator acts as
+\((z_1,z_2)\mapsto(\zeta z_1,\zeta^{-2}z_2)\). Put
+
+\[
+ f_n=\frac{k}{2k+1}=\frac{n-1}{2n}\in[1/3,1/2).
+ \tag{1.1}
+\]
+
+Let \(\Omega\) be a compact oriented smooth four-manifold with this
+single marked boundary. Let \(L\) be a Hermitian line bundle whose
+boundary flat character, in this marking, is \(\zeta\) or
+\(\zeta^{-1}\). No topology or metric restriction is imposed on the
+interior. Write \(F_A=i\omega_A\), with \(\omega_A\) real, for a unitary
+connection.
+
+\hypertarget{the-relative-square-and-its-sign}{%
+\subsubsection{1.1. The relative square and its
+sign}\label{the-relative-square-and-its-sign}}
+
+The minimal resolution has intersection matrix \(Q_k\) with diagonal
+\((-2,\ldots,-2,-3)\) and adjacent off-diagonal entries 1. Its
+anticanonical class evaluates as \((0,\ldots,0,-1)\); its boundary
+character is \(\zeta^{-1}\). Inverting the last column gives
+
+\[
+ (Q_k^{-1})_{ik}=-\frac{i}{2k+1},\qquad
+ (Q_k^{-1})_{kk}=-f_n.
+ \tag{1.2}
+\]
+
+Indeed the interior recurrence is \(x_{i-1}-2x_i+x_{i+1}=0\), with
+\(x_0=0\) and \(x_{k-1}-3x_k=1\). The inverse line has the same square.
+Glue an arbitrary same-marked filling to the reversed resolution,
+matching the flat boundary connections. The resulting closed line bundle
+has integral first-Chern square. Consequently, if \(A\) is flat on a
+boundary collar,
+
+\[
+ q_A:=\frac1{4\pi^2}\int_\Omega\omega_A\wedge\omega_A
+                  \in\mathbb Z-f_n.
+ \tag{1.3}
+\]
+
+The statement uses the actual character, not just that it is faithful. A
+different character can have a different fractional square.
+
+For a general boundary connection let \(A_0\) be the flat connection on
+the same boundary line. Write \(A=A_0+ia\) there and set
+
+\[
+ b_A(Y)=\frac1{4\pi^2}\int_Y a\wedge da,
+ \qquad q_A^{\rm rel}=q_A-b_A(Y).
+ \tag{1.4}
+\]
+
+These quantities are unambiguous: \(H^1(Y;\mathbb R)=0\), so changing
+the flat reference or gauge changes \(a\) by an exact form and does not
+change the integral. Flatten the connection near the boundary, or use
+the abelian transgression \(d(a\wedge da)=da\wedge da\), to obtain
+
+\[
+ \boxed{q_A^{\rm rel}\in\mathbb Z-f_n,\qquad
+ |q_A^{\rm rel}|\ge f_n.}
+ \tag{1.5}
+\]
+
+Boundary orientation is outward throughout. In particular, the
+flat-collar template satisfies
+
+\[
+ \boxed{\int_\Omega|F_A|^2\ge4\pi^2 f_n
+             =2\pi^2\frac{n-1}{n}\ge\frac{4\pi^2}{3}.}
+ \tag{1.6}
+\]
+
+This is a characteristic-number energy bound, not an SW existence
+theorem. An actual positive-weight SW solution with identically flat
+determinant connection on an open collar would have zero spinor there.
+The application therefore uses the general-boundary estimate below, not
+a flat actual collar.
+
+\hypertarget{arbitrary-actual-connection-on-a-controlled-geometric-collar}{%
+\subsubsection{1.2. Arbitrary actual connection on a controlled
+geometric
+collar}\label{arbitrary-actual-connection-on-a-controlled-geometric-collar}}
+
+Suppose an outer collar is identified with
+\([r,2r]\times S^3/\Gamma_n\), with its metric uniformly bilipschitz to
+the Euclidean annulus and its radial coarea factors uniformly
+comparable. The comparison constant is fixed; \(r\), \(n\), interior
+geometry and internal scale separation are unrestricted.
+
+For every smooth level \(Y_s\), take the round Coulomb primitive of the
+restricted curvature. On the unit round quotient, the relevant positive
+Hodge spectrum is bounded below by that of \(S^3\): lift to invariant
+forms, solve on \(S^3\), and descend. Thus the constant is independent
+of \(n\). Scaling and metric comparison give
+
+\[
+ \|a\|_{L^2(Y_s)}\le Cr\|F_A|_{Y_s}\|_{L^2(Y_s)},\qquad
+ |b_A(Y_s)|\le Cr\int_{Y_s}|F_A|^2.
+ \tag{1.7}
+\]
+
+Coarea supplies a level with
+
+\[
+ |b_A(Y_s)|\le C\int_{\text{collar}}|F_A|^2.
+ \tag{1.8}
+\]
+
+Let \(\Omega_s\) be the whole region inside that level and let
+\(\widehat\Omega\) include it and the collar. Combining (1.4), (1.8) and
+\(|\omega_A\wedge\omega_A|\le|F_A|^2d\mu\) proves
+
+\[
+ \boxed{f_n\le |q_A^{\rm rel}(\Omega_s)|
+               \le C\int_{\widehat\Omega}|F_A|^2.}
+ \tag{1.9}
+\]
+
+The relative number is independent of the selected level. No smallness
+of the connection, no gauge equation and no field-amplitude premise is
+required for (1.9). The geometric collar, marked character and whole
+filling are essential hypotheses. A terminal punctured region does not
+meet them.
+
+\hypertarget{sharpness-of-the-flat-comparison-template}{%
+\subsubsection{1.3. Sharpness of the flat comparison
+template}\label{sharpness-of-the-flat-comparison-template}}
+
+\href{https://arxiv.org/html/math/0206229}{Calderbank--Singer, Theorem
+A} supplies scalar-flat Kähler ALE metrics on the minimal resolution.
+Their canonical determinant curvature is anti-self-dual in the physical
+orientation, has relative square \(-f_n\), and hence has energy exactly
+\(4\pi^2f_n\). Truncate sufficiently far out and flatten the decaying
+connection to its flat reference over the outer annulus. The extra
+energy tends to zero. If desired, flatten the metric collar as in I47.
+Homothety does not change the four-dimensional curvature-square energy.
+Therefore
+
+\[
+ \inf_{\text{flat-collared marked smooth fillings}}
+                   \int|F_A|^2=4\pi^2 f_n.
+ \tag{1.10}
+\]
+
+This invokes a classical construction; it is not a new ALE metric or a
+closed actual zero-end escape sequence.
+
+\hypertarget{actual-determinant-charge-is-tight-on-small-volume-marked-cores}{%
+\subsection{2. Actual determinant charge is tight on small-volume marked
+cores}\label{actual-determinant-charge-is-tight-on-small-volume-marked-cores}}
+
+Retain the actual finite-pencil input and class-square hypothesis of
+\href{20260927_conformal_separation_and_zero_end.md}{I41, Sections
+6--7}. For \(\beta\ge4\) and \(0<\eta\le1\), write
+
+\[
+ \eta=\kappa_\beta+\varepsilon,\qquad
+ \epsilon_*=\beta^{-1}+\sqrt\eta.
+\]
+
+The positive determinant fit and the negative determinant saturation
+give bounded two-form models \(K_+,K_-\) with
+
+\[
+ \|K_+\|_\infty+\|K_-\|_\infty\le C,\qquad
+ \int(|F_A^+-K_+|^2+|F_A^--K_-|^2)\le C\epsilon_*V.
+ \tag{2.1}
+\]
+
+Equivalently for the present purpose, there is a positive measure
+\(\nu\) such that
+
+\[
+ |F_A|^2d\mu\le C\,d\mu+\nu,\qquad
+                        \nu(M)\le C\epsilon_*V.
+ \tag{2.2}
+\]
+
+This follows pointwise from the squared distance to the bounded models.
+It is normalized-volume tightness, not local scale-invariant regularity.
+
+Let \(\widehat\Omega_i\) be any finite collection of the marked
+whole-core regions of Section 1.2 with overlap at most \(\Lambda\). Put
+\(Q_i=q_A^{\rm rel}(\Omega_i)\). Summing (1.9) and (2.2) yields
+
+\[
+ \boxed{\frac1V\sum_i|Q_i|
+ \le C\frac{\sum_i\operatorname{Vol}(\widehat\Omega_i)}V
+                          +C\Lambda\epsilon_*,
+ \qquad \frac N3\le\sum_i|Q_i|.}
+ \tag{2.3}
+\]
+
+In a zero-end sequence, bounded overlap and total core volume \(o(V)\)
+therefore force the \textbf{absolute relative determinant-charge
+density}, not just the number density, to tend to zero. No nonzero
+rescaled spinor in a core is assumed. The actual line and its boundary
+marking are retained.
+
+Alternatively suppose each enlarged core has volume at most a
+sufficiently small fixed \(v_*\). The volume term in the unnormalized
+(2.3) is at most \(CNv_*\), and can be absorbed using
+\(N/3\le\sum_i|Q_i|\). Thus
+
+\[
+                        N/V\le C\Lambda\epsilon_*.
+ \tag{2.4}
+\]
+
+For \textbf{absolute} exclusion of every such core, one needs the
+corresponding absolute error tending to zero; for example, total core
+volume tending to zero and \(\epsilon_*V\to0\). Normalized estimates
+alone do not give that.
+
+\hypertarget{what-survives-an-arbitrarily-deep-finite-decomposition}{%
+\subsubsection{2.1. What survives an arbitrarily deep finite
+decomposition}\label{what-survives-an-arbitrarily-deep-finite-decomposition}}
+
+For a region with one outer and several inner marked boundaries define
+the following quantity. Each inner boundary is oriented outward from the
+removed \textbf{child core}, opposite to its induced boundary
+orientation in the region:
+
+\[
+ Q_A(W)=\frac1{4\pi^2}\int_W\omega_A\wedge\omega_A
+          -b_A(Y_{\rm out})+\sum b_A(Y_{\rm in}).
+ \tag{2.5}
+\]
+
+Matched restrictions of the \textbf{same actual connection} give exact
+additivity when pieces are glued. Internal boundary terms cancel before
+absolute values are taken. A one-child flat neck can have zero charge
+and zero energy; do not charge it as if it were a smooth cap.
+
+Apply (2.3) to a disjoint frontier of whole subtrees, not to every
+nested vertex. Its constant is independent of tree depth. A sequence of
+finite trees of unbounded depth therefore obeys the same frontier
+estimate. This is a proved depth-independent accounting result
+\textbf{given} those marked regions. It does not construct a bubble tree
+from weak integral input, nor license an infinite unsigned sum over
+overlapping ancestors.
+
+More explicitly, set \(\phi_e=b_e-f_{n_e}\) at every marked interface. A
+shell with outgoing edge \(e_0\) and incoming edges \(e_1,\ldots,e_s\)
+satisfies
+
+\[
+ q_A(W)=m_W+\phi_{e_0}-\sum_{a=1}^s\phi_{e_a},\qquad m_W\in\mathbb Z.
+ \tag{2.6}
+\]
+
+Sum this identity over any finite retained tree. Only its outer root and
+unresolved frontier remain. Equations (1.8), (2.2), and (2.3) bound the
+\textbf{absolute} sum of frontier \(b_e\), \(f_{n_e}\), and hence
+\(\phi_e\) by \(o(V)\) when the frontier whole cores have total volume
+\(o(V)\). They also control integer charges: if \(Q_i=m_i-f_{n_i}\),
+then \(|m_i|\le2|Q_i|\). This supplies the limiting estimate beyond
+formal finite-tree cancellation.
+
+\hypertarget{the-same-relative-charge-in-the-actual-harmonic-class}{%
+\subsubsection{2.2. The same relative charge in the actual harmonic
+class}\label{the-same-relative-charge-in-the-actual-harmonic-class}}
+
+Let \(\mathcal H_A=2\pi i\,a_g^{\rm h}\) be harmonic curvature on the
+\textbf{same integral determinant line}, including its torsion
+restriction, and let \(J_+=\|F_A^+\|_2^2-4\pi^2p\). The supplied
+actual-field estimates give \(J_+\le C\eta V\). Hodge orthogonality and
+Stokes imply
+
+\[
+ \boxed{\|F_A^\pm-\mathcal H_A^\pm\|_2^2=J_+,\qquad
+              \|F_A-\mathcal H_A\|_2^2=2J_+.}
+ \tag{2.7}
+\]
+
+Indeed the difference is exact, say \(i\,d\alpha\), and
+\(\int d\alpha\wedge d\alpha=0\). Its two chiral energies agree.
+Combining (2.1) and (2.7) gives the same measure majorant and setwise
+tightness for \(\mathcal H_A\) as for \(F_A\).
+
+If two connections on this line differ by \(i\alpha\), the change of
+\(\int\omega_A\wedge\omega_A\) is the boundary integral of
+\(2\alpha\wedge\omega_A+\alpha\wedge d\alpha\). This is precisely the
+change of the boundary expression in (1.4). Therefore
+
+\[
+            q_{A_{\rm h}}^{\rm rel}(\Omega_i)=q_A^{\rm rel}(\Omega_i).
+ \tag{2.8}
+\]
+
+There is no estimate for the global primitive \(\alpha\), nor any use of
+a first eigenvalue bound. The equality is topological; the energy
+control comes from (2.7). Replacing the integral line by only its real
+cohomology vector would lose the torsion boundary marking and is not
+permitted.
+
+\hypertarget{density-in-the-original-budget}{%
+\subsubsection{2.3. Density in the original
+budget}\label{density-in-the-original-budget}}
+
+Now assume \(p\ge A>0\) and \(\chi(M)/A\le B\). At small Ricci residual
+\(r=\fint|\operatorname{Ric}+g|^2\), Chern--Gauss--Bonnet yields
+
+\[
+ \frac{8\pi^2\chi}V\ge
+ \frac{(4-2\sqrt r)^2}{24}-\frac r2
+                 =\frac23-\frac23\sqrt r-\frac r3.
+ \tag{2.9}
+\]
+
+Here \(\fint(s+4)^2\le4r\) and
+\(\fint|\operatorname{Ric}^{\circ}|^2\le r\). For \(r\le1/4\), (2.9)
+gives \(V/A\le32\pi^2B\). Positive determinant saturation gives
+\(p/V\to2/(9\pi^2)\) at the endpoint. Consequently
+
+\[
+ \frac{9\pi^2}{2}(1+o(1))\le\frac VA
+                         \le12\pi^2B(1+o(1)).
+ \tag{2.10}
+\]
+
+In particular (2.3) is also an \(o(A)\) charge statement. The same Euler
+identity bounds the total \(W^-\) energy by \(C(B)V\), hence the
+curvature energy of \(E_-=S^-\otimes L\) by \(C(B)V\). None of this
+gives local noncollapse or a quartic derivative bound for the torsion
+field.
+
+\hypertarget{the-determinant-charge-does-not-control-the-torsion-index}{%
+\subsection{3. The determinant charge does not control the torsion
+index}\label{the-determinant-charge-does-not-control-the-torsion-index}}
+
+The distinction can be made exact. Now additionally assume a Spin-c
+structure on the entire filling with determinant \(L\), extending the
+specified boundary lift. An arbitrary line bundle from Section 1 need
+not be such a determinant. In an exactly flat-conical comparison collar
+with the two allowed parallel boundary spinors, let \(J_+\) be the
+relative second Chern number of \(S^+\), and \(J_-\) that of
+\(S^-\otimes L\), using these boundary sections. Write
+
+\[
+ q_A^{\rm rel}=m-f_n,\quad
+ B_n=\frac{5-n}{2}+f_n,\quad
+ j=2\chi(\Omega)+3\tau(\Omega)-\frac{5-n}{2}.
+ \tag{3.1}
+\]
+
+Both \(m,j\) are integers. The spinor characteristic identities,
+together with the outward cone Gauss--Bonnet boundary term \(1/n\), give
+
+\[
+ \boxed{J_+=\frac{m-j}{4},\qquad
+        J_--J_+=2q_A^{\rm rel}+\chi(\Omega)-\frac1n
+                    =\chi(\Omega)-1+2m.}
+ \tag{3.2}
+\]
+
+For the first formula, \(4c_2(S^+)=c_1(L)^2-(p_1+2e)\) and the
+integrated last parenthesis is \(2\chi+3\tau-B_n=j-f_n\). For the
+second, the exact characteristic-form identity is
+\(c_2(S^-\otimes L)-c_2(S^+)=2c_1(L)^2+e\). The parallel boundary
+references have zero transgression. These derivations also specify the
+sign and the necessary congruence \(m\equiv j\pmod4\).
+
+On the canonical minimal-resolution models used in (1.10),
+
+\[
+ \chi=k+1,\quad\tau=-k,\quad m=j=J_+=0,
+ \qquad J_-=k=\frac{n-1}{2},\qquad
+ |q_A^{\rm rel}|=f_n<\frac12.
+ \tag{3.3}
+\]
+
+Thus even a zero positive-spinor relative index and uniformly bounded
+determinant energy do not bound the opposite-spinor index. The latter
+grows without bound. Actual nonparallel boundary sections can
+additionally carry integer homotopy defects; they must be tracked rather
+than silently replaced by the flat references.
+
+Consequently (2.3) cannot alone eliminate the order-V signed torsion
+flux forced by the actual zero-end identities. One needs actual control
+of that index or flux, a uniform charge-per-core bound, or a different
+direct PDE argument. The classical model proves this limitation of a
+proposed \textbf{charge comparison}, not existence of a closed zero-end
+counterexample.
+
+\hypertarget{an-actual-relative-index-escape-criterion}{%
+\subsubsection{3.1. An actual relative-index escape
+criterion}\label{an-actual-relative-index-escape-criterion}}
+
+The existing zero-end identities give
+
+\[
+ \frac{c_2(E_-)[M]}V
+   =\frac1{8\pi^2V}\int|W^-|^2
+                      +\frac5{12\pi^2}+O(\epsilon_*).
+ \tag{3.4}
+\]
+
+Suppose \textbf{disjoint} marked whole cores contain all zeros of the
+actual cubic torsion \(t_\Phi\), which is nonzero on their boundaries.
+Let \(\nu_i\) be the relative second Chern index defined by this actual
+boundary section, not by a reference parallel spinor. Excision then
+gives \(\sum_i\nu_i=c_2(E_-)[M]\). Bounded overlap alone would not
+justify this index identity.
+
+If their total volume is \(o(V)\), (2.3) implies, for every fixed
+\(L_0\),
+
+\[
+ \frac1V\sum_{\nu_i^+\le L_0|Q_i|}\nu_i^+\longrightarrow0.
+ \tag{3.5}
+\]
+
+Thus macroscopic positive torsion index must occur at unbounded
+\(\nu_i^+/|Q_i|\), or outside this proposed marked-core cover. Equation
+(3.3) shows why topology alone does not bound that ratio.
+
+There is also an \textbf{actual local gauge} reason not to impose a
+universal index/charge comparison on arbitrary cores. In the existing
+hyperbolic ball construction of
+\href{20260927_conformal_separation_and_zero_end.md}{I41, Section 15.1},
+the determinant line is trivial, so Stokes gives exactly
+\(q_A^{\rm rel}=0\). The actual cubic torsion has relative index \(+1\),
+and \(\int|F_A|^2=O(\varepsilon^4)\). Ricci and Weyl errors vanish on
+that ball. Its boundary winding and large outgoing derivative still have
+to be matched to an exterior. The normalized full form defect on the
+shrinking ball was not shown to tend to zero. This is a local
+obstruction to a charge-only argument, not a closed O10 counterexample.
+
+\hypertarget{actual-hyperbolic-cores-with-unbounded-torsion-index}{%
+\subsubsection{3.2. Actual hyperbolic cores with unbounded torsion
+index}\label{actual-hyperbolic-cores-with-unbounded-torsion-index}}
+
+The preceding local obstruction extends beyond a single unit of charge.
+It can carry arbitrarily large index on the same ball topology, with a
+uniformly nonzero torsion field on a \textbf{round fixed-ratio collar}.
+
+\textbf{Proposition (high-index local actual fields).} Fix a hyperbolic
+metric with sectional curvature \(-1/3\) and a point. For every integer
+\(d\ge1\) and sufficiently small \(\varepsilon>0\), there is a smooth
+actual solution on the physical ball \(B_{2\varepsilon}\), on its
+trivial determinant line, such that
+
+\[
+ D_A\Phi=0,\qquad F_A^+=2i\sigma(\Phi),\qquad
+ |\Phi|^2=\frac43+O_d(\varepsilon^2).
+ \tag{3.6}
+\]
+
+On every round sphere of radius \(s\varepsilon\), \(1\le s\le3/2\), its
+cubic torsion is nonzero and has relative index \(d^2\). The relative
+determinant square is zero. Uniformly over these radii,
+
+\[
+ \int_{Y_{s\varepsilon}}G=-d^2+O_d(\varepsilon^4),
+ \qquad q_A^{\rm rel}=0.
+ \tag{3.7}
+\]
+
+Here \(G\) is the fixed torsion-cutoff transgression of Section 5, which
+equals the full unit-section transgression throughout that collar.
+
+\textbf{Construction.} Use the Clifford frame and curved right inverses
+of I41 Section 15.1. In rescaled coordinates \(x=\varepsilon y\), set
+
+\[
+ a^2=4/3,\quad c_d=2^{(d-1)/2},\quad
+ g_d(z)=\frac{c_d}{2(d+1)}
+              (\bar z_1^{d+1}-\bar z_2^{d+1}),\quad
+ \Phi_0=a e_1+\varepsilon g_d e_2.
+ \tag{3.8}
+\]
+
+The antiholomorphic coefficient has \(D_0^+(0,g_d)=0\). Direct
+substitution in the cubic torsion formula gives, in physical derivative
+normalization,
+
+\[
+ t_0(\varepsilon y)=a^2c_d(\bar z_1^d,\bar z_2^d).
+ \tag{3.9}
+\]
+
+Indeed the components are \(a^2(g_1+ig_2,-g_3-ig_4)\); the terms
+involving \(\varepsilon g_d\) cancel by the same antiholomorphic Dirac
+equations.
+
+For each fixed \(d\), the pulled-back rescaled metric is Euclidean plus
+\(O(\varepsilon^2)\) in every fixed differentiability norm. The
+Dirichlet right inverses \(R_D,R_A\) used in the earlier construction
+are uniformly bounded for small \(\varepsilon\). First correct the seed
+by \(-R_DD_\varepsilon^+\Phi_0=O_d(\varepsilon^2)\). Then apply the
+contraction
+
+\[
+ A(\Phi)=R_A(0,2\sqrt2\,i\varepsilon^2\sigma(\Phi)),\qquad
+ \Phi=\widehat\Phi_0-\tfrac12R_D[c(A(\Phi))\Phi].
+ \tag{3.10}
+\]
+
+On a fixed \(C^{k,\alpha}\) neighborhood, \(k\ge3\), its Lipschitz
+constant is \(O_d(\varepsilon^2)\). It gives a smooth exact solution
+with \(A_y=O_d(\varepsilon^2)\) and \(\Phi-\Phi_0=O_d(\varepsilon^2)\),
+and hence
+
+\[
+ t(\varepsilon y)=a^2c_d(\bar z_1^d,\bar z_2^d)+O_d(\varepsilon)
+                                                \quad\hbox{in }C^1.
+ \tag{3.11}
+\]
+
+Constants may depend on \(d\). Boundary values are outputs of the
+construction; they have not been prescribed as gluing data.
+
+Since \(c_d^2(|z_1|^{2d}+|z_2|^{2d})\ge|y|^{2d}\), the actual torsion
+has \(|t|\ge a^2/2\) on \(1\le|y|\le3/2\), for sufficiently small
+\(\varepsilon\). Its squared norm is at least \(4/9\), exceeding the
+cutoff threshold \(m_\beta/8\le16/81\). Thus \(\theta=1\) on that whole
+collar, for every \(\beta\ge4\).
+
+The map \((\bar z_1^d,\bar z_2^d)\) has real degree \(+d^2\): the
+holomorphic power map has degree \(d^2\), and conjugation on two complex
+coordinates preserves real orientation. Boundary nonvanishing and the
+small perturbation preserve this degree on every indicated sphere.
+Interior zeros may split or be nontransverse; no unique-zero assertion
+is needed for the relative index. Curvature of \(E_-\) is \(O_d(1)\) in
+physical norms, so
+\(\int_{B_{s\varepsilon}}c_2(E_-)=O_d(\varepsilon^4)\). The relative
+Chern formula proves (3.7). The determinant equality in (3.7) is exact
+Stokes on a trivial line, independently of any norm estimate.
+
+The construction and exact torsion equation also give
+
+\[
+ \begin{split}
+ \int(|\nabla_A^2\Phi|^2+|\nabla t|^2)&=O_d(\varepsilon^2),\\
+ \int(|F_A|^2+|\nabla_A\Phi|^4+|t|^4)&=O_d(\varepsilon^4),\\
+ \int(|\langle\Phi,\nabla_A\Phi\rangle|^2+|D_{3A}^-t|^2)
+                                             &=O_d(\varepsilon^6).
+ \end{split}
+ \tag{3.12}
+\]
+
+For the last estimate, the current is \(O_d(\varepsilon)\), the spinor
+derivative is \(O_d(1)\), and the actual torsion Dirac identity cancels
+the scalar/model terms; \(W^+=0\) here. Ricci and Weyl errors vanish
+exactly because the physical metric is the fixed hyperbolic metric.
+
+Choose \(\varepsilon_d\) diagonally, after fixing \(d\), so all costs in
+(3.12) tend to zero and the boundary degree and cutoff estimates hold.
+Then \(\nu=d^2\to\infty\), while the displayed absolute subcritical
+costs vanish. There is no claim of a uniform-in-d implicit-function
+radius.
+
+The missing critical direction cost is visible explicitly. For the unit
+seed \(u_d=t_0/|t_0|\), polar coordinates give
+
+\[
+ \frac{d^2}{r^2}\le|du_d|^2\le\frac{4d^2}{r^2}
+                   \quad(1\le r\le3/2).
+ \tag{3.13}
+\]
+
+The phase contribution is \(d^2(x^{d-1}+y^{d-1})/(r^2(x^d+y^d))\), where
+\(x=\cos^2\vartheta\), \(y=\sin^2\vartheta\). It lies between
+\(d^2/r^2\) and \(2d^2/r^2\). The remaining angular derivative is
+bounded by \(d^2/r^2\): its ratio to this bound is
+\((xy)^{d-1}/(x^d+y^d)^2\le1\). For example write \(x/y=z^2\); the last
+inequality follows from \((z^{d-1}-1)(z^{d+1}-1)\ge0\), using \(x+y=1\).
+The phase upper bound follows from \((x-y)(x^{d-1}-y^{d-1})\ge0\).
+Endpoint values follow by continuity. The displayed upper bound is
+deliberately relaxed. For each fixed \(d\), (3.11) transfers these
+estimates to the actual unit field after decreasing \(\varepsilon\). The
+diagonal can therefore retain
+
+\[
+ \int_{\varepsilon_d\le r\le3\varepsilon_d/2}|\nabla u|^4
+                    \asymp d^4\longrightarrow\infty,
+ \quad
+ \int_{\varepsilon_d\le r\le3\varepsilon_d/2}|\nabla u|^2
+                    \asymp\varepsilon_d^2d^2\longrightarrow0.
+ \tag{3.14}
+\]
+
+This disproves a local signed-flux bound based only on the displayed
+subcritical budgets, even with actual gauge equations and a nonzero
+fixed-ratio torsion collar. It does \textbf{not} supply a fully
+calibrated endpoint collar: torsion length has large radial/angular
+variation, and the ASD determinant fit to the required exterior fails.
+There is no closed conformal supplier, global class-square budget, or
+exterior matching. It is not an O10 counterexample, nor a sharpness
+example for the frontier exponent in (5.5).
+
+\hypertarget{where-a-smaller-balanced-first-order-coefficient-must-be-paid}{%
+\subsection{4. Where a smaller balanced first-order coefficient must be
+paid}\label{where-a-smaller-balanced-first-order-coefficient-must-be-paid}}
+
+This section concerns the established \textbf{balanced surgery family},
+not the zero-end weighted solution. Let
+
+\[
+ M=X\#k\overline{\mathbb {CP}}^{\,2}
+       \#\ell(S^1\times S^3),\quad A=c_1^2(X),\quad
+ h=(k+4\ell)/A\to0,\quad U=1+h+O(h^2).
+ \tag{4.1}
+\]
+
+Use a scalar-minus-four metric and one actual \textbf{ordinary},
+unweighted SW solution \((A_{\rm conn},\Phi)\) supplied by the specified
+class with \(a^2=A-k\) and \(p=(a_g^+)^2\ge A\). The symbol \(A\)
+without a subscript continues to denote the topological budget, not the
+connection. In the formulas below \(F_{A_{\rm conn}}\) is abbreviated to
+\(F_A\). All fields and remainders in this section belong to this same
+solution.
+
+Put
+
+\[
+ \rho=|\Phi|^2\le4,\quad P=\int|\operatorname{Ric}^{\circ}|^2,
+ \quad R=P+4V,\quad \mathcal E=4P/R,
+ \quad J=\|F_A^+-(F_A^+)_H\|_2^2.
+\]
+
+The actual input and Hodge identities give
+
+\[
+ c_2(S^+)[M]=\ell,\qquad
+ B:=\int|F_A^-|^2=4\pi^2(p-A+k)+J.
+ \tag{4.2}
+\]
+
+Choose a fixed smooth increasing \(v(\rho)\) equal to zero for
+\(\rho\le1/2\), one for \(\rho\ge1\), with \(|v'|\le4\), and put
+\(\chi=(1-v)^2\). Write \(T_u\) for the exact rank-two transgression on
+\(u=\Phi/\sqrt\rho\), as in I40 Section 1, and define
+
+\[
+ q_\chi=\int d\chi\wedge T_u,\quad
+ P_\chi=\int\chi|\operatorname{Ric}^{\circ}|^2,\quad P_o=P-P_\chi,
+ \quad B_\chi=\int\chi|F_A^-|^2,\quad B_o=B-B_\chi,
+\] \[
+ M_\chi=\int\chi\left(2|W^+|^2+\frac23-\frac{\rho^2}{8}\right)
+                         \ge\frac{13}{24}\int\chi\ge0.
+ \tag{4.3}
+\]
+
+The signed flux \(q_\chi\) is a different object from the relative
+determinant square \(q_A^{\rm rel}\). In particular, the low-amplitude
+region has not been identified as a marked whole surgery core.
+
+\hypertarget{exact-spatial-balances}{%
+\subsubsection{4.1. Exact spatial
+balances}\label{exact-spatial-balances}}
+
+The transgression identity \(dT_u=c_2(\mathbb F)\) and the extension of
+\((1-\chi)T_u\) by zero near all spinor zeros give
+
+\[
+ \ell=\int\chi c_2(\mathbb F)+q_\chi.
+\]
+
+There is no transversality or regular-level-set assumption. For the
+actual positive-spinor connection the signed Chern density is
+
+\[
+ 16\pi^2c_2(\mathbb F)=
+ \left(|F_A^+|^2-|F_A^-|^2-2|W^+|^2
+             -\frac{s^2}{24}+\frac{|\operatorname{Ric}^{\circ}|^2}{2}\right)d\mu.
+\]
+
+Use \(s=-4\) and \(|F_A^+|^2=\rho^2/8\). This proves the two exact
+identities
+
+\[
+ \boxed{P_\chi=32\pi^2\ell+2B_\chi+2M_\chi-32\pi^2q_\chi,}
+ \tag{4.4}
+\] \[
+ \boxed{P-8\pi^2Ah=P_o+8\pi^2(p-A)+2J-2B_o
+                              +2M_\chi-32\pi^2q_\chi.}
+ \tag{4.5}
+\]
+
+For (4.5), substitute (4.2) in (4.4) and use \(Ah=k+4\ell\). The only
+unfavorable terms are exterior ASD determinant energy and positive
+signed transition flux. This specifies a spatial source of the earlier
+signed remainder; it does not discard the Weyl payment tested by X06.
+
+\hypertarget{first-order-necessary-conditions}{%
+\subsubsection{4.2. First-order necessary
+conditions}\label{first-order-necessary-conditions}}
+
+Suppose \(\mathcal E=O(h)\). With \(e=R/(8\pi^2A)\), the two classical
+energy walls give
+
+\[
+ 1+h\le e\le\frac{U}{1-\mathcal E}=1+O(h).
+\]
+
+Thus on any subsequence on which \(\mathcal E/h\to c\),
+\(P/(Ah)\to2\pi^2c\). Moreover \(U=1+15k/A-12\ell/A\) implies
+
+\[
+ \frac{k}{Ah}\to\frac29,\qquad
+ \frac{\ell}{Ah}\to\frac7{36}.
+ \tag{4.6}
+\]
+
+Dropping only the displayed nonnegative terms in (4.4) gives
+
+\[
+ \boxed{\liminf\frac{q_\chi}{Ah}
+                         \ge\frac7{36}-\frac c{16}.}
+ \tag{4.7}
+\]
+
+In particular, a coefficient below \(28/9\) requires positive signed
+flux of first-order size. Conversely, the \textbf{additional} condition
+\(\limsup q_\chi/(Ah)\le0\) forces \(c\ge28/9\), not four. The class
+supply does not establish that sign condition.
+
+For every \(c<4\), (4.5) instead gives
+
+\[
+ \boxed{\liminf\frac{B_o+16\pi^2q_\chi}{Ah}
+                                      \ge\pi^2(4-c).}
+ \tag{4.8}
+\]
+
+Thus proving both \(B_o=o(Ah)\) and \((q_\chi)_+=o(Ah)\) would suffice
+for the coefficient-four lower bound. These are substantive missing
+estimates, not consequences asserted here of near-minimality.
+
+\hypertarget{the-flux-demands-an-actual-critical-mixed-current}{%
+\subsubsection{4.3. The flux demands an actual critical mixed
+current}\label{the-flux-demands-an-actual-critical-mixed-current}}
+
+Set \(T=\{1/2<\rho<1\}\), \(\zeta=\langle\Phi,\nabla_A\Phi\rangle\), and
+
+\[
+ M_{\rm mix}=\int_T|\zeta|^2|\nabla_A\Phi|^2.
+\]
+
+For this ordinary solution, the exact nonnegative remainder in
+\href{20260927_full_core_cost_and_extremal_metrics.md}{I47, Section 4.1}
+reads
+
+\[
+ D_2/18=F_{\rm fit}+\Gamma/2+J+H,
+\] \[
+ \Gamma=\int\left(\frac{|d\rho|^2}{4}+|\operatorname{Im}\zeta|^2\right),
+ \quad H=\frac23\int(1-x)^2(2+4x-x^2),\quad x=\rho/4,
+\] \[
+ F_{\rm fit}=\int|W^+-W_0|^2,\quad
+ W_0=\tfrac12(|\sigma(\Phi)|^2I/3-\sigma(\Phi)\otimes\sigma(\Phi)).
+ \tag{4.9}
+\]
+
+In particular \(Q:=\int(4-\rho)^2\le2D_2/3\) and \(\Gamma\le D_2/9\). On
+\(T\), volume is at most \(Q/9\), the model \(W_0\) is bounded, and
+\(F_{\rm fit}\le D_2/18\). If \(\Omega\) denotes trace-free
+positive-spinor curvature, then \(G^2=|\Omega|^2+|F_A^+|^2\) satisfies
+
+\[
+ \int_TG^2\le C(P+D_2).
+\]
+
+The exact transgression in a unitary \((u,v)\) frame is
+
+\[
+ 4\pi^2T_u=-a_{\rm conn}\wedge\mathbb F_{22}
+ +\tfrac12(b\wedge\mathbb F_{12}-\bar b\wedge\mathbb F_{21})
+ +a_{\rm conn}\wedge\bar b\wedge b.
+\]
+
+On \(T\), \(|d\rho|\le2|\zeta|\), \(|a_{\rm conn}|\le2|\zeta|\), and
+\(|b|\le\sqrt2|\nabla_A\Phi|\). Hence Cauchy--Schwarz, without a Sobolev
+or Hessian estimate, gives
+
+\[
+ \boxed{|q_\chi|\le
+ C\left\{\sqrt{(P+D_2+B)M_{\rm mix}}+M_{\rm mix}\right\}.}
+ \tag{4.10}
+\]
+
+The central term is controlled using \(\int_T|\zeta|^4\le M_{\rm mix}\).
+Along the above first-order sequences,
+
+\[
+ D_2=36\pi^2A\{e-1-h-2(p/A-1)\}\ge0
+\]
+
+implies \(D_2,p-A=O(Ah)\), and (4.2), (4.9) give \(B=O(Ah)\). Thus a
+coefficient bounded strictly below \(28/9\) forces
+\(\liminf M_{\rm mix}/(Ah)>0\). This is a necessary actual
+concentration, not its exclusion.
+
+If additionally \(D_2=o(Ah)\), then
+\(\operatorname{Vol}(T),\Gamma=o(Ah)\). To control the ordinary spinor's
+quadratic derivative there, test
+\(4\nabla_A^*\nabla_A\Phi+(\rho-4)\Phi=0\) against \(\theta(\rho)\Phi\),
+where \(\theta=1\) below 1, zero above 2, and \(\theta'\le0\) is
+bounded. Integration by parts gives
+
+\[
+ 4\int\theta|\nabla_A\Phi|^2
+  =\int\theta(4-\rho)\rho-2\int\theta'|d\rho|^2
+  \le C(Q+\Gamma)\le CD_2.
+ \tag{4.11}
+\]
+
+Therefore below the stated threshold,
+
+\[
+ \operatorname{Vol}(T),\ \int_T|\nabla_A\Phi|^2=o(Ah),
+ \qquad \int_T|\zeta|^2|\nabla_A\Phi|^2\ge c_*Ah.
+ \tag{4.12}
+\]
+
+In particular the derivative supremum diverges, since
+\(M_{\rm mix}\le\sup_T|\nabla_A\Phi|^2\,\Gamma\). No estimate for a
+different weighted solution was substituted here.
+
+\hypertarget{conditional-critical-patterns}{%
+\subsubsection{4.4. Conditional critical
+patterns}\label{conditional-critical-patterns}}
+
+If \(c=28/9\) and \(\limsup q_\chi/(Ah)\le0\), equality in the limiting
+nonnegative balance (4.4) forces
+
+\[
+ P_o,B_\chi,M_\chi=o(Ah),\quad q_\chi=o(Ah),\quad
+ \liminf\frac{B_o}{Ah}\ge\frac{8\pi^2}{9}.
+ \tag{4.13}
+\]
+
+All leading Ricci error lies in the low-amplitude region, while the
+indicated ASD determinant energy lies outside. Since \(\int\chi=o(Ah)\)
+but \(P_\chi/(Ah)\to56\pi^2/9\),
+\(\|\operatorname{Ric}^{\circ}\|_\infty\) diverges on that region.
+
+If instead \(c=4\), \(B_o=o(Ah)\), and \((q_\chi)_+=o(Ah)\), then (4.5)
+forces
+
+\[
+ P_o,p-A,J,M_\chi,q_\chi=o(Ah),\quad
+ \frac{B_\chi}{Ah}\to\frac{8\pi^2}{9},\quad
+ \frac{P_\chi}{Ah}\to8\pi^2.
+ \tag{4.14}
+\]
+
+These are different conditional first-order patterns. Neither is a
+classification of all minimizing sequences, and neither proves that the
+coefficient-four sufficient conditions hold on the classical recovery
+family.
+
+\hypertarget{a-quantitative-criterion-for-torsion-flux-at-a-marked-frontier}{%
+\subsection{5. A quantitative criterion for torsion flux at a marked
+frontier}\label{a-quantitative-criterion-for-torsion-flux-at-a-marked-frontier}}
+
+Return to the weighted zero-end solution. Let \(t=t_\Phi\), \(m=|t|^2\),
+and use the inherited torsion cutoff \(\chi=1-\theta(m)^2\), with
+\(\theta=0\) for \(m\le m_\beta/16\) and \(\theta=1\) for
+\(m\ge m_\beta/8\). Here \(m_\beta\) has positive upper and lower bounds
+for \(\beta\ge4\). Define \(G=\theta^2T_t\), extended by zero through
+torsion zeros. This \(\chi\) is the torsion cutoff, not the
+ordinary-spinor cutoff of Section 4.
+
+With
+
+\[
+ k_A=9(|F_A^+|^2-|F_A^-|^2)+s^2/24-|\operatorname{Ric}^{\circ}|^2/2,
+\]
+
+the exact local version of the inherited signed identity is, for every
+smooth domain \(D\),
+
+\[
+ 2\int_D\theta^2|W^-|^2+\int_D\theta^2 k_A
+   =16\pi^2\left(\int_Dd\chi\wedge T_t+
+                                      \int_{\partial D}G\right).
+ \tag{5.1}
+\]
+
+This follows by integrating \(dG=-d\chi\wedge T_t+\theta^2c_2(E_-)\).
+Boundary terms cancel for an actual partition, but need not disappear in
+a limiting decomposition.
+
+\hypertarget{a-scale-free-trace-bound}{%
+\subsubsection{5.1. A scale-free trace
+bound}\label{a-scale-free-trace-bound}}
+
+Consider a controlled collar of radius \(r_e\) and order \(n_e\) as in
+Section 1.2. Put
+
+\[
+ E_e=\int_{\mathcal C_e}|F_{E_-}|^2,\qquad
+ J_e=\int_{\mathcal C_e\cap\{m>m_\beta/16\}}|\nabla u|^4,
+ \qquad u=t/|t|.
+\]
+
+Here the derivative is that of the actual unit section, including its
+phase, not just its image in the projective bundle. The rank-two
+transgression gives
+
+\[
+ |G|\le C\theta^2(|F_{E_-}||\nabla u|+|\nabla u|^3).
+\]
+
+Use coarea to choose an interior slice, then Hölder on the collar. Since
+\(\operatorname{Vol}(\mathcal C_e)\le Cr_e^4/n_e\),
+
+\[
+ \boxed{\left|\int_{Y_e}G\right|
+ \le C n_e^{-1/4}
+                  (E_e^{1/2}J_e^{1/4}+J_e^{3/4}).}
+ \tag{5.2}
+\]
+
+The physical radius cancels. By selecting from the good sets of the two
+coarea estimates, the same slice can satisfy (1.8) and (5.2). Let
+\(H=\sum_e n_e^{-1}\). Hölder in the interface index gives
+
+\[
+ \boxed{\frac1V\sum_e\left|\int_{Y_e}G\right|
+ \le C\left(\frac HV\right)^{1/4}
+ \left[
+   \left(\frac{\sum E_e}V\right)^{1/2}
+   \left(\frac{\sum J_e}V\right)^{1/4}
+       +\left(\frac{\sum J_e}V\right)^{3/4}
+ \right].}
+ \tag{5.3}
+\]
+
+For marked frontiers of Section 2, \(H/V\le N/V\to0\). If their
+normalized quartic torsion-direction energy stays bounded and their
+normalized curvature energy stays bounded, no normalized torsion
+boundary flux is lost at the selected cuts.
+
+Under \(p\ge A>0\) and \(\chi(M)/A\le B\), the latter curvature bound
+follows from the original actual budgets, rather than an additional
+\(C^2\) collar condition. In the project's curvature norms,
+
+\[
+ |F_{E_-}|^2=|W^-|^2+s^2/48
+                +|\operatorname{Ric}^{\circ}|^2/4+(9/2)|F_A|^2.
+\]
+
+Gauss--Bonnet gives \(\int|W^-|^2\le8\pi^2\chi+P/2\), and Section 2.3
+controls \(\chi/V\). For bounded-overlap collars, therefore,
+\(\sum E_e/V\le C(B)\Lambda\).
+
+\hypertarget{surviving-flux-forces-a-faster-critical-concentration}{%
+\subsubsection{5.2. Surviving flux forces a faster critical
+concentration}\label{surviving-flux-forces-a-faster-critical-concentration}}
+
+Write \(d=H/V\), \(j_4=\sum J_e/V\), and suppose the left side of (5.3)
+is at least a fixed \(b>0\), while \(\sum E_e/V\le E_0\). At least one
+of its two summands must be at least \(b/2\). Hence
+
+\[
+ j_4\ge c\min\left\{\frac{b^4}{dE_0^2},
+                               b^{4/3}d^{-1/3}\right\}.
+ \tag{5.4}
+\]
+
+For \(d\to0\) and fixed \(b,E_0\), this implies
+
+\[
+                 \boxed{j_4\ge c(b,E_0)d^{-1/3}.}
+ \tag{5.5}
+\]
+
+In the uniformly small-core-volume version (2.4), \(d\le C\epsilon_*\),
+so surviving macroscopic flux forces \(j_4\ge c\epsilon_*^{-1/3}\). This
+is stronger than a merely positive quartic concentration requirement.
+
+The quantifier matters: the macroscopic flux must survive the
+\textbf{coarea-selected cuts}, or every admissible cut, not just a
+preselected hypersurface. Moving a cut can transfer nonclosed \(G\) into
+the bulk and transition terms of (5.1). The global signed identity does
+not alone force all of its flux through a chosen marked frontier.
+
+The lower bound for \(|t|\) on this region implies
+\(|\nabla u|\le C|\nabla t|\). Current actual budgets therefore bound
+the normalized quadratic direction energy, but not the quartic quantity
+in (5.5). Pure radial amplitude change cannot by itself supply this
+boundary flux.
+
+For completeness put \(L_2=V^{-1}\sum\int|\nabla u|^2\) over these
+collar regions. All sets below are restricted to
+\(\bigcup_e(\mathcal C_e\cap\{m>m_\beta/16\})\); multiplicity is
+\(\sum_e\mathbf1_{\mathcal C_e\cap\{m>m_\beta/16\}}\). With
+\(L_2\le C\Lambda\) and \(j_4\to\infty\), the set
+\(Z=\{|\nabla u|^2\ge j_4/(2L_2)\}\), counted with this multiplicity,
+satisfies
+
+\[
+ \frac{\operatorname{Vol}_{\rm mult}(Z)}V
+        \le\frac{2L_2^2}{j_4},\qquad
+ \frac1V\sum_e\int_{\mathcal C_e\cap Z}|\nabla u|^4\ge j_4/2.
+ \tag{5.6}
+\]
+
+Thus the forced divergent quartic mass lies on vanishing relative
+volume. Equations (5.5)--(5.6) in particular force
+\(\sup|\nabla u|\ge c d^{-1/6}\), and hence a corresponding bound for
+the physical \(|\nabla t|\) on that region.
+
+\hypertarget{an-explicit-routing-condition-and-the-remaining-alternative}{%
+\subsubsection{5.3. An explicit routing condition, and the remaining
+alternative}\label{an-explicit-routing-condition-and-the-remaining-alternative}}
+
+Here is one sufficient condition that ensures the required macroscopic
+flux survives the selected cuts. Suppose disjoint marked whole cores
+have total volume \(o(V)\), all the torsion low-amplitude region
+\(\{\chi\ne0\}\) lies strictly inside them, and \(\chi=0\) throughout
+every admissible outer collar and the exterior. This is an additional
+actual-field condition.
+
+For any coarea-selected cuts, apply (5.1) to their exterior \(D\). Its
+transition term is zero. The inherited fits give
+\(V^{-1}\int_M k_A=20/3+O(\epsilon_*)\) and
+\(V^{-1}\int_{M\setminus D}|k_A|=o(1)\). Since the \(W^-\) term is
+nonnegative, the sum of \textbf{outward core} fluxes is negative and
+obeys
+
+\[
+ -\frac1V\sum_e\int_{Y_e}G
+                         \ge\frac5{12\pi^2}-o(1).
+ \tag{5.7}
+\]
+
+If also \(p\ge A>0\) and \(\chi(M)/A\le B\), the curvature input to
+(5.5) is automatic. The resulting alternative is precise: such a routing
+decomposition of an actual endpoint sequence must have
+
+\[
+ \frac1V\sum_e\int_{\mathcal C_e\cap\{m>m_\beta/16\}}|\nabla u|^4
+                 \ge c(B,K)(H/V)^{-1/3}\longrightarrow\infty.
+ \tag{5.8}
+\]
+
+In particular a decomposition satisfying the strictly
+weaker-than-bounded condition \(j_4=o((H/V)^{-1/3})\) is impossible.
+This connects a genuine global field-routing premise to a quantified
+failure, rather than assuming an arbitrary boundary has macroscopic
+flux.
+
+Weak input has not yet supplied this decomposition or ruled out (5.8).
+Trivial spherical interfaces are a further distinct possibility: (5.2)
+holds for them with \(n=1\), but the determinant atom does not bound
+their number. The actual local example in Section 3.1 explains why they
+cannot be silently omitted from a proposed decomposition. These
+alternatives leave the unrestricted endpoint theorem open.
+
+\hypertarget{why-level-cuts-alone-do-not-cancel-the-signed-trace}{%
+\subsubsection{5.4. Why level cuts alone do not cancel the signed
+trace}\label{why-level-cuts-alone-do-not-cancel-the-signed-trace}}
+
+The phase part of the same transgression identifies a possible false
+shortcut. On \(t\ne0\), put
+\(j_t=\operatorname{Im}\langle t,\nabla t\rangle\), \(m=|t|^2\), and
+\(f_A=-iF_A\). In a unit \(t\)-frame the diagonal connection is
+\(i j_t/m\), and the determinant of \(E_-\) has curvature \(3i f_A\).
+The simplified rank-two formula gives exactly
+
+\[
+ 4\pi^2T_u=-m^{-2}j_t\wedge dj_t+3m^{-1}j_t\wedge f_A
+          +\tfrac12(b\wedge\mathbb F_{12}-\bar b\wedge\mathbb F_{21}).
+ \tag{5.9}
+\]
+
+The explicit radial derivative cancels from the first term because
+\(j_t\wedge dm\wedge j_t=0\); the phase helicity does not cancel. Thus
+taking a mass-level boundary, where tangential \(dm=0\), does not force
+the trace to be small. The inherited hyperbolic local actual core
+already has outward \(\int T_u=-1+O(\varepsilon^4)\) on its nonzero
+outer section, while its bulk characteristic integral tends to zero. No
+nonpositive-flux theorem or improved signed trace bound follows from
+level selection alone.
+
+\hypertarget{consequences-for-the-continuing-research}{%
+\subsection{6. Consequences for the continuing
+research}\label{consequences-for-the-continuing-research}}
+
+There are now two distinct actual connections, not one interchangeable
+charge:
+
+\begin{itemize}
+\tightlist
+\item
+  The determinant's full relative charge is tight on existing marked
+  small whole cores, including harmonic replacement and arbitrary finite
+  depth.
+\item
+  Torsion indices can grow relative to that charge, and an actual local
+  trivial-boundary core can carry torsion index with zero determinant
+  charge. Any global argument must retain the actual section framing or
+  directly control the resulting signed flux.
+\end{itemize}
+
+For the zero-end target, the next sufficient step is either direct
+actual control of the signed transition in (5.1), or a decomposition
+that proves both a genuine flux-routing statement and enough control to
+contradict (5.5). Proving the first does not require completing all
+possible core classifications. For balanced first-order sharpness, (4.5)
+instead identifies the two actual quantities whose leading contribution
+must be decided.
+
+The present arguments do not give an unrestricted endpoint gap, a
+Gamma-limit, the balanced optimal coefficient, diameter-free
+realization, or the Einstein classification of the fixed Dehn-twist
+manifold. Those remain separate open statements. The written proofs
+above provide specific new conditional connections and identify exactly
+which proposed stronger charge comparisons are false.
+
+\end{document}

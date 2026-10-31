@@ -1,0 +1,480 @@
+\documentclass[UTF8,a4paper,11pt,fontset=fandol]{ctexart}
+\usepackage[margin=23mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,longtable,tabularx,array,enumitem}
+\usepackage{xurl}
+\usepackage[hidelinks,bookmarksnumbered]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{Yau26\quad 研究续接基线·覆盖补全v2}\fancyhead[R]{2026-09-16}\fancyfoot[C]{\thepage}
+\setlength{\parskip}{4pt}\linespread{1.13}
+\setlength{\emergencystretch}{3em}
+\setlist{itemsep=2pt,topsep=4pt,parsep=0pt,leftmargin=2em}
+\setcounter{tocdepth}{1}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{target}[theorem]{研究目标}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{remark}[theorem]{说明}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\spec}{\operatorname{Spec}}
+\newcommand{\Met}{\operatorname{Met}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\dd}{\,d\mu_g}
+\newcommand{\avgint}{\mathop{\rlap{\,\raisebox{0.1ex}{\tiny$-$}}\int}\nolimits}
+\newcommand{\fint}{\mathop{\rlap{\,\raisebox{0.1ex}{\tiny$-$}}\int}\nolimits}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\source}[1]{\par\noindent\textit{来源与状态：}#1\par}
+\newcommand{\asset}[2]{\par\noindent\textbf{#1}\quad\path{#2}\par}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\status}[1]{\textbf{【#1】}}
+
+\title{主线二：点态近Einstein解消与Weyl跨尺度匹配\\[0.5em]{\large S0910A02｜从固定A1构造、公开L∞问题走向精确或全局Einstein结论}}
+\author{Qiushi Engine\quad 科学续接稿}
+\date{2026年9月16日\quad 覆盖补全版 v2}
+\begin{document}
+\maketitle
+\begin{abstract}
+本主线保留固定 $A_1$ 光滑解消上的无权 $L^\infty$ Ricci缺陷趋零构造，明确其与经典加权解消、有限 $L^p$ 逼近及精确Einstein障碍的区别。保留原第100步的四节点交换审查，以及一般正分支的非塌缩集中和塌缩问题；固定解消定理与Ozuch球面轨形问题的对照是可选查新任务，不先于原有接续被强制指定。十维Weyl二次项、核心修正、非恒定角模、曲率尖峰和多节点手性工作均纳入同一逻辑结构。本文不把缺少全局不存在性误写为构造未完成，也不因出现对数截断就宣布方法首创。
+\end{abstract}
+\begingroup
+\small\linespread{1.0}\selectfont\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\section*{覆盖复核说明：本稿的边界与原始研究的优先性}
+\addcontentsline{toc}{section}{覆盖复核说明}
+本版为原三份续接稿的覆盖补全版（v2）。它\emph{不声称把全部原始证明和300步记录压缩成了无损替代物}。上一版覆盖了主要目标，但遗漏或过度压缩了部分最终成果、技术依赖和候选分支；本版补回具体条目，并配套保存可访问原件与逐步索引。正文中“完整”“已核查”等表述只能按紧邻的来源和范围理解，不能解释为对原工作区全部研究的认证。
+
+必须区分三类内容：原始归档或轨迹记载的研究；用户转述的Codex原稿审读；上一版编辑者的代数补充、外部参考与路线建议。后两类不得替换前一类。原稿中尚未取得的系数、PDE细节、程序和历史题页，仍以\emph{原件待取得}记录，不能根据摘要补成已证内容。上一版新定义的密度或新推论属于可选校验材料，不是原研究新增了一项已经认证的成果。
+
+A01/A02/A03的三份分工是编辑组织建议，不是历史上三个会话原有任务的逐字复制。先读取各自Step100的实际交接和当前工作区，再决定是否采用建议；任何原有路线不因未被安排为首要方向就被宣告失败或删除。总体目标仍是原始Yau26，不预定真或假，也不预定所有有效突破必然来自当前两条成果主线。
+
+配套\path{审计/300步原始任务索引.json}逐条保存三份实际上传轨迹的300个步骤的\path{tx_task}、\path{rx_task}、状态及行号；\path{审计/研究条目覆盖表.tsv}列出本次人工对照的研究单元。\path{原始材料/}保留三份完整meta-trace及两份输入ZIP，字节校验见\path{审计/原件校验.tsv}。这些索引证明可追溯与原件保留，\emph{不证明每条历史主张正确，也不等于数学语义覆盖率100\%}。
+
+旧ZIP引用的\path{meta_trace_report (93)(1).md}、\path{(94)(1).md}、\path{(95)(1).md}，与本次可见的\path{(100).md}及两份时间戳文件，尚无逐字同一性证明。三份现有轨迹按其内部工作区标记对应A01/A02/A03；不能只因都为100步就替换旧文件身份。归档另外引用的\path{Yau26_Ricci_pinching_research.md}、\path{Yau26_synthesis.tex/pdf}、\path{Yau26_uniform_gap.tex}和服务器工作区，不在当前可打包原件中。
+
+\section{原题、量词与成功标准}
+本会话组的工作命题保持为：对每个维数 $n\ge2$，是否存在只依赖 $n$ 的实常数 $c_n<C_n$，使任意闭、连通、光滑实流形 $M^n$ 只要承载一个度量 $g$ 满足
+\begin{equation}\label{eq:Q}
+ c_ng\le\Ric_g\le C_ng,
+\end{equation}
+就承载某个光滑 Einstein 度量 $h$，即 $\Ric_h=\lambda h$，$\lambda\in\R$？不要求 $h$ 接近 $g$，不要求 $h$ 与 $g$ 的 Ricci 符号相同；结论针对同一\emph{光滑流形}，不是仅同胚类型。
+
+历史归属为 Yau 1982 年 \emph{Problem Section} 的第26题\cite{Yau1982}。当前归档没有附上原始题页的完整可核对影像；上式是三个会话反复确认的工作表述，而不是本文件宣称已经逐字认证的历史引文。续接时应在当前工作区核对原始任务书与题页，若发现实质差异，单列差异并调整对应推论，不把相邻的稳定性问题替换成原题。
+
+定义
+\begin{equation}\label{eq:defect}
+ \delta_\sigma(g)=\norm{g^{-1}\Ric_g-\sigma\Id}_{L^\infty,\op},\qquad
+ e_\sigma(M)=\inf_{g\in\Met(M)}\delta_\sigma(g),\qquad \sigma\in\{+1,-1\}.
+\end{equation}
+$P_n^\sigma$ 表示存在仅依赖 $n$ 的 $\varepsilon_n>0$，使 $\delta_\sigma(g)<\varepsilon_n$ 推出 $M$ 承载某个 Einstein 度量。工作命题满足
+\begin{equation}\label{eq:branches}
+ Q_n\quad\Longleftrightarrow\quad P_n^+\ \lor\ P_n^-.
+\end{equation}
+证明只用缩放：$\widehat g=ag$ 时，作为 $(0,2)$ 张量的 Ricci 不变，Ricci 端同态变为 $a^{-1}g^{-1}\Ric_g$。任一非退化区间都有一个非零内点 $\mu$ 及同号小邻域；将 $\Ric\approx\operatorname{sign}(\mu)g$ 的度量按 $1/|\mu|$ 缩放即可进入该邻域。反向直接取以 $\pm1$ 为中心的小区间。
+
+因此，一个固定维数的\emph{证明}只需要完成其中一个符号分支；\emph{完整反驳}要在同一维数击败两个符号分支，可以使用不同流形。每个流形都必须排除任意符号的全部 Einstein 度量。构造 $e_\sigma(M)=0$ 本身是一项独立结论，但它只有与该 $M$ 的全部 Einstein 不存在性相结合，才构成分支反例。
+
+二维由一致化、三维正分支由 Hamilton 的正 Ricci 结果提供经典基线；不得把这些作为本项目的新成果。四维的专门工具不会自动推广到 $n\ge5$。本文件允许严谨的强中间结果独立成文，但不把它们改称原题的完整解决。
+
+\subsection{统一范数，避免四倍因子再次混入}
+下列 $W^\pm$ 与签名公式在定向四维范畴内使用；非定向情形须另行处理定向双覆盖及等变下降，不能由覆盖的Einstein存在直接推出原流形结论。四维设 $s=\tr_g\Ric$、$E=\Ric-\frac{s}{4}g$。本文件的 $W^\pm$ 使用在 $\Lambda^2_\pm$ 上的曲率\emph{算子}范数；$E$ 和 Ricci 使用张量范数。于是
+\begin{align}
+8\pi^2\chi(M)&=\int_M\left(|W^+|^2+|W^-|^2+\frac{s^2}{24}-\frac{|E|^2}{2}\right)\dd,\label{eq:CGB}\\
+12\pi^2\tau(M)&=\int_M(|W^+|^2-|W^-|^2)\dd,\label{eq:signature}\\
+|\Rm_{\rm full}|^2&=4(|W^+|^2+|W^-|^2)+2|E|^2+\frac{s^2}{6}.
+\end{align}
+若写 $\mathcal R$ 表示完整曲率算子，则 $|\Rm_{\rm full}|^2=4|\mathcal R|^2$。精确 Einstein 时分别有 $\int|\mathcal R|^2=8\pi^2\chi$ 和 $\int|\Rm_{\rm full}|^2=32\pi^2\chi$。Eguchi--Hanson 的 $12\pi^2$ 能量采用前一种规范；后一种为 $48\pi^2$。
+
+$\delta_\sigma\le\delta$ 给出
+\begin{equation}
+ |s-4\sigma|\le4\delta,\qquad |E|^2\le4\delta^2,\qquad
+ |\Ric-\sigma g|^2\le4\delta^2.
+\end{equation}
+全文不把小 $L^p$ 积分、小加权范数、局部精确解，替换成原题要求的全域无权 Ricci 端同态上确界。
+
+\section{材料边界与使用方式}
+本文件是供原会话从 Step101 继续研究的科学续接稿，不是以整理文字替代原始证明的投稿稿。依据包括：2026-09-15进展包、2026-09-16逐步归档、S0910A01/A02/A03各100步的完整 meta-trace，以及用户提供的 Codex 对原稿的逐段审读报告。外部文献核对日期为2026-09-16。两个ZIP含摘要、公式、分级和原稿路径，但不含所有被引用的原始 TeX、证明笔记和程序字节。
+
+下列标签只用于区分证据，不对数学内容按平台打分：\status{文献}表示本轮核对到的外部定理或明确引用；\status{原稿审读}表示原稿被 Codex 实质审读、未发现缺口的报告；\status{轨迹}表示会话记载的推导或内部核验；\status{本稿重算}表示下文完整展示的代数或逻辑推导；\status{待证}表示仍需新证明的目标。已撤回结论只作为边界保存，不进入定理依赖。
+
+精确 Einstein 的统一\emph{拓扑}间隙已有原稿审读支持，不能再因一般 near-Einstein 平滑接口未闭合而降回“只有摘要的想法”。一般 near-Einstein 的统一\emph{Ricci夹逼}间隙仍未完成，不能因前一项成立就自动升级。固定 $A_1$ 近 Einstein 构造与全局 Einstein 不存在性也是两个命题。
+
+第一次接续应读取本会话当前任务书、工作区最近修正及下文列出的原稿，记录版本；\emph{不重启已经做完的300步，也不把审读报告当成原稿全文}。三份文件彼此独立可编译；没有要求安装新应用或改变系统基础架构。缺失来源的恢复应服务于一个具体定理，不应演变为无期限重复检索。
+
+\section{现有主定理：到底已经构造了什么}
+\begin{theorem}[第83步固定标记构造的内部陈述]\label{thm:A1}
+设 $(M_0,g_0)$ 为固定闭定向 Einstein 四维轨形，$\Ric_{g_0}=\sigma g_0$，只有有限个 $A_1$ 奇点。固定局部等变正规坐标、EH端部标记、取向及光滑填充数据。假设构造所用平滑核心修正 $\widetilde h$ 满足
+\[
+D\Ric_{g_{\rm EH}}\widetilde h=g_{\rm EH},
+\]
+并具有原稿所需的二阶导数尾项控制，且其二次渐近项与环境正规二次项置于同一径向规范。在相应固定光滑标记解消 $M$ 上，构造给出光滑正定度量族 $g_a$，使
+\begin{equation}\label{eq:A1}
+\delta_\sigma(g_a)\le\frac{C}{|\log a|}\longrightarrow0.
+\end{equation}
+$C$ 可依赖固定轨形、节点和标记，但不依赖 $a\to0$。
+\end{theorem}
+\source{A02第68--69、83--84步；第83步记载了完整十维Weyl二次项检查、三个区域的误差证明及其修订。Codex对该构造笔记的审读支持其限定范围。原稿为 \path{step83_near_pinched_construction_and_frontier_reduction.md} 及累积研究稿相应章节\cite{Project,CodexReview}。本陈述保留所需核心与尾项条件，不从某个符号计算自动推出任意ALE填充定理。}
+
+该结论在每个适用的固定 $M$ 上直接给 $e_\sigma(M)=0$，是原题所要求的同一无权逐点范数。因此它可以独立成文，不需要先证明 $M$ 无Einstein。但是，$M$ 上不存在\emph{任何}Einstein度量是另一个命题，不能由式\eqref{eq:A1}推出；附近精确解消受阻，也不能替代这个全局命题。
+
+\section{最近的prior art与一个明确、可裁决的公开问题}
+\subsection{哪些内容确实已属于前人工作}
+Biquard建立了相应 $A_1$ Einstein去奇异化的曲率障碍和特定非退化情形下的构造；Morteza--Viaclovsky研究高维Calabi模型；Ozuch建立精确Einstein退化、加权匹配、modulo-obstruction构造及高阶障碍\cite{Biquard,MV,OzuchI,OzuchII,OzuchHigher,OzuchIntegrability}。这些不是本项目首创的宏观方向。
+
+Ozuch II 的第7.3节给出有限 $L^p$ Ricci逼近，并讨论同一轨形附近的精确Einstein障碍；Remark 51已使用对数截断处理单侧Ricci控制和有限 $L^p$ 逼近。\emph{所以“发明对数截断”不是可接受的新颖性陈述。}需要比较的是两侧无权 $L^\infty$ 缺陷是否趋零、固定光滑填充、环境曲率和核心标记的范围，而不是术语是否同名\cite{OzuchII}。
+
+\subsection{优先核对Ozuch第7.3节的问题}
+\begin{target}[公开问题的精确应用]\label{tar:football}
+对Ozuch指定的 $S^4/\Z_2$ 及EH解消数据，证明存在光滑度量序列 $g_i$，使
+\begin{equation}\label{eq:football}
+\norm{g_i^{-1}\Ric_{g_i}-3\Id}_{\infty,\op}\longrightarrow0,
+\qquad (M,g_i)\xrightarrow{GH}(S^4/\Z_2,g_{\rm round}).
+\end{equation}
+或者指出固定构造的哪一项假设不覆盖该问题，并给出真正的缺口。
+\end{target}
+Ozuch II, arXiv:1909.12960v2，第101页、第7.3节提出的正是这一 $L^\infty$ Ricci逼近问题\cite{OzuchII}。它不要求先排除 $M$ 上全部Einstein度量。若定理\ref{thm:A1}适用于相同解消，并有指定的GH极限，则可能已经回答这一具体公开问题；\emph{目前应完成逐项应用，而不是只凭“一般A1”三个字宣布已解}。
+
+核对必须包含原文的填充取向、边界标记、光滑性与极限。$\Ric_{g_0}=3g_0$ 时令 $h_0=3g_0$ 得 $\Ric_{h_0}=h_0$；构造 $h_i$ 后取 $g_i=h_i/3$，端同态残差乘3，仍趋零。GH结论需给出塌下核心与过渡区的直径控制以及外部收敛，不能仅由Ricci残差推出。不能只凭有理Betti数就把这一解消命名为某个标准连通和。
+
+这个应用若闭合，应以“回答一个明确的点态Ricci解消问题”陈述贡献，而不是把它包装成整个Yau26反例。它也是第二主线在全局无Einstein尚未解决前，一个独立而具体的科学终点。
+
+\section{完整构造的数学结构}
+\subsection{裸核心为何失败，修正核心为何仍然可能}
+直接缩放Ricci-flat核心 $a^2g_{\rm EH}$，有
+\[
+(a^2g_{\rm EH})^{-1}\bigl(\Ric(a^2g_{\rm EH})-\sigma a^2g_{\rm EH}\bigr)=-\sigma\Id.
+\]
+缺陷恒为1，缩小体积不起作用。但在核心上加入相对 $O(a^2)$ 的度量修正，经二阶导数与逆度量缩放可在原尺度产生 $O(1)$ 的Ricci修正。因此“裸核心失败”不是“所有修正核心失败”。
+
+轨迹采用一族定义在 $\mathcal O(-2)$ 圆盘丛上的双轴Einstein度量 $q_\Lambda$，在 $\Lambda=0$ 微分，再减去由
+\[
+V=\frac5{72}(r^3-r^{-1})\partial_r
+\]
+产生的规范项，得到 $\widetilde h$。这一显式核心应从累积原稿取回完整系数、bolt光滑条件和远场展开；归档只记载了结果与部分公式，不能在此凭空补写 $q_\Lambda$ 的函数表达式。
+
+核心的真正输出是平滑解、方程 $D\Ric\widetilde h=g_{\rm EH}$ 和 $O_2$ 渐近控制。单独一条径向ODE、形式级数或在一个坐标系的Ricci残差，不足以替代这些输出。
+
+\subsection{共同径向规范使二次项之差真正成为Weyl方向}
+环境与核心远场的二次项分别记为 $H_0,H_1$。如果两者是同一欧氏度量下的正规二次曲率张量，且Ricci收缩相同，那么
+\[
+K=H_0-H_1,\qquad
+K_{ij}=-\tfrac13 C_{ikjl}x^kx^l
+\]
+由代数Weyl张量 $C$ 给出。任意两个二次对称张量即使Ricci线性化相同，也未必已在这个规范中；必须先处理三次坐标变换和Bianchi规范，不能直接宣称差值纯Weyl。
+
+四维代数曲率空间维数20，Ricci收缩秩10，Weyl空间分解为两个五维部分。A02第83步核查全部十维基，只是防止遗漏角向分量；这些标准维数本身不是新数学。
+
+\subsection{任意光滑径向截断的解析恒等式}
+对上述 $K$，曲率对称性和无迹性给
+\[
+\tr_eK=0,\quad \operatorname{div}_eK=0,\quad
+\Delta_eK=0,\quad K(x,\cdot)=0.
+\]
+令 $u=\log r$，$\eta=\eta(u)$，则 $\eta K$ 仍无迹、无散度，因为径向导数项与 $K(x,\cdot)$ 配对为零。采用本稿平坦Ricci线性化规范，
+\begin{align}
+D\Ric_e(\eta K)&=-\tfrac12\Delta_e(\eta K),\\
+\Delta_e(\eta K)&=\left(\eta_{rr}+\frac7r\eta_r\right)K
+=\frac{\eta_{uu}+6\eta_u}{r^2}K.
+\end{align}
+故
+\begin{equation}\label{eq:logidentity}
+\boxed{D\Ric_e[\eta(\log r)K]=-
+\frac{\eta_{uu}+6\eta_u}{2r^2}K.}
+\end{equation}
+这是对任意光滑径向 $\eta$ 的证明，不是从检查 $r^p$ 的有限样本归纳而来。因为 $K=O(r^2)$，当 $\eta_u=O(L^{-1})$、$\eta_{uu}=O(L^{-2})$ 时，线性Ricci代价为 $O(L^{-1})$。
+
+\subsection{三尺度误差，不遗漏升指标}
+以 $a$ 为长度尺度、$t=a^2$ 为对应度量尺度；若引用原稿另用 $t$，必须先转换。选择
+\begin{equation}
+a\ll b=a^{1/2}\ll R=a^{1/4}\ll1,\qquad
+L=\log\frac{R}{8b}=\tfrac14|\log a|-\log8.
+\end{equation}
+$\rho$ 为核心坐标、$r=a\rho$ 为物理半径。第83步记录的误差为：
+\begin{longtable}{L{.18\textwidth}L{.43\textwidth}L{.30\textwidth}}
+\toprule 区域 & 所需估计 & 对端同态缺陷的贡献\\\midrule\endhead
+修正核心 & $(0,2)$残差 $O(a^4(1+\rho)^2)$，逆度量 $O(a^{-2})$ & $O(a^2+r^2)$\\
+内截断 & $b^2+a^4b^{-6}+a^4b^{-4}$ & $O(a)$\\
+对数环带 & 式\eqref{eq:logidentity}，外加非线性项和目标项 & $O(L^{-1})+O(R^2)$\\
+环境拼接 & $A_1$偶性给 $g_0=e+H_0+O_2(r^4)$ & $O(R^2)=O(a^{1/2})$\\
+有限节点 & 小参数下修改球不交，外部保持原度量 & 取有限个局部常数最大值\\\bottomrule
+\end{longtable}
+结论是 $\delta_\sigma\le C(L^{-1}+a^{1/2})\le C'/|\log a|$。$O_2$必须同时控制两阶导数；只写形式 $O(r^4)$ 不够。正定性、核心bolt光滑性和坐标拼接与曲率误差同样属于构造证明。
+
+若节点数、轨形、标记或曲率二次项也随序列变化，不能继续使用“固定有限个常数的最大值”而不检查一致性。固定 $M$ 上 $e_\sigma(M)=0$ 不需要对所有轨形统一的 $C$，但任何全族结论需要。
+
+
+\subsection{为什么线性恒等式可以进入非线性环带估计}
+环带内写 $g=e+H_1+\eta(\log r)K+\mathcal T$，其中正规二次项为 $O(r^2)$，一阶导数为 $O(r)$，二阶导数为 $O(1)$；$\eta$的前两阶对数导数由 $L^{-1},L^{-2}$ 控制，$\mathcal T$为原稿已给出的二阶可控尾项。Ricci的二阶非线性余量具有 $h\,\partial^2h+(\partial h)^2$ 型结构，所以二次jet部分付出的非线性代价为 $O(r^2)$，目标项 $-\sigma(g-e)$ 也为 $O(r^2)$。结合式\eqref{eq:logidentity}，在原稿尾项估计有效的共同规范中得到 $O(L^{-1})+O(R^2)$。
+
+这一步的要点不是声称“二阶导数总是很小”，而是小度量振幅、受控一阶导数与有限二阶幅度的乘积。核心曲率可以因缩放发散；其误差已在另外的核心计算中处理，不能把环带展开越过其适用半径。对一般ALE尾项、不同规范或变化参数，需重新估计 $\mathcal T$ 及交叉项，而不是仅引用上述形式。
+
+\section{首障碍与对数逃逸：应当留下的结构定理}
+经典refined模型的写法为
+\[
+g_t=t h_t,\quad h_t=g_{\rm cal}+th,\quad
+\Ric(h_t)=t\Lambda h_t+t\lambda o+R_t,
+\quad |R_t|_{g_{\rm cal}}\le Ct^2\rho^2.
+\]
+升指标后
+\begin{equation}\label{eq:firstobs}
+g_t^{-1}(\Ric(g_t)-\Lambda g_t)
+=\lambda h_t^{-1}o+t^{-1}h_t^{-1}R_t.
+\end{equation}
+在固定核心紧集，余项趋零，非零 $\lambda$ 则留下阶一各向异性；过渡区按 $\rho\sim t^{-1/4}$ 有余项 $O(t^{1/2})$。这是\emph{此固定渐近匹配框架}中的可靠结论，直接解释为什么小加权或有限 $L^p$ 误差不等于原题的无权夹逼\cite{MV,Biquard}。
+
+新的对数构造改变了跨尺度二次项的匹配方式。因此不能一面保留该构造，一面又把式\eqref{eq:firstobs}宣称为“所有解消方式的首障碍普遍必须消失”。两项结果的适用集合必须写清楚。对于已知首障碍为零的情形，经典refined近似本来就可能给出更快的点态误差率；不应将这些已有实例重复宣布为新构造。
+
+\subsection{通量的精确边界}
+若某条环带论证只给 $\delta\ge c/L$，而 $L\to\infty$，它就不给统一Ricci间隙。条件性投影理论中出现
+\[
+|\mathcal O_i|\le C\delta_i\log(1/t_i)+o(1).
+\]
+只有证明 $\delta_i\log(1/t_i)\to0$，才可能强迫该障碍消失。尺度 $t_i\lesssim e^{-c/\delta_i}$ 是需要研究的允许逃逸，而不是可直接剔除的“病态参数”。
+
+完整通量传递尚要控制环境高阶项、规范、坏集、非线性余项和内外端的同一归一化。干净锥环带上的Wronskian恒等式，不等于实际任意气泡树上的投影定理。二次 $\ell=2$ 模的对数临界性可作为机制分析；更高模式的幂次行为也须说明模型与尺度，不能凭此声称所有高阶精确障碍都被近似夹逼消去。
+
+\section{应保留的另一项精确技术：EH非恒定角模比较}
+对EH度量取
+\[
+g_{\rm EH}=A^{-1}d\rho^2+\frac{\rho^2}{4}
+(\sigma_1^2+\sigma_2^2+A\sigma_3^2),\qquad A=1-\rho^{-4}.
+\]
+在归档采用的偶数 $l\ge2$、Hopf频率 $m$ 的\emph{标量分离方程}中，正的bolt正则径向支满足
+\[
+(pF')'-qF=0,\quad p=\rho^3A,\quad
+q=l(l+2)\rho+4m^2\rho(A^{-1}-1).
+\]
+令 $z=\rho^l$，直接计算
+\[
+\mathcal Lz=-l(l-2)\rho^{l-3}-4m^2\rho^{l+1}(A^{-1}-1)\le0.
+\]
+$J=p(zF'-z'F)$ 满足 $J'=-F\mathcal Lz\ge0$；正则边界给 $J\to0$。因此
+\begin{equation}\label{eq:angular}
+\frac{F(\rho)}{F(R)}\le\left(\frac{\rho}{R}\right)^l
+\le\left(\frac{\rho}{R}\right)^2,\qquad1\le\rho\le R.
+\end{equation}
+续接需保留解的正性、正则端和角频率规范。该结果统一处理这类标量方程的非恒定模式，不包含 $l=0$，也不是整个Lichnerowicz张量系统的全频谱可逆性。合理用途是核心/边界估计的一个模块，而不是宣布Einstein非线性匹配已经全部解决。
+
+\section{多节点精确Einstein问题：计算应对准完整约化方程}
+\subsection{保留的几何数据}
+$(S^2\times S^2)/\Z_2$ 的四节点乘积背景在所用曲率规范下具有
+\[
+R_+=R_-=\operatorname{diag}(\Lambda,0,0).
+\]
+它不是共形平坦背景，也不由 $\det R_\pm=0$ 推出K\"ahler存在性。全规范固定算子的核与TT核必须区分。采用 $P=\frac12\nabla^*\nabla-\mathring R$ 时，形状方向满足
+\[
+P(g_A-g_B)=-\Lambda(g_A-g_B),
+\]
+所以不能把整个Green配对当成正定。乘积谱的分母为 $(\lambda_A+\lambda_B+\text{shift})^{-1}$，不是两个静态Green核分母相乘。
+
+用 $M_{\boldsymbol\epsilon}$ 记录\emph{实际标记解消}，而不是提前替换为标准连通和。轨迹给出的有理不变量 $\chi=8$、$(b_+,b_-)=(1+r,5-r)$ 只能在相同取向计数约定下使用；奇偶性、spin及微分同胚类型需要整数交叉形式和实际边界粘合/handle证明。相同有理不变量不识别smooth type。
+
+\subsection{哪些手性结果已经有内容}
+A01第100步报告在AA/BB张量--标量\emph{节点间}谱模型中，精确代数证明
+\[
+B_{++}=B_{--}=0.
+\]
+其机制是极化与南北极奇偶性消去；交叉手性破坏相同消去。它不包括节点自作用，AB部分也不能未经证明继承全部结论。早期电/磁模归一化、遗漏Killing--Killing模式、数值迹的二倍计数都已发生过修正。原 $0.503t^2$ 等摘要数值不得直接用于定理；应回到所定义矩阵和最终计数。
+
+实际节点权重带极点符号。$SO(2)$等变不代表映射为零：$z\mapsto f(|z|)z$ 就是反例。某些特定 $T^2$ 权重排除二次项，是在完整节点稳定子及权重下的结论，不能推广到任意等变映射。物理源方向还受秩一正锥 $t^2uu^{\mathsf T}$ 限制，不是任意对称矩阵。
+
+\subsection{决定性证明对象}
+\begin{target}[完整有限维约化，而非仅一个节点间系数]
+在明确标记、全核切片及全部尺度/方向参数下，建立
+\begin{equation}\label{eq:LS}
+F_i=F_i^{\rm self}+F_i^{\rm deform}+F_i^{\rm inter}
++F_i^{\rm complement}+\mathcal R_i=0,
+\end{equation}
+其中每一项的阶数、参数依赖与余项估计均有证明，再判断零点是否存在。
+\end{target}
+如果目标项是 $t^3$，而只有 $\mathcal R=O(t^{5/2})$，则 $t^{-3}\mathcal R$ 的现有上界发散，系数符号没有裁决力。需要 $o(t^3)$ 或含已知同阶项的完整展开；同时处理尺度比退化、方向倾斜及可能的对数项。不能用“某个全同手性K\"ahler--Einstein族存在”自动抵消每个混合情形的自作用和背景变形。
+
+若完整系统有零点且逆估计成立，可以得到新的精确Einstein度量；若完整系统无零点，得到的是相应退化邻域内的不存在性。后者只有在全局模空间覆盖、另一项全局障碍或拓扑理由补上后，才能排除同一流形上的所有Einstein度量。A03负责检验这项全局连接。
+
+\section{曲率尖峰：必须带入所有正则性猜想的测试例}
+在 $S^2\times S^2$ 远离轴的乘积坐标片中，取紧支撑扰动
+\[
+g_u=dx^2+dy^2+e^{2(F_1+u)}d\theta^2+e^{2(F_2-u)}d\varphi^2,
+\quad F_1=\log\sin x,\quad F_2=\log\sin y.
+\]
+相反翘曲使部分Ricci分量中的完整Hessian相消，而混合Riemann分量仍看到 $u_{xy}$。令
+\[
+w_\sigma(X,Y)=-\tfrac12XY\log(X^2+Y^2+\sigma^2).
+\]
+直接微分得到
+\begin{equation}\label{eq:CZ}
+\Delta w_\sigma=-\frac{2XY[3\sigma^2+2(X^2+Y^2)]}{(X^2+Y^2+\sigma^2)^2},
+\qquad (w_\sigma)_{XY}(0)=\log(1/\sigma).
+\end{equation}
+在固定紧片上Laplacian和梯度一致有界，而混合Hessian可发散。取固定光滑截断、$u_j=\Lambda_j^{-2/3}\psi w_{e^{-\Lambda_j}}$，轨迹给出 $\delta_+(g_j)=O(\Lambda_j^{-2/3})$ 与中心全曲率至少 $c\Lambda_j^{1/3}$。应以完整翘曲公式核对低阶交叉项、正定性和全局光滑延拓。
+
+这个模型不反驳Yau26，因为底层本来承载Einstein度量；它反驳的是过强的输入正则性推断。局部或扰动的曲率能量可以趋零，不等于整个闭流形的 $\int|\Rm|^2\to0$。同一体积密度的保持也不把它变成塌缩例。
+
+查新时必须比较Brendle--Kapouleas的混合EH古解，其中已有Ricci小而全曲率大的现象\cite{BK}；比较非零 $\pm1$ 与零归一化、固定紧流形、输入收敛范数和能量条件。Ge--Jiang的正则性反例针对其他精确方程类别\cite{GJ2017}。不能用Anderson的一般存在性结论声称这些输入曲率尖峰不可能：存在另一Einstein度量与当前度量具有曲率上界不是一回事\cite{Anderson1989}。
+
+\section{进一步突破的三个方向，按新信息选择而非同时铺开}
+\subsection{构造定理的范围与锋利性}
+先完成定理\ref{thm:A1}对目标\ref{tar:football}的严格应用与prior-art对照。随后再问：$1/|\log a|$ 是该匹配问题的必要阶还是特定构造损失？能否在存在非零固定二次失配时得到模型内的匹配下界？如果只在限定环带/规范中得到下界，就标明限定，不能叫普遍最优。
+
+推广到ADE群或其他Ricci-flat ALE时，要分别判断：群不变量Weyl空间、核心源方程的可解性、尾项阶数、可积性和标记。某个表示的维数计算不是非线性存在证明。多层气泡树和变化节点数的统一结论，应在固定单层结果核准后再考虑。
+
+\subsection{精确Einstein的产生或局部障碍}
+选择一个真正可算且与原题相关的混合行，完整处理式\eqref{eq:LS}。可先用已知精确族作规范和系数的单元测试，再转向未知行。数值只用于发现和排除错误公式，严格结论需要解析符号或区间余项与逆估计。若不能控制同阶项，则停止把单个正系数解释为不存在性。
+
+\subsection{与全局无Einstein地理结合}
+将已证明 $e_\sigma(M)=0$ 的实际标记流形交给A03；明确其定向、整数交叉形式、基本群、奇点消解方式、已知正标量曲率及可适用障碍。由A03判断无Einstein证书是否真作用于\emph{此}smooth type。不能换成只同胚、只K\"ahler不同或只某个bundle结构相同的流形。
+
+若找不到适配的全局障碍，可以研究这些流形的Einstein存在性，不把研究锁死在预设反例上。新的精确度量同样具有独立价值，但它只解决所覆盖的实例，不自动证明 $P_4^\sigma$。
+
+\section{Prior-art审计表与不能写死的主张}
+\begin{longtable}{L{.22\textwidth}L{.34\textwidth}L{.35\textwidth}}
+\toprule 来源/对象 & 必须承认的已有部分 & 需要逐命题确认的新增部分\\\midrule\endhead
+Biquard、MV & 首障碍、核心线性方程、特定解消框架 & 是否在该框架外通过缓慢Weyl调整达到两侧无权点态缺陷趋零。\\
+Ozuch II \S7.3 & 有限 $L^p$ 逼近、单侧Ricci、对数截断和明确 $L^\infty$ 问题 & 固定标记A1构造是否回答该问题；不得宣称所有对数截断原创。\\
+Ozuch精确退化理论 & Einstein模空间附近的加权描述与障碍 & 本项目若得到新的精确系统结果，是否超出已有高阶障碍及可积性论证。\\
+Brendle--Kapouleas & 混合EH、Ricci与全曲率不同尺度行为 & 本项目的非零归一化闭流形尖峰是否有真正不同的精确假设和新结论。\\
+内部有限计算 & 十维基、极化、角模、系数验证 & 有限模型如何进入完整几何定理；不能仅凭通过测试提升为全局结果。\\\bottomrule
+\end{longtable}
+本稿没有完成全球穷尽式查新。应沿上述论文的引用与被引关系搜索\emph{同一数学命题}，保持范围和范数一致，记录“已有直接覆盖”“需要新步骤的推论”“目前未见等价结果”三种不同状态。
+
+\section{Step101后的执行起点与成果收束}
+首先保留原第100步四节点审查及待通知事项，再读取固定A1主笔记和累积原稿中核心的实际表达式，核准共同规范、$O_2$尾项、正定性及尺度字典。把目标\ref{tar:football}写成一条单独推论，逐项检查原文粘合数据和GH收敛；这是上一版编辑者提出的可选优先级；是否优于原第100步的四节点审查，由当前工作区证据决定，不能用本建议覆盖原有接续。
+
+若上述内容闭合并通过命题查新，可整理为“固定解消上的点态Ricci近Einstein构造”论文。建议结构为：精确构造定理；与已有解消结果的差别；核心源方程；Weyl核插值；全局误差与GH极限；公开问题的应用；适用边界与反例。手性高阶计算只有产生进一步几何结论时才作为主结果，否则留作后续论文或技术附录。
+
+然后依据真实进展在精确约化、范围推广、全局拓扑连接中选择一个主攻对象。不得把三个方向同时列为已经完成；也不因“论文已可成篇”冻结所有更强可能。A01提供刚性与正则性要求，A03提供全局smooth-type证书，本会话提供完整构造及其参数误差。
+
+\section{重要原稿与可继续使用的模块}
+\asset{构造主笔记}{Sessions/S0910A02/workspace/notes/step83_near_pinched_construction_and_frontier_reduction.md}
+\asset{十维Weyl核检查}{Sessions/S0910A02/workspace/scripts/step83_full_weyl_log_annulus_audit.py}
+\asset{原始核心与对数匹配}{Skills/qiushi-yau26/references/research/20260912.tex}
+\asset{尺度与多极投影修正}{Sessions/S0910A02/workspace/notes/step68_spectral_symmetry_and_multipole_gate.md}
+\asset{通量与形式化范围}{Sessions/S0910A02/workspace/notes/step69_preceptor_flux_kernel_formalization_review.md}
+\asset{高阶尺度边界}{Sessions/S0910A02/workspace/notes/step74_ell_classification_tower_impossibility_and_hardness_propagation.md}
+\asset{CZ尖峰}{Sessions/S0910A02/workspace/notes/step11_cz_spike_and_proposition_A.md}
+\asset{AA/BB同手性消去}{Sessions/S0910A01/workspace/notes/step100_chirality_cancellation_proof.md}
+\asset{遗漏模式修正}{Sessions/S0910A01/workspace/notes/step87_missed_mode_green_correction.md}
+
+原报告第94--100步保留节点权重、物理源锥、规范不变性与二次项选择规则；第83--85步保留构造与变分关系；第60--74步保留被修正的缓慢Weyl变化、通量临界尺度。恢复旧笔记时同时读其后修正，不读取最早的成功摘要替代最终版本。
+
+\subsection{不能再次引入的结论}
+禁止把 $\det R_\pm=0$ 等同于K\"ahler存在性；禁止把bare核心失败等同于corrected核心失败；禁止把局部障碍等同于全局无Einstein；禁止把全同手性KE一致性测试当作所有混合行的自作用已解；禁止用比信号更大的余项推断符号。已知有理拓扑不等于已知smooth type；已知一列退化极小化序列也不等于全局无光滑极小值。
+
+\section{覆盖补全：一般正分支、最终四节点结果与并行构造}\label{sec:restore-a02}
+本节补回上一版只保留概括、或完全没有独立列出的原始研究。下述主张仍按其来源的条件和后续修正使用；记录有结果不等于本次重新验证了原程序与全部连续证明。
+
+\subsection{一般正分支不是固定A1实验的附属问题}
+A02第5--11步区分三类对象：具有额外受控几何的类；非塌缩但发生Weyl集中与奇点的类；总体积或局部几何塌缩的类。后两类都仍是 $P_4^+$ 的核心，不能因固定A1构造较具体就从接续任务中消失。
+
+源记录在四维给出点态下界
+\[
+\beta(\delta)=\begin{cases}
+\frac23(1-\delta)^2,&0\le\delta\le1/3,\\
+\frac23(1+\delta)(1-2\delta),&1/3\le\delta<1/2,
+\end{cases}
+\qquad
+\int|W|^2+\beta(\delta)\Vol\le8\pi^2\chi.
+\]
+对应的正分支Weyl下界记录为
+\[
+\int|W|^2\ge8\pi^2\left[\chi-2\left(\frac{1+\delta}{1-\delta}\right)^2\right].
+\]
+前者不能误读成非塌缩下界；后者说明某些拓扑复杂度增大的输入必须承载增长的Weyl能量。A02第9步在额外 $\Vol\ge v$ 时调用有限微分同胚型结果；不同smooth types上的序列因此可能被迫总体积塌缩。\emph{有限型不等于Einstein存在}，也不等于只需检验有限几个已知度量。
+
+第11步的条件性有限覆盖放大原则也应保存：若先得到适用的四维单连通正夹逼体积间隙，结合普遍覆盖上的有限型与Euler乘法性，可以进一步控制覆盖度并传回体积下界。其首要前提尚未给出；同时覆盖上得到的Einstein度量仍需等变性才能下降。不得把这个条件性归约当成已经建立单连通非塌缩。
+
+\subsection{已排除的简单塌缩模型与仍开放的奇异层}
+A02第6步对恒定纤维长度的自由主圆丛connection metric给出Bochner型障碍，记录阈值 $\delta<1/(1+\sqrt2)$；限定包括闭三维基底、恒定长度和相应连接方程。第7步指出四维全局自由 $S^1$ 作用还受 $\chi=0$ 与紧夹逼Euler正性的冲突约束。变长度、奇异轨道、固定点和没有有界曲率的塌缩不因此排除。
+
+第27步的正Heisenberg模型排除也有明确范围：四维、对角cohomogeneity-one $H_3$ ansatz、一维无twist基底、$\delta<\Lambda/2$，且轨道空间为圆或具有普通光滑tubular端点的区间。不能把这一结论推广到一般infranil纤维、奇异端或高维基底。其窄模型代数曾部分Lean化，不包括一般端点拓扑分类。
+
+原toric/rod/corner研究应作为这些未覆盖情形的模型库保留；一个轴条件失败或一个角点锥模型失败，只淘汰该表示。特别是A02第61--62步的单一toric Weyl漂移模型因轴光滑性和未消除的Ricci项被撤回，随后才转向正规坐标的完整Weyl二次项空间。不能在新构造里重新使用被撤回的 $1:(-2):1$ 比例推论。
+
+\subsection{无导数的投影目标及其真实难点}
+原C0-safe目标不是只写“利用Pohozaev”，而是构造真实测试张量，使
+\[
+\int\langle\Ric-g,\Phi_i\rangle=t_i\mathcal O_i+o(t_i),
+\qquad \|\Phi_i\|_1=O(t_i).
+\]
+这样误差才由 $C^0$ 夹逼控制为 $O(\delta_i t_i)$。EH的 $\rho^{-4}$ 尾项、零ADM质量、普通translation/rotation测试看不见二次模式，以及长环带测试场的 $L^1$ 质量，都是原轨迹已识别的困难。干净模型内的通量常数 $-3$、$1/8$ 与固定标量模型 $1/6$ 曾进入有限代数和Lean检查；它们不自动提供实际气泡树的完整投影引理。
+
+\subsection{必须补回的第100步：四节点交换、对角系数与互逆尺度窗}
+上一版写了A01的 $B_{++}=B_{--}=0$，却没有写A02第100步的另一组结果。原记录的相邻平衡取向为 $(+,+,-,-)$。其中同手性两个接收节点互换相邻／对角源角色；一个节点关于尺度比 $r=u_4/u_3$ 的可行窗，在另一个节点变为 $1/r$。在所用有限维节点模型及其系数条件中，原记录将共同可行性归到
+\[
+|c_{\rm adj}+c_{\rm diag}|\le q_{\rm adj}+q_{\rm diag}.
+\]
+所存数值给出左端约 $0.02743$、$q_{\rm adj}\approx0.008005$，故需要 $q_{\rm diag}\gtrsim0.01943$。同一步在AA/BB谱模型中发现 $q_{\rm diag}=0$，并以南北极 $c2/s2$ 符号相反及逐谱层等幅消去解释。由此报告所有五种混合图样在\emph{主导节点间模型}内受阻，关闭了前一步留下的相邻平衡窗。
+
+\textbf{证据范围必须与结果一起保留。}这不是完整Einstein局部障碍定理；第100步的原交接明确要求核对互逆窗的代数前提、任意正尺度、$q_{\rm diag}=0$ 是否仅属热正则谱模型，以及完整几何中其他同阶项。A01/A02其他修正还指出self、deformation、complement项和余项都需处理，不能沿用“只差一个余项”这一更强概括。
+
+原始续接对象为：\path{Sessions/S0910A02/workspace/notes/step100_four_node_closure_and_structural_vanishing.md}、\path{workspace/data/step100_four_node_closure_and_q_diag.json}及更新过的\path{step85_yau26_established_reduction.md}。原Step100还记录尚未完成的同伴通知和负mirror系数核算；这些属于原有后续选项，不应被编辑者的公开问题优先级覆盖。
+
+\subsection{实线性判据、离散对称与谱规范}
+第99步的实线性模型 $z\mapsto Pz+Q\bar z$ 满足
+\[
+\det_{\R}=|P|^2-|Q|^2.
+\]
+非零核要求行列式为零；$|Q|>|P|$意味着负行列式且仍可逆，不意味着产生核。物理允许的源又受正尺度、秩一方向等约束，不能只用任意复数矩阵替代。
+
+A01第78--91步中的 $A,J,L,K$ 离散对称与相应谱分块并非全部可删去的中间计算。源记录保留全规范算子的scalar零模与TT核的区别、形状负模、K-odd线性扇区的正性和遗漏Killing--Killing模式的修正。第91步进一步修正：商下降用方位频率奇偶，而不是直接用 $\ell$ 奇偶；因子无迹张量最低特征值为2而非4；AB两个因子的度数独立。\emph{扇区正性不等于整个Green算子正性}。逐项公式和矩阵要回原脚本；不能将有限样本“零误差”当成解析恒等式的完整证明。
+
+\subsection{负mirror、整数拓扑与全局筛选}
+A02第54--57、84步还保留负mirror $(\Sigma_2\times\Sigma_2)/\langle\iota\times\iota\rangle$ 的36个 $A_1$ 节点，以及与正mirror并行的标记解消研究。它服务于负分支输入，不可只研究正mirror便宣称覆盖原区间命题。其系数、拼接和全部Einstein不存在性仍要分别处理。
+
+原记录曾对平衡行提出spin seam和标准连通和的识别；同时也存在后续要求核准整数格点、标记与smooth type的记录。应保留\emph{这一身份尚需原证书核对的分歧}，而不是把具体识别当成无条件事实，或反过来删掉已有seam计算。A01第49--53步的Q-Gorenstein平滑与具体Einstein存在结果，由A03补全承接。
+
+A02第86--92步的PSC／monopole、BF邻接及熵工具适用性研究，解释了已构造解消为何不自动落入常用无Einstein范畴。ALE的局部Euler／signature修正满足的估计必须带边界贡献和统一约定；“triple disjointness”不是对一切未来拓扑障碍的不可解定理。正mirror上的粗调和形式alignment／CLR估计失效，也只限制已经检验的估计，不能排除更精细工具。
+
+\subsection{有限形式化与原始贡献不能混同}
+源记录已有\path{Step27H3Algebra.lean}、\path{Step69FluxKernelAlgebra.lean}、\path{Step99RealLinearPQ.lean}等窄范围检查。应保存其准确命题与依赖审计，不应说“没有任何Lean工作”，也不应说已形式化Ricci几何或Yau26。本版的300步索引保留原路径和任务文本，供恢复实际源文件。
+
+\section{结果交付与论文标准}
+研究结论以具体命题和证明为单位，而不是以Agent数量、步数或平台认可次数为单位。同一公式在多个会话复算，可以提高证据质量，不产生多项独立新发现。
+
+可完成的结果应及时冻结成可独立阅读的数学稿：准确的假设与量词，新增结论相对最接近文献的差别，所有分析接口及常数依赖，完整证明，必要时附有限计算及独立复算说明。假设增多或结论缩小必须在主定理中显式反映。无需等到整个Yau26解决才允许发表严谨的中间结果，也不把一个证明链拆成若干缺乏独立贡献的论文。
+
+Annals、Inventiones、JAMS、Acta可以作为高质量写作与结果强度的目标，但任何文件都不预设已达到其录用标准。完整性、首创性、重要性和选刊是四项判断。用经典工具证明新的重要定理可以完全原创；出现一个新名称、搜不到同名词或构造了“框架”，并不能确认首创性。按\emph{精确命题及假设}进行查新，并记录最近定理、包含关系及真正新增的证明步骤。
+
+无论本轮选择论文收束还是进一步探索，结束时只需留下四类必要材料：更新后的主定理与证明；当前最小未闭合命题；确切被否定的模型及原因；可供同伴直接使用的来源、版本和计算。除非出现新的反证或新缺口，不再次从零争论已审读的同一结果。反过来，发现具体错误就修正所有依赖它的结论，而不是只新增一份不被后续读取的纠错说明。
+
+\begin{thebibliography}{99}
+\bibitem{Yau1982} S.-T. Yau, \emph{Problem Section}, in \emph{Seminar on Differential Geometry}, Annals of Mathematics Studies 102, Princeton University Press, 1982, pp. 669--706. 历史题页仍需在工作区逐字核对；本稿采用任务书中的区间命题。
+
+\bibitem{Biquard} O. Biquard, \emph{D\'esingularisation de m\'etriques d'Einstein. I}, arXiv:1105.4904; Invent. Math. (2013). \url{https://arxiv.org/abs/1105.4904}. DOI: \url{https://doi.org/10.1007/s00222-012-0410-7}. 曲率障碍及满足相应非退化条件的解消；非紧渐近双曲充分性不直接成为紧致任意轨形充分性。
+
+\bibitem{MV} P. Morteza and J. A. Viaclovsky, \emph{The Calabi metric and desingularization of Einstein orbifolds}, J. Eur. Math. Soc. 22 (2020), 1201--1245. \url{https://arxiv.org/abs/1610.02428}. DOI: \url{https://doi.org/10.4171/JEMS/943}. 高维 Calabi 模型与四维 EH 的旋转、可积性必须区分。
+
+\bibitem{OzuchI} T. Ozuch, \emph{Noncollapsed degeneration of Einstein 4-manifolds, I}, arXiv:1909.12957; Geom. Topol. (2022). \url{https://arxiv.org/abs/1909.12957}.
+
+\bibitem{OzuchII} T. Ozuch, \emph{Noncollapsed degeneration of Einstein 4-manifolds, II}, arXiv:1909.12960v2; Geom. Topol. 26 (2022). \url{https://arxiv.org/abs/1909.12960}. 本轮重点核对 \S7.3、Corollary 15、Remarks 50--51 及明确的 $L^\infty$ 问题；编号以该 arXiv 版本为准。
+
+\bibitem{OzuchHigher} T. Ozuch, \emph{Higher order obstructions to the desingularization of Einstein metrics}, arXiv:2012.13316. \url{https://arxiv.org/abs/2012.13316}.
+
+\bibitem{OzuchIntegrability} T. Ozuch, \emph{Integrability of Einstein deformations and desingularizations}, arXiv:2105.13193. \url{https://arxiv.org/abs/2105.13193}. 与上一条是不同文献，不混写题名、结论和发表信息。
+
+\bibitem{BK} S. Brendle and N. Kapouleas, \emph{Gluing Eguchi--Hanson metrics and a question of Page}, Comm. Pure Appl. Math. 70 (2017), 1366--1401. \url{https://arxiv.org/abs/1405.0056}. DOI: \url{https://doi.org/10.1002/cpa.21678}. 混合取向 EH 构造及 ancient Ricci flow 是小 Ricci、大全曲率现象的重要 prior art；零 Einstein 常数与本项目 $\pm1$ 归一化须分别比较。
+
+\bibitem{GJ2017} H. Ge and W. Jiang, \emph{$\epsilon$-regularity for shrinking Ricci solitons and Ricci flows}, arXiv:1707.05511. \url{https://arxiv.org/abs/1707.05511}. 本轮核对 Theorem 1.1、Theorem 3.4；后者为有界 Ricci 的尺度选择，不是一般有界 Ricci 的点态曲率结论。
+
+\bibitem{Anderson1989} M. T. Anderson, \emph{Ricci curvature bounds and Einstein metrics on compact manifolds}, J. Amer. Math. Soc. 2 (1989), 455--490. \url{https://doi.org/10.1090/S0894-0347-1989-0999661-1}. 本轮确认文献身份，未取得所需 Corollary B(4) 的完整原文；不得据二手概述填写其假设或用它排除输入曲率尖峰。
+
+\bibitem{Project} Qiushi Engine 项目资料：2026-09-15进展包、2026-09-16逐步归档，S0910A01/A02/A03各100步 meta-trace；源文件名与本地工作区定位见正文。原稿、脚本与摘要须分别识别，不能把记录中的成功标签视作外部定理。
+
+\bibitem{CodexReview} 用户在本会话提供的 Codex 原稿审读报告（截至2026-09-16）：\path{Sessions/S0910A03/workspace/briefing/Yau26_uniform_gap.tex}，重点位置原稿约第277行；另核查 A02 第83步构造笔记。结论为在所审读依赖链中未发现实质缺口，且精确拓扑间隙不依赖(SC)。本引用是审读报告的来源定位，不声称原稿全文已包含于归档。
+
+\bibitem{CoverageAudit} 本版覆盖复核资料（2026-09-16）：\path{审计/研究条目覆盖表.tsv}、\path{审计/300步原始任务索引.json}、\path{审计/原件校验.tsv}。恢复内容来自实际上传三份meta-trace及两个归档的明确条目；并非本次重新证明全部原稿。
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,1807 @@
+\documentclass[11pt]{article}
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,esint}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setlength{\emergencystretch}{3em}
+\title{The Weak Endpoint at Every Fixed Finite Euler Density}
+\author{Qiushi Line 1 --- continuation C}
+\date{29 September 2026}
+\begin{document}
+\maketitle
+\noindent The new conclusion is quantified as: for every finite $B$, there exists $c(B)>0$. It does not assert a density-independent constant and does not determine the optimal coefficient in O11. The main proof is followed by its retained strong-current input, a shorter bounded resolvent construction, the amplitude/phase calculation, and the more general line-bundle pairing lemma. Actual field identities and the finite-parameter/conformal comparison of the supplied manuscript remain explicitly inherited. No Nijenhuis-bracket prolongation is needed in this proof.
+\tableofcontents
+\clearpage
+\hypertarget{o10-closes-at-every-fixed-finite-euler-density}{%
+\section{O10 closes at every fixed finite Euler
+density}\label{o10-closes-at-every-fixed-finite-euler-density}}
+
+Date: 2026-09-29. This continuation uses the already established
+strong-current result, a direct mass--phase--Dirac reduction, the new
+constant-length derivative lemma, and a logarithmic resolvent argument
+for a line bundle. The conclusion removes the previous numerical
+Euler-density threshold. It does not assert a constant independent of
+the Euler-density bound.
+
+\hypertarget{precise-conclusion}{%
+\subsection{1. Precise conclusion}\label{precise-conclusion}}
+
+Retain the original O10 actual conformal monopole input, the positive
+projection budget \(p\ge A>0\), and \(a^2\ge T_+\). For every fixed
+finite \(B\), there exists \(c(B)>0\) such that
+
+\[
+ \boxed{\frac{\chi(M)}A\le B
+ \quad\Longrightarrow\quad
+ \fint_M|\operatorname{Ric}+g|^2+\frac{D_\beta(g)}{V(g)}
+ \ge c(B)\frac{(\beta-2)^2}{\beta^2},\qquad\beta\ge2.}
+\tag{1}
+\]
+
+The class of admissible metrics and the actual supplier are exactly
+those of the original O10 problem. There is no added pointwise Ricci
+bound, diameter bound, noncollapse hypothesis or Sobolev inequality. The
+dependence on the fixed number \(B\) is retained.
+
+Here \(a=c_1(L)\), \(p=(a_g^+)^2\),
+\(T_+=2\chi(M)+3\operatorname{sign}(M)\), and
+
+\[
+ D_\beta=(1+\beta^{-1})\int s_g^2
+ +6(\beta+1)\int|W_g^+|^2-72\pi^2p.
+\]
+
+Weyl norms are Hilbert--Schmidt norms on two-forms; Ricci norms are
+tensor norms. The actual single solution is taken on the negative Yamabe
+representative normalized by \(s=-4\). An application to every original
+metric uses the original conformal-class supplier and the stated
+conformal comparison. Throughout a sequence, all analytic norms are
+taken with respect to \(dV_j/V_j\).
+
+Equivalently, an unrestricted hypothetical O10 zero-end sequence must
+have
+
+\[
+ \boxed{\chi(M_j)/A_j\longrightarrow+\infty}
+\tag{2}
+\]
+
+along the endpoint subsequence. The statement does not yet rule out this
+final escape regime.
+
+\hypertarget{the-new-analytic-lemma-a-line-cannot-keep-characteristic-square-through-this-bounded-energy-limit}{%
+\subsection{2. The new analytic lemma: a line cannot keep characteristic
+square through this bounded-energy
+limit}\label{the-new-analytic-lemma-a-line-cannot-keep-characteristic-square-through-this-bounded-energy-limit}}
+
+Consider closed oriented Riemannian four-manifolds \((M_j,g_j)\),
+Hermitian line bundles \(K_j\) and unitary connections. Write the real
+curvature as \(F_j=-iF^{K_j}\). Suppose:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\fint|\operatorname{Ric}_{g_j}|^2\le C_R\).
+\item
+  \(F_j=F_{0,j}+e_j\), with \(|F_{0,j}|\le C_F\) and
+  \(\|e_j\|_{2,\mathrm{avg}}\to0\). The bounded model need not be
+  closed.
+\item
+  Smooth sections \(\sigma_j\) satisfy \(\fint|\nabla\sigma_j|^2\le E\),
+  and \(|\sigma_j|\to\ell>0\) strongly in normalized \(L^2\).
+\end{enumerate}
+
+Then
+
+\[
+ \boxed{\frac{c_1(K_j)^2[M_j]}{V_j}
+ =\frac1{4\pi^2}\fint F_j\wedge F_j\longrightarrow0.}
+\tag{3}
+\]
+
+The notation on the right means the coefficient of the four-form
+relative to the volume form. The conclusion is signed convergence; no
+sign of the characteristic number is assumed.
+
+\hypertarget{a-bounded-cap-and-its-spectral-regularization}{%
+\subsubsection{2.1 A bounded cap and its spectral
+regularization}\label{a-bounded-cap-and-its-spectral-regularization}}
+
+Apply a fixed smooth radial cap which is the identity near radius
+\(\ell\), has uniformly bounded derivative, and has bounded image. The
+resulting sections \(s_j\) satisfy
+
+\[
+ |s_j|\le M,\qquad \fint|\nabla s_j|^2\le E',
+ \qquad d_j:=\fint(|s_j|-\ell)^2\to0.
+\tag{4}
+\]
+
+Let \(L_j=\nabla^*\nabla\) and, for \(\varepsilon>0\), put
+
+\[
+ u_{j,\varepsilon}=(I+\varepsilon L_j)^{-1}s_j.
+\]
+
+The connection-Laplacian maximum principle and the spectral theorem give
+
+\[
+ |u_{j,\varepsilon}|\le M,\qquad
+ \fint|u_{j,\varepsilon}-s_j|^2\le\varepsilon E',
+ \qquad \fint|\nabla u_{j,\varepsilon}|^2\le E'.
+\tag{5}
+\]
+
+For \(K_j(\varepsilon)=\fint|L_j u_{j,\varepsilon}|^2\), the exact
+spectral calculation is
+
+\[
+ \int_0^1K_j(\varepsilon)\,d\varepsilon
+ =\frac1{V_j}\sum_\nu
+ \frac{\lambda_\nu^2}{1+\lambda_\nu}|(s_j)_\nu|^2
+ \le\fint|\nabla s_j|^2\le E'.
+\tag{6}
+\]
+
+No uniform spectral gap is required.
+
+Choose numbers \(\delta_j\downarrow0\) with
+
+\[
+ d_j+\|e_j\|_{2,\mathrm{avg}}^2\le\delta_j<1.
+\]
+
+Since
+
+\[
+ \int_{\delta_j^{1/2}}^{\delta_j^{1/4}}
+ K_j(\varepsilon)\,d\varepsilon
+ =\int_{\delta_j^{1/2}}^{\delta_j^{1/4}}
+ [\varepsilon K_j(\varepsilon)]\frac{d\varepsilon}{\varepsilon}
+ \le E',
+\]
+
+there exists \(\varepsilon_j\) in this interval such that
+
+\[
+ \boxed{\varepsilon_jK_j(\varepsilon_j)
+ \le\frac{4E'}{|\log\delta_j|}\longrightarrow0.}
+\tag{7}
+\]
+
+Write \(u_j=u_{j,\varepsilon_j}\), \(K_j=K_j(\varepsilon_j)\). In
+particular \(\varepsilon_j\to0\), while (7) is stronger than the
+elementary bound \(K_j\le E'/\varepsilon_j\).
+
+\hypertarget{the-geometry-free-fourth-power-estimate}{%
+\subsubsection{2.2 The geometry-free fourth-power
+estimate}\label{the-geometry-free-fourth-power-estimate}}
+
+For a bounded section \(u\) of a line bundle over a closed
+four-manifold, derivative interchange and integration by parts give
+
+\[
+ \fint\bigl(|\nabla^2u|^2+|\nabla u|^4\bigr)
+ \le C_M\left\{\fint|Lu|^2+
+ \fint\bigl(|\operatorname{Ric}|^2+|F|^2\bigr)\right\}.
+\tag{8}
+\]
+
+A harmless additive constant can be included. Only the Ricci contraction
+occurs when commuting derivatives on the covector slot. Bundle curvature
+enters without derivatives. To see the absorption, set
+\(I=\int|\nabla^2u|^2\), \(J=\int|\nabla u|^4\) and \(K=\int|Lu|^2\).
+Interchanging the two covariant derivatives first gives
+
+\[
+ I\le C K+C M^2\int|F|^2+
+ C\int(|\operatorname{Ric}|+|F|)|\nabla u|^2.
+\]
+
+Integration of
+\(\operatorname{div}(|\nabla u|^2\operatorname{Re}\langle u,\nabla u\rangle)\)
+gives \(J\le C_M(I+K)\). Cauchy--Schwarz and Young then absorb \(I\) and
+yield (8). No Sobolev estimate or derivative of curvature is used.
+
+Thus in our sequence
+
+\[
+ \fint|\nabla u_j|^4\le C(1+K_j).
+\tag{9}
+\]
+
+Let \(Z_j=\{|u_j|\le3\ell/4\}\). From (4)--(5),
+
+\[
+ \frac{\operatorname{Vol}(Z_j)}{V_j}
+ \le C(d_j+\varepsilon_j E')\le C\varepsilon_j.
+\]
+
+Consequently
+
+\[
+ \boxed{\fint_{Z_j}|\nabla u_j|^2
+ \le C\sqrt{\varepsilon_j(1+K_j)}\longrightarrow0.}
+\tag{10}
+\]
+
+This is the estimate unavailable for the unregularized \(H^1\) section.
+
+\hypertarget{rank-one-transgression-and-its-error-bounds}{%
+\subsubsection{2.3 Rank-one transgression and its error
+bounds}\label{rank-one-transgression-and-its-error-bounds}}
+
+Put \(a_j=|u_j|^2\),
+\(j_j=\operatorname{Im}\langle u_j,\nabla u_j\rangle\). Choose a fixed
+smooth cutoff \(\chi(a)\), zero for \(a\le(\ell/2)^2\) and one for
+\(a\ge(3\ell/4)^2\). The real one-form
+
+\[
+ \theta_j=\chi(a_j)j_j/a_j
+\]
+
+is globally smooth, extended by zero at zeros of \(u_j\). For a line
+bundle the exact local identity is
+
+\[
+ d\theta_j=\chi(a_j)F_j+
+ \chi'(a_j)\,da_j\wedge j_j/a_j.
+\tag{11}
+\]
+
+Its second term has norm at most \(C_\ell|\nabla u_j|^2\) and is
+supported in \(Z_j\). Since \(dF_j=0\), Stokes gives
+
+\[
+ \left|\fint F_j\wedge F_j\right|
+ \le C\fint_{Z_j}|F_j|^2+
+ C\fint_{Z_j}|F_j|\,|\nabla u_j|^2.
+\tag{12}
+\]
+
+The first term tends to zero because \(F_j\) has a uniformly bounded
+model and an \(L^2\)-small error. For the second term, split
+\(F_j=F_{0,j}+e_j\). Its bounded-model part tends to zero by (10). Its
+error part satisfies
+
+\[
+ \fint|e_j|\,|\nabla u_j|^2
+ \le C\sqrt{\delta_j(1+K_j)}\longrightarrow0,
+\tag{13}
+\]
+
+since \(\delta_j/\varepsilon_j\le\delta_j^{1/2}\) and
+\(\varepsilon_jK_j\to0\). This proves (3).
+
+\hypertarget{applying-the-lemma-to-the-actual-o10-system}{%
+\subsection{3. Applying the lemma to the actual O10
+system}\label{applying-the-lemma-to-the-actual-o10-system}}
+
+Suppose that a scalar-minus-four actual endpoint sequence has
+
+\[
+ \beta_j\to\infty,\qquad
+ \kappa_j=P_j/V_j+D_{\beta_j}/V_j\to0,
+ \qquad \chi(M_j)/A_j\le B<\infty.
+\tag{14}
+\]
+
+The existing curvature/topological budgets imply
+\(\fint|W^-|^2\le C_B\). The preceding strong-current and resolvent
+arguments produce \(v\in S^-\otimes L\) with
+
+\[
+ v\text{ bounded},\quad |v|^2\to m_*,\quad
+ \nabla^*\nabla v-2v\to0\text{ in }L^2,
+ \quad \|\nabla v\|_4+\|\nabla^2v\|_2\le C_B.
+\]
+
+The direct mass--phase--Dirac reduction leaves only
+\(C=(\nabla_{\bar Z_2}v)_2\). Indeed, the inherited
+\(N_v=(\nabla v)^{1,0}_{J_+}\to0\) gives \(A_i=\nabla_{Z_i}v\to0\). The
+scalar identity and bounded second-derivative budget give \(da\to0\),
+where \(a=|v|^2\). The exact phase identity
+\(|j_v+J_+da/2|^2\le2a|N_v|^2\) gives \(j_v\to0\). In a frame with
+\(v=\sqrt a\,e_1\), \[
+ (\nabla v)_1=(da/2+i j_v)/\sqrt a,
+\] so every first spinor component tends to zero on fixed
+positive-amplitude sets. Low-amplitude sets contribute \(o(1)\) to
+\(\fint|\nabla v|^2\) by the \(L^4\) bound. Thus \(B_1,C_1\to0\), and
+the Clifford identity \(D^-v=((A_1)_1-(A_2)_2,B_2+C_1)\) gives
+\(B_2\to0\) as well. No bracket prolongation estimate is required.
+
+The new covariance argument in \texttt{O10\_\allowbreak{}Weak\_\allowbreak{}Bianchi.md} proves
+
+\[
+ |\nabla v|^2\to2m_*,\quad |C|^2\to4m_*,\quad
+ |c|^2\to1\quad\text{in measure},
+ \qquad c=C/(2|v|).
+\tag{15}
+\]
+
+For completeness, the new covariance test is \(T(q)=q/(1+q)\),
+\(q=|\nabla v|^2\). Since \(\Delta|v|^2=4|v|^2-2q+o_{L^2}(1)\),
+\(d|v|^2\to0\) in \(L^2\), and \(|dT(q)|\le C|\nabla^2v|\), testing
+yields
+
+\[
+ \fint\frac{(q-2m_*)^2}{1+q}\longrightarrow0.
+\]
+
+Define the actual polynomial section
+
+\[
+ \sigma=\Phi\wedge t(v)\in\Gamma(L^5).
+\]
+
+The bundle power follows from \(t(v)\in S^+\otimes L^4\) and
+\(\det S^+=L\). In the surviving first-jet configuration,
+
+\[
+ t(v)=(0,2|v|^3c),\qquad
+ |\sigma|^2\to4\rho_*m_*^3>0.
+\]
+
+Moreover
+
+\[
+ |\sigma|\le C|\nabla v|,
+\quad
+ |\nabla\sigma|\le C\bigl(
+ |\nabla\Phi||\nabla v|+|\nabla v|^2+|\nabla^2v|\bigr),
+\]
+
+so \(\|\sigma\|_4+\|\nabla\sigma\|_2\le C_B\). In particular
+\(|\sigma|\) tends to its positive constant strongly in \(L^2\).
+
+The three hypotheses of the line lemma now hold:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\operatorname{Ric}=-g+o_{L^2}(1)\), so its normalized square is
+  uniformly bounded.
+\item
+  The curvature of \(L^5\) is \(5F_A\). Its self-dual part is bounded
+  pointwise by the actual spinor equation; its anti-self-dual part has
+  the previously proved bounded same-field fit plus an \(L^2\)-small
+  error.
+\item
+  The section \(\sigma\) has the amplitude and first-derivative bounds
+  just proved.
+\end{itemize}
+
+The lemma forces
+
+\[
+ \frac{c_1(L^5)^2[M_j]}{V_j}\to0.
+\]
+
+But the actual endpoint characteristic budgets give
+
+\[
+ \frac{c_1(L^5)^2[M_j]}{V_j}
+ =25\frac{a^2[M_j]}{V_j}
+ \longrightarrow\frac{25}{6\pi^2}>0.
+\tag{16}
+\]
+
+This is a contradiction. Every fixed finite-density zero-end sequence is
+therefore excluded.
+
+\hypertarget{returning-to-all-parameters-and-the-original-metric}{%
+\subsection{4. Returning to all parameters and the original
+metric}\label{returning-to-all-parameters-and-the-original-metric}}
+
+The existing finite-parameter estimate excludes a sequence with
+vanishing ratio in (1) and bounded \(\beta\); hence failure of (1) at a
+fixed \(B\) would force \(\beta\to\infty\) and \(\kappa_\beta\to0\). The
+exact Yamabe transfer of the manuscript gives
+
+\[
+ \widehat\kappa_\beta\le
+ \frac{\kappa_\beta}{1-\sqrt{\kappa_\beta}-\kappa_\beta/16}
+\]
+
+on its small-defect branch. Thus such a failure on the original metrics
+supplies precisely a scalar-minus-four sequence of the form (14), which
+has just been excluded. This proves (1).
+
+\hypertarget{exact-remaining-boundary-of-this-result}{%
+\subsection{5. Exact remaining boundary of this
+result}\label{exact-remaining-boundary-of-this-result}}
+
+The theorem now applies to every prescribed finite \(B\), rather than
+only \(B<39/4+\delta_*\). It completes the topology-density-controlled
+version of O10 stated in the original research directive.
+
+The proof uses \(B\) to bound \(\nabla^2v\), \(\nabla v\) in \(L^4\),
+and ultimately \(\nabla\sigma\) in \(L^2\). It does not provide these
+bounds uniformly if \(\chi/A\to\infty\). Consequently it does not prove
+an absolute \(c>0\) for the full unrestricted O10 class. Such a
+statement requires a further argument excluding simultaneous unbounded
+opposite-Weyl energy and derivative energy, or a genuine counterexample
+satisfying the original actual hypotheses.
+
+\hypertarget{where-an-unbounded-opposite-weyl-budget-would-enter}{%
+\subsubsection{5.1 Where an unbounded opposite-Weyl budget would
+enter}\label{where-an-unbounded-opposite-weyl-budget-would-enter}}
+
+Write \(b_j=\fint|W^-|^2\). The present proof has three specific uses of
+a uniform bound on \(b_j\):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The derivative-interchange estimate on \(E_-=S^-\otimes L\) gives
+  \(\fint(|\nabla^2v|^2+|\nabla v|^4)\le C(1+b_j)\). The negative-spin
+  connection contains \(W^-\); the estimate does not discard that block.
+\item
+  The scalar mass-gradient and covariance tests use
+  \(\|\Delta|v|^2\|_2\) and \(\|\nabla^2v\|_2\). They therefore also
+  need the same bound before the positive constant modulus of \(\sigma\)
+  is obtained. For example, \(\|da\|_2^2\le\|a-m_*\|_2\|\Delta a\|_2\)
+  pairs a small amplitude error with a quantity growing with \(b_j\).
+\item
+  The first-derivative estimate for \(\sigma\) uses \(\nabla^2v\),
+  \(\nabla v\otimes\nabla v\), and \(\nabla\Phi\otimes\nabla v\). Their
+  \(L^2\) bounds again depend on \(b_j\). The rank-one lemma requires a
+  uniform bound along the sequence.
+\end{enumerate}
+
+The direct mass--phase--Dirac reduction avoids the earlier
+Nijenhuis-bracket adjoint estimate entirely, but it still uses the
+mass-gradient conclusion in item 2. A future estimate only bounding a
+selected component of \(\nabla\sigma\) would not by itself justify the
+unrestricted conclusion; it must also preserve the constant-modulus
+conclusion, or replace that step. No rate comparison between the
+original endpoint error and \(b_j\) is imposed in unrestricted O10, so
+none may be inserted when passing to a subsequence.
+
+\hypertarget{proof-provenance-within-this-continuation}{%
+\subsection{6. Proof provenance within this
+continuation}\label{proof-provenance-within-this-continuation}}
+
+The rank-one logarithmic-resolvent lemma was developed in parallel in
+\texttt{O10\_\allowbreak{}Topological\_\allowbreak{}Escape.md} and independently checked in
+deriving Section 2 here. That note proves the more general pairing
+conclusion \(V^{-1}\int F_j\wedge\omega_j\to0\) for a closed two-form
+\(\omega_j\) with a bounded model and an \(L^2\)-small remainder. Only
+the special case \(\omega_j=F_j\) is needed above.
+
+The constant-length derivative and \(L^5\)-section calculations are
+detailed in \texttt{O10\_\allowbreak{}Weak\_\allowbreak{}Bianchi.md}; their scalar test,
+complex-frame norm factors, bundle exponent and derivative bound
+received a separate algebraic check. The inherited strong-current result
+remains a prerequisite, rather than a conclusion silently reproved by
+the rank-one lemma.
+\clearpage
+\appendix
+\hypertarget{strong-current-prerequisite-for-the-endpoint-proof}{%
+\section{Strong-current prerequisite for the endpoint
+proof}\label{strong-current-prerequisite-for-the-endpoint-proof}}
+
+Date: 2026-09-29. Source: the supplied 20260929 integrated manuscript
+(source hash in the accompanying status file), especially
+\texttt{sec:single-parameter}, \texttt{sec:endpoint-covariance},
+\texttt{sec:phase-curvature}, \texttt{sec:torsion-prolongation}, and
+\texttt{sec:quartic-flux}.
+
+\hypertarget{result-and-scope}{%
+\subsection{Result and scope}\label{result-and-scope}}
+
+There is a new global estimate available before attempting any further
+manipulation of the final quartic flux identity. The actual
+constant-weight positive spinor has uniformly integrable fourth-power
+first derivative along every hypothetical O10 endpoint sequence. This
+upgrades the cubic torsion Dirac equation, its length, the original
+current derivative, and the full first torsion projection to strong
+critical statements. It uses no diameter, Sobolev, noncollapse,
+pointwise Ricci bound, or Euler-density upper bound.
+
+This is an inherited prerequisite, reproduced to make the strengthened
+endpoint proof independently readable. The present supplement
+subsequently uses a bounded auxiliary section to obtain additional
+global topological control; no fourth-power derivative estimate for the
+original torsion is silently assumed.
+
+All averages below use the actual total volume, even when the manifold
+varies. Thus every vanishing squared norm is an \texttt{o(V)} statement,
+not an unnormalized smallness assumption.
+
+\hypertarget{a-slow-gradient-truncation-lemma}{%
+\subsection{1. A slow gradient truncation
+lemma}\label{a-slow-gradient-truncation-lemma}}
+
+Let \((M_j,g_j)\) be closed Riemannian manifolds of fixed dimension and
+\(E_j\) Hermitian bundles of fixed rank, with unitary connections. Let
+\(u_j\) satisfy
+
+\[
+ |u_j|\le C_0,\qquad \nabla^*\nabla u_j=f_j(|u_j|^2)u_j,
+ \qquad |f_j|+|f'_j|\le C_0.
+\]
+
+Suppose
+
+\[
+ \operatorname{Ric}_{g_j}=R_{0,j}+e_j,
+ \quad F_j=F_{0,j}+E_j,
+ \quad |R_{0,j}|+|F_{0,j}|\le C_0,
+\]
+
+where the symbol \(E_j\) on the right denotes a curvature error, and
+assume
+
+\[
+ \mu_j:=\fint(|e_j|^2+|E_j|^2)\longrightarrow0,
+ \qquad \sup_j\mu_j\le C_0.
+\]
+
+No independent Hessian or fourth-power gradient budget is needed: these
+follow from the displayed hypotheses by the unweighted version of the
+argument below.
+
+There is \(\epsilon>0\), depending only on the displayed constants,
+dimension, and rank, such that, with
+
+\[
+ q=|\nabla u|^2,\quad H=\nabla^2u,\quad
+ w_L=\left(\frac q{L^2+q}\right)^\epsilon,
+ \qquad L\ge1,
+\]
+
+one has
+
+\[
+ \boxed{\fint w_L(|H|^2+q^2)
+              \le C L^{-2\epsilon}+C\mu_j.}\tag{A.1}
+\]
+
+Consequently
+
+\[
+ \boxed{\lim_{L\to\infty}\limsup_j
+       \fint_{\{|\nabla u_j|\ge L\}}|\nabla u_j|^4=0.}\tag{A.2}
+\]
+
+This establishes uniform integrability of \(|\nabla u_j|^4\) relative to
+normalized volume. Formula (1) also controls \(|H|^2\) on the
+large-gradient set. It does \textbf{not}, by itself, prove uniform
+integrability of \(|H|^2\) on arbitrary small-volume sets.
+
+\hypertarget{proof}{%
+\subsubsection{Proof}\label{proof}}
+
+Use the smooth regularization
+
+\[
+ w_{L,\delta}=\left(\frac{q+\delta}{L^2+q+\delta}\right)^\epsilon,
+ \quad \delta>0.
+\]
+
+It obeys
+
+\[
+ |dw_{L,\delta}|\,|\nabla u|\le2\epsilon w_{L,\delta}|H|.
+\tag{A.3}
+\]
+
+Put \(P_i=\nabla_i u\), \(H_{ij}=\nabla_iP_j\), and \(I=\int w|H|^2\),
+\(J=\int wq^2\), \(A_w=\int w(1+q)\). Antisymmetry gives the exact
+algebraic identity
+
+\[
+ I=\int w\operatorname{Re}\langle H_{ij},H_{ji}\rangle
+       +\frac12\int w\sum_{i,j}|F_{ij}u|^2.
+\tag{A.4}
+\]
+
+In the first term integrate the derivative indexed by \(j\) in
+\(H_{ji}\). Then commute the two derivatives in
+\(\nabla_jH_{ij}=\nabla_j\nabla_iP_j\). The commutator on the
+covector-valued section \(P\) contains only
+\(\operatorname{Ric}*P+F*P\), and \(\sum_j\nabla_jP_j=-f(|u|^2)u\). In
+particular \textbf{no derivative of either curvature occurs}. The
+derivative of \(f(|u|^2)u\) is bounded by \(C|P|\). The derivative of
+the scalar weight contributes at most \(2\epsilon I\), by (3). Thus,
+after taking \(\epsilon\) sufficiently small,
+
+\[
+ I\le C A_w+C\int w(|e|+|E|)q+C\int (|e|^2+|E|^2).
+\tag{A.5}
+\]
+
+The term involving \(F^2\) in (4) was bounded using \(F=F_0+E\) and
+bounded \(F_0\). No derivative of the bounded model is required.
+
+For completeness, a weighted bounded-section interpolation follows by
+integrating the divergence of \(wq\operatorname{Re}\langle u,P\rangle\).
+The derivative of \(q\) contributes at most \(C\int wq|H|\); the
+derivative of \(w\) has the same bound by (3); the trace Hessian term is
+bounded by \(C\int wq\). Therefore
+
+\[
+ J\le C\int wq+C\sqrt{IJ},\qquad
+ J\le C_1(I+A_w).\tag{A.6}
+\]
+
+Since \(0\le w\le1\), for any fixed \(a>0\),
+
+\[
+ \int w(|e|+|E|)q
+ \le aJ+C_a\int(|e|^2+|E|^2).
+\tag{A.7}
+\]
+
+Choose \(a\) after \(C_1\) so that (5)--(7) absorb the resulting
+multiple of \(I\). It follows that
+
+\[
+ I+J\le C A_w+C\mu_jV_j.
+\tag{A.8}
+\]
+
+Before estimating the weighted right side, take \(w\equiv1\) in
+(4)--(8). Testing the section equation by \(u\) gives \[
+\int q=\int f(|u|^2)|u|^2\le CV.
+\] The same absorption then proves \[
+\fint(|H|^2+q^2)\le C(1+\mu_j)\le C.
+\] Thus the energy budget used in the following step is a consequence,
+not an extra hypothesis.
+
+For \(0<\epsilon\le1\),
+
+\[
+ w_{L,\delta}\le L^{-2\epsilon}(q+\delta)^\epsilon.
+\]
+
+The just-proved normalized \(q^2\) bound controls the average of
+\((q+\delta)^\epsilon(1+q)\), uniformly for \(0<\delta\le1\). Divide (8)
+by \(V_j\), then let \(\delta\downarrow0\), obtaining (1). On
+\(q\ge L^2\), \(w_L\ge2^{-\epsilon}\), so (2) follows. Every calculation
+is on a closed manifold with a globally smooth regularized scalar
+weight.
+
+\hypertarget{apply-the-lemma-to-the-hypothetical-o10-endpoint}{%
+\subsection{2. Apply the lemma to the hypothetical O10
+endpoint}\label{apply-the-lemma-to-the-hypothetical-o10-endpoint}}
+
+Use the manuscript's exact Yamabe reduction and a single ordinary
+solution rescaled to
+
+\[
+ s=-4,\quad D_A\Phi=0,\quad F_A^+=2i\sigma(\Phi),
+ \quad \rho=|\Phi|^2\le2.
+\]
+
+Set \(P=\nabla_A\Phi\), \(H=\nabla_AP\), \(\zeta=\langle\Phi,P\rangle\),
+\(\tau=t_\Phi\), \(m=|\tau|^2\), \(\rho_*=4/3\), \(m_*=128/81\), and
+\(\eta=r+D_\beta/V+\beta^{-2}\to0\).
+
+The actual semilinear equation is
+
+\[
+ \nabla_A^*\nabla_A\Phi=(1-\rho/2)\Phi.\tag{A.9}
+\]
+
+The latest bounded ASD fit supplies the lemma's full
+connection-curvature hypothesis. The old Hessian budget is consistent
+with, and can also be recovered from, the unweighted part of the lemma.
+With
+
+\[
+ f=-iF_A^-,\quad Q=-iq_-(\tau),\quad
+ S=m_*+2\rho^2|P|^2,\quad
+ K=-\frac98\frac{\rho^3Q}{S},
+\]
+
+the manuscript proves
+
+\[
+ |K|\le C,\qquad \fint|f-K|^2\le C\sqrt\eta.
+\tag{A.10}
+\]
+
+The traceless curvature of \(S^+\) contains \(W^++s/12\) and the
+off-diagonal Ricci block; it contains \textbf{no \(W^-\)}. Its central
+part is \(F_A/2\). Retain the scalar block, the bounded actual self-dual
+determinant curvature, and the bounded ASD model \(iK\) as \(F_0\). The
+remaining curvature has
+
+\[
+ \fint|F^{S^+}-F_0|^2\le C\sqrt\eta,
+ \quad |F_0|\le C,
+ \quad \fint|\operatorname{Ric}+g|^2\le\eta.
+\tag{A.11}
+\]
+
+Here \(W^+\to0\) follows from the same-solution parameter estimate,
+including its bounded axial model of size \(O(\beta^{-1})\). Applying
+(1) gives
+
+\[
+ \boxed{\fint w_L(|H|^2+|P|^4)
+         \le C L^{-2\epsilon}+C\sqrt\eta.}\tag{A.12}
+\]
+
+There is no hypothesis on the opposite Weyl curvature and hence no use
+of \(\chi/A\le B\) in this result.
+
+\hypertarget{strong-critical-consequences}{%
+\subsection{3. Strong critical
+consequences}\label{strong-critical-consequences}}
+
+\hypertarget{the-mixed-spinor-product-and-torsion-dirac-residual}{%
+\subsubsection{3.1 The mixed spinor product and torsion Dirac
+residual}\label{the-mixed-spinor-product-and-torsion-dirac-residual}}
+
+The old identity gives \(\fint|\zeta|^2\le C\eta\), while
+\(|\zeta|\le\sqrt2|P|\). Splitting into \(|P|\le L\) and its complement
+in (12) yields
+
+\[
+ \fint|\zeta|^2|P|^2
+ \le C\{L^2\eta+L^{-2\epsilon}+\sqrt\eta\}\to0.
+\tag{A.13}
+\]
+
+For example choosing \(L=\eta^{-1/(2+2\epsilon)}\) gives a bound by
+\(C\eta^{\epsilon/(1+\epsilon)}+C\sqrt\eta\). Also
+\(\fint|\zeta|^4\to0\). The exact cubic equation, with axial
+cancellation retained, now implies
+
+\[
+ \boxed{\|D^-_{3A}\tau\|_{L^2_{\rm avg}}\to0.}\tag{A.14}
+\]
+
+This is stronger than the previous \(L^q\), \(q<2\), conclusion.
+
+\hypertarget{torsion-length-and-positive-spinor-energy-density}{%
+\subsubsection{3.2 Torsion length and positive-spinor energy
+density}\label{torsion-length-and-positive-spinor-energy-density}}
+
+The existing torsion-length concentration gives \(m\to m_*\) in
+normalized measure. Since \(m\le2\rho^2|P|^2\le8|P|^2\), (12) makes
+\(m^2\) uniformly integrable. Vitali on the probability spaces
+\((M_j,dV_j/V_j)\) gives
+
+\[
+ \boxed{\|m-m_*\|_{L^2_{\rm avg}}\to0.}\tag{A.15}
+\]
+
+The exact algebraic defect satisfies
+
+\[
+ \nu=2\rho^2|P|^2-m,\quad
+ 0\le\nu\le4\rho|\zeta|^2,
+\]
+
+so \(\nu\to0\) in normalized \(L^2\). On \(\rho\ge c>0\), use (15) and
+\(\rho\to\rho_*\) in measure; on \(\rho<c<\rho_*\), its relative volume
+tends to zero and (12) controls \(|P|^4\). Consequently
+
+\[
+ \boxed{\big\||P|^2-4/9\big\|_{L^2_{\rm avg}}\to0.}\tag{A.16}
+\]
+
+The scalar equation \(\Delta\rho=-2|P|^2+2\rho-\rho^2\) therefore gives
+
+\[
+ \|\Delta\rho\|_{L^2_{\rm avg}}\to0.\tag{A.17}
+\]
+
+\hypertarget{the-full-current-derivative}{%
+\subsubsection{3.3 The full current
+derivative}\label{the-full-current-derivative}}
+
+The actual polynomial curvature equation is
+
+\[
+ \rho^3 f+2Q=2\rho^2(d\gamma)^-+\mathcal R,
+ \quad \gamma=\operatorname{Im}\zeta,
+ \quad |\mathcal R|\le
+ C(\rho^3|\operatorname{Ric}^{\circ}|+
+              \rho^{3/2}|\zeta||P|).
+\tag{A.18}
+\]
+
+Real/imaginary conventions may reverse both signs of the derivative
+term; only its norm is used here. By (13), \(\mathcal R\to0\) in
+normalized \(L^2\). Furthermore
+
+\[
+ \rho^3 f+2Q
+ =\rho^3(f-K)+\left(2-\frac98\frac{\rho^6}{S}\right)Q.
+\tag{A.19}
+\]
+
+The first term is small by (10). The coefficient in the second is
+uniformly bounded, converges to zero in measure, and \(|Q|^2=m^2/8\) is
+uniformly integrable by (15). Thus the second term is small in
+normalized \(L^2\). Equation (18) proves \(\rho^2(d\gamma)^-\to0\) in
+that norm.
+
+This weighted assertion becomes unweighted without assuming a pointwise
+lower bound for \(\rho\). Indeed
+
+\[
+ |d\zeta|\le C(|P|^2+\rho|F^{S^+}|).
+\tag{A.20}
+\]
+
+The squares on the right are uniformly integrable, respectively by (12)
+and the bounded-model fit (11). The set \(\{\rho<c\}\), for any fixed
+\(0<c<\rho_*\), has vanishing relative volume. On its complement divide
+by \(\rho^2\); on that set use (20). Hence
+
+\[
+ \|(d\gamma)^-\|_{L^2_{\rm avg}}\to0.
+\tag{A.21}
+\]
+
+The real part \(\operatorname{Re}\zeta=d\rho/2\) is exact, and
+\(\gamma\) is a globally smooth one-form with \(\delta\gamma=0\). Stokes
+gives exactly
+
+\[
+ \int|d\gamma^+|^2=\int|d\gamma^-|^2,
+\]
+
+so \(d\gamma\to0\) in normalized \(L^2\). The one-form and scalar
+Bochner formulas yield
+
+\[
+ \int|\nabla\gamma|^2
+ =\int|d\gamma|^2-\int\operatorname{Ric}(\gamma,\gamma),
+\]
+
+\[
+ \int|\nabla^2\rho|^2
+ =\int(\Delta\rho)^2-\int\operatorname{Ric}(d\rho,d\rho).
+\]
+
+The \(-g\) terms are small by the original current bound. The
+Ricci-error pairings are bounded by its \(L^2_{\rm avg}\) norm times the
+squared \(L^4_{\rm avg}\) norm of \(\gamma\) or \(d\rho\), which tend to
+zero by (13). Therefore
+
+\[
+ \boxed{\|\nabla\zeta\|_{L^2_{\rm avg}}\to0.}\tag{A.22}
+\]
+
+This proves the conclusion sought from the manuscript's current--Hessian
+correlation \(\mathcal B\) \textbf{without adding \(\mathcal B\to0\) as
+a hypothesis} and without claiming that \(\mathcal B\) itself has been
+estimated.
+
+\hypertarget{the-full-first-torsion-projection}{%
+\subsubsection{3.4 The full first torsion
+projection}\label{the-full-first-torsion-projection}}
+
+Use the already proved actual identity
+
+\[
+ N=\sqrt{\rho/2}\,\mathcal L(\nabla\zeta)+\mathcal R_N,
+\quad
+ |\mathcal R_N|\le C\{\rho^{3/2}(
+ |\operatorname{Ric}^{\circ}|+|W^+-W_0|)+|\zeta||P|\}.
+\]
+
+Equations (13), (22), and the curvature errors give
+
+\[
+ \boxed{\|N\|_{L^2_{\rm avg}}\to0.}\tag{A.23}
+\]
+
+This is the complete displayed first torsion projection, not merely its
+Dirac trace.
+
+\hypertarget{the-remaining-torsion-gradient-has-a-fixed-nonzero-mean}{%
+\subsubsection{3.5 The remaining torsion gradient has a fixed nonzero
+mean}\label{the-remaining-torsion-gradient-has-a-fixed-nonzero-mean}}
+
+The unweighted twisted Lichnerowicz identity is now legitimate at the
+limiting strength:
+
+\[
+ \fint|\nabla_{3A}\tau|^2
+ =\fint|D^-_{3A}\tau|^2+\fint m
+       -\frac32\fint\langle c(F_A^-)\tau,\tau\rangle.
+\]
+
+Replace \(f=-iF_A^-\) by its bounded fit \(K\) using Cauchy--Schwarz
+with the uniformly bounded \(L^2\) norm of \(m\). The Clifford identity
+and (15) then give
+
+\[
+ \frac32\fint\langle c(F_A^-)\tau,\tau\rangle
+ =-\frac{27}{32}\fint\frac{\rho^3m^2}{S}
+ \longrightarrow-m_*.
+\]
+
+The bounded coefficient \(\rho^3/S\), convergence in measure, and
+uniform integrability of \(m^2\) justify this replacement. Consequently
+
+\[
+ \boxed{\fint|\nabla_{3A}\tau|^2\longrightarrow
+              2m_* =256/81.}\tag{A.25}
+\]
+
+Thus the strengthened first projection does not imply that the torsion
+is parallel: its surviving derivative energy is nonzero and sits in the
+complementary type component.
+\clearpage
+\hypertarget{direct-bounded-resolvent-and-derivative-estimates}{%
+\section{Direct bounded resolvent and derivative
+estimates}\label{direct-bounded-resolvent-and-derivative-estimates}}
+
+This appendix adopts and verifies the direct construction in the newly
+supplied O10 resolvent attachment. It is used as a proof simplification,
+not counted as a second new endpoint theorem.
+
+\hypertarget{direct-resolvent-complete-energy-estimate}{%
+\subsection{2. Direct resolvent: complete energy
+estimate}\label{direct-resolvent-complete-energy-estimate}}
+
+Use normalized volume throughout. Let \texttt{t} be the actual cubic
+negative spinor, \texttt{L\ =\ nabla*\ nabla}, and \texttt{D} its
+twisted Dirac operator. The inherited endpoint conclusions are
+
+\[
+ \|Dt\|_2\to0,\qquad |t|^2\to m_* =128/81\text{ in }L^2,
+ \qquad (L-2)t=D^*Dt+(\gamma-1)t-et,
+\]
+
+where \texttt{gamma} is uniformly bounded and converges to 1 in measure,
+while \texttt{e\ -\textgreater{}\ 0} in normalized \texttt{L2}. Thus
+\texttt{gamma-1\ -\textgreater{}\ 0} in every finite normalized
+\texttt{Lp}, and \texttt{t} is bounded in normalized \texttt{L4}.
+
+Choose a smooth radial bundle map \texttt{T} equal to the identity for
+\texttt{\textbar{}t\textbar{}\ \textless{}=\ 2} and bounded in norm by
+4. Set \texttt{z=T(t)}. Since \texttt{m\_*\textless{}4} and
+\texttt{\textbar{}t\textbar{}²\ -\textgreater{}\ m\_*} strongly in
+\texttt{L2},
+
+\[
+ \|z-t\|_2\to0.
+\]
+
+No derivative of this cutoff is required. Define
+
+\[
+ (4+L)u=6z.
+\tag{B.2.1}
+\]
+
+The connection-Laplacian maximum principle gives
+
+\[
+ |u|\le6,\qquad |Lu|\le48.
+\tag{B.2.2}
+\]
+
+Put \texttt{w=u-t} and \texttt{d=Dt}. Then
+
+\[
+ (4+L)w=6(z-t)-D^*d-(\gamma-1)t+et.
+\]
+
+Pairing with \texttt{w} gives
+
+\[
+ 4\|w\|_2^2+\|\nabla w\|_2^2
+ =6\langle z-t,w\rangle-\langle d,Dw\rangle
+ -\langle(\gamma-1)t,w\rangle+\langle et,w\rangle.
+\]
+
+The first two terms are absorbed by Young's inequality, using
+\texttt{\textbar{}Dw\textbar{}\ \textless{}=\ 2\textbar{}nabla\ w\textbar{}}.
+The remaining two terms satisfy
+
+\[
+ |\langle(\gamma-1)t,w\rangle|
+ \le\|\gamma-1\|_2\|t\|_4\|w\|_4=o(1),
+\]
+
+\[
+ |\langle et,w\rangle|
+ \le\|e\|_2\|t\|_4\|w\|_4=o(1).
+\]
+
+Here
+\texttt{\textbar{}\textbar{}w\textbar{}\textbar{}4\ \textless{}=\ \textbar{}\textbar{}u\textbar{}\textbar{}infinity\ +\ \textbar{}\textbar{}t\textbar{}\textbar{}4}
+follows directly on the normalized probability space. It is not inferred
+from a Sobolev estimate. Therefore
+
+\[
+ \boxed{\|u-t\|_{H^1_{\rm av}}\to0.}
+\tag{B.2.3}
+\]
+
+The same direct resolvent also supplies the residual needed in the
+stronger \texttt{39/4} argument:
+
+\[
+ \boxed{(L-2)u=6(z-u)\to0\text{ in }L^2_{\rm av},\qquad Du\to0\text{ in }L^2_{\rm av}.}
+\tag{B.2.4}
+\]
+
+Thus all uses of the old bounded resolvent section remain valid after
+this substitution. In particular
+\texttt{\textbar{}u\textbar{}²\ -\textgreater{}\ m\_*} in normalized
+\texttt{L2}, because \texttt{u} is bounded and converges in measure to
+the same amplitude as \texttt{t}.
+
+\hypertarget{why-the-weighted-hessian-estimate-does-not-hide-extra-regularity}{%
+\subsection{3. Why the weighted Hessian estimate does not hide extra
+regularity}\label{why-the-weighted-hessian-estimate-does-not-hide-extra-regularity}}
+
+Write \texttt{P\_\allowbreak{}i=nabla\_\allowbreak{}i\ u}, \texttt{H\_\allowbreak{}ij=nabla\_\allowbreak{}i\ P\_\allowbreak{}j},
+\texttt{q=\textbar{}P\textbar{}²}, and \texttt{h=Lu}. The exact
+antisymmetry identity is
+
+\[
+ \int w|H|^2
+ =\int w\operatorname{Re}\langle H_{ij},H_{ji}\rangle
+ +\frac12\int w\sum_{i,j}|F_{ij}u|^2.
+\]
+
+In the first term, integrate the derivative with index \texttt{j}, then
+commute \texttt{nabla\_\allowbreak{}j\ nabla\_\allowbreak{}i\ P\_\allowbreak{}j}. The contracted covector
+curvature is Ricci; the other curvature acts on the bundle slot. The
+only derivative of a traced quantity is \texttt{nabla\ h}. Integrating
+that term back once gives
+
+\[
+ \int w\operatorname{Re}\langle P,\nabla h\rangle
+ =\int w|h|^2-\int\operatorname{Re}\langle dw\otimes P,h\rangle.
+\]
+
+No \texttt{nabla\ F}, \texttt{nabla\ Ric}, or estimate on
+\texttt{nabla\ h} is introduced. For
+
+\[
+ w=\left(\frac{q+\delta}{L_0^2+q+\delta}\right)^\epsilon,
+ \qquad |dw|\sqrt q\le2\epsilon w|H|,
+\]
+
+the weight terms are absorbed for a fixed sufficiently small epsilon.
+The bounded-section interpolation from
+\texttt{div(wq\ Re\textless{}u,nabla\ u\textgreater{})} gives
+
+\[
+ J=\int wq^2\le C_1\left(I+\int wq\right),
+ \qquad I=\int w|H|^2.
+\]
+
+Split the bundle curvature at an arbitrary amplitude \texttt{T}. Its low
+part contributes \texttt{C\_\allowbreak{}T\ int\ w(1+q)}. Young's inequality treats
+the tail-curvature times \texttt{q} term with a small multiple of
+\texttt{J}; choose that small coefficient after fixing \texttt{C1}. The
+coefficient multiplying the tail's squared norm is then independent of
+\texttt{T} and of the total curvature-energy bound. Consequently
+
+\[
+ \fint w(|H|^2+q^2)
+ \le C_TL_0^{-2\epsilon}
+ +C\fint_{|F|>T}|F|^2+C\fint|\operatorname{Ric}+g|^2.
+\tag{B.3.1}
+\]
+
+The unweighted calculation first supplies the finite \texttt{L2} Hessian
+and \texttt{L4} gradient budgets. Their constants can depend on the
+total curvature-energy bound; this dependence is permitted in
+\texttt{C\_\allowbreak{}T} and disappears when \texttt{L0\ -\textgreater{}\ infinity}
+with \texttt{T} fixed.
+
+For any sets \texttt{Z\_\allowbreak{}j} of vanishing relative volume, let
+
+\[
+ \Gamma_F=\lim_{T\to\infty}\limsup_j\fint_{|F_j|>T}|F_j|^2.
+\]
+
+First take \texttt{j\ -\textgreater{}\ infinity}, then
+\texttt{L0\ -\textgreater{}\ infinity}, then
+\texttt{T\ -\textgreater{}\ infinity} in (3.1). This proves
+
+\[
+ \limsup_j\fint_{Z_j}|\nabla u_j|^4\le C\Gamma_F.
+\tag{B.3.2}
+\]
+
+This is a tail estimate, not an assertion that the Hessian squares are
+uniformly integrable on arbitrary small sets.
+\clearpage
+\hypertarget{o10-the-regularized-derivative-has-asymptotically-constant-length}{%
+\section{O10: the regularized derivative has asymptotically constant
+length}\label{o10-the-regularized-derivative-has-asymptotically-constant-length}}
+
+Date: 2026-09-29. This note continues the existing actual O10 endpoint
+argument for a sequence with a fixed finite bound on the normalized
+opposite Weyl energy. It proves a further consequence of the bounded
+resolvent construction and identifies a genuine next coefficient bundle.
+It does \textbf{not} prove unrestricted O10.
+
+\hypertarget{inputs-already-proved-in-continuation-b}{%
+\subsection{1. Inputs already proved in continuation
+B}\label{inputs-already-proved-in-continuation-b}}
+
+All norms and integrals below are normalized by volume. Let
+
+\[
+ v\in\Gamma(E_-),\qquad E_-=S^-\otimes L,\qquad
+ a=|v|^2,\quad q=|\nabla v|^2,\quad m_*=128/81.
+\]
+
+For each fixed bound on \(\fint |W^-|^2\), the preceding resolvent
+argument gives
+
+\[
+ \|v\|_\infty\le C,\qquad
+ \|\nabla v\|_4+\|\nabla^2v\|_2\le C_B,
+ \qquad a\to m_*\text{ in }L^p\ (p<\infty),
+\]
+
+\[
+ e=\nabla^*\nabla v-2v\to0\text{ in }L^2,
+ \qquad da\to0\text{ in }L^2.
+\tag{C.1}
+\]
+
+The last assertion was obtained from the scalar identity for \(a\), its
+strong amplitude convergence, and the uniform \(L^2\) bound on \(q\).
+The strong-current prerequisite gives \(N_v=(\nabla v)^{1,0}_{J_+}\to0\)
+in normalized \(L^2\). Together with (1) and \(D^-_{3A}v\to0\), this
+gives, in compatible frames adapted to the actual positive spinor and to
+\(v\),
+
+\[
+ \nabla_{Z_1}v\to0,\quad \nabla_{Z_2}v\to0,
+ \quad \nabla_{\bar Z_1}v\to0,
+ \quad (\nabla_{\bar Z_2}v)_1\to0
+ \qquad\text{in }L^2.
+\tag{C.2}
+\]
+
+Statements in adapted frames are understood invariantly on fixed
+positive-amplitude sets, with the exceptional sets removed using the
+established \(L^4\) derivative bound. No smooth limiting manifold or
+noncollapse is assumed.
+
+Here is the direct proof of (2), avoiding a Nijenhuis bracket or a
+second-derivative adjoint test. Write \[
+ A_i=\nabla_{Z_i}v,\quad B=\nabla_{\bar Z_1}v,
+ \quad C=\nabla_{\bar Z_2}v,\quad
+ j_v=\operatorname{Im}\langle v,\nabla v\rangle.
+\] The exact elementary phase identity \[
+ |j_v+\tfrac12J_+da|^2\le2a|N_v|^2
+\] shows that \(j_v\to0\) in \(L^2\), since \(v\) is bounded and
+\(da\to0\). In a compatible frame with \(v=\sqrt a\,e_1\), every first
+spinor component obeys \[
+ (\nabla_Xv)_1=\frac{da(X)/2+i j_v(X)}{\sqrt a}
+\] for real \(X\), extended complex linearly. On a fixed set
+\(a\ge c>0\), all these components therefore tend to zero in \(L^2\).
+The sets where \(a<c<m_*\), or where the actual positive amplitude
+\(\rho<c'<\rho_*\), have relative volume tending to zero; there \[
+ \fint_E|\nabla v|^2
+ \le \mu(E)^{1/2}\bigl(\fint|\nabla v|^4\bigr)^{1/2}\to0.
+\] Hence \(B_1,C_1\to0\) globally in the invariant cutoff sense. The
+actual Clifford formula is \[
+ D^-v=((A_1)_1-(A_2)_2,\ B_2+C_1),
+\] up to an overall sign. It follows that \(B_2\to0\). Finally
+\(A_1,A_2\to0\) are exactly the small \((1,0)\) projection supplied by
+\(N_v\). This proves (2) using only mass, phase, and Dirac information.
+
+\hypertarget{a-scalar-covariance-argument-gives-more-than-the-averaged-energy-limit}{%
+\subsection{2. A scalar covariance argument gives more than the averaged
+energy
+limit}\label{a-scalar-covariance-argument-gives-more-than-the-averaged-energy-limit}}
+
+Use the nonnegative scalar Laplacian. Equation (1) gives
+
+\[
+ \Delta a=4a-2q+2\operatorname{Re}\langle e,v\rangle.
+\tag{C.3}
+\]
+
+Set \(q_*=2m_*\) and
+
+\[
+ T(x)=\frac{x}{1+x},\qquad x\ge0.
+\]
+
+The chain rule and the covariant Kato estimate imply
+
+\[
+ |dT(q)|\le \frac{2\sqrt q}{(1+q)^2}|\nabla^2v|
+ \le C|\nabla^2v|.
+\tag{C.4}
+\]
+
+Thus \(T(q)-T(q_*)\) is a bounded test function with a uniformly bounded
+normalized \(H^1\) seminorm, even though \(q\) itself need not have an
+\(L^2\) gradient. Testing (3) with this function gives
+
+\[
+\begin{aligned}
+ 2\fint(q-q_*)[T(q)-T(q_*)]
+ ={}&4\fint(a-m_*)[T(q)-T(q_*)]\\
+ &+2\fint\operatorname{Re}\langle e,v\rangle[T(q)-T(q_*)]\\
+ &-\fint\langle da,dT(q)\rangle\longrightarrow0.
+\end{aligned}
+\tag{C.5}
+\]
+
+Every term on the right tends to zero by (1) and (4). The integrand on
+the left is nonnegative and is bounded below by a positive number on
+every set \(|q-q_*|\ge\epsilon\). Consequently
+
+\[
+ \boxed{|\nabla v|^2\longrightarrow2m_*\quad\text{in normalized measure}.}
+\tag{C.6}
+\]
+
+Since \(q\) is uniformly bounded in normalized \(L^2\), it follows that
+
+\[
+ \boxed{|\nabla v|^2\longrightarrow2m_*
+       \quad\text{strongly in normalized }L^p\text{ for every }1\le p<2.}
+\tag{C.7}
+\]
+
+This strengthens the preceding result \(\fint|\nabla v|^2\to2m_*\). It
+does \textbf{not} establish strong \(L^2\) convergence of \(q\),
+equivalently uniform integrability of \(|\nabla v|^4\). Critical
+concentration remains possible under these estimates.
+
+\hypertarget{the-remaining-first-derivative-coefficient-has-nonzero-constant-modulus}{%
+\subsection{3. The remaining first-derivative coefficient has nonzero
+constant
+modulus}\label{the-remaining-first-derivative-coefficient-has-nonzero-constant-modulus}}
+
+Let \(C=(\nabla_{\bar Z_2}v)_2\). Because \(Z_i=e_{2i-1}-ie_{2i}\), the
+full derivative norm is
+
+\[
+ |\nabla v|^2=\tfrac12\bigl(
+ |\nabla_{Z_1}v|^2+|\nabla_{\bar Z_1}v|^2+
+ |\nabla_{Z_2}v|^2+|\nabla_{\bar Z_2}v|^2\bigr).
+\]
+
+Equations (2) and (7) therefore imply
+
+\[
+ \boxed{|C|^2\longrightarrow4m_*\quad\text{in measure and in }L^1.}
+\tag{C.8}
+\]
+
+Write the surviving negative-spinor off-diagonal connection as
+
+\[
+ b=(0,0,c,-ic),\qquad c=C/(2\sqrt a),
+\]
+
+on fixed positive-amplitude sets. Then
+
+\[
+ \boxed{|c|^2\longrightarrow1\quad\text{in measure}.}
+\tag{C.9}
+\]
+
+The conclusion concerns the invariant modulus. It does not provide a
+global choice of the phase of \(c\).
+
+\hypertarget{a-genuine-line-bundle-coefficient-for-the-next-prolongation}{%
+\subsection{4. A genuine line-bundle coefficient for the next
+prolongation}\label{a-genuine-line-bundle-coefficient-for-the-next-prolongation}}
+
+The cubic construction is an algebraic first-order operation on any
+spinor; it does not require that the spinor solve a monopole equation.
+Since \(v\) is a negative spinor with determinant line \(L^3\), its
+cubic torsion is a smooth positive spinor
+
+\[
+ t(v)\in\Gamma(S^+\otimes L^4).
+\tag{C.10}
+\]
+
+Use the actual positive spinor \(\Phi\in\Gamma(S^+)\) to form the
+determinant pairing
+
+\[
+ \boxed{\sigma=\Phi\wedge t(v)\in\Gamma(L^5).}
+\tag{C.11}
+\]
+
+This is a globally defined section. The exponent is checked directly:
+\(\det S^+=L\), and the second factor is twisted by \(L^4\).
+
+In compatible frames \(\Phi=\sqrt\rho\,e_1\), \(v=\sqrt a\,e_1\), the
+ideal remaining first jet gives
+
+\[
+ t(v)=(0,2a^{3/2}c),\qquad
+ |\sigma|^2=4\rho a^3|c|^2.
+\tag{C.12}
+\]
+
+The omitted components are bounded linear multiples of the projections
+in (2); hence they tend to zero in \(L^2\). With \(\rho\to\rho_*=4/3\),
+(9) gives
+
+\[
+ \boxed{|\sigma|^2\longrightarrow
+ a_{\sigma,*}=4\rho_*m_*^3>0\quad\text{in measure}.}
+\tag{C.13}
+\]
+
+The exact polynomial definition and boundedness of \(\Phi,v\) also give
+
+\[
+ |\sigma|\le C|\nabla v|,
+\]
+
+\[
+ |\nabla\sigma|\le C\bigl(
+ |\nabla\Phi|\,|\nabla v|+|\nabla v|^2+|\nabla^2v|\bigr).
+\]
+
+Therefore
+
+\[
+ \boxed{\|\sigma\|_4+\|\nabla\sigma\|_2\le C_B,
+ \qquad |\sigma|^2\to a_{\sigma,*}\text{ strongly in }L^p\ (1\le p<2).}
+\tag{C.14}
+\]
+
+Unlike the connection on \(E_-\), this line has curvature \(5F_A\),
+already a bounded actual model plus an error tending to zero in
+normalized \(L^2\). Its characteristic square has positive endpoint
+density:
+
+\[
+ \frac{c_1(L^5)^2[M]}V=25\frac{a^2}{V}
+ \longrightarrow\frac{25}{6\pi^2}.
+\tag{C.15}
+\]
+
+These facts identify a concrete next coefficient, rather than an
+abstract proposal to add a new field.
+
+\hypertarget{what-has-not-yet-been-inferred}{%
+\subsection{5. What has not yet been
+inferred}\label{what-has-not-yet-been-inferred}}
+
+A nearly constant nonzero modulus in measure and a bounded \(H^1\)
+energy do not supply a nowhere-zero smooth section. In particular,
+(13)--(15) alone are not a contradiction on varying geometries. A
+separate geometry-free line-bundle compactness or actual differential
+constraint would be required.
+
+Nor has this note proved
+
+\[
+ D^+_{9A}t(v)\to0\quad\text{in }L^2.
+\]
+
+The Lichnerowicz potential along the surviving positive-spinor line is
+negative, tending to \(-7\). That sign prevents a positive-potential
+vanishing argument, but it does not itself prevent a
+resolvent-and-characteristic-class argument if a sufficiently small
+Dirac residual can be established. The latter remains unproved.
+
+The exact anti-self-dual Einstein almost-Kähler calculation in
+Armstrong's thesis, Section 3.3.3, constrains derivatives of the
+analogous complex coefficient and then uses differential Bianchi
+identities. Its smooth exact argument does not justify discarding
+products of an \(L^2\)-small first projection, an \(L^4\)-bounded
+derivative, and an \(L^2\)-bounded curvature in the present weak
+setting. The covariance argument above closes a genuine amplitude step.
+The rank-one argument in Section 6 bypasses this further weak
+curvature/prolongation step for fixed finite density; it does not
+establish the latter separately.
+
+Primary reference checked: John Armstrong, thesis, Section 3.3.3, PDF
+pp.~82--84,
+https://johnarmstrongmaths.com/publications/resources/thesis.pdf . The
+screenshot of PDF p.~83 is needed to distinguish the two different
+spinor directions in the derivative constraints; plain-text extraction
+loses one conjugation.
+
+\hypertarget{integration-with-the-new-rank-one-lemma}{%
+\subsection{6. Integration with the new rank-one
+lemma}\label{integration-with-the-new-rank-one-lemma}}
+
+The covariance identity used above has the explicit form
+
+\[
+ (q-q_*)[T(q)-T(q_*)]
+ =\frac{(q-q_*)^2}{(1+q)(1+q_*)},
+\]
+
+so the proof also gives \(\fint (q-q_*)^2/(1+q)\to0\).
+
+The additional line-bundle argument referred to in Section 5 has now
+been supplied in \texttt{O10\_\allowbreak{}Topological\_\allowbreak{}Escape.md}. It uses the
+actual normalized Ricci-energy bound, logarithmic selection of a
+rough-Laplacian resolvent parameter, and rank-one Chern transgression.
+Combining it with (13)--(15) produces the contradiction. The complete
+combined proof is \texttt{O10\_\allowbreak{}All\_\allowbreak{}Finite\_\allowbreak{}Density.md}: O10 holds for
+every fixed finite bound \(\chi/A\le B\), with a constant \(c(B)>0\).
+The unrestricted uniform-density statement remains outside that proof.
+\clearpage
+\hypertarget{o10-a-rank-one-chern-obstruction-by-logarithmic-resolvent-selection}{%
+\section{O10: a rank-one Chern obstruction by logarithmic resolvent
+selection}\label{o10-a-rank-one-chern-obstruction-by-logarithmic-resolvent-selection}}
+
+2026-09-29. This note proves an analytic lemma, then gives its exact
+conditional application to the proposed third-torsion line section. The
+lemma does not assume noncollapse, a Sobolev inequality, an
+injectivity-radius bound, a Riemann-curvature bound, or convergence of
+the manifolds. The application requires the separately derived
+third-section amplitude and derivative estimates; those estimates are
+not silently assumed to have been proved here.
+
+\hypertarget{the-lemma}{%
+\subsection{1. The lemma}\label{the-lemma}}
+
+Let \((M_j,g_j)\) be closed oriented Riemannian four-manifolds, with
+\(V_j=\operatorname{Vol}(M_j,g_j)\). All norms and integrals in the
+proof below are normalized by \(V_j\). Let \(L_j\) be Hermitian line
+bundles with unitary connections, and write their real curvature as
+\(F_j=-iF_{\nabla_j}\). Assume
+
+\[
+\sup_j\left(\fint|\operatorname{Ric}_{g_j}|^2+\fint|F_j|^2\right)<\infty.
+\tag{D.1.1}
+\]
+
+Suppose smooth sections \(\sigma_j\) satisfy
+
+\[
+|\sigma_j|\longrightarrow c>0\quad\text{in normalized measure},
+\qquad \sup_j\fint|\nabla_j\sigma_j|^2<\infty.
+\tag{D.1.2}
+\]
+
+Let \(\omega_j\) be closed real two-forms with a decomposition
+
+\[
+\omega_j=\omega_{0,j}+e_j,
+\qquad \|\omega_{0,j}\|_\infty\le C,
+\qquad \fint|e_j|^2\longrightarrow0.
+\tag{D.1.3}
+\]
+
+Then
+
+\[
+\boxed{\fint F_j\wedge\omega_j\longrightarrow0.}
+\tag{D.1.4}
+\]
+
+The notation in (1.4) means \(V_j^{-1}\int F_j\wedge\omega_j\); it is
+not a pointwise inner-product convention. In particular, if \(F_j\)
+itself admits (1.3), then
+
+\[
+\boxed{\frac{c_1(L_j)^2[M_j]}{V_j}\longrightarrow0.}
+\tag{D.1.5}
+\]
+
+The uniform Ricci-energy assumption is essential to the argument. There
+is no assertion here that a nearly unit section with bounded Dirichlet
+energy alone rules out line-bundle topology on arbitrarily degenerating
+metrics.
+
+\hypertarget{uniformly-bounded-truncation}{%
+\subsection{2. Uniformly bounded
+truncation}\label{uniformly-bounded-truncation}}
+
+Choose a smooth fiberwise radial map \(T\), equal to the identity on a
+fixed neighborhood of the circle \(|z|=c\), uniformly bounded, and
+globally Lipschitz. Put
+
+\[
+s_j=T(\sigma_j).
+\]
+
+This definition is invariant under unitary changes of frame. There are
+constants \(K,E\), independent of \(j\), such that
+
+\[
+\|s_j\|_\infty\le K,\qquad
+\fint|\nabla_j s_j|^2\le E,
+\qquad d_j:=\fint (|s_j|-c)^2\longrightarrow0.
+\tag{D.2.1}
+\]
+
+The last convergence follows from boundedness and convergence in
+measure. No bound on the untruncated section's fourth power is needed.
+
+\hypertarget{a-resolvent-parameter-selected-over-logarithmic-scales}{%
+\subsection{3. A resolvent parameter selected over logarithmic
+scales}\label{a-resolvent-parameter-selected-over-logarithmic-scales}}
+
+Write \(\mathcal L_j=\nabla_j^*\nabla_j\). For \(\varepsilon>0\), solve
+exactly
+
+\[
+u_{j,\varepsilon}=(I+\varepsilon\mathcal L_j)^{-1}s_j.
+\tag{D.3.1}
+\]
+
+Each inverse exists on the individual compact manifold. The unitary
+maximum principle gives \(\|u_{j,\varepsilon}\|_\infty\le K\). Spectral
+calculus for the nonnegative self-adjoint operator \(\mathcal L_j\)
+gives
+
+\[
+\|u_{j,\varepsilon}-s_j\|_2^2
+\le\varepsilon\|\nabla_j s_j\|_2^2\le E\varepsilon,
+\qquad
+\|\nabla_j u_{j,\varepsilon}\|_2^2\le E,
+\tag{D.3.2}
+\]
+
+and the exact integrated estimate
+
+\[
+\int_0^\infty\|\mathcal L_j u_{j,\varepsilon}\|_2^2\,d\varepsilon
+=\|\nabla_j s_j\|_2^2\le E.
+\tag{D.3.3}
+\]
+
+For an eigenvalue \(\lambda\ge0\), the identity behind (3.3) is
+\(\int_0^\infty \lambda^2(1+\varepsilon\lambda)^{-2}\,d\varepsilon=\lambda\).
+
+Set
+
+\[
+\delta_j=d_j+\|e_j\|_2^2+j^{-1}\longrightarrow0.
+\]
+
+For sufficiently large \(j\), choose \(\varepsilon_j\) in the interval
+
+\[
+\delta_j^{1/2}\le\varepsilon_j\le\delta_j^{1/4}
+\tag{D.3.4}
+\]
+
+so that
+
+\[
+\varepsilon_j\|\mathcal L_j u_{j,\varepsilon_j}\|_2^2
+\le\frac{4E}{|\log\delta_j|}\longrightarrow0.
+\tag{D.3.5}
+\]
+
+Such a parameter exists by averaging (3.3) with respect to
+\(d\varepsilon/\varepsilon\) on (3.4). Abbreviate
+\(u_j=u_{j,\varepsilon_j}\) and \(K_j=\|\mathcal L_j u_j\|_2^2\). Thus
+
+\[
+\varepsilon_j\to0,\quad
+\varepsilon_jK_j\to0,\quad
+\frac{\|e_j\|_2^2}{\varepsilon_j}\le\sqrt{\delta_j}\to0.
+\tag{D.3.6}
+\]
+
+This logarithmic selection is the decisive step. Choosing an arbitrary
+smoothing parameter only gives \(K_j=O(\varepsilon_j^{-1})\), which
+leaves a nonvanishing critical error in the argument below.
+
+\hypertarget{derivative-free-hessian-estimate}{%
+\subsection{4. Derivative-free Hessian
+estimate}\label{derivative-free-hessian-estimate}}
+
+For any bounded smooth section \(u\) of a unitary bundle on a closed
+four-manifold, put
+
+\[
+I=\fint|\nabla^2u|^2,\qquad J=\fint|\nabla u|^4.
+\]
+
+Integrating the divergence of
+\(|\nabla u|^2\operatorname{Re}\langle u,\nabla u\rangle\) gives
+
+\[
+J\le C\|u\|_\infty I^{1/2}J^{1/2},
+\qquad J\le C\|u\|_\infty^2 I.
+\tag{D.4.1}
+\]
+
+This is an integrated interpolation identity, not a Sobolev inequality.
+Interchanging the two covariant derivative slots and integrating by
+parts gives
+
+\[
+I\le \|\nabla^*\nabla u\|_2^2
++C\fint (|\operatorname{Ric}|+|F_{\nabla}|)|\nabla u|^2
++C\|u\|_\infty^2\|F_{\nabla}\|_2^2.
+\tag{D.4.2}
+\]
+
+There is no derivative of \(F_{\nabla}\) in (4.2). One direct
+verification is to apply the integrated covariant Hodge--Weitzenböck
+identity to the bundle-valued one-form \(\nabla u\): its exterior
+covariant derivative is \(F_{\nabla}u\), and its covariant
+codifferential is \(\nabla^*\nabla u\). The curvature term on its
+one-form index contains only Ricci, and the bundle term is algebraic in
+\(F_{\nabla}\). Equivalently, use
+\(\nabla_i\nabla_j u-\nabla_j\nabla_i u=F_{ij}u\), symmetrize the
+Hessian square, and commute the remaining derivatives on the one-form
+index. Cauchy--Schwarz, (4.1), and Young's inequality give, under (1.1),
+
+\[
+\boxed{\fint|\nabla u_j|^4+\fint|\nabla^2u_j|^2
+\le C(1+K_j).}
+\tag{D.4.3}
+\]
+
+Here \(C\) depends on the uniform bounds in (1.1), (2.1), and dimension,
+and not on \(\varepsilon_j\), charts, or a Sobolev constant.
+
+\hypertarget{small-quadratic-energy-on-the-amplitude-transition-region}{%
+\subsection{5. Small quadratic energy on the amplitude-transition
+region}\label{small-quadratic-energy-on-the-amplitude-transition-region}}
+
+Fix \(0<a<b<c\), and let
+
+\[
+B_j=\{|u_j|\le b\}.
+\]
+
+By (2.1), (3.2), and (3.4),
+
+\[
+\mu_j(B_j)\le C(d_j+E\varepsilon_j)\le C\varepsilon_j,
+\qquad \mu_j=dV_j/V_j.
+\tag{D.5.1}
+\]
+
+Consequently (4.3) and (3.6) imply
+
+\[
+\fint_{B_j}|\nabla u_j|^2
+\le \mu_j(B_j)^{1/2}
+ \left(\fint|\nabla u_j|^4\right)^{1/2}
+\le C\sqrt{\varepsilon_j(1+K_j)}\longrightarrow0.
+\tag{D.5.2}
+\]
+
+At the same time,
+
+\[
+\|e_j\|_2
+\left(\fint|\nabla u_j|^4\right)^{1/2}
+\le C\sqrt{\|e_j\|_2^2(1+K_j)}\longrightarrow0,
+\tag{D.5.3}
+\]
+
+because
+\(\|e_j\|_2^2 K_j=(\|e_j\|_2^2/\varepsilon_j)(\varepsilon_jK_j)\to0\).
+
+\hypertarget{rank-one-transgression}{%
+\subsection{6. Rank-one transgression}\label{rank-one-transgression}}
+
+On \(\{u_j\ne0\}\), the unit section \(u_j/|u_j|\) trivializes the line
+bundle. Its real connection form \(\alpha_j\) satisfies
+
+\[
+d\alpha_j=F_j,\qquad
+|\alpha_j|\le C|\nabla u_j|/|u_j|.
+\]
+
+Choose a fixed smooth cutoff \(\chi\), zero on \([0,a]\), one on
+\([b,\infty)\), and put \(\chi_j=\chi(|u_j|)\). Then \(\chi_j\alpha_j\)
+is a globally smooth real one-form. Since \(d\omega_j=0\),
+
+\[
+\int F_j\wedge\omega_j
+=\int(1-\chi_j)F_j\wedge\omega_j
+-\int d\chi_j\wedge\alpha_j\wedge\omega_j.
+\tag{D.6.1}
+\]
+
+The first term tends to zero after division by \(V_j\): by (1.1),
+
+\[
+\left|\fint(1-\chi_j)F_j\wedge\omega_j\right|
+\le C\|F_j\|_2\mu_j(B_j)^{1/2}
++\|F_j\|_2\|e_j\|_2\to0.
+\tag{D.6.2}
+\]
+
+The second term is supported where \(a\le|u_j|\le b\), and there
+\(|d\chi_j\wedge\alpha_j|\le C|\nabla u_j|^2\). Decomposing \(\omega_j\)
+as in (1.3) gives
+
+\[
+\left|\fint d\chi_j\wedge\alpha_j\wedge\omega_j\right|
+\le C\fint_{B_j}|\nabla u_j|^2
++C\|e_j\|_2\left(\fint|\nabla u_j|^4\right)^{1/2}\to0
+\tag{D.6.3}
+\]
+
+by (5.2)--(5.3). Equations (6.1)--(6.3) prove the lemma. Taking
+\(\omega_j=F_j\) and using \(c_1(L_j)=[F_j/(2\pi)]\) proves (1.5).
+
+\hypertarget{conditional-application-to-the-third-torsion-line}{%
+\subsection{7. Conditional application to the third torsion
+line}\label{conditional-application-to-the-third-torsion-line}}
+
+Suppose the weak third-torsion analysis produces, from a hypothetical
+O10 zero sequence, a section
+
+\[
+\sigma_j\in\Gamma(L_j^{\otimes5})
+\]
+
+with
+
+\[
+|\sigma_j|\to c_\sigma>0\text{ in normalized measure},
+\qquad \sup_j\fint|\nabla_{5A_j}\sigma_j|^2<\infty.
+\tag{D.7.1}
+\]
+
+The original zero-endpoint assumptions give bounded normalized Ricci
+energy, and the actual determinant-curvature fit gives
+
+\[
+-iF_{5A_j}=5(-iF_{A_j})=F_{0,j}+e_j,
+\qquad |F_{0,j}|\le C,\quad\|e_j\|_{2,\mathrm{avg}}\to0.
+\tag{D.7.2}
+\]
+
+Hence the lemma forces
+
+\[
+25\,a_j^2/V_j\longrightarrow0.
+\tag{D.7.3}
+\]
+
+But the already established actual zero-endpoint identities give
+
+\[
+a_j^2/V_j\longrightarrow\frac1{6\pi^2}>0.
+\tag{D.7.4}
+\]
+
+Thus (7.1) excludes the zero endpoint. In particular, if (7.1) is
+established with constants depending on a fixed finite bound
+\(\chi/A\le B\), this proves O10 for \textbf{every fixed finite \(B\)}
+after the existing finite-parameter estimate and exact Yamabe transfer.
+It would replace the earlier finite threshold \(39/4+\delta\) by
+arbitrary fixed density bounds.
+
+This note does \textbf{not} claim (7.1) without a bound on the negative
+Weyl budget. An estimate whose right side grows with \(\fint|W^-|^2\) is
+not the uniform bound required by the lemma along an unrestricted
+sequence.
+
+\hypertarget{what-the-older-rank-two-argument-could-not-see}{%
+\subsection{8. What the older rank-two argument could not
+see}\label{what-the-older-rank-two-argument-could-not-see}}
+
+For a rank-two section, Chern localization involves a fourth-power
+derivative term. Fixed-parameter smoothing and an amplitude-exceptional
+set of measure \(O(\varepsilon)\) do not make its fourth-power energy
+vanish. For a line section, the topological pairing in (6.1) involves
+only the \textbf{quadratic} derivative expression \(d\chi\wedge\alpha\),
+paired with a bounded curvature model. The logarithmic resolvent choice
+upgrades its estimate from \(O(1)\) to \(o(1)\).
+
+This distinction is the mathematical reason to pass from the opposite
+rank-two torsion bundle to the third-torsion line. It is not an
+assertion that rank-two characteristic energy or the existing Weyl tail
+disappears automatically.
+
+\end{document}

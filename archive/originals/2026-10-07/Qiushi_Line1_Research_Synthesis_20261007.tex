@@ -1,0 +1,1211 @@
+% !TeX program = xelatex
+% Standalone source: xelatex this file twice. No external .bib, figures, or inputs.
+\documentclass[UTF8,11pt,a4paper,fontset=none]{ctexart}
+\usepackage[a4paper,margin=24mm,headheight=15pt,footskip=12mm]{geometry}
+\usepackage{fontspec}
+\IfFontExistsTF{TeX Gyre Termes}{\setmainfont{TeX Gyre Termes}}{\setmainfont{lmroman10-regular.otf}[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf,BoldItalicFont=lmroman10-bolditalic.otf]}
+\IfFontExistsTF{TeX Gyre Heros}{\setsansfont{TeX Gyre Heros}}{\setsansfont{lmsans10-regular.otf}[BoldFont=lmsans10-bold.otf,ItalicFont=lmsans10-oblique.otf]}
+\IfFontExistsTF{DejaVu Sans Mono}{\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]}{\setmonofont{lmmono10-regular.otf}}
+\IfFontExistsTF{Noto Serif CJK SC}{\setCJKmainfont{Noto Serif CJK SC}[AutoFakeSlant=0.15]}{\setCJKmainfont{FandolSong-Regular.otf}[BoldFont=FandolSong-Bold.otf,ItalicFont=FandolKai-Regular.otf]}
+\IfFontExistsTF{Noto Sans CJK SC}{\setCJKsansfont{Noto Sans CJK SC}}{\setCJKsansfont{FandolHei-Regular.otf}}
+\IfFontExistsTF{Noto Sans Mono CJK SC}{\setCJKmonofont{Noto Sans Mono CJK SC}}{\setCJKmonofont{FandolFang-Regular.otf}}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,esint,bm}
+\usepackage{booktabs,longtable,array,enumitem,xurl}
+\usepackage[unicode,hidelinks,bookmarksnumbered]{hyperref}
+\usepackage{bookmark,fancyhdr,needspace}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small 四维 Einstein 几何的定量相容性}
+\fancyhead[R]{\small 研究汇总 · 2026-10-07}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\emergencystretch}{3em}
+\setlength{\parindent}{2em}\setlength{\parskip}{3pt}
+\linespread{1.08}\allowdisplaybreaks[2]
+\setlist{nosep,leftmargin=1.8em,topsep=3pt}
+\setcounter{tocdepth}{1}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\theoremstyle{definition}
+\newtheorem{assumption}[theorem]{前置命题}
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{question}[theorem]{问题}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{说明}
+\renewcommand{\proofname}{证明}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\CH}{\mathbb{CH}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\Ecal}{\mathcal E}
+\newcommand{\Jcal}{\mathcal J}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\avint}{\fint}
+\DeclareMathOperator{\Rea}{Re}
+\pdfstringdefDisableCommands{\def\Ric{Ric}\def\CH{CH}\def\Jcal{J}\def\Ecal{E}}
+\title{\textbf{四维 Einstein 几何的定量相容性}\\[4pt]
+\large 双取向间隙、统一端点与背景耦合的低成本构造}
+\author{Qiushi 第一科学主线\quad 网页续研汇总}
+\date{2026年10月7日}
+\begin{document}
+\maketitle
+\begin{abstract}
+本文按证明关系汇总近期续研。共同对象是实际规范场约束下的 Einstein 缺陷及其最小代价。
+在项目的单解参数估计和有限密度端点命题基础上，给出地理分区产生的统一手术端点，
+以及由双取向实际类的同度量交叉配对产生的曲面丛统一间隙；后者导出 Kodaira 纤维化的陈数斜率与 $3$ 的统一分离。
+构造侧给出任意固定复双曲领口中的光滑负单吹起族，证明完整曲率费用具有负的二阶对数项，
+并由覆盖复制转化为严格小于标准首项 $4$ 的全局上界。
+此外整理秩一陈类配对、带权测试、定量 Ricci 流后果，以及集中流分裂与多尺度约化的方法接口。
+各结论所用的项目输入在正文中单独陈述；双取向结论使用固定密度 $B=2$ 的端点命题。
+一般无密度端点与全体竞争度量的最佳首项，分别作为尚待确定的两个全局问题保留。
+\end{abstract}
+\tableofcontents
+
+\section{研究对象、归属与共同解析输入}\label{sec:framework}
+
+\subsection{共同思想与本稿的增量}
+实际单极子场既提供曲率积分预算，也选出必须与同一度量相容的方向、联络和微分结构。
+第一科学主线保留这些信息，通过相容背景的作用消去、Hessian 恒等式及同场 Bianchi 测试，
+把经典的精确障碍推进为定量非饱和与拓扑代价。
+近期续研沿两条相互补充的方向展开：
+\emph{多个实际类的联合极化限制几何逼近；背景与缺陷的耦合又允许某些真实构造降低代价。}
+
+N1、I40/I41、有限密度 O10、首次严格次四单元、颈部常模系数和实际 Nijenhuis 节省公式，
+分别继承项目原稿及其他会话的相应证明\cite{N1,FD,System,Field}。
+本稿集中呈现的续研增量\cite{WebRecent}是：负类平方成本的直接推论、统一地理分区、预定覆盖上的复制，
+任意领口的完整对数构造、双取向的定量极化证明，以及定量动态后果。
+其中，首次发现严格次四构造属于系统；本稿增加其解析匹配和适用量词。
+
+\subsection{曲率规范与两个缺陷泛函}
+设 $M$ 为闭、连通、定向光滑四流形。记
+\begin{align}
+T_\pm&=2\chi(M)\pm3\tau(M),&
+P(g)&=\int_M|\Ric_g^\circ|^2\,dV_g,\notag\\
+S(g)&=\int_Ms_g^2\,dV_g,&
+R(g)&=\int_M|\Ric_g|^2\,dV_g=P+\tfrac14S.
+\end{align}
+$\tau$ 是签名；Ricci 取二张量范数，Weyl 与 $\Rm_{\rm op}$ 取作用于二形式的曲率算子范数。
+Chern--Weil 公式为
+\begin{equation}\label{eq:cw}
+4\pi^2T_\pm=\frac S{24}+2\int_M|W^\pm|^2-\frac P2,
+\qquad
+\int_M|\Rm_{\rm op}|^2=8\pi^2\chi(M)+P.
+\end{equation}
+定义
+\begin{equation}\label{eq:defects}
+\Ecal(g)=\inf_{\lambda\ne0}
+\frac{\int_M|\Ric_g-\lambda g|^2}{\lambda^2V_g},
+\qquad \Jcal(g)=\frac{4P(g)}{R(g)},
+\qquad \alpha(M)=\inf_g\Ecal(g).
+\end{equation}
+在 $R>0$ 时，令 $S_1=\int_Ms_g$，直接极小化关于 $1/\lambda$ 的二次式，得到
+\begin{equation}\label{eq:Eidentity}
+\Ecal=4-\frac{S_1^2}{VR}
+=\Jcal+\frac{S-S_1^2/V}{R}\ge\Jcal.
+\end{equation}
+常标量代表上 $\Ecal=\Jcal$。Ricci-flat 时 $R=0$，$\Jcal$ 未定义，而原定义给出 $\Ecal=4$。
+下文实际正预算应用通过标量曲率不等式排除这一分支。
+子区域平均始终取 $\avint_Z f=V_g^{-1}\int_Zf$。
+
+局部单元使用原始费用
+\begin{equation}
+J_\Lambda(C,g)=\int_C|\Ric_g+\Lambda g|^2\,dV_g,
+\qquad \Lambda>0.
+\end{equation}
+$J_\Lambda$ 与比值 $\Jcal$ 不同。若 $\widetilde g=6g$，则 $J_1(\widetilde g)=J_6(g)$，$P(\widetilde g)=P(g)$。
+
+\subsection{实际输入与共形转移}
+使用负 Yamabe 代表 $\widehat g$，归一化 $s_{\widehat g}=-4$。
+实际输入为同一 $\operatorname{Spin}^c$ 结构上的普通解
+\begin{equation}\label{eq:SW}
+D_{\mathcal A}\Phi=0,\qquad F_{\mathcal A}^+=2i\sigma(\Phi),
+\qquad a=c_1(L),\qquad p=(a^+)^2\ge A>0.
+\end{equation}
+全度量结论要求逐共形类具有此输入，并保持相应的统一预算 $A$。
+普通、special monopole、BF 和 Pin$^-$ 来源按各自的供给定理使用\cite{N1,LeBrunRicci,BF,Pin}。
+
+若同一结构在整个共形类上可解，正投影 $p>0$ 由 Weitzenböck 恒等式排除非负 Yamabe 代表。
+在负代表上，实际标量预算为
+\begin{equation}\label{eq:scalar-budget}
+16V\ge32\pi^2p\ge32\pi^2A.
+\end{equation}
+置 $\delta_S=S(g)-S(\widehat g)\ge0$。Weyl 共形不变性与式\eqref{eq:cw}给出
+\begin{equation}\label{eq:conformal}
+P(g)=P(\widehat g)+\delta_S/12,
+\qquad R(g)=R(\widehat g)+\delta_S/3.
+\end{equation}
+因而 $\Jcal(g)$ 是 $\Jcal(\widehat g)$ 与 $1$ 的加权平均，故
+\begin{equation}\label{eq:Jcompare}
+\Jcal(g)\ge\min\{\Jcal(\widehat g),1\}.
+\end{equation}
+这是一条精确比较，没有共形因子接近常数的要求。
+
+\subsection{N1 回接及负类平方成本}
+定义参数泛函
+\begin{equation}\label{eq:Dbeta}
+D_\beta=(1+\beta^{-1})S+6(\beta+1)\int|W^+|^2-72\pi^2p,
+\qquad \beta\ge2.
+\end{equation}
+继承的单解参数命题\cite{N1}在 $a^2\ge T_+$ 时给出
+\begin{equation}\label{eq:param-input}
+r+\frac{D_\beta}{\beta V}\ge c_0\frac{(\beta-2)^2}{\beta^4},
+\qquad r=P(\widehat g)/V.
+\end{equation}
+参数 $\beta=8$ 与 Chern--Weil 组合精确对齐：
+\begin{equation}\label{eq:D8}
+D_8=108\pi^2(T_+-2p/3)+\frac{27}{2}P.
+\end{equation}
+令 $d=(T_+/A-2/3)_+$。由式\eqref{eq:scalar-budget}，
+\[
+\frac{43}{16}r+\frac{27}{4}d\ge\frac{9c_0}{1024}.
+\]
+当 $\Jcal(g)<1$ 时，$r=4\Jcal(\widehat g)/(4-\Jcal(\widehat g))\le4\Jcal(g)/3$。
+与另一个分支合并，得到项目 N1：
+\begin{equation}\label{eq:N1}
+\boxed{\Jcal(g)+d\ge\varepsilon_N,\qquad
+\varepsilon_N=\min\{1,c_0/768\}.}
+\end{equation}
+
+不要求 $a^2\ge T_+$ 时，保留成本的参数输入是
+\begin{equation}\label{eq:cost-input}
+(1+b)\left(r+\frac{D_8}{8V}\right)\ge c_{8,\rm raw}>0,
+\qquad b=\frac{(-a^2)_+}{V}.
+\end{equation}
+项目短缺版取 $y=(T_+-a^2)_+/A$，使用
+$b\le r/(8\pi^2)+y/(2\pi^2)$，得到 $\Jcal+d\ge c/(1+y)$。
+网页续研的直接补充是令 $\nu=(-a^2)_+/A$，直接由标量预算得 $b\le\nu/(2\pi^2)$，于是
+\begin{equation}\label{eq:negative-square}
+\boxed{\Jcal(g)+d\ge
+\frac{c_*}{1+\nu/(2\pi^2)},\qquad
+c_* =\min\{1,4c_{8,\rm raw}/27\}.}
+\end{equation}
+特别地，$a^2\ge0$ 时这条估计没有负平方成本，即使 $a^2<T_+$。
+单独的正 $\Jcal$ 间隙要求各式右端严格大于拓扑超额 $d$。
+
+\subsection{精细强制与有限密度端点}
+继承 I40/I41\cite{N1,System}，置
+\[
+\Sigma=S-32\pi^2p,\quad \Pi=P+D_2,\quad Y=(T_+-a^2)_+.
+\]
+有
+\begin{equation}\label{eq:I41}
+\Sigma,\ (p-T_+)_+\le C\{\Pi+\sqrt{\Pi Y}\}.
+\end{equation}
+这个机制利用实际场选择的曲率模型，使相容的非小背景不再单独产生体积损失。
+
+\begin{assumption}[有限密度端点 FD]\label{ass:FD}
+在原实际共形供给、$p\ge A>0$、$a^2\ge T_+$ 下，
+每个固定有限 $B$ 有只依赖 $B$ 的 $c_{\rm FD}(B)>0$，使
+\begin{equation}\label{eq:FD}
+\frac{\chi(M)}A\le B\quad\Longrightarrow\quad
+\kappa_\beta(g):=\avint_M|\Ric_g+g|^2+\frac{D_\beta(g)}{V_g}
+\ge c_{\rm FD}(B)\frac{(\beta-2)^2}{\beta^2}.
+\end{equation}
+该命题采用项目 \emph{O10 closes at every fixed finite Euler density} 的实际输入与常数范围\cite{FD}，
+不附加点态 Ricci、直径、非塌缩或 Sobolev 假设。
+\end{assumption}
+
+\subsection{平衡族的变分输入}
+原平衡族取
+\[
+M_j=X_j\#k_j\overline{\CP}^{\,2}\#\ell_j(S^1\times S^3),
+\quad Q_j=k_j+4\ell_j,\quad h_j=Q_j/A_j\to0,
+\]
+并满足 $k_j/Q_j\to2/9$、$\ell_j/Q_j\to7/36$。
+原稿的全度量估计与恢复序列给
+\begin{equation}\label{eq:alpha-reduction}
+\alpha_j=4\rho_j+O(h_j^2),\qquad
+\rho_j=\frac{\inf_gP(g)}{8\pi^2A_j},\qquad
+c_1h_j\le\alpha_j\le\frac{4h_j}{1+h_j}.
+\end{equation}
+充分大 $j$ 时还有 $\inf\Jcal=\inf\Ecal$：取 $\Jcal<1$ 的极小化序列，
+由式\eqref{eq:Jcompare}作 Yamabe 替换，再用常标量下 $\Ecal=\Jcal$ 即得反向比较。
+系统后续的严格次四构造将上界进一步降低；对应的新最优值仍由全部竞争度量决定\cite{System}。
+
+\section{双取向实际类产生的统一 Einstein 间隙}\label{sec:two-orientation}
+
+本节把固定 $B=2$ 的 FD 与两个真实辛规范类的交叉配对结合。
+Kotschick 已在两个取向上使用规范理论证明曲面丛的经典严格障碍 $3|\tau|<\chi$\cite[Theorem 3]{Kotschick}。
+这里的新增结论是整个范畴统一的正宽度，而不是首次使用两种取向。
+
+\begin{theorem}[在 FD(2) 前置下的双取向间隙]\label{thm:SB}
+设 $\Sigma_f\to M\to\Sigma_b$ 为闭定向曲面丛，$f,b\ge2$。
+采用前置命题\ref{ass:FD}在 $B=2$ 的版本。令
+\[
+c=\min\{1,c_{\rm FD}(2)\},\qquad \varepsilon_{\rm SB}=(c/200)^2.
+\]
+则全部光滑度量满足
+\begin{equation}\label{eq:SB}
+\boxed{\Jcal(g)+\left(1-\frac{3|\tau(M)|}{\chi(M)}\right)_+
+\ge\varepsilon_{\rm SB}.}
+\end{equation}
+常数独立于基底亏格、纤维亏格、单值及具体度量。
+\end{theorem}
+
+\subsection{两个真实类与取向}
+写 $e=\chi(M)=4(f-1)(b-1)>0$，必要时反转取向使 $\tau\ge0$。
+由实平面丛分裂
+\[
+TM\simeq T_{\rm vert}M\oplus\pi^*T\Sigma_b
+\]
+定义 $x=e(\pi^*T\Sigma_b)$、$y=e(T_{\rm vert}M)$，有
+\begin{equation}\label{eq:xy}
+x^2=0,\qquad x\cdot y=e,\qquad y^2=3\tau.
+\end{equation}
+Thurston 构造分别选择正、负基底面积项，提供两个总空间取向上的辛形式。
+其典范或反典范类可按整体符号选成 $a=x+y$、$b=x-y$\cite{Thurston,LeBrunKodaira}，故
+\begin{equation}\label{eq:ab}
+a^2=2e+3\tau,\qquad b^2[M]=-2e+3\tau,
+\qquad a\cdot b=-3\tau.
+\end{equation}
+反取向上 $b^2[\bar M]=2e-3\tau$。这两个取向的平方必须区分。
+
+$\pi_1(M)\twoheadrightarrow\pi_1(\Sigma_b)$ 给 $b_1(M)\ge4$，从而
+$b_2^+(M)=(e-2+2b_1+\tau)/2>1$。
+Taubes 非消失使 $a$ 成为实际供给\cite{Taubes}；其正平方排除非负 Yamabe 类。
+反取向的 $b^+>1$ 在下面由曲率预算推出。
+
+\subsection{先固定同一个度量的两手性预算}
+\begin{proof}[定理\ref{thm:SB}的证明]
+$\Jcal(g)\ge1$ 的情形直接成立。否则转到 $s=-4$ 的同一个 Yamabe 代表，记
+\[
+j=\Jcal(\widehat g)\le\Jcal(g)<1,\quad
+ t=3\tau/e,\quad u=V/(2\pi^2e),\quad
+ r=P/V=4j/(4-j),\quad w=\avint|W^-|^2.
+\]
+正取向标量预算及 Chern--Weil 给
+\begin{equation}\label{eq:SB-budgets}
+2+t\le U:=\frac{\|a^+\|^2}{e}\le u,
+\qquad
+w=\frac{2-t}{u}-\frac13+\frac{j}{4-j}\ge0.
+\end{equation}
+所以 $t<2$，且
+\begin{equation}\label{eq:SB-Cj}
+2+t\le u\le C(j)(2-t),\quad
+C(j)=\frac{3(4-j)}{4(1-j)},\quad
+ t\le1+\frac{9j}{16-7j}\le1+j.
+\end{equation}
+$t<2$ 蕴含
+\[
+b_2^-(M)=\frac{e-2+2b_1-\tau}{2}>e/6+b_1-1>1.
+\]
+因此反取向辛典范类 $b$ 也有全度量实际供给，并有
+\[
+2-t\le Z:=\frac{\|b^-\|^2}{e}\le u.
+\]
+这里 $\|b^-\|^2$ 是负 Hodge 空间上的正范数。
+
+令 $d=j+(1-t)_+$。若 $d\ge1/256$，结论成立。
+现在设 $0<d\le1/256$，并置
+\[
+X=U-(2+t)=\|a^-\|^2/e,\qquad
+Y=Z-(2-t)=\|b^+\|^2/e.
+\]
+由 $C(j)\le3+3j$（$j\le1/4$）可得
+\begin{equation}\label{eq:SB-small}
+1-d\le t\le1+d,\quad 3-d\le u\le3+5d<4,
+\quad X\le4d,\quad w\le d,\quad r\le4d/3.
+\end{equation}
+例如记 $d_-=(1-t)_+$，则
+$X\le4d_-+3j(1+d_-)\le4d$；而
+$w\le4(1-t)/(3(2+t))+j/(4-j)\le d$。
+
+\subsection*{交叉积补出独立的投影下界}
+同一 Hodge 分解必须实现式\eqref{eq:ab}中的交叉积，因此
+\begin{equation}\label{eq:cross}
+\boxed{t\le\sqrt{UY}+\sqrt{XZ}.}
+\end{equation}
+由 $X\le4d$、$Z\le u<4$，有 $\sqrt{XZ}\le4\sqrt d$；
+又 $t-4\sqrt d>0$，故
+\[
+\frac Zu\ge\frac{2-t}{u}+\frac{(t-4\sqrt d)^2}{u^2}.
+\]
+第一项由 $w\ge0$ 控制为 $1/3-d/3$。
+第二项满足
+\[
+\frac{(t-4\sqrt d)^2}{u^2}
+\ge\frac{(1-d-4\sqrt d)^2}{(3+5d)^2}
+\ge\frac19-\frac89\sqrt d-\frac{16}{27}d.
+\]
+最后一步分别使用
+$(1-d-4\sqrt d)^2\ge1-2d-8\sqrt d>0$ 与
+$(3+5d)^{-2}\ge1/9-10d/27>0$。
+于是
+\begin{equation}\label{eq:Z-lower}
+\boxed{\frac Zu\ge\frac49-2\sqrt d.}
+\end{equation}
+
+\subsection*{送入反取向的固定端点窗口}
+在 $\bar M$ 上取 $A_-=e(2-t)=b^2[\bar M]=T_+(\bar M)$。
+此时 $p_b=Ze\ge A_->0$，且
+\[
+\frac{\chi(\bar M)}{A_-}=\frac1{2-t}\le\frac1{1-d}<2.
+\]
+反取向缺陷精确等于
+\[
+\bar\kappa_\beta
+=r+16(1+\beta^{-1})+6(\beta+1)w-36Z/u.
+\]
+选择有限参数 $\beta=d^{-1/2}\ge16$。由式\eqref{eq:SB-small}、\eqref{eq:Z-lower}，
+\[
+\bar\kappa_\beta\le94\sqrt d+\frac{22}{3}d<100\sqrt d.
+\]
+另一方面，FD(2) 给
+\[
+\bar\kappa_\beta\ge c(1-2\sqrt d)^2\ge c/2.
+\]
+所以 $d\ge(c/200)^2$。若 $d=0$，则 $j=0,t=1,u=3,X=w=0$，
+式\eqref{eq:cross}给 $Z\ge4/3$，从而 $\bar\kappa_\beta\le16/\beta$，
+与 FD(2) 在有限参数 $\beta\to\infty$ 时的正下界矛盾。
+最后用 $j\le\Jcal(g)$ 并恢复 $|\tau|$，即得式\eqref{eq:SB}。
+\end{proof}
+
+\subsection{Einstein 与 Kodaira 斜率}
+\begin{corollary}[Einstein 与陈数边界]\label{cor:slope}
+在定理\ref{thm:SB}的前置下，若该曲面丛承载 Einstein 度量，则
+\begin{equation}\label{eq:Einstein-slope}
+3|\tau(M)|\le(1-\varepsilon_{\rm SB})\chi(M).
+\end{equation}
+若 $S$ 是光滑 Kodaira 纤维化总空间，则
+\begin{equation}\label{eq:Kodaira}
+\boxed{\nu(S):=\frac{c_1^2(S)}{c_2(S)}\le3-\varepsilon_{\rm SB}.}
+\end{equation}
+\end{corollary}
+\begin{proof}
+实际正预算排除非负标量曲率，因此 Einstein 候选有 $R>0$ 且 $\Jcal=0$，得到式\eqref{eq:Einstein-slope}。
+Kodaira 纤维化无有理曲线，是极小一般型曲面，规范丛 ample；Aubin--Yau 定理提供负 KE 度量。
+由 $c_2=e$、$c_1^2=2e+3\tau$，将该度量代入式\eqref{eq:SB}即得式\eqref{eq:Kodaira}\cite{LeBrunKodaira,Catanese2016}。
+\end{proof}
+
+Catanese 在综述第1.3节记录 LeBrun 的问题：是否存在对所有 Kodaira 纤维化统一的
+$\epsilon>0$，使 $\nu\le3-\epsilon$；Polizzi 的 Remark 4.10 将其表述为斜率能否任意逼近 $3$\cite{Catanese2016,Polizzi2022}。
+式\eqref{eq:Kodaira}在 FD(2) 前置下给出前一问题的肯定结论，等价地排除后一种逼近。
+所求常数是存在型统一宽度，并不确定最优斜率，也不把 $8/3$ 指定为上确界。
+
+对固定流形，若 $d_{\rm top}=(1-3|\tau|/e)_+<\varepsilon_{\rm SB}$，还有全度量估计
+\[
+P(g)\ge2\pi^2e(2+t)(\varepsilon_{\rm SB}-d_{\rm top}),\qquad t=3|\tau|/e.
+\]
+在负 KE 的 Kodaira 情形，取 $r_K=c_1^2/e$，可直接核对
+\[
+p_b=\frac{4e^2}{c_1^2},\quad V=2\pi^2c_1^2,\quad
+\avint|W^-|^2=\frac{4(3-r_K)}{3r_K},
+\]
+\[
+\bar\kappa_\beta=16(1+\beta^{-1})
++8(\beta+1)\frac{3-r_K}{r_K}-\frac{144}{r_K^2}.
+\]
+$r_K=2,\beta=2$ 对应乘积 KE 的允许端；形式 $r_K=3$ 则给 $16/\beta$，恰落入 FD(2) 排除的端点。
+
+\section{任意复双曲领口中的解析低成本构造}\label{sec:collar}
+
+系统先前已构造带精确复双曲外领口的严格低成本三轴单元，并给出区间证书\cite{System}。
+本节将其颈部节省机制写成任意固定外半径下的一参数光滑构造，完整计算内核、颈部和两侧过渡的费用。
+
+\begin{theorem}[任意固定领口的对数节省]\label{thm:cell}
+在 $\Ric=-6g$ 的复双曲规范中，对任意固定 $R>0$，存在光滑普通负单吹起单元 $g_\epsilon$，
+在 $t\ge R$ 精确等于复双曲度量，并满足
+\begin{align}
+\frac{P(g_\epsilon)}{8\pi^2}
+&=1-9\epsilon^2\log(1/\epsilon)+O_R(\epsilon^2),\label{eq:cell-P}\\
+\frac{J_6(g_\epsilon)}{8\pi^2}
+&=1-9\epsilon^2\log(1/\epsilon)+O_R(\epsilon^2).
+\label{eq:cell-J}
+\end{align}
+因此所有充分小的正 $\epsilon$ 均给出严格低于 $8\pi^2$ 的完整费用。
+\end{theorem}
+
+\subsection{显式光滑度量}
+取 $d\sigma_i=2\sigma_j\wedge\sigma_k$，
+$\int_{S^3}\sigma_1\wedge\sigma_2\wedge\sigma_3=2\pi^2$，
+取向为 $dt\wedge\sigma_1\wedge\sigma_2\wedge\sigma_3$。
+令 $T=R/2$，固定端点平坦的 $\chi\in C^\infty([0,\infty))$，
+$\chi=0$ 于 $[0,1]$、$\chi=1$ 于 $[2,\infty)$、$0\le\chi\le1$。
+记 $S_t=\sinh t$、$C_t=\cosh t$，定义
+\begin{align}
+\bm a^B&=(\sqrt{t^2+\epsilon},\sqrt{t^2+\epsilon},t),\notag\\
+\bm a^H&=(S_t,S_tC_t,S_t),\label{eq:profiles}\\
+\bm a^N&=\left(\sqrt{S_t^2+\epsilon}e^{9\epsilon/4},
+\sqrt{S_t^2+\epsilon}\,C_t e^{3\epsilon/4},S_t e^{\epsilon/2}\right).\notag
+\end{align}
+令 $\chi_{\rm in}(t)=\chi(t/\sqrt\epsilon)$、$\chi_{\rm out}(t)=1-\chi(t/T)$，设
+\begin{equation}\label{eq:metric}
+\begin{split}
+a_i(t)&=a_i^H(t)\exp\left\{\chi_{\rm out}(t)
+\left[\log\frac{a_i^B(t)}{a_i^H(t)}+
+\chi_{\rm in}(t)\log\frac{a_i^N(t)}{a_i^B(t)}\right]\right\},\\
+g_\epsilon&=dt^2+\sum_{i=1}^3a_i(t)^2\sigma_i^2.
+\end{split}
+\end{equation}
+取 $0<\epsilon<T^2/16$。度量在 $t\le\sqrt\epsilon$ 为精确 Burns 内核，
+在 $2\sqrt\epsilon\le t\le T$ 为 $\bm a^N$，在 $t\ge2T$ 为精确复双曲背景。
+所有 $a_i$ 在 $t>0$ 正。
+bolt 附近 $a_1=a_2=\sqrt{t^2+\epsilon}$、$a_3=t$，
+全周期 Hopf 圆给普通 $\mathcal O(-1)$ 的光滑结构。
+内部 Kähler 纤维沿 $\sigma_3$，外部沿 $\sigma_2$，保留垂直插入方向。
+
+\subsection{完整相对曲率恒等式}
+对循环指标 $(i,j,k)$ 定义
+\[
+u_i=\dot a_i-\frac{a_j^2+a_k^2-a_i^2}{a_ja_k},\qquad
+H_i=u_i+\tfrac12u_ju_k,\qquad \lambda_i=a_ja_k/a_i.
+\]
+系统的 Cartan 表达式\cite{CellSource}为
+\begin{equation}\label{eq:Pdensity}
+\frac{P}{8\pi^2}=\int\sum_i\frac{\lambda_i}{4}
+\left(\dot u_i-\frac{2H_i}{\lambda_i}\right)^2dt.
+\end{equation}
+定义
+\begin{equation}\label{eq:relative-density}
+\begin{split}
+\mathscr L_P={}&\frac{\lambda_1}{4}(\dot u_1+2H_1/\lambda_1)^2
++\frac{\lambda_2}{4}\left(\dot u_2-\frac{2u_2-u_1u_3}{\lambda_2}\right)^2\\
+&+\frac{\lambda_3}{4}(\dot u_3+2H_3/\lambda_3)^2
++\frac{2u_1u_2u_3}{\lambda_2}.
+\end{split}
+\end{equation}
+逐项展开可得
+\[
+\mathscr L_P-\sum_i\frac{\lambda_i}{4}(\dot u_i-2H_i/\lambda_i)^2
+=\frac d{dt}(u_1^2+u_3^2+u_1u_2u_3).
+\]
+bolt 端 $u=(0,0,-1)$，外 CH 端 $u=(0,3\sinh^2t,0)$，故
+\begin{equation}\label{eq:Pcalibration}
+\frac P{8\pi^2}=1+\int_0^R\mathscr L_P\,dt.
+\end{equation}
+再设
+\[
+\Sigma=\sum_i\left(\frac{\dot u_i}{a_i}+\frac{2H_i}{a_ja_k}\right),\qquad s=-2\Sigma.
+\]
+因为 $J_6=P+\tfrac14\int(s+24)^2$，得到
+\begin{equation}\label{eq:Jcalibration}
+\frac{J_6}{8\pi^2}=1+\int_0^R\mathscr L_J\,dt,
+\qquad \mathscr L_J=\mathscr L_P+\frac{a_1a_2a_3}{4}(\Sigma-12)^2.
+\end{equation}
+边界常数 $1$ 已包含核心拓扑费用；整个过渡区域仍在积分中。
+
+\subsection{两尺度因子化与余项}
+\begin{proof}[定理\ref{thm:cell}的证明]
+在有效颈部引入
+\[
+z=\epsilon/t^2,\qquad y=t^2,\qquad
+\mathfrak s(y)=\sinh\sqrt y/\sqrt y,\qquad\mathfrak c(y)=\cosh\sqrt y.
+\]
+这里 $0\le z\le1/4$、$0\le y\le T^2$。先令常向量 $c=(c_1,c_2,c_3)$ 任意，写 $a_i=tA_i$，其中
+\[
+A_1=\sqrt{\mathfrak s^2+z}e^{zyc_1},\quad
+A_2=\sqrt{\mathfrak s^2+z}\,\mathfrak c e^{zyc_2},\quad
+A_3=\mathfrak s e^{zyc_3}.
+\]
+固定 $\epsilon$ 的微分满足 $t\partial_t=2y\partial_y-2z\partial_z$。
+因此 $u_i=U_i(z,y)$、$\lambda_i=t\Lambda_i(z,y)$ 在该闭矩形附近解析。
+在 $z=0$ 上是精确 CH；在 $y=0$ 上是缩放 Burns 数据
+\[
+U_1=U_2=0,\quad U_3=-\frac z{1+z},\qquad
+(\Lambda_1,\Lambda_2,\Lambda_3)=(1,1,1+z).
+\]
+故 $U_1$ 含因子 $yz$，$U_2$ 含 $y$，$U_3$ 含 $z$。
+三个校准平方的分子
+\begin{align*}
+B_1&=2(yU_{1,y}-zU_{1,z})+2H_1/\Lambda_1,\\
+B_2&=2(yU_{2,y}-zU_{2,z})-(2U_2-U_1U_3)/\Lambda_2,\\
+B_3&=2(yU_{3,y}-zU_{3,z})+2H_3/\Lambda_3
+\end{align*}
+分别在两条坐标轴上为零，所以都含因子 $yz$。
+同理 $\Sigma-12=z b_s(z,y)$，$b_s$ 解析。
+代入式\eqref{eq:relative-density}、\eqref{eq:Jcalibration}，得到精确表示
+\begin{equation}\label{eq:factorization}
+\mathscr L_P=\frac{\epsilon^2}{t}F_P(z,y;c),\qquad
+\mathscr L_J=\frac{\epsilon^2}{t}F_J(z,y;c),
+\end{equation}
+且
+\begin{equation}\label{eq:uniform-remainder}
+|F_\bullet(z,y;c)-F_\bullet(0,0;c)|\le C_{R,c}(z+y).
+\end{equation}
+这条估计一直有效到 $t=2\sqrt\epsilon$，而不要求整个颈部上的 $z$ 都趋零。
+
+角点系数可由轨道半径的一阶变化算得
+\begin{align*}
+F_P(0,0;c)&=11\sum c_i^2-10\sum_{i<j}c_ic_j-37c_1+11c_2+19c_3+59/4,\\
+F_J(0,0;c)&=F_P(0,0;c)+(2c_1+2c_2+2c_3-7)^2/4.
+\end{align*}
+令 $d=c-(9/4,3/4,1/2)$，则
+\begin{equation}\label{eq:neck-min}
+F_P=-18+16|d|^2-5(\textstyle\sum d_i)^2,
+\qquad
+F_J=-18+16|d|^2-4(\textstyle\sum d_i)^2.
+\end{equation}
+两者的唯一最小点均为 $c_*=(9/4,3/4,1/2)$。这个常模极小值继承系统的颈部计算\cite{CellSource}。
+取 $c=c_*$，由式\eqref{eq:uniform-remainder}，
+\begin{align*}
+\int_{2\sqrt\epsilon}^T\mathscr L_\bullet\,dt
+&=-18\epsilon^2\log\frac{T}{2\sqrt\epsilon}
++O_R\left(\epsilon^2\int_{2\sqrt\epsilon}^T\frac{t^2+\epsilon/t^2}{t}\,dt\right)\\
+&=-9\epsilon^2\log(1/\epsilon)+O_R(\epsilon^2),
+\end{align*}
+其中误差积分由 $T^2/2+1/8$ 控制。
+
+在 $t\le\sqrt\epsilon$ 的精确 Burns 内核，$\mathscr L_P=0$，
+归一化标量修正恰为 $27\epsilon^2$。
+内过渡令 $t=\sqrt\epsilon r$，$1\le r\le2$；
+缩放度量 $\epsilon^{-1}g_\epsilon$ 是固定 Burns 数据的 $O(\epsilon)$ 二阶光滑扰动。
+三个校准平方在 Burns 上为零，而 $u_1,u_2=O(\epsilon)$，故相对积分为 $O(\epsilon^2)$。
+原尺度标量为 $O(1)$、体积为 $O(\epsilon^2)$，标量修正同阶。
+外过渡 $T\le t\le2T$ 是固定紧环带，$g_\epsilon-g_H=O_R(\epsilon)$ 于 $C^2$，
+所以 $P$ 与 $J_6$ 的费用均为 $O_R(\epsilon^2)$。
+三段相加，证明式\eqref{eq:cell-P}--\eqref{eq:cell-J}。
+\end{proof}
+
+若缩放到 $\Ric=-g$ 并用异常面积参数 $x=\operatorname{Area}(E)/\pi=6\epsilon$，则
+\[
+\frac{J_1}{8\pi^2}=1-\frac{x^2}{4}\log(1/x)+O_R(x^2).
+\]
+负对数项给出严格节省，其余项常数依赖固定外半径。
+这说明背景中一阶中性的方向可以在高阶产生真实收益；
+它是具体构造的上界机制，不是任意竞争度量的局部下界。
+
+\section{统一手术端点与覆盖上的全局恢复}\label{sec:global}
+
+\subsection{互补参数范围的分区闭合}
+\begin{theorem}[地理条件下的统一端点]\label{thm:geography}
+采用 N1\eqref{eq:N1}与 FD\eqref{eq:FD}。设一族实际允许对象满足
+\[
+Q=A-T_+\ge0,\qquad \chi(M)\le CA+Q
+\]
+且 $C$ 为固定有限常数。则同一个
+\[
+c_{\rm geo}(C)=\min\{\varepsilon_N,c_{\rm FD}(C+1/3)\}>0
+\]
+使全族满足
+\begin{equation}\label{eq:geography}
+\boxed{\kappa_\beta(g)\ge c_{\rm geo}(C)(\beta-2)^2/\beta^2,\qquad\beta\ge2.}
+\end{equation}
+\end{theorem}
+\begin{proof}
+若 $Q/A\ge1/3$，则 $T_+/A\le2/3$，由 N1、$D_\beta\ge0$ 和取 $\lambda=-1$ 的基本比较，
+$\kappa_\beta\ge\Ecal\ge\Jcal\ge\varepsilon_N$。
+若 $Q/A<1/3$，则 $\chi/A<C+1/3$，只需调用这个固定密度处的 FD。
+由于 $(\beta-2)^2/\beta^2\le1$，两种情形由同一个常数控制。
+\end{proof}
+
+这项结论允许整个范畴的 $\chi/A$ 无界：密度可能过大的那部分已经由另一个参数窗口控制。
+对极小复一般型主体 $X$，$A=c_1^2(X)>0$，经典 Noether 关系给
+\[
+p_g(X)\le A/2+2,\qquad
+\chi(X)=12(1-q_{\rm hol}+p_g)-A\le35A.
+\]
+最后的粗界在 $A=1$ 时使用 $p_g\le2$；在 $A\ge2$ 时由 $5A+36\le23A$ 得到\cite{Noether}。
+对实际供给已满足原条件的
+\[
+M=X\#k\overline{\CP}^{\,2}\#\ell(S^1\times S^3)
+\]
+有
+\[
+T_+=A-k-4\ell,\quad a^2=A-k,\quad Q=k+4\ell,
+\qquad \chi(M)=\chi(X)+k-2\ell\le35A+Q.
+\]
+故可取统一常数 $\min\{\varepsilon_N,c_{\rm FD}(106/3)\}$，独立于 $X,k,\ell$。
+这里保持普通手术供给的极化与手柄条件\cite{LeBrunRicci}。
+
+对已由 BF 等理论供给的多主体
+$M=(\#_{i=1}^rX_i)\#k\overline{\CP}^{\,2}\#\ell(S^1\times S^3)$，
+设 $A=\sum_i c_1^2(X_i)>0$、各主体平方为正，则
+\[
+Q=k+4\ell+4(r-1),\quad
+\chi(M)=\sum_i\chi(X_i)+k-2\ell-2(r-1)\le35A+Q.
+\]
+因此同一端点常数也适用。BF 供给所需的同余和 $b^+$ 条件由其原定理承担\cite{BF}。
+纯吹起的统一结论继承系统 Corollary K；这里的分区论证将它接到混合手术及所述多主体范畴。
+
+\subsection{预定残余塔中的安放位置}
+\begin{lemma}[残余塔复制]\label{lem:tower}
+设 $X=\Gamma\backslash\CH^2$ 紧致光滑，
+$\Gamma\supset\Gamma_1\supset\Gamma_2\supset\cdots$ 为有限指数嵌套子群，
+$\bigcap_j\Gamma_j=\{1\}$。给定普遍覆盖中的任意固定标记球 $B_R(p)$，
+存在 $j_0$，使每个 $X_j$（$j\ge j_0$）含有
+$[\Gamma_{j_0}:\Gamma_j]$ 个不交等距提升球。无需各子群正规。
+\end{lemma}
+\begin{proof}
+适当不连续性使 $\{\gamma\ne1:d(p,\gamma p)\le2R\}$ 为有限集。
+嵌套与平凡交集使该集合在某级后与 $\Gamma_{j_0}$ 不交，故球嵌入 $X_{j_0}$。
+取其在 $X_j\to X_{j_0}$ 下的全部提升即可。
+\end{proof}
+
+\subsection{完整费用与首项的精确换算}
+一个固定精确 $\Ric=-g$ 领口的单吹起块记成本为 $J_C$。
+在足够多的不交球内插入它，并令手柄尺度使总误差为 $o(Q_j)$，得到
+\begin{align*}
+V_j&=2\pi^2A_j+O(Q_j),&
+L_j&=\int_Ms_{g_j}+4V_j=O(Q_j),\\
+D_j&=\int_M|\Ric_{g_j}+g_j|^2
+=k_jJ_C+32\pi^2\ell_j+o(Q_j).
+\end{align*}
+这里用 $L_j$ 表示总标量改变量，以区别拓扑量 $T_\pm$。
+由式\eqref{eq:Eidentity}精确计算
+\begin{equation}\label{eq:raw-to-relative}
+\Ecal(g_j)=\frac{4D_j-L_j^2/V_j}{4V_j+D_j-2L_j}.
+\end{equation}
+$Q_j=o(A_j)$ 使 $L_j^2/V_j=o(Q_j)$，因而
+\begin{equation}\label{eq:surgery-slope}
+\limsup_j\frac{\alpha(M_j)}{h_j}
+\le\frac{28}{9}+\frac{J_C}{9\pi^2}.
+\end{equation}
+固定的块先选定，再令覆盖次数增长。该极限次序保留固定正节省。
+
+引理\ref{lem:tower}使式\eqref{eq:surgery-slope}适用于每条预定的嵌套残余塔。
+进一步，对固定基底 $X_0$ 的\emph{任意}有限非分歧覆盖序列 $X_j\to X_0$、度数 $d_j\to\infty$，
+定理\ref{thm:cell}可以先适配基底上的一个小嵌入球，得到固定 $J_C=8\pi^2(1-\delta_{X_0})$。
+每级有 $d_j$ 个不交提升球，而 $k_j+2\ell_j=O(Q_j)=o(d_j)$，故
+\begin{equation}\label{eq:all-covers}
+\boxed{\limsup_j\frac{\alpha(M_j)}{h_j}
+\le4-\frac89\delta_{X_0}<4.}
+\end{equation}
+此处不要求覆盖嵌套或残余；$\delta_{X_0}$ 可以依赖固定基底。
+全部结论保持原手术族的实际供给和比例条件。
+
+\subsection{既有区间数据与稳定混合单元}
+系统的完整 CH 端共形选择\cite{Conformal}给出 $s_{u^2g}=-24$、$u\to1$，并有
+\[
+P(g)-P(u^2g)=24\int|du|^2+3\int(\Delta u/u)^2\ge0.
+\]
+远端恢复精确领口后，对每个固定 $\epsilon>0$ 可取得 $J_6\le P(g)+\epsilon$。
+结合系统的原始区间上端
+\[
+p_{\rm cert}=
+\frac{338806471362324583565914367157197246841}
+{340282366920938463463374607431768211456}<1,
+\]
+式\eqref{eq:surgery-slope}在预定嵌套残余塔上给
+\begin{equation}\label{eq:numeric}
+\limsup_j\frac{\alpha(M_j)}{h_j}
+\le\frac{28}{9}+\frac89p_{\rm cert}
+=3.9961446513521015108\ldots<4.
+\end{equation}
+这是既有区间证书、共形选择与复制公式的组合，不是新的区间优化。
+
+系统还定义完整标记混合单元的稳定费用\cite{CellSource}
+\[
+\gamma_{\rm bal}=\inf_n\frac{\mathfrak P_{8n,7n}}{72\pi^2n}.
+\]
+其极限存在来自构造层面的次可加性。
+先固定 $n$ 和一个近最优单元，复制次数取
+\[N_j=\min\{\lfloor k_j/(8n)\rfloor,\lfloor\ell_j/(7n)\rfloor\}.\]
+则 $36nN_j/Q_j\to1$，剩余手术为 $o(Q_j)$，故同样得到
+\begin{equation}\label{eq:stable-cell}
+\limsup_j\alpha(M_j)/h_j\le\gamma_{\rm bal}.
+\end{equation}
+相反方向需要把任意全局竞争度量以 $o(Q_j)$ 损失局部化到这些标记单元，当前并无该结论。
+
+\section{背景响应、实际非可积性与节省机制}\label{sec:saving}
+
+本节的几何响应及实际场分解继承两会话系统原稿\cite{System,Field}；它们解释前述新构造在统一理论中的位置。
+
+\subsection{局部背景不是被动容器}
+一般背景 Burns 插入，在选定单位自对偶方向 $\zeta\in\Lambda_p^+$、异常面积 $\pi x$ 下满足
+\begin{equation}\label{eq:response}
+P(\widehat g_x)=P(g)+8\pi^2\{1-xR_p^+(\zeta,\zeta)\}+O(x^{6/5}),
+\qquad R^+=W^++\frac{s}{12}I.
+\end{equation}
+负 KE 背景中，与 Kähler 形式正交的方向位于 $\ker R^+$，一阶附加费用消失。
+定理\ref{thm:cell}在精确 CH 领口内进一步控制到二阶对数尺度。
+一般背景的 $O(x^{6/5})$ 余项大于 $x^2\log(1/x)$，因此式\eqref{eq:response}本身只给一阶响应。
+
+系统的非球商 KE 转移采用远离紧化因子的固定紧区域。
+若负 KE 主体满足 $A_m=c_1^2(\bar X_m)$、$\Delta_m=3\chi(\bar X_m)-A_m>0$、$\Delta_m/A_m\to0$，
+在 $O(Q_m)$ 个插入区有一致 $C^2$ 误差 $\epsilon_m\to0$，固定缓冲区的每次原始缺陷为 $O(\epsilon_m^2)$，
+则总误差为 $o(Q_m)$。当 $\Delta_m/Q_m\to r\in[0,1)$，原比例的恢复给
+\[
+\limsup\alpha/h\le4-\frac{8\eta}{9}(1-r),
+\]
+其中 $\eta>0$ 是固定单元节省。
+更一般，令 $\theta=k/Q$、$r=\Delta/Q$、$\sigma=4r+18\theta$，系统记录的两侧范围为
+\begin{align}
+\liminf\alpha/h&\ge
+\max\left\{\frac43(3-\sigma)_+,\frac{18}{19}(4+c_0-\sigma)_+\right\},\notag\\
+\limsup\alpha/h&\le4(1-\eta\theta).
+\label{eq:two-parameters}
+\end{align}
+下界依赖联合拓扑参数 $\sigma$，这种分离式恢复依赖吹起比例 $\theta$；二者尚未匹配。
+
+\subsection{同一实际符号族的精确节省}
+在同一个 $s=-4$ 度量上，取全部已供给的异常符号类的实际解，记均匀平均为 $\mathbb E_\epsilon$。
+置
+\[
+\rho_\epsilon=|\Phi_\epsilon|^2\in[0,2],\quad
+\psi_\epsilon=2\sqrt2\sigma(\Phi_\epsilon),\quad
+n_\epsilon=\psi_\epsilon/\rho_\epsilon,
+\]
+\[
+W_{0,\epsilon}=\tfrac14(\rho_\epsilon^2 I/3-\psi_\epsilon\otimes\psi_\epsilon),
+\quad M_\epsilon=W^+-W_{0,\epsilon},\quad
+\zeta_\epsilon=\langle\Phi_\epsilon,\nabla\Phi_\epsilon\rangle.
+\]
+归一化方向在非零旋量集定义，所列加权积分按原稿的零点截断极限延拓。
+在 $\rho>0$ 上写 $\Phi=\sqrt\rho\,u$、$|u|=1$，
+$\nabla u=i\vartheta u+v u^\perp$，并记
+$a_0=d\sqrt\rho$、$b_0=\sqrt\rho\,\vartheta$。
+将 $v=v_2+v_4$ 分成 $\mathcal W_2$（Nijenhuis）与 $\mathcal W_4$（Lee）部分，则
+\[
+\rho|v_4|^2=\tfrac12|a_0+J'b_0|^2,
+\qquad |\nabla n|_{\mathcal W_2}^2=4|v_2|^2.
+\]
+Dirac 方程决定 Lee 分量，并不令 Nijenhuis 分量消失。
+
+若 $f_I$ 是实际曲率形式的 Fourier--Walsh 分量，记
+$\mathcal W=2\|f_\varnothing^-\|_2^2+2\sum_{I\ne\varnothing}\|f_I^+\|_2^2$。
+原稿的同场恒等式为
+\begin{equation}\label{eq:saving-full}
+\begin{split}
+8\pi^2Q-P={}&\frac12\mathbb E_\epsilon\int\rho^2|\nabla n|_{\mathcal W_2}^2
+-\mathbb E_\epsilon\int\frac{(2-\rho)^2(2+2\rho-\rho^2)}6\\
+&-\mathbb E_\epsilon\int\rho\bigl(|a_0|^2+5|b_0|^2-2\langle a_0,J'b_0\rangle\bigr)
+-4\mathbb E_\epsilon\|M_\epsilon\|_2^2-\mathcal W.
+\end{split}
+\end{equation}
+所有减项均非负：幅度多项式在 $[0,2]$ 非负，
+相位二次型的系数矩阵 $\left(\begin{smallmatrix}1&-1\\-1&5\end{smallmatrix}\right)$ 正定。
+因此，记 $R_N=\mathbb E_\epsilon\int\rho^2|\nabla n|_{\mathcal W_2}^2$，便有
+\begin{equation}\label{eq:saving}
+\boxed{8\pi^2Q-P=\tfrac12R_N-\mathcal B,\qquad\mathcal B\ge0.}
+\end{equation}
+式\eqref{eq:saving-full}由同场分解、幅度 Weitzenböck 式及上述 Lee 投影整理得到\cite{Field}。
+手柄的同时解族保持原稿相应的 higher-type 或 holonomy 供给条件。
+
+等价的 Weyl 表达式是
+\begin{equation}\label{eq:saving-Weyl}
+\begin{split}
+8\pi^2Q-P={}&\mathbb E_\epsilon\int
+\{\rho^2M_\epsilon(n,n)-4|M_\epsilon|^2\}\\
+&+\mathbb E_\epsilon\int\frac{(2-\rho)(\rho-1)(3\rho+2)}3
+-4\mathbb E_\epsilon\|\zeta_\epsilon\|_2^2-\mathcal W.
+\end{split}
+\end{equation}
+两个表达式描述同一预算，不将同一个 Walsh 项重复相加。
+严格节省要求相同尺度的加权非可积性能量；可积实际方向则给 $P\ge8\pi^2Q$。
+但在 $Q=0$ 时，$-P=R_N/2-\mathcal B$ 只给 $-P\le R_N/2$，并不产生 $2P\le R_N$。
+
+\subsection{多实际类的联合极化}
+对同一度量上的真实类 $a_1,\ldots,a_N$，定义
+\[
+Q_{ij}=a_i\cdot a_j,\qquad
+G^+_{ij}=\langle a_i^+,a_j^+\rangle,\qquad
+G^-_{ij}=\langle a_i^-,a_j^-\rangle.
+\]
+恒有 $Q=G^+-G^-$ 且 $G^\pm$ 半正定。
+第\ref{sec:two-orientation}节利用其中一个非对角配对，将一侧近边界行为送入另一侧的禁止窗口。
+将这个例子推广为多实际类的锐利矩阵型强制估计，是进一步问题；
+目前的恒等式本身不等于一条普遍的几何距离定理。
+
+\section{有限密度机制中的分析工具}\label{sec:tools}
+
+本节保留前置 FD 所用的秩一结构与近期带权方法，便于将上面的推论接回原分析。
+它们的原始证明来源是项目有限密度及带权补充稿\cite{FD,Weighted,LowAmplitude}。
+
+\subsection{近定长线丛截面与陈数配对}
+\begin{lemma}[秩一对数正则化]\label{lem:chern}
+设 $(M_j,g_j)$ 为闭四流形，$K_j$ 为 Hermitian 线丛，实曲率为 $F_j=-iF^{K_j}$。
+假设
+\[
+\avint|\Ric|^2\le C_R,\quad F_j=F_{0,j}+e_j,
+\quad |F_{0,j}|\le C_F,\quad\|e_j\|_{2,\rm av}\to0,
+\]
+并有光滑截面 $\sigma_j$ 满足
+$\avint|\nabla\sigma_j|^2\le E$、$|\sigma_j|\to\ell>0$ 于归一化 $L^2$。
+则
+\begin{equation}\label{eq:chern-zero}
+\frac{c_1(K_j)^2[M_j]}{V_j}
+=\frac1{4\pi^2V_j}\int_{M_j}F_j\wedge F_j\longrightarrow0.
+\end{equation}
+\end{lemma}
+\begin{proof}
+先作固定幅度截断，得到 $|s_j|\le M$、$\avint|\nabla s_j|^2\le E'$，
+$d_j=\avint(|s_j|-\ell)^2\to0$。
+令 $L_j=\nabla^*\nabla$、$u_{j,\epsilon}=(I+\epsilon L_j)^{-1}s_j$。
+最大值原理与谱计算给
+\[
+|u_{j,\epsilon}|\le M,\quad
+\|u_{j,\epsilon}-s_j\|_{2,\rm av}^2\le\epsilon E',\quad
+\|\nabla u_{j,\epsilon}\|_{2,\rm av}^2\le E'.
+\]
+记 $K_j(\epsilon)=\avint|L_ju_{j,\epsilon}|^2$。精确谱积分为
+\[
+\int_0^1K_j(\epsilon)\,d\epsilon
+=\frac1{V_j}\sum_\nu\frac{\lambda_\nu^2}{1+\lambda_\nu}|(s_j)_\nu|^2\le E'.
+\]
+取 $d_j+\|e_j\|_2^2\le\delta_j\downarrow0$，则在
+$[\delta_j^{1/2},\delta_j^{1/4}]$ 中存在 $\epsilon_j$，满足
+\[
+\epsilon_jK_j(\epsilon_j)\le4E'/|\log\delta_j|\to0.
+\]
+
+有界截面的换指标和分部积分给
+\[
+\avint\bigl(|\nabla^2u_j|^2+|\nabla u_j|^4\bigr)\le C(1+K_j).
+\]
+这里只涉及 Ricci 收缩及线丛曲率：先由换指标控制 Hessian，
+再积分 $\operatorname{div}(|\nabla u|^2\Rea\langle u,\nabla u\rangle)$ 控制四次项，
+以 Cauchy--Schwarz 和 Young 吸收耦合项。
+设 $Z_j=\{|u_j|\le3\ell/4\}$，则
+\[
+\Vol(Z_j)/V_j\le C\epsilon_j,\qquad
+\avint_{Z_j}|\nabla u_j|^2\le C\sqrt{\epsilon_j(1+K_j)}\to0.
+\]
+
+置 $a_j=|u_j|^2$、$j_j=\operatorname{Im}\langle u_j,\nabla u_j\rangle$。
+选择在 $a\le(\ell/2)^2$ 为零、在 $a\ge(3\ell/4)^2$ 为一的固定截断，
+定义光滑一形式 $\theta_j=\chi(a_j)j_j/a_j$。
+在线丛上
+\[
+d\theta_j=\chi(a_j)F_j+\chi'(a_j)\,da_j\wedge j_j/a_j.
+\]
+真实曲率 $dF_j=0$，由 Stokes
+\[
+\left|V_j^{-1}\int F_j\wedge F_j\right|
+\le C\avint_{Z_j}|F_j|^2+C\avint_{Z_j}|F_j|\,|\nabla u_j|^2.
+\]
+有界模型部分由低幅度二次能量消失；误差部分至多
+$C\sqrt{\delta_j(1+K_j)}\to0$，因为 $\delta_j/\epsilon_j\le\delta_j^{1/2}$。
+这证明式\eqref{eq:chern-zero}。
+\end{proof}
+
+在实际 O10 系统中，$v\in S^-\otimes L$ 是同丛有界辅助截面，
+$\sigma=\Phi\wedge t(v)\in L^5$。
+固定有限反手性曲率预算使其近定长性质和 Dirichlet 能量满足引理\ref{lem:chern}，
+而实际曲率要求 $c_1(L^5)^2/V\to25/(6\pi^2)>0$。
+这条矛盾是 FD 的关键结构。
+对无界密度序列，取得该 $\sigma$ 的统一导数与质量结论仍是额外步骤。
+
+\subsection{不引入反手性曲率的双重带权测试}
+设 $v$ 是任意 Hermitian 丛截面，$|v|+|\nabla^*\nabla v|\le C_v$。
+以 $e^2v$ 测试并使用 Young 不等式，得
+\begin{equation}\label{eq:weighted}
+\|e\nabla v\|_{2,\rm av}\le C\|e\|_{H^1,\rm av}.
+\end{equation}
+对张量 $E$，以 $(\delta^2+|E|^2)^{1/2}$ 逼近其模长并用 Kato 不等式，
+同式给 $\||E|\nabla v\|_2\le C\|E\|_{H^1}$。
+
+若 $w$ 也有有界幅度、粗 Laplacian 及 Hessian 二次预算，
+则取 $E=\nabla w$，得到 $\|\nabla v\nabla w\|_2\le C$。
+若另有实际 $\Phi$ 的 Hessian 预算，也有 $\|\nabla\Phi\nabla w\|_2\le C$。
+于是对全局收缩张量 $\mathcal C$，只要
+\[
+|\mathcal C|\le C,\quad
+|\nabla\mathcal C|\le C(1+|\nabla\Phi|+|\nabla v|),\quad
+\|\zeta\|_{H^1}\to0,
+\]
+一次分部积分即给
+\begin{equation}\label{eq:bilinear}
+\left|\avint\zeta\,\mathcal C\,\nabla^2v\,\nabla w\right|
+\le C\|\zeta\|_{H^1}\to0.
+\end{equation}
+导数分别落到 $\zeta$、$\mathcal C$、$\nabla w$，三项由
+$\|\nabla\zeta\|_2\|\nabla v\nabla w\|_2$、
+$\|\zeta\nabla v\|_2(\|\nabla w\|_2+\|\nabla\Phi\nabla w\|_2+\|\nabla v\nabla w\|_2)$、
+$\|\zeta\nabla v\|_2\|\nabla^2w\|_2$ 控制。
+没有交换二阶导数，故不产生 $W^-$ 或全曲率项。
+式\eqref{eq:bilinear}要求 $H^1$ 小系数；仅有 $L^2$ 小的 $|v|^2-m_*$ 不满足这一输入。
+
+\subsection{最低幅度层与增长能量}
+继承 $Lv_j-2v_j\to0$、$m_j=|v_j|^2\to m_*=128/81$，
+以及实际 $(1,0)$ 类型投影 $N_j\to0$。
+其代数关系给
+$|dm|^2\le2(1+\delta)m|\nabla v|^2+C_\delta m|N|^2$。
+以 $(m+\epsilon)^{-\theta}v$ 测试，先固定 $0<\theta<1$、$\epsilon>0$，可得\cite{LowAmplitude}
+\[
+\limsup_j\avint\frac{|\nabla v_j|^2}{(m_j+\epsilon)^\theta}
+\le\frac{2m_*}{(1-\theta)(m_*+\epsilon)^\theta}.
+\]
+优化 $\theta$ 后，
+\begin{equation}\label{eq:low-amplitude}
+\limsup_j\avint_{\{m_j\le t\}}|\nabla v_j|^2
+\le2e\,t\log(m_*/t),\qquad 0<t<m_*/e.
+\end{equation}
+它排除趋零模长层承载固定能量，但不排除固定中间幅度层集中。
+
+在秩一引理中保留增长的 Dirichlet 能量，设
+$\mathsf E=1+\avint|\nabla s|^2$、
+$\Delta=\avint(|s|-\ell)^2+\avint|e_F|^2$，同样的谱尺度选择得到\cite{QuantEscape}
+\[
+\frac{|c_1(K)^2[M]|}{V}
+\le\frac{C\mathsf E}{\sqrt{\log(1/\Delta)}},\qquad0<\Delta\le e^{-4}.
+\]
+这是保留曲率增长量的估计，不是无密度常数。
+后续项目补充已把原始缺陷转接成更强的多项式形式
+$\kappa_\beta+\beta^{-2}\ge c(1+b)^{-p}$，$b=\avint|W^-|^2$\cite{WeightedReport}；
+这些增长关系分别按原误差清单使用，不将不同误差量直接互换。
+
+\section{静态间隙的定量 Ricci 流后果}\label{sec:flow}
+
+本节增加一个外部前置：openai/math 的四维 Ricci 流稿件陈述，
+闭四流形上的未归一化光滑 Ricci 流若在有限时间前标量曲率绝对值一致有界，则可延拓\cite{OAIFlow}。
+以下记该命题为 \textup{RF}。
+
+\begin{theorem}[在 RF 前置下的标量阈值时间]\label{thm:flow}
+设闭四流形具有全度量下界 $P(g)\ge p_0>0$，且 Yamabe 不变量 $\mathcal Y(M)<0$。
+考虑体积归一化流
+\[
+\partial_tg=-2\Ric+\tfrac12\bar s\,g,\qquad \bar s=\avint s,
+\qquad V=\Vol(g(0)).
+\]
+记 $m_0=\min s_{g(0)}$、$b_0=-m_0$、$\bar s_0=\avint s_{g(0)}$，
+取 $a>0$ 使 $\mathcal Y(M)\le-a\sqrt V$。
+对 $K>\max\{0,\max s_{g(0)}\}$，第一次达到 $\max s=K$ 的时间 $\tau_K$ 存在，并有
+\begin{equation}\label{eq:flow-time}
+\boxed{\tau_K\le\frac{V}{2p_0}
+\left[K\left(1+\log\frac{b_0}{a}\right)-\bar s_0+b_0-a\right].}
+\end{equation}
+\end{theorem}
+\begin{proof}
+记 $m(t)=\min s_{g(t)}$。Yamabe 商与 $m<0$ 给
+$Y([g(t)])\ge m(t)\sqrt V$，故 $m(t)\le-a$。
+标量演化及体积演化给\cite{Ishida}
+\begin{align*}
+\partial_ts&=\Delta s+2|\Ric^\circ|^2+\tfrac12s(s-\bar s),\\
+m'&\ge\tfrac{-m}{2}(\bar s-m)\ge0,\\
+\bar s'&=2P/V-\tfrac12\Var(s).
+\end{align*}
+因此 $m_0\le m(t)\le-a$。
+若时间区间内 $s\le K$，由 $(s-m)(K-s)\ge0$ 得
+\[
+\Var(s)\le(K-\bar s)(\bar s-m)\le(K-m)(\bar s-m),
+\]
+从而 $\tfrac12\Var(s)\le(1+K/(-m))m'$。
+积分后
+\[
+\frac12\int_0^t\Var(s)\,du\le K\log(b_0/a)+b_0-a.
+\]
+代入平均标量演化，使用 $P\ge p_0$、$\bar s(t)\le K$，得到式\eqref{eq:flow-time}对应的时间上界。
+
+若流在到达阈值前以有限时间终止，则 $m_0\le s\le K$。
+令 $c(t)=\exp(-\tfrac12\int_0^t\bar s)$、
+$\widetilde t=\int_0^tc(u)du$、$\widetilde g=c(t)g(t)$，
+得到未归一化流。有限区间内 $c$ 有正上下界，标量仍有界，由 RF 可延拓。
+若流永生且永不到达阈值，上面的时间上界同样矛盾。这就证明定理。
+\end{proof}
+
+若流永生，记历史正峰值
+$K(t)=\max\{0,\sup_{0\le u\le t}\max_Ms_{g(u)}\}$，同一计算给
+\begin{equation}\label{eq:flow-growth}
+K(t)\ge\frac{(2p_0/V)t+\bar s_0-b_0+a}{1+\log(b_0/a)}.
+\end{equation}
+它是历史峰值的增长，不是有限时间爆破率。
+
+在项目具有单独正 $\Jcal\ge j_0$ 及标量预算的窗口中，
+$R\ge8\pi^2A$，故 $p_0=2\pi^2Aj_0$ 可用。
+若平衡族选择 $s=-4$、$V_j\le CA_j$ 的初始代表，且 $p_{0,j}\ge cA_jh_j$，
+则对每个固定 $K$ 有 $\tau_{K,j}\le C_K/h_j$。
+该动态应用使用已经成立的线性阶，不决定 O11 的最佳首项。
+
+\section{外部研究中的两种可迁移机制}\label{sec:external}
+
+以下内容整理 openai/math 相应源稿中的证明机制\cite{OAI342,OAITree}。
+它们为 O10/O11 提供方法输入；前面的地理分区、双取向和显式领口构造分别由已列出的自身证明完成。
+
+\subsection{集中流分裂与原流--残余流配对}
+\emph{Taming implies compatibility on four-manifolds} 在固定光滑几乎复结构 $J$ 下，
+从存在驯服辛形式推出存在相容辛形式。源稿的关键对象为
+$\mathscr T=\mathscr P+\mathscr Q$，其中 $\mathscr P$ 为带复直线方向的正二维流，
+$\mathscr Q$ 为相应反不变修正，且组合满足闭性和配对约束。
+
+源证明保留质量测度的 $r^2$ 增长及方向角度二阶矩
+$\mathcal A_r=O(r^4)$。
+对正二维密度点集 $E$，限制流 $\mathscr P_E=\mathbf1_E\mathscr P$ 的闭性，
+由切断误差中的临界乘积得到：
+\[
+r^{-3}\sqrt{\mathcal A_r}\sqrt{\mathcal T_r}
+=r^{-3}O(r^2)o(r)=o(1).
+\]
+随后以原流与残余流
+$\mathscr T'=\mathscr T-\mathscr P_E$
+作交叉配对，使第二个正因子落在零密度中心，进而关闭误差并排除分离对象。
+
+可迁移的思想是：\emph{不先要求全部集中消失，而先证明集中具有闭合几何结构，
+再选择能隔离有效部分的配对。}
+应用到 O10 尚须从实际场取得相应的定向正二维流、统一质量与角度控制，以及同一配对的正下界和零极限。
+标量能量测度不自动具备这些性质；相容辛形式的存在也不等于几乎复结构可积。
+
+\subsection{保留核与余核的多尺度约化}
+\emph{Path selection and an elliptic inequality on degenerating Ricci-flat trees}
+研究固定有限 Ricci-flat 树：顶点几何指定、根端衰减指数大于 $1$、拼接商群非平凡，
+并有高阶加权控制。其对象是重整化 Einstein--Hilbert 泛函 $E$，长度量纲为 $2$。
+
+源稿保留顶点核、余核和颈部临界模态，构造真实有限维族 $h_*(L,z)$，并证明
+\[
+\|g-h_*\|\le CM,\quad\|\Ric(h_*)\|\le CM,
+\quad |E(g)-E(h_*)|\le CM^2.
+\]
+对约化观测量 $F=E(h_*)$ 与平方误差 $J$，有
+\[
+|dF|\le C\sqrt J
+\left(\sum_\alpha|dz_\alpha|+\sum_e e^{-cL_e}|dL_e|\right).
+\]
+多变量幂--对数路径选择保留有限符号条件与极限，并使括号内的加权变差有限。
+若失败序列有 $F\ne0$、$F\to0$、$F^2\ge c_0J$，则
+$|d\log|F||$ 的总积分有限，与 $F\to0$ 矛盾，得到 $E=o(M)$。
+
+其方法价值是把完整障碍、真实非线性分支和退化边界连接起来，
+而不将形式幂--对数展开直接视为收敛解析族。
+对 O11，需为曲率平方泛函 $P$ 建立相应比较，并控制原标记及 $o(Q)$ 总误差；
+固定 Ricci-flat 树的 $E=o(M)$ 并不直接给出这些结论。
+第\ref{sec:collar}节采用的是对自身显式族的两尺度因子化，未调用树定理。
+
+非负截面曲率下的新 $L^2$ Einstein gap 稿件\cite{OAI348}利用
+$|\Rm|\le Cs$、比较几何和高曲率尾部传播。
+它是近邻结果，但该代数控制不属于本稿负标量实际场范畴的输入。
+
+\section{贡献之间的关系与两个全局问题}\label{sec:conclusion}
+
+本稿的主要推导关系可以写为
+\[
+\begin{gathered}
+\text{N1+FD+地理分区}\Longrightarrow\text{统一手术端点},\\
+\text{FD(2)+双取向实际类+同度量交叉积}
+\Longrightarrow\text{曲面丛 Einstein／Kodaira 斜率间隙},\\
+\text{完整三轴单元+两尺度余项+覆盖复制}
+\Longrightarrow\text{严格次四的全局恢复},\\
+\text{全度量正 }P\text{-gap+负 Yamabe+RF}
+\Longrightarrow\text{标量阈值时间与历史峰值增长}.
+\end{gathered}
+\]
+其中各条全局结论都保持各自实际输入，不要求将四种证明合并成一个未经陈述的普遍命题。
+
+\Needspace{18\baselineskip}
+\subsection{核心贡献与来源的对应}
+\begin{center}
+\begin{tabular}{p{0.23\textwidth}p{0.36\textwidth}p{0.33\textwidth}}
+\toprule
+对象 & 本稿集中呈现的增量 & 使用的已有内容\\
+\midrule
+双取向统一间隙 & 定量交叉极化、反取向固定窗口、统一陈数宽度 & 经典双取向辛供给、项目 FD(2)\\
+解析低成本构造 & 任意领口的完整光滑匹配、统一余项与负对数主项 & 系统首次严格次四单元、Cartan 公式及常模系数\\
+统一端点 & 两参数区域的拼接，独立于手术数量的常数 & N1、有限密度 FD、经典曲面地理\\
+覆盖恢复 & 预定残余塔及固定基底任意覆盖序列的复制量词 & 系统完整费用、区间证书与共形选择\\
+动态后果 & 阈值时间、历史峰值及 $O(h^{-1})$ 时间尺度 & 既有静态 gap、Ricci 流演化、外部 RF\\
+方法提炼 & 同丛截面、联合配对、背景耦合、临界尺度的完整组合 & 项目分析工具与明确引用的外部方法\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{一般无密度端点}
+O10 的最高目标仍是在原全部实际输入下，证明存在同一个 $c>0$，使
+\[
+\kappa_\beta\ge c(\beta-2)^2/\beta^2,
+\]
+或构造满足全部原输入的闭流形逃逸序列。
+本稿已覆盖有界密度、所述地理分区和双取向结构产生的固定窗口。
+系统另有 $T_+\le\vartheta A$、$\vartheta<3/4$ 下不要求 Euler 密度的 L$'$ 结论\cite{System}。
+这些窗口之外的共同退化仍需新的全局约束。
+
+最低幅度估计\eqref{eq:low-amplitude}没有排除中间幅度集中。
+形式矩预算 $d\mu_1(t)=4t\,dt$、$\mu_2=0$（$0\le t\le m_*$）
+仍能满足已有的整族标量测试恒等式而不保留第五线质量\cite{Rate}。
+这说明剩余信息必须来自完整微分系统或新的有效配对，而不只是重组同一标量预算。
+
+\subsection{允许真实节省的全局最优性}
+O11 现应决定真实首项 $\gamma_*$，即在给定原族上寻找匹配的
+\[
+\inf_gP(g)=2\pi^2\gamma_*Q_j+o(Q_j),
+\qquad\alpha_j/h_j\longrightarrow\gamma_*.
+\]
+已覆盖族具有严格次四上界，故 $4$ 保留为标准恢复的参照值，而非其最优答案。
+
+原稿可选 $s=-4$ 的足够精确 $P$-近极小序列，使规定临界预算
+$\|H\|_\infty\le1$、$\int(|\nabla^2H|^2+|\nabla H|^4)\le A_j$
+内的测试满足
+\[
+|DP_{g_j}[H]|=o(Q_j),\qquad D^2P_{g_j}[H,H]\ge-o(Q_j).
+\]
+这一变分输入\cite{Variational}可用于排除低于真正最优值的几何，
+但不能再要求所有低于旧参照 $8\pi^2Q$ 的几何都有固定 $Q$ 级下降方向。
+
+剩余的零阶问题是：式\eqref{eq:saving}允许的最大真实节省是多少？
+单元最优值与全局最优值是否相等？多个吹起与手柄能否协同降低费用？
+能量下半连续性本身不能确定原拓扑标记在哪个极限区域付费；
+一般 ALE 核心必须保留端群与谱修正，不能按每个二周期固定收取 $8\pi^2$。
+
+本文的统一认识是：\emph{实际场既限制不相容的几何逼近，也保留能够降低代价的几何自由度。}
+双取向配对展示前者，背景中性方向上的负对数构造展示后者。
+将两者推进到锐利的全局定量结论，是下一步的数学内容。
+
+\begin{thebibliography}{99}\small
+\bibitem{N1} Qiushi 项目研究稿，\emph{单解无迹 Ricci 积分障碍与类平方短缺版}，2026-09-28，
+\path{03_N1_Complete_Inheritance.md}，§§1--5。
+\bibitem{FD} Qiushi 项目续研，\emph{O10 closes at every fixed finite Euler density}，2026-09-29，
+\path{O10_All_Finite_Density.md}，§§1--4。
+\bibitem{System} S1003A01／S1003A02，\emph{Mathematical Synthesis}，2026-10-07，
+\path{01_Mathematical_Synthesis.md}；原包
+\path{20261007_Einstein_Gaps_Two_Sessions(1).zip}。
+\bibitem{CellSource} S1003A02，\emph{Theorem package v1}，§§4--5；
+\emph{Subthreshold perpendicular cell}（Step11）。S1003A01，
+\emph{Rigorous subthreshold cell and O11}（Step10）。
+\bibitem{Field} S1003A02，\emph{The Nijenhuis form of the signed field cost, its Weyl form, and pointwise exhaustion}（Step40）。
+\bibitem{Conformal} S1003A01，\emph{Exact CH-ended conformal selection}（Step22）；
+\emph{Surgery slope law and ASD retention}（Step33）及相应原始 $P$ 区间数据。
+\bibitem{Weighted} 网页与项目补充，\emph{A double weighted test removes a class of uncontrolled negative Hessians}，2026-09-30，
+\path{O10_Double_Weighted_Test.md}。
+\bibitem{WeightedReport} 项目续研 E，\emph{O10／O11：本轮直接研究、效率问题与准确结果}，2026-09-30，§2，原始缺陷的多项式转接。
+\bibitem{LowAmplitude} 网页续研，\emph{O10 低幅度能量与 O11 极小序列接口}，2026-09-30。
+\bibitem{QuantEscape} 网页续研，\emph{O10 无界密度的定量逃逸约束与完整推导}，2026-09-29。
+\bibitem{Rate} 项目续研 D，\emph{An unbounded-curvature rate exclusion from the fifth-line test}，2026-09-29，§§7--8。
+\bibitem{Variational} 项目补充，\emph{O11 Variational Selection}，2026-09-29；
+网页续研，\emph{O10 低密度端点与 O11 定量变分选择}，2026-09-29。
+\bibitem{WebRecent} 本会话续研，\emph{统一手术端点与预定残余覆盖塔恢复}；
+\emph{任意固定复双曲领口中的解析低成本单吹起构造}；
+\emph{双取向实际类的联合间隙}；
+\emph{新外部定理的实际接入与定量 Ricci 流推论}，2026-10-07。
+
+\bibitem{Kotschick} D. Kotschick, \emph{On regularly fibered complex surfaces},
+Geometry \& Topology Monographs \textbf{2} (1999), 291--298, Theorem 3.
+\url{https://arxiv.org/abs/math/9911255}.
+\bibitem{LeBrunKodaira} C. LeBrun, \emph{Diffeomorphisms, symplectic forms and Kodaira fibrations},
+Geometry \& Topology \textbf{4} (2000), 451--456.
+\url{https://arxiv.org/abs/math/0005195}.
+\bibitem{Thurston} W. P. Thurston, \emph{Some simple examples of symplectic manifolds},
+Proc. Amer. Math. Soc. \textbf{55} (1976), 467--468.
+\bibitem{Taubes} C. H. Taubes, \emph{The Seiberg--Witten invariants and symplectic forms},
+Math. Res. Lett. \textbf{1} (1994), 809--822.
+\bibitem{Catanese2016} F. Catanese, \emph{Kodaira fibrations and beyond: methods for moduli theory},
+arXiv:1611.06617, §1.3（第9页），LeBrun 的统一斜率问题。
+\url{https://arxiv.org/abs/1611.06617}.
+\bibitem{Polizzi2022} F. Polizzi, \emph{Diagonal double Kodaira structures on finite groups},
+in \emph{Current Trends in Analysis, its Applications and Computation}, 111--128 (2022);
+arXiv:2002.01363v2, Remark 4.10.
+\url{https://arxiv.org/abs/2002.01363}.
+\bibitem{CataneseRollenske} F. Catanese and S. Rollenske, \emph{Double Kodaira fibrations},
+J. Reine Angew. Math. \textbf{628} (2009), 205--233.
+\url{https://arxiv.org/abs/math/0611428}.
+\bibitem{LeBrunRicci} C. LeBrun, \emph{Ricci Curvature, Minimal Volumes, and Seiberg--Witten Theory},
+Invent. Math. \textbf{145} (2001), 279--316.
+\url{https://arxiv.org/abs/math/0003068}.
+\bibitem{BF} M. Ishida and C. LeBrun, \emph{Curvature, Connected Sums, and Seiberg--Witten Theory},
+Comm. Anal. Geom. \textbf{11} (2003), 809--836.
+\url{https://arxiv.org/abs/math/0111228}.
+\bibitem{Pin} M. Ishida, S. Matsuo and N. Nakamura,
+\emph{Yamabe invariants and the Pin$^-(2)$-monopole equations}, arXiv:1505.05948.
+\url{https://arxiv.org/abs/1505.05948}.
+\bibitem{Noether} 曲面经典 Noether 不等式与 Noether 公式；参见
+F. Catanese, M. Chen and D.-Q. Zhang, \emph{The Noether inequality for smooth minimal 3-folds},
+arXiv:math/0507606，引言的曲面回顾。本文只用二维曲面公式。
+\url{https://arxiv.org/abs/math/0507606}.
+\bibitem{Ishida} M. Ishida, \emph{The normalized Ricci flow on four-manifolds and exotic smooth structures},
+arXiv:0807.2169，§§2--3。
+\url{https://arxiv.org/abs/0807.2169}.
+
+\bibitem{OAI342} OpenAI, \emph{Taming implies compatibility on four-manifolds}, 2026-09-23，
+源稿 §§6--7。来源记录采用仓库版本
+\texttt{adc7f1241b42e322a6451854ab7e4b4c146bf78a}。
+\url{https://github.com/openai/math}.
+\bibitem{OAITree} OpenAI, \emph{Path selection and an elliptic inequality on degenerating Ricci-flat trees},
+2026-09-24，同一来源版本，引言与路径选择、约化和观测量各节。
+\bibitem{OAIFlow} OpenAI, \emph{Bounded scalar curvature and smooth extension of four-dimensional Ricci flow},
+2026-09-24，同一来源版本，主命题 \texttt{thm:extension}。
+本文第\ref{sec:flow}节将该陈述列为外部前置 RF。
+\bibitem{OAI348} OpenAI, \emph{An $L^2$ Einstein Gap for Nonnegatively Curved Four-Manifolds},
+2026-10-05，同一来源版本。
+\end{thebibliography}
+\end{document}

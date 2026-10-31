@@ -1,0 +1,266 @@
+\documentclass[UTF8,11pt,fontset=none]{ctexart}
+\usepackage[a4paper,margin=25mm,headheight=15pt,footskip=13mm]{geometry}
+\usepackage{fontspec}
+\IfFontExistsTF{TeX Gyre Termes}{\setmainfont{TeX Gyre Termes}}{\setmainfont{TeXGyreTermes}}
+\IfFontExistsTF{TeX Gyre Heros}{\setsansfont{TeX Gyre Heros}}{\setsansfont{TeXGyreHeros}}
+\IfFontExistsTF{DejaVu Sans Mono}{\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]}{\setmonofont{Latin Modern Mono}}
+\IfFontExistsTF{Noto Serif CJK SC}{\setCJKmainfont{Noto Serif CJK SC}[AutoFakeSlant=0.15]}{\setCJKmainfont{FandolSong-Regular.otf}[BoldFont=FandolSong-Bold.otf,ItalicFont=FandolKai-Regular.otf]}
+\IfFontExistsTF{Noto Sans CJK SC}{\setCJKsansfont{Noto Sans CJK SC}}{\setCJKsansfont{FandolHei-Regular.otf}}
+\IfFontExistsTF{Noto Sans Mono CJK SC}{\setCJKmonofont{Noto Sans Mono CJK SC}}{\setCJKmonofont{FandolFang-Regular.otf}}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,esint,bm}
+\usepackage{booktabs,longtable,array,calc}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=1.7em,topsep=4pt}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,fontsize=\small}
+\usepackage{xurl}
+\usepackage[unicode,hidelinks,bookmarksnumbered]{hyperref}
+\usepackage{bookmark}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 第一科学主线：近期数学补充}
+\fancyhead[R]{\small 2026-10-07}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\setlength{\emergencystretch}{3em}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{3.5pt plus 1pt}
+\linespread{1.12}
+\setlength{\abovedisplayskip}{10pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{10pt plus 2pt minus 2pt}
+\allowdisplaybreaks[2]
+\renewcommand{\arraystretch}{1.15}
+\let\cleardoublepage\clearpage
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{2}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{assumption}[theorem]{前置}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{说明}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\id}{\operatorname{Id}}
+\newcommand{\dd}{\,\mathrm d}
+\pdfstringdefDisableCommands{\def\fint{int}\def\mathcal#1{#1}\def\mathfrak#1{#1}\def\mathscr#1{#1}\def\operatorname#1{#1}\def\texorpdfstring#1#2{#2}}
+
+\renewcommand{\thesection}{7.\arabic{section}}
+\title{第一科学主线：近期研究补充\\[6pt]\large 7．构造、实际场节省与尚未闭合的全局连接}
+\author{数学研究交接稿}\date{2026年10月7日}
+\begin{document}
+\maketitle
+\tableofcontents
+\clearpage
+本分卷收录最近各轮中没有单列成证明稿、但会改变数学目标的综合认识，以及新系统档案所提供的必要基线。系统的构造和同场恒等式按其来源署明，不算成网页续研重新发现的结果。关于一般 O10、O11 的未完成连接只保留数学内容，不保留研究效率评议或鼓励性文字。\cite{B01,B02,B03}
+
+\section{严格次四构造已经改变候选最优值}\label{v7-ux4e25ux683cux6b21ux56dbux6784ux9020ux5df2ux7ecfux6539ux53d8ux5019ux9009ux6700ux4f18ux503c}
+
+系统原稿的 degree-20、\(x_0=3/100\)、\(X=128\) 完整单吹起轮廓具有记录的区间 \[
+ \frac{J_6}{8\pi^2}\in
+ [0.995670030344086466\ldots,
+  0.995670030355130639\ldots].
+\tag{7.1}
+\] 解析合法性包括正定性、bolt、普通负单吹起拓扑、完整边界标记和允许任意小损失的光滑化。它们必须与数值区间一起使用；浮点值不是区间证明。对可安放这些固定单元的选定原平衡族，原稿已经给出 \[
+ \limsup_j\frac{\alpha(M_j)}{h_j}
+ \le4-\frac89\eta<3.9961512<4.
+\tag{7.2}
+\] 复制的比例是 \(28/9+(8/9)p_{1,0}\)，不是 \(4p_{1,0}\)。第四卷将原 \(P\)-证书和非紧共形选择组合成稍强数值上界，并扩大覆盖量词；第五卷则给出任意固定小领口内的解析节省。
+
+因此，对同一已被构造覆盖的族， \[
+ \inf_gP(g)\ge8\pi^2Q_j-o(Q_j)
+\] 已经不能继续作为待证真结论。O11 的正确问题是确定新的最佳首项或精确上下极限，并取得同族匹配构造。
+
+\section{一般背景响应：拓扑成本不是与背景无关的固定单价}\label{v7-ux4e00ux822cux80ccux666fux54cdux5e94ux62d3ux6251ux6210ux672cux4e0dux662fux4e0eux80ccux666fux65e0ux5173ux7684ux56faux5b9aux5355ux4ef7}
+
+系统的 Burns 插入响应为：在固定光滑背景 \((M,g)\) 上，选 \(p\in M\) 与单位正手性形式 \(\zeta\)，异常面积取 \(\pi x\)、截断半径取 \(x^{1/5}\)，则 \[
+ P(\widehat g_x)=P(g)+8\pi^2\{1-xR_p^+(\zeta,\zeta)\}+O(x^{6/5}),
+ \qquad R^+=W^++\frac{s}{12}I.
+\tag{7.3}
+\] 余项依赖固定背景的局部控制。原始 Einstein 残差的对应公式还要求背景 Einstein。它是构造上界，不是任意单元费用的下界。
+
+在负 Kähler--Einstein 背景上，垂直 Kähler 方向的二平面位于 \(\ker R^+\)，一阶附加费用消失。式(7.3)的余项大于潜在的 \(x^2\log(1/x)\) 项，因此不能仅由一阶中性推断高阶节省。第五卷在特定 CH 背景上直接建立更精细余项；尚未得到一般背景版本。\cite{B01}
+
+有限尺度核心可以固定，而 \(Q_j/A_j\to0\) 通过背景增长实现。这说明平均缺陷小不强迫每个核心是标准恢复附近的微小扰动；以局部微扰类别覆盖全部竞争几何，需要额外证明。
+
+\section{向非球商 KE 主体的转移与两参数响应}\label{v7-ux5411ux975eux7403ux5546-ke-ux4e3bux4f53ux7684ux8f6cux79fbux4e0eux4e24ux53c2ux6570ux54cdux5e94}
+
+系统原稿还构造了带分歧算术覆盖的紧化曲面，记 \[
+ A_m=c_1^2(\overline X_m),\qquad
+ \Delta_m=3\chi(\overline X_m)-A_m>0,
+ \qquad\Delta_m/A_m\to0.
+\] 它们具有负 KE 度量，但不是紧球商。完成的转移使用远离紧化因子的固定紧区域：在提升插入域上取得同一 \(C^2\) 误差 \(\epsilon_m\to0\)，以固定缓冲区连接精确 CH 单元；每次插入的原始 Ricci 缺陷成本为 \(O(\epsilon_m^2)\)，\(O(Q_m)\) 次插入的总误差是 \(o(Q_m)\)。未完成的近因子 Calabi-cap 方案不作为这项已完成转移的前提。\cite{B01,B02,B05}
+
+更一般地，令 \[
+ Q=k+4\ell,\quad h=Q/A,\quad
+ r=\Delta/Q,\quad\theta=k/Q,\quad\sigma=4r+18\theta.
+\] 精确特征数关系为 \[
+ T_+=A-Q,\qquad \frac{3T_-}{A}=1+(\sigma-3)h.
+\] 在相应实际供给范畴，系统记录的上下信息为 \[
+ \liminf\frac\alpha h\ge
+ \max\left\{\frac43(3-\sigma)_+,\
+ \frac{18}{19}(4+c_0-\sigma)_+\right\},
+\tag{7.4}
+\] \[
+ \limsup\frac\alpha h\le4(1-\eta\theta).
+\tag{7.5}
+\] 其中 \(c_0>0\) 沿用原强制估计的常数，\(\eta>0\) 是完整便宜单元的固定节省。它们尚未匹配为真实极值。平衡 \(\sigma=4\)、\(r\in[0,1)\) 给 \[
+ \limsup\frac\alpha h\le4-\frac{8\eta}{9}(1-r).
+\] \(r=1\) 时此构造不再记录平衡节省，不代表一般存在性边界。
+
+\section{同一实际族的 Nijenhuis 节省公式}\label{v7-ux540cux4e00ux5b9eux9645ux65cfux7684-nijenhuis-ux8282ux7701ux516cux5f0f}
+
+保留系统所验证的 simultaneous all-sign 供给：在同一 \(s=-4\) 度量上，对每个符号向量选一个实际解，手柄仍要求相应 higher-type 或 holonomy 供给。记 \[
+ \rho_\epsilon=|\Phi_\epsilon|^2\in[0,2],\quad
+ \psi_\epsilon=2\sqrt2\sigma(\Phi_\epsilon),\quad
+ n_\epsilon=\psi_\epsilon/\rho_\epsilon,
+\] \[
+ W_{0,\epsilon}=\tfrac14\left(\frac{\rho_\epsilon^2}{3}I-
+ \psi_\epsilon\otimes\psi_\epsilon\right),\quad
+ M_\epsilon=W^+-W_{0,\epsilon},\quad
+ \zeta_\epsilon=\langle\Phi_\epsilon,\nabla\Phi_\epsilon\rangle.
+\] Walsh 项为 \[
+ \mathcal W=2\|f_\varnothing^-\|_2^2+
+ 2\sum_{I\ne\varnothing}\|f_I^+\|_2^2\ge0.
+\] 这里平均的是曲率形式及数值，不是将不同线丛中的旋量或连接直接相加。\cite{B03}
+
+\subsection{Dirac 约束 Lee 部分，而不消灭 Nijenhuis 部分}\label{v7-dirac-ux7ea6ux675f-lee-ux90e8ux5206ux800cux4e0dux6d88ux706d-nijenhuis-ux90e8ux5206}
+
+在 \(\rho>0\) 的区域写 \[
+ \Phi=\sqrt\rho\,u,\quad |u|=1,\quad
+ \nabla u=i\beta u+v\,u^\perp,
+ \quad a=d\sqrt\rho,\quad b=\sqrt\rho\,\beta.
+\] 本小节的 \(a,b\) 是实一形式，不是上同调类。则 \[
+ |\nabla\Phi|^2=|a|^2+|b|^2+\rho|v|^2,
+ \quad|\zeta|^2=\rho(|a|^2+|b|^2),\quad|\nabla n|^2=4|v|^2.
+\] 将 \(v=v_2+v_4\) 正交分为 Gray--Hervella 的 \(\mathcal W_2\)、\(\mathcal W_4\) 部分。源稿点态 Clifford 计算给 \[
+ \rho|v_4|^2=\tfrac12|a+J'b|^2,
+ \qquad |\nabla n|_{\mathcal W_2}^2=4|v_2|^2.
+\tag{7.6}
+\] \(\mathcal W_2\) 是非可积性分量；Dirac 迹决定 Lee 分量，而不直接固定 \(v_2\)。源稿以 \(cc^*=2I\)、\(\ker c=\mathcal W_2\) 及 Clifford 线性性证明式(7.6)。
+
+\subsection{完整的有符号节省}\label{v7-ux5b8cux6574ux7684ux6709ux7b26ux53f7ux8282ux7701}
+
+记 \(\mathfrak S=8\pi^2Q-P\)。系统源稿的精确式是 \[
+ \begin{aligned}
+ \mathfrak S={}&\frac12\mathbb E_\epsilon\int
+ \rho_\epsilon^2|\nabla n_\epsilon|_{\mathcal W_2}^2\\
+ &-\mathbb E_\epsilon\int
+ \frac{(2-\rho)^2(2+2\rho-\rho^2)}6\\
+ &-\mathbb E_\epsilon\int
+ \rho\bigl(|a|^2+5|b|^2-2\langle a,J'b\rangle\bigr)\\
+ &-4\mathbb E_\epsilon\|M_\epsilon\|_2^2-\mathcal W.
+ \end{aligned}
+\tag{7.7}
+\] 全部减项非负：\(2+2\rho-\rho^2>0\) 于 \([0,2]\)，而幅度--相位二次型矩阵 \(\begin{psmallmatrix}1&-1\\-1&5\end{psmallmatrix}\) 正定。
+
+源稿的推导保留同场分解与幅度 Weitzenböck 式 \[
+ \tfrac12\Delta\rho+|\nabla\Phi|^2=\tfrac12\rho(2-\rho),
+ \qquad \Delta=d^*d,
+\] 将后式乘 \(2\rho\) 后积分，得到 \[
+ \int2\rho|\nabla\Phi|^2+4\int\rho|a|^2
+ =\int\rho^2(2-\rho).
+\] 加入这个零恒等式，再代入式(7.6)，幅度多项式和相位二次型便整理为式(7.7)。相应源稿的完整字段定义与起始同场恒等式保存在附带原件中；这里不将它改称一个新供给定理。\cite{B03}
+
+令 \[
+ R_N=\mathbb E_\epsilon\int\rho_\epsilon^2
+ |\nabla n_\epsilon|_{\mathcal W_2}^2,
+\] 式(7.7)即 \(\mathfrak S=R_N/2-\mathcal B\)、\(\mathcal B\ge0\)。因此实际结构全部可积时 \(P\ge8\pi^2Q\)；反之，固定比例的节省强迫同尺度的加权 Nijenhuis 能量。它允许并解释便宜单元，但尚未给出全局最大节省。
+
+\subsection{Weyl 形式}\label{v7-weyl-ux5f62ux5f0f}
+
+由自对偶二形式 Weitzenböck 式与同一个 Dirac 约束，源稿得到 \[
+ \begin{aligned}
+ \mathfrak S={}&\mathbb E_\epsilon\int
+ [\rho^2x_\epsilon-4|M_\epsilon|^2]\\
+ &+\mathbb E_\epsilon\int
+ \frac{(2-\rho)(\rho-1)(3\rho+2)}3
+ -4\mathbb E_\epsilon\|\zeta_\epsilon\|_2^2-\mathcal W,
+ \end{aligned}
+\tag{7.8}
+\] 其中 \(x_\epsilon=M_\epsilon(n_\epsilon,n_\epsilon)\)。所用中间式是 \[
+ \int|\nabla\psi|^2
+ =2\|d\psi\|_2^2+2\int M(\psi,\psi)
+ +\int\tfrac{\rho^2}{3}(4-\rho^2),
+ \qquad |d\psi|^2=2\rho|b|^2.
+\] 式(7.7)、(7.8)是同一信息的两种形式，不能将同一 Walsh 成本重复收费。
+
+\section{必须随结果一起继承的修正}\label{v7-ux5fc5ux987bux968fux7ed3ux679cux4e00ux8d77ux7ee7ux627fux7684ux4feeux6b63}
+
+\subsection{不能从一个有符号恒等式推出错误的双向强制}\label{v7-ux4e0dux80fdux4eceux4e00ux4e2aux6709ux7b26ux53f7ux6052ux7b49ux5f0fux63a8ux51faux9519ux8befux7684ux53ccux5411ux5f3aux5236}
+
+在 \(Q=0\) 时，\(-P=R_N/2-\mathcal B\) 只说明 \(-P\le R_N/2\)，不说明 \(2P\le R_N\)。附近非 Einstein 的 Kähler 度量可以具有可积的规范方向，因而 \(R_N=0\) 而 \(P>0\)。原 Step44 的双向比较不能作为已证前置；可能的一侧 \(R_N\le CP\) 需要自己的分析。\cite{B02}
+
+\subsection{严格次四构造排除``全部次阈值几何必不稳定''的普遍目标}\label{v7-ux4e25ux683cux6b21ux56dbux6784ux9020ux6392ux9664ux5168ux90e8ux6b21ux9608ux503cux51e0ux4f55ux5fc5ux4e0dux7a33ux5b9aux7684ux666eux904dux76eeux6807}
+
+若某族已有 \(\inf P\le8\pi^2(1-\delta)Q\)，\(\delta>0\)，则足够精确的真正极小化序列仍处于原阈值之下。继承的选择允许其在合法测试预算中满足 \[
+ DP[H]=o(Q),\qquad D^2P[H,H]\ge-o(Q).
+\] 因此，不能再对全部 \(P<8\pi^2Q\) 几何主张统一 \(Q\) 级下降方向。变分法仍可用，但其参照值必须允许已知节省。\cite{I06,B01}
+
+\subsection{O10 的径向信息不能靠更名消失}\label{v7-o10-ux7684ux5f84ux5411ux4fe1ux606fux4e0dux80fdux9760ux66f4ux540dux6d88ux5931}
+
+同丛辅助截面有 \(|v|+|\nabla^*\nabla v|\le C\)。由 \(|e|^2v\) 测试得到 \[
+ \||e|\nabla v\|_2\le C\|e\|_{H^1}.
+\] 对满足相应二阶预算的测试 \(w\)，可进一步得到 \[
+ \left|\fint\zeta\,\mathcal C\,\nabla^2v\,\nabla w\right|
+ \le C\|\zeta\|_{H^1}\to0.
+\tag{7.9}
+\] 它不依赖 \(W^-\)，但必须有 \(\zeta\to0\) 于 \(H^1\)。\(m-m_*\to0\) 于 \(L^2\) 不允许把 \(\zeta\) 换成 \(m-m_*\) 而省略 \(dm\)。\cite{I03}
+
+另一已给出的逆幅度估计，在原类型投影输入下为 \[
+ \limsup_j\fint\frac{|\nabla v_j|^2}{(m_j+\epsilon)^\theta}
+ \le\frac{2m_*}{(1-\theta)(m_*+\epsilon)^\theta},\quad0<\theta<1.
+\] 它排除最深低幅度区承载固定能量，却不排除固定中间幅度层的径向集中。源稿形式矩预算 \[
+ d\mu_1(t)=4t\,dt\quad(0\le t\le m_*),\qquad\mu_2=0
+\] 满足 \[
+ (p+1)\int_0^{m_*}t^{p-1}\,d\mu_1(t)=4m_*^{p+1}
+\] 而没有第五线质量。它是现有标量测试不足的代数例，不是实际 O10 反例。\cite{I04,I05}
+
+\subsection{能量下半连续性不是标记费用定理}\label{v7-ux80fdux91cfux4e0bux534aux8fdeux7eedux6027ux4e0dux662fux6807ux8bb0ux8d39ux7528ux5b9aux7406}
+
+对符合负定性及所述端部条件的完整 AE 核心，源稿保留 \[
+ P_N\ge8\pi^2b_2(N)+32\pi^2\{b_1(N)+e-1\}
+ +\frac1{12}\int_Ns^2.
+\] 一般 ALE 核心还必须加端群和签名谱修正。终端泡含一个二周期不意味着它已经支付一个 \(8\pi^2\) 的 \(P\) 成本；Eguchi--Hanson 可以 \(P=0\)。对全局下界而言，额外非负能量可以遗漏，但未配准的拓扑标记不能遗漏。现有构造层次的次可加性也不自动证明混合标记费用可加，或等于闭流形最优值。\cite{I05,B02}
+
+\section{当前的两个全局终点}\label{v7-ux5f53ux524dux7684ux4e24ux4e2aux5168ux5c40ux7ec8ux70b9}
+
+\textbf{O10。} 原全部实际输入下，是否存在完全不依赖拓扑密度的 \[
+ \kappa_\beta\ge c\frac{(\beta-2)^2}{\beta^2}?
+\] 有限密度 FD、指定比例窗口 L\({}'\)/K、第四卷的地理分区及第六卷的双取向交叉配对分别覆盖其准确范畴。它们没有提供任意单取向实际对象都满足的额外交叉关系。完整强制证书或合法闭流形逃逸尚未形成。
+
+\textbf{O11。} 对明确原族，决定 \(\alpha_j/h_j\) 的最佳极限或精确上下极限，并给同族匹配下界及构造。当前严格次四上界必须保留；不能继续预设 \(4\) 为答案。稳定混合单元费用 \(\gamma_{\mathrm{bal}}\) 给上界接口，反向全局比较仍未证明。
+
+源文中``完整实际系统的正质量--误差恒等式''、集中流的有效全局配对、带全部模态的曲率平方约化，以及真实低成本混合构造，都只是尚需证明的连接。它们不是现有主定理的隐藏前提，也不作为本汇编新增的已证定理。
+
+\begin{thebibliography}{E99}
+\small
+\bibitem[I03]{I03} 项目辅助引理，\emph{A double weighted test removes a class of uncontrolled negative Hessians}，2026-09-30。\path{source_notes/I03_Double_Weighted_Test.md}。
+
+\bibitem[I04]{I04} 项目续研 D，\emph{An unbounded-curvature rate exclusion from the fifth-line test}，2026-09-29；完整径向与相位项见 §§7--8。\path{source_notes/I04_Alternative_Global.md}。
+
+\bibitem[I05]{I05} 网页续研，\emph{O10 低幅度能量与 O11 极小序列接口}，2026-09-30。\path{source_notes/I05_Low_Amplitude_and_Ideal_Minimizer.md}。
+
+\bibitem[I06]{I06} 网页续研，\emph{O10 低密度端点与 O11 定量变分选择}，2026-09-29。\path{source_notes/I06_Direct_Work_and_Variational_Selection.md}。
+
+\bibitem[B01]{B01} S1003A01 / S1003A02，\emph{Mathematical Synthesis}，2026-10-07 快照。记录严格便宜单元、KE 转移、背景响应与当前范围。\path{source_notes/B01_Two_Session_Synthesis.md}。
+
+\bibitem[B02]{B02} S1003A01 / S1003A02，\emph{Proof connections, corrections, and questions}，2026-10-07 快照。\path{source_notes/B02_Connections_and_Corrections.md}。
+
+\bibitem[B03]{B03} S1003A02 Step 40，\emph{The Nijenhuis form of the signed field cost, its Weyl form, and pointwise exhaustion}。\path{source_notes/B03_Nijenhuis_and_Weyl_Identity.md}。
+
+\bibitem[B05]{B05} S1003A01 Step 33，\emph{Surgery slope law and ASD retention}。\path{source_notes/B05_Surgery_Slope_Law.md}。
+
+\end{thebibliography}
+
+\end{document}

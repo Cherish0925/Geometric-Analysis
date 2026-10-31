@@ -1,0 +1,453 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  10pt,
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[a4paper,margin=18mm]{geometry}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{esint}
+\providecommand{\Ric}{\operatorname{Ric}}
+\usepackage{fvextra}
+\usepackage{array}
+\fvset{breaklines=true,breakanywhere=true}
+\usepackage{xeCJK}
+\setmainfont{DejaVu Serif}
+\setmonofont{DejaVu Sans Mono}
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKmonofont{Noto Sans Mono CJK SC}
+\setmathfont{Asana Math}
+\setmathfont{Latin Modern Math}[range=\lrcorner]
+\setlength{\emergencystretch}{3em}
+\allowdisplaybreaks
+\hypersetup{hypertexnames=false}
+\pdfstringdefDisableCommands{\def\nolinkurl#1{#1}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\hypertarget{ux7b2cux4e00ux79d1ux5b66ux4e3bux7ebfux4e03ux6b21ux7eedux7814ux7684ux5b8cux6574ux5ba1ux8bfbux5305}{%
+\section{第一科学主线：七次续研的完整审读包}\label{ux7b2cux4e00ux79d1ux5b66ux4e3bux7ebfux4e03ux6b21ux7eedux7814ux7684ux5b8cux6574ux5ba1ux8bfbux5305}}
+
+2026年9月28日。数学快照：\nolinkurl{0b1490791be560203b86a7d9834dcdc3cbc83b41}。
+比较起点：上次完整阅读包 \texttt{844e62f}。其后的 \texttt{fbe5404}
+只是旧包制作，随后七次提交才是本次研究范围。后来网页讨论用过
+\texttt{e58b867} 的摘要；本包仍收入该次完整证明，避免摘要交流造成遗漏。
+
+\hypertarget{ux672cux5305ux56deux7b54ux4ec0ux4e48}{%
+\subsection{1.
+本包回答什么}\label{ux672cux5305ux56deux7b54ux4ec0ux4e48}}
+
+本包完整保存这段时间的十一份新数学正文、七份新核查记录、四份新归档指导，以及直接依赖的既有证明。另保留六份实际构造数值回执的全部数值和参数，转成可阅读的文字附录。不是把研究压缩为十一条摘要，也不是重新发送上万文件的工程档案。
+
+当前最强的全局基线仍是实际规范输入下的线性强制估计
+I40/I41。此次没有证明一般弱积分零端，也没有决定平衡族全部度量的最佳首项。真正的推进包括：纯积分参数界加强；所选恢复族首项稳定性的实质扩展；任意内部几何的局域首项与等号能量描述；一个排除过强区域选择方案的真实构造；真正近极小序列的必要退化；实际扭率方程的全局有符号消去与局部检验。
+
+这些结果不是``没有任何进展''，但也没有兑现完整目标。此次交流应让读者直接检查新证明、判断哪些连接最有力量，不能再以积极评价替代缺失的数学。
+
+项目状态 \texttt{manuscript-theorem}
+表示已写出命题与论证，不表示外部同行认证、首创性确认或期刊等级。本次整理本身不新增定理。
+
+\hypertarget{ux6587ux4ef6ux600eux4e48ux8bfb}{%
+\subsection{2. 文件怎么读}\label{ux6587ux4ef6ux600eux4e48ux8bfb}}
+
+每个 MD 都有同名可编辑
+TeX；两者是同一内容的两种表示，不必重复上传给阅读者。TeX 使用
+XeLaTeX，需 DejaVu、Noto CJK、Asana Math
+等字体。源文中的节号和公式号在每个原稿重新开始；引用请写``卷号＋原稿名＋节号／公式号''。
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)/3\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)/3\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)/3\relax}@{}}
+\toprule
+\begin{minipage}[b]{0.30\columnwidth}\raggedright
+文件\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedright
+内容\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedright
+作用\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+\nolinkurl{00_READ_FIRST}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+本导读\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+最新状态、统一符号、研究脉络、审读问题\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+\nolinkurl{01_actual_charge_and_parameter_improvement}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+I50、I51两稿全文\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+实际电荷、高指数模型、常权重参数加强\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+\nolinkurl{02_first_order_stability_and_moving_centers}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+I52、X09、I53三稿全文\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+扰动、移动中心、精确匹配帽和无规范稳定性\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+\nolinkurl{03_complete_cells_localization_and_selection}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+I54、I55、X10三稿全文\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+完整手术块、局域首项、负部质量与近极小序列\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+\nolinkurl{04_actual_torsion_and_global_signed_flux}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+三份实际扭率稿全文\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+零端微分方程、中央消去与最新实际核心检验\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+\nolinkurl{05_inherited_linear_coercivity}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+I40、I41全文\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+线性阶及无标量方差估计的既有证明\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+\nolinkurl{06_inherited_geometry_cores_and_variation}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+四份既有几何／变分稿全文\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+I42---I49及X06的直接前置\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+\nolinkurl{07_analytic_and_actual_topology_foundations}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+十一份原始技术稿全文\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+规范供给、曲率约定、参数与拓扑预算\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+\nolinkurl{08_verification_and_retained_calculations}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+十三份核查记录全文\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+验算、来源、失败尝试、未升格的计算\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+\nolinkurl{09_original_external_guidance}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+四份外部指导原文\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+上次审读、两次网页讨论、统一任务书与用户要求\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+\nolinkurl{10_source_map_and_history}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+演化、纠正与完整来源索引\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+逐项定位、版本继承、范围与哈希\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+\nolinkurl{11_numerical_constructions}\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+六份数值记录及数学基函数说明\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+全参数与结果，不含可执行脚本\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+快速评估先读本导读、第三卷的最后一稿、第一卷的
+I51、第四卷最后一稿的第6---7节；需要核准论证时沿第五至七卷回溯。第二卷回答``已证明的首项4究竟适用于多大的范围''。第八卷不能省略：有少量未进入主定理的推导只保存在其中，且保留了其验证限度。
+
+全书以冻结原稿为单位完整收入。原文相对链接仍指原工程路径；第十卷提供路径到卷号的对照。旧稿中的未来任务、未打包记录和旧状态按写作时点理解，以本导读和后续证明纠正，不静默改写历史。
+
+\hypertarget{ux5171ux540cux95eeux9898ux4e0eux7edfux4e00ux8bb0ux53f7}{%
+\subsection{3.
+共同问题与统一记号}\label{ux5171ux540cux95eeux9898ux4e0eux7edfux4e00ux8bb0ux53f7}}
+
+研究中心是：实际拓扑／规范场所强迫的曲率模式，能否与 Einstein
+方程在弱误差和几何退化中相容？
+
+记 \[
+\mathcal E(g)=\inf_{\lambda\ne0}
+\frac{\int|\operatorname{Ric}-\lambda g|^2}{\lambda^2V},\qquad
+P=\int|\operatorname{Ric}^{\circ}|^2,\quad R=\int|\operatorname{Ric}|^2.
+\] 若 \(R>0\)，令 \(L_s=\int(s-\bar s)^2\)，则 \[
+\mathcal E=\frac{4P+L_s}{R}
+=4-\frac{(\int s)^2}{VR}.
+\] 该公式的适用范围须保留：Ricci-flat 时原定义给出
+\(\mathcal E=4\)，不能把它当作零缺陷。
+
+平衡真实族固定为 \[
+M_j=X_j\# k_j\overline{\mathbb {CP}}^{\,2}
+\#\ell_j(S^1\times S^3),\quad
+A_j=c_1^2(X_j),\ Q_j=k_j+4\ell_j,
+\quad h_j=Q_j/A_j\longrightarrow0,
+\] 其中 \(X_j\)
+是规定的闭复双曲覆盖，整数手术与实际规范供给见第七卷及继承证明。不是在每一步随意换到另一类拓扑。
+
+I40/I41在完整实际供给条件下已取得 \[
+\Sigma\le C\bigl(P+D_2+\sqrt{(P+D_2)(T_+-a^2)_+}\bigr),
+\qquad \Sigma=\int s^2-32\pi^2p,
+\] 以及所述平衡族的 \[
+c_1h_j\le\inf_g\mathcal E(g)\le\frac{4h_j}{1+h_j}.
+\]
+所以``线性阶尚未证明''是过时状态。现在未知的是全部度量的最佳首项和其几何机制，而非是否能把二次阶提高到线性。
+
+注意跨稿符号复用：\(N\) 在相对区域稿中是 almost-Kähler
+扭率能量，在最新选择稿中是特定陈--Weil 密度的负部质量；\(h\)
+在部分通量计算中是截断权重，不是手术比值；\(F\)
+可指径向函数或旧有符号损失。合卷保留原式，不擅自统一改名；每次使用须先读原稿定义。
+
+\hypertarget{ux4e03ux6b21ux63d0ux4ea4ux5982ux4f55ux63a5ux7eedux800cux4e0dux662fux4e03ux4efdux4e92ux4e0dux76f8ux5e72ux7684ux62a5ux544a}{%
+\subsection{4.
+七次提交如何接续，而不是七份互不相干的报告}\label{ux4e03ux6b21ux63d0ux4ea4ux5982ux4f55ux63a5ux7eedux800cux4e0dux662fux4e03ux4efdux4e92ux4e0dux76f8ux5e72ux7684ux62a5ux544a}}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)/3\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)/3\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)/3\relax}@{}}
+\toprule
+\begin{minipage}[b]{0.30\columnwidth}\raggedright
+提交\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedright
+数学动作\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedright
+后续检验\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+e58b867\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+I50追踪完整标记核心的相对行列式电荷；X07给出零电荷、高扭率指数的实际局部场\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+电荷守恒不等于扭率代价控制；需检查全局延拓\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+e75105d\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+I51对同一个常权重实际解分解完整参数缺陷，保留两种误差尺度\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+紧化零端由三次改善到二次，但未成为非退化间隙\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+3409fe5\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+I52在真实收缩手术恢复序列上证明首项稳定性，逐步去掉振幅相对h的速率\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+指定规范能否从一般输入自动取得？\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+9e804ce\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+X09否定一致固定基底精确规范；I53改用精确匹配帽，得到无规范C0邻域结论\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+不再强修已失效的规范路线；仍需一般输入的几何供给\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+105df84\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+I54完整区域成本与共形almost-Kähler检验；实际扭率延长去掉理想闭合前提\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+检查一般非Kähler块及剩余对称导数相互作用\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+0fb009c\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+I55以外部实际积分预算允许任意内部几何；排除整个指定非共形单bolt径向类；全局通量消去中央项\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+区域选择能否自动供给？全局消去是否留下正预算？\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+0b14907\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+X10否定所有竞争序列的自动选择；证明真正近极小序列排除正密度固定光滑块；实际核心检验最终零端恒等式\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+继续真正近极小选择、带补偿估计或完整实际低成本构造，不能重开已否定的强命题\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{ux53c2ux6570ux7aefux4e0dux662fux53eaux6709ux5b9aux4f4dux4e5fux6709ux65b0ux7684ux7edfux4e00ux4f30ux8ba1}{%
+\subsubsection{4.1
+参数端：不是只有定位，也有新的统一估计}\label{ux53c2ux6570ux7aefux4e0dux662fux53eaux6709ux5b9aux4f4dux4e5fux6709ux65b0ux7684ux7edfux4e00ux4f30ux8ba1}}
+
+I51在完整实际供给下证明 \[
+(1+b_a)\left(r+\frac{D_\beta}{\beta V}\right)
+\ge c\frac{(\beta-2)^2}{\beta^4},\quad \beta\ge2.
+\] 其紧化形式为 \[
+(1+b_a)\left(r+\frac{P_t}{V}\right)
+\ge ct^2(1-2t)^2.
+\] 在原稿的类平方条件下可去掉平方成本因子。这里没有另加点态
+Ricci、直径、非塌缩或 Sobolev 条件；它同时加强指定上能量壁。必须保留
+\(D_\beta/(\beta V)\) 的归一化，不能把它与旧式 \(D_\beta/V\)
+混淆后宣布已经得到非退化零端。
+
+O10仍需排除完整实际序列
+\(\beta_j\to\infty\)、\(r_j+D_{\beta_j}/V_j\to0\)，先可保留拓扑比值界。它不是KE端的近平行问题：在目标归一化中平均形式导数能量趋于
+\(8/3\)，不是零。
+
+\hypertarget{ux9996ux9879ux4eceux6307ux5b9aux6270ux52a8ux6269ux5c55ux5230ux4efbux610fux5185ux90e8ux4f46ux4ecdux4e0dux662fux6240ux6709ux5ea6ux91cf}{%
+\subsubsection{4.2
+首项：从指定扰动扩展到任意内部，但仍不是所有度量}\label{ux9996ux9879ux4eceux6307ux5b9aux6270ux52a8ux6269ux5c55ux5230ux4efbux610fux5185ux90e8ux4f46ux4ecdux4e0dux662fux6240ux6709ux5ea6ux91cf}}
+
+I52保留可检查的TT／常标量Bianchi条件。X09说明，C0接近及小规范残差不能自动给出一致的固定基底精确规范；这些反例自身仍有首项4。I53绕开该归约，以小C0振幅和小临界曲率积分构造精确匹配原领口的帽，得到所选恢复序列任意收缩C0邻域中的首项4。微分同胚和实际标记中心不能删掉。
+
+I55进一步证明：若有足够大的复双曲外部区域，或满足明示的外部积分预算，补集的幅度、塌缩、集中及内部拓扑安排可以完全不受先验控制，仍有首项下界4。复双曲外部情形的等号对应整个补集的体积、标量平方及正手性Weyl能量为
+\(o(Ah)\)。一般外部版本还保留外部缺陷与体积比：在原稿(4.3)条件下，等号要求
+\(e_{\rm out}=o(h)\)、\(v/a=o(h)\)、\(S+W=o(Q)\)，符号定义见原稿。这解释了``局域结论变强''的具体含义，而非把更强假设藏进定义。
+
+最新稿用 \[
+f_g=\frac{s^2/12+4|W^+|^2-|\operatorname{Ric}^{\circ}|^2}{8\pi^2},
+\qquad N(g)=\int(f_g)_-
+\] 把竞争序列中的I55区域选择等价为
+\(N\ge Q-o(Q)\)。经典全纯Morse理论对真正Kähler吹起供给
+\(N\ge k\)，但不能推广为任意度量。
+
+X10在原平衡族上构造 \(s=-4\)、\(\mathcal E=O(h)\) 的真实度量，使 \(N/Q\)
+与1保持正距离。其首项严格大于4，因此它否定的是过强的自动选择命题，不是O11的系数4，更不是新的Yau26反例。
+
+另一方面，在 \(s=-4\) 的归约类中，若
+\(\mathcal E(g_j)-\inf\mathcal E=o(h_j)\)，则任何固定光滑C4紧致族内、具有完整复双曲领口的非平凡手术块，只能出现
+\(o(Q_j)\)
+个。这里C4表示四阶连续导数拓扑；证明使用真正有限变分，不给近极小序列擅自添加驻点方程。下一步必须处理退化块、无法提取该领口的几何，或精确的有符号补偿。
+
+最新原稿保留非负成本 \(Z\)，得到 \[
+\frac{\mathcal E}{h}
+=\frac{4N}{Q}+\frac{Z}{2\pi^2Q}
+ +\frac{L_s}{8\pi^2Q}+o(1).
+\] 常标量情形若能证明
+\(Z\ge8\pi^2(Q-N)-o(Q)\)，即可闭合所需首项。但这目前只是精确的剩余命题，不是已证的``无隐藏损失定理''。
+
+\hypertarget{ux771fux5b9eux6784ux9020ux68c0ux9a8cux54eaux4e9bux7c7bux5df2ux6392ux9664ux54eaux4e9bux8fd8ux6ca1ux6709}{%
+\subsubsection{4.3
+真实构造检验：哪些类已排除，哪些还没有}\label{ux771fux5b9eux6784ux9020ux68c0ux9a8cux54eaux4e9bux7c7bux5df2ux6392ux9664ux54eaux4e9bux8fd8ux6ca1ux6709}}
+
+完整区域稿保留匹配外领口、相对拓扑、体积与所有过渡成本。已排除整个规定共形Kähler普通吹起类，并在I55第8节排除无共形改变的整个普通单bolt对角almost-Kähler径向类；径向函数和三轴变形不要求小。
+
+允许任意共形因子之后，仍有完整非负平方分解，但留下真实的有符号梯度窗口。在固定外领口半径、bolt参数
+\(\mu\to0\) 的序列中，固定正幅度改进必须同时保留微观区域中的 \(\mu\)
+加权共形梯度预算与不消失的背景改动体积。这是两尺度必要结构，尚未证明两者不能共同实现。
+
+28次有限维搜索没有找到成本低于4的构造；另有高成本块的真实下降方向，但下降后仍远高于4。二者均不能证明全局下界。第十一卷保留全部参数、数值及未满足容差的返回，不把失败优化写成成功。
+
+\hypertarget{ux96f6ux7aefux771fux6b63ux7684ux5269ux4f59ux95eeux9898ux5df2ux7ecfux6539ux53d8}{%
+\subsubsection{4.4
+零端：真正的剩余问题已经改变}\label{ux96f6ux7aefux771fux6b63ux7684ux5269ux4f59ux95eeux9898ux5df2ux7ecfux6539ux53d8}}
+
+实际相位曲率、三次扭率及交换子逐步延长后，全局Stokes与带截断Lichnerowicz恒等式消去了中央和标量导数项。与此同时，原来的正拓扑预算也精确抵消。最终式为
+\[
+\|\vartheta W^- -\widetilde H\|_2^2-\|\widetilde H\|_2^2
+=\|\vartheta\mathsf R\|_2^2
+-2\int\vartheta\langle\mathsf R,H^+\rangle.
+\]
+所以即使右侧趋零，也只有平方差趋零，不产生矛盾。不能把前稿尚未消去时的正项搬回来，声称只差一个普通Hölder估计。
+
+最新第7节用真实双曲背景上的常权重单极子核心检验此式：两侧可以同时为零，而指定壳层的临界能量满足
+\[
+E_- -\frac89 E_+=\frac{32\pi^2}{3}.
+\]
+局部拟合成本按尺度四次、一阶导数的二次能量按尺度二次下降，临界成本不消失。这没有构成闭流形逃逸序列，也说明不能仅靠局部三次来源和这条通用恒等式恢复严格正性。缺的是完整实际供给、外部匹配与剩余有符号相互作用之间的新连接。
+
+\hypertarget{ux4e0dux5e94ux518dux91cdux590dux7684ux5de5ux4f5cux548cux4ecdux5e94ux4fddux7559ux7684ux76eeux6807}{%
+\subsection{5.
+不应再重复的工作和仍应保留的目标}\label{ux4e0dux5e94ux518dux91cdux590dux7684ux5de5ux4f5cux548cux4ecdux5e94ux4fddux7559ux7684ux76eeux6807}}
+
+已经完成的事项：小h线性阶、去标量方差、有界Ricci与受控Euler密度范畴的零端、只添柄子族的精确值、纯积分紧化零端的二次加强，以及中央与标量导数的上述全局消去。另一方面，固定基底精确规范的普遍供给、所有竞争序列的自动bulk选择这两个强命题已被限定反例否定。二者都不能继续列为``仍差最后一步''。
+
+目前首要开放目标仍是：一般实际弱积分零端O10、平衡族全度量最佳首项O11，以及能直接服务二者的退化／有符号补偿机制。原始输入到完整带标记核心、无直径陈数边界实现和固定
+\(E_D\)
+的全部Einstein判定仍有独立缺口。本包不把它们宣布解决，也不让它们抹掉已经形成的障碍主结果。
+
+``完整缺陷分解''和``一阶Γ极限''仍是可能的方法，不是已证明的总理论或必须先做成的前置。若直接实际方程能闭合关键有符号估计，可以采用更短路线。
+
+\hypertarget{ux8bf7ux5916ux90e8ux5ba1ux8bfbux4f18ux5148ux56deux7b54ux7684ux5177ux4f53ux95eeux9898}{%
+\subsection{6.
+请外部审读优先回答的具体问题}\label{ux8bf7ux5916ux90e8ux5ba1ux8bfbux4f18ux5148ux56deux7b54ux7684ux5177ux4f53ux95eeux9898}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{I51的新指数是否确实来自同一实际解？}
+  核查第一卷常权重分解、Ricci/Weyl误差的不同尺度、共形转移与全部权重量词；有无隐藏的几何常数？
+\item
+  \textbf{I53的精确匹配帽是否完整？}
+  核查第二卷平滑时间、临界能量保留、原领口匹配及坏核心收费。是否真的支持任意收缩C0邻域，而非需要振幅相对h的速率？
+\item
+  \textbf{I55的任意内部结论及等号刻画是否准确？}
+  对照第三卷原恒等式，核查外部预算、全部补集成本和两尺度必要条件。能否在真正近极小情形供给区域选择或更弱带补偿结论？
+\item
+  \textbf{X10与近极小排除命题是否接通实际几何？}
+  检查负质量原函数、常标量ODE、局部标量粘合的伴随核、固定流形Yamabe极限及再取覆盖对角。特别检查``固定参数后再稀释''，不能擅自交换极限。再核有限变分的统一下降是否只用于声明的紧致块族。
+\item
+  \textbf{完整耦合类是否存在更低首项？}
+  普通非共形单bolt类已经排除；请针对任意共形因子留下的窗口和全部剩余平方，给出全局估计或满足完整领口的实际构造，而非形式曲率参数。
+\item
+  \textbf{零端是否存在新的严格有符号机制？}
+  从第四卷最终(6.6)及第7节实际核心出发，说明需要哪一条额外实际方程或外部信息。请不要重复已相消的正预算，或把仅令右侧小当成矛盾。
+\item
+  \textbf{最近邻文献中是否已有等价结论或更短证明？}
+  请具体到定理假设、结论和证明段落。BF/Pin-minus与经典曲率、全纯Morse、局部标量粘合是输入；利用它们不等于包含这些理论的全部结论。
+\end{enumerate}
+
+若指出缺口，请给卷号、原稿、式号及失败的推理箭头；若建议新路线，请说明它改变O10/O11或实际适用范围的哪一项，不必再生成宏大方向清单。
+
+\hypertarget{ux5b8cux6574ux6027ux7684ux8fb9ux754c}{%
+\subsection{7.
+完整性的边界}\label{ux5b8cux6574ux6027ux7684ux8fb9ux754c}}
+
+本包保全的是指定提交范围内全部已保存数学正文与研究核查，以及直接技术依赖。不是未经筛选的全部对话、思考token、运行日志或三条主线的所有历史文件。六份数值回执保留全部JSON值但重排缩进，未加入可执行脚本；程序源和完整本地Git历史仍在工程中。
+
+构建检查逐原稿字节、逐公式转换、全部TeX编译和ZIP解包回读。它们证明交付未丢失被选文本与公式，不证明PDE定理正确。旧稿保留原文，后续更强版本及纠正通过导读和第十卷定位。
+
+这次交流的意义是把已经做出的完整数学摆到同一张桌面上，找到真正缺失的连接。没有声称研究已到极限，也不以增加文件数量或相互认可代替成果分量。
+
+\end{document}

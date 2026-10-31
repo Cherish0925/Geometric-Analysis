@@ -1,0 +1,318 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,microtype,esint}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\DeclareMathOperator{\Ric}{Ric}
+\DeclareMathOperator{\Rm}{Rm}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\spec}{spec}
+\DeclareMathOperator{\Vol}{Vol}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\RP}{\mathbb{RP}}
+\newcommand{\ip}[2]{\left\langle #1,#2\right\rangle}
+\title{Einstein Spectral Stability and Ricci-Energy Degeneration\\\large A direct continuation of the four-problem program}
+\author{Research continuation prepared for the project}
+\date{8 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+The project's complete strictly almost-K\"ahler negative Einstein metric has an Einstein-operator lower bound of $2$, no smooth $L^2$ infinitesimal Einstein deformations in TT gauge, and a coercive traceless-Ricci Hessian. This follows by localizing Artacho's recent chiral spinor identity. We also construct a zero-Ricci-energy quotient degeneration, exclude its smooth compact orbifold limit for $c_1^2(X)\le9$ under two-sign monopole supply, and compute an exact conformally reduced stability test. These statements strengthen the available analytic and geometric inputs. They do not determine the unrestricted blowup infimum, prove smooth attainment, settle the small-blowup Einstein problem, or solve the closed negative Goldberg problem.
+\end{abstract}
+
+\section{Conventions and the inherited complete metric}
+Set
+\[
+ P(g)=\int_M|\Ric^\circ_g|^2\,dV_g,\qquad
+ \Ric^\circ=\Ric-\frac{s}{4}g.
+\]
+Curvature-operator norms are used for $\Rm$ and $W^\pm$; thus the operator on two-forms is $K\Id$ on a space form of sectional curvature $K$. Tensor norms of symmetric two-tensors are Hilbert--Schmidt norms. With this convention, on a closed four-manifold,
+\begin{equation}\label{eq:GB}
+ \int|\Rm_{\rm op}|^2=8\pi^2\chi+P.
+\end{equation}
+Write $L=\nabla^*\nabla$ for a nonnegative rough Laplacian. For scalar functions we also use $\Delta=\operatorname{div}\nabla=-L$ where explicitly indicated.
+
+The construction in the supplied manuscript \emph{03\_Subsequent\_Mathematical\_Developments.tex}, and the previous independent Cartan calculation, give a smooth complete metric with
+\begin{equation}\label{eq:inherited}
+ \Ric=-3g,\qquad \widehat R_-=-\Id,\qquad
+ d\Omega=0,\quad |\Omega|^2=2,\quad |\nabla\Omega|>0.
+\end{equation}
+The construction is inherited from the user's research system. The present paper adds properties of it.
+
+Here is the explicit local formula, also fixing all normalizations. Let
+$D=1+3x^2$, $1/3<x<1$, and
+\[
+ d\sigma_1=-2\sigma_2\wedge\sigma_3,\quad
+ d\sigma_2=2\sigma_3\wedge\sigma_1,\quad
+ d\sigma_3=2\sigma_1\wedge\sigma_2.
+\]
+Put $g=G\,dx^2+\sum A_i\sigma_i^2$, where
+\begin{align*}
+ G&=\frac{4D}{(1-x)^2(1+x)^2(3x-1)(3x+1)},\\
+ A_1&=\frac{4(3x-1)D}{3(1-x)(1+x)^2},&
+ A_2&=\frac{4(3x+1)D}{3(1-x)^2(1+x)},\\
+ A_3&=\frac{64x^2}{(1-x)(1+x)D}.
+\end{align*}
+In the orthonormal coframe $e^0=\sqrt G\,dx$, $e^i=\sqrt{A_i}\sigma_i$, let $\omega_i=e^{0i}+e^{jk}$ for cyclic $(i,j,k)$, and
+\[
+ X_1=\frac{(1-x)^3(3x+1)}{16x^3},\qquad
+ X_2=\frac{(1+x)^3(3x-1)}{16x^3},\qquad
+ \Omega=\sqrt{X_1}\omega_1+\sqrt{X_2}\omega_2.
+\]
+The end $x=1/3$ is the smooth zero section in the inherited disk-bundle construction, and $x=1$ is at infinite distance. The supplied smooth extension and the independent curvature script are retained in the accompanying files. In particular
+\begin{equation}\label{eq:q}
+ q:=|\nabla\Omega|^2=\frac{36(1-x^2)^3}{D^3}.
+\end{equation}
+
+\section{A strict spectral estimate for the complete example}
+At an Einstein metric $\Ric=\lambda g$, define
+\[
+ \mathcal A=\Delta_L-2\lambda=\nabla^*\nabla-2\mathring R,
+ \qquad (\mathring Rh)_{ij}=R_{iklj}h_{kl}.
+\]
+Here $R(X,Y)=[\nabla_X,\nabla_Y]-\nabla_{[X,Y]}$.
+
+\begin{theorem}\label{thm:stability}
+For the complete metric \eqref{eq:inherited}, every smooth compactly supported trace-free symmetric tensor satisfies
+\begin{equation}\label{eq:factor}
+ \ip{\mathcal Ah}{h}_{L^2}
+ =\|\mathcal D\Phi_-(h)\|_2^2+2\|h\|_2^2
+ \ge2\|h\|_2^2.
+\end{equation}
+The Friedrichs realization on trace-free $L^2$ tensors has spectrum contained in $[2,\infty)$ and inverse norm at most $1/2$. Every smooth trace-free $L^2$ solution of $\mathcal Ah=0$ vanishes.
+\end{theorem}
+
+\begin{proof}
+Artacho's canonical twisted-spinor construction and curvature calculation \cite{Artacho26} give a parallel isometric bundle map $\Phi$ and
+\[
+ \mathcal R_\psi=(2\widehat R_+-\lambda\Id)\otimes\Id
+ \quad\text{on}\quad
+ \operatorname{Sym}_0^2T^*M\simeq\Lambda^+\otimes\Lambda^-.
+\]
+The underlying local differential identity is Lemma 3 of \cite{Artacho25}. Its integrated form, for compactly supported $h$, is
+\[
+ \|\mathcal D\Phi(h)\|_2^2
+ =\ip{\mathcal Ah}{h}_{L^2}
+   +\lambda\|h\|_2^2+\ip{\mathcal R_\psi h}{h}_{L^2}.
+\]
+Reverse orientation and substitute $\widehat R_-=-\Id$ to obtain \eqref{eq:factor}. Compact support justifies the integration on this infinite-volume manifold. No divergence condition was used.
+
+The lower bound passes to the closed Friedrichs form, proving the spectral assertion. To check zero modes directly, suppose $\mathcal Ah=0$ and $h\in L^2$ is smooth. Completeness gives cutoffs $\chi_R$ with $\chi_R=1$ on $B_R$, compact support in $B_{2R}$, and $|d\chi_R|\le C/R$. Local integration by parts gives
+\[
+ \ip{\mathcal A(\chi_Rh)}{\chi_Rh}_{L^2}
+ =\Re\ip{\mathcal Ah}{\chi_R^2h}_{L^2}
+  +\int|d\chi_R|^2|h|^2.
+\]
+Consequently $2\int\chi_R^2|h|^2\le C^2R^{-2}\|h\|_2^2$, and $h=0$. The cutoff need not preserve the divergence constraint because \eqref{eq:factor} holds on all trace-free tensors.
+\end{proof}
+
+\begin{corollary}\label{cor:Hess}
+For every compactly supported transverse-traceless tensor $h$,
+\begin{equation}\label{eq:Phess}
+ P''_g(h,h)=\tfrac12\|\mathcal Ah\|_2^2\ge2\|h\|_2^2.
+\end{equation}
+The relative cosmological Einstein--Hilbert action has Hessian at most $-\|h\|_2^2$ on the same tensors.
+\end{corollary}
+\begin{proof}
+At the Einstein background, $s'[h]=0$ and $(\Ric^\circ)'[h]=\mathcal Ah/2$. Since $\Ric^\circ=0$, differentiating the norm or volume contributes nothing to $P''$, proving its exact expression. Cauchy--Schwarz and \eqref{eq:factor} imply $\|\mathcal Ah\|_2\ge2\|h\|_2$.
+
+For compactly supported changes define the finite relative action
+\[
+ \mathcal S_{\rm rel}(\widetilde g;g)
+ =\int_M\big[(s_{\widetilde g}-2\lambda)dV_{\widetilde g}
+                  -(s_g-2\lambda)dV_g\big].
+\]
+In dimension four its Einstein Hessian on TT tensors is
+$-\tfrac12\ip{\mathcal Ah}{h}_{L^2}$, giving the conclusion.
+\end{proof}
+
+The number $2$ is a proved lower bound, not a calculation of the exact spectral bottom. These conclusions concern compactly supported variations and the stated $L^2$ realization. They assert neither rigidity for changes of the asymptotic geometry nor a compact quotient. The general spinorial mechanism belongs to \cite{Artacho25,Artacho26}; the application and complete-manifold domain argument above connect it to the project's metric.
+
+\section{Global integrability and a convergent curvature defect}
+Take the inherited disk-bundle quotient over a compact hyperbolic surface $\Sigma_g$, $g\ge2$, and set $V_\Gamma=2\pi^2(g-1)$. Its zero section is a deformation retract, so $\chi(M)=2-2g$. Define
+\[
+ t=\frac{1-x^2}{1+3x^2},\qquad 0<t\le\frac23.
+\]
+Direct substitution in the volume density and \eqref{eq:q} gives
+\begin{equation}\label{eq:radial}
+ q=36t^3,\qquad dV=\frac83t^{-3}|dt|\wedge\sigma_{123}.
+\end{equation}
+For finite $p>0$ it follows that
+\begin{equation}\label{eq:lp}
+ \nabla\Omega\in L^p\quad\Longleftrightarrow\quad p>\frac43.
+\end{equation}
+Indeed $\int q^a=(8/3)36^aV_\Gamma(2/3)^{3a-2}/(3a-2)$ precisely when $a>2/3$. The previously known $L^2$ and $L^4$ integrals are particular cases, not additional new constructions.
+
+The Weyl density, obtained from the already verified curvature components, is
+\[
+ w:=|W^+|^2=6+486t^6-486t^5+108t^4-18t^3.
+\]
+Equations \eqref{eq:radial} imply absolute convergence and give
+\begin{equation}\label{eq:relative}
+ \boxed{\int_M\big(|\Rm_{\rm op}|^2-12\big)dV
+ =32\pi^2\chi(M)=-\frac12\int_M|\nabla\Omega|^2dV.}
+\end{equation}
+Here $|\Rm_{\rm op}|^2=w+6$. The integral in \eqref{eq:relative} is an integral of a convergent density difference, not subtraction of divergent integrals.
+
+For completeness, put $K(t)=(t-1)(3t-2)(3t+1)$. Then $|dt|^2=t^2K(t)$ and, with $\Delta=\operatorname{div}\nabla$,
+\[
+ \Delta f=t^3\frac{d}{dt}\big(t^{-1}K(t)f'(t)\big).
+\]
+In particular
+\[
+ \Delta(t^2)\in L^1,\qquad
+ \int_M\Delta(t^2)dV=-\frac{32}{3}V_\Gamma\ne0.
+\]
+The gradient $d(t^2)$ is not $L^1$. Thus this calculation does not contradict a complete-manifold Stokes theorem. The ordinary total $\Delta q$ flux, in contrast, is zero.
+
+If $M_\epsilon=\{t\ge\epsilon\}$ includes the zero section and the boundary term is normalized by $\chi(M_\epsilon)=\int e(g)+\mathcal B(\partial M_\epsilon)$, direct integration gives
+\[
+ \mathcal B(\partial M_\epsilon)
+ =(g-1)\big[-4\epsilon^{-2}+15-12\epsilon
+     +36\epsilon^2-108\epsilon^3+81\epsilon^4\big].
+\]
+Finite torsion energy and the strict spectral estimate coexist with a nonvanishing characteristic boundary contribution. Neither replaces the closed hypothesis in Goldberg's question.
+
+\section{A realizable zero-Ricci-energy quotient bubble}
+Let $B_2=D(T^*\RP^2)$ with its symplectic orientation. Its interior $N$ is the free antipodal cotangent quotient of Eguchi--Hanson, and has a complete Ricci-flat ALE metric. The classical quotient construction \cite{Wright} gives
+\begin{equation}\label{eq:ball}
+ \pi_1(N)=\mathbb Z_2,\quad b_2(N)=0,\quad
+ \chi(N)=1,\quad |\Gamma_\infty|=4,\quad
+ P(N)=0,\quad \int_N|\Rm_{\rm op}|^2=6\pi^2.
+\end{equation}
+The standard real $\RP^2\subset\CP^2$ is Lagrangian, so its tubular neighborhood is $B_2$. Reversing orientation and choosing the connected-sum ball outside it proves that every $M=X\#\overline{\CP}^{\,2}$ contains $-B_2$. Its fundamental group maps trivially into $\pi_1(M)$, since the inclusion factors through punctured $\overline{\CP}^{\,2}$.
+
+\begin{proposition}\label{prop:gluing}
+Replace this embedded $-B_2$ by the cone on its spherical space-form boundary to obtain a compact orbifold $O$. For every smooth orbifold metric $g_0$ on $O$, there are smooth metrics $g_a$ on $M$ converging to $g_0$ away from the singular point and developing $-N$ as a rescaled bubble, with
+\begin{equation}\label{eq:zero-loss}
+ P(g_a)\longrightarrow P_{\rm orb}(g_0).
+\end{equation}
+In particular $P_*(M)\le P_{*,\rm orb}(O)$.
+\end{proposition}
+
+\begin{proof}
+Orbifold normal coordinates give $g_0=g_{\rm euc}+O(r^2)$ with two differentiated bounds. The ALE end has $g_N=g_{\rm euc}+O(R^{-4})$ and the corresponding differentiated bounds. Insert $a^2g_N$ and match on radius $r_a=a^q$, for fixed $0<q<1$. On the matching annulus the metric is uniformly equivalent to the flat quotient and
+\[
+ |\Rm(g_a)|\le C(1+a^4r_a^{-6}).
+\]
+Its curvature-square integral is bounded by
+\[
+ C\big(r_a^4+a^8r_a^{-8}+a^4r_a^{-2}\big)=o(1).
+\]
+The inserted inner region is Ricci-flat; the removed orbifold ball contributes $O(r_a^4)$. This proves \eqref{eq:zero-loss}. Since $r_a/a\to\infty$, the rescaled region exhausts $N$. Taking infima proves the comparison.
+\end{proof}
+
+This is a family of actual competitors, not an assertion that these competitors minimize. The characteristic accounting agrees with the construction:
+\[
+ \chi_{\rm orb}(O)=\chi(M)-\frac34,
+\]
+so the $6\pi^2$ full-curvature contribution in \eqref{eq:ball} precisely cancels the Euler change in \eqref{eq:GB}. A nontrivial curvature bubble need not carry positive $P$.
+
+If $\pi_2(X)=0$, each spherical class on the one-point blowup is $nE$, where $E^2=-1$. Hence no embedded sphere has square $2$ or $-2$, excluding the usual ADE cores in either orientation. This already available topological observation does not exclude the quotient core just constructed: its rational second homology is zero.
+
+In fact, within the Ricci-flat half-conformally-flat ALE class, every embeddable nonflat core on this one-point blowup must have $b_2=0$. For a non-simply-connected core, Wright's classification gives $\pi_1(N)=\mathbb Z_d$ and $|\Gamma_\infty|=d^2(b_2+1)$. The Hopf sequence and $H_2(\mathbb Z_d;\mathbb Z)=0$ show that all its homology classes are spherical. Its nondegenerate definite intersection form injects rationally into the exceptional lattice, so $b_2\le1$. If $b_2=1$, the boundary exact sequence and duality give $|\det Q_N|=|\Gamma_\infty|/d^2=2$. A rank-one sublattice of $(-1)$ has determinant an integer square, a contradiction. This does not classify Ricci-flat ALE spaces without the half-conformal-flatness assumption.
+
+There is nevertheless an orientation-sensitive exclusion. Suppose the ordinary general-type scalar budget $S(g)=\int s_g^2\ge32\pi^2A$ holds on the one-point blowup, where $A=c_1^2(X)$ and $2\chi+3\tau=A-1$. If $P(g_j)\le8\pi^2-\delta$ with fixed $\delta>0$, then
+\begin{equation}\label{eq:Wbudget}
+ \int|W^+_{g_j}|^2
+ =\frac{P(g_j)}4-\frac{S(g_j)}{48}+2\pi^2(A-1)
+ \le\frac{4\pi^2A}{3}-\frac\delta4.
+\end{equation}
+The reversed bubble $-N$ carries $6\pi^2$ in $W^+$. Smooth pointed bubble convergence and nonnegativity of this energy therefore exclude it when $A\le9/2$, in particular for integer $A\le4$. The unreversed bubble has a different Weyl budget. This exclusion does not classify all bubbles or rule out collapse.
+
+\subsection{Actual-field transfer excludes the compact orbifold branch up to $A=9$}
+The stronger conclusion below uses actual solutions on the orbifold bulk, rather than only its Weyl integral. The smoothing construction transfers the actual supply to every orbifold metric; one need not start with a minimizing limit.
+
+\begin{theorem}\label{thm:orbifold}
+Let $M=X\#\overline{\CP}^{\,2}$, with $K^2=A>0$, $E^2=-1$, $K\cdot E=0$, and $2\chi(M)+3\tau(M)=A-1$. Suppose $K+E$ and $K-E$ have actual unperturbed Seiberg--Witten solutions for every smooth metric. Let $O$ be the smooth compact orbifold obtained by replacing the specified embedded $-B_2$ by one standard $\mathbb Z_4$ quotient point. Then every smooth orbifold metric $g_0$ satisfies
+\begin{equation}\label{eq:A9}
+ P_{\rm orb}(g_0)\ge8\pi^2(4-A/3).
+\end{equation}
+If $A\le9$, no sequence with $\limsup P(g_j)<8\pi^2$ can converge smoothly on compact regular subsets to a smooth orbifold metric on this marked $O$.
+\end{theorem}
+\begin{proof}
+Fix any smooth orbifold metric $g_0$. Apply Proposition \ref{prop:gluing} with $r_a=a^{1/2}$. On the matching annulus the curvature is bounded by $C(1+a)$, in the inserted interior it is Ricci-flat, and on the exterior it equals that of $g_0$. Thus the smoothing metrics have a uniform scalar-curvature lower bound and uniformly bounded volume. The SW maximum principle, curvature equation and
+\[
+ \int(|F^+|^2-|F^-|^2)=4\pi^2(K\pm E)^2
+\]
+therefore give bounded spinors and uniformly bounded determinant-curvature energy. Coulomb gauge and elliptic regularity give convergent solutions on each compact regular subset. On the uniformizing punctured ball of the limiting point, finite curvature energy gives a $W^{1,2}$ Coulomb connection. The bounded spinor and the equations extend across the point; elliptic bootstrapping gives a smooth solution. The finite group action retains its spin$^c$ lift and determinant isotropy character. This is an orbifold solution, not a declaration that the local bundle is trivial downstairs. Applying the construction separately to every $f^2g_0$ gives the entire conformal-class supply required by the mixed estimate. No estimate uniform over all $f$ is asserted or needed.
+
+Since $B_2$ has zero real second cohomology and its boundary is a real homology sphere, excision identifies $H^2(M;\mathbb R)$ with $H^2_{\rm orb}(O;\mathbb R)$, preserving cup products. Thus $K_O^2=A$, $E_O^2=-1$, and $K_O\cdot E_O=0$. For the orbifold Hodge decomposition,
+\[
+ \frac{\|(K_O+E_O)^+\|^2+\|(K_O-E_O)^+\|^2}{2}
+ =\|K_O^+\|^2+\|E_O^+\|^2\ge A.
+\]
+At least one actual class has self-dual square at least $A$. This recovers the projection bound on the bulk without a neck energy identity or prelimit Hodge convergence.
+
+The reversed quotient's Euler and signature curvature contributions are $3/4$ and $1/2$. Consequently
+\[
+ \chi_{\rm orb}(O)=\chi(M)-3/4,\qquad
+ \tau_{\rm curv}(O)=\tau(M)-1/2,\qquad
+ T_{\rm curv}(O)=A-4.
+\]
+Here $\tau_{\rm curv}$ is the signature curvature integral, including the quotient correction, not the signature of the real intersection form. LeBrun's integrated mixed estimate \cite{LeBrun}, applied on the invariant orbifold charts with the conformal-class supply just obtained, gives
+\[
+ P_{\rm orb}(g_0)\ge8\pi^2\left(\frac23A-T_{\rm curv}(O)\right),
+\]
+which is \eqref{eq:A9}. Nonnegative-energy lower semicontinuity gives $P_{\rm orb}(g_0)\le\liminf P(g_j)$ and completes the exclusion.
+\end{proof}
+This proves an intrinsic obstruction for every metric on the specified orbifold, and therefore excludes that smooth compact orbifold branch. It does not supply the compactness needed to put every near-minimizing sequence in that branch. The ordinary ASD orientation, partial collapse and other singular limits remain separate possibilities.
+
+\section{The exact conformally reduced Ricci-energy Hessian}
+This section concerns a smooth closed connected four-manifold and a $P$-critical metric with constant scalar curvature $s<0$. All inner products are integrated at this metric. Write $E=\Ric^\circ$ and $L=-\operatorname{div}\nabla$ on functions, and denote the unrestricted Hessian by $H_P$.
+
+\begin{proposition}\label{prop:Schur}
+For every TT tensor $h$, set
+\[
+ a_0=\ip{E}{h}-\fint_M\ip{E}{h},\qquad
+ f_h=(6L-2s)^{-1}a_0.
+\]
+Then the minimum over smooth conformal corrections, modulo constants, is
+\begin{equation}\label{eq:Schur}
+ \min_f H_P(h+2fg,h+2fg)
+ =H_P(h,h)-\ip{a_0}{L(6L-2s)^{-1}a_0}_{L^2}.
+\end{equation}
+It is attained at $f_h$, and $s'[h+2f_hg]=-\fint\ip{E}{h}$ is constant.
+\end{proposition}
+
+\begin{proof}
+The closed Chern--Weil identity and conformal invariance of the Weyl integral give
+\[
+ P=2\int|W|^2+\frac1{12}\int s^2-16\pi^2\chi,
+ \qquad DP[2fg]=\int sLf.
+\]
+At constant $s$, differentiating $\int Lf=0$ cancels the operator and volume variations. Since $s'[h]=-\ip{E}{h}$ for TT $h$,
+\[
+ H_P(h,2fg)=-\ip{a_0}{Lf},\qquad
+ H_P(2fg,2fg)=6\|Lf\|_2^2-2s\ip{f}{Lf}.
+\]
+The latter also follows by differentiating
+$s_{e^{2tf}g}=e^{-2tf}(s+6tLf-6t^2|df|^2)$.
+Completing the square on mean-zero functions proves \eqref{eq:Schur}, because $6L-2s$ is strictly positive. The scalar-variation assertion follows from $s'[2fg]=(6L-2s)f$.
+\end{proof}
+
+The contracted Bianchi identity makes $E$ TT. Thus every smooth local $P$-minimum with $s<0$ satisfies, for $q_0=|E|^2-\fint|E|^2$,
+\begin{equation}\label{eq:variance}
+ H_P(E,E)\ge\ip{q_0}{L(6L-2s)^{-1}q_0}
+ \ge\frac{\lambda_1}{6\lambda_1-2s}\|q_0\|_2^2,
+\end{equation}
+where $\lambda_1>0$ is the first nonzero scalar eigenvalue. This supplies an explicit combined TT/conformal instability test for a candidate. No sign for $H_P(E,E)$ follows from the calculation alone, and no existence of a critical point has been assumed as a conclusion.
+
+\section{What the continuation decides}
+The complete non-K\"ahler negative Einstein example is strictly spectrally stable in the stated sense and has no $L^2$ TT infinitesimal Einstein deformation. It also has the exact torsion-integrability threshold and convergent curvature identity above. This determines additional global analytic properties of a genuine constructed metric.
+
+For the closed variational problem, the quotient bubble is realizable with zero $P$ loss, while actual-field transfer excludes its specified compact-orbifold branch for $A\le9$ and a strict sub-$8\pi^2$ bound. Formula \eqref{eq:Schur} gives the optimal first-order conformal correction to a TT stability test. These are usable inputs to a global attainment or lower-bound proof; they are not such a proof.
+
+The four original endpoints remain: Einstein exclusion or existence in the unresolved small-blowup range; a matching unrestricted curvature infimum; an actual smooth non-Bach-flat global minimizer; and the closed negative Goldberg question. No additional classical open problem is declared solved in this continuation. General stability identities and ALE examples are credited to their sources; neither their application nor repeated derivation is counted as a new general theory.
+
+\begin{thebibliography}{9}
+\bibitem{Artacho26} D. Artacho, \emph{Stability of Einstein 4-manifolds satisfying a chiral curvature condition}, arXiv:2609.15159v1 (14 September 2026), Proposition 3.1, Theorem 1.2, equation (4.1). \url{https://arxiv.org/html/2609.15159v1}.
+\bibitem{Artacho25} D. Artacho, \emph{On the stability of Einstein metrics carrying a special twisted spinor}, arXiv:2512.01620v1 (2025), Section 3, Lemma 3 and Corollary 4. \url{https://arxiv.org/html/2512.01620v1}.
+\bibitem{Wright} E. P. Wright, \emph{Quotients of gravitational instantons}, arXiv:1102.2442v2 (2011), Theorem A and Corollary B. \url{https://arxiv.org/pdf/1102.2442}.
+\bibitem{LeBrun} C. LeBrun, \emph{Ricci curvature, minimal volumes, and Seiberg--Witten theory}, Invent. Math. \textbf{145} (2001), 279--316. \url{https://arxiv.org/abs/math/0003068}.
+\end{thebibliography}
+\end{document}

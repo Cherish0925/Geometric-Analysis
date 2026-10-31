@@ -1,0 +1,176 @@
+% Qiushi Article Template
+% Compile with LuaLaTeX.
+% If the LuaLaTeX font cache is unavailable, prefix the compile command with TEXMFVAR=/tmp/qiushi_texmf_var.
+% Keep figure files under figures/ or ../../workspace/figures/.
+% Use refs.bib with \cite{...} when references are used.
+% LaTeX supplies section numbers; section titles contain title text only.
+% ctexart two-column mode: figure is one-column and figure* is full-width.
+\documentclass[UTF8,a4paper,10pt,twocolumn]{ctexart}
+
+\usepackage[
+  a4paper,
+  top=16mm,
+  bottom=18mm,
+  left=15mm,
+  right=15mm,
+  columnsep=7.2mm
+]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{amsthm}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xurl}
+\usepackage{xcolor}
+\usepackage{abstract}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+
+\graphicspath{{figures/}{../figures/}{./}{../../workspace/figures/}}
+\sisetup{detect-all=true,per-mode=symbol}
+\Urlmuskip=0mu plus 2mu
+\emergencystretch=1.8em
+\raggedbottom
+
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\floatsep}{7pt plus 2pt minus 2pt}
+\setlength{\intextsep}{7pt plus 2pt minus 2pt}
+\setlength{\bibsep}{2pt plus 0.2ex}
+
+\ctexset{
+  section = {
+    format = {\raggedright\bfseries\large},
+    beforeskip = 10pt plus 2pt minus 1pt,
+    afterskip = 4pt
+  },
+  subsection = {
+    format = {\raggedright\bfseries\normalsize},
+    beforeskip = 8pt plus 1pt minus 1pt,
+    afterskip = 3pt
+  }
+}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash\hspace{0pt}}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash\hspace{0pt}}p{#1}}
+
+\providecommand{\dd}{\mathop{}\!\mathrm{d}}
+\providecommand{\dv}[2]{\frac{\dd #1}{\dd #2}}
+\providecommand{\pdv}[2]{\frac{\partial #1}{\partial #2}}
+\providecommand{\vect}[1]{\boldsymbol{#1}}
+\providecommand{\mat}[1]{\mathbf{#1}}
+\providecommand{\E}{\mathbb{E}}
+\providecommand{\Var}{\operatorname{Var}}
+\providecommand{\argmin}{\operatorname*{arg\,min}}
+
+\newtheorem{theorem}{定理}
+\newtheorem{proposition}{命题}
+\newtheorem{lemma}{引理}
+\newtheorem{corollary}{推论}
+\theoremstyle{definition}
+\newtheorem{definition}{定义}
+\theoremstyle{remark}
+\newtheorem{remark}{注}
+
+\title{概括主结果的中文题名}
+\author{作者姓名\\\small 作者单位}
+\date{\today}
+
+\begin{document}
+
+\twocolumn[
+\maketitle
+
+\begin{onecolabstract}
+摘要正文。
+\end{onecolabstract}
+\vspace{0.7em}
+]
+
+\section{引言}
+
+正文。
+
+\section{方法}
+
+正文。
+
+\begin{equation}
+  \mathcal{L}u = f .
+  \label{eq:example-zh}
+\end{equation}
+
+\begin{figure}[t]
+  \centering
+  \fbox{\rule{0pt}{1.35in}\rule{0.90\columnwidth}{0pt}}
+  \caption{图注。\label{fig:example-zh}}
+\end{figure}
+
+\section{结果}
+
+正文。
+
+\begin{figure*}[t]
+  \centering
+  \fbox{\rule{0pt}{1.55in}\rule{0.96\textwidth}{0pt}}
+  \caption{需要跨双栏保持图内文字、面板和比较关系清晰的高信息密度图。\label{fig:two-column-zh}}
+\end{figure*}
+
+\begin{equation}
+  \int_{\Omega} A(x)\,B(x)\,\dd x
+  =
+  \int_{\Omega} C(x)\,\dd x .
+  \label{eq:wide-example-zh}
+\end{equation}
+
+\begin{table}[b]
+  \caption{表注。\label{tab:example-zh}}
+  \begin{tabular}{lcc}
+  \toprule
+  行 & 列 A & 列 B \\
+  \midrule
+  A & -- & -- \\
+  B & -- & -- \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table*}[t]
+  \caption{自然宽度和信息密度需要跨双栏呈现的比较表。\label{tab:two-column-zh}}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccccc@{}}
+  \toprule
+  方法 & 假设 & 观测量 & 对照 & 不确定性 & 结果 \\
+  \midrule
+  A & -- & -- & -- & -- & -- \\
+  B & -- & -- & -- & -- & -- \\
+  \bottomrule
+  \end{tabular*}
+\end{table*}
+
+% 双栏稿件仅在对象按最终字号无法保持单栏可读性时使用 figure* 或
+% table*。公式优先在语义断点使用 aligned、split 或 multline；不得用
+% resizebox 或不可读的小字号掩盖过宽对象。
+% 必要时的跨栏语法：
+% \begin{figure*}[t]\centering\includegraphics[width=\textwidth]{...}
+%   \caption{...}\end{figure*}
+% \begin{table*}[t]\centering\caption{...}\begin{tabular}{...}
+%   ...\end{tabular}\end{table*}
+% 语义断行：
+% \begin{equation}\begin{aligned} ... \\ ... \end{aligned}\end{equation}
+% \begin{equation}\begin{split} ... \\ ... \end{split}\end{equation}
+% \begin{multline} ... \\ ... \end{multline}
+
+\section{讨论}
+
+正文。
+
+\section{结论}
+
+正文。
+
+\IfFileExists{refs.bib}{\bibliographystyle{unsrt}\bibliography{refs}}{}
+
+\end{document}

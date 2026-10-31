@@ -1,0 +1,40 @@
+{
+ "spin_sign": -1,
+ "lichnerowicz": {
+  "1": {
+   "ok": false,
+   "same": false,
+   "s_over_4": null
+  },
+  "-1": {
+   "ok": true,
+   "same": true,
+   "s_over_4": "-a1(t)**2/(2*a2(t)**2*a3(t)**2) - Derivative(a3(t), (t, 2))/(2*a3(t)) + a3(t)**(-2) - Derivative(a2(t), (t, 2))/(2*a2(t)) - Derivative(a2(t), t)*Derivative(a3(t), t)/(2*a2(t)*a3(t)) + a2(t)**(-2) - Derivative(a1(t), (t, 2))/(2*a1(t)) - Derivative(a1(t), t)*Derivative(a3(t), t)/(2*a1(t)*a3(t)) - Derivative(a1(t), t)*Derivative(a2(t), t)/(2*a1(t)*a2(t)) - a2(t)**2/(2*a1(t)**2*a3(t)**2) + a1(t)**(-2) - a3(t)**2/(2*a1(t)**2*a2(t)**2)"
+  }
+ },
+ "s_over_4": "-a1(t)**2/(2*a2(t)**2*a3(t)**2) - Derivative(a3(t), (t, 2))/(2*a3(t)) + a3(t)**(-2) - Derivative(a2(t), (t, 2))/(2*a2(t)) - Derivative(a2(t), t)*Derivative(a3(t), t)/(2*a2(t)*a3(t)) + a2(t)**(-2) - Derivative(a1(t), (t, 2))/(2*a1(t)) - Derivative(a1(t), t)*Derivative(a3(t), t)/(2*a1(t)*a3(t)) - Derivative(a1(t), t)*Derivative(a2(t), t)/(2*a1(t)*a2(t)) - a2(t)**2/(2*a1(t)**2*a3(t)**2) + a1(t)**(-2) - a3(t)**2/(2*a1(t)**2*a2(t)**2)",
+ "M": [
+  [
+   "((al3(t) - Derivative(a3(t), t))*a1(t)*a2(t) + a1(t)**2 - a1(t)*a3(t)*Derivative(a2(t), t) + a2(t)**2 - a2(t)*a3(t)*Derivative(a1(t), t) + a3(t)**2)/(2*a1(t)*a2(t)*a3(t))",
+   "-I*al2(t)/(2*a2(t)) + al1(t)/(2*a1(t))"
+  ],
+  [
+   "I*al2(t)/(2*a2(t)) + al1(t)/(2*a1(t))",
+   "(-(al3(t) + Derivative(a3(t), t))*a1(t)*a2(t) + a1(t)**2 - a1(t)*a3(t)*Derivative(a2(t), t) + a2(t)**2 - a2(t)*a3(t)*Derivative(a1(t), t) + a3(t)**2)/(2*a1(t)*a2(t)*a3(t))"
+  ]
+ ],
+ "lower_rows_zero": [
+  "0",
+  "0"
+ ],
+ "cF_plus_minus_2phitau": "Matrix([[0, 0], [0, 0]])",
+ "cF_plus_plus_2phitau": "Matrix([[2*Derivative(al3(t), t)/a3(t) + 4*al3(t)/(a1(t)*a2(t)), -2*I*Derivative(al2(t), t)/a2(t) + 4*al1(t)/(a2(t)*a3(t)) + 2*Derivative(al1(t), t)/a1(t) - 4*I*al2(t)/(a1(t)*a3(t))], [2*I*Derivative(al2(t), t)/a2(t) + 4*al1(t)/(a2(t)*a3(t)) + 2*Derivative(al1(t), t)/a1(t) + 4*I*al2(t)/(a1(t)*a3(t)), -2*Derivative(al3(t), t)/a3(t) - 4*al3(t)/(a1(t)*a2(t))]])",
+ "omega": {
+  "011": "-Derivative(a1(t), t)/a1(t)",
+  "022": "-Derivative(a2(t), t)/a2(t)",
+  "033": "-Derivative(a3(t), t)/a3(t)",
+  "123": "(a1(t)**2 + a2(t)**2 - a3(t)**2)/(a1(t)*a2(t)*a3(t))",
+  "132": "(-a1(t)**2 + a2(t)**2 - a3(t)**2)/(a1(t)*a2(t)*a3(t))",
+  "231": "(-a1(t)**2 + a2(t)**2 + a3(t)**2)/(a1(t)*a2(t)*a3(t))"
+ }
+}

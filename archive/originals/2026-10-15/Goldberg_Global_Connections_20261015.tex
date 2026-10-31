@@ -1,0 +1,222 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,hyperref}
+\setlength{\emergencystretch}{2em}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}[proposition]{Corollary}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\YM}{\operatorname{YM}}
+\newcommand{\vol}{\,d\mu_g}
+\title{Negative Goldberg: zero curves, Einstein deformation, and connection variation}
+\author{Research continuation}
+\date{15 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We continue the closed four-dimensional negative Goldberg problem. The first part derives a totally geodesic condition on regular torsion-zero curves and records the actual inhomogeneous equation for their normal torsion derivative. The remaining parts connect the problem to Einstein deformation theory, almost-K\"ahler submersions, and Yang--Mills variation. Classical theorems are identified explicitly. The general conjecture is not resolved here.
+\end{abstract}
+
+\section{Problem and the first-order equation}
+Let $(M^4,g,J,\omega)$ be almost-K\"ahler, with the orientation induced by $\omega$, $|\omega|^2=2$, and
+\[
+\Ric=\frac{s}{4}g,\qquad s<0.
+\]
+The target is to prove $\nabla\omega=0$ when $M$ is closed, or to construct a closed counterexample. All statements below use the original metric; auxiliary connections are not substituted for the Levi-Civita connection in the Einstein equation.
+
+Put $K=\Lambda^{2,0}T^*M$, and regard the Nijenhuis tensor, with a fixed nonzero normalization, as a section
+\[
+\sigma\in\Gamma(E),\qquad E=T^{1,0}M\otimes\bar K.
+\]
+Let $D$ be the canonical Hermitian connection and its induced connections. The second structure equations give
+\begin{equation}\label{first}
+D_X\sigma=X\otimes c,\qquad X\in T^{1,0}M,
+\end{equation}
+for a section $c$ of $\bar K$. In Ball's notation \cite[(2.4)]{Ball}, this is the Einstein specialization $A_{ij}=0$ of the $(1,0)$ part of $dN_i$, and $c$ is his coefficient $B$. It is not the trace-free two-by-two Weyl block used below. The $(0,1)$ part of $D\sigma$ is not prescribed by \eqref{first}.
+
+We use the pointwise torsion-zero calculation from the preceding continuation, \emph{Negative Goldberg: torsion-zero indices and the full Weyl equation}. In adapted complex frames, at $\sigma=0$,
+\begin{equation}\label{zeroalgebra}
+D\sigma(z)=cz+Q\bar z,\quad
+\tr(Q\bar Q)=-8|c|^2,\quad
+\det_{\mathbb R}(D\sigma)=9|c|^4+|\det_{\mathbb C}Q|^2.
+\end{equation}
+The bar in $Q\bar Q$ is entrywise conjugation. The normalization of $\sigma$ does not affect the rank and image statements used here. In particular, a nonzero singular derivative has real rank two, has $c=0$, and satisfies $Q\bar Q=0$. Its image equals its kernel after the indicated local identification; intrinsically this identifies its image line with the complex kernel line tensored with $\bar K$.
+
+\section{Geometry of a smooth torsion-zero curve}
+\begin{proposition}\label{geodesic}
+Let $C$ be a smooth $J$-holomorphic curve contained in $\{\sigma=0\}$. At every point of $C$ where $D\sigma$ has real rank two, the second fundamental form of $C$ vanishes. Thus each regular rank-two portion is totally geodesic.
+\end{proposition}
+\begin{proof}
+Since $\sigma$ vanishes on $C$, $D\sigma$ annihilates $TC$. At a rank-two point its kernel is exactly $TC$, and \eqref{zeroalgebra} identifies the image with $T^{1,0}C\otimes\bar K$. If $Z$ and $\nu$ are local unit $(1,0)$ tangent and normal fields, respectively, write
+\[
+A=D\sigma,\qquad A(\bar\nu)=q Z,\qquad A(\bar Z)=A(Z)=A(\nu)=0
+\quad\hbox{along }C,
+\]
+where local line-bundle factors are understood. In particular $c=0$ on $C$.
+
+On this zero locus $\nabla J=0$, so $D$ agrees pointwise with $\nabla$ and its torsion vanishes. The covariant Hessian commutator therefore gives
+\[
+(D_ZA)(\bar\nu)-(D_{\bar\nu}A)(Z)
+=F^E(Z,\bar\nu)\sigma-A(T^D(Z,\bar\nu))=0.
+\]
+Differentiating \eqref{first} as a tensor equation shows that the second term is $Z\otimes D_{\bar\nu}c$, which is tangential in its vector factor. The normal projection of the first term is
+\[
+q\,\mathrm{II}(Z,Z).
+\]
+Derivatives of the normal argument contribute no normal vector factor: $A$ takes its values in the tangent line along $C$. Since $q\ne0$, $\mathrm{II}(Z,Z)=0$. Finally $\nabla J=0$ along $C$ implies
+\[
+\mathrm{II}(X,JY)=J\mathrm{II}(X,Y).
+\]
+Together with symmetry this gives $\mathrm{II}(Z,\bar Z)=0$. The conjugate equation finishes the proof.
+\end{proof}
+
+\paragraph{The equation retained on the curve.}
+Let $\nu_C$ denote the complex normal line bundle. The normal derivative is intrinsically a section of
+\begin{equation}\label{qline}
+\mathcal L=\operatorname{Hom}_{\mathbb C}
+ (\bar\nu_C,T^{1,0}C\otimes\bar K|_C)
+ \simeq \bar K^{\otimes2}|_C.
+\end{equation}
+The last isomorphism uses the Hermitian metrics and
+$T^{1,0}C\otimes\nu_C=\det T^{1,0}M|_C$.
+The tangential projection of the same Hessian commutator gives the exact relation
+\begin{equation}\label{inhom}
+\bigl(D_Z^{\mathcal L}q\bigr)(\bar\nu)
+=Z\otimes D_{\bar\nu}c.
+\end{equation}
+In local frames this is a $(1,0)$ equation $D_Zq=r$, with $r$ the normal $(0,1)$ derivative of the curvature component $c$. It is not the homogeneous holomorphic-section equation $\bar\partial q=0$. In particular, vanishing of $c$ on $C$ does not imply vanishing of its normal derivative.
+
+\begin{proposition}\label{second}
+If the rank-two locus is dense in $C$, then $C$ is totally geodesic everywhere and
+\begin{equation}\label{secondorder}
+\operatorname{Sym}D^{1,0}D^{1,0}q=0.
+\end{equation}
+Equivalently, $r=D^{1,0}q$ satisfies $D^{1,0}r=0$ as a section of $\mathcal L\otimes K_C$, with its induced Hermitian connection. This asserts that $r$ is antiholomorphic, not that $r$ vanishes.
+\end{proposition}
+\begin{proof}
+Total geodesicity extends by continuity from Proposition \ref{geodesic}. For ambient $(1,0)$ vectors $X,Y$, commute \eqref{first} to obtain
+\[
+(D_Xc)Y-(D_Yc)X
+=F^E(X,Y)\sigma-D_{T^D(X,Y)}\sigma.
+\]
+At a torsion zero the right side vanishes; hence $D^{1,0}c=0$. Differentiate the full tensor equation in a $(0,1)$ direction $W$ at a point of $C$. At $\nabla J=0$ the canonical curvature is the $\mathfrak u(2)$ projection of Levi-Civita curvature. The Einstein condition and $c=0$ imply $(F^E)^{2,0}=0$ there, as also follows directly from \cite[(2.4)]{Ball}. Thus both differentiated curvature terms vanish: one contains $\sigma$, and the other $(F^E)^{2,0}$.
+
+The canonical torsion $T^D(X,Y)$ is linear in the conjugate Nijenhuis tensor. Consequently $D_WT^D(X,Y)=0$ on $C$, because $D_{\bar W}\sigma=\bar W\otimes c=0$. The remaining differentiated torsion term contains $T^D=0$. We have therefore retained and eliminated all right-hand terms, obtaining
+\[
+(D^2c)(W,X)Y-(D^2c)(W,Y)X=0.
+\]
+Taking independent $X,Y$ gives $(D^2c)(W,X)=0$. Mixed Hessians commute at $C$ because both $c$ and $T^D$ vanish there. Differentiate \eqref{inhom} tangentially; total geodesicity identifies the induced derivatives with the corresponding ambient derivatives and yields \eqref{secondorder}.
+\end{proof}
+This second-order equation still allows antiholomorphic $q$; such sections can have negative-index zeros. In addition,
+\[
+\deg(\mathcal L\otimes K_C)
+=\frac{s}{4\pi}\operatorname{Area}_g(C)+2\operatorname{genus}(C)-2
+\]
+has no fixed sign under the current assumptions. A degree-based vanishing argument for $r$ is therefore not automatic.
+
+There is a concrete intrinsic model for this limitation. On $C=\mathbb{CP}^1$, let $\mathcal L=\mathcal O(-d)$, $d>0$, with local Hermitian metric $h=(1+|z|^2)^d$. For the Fubini--Study metric on $C$,
+\[
+q=\frac{z}{(1+|z|^2)^{d+1}},\qquad
+D_zq=\frac1{(1+|z|^2)^{d+2}}.
+\]
+The connection on $\mathcal L\otimes K_C$ has $(1,0)$ coefficient $(d+2)\bar z/(1+|z|^2)$, so $D^{1,0}D^{1,0}q=0$ while $D^{1,0}q\ne0$. In the coordinate $w=1/z$, the section is $q_\infty=\bar w^{d+1}/(1+|w|^2)^{d+1}$. Its two local indices are $+1$ and $-(d+1)$, summing to $-d$. One may take $d$ even to match the parity of $\bar K^2|_C$. This is a model for the curve equation and its degree, not an ambient Einstein example.
+
+\begin{proposition}\label{indices}
+Suppose, in addition, that $C$ is closed and that the section $q$ in \eqref{qline} has isolated zeros. With the complex orientation of $C$ and the line bundle $\mathcal L$,
+\begin{equation}\label{degree}
+\sum_{x\in C:q(x)=0}\operatorname{ind}_x(q)
+=2c_1(TM,J)[C]
+=\frac{s}{4\pi}\operatorname{Area}_g(C)<0.
+\end{equation}
+Thus at least one rank-dropping point has negative index. If $q$ is nowhere zero, such a closed curve cannot exist.
+\end{proposition}
+\begin{proof}
+The index sum of a smooth section of a complex line bundle is its first Chern number; \eqref{qline} gives $c_1(\mathcal L)=2c_1(TM,J)|_C$. The canonical anti-canonical curvature satisfies, on the zero locus of $\nabla\omega$, the restriction
+\[
+iF|_{TC}=\frac{s}{4}\omega|_{TC}.
+\]
+For example this follows from Blair's formula in \cite[Proposition 2.1]{LeBrun}: the $J$-anti-invariant term restricts to zero on $TC$ and all torsion-quadratic terms vanish. Hence
+\[
+c_1(TM,J)[C]=\frac1{2\pi}\int_C iF
+=\frac{s}{8\pi}\operatorname{Area}_g(C).
+\]
+This proves \eqref{degree}.
+\end{proof}
+Proposition \ref{indices} is not a contradiction when rank drops occur. Positivity theorems for pseudoholomorphic sections, such as \cite[Proposition 4.1]{Zhang}, require their own first-order equation. Likewise, the zero-divisor theorem for closed $J$-anti-invariant forms \cite[Theorem 1.1]{BZ} does not apply to an arbitrary section of $\bar K^2$. Equation \eqref{inhom} retains a normal curvature derivative instead of supplying either hypothesis. If $q$ vanishes identically on a component, the first normal derivative gives no information about its higher vanishing order.
+
+\section{Closed Einstein deformations and the volume identity}
+Here $u=|\nabla\omega|^2$ and $e=\omega/\sqrt2$. Write the Weyl operator as
+\[
+W^+=\begin{pmatrix}a&\zeta^T\\ \zeta&-a I/2+B\end{pmatrix},
+\quad a=\frac{s}{6}+\frac{u}{4},\quad \eta=\sqrt2\zeta,
+\quad \tr B=0.
+\]
+The integrated Einstein Sekigawa identity \cite[Proposition 2]{AD} is
+\[
+\int_M(2su+3u^2+16|\eta|^2+32|B|^2)\vol=0.
+\]
+Together with Chern--Weil, this gives
+\begin{equation}\label{volume}
+s^2\operatorname{Vol}(g)-32\pi^2(2\chi+3\tau)
+=\frac32\int_Mu^2\vol+16\int_M|B|^2\vol.
+\end{equation}
+Indeed, the block decomposition gives
+$|W^+|^2=\frac32(s/6+u/4)^2+|\eta|^2+|B|^2$;
+substitute it into $4\pi^2(2\chi+3\tau)=\int(s^2/24+2|W^+|^2)$ and eliminate $\int su$.
+
+\begin{corollary}\label{path}
+Let $g_t$ be a smooth path of Einstein metrics on a closed oriented four-manifold, normalized by $\Ric_{g_t}=-g_t$. Suppose $g_0$ is K\"ahler--Einstein in this orientation. Every $g_t$ admitting a compatible almost-K\"ahler structure in the same orientation is K\"ahler with respect to that structure.
+\end{corollary}
+\begin{proof}
+Since $s_{g_t}=-4$, scalar variation integrated over $M$ gives
+$0=\int\tr_{g_t}\dot g_t\vol$. Thus $\operatorname{Vol}(g_t)$ is constant. At $t=0$ the left side of \eqref{volume} vanishes, and $\chi,\tau$ are fixed. At any almost-K\"ahler member the nonnegative right side therefore vanishes, giving $u=0$.
+\end{proof}
+This consequence is compatible with the stronger established four-dimensional holonomy-rigidity theorem: a compact K\"ahler--Einstein metric of nonzero Einstein constant has only K\"ahler Einstein metrics in a sufficiently small Einstein-moduli neighborhood; see \cite[Theorem 6.13]{SS}. Neither statement asserts that every Einstein metric lies in a component containing a K\"ahler--Einstein one. The orientation in Corollary \ref{path} is essential.
+
+\section{An exact connection variation}
+For the Levi-Civita connection on $\Lambda^+=\mathbb Re\oplus e^\perp$, write
+\[
+A=D_0+C,
+\]
+where $D_0$ preserves the splitting and $C$ is off diagonal. Einstein is equivalent to $F_A^-=0$. The diagonal/off-diagonal splitting then implies
+\[
+(d_{D_0}C)^-=0,\qquad F_{D_0}^-+(C\wedge C)^-=0.
+\]
+For the actual metric connections $A_t=D_0+tC$ on this fixed bundle,
+\[
+F_{A_t}^-=F_{D_0}^-+t(d_{D_0}C)^-+t^2(C\wedge C)^-
+=(1-t^2)F_{D_0}^-.
+\]
+On a closed manifold the Pontryagin term is fixed, so, with $\YM(A)=\int|F_A|^2$,
+\begin{equation}\label{ym}
+\YM(A_t)=\YM(A)+2(1-t^2)^2\|F_{D_0}^-\|_2^2.
+\end{equation}
+Thus minimizing Yang--Mills energy is compatible with $C\ne0$. This path is a variation of connections; it is not asserted to consist of Levi-Civita connections of compatible metrics. A metric-variational argument would have to preserve that additional relation.
+
+\section{Which literature connections change the construction problem?}
+Watson proved in 2000 that a four-dimensional Einstein almost-K\"ahler total space of an almost-Hermitian submersion is K\"ahler \cite{Watson}; compactness is not required. This already covers the following specialization of the recent Derdzinski--Park coordinates \cite[Theorems D and F]{DP}. Suppose a K\"ahler surface has an orthogonal integrable complex-line splitting $H\oplus V$, with one summand holomorphic. Locally, after interchanging the factors, their coordinates give
+\[
+g=G(x)_{ab}\,dx^a dx^b+K(x,y)_{\mu\nu}\,dy^\mu dy^\nu,
+\qquad \det G=\det K=1.
+\]
+The opposite almost-complex structure $I=J|_H\oplus(-J|_V)$ has closed fundamental form, and the projection to the $x$-surface is an almost-Hermitian Riemannian submersion for $I$. If $g$ is Einstein, Watson gives $\nabla I=0$. Since also $\nabla J=0$, the two distributions are parallel and $g$ is locally a product. This is an application of an existing theorem, not a new solution of a Goldberg subcase.
+
+The general Derdzinski--Park system allows both blocks to vary transversely. Its existence theorem solves the K\"ahler first-order equations, not the added Einstein equations. A compact nonproduct negative K\"ahler--Einstein metric admitting the opposite almost-K\"ahler structure would be a counterexample, but the existence of such a metric is not established by those coordinates.
+
+For comparison with a different special-geometry problem, Payne's closed-$G_2$ rigidity \cite{Payne} uses a signed divergence identity relating Ricci curvature directly to intrinsic torsion. Its accompanying scalar identity $s=-|\tau|^2/2$ is not an almost-K\"ahler identity: negative K\"ahler--Einstein metrics already have zero torsion and $s<0$. Consequently that proof cannot be transferred by replacing its torsion tensor with $N_J$.
+
+\paragraph{Present endpoint.}
+The remaining zero-set possibilities include isolated zeros and rank-dropping curves. The intrinsic equation \eqref{inhom} still couples the normal torsion derivative to a normal curvature derivative. The volume identity and the connection variation do not eliminate those possibilities. No closed non-K\"ahler Einstein example, or general proof excluding one, has been obtained in this continuation.
+
+\begin{thebibliography}{9}
+\bibitem{AD} V. Apostolov and T. Dr\u aghici, \emph{The curvature and the integrability of almost-K\"ahler manifolds: a survey}, Fields Institute Communications 35 (2003), 25--53. \url{https://arxiv.org/abs/math/0302152}
+\bibitem{Ball} G. Ball, \emph{Static solutions to symplectic curvature flow in dimension four}, arXiv:2310.00143v2, especially (2.4). \url{https://arxiv.org/html/2310.00143v2}
+\bibitem{LeBrun} C. LeBrun, \emph{Einstein metrics, symplectic minimality, and pseudo-holomorphic curves}, Ann. Global Anal. Geom. 28 (2005), 157--177, Proposition 2.1. \url{https://arxiv.org/abs/math/0409290}
+\bibitem{Zhang} W. Zhang, \emph{Intersection of almost complex submanifolds}, arXiv:1707.08253, Proposition 4.1. \url{https://arxiv.org/abs/1707.08253}
+\bibitem{BZ} L. Bonthrone and W. Zhang, \emph{J-holomorphic curves from closed J-anti-invariant forms}, arXiv:1808.09356, Theorem 1.1. \url{https://arxiv.org/abs/1808.09356}
+\bibitem{SS} P. Schwahn and U. Semmelmann, \emph{Einstein metrics, their moduli spaces and stability}, arXiv:2507.18463v3, Theorem 6.13. \url{https://arxiv.org/html/2507.18463v3}
+\bibitem{Watson} B. Watson, \emph{The four-dimensional Goldberg conjecture is true for almost K\"ahler submersions}, J. Geom. 69 (2000), 215--226. \url{https://doi.org/10.1007/BF01237487}
+\bibitem{DP} A. Derdzinski and J. Park, \emph{Almost-product K\"ahler surfaces}, arXiv:2608.17710, Theorems D, F and Proposition H. \url{https://people.math.osu.edu/derdzinski.1/preprints/apk.pdf}
+\bibitem{Payne} A. Payne, \emph{Closed $G_2$-structures with negative Ricci curvature}, arXiv:2310.19553v3. \url{https://arxiv.org/html/2310.19553v3}
+\end{thebibliography}
+\end{document}

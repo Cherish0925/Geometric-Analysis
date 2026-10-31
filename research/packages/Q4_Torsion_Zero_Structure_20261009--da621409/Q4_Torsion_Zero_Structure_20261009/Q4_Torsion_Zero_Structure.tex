@@ -1,0 +1,390 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diver}{\operatorname{div}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\dd}{\,dV_g}
+\title{Q4: Torsion Zeros and Transverse Weyl Curvature\\[3pt]
+\large Local structure, positive transverse indices, and the remaining global issue}
+\author{Research continuation from the supplied four-dimensional Einstein manuscripts}
+\date{9 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For an almost-K\"ahler Einstein four-manifold we derive an exact
+second-derivative identity at every torsion zero. Combining this identity
+with the adapted-frame curvature equations gives a complex normal form
+for the derivative of the torsion, a nonnegative real determinant, and a
+sharp algebraic estimate involving the transverse Weyl component. In
+particular, a torsion zero where that component is nonzero is isolated and
+transverse, with positive index. If all zeros are transverse on a closed
+manifold, their number is $5\chi+6\tau$. These are necessary conditions for
+an actual solution, not an existence theorem for prescribed jets. They do
+not establish the closed negative Goldberg conclusion.
+\end{abstract}
+
+\section{Conventions and the precise result}
+Let $(M^4,g,J,\Omega)$ be a smooth, positive-definite, oriented
+almost-K\"ahler Einstein manifold. Thus
+\[
+ d\Omega=0,\qquad \Omega(X,Y)=g(JX,Y),\qquad |\Omega|^2=2,
+ \qquad \Ric=\frac{s}{4}g.
+\]
+The scalar $s$ is constant. The local results do not require completeness,
+compactness, or a sign for $s$. Write $W=W^+$ as a symmetric trace-free
+endomorphism of $\Lambda^+$, with Hilbert--Schmidt operator norm. Set
+\begin{equation}
+ q=|\nabla\Omega|^2,\quad n=\Omega/\sqrt2,\quad
+ t=\langle Wn,n\rangle=\frac{s}{6}+\frac q4,\quad
+ \eta=W\Omega-t\Omega,\quad v=\eta/\sqrt2.
+ \label{eq:defs}
+\end{equation}
+With respect to $\mathbb Rn\oplus n^\perp$,
+\begin{equation}
+ W=\begin{pmatrix}t&v^*\\v&-\frac t2\Id+V\end{pmatrix},
+ \qquad \tr V=0,\qquad
+ |W|^2=\frac32t^2+|\eta|^2+|V|^2.
+ \label{eq:Wblock}
+\end{equation}
+Here $V$ is the $W_3^+$ component in the chosen almost-Hermitian
+splitting, not the full restriction $W|_{n^\perp}$.
+
+Locally choose $\phi,J\phi$ of norm $\sqrt2$, orthogonal to $\Omega$.
+The adapted-frame equations of \cite[Section 2.3]{AAD} are
+\begin{align}
+ \nabla\Omega&=a\otimes\phi-Ja\otimes J\phi,& q&=4|a|^2,\label{eq:torsion}\\
+ da-Ja\wedge b&=-\mathcal R(J\phi),&
+ d(Ja)+a\wedge b&=-\mathcal R(\phi).\label{eq:frame}
+\end{align}
+The covector convention is $(Ja)(X)=-a(JX)$.
+At a zero $p$ of $a$, let
+\[
+ L:T_pM\longrightarrow T_pM,\qquad L(X)=(\nabla_Xa)^\sharp.
+\]
+This derivative is independent of derivatives of the chosen frame at $p$.
+Changing $\phi$ multiplies $L$ on its target by a unitary rotation, so its
+real determinant, singular values, and vanishing rank are well defined.
+
+\begin{theorem}[Local structure of a torsion zero]\label{thm:main}
+At every point $p$ where $q(p)=0$:
+\begin{equation}
+ \boxed{|\nabla^2\Omega|^2=4|V|^2-6|\eta|^2.}\label{eq:zero-balance}
+\end{equation}
+There are complex orthonormal identifications of the source and target
+of $L$ with $\mathbb C^2$ in which
+\begin{equation}
+ L(z)=c z+A\bar z,\qquad c\in\mathbb C,\quad A\in M_2(\mathbb C),
+ \qquad \tr(A\bar A)=-8|c|^2.\label{eq:normal}
+\end{equation}
+The bar in $A\bar A$ is entrywise conjugation, not the Hermitian adjoint.
+Furthermore,
+\begin{align}
+ |\eta|^2&=8|c|^2,\label{eq:eta-c}\\
+ \boxed{|V|^2-4|\eta|^2=4\|\Sym A\|_F^2\ge0,}\label{eq:Veta}\\
+ \boxed{\det_{\mathbb R}L
+ =9|c|^4+|\det_{\mathbb C}A|^2
+ \ge25|c|^4=\frac{25}{64}|\eta|^4.}\label{eq:det}
+\end{align}
+Consequently, if $\eta(p)\ne0$, the torsion zero is isolated and
+transverse, and $q$ has a nondegenerate local minimum there. Every
+transverse torsion zero has positive local index. If $L$ is singular,
+then $\eta(p)=0$ and $\operatorname{rank}_{\mathbb R}L\in\{0,2\}$.
+\end{theorem}
+
+\section{The second-derivative identity}
+Use the nonnegative scalar Laplacian $\Delta=-\diver\nabla$ and the
+nonnegative rough Laplacian $\nabla^*\nabla$. Since $\Omega$ is a
+self-dual harmonic form,
+\begin{equation}
+ \nabla^*\nabla\Omega=2W\Omega-\frac{s}{3}\Omega
+                    =\frac q2\Omega+2\eta.\label{eq:form-WB}
+\end{equation}
+This also proves the expression for $t$ in \eqref{eq:defs}. Einstein
+metrics satisfy $\delta W=0$, and the classical Weyl--Weitzenb\"ock
+identity is
+\begin{equation}
+ \nabla^*\nabla W+\frac{s}{2}W-6W^2+2|W|^2\Id=0.
+ \label{eq:W-WB}
+\end{equation}
+See \cite{Derdzinski}; the same operator normalization appears in
+\cite[Lemma 2.5, with $f=1$]{CD}.
+
+At a torsion zero, $\nabla n=0$, $t=s/6$, and
+$\nabla^*\nabla n=2v$. Differentiating $t=\langle Wn,n\rangle$
+therefore gives
+\begin{align*}
+ \Delta t
+ &=\langle(\nabla^*\nabla W)n,n\rangle
+          +2\langle W(\nabla^*\nabla n),n\rangle\\
+ &=6(t^2+|v|^2)-\frac{s}{2}t-2|W|^2+4|v|^2\\
+ &=3t^2-\frac{s}{2}t+6|v|^2-2|V|^2\\
+ &=3|\eta|^2-2|V|^2.
+\end{align*}
+Since $\Delta q=4\Delta t$, whereas
+$\Delta|\nabla\Omega|^2=-2|\nabla^2\Omega|^2$ at a zero of
+$\nabla\Omega$, this proves \eqref{eq:zero-balance}. All derivatives
+here are full covariant derivatives; $\nabla^2\Omega$ is not merely
+its skew-symmetrization.
+
+\section{The complete first derivative and its determinant}
+Choose an oriented orthonormal coframe at $p$ with
+\[
+ \Omega=e^{12}+e^{34},\quad
+ \phi=e^{13}-e^{24},\quad J\phi=e^{14}+e^{23}.
+\]
+At $a(p)=0$, also $\nabla J(p)=0$. Einstein curvature preserves
+$\Lambda^+$, so \eqref{eq:frame} shows that $da$ and $d(Ja)$ are
+self-dual at $p$. These give six independent real linear equations on
+$\nabla a$. Equating their anti-self-dual components gives the following
+complete ten-parameter matrix. Put
+\[
+ c=\ell+i m,\qquad
+ A=\begin{pmatrix}p+i q_0&r+i t_0\\u+i v_0&w+i z_0\end{pmatrix}.
+\]
+The matrix with derivative index on rows, namely $L^{\mathsf T}$, is
+\begin{equation}
+ \begin{pmatrix}
+ \ell+p&m+q_0&u&v_0\\
+ -m+q_0&\ell-p&v_0&-u\\
+ r&t_0&\ell+w&m+z_0\\
+ t_0&-r&-m+z_0&\ell-w
+ \end{pmatrix}.\label{eq:real-matrix}
+\end{equation}
+Its transpose is exactly the real matrix of $z\mapsto cz+A\bar z$.
+Thus no additional modes have been discarded.
+
+Write $\mathcal R^+=W+s\Id/12$. At the zero, the transverse
+$2\times2$ block of $\mathcal R^+$ is $V$, because $t=s/6$.
+From $\mathcal R(\phi)=-d(Ja)$ and
+$\mathcal R(J\phi)=-da$ one obtains
+\[
+ (\mathcal R^+)_{12}=-2\ell,\qquad
+ (\mathcal R^+)_{13}=-2m,\qquad
+ V=\begin{pmatrix}v_0-t_0&r-u\\r-u&t_0-v_0\end{pmatrix}.
+\]
+Hence
+\begin{equation}
+ |\eta|^2=8|c|^2,\qquad
+ |V|^2=2|A_{12}-A_{21}|^2,\qquad
+ |L|^2=4|c|^2+2\|A\|_F^2.\label{eq:norms}
+\end{equation}
+Differentiating \eqref{eq:torsion} at $a=0$ gives
+$|\nabla^2\Omega|^2=4|L|^2$. Thus \eqref{eq:zero-balance}
+is precisely
+\[
+ 8|c|^2+\|A\|_F^2-|A_{12}-A_{21}|^2=0.
+\]
+The last two terms equal $\tr(A\bar A)$, which proves
+\eqref{eq:normal}.
+
+Let $A=S+K$, where $S$ is complex symmetric and $K$ is complex skew-symmetric
+(that is, $S=(A+A^{\mathsf T})/2$). Then
+\[
+ \tr(A\bar A)=\|S\|_F^2-\|K\|_F^2,
+ \qquad |V|^2=4\|K\|_F^2.
+\]
+Equation \eqref{eq:normal} yields
+$\|K\|_F^2=\|S\|_F^2+8|c|^2$, and proves \eqref{eq:Veta}.
+In particular the norm identity also reads
+\[
+ |\nabla^2\Omega|^2=10|\eta|^2+16\|S\|_F^2.
+\]
+
+The real determinant of a complex-linear plus anti-linear map is
+\begin{align*}
+ \det_{\mathbb R}(c\Id+A\mathsf C)
+ &=\det_{\mathbb C}
+       \begin{pmatrix}c\Id&A\\\bar A&\bar c\Id\end{pmatrix}\\
+ &=|c|^4-|c|^2\tr(A\bar A)+|\det A|^2,
+\end{align*}
+where $\mathsf C$ is complex conjugation. The equality holds for all
+$c$, by polynomial continuation if necessary. Substitution proves the
+first equality in \eqref{eq:det}.
+
+For $A=\left(\begin{smallmatrix}a&b\\d&e\end{smallmatrix}\right)$,
+\[
+ \tr(A\bar A)=|a|^2+|e|^2+2\Re(b\bar d)
+ \ge2|ae|-2|bd|\ge-2|ae-bd|.
+\]
+It follows that $|\det A|\ge4|c|^2$, which proves the lower bound in
+\eqref{eq:det}. Equality in both \eqref{eq:Veta} and \eqref{eq:det}
+is possible for the algebraic data
+\[
+ c\in\mathbb R,\qquad A=\begin{pmatrix}0&2c\\-2c&0\end{pmatrix}.
+\]
+This establishes sharpness of the algebraic coefficients under the
+necessary equations above; it does not construct an Einstein metric
+realizing these prescribed data.
+
+If $\eta\ne0$, the determinant is positive. The inverse function theorem
+applied to $a$ gives an isolated transverse zero; since $q=4|a|^2$,
+\[
+ \operatorname{Hess}_p q(X,Y)=8\langle LX,LY\rangle.
+\]
+If $\det L=0$, \eqref{eq:det} forces $c=0$ and $\det A=0$.
+Then $L=A\mathsf C$ has real rank zero or two. This completes the local
+algebraic assertions of Theorem~\ref{thm:main}.
+
+\section{Indices on a closed manifold}
+Use the standard Nijenhuis convention
+\[
+ N_J(X,Y)=[JX,JY]-J[JX,Y]-J[X,JY]-[X,Y].
+\]
+The adapted-frame expression for $\nabla J$ implies
+\[
+ N_J(e_1,e_3)=2J a^\sharp.
+\]
+After complexifying this is an orientation-preserving linear
+identification of the four real torsion components with the complex
+rank-two bundle
+\[
+ \mathcal N=\Lambda^{0,2}T^*M\otimes T^{1,0}M.
+\]
+Changing the adapted frame changes this identification by
+orientation-preserving complex transformations. At a zero, derivatives
+of the identification itself multiply $a=0$ and do not affect the
+Jacobian. Thus the sign of a transverse local Nijenhuis index is the
+sign of $\det L$. By \eqref{eq:det}, it is positive.
+
+\begin{corollary}[Count when the torsion zeros are transverse]
+If $M$ is closed and every zero of $N_J$ is transverse, then
+\begin{equation}
+ \boxed{\#\{N_J=0\}=5\chi(M)+6\tau(M).}\label{eq:count}
+\end{equation}
+In particular the same formula holds if $\eta$ is nonzero at every
+torsion zero. If a torsion zero is degenerate, then $\eta$ vanishes
+there and the first derivative has real rank zero or two.
+\end{corollary}
+\begin{proof}
+The zeros are isolated and finite. If $x_1,x_2$ are the formal Chern
+roots of $T^{1,0}M$, those of $\mathcal N$ are
+$2x_1+x_2$ and $x_1+2x_2$. Therefore
+\[
+ c_2(\mathcal N)=2c_1^2(TM,J)+c_2(TM,J)=5\chi+6\tau.
+\]
+The index theorem for a transverse section equates this Chern number
+to the sum of local indices. Each is $+1$ by Theorem~\ref{thm:main}.
+The characteristic-class formula is the classical input used in the
+project's torsion-zero argument, following \cite{Armstrong}.
+\end{proof}
+
+For a closed Einstein metric with $s\ne0$, Chern--Weil gives
+$\chi>0$ and $2\chi+3\tau>0$, so
+$5\chi+6\tau=\chi+2(2\chi+3\tau)>0$.
+Consequently \eqref{eq:count} is compatible with Einstein topology.
+It is not a contradiction. Transversality is an extra property of the
+actual Nijenhuis section and is not obtained by perturbing that section
+while discarding the almost-K\"ahler Einstein equations.
+
+\section{A scalar current identity and its limit}
+For clarity, the pointwise identity behind the usual integrated balance
+can also be retained without dropping its current. Define the one-form
+\[
+ \theta(X)=\langle\eta,\nabla_X\Omega\rangle.
+\]
+Then the same Einstein and harmonic-form equations imply
+\begin{equation}
+ \boxed{\frac14\Delta q+2\diver(\theta^\sharp)
+       +\frac{s}{8}q+\frac{3}{16}q^2+|\eta|^2+2|V|^2=0.}
+ \label{eq:current}
+\end{equation}
+Here is a direct derivation. Let $T_i=\nabla_i n$, $f=\sum_i|T_i|^2=q/2$,
+and $\beta_i=\langle v,T_i\rangle=\theta_i/2$.
+The almost-K\"ahler form of \eqref{eq:torsion} gives
+\[
+ \sum_iT_i\otimes T_i=\frac f2(\Id-n\otimes n),\quad
+ \sum_i\langle WT_i,T_i\rangle=-\frac{tf}{2},\quad
+ \nabla^*\nabla n=fn+2v.
+\]
+Product differentiation using \eqref{eq:W-WB} first yields
+\[
+ \Delta t=3t^2-\frac{s}{2}t+6|v|^2-2|V|^2+3tf
+            -4\sum_i\langle(\nabla_iW)T_i,n\rangle.
+\]
+A separate differentiation of $\beta$ gives
+\[
+ \sum_i\langle(\nabla_iW)T_i,n\rangle
+       =\diver\beta+\frac32tf+2|v|^2.
+\]
+Since $f=2t-s/3$, their combination is
+\[
+ \Delta t=\frac{s}{2}t-3t^2-2|v|^2-2|V|^2-4\diver\beta.
+\]
+Substitution of \eqref{eq:defs} proves \eqref{eq:current}.
+
+On a closed manifold, integration recovers the balance already contained
+in the supplied manuscript:
+\[
+ \int\left(|\eta|^2+2|V|^2+\frac{3q^2}{16}\right)\dd
+ =-\frac{s}{8}\int q\dd.
+\]
+That integrated identity is not an additional constraint introduced here.
+At a torsion zero, $\theta=0$ but
+$\diver\theta=-2|\eta|^2$, so dropping the divergence pointwise would be
+incorrect. Keeping it recovers \eqref{eq:zero-balance}.
+
+\paragraph{Connection to Q4.}
+The supplied manuscript previously established that a closed
+nonzero-scalar Einstein almost-K\"ahler candidate has a torsion zero.
+The result here specifies the full first derivative at such a zero:
+nonzero transverse Weyl curvature forces a positive isolated zero, whereas
+a degenerate zero must lie in the locus $\eta=0$ and has even derivative
+rank. None of these statements proves that $\eta$ vanishes on all of $M$.
+The compact third-Gray theorem in \cite{AAD} would finish the integrability
+argument if that global vanishing were obtained. A pointwise zero of the
+torsion is not, by itself, the infinite-order vanishing required by a
+strong unique-continuation argument.
+
+\paragraph{Reproducible finite calculations.}
+The accompanying \texttt{verify\_zero\_structure.py} checks the six linear
+self-duality conditions, their ten-dimensional solution space, the norm
+identities, the determinant formula, and the algebraic equality case.
+It also substitutes the project's explicit rational noncompact metric
+into \eqref{eq:current}; the rational residual is exactly zero. That is a
+consistency check on a previously supplied model, not a new example or a
+metric-existence argument for the algebraic data at a torsion zero.
+
+\begin{thebibliography}{9}
+\bibitem{AAD}
+V. Apostolov, J. Armstrong and T. Dr\u aghici,
+\emph{Local models and integrability of certain almost K\"ahler 4-manifolds},
+Math. Ann. \textbf{323} (2002), 633--666.
+\href{https://arxiv.org/abs/math/0109098}{arXiv:math/0109098}.
+Equations (21)--(24), the harmonic-form identities, and Theorem 2.
+\bibitem{Derdzinski}
+A. Derdzi\'nski,
+\emph{Self-dual K\"ahler manifolds and Einstein manifolds of dimension four},
+Compositio Math. \textbf{49} (1983), 405--433.
+\href{https://archive.numdam.org/item/CM_1983__49_3_405_0/}{Journal archive}.
+\bibitem{CD}
+G. Catino and D. Dameno,
+\emph{Conformal K\"ahler Rigidity of Einstein Four-Manifolds},
+2026 preprint, Lemma 2.5.
+\href{https://arxiv.org/abs/2607.21538}{arXiv:2607.21538}.
+Only the classical Weyl--Weitzenb\"ock formula, with $f=1$, is used here.
+\bibitem{Armstrong}
+J. Armstrong, \emph{Almost-K\"ahler Geometry}, doctoral thesis.
+\href{https://johnarmstrongmaths.com/publications/resources/thesis.pdf}{Author's text}.
+Characteristic class of the Nijenhuis bundle.
+\bibitem{Project}
+Supplied project manuscripts, 8 October 2026:
+\texttt{01\_Research\_Synthesis(1).tex}, the Goldberg section;
+\texttt{02\_Mathematical\_Source\_Companion(1).tex}, Step 55;
+and \texttt{03\_Subsequent\_Mathematical\_Developments(1).tex},
+the explicit Einstein example and the closed torsion-zero proposition.
+These identify the existing project results to which the local calculation
+is connected. No FD, N1, or global Einstein-gap theorem is used in this proof.
+\end{thebibliography}
+\end{document}

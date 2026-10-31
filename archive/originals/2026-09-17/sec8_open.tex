@@ -1,0 +1,25 @@
+\section{决定性的开放问题与后续建议}\label{sec:open}
+
+下表列出“解决其中任何一项都会实质性改变原题状态”的问题。它们彼此独立，量词各不相同。
+
+\begin{longtable}{L{0.06\textwidth}L{0.50\textwidth}L{0.36\textwidth}}
+\toprule 编号 & 问题 & 对原题的后果\\\midrule\endhead
+OP1 & $\CP^2\#\CP^2$ 是否承载 Einstein 度量？（同类：$\#3(S^2\times S^2)$、$2\CP^2\#4\CPb$、$3\CP^2\#3\CPb$；若资料包的 ADE 核延拓通过独立审查，还包括一切 $\#_k(S^2\times S^2)$。）& 任一为“否” $\Rightarrow$ $P_4^+$ 不成立；$P_4^+$ 成立 $\Rightarrow$ 全为“是”。\\
+OP2 & 负 Einstein $A_1$ 轨形（如 $(C_g\times C_h)/\Z_2$、含孤立 $\Z_2$ 点的双曲轨形）的混合手性 EH 解消，以及 Dehn-twist 曲面丛 $E_D$，是否承载 Einstein 度量？& 任一为“否” $\Rightarrow$ $P_4^-$ 不成立。\\
+OP3 & 问题 W：$T^3\times\R$ 上是否存在两端渐近双曲（共形无穷远为 Yamabe 负环面）的完备 Einstein 度量？& “是” $\Rightarrow$ $P_4^-$ 不成立（定理~\ref{thm:W}）。“否”并配合正则性 $\Rightarrow$ 图流形路线关闭。\\
+OP4 & SW 边界带：对 $(\frac13-\gamma)c_1^2(X)\le k\le\frac13c_1^2(X)$ 的固定流形 $X\#k\CPb$，是否有 $e_->0$？相关的正则性假设 (SC)：有界 Ricci、小 $L^2$ 曲率能量的塌缩球上是否存在原度量的统一弱调和展开片？& 某个这样的流形 $e_-=0$ $\Rightarrow$ $P_4^-$ 不成立。(SC) 为“是” $\Rightarrow$ 一致间隙 $\delta_-^2+d\ge c>0$，临界比例附近的部分关闭。\\
+OP5 & 对承载正数量曲率度量、满足严格 HT 的四维流形，是否存在新的 Einstein 不存在性障碍？& 否定 $P_4^+$（从而否定 $Q_4$）的必要前提。\\
+OP6 & 是否存在不承载 Einstein 度量的闭 $n\ge5$ 维流形？& 否定任何 $Q_n$（$n\ge5$）的必要前提。\\
+OP7 & 在一个符号分支内，对一切紧夹逼输入（含塌缩、曲率集中）构造 Einstein 度量。& 证明 $Q_n$ 的唯一途径；四维时已蕴含 OP1 或 OP2 的肯定回答。\\
+\bottomrule
+\end{longtable}
+
+\paragraph{为什么不能宣称“已解决”。}原题在 $n\ge4$ 的任何完整答案都必须经过上表：肯定答案蕴含 OP1/OP2 的存在性结论（定理~\ref{thm:R}(a)--(c)），否定答案需要 OP5，并在负分支另有突破（OP2、OP3，或 OP4 中边界带上的固定／塌缩序列），高维还受制于 OP6。资料包三百余步的研究与本次核验都没有发现绕过这些问题的途径；本报告给出的归约说明这不是方法选择的问题，而是原题的内在结构。
+
+\paragraph{对后续研究的具体建议。}
+\begin{enumerate}
+\item \textbf{可独立成文的结果}（均已通过本次核验）：（i）定理~\ref{thm:A1}及推论~\ref{cor:football}、\ref{cor:stability}——对 Ozuch 的 $L^\infty$ 公开问题的肯定回答，含锐首项常数（本报告数值确认）与资料包的通量下界（终审复核了其线性 Wronskian 恒等式与球面情形的 $1/(8L)$）；（ii）定理~\ref{thm:U}、\ref{thm:collapse}——LeBrun 边界的统一间隙与必要塌缩；（iii）定理~\ref{thm:ED}及其二阶、三阶分析；（iv）命题~\ref{prop:morse}、定理~\ref{thm:W}——图流形路线的归约。成文时按第~\ref{sec:verification}节的勘误表修订。
+\item \textbf{OP3 的正确数值表述}：以 $T^2$ 对称、带联络扭转的约化系统为第一目标（正交传递类已被完全排除），在共形规范或 Einstein--DeTurck 规范下解二维椭圆边值问题，边界数据为两端的共形无穷远 $[dz^2+e^{v_\infty(z)}dx^2+e^{-v_\infty(z)}dy^2]$ 与常值荷；从带人工源项、可支撑 $\cosh$ 型虫洞的同伦族出发做延拓。Cauchy（打靶）表述因椭圆不适定而不可用。若数值上得到解，再用 Newton--Kantorovich 型后验估计做计算机辅助证明；若延拓分支在源项趋零前总是终止，则寻找相应的 Pohozaev/Noether 型恒等式。
+\item \textbf{OP4}：目标应是“原度量”在局部覆盖上的 $C^{1,\alpha}$ 调和片，而不是平滑后度量的控制；可尝试结合 Cheeger--Tian 的塌缩 $\varepsilon$-正则性论证与 Naber--Zhang 的纤维化基本群条件。
+\item \textbf{不建议继续投入的方向}：在 SW 临界比例上寻找非塌缩近 Einstein 序列（已被定理~\ref{thm:collapse}排除）；正交传递或固定螺旋标架类的连接器（已被排除）；用 HT 型拓扑筛选寻找正分支反例（命题~\ref{prop:HT}）。
+\end{enumerate}

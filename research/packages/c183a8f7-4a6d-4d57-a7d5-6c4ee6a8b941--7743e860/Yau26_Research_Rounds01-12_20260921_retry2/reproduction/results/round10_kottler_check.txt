@@ -1,0 +1,19 @@
+{
+  "passed": 9,
+  "checks": [
+    "exact_extremal_Kottler",
+    "three_full_Ricci_error_eigenvalues",
+    "smooth_even_doubling_radial_coefficient",
+    "global_error_maximum_at_neck",
+    "optical_groundstate_maximum",
+    "fixed_cutoff_error_exactly_quadratic_in_d",
+    "fixed_u_metric_parameter_variation",
+    "approximate_Jacobi_error_and_nongauge_neck_variation",
+    "off_shell_torus_bottleneck_defect_stays_three_halves"
+  ],
+  "cutoff_error_over_d_squared": [
+    "3*(y**2*Derivative(chi(y), y) + 3*y*Derivative(chi(y), y) - 2*chi(y) + Derivative(chi(y), y))/(2*y*(y + 1)**2)",
+    "(y**2*Derivative(chi(y), y) + 4*y*chi(y) + 3*y*Derivative(chi(y), y) + 6*chi(y) + 3*Derivative(chi(y), y))/(2*y*(y + 1)**2)",
+    "(y**2*Derivative(chi(y), y) + 4*y*chi(y) + 3*y*Derivative(chi(y), y) + 6*chi(y))/(2*y*(y + 1)**2)"
+  ]
+}

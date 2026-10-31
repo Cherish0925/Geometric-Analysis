@@ -1,0 +1,34 @@
+{
+ "decomposition": "0",
+ "q_equation": "0",
+ "beta_equation": "0",
+ "coupled_bianchi": "0",
+ "bolt_general": {
+  "W_qprime": "b*(-b + t**2*(-3*b*h3 - f2 + g2))",
+  "W_betaprime": "b*(-b + 3*t**2*(-b*h3 + f2 - g2))/2",
+  "W_Piq": "4*t*(-2*b*f2 + 2*b*g2 + 1)",
+  "W_Pib": "2*t*(6*b*f2 - 6*b*g2 + 1)",
+  "C_at_bolt": "-3*h3 - 2/b**2",
+  "D_at_bolt": "2*(3*b**2*h3 + 3*b*(-f2 + g2) + 2)/b**2",
+  "E_at_bolt": "(3*b**2*h3 + 9*b*(f2 - g2) + 2)/b**2"
+ },
+ "bolt_weight4_f2_eq_g2": {
+  "W_qprime": "-b**2*(3*h3*t**2 + 1)",
+  "W_betaprime": "-b**2*(3*h3*t**2 + 1)/2",
+  "W_Piq": "4*t",
+  "W_Pib": "2*t",
+  "C_at_bolt": "-3*h3 - 2/b**2",
+  "D_at_bolt": "6*h3 + 4/b**2",
+  "E_at_bolt": "3*h3 + 2/b**2"
+ },
+ "CH": {
+  "W_betaprime": "sinh(r)**4",
+  "W_qprime": "0",
+  "Ricci_trace": "-24",
+  "C": "0",
+  "E": "0",
+  "D": "0",
+  "W_Pib": "4*sinh(r)**3*cosh(r)",
+  "volume_density_W": "sinh(r)**3*cosh(r)"
+ }
+}

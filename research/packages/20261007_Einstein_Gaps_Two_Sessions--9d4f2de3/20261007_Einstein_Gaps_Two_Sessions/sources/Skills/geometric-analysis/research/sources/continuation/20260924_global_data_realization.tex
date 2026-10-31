@@ -1,0 +1,263 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{esint}
+\setmathfont{Asana Math}
+\setlength{\emergencystretch}{3em}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\hypertarget{global-data-that-turn-allowed-geometry-into-exact-einstein-existence}{%
+\section{Global data that turn allowed geometry into exact Einstein
+existence}\label{global-data-that-turn-allowed-geometry-into-exact-einstein-existence}}
+
+24 September 2026. This continuation advances three separate existence
+problems left by the \href{20260924_frontier_bridges.md}{previous
+development}. The first detects global bundle topology from an input
+metric; the second solves the full deformation problem in a
+growing-cover family with genuine kernels; the third determines the
+whole topology of a singular filling from an actual harmonic form. Each
+has a complete English proof below.
+
+\hypertarget{ricci-control-can-force-finite-monodromy-not-merely-small-local-deformation}{%
+\subsection{1. Ricci control can force finite monodromy, not merely
+small local
+deformation}\label{ricci-control-can-force-finite-monodromy-not-merely-small-local-deformation}}
+
+The \href{20260924_cycle_holonomy_realization.md}{cycle theorem}
+concerns an oriented genus-\(f\) surface bundle over a closed surface of
+genus at least two. Horizontal transport of the actual vertical metric
+defines the accumulated conformal deformation \(\mathcal J_g(\gamma)\)
+around a based loop. If a single reference fiber has hyperbolic
+conformal systole at least \(\iota\), then \[
+ \max_{\gamma\ \mathrm{in\ a\ generating\ set}}
+       \mathcal J_g(\gamma)<\varepsilon_{f,\iota}
+ \quad\Longrightarrow\quad
+ \begin{gathered}
+ \text{finite mapping-class monodromy},\\
+ \text{exact negative KE metric on the same smooth total space}.
+ \end{gathered}
+\] Properness on the thick part of Teichmüller space forces the
+generating classes into \textbf{one finite group}. Nielsen realization
+and surface-bundle classification then construct the metric. Finite
+monodromy is a conclusion, not an assumption. The theorem needs no small
+Ricci error once the cycle condition is known.
+
+The \href{20260924_ricci_monodromy_realization.md}{Ricci composition}
+supplies that condition directly for a Riemannian surface submersion
+with minimal fibers and hyperbolic base. O'Neill's definite horizontal
+Ricci identity gives \(\|S_X\|\le\sqrt{\delta_-}|X|\). Short generators
+of the base give the sufficient condition \[
+        2\operatorname{diam}(B)\sqrt{\delta_-(g)}
+                       <\varepsilon_{f,\iota}.              \tag{1}
+\] The fiber metrics need not themselves be hyperbolic. There is no
+bound on total-space diameter, injectivity radius or volume. The proof
+also allows an arbitrary base metric, adding \(\|(K_B+1)_+\|_\infty\) to
+\(\delta_-\) in (1).
+
+This completes an actual pointwise-input-to-Einstein-output implication
+for the stated submersion class, including the zero-signature case where
+the older signature obstruction says nothing. It does not assert that an
+arbitrary near-Einstein metric carries this global fibration.
+
+Two actual Dehn-twist families distinguish the missing information:
+
+\begin{itemize}
+\tightlist
+\item
+  A thick fiber with a long base collar has \(\delta_-\to0\) and two
+  globally closed, normalized opposite forms with
+  \(\|\nabla\omega_\pm\|_\infty\to0\), but retains a nonzero accumulated
+  cycle deformation.
+\item
+  A pinched fiber over a fixed base has the same local smallness and
+  \(\mathcal J_g\to0\), but the reference conformal thickness vanishes.
+\end{itemize}
+
+Both lie in the actual bilateral monopole near-saturation regime and
+have odd first Betti number, hence no Kähler metric. Neither is a proof
+of general Einstein nonexistence. They show that even exact closedness
+and uniform near-parallelism do not replace global cycle and moduli
+control.
+
+\hypertarget{all-teichmuxfcller-modes-can-be-retained-and-solved-with-a-sharp-scale-loss}{%
+\subsection{2. All Teichmüller modes can be retained and solved, with a
+sharp scale
+loss}\label{all-teichmuxfcller-modes-can-be-retained-and-solved-with-a-sharp-scale-loss}}
+
+The \href{20260924_integrable_kernel_cyclic_repair.md}{full-kernel
+theorem} uses \(M_m=B_m\times F\), where \(B_m\) is a degree-\(m\)
+cyclic cover of a fixed hyperbolic surface and \(F\) is fixed. The exact
+reference metric is \(h_m=b_m+f\). Its gauged Einstein operator has the
+full kernel \(T_{B_m}\oplus T_F\), whose dimension grows with \(m\).
+
+The note proves a uniformly controlled family \(H_m(k)\) integrating
+\textbf{every} kernel direction. It proves the remaining equations
+vanish on that actual family, rather than deleting their projection. For
+every tensor perturbation in harmonic gauge with
+\(\|g-h_m\|_{C^{3,\alpha}_{\rm uloc}}<c m^{-2}\), \[
+ \|g-H_m(\Pi_m(g-h_m))\|_{C^{3,\alpha}_{\rm uloc}}
+       \le C m^2\|\operatorname{Ric}_g+g\|_{C^{1,\alpha}_{\rm uloc}}.
+                                                               \tag{2}
+\] The constants are independent of cover degree. The proof controls the
+growing-rank TT projection, establishes the scalar Green estimate in the
+actual supremum norm, and retains the complete tensor decomposition.
+
+The loss in (2) is not a weakness removable by better bookkeeping.
+Actual smooth metrics satisfy \[
+ \|\operatorname{Ric}_{g_m}+g_m\|_{C^{1,\alpha}_{\rm uloc}}
+       \le C m^{-4},\qquad
+ \operatorname{dist}_{C^{3,\alpha}_{\rm uloc}}
+       (g_m,\{\operatorname{Ric}_h=-h\})\ge c m^{-2}.          \tag{3}
+\] The distance is to \textbf{all} normalized Einstein metrics,
+including diffeomorphic pullbacks, not only a selected product family. A
+slow harmonic-circle function multiplying a fiber Teichmüller
+deformation produces (3). Local geometry remains uniformly bounded and
+noncollapsed.
+
+The prior positive-coercivity repair theorem genuinely excluded these
+kernels. The new result solves them in this family, but the inverse must
+pay for slow spatial coefficients even after every exact zero mode is
+integrated. These manifolds already admit Einstein metrics; the result
+quantifies repair and its failure of uniformity, not new smooth
+topology.
+
+\hypertarget{an-actual-harmonic-form-can-determine-the-whole-singular-filling}{%
+\subsection{3. An actual harmonic form can determine the whole singular
+filling}\label{an-actual-harmonic-form-can-determine-the-whole-singular-filling}}
+
+The \href{20260924_harmonic_contact_milnor_matching.md}{harmonic/contact
+theorem} starts with the previous bounded-diameter gauge-saturated
+orbifold limit. Let \(H_j\) be the self-dual harmonic representative of
+the actual class projection. The new analytic step upgrades its known
+mean alignment to \[
+               -2\pi H_j\longrightarrow\omega_\infty
+                       \quad\text{in }C^{1,\beta}
+\] on every fixed regular collar. Thus the actual boundary of each whole
+singular filling carries the canonical \textbf{strong convex} contact
+structure.
+
+If \(H_j\) is zero-free on that whole filling, and either the limiting
+singularity is \(A_1\) with filling \(b_2=1\), or the filling is a
+rational homology ball, classical symplectic filling theory determines
+its smooth type. In the rational-ball case it also forces the
+singularity to be Wahl. Explicit extension of every possible boundary
+mapping class then proves the \textbf{relative, actually marked Milnor
+matching} previously assumed. This applies to the whole filling, with
+any internal bubble scales.
+
+A global Q-Gorenstein smoothing now gives a negative KE metric on the
+original smooth \(M_j\). The remaining assumptions are actual
+zero-freeness in the cores, the stated whole-filling homology, and
+global smoothability. Small averaged deficit has not been asserted to
+imply them. Conversely a non-Wahl singular point filled by a rational
+homology ball forces a zero of this specified harmonic form in its core.
+
+\hypertarget{what-is-now-different-about-the-first-line}{%
+\subsection{4. What is now different about the first
+line}\label{what-is-now-different-about-the-first-line}}
+
+The advances concern three different pieces of global information:
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+\begin{minipage}[b]{0.30\columnwidth}\raggedright
+Information\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedright
+New completed implication\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedright
+Remaining unrestricted problem\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+Cycle transport and thick fiber moduli\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+Detect finite monodromy and realize an exact metric; in the
+minimal-submersion class Ricci error supplies the cycle estimate\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+Produce or replace the global fibration for arbitrary inputs\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+Full moduli and slow coefficients\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+Solve all kernel equations and quantify the optimal linear scale loss on
+cyclic products\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+Treat general transition data and low-mode systems\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+Actual harmonic form across a singular core\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+Force the whole marked filling and return a smoothing to the original
+smooth type\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+Control core zeros and global smoothing from weaker inputs\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+These are additions to the existing integral obstruction theory, not its
+replacement and not three new claims of worldwide priority. Classical
+results used in each connection are credited in the proofs. The overall
+Yau26 assertion remains open here: no theorem above covers every allowed
+pointwise input. Each existence theorem nevertheless completes the
+original output requirement in its own stated input class.
+
+\end{document}

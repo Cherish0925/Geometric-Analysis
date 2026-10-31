@@ -1,0 +1,245 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype,esint}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}[proposition]{Corollary}
+\newtheorem{lemma}[proposition]{Lemma}
+\theoremstyle{remark}\newtheorem{remark}[proposition]{Remark}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\av}{\mathop{\fint}\nolimits}
+\newcommand{\HH}{\mathcal H_g^+}
+\newcommand{\KK}{\mathcal K_g}
+\newcommand{\CC}{\mathsf C_g}
+\title{Q4: Harmonic Products and the Exact Rank-One Constraint}
+\author{}
+\date{13 October 2026}
+\begin{document}\maketitle
+\begin{abstract}
+For a fixed closed oriented Riemannian four-manifold, we encode all compatible almost-K\"ahler forms by the rank-one positive matrices in the kernel of one positive semidefinite operator. The kernel is determined by finitely many exact point evaluations. For negative Einstein metrics, the classical uniqueness theorem of di Scala--Nagy removes the branch carrying a parallel self-dual form. A K\"ahler--Einstein calculation identifies the correct fourth-order vanishing of the norm-variance functional and rules out a proposed linear coercive bound. These are fixed-metric reductions and calibration results; the remaining Goldberg question is the geometric restriction on the kernels arising from arbitrary closed negative Einstein metrics.
+\end{abstract}
+
+\section{The fixed-metric problem}
+Let $(M^4,g)$ be smooth, closed, connected and oriented. Set $V=\Vol_g(M)$ and use form norms. The self-dual harmonic space
+\[
+ \HH=\{\psi\in\Omega^2(M):*\psi=\psi,\ d\psi=0\}
+\]
+has dimension $m=b_2^+(M)$. Self-duality makes the coclosed equation automatic. A positive compatible almost-K\"ahler form is precisely an element $\Omega\in\HH$ with $|\Omega|^2=2$. Indeed its skew endomorphism satisfies $(\Omega^\sharp)^2=-\Id$, and $d\Omega=0$ gives the almost-K\"ahler condition. It is K\"ahler exactly when $\nabla\Omega=0$. These four-dimensional identifications are classical; see \cite{AAD}.
+
+If $m=0$, there is no such form. Otherwise choose a basis $\psi_1,\ldots,\psi_m$ with
+\[
+ \av_M\langle\psi_a,\psi_b\rangle\,dV_g=\delta_{ab}.
+\]
+Define
+\begin{align*}
+ G_{ab}(x)&=\langle\psi_a(x),\psi_b(x)\rangle, & B(x)&=G(x)-I,\\
+ H_{ab}&=\av_M\langle\nabla\psi_a,\nabla\psi_b\rangle\,dV_g.
+\end{align*}
+Then $\av G=I$ and $H\succeq0$. For $c\in\mathbb R^m$, put
+\[
+ \Omega_c=\sqrt2\sum_a c_a\psi_a,\qquad
+ F_g(c)=\av_M(c^{\mathsf T}B(x)c)^2\,dV_g.
+\]
+Every compatible almost-K\"ahler form occurs with $|c|=1$. For $|c|=1$,
+\begin{equation}
+ F_g(c)=0\iff |\Omega_c|^2=2\text{ everywhere},\qquad
+ \av_M|\nabla\Omega_c|^2\,dV_g=2c^{\mathsf T}Hc.
+ \label{eq:original}
+\end{equation}
+The zero implication follows from nonnegativity and continuity of the integrand. Also
+\[
+ c\in\ker H\iff \sum_a c_a\psi_a\text{ is parallel}.
+\]
+The basis is global: unrestricted local harmonic jets do not specify this space.
+
+\section{A linear kernel before the rank-one problem}
+Equip $\Sym_m(\mathbb R)$ with $\langle X,Y\rangle=\tr(XY)$. Define
+\begin{equation}
+ \CC X=\av_M\langle B(x),X\rangle B(x)\,dV_g,
+ \qquad \KK=\ker\CC.
+ \label{eq:C}
+\end{equation}
+Thus $\CC$ is self-adjoint and positive semidefinite.
+
+\begin{proposition}[Exact kernel representation]
+One has
+\begin{equation}
+ \KK=\{X\in\Sym_m:\langle B(x),X\rangle=0\text{ for every }x\in M\}.
+ \label{eq:kernel}
+\end{equation}
+Compatible almost-K\"ahler forms, modulo the sign of the form, correspond bijectively to
+\begin{equation}
+ X\in\KK,\qquad X\succeq0,\qquad \tr X=1,\qquad\rank X=1.
+ \label{eq:rankone}
+\end{equation}
+The corresponding form is parallel exactly when $\tr(HX)=0$.
+\end{proposition}
+\begin{proof}
+For every symmetric $X$,
+\[
+ \langle X,\CC X\rangle=\av_M\langle B(x),X\rangle^2\,dV_g.
+\]
+This vanishes exactly when the smooth integrand vanishes everywhere, proving \eqref{eq:kernel}. A positive rank-one matrix of trace one is $X=cc^{\mathsf T}$ with $|c|=1$, unique up to $c\mapsto-c$. Then
+\[
+ F_g(c)=\langle cc^{\mathsf T},\CC(cc^{\mathsf T})\rangle,
+ \qquad\tr(Hcc^{\mathsf T})=c^{\mathsf T}Hc,
+\]
+and \eqref{eq:original} finishes the proof.
+\end{proof}
+
+Invariantly, this is the multiplication map
+\[
+ \Sym^2\HH\longrightarrow C^\infty(M)/\mathbb R,
+ \qquad \psi\odot\xi\longmapsto\langle\psi,\xi\rangle\bmod\mathbb R.
+\]
+Its kernel is basis-independent. For self-dual forms, the same map is the component of $\psi\wedge\xi$ orthogonal to harmonic top-degree forms. Only the square of the selected form must be harmonic; geometric formality of all harmonic products is not assumed.
+
+\begin{proposition}[Finite exact evaluations]
+Let $\mathcal S_g=\Span\{B(x):x\in M\}$, and let $r=\dim\mathcal S_g\le m(m+1)/2$. There exist $x_1,\ldots,x_r\in M$ such that
+\begin{equation}
+ \KK=\{X:\tr(B(x_i)X)=0,\quad i=1,\ldots,r\}.
+ \label{eq:finite}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Choose a basis of the finite-dimensional span $\mathcal S_g$ from its generating set $\{B(x)\}$. Then \eqref{eq:finite} is the description of $\mathcal S_g^\perp$, which equals \eqref{eq:kernel}.
+\end{proof}
+The points must span the entire matrix space $\mathcal S_g$. Merely finding a stable numerical rank on one grid does not establish this condition. Conversely, proving that the equations at any chosen finite collection already have no rank-one solution is sufficient for nonexistence, without a span-completeness assertion.
+
+\paragraph{Why the rank condition is essential.}
+Take $m=2$ and
+\[
+ B_1=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\qquad
+ B_2=\begin{pmatrix}0&1\\1&0\end{pmatrix}.
+\]
+Their common orthogonal kernel is $\mathbb RI$, which contains $I/2\succeq0$ of trace one. But for $c=(x,y)$,
+\[
+ (c^{\mathsf T}B_1c)^2+(c^{\mathsf T}B_2c)^2
+ =(x^2-y^2)^2+4x^2y^2=(x^2+y^2)^2.
+\]
+Hence there is no unit rank-one solution. Even matrices $G=I\pm aB_i$, with $0<a<1$, are positive definite and average to $I$. This is an algebraic example explaining failure of the relaxation, not a claim that these matrices come from harmonic forms on an Einstein manifold.
+
+\section{Removing the already understood Einstein branch}
+Assume now $\Ric_g=-g$.
+
+\begin{proposition}[Parallel branch]
+If $\ker H\ne\{0\}$, every compatible almost-K\"ahler form in the chosen orientation is parallel. Consequently any counterexample to Q4 must satisfy $m>0$ and $H\succ0$.
+\end{proposition}
+\begin{proof}
+A nonzero element of $\ker H$ is a parallel self-dual form. Its length is a positive constant; normalizing it defines a parallel orthogonal complex structure $J_0$. Thus $(M,g,J_0)$ is K\"ahler--Einstein with nonzero scalar curvature. The uniqueness theorem of di Scala--Nagy \cite{DN} says that a positive orthogonal almost-K\"ahler structure for this same metric must be $J_0$ or $-J_0$. Both are parallel.
+\end{proof}
+Thus the genuinely unresolved class can be written exactly as
+\begin{equation}
+ \Ric_g=-g,\quad H_g\succ0,
+ \quad\text{and whether }\KK\cap\{cc^{\mathsf T}:|c|=1\}\text{ is empty}.
+ \label{eq:unknown}
+\end{equation}
+For each fixed metric with $H\succ0$, emptiness is equivalent to $\min_{|c|=1}F_g(c)>0$. The minimum is attained by compactness. Q4 does not require a single lower bound valid uniformly over all metrics or topologies.
+
+\section{A fourth-order calibration, not a linear error bound}
+Let $(M,g,J_0,\omega_0)$ be a closed K\"ahler--Einstein surface with $\Ric=-g$, with its complex orientation. Set $\psi_0=\omega_0/\sqrt2$. The classical K\"ahler Hodge splitting gives
+\[
+ \HH=\mathbb R\psi_0\oplus\mathcal V,
+ \qquad\mathcal V=\operatorname{Re}H^{2,0}(M).
+\]
+Every $\xi\in\mathcal V$ is pointwise orthogonal to $\psi_0$. For $s=-4$, the Weyl eigenvalue on $\mathcal V$ is $-s/12=1/3$. The harmonic two-form Weitzenb\"ock equation therefore yields
+\[
+ \nabla^*\nabla\xi=2\xi,
+ \qquad\av|\nabla\xi|^2=2\av|\xi|^2.
+\]
+Choose a mean-orthonormal basis of $\mathcal V$. In the resulting basis,
+\begin{equation}
+ H=\begin{pmatrix}0&0\\0&2I\end{pmatrix}.
+ \label{eq:HKE}
+\end{equation}
+
+Suppose $\mathcal V\ne0$, and define
+\[
+ \nu_g=\min_{\xi\in\mathcal V,\ \av|\xi|^2=1}
+              \av(|\xi|^2-1)^2.
+\]
+This is positive. Indeed the unit sphere in $\mathcal V$ is compact. If a unit $\xi$ had constant length one, then $\sqrt2\xi$ would define a positive orthogonal almost-K\"ahler structure distinct from $\pm\omega_0$, contradicting \cite{DN}.
+
+Write $c=(a,u)$ with $a^2+|u|^2=1$, and let $\xi_u$ be the form represented by $u$. Pointwise orthogonality gives the exact formula
+\[
+ F_g(a,u)=\av(|\xi_u|^2-|u|^2)^2.
+\]
+The same block structure explains an important degeneracy of the linear representation:
+\[
+ \left\{\begin{pmatrix}a&v^{\mathsf T}\\v&0\end{pmatrix}:a\in\mathbb R,\ v\in\mathbb R^{m-1}\right\}\subseteq\KK.
+\]
+Thus a large linear kernel can coexist with uniqueness of its positive rank-one solution. The off-diagonal matrices are tangent directions to the rank-one set at the parallel solution, not additional almost-K\"ahler forms.
+
+Consequently
+\begin{equation}
+ \boxed{F_g(c)\ge\frac{\nu_g}{4}(c^{\mathsf T}Hc)^2.}
+ \label{eq:quadratic}
+\end{equation}
+This is a fixed-metric quantitative consequence of the known K\"ahler branch, not a bound for general negative Einstein metrics.
+
+For any unit $\xi\in\mathcal V$ and
+\[
+ c_t=\frac{(1,t u)}{\sqrt{1+t^2}},\qquad |u|=1,
+ \qquad\nu(\xi)=\av(|\xi|^2-1)^2>0,
+\]
+one obtains exactly
+\begin{equation}
+ F_g(c_t)=\frac{t^4\nu(\xi)}{(1+t^2)^2},\qquad
+ c_t^{\mathsf T}Hc_t=\frac{2t^2}{1+t^2}.
+ \label{eq:scaling}
+\end{equation}
+Thus $F_g(c_t)/(c_t^{\mathsf T}Hc_t)\to0$. In particular, a proposed bound
+$F_g(c)\ge C_g c^{\mathsf T}Hc$ with $C_g>0$ is false even on an already understood closed negative K\"ahler--Einstein surface when $\mathcal V\ne0$. The variance is fourth-order near the parallel direction. If $\mathcal V=0$, $H=0$ and the branch is already completely determined.
+
+\section{How point data can give a rigorous exclusion}
+Let $x_1,\ldots,x_N$ be any points. Suppose certified approximate matrices satisfy
+\[
+ \|\widetilde B_i-B(x_i)\|_{\mathrm{op}}\le e_i.
+\]
+Assume positive weights $w_i$ and a rigorously proved polynomial inequality
+\[
+ \sum_i w_i(c^{\mathsf T}\widetilde B_i c)^2\ge\mu|c|^4
+ \quad\text{for every }c\in\mathbb R^m,
+ \qquad \mu>\sum_iw_i e_i^2.
+\]
+Then no unit vector yields a compatible almost-K\"ahler form for $g$. Indeed an exact candidate would have $c^{\mathsf T}B(x_i)c=0$, so the left side would be at most $\sum_iw_i e_i^2$, a contradiction. No completeness of the chosen point set is needed for this exclusion.
+
+The hypothesis refers to a certified global harmonic basis of an actual closed metric. Arbitrary matrix data, approximate local harmonic jets, or an unverified numerical minimum do not furnish that input. A feasible positive matrix of rank greater than one only describes a constant sum of squares of several forms, not one almost-K\"ahler form.
+
+\section{Where the Einstein equation still has to enter}
+For a mean-orthonormal harmonic basis, the classical Weitzenb\"ock formula gives
+\[
+ H_{ab}=2\av\langle W^+\psi_a,\psi_b\rangle-\frac{s}{3}\delta_{ab}.
+\]
+It describes $H$, but does not by itself determine the kernel of the multiplication operator \eqref{eq:C}. The full Q4 assertion in this representation is
+\[
+ \ker\CC\cap\{cc^{\mathsf T}:|c|=1\}
+ \ \subseteq\ \{cc^{\mathsf T}:c\in\ker H,\ |c|=1\}
+ \quad\text{for every closed }\Ric=-g.
+\]
+The results above identify the exact finite-dimensional object for each fixed metric, eliminate the classical parallel branch, and establish the necessary error scale in that branch. They do not establish the displayed implication in the $H\succ0$ case. Proving that implication requires a new restriction on harmonic multiplication data realized by negative Einstein geometry, or its failure must be exhibited on an actual closed negative Einstein metric.
+
+\begin{thebibliography}{9}
+\bibitem{AAD} V. Apostolov, J. Armstrong and T. Dr\u aghici,
+\emph{Local models and integrability of certain almost K\"ahler 4-manifolds},
+Math. Ann. \textbf{323} (2002), 633--666.
+\url{https://arxiv.org/abs/math/0109098}.
+\bibitem{DN} A. J. di Scala and P.-A. Nagy,
+\emph{On the uniqueness of almost-K\"ahler structures},
+C. R. Math. Acad. Sci. Paris \textbf{348} (2010), 423--425.
+\url{https://doi.org/10.1016/j.crma.2010.01.005}.
+\bibitem{Project} Qiushi first-scientific-line supplied manuscripts,
+\emph{Einstein Gaps: Four Problems}, October 2026, Q4; and the preceding
+conversation's global-harmonic-basis proposal. The geometric target and
+normalization are retained. The kernel calculation here is elementary
+linear algebra on that proposal; the K\"ahler uniqueness input is the
+published theorem \cite{DN}, not a new claim of this note.
+\end{thebibliography}
+\end{document}

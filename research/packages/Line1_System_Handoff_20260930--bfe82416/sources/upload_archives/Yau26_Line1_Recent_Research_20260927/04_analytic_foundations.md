@@ -1,0 +1,3172 @@
+# Technical supplement: intrinsic calibration and parameter theory
+
+Research snapshot: 844e62f7304d9f890914a6a4370ec39291ddc26e.
+
+Selected complete older proofs needed by the recent papers, not newly counted results. Historical endpoint limitations refer to their date and are updated by Volumes 1-3.
+
+Read 00_READ_FIRST.md for superseded statements. Each source below is complete and byte-preserved. Original local links remain relative to their source; locate other texts using Volume 6. Formula numbers restart in each source.
+
+
+---
+
+## Source 1: line1_integral_rigidity_paper.md
+
+Original path: mathematics/current/line1_integral_rigidity_paper.md
+
+SHA-256: ca664aa1f07d2907c8bd0b346d4e0b824cb858335fa2a8d15c9cce33ba7e3d54
+
+BEGIN COMPLETE SOURCE
+
+# Integral Einstein rigidity from polarized monopole classes
+
+## Abstract
+
+We prove a scale-invariant, integral obstruction to Einstein metrics on
+closed oriented four-manifolds with suitable polarized Seiberg–Witten
+classes. The analytic statement uses actual solutions for every positive
+weight, but requires no Sobolev, injectivity-radius, diameter, volume,
+pointwise-curvature or curvature-derivative bound. Its proof retains the
+nonnegative errors in the monopole inequalities, bounds the spinor by a
+truncated weight, constructs a globally smooth polynomial Weyl model, and
+tests the contracted Bianchi identity against the divergence of that model.
+A bundle Hessian estimate proved below closes this self-test without a
+geometric compactness argument.
+
+The resulting universal constant gives an integral Einstein gap for the
+connected sums occurring in LeBrun's Einstein obstruction. The class may
+depend on the metric, including its chamber when the positive Betti number
+is one; the same selected class must work for every weight in that metric's
+conformal class. Positive and negative Einstein constants and the separate
+Ricci-flat case are treated explicitly. The positive-budget application
+strengthens the numerical obstruction in LeBrun's Theorem 3.3 and
+Corollary 3.4. Negative topological budgets are handled directly by
+Chern–Gauss–Bonnet; the zero-budget, zero-surgery corner is not an Einstein
+nonexistence statement.
+
+This manuscript makes the inherited integral-rigidity argument
+self-contained analytically. It does not assert priority for either that
+argument or the classical gauge-theoretic inputs.
+
+## 1. Conventions and statements
+
+Let \(M\) be a closed, connected, oriented smooth four-manifold, and let
+
+\[
+ V=\operatorname{Vol}_g(M),\qquad T=2\chi(M)+3\tau(M),\qquad
+ P=\int_M|\operatorname{Ric}^{\circ}|^2.
+\]
+
+Integrals and norms use \(g\), unless stated otherwise. Ricci is a
+covariant two-tensor; \(W^+\) is the trace-free symmetric curvature
+endomorphism of \(\Lambda^+\), with its operator Hilbert–Schmidt norm.
+The Laplacian is nonnegative. Write \(x_-:=\max\{-x,0\}\) and
+
+\[
+ 4\pi^2T=\int_M\left(\frac{s^2}{24}+2|W^+|^2
+                          -\frac{|\operatorname{Ric}^{\circ}|^2}{2}\right).
+ \tag{1.1}
+\]
+
+For a Spin\(^c\) structure with determinant line \(L\), put
+
+\[
+ a=c_1(L)\in H^2(M;\mathbb R),\qquad
+ a^+=\operatorname{pr}_{H_g^+}a,\qquad p=(a^+)^2.
+\]
+
+All cohomological squares mean intersection squares. The quadratic
+spinor map is normalized by
+
+\[
+ |\sigma(\Phi)|^2=|\Phi|^4/8.
+\]
+
+**Definition 1.1 (the conformal monopole hypothesis).** A pair \((g,a)\)
+satisfies this hypothesis if \(p>0\) and one fixed Spin\(^c\) structure
+with first Chern class \(a\) has an unperturbed Seiberg–Witten solution for
+every metric conformal to \(g\). Equivalently for our purposes, for every
+smooth \(f>0\) there is a solution of
+
+\[
+ D_A\Phi=0,\qquad -iF_A^+=f\sigma(\Phi).                 \tag{1.2}
+\]
+
+The implication from conformal solvability to (1.2) is proved in §2.
+The class is not allowed to change as \(f\) changes. A different class may
+be selected for a different initial metric.
+
+Define the scale-invariant integral Einstein error by
+
+\[
+ \mathcal E(g):=\inf_{\lambda\ne0}
+  \frac{\int_M|\operatorname{Ric}_g-\lambda g|^2}
+       {\lambda^2V}.                                      \tag{1.3}
+\]
+
+**Theorem 1.2 (integral rigidity).** There is an absolute constant
+
+\[
+                       \varepsilon_0>0                   \tag{1.4}
+\]
+
+with the following property. Suppose that for a metric \(g\) there is a
+class \(a\) satisfying Definition 1.1 and
+
+\[
+                     (a^+)^2\ge A>0,\qquad a^2\ge T.
+ \tag{1.5}
+\]
+
+Then
+
+\[
+ \boxed{\displaystyle
+ \mathcal E(g)+\left(\frac TA-\frac23\right)_+
+                         \ge\varepsilon_0.}              \tag{1.6}
+\]
+
+In particular, the conclusion holds for every metric if such a class can
+be selected metricwise, with the same number \(A\). No regularity of the
+class selection is needed. The constant is existential and universal;
+this paper does not assign it a numerical value.
+
+The main analytic ingredient is a calibration gap. Let
+
+\[
+ \begin{split}
+ \mathcal O&=\operatorname{Orb}\operatorname{diag}
+                    (-1/6,1/12,1/12)\subset S^2_0(\mathbb R^3),\\
+ F&=\operatorname{dist}_{\mathrm{HS}}(W^+,\mathcal O)^2,\qquad
+ E=\operatorname{Ric}+g,\qquad e=s+4,\\
+ \alpha&=\sqrt{2/3}|W^+|,\qquad q=-s+3\alpha,\\
+ \mathcal C&=\int_M(|E|^2+F),\qquad
+ \Delta_+=\int_Mq_+^2-72\pi^2p,\\
+ \kappa&=(\mathcal C+\Delta_+)/V,\qquad
+ B_a=(-a^2)_+/V.
+ \end{split}                                              \tag{1.7}
+\]
+
+Here \(\mathcal O\) is interpreted in each oriented orthonormal frame of
+\(\Lambda^+\); the distance is frame independent.
+
+**Theorem 1.3 (analytic calibration gap).** Under Definition 1.1,
+
+\[
+ \Delta_+\ge0,\qquad (1+B_a)\kappa\ge c_{\mathrm{cal}}>0, \tag{1.8}
+\]
+
+where \(c_{\mathrm{cal}}\) is absolute.
+
+We prove this theorem first. Throughout the analytic proof, \(C\)
+denotes an absolute positive constant whose value can change from line to
+line. Explicit intermediate constants are retained where they clarify
+the topological transfer, not to advertise an optimized final constant.
+
+## 2. Actual weighted solutions and the retained monopole identities
+
+### 2.1. Why the weighted equation has solutions
+
+Let \(\widehat g=e^{2u}g=f^{-2}g\), so \(u=-\log f\). Under the
+fiberwise unitary spinor identification \(\beta\), the conformal formulas
+are
+
+\[
+ \begin{split}
+ D_A^{\widehat g}(e^{-3u/2}\beta\Phi)
+        &=e^{-5u/2}\beta D_A^g\Phi,\\
+ \sigma_{\widehat g}(\beta v)&=e^{2u}\sigma_g(v)
+                   \quad\hbox{as covariant two-forms}.
+ \end{split}                                              \tag{2.1}
+\]
+
+For an ordinary solution \((A,\widehat\Phi)\) for \(\widehat g\), set
+
+\[
+                 \Phi=f^{-3/2}\beta^{-1}\widehat\Phi.
+\]
+
+Then \(D_A^g\Phi=0\), and
+
+\[
+ \sigma_g(\Phi)=f^{-1}\sigma_{\widehat g}(\widehat\Phi).
+\]
+
+The Hodge star on two-forms is conformally invariant in dimension four,
+so the ordinary curvature equation becomes (1.2). In particular \(H_g^+\)
+does not change during this operation. This is the conformal weighted
+monopole construction of [LeBrun, Lemma 3.7](https://arxiv.org/pdf/math/0611450);
+the displayed formulas specify the normalization used here.
+
+Set
+
+\[
+             \rho=|\Phi|^2,\qquad \psi=2\sqrt2\sigma(\Phi).
+ \tag{2.2}
+\]
+
+Thus \(\psi\) is a smooth self-dual two-form, \(|\psi|=\rho\), and
+\(\rho\) itself is smooth, including at spinor zeros. The harmonic
+projection of the determinant curvature gives
+
+\[
+ \int_M f^2\rho^2=8\|F_A^+\|_2^2\ge32\pi^2p.           \tag{2.3}
+\]
+
+Only the squared norm is used, so the equivalent opposite sign
+convention for the Chern representative does not change this formula.
+
+### 2.2. Nonnegative errors
+
+The spinor Weitzenböck equation and the self-dual Hodge formula are
+
+\[
+ 4\nabla_A^*\nabla_A\Phi+(s+f\rho)\Phi=0,                \tag{2.4}
+\]
+
+\[
+ \|d\psi\|_2^2+\|d^*\psi\|_2^2
+   =\int_M\left(|\nabla\psi|^2+\frac{s}{3}\rho^2
+                                  -2\langle W^+\psi,\psi\rangle\right).
+ \tag{2.5}
+\]
+
+The differential of the Hopf quadratic map in (2.2) satisfies
+
+\[
+ |d\psi_z(v)|^2
+       =4|z|^2|v|^2-4\bigl(\operatorname{Im}\langle z,v\rangle\bigr)^2
+       \le4|z|^2|v|^2.                                   \tag{2.6}
+\]
+
+The same identity applies covariantly because the map is equivariant and
+parallel. Pairing (2.4) with \(\rho\Phi\) and integrating yields
+
+\[
+ 2\int_M|d\rho|^2+4\int_M\rho|\nabla_A\Phi|^2
+                  +\int_Ms\rho^2+\int_M f\rho^3=0.       \tag{2.7}
+\]
+
+Let \(w\) be the smallest eigenvalue of \(W^+\). For a trace-free
+symmetric three-by-three matrix, \(w\ge-\alpha\). Define
+
+\[
+ \begin{split}
+ D_{\mathrm{amp}}&=2\int_M|d\rho|^2,\\
+ D_{\mathrm{quad}}&=\int_M(4\rho|\nabla_A\Phi|^2-|\nabla\psi|^2),\\
+ D_H&=\|d\psi\|_2^2+\|d^*\psi\|_2^2=2\|d\psi\|_2^2,\\
+ D_{\mathrm{eig}}&=2\int_M
+           (\langle W^+\psi,\psi\rangle+\alpha\rho^2),\\
+ D_0&=D_{\mathrm{amp}}+D_{\mathrm{quad}}+D_H+D_{\mathrm{eig}}.
+ \end{split}                                              \tag{2.8}
+\]
+
+Each term is nonnegative. Equations (2.5)–(2.7) give the exact identity
+
+\[
+ D_0=\int_M\left(\frac23q\rho^2-f\rho^3\right).
+ \tag{2.9}
+\]
+
+For \(v=3\rho/2\), this is
+
+\[
+                  \int_M(qv^2-fv^3)=\frac{27}{8}D_0.
+ \tag{2.10}
+\]
+
+### 2.3. Signed spectral and scalar estimates
+
+Put
+
+\[
+                  b=2s/3+2w,\qquad h=b_-.
+\]
+
+Using \(w\), rather than \(-\alpha\), in (2.5)–(2.7) gives
+
+\[
+                       \int_M f\rho^3\le\int_M h\rho^2.
+ \tag{2.11}
+\]
+
+Choose positive smooth functions \(h_j\ge h\) converging uniformly to
+\(h\), and use the actual solutions with \(f_j=\sqrt{h_j}\). Set
+
+\[
+ C_j=\int_M f_j^2\rho^2,\quad Z_j=\int_M f_j\rho^3,
+ \quad Q_j=\int_M f_j^4.
+\]
+
+Equation (2.11) and Hölder imply
+
+\[
+ 32\pi^2p\le C_j\le Q_j^{1/3}Z_j^{2/3}
+                            \le Q_j^{1/3}C_j^{2/3}.
+\]
+
+Consequently \(32\pi^2p\le Q_j\), and uniform approximation proves
+
+\[
+ \int_M(2s/3+2w)_-^2\ge32\pi^2p,\qquad
+ \int_M q_+^2\ge72\pi^2p.                               \tag{2.12}
+\]
+
+The second follows from \(b_-\le(2/3)q_+\). This argument passes to a
+limit of inequalities, not to a limiting spinor or connection.
+
+For \(f=1\), pairing (2.4) with \(\Phi\) gives
+
+\[
+ \int_M\rho^2\le\int_Ms_-\rho
+        \le\|s_-\|_2\|\rho\|_2.
+\]
+
+Together with (2.3), this proves
+
+\[
+                        \int_Ms_-^2\ge32\pi^2p.          \tag{2.13}
+\]
+
+In particular \(p>0\) excludes a scalar-flat metric. These are the
+classical monopole curvature estimates in the normalization needed here;
+the retained terms in (2.8) will supply their quantitative use.
+
+## 3. A bounded spinor with small retained errors
+
+The weights used in §2.3 need not bound the spinor uniformly. For the
+calibration argument we instead set
+
+\[
+       Q=\max\{q,3\},\qquad
+       f_0=\max\{\sqrt Q,s_-/4\}.                        \tag{3.1}
+\]
+
+Choose smooth majorants \(f_j\ge f_0\) with \(f_j\to f_0\) uniformly,
+and choose an actual solution for each \(f_j\). At a positive maximum
+of \(\rho\), (2.4) implies \(s+f_j\rho\le0\). Hence
+
+\[
+                           0\le\rho\le4,\qquad 0\le v\le6.
+ \tag{3.2}
+\]
+
+All errors \(o_j(1)\) below tend to zero for this fixed smooth metric
+and fixed class. They require only uniform approximation of \(f_0\),
+not bounds on derivatives of \(f_j\). No assertion of convergence of
+the solutions is made.
+
+The two truncations cost only scalar error:
+
+\[
+ 0\le Q^2-q_+^2\le9e^2,\qquad
+ 0\le f_0^2-Q\le\frac9{16}e^2.                          \tag{3.3}
+\]
+
+Indeed, the first difference vanishes unless \(q<3\), which implies
+\(s>-3\) and \(e>1\). For the second, a nonzero difference implies
+\(s_->4\sqrt3>6\), and then \(s_-\le3|s+4|\).
+
+Define ideal moments using \(Q\), not the full truncated weight:
+
+\[
+ C_*:=\int_M Qv^2,\qquad Z_*:=\int_M\sqrt Qv^3,
+ \qquad E_Q:=\int_M Q^2,\qquad P_*:=C_*-Z_*.
+ \tag{3.4}
+\]
+
+Equation (2.10), \(Q\ge q\), and \(f_j\ge\sqrt Q\) give
+
+\[
+ P_*\ge\frac{27}{8}D_0\ge0.                            \tag{3.5}
+\]
+
+The actual curvature moment is
+
+\[
+ C_{\mathrm{act}}:=\int_M f_j^2v^2
+                      =18\|F_A^+\|_2^2\ge72\pi^2p.
+\]
+
+By (3.2)–(3.3),
+
+\[
+ 0\le C_{\mathrm{act}}-C_*
+                     \le\frac{81}{4}\int_M e^2+o_j(1).
+\]
+
+Hölder gives \(C_*\le E_Q^{1/3}Z_*^{2/3}\). Since \(Z_*\le C_*\),
+it follows that \(C_*\le E_Q\). Thus, with
+
+\[
+                        S_*:=\Delta_++\frac{117}{4}\int_Me^2,
+\]
+
+we have
+
+\[
+                     0\le E_Q-C_*\le S_*+o_j(1).         \tag{3.6}
+\]
+
+For completeness, two elementary moment inequalities recover all the
+errors needed below. Write
+
+\[
+ \theta=(Z_*/E_Q)^{1/3},\qquad
+ H_*=E_Q^{1/3}Z_*^{2/3}-C_*.
+\]
+
+Here \(0<\theta\le1\), \(H_*\ge0\), and direct algebra gives
+
+\[
+ E_Q-C_*=H_*+\frac{1+\theta}{\theta^2}(P_*+H_*)\ge2P_*.
+ \tag{3.7}
+\]
+
+For the probability measure \(d\nu=Q^2d\mu/E_Q\), let
+\(r=v/\sqrt Q\), \(c=\int r^2d\nu\), \(z=\int r^3d\nu\), and
+\(m=\int rd\nu\). We have \(z\le c\le z^{2/3}\), hence \(c\le1\).
+Also \(c^2\le mz\le mc\), so \(m\ge c\). Therefore
+
+\[
+ \int_M Q(v-\sqrt Q)^2=E_Q(c-2m+1)\le E_Q-C_*.
+ \tag{3.8}
+\]
+
+Equations (3.5)–(3.8) prove
+
+\[
+ \begin{split}
+ D_0&\le\frac4{27}S_*+o_j(1),\\
+ \int_M|d\rho|^2,\ \int_M|d\psi|^2
+     &\le\frac2{27}S_*+o_j(1),\\
+ \int_MQ(v-\sqrt Q)^2&\le S_*+o_j(1).
+ \end{split}                                              \tag{3.9}
+\]
+
+The point of the ideal moments is that these conclusions do not require
+any estimate of \(\int f_j^4\), which could be unnecessarily large.
+
+## 4. A globally smooth approximate Weyl tensor
+
+The norm of an element of \(\mathcal O\) is \(1/(2\sqrt6)\).
+Consequently
+
+\[
+ \left\|q-\frac92\right\|_2^2
+       \le2\|e\|_2^2+12\int_MF\le12\mathcal C.           \tag{4.1}
+\]
+
+Clipping at \(3\) moves \(q\) toward \(9/2\), so the same bound holds
+with \(Q\). Since \(Q\ge3\), (3.8) implies
+
+\[
+ \|\rho-\sqrt2\|_2^2
+  \le\frac8{27}S_*+\frac2{27}\left\|Q-\frac92\right\|_2^2+o_j(1).
+ \tag{4.2}
+\]
+
+Here the first term follows by writing
+\(\rho-\sqrt2=(2/3)(v-\sqrt Q)+(2/3)(\sqrt Q-\sqrt{9/2})\)
+and using \(Q\ge3\).
+
+To estimate direction, choose a measurable rank-one orthogonal projection
+\(\Pi\) onto a lowest eigenspace of \(W^+\). Then
+
+\[
+                  A_0=I/12-\Pi/4
+\]
+
+is a nearest point of \(\mathcal O\). On the good set
+\(F\le1/256\), comparison of ordered eigenvalues with \(A_0\) gives
+
+\[
+                   \lambda_2(W^+)-\lambda_1(W^+)\ge1/8.
+\]
+
+Putting \(y=(I-\Pi)\psi\), it follows from the eigenvalue error in
+(2.8) that
+
+\[
+ \int_{\{F\le1/256\}}|y|^2\le\frac{16}{27}S_*+o_j(1).
+\]
+
+The complementary set has volume at most \(256\int F\), while
+\(|\psi|^2\le16\). Thus
+
+\[
+                 \int_M|y|^2\le\frac{16}{27}S_*+4096\int_MF+o_j(1).
+ \tag{4.3}
+\]
+
+No derivative of \(\Pi\) will be taken. Instead define the polynomial
+endomorphism
+
+\[
+       A_\psi=\frac{\rho^2}{24}I-\frac18\psi\otimes\psi,
+             \qquad R=W^+-A_\psi.                       \tag{4.4}
+\]
+
+It is globally smooth, trace-free, and defined even at spinor zeros. Its
+eigenvalues are \(-\rho^2/12,\rho^2/24,\rho^2/24\), and
+\(|A_\psi|^2=\rho^4/96\). The rank-one identity
+
+\[
+ |\psi\otimes\psi-\rho^2\Pi|^2=2\rho^2|y|^2
+\]
+
+gives the useful comparison
+
+\[
+ |A_\psi-A_0|^2
+       \le\frac{\rho^2}{16}|y|^2+\frac{(\rho^2-2)^2}{48}.
+ \tag{4.5}
+\]
+
+For example, (4.5) follows by inserting the intermediate matrix
+\(\rho^2 A_0/2\) and applying \(|X+Y|^2\le2|X|^2+2|Y|^2\).
+Since \(\rho\le4\) and \((4+\sqrt2)^2<36\), (4.1)–(4.5) imply
+
+\[
+ \begin{split}
+ \|R\|_2^2
+ &\le\frac{44}{27}S_*+8194\int_MF
+                     +\frac19\left\|Q-\frac92\right\|_2^2+o_j(1)\\
+ &\le2\Delta_++8500\mathcal C+o_j(1).
+ \end{split}                                              \tag{4.6}
+\]
+
+In the final line we used \(\int e^2\le4\int|E|^2\). In particular,
+each of
+
+\[
+ \|e\|_2^2,\quad\|\rho-\sqrt2\|_2^2,\quad\|R\|_2^2,
+            \quad\|d\rho\|_2^2,\quad\|d\psi\|_2^2
+\]
+
+is bounded by \(C\kappa V+o_j(1)\).
+
+## 5. A Hessian estimate that needs no Sobolev constant
+
+**Lemma 5.1.** Let \(u\) be a smooth section of a metric or Hermitian
+vector bundle with compatible connection over a closed Riemannian
+four-manifold. Let \(\mathscr F\) be its curvature, with component norm
+\(\sum_{i,j}|\mathscr F_{ij}|_{\mathrm{HS}}^2\), and set
+\(K=\|u\|_\infty\). Then
+
+\[
+ \begin{split}
+ \|\nabla u\|_4^2&\le4K\|\nabla^2u\|_2,\\
+ \|\nabla^2u\|_2^2
+ &\le2\|\nabla^*\nabla u\|_2^2
+       +32K^2\|\operatorname{Ric}\|_2^2
+       +33K^2\|\mathscr F\|_2^2.
+ \end{split}                                              \tag{5.1}
+\]
+
+**Proof.** Take real parts of Hermitian inner products when necessary.
+Write \(v_i=\nabla_i u\), \(H_{ij}=\nabla_i v_j\), and
+\(L=\sum_iH_{ii}=-\nabla^*\nabla u\). Integrating the divergence of
+\(X_i=|v|^2\langle u,v_i\rangle\) gives
+
+\[
+ \int|v|^4
+ \le K\int |v|^2(2|H|+|L|)
+ \le K\|v\|_4^2(2\|H\|_2+\|L\|_2).
+\]
+
+Because \(|L|\le2|H|\) in dimension four, this proves the first
+inequality, including the case \(\|v\|_4=0\).
+
+For the second, antisymmetry gives
+
+\[
+ H_{ij}-H_{ji}=\mathscr F_{ij}u,\qquad
+ \|H\|_2^2=\int\langle H_{ij},H_{ji}\rangle
+                         +\frac12\sum_{i,j}\|\mathscr F_{ij}u\|_2^2.
+ \tag{5.2}
+\]
+
+The commutator on the bundle-valued one-form \(v\) yields
+
+\[
+ \sum_i\nabla_i\nabla_jv_i
+     =\nabla_jL+\operatorname{Ric}_{jk}v_k
+                                      +\sum_i\mathscr F_{ij}v_i.
+\]
+
+Integrating by parts in the first term of (5.2) and using the
+skew-adjointness of \(\mathscr F_{ij}\), we obtain the exact identity
+
+\[
+ \begin{split}
+ \|H\|_2^2={}&\|L\|_2^2
+  -\int\operatorname{Ric}_{ij}\langle v_i,v_j\rangle
+  +\sum_{i,j}\int\langle\mathscr F_{ij}v_j,v_i\rangle
+  +\frac12\sum_{i,j}\|\mathscr F_{ij}u\|_2^2.
+ \end{split}                                              \tag{5.3}
+\]
+
+In particular no derivative of curvature appears. Hölder and the first
+part bound the middle terms in absolute value by
+
+\[
+   4K(\|\operatorname{Ric}\|_2+\|\mathscr F\|_2)\|H\|_2.
+\]
+
+Use Young's inequality to absorb half of \(\|H\|_2^2\), and then
+\((x+y)^2\le2(x^2+y^2)\). This gives exactly the second inequality
+in (5.1). No Sobolev inequality or curvature smallness has been used. \(\square\)
+
+### 5.2. Applying the lemma to the bounded spinor
+
+The calibration budget gives
+
+\[
+ \begin{split}
+ \int|W^+|^2&\le2\int F+V/12,\\
+ \int|\operatorname{Ric}|^2&\le2\int|E|^2+8V,\\
+ \int s^2&\le8\int|E|^2+32V.
+ \end{split}                                              \tag{5.4}
+\]
+
+Equations (3.3) and (4.1) also imply
+
+\[
+                         \int f_j^2\le C(V+\mathcal C)+o_j(1).
+ \tag{5.5}
+\]
+
+Indeed \(Q\le9/2+|Q-9/2|\); Cauchy–Schwarz and
+\(\sqrt{V\mathcal C}\le(V+\mathcal C)/2\) suffice.
+
+For the determinant connection, Chern–Weil and (3.2) give
+
+\[
+ \|F_A\|_2^2
+   =2\|F_A^+\|_2^2-4\pi^2a^2
+   \le4\int f_j^2+4\pi^2(-a^2)_+.
+ \tag{5.6}
+\]
+
+The positive-spinor connection curvature \(\mathscr F_A\) is a fixed
+linear representation of the Riemannian and determinant curvatures. In
+the block decomposition of the Riemannian curvature operator, its
+nontrivial spin action uses the \(\Lambda^+\) output: it sees
+\(W^+\), \(s\), and the trace-free Ricci block, but not \(W^-\).
+Consequently (5.4)–(5.6) imply
+
+\[
+             \int|\mathscr F_A|^2
+               \le C\bigl(V+\mathcal C+(-a^2)_+\bigr)+o_j(1).
+ \tag{5.7}
+\]
+
+From (2.4) and \(\rho\le4\),
+
+\[
+ \|\nabla_A^*\nabla_A\Phi\|_2^2
+       \le\frac12\int s^2+8\int f_j^2
+       \le C(V+\mathcal C)+o_j(1).                        \tag{5.8}
+\]
+
+Apply Lemma 5.1 with \(\|\Phi\|_\infty\le2\). Since
+\(A_\psi\) is a parallel polynomial of degree four in \(\Phi\),
+
+\[
+ |\nabla^2A_\psi|
+      \le C\bigl(|\Phi|^3|\nabla_A^2\Phi|
+                               +|\Phi|^2|\nabla_A\Phi|^2\bigr).
+\]
+
+We conclude that
+
+\[
+ \int\bigl(|\nabla_A^2\Phi|^2+|\nabla_A\Phi|^4
+                                      +|\nabla^2A_\psi|^2\bigr)
+       \le C\bigl(V+\mathcal C+(-a^2)_+\bigr)+o_j(1).
+ \tag{5.9}
+\]
+
+This proves the required second-derivative budget without differentiating
+the weight and without an estimate of the anti-self-dual Weyl curvature.
+
+## 6. A weak Bianchi self-test and its incompatible lower bound
+
+### 6.1. Tensor normalization and the Bianchi upper bound
+
+For an orthonormal basis \(\epsilon_a\) of \(\Lambda^+\), put
+\(\omega_a=\sqrt2\epsilon_a\). Associate to a symmetric endomorphism
+\(A\) the four-tensor
+
+\[
+ W(A)_{ijkl}=\frac12\sum_{a,b}A_{ab}(\omega_a)_{ij}(\omega_b)_{kl}.
+ \tag{6.1}
+\]
+
+Let
+
+\[
+                    J_\psi=\operatorname{div}W(A_\psi),
+\]
+
+using the full three-index norm \(\sum_{j,k,l}|J_{jkl}|^2\).
+Changing the overall sign of divergence changes none of the following
+squared norms.
+
+The contracted Bianchi identity expresses \(\operatorname{div}W^+\)
+as a parallel algebraic contraction of \(\nabla\operatorname{Ric}^\circ\)
+and \(\nabla s\). This follows by contracting the Riemannian Bianchi
+identity, subtracting the Schouten part, and projecting the final
+two-form pair onto \(\Lambda^+\); that projection is parallel. Since
+\(\nabla\operatorname{Ric}=\nabla E\) and \(\nabla s=\nabla\operatorname{tr}E\),
+integration by parts and \(W(A_\psi)=W^+-W(R)\) show, for every smooth
+test tensor \(Z\), that
+
+\[
+ \left|\int\langle J_\psi,Z\rangle\right|
+       \le C(\|E\|_2+\|R\|_2)\|\nabla Z\|_2.
+ \tag{6.2}
+\]
+
+Set \(Z=J_\psi\). It is smooth, and
+\(\|\nabla J_\psi\|_2\le C\|\nabla^2A_\psi\|_2\). Equations
+(4.6) and (5.9) therefore give
+
+\[
+ \frac1V\int|J_\psi|^2
+            \le C\sqrt\kappa\sqrt{1+\kappa+B_a}+o_j(1).
+ \tag{6.3}
+\]
+
+This is a weak identity tested against a smooth tensor already supplied
+by the spinor. It asserts no pointwise bound on \(\nabla\operatorname{Ric}\).
+
+### 6.2. The exact divergence identity
+
+Define
+
+\[
+ B_\psi=\frac{s}{3}\rho^2-2\langle W^+\psi,\psi\rangle,
+ \qquad C_\psi=\langle\iota_{\nabla\rho}\psi,*d\psi\rangle.
+\]
+
+We now derive the identity used to lower-bound the left side of (6.3).
+Pairing the self-dual Hodge–Weitzenböck equation with \(\rho^2\psi\)
+and integrating by parts gives
+
+\[
+ \int\rho^2\bigl(|\nabla\psi|^2+B_\psi-2|d\psi|^2\bigr)
+          =4\int\rho C_\psi-2\int\rho^2|d\rho|^2.
+ \tag{6.4}
+\]
+
+To see the mixed terms explicitly, use
+\(d^*\psi=-*d\psi\),
+\(d^*(\rho^2\psi)=\rho^2d^*\psi-2\rho\iota_{\nabla\rho}\psi\),
+and \(d(\rho^2\psi)=\rho^2d\psi+2\rho d\rho\wedge\psi\).
+The two exterior-derivative mixed terms add to
+\(4\rho C_\psi\); the rough-Laplacian mixed term is
+\(2\rho^2|d\rho|^2\).
+
+The required pointwise first-jet identities are
+
+\[
+ |\nabla A_\psi|^2
+       =\frac{\rho^2}{32}|\nabla\psi|^2
+                                +\frac{\rho^2}{96}|d\rho|^2,
+ \tag{6.5}
+\]
+
+\[
+ |\nabla A_\psi|^2-|J_\psi|^2
+    =\frac{\rho^2}{64}(|\nabla\psi|^2-2|d\psi|^2)
+      +\frac{\rho^2}{32}|d\rho|^2-\frac\rho{16}C_\psi.
+ \tag{6.6}
+\]
+
+Here is a direct component verification that fixes all normalization
+factors. At a point with \(\rho>0\), choose a parallel orthonormal
+frame so that
+
+\[
+ \begin{split}
+ \epsilon_1&=(dx^0\wedge dx^1+dx^2\wedge dx^3)/\sqrt2,\\
+ \epsilon_2&=(dx^0\wedge dx^2+dx^3\wedge dx^1)/\sqrt2,\\
+ \epsilon_3&=(dx^0\wedge dx^3+dx^1\wedge dx^2)/\sqrt2,\\
+ \psi&=\rho\epsilon_1,\qquad
+ \nabla_m\psi=c_m\epsilon_1+a_m\epsilon_2+b_m\epsilon_3.
+ \end{split}
+\]
+
+Then \(c_m=\partial_m\rho\), and differentiating (4.4) gives
+
+\[
+ \nabla_m A_\psi=
+ \begin{pmatrix}
+  -\rho c_m/6&-\rho a_m/8&-\rho b_m/8\\
+  -\rho a_m/8&\rho c_m/12&0\\
+  -\rho b_m/8&0&\rho c_m/12
+ \end{pmatrix}.                                         \tag{6.7}
+\]
+
+The squared matrix norm gives (6.5). For (6.6), insert (6.7) in
+\(J_{jkl}=\sum_{m,a,b}(\nabla_mA)_{ab}(\epsilon_a)_{mj}(\epsilon_b)_{kl}\),
+use \(\sum_{k,l}(\epsilon_b)_{kl}(\epsilon_c)_{kl}=2\delta_{bc}\),
+and compute \(d\psi_{ijk}=\nabla_i\psi_{jk}+\nabla_j\psi_{ki}
++\nabla_k\psi_{ij}\) in the displayed basis. Explicitly,
+
+\[
+ *d\psi=\frac1{\sqrt2}
+ \begin{pmatrix}
+  -a_2-b_3-c_1\\
+   a_3-b_2+c_0\\
+   a_0+b_1-c_3\\
+  -a_1+b_0+c_2
+ \end{pmatrix},
+ \qquad
+ \iota_{\nabla\rho}\psi
+       =\frac{\rho}{\sqrt2}(-c_1,c_0,-c_3,c_2).
+\]
+
+These expressions and (6.7) give (6.6) by summing squares and collecting
+the mixed terms in \(C_\psi\). Thus (6.5)–(6.6) are algebraic
+identities in the twelve arbitrary numbers \(c_m,a_m,b_m\), with no
+field equation imposed. At a spinor zero, both \(\psi\) and its first
+derivative vanish, and \(d\rho=0\); the identities extend there as well.
+
+Combining (6.4)–(6.6) eliminates \(\int\rho^2|\nabla\psi|^2\) and gives
+
+\[
+ \begin{split}
+ \int|J_\psi|^2={}&-\frac1{64}\int\rho^2 B_\psi
+       +\frac1{16}\int\rho^2|d\psi|^2
+       -\frac5{96}\int\rho^2|d\rho|^2
+       +\frac18\int\rho C_\psi.
+ \end{split}                                              \tag{6.8}
+\]
+
+### 6.3. The positive lower bound and contradiction
+
+Because \(A_\psi\psi=-\rho^2\psi/12\), the curvature term in (6.8) is
+
+\[
+ -\frac{\rho^2B_\psi}{64}
+        =-\frac{s\rho^4}{192}-\frac{\rho^6}{384}
+                                +\frac{\rho^2\langle R\psi,\psi\rangle}{32}.
+ \tag{6.9}
+\]
+
+At \(s=-4\), \(\rho=\sqrt2\), and \(R=0\), it equals \(1/16\).
+On the interval \(0\le\rho\le4\), the error in (6.9) is bounded by
+
+\[
+                  C\bigl(|e|+|\rho-\sqrt2|+|R|\bigr).
+\]
+
+Also \(|C_\psi|\le\rho|d\rho||d\psi|\). Discard the nonnegative
+\(|d\psi|^2\) term in (6.8), apply (3.9), (4.2), and (4.6), and divide
+by \(V\). Cauchy–Schwarz gives
+
+\[
+ \frac1V\int|J_\psi|^2
+                   \ge\frac1{16}-C(\sqrt\kappa+\kappa)+o_j(1).
+ \tag{6.10}
+\]
+
+For each fixed metric let the smooth-weight approximation errors tend to
+zero in (6.3) and (6.10). The two numerical inequalities remain valid
+without choosing any limit of the spinors. For a sufficiently small
+absolute \(\kappa_0\le1\), the lower bound is at least \(1/32\) when
+\(\kappa\le\kappa_0\). The upper bound then forces
+
+\[
+                         \kappa(1+\kappa+B_a)\ge c_1>0.
+\]
+
+As \(1+\kappa+B_a\le2(1+B_a)\) in this range, (1.8) follows.
+For \(\kappa>\kappa_0\), it follows after decreasing the same universal
+constant. This proves Theorem 1.3. \(\square\)
+
+## 7. From the calibration gap to topological integral rigidity
+
+We now prove Theorem 1.2, first at the negative normalization.
+Assume (1.5), and put
+
+\[
+ r=\frac1V\int|\operatorname{Ric}+g|^2,\qquad
+ d=\left(\frac TA-\frac23\right)_+.
+\]
+
+Continue to use \(\alpha=\sqrt{2/3}|W^+|\) and \(w=\lambda_{\min}(W^+)\),
+and introduce
+
+\[
+ t=s+24\alpha=s+8\sqrt6|W^+|,\qquad
+ b=2s/3+2w,\qquad
+ G=(2s/3-2\alpha)^2-b_-^2.                               \tag{7.1}
+\]
+
+Since \(b\ge2s/3-2\alpha\), we have \(G\ge0\), including where the
+scalar curvature is positive. Direct expansion gives
+
+\[
+ t^2+18G=216\left(s^2/24+2|W^+|^2\right)-18b_-^2.
+\]
+
+Apply (1.1) and (2.12) to obtain
+
+\[
+                    \int(t^2+18G)\le108P+864\pi^2Ad.
+ \tag{7.2}
+\]
+
+Here \(p\ge A\) and
+\(T-2p/3\le T-2A/3\le Ad\). Since
+\(\int|E|^2=P+\frac14\int e^2\), (7.2) implies
+
+\[
+             \int(|E|^2+e^2+t^2+G)\le109rV+864\pi^2Ad.
+ \tag{7.3}
+\]
+
+We record the pointwise orbit comparison, including its scalar-positive
+branch. Set \(z=w+\alpha\); trace-freeness gives \(0\le z\le\alpha\), and
+minimizing over the orbit gives exactly
+
+\[
+ F=\frac32(\alpha-1/6)^2+z/2,\qquad
+                         \alpha=(t-e+4)/24.              \tag{7.4}
+\]
+
+If \(s\le-3\), then \(b<0\) and
+\(G=z(-8s/3+8\alpha-4z)\ge8z\). Thus
+
+\[
+                       F\le(t^2+e^2)/192+G/16.
+\]
+
+If \(s>-3\), then \(e>1\). Use \(z\le\alpha\),
+\(4-e\le3e^2\), and \(t\le(t^2+1)/2\) in (7.4) to get
+
+\[
+                       F\le(t^2+5e^2)/64.
+\]
+
+In both cases,
+
+\[
+                             F\le e^2+t^2+G.             \tag{7.5}
+\]
+
+The second completed square is
+
+\[
+ 27\left(s^2/24+2|W^+|^2\right)-q^2=t^2/8.
+\]
+
+It and (1.1) yield
+
+\[
+ \Delta_+\le\frac{27}{2}rV+108\pi^2Ad.
+\]
+
+Combining this with (7.3)–(7.5),
+
+\[
+                     \kappa\le\frac{245}{2}r
+                                      +972\pi^2\frac AVd.
+ \tag{7.6}
+\]
+
+The scalar estimate (2.13) gives
+
+\[
+ 32\pi^2A\le\int s^2\le32V+8rV,
+              \qquad \frac AV\le\frac{4+r}{4\pi^2}.
+ \tag{7.7}
+\]
+
+For \(r\le1\), therefore,
+
+\[
+                              \kappa\le1215(r+d).        \tag{7.8}
+\]
+
+When \(r\le1/4\), reverse triangle inequality in \(L^2\) and
+(1.1) also imply
+
+\[
+ 4\pi^2T
+     \ge\left[\frac{(4-2\sqrt r)^2}{24}-\frac r2\right]V
+     \ge V/4>0.                                          \tag{7.9}
+\]
+
+The square condition \(a^2\ge T\) then gives \(B_a=0\). Apply
+Theorem 1.3 and (7.8). If \(r>1/4\), no argument is needed. In either
+case
+
+\[
+       r+d\ge\varepsilon_0,
+       \qquad \varepsilon_0:=\min\{1/4,c_{\mathrm{cal}}/1215\}.
+ \tag{7.10}
+\]
+
+For reference, a weaker square hypothesis has a correspondingly
+nonuniversal version. If \(a^2\ge-C_AA\), \(C_A\ge0\), the same proof gives
+
+\[
+ r+d\ge\min\left\{1,
+          \frac{c_{\mathrm{cal}}}{1215(1+5C_A/(4\pi^2))}\right\}.
+ \tag{7.11}
+\]
+
+If instead \(a^2\ge T-C_AA\), replace the first entry of that minimum by
+\(1/4\), using (7.9). An arbitrary monopole class must not silently be
+assumed to have \(a^2\ge T\).
+
+## 8. Positive scale, arbitrary scale, and the Ricci-flat case
+
+### 8.1. The positive normalization
+
+Put \(r_+=V^{-1}\int|\operatorname{Ric}-g|^2\). Since
+\(s_-^2\le(s-4)^2\le4|\operatorname{Ric}-g|^2\), (2.13) gives
+
+\[
+                            A/V\le r_+/(8\pi^2).
+\]
+
+If \(r_+\le1/4\), the analogue of (7.9) gives \(4\pi^2T/V\ge1/4\).
+If also \(d\le1/4\), then \(T/A\le2/3+d\), so
+
+\[
+  \frac14\le\frac{4\pi^2T}{V}
+             \le\frac{r_+}{2}\left(\frac23+d\right)
+             \le\frac{11}{96},
+\]
+
+a contradiction. In particular \(r_++d>1/4\).
+
+### 8.2. Scale optimization
+
+For \(\lambda\ne0\), apply the appropriate normalized result to
+\(|\lambda|g\). The positive harmonic subspace and the conformal
+solvability hypothesis are unchanged. The normalized error becomes
+
+\[
+ \frac{\int|\operatorname{Ric}_g-\lambda g|^2}{\lambda^2V}.
+\]
+
+Taking the infimum proves (1.6). This completes Theorem 1.2. \(\square\)
+
+For interpretation, write
+
+\[
+ R_2=\int|\operatorname{Ric}|^2,\qquad S=\int s,\qquad
+ L_s=\int(s-S/V)^2.
+\]
+
+When \(R_2>0\), direct minimization in \(1/\lambda\) gives
+
+\[
+              \mathcal E(g)=4-\frac{S^2}{VR_2}
+                             =\frac{4P+L_s}{R_2}.        \tag{8.1}
+\]
+
+This formula includes \(S=0\), when the infimum is \(4\) and need not
+be attained. If \(R_2=0\), definition (1.3) gives \(\mathcal E(g)=4\),
+not zero. Thus a lower bound for \(\mathcal E\) alone does not exclude a
+Ricci-flat metric. Ricci-flat metrics in Theorem 1.2 are excluded
+separately by (2.13), since \(p\ge A>0\).
+
+For an Einstein metric with nonzero Einstein constant,
+\(\mathcal E=0\). A pointwise operator error also dominates the integral
+one: for \(\sigma=\pm1\),
+
+\[
+ \delta_\sigma(g):=\|\operatorname{Ric}^{\sharp}-\sigma I\|_{L^\infty,\mathrm{op}}
+      \quad\Longrightarrow\quad\mathcal E(g)\le4\delta_\sigma(g)^2.
+ \tag{8.2}
+\]
+
+There are exactly four Ricci eigenvalues, which explains this factor.
+
+## 9. Metricwise polarized classes and chamber bookkeeping
+
+The analytic theorem needs the quantifiers
+
+\[
+ \boxed{\begin{gathered}
+   \text{for every }g\text{ there exists a Spin}^c
+       \text{ structure }\mathfrak s_g\\
+   \text{such that for every }f>0,\text{ equation (1.2)}\\
+   \text{has a solution for the same }\mathfrak s_g.
+ \end{gathered}}
+ \tag{9.1}
+\]
+
+It does not require one universal choice of signs for all metrics. This
+distinction is essential when \(b_+=1\).
+
+### 9.1. The connected-sum input with insertions
+
+Let \(X\) have \(b_+(X)>0\), and suppose a Spin\(^c\) structure
+\(\mathfrak s\), with real first Chern class \(c\), has a nonzero
+Seiberg–Witten invariant evaluated on a homogeneous insertion \(z\).
+The invariant is defined on
+
+\[
+ \mathbb A(X)=\mathbb Z[U]\otimes\Lambda^*H_1(X;\mathbb Z)/\mathrm{torsion},
+                 \qquad\deg U=2,\quad\deg H_1=1.
+\]
+
+Its expected dimension is \((c^2-T_X)/4\), where
+\(T_X=2\chi(X)+3\tau(X)\). Assume
+
+\[
+                    T_X>0,\qquad A:=c^2\ge T_X.          \tag{9.2}
+\]
+
+The second inequality follows automatically from the nonnegative degree
+of a nonzero ordinary invariant, but is displayed because it is used in
+the proof. For \(b_+=1\), the nonzero invariant here must be in the
+small-perturbation chamber at the relevant polarization, not merely in
+some unspecified chamber.
+
+Let
+
+\[
+ M=X\#k\,\overline{\mathbb{CP}}^{2}\#\ell(S^1\times S^3),
+ \qquad D=k+4\ell,\qquad T_M=T_X-D.                      \tag{9.3}
+\]
+
+For a prescribed positive polarization \(H=H_g^+\), choose the signs
+of the exceptional generators \(E_j\) so that
+
+\[
+                         c_H^+\mathbin\cdot E_j\le0,
+\]
+
+and set
+
+\[
+                             a_H=c-\sum_{j=1}^kE_j.
+ \tag{9.4}
+\]
+
+Then
+
+\[
+ \begin{split}
+ (a_H^+)^2
+   &=(c_H^+)^2-2\sum_jc_H^+\mathbin\cdot E_j
+                              +\left|\sum_j(E_j)_H^+\right|^2
+      \ge(c_H^+)^2\ge c^2=A,\\
+ a_H^2&=A-k\ge T_X-k-4\ell=T_M.
+ \end{split}                                              \tag{9.5}
+\]
+
+The ordinary blow-up formula with exceptional coefficient \(\pm1\)
+preserves expected dimension and preserves the original insertion
+\(z\). The \(S^1\times S^3\) operation raises expected dimension by one
+and adds the degree-one insertion of its new circle. After \(\ell\)
+operations the nonzero invariant is therefore evaluated on
+
+\[
+                           z\,\mu(C_1)\cdots\mu(C_\ell).
+ \tag{9.6}
+\]
+
+These statements include positive-dimensional base invariants. They are
+the special cases of the blow-up and surgery formulas in
+[Ozsváth–Szabó, Theorem 3.2, Proposition 2.2 and Remark 2.3](https://arxiv.org/pdf/math/0005268).
+The last remark supplies the chamber-compatible version when \(b_+=1\).
+Using only a zero-dimensional numerical invariant and omitting the
+insertions in (9.6) would not justify the general statement.
+
+### 9.2. What the chamber condition means
+
+For \(b_+(X)=1\), choose a unit forward generator \(\omega_H\) of the
+positive line on \(M\) so that \(c\cdot\omega_H>0\). The \(X\)
+component \(\omega_X\) has positive square, lies in the corresponding
+forward cone, and satisfies \(c\cdot\omega_X>0\), because \(c^2>0\).
+The chosen exceptional signs give \(E_j\cdot\omega_H\le0\), hence
+
+\[
+                          a_H\cdot\omega_H>0.             \tag{9.7}
+\]
+
+Thus the small-perturbation discriminants for the base and the selected
+blow-up structure have the same sign in corresponding chamber
+conventions. Adding \(S^1\times S^3\) leaves the second-cohomology
+polarization unchanged. The gluing formulas consequently give a nonzero
+invariant in the chamber containing zero perturbation for this selected
+class, provided that was the specified nonzero base chamber.
+
+For any metric with this polarization, take generic perturbations tending
+to zero in that chamber. Nonzero invariant gives solutions, and the
+usual fixed-metric Seiberg–Witten compactness gives an unperturbed
+solution. A reducible limit would have \(F_A^+=0\), contradicting
+\((a_H^+)^2\ge A>0\). Every metric conformal to \(g\) has the same
+polarization and the same nonzero discriminant sign. Thus the *same*
+class (9.4) satisfies Definition 1.1 for every weight, as required by
+(9.1).
+
+For \(b_+>1\), there is no chamber ambiguity in this argument. For
+\(b_+=1\), the statement must not be replaced by the assertion that every
+exceptional sign choice is an ordinary all-metric monopole class.
+
+### 9.3. The minimal general-type case
+
+If \(X\) is a minimal compact complex surface of general type with its
+complex orientation, then
+
+\[
+                          A=c_1(X)^2=T_X>0.
+\]
+
+The canonical Spin\(^c\) structure has a nonzero Seiberg–Witten
+invariant. For \(b_+>1\), the standard Kähler/symplectic nonvanishing
+statement supplies the input directly. For \(b_+=1\), the canonical
+class \(K\) has \(K^2>0\) and positive pairing with a Kähler form.
+It is therefore in the forward time-like cone and pairs positively
+with every forward period ray. For \(c=-K\), the small-perturbation
+chamber agrees with the canonical nonzero chamber, up to the simultaneous
+choice of sign convention for the chamber discriminant. This is the
+light-cone/chamber argument underlying
+[LeBrun's polarized construction, Proposition 3.2](https://arxiv.org/pdf/math/0003068).
+The chamber convention and canonical nonvanishing can also be read in
+[Li–Liu, §2.1 and Theorem 2.2](https://arxiv.org/pdf/math/0012048).
+
+The positivity of \(K\) on the symplectic or Kähler form matters:
+\(b_+=1\) and \(K^2>0\) alone do not identify the nonzero
+small-perturbation chamber for an arbitrary symplectic manifold.
+
+## 10. The Einstein obstruction and its precise relation to LeBrun
+
+**Theorem 10.1 (connected-sum integral obstruction).** Under the
+gauge-theoretic and chamber assumptions of §9.1, every metric on (9.3)
+satisfies
+
+\[
+ \mathcal E(g)+\left(\frac{T_M}{A}-\frac23\right)_+
+                         \ge\varepsilon_0.               \tag{10.1}
+\]
+
+It also satisfies the slightly weaker but base-topological statement
+
+\[
+ \boxed{\displaystyle
+ \mathcal E(g)+\left(\frac13-\frac{D}{T_X}\right)_+
+                         \ge\varepsilon_0.}              \tag{10.2}
+\]
+
+For minimal general type, \(A=T_X=c_1(X)^2\), so the two statements
+coincide.
+
+**Proof.** Equation (9.5) and the conformal solvability just proved give
+all the hypotheses of Theorem 1.2. If \(T_M>0\), then \(A\ge T_X\)
+implies \(T_M/A\le T_M/T_X\), yielding (10.2). If \(T_M\le0\), both
+positive-part terms are zero. This case split avoids reversing an
+inequality by dividing a negative numerator by the larger denominator. \(\square\)
+
+In particular, put \(\gamma=\varepsilon_0/2\). Then
+
+\[
+             D\ge(1/3-\gamma)T_X
+ \quad\Longrightarrow\quad
+             \mathcal E(g)\ge\varepsilon_0/2
+             \quad\hbox{for every metric }g.             \tag{10.3}
+\]
+
+There is no Einstein metric in this band: nonzero Einstein constants
+contradict (10.3), and zero Einstein constant contradicts (2.13).
+At either normalized sign, (8.2) also gives
+
+\[
+                    \delta_\sigma(g)\ge\sqrt{\varepsilon_0/8}.
+ \tag{10.4}
+\]
+
+An Einstein metric would in fact require
+\(D/T_X\le1/3-\varepsilon_0\). The equality endpoint of that necessary
+condition is not excluded by (10.2) alone; the closed band (10.3) avoids
+that endpoint issue.
+
+### 10.2. Exact source scope
+
+The version of [LeBrun's paper verified here](https://arxiv.org/pdf/math/0003068)
+is arXiv:math/0003068v1, March 2000. Its Proposition 3.2 constructs the
+metricwise polarized classes on the connected sums in (9.3). Its
+Theorem 3.3 states the classical threshold
+
+\[
+                              k+4\ell\ge T_X/3,
+\]
+
+and Corollary 3.4 specializes the result to blow-ups of minimal complex
+surfaces of general type. We use the ordinary nontrivial
+Seiberg–Witten input, including its insertion and chamber meaning, not
+merely the topology of a manifold with the same Euler characteristic and
+signature. The proof above handles the positive-budget case of the
+general theorem, not only its general-type corollary.
+
+The numerical band below the classical threshold is nonvacuous in
+families with unbounded budget. For example, let
+\(X_m=\Sigma_2\times\Sigma_m\), \(m\ge2\). Then
+\(A=T_{X_m}=8(m-1)\). With \(\ell=0\) and
+\(k=\lceil A/3\rceil-1\),
+
+\[
+                       0<1/3-k/A\le1/A\longrightarrow0.
+\]
+
+For sufficiently large \(m\), these ratios lie in (10.3). Since the
+universal analytic constant has not been made numerical, this argument
+does not specify the first qualifying \(m\).
+
+### 10.3. Nonpositive budgets and the exceptional zero corner
+
+There is a direct all-metric formula, independent of monopoles. For
+\(R_2>0\), (1.1) and (8.1) give
+
+\[
+ \mathcal E(g)
+   =1+\frac{12\int|W^+|^2-24\pi^2T+L_s}{R_2}.           \tag{10.5}
+\]
+
+Thus \(T\le0\) implies \(\mathcal E(g)\ge1\). For a Ricci-flat
+metric its value is \(4\) by definition, so the same lower bound holds.
+This lower bound is not a Ricci-flat exclusion.
+
+For an Einstein metric, (1.1) reduces to
+
+\[
+               4\pi^2T=\int(s^2/24+2|W^+|^2)\ge0.
+\]
+
+Consequently, when \(T_X<0\), or when \(T_X=0\) and \(D>0\), the
+connected sum has \(T_M<0\) and admits no Einstein metric. These are
+classical Chern–Gauss–Bonnet consequences and require no positive-budget
+monopole argument.
+
+When \(T_X=D=0\), however, equality permits Ricci-flat, anti-self-dual
+metrics in the chosen orientation. K3 and the four-torus provide the
+standard zero-budget examples. The unqualified statement of Theorem 3.3
+in the verified preprint includes this corner, but its appeal to the
+Hitchin–Thorpe inequality does not exclude these equality cases. We
+therefore do **not** claim an unqualified subsumption of that literal
+zero-corner wording, nor infer an exception-free statement for a
+separately unverified published version. The conclusions established
+here are: the positive-budget integral strengthening with the stated
+gauge input; the classical negative-\(T_M\) exclusion; and an explicit
+reservation of the Ricci-flat zero corner.
+
+## 11. Logical dependencies and limitations
+
+The analytic proof has the following complete chain:
+
+\[
+ \begin{gathered}
+ \text{one actual conformal Spin}^c\text{ structure}
+ \ \Longrightarrow\ \text{solutions for smooth truncated weights}\\
+ \Longrightarrow\ \rho\le4\text{ and small retained first-order defects}
+ \ \Longrightarrow\ W^+\approx A_\psi\text{ with }A_\psi\text{ smooth}\\
+ \Longrightarrow\ \text{bundle Hessian budget and weak Bianchi upper bound}\\
+ \Longrightarrow\ \text{incompatibility with the exact positive divergence term}.
+ \end{gathered}
+\]
+
+The proof neither differentiates an eigenprojection nor normalizes
+\(\psi\) across its zero set. Smooth approximation of weights is used
+only for numerical inequalities at a fixed metric; there is no claimed
+uniform regularity or limiting solution for a nonsmooth weight. The
+Hessian estimate uses the positive-spinor connection, which is why no
+\(L^2\) budget for \(W^-\) enters. The topological theorem additionally
+needs the class-square bound and the actual class/chamber construction;
+the scalar curvature inequality by itself is not a substitute for those
+inputs.
+
+This argument proves an obstruction and an integral gap. It does not
+prove convergence of near-Einstein metrics, classify all equality
+metrics of other curvature functionals, produce an Einstein metric,
+or settle arbitrary pointwise Ricci-pinching problems without the
+monopole/topological hypotheses displayed above.
+
+## References and provenance
+
+- Claude LeBrun, *Ricci Curvature, Minimal Volumes, and Seiberg–Witten
+  Theory*, [arXiv:math/0003068v1](https://arxiv.org/pdf/math/0003068),
+  especially Proposition 3.2, Theorem 3.3 and Corollary 3.4. The source
+  version and the zero-budget caveat are specified in §10.
+- Peter Ozsváth and Zoltán Szabó, *Higher Type Adjunction Inequalities
+  in Seiberg–Witten Theory*, [arXiv:math/0005268](https://arxiv.org/pdf/math/0005268),
+  especially Proposition 2.2, Remark 2.3 and Theorem 3.2. These supply
+  insertion-aware surgery and blow-up formulas.
+- Tian-Jun Li and Ai-Ko Liu, *Uniqueness of Symplectic Canonical Class,
+  Surface Cone and Symplectic Cone of 4-Manifolds with \(b^+=1\)*,
+  [arXiv:math/0012048](https://arxiv.org/pdf/math/0012048), §2.1 and
+  Theorem 2.2, for chamber conventions and canonical nonvanishing.
+- Claude LeBrun, *Four-Manifolds, Curvature Bounds, and Convex Geometry*,
+  [arXiv preprint](https://arxiv.org/pdf/math/0611450), especially
+  Lemma 3.7, for the conformal weighted-equation input.
+
+This text consolidates the local weighted-monopole, integral-calibration,
+all-sign, chamber-selection and LeBrun-comparison arguments. Those earlier
+working records are provenance, not proof dependencies of the analytic
+argument presented here. Numerical and symbolic checks are useful for
+detecting transcription errors; none is used in place of a mathematical
+identity or a gauge-theoretic existence theorem.
+
+
+END COMPLETE SOURCE
+
+
+---
+
+## Source 2: round21_analytic.md
+
+Original path: mathematics/current/round21_analytic.md
+
+SHA-256: 9e39e932ae9f109d9ab3f959a243046e243beb20900c3f4e95be8dc424f5eb22
+
+BEGIN COMPLETE SOURCE
+
+# Integral rigidity for bounded self-dual forms
+
+This note isolates the analytic mechanism behind the integral monopole gap.
+It proves an abstract theorem whose input is a bounded self-dual two-form with
+a Hodge-Laplacian budget, rather than a monopole spinor. This makes the
+production of a calibration and its differential budget separate inputs.
+It is an analytic criterion; no new family of smooth topologies is asserted
+to satisfy its hypotheses.
+
+All manifolds are smooth, closed, oriented and four-dimensional. Curvature
+is normalized relative to \(\operatorname{Ric}=-g\). Two-forms have the
+exterior-algebra norm; \(W^+\) has the Hilbert--Schmidt operator norm. Write
+\(\fint=\operatorname{Vol}^{-1}\int\), and let \(\Delta_H\) denote the
+nonnegative Hodge Laplacian.
+
+## 1. The bounded two-form criterion
+
+For a smooth self-dual two-form \(\psi\), set
+
+\[
+ q=|\psi|^2,\qquad
+ A_\psi={q\over24}I-{1\over8}\psi\otimes\psi,
+ \qquad R=W^+-A_\psi.
+\]
+
+Define the defect and source budget
+
+\[
+ d=\fint_M\left(|\operatorname{Ric}+g|^2+|R|^2+(q-2)^2\right),
+ \qquad B=\fint_M|\Delta_H\psi|^2.
+\]
+
+**Theorem.** For each finite \(K>0\), there is \(c(K)>0\) such that
+\(\|\psi\|_\infty\le K\) implies
+
+\[
+                    \boxed{(1+B)d\ge c(K).}              \tag{1}
+\]
+
+**Small-source corollary.** For a possibly smaller \(c_0(K)>0\),
+
+\[
+ \boxed{\quad
+ \fint_M\left(
+ |\operatorname{Ric}+g|^2+|R|^2+(q-2)^2+|\Delta_H\psi|^2
+ \right)\ge c_0(K).
+ \quad}                                                     \tag{1a}
+\]
+
+No spin structure, monopole class, curvature bound, scalar sign, Sobolev
+constant, injectivity radius or diameter bound is required. In particular,
+for bounded *harmonic* self-dual forms \(B=0\), giving a gap for the
+three zeroth-order defects alone. No small first-derivative defect is
+assumed, even in the nonharmonic case.
+The boundedness of the form and its Hodge-Laplacian control are genuine
+hypotheses, not consequences of a cohomology class alone.
+
+The theorem excludes a specific incompatible calibration: Ricci curvature
+near \(-g\), Weyl curvature near \(A_\psi\), and \(|\psi|^2\) near two.
+For a product of curvature-minus-one surfaces the simple Weyl eigenvalue
+is \(-2/3\), not the target \(-1/6\). Thus the theorem does not exclude
+the realizable hyperbolic-product Weyl model and does
+not assert a universal Ricci gap without the other summands.
+
+## 2. Re-derivation of the bundle Hessian estimate
+
+Let \(u\) be a smooth section of a metric bundle, with compatible connection
+\(\nabla\). Set \(H_{ij}=\nabla_i\nabla_j u\), including the cotangent
+Levi-Civita correction, \(L=\operatorname{tr}H\), and
+\(F_{ij}=[\nabla_i,\nabla_j]\). Use the component convention
+\(|F|^2=\sum_{ij}|F_{ij}|_{\rm HS}^2\).
+
+First, integration of the divergence of
+\(|\nabla u|^2\langle u,\nabla u\rangle^\sharp\) gives
+
+\[
+ \|\nabla u\|_4^2\le(2+\sqrt4)\|u\|_\infty\|H\|_2.
+                                                               \tag{2}
+\]
+
+This is a covariant integration-by-parts inequality, not a Sobolev
+embedding. To check the curvature terms, first interchange the two
+Hessian slots:
+
+\[
+ \int|H|^2-\sum_{ij}\int\langle H_{ij},H_{ji}\rangle
+ =\frac12\sum_{ij}\int|F_{ij}u|^2.
+\]
+
+Integrate the second expression once and then commute derivatives on the
+bundle-valued one-form \(\nabla u\). The cotangent curvature gives Ricci;
+the bundle curvature acts on \(\nabla u\). Integrating the trace term once
+more yields
+
+\[
+\begin{split}
+ \int|H|^2={}&\int|L|^2
+ -\int\operatorname{Ric}_{ij}\langle\nabla_i u,\nabla_j u\rangle\\
+ &+\sum_{ij}\int\langle F_{ij}\nabla_j u,\nabla_i u\rangle
+ +\frac12\sum_{ij}\int|F_{ij}u|^2.                         \tag{3}
+\end{split}
+\]
+
+There is no differentiated-curvature term. Swapping the Hessian slots
+*before* commuting is important. The scalar specialization fixes the
+Ricci sign. With \(K_u=\|u\|_\infty\), Holder, (2), and Young give
+
+\[
+ \|\nabla^2u\|_2^2\le
+ 2\|L\|_2^2+32K_u^2\|\operatorname{Ric}\|_2^2
+                         +33K_u^2\|F\|_2^2.              \tag{4}
+\]
+
+This recovers the inherited estimate, including its coefficient and the
+absence of a hidden Sobolev or curvature-derivative hypothesis.
+
+## 3. Proof of the two-form criterion
+
+Assume \(d\le1\); otherwise the conclusion is immediate after reducing
+\(c(K)\). Put \(\mathcal B=1+B+d\). All constants below
+depend only on \(K\) and the dimension. Put \(E=\operatorname{Ric}+g\)
+and \(\eta=\Delta_H\psi\).
+
+### 3.1 The self-dual connection supplies the second-order budget
+
+The curvature of \(\Lambda^+\) is the representation of the Riemann
+operator projected to its self-dual output. Hence
+
+\[
+ |F^{\Lambda^+}|^2\le C\left(|W^+|^2+s^2+
+                               |\operatorname{Ric}^{\circ}|^2\right).
+                                                               \tag{5}
+\]
+
+The \(W^-\) block does not act on \(\Lambda^+\). Since
+\(|A_\psi|^2=q^2/96\) and \(q\le K^2\), the \(E,R\) budgets give
+
+\[
+ \fint\left(|\operatorname{Ric}|^2+|F^{\Lambda^+}|^2\right)
+ \le C_K(1+d).
+\]
+
+The self-dual Weitzenbock equation is
+
+\[
+ \nabla^*\nabla\psi=\eta+2W^+\psi-(s/3)\psi.
+\]
+
+Apply (2)--(4) to \(u=\psi\). Differentiating the quadratic polynomial
+\(A_\psi\) and the scalar \(q\) then gives
+
+\[
+ \fint\left(|\nabla^2\psi|^2+|\nabla\psi|^4+
+              |\nabla^2A_\psi|^2+|\Delta q|^2\right)
+ \le C_K\mathcal B.
+                                                               \tag{6}
+\]
+
+Here \(\Delta=d^*d\) on functions, and
+\(\Delta q=2\langle\nabla^*\nabla\psi,\psi\rangle
+-2|\nabla\psi|^2\). All estimates are extensive before division by
+volume; no lower volume bound enters.
+
+### 3.2 Amplitude control and a coercive divergence identity
+
+The amplitude itself need not have a smooth square root at its zeros.
+Use the globally smooth quantity \(q\), rather than divide by \(|\psi|\).
+Integration by parts and (6) give
+
+\[
+ \fint|dq|^2=\fint(q-2)\Delta q
+                  \le C_K\sqrt{d\mathcal B}.             \tag{7}
+\]
+
+There is a useful pointwise identity, valid for arbitrary smooth
+self-dual forms without first-order equations. Let
+\(J=\operatorname{div}W(A_\psi)\). The full contraction in the checker
+gives
+
+\[
+ |J|^2={q|\nabla\psi|^2\over64}+{q|d\psi|^2\over32}
+       -{|dq|^2\over192}
+       +{\langle\iota_{\nabla q}\psi,*d\psi\rangle\over32}.
+                                                               \tag{8}
+\]
+
+The last inner product is at most
+\(\sqrt q\,|dq|\,|d\psi|\) in absolute value. Young's inequality
+therefore gives the pointwise coercivity
+
+\[
+ \boxed{\quad
+ q\bigl(|\nabla\psi|^2+|d\psi|^2\bigr)
+        \le64|J|^2+{4\over3}|dq|^2.
+ \quad}                                                     \tag{8a}
+\]
+
+This is polynomial at zeros, and introduces no division by \(q\).
+It will control the derivative terms for the two-sided selection theorem
+in Section 6. Small amplitude error and a second-order budget now supply
+the weighted derivative information previously obtained from monopoles.
+
+### 3.3 Weak Bianchi gives a small self-test
+
+Let \(W(A)\) be the algebraic Weyl four-tensor represented by \(A\), and
+\(J=\operatorname{div}W(A_\psi)\). The projections to \(\Lambda^+\)
+are parallel. The contracted Bianchi identity, followed by integration
+by parts, gives for every smooth test tensor \(T\)
+
+\[
+ \left|\int\langle J,T\rangle\right|
+ \le C\left(\|E\|_2+\|R\|_2\right)\|\nabla T\|_2.      \tag{9}
+\]
+
+This is a weak derivative estimate, not an estimate on \(\nabla E\).
+The tensor \(J\) is smooth, so \(T=J\) is an admissible test. Moreover
+\(|\nabla J|\le C|\nabla^2A_\psi|\). Therefore (6) implies
+
+\[
+                 \fint|J|^2\le C_K\sqrt{d\mathcal B}.    \tag{10}
+\]
+
+### 3.4 The same self-test has a positive lower bound
+
+The inherited weighted Hodge and divergence identities admit the
+following entirely polynomial version:
+
+\[
+\begin{split}
+ \int|J|^2=\int\Big(&-{s q^2\over192}-{q^3\over384}
+       +{q\langle R\psi,\psi\rangle\over32}
+       +{q|d\psi|^2\over16}-{5|dq|^2\over384}\\
+       &+{\langle\iota_{\nabla q}\psi,*d\psi\rangle\over16}
+                           \Big).                         \tag{11}
+\end{split}
+\]
+
+It follows by testing the self-dual Hodge equation against \(q\psi\)
+and contracting the derivative of \(A_\psi\); the pointwise contraction
+is independently checked in the accompanying program. Because (11) is
+polynomial in \(\psi,\nabla\psi\), it extends across all zeros of
+\(\psi\); no spinor-square representation is used.
+
+At \(s=-4,q=2,R=0\), its algebraic part equals \(1/16\). On
+\(0\le q\le K^2\), polynomial Lipschitz estimates give an averaged
+error bounded by
+\(C_K\fint(|s+4|+|q-2|+|R|)\le C_K\sqrt d\).
+The last term is bounded below by
+\(-\{q|d\psi|^2+|dq|^2\}/32\). Absorb its first contribution into
+the positive \(q|d\psi|^2/16\) already present in (11). The remaining
+derivative error is at worst \(-17|dq|^2/384\), controlled by (7).
+In particular this argument does not assume \(d\psi\) small.
+Consequently
+
+\[
+           \fint|J|^2\ge {1\over16}-C_K\sqrt{d\mathcal B}.\tag{12}
+\]
+
+Combining (10) and (12) yields
+\(1/16\le C'_K\sqrt{d(1+B+d)}\). For \(d\le1\),
+\(1+B+d\le2(1+B)\), proving (1) after choosing a sufficiently small
+\(c(K)>0\). For (1a), if its left side is \(z\le1\), then
+\(d\le z\), \(B\le z\), and \((1+B)d\le2z\). Thus
+\(c_0(K)=\min\{1,c(K)/2\}\) suffices.
+
+## 4. What the monopole proof actually requires
+
+For the inherited integral gap, one fixes a metric \(g\) and a single
+spin-c structure with \(p=(a_g^+)^2>0\). The analytic construction only
+requires ordinary unperturbed Seiberg--Witten solutions for every metric
+in \([g]\). Indeed, solving on \(\widehat g=f^{-2}g\) gives on \(g\)
+
+\[
+ D_A\Phi=0,\qquad -iF_A^+=f\sigma(\Phi),
+\]
+
+for every positive smooth weight \(f\). The self-dual polarization is
+conformally invariant. Every remaining Hessian, Hodge and Bianchi step
+takes place on this one metric. Neither \(b_+>1\) nor persistence over
+metrics outside \([g]\) is used in those analytic steps.
+
+This is already the scope of [the Round13 chamber result](round13_chamber.md),
+not a new Round21 extension. In \(b_+=1\) applications, chamber invariance
+and passage from perturbed invariants to unperturbed solutions still have
+to be established. The Hessian identity cannot supply them.
+
+For the monopole argument specifically, the determinant connection energy
+is controlled by
+
+\[
+ \|F_A\|_2^2=2\|F_A^+\|_2^2-4\pi^2a^2.
+\]
+
+That is the origin of the negative-square cost. The theorem in Section 1
+avoids this connection by acting directly on \(\Lambda^+\), but replaces
+the monopole PDE with a bounded-form and Hodge-budget hypothesis. It
+therefore does **not** remove the square cost from the existing monopole
+theorem: the harmonic projection need not preserve a maximum bound, and a
+small \(d\psi\) does not bound \(\Delta_H\psi\) by itself.
+
+More precisely, let \(\kappa\) and \(B_a=(-a^2)_+/V\) have the meanings
+in [Round4, Theorem 1](round4_rigidity.md). The inherited bounded-spinor,
+Hessian and fourth-power-gradient estimates imply
+
+\[
+ B=\fint|\Delta_H\psi|^2\le C(1+\kappa+B_a)+o(1).
+\]
+
+Indeed, the quadratic map from \(\Phi\) to \(\psi\) gives
+\(|\nabla^2\psi|\le C(|\Phi||\nabla_A^2\Phi|+|\nabla_A\Phi|^2)\);
+the two-form Weitzenbock formula adds only the already controlled
+\(W^+,s\) terms. The Weyl approximation and amplitude estimates give
+simultaneously
+
+\[
+                         d\le C\kappa+o(1).
+\]
+
+The bounded-form theorem therefore returns
+\(\kappa(1+\kappa+B_a)\ge c\), and hence the inherited
+\((1+B_a)\kappa\ge c'\) after splitting \(\kappa\le1\) and
+\(\kappa>1\). This is a structural recovery of the earlier calibration
+gap, not a second independent topological theorem. It displays precisely
+where a different construction of a bounded form could replace the
+monopole input, and which quantitative budget that construction must supply.
+
+## 5. Research use and verification scope
+
+The new analytic formulation offers a distinct input route: a family of
+bounded, almost-harmonic self-dual forms with the indicated calibration
+would be impossible even without monopole solvability. For a harmonic
+form, only its maximum bound and the three zeroth-order calibration
+defects remain. Producing these hypotheses on a new topological family is
+an open step; a formal cohomology vector does not suffice.
+
+The checker verifies the Hessian curvature coefficients on a noncommuting
+constant connection, the full twelve-variable divergence contraction, and
+the polynomial conversion used in (11). The general integration-by-parts
+and PDE arguments are the proofs above, not consequences of running the
+checker. The inherited statements have been checked at these analytic
+interfaces; this note does not certify every earlier topological input.
+
+## 6. Quantitative selection of the Kähler calibration
+
+The forbidden Weyl model is one member of a family, not an isolated
+numerical accident. For a constant real parameter \(t\), put
+
+\[
+ A_{\psi,t}=t\left({q\over3}I-\psi\otimes\psi\right),
+ \quad R_t=W^+-A_{\psi,t},\quad
+ d_t=\fint\left(|E|^2+|R_t|^2+(q-2)^2\right).
+                                                               \tag{13}
+\]
+
+Thus \(t=1/8\) is the model in Theorem (1). At \(q=2\), the Weyl
+eigenvalues prescribed by \(A_{\psi,t}\) are
+\((-4t/3,2t/3,2t/3)\). The negative Kähler--Einstein value is
+\(t=1/2\).
+
+**Branch-selection theorem.** Fix \(K,T<\infty\). For
+\(\|\psi\|_\infty\le K\) and \(|t|\le T\),
+
+\[
+ \boxed{\quad |t|\,|1-2t|\le C(K,T)
+                  \sqrt{d_t(1+B+d_t)}.\quad}             \tag{14}
+\]
+
+A quantitative spectral-selection consequence is
+
+\[
+ \boxed{\quad
+ \operatorname{dist}(t,\{0,1/2\})^2
+       \le C(K,T)(1+B)d_t\qquad(d_t\le1).
+ \quad}                                                   \tag{14a}
+\]
+
+Indeed, \(\operatorname{dist}(t,\{0,1/2\})\le2|t|\,|1-2t|\)
+for every real \(t\), since the larger of the distances to zero and
+one-half is at least one-quarter. Also \(1+B+d_t\le2(1+B)\).
+The two branches are vanishing Weyl amplitude and the negative
+Kähler--Einstein amplitude, not an arbitrary list of forbidden constants.
+
+Consequently \((1+B)d_t\) has a uniform positive lower bound when \(t\)
+is restricted to a compact subset of \(\mathbb R\setminus\{0,1/2\}\).
+On any parameter set \(t_0\le|t|\le T\), with \(t_0>0\), one further has
+
+\[
+ |2t-1|+\fint\left(|\nabla\psi|^2+|d\psi|^2\right)
+ \le C(K,t_0,T)\sqrt{d_t(1+B+d_t)}\qquad(d_t\le1).       \tag{15}
+\]
+
+Thus a bounded-source-budget calibration with vanishing defect and
+nonzero Weyl amplitude selects the Kähler value and an almost-parallel
+form. This is an integral conclusion; it does not supply coordinates,
+pointwise metric closeness or compactness.
+
+**Proof.** Let \(J_t=\operatorname{div}W(A_{\psi,t})\). Since
+\(A_{\psi,t}=8tA_\psi\), one has \(J_t=8tJ\), with \(J\) here denoting
+the divergence of the original polynomial on the same form and metric.
+The second-order estimates remain valid uniformly for bounded \(t\),
+with \(\mathcal B_t=1+B+d_t\). In the weak Bianchi test the derivative
+of \(J_t\) has one factor \(|t|\), so
+
+\[
+                  \fint|J_t|^2\le C_{K,T}\,|t|
+                                      \sqrt{d_t\mathcal B_t}. \tag{16}
+\]
+
+The weighted Hodge contraction becomes exactly
+
+\[
+\begin{split}
+ \int|J_t|^2=\int\Big(&-{t^2s q^2\over3}
+       -{4t^3q^3\over3}+2t^2q\langle R_t\psi,\psi\rangle
+       +4t^2q|d\psi|^2-{5t^2\over6}|dq|^2\\
+       &+4t^2\langle\iota_{\nabla q}\psi,*d\psi\rangle
+                    \Big).                               \tag{17}
+\end{split}
+\]
+
+Its algebraic part at \(s=-4,q=2,R_t=0\) is
+\(P(t)=(16/3)t^2(1-2t)\). The pointwise coercivity (8a) rescales to
+
+\[
+ t^2q\bigl(|\nabla\psi|^2+|d\psi|^2\bigr)
+          \le |J_t|^2+{4\over3}t^2|dq|^2.                \tag{18}
+\]
+
+In (17), the absolute derivative contribution is at most
+\(6|J_t|^2+(65/6)t^2|dq|^2\): the positive closedness term costs at
+most \(4|J_t|^2+(16/3)t^2|dq|^2\), and Young's inequality bounds the
+cross term by \(2|J_t|^2+(14/3)t^2|dq|^2\). This uses (18), not an
+assumption that \(d\psi\) is small. Together with the zeroth-order
+algebraic error and the amplitude estimate (7),
+
+\[
+ |P(t)|\le 7\fint|J_t|^2+
+                  C_{K,T}t^2\sqrt{d_t\mathcal B_t}.       \tag{18a}
+\]
+
+This is valid on both sides of \(t=1/2\), including negative \(t\).
+Combine (16) and (18a), divide by \(|t|>0\), and use \(|t|\le T\),
+obtaining (14).
+The case \(t=0\) is automatic. For \(d_t>1\), (14) follows after
+enlarging the constant since its left side is bounded and its right
+square root is at least one.
+
+For (15), (14) first bounds \(|2t-1|\) by its right side divided by
+\(t_0\). On \(\{q\ge1\}\), (18), (16) and (7) give
+an averaged bound \(C_{K,t_0,T}\sqrt{d_t\mathcal B_t}\) for
+\(|\nabla\psi|^2+|d\psi|^2\). On \(\{q<1\}\), the relative volume
+is at most \(\fint(q-2)^2\le d_t\). The fourth-power gradient estimate
+(6), and \(|d\psi|^2\le3|\nabla\psi|^2\), bound its contribution by
+\(C_{K,T}\sqrt{d_t\mathcal B_t}\). This proves (15) without assuming
+closedness.
+
+For comparison, the unweighted Hodge identity is
+
+\[
+ \fint|\nabla\psi|^2
+ =2\fint|d\psi|^2-
+  \fint\left({s q\over3}+{4tq^2\over3}
+                               -2\langle R_t\psi,\psi\rangle\right).
+                                                               \tag{19}
+\]
+
+The parenthesized expression differs in average from
+\((8/3)(2t-1)\) by at most \(C_{K,T}\sqrt{d_t}\).
+Nonnegativity of the left side gives the one-sided estimate
+
+\[
+ (2t-1)_+\le C_{K,T}\left(\sqrt{d_t}+\fint|d\psi|^2\right).
+                                                               \tag{20}
+\]
+
+It becomes source-budget-free when \(d\psi=0\), but not for arbitrary
+forms under zeroth-order control alone.
+
+At zero defect and \(t\ne0\), (14) forces \(t=1/2\), and (15) gives
+\(\nabla\psi=0\). The norm-squared-two self-dual form is then the
+parallel Kähler form of an orthogonal complex structure, and
+\(\operatorname{Ric}=-g\) makes the metric negative Kähler--Einstein.
+This endpoint is genuinely realized; parallelness of the Kähler form
+does not imply that the metric is a global product. At \(t=0\), the divergence
+polynomial loses sensitivity; (14) makes no assertion that an exact
+calibrated example exists there.
+
+This extension identifies the realizable equality model of the analytic
+mechanism. It does not change which monopole classes are available, and
+it does not by itself extend the topological range of the earlier
+integral gap.
+
+## 7. The same analytic criterion for either Einstein sign
+
+The spectral-selection argument itself is not restricted to the negative
+Einstein sign. For \(\sigma\in\{-1,+1\}\), put
+
+\[
+E_\sigma=\operatorname{Ric}-\sigma g,\qquad
+d_{\sigma,t}=\fint\left(
+|E_\sigma|^2+|W^+-A_{\psi,t}|^2+(q-2)^2\right).
+\]
+
+With the same bounded-form and bounded-parameter hypotheses,
+
+\[
+\boxed{\quad
+|t|\,|\sigma+2t|
+\le C(K,T)\sqrt{d_{\sigma,t}(1+B+d_{\sigma,t})}.
+\quad}                                                     \tag{21}
+\]
+
+In particular, for \(d_{\sigma,t}\le1\),
+
+\[
+\operatorname{dist}(t,\{0,-\sigma/2\})^2
+\le C(K,T)(1+B)d_{\sigma,t}.                               \tag{22}
+\]
+
+To verify this, replace the scalar target \(-4\) by \(4\sigma\) in
+(17). Its calibrated algebraic value becomes
+\[
+P_\sigma(t)=-\frac{16}{3}t^2(\sigma+2t).
+\]
+The curvature budget uses
+\(|\operatorname{Ric}|\le|E_\sigma|+2\), the amplitude estimate is
+unchanged, and weak Bianchi differentiates neither constant multiple
+of the metric. Equations (16), (18) and (18a) therefore hold with
+this \(P_\sigma\) and \(d_{\sigma,t}\); division by \(|t|\) proves
+(21), including its trivial \(t=0\) case. The distance estimate follows
+as before. For \(|t|\ge t_0>0\), the same good/bad-amplitude argument
+controls \(\fint(|\nabla\psi|^2+|d\psi|^2)\).
+
+At zero defect and \(t\ne0\), this forces \(t=-\sigma/2\) and a
+parallel norm-squared-two self-dual form. The metric is then
+Kähler--Einstein with \(\operatorname{Ric}=\sigma g\).
+The positive Kähler--Einstein amplitude is \(-1/2\), not \(+1/2\).
+This extension concerns the analytic criterion only: it does not supply
+positive-side monopole classes or a Yau26 positive-branch obstruction.
+
+
+END COMPLETE SOURCE
+
+
+---
+
+## Source 3: line1_functional_pencil.md
+
+Original path: mathematics/current/line1_functional_pencil.md
+
+SHA-256: 13f0324dab4999ffba998cd60e8a1d8c152b97aae6f40218aca599230c4201ae
+
+BEGIN COMPLETE SOURCE
+
+# Quantitative non-saturation of scalar–Weyl functionals near negative Einstein metrics
+
+23 September 2026
+
+## 1. Main theorem
+
+Let \((M,g)\) be a closed connected oriented smooth four-manifold. Fix a
+Spin\(^c\) structure, with real first Chern class \(a\), whose unperturbed
+Seiberg–Witten equations have a solution for every metric conformal to
+\(g\). The structure can depend on \(g\); it is fixed while the conformal
+weight varies. Write
+\[
+V=\operatorname{Vol}_g(M),\qquad p=(a_g^+)^2>0,\qquad
+r=\fint_M|\operatorname{Ric}+g|^2,\qquad
+b_a=\frac{(-a^2)_+}{V}.
+\]
+Ricci uses the tensor norm, two-forms the exterior-algebra norm, and
+\(W^+\) the Hilbert–Schmidt norm as an endomorphism of \(\Lambda^+\).
+Set \(w=\sqrt6|W^+|\). For a constant \(\beta>0\), define the
+dimensionless, nonnegative functional deficit
+\[
+\mathfrak D_\beta(g,a)
+=\frac{\beta+1}{\beta}\int_M(s^2+\beta w^2)
+-72\pi^2p.
+\tag{1}
+\]
+Here dimensionless means invariant under constant metric rescaling;
+\(\mathfrak D_\beta/V\), like \(r\), is measured after fixing the
+Einstein target to \(-g\).
+
+**Theorem 1 (functional non-saturation).** For every finite \(L>2\)
+there is \(c_L>0\) such that, simultaneously for \(2\le\beta\le L\),
+\[
+\boxed{
+(1+b_a)\left(r+\frac{\mathfrak D_\beta(g,a)}V\right)
+\ge c_L(\beta-2)^2.
+}
+\tag{2}
+\]
+There is no scalar-curvature band, Sobolev constant, injectivity-radius,
+diameter, volume, or full-curvature hypothesis. Actual conformal
+monopole solvability and the displayed square cost are the inputs.
+
+If the selected class additionally satisfies
+\(a^2\ge T:=2\chi(M)+3\tau(M)\), there is \(c'_L>0\) with
+\[
+\boxed{
+r+\frac{\mathfrak D_\beta(g,a)}V\ge c'_L(\beta-2)^2.
+}
+\tag{3}
+\]
+In particular, for an exact metric \(\operatorname{Ric}=-g\) and
+such a class,
+\[
+\int(s^2+6\beta|W^+|^2)
+\ge\frac{72\pi^2\beta}{\beta+1}p
++c'_L\frac{\beta}{\beta+1}(\beta-2)^2V.
+\tag{4}
+\]
+
+The endpoint \(\beta=2\) must remain: a negative Kähler–Einstein
+surface with its canonical Spin\(^c\) structure has \(r=0\) and
+\(\mathfrak D_2=0\). Thus (2) is a compatibility theorem, not a
+prohibition of the Kähler–Einstein branch.
+
+The proof supplies all auxiliary forms and their joint analytic budget
+from (1). It extends the former calibration at \(\beta=8\) to a
+parameter family of curvature functionals. It does not, by itself,
+identify a new smooth topology with no Einstein metric.
+
+## 2. The exact deficit decomposition
+
+Put
+\[
+q=-s+w,\quad q_+=\max(q,0),\quad q_-=\max(-q,0),\quad
+\Delta_+=\int q_+^2-72\pi^2p.
+\]
+The signed monopole estimate gives \(\Delta_+\ge0\). The relevant
+classical inequality follows from the rescaled equations; the positive
+part is needed when scalar curvature changes sign. Completing a square
+gives the exact identity
+\[
+\boxed{
+\mathfrak D_\beta
+=\Delta_++\int q_-^2+\frac1\beta\int(s+\beta w)^2.
+}
+\tag{5}
+\]
+Indeed \((\beta+1)(s^2+\beta w^2)/\beta
+=(-s+w)^2+(s+\beta w)^2/\beta\).
+
+Write \(e=s+4\), \(z=s+\beta w\), and
+\[
+q_\beta=4\frac{\beta+1}{\beta},\qquad
+\kappa=r+\mathfrak D_\beta/V.
+\]
+Then
+\[
+w-4/\beta=(z-e)/\beta,\qquad
+q-q_\beta=z/\beta-(1+1/\beta)e,\qquad
+\int e^2\le4Vr.
+\tag{6}
+\]
+Consequently, uniformly for \(2\le\beta\le L\),
+\[
+\int\bigl[(q-q_\beta)^2+(w-4/\beta)^2\bigr]
+\le C_L V\kappa,
+\quad
+\int(|\operatorname{Ric}|^2+s^2+|W^+|^2)
+\le C_L V(1+\kappa).
+\tag{7}
+\]
+These bounds control the Weyl norm, not its eigenspaces. The latter
+come from the actual monopole below.
+
+## 3. Actual bounded spinors with no scalar band
+
+Set
+\[
+Q=\max(q,3),\qquad
+f_0=\max\{\sqrt Q,(-s)_+/4\}.
+\]
+Choose smooth positive majorants \(f_j\to f_0\) uniformly on the
+fixed compact manifold. Conformal covariance, applied to
+\(\widehat g=f_j^{-2}g\), supplies solutions
+\[
+D_A\Phi=0,\quad -iF_A^+=f_j\sigma(\Phi),\quad
+\psi=2\sqrt2\sigma(\Phi),\quad
+\rho=|\Phi|^2=|\psi|,\quad u=3\rho/2.
+\tag{8}
+\]
+We use \(|\sigma(\Phi)|^2=|\Phi|^4/8\). The spinor equation is
+\(4\nabla_A^*\nabla_A\Phi+(s+f_j\rho)\Phi=0\).
+At a maximum of \(\rho\), \(f_j\rho\le-s\), so
+\[
+0\le\rho\le4,\qquad 0\le u\le6.
+\tag{9}
+\]
+Every approximation error below tends to zero for the fixed \(g,a\).
+No uniform smoothing rate along a sequence and no bounds on derivatives
+of \(f_j\) are required.
+
+The cutoff costs only scalar error:
+\[
+0\le Q^2-q_+^2\le9e^2,\qquad
+0\le f_0^2-Q\le\frac9{16}e^2.
+\tag{10}
+\]
+For the second inequality, a nonzero difference forces
+\((-s)_+>4\sqrt3>6\), whence \((-s)_+\le3|e|\).
+For the first, \(q<3\) implies \(s>-3\), hence \(e>1\).
+
+Define nonnegative defects
+\[
+\begin{split}
+D_0={}&2\int|d\rho|^2
++\int(4\rho|\nabla_A\Phi|^2-|\nabla\psi|^2)\\
+&+2\int|d\psi|^2+2\int E_\lambda,\qquad
+E_\lambda=\langle W^+\psi,\psi\rangle+w\rho^2/3\ge0.
+\end{split}
+\tag{11}
+\]
+Nonnegativity uses the differential inequality for the parallel spinor
+quadratic map and \(\lambda_{\min}(W^+)\ge-w/3\).
+The spinor and self-dual-form Weitzenböck identities, subtracted after
+testing the spinor against \(\rho\Phi\), give
+\[
+\frac{27}{8}D_0=\int(qu^2-f_j u^3).
+\tag{12}
+\]
+
+For completeness, the moment argument that retains the truncation cost
+is as follows. Set
+\[
+C=\int Qu^2,\quad Z=\int\sqrt Q\,u^3,\quad E_Q=\int Q^2.
+\]
+Then \(C-Z\ge27D_0/8\ge0\), while the curvature equation gives
+\[
+C_{\rm act}:=\int f_j^2u^2=18\|F_A^+\|_2^2\ge72\pi^2p,
+\quad 0\le C_{\rm act}-C\le\frac{81}{4}\int e^2+o(1).
+\]
+Hölder gives \(C\le E_Q^{1/3}Z^{2/3}\), hence
+\[
+0\le E_Q-C\le S+o(1),\qquad
+S:=\Delta_++\frac{117}{4}\int e^2\le117V\kappa.
+\]
+If \(\theta=(Z/E_Q)^{1/3}\), the nonnegative Hölder slack implies
+\(E_Q-C\ge2(C-Z)\). The associated amplitude estimate is
+\(\int Q(u-\sqrt Q)^2\le E_Q-C\): with probability measure
+\(Q^2d\mu/E_Q\), let \(h=u/\sqrt Q\),
+\(c=\mathbb E h^2\), \(z_3=\mathbb E h^3\), and
+\(m=\mathbb E h\). Then \(z_3\le c\le z_3^{2/3}\),
+so \(c\le1\); Cauchy–Schwarz gives \(c^2\le m z_3\le mc\),
+and hence \(m\ge c\). Thus \(\mathbb E(h-1)^2\le1-c\).
+We have proved
+\[
+D_0\le\frac{4S}{27}+o(1),\qquad
+\int Q(u-\sqrt Q)^2\le S+o(1).
+\tag{13}
+\]
+
+## 4. Produce the full calibrated form, including its Weyl direction
+
+Because \(Q\ge3\), \(u\le6\), and
+\((Q-q)^2\le e^2\), (13) yields
+\[
+\int(q-u^2)^2
+\le2(1+2\sqrt3)^2S+2\int e^2+o(1)
+\le C V\kappa+o(1).
+\tag{14}
+\]
+The middle inequality uses
+\(|Q-u^2|\le(1+2\sqrt3)\sqrt Q\,|\sqrt Q-u|\).
+Together with (7), this controls
+\(\int(u^2-q_\beta)^2\).
+
+Now choose the normalization, rather than assuming it:
+\[
+c_\beta^2=\frac{9\beta}{8(\beta+1)},\qquad
+\omega=c_\beta\psi,\qquad t_\beta=1/\beta,\qquad
+\alpha_\beta=\frac9{8(\beta+1)}.
+\]
+It follows that
+\[
+\|\omega\|_\infty\le3\sqrt2,\qquad
+\int(|\omega|^2-2)^2\le C_L V\kappa+o(1).
+\tag{15}
+\]
+Define the smooth polynomial model
+\[
+A_{\omega,t}=t\left(\frac{|\omega|^2}{3}I-\omega\otimes\omega\right).
+\]
+The exact identity for arbitrary \(\psi\), including its zeros, is
+\[
+\left|W^+-\alpha_\beta
+       \left(\frac{\rho^2}{3}I-\psi\otimes\psi\right)\right|^2
+=\frac16(w-2\alpha_\beta\rho^2)^2
++2\alpha_\beta E_\lambda.
+\tag{16}
+\]
+This identity uses only trace-freeness of \(W^+\), not an eigenline
+selection. The tensor on its left is exactly
+\(W^+-A_{\omega,1/\beta}\). Also
+\(2\alpha_\beta\rho^2=u^2/(\beta+1)\), and
+\[
+w-\frac{u^2}{\beta+1}
+=\left(w-\frac4\beta\right)
+-\frac{u^2-q_\beta}{\beta+1}.
+\]
+Equations (7), (13)–(16) give, for the same smooth solution,
+\[
+d_\beta:=\fint\left(
+ |\operatorname{Ric}+g|^2+|W^+-A_{\omega,1/\beta}|^2
++(|\omega|^2-2)^2\right)
+\le C_L\kappa+o(1).
+\tag{17}
+\]
+In particular the small Weyl-direction error has been proved from the
+actual gauge equations. It is not a hidden geometric hypothesis.
+
+## 5. Supply the second-order budget
+
+For a bounded section \(v\) of a metric bundle with compatible
+connection curvature \(\mathscr F\), covariant integration by parts
+on a closed four-manifold gives
+\[
+\|\nabla v\|_4^2\le4\|v\|_\infty\|\nabla^2v\|_2,
+\]
+\[
+\|\nabla^2v\|_2^2
+\le2\|\nabla^*\nabla v\|_2^2
++32\|v\|_\infty^2\|\operatorname{Ric}\|_2^2
++33\|v\|_\infty^2\|\mathscr F\|_2^2.
+\tag{18}
+\]
+The curvature convention is \(|\mathscr F|^2=\sum_{ij}
+|\mathscr F_{ij}|_{\rm HS}^2\). These are the inherited Hessian
+identities, not a Sobolev embedding. One first interchanges Hessian
+slots and then commutes on \(\nabla v\); no derivative of curvature
+is introduced.
+
+Equations (7), (10) give
+\(\int f_j^2\le C_L V(1+\kappa)+o(1)\).
+The determinant Chern–Weil identity and (9) imply
+\[
+\|F_A\|_2^2=2\|F_A^+\|_2^2-4\pi^2a^2
+\le4\int f_j^2+4\pi^2(-a^2)_+.
+\]
+The curvature of the positive-spinor connection is bounded in norm by
+the \(W^+,s,\operatorname{Ric}^{\circ},F_A\) blocks; \(W^-\) acts
+trivially on this representation. Its squared integral is therefore
+at most \(C_LV(1+\kappa+b_a)+o(1)\).
+The spinor equation and \(|\Phi|\le2\) likewise bound
+\(\int|\nabla_A^*\nabla_A\Phi|^2\) by
+\(C_LV(1+\kappa)+o(1)\).
+
+Apply (18) to \(\Phi\), and twice differentiate the parallel
+quadratic map \(\Phi\mapsto\omega\). The resulting terms are
+bounded by \(C(|\Phi||\nabla_A^2\Phi|+|\nabla_A\Phi|^2)\).
+Finally use
+\(\Delta_H\omega=\nabla^*\nabla\omega+(s/3)\omega-2W^+\omega\).
+This proves
+\[
+B_\omega:=\fint|\Delta_H\omega|^2
+\le C_L(1+\kappa+b_a)+o(1),
+\]
+\[
+\boxed{(1+B_\omega)d_\beta
+\le C_L\kappa(1+\kappa+b_a)+o(1).}
+\tag{19}
+\]
+All the forms are smooth actual solutions. None of these estimates
+differentiates the smoothing weight.
+
+## 6. Spectral compatibility and completion of the proof
+
+The bounded self-dual-form compatibility theorem states that, for
+\(\|\omega\|_\infty\le K\) and bounded constant \(t\),
+\[
+|t|\,|1-2t|
+\le C\sqrt{d_t(1+B_\omega+d_t)},
+\tag{20}
+\]
+where \(d_t\) is as in (17). Its proof is recorded in full in
+[the analytic criterion](round21_analytic.md), Sections 2, 3 and 6.
+The mechanism relevant to its use here is worth making explicit.
+The same Hessian estimate bounds second derivatives of
+\(A_{\omega,t}\). The weak contracted Bianchi identity, tested against
+\(J_t=\operatorname{div}W(A_{\omega,t})\), gives
+\[
+\fint|J_t|^2\le C|t|\sqrt{d_t(1+B_\omega+d_t)}.
+\]
+If \(v=|\omega|^2\), the polynomial pointwise contraction gives
+\[
+t^2v(|\nabla\omega|^2+|d\omega|^2)
+\le |J_t|^2+\tfrac43t^2|dv|^2,
+\quad
+\fint|dv|^2\le C\sqrt{d_t(1+B_\omega+d_t)}.
+\]
+Testing the self-dual Hodge equation against \(v\omega\) gives an
+algebraic term \(16t^2(1-2t)/3\); all its derivative terms are
+controlled by the preceding two displays. The zeroth-order errors cost
+at most \(Ct^2\sqrt{d_t}\). Thus
+\[
+\left|\frac{16}{3}t^2(1-2t)\right|
+\le7\fint|J_t|^2+C t^2\sqrt{d_t(1+B_\omega+d_t)}.
+\]
+Division by \(|t|\), with the case \(t=0\) separate, proves (20).
+The argument neither differentiates the Ricci error nor assumes
+\(d\omega=0\).
+
+Substitute the produced form, with \(t=1/\beta\), into (20).
+Using (17)–(19), then letting its smoothing allowance tend to zero,
+\[
+\frac{(\beta-2)^2}{\beta^4}
+\le C_L\kappa(1+\kappa+b_a).
+\tag{21}
+\]
+Absorb \(\beta^4\le L^4\) into the constant. When \(\kappa\le1\), the right side is bounded by
+\(2C_L(1+b_a)\kappa\). When \(\kappa>1\), (2) is immediate
+after choosing \(c_L\le(L-2)^{-2}\). This proves (2).
+
+For (3), Chern–Weil gives
+\[
+4\pi^2T=\int\left(2|W^+|^2+s^2/24
+-|\operatorname{Ric}^{\circ}|^2/2\right)
+\ge-\tfrac12 Vr.
+\]
+Hence \(a^2\ge T\) implies \(b_a\le r/(8\pi^2)\).
+For \(\kappa\le1\) this is bounded by \(1/(8\pi^2)\);
+for \(\kappa>1\) use the same trivial split. Equation (4) is (3)
+with \(r=0\), after multiplying by \(\beta V/(\beta+1)\).
+
+## 7. The allowed endpoint without a scalar-curvature band
+
+The same construction has a structural consequence even when the
+parameter approaches the allowed endpoint. It is not obtained by
+declaring that endpoint forbidden.
+
+Let \(H\) be the harmonic self-dual representative of \(a_g^+\),
+with convention \(\operatorname{proj}_{\mathcal H^+}(iF_A^+)=2\pi H\).
+Set
+\[
+\zeta_\beta=-\frac{3\pi\beta}{\beta+1}H.
+\]
+**Theorem 2 (actual harmonic alignment).** Under the hypotheses of
+Theorem 1, if \(\kappa\le1\), the same smooth forms can be chosen
+with arbitrarily small allowance \(\eta>0\) so that
+\[
+\fint|\omega-\zeta_\beta|^2\le C_L\kappa+\eta,
+\quad
+\fint|\nabla\omega|^2
+\le C_L\sqrt{\kappa(1+\kappa+b_a)}+\eta.
+\tag{22}
+\]
+The amplitude, polynomial Weyl fit and Hodge-Laplacian bounds remain
+(15), (17) and (19). In particular, at \(\beta=2\), the harmonic
+target is \(-2\pi H\), and
+\(\kappa=r+144\pi^2D_{\rm LB}/V\). This conclusion needs neither
+a scalar band nor a scalar spectral gap.
+
+**Proof.** Retain the actual curvature moment from Section 3. Since
+\(C\le E_Q\), its Hodge remainder satisfies
+\[
+18\|iF_A^+-2\pi H\|_2^2
+=C_{\rm act}-72\pi^2p\le S+o(1).
+\]
+The curvature equation therefore gives
+\[
+\|f_j\psi+4\sqrt2\pi H\|_2^2\le4S/9+o(1).
+\tag{23}
+\]
+Furthermore
+\[
+\int(f_j-\sqrt{q_\beta})^2
+\le2\int(f_j-\sqrt Q)^2
++2\int(\sqrt Q-\sqrt{q_\beta})^2
+\le C_LV\kappa+o(1).
+\]
+Here \((f_0-\sqrt Q)^2\le f_0^2-Q\le9e^2/16\), and the
+square-root map is uniformly Lipschitz on \([3,\infty)\).
+Use \(|\psi|\le4\) and multiply (23) by
+\(c_\beta^2/q_\beta\). The identity
+\(4\sqrt2\pi c_\beta/\sqrt{q_\beta}
+=3\pi\beta/(\beta+1)\) proves the first estimate in (22).
+
+For the second, the derivative conclusion of the bounded-form theorem
+on \(1/L\le t\le1/2\) is
+\(\fint|\nabla\omega|^2\le C_L\sqrt{d_t(1+B_\omega+d_t)}\)
+when \(d_t\le1\). If \(\kappa\) is small, (17) ensures this.
+For the remaining compact range of \(\kappa\le1\), the integrated
+Hodge equation and the bound on \(B_\omega\) give
+\(\fint|\nabla\omega|^2\le C_L\sqrt{1+b_a}\);
+enlarging the constant recovers (22). All allowances are taken small
+simultaneously for the same solution.
+
+The harmonic form need not have a uniform maximum bound. Thus (22)
+does not license replacing \(\omega\) by \(\zeta_\beta\) inside
+the quadratic Weyl model. It does give a precise global spectral
+conclusion: if \(\Pi_{>\lambda}\) is the spectral projection of the
+rough Laplacian on self-dual forms, then for every \(\lambda>0\),
+\[
+\fint|\Pi_{>\lambda}\zeta_\beta|^2
+\le C_L\left[\kappa+
+\frac{\sqrt{\kappa(1+\kappa+b_a)}}{\lambda}\right].
+\tag{24}
+\]
+Indeed, project \(\zeta_\beta-\omega\) and use
+\(\|\Pi_{>\lambda}\omega\|_2^2
+\le\lambda^{-1}\|\nabla\omega\|_2^2\), then let the allowance
+tend to zero. This controls an actual specified harmonic class; it
+does not assert global Kähler topology or exact metric correction.
+
+At \(\beta=2\), there is a stronger direct estimate, independent
+of \(b_a\). In the notation of (11), the retained Hodge identity is
+\[
+\int|\nabla\psi|^2
+=2\int|d\psi|^2+2\int E_\lambda
+-\tfrac13\int(s+2w)\rho^2.
+\]
+Since \(\rho\le4\), \(\int(s+2w)^2\le2\mathfrak D_2\),
+and \(c_2^2=3/4\), this gives simultaneously
+\[
+\fint|\nabla\omega|^2\le G(\kappa)+\eta,
+\quad G(\kappa)=13\kappa+4\sqrt{2\kappa},
+\quad
+\fint|d\omega|^2\le13\kappa/2+\eta.
+\tag{25}
+\]
+The preceding harmonic-alignment estimate can likewise be made explicit:
+\[
+\fint|\omega+2\pi H|^2\le49\kappa+\eta.
+\tag{26}
+\]
+For (26), (6) gives \(\fint(q-6)^2\le18\kappa\). The cutoff
+estimate implies
+\(\fint(f_j-\sqrt6)^2\le9\kappa+o(1)\), and (23) then
+costs at most \(4\cdot9\kappa+S/(9V)\le49\kappa\).
+Thus in (24) the endpoint right side can be replaced by
+\(98\kappa+2G(\kappa)/\lambda\), with no square-cost hypothesis.
+The [endpoint application](line1_composed_application.md) gives this
+statement and its spectral consequences separately.
+
+## 8. What is strengthened, and what is not
+
+At \(\beta=2\),
+\[
+\mathfrak D_2=144\pi^2D_{\rm LB},\qquad
+D_{\rm LB}=\frac1{4\pi^2}\int(s^2/24+|W^+|^2/2)-p/2.
+\]
+The classical equality set is negative cscK, compatible with the
+selected Spin\(^c\) structure, not necessarily Einstein. Equation (2)
+does not turn its zero deficit into an unconditional Ricci estimate.
+
+At \(\beta=8\), Chern–Weil gives
+\[
+\mathfrak D_8
+=108\pi^2(T-2p/3)+\frac{27}{2}\int|\operatorname{Ric}^{\circ}|^2.
+\tag{27}
+\]
+Thus the old topological calibration is one member of the family.
+For other parameters, (2) controls a different scalar–Weyl functional,
+with its own genuine angular calibration supplied in Section 4. This is
+a functional extension of the method, not a second discovery of the
+old \(1/3\) blow-up obstruction.
+
+An exact negative Kähler–Einstein metric with canonical class has
+\(s=-4,w=2,p=V/(2\pi^2)\). Direct substitution yields
+\[
+\frac{\mathfrak D_\beta}{V}
+=\frac{4(\beta-2)^2}{\beta}.
+\tag{28}
+\]
+The quadratic vanishing at the allowed endpoint is consequently the
+correct order; the theorem does not claim an optimal coefficient.
+
+For \(0<\beta\le2\), the classical scalar and scalar–Weyl bounds
+already provide a stronger elementary bound. If
+\(x=\|s\|_2,y=\|w\|_2\), then
+\(x\ge\sqrt{32\pi^2p}\) and
+\(x+y\ge\sqrt{72\pi^2p}\). Minimizing \(x^2+\beta y^2\)
+on these constraints gives \(\int(s^2+\beta w^2)
+\ge8\pi^2p(4+\beta)\). Thus this range does not need the new
+compatibility argument. For \(\beta>2\), that scalar constraint is
+inactive at the classical relaxed minimizer. The additional obstruction
+in (2) is differential, through weak Bianchi and the actual bounded form.
+
+For the Yau26 negative input, \(r\le4\delta_-(g)^2\). Under
+\(a^2\ge T\), (3) therefore gives the usable estimate
+\[
+4\delta_-(g)^2+\mathfrak D_\beta/V
+\ge c'_L(\beta-2)^2.
+\tag{29}
+\]
+To obtain a new purely topological application one must additionally
+force \(\mathfrak D_\beta/V\) small from independently justified
+topological or geometric data. No such new topology is asserted here.
+Neither (29) nor the allowed-root form supply proves existence of an
+Einstein metric on an arbitrary smooth manifold.
+
+## Sources and verification
+
+- C. LeBrun, *Ricci Curvature, Minimal Volumes, and Seiberg–Witten Theory*,
+  [Theorem 2.3 and Propositions 3.1, 4.1](https://arxiv.org/abs/math/0003068):
+  the classical curvature inequalities and cscK equality set.
+- C. LeBrun, *Four-manifolds, curvature bounds, and convex geometry*,
+  [Lemma 3.7](https://arxiv.org/abs/math/0611450): weighted equations.
+- [Integral truncated-weight proof](round4_rigidity.md), Sections 2–4:
+  the inherited cutoff and moment estimates, reproduced above.
+- [Bounded-form spectral theorem](round21_analytic.md): the analytic
+  compatibility theorem, including its polynomial contractions.
+- [Scalar-band supply](line1_scalar_band_remainder.md): the prior allowed
+  cscK branch, which is not itself a forbidden-spectrum application.
+
+Exact Einstein saturation forcing Kähler–Einstein structure already
+appears in LeBrun's Corollary 2.5; it is not a new classification here.
+The quantitative persistence under integral Ricci error, and the actual
+all-scalar form-production estimates, are the assertions at issue.
+
+The parameterized all-scalar functional estimate (2) is the claim proved
+in this note. Its finite algebra is checked separately; those checks do
+not replace the gauge-solvability hypothesis or the analytic proofs.
+No comprehensive priority claim over later literature is made.
+
+
+END COMPLETE SOURCE
+
+
+---
+
+## Source 4: line1_compactified_pencil.md
+
+Original path: mathematics/current/line1_compactified_pencil.md
+
+SHA-256: 0d971e1519c9d8b5edddcbd71f158c3ca08acf943d5ae4a7eb3f359af2628bed
+
+BEGIN COMPLETE SOURCE
+
+# A compactified functional pencil and a two-sided Einstein energy window
+
+23 September 2026. Baseline: `4401d28`.
+
+This note extends the finite-parameter non-saturation theorem to its
+vanishing-Weyl endpoint, with an explicit degenerating weight. It then
+obtains the upper, as well as the lower, quantitative energy envelope.
+The analytic input is the existing bounded-form compatibility theorem;
+the classical feasible energy interval is not a new curvature inequality.
+
+## 1. Uniformity on the unbounded parameter interval
+
+Let \((M,g)\) be closed, connected, oriented and four-dimensional. Fix an
+actual Spin\(^c\) structure whose ordinary Seiberg--Witten equations are solvable
+for every metric conformal to \(g\). Write
+\[
+ p=(a_g^+)^2>0,\quad V=\operatorname{Vol}(g),\quad
+ r=\fint|\operatorname{Ric}+g|^2,\quad b_a=(-a^2)_+/V,
+\]
+\[
+ D_\beta=\frac{\beta+1}{\beta}\int(s^2+6\beta|W^+|^2)
+                 -72\pi^2p,\qquad \beta\ge2.
+\]
+The conventions are tensor Ricci norm and Hilbert--Schmidt Weyl
+endomorphism norm. The class is fixed while the conformal weight varies.
+
+**Theorem 1.** There is a universal \(c>0\) such that, for every finite
+\(\beta\ge2\),
+\[
+ \boxed{(1+b_a)(r+D_\beta/V)
+       \ge c\frac{(\beta-2)^2}{\beta^4}.}                 \tag{1}
+\]
+If \(a^2\ge T=2\chi+3\tau\), the factor \(1+b_a\) can be removed, after reducing
+the universal constant. Unlike the earlier coefficient \(c_L\), the constant
+in (1) does not depend on a parameter cutoff. Its explicit weight vanishes
+at both the Kähler endpoint and the vanishing-Weyl endpoint.
+
+**Proof.** Put \(w=\sqrt6|W^+|\), \(q=-s+w\), \(e_s=s+4\),
+\(z=s+\beta w\), and \(\kappa=r+D_\beta/V\). The exact nonnegative decomposition
+in [the finite-parameter proof](line1_functional_pencil.md), Section 2,
+implies
+\[
+ \fint e_s^2\le4r,\quad \fint z^2\le\beta D_\beta/V,
+ \quad\Delta_+/V\le D_\beta/V.
+\]
+Consequently
+\[
+ \fint(w-4/\beta)^2
+ \le2D_\beta/(\beta V)+8r/\beta^2\le3\kappa,
+\]
+\[
+ \fint(q-q_\beta)^2\le14\kappa,
+ \qquad q_\beta=4+4/\beta\in[4,6].                       \tag{2}
+\]
+In particular the normalized Ricci, scalar and \(W^+\) squared energies
+are bounded by \(C(1+\kappa)\), uniformly for \(\beta\ge2\).
+
+Here is the required tracking of the form-production constants; uniformity
+is not inferred merely by sending \(L\) to infinity. The truncated weight
+\(Q=\max(q,3)\), \(f_0=\max(\sqrt Q,(-s)_+/4)\) is independent of \(\beta\).
+The inherited moment argument gives the same bounds \(|\psi|\le4\),
+\(D_0\le4S/27+o(1)\) and the same amplitude control, with
+\(S\le117V\kappa\). Its errors involve only \(e_s\), \(\Delta_+\) and \(Q\).
+For the normalized form and Weyl model the coefficients are
+\[
+ c_\beta^2=\frac{9\beta}{8(\beta+1)}\in[3/4,9/8],\quad
+ \alpha_\beta=\frac9{8(\beta+1)}\le3/8,\quad
+ t=1/\beta\in(0,1/2].
+\]
+Set \(\omega=c_\beta\psi\) and
+\(A_{\omega,t}=t(|\omega|^2I/3-\omega\otimes\omega)\).
+The polynomial fit identity is
+\[
+ |W^+-A_{\omega,t}|^2
+ =\tfrac16(w-2\alpha_\beta|\psi|^2)^2
+                                  +2\alpha_\beta E_\lambda.
+\]
+The amplitude estimate, (2), and
+\(2\alpha_\beta|\psi|^2=u^2/(\beta+1)\) therefore yield, with one smooth
+actual solution and an arbitrarily small allowance,
+\[
+ \|\omega\|_\infty\le3\sqrt2,\quad
+ d_t:=\fint\bigl(|\operatorname{Ric}+g|^2
+   +|W^+-A_{\omega,t}|^2+(|\omega|^2-2)^2\bigr)
+                       \le C\kappa+o(1).                 \tag{3}
+\]
+No inverse power of \(t\) is used here. The determinant energy identity
+and the bounded-spinor Hessian estimate then give
+\[
+ B_\omega:=\fint|\Delta_H\omega|^2
+                   \le C(1+\kappa+b_a)+o(1),             \tag{4}
+\]
+again uniformly: the needed curvature energies are bounded by (2), and
+the normalization of the quadratic spinor map is bounded above. This is
+exactly the estimate proved in Sections 3--5 of the finite-parameter
+paper, with every parameter-dependent coefficient now bounded explicitly.
+
+The bounded-form compatibility theorem, with the fixed parameter range
+\(0\le t\le1/2\), gives
+\[
+ t^2(1-2t)^2\le C\kappa(1+\kappa+b_a).                   \tag{5}
+\]
+For \(\kappa\le1\) this proves (1); for \(\kappa>1\) use
+\(t^2(1-2t)^2\le1/64\). Let the smoothing allowance tend to zero.
+If \(a^2\ge T\), Chern--Weil gives
+\(b_a\le r/(8\pi^2)\), and the same split removes the square-cost factor.
+This proves the theorem. No derivative estimate for the harmonic
+projection is asserted uniformly as \(t\to0\). \(\square\)
+
+## 2. A pencil with an actual endpoint at zero
+
+Define on \(0\le t\le1/2\)
+\[
+ P_t=t(1+t)\int s^2+6(1+t)\int|W^+|^2-72\pi^2tp.
+                                                               \tag{6}
+\]
+For \(t>0\), this is \(tD_{1/t}\); at zero it is exactly
+\(P_0=6\int|W^+|^2\). Hence \(P_t\ge0\) on the closed interval.
+Multiplying (1) by \(t\), and using \(r+tD/V\ge t(r+D/V)\), proves
+\[
+ \boxed{(1+b_a)(r+P_t/V)\ge c t^3(1-2t)^2.}             \tag{7}
+\]
+The same square-cost removal applies when \(a^2\ge T\). At \(t=0\) the
+inequality is trivial and supplies no nonzero lower amplitude or actual
+anti-self-dual Einstein existence. At \(t=1/2\), the endpoint includes
+negative Kähler--Einstein metrics. The cubic decay in (7) is a proved
+sufficient rate from this transfer, not an optimality claim.
+
+For a normalized negative Kähler--Einstein metric and its canonical class,
+\[
+ P_t/V=4(1-2t)^2.
+\]
+This provides an actual normalization check. It does not establish
+sharpness at the other endpoint.
+
+## 3. The missing upper energy envelope
+
+Assume now that \(A>0\),
+\[
+ T=2\chi+3\tau=A(1-h),\qquad 1/4<h<1/3,                 \tag{8}
+\]
+and for every metric one can choose an actual conformally solvable class
+with \(p\ge A\) and \(a^2\ge T\). Put
+\[
+ e=\frac{\int|\operatorname{Ric}|^2}{8\pi^2A},\quad
+ F(h)=\frac{(4-\sqrt{1-3h})^2}{9},\quad
+ G(h)=\frac{(4+\sqrt{1-3h})^2}{9},
+\]
+\[
+ t_*(h)=\frac{1-2\sqrt{1-3h}}{8+2\sqrt{1-3h}}\in(0,1/8),
+ \qquad \Theta(h)=t_*^3(1-2t_*)^2.                       \tag{9}
+\]
+Use the all-sign relative defect
+\[
+ \mathcal E(g)=\inf_{\lambda\ne0}
+ \frac{\int|\operatorname{Ric}-\lambda g|^2}{\lambda^2V}.
+\]
+
+**Theorem 2.** There is a universal \(c_*>0\) such that every smooth metric
+under (8) satisfies
+\[
+ \boxed{\mathcal E(g)+(G(h)-e)_+\ge c_*\Theta(h).}        \tag{10}
+\]
+Combining with the inherited lower-envelope theorem, every Einstein
+candidate must satisfy the strictly smaller energy window
+\[
+ \boxed{F(h)+\varepsilon h^2\le e
+                       \le G(h)-c_*\Theta(h).}          \tag{11}
+\]
+Ricci-flat and positive Einstein metrics are independently excluded by
+the positive actual monopole scalar estimate. Equation (11) concerns all
+remaining Einstein metrics, not just minimizers or a gluing neighborhood.
+
+**Proof.** Write \(R=\int|\operatorname{Ric}|^2\),
+\(P=\int|\operatorname{Ric}^{\circ}|^2\), \(C_A=8\pi^2A\).
+The exact Chern--Weil reduction of (6) is
+\[
+ P_t=k(t)R+\ell(t)P+12\pi^2(1+t)T-72\pi^2tp,
+\]
+\[
+ k(t)=\frac{(1+t)(8t-1)}2,\qquad
+ \ell(t)=2(1+t)(1-2t).                                  \tag{12}
+\]
+For \(t=t_*(h)\), direct substitution gives
+\[
+ k(t)G(h)+\tfrac32(1+t)(1-h)-9t=0,
+\]
+and therefore
+\[
+ P_t=C_A k(t)(e-G(h))+\ell(t)P-72\pi^2t(p-A)
+       \le C_A|k(t)|(G(h)-e)_++\ell(t)P.                \tag{13}
+\]
+This is the opposite sign of the coefficient in the lower-envelope
+argument. It is why the finite-parameter range beyond \(\beta=8\) controls
+an upper energy wall.
+
+First fix the target to \(\operatorname{Ric}=-g\) and
+\(r=\fint|\operatorname{Ric}+g|^2\le1\).
+The scalar monopole bound and the trace estimate imply
+\[
+ C_A/V\le(2+\sqrt r)^2\le9,\qquad P/V\le r.
+\]
+On \(0\le t\le1/8\), \(|k(t)|\le1/2\) and \(0\le\ell(t)\le2\).
+Using (7), with its square-cost factor removed, in (13) gives
+\[
+ c\Theta(h)\le3r+\tfrac92(G(h)-e)_+
+              \le\tfrac92\{r+(G(h)-e)_+\}.             \tag{14}
+\]
+For \(r>1\) the desired estimate follows by decreasing the constant.
+Constant rescaling and taking the infimum over negative target constants
+prove (10) for the negative-target infimum \(\mathcal E_-\).
+
+The passage to all signs needs a different argument from the earlier
+lower-envelope transfer: a very large \(e\) now makes the energy excess
+zero. Here the upper Chern--Weil budget closes that possibility.
+Let \(I=\int s\). If \(I\le0\), direct minimization gives
+\(\mathcal E_+=4\). If \(I>0\), it gives
+\(\mathcal E_+=\mathcal E=4-I^2/(RV)\).
+The signed scalar estimate \(\int s_-^2\ge4C_A\) implies
+\[
+ \mathcal E_+\ge4/e.                                   \tag{15}
+\]
+If \(\mathcal E_+<1/2\), the chirality upper bound gives
+\[
+ e(1-\mathcal E_+)\le
+ U=3\min(2\chi+3\tau,2\chi-3\tau)/A\le3,
+\]
+so \(e\le6\). Equation (15) would imply \(\mathcal E_+\ge2/3\),
+a contradiction. Thus \(\mathcal E_+\ge1/2\). Since \(\Theta\) is bounded,
+this proves (10) also for the positive target infimum, after reducing
+\(c_*\); take the minimum of the two signwise bounds. \(\square\)
+
+## 4. Geometry of the two endpoints and an actual application
+
+The classical Einstein constraints are, with nonnegative \(x,y\),
+\[
+ x^2=4e,\quad x^2+8y^2=12(1-h),\quad x\ge2,\quad x+y\ge3.
+\]
+When \(1/4<h<1/3\), the ellipse has \(x<3\). Solving these inequalities
+gives the full classical interval \(F(h)\le e\le G(h)\). Thus the interval
+itself is classical; the positive quantitative margins in (11) are the
+new application of the differential non-saturation mechanism.
+
+At \(h\downarrow1/4\), the upper optimal parameter tends to \(t=0\),
+and \(\Theta(h)\sim(8/27)(h-1/4)^3\). At \(h\uparrow1/3\), both optimal
+parameters meet \(t=1/8\); the interval collapses, consistently with the
+old critical gap. At the lower-envelope endpoint \(h\downarrow0\), the
+optimal parameter instead tends to the allowed Kähler value \(t=1/2\).
+These are different geometric degeneracies; they cannot be treated as
+one compact parameter range with a fixed forbidden distance.
+
+For an actual example, let
+\[
+ M=(\Sigma_2\times\Sigma_3)\#5\overline{\mathbb{CP}}^{\,2}.
+\]
+Its polarized actual classes give \(A=16\), \(h=5/16\), \(a^2=T=11\).
+Here
+\[
+ F=25/16,\qquad G=289/144,\qquad t_*=1/17,
+ \qquad \Theta=225/17^5.
+\]
+Any Einstein metric, if one exists, must consequently satisfy
+\[
+ \frac{25}{16}+\varepsilon\frac{25}{256}
+ \le\frac{R}{128\pi^2}
+ \le\frac{289}{144}-c_*\frac{225}{17^5}.                 \tag{16}
+\]
+This is not a nonexistence claim for this example. Its bare
+two-chirality upper bound is only \(e\le33/16\), so the upper envelope
+contains information not supplied by that bound alone. The actual
+monopole selection is the same established polarized input as in the
+main paper; no new gauge existence theorem is asserted here.
+
+## 5. Relation to the research goal
+
+The first-line theorem now supplies a two-sided restriction on the entire
+energy spectrum of possible Einstein outputs in the displayed regime.
+It does not merely study an energy-minimizing sequence. For a pointwise
+input, \(\mathcal E\le4\delta_\sigma^2\) converts (10) into the corresponding
+upper-energy constraint on that input; a small residual alone does not
+force the input energy into a forbidden region.
+
+This note neither classifies the allowed spectra of all Einstein metrics
+nor constructs an Einstein metric. The separate Bauer--Furuta application
+in this increment is the new topological-category result. The present
+contribution is the closed-parameter formulation and its upper-wall
+application, using the existing analytic mechanism.
+
+Sources: [LeBrun's scalar--Weyl inequalities and Chern--Weil reduction](
+https://arxiv.org/abs/math/0003068); the local
+[functional-pencil proof](line1_functional_pencil.md), Sections 2--6;
+[bounded-form compatibility](round21_analytic.md), Section 6;
+[lower energy envelope](line1_energy_envelope_gap.md); and
+[two-chirality upper bound](line1_two_chirality_topology.md).
+
+`check_line1_compactified_pencil.py` verifies the exact coefficients,
+both envelope roots, endpoint rates, actual example, and several deliberate
+sign errors. These checks do not substitute for the written uniform
+analytic estimates or actual gauge-solvability inputs.
+
+
+END COMPLETE SOURCE
+
+
+---
+
+## Source 5: line1_energy_envelope_gap.md
+
+Original path: mathematics/current/line1_energy_envelope_gap.md
+
+SHA-256: 8cd0c429b2f403b1c31bb24333efc7397afba5742394a2951dd56aa5e24c3ad4
+
+BEGIN COMPLETE SOURCE
+
+# A uniform Ricci-energy gap above the classical Einstein envelope
+
+23 September 2026. This is an application of the parameterized functional
+theorem, with actual polarized monopole classes. The elementary energy
+envelope below follows from classical inequalities. The added conclusion is
+a uniform positive separation from that envelope, persisting under integral
+Einstein error. No new topological nonexistence theorem is asserted.
+
+## 1. Statement on a realized family
+
+Let
+\[
+ M=X\#k\overline{\mathbb {CP}}^{\,2}\#m(S^1\times S^3),\qquad
+ A=c_1^2(X)>0,\quad h=\frac{k+4m}{A},\quad 0<h<\frac13,
+ \tag{1}
+\]
+where \(X\) is a minimal complex surface of general type. Put
+\[
+ R=\int_M|\operatorname{Ric}|^2,\qquad
+ e=\frac{R}{8\pi^2A},\qquad
+ F(h)=\frac{(4-\sqrt{1-3h})^2}{9},
+\]
+\[
+ \mathcal E(g)=\inf_{\lambda\ne0}
+ \frac{\int_M|\operatorname{Ric}-\lambda g|^2}
+      {\lambda^2\operatorname{Vol}(g)}.
+ \tag{2}
+\]
+Both \(e\) and \(\mathcal E\) are invariant under constant rescaling.
+
+**Theorem.** Relative to Theorem 1 of
+[the functional-pencil proof](line1_functional_pencil.md), there is a
+universal \(\varepsilon>0\), independent of \(X,k,m,h,g\), such that
+\[
+ \boxed{\mathcal E(g)+(e-F(h))_+\ge\varepsilon h^2.}
+ \tag{3}
+\]
+Thus, for example, \(\mathcal E(g)\le\varepsilon h^2/2\) implies
+\(e\ge F(h)+\varepsilon h^2/2\). Every Einstein metric on \(M\), if one
+exists, necessarily satisfies
+\[
+ \boxed{\frac{R}{8\pi^2A}\ge F(h)+\varepsilon h^2.}
+ \tag{4}
+\]
+An actual nonzero monopole projection excludes Einstein constants zero and
+positive, so (4) concerns all Einstein candidates, not just a chosen sign.
+
+The same theorem holds whenever \(T=2\chi+3\tau=A(1-h)\) and each metric
+admits an actual conformally solvable Spin\(^c\) structure with
+\(p=(a_g^+)^2\ge A\) and \(a^2\ge T\). No regularity of the class selection
+in \(g\) is needed. In (1), the polarized sign selection gives
+\[
+ p\ge A,\qquad a^2=A-k\ge A-k-4m=T.
+ \tag{5}
+\]
+This is gauge-theoretic input, not just an intersection-form calculation;
+the conformal class keeps its polarization and its selected structure.
+For \(b_+=1\), the small-perturbation chamber and, for handles, the loop
+insertions are those in the [polarized closure](lebrun_stability_closure.md).
+The source is [LeBrun, Proposition 3.2 and its proof](https://arxiv.org/pdf/math/0003068).
+
+For a concrete family without chamber issues, take
+\(X=\Sigma_g\times\Sigma_q\), \(g,q\ge2\). Then
+\(A=8(g-1)(q-1)\) and \(b_+>1\). In particular,
+\((\Sigma_2\times\Sigma_2)\#2\overline{\mathbb {CP}}^{\,2}\) has
+\(A=8,h=1/4\). Formula (3) applies to every smooth metric on this actual
+closed manifold. Any Einstein metric on it would satisfy
+\[
+ \frac{R}{64\pi^2}\ge\frac{49}{36}+\frac{\varepsilon}{16}.
+\]
+We do not assume or produce an Einstein metric on it.
+
+## 2. The classical envelope is not the new result
+
+For an Einstein metric, set
+\[
+ x^2=\frac{\int s^2}{8\pi^2A},\qquad
+ y^2=\frac{6\int|W^+|^2}{8\pi^2A}.
+\]
+The classical scalar and scalar--Weyl inequalities and Chern--Weil give
+\[
+ x\ge2,\qquad x+y\ge3,\qquad x^2+8y^2=12(1-h),\qquad e=x^2/4.
+ \tag{6}
+\]
+These imply
+\(x\ge(8-2\sqrt{1-3h})/3\), hence \(e\ge F(h)\).
+Equality is feasible in this finite relaxation; it is not claimed to be
+realized by a metric. The constraints are the scalar estimate,
+[LeBrun's Theorem 2.3](https://arxiv.org/pdf/math/0003068), and the exact
+Chern--Weil identity. This optimization is entirely classical.
+
+The all-metrics infimum in (1) is
+\(\inf e=1+h\), by [LeBrun's Theorem 4.3](https://arxiv.org/pdf/math/0003068).
+One has the exact comparison
+\[
+ F(h)-(1+h)=\frac{4h^2}{(1+\sqrt{1-3h})^2}>0.
+ \tag{7}
+\]
+The new term in (4) is therefore an additional uniform energy separation
+above the already optimized classical restriction, not the separation in
+(7). Classical equality rigidity already excludes exact Einstein
+saturation away from the Kähler--Einstein endpoint; it does not alone
+give a uniform gap for varying manifolds or almost-Einstein metrics.
+
+## 3. Exact Chern--Weil reduction and the proof
+
+Use tensor Ricci norms and Hilbert--Schmidt Weyl operator norms. Write
+\[
+ P=\int|\operatorname{Ric}^{\circ}|^2,\quad S_2=\int s^2,\quad
+ W_2=\int|W^+|^2.
+\]
+The identities
+\[
+ S_2=4(R-P),\qquad W_2=2\pi^2T-R/12+P/3
+\]
+turn the functional in the companion theorem into
+\[
+ \mathfrak D_\beta
+ =K_\beta R+L_\beta P+12\pi^2(\beta+1)T-72\pi^2p,
+ \tag{8}
+\]
+where
+\[
+ K_\beta=\frac{(\beta+1)(8-\beta)}{2\beta},\qquad
+ L_\beta=\frac{2(\beta+1)(\beta-2)}{\beta}.
+\]
+Let \(z=\sqrt{1-3h}\) and choose
+\[
+ \beta=\beta(h)=\frac{8-2z}{1+2z}\in(2,8).
+ \tag{9}
+\]
+Direct substitution gives
+\[
+ K_\beta F(h)+\tfrac32(\beta+1)(1-h)-9=0.
+\]
+Using (5) in (8), with no discarded negative error, yields
+\[
+ \mathfrak D_\beta
+ =8\pi^2A K_\beta(e-F(h))+L_\beta P-72\pi^2(p-A)
+ \le8\pi^2A K_\beta(e-F(h))+L_\beta P.
+ \tag{10}
+\]
+
+First fix the Einstein target to \(-g\), and let
+\(V=\operatorname{Vol}(g)\), \(r=V^{-1}\int|\operatorname{Ric}+g|^2\).
+The functional-pencil theorem, with \(L=8\) and \(a^2\ge T\), supplies
+a universal \(c>0\) such that
+\[
+ c(\beta-2)^2\le r+\mathfrak D_\beta/V.
+\]
+Since \(P/V\le r\), equation (10) implies
+\[
+ c(\beta-2)^2
+ \le (1+L_\beta)r+
+ K_\beta\frac{8\pi^2A}{V}(e-F(h)).
+ \tag{11}
+\]
+The scalar monopole bound and the trace inequality give
+\[
+ 32\pi^2A\le S_2,\qquad
+ \sqrt{S_2/V}\le4+2\sqrt r,
+ \qquad \frac{8\pi^2A}{V}\le(2+\sqrt r)^2.
+ \tag{12}
+\]
+For \(r\le1\), replace the last factor in (11) by its positive part
+before using (12). On \([2,8]\),
+\[
+ 0\le K_\beta\le9/2,\qquad 0\le L_\beta\le27/2.
+\]
+Consequently
+\[
+ c(\beta-2)^2\le\frac{81}{2}\bigl[r+(e-F(h))_+\bigr].
+ \tag{13}
+\]
+Finally,
+\[
+ \beta(h)-2
+ =\frac{18h}{(1+z)(1+2z)}\ge3h.
+\]
+Thus (3), with \(r\) in place of \(\mathcal E\), holds for
+\(r\le1\) with coefficient \(2c/9\). For \(r>1\) it is immediate
+after choosing
+\(\varepsilon=\min\{2c/9,1\}\), because \(h^2<1/9\).
+For any \(\lambda<0\), apply this result to \((-\lambda)g\): its
+normalized error is the corresponding quotient in (2), while \(e\)
+and \(h\) are unchanged. Taking the infimum proves (3) first for
+\(\mathcal E_-\), the infimum restricted to negative \(\lambda\).
+
+To include positive target constants, put \(C=8\pi^2A\),
+\(I=\int s\), and let \(\mathcal E_+\) be the infimum for
+\(\lambda>0\). The signed scalar estimate is
+\[
+ \int s_-^2\ge32\pi^2p\ge4C,\qquad s_-:=\max\{-s,0\}.
+ \tag{14}
+\]
+For clarity, it follows directly from an ordinary monopole solution:
+with \(\rho=|\Phi|^2\), the integrated spinor identity gives
+\(\int\rho^2\le\int s_-\rho\), while Hodge projection gives
+\(\int\rho^2\ge32\pi^2p\); apply Cauchy--Schwarz.
+If \(I>0\), then
+\[
+ \frac{I^2}{V}\le\int s_+^2\le S_2-4C\le4R-4C,
+ \qquad \mathcal E_+=4-\frac{I^2}{RV}\ge\frac4e.
+\]
+If \(I\le0\), direct minimization gives \(\mathcal E_+=4\).
+When \(e\le F(h)+1\le25/9\), therefore,
+\(\mathcal E_+\ge36/25>1\). When \(e>F(h)+1\), the energy excess
+alone exceeds one. Hence
+\(\mathcal E_++(e-F(h))_+\ge1\ge\varepsilon h^2\).
+Together with \(\mathcal E=\min\{\mathcal E_-,\mathcal E_+\}\),
+this proves (3) for all target signs.
+
+Only the functional-pencil theorem is the nonclassical analytic input.
+There is no geometric compactness, scalar band, auxiliary-form assumption,
+or additional square-cost budget in this transfer.
+
+## 4. Why the parameter eight does not give this energy separation
+
+At \(\beta=8\), \(K_8=0\). Equation (8) loses \(R\) altogether:
+\[
+ \mathfrak D_8=108\pi^2(T-2p/3)+27P/2.
+ \tag{15}
+\]
+This is the old topological gap. Varying \(\beta\) retains the independent
+energy coordinate and gives the separation in (3).
+
+There is an exact algebraic non-implication check. At \(h=1/4\), set
+\(p=A\), \(a^2=T=3A/4\), \(P=0\), \(s=-4\), and prescribe the constant
+Weyl norm \(w=\sqrt6|W^+|=8/7\). Choose
+\[
+ V=2\pi^2A(49/36),\qquad R=4V.
+\]
+These moment data satisfy Chern--Weil, the scalar inequality, every
+classical bound \(\mathfrak D_\gamma\ge0\), \(\gamma>0\), and
+\(e=F(1/4)=49/36\). However,
+\[
+ \mathfrak D_{7/2}=0,\qquad \mathfrak D_8/V=162/49.
+ \tag{16}
+\]
+They violate the new parameter-\(7/2\) estimate. They do not violate any
+possible universal coefficient in the global parameter-eight member
+\(r+\mathfrak D_8/V\ge36c_8\): necessarily \(c_8\le1/11\).
+Indeed, for an actual negative Kähler--Einstein metric \(g_0\), the
+rescalings \(g=tg_0\) give
+\[
+ r+\mathfrak D_8/V=4(1-1/t)^2+18/t^2
+ \ge36/11,
+\]
+with equality at \(t=11/2\). Yet \(162/49>36/11\).
+This proves independence from the parameter-eight numerical inequality
+even at the largest coefficient it could possibly have.
+
+The data in (16) are a formal curvature-moment model, not a metric
+construction. The manifold and its actual monopole-class selection in
+Section 1 are realized; realizing the forbidden moments would contradict
+the theorem. This argument does not claim independence from every possible
+use of the old differential proof machinery.
+
+## 5. The remaining topological input is precise
+
+Equation (3) does not exclude all energies on any new smooth topology.
+For normalized Einstein metrics, the missing independent number is
+\[
+ e=\frac{R}{8\pi^2A}=\frac{V}{2\pi^2A}.
+ \tag{17}
+\]
+It is not fixed by \(T\), \(A\), or \(p\). Chern--Weil fixes a linear
+combination of scalar and Weyl energies, not this scalar/volume coordinate.
+An independently proved upper bound
+\(e<F(h)+\varepsilon h^2\) for every Einstein candidate would convert
+(4) into a new topological obstruction; no such bound is supplied here.
+An all-metrics energy *infimum* cannot serve as that upper bound.
+
+For the pointwise negative Ricci input
+\(\delta_-=\|\operatorname{Ric}^{\sharp}+I\|_{\infty,\mathrm{op}}\),
+(3) implies the raw consequence
+\[
+ 4\delta_-^2+(e-F(h))_+\ge\varepsilon h^2.
+ \tag{18}
+\]
+Thus a construction with controlled energy below the strengthened envelope
+cannot be arbitrarily Ricci-pinched. This is a restriction on such input
+metrics, not a proof that their smooth manifold has no Einstein metric
+at a different energy.
+
+`check_line1_energy_envelope_gap.py` checks the exact identities, envelope
+optimization, constants, scale transformation, and formal non-implication
+witness. These finite checks do not certify Seiberg--Witten solvability or
+the inherited differential theorem. No priority claim over unexamined later
+literature is made.
+
+
+END COMPLETE SOURCE

@@ -1,0 +1,23 @@
+{
+ "v_f": "(2*A_g(T)**2*A_h(T)*Derivative(A_h(T), (T, 2)) + A_g(T)**2*Derivative(A_h(T), T)**2 - 4*A_g(T)**2 + 2*A_g(T)*A_h(T)**2*Derivative(A_g(T), (T, 2)) + 6*A_g(T)*A_h(T)*Derivative(A_g(T), T)*Derivative(A_h(T), T) + A_h(T)**2*Derivative(A_g(T), T)**2 - 4*A_h(T)**2)/(4*A_g(T)*A_h(T))",
+ "v_g": "-(A_g(T)**2*Derivative(A_h(T), T)**2 - 4*A_g(T)**2 - A_h(T)**2*Derivative(A_g(T), T)**2 + 4*A_h(T)**2)/(2*(A_g(T)*Derivative(A_h(T), T) + A_h(T)*Derivative(A_g(T), T))*A_h(T))",
+ "v_h": "(A_g(T)**2*Derivative(A_h(T), T)**2 - 4*A_g(T)**2 - A_h(T)**2*Derivative(A_g(T), T)**2 + 4*A_h(T)**2)/(2*(A_g(T)*Derivative(A_h(T), T) + A_h(T)*Derivative(A_g(T), T))*A_g(T))",
+ "v_g_plus_v_h": "-(A_g(T) - A_h(T))*(A_g(T)**2*Derivative(A_h(T), T)**2 - 4*A_g(T)**2 - A_h(T)**2*Derivative(A_g(T), T)**2 + 4*A_h(T)**2)/(2*(A_g(T)*Derivative(A_h(T), T) + A_h(T)*Derivative(A_g(T), T))*A_g(T)*A_h(T))",
+ "v_g_times_Ag_plus_v_h_times_Ah": "-(A_g(T) - A_h(T))*(A_g(T) + A_h(T))*(A_g(T)**2*Derivative(A_h(T), T)**2 - 4*A_g(T)**2 - A_h(T)**2*Derivative(A_g(T), T)**2 + 4*A_h(T)**2)/(2*(A_g(T)*Derivative(A_h(T), T) + A_h(T)*Derivative(A_g(T), T))*A_g(T)*A_h(T))",
+ "trace_residual": "0",
+ "kappa_minus_s": "3*(A_g(T)**2*Derivative(A_h(T), T)**2 - 4*A_g(T)**2 - A_h(T)**2*Derivative(A_g(T), T)**2 + 4*A_h(T)**2)**2/(2*(A_g(T)*Derivative(A_h(T), T) + A_h(T)*Derivative(A_g(T), T))**2*A_g(T)**2*A_h(T)**2)",
+ "kappa_minus_s_fit": {
+  "vg2/(Af Ah)": 9.148399168217693e-16,
+  "vh2/(Af Ag)": -7.042977312465837e-16,
+  "vg2/Ah2": -3.964333336795269e-15,
+  "vh2/Ag2": 2.2833480284654907e-15,
+  "vg vh/(Ag Ah)": -2.0,
+  "vg2/Af2": 2.4520718046771904e-16,
+  "vh2/Af2": -3.8019340963914676e-17,
+  "vg2/Ag2": 1.9999999999999944,
+  "vh2/Ah2": 1.999999999999993
+ },
+ "kappa_minus_s_fit_residual": 6.821210263296962e-13,
+ "fit_rank": 7,
+ "lambda": "(2*A_g(T)**4*A_h(T)*Derivative(A_h(T), (T, 2)) - A_g(T)**4*Derivative(A_h(T), T)**4/4 + 2*A_g(T)**4*Derivative(A_h(T), T)**2 - 4*A_g(T)**4 + A_g(T)**3*A_h(T)**2*Derivative(A_g(T), T)*Derivative(A_h(T), T)*Derivative(A_h(T), (T, 2))/2 - A_g(T)**3*A_h(T)**2*Derivative(A_g(T), (T, 2))*Derivative(A_h(T), T)**2/2 + 2*A_g(T)**3*A_h(T)**2*Derivative(A_g(T), (T, 2)) - A_g(T)**3*A_h(T)*Derivative(A_g(T), T)*Derivative(A_h(T), T)**3 + 4*A_g(T)**3*A_h(T)*Derivative(A_g(T), T)*Derivative(A_h(T), T) + A_g(T)**2*A_h(T)**3*Derivative(A_g(T), T)**2*Derivative(A_h(T), (T, 2))/2 - A_g(T)**2*A_h(T)**3*Derivative(A_g(T), T)*Derivative(A_g(T), (T, 2))*Derivative(A_h(T), T)/2 - 2*A_g(T)**2*A_h(T)**3*Derivative(A_h(T), (T, 2)) - 2*A_g(T)**2*A_h(T)**2*Derivative(A_g(T), T)**2 + 2*A_g(T)**2*A_h(T)**2*Derivative(A_h(T), T)**2 - 2*A_g(T)*A_h(T)**4*Derivative(A_g(T), (T, 2)) + A_g(T)*A_h(T)**3*Derivative(A_g(T), T)**3*Derivative(A_h(T), T) - 4*A_g(T)*A_h(T)**3*Derivative(A_g(T), T)*Derivative(A_h(T), T) + A_h(T)**4*Derivative(A_g(T), T)**4/4 - 2*A_h(T)**4*Derivative(A_g(T), T)**2 + 4*A_h(T)**4)/((A_g(T)**2*Derivative(A_h(T), T)**2 + 2*A_g(T)*A_h(T)*Derivative(A_g(T), T)*Derivative(A_h(T), T) + A_h(T)**2*Derivative(A_g(T), T)**2)*A_g(T)**2*A_h(T)**2)"
+}

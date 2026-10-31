@@ -1,0 +1,27 @@
+0097: \section{固定A1解消上的点态Ricci逼近}
+0098: \begin{theorem}[固定标记的 $A_1$ 解消]\label{thm:A1}
+0099: 设 $(M_0,g_0)$ 为固定闭定向 Einstein 四维轨形，$\Ric_{g_0}=\sigma g_0$，只有有限个 $A_1$ 奇点。固定局部等变正规坐标、EH端部标记、取向及光滑填充数据。假设构造所用平滑核心修正 $\widetilde h$ 满足
+0100: \[
+0101: D\Ric_{g_{\rm EH}}\widetilde h=g_{\rm EH},
+0102: \]
+0103: 并满足 $\widetilde h=H_*+O_2(\rho^{-2})$，即对 $j=0,1,2$ 有
+0104: $|\nabla^j(\widetilde h-H_*)|\le C\rho^{-2-j}$，且其二次渐近项与环境正规二次项置于同一径向规范。在相应固定光滑标记解消 $M$ 上，构造给出光滑正定度量族 $g_a$，使
+0105: \begin{equation}\label{eq:A1}
+0106: \delta_\sigma(g_a)\le\frac{C}{|\log a|}\longrightarrow0.
+0107: \end{equation}
+0108: $C$ 可依赖固定轨形、节点和标记，但不依赖 $a\to0$。此外，$(M,g_a)$ GH收敛到 $(M_0,g_0)$，以 $a^{-2}$ 放大的各核心收敛到所选EH度量。
+0109: \end{theorem}
+0110: 
+0111: 该结论在每个适用的固定 $M$ 上直接给 $e_\sigma(M)=0$，是原题所要求的同一无权逐点范数。因此它可以独立成文，不需要先证明 $M$ 无Einstein。但是，$M$ 上不存在\emph{任何}Einstein度量是另一个命题，不能由式\eqref{eq:A1}推出；附近精确解消受阻，也不能替代这个全局命题。
+0112: 
+0113: \section{与精确Einstein解消的关系}
+0114: Biquard建立了 $A_1$ Einstein去奇异化的曲率障碍和特定非退化情形下的构造；Morteza--Viaclovsky研究高维Calabi模型；Ozuch发展精确Einstein退化、加权匹配、模障碍构造与高阶障碍理论\cite{Biquard,MV,OzuchI,OzuchII,OzuchHigher,OzuchIntegrability}。这些理论中的误差范数和精确方程，与定理\ref{thm:A1}的两侧无权 $L^\infty$ Ricci逼近有所不同。
+0115: 
+0116: Ozuch在\cite[\S7.3]{OzuchII}给出有限 $L^p$ Ricci逼近，并用对数截断处理单侧Ricci控制；其球面商问题询问是否存在指定EH解消上的度量，使
+0117: \begin{equation}\label{eq:football}
+0118: \norm{g_i^{-1}\Ric_{g_i}-3\Id}_{\infty,\op}\longrightarrow0,
+0119: \qquad (M,g_i)\xrightarrow{GH}(S^4/\Z_2,g_{\rm round}).
+0120: \end{equation}
+0121: 对于定理\ref{thm:A1}所允许的标准端部标记，下面的直径估计同时给GH极限。归一化只需令 $h_0=3g_{\rm round}$，对 $\Ric_{h_0}=h_0$ 使用构造后再取 $g_i=h_i/3$；端同态缺陷乘3，仍趋零。若另指定填充或边界标记，必须先验证它给出同一光滑解消，不能只凭有理Betti数识别。这一应用也不排除 $M$ 上另有精确Einstein度量。
+0122: 
+0123: \section{完整构造的数学结构}

@@ -1,0 +1,694 @@
+% !TeX program = xelatex
+% Standalone document, revised 2026-10-07 after checking public problem status.
+% Compile twice with XeLaTeX.
+% Dependencies: standard LaTeX packages and Fandol fonts (TeX Live/CTeX).
+% No project files or external bibliography are required.
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\setmainfont{FandolSong-Regular.otf}[BoldFont=FandolSong-Bold.otf,ItalicFont=FandolKai-Regular.otf]
+\setsansfont{FandolHei-Regular.otf}[BoldFont=FandolHei-Bold.otf]
+\newfontfamily\latin{Latin Modern Roman}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip=0pt plus 1pt
+\usepackage[margin=23mm,top=23mm,bottom=24mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,tabularx,array,enumitem,xcolor,fancyhdr,hyperref}
+\definecolor{ink}{HTML}{183F52}
+\definecolor{muted}{HTML}{526773}
+\hypersetup{colorlinks=true,linkcolor=ink,citecolor=ink,urlcolor=ink,
+ pdftitle={Einstein Gaps: Open Problems and Five Research Tasks},pdfauthor={Qiushi research programme}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5.5pt}
+\setlength{\emergencystretch}{3em}
+\linespread{1.15}
+\setlist{nosep,leftmargin=1.6em,topsep=4pt}
+\renewcommand{\arraystretch}{1.22}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{muted}Einstein Gaps\quad 五个相互关联的研究问题}
+\fancyhead[R]{\small\color{muted}2026.10.07}
+\fancyfoot[C]{\small\thepage}
+\setlength{\headheight}{15pt}
+\renewcommand{\headrulewidth}{.3pt}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\Met}{\operatorname{Met}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\dd}{\,d\mu_g}
+\newcommand{\key}[1]{\textbf{\color{ink}#1}}
+\newcommand{\topic}[1]{\par\medskip{\sffamily\bfseries\color{ink}#1}\par}
+\newcommand{\Ka}{K{\latin\"a}hler}
+\theoremstyle{definition}
+\newtheorem{problem}{问题}[section]
+\newtheorem{proposition}{命题}[section]
+\renewcommand{\proofname}{证明}
+\renewcommand{\contentsname}{阅读目录}
+\renewcommand{\refname}{参考文献与原始定位}
+\numberwithin{equation}{section}
+
+\begin{document}
+\thispagestyle{empty}
+{\sffamily\small\color{muted}QIUSHI RESEARCH\quad /\quad GEOMETRIC ANALYSIS}
+\vspace{7mm}
+
+{\sffamily\bfseries\LARGE\color{ink}Einstein Gaps on Four-Manifolds}
+
+{\sffamily\Large 公开问题、五项研究任务及其共同数学结构}
+
+\vspace{3mm}
+\key{存在性、最优曲率、极小值实现、可积性与几何流}
+\hfill 2026年10月7日
+\vspace{3mm}\hrule\vspace{4mm}
+
+研究的中心是：\textbf{光滑拓扑、实际场与曲率方程的微分相容性，怎样决定 Einstein 度量的存在、可逼近程度及最优几何？}
+全局曲率下界、达到或逼近下界的构造、近极值几何以及退化分析，共同描述这一问题。
+
+本文将此前讨论的五个方向写成可直接接续的数学课题。前三项源于 LeBrun 关于 Einstein 存在性与最优曲率的公开问题；第四项是 Goldberg 猜想的四维负标量曲率分支；第五项研究 Einstein 间隙与归一化 Ricci 流的长期行为，其公开背景包括 Fang--Zhang--Zhang 猜想。前四项有明确的原始问题，第五项是包含已知定理、直接应用和开放推广的研究方向。下文分别给出准确量词、已解决范围、现有理论的连接推导及待取得的全局结论。
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}p{.06\textwidth}p{.35\textwidth}Y@{}}
+\toprule
+ & 研究问题 & 要决定的数学事实\\
+\midrule
+1 & 非极小一般型复曲面上的 Einstein 度量 & 非零吹起是否已经排除所有 Einstein 度量\\
+2 & 最优全曲率与最小无迹 Ricci 能量 & 全部度量的下确界及其真实几何实现方式\\
+3 & 非 Bach 平坦的全局最优度量 & 是否存在超出已知特殊类型的光滑全局极小元\\
+4 & 四维负标量曲率 Goldberg 问题 & 闭 almost-\Ka{} Einstein 结构是否必然可积\\
+5 & Einstein 间隙与 Ricci 流（研究方向） & 长期流障碍、Fang--Zhang--Zhang 问题及边界几何\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{共同方法可以统一，问题的答案由几何决定。} 下文提出的强估计是明确的研究命题；原始问题也允许由存在构造或反例得到决定性回答。五项研究相互供给信息，不要求预先服从同一种局部分解或同一个候选常数。
+
+\vfill
+{\small\color{muted}文献定位以原始论文为准，页码注明期刊页或预印本页。项目入口采用2026年10月7日两会话交接稿所记录的结果及其原有假设。本文给出研究问题与连接推导；这些推导不替代其所引用的基础定理。}
+
+\newpage
+{\small\setlength{\parskip}{0pt}\linespread{1.02}\selectfont\tableofcontents}
+\newpage
+
+\section*{问题的公开状态与已知范围}
+\addcontentsline{toc}{section}{问题的公开状态与已知范围}
+
+本次文献更新截至2026年10月7日。第一、四项的未解范围有近期文献作为参照；第二、三项在原始论文中明确提出，本次查阅的后续文献中未找到一般解答。第五项按具体命题区分其公开状态。
+
+\begin{enumerate}
+\item \textbf{非极小一般型曲面的 Einstein 存在性。}
+LeBrun 1996年提出相关预期，2009年继续讨论；2026年综述 Theorem~6.11 陈述的一般排除范围仍为 $k\ge c_1^2(X)/3$。研究对象是任意 Einstein 度量，剩余范围包括未被其他结果覆盖的 $1\le k<c_1^2(X)/3$。若 $c_1^2(X)\le3$，所有整数 $k\ge1$ 已由该门槛覆盖\cite{LeBrun1996,LeBrun2009,LeBrun2026}。
+\item \textbf{最优全曲率。}
+LeBrun 2004年\S11提出一般型曲面吹起后 $I_R$ 的精确计算。已知子情形和标量、Ricci 积分的精确公式直接作为输入；待解的是全曲率或等价的无迹 Ricci 泛函在全部度量中的最优值\cite{LeBrun2004}。
+\item \textbf{非 Bach 平坦的全局最优度量。}
+同文\S11明确提出此问题。本次查阅文献中未见原问题的解答。全局极小性是题目的必要组成，不能由临界性、局部极小性或共形类内极小性替代\cite{LeBrun2004}。
+\item \textbf{四维负标量曲率 Goldberg 问题。}
+非负标量曲率情形已由 Sekigawa 解决。2026年的收缩孤立子与非负 Ricci 可积性结果仍未覆盖闭四维负 Einstein 的一般情形\cite{Sekigawa,Xie2026,Nguyen2026}。
+\item \textbf{Einstein 间隙与长期 Ricci 流。}
+正间隙排除相应拟无奇异流的转换机制已有经典基础。Min--Zheng--Zhu 2026年的标量--单纯体积定理又覆盖全部闭 \Ka{} 曲面，包括吹起，以及文中给定的非 \Ka{} 辛类别。开放工作是超出这些结论的精确范围、锐利关系及边界演化；Fang--Zhang--Zhang 的一般猜想按其原始量词单独列出\cite{BaykurIshida,MinZhengZhu2026,FZZ}。
+\end{enumerate}
+
+这些任务依次研究 \textbf{Einstein 存在性、曲率极值、极小值实现、几何结构可积性和长期演化}。已知定理组成共同起点，研究目标是决定上述尚未获得的全局结论。
+
+\newpage
+\section{统一框架：存在、间隙与极值几何}
+
+\subsection{基本泛函与四维恒等式}
+设 $M$ 为闭、连通、定向光滑四维流形，$\Met(M)$ 为其全部光滑 Riemannian 度量。记
+\begin{gather}
+ P(g)=\int_M|\Ric_g^\circ|^2\dd,\qquad
+ S(g)=\int_Ms_g^2\dd,\notag\\
+ R(g)=\int_M|\Ric_g|^2\dd=P(g)+\frac14S(g),\qquad
+ p_*(M)=\inf_{g\in\Met(M)}P(g),\label{eq:energies}\\
+ \mathcal K(g)=\int_M|\Rm_{\mathrm{op}}(g)|^2\dd,\qquad
+ I_R(M)=\inf_{g\in\Met(M)}\mathcal K(g).\notag
+\end{gather}
+$\Ric^\circ=\Ric-(s/4)g$。$\Rm_{\mathrm{op}}$ 与 $W^\pm$ 使用作用于二形式的曲率算子 Hilbert--Schmidt 范数；Ricci 使用对称二张量范数。
+
+四维 Chern--Weil 恒等式为
+\begin{align}
+8\pi^2\chi(M)&=\int_M\left(|W^+|^2+|W^-|^2+\frac{s^2}{24}-\frac12|\Ric^\circ|^2\right)\dd,\label{eq:GB}\\
+4\pi^2T_\pm&=\int_M\left(\frac{s^2}{24}+2|W^\pm|^2-\frac12|\Ric^\circ|^2\right)\dd,
+\quad T_\pm=2\chi\pm3\tau.\label{eq:CW}
+\end{align}
+另一方面 $|\Rm_{\mathrm{op}}|^2=|W|^2+s^2/24+|\Ric^\circ|^2/2$，从而
+\begin{equation}
+\boxed{\mathcal K(g)=8\pi^2\chi(M)+P(g),\qquad
+I_R(M)=8\pi^2\chi(M)+p_*(M).}\label{eq:fullP}
+\end{equation}
+因此最优全曲率、最小无迹 Ricci 能量及其极小元，是同一个变分问题的不同表达。
+
+在 $R>0$ 时还可使用归一化缺陷
+\begin{align}
+\mathcal J(g)&=\frac{4P(g)}{R(g)},\qquad
+\mathcal E(g)=\inf_{\lambda\ne0}
+\frac{\int_M|\Ric_g-\lambda g|^2\dd}{\lambda^2\Vol_g(M)},\notag\\
+\mathcal E(g)&=\mathcal J(g)+
+\frac{\int_M(s_g-\bar s_g)^2\dd}{R(g)},\qquad
+\bar s_g=\frac1{\Vol_g(M)}\int_Ms_g\dd.\label{eq:normalized}
+\end{align}
+该公式来自对 $1/\lambda$ 的二次式求下确界。在常标量曲率度量上 $\mathcal E=\mathcal J$。Ricci-flat 时 $P=R=0$，$\mathcal J$ 不定义，而上述原始定义给出 $\mathcal E=4$；研究包括 Ricci-flat 的精确存在性时，以 $P=0$ 为统一判据。
+
+\subsection{四种结论的联系}
+由缩并 Bianchi 恒等式，$P(g)=0$ 当且仅当 $g$ 为 Einstein 度量。于是
+\[
+p_*(M)>0\quad\Longrightarrow\quad M\text{ 不承载 Einstein 度量}.
+\]
+若 $p_*(M)=0$，其是否由光滑度量取得决定了存在性：取得即产生 Einstein 度量；不取得则给出积分逼近而无精确实现。若 $p_*(M)>0$ 且取得，则出现具有正 Einstein 缺陷的全局最优几何。\textbf{间隙大小与下确界是否取得，提供不同但互补的信息。}
+
+\subsection{现有共同分析怎样进入五个问题}
+现有理论的分析对象是同一度量上的实际旋量、联络、曲率及其协变导数。场所选出的曲率模型、相容背景的消去、Hessian 控制与弱 Bianchi 测试，将这些对象必须共同满足的关系转成全局估计。
+
+作为下文的一个明确入口，项目的单解间隙定理在相应负 Yamabe 共形类上给出
+\begin{equation}
+\boxed{\mathcal J(g)+\left(\frac{T_+}{A}-\frac23\right)_+\ge\varepsilon.}\label{eq:N1}
+\end{equation}
+这里正预算 $A>0$、实际类 $a$ 满足 $p=(a^+)^2\ge A$、$a^2\ge T_+$，并在该共形类的 $s=-4$ 代表上有规定的实际未扰动 Seiberg--Witten 解。用于全部度量时，逐共形类提供输入并保持统一 $A$。普通、special monopole、Bauer--Furuta 及 $\mathrm{Pin}^-(2)$ 来源通过各自已建立的供给定理进入这一分析。
+
+项目的精细强制估计为
+\begin{equation}
+\Sigma\le C\{\Pi+\sqrt{\Pi Y}\},\qquad
+\Sigma=S-32\pi^2p,\quad\Pi=P+D_2,\quad Y=(T_+-a^2)_+,\label{eq:coercive}
+\end{equation}
+其中
+\[
+D_\beta=(1+\beta^{-1})S+6(\beta+1)\int_M|W^+|^2\dd-72\pi^2p.
+\]
+它把标量超额与无迹 Ricci、场及 Weyl 缺陷联系起来。有限 Euler 密度端点、指定比例范围内去密度的结果，以及严格优于标准手术恢复的构造，构成继续研究的已有起点\cite{Project}。
+
+这五项任务分别发展\textbf{全局障碍、最优变分、光滑实现、场的可积性和动力学}。新方程、新实际供给或更有效的构造，只要能建立相应的完整数学连接，都可以进入共同理论。
+
+\section{问题一：非极小一般型复曲面的 Einstein 存在性}
+\label{sec:minimality}
+
+\subsection{原始问题及其范围}
+设 $X$ 为极小紧致一般型复曲面，
+\[
+A=c_1^2(X)>0,\qquad M=X\#k\overline{\CP}^{\,2},\qquad k\ge1.
+\]
+LeBrun 在1996年论文第143页、Conjecture~1之前提出非极小一般型曲面不承载 Einstein 度量的预期；2009年的文章再次讨论这一问题\cite{LeBrun1996,LeBrun2009}。
+
+\begin{problem}[非极小性问题]
+决定上述 $M$ 是否总不承载 Einstein 度量。候选是底层光滑流形上的任意 Riemannian 度量，不要求与指定复结构相容。
+\end{problem}
+
+这是关于一般 Einstein 度量的全局判断。原始1996年 Conjecture~1还涉及更广的非有理复曲面及复结构变形；此处取其与现有研究直接相连的一般型非极小分支。
+
+经典的一般排除范围是 $k\ge A/3$；LeBrun 2026年综述 Theorem~6.11仍陈述这一结论\cite{LeBrun2001,LeBrun2026}。需要决定的范围包括尚未被其他结果覆盖的 $1\le k<A/3$，特别是大 $A$ 背景上的少量吹起。$A\le3$ 时不存在这个整数范围；\Ka{}--Einstein 或另加相容结构的已知排除，也不等于任意 Einstein 候选的排除。几何上，问题在于一个非零异常类能否与精确 Einstein 方程共同存在。
+
+\subsection{现有间隙的直接推论}
+在经典实际类供给与项目假设相交的范围，$T_+=A-k$，且可以选取 $p\ge A$、$a^2=T_+$ 的实际类。代入\eqref{eq:N1}得
+\begin{equation}
+\mathcal J(g)+\left(\frac13-\frac{k}{A}\right)_+\ge\varepsilon.\label{eq:blowgap}
+\end{equation}
+于是
+\begin{equation}
+\frac{k}{A}\ge\frac13-\frac\varepsilon2
+\quad\Longrightarrow\quad
+\mathcal J(g)\ge\frac\varepsilon2.\label{eq:threshold}
+\end{equation}
+正的实际投影预算还给出 $\int(s^-)^2\dd\ge32\pi^2A$，因此排除非负标量曲率，涵盖 Ricci-flat 的排除。式\eqref{eq:threshold}由此成为全部 Einstein 符号的障碍。关于 $b_+=1$ 的应用，使用原有腔条件所提供的实际供给。
+
+若 $0<\delta<4$ 且 $\mathcal J\ge\delta$，由\eqref{eq:energies}还得到
+\begin{equation}
+(4-\delta)P\ge\frac\delta4S,
+\qquad P\ge\frac{8\pi^2\delta}{4-\delta}\,A.\label{eq:JtoP}
+\end{equation}
+这说明归一化间隙和正标量预算如何合成为未归一化的全局正下界。
+
+\subsection{需要攻克的全局结论}
+原问题的完成命题是 $P(g)>0$ 对所有 $g\in\Met(M)$ 成立。更强的目标是确定 $p_*(M)$ 是否严格为正及其依赖。
+
+例如，在一个明确范畴内，若能证明
+\begin{equation}
+P(g)\ge c\,\frac{k^2}{A}\quad(k\ge1),\qquad g\in\Met(M),\label{eq:quadratictarget}
+\end{equation}
+其中 $c>0$ 对该范畴统一，那么已足以排除其中全部非极小 Einstein 度量。式\eqref{eq:quadratictarget}是待研究的充分结论；原存在性问题并不要求先证明线性于 $k$ 的间隙或最佳常数。
+
+可同时研究两类全局机制：在假想精确 Einstein 度量上，证明异常类与实际场的微分结构不相容；或在全部度量上建立保持正性的缺陷估计。前者可能给出更短的存在性证明，后者同时回答逼近问题。若出现 Einstein 构造，则应由完整光滑闭流形和精确方程给出原预期的反例。
+
+\key{本题的价值在于把手术改变的光滑拓扑与任意 Einstein 几何直接联系起来。} 对纯吹起族完成这一判断，是现有间隙机制的一项全局应用；对更一般辛流形的推广，则由相应实际供给与几何论证继续发展。
+
+\section{问题二：最优全曲率与手术后的真实极值}
+\label{sec:optimum}
+
+\subsection{原始公开问题与经典区间}
+LeBrun 在2004年文章第11节、预印本第39页，将一般型复曲面吹起后的 $I_R(M)$ 精确计算列为重要公开问题\cite{LeBrun2004}。由\eqref{eq:fullP}，它等价于确定 $p_*(M)$。本次查阅文献中未找到覆盖这一全部类别的精确公式；已有特殊情形与其他曲率泛函的精确结果应直接继承。
+
+\begin{problem}[最优曲率]
+对 $M=X\#k\overline{\CP}^{\,2}$ 及自然的相关手术族，确定
+\[
+p_*(M)=\inf_{g\in\Met(M)}\int_M|\Ric_g^\circ|^2\dd,
+\]
+建立与实际度量构造匹配的下界，并说明决定最优值的几何数据。
+\end{problem}
+
+对纯吹起族，经典估计与恢复序列给出
+\begin{equation}
+8\pi^2\max\{0,k-A/3\}\le p_*(M)\le8\pi^2k.\label{eq:classicinterval}
+\end{equation}
+下界可直接推导。经典曲率估计为
+\[
+\int_M\left(\frac{s^2}{24}+2|W^+|^2\right)\dd\ge\frac{8\pi^2}{3}A.
+\]
+结合\eqref{eq:CW}及 $T_+=A-k$，有
+\[
+4\pi^2(A-k)\ge\frac{8\pi^2}{3}A-\frac12P,
+\]
+即 $P\ge8\pi^2(k-A/3)$，再与 $P\ge0$ 合并。上界则来自完整度量恢复，而非仅一个局部曲率积分。
+
+\subsection{为什么 Ricci 与标量的已知最优值尚未决定答案}
+经典理论已在纯吹起族上算出\cite{LeBrun2001}
+\[
+\inf_gR(g)=8\pi^2(A+k),\qquad
+\inf_gS(g)=32\pi^2A.
+\]
+尽管 $P=R-S/4$，$R$ 与 $S$ 的两个独立下确界不能相减得到 $\inf P$。决定 $P$ 的是同一度量中 Ricci、标量和 Weyl 曲率的联动。
+
+这给出一个直接的研究对象：由所有实际度量实现的集合
+\begin{equation}
+\mathcal C(M)=\{(S(g),\mathcal W(g)):g\in\Met(M)\},
+\qquad \mathcal W(g)=\int_M|W|^2\dd.\label{eq:jointset}
+\end{equation}
+由\eqref{eq:GB}，
+\begin{equation}
+p_*(M)=\inf_{(x,y)\in\mathcal C(M)}
+\left(2y+\frac{x}{12}-16\pi^2\chi(M)\right).\label{eq:support}
+\end{equation}
+研究\eqref{eq:jointset}的真实边界，可以将各类曲率估计和构造放进同一个变分框架。此表达的作用是明确要控制的联合可实现性；新的下界仍须来自实际方程或几何结构。
+
+\subsection{现有严格改进与下一步最优性}
+项目原平衡族为
+\[
+M_j=X_j\#k_j\overline{\CP}^{\,2}\#\ell_j(S^1\times S^3),\quad
+A_j=c_1^2(X_j),\quad Q_j=k_j+4\ell_j,\quad h_j=Q_j/A_j\to0.
+\]
+在原有假设下，已经有线性下界与归约
+\begin{equation}
+\alpha_j:=\inf_g\mathcal E(g)
+=4\frac{p_*(M_j)}{8\pi^2A_j}+O(h_j^2),\qquad \alpha_j\ge c h_j.\label{eq:reduction}
+\end{equation}
+交接稿记录的完整低成本吹起块，在适当选取的覆盖族上给出
+\begin{equation}
+p_*(M_j)\le8\pi^2(Q_j-\eta k_j)+o(Q_j),\qquad\eta>0.\label{eq:substandard}
+\end{equation}
+当 $k_j/Q_j\to2/9$，式\eqref{eq:reduction}推出
+\begin{equation}
+\limsup_j\frac{\alpha_j}{h_j}\le4-\frac89\eta<4.\label{eq:subfour}
+\end{equation}
+这已改变标准收缩恢复在这些族上的最优性判断\cite{Project}。现在需要决定的是真实最优首项，答案应由全部竞争度量的下界与新的恢复序列共同给出。
+
+完整结果可以是某一自然范畴内的精确公式，也可以是
+\[
+p_*(M_j)=8\pi^2Q_j\,F(\text{背景与手术的极限数据})+o(Q_j)
+\]
+这样的匹配渐近规律。研究纯吹起、含柄平衡族及其他比例时，分别建立其尺度与常数；不同拓扑配置可能产生不同的极值行为。
+
+近极小变分、全局不等式与新构造均可直接服务于该目标。采用退化分解时，须将原流形上的异常类、连接柄及边界修正传递到极限几何。一般 ALE 核心并不按二周期数量统一产生正 $P$：例如 Eguchi--Hanson 度量有非平凡二周期而 Ricci-flat。因而真正的下界需要完整的相对几何关系。
+
+\section{问题三：非 Bach 平坦的光滑全局最优度量}
+\label{sec:bach}
+
+\subsection{原始存在性问题}
+LeBrun 在2004年文章第11节、预印本第40页提出：闭四维流形上是否存在非 Bach 平坦的全局最优度量\cite{LeBrun2004}？
+
+最优性指在全部光滑度量中的全局极小性。LeBrun 已构造非 Einstein 的最优度量，其中的标量平坦反自对偶例子仍然 Bach 平坦。本题要求不同于这些已知例子的全局极小元。截至2026年10月7日，本次查阅文献中未见这一具体问题的完整解答；非 Bach 平坦的临界度量、Bach 孤立子或受限类中的极小元均不满足原题的全部要求。
+
+\begin{problem}[非 Bach 平坦的全局最优度量]
+构造闭四维流形 $M$ 与光滑度量 $g_*$，使
+\[
+P(g_*)=p_*(M),\qquad B_{g_*}\not\equiv0,
+\]
+其中 $B$ 为 Bach 张量。由\eqref{eq:fullP}，这等价于全曲率泛函的全局最优性。
+\end{problem}
+
+这一问题要求存在真正的极小元。它研究曲率泛函的最优几何是否可以超出那些同时使 Weyl 泛函驻定的特殊结构。
+
+\subsection{由间隙与光滑取得得到原问题的解}
+\begin{proposition}\label{prop:nonbach}
+设 $M$ 不承载 Einstein 度量，也不承载标量平坦度量。若 $P$ 在 $\Met(M)$ 中取得下确界，则任一光滑全局极小元都是非 Bach 平坦的全局最优度量。
+\end{proposition}
+\begin{proof}
+由 Gauss--Bonnet 公式，
+\begin{equation}
+P=2\mathcal W+\frac1{12}S-16\pi^2\chi(M).\label{eq:PWS}
+\end{equation}
+全局极小元 $g_*$ 满足 $DP(g_*)=0$。若 $B_{g_*}=0$，四维 Weyl 泛函的变分给出 $D\mathcal W(g_*)=0$，从而 $DS(g_*)=0$。
+
+取 $\Delta=\operatorname{div}\nabla$，$S=\int s^2\dd$ 对协变度量变化的梯度为
+\begin{equation}
+\nabla S=2\nabla^2s-2(\Delta s)g-2s\Ric+\frac12s^2g.\label{eq:Sgradient}
+\end{equation}
+取迹得到 $-6\Delta s=0$。闭性推出 $s$ 为常数，故剩余方程为
+\[
+s\Ric^\circ=0.
+\]
+若 $s=0$，则 $g_*$ 标量平坦；若 $s\ne0$，则 $g_*$ 为 Einstein。两种情形均与假设矛盾。
+\end{proof}
+
+在实际正预算成立的流形上，$\int(s^-)^2\dd>0$ 已排除标量平坦；再用间隙或其他全局论证排除 Einstein，问题便归结为\textbf{光滑极小值实现}。这一路线不必先计算 $p_*(M)$ 的精确数值。
+
+\subsection{存在性所需要的新几何信息}
+目标是选出至少一个满足命题\ref{prop:nonbach}假设的流形，并证明其真正极小序列经微分同胚和尺度归一化后产生原光滑流形上的极小度量。也可直接构造候选，并证明对全部度量的全局比较。
+
+已有严格低于标准恢复的构造为比较不同退化方式提供了信息；进一步需要说明候选极小值与全部可能退化分支之间的关系。Anderson 的理想极小序列理论可提供几何结构入口，紧轨形、开放极限与塌缩情形应使用各自相应的结论\cite{Anderson}。
+
+因此本题与问题二共享近极小几何，却有不同的完成点：\textbf{问题二确定最小值，问题三证明一个具有指定性质的光滑全局极小元存在。} 一个范畴内的光滑取得定理，或一个完整的非 Bach 平坦最优例子，都能给出独立而明确的成果。
+
+\section{问题四：四维负标量曲率 Goldberg 问题}
+\label{sec:goldberg}
+
+\subsection{猜想与实际几何结构}
+Goldberg 猜想提出于1969年：闭 almost-\Ka{} Einstein 流形应当是 \Ka{} 的。Sekigawa 证明了非负标量曲率情形；四维负标量曲率的一般情形仍是公开研究目标\cite{Goldberg,Sekigawa,Cochran}。
+
+2026年的相关进展进一步明确了已知范围。Xie 证明完整 almost-\Ka{} 梯度收缩 Ricci 孤立子必为 \Ka{}，其方程为
+\[
+\Ric+\nabla^2f=\lambda g,\qquad\lambda>0.
+\]
+Nguyen--Ning--Pusey-Nazzaro 则在 $\Ric\ge0$ 及相应拓扑条件下证明可积性\cite{Xie2026,Nguyen2026}。这些定理没有覆盖本题的 $\lambda<0$ 闭四维一般情形。这里的负号指 Einstein 常数或标量曲率，不要求负截面曲率。
+
+\begin{problem}[四维负标量曲率 Goldberg 问题]
+设 $(M^4,g,J,\omega)$ 为闭 almost-\Ka{} 流形，满足
+\[
+\omega(X,Y)=g(JX,Y),\quad d\omega=0,\quad
+\Ric_g=\lambda g,\quad\lambda<0.
+\]
+证明 $\nabla\omega=0$，等价地 $J$ 可积、$(g,J,\omega)$ 为 \Ka{} 结构；或者构造满足这些条件的严格 almost-\Ka{} 反例。
+\end{problem}
+
+取 $J$ 诱导的取向，$\omega$ 是自对偶调和二形式且 $|\omega|^2=2$。与前几项相比，此处实际输入直接由闭二形式提供。核心是 Einstein 曲率与这个形式的协变导数能否在闭流形上共同维持非可积性。
+
+\subsection{一个明确的可积性入口}
+自对偶调和二形式的 {\latin Weitzenb\"ock} 公式给出
+\[
+0=\nabla^*\nabla\omega-2W^+(\omega)+\frac{s}{3}\omega.
+\]
+置 $q=|\nabla\omega|^2$，由于 $|\omega|$ 为常数，内积得到
+\[
+\langle W^+(\omega),\omega\rangle=\frac{s}{3}+\frac q2.
+\]
+定义横向分量
+\begin{equation}
+\eta=W^+(\omega)-\left(\frac{s}{6}+\frac q4\right)\omega,
+\qquad\langle\eta,\omega\rangle=0.\label{eq:eta}
+\end{equation}
+Apostolov--Armstrong--Dr{\latin\u a}ghici 的闭四维可积性定理表明：Ricci 为 $J$-不变且 $\omega$ 是 $W^+$ 的特征形式时，该 almost-\Ka{} 结构为 \Ka{}\cite{AAD}。Einstein 已提供前一条件。因此
+\begin{equation}
+\boxed{\text{在原假设下证明 }\eta=0
+\quad\Longrightarrow\quad\text{解决四维 Goldberg 问题}.}\label{eq:Goldbridge}
+\end{equation}
+这将一个可用的攻关方向集中到实际二形式与 Weyl 曲率的横向相容性，而不预设额外曲率条件。
+
+\subsection{精确恒等式揭示负标量曲率情形的核心}
+以下计算给出这一方向的定量结构。按 LeBrun 的规范联络约定\cite{LeBrun2005}，令 $s^*=s+q$，其反典范线丛联络满足
+\begin{equation}
+iF_{\mathcal A}=\eta+\frac{s+s^*}{8}\omega+
+\frac{s-s^*}{8}\widehat\omega.\label{eq:canonicalcurv}
+\end{equation}
+在 $q>0$ 区域，$\widehat\omega$ 为反自对偶、范数平方为2的形式；乘积 $q\widehat\omega$ 由曲率表达式给出全局意义。相应典范旋量具有 Dirac 结构，但\eqref{eq:canonicalcurv}保留了 $\eta$ 和可变的 $s^*$，因此应直接研究这一实际系统。
+
+在分解 $\Lambda^+=\mathbb R(\omega/\sqrt2)\oplus\omega^\perp$ 下写
+\[
+W^+=\begin{pmatrix}
+\nu&(\eta/\sqrt2)^*\\
+\eta/\sqrt2&-\frac\nu2I+\mathsf V
+\end{pmatrix},\qquad
+\nu=\frac s6+\frac q4,\qquad\tr\mathsf V=0.
+\]
+于是 $|W^+|^2=\tfrac32\nu^2+|\eta|^2+|\mathsf V|^2$。由\eqref{eq:canonicalcurv}及 $c_1^2=2\chi+3\tau$，
+\[
+4\pi^2(2\chi+3\tau)
+=\int_M\left(|\eta|^2+\frac{s^2}{8}+\frac{sq}{8}\right)\dd.
+\]
+Einstein 条件下，再用\eqref{eq:CW}消去左端，得到
+\begin{equation}
+\boxed{
+\int_M\left(|\eta|^2+2|\mathsf V|^2+\frac{3q^2}{16}\right)\dd
+=-\frac{s}{8}\int_Mq\dd.}\label{eq:AKbalance}
+\end{equation}
+这是上述经典恒等式的组合推导。$s\ge0$ 时两边符号强迫 $q=0$；$s<0$ 时右侧为非负量，留下真实的非可积可能性。研究必须进一步使用闭性、联络曲率和微分 Bianchi 关系来决定这种平衡是否可以在全局实现。
+
+可沿\eqref{eq:Goldbridge}证明横向分量消失，也可直接建立强迫 $q=0$ 的全局积分关系。近 Einstein 版本则可进一步研究 $q$ 或 $\eta$ 能否由 $\Ric^\circ$ 及明确的实际缺陷控制。\textbf{精确 Einstein 可积性是本题的首要结论；稳定性估计是其自然深化。}
+
+\section{问题五：Einstein 间隙与归一化 Ricci 流}
+\label{sec:flow}
+
+\subsection{公开背景与研究问题}
+四维体积归一化 Ricci 流为
+\begin{equation}
+\partial_tg=-2\Ric_g+\frac12\bar s_g\,g.\label{eq:flow}
+\end{equation}
+无限时且 $|s|$ 一致有界的解通常称为拟无奇异解；要求全 Riemann 曲率一致有界则是更强的无奇异条件。
+
+Fang--Zhang--Zhang 将 Hitchin--Thorpe 型约束推广到归一化 Ricci 流，并提出包含单纯体积的进一步不等式\cite{FZZ}。Baykur--Ishida 等已利用实际规范输入建立拟无奇异流的拓扑障碍\cite{BaykurIshida,Ishida}。本项同时研究经典开放命题和新间隙的动力学应用：静态的曲率与拓扑约束，怎样决定无限时演化及其退化方式？
+
+\begin{problem}[间隙与长期演化]
+在明确的光滑四维流形类别中，确定拟无奇异归一化 Ricci 流的存在障碍及其边界；研究新的 Einstein 间隙如何扩大已知排除范围，并推进下文陈述的 Fang--Zhang--Zhang 问题。原猜想要求全曲率一致有界，仅要求标量曲率一致有界的版本作为相应加强另行研究。
+\end{problem}
+
+\subsection{静态间隙到动态障碍的完整推导}
+以下命题将经典长期流的时间可积性与静态间隙结合，是可直接使用的推论。其转换机制已有经典基础；用于新流形类别时，新增内容来自更强的静态输入和实际适用范围。
+
+\begin{proposition}\label{prop:flowgap}
+设闭四维流形 $M$ 的全部度量满足
+\[
+\mathcal J(g)\ge\delta>0,\qquad
+\int_M(s_g^-)^2\dd\ge S_0>0,
+\quad 0<\delta<4.
+\]
+则 $M$ 不存在拟无奇异体积归一化 Ricci 流。
+\end{proposition}
+\begin{proof}
+假设该流存在。其体积 $V$ 保持不变，且 $|s|\le C$。令 $m(t)=\min_Ms(t)$，则
+\[
+m(t)\le-\sqrt{S_0/V}=-c<0.
+\]
+标量曲率演化为
+\[
+\partial_ts=\Delta s+2|\Ric^\circ|^2+\frac12s(s-\bar s).
+\]
+最大值原理给出，在下导数意义下，
+\[
+m'(t)\ge\frac12m(t)(m(t)-\bar s(t))
+\ge\frac c2(\bar s(t)-m(t)).
+\]
+由于 $m$ 有界，$\int_0^\infty(\bar s-m)\,dt<\infty$。又由 $|s|\le C$，
+\[
+\frac1V\int_M(s-\bar s)^2\dd\le2C(\bar s-m).
+\]
+沿流计算平均标量得到
+\[
+\frac{d\bar s}{dt}=\frac{2P(g(t))}{V}
+-\frac1{2V}\int_M(s-\bar s)^2\dd.
+\]
+积分并用 $\bar s$ 有界，得到 $\int_0^\infty P(g(t))\,dt<\infty$，这也是经典长期流引理的结论\cite[Lemma 20]{BaykurIshida}。而间隙假设给出
+\[
+P(g(t))\ge\frac{\delta S(g(t))}{4(4-\delta)}
+\ge\frac{\delta S_0}{4(4-\delta)}>0,
+\]
+与时间可积性矛盾。
+\end{proof}
+
+因此，在全度量实际供给和统一预算 $A>0$ 下，若\eqref{eq:N1}成立，则任一拟无奇异流必须满足
+\begin{equation}
+\boxed{\frac{T_+}{A}\ge\frac23+\varepsilon.}\label{eq:flowthreshold}
+\end{equation}
+事实上 $\int_M(s^-)^2\dd\ge32\pi^2A$，这同时给出 $S$ 的正下界与流上 $m(t)$ 的统一负上界。时间可积性提供 $t_j\to\infty$ 使 $P(g(t_j))\to0$，从而 $\mathcal J(g(t_j))\to0$；在\eqref{eq:N1}中取极限即得。这里通过流的积分性质即可得到结论，无须先证明流收敛到某个 Einstein 度量。
+
+\subsection{Fang--Zhang--Zhang 的原始问题与负号分支}
+Fang--Zhang--Zhang 的 Theorem~1.2 给出如下三分结论：若闭、定向光滑四维流形承载无奇异归一化 Ricci 流，则它承载收缩 Ricci 孤立子，或承载正秩 $F$-结构，或满足 Hitchin--Thorpe 型不等式。他们的 Conjecture~1.8 提议将第三个分支加强为
+\begin{equation}
+2\chi(M)-3|\tau(M)|\ge\frac{\|M\|}{1296\pi^2},\label{eq:FZZ}
+\end{equation}
+其中 $\|M\|$ 为 Gromov 单纯体积\cite[Theorem 1.2 and Conjecture 1.8]{FZZ}。本次查阅文献中未找到这个一般命题的完整解答。
+
+本研究主要涉及其负号分支的明确问题：设 $M$ 为闭、连通、定向光滑四维流形，满足
+\[
+\bar\lambda(M)<0,\qquad\|M\|>0.
+\]
+若存在定义于 $[0,\infty)$ 的体积归一化 Ricci 流，且
+\[
+\sup_{M\times[0,\infty)}|\Rm_{g(t)}|<\infty,
+\]
+是否必有\eqref{eq:FZZ}？这里
+\[
+\bar\lambda(M)=\sup_g\left\{\lambda_1(4\Delta_g^++s_g)\Vol_g(M)^{1/2}\right\},
+\]
+$\Delta^+$ 为非负 Laplacian。将全曲率界削弱为 $\sup_{M\times[0,\infty)}|s_{g(t)}|<\infty$，则得到拟无奇异版本，作为原问题的加强研究\cite{BaykurIshida}。负的 $\bar\lambda$ 排除收缩孤立子分支，正的单纯体积排除正秩 $F$-结构分支；因而本类别直接指向\eqref{eq:FZZ}。
+
+体积固定的流上有
+\[
+\min_Ms_g\le\lambda_1(4\Delta_g^++s_g)
+\le\bar\lambda(M)/\sqrt V<0,
+\]
+故标量受控时，前述经典论证给出 $P$ 的时间可积性。Fang--Zhang--Zhang 的 Theorem~1.4 已在这类条件下证明
+\[
+2\chi-3|\tau|\ge\frac{\bar\lambda(M)^2}{96\pi^2}.
+\]
+进一步需要的是与单纯体积的联系，而非重复证明上述已知结论。
+
+\subsection{2026年已解决的类别及其直接推论}
+Min--Zheng--Zhu 2026年的 Theorem~1.2 已证明：对任意闭 \Ka{} 曲面 $M$ 的底层光滑流形及其任意 Riemannian 度量 $g$，
+\begin{equation}
+\boxed{\int_M(s_g^-)^2\dd\ge\frac{2}{27}\|M\|.}\label{eq:scalarvolume}
+\end{equation}
+该定理包括吹起曲面，不要求竞争度量 $g$ 为 \Ka{}；论文第4节还给出满足同一不等式的无限多个非 \Ka{} 辛四维流形\cite{MinZhengZhu2026}。
+
+在这些类别上，若存在上述负 $\bar\lambda$ 的拟无奇异流，时间可积性提供 $t_j\to\infty$ 使 $P(g(t_j))\to0$。由\eqref{eq:CW}，
+\begin{align*}
+4\pi^2(2\chi\pm3\tau)
+&=\frac{S(g(t_j))}{24}
+ +2\int_M|W_{g(t_j)}^\pm|^2\,d\mu_{g(t_j)}-\frac{P(g(t_j))}{2}\\
+&\ge\frac1{24}\int_M(s_{g(t_j)}^-)^2\,d\mu_{g(t_j)}-\frac{P(g(t_j))}{2}.
+\end{align*}
+令 $j\to\infty$，得到
+\[
+2\chi\pm3\tau\ge\frac{1}{96\pi^2}\cdot\frac{2}{27}\|M\|
+=\frac{\|M\|}{1296\pi^2}.
+\]
+取两种符号的较小者即得\eqref{eq:FZZ}。这是2026年静态定理与经典流论证的组合推论：\textbf{上述 \Ka{} 类别及论文所给非 \Ka{} 辛类别中的这条连接已经具备，应直接纳入已有工具。}
+
+更一般地，若某类别的全部度量满足
+\[
+\int_M(s_g^-)^2\dd\ge a\|M\|,\qquad a>0,
+\]
+同一论证给出 $2\chi-3|\tau|\ge a\|M\|/(96\pi^2)$。达到原猜想指定系数需要 $a\ge2/27$，或其他能补足差额的几何信息；仅有未指定的正系数尚不等于原常数已经达到。
+
+\subsection{仍需完成的研究}
+在超出上述已知类别的范围，研究一般 Fang--Zhang--Zhang 不等式及明确标出的拟无奇异加强。与现有间隙理论更直接的任务，是以新的全度量估计得到此前未覆盖的长期流障碍，并确定相应边界上是否存在真实长期解。
+
+命题\ref{prop:flowgap}中的静态到动态转化已在本文完整推导。进一步的数学内容应落实为更自然的实际输入、更广的流形类别、更强或锐利的拓扑限制，或者边界流与极限几何的确定。问题一至三所得的全局下界和极小几何，可以分别为流的排除与极限候选提供信息。
+
+本项完整成果可以是一个自然类别的长期流存在／非存在判定，或新的锐利拓扑必要条件及边界几何。有限时间延拓与无限时间曲率一致控制是不同问题；长期流不存在时，区分有限时间终止与无限时间曲率增长，需要进一步的流分析。
+
+\section{五项研究的贯通与自主推进}
+
+\subsection{共享的数学联系}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}p{.25\textwidth}Y@{}}
+\toprule
+已获得的全局结论 & 可直接产生的连接\\
+\midrule
+纯吹起族上 $p_*>0$ & 排除该族 Einstein 度量，回答问题一，并为问题二提供正下界\\
+全部度量下界与恢复序列匹配 & 确定问题二的极值及其拓扑、几何依赖\\
+无 Einstein、无标量平坦且光滑取得 $p_*$ & 由命题\ref{prop:nonbach}回答问题三\\
+闭 almost-\Ka{} Einstein 时 $\eta=0$ & 由可积性定理回答问题四\\
+全度量正间隙与负部标量平方的正下界 & 由命题\ref{prop:flowgap}产生问题五的长期流障碍\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+这些箭头说明怎样共享证明。极值的光滑取得不由数值下界单独保证；Goldberg 问题使用的实际二形式结构也需要自己的微分分析。共同理论的深化，体现为能跨越这些连接的定理。
+
+\subsection{交给自主研究系统的总任务}
+\begin{quote}
+以实际几何结构与曲率方程的全局相容性为中心，完整推进本文五项任务中明确列出的开放命题及其自然加强。继承现有间隙、强制估计、端点与真实构造，直接使用经典定理和2026年已知进展，发展能够决定存在性、极值、光滑实现、可积性与长期演化的新定理。
+
+对每个问题给出准确的对象与量词，推动全部竞争几何的结论；同时发展证明与构造，让匹配的上下界、精确解或完整反例决定答案。研究顺序与方法由数学联系自主调整，充分利用五项之间的推论和共同分析。
+
+目标是逐项完成原问题及其自然强化：更弱而可验证的输入、更广的实际对象、最佳估计、达到或逼近极值的几何，以及退化中的完整解释。第五项以准确陈述的未解命题为目标，将已有流障碍与已解决的标量--单纯体积不等式作为前置。每项完成形成可独立阅读的定义、定理、证明和构造；共同成果按逻辑关系组织为统一理论。
+\end{quote}
+
+五个方向可以并行推进，结论可以分批完成。第一项以全部 Einstein 候选的判定为终点；第二项以真实极值及匹配构造为终点；第三项以光滑全局最优例子或存在定理为终点；第四项以原假设下的可积性或反例为终点；第五项以明确类别的长期流判定及其边界为终点。由此，每一项都具有确定的数学完成标准，同时保留通向更一般理论的空间。
+
+\newpage
+\begin{thebibliography}{99}
+\small
+\bibitem{LeBrun1996}
+C. LeBrun, \emph{Four-Manifolds without Einstein Metrics}, Math. Res. Lett. \textbf{3}(2) (1996), 133--147.
+非极小一般型预期见期刊第143页、Conjecture~1之前。
+\href{https://arxiv.org/abs/dg-ga/9511015}{arXiv:dg-ga/9511015}.
+
+\bibitem{LeBrun2009}
+C. LeBrun, \emph{Einstein metrics, complex surfaces, and symplectic 4-manifolds}, Math. Proc. Cambridge Philos. Soc. \textbf{147}(1) (2009), 1--8.
+一般型非极小性讨论见第6--7页。
+\href{https://doi.org/10.1017/S0305004109002345}{doi:10.1017/S0305004109002345}.
+
+\bibitem{LeBrun2001}
+C. LeBrun, \emph{Ricci Curvature, Minimal Volumes, and Seiberg--Witten Theory}, Invent. Math. \textbf{145} (2001), 279--316.
+Proposition~3.1、Corollary~3.4、Theorem~4.3。
+\href{https://arxiv.org/abs/math/0003068}{arXiv:math/0003068}.
+
+\bibitem{LeBrun2004}
+C. LeBrun, \emph{Curvature Functionals, Optimal Metrics, and the Differential Topology of 4-Manifolds}, in \emph{Different Faces of Geometry}, International Mathematical Series \textbf{3}, Kluwer/Plenum, 2004, 199--256.
+\S11：预印本第39页为一般型曲面 $I_R$ 问题，第40页为非 Bach 平坦最优度量问题。
+\href{https://arxiv.org/abs/math/0404251}{arXiv:math/0404251}.
+
+\bibitem{LeBrun2026}
+C. LeBrun, \emph{An Overview of Einstein 4-Manifolds}, 2026.
+Theorems~6.9--6.11 整理一般型曲面的曲率估计与 Einstein 障碍。
+\href{https://arxiv.org/abs/2609.03033}{arXiv:2609.03033}.
+
+\bibitem{Anderson}
+M. T. Anderson, \emph{Canonical metrics on 3-manifolds and 4-manifolds}, Asian J. Math. \textbf{10}(1) (2006), 127--163.
+Theorem~4.10、公式(4.43)、(4.45)及 Remark~4.12 为极小序列与退化的入口。
+\href{https://arxiv.org/abs/math/0511034}{arXiv:math/0511034}.
+
+\bibitem{Goldberg}
+S. I. Goldberg, \emph{Integrability of almost Kaehler manifolds}, Proc. Amer. Math. Soc. \textbf{21}(1) (1969), 96--100.
+\href{https://doi.org/10.1090/S0002-9939-1969-0238238-1}{doi:10.1090/S0002-9939-1969-0238238-1}.
+
+\bibitem{Sekigawa}
+K. Sekigawa, \emph{On some compact Einstein almost K{\latin\"a}hler manifolds}, J. Math. Soc. Japan \textbf{39}(4) (1987), 677--684.
+非负标量曲率情形。
+\href{https://doi.org/10.2969/jmsj/03940677}{doi:10.2969/jmsj/03940677}.
+
+\bibitem{AAD}
+V. Apostolov, J. Armstrong and T. Dr{\latin\u a}ghici,
+\emph{Local models and integrability of certain almost K{\latin\"a}hler 4-manifolds}, Math. Ann. \textbf{323} (2002), 633--666.
+引言公式(1)--(3)及 Theorem~2。
+\href{https://arxiv.org/abs/math/0109098}{arXiv:math/0109098};
+\href{https://doi.org/10.1007/s002080200319}{doi:10.1007/s002080200319}.
+
+\bibitem{LeBrun2005}
+C. LeBrun, \emph{Einstein Metrics, Symplectic Minimality, and Pseudo-Holomorphic Curves}, Ann. Global Anal. Geom. \textbf{28} (2005), 157--177.
+Proposition~2.1 给出典范联络曲率表达式。
+\href{https://arxiv.org/abs/math/0409290}{arXiv:math/0409290}.
+
+\bibitem{Cochran}
+E. Cochran, \emph{On Compact Quasi-Einstein Metrics of Constant Scalar Curvature}, 2025, version 2.
+引言及 Theorem~1.4 讨论 Goldberg 问题与相关 Einstein 底空间的联系。
+\href{https://arxiv.org/abs/2511.21892}{arXiv:2511.21892v2}.
+
+\bibitem{Xie2026}
+J. Xie, \emph{K{\latin\"a}hlerity of complete almost-K{\latin\"a}hler gradient shrinking Ricci solitons}, 2026.
+Theorem~1.1：完整 almost-\Ka{} 梯度收缩 Ricci 孤立子的可积性，收缩常数 $\lambda>0$。
+\href{https://arxiv.org/abs/2609.00840}{arXiv:2609.00840}.
+
+\bibitem{Nguyen2026}
+A. Nguyen, S. Ning and L. Pusey-Nazzaro,
+\emph{An almost K{\latin\"a}hler Cheeger--Gromoll splitting theorem with applications}, 2026.
+非负 Ricci 及相应拓扑条件下的可积性结论。
+\href{https://arxiv.org/abs/2608.18477}{arXiv:2608.18477}.
+
+\bibitem{FZZ}
+F. Fang, Y. Zhang and Z. Zhang, \emph{Non-singular solutions to the normalized Ricci flow equation}, Math. Ann. \textbf{340} (2008), 647--674.
+Theorem~1.2：无奇异流的三分结论；Theorem~1.4：负 Perelman 不变量下的拓扑估计；Conjecture~1.8：加强第三个分支，系数为 $1/(1296\pi^2)$。
+\href{https://doi.org/10.1007/s00208-007-0164-5}{doi:10.1007/s00208-007-0164-5};
+\href{https://arxiv.org/abs/math/0609254}{arXiv:math/0609254}.
+
+\bibitem{BaykurIshida}
+R. I. Baykur and M. Ishida,
+\emph{Families of 4-manifolds with nontrivial stable cohomotopy Seiberg--Witten invariants, and normalized Ricci flow}, 2010.
+Definition~4、Theorem~19、Lemma~20、Theorem~21及 Theorem~E。
+\href{https://arxiv.org/abs/1011.2744}{arXiv:1011.2744}.
+
+\bibitem{Ishida}
+M. Ishida, \emph{The normalized Ricci flow on four-manifolds and exotic smooth structures}.
+\href{https://arxiv.org/abs/0807.2169}{arXiv:0807.2169}.
+
+\bibitem{MinZhengZhu2026}
+J. Min, F. Zheng and B. Zhu,
+\emph{Simplicial Volume and Scalar Curvature on Closed K{\latin\"a}hler Surfaces}, 2026.
+Theorem~1.2：全部闭 \Ka{} 曲面（含吹起）的底层光滑流形上，任意 Riemannian 度量均满足\eqref{eq:scalarvolume}；第4节给出相应非 \Ka{} 辛类别。
+\href{https://arxiv.org/abs/2608.17335}{arXiv:2608.17335}.
+
+\bibitem{Project}
+Qiushi 研究资料，\emph{Einstein Gaps on Four-Manifolds: Constructions, compatibility estimates, and current sharpness problems}，2026年10月7日两会话交接稿。
+主要入口：\emph{Mathematical Synthesis}；共同主稿中的
+\emph{Trace-free Ricci separation from a single monopole}、
+\emph{Single-solution coercivity}、
+\emph{The zero-Weyl endpoint at finite Euler density}；
+A01/A02 完整低成本吹起块及其全局复制证明。
+本文采用该交接稿所记载的适用范围。
+\end{thebibliography}
+\end{document}

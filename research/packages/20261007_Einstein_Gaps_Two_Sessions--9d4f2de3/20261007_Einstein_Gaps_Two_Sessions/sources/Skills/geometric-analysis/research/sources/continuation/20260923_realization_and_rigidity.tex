@@ -1,0 +1,273 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{esint}
+\setmathfont{Asana Math}
+\setlength{\emergencystretch}{3em}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\hypertarget{from-gauge-saturation-and-weyl-modes-to-exact-geometry}{%
+\section{From gauge saturation and Weyl modes to exact
+geometry}\label{from-gauge-saturation-and-weyl-modes-to-exact-geometry}}
+
+23 September 2026. Mathematical continuation of the first-line charter.
+This note states the new consequences and how their proofs connect. Full
+arguments are in the four linked manuscripts; earlier sources remain
+intact. The statements are manuscript theorems, not independent
+certification of correctness or publication priority.
+
+\hypertarget{the-central-realization-statement}{%
+\subsection{1. The central realization
+statement}\label{the-central-realization-statement}}
+
+Consider closed connected oriented smooth four-manifolds with \[
+ \pi_1(M)\text{ torsion-free},\qquad \pi_2(M)=0.              \tag{H}
+\] This includes aspherical manifolds, but also connected sums of them
+and additions of \(S^1\times S^3\). The proof of this enlargement is in
+\href{20260923_topological_core_scope.md}{topological core scope}.
+
+Let \(a\) be the first Chern class of an actual Spin\(^c\) structure
+solving the unperturbed monopole equations for every metric in \([g]\).
+Its selection may depend on \(g\); the same structure must work
+throughout the conformal weights. Set \[
+ p=(a_g^+)^2,
+ \qquad\delta_-(g)=\|\operatorname{Ric}_g^\sharp+I\|_{\infty,\mathrm{op}},
+\] \[
+ q(g,a)=\frac1{V_g}\left[
+ \frac32\int_M(s_g^2+12|W_g^+|^2)\,d\mu_g-72\pi^2p\right]\ge0,
+                                                               \tag{1}
+\] where Weyl norms are Hilbert--Schmidt curvature-operator norms.
+
+\textbf{Realization theorem.} For fixed \(D,A_0>0\), there is
+\(\varepsilon(D,A_0)>0\) such that \[
+ \boxed{\begin{gathered}
+ (H),\quad \operatorname{diam}(g)\le D,\quad p\ge A_0,\\
+ \delta_-(g)+q(g,a)<\varepsilon(D,A_0)\\
+ \Longrightarrow\ \exists(h,J):\operatorname{Ric}_h=-h,\\
+ (h,J)\text{ Kähler on the same oriented smooth }M.
+ \end{gathered}}
+                                                               \tag{2}
+\] If \(a^2>0\), its integral square gives \(p\ge1\); then one may use
+the threshold \(\varepsilon(D,1)\). No prescribed complex structure,
+cover, independent Weyl bound or negative-square cost is required.
+
+\href{20260923_gauge_saturation_ke.md}{The complete proof} uses the
+preceding rounds in three different roles:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The classical scalar monopole inequality supplies noncollapse from
+  \(p\ge A_0\), the pointwise Ricci bound and bounded diameter.
+\item
+  Parameter-two saturation supplies the missing critical concentration
+  control. With \(\kappa=\fint|\operatorname{Ric}+g|^2+q\), every
+  measurable set satisfies \[
+  \int_E|W^+|^2\le\frac43\operatorname{Vol}(E)
+                             +\frac23\kappa V.             \tag{3}
+  \] Thus along a vanishing-defect sequence, no half-flat ALE bubble can
+  survive the topological core obstruction. The earlier harmonic-radius
+  argument gives compactness preserving the smooth type.
+\item
+  The inherited actual-form theorem supplies bounded global self-dual
+  forms with vanishing covariant derivative and asymptotic norm
+  \(\sqrt2\). On the compact limit they become a nonvanishing parallel
+  form, hence an actual global Kähler structure. A fixed small-defect
+  threshold follows by contradiction over changing manifolds.
+\end{enumerate}
+
+This closes a previously unproved connection from actual gauge supply to
+exact realization in a specified regime. It does not claim that a single
+small average derivative already implies parallelness without
+compactness. Only first-order form control is used; the old Hessian
+square-cost budget is not smuggled into (2).
+
+\hypertarget{a-genuine-example-determines-the-limit-of-this-implication}{%
+\subsection{2. A genuine example determines the limit of this
+implication}\label{a-genuine-example-determines-the-limit-of-this-implication}}
+
+The fixed nonzero-shear closed metrics from the second scientific line
+satisfy, after the normalization \(g_\ell=3G_\ell\), \[
+ \delta_-(g_\ell)\to0,
+ \quad V_{g_\ell}=2\pi^2A,
+ \quad a^2=2\chi+3\tau=A>0,
+ \quad p_\ell\ge A.
+\] Chern--Weil gives the new explicit saturation consequence \[
+                 0\le q(g_\ell,a)
+                         \le36\delta_-(g_\ell)(1+\delta_-(g_\ell))
+                         \longrightarrow0.                 \tag{4}
+\] These are fixed aspherical smooth manifolds with no Kähler structure
+even on any finite cover. Full curvature and each fixed curvature
+derivative remain bounded in the inherited construction. They therefore
+\textbf{disprove the diameter-free version of (2)}, not just leave its
+proof incomplete. The new theorem forces their diameters to diverge.
+
+This is a direct connection between the first line's realization
+theorem, the second line's actual construction and the third line's
+virtual-Kähler obstruction. The example does not exclude a completely
+non-Kähler Einstein metric on that same manifold, so it is not a Yau26
+counterexample.
+
+\hypertarget{critical-chiral-information-is-sufficient-for-compactness}{%
+\subsection{3. Critical chiral information is sufficient for
+compactness}\label{critical-chiral-information-is-sufficient-for-compactness}}
+
+The \href{20260923_critical_chiral_threshold.md}{critical-threshold
+theorem} provides a second route to realization, without gauge
+saturation. In (H), fix two-sided Ricci bounds, a diameter upper bound,
+a volume lower bound and a radius \(r_0>0\). A uniform small threshold
+for \[
+ \sup_x\min\left\{
+        \int_{B_{r_0}(x)}|W^+|^2,
+        \int_{B_{r_0}(x)}|W^-|^2\right\}                    \tag{5}
+\] gives a uniform harmonic radius and topology-preserving compactness.
+Adding sufficiently small \(\delta_-\) gives an exact negative Einstein
+metric on the same smooth manifold. The small half may be different on
+different balls. This replaces a supercritical \(L^q\), \(q>2\), or
+vanishing equiintegrability assumption by a fixed critical local
+threshold.
+
+The corresponding degeneration statement is spatial, not just a global
+energy inequality: a bubble must carry a definite amount of
+\textbf{both} Weyl energies at the same concentration point. The proof
+combines a classical Sobolev--Weitzenböck gap on the exact Ricci-flat
+blowup with core exclusion in both orientations. The explicit threshold
+and norm conversion are in the proof; no sharp constant is claimed.
+
+Furthermore, the nondegenerate intersection pairing shows that any
+finite- fundamental-group ALE core embedded in (H) must have zero
+rational second homology. Thus any remaining smooth ALE bubble would be
+a rational homology ball with both Weyl halves nonzero. The existence or
+exclusion of these general mixed-chirality bubbles is not settled by the
+half-flat classification used here.
+
+\hypertarget{exact-allowed-mode-selection-not-another-approximate-estimate}{%
+\subsection{4. Exact allowed-mode selection, not another approximate
+estimate}\label{exact-allowed-mode-selection-not-another-approximate-estimate}}
+
+For an exact \(\operatorname{Ric}=-g\) metric let \[
+ \mathscr S(g)=\fint_M
+       (\lambda_3(W^+)-\lambda_2(W^+))^2.
+                                                               \tag{6}
+\] The \href{20260923_allowed_mode_rigidity.md}{spectral no-bubbling
+theorem} proves that, under (H), bounded diameter and positive volume
+lower bound, small \(\mathscr S\) gives full curvature bounds and smooth
+compactness. There is no pointwise relative pinching or Weyl-amplitude
+assumption.
+
+Its mechanism is different from simply improving the older constants. On
+a hypothetical Ricci-flat ALE blowup, vanishing splitting gives the
+spectrum \((-4t/3,2t/3,2t/3)\). The exact Weyl equation gives
+\(\Delta t\le-4t^2\) for the nonnegative Laplacian, and ALE decay forces
+\(t=0\). The bubble is therefore half-flat and topologically impossible.
+The nonzero Kähler mode allowed at the negative Einstein scale cannot
+remain as a nonzero mode at the Ricci-flat ALE scale.
+
+This supplies two exact consequences:
+
+\begin{itemize}
+\tightlist
+\item
+  For every fixed \(D\), an Einstein metric on any
+  \(\Sigma_g\times\Sigma_h\), \(g,h\ge2\), with diameter at most \(D\)
+  and \(\mathscr S<\varepsilon(D)\), is \textbf{locally isometric to
+  \(\mathbb H^2_{-1}\times\mathbb H^2_{-1}\)}. Compactness places every
+  counterexample sequence near a zero-splitting limit; the verified
+  complex-product characterization and unobstructed local Einstein
+  moduli then force exact geometry. The finite-cover and eigenline
+  issues are explicitly treated. This is a classification of the metric
+  under test, not merely a new proof that products admit an Einstein
+  metric.
+\item
+  On the specified nonzero-shear self-gluings, every exact negative
+  Einstein metric with diameter at most \(D\) obeys
+  \(\mathscr S\ge\eta(D)>0\). The previous relative pointwise pinching
+  restriction has been removed. This remains a constraint on possible
+  outputs, not their complete exclusion.
+\end{itemize}
+
+The general allowed-mode statement keeps unobstructedness at KE limits
+as an explicit condition. It is checked for the product application, not
+asserted for all negative KE surfaces. The ASD endpoint uses an
+established local chiral-rigidity theorem. Classical local theorems are
+credited rather than counted as new results.
+
+\hypertarget{what-this-changes-in-the-first-line-programme}{%
+\subsection{5. What this changes in the first-line
+programme}\label{what-this-changes-in-the-first-line-programme}}
+
+The original integral obstruction mechanism remains valid independently
+of the new bounded-diameter regime. The present work adds a precise
+realization connection and an exact allowed-mode application. Actual
+gauge saturation, or critical chiral/spectral data, prevents specific
+bubbles when combined with topology and the global geometric bounds.
+Smooth-type compactness then becomes available. Global actual forms
+yield KE realization; an exhausted local Einstein moduli germ yields
+exact mode rigidity. These outputs have different hypotheses and must
+not be collapsed into a single unconditional master formula.
+
+The immediate mathematical choices are now sharper. In the compact
+regime, the remaining concentration must survive the rational-ball and
+paired-chiral constraints. In the large-diameter regime, the actual
+shear example proves that saturation cannot alone enforce Kählerization.
+For its unrestricted Einstein question one needs either a genuinely
+non-Kähler exact realization or information governing every possible
+output, not further smallness of the same saturation error. These are
+specific unresolved alternatives, not a prediction that either will
+resolve the entire original problem.
+
+No complete sign branch of Yau26 is proved. What is now available is a
+theorem-level connection among actual fields, topology, degeneration and
+exact geometry, together with an actual sharpness construction
+delimiting that connection.
+
+\end{document}

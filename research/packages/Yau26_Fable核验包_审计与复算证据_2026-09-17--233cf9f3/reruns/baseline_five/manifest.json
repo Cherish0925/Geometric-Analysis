@@ -1,0 +1,58 @@
+{
+  "schema": "qiushi-yau26.reproduction.v1",
+  "status": "passed",
+  "started_utc": "2026-09-17T09:07:51.774203+00:00",
+  "selected_groups": [
+    "uniform_gap",
+    "weyl10",
+    "ed_ricci",
+    "cz_spike",
+    "four_node"
+  ],
+  "mutation": null,
+  "versions": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "sympy": "1.14.0"
+  },
+  "inputs": {
+    "reproduce.py": {
+      "sha256": "b2d37e7d6c2dd5e4de8d13c437f2f17637f351b21f313afe725182f9204bb3b8"
+    },
+    "math_checks.py": {
+      "sha256": "390b01202b929189e8d91c22afdcae9ec25298e12babe57a9faa7f6c491b368b"
+    },
+    "data/four_node_fixture.json": {
+      "sha256": "aa8d6b585c07f370a905a982a391b535b44f6f3ec3d5282595f17110d487129b"
+    }
+  },
+  "groups": [
+    {
+      "group": "uniform_gap",
+      "status": "passed",
+      "result": "uniform_gap.json"
+    },
+    {
+      "group": "weyl10",
+      "status": "passed",
+      "result": "weyl10.json"
+    },
+    {
+      "group": "ed_ricci",
+      "status": "passed",
+      "result": "ed_ricci.json"
+    },
+    {
+      "group": "cz_spike",
+      "status": "passed",
+      "result": "cz_spike.json"
+    },
+    {
+      "group": "four_node",
+      "status": "passed",
+      "result": "four_node.json"
+    }
+  ],
+  "scope": "bounded symbolic and fixture checks, not a formal proof of the research papers or a spectral tail certificate",
+  "elapsed_seconds": 3.7998012740000036
+}

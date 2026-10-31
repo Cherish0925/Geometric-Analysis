@@ -1,0 +1,868 @@
+{
+  "schema": "qiushi.yau26.result-families.v1",
+  "as_of": "2026-10-01",
+  "source_commit": "29f7d2cef30f2ccdba192acdcd02bf516d850fe8",
+  "additional_current_source": "The month-wide manuscript baseline d40dffe is extended by the two web sessions' September 29–30 package, preserved under archive/sources/20261001-web-increment. I56 proves the nondegenerate actual endpoint for every fixed finite topological density, with polynomial density loss. I57 adds critical variational selection and simultaneous actual-field cost identities. I58 gives the complete ordinary surgery-family monopole budget as a classical recovery corollary. Density-independent O10, the optimal balanced coefficient, complete BF comparison and fixed-ED existence remain open. Earlier sources and handoffs are unchanged.",
+  "path_base": "project-root",
+  "purpose": "A navigable catalogue of mathematical result families and unresolved connections, not a count of independent discoveries or an exhaustive transcription of every lemma.",
+  "status_definitions": {
+    "manuscript-theorem": "The preserved manuscripts contain a statement and argument under the indicated scope; independent correctness certification and worldwide novelty are not asserted.",
+    "counterexample": "A preserved actual model or construction contradicts the specified proposed extension, not a broader statement by implication.",
+    "retracted": "The indicated inference is invalid or unsupported and is not an active mathematical premise; its valid local components remain preserved.",
+    "open": "The stated mathematical connection or decision is not completed by the current library."
+  },
+  "novelty_definition": "incremental_role describes development inside this project. It is not a publication-priority finding.",
+  "results": [
+    {
+      "id": "I01", "lines": [1], "title": "Exact monopole–Euler uniform Einstein gap", "status": "manuscript-theorem", "incremental_role": "inherited Skill baseline",
+      "scope": "Exact Einstein four-manifolds with the stated metricwise monopole projection budget MP(A), b_+ > 1 and chi <= L A.",
+      "statement": "T/A >= 2/3 + eta(L); the blowup application is uniform across the specified general-type family.",
+      "proof_paths": ["mathematics/current/skill/research/20260916_uniform_gap.tex", "mathematics/current/skill/research/20260916_rigidity.tex"],
+      "locators": ["thm:relative-gap", "lem:transfer", "lem:forbidden"], "depends_on": [],
+      "external_inputs": ["Seiberg–Witten curvature inequalities", "Exact Einstein small-energy regularity"],
+      "boundary": "This local-development proof is not the later intrinsic integral proof and does not alone establish approximate-input regularity."
+    },
+    {
+      "id": "I02", "lines": [1], "title": "Intrinsic integral monopole calibration and all-sign defect gap", "status": "manuscript-theorem", "incremental_role": "new mechanism relative to the early exact-only baseline; now a stable inherited result",
+      "scope": "Actual conformally solvable monopole input, positive self-dual projection budget, and the stated class-square condition; arbitrary smooth metrics.",
+      "statement": "A uniform relative integral Einstein gap holds in the near-critical topology band without Sobolev, diameter, noncollapse or full-curvature bounds; arbitrary classes retain their negative-square cost.",
+      "proof_paths": ["mathematics/current/line1_integral_rigidity_paper.md", "mathematics/current/round4_rigidity.md", "mathematics/current/round4_all_sign_gap.md", "mathematics/current/round5_rigidity.md"],
+      "locators": ["Independent paper Theorems 1.2–1.3 and Sections 5–8"], "depends_on": [],
+      "external_inputs": ["Actual weighted monopole solvability", "LeBrun signed curvature inequalities"],
+      "boundary": "A formal cohomology vector is insufficient. This is not a topology-free integral theorem."
+    },
+    {
+      "id": "I03", "lines": [1], "title": "Polarized, b_+=1 and handle-addition closure", "status": "manuscript-theorem", "incremental_role": "scope extension and closure of I02, not a second calibration mechanism",
+      "scope": "Positive-budget SW bases with the specified chamber/dimension/insertion conditions, including minimal general-type surfaces and the stated positive-canonical symplectic b_+=1 bases.",
+      "statement": "Metricwise polarization selects one actual class valid for all positive conformal weights. The quantitative classical blowup/handle applications include b_+=1; positive scalar monopole energy separately excludes Ricci-flat metrics.",
+      "proof_paths": ["mathematics/current/round13_chamber.md", "mathematics/current/lebrun_stability_closure.md", "mathematics/current/round21_chambers.md", "mathematics/current/round21_comparison.md"],
+      "depends_on": ["I02"], "boundary": "This strengthens the specified LeBrun Einstein-obstruction chain, not every result of his 2001 paper."
+    },
+    {
+      "id": "I04", "lines": [1], "title": "Twisted monopole integral stability", "status": "manuscript-theorem", "incremental_role": "Round-14 genuine additional gauge supplier",
+      "scope": "Actual Pin^-(2) monopole classes and invariant positive weights on the associated isometric double cover, with the listed projection and square budgets.",
+      "statement": "The integral mechanism gives a uniform critical-family gap even when ordinary SW and ordinary stable-cohomotopy invariants downstairs vanish.",
+      "proof_paths": ["mathematics/current/round14_twisted_rigidity.md", "mathematics/current/round14_rigidity.md"],
+      "depends_on": ["I02"], "external_inputs": ["Ishida–Matsuo–Nakamura twisted nonvanishing"],
+      "boundary": "Solvability is required only for lifted metrics and necessary deck-invariant weights, not claimed for all metrics on the cover."
+    },
+    {
+      "id": "I05", "lines": [1], "title": "Bounded two-form differential compatibility", "status": "manuscript-theorem", "incremental_role": "Round-21 analytic separation from the original spinor formulation",
+      "scope": "A bounded smooth self-dual two-form, bounded constant model amplitude, the specified Ricci/Weyl/amplitude defect d, and Hodge-Laplacian budget B.",
+      "statement": "The product of defect and derivative budget controls distance to the allowed amplitudes 0 and -sigma/2; the negative forbidden amplitude 1/8 has a uniform incompatibility gap.",
+      "proof_paths": ["mathematics/current/round21_analytic.md"], "depends_on": [],
+      "boundary": "The form must actually be supplied in applications. The rank-one Weyl model is not a classification of arbitrary Einstein curvature."
+    },
+    {
+      "id": "I06", "lines": [1], "title": "Actual form supply aligned with harmonic Chern data", "status": "manuscript-theorem", "incremental_role": "composition theorem from raw inputs; removes earlier scalar-band limitation",
+      "scope": "Actual conformal monopole solvability with small negative-Einstein Ricci defect plus beta=2 scalar–Weyl deficit; a positive self-dual projection.",
+      "statement": "One bounded smooth weighted-monopole form simultaneously has harmonic alignment, amplitude/Weyl approximation, first-order control and a joint Hodge-Laplacian budget. Only the second-order estimate retains negative-class-square cost.",
+      "proof_paths": ["mathematics/current/line1_composed_application.md", "mathematics/current/line1_scalar_band_remainder.md", "mathematics/current/line1_non_kahler_bridge.md"],
+      "depends_on": ["I05", "I07"], "boundary": "H is the self-dual harmonic representative, not the whole Chern class; average almost-parallelism does not prove exact global Kähler geometry."
+    },
+    {
+      "id": "I07", "lines": [1], "title": "Parameterized scalar–Weyl non-saturation", "status": "manuscript-theorem", "incremental_role": "quantitative differential strengthening; classical nonnegativity is not new",
+      "scope": "Actual conformally solvable class with projection p>0; finite beta interval [2,L], arbitrary scalar curvature and the displayed negative-square cost.",
+      "statement": "(1+b_a)(r+D_beta/V) >= c_L(beta-2)^2; for special square control the cost is absorbed. Beta=2 is the actual cscK/negative-KE endpoint and beta=8 recovers the critical topological combination.",
+      "proof_paths": ["mathematics/current/line1_functional_pencil.md"], "depends_on": ["I05"],
+      "boundary": "Completing the classical square only proves D_beta >= 0; the new analytical content is uniform non-saturation with Ricci error."
+    },
+    {
+      "id": "I08", "lines": [1], "title": "Energy envelope and two-chirality topology gap", "status": "manuscript-theorem", "incremental_role": "new independent-budget application beyond the old near-one-third band",
+      "scope": "Each metric has a selected actual conformal class with (a^+)^2 >= A and a^2 >= T_+; h=1-T_+/A in (0,1/3), U=3 min(T_+,T_-)/A.",
+      "statement": "E+(U-F(h))_+ >= c h^2, F(h)=(4-sqrt(1-3h))^2/9. Realized mixed ball-quotient examples approach h=19/300 and the classical feasibility boundary.",
+      "proof_paths": ["mathematics/current/line1_energy_envelope_gap.md", "mathematics/current/line1_two_chirality_topology.md", "continuation/20260926_boundary_compatibility.md"],
+      "depends_on": ["I07"], "external_inputs": ["Chern–Weil identities in both orientations"],
+      "boundary": "Only one chirality needs the actual gauge supplier. The 26 September proof gave c h^2 <= inf E <= 4h/(1+h); I40 subsequently settled linear order on that same-scope family. The optimal balanced-family coefficient remains O11. Internal expansion is not a worldwide novelty certificate."
+    },
+    {
+      "id": "I09", "lines": [1], "title": "Compactified functional pencil and upper energy wall", "status": "manuscript-theorem", "incremental_role": "parameter-range and two-sided-energy strengthening",
+      "scope": "Same actual inputs; all finite beta>=2 with explicit decay; upper-energy conclusion assumes 1/4<h<1/3.",
+      "statement": "(1+b_a)(r+D_beta/V)>=c(beta-2)^2/beta^4. An all-sign transfer gives E+(G(h)-e)_+ >= c Theta(h), quantitatively shrinking the upper classical Einstein energy boundary as well as the lower one.",
+      "proof_paths": ["mathematics/current/line1_compactified_pencil.md", "continuation/20260926_boundary_compatibility.md"], "depends_on": ["I05", "I07", "I08"],
+      "boundary": "I51 improves the unrestricted compactified cubic gap to quadratic and strengthens the upper wall. Optimal zero-end decay and the nondegenerate weak gap remain open. Uniform near-closure was extracted in the 26 September note. Classical bare roots F and G are not new."
+    },
+    {
+      "id": "I10", "lines": [1], "title": "Realized Bauer–Furuta two-chirality gap family", "status": "manuscript-theorem", "incremental_role": "new realized quantitative topology coverage using classical refined-gauge supply",
+      "scope": "Two or three simply connected symplectic summands with b_+ congruent to 3 mod 4, plus the specified blowups and handles; actual square and projection conditions are proved.",
+      "statement": "A realized infinite family with ordinary SW vanishing and no almost-complex structure in either orientation has an all-metric integral gap uniformly bounded away from zero, and hence both pointwise signwise gaps.",
+      "proof_paths": ["mathematics/current/line1_bauer_furuta_geography.md"], "depends_on": ["I08"],
+      "external_inputs": ["Bauer–Furuta/Ishida–LeBrun nonvanishing", "Braungardt–Kotschick symplectic geography"],
+      "boundary": "Refined nonvanishing is classical; this is not a new construction of near-Einstein inputs or a Yau26 counterexample."
+    },
+    {
+      "id": "I11", "lines": [1,3], "title": "Realizable product calibration and near-endpoint degeneration", "status": "manuscript-theorem", "incremental_role": "structure branch distinct from forbidden-spectrum rigidity",
+      "scope": "Specified actual square-A monopoles in both orientations, tau=0 and A=2chi; arbitrary-scalar extension retains scalar-oscillation terms. Exact near-minimal-volume sequences have additional consequences.",
+      "statement": "Integral distance to the hyperbolic-product curvature orbit is controlled. Exact near-endpoint sequences have curvature regularity and quantitative propagation on regions where D/Vol(B_1) is small.",
+      "proof_paths": ["mathematics/current/round15_rigidity.md", "mathematics/current/round16_rigidity.md", "mathematics/current/round17_integral.md"],
+      "depends_on": [], "boundary": "The orbit is realized by exact products. The volume-endpoint conclusions do not govern all exact Einstein metrics."
+    },
+    {
+      "id": "I12", "lines": [1,3], "title": "Actual intersections, slow scalar modes and period geometry", "status": "manuscript-theorem", "incremental_role": "global information from several classes, with exact properness and inertia scope",
+      "scope": "Multiple actual monopole classes under the stated common-square/near-saturation data; finite class spans in the positive-plane domain; later endpoint forms with their stated errors.",
+      "statement": "Intersection covariance forces a number of scalar low modes; positive-plane properness holds exactly when the span contains a maximal positive or negative subspace; endpoint period inertia has quantitative restrictions.",
+      "proof_paths": ["mathematics/current/round18_periods.md", "mathematics/current/round20_rigidity.md", "mathematics/current/line1_period_inertia.md", "continuation/20260926_boundary_compatibility.md"],
+      "depends_on": ["I11", "I06"], "boundary": "The 26 September CUT-minus-PSD certificate retains actual common saturation and the negative Hodge part. Standard signed block suppliers with the stated projection budget satisfy a stronger classical scalar estimate, so no new separation family is claimed. Neither finite class data nor small Ricci error alone supplies the hypotheses."
+    },
+    {
+      "id": "I13", "lines": [1], "title": "Variable calibration and equation-supplied Weyl budgets", "status": "manuscript-theorem", "incremental_role": "allowed-branch analytical extensions",
+      "scope": "Variable negative amplitude with stated bounds, retained divergence/source errors, and in the harmonic-Weyl theorem a simple lowest eigenvalue and prescribed relative spectral control.",
+      "statement": "The differential identities retain amplitude derivatives and source terms; the actual half-Weyl equation can supply derivative budgets rather than assuming them externally.",
+      "proof_paths": ["mathematics/current/line1_variable_calibration.md", "mathematics/current/line1_variable_negative_selection.md", "mathematics/current/line1_half_weyl_regularity.md", "mathematics/current/line1_signed_harmonic_weyl.md"],
+      "depends_on": ["I05"], "boundary": "Harmonic W+ is not automatic for arbitrary approximate Einstein input; small spectral splitting is not proved to vanish."
+    },
+    {
+      "id": "I14", "lines": [1,3], "title": "Exact Einstein spectral amplitude and splitting restrictions", "status": "manuscript-theorem", "incremental_role": "equation-to-geometry application",
+      "scope": "Exact negative Einstein metrics in the stated negative-lowest-eigenvalue and relative-pinning class, with actual monopole data for the topological consequence.",
+      "statement": "The exact equation supplies an upper Weyl amplitude and quantitative structure estimates; topological input can force nonzero upper-eigenvalue splitting.",
+      "proof_paths": ["mathematics/current/line1_einstein_spectral_application.md"], "depends_on": ["I13", "I07"],
+      "boundary": "The result does not include arbitrary generic-spectrum outputs without the displayed pinching condition."
+    },
+    {
+      "id": "I15", "lines": [1,3], "title": "Aspherical half-flat ALE core exclusion and curvature compactness", "status": "manuscript-theorem", "incremental_role": "topology-to-regularity bridge",
+      "scope": "Closed aspherical oriented four-manifolds; for regularity, normalized exact negative Einstein metrics with lower volume, bounded diameter, bounded W+ and Euler budget.",
+      "statement": "No nonflat smooth ASD Ricci-flat ALE compact core embeds. The negative-definite case and rational-ball quotient case are both treated, yielding full-curvature control from one Weyl-half bound.",
+      "proof_paths": ["mathematics/current/line1_aspherical_no_bubbles.md"], "locators": ["Lemma 1", "Theorem 2"], "depends_on": [],
+      "external_inputs": ["Wright and Suvaina ALE classification", "Einstein compactness", "Bando–Kasue–Nakajima ALE asymptotics"],
+      "boundary": "No spin assumption is used. This is not an arbitrary bounded-Ricci compactness theorem."
+    },
+    {
+      "id": "I16", "lines": [1,3], "title": "Diameter-only exact spectral gap on actual nonzero-shear self-gluings", "status": "manuscript-theorem", "incremental_role": "removes the opposite-Weyl hypothesis of the retained bounded-geometry precursor",
+      "scope": "The specified aspherical non-virtually-Kähler self-gluings; Ric=-g, relative splitting b<=4theta t with theta<1/sqrt(3), and diameter <=D.",
+      "statement": "A uniform positive average splitting gap holds across the stated family. Any sequence in this spectral class with splitting tending to zero has diameter tending to infinity, without an assumed opposite-Weyl bound or positive minimum amplitude.",
+      "proof_paths": ["mathematics/current/line1_aspherical_no_bubbles.md", "mathematics/current/line1_allowed_branch_escape.md"],
+      "locators": ["Latest Theorem 3 and Corollary 4"], "depends_on": ["I15", "I14", "G01", "G02"],
+      "boundary": "Large diameter, nonvanishing splitting, and metrics outside the relative spectral class remain possible."
+    },
+    {
+      "id": "I17", "lines": [1], "title": "Absolute Ricci energy, primitive periods and scalar coherence", "status": "manuscript-theorem", "incremental_role": "classical equality accounting and quantitative application bridges",
+      "scope": "Kähler canonical class for the exact primitive-period identity; actual monopole data and the separately stated scalar/energy hypotheses for general-metric bridges.",
+      "statement": "The scalar–Weyl deficit, projection excess and absolute Ricci-energy excess are precisely separated. General-metric energy selection and conformal/original-metric bridges retain what is needed to control relative Einstein defect.",
+      "proof_paths": ["mathematics/current/line1_kahler_energy.md", "mathematics/current/line1_energy_selection.md", "mathematics/current/line1_non_kahler_bridge.md"],
+      "depends_on": ["I02"], "boundary": "The Kähler identity is not asserted for an arbitrary monopole class on a non-Kähler metric."
+    },
+    {
+      "id": "I18", "lines": [1,3], "title": "All-class budget and rank-one entropy limitations", "status": "manuscript-theorem", "incremental_role": "route discrimination, not another existence/nonexistence theorem",
+      "scope": "All eligible ordinary monopole budgets on the fixed-piece hyperbolic surgery family; ordinary maps to closed rank-one locally symmetric targets from the specified classical complex-base family.",
+      "statement": "The former family has asymptotic T/A>=3/4; the latter degree/entropy lower bounds are dominated by its scalar monopole budget.",
+      "proof_paths": ["mathematics/current/round19_global_gap.md", "mathematics/current/line1_rank_one_entropy_scope.md"],
+      "depends_on": ["X02"], "boundary": "This does not exclude all refined gauge inputs, representation volumes, or entropy mechanisms."
+    },
+    {
+      "id": "I19", "lines": [1,2,3], "title": "Compact-regime exact realization from pointwise Ricci input", "status": "manuscript-theorem", "incremental_role": "new library continuation from aspherical topology to exact existence",
+      "scope": "Closed connected smooth oriented aspherical four-manifolds with diameter<=D, volume>=v, and one Weyl half bounded in Lq by Lambda, q>2.",
+      "statement": "There is epsilon(D,v,Lambda,q)>0 such that pointwise negative Ricci defect below epsilon implies a smooth negative Einstein metric on the same smooth manifold. Harmonic compactness is proved for the corresponding bounded-Ricci class.",
+      "proof_paths": ["continuation/20260923_compact_realization.md"], "locators": ["Theorem A", "Theorem B"], "depends_on": ["I15"],
+      "external_inputs": ["Jiang–Naber local L2 curvature estimate", "Anderson harmonic-coordinate compactness", "Bando–Kasue–Nakajima ALE asymptotics"],
+      "boundary": "The diameter, noncollapse and supercritical one-sided Weyl data are genuine restrictions. The threshold is not dimension-only, and this manuscript does not settle a full Yau26 sign branch."
+    },
+    {
+      "id": "I20", "lines": [1,3], "title": "ALE core exclusion beyond aspherical topology", "status": "manuscript-theorem", "incremental_role": "strict topological scope extension",
+      "scope": "Closed oriented four-manifolds with torsion-free pi1 and pi2=0, including connected sums and S1xS3 additions.",
+      "statement": "Half-flat nonflat Ricci-flat ALE cores cannot embed. An arbitrary finite-pi1 core with rational-homology-sphere boundary that embeds must be a rational homology ball.",
+      "proof_paths": ["continuation/20260923_topological_core_scope.md"], "depends_on": ["I15"],
+      "boundary": "Does not assert contractibility or exclude hypothetical mixed-chirality rational-ball ALE cores."
+    },
+    {
+      "id": "I21", "lines": [1,2,3], "title": "Critical variable-chirality compactness and paired concentration", "status": "manuscript-theorem", "incremental_role": "critical endpoint extension of I19",
+      "scope": "I20 topology, bounded two-sided Ricci and diameter, positive volume lower bound, and a fixed-radius local threshold on the minimum of the two chiral L2 energies.",
+      "statement": "The controlled chirality may vary by ball. The threshold gives harmonic compactness and small-pointwise-defect same-smooth-type realization; degeneration otherwise forces definite mass in both Weyl halves at the same location.",
+      "proof_paths": ["continuation/20260923_critical_chiral_threshold.md"], "depends_on": ["I19", "I20"],
+      "external_inputs": ["Brendle nonnegative-Ricci Sobolev inequality on the exact blowup", "Weyl Weitzenbock identity"],
+      "boundary": "This is a sufficient critical threshold, not a sharp constant or a general classification of Ricci-flat ALE spaces."
+    },
+    {
+      "id": "I22", "lines": [1,2,3], "title": "Actual gauge saturation gives same-type negative KE realization", "status": "manuscript-theorem", "incremental_role": "actual-form and compactness composition reaching precise existence",
+      "scope": "I20 topology, diam<=D, an actual conformally solvable Spin-c class with self-dual projection p>=A0>0, and small delta_minus plus D2/V.",
+      "statement": "A fixed epsilon(D,A0)>0 forces a compatible negative Kahler-Einstein metric on the same oriented smooth manifold, without passing to a cover or assuming external Weyl bounds or negative-square cost. Positive integral class square permits A0=1.",
+      "proof_paths": ["continuation/20260923_gauge_saturation_ke.md"], "depends_on": ["I06", "I19", "I20"],
+      "boundary": "Does not claim that the input is Kahler or that pointwise Ricci smallness forces saturation. Diameter cannot be omitted: see X08."
+    },
+    {
+      "id": "I23", "lines": [1,3], "title": "Averaged spectral compactness and exact allowed-mode rigidity", "status": "manuscript-theorem", "incremental_role": "removes pointwise relative pinching and gives a concrete exact rigidity application",
+      "scope": "I20 topology, exact Ric=-g, bounded diameter and positive volume lower bound, small averaged upper-eigenvalue Weyl splitting.",
+      "statement": "Small splitting prevents ALE bubbles without pointwise Weyl bounds. On products of hyperbolic surfaces it forces the exact metric to be locally H2xH2 uniformly over genera; on the specified nonzero-shear types it yields a diameter-only splitting gap without relative pinching.",
+      "proof_paths": ["continuation/20260923_allowed_mode_rigidity.md"], "depends_on": ["I15", "I16", "I20"],
+      "external_inputs": ["Derdzinski zero-splitting classification", "Dai-Wang-Wei Theorem 3.3 under integrability", "Catanese product characterization", "Fine-Krasnov-Singer local chiral rigidity"],
+      "boundary": "Exact-input theorem; arbitrary KE local mode selection keeps unobstructedness. It neither classifies all Einstein metrics on products nor excludes all outputs on shear manifolds."
+    },
+    {
+      "id": "X08", "lines": [1,2,3], "title": "Actual failure of diameter-free gauge-to-KE realization", "status": "counterexample", "incremental_role": "new saturation consequence and sharpness use of inherited closed metrics",
+      "scope": "The actual fixed nonzero-shear self-gluings, with normalized pointwise approximate metrics and canonical actual classes in both orientations.",
+      "statement": "V=2pi^2 A exactly and q_plus,q_minus<=36 delta_minus+18 delta_minus^2 tend to zero, but no finite cover is Kahler. Diameter-free I22 and the stronger bilateral I25 conclusion are false even with bounded full curvature and fixed-order derivatives.",
+      "proof_paths": ["continuation/20260923_gauge_saturation_ke.md", "continuation/20260924_bilateral_realization.md"], "locators": ["I22 Section 7.2", "I25 Section 6"], "depends_on": ["C03", "G03", "I22", "I25"],
+      "boundary": "The inherited construction is not counted as new. Non-Kahler Einstein existence on the same topology remains open."
+    },
+    {
+      "id": "I24", "lines": [1,3], "title": "All-ALE exclusion and pointwise-only compact realization", "status": "manuscript-theorem", "incremental_role": "stronger classical nonembedding input removes the remaining bubble alternative and the extra Weyl/saturation assumptions",
+      "scope": "Closed oriented four-manifolds with pi_2=0, bounded diameter and positive total volume lower bound; either normalized Ricci sign. No restriction on pi_1 torsion.",
+      "statement": "A small pointwise Ricci defect implies an exact same-smooth-type Einstein metric of the prescribed sign. Positive Ricci gives the diameter bound by Myers. On the negative side actual positive monopole projection supplies the volume lower bound without saturation.",
+      "proof_paths": ["continuation/20260924_ale_boundary_compatibility.md"], "depends_on": ["I19"],
+      "external_inputs": ["Zhang ALE nonembedding", "Bamler–Chen Lemma 4.35", "Jiang–Naber local curvature energy", "Bando–Kasue–Nakajima ALE asymptotics"],
+      "boundary": "This is a composition with a credited existing no-bubble theorem, not a new classification of all ALE spaces. Diameter/volume conditions still restrict the original problem."
+    },
+    {
+      "id": "I25", "lines": [1], "title": "Topology-free bilateral gauge-to-bidisk realization", "status": "manuscript-theorem", "incremental_role": "two actual form systems give exact locally symmetric realization with no homotopy assumption",
+      "scope": "Actual conformal monopole inputs in both orientations, one uniform positive projection floor, bounded diameter, small pointwise negative Ricci defect and both parameter-two deficits.",
+      "statement": "The same smooth manifold carries a negative Einstein metric with universal cover H2(-1) x H2(-1), and global parallel complex structures in both orientations. Both Weyl halves disappear in any harmonic-radius blowup; no ALE or topological exclusion is used.",
+      "proof_paths": ["continuation/20260924_bilateral_realization.md"], "depends_on": ["I06", "I19"],
+      "boundary": "Not a globally marked direct product or exactness of the input metric. Actual shear examples invalidate deletion of diameter even with both deficits small."
+    },
+    {
+      "id": "I26", "lines": [1,3], "title": "Pointwise-to-complex-hyperbolic realization on the Chern boundary", "status": "manuscript-theorem", "incremental_role": "numerical and actual gauge input now derive saturation rather than assuming it",
+      "scope": "A=T_plus=3 T_minus>0, one actual conformal monopole class with p>=A, bounded diameter and small negative pointwise Ricci defect.",
+      "statement": "D2/V<=72 delta^2 and integral |W_minus|^2/V<=delta^2. The same oriented smooth manifold admits normalized complex-hyperbolic geometry. No pi_1 or pi_2 assumption, input complex structure or separate saturation condition is needed.",
+      "proof_paths": ["continuation/20260924_chern_boundary_realization.md"], "depends_on": ["I06", "I19"],
+      "external_inputs": ["Classical Seiberg–Witten inequalities", "Chern–Weil identities", "Classical exact Miyaoka–Yau rigidity"],
+      "boundary": "Classical algebra and the exact equality classification are not new. The uniform approximate-to-exact composition is restricted to this numerical boundary and bounded diameter."
+    },
+    {
+      "id": "I27", "lines": [1,2], "title": "Diameter-free local geometry and explicit Einstein repair", "status": "manuscript-theorem", "incremental_role": "localizes the new no-bubble mechanism and connects it to a classical global solver",
+      "scope": "pi_2=0 and unit-ball noncollapse give harmonic radius under bounded Ricci. Exact repair additionally assumes bounded Ricci derivative, a full tensor L2 linearized gap and small mixed unnormalized Ricci residual.",
+      "statement": "The local radius and nonlinear repair constants have no diameter or total-volume dependence. The repaired metric is Einstein on the original smooth manifold, without imposing an input symmetry or complex structure.",
+      "proof_paths": ["continuation/20260924_local_to_global_scope.md"], "depends_on": ["I24"],
+      "external_inputs": ["Classical Bianchi-gauge inverse function argument", "Hybrid Holder–Sobolev elliptic estimates"],
+      "boundary": "The local regularity theorem does not supply the global spectral gap. Product Teichmuller kernels and small averaged residuals are not silently discarded."
+    },
+    {
+      "id": "I28", "lines": [1,3], "title": "Degree-uniform finite-cover gauge realization on the base", "status": "manuscript-theorem", "incremental_role": "separates the gauge supplier from the manifold receiving the exact output",
+      "scope": "Bounded base diameter; actual bilateral conformal monopoles on a finite cover of unbounded degree, small deficits and positive per-sheet projection. One cover input suffices for a nonorientable base; the Chern boundary has a separate one-input theorem.",
+      "statement": "Normalized Weyl spectral error descends without degree loss. Compactness of the base gives exact locally bidisk or complex-hyperbolic geometry on its original smooth type, without assuming class, form, or Einstein-metric descent.",
+      "proof_paths": ["continuation/20260924_virtual_gauge_realization.md"], "depends_on": ["I06", "I25", "I26"],
+      "external_inputs": ["Derdzinski Weyl identity and local structure", "Classical finite-cover integration"],
+      "boundary": "Output need not be globally Kahler. The explicit non-almost-complex product quotient is a classical calibration, not a new Einstein construction. Diameter and saturation restrictions remain."
+    },
+    {
+      "id": "I29", "lines": [1,2], "title": "Growth-coercivity Einstein repair with uniformly local residual", "status": "manuscript-theorem", "incremental_role": "removes the unnormalized total residual condition in a verified propagation regime",
+      "scope": "Controlled harmonic atlas in any n>=3, or its stated four-dimensional supplier using pi_2=0, unit-ball noncollapse and Ricci regularity; positive full tensor coercivity lambda; actual ball growth C(1+R)^d exp(HR), H^2<8 lambda.",
+      "statement": "A uniformly local Holder inverse and small pointwise Ricci error yield exact same-manifold negative Einstein repair, independent of diameter and total volume. Cyclic hyperbolic covers admit distributed perturbations whose total L2 residual diverges while the repair applies.",
+      "proof_paths": ["continuation/20260924_uniformly_local_repair.md", "continuation/20260924_higher_dimensional_local_repair.md"], "depends_on": ["I27"],
+      "external_inputs": ["Classical weighted quadratic-form identity", "Koiso coercivity and local elliptic estimates"],
+      "boundary": "Positive coercivity is stronger than an absolute spectral gap. No kernels are deleted; uncontrolled growth and product Teichmuller channels remain outside. Examples prove a uniform repair neighbourhood, not new Einstein topology."
+    },
+    {
+      "id": "I30", "lines": [1], "title": "Bilateral gauge structure on collapsed local covers", "status": "manuscript-theorem", "incremental_role": "first explicit connection here from actual forms to genuinely collapsed rewound geometry",
+      "scope": "Bilateral actual inputs, small pointwise negative Ricci defect and K=2r+q_plus+q_minus; fixed-scale Euclidean-model regions with maximal local nilpotency rank.",
+      "statement": "Outside a set of relative volume at most C K^(1/4), indicated local universal-cover balls approach H2 x H2 in C1alpha. A covering-average lemma cancels potentially unbounded multiplicity.",
+      "proof_paths": ["continuation/20260924_collapsed_bilateral_bulk.md"], "depends_on": ["I06", "I25"],
+      "external_inputs": ["Naber–Zhang Proposition 6.4", "Bishop–Gromov local doubling"],
+      "boundary": "No base noncollapse or diameter is imposed. Maximal rank is not derived from saturation; exceptional-set topology and global transition/inverse data are not controlled. This is not global realization."
+    },
+    {
+      "id": "I31", "lines": [1,2,3], "title": "KE orbifold compactification and marked smoothing realization", "status": "manuscript-theorem", "incremental_role": "allows bubbles rather than assuming second homotopy vanishes, with a separate smooth-type recovery criterion",
+      "scope": "Bounded diameter, actual projection floor and pointwise Ricci plus parameter-two deficit tending to zero; no fundamental or second homotopy restriction.",
+      "statement": "A subsequence has a negative KE orbifold limit with global orbifold complex structure and ASD smooth ALE blowups. A global QG smoothing and marked whole-filling Milnor matches give exact negative KE on the original smooth manifolds; Lee–Park obstruction vanishing is a sufficient smoothing supplier.",
+      "proof_paths": ["continuation/20260924_orbifold_smoothing_bridge.md"], "depends_on": ["I06", "I22"],
+      "external_inputs": ["Anderson bounded-Ricci orbifold compactness", "Jiang–Naber curvature energy", "Lee–Park QG smoothing criterion", "Aubin–Yau"],
+      "boundary": "Raw data prove compactification, not automatic QG smoothability or marked Milnor filling. Terminal ALE classification does not identify the whole filling. Nodal hypersurfaces are classical nonempty tests, not new examples."
+    },
+    {
+      "id": "I32", "lines": [1,2,3], "title": "Cycle deformation detects finite monodromy and exact realization", "status": "manuscript-theorem", "incremental_role": "supplies global transition information rather than assuming finite monodromy; Ricci composition gives a restricted Yau26 existence implication",
+      "scope": "Oriented surface bundles of fiber and base genus at least two, one uniformly thick conformal fiber, and small actual accumulated trace-free deformation around generators. Ricci corollary assumes a minimal Riemannian submersion.",
+      "statement": "Small cycle deformation forces one finite mapping-class image, then exact bidisk KE on the same smooth manifold. With hyperbolic base, 2 diam(B) sqrt(delta_-) < epsilon(f,iota) suffices; no total-space diameter or intrinsic fiber-curvature condition. Actual Dehn-twist sequences independently separate long-cycle and thin-fiber failures.",
+      "proof_paths": ["continuation/20260924_cycle_holonomy_realization.md", "continuation/20260924_ricci_monodromy_realization.md"],
+      "depends_on": ["C02"], "external_inputs": ["Mumford compactness and proper Teichmuller action", "Kerckhoff Nielsen realization", "Earle-Eells contractibility", "ONeill submersion identity"],
+      "boundary": "General near-Einstein inputs are not shown to admit the required fibration. No general Einstein nonexistence is inferred from the non-Kahler sharpness examples."
+    },
+    {
+      "id": "I33", "lines": [1,2], "title": "Full integrable-kernel repair and sharp cyclic scale loss", "status": "manuscript-theorem", "incremental_role": "extends the uniformly local repair analysis to genuine growing kernels in a specified product family",
+      "scope": "Products B_m x F of fixed hyperbolic surfaces with a degree-m cyclic cover in one factor; all tensor perturbations in harmonic gauge in a c m^-2 uniformly local C3alpha neighborhood.",
+      "statement": "The entire Teichmuller kernel integrates to an actual Einstein family with uniformly controlled projections and all reduced equations zero. Transverse C1alpha-to-C3alpha inverse and nonlinear repair cost C m^2. Actual metrics have residual O(m^-4) and distance at least c m^-2 from all normalized Einstein metrics and pullbacks.",
+      "proof_paths": ["continuation/20260924_integrable_kernel_cyclic_repair.md"],
+      "depends_on": ["I29", "C06"], "external_inputs": ["Classical product Einstein operator decomposition", "Hyperbolic surface uniformization and harmonic-map gauge"],
+      "boundary": "The topology already admits exact Einstein metrics. This quantifies repair and its nonuniformity; it is not an unrestricted low-mode theorem or Einstein nonexistence."
+    },
+    {
+      "id": "I34", "lines": [1,2,3], "title": "Actual harmonic/contact data force whole marked Milnor fillings", "status": "manuscript-theorem", "incremental_role": "replaces the assumed relative smooth matching in I31 by actual-form and whole-filling topology conditions",
+      "scope": "I31 orbifold sequence; actual self-dual harmonic representative zero-free on each whole core; either A1 limit and b2(core)=1 or rational-homology-ball core.",
+      "statement": "Actual alignment upgrades to C1beta convergence on regular collars, supplying canonical strong convex contact boundaries. Symplectic classification forces entire Milnor filling; rational-ball alternative forces Wahl type. Every actual boundary correction extends. Global QG smoothing then yields negative KE on original smooth type; non-Wahl rational-ball cores force a harmonic zero.",
+      "proof_paths": ["continuation/20260924_harmonic_contact_milnor_matching.md"],
+      "depends_on": ["I06", "I31"], "external_inputs": ["McDuff-Lisca and Golla-Starkston filling classification", "Etnyre-Ozbagci-Tosun spherical rational-ball theorem", "Bonahon lens-space mapping classes", "Lee-Park global smoothing criterion and Aubin-Yau"],
+      "boundary": "Near-saturation alone does not prove core zero-freeness, the prescribed core homology, or global smoothability. A terminal ALE bubble is never substituted for the whole filling."
+    },
+    {
+      "id": "I35", "lines": [1,2,3], "title": "Thin-monodromy alternative and irreducible exact realization", "status": "manuscript-theorem", "incremental_role": "removes I32 reference-fiber thickness using a global monodromy alternative",
+      "scope": "Oriented surface bundles of base and fiber genus at least two, small actual cycle deformation; Ricci application assumes minimal Riemannian submersion and 2 diam(B) sqrt(delta + positive base-curvature error) < mu_f.",
+      "statement": "Monodromy is finite or preserves one common short multicurve. Irreducibility forces exact bidisk KE on the original smooth bundle, without a fiber systole premise. Reducibility gives genuine multicurve subbundles and a bounded-cover decomposition retaining component representations and annular twists.",
+      "proof_paths": ["continuation/20260924_thin_monodromy_alternative.md"], "depends_on": ["I32", "C02", "C03"],
+      "external_inputs": ["Hyperbolic collars and quasiconformal length distortion", "Mumford compactness", "Nielsen realization and Earle-Eells", "ONeill horizontal Ricci identity"],
+      "boundary": "The global fibration is assumed, not supplied by arbitrary near-Einstein input. A common multicurve does not settle component Einstein matching or imply virtually multitwist monodromy."
+    },
+    {
+      "id": "I36", "lines": [1,2], "title": "Complete nonlinear slow energy and exact actual-gauge composition", "status": "manuscript-theorem", "incremental_role": "extends the slow-mode test to fixed-amplitude genuine hyperbolic families and identifies their functional deficit",
+      "scope": "Block metrics gamma+h_v(x) from a unit L2-speed horizontal path of actual hyperbolic fiber metrics; variable base curvature is retained. Cyclic tests use fixed-amplitude parameters on genuine degree-m covers.",
+      "statement": "Every Ricci block and normal acceleration enters an exact nonlinear energy identity; the slow equation is Delta v/2. Actual canonical classes give q_plus=q_minus=9 Dir(v)/(4V)+9r/2 on hyperbolic base, with exact variable-curvature extension. Fixed-amplitude cyclic metrics have delta Theta(m^-2), relative defect Theta(m^-4), total Ricci-error energy Theta(m^-3), and fixed separation from all fiber-preserving product outputs.",
+      "proof_paths": ["continuation/20260924_nonlinear_slow_moduli.md", "continuation/20260924_moduli_energy_gauge.md"], "depends_on": ["I33", "C03"],
+      "external_inputs": ["Horizontal hyperbolic curves", "Taubes canonical-class nonvanishing", "LeBrun classical Chern-Weil energy identity"],
+      "boundary": "This family already has exact Einstein outputs. Fixed-amplitude separation is not claimed from unrestricted Einstein metrics or arbitrary diffeomorphisms; I33 all-mode coverage retains its shrinking radius."
+    },
+    {
+      "id": "I37", "lines": [1,2,3], "title": "Actual harmonic-zero scale cost and defect-to-core matching", "status": "manuscript-theorem", "incremental_role": "replaces I34 qualitative whole-core zero-freeness by a raw total-defect versus metric-scale condition",
+      "scope": "Actual conformal monopole near-saturation supplies H; coordinate charts have fixed rescaled C1alpha bounds. Marked filling application retains I31 orbifold assumptions and I34 A1/Betti or rational-ball topology.",
+      "statement": "Actual harmonic amplitude error is at most 818(r+q)V. A zero in a controlled rho-ball costs at least c rho^4, so (r+q)V < c rho_core^4 implies whole-core nonvanishing, marked Milnor matching and, under separate global QG smoothing, negative KE on the same smooth manifold. Actual-class, period-preserving harmonic zero circles test why average form data alone are insufficient.",
+      "proof_paths": ["continuation/20260924_harmonic_zero_scale.md"], "depends_on": ["I06", "I31", "I34"],
+      "external_inputs": ["Local first-order Hodge elliptic estimates", "Taubes local zero-circle construction", "Auroux-Donaldson-Katzarkov compatible selfdual metrics", "Inherited symplectic filling and QG smoothing inputs"],
+      "boundary": "Raw near-Einstein input is not shown to force the core-scale ratio. The selected nonzero-Ricci zero-circle model has divergent pointwise error and positive liminf averaged r; it cannot refute automatic matching under complete PDE input. See continuation/20260926_actual_topological_cost.md section 6."
+    },
+    {
+      "id": "I38", "lines": [1], "title": "Actual weighted-spinor cost and signed Chern concentration", "status": "manuscript-theorem", "incremental_role": "a same-solution bridge and localization of the only remaining positive Chern cost",
+      "scope": "The inherited actual beta=2 conformal-monopole supply and small normalized kappa=r+D2/V, with its fixed class through all positive weights. The small-h consequence uses precisely the previously realized two-chirality-window family.",
+      "statement": "An exact constant-rescaling identity gives 8sqrt(6)K_A=Sigma+O(kappa V). Signed Chern transgression gives c2(S+)<=C(kappa+epsilon)V+C integral_{1/2<rho<1}|nabla_A Phi|^4. Thus E=o(h) on the specified family requires leading projective L2 energy outside the small-amplitude set and quartic energy at least cAh in a transition layer of volume and L2 energy o(Ah), forcing gradient blowup there.",
+      "proof_paths": ["continuation/20260926_actual_topological_cost.md"], "locators": ["Sections 1-4, especially Theorem 5 and Corollary 6"],
+      "depends_on": ["I06", "I08", "I09"],
+      "external_inputs": ["Classical weighted Seiberg-Witten equations and Weitzenboeck identity", "Chern-Weil transgression"],
+      "boundary": "This result was a necessary-concentration theorem. I40 subsequently excludes that concentration under the stated actual beta=2 square/window hypotheses and proves the linear lower bound. Its refinement to a radial/phase mixed term is attributed to the 27 September web note, not counted as an independent local discovery."
+    },
+    {
+      "id": "I39", "lines": [1], "title": "Actual cubic torsion and opposite-spinor weak Dirac bridge", "status": "manuscript-theorem", "incremental_role": "turns the proposed torsion section into an explicit additional actual equation",
+      "scope": "The same actual weighted positive spinors along a hypothetical beta->infinity, kappa->0 sequence, with a^2>=T+ for the inherited uniform Hessian budget. A separate local construction solves the actual positive-weight equations on shrinking Euclidean or fixed negative-hyperbolic balls, without global class supply or boundary matching.",
+      "statement": "The smooth cubic torsion obeys an exact opposite-spinor Dirac identity and a coupled actual curvature relation. Its Dirac residual vanishes in normalized Lq, q<2. New scalar tests strengthen its mean mass to |t|^2->128/81 in every normalized Lq, q<2, at the zero endpoint, and bound the relative volume of small torsion by C sqrt(eta). A globally regularized coupled Lichnerowicz identity identifies a net derivative cost tending to64/27 without presuming a small critical L2 residual.",
+      "proof_paths": ["continuation/20260926_actual_topological_cost.md", "continuation/20260927_mixed_current_and_signed_cores.md", "continuation/20260927_conformal_separation_and_zero_end.md", "continuation/20260927_covering_geometry_and_sharp_subfamilies.md"], "locators": ["Original section 5.1, Proposition 7; mixed-current sections 2-3 and 8; conformal/zero-end continuation sections 6-7 and 14-15; covering/sharp continuation section 7, conditional ALE theorem"],
+      "depends_on": ["I06", "I09"],
+      "external_inputs": ["Armstrong's exact torsion interpretation and compact obstruction", "Spin-c Clifford algebra and Chern-Weil identities"],
+      "boundary": "Local actual positive-charge cores remain possible. The latest continuation excludes matching through a global first-order hyperkahler ALE limit with trivial full positive background, finite first-order curvature energy and bounded physical derivative (or torsion/current). Exact Einstein is unnecessary; physical bounded Ricci suffices for first-order chirality. The first-order/global hypotheses are not supplied by averaged endpoint budgets. Bare signed degree is only the relative Euler obstruction for sections, not actual differential matching. No closed counterexample or unrestricted endpoint gap follows."
+    },
+    {
+      "id": "I40", "lines": [1], "title": "Linear actual-spinor cost and sharp small-h Einstein separation", "status": "manuscript-theorem", "incremental_role": "closes the prior concentration alternative and determines the realized family's optimal order",
+      "scope": "Closed oriented four-manifolds with actual conformal monopole supply fixed through all auxiliary weights. Beta=2, p>0, a^2>=T+, kappa=r+D2/V<=1 for the analytic theorem; metricwise p>=A and T+=A(1-h), 0<h<=1/3 for the all-metric conclusion.",
+      "statement": "The bounded KE curvature model annihilates the calibrated spinor, yielding Hessian-plus-quartic energy <=C(K+Theta+B). The square condition bounds B by K+Theta; weak Bianchi and polynomial divergence coercivity absorb K. Thus Sigma,p-T+<=C(rV+D2) and mixed critical energy <=CTheta. Every metric satisfies E+(U-1-h)+>=c h. The realized h->0 family has c1 h<=inf E<=4h/(1+h). A class-square shortfall y gives c h^2/(h+y); low-cost reverse surgery identifies coefficient4 only within its stated replacement class.",
+      "proof_paths": ["continuation/20260927_mixed_current_and_signed_cores.md"], "locators": ["Sections 4-5, Lemma2, Theorems3-4, Corollary5; square-cost extension section5.1; geometric replacement section6"],
+      "depends_on": ["I05", "I06", "I07", "I08", "I38"],
+      "external_inputs": ["Classical weighted Seiberg-Witten equations and scalar inequality", "Chern-Weil identities", "LeBrun's classical upper-bound gluing sequence"],
+      "boundary": "This determines order, not the optimal leading coefficient over all metrics or publication priority. I40 itself retains scalar variance in rV; I41 subsequently removes it by conformal transfer. Beta=2 model annihilation does not settle the zero-Weyl endpoint. Actual gauge suppliers remain explicit; no compactness or new supplier is presumed."
+    },
+    {
+      "id": "I41", "lines": [1], "title": "Scalar-free conformal separation and realized linear energy windows", "status": "manuscript-theorem", "incremental_role": "closes the stronger scalar-slack target and realizes new parameter exclusions",
+      "scope": "Actual positive conformal-monopole input with p>0; arbitrary smooth metrics and explicit square shortfall Y=(T-a^2)+. All-metric applications use metricwise p>=A, T=A(1-h). Necessary invariant-weight covering input is retained.",
+      "statement": "Negative Yamabe transfer of I40 proves Sigma<=C(P+D2+sqrt((P+D2)Y)) without scalar variance or a small-error premise. If Y=0, e(1+J/18)>=1+(1+c0)h+(2+c0)(p/A-1), J=4P/R. Chiral elimination strengthens the all-metric gap to J; an actual BF geography family lies outside the old quadratic strip but inside the new linear one. Conformal energy identities exactly characterize sub-unit minimizing sequences of E and J.",
+      "proof_paths": ["continuation/20260927_conformal_separation_and_zero_end.md", "continuation/20260927_local_geometry_and_variational_extrema.md"], "locators": ["Part I, Theorems 1-3 and Sections 3.1, 5; local-geometry continuation Section 1: exact positivity threshold, stationary equation and conditional minimizer exclusions"],
+      "depends_on": ["I40", "I10", "I04", "I17"],
+      "external_inputs": ["Negative Yamabe existence and uniqueness", "Conformal curvature identities", "Braungardt-Kotschick geography", "Ishida-LeBrun actual BF supply"],
+      "boundary": "The new BF family is an actual exclusion relative to the recorded old window, not a worldwide priority finding or a constructed near-Einstein upper sequence. Conformal control does not preserve pointwise Ricci error. The later positivity-parameter bridge does not prove attainment: any smooth minimizer with 0<inf E<1 would be negative csc and neither Bach-flat, Kahler nor Ricci-parallel. The balanced-family coefficient remains open."
+    },
+    {
+      "id": "I42", "lines": [1], "title": "Zero-end geometric coercivity, curvature-scale degeneration and Euler-density gap", "status": "manuscript-theorem", "incremental_role": "connects actual-field near saturation to local rigidity and collapse-independent exact Einstein regularity",
+      "scope": "Bounded self-dual near-closed forms and constant Weyl-model amplitude t in [0,1/4]. Local bounded-Ricci noncollapse; or bounded sectional curvature with no injectivity premise; or EXACT negative Einstein with bounded chi/V. Actual applications use p>0 and the same supplied form.",
+      "statement": "Local incompatibility controls the noncollapsed volume fraction. Exponential lifting and Liouville averaging control the curvature-regular fraction without a sheet bound, excluding bounded-curvature collapse. Cheeger-Tian plus Fubini proves D_beta/V>=epsilon(chi/V bound) for exact Einstein and beta>=4, without diameter, volume, noncollapse or class-square bounds. A budget chi/A<=B yields e<=G(h)-c(B) uniformly through h=1/4. Separately bounded-diameter pointwise inputs satisfy delta_-^2+(G(h)-e)+>=c(D) under their stated projection/square input.",
+      "proof_paths": ["continuation/20260927_conformal_separation_and_zero_end.md"], "locators": ["Sections 8-13, Theorems 6, 9-11 and Corollaries 7-8"],
+      "depends_on": ["I06", "I09"],
+      "external_inputs": ["Armstrong local ASD Einstein almost-Kaehler rigidity", "Cheeger-Naber harmonic-radius estimates", "Normal exponential cover geometry and Liouville measure", "Cheeger-Tian collapsed Einstein epsilon regularity"],
+      "boundary": "The curvature radius, not pointwise curvature everywhere, tends to zero in measure. I42 itself treated the Euler-density case only for exact Einstein; I45 now supplies the bounded-Ricci approximate extension. Neither gives an unrestricted integral endpoint gap, exact realization or fixed-ED decision."
+    },
+    {
+      "id": "I43", "lines": [1], "title": "Covering-volume coercivity and smoothing-to-endpoint separation", "status": "manuscript-theorem", "incremental_role": "turns local-cover geometry and smoothing into genuine approximate-input endpoint exclusions",
+      "scope": "Bounded Ricci and bounded actual self-dual forms, model parameter t in [0,1/4]. Fixed positive fraction of local universal covering volume; or complete uniformly equivalent bounded-sectional comparison metric; or pointwise negative near-Einstein input with uniformly small fixed-scale local full-curvature L2 energy. Specified elliptic metrics separately allow bounded Euler density.",
+      "statement": "Geodesic-flow averaging bounds the good-cover volume fraction by the actual deficit with no sheet count. Zero-end sequences must have local-cover volume tending to zero in upper mean. CFG plus bilipschitz path lifting and Li II smoothing give a diameter-free beta>=4 gap and upper-energy margin under local nonconcentration, including uniform local L^(2+eta) budgets. Naber-Zhang maximal local fibered rank provides another explicit covering input. Weber supplies a distinct elliptic-metric Euler-density extension.",
+      "proof_paths": ["continuation/20260927_covering_geometry_and_sharp_subfamilies.md"], "locators": ["Sections 1-4.1, especially Theorem 1 and the fixed-scale nonconcentration corollary"],
+      "depends_on": ["I06", "I09", "I42"],
+      "external_inputs": ["Cheeger-Fukaya-Gromov round metric theorem and genuine local covers", "Naber-Zhang Proposition 5.9", "Ye Li II smoothing with its stated compact adaptation", "Weber critical-metric epsilon regularity"],
+      "boundary": "I43's uniform small local L2 premise is stronger than averaged energy density; I45 removes it in the bounded-Ricci class using the original metric's CT covering regularity. Ricci flow in I43 supplies only a comparison metric; actual fields/errors stay in the original metric. No exact realization or fixed-ED decision follows."
+    },
+    {
+      "id": "I44", "lines": [1], "title": "Sharp surgery subfamilies and the chiral cost of compatible blowdown", "status": "manuscript-theorem", "incremental_role": "determines an all-metric infimum on a real subfamily and reduces the remaining sharpness interface to one chiral cap energy",
+      "scope": "The established actual class on M=X#k CPbar2#ell(S1xS3), X closed complex hyperbolic, A=c1^2(X), h=(k+4ell)/A. Cap results retain full marked collar compatibility. Exact infimum uses k=0 and 0<=h<=1/3.",
+      "statement": "The handle-only family has inf_all_metrics E=4h/(1+h), unattained for 0<h<1/3; k=o(Ah) gives asymptotic coefficient4. Signed signature cancellation gives E>=4h/(1+h)-2Cplus/[pi^2 A(1+h)^2], with no scalar cap cost. Every E/h->c<4 sequence forces cap cost at least pi^2(4-c)/2 per Ah. Full conformal CH collars have exactly computable positive minimum cap cost; round intrinsic boundary alone permits arbitrarily large compulsory cost via an explicit smooth ball metric.",
+      "proof_paths": ["continuation/20260927_covering_geometry_and_sharp_subfamilies.md", "continuation/20260927_local_geometry_and_variational_extrema.md", "continuation/20260927_full_core_cost_and_extremal_metrics.md", "continuation/20260927_signed_balance_and_conformal_flow.md"], "locators": ["Covering/sharp proof Sections 5-6.2; local-geometry continuation Sections 1-2; full-core continuation Section 4; signed-balance continuation Sections 2-4: genuine flow descent, actual Weyl-payment sharpness and full TT/conformal Hessian reduction"],
+      "depends_on": ["I03", "I06", "I17", "I40", "I41"],
+      "external_inputs": ["Classical monopole scalar bound", "LeBrun shrinking-core Ricci-energy construction", "Signature and relative Pontryagin transgression"],
+      "boundary": "The exact subfamily formula uses classical bounds/construction, not new gluing or a priority finding. Directional estimates give coefficient4 for Hermitian/conditional weak-form inputs. Low-level stationary balanced metrics have liminf delta_minus>=1/(4sqrt2); pointwise-near-Einstein csc competitors have relative quadratic gradient liminf>=1/3. The full Hessian is strictly positive on nonconstant pure conformal directions. I52 now controls vanishing-amplitude TT/Bianchi changes of selected recovery bases, not every reduced TT geometry. X06 forbids universally discarding the Weyl payment, not balanced coefficient4. I49 uses the budgets dynamically without attainment. Balanced all-metric coefficient4 remains open."
+    },
+    {
+      "id": "I45", "lines": [1], "title": "Bounded-Ricci Euler-density endpoint gap and improved entire pencil", "status": "manuscript-theorem", "incremental_role": "closes the approximate-input Euler-density bridge left open by I42-I43",
+      "scope": "Closed oriented smooth four-manifolds, |Ric|<=K, bounded smooth self-dual form, constant t in [0,1/4], and bounded Euler density. Small defect derives that density from chi/T+; actual p>=A and chi/A<=B is another source. The classical general-type surgery family supplies a uniform bound automatically by Noether's inequality.",
+      "statement": "avg Z_t>=c(K,L,Lambda0), without diameter, base noncollapse, a global Sobolev bound, Einsteinness, or all-center small energy. CT bounded-Ricci covering regularity, Euler/Fubini selection and Liouville averaging give the proof. The actual entire pencil improves to (1+b_a)(r+D_beta/V)>=c(beta-2)^2/beta^2; special square control removes b_a. For every metric and all surgery counts on the eligible minimal-general-type blowup/handle family, delta_-^2+D_beta/V>=c(beta-2)^2/beta^2 with universal c. Bounded-Ricci zero-end escape must have chi/T+->infinity and opposite-spinor Chern density diverging, not fixed topology.",
+      "proof_paths": ["continuation/20260927_local_geometry_and_variational_extrema.md"], "locators": ["Section 3, Theorem 4 and equations (3.2), (3.7)-(3.17); Section 5, characteristic-density consequences"],
+      "depends_on": ["I06", "I07", "I09", "I42", "I43"],
+      "external_inputs": ["Cheeger-Tian Theorem 0.8 and bounded-Ricci Remark 8.22, with actual covering charts", "Armstrong local ASD Einstein almost-Kahler exclusion", "Harmonic-coordinate compactness and Liouville measure", "Classical Noether inequality and surface characteristic identities"],
+      "boundary": "Pointwise Ricci remains part of the general geometric theorem; the pointwise defect supplies it in applications. Euler density may be derived from the stated topology, not from unrestricted integral Ricci. Constants are non-effective; improved decay is not claimed optimal. The pointwise family theorem is not an all-metric integral zero-end theorem or a general realization/priority claim."
+    },
+    {
+      "id": "I46", "lines": [1,3], "title": "Actual annular holonomy costs, marked-class counts and resonant local solutions", "status": "manuscript-theorem", "incremental_role": "removes the need for a first-order ALE expansion on specified annuli and identifies the exact local exceptions",
+      "scope": "Orientation-preserving C2-close flat quotient annuli, fixed finite family of free groups and actual restricted Spin-c lifts. Inherited bounded actual spinor and torsion/curvature budgets; bounded overlap for packing conclusions.",
+      "statement": "Two constant-norm parallel limits are possible exactly on odd cyclic 1/n(1,-2) with the two specified determinant classes. All other marked lifts pay a normalized calibration, determinant-energy or torsion-Dirac cost; critical compactness uses calibration uniform integrability and Vitali. A forbidden positive-spinor lift alone pays amplitude/curvature cost, giving a radius-independent density exclusion for amplitude-calibrated annuli. Both allowed lifts have genuine local weighted solutions on negative-hyperbolic quotient necks, with losses vanishing uniformly across arbitrary inner scales.",
+      "proof_paths": ["continuation/20260927_local_geometry_and_variational_extrema.md"], "locators": ["Section 4, equations (4.8)-(4.18) and both-lift construction"],
+      "depends_on": ["I39", "I41"],
+      "external_inputs": ["Flat Spin-c representations", "Abelian Coulomb gauge", "Interior Dirac estimates and Vitali convergence", "Dirichlet elliptic right inverses"],
+      "boundary": "The original averaged budgets do not themselves supply a marked annular decomposition or bounded overlap. Constants are not uniform over unbounded quotient orders. Actual local resonant solutions have an orbifold apex, not a smooth filling or a closed endpoint sequence. Neither a universal endpoint gap nor full global matching follows."
+    },
+    {
+      "id": "I47", "lines": [1,3], "title": "Sharp full-core cost of the actual resonant quotient and faithful determinant obstruction", "status": "manuscript-theorem", "incremental_role": "turns I46's genuine local exceptions into sharp global smooth-filling costs",
+      "scope": "Entire smooth compact oriented cores with outward conical collar of physical quotient 1/n(1,-2), odd n>=3; or lifted rescaled C2-close collars. Interior topology and quotient order unrestricted. Separate complete Ric>=0 ALE theorem with faithful flat line at infinity.",
+      "statement": "The infimum over all smooth exact-collar fillings of integral(Ric0^2+4Wplus^2+s^2/12) is 4pi^2(n-1)/n. The lower bound uses boundary integrality; classical scalar-flat Kahler ALE truncations match it on minimal resolutions. Approximate collars cost O(delta^2/n). Small-volume cores force raw actual-defect atoms and bounded-overlap density bounds. Nonpositive integer branches force pure Ricci atoms with no gauge or volume premise. A faithful flat determinant cannot extend over nontrivial smooth Ric>=0 ALE; hence a parallel positive actual spinor alone excludes resonant Ricci-flat ALE filling without first-order hypotheses.",
+      "proof_paths": ["continuation/20260927_full_core_cost_and_extremal_metrics.md", "continuation/20260927_signed_balance_and_conformal_flow.md"], "locators": ["Full-core Sections 1-2; signed-balance Section 6: actual terminal-core extraction from exact quadratic-critical metrics with noncollapse, bounded curvature energy and absolute vanishing errors"],
+      "depends_on": ["I46"],
+      "external_inputs": ["ALE Chern-Gauss-Bonnet and signature eta formulas", "Calderbank-Singer scalar-flat Kahler ALE resolutions", "Bishop-Gromov rigidity", "Moroianu parallel Spin-c curvature identity"],
+      "boundary": "This is a sharp filling/actual-cost connection using classical models, not a new ALE construction or priority claim. Intrinsic boundary geometry or an orbifold apex is not an entire smooth filling. An actual terminal ALE truncation can be such a filling, but is not thereby the full exceptional/handle surgery region. Cost does not uniformly control Euler number when n grows. Original weak input still does not supply the core decomposition."
+    },
+    {
+      "id": "I48", "lines": [1], "title": "Integral endpoint gaps in explicit elliptic curvature classes", "status": "manuscript-theorem", "incremental_role": "replaces pointwise Ricci by a local integral budget, or by a separate stationary/global-Sobolev compactness mechanism",
+      "scope": "Closed connected oriented four-manifolds and bounded smooth self-dual form. First version: bounded Euler density, |rough-Laplacian Ric|<=A|Rm||Ric|, and small k_p(r0)=r0^2 sup_x(avg_Br0 rho_minus^p)^(1/p), p>2; threshold depends on dimension and p, gap also on r0,A and remaining budgets. Alternative version: exact scalar-minus-four Q_theta-critical metrics, bounded theta, global Sobolev inequality with coefficient V^(-1/2), 0<T_plus<=T0 and chi<=chi0. These are different sufficient hypotheses, not automatic consequences of small L2 error.",
+      "statement": "The first version obtains local Ricci sup bounds and a zero-end gap via normalized Sobolev absorption, curvature bootstrap, Euler/Fubini selection, proper-ball/small-diameter dichotomy and covering averaging, without diameter or noncollapse premises. Escaping elliptic sequences must have normalized lower-Ricci concentration at every fixed scale. The alternative derives two-sided volume and curvature-energy bounds from small model error plus topology, then uses the actual elliptic critical equation and Anderson compactness to obtain an impossible regular-chart limit. In both versions avg Z_t>=c for 0<=t<=1/4; actual supply gives the corresponding endpoint pencil. On fixed topology, stationary endpoint escape must lose the specified global Sobolev control.",
+      "proof_paths": ["continuation/20260927_full_core_cost_and_extremal_metrics.md", "continuation/20260927_signed_balance_and_conformal_flow.md"], "locators": ["Full-core Section 3, equations (3.2)-(3.14); signed-balance Section 5, equations (5.1)-(5.6)"],
+      "depends_on": ["I06", "I09", "I45"],
+      "external_inputs": ["Dai-Wei-Zhang small integral lower-Ricci Sobolev/comparison theorem", "Tian-Viaclovsky local integration-by-parts bootstrap", "Cheeger-Tian bounded-Ricci covering regularity", "Catino quadratic-curvature Euler-Lagrange equation", "Anderson Theorem 1.1 and Proposition 3.5 for the stationary alternative"],
+      "boundary": "The local budget must be small, not just finite. The stationary alternative retains its global Sobolev and absolute topological bounds, not merely chi/T_plus. Neither stationarity nor these budgets follows from Yamabe normalization or minimizing-sequence status. The unrestricted integral endpoint and beta=2 balanced coefficient remain open."
+    },
+    {
+      "id": "I49", "lines": [1], "title": "Uniform finite conformal-flow time from vanishing integral gaps and two energy walls", "status": "manuscript-theorem", "incremental_role": "connects the established all-metric separation to an actual scalar-preserving evolution without assuming a minimizer",
+      "scope": "Closed scalar-minus-four initial metrics on the realized balanced small-h family; actual all-metric scalar/Ricci budgets and E>=c1 h, 0<c1<4; U=1+h+O(h^2) and initial b=P/(4V)<=h+o(h). Genuine initial metrics exist with E<=4h/(1+h)+h^2.",
+      "statement": "Conformal Ricci flow satisfies V'=-P. With y=V/(2pi^2 A), every smooth time obeys -y'>=max{4mu*y/(4-mu),4(1+h-y),4(y-U)/3}. Explicit integration gives limsup Tmax<=1+log(4/c1), although the integral defect gap vanishes. The separate actual SW/Cotton estimate gives relative E descent until pointwise exit or loss of smooth continuation, with no continuous choice of gauge class.",
+      "proof_paths": ["continuation/20260927_signed_balance_and_conformal_flow.md"], "locators": ["Sections 1-2, especially (1.5)-(1.10) and (2.2)-(2.6)"],
+      "depends_on": ["I40", "I41", "I44"],
+      "external_inputs": ["Lu-Qing-Zheng conformal Ricci flow short-time existence and volume identity", "Chern-Weil identities", "Classical scalar and Ricci monopole budgets"],
+      "boundary": "This is conformal Ricci flow, not normalized Ricci flow. The all-time comparison does not preserve or need initial pinching. It bounds maximal classical smooth time, not a specific singularity mechanism or sharp lifetime. The flow result neither settles balanced coefficient4 nor turns failure of a flow into an independent all-metrics nonexistence proof."
+    },
+    {
+      "id": "I50", "lines": [1], "title": "Actual relative determinant-charge tightness on marked whole cores", "status": "manuscript-theorem", "incremental_role": "connects the actual gauge line to whole-core boundary data without requiring a nonzero interior blow-up field",
+      "scope": "Whole smooth fillings of the physically marked odd cyclic boundary 1/n(1,-2), actual determinant character plus or minus one, and fixed-ratio uniformly bilipschitz cone collars. Endpoint application uses the actual weighted solution, a^2>=T+, beta>=4 and eta<=1; summed regions have bounded overlap. Torsion-index additivity separately requires disjoint cores and actual nonzero boundary sections.",
+      "statement": "The relative determinant square Q_i lies in Z-(n-1)/(2n), has absolute value at least1/3, and is bounded by C times actual determinant energy on the whole core/collar. Thus sum|Q_i|/V<=C sumVol_i/V+C Lambda(beta^-1+sqrt eta). The same relative charge is realized by harmonic curvature on the actual integral line; finite tree frontier errors vanish at this normalization, independently of depth. The sharp flat-comparison energy is2pi^2(n-1)/n. If disjoint small marked cores route all low-torsion regions, chi/A is bounded, and H=sum1/n_i, a surviving endpoint forces normalized quartic unit-torsion derivative energy at least c(H/V)^(-1/3).",
+      "proof_paths": ["continuation/20260927_marked_charge_and_first_order_flux.md"], "locators": ["Sections1-3 and5, especially (2.3), (2.6)-(2.8), (3.2)-(3.5) and (5.7)-(5.8)"],
+      "depends_on": ["I39", "I41", "I46", "I47"],
+      "external_inputs": ["Relative Chern-Weil and abelian Chern-Simons transgression", "Hodge theory on spherical quotients", "Calderbank-Singer Theorem A for comparison sharpness"],
+      "boundary": "The flat connection is a comparison template, not an actual positive-weight SW collar. Neither the marked decomposition nor quartic direction control follows from original weak input. Determinant charge does not bound torsion c2: canonical resolutions have unbounded opposite index, and X07 gives actual trivial-boundary local cores with determinant charge0 and torsion index d^2. No unrestricted endpoint or general defect-decomposition theorem is claimed."
+    },
+    {
+      "id": "I51", "lines": [1], "title": "Same-solution full-pencil decomposition and quadratic integral endpoint gap", "status": "manuscript-theorem", "incremental_role": "separates the actual Weyl-fitting and Ricci error scales to strengthen the unrestricted all-metric parameter theorem and upper energy wall",
+      "scope": "Closed oriented smooth four-metrics with a fixed actual Spin-c class solvable throughout the input conformal class and p>0; all finite beta>=2. Negative-square cost is retained unless a^2>=T+. No pointwise Ricci, Euler-density, diameter, noncollapse, Sobolev or stationary hypothesis.",
+      "statement": "After a controlled scalar-minus-four reduction, every constant-weight actual solution satisfies an exact nonnegative decomposition of D_beta into harmonic-curvature, current, full Weyl-square and amplitude terms. It gives (1+b_a)(r+D_beta/(beta V))>=c(beta-2)^2/beta^4; under a^2>=T+ the prefactor disappears. With P_t=tD_(1/t), the compactified gap is c t^2(1-2t)^2. For the existing actual upper-wall inputs, E+(G(h)-e)_+>=c t_*(h)^2(1-2t_*(h))^2, with quadratic margin at h=1/4.",
+      "proof_paths": ["continuation/20260927_constant_weight_and_global_fit.md"], "locators": ["Sections 1-2.4, especially (2.9a), (2.15), (2.20)-(2.21)"],
+      "depends_on": ["I05", "I07", "I09", "I41", "I47"],
+      "external_inputs": ["Negative Yamabe representative", "Actual ordinary SW solvability and Weitzenbock identities", "Hodge and Chern-Weil identities"],
+      "boundary": "The beta-two decomposition is inherited from I47; the full-parameter decomposition and anisotropic use are the increment. Maxwell control is a Hodge graph norm, not covariant W1,2. The quadratic rate is not shown optimal and remains degenerate at zero; O10 and O11 are not solved. No new global supplier, bubble decomposition or publication-priority claim is asserted."
+    },
+    {
+      "id": "I52", "lines": [1], "title": "Uniform first-order stability of actual complex-hyperbolic shrinking surgery", "status": "manuscript-theorem", "incremental_role": "closes the nonlinear Taylor-control step on specified degenerating recovery bases and characterizes first-order equality within explicit gauges",
+      "scope": "The actual balanced CH blowup/handle family, Q=Ah, h->0 and U=1+h+O(h^2). Recovery bases are further selected with marked donor cores, controlled cutoff annuli and a CH-close exterior. Perturbations either are exactly TT followed by negative Yamabe normalization, or have scalar-minus-four endpoints and exact Bianchi gauge. Any C0 amplitude a->0 is allowed, with no derivative bounds or energy premise. Constant-scalar endpoints may instead satisfy a*||delta-star beta k||_2=o(sqrt Q). General raw inputs additionally require ||Ds0[k]||_2=o(sqrt Q) before final Yamabe normalization.",
+      "statement": "A classical full-tensor CH gap and Q-scale localization give a uniform graph estimate. Exact identified Taylor expansion and conformal energy comparison imply P_final>=P0+DP0[k]+c||A0(k)||_2^2-C a^2 Q, hence E_final/h>=4-C'a^2-o(1). Within vanishing-amplitude exact gauges, E/h->4 iff ||A0(k)||_2^2=o(Q), forcing the raw second-derivative graph norm to be o(sqrt Q). The approximate-gauge version retains an explicit error C(aG sqrt Q+a^2 G^2). Exact arbitrary-background shrinking limits and a nonzero actual diffuse-TT family provide construction-side checks.",
+      "proof_paths": ["continuation/20260927_endpoint_covariance_and_surgery_limits.md", "continuation/20260928_marked_centers_and_harmonic_slices.md"],
+      "locators": ["Sections 3-4, especially Theorem 9, Corollaries 10-11 and equations (4.29a), (4.35), (4.38)-(4.44)", "Moving-center continuation, Theorem 3 and Corollary 4: compact-configuration uniformity and conformal/diffeomorphism saturation"],
+      "depends_on": ["I03", "I40", "I41", "I44"],
+      "external_inputs": ["LeBrun's Burns/Schwarzschild shrinking surgery", "Negative Yamabe existence and uniqueness", "Koiso identity and Wu's full-tensor complex-hyperbolic Einstein-operator gap", "Bundle-valued Weitzenbock formula", "Bach conformal covariance and classical Chern-Weil budgets"],
+      "boundary": "This is not an all-metric coefficient theorem, a uniform gauge-fixing result, or a fixed-amplitude classification. Compact moving-center families and conformal/diffeomorphism saturation retain the inequality, but do not parametrize arbitrary competitors. X09 now disproves automatic uniformly bilipschitz exact Bianchi reduction at some selected fixed bases, even with a small actual gauge residual; those examples still satisfy the approximate criterion. The actual CH exterior and extra recovery diagonal are essential. O10 and O11 remain open. The catalogue records a written proof, not independent publication certification or worldwide priority."
+    },
+    {
+      "id": "I53", "lines": [1], "title": "Matched critical-energy caps and gauge-free first-order stability", "status": "manuscript-theorem", "incremental_role": "removes the gauge and scalar assumptions from the lower first-order bound near selected actual recovery bases and computes the infimum in every shrinking C0 tube",
+      "scope": "Small-C0, small-full-curvature-energy smooth metrics on a marked Euclidean annulus; application to the actual balanced CH blowup/handle family. Long marked annuli enclose individual blowups without handles. More generally o(Q) cores may be unstructured, with mean-square annular amplitudes o(Q) and Lh tending to infinity.",
+      "statement": "A smooth ball cap matches the original outer collar exactly and has full curvature energy <=C(E_annulus+a^2), without input derivative bounds. Localized DeTurck continuation, frozen collars and a critical-energy estimate prove the cap. Euler energy bounds and partial signature subtraction then give E>=4h/(1+h)-C(r/A+1/L+sum_i,nu a_i,nu^2/(AL)). Thus arbitrary shrinking C0 tubes around preselected actual recoveries, also modulo orientation-preserving diffeomorphisms, have inf E/h tending to4. A fixed sub-four deficit forces positive C0 distance from those orbits.",
+      "proof_paths": ["continuation/20260928_intrinsic_caps_and_stability.md"],
+      "locators": ["Theorem 1: matched cap; Theorem 2 and (3.8)-(3.8b): quantitative partial blowdown; Corollary 3 and (3.9)-(3.11): arbitrary C0 tubes and separation"],
+      "depends_on": ["I03", "I44", "I52"],
+      "external_inputs": ["Classical DeTurck parabolic reduction and interior estimates", "Yang localized Ricci curvature evolution, Section 9 equation (9.7)", "Schnuerer-Schulze-Simon Theorem 4.4 for an independent frozen-collar check", "Chern-Weil and signature identities", "Inherited actual LeBrun surgery and monopole budgets"],
+      "boundary": "This does not supply the annular structure for arbitrary near-minimizers or compute the unrestricted O11 infimum. No automatic conformal saturation of the new arbitrary-C0 neighborhood is asserted. I52's exact-slice positive quadratic remainder remains stronger within its own scope. The cap need not solve an Einstein or gauge equation. O10 is unchanged; no global originality certification is claimed."
+    },
+    {
+      "id": "I54", "lines": [1], "title": "Relative surgery costs and actual nonintegrability budgets", "status": "manuscript-theorem", "incremental_role": "narrows the actual finite-cell route to a lower balanced coefficient beyond shrinking neighborhoods; includes classical-identity consequences rather than a new general supplier",
+      "scope": "Smooth standard blowup/handle cells with a fully marked complex-hyperbolic outer collar; conformal Kahler and almost-Kahler bounds use the stated ordinary-blowup relative Chern class. Biaxial and diagonal triaxial specializations have a smooth ordinary bolt and radial CH collar.",
+      "statement": "A fixed cell with q=k+4ell gives coefficient J/(2pi^2q) on sparse CH-cover implantations, with an 8-blowup/7-handle cell preserving the original balanced family. Conformal Kahler fillings cost strictly more than 8pi^2k, hence so do all biaxial cells. An exact finite-amplitude inequality excludes specified genuinely nonconformal triaxial cores. All conformal almost-Kahler fillings in the specified relative class satisfy an exact scalar/Weyl/nonintegrability remainder balance; a subthreshold cell requires N>4pi sum t_i and the sharper displayed interval. Every cell satisfies the general volume-sensitive budget, and a nontrivial full fixed-collar cell has no smooth unrestricted stationary point. A separate actual high-energy triaxial descent shows that symmetrization is not globally monotone.",
+      "proof_paths": ["continuation/20260928_relative_cell_cost.md"],
+      "locators": ["Section 2: same-family implantation; Theorem 1 and Section 5: conformal and biaxial bounds; Section 6: actual triaxial comparisons and coupled almost-Kahler balance; Section 7: general cell bound; Proposition 2: nonattainment"],
+      "depends_on": ["I03", "I44"],
+      "external_inputs": ["Relative Chern-Weil and Kahler identities", "Classical almost-Kahler Chern and Weitzenbock identities", "LeBrun signed curvature estimate and actual blowup/handle supply", "Biaxial conformal Kahler structure", "Quadratic Ricci functional gradient", "Aronszajn system unique continuation and DeTurck-Kazdan Einstein analyticity"],
+      "boundary": "No sub-four cell or all-metric lower bound is constructed. Nonattainment is not nonexistence of subthreshold metrics. Formal curvature moments and a high-energy descending direction do not realize a lower balanced coefficient. The relative Chern class and full collar are substantive hypotheses. The general almost-Kahler remainders are not shown to absorb the negative window. O10 and O11 remain open; no priority claim is made."
+    },
+    {
+      "id": "I55", "lines": [1], "title": "Localized first coefficient and whole-region equality energy", "status": "manuscript-theorem", "incremental_role": "extends the coefficient-four range to arbitrary interiors and identifies an intrinsic sufficient bulk budget",
+      "scope": "Known closed surgery topology T+=A-Q; a sufficiently large locally complex-hyperbolic region, or the precise exterior moments/bulk curvature selection in the proof. No pointwise interior control, core classification, smooth interface or symmetry is required.",
+      "statement": "With CH complement loss D=o(Q), liminf E/h>=4 and equality holds exactly when whole complementary volume, scalar-square and W-plus energy are o(Q). The entire trace-free Ricci cost is 8pi^2Q+o(Q). For general exteriors with the specified Ricci and relative-cap budgets, E>=E_out+4h+v/(a+v)+o(h). A fixed improvement forces a Q-scale background change. The complete radial moment also gives J/(2pi^2)>4 for every smooth one-bolt diagonal almost-Kahler cell with the full CH collar; arbitrary conformal candidates satisfy the exact squared-residual decomposition and its necessary gradient window. A separate finite-amplitude exclusion covers the stated radial/conformal neighborhood.",
+      "proof_paths": ["continuation/20260928_localization_and_coupled_filling.md"],
+      "locators": ["Theorems 1-3; Sections 3.1 and 4.1; Propositions 4-6"],
+      "depends_on": ["I44", "I54"],
+      "external_inputs": ["Classical closed Chern-Weil and signature identities", "Weighted Cauchy inequality with its exact remainder", "LeBrun Theorem 4.3", "Canonical almost-Kahler Chern form"],
+      "boundary": "No automatic selection of the required regions from arbitrary near-minimizers is proved. This is not the unrestricted O11 infimum or a Gamma-limit. The profile exclusions retain their stated hypotheses. Numerical non-discovery is not a proof. O10 remains open.",
+      "verification": "verification/20260928_localization_and_global_flux.md"
+    },
+    {
+      "id": "I56", "lines": [1], "title": "Nondegenerate actual endpoint at every finite topological density", "status": "manuscript-theorem", "incremental_role": "removes pointwise Ricci and other geometric controls at arbitrary fixed finite density; combines alternative Chern and positive-potential proofs with an original-defect rate",
+      "scope": "Closed oriented four-manifolds with the original actual conformal monopole supply, p>=A>0, a^2>=T_+, and chi/A<=B for any fixed 0<=B<infinity.",
+      "statement": "For all admissible metrics and beta>=2, kappa_beta=r+D_beta/V >= c0(1+B)^(-N)(beta-2)^2/beta^2, with universal positive c0 and finite nonoptimal N. Strong actual current, same-bundle resolvent and the fifth determinant line give two independent endpoint contradictions. The full primitive error is <=C(kappa_beta+beta^(-2))^(gamma/16), implying x>=c(1+average|W^-|^2)^(-24/gamma).",
+      "proof_paths": ["paper/sections/finite_density_endpoint.tex", "paper/sections/web_density_and_geometric_supplements.tex", "paper/sections/web_primitive_rate.tex", "archive/sources/20261001-web-increment/Line1_Web_Increment_20260929_30/research/C/O10_All_Finite_Density.md", "archive/sources/20261001-web-increment/Line1_Web_Increment_20260929_30/research/D/O10_Alternative_Global.md"],
+      "locators": ["thm:finite-density-endpoint", "lem:rank-one-logarithmic-resolvent", "cor:finite-density-polynomial", "prop:web-primitive-rate"],
+      "depends_on": ["I39", "I41", "I51"],
+      "boundary": "The constant depends on density. The target without a bound on chi/A remains O10. This theorem uses the actual monopole system and does not prove the unrestricted arbitrary-form version. The endpoint D_beta/V differs from D_beta/(beta V) in the precursor."
+    },
+    {
+      "id": "I57", "lines": [1], "title": "Critical variational selection and simultaneous-field first-order cost", "status": "manuscript-theorem", "incremental_role": "extends near-stationary and near-stable selection to critical integral test classes and isolates the remaining signed cost on the same actual solutions",
+      "scope": "The original balanced surgery family, Q=Ah=o(A), negative Yamabe representatives selected with sufficiently small genuine P excess; curvature-adaptive admissible tensor tests.",
+      "statement": "A minimizing sequence can satisfy DP[H]=o(Q) and D2P[H,H]>=-o(Q) uniformly for the stated critical test class. Curvature-adaptive resolvents preserve concentration-scale tests. The simultaneous sign-family identity writes P-8pi^2Q as a nonnegative remainder minus averaged actual spinor kinetic energy; its exceptional-class Walsh budget has no exponential loss.",
+      "proof_paths": ["paper/sections/variational_selection_and_global_cost.tex", "paper/sections/web_variational_supplements.tex", "archive/sources/20261001-web-increment/Line1_Web_Increment_20260929_30/research/D/O11_Global_Sharp.md"],
+      "locators": ["sec:variational-selection-global-cost", "sec:web-threshold-variation", "sec:web-curvature-compensation", "sec:web-codazzi-scope"],
+      "depends_on": ["I40", "I41", "I44", "I55"],
+      "boundary": "Admissible near-stationarity is not a strong critical-metric equation. The signed kinetic term is not yet dominated to o(Q); no optimal balanced coefficient or sub-four recovery is asserted. Anderson ideal minimizers require their own sequence and end/topology information."
+    },
+    {
+      "id": "I58", "lines": [1], "title": "Complete ordinary-monopole budget on the complex-hyperbolic surgery family", "status": "manuscript-theorem", "incremental_role": "classical scalar-recovery corollary completing the ordinary-family comparison, not a new gauge supply mechanism",
+      "scope": "The ordinary family X#k CPbar^2#ell(S1xS3), with X a closed complex-hyperbolic surface and the specified b_+>=2 monopole supply; all ordinary monopole classes on this manifold.",
+      "statement": "The complete convex-hull and positive-plane budgets both equal A=c1^2(X). Supplied sign classes give the lower bound; one common scalar-recovery sequence bounds all actual monopole projections from above.",
+      "proof_paths": ["paper/sections/variational_selection_and_global_cost.tex", "archive/sources/20261001-web-increment/Line1_Web_Increment_20260929_30/research/A/03_O11_Classical_Budget.md"],
+      "depends_on": ["I03", "I44"], "external_inputs": ["LeBrun monopole scalar inequality and classical shrinking-surgery recovery"],
+      "boundary": "The distinct BF connected-sum families are not identified with this ordinary family. Their complete monopole-class budget remains a separate comparison question. This budget alone does not supply the sharper joint scalar/Weyl first-order lower bound."
+    },
+    {
+      "id": "C01", "lines": [2], "title": "Fixed marked A1/log-Weyl pointwise approximation", "status": "manuscript-theorem", "incremental_role": "inherited core construction",
+      "scope": "The fixed Einstein orbifold, actual A1 nodes, orientations, EH fillings and boundary markings specified by the theorem.",
+      "statement": "Core correction, a shared radial gauge, logarithmic Weyl matching and three-region estimates give pointwise normalized Ricci defect <=C/|log a| on the fixed smooth resolution.",
+      "proof_paths": ["mathematics/current/skill/research/20260916_construction.tex", "mathematics/current/skill/research/20260912.tex"],
+      "locators": ["thm:A1", "FND:A1construction", "FND:logoperator"], "depends_on": [],
+      "boundary": "All-rank ADE, type-T and Wahl variants have separate hypotheses. Exact desingularization obstacles do not contradict this approximation theorem."
+    },
+    {
+      "id": "C02", "lines": [2,3], "title": "Fixed Dehn-twist bundle ED and corrected collars", "status": "manuscript-theorem", "incremental_role": "inherited second independent construction mechanism",
+      "scope": "The specified fixed surface-bundle topology and monodromy; distinct slow-interpolation, balanced and tensor-corrected families.",
+      "statement": "Complete Ricci-block estimates give pointwise approximation. Double-collar balance and three scalar equations produce a cubic residual scale, with genuine global TT and conformal tests.",
+      "proof_paths": ["mathematics/current/skill/research/20260916_construction.tex", "mathematics/current/skill/research/20260912.tex"],
+      "locators": ["sec:ED-object through sec:ED-inverse", "BUN:chapter"], "depends_on": [],
+      "boundary": "Exact volume/submersion assertions for one family do not automatically persist after correction."
+    },
+    {
+      "id": "C03", "lines": [2,3], "title": "Fixed closed integer-shear product-block assemblies", "status": "manuscript-theorem", "incremental_role": "new closed input mechanism beyond the original A1 and ED constructions",
+      "scope": "Actual fixed boundary maps (phi,x)->(-phi+u(x),f(x)) on compatible surface-product blocks, with the detailed metric matching.",
+      "statement": "Separate slow mapping-class collars and collapsed integer-shear throats give normalized negative pointwise Ricci defect tending to zero on a fixed closed smooth assembly, with bounded curvature.",
+      "proof_paths": ["mathematics/current/round11_closed_gluing.md", "mathematics/current/round11_graph_topology.md"],
+      "depends_on": [], "boundary": "Some special assemblies reproduce older bundles; the actual nonbundle theorem requires its additional monodromy condition."
+    },
+    {
+      "id": "C04", "lines": [2,3], "title": "Complete nonlinear double-cylinder Einstein family", "status": "manuscript-theorem", "incremental_role": "exact local-to-complete realization in its noncompact model",
+      "scope": "The stated bounded angularly invariant Jacobi directions, weighted function spaces and complete double-cylinder asymptotics.",
+      "statement": "A nonlinear exact Einstein family integrates the retained directions; the charge law keeps real end response and excludes retaining a nonzero-charge core unchanged inside a closed Einstein metric.",
+      "proof_paths": ["mathematics/current/round3_construction.md", "mathematics/current/round4_construction.md", "mathematics/current/round4_exact_core.md"],
+      "depends_on": [], "boundary": "Eight integrated directions are not eight inequivalent global moduli. This family does not have the conformal compactification assumed by the free-circle boundary theorem."
+    },
+    {
+      "id": "C05", "lines": [2], "title": "All-mode linear-size ED repair exclusion", "status": "manuscript-theorem", "incremental_role": "strengthening of the earlier restricted cubic obstruction",
+      "scope": "Every smooth tensor perturbation in the stated c epsilon geometric C2 ball around the balanced ED metrics, with fixed sufficiently small radius constant.",
+      "statement": "The defect is bounded below by c1 epsilon^3; the proof retains full weighted kernel/complement response and has no imposed symmetry or support restriction.",
+      "proof_paths": ["mathematics/current/round5_construction.md", "mathematics/current/round6_weighted_inverse.md", "mathematics/current/round6_construction.md"],
+      "depends_on": ["C02"], "boundary": "Distant Einstein metrics on ED remain unexcluded."
+    },
+    {
+      "id": "C06", "lines": [2,3], "title": "Optimized pure shear and all-tensor repair barrier", "status": "manuscript-theorem", "incremental_role": "sharper geometry and larger relative repair information on existing smooth types",
+      "scope": "Identity mapping-class pure-shear subfamily, with the actual Maxwell profile and closed exterior; every tensor perturbation in the specified O(ell) C2 neighborhood.",
+      "statement": "Pointwise residual is Theta(ell^2); exact scalar normalization retains controlled volume/energy asymptotics. An all-sign Einstein repair is excluded from that shrinking neighborhood.",
+      "proof_paths": ["mathematics/current/round14_shear.md", "mathematics/current/round14_global.md", "mathematics/current/round14_repair_radius.md"],
+      "depends_on": ["C03"], "boundary": "This does not improve arbitrary mapping-class transition rates or exclude distant metrics."
+    },
+    {
+      "id": "C07", "lines": [2,3], "title": "Actual neck/exterior response and integral balance", "status": "manuscript-theorem", "incremental_role": "coherent matching analysis and realizable balanced data, not a completed Einstein correction",
+      "scope": "The stated product collars and marked exteriors, retained TT/waist/Maxwell sectors, and actual integral shear classes.",
+      "statement": "Exact response matrices and global TT compatibility are derived. Rank-two branched-cover and rank-three minimal-surface data realize balance, while waist and nonlinear end conditions remain.",
+      "proof_paths": ["mathematics/current/round13_neck_kernel.md", "mathematics/current/round14_collar_complement.md", "mathematics/current/round15_boundary_response.md", "mathematics/current/round15_global.md", "mathematics/current/round15_shear_balance.md", "mathematics/current/round16_construction.md", "mathematics/current/round16_minimal_balance.md"],
+      "depends_on": ["C03", "C06"], "boundary": "Eliminating one projection is not solving all constraints; positive-degree rank-two balance cannot be generalized to all higher-rank data."
+    },
+    {
+      "id": "C08", "lines": [2], "title": "Full product channels and finite-monodromy exact local realization", "status": "manuscript-theorem", "incremental_role": "reusable operator description and a completed restricted existence/classification case",
+      "scope": "Closed hyperbolic surface products and the stated finite-monodromy quotients; the nonlinear theorem is at each fixed quotient geometry.",
+      "statement": "All slow Teichmuller-valued channels are retained and the complement is controlled. The integrable true kernel describes every nearby normalized Einstein metric as a quotient of deformed factors.",
+      "proof_paths": ["mathematics/current/round17_product_operator.md", "mathematics/current/round18_twisted_operator.md"],
+      "depends_on": [], "external_inputs": ["Classical Einstein product spectra and integrable-kernel deformation theory"],
+      "boundary": "The fixed-geometry nonlinear constants are not uniform in degeneration; infinite monodromy and shear are not included by descent."
+    },
+    {
+      "id": "C09", "lines": [2,3], "title": "Faithful Torelli target and adapted signature cost", "status": "manuscript-theorem", "incremental_role": "actual new test object and restricted quantitative comparison, not a new input metric",
+      "scope": "A faithful genus-six Torelli bundle over genus two with actual area-preserving lift; the signature inequality assumes the specified minimal-fibre constant-curvature submersion geometry.",
+      "statement": "The target has chi=20, tau=0 and faithful monodromy not factoring through a free group after finite base cover. Adapted metrics with nonzero signature have a linear Ricci-defect/volume cost.",
+      "proof_paths": ["mathematics/current/round20_construction.md"], "depends_on": [],
+      "boundary": "Neither pointwise approximation nor unrestricted Einstein existence on the target is proved. Zero signature does not supply a free-group factorization."
+    },
+    {
+      "id": "C10", "lines": [2,3], "title": "Marked two-pole fillings and normalized GH separation", "status": "manuscript-theorem", "incremental_role": "specific application and independent verification of inherited A1 mechanism",
+      "scope": "Actual marked two-pole A1 gluing and the specified compact hyperbolic A1 orbifolds; exact comparison metrics have the declared normalization.",
+      "statement": "The smooth filling types include S2 x S2 and CP2#CP2. Approximate families approach the indicated orbifolds while remaining separated from normalized smooth exact Einstein metrics in GH distance.",
+      "proof_paths": ["mathematics/current/skill/research/20260916_construction.tex"],
+      "locators": ["sec:two-pole-fillings", "lem:hyperbolic-A1", "cor:both-sign-GH"], "depends_on": ["C01"],
+      "boundary": "No arbitrary Einstein nonexistence on the fillings follows. S2 x S2 already has an exact product Einstein metric."
+    },
+    {
+      "id": "C11", "lines": [2,3], "title": "Actual two-ended approximate connectors and bundle doubles", "status": "manuscript-theorem", "incremental_role": "explicit noncompact input and exact/approximate separation",
+      "scope": "Complete R x S1 x Sigma_g metrics with stated conformal ends, and the stated fixed nontrivial circle-bundle doubles.",
+      "statement": "An exact formula makes the full maximum Ricci residual tend to zero; doubling handles fixed nonzero bundle degree under its external cusp-existence input.",
+      "proof_paths": ["mathematics/current/round10_kottler.md", "mathematics/current/round10_cusp_doubling.md", "mathematics/current/round10_optical.md", "mathematics/current/round10_connector.md"],
+      "depends_on": [], "boundary": "These are not closed manifolds and their cross-sections are not the flat T3 in the unresolved graph connector."
+    },
+    {
+      "id": "G01", "lines": [3], "title": "Closed shear topology and virtual Kahler obstruction", "status": "manuscript-theorem", "incremental_role": "global topology of the actual new input objects",
+      "scope": "Specified nonzero-shear self-gluings; non-surface-bundle conclusion additionally assumes infinite mapping-class order.",
+      "statement": "The objects are aspherical, have chi=4q(g-1) and tau=0, and have no Kahler finite cover. The specified infinite-order cases are not oriented surface bundles.",
+      "proof_paths": ["mathematics/current/round11_graph_topology.md", "mathematics/current/round11_kahler.md"],
+      "depends_on": ["C03"], "boundary": "These conclusions are not transferred to every arbitrary multiblock assembly without checking its group hypotheses."
+    },
+    {
+      "id": "G02", "lines": [1,3], "title": "Complete ordinary basic sets and separate monopole values", "status": "manuscript-theorem", "incremental_role": "all-ordinary-class calculation on specified actual closed objects",
+      "scope": "The stated shear self-gluings and orientations; ordinary basic first-Chern classes modulo torsion conventions.",
+      "statement": "The ordinary basic sets are the indicated two canonical signs in each orientation, with alpha^2=beta^2=2chi established separately.",
+      "proof_paths": ["mathematics/current/round12_global.md"], "depends_on": ["C03", "G01"],
+      "boundary": "The set of ordinary first-Chern classes does not enumerate every Spin-c structure with torsion or every possible monopole/refined invariant."
+    },
+    {
+      "id": "G03", "lines": [2,3], "title": "Sharp variational values and distinct attainment questions", "status": "manuscript-theorem", "incremental_role": "inherited ED theory and extension to new shear smooth objects",
+      "scope": "The specified ED and closed shear families, with matching actual monopole lower bounds and constructive upper bounds.",
+      "statement": "Yamabe/minimal-volume and scalar/Ricci/full-curvature infima are determined; scalar/Ricci nonattainment is separated from full-curvature attainment, the latter equivalent to Einstein existence.",
+      "proof_paths": ["mathematics/current/skill/research/20260916_global.tex", "mathematics/current/round11_variational.md"],
+      "locators": ["sec:bundle-values", "eq:bundle-attainment-equivalence"], "depends_on": ["C02", "C03", "G01"],
+      "boundary": "Several known nonattained minima do not imply nonattainment of a different functional."
+    },
+    {
+      "id": "G04", "lines": [3], "title": "No local Killing fields for any shear Einstein output", "status": "manuscript-theorem", "incremental_role": "actual object application of global isometry theory",
+      "scope": "Specified self-gluings with the proved group and irreducibility hypotheses, including finite covers.",
+      "statement": "Every hypothetical Einstein metric lacks any nonzero local Killing germ; positive and Ricci-flat outputs are separately excluded in this family.",
+      "proof_paths": ["mathematics/current/round12_symmetry.md"], "depends_on": ["G01"],
+      "external_inputs": ["Farb–Weinberger", "Einstein analyticity and Nomizu extension"],
+      "boundary": "Small nonsymmetric repairs and distant negative Einstein metrics remain possible."
+    },
+    {
+      "id": "G05", "lines": [2,3], "title": "Normalized volume components and continuous repair exclusion", "status": "manuscript-theorem", "incremental_role": "global moduli restriction beyond a symmetric ansatz",
+      "scope": "Specified shear manifolds and the actual fixed-volume approximate family; continuous exact branches or a single normalized Einstein component.",
+      "statement": "Normalized Einstein volume is constant on each connected component and exceeds the sharp lower input volume; each component has a positive relative C0 separation, so a vanishing-size repair sequence must visit infinitely many components with accumulating volumes.",
+      "proof_paths": ["mathematics/current/round13_global.md"], "depends_on": ["G03"],
+      "boundary": "Accumulation of infinitely many components is not excluded by this argument."
+    },
+    {
+      "id": "G06", "lines": [1,3], "title": "Irreducible Hilbert modular core exclusion", "status": "manuscript-theorem", "incremental_role": "actual topology restriction on a potential exact limit",
+      "scope": "Specified graph-of-surface-product groups and actual compact cores of noncompact irreducible factor-orientation-preserving product quotients.",
+      "statement": "A Sol-group/Bass–Serre argument and compactly supported intersection pairing prevent core embedding. Near-sharp exact limits in the stated setting must therefore be reducible.",
+      "proof_paths": ["mathematics/current/round16_global.md"], "depends_on": ["G01", "I11"],
+      "boundary": "No automatic injection of the limit group is assumed. Reducible product limits and other-volume exact metrics remain."
+    },
+    {
+      "id": "G07", "lines": [3], "title": "Exact free-circle conformal-boundary connectedness", "status": "manuscript-theorem", "incremental_role": "broader exact connector exclusion beyond OT",
+      "scope": "Smoothly conformally compact negative Einstein manifolds with an isometric free circle action extending freely to the compactification; stated dimension and completeness conditions.",
+      "statement": "The conformal boundary is connected, including nontrivial bundle/twist cases covered by the quotient argument.",
+      "proof_paths": ["mathematics/current/round9_connector.md", "mathematics/current/round9_riemannian.md"],
+      "depends_on": [], "external_inputs": ["Boundary noncommunication with checked causal hypotheses"],
+      "boundary": "Nonfree actions, singular orbits, absent symmetry and approximate equations are not excluded."
+    },
+    {
+      "id": "G08", "lines": [3], "title": "Restricted connector obstructions and matching data", "status": "manuscript-theorem", "incremental_role": "several distinct inherited and strengthened model results",
+      "scope": "OT exact-end finite-topology bases; specified Nil/flat/helical classes; marked charge/holonomy data; and the arbitrary-scale rotating homogeneous Berger initial family.",
+      "statement": "Necessary end/base types, width/rank restrictions, charged identities and a finite Berger continuation bound hold in their respective geometric classes.",
+      "proof_paths": ["mathematics/current/skill/research/20260916_global.tex", "mathematics/current/round5_rank_obstruction.md", "mathematics/current/round8_boundary.md", "mathematics/current/round10_connector.md", "mathematics/current/round19_surgery.md"],
+      "locators": ["sec:OT-critical", "eq:relative", "eq:charged-noether"], "depends_on": [],
+      "boundary": "A collection of restricted no-go theorems is not a general connector classification or a closed Yau26 result."
+    },
+    {
+      "id": "G09", "lines": [3], "title": "All-positive-output volume separation on CP2#CP2", "status": "manuscript-theorem", "incremental_role": "classical half-Weyl theorem applied to a specific positive-input object",
+      "scope": "Every positive Einstein metric on the marked smooth CP2#CP2, normalized by Ric=3g.",
+      "statement": "Vol<4pi^2/9, while the actual A1 approximate family tends to 4pi^2/3; this gives the asymptotic relative C0 separation 1-1/sqrt(3).",
+      "proof_paths": ["mathematics/current/round17_positive.md"], "depends_on": ["C10"],
+      "external_inputs": ["Gursky–LeBrun half-Weyl energy gap and equality structure"],
+      "boundary": "The result does not forbid smaller-volume positive metrics or Einstein metrics of other signs."
+    },
+    {
+      "id": "G10", "lines": [3], "title": "All-sign local geometry and discriminant constraints on CP2#CP2", "status": "manuscript-theorem", "incremental_role": "concrete application of analytic and Weyl structure theory",
+      "scope": "Any Einstein metric of any constant on the marked CP2#CP2.",
+      "statement": "No open set is conformally Kahler or locally a product; generic simple-Weyl-spectrum and discriminant-set restrictions hold, retaining the stated negative self-dual exception.",
+      "proof_paths": ["mathematics/current/round18_positive.md"], "depends_on": [],
+      "external_inputs": ["Derdzinski two-eigenvalue structure", "Analyticity, Nomizu and Bochner"],
+      "boundary": "A generic-spectrum or retained negative-self-dual exact output remains possible."
+    },
+    {
+      "id": "G11", "lines": [2,3], "title": "Algebraic smoothing as genuine exact existence", "status": "manuscript-theorem", "incremental_role": "inherited independent positive existence route",
+      "scope": "The actual BCGP example and, separately, the marked seven-line Campedelli cover with its specified cover algebra and simultaneous-resolution identification.",
+      "statement": "Their actual smoothing constructions yield negative KE metrics on the corresponding underlying smooth manifolds, potentially with a different complex structure from the input.",
+      "proof_paths": ["mathematics/current/skill/research/20260916_construction.tex", "mathematics/current/skill/research/20260916_global.tex", "mathematics/current/skill/research/20260912.tex"],
+      "locators": ["sec:bcgp-global-object", "sec:campedelli-global-object", "sec:campedelli-seven-lines"], "depends_on": [],
+      "boundary": "Equal Chern numbers do not identify different examples or mixed fillings. The separate Wahl model has a vanishing smoothing parameter and is not another such existence proof."
+    },
+    {
+      "id": "G12", "lines": [3], "title": "Smooth-type and marked-ADE compatibility checks", "status": "manuscript-theorem", "incremental_role": "classical topology applications and construction legality, not a new universal obstruction",
+      "scope": "The fixed singular representations/end markings, compatible ALE fillings, and the listed standard positive resolutions versus homeomorphic algebraic surfaces.",
+      "statement": "A1 chirality freedom does not freely extend to higher ADE; compatible positive fillings obey strict characteristic inequalities; homeomorphic KE surfaces may have a different smooth structure.",
+      "proof_paths": ["mathematics/current/round19_positive_bridge.md", "mathematics/current/round20_global.md"],
+      "depends_on": [], "boundary": "No all-sign Einstein nonexistence for the compatible positive fillings is deduced."
+    },
+    {
+      "id": "G13", "lines": [3], "title": "Hyperbolic-block graph and surgery output obstructions", "status": "manuscript-theorem", "incremental_role": "classical global inputs plus project-specific quantitative necessary conditions",
+      "scope": "The explicitly stated pure-hyperbolic-block graph classes and degree-comparison connected sums/surgeries, not the newer surface-product shear assemblies.",
+      "statement": "All-sign Einstein obstructions and necessary volume/Weyl budgets constrain candidate pointwise-small input sequences.",
+      "proof_paths": ["mathematics/current/skill/research/20260916_global.tex", "mathematics/current/round18_integral_limits.md", "mathematics/current/round19_global_gap.md"],
+      "locators": ["eq:graphvol", "eq:graphW", "eq:bcg-threshold"], "depends_on": [],
+      "boundary": "A vanishing necessary lower bound constructs no metric; the all-sign obstruction cannot be transferred to different surface-product graph manifolds."
+    },
+    {
+      "id": "X01", "lines": [1], "title": "cscK equality is not Einstein equality", "status": "counterexample", "incremental_role": "classical actual-model correction of an overstrong research target",
+      "scope": "Products of negative-curvature closed surfaces with unequal curvature constants; actual cscK small blowups under their cited hypotheses.",
+      "statement": "The LeBrun beta=2 deficit can vanish while trace-free Ricci energy is positive; absolute Ricci-energy minimization can coexist with positive limiting relative Einstein defect.",
+      "proof_paths": ["mathematics/current/line1_kahler_energy.md"], "depends_on": [],
+      "boundary": "This refutes the unrestricted Ricci remainder, not I02 or I07."
+    },
+    {
+      "id": "X02", "lines": [1,2,3], "title": "Volume dilution refutes unrestricted integral replacement", "status": "counterexample", "incremental_role": "actual fixed-piece sequence using classical comparison",
+      "scope": "Growing covers of a fixed closed hyperbolic four-manifold with one fixed handle replacement.",
+      "statement": "Every resulting manifold has no Einstein metric; bounded-curvature, noncollapsed metrics have E->0 while pointwise Ricci error stays bounded away from zero.",
+      "proof_paths": ["mathematics/current/round18_integral_limits.md"], "depends_on": [],
+      "boundary": "Not a counterexample to the pointwise Yau26 statement or the actual-monopole topology-specific theorem."
+    },
+    {
+      "id": "X03", "lines": [1], "title": "Yamabe pointwise-preservation failure", "status": "counterexample", "incremental_role": "sharpness test for a proposed regularization bridge",
+      "scope": "The fixed closed smooth model and the stated family of conformal scalar normalizations.",
+      "statement": "Useful scalar/amplitude/integral normalization estimates do not guarantee preservation of the maximum Ricci defect.",
+      "proof_paths": ["mathematics/current/line1_yamabe_endpoint.md"], "depends_on": [],
+      "boundary": "The positive normalization theorem in the same note remains valid in its own norms."
+    },
+    {
+      "id": "X04", "lines": [1,3], "title": "Exact products escape period compactness", "status": "counterexample", "incremental_role": "actual-model test of insufficient class-span control",
+      "scope": "Degenerating hyperbolic metrics on a fixed surface product with actual special classes {+K,-K}.",
+      "statement": "Einstein defect and scalar saturation errors vanish identically, while primitive integral Hodge norms degenerate and period planes escape even modulo integral isometries.",
+      "proof_paths": ["mathematics/current/round20_rigidity.md"], "depends_on": [],
+      "boundary": "This does not refute the properness criterion when its maximal-signature-span hypothesis actually holds."
+    },
+    {
+      "id": "X05", "lines": [1,2], "title": "Ricci-small spikes and derivative-source tests", "status": "counterexample", "incremental_role": "inherited regularity and weak-equation stress tests",
+      "scope": "The explicit smooth opposite-warping and oscillatory constructions in their declared closed/local settings.",
+      "statement": "Small Ricci error need not bound full curvature or Cotton energy; derivative source terms cannot be omitted from weak-Bianchi/model arguments.",
+      "proof_paths": ["mathematics/current/skill/research/20260916_construction.tex", "mathematics/current/rigidity.md"],
+      "locators": ["Calderon–Zygmund spike section", "eq:CZ"], "depends_on": [],
+      "boundary": "These do not contradict the extra-hypothesis exact Einstein compactness results."
+    },
+    {
+      "id": "X06", "lines": [1], "title": "Actual ordinary-SW deformations attain the sharp Weyl-payment coefficient", "status": "counterexample", "incremental_role": "determines a genuine boundary of the signed sharpness argument rather than only a failure of an estimate",
+      "scope": "One fixed smooth product of closed hyperbolic surfaces, the second of genus two, with its canonical Spin-c class; h=0,U=3. Anti-Hermitian TT deformations are Yamabe-normalized and supplied with genuine unperturbed SW solutions.",
+      "statement": "For H=f h1 and Delta f=lambda f, actual solutions satisfy P/K->lambda, signed S/K->1 and F/K->(lambda+2)/4. Degenerating the second factor and taking a diagonal perturbation gives S/F->2 and P/F->0. The exact h=0 identity gives S<=2F, so every proposed universal S<=cF+CP with c<2 and fixed finite C fails.",
+      "proof_paths": ["continuation/20260927_signed_balance_and_conformal_flow.md"], "locators": ["Section 3, especially (3.3a)-(3.11)"],
+      "depends_on": ["I44"],
+      "external_inputs": ["Canonical Kahler monopole regularity; Okonek-Teleman Theorem 3.1.2", "Scala metric-variation formulas", "Classical hyperbolic collar construction and Rayleigh principle"],
+      "boundary": "The actual solution is unperturbed, not a formal class. Individual implicit-function radii may shrink. This is not the balanced h>0 surgery family and does not refute its coefficient4 target; it proves that the Weyl payment cannot be universally discarded or reduced."
+    },
+    {
+      "id": "R01", "lines": [2,3], "title": "W-to-fixed-closed-counterexample inference", "status": "retracted", "incremental_role": "corrected Fable global gluing claim",
+      "scope": "The proposed gluing of increasingly large AH sections/core to fixed finite-volume cusp blocks.",
+      "statement": "Local flattening remains usable, but the claimed closed conclusion lacks physical scale matching and conflicts with fixed-topology volume control.",
+      "proof_paths": ["mathematics/current/skill/research/20260916_global.tex", "mathematics/current/skill/references/computations.md"],
+      "locators": ["sec:AH-matching", "prop:AH-volume-budget"], "depends_on": [],
+      "boundary": "W itself and other possible global constructions are not disproved."
+    },
+    {
+      "id": "R02", "lines": [1], "title": "Unconditional LeBrun-deficit control of trace-free Ricci", "status": "retracted", "incremental_role": "withdrawn proposed total remainder",
+      "scope": "A proposed inequality with a positive Ricci-tracefree term for the full cscK equality set.",
+      "statement": "The target is false on actual unequal-curvature cscK products; any valid remainder must vanish on the full equality set.",
+      "proof_paths": ["mathematics/current/line1_kahler_energy.md"], "depends_on": ["X01"],
+      "boundary": "The corrected scalar-variance/primitive-period decomposition remains valid."
+    },
+    {
+      "id": "R03", "lines": [1,3], "title": "Historical local-spectrum and charged-ceiling errors", "status": "retracted", "incremental_role": "preserved local corrections in source appendices",
+      "scope": "The old freely chosen conformal-factor interpretation of the forbidden spectrum, and the charged-OT ceiling obtained after dropping forcing derivatives.",
+      "statement": "The local spectrum is differentially impossible in the calibrated exact case; the charged ceiling does not follow from the actual sourced identity.",
+      "proof_paths": ["mathematics/current/skill/references/computations.md", "mathematics/current/skill/references/research-map.md"],
+      "locators": ["correction-step7-local-rigidity", "correction-step95-charged-ceiling"], "depends_on": [],
+      "boundary": "Valid neighboring calculations are retained; stored historical success labels are not premises."
+    },
+    {
+      "id": "X07", "lines": [1], "title": "Actual hyperbolic local cores with unbounded torsion index and zero determinant charge", "status": "counterexample", "incremental_role": "shows why subcritical local actual-field budgets cannot supply the missing global signed-flux estimate",
+      "scope": "Shrinking balls in one fixed hyperbolic four-metric of sectional curvature -1/3, actual positive-weight SW equation with weight2, and trivial determinant line. Fixed integer d is chosen before the sufficiently small radius; a diagonal permits d to diverge.",
+      "statement": "Antiholomorphic power seeds and the inherited curved right-inverse contraction give actual fields with torsion index d^2 on every sphere of a round fixed-ratio collar, uniformly positive torsion amplitude there, relative determinant square0, and outward signed flux -d^2+O_d(radius^4). Curvature and quadratic derivative costs tend to zero on a diagonal, while quartic unit-torsion direction energy is comparable to d^4. Interior zeros may split; only total relative index is asserted.",
+      "proof_paths": ["continuation/20260927_marked_charge_and_first_order_flux.md", "continuation/20260927_constant_weight_and_global_fit.md"], "locators": ["Marked-charge Section3.2, equations(3.6)-(3.14); Section5.4", "Constant-weight Sections3-4: amplitude-controlled cores, extension cost, and split simple-zero asymptotics"],
+      "depends_on": ["I39", "I41"],
+      "external_inputs": ["Classical Dirichlet Schauder right inverses via the inherited local construction", "Relative Chern index and topological degree"],
+      "boundary": "No full endpoint calibration on the collar, exterior matching, closed conformal supplier or global topological budget is supplied. On amplitude level cores the monomial critical cost is Theta(d^3), whereas split d^2 simple zeros have critical cost Theta(d^2) on their selected components. These are different domains from the round-collar d^4 direction calculation. Section4.1 controls the shrinking seed ball and identifies necessary volume-scale exterior kinetic/harmonic energies, but does not construct that exterior. The models do not refute O10 or Yau26 or prove frontier optimality."
+    },
+    {
+      "id": "X09", "lines": [1], "title": "Marked core motion obstructs a uniform exact fixed-base Bianchi slice", "status": "counterexample", "incremental_role": "identifies a genuine positional obstruction to replacing a small actual gauge residual by a uniformly controlled exact gauge",
+      "scope": "Selected balanced actual CH blowup/handle recoveries with at least one exceptional class. Both mouths of each shrinking handle are clustered at one limiting point. Exact gauges are in Diff0 and are measured relative to the selected fixed base.",
+      "statement": "There are scalar-minus-four pairs g0_j,g1_j on the same M_j with C0 relative difference tending to zero, both E/h tending to four, and ||delta-star beta(g1-g0)||_2=o(sqrt Q), but every exact fixed-base Bianchi diffeomorphism has bilipschitz constant greater than j. A hypothetical bounded-distortion harmonic limit is uniquely determined by negative curvature and moves a point which the shrinking exceptional class forces to remain marked.",
+      "proof_paths": ["continuation/20260928_marked_centers_and_harmonic_slices.md"],
+      "locators": ["Lemma 1, Theorem 2 and Section 3.1; exact moving-center identification in Section 4"],
+      "depends_on": ["I44", "I52"],
+      "external_inputs": ["LeBrun shrinking surgery and negative Yamabe normalization", "Hartman harmonic-map uniqueness in negative sectional curvature", "Marked exceptional homology and asphericity of CH"],
+      "boundary": "This is an existence-of-selected-families counterexample, not a statement for every preassigned recovery base. It does not produce a sub-four metric or contradict I52. The examples themselves satisfy I52's approximate-gauge criterion, and a moved-center reference absorbs them exactly. Unrestricted coefficient four, general nearby parametrization and O10 remain open."
+    },
+    {
+      "id": "X10", "lines": [1], "title": "Constant-scalar competitive metrics need not supply the intrinsic bulk selector", "status": "counterexample", "incremental_role": "replaces an overstrong all-competitive intermediate target by a near-minimizer or compensated target",
+      "scope": "The original balanced CH blowup/handle family, actual all-metric conformal monopole supply, scalar minus four, and E=O(h). The negative mass is the specified Levi-Civita 2chi+3tau density, not a Chern number by itself.",
+      "statement": "In the competitive regime I55's measurable bulk selection is equivalent to N>=Q-o(Q). Actual radial csc solutions and localized CH scalar gluing give a fixed blowup cell with N=1-delta<1. Replication and fixed-j shrinking-handle Yamabe limits yield the same balanced family with limsup N/Q<=1-2delta/9, while E/h tends to 28/9+Jcell/(9pi^2)>4. A further finite-variation argument proves that true o(h)-excess near-minimizers have only o(Q) nontrivial full-CH-collar cells in any fixed smooth compact family. Classical holomorphic Morse inequalities separately supply N>=k for genuinely Kahler blowups.",
+      "proof_paths": ["continuation/20260928_signed_characteristic_selection.md"],
+      "locators": ["Proposition 1; Sections 2-4; Proposition 2"],
+      "depends_on": ["I03", "I41", "I44", "I54", "I55"],
+      "external_inputs": ["Demailly weak holomorphic Morse inequality", "Kodaira vanishing and Riemann-Roch", "Delay localized scalar-curvature gluing Theorem 1.1", "Classical shrinking Schwarzschild handles and negative Yamabe normalization"],
+      "boundary": "The examples have a positive h-scale excess over the infimum, not a sub-four coefficient. They do not refute selection for true near-minimizers. Compact-family descent does not supply a uniform rate on degenerating cells or a cell decomposition. O10 and O11 remain open. No priority claim is made."
+    },
+    {
+      "id": "O01", "lines": [1,2,3], "title": "The working Yau26 universal statement", "status": "open", "incremental_role": "highest problem, not replaced by the first-line charter",
+      "scope": "All allowed closed smooth manifolds in a fixed dimension, dimension-only pointwise thresholds, and an arbitrary-sign Einstein output on the same smooth manifold.",
+      "statement": "Neither a complete unrestricted sign branch nor a two-sign counterexample in a fixed dimension is established in the present library.",
+      "proof_paths": ["mathematics/current/skill/research/20260910.tex", "mathematics/current/LINE1_GLOBAL_ADVANCE.md"], "depends_on": [],
+      "boundary": "Historical statement/source checking remains necessary before a claimed final solution."
+    },
+    {
+      "id": "O02", "lines": [2,3], "title": "Unrestricted Einstein existence on ED and nonzero-shear closed inputs", "status": "open", "incremental_role": "same-object global decision",
+      "scope": "All smooth Einstein metrics, not just adapted, symmetric, nearby or near-minimal-volume ones.",
+      "statement": "A negative nonsymmetric Einstein output has not been constructed or excluded on the designated input manifolds. Full-curvature minimum attainment is one equivalent formulation in the specified families.",
+      "proof_paths": ["mathematics/current/round11_variational.md", "mathematics/current/round12_symmetry.md", "mathematics/current/line1_aspherical_no_bubbles.md"],
+      "depends_on": ["C02", "C03", "G03", "G04", "I16"], "boundary": "Local repair and spectral/diameter restrictions do not exhaust these outputs."
+    },
+    {
+      "id": "O03", "lines": [1,3], "title": "Large-diameter allowed-mode Einstein geometry", "status": "open", "incremental_role": "specific remaining escape after the new no-bubbling bridge",
+      "scope": "Exact negative Einstein metrics on the specified aspherical self-gluings with splitting tending to zero and unbounded diameter; relative pointwise pinching is no longer required.",
+      "statement": "I23 forces this escape but does not classify or exclude it. Exact outputs with definite splitting are also not excluded.",
+      "proof_paths": ["continuation/20260923_allowed_mode_rigidity.md", "mathematics/current/line1_aspherical_no_bubbles.md"], "depends_on": ["I23"],
+      "boundary": "A forced alternative is not an existence construction."
+    },
+    {
+      "id": "O04", "lines": [2], "title": "Full nonsymmetric repair of balanced closed shear", "status": "open", "incremental_role": "actual nonlinear realization question",
+      "scope": "One fixed marked balanced closed object with all slow modes, exterior response, constraints, gauge and nonlinear feedback.",
+      "statement": "TT balance, controlled complements and signed waist/end response have not yet been jointly converted into a complete solution or an exclusion covering every possible repair size.",
+      "proof_paths": ["mathematics/current/round15_global.md", "mathematics/current/round16_construction.md", "mathematics/current/round17_product_operator.md"],
+      "depends_on": ["C06", "C07", "C08"], "boundary": "Finite-dimensional reduction is a possible method, not an already justified universal description."
+    },
+    {
+      "id": "O05", "lines": [2,3], "title": "Unrestricted output on the positive marked resolutions", "status": "open", "incremental_role": "independent positive-branch target",
+      "scope": "The actual smooth CP2#CP2 and other legally marked positive A1 resolutions, with any Einstein constant and geometry.",
+      "statement": "Global output restrictions have not ruled out smaller-volume, generic-spectrum or other-sign Einstein metrics, nor supplied them.",
+      "proof_paths": ["mathematics/current/round17_positive.md", "mathematics/current/round18_positive.md", "mathematics/current/round20_global.md"],
+      "depends_on": ["C10", "G09", "G10", "G12"], "boundary": "Known no-Einstein topologies excluded from tight input by Hitchin–Thorpe are not substitutes for these objects."
+    },
+    {
+      "id": "O06", "lines": [2,3], "title": "Fixed closed hyperbolic-graph connector with full matching", "status": "open", "incremental_role": "remaining independent connector/input problem",
+      "scope": "The same physical scales, peripheral lattice, topology, center data, full Ricci equation and both end jets, beyond the disproved fixed-AH-core gluing.",
+      "statement": "No complete pointwise-small closed construction on the intended globally obstructed graph type is supplied by the local flattening or noncompact surface-cross-section examples.",
+      "proof_paths": ["mathematics/current/skill/research/20260916_global.tex", "mathematics/current/round10_connector.md"],
+      "depends_on": ["G07", "G08", "G13", "R01"], "boundary": "Restricted exact no-go classes do not exhaust nonsymmetric or singular-orbit possibilities."
+    },
+    {
+      "id": "O07", "lines": [2], "title": "Pointwise approximation on the faithful Torelli target", "status": "open", "incremental_role": "new concrete relation-sensitive input question",
+      "scope": "The actual total smooth space of the faithful genus-six bundle over genus two, including possible alternative decompositions.",
+      "statement": "Vanishing signature and actual monodromy construction do not provide the missing pointwise Ricci sequence. A different decomposition may or may not place the total space in an existing family.",
+      "proof_paths": ["mathematics/current/round20_construction.md"], "depends_on": ["C09"],
+      "boundary": "Failure within its specified adapted submersion does not decide all metrics."
+    },
+    {
+      "id": "O08", "lines": [1,2,3], "title": "Higher-dimensional, positive-side and general realization interfaces", "status": "open", "incremental_role": "broader problem space retained by the charter",
+      "scope": "Beyond the special four-dimensional actual-monopole families, including n>=5 and positive-side actual field supply.",
+      "statement": "No general obstruction/existence dichotomy, arbitrary bounded-Ricci collapse classification, or dimension-uniform exact realization theorem follows from the present modules.",
+      "proof_paths": ["mathematics/current/skill/research/20260921_rigidity.tex", "mathematics/current/skill/research/20260921_construction.tex", "mathematics/current/skill/research/20260921_global.tex"],
+      "depends_on": ["I05", "O01"], "boundary": "Products propagate maximum defects under compatible normalization, not unrestricted Einstein nonexistence; the direct sphere-factor construction leaves dimension five separate."
+    },
+    {
+      "id": "O09", "lines": [2,3], "title": "Higher ALE, multi-node and toric closure", "status": "open", "incremental_role": "preserved older branches with noninterchangeable missing arguments",
+      "scope": "Full ADE/type-T/Wahl analytic extensions; all same-order terms and infinite tails in multi-node reductions; actual rod/corner and lattice matching in closed toric candidates.",
+      "statement": "The surviving detailed calculations are not a complete all-rank construction, a full global mixed-node exclusion or a closed toric near-Einstein filling.",
+      "proof_paths": ["mathematics/current/skill/research/20260916_construction.tex", "mathematics/current/skill/research/20260916_global.tex", "mathematics/current/skill/research/20260912.tex"],
+      "locators": ["sec:fullkernel", "sec:spectralerrors", "eq:LS", "sec:toric-rods", "sec:wahl-global-scope"], "depends_on": ["C01", "G11", "G12"],
+      "boundary": "A numerical source balance, formal stack smoothness or individually admissible rod does not supply the respective missing global theorem."
+    },
+    {
+      "id": "O10", "lines": [1], "title": "Weak-error exclusion at the zero-Weyl endpoint", "status": "open", "incremental_role": "Precise endpoint target supplied by the 26 September web program",
+      "scope": "General bounded smooth self-dual forms with normalized L2 Hodge budget, and separately the narrower actual weighted-monopole supplier with a^2>=T+, without geometric compactness assumptions.",
+      "statement": "Determine whether kappa_beta>=c(beta-2)^2/beta^2 under p>=A and a^2>=T+, with no bound on chi/A. Every fixed finite-B actual-input version, without pointwise Ricci or other geometric controls, is now proved in I56. The unrestricted arbitrary-form version remains a distinct question.",
+      "proof_paths": ["continuation/20260926_boundary_compatibility.md", "continuation/20260926_actual_topological_cost.md", "guidance/source/20260926_web_boundary_proof_program.zh.md", "continuation/20260927_covering_geometry_and_sharp_subfamilies.md", "continuation/20260927_local_geometry_and_variational_extrema.md", "continuation/20260927_signed_balance_and_conformal_flow.md", "continuation/20260927_marked_charge_and_first_order_flux.md", "continuation/20260927_constant_weight_and_global_fit.md", "continuation/20260927_endpoint_covariance_and_surgery_limits.md", "continuation/20260928_zero_endpoint_phase_curvature.md", "continuation/20260928_actual_torsion_prolongation.md", "continuation/20260928_signed_quartic_flux.md"],
+      "depends_on": ["I05", "I09", "I39", "I43", "I45", "I46", "I47", "I48", "I51", "I56"],
+      "current_proof_paths": ["paper/open_problems.tex", "archive/sources/20261001-web-increment/Line1_Web_Increment_20260929_30/research/E/O10_Double_Weighted_Test.md", "archive/sources/20261001-web-increment/Line1_Web_Increment_20260929_30/research/F/O10_Actual_Mass_Transfer.md", "archive/sources/20261001-web-increment/Line1_Web_Increment_20260929_30/research/F/O10_Radial_Matrix_Identity.md"],
+      "boundary": "Any escape leaves every bounded-density class and obeys I56's error-versus-curvature rate. Double weighted tests remove selected mixed errors; actual mass transfer and inverse-amplitude moments exclude deep low-amplitude energy but not fixed intermediate transition layers. A sufficient fifth-line route needs both retained fixed-cap mass and the complete weak positive-potential equation for its resolvent test. Formal radial measures, local models and cancellation of one interaction do not supply either a complete contradiction or a closed actual escape."
+    },
+    {
+      "id": "O11", "lines": [1], "title": "Optimal all-metric small-h coefficient", "status": "open", "incremental_role": "Residual coefficient problem after I40 settled order and I41 removed scalar variance",
+      "scope": "All smooth metrics on the original balanced ordinary complex-hyperbolic surgery family M_j, with A_j=c1^2(X_j), Q_j=k_j+4 ell_j, and h_j=Q_j/A_j tending to zero. The actual supply is inherited from this family; competing conformal classes are unrestricted.",
+      "statement": "Determine the optimal leading coefficient of alpha_j=inf E over all metrics on this family. The global reduction alpha_j=4 inf P/(8pi^2 A_j)+O(h_j^2) identifies coefficient four with inf P=8pi^2 Q_j+o(Q_j). I41 proves Sigma<=C(P_Ric+D2), globally and with a square-shortfall version. Its sharper first-order sufficient bound Sigma<=(8/9)D2+32pi^2(p-A)+o(Ah) remains unproved. Genuine cscK products show improving the isotropic constant alone cannot yield four.",
+      "proof_paths": ["continuation/20260926_boundary_compatibility.md", "continuation/20260927_mixed_current_and_signed_cores.md", "continuation/20260927_conformal_separation_and_zero_end.md", "continuation/20260927_covering_geometry_and_sharp_subfamilies.md", "continuation/20260927_local_geometry_and_variational_extrema.md", "continuation/20260927_signed_balance_and_conformal_flow.md", "continuation/20260927_marked_charge_and_first_order_flux.md", "continuation/20260927_constant_weight_and_global_fit.md", "continuation/20260927_endpoint_covariance_and_surgery_limits.md", "continuation/20260928_marked_centers_and_harmonic_slices.md", "continuation/20260928_intrinsic_caps_and_stability.md", "continuation/20260928_relative_cell_cost.md", "continuation/20260928_localization_and_coupled_filling.md"],
+      "depends_on": ["I08", "I17", "I40", "I41", "I44", "I49", "I52", "I53", "I54", "I55", "I57", "I58", "X06", "X10"],
+      "current_proof_paths": ["paper/sections/variational_selection_and_global_cost.tex", "paper/sections/web_variational_supplements.tex", "paper/open_problems.tex"],
+      "boundary": "Linear order, scalar-variance removal and complete ordinary class budget are settled. Critical-test near-minimizer selection is supplied by I57; global signed compensation or original marked topology payment to o(Q) is not. Ideal minimizers and Yamabe minimizing sequences cannot be merged without proof. Whole ordinary AE tariffs retain their scope; general ALE limits require end-group and eta corrections. No lower-cost recovery on the original family is supplied. Coefficient four is not presumed."
+    },
+    {
+      "id": "O12", "lines": [1,3], "title": "Diameter-free realization on the complex-hyperbolic numerical boundary", "status": "open", "incremental_role": "Natural-input realization target distinct from the tau-zero shear family",
+      "scope": "Actual conformal monopole supply, p>=T_+=3T_->0 with bounded T_+, and sufficiently small pointwise negative Ricci defect, without a diameter bound.",
+      "statement": "Determine whether these inputs force a complex-hyperbolic metric on the same smooth manifold, or identify an actual counterexample with all hypotheses.",
+      "proof_paths": ["continuation/20260924_chern_boundary_realization.md", "continuation/20260926_boundary_compatibility.md", "guidance/source/20260926_web_boundary_proof_program.zh.md"],
+      "depends_on": ["I26"],
+      "boundary": "Automatic saturation and volume control do not yet control long ends and fillings. Tau-zero shear examples do not lie on this numerical boundary."
+    }
+  ]
+}

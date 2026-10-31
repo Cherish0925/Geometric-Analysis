@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-03",
+  "purpose": "Integrate the scientific overview with the complete current proofs, mathematical interfaces, and primary literature, without replacing the accumulated research.",
+  "path_conventions": {
+    "package_root": "archive/sources/20261003-scientific-overview",
+    "coverage_files": "Paths in coverage.files are relative to package_root.",
+    "project_paths": "Other local paths are relative to the project root.",
+    "paper_labels": "Labels refer to the current assembled English manuscript."
+  },
+  "original_download_inputs": [
+    {
+      "download_path": "/home/ubuntu/下载/Line1_Scientific_Overview_20261003.tex",
+      "preserved_path": "archive/sources/20261003-scientific-overview/Line1_Scientific_Overview_20261003.tex",
+      "role": "Unedited web-authored scientific overview, including all seven sections and fourteen literature entries."
+    }
+  ],
+  "manuscript": {
+    "previous_handoff": "handoff/20261001_Line1_Integrated_Manuscript.tex",
+    "working_source": "paper/Integral_Einstein_Rigidity.tex",
+    "handoff": "handoff/20261003_Einstein_Compatibility_Integrated_Manuscript.tex",
+    "overview": "handoff/20261003_Einstein_Compatibility_Overview.tex",
+    "overview_pdf": "handoff/20261003_Einstein_Compatibility_Overview.pdf",
+    "new_component": "paper/sections/field_interfaces_and_curvature_interactions.tex",
+    "assembly_plan": "tools/build_english_manuscript.py:PLAN",
+    "scope": "The overview supplies synthesis and literature connections. Existing theorems retain their proof sources. The joint-cost and replication formulas are explicit consequences, not a solution of either remaining extremal problem."
+  },
+  "coverage": [
+    {
+      "id": "scientific_overview",
+      "disposition": "preserved_original_with_integrated_mathematical_connections",
+      "files": ["Line1_Scientific_Overview_20261003.tex"],
+      "paper_labels": ["sec:field-interfaces", "sec:introduction", "sec:open-problems"],
+      "paper_components": ["paper/sections/field_interfaces_and_curvature_interactions.tex", "paper/frontmatter.tex", "paper/references.tex"]
+    }
+  ],
+  "section_map": [
+    {
+      "source_section": "1. Common mechanism",
+      "paper_labels": ["sec:bounded-forms", "sec:single-parameter", "sec:field-interfaces"],
+      "source_paths": ["mathematics/current/round21_analytic.md", "continuation/20260927_constant_weight_and_global_fit.md"],
+      "content": "Bounded self-dual fields, smooth curvature models, derivative budgets and weak Bianchi testing. The fixed model is not the zero-Weyl endpoint; a new supplier must provide the actual form and source budget."
+    },
+    {
+      "source_section": "2. Quantitative core",
+      "paper_labels": ["thm:trf-gap", "cor:trf-nu", "cor:trf-y", "thm:lc-scalar-free", "thm:ssc-coercivity"],
+      "source_paths": ["paper/sections/tracefree_gap.tex", "paper/sections/linear_coercivity.tex", "paper/sections/single_solution_coercivity.tex"],
+      "content": "N1, negative-square and relative-shortfall costs, scalar-free coercivity and actual single-solution quantifiers."
+    },
+    {
+      "source_section": "3. Real geometry and established range",
+      "paper_labels": ["thm:vg-first-order-reduction", "thm:finite-density-endpoint", "cor:finite-density-polynomial", "sec:period-inertia", "sec:joint-matrix", "sec:whole-core", "sec:chern-boundary", "sec:slow-moduli", "sec:fixed-bundle-geometry"],
+      "content": "Matched linear scale, arbitrary fixed finite-density endpoint, periods, whole cores, conditional realization and slow-mode geometry. The equality of low-defect infima retains its small-h range."
+    },
+    {
+      "source_section": "4. Literature connections",
+      "paper_labels": ["sec:field-interfaces", "eq:interfaces-spectral-defect", "eq:interfaces-fixed-topology", "eq:interfaces-connected-sum", "eq:interfaces-recovery-comparison"],
+      "content": "Spectral defect versus actual-field constraints; exact integrability versus weak estimates; Weyl interaction versus the simultaneous scalar cost; ideal configurations versus actual topological markings."
+    },
+    {
+      "source_section": "5. Further mathematical questions",
+      "paper_labels": ["sec:open-problems", "eq:interfaces-replicated-cost", "eq:interfaces-replication-fraction", "sec:quadratic-matter"],
+      "content": "Density-independent endpoint and balanced optimum remain open. New suppliers and compatible geometries remain legitimate extensions, not mandatory prerequisites for the existing results."
+    },
+    {
+      "source_section": "6. Fourteen primary references",
+      "source_paths": ["paper/references.tex"],
+      "content": "All original entries retained below and in the preserved source, with version-specific links where the version matters."
+    },
+    {
+      "source_section": "7. Archive connections",
+      "source_paths": ["paper/RESEARCH_TO_MANUSCRIPT.md", "navigation/RESEARCH_MAP.md", "guidance/LINE1_CURRENT.md", "catalog/web_increment_20261001.json"],
+      "content": "The incoming overview used the September 29 manuscript and web increment. Its labels now connect to the October 3 assembly, which preserves the October 1 full integration."
+    }
+  ],
+  "mathematical_clarifications": [
+    {
+      "topic": "Replication fraction",
+      "original_location": "Section 5, cheaper blowup-cell example",
+      "formula": "If m_j/k_j -> theta and k_j/Q_j -> 2/9, the conditional upper coefficient is 4-(8/9)theta*delta. The displayed 4-8delta/9 requires theta=1 or an all-site average saving.",
+      "paper_label": "eq:interfaces-replication-fraction"
+    },
+    {
+      "topic": "Norm and topology in the joint energy comparison",
+      "formula": "W_tensor=4 W_operator; at fixed topology, Delta P=2 Delta W_operator+Delta S/12. Comparing a connected sum to its two separate summands adds 32 pi^2.",
+      "paper_label": "eq:interfaces-connected-sum"
+    },
+    {
+      "topic": "Actual applicability of the 2025 gluing theorem",
+      "content": "The prescribed oriented CH connected sum with reversed CP2 satisfies the 2025 Weyl theorem. A joint scalar estimate and a sufficiently large reproducible gain are still needed to change the balanced optimum. The 2026 theorem excludes a half-self-dual CH factor.",
+      "paper_label": "sec:field-interfaces"
+    },
+    {
+      "topic": "Line bundle notation and source scope",
+      "content": "The auxiliary field belongs to the fifth tensor power of the determinant line, not to a Lebesgue L5 space. The original web source remains unchanged; the derived synopsis identifies the current local manuscript."
+    }
+  ],
+  "literature": [
+    {"number": 1, "key": "LeBrun2001", "url": "https://arxiv.org/abs/math/0003068", "role": "Actual monopoles, curvature estimates and simultaneous surgery recovery."},
+    {"number": 2, "key": "Kotschick2004", "url": "https://arxiv.org/abs/math/0306022", "role": "Special monopole classes and Einstein obstructions."},
+    {"number": 3, "key": "BauerFuruta2004I", "url": "https://arxiv.org/abs/math/0204340", "role": "Stable cohomotopy refinement and actual supply."},
+    {"number": 4, "key": "Bauer2004II", "url": "https://arxiv.org/abs/math/0204267", "role": "Connected-sum formula and nonvanishing hypotheses."},
+    {"number": 5, "key": "IshidaLeBrun2003", "url": "https://arxiv.org/abs/math/0111228", "role": "Stable-cohomotopy curvature applications and recovery."},
+    {"number": 6, "key": "LeBrun2004", "url": "https://arxiv.org/abs/math/0404251", "role": "Optimal full curvature and smooth topology; Section 11."},
+    {"number": 7, "key": "LeBrunConvex", "url": "https://arxiv.org/abs/math/0611450", "role": "Full class convex budgets and equality geometry."},
+    {"number": 8, "key": "FurutaMatsuo2016", "url": "https://arxiv.org/abs/1405.1219v3", "role": "Spectral defect, arbitrary-pair differential inequality and perturbed-supply consequences; equations 7-9, Proposition 1, Theorems 8-9."},
+    {"number": 9, "key": "IMN2016", "url": "https://arxiv.org/abs/1505.05948", "role": "Actual twisted supply and double-cover lift."},
+    {"number": 10, "key": "LeBrunOverview2026", "url": "https://arxiv.org/abs/2609.03033v1", "role": "Einstein four-manifold context, chiral connections and monopole curvature constraints."},
+    {"number": 11, "key": "ApostolovArmstrongDraghici2002", "url": "https://arxiv.org/abs/math/0109098v2", "role": "Exact compact integrability under the third Gray condition, not an automatic weak-error estimate."},
+    {"number": 12, "key": "Anderson2005", "url": "https://arxiv.org/abs/math/0511034", "role": "Ideal minimizing configurations; topological matching remains a separate requirement."},
+    {"number": 13, "key": "MalchiodiMalizia2025", "url": "https://arxiv.org/abs/2505.17752v1", "role": "Strict Weyl subadditivity with the stated two-factor chirality hypotheses; Theorem 1.1."},
+    {"number": 14, "key": "MalchiodiMalizia2026", "url": "https://arxiv.org/abs/2604.17547v2", "role": "Bach-flat non-half-self-dual factor and positive-Yamabe non-spherical LCF factor; revised Theorem 1.1."}
+  ],
+  "future_mathematical_skill": {
+    "status": "Prepared in the October 3 integration; developed as the self-contained geometric-analysis Skill on October 4.",
+    "naming_requirement": "Owner selected Geometric Analysis, with folder name geometric-analysis; the name is independent of historical project and line identifiers.",
+    "theme": "Curvature-equation realizability and its quantitative structure: topological constraints, actual fields, and extremal geometry.",
+    "skill_path": "skills/geometric-analysis/SKILL.md",
+    "entrypoints": ["README.md", "guidance/LINE1_CURRENT.md", "navigation/RESEARCH_MAP.md", "paper/RESEARCH_TO_MANUSCRIPT.md"],
+    "proof_and_history_roots": ["mathematics/current", "continuation", "archive/sources", "guidance/source", "catalog", "verification"],
+    "preservation_rule": "A concise routing skill must expose the complete local sources and their dependencies. It must not replace old proofs, discard the other original research lines, or make the present methods the only permitted routes."
+  }
+}

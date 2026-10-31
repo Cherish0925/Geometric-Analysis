@@ -1,0 +1,60 @@
+% !TeX program = xelatex
+\documentclass[UTF8,fontset=fandol,zihao=-4,a4paper]{ctexart}
+\usepackage[a4paper,margin=24mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,esint,booktabs,longtable,array,enumitem,xcolor,xurl,fancyhdr,microtype}
+\usepackage[unicode,colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\hypersetup{pdftitle={丘成桐第26题：独立核验、归约定理与现状判定}}
+\newtheoremstyle{cn}{8pt}{8pt}{\normalfont}{0pt}{\bfseries}{。}{.4em}{}
+\theoremstyle{cn}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{corollary}[theorem]{推论}
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{remark}[theorem]{说明}
+\newtheorem{problem}[theorem]{问题}
+\renewcommand{\proofname}{证明}
+\DeclareMathOperator{\Ric}{Ric}
+\DeclareMathOperator{\Rm}{Rm}
+\DeclareMathOperator{\Vol}{Vol}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\Met}{Met}
+\DeclareMathOperator{\Hess}{Hess}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\CPb}{\overline{\mathbb{CP}}{}^2}
+\newcommand{\HH}{\mathbb H}
+\newcommand{\status}[1]{\textsf{\small〔#1〕}}
+\numberwithin{equation}{section}
+\setlength{\parskip}{.35em}
+\setlength{\emergencystretch}{3em}
+\linespread{1.12}
+\allowdisplaybreaks[2]
+\setlist{nosep,topsep=4pt,leftmargin=2em}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Yau 第26题：核验、归约与现状}
+\fancyhead[R]{\small 2026-09-17}
+\fancyfoot[C]{\thepage}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\title{丘成桐第 26 题（Ricci 夹逼与 Einstein 度量）\\[2mm]\large 独立核验、归约定理与现状判定}
+\author{基于《求是引擎 · qiushi-yau26》资料包的独立研究报告}
+\date{2026 年 9 月 17 日}
+\begin{document}
+\maketitle
+\input{sec0_summary}
+\tableofcontents
+\input{sec1_problem}
+\input{sec2_lowdim}
+\input{sec3_logweyl}
+\input{sec4_bundle}
+\input{sec5_obstructions}
+\input{sec6_reduction}
+\input{sec7_highdim}
+\input{sec8_open}
+\input{sec9_verification}
+\input{refs}
+\end{document}

@@ -1,0 +1,341 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,longtable,hyperref}
+\setlength{\emergencystretch}{2em}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}[proposition]{Corollary}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\RR}{\mathcal R_+}
+\title{Negative Goldberg: Joining the Torsion-Zero and Green-Potential Arguments}
+\author{Research continuation and cross-conversation synthesis}
+\date{15 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We join five retrieved research notes from the conversation entitled
+``Yau 26 23 19'' with the two torsion-zero continuations of 15 October.
+The joined identities characterize the intersection of the torsion-zero
+set with the double-maximal-eigenvalue locus: it consists exactly of the
+zeros at which the second covariant derivative of the fundamental form
+also vanishes. Every closed smooth torsion-zero curve with dense rank-two
+locus must meet this intersection. A Green identity retains the global
+curvature term at these points; its vanishing does not follow from their
+finite-order local vanishing. The unrestricted negative Goldberg
+conjecture remains open in these arguments.
+\end{abstract}
+
+\section{The common problem and conventions}
+Let $(M^4,g,J,\Omega)$ be smooth, closed, connected and almost-K\"ahler,
+oriented by $J$, with
+\[
+\Ric=-ag,\qquad a>0,\qquad s=-4a,\qquad |\Omega|^2=2.
+\]
+The target is $\nabla\Omega=0$, without additional curvature-sign or
+zero-set assumptions, or an actual closed counterexample.
+Let $\Delta=-\operatorname{div}\nabla$, $n=\Omega/\sqrt2$, and
+\[
+q=|\nabla\Omega|^2,\quad Z=\{q=0\},\quad
+\RR=W^+-\frac a3\Id,\quad A=-\RR,\quad
+U=\sigma_2(A)=\frac{a^2}{3}-\frac12|W^+|^2.
+\]
+Operator norms are Hilbert--Schmidt norms. Relative to
+$\mathbb R n\oplus n^\perp$, write
+\[
+W^+=\begin{pmatrix}t&v^*\\v&-t\Id/2+B\end{pmatrix},\qquad
+t=-\frac{2a}{3}+\frac q4,\qquad v=\eta/\sqrt2,\qquad\tr B=0.
+\]
+Here $\eta=W^+(\Omega)-t\Omega$ and $B$ is the trace-free two-dimensional
+block, customarily denoted $W_3^+$. The scalar $a$ is not the torsion
+one-form used in earlier notes. We denote that one-form by $\vartheta$:
+\[
+\nabla\Omega=\vartheta\otimes\phi-J\vartheta\otimes J\phi,
+\qquad q=4|\vartheta|^2,
+\]
+where $|\phi|^2=|J\phi|^2=2$.
+
+\section{Source correspondence and retained results}
+The following five complete source texts were retrieved and read.
+They are records of the other conversation, not independent publications.
+\begin{longtable}{p{.44\textwidth}p{.50\textwidth}}
+\textbf{Source and date}&\textbf{Mathematical content retained}\\\hline
+\path{Q4_Torsion_Zero_Structure.tex}, 9 October
+&Second-derivative identity; complete first-derivative normal form;
+positive transverse indices; the scalar current retained before integration.\\[4pt]
+\path{Q4_Canonical_Orthogonality.tex}, 12 October
+&Orthogonality of $\eta$ to closed real $J$-anti-invariant forms;
+positive integrating-factor criterion and its noncompact local obstruction.\\[4pt]
+\path{Q4_Harmonic_Product_Reduction.tex}, 13 October
+&Fixed-metric harmonic multiplication kernel, its exact rank-one constraint,
+and fourth-order norm-variance behavior near a K\"ahler direction.\\[4pt]
+\path{Q4_Determinant_Sign_Rigidity.tex}, 13 October
+&Rigidity under $\det\RR\le0$ everywhere, from the Einstein Weyl equation
+and existence of a torsion zero.\\[4pt]
+\path{Q4_Green_Potential_Rigidity.tex}, 14 October
+&Rigidity if the Green potential of $\det\RR$ is nonpositive at one
+torsion zero; exact weighted determinant balance.\\\hline
+\end{longtable}
+The current conversation contributes the two 15 October notes
+\path{Goldberg_Torsion_Zeros_and_Weyl_Equation_20261015.tex}
+and \path{Goldberg_Global_Connections_20261015.tex}.
+Their relevant statements are the exclusion of compact clean zero curves,
+the normal derivative equation on a smooth zero curve, and the full
+coupled Weyl equation. The zero-index calculation overlaps the 9 October
+source and is counted once.
+
+The source titled \path{Q4_Complete_Example_and_Fino_Question.tex}
+was located by title but not re-read for this synthesis. No additional
+claim about that construction or historical priority is made here.
+This record covers the retrieved mathematical notes, not every message
+of the other conversation.
+
+For orientation, the canonical orthogonality result reads
+\[
+\int_M\langle\eta,\alpha\rangle\,dV=0
+\quad(d\alpha=0,\ \alpha\in\Gamma(\Lambda_J^-)).
+\]
+The source uses the canonical-divisor theorem and the canonical curvature
+formula. Thus a globally smooth $f>0$ with $d(f\eta)=0$ implies $\eta=0$.
+The compact third-Gray theorem of Apostolov--Armstrong--Dr\u aghici
+\cite{AAD} then implies K\"ahlerness. Einstein Ricci is $J$-invariant,
+and $\eta=0$ says precisely that $\Omega$ is a Weyl eigenform;
+these are the two conditions in that theorem. Existence of the multiplier
+is not supplied by this implication.
+
+\section{The common global identity, including the local zero jet}
+The Einstein Weyl equation is
+\[
+\nabla^*\nabla W^++\frac s2 W^+-6(W^+)^2+2|W^+|^2\Id=0.
+\]
+Pairing it with $W^+$ and shifting by $a\Id/3$ gives
+\begin{equation}\label{scalar}
+(\Delta+2a)U=|\nabla A|^2-18\det\RR.
+\end{equation}
+Indeed,
+\[
+\Delta|W^+|^2=-s|W^+|^2+36\det W^+-2|\nabla W^+|^2,
+\]
+\[
+|W^+|^2=\frac{2a^2}{3}-2U,
+\qquad \det W^+=-\frac{2a^3}{27}+\frac a3U-\det A.
+\]
+Define
+\[
+\Psi=(\Delta+2a)^{-1}\det\RR,\qquad
+\mathcal D=(\Delta+2a)^{-1}|\nabla A|^2.
+\]
+The inverse exists on all scalar functions, including constants, and
+has a strictly positive Green kernel $G_a$ on a connected closed manifold.
+Thus
+\begin{equation}\label{resolvent}
+U=\mathcal D-18\Psi,\qquad \mathcal D\ge0.
+\end{equation}
+
+At $p\in Z$, the harmonic-form equation gives
+$\langle An,n\rangle=a$, so
+\[
+A(p)=\begin{pmatrix}a&z^*\\z&C\end{pmatrix},\qquad
+\tr C=0,\quad z=-v,\quad C=-B.
+\]
+Consequently
+\begin{equation}\label{zerou}
+U(p)=-|z|^2-\tfrac12|C|^2
+     =-\tfrac12(|\eta|^2+|B|^2)(p).
+\end{equation}
+The local torsion-zero identity, established in the 9 October note and
+retained in the present conversation, is
+\begin{equation}\label{hessian}
+|\nabla^2\Omega|^2=4|B|^2-6|\eta|^2
+\qquad\text{on }Z.
+\end{equation}
+It follows by twice differentiating
+$t=\langle W^+n,n\rangle=s/6+q/4$ at $\nabla n=0$:
+\[
+\Delta t=3|\eta|^2-2|B|^2,
+\qquad \Delta q=-2|\nabla^2\Omega|^2.
+\]
+
+\begin{proposition}[Joined zero-point identity]\label{joined}
+Every $p\in Z$ satisfies
+\begin{equation}\label{master}
+\boxed{18\Psi(p)=
+\int_MG_a(p,y)|\nabla A(y)|^2\,dV_y
++\frac18|\nabla^2\Omega(p)|^2+\frac54|\eta(p)|^2.}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Combine \eqref{resolvent}--\eqref{hessian}; specifically
+$|B|^2=|\nabla^2\Omega|^2/4+3|\eta|^2/2$.
+\end{proof}
+This is a direct connection between the two existing arguments, not a
+second independent global rigidity theorem. The Green theorem is recovered:
+if $\Psi(p)\le0$ at one torsion zero, all terms on the right vanish.
+Positivity of $G_a$ forces $\nabla A=0$ globally. Then $U=\det A=0$,
+$\tr A=a$, and $A$ is a parallel rank-one operator with eigenvalues
+$(a,0,0)$. Set $\Pi=A/a$. The harmonic-form equation gives
+\[
+\nabla^*\nabla(\Pi n)=2\Pi(a\Id-A)n=0.
+\]
+Hence $\Pi n$ is parallel, and at $p$ it has length one. Since $|n|=1$,
+this gives $n=\Pi n$ globally, hence $\nabla\Omega=0$.
+
+\section{What the spectral intersection means exactly}
+Order the Weyl eigenvalues by $\lambda_1\ge\lambda_2\ge\lambda_3$ and set
+\[
+\Sigma=\{\lambda_1(W^+)=\lambda_2(W^+)\}.
+\]
+This definition uses the \emph{largest} repeated eigenvalue.
+
+\begin{proposition}\label{intersection}
+On the torsion-zero set,
+\[
+\boxed{Z\cap\Sigma
+=\{p:\nabla\Omega(p)=0,\ \nabla^2\Omega(p)=0\}.}
+\]
+At every such point, $\eta=B=0$ and $\RR=-a\,n\otimes n$.
+\end{proposition}
+\begin{proof}
+Suppose $p\in Z\cap\Sigma$. Let $\lambda$ be the repeated maximal
+eigenvalue of $\RR$; its remaining eigenvalue is $-a-2\lambda$.
+For a unit vector $e$ in the remaining eigenline,
+\[
+\RR=\lambda\Id-(a+3\lambda)e\otimes e.
+\]
+The Rayleigh value at a torsion zero is $\langle\RR n,n\rangle=-a$.
+The operator cannot be scalar there. Thus
+\[
+|\langle e,n\rangle|^2=\frac{a+\lambda}{a+3\lambda},\qquad
+\lambda\ge0.
+\]
+The last inequality also follows from the smallest-eigenvalue bound
+$-a\ge-a-2\lambda$. Computing the off-diagonal block and the traceless
+restriction to $n^\perp$ gives
+\[
+|\eta|^2=4\lambda(a+\lambda),\qquad |B|^2=2\lambda^2.
+\]
+Equation \eqref{hessian} becomes
+\[
+|\nabla^2\Omega|^2=-24a\lambda-16\lambda^2.
+\]
+Nonnegativity forces $\lambda=0$ and $\nabla^2\Omega=0$, and the
+Rayleigh equality then gives $e=\pm n$.
+
+Conversely, at $p\in Z$ with $\nabla^2\Omega=0$, the harmonic-form
+equation $\nabla^*\nabla\Omega=(q/2)\Omega+2\eta$ gives $\eta=0$.
+Equation \eqref{hessian} gives $B=0$. The eigenvalues of $W^+$ are
+$(-2a/3,a/3,a/3)$, proving $p\in\Sigma$.
+\end{proof}
+
+At the intersection, \eqref{master} reads
+\begin{equation}\label{intersectiongreen}
+\boxed{18\Psi(p)=\int_MG_a(p,y)|\nabla A(y)|^2\,dV_y.}
+\end{equation}
+It does not imply $\Psi(p)\le0$. If $\nabla A$ is nonzero somewhere,
+the right side is strictly positive. Thus ``the zero set meets the
+spectral locus'' and ``the Green rigidity hypothesis holds'' are separate
+statements. Vanishing of two derivatives is also not infinite-order
+vanishing for unique continuation.
+
+\section{A geometric connection supplied by closed zero curves}
+Let $K=\Lambda^{2,0}T^*M$ and regard torsion as a section
+$\sigma\in\Gamma(T^{1,0}M\otimes\bar K)$, with the normalizations of
+the zero-structure notes. The canonical Hermitian connection satisfies
+\[
+D_X\sigma=X\otimes c,\qquad X\in T^{1,0}M.
+\]
+Let $C$ be a closed smooth $J$-holomorphic curve contained in $Z$, with
+dense rank-two locus for $D\sigma$. The current conversation establishes
+that $C$ is totally geodesic and that its normal torsion derivative is a
+smooth section
+\[
+\zeta\in\Gamma\bigl(\operatorname{Hom}_{\mathbb C}
+ (\bar\nu_C,T^{1,0}C\otimes\bar K)\bigr)
+\simeq\Gamma(\bar K^{\otimes2}|_C).
+\]
+Here $\zeta$ is unrelated to the off-diagonal Weyl notation in some
+earlier manuscripts. On $C$, all tangent derivatives and all $(1,0)$
+derivatives of $\sigma$ vanish; $\zeta$ is the remaining normal
+$(0,1)$ derivative.
+
+\begin{corollary}\label{curve}
+Every such $C$ meets $Z\cap\Sigma$.
+\end{corollary}
+\begin{proof}
+The canonical curvature formula restricted to a torsion-zero curve gives
+\[
+c_1(TM,J)[C]=\frac{s}{8\pi}\operatorname{Area}(C).
+\]
+As $c_1(\bar K)=c_1(TM,J)$,
+\[
+\deg(\bar K^{\otimes2}|_C)=\frac{s}{4\pi}\operatorname{Area}(C)<0.
+\]
+A nowhere-zero smooth section would trivialize this complex line bundle
+and force degree zero. Hence $\zeta(p)=0$ somewhere. All of $D\sigma$
+then vanishes at $p$. Since $\sigma(p)=0$, the canonical and
+Levi-Civita derivatives agree there, and the torsion identification gives
+$\nabla^2\Omega(p)=0$. Proposition \ref{intersection} applies.
+\end{proof}
+This corollary requires neither isolated zeros of $\zeta$ nor a
+positivity-of-indices assertion. It extends the earlier clean-curve
+exclusion by identifying where a rank drop must occur spectrally.
+It does not assert that every component of the torsion-zero set is a
+smooth curve.
+
+The equation retained on $C$ is
+$D^{1,0}\zeta=r$, with $r$ a normal derivative of $c$, and
+$D^{1,0}r=0$ under the stated dense rank-two hypothesis.
+It does not say that $\zeta$ is a closed $J$-anti-invariant two-form
+on $M$. The canonical-divisor theorem used in the orthogonality note
+therefore cannot be applied to this section by changing its name.
+
+\section{The resulting common continuation point}
+The merged statements are compatible and give the following precise
+restrictions on any non-K\"ahler closed candidate:
+\begin{enumerate}
+\item $Z\ne\varnothing$, by the classical Nijenhuis-bundle obstruction
+$c_2(T^{1,0}M\otimes\bar K)[M]=5\chi+6\tau>0$.
+\item $\Psi(p)>0$ at every $p\in Z$, with its exact value prescribed by
+\eqref{master}. In particular $\det\RR>0$ somewhere.
+\item At a torsion zero, membership in $\Sigma$ is exactly second-order
+torsion vanishing. Any closed smooth zero curve of the preceding type
+must contain such a point.
+\item Neither that intersection nor the finite-order vanishing removes
+the global integral in \eqref{intersectiongreen}.
+\end{enumerate}
+Accordingly, the direct unresolved connection on this route is a
+restriction on the actual Einstein--almost-K\"ahler system that forces
+the nonnegative integral in \eqref{intersectiongreen} to vanish, or that
+forces the Green sign at a torsion zero without a zero-curve hypothesis.
+The present identities do not furnish that restriction. A valid proof
+may use a different route; none of these auxiliary conditions is added
+to the original conjecture.
+
+The harmonic multiplication formulation remains an exact alternative
+for a fixed metric, not an additional curvature inequality. Likewise,
+the existing full $B$ equation retains first-order coupling to $\eta$;
+it cannot be replaced by a homogeneous positive-potential equation.
+These observations preserve both conversations' usable results while
+keeping the remaining implication mathematically explicit.
+
+\begin{thebibliography}{9}
+\bibitem{AAD} V.~Apostolov, J.~Armstrong and T.~Dr\u aghici,
+\emph{Local models and integrability of certain almost K\"ahler
+4-manifolds}, Math. Ann. 323 (2002), 633--666.
+\url{https://arxiv.org/abs/math/0109098}. Lemma 1 and Theorem 2.
+\bibitem{Derdzinski} A.~Derdzi\'nski,
+\emph{Self-dual K\"ahler manifolds and Einstein manifolds of dimension four},
+Compositio Math. 49 (1983), 405--433.
+\url{https://archive.numdam.org/item/CM_1983__49_3_405_0/}.
+\bibitem{LeBrun} C.~LeBrun,
+\emph{Einstein metrics, symplectic minimality, and pseudo-holomorphic curves},
+Ann. Global Anal. Geom. 28 (2005), 157--177.
+\url{https://arxiv.org/abs/math/0409290}. Proposition 2.1.
+\bibitem{Project} The seven research notes identified in Section 2.
+The Green argument is inherited from the other conversation; the
+closed-zero-curve argument is inherited from the present conversation.
+Propositions \ref{joined} and \ref{intersection} and
+Corollary \ref{curve} state their explicitly derived connections.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,286 @@
+几何分析研究 skill：Ubuntu 环境、算法与接口准备方案
+调查日期：2026-10-03
+
+用途：为用户自己的研究服务器准备可持续使用的工具环境，并给随后编写的研究 skill 提供接口设计。
+交付状态：官方文档调查、环境规格与安装配方；没有登录或更改目标服务器，没有执行这些大型软件的安装。随附 TOML/YAML 是环境规格，不是已经在目标机器解析成功的版本锁文件。
+
+一、应建立什么
+
+研究对象是几何偏微分方程、规范场、曲率泛函及其与光滑拓扑的关系。需要同时支持抽象推导、具体几何计算、构造搜索、谱与变分分析、严格数值验证、文献与论文工作。
+
+建议建立一个研究 skill，调用相互独立的数学环境。skill 保存任务选择、数学约定、已有证明的入口和调用方式；数学软件负责实际计算。工具调用权限与服务器连接由研究系统提供，写入 SKILL.md 本身不会产生这些权限。
+
+推荐结构：
+1. 核心 Python：精确代数、数值计算、文献接口。
+2. SageMath：精确数学与坐标/标架几何。
+3. Cadabra：抽象指标、旋量和非交换张量计算。
+4. PDE 环境：有实际离散问题时使用的 FEniCSx/PETSc/SLEPc。
+5. Lean 项目：按具体形式化任务固定工具链及 mathlib。
+6. 系统工具：Git、检索、PDF、TeX 编译。
+
+保留现有 Ubuntu 和已稳定运行的 GPU、Python、队列及知识检索服务。新建专用环境，不替换系统 Python，也不在每次研究时升级依赖。
+
+二、优先准备的软件与数学职责
+
+【A：常备核心】
+
+SageMath / SageManifolds
+- 精确矩阵、数域、多项式、交叉形式、上同调计算中可明确表达的代数部分。
+- 坐标图、标架、度量、联络、Riemann/Ricci/Weyl 张量、微分形式与 Hodge 运算。
+- SageManifolds 已集成在 Sage 中，无需另装一套。
+- Sage 已集成多种代数后端；先使用其 GAP、Singular、PARI 等能力，再决定是否需要独立安装。
+- 接口：sage script.sage；sage -python script.py；Python 脚本中 from sage.all import ...。
+- 安装：官方推荐 Miniforge/mamba/conda-forge 二进制环境。此项较大，值得提前下载。
+
+Cadabra2
+- 抽象指标规范化、多项张量恒等式、Bianchi 恒等式、协变导数交换、Clifford 与旋量表达式。
+- 与 Sage 的具体坐标计算互补，适合检查手性、符号、张量收缩和局部推导。
+- 接口：cadabra2 script.cdb；Python 模块；交互式笔记本可选。
+- 安装：选择官网对应 Ubuntu 版本和 CPU 架构的包。Python 接口应使用与该安装匹配的解释器。
+- 不把它视为无需输入约定的自动几何证明器。
+
+SymPy、NumPy、SciPy、mpmath、python-flint
+- SymPy：符号消元、展开、求导、有限维恒等式和数值代码生成。
+- SciPy：积分、ODE 初值/边值问题、约束优化、稀疏线性代数和谱计算。
+- mpmath：高精度探索；python-flint：精确有理计算及 Arb/Acb 球算术。
+- 球算术可提供带误差界的数值包围；离散化、截断和无限维余项仍由具体问题处理。
+- 接口：独立 uv 项目中的 Python；随附 geometry-core-pyproject.toml。
+- Matplotlib 用于论文图；h5py 保存大数组；NetworkX 可整理有限组合对象或依赖图。
+
+Git、ripgrep、Poppler、TeX Live、latexmk、Biber
+- Git/worktree 保存研究版本及并行分支；rg 检索现有原稿与局部公式。
+- Poppler 提供 pdftotext、pdfinfo、pdftoppm。
+- TeX Live 配合 XeLaTeX、latexmk、Biber 编译中英文数学稿件。
+- 优先保存可获得的原始 TeX/HTML；PDF 解析文本需要保留页码和原文件定位。
+
+Lean 4 / mathlib
+- 适合挑选可复用、适合形式化的代数与分析论证，逐步积累可检查的模块。
+- 复用已有 Lean 项目，固定 lean-toolchain 和 lake-manifest.json。
+- 仅安装 elan 不等于准备完成；还应取得目标工具链、mathlib 源码及编译缓存。
+- 在已配置 mathlib 依赖的项目根目录执行 lake exe cache get，随后 lake build。
+- 接口：lake env lean File.lean；lake build。
+- 不要求先把全部几何分析形式化，才允许继续研究。
+
+【B：建议预备，按研究任务启用】
+
+FEniCSx / PETSc / SLEPc / MPI / Gmsh / meshio
+- FEniCSx：弱形式与有限元；PETSc：稀疏、非线性及并行求解；SLEPc：大型谱问题。
+- Gmsh：网格；meshio：网格格式转换。PyVista/ParaView 可按可视化需求增加。
+- 2026-10-03 查阅的 FEniCS 官方页面列出稳定版 0.11；随附独立环境规格。
+- 使用同一二进制来源和一致的 MPI 构建；需要复数运算时，另选一致的复数构建。
+- 重要维数区别：Gmsh 是三维网格生成器，当前 DOLFINx 常规网格单元也不是通用四维单纯形网格框架。它们适用于降维模型、边界问题和局部试验。PETSc 的代数求解器本身不依赖空间维数，可服务专门编写的四维离散化。
+- 接口：Python/mpi4py；mpiexec；也可选官方容器。Conda 和容器选一条主安装路线。
+
+Regina / SnapPy
+- Regina：三、四维三角剖分、同调与组合操作、正规曲面/超曲面，以及结链的相关计算。
+- SnapPy：三维双曲流形、Dehn 填充和相关边界模型。
+- 它们适合有明确组合输入的拓扑与边界研究；不能代替四维光滑结构判定或自动计算全部规范理论不变量。
+- 优先 Python 接口，服务器不必安装桌面 GUI。随附核心环境的 topology 可选组。
+
+CVXPY 与其求解器
+- 用于把明确的有限维凸优化问题、半正定约束或候选不等式转成数值问题。
+- 数值最优值与残差不是精确证书；需要证明的结论可再用精确代数或区间方法验证。
+- 将其放入可选组，不让全部符号研究依赖优化求解器。
+
+JAX 或现有 PyTorch
+- 用于自动微分、Hessian-vector product、参数族批量搜索及较大数值试验。
+- 复用现有可用 GPU 框架。若已有 PyTorch 覆盖任务，不必立即再下载完整 JAX CUDA 环境。
+- 若选择 JAX，建立独立环境，按官网核对 CUDA、驱动与 GPU 支持；几何能量试验通常应显式启用 float64。
+- GPU 加速并非 Sage、Cadabra 或精确代数计算的默认能力。
+
+【C：有对应需求再安装】
+
+Wolfram Language / xAct
+- xTensor、xCoba、xPert、xTras 可作为抽象张量、坐标和变分计算的另一条成熟路线。
+- xAct 与 Wolfram 平台的授权分别处理；先确认已有授权及非交互式调用可用。
+- 接口：wolframscript -file task.wls。大型附加数据库如 Invar 不必全部提前获取。
+
+Julia / IntervalArithmetic.jl
+- 当研究转向较大规模的计算机辅助证明、区间算法或需要 Julia 生态的 ODE 方法时启用。
+- 使用独立 Project.toml / Manifest.toml；与 python-flint 互补，不必为同一小计算维护双份实现。
+
+OCRmyPDF / Tesseract / GROBID
+- OCRmyPDF/Tesseract 处理扫描文献；GROBID 可批量提取论文结构、作者和参考文献为 TEI XML。
+- 已有正常文本层的论文先用轻量工具；数学公式不能假定经 OCR 后仍然准确。
+- GROBID 可在任务需要时启动本地 HTTP 服务，无需常驻大型 GPU 模型。
+
+三、应准备的算法能力
+
+1. 精确张量计算：指标对称与规范化、Clifford 收缩、协变导数交换、曲率分解、外微分与 Hodge 星。
+2. 几何变分：从指定泛函推导一阶/二阶变分；显式分离规范方向与真实测试方向；生成坐标代码。
+3. 构造与边值计算：ODE shooting/collocation、参数延拓、约束优化、匹配条件与过渡区积分。
+4. 谱计算：稀疏特征值、shift-invert、零空间处理、Hessian 负方向及截断误差研究。
+5. 严格数值：精确有理化、球/区间包围、有限维证书；在有明确尾项估计时接入无限维论证。
+6. 拓扑计算：交叉矩阵、签名、同调、三角剖分与边界识别；保留标记、取向和边界修正。
+
+这些是 skill 可选择的能力，不是要求每个研究任务都走一遍的固定流程。现有软件提供通用运算；本项目的度量族、泛函、规范方程、边界条件和尺度参数仍需写成可复用的项目模块。
+
+四、Ubuntu 安装配方
+
+以下在目标服务器由管理员/研究系统执行。先确认 Ubuntu 版本、CPU 架构和已有软件；复用已经可用的安装。命令没有在目标服务器运行。
+
+系统基础及数学排版：
+
+sudo apt-get update
+sudo apt-get install -y \
+  git git-lfs ripgrep curl wget jq unzip zip xz-utils rsync tmux \
+  build-essential cmake ninja-build gfortran pkg-config python3-venv \
+  poppler-utils \
+  texlive-latex-extra texlive-science texlive-xetex texlive-lang-chinese \
+  latexmk biber fonts-noto-cjk
+
+可选扫描文献支持：
+
+sudo apt-get install -y ocrmypdf tesseract-ocr tesseract-ocr-eng \
+  tesseract-ocr-deu tesseract-ocr-fra tesseract-ocr-chi-sim
+
+uv 与 Miniforge/mamba：按下方官方文档安装或复用已有版本。二者用途不同：uv 管理核心 Python 项目，mamba 管理 Sage/PDE 的编译型数学依赖。
+
+核心 Python：
+- 新建专用目录，将 geometry-core-pyproject.toml 复制为该目录的 pyproject.toml。
+- 在此目录执行：
+
+uv python install 3.12
+uv lock
+uv sync --locked
+uv run --locked python -c 'import sympy, scipy, flint; print(sympy.__version__, scipy.__version__, flint.__version__)'
+
+- 需要时分别加 --extra notebook、--extra optimization、--extra topology；不是默认全部启用。
+- Python 3.12 是该配置的兼容性选择，不要求更改系统 Python。
+- 第一次成功解析后保存 uv.lock；后续会话使用 --locked。
+
+SageMath：
+
+mamba env create -f geometry-sage.yml
+mamba run -n geom-sage sage --version
+mamba run -n geom-sage sage -python -c 'from sage.all import QQ, matrix; print(matrix(QQ, [[2,1],[1,2]]).det())'
+
+PDE 环境（启用这条路线时）：
+
+mamba env create -f geometry-pde.yml
+mamba run -n geom-pde python -c 'import dolfinx, petsc4py, slepc4py; print(dolfinx.__version__)'
+mamba run -n geom-pde mpiexec -n 2 python -c 'from mpi4py import MPI; print(MPI.COMM_WORLD.rank, MPI.COMM_WORLD.size)'
+
+替代的官方容器路线是 dolfinx/dolfinx:stable；下载后保存实际 image digest，固定运行镜像，避免之后 stable 指向其他版本。无需同时安装容器和 Conda 两套。
+
+Cadabra：
+- 从官网 download 页面选择当前 Ubuntu 版本的安装方式，保留包版本与安装文件。
+- 先验证 cadabra2 --help，再运行实际 Clifford/张量小例子。
+- 不在此给出未经目标 OS 核对的 PPA 或硬编码 deb 文件名。
+
+Lean：
+- 已有项目：进入项目根目录，运行 lake exe cache get，再运行 lake build。
+- 全新项目可使用 mathlib 官方的新项目命令，然后固定生成的工具链与依赖。
+- 不用“更新到最新 master”替代已有证明项目的可复现环境。
+
+论文：
+latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex
+
+五、哪些最值得提前下载
+
+第一批：Sage 二进制环境、Cadabra 包、TeX Live 所需集合、核心 Python 的完整解析依赖。
+第二批：实际 Lean 项目的工具链与 mathlib 编译缓存；如果已有形式化工作，和第一批同时准备。
+第三批：PDE/MPI 环境或其容器镜像。涉及大量编译依赖，避免研究当天从源代码临时构建。
+第四批：明确要使用的 GPU 框架、OCR/GROBID 镜像、拓扑数据库。按任务决定，不下载所有数据集。
+
+维护要点：
+- 核心 Python：保留 uv.lock 和 uv cache dir 所示缓存；初次联网同步后，可用 uv sync --offline --locked 检查该规格的离线可用性。
+- Conda 环境：安装成功后以 conda list -n geom-sage --explicit 导出平台专用清单；PDE 同理；保留对应包缓存。
+- Lean：保留项目工具链、依赖提交和 cache get 得到的编译产物。
+- 容器：固定 digest，确需离线迁移时用 docker save 保存实际镜像。
+- apt：单纯保存已安装包名不等于具备离线重装能力；有离线需求时另外准备同发行版、同架构的包及完整依赖缓存。
+- 不估算一个固定的“全部下载时长”：网络、已有缓存、架构和二进制供应决定耗时。以上安装配方应先走二进制路线。
+
+六、文献接口与本地资料
+
+arXiv：Atom API 用于检索、版本和元数据，论文源文件/PDF 使用对应官方入口；缓存重复查询，按官方要求节流。
+Crossref：DOI 与发表元数据；HTTP 请求提供联系信息，读取实际服务限流响应。
+OpenAlex：引文图及发现相关文献；当前服务支持 API key，按当前账号额度使用。
+Semantic Scholar：可选的引文与论文图 API；有 key 时由现有密钥设施提供。
+Zotero：若已有文献库，使用 Web API v3 同步；否则 BibTeX 加 Git 已可工作。
+GROBID：需要时 POST /api/processFulltextDocument；用于结构提取，结果仍链接原文。
+
+推荐用现有 HTTP 工具或 Python httpx 统一封装。密钥来自运行环境或现有密钥服务，不写进 skill、论文仓库或任务日志。
+
+最小文献记录：DOI/arXiv ID 与版本、标题、原文路径/URL、页码或定理位置、与本项目的具体关系。用现有索引及知识图谱即可；无需仅因新建 skill 再部署一套向量数据库。
+
+七、skill 如何连接这些环境
+
+最小平台能力：
+1. shell/Python 执行，可指定 cwd、环境和超时。
+2. 长任务提交、状态查询、取消、结果文件返回。
+3. HTTP 请求/已有搜索工具。
+4. 共享研究文件与 Git 工作分支。
+
+本机 CLI/Python 适合绝大多数数学工具。需要跨服务器调用或现有系统统一工具注册时，再包装 MCP/HTTP；不必每装一个库就常驻一个服务。
+
+真实调用示例：
+uv run --project /data/qiushi/envs/geometry-core --locked python task.py
+mamba run -n geom-sage sage task.sage
+cadabra2 task.cdb
+mamba run -n geom-pde mpiexec -n 8 python task.py
+lake env lean Proof.lean
+latexmk -xelatex main.tex
+
+这些是调用模式；路径、脚本与线程数由实际任务确定，不表示当前服务器已有这些文件。
+
+并行会话共用只读依赖与下载缓存，分别使用自己的 worktree 和计算输出目录。通过现有调度器分配 CPU/MPI/GPU；避免每个会话都独占全部 BLAS 线程。升级依赖时新建环境验证，再切换入口，不改动正在运行任务的环境。
+
+八、研究 skill 的简洁设计草案
+
+建议名称：research-geometric-analysis
+建议触发范围：微分几何、几何分析、规范场、曲率变分、拓扑约束、存在性/障碍/刚性/退化问题及相关计算。
+
+正文只需要承担以下职责：
+
+1. 读取当前研究问题、最强可用命题和原始证明入口；按任务深入，不默认加载全部历史材料。
+2. 开始运算前统一维数、度量签名、曲率符号、取向、Hodge 星、曲率算子/张量范数、Clifford 及规范场归一化。
+3. 抽象张量用 Cadabra；坐标几何与精确代数用 Sage/SymPy；构造与谱问题用 SciPy 或 PDE 环境；需要误差包围时用 python-flint；合适的形式化模块用 Lean。
+4. 工具选择由问题决定。证明、反例和构造都允许；不把某个对称模型、离散化或证明路线固化为研究范围。
+5. 每项计算保留输入假设、所用约定、脚本、环境版本和可复查输出。区分精确恒等式、数值观察、带误差界的验证及形式证明。
+6. 文献引用到原文及具体位置；新结果写回当前研究分支，保留其与前置命题的连接。
+
+参考文件可分别存放工具清单、数学约定、当前研究状态和文献入口。脚本只封装真正重复的调用。不要把整个大型研究汇编直接塞进 SKILL.md。
+
+此处是供用户服务器使用的设计草案，尚未安装为本应用或目标研究系统的 skill。
+
+九、官方来源
+
+[1] SageMath 安装：https://doc.sagemath.org/html/en/installation/conda
+[2] SageManifolds 度量 API：https://doc.sagemath.org/html/en/reference/manifolds/sage/manifolds/differentiable/metric.html
+[3] Cadabra 下载：https://cadabra.science/download.html
+[4] SymPy 张量：https://docs.sympy.org/latest/modules/tensor/tensor.html
+[5] python-flint 安装：https://python-flint.readthedocs.io/en/latest/install.html
+[6] SciPy 边值问题：https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_bvp.html
+[7] SciPy 优化：https://docs.scipy.org/doc/scipy/reference/optimize.html
+[8] SciPy 稀疏谱：https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.eigsh.html
+[9] FEniCS 安装：https://fenicsproject.org/download/
+[10] DOLFINx 网格 API：https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/generated/dolfinx.mesh.html
+[11] PETSc：https://petsc.org/release/manual/ksp/
+[12] SLEPc：https://slepc.upv.es/release/documentation/faq.html
+[13] Gmsh：https://gmsh.info/
+[14] meshio：https://github.com/nschloe/meshio
+[15] Regina：https://regina-normal.github.io/
+[16] SnapPy 安装：https://snappy.computop.org/installing.html
+[17] CVXPY 安装：https://www.cvxpy.org/install/
+[18] JAX 安装：https://docs.jax.dev/en/latest/installation.html
+[19] JAX 精度：https://docs.jax.dev/en/latest/101/default_dtypes.html
+[20] xAct：https://www.xact.es/
+[21] WolframScript：https://reference.wolfram.com/language/ref/program/wolframscript.html
+[22] IntervalArithmetic.jl：https://juliaintervals.github.io/IntervalArithmetic.jl/stable/
+[23] Lean 安装：https://lean-lang.org/install/manual/
+[24] mathlib 项目与缓存：https://github.com/leanprover-community/mathlib4/wiki/Using-mathlib4-as-a-dependency
+[25] uv 缓存：https://docs.astral.sh/uv/concepts/cache/
+[26] micromamba：https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html
+[27] arXiv API：https://info.arxiv.org/help/api/user-manual.html
+[28] Crossref API：https://www.crossref.org/documentation/retrieve-metadata/rest-api/access-and-authentication/
+[29] OpenAlex：https://help.openalex.org/api/authentication/
+[30] Semantic Scholar：https://api.semanticscholar.org/api-docs/
+[31] Zotero API：https://www.zotero.org/support/dev/web_api/v3/basics
+[32] OCRmyPDF：https://ocrmypdf.readthedocs.io/en/latest/installation.html
+[33] GROBID：https://grobid.readthedocs.io/en/latest/getting_started/
+[34] latexmk：https://ctan.org/pkg/latexmk
+[35] Biber：https://ctan.org/pkg/biber
+[36] Git worktree：https://git-scm.com/docs/git-worktree
+
+这些来源用于核对软件能力、安装和接口；它们不是对项目数学定理的认证。本文没有把软件可用性当作未解数学问题已经解决。

@@ -1,0 +1,432 @@
+\documentclass[UTF8,11pt,fontset=none]{ctexart}
+\usepackage[a4paper,margin=23mm,headheight=15pt,footskip=11mm]{geometry}
+\usepackage{fontspec}
+\IfFontExistsTF{TeX Gyre Termes}{\setmainfont{TeX Gyre Termes}}{\setmainfont{lmroman10-regular.otf}[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf,BoldItalicFont=lmroman10-bolditalic.otf]}
+\IfFontExistsTF{TeX Gyre Heros}{\setsansfont{TeX Gyre Heros}}{\setsansfont{lmsans10-regular.otf}[BoldFont=lmsans10-bold.otf,ItalicFont=lmsans10-oblique.otf]}
+\IfFontExistsTF{DejaVu Sans Mono}{\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]}{\setmonofont{lmmono10-regular.otf}}
+\IfFontExistsTF{Noto Serif CJK SC}{\setCJKmainfont{Noto Serif CJK SC}[AutoFakeSlant=0.15]}{\setCJKmainfont{FandolSong-Regular.otf}[BoldFont=FandolSong-Bold.otf,ItalicFont=FandolKai-Regular.otf]}
+\IfFontExistsTF{Noto Sans CJK SC}{\setCJKsansfont{Noto Sans CJK SC}}{\setCJKsansfont{FandolHei-Regular.otf}}
+\IfFontExistsTF{Noto Sans Mono CJK SC}{\setCJKmonofont{Noto Sans Mono CJK SC}}{\setCJKmonofont{FandolFang-Regular.otf}}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,esint,bm}
+\usepackage{booktabs,longtable,array,calc}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=1.7em,topsep=3pt}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,fontsize=\small}
+\usepackage{xurl}
+\usepackage[unicode,hidelinks,bookmarksnumbered]{hyperref}
+\usepackage{bookmark}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small 第一科学主线：近期研究全稿}
+\fancyhead[R]{\small 2026-10-07}\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\providecommand{\tightlist}{\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\avint}{\fint}
+\newcommand{\Jcal}{\mathcal J}
+\newcommand{\Ecal}{\mathcal E}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\Rea}{\operatorname{Re}}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{3pt plus 1pt}
+\setlength{\emergencystretch}{3em}
+\linespread{1.10}\allowdisplaybreaks[2]
+\setlength{\abovedisplayskip}{8pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{8pt plus 2pt minus 2pt}
+\renewcommand{\arraystretch}{1.12}
+\setcounter{tocdepth}{1}\setcounter{secnumdepth}{2}
+\pdfstringdefDisableCommands{\def\fint{int}\def\mathcal#1{#1}\def\mathfrak#1{#1}\def\mathscr#1{#1}\def\operatorname#1{#1}\def\varepsilon{epsilon}\def\chi{chi}\def\beta{beta}\def\rho{rho}\def\tau{tau}\def\Phi{Phi}\def\sigma{sigma}\def\kappa{kappa}\def\nabla{D}\def\mathbb#1{#1}\def\({}\def\){}\def\textsuperscript#1{#1}\def\textsubscript#1{#1}}
+\title{低密度端点与退化尺度的变分选择}
+\author{第一科学主线·近期研究分卷}
+\date{2026年10月7日}
+\begin{document}
+\maketitle
+\noindent\textbf{原稿编号：}R01。
+
+本章收录两项不同的推导。第一项把已有的 \(\chi/A<3/8\) 阈值观察接成原度量、全参数端点估计；第二项在原平衡族中，从真正下确界选取常标量、近驻点和近稳定序列。其前置是项目的有限参数估计、精确共形比较和全曲率变分归约。\cite{R01,Base,N1}
+
+\section{由原稿补全：\(\chi\)/A\(\le\)B\textless3/8 时的完整 O10 估计}\label{ch1:ux7531ux539fux7a3fux8865ux5168ux3c7ab38-ux65f6ux7684ux5b8cux6574-o10-ux4f30ux8ba1}
+
+\subsection{命题}\label{ch1:ux547dux9898}
+
+保留 O10 的原实际供给、p\(\ge\)A\textgreater0、a\textsuperscript{2}\(\ge\)T\textsubscript{+}。若
+
+\[
+\frac{\chi(M)}A\le B<\frac38,\qquad B\ge0,
+\]
+
+则存在 c(B)\textgreater0，使对全部原容许度量和全部 \(\beta\)\(\ge\)2 有
+
+\[
+\boxed{\fint|\operatorname{Ric}+g|^2+\frac{D_\beta}{V}
+\ge c(B)\frac{(\beta-2)^2}{\beta^2}.}
+\tag{1.1}\label{eq:r1:1}
+\]
+
+不增加点态 Ricci、直径、Sobolev 或非塌缩假设。
+
+阈值 B\textless3/8 本身已经出现在原稿 \texttt{proof:quartic-flux:s3}、约33065---33074行；阈值本身沿用原稿。以下将该观察与原单解恒等式、有限参数估计和共形比较接成完整推论，并给出一种显式常数依赖。
+
+\subsection{证明}\label{ch1:ux8bc1ux660e}
+
+先令 s=-4，r=P/V、z=D\(\beta\)/V、\(\kappa\)=r+z。在同一个实际解上，原稿给
+
+\[
+0\le\rho=|\Phi|^2\le2,\qquad
+c_\beta=\frac43(1+\beta^{-1}),\qquad
+\fint(\rho-c_\beta)^2\le z/6.
+\]
+
+Hodge 投影给 4\(\pi\)\textsuperscript{2}p\(\le\)(1/2)\(\int\)\(\rho\)\textsuperscript{2}。因为 \textbar \(\rho\)\textsuperscript{2}-c\(\beta\)\textsuperscript{2}\textbar\(\le\)4\textbar \(\rho\)-c\(\beta\)\textbar，
+
+\[
+8\pi^2\frac pV\le\fint\rho^2
+\le c_\beta^2+4\sqrt{z/6}.
+\tag{1.2}\label{eq:r1:2}
+\]
+
+Gauss--Bonnet 及两种 Weyl 平方非负性给
+
+\[
+\frac{8\pi^2\chi}V
+=\fint(|W^+|^2+|W^-|^2)+\frac23-\frac r2
+\ge\frac23-\frac r2.
+\]
+
+另一方面 \(\chi\)/V\(\le\)BA/V\(\le\)Bp/V。结合 \eqref{eq:r1:2}，得到
+
+\[
+\gamma_B:=\frac23-\frac{16B}{9}>0,
+\]
+
+\[
+\gamma_B\le\frac\kappa2+
+\frac{16B}{9}(2\beta^{-1}+\beta^{-2})
++\frac{4B}{\sqrt6}\sqrt\kappa.
+\tag{1.3}\label{eq:r1:3}
+\]
+
+取
+
+\[
+\beta_0=\max\left\{2,\left\lceil\frac{80B}{9\gamma_B}\right\rceil\right\},
+\qquad k_B=4B/\sqrt6.
+\]
+
+当 \(\beta\)\(\ge\)\(\beta\)\textsubscript{0} 时，(16B/9)(2/\(\beta\)+1/\(\beta\)\textsuperscript{2})\(\le\)\(\gamma\)B/2。因此
+
+\[
+\kappa\ge d_B:=\bigl(\sqrt{k_B^2+\gamma_B}-k_B\bigr)^2>0.
+\tag{1.4}\label{eq:r1:4}
+\]
+
+在 2\(\le\)\(\beta\)\(\le\)\(\beta\)\textsubscript{0} 上，原去类平方成本的有限参数定理给
+
+\[
+\kappa\ge r+\frac{D_\beta}{\beta V}
+\ge c_{\mathrm{par}}\frac{(\beta-2)^2}{\beta^4}
+\ge\frac{c_{\mathrm{par}}}{\beta_0^2}
+\frac{(\beta-2)^2}{\beta^2}.
+\]
+
+故标量-4代表上的结论成立，常数可取
+
+\[
+c_{\mathrm{sc}}(B)=\min\{d_B,c_{\mathrm{par}}/\beta_0^2\}.
+\]
+
+对一般原容许度量，原稿的共形比较为
+
+\[
+\widehat\kappa\le
+\frac{\kappa}{1-\sqrt\kappa-\kappa/16}.
+\]
+
+若 \(\kappa\)\textless1/16，分母大于1/2，故 \(\kappa\)\(\ge\)\(\kappa\)̂/2；若 \(\kappa\)\(\ge\)1/16，因 (\(\beta\)-2)\textsuperscript{2}/\(\beta\)\textsuperscript{2}\(\le\)1 直接足够。因此可取
+
+\[
+\boxed{c(B)=\min\{1/16,\tfrac12c_{\mathrm{sc}}(B)\}.}
+\]
+
+同一实际类、p、A、a\textsuperscript{2}、T及\(\chi\)/A在比较中保留。证毕。
+
+\subsection{对原平衡族的直接后果}\label{ch1:ux5bf9ux539fux5e73ux8861ux65cfux7684ux76f4ux63a5ux540eux679c}
+
+原稿中的 X\textsubscript{j} 为复双曲曲面的有限覆盖，\(\chi\)(X\textsubscript{j})=A\textsubscript{j}/3，而
+
+\[
+\chi(M_j)=A_j/3+k_j-2\ell_j.
+\]
+
+用原稿比例 k\textsubscript{j}/Q\textsubscript{j}\(\to\)2/9、\(\ell\)\textsubscript{j}/Q\textsubscript{j}\(\to\)7/36，得到
+
+\[
+\frac{\chi(M_j)}{A_j}
+=\frac13-\frac{h_j}{6}+o(h_j)<\frac13
+\]
+
+对充分大 j 成立。所以这族可统一使用 B=1/3\textless3/8，\eqref{eq:r1:1} 已覆盖其全部容许度量和全部 \(\beta\)。
+
+因此要修正的是任务范围：一般 O10 的困难保留在该推论未覆盖的 B\(\ge\)3/8（包括临界B=3/8）及无密度界情形；不能再把 O10 在原平衡族上的这个子范围，与 O11 的未知最佳首项并列为同等未闭合任务。该结论不决定 O11，也不解决一般 O10。
+
+\section{O11：保留原对象与已证输入}\label{ch1:o11ux4fddux7559ux539fux5bf9ux8c61ux4e0eux5df2ux8bc1ux8f93ux5165}
+
+沿用
+
+\[
+M_j=X_j\#k_j\overline{\mathbb{CP}}^2
+\#\ell_j(S^1\times S^3),\qquad
+Q_j=k_j+4\ell_j,\qquad h_j=Q_j/A_j\to0,
+\]
+
+及
+
+\[
+P=\int|\operatorname{Ric}^{\circ}|^2,\quad
+R=\int|\operatorname{Ric}|^2,\quad S_2=\int s^2,
+\quad L_s=S_2-\frac{(\int s)^2}{V},
+\]
+
+\[
+\mathcal E=\frac{4P+L_s}{R},\quad
+\mathcal J=\frac{4P}{R},\quad
+\alpha_j=\inf_g\mathcal E(g),\quad
+\rho_j=\frac{\inf_gP(g)}{8\pi^2A_j}.
+\]
+
+以下全部使用原平衡族已证关系：
+
+\[
+\inf\mathcal J=\alpha_j<1,\quad
+\alpha_j=4\rho_j+O(h_j^2),\quad
+c h_j\le\alpha_j\le\frac{4h_j}{1+h_j},
+\tag{1.5}\label{eq:r1:5}
+\]
+
+\[
+8\pi^2A_j+P(g)\le R(g)\le8\pi^2A_jU_j+4P(g),
+\qquad U_j=1+h_j+O(h_j^2).
+\tag{1.6}\label{eq:r1:6}
+\]
+
+系数4等价于 inf P=8\(\pi\)\textsuperscript{2}Q+o(Q)。P=8\(\pi\)\textsuperscript{2}N+Z 及其补偿式没有另提供下界。
+
+关键的变分区别是：证明下确界的下界，只需对一个确实逼近原下确界的适当选择序列建立目标估计。不必先证明每一个竞争序列都满足同一结构分类。
+
+\section{近极小序列可取得定量近驻点和近稳定性}\label{ch1:ux8fd1ux6781ux5c0fux5e8fux5217ux53efux53d6ux5f97ux5b9aux91cfux8fd1ux9a7bux70b9ux548cux8fd1ux7a33ux5b9aux6027}
+
+\subsection{命题}\label{ch1:ux547dux9898-1}
+
+对任意给定 \(\varepsilon\)\textsubscript{j}↓0，原平衡族上存在光滑度量 g\textsubscript{j}，使
+
+\[
+s_{g_j}=-4,\qquad
+0\le\mathcal E(g_j)-\alpha_j\le\varepsilon_j^2 h_j^2.
+\tag{1.7}\label{eq:r1:7}
+\]
+
+定义
+
+\[
+\tau_j=-\frac1{4-\alpha_j},\qquad
+\mathscr F_j(g)=R(g)+\tau_jS_2(g).
+\tag{1.8}\label{eq:r1:8}
+\]
+
+对任意光滑对称二张量 v，定义
+
+\[
+\|v\|_{\mathrm{crit},g}
+=\|v\|_{L^\infty(g)}
++\|\nabla^g v\|_{L^4(g)}
++\|(\nabla^g)^2v\|_{L^2(g)}.
+\tag{1.9}\label{eq:r1:9}
+\]
+
+对充分大 j，有与所考察度量的直径、注入半径、Sobolev 常数及点态曲率界无关的 C，使
+
+\[
+\boxed{|D\mathscr F_j(g_j)[v]|
+\le C\varepsilon_jQ_j\|v\|_{\mathrm{crit},g_j},}
+\tag{1.10}\label{eq:r1:10}
+\]
+
+\[
+\boxed{D^2\mathscr F_j(g_j)[v,v]
+\ge-C\varepsilon_jQ_j\|v\|_{\mathrm{crit},g_j}^2.}
+\tag{1.11}\label{eq:r1:11}
+\]
+
+第二变分沿仿射度量路径 g\textsubscript{j}+t v 定义。同时，
+
+\[
+R(g_j)=8\pi^2A_j+O(Q_j),\qquad
+0\le P(g_j)-\inf P=O(A_jh_j^2)=o(Q_j).
+\tag{1.12}\label{eq:r1:12}
+\]
+
+因此，这些序列仍精确服务于原 O11。参数 \(\alpha\)\textsubscript{j} 在对度量求导时固定；其值未知不妨碍理论选择，但命题不提供计算 \(\alpha\)\textsubscript{j} 的算法。
+
+\subsection{证明第一步：选择常标量的真正近极小序列}\label{ch1:ux8bc1ux660eux7b2cux4e00ux6b65ux9009ux62e9ux5e38ux6807ux91cfux7684ux771fux6b63ux8fd1ux6781ux5c0fux5e8fux5217}
+
+由下确界定义，可以选择 \(\mathcal E\)\(\le\)\(\alpha\)\textsubscript{j}+\(\varepsilon\)\textsubscript{j}\textsuperscript{2}h\textsubscript{j}\textsuperscript{2} 的光滑度量。对充分大 j，这个值小于1。原稿的 Yamabe 比较不增加 \(\mathcal E\)，故可将它换成标量-4的代表，仍满足 \eqref{eq:r1:7}。
+
+这一步没有限定恢复模型、径向族或某个固定共形类。
+
+在 g\textsubscript{j} 上，L\_s=0，故 \(\mathcal E\)=\(\mathcal J\)=4P/R。由 \eqref{eq:r1:6}，
+
+\[
+8\pi^2A_j\le R_j\le\frac{8\pi^2A_jU_j}{1-\mathcal E(g_j)}
+=8\pi^2A_j+O(Q_j).
+\]
+
+结合 \(\alpha\)\textsubscript{j}=4\(\rho\)\textsubscript{j}+O(h\textsubscript{j}\textsuperscript{2})，便得
+
+\[
+P_j=\mathcal E(g_j)R_j/4
+=8\pi^2A_j\rho_j+O(A_jh_j^2),
+\]
+
+即 \eqref{eq:r1:12}。
+
+\subsection{证明第二步：全局非负泛函与极小超额}\label{ch1:ux8bc1ux660eux7b2cux4e8cux6b65ux5168ux5c40ux975eux8d1fux6cdbux51fdux4e0eux6781ux5c0fux8d85ux989d}
+
+原稿已证 inf\(\mathcal J\)=\(\alpha\)\textsubscript{j}。因此对 M\textsubscript{j} 上每个光滑度量 g，
+
+\[
+\mathscr F_j(g)
+=\frac{R(g)}{4-\alpha_j}\,[\mathcal J(g)-\alpha_j]\ge0.
+\tag{1.13}\label{eq:r1:13}
+\]
+
+在选择的常标量代表上，
+
+\[
+0\le\mathscr F_j(g_j)
+=\frac{R_j}{4-\alpha_j}[\mathcal E(g_j)-\alpha_j]
+\le C A_j\varepsilon_j^2h_j^2.
+\tag{1.14}\label{eq:r1:14}
+\]
+
+此非负性适用于全部度量，所以后面的有限变分可以离开常标量子空间。无需对 Yamabe 投影求导，也没有假设该投影保持变分范数。
+
+\subsection{证明第三步：有限变分的统一二阶和四阶余项}\label{ch1:ux8bc1ux660eux7b2cux4e09ux6b65ux6709ux9650ux53d8ux5206ux7684ux7edfux4e00ux4e8cux9636ux548cux56dbux9636ux4f59ux9879}
+
+先令 \(\Vert\)v\(\Vert\)crit,g=1。若 \textbar t\textbar\(\le\)1/4，则 g\_t=g+t v 仍正定，且与 g 一致等价。以 \(\nabla\)=\(\nabla\)\^{}g 记背景联络。联络差为
+
+\[
+C(t)^k{}_{ij}
+=\tfrac t2(g_t^{-1})^{k\ell}
+(\nabla_i v_{j\ell}+\nabla_j v_{i\ell}-\nabla_\ell v_{ij}).
+\tag{1.15}\label{eq:r1:15}
+\]
+
+Ricci 的精确差式为
+
+\[
+\operatorname{Ric}(g_t)_{ij}-\operatorname{Ric}(g)_{ij}
+=\nabla_kC(t)^k{}_{ij}-\nabla_jC(t)^k{}_{ik}
++C(t)^k{}_{k\ell}C(t)^\ell{}_{ij}
+-C(t)^k{}_{j\ell}C(t)^\ell{}_{ik}.
+\tag{1.16}\label{eq:r1:16}
+\]
+
+在 \textbar t\textbar\(\le\)1/4 内，g\_t\textsuperscript{-}¹ 和体积密度的前四阶 t 导数由 \(\Vert\)v\(\Vert\)\(\infty\)\(\le\)1 控制。对 \eqref{eq:r1:16} 求 t 导数，只产生由 \(\nabla\)\textsuperscript{2}v、\(\nabla\)v\(\otimes\)\(\nabla\)v 及有界 v 因子组成的项。因为
+
+\[
+\|\nabla^2v\|_2\le1,\qquad
+\|\nabla v\otimes\nabla v\|_2\le\|\nabla v\|_4^2\le1,
+\]
+
+对于 m=2,4，令 f(t)=\(\mathscr F\)\_j(g+t v)，有
+
+\[
+\sup_{|t|\le1/4}|f^{(m)}(t)|
+\le C\{1+R(g)\}.
+\tag{1.17}\label{eq:r1:17}
+\]
+
+这里同时考虑 Ricci 平方、标量平方、逆度量收缩和体积密度。\textbar \(\tau\)\textsubscript{j}\textbar{} 有统一界。不需要交换协变导数，也没有引入 \(\nabla\)Rm 或点态 Rm 界。对 g\textsubscript{j}，右侧为 C A\textsubscript{j}。
+
+\subsection{证明第四步：利用两侧真实竞争度量}\label{ch1:ux8bc1ux660eux7b2cux56dbux6b65ux5229ux7528ux4e24ux4fa7ux771fux5b9eux7adeux4e89ux5ea6ux91cf}
+
+由 f(t)\(\ge\)0、f(-t)\(\ge\)0 和二阶 Taylor 余项，
+
+\[
+|f'(0)|\le f(0)/t+C A_j t.
+\]
+
+取 t=\(\varepsilon\)\textsubscript{j}h\textsubscript{j}，结合 \eqref{eq:r1:14}，得到
+
+\[
+|f'(0)|\le C\varepsilon_jA_jh_j=C\varepsilon_jQ_j.
+\]
+
+对称的四阶 Taylor 展开给
+
+\[
+f(t)+f(-t)=2f(0)+t^2f''(0)+O(A_jt^4).
+\]
+
+仍由两侧非负性，
+
+\[
+f''(0)\ge-2f(0)/t^2-C A_j t^2.
+\]
+
+取 t=√(\(\varepsilon\)\textsubscript{j}h\textsubscript{j})，得到
+
+\[
+f''(0)\ge-C\varepsilon_jA_jh_j=-C\varepsilon_jQ_j.
+\]
+
+对一般 v，将 v 除以其临界范数，再用第一、第二变分的齐次性，即得 \eqref{eq:r1:10}---\eqref{eq:r1:11}。v=0 时显然成立。证毕。
+
+\section{该补充的意义与使用边界}\label{ch1:ux8be5ux8865ux5145ux7684ux610fux4e49ux4e0eux4f7fux7528ux8fb9ux754c}
+
+这项命题把原稿中``光滑极小值取得时的驻点性''推进为：即使极小值不取得、几何退化，仍可选择真正服务于原下确界的常标量序列，使一阶、二阶变分误差在手术尺度 Q 上趋零。
+
+它没有调用新的存在定理或全局紧性定理，也没有把普通 o(V) 误差当成 o(Q)。方法仅用原稿全局非负阈值、任意精度的极小化序列及明确的有限变分估计。
+
+其使用必须保留以下边界：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \eqref{eq:r1:10} 是临界测试范数的对偶估计，不是 \(\nabla\)\(\mathscr F\)=0，也不自动是 Euler--Lagrange 残差的 L\textsuperscript{2} 小性。
+\item
+  \eqref{eq:r1:11} 是同一范数下的近稳定性，不是已经获得谱隙或几何紧性。
+\item
+  若所需测试张量的 \(\Vert\)·\(\Vert\)crit,g 没有控制，就不能删去右侧误差。归一化一个大范数测试也同时缩小可能得到的负方向，不能凭归一化制造矛盾。
+\item
+  精确临界度量的正则性定理，不能不经残差范数检查直接用于这里的近临界序列。
+\item
+  本命题针对原 O11 全度量族；不自动适用于带其他实际场约束的 O10 容许集合。
+\item
+  这是一项可以并入研究的补充接口，不是已经证明最佳系数。它也没有宣称全部历史原稿均未隐含类似推论；这里提供的是可逐步检查的独立推导。
+\end{enumerate}
+
+\section{变分选择的当前用途}\label{ch1:ux53d8ux5206ux9009ux62e9ux7684ux5f53ux524dux7528ux9014}
+
+本章的近极小选择和误差尺度不依赖候选系数为 \(4\)。用户系统后来已在相应族上构造出严格次四恢复；因此原稿曾提出的``全部次四几何都存在固定 \(Q\) 级下降方向''不再作为当前待证命题。保留的是：围绕真实下确界选择序列，再以合法变分检验新的全局下界。\cite{System}
+
+\begin{thebibliography}{P99}
+\small
+\bibitem[R01]{R01} 本会话研究原稿，\emph{低密度端点与退化尺度的变分选择}，2026-09-29。\path{O10_O11_Direct_Work_20260929.md}。
+
+\bibitem[P01]{Base} Qiushi 项目，\emph{20260929 Line1 Integrated Manuscript}，2026-09-29；第25节与相应直接引用。
+
+\bibitem[P02]{N1} 主会话与项目补充，\emph{单解无迹 Ricci 积分障碍与类平方短缺版}，2026-09-28，\path{03_N1_Complete_Inheritance.md}。
+
+\bibitem[P08]{System} S1003A01、S1003A02，\emph{Mathematical Synthesis}，2026-10-07；\path{20261007_Einstein_Gaps_Two_Sessions(1).zip} 中 \path{01_Mathematical_Synthesis.md}。
+
+\end{thebibliography}
+\end{document}

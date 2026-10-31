@@ -1,0 +1,756 @@
+{
+  "purpose": "Actual bounded computation results; not certification of complete geometric theorems or novelty.",
+  "isolation": {
+    "method": "Bubblewrap filesystem: read-only Skill and released Python, task-only writable output",
+    "old_session_and_download_paths_visible": false,
+    "python_optimized_mode": true,
+    "scope": "The filesystem probe and five checks ran in the same sandbox. Network isolation is not claimed."
+  },
+  "normal_run": {
+    "schema": "qiushi-yau26.reproduction.v1",
+    "status": "passed",
+    "started_utc": "2026-09-16T12:19:10.406399+00:00",
+    "selected_groups": [
+      "uniform_gap",
+      "weyl10",
+      "ed_ricci",
+      "cz_spike",
+      "four_node"
+    ],
+    "mutation": null,
+    "versions": {
+      "python": "3.12.13",
+      "numpy": "2.2.6",
+      "sympy": "1.14.0"
+    },
+    "inputs": {
+      "reproduce.py": {
+        "sha256": "b2d37e7d6c2dd5e4de8d13c437f2f17637f351b21f313afe725182f9204bb3b8"
+      },
+      "math_checks.py": {
+        "sha256": "390b01202b929189e8d91c22afdcae9ec25298e12babe57a9faa7f6c491b368b"
+      },
+      "data/four_node_fixture.json": {
+        "sha256": "aa8d6b585c07f370a905a982a391b535b44f6f3ec3d5282595f17110d487129b"
+      }
+    },
+    "groups": [
+      {
+        "group": "uniform_gap",
+        "status": "passed",
+        "result": "uniform_gap.json"
+      },
+      {
+        "group": "weyl10",
+        "status": "passed",
+        "result": "weyl10.json"
+      },
+      {
+        "group": "ed_ricci",
+        "status": "passed",
+        "result": "ed_ricci.json"
+      },
+      {
+        "group": "cz_spike",
+        "status": "passed",
+        "result": "cz_spike.json"
+      },
+      {
+        "group": "four_node",
+        "status": "passed",
+        "result": "four_node.json"
+      }
+    ],
+    "scope": "bounded symbolic and fixture checks, not a formal proof of the research papers or a spectral tail certificate",
+    "elapsed_seconds": 4.985843066126108,
+    "results": {
+      "uniform_gap": {
+        "scope": "exact finite algebra and constants; not the analytic compactness proof or a computed gamma",
+        "provenance": [
+          "verify_deficit_constants.py",
+          "research/20260916_uniform_gap.tex: calibration, density budget, Noether application",
+          "research/20260912.tex: Seiberg--Witten error window"
+        ],
+        "checked": [
+          "27 square completion",
+          "216/18 joint calibration",
+          "109 Q bound with nonnegative 26 Z slack",
+          "436 and 675 normalized coefficients",
+          "chi/A <= 124/3 < 42",
+          "forbidden Weyl trace, norm and determinant",
+          "explicit SW ratio algebra"
+        ],
+        "conditions": {
+          "Einstein_gap": "MP(A), chi <= L A; analytic proof in paper; gamma is non-explicit",
+          "blowup_application": "closed minimal general-type complex surface, b_plus > 1, A=c1^2 positive integer, k>=0",
+          "SW_ratio_formula": "1/3 < p=k/A < 1 and 0<=delta_minus<1; conclusion delta_minus/(1-delta_minus)>=sqrt((p-1/3)/2). If (2/3)(1-delta)^2-2delta^2<=0, the stronger ratio bound 1/sqrt(3) applies directly."
+        },
+        "constants": {
+          "density_Q": 109,
+          "delta_squared": 436,
+          "topology_d": 675,
+          "relative_Euler_L": 42
+        },
+        "negative_controls": [
+          {
+            "mutation": "calibration 18 replaced by 17",
+            "rejected": true
+          }
+        ],
+        "group": "uniform_gap",
+        "status": "passed",
+        "elapsed_seconds": 0.20572666265070438
+      },
+      "weyl10": {
+        "scope": "exact symbolic curvature symmetries and linearized Ricci on all 10 Weyl directions, with arbitrary radial jets",
+        "provenance": [
+          "step83_full_weyl_log_annulus_audit.py",
+          "research/20260916_construction.tex: full Weyl log interpolation"
+        ],
+        "normalization": "orientation 0123; unnormalized self/anti-self-dual two-forms; C=sum A_ab omega_a tensor omega_b /4; K_ij=-C_ikjl xk xl/3",
+        "basis_rank": 10,
+        "radial_identity": "DRic_e[eta(log r) K]=-(eta_tt+6 eta_t) K/(2 r^2), r>0",
+        "checks_per_direction": [
+          "curvature symmetries and Bianchi",
+          "Ricci trace zero",
+          "trace/divergence/Laplacian/radial gauge of K zero",
+          "DRic K zero",
+          "arbitrary eta(|x|^2) radial identity",
+          "p=1,2,-1 coefficients"
+        ],
+        "directions": [
+          {
+            "chirality": "W_plus",
+            "mode": "diag_1_-1_0",
+            "status": "passed",
+            "nonzero_K_entries": 16
+          },
+          {
+            "chirality": "W_plus",
+            "mode": "diag_1_1_-2",
+            "status": "passed",
+            "nonzero_K_entries": 16
+          },
+          {
+            "chirality": "W_plus",
+            "mode": "off_01",
+            "status": "passed",
+            "nonzero_K_entries": 16
+          },
+          {
+            "chirality": "W_plus",
+            "mode": "off_02",
+            "status": "passed",
+            "nonzero_K_entries": 16
+          },
+          {
+            "chirality": "W_plus",
+            "mode": "off_12",
+            "status": "passed",
+            "nonzero_K_entries": 16
+          },
+          {
+            "chirality": "W_minus",
+            "mode": "diag_1_-1_0",
+            "status": "passed",
+            "nonzero_K_entries": 16
+          },
+          {
+            "chirality": "W_minus",
+            "mode": "diag_1_1_-2",
+            "status": "passed",
+            "nonzero_K_entries": 16
+          },
+          {
+            "chirality": "W_minus",
+            "mode": "off_01",
+            "status": "passed",
+            "nonzero_K_entries": 16
+          },
+          {
+            "chirality": "W_minus",
+            "mode": "off_02",
+            "status": "passed",
+            "nonzero_K_entries": 16
+          },
+          {
+            "chirality": "W_minus",
+            "mode": "off_12",
+            "status": "passed",
+            "nonzero_K_entries": 16
+          }
+        ],
+        "limits": "Does not estimate nonlinear gluing remainders, solve the ALE core equation, or prove global coverage.",
+        "negative_controls": [
+          {
+            "mutation": "radial first-derivative coefficient 8 replaced by 7",
+            "rejected": true
+          }
+        ],
+        "group": "weyl10",
+        "status": "passed",
+        "elapsed_seconds": 2.43825807236135
+      },
+      "ed_ricci": {
+        "scope": "independent exact full Ricci tensor from noncoordinate structure equations via Koszul and curvature contraction",
+        "provenance": [
+          "research/20260912.tex: BUN:shape, BUN:ricci-matrix, BUN:slow-bound",
+          "research/20260916_global.tex: bundleRicci"
+        ],
+        "metric": "dt^2+b(t)^2 dtheta^2+du^2+a(u)^2(ds+z(t) zeta'(u)du)^2",
+        "structure_equations": [
+          "de1=k e0 wedge e1",
+          "de3=j e2 wedge e3+v e0 wedge e2"
+        ],
+        "parameters": "j=tanh u, k=tanh t, v=a zeta' z'; j_u=1-j^2, k_t=1-k^2; v_t and v_u independent jets",
+        "ricci_plus_metric": [
+          [
+            "-v**2/2",
+            "0",
+            "0",
+            "j*v + v_u/2"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-v**2/2",
+            "-k*v/2 - v_t/2"
+          ],
+          [
+            "j*v + v_u/2",
+            "0",
+            "-k*v/2 - v_t/2",
+            "v**2/2"
+          ]
+        ],
+        "scalar_curvature": "-v**2/2 - 4",
+        "off_diagonal_characteristic_polynomial": "lambda^2 (lambda^2-alpha^2-beta^2)",
+        "limits": "Local tensor identity and norm algebra; not a computer proof of the closed bundle gluing, derivative bounds, or Einstein nonexistence.",
+        "negative_controls": [
+          {
+            "mutation": "omit ED 03 mixed component",
+            "rejected": true
+          },
+          {
+            "mutation": "omit moving-frame quadratic term",
+            "rejected": true
+          }
+        ],
+        "group": "ed_ricci",
+        "status": "passed",
+        "elapsed_seconds": 0.03448300622403622
+      },
+      "cz_spike": {
+        "scope": "exact spike derivatives and independent complete Ricci/Riemann frame algebra; bounded numerical inner-disk diagnostics",
+        "provenance": [
+          "step11_cz_spike_analytical.py (derivative family only; corrected background-energy claim)",
+          "research/20260916_construction.tex: small Ricci defect and full-curvature spikes"
+        ],
+        "parameters": {
+          "rho": 0.3,
+          "Lambda": [
+            5,
+            10,
+            20,
+            50,
+            100,
+            200,
+            500
+          ],
+          "amplitude": "Lambda^(-2/3)",
+          "sigma": "exp(-Lambda)",
+          "radial_points": 384,
+          "angular_points": 64,
+          "adaptation": "Historical rho and Lambda family retained; a reduced inner-disk grid replaces the old cutoff grid. Numerical lower radius is max(sigma/10,1e-14); omitted core is not included in the sampled integral."
+        },
+        "laplacian": "-2*X*Y*(2*X**2 + 2*Y**2 + 3*sigma**2)/(X**2 + Y**2 + sigma**2)**2",
+        "central_Rm_full_squared": "16*uxy**2 + 8",
+        "central_u_xy_exact_formula": "Lambda^(1/3), for sigma=exp(-Lambda) and amplitude=Lambda^(-2/3)",
+        "ricci_hessian_cancellation": "all base Hessian entries cancel; fibers retain only +/-Delta u; u_xy remains in Riemann",
+        "volume_density": "exp(F1+u+F2-u)=exp(F1+F2), so the perturbation preserves the local volume density",
+        "background_energy": {
+          "norm": "full four-index curvature tensor",
+          "chi_S2xS2": 4,
+          "exact_closed_identity": "integral |Rm|_full^2 = 128*pi^2 + 4 integral |Ric^circ|^2 >= 128*pi^2",
+          "fixed_ball": "fixed-radius background energy remains; small perturbation energy is not vanishing full energy"
+        },
+        "samples": [
+          {
+            "Lambda": 5,
+            "sigma": 0.006737946999085467,
+            "amplitude": 0.3419951893353394,
+            "numerical_lower_radius": 0.0006737946999085467,
+            "central_u_xy_exact": 1.709975946676697,
+            "central_Rm_full_squared": 54.784283811405864,
+            "sampled_inner_Hessian_energy_2d": 0.058049326733880545,
+            "sampled_inner_laplacian_max": 1.997982233526034
+          },
+          {
+            "Lambda": 10,
+            "sigma": 0.000045399929762484854,
+            "amplitude": 0.2154434690031884,
+            "numerical_lower_radius": 0.000004539992976248485,
+            "central_u_xy_exact": 2.154434690031884,
+            "central_Rm_full_squared": 82.26542133780447,
+            "sampled_inner_Hessian_energy_2d": 0.023133443494283014,
+            "sampled_inner_laplacian_max": 1.9999999083931725
+          },
+          {
+            "Lambda": 20,
+            "sigma": 2.061153622438558e-9,
+            "amplitude": 0.13572088082974534,
+            "numerical_lower_radius": 2.061153622438558e-10,
+            "central_u_xy_exact": 2.7144176165949068,
+            "central_Rm_full_squared": 125.88900795649239,
+            "sampled_inner_Hessian_energy_2d": 0.009179927386842006,
+            "sampled_inner_laplacian_max": 2
+          },
+          {
+            "Lambda": 50,
+            "sigma": 1.9287498479639178e-22,
+            "amplitude": 0.07368062997280775,
+            "numerical_lower_radius": 1e-14,
+            "central_u_xy_exact": 3.6840314986403873,
+            "central_Rm_full_squared": 225.1534093275926,
+            "sampled_inner_Hessian_energy_2d": 0.0027052467204696593,
+            "sampled_inner_laplacian_max": 2.0000000000000004
+          },
+          {
+            "Lambda": 100,
+            "sigma": 3.720075976020836e-44,
+            "amplitude": 0.046415888336127795,
+            "numerical_lower_radius": 1e-14,
+            "central_u_xy_exact": 4.641588833612779,
+            "central_Rm_full_squared": 352.7095504051015,
+            "sampled_inner_Hessian_energy_2d": 0.001073577872476765,
+            "sampled_inner_laplacian_max": 2.0000000000000004
+          },
+          {
+            "Lambda": 200,
+            "sigma": 1.3838965267367376e-87,
+            "amplitude": 0.029240177382128665,
+            "numerical_lower_radius": 1e-14,
+            "central_u_xy_exact": 5.848035476425733,
+            "central_Rm_full_squared": 555.1923029365432,
+            "sampled_inner_Hessian_energy_2d": 0.0004260496610348495,
+            "sampled_inner_laplacian_max": 2.0000000000000004
+          },
+          {
+            "Lambda": 500,
+            "sigma": 7.124576406741286e-218,
+            "amplitude": 0.015874010519682,
+            "numerical_lower_radius": 1e-14,
+            "central_u_xy_exact": 7.9370052598409995,
+            "central_Rm_full_squared": 1015.9368399158991,
+            "sampled_inner_Hessian_energy_2d": 0.00012556642969899565,
+            "sampled_inner_laplacian_max": 2.0000000000000004
+          }
+        ],
+        "limits": "Grid values are not global sup bounds or interval certificates; no cutoff-collar energy is claimed here. This is not a Yau 26 counterexample.",
+        "negative_controls": [
+          {
+            "mutation": "mixed Hessian sign error",
+            "rejected": true
+          },
+          {
+            "mutation": "closed full curvature energy claimed zero",
+            "rejected": true
+          }
+        ],
+        "group": "cz_spike",
+        "status": "passed",
+        "elapsed_seconds": 0.480774886906147
+      },
+      "four_node": {
+        "scope": "regression of a published truncated numerical matrix plus exact polarization and pattern arithmetic; no spectral recomputation",
+        "provenance": [
+          "references/experiments.md: step100_four_node_closure_and_q_diag.json, part2_diagonal_computation.validation_NS_tau0.08_Lmax80.compact_combined",
+          "references/computations.md: step98_full_chirality_tensor_maps.py, compact(), trace_double_angle_matrix(), physical_cone_pq()",
+          "references/computations.md: step100_four_node_closure_and_q_diag.py, receiver graph and coefficient inputs"
+        ],
+        "normalization": "physical source S has coordinates (x,y,z)=(S22+S33,S22-S33,2*S23). Compact K contracts (S22,S33,2*S23); output is (R22,R33,R23). Receiver coordinates are (X,Y,Z)=(R22+R33,R22-R33,2*R23), zeta=(Y+iZ)/2, w=y+i*z.",
+        "fixture_parameters": {
+          "pair": "NS",
+          "sector": "AA+BB",
+          "chirality": "plus_minus",
+          "tau": 0.08,
+          "Lmax": 80,
+          "recomputed_by_this_check": false
+        },
+        "compact_matrix": [
+          [
+            "200124933/25000000000",
+            "-200124933/25000000000",
+            "0"
+          ],
+          [
+            "-200124933/25000000000",
+            "200124933/25000000000",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-200124933/25000000000"
+          ]
+        ],
+        "trace_double_angle_matrix": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "200124933/12500000000",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-200124933/12500000000"
+          ]
+        ],
+        "isotropic_response": [
+          "0",
+          "0",
+          "0"
+        ],
+        "old_extractor_tl_mag": "0",
+        "unnormalized_traceless_response": [
+          "200124933/12500000000",
+          "-200124933/12500000000",
+          "0"
+        ],
+        "physical_offdiagonal_response": [
+          "0",
+          "0",
+          "-200124933/12500000000"
+        ],
+        "P": "0",
+        "Q": "200124933/25000000000",
+        "Q_float": 0.00800499732,
+        "pattern_assumption": "q_diag=0 in the specified inter-node AA/BB channel; not measured by this fixture and not full geometric reduction",
+        "pattern_coefficients": {
+          "c_adj": "0.06288499464",
+          "c_diag": "-0.035453521442",
+          "q_adj": "0.0080049973185",
+          "q_diag_assumed": "0"
+        },
+        "patterns": [
+          {
+            "pattern": "r0_compatible",
+            "signs": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "receiver_sources": {
+              "1": [],
+              "2": [],
+              "3": [],
+              "4": []
+            },
+            "result": "no opposite-chirality source constraint; no existence conclusion"
+          },
+          {
+            "pattern": "r1_one_reversed",
+            "signs": [
+              1,
+              1,
+              1,
+              -1
+            ],
+            "receiver_sources": {
+              "1": [
+                {
+                  "source": 4,
+                  "kind": "diagonal"
+                }
+              ],
+              "2": [
+                {
+                  "source": 4,
+                  "kind": "adjacent"
+                }
+              ],
+              "3": [
+                {
+                  "source": 4,
+                  "kind": "adjacent"
+                }
+              ],
+              "4": [
+                {
+                  "source": 1,
+                  "kind": "diagonal"
+                },
+                {
+                  "source": 2,
+                  "kind": "adjacent"
+                },
+                {
+                  "source": 3,
+                  "kind": "adjacent"
+                }
+              ]
+            },
+            "result": "fixture violates adjacent-only necessary inequality",
+            "margin": 0.0548799973215,
+            "witness_nodes": [
+              "2",
+              "3"
+            ]
+          },
+          {
+            "pattern": "r2_diagonal_balanced",
+            "signs": [
+              1,
+              -1,
+              -1,
+              1
+            ],
+            "receiver_sources": {
+              "1": [
+                {
+                  "source": 2,
+                  "kind": "adjacent"
+                },
+                {
+                  "source": 3,
+                  "kind": "adjacent"
+                }
+              ],
+              "2": [
+                {
+                  "source": 1,
+                  "kind": "adjacent"
+                },
+                {
+                  "source": 4,
+                  "kind": "adjacent"
+                }
+              ],
+              "3": [
+                {
+                  "source": 1,
+                  "kind": "adjacent"
+                },
+                {
+                  "source": 4,
+                  "kind": "adjacent"
+                }
+              ],
+              "4": [
+                {
+                  "source": 2,
+                  "kind": "adjacent"
+                },
+                {
+                  "source": 3,
+                  "kind": "adjacent"
+                }
+              ]
+            },
+            "result": "fixture violates adjacent-only necessary inequality",
+            "margin": 0.0548799973215,
+            "witness_nodes": [
+              "1",
+              "2",
+              "3",
+              "4"
+            ]
+          },
+          {
+            "pattern": "r2_adjacent_balanced",
+            "signs": [
+              1,
+              1,
+              -1,
+              -1
+            ],
+            "receiver_sources": {
+              "1": [
+                {
+                  "source": 3,
+                  "kind": "adjacent"
+                },
+                {
+                  "source": 4,
+                  "kind": "diagonal"
+                }
+              ],
+              "2": [
+                {
+                  "source": 3,
+                  "kind": "diagonal"
+                },
+                {
+                  "source": 4,
+                  "kind": "adjacent"
+                }
+              ],
+              "3": [
+                {
+                  "source": 1,
+                  "kind": "adjacent"
+                },
+                {
+                  "source": 2,
+                  "kind": "diagonal"
+                }
+              ],
+              "4": [
+                {
+                  "source": 1,
+                  "kind": "diagonal"
+                },
+                {
+                  "source": 2,
+                  "kind": "adjacent"
+                }
+              ]
+            },
+            "result": "fixture necessary windows disjoint when q_diag=0",
+            "margin": 0.0194264758795,
+            "window": [
+              1.5479420686399414,
+              1.9995190625696266
+            ],
+            "reciprocal_window": [
+              0.5001202632771491,
+              0.6460190082427463
+            ]
+          },
+          {
+            "pattern": "r3_three_reversed",
+            "signs": [
+              1,
+              -1,
+              -1,
+              -1
+            ],
+            "receiver_sources": {
+              "1": [
+                {
+                  "source": 2,
+                  "kind": "adjacent"
+                },
+                {
+                  "source": 3,
+                  "kind": "adjacent"
+                },
+                {
+                  "source": 4,
+                  "kind": "diagonal"
+                }
+              ],
+              "2": [
+                {
+                  "source": 1,
+                  "kind": "adjacent"
+                }
+              ],
+              "3": [
+                {
+                  "source": 1,
+                  "kind": "adjacent"
+                }
+              ],
+              "4": [
+                {
+                  "source": 1,
+                  "kind": "diagonal"
+                }
+              ]
+            },
+            "result": "fixture violates adjacent-only necessary inequality",
+            "margin": 0.0548799973215,
+            "witness_nodes": [
+              "2",
+              "3"
+            ]
+          }
+        ],
+        "pattern_symmetry": "The five rows retain r0,r1,r2-diagonal,r2-adjacent,r3 relative to a fixed positive background; r4 is not listed and global reversal is not taken as a geometric equivalence. Only at the opposite-source-graph level, both all-equal assignments have empty graphs and r1/r3 are isomorphic under square symmetry. This does not identify fillings or full equations.",
+        "limits": "Rounded fixture decimals are exact regression inputs, not exact spectral coefficients. No tail bound, discretization certificate, full nonlinear reduction, or global Einstein obstruction is asserted.",
+        "negative_controls": [
+          {
+            "mutation": "old isotropic-source estimator used as q",
+            "rejected": true
+          },
+          {
+            "mutation": "all-zero response matrix",
+            "rejected": true
+          },
+          {
+            "mutation": "omit doubled source offdiagonal contraction",
+            "rejected": true
+          },
+          {
+            "mutation": "flip offdiagonal response sign",
+            "rejected": true
+          }
+        ],
+        "group": "four_node",
+        "status": "passed",
+        "elapsed_seconds": 0.002814043313264847
+      }
+    }
+  },
+  "negative_run": {
+    "manifest": {
+      "schema": "qiushi-yau26.reproduction.v1",
+      "status": "failed",
+      "started_utc": "2026-09-16T12:20:06.330152+00:00",
+      "selected_groups": [
+        "four_node"
+      ],
+      "mutation": "four-node-zero",
+      "versions": {
+        "python": "3.12.13",
+        "numpy": "2.2.6",
+        "sympy": "1.14.0"
+      },
+      "inputs": {
+        "reproduce.py": {
+          "sha256": "b2d37e7d6c2dd5e4de8d13c437f2f17637f351b21f313afe725182f9204bb3b8"
+        },
+        "math_checks.py": {
+          "sha256": "390b01202b929189e8d91c22afdcae9ec25298e12babe57a9faa7f6c491b368b"
+        },
+        "data/four_node_fixture.json": {
+          "sha256": "aa8d6b585c07f370a905a982a391b535b44f6f3ec3d5282595f17110d487129b"
+        }
+      },
+      "groups": [
+        {
+          "group": "four_node",
+          "status": "failed",
+          "result": "four_node.json"
+        }
+      ],
+      "scope": "bounded symbolic and fixture checks, not a formal proof of the research papers or a spectral tail certificate",
+      "elapsed_seconds": 1.7850077841430902
+    },
+    "result": {
+      "group": "four_node",
+      "status": "failed",
+      "error_type": "CheckFailure",
+      "error": "four-node trace/double-angle fixture[1,1]: residual -200124933/12500000000",
+      "elapsed_seconds": 0.0011396687477827072
+    },
+    "observed_exit_code": 1
+  },
+  "existing_output_test": {
+    "observed_exit_code": 2,
+    "result": "Existing normal result directory refused"
+  }
+}

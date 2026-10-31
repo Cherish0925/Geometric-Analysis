@@ -1,0 +1,437 @@
+# Actual harmonic forms force whole-filling Milnor matching
+
+24 September 2026. This note strengthens the realization criterion in
+[Orbifold smoothing bridge](20260924_orbifold_smoothing_bridge.md), Theorem C.
+It replaces its assumed relative diffeomorphism of singular fillings by a
+condition on the **actual harmonic representative and the topology of the
+whole filling**. It does not assume that a terminal ALE bubble is the whole
+filling, or require a single-scale degeneration.
+
+The new connection in this project is analytic-to-symplectic: actual-form
+alignment gives canonical contact boundaries; a zero-free harmonic form
+makes the entire filling symplectic; classical filling theorems then force
+its relative smooth type. The filling classifications are not new results
+of this project. Global Q-Gorenstein smoothability remains a separate input.
+
+## 1. The input and the forced-matching theorem
+
+Let \((M_j,g_j,a_j)\) satisfy the hypotheses of Theorem A of the orbifold
+smoothing bridge. Explicitly, the \(M_j\) are closed connected oriented
+smooth four-manifolds, each \(a_j\) is an actual conformally solvable
+Spin\(^c\) class, and, for fixed \(D,A_0>0\),
+\[
+ \operatorname{diam}(M_j,g_j)\le D,\qquad
+ p_j=(a_j^+)^2\ge A_0,\qquad
+ \delta_j+q_j\longrightarrow0,                         \tag{1}
+\]
+where
+\[
+ \delta_j=\|\operatorname{Ric}_{g_j}^{\sharp}+I\|_{\infty,\mathrm{op}},
+ \quad q_j=\frac{\mathfrak D_2(g_j,a_j)}{V_j},
+ \quad V_j=\operatorname{Vol}(M_j,g_j),
+\]
+\[
+ \mathfrak D_2(g,a)
+ =\frac32\int_M(s^2+12|W^+|^2)\,d\mu-72\pi^2(a^+)^2.
+\]
+The structure determining \(a_j\) is fixed while auxiliary positive
+weights vary. No hypothesis on \(\pi_1\) or \(\pi_2\) is imposed.
+
+Pass to the subsequence supplied by that theorem. Its limit is a compact
+negative Kähler--Einstein orbifold \((X,h,J,\omega_\infty)\), with finitely
+many isolated quotient singularities \(x_\nu\). Choose small disjoint
+uniformizing neighborhoods \(U_\nu\), with spherical links \(Y_\nu\),
+and retain a collar on each side of \(Y_\nu\) in the regular locus. The
+regular-locus embeddings identify the exterior
+\[
+                  K=X\setminus\bigcup_\nu\operatorname{int}U_\nu
+\]
+with a submanifold of \(M_j\). Denote its complementary compact pieces by
+\(B_{\nu,j}\); each has the actual boundary marking by \(Y_\nu\).
+These are the **whole singular fillings**. Any smaller bubbles or necks
+inside them are included.
+
+Let \(H_j\) be the harmonic self-dual representative of \(a_j^+\), not
+the harmonic representative of the whole class \(a_j\), and put
+\[
+                         \Omega_j=-2\pi H_j.           \tag{2}
+\]
+
+**Theorem 1 (harmonic/contact forced matching).** In the setting (1),
+suppose that, for all sufficiently large \(j\),
+
+1. \(H_j\) has no zero on any \(B_{\nu,j}\);
+2. for each \(\nu\), either
+   - \(x_\nu\) is an \(A_1\) singularity and
+     \(b_2(B_{\nu,j};\mathbb Q)=1\), or
+   - \(B_{\nu,j}\) is a rational homology four-ball.
+
+Then every \(B_{\nu,j}\), with its actual boundary marking, is oriented
+diffeomorphic relative to that marking to a local Q-Gorenstein Milnor
+fiber of \((X,x_\nu)\). In the second alternative the singularity is
+**necessarily a Wahl singularity**
+\[
+               \frac1{n_\nu^2}(1,n_\nu a_\nu-1),
+ \qquad n_\nu\ge2,
+ \quad 0<a_\nu<n_\nu,
+ \quad \gcd(n_\nu,a_\nu)=1.                            \tag{3}
+\]
+In particular, cyclicity and local Q-Gorenstein smoothability need not
+be separately assumed in the rational-ball alternative.
+
+The zero-free condition is only qualitative. There is no required uniform
+lower bound for \(|H_j|\) on the shrinking pieces. It is a condition on a
+specified solution of a linear global elliptic equation, not a proposed
+relative diffeomorphism and not a choice of a convenient ALE model.
+
+The proof occupies Sections 2--5. The analytic hypotheses alone do not
+presently prove condition 1. In contrast, nonvanishing and the canonical
+contact structure on the **fixed regular collars** will be consequences
+of (1), rather than additional assumptions.
+
+## 2. Actual harmonic alignment upgrades on every regular collar
+
+**Lemma 2 (strong convergence of the actual harmonic forms).** Using the
+same regular-locus embeddings as for the metrics,
+\[
+             \Omega_j\longrightarrow\omega_\infty
+                    \quad\hbox{in }C^{1,\beta}_{\mathrm{loc}}(X_{\rm reg})
+ \quad\text{for every }\beta<1.                       \tag{4}
+\]
+This needs neither the core zero-free assumption nor a negative-square
+budget.
+
+**Proof.** Set
+\[
+ r_j=\fint|\operatorname{Ric}_{g_j}+g_j|^2,
+ \qquad \kappa_j=r_j+q_j\longrightarrow0.
+\]
+The inherited actual-form composition, Theorem A, supplies smooth
+self-dual forms \(\omega_j\), with \(\|\omega_j\|_\infty\le2\sqrt3\),
+such that, for \(\eta_j\downarrow0\),
+\[
+                \fint|\omega_j-\Omega_j|^2
+                          \le49\kappa_j+\eta_j.        \tag{5}
+\]
+It also supplies the amplitude and first-derivative estimates used in the
+orbifold compactification proof. Since \(V_j\le V_0(D)\), (5) is strong
+unnormalized \(L^2\) alignment. That proof constructs
+\(\omega_j\to\omega_\infty\) strongly in local \(L^2\). Thus the same
+local \(L^2\) convergence holds for \(\Omega_j\), with uniform local
+\(L^2\) bounds.
+
+On nested regular harmonic-coordinate charts, the metrics converge in
+\(C^{1,\alpha}\) and strongly in \(W^{2,p}\) for every finite \(p\).
+The forms \(\Omega_j\) solve the actual homogeneous Hodge equation
+\[
+                  (d+d_{g_j}^*)\Omega_j=0.             \tag{6}
+\]
+Interior first-order elliptic estimates for (6), initially with exponent
+2, give a uniform local \(W^{1,2}\) bound. Sobolev embedding gives a local
+\(L^4\) bound. Iterating the same interior estimate gives
+\(W^{1,4}\), hence \(L^p\) for every finite \(p\), and then
+\(W^{1,p}\) for these \(p\). Constants are uniform on the chosen charts:
+their leading coefficients are uniformly \(C^{1,\alpha}\), their
+zero-order coefficients uniformly \(C^{0,\alpha}\), and ellipticity is
+uniform. All these are properties of the fixed regular charts.
+
+For completeness the last derivative can be obtained from the
+Weitzenböck equation. In coordinates its principal coefficients are
+uniformly \(C^{1,\alpha}\), its first-order coefficients are bounded, and
+its zero-order coefficients consist of curvature and quadratic first
+metric derivatives. They are uniformly \(L^p\) because the metrics are
+uniformly \(W^{2,p}\). The already obtained \(W^{1,p}\) and \(L^\infty\)
+bounds therefore put its right-hand side in \(L^p\). Interior
+second-order elliptic estimates give uniform \(W^{2,p}\) bounds for
+\(\Omega_j\). Choosing \(p\) large gives precompactness in
+\(C^{1,\beta}\) on a smaller chart. Every limit equals
+\(\omega_\infty\) by (5), so (4) follows. No derivative of the Ricci
+error was taken. \(\square\)
+
+This upgrade is specific to the harmonic representative. Applying the
+same conclusion directly to the auxiliary \(\omega_j\), whose small
+derivative is initially only an averaged estimate, would not be justified.
+
+## 3. The geometric collar supplies a strong convex filling
+
+**Lemma 3 (canonical contact boundary).** For each sufficiently small
+fixed \(Y_\nu\), the restriction of \(\Omega_j\) to its pulled-back
+collar is symplectic for large \(j\). It has a primitive whose Liouville
+field points outward from \(B_{\nu,j}\), and the induced contact
+structure on its boundary is contactomorphic to the canonical contact
+structure of the complex quotient singularity \((X,x_\nu)\).
+If \(H_j\) is zero-free throughout \(B_{\nu,j}\), then
+\((B_{\nu,j},\Omega_j)\) is a strong symplectic filling with that
+contact boundary and the quotient-link orientation.
+
+**Proof.** A uniformizing chart is a ball in \(\mathbb C^2\) with a
+finite subgroup \(\Gamma\subset U(2)\) acting freely away from the
+origin. The limiting smooth invariant Kähler metric has an invariant
+strictly plurisubharmonic local potential \(\varphi\). After subtracting
+an invariant pluriharmonic term, \(\varphi\) has a positive quadratic
+leading part. Small regular level sets provide links \(Y\) transverse
+to the radial direction. The convention for \(d^c\) is chosen so that
+\(\omega_\infty=dd^c\varphi\). The primitive
+\(\alpha_\infty=d^c\varphi\) gives a positive contact form on \(Y\)
+with an outward-pointing Liouville field. Its contact structure is the
+canonical quotient contact structure: interpolation of the strictly
+plurisubharmonic potentials on a sufficiently small chart and Gray
+stability identify it with the link of the standard quadratic potential.
+
+Fix a compact collar \(C=Y\times[-b,b]\) in the regular locus. Since
+\(Y\) is a spherical space form,
+\(H^2(C;\mathbb R)=H^2(Y;\mathbb R)=0\). On a slightly smaller collar
+closed two-forms admit a continuous linear right inverse to \(d\).
+One concrete construction uses a fixed Hodge primitive on a slice \(Y\)
+and integration of the normal contraction along the collar coordinate.
+Consequently the closed difference
+\(\Omega_j-\omega_\infty\) has primitives \(\gamma_j\to0\) in
+\(C^1\), by Lemma 2. Put
+\[
+                  \alpha_j=\alpha_\infty+\gamma_j,
+             \qquad d\alpha_j=\Omega_j.               \tag{7}
+\]
+The contact and outward-transversality conditions are open; (4) and (7)
+preserve them for large \(j\). Gray stability identifies the boundary
+contact structures. The collar is fixed first and \(j\) tends to infinity
+afterwards; no estimate uniform as its radius tends to zero is asserted.
+
+Finally \(d\Omega_j=0\), and self-duality gives
+\[
+             \Omega_j\wedge\Omega_j=|\Omega_j|^2\,d\mu_{g_j}.
+                                                                    \tag{8}
+\]
+If the form has no zero on \(B_{\nu,j}\), (8) makes it symplectic on
+the entire filling in its existing orientation. Its strong convex boundary
+is supplied by (7). In particular the orientation is the singularity-link
+orientation, not its reverse. \(\square\)
+
+## 4. Classical filling classification determines the whole manifold
+
+**Lemma 4 (the two filling alternatives).** Let \(B\) be a strong
+symplectic filling of the canonical contact link of an isolated complex
+quotient surface singularity.
+
+(a) If the singularity is \(A_1\) and \(b_2(B;\mathbb Q)=1\), then
+\(B\) is oriented diffeomorphic to the \((-2)\)-disk bundle over
+\(S^2\), hence to the \(A_1\) Milnor fiber.
+
+(b) If \(B\) is a rational homology ball, the singularity is Wahl and
+\(B\) is oriented diffeomorphic to its Q-Gorenstein Milnor rational
+ball.
+
+**Proof.** The link in (a) is canonical contact \(L(2,1)\). McDuff's
+filling theorem, stated in the precise form used here in Lisca [L08,
+Introduction], says that every such filling is an oriented smooth blowup
+of the \((-2)\)-disk bundle. Each blowup increases \(b_2\) by one,
+so the assumed value excludes every blowup. The quadratic \(A_1\)
+Milnor fiber is the cotangent disk bundle of \(S^2\), with this oriented
+smooth type.
+
+For (b), Etnyre--Ozbagci--Tosun [EOT25, Theorem 1.18] applies to a spherical
+link **with the quotient-singularity orientation**. It forces the oriented
+link to be a lens space
+\[
+                        L(n^2,na-1),
+            \qquad 0<a<n,\quad\gcd(n,a)=1.             \tag{9}
+\]
+The trivial spherical group is not at issue here, since the point is a
+singularity. The fundamental group of the link is the quotient group,
+so that group is cyclic. Its faithful complex representation is diagonal
+and, because it acts freely on the three-sphere, the complex singularity
+is \(1/P(1,Q)\). Oriented lens-space classification gives
+\(P=n^2\) and
+\[
+ Q\equiv na-1\quad\hbox{or}\quad (na-1)^{-1}\pmod{n^2}.
+\]
+The inverse is \(n(n-a)-1\) modulo \(n^2\); either representation is
+a Wahl singularity, differing at most by interchanging its coordinates.
+
+For the standard contact structure on (9), the symplectic rational-ball
+filling is unique up to symplectic deformation, in particular up to
+oriented diffeomorphism: [GS22, Proposition A.2], derived from Lisca's
+classification. Its known representative is the Wahl Milnor rational
+ball. The latter is a Stein filling and the \(d=1\) case of the
+Q-Gorenstein deformation model in [S11, Proposition 2.3]. This identifies
+the entire \(B\), not one selected ALE subdomain. \(\square\)
+
+## 5. Arbitrary actual boundary markings extend
+
+Classification up to unmarked diffeomorphism alone would leave the old
+gluing issue unresolved. In the preceding two alternatives that issue
+can be settled explicitly.
+
+**Lemma 5 (extension of the boundary correction).** Every
+orientation-preserving self-diffeomorphism of the boundary of an
+\(A_1\) Milnor fiber or a Wahl Milnor rational ball extends to an
+orientation-preserving diffeomorphism of that filling.
+
+**Proof.** For \(A_1\), the boundary is \(\mathbb{RP}^3\). Bonahon
+[B83, Theorem 3(e)] implies that every orientation-preserving
+self-diffeomorphism is isotopic to the identity: the other component
+reverses orientation. Extend such an isotopy through a collar, taking
+the identity farther inside.
+
+For a Wahl point write \(P=n^2\), \(Q=na-1\). If \(n>2\),
+\[
+ Q^2\equiv1-2na\pmod{n^2},\qquad Q^2\not\equiv\pm1\pmod{n^2}.
+                                                                    \tag{10}
+\]
+Indeed the plus case would imply \(n\mid2a\), hence \(n\mid2\),
+and the minus case already implies \(n\mid2\) after reducing modulo
+\(n\). Bonahon's Theorem 3(a) gives two mapping classes, represented
+by the identity and simultaneous complex conjugation. For \(n=2\),
+\(a=1\), \((P,Q)=(4,1)\), and Theorem 3(c) gives exactly the same
+conclusion. Both maps preserve three-dimensional orientation.
+
+Use the standard real-parameter Wahl Milnor model
+\[
+ F_{n,a,t}
+  =\{(x,y,z)\in\mathbb C^3:xy=z^n+t\}/\mu_n,
+                 \qquad t>0,                           \tag{11}
+\]
+cut off by a sufficiently small invariant Milnor ball. The action is
+\[
+       \xi\cdot(x,y,z)=(\xi x,\xi^{-1}y,\xi^a z),
+                  \qquad\xi^n=1.                       \tag{12}
+\]
+It is free on the smooth fiber. Complex conjugation preserves (11),
+normalizes (12) by \(\xi\mapsto\xi^{-1}\), and preserves the cutoff.
+It thus extends over the quotient fiber. It preserves the real
+orientation because the fiber has complex dimension two. The usual
+equivariant Milnor collar identification, along real parameters, identifies
+its boundary action with conjugation on the quotient link. Such a collar
+identification can be made equivariant by averaging its horizontal vector
+field over conjugation before integrating along the real parameter. In particular
+it acts by \(-1\) on \(H_1(L(n^2,na-1);\mathbb Z)\), and represents
+the nontrivial class in Bonahon's list. Every boundary diffeomorphism is
+isotopic to one of these two extendible maps; its remaining isotopy extends
+through a collar. \(\square\)
+
+**Completion of Theorem 1.** Lemmas 2 and 3 give canonical strong
+symplectic fillings. Lemma 4 supplies oriented diffeomorphisms from those
+whole fillings to the appropriate Milnor fibers. Compare the boundary
+map of any such diffeomorphism with the actual exterior marking and the
+Milnor marking. Their difference is an orientation-preserving
+self-diffeomorphism of the link. Extend that correction by Lemma 5 and
+compose. Collar adjustment makes the maps agree on neighborhoods of the
+boundaries, so they glue smoothly to the given exterior identification.
+This is exactly the relative matching required in the previous Theorem C.
+\(\square\)
+
+## 6. A realization theorem and a zero-set obstruction
+
+**Corollary 6 (negative KE realization with forced local matching).**
+Assume (1) and the two hypotheses of Theorem 1. If the limiting surface
+\(X\) has a projective Q-Gorenstein smoothing, then every sufficiently
+large \(M_j\) in this subsequence admits a negative Kähler--Einstein
+metric, on its original smooth structure.
+
+A separately checkable sufficient condition for this global smoothing is
+\[
+                 H^2(Z,T_Z(-\log E))=0,                \tag{13}
+\]
+where \(Z\to X\) is a resolution with reduced exceptional divisor
+\(E\), as in Lee--Park's global smoothing criterion [LP07, Theorem 2.1].
+The local class-T condition in that criterion holds by Theorem 1.
+
+**Proof.** Fix a small regular parameter in a global smoothing. Its
+exterior is diffeomorphic to \(K\) by Ehresmann trivialization, and the
+local fibers are the \(A_1\) or Wahl fibers in Theorem 1. The boundary
+extension argument makes its gluing match the actual gluing in \(M_j\).
+Thus \(M_j\) is oriented diffeomorphic to the smooth algebraic fiber.
+The negative KE orbifold metric makes \(K_X\) ample. A Cartier multiple
+of the relative canonical class remains ample on nearby smooth fibers;
+the Aubin--Yau theorem supplies their negative KE metrics. Pullback gives
+the metric on \(M_j\). This is Theorem C of the preceding note with its
+local matching premise now proved, rather than assumed. \(\square\)
+
+**Corollary 7 (topology forces a zero of the actual harmonic form).**
+Under (1), if a whole filling \(B_{\nu,j}\) is a rational homology ball
+but the limiting singularity is not Wahl, then, for large \(j\),
+\(H_j\) has a zero in the interior of that filling. Its boundary collar
+is nevertheless zero-free.
+
+**Proof.** Zero-freeness would give a strong symplectic rational-ball
+filling by Lemma 3, contradicting Lemma 4(b). Lemma 2 excludes zeros on
+the fixed collar. \(\square\)
+
+This is a genuine restriction on how the actual class can pass through
+singular topology. It is not an Einstein nonexistence theorem: a zero
+inside a shrinking core can be consistent with all the averaged estimates.
+
+## 7. Nonempty local models and the precise gain
+
+The additional geometric condition occurs in actual smooth metrics, not
+just formal cohomology. On an \(A_1\) Milnor fiber the Eguchi--Hanson
+Kähler form is closed, self-dual and nowhere zero. It supplies the first
+filling alternative. On each Wahl Milnor fiber, the Ricci-flat Kähler
+metrics supplied by Şuvaina [S11, Theorem A] have the same properties and
+supply the rational-ball alternative. Their Kähler forms have canonical
+convex boundaries on sufficiently large truncated ends. These are
+classical local calibration examples, not new global Yau26 constructions.
+
+For a global negative KE input with its compatible canonical Spin\(^c\)
+class, \(\Omega=-2\pi H\) is exactly the Kähler form and has no zeros;
+the two defects in (1) vanish. Accordingly, whenever a classical negative
+KE degeneration has \(A_1\) Milnor neighborhoods or Wahl Milnor rational
+balls, this criterion passes its exact-geometry test. We do not infer a
+bounded-diameter degenerating sequence merely from the existence of a
+local ALE model.
+
+The topological restrictions in Theorem 1 cannot simply be dropped from
+the **symplectic classification step**. Canonical contact \(L(4,1)\)
+has both the \((-4)\)-disk-bundle filling and the Wahl rational-ball
+filling, as recorded by McDuff/Lisca [L08, Introduction]. Both are
+symplectic but have different second Betti numbers. Contact geometry
+alone therefore does not select the Milnor rational ball. This is not
+being offered as a counterexample satisfying the global near-Einstein
+hypotheses (1).
+
+The present result goes beyond classifying a terminal bubble in three
+specific ways: it controls the whole actual filling, derives the relevant
+contact boundary from the actual gauge-theoretic form, and removes every
+boundary-marking ambiguity in the two stated cases. Within these
+topological alternatives, it leaves two additional questions: whether the
+actual harmonic form is zero-free in the core, and whether the local
+smoothings globalize. Neither is replaced by the assertion that an ALE
+limit exists.
+
+## 8. Sources and dependency record
+
+- Project analytic input: [actual-form composition](../mathematics/current/line1_composed_application.md),
+  Theorem A, especially actual harmonic alignment (5); and
+  [orbifold smoothing bridge](20260924_orbifold_smoothing_bridge.md),
+  Theorems A and C. Their complete hypotheses are retained above.
+- [L08] P. Lisca, *On symplectic fillings of lens spaces*, Transactions of
+  the American Mathematical Society 360 (2008), 765--799.
+  [Author manuscript](https://arxiv.org/html/math/0312354).
+  Introduction: the exact McDuff filling statement for \(L(p,1)\).
+  Theorem 1.1 and Corollary 1.2: lens-space filling classification.
+- [EOT25] J. Etnyre, B. Ozbagci and B. Tosun, *Symplectic rational homology
+  ball fillings of Seifert fibered spaces*, Advances in Mathematics (2025),
+  article 110572. [Author manuscript](https://etnyre.math.gatech.edu/preprints/papers/sfsfillings.pdf),
+  Theorem 1.18 and Remark 1.21; [published DOI](https://doi.org/10.1016/j.aim.2025.110572).
+  The orientation restriction is essential and is supplied by Lemma 3.
+- [GS22] M. Golla and L. Starkston, *The symplectic isotopy problem for
+  rational cuspidal curves*, Compositio Mathematica 158 (2022), 1595--1682,
+  Appendix A, Proposition A.2.
+  [Published paper](https://doi.org/10.1112/S0010437X2200762X).
+  The cited uniqueness is of the whole rational-ball symplectic filling.
+- [B83] F. Bonahon, *Difféotopies des espaces lenticulaires*, Topology 22
+  (1983), 305--314, Theorem 3(a), (c), (e).
+  [Original paper](https://www.maths.gla.ac.uk/~mpowell/Bonahon-diffeotopies-of-lens-spaces.pdf).
+  Lemma 5 adds the explicit extension over the relevant Milnor model.
+- [S11] I. Şuvaina, *ALE Ricci-flat Kähler metrics and deformations of
+  quotient surface singularities*, Theorem A and Proposition 2.3.
+  [Author manuscript](https://arxiv.org/html/1102.2672).
+  The local algebraic model used in (11)--(12) is the \(d=1\) case.
+- [LP07] Y. Lee and J. Park, *A simply connected surface of general type
+  with \(p_g=0\) and \(K^2=2\)*, Inventiones Mathematicae 170 (2007),
+  483--505, Theorem 2.1. [Author manuscript](https://arxiv.org/abs/math/0609072).
+  This supplies (13), not the automatic contact or smooth matching.
+
+Status: manuscript theorem proved by the stated analytic estimates and
+classical classification inputs. This note makes no worldwide priority
+claim, does not assume exact Einstein equations for the input metrics,
+and does not claim that (1) alone implies smooth realization.

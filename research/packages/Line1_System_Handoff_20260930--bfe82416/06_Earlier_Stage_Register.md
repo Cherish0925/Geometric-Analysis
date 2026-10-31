@@ -1,0 +1,83 @@
+# 更早研究的阶段登记
+
+本表记录来源和研究演变，不替代当前定理依赖图。日期来自文稿，不凭文件创建时间认定首创。详细说明见完整交接稿的前置篇。
+
+|阶段|贡献性质|当时内容|当前继承／限制|
+|---|---|---|---|
+|2026-09-10—15：原题、精确gap与必要退化|原系统研究，网页准备与状态审计|精确统一拓扑gap及近临界退化已有报告；近似流有未闭合条件|旧精确gap保留；原题输出量词和固定光滑类型贯穿后续|
+|2026-09-16：局部流纠错与直接弱测试入口|网页续接推导／研究建议，配合系统原稿|重数传输、119Q校准密度、受控片准则；弱Bianchi为明确替代入口|后来直接积分机制绕过SC与局部流；不能倒写为9月16日已解原积分gap|
+|2026-09-17：局部构造至闭反例的归约审计|网页审读／纠错|AH尺度匹配及体积约束阻止既有问题W到固定闭反例归约|保留局部展平与旧gap，不把归约错误当W本身无解|
+|2026-09-21：原度量积分gap和自测试模板|系统第3—5轮主证明；网页重点审读／条件模板抽取|同解余项、有界场、Hessian、弱Bianchi；全原度量积分gap|N1加强输出与输入；旧分析机制仍为核心来源|
+|2026-09-22：允许根、联合预算与文献接口|网页对系统R21报告的具体推导及37项文献综合|根结构、(1+B)d、特征密度与联络分支；当时第13／21轮全文未全得|后来八卷取得相应原稿；历史审读范围不倒写|
+|截至2026-09-26：参数、供应、周期、完整谱与受限实现|系统多轮原稿；网页八卷综合审读|I01—I37与固定流形／慢模态／实际类／允许校准形成相连研究|保留正向定理及范围，不将早期产出仅压为O10/O11背景|
+|2026-09-26：网页深化、联合判据与并行执行|网页新条件推导、计算与研究任务|经典继承、CW组合、多实际类PSD、三次扭率、特征类与低幅度预算|I38/I39后续同解成本；矩阵分离、零端和全局支付不自动闭合|
+|2026-09-26—27：同解成本、网页混合项、系统线性闭合|系统I38/I39；网页新增中间推导；系统I40/I41|网页模型消去和曲率关系由I40保留归属；系统Hessian—Bianchi闭合线性阶|h²到h、去标量方差与实际BF线性窗口；不能全归某一方|
+|2026-09-27—28：核心费用、精确子族、单解和统一回接|系统续研与网页重审／新推导共同回流|I44—I49/X06及后续参数；全曲率归约、单解、N1|N1短缺版、普通原族完整预算等由较新稿更新；BF全部预算另保留|
+|2026-09-29—30：整合稿与O10/O11集中攻关|较早研究汇流；网页／系统后续A—F|有限密度端点闭合、无密度工具、O11变分与标记研究|无密度O10及O11最优首项仍开放；以当前专题和50节点登记为准|
+
+## 原文入口
+
+### EARLY_01 原题、精确gap与必要退化
+
+- [Yau26_Experts_and_Status_Audit_2026-09-10.md](<sources/recovered_early/originals/Yau26_Experts_and_Status_Audit_2026-09-10.md>)
+- [01_最新进展与核心结果.md](<sources/recovered_early/readable_members/Yau26_第26题_完整逐步研究归档_2026-09-16/Yau26_full_research_archive_2026-09-16/previous_summary_2026-09-15/01_最新进展与核心结果.md>)
+
+### EARLY_02 局部流纠错与直接弱测试入口
+
+- [01_A01_统一拓扑间隙与近Einstein刚性.tex](<sources/recovered_early/readable_members/Yau26_三主线_覆盖补全与原件索引_v2_2026-09-16/yau26_research_tracks_v2_20260916/01_A01_统一拓扑间隙与近Einstein刚性.tex>)
+- [00_执行摘要_最新状态.md](<sources/recovered_early/readable_members/Yau26_第26题_完整逐步研究归档_2026-09-16/Yau26_full_research_archive_2026-09-16/00_执行摘要_最新状态.md>)
+- [10_错误修正_撤回_超越关系.md](<sources/recovered_early/readable_members/Yau26_第26题_完整逐步研究归档_2026-09-16/Yau26_full_research_archive_2026-09-16/10_错误修正_撤回_超越关系.md>)
+
+### EARLY_03 局部构造至闭反例的归约审计
+
+- [Yau26_Fable核验包_新增与缺口审计_2026-09-17.md](<sources/recovered_early/originals/Yau26_Fable核验包_新增与缺口审计_2026-09-17.md>)
+
+### EARLY_04 原度量积分gap和自测试模板
+
+- [round3_monopole_input.md](<sources/recovered_early/readable_members/Yau26_十二轮研究_审读与复算证据_2026-09-21/key_proofs/round3_monopole_input.md>)
+- [round3_rigidity.md](<sources/recovered_early/readable_members/Yau26_十二轮研究_审读与复算证据_2026-09-21/key_proofs/round3_rigidity.md>)
+- [round4_rigidity.md](<sources/recovered_early/readable_members/Yau26_十二轮研究_审读与复算证据_2026-09-21/key_proofs/round4_rigidity.md>)
+- [round4_all_sign_gap.md](<sources/recovered_early/readable_members/Yau26_十二轮研究_审读与复算证据_2026-09-21/key_proofs/round4_all_sign_gap.md>)
+- [round5_rigidity.md](<sources/recovered_early/readable_members/Yau26_十二轮研究_审读与复算证据_2026-09-21/key_proofs/round5_rigidity.md>)
+- [01_积分刚性_从统一间隙到更广Einstein判定.tex](<sources/recovered_early/originals/01_积分刚性_从统一间隙到更广Einstein判定.tex>)
+- [01_积分刚性_统一障碍与跨范畴拓展_20260921.tex](<sources/recovered_early/readable_members/Yau26_十二轮后_三主线深化与开放研究稿_2026-09-21/01_积分刚性_统一障碍与跨范畴拓展_20260921.tex>)
+
+### EARLY_05 允许根、联合预算与文献接口
+
+- [第一主线_第21轮后的理论结构与文献整合_20260922.md](<sources/recovered_early/readable_members/Yau26_第一主线_第21轮后理论与文献综合_20260922/第一主线_第21轮后的理论结构与文献整合_20260922.md>)
+- [系统续接指令_第一主线_20260922.md](<sources/recovered_early/readable_members/Yau26_第一主线_第21轮后理论与文献综合_20260922/系统续接指令_第一主线_20260922.md>)
+
+### EARLY_06 参数、供应、周期、完整谱与受限实现
+
+- [Yau26_第一主线_八卷综合研判与论文方案_20260926.md](<sources/recovered_early/originals/Yau26_第一主线_八卷综合研判与论文方案_20260926.md>)
+- [01_Core_and_Development.md](<sources/outputs/Line1_Atlas_20260928/appendices/01_Core_and_Development.md>)
+- [05_Realization_and_Global_Structure.md](<sources/outputs/Line1_Atlas_20260928/appendices/05_Realization_and_Global_Structure.md>)
+- [01_主线入口与核心障碍.md](<sources/upload_archives/八份正文_下载后解压/01_主线入口与核心障碍.md>)
+- [08_跨线依赖反例与证据.md](<sources/upload_archives/八份正文_下载后解压/08_跨线依赖反例与证据.md>)
+
+### EARLY_07 网页深化、联合判据与并行执行
+
+- [Qiushi_Einstein_研究主线深化与证明方案_20260926(1).md](<sources/recovered_early/originals/Qiushi_Einstein_研究主线深化与证明方案_20260926(1).md>)
+- [Qiushi_Einstein_下一阶段并行研究执行书_20260926.md](<sources/recovered_early/workspace_notes/Qiushi_Einstein_下一阶段并行研究执行书_20260926.md>)
+- [joint_fields_proof.md](<sources/recovered_early/workspace_notes/joint_fields_proof.md>)
+
+### EARLY_08 同解成本、网页混合项、系统线性闭合
+
+- [Qiushi_Einstein_临界混合项核查与续推_20260927.md](<sources/recovered_early/workspace_notes/Qiushi_Einstein_临界混合项核查与续推_20260927.md>)
+- [01_linear_gap_and_actual_applications.md](<sources/upload_archives/Yau26_Line1_Recent_Research_20260927/01_linear_gap_and_actual_applications.md>)
+- [06_review_records_and_source_map.md](<sources/upload_archives/Yau26_Line1_Recent_Research_20260927/06_review_records_and_source_map.md>)
+
+### EARLY_09 核心费用、精确子族、单解和统一回接
+
+- [Yau26_Line1_External_Review_20260927.md](<sources/recovered_early/originals/Yau26_Line1_External_Review_20260927.md>)
+- [Yau26_Line1_Research_Directive_20260927.md](<sources/recovered_early/originals/Yau26_Line1_Research_Directive_20260927.md>)
+- [00_Research_Report.md](<sources/outputs/Qiushi_Line1_Continuation_Review_20260928/00_Research_Report.md>)
+- [03_N1_Complete_Inheritance.md](<sources/outputs/Line1_Atlas_20260928/03_N1_Complete_Inheritance.md>)
+
+### EARLY_10 整合稿与O10/O11集中攻关
+
+- [27b3cef6-aeed-442c-9e66-fef1a757828e.tex](<sources/upload/27b3cef6-aeed-442c-9e66-fef1a757828e.tex>)
+- [O10_All_Finite_Density.md](<sources/outputs/Line1_Continuation_20260929C/O10_All_Finite_Density.md>)
+- [O11_Global_Sharp.md](<sources/outputs/Line1_Continuation_20260929D/O11_Global_Sharp.md>)
+- [O10_Low_Amplitude_Energy_and_O11_Scope(1).md](<sources/upload/O10_Low_Amplitude_Energy_and_O11_Scope(1).md>)
+

@@ -1,0 +1,94 @@
+\section{Normalization and the underlying Einstein existence problem}
+\label{sec:normalized-existence}
+
+The integral obstruction, an approximate metric construction, and an
+Einstein repair theorem answer different quantified questions. We record
+the elementary reductions that place them in the same geometric problem.
+In this section the dimension is any fixed $n\ge2$, and manifolds are
+closed, connected and smooth; orientation is required only when a
+four-dimensional characteristic number is used.
+
+Let $\mathscr E(M)$ denote the set of all pairs $(h,\lambda)$ with
+$h$ a smooth Riemannian metric on $M$ and $\Ric_h=\lambda h$.
+For $\sigma\in\{-1,1\}$ put
+\[
+ \delta_\sigma(g)=
+ \sup_{x\in M}\|g^{-1}\Ric_g-\sigma\Id\|_{\mathrm{op}}.
+\]
+Write $P_n^\sigma$ for the assertion that there exists
+$\varepsilon_n^\sigma\in(0,1)$ such that, for every $M^n$ and every
+$g$, the inequality $\delta_\sigma(g)\le\varepsilon_n^\sigma$ implies
+$\mathscr E(M)\ne\varnothing$. The output metric need not lie near $g$
+and its Einstein constant need not have sign $\sigma$.
+Write $Q_n$ for the assertion that there exist real numbers $a<b$
+such that, for every $M^n$ and $g$,
+\[
+ ag\le\Ric_g\le bg\quad\Longrightarrow\quad
+ \mathscr E(M)\ne\varnothing.
+\]
+The inequalities are inequalities of quadratic forms, not componentwise
+coordinate inequalities or scalar-curvature bounds.
+
+\begin{proposition}[The two normalized branches]
+\label{prop:normalized-branches}
+In the same manifold category,
+\[
+ Q_n\quad\Longleftrightarrow\quad P_n^+\ \text{or}\ P_n^-.
+\]
+No sign assumption on the interval $[a,b]$ is needed for this equivalence.
+\end{proposition}
+\begin{proof}
+For $c>0$, the covariant Ricci tensor satisfies
+$\Ric_{cg}=\Ric_g$, whereas
+$(cg)^{-1}\Ric_{cg}=c^{-1}g^{-1}\Ric_g$.
+If $P_n^\sigma$ holds, take
+$[a,b]=[\sigma-\varepsilon_n^\sigma,
+\sigma+\varepsilon_n^\sigma]$.
+Conversely, every nondegenerate interval $[a,b]$ contains a
+nondegenerate closed interval $[u,v]$ with $uv>0$.
+Set
+\[
+ \mu=\frac{u+v}{2},\qquad
+ \sigma=\operatorname{sign}\mu,\qquad
+ \varepsilon=\frac{v-u}{|u+v|}\in(0,1).
+\]
+If $\delta_\sigma(h)\le\varepsilon$, then $g=h/|\mu|$ has all
+Ricci endomorphism eigenvalues in $[u,v]\subset[a,b]$.
+The assertion $Q_n$ therefore supplies an Einstein metric on $M$.
+\end{proof}
+
+For a fixed sign define
+\[
+ \Gamma_n^\sigma=
+ \inf_{\mathscr E(M^n)=\varnothing}\ \inf_{g\in\Met^\infty(M)}
+       \delta_\sigma(g),
+ \qquad \inf\varnothing=+\infty.
+\]
+Then $P_n^\sigma$ is equivalent to $\Gamma_n^\sigma>0$.
+Indeed a positive infimum supplies a smaller positive threshold;
+conversely a threshold bounds the infimum from below. Thus the negation
+of one branch requires metrics $g_j$ on Einstein-free manifolds $M_j$
+of one fixed dimension with $\delta_\sigma(g_j)\to0$.
+The manifolds may vary with $j$. A fixed-manifold construction is
+stronger than required, but it must still exclude every Einstein output.
+The negation of $Q_n$ requires failure of both signs in that same
+dimension; their underlying manifolds may be different.
+
+In dimension four, taking $\lambda=\sigma$ in the definition of
+$\E$ and comparing the tensor and operator norms gives
+\begin{equation}\label{eq:normalized-pointwise-integral}
+ \E(g)\le\fint_M|\Ric_g-\sigma g|^2
+          \le4\delta_\sigma(g)^2.
+\end{equation}
+Consequently an all-metric estimate $\E\ge\eta>0$ on a specified
+actual-input family excludes pointwise approximations below
+$\sqrt\eta/2$ in that family. The converse implication is false:
+Section~\ref{sec:integral-limits} constructs Einstein-free manifolds
+with $\E\to0$ while the pointwise defect does not vanish.
+Likewise, excluding an Einstein metric in a prescribed repair
+neighborhood does not assert $\mathscr E(M)=\varnothing$.
+
+These distinctions explain the roles of the constructions and global
+topology in the supplements. They test the geometric limits of the
+integral theory and the possibility of exact realization; they do not
+silently replace its actual-input hypotheses by a dimension-only claim.

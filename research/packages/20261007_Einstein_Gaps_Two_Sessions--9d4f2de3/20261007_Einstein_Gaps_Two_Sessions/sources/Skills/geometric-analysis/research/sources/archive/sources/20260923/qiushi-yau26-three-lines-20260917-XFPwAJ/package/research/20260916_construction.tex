@@ -1,0 +1,2517 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[margin=23mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{booktabs,longtable,tabularx,array,enumitem}
+\usepackage{xurl}
+\urlstyle{same}
+\usepackage[hidelinks,bookmarksnumbered]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{Pointwise near-Einstein constructions}\fancyfoot[C]{\thepage}
+\setlength{\parskip}{4pt}\linespread{1.13}
+\setlength{\emergencystretch}{3em}
+\setlist{itemsep=2pt,topsep=4pt,parsep=0pt,leftmargin=2em}
+\setcounter{tocdepth}{1}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{target}[theorem]{Research target}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\spec}{\operatorname{Spec}}
+\newcommand{\Met}{\operatorname{Met}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\dd}{\,d\mu_g}
+\newcommand{\avgint}{\mathop{\rlap{\,\raisebox{0.1ex}{\tiny$-$}}\int}\nolimits}
+\newcommand{\fint}{\mathop{\rlap{\,\raisebox{0.1ex}{\tiny$-$}}\int}\nolimits}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{Pointwise near-Einstein constructions\\and the limits of exact correction\\[0.5em]{\large Orbifold resolutions, fixed surface bundles, critical flux and multi-node reduction}}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study two constructions of unweighted pointwise Ricci approximation on fixed smooth four-manifolds. For a fixed orbifold resolution, an explicit Eguchi--Hanson core correction, a common radial gauge and logarithmic interpolation of the full ten-dimensional space of quadratic Weyl jets give Ricci endomorphism defect $O(|\log a|^{-1})$ and a specified Gromov--Hausdorff limit. On a fixed Dehn-twist surface bundle, slow collar interpolation, balanced degeneration of two collars and a tensor correction governed by three scalar equations give vanishing, quadratic and cubic maximum defects, respectively. The surface-bundle proofs retain all Ricci blocks. For the fixed-fibre slow-interpolation family, every fixed covariant derivative of curvature is uniformly bounded. A cubic lower bound for restricted corrections, a maximum-norm inverse that grows even after the complete kernel is removed, and an explicit contraction radius identify the additional analysis needed for exact solvability. Green flux for homogeneous tensors explains the logarithmic criticality of quadratic modes and the different thresholds of higher modes. The spherical product quotient analysis retains the complete operator kernel, the response of curvature jets to tensor multipoles, and four-node chirality pairings. Curvature spikes, a conditional finite-cover argument and global Einstein existence on a product-quotient resolution provide complementary tests. Obstructions to local exact desingularization and nonexistence of every Einstein metric on the underlying smooth manifold remain distinct statements.
+\end{abstract}
+\begingroup
+\small\linespread{1.0}\selectfont\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\section{Ricci pinching and normalization}
+Consider the following Ricci interval question. For each dimension $n\ge2$, do there exist real constants $c_n<C_n$, depending only on $n$, such that every closed, connected smooth real manifold $M^n$ admitting a metric $g$ with
+\begin{equation}\label{eq:Q}
+ c_ng\le\Ric_g\le C_ng,
+\end{equation}
+also admits a smooth Einstein metric $h$, meaning $\Ric_h=\lambda h$ for some $\lambda\in\R$? The output need not be close to $g$ or have the same Ricci sign. The conclusion concerns the same \emph{smooth manifold}, not merely its homeomorphism type.
+
+This question is related to Problem 26 in Yau's problem list \cite{Yau1982}. Throughout, the working statement is precisely equation \eqref{eq:Q}, with no sign or proximity restriction on the resulting Einstein metric.
+
+Define
+\begin{equation}\label{eq:defect}
+ \delta_\sigma(g)=\norm{g^{-1}\Ric_g-\sigma\Id}_{L^\infty,\op},\qquad
+ e_\sigma(M)=\inf_{g\in\Met(M)}\delta_\sigma(g),\qquad \sigma\in\{+1,-1\}.
+\end{equation}
+Let $P_n^\sigma$ assert the existence of $\varepsilon_n>0$, depending only on $n$, such that $\delta_\sigma(g)<\varepsilon_n$ implies that $M$ admits some Einstein metric. Denote the interval statement above by $Q_n$. Then
+\begin{equation}\label{eq:branches}
+ Q_n\quad\Longleftrightarrow\quad P_n^+\ \lor\ P_n^-.
+\end{equation}
+The proof uses only scaling. For $\widehat g=ag$, the covariant Ricci tensor is unchanged and its endomorphism becomes $a^{-1}g^{-1}\Ric_g$. Every nondegenerate interval contains a nonzero interior point $\mu$ and a small neighbourhood of the same sign. Scaling an input with $\Ric\approx\operatorname{sign}(\mu)g$ by $1/|\mu|$ places its Ricci eigenvalues in that neighbourhood. Conversely, choose a small interval centred at $+1$ or $-1$.
+
+Thus a proof in a fixed dimension needs only one sign branch, whereas a full disproof must defeat both branches in the same dimension, possibly on different manifolds. Each proposed counterexample must exclude Einstein metrics of every sign. Establishing $e_\sigma(M)=0$ is an independent construction result; it becomes a branch counterexample only when combined with nonexistence of all Einstein metrics on that same $M$.
+
+Uniformization settles dimension 2, and Hamilton's positive Ricci theorem settles the positive branch in dimension 3. The main discussion below is four-dimensional; every local construction and global obstruction retains its own dimension and sign hypotheses.
+
+\subsection{Curvature norms and four-dimensional characteristic numbers}
+The tensors $W^\pm$ and signature formulas below refer to oriented four-manifolds. A nonorientable application requires an orientation double cover and an equivariant descent argument; Einstein existence on the cover alone is insufficient. Write $s=\tr_g\Ric$ and $E=\Ric-\frac{s}{4}g$. We use the Hilbert--Schmidt \emph{operator} norm of $W^\pm$ on $\Lambda^2_\pm$, and tensor norms for $E$ and Ricci. Then
+\begin{align}
+8\pi^2\chi(M)&=\int_M\left(|W^+|^2+|W^-|^2+\frac{s^2}{24}-\frac{|E|^2}{2}\right)\dd,\label{eq:CGB}\\
+12\pi^2\tau(M)&=\int_M(|W^+|^2-|W^-|^2)\dd,\label{eq:signature}\\
+|\Rm_{\rm full}|^2&=4(|W^+|^2+|W^-|^2)+2|E|^2+\frac{s^2}{6}.
+\end{align}
+If $\mathcal R$ denotes the full curvature operator, $|\Rm_{\rm full}|^2=4|\mathcal R|^2$. For an exact Einstein metric, $\int|\mathcal R|^2=8\pi^2\chi$ and $\int|\Rm_{\rm full}|^2=32\pi^2\chi$. The Eguchi--Hanson energy $12\pi^2$ uses the first convention; it is $48\pi^2$ in the second.
+
+The bound $\delta_\sigma\le\delta$ implies
+\begin{equation}
+ |s-4\sigma|\le4\delta,\qquad |E|^2\le4\delta^2,\qquad
+ |\Ric-\sigma g|^2\le4\delta^2.
+\end{equation}
+A small finite-$L^p$ integral, a small weighted norm or a local exact solution does not replace the global unweighted Ricci endomorphism supremum required by the working question.
+
+A uniform topology gap for exact Einstein metrics is distinct from a Ricci pinching gap for general near-Einstein inputs; see \href{20260916_uniform_gap.tex}{the uniform-gap manuscript}. The construction mechanism studied here connects quadratic jets with the same Ricci contraction and different Weyl parts across a long logarithmic annulus.
+
+\subsection{Two fixed smooth objects and two approximation mechanisms}\label{sec:two-constructions}
+Both constructions below fix the smooth manifold before degenerating its metric.
+Theorem \ref{thm:A1} fixes an Einstein orbifold and marked resolutions of its nodes,
+corrects the core Ricci tensor, and then connects a finite difference of quadratic Weyl jets over a long logarithmic annulus.
+Theorem \ref{thm:ED-slow} instead fixes the Dehn-twist surface bundle $E_D$
+and places its nontrivial monodromy in an increasingly long hyperbolic base collar.
+Cancellation in two collar directions and a subsequent tensor correction improve its residual further.
+Both yield $e_\sigma=0$ on a fixed smooth object, with different topology, scales and curvature behaviour.
+In particular, bounded full curvature in the surface-bundle construction does not replace the blow-up analysis of the EH core,
+and exact ALE desingularization obstructions are not equations imposed on the bundle construction.
+A nearby exact solution requires compatible residual spaces, inverse bounds, nonlinear estimates and admissible radii,
+as detailed in Section \ref{sec:construction-repair}. The original question also permits Einstein metrics far from either input.
+
+\section{Pointwise Ricci approximation on a fixed A1 resolution}
+\begin{theorem}[A marked $A_1$ resolution]\label{thm:A1}
+Let $(M_0,g_0)$ be a fixed closed oriented Einstein four-orbifold with $\Ric_{g_0}=\sigma g_0$ and finitely many $A_1$ singularities. Fix equivariant normal coordinates, EH end markings, orientations and smooth filling data. Suppose the smooth core correction $\widetilde h$ satisfies
+\[
+D\Ric_{g_{\rm EH}}\widetilde h=g_{\rm EH},
+\]
+and $\widetilde h=H_*+O_2(\rho^{-2})$, meaning that for $j=0,1,2$,
+$|\nabla^j(\widetilde h-H_*)|\le C\rho^{-2-j}$, with the quadratic asymptotic jet and ambient normal quadratic jet in the same radial gauge. On the resulting fixed marked smooth resolution $M$, the construction gives smooth positive-definite metrics $g_a$ satisfying
+\begin{equation}\label{eq:A1}
+\delta_\sigma(g_a)\le\frac{C}{|\log a|}\longrightarrow0.
+\end{equation}
+The constant may depend on the fixed orbifold, nodes and markings, but not on $a\to0$. Moreover $(M,g_a)$ converges in the Gromov--Hausdorff sense to $(M_0,g_0)$, and each core rescaled by $a^{-2}$ converges to the chosen EH metric.
+\end{theorem}
+
+For every applicable fixed $M$, this proves $e_\sigma(M)=0$ in exactly the unweighted pointwise norm of the working question. It is a construction theorem independent of Einstein nonexistence. The assertion that $M$ admits \emph{no} Einstein metric is a separate statement, not a consequence of equation \eqref{eq:A1} or of obstruction to nearby exact desingularization.
+
+\section{Relation to exact Einstein desingularization}
+Biquard established curvature obstructions to $A_1$ Einstein desingularization and constructions under specific nondegeneracy hypotheses. Morteza--Viaclovsky studied higher-dimensional Calabi models, while Ozuch developed exact Einstein degeneration, weighted matching, constructions modulo obstructions and higher-order obstruction theory \cite{Biquard,MV,OzuchI,OzuchII,OzuchHigher,OzuchIntegrability}. Their exact equations and error norms differ from the two-sided unweighted $L^\infty$ Ricci approximation of Theorem \ref{thm:A1}.
+
+Ozuch \cite[\S7.3]{OzuchII} constructs finite-$L^p$ Ricci approximations and uses logarithmic cutoffs for one-sided Ricci control. The spherical quotient question asks for metrics on a specified EH resolution such that
+\begin{equation}\label{eq:football}
+\norm{g_i^{-1}\Ric_{g_i}-3\Id}_{\infty,\op}\longrightarrow0,
+\qquad (M,g_i)\xrightarrow{GH}(S^4/\Z_2,g_{\rm round}).
+\end{equation}
+For the standard end markings allowed in Theorem \ref{thm:A1}, the diameter estimates below also give this GH limit. Normalize by $h_0=3g_{\rm round}$, apply the construction with $\Ric_{h_0}=h_0$, and set $g_i=h_i/3$. The endomorphism defect is multiplied by 3 and still tends to zero. A different filling or boundary marking requires verification of the actual smooth resolution; rational Betti numbers alone do not identify it. This application does not exclude other exact Einstein metrics on $M$.
+
+\section{The complete A1 construction}\label{sec:A1-proof}
+\subsection{The bare core and its correction}
+Directly rescaling a Ricci-flat core gives
+\[
+(a^2g_{\rm EH})^{-1}\bigl(\Ric(a^2g_{\rm EH})-\sigma a^2g_{\rm EH}\bigr)=-\sigma\Id.
+\]
+The defect is identically 1, irrespective of its volume. A relative $O(a^2)$ core correction, however, produces an $O(1)$ physical Ricci correction after two derivatives and inverse-metric scaling. Failure of the bare core therefore leaves room for a corrected core.
+
+On the disc bundle $\mathcal O(-2)$ consider the following biaxial Einstein family.
+Fix the Euler-angle normalization
+\begin{equation}\label{eq:EH-frame-normalization}
+\begin{split}
+\sigma_1&=-\sin\psi\,d\theta+\cos\psi\sin\theta\,d\phi,\\
+\sigma_2&=\cos\psi\,d\theta+\sin\psi\sin\theta\,d\phi,\\
+\sigma_3&=d\psi+\cos\theta\,d\phi .
+\end{split}
+\end{equation}
+On the end, $\psi$ has period $2\pi$, with the usual Euler-angle identifications, so the link is $S^3/\{\pm1\}$.
+On its double cover, use
+\[
+z_1=x_1+ix_2=r\cos(\theta/2)e^{i(\psi+\phi)/2},\qquad
+z_2=x_3+ix_4=r\sin(\theta/2)e^{i(\psi-\phi)/2}.
+\]
+Then $e=dr^2+\frac{r^2}{4}\sum_i\sigma_i^2$ and
+$d\sigma_1=\sigma_2\wedge\sigma_3$, cyclically.
+The complex structure in the quadratic jet below is
+$J(x_1,x_2,x_3,x_4)=(-x_2,x_1,-x_4,x_3)$, so
+$\langle Jx,dx\rangle=\frac{r^2}{2}\sigma_3$.
+Carry this frame and $J$ through the chosen EH end marking; changing the marking is not a silent redefinition of the ambient complex structure.
+Set
+\begin{align}
+c_\Lambda&=(1-\Lambda/4)^2-1,\\
+G_\Lambda(r)&=\frac{\sqrt{1+c_\Lambda r^2}}{r^4}
+\int_1^r\frac{s^3(4-\Lambda s^2)}{(1+c_\Lambda s^2)^{3/2}}\,ds,
+\qquad F_\Lambda=(1+c_\Lambda r^2)G_\Lambda,\\
+q_\Lambda&=F_\Lambda^{-1}dr^2+
+\frac{r^2}{4}(\sigma_1^2+\sigma_2^2+G_\Lambda\sigma_3^2).
+\end{align}
+The domain requires $1+c_\Lambda r^2>0$ and $4-\Lambda r^2>0$. The biaxial equation reduces to
+\[
+r(1+c_\Lambda r^2)G_\Lambda'+(4+3c_\Lambda r^2)G_\Lambda
+=4-\Lambda r^2.
+\]
+Its integrating factor is $r^4/\sqrt{1+c_\Lambda r^2}$, and $G_\Lambda(1)=0$ gives the displayed solution. More explicitly, in geodesic radial coordinates write
+$q=dt^2+\alpha(t)^2(\sigma_1^2+\sigma_2^2)+\beta(t)^2\sigma_3^2$,
+where $\alpha=r/2$. The relation $F=(1+cr^2)G$ makes the $00$ and $33$ Ricci components equal, say to $Q$; the ODE gives $11=22=\Lambda$. The contracted Bianchi identity becomes
+\[
+Q'+2\frac{\alpha'}{\alpha}(Q-\Lambda)=\tfrac12(2Q+2\Lambda)'=Q',
+\]
+so $Q=\Lambda$. This verifies $\Ric(q_\Lambda)=\Lambda q_\Lambda$; see also the biaxial equations in \cite[\S4.1]{CGLP}. At the bolt,
+\[
+F_\Lambda'(1)=4-\Lambda,
+\quad G_\Lambda'(1)=\frac{4-\Lambda}{1+c_\Lambda},
+\quad \frac{(4-\Lambda)^2}{16(1+c_\Lambda)}=1,
+\]
+which matches the fixed $2\pi$ period without an angular defect. Differentiate at $\Lambda=0$ and subtract the gauge term generated by
+\[
+V=\frac5{72}(r^3-r^{-1})\partial_r
+\]
+to obtain
+\begin{align}
+\widetilde h={}&-\frac{r^2(7r^2-5)}{36(r^2-1)(r^2+1)^2}\,dr^2
+-\frac{5(r^4-1)}{144}(\sigma_1^2+\sigma_2^2)\\
+&+\left(-\frac{r^4}{72}+\frac1{16}-\frac{r^{-2}}{12}
++\frac{5r^{-4}}{144}\right)\sigma_3^2,\nonumber\\
+H_*={}&-\frac5{36}\bigl(r^2e-(x\cdot dx)^2\bigr)
++\frac1{12}\langle Jx,dx\rangle^2.
+\end{align}
+Thus $D\Ric_{\rm EH}\widetilde h=g_{\rm EH}$, $\widetilde h=H_*+O_2(r^{-2})$, and $H_*(x,\cdot)=0$. The apparent polar denominators must be interpreted in smooth bolt coordinates; a single polar coefficient does not determine geometric regularity.
+
+This core satisfies smoothness at the fixed bolt, the actual linearized Ricci equation, and the second-order asymptotic estimates needed for the nonlinear bounds below.
+
+\subsection{A common radial gauge identifies the Weyl difference}
+Let $H_0,H_1$ be the ambient and core far-field quadratic jets. If both are normal quadratic curvature tensors for the same Euclidean metric with the same Ricci contraction, then
+\[
+K=H_0-H_1,\qquad
+K_{ij}=-\tfrac13 C_{ikjl}x^kx^l
+\]
+is generated by an algebraic Weyl tensor $C$. Equal Ricci linearizations for arbitrary quadratic symmetric tensors do not by themselves impose this gauge: cubic coordinate changes and the Bianchi gauge must first be accounted for.
+
+In dimension 4 the Weyl space is
+\[
+\mathcal W=\operatorname{Sym}^2_0(\Lambda^+)\oplus
+\operatorname{Sym}^2_0(\Lambda^-).
+\]
+For each three-dimensional factor a basis is
+\[
+\operatorname{diag}(1,-1,0),\quad
+\operatorname{diag}(1,1,-2),\quad
+E_{12}+E_{21},\quad E_{13}+E_{31},\quad E_{23}+E_{32}.
+\]
+Together these give all ten Weyl directions, including nondiagonal and nonbiaxial sectors. The following calculation uses only curvature symmetries and trace-freeness, and hence applies to the entire space.
+
+\subsection{An identity for every smooth radial cutoff}
+Curvature symmetries and trace-freeness give
+\[
+\tr_eK=0,\quad \operatorname{div}_eK=0,\quad
+\Delta_eK=0,\quad K(x,\cdot)=0.
+\]
+Set $u=\log r$ and $\eta=\eta(u)$. The tensor $\eta K$ remains trace-free and divergence-free because the radial derivative contracts with $K(x,\cdot)=0$. With our flat Ricci linearization,
+\begin{align}
+D\Ric_e(\eta K)&=-\tfrac12\Delta_e(\eta K),\\
+\Delta_e(\eta K)&=\left(\eta_{rr}+\frac7r\eta_r\right)K
+=\frac{\eta_{uu}+6\eta_u}{r^2}K.
+\end{align}
+Therefore
+\begin{equation}\label{eq:logidentity}
+\boxed{D\Ric_e[\eta(\log r)K]=-
+\frac{\eta_{uu}+6\eta_u}{2r^2}K.}
+\end{equation}
+This proves the identity for arbitrary smooth radial $\eta$, rather than inferring it from finitely many powers $r^p$. Since $K=O(r^2)$, the bounds $\eta_u=O(L^{-1})$ and $\eta_{uu}=O(L^{-2})$ give linear Ricci cost $O(L^{-1})$.
+
+\subsection{Complete nonlinear estimates on three scales}
+For a length scale $a$, set
+\begin{equation}
+a\ll b=a^{1/2}\ll R=a^{1/4}\ll1,\qquad
+L=\log\frac{R}{8b}=\tfrac14|\log a|-\log8.
+\end{equation}
+Write $\rho$ for the core coordinate and $r=a\rho$ for physical radius. We now prove Theorem \ref{thm:A1}.
+
+\paragraph{Corrected core.}
+Put $k=g_{\rm EH}$ and $h=\sigma\widetilde h$. On $\rho\le2b/a$ take
+\[
+G_a=a^2(k+a^2h).
+\]
+The explicit formulas give $|\nabla_k^jh|\le C(1+\rho)^{2-j}$ for $j=0,1,2$. Since
+$a^2|h|_k\le Cb^2=o(1)$, the metric $k+a^2h$ is uniformly positive definite and comparable to $k$. The Ricci Taylor expansion and $D\Ric_kh=\sigma k$ give
+\[
+\Ric(k+a^2h)=\sigma a^2k+\mathcal Q_a,\qquad
+|\mathcal Q_a|_k\le Ca^4(1+\rho)^2.
+\]
+The quadratic remainder is controlled by
+$a^4(|h||\nabla^2h|+|\nabla h|^2+|\Rm_k||h|^2)$.
+EH curvature decays at infinity, and all terms are smooth and bounded near the fixed bolt.
+Constant scaling preserves the covariant Ricci tensor, so
+\[
+|\Ric(G_a)-\sigma G_a|_k\le Ca^4(1+\rho)^2.
+\]
+Raising an index contributes $a^{-2}$, yielding
+\begin{equation}\label{eq:coreestimate}
+\|G_a^{-1}\Ric(G_a)-\sigma I\|_{\op}
+\le C a^2(1+\rho)^2\le C(a^2+r^2).
+\end{equation}
+The relative core perturbation tends to zero and $h$ is smooth at the bolt, so the original smooth filling is preserved.
+
+\paragraph{Inner cutoff.}
+In physical Cartesian coordinates the EH tail and the correction tail give
+\[
+G_a=e+H_1+\mathcal T_a,\qquad
+|\partial^j\mathcal T_a|
+\le C\bigl(a^4r^{-4-j}+a^4r^{-2-j}\bigr),\quad j\le2,
+\qquad H_1=\sigma H_*.
+\]
+Remove $\mathcal T_a$ on $b\le r\le2b$ using a fixed-shape smooth cutoff
+whose $j$th derivative is $O(b^{-j})$.
+The additional second-order Ricci terms are
+$O(a^4b^{-6}+a^4b^{-4})$.
+The remaining quadratic model $e+H_1$ has nonlinear residual $O(b^2)$, so the total endomorphism error is
+\begin{equation}\label{eq:innercutoff}
+C(b^2+a^4b^{-6}+a^4b^{-4})=O(a).
+\end{equation}
+
+\paragraph{Logarithmic annulus.}
+Choose smooth $\psi$, equal to 0 near 0 and to 1 near 1, and put
+\[
+\eta(r)=\psi\!\left(\frac{\log(r/(4b))}{L}\right),\qquad
+q=H_1+\eta K,\qquad g=e+q,\qquad 4b<r<R/2.
+\]
+Homogeneity gives
+\[
+|q|\le Cr^2,\quad
+|\partial q|\le Cr(1+L^{-1}),\quad
+|\partial^2q|\le C(1+L^{-1}+L^{-2}).
+\]
+For sufficiently small $R$, $g$ and $e$ are uniformly comparable. Writing
+$\Ric(e+q)=D\Ric_e q+\mathcal N(q)$, the Christoffel formula gives
+\[
+|\mathcal N(q)|\le C\bigl(|q||\partial^2q|+|\partial q|^2\bigr)
+\le Cr^2(1+L^{-1}+L^{-2})^2.
+\]
+Using $D\Ric_eH_1=\sigma e$ and equation \eqref{eq:logidentity},
+\[
+|\Ric(g)-\sigma g|
+\le C(L^{-1}+r^2),\qquad
+\|g^{-1}\Ric(g)-\sigma I\|_{\op}
+\le C(L^{-1}+R^2).
+\]
+This is a full nonlinear estimate for arbitrary angular quadratic Weyl data; no small full-curvature assumption is imposed on the core.
+
+\paragraph{Outer cutoff and the global metric.}
+The local $A_1$ action is $x\mapsto-x$. Thus equivariant normal coordinates give
+$g_0=e+H_0+E_4$ with
+$|\partial^jE_4|\le Cr^{4-j}$, $j\le2$.
+Restoring $E_4$ at $r\asymp R$ costs $O(R^2)$ in the Ricci tensor.
+For small $a$, the finitely many modified node balls are disjoint and the metric remains $g_0$ outside them.
+Ricci is local, so this approximate construction has no additional inter-node error.
+Taking the maximum of the finitely many fixed constants gives
+\[
+\delta_\sigma(g_a)\le C(L^{-1}+a^{1/2})
+\le C'|\log a|^{-1}.
+\]
+All transition regions are uniformly comparable to positive-definite quadratic models. Core positivity and smoothness were checked separately, so the glued metric is globally smooth and positive definite.
+
+\paragraph{GH and bubble limits.}
+The radial length from each core to radius $2b$ is $O(b)$.
+The remaining transition region is comparable to a Euclidean annulus and has diameter $O(R)$.
+Collapse these regions to the corresponding orbifold nodes and use the identity outside; the resulting correspondence has distortion $O(R)$.
+Hence $(M,g_a)$ converges in the GH sense to $(M_0,g_0)$.
+On fixed compact core sets, $a^{-2}G_a=k+a^2h\to k$, giving the chosen EH bubble limit.
+All constants depend on the fixed background, nodes and markings. Varying the background or the number of nodes requires a separate uniformity argument.
+
+\subsection{Scale selection for a prescribed defect}\label{sec:scalechoice}
+The cutoff radii are linked by the preceding error estimates. Keeping general choices
+$b=a^\gamma$ and $R=a^\kappa$, the same regional estimates give
+\begin{equation}\label{eq:scalebudget}
+\delta_\sigma(g_a)\le C\left[
+\frac1{(\gamma-\kappa)|\log a|-\log8}
++a^{2\gamma}+a^{4-6\gamma}+a^{4-4\gamma}+a^{2\kappa}\right].
+\end{equation}
+Here $a/b\to0$ places the inner cutoff in the EH far field, $b/R\to0$ makes the logarithmic annulus long,
+and $a^4b^{-6}\to0$ controls the two derivatives needed to remove the EH tail.
+Together with $R\to0$, these are ensured by
+\[
+0<\kappa<\gamma<\frac23.
+\]
+Set $\nu=\min\{2\kappa,4-6\gamma\}>0$. The other algebraic powers are larger,
+so equation \eqref{eq:scalebudget} is bounded by $C(L^{-1}+a^\nu)$.
+For $(\gamma,\kappa)=(1/2,1/4)$ the inner cutoff costs $O(a)$ and the outer cutoff
+costs $O(a^{1/2})$; the slowest term remains $L^{-1}$.
+
+Fix these exponents and a threshold $a_*$ ensuring valid coordinates, positivity and node separation.
+If $C$ has been chosen uniformly in the preceding estimates, a defect at most $\varepsilon>0$ follows by taking
+$a=e^{-s}\le a_*$ and requiring
+\begin{equation}\label{eq:targetscale}
+s\ge\max\left\{
+\frac{\log8+2C/\varepsilon}{\gamma-\kappa},\,
+\frac1\nu\log\frac{2C}{\varepsilon}\right\}.
+\end{equation}
+This relates the target error, the EH length scale and both cutoff radii.
+The rule depends on fixed background constants; without values of $C,a_*$ it is not a certified numerical radius.
+In particular, $a$ may be exponentially small in $\varepsilon$. This is why a flux bound of the form
+$\delta\gtrsim1/|\log a|$ does not exclude the construction.
+
+\section{Pointwise approximation on a fixed Dehn-twist surface bundle}\label{sec:ED}
+This construction starts from a fixed smooth surface bundle, not an orbifold with ALE fillings.
+Chapter 6 of the \href{20260912.tex}{long construction and analysis manuscript},
+from \path{BUN:slow} through \path{BUN:closed-log-loss}, develops its further variational and topological consequences.
+Here we give the argument from smooth gluing and every Ricci block through third-order correction and the limits of exact repair.
+Throughout this section and the subsequent bundle analysis, write
+\[
+\Phi(g)=\Ric_g+g,\qquad
+V_0=16\pi^2(p-1)(q-1).
+\]
+The $C^m(g)$ norm is the sum of the maximum norms of covariant derivatives of orders $0$ through $m$;
+constants may depend on the fixed genera, surfaces, profiles, and derivative order.
+
+\subsection{Fixing the topology before choosing hyperbolic metrics}\label{sec:ED-object}
+Fix closed oriented surfaces $F=\Sigma_p$ and $B=\Sigma_q$, where $p,q\ge2$.
+On the fixed hyperbolic fibre $(F,h_0)$, choose a nonseparating simple closed geodesic and a subcollar
+\[
+[-R_0,R_0]\times\R/\Z,\qquad
+h_0=du^2+a(u)^2ds^2,\qquad a(u)=a_0\cosh u.
+\]
+Here $a_0,R_0,h_0$ are independent of the parameter. Choose a smooth function $\zeta$
+that equals $0$ and $1$ near the left and right ends, respectively, and set
+$D(u,s)=(u,s+\zeta(u))$. Since $s$ has period $1$, $D$ is the identity near both ends;
+extension by the identity therefore defines one Dehn twist. Set
+\begin{equation}\label{eq:ED-fiber-path}
+h_z=du^2+a^2(ds+z\zeta' du)^2\quad(0\le z\le1),\qquad
+h_z=h_0\quad\text{outside the collar}.
+\end{equation}
+The local change of coordinates $s'=s+z\zeta(u)$ directly gives
+\[
+K_{h_z}=-1,\qquad dA_{h_z}=dA_{h_0},\qquad h_1=D^*h_0.
+\]
+For intermediate $z$, this change of coordinates need not define a global diffeomorphism of the closed fibre.
+The metrics match at the ends; this does not make $D$ isotopic to the identity.
+
+Fix a nonseparating curve $c$ in the base, cut along $c$, and take the trivial bundle over its complement.
+Glue the two ends of the connecting collar by the identity and $D$, respectively, to define the fixed total space $E_D$.
+Its monodromy factors as
+$\pi_1(B)\twoheadrightarrow\Z\to\operatorname{Mod}(F)$,
+where the surjection is primitive and $1$ maps to $[D]$.
+Let the hyperbolic length $\ell$ of $c$ tend to zero while the other Fenchel--Nielsen parameters remain fixed.
+The standard collar formula \cite[Appendix A]{RupflinToppingCollars} gives
+\[
+w(\ell)=\operatorname{arsinh}\frac1{\sinh(\ell/2)},\qquad
+L=\tfrac12w(\ell),\qquad
+g_{B,\ell}=dt^2+\ell^2\cosh^2t\,d\theta^2\quad(|t|\le L),
+\]
+with $\theta\in\R/\Z$. Choose a fixed smooth profile
+$\eta:[-1,1]\to[0,1]$, constant at $0$ and $1$ near the respective ends, and set $z(t)=\eta(t/L)$.
+
+\begin{theorem}[The slow-collar construction with a fixed fibre]\label{thm:ED-slow}
+On the fixed manifold $E_D$, define
+\begin{equation}\label{eq:ED-slow-metric}
+G_\ell=dt^2+\ell^2\cosh^2t\,d\theta^2+h_{z(t)}
+\quad\text{on the base collar},
+\end{equation}
+and use $g_{B,\ell}+h_0$ outside, with the gluing just specified.
+Then $G_\ell$ is a smooth positive-definite metric on the closed manifold, $\Vol(G_\ell)=V_0$,
+and, for every fixed $m\ge0$,
+\begin{equation}\label{eq:ED-slow-geometric}
+\delta_-(G_\ell)\le C/L\longrightarrow0,\qquad
+\|\nabla^m\Rm_{G_\ell}\|_\infty\le C_m,\qquad
+\|\nabla^m\Phi(G_\ell)\|_\infty\le C_m/L.
+\end{equation}
+Consequently, $e_-(E_D)=0$.
+\end{theorem}
+
+\subsection{The full Ricci matrix and the global maximum error}\label{sec:ED-Ricci}
+Positive definiteness follows immediately from \eqref{eq:ED-fiber-path}.
+The endpoint fibre metrics are $h_0$ and $D^*h_0$; the constant endpoint profiles make all transverse derivatives match.
+Thus \eqref{eq:ED-slow-metric} genuinely defines a metric on the fixed closed manifold $E_D$.
+On the intersection of the two collars, put
+\[
+\begin{gathered}
+b=\ell\cosh t,\quad j=\tanh u,\quad k=\tanh t,\quad
+Q=a\zeta',\quad v=Qz',\\
+(e^0,e^1,e^2,e^3)=(dt,b\,d\theta,du,a(ds+z\zeta' du)).
+\end{gathered}
+\]
+The structure equations are
+\begin{equation}\label{eq:ED-structure}
+de^0=de^2=0,\qquad
+de^1=k e^0\wedge e^1,\qquad
+de^3=j e^2\wedge e^3+v e^0\wedge e^2.
+\end{equation}
+The shape operator of the fibres in the $t$ direction satisfies
+\begin{equation}\label{eq:ED-shape}
+S=\frac12\begin{pmatrix}0&v\\v&0\end{pmatrix},\qquad
+\tr S=0,\qquad
+D_tS=\begin{pmatrix}v^2/2&v_t/2\\v_t/2&-v^2/2\end{pmatrix},
+\qquad
+\operatorname{div}_{h_z}S=\frac{v_u+2jv}{2}e^3.
+\end{equation}
+The quadratic diagonal terms in $D_tS$ come from the moving-frame connection. The Gauss--Codazzi equations give
+$\Phi_{tt}=-\tr S^2$, $\Phi_{11}=0$,
+$\Phi_{FF}^{\sharp}=-D_tS-kS$ and
+$\Phi_{tF}=\operatorname{div}_{h_z}S$. Hence the complete matrix is
+\begin{equation}\label{eq:ED-ricci-matrix}
+\boxed{\Phi(G_\ell)_{\rm ON}=
+\begin{pmatrix}
+-v^2/2&0&0&(v_u+2jv)/2\\
+0&0&0&0\\
+0&0&-v^2/2&-(v_t+kv)/2\\
+(v_u+2jv)/2&0&-(v_t+kv)/2&v^2/2
+\end{pmatrix}.}
+\end{equation}
+This records the normal, tangential, and mixed errors simultaneously.
+Set $A_0=\|Q\|_\infty$, $A_1=\|Q'+2jQ\|_\infty$, and
+$M_i=\|\eta^{(i)}\|_\infty$. The off-diagonal part has only two edges, both incident to direction $3$,
+so its operator norm is the Euclidean norm of those two entries; the diagonal part has norm $v^2/2$.
+Using $z'=\eta'/L$ and $z''=\eta''/L^2$ gives
+\begin{equation}\label{eq:ED-slow-bound}
+\delta_-(G_\ell)\le
+\frac{A_0^2M_1^2}{2L^2}
++\frac1{2L}\sqrt{A_1^2M_1^2+A_0^2(M_1+M_2/L)^2}.
+\end{equation}
+Where $Q=0$ or $z'=0$, the metric is locally a hyperbolic product and the error is exactly zero.
+The estimate therefore holds on the entire closed manifold. Taking the matrix trace and the volume form gives
+$s=-4-v^2/2$ and
+$dV=b\,dt\,d\theta\wedge dA_{h_0}$. Gauss--Bonnet on the two closed hyperbolic surfaces
+then yields $\Vol(G_\ell)=V_0$.
+
+\subsection{Why higher curvature derivatives do not lose inverse short periods}\label{sec:ED-derivatives}
+It remains to prove the higher-order bounds in Theorem \ref{thm:ED-slow}. The dual frame of the preceding coframe is
+\[
+E_0=\partial_t,\qquad E_1=b^{-1}\partial_\theta,\qquad
+E_2=\partial_u-z\zeta'\partial_s,\qquad E_3=a^{-1}\partial_s.
+\]
+The structure coefficients $j,k,v$ are independent of $s,\theta$.
+Thus $E_1$ and $E_3$ annihilate these coefficients and every iterated frame derivative of them,
+whereas $E_0,E_2$ act as $\partial_t,\partial_u$.
+All derivatives of $Q$ are bounded on the fixed fibre. For $L\ge1$,
+\[
+|\partial_t^\alpha\partial_u^\beta j|
++|\partial_t^\alpha\partial_u^\beta k|\le C_{\alpha\beta},
+\qquad
+|\partial_t^\alpha\partial_u^\beta v|
+\le C_{\alpha\beta}L^{-1-\alpha}\le C_{\alpha\beta}/L.
+\]
+The Koszul formula expresses the orthonormal-frame connection coefficients as fixed linear combinations of the structure coefficients.
+Curvature components are sums of their first frame derivatives and quadratic products.
+Taking a covariant derivative of any tensor adds one frame derivative and products with connection coefficients;
+induction gives uniform bounds for every fixed order $\nabla^m\Rm$.
+Likewise, covariant differentiation of \eqref{eq:ED-ricci-matrix}
+leaves a factor of $v$ or one of its derivatives in every term, preserving the bound $O(L^{-1})$.
+This proves \eqref{eq:ED-slow-geometric}.
+
+No Euclidean coordinate estimate is being applied directly in a shrinking angular direction.
+Although $b^{-1}$ diverges, it multiplies the vanishing $\partial_\theta$ derivatives;
+the actual connection contains $b'/b=\tanh t$. Outside the intersecting collars the metric is locally a hyperbolic product,
+with parallel curvature. Constant endpoint profiles and a finite atlas on the fixed fibre control all interfaces to the same order.
+This derivative-by-derivative argument uses the explicit structure equations and fixed smooth profiles;
+it does not follow from a general $C^0$ Ricci pinching assumption.
+
+The same connection gives $K(E_0,E_3)=v^2/4>0$ when $v\ne0$,
+so this family does not have strictly negative sectional curvature. The central short circle gives
+$\operatorname{inj}_{\min}(G_\ell)\le\ell/2$.
+The bundle projection does not increase lengths, and the long base collar forces the diameter to diverge.
+The interpolation region has volume
+$8\pi(p-1)\ell\sinh L=O(\sqrt\ell)$, while the thick part converges smoothly to
+$\Sigma_p\times\Sigma_{q-1,2}$, whose complete cusped product metric still has volume $V_0$.
+Small volume alone does not control the maximum error; that control comes from \eqref{eq:ED-slow-bound}.
+If a member $G_\ell$ were Einstein, direction $1$ would first force its Einstein constant to be $-1$,
+and direction $0$ would then force $v=0$, contrary to the nontrivial endpoint change.
+This excludes exact Einstein members only within the constructed family.
+
+\subsection{Balanced double collars and the exact second-order leading term}\label{sec:ED-double}
+Now choose a different family: let the fibre geodesic have length $\varepsilon\downarrow0$,
+the base geodesic have length $\beta=\varepsilon^2$, and all other moduli remain fixed.
+Set $R=w(\varepsilon)-2$ and $L=w(\beta)-2$,
+$a=\varepsilon\cosh u$, and $b=\beta\cosh t$.
+Choose a fixed smooth $\rho$ with $\rho=0$ for $x\le1/4$, $\rho=1$ for $x\ge1$, and $0\le\rho\le1$, and put
+\[
+\chi_R(u)=\rho(R-|u|),\qquad \chi_L(t)=\rho(L-|t|),\qquad
+I_R=\int\chi_R\operatorname{sech}^3u\,du,\quad
+J_L=\int\chi_L\operatorname{sech}t\,dt.
+\]
+Define profiles, both vanishing at their left endpoint, by
+\begin{equation}\label{eq:ED-balanced-profiles}
+\zeta'=I_R^{-1}\chi_R\operatorname{sech}^3u,\qquad
+\tau'=J_L^{-1}\chi_L\operatorname{sech}t.
+\end{equation}
+Both endpoint differences are $1$. The same gluing as in \eqref{eq:ED-fiber-path} gives
+\[
+G_\varepsilon=dt^2+b^2d\theta^2+du^2+
+a^2(ds+\tau\zeta' du)^2.
+\]
+The representative of the Dehn twist may vary with the parameter, but its mapping class is fixed.
+Bundle diffeomorphisms therefore pull all these metrics back to the same $E_D$.
+In this case
+\[
+v=\frac{\varepsilon}{I_RJ_L}\chi_R\chi_L
+\operatorname{sech}^2u\operatorname{sech}t,
+\]
+and the two linear terms in \eqref{eq:ED-ricci-matrix} become
+\begin{equation}\label{eq:ED-double-cancellation}
+\begin{aligned}
+v_u+2\tanh u\,v&=
+\frac{\varepsilon}{I_RJ_L}\chi_R'\chi_L
+\operatorname{sech}^2u\operatorname{sech}t,\\
+v_t+\tanh t\,v&=
+\frac{\varepsilon}{I_RJ_L}\chi_R\chi_L'
+\operatorname{sech}^2u\operatorname{sech}t.
+\end{aligned}
+\end{equation}
+Both vanish exactly in the core. In the fixed-width cutoff bands they are respectively
+$O(\varepsilon e^{-2R})$ and $O(\varepsilon e^{-L})$, hence both
+$O(\varepsilon^3)$; $v$ is also $O(\varepsilon^3)$ in those bands.
+Elsewhere only the diagonal residual $v^2/2$ remains, attaining its maximum at $t=u=0$.
+Consequently, for sufficiently small parameters, the exact formula is
+\begin{equation}\label{eq:ED-second}
+\boxed{\delta_-(G_\varepsilon)=\frac{\varepsilon^2}{2I_R^2J_L^2}
+=\frac{2}{\pi^4}\varepsilon^2+O(\varepsilon^4).}
+\end{equation}
+Here $I_R=\pi/2+O(\varepsilon^3)$ and $J_L=\pi+O(\varepsilon^2)$.
+The volume remains $V_0$, and the scalar curvature remains $-4-v^2/2$.
+All fixed-order cutoff derivatives are uniformly bounded, as are all frame derivatives of the structure coefficients.
+The argument of Section \ref{sec:ED-derivatives} therefore applies to this doubly degenerating family.
+This uses explicit estimates for the new profiles, not an unproved extension of fixed-fibre constants to degenerating fibres.
+
+By contrast, consider any hyperbolic fibre path with fixed endpoints and a common area form.
+The full slice equations give
+$|S|^2\le\delta$ and
+$\|D_tS+\tanh t\,S\|_{\op}\le\delta$.
+In a parallel frame, the integrating factor $\cosh t$ gives
+\[
+\|S(t)\|_{\op}\le\sqrt{\delta/2}\operatorname{sech}t+
+\delta|\tanh t|.
+\]
+Integrating controls the Teichm\"uller distance $d$ between the endpoints, and hence
+\begin{equation}\label{eq:ED-fixed-endpoints}
+d\le\pi\sqrt{\delta/2}+2\delta\log\cosh L,\qquad
+d>0\text{ fixed and }\delta\to0\ \Longrightarrow{}
+\liminf L\delta\ge d/2.
+\end{equation}
+For the doubly degenerating family, however, the endpoint distance satisfies
+$d_\varepsilon\le\operatorname{arsinh}(\varepsilon/(2I_R))
+=\varepsilon/\pi+O(\varepsilon^3)$, whose upper bound tends to zero.
+There is therefore no conflict with the lower bound for fixed positive $d$.
+The double-collar construction cancels the mixed terms by coordinating the two profiles.
+Its mechanism is distinct from the Weyl quadratic drift in \eqref{eq:logidentity}.
+
+\section{Three-scalar correction and a restricted third-order lower bound}\label{sec:ED-third}
+\subsection{From the actual second-order source to three scalar equations}\label{sec:ED-three-equations}
+Unwrap the short angular coordinates by $x=\varepsilon s$ and $y=\beta\theta$,
+and use the product of hyperbolic cylinders on the local cover,
+\[
+g_0=g_1+g_2,\qquad
+g_1=dt^2+\cosh^2t\,dy^2,\qquad
+g_2=du^2+\cosh^2u\,dx^2.
+\]
+The radial calculation involves only $t,u$; its angularly invariant tensors descend to the short-period quotient.
+Put $c_0=2/\pi^2$, $f=\operatorname{sech}^2t$, and
+$r=\operatorname{sech}^2u$,
+$T_1=dt^2-\cosh^2t\,dy^2$,
+$T_2=du^2-\cosh^2u\,dx^2$, and $q_1=fT_1$.
+Here $r$ denotes the function $\operatorname{sech}^2u$, not an ALE radial coordinate.
+In the $g_0$ frame, \eqref{eq:ED-ricci-matrix} gives
+\begin{equation}\label{eq:ED-second-source}
+\Phi(G_\varepsilon)=\varepsilon^2D+O_{C^m}(\varepsilon^3),\qquad
+D=\frac{c_0^2fr^2}{2}\operatorname{diag}(-1,0,-1,1)
+=-\frac{c_0^2fr^2}{4}g_1-\frac{c_0^2r^2}{4}q_1
+-\frac{c_0^2fr^2}{2}T_2.
+\end{equation}
+The original residual and the removed source in the cutoff bands obey the same remainder bound.
+
+Use the Bianchi operator $\mathfrak b h=-\operatorname{div}h+\tfrac12d\tr h$.
+Direct differentiation gives $\mathfrak bD=0$. On the background $\Ric(g_0)=-g_0$,
+the Bianchi-gauged linearization is
+$\mathcal L=\tfrac12(\nabla^*\nabla-2\mathring R)$,
+where $\mathring Rg_0=\Ric(g_0)$ and the rough Laplacian is nonnegative.
+Seek $K=Ag_1+Bq_1+CT_2$. Set
+$P_t=\partial_t^2+\tanh t\,\partial_t$ and
+$P_u=\partial_u^2+\tanh u\,\partial_u$. The product connection gives, block by block,
+\[
+2\mathcal L(Ag_1)=(-P_t-P_u+2)A\,g_1,\quad
+2\mathcal L(Bq_1)=(-P_uB)q_1,\quad
+2\mathcal L(CT_2)=(-P_t-P_u+2-4r)C\,T_2.
+\]
+For example, $q_1$ is a TT zero mode on the first hyperbolic cylinder;
+the frame connection on the second factor produces the zeroth-order potential
+$4\tanh^2u-2=2-4r$ for $T_2$. Thus $\mathcal LK=-D$ becomes
+\begin{equation}\label{eq:ED-three-equations}
+\begin{aligned}
+H_AA&=\tfrac12c_0^2fr^2,&H_A&=-P_t-P_u+2,\\
+-P_uB&=\tfrac12c_0^2r^2,\\
+H_CC&=c_0^2fr^2,&H_C&=-P_t-P_u+2-4r.
+\end{aligned}
+\end{equation}
+The solution of the middle equation that tends to zero at both ends is
+\begin{equation}\label{eq:ED-B}
+B(u)=\frac{c_0^2}{8}
+\left[\operatorname{sech}^2u+\frac{\pi^2}{4}
+-(\arctan\sinh u)^2\right].
+\end{equation}
+For the other two equations, take the Friedrichs realizations in
+$L^2(d\mu_0)$, where $d\mu_0=\cosh t\cosh u\,dt\,du$.
+Unitary conjugation by multiplication with $\sqrt{\cosh t}$ gives
+$-P_t\simeq-\partial_t^2+\tfrac14+\tfrac14\operatorname{sech}^2t\ge1/4$,
+and similarly in the $u$ direction. Since $(-P_u+2-4r)r=0$,
+the ground-state identity for compactly supported $a$ is
+\begin{equation}\label{eq:ED-ground-state}
+\int\bigl(|a'|^2+(2-4r)a^2\bigr)\cosh u\,du
+=\int r^2|(a/r)'|^2\cosh u\,du\ge0.
+\end{equation}
+Hence $H_A\ge5/2$ and $H_C\ge1/4$, and both sources belong to $L^2(d\mu_0)$.
+The actual smooth solutions are defined by convergent heat-semigroup integrals:
+\[
+A=\tfrac12c_0^2\int_0^\infty e^{-sH_A}(fr^2)\,ds,\qquad
+C=c_0^2\int_0^\infty e^{-sH_C}(fr^2)\,ds.
+\]
+This proves existence and bounds for the scalar inverses being used; it does not assume a uniform inverse for the full tensor system.
+
+\subsection{Bianchi closure, tails, and the global third-order error}\label{sec:ED-third-gluing}
+We must still show that the gauge-fixed equation is the actual linearized Ricci equation. Put
+$D_u=\partial_u+2\tanh u$ and $H_1=-P_t-P_u+2-r$.
+Commuting derivatives directly yields
+\[
+D_uH_C=H_1D_u,\qquad \partial_uH_A=H_1\partial_u.
+\]
+The sources satisfy $D_u(c_0^2fr^2)=\partial_u(c_0^2fr^2/2)$.
+Therefore $Z=C_u+2\tanh u\,C-A_u$ satisfies $H_1Z=0$.
+Weighted elliptic estimates give $Z\in L^2(d\mu_0)$,
+and $H_1\ge3/2$ implies
+\begin{equation}\label{eq:ED-bianchi}
+\mathfrak bK=(A_u-C_u-2\tanh u\,C)\,du=0,\qquad
+D\Phi_{g_0}K=-D.
+\end{equation}
+
+To control the ends, define
+\[
+T(t)=\tfrac12\left[\tfrac{\pi^2}{4}-(\arctan\sinh t)^2\right],
+\qquad -P_tT=f,\qquad T>0.
+\]
+Since $H_A(Tr)=fr+4Tr^2\ge fr^2$ and
+$H_C(Tr)=fr\ge fr^2$, comparison for the positive Green operators gives
+$0\le A\le c_0^2Tr/2$ and $0\le C\le c_0^2Tr$.
+The potential of $H_C$ is not everywhere nonnegative; comparison follows by testing with the positive part and using the established positive spectral gap.
+Together with \eqref{eq:ED-B} and interior elliptic estimates on fixed-radius local covers,
+this gives, for every fixed $j$,
+\begin{equation}\label{eq:ED-decay}
+|\nabla^jK|\le C_j
+\bigl(e^{-|t|-2|u|}+e^{-2|t|-|u|}\bigr).
+\end{equation}
+
+\begin{proposition}[Third-order correction on the closed surface bundle]\label{prop:ED-third}
+Choose fixed-width cutoffs $\Psi_\varepsilon=\psi_R(u)\psi_L(t)$,
+equal to $1$ in the core and to $0$ near both ends of the subcollars, and extend by zero.
+Then
+\begin{equation}\label{eq:ED-corrected}
+\widetilde G_\varepsilon=G_\varepsilon+\varepsilon^2\Psi_\varepsilon K
+\end{equation}
+is smooth and positive definite on the same $E_D$, and, for every fixed $m\ge0$,
+\begin{equation}\label{eq:ED-third-bound}
+\|\Phi(\widetilde G_\varepsilon)\|_{C^m(\widetilde G_\varepsilon)}
+\le C_m\varepsilon^3,\qquad
+\|\nabla^m\Rm_{\widetilde G_\varepsilon}\|_\infty\le C_m.
+\end{equation}
+\end{proposition}
+\begin{proof}
+The tensor $K$ and its derivatives are uniformly bounded. A relative $O(\varepsilon^2)$ correction therefore preserves positive definiteness,
+and its vanishing endpoint neighbourhoods make all derivatives match the exterior.
+In the $g_0$ frame, the original shear has size
+$a\tau\zeta'=\varepsilon\tau\chi_Rr/I_R$,
+and every fixed-order derivative has the same $O(\varepsilon)$ bound.
+Expand the actual equation as
+\[
+\begin{split}
+\Phi(\widetilde G_\varepsilon)
+={}&\varepsilon^2D+\varepsilon^2D\Phi_{g_0}(\Psi_\varepsilon K)
++O_{C^m}(\varepsilon^3)\\
+={}&\varepsilon^2(1-\Psi_\varepsilon)D
++\varepsilon^2[D\Phi_{g_0},\Psi_\varepsilon]K
++O_{C^m}(\varepsilon^3).
+\end{split}
+\]
+The remainder in the first line includes the background change $O(\varepsilon)\cdot O(\varepsilon^2)$
+and the quadratic correction term $O(\varepsilon^4)$.
+By \eqref{eq:ED-decay}, $K$ and the required derivatives are
+$O(e^{-R})=O(\varepsilon)$ in the fibre cutoff band and
+$O(e^{-L})=O(\varepsilon^2)$ in the base cutoff band.
+The two commutators therefore contribute $O(\varepsilon^3)$ and $O(\varepsilon^4)$, respectively.
+The source tails are smaller, and \eqref{eq:ED-bianchi} cancels the core second-order term.
+These are estimates for the full tensor in orthonormal frames on fixed-radius covers.
+Uniform comparison of the metrics converts them into \eqref{eq:ED-third-bound}.
+The curvature derivative bounds follow from the corresponding background bounds and the $C^{m+2}$ bounds for the correction.
+\end{proof}
+The horizontal coefficients $A,B$ depend on fibre position, so the original bundle projection generally ceases to be a Riemannian submersion.
+The volume must also be recomputed: the exact identity $\Vol(G_\varepsilon)=V_0$ cannot simply be assigned to the corrected family.
+
+\subsection{A decaying solution can carry nonzero weighted end flux}\label{sec:ED-flux}
+Differentiating \eqref{eq:ED-B} gives
+\begin{equation}\label{eq:ED-B-flux}
+B(u)=\frac{c_0^2\pi}{4}e^{-|u|}+O(e^{-3|u|}),\qquad
+[\cosh u\,B']_{-\infty}^{+\infty}=-c_0^2\pi/4.
+\end{equation}
+This is also the flux obtained by integrating $-P_uB=c_0^2r^2/2$.
+Now put
+\[
+M(t)=\int_\R C(t,u)r(u)\cosh u\,du.
+\]
+The function $r$ is a weighted zero mode of the fibre operator, and decay removes the boundary terms in that direction, so
+\[
+-P_tM=\frac{3\pi c_0^2}{8}f,\qquad
+M=\frac{3\pi c_0^2}{8}T,\qquad
+-[\cosh t\,M']_{-\infty}^{+\infty}=\frac3{2\pi^2}.
+\]
+Restoring the correction amplitude $\varepsilon^2$ and the two short angular periods $\varepsilon\beta$,
+this flux becomes $3\varepsilon^3\beta/(2\pi^2)$.
+It balances the pairing of the source with the formal zero mode $rT_2$.
+Since $rT_2$ does not decay along the entire base cylinder, it does not belong to the $L^2$ adjoint kernel of the full two-ended model.
+Pointwise decay thus does not force every weighted end flux to vanish.
+An insolubility claim based on this formal zero mode would omit an actual boundary term.
+
+\subsection{Global TT pairing retains the adjoint defect of the non-Einstein background}\label{sec:ED-global-pairing}
+The third-order upper bound can be matched by a genuine restricted lower bound.
+The concentration theorem for holomorphic quadratic differentials in a one-node degeneration
+\cite[Lemma 4.4]{RupflinToppingQuadratic} supplies a real TT tensor
+$q_\beta$ on the closed base such that, on the shearing subcollar,
+$q_\beta=q_0+O_{C^2}(\beta^2)$, while outside it is $O_{C^2}(\beta^2)$, where
+$q_0=f(t)(dt^2-b^2d\theta^2)$.
+More explicitly, in a conformal coordinate $z$ with angular period $2\pi$,
+$q_0=\beta^2\operatorname{Re}(dz^2)/(4\pi^2)$;
+divide the concentrated differential $\Omega_\beta$ by its principal coefficient
+$b_0\asymp\beta^{3/2}$ and multiply by $\beta^2/(4\pi^2)$ to obtain this normalization.
+The $O(\beta^{3/2})$ nonprincipal term in the cited theorem becomes $O(\beta^2)$.
+Interior estimates for the holomorphic equation on fixed-radius hyperbolic covers give the derivative bounds.
+
+Let $\mathcal Q_\varepsilon=\pi^*q_\beta$.
+The horizontal leaves of the original $G_\varepsilon$ are totally geodesic and its fibres are minimal, hence
+$\tr_G\mathcal Q_\varepsilon=\operatorname{div}_G\mathcal Q_\varepsilon=0$.
+Using the actual volume weight and $\int_\R\operatorname{sech}t\,dt=\pi$,
+$\int_\R\operatorname{sech}^3t\,dt=\pi/2$, we obtain
+\begin{equation}\label{eq:ED-global-pairings}
+\begin{aligned}
+\int|\mathcal Q_\varepsilon|_*\,dV_G
+&=8\pi^2(p-1)\beta+O(\beta^2),\\
+\|\mathcal Q_\varepsilon\|_2^2
+&=4\pi^2(p-1)\beta+O(\beta^2),\\
+I_\varepsilon:=\int\langle\Phi(G_\varepsilon),\mathcal Q_\varepsilon\rangle\,dV_G
+&=-\frac{\varepsilon^3\beta}{2\pi^2}(1+o(1)).
+\end{aligned}
+\end{equation}
+The last formula pairs the horizontal block $(-v^2/2,0)$ with $q_0$
+and integrates separately in $t,u$. Here $|\cdot|_*$ is the nuclear norm dual to the relative operator norm.
+
+On a general background the actual linearization is
+\[
+D\Phi_gh=J_gh-\delta_g^*\mathfrak b_gh,\qquad
+J_gh=\tfrac12(\nabla^*\nabla h-2\mathring Rh)
++\tfrac12(\Phi(g)\circ h+h\circ\Phi(g)).
+\]
+Although $J_g$ is self-adjoint, $\mathcal Q_\varepsilon$ is not an exact kernel element.
+The shear and its derivatives are $O(\varepsilon r)$.
+Comparing the linearizations on the product TT zero mode gives
+$|J_G\mathcal Q_\varepsilon|\le C\varepsilon r(f+\beta^2)$.
+In the product region only the $O(\beta^2)$ error of the global quadratic differential remains.
+Integration over the shear region supplies another factor $\varepsilon$ from the fibre volume weight, so
+\[
+\|J_G\mathcal Q_\varepsilon\|_1\le C\varepsilon^2\beta.
+\]
+For $g=G_\varepsilon+h$, put $a=\|h\|_{C^2(G_\varepsilon)}$ and restrict to a fixed small positive-definite neighbourhood.
+Integration by parts on the closed manifold gives
+$\int\langle D\Phi_Gh,\mathcal Q_\varepsilon\rangle
+=\int\langle h,J_G\mathcal Q_\varepsilon\rangle$.
+The Taylor remainder is $O(a^2)$; comparison of norms and volume forms introduces only factors $1+O(a)$.
+Using \eqref{eq:ED-global-pairings} and dividing by $\beta$, we obtain
+\begin{equation}\label{eq:ED-nonlinear-obstruction}
+c\varepsilon^3\le C\delta_-(G_\varepsilon+h)+C\varepsilon^2a+Ca^2.
+\end{equation}
+If $a=O(\varepsilon^2)$, the last two terms are $O(\varepsilon^4)$.
+Retaining the leading coefficient also gives
+\begin{equation}\label{eq:ED-third-lower}
+\liminf_{\varepsilon\to0}
+\frac{\delta_-(G_\varepsilon+h)}{\varepsilon^3}
+\ge\frac1{16\pi^4(p-1)}.
+\end{equation}
+In particular, $\delta_-(\widetilde G_\varepsilon)=\Theta(\varepsilon^3)$.
+Here $a$ is always measured relative to the original $G_\varepsilon$.
+If instead we write a perturbation as $\widetilde G_\varepsilon+h$,
+we must first express its total correction as $\varepsilon^2\Psi_\varepsilon K+h$
+and absorb the additional $O(\varepsilon^4)$ terms into \eqref{eq:ED-nonlinear-obstruction}.
+The two backgrounds' linearizations and TT conditions cannot simply be identified.
+For a general $a\to0$, if $\delta_-(G_\varepsilon+h)=o(\varepsilon^3)$,
+the same inequality only forces $a\ge c\varepsilon^{3/2}$; it does not exclude larger corrections.
+
+\subsection{A lower bound on the entire specified conformal class}\label{sec:ED-conformal}
+For any $g=u^2G_\varepsilon$ with $u>0$ and small $\delta_-(g)$,
+put $e=s_g+4$ and $V_\varepsilon=v^2/2$.
+With the convention $\Delta=\operatorname{div}\nabla$, the scalar equation is
+\[
+-6\Delta_Gu-(4+V_\varepsilon)u=(-4+e)u^3,\qquad
+|e|\le4\delta_-(g).
+\]
+The maximum principle gives
+\[
+\frac4{4+4\delta_-(g)}\le(\min u)^2\le(\max u)^2
+\le\frac{4+\|V_\varepsilon\|_\infty}{4-4\delta_-(g)},
+\]
+Consequently, $\|u-1\|_\infty+\|\Delta u\|_\infty
+\le C(\varepsilon^2+\delta_-(g))$.
+Interior $W^{2,p}$ estimates with $p>4$ on uniform local covers first give a gradient bound.
+Then the full conformal Ricci formula
+\[
+\begin{split}
+\Phi(u^2G)={}&\Phi(G)+(u^2-1)G-2u^{-1}\nabla^2u
++4u^{-2}du\otimes du\\
+&-(u^{-1}\Delta u+u^{-2}|du|^2)G
+\end{split}
+\]
+can be solved for the Hessian, giving
+$\|u^2G_\varepsilon-G_\varepsilon\|_{C^2}
+\le C(\varepsilon^2+\delta_-(g))$.
+This Hessian bound is not being deduced from a maximum bound on the Laplacian alone.
+Substitution into \eqref{eq:ED-nonlinear-obstruction},
+followed by absorption of the small multiples of $\delta_-(g)$, gives the third-order lower bound for every positive $u$;
+when the defect is not small, the same lower bound holds automatically.
+Repeating the argument for the corrected background, whose scalar and full Ricci defects are $O(\varepsilon^3)$,
+and adding its $O(\varepsilon^2)$ displacement from the original background gives
+\begin{equation}\label{eq:ED-whole-conformal}
+\inf_{u>0}\delta_-(u^2\widetilde G_\varepsilon)
+=\Theta(\varepsilon^3).
+\end{equation}
+The upper bound is supplied by $u=1$; attainment of the infimum is not asserted.
+For the original conformal class $[G_\varepsilon]$, this argument gives only the third-order lower bound.
+The upper bound obtained by tensor correction is not an upper bound in that original conformal class.
+
+\begin{lemma}[The nonpositive-curvature obstruction]\label{lem:ED-no-npc}
+Neither $E_D$ nor any connected finite cover admits a metric of nonpositive sectional curvature.
+\end{lemma}
+\begin{proof}
+Write $\Pi_p=\pi_1(\Sigma_p)$. The primitive cyclic monodromy supplies a subgroup
+$\Pi_p\rtimes_{D_*}\mathbb Z$ of $\pi_1(E_D)$, the mapping-torus group of the nontrivial single Dehn twist.
+This is the subgroup obstruction used in Kapovich--Leeb \cite[Theorem 4.5]{KapovichLeeb}: its graph manifold admits no nonpositively curved metric, and their Corollary 2.6 excludes a proper discrete semisimple action on a complete CAT(0) space.
+The obstruction passes to $\pi_1(E_D)$ because such actions restrict to subgroups.
+Their Theorem 2.3 makes this property invariant under commensurability, so every finite-index subgroup is excluded as well.
+A closed nonpositively curved metric would provide precisely such a deck action on its universal cover, a contradiction.
+\end{proof}
+The longer discussion at \path{BUNTOP:covers} in \href{20260912.tex}{the cumulative manuscript} also retains the explicit centralizer argument and the separate complex-structure obstructions.
+
+Exclusion of conformal Einstein metrics of arbitrary sign uses Lemma \ref{lem:ED-no-npc}.
+Suppose $G$ retains a nonempty hyperbolic-product open set and $\widehat G=f^{-2}G$ is Einstein.
+On that open set the trace-free conformal Ricci equation gives $\nabla^2f=\psi G$.
+The mixed Hessian equation yields $f=f_1(x)+f_2(y)$; the two diagonal equations force $\psi$ to be constant.
+Taking divergence and using $\Ric=-g$ on each factor gives $df_1=df_2=0$.
+Thus $\widehat G$ is a constant multiple of a locally symmetric product on that open set.
+Analyticity of Einstein metrics in harmonic coordinates \cite[Theorem 5.2]{DeTurckKazdan}
+extends $\widehat\nabla\Rm_{\widehat G}=0$ over the connected closed manifold.
+Parallel transport then propagates nonpositive sectional curvature globally, contradicting the topological input.
+Both the original and corrected families retain such a product open set, so neither conformal class contains any Einstein metric.
+This does not exclude other conformal classes on $E_D$.
+
+\section{Spectral information and the maximum-norm inverse}\label{sec:ED-inverse}
+\subsection{The original and corrected backgrounds have different spectral scales}
+The self-adjoint operator $J_G$ above is the Jacobian on a non-Einstein
+background. Its spectrum cannot be transferred to the corrected background
+by qualitative continuity alone. For a global base TT tensor $q$, put
+$Q=\pi^*q$. Varying the base metric while fixing the fibre path gives
+\[
+(J_GQ)_{FF}=q(\partial_t,\partial_t)
+\begin{pmatrix}
+v^2/2&(v_t-kv)/2\\
+(v_t-kv)/2&-v^2/2
+\end{pmatrix}_{\rm ON},
+\]
+with no horizontal or mixed output. Indeed the horizontal Ricci tensor is
+$\Ric_{B,ij}-\tr(S_iS_j)$, its base TT derivative is $-q$,
+and the added metric term cancels this derivative.
+Consequently $\langle J_GQ_1,Q_2\rangle=0$ pointwise.
+
+For the concentrated tensor $Q=\mathcal Q_\varepsilon$, let $Z=J_GQ$.
+Direct integration of the displayed vertical block gives
+\[
+\|Z\|_2^2\sim\frac{\varepsilon^3\beta}{4\pi^2},\qquad
+\frac{\langle J_GZ,Z\rangle}{\|Z\|_2^2}\longrightarrow2,\qquad
+\frac{\|Z\|_2^2}{\|Q\|_2^2}
+\sim\frac{\varepsilon^3}{16\pi^4(p-1)}.
+\]
+For example the leading tensor in $Z/\varepsilon$ is
+$-c_0r\tanh t\,\operatorname{sech}^3t
+(e^2\otimes e^3+e^3\otimes e^2)$; its radial Rayleigh quotient is
+$\tfrac12\int(\varphi')^2\cosh t/\int\varphi^2\cosh t=2$.
+On the orthonormalized span of $Q,Z$, the compression is
+$\begin{psmallmatrix}0&s_\varepsilon\\s_\varepsilon&d_\varepsilon\end{psmallmatrix}$,
+where $d_\varepsilon\to2$ and
+$s_\varepsilon^2\sim\varepsilon^3/[16\pi^4(p-1)]$.
+The smaller eigenvalue is $-s_\varepsilon^2/d_\varepsilon+o(s_\varepsilon^2)$;
+hence
+\begin{equation}\label{eq:ED-original-ritz}
+\limsup_{\varepsilon\to0}
+\frac{\lambda_{\min}(J_{G_\varepsilon})}{\varepsilon^3}
+\le-\frac1{32\pi^4(p-1)}.
+\end{equation}
+This is an upper bound for a negative eigenvalue of the approximate
+background, not a matching spectral asymptotic for the entire operator.
+
+The correction changes the horizontal quadratic form at precisely the
+relevant order. At $g_0$, with $Q_0=fT_1$, its first variation is
+\[
+\left.\partial_\eta\right|_0
+\langle J_{g_0+\eta K}Q_0,Q_0\rangle_{L^2}
+=\int(2A-P_tA)f^2\,d\mu_0=\frac3{8\pi^2}.
+\]
+To compute the last integral, use the additional barrier
+$H_A(fB)=c_0^2fr^2/2+4f^2B$, so that $A\le fB$ as well as
+$A\le c_0^2Tr/2$. These two bounds justify the vanishing $u$-flux and the
+integral $\overline A(t)=\int A\cosh u\,du$. Its equation is
+$(-P_t+2)\overline A=f/\pi^3$; thus the displayed integral equals
+$\pi^{-3}\int\operatorname{sech}^5t\,dt=3/(8\pi^2)$.
+Restoring the short angular periods and the correction amplitude yields
+\[
+\langle J_{\widetilde G}Q,Q\rangle
+=\frac{3\varepsilon^3\beta}{8\pi^2}+o(\varepsilon^3\beta).
+\]
+The same two-dimensional compression now has smaller Ritz value
+\begin{equation}\label{eq:ED-corrected-ritz}
+\frac{\varepsilon^3}{16\pi^4(p-1)}+o(\varepsilon^3)>0.
+\end{equation}
+This does not prove positivity or invertibility on its full complement.
+An $O(\varepsilon^2)$ change of metric is larger than the
+$\varepsilon^3$ spectral scale; the sign change is therefore compatible with
+small metric distance. The fuller calculations are in
+\path{BUN:negative-ritz} and \path{BUN:corrected-ritz} of the long manuscript.
+
+\subsection{An exact collar inverse with a growing maximum norm}
+Consider the exact product
+$dt^2+\ell^2\cosh^2t\,d\theta^2+h_F$ and a fixed fibre TT kernel tensor
+$q_F$, normalized by $\int_F|q_F|^2=1$.
+For any symmetric tensor $h$, pair its vertical block with $q_F$ over $F$
+and average over $\theta$; denote the resulting function by $a_h(t)$.
+The product connection preserves tensor types, fibre self-adjointness
+annihilates the kernel pairing, and the angular Laplacian integrates to zero.
+Thus
+\begin{equation}\label{eq:ED-TT-projection}
+\Pi_{q_F}(\mathcal Lh)=\tfrac12\mathcal A_La_h,\qquad
+\mathcal A_La=-a''-\tanh t\,a'
+=-\frac1{\cosh t}(\cosh t\,a')'.
+\end{equation}
+Horizontal, mixed and pure gauge tensors cannot contribute to this projection.
+For zero boundary values at $t=\pm L$,
+$m_L=\log\cosh L-\log\cosh t$ solves $\mathcal A_Lm_L=1$.
+The maximum principle gives
+$|\mathcal A_{L,D}^{-1}f|\le\|f\|_\infty m_L$, with equality for $f=1$;
+therefore
+\begin{equation}\label{eq:ED-collar-inverse}
+\|\mathcal A_{L,D}^{-1}\|_{\infty\to\infty}=\log\cosh L.
+\end{equation}
+In contrast, conjugation by $\sqrt{\cosh t}$ gives potential
+$1/4+\operatorname{sech}^2t/4$, so its
+$L^2(\cosh t\,dt)$ Dirichlet inverse norm is at most 4.
+
+Let $J(t)=\int_0^t\operatorname{sech}s\,ds$.
+The homogeneous solution with endpoint values $0,d$ is
+$a_{\rm harm}=d[J(t)-J(-L)]/[J(L)-J(-L)]$.
+The slow path $a_L=d\eta(t/L)$ has residual $O(|d|/L)$, but its unique
+zero-boundary first correction is $a_{\rm harm}-a_L$.
+At $t=\pm\sqrt L$, the two limiting differences are
+$-d\eta(0)$ and $d(1-\eta(0))$. Hence
+$\liminf\|a_{\rm harm}-a_L\|_\infty\ge|d|/2$.
+Small residual does not produce a small correction in this maximum norm.
+For an endpoint-constant $a$, put $r_a=\mathcal A_La/2$.
+Integration by parts gives
+\[
+\int\cosh t\,r_a\,dt=0,\qquad
+\int J(t)\cosh t\,r_a\,dt=d/2.
+\]
+The actual volume weight contains $\ell$; the test function that extracts
+fixed $d$ is $J/\ell$, whose maximum norm diverges.
+
+\subsection{The complete kernel and the positive spectrum of a closed product}
+On a closed product of hyperbolic surfaces, use
+$\Delta_E=\nabla^*\nabla-2\mathring R$ and
+$J=\mathcal L=\Delta_E/2$.
+The Hodge formula on one-forms is $\Delta_H=\nabla^*\nabla-I$, so
+\[
+\Delta_E|_{T^*F\odot T^*B}
+=\Delta_{H,F}^{(1)}+\Delta_{H,B}^{(1)}+2I.
+\]
+Products of harmonic one-forms have $\Delta_E$ eigenvalue 2, not zero.
+On a single surface, define the trace-free symmetric derivative
+\[
+(P\alpha)_{ij}
+=\tfrac12(\nabla_i\alpha_j+\nabla_j\alpha_i)
++\tfrac12(\delta\alpha)g_{ij}.
+\]
+Commuting derivatives gives
+$\delta P=(\Delta_H+2)/2$,
+$\Delta_E(P\alpha)=P(\Delta_H+2)\alpha$, and
+$\Delta_E(fg)=(\Delta f+2f)g$.
+The orthogonal decomposition into trace, $\operatorname{im}P$, and
+holomorphic TT tensors consequently places the first two spectra at least 2
+above zero; the last summand is the kernel.
+Taking the product spectra gives
+\begin{equation}\label{eq:ED-product-gap}
+\begin{aligned}
+\mathcal K:=\ker\Delta_E
+&=\pi_F^*\mathcal T_F\oplus\pi_B^*\mathcal T_B,\qquad
+\dim\mathcal K=6p+6q-12,\\
+\inf\spec(\Delta_E|_{\mathrm{TT}\cap\mathcal K^\perp})
+&=\min\{2,\lambda_1(F),\lambda_1(B)\}.
+\end{aligned}
+\end{equation}
+The three possible minima are attained by $g_F-g_B$,
+$\varphi_Bk_F$, and $\varphi_Fk_B$.
+This also fixes the factor of two between $\Delta_E$ and $J$.
+Product spectral decomposition is treated more generally in
+\cite[Proposition 4.1]{Kroncke}.
+
+When only one nonseparating curve is pinched and the remaining parameters
+are fixed, $\lambda_1(B_\ell)\ge c>0$.
+Indeed the collar Dirichlet inequality gives
+$\|v\|_2^2\le4\|dv\|_2^2$; the connected thick core has a uniform Neumann
+Poincar\'e constant. Subtract its mean, cut off into the collar, and apply the
+two inequalities, controlling cutoff terms on the fixed transition region.
+This proves a global Poincar\'e inequality with one subtracted constant.
+A separating pinch instead permits different constants on two cores,
+joined through a central band of area $O(\ell)$; its Rayleigh quotient gives
+$\lambda_1(B_\ell)\le C\ell$. The two degenerations are distinct.
+
+\subsection{A closed, fully projected example still has logarithmic inverse loss}
+Fix $F$ and the nonseparating family $B_\ell$ just described.
+The background $G_\ell^{\rm prod}=g_F+g_{B_\ell}$ is itself Einstein.
+If $w_\ell$ is the complete collar half-width, take a fixed endpoint cutoff
+$\chi$, zero near 0 and one after a fixed positive distance, and set
+\[
+m_\ell=\log\cosh w_\ell-\log\cosh t,\qquad
+v_\ell=\chi(w_\ell-|t|)m_\ell,\qquad
+a_\ell=v_\ell-\frac1{\operatorname{Area}(B_\ell)}
+\int_{B_\ell}v_\ell\,dA.
+\]
+Extend $v_\ell$ by zero. With the nonnegative scalar Laplacian,
+$\Delta v_\ell=1$ in the core; the endpoint source makes
+$\int\Delta v_\ell=0$. Every fixed derivative norm of $\Delta v_\ell$
+is uniformly bounded. Writing $x=w_\ell-|t|$ gives
+$m_\ell\le x$ and
+$\ell\cosh(w_\ell-x)\le C(e^{-x}+\ell)$.
+Thus $\|v_\ell\|_{L^r}\le C_r$ for each finite $r$, its mean is bounded,
+and $\|a_\ell\|_\infty\ge\log\cosh w_\ell-C$.
+
+Choose a fibre Teichm\"uller kernel tensor with $\|k_F\|_\infty=1$ and put
+$h_\ell=a_\ell k_F$. It is TT. Its mean-zero coefficient annihilates
+every fibre-kernel pairing, and it is pointwise orthogonal to base tensors,
+so $h_\ell\perp\mathcal K_\ell$. Nevertheless
+\begin{equation}\label{eq:ED-closed-log-loss}
+J_\ell h_\ell=\tfrac12(\Delta_{B_\ell}v_\ell)k_F,\qquad
+\|h_\ell\|_\infty\ge c\log(1/\ell)-C,\qquad
+\|J_\ell h_\ell\|_{C^r}\le C_r.
+\end{equation}
+The true inverse on the full kernel complement therefore has
+$C^r\to C^0$ norm growing at least logarithmically, although
+equation \eqref{eq:ED-product-gap} supplies a uniform positive $L^2$ gap.
+The maximum-normalized $h_\ell$ tends to zero in every finite $L^r$ norm,
+so it is not an $L^2$-normalized approximate kernel contradicting that gap.
+This example diagnoses a failed inference about inverse norms on an exact
+Einstein family; it is not a counterexample to the original existence question.
+
+\section{From an approximate metric to an exact solution}\label{sec:construction-repair}
+Fix a background metric, gauge, boundary conditions and Banach spaces
+$X,Y$. Write the gauge-fixed equation as
+$F(u)=r+Lu+N(u)$, where $r=F(0)$, $L=DF(0)$ and $N(0)=0$.
+Assume that $F$ is defined on an open neighbourhood of the closed
+$X$-ball of radius $\rho$, all corresponding metrics are positive definite,
+and
+\[
+\|L^{-1}\|_{Y\to X}\le B,\qquad
+\|N(u)-N(v)\|_Y\le
+K(\|u\|_X+\|v\|_X)\|u-v\|_X.
+\]
+The spaces specify regularity and admissible end behaviour; weights and
+normalizations must remain the same throughout the estimates.
+
+\begin{proposition}[A sufficient correction radius]\label{prop:construction-repair}
+Put $r_0=\|r\|_Y$. If
+\begin{equation}\label{eq:construction-repair-radius}
+R=2Br_0\le\rho,\qquad 8B^2Kr_0\le1,
+\end{equation}
+then $F(u)=0$ has a unique solution in $\|u\|_X\le R$.
+Uniqueness refers only to this ball with the specified gauge and boundary data.
+\end{proposition}
+\begin{proof}
+For $r_0=0$, the radius-zero ball consists of the zero solution.
+Otherwise $N(0)=0$ gives $\|N(u)\|_Y\le K\|u\|_X^2$.
+For $\mathcal T(u)=-L^{-1}(r+N(u))$ and $\|u\|_X\le R$,
+\[
+\|\mathcal T(u)\|_X\le Br_0+BKR^2
+\le R/2+R/4,\qquad
+\|\mathcal T(u)-\mathcal T(v)\|_X
+\le2BKR\|u-v\|_X\le\tfrac12\|u-v\|_X.
+\]
+The complete closed ball is invariant and the map is a contraction.
+Its fixed-point equation is exactly $F(u)=0$.
+\end{proof}
+
+For a degenerating family, one must control $B_ar_a$ relative to $\rho_a$
+and $B_a^2K_ar_a$, not merely $r_a\to0$.
+For example, within the same verified spaces, bounds
+$r_a=O(L_a^{-p})$, $B_a=O(L_a^q)$, $K_a=O(L_a^s)$ and
+$\inf\rho_a>0$ make $p>q$ and $p>2q+s$ sufficient.
+At equality the constants matter. Failure of this sufficient test is not
+a proof of nonexistence.
+The pointwise quantity $\delta_\sigma(g_a)$ need not control the actual
+$Y_a$ norm, such as a weighted H\"older norm.
+If $\|u\|_{C^0(g_a)}\le E_a\|u\|_{X_a}$, the condition
+$E_a\rho_a<1$ ensures positive definiteness, but $E_a$ may also degenerate.
+Finally one must use the relevant Bianchi identity, boundary conditions and
+kernel analysis to remove the gauge term and recover a smooth solution of
+the original Einstein equation.
+
+\subsection{Kernel, complement and the full obstruction map}\label{sec:construction-obstruction}
+If $L$ is Fredholm with closed range, choose bounded splittings
+$X=\mathcal K\oplus X_0$ and
+$Y=\operatorname{ran}L\oplus\mathcal C$, where $\mathcal K=\ker L$ and
+$\mathcal C$ represents the cokernel.
+For each small $k\in\mathcal K$, first solve
+$(I-\Pi_{\mathcal C})F(k+v(k))=0$ with $v(k)\in X_0$.
+The inverse and contraction estimates on this complement must hold throughout
+the stated parameter domain, with the projection norms included.
+The remaining equation is precisely
+\begin{equation}\label{eq:construction-full-obstruction}
+\mathcal O(k)=\Pi_{\mathcal C}F(k+v(k))=0.
+\end{equation}
+Solving the complement, cancelling a first-order projection, and finding a
+zero of this full map are different steps.
+In an expansion
+$\mathcal O_a(k)=a^m\mathcal O_m(k)+\mathcal R_a(k)$,
+the remainder must be controlled in the same domain and target norm.
+An $o(a^m)$ remainder preserves a leading term uniformly separated from zero;
+an $O(a^{5/2})$ remainder cannot decide an $a^3$ term.
+Projection variation, parameter derivatives and substitution of $v(k)$
+belong to the remainder calculation.
+
+This criterion uses the same constants as
+\path{prop:repair-radius} in \href{20260910.tex}{the foundations manuscript}.
+For log-Weyl metrics, the missing input is a suitable residual and inverse
+estimate in the correction spaces. For surface bundles,
+equation \eqref{eq:ED-closed-log-loss} rules out replacing a maximum-norm
+inverse by its $L^2$ spectral bound. For the four-node models below, the
+finite calculations cover only part of the full obstruction map.
+None of these local perturbation questions restricts the original problem
+to Einstein metrics near the constructed input.
+
+\section{Radial EH correction: equations, least squares, and failure mechanisms}\label{sec:eh-ls}
+The radial experiment preceding the explicit core correction supplies another useful system of equations and a test of the proposed method.
+We state its full problem below; a small residual on a finite grid is not a proof of Theorem \ref{thm:A1}.
+Let $k=g_{\rm EH}$ and $W=1-r^{-4}$, and use the orthonormal coframe
+\[
+e_0=W^{-1/2}dr,\quad e_1=\frac r2\sigma_1,\quad
+e_2=\frac r2\sigma_2,\quad e_3=\frac{r\sqrt W}{2}\sigma_3,
+\qquad
+h=f_1e_0^2+f_2(e_1^2+e_2^2)+f_3e_3^2.
+\]
+The objective is $D\Ric_kh=\Lambda k$, together with bolt smoothness and a prescribed quadratic term at infinity.
+Here $r$ is the unscaled EH radius, distinct from the physical radius in the earlier construction.
+
+\subsection{The actual Ricci linearization and its compatibility constraint}
+Write a general biaxial metric as
+\[
+q=X(r)dr^2+Y(r)(\sigma_1^2+\sigma_2^2)+Z(r)\sigma_3^2,
+\quad ds=\sqrt X\,dr,\quad \alpha=\sqrt Y,\quad\beta=\sqrt Z.
+\]
+A dot denotes differentiation with respect to $s$. In the metric's own orthonormal frame, its three Ricci eigenvalues are
+\begin{align}
+\mathscr R_0&=-2\frac{\ddot\alpha}{\alpha}-\frac{\ddot\beta}{\beta},\nonumber\\
+\mathscr R_1=\mathscr R_2
+&=\frac1{\alpha^2}-\frac{\beta^2}{2\alpha^4}
+-\frac{\ddot\alpha}{\alpha}-\frac{\dot\alpha^2}{\alpha^2}
+-\frac{\dot\alpha\dot\beta}{\alpha\beta},\label{eq:biaxialRicci}\\
+\mathscr R_3&=\frac{\beta^2}{2\alpha^4}
+-\frac{\ddot\beta}{\beta}-2\frac{\dot\alpha\dot\beta}{\alpha\beta}.
+\nonumber
+\end{align}
+For example, the radial sectional curvatures are $-\ddot\alpha/\alpha$ and $-\ddot\beta/\beta$,
+and the two types of tangential sectional curvature are
+$\alpha^{-2}-3\beta^2/(4\alpha^4)-\dot\alpha^2/\alpha^2$ and
+$\beta^2/(4\alpha^4)-\dot\alpha\dot\beta/(\alpha\beta)$.
+Summing in each direction gives \eqref{eq:biaxialRicci}, including the angular connection terms.
+
+Substitute
+\[
+X_\epsilon=\frac{1+\epsilon f_1}{W},\qquad
+Y_\epsilon=\frac{r^2}{4}(1+\epsilon f_2),\qquad
+Z_\epsilon=\frac{r^2W}{4}(1+\epsilon f_3)
+\]
+and differentiate at $\epsilon=0$. Since the background is Ricci-flat, the moving frame introduces no additional first-order term.
+Writing $z=r^{-4}$, the three frame components of $D\Ric_kh$ are
+\begin{align}
+\mathscr L_0f={}&\frac{3-z}{2r}f_1'-Wf_2''-\frac W2f_3''
+-\frac2r f_2'-\frac{1+2z}{r}f_3',\nonumber\\
+\mathscr L_1f={}&-\frac W2f_2''+\frac W{2r}(f_1'-f_3')
+-\frac{5-z}{2r}f_2'
++\frac2{r^2}\bigl[(1+z)f_1-2zf_2-Wf_3\bigr],\label{eq:eh-radial-linear}\\
+\mathscr L_3f={}&-\frac W2f_3''+\frac{1+z}{2r}(f_1'-2f_2')
+-\frac{2+z}{r}f_3'+\frac{2W}{r^2}(f_1-2f_2+f_3).
+\nonumber
+\end{align}
+These are the linearization of the full Ricci tensor; an ungauged rough Laplacian is not a substitute.
+For example, $\Delta_kr^2=8$, but setting $f_1=f_2=f_3=cr^2$ gives
+\[
+(\mathscr L_0f,\mathscr L_1f,\mathscr L_3f)
+=c(-6-2r^{-4},-6+2r^{-4},-6-2r^{-4}).
+\]
+No nonzero constant $c$ makes all three components equal the same nonzero $\Lambda$ everywhere.
+
+Ordering the highest derivatives as $(f_1',f_2'',f_3'')$ gives the coefficient matrix
+\[
+M(r)=\begin{pmatrix}
+(3-z)/(2r)&-W&-W/2\\
+W/(2r)&-W/2&0\\
+(1+z)/(2r)&0&-W/2
+\end{pmatrix}.
+\]
+For $r>1$, $\operatorname{rank}M=2$ and $(-1,2,1)M=0$.
+Consequently, the three equations $\mathscr L_\alpha f=\Lambda$ require
+\begin{equation}\label{eq:eh-radial-constraint}
+\begin{split}
+0={}&\Lambda r^6-(3r^4+1)f_1+2(r^4+1)f_2+2r^5f_2'\\
+&+(r^4-1)f_3+(r^5-r)f_3'.
+\end{split}
+\end{equation}
+The $11,33$ equations determine $f_2'',f_3''$, but one must also fix a gauge and preserve this constraint.
+For arbitrary lower-order data, treating the three highest derivatives as independent unknowns gives an augmented matrix of rank $3$ in general.
+This is therefore not a regular three-equation boundary-value problem with an immediately invertible principal matrix.
+
+At the EH bolt, $s=\sqrt{r-1}+O((r-1)^{3/2})$.
+With the period fixed at $2\pi$, smooth variation requires at least $f_1(1)=f_3(1)$,
+the appropriate even expansions in smooth polar coordinates, and $f_1-f_3=O(s^2)$.
+The derivatives $f_i'(1)$ need not vanish. Approximate Neumann conditions at $r=1+0.015$ do not replace a bolt expansion.
+At infinity, assume $f_i=c_ir^2+o(r^2)$ with the corresponding first- and second-derivative asymptotics.
+The constant terms of \eqref{eq:eh-radial-linear} then give only
+\begin{equation}\label{eq:eh-quadratic-relation}
+3(c_1-2c_2-c_3)=\Lambda.
+\end{equation}
+This single scalar relation specifies neither the full ambient quadratic tensor nor all coordinate freedom.
+
+\subsection{Why the K\"ahler-potential reduction does not extend across the bolt}
+For the fixed EH complex structure, let $\mathscr D\phi$ denote the following K\"ahler-type symmetric tensor;
+its associated real $(1,1)$ form uses the present $i\partial\bar\partial$ normalization.
+Writing $q=\phi'$, we have
+\[
+\mathscr D\phi=A_\phi(e_0^2+e_3^2)+B_\phi(e_1^2+e_2^2),\quad
+A_\phi=Wq'+\frac{1+3r^{-4}}r q,\quad B_\phi=\frac{2W}r q.
+\]
+Then $A_\phi+B_\phi=\Delta_k\phi$, where the radial Laplacian is
+$\Delta_k\phi=r^{-3}(r^3W\phi')'$.
+Substitute $f_1=f_3=A_\phi$ and $f_2=B_\phi$ into \eqref{eq:eh-radial-linear}.
+Collecting derivatives gives the exact identity
+\begin{equation}\label{eq:eh-kahler-identity}
+D\Ric_k(\mathscr D\phi)=-\tfrac12\mathscr D(\Delta_k\phi).
+\end{equation}
+The radial function $r^2$ gives $A=4+4r^{-4}$ and $B=4-4r^{-4}$, so its associated form is not a constant multiple of the K\"ahler form
+$\omega=e_0\wedge e_3+e_1\wedge e_2$.
+The potential on the end that actually gives $A=B=4$ is
+\[
+\phi_*(r)=r^2+\frac12\log\frac{r^2-1}{r^2+1},\qquad
+\phi_*'=\frac{2r^5}{r^4-1}.
+\]
+It has a logarithmic singularity at the bolt. More intrinsically, if $\phi$ were globally smooth and
+$D\Ric_k(\mathscr D\phi)=\Lambda k$, the corresponding equation of forms would be
+$-\frac12i\partial\bar\partial(\Delta_k\phi)=\Lambda\omega$.
+Its left-hand side integrates to zero over the bolt sphere, whereas its right-hand side is
+$\Lambda\int_{S^2}\omega\ne0$, a contradiction.
+The reduction is therefore useful on the end but cannot produce a globally smooth potential solution for nonzero $\Lambda$.
+Cutting off the singular potential leaves a tensor source in the core or transition region that must be solved again.
+A general non-K\"ahler correction $\widetilde h$ is not subject to this potential-representation obstruction.
+
+\subsection{The actual discrete problem, boundary rows, and recorded residuals}
+The least-squares experiment used $N=180$ equally spaced nodes
+$r_k=1.015+k\Delta r$, $R_0=8$, and $\Delta r=(8-1.015)/179$,
+with unknowns $F_{i,k}\simeq f_i(r_k)$ and $\Lambda=1$.
+The interior differences were
+\[
+(D_1F)_k=\frac{F_{k+1}-F_{k-1}}{2\Delta r},\qquad
+(D_2F)_k=\frac{F_{k+1}-2F_k+F_{k-1}}{(\Delta r)^2}.
+\]
+Replacing derivatives in \eqref{eq:eh-radial-linear} by $D_1,D_2$ defines
+$\mathscr L_\alpha^{\Delta r}$. The fitted objective was
+\begin{align}
+J(F)={}&\sum_{k=2}^{N-3}\sum_{\alpha=0,1,3}
+|\mathscr L_\alpha^{\Delta r}F(r_k)-1|^2
++20^2|F_{1,0}-F_{3,0}|^2\nonumber\\
+&+5^2\sum_{i=1}^3|(D_1F_i)_0|^2
++10^2\sum_{i=1}^3|B_{R_0}^{\Delta r}F_i|^2\label{eq:eh-ls-objective}\\
+&+30^2\left|\frac{F_{1,N-1}-2F_{2,N-1}-F_{3,N-1}}{R_0^2}
+-\frac13\right|^2.\nonumber
+\end{align}
+At the boundary, $D_1$ uses a three-point one-sided difference.
+The intended operator $B_{R_0}f=f'-2f/R_0$ must be distinguished from the actual row in the saved program:
+assembly of the sparse row overwrote the final derivative coefficient $3/(2\Delta r)$ with the value coefficient, producing
+\begin{equation}\label{eq:eh-ls-boundary}
+B_{R_0}^{\Delta r}F
+=\frac{F_{N-3}-4F_{N-2}}{2\Delta r}-\frac2{R_0}F_{N-1},
+\end{equation}
+rather than $(D_1F)_{N-1}-2F_{N-1}/R_0$.
+Thus the recorded calculation did not even implement the intended outer Robin penalty and cannot be interpreted as an approximation to that continuous boundary-value problem.
+Even after this discrete row is corrected, \eqref{eq:eh-ls-objective} remains only a set of sampled interior equations with finite-weight boundary penalties.
+
+The original calculation stopped at the limit of $20000$ iterations, with an estimated condition number of approximately $1.02\times10^7$
+and a weighted residual two-norm of approximately $0.09195$. Substitution of the fitted grid values into the same difference operator
+gave a full-grid maximum defect of approximately $4683.885$ and median $5.20\times10^{-4}$.
+After excluding four nodes at each end, the maximum was $0.0125163$ and the median $4.97\times10^{-4}$.
+The data show uncontrolled endpoint errors alongside a good interior fit; the latter cannot replace the former.
+
+\subsection{Nonlinear scaling and the missing continuous estimates}
+Let $h$ be the cubic-spline interpolation of the same grid data, and put
+$\widehat g_\epsilon=k+\epsilon h$ and $g_\epsilon=\epsilon\widehat g_\epsilon$.
+Formula \eqref{eq:biaxialRicci} computes the three Ricci eigenvalues of $\widehat g_\epsilon$ directly.
+The defect of the physically scaled metric is
+\begin{equation}\label{eq:eh-ls-physical}
+\delta_+(g_\epsilon)
+=\sup_r\max_{\alpha=0,1,3}
+\left|\epsilon^{-1}\mathscr R_\alpha(\widehat g_\epsilon)-1\right|.
+\end{equation}
+Positive definiteness, $1+\epsilon f_i>0$, must also be checked.
+The recorded nonlinear experiment sampled
+$1000$ points in $[1.02,\min\{8,\epsilon^{-1/4}\}]$, obtaining
+\begin{center}
+\small
+\begin{tabular}{c c c c}
+\toprule
+$\epsilon$ & \shortstack{Full sampled\\maximum defect} & \shortstack{Maximum defect\\for $r>1.2$} & \shortstack{Median defect\\for $r>1.2$}\\\midrule
+$10^{-2}$ & $18.6592$ & $0.687814$ & $0.101221$\\
+$10^{-3}$ & $20.3107$ & $0.652323$ & $0.0134248$\\
+$3\times10^{-4}$ & $20.3633$ & $0.646286$ & $0.00417983$\\
+$10^{-4}$ & $10491.754$ & $10491.754$ & $0.00168435$\\\bottomrule
+\end{tabular}
+\end{center}
+The last sampling interval reaches the original outer endpoint $r=8$, bringing its previously excluded large error into the maximum.
+All these numbers are recorded finite-sample results, not continuous upper bounds.
+
+The scaling itself explains the phenomenon. On a fixed smooth compact region, write
+$\Ric(k+\epsilon h)=\epsilon D\Ric_kh+\epsilon^2Q_\epsilon(h)$. Then
+\begin{equation}\label{eq:eh-ls-linear-floor}
+g_\epsilon^{-1}\Ric(g_\epsilon)-I
+=\widehat g_\epsilon^{-1}(D\Ric_kh-k)
++\epsilon\widehat g_\epsilon^{-1}(Q_\epsilon(h)-h).
+\end{equation}
+A fixed linear residual does not disappear when the core is shrunk. To make it vanish, one needs a family of continuous corrections
+$h_\epsilon$ whose actual linear residual tends to zero, together with control of the Taylor remainder, positive definiteness, bolt smoothness, and outer matching.
+Even on an already covered radial interval, turning grid values into an upper bound requires an interpolation estimate such as
+\[
+\|\mathscr L_\alpha h-1\|_\infty
+\le\max_k|\mathscr L_\alpha h(r_k)-1|
++\frac{\Delta r}{2}\|\partial_r(\mathscr L_\alpha h)\|_\infty
+\]
+which involves third derivatives; near the bolt it must be formulated in smooth coordinates.
+This experiment neither covered the bolt nor supplied that continuous remainder estimate, and it did not complete a closed-manifold gluing.
+
+Angular data impose a separate limitation. The normal-coordinate quadratic term of the product background is
+\begin{equation}\label{eq:product-quadratic-jet}
+H_0=-\frac\Lambda3\left[
+(x_2dx_1-x_1dx_2)^2+(x_4dx_3-x_3dx_4)^2\right].
+\end{equation}
+It is invariant under rotations of each factor separately, but not under the full $U(2)$ mixing the two complex coordinates:
+the plane $\langle e_1,e_2\rangle$ has sectional curvature $\Lambda$,
+whereas a unitary map sends it to
+$\langle(e_1+e_3)/\sqrt2,(e_2+e_4)/\sqrt2\rangle$, whose curvature is $\Lambda/2$.
+Thus even an exact three-function radial correction would not automatically match the full ambient jet.
+The logarithmic construction connects the endpoints separately through their Weyl difference in a common gauge; this is a different problem from asking one radial profile to match every angular mode.
+
+The equations and numerical data in this section correspond to the following programs in the computational appendix:
+\path{step66_ode_matrix_extract.py}, \path{step66_ode_compatibility.py},
+\path{step66_kahler_substitute_step65.py}, \path{step66_least_squares_h_profile.py},
+and \path{step66_audit_ls_profile_nonlinear.py}. Their mathematical conclusions and failure mechanisms have been stated explicitly above.
+
+\section{The first obstruction, flux, and logarithmic scales}
+The classical refined model has the form
+\[
+g_t=t h_t,\quad h_t=g_{\rm cal}+th,\quad
+\Ric(h_t)=t\Lambda h_t+t\lambda o+R_t,
+\quad |R_t|_{g_{\rm cal}}\le Ct^2\rho^2.
+\]
+Raising an index gives
+\begin{equation}\label{eq:firstobs}
+g_t^{-1}(\Ric(g_t)-\Lambda g_t)
+=\lambda h_t^{-1}o+t^{-1}h_t^{-1}R_t.
+\end{equation}
+On a fixed compact core, the remainder tends to zero, whereas a nonzero $\lambda$ leaves an order-one anisotropy. In the transition region $\rho\sim t^{-1/4}$, the remainder is $O(t^{1/2})$. This is a valid conclusion \emph{within this fixed asymptotic-matching framework}; it explains directly why a small weighted or finite-$L^p$ error is not the unweighted pinching required by the original problem \cite{MV,Biquard}.
+
+The logarithmic construction changes how the quadratic terms are matched across scales. Thus \eqref{eq:firstobs} constrains the refined family with fixed asymptotic matching, not every possible pointwise near-Einstein resolution. When the first obstruction already vanishes, a refined approximation can have a faster pointwise error rate.
+
+\subsection{The precise reach of a flux estimate}
+An annular argument giving only $\delta\ge c/L$ with $L\to\infty$ does not give a uniform Ricci gap. Conditional projection arguments yield expressions such as
+\[
+|\mathcal O_i|\le C\delta_i\log(1/t_i)+o(1).
+\]
+Only after proving $\delta_i\log(1/t_i)\to0$ can one hope to force the obstruction to vanish. Scales $t_i\lesssim e^{-c/\delta_i}$ are an admissible escape regime to investigate, not pathological parameters that can simply be discarded.
+
+A full flux-transfer theorem must also control higher ambient terms, gauge, bad regions, nonlinear remainders, and a common normalization at both ends. A Wronskian identity on a clean conical annulus is not a projection theorem on an arbitrary actual bubble tree. Logarithmic criticality of the quadratic $\ell=2$ mode explains a mechanism; power-law behaviour of higher modes likewise requires a specified model and scale. Neither statement shows that approximate pinching eliminates every higher-order exact obstruction.
+
+\subsection{Homogeneous modes: why only quadratic order has a logarithmic denominator}\label{sec:ellflux}
+Let $d\ge4$, let a finite group $\Gamma\subset O(d)$ act freely on the sphere, and put $A=\{b<r<R\}/\Gamma$. Let $K_\ell$ be a nonzero $\Gamma$-invariant symmetric two-tensor whose Cartesian components are homogeneous of integer degree $\ell\ge2$ and satisfy
+\[
+K_\ell(rx)=r^\ell K_\ell(x),\qquad
+\tr K_\ell=0,\quad\operatorname{div}K_\ell=0,\quad
+\Delta K_\ell=0,\quad K_\ell(x,\cdot)=0.
+\]
+Define the dual mode and two sphere integrals by
+\[
+o_\ell=r^{-(d+2\ell-2)}K_\ell,\qquad
+I_{K_\ell}=\int_{S^{d-1}/\Gamma}|K_\ell|^2,\qquad
+J_{K_\ell}=\int_{S^{d-1}/\Gamma}\|K_\ell\|_*.
+\]
+Both sphere integrals are taken at $r=1$. The nuclear norm $\|\cdot\|_*$ is the sum of the absolute eigenvalues of a symmetric matrix, dual to the operator norm. The tensor $o_\ell$ is also trace-free, divergence-free, harmonic, and radially annihilating: harmonicity follows from the Kelvin transform of its homogeneous harmonic components, and the additional radial derivative in the divergence contracts with $K_\ell(x,\cdot)=0$.
+
+If a smooth tensor $u$ equals zero near the inner boundary and $K_\ell$ near the outer boundary, then, without imposing a Bianchi gauge on $u$,
+\begin{equation}\label{eq:ellflux}
+\int_A\langle D\Ric_e u,o_\ell\rangle
+=-\frac{d+2\ell-2}{2}I_{K_\ell}.
+\end{equation}
+Indeed, integration by parts removes the gauge-gradient terms in $D\Ric_eu$, because $o_\ell$ is divergence-free and has zero normal contraction. Green's formula for the remaining $-\frac12\Delta u$ and harmonic $o_\ell$ leaves only the outer Wronskian. There,
+$\partial_rK_\ell=\ell r^{-1}K_\ell$ and
+$\partial_ro_\ell=-(d+\ell-2)r^{-1}o_\ell$. Their difference supplies the coefficient $d+2\ell-2$, and the radial power cancels the area factor, proving \eqref{eq:ellflux}.
+
+The full unweighted dual mass is
+\begin{align}
+\int_A\|o_\ell\|_*\,dV_e
+&=J_{K_\ell}H_\ell(b,R),\\
+H_\ell(b,R)&=\int_b^Rr^{1-\ell}\,dr
+=\begin{cases}
+\log(R/b),&\ell=2,\\[1mm]
+\dfrac{b^{2-\ell}-R^{2-\ell}}{\ell-2},&\ell>2.
+\end{cases}
+\end{align}
+Consequently,
+\begin{equation}\label{eq:ellfluxbound}
+\|D\Ric_eu\|_{\infty,\op}
+\ge\frac{(d+2\ell-2)I_{K_\ell}}{2J_{K_\ell}H_\ell(b,R)}.
+\end{equation}
+As $b/R\to0$, quadratic modes give $c/\log(R/b)$, whereas higher modes give $cb^{\ell-2}$. For every $\ell\ge2$, the weighted norm $\sup_A r^{2-\ell}|D\Ric_eu|_{\op}$ instead gives $c/\log(R/b)$, but the original problem does not control this extra weight. These statements concern only the specified flat-cone modes. Identifying the cone degree $\ell$ with an order in the exact desingularization obstruction expansion, and transferring the linear identity to actual geometry, each require their own matching and error estimates.
+
+\subsection{Nonlinear pairing and weighted energy}
+Let $g=e+q$, equal to $e+H_1$ and $e+H_0$ near the inner and outer boundaries, where
+$D\Ric_eH_i=\sigma e$ and $K=H_0-H_1$. Assume
+$|q|\le Br^2$, $|Dq|\le Br$, and $BR^2\le1/2$.
+The Ricci expansion is
+\[
+\Ric(e+q)-\sigma(e+q)=D\Ric_e(q-H_1)
++A(q)*D^2q+C(q)*(Dq)^2-\sigma q,
+\]
+where $A(q)=O(q)$ and $C(q)$ is uniformly bounded. Pairing with $o=r^{-d-2}K$, the integrated linear term is $-(d+2)I_K/2$.
+The highest-order remainder needs only one integration by parts:
+\[
+\int A(q)*D^2q*o
+=\int_{\partial A}A(q)*Dq*o
+-\int DA(q)*Dq*o-\int A(q)*Dq*Do.
+\]
+Since $|o|=O(r^{-d})$ and $|Do|=O(r^{-d-1})$, the volume terms are bounded by
+$CB^2\int_b^Rr\,dr$, the boundary terms by $O(B^2(R^2+b^2))$, and the target term by $O(BR^2)$.
+Metric comparison and operator/nuclear norm duality give
+\[
+\left|\int\langle\Ric(g)-\sigma g,o\rangle_e\right|
+\le\delta_\sigma(g)J_K(L+CBR^2).
+\]
+Thus, without an interior bound on $D^2q$,
+\begin{equation}\label{eq:nonlinearflux}
+\delta_\sigma(g)\ge
+\frac{(d+2)I_K/2-C_K(B^2+B)R^2}
+{J_K(L+CBR^2)}.
+\end{equation}
+Relative $C^1$ endpoint errors $\epsilon_\pm$ subtract a further $C_K(\epsilon_-+\epsilon_+)$ from the numerator.
+
+Alternatively, a fixed small $C^0$ bound and the energy
+$\mathcal E=\int_A r^{-d}|Dq|^2$ can replace the preceding pointwise first-derivative bound.
+Integration by parts along rays gives
+\[
+2\int_b^Rr^{-3}|q|^2\,dr
+=\bigl[-r^{-2}|q|^2\bigr]_b^R+
+2\int_b^Rr^{-2}\langle q,\partial_rq\rangle\,dr.
+\]
+Using $q=O(b^2)$ at the inner end, discarding the negative outer term, applying Cauchy's inequality, and integrating over the sphere gives
+\[
+\int_A r^{-d-2}|q|^2\le2\mathcal E+Cb^2,\qquad
+\int_A r^{-d}|q|\le CR(\sqrt{\mathcal E}+b).
+\]
+These estimates control the terms
+$|Dq|^2r^{-d}$, $|q||Dq|r^{-d-1}$, and $|q|r^{-d}$ in the preceding pairing, yielding
+\begin{equation}\label{eq:energyflux}
+\delta_\sigma(g)\ge
+\frac{(d+2)I_K/2-C(\epsilon+\mathcal E+R\sqrt{\mathcal E}+R^2)}
+{J_KL+CR(\sqrt{\mathcal E}+R)}.
+\end{equation}
+Relative $C^1$ endpoint control is retained. The leading term is unchanged when $\mathcal E,R,\epsilon\to0$.
+Small unweighted coordinate norms do not automatically give this weighted-energy control.
+
+\subsection{Sharp coefficients for the spherical mismatch}
+The difference between the spherical outer term and the EH inner term satisfies
+\[
+Q=K/r^2,\qquad \operatorname{spec}(Q)=(0,-\sigma/18,\sigma/36,\sigma/36).
+\]
+Writing $v_\Gamma=\Vol(S^3/\Gamma)$ gives
+$I_K=v_\Gamma/216$ and $J_K=v_\Gamma/9$.
+The four-dimensional flux is $3I_K$, so the leading lower bound without a scalar-curvature constraint is $1/(8L)$.
+Take
+\[
+q=H_1+\eta K+\frac{\sigma}{144}\eta' r^2e,\qquad t=\log(r/b),
+\]
+where a prime denotes a $t$ derivative. For a constant $f$,
+$D\Ric_e(fr^2e)=-6f e$, so the leading residual is
+$\eta'(-3Q-\sigma e/24)$, with operator norm exactly $|\eta'|/8$.
+Allowing slowly varying endpoint plateaux of length $O(\sqrt L)$ gives
+$\max\eta'=L^{-1}+O(L^{-3/2})$ and $\eta''=O(L^{-3/2})$,
+with higher derivatives also lower order. This attains $1/(8L)+o(L^{-1})$ in the linear model.
+For the nonlinear family, the same leading term is retained by taking $R^2=o(L^{-1})$ and compatible tails.
+
+Under the exact scalar-curvature condition $s=4\sigma$, the tensor $T=\Ric_g-\sigma g$ is trace-free and divergence-free with respect to $g$.
+The radial projection $P_r$ and the rank-one projection $P_J$ onto the $Jx$ direction satisfy
+\[
+r^{-4}(e-4P_r)=-\tfrac12\operatorname{Hess}_e(r^{-2}),\qquad
+Q-\frac{\sigma}{144}(e-4P_r)-\frac{\sigma}{48}e=-\frac{\sigma}{12}P_J.
+\]
+Subtract the trace and Hessian terms from the test tensor. The former pairs to zero; integration by parts turns the latter into boundary terms.
+The passage from $g$ to $e$ is controlled as in \eqref{eq:nonlinearflux}.
+At the fixed quadratic endpoints the residual is $O(r^2)$, so the boundary terms are $O(R^2+b^2)$.
+The new test tensor has leading mass $v_\Gamma L/12$, while the leading flux remains $v_\Gamma/72$. Hence
+\[
+\delta_\sigma(g)\ge
+\frac{v_\Gamma/72-O(\epsilon_-+\epsilon_++(B^2+B)R^2)}
+{v_\Gamma L/12+O(1+BR^2)}.
+\]
+As these errors vanish, $\liminf L\delta_\sigma(g)\ge1/6$.
+Pure Weyl interpolation has leading residual operator norm $|\eta'|/6$.
+A further constant-scalar-curvature correction of size $o(L^{-1})$ therefore attains this leading coefficient.
+For the radial Hessian proof of that correction on the spherical double resolution, see
+the discussion of sharp spherical coefficients and the constant-scalar-curvature cost in the \href{20260912.tex}{long construction manuscript}.
+These constants measure the efficiency of the specified matching problem; they are not a dimension-uniform positive defect.
+
+\subsection{Scale thresholds in a higher-order obstruction expansion}
+The cone degree $\ell$ and the expansion order $k$ in exact desingularization are different indices.
+Formula \eqref{eq:ellfluxbound} gives
+$\delta L\ge c+o(1)$ for $\ell=2$, or
+$\delta b^{2-\ell}\ge c+o(1)$ for $\ell>2$.
+To force the corresponding coefficient to vanish therefore requires $\delta L\to0$ or
+$\delta b^{2-\ell}\to0$; $\delta\to0$ alone is insufficient.
+
+On the other hand, suppose on a fixed compact core that
+\[
+g_t=t h_t,\quad h_t\to h_0,\quad
+\Ric(g_t)-\sigma g_t=t^k\Theta_k+o(t^k).
+\]
+Then
+\[
+g_t^{-1}(\Ric(g_t)-\sigma g_t)
+=t^{k-1}h_t^{-1}\Theta_k+o(t^{k-1}).
+\]
+A fixed nonzero coefficient with $k=1$ leaves an order-one defect, but one with $k\ge2$ is compatible with a defect tending to zero.
+For $t=a^2$, $a^{2(k-1)}|\log a|\to0$, so the latter defect is smaller than the error allowed by logarithmic gluing.
+To conclude $\Theta_k=0$, the endomorphism residual in the relevant projection must be $o(t^{k-1})$.
+This rules out eliminating every higher obstruction using only a zeroth-order near-Einstein estimate.
+It does not, by itself, establish a nonzero higher obstruction for a particular geometric family: an actual expansion and source identification are still required.
+
+\subsection{A zeroth-order Ricci pairing target and its mass limitation}\label{sec:c0pairing}
+Consider another possible obstruction detector using only the zeroth-order Ricci defect. Suppose a four-dimensional near-positive-Einstein input satisfies $\delta_i=\|g_i^{-1}\Ric_{g_i}-I\|_{\infty,\op}\to0$. Write $a_i$ for the length scale and $t_i=a_i^2$ for the metric scale. The aim is to construct symmetric two-tensors $\Phi_i$ on the actual metrics such that
+\begin{equation}\label{eq:c0pairing}
+\int\langle\Ric_{g_i}-g_i,\Phi_i\rangle_{g_i}\,d\mu_{g_i}
+=t_i\mathcal O_i+o(t_i),\qquad
+\|\Phi_i\|_{L^1,*}=O(t_i).
+\end{equation}
+Here $L^1,*$ integrates the nuclear norm after raising an index with $g_i$; in fixed dimension one may use an equivalent norm while retaining its constants. Operator-norm duality gives directly
+\[
+\left|\int\langle\Ric_{g_i}-g_i,\Phi_i\rangle_{g_i}\,d\mu_{g_i}\right|
+\le\delta_i\|\Phi_i\|_{L^1,*}=O(\delta_it_i).
+\]
+If all errors in \eqref{eq:c0pairing} have been proved, division by $t_i$ yields $\mathcal O_i\to0$, without differentiating the Ricci defect.
+
+The $L^1$ scale cannot be asserted from dimension alone. On a fixed rescaled coordinate domain, $g_i\sim a_i^2e$, so a bounded $(0,2)$ test tensor has norm $O(a_i^{-2})$ and the volume element is $O(a_i^4)$, giving mass $O(a_i^2)=O(t_i)$. But EH has zero ADM mass and the relevant far-field term occurs at order $\rho^{-4}$; ordinary mass, translation, or rotation fluxes need not detect the required quadratic curvature coefficient. A quadratically growing cone field makes the enlarged-annulus integral outer-end dominated, so the fixed-domain $L^1$ estimate is insufficient. One then needs an actual boundary flux, the correct cokernel mode, or a pairing with the full long-annulus mass estimate.
+
+One must also prove $o(t_i)$ cutoff and transfer errors, identify the curvature-block and marking content of $\mathcal O_i$, and control gauge, outer-end, and nonlinear terms. The logarithmic mass in \eqref{eq:ellfluxbound} shows precisely why this is not an established interface for every near-Einstein input. The unproved pairing cannot be promoted to a universal first-obstruction vanishing theorem while retaining the logarithmic escape construction.
+
+\section{Radial comparison for nonconstant angular modes on EH}
+Write the EH metric as
+\[
+g_{\rm EH}=A^{-1}d\rho^2+\frac{\rho^2}{4}
+(\sigma_1^2+\sigma_2^2+A\sigma_3^2),\qquad A=1-\rho^{-4}.
+\]
+For even $l\ge2$ and Hopf frequency $m$, the positive bolt-regular radial branch of the \emph{scalar separated equation} satisfies
+\[
+(pF')'-qF=0,\quad p=\rho^3A,\quad
+q=l(l+2)\rho+4m^2\rho(A^{-1}-1).
+\]
+Set $z=\rho^l$. Direct calculation gives
+\[
+\mathcal Lz=-l(l-2)\rho^{l-3}-4m^2\rho^{l+1}(A^{-1}-1)\le0.
+\]
+The quantity $J=p(zF'-z'F)$ satisfies $J'=-F\mathcal Lz\ge0$, and the regular boundary condition gives $J\to0$. Therefore
+\begin{equation}\label{eq:angular}
+\frac{F(\rho)}{F(R)}\le\left(\frac{\rho}{R}\right)^l
+\le\left(\frac{\rho}{R}\right)^2,\qquad1\le\rho\le R.
+\end{equation}
+This uses positivity of the solution, bolt regularity, and the stated angular-frequency normalization. It treats the nonconstant modes of these scalar equations uniformly, but excludes $l=0$ and does not prove full-spectrum invertibility of the tensor Lichnerowicz system. It is a component of a core/boundary estimate, not a solution of the entire nonlinear Einstein matching problem.
+
+\section{Multi-node reduction for the spherical product quotient}
+\subsection{Curvature blocks and fixed markings}
+For the four-node product background $(S^2\times S^2)/\Z_2$, the curvature convention used here gives
+\[
+R_+=R_-=\operatorname{diag}(\Lambda,0,0).
+\]
+This background is not conformally flat, and $\det R_\pm=0$ does not imply K\"ahler existence. The kernel of the full gauge-fixed operator must be distinguished from its TT kernel. For $P=\frac12\nabla^*\nabla-\mathring R$, the shape direction satisfies
+\[
+P(g_A-g_B)=-\Lambda(g_A-g_B),
+\]
+Thus the full Green pairing is not positive definite. Product spectral denominators have the form $(\lambda_A+\lambda_B+\text{shift})^{-1}$, not a product of two static Green denominators.
+
+Write $M_{\boldsymbol\epsilon}$ for the \emph{actual marked resolution}, without replacing it in advance by a standard connected sum. The rational invariants $\chi=8$ and $(b_+,b_-)=(1+r,5-r)$ for a standard fixed marking apply only with the same orientation-counting convention. Parity, spin, and diffeomorphism type require the integral intersection form and an actual boundary-gluing or handle argument. Equal rational invariants do not identify a smooth type.
+
+\subsection{The full operator kernel, the TT slice, and node reflection}\label{sec:fullkernel}
+Let both round spheres have sectional curvature $\Lambda>0$, and use
+$P=\frac12\nabla^*\nabla-\mathring R$ and $\Delta_E=2P$.
+Symmetric two-tensors on the product split orthogonally into pure traces on the two factors, trace-free symmetric tensors on each factor, and mixed one-form tensors. The operator $P$ preserves this decomposition.
+
+On the first pure-trace sector $f(x,y)g_A$, $\mathring R(fg_A)=\Lambda fg_A$, so
+\[
+P(fg_A)=\left(\tfrac12\Delta f-\Lambda f\right)g_A;
+\]
+The second pure-trace sector is identical. The scalar spectrum on each sphere is
+$\lambda_\ell=\Lambda\ell(\ell+1)$. Hence a zero eigenvalue requires
+$\lambda_{\ell_A}+\lambda_{\ell_B}=2\Lambda$, namely
+$(\ell_A,\ell_B)=(1,0)$ or $(0,1)$.
+
+For a trace-free two-tensor $h$ supported on one sphere factor, the constant-curvature formula gives
+$\mathring Rh=-\Lambda h$, and therefore
+$\langle Ph,h\rangle=\frac12\|\nabla h\|^2+\Lambda\|h\|^2>0$.
+Curvature acts trivially on the mixed one-form sector. The sphere's Hodge one-form spectrum starts at $2\Lambda$, so the Weitzenb\"ock formula places the rough spectrum at or above $\Lambda$. The product mixed sector consequently has $P$ spectrum at or above $\Lambda$. None of these sectors contains a zero mode.
+
+The quotient action $\rho(z,w)=(-z,-w)$ retains only the axial function in each first-harmonic space; denote these functions by $u,v$. The full kernel on the quotient is therefore exactly
+\begin{equation}\label{eq:fullkernel}
+\ker P=\operatorname{span}\{ug_A,ug_B,vg_A,vg_B\}.
+\end{equation}
+If
+$h=(Au+Bv)g_A+(Cu+Dv)g_B$
+is TT, the divergence equation gives $A\,du+D\,dv=0$, hence $A=D=0$.
+The trace equation then gives $Bv+Cu=0$, hence $B=C=0$. Thus
+\begin{equation}\label{eq:ttkernel}
+\ker(P|_{TT})=0.
+\end{equation}
+Equivalently, a first spherical harmonic $f$ satisfies
+$\nabla^2f=-\Lambda fg_A$, so in an expression
+$Afg_A+Bfg_B+C\nabla^2f$
+the Hessian and conformal terms are not independent; the TT conditions force the entire tensor to vanish. This is the spherical exception when applying general product-deformation formulas \cite{Kroncke}.
+
+The parallel relative-scaling mode satisfies
+\[
+P(g_A-g_B)=-\Lambda(g_A-g_B),
+\]
+It is a negative mode, not a zero mode. A trivial TT kernel therefore means neither invertibility of the full operator nor positivity of its inverse. The Green operator must project off the four-dimensional kernel in \eqref{eq:fullkernel}, while the reduction retains the corresponding kernel projections and their parameter dependence.
+
+The reflection $c(z,w)=(\bar z,w)$ commutes with $\rho$, fixes all four nodes, and reverses the product orientation; it consequently exchanges $\Lambda^+$ and $\Lambda^-$.
+The two chiralities at one node are conjugate through an isometry of the full metric germ, so their local zero sets, ranks, and scalar invariants are conjugate at every order.
+Transforming the background, end markings, and all local data simultaneously sends a reversed-node set $S$ to $S^c$.
+If a reduction is defined equivariantly under this transformation, its model equations are conjugate. This neither constructs the full reduction
+nor proves equivalence of the fillings with the original orientation and gluing markings held fixed. Accordingly, the table below, with positive background fixed,
+lists one and three reversed nodes separately; two reversed nodes must further be distinguished by adjacency, diagonality, and gluing markings.
+Coefficient arrays in a fixed basis need not agree entry by entry.
+
+\subsection{All product tensor types and their spectral normalization}\label{sec:productspectrum}
+The full-kernel calculation also gives an explicit spectral representation. Here the spherical convention is
+$\Delta=-\operatorname{div}\nabla\ge0$. Choose unit scalar harmonics
+$Y_{\ell m}$ on each sphere, with $\Delta Y_{\ell m}=\lambda_\ell Y_{\ell m}$ and
+$\lambda_\ell=\Lambda\ell(\ell+1)$. The one-form modes are
+$dY_{\ell m}$ and $*dY_{\ell m}$, for $\ell\ge1$.
+The Weitzenb\"ock formula gives their rough-Laplacian eigenvalue $\lambda_\ell-\Lambda$.
+Electric and magnetic trace-free symmetric tensor modes can be chosen as
+\[
+E_f=\nabla^2f+\frac{\lambda_\ell}{2}fg,
+\qquad M_f=\mathcal L_{(*df)^\sharp}g,\qquad \ell\ge2.
+\]
+For $\|f\|_2=1$, the integrated Bochner identity and $\tr\nabla^2f=-\lambda_\ell f$ give
+\begin{equation}\label{eq:spherical-tensor-norms}
+\|E_f\|_2^2=\frac12\lambda_\ell(\lambda_\ell-2\Lambda),
+\qquad \|M_f\|_2^2=4\|E_f\|_2^2.
+\end{equation}
+The second identity follows from $M_f=\pm2JE_f$ on two-dimensional trace-free tensors, with $J$ parallel and norm-preserving.
+Thus, when using the full Lie derivative as the magnetic mode, one cannot double its polar amplitude while retaining the electric mode's squared norm.
+For $\ell=1$, $E_f=0$ and $(*df)^\sharp$ is Killing, so $M_f=0$.
+
+Commutation of derivatives in constant curvature gives
+\[
+\nabla^*\nabla E_f=(\lambda_\ell-4\Lambda)E_f,
+\qquad \nabla^*\nabla M_f=(\lambda_\ell-4\Lambda)M_f.
+\]
+For example, the Hessian identity is
+$\nabla^*\nabla(\nabla^2f)=
+(\lambda_\ell-4\Lambda)\nabla^2f-2\Lambda\lambda_\ell fg$.
+Adding the pure-trace correction proves the first formula; parallelness of $J$ proves the second.
+Each tensor type in the full product space therefore has a $P$ eigenvalue of the same form,
+\begin{equation}\label{eq:product-spectrum}
+\mu_{\ell k}=\frac{\lambda_\ell+\lambda_k}{2}-\Lambda,
+\end{equation}
+but the allowed degrees differ:
+\begin{center}
+\small
+\begin{tabular}{c c c}
+\toprule
+Tensor type & Modes & Degrees\\\midrule
+Two pure traces & $Y_{\ell m}Y_{kn}g_A,\ Y_{\ell m}Y_{kn}g_B$ & $\ell,k\ge0$\\
+Trace-free AA & $E_{Y_{\ell m}}Y_{kn},\ M_{Y_{\ell m}}Y_{kn}$ & $\ell\ge2,\ k\ge0$\\
+Trace-free BB & $Y_{\ell m}E_{Y_{kn}},\ Y_{\ell m}M_{Y_{kn}}$ & $\ell\ge0,\ k\ge2$\\
+Mixed AB & $\alpha_{\ell m}\otimes\beta_{kn}+\beta_{kn}\otimes\alpha_{\ell m}$ & $\ell,k\ge1$\\\bottomrule
+\end{tabular}
+\end{center}
+In the last row, each of $\alpha,\beta$ ranges over exact and coexact one-forms.
+The curvature action is $+\Lambda$ on pure traces, $-\Lambda$ on trace-free AA/BB modes,
+and zero on AB. Combining these with the rough spectra verifies \eqref{eq:product-spectrum} row by row.
+No TT condition has yet been imposed on these types. Completeness follows from the product tensor decomposition, spherical scalar expansions, and the Hodge decomposition of one-forms.
+Any two-dimensional trace-free tensor orthogonal to both electric and magnetic modes must be divergence-free.
+The sphere has no nonzero TT two-tensor, equivalently no holomorphic quadratic differential on $\CP^1$.
+
+The quotient action is simultaneous rotation by $\pi$ on the two factors, not the antipodal map.
+In complex harmonic notation it retains the product modes with $m+n$ even.
+Since $d,*$, the Hessian, and the Lie derivative commute with this orientation-preserving rotation, the same rule applies to every row.
+For an invariant mode $\psi_\alpha$ without renormalization, the squared quotient norm is
+\[
+N_\alpha=\|\psi_\alpha\|_{L^2((S^2\times S^2)/\Z_2)}^2
+=\frac12\|\psi_\alpha\|_{L^2(S^2\times S^2)}^2.
+\]
+All terms with $\mu_{\ell k}=0$ must be projected off as in \eqref{eq:fullkernel}.
+The finitely many negative eigenvalues cannot be deleted from the full inverse merely because a computation loops only over $\mu>0$.
+Pure traces, trace-free tensors, and the AB sector share a denominator, but each retains its own source contraction, receiver jet, and normalization.
+
+\subsection{Tensor multipoles, the projected Green operator, and the second jet}\label{sec:greenjet}
+Let $\Pi$ be the full $L^2$ kernel projection and $G_P^\perp$ the inverse on its orthogonal complement:
+\[
+P G_P^\perp=G_P^\perp P=I-\Pi,\qquad
+\Pi G_P^\perp=0.
+\]
+The EH tail $H^4(\zeta_i)$ at the source node $p_i$ determines a tensor multipole distribution $\mathcal S_i$.
+Its coefficients, distributional derivatives, and Bianchi conditions must match the actual tail.
+If $\bar h_i^4=G_P^\perp\mathcal S_i$, then distributionally
+\[
+P\bar h_i^4=\mathcal S_i-\Pi\mathcal S_i.
+\]
+Thus $P\bar h_i^4=0$ away from the nodes holds only if $\Pi\mathcal S_i=0$;
+otherwise the kernel-projection term must remain in the finite-dimensional equations.
+
+Near a different node $p_j$, parity gives
+$\bar h_i^4(x)=H_{ij,0}+H_{ij,2}(x)+O(r_j^4)$.
+A linear coordinate change normalizing the constant term must also transform the background quadratic term.
+Denote the resulting normalized second jet by $\mathcal J_{2,j}$. The curvature response is then determined by
+\begin{equation}\label{eq:greenjet}
+H_{ij,2}^{\rm norm}
+=\mathcal J_{2,j}\!\left(G_P^\perp\mathcal S_i[H^4(\zeta_i)]\right)
+\end{equation}
+In fixed coordinates with the constant term already zero,
+$\mathcal J_{2,j}h(x)=\frac12D^2h(p_j)[x,x]$.
+Only after applying the linear curvature operator to this normalized jet does one obtain the receiving $R_\pm$ response.
+
+If $P\psi_\alpha=\lambda_\alpha\psi_\alpha$, then, in a distributional or spectral sense allowing the required derivatives,
+\[
+G_P^\perp\mathcal S_i
+=\sum_{\lambda_\alpha\ne0}
+\frac{\langle\mathcal S_i,\psi_\alpha\rangle}{\lambda_\alpha}\psi_\alpha .
+\]
+For $\mathcal S_i=\sum_{|\beta|\le m}C_\beta\,\partial^\beta\delta_{p_i}$,
+the source contraction is
+$\sum_\beta(-1)^{|\beta|}C_\beta:\partial^\beta\psi_\alpha(p_i)$,
+and the receiving end still requires $\mathcal J_{2,j}$.
+Thus the source multipole derivatives, the receiving second derivatives, and the full kernel projection are all essential.
+The product eigenvalue denominator is $\lambda_A+\lambda_B+\mathrm{shift}$,
+not a product of two spherical Green denominators. A value-to-value Green series alone does not compute this curvature response.
+A geometric application additionally requires source identification, gauge compatibility, and convergence of the series and remainders.
+
+\subsection{Heat truncation and the three errors that need control}\label{sec:spectralerrors}
+The recorded inter-node calculations use heat factors and finite-degree truncation. To specify what those numbers approximate,
+let $U\in\operatorname{Sym}^2(K_i)$ be a tensor on the source kernel plane,
+and let $\mathcal S_i[U]$ be the physical multipole source requiring identification in the preceding section.
+Let $\mathscr C_{j,\varepsilon_j}$ map the normalized second jet at the receiving node to its
+$\varepsilon_j$-chiral curvature block, restricted to the kernel plane $K_j$. Put
+\[
+A_{\alpha j}=\mathscr C_{j,\varepsilon_j}\mathcal J_{2,j}\psi_\alpha,
+\qquad B_{\alpha i}[U]=\langle\mathcal S_i[U],\psi_\alpha\rangle.
+\]
+For $i\ne j$, the full response and its regularization should be
+\begin{align}
+\mathcal T_{ji}[U]&=
+\mathscr C_{j,\varepsilon_j}\mathcal J_{2,j}G_P^\perp\mathcal S_i[U],\nonumber\\
+\mathcal T_{ji}^{\tau,L}[U]&=
+\sum_{\substack{\ell,k\le L\\\mu_{\ell k}\ne0}}
+\frac{e^{-\tau\mu_{\ell k}}}{\mu_{\ell k}N_\alpha}
+A_{\alpha j}B_{\alpha i}[U],\qquad\tau>0.\label{eq:heat-response}
+\end{align}
+The sum includes all allowed multiplicities, tensor types, and quotient-invariance conditions.
+No additional conjugation is needed in a real orthogonal mode basis; for complex modes, the inner-product conjugation must be retained.
+This definition includes the four-dimensional kernel projection, the negative modes, and the effect of constant-term normalization on the background quadratic term.
+
+Let $\mathcal T_{ji}^{\tau}$ denote the degree-untruncated heat-regularized response,
+and let $\widehat{\mathcal T}_{ji}^{\tau,L}$ be the machine-computed finite sum.
+With fixed source and receiver norms, the required estimate is
+\begin{equation}\label{eq:spectral-error-budget}
+\begin{split}
+\|\mathcal T_{ji}-\widehat{\mathcal T}_{ji}^{\tau,L}\|
+\le{}&\underbrace{\|\mathcal T_{ji}-\mathcal T_{ji}^{\tau}\|}_{\text{heat regularization}}
++\underbrace{\|\mathcal T_{ji}^{\tau}-\mathcal T_{ji}^{\tau,L}\|}_{\text{omitted spectral tail}}\\
+&+\underbrace{\|\mathcal T_{ji}^{\tau,L}-
+\widehat{\mathcal T}_{ji}^{\tau,L}\|}_{\text{finite computation}}.
+\end{split}
+\end{equation}
+This decomposition already assumes correct identification of the physical source, all modes, and the receiving gauge.
+If only selected AA/BB or AB modes are computed, omitted source components and curvature jets are not a spectral tail that may be set to zero.
+The source is differentiated as a distribution and the receiver takes a second jet, so high-frequency terms carry derivative growth.
+Exponential decay at a fixed $\tau$ does not automatically give an error bound as $\tau\downarrow0$.
+The termwise absolute sum after removal of the heat factor need not be a valid finite bound either.
+One must prove the appropriate off-diagonal estimates for the projected Green kernel and its required derivatives,
+or estimate the remaining tail after a rigorous cancellation within each spectral level.
+
+The recorded AA/BB ladder uses
+$(\tau,L)=(0.08,80),(0.04,120),(0.02,180),(0.01,260)$.
+Agreement between successive levels checks only consistency of those finite sums; it does not replace
+the three bounds in \eqref{eq:spectral-error-budget}.
+Rigorous signs for the later coefficients $c_{\rm adj},c_{\rm diag},q_{\rm adj}$
+require converting these bounds into coefficient errors \emph{after physical normalization}.
+For example, suppose the three coefficient errors are bounded by
+$\epsilon_a,\epsilon_d,\epsilon_q$, and $q_{\rm diag}=0$ has been proved algebraically in the specified model.
+The numerical margin in the adjacent balanced row retains a strict positive sign only if
+\[
+\epsilon_a+\epsilon_d+\epsilon_q<0.019426476
+\]
+Rows seeing only adjacent opposite-chirality sources instead require
+$\epsilon_a+\epsilon_q<0.054879997$.
+These are error requirements for the inter-node model; they do not control the other geometric terms in \eqref{eq:LS}.
+
+\subsection{Node weights and the physical source cone}
+Stabilizer weights belong to the reduced equations. $SO(2)$ equivariance alone does not force a map to vanish: $z\mapsto f(|z|)z$ is an example. Weights exclude a specified degree only after the full stabilizer representation is identified. EH physical sources are further restricted to the rank-one positive cone $t^2uu^{\mathsf T}$, not arbitrary symmetric matrices. The tensor--scalar inter-node model below excludes the AB one-form sector and node self-interaction.
+
+\subsection{The AA/BB bilinear table and two cancellation cases}\label{sec:chiralitytable}
+Consider the following finite-dimensional pairing. AA denotes a tensor mode on the first sphere times a scalar mode on the second; BB exchanges the factors. Fix the receiving node at NN and place the source at NS, SN, or SS. Set
+\[
+D=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\qquad
+O=\begin{pmatrix}0&1\\1&0\end{pmatrix},\qquad
+I=\begin{pmatrix}1&0\\0&1\end{pmatrix}.
+\]
+Below, $R_\pm(T,X)$ and $S_\pm(T,X)$ are receiving and source \emph{bilinear maps} on the kernel plane, not the earlier three-dimensional curvature blocks $R_\pm$. Their first argument is tensor polarization and the second is a scalar Hessian. To specify the maps completely, set $E_{ij}=e_i e_j^{\mathsf T}-e_j e_i^{\mathsf T}$, use tangent indices $0,1,2,3$, and put
+\[
+\Omega^+=(E_{01}+E_{23},E_{02}-E_{13},E_{03}+E_{12}),\quad
+\Omega^-=(E_{01}-E_{23},E_{02}+E_{13},E_{03}-E_{12}),
+\]
+\[
+C_{ab}=\tfrac12\bigl(\Omega_a^+\Omega_b^-+
+(\Omega_a^+\Omega_b^-)^{\mathsf T}\bigr),\qquad 1\le a,b\le3.
+\]
+For $H_{ijpq}$, with tensor indices first and second-derivative indices last, use kernel-plane indices $\alpha,\beta=2,3$ and define
+\begin{align*}
+R_\varepsilon[H]_{\alpha\beta}
+&=\frac1{16}\sum_{a,b,c,d=0}^3
+(\Omega_\alpha^\varepsilon)_{ab}(\Omega_\beta^\varepsilon)_{cd}
+(H_{adbc}+H_{bcad}-H_{acbd}-H_{bdac}),\\
+S_+[H]_{\alpha\beta}
+&=-\frac1{16}\sum_{b=1}^3\sum_{i,j,p,q=0}^3
+(C_{\alpha b})_{ij}(C_{\beta b})_{pq}H_{ijpq},\\
+S_-[H]_{\alpha\beta}
+&=-\frac1{16}\sum_{b=1}^3\sum_{i,j,p,q=0}^3
+(C_{b\alpha})_{ij}(C_{b\beta})_{pq}H_{ijpq}.
+\end{align*}
+The AA embedding is $H_{ac,\,2+p,\,2+q}=T_{ac}X_{pq}$;
+the BB embedding is $H_{2+p,\,2+q,\,a,c}=T_{pq}X_{ac}$, where $a,c,p,q=0,1$ and all remaining components vanish.
+Substitution of $I,D,O$ gives the full bilinear table:
+\begin{center}
+\small
+\begin{tabular}{c c c c c c c}
+\toprule
+$(T,X)$ & $R_+^{AA/BB}$ & $S_+^{AA/BB}$ & $R_-^{AA}$ & $S_-^{AA}$ & $R_-^{BB}$ & $S_-^{BB}$\\\midrule
+$(D,D)$ & $-D/2$ & $-D/4$ & $-D/2$ & $-D/4$ & $-D/2$ & $-D/4$\\
+$(D,O)$ & $-O/2$ & $-O/4$ & $-O/2$ & $-O/4$ & $+O/2$ & $+O/4$\\
+$(O,D)$ & $-O/2$ & $-O/4$ & $+O/2$ & $+O/4$ & $-O/2$ & $-O/4$\\
+$(O,O)$ & $+D/2$ & $+D/4$ & $-D/2$ & $-D/4$ & $-D/2$ & $-D/4$\\
+$(I,I)$ & $-I/2$ & $0$ & $-I/2$ & $0$ & $-I/2$ & $0$\\
+$(D,I)$ & $0$ & $0$ & $0$ & $0$ & $0$ & $0$\\
+$(O,I)$ & $0$ & $0$ & $0$ & $0$ & $0$ & $0$\\
+$(I,D)$ & $0$ & $0$ & $0$ & $0$ & $0$ & $0$\\
+$(I,O)$ & $0$ & $0$ & $0$ & $0$ & $0$ & $0$\\\bottomrule
+\end{tabular}
+\end{center}
+The minus tables for AA and BB have opposite signs in two cross entries, owing to the fixed factor embeddings and two-form bases. Those signs occur in pairs in same-chirality products, so the cancellations below hold in both sectors.
+
+The four tensor polarizations are
+\[
+(E,c_2)\mapsto D,\quad(E,s_2)\mapsto O,\quad
+(M,c_2)\mapsto O,\quad(M,s_2)\mapsto-D.
+\]
+Prescribe the following node transport: the four tensor source values at S, transported from N, are respectively
+$\sigma_tD,-\sigma_tO,\sigma_tO,\sigma_tD$, where $\sigma_t$ is their common tensor-pole sign. The opposite scalar pole has signs $\eta_s,-\eta_s$ for $c_2,s_2$; these must not be confused with the tensor sign. Assume below that each polarization pair has equal total spectral coefficients, including normalization, Green denominator, multiplicity, quotient factor, and isotropic weight. The scalar $c_2,s_2$ weights are also equal.
+
+Pole transport and equal spectral weights are model assumptions here. The ordinary antipodal action on real spherical harmonics of a fixed degree gives the same parity $(-1)^\ell$ and does not itself produce opposite $c_2/s_2$ signs. Applying this model to a geometric Green operator therefore still requires a proof that the chosen \emph{oriented node-frame transport} gives these rules. The algebraic cancellation below does not replace that geometric identification.
+
+\paragraph{Case one: the tensor lies at opposite poles.}
+This covers SN, SS in AA and NS, SS in BB. For each fixed scalar mode, let $X,Y$ be its Hessians at the receiving and source ends. Bilinearity makes the sum of the pair $(E,c_2),(M,s_2)$ equal to
+\[
+R_\varepsilon(D,X)\otimes S_{\varepsilon'}(\sigma_tD,Y)
++R_\varepsilon(-D,X)\otimes S_{\varepsilon'}(\sigma_tD,Y)=0;
+\]
+The sum of the pair $(E,s_2),(M,c_2)$ is
+\[
+R_\varepsilon(O,X)\otimes
+\bigl[S_{\varepsilon'}(-\sigma_tO,Y)+S_{\varepsilon'}(\sigma_tO,Y)\bigr]=0.
+\]
+This cancellation occurs before summing over scalar modes and, under the equal-weight assumption, does not require equal chiralities at the two ends.
+
+\paragraph{Case two: the tensor lies at the same pole.}
+This covers NS in AA and SN in BB. Since the source node is different, the scalar endpoints are opposite poles. For a fixed scalar Hessian $X$, define
+\[
+\mathcal B_X^{\varepsilon\varepsilon'}=
+2\bigl[R_\varepsilon(D,X)\otimes S_{\varepsilon'}(D,X)
++R_\varepsilon(O,X)\otimes S_{\varepsilon'}(O,X)\bigr].
+\]
+All entries vanish for $X=I$. For $X=D,O$, the full table gives in both sectors
+\begin{equation}\label{eq:samechiralityblocks}
+\mathcal B_D^{++}=\mathcal B_O^{++}
+=\mathcal B_D^{--}=\mathcal B_O^{--}
+=\frac14(D\otimes D+O\otimes O).
+\end{equation}
+For example, the AA minus entries give
+\[
+\mathcal B_D^{--}=2\bigl[(-D/2)\otimes(-D/4)
++(O/2)\otimes(O/4)\bigr],
+\]
+while $\mathcal B_O^{--}$ uses $(-O/2,-O/4)$ and $(-D/2,-D/4)$ and gives the same matrix. Both BB cross signs reverse together, preserving the product. Summing with a common weight $w$ therefore gives
+\[
+w\eta_s\mathcal B_D^{\varepsilon\varepsilon}
+-w\eta_s\mathcal B_O^{\varepsilon\varepsilon}=0,
+\qquad\varepsilon=+,-.
+\]
+Scalar degrees $0$ and $1$ have no $m=2$ mode, and their remaining $I$-type contribution vanishes separately. This completes both cases of $B_{++}=B_{--}=0$ in the prescribed model, without an infinite spectral-tail estimate.
+
+Opposite chirality can leave nonzero terms, but not every node pair is thereby nonzero. For example, in the AA same-tensor-pole case,
+\[
+\mathcal B_D^{+-}=\frac14(D\otimes D-O\otimes O),\qquad
+\mathcal B_O^{+-}=-\mathcal B_D^{+-},
+\]
+Thus, when actual $m=2$ content and nonzero spectral weight are present, the two scalar modes sum to $2w\eta_s\mathcal B_D^{+-}$. BB uses its own minus cross signs from the table; case one still cancels. The chirality of the EH tail explains this algebraic structure but does not prove the global projected Green response.
+
+\subsection{Diagonal tensor cancellation and the four-node reciprocity window}\label{sec:four-node-reciprocity}
+Number the nodes by $1=\mathrm{NN},2=\mathrm{NS},3=\mathrm{SN},4=\mathrm{SS}$. The adjacent pairs are $12,13,24,34$, and the diagonal pairs are $14,23$. In the preceding inter-node model, identify the receiving kernel plane with a complex line and write the response as
+\[
+\xi_j\longmapsto P_j\xi_j+Q_j\bar\xi_j,
+\qquad P_j\in\R.
+\]
+A nonzero $\xi_j$ requires $|P_j|=|Q_j|$. For unknown source directions, $|P_j|\le |Q_j|_{\rm upper}$ is only a weaker necessary condition, not a sufficient condition for the full geometric system.
+
+The enumeration uses square-node permutations preserving adjacency and classifies zero, one, two, and three reversed kernels relative to the fixed positive background.
+Two reversed kernels split into diagonal and adjacent cases. The five displayed rows are therefore
+$++++$, $+++-$, $+--+$, $++--$, and $+---$: one compatible row and four mixed rows.
+Global chirality reversal is not treated here as a proved geometric equivalence; $----$ is not included in this enumeration.
+For a two-coloured square considered without its background, further quotienting by global colour exchange would merge the one-reversed and three-reversed cases,
+giving a different count. The five-row table is therefore not a list of five mixed configurations of all marked fillings.
+
+Spectral truncation in this model gives the approximate opposite-chirality coefficients
+\[
+c_{\rm adj}\simeq0.06288499464,\quad
+c_{\rm diag}\simeq-0.035453521442,\quad
+q_{\rm adj}\simeq0.0080049973185,\quad q_{\rm diag}=0.
+\]
+The first three numbers do not yet have rigorous spectral-tail error bounds. By contrast, $q_{\rm diag}=0$ is an identity at each spectral level under the preceding transport and weight assumptions: the paired $\cos2\phi,\sin2\phi$ source signs are opposite and their amplitudes equal, so they cancel. This conclusion concerns only the specified AA/BB tensor channel.
+
+Numerical verification must separately test the trace, trace-free diagonal, and off-diagonal directions in the symmetric square of the kernel plane.
+The saved matrix encodes its input as $(S_{22},S_{33},2S_{23})$ and its output as
+$(R_{22},R_{33},R_{23})$. The source factor $2$ comes from the joint contraction of the symmetric indices $23,32$.
+The three actual symmetric tensors can be chosen as $I$, $\operatorname{diag}(1,-1)$, and
+$\begin{psmallmatrix}0&1\\1&0\end{psmallmatrix}$, each of Hilbert--Schmidt norm $\sqrt2$,
+with input vectors $(1,1,0)$, $(1,-1,0)$, and $(0,0,2)$, respectively.
+The old program used the first input to measure a trace-free response; its zero output did not test the other two directions. That check has been superseded.
+The saved adjacent matrix is actually
+$q\begin{psmallmatrix}1&-1&0\\-1&1&0\\0&0&-1\end{psmallmatrix}$,
+and acts on the three inputs by zero, $(2q,-2q,0)$, and $(0,0,-2q)$, respectively.
+If instead one uses trace and double-angle coordinates $(x,y,z)=(S_{22}+S_{33},S_{22}-S_{33},2S_{23})$
+and receiving coordinates $(X,Y,Z)=(R_{22}+R_{33},R_{22}-R_{33},2R_{23})$,
+the transfer matrix is $\operatorname{diag}(0,2q,-2q)$. With
+$\zeta=(Y+iZ)/2$ and $w=y+iz$, this is $\zeta=q\bar w$.
+These finite-matrix checks, the preceding conditional algebraic identity, and the unproved infinite spectral-tail bounds are distinct issues.
+
+The reciprocity window admits a direct proof without a vague appeal to exchange symmetry. Put
+$a=c_{\rm adj}>0$, $b=-c_{\rm diag}>0$, and $q=q_{\rm adj}\ge0$.
+The two receivers in the adjacent balanced row $(+,+,-,-)$ give
+\[
+|au_3-bu_4|\le qu_3,\qquad |au_4-bu_3|\le qu_4,
+\qquad u_3,u_4>0.
+\]
+Adding and using $|x|+|y|\ge|x+y|$ gives the necessary condition
+\[
+|a-b|\le q.
+\]
+Equivalently, one endpoint permits the ratio $r=u_4/u_3$ in
+$[(a-q)/b,(a+q)/b]$, and the other requires $1/r$ in the same interval. This interval structure is what makes a nonempty intersection imply feasibility of $1$; arbitrary reciprocal sets do not have that property.
+The approximate values give $a-b-q\simeq0.019426476$. The one-reversed, three-reversed, and diagonally balanced rows have receivers seeing only adjacent opposite-chirality sources, so they require $a\le q$, with numerical margin approximately $0.054879997$.
+
+If rigorous spectral-tail bounds are smaller than these margins, the inequalities exclude zeros in the corresponding mixed rows of the leading inter-node model. The full geometric system also contains self-interaction, global deformation, varying projections, complementary Schur terms, and possibly same-order remainders and degenerating scale ratios. An all-same-chirality K\"ahler--Einstein family does not automatically cancel those terms in mixed rows, and non-K\"ahler does not imply non-Einstein.
+
+\subsection{The decisive proof object}
+\begin{target}[The full finite-dimensional reduction, not a single inter-node coefficient]
+With markings, the full-kernel slice, and all scale and direction parameters specified, establish
+\begin{equation}\label{eq:LS}
+F_i=F_i^{\rm self}+F_i^{\rm deform}+F_i^{\rm inter}
++F_i^{\rm complement}+\mathcal R_i=0,
+\end{equation}
+with proved orders, parameter dependence, and remainder estimates for every term, and then decide whether zeros exist.
+\end{target}
+If the target term has order $t^3$ but only $\mathcal R=O(t^{5/2})$ is known, the available bound on $t^{-3}\mathcal R$ diverges and the coefficient sign cannot decide the equation. One needs $o(t^3)$ or a complete expansion including the known same-order terms, while treating degenerating scale ratios, directional tilt, and possible logarithms. Existence of an all-same-chirality K\"ahler--Einstein family does not automatically cancel self-interaction and background deformation in each mixed case.
+
+A zero of the full system, together with inverse estimates, can produce a new exact Einstein metric. Absence of zeros gives nonexistence only in the corresponding degeneration neighbourhood. Excluding all Einstein metrics on the same manifold additionally requires a global moduli-space covering argument, another global obstruction, or a topological reason. The local moduli information alone does not justify global nonexistence.
+
+\section{Small Ricci defect with full-curvature spikes}\label{sec:curvature-spikes}
+In a product coordinate chart on $S^2\times S^2$ away from the axes, take a compactly supported perturbation
+\[
+g_u=dx^2+dy^2+e^{2(F_1+u)}d\theta^2+e^{2(F_2-u)}d\varphi^2,
+\quad F_1=\log\sin x,\quad F_2=\log\sin y.
+\]
+Opposite warping cancels the full Hessian in some Ricci components, while mixed Riemann components still detect $u_{xy}$. Put
+\[
+w_\sigma(X,Y)=-\tfrac12XY\log(X^2+Y^2+\sigma^2).
+\]
+Direct differentiation gives
+\begin{equation}\label{eq:CZ}
+\Delta w_\sigma=-\frac{2XY[3\sigma^2+2(X^2+Y^2)]}{(X^2+Y^2+\sigma^2)^2},
+\qquad (w_\sigma)_{XY}(0)=\log(1/\sigma).
+\end{equation}
+On a fixed compact chart, the Laplacian and gradient are uniformly bounded while the mixed Hessian can diverge. With a fixed smooth cutoff and $u_j=\Lambda_j^{-2/3}\psi w_{e^{-\Lambda_j}}$, one obtains $\delta_+(g_j)=O(\Lambda_j^{-2/3})$ and full curvature at the centre at least $c\Lambda_j^{1/3}$. Write $f=F_1+u$ and $h=F_2-u$. The doubly warped formulas are
+\[
+\Ric_B=-\nabla^2f-df\otimes df-\nabla^2h-dh\otimes dh,\quad
+\frac{\Ric_{\theta\theta}}{g_{\theta\theta}}
+=-\Delta f-\langle df,d(f+h)\rangle,
+\]
+The other vertical component exchanges $f,h$. Since $f+h=F_1+F_2$, the base Hessian terms in $u$ cancel completely, and the vertical components retain only $\pm\Delta u$ and first derivatives. The fixed support stays away from the axes, so
+\[
+\delta_+(g_u)\le C(\|\Delta u\|_\infty+\|du\|_\infty+\|du\|_\infty^2).
+\]
+Formula \eqref{eq:CZ} and the fixed cutoff bound the right-hand side by $O(\Lambda_j^{-2/3})$.
+Take the cutoff equal to $1$ at the centre. The mixed curvature component
+$R_{x\theta y\theta}/g_{\theta\theta}
+=-(f_{xy}+f_xf_y)$ still contains
+$-(u_j)_{xy}(0)=-\Lambda_j^{1/3}$, while the remaining terms are bounded.
+Exponential warping is always positive definite. The perturbation is compactly supported in a fixed chart and equals the original product outside, so the global metric is smooth.
+
+This model does not contradict Yau's Problem 26: the underlying manifold already admits an Einstein metric. It contradicts an excessively strong regularity inference from the input.
+Let $g_0$ be the unperturbed product metric, and compare tensors using the same background norm on a fixed coordinate domain $U$.
+With a fixed cutoff, the $L^2$ elliptic estimate gives
+$\|\nabla^2u_j\|_{L^2(U,g_0)}\to0$. Together with the first-order terms and uniform convergence of the metrics, this implies
+$\|\Rm(g_j)-\Rm(g_0)\|_{L^2(U,g_0)}\to0$.
+Thus the \emph{total} curvature energy on the fixed domain tends to the background energy
+$\int_U|\Rm(g_0)|_{g_0}^2d\mu_{g_0}>0$, not to zero.
+The metric is unchanged outside the chart, so the total energy on the closed manifold does not tend to zero either.
+To make the local total energy sufficiently small, first choose a sufficiently small fixed background region and then take the perturbation parameter to its limit.
+The region size and the sequence parameter are separate choices, not one vanishing-energy conclusion.
+Preservation of the volume density does not make this a collapsing example.
+
+Brendle--Kapouleas mixed-EH constructions also exhibit different Ricci and full-curvature scales \cite{BK}, but with different normalization and construction. Existence of an Einstein metric and full-curvature control for a given near-Einstein input are different questions.
+
+\section{Conditional finite-cover amplification in the positive branch}\label{sec:coveramplifier}
+Use the four-dimensional noncollapsed finiteness theorem of Cheeger--Naber \cite[Theorem 1.12]{CN}: closed four-manifolds with $|\Ric|\le3$, a uniform positive lower bound for unit-ball volumes, and a uniform diameter upper bound have only finitely many diffeomorphism types. Both the two-sided Ricci bound and noncollapse are hypotheses.
+
+\begin{corollary}[Finitely many positive-pinched types with a volume lower bound]
+Fix $0<\delta_0<1$ and $v>0$. Closed four-manifolds admitting metrics with
+$\delta_+(g)\le\delta_0$ and $\Vol(M,g)\ge v$ have only finitely many diffeomorphism types.
+\end{corollary}
+\begin{proof}
+Myers gives $\diam\le\pi\sqrt{3/(1-\delta_0)}$.
+The two-sided Ricci endomorphism bound also controls the tensor norm; in dimension four the factor is at most $2$.
+Rescale the whole family by a fixed factor depending only on $\delta_0$ to match the cited theorem's Ricci normalization.
+The volume lower bound and diameter upper bound remain uniform; Bishop--Gromov then gives the required unit-ball lower bounds, so the finiteness theorem applies.
+\end{proof}
+This is an application of a classical theorem. It provides neither an Einstein metric on the original manifold nor a nonsingular limit.
+Myers and Bishop comparison alone do not provide the total-volume lower bound assumed here.
+
+\begin{proposition}[Finite-cover amplification of a simply connected volume bound]
+Fix $0<\delta_0<1/2$. Suppose there is $v_0>0$ such that every metric on every closed simply connected smooth four-manifold with $\delta_+(g)\le\delta_0$ satisfies $\Vol(g)\ge v_0$. Under the preceding noncollapsed finiteness input, there is $v_1=v_1(\delta_0,v_0)>0$ such that every metric with the same pinching on any closed connected smooth four-manifold, possibly nonorientable, satisfies $\Vol(g)\ge v_1$. These manifolds have only finitely many diffeomorphism types.
+\end{proposition}
+\begin{proof}
+Since $\Ric\ge(1-\delta_0)g>0$, Myers gives a finite fundamental group and
+\[
+\diam(M),\ \diam(\widetilde M)\le
+D(\delta_0):=\pi\sqrt{\frac3{1-\delta_0}},
+\]
+where $\widetilde M$ carries the lifted metric on the universal cover. The lift preserves pointwise pinching; it is closed and simply connected, so the hypothesis gives $\Vol(\widetilde M)\ge v_0$. In dimension four,
+$|\Ric|_{\mathrm{HS}}\le2(1+\delta_0)<3$. Bishop--Gromov comparison and the diameter bound turn the total-volume lower bound into a uniform unit-ball lower bound $v'(\delta_0,v_0)>0$.
+
+Noncollapsed finiteness therefore applies to all these universal covers. Let $X=X(\delta_0,v_0)$ be the largest Euler characteristic among the finitely many types. Then
+\[
+2\le\chi(\widetilde M)=2+b_2(\widetilde M)\le X.
+\]
+Here $X$ is the largest Euler characteristic of those types; the number of types itself is not a Betti-number bound. With covering degree $d=|\pi_1(M)|$, multiplicativity of Euler characteristic gives
+\[
+\chi(\widetilde M)=d\,\chi(M).
+\]
+Even when $M$ is nonorientable, $\chi(M)$ is a positive integer, so $d\le\chi(\widetilde M)\le X$. Hence
+\[
+\Vol(M)=\frac{\Vol(\widetilde M)}d\ge\frac{v_0}{X}=:v_1>0.
+\]
+Applying the same Ricci, diameter, and unit-ball volume controls to $M$ gives the final finiteness conclusion.
+\end{proof}
+The simply connected volume bound remains a hypothesis; positive Ricci curvature alone does not establish it. Even if the proposition applies, its conclusions are noncollapse and topological finiteness, not Einstein existence. An Einstein metric found separately on a cover need not be invariant under the deck group and therefore need not descend.
+
+\section{Other ALE fillings, scalar correction, and smooth type}\label{sec:ALE-extensions}
+The following extensions use the same matching mechanism, but each has independent period, cokernel, and gauge conditions.
+Longer term-by-term proofs appear in the corresponding sections of
+the \href{20260912.tex}{long construction and algebraic-smoothing manuscript} in this directory.
+
+\subsection{ADE, type T, Wahl, and the full core}
+\begin{itemize}
+\item Full-core estimate: using the full exact core $a^2q_{\sigma a^2}$ removes the inner cutoff and gives
+\[
+\delta_\sigma\le C(L^{-1}+R^2+a^4b^{-4}+a^4R^{-6}),
+\quad b=a^\gamma,\ R=a^\kappa,
+\quad0<\kappa<\min(\gamma,2/3),\ \gamma<1.
+\]
+Here the background is the physical EH metric; one cannot continue to require an $O(r^2)$ Euclidean error on the entire annulus.
+\item Chapter 2, on ADE, periods, and type T cores: for fixed collinear Kronheimer periods away from root hyperplanes, the leading image of the full $3b_2$-dimensional cokernel must be treated, not just three modes. Restoring Bianchi gauge gives $D\Ric_kh_\sigma=\sigma k$ with an $O(r^{-2}\log r)$ tail. For a general group not containing $-I$, the exterior remainder is $O(r^3)$ and the outer-cutoff cost is $O(R)$.
+\item Plane-period cores with zero K\"ahler periods and cyclic type T singularities
+$\frac1{dm^2}(1,dmq-1)$: eliminate the full cokernel on the cover, average over the finite group, and descend. The quotient condition $b_2=0$ does not mean that the linear kernel is empty. Matching the full quadratic term to a KE exterior can remove the logarithmic transition and gives $O(a^{4/7})$ for a general outer end and $O(a)$ when it contains $-I$.
+\item A short proof for Wahl $\frac14(1,1)$: the involution $(x,y,z)\mapsto(-x,-y,-z)$ acts freely on $Q=\{xy=z^2-1\}$, with quotient $T^*\mathbb{RP}^2$. EH linear extension and finite averaging solve the source equation; the radius $b=a^{1/2}$ gives $O(a)$.
+\item Quartic matching: the improved $O(a^{8/5})$ rate explicitly assumes a quartic extension $k_4$, gauge compatibility, and order-by-order tail estimates. These are not prerequisites for the lowest-order $O(a)$ construction.
+\end{itemize}
+
+\subsection{Constant scalar curvature, variation, and sharp flux}
+A scalar inverse can be established in weighted spaces with $0<\mu<2$, treating separately the height-function kernel and reflection-even space in the positive branch; the negative branch is automatically kernel-free. The scalar weight cannot simply be set to $2$: slowly cutting off the EH harmonic function $\rho^2\cos\theta$ produces a genuine approximate kernel. Local homogeneous equations nevertheless give a perturbatively stable Hessian endpoint estimate, which does not contradict failure of the global endpoint inverse.
+
+After constant-negative-scalar-curvature correction, the Wahl quadratic and quartic matchings retain rates $O(a)$ and $O(a^{8/5})$, respectively. The volume variation uses
+\[
+V'(a)=\frac12\int\langle E,\partial_a\widehat g_a\rangle,
+\qquad \widehat g_a=u_a^2g_a,
+\]
+and orthogonality of $E$ to the pure-trace $\partial_a u_a$ term to obtain a volume rate depending on the stated parameter-speed bounds. Construction of a degenerating minimizing sequence does not exclude a separate smooth minimizer.
+
+The preceding flux formula, for arbitrary angular variation and without an imposed gauge on the linearized Ricci operator, gives
+\[
+\int_A\langle D\Ric_eu,r^{-n-2}K\rangle
+=-\frac{n+2}{2}I_K,
+\qquad
+\|D\Ric_eu\|_{\op,\infty}\ge\frac{(n+2)I_K}{2LJ_K}.
+\]
+Formulas \eqref{eq:nonlinearflux} and \eqref{eq:energyflux} give nonlinear versions under their respective weak derivative assumptions. The specified spherical/EH mismatch has sharp leading cost $1/(8L)$ without a scalar constraint and $1/(6L)$ with exact constant scalar curvature. These are optimal costs within the model, not a positive Ricci defect uniform over all metrics.
+
+The section on critical derivative energy distinguishes
+residuals tending to zero in $W^{1,4},W^{2,2},W^{3,4/3}$ from a fourth-derivative $L^1$ norm that does not tend to zero for a specified nonzero Weyl mismatch. Derivative order, endpoints, and function spaces are part of the statement.
+
+\subsection{Smooth type, connector obstructions, and algebraic structure}
+For fixed reflection markings, classification of smooth torus actions identifies the spherical-suspension $A_r$ double resolution with $\#r(S^2\times S^2)$; the standard marked rows for the four-node product quotient are also listed. This diffeomorphism identification uses the actual end markings, not just rational Betti numbers, and does not cover arbitrary unspecified boundary gluings.
+
+Chapter 3 of the same manuscript discusses fixed-width Lohkamp constructions versus arbitrarily tight pinching, product spectral gaps tending to zero even after kernel projection, high-frequency Ricci derivatives, flat and Heisenberg neck lower bounds, general analytic inhomogeneous exact Einstein collars, small Berger cores and their finite-distance singularities, covering-volume obstructions to ordinary-point handles, and finite-boundary mean-curvature thresholds. Each constrains a particular method; they are not a universal prohibition. A vanishing lower bound for a varying-topology entropy candidate has not yet supplied metrics attaining it.
+
+Chapter 4 treats height-four elliptic surfaces and Wahl smoothings: canonical covering stacks, low-degree relations controlling all Artin smoothing parameters, $\dim\operatorname{Ext}^1=38$ and $\operatorname{Ext}^2=0$, isotrivial examples with $h^2(\Theta)=2$ or $3$, a one-dimensional Wahl obstruction quotient, and explicit conditional interfaces for natural deformations and descent on the moduli stack. No bridge from obstructed complex smoothing to nonexistence of arbitrary real Einstein metrics has been established.
+
+\section{Global smoothing and Einstein metrics on a product quotient}
+A local near-Einstein construction does not decide whether its resulting manifold admits an exact Einstein metric.
+The following construction changes the complex structure to produce an exact solution, showing why $-2$ curves in the resolution complex structure do not certify nonexistence of arbitrary Einstein metrics.
+
+Take $G=\Z_4^2$ and two $G$-covers $C_i\to\CP^1$ with branch triples
+\[
+S_1=((1,3),(1,0),(2,1)),\qquad
+S_2=((3,2),(0,1),(1,1)).
+\]
+Each triple generates $G$, sums to zero, and consists of elements of order $4$.
+Riemann--Hurwitz gives
+$2g(C_i)-2=16[-2+3(1-1/4)]=4$, hence $g(C_i)=3$.
+Let $Y=C_1\times C_2$, $X=Y/G$, and let $S\to X$ be the minimal resolution.
+
+The two collections of branch stabilizers intersect only in order-two subgroups, with common nonzero elements
+$(2,0),(0,2),(2,2)$. Each fixes four points on each curve,
+giving $3\cdot16=48$ nonfree points on the product.
+Each orbit has eight points, and its stabilizer acts by $(-1,-1)$ on the tangent space. The quotient therefore has six $A_1$ points.
+Also, $K_X^2=K_Y^2/16=8(3-1)^2/16=2$.
+
+\begin{proposition}\label{prop:bcgp-smooth-einstein}
+The underlying smooth four-manifold of the minimal resolution $S$ admits a negative Einstein metric.
+More precisely, for a nearby smooth fibre $X_t$ there is a diffeomorphism $\phi_t:S\to X_t$
+such that $S$ with the pulled-back complex structure $J_t=\phi_t^*J_{X_t}$ admits a negative K\"ahler--Einstein metric.
+This $J_t$ is different from the original resolution complex structure $J_{\rm res}$.
+\end{proposition}
+\begin{proof}
+First prove $T_X^0=(\pi_*T_Y)^G$.
+The action is faithful on each curve factor, so $\pi$ is unramified in codimension one, and finite \'etale descent gives the equality on the smooth locus.
+Both sides are reflexive: $T_X^0=(\Omega_X^1)^\vee$ is reflexive on the normal surface;
+a system of parameters for $A=\mathcal O_{X,x}$ remains a system of parameters in each regular local ring above it,
+so $\pi_*T_Y$ has depth $2$ as an $A$-module.
+The Reynolds projection splits off its invariant summand, preserving depth $2$ and torsion-freeness.
+Reflexive sheaves are determined by restriction away from a codimension-two subset, proving the equality globally.
+
+Finite pushforward has no higher direct images, and the Reynolds projection commutes with cohomology, so
+$H^2(X,T_X^0)=H^2(Y,T_Y)^G$.
+Equivariant Serre duality and the K\"unneth decomposition give
+\[
+\bigl(H^2(Y,T_Y)^G\bigr)^*\cong
+\bigl[H^0(2K_{C_1})\otimes H^0(K_{C_2})
+\oplus H^0(K_{C_1})\otimes H^0(2K_{C_2})\bigr]^G.
+\]
+Label characters by $(a,b)\in(\Z/4)^2$, with the action convention for which Chevalley--Weil reads
+\[
+m_{(a,b)}=-1+\sum_{s\in S_i}
+\left\{\frac{a s_1+b s_2}{4}\right\},\qquad (a,b)\ne(0,0)
+\]
+and the trivial character has multiplicity $0$.
+Substitution of the sixteen characters gives the following multiplicity-one sets:
+\[
+K_1:(2,3),(3,0),(3,1),\qquad
+K_2:(0,3),(1,2),(3,3).
+\]
+Neither curve is hyperelliptic. If its hyperelliptic involution belonged to $G$, it would fix eight points,
+whereas each order-two element fixes only four points in one branch fibre, a contradiction.
+If the involution were not in $G$, then $G$ would act faithfully on the hyperelliptic quotient $\CP^1$.
+A finite abelian subgroup of $\operatorname{PGL}_2(\mathbb C)$ is cyclic or a Klein four-group and cannot contain $\Z_4^2$.
+Thus each canonical image is a plane quartic with no quadratic relation,
+and multiplication gives an equivariant isomorphism $\operatorname{Sym}^2H^0(K_{C_i})\cong H^0(2K_{C_i})$.
+Taking the six unordered pairwise sums, with repetition, of each character triple gives
+\begin{align*}
+2K_1&:(0,2),(1,0),(1,3),(2,0),(2,1),(2,2),\\
+2K_2&:(0,1),(0,2),(1,1),(2,0),(2,2),(3,2).
+\end{align*}
+The first set is disjoint from $-K_2=\{(0,1),(3,2),(1,1)\}$,
+and the second from $-K_1=\{(2,1),(1,0),(1,3)\}$.
+Neither tensor product has invariants, so $H^2(X,T_X^0)=0$.
+
+The local-to-global $\mathbb Q$-Gorenstein smoothing theorem
+\cite[Proposition 2.4(2)]{LeePark}
+extends the six local $A_1$ smoothings $xy-z^2=\tau_i$ simultaneously to an actual global family.
+Choose a tangent direction with every component nonzero, so that
+$\tau_i(t)=a_it+O(t^2)$ with $a_i\ne0$. Every $X_t$ is smooth for sufficiently small $t\ne0$.
+This uses unobstructedness of the actual deformation, not only a tangent-space dimension.
+
+Because $\pi$ is unramified in codimension one, $\pi^*K_X=K_Y$.
+The bundle $K_Y$ is ample; descent of ampleness under a finite surjection gives ampleness of $K_X$.
+A suitable power of the relative canonical bundle is a line bundle, and ampleness is open in a proper flat family. Thus $K_{X_t}$ is ample on the smooth fibres.
+The Aubin--Yau theorem gives $\Ric(h_t)=-h_t$.
+Finally, an $A_1$ smoothing admits simultaneous resolution after finite base change.
+The six nodes are disjoint, so a common finite base change gives a smooth proper family
+with central fibre $S$ and other fibres $X_t$.
+Ehresmann's theorem supplies diffeomorphisms $\phi_t:S\to X_t$. Set
+\begin{equation}\label{eq:bcgp-pullback-ke}
+J_t=\phi_t^*J_{X_t},\qquad g_t=\phi_t^*h_t,
+\qquad \Ric(g_t)=-g_t;
+\end{equation}
+Then $g_t$ is K\"ahler for $J_t$.
+For the original complex structure $J_{\rm res}$, the six exceptional rational curves $E_i$ satisfy
+$E_i^2=-2$, and adjunction gives $K_{(S,J_{\rm res})}\cdot E_i=0$.
+The original canonical bundle is therefore not ample, whereas negative K\"ahler--Einstein metrics require ampleness.
+Hence $(S,J_t)$ and $(S,J_{\rm res})$ are not biholomorphic.
+\end{proof}
+
+The proof covers only the displayed branch data and the standard complex-oriented resolution, not mixed-chirality real fillings.
+For other rows, even $H^2(T_X^0)\ne0$ only means that this sufficient condition fails; it does not by itself show that the actual smoothing is obstructed.
+For more general hyperelliptic double-cover smoothings
+$w^2=f(x)q(z)+tF$
+and their simultaneous resolutions and topological identifications, see the negative-construction filters in the \href{20260912.tex}{long construction manuscript}.
+
+\subsection{A six-node model of the classical seven-line Campedelli cover}\label{sec:campedelli-seven-lines}
+Now use $G_{\rm Cam}=\mathbb F_2^3$ to construct an eightfold cover of $\CP^2$.
+This is not the preceding $\Z_4^2$ quotient of a product of curves.
+In homogeneous coordinates $[x:y:z]$, the seven branch lines $D_i=(\ell_i=0)$ and their inertia generators are
+\begin{equation}\label{eq:campedelli-lines}
+\begin{array}{c|rrrrrrr}
+i&1&2&3&4&5&6&7\\ \hline
+\ell_i&x&y&z&x-y&y-z&x-z&x-y+z\\
+g_i&001&010&011&100&101&111&110
+\end{array}
+\end{equation}
+The three-bit strings denote vectors in $\mathbb F_2^3$.
+The first six lines form the $A_3$ reflection arrangement; the seventh passes through two of its double points, making them triple points.
+
+First specify the cover itself. For every nonzero character $\chi:G_{\rm Cam}\to\mathbb F_2$,
+exactly four labels satisfy $\chi(g_i)=1$. Thus the building line bundles can be taken as
+$L_\chi=\mathcal O_{\CP^2}(2)$, with
+$L_\chi^{\otimes2}\simeq\mathcal O(\sum_{\chi(g_i)=1}D_i)$.
+More explicitly, set $\mathcal A_0=\mathcal O$ and
+$\mathcal A_\chi=\mathcal O(-2)$ for $\chi\ne0$, and define multiplication on local generators by
+\begin{equation}\label{eq:campedelli-cover-algebra}
+\mathcal A=\bigoplus_{\chi\in G_{\rm Cam}^*}\mathcal A_\chi,
+\qquad
+e_\chi e_\eta=
+\left(\prod_{\chi(g_i)=\eta(g_i)=1}\ell_i\right)e_{\chi+\eta},
+\quad e_0=1,
+\qquad X_{\rm Cam}=\operatorname{Spec}_{\CP^2}\mathcal A.
+\end{equation}
+For $\chi=\eta\ne0$, the product has four linear factors; for distinct nonzero $\chi,\eta$, it has two.
+Multiplication therefore respects the line-bundle degrees. For each line, associativity is the carry identity for binary addition,
+so this defines a finite flat eightfold cover. The inertia labels generate $G_{\rm Cam}$, making the cover connected.
+These are the abelian-cover building relations made explicit in this example \cite[\S2.2]{AlexeevPardini}.
+
+Pairwise cross products of the line coefficient vectors give all triple points below; the final column is summed in $\mathbb F_2^3$:
+\begin{equation}\label{eq:campedelli-incidences}
+\begin{array}{c|c|c}
+p&\{i:p\in D_i\}&\sum_{i:\,p\in D_i}g_i\\ \hline
+{[0:0:1]}&\{1,2,4\}&111\\
+{[0:1:0]}&\{1,3,6\}&101\\
+{[0:1:1]}&\{1,5,7\}&010\\
+{[1:0:0]}&\{2,3,5\}&100\\
+{[1:1:0]}&\{3,4,7\}&001\\
+{[1:1:1]}&\{4,5,6\}&110
+\end{array}
+\end{equation}
+The remaining intersections are $[1:0:1]$, $[1:0:-1]$, and $[1:2:1]$,
+on $\{D_2,D_6\}$, $\{D_2,D_7\}$, and $\{D_6,D_7\}$, respectively.
+The nine points account for $6\binom32+3\binom22=\binom72=21$ line pairs, so there are no further intersections and no quadruple point.
+Three distinct nonzero labels have no linear relation of length one or two.
+Their sum is therefore nonzero exactly when they form a basis of $\mathbb F_2^3$; all six rows have this property.
+Among the $7!$ label permutations on the fixed seven lines, $1680$ satisfy all six conditions.
+Only the single assignment in \eqref{eq:campedelli-lines} is needed here.
+
+The local types follow directly from equations. At an ordinary branch point the model is
+$(u,v)\mapsto(u^2,v)$. At a double point the two labels are independent, so there are two copies of
+$(u,v)\mapsto(u^2,v^2)$, both smooth.
+At a triple point choose local base coordinates in which the lines are $a=0,b=0,a+b=0$.
+Since their labels form a basis, the full local eightfold cover is
+\begin{equation}\label{eq:campedelli-local-node}
+u^2=a,\qquad v^2=b,\qquad w^2=a+b,
+\qquad\text{equivalently}\quad w^2=u^2+v^2.
+\end{equation}
+There is one point above the triple intersection. Setting $U=w+u,V=w-u,Z=v$ gives $UV=Z^2$, an $A_1$ singularity.
+The other four branch equations are units locally, whose square roots can be absorbed into the coordinates.
+If instead the three labels satisfy $g_i+g_j+g_k=0$, the local inertia group has only four elements
+and there are two points above the intersection. Each local model is \eqref{eq:campedelli-local-node}
+further quotiented by $(u,v,w)\mapsto(-u,-v,-w)$.
+Representing $A_1=\mathbb C^2/\{\pm1\}$ by $(U,V,Z)=(s^2,t^2,st)$,
+this sign change lifts to $(s,t)\mapsto(is,it)$, so the quotient is $\frac14(1,1)$, not $A_1$
+\cite[Table~1, cases~3.1, 3.3]{AlexeevPardiniCovers}.
+Thus the specified example has exactly six $A_1$ singularities and no others.
+
+Writing $H$ for the plane line class, Hurwitz and the pushforward decomposition give
+\begin{equation}\label{eq:campedelli-invariants}
+2K_{X_{\rm Cam}}=\pi^*(2K_{\CP^2}+\textstyle\sum_iD_i)=\pi^*H,
+\qquad K_{X_{\rm Cam}}^2=8\left(\frac12\right)^2=2,
+\qquad p_g=q=0.
+\end{equation}
+The last identity follows from $H^j(\CP^2,\mathcal O)=H^j(\CP^2,\mathcal O(-2))=0$ for $j=1,2$.
+Since $A_1$ singularities are Gorenstein and rational, $K_{X_{\rm Cam}}$ is a line bundle.
+The identity $2K_{X_{\rm Cam}}=\pi^*H$ makes it ample; minimal resolution preserves $K^2,p_g,q$.
+
+In this model the global smoothing can be written simply by moving the seven lines:
+take $\ell_i(t)=\ell_i+t m_i$, with general linear forms $m_i$.
+Require the derivative at $t=0$ of each original triple-point determinant of line coefficients to be nonzero.
+These are six nonempty open conditions on the seven $m_i$: each original matrix has rank two, so each derivative is a nonzero linear form.
+Every other three-line determinant is already nonzero at $t=0$.
+Hence, for sufficiently small $t\ne0$, the seven lines are in general position.
+Substituting $\ell_i(t)$ for $\ell_i$ in \eqref{eq:campedelli-cover-algebra}
+gives an actual proper flat family defined by a locally free algebra of rank eight.
+Near each node its equation becomes $w^2=u^2+v^2+\tau_p(t)$,
+where $\tau_p(0)=0$ and $\tau_p'(0)\ne0$, so all six nodes smooth simultaneously.
+On the smooth fibres, $2K=\pi_t^*H$ still holds, and the canonical bundle is ample.
+This agrees with the deformation description for seven-line covers \cite[\S3.3]{AlexeevPardini}.
+
+Let $S_{\rm Cam}\to X_{\rm Cam}$ be the complex-oriented minimal resolution.
+Simultaneous resolution after finite base change and Ehresmann's theorem identify its underlying smooth four-manifold with a nearby smooth fibre.
+Aubin--Yau then gives a negative Einstein metric on $S_{\rm Cam}$,
+K\"ahler for the complex structure pulled back from the smooth fibre, whereas the original resolution complex structure retains six $-2$ curves.
+This realizes simultaneous global smoothing of the six $A_1$ points by an explicit family of covers,
+without first computing $H^2(T^0)$ to test a sufficient smoothing criterion.
+The exact combinatorial calculations check line intersections and labels; the cover types, smoothing, and metric conclusions follow from the geometric argument above.
+No identification of a moduli component or diffeomorphism type with the product quotient in Proposition \ref{prop:bcgp-smooth-einstein} has been established here,
+and mixed-chirality real fillings are not addressed.
+
+\appendix
+\section{Products, symmetry reduction, and scaling}
+\subsection{Product propagation preserves only the input pinching}
+If $\Ric_h=\sigma h$, then the product metric satisfies
+\[
+(g\oplus h)^{-1}\Ric_{g\oplus h}-\sigma\Id
+=(g^{-1}\Ric_g-\sigma\Id)\oplus0.
+\]
+Thus $\delta_\sigma(g\oplus h)=\delta_\sigma(g)$. To propagate the positive branch from dimension four to $n\ge6$, use $h=(n-5)g_{\rm round}$ on $S^{n-4}$. The circle in dimension $n=5$ has zero Ricci curvature and cannot supply an exact factor of the same sign. The negative branch can use closed negative Einstein factors of dimension at least two. This produces only near-Einstein inputs: even if the original factor has no Einstein metric, nonproduct Einstein metrics on the product manifold are not thereby excluded.
+
+\subsection{The torus-orbit volume equation}
+In a local region with a free $T^k$ action, write
+\[
+g=g_B+h_{ab}(d\theta^a+A^a)(d\theta^b+A^b),\qquad
+w=\sqrt{\det h},\qquad F^a=dA^a.
+\]
+All coefficients depend only on the base. With $|F|^2=\frac12h_{ab}F^a_{ij}F^{b\,ij}$, the vertical Ricci trace is
+\begin{equation}\label{eq:orbitvolume}
+\tr_h\Ric^V=-\frac{\Delta_Bw}{w}+\frac12|F|^2 .
+\end{equation}
+Indeed, put $L_i=h^{-1}\partial_i h$, so that
+$\partial_i\log w=\frac12\tr L_i$. The derivative part of the vertical trace is
+$-\frac12\nabla^i\tr L_i-\frac14(\tr L_i)(\tr L^i)
+=-\Delta_B\log w-|d\log w|^2=-w^{-1}\Delta_Bw$.
+The connection-curvature contribution is $\frac14h_{ab}F^a_{ij}F^{b\,ij}$, proving \eqref{eq:orbitvolume}.
+For an exact Einstein metric,
+\[
+(-\Delta_B+|F|^2/2)w=k\lambda w.
+\]
+This scalar equation does not replace the horizontal trace-free equations, boundary-rod periods, corner smoothness, or global positive definiteness. A base-area lower bound does not directly give a lower bound for the orbit-weighted volume $\int_Bw$.
+
+\subsection{An integral restriction from a central Killing field}
+On a closed manifold, a genuine Killing field $Z$ satisfies
+\[
+\int_M|\nabla Z|^2=\int_M\Ric(Z,Z).
+\]
+If $\Ric\le(\Lambda+\delta)g$, the right-hand side is at most
+$(\Lambda+\delta)\int|Z|^2$. In a left-invariant Heisenberg fibre with a central circle action, choose an orthonormal frame
+with $[E_1,E_2]=bE_3$ and $Z=fE_3$, where $f$ is constant along the fibre. Koszul gives
+$\nabla^F_{E_1}E_3=-bE_2/2$,
+$\nabla^F_{E_2}E_3=bE_1/2$, and
+$\nabla^F_{E_3}E_3=0$. Hence
+\[
+|\nabla^FZ|^2=\frac{b^2}{2}|Z|^2
+\le|\nabla Z|^2,\qquad
+\int_Mb^2|Z|^2\le2(\Lambda+\delta)\int_M|Z|^2.
+\]
+This is a weighted integral restriction, not a pointwise bound on $b$. It requires the central action to generate an actual global Killing field; approximate local symmetry, general twisting, or arbitrary nilpotent collapse does not suffice. If $\Ric<0$, the same Bochner identity forces every global Killing field to vanish.
+
+\subsection{Geometric proof and formalization of constant scaling}
+Let $\alpha>0$ be constant. Koszul shows that $g$ and $\alpha g$ have the same Levi--Civita connection and hence the same $(1,3)$ curvature tensor. Taking the trace of
+the linear map $z\mapsto R(z,v)w$ gives
+\[
+\Ric_{\alpha g}(v,w)=\Ric_g(v,w).
+\]
+For $0<c<C$, set
+\[
+\alpha=\frac{c+C}{2},\qquad \varepsilon=\frac{C-c}{C+c};
+\]
+Then $cg\le\Ric_g\le Cg$ is equivalent to
+$(1-\varepsilon)\alpha g\le\Ric_{\alpha g}\le(1+\varepsilon)\alpha g$.
+For $c<C<0$, take
+$\alpha=-(c+C)/2$ and
+$\varepsilon=(C-c)/[-(c+C)]$ to obtain pinching centred at $-1$ in the same way.
+The endpoint equations determine these rescalings uniquely; the scale is not the reciprocal of the midpoint.
+
+\path{MetricScalingNormalization.lean} constructs $\alpha g$ on actual smooth Riemannian metrics and tangent-bundle connections, proves compatibility of the same connection, and uses the linear trace of curvature to prove invariance of the $(0,2)$ Ricci tensor field. Its geometric input is a smooth torsion-free metric-compatible connection and a curvature tensor realizing its commutator; the file does not prove existence of these objects. It formalizes quadratic-form pinching and the endpoint normalization above, but not yet Ricci symmetry or equivalence between quadratic-form pinching and the raised-index operator-norm condition.
+
+The formalization and the following programs are included in
+the \href{../references/computations.md}{computational appendix}.
+The finite Weyl-basis calculation and the bilinear-table calculation are implemented in
+\path{step83_full_weyl_log_annulus_audit.py} and
+\path{step100_chirality_cancellation_proof.py}, respectively.
+These finite computations check coefficients; the arbitrary radial-cutoff identities, nonlinear estimates, and global existence statements have their separate proofs above.
+\clearpage
+\begin{thebibliography}{99}
+\bibitem{Yau1982} S.-T. Yau, \emph{Problem Section}, in \emph{Seminar on Differential Geometry}, Annals of Mathematics Studies 102, Princeton University Press, 1982, 669--706.
+\bibitem{Biquard} O. Biquard, \emph{D\'esingularisation de m\'etriques d'Einstein. I}, Invent. Math. (2013). \url{https://arxiv.org/abs/1105.4904}.
+\bibitem{MV} P. Morteza and J. A. Viaclovsky, \emph{The Calabi metric and desingularization of Einstein orbifolds}, J. Eur. Math. Soc. 22 (2020), 1201--1245. \url{https://arxiv.org/abs/1610.02428}.
+\bibitem{OzuchI} T. Ozuch, \emph{Noncollapsed degeneration of Einstein 4-manifolds, I}, Geom. Topol. (2022). \url{https://arxiv.org/abs/1909.12957}.
+\bibitem{OzuchII} T. Ozuch, \emph{Noncollapsed degeneration of Einstein 4-manifolds, II}, Geom. Topol. 26 (2022). \url{https://arxiv.org/abs/1909.12960}.
+\bibitem{OzuchHigher} T. Ozuch, \emph{Higher order obstructions to the desingularization of Einstein metrics}. \url{https://arxiv.org/abs/2012.13316}.
+\bibitem{OzuchIntegrability} T. Ozuch, \emph{Integrability of Einstein deformations and desingularizations}. \url{https://arxiv.org/abs/2105.13193}.
+\bibitem{BK} S. Brendle and N. Kapouleas, \emph{Gluing Eguchi--Hanson metrics and a question of Page}, Comm. Pure Appl. Math. 70 (2017), 1366--1401. \url{https://arxiv.org/abs/1405.0056}.
+\bibitem{CN} J. Cheeger and A. Naber, \emph{Regularity of Einstein manifolds and the codimension 4 conjecture}. \url{https://arxiv.org/abs/1406.6534}.
+\bibitem{Kroncke} K. Kr\"oncke, \emph{On infinitesimal Einstein deformations}. \url{https://arxiv.org/abs/1508.00721}.
+\bibitem{RupflinToppingCollars} M. Rupflin and P. Topping, \emph{Horizontal curves of hyperbolic metrics}, Appendix A. \url{https://arxiv.org/abs/1605.06691}.
+\bibitem{RupflinToppingQuadratic} M. Rupflin and P. Topping, \emph{Teichm\"uller harmonic map flow into nonpositively curved targets}, Lemma 4.4. \url{https://arxiv.org/abs/1403.3195}.
+\bibitem{DeTurckKazdan} D. DeTurck and J. Kazdan, \emph{Some regularity theorems in Riemannian geometry}, Ann. Sci. \'Ecole Norm. Sup. (4) 14 (1981), 249--260, Theorem 5.2. \url{https://www.numdam.org/item/10.24033/asens.1405/}.
+\bibitem{KapovichLeeb} M. Kapovich and B. Leeb, \emph{Actions of discrete groups on nonpositively curved spaces}, Math. Ann. 306 (1996), 341--352. \url{https://www.math.ucdavis.edu/~kapovich/EPR/KL_1996.pdf}.
+\bibitem{CGLP} M. Cveti\v c, G. Gibbons, H. L\"u and C. Pope, \emph{Bianchi IX self-dual Einstein metrics and singular $G_2$ manifolds}. \url{https://arxiv.org/abs/hep-th/0206151}.
+\bibitem{LeePark} Y. Lee and J. Park, \emph{A construction of Horikawa surface via $\mathbb Q$-Gorenstein smoothings}. \url{https://arxiv.org/abs/0708.3319}.
+\bibitem{AlexeevPardini} V. Alexeev and R. Pardini, \emph{Explicit compactifications of moduli spaces of Campedelli and Burniat surfaces}, arXiv:0901.4431v4 (2025). \url{https://arxiv.org/abs/0901.4431v4}.
+\bibitem{AlexeevPardiniCovers} V. Alexeev and R. Pardini, \emph{Non-normal abelian covers}, Compos. Math. 148 (2012), 1051--1084. \url{https://arxiv.org/abs/1102.4184}.
+\end{thebibliography}
+\end{document}

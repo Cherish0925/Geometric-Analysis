@@ -1,0 +1,344 @@
+% Step 9: Maximal-function selection, curvature-energy transport,
+% and the Weitzenböck rotation constraint
+%
+% This note develops two mathematical constructions for the four-dimensional
+% negative-branch collapse analysis.  Its fixed-cover regularity question and
+% its homothetic-spectrum sentence were corrected in Step 10; see
+% step10_multiscale_cover_and_diffuse_pontryagin.tex.  The maximal-function
+% selection and Weitzenboeck energy calculation remain useful.
+
+\section{Maximal-function good-point selection}
+
+Fix a critical Ishida--LeBrun four-manifold $(M,g_i)$ with
+\[
+\delta_i = \|g_i^{-1}(\operatorname{Ric}_{g_i}+g_i)\|_\infty \to 0.
+\]
+The established near-saturation analysis provides:
+\begin{itemize}
+\item Total curvature energy bound:
+$\int_M |\operatorname{Rm}_i|^2\,d\mu_i \le E_0(A)$
+(from Chern--Gauss--Bonnet, signature, and the near-Einstein condition;
+$A=\sum c_1^2(X_j)$ is the fixed topological parameter).
+\item Calibrated deficit:
+$\int_M F_i\,d\mu_i \to 0$
+where $F_i = |\operatorname{Ric}_i+g_i|^2 + (s_i+8\sqrt6|W_i^+|)^2 + \mathcal{G}_i \ge 0$.
+\item Total volume: $\operatorname{Vol}(M,g_i) \to V_\infty = \frac{32}{9}\pi^2 A > 0$.
+\item Two-sided Ricci bound: $\operatorname{Ric}_i \ge -(1+\delta_i)\cdot 3 g_i \ge -4g_i$
+for $i$ large, hence local volume doubling with constant $C_D = C_D(4,4)$.
+\end{itemize}
+
+\subsection{Hardy--Littlewood maximal function}
+For a nonnegative $L^1$ function $f$ on $(M,g)$ with $\operatorname{Ric}\ge -(n-1)Kg$,
+define
+\[
+\mathcal{M}_R f(p) = \sup_{0 < r \le R} \fint_{B_r(p)} f\,d\mu.
+\]
+The Ricci lower bound gives local volume doubling:
+$\operatorname{Vol}(B_{2r}) \le C_D\operatorname{Vol}(B_r)$ for $r \le R$.
+The standard Vitali-type covering argument then yields the weak-$(1,1)$ estimate:
+\[
+\operatorname{Vol}\bigl(\{\mathcal{M}_R f > K\}\bigr)
+\le \frac{C_D}{K}\int_M f\,d\mu.
+\]
+This does not require noncollapse: only the doubling property, which follows from the
+Ricci lower bound via Bishop--Gromov.
+
+\subsection{Dual selection: curvature and deficit}
+Apply this to both $f = |\operatorname{Rm}_i|^2$ and $f = F_i$ at scale $R = 1$.
+
+\medskip\noindent
+\textbf{Curvature-good set:}
+\[
+G_i^{\rm Rm}(K) = \bigl\{p \in M : \mathcal{M}_1 |\operatorname{Rm}_i|^2(p) \le K\bigr\}.
+\]
+Then $\operatorname{Vol}(M \setminus G_i^{\rm Rm}(K)) \le C_D E_0 / K$.
+
+\medskip\noindent
+\textbf{Deficit-good set:}
+\[
+G_i^F(\varepsilon) = \bigl\{p \in M : \mathcal{M}_1 F_i(p) \le \varepsilon\bigr\}.
+\]
+Then $\operatorname{Vol}(M \setminus G_i^F(\varepsilon)) \le C_D \int F_i / \varepsilon$.
+
+\medskip\noindent
+\textbf{Combined good set:} Choose $K = K_0 = 4 C_D E_0 / V_\infty$ (independent of $i$)
+and $\varepsilon_i = \bigl(\int F_i\bigr)^{1/2} \to 0$. Then
+\[
+G_i = G_i^{\rm Rm}(K_0) \cap G_i^F(\varepsilon_i)
+\]
+satisfies
+\[
+\operatorname{Vol}(G_i) \ge V_\infty - \frac{V_\infty}{4}
+- C_D \Bigl(\int F_i\Bigr)^{1/2} \to \frac{3V_\infty}{4}.
+\]
+For all large $i$, $\operatorname{Vol}(G_i) \ge V_\infty/2 > 0$.
+
+\subsection{What the good set provides}
+Every $p \in G_i$ satisfies, for all $0 < r \le 1$:
+\begin{equation}\label{eq:good-point}
+\fint_{B_r(p)} |\operatorname{Rm}_i|^2\,d\mu_i \le K_0,
+\qquad
+\fint_{B_r(p)} F_i\,d\mu_i \le \varepsilon_i \to 0.
+\end{equation}
+The constant $K_0$ depends on $A$ and $C_D$ but not on $i$ or $r$.
+The deficit bound $\varepsilon_i$ tends to zero uniformly in $r$ and $p \in G_i$.
+This is strictly stronger than having small energy at one radius.
+
+\section{Transport to covering balls}
+
+For $p \in G_i$, let $\widetilde{B}_1(\tilde p)$ be the local universal cover
+of $B_1(p)$, equipped with the pulled-back metric.
+The normal-cover mean-transfer lemma (Step~8, equation (T)) gives,
+for $r \le 1/3$ and any nonneg.\ measurable $\phi$:
+\[
+\fint_{B_r(\tilde p)} \tilde\pi^*\phi\,d\tilde\mu
+\le C_T \fint_{B_r(p)} \phi\,d\mu,
+\qquad C_T = \frac{V_{-K}^{(4)}(1)}{V_{-K}^{(4)}(1/3)}.
+\]
+Applied to $\phi = |\operatorname{Rm}_i|^2$ and $\phi = F_i$:
+\begin{equation}\label{eq:cover-good}
+\fint_{B_r(\tilde p)} |\operatorname{Rm}_i|^2 \le C_T K_0,
+\qquad
+\fint_{B_r(\tilde p)} F_i \le C_T \varepsilon_i
+\qquad\text{for all } r \le 1/3.
+\end{equation}
+The covering degree does not appear: it cancels between the multiplicity
+numerator and the disjoint-deck-translate volume denominator.
+
+\subsection{Absolute energy on the cover}
+The absolute curvature energy on a covering ball is
+\[
+\int_{B_r(\tilde p)} |\operatorname{Rm}|^2\,d\tilde\mu
+= \Bigl(\fint_{B_r(\tilde p)} |\operatorname{Rm}|^2\Bigr)
+\cdot \operatorname{Vol}(B_r(\tilde p))
+\le C_T K_0 \cdot \operatorname{Vol}(B_r(\tilde p)).
+\]
+If the cover has a volume upper bound $\operatorname{Vol}(B_r(\tilde p))\le C_Vr^4$,
+then the absolute energy is at most $C_TK_0C_Vr^4$, hence small for small fixed
+$r$.  Noncollapse supplies the separate lower volume ratio needed for a
+harmonic chart.  If the cover remains collapsed, small absolute energy alone
+does not provide such a chart.
+
+\section{The regularity question}
+
+\subsection{Precise statement}
+\textbf{Question.} Does the following hold?
+For every $K > 0$, there exists $r_*(K) > 0$ such that if $(B_1(\tilde p), \tilde g)$
+satisfies $\operatorname{Ric} \ge -3\tilde g$ and
+\[
+\fint_{B_r(\tilde p)} |\operatorname{Rm}|^2 \le K
+\quad\text{for all } 0 < r \le 1/3,
+\]
+then $\operatorname{Vol}(B_{r_*}(\tilde p)) \ge c(K) r_*^4$?
+
+If yes, combined with \eqref{eq:cover-good}, this would immediately
+give a harmonic chart at scale $r_*$, and the small deficit
+$F_i \to 0$ would produce the forbidden calibrated Einstein germ.
+The calibrated-germ contradiction survives at scale $r_*$ because
+the rescaled Einstein constant is $-r_*^2 \ne 0$.
+
+If no, the cover itself is collapsed despite controlled normalized
+curvature energy at every scale. A countermodel would reveal
+exactly what additional curvature or topological structure is needed.
+
+\subsection{What is known}
+\begin{itemize}
+\item Anderson's $\varepsilon$-regularity: small absolute $\int|Rm|^2 < \varepsilon_0$
+plus volume lower bound gives a harmonic chart. This requires noncollapse as input.
+\item Cheeger--Naber: noncollapse + bounded $|\operatorname{Ric}|$ gives
+codim-4 regularity (Thm~1.4) and, in 4D, finite diffeo types (Thm~1.12).
+These also require noncollapse as input.
+\item Naber--Zhang: under specific GH-model, rank, and model-noncollapsing-radius
+conditions, the local universal cover \emph{is} noncollapsed with controlled
+harmonic radius (Prop~6.4). The question is whether our controlled maximal
+curvature function provides these conditions.
+\item The 4D conformal invariance $\int|Rm|^2 = \text{(scale-invariant)}$
+is consistent but does not by itself produce noncollapse.
+\end{itemize}
+
+\subsection{Choosing a small but fixed scale}
+The calibrated-germ contradiction requires Ric $\approx -g$, not Ric $\approx 0$.
+After rescaling $B_r \to B_1$ by $\tilde g = r^{-2}g$:
+\[
+\operatorname{Ric}_{\tilde g} = \operatorname{Ric}_g = -g + O(\delta) = -r^2\tilde g + O(\delta).
+\]
+For $r$ fixed and $\delta_i \to 0$, the rescaled limit satisfies
+$\operatorname{Ric} = -r^2 g$, hence $s = -4r^2 \ne 0$.
+As a $(1,3)$ tensor $W$ is conformally invariant under constant rescaling,
+but as the curvature endomorphism $W^+:\Lambda^+\to\Lambda^+$ its spectrum
+scales by $r^2$.  Thus the calibrated spectrum becomes
+$(-r^2/6,r^2/12,r^2/12)$.  The projector obstruction and Einstein--Weyl
+identity remain contradictory for every fixed $r>0$; only $r\to0$ sends the
+Einstein scale and the spectral values to zero.
+
+\section{Weitzenb\"ock gradient energy of harmonic self-dual forms}
+
+\subsection{The formula}
+On a 4D Einstein manifold with $\operatorname{Ric} = \lambda g$ ($s = 4\lambda$),
+the Weitzenb\"ock formula for 2-forms (Besse, Theorem 1.143/1.155) is
+\[
+\Delta_d\omega = \nabla^*\nabla\omega + q(R)(\omega),
+\]
+where, for Einstein metrics:
+\[
+q(R)(\omega)_{ij}
+= \underbrace{R_{ik}\omega_{kj} + R_{jk}\omega_{ik}}_{\text{Ricci terms: } 2\lambda\omega_{ij}}
+- 2\underbrace{R_{ikjl}\omega_{kl}}_{\widetilde{R}(\omega)_{ij}}.
+\]
+The endomorphism $\widetilde{R}$ uses the index arrangement
+$R_{ikjl}$, \textbf{not} the curvature-operator arrangement $R_{ijkl}$.
+Its eigenvalues on $\Lambda^2_+$ are \emph{not} the usual $W^+ + s/12$.
+
+For a harmonic form $H$ ($\Delta_d H = 0$) in the $\mu$-eigenspace
+of $\widetilde{R}|_{\Lambda^2_+}$:
+\[
+\nabla^*\nabla H = -(2\lambda - 2\mu)H,
+\qquad
+\int|\nabla H|^2 = -(2\lambda - 2\mu)\int|H|^2.
+\]
+
+\subsection{Numerical verification at the calibrated spectrum}
+
+A direct index computation (script: \texttt{verify\_weitzenbock\_clean.py})
+on an explicit Einstein metric with $\lambda = -1$ and
+$\operatorname{Spec}(W^+) = (-1/6, 1/12, 1/12)$ gives:
+
+\begin{center}
+\begin{tabular}{lccc}
+\hline
+Eigenform & $W^+$ eigenvalue & $\widetilde{R}$ eigenvalue $\mu$
+& $\int|\nabla H|^2 / \int|H|^2$ \\
+\hline
+$\sigma_1$ (simple) & $-1/6$ & $-1/2$ & $\mathbf{1}$ \\
+$\sigma_2$ (double) & $1/12$ & $-1/4$ & $\mathbf{3/2}$ \\
+$\sigma_3$ (double) & $1/12$ & $-1/4$ & $\mathbf{3/2}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\medskip\noindent
+\textbf{Consistency checks:}
+\begin{itemize}
+\item K\"ahler--Einstein with $\lambda=-1$: parallel K\"ahler form $\omega$
+has $\widetilde{R}(\omega) = -1\cdot\omega$, giving
+$q(R)(\omega) = 2(-1)\omega - 2(-1)\omega = 0$. Consistent with $\nabla\omega = 0$. $\checkmark$
+\item K3 surface ($\lambda = 0$, $W^+ = 0$): $\widetilde{R} = 0$,
+$q(R) = 0$, harmonic = parallel. $\checkmark$
+\item Round $S^4$ ($\lambda = 3$, $W^+ = 0$): $\widetilde{R}$ eigenvalues
+make $-(2\lambda-2\mu) < 0$, so no harmonic SD forms.
+Consistent with $b^+_2(S^4) = 0$. $\checkmark$
+\end{itemize}
+
+\subsection{Key conclusion}
+\textbf{At the calibrated Einstein spectrum, all harmonic self-dual 2-forms
+have strictly positive gradient energy.} The gradient energy is at least
+$\int|H|^2$ (for the simple eigenform) and $\frac32\int|H|^2$
+(for the double eigenspace). In particular:
+
+\medskip\noindent
+\textit{The near-harmonic self-dual forms on the near-saturation sequence
+are not nearly parallel. Their covariant derivative has $L^2$ norm
+of the same order as their amplitude.}
+
+\medskip\noindent
+This corrects any implicit assumption from the Codex decomposition
+that the forms might be approximately parallel. The Codex analysis
+correctly established near-constant amplitude, approximate harmonicity,
+and controlled eigenline alignment, but ``nearly parallel'' does not follow
+and is in fact false.
+
+\section{Implications for collapse geometry}
+
+\subsection{Controlled rotation of the eigenline}
+The simple eigenform $\sigma_1$ of $W^+$ (eigenvalue $-1/6$) defines
+a section of the projectivized SD bundle $\mathbb{P}(\Lambda^2_+)$.
+The Weitzenb\"ock identity shows this section has controlled twist:
+$\int|\nabla\sigma_1|^2 = \int|\sigma_1|^2$ at the calibrated limit,
+and $\int|\nabla\sigma_1|^2 = (1 + O(\delta_i))\int|\sigma_1|^2$
+for the near-Einstein sequence.
+
+Since $|\sigma_1| \approx \mathrm{const}$ (from the amplitude control):
+\[
+\fint_M |\nabla\sigma_1|^2\,d\mu \approx |\sigma_1|^2_\infty.
+\]
+The pointwise covariant derivative is, on average, comparable to the
+amplitude. The eigenline direction rotates at an $O(1)$ rate.
+
+\subsection{Rotation is a base phenomenon in fibered collapse}
+In a regular fibered collapse with fiber $F$ of size $\ell \to 0$,
+decompose $\nabla\sigma_1 = \nabla_B\sigma_1 + \nabla_V\sigma_1$.
+The fiber holonomy of the $\Lambda^2_+$ bundle around a closed
+fiber loop of length $\sim\ell$ is $O(|\operatorname{Rm}|\cdot\ell^2)$.
+For bounded curvature, this is $O(\ell^2)$, giving
+$|\nabla_V\sigma_1| \sim O(\ell)\cdot|\sigma_1|$ and
+$\int|\nabla_V\sigma_1|^2 = O(\ell^2)\int|\sigma_1|^2 \to 0$.
+
+Therefore the horizontal gradient must carry the full energy:
+\[
+\int|\nabla_B\sigma_1|^2 \approx \int|\sigma_1|^2.
+\]
+The $O(1)$ rotation rate lives in the base directions, not the collapsing
+fibers. This means the base geometry (a 1-, 2-, or 3-dimensional space)
+must support a section of the SD eigenline bundle with substantial
+covariant derivative energy.
+
+\subsection{No contradiction from gradient energy alone}
+The positive gradient energy does not by itself exclude collapse.
+A collapsed metric can accommodate rotating self-dual eigenlines.
+However, on any \emph{noncollapsed regular patch} where the metric
+converges to a smooth Einstein limit, the full Einstein equations
+force the projector obstruction: constant calibrated $W^+$ spectrum
+requires $\nabla W^+ = 0$, which requires $|\nabla W^+|^2 = 0$,
+contradicting the Einstein--Weyl identity's requirement
+$|\nabla W^+|^2 = 1/16$.
+
+The gradient energy computation adds precision to the geometric picture:
+\textit{the collapsed sequence must accommodate a controlled rotating
+eigenline while avoiding every regular patch on which the full Einstein
+equations would make that rotation impossible.}
+
+\section{Combined framework and the remaining question}
+
+\subsection{What is established}
+On the fixed critical Ishida--LeBrun manifold with $\delta_i\to0$:
+\begin{enumerate}
+\item A combined good set $G_i$ of volume $\ge V_\infty/2$ exists
+where both $\mathcal{M}_1|\operatorname{Rm}|^2 \le K_0$
+and $\mathcal{M}_1 F_i \le \varepsilon_i\to0$.
+\item On the local universal cover of any good-point ball,
+both normalized means transport without sheet-number loss.
+\item If the cover at any fixed scale $r_* > 0$ is noncollapsed,
+the harmonic chart, small deficit, and projector obstruction
+combine to give a contradiction.
+\item All harmonic SD forms have $O(1)$ gradient energy per unit
+amplitude at the calibrated spectrum, forcing eigenline rotation
+at a controlled rate. This rotation lives in the base directions.
+\end{enumerate}
+
+\subsection{What remains}
+The corrected question is whether the simultaneous curvature and calibrated
+deficit bounds permit one to choose a buffered downstairs domain, before
+taking its normal cover, at some scale bounded below in terms of $K$, so that
+the cover is noncollapsed.  A cover fixed from an oversized domain is not the
+right invariant object.
+
+Stated precisely: does $\fint_{B_r(\tilde p)}|\operatorname{Rm}|^2 \le K$
+for all $r \le 1/3$, combined with $\operatorname{Ric}\ge -3g$,
+imply $\operatorname{Vol}(B_{r_*}(\tilde p)) \ge c(K)r_*^4$
+for some $r_*(K) > 0$?
+
+If yes: the four-dimensional negative-branch fixed-topology pinching
+gap is proved.
+
+If no: the failure mode---the cover itself being collapsed despite
+controlled mean curvature at every scale---becomes a precise
+geometric object to study. The eigenline rotation constraint
+then serves as an additional structural input.
+
+\subsection{Files}
+\begin{itemize}
+\item Verification script: \texttt{workspace/scripts/verify\_weitzenbock\_clean.py}
+\item Previous curvature-energy script: \texttt{workspace/scripts/verify\_weitzenbock\_gradient\_energy.py}
+\item Step 8 cover-mean transport: \texttt{workspace/notes/step8\_cover\_mean\_transport\_and\_model\_scope\_corrections.md}
+\item Step 6 projector obstruction: \texttt{workspace/notes/step6\_local\_projector\_obstruction\_and\_collapse\_reduction.tex}
+\end{itemize}

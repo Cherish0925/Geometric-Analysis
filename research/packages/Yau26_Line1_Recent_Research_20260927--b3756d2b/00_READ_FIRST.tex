@@ -1,0 +1,370 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  10pt,
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[a4paper,margin=18mm]{geometry}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{esint}
+\usepackage{xeCJK}
+\setmainfont{DejaVu Serif}
+\setmonofont{DejaVu Sans Mono}
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKmonofont{Noto Sans Mono CJK SC}
+\setmathfont{Asana Math}
+\setmathfont{Latin Modern Math}[range=\lrcorner]
+\setlength{\emergencystretch}{3em}
+\allowdisplaybreaks
+\hypersetup{hypertexnames=false}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\hypertarget{ux7b2cux4e00ux79d1ux5b66ux4e3bux7ebfux4e03ux6b21ux63d0ux4ea4ux7684ux7814ux7a76ux8fdbux5c55ux4e0eux96c6ux4e2dux5ba1ux8bfb}{%
+\section{第一科学主线：七次提交的研究进展与集中审读}\label{ux7b2cux4e00ux79d1ux5b66ux4e3bux7ebfux4e03ux6b21ux63d0ux4ea4ux7684ux7814ux7a76ux8fdbux5c55ux4e0eux96c6ux4e2dux5ba1ux8bfb}}
+
+研究快照：844e62f，2026年9月27日。范围：168bea5
+之后的七次提交、六份新增证明，以及审读它们所需的选定前置原稿。本文件是导读，不是新增定理或数学正确性认证。
+
+\hypertarget{ux73b0ux5728ux53efux4ee5ux4ea4ux6d41ux4f46ux6ca1ux6709ux7814ux7a76ux5230ux6781ux81f4}{%
+\subsection{1.
+现在可以交流，但没有``研究到极致''}\label{ux73b0ux5728ux53efux4ee5ux4ea4ux6d41ux4f46ux6ca1ux6709ux7814ux7a76ux5230ux6781ux81f4}}
+
+目前不能声称所有自然推广、锐利边界、实际应用和存在性问题已经穷尽。平衡手术族的最佳首项系数、一般积分弱误差零端、原始输入到完整带标记核心的连接仍未闭合。也没有证据证明当前体系是全领域``最强、最普遍''的理论。
+
+这与现在进行集中审读不矛盾。此次已经形成一个连贯的增量：从线性拓扑代价，到更强的实际全度量应用，再到零端的几何条件、完整核心成本和极值／演化的实际检验。继续研究可以与完整证明交流并行，不必等到``再也不能研究''才允许别人看原稿。
+
+各项在项目中登记为
+manuscript-theorem，表示正文有命题与论证，并非已经通过外部同行认证。代理交叉审读、有限代数测试和来源哈希承担不同任务，不能相互替代。
+
+\hypertarget{ux7a33ux5b9aux4e2dux5fc3ux4e0eux5f53ux524dux589eux91cf}{%
+\subsection{2.
+稳定中心与当前增量}\label{ux7a33ux5b9aux4e2dux5fc3ux4e0eux5f53ux524dux589eux91cf}}
+
+第一主线的中心保持为：
+
+实际规范输入 → 受控的实际场 → 曲率微分相容性 → 统一定量非饱和 →
+全度量拓扑判断。
+
+核心困难是：精确等号不可能，并不自动保证在可以退化的度量空间中存在统一残差间隙。原稿通过真实加权旋量、二阶积分预算和弱
+Bianchi 自测试，定量检测不相容性。LeBrun
+的规范曲率理论与等号几何是重要输入；不能将经典工作描述为``只有代数''。
+
+新的全局实现、允许谱、填充和流各有自己的假设与输出。它们可以扩展第一主线，但不能反过来掩盖已经成文的障碍主干，也不能被拼成未证明的无条件障碍／存在性二分。
+
+本包首先提供近期全部证明，然后补入技术前置。旧八卷中的受限
+KE、双圆盘、复双曲和覆盖实现仍然有效地保留在其各自范围中；本包没有重传这些已交流过的独立证明，不表示它们被撤回或降格。
+
+\hypertarget{ux4e03ux6b21ux63d0ux4ea4ux5b9eux9645ux6539ux53d8ux4e86ux4ec0ux4e48}{%
+\subsection{3.
+七次提交实际改变了什么}\label{ux4e03ux6b21ux63d0ux4ea4ux5b9eux9645ux6539ux53d8ux4e86ux4ec0ux4e48}}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+\begin{minipage}[b]{0.30\columnwidth}\raggedright
+提交\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedright
+新稿或续写位置\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedright
+数学变化\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+b2653dc\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+mixed\_current\_and\_signed\_cores，§§4--5\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+去掉二阶预算中的背景体积项；实际同解自测试闭合；小 h
+下界由二次提高到线性。\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+1b9a80d\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+同稿 §8\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+继续零端实际扭率长度与耦合方程；不是另一份独立论文，也未闭合一般零端。\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+46e7efc\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+conformal\_separation\_and\_zero\_end\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+共形转移去掉标量方差；真实 BF 新排除带；几何零端与真实局部核心。\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+cee6c6b\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+covering\_geometry\_and\_sharp\_subfamilies\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+局部覆盖转移；只添柄子族的全度量精确下确界；单手性帽成本；有条件 ALE
+匹配。\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+0c8059f\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+local\_geometry\_and\_variational\_extrema\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+有界 Ricci 的 Euler
+密度零端；实际领口例外与局部解；极值与方向能量判据。\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+754bc3a\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+full\_core\_cost\_and\_extremal\_metrics\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+整个光滑核心的锐利代价；椭圆类积分 Ricci
+接口；同解余量与驻点集中。\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+844e62f\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+signed\_balance\_and\_conformal\_flow\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+实际共形流时间界；真实 SW 的 Weyl 支付锐利性；完整 Hessian
+与受限核心提取。\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+三份近期阅读卷分别完整收录上述六稿，未删证明段落。提交数、原稿数和独立数学贡献数不是同一个数。
+
+\hypertarget{ux6309ux7ed3ux8bbaux9605ux8bfbux800cux4e0dux662fux6309ux8f6eux6b21ux91cdux65b0ux5206ux914dux4efbux52a1}{%
+\subsection{4.
+按结论阅读，而不是按轮次重新分配任务}\label{ux6309ux7ed3ux8bbaux9605ux8bfbux800cux4e0dux662fux6309ux8f6eux6b21ux91cdux65b0ux5206ux914dux4efbux52a1}}
+
+\hypertarget{ux5df2ux7ecfux95edux5408ux7684ux7ebfux6027ux9636ux4e0eux5b9eux9645ux5e94ux7528}{%
+\subsubsection{4.1
+已经闭合的线性阶与实际应用}\label{ux5df2ux7ecfux95edux5408ux7684ux7ebfux6027ux9636ux4e0eux5b9eux9645ux5e94ux7528}}
+
+在原稿规定的逐度量实际类供给、正投影预算及类平方条件下，对
+\(0<h\le1/3\)，I40 给出
+
+\[
+\mathcal E(g)+(U-1-h)_+\ge ch.
+\]
+
+在既有真实平衡族上，
+
+\[
+c_1h_j\le\inf_g\mathcal E(g)\le\frac{4h_j}{1+h_j}.
+\]
+
+所以该族的阶数已为线性；未知的是全部度量上的最佳首项系数。不能继续将``证明线性阶''作为尚未开始的主任务。
+
+I41 用负 Yamabe 代表与精确共形能量恒等式证明
+
+\[
+\Sigma\le C\left(P_{\mathrm{Ric}}+D_2+
+ \sqrt{(P_{\mathrm{Ric}}+D_2)(T_+-a^2)_+}\right).
+\]
+
+其真实 BF 应用进入旧二次排除带覆盖不了的线性窗口。普通 SW
+消失、取向和概复结构等应用属性须按完整构造核对，不能用形式参数点代替实际流形。
+
+只添柄的复双曲子族另有精确值
+
+\[
+\inf_g\mathcal E(g)=\frac{4h}{1+h},\qquad 0\le h\le1/3.
+\]
+
+这没有解决同时吹起与添柄的平衡族最佳系数。
+
+\hypertarget{ux96f6ux7aefux5df2ux53d6ux5f97ux7684ux662fux4e0dux540cux6761ux4ef6ux4e0bux7684ux5f3aux7ed3ux8bba}{%
+\subsubsection{4.2
+零端：已取得的是不同条件下的强结论}\label{ux96f6ux7aefux5df2ux53d6ux5f97ux7684ux662fux4e0dux540cux6761ux4ef6ux4e0bux7684ux5f3aux7ed3ux8bba}}
+
+I45 处理有界 Ricci、形式幅度和 Euler 密度的近似输入；它不要求精确
+Einstein、直径界或底空间非塌缩。特定一般型手术族的拓扑自动提供所需密度预算，因而有原始逐点缺陷版本的统一参数加强。
+
+I48 的两个替代版本分别使用：
+
+\begin{itemize}
+\tightlist
+\item
+  明确椭圆曲率方程，加固定尺度足够小的归一化局部负 Ricci \(L^p\)
+  预算（\(p>2\)），并保留形式幅度及 Euler
+  密度界（或正文证明可替代它的拓扑比值）；
+\item
+  真实常标量二次曲率驻点，加全局 Sobolev 与指定拓扑上界。
+\end{itemize}
+
+两者均不能未经证明用于任意积分近 Einstein
+序列。它们也不应在摘要中被合写成``已经无条件删除几何假设''。
+
+\hypertarget{ux5c40ux90e8ux6a21ux578bux4e0eux6574ux4e2aux5149ux6ed1ux6838ux5fc3ux4e0dux662fux540cux4e00ux4e2aux95eeux9898}{%
+\subsubsection{4.3
+局部模型与整个光滑核心不是同一个问题}\label{ux5c40ux90e8ux6a21ux578bux4e0eux6574ux4e2aux5149ux6ed1ux6838ux5fc3ux4e0dux662fux540cux4e00ux4e2aux95eeux9898}}
+
+I46 找到实际局部允许的奇数阶商与行列式类，并构造其局部加权解。I47
+随后证明，对奇数 \(n\ge3\)，物理定向商 \(1/n(1,-2)\)
+具有相容向外平直锥领口的整个光滑填充具有锐利代价
+
+\[
+\inf\int\left(|\operatorname{Ric}^{\circ}|^2+
+4|W^+|^2+\frac{s^2}{12}\right)=4\pi^2\frac{n-1}{n}.
+\]
+
+因此局部可解不等于可以免费完成光滑填充。最近一稿在额外驻点、非塌缩及绝对能量条件下提取了真实终端
+ALE
+核心，但没有自动证明非零实际旋量在同一缩放尺度保留下来，更没有识别完整手术区域。
+
+\hypertarget{ux6781ux503cux548cux6d41ux63d0ux4f9bux4e86ux5b9eux9645ux68c0ux9a8cux800cux975eux65b0ux7684ux603bux89e3ux5ba3ux544a}{%
+\subsubsection{4.4
+极值和流提供了实际检验，而非新的总解宣告}\label{ux6781ux503cux548cux6d41ux63d0ux4f9bux4e86ux5b9eux9645ux68c0ux9a8cux800cux975eux65b0ux7684ux603bux89e3ux5ba3ux544a}}
+
+I49 把已有三项静态预算送入共形 Ricci 流。在 \(s=-4\) 归一化的真实平衡族
+\(h_j\to0\) 上，取 \(0<c_1<4\)，对满足
+\(\mathcal E(g_j(0))\le4h_j/(1+h_j)+h_j^2\) 的实际初值，
+
+\[
+\limsup T_{\max}\le1+\log(4/c_1),
+\]
+
+其中 \(c_1h\) 是已知全度量缺陷下界。不假设极小值达到；这不是普通归一化
+Ricci 流，也没有分类其奇点。
+
+X06 在固定光滑曲面乘积上用实际、未扰动 SW 解取得
+
+\[
+\mathscr S/F\to2,\qquad P_{\mathrm{Ric}}/F\to0.
+\]
+
+通用有符号估计中的 Weyl 支付系数 2 不能降低，即使加固定倍数 Ricci
+能量。该例位于 \(h=0,U=3\)，不是平衡手术族的反例；平衡族仍需研究保留
+\(2F\) 后的有符号差。完整 Hessian
+配方则表明，纯共形方向不能提供所期待的负方向，待判断的是降维 TT 形式。
+
+\hypertarget{ux4fddux7559ux539fux6587ux65f6ux5fc5ux987bux540cux65f6ux4fddux7559ux7684ux72b6ux6001ux66f4ux65b0}{%
+\subsection{5.
+保留原文时必须同时保留的状态更新}\label{ux4fddux7559ux539fux6587ux65f6ux5fc5ux987bux540cux65f6ux4fddux7559ux7684ux72b6ux6001ux66f4ux65b0}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  早期实际代价稿只得到集中必要性；I40
+  后来闭合线性下界。该历史稿不能代表最新状态。
+\item
+  mixed\_current 稿 §4.3 及当时核查记录仍称无标量方差估计未证；下一稿 §1
+  已经证明。
+\item
+  早期零端稿将有界 Ricci 加 Euler 密度列为未完成；I45
+  随后完成该有条件版本。纯积分无条件版本仍未完成。
+\item
+  终端局部解、整个光滑填充、完整带标记手术核心、非零实际场的同尺度延拓，必须分别判断。
+\item
+  只添柄子族的系数 4、平衡族的未知最佳系数、h=0 上 Weyl 支付系数
+  2，是三个不同的锐利性问题。
+\item
+  原稿中的``不制作网页包''记载当时的交付选择，不改变此刻用户请求整理阅读包的权限。
+\end{enumerate}
+
+原文的旧状态不静默改写。引用结论时使用``阅读卷＋原稿文件名＋原节号／公式号''，并检查后续的上述更新。
+
+\hypertarget{ux8fd9ux6b21ux4ea4ux6d41ux5e94ux4f18ux5148ux56deux7b54ux7684ux516dux4e2aux95eeux9898}{%
+\subsection{6.
+这次交流应优先回答的六个问题}\label{ux8fd9ux6b21ux4ea4ux6d41ux5e94ux4f18ux5148ux56deux7b54ux7684ux516dux4e2aux95eeux9898}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{核心闭合是否完整？} 检查 I40 §4 的 KE 模型作用消去、精确
+  Hessian 余项、负平方成本吸收及弱 Bianchi
+  测试，常数是否确实不依赖退化几何。若有缺口，给出具体公式和缺失估计。
+\item
+  \textbf{实际拓扑增量是否成立？} 检查 I41 §4 的 BF 供给、移动 geography
+  阈值、整数取值和新线性窗口，逐项与旧二次带及最近邻经典结论比较。
+\item
+  \textbf{零端条件是否准确传递？} 特别核对 I45 所引用的有界 Ricci
+  覆盖正则性、局部提升重数与 Liouville 平均；I48
+  的两组附加假设不能省略。
+\item
+  \textbf{完整核心代价是否真正锐利？} 检查定向、eta
+  符号、边界整数、近锥误差及经典 ALE
+  截断上界；是否适用于声明的全部内部拓扑。
+\item
+  \textbf{实际变分与演化连接是否可靠？} 核对 I49
+  的压力规范、三个能量壁、非空初值窗口与最大光滑时间；核对 X06
+  的规范固定可逆性、实际解一阶变化和退化对角选择。
+\item
+  \textbf{哪一个新命题最值得继续？} 在保留 Weyl 支付的平衡族比较、降维
+  TT
+  稳定性、实际场的同尺度核心延拓之间，提出有完整量词、最弱充分条件及可检验反例的命题。不要重新布置已经闭合的阶数问题。
+\end{enumerate}
+
+对每项审读，请区分``已逐式核对''``依赖尚未取得的文献原句''``疑似缺口''``明确反例''``新的待证建议''。没有完整推导时，不将积极评价累积成正确性或期刊等级认证。
+
+\hypertarget{ux6587ux4ef6ux4f7fux7528ux4e0eux8bb0ux53f7}{%
+\subsection{7.
+文件使用与记号}\label{ux6587ux4ef6ux4f7fux7528ux4e0eux8bb0ux53f7}}
+
+MD 是保留原稿字节的阅读汇编；TeX
+是同一内容的可编辑排版，不是另一套成果。生成 TeX 时将 split
+改为支持多列的 aligned
+环境，并把编号移到环境外，以满足编译规则，不改公式内容；未放进数学定界符的行内写法保留为普通文字。优先提供
+MD；需要公式排版时再用对应 TeX，避免将两种格式当作重复新内容阅读。
+
+每篇前标明原始路径、原稿 SHA-256
+和段落边界。末卷列来源、继承关系和原核查记录。脚本、数值日志、PDF、运行时状态及历史大档案不进入本阅读压缩包；需要复算某个具体步骤时，再按原路径取程序。
+
+各篇记号以各自定义为准。例如早稿的 \(P=\nabla_A\Phi\) 与后来
+\(P=\int|\operatorname{Ric}^{\circ}|^2\) 不同；变分节中的 \(a=4-\alpha\)
+也不是规范类 \(a\)。\(U\) 的指定取向与取两取向最小值的版本须分清。
+
+本包是近期研究的完整原稿汇编，加选定技术前置；不是整个项目所有年代、所有分支或全部外部文献的全集。形成阅读包不等于结束研究，也不等于已经发表。
+
+\end{document}

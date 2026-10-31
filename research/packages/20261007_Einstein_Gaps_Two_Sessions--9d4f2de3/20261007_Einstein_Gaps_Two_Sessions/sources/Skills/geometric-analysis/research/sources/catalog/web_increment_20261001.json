@@ -1,0 +1,496 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-01",
+  "purpose": "Source-to-manuscript coverage of the complete two-web research increment; this is a preservation index, not a count or certification of theorems.",
+  "path_conventions": {
+    "package_root": "archive/sources/20261001-web-increment/Line1_Web_Increment_20260929_30",
+    "coverage_files": "Every path in coverage.files is relative to package_root and occurs exactly once.",
+    "project_paths": "Preserved downloads, manuscript components, and assembly paths are relative to the project root.",
+    "paper_labels": "Labels refer to the assembled manuscript. PLAN line ranges are inclusive source selections; 10000 denotes selection through the source end."
+  },
+  "baseline": {
+    "git_commit": "d40dffe",
+    "manuscript": "handoff/20260929_Line1_Integrated_Manuscript.tex",
+    "incoming_baseline_identity": "SOURCE_MANIFEST.json records the filename, size, original upload identity, and existing checksum of the September 29 manuscript.",
+    "preservation": "The previous handoff and all inherited mathematical sources remain separate from the October 1 assembly."
+  },
+  "original_download_inputs": [
+    {
+      "download_path": "/home/ubuntu/下载/Line1_Web_Increment_20260929_30 (1).zip",
+      "preserved_path": "archive/sources/20261001-web-increment/Line1_Web_Increment_20260929_30.original.zip",
+      "role": "Complete original incoming archive; its expanded 102-file payload is indexed below."
+    },
+    {
+      "download_path": "/home/ubuntu/下载/00_新增研究整合说明 (1).md",
+      "preserved_path": "archive/sources/20261001-web-increment/00_downloaded_integration_note.md",
+      "role": "Separately downloaded integration note, retained independently of the package's own note."
+    }
+  ],
+  "incoming_provenance": {
+    "manifest": "SOURCE_MANIFEST.json",
+    "manifest_entries": 96,
+    "package_file_count": 102,
+    "package_level_files_outside_manifest_entries": 6,
+    "original_archive_member_map": "ORIGINAL_ARCHIVE_MAP.json",
+    "nested_original_archives": 2,
+    "nested_archive_members": 14,
+    "validation_receipt": "VALIDATION.json",
+    "attribution_and_dependency_map": "02_成果归属与依赖衔接.md",
+    "checksum_policy": "Use the incoming manifest and archive-member map for existing hashes and original paths. This coverage index does not calculate or repeat checksums.",
+    "scope": "The 102-file count includes the two nested ZIP files, not a second count of their members. Each nested member is locatable through ORIGINAL_ARCHIVE_MAP.json. The two outer preserved downloads are recorded separately above."
+  },
+  "manuscript": {
+    "working_source": "paper/Integral_Einstein_Rigidity.tex",
+    "handoff": "handoff/20261001_Line1_Integrated_Manuscript.tex",
+    "assembly_plan": "tools/build_english_manuscript.py:PLAN",
+    "translated_or_merged_components": [
+      "paper/sections/finite_density_endpoint.tex",
+      "paper/sections/variational_selection_and_global_cost.tex",
+      "paper/sections/web_density_and_geometric_supplements.tex",
+      "paper/sections/web_variational_supplements.tex",
+      "paper/sections/web_primitive_rate.tex"
+    ],
+    "coverage_basis": "The integration PLAN and the designated mathematical English components. Placement is distinguished from source preservation, compilation, independent proof review, and publication."
+  },
+  "dispositions": {
+    "imported_full_math": "Complete mathematical arguments selected by the recorded PLAN ranges and converted to English LaTeX. This does not mean a byte-for-byte import of status text or of every passage outside those ranges.",
+    "translated_or_merged_math": "Mathematical content translated or integrated by dependency into a manually edited English component; the source and any unselected observations remain intact.",
+    "overlapping_earlier_proofs": "Earlier arguments, independent checks, compatible source copies, or companion presentations. Related results enter the listed manuscript locations, but no whole-file supersession or complete duplication is asserted.",
+    "working_attempts_retained_intact": "Working derivations, candidate routes, or partial analyses preserved as source records without being promoted wholesale to a current theorem.",
+    "metadata_and_computational_attachments": "Provenance, status, source-navigation, literature-positioning, scripts, receipts, numerical outputs, and original containers. Their preservation does not independently validate the mathematical claims."
+  },
+  "coverage": [
+    {
+      "id": "strong_current_import",
+      "disposition": "imported_full_math",
+      "files": ["research/C/O10_Strong_Current_Prerequisite.md"],
+      "plan_ranges": [[13, 10000]],
+      "paper_labels": ["sec:web-strong-current"],
+      "note": "R1/R2 and their exact scope; supplies the actual strong-current input to the finite-density theorem."
+    },
+    {
+      "id": "direct_resolvent_import",
+      "disposition": "imported_full_math",
+      "files": ["research/C/O10_Direct_Resolvent_Prerequisite.md"],
+      "plan_ranges": [[5, 10000]],
+      "paper_labels": ["sec:web-direct-resolvent"]
+    },
+    {
+      "id": "first_prolongation_import",
+      "disposition": "imported_full_math",
+      "files": ["research/B/O10_Resolvent_Prolongation.md"],
+      "plan_ranges": [[5, 216]],
+      "paper_labels": ["sec:web-first-prolongation"],
+      "note": "Retains the independent prolongation and adjoint argument, although the main finite-density proof uses the direct mass-phase-Dirac reduction."
+    },
+    {
+      "id": "weak_bianchi_import",
+      "disposition": "imported_full_math",
+      "files": ["research/C/O10_Weak_Bianchi.md"],
+      "plan_ranges": [[5, 213], [230, 10000]],
+      "paper_labels": ["sec:web-weak-bianchi"]
+    },
+    {
+      "id": "density_rate_import",
+      "disposition": "imported_full_math",
+      "files": ["research/D/O10_Alternative_Global.md"],
+      "plan_ranges": [[5, 10000]],
+      "paper_labels": ["sec:web-density-rate"],
+      "note": "Includes the fixed primitive-error aggregate, growing-energy exclusion, and the exact obstruction to the amplitude-weighted shortcut."
+    },
+    {
+      "id": "unbounded_reductions_import",
+      "disposition": "imported_full_math",
+      "files": ["research/D/O10_Unbounded_Density.md"],
+      "plan_ranges": [[5, 233]],
+      "paper_labels": ["sec:web-unbounded-reductions"]
+    },
+    {
+      "id": "double_weighted_import",
+      "disposition": "imported_full_math",
+      "files": ["research/E/O10_Double_Weighted_Test.md"],
+      "plan_ranges": [[7, 10000]],
+      "paper_labels": ["sec:web-double-weighted"]
+    },
+    {
+      "id": "radial_measure_import",
+      "disposition": "imported_full_math",
+      "files": ["research/E/O10_Global_Closure_Attempt.md"],
+      "plan_ranges": [[22, 258]],
+      "paper_labels": ["sec:web-radial-measure"],
+      "note": "The selected defect-measure identities and weak tests retain their unclosed final implication."
+    },
+    {
+      "id": "mass_transfer_import",
+      "disposition": "imported_full_math",
+      "files": ["research/F/O10_Actual_Mass_Transfer.md"],
+      "plan_ranges": [[5, 10000]],
+      "paper_labels": ["sec:web-mass-transfer"]
+    },
+    {
+      "id": "radial_matrix_import",
+      "disposition": "imported_full_math",
+      "files": ["research/F/O10_Radial_Matrix_Identity.md"],
+      "plan_ranges": [[5, 184]],
+      "paper_labels": ["sec:web-radial-matrix"]
+    },
+    {
+      "id": "exact_hessian_import",
+      "disposition": "imported_full_math",
+      "files": ["research/F/O10_Exact_Hessian_Budget_Check.md"],
+      "plan_ranges": [[5, 10000]],
+      "paper_labels": ["sec:web-exact-hessian"]
+    },
+    {
+      "id": "line_limitation_import",
+      "disposition": "imported_full_math",
+      "files": ["research/C/O10_LineBundle_Limitation.md"],
+      "plan_ranges": [[7, 10000]],
+      "paper_labels": ["sec:web-line-limitation"]
+    },
+    {
+      "id": "vector_scope_import",
+      "disposition": "imported_full_math",
+      "files": ["research/C/O10_Vector_Obstruction.md"],
+      "plan_ranges": [[17, 230]],
+      "paper_labels": ["sec:web-vector-scope"],
+      "note": "Mathematical Sections 2-5 retain the orthogonal-obstruction estimate and its scale; it is not discarded as a duplicate of the line-bundle proof."
+    },
+    {
+      "id": "local_system_import",
+      "disposition": "imported_full_math",
+      "files": ["research/E/O10_Local_Model_And_Prolongation_Audit.md"],
+      "plan_ranges": [[5, 61]],
+      "paper_labels": ["sec:web-local-system"]
+    },
+    {
+      "id": "ordinary_competitors_import",
+      "disposition": "imported_full_math",
+      "files": ["research/C/O11_Geometry_Competitor.md"],
+      "plan_ranges": [[5, 126]],
+      "paper_labels": ["sec:web-ordinary-competitors"]
+    },
+    {
+      "id": "bulk_invariance_import",
+      "disposition": "imported_full_math",
+      "files": ["research/D/O11_Competitors.md"],
+      "plan_ranges": [[21, 101]],
+      "paper_labels": ["sec:web-bulk-invariance"]
+    },
+    {
+      "id": "ideal_minimizers_import",
+      "disposition": "imported_full_math",
+      "files": ["research/E/O11_Ideal_Minimizer.md"],
+      "plan_ranges": [[5, 10000]],
+      "paper_labels": ["sec:web-ideal-minimizers"]
+    },
+    {
+      "id": "full_collar_cost_import",
+      "disposition": "imported_full_math",
+      "files": ["research/F/O11_Constructive_Audit.md"],
+      "plan_ranges": [[5, 57], [83, 10000]],
+      "paper_labels": ["sec:web-full-collar-cost"],
+      "note": "Mathematical complete-collar and filling costs are imported; the numerical candidate records remain separately indexed below."
+    },
+    {
+      "id": "critical_stability_import",
+      "disposition": "imported_full_math",
+      "files": ["research/F/O11_Critical_Stability_Attempt.md"],
+      "plan_ranges": [[5, 127]],
+      "paper_labels": ["sec:web-critical-stability"],
+      "note": "The calculation keeps the extra smooth exact critical-metric hypotheses and does not become a theorem for arbitrary weak near-minimizers."
+    },
+    {
+      "id": "entropy_scope_import",
+      "disposition": "imported_full_math",
+      "files": ["research/E/O11_BCG_Test.md"],
+      "plan_ranges": [[5, 89]],
+      "paper_labels": ["sec:web-entropy-scope"]
+    },
+    {
+      "id": "cover_topology_import",
+      "disposition": "imported_full_math",
+      "files": ["research/E/O11_Global_Alternative.md"],
+      "plan_ranges": [[5, 69]],
+      "paper_labels": ["sec:web-cover-topology"]
+    },
+    {
+      "id": "field_selection_import",
+      "disposition": "imported_full_math",
+      "files": ["research/E/O11_Closure_Attempt.md"],
+      "plan_ranges": [[5, 72]],
+      "paper_labels": ["sec:web-field-selection"]
+    },
+    {
+      "id": "finite_density_core_merge",
+      "disposition": "translated_or_merged_math",
+      "files": [
+        "research/C/O10_All_Finite_Density.md",
+        "research/C/O10_Topological_Escape.md"
+      ],
+      "paper_components": ["paper/sections/finite_density_endpoint.tex"],
+      "paper_labels": ["sec:finite-density-endpoint", "thm:finite-density-endpoint", "lem:rank-one-logarithmic-resolvent"],
+      "note": "Full finite-B contradiction, the general closed-two-form pairing lemma, actual fifth-power section, and all-parameter conformal transfer. Strong-current and direct-resolvent inputs also have full mathematical appendices."
+    },
+    {
+      "id": "global_variational_merge",
+      "disposition": "translated_or_merged_math",
+      "files": [
+        "research/A/02_O11_Variational_Selection.md",
+        "research/A/03_O11_Classical_Budget.md",
+        "research/D/O11_Global_Sharp.md"
+      ],
+      "paper_components": ["paper/sections/variational_selection_and_global_cost.tex"],
+      "paper_labels": ["sec:variational-selection-global-cost"],
+      "note": "Critical integral selection, the complete ordinary surgery-family class budget, and the same-metric signed decomposition; none determines the unrestricted optimal first coefficient."
+    },
+    {
+      "id": "other_web_direct_work_merge",
+      "disposition": "translated_or_merged_math",
+      "files": ["other_web/01_Direct_Work.md"],
+      "paper_components": ["paper/sections/web_variational_supplements.tex"],
+      "paper_labels": ["sec:web-threshold-variation", "sec:finite-density-endpoint"],
+      "note": "The O11 threshold-functional selection is incorporated as a distinct argument. The earlier O10 B < 3/8 proof and its signed-identity observations remain intact in the source; the finite-B theorem enlarges that range without asserting whole-file supersession."
+    },
+    {
+      "id": "positive_potential_translation",
+      "disposition": "translated_or_merged_math",
+      "files": ["other_web/03_Finite_Density_Fifth_Line.md"],
+      "paper_components": ["paper/sections/web_density_and_geometric_supplements.tex"],
+      "paper_labels": ["sec:web-positive-potential"],
+      "note": "Full fifth-line construction, weak Cauchy-Riemann argument, positive potential 10/3, and legal resolvent test; an alternative proof to rank-one Chern pairing."
+    },
+    {
+      "id": "growing_energy_translation",
+      "disposition": "translated_or_merged_math",
+      "files": ["other_web/04_Quantitative_Escape.md"],
+      "paper_components": ["paper/sections/web_density_and_geometric_supplements.tex"],
+      "paper_labels": ["sec:web-growing-energy-chern"],
+      "note": "Growing-energy Chern pairing, quantitative fifth-line mass/energy, and exponential escape. The stronger later polynomial consequence does not discard this independent analytic argument."
+    },
+    {
+      "id": "inverse_amplitude_translation",
+      "disposition": "translated_or_merged_math",
+      "files": ["other_web/05_Low_Amplitude_and_O11_Scope.md"],
+      "paper_components": ["paper/sections/web_density_and_geometric_supplements.tex"],
+      "paper_labels": ["sec:web-inverse-amplitude", "sec:web-ideal-minimizers"],
+      "note": "Inverse-amplitude and low-amplitude energy arguments, the legal quadratic-energy test, and O11 ideal-minimizer/ALE scope. Fixed intermediate-amplitude concentration is not ruled out."
+    },
+    {
+      "id": "geometric_observations_translation",
+      "disposition": "translated_or_merged_math",
+      "files": ["research/A/working_notes/o10_geometry_endpoint_20260929.md"],
+      "paper_components": ["paper/sections/web_density_and_geometric_supplements.tex"],
+      "source_selection": "Mathematical Sections 3-9",
+      "note": "Independent geometric and conditional observations are retained in the supplement, rather than treated as exhausted by the newer endpoint proof. The full working source remains available."
+    },
+    {
+      "id": "critical_variation_translations",
+      "disposition": "translated_or_merged_math",
+      "files": [
+        "research/B/O11_Threshold_Variation.md",
+        "research/B/O11_Descent_or_Recovery.md",
+        "research/B/O11_TT_Independent_Check.md",
+        "research/B/O11_Positive_Curvature_Compensation.md",
+        "research/C/O11_Global_Variation.md"
+      ],
+      "paper_components": ["paper/sections/web_variational_supplements.tex"],
+      "note": "The four B variation arguments and C global-variation/Codazzi scope are translated and joined by dependency. Admissible test norms and conditional hypotheses are retained."
+    },
+    {
+      "id": "primitive_rate_translation",
+      "disposition": "translated_or_merged_math",
+      "files": ["research/E/O10_Primitive_Rate_Audit.md"],
+      "paper_components": ["paper/sections/web_primitive_rate.tex", "paper/sections/finite_density_endpoint.tex"],
+      "paper_labels": ["sec:web-primitive-rate", "cor:finite-density-polynomial"],
+      "note": "Full quantitative transfer for the fixed D error list, including the H1 and L4 losses, both resolvent routes, and the exponent 24/gamma in the density-dependent corollary."
+    },
+    {
+      "id": "strong_current_versions",
+      "disposition": "overlapping_earlier_proofs",
+      "files": [
+        "research/A/01_O10_Strong_Current.md",
+        "research/B/O10_Strong_Current_Prerequisite.md",
+        "research/D/inherited/Strong_Current_Prerequisite.md"
+      ],
+      "paper_labels": ["sec:web-strong-current", "sec:finite-density-endpoint"],
+      "note": "R1/R2 source versions and inherited copies; the PLAN selects the C prerequisite. Exact-copy relationships, where declared, are recorded in SOURCE_MANIFEST.json; other source differences are not erased."
+    },
+    {
+      "id": "resolvent_audit_and_copy",
+      "disposition": "overlapping_earlier_proofs",
+      "files": [
+        "research/C/O10_Resolvent_Audit.md",
+        "research/D/inherited/Direct_Resolvent_Prerequisite.md"
+      ],
+      "paper_labels": ["sec:web-direct-resolvent", "sec:finite-density-endpoint"],
+      "note": "The direct construction is incorporated through its dedicated prerequisite. The audit also contains diffuse-versus-concentrated Weyl observations not claimed fully reproduced in that import; its full text is retained."
+    },
+    {
+      "id": "rank_one_independent_checks",
+      "disposition": "overlapping_earlier_proofs",
+      "files": [
+        "research/C/O10_Abelian_Spectral_Independent_Audit.md",
+        "research/C/O10_LineBundle_Resolvent_Audit.md"
+      ],
+      "paper_labels": ["lem:rank-one-logarithmic-resolvent", "sec:finite-density-endpoint"],
+      "note": "Independent derivations of spectral selection, Hessian control, and rank-one transgression remain source records alongside the integrated full proof."
+    },
+    {
+      "id": "fifth_line_checks_and_inherited_source",
+      "disposition": "overlapping_earlier_proofs",
+      "files": [
+        "research/D/O10_Fifth_Line_Audit.md",
+        "research/D/O10_Symbol_Check.md",
+        "research/D/inherited/User_Fifth_Line.md"
+      ],
+      "paper_labels": ["sec:web-positive-potential", "sec:web-density-rate", "sec:web-radial-matrix"],
+      "note": "Bundle, symbol, weak-product and sign checks, plus the inherited fifth-line source. Exact radial cancellation observations are retained even where only their downstream conclusions are used in the paper."
+    },
+    {
+      "id": "earlier_endpoint_threshold_arguments",
+      "disposition": "overlapping_earlier_proofs",
+      "files": [
+        "research/B/O10_Critical_Density.md",
+        "research/B/O10_Critical_Geometry.md",
+        "research/B/O10_Global_Compatibility.md",
+        "research/B/O10_Strengthened_Endpoint.md",
+        "other_web/02_Resolvent_Chern_Concentration.md"
+      ],
+      "paper_labels": ["sec:finite-density-endpoint", "sec:web-direct-resolvent", "sec:web-first-prolongation", "sec:web-growing-energy-chern"],
+      "note": "The current theorem removes their finite numerical upper threshold. Their rank-two localization, Hopf-form pairing, critical excess and curvature-tail observations remain independent source material; these files are not labelled wholly superseded or wholly imported."
+    },
+    {
+      "id": "companion_tex_presentations",
+      "disposition": "overlapping_earlier_proofs",
+      "files": [
+        "research/A/04_Proof_Supplement.tex",
+        "research/B/O10_Complete_Proof_Supplement.tex",
+        "research/B/O10_Critical_Density.tex",
+        "research/B/O10_Resolvent_Prolongation.tex",
+        "research/B/O10_Strengthened_Endpoint.tex",
+        "research/C/O10_Finite_Density_Complete_Proof.tex",
+        "research/D/O10_Alternative_Global.tex"
+      ],
+      "paper_components": ["paper/sections/finite_density_endpoint.tex", "paper/sections/variational_selection_and_global_cost.tex"],
+      "paper_labels": ["sec:web-strong-current", "sec:web-first-prolongation", "sec:web-density-rate"],
+      "note": "Companion TeX proof collections and presentations are preserved, while the assembly uses the specified Markdown imports or edited English components. This correspondence asserts neither byte identity nor complete duplication of every passage."
+    },
+    {
+      "id": "variational_companion_tex",
+      "disposition": "overlapping_earlier_proofs",
+      "files": ["research/D/O11_Global_Sharp.tex"],
+      "paper_components": ["paper/sections/variational_selection_and_global_cost.tex"],
+      "paper_labels": ["sec:variational-selection-global-cost"],
+      "note": "Companion TeX presentation of the simultaneous-field cost identity; the edited proof uses the corresponding Markdown source."
+    },
+    {
+      "id": "global_identity_working_versions",
+      "disposition": "overlapping_earlier_proofs",
+      "files": [
+        "research/A/working_notes/o10_global_identity_full_20260929.md",
+        "research/A/working_notes/o10_global_identity_20260929.md",
+        "research/B/o10_global_identity_20260929.md"
+      ],
+      "paper_labels": ["sec:web-strong-current", "sec:quartic-flux"],
+      "note": "Working global-identity derivations and declared compatibility copies; later proofs use their relevant identities, and the complete working observations remain available."
+    },
+    {
+      "id": "variational_selection_compatibility_copy",
+      "disposition": "overlapping_earlier_proofs",
+      "files": ["research/A/working_notes/o11_global_lower_20260929.md"],
+      "paper_components": ["paper/sections/variational_selection_and_global_cost.tex"],
+      "note": "The incoming dependency map identifies this as a compatibility copy of A/02_O11_Variational_Selection.md."
+    },
+    {
+      "id": "retained_working_attempts",
+      "disposition": "working_attempts_retained_intact",
+      "files": [
+        "research/A/working_notes/o10_counterexample_20260929.md",
+        "research/A/working_notes/o11_competitor_20260929.md",
+        "research/A/working_notes/o11_field_variations_20260929.md",
+        "research/B/O11_Global_Volume.md",
+        "working_notes/o11_classical_energy_20260929.md",
+        "working_notes/o11_variational_selection_20260929.tex"
+      ],
+      "paper_components": ["paper/sections/finite_density_endpoint.tex", "paper/sections/variational_selection_and_global_cost.tex", "paper/sections/web_variational_supplements.tex"],
+      "note": "Related mature conclusions are presented through the selected proof sources. These complete working files remain locatable for candidate constructions, independent calculations, and failure mechanisms not reproduced wholesale in the paper; no new closed escape or sharp coefficient is inferred from them."
+    },
+    {
+      "id": "package_navigation_and_provenance",
+      "disposition": "metadata_and_computational_attachments",
+      "files": [
+        "00_新增研究整合说明.md",
+        "01_文件索引.md",
+        "02_成果归属与依赖衔接.md",
+        "ORIGINAL_ARCHIVE_MAP.json",
+        "SOURCE_MANIFEST.json",
+        "VALIDATION.json"
+      ],
+      "note": "The six package-level files outside the manifest's 96 payload entries. They preserve incoming scope, attribution, baseline relations, aliases, hashes, and the original bounded validation claims."
+    },
+    {
+      "id": "round_status_and_dependency_records",
+      "disposition": "metadata_and_computational_attachments",
+      "files": [
+        "research/A/00_Research_Result.md",
+        "research/A/SOURCE_AND_STATUS.json",
+        "research/B/00_Continuation_Result.md",
+        "research/B/SOURCE_AND_STATUS.json",
+        "research/C/00_Research_Result.md",
+        "research/C/SOURCE_AND_STATUS.json",
+        "research/D/00_Line1_Research_Continuation.md",
+        "research/D/SOURCE_AND_STATUS.json",
+        "research/E/00_Research_Result.md",
+        "research/E/Dependency_Audit.md",
+        "research/E/SOURCE_AND_STATUS.json",
+        "research/F/00_Result.md"
+      ],
+      "note": "Historical state and dependency evidence, including the noncircular strong-current prerequisites. Earlier status statements remain dated source records and do not replace the integrated theorem hypotheses."
+    },
+    {
+      "id": "literature_positioning_versions",
+      "disposition": "metadata_and_computational_attachments",
+      "files": [
+        "other_web/06_External_Positioning_and_Literature.md",
+        "other_web/source_versions/06_External_Positioning_raw.txt"
+      ],
+      "paper_components": ["paper/references.tex", "paper/sections/variational_selection_and_global_cost.tex"],
+      "note": "Original literature/positioning note and raw-text variant remain separate. Selected classical comparisons support manuscript discussion; conditional applications, novelty commentary, and conjectural interfaces are not promoted to proved project results."
+    },
+    {
+      "id": "nested_original_web_archives",
+      "disposition": "metadata_and_computational_attachments",
+      "files": [
+        "other_web/original_packages/Line1_O10_Finite_Density_Continuation_C_20260929.zip",
+        "other_web/original_packages/Line1_Quantitative_Escape_20260929.zip"
+      ],
+      "member_locator": "ORIGINAL_ARCHIVE_MAP.json",
+      "note": "Original containers preserve all fourteen recorded members, including status files not separately expanded and inherited proofs. Existing same-byte mappings are in the incoming member map."
+    },
+    {
+      "id": "finite_algebra_and_computational_attachments",
+      "disposition": "metadata_and_computational_attachments",
+      "files": [
+        "other_web/verify_negative_line.py",
+        "other_web/algebra_check.txt",
+        "other_web/check_finite_algebra.py",
+        "other_web/finite_algebra_checks.json",
+        "research/D/verify_fifth_line_symbols.py",
+        "research/F/verify_radial_matrix.py",
+        "research/F/o11_triaxial_diagnostic.py",
+        "research/F/o11_triaxial_diagnostic_results.json",
+        "research/F/o11_triaxial_large_results.json"
+      ],
+      "paper_labels": ["sec:web-positive-potential", "sec:web-density-rate", "sec:web-radial-matrix", "sec:web-full-collar-cost"],
+      "note": "Original finite-symbol checks, receipts, and triaxial diagnostic attempts. This index neither reruns them nor upgrades a finite check or unsuccessful search to a PDE, compactness, or universal lower-bound proof."
+    }
+  ],
+  "claim_boundaries": [
+    "The actual finite-density endpoint is incorporated with its Euler-density dependence; density-independent O10 remains open.",
+    "The O11 variational, complete ordinary-budget, same-field, and filling results do not determine the unrestricted balanced first-order coefficient.",
+    "Compatibility copies, alternate formats, review documents, and parallel proof branches are not counted as separate research breakthroughs.",
+    "A later theorem may enlarge an earlier conclusion without absorbing all independent mathematics in that earlier file. Unselected material remains fully preserved at its indexed source path.",
+    "The main result catalogue, the manuscript proof status, and the original three-line Yau26 program retain their separate scopes."
+  ]
+}

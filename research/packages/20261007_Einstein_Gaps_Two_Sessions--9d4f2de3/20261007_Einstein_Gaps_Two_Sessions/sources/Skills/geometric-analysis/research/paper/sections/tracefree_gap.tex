@@ -1,0 +1,600 @@
+\section{Trace-free Ricci separation from a single monopole}
+\label{sec:tracefree-gap}
+
+The parameter estimate of Theorem~\ref{thm:single-parameter} has a
+topological consequence at $\beta=8$.  At this value, the scalar and Weyl
+terms have exactly the proportions appearing in the Chern--Weil formula
+for $2\chi+3\tau$.  We prove the resulting separation estimate for the
+trace-free Ricci energy.  Its input is one ordinary monopole on the
+negative Yamabe representative of the conformal class.  Two versions
+retain the cost of a class whose square does not satisfy the usual
+topological bound.
+
+\subsection{Energies and the conformal-class hypothesis}
+
+Let $M$ be a closed, connected, oriented smooth four-manifold.  For a
+smooth metric $g$, write
+\begin{align}
+ V(g)&=\Vol_g(M),&
+ S(g)&=\int_M s_g^2\,d\mu_g,\notag\\
+ P(g)&=\int_M|\Ric_g^\circ|^2\,d\mu_g,&
+ R(g)&=\int_M|\Ric_g|^2\,d\mu_g=P(g)+\frac14S(g).
+ \label{eq:trf-energies}
+\end{align}
+Here $\Ric_g^\circ=\Ric_g-(s_g/4)g$.  Weyl curvature is measured in the
+Hilbert--Schmidt norm as an endomorphism of the bundle of two-forms.  Set
+\begin{equation}
+ T=2\chi(M)+3\tau(M),\qquad
+ \E(g)=\inf_{\lambda\in\mathbb R\setminus\{0\}}
+ \frac{\int_M|\Ric_g-\lambda g|^2\,d\mu_g}{\lambda^2V(g)},
+ \qquad \J(g)=\frac{4P(g)}{R(g)}
+ \label{eq:trf-defects}
+\end{equation}
+whenever $R(g)>0$.
+
+These two scale-invariant defects differ only by scalar variance.  Indeed,
+putting $x=1/\lambda$ gives
+\[
+ \frac{\int_M|\Ric_g-\lambda g|^2\,d\mu_g}{\lambda^2V(g)}
+ =\frac{R(g)}{V(g)}x^2
+   -\frac{2x}{V(g)}\int_Ms_g\,d\mu_g+4.
+\]
+Minimizing this quadratic, with the value at $x=0$ understood as an
+infimum when necessary, yields
+\begin{equation}
+ \E(g)=4-\frac{\left(\int_Ms_g\,d\mu_g\right)^2}{V(g)R(g)}
+ =\J(g)+\frac{\int_M(s_g-\bar s_g)^2\,d\mu_g}{R(g)},
+ \qquad
+ \bar s_g=V(g)^{-1}\int_Ms_g\,d\mu_g.
+ \label{eq:trf-variance}
+\end{equation}
+In particular, $0\le\J\le\E\le4$, and $\J=\E$ for a metric of
+constant scalar curvature.  If $R(g)=0$, then $g$ is Ricci-flat and the
+definition gives $\E(g)=4$; $\J(g)$ is not defined in that case.
+
+For a $\operatorname{Spin}^c$ structure with determinant line bundle $L$,
+let $a=c_1(L)\in H^2(M;\mathbb R)$ and
+\[
+ p=(a_g^+)^2.
+\]
+The Hodge star on two-forms, and hence the positive harmonic subspace,
+is unchanged under a conformal change in dimension four.  Thus $p$ is
+constant on $[g]$.
+
+\begin{definition}[Single-monopole hypothesis]
+\label{def:trf-input}
+For a number $A>0$, a conformal class $[g]$ satisfies the
+single-monopole hypothesis if its Yamabe constant is negative and its
+representative $\widehat g$ of constant scalar curvature $-4$ admits an
+ordinary unperturbed Seiberg--Witten solution in a structure with
+$p\ge A$.  We write the solution after a constant spinor rescaling as
+\begin{equation}
+ D_B\Phi=0,\qquad F_B^+=2i\sigma(\Phi),\qquad
+ |\sigma(\Phi)|^2=\frac18|\Phi|^4.
+ \label{eq:trf-monopole}
+\end{equation}
+Thus, if the ordinary normalization is $F_B^+=i\sigma(\Psi)$, then
+$\Phi=\Psi/\sqrt2$.  The class $a$, its square, its projection $p$ and
+the solution in \eqref{eq:trf-monopole} are fixed throughout the argument
+on $[g]$.
+\end{definition}
+
+The representative $\widehat g$ is unique with this scalar normalization.
+When this hypothesis is imposed on every conformal class of $M$, the
+structure may depend on the class.  The number $A$ must be common to
+all classes if a uniform conclusion is sought.
+
+\subsection{Scalar curvature and inheritance from conformal solvability}
+
+We first recall the scalar estimate, including its normalization.  This
+is the ordinary monopole scalar bound underlying the curvature
+inequalities of \cite{LeBrun2001}.
+
+\begin{lemma}[Scalar budget]
+\label{lem:trf-scalar}
+Suppose that a metric $h$ admits a solution of
+\eqref{eq:trf-monopole} with $p=(a_h^+)^2>0$.  With
+$s_{h,-}=\max\{-s_h,0\}$, one has
+\begin{equation}
+ \int_M s_{h,-}^2\,d\mu_h\ge32\pi^2p.
+ \label{eq:trf-signed-scalar}
+\end{equation}
+Consequently, under Definition~\ref{def:trf-input},
+\begin{equation}
+ 16\widehat V\ge32\pi^2p\ge32\pi^2A,
+ \qquad \frac{A}{\widehat V}\le\frac1{2\pi^2},
+ \qquad \widehat V=V(\widehat g).
+ \label{eq:trf-volume-budget}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Put $q=|\Phi|^2$.  The integrated spinor Weitzenb\"ock formula in
+the normalization \eqref{eq:trf-monopole} is
+\[
+ 0=4\int_M|\nabla_B\Phi|^2\,d\mu_h
+       +\int_Ms_hq\,d\mu_h+2\int_Mq^2\,d\mu_h.
+\]
+It follows that
+\[
+ 2\int_Mq^2\,d\mu_h
+ \le\int_Ms_{h,-}q\,d\mu_h
+ \le\left(\int_Ms_{h,-}^2\,d\mu_h\right)^{1/2}
+      \left(\int_Mq^2\,d\mu_h\right)^{1/2}.
+\]
+The harmonic projection of $F_B^+$ represents $2\pi i a_h^+$.
+Orthogonality of that projection gives
+\[
+ 4\pi^2p\le\int_M|F_B^+|^2\,d\mu_h
+             =\frac12\int_Mq^2\,d\mu_h.
+\]
+In particular $\int q^2>0$.  Squaring the preceding Cauchy--Schwarz
+bound and combining the two inequalities proves
+\eqref{eq:trf-signed-scalar}.  Applying it to $s_{\widehat g}=-4$
+gives \eqref{eq:trf-volume-budget}.
+\end{proof}
+
+\begin{proposition}[Inheritance from conformal solvability]
+\label{prop:trf-inheritance}
+Fix a conformal class $[g]$ and a $\operatorname{Spin}^c$ structure
+with $(a_g^+)^2\ge A>0$.  If this same structure has an ordinary
+unperturbed solution for every metric in $[g]$, then
+Definition~\ref{def:trf-input} holds for $[g]$ and $A$.
+\end{proposition}
+
+\begin{proof}
+If the Yamabe constant were nonnegative, the class would contain a
+representative $h$ of nonnegative constant scalar curvature.  The assumed
+solution on $h$ would contradict \eqref{eq:trf-signed-scalar}, since its
+left side would vanish and $p>0$.  Equivalently, all terms in the
+integrated Weitzenb\"ock formula would be nonnegative, forcing the spinor
+and then $F_B^+$ to vanish.  The harmonic projection would then have
+$p=0$.
+
+The class therefore has negative Yamabe constant.  Normalize its Yamabe
+metric to scalar curvature $-4$.  This is still a metric in $[g]$, so the
+same structure supplies an ordinary solution there.  Rescaling the
+spinor gives \eqref{eq:trf-monopole}.  The class square and $p$ are
+unchanged.
+\end{proof}
+
+This proposition allows all-conformal-metric monopole hypotheses to be
+used below.  In the proofs that follow, only the resulting solution on
+$\widehat g$ is required; no solution is requested at another parameter
+value or at another metric in the class.
+
+\subsection{Exact conformal comparison}
+
+The transfer from $\widehat g$ to $g$ retains the trace-free Ricci energy
+without introducing a scalar-variance error into the conclusion.
+
+\begin{lemma}[Conformal energy identities]
+\label{lem:trf-conformal}
+Let $[g]$ have negative Yamabe constant, and write
+$g=u^2\widehat g$, where $u>0$ and $s_{\widehat g}=-4$.  Then
+\begin{align}
+ \delta:=S(g)-S(\widehat g)
+ &=48\int_Mu^{-2}|du|_{\widehat g}^2\,d\mu_{\widehat g}
+   +36\int_M(u^{-1}\Delta_{\widehat g}u)^2\,d\mu_{\widehat g}
+   \ge0,\label{eq:trf-scalar-difference}\\
+ P(g)-P(\widehat g)&=\frac{\delta}{12},&
+ R(g)-R(\widehat g)&=\frac{\delta}{3},
+ \label{eq:trf-conformal-energies}
+\end{align}
+where $\Delta_{\widehat g}=d^*d$.  In particular, $R(g)>0$, and
+\begin{equation}
+ \J(g)=
+ \frac{R(\widehat g)}{R(\widehat g)+\delta/3}\J(\widehat g)
+ +\frac{\delta/3}{R(\widehat g)+\delta/3}.
+ \label{eq:trf-convex-comparison}
+\end{equation}
+If $\J(g)<1$ and $r=P(\widehat g)/\widehat V$, then
+\begin{equation}
+ \J(\widehat g)\le\J(g)<1,
+ \qquad
+ r=\frac{4\J(\widehat g)}{4-\J(\widehat g)}
+ \le\frac43\J(g).
+ \label{eq:trf-small-J}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The scalar transformation formula is
+\[
+ s_g u^3=6\Delta_{\widehat g}u-4u,
+ \qquad d\mu_g=u^4d\mu_{\widehat g}.
+\]
+Squaring and integrating gives
+\[
+ S(g)=36\int_Mu^{-2}(\Delta_{\widehat g}u)^2\,d\mu_{\widehat g}
+       -48\int_Mu^{-1}\Delta_{\widehat g}u\,d\mu_{\widehat g}
+       +16\widehat V.
+\]
+Since $M$ is closed,
+\[
+ \int_Mu^{-1}\Delta_{\widehat g}u\,d\mu_{\widehat g}
+ =\int_M\langle d(u^{-1}),du\rangle_{\widehat g}\,d\mu_{\widehat g}
+ =-\int_Mu^{-2}|du|_{\widehat g}^2\,d\mu_{\widehat g}.
+\]
+Together with $S(\widehat g)=16\widehat V$, this proves
+\eqref{eq:trf-scalar-difference}.
+
+In the stated curvature norm, the Chern--Weil identity is
+\begin{equation}
+ 4\pi^2T=\frac1{24}S(h)
+       +2\int_M|W_h^+|^2\,d\mu_h-\frac12P(h)
+ \label{eq:trf-chern-weil}
+\end{equation}
+for every metric $h$.  The Weyl integral is conformally invariant.
+Subtracting \eqref{eq:trf-chern-weil} for $g$ and $\widehat g$ gives
+$P(g)-P(\widehat g)=\delta/12$.  The identity
+$R=P+S/4$ then gives the second formula in
+\eqref{eq:trf-conformal-energies}.
+
+Now $R(\widehat g)=P(\widehat g)+4\widehat V>0$, and substitution
+in $\J=4P/R$ proves \eqref{eq:trf-convex-comparison}.  This expresses
+$\J(g)$ as a convex combination of $\J(\widehat g)$ and $1$, with
+a strictly positive coefficient on $\J(\widehat g)$.  If $\J(g)<1$,
+it follows that $\J(\widehat g)\le\J(g)<1$.  Finally
+$\J(\widehat g)=4r/(r+4)$, so
+\[
+ r=\frac{4\J(\widehat g)}{4-\J(\widehat g)}
+ \le\frac43\J(\widehat g)\le\frac43\J(g).
+\]
+\end{proof}
+
+\subsection{The topological calibration and the separation theorem}
+
+For the fixed class $a$, define
+\begin{equation}
+ D_\beta(h,a)=
+ (1+\beta^{-1})S(h)+6(\beta+1)\int_M|W_h^+|^2\,d\mu_h
+ -72\pi^2p,
+ \qquad \beta\ge2.
+ \label{eq:trf-pencil}
+\end{equation}
+For the rest of this subsection, all terms in $D_\beta$, $r$ and $b$
+are evaluated at $\widehat g$, and
+\[
+ r=\frac{P(\widehat g)}{\widehat V},\qquad
+ b=\frac{(-a^2)_+}{\widehat V}.
+\]
+Write $c_{\mathrm{par}}>0$ for a universal constant furnished by
+Theorem~\ref{thm:single-parameter}.  Its single-solution estimate is
+\begin{equation}
+ (1+b)\left(r+\frac{D_\beta(\widehat g,a)}{\beta\widehat V}\right)
+ \ge c_{\mathrm{par}}\frac{(\beta-2)^2}{\beta^4}.
+ \label{eq:trf-parameter}
+\end{equation}
+In particular, with
+\begin{equation}
+ H=r+\frac{D_8(\widehat g,a)}{8\widehat V},\qquad
+ c_8=\frac{9c_{\mathrm{par}}}{1024},\qquad
+ \gamma=\frac{4c_8}{27}=\frac{c_{\mathrm{par}}}{768},
+ \label{eq:trf-constants}
+\end{equation}
+we have $(1+b)H\ge c_8>0$.
+
+The ratio of the Weyl and scalar coefficients in
+\eqref{eq:trf-pencil} is $6\beta$.  It equals the corresponding ratio
+$48$ in \eqref{eq:trf-chern-weil} precisely when $\beta=8$.
+Multiplication of \eqref{eq:trf-chern-weil} by $27$ therefore gives
+the exact identity
+\begin{equation}
+ D_8(\widehat g,a)
+ =108\pi^2\left(T-\frac23p\right)+\frac{27}{2}P(\widehat g).
+ \label{eq:trf-beta-eight}
+\end{equation}
+Set
+\begin{equation}
+ d=\left(\frac{T}{A}-\frac23\right)_+.
+ \label{eq:trf-topological-excess}
+\end{equation}
+Since $p\ge A$, one has $T-2p/3\le Ad$.  Lemma~\ref{lem:trf-scalar}
+and \eqref{eq:trf-beta-eight} imply
+\begin{equation}
+ H\le\frac{43}{16}r+\frac{27}{4}d.
+ \label{eq:trf-H-upper}
+\end{equation}
+If $\J(g)<1$, Lemma~\ref{lem:trf-conformal} consequently gives
+\begin{equation}
+ H\le\frac{43}{12}\J(g)+\frac{27}{4}d
+       \le\frac{27}{4}\bigl(\J(g)+d\bigr).
+ \label{eq:trf-H-J}
+\end{equation}
+The numerical inequality in the last step is $43/12\le27/4$.
+
+\begin{theorem}[Trace-free Ricci separation]
+\label{thm:trf-gap}
+Suppose that $[g]$ satisfies Definition~\ref{def:trf-input} and that its
+selected class satisfies $a^2\ge T$.  There is a universal
+$\varepsilon_0>0$ such that
+\begin{equation}
+ \boxed{\J(g)+\left(\frac{T}{A}-\frac23\right)_+
+             \ge\varepsilon_0.}
+ \label{eq:trf-gap}
+\end{equation}
+For the constant in \eqref{eq:trf-parameter}, one may take
+\begin{equation}
+ K_\pi=1+\frac1{6\pi^2},\qquad
+ \varepsilon_0=\min\left\{1,\frac{\gamma}{K_\pi}\right\}.
+ \label{eq:trf-epsilon}
+\end{equation}
+The conclusion also holds with $\E(g)$ in place of $\J(g)$.
+\end{theorem}
+
+\begin{proof}
+From \eqref{eq:trf-chern-weil},
+\begin{equation}
+ 4\pi^2T\ge-\frac12P(\widehat g),\qquad
+ \frac{(-T)_+}{\widehat V}\le\frac{r}{8\pi^2}.
+ \label{eq:trf-negative-T}
+\end{equation}
+The assumption $a^2\ge T$ thus gives $b\le r/(8\pi^2)$.
+If $\J(g)\ge1$, \eqref{eq:trf-gap} follows from
+$\varepsilon_0\le1$.  Otherwise \eqref{eq:trf-small-J} gives
+$r<4/3$ and hence $1+b\le K_\pi$.  As $H>0$, the parameter estimate
+and \eqref{eq:trf-H-J} imply
+\[
+ c_8\le(1+b)H
+ \le K_\pi\frac{27}{4}\bigl(\J(g)+d\bigr).
+\]
+This proves \eqref{eq:trf-gap} with \eqref{eq:trf-epsilon}.
+Finally \eqref{eq:trf-variance} gives $\E(g)\ge\J(g)$.
+\end{proof}
+
+The constants in this proof are obtained from the parameter estimate
+with its factor $1+b$ retained.  In particular, the absorption of that
+factor is accounted for by $K_\pi$; no equality between constants in
+the estimates before and after absorption is needed.
+
+\subsection{Two class-square costs}
+
+The condition $a^2\ge T$ can be replaced by a quantitative loss.  There
+are two useful ways to measure it:
+\begin{equation}
+ Y=(T-a^2)_+,\qquad y=\frac{Y}{A},\qquad
+ \nu=\frac{(-a^2)_+}{A}.
+ \label{eq:trf-cost-definitions}
+\end{equation}
+The first compares the class square with the topological number $T$;
+the second records only its negative part.
+
+\begin{corollary}[Negative class square]
+\label{cor:trf-nu}
+Under Definition~\ref{def:trf-input}, with no restriction on $a^2$,
+\begin{equation}
+ \boxed{\J(g)+d\ge\frac{c_*}{1+\nu/(2\pi^2)},
+ \qquad c_*=\min\{1,\gamma\}.}
+ \label{eq:trf-nu-cost}
+\end{equation}
+In particular, $a^2\ge0$ implies $\J(g)+d\ge c_*$, without a
+further comparison between $a^2$ and $T$.
+\end{corollary}
+
+\begin{proof}
+By \eqref{eq:trf-volume-budget},
+\[
+ b=\nu\frac{A}{\widehat V}\le\frac{\nu}{2\pi^2}.
+\]
+If $\J(g)<1$, then $H>0$ and \eqref{eq:trf-H-J} give
+\[
+ c_8\le(1+b)H
+ \le\left(1+\frac{\nu}{2\pi^2}\right)
+       \frac{27}{4}\bigl(\J(g)+d\bigr).
+\]
+This proves the result with numerator $\gamma$ on this branch.  If
+$\J(g)\ge1$, the right side of \eqref{eq:trf-nu-cost} is at most
+$1$, so the choice $c_*\le1$ proves the other branch.
+\end{proof}
+
+\begin{corollary}[Square deficit relative to topology]
+\label{cor:trf-y}
+Under Definition~\ref{def:trf-input}, with no restriction on $a^2$,
+\begin{equation}
+ \boxed{\J(g)+d\ge\frac{c_y}{1+y},
+ \qquad c_y=\min\left\{1,\frac{\gamma}{K_\pi}\right\}.}
+ \label{eq:trf-y-cost}
+\end{equation}
+Thus a bound $y\le L$ gives $\J(g)+d\ge c_y/(1+L)$.
+\end{corollary}
+
+\begin{proof}
+The elementary inequality $(-a^2)_+\le(-T)_++Y$, together with
+\eqref{eq:trf-negative-T} and \eqref{eq:trf-volume-budget}, gives
+\[
+ b\le\frac{r}{8\pi^2}+\frac{y}{2\pi^2}.
+\]
+When $\J(g)<1$, it follows that
+\[
+ 1+b\le K_\pi+\frac{y}{2\pi^2}\le K_\pi(1+y).
+\]
+Here the last inequality uses $1/(2\pi^2)\le K_\pi$.  As before,
+\eqref{eq:trf-H-J} and $(1+b)H\ge c_8$ imply
+\begin{equation}
+ \left(K_\pi+\frac{y}{2\pi^2}\right)
+          \bigl(\J(g)+d\bigr)\ge\gamma
+ \qquad\text{if }\J(g)<1.
+ \label{eq:trf-y-refined-branch}
+\end{equation}
+Replacing the first factor by $K_\pi(1+y)$ yields the asserted
+inequality on this branch.  The branch $\J(g)\ge1$ is covered by
+$c_y\le1$.
+\end{proof}
+
+\begin{remark}
+The two costs are complementary.  If $0\le a^2<T$, then $y>0$ but
+$\nu=0$, and Corollary~\ref{cor:trf-nu} has no class-square loss.
+If $T\le a^2<0$, then $y=0$ but $\nu>0$, and
+Theorem~\ref{thm:trf-gap} absorbs the negative square using topology.
+In particular, $\nu\le y$ is not a valid comparison without a further
+sign condition on $T$.  Neither corollary asserts an optimal dependence
+on its cost, and neither permits the constant to be kept fixed while
+the corresponding cost tends to infinity.
+\end{remark}
+
+\subsection{The region with a positive Ricci gap}
+
+The preceding inequalities yield a positive lower bound for $\J$ only
+after the topological excess is subtracted.  For the selected class,
+they give
+\begin{equation}
+ \J(g)\ge\frac{c_y}{1+y}-d,
+ \qquad
+ \J(g)\ge\frac{c_*}{1+\nu/(2\pi^2)}-d.
+ \label{eq:trf-positive-region}
+\end{equation}
+The corresponding conclusion is nontrivial when its right side is
+strictly positive.  A bounded square cost alone does not impose that
+condition on $T/A$.
+
+\begin{corollary}[Uniform separation and Einstein obstruction]
+\label{cor:trf-uniform}
+Suppose that every conformal class of $M$ satisfies
+Definition~\ref{def:trf-input} with the same $A>0$.  It is enough that
+the selected structures satisfy one of the following conditions:
+\begin{enumerate}
+ \item $a^2\ge T$ in every class, and $d<\varepsilon_0$;
+ \item $y\le L$ in every class for a fixed $L\ge0$, and
+       $d<c_y/(1+L)$;
+ \item $\nu\le N$ in every class for a fixed $N\ge0$, and
+       $d<c_*/(1+N/(2\pi^2))$.
+\end{enumerate}
+In the respective cases, every smooth metric on $M$ satisfies
+$\J(g)\ge\eta$ and $\E(g)\ge\eta$, where
+\[
+ \eta=\varepsilon_0-d,\qquad
+ \eta=\frac{c_y}{1+L}-d,\qquad\text{or}\qquad
+ \eta=\frac{c_*}{1+N/(2\pi^2)}-d.
+\]
+In each case $\eta>0$, and $M$ admits no Einstein metric.
+\end{corollary}
+
+\begin{proof}
+Apply Theorem~\ref{thm:trf-gap}, Corollary~\ref{cor:trf-y}, or
+Corollary~\ref{cor:trf-nu} in each conformal class.  All quantities on
+the displayed right sides are uniform over metrics on the fixed
+manifold.  The inequality for $\E$ follows from
+\eqref{eq:trf-variance}.
+
+An Einstein metric with nonzero Einstein constant has $R>0$ and $P=0$,
+contradicting $\J\ge\eta>0$.  A Ricci-flat metric requires a separate
+argument: its conformal class has Yamabe constant zero, contrary to the
+assumption that every conformal class is negative.  Under the stronger
+conformal solvability hypothesis of Proposition~\ref{prop:trf-inheritance},
+the same exclusion follows directly from
+$\int_Ms_-^2\,d\mu\ge32\pi^2A>0$.
+\end{proof}
+
+For example, whenever an actual application has
+$T=A-k-4\ell$ and $a^2\ge T$, \eqref{eq:trf-gap} becomes
+\[
+ \J(g)+\left(\frac13-\frac{k+4\ell}{A}\right)_+
+ \ge\varepsilon_0.
+\]
+The positive budget and the actual monopole hypothesis remain necessary
+inputs to this substitution.  No conclusion at $A=0$ is obtained by
+continuity from the normalized statement.
+
+The same uniform gap obstructs pointwise approximation.  If
+\[
+ \delta_\sigma(g)=
+ \|g^{-1}\Ric_g-\sigma I\|_{L^\infty,\mathrm{op}},
+ \qquad \sigma\in\{-1,1\},
+\]
+then testing the definition of $\E$ with $\lambda=\sigma$ gives
+$\E(g)\le4\delta_\sigma(g)^2$.  Thus the conclusion of
+Corollary~\ref{cor:trf-uniform} implies
+$\delta_\sigma(g)\ge\sqrt\eta/2$ for either sign.
+
+\subsection{Finite covers and twisted monopoles}
+
+The argument also applies when the actual ordinary spinor lives on a
+finite cover.  The precise statement is useful because the covering
+manifold need not supply monopoles on arbitrary metrics.
+
+\begin{proposition}[Finite-cover compatibility]
+\label{prop:trf-cover}
+Let $\pi:\widetilde M\to M$ be a finite connected oriented cover of degree $m$,
+and let $[g]$ have negative Yamabe constant.  Suppose that
+$\pi^*\widehat g$ admits an ordinary solution with determinant class
+$\widetilde a$ and
+\[
+ \widetilde p=(\widetilde a_{\pi^*\widehat g}^+)^2\ge mA,
+ \qquad A>0.
+\]
+Put
+\[
+ y_\pi=\frac{(mT-\widetilde a^2)_+}{mA},\qquad
+ \nu_\pi=\frac{(-\widetilde a^2)_+}{mA}.
+\]
+Then \eqref{eq:trf-nu-cost} and \eqref{eq:trf-y-cost} hold on $M$
+with $\nu_\pi,y_\pi$ in place of $\nu,y$.  If
+$\widetilde a^2\ge mT$, then \eqref{eq:trf-gap} holds on $M$.
+The constants are independent of $m$.
+\end{proposition}
+
+\begin{proof}
+The pullback $\pi^*\widehat g$ has scalar curvature $-4$.  It is the
+normalized negative Yamabe representative of $[\pi^*g]$.  Pullback
+and integration over the covering sheets give
+\begin{gather*}
+ \widetilde V=mV,\qquad
+ \widetilde S=mS,\qquad
+ \widetilde P=mP,\qquad
+ \widetilde R=mR,\qquad
+ \widetilde T=mT,\\
+ \J(\pi^*g)=\J(g),\qquad \E(\pi^*g)=\E(g).
+\end{gather*}
+The last equality also follows directly from the defining quotient for
+each $\lambda\ne0$.  Apply the results above on $\widetilde M$ with
+budget $\widetilde A=mA$.  Its topological excess is
+$(\widetilde T/\widetilde A-2/3)_+=d$, and its two normalized costs
+are exactly $y_\pi$ and $\nu_\pi$.  The resulting inequalities are
+therefore the asserted inequalities downstairs, with the same constants.
+\end{proof}
+
+For a regular cover, the normalized negative Yamabe representative is
+deck-invariant by uniqueness.  To obtain the input from conformal
+solvability, fix one ordinary structure upstairs with
+$\widetilde p\ge mA>0$ on the lifted conformal class.  Suppose that it
+has solutions for every lifted metric in that class.  A nonnegative
+Yamabe representative downstairs would lift to a nonnegative
+scalar-curvature metric and contradict Lemma~\ref{lem:trf-scalar}
+upstairs.  Thus the base class is negative, and its normalized
+representative can be lifted and used in Proposition~\ref{prop:trf-cover}.
+Only these lifted metrics are involved.  The proof makes no solvability
+assumption for non-invariant metrics, and it does not require the
+ordinary solution itself to be deck-invariant.
+
+For the twisted case, let $\pi:\widetilde M\to M$ be a nontrivial
+double cover with associated real sign local system $\ell$.  Suppose
+that a genuine $\operatorname{Spin}^{c_-}$ structure has twisted Euler
+class $a\in H^2(M;\ell)$ with $p=(a_g^+)^2\ge A>0$, and an actual unperturbed
+$\operatorname{Pin}^-(2)$ monopole on the negative Yamabe
+representative.  The lifting theorem of \cite{IMN2016} gives an
+ordinary $\operatorname{Spin}^c$ solution upstairs, after matching the
+constant spinor normalization, with $\widetilde a=\pi^*a$.
+Since pullback commutes with the twisted Laplacian and the Hodge star,
+\begin{equation}
+ \widetilde a^2=2a^2,
+ \qquad \widetilde p=2(a_g^+)^2,
+ \qquad \widetilde T=2T.
+ \label{eq:trf-pin-scaling}
+\end{equation}
+Products of two sign-local-system classes take values in the trivial
+local system, so these squares and the associated integrals are defined
+downstairs.  With $\widetilde A=2A$, the quantities $T/A$, $y$ and
+$\nu$ are unchanged.  Proposition~\ref{prop:trf-cover} therefore
+proves the same separation and cost inequalities for these twisted
+budgets, without a covering-degree loss.
+
+If the twisted solution is instead supplied throughout the base
+conformal class, the preceding inheritance argument first supplies its
+negative Yamabe representative.  Neither formulation asks for twisted
+solvability on every conformal class unless an all-metric conclusion on
+$M$ is intended.  In that conclusion the positive projection budget and
+any bound on $y$ or $\nu$ must be verified for the actual selected
+twisted structures in each class.  In particular, the square condition
+$a^2\ge T$ is a separate hypothesis, not a consequence of the existence
+of an arbitrary twisted class.

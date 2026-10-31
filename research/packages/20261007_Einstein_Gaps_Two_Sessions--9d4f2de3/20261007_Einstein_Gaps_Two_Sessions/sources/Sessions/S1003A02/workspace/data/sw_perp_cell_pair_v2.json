@@ -1,0 +1,16 @@
+{
+  "status": "failed_not_scientific_data",
+  "record": "Sessions/S1003A01/workspace/data/perp_area/x00.03_X128_d20.json",
+  "solver_plus": {
+    "success": false,
+    "message": "maximum mesh nodes exceeded",
+    "rms_residual": 5348990843875.437
+  },
+  "solver_minus": {
+    "success": false,
+    "message": "maximum mesh nodes exceeded",
+    "rms_residual": 4175296584.4289274
+  },
+  "reason": "The collocation imposed limiting bolt values at a positive cutoff, did not exclude the alpha3~t^-2 singular mode, and constrained only rho and theta at the finite CH join rather than the asymptotic two-dimensional CH stable manifold. All former Inf/NaN profile values were solver divergence and have been removed; this file supplies no monopole measurements.",
+  "corrected_formulation": "See workspace/notes/step38_kahler_and_paired_field_scope.md section 5 and trace/ttcs/results/step38_ttcs01_verifier2_integration.md."
+}

@@ -1,0 +1,164 @@
+% Step 6: constant-spectrum projector obstruction and the corrected collapse reduction
+% This note supersedes the "local compatibility" section of
+% step5_regular_patch_and_derdzinski_boundary.tex.
+
+\section{Setting}
+Let $M$ be a fixed critical Ishida--LeBrun four-manifold,
+\[
+ D=A/3,
+ \qquad
+ \delta_i=\|g_i^{-1}(\Ric_{g_i}+g_i)\|_{L^\infty}\to0.
+\]
+The genuine scalar--Weyl estimate, the exact nonnegative deficit decomposition,
+and Chern--Weil give absolute errors $O(A\delta_i^2)$ because $A$ is fixed.  In
+particular,
+\[
+ \int_M(s_i+8\sqrt6|W_i^+|)^2\to0,
+\]
+and a selected sign monopole class has harmonic representative and eigenvalue
+defects tending to zero.  The issue reviewed here is what happens if a unit ball
+is noncollapsed.
+
+\section{A constant-spectrum harmonic-Weyl lemma}
+\textbf{Lemma.}  Let $(U^4,g)$ be oriented.  Suppose $\delta W^+=0$ and, as an
+endomorphism of $\Lambda^+$, $W^+$ has two distinct constant eigenvalues: a
+simple eigenvalue $\lambda$ and a double eigenvalue $\mu$.  Then $\nabla W^+=0$.
+
+Choose locally an eigenform $\omega$ of constant norm spanning the simple
+line.  With the convention $\langle\alpha,\beta\rangle=\tfrac12
+\alpha_{ab}\beta^{ab}$ and $|\omega|^2=2$, the orthogonal projection onto
+$\mathbb R\omega$ is represented, up to the harmless tensor-action convention,
+by a nonzero constant multiple of $\omega\otimes\omega$.  Thus
+\[
+ W^+=\mu I_{\Lambda^+}+(\lambda-\mu)P_\omega.
+\]
+Since the eigenvalues and $I_{\Lambda^+}$ are parallel, $\delta W^+=0$ gives
+\[
+ (\nabla^a\omega_{ab})\omega_{cd}
+   +\omega_{ab}\nabla^a\omega_{cd}=0.                 \tag{1}
+\]
+The first term in (1) must not be omitted.  Contracting (1) with
+$\omega^{cd}$ and using constant length yields
+\[
+ \nabla^a\omega_{ab}=0.                                \tag{2}
+\]
+Substitution into (1) gives
+\[
+ \omega_{ab}\nabla^a\omega_{cd}=0.                    \tag{3}
+\]
+A nonzero self-dual two-form in dimension four is nondegenerate; after the
+normalization above, $\omega_a{}^c\omega_c{}^b=-\delta_a{}^b$.  Hence (3)
+forces $\nabla\omega=0$, so $\nabla P_\omega=0$ and $\nabla W^+=0$.  This
+argument depends only on $\lambda\ne\mu$, not on their signs.
+
+This direct computation agrees with Derdzi\'nski's 1983 Proposition 5: when
+$\delta W^+=0$ and $W^+$ has at most two eigenvalues, the conformal metric
+\[
+ \bar g=(24|W^+|^2)^{1/3}g
+\]
+is locally K\"ahler on $\{W^+\ne0\}$, and Proposition 5(iii) states that
+$|W^+|^2$ is constant exactly when $\nabla W^+=0$.  The primary text is at
+\texttt{Sessions/S0910A01/workspace/notes/sources/derdzinski\_1983\_self\_dual\_kahler\_einstein\_four.txt}, lines 1024--1077.  Thus the Step 5 suggestion that an arbitrary nonconstant positive solution of a scalar conformal equation could realize the calibrated constant spectrum was incomplete: K\"ahler closure fixes the conformal factor.
+
+\section{Exclusion of the calibrated Einstein germ}
+For an Einstein four-metric the endomorphism Weitzenb\"ock equation is
+\[
+ 0=\nabla^*\nabla W^+ +\frac{s}{2}W^+-6(W^+)^2
+       +2|W^+|^2 I.
+\]
+At
+\[
+ s=-4,
+ \qquad
+ \operatorname{Spec}(W^+)=\left(-\frac16,\frac1{12},\frac1{12}\right),
+\]
+one has $|W^+|^2=1/24$ and $\det W^+=-1/864$.  The scalar identity
+\[
+ \Delta|W^+|^2=2|\nabla W^+|^2+s|W^+|^2-36\det W^+
+\]
+therefore requires
+\[
+ |\nabla W^+|^2=\frac1{16}.                             \tag{4}
+\]
+The lemma instead gives $\nabla W^+=0$.  Hence no smooth open Einstein four-manifold can carry this constant calibrated spectrum.  Equivalently, the parallel simple eigenform makes $g$ locally K\"ahler, whereas a K\"ahler metric with $s=-4$ has self-dual Weyl spectrum
+$(-2/3,1/3,1/3)$ in this orientation.
+
+\section{Regular-patch transfer on a fixed boundary manifold}
+Suppose for a subsequence there are points $p_i$ with
+\[
+ \Vol_{g_i}B_1(p_i)\ge v>0.                              \tag{5}
+\]
+For large $i$, $|\Ric_{g_i}|\le3$.  Cheeger--Naber Theorem 1.13 gives
+\[
+ \Vol\!\left(T_r\{x\in B_1(p_i):r_h(x)\le r\}\right)
+ \le C(v)r^4.                                             \tag{6}
+\]
+Bishop--Gromov supplies a lower bound for $\Vol B_{1/2}(p_i)$.  Taking a
+fixed small $\rho(v)$ in (6) selects $x_i\in B_{1/2}(p_i)$ with a fixed
+harmonic coordinate radius.  On a smaller common chart,
+\[
+ g_i\to g_\infty\quad\hbox{strongly in }C^{1,\beta}_{\rm loc},
+ \qquad g_i\rightharpoonup g_\infty\quad\hbox{in }W^{2,p}_{\rm loc}.
+\]
+The harmonic-coordinate Ricci equation and
+$\Ric(g_i)+g_i\to0$ in $L^\infty$ imply weakly that
+$\Ric(g_\infty)=-g_\infty$; the limit bootstraps to smooth.  Interior
+$W^{2,p}$ estimates for the difference equation then give strong
+$W^{2,p}_{\rm loc}$ convergence for finite $p$.  No $C^{2,\alpha}$ control of
+the approximating metrics is asserted.
+
+Because all relevant total defects are nonnegative and converge absolutely to
+zero for fixed $A$, their restrictions to this chart converge to zero.  The
+completion square gives
+\[
+ s_\infty=-4,
+ \qquad |W_\infty^+|=\frac1{2\sqrt6}.                    \tag{7}
+\]
+Choose the regularized rescaled monopoles diagonally so their smoothing error
+is $o(\delta_i^2)$.  The fixed selected sign class has harmonic self-dual
+representatives $H_i$.  Local elliptic compactness and the amplitude/projection
+defects give a smooth limit
+\[
+ |H_\infty|=\frac{3}{4\sqrt2\pi}>0.                      \tag{8}
+\]
+The SW maximum estimate supplies local uniform integrability for the quadratic
+forms.  Strong curvature convergence and the nonnegative eigenvalue defect then
+put $H_\infty$ in the sharp lowest eigenline.  The trace-free $3\times3$
+equality case yields
+\[
+ \operatorname{Spec}(W_\infty^+)
+ =\left(-\frac16,\frac1{12},\frac1{12}\right).           \tag{9}
+\]
+Equations (7)--(9) contradict the preceding local lemma.  Therefore, for a
+\emph{fixed} critical boundary manifold,
+\[
+ \boxed{\sup_{p\in M}\Vol_{g_i}B_1(p)\longrightarrow0.}  \tag{10}
+\]
+Indeed, failure of (10) gives (5) immediately; no volume-random selection is
+needed because the fixed-$A$ deficits vanish absolutely on every subset.
+
+If topology varies with $A_i\to\infty$, the available errors are generally only
+$o(A_i)$, not absolute $o(1)$.  A small noncollapsed island may then absorb a
+nonvanishing amount of defect.  The corresponding rigorously supported result
+is measure-relative: for every fixed $v>0$, the volume fraction of
+$\{p:\Vol B_1(p)\ge v\}$ tends to zero, using local-mean averaging before
+applying (6).  One must not replace this varying-topology statement by (10).
+
+\section{What this changes and what remains}
+The local calibrated Einstein model is inconsistent, so complete finite-volume
+searches for that exact model are no longer useful.  A hypothetical fixed
+critical sequence must collapse at unit scale everywhere while retaining total
+volume $\Vol(g_i)\to32\pi^2A/9$; consequently its diameter must diverge.  The
+remaining geometry can hide only through collapsed local quotients/covers,
+long thin regions, singular-fiber strata, or curvature/topology concentration.
+The next valuable question is whether typical collapsed balls can be locally
+unwrapped to noncollapsed harmonic charts while preserving small pulled-back
+LeBrun deficit.  Maximal-rank Naber--Zhang collapse, constant-fibre-length
+circle models, and singular/fixed strata should be separated rather than
+conflated.  A controlled unwrapping theorem would reproduce the local
+contradiction on the cover; failure of such unwrapping would identify precisely
+where topology or curvature must concentrate.
+
+This is a sharp reduction for one four-dimensional negative branch.  It neither
+settles the positive normalized branch nor the statement in all dimensions,
+and hence does not by itself prove or refute Yau's Problem 26.

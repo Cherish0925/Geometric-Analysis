@@ -1,0 +1,970 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  10pt,
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[a4paper,margin=18mm]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{esint}
+\usepackage{xeCJK}
+\setmainfont{DejaVu Serif}
+\setmonofont{DejaVu Sans Mono}
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKmonofont{Noto Sans Mono CJK SC}
+\setmathfont{Asana Math}
+\setmathfont{Latin Modern Math}[range=\lrcorner]
+\setlength{\emergencystretch}{3em}
+\allowdisplaybreaks
+\hypersetup{hypertexnames=false}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\hypertarget{localization-volume-and-the-first-order-cost-of-whole-fillings}{%
+\section{Localization volume and the first-order cost of whole
+fillings}\label{localization-volume-and-the-first-order-cost-of-whole-fillings}}
+
+28 September 2026. Continuation from \texttt{105df84}, using the
+relative identities of \href{20260928_relative_cell_cost.md}{I54}. The
+estimates below apply to complete smooth fillings, not selected terminal
+bubbles. They settle the first coefficient for a localized class with
+arbitrary interior metrics. They do not extract that class from
+arbitrary near-minimizers, so O11 remains open.
+
+\hypertarget{an-exact-all-metric-bound-with-a-fixed-exterior}{%
+\subsection{1. An exact all-metric bound with a fixed
+exterior}\label{an-exact-all-metric-bound-with-a-fixed-exterior}}
+
+Let X be a closed complex-hyperbolic surface, with its complex
+orientation and metric satisfying Ric = -g. Write A = c1 squared(X), so
+its volume is 2 pi squared A. Remove finitely many disjoint smoothly
+bounded regions which are balls, with total background volume D. Replace
+them by complete marked smooth cells of the topological types in I54,
+Section 1. The metric agrees with the original CH metric on the full
+outer collars and on the entire complement. There are no hypotheses on
+the interior metric, concentration, diameter, volume, derivatives, or
+its distance from a model.
+
+Let k and ell be the total blowup and handle numbers and put
+
+\[
+ Q=k+4\ell>0,\qquad a=2\pi^2A-D>0,\qquad
+ b=8\pi^2Q-4D,\qquad c=4a+b.
+\]
+
+In this section assume b is nonnegative. On the union C of the inserted
+cells define
+
+\[
+ v=\operatorname{Vol}(C),\quad t=\int_Cs,\quad
+ S=\int_Cs^2,\quad W=\int_C|W^+|^2.
+\]
+
+The relative identities sum over whole cells; no interior boundary is
+introduced. The total Ricci energy R and total scalar integral I are
+
+\[
+ R=c+S/3+4W,\qquad I=-4a+t,\qquad V=a+v.                 \tag{1.1}
+\]
+
+In particular R is positive. Recall the scale-invariant residual
+
+\[
+ \mathcal E=\inf_{\lambda\ne0}
+ \frac{\int|\operatorname{Ric}-\lambda g|^2}{\lambda^2 V}
+          =4-\frac{I^2}{VR}.
+\]
+
+The formula remains valid when I = 0, with infimum four as the absolute
+value of lambda tends to infinity. No normalization of the unknown
+optimum lambda is imposed.
+
+\textbf{Theorem 1.} Every metric with this complete exterior satisfies
+
+\[
+ \boxed{\mathcal E\ge
+ \frac{4ab/c+v}{a+v}
+ =\frac{4b}{c}+\left(1-\frac{4b}{c}\right)\frac{v}{a+v}
+ \ge\min\{4b/c,1\}.}                                   \tag{1.2}
+\]
+
+For b at most 4a/3, the last lower bound is explicitly
+
+\[
+ \boxed{\mathcal E\ge
+ \frac{4(Q-D/(2\pi^2))}{A+Q-D/\pi^2}.}                  \tag{1.3}
+\]
+
+\emph{Proof.} Cauchy gives S at least t squared/v. Applying weighted
+Cauchy a second time yields
+
+\[
+ (-4a+t)^2\le
+ \left(\frac{16a^2}{c}+3v\right)
+ \left(c+\frac{t^2}{3v}\right)
+ \le\left(\frac{16a^2}{c}+3v\right)R.
+\]
+
+Subtract the resulting upper bound for I squared/(VR) from four. This
+proves (1.2); inserting a and b proves (1.3). These uses of Cauchy are
+on actual integrals. No formally optimized moments are claimed to be
+realized by a smooth metric. The underlying relative curvature identity
+is classical Chern--Weil, as derived in I54, Section 1. QED.
+
+The bound does not require an actual monopole on an individual cell. The
+original closed family's actual supply is preserved because the
+topological surgery types and their markings have not changed. In
+particular this is an application to that family, not a construction of
+a new supplier.
+
+\hypertarget{the-equality-remainder-and-the-whole-core-energy-distribution}{%
+\subsection{2. The equality remainder and the whole-core energy
+distribution}\label{the-equality-remainder-and-the-whole-core-energy-distribution}}
+
+To retain the equality information, set
+
+\[
+ \delta=\frac13(S-t^2/v)+4W\ge0,\qquad
+ K=16a^2/c+3v,\qquad H=\frac{(3vc+4at)^2}{3vc}.
+\]
+
+Since R = c + t squared/(3v) + delta, exact expansion gives
+
+\[
+ KR-I^2=K\delta+H.
+\]
+
+Thus the proof of Theorem 1 retains the identity
+
+\[
+ \boxed{\mathcal E=
+ \frac{4ab/c+v}{a+v}
+       +\frac{K\delta+H}{(a+v)R}.}                       \tag{2.1}
+\]
+
+Consider the original balanced sequence with Q\_j = A\_j h\_j, h\_j
+tending to zero, and assume only that D\_j = o(Q\_j). The following
+result also applies to other surgery proportions on CH covers; the
+balanced proportions are not used in its proof.
+
+\textbf{Theorem 2.} In this class, independently of the interior
+geometry,
+
+\[
+ \liminf_j\mathcal E(g_j)/h_j\ge4.                       \tag{2.2}
+\]
+
+Furthermore the following two statements are equivalent:
+
+\[
+ \mathcal E(g_j)/h_j\longrightarrow4;
+ \qquad v_j+S_j+W_j=o(Q_j).                              \tag{2.3}
+\]
+
+The three summands in the second statement are nonnegative.
+Equivalently, each is o(Q\_j). For such a sequence,
+
+\[
+ \int_{C_j}|\operatorname{Ric}|^2=8\pi^2Q_j+o(Q_j),
+ \qquad \int_{C_j}|\operatorname{Ric}^{\circ}|^2
+                                  =8\pi^2Q_j+o(Q_j),    \tag{2.4}
+\] \[
+ \int_{C_j}|W^-|^2=12\pi^2k_j+o(Q_j).                   \tag{2.5}
+\]
+
+These are statements about the entire inserted region, including all
+intermediate necks and scales, not a classification of individual
+bubbles.
+
+\emph{Proof.} As j tends to infinity, a is asymptotic to 2 pi squared A,
+c is asymptotic to 4a, and L := 4b/c = 4h + o(h). Eventually L is less
+than one. Equation (1.2) first proves (2.2). If E/h tends to four, it
+also gives v/(a+v) = o(h), hence v = o(Q).
+
+One must use the remainder, not infer small scalar energy from this
+volume statement alone. Since t squared is at most vS and S is at most
+3R, the exact definition of E gives
+
+\[
+ \sqrt{(4-\mathcal E)(a+v)}\sqrt R
+       =|-4a+t|\le4a+\sqrt{3v}\sqrt R.
+\]
+
+Here E tends to zero and v/a tends to zero. Moving the last term to the
+left proves R = O(a); also R is at least c, which is comparable to a.
+The first term of (2.1) is 4h + o(h), so
+
+\[
+ K\delta+H=o(Qa).
+\]
+
+Because K is comparable to a, delta = o(Q). Also
+
+\[
+ H=\frac{16a^2}{3vc}\left(t+\frac{3vc}{4a}\right)^2,
+ \qquad
+ \left(t+\frac{3vc}{4a}\right)^2=o(Qv).
+\]
+
+As c/a is bounded and v = o(Q), it follows that t squared/v = o(Q). The
+definition of delta now proves S + W = o(Q).
+
+Conversely, v + S + W = o(Q) gives t = o(Q) by Cauchy. In (1.1), R = 4a
++ b + o(Q), I = -4a + o(Q), V = a + o(Q). Expanding the exact expression
+for E gives E = 4h + o(h). Finally the relative Ricci and signature
+identities in I54 give (2.4)--(2.5). QED.
+
+Classical shrinking surgery constructions attain (2.3) by choosing their
+scales sufficiently small. In this localized class the lower coefficient
+is therefore sharp. The theorem does not assume those constructions
+describe all competing interiors.
+
+\hypertarget{a-fixed-improvement-must-modify-a-nonnegligible-amount-of-background}{%
+\subsection{3. A fixed improvement must modify a nonnegligible amount of
+background}\label{a-fixed-improvement-must-modify-a-nonnegligible-amount-of-background}}
+
+Let theta = D/(2 pi squared Q). When 0 \textless= theta \textless{} 1
+and h is small, Theorem 1 gives
+
+\[
+ \frac{\mathcal E}{h}\ge
+        \frac{4(1-\theta)}{1+h-2\theta h}.                \tag{3.1}
+\]
+
+If e := E/h is at most 4-epsilon, with fixed positive epsilon and small
+h, rearrangement gives
+
+\[
+ \theta\ge\frac{4-e(1+h)}{4-2eh}.
+\]
+
+The branch theta \textgreater= 1 already has a stronger volume lower
+bound. Consequently any such subfour sequence in the complete-exterior
+class must satisfy
+
+\[
+ \boxed{\liminf_j\frac{D_j}{Q_j}
+                       \ge\frac{\pi^2}{2}\varepsilon.}  \tag{3.2}
+\]
+
+It cannot obtain a fixed first-order improvement by arbitrary violent
+changes confined to background regions of total volume o(Ah). This is
+different from the shrinking C0-neighborhood theorem I53: the interior
+here need not be close to any recovery metric, but the entire exterior
+is fixed. Neither hypothesis is asserted to follow from the other.
+
+For a fixed cell replicated sparsely, I54's stronger supplier-based
+bound J \textgreater= 8 pi squared q - 4d/3 gives the sharper necessary
+cost condition d/q \textgreater= (3 pi squared/2) epsilon for a
+coefficient at most 4-epsilon. The all-metric bound above does not
+presuppose fixed cells, uniform cell volume, or convergence of their
+individual energies.
+
+The unresolved alternative is now specific: a lower coefficient must
+change a Q-scale amount of background, or must not admit this marked
+complete-exterior description. No extraction theorem has been proved.
+
+\hypertarget{individual-cores-and-their-topology-need-not-be-identified}{%
+\subsubsection{3.1 Individual cores and their topology need not be
+identified}\label{individual-cores-and-their-topology-need-not-be-identified}}
+
+The preceding proof extends further than its cell formulation. Suppose
+the closed manifold M is already the prescribed member of the actual
+family, hence \(2\chi(M)+3\tau(M)=A-Q\) and \(\tau(M)=\tau(X)-k\).
+Assume only that an open subset U of the CH base X is
+orientation-preservingly isometric to an open subset U' of M. Put D =
+Vol(X without U) and let C be M without U'.
+
+Subtract the two \emph{closed} Chern--Weil identities and then split
+their integrals into the common open set and its complement. The same
+equations (1.1) and the relative signature identity follow. No Stokes
+theorem on the complement and no boundary transgression are needed.
+Theorems 1--2 and (3.2) are unchanged. The complements may be clustered,
+connected, multiply bounded, or lack a smooth boundary; none has to be
+identified as a ball or an individual surgery core. All integrals over
+them are ordinary measurable-set integrals of the smooth closed metric.
+
+Thus the statement does not require a bubble-tree decomposition. It only
+requires the common metric region and the known topology of the closed
+member of the family. The common-region hypothesis itself has not been
+derived from small Einstein defect.
+
+In fact no identification with a region in a specified base is needed.
+It is enough that M, of the same known closed topology, has a complex-
+oriented locally CH open region of volume at least 2 pi squared A -
+o(Q), normalized by Ric = -g. Select a measurable subregion with volume
+at most 2 pi squared A and discrepancy o(Q). Its scalar, Ricci and Weyl
+densities are exactly those used in (1.1). Splitting the closed
+identities gives (2.2) directly, without an external marking or any
+asserted topology of its complement.
+
+\hypertarget{the-exterior-need-not-be-einstein}{%
+\subsection{4. The exterior need not be
+Einstein}\label{the-exterior-need-not-be-einstein}}
+
+There is an exact interface for a varying exterior. Start with any
+smooth reference metric on the closed base, remove the reference cells
+D, and replace them by the same marked surgeries, preserving the full
+metric germs. On the unchanged exterior let
+
+\[
+ a=\operatorname{Vol}(M\setminus C),\quad
+ i=\int_{M\setminus C}s,\quad
+ r=\int_{M\setminus C}|\operatorname{Ric}|^2>0,
+ \quad e_{\mathrm{out}}=4-i^2/(ar)\ge0.
+\]
+
+All reference cap integrals below concern the reference metric, not the
+inserted geometry. Relative Chern--Weil gives
+
+\[
+ b=8\pi^2Q+R_D-S_D/3-4W_D^+,\quad c=r+b,\quad
+ R=c+S/3+4W,\quad I=i+t.                                 \tag{4.1}
+\]
+
+Assume b is nonnegative. Set
+
+\[
+ L=4-\frac{i^2}{ac}
+  =e_{\mathrm{out}}+(4-e_{\mathrm{out}})\frac b{r+b},
+ \quad K=i^2/c+3v,\quad H=\frac{(3vc-it)^2}{3vc}.
+\]
+
+Exactly as before, with delta = (S-t squared/v)/3 + 4W,
+
+\[
+ \boxed{\mathcal E=\frac{aL+v}{a+v}
+                 +\frac{K\delta+H}{(a+v)R}.}             \tag{4.2}
+\]
+
+This formula is valid even when i vanishes. It explicitly retains the
+cost of a non-Einstein exterior; replacing the cap correction by the CH
+value -4D without its hypotheses would be incorrect.
+
+\textbf{Theorem 3.} Suppose h = Q/A tends to zero,
+
+\[
+ r=8\pi^2A+o(A),\qquad b=8\pi^2Q+o(Q),
+                    \qquad\mathcal E=O(h).              \tag{4.3}
+\]
+
+Then e\_out = O(h), v/a = O(h), and
+
+\[
+ \boxed{\mathcal E\ge e_{\mathrm{out}}+4h+\frac{v}{a+v}+o(h).}
+                                                               \tag{4.4}
+\]
+
+Moreover E/h tends to four if and only if
+
+\[
+ e_{\mathrm{out}}=o(h),\qquad v/a=o(h),\qquad S+W=o(Q).
+                                                               \tag{4.5}
+\]
+
+The condition E = O(h) in (4.3) is dispensable in the reverse
+implication of (4.5), since the other assumptions then give it.
+
+\emph{Proof.} Since E tends to zero and (4.2) implies E \textgreater=
+min(L,1), eventually L \textless= E. Also L \textgreater= e\_out, so
+e\_out = O(h). The first term of (4.2) is L + (1-L)v/(a+v); hence v/a =
+O(h). Assumptions (4.3) then give L = e\_out + 4h + o(h), proving (4.4).
+
+If E/h tends to four, (4.4) forces e\_out = o(h) and v/a = o(h). As in
+Section 2,
+
+\[
+ \sqrt{(4-\mathcal E)(a+v)}\sqrt R
+                 \le |i|+\sqrt{3v}\sqrt R
+                 \le2\sqrt{ar}+\sqrt{3v}\sqrt R.
+\]
+
+Thus R = O(r). Now K is comparable to a, c is comparable to r, and the
+remainder in (4.2) is o(h). It follows that delta = o(Q), H = o(aQ), and
+
+\[
+ \left(t-\frac{3vc}{i}\right)^2=o(vQ).
+\]
+
+Here i is nonzero for large j since e\_out tends to zero. Also
+\(v c^2/i^2=O(vr/a)=o(Q)\). Consequently t squared/v = o(Q), and S+W =
+o(Q). Conversely these conditions give R = r + 8 pi squared Q + o(Q).
+The scalar cross term obeys
+
+\[
+ \frac{|it|}{ar}\le
+             2\sqrt{\frac{v}{a}\frac{S}{r}}=o(h).
+\]
+
+The same exact formula for E proves the reverse implication. QED.
+
+For example, (4.3)'s cap condition holds if R\_D + S\_D + W\_D\^{}+ =
+o(Q); this is a property of actual reference caps, not an assumed bubble
+decomposition. The exterior energy condition must likewise be supplied.
+Theorem 3 gives additive first-order costs of bulk defect and topology
+in this precise interface. It is not a Gamma-convergence theorem and
+gives neither compactness nor an automatic choice of reference metric
+for every near-minimizer.
+
+Here is a natural way to supply the reference energy in (4.3). Suppose
+the reference metrics on the CH bases themselves obey
+\(\mathcal E(g_j^{\mathrm{ref}})=O(h_j)\), and the removed reference
+caps have \(R_D+W_D^+=o(Q_j)\). The classical Ricci-energy lower bound
+on a complex-hyperbolic surface is \(R_{\mathrm{ref}}\ge8\pi^2A\); see
+\href{https://arxiv.org/html/math/0003068}{LeBrun, Theorem 4.3}. The
+opposite inequality needed here follows directly from the signature:
+
+\[
+ W_{\mathrm{ref}}^+\ge12\pi^2\tau(X)=4\pi^2A/3,\qquad
+ R_{\mathrm{ref}}=4P_{\mathrm{ref}}-12W_{\mathrm{ref}}^+
+                                                    +24\pi^2A,
+\] \[
+ 4P_{\mathrm{ref}}\le
+       \mathcal E(g^{\mathrm{ref}})R_{\mathrm{ref}},
+ \qquad
+ R_{\mathrm{ref}}\le
+       \frac{8\pi^2A}{1-\mathcal E(g^{\mathrm{ref}})}.    \tag{4.6}
+\]
+
+For the last estimate take j large enough that the denominator is
+positive. Since S\_D \textless= 4R\_D, these hypotheses give exactly b =
+8 pi squared Q + o(Q) and r = 8 pi squared A + O(Q). Thus Theorem 3
+applies to arbitrary replacement interiors on these non-Einstein
+reference backgrounds. No smallness of their C0 distance from the CH
+metric is required. The cap smallness remains an actual assumption, not
+a consequence of a scalar or Ricci bound alone.
+
+\hypertarget{an-intrinsic-bulk-criterion-without-a-reference-metric}{%
+\subsubsection{4.1 An intrinsic bulk criterion without a reference
+metric}\label{an-intrinsic-bulk-criterion-without-a-reference-metric}}
+
+The complete region-matching assumption can be replaced by precisely the
+integral information used in the proof. On any closed member M with
+\(T_+=A-Q\), choose any measurable subset U of positive volume, with
+complement C of positive volume. Define its curvature budget
+
+\[
+ T_U=\frac1{8\pi^2}\left\{\frac13\int_U s^2
+                   +4\int_U|W^+|^2-\int_U|\operatorname{Ric}|^2\right\}.
+                                                               \tag{4.7}
+\]
+
+This is a real-valued curvature integral, not an integer or a relative
+characteristic number. The closed Chern--Weil identity gives (4.1) with
+\[
+                  b=8\pi^2(T_U-T_+).
+\] Consequently, if actual sets U\_j can be chosen with \[
+ T_{U_j}=A_j+o(Q_j),\qquad
+ \int_{U_j}|\operatorname{Ric}|^2=8\pi^2A_j+o(A_j),        \tag{4.8}
+\] Theorem 3 applies verbatim. Neither a metric model on U\_j, a smooth
+interface, a relative gauge marking, nor an identification of the
+complement's topology is required.
+
+Its fine additive and equality statements still concern competitive
+sequences with E = O(h). Conditions (4.8) alone imply the liminf lower
+coefficient four, not the upper bound E = O(h).
+
+This is a sufficient integral selection criterion, not a completed
+selection theorem. In particular, the global identity only gives
+\(T_M=A-Q\); it does not supply a subset carrying \(A+o(Q)\). Equation
+(4.8) expresses exactly the missing first-order separation of the bulk
+curvature budget from the negative budget in its complement. If the
+actual field equations produce such sets for all competitive sequences,
+the all-metric lower coefficient follows. The present proof does not
+assume that conclusion.
+
+\hypertarget{a-finite-amplitude-exclusion-for-the-coupled-diagonal-profiles}{%
+\subsection{5. A finite-amplitude exclusion for the coupled diagonal
+profiles}\label{a-finite-amplitude-exclusion-for-the-coupled-diagonal-profiles}}
+
+For the remaining fixed-scale construction problem, use precisely the
+actual profiles F,w,phi and the symbols D\_0,D\_3,D\_H,c\_0,z\_0,U of
+I54, Section 6.3. Subscripts on c\_0,z\_0 in this section distinguish
+them from the global moment c above. Write
+
+\[
+ G_w=e^{2\phi}K_{F,w},\quad G_0=e^{2\phi}K_{F,0},
+ \quad V_w=U-2F\phi'w'.
+\]
+
+The full fixed collar is CH; the ordinary bolt is at r\_0 = sqrt(mu). In
+particular F(r\_0) = 0, F'(r\_0) = 2/r\_0, and w has the smooth
+ordinary-bolt extension specified in I54. Direct subtraction of the
+complete cost, including every transition, gives
+
+\[
+\begin{aligned}
+ \frac{J(G_w)-J(G_0)}{2\pi^2}=\int r^3\bigl[
+ &-4D_0F(w')^2+4F^2(w')^4+4D_Hc_0+2c_0^2\\
+ &+2V_w^2-2D_3z_0+z_0^2\bigr]\,dr.
+\end{aligned}\tag{5.1}
+\]
+
+Fix r\_c,R,K,M independent of mu, with r\_0 \textless{} r\_c \textless{}
+R and R inside the unchanged CH collar. On the fixed interval
+{[}r\_c,R{]}, assume
+
+\[
+ M^{-1}\le F\le M,\quad |F'|+|\phi'|\le M,\quad |w|\le K,\quad
+                   \max(|D_0|,|D_3|,|D_H|)\le\eta.
+                                                               \tag{5.2}
+\]
+
+\textbf{Proposition 4.} There is a positive eta\_0 depending only on
+r\_c,R,K,M such that, if eta \textless= eta\_0 and
+
+\[
+ D_0\le0,\qquad D_3\le0,\qquad D_H\ge0
+                                     \quad(r_0<r<r_c),  \tag{5.3}
+\]
+
+then J(G\_w) \textgreater= J(G\_0) \textgreater{} 8 pi squared. The
+inner anisotropy has no amplitude or derivative bound, apart from
+smoothness.
+
+\emph{Proof.} On the outer interval, the definition of V\_w becomes
+
+\[
+ w''+\left(F'/F+3/r+2\phi'\right)w'+b_0(r,w)w=-V_w/F.
+\]
+
+Here b\_0 extends smoothly across w = 0 and is uniformly bounded by
+(5.2); the quotient sinh(aw)/w is bounded by a cosh(aK). The terminal
+data w = w' = 0 are supplied by the full collar. The elementary
+terminal-value estimate for this bounded first-order system gives
+
+\[
+ \int_{r_c}^{R}r^3(w^2+(w')^2)\,dr
+                      \le C\int_{r_c}^{R}r^3V_w^2\,dr.  \tag{5.4}
+\]
+
+One can apply Gronwall to the coefficients evaluated at the actual
+solution w; only their bounds are used. Since c\_0+z\_0 \textless= Cw
+squared on this fixed interval, the outer part of (5.1) is at least 2
+integral V\_w squared minus C eta integral(w squared+w' squared). Choose
+eta\_0 so that (5.4) absorbs the negative term. All terms of (5.1) on
+the inner interval are nonnegative by (5.3). Finally G\_0 is conformal
+to the genuine Kahler ordinary blowup K\_\{F,0\}. I54's whole-cell
+conformal bound, with exceptional area pi mu, gives
+
+\[
+ J(G_w)\ge J(G_0)\ge
+       \frac{2\pi^2d(\mu+2)^2}{d-\pi^2\mu^2/2}
+       +\frac14\int_C(s_{G_0}+4)^2
+                    >8\pi^2.                           \tag{5.5}
+\]
+
+The denominator is the positive volume of the canonical Kahler cell. In
+particular the bound is at least 8 pi squared + 8 pi squared mu + 2 pi
+squared mu squared. QED.
+
+These hypotheses hold on a uniform, explicitly weighted profile
+neighborhood of the low-cost recovery. On the inner region use the uncut
+cscK profile F\_mu of I54 and \(p_\mu=\mu(\mu+2)/r^4\), and write F =
+F\_mu+f.~It suffices that
+
+\[
+\begin{aligned}
+ |f''|+|f'|/r+|f|/r^2+|e^{2\phi}-1|
+ +F|\phi''|+(|F'|+F/r)|\phi'|+F(\phi')^2
+                                      \le p_\mu/10.
+\end{aligned}\tag{5.6}
+\]
+
+The definitions give \textbar D\_0+p\_mu\textbar,
+\textbar D\_3+p\_mu\textbar, \textbar D\_H-p\_mu\textbar{} \textless=
+p\_mu/2. On the fixed outer interval a sufficiently small ordinary C2
+neighborhood of the complete recovery, followed by sufficiently small
+mu, gives (5.2). The radii and thresholds do not depend on mu. This is a
+weighted second-derivative neighborhood, not a claim that low energy
+automatically supplies those bounds.
+
+If only (5.2) is known, keep the potentially negative inner payment
+
+\[
+ \mathfrak C_\mu=\int_{r_0}^{r_c}r^3
+ \{4(D_0)_+F(w')^2+4(-D_H)_+c_0+2(D_3)_+z_0\}\,dr.
+\]
+
+The same proof gives J(G\_w) \textgreater= J(G\_0)-2 pi squared C\_mu.
+Thus an actual subthreshold cell in this outer regime necessarily has
+
+\[
+ \boxed{\mathfrak C_\mu>
+       \frac{d(\mu+2)^2}{d-\pi^2\mu^2/2}-4
+                                      \ge4\mu+\mu^2.}   \tag{5.7}
+\]
+
+The sign violations must correlate with actual anisotropy strongly
+enough to pay this amount. Their mere occurrence is not a construction.
+No bound of the reverse kind in (5.7) has been proved for arbitrary
+profiles, and (5.2) has not been extracted from all low-energy cells.
+
+\hypertarget{the-actual-correlation-in-an-almost-kahler-filling}{%
+\subsection{6. The actual correlation in an almost-Kahler
+filling}\label{the-actual-correlation-in-an-almost-kahler-filling}}
+
+For the nonconformal metric K itself, there is a geometric version of
+the missing signed payment. Use the ordinary blowup, positive periods
+t\_i and relative first-Chern class of I54, Section 6.1. Locally choose
+a J-anti-invariant two-form psi of squared norm two and write \[
+ \nabla\omega=\zeta\otimes\psi-J\zeta\otimes J\psi,\qquad
+ n=\tfrac12|\nabla\omega|^2=2|\zeta|^2.
+\] The classical canonical Chern form is \[
+ \gamma=\operatorname{Rm}(\omega)-\zeta\wedge J\zeta,\qquad
+ [\gamma]=2\pi c_1.
+\] These are formulas (21) and (25) in
+\href{https://faculty.fiu.edu/~draghici/research/paperfiles/Math-Ann.pdf}{Apostolov--Armstrong--Draghici}.
+Put \[
+ \xi=(\zeta\wedge J\zeta)^-,\quad |\xi|^2=n^2/8,\quad
+ \beta=W^+(\omega)-(s/6+n/2)\omega,
+\] \[
+ \rho'_0=(\operatorname{Ric}'-sK/4)(J\cdot,\cdot).
+\] Primes denote the J-invariant part; double primes denote the
+J-anti-invariant part. In particular
+\(|\operatorname{Ric}'_0|^2=2|\rho'_0|^2\). The actual form satisfies \[
+ (\gamma+\omega)^+=(s+n+4)\omega/4+\beta,\qquad
+ (\gamma+\omega)^-=\rho'_0-\xi.
+\] On the full CH collar gamma + omega vanishes. After gluing the
+unchanged closed CH exterior, its cohomology class has only exceptional
+components. Thus, with \(C_E=\sum_i(2\pi+t_i)^2\), \[
+                    \int_C(\gamma+\omega)^2=-C_E.
+\] Expanding this identity and using
+\(J(K)=2\int|\rho'_0|^2+\int|\operatorname{Ric}''|^2 +\tfrac14\int(s+4)^2\)
+gives \[
+ \boxed{\begin{aligned}
+ J(K)={}&2C_E+\tfrac12\int(s+4)^2+\int\mathcal C\\
+        &+2\int|\beta|^2+\int|\operatorname{Ric}''|^2,
+ \end{aligned}}                                                   \tag{6.1}
+\] where the signed smooth density is \[
+ \mathcal C=2(\operatorname{Ric}+K)(\zeta^\#,\zeta^\#)
+       +2(\operatorname{Ric}+K)((J\zeta)^\#,(J\zeta)^\#).
+\] Away from n = 0 it is
+\(n\,\operatorname{tr}_{D^\perp}(\operatorname{Ric}+K)\), where
+\(D^\perp\) is the two-plane spanned by zeta and J zeta. The displayed
+smooth formula does not require extending that plane across the zero
+set. Rotating psi rotates this pair, leaving the density unchanged.
+Algebraically the term is \(n(s+4)/2+4\langle\rho'_0,\xi\rangle\).
+
+Consequently a genuinely subthreshold AK cell must have a sufficiently
+negative torsion-weighted directional Ricci correlation. The integrated
+nonintegrability N alone does not decide its sign. Nor does a small
+exceptional period force N to vanish: a fixed compactly supported
+compatible nonintegrable perturbation away from the shrinking bolt
+retains positive N in the limit. Such an example pays the positive cost
+of the background perturbation and is not subthreshold. Equation (6.1)
+is a consequence of the classical canonical Chern identity, not a new
+integrability theorem. Its analogue for arbitrary conformal metrics
+retains the conformal terms in I54 rather than silently identifying G
+with K.
+
+\hypertarget{full-coupled-hessian-check-at-the-low-cost-recovery}{%
+\subsection{7. Full coupled Hessian check at the low-cost
+recovery}\label{full-coupled-hessian-check-at-the-low-cost-recovery}}
+
+The nonlinear result in Section 5 does not depend on a formal Taylor
+expansion. The following separate calculation records why a quadratic
+search near the entire cutoff recovery does not produce a missing
+negative mode.
+
+Choose fixed physical radii \(r_c<r_1<R\), cut the cscK profile F\_mu to
+CH between r\_c and r\_1, and write \(s_{F_\mu}=-4+\delta_\mu\). Then
+delta\_mu is supported in that annulus with C1 norm O(mu). Consider
+\(F=F_\mu+\epsilon f,\ \phi=\epsilon p,\ w=\epsilon z\), with the actual
+fixed-bolt and collar conditions; in particular f(r\_0) = f'(r\_0) = 0
+and all variations vanish near R. Put \[
+ \mathcal Sf=-f''-7f'/r-8f/r^2,\quad
+ L_Fp=Fp''+(F'+3F/r)p'.
+\] For \(j=J/(2\pi^2)\), the even quadratic coefficient is \[
+ Q_{\mathrm{ev}}=\mathcal Q_{\mathrm{ev}}
+ +\int r^3\{4\delta_\mu'fp'-4\delta_\mu F_\mu(p')^2
+                                      +4\delta_\mu p^2\}\,dr,
+\] \[
+ \mathcal Q_{\mathrm{ev}}=\int r^3
+ \left\{\frac{(\mathcal Sf)^2}{6}
+ +\frac{(\mathcal Sf-6L_{F_\mu}p+6p)^2}{3}
+                            +4p^2+4F_\mu(p')^2\right\}\,dr.
+                                                               \tag{7.1}
+\] This follows by expanding the exact even-sector expression \[
+ j=4-\frac{2d}{\pi^2}+\int r^3
+       \{s_F^2/6+X^2/12+(X+4e^{2\phi})^2/4\}\,dr,
+ \quad X=s_F-6L_F\phi-6F(\phi')^2.
+\] The integration by parts uses \(\int r^3L_fp=[r^3fp']_{r_0}^{R}=0\).
+The terminal ODE for S f on the fixed outer annulus controls its H1 norm
+by the L2 norm of S f there. Consequently
+\(Q_{\mathrm{ev}}\ge(1-C\mu)\mathcal Q_{\mathrm{ev}}\).
+
+For the odd sector define \[
+ D_Fz=-Fz''-(F'+3F/r)z'+(16/(r^2F)-8/r^2)z.
+\] Its coefficient is \[
+ Q_{\mathrm{odd}}=\int r^3
+ \{2(D_{F_\mu}z)^2-4E_VF_\mu(z')^2
+                     +32E_Hz^2/r^2-64E_Vz^2/(r^2F_\mu)\}\,dr.
+\] In the cscK core \(E_V=-p_\mu,E_H=p_\mu\). In the fixed transition
+annulus these two defects are O(mu). The terminal ODE estimate, now for
+D\_F z, therefore gives \[
+\begin{aligned}
+ Q_{\mathrm{odd}}\ge{}&(2-C\mu)\int r^3(D_{F_\mu}z)^2\,dr\\
+ &+\int_{r_0}^{r_c}r^3p_\mu
+       \{4F_\mu(z')^2+32z^2/r^2+64z^2/(r^2F_\mu)\}\,dr.
+\end{aligned}                                                     \tag{7.2}
+\] Mixed even--odd second derivatives vanish because the full functional
+is even in w. Thus the coupled quadratic form is positive for small mu.
+The linear derivative is \[
+ Dj[f,p,z]=\int r^3\delta_\mu
+                           (\mathcal Sf-4L_{F_\mu}p+4p)\,dr.
+\] It is bounded by \(C\mu\sqrt{\mathcal Q_{\mathrm{ev}}}\); quadratic
+optimization can save only O(mu squared), whereas \[
+ j(F_\mu,0,0)=(\mu+2)^2+\tfrac12\int r^3\delta_\mu^2\,dr
+                                      =4+4\mu+O(\mu^2).
+\] This is a statement about the quadratic model. Finite deformations
+are justified only under Section 5's actual nonlinear hypotheses. The
+search tool fixes its cutoff in logarithmic coordinates instead; its
+moving physical transition does not automatically inherit these
+fixed-annulus uniform constants.
+
+\hypertarget{a-global-radial-moment-the-entire-nonconformal-triaxial-class}{%
+\subsection{8. A global radial moment: the entire nonconformal triaxial
+class}\label{a-global-radial-moment-the-entire-nonconformal-triaxial-class}}
+
+There is a stronger exclusion than the neighborhood result in Section 5.
+It uses one integral of the complete Ricci residual, not monotonicity
+under symmetrization. In the same ordinary-bolt class let
+\(\mu=r_0^2>0\), and choose R in the unchanged CH collar. No bound on
+F,w,phi or their derivatives is assumed, apart from positivity and the
+smooth bolt and collar conditions. In particular
+\(w=(r-r_0)^2\widetilde w(r)\) and phi is smooth in r at the bolt, as in
+the smooth profile class of I54. Define \[
+ A_0=D_0-2F(w')^2,\qquad A_3=D_3-z_0,\qquad A_H=D_H+c_0,
+ \qquad V_w=U-2F\phi'w',
+\] \[
+ X=2A_H-A_0-A_3,\qquad Y=A_0+A_3+2A_H,
+ \qquad Z=A_0-A_3.
+\] Here Y is exactly \(e^{2\phi}(s_G+4)\). Put \[
+\begin{aligned}
+ I_R&=\int_{r_0}^Rr^{-5}\,dr
+                  =\tfrac14(\mu^{-2}-R^{-4}),\\
+ P_w&=\int_{r_0}^R\left\{
+    \frac{2F(w')^2}{r}+\frac{8(\cosh(2w)-1)}{r^3}
+                 +\frac{8\sinh^2(2w)}{r^3F}\right\}\,dr,\\
+ T_\phi&=2\int_{r_0}^R\frac{F(\phi')^2}{r}\,dr,
+ \qquad M=1+2/\mu+P_w-T_\phi .
+\end{aligned}                                                     \tag{8.1}
+\] These are integrals of the actual profiles. Both P\_w and T\_phi are
+nonnegative and finite for smooth bolt data.
+
+\textbf{Proposition 5.} Every such conformal triaxial filling satisfies
+\[
+\boxed{\begin{aligned}
+ \frac{J(G)}{2\pi^2}={}&\frac{M^2}{4I_R}
+ +\frac14\int_{r_0}^R r^3
+                    \left(X-\frac{M}{I_Rr^4}\right)^2dr\\
+ &+\frac14\int_{r_0}^Rr^3Y^2dr
+  +\frac12\int_{r_0}^Rr^3Z^2dr
+  +2\int_{r_0}^Rr^3V_w^2dr .
+\end{aligned}}                                                    \tag{8.2}
+\] In particular the whole nonconformal class \(\phi=0\), including
+arbitrary finite triaxial anisotropy and arbitrary positive F, obeys \[
+ \boxed{\frac{J(K_{F,w})}{2\pi^2}
+ \ge\frac{(\mu+2+\mu P_w)^2}{1-\mu^2/R^4}>4.}           \tag{8.3}
+\]
+
+\emph{Proof.} Direct substitution in the actual residual gives \[
+\begin{aligned}
+ X={}&F''+3F'/r-8(F-1)/r^2
+       +2(F\phi')'-2F\phi'/r-2F(\phi')^2\\
+    &+2F(w')^2+2c_0+z_0 .
+\end{aligned}
+\] After multiplication by 1/r, its conformal linear terms are exactly
+\(2(F\phi'/r)'\). Their boundary values vanish: F = 0 at the bolt, phi
+is radially smooth there, and phi = 0 on the full collar. The F terms
+have integral \[
+ \left[F'/r+4F/r^2\right]_{r_0}^R
+                    +8\int_{r_0}^Rr^{-3}dr=1+2/\mu.
+\] This uses F'(r\_0) = 2/r\_0 and the exact outer values F(R) = 1+R
+squared/6, F'(R) = R/3. Hence \(\int X/r=M\). Pointwise, \[
+ A_0^2+A_3^2+2A_H^2=(X^2+Y^2)/4+Z^2/2.
+\] Projecting X in \(L^2(r^3dr)\) onto the single function r to the
+power minus four proves (8.2). Set T\_phi = 0 for (8.3). QED.
+
+This result excludes the whole diagonal almost-Kahler class itself, not
+only small anisotropy or favorable D signs. It does not contradict the
+earlier descending plateau: a decrease from one high-cost metric to
+another need not cross the threshold four. It also does not prove the
+corresponding result for all conformal factors.
+
+More generally put \[
+ \delta_{\mu,R}=1+\frac2\mu
+                  \left(1-\sqrt{1-\mu^2/R^4}\right)>1.
+\] The entire class with \(T_\phi-P_w\le\delta_{\mu,R}\) has J greater
+than 8 pi squared. Indeed M is then at least
+\(2\mu^{-1}\sqrt{1-\mu^2/R^4}>0\), and (8.2) gives the nonstrict bound;
+equality would require X = M/(I\_R r to the fourth) on the full collar,
+where the actual residual X vanishes.
+
+Thus every actual subthreshold conformal cell necessarily satisfies \[
+ \boxed{1+\frac2\mu\left(1-\sqrt{1-\mu^2/R^4}\right)
+ < T_\phi-P_w
+ <1+\frac2\mu\left(1+\sqrt{1-\mu^2/R^4}\right).}         \tag{8.4}
+\] It must also make all four remaining squares in (8.2) small enough
+simultaneously. This is a complete signed integral restriction on actual
+metrics, not a formal choice of four independent variables. For a fixed
+improvement \(J/(2\pi^2)\le4-\epsilon\), where \(0<\epsilon<4\), the
+sharper necessary condition is \[
+ \mu(T_\phi-P_w)\ge
+        \mu+2-\sqrt{4-\epsilon}\sqrt{1-\mu^2/R^4}.       \tag{8.5}
+\] Thus along mu tending to zero a fixed improvement requires a net
+weighted conformal gradient budget of order at least mu inverse. Merely
+entering the interval (8.4) by a bounded amount does not produce such an
+improvement. This is a requirement on complete smooth one-bolt cells; it
+is not a theorem decomposing an arbitrary multi-core filling into
+separately chargeable one-bolt regions. Controlling that middle interval
+from the scalar, radial and anisotropic equations is still open. The
+radial identity \[
+ Z=-2F\{\phi''-\phi'/r-(\phi')^2+(w')^2\}+z_0
+\] is retained rather than treating Z as a freely assignable residual.
+
+\hypertarget{scalar-coupling-and-an-actual-zero-moment-test}{%
+\subsubsection{8.1 Scalar coupling and an actual zero-moment
+test}\label{scalar-coupling-and-an-actual-zero-moment-test}}
+
+The scalar equation supplies a second integral, but not a bound on
+T\_phi alone. Set \[
+ G_\phi=\int r^3F(\phi')^2dr,\qquad
+ B_\phi=\int r^3(e^{2\phi}-1)dr,\qquad n=N/(2\pi^2).
+\] The scalar identity of I54 and the vanishing endpoint term
+\([r^3F\phi']=0\) give \[
+ L_Y:=\int r^3Ydr=4B_\phi-\mu^2-2\mu-n-6G_\phi,
+ \qquad \mu^2T_\phi/2\le G_\phi\le R^4T_\phi/2.         \tag{8.6}
+\] Thus the Y-square in (8.2) splits exactly into \[
+ \frac{L_Y^2}{R^4-\mu^2}
+ +\frac14\int r^3
+           \left(Y-\frac{4L_Y}{R^4-\mu^2}\right)^2dr.    \tag{8.7}
+\]
+
+The main radial moment M can nevertheless vanish on genuine smooth
+metrics. Take the complete cutoff Kahler recovery F\_mu with fixed
+physical cutoff radius, w = 0, and a nonzero
+\(\eta\in C_c^\infty((2,3))\). For sufficiently small mu put \[
+ C_\mu=2\int_2^3F_\mu(\sqrt\mu x)(\eta'(x))^2/x\,dx,
+ \qquad a_\mu^2=(\mu+2)/C_\mu,
+ \qquad \phi(r)=a_\mu\eta(r/\sqrt\mu).
+\] Here C\_mu tends to the positive integral with F replaced by
+\(1-x^{-2}\). The metric is smooth and preserves both the bolt and full
+CH collar. Direct change of variable gives \[
+             P_w=0,\qquad T_\phi=1+2/\mu,\qquad M=0.
+\] Its entire cost remains uniformly bounded: the perturbation is
+supported on a region of volume O(mu squared), and its curvature is O(mu
+inverse) with uniformly controlled rescaled profiles. It is still
+conformal to a genuine Kahler cell, so its cost is strictly greater than
+8 pi squared by I54. In (8.2) that positive cost is carried by the
+remaining squares. In particular neither a bound on M away from zero nor
+the universal inequality T\_phi \textless= P\_w + 1 can finish the
+conformal problem. The missing estimate must couple the full scalar
+variance, Z and V\_w, rather than discard them after taking the two
+moments.
+
+\hypertarget{a-two-scale-requirement-for-any-fixed-improvement}{%
+\subsection{9. A two-scale requirement for any fixed
+improvement}\label{a-two-scale-requirement-for-any-fixed-improvement}}
+
+The radial moment and the actual almost-Kahler transfer restrict where
+the remaining conformal payment could occur. This goes beyond choosing
+formal values of T\_phi and P\_w.
+
+\textbf{Proposition 6.} Fix R and \(0<\epsilon<4\). Suppose a sequence
+of the complete cells in Section 8 has mu tending to zero and
+\(j=J/(2\pi^2)\le4-\epsilon\). For every \(0<\alpha<1/4\), \[
+ \mu T_{\phi,\{r\ge\mu^\alpha\}}\longrightarrow0,
+ \qquad
+ \liminf\mu T_{\phi,\{r\le\mu^\alpha\}}
+                       \ge2-\sqrt{4-\epsilon}>0.         \tag{9.1}
+\] At the same time the complete metric changes cannot be confined to a
+CH background region whose volume tends to zero.
+
+\emph{Proof.} Use normalized quantities \[
+ d=R^4/4,\qquad v=(R^4-\mu^2)/4,\qquad
+ m=R^4+2\mu,\qquad n=N/(2\pi^2).
+\] These equal the quantities of I54 divided by 2 pi squared; this
+normalization is confined to this section. The conformal transfer
+remainder is not discarded: with u = exp(-phi), \[
+ \frac{6\int|du|_G^2dV_G}{2\pi^2}
+                       =6\int r^3F(\phi')^2dr=6G_\phi.
+\] The actual scalar and Weyl bounds of I54 therefore give \[
+ j\ge4-4d+
+       \frac{(m+n+6G_\phi)^2+2(m-2n)^2}{12v}.
+\] The omitted term is \(\int(s_G+4)^2/(8\pi^2)\ge0\). The exact
+algebraic decomposition \[
+ (m+n+6G)^2+2(m-2n)^2
+             =9\left(n-\frac{m-2G}{3}\right)^2+2(m+4G)^2
+\] implies \[
+ 0\le G_\phi\le
+             \frac{\sqrt{24dv-6\epsilon v}-m}{4}=O_R(1). \tag{9.2}
+\] If the radicand or right side is negative, the hypothesized cell is
+already excluded. On the exterior of any canonical radius rho, \[
+ T_{\phi,\{r\ge\rho\}}\le2G_\phi/\rho^4.
+\] Take rho = mu to the power alpha. The first conclusion in (9.1)
+follows because 1 - 4 alpha is positive. Equation (8.5), together with
+P\_w nonnegative, supplies the lower bound on mu T\_phi; subtract the
+vanishing exterior contribution to obtain the second conclusion.
+
+Finally, if all changes were confined to a CH region of background
+volume d\_s tending to zero, the general complete-cell inequality in I54
+would give \(J\ge8\pi^2-4d_s/3\), contradicting the fixed improvement.
+More precisely it requires \(d_s\ge3\pi^2\epsilon/2\). This last bound
+concerns the entire modified background, not the canonical size of the
+exceptional bolt. QED.
+
+Consequently a putative fixed improvement in this class needs both a
+microscopic conformal payment and a nonvanishing-scale modification of
+the full geometry. A small-support conformal bubble alone cannot provide
+it; neither can a uniformly bounded weighted conformal gradient on the
+shrinking canonical scales. The proposition does not classify the
+transition or prove that the two required mechanisms cannot coexist.
+That simultaneous compatibility, including all the squares of (8.2), is
+the remaining construction test in this class.
+
+\end{document}

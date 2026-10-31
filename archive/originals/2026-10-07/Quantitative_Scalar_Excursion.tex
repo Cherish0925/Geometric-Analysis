@@ -1,0 +1,295 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Yam}{\mathcal Y}
+\title{Quantitative Scalar-Curvature Excursions from an All-Metric Ricci-Defect Gap}
+\author{Qiushi Line 1: external-theorem application note}
+\date{7 October 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Assuming the four-dimensional scalar-curvature extension theorem stated
+in the specified OpenAI manuscript, an all-metric positive lower bound
+for the squared trace-free Ricci curvature on a negative-Yamabe
+four-manifold forces a volume-normalized Ricci flow to reach every
+positive scalar-curvature threshold. We give an explicit upper bound
+for the first hitting time. The elementary integral estimate also gives
+linear growth of the running scalar-curvature maximum for any immortal
+flow. This is a downstream consequence of the existing Line 1 static
+theorems, not a solution of the unrestricted O10 endpoint or the O11
+optimal leading-coefficient problem. No priority claim is made.
+\end{abstract}
+
+\section{Inputs and conventions}
+Let $M$ be a closed connected smooth four-manifold. Assume
+\begin{equation}
+ P(g):=\int_M|\Ric_g^\circ|^2\,dV_g\ge p_0>0
+ \quad\hbox{for every smooth metric }g,
+ \qquad \Yam(M)<0.\label{eq:static}
+\end{equation}
+The all-metric hypothesis is essential; a positive lower bound for
+$P+D_2$ alone is not substituted for it.
+
+We use the following external input, referred to as (F): a smooth
+unnormalized Ricci flow on a closed four-manifold extends smoothly
+past a finite time if its scalar curvature remains uniformly bounded
+in absolute value. This is Theorem~\texttt{thm:extension} in
+\cite{OAIFlow}, at the fixed source revision specified below.
+Our application takes (F) as an external theorem. It does not constitute
+an independent verification of its full proof.
+
+Let $g(t)$ be the maximal volume-normalized flow
+\begin{equation}
+ \partial_tg=-2\Ric+\tfrac12\bar s\,g,
+ \qquad \bar s(t)=V^{-1}\int_Ms_{g(t)}\,dV_{g(t)},
+ \qquad V=\Vol_{g(0)}M.\label{eq:flow}
+\end{equation}
+The volume $V$ is constant. Put
+\[
+ m(t)=\min_Ms_{g(t)},\qquad m_0=m(0),\qquad
+ b_0=-m_0,\qquad\bar s_0=\bar s(0).
+\]
+Choose $a>0$ such that $\Yam(M)\le-a\sqrt V$.
+The Laplacian on functions is $\Delta=\operatorname{div}\nabla$.
+
+\section{A finite-time integral estimate}
+\begin{lemma}\label{lem:min}
+Throughout the smooth flow, $m_0\le m(t)\le-a<0$. At almost every time,
+\begin{equation}
+ m'(t)\ge\frac{-m(t)}2\bigl(\bar s(t)-m(t)\bigr)\ge0.
+ \label{eq:min}
+\end{equation}
+\end{lemma}
+\begin{proof}
+For a metric with scalar minimum $m<0$, the Yamabe quotient satisfies
+\[
+ \frac{\int(6|du|^2+s u^2)}{(\int u^4)^{1/2}}
+ \ge m\frac{\int u^2}{(\int u^4)^{1/2}}
+ \ge m\sqrt V.
+\]
+Here the second inequality uses the negative sign of $m$ and Holder's
+inequality. Thus $m\sqrt V\le Y([g])\le\Yam(M)\le-a\sqrt V$.
+A nonnegative scalar minimum would instead imply a nonnegative Yamabe
+constant, contradicting $\Yam(M)<0$.
+
+The scalar evolution for \eqref{eq:flow} is
+\begin{equation}
+ \partial_ts=\Delta s+2|\Ric^\circ|^2+\tfrac12s(s-\bar s).
+ \label{eq:scalar}
+\end{equation}
+On every compact smooth time interval, $m(t)$ is locally Lipschitz;
+the minimum principle gives \eqref{eq:min} almost everywhere.
+It follows that $m(t)\ge m_0$. See \cite[Sections 2--3]{Ishida}
+for the underlying scalar-minimum argument.
+\end{proof}
+
+\begin{lemma}\label{lem:integral}
+If $K\ge0$ and $s_{g(u)}\le K$ for $0\le u\le t$, then
+\begin{equation}
+ \frac{2p_0}{V}t\le
+ K\left(1+\log\frac{b_0}{a}\right)-\bar s_0+b_0-a.
+ \label{eq:window}
+\end{equation}
+This conclusion does not use the extension theorem (F).
+\end{lemma}
+\begin{proof}
+Since $\partial_t dV=(\bar s-s)dV$, integration of
+\eqref{eq:scalar} gives the exact identity
+\begin{equation}
+ \bar s'=\frac{2P(g(t))}{V}-\frac12\Var(s),
+ \qquad \Var(s)=V^{-1}\int(s-\bar s)^2.
+ \label{eq:mean}
+\end{equation}
+The pointwise inequality $(s-m)(K-s)\ge0$ implies
+\[
+ \Var(s)\le(K-\bar s)(\bar s-m)
+             \le(K-m)(\bar s-m).
+\]
+By Lemma~\ref{lem:min},
+\[
+ \frac12\Var(s)\le\left(1+\frac{K}{-m}\right)m'.
+\]
+Write $u_t=-m(t)$. Integration yields
+\begin{align}
+ \frac12\int_0^t\Var(s)\,du
+ &\le K\log\frac{b_0}{u_t}+b_0-u_t\notag\\
+ &\le K\log\frac{b_0}{a}+b_0-a,\label{eq:variance-integral}
+\end{align}
+because $u_t\ge a$ and $K\ge0$.
+Integrate \eqref{eq:mean}, use $P\ge p_0$ and $\bar s(t)\le K$,
+and apply \eqref{eq:variance-integral}. This proves
+\eqref{eq:window}.
+\end{proof}
+
+\section{Thresholds and running maxima}
+\begin{theorem}[Quantitative threshold crossing]\label{thm:hitting}
+Assume \eqref{eq:static} and the external theorem (F). For every
+$K>\max\{0,\max_Ms_{g(0)}\}$, the first hitting time
+\[
+ \tau_K=\inf\{t:\max_Ms_{g(t)}\ge K\}
+\]
+exists strictly before the maximal smooth time and satisfies
+\begin{equation}
+ \boxed{\displaystyle
+ \tau_K\le\frac{V}{2p_0}
+ \left[K\left(1+\log\frac{b_0}{a}\right)-\bar s_0+b_0-a\right].}
+ \label{eq:hitting}
+\end{equation}
+\end{theorem}
+\begin{proof}
+Suppose the flow has a finite maximal time $T$ before it reaches $K$.
+Lemma~\ref{lem:min} bounds its scalar curvature between $m_0$ and $K$.
+Set
+\[
+ c(t)=\exp\left(-\tfrac12\int_0^t\bar s(u)\,du\right),
+ \qquad \widetilde t=\int_0^t c(u)\,du,
+ \qquad\widetilde g(\widetilde t)=c(t)g(t).
+\]
+The factor $c$ has positive upper and lower bounds on $[0,T)$.
+Direct differentiation gives
+$\partial_{\widetilde t}\widetilde g=-2\Ric_{\widetilde g}$.
+The transformed terminal time is finite and
+$s_{\widetilde g}=s_g/c$ is bounded. By (F), the transformed flow
+extends smoothly. Restoring its constant volume and time parameter
+extends $g$, a contradiction.
+
+If the threshold is never reached and the flow is immortal,
+Lemma~\ref{lem:integral} contradicts $t\to\infty$.
+Thus $\tau_K$ exists before the maximal time. Apply
+\eqref{eq:window} for $t<\tau_K$ and pass to $\tau_K$.
+\end{proof}
+
+\begin{corollary}[Running scalar maximum]
+Define
+\[
+ K(t)=\max\{0,\sup_{0\le u\le t}\max_Ms_{g(u)}\}.
+\]
+Throughout smooth existence,
+\begin{equation}
+ \boxed{\displaystyle
+ K(t)\ge\frac{(2p_0/V)t+\bar s_0-b_0+a}
+ {1+\log(b_0/a)}.}\label{eq:growth}
+\end{equation}
+In particular, if the flow is immortal, its running scalar maximum
+has a positive linear lower growth rate. Formula~\eqref{eq:growth}
+is not a finite-time blowup rate and does not assert monotonicity of
+the scalar maximum at individual times.
+\end{corollary}
+\begin{proof}
+Apply Lemma~\ref{lem:integral} with the interval bound $K(t)$ and
+rearrange.
+\end{proof}
+
+\section{Insertion into the Line 1 hypotheses}
+Suppose the actual supply and the Line 1 estimates yield, for every
+metric,
+\[
+ \mathcal J(g)=4P(g)/R(g)\ge j_0>0,
+ \qquad S_2(g)\ge32\pi^2 A,
+ \qquad\Yam(M)\le-4\pi\sqrt{2A}.
+\]
+Then
+\[
+ R=P+S_2/4\ge8\pi^2A,\qquad
+ p_0=2\pi^2Aj_0,\qquad a=4\pi\sqrt{2A/V}
+\]
+are admissible. In an N1 application, one must first ensure that
+its topological excess leaves a strictly positive $j_0$; an estimate
+for $\mathcal J+d$ is not automatically a positive estimate for
+$\mathcal J$ alone.
+
+If $s_{g(0)}=-4$, then
+\begin{equation}
+ \tau_K\le\frac{V}{2p_0}
+ \left[K\left(1+\log\frac4a\right)+8-a\right].
+ \label{eq:constant-initial}
+\end{equation}
+On the original balanced family, use the proved linear lower bound
+$p_{0,j}\ge cA_jh_j$. For the selected scalar-minus-four initial
+representatives, a uniform bound $V_j\le C A_j$ then gives
+\[
+ \tau_{K,j}\le C_K/h_j.
+\]
+The volume bound follows in the manuscript's low-defect window from
+$8\pi^2A+P\le R\le8\pi^2AU+4P$, $U=1+O(h)$,
+$\mathcal J=O(h)$, and $V=(R-P)/4$.
+This is only an upper bound, not an asymptotically sharp lifetime.
+It uses the established linear scale, not the unknown coefficient in O11.
+
+\begin{remark}[Scope and novelty]
+The topology--gauge obstruction to long-time scalar-bounded normalized
+Ricci flow predates this note; see \cite{Ishida}. The new source used
+here removes the possible finite-time scalar-bounded termination.
+The displayed quantitative threshold estimate is derived explicitly
+above. No claim of global bibliographic novelty, full certification of
+the external manuscript, unrestricted O10 closure, or O11 sharpness
+is made.
+\end{remark}
+
+\section{Two precise cautions for the remaining transfers}
+The tamed-to-compatible theorem in \cite{OAITame} starts with a globally
+smooth almost-complex structure and an everywhere taming closed form.
+It does not supply a curvature-energy comparison for the new compatible
+form. In the original surgery family,
+\[
+ a_\epsilon^2=A-k,\quad T_+=A-k-4\ell,\quad
+ c_2(S^+_{a_\epsilon})[M]=\frac{a_\epsilon^2-T_+}{4}=\ell.
+\]
+For $\ell>0$ a nowhere-zero section of this particular positive spinor
+bundle is impossible. Thus one cannot normalize its actual spinor
+globally merely to invoke that theorem. This is not a claim that no
+other almost-complex structure exists on $M$. The density-splitting
+mechanism may still be relevant, but the required actual current,
+closure, geometric bounds and useful cohomological pairing remain to
+be established in the degenerating O10 setting.
+
+The tree theorem in \cite{OAITree} fixes a finite Ricci-flat tree,
+nontrivial matching quotient groups and high-order weighted errors.
+Its renormalized Einstein--Hilbert functional has length weight two;
+$P$ is scale invariant in dimension four. Its constants need not be
+uniform over growing trees, and a scalar-flat surgery core need not be
+Ricci-flat. A transfer to O11 therefore needs a comparison for the
+correct functional, a zero-order topological reference value and
+summable errors $o(Q)$; near-stationarity alone does not supply them.
+
+\begin{thebibliography}{9}
+\bibitem{OAIFlow}
+OpenAI, \emph{Bounded scalar curvature and smooth extension of
+four-dimensional Ricci flow}, September 24, 2026.
+Repository revision \texttt{adc7f1241b42e322a6451854ab7e4b4c146bf78a};
+\texttt{01-introduction.tex}, Theorem \texttt{thm:extension}.
+\url{https://github.com/openai/math}
+
+\bibitem{Ishida}
+M. Ishida, \emph{The Normalized Ricci Flow on Four-Manifolds and
+Exotic Smooth Structures}, arXiv:0807.2169, Sections 2--3.
+\url{https://arxiv.org/abs/0807.2169}
+
+\bibitem{OAITame}
+OpenAI, \emph{Taming implies compatibility on four-manifolds},
+September 23, 2026. Same repository revision;
+\texttt{01-introduction.tex}, \texttt{04-energy.tex}, and
+\texttt{06-splitting.tex}.
+
+\bibitem{OAITree}
+OpenAI, \emph{Path selection and an elliptic inequality on degenerating
+Ricci-flat trees}, September 24, 2026. Same repository revision;
+\texttt{02-tree.tex} and \texttt{07-observables.tex}.
+
+\bibitem{Qiushi}
+Qiushi Line 1 project manuscript and inheritance notes:
+\emph{20260929 Line1 Integrated Manuscript},
+\texttt{eq:vg-two-sided-R}, the Spin$^c$ characteristic-number identity,
+and \emph{03 N1 Complete Inheritance}. Used as project premises,
+not re-certified in this note.
+\end{thebibliography}
+\end{document}

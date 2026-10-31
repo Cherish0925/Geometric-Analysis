@@ -1,0 +1,114 @@
+\section{The optimized Ricci-box obstruction}
+\label{sec:ricci-box-optimization}
+Let the actual monopole supply give a positive budget $A$ and the mixed
+curvature inequality
+\begin{equation}\label{eq:box-input}
+ \int_M(s-\sqrt6|W^+|)^2\ge72\pi^2A.
+\end{equation}
+Write $T=(1-\eta)A$. The symbol $\eta$ denotes a topological ratio;
+it is not the projected class square $p$. Suppose
+\[
+ d=\|g^{-1}\Ric+I\|_{L^\infty,\mathrm{op}}<\tfrac12.
+\]
+The four Ricci eigenvalues are $-1+a_i$, with $|a_i|\le d$. Put
+$w=|W^+|$ and $F=s^2/24-|\Ric^\circ|^2/2$. Then
+\begin{equation}\label{eq:box-cw}
+ \int_M(2w^2+F)=4\pi^2(1-\eta)A.
+\end{equation}
+Keeping the correlation between scalar and trace-free Ricci curvature
+improves the estimate obtained by maximizing them separately.
+
+\begin{proposition}\label{prop:box-optimization}
+The exact algebraic supremum over the Ricci box and $w\ge0$ is
+\begin{equation}\label{eq:box-constant}
+ \sup\frac{(s-\sqrt6w)^2}{2w^2+F}=C(d)=
+ \begin{cases}
+ \displaystyle\frac{9(3-d^2)}{1-3d^2},&0\le d\le2-\sqrt3,\\[2mm]
+ \displaystyle\frac{27(1-d)}{(1-2d)(1+d)},&2-\sqrt3\le d<\tfrac12.
+ \end{cases}
+\end{equation}
+All the denominators in this expression are positive.
+\end{proposition}
+\begin{proof}
+Set $x_i=1-a_i>0$ and $S_0=\sum_i x_i=-s$. The ratio
+\[
+ R_0=\frac{|\Ric^\circ|^2}{s^2}
+     =\frac{\sum_i x_i^2}{(\sum_i x_i)^2}-\frac14
+\]
+attains its maximum at a vertex of $[1-d,1+d]^4$. Indeed, fixing the
+other coordinates with sum $u>0$ and square sum $v>0$, the derivative
+of $(x^2+v)/(x+u)^2$ is $2(ux-v)/(x+u)^3$; every interior critical
+point is a minimum. Moving one coordinate at a time to an endpoint
+therefore cannot decrease a maximum. If $m$ coordinates equal $1+d$,
+the vertex value is
+\[
+ R_m=\frac{m(4-m)d^2}{[4+(2m-4)d]^2}.
+\]
+The values for $m=0,4$ vanish and $R_3\le R_1$. Consequently
+\begin{equation}\label{eq:box-ratio}
+ R_0\le R(d)=\max\left\{\frac{d^2}{4},
+                     \frac{3d^2}{4(2-d)^2}\right\}<\frac1{12}.
+\end{equation}
+The last inequality follows directly from $d<1/2$; hence
+$F=s^2(1-12R_0)/24>0$. For fixed Ricci eigenvalues, weighted
+Cauchy--Schwarz gives
+\[
+ \frac{(S_0+\sqrt6w)^2}{F+2w^2}
+ \le\frac{S_0^2}{F}+3=\frac{24}{1-12R_0}+3.
+\]
+Equality occurs at $w=\sqrt6F/(2S_0)$. The two maxima in
+\eqref{eq:box-ratio} coincide at $d=2-\sqrt3$; substituting them
+gives \eqref{eq:box-constant}. They correspond respectively to two
+large and two small eigenvalue magnitudes, and to one large and three
+small magnitudes.
+\end{proof}
+
+\begin{corollary}\label{cor:box-topological}
+If $1/3<\eta<1$, every metric on a smooth type with the stated
+all-metric monopole supply satisfies $\delta_-(g)\ge d_*(\eta)$, where
+\begin{equation}\label{eq:box-inverse}
+ d_*(\eta)=
+ \begin{cases}
+ \displaystyle\sqrt{\frac{3\eta-1}{\eta+5}},
+ &\frac13<\eta\le2\sqrt3-3,\\[2mm]
+ \displaystyle\frac{\sqrt{(3\eta-1)(3\eta+15)}-(3\eta-1)}8,
+ &2\sqrt3-3\le\eta<1.
+ \end{cases}
+\end{equation}
+For $\eta\ge1$, the corresponding bound is $\delta_-(g)\ge1/2$.
+\end{corollary}
+\begin{proof}
+For $d<1/2$, combine \eqref{eq:box-input}--\eqref{eq:box-constant}:
+$1-\eta\ge18/C(d)$. Equivalently,
+\[
+ \eta\le H(d):=
+ \begin{cases}
+ (1+5d^2)/(3-d^2),&d\le2-\sqrt3,\\
+ \frac13+4d^2/[3(1-d)],&d\ge2-\sqrt3.
+ \end{cases}
+\]
+Both branches are increasing, their common value at the junction is
+$2\sqrt3-3$, and their inversion gives \eqref{eq:box-inverse}.
+Since $d_*(\eta)<1/2$, metrics with $d\ge1/2$ satisfy the same bound.
+Finally $F>0$ makes the left side of \eqref{eq:box-cw} positive,
+excluding $d<1/2$ whenever $\eta\ge1$.
+\end{proof}
+
+For comparison, the separated estimate gives
+$H_{\rm sep}(d)=1/3+2d^2/(1-d)^2$. Direct subtraction yields
+\[
+ H_{\rm sep}(d)-H(d)=
+ \begin{cases}
+ \displaystyle\frac{2d^2(1+16d-11d^2)}{3(3-d^2)(1-d)^2},
+       &0<d\le2-\sqrt3,\\[2mm]
+ \displaystyle\frac{2d^2(1+2d)}{3(1-d)^2},
+       &2-\sqrt3\le d<\tfrac12.
+ \end{cases}
+\]
+Thus the improvement is strict throughout the nonzero defect range.
+As $q=\eta-1/3\downarrow0$, the new lower bound is
+$d_*(\eta)=\frac34\sqrt q+O(q^{3/2})$. This calculation is sharp for
+the algebraic quotient, not a construction of closed equality metrics.
+It covers ratios above $1/3$ and does not supply the uniform differential
+separation at or below that threshold proved by the main calibration
+argument.

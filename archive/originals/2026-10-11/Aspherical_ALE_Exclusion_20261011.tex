@@ -1,0 +1,282 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=26mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[colorlinks=true,urlcolor=blue,citecolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\RP}{\mathbb{RP}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\title{A Global Topological Exclusion of Ricci-Flat ALE Cores\\
+\large A continuation toward smooth curvature-energy minimizers}
+\author{Research continuation}
+\date{11 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We derive an obstruction to embedding a nonflat Ricci-flat ALE four-manifold's
+compact core in a closed aspherical four-manifold. No self-duality or
+classification of general Ricci-flat ALE metrics is assumed. More generally,
+a finite-fundamental-group ALE core with nontrivial group at
+infinity has traceless-Ricci energy at least $4\pi^2+\frac1{12}\int s^2$ if it embeds in such an
+ambient manifold. The constant is attained by a classical-metric quotient.
+The proof combines integral topology, the classification of spherical
+three-manifold groups, and ALE characteristic formulas. These results are
+consequences of the cited classical inputs; no priority claim is made.
+They remove the zero-energy ALE channel for a different class of candidate
+manifolds, but do not prove existence of a smooth non-Bach-flat global
+curvature-energy minimizer.
+\end{abstract}
+
+\section{Statement and conventions}
+All manifolds are smooth and oriented. A closed manifold is aspherical when its
+universal cover is contractible. Put
+\[
+ P(g)=\int |\Ric_g^{\circ}|^2\,dV_g,\qquad
+ W_\pm(g)=\int|W_g^\pm|^2\,dV_g.
+\]
+Weyl norms are curvature-operator norms; the Ricci norm is the usual tensor
+norm. An ALE manifold here is complete, connected, one-ended, and has
+an end $(\R^4\setminus B)/\Gamma$, with the standard differentiated positive-order
+ALE decay. A compact core is obtained by cutting off this end sufficiently far
+out. Embedding a core always means a smooth codimension-zero embedding; no
+metric matching is part of this terminology.
+
+\begin{theorem}\label{thm:main}
+Let $(N,g)$ be an ALE four-manifold with finite fundamental group.
+Suppose a compact core of $N$ embeds in a closed aspherical four-manifold $M$.
+If $\Gamma\ne1$, then
+\[
+                         P(g)\ge4\pi^2+\frac1{12}\int_Ns_g^2\,dV_g.
+\]
+Consequently, no compact core of a nonflat Ricci-flat ALE four-manifold embeds
+in a closed aspherical four-manifold.
+\end{theorem}
+
+The second conclusion includes Ricci-flat metrics with either Weyl component
+nonzero. Its proof below does not infer self-duality from Ricci-flatness.
+
+\section{Topology of the embedded core}
+\begin{lemma}\label{lem:topology}
+Let $N_0\subset M$ be a compact connected codimension-zero submanifold, with
+connected spherical-space-form boundary $Y$, and with finite $\pi_1(N_0)$.
+If $M$ is closed and aspherical, then
+\[
+ H_2(N_0;\Z)=0,\quad \chi(N_0)=1,\quad \tau(N_0)=0,
+ \qquad H_1(Y;\Z)\cong A\oplus A,
+ \quad A=H_1(N_0;\Z).
+\]
+\end{lemma}
+\begin{proof}
+The group of a finite-dimensional aspherical manifold is torsion-free:
+its integral cohomological dimension is finite, whereas a group containing
+nontrivial torsion has infinite integral cohomological dimension. The map
+$\pi_1(N_0)\to\pi_1(M)$ is therefore trivial. The embedding lifts to an
+embedding of $N_0$ in the contractible universal cover $U$.
+
+Write $C=\overline{U\setminus N_0}$, using collars for Mayer--Vietoris.
+The boundary is connected and the exterior is connected.
+Since $H_2(Y;\Z)=0$ and $U$ is contractible, Mayer--Vietoris gives
+\[
+ H_2(N_0;\Z)=H_2(C;\Z)=0,\qquad
+ H_1(Y;\Z)\xrightarrow{\ \cong\ } A\oplus H_1(C;\Z).
+\]
+The fundamental-class boundary map
+$H_4(N_0,Y;\Z)\to H_3(Y;\Z)$ is an isomorphism.
+Moreover, $H_3(N_0,Y;\Z)\cong H^1(N_0;\Z)=0$, because $A$ is finite.
+Thus $H_3(N_0;\Z)=0$.
+
+Poincar\'e--Lefschetz duality and the universal coefficient theorem give
+\[
+ H_2(N_0,Y;\Z)\cong H^2(N_0;\Z)\cong\operatorname{Ext}(A,\Z),
+ \qquad H_1(N_0,Y;\Z)\cong H^3(N_0;\Z)=0.
+\]
+The pair sequence is consequently
+\[
+ 0\longrightarrow\operatorname{Ext}(A,\Z)
+ \longrightarrow H_1(Y;\Z)\longrightarrow A\longrightarrow0.
+\]
+In the Mayer--Vietoris splitting the last map is projection onto $A$.
+Its kernel is therefore $H_1(C;\Z)\cong\operatorname{Ext}(A,\Z)\cong A$.
+This proves the direct-double assertion. The remaining real homology
+calculation gives $\chi=1$ and $\tau=0$.
+\end{proof}
+
+For instance, a standard nontrivial cyclic rational ball has
+$H_1(N_0)=\Z/d$ and $H_1(Y)=\Z/d^2$, with $d>1$; these cannot form the
+required direct double. This argument uses contractibility of the universal
+cover, not merely torsion-freeness of the ambient fundamental group.
+It does not apply to a blowup of an aspherical manifold.
+
+\section{Boundary groups and the curvature inequality}
+The group-theoretic part of the proof of Hillman's Theorem 5.2
+\cite{Hillman} says that a finite spherical three-manifold group whose
+abelianization is a direct double is one of
+\[
+                 1,\qquad I^*,\qquad Q(8k)\quad(k\ge1).
+\]
+Here $I^*$ is the binary icosahedral group of order $120$, and $Q(8k)$
+is the generalized quaternionic group of order $8k$.
+We use this algebraic restriction only. We do not invoke the stronger theorem
+about embedding in a compact homology four-sphere, and do not compactify $U$.
+
+Use the signature-eta convention
+\begin{align}
+ 8\pi^2\left(\chi(N)-\frac1{|\Gamma|}\right)
+   &=W_++W_- -\frac12P+\frac1{24}\int_Ns^2,\label{eq:gb}\\
+ \tau(N)&=\frac{W_+-W_-}{12\pi^2}-\eta(S^3/\Gamma).
+ \label{eq:sig}
+\end{align}
+The ALE end supplies the displayed boundary correction.
+Equations \eqref{eq:gb}--\eqref{eq:sig}, with
+Lemma~\ref{lem:topology}, imply
+\begin{equation}\label{eq:cost}
+ P\ge24\pi^2|\eta(S^3/\Gamma)|
+            -16\pi^2\left(1-\frac1{|\Gamma|}\right)+\frac1{12}\int_Ns^2.
+\end{equation}
+This uses only $W_++W_-\ge|W_+-W_-|$.
+
+For the quaternionic groups, Wright's eta calculation
+\cite[Lemma 1]{Wright}, with $u=1$ and $v=2k$, gives, up to orientation,
+\[
+ |\eta(S^3/Q(8k))|=\frac{2k}{3}+\frac1{12k}.
+\]
+Therefore
+\begin{equation}\label{eq:quaternion}
+ P\ge16\pi^2(k-1)+\frac{4\pi^2}{k}+\frac1{12}\int_Ns^2
+ \ge4\pi^2+\frac1{12}\int_Ns^2.
+\end{equation}
+For $I^*$, its eta invariant can equivalently be computed using the known
+$E_8$ hyperk\"ahler ALE resolution, with $\chi=9$, $\tau=-8$ and end order
+$120$. The same formulas give
+\[
+ |\eta(S^3/I^*)|=8-\frac23\left(9-\frac1{120}\right)
+               =\frac{361}{180}.
+\]
+Hence \eqref{eq:cost} becomes
+\[
+                              P\ge\frac{484}{15}\pi^2+\frac1{12}\int_Ns^2.
+\]
+This proves the first assertion of Theorem~\ref{thm:main}.
+
+For the Ricci-flat conclusion, the fundamental group is finite by the standard
+Bishop--Gromov covering argument: nonnegative Ricci curvature and positive
+asymptotic volume ratio bound the number of deck transformations. More
+explicitly, disjoint translated fundamental domains associated with any fixed
+finite collection of deck transformations give, as the radius tends to
+infinity, that collection's cardinality times the base asymptotic volume ratio
+as a lower bound for the covering ball's volume ratio. Bishop--Gromov bounds
+the latter by one. In the ALE case the base ratio is $1/|\Gamma|$.
+
+If $\Gamma\ne1$, the positive lower bound contradicts $P=0$.
+If $\Gamma=1$, \eqref{eq:gb} and $P=0$, $\chi=1$ imply
+$W_++W_-=0$. All curvature then vanishes. This completes the proof.
+
+\section{Sharpness and the remaining positive-energy channel}
+The constant $4\pi^2$ is attained within the class of cores just considered.
+Let $g_4$ be LeBrun's radial scalar-flat K\"ahler ALE metric on
+$\mathcal O(-4)$ \cite{LeBrun88,Honda}. On its end, let
+\[
+              j(z_1,z_2)=(-\overline z_2,\overline z_1).
+\]
+The end is $\mathbb C^2/\Z_4$ with generator $i\operatorname{Id}$.
+The map $j$ normalizes this action and satisfies $j^2=-\operatorname{Id}$.
+It extends to a free isometric involution of $\mathcal O(-4)$: on the zero
+section it is antipodal, and away from it the equation $jz=i^a z$ has no
+nonzero solution. In complex dimension two it preserves the real orientation.
+The quotient $N$ is smooth, scalar-flat, anti-self-dual and ALE, with end
+$S^3/Q(8)$.
+
+Its core is the disk bundle over $\RP^2$ of normal Euler number of absolute
+value two, the neighborhood of the standard embedded $\RP^2\subset S^4$
+\cite{Hillman,KS}. Removing a point outside this neighborhood embeds the
+core in $\R^4$, and hence in a coordinate ball of any four-manifold.
+
+For the scalar-flat K\"ahler metric $g_m$ on $\mathcal O(-m)$, the
+anti-self-dual Ricci form and the compactly supported intersection pairing give
+\[
+ c_1^2=-\frac{(m-2)^2}{m},\qquad
+ P(g_m)=-8\pi^2c_1^2=8\pi^2\frac{(m-2)^2}{m}.
+\]
+At $m=4$ the energy is $8\pi^2$; division by the free involution yields
+\[
+                                P(N)=4\pi^2.
+\]
+Thus asphericity cannot eliminate all scalar-flat ALE cores. This is an
+explicit assembly of classical geometry and topology, not a claim that such
+a core occurs in a global minimizing sequence. Nor does its topological
+embedding in a ball by itself justify a lower-energy metric replacement:
+the controlled ALE boundary is $S^3/Q(8)$, while the outer $S^3$ of the ball
+has an additional intervening region whose geometry must be controlled.
+
+\section{Connection with the closed minimizer problem}
+Capovilla constructs closed oriented aspherical smooth four-manifolds $X_n$
+with $\chi(X_n)=\tau(X_n)=n>0$ \cite[Theorem 1]{Capovilla}.
+For every smooth metric on $X_n$, the opposite-chirality Chern--Weil identity is
+\[
+                  P(g)=8\pi^2n+4W_-(g)+\frac1{12}\int s_g^2.
+\]
+In particular, Einstein metrics are excluded. Chodosh--Li's theorem says that
+a nonnegative-scalar-curvature metric on a closed aspherical four-manifold is
+flat \cite[Theorem 2]{CL}. Since $\chi(X_n)>0$, every conformal class here has
+negative Yamabe constant. This does not assert that the supremum of these
+constants is strictly negative.
+
+Any smooth $P$-critical metric on $X_n$ has constant scalar curvature by
+conformal variation, and that constant must therefore be negative.
+The closed identity
+\[
+                P=2(W_++W_-)+\frac1{12}\int s^2-16\pi^2\chi
+\]
+shows that a Bach-flat $P$-critical metric of nonzero constant scalar curvature
+is Einstein: the Weyl gradient vanishes, leaving the scalar-square gradient
+$-2s\Ric^\circ$ equal to zero. Consequently a smooth global $P$-minimizer on
+one $X_n$ would answer LeBrun's non-Bach-flat optimal-metric question
+\cite[Section 11]{LeBrun04}.
+
+\medskip\noindent\textbf{Exact remaining issue.}
+No such smooth global minimizer is proved here. Anderson's ideal-attainment
+theorem \cite[Theorem 4.10 and Remark 4.12]{Anderson} still permits singular
+configurations and an open or partially collapsed branch. Theorem~\ref{thm:main}
+removes all nonflat Ricci-flat ALE cores from an embedded-core decomposition
+on these candidates. Positive-$P$ cores remain, including the sharp example
+above; general scalar-flat ALE cores are not here proved to have finite
+fundamental group; and partial collapse remains uncontrolled. A global
+comparison or compactness argument addressing those possibilities is still
+required. Changing the candidate manifold preserves the unrestricted
+functional and the original existence question; it does not establish its
+answer.
+
+\begin{thebibliography}{9}
+\bibitem{Hillman} J. A. Hillman, \emph{Locally flat embeddings of 3-manifolds
+in $S^4$}, arXiv:2408.10535, proof of Theorem 5.2.
+\url{https://arxiv.org/abs/2408.10535}
+\bibitem{Wright} E. P. Wright, \emph{Quotients of gravitational instantons},
+arXiv:1102.2442, Lemma 1 and Sections 2, 6, 8.
+\url{https://arxiv.org/abs/1102.2442}
+\bibitem{LeBrun88} C. LeBrun, \emph{Counter-examples to the generalized
+positive action conjecture}, Comm. Math. Phys. 118 (1988), 591--596.
+\bibitem{Honda} N. Honda, \emph{Deformation of LeBrun's ALE metrics with
+negative mass}, arXiv:1204.4857.
+\url{https://arxiv.org/abs/1204.4857}
+\bibitem{KS} A. Katanaga and O. Saeki, \emph{Embeddings of quaternion space
+in $S^4$}, J. Austral. Math. Soc. 65 (1998), 313--325.
+\bibitem{Capovilla} P. Capovilla, \emph{Aspherical 4-manifolds with positive
+Euler characteristic and their geography}, arXiv:2511.15577.
+\url{https://arxiv.org/abs/2511.15577}
+\bibitem{CL} O. Chodosh and C. Li, \emph{Generalized soap bubbles and the
+topology of manifolds with positive scalar curvature}, Ann. of Math. 199
+(2024), 707--740. \url{https://arxiv.org/abs/2008.11888}
+\bibitem{LeBrun04} C. LeBrun, \emph{Curvature functionals, optimal metrics,
+and the differential topology of 4-manifolds}, arXiv:math/0404251.
+\url{https://arxiv.org/abs/math/0404251}
+\bibitem{Anderson} M. T. Anderson, \emph{Canonical metrics on 3-manifolds
+and 4-manifolds}, arXiv:math/0511034.
+\url{https://arxiv.org/abs/math/0511034}
+\end{thebibliography}
+\end{document}

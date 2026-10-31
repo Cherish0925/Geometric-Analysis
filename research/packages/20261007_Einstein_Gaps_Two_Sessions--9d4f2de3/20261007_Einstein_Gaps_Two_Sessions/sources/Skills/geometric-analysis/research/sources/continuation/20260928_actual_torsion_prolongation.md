@@ -1,0 +1,290 @@
+# The actual torsion bracket and its integral prolongation
+
+28 September 2026. This extends, and removes the exact-closure restriction
+from, Section 3.2 of the [phase-curvature proof](20260928_zero_endpoint_phase_curvature.md).
+The actual constant-weight monopole equations are retained. The result is
+an exact differential identity and its tested form, not the missing weak
+zero-end gap.
+
+## 1. The bracket is determined by the actual cubic torsion
+
+Use the Clifford matrices from I41, Section 14,
+
+\[
+ C_1=I,\quad C_2=\operatorname{diag}(i,-i),\quad
+ C_3=\begin{pmatrix}0&1\\-1&0\end{pmatrix},\quad
+ C_4=\begin{pmatrix}0&-i\\-i&0\end{pmatrix}.
+\]
+
+On the open set rho = |Phi| squared > 0, choose a local positive-spinor
+frame with \(\Phi=\sqrt\rho\,e_1\). All positive and negative spinor
+frames, the tangent frame and the trivialization of L are chosen
+compatibly with the displayed Clifford matrices. Further adaptations
+below change these compatible frames together. Write
+
+\[
+ \nabla_j\Phi=(h_j,k_j),\qquad
+ \zeta_j=\langle\Phi,\nabla_j\Phi\rangle=\sqrt\rho\,h_j.
+\]
+
+The defining cubic torsion \(\tau=t_\Phi\), a section of
+\(E=S^-\otimes L\), has components
+
+\[
+             \tau=\rho(k_1+ik_2,-k_3-ik_4).                \tag{1.1}
+\]
+
+Let \(\Omega_+=e^{12}+e^{34}\),
+\(\Psi_2=e^{13}-e^{24}\), \(\Psi_3=e^{14}+e^{23}\).
+The off-diagonal positive-spinor connection is the complex one-form
+\(\eta_j=k_j/\sqrt\rho\). The Clifford action gives
+
+\[
+ \nabla\Omega_+=2(\operatorname{Im}\eta)\otimes\Psi_2
+                         -2(\operatorname{Re}\eta)\otimes\Psi_3.
+\]
+
+This formula first concerns real one-forms; evaluation on complex
+vectors is then extended complex linearly.
+
+Put \(Z_1=e_1-ie_2\), \(Z_2=e_3-ie_4\). Consequently
+
+\[
+ (\nabla_XZ_1)^{0,1}=\overline\eta(X)\overline Z_2,
+ \qquad (\nabla_XZ_2)^{0,1}=-\overline\eta(X)\overline Z_1.
+\]
+
+Here a conjugated one-form is evaluated complex linearly; in particular
+\(\overline\eta(Z_1)\) is not \(\overline{\eta(Z_1)}\).
+Torsion-freeness of the Levi-Civita connection and (1.1) give
+
+\[
+ \boxed{[Z_1,Z_2]^{0,1}
+  =-\frac{\overline\tau_1}{\rho^{3/2}}\overline Z_1
+    +\frac{\overline\tau_2}{\rho^{3/2}}\overline Z_2.}      \tag{1.2}
+\]
+
+This identity uses the cubic definition, not closure of Omega or the
+Dirac equation. It is smooth through zeros of tau on rho > 0. It is a
+local expression of a tensor identity, so changing adapted frames does
+not change its content. No assertion across rho = 0 is needed below.
+
+On rho,m > 0, where \(m=|\tau|^2\), further adapt the negative frame
+so that \(\tau=(\sqrt m,0)\), and set
+\(\kappa_0=\sqrt m/(2\rho^{3/2})\). Then (1.2) becomes exactly
+
+\[
+                [Z_1,Z_2]^{0,1}=-2\kappa_0\overline Z_1.   \tag{1.3}
+\]
+
+One may also see the cancellation directly in the actual Dirac system.
+Its two rows are
+
+\[
+ h_1+ih_2+k_3-ik_4=0,\qquad
+ -h_3-ih_4+k_1-ik_2=0.
+\]
+
+Solving together with (1.1) yields
+
+\[
+ \eta=(\kappa_0+z,-i\kappa_0+iz,-w,-iw),\quad
+ z=\frac{\zeta_3+i\zeta_4}{2\rho},\quad
+ w=\frac{\zeta_1+i\zeta_2}{2\rho}.
+\]
+
+The z and w contributions cancel from \(\overline\eta(Z_1)\) and
+\(\overline\eta(Z_2)\). They need not vanish from other connection
+components. Thus there is no separate near-closure correction to (1.3).
+
+## 2. The curvature forcing is exactly the trace-free Ricci block
+
+For the actual constant-weight solution, \(F_A^+\) is a multiple of
+\(i\rho\Omega_+\). All anti-self-dual forms have type (1,1), and
+\(Z_1\wedge Z_2=\Psi_2-i\Psi_3\) is self-dual and perpendicular to
+Omega. Hence \(F_A(Z_1,Z_2)=0\), exactly.
+
+The connection on E has central curvature \((3/2)F_A I\).
+Negative Clifford multiplication annihilates self-dual forms, so the
+block decomposition of the Riemannian curvature operator gives
+
+\[
+ \boxed{F^E(Z_1,Z_2)
+   =-\tfrac12c^-\bigl(B_{\operatorname{Ric}^{\circ}}^*
+                          (\Psi_2-i\Psi_3)\bigr).}       \tag{2.1}
+\]
+
+Here \(B_{\operatorname{Ric}^{\circ}}^*=\pi_-\mathcal R|_{\Lambda^+}\)
+and \((F_{\rm LC}^{S^-})_{ij}=-\tfrac12c^-(\mathcal R(e^i\wedge e^j))\),
+as in the preceding phase-curvature proof.
+
+In particular \(|F^E(Z_1,Z_2)\tau|\le C|\operatorname{Ric}^{\circ}|\sqrt m\).
+Neither Weyl block nor an independent determinant error occurs in this
+curvature component. This does not control all components of F^E.
+
+Define \(A_i=\nabla_{Z_i}\tau\), \(B=\nabla_{\overline Z_1}\tau\),
+and let \(\sum L_iZ_i=[Z_1,Z_2]^{1,0}\). Commuting actual derivatives
+and using (1.3) gives
+
+\[
+ \boxed{2\kappa_0 B=F^E(Z_1,Z_2)\tau
+       -\nabla_{Z_1}A_2+\nabla_{Z_2}A_1+\sum_i L_iA_i.}   \tag{2.2}
+\]
+
+This is the full actual counterpart of the earlier ideal-system
+calculation. The moving-frame terms L_i remain part of the equation.
+Smallness of A_i in L2 is not assumed: I41 (14.2) itself retains an
+actual current--Hessian term in their projected derivative.
+
+## 3. Testing does not remove the symmetric second derivatives
+
+Let \(\mathcal A=(\nabla\tau)^{1,0}\), regarded as an E-valued one-form.
+Let \(\mu\) denote the algebraic almost-complex component of exterior
+covariant differentiation from type (0,1) to type (2,0). In the frame
+above, \((\mu(\nabla\tau)^{0,1})(Z_1,Z_2)=2\kappa_0 B\).
+The invariant form of (2.2) is
+
+\[
+ \partial_\nabla\mathcal A+\mu(\nabla\tau)^{0,1}
+                         =(F^E)^{2,0}\tau.               \tag{3.1}
+\]
+
+For a real smooth cutoff f with compact support in rho,m > 0, integration
+by parts is legitimate and gives
+
+\[
+\begin{aligned}
+ \int f^2|\mu(\nabla\tau)^{0,1}|^2
+ ={}&\operatorname{Re}\int f^2
+       \langle(F^E)^{2,0}\tau,\mu(\nabla\tau)^{0,1}\rangle\\
+ &-\operatorname{Re}\int\left\langle\mathcal A,
+       \partial_\nabla^*\{f^2\mu(\nabla\tau)^{0,1}\}\right\rangle.
+\end{aligned}                                             \tag{3.2}
+\]
+
+The adjoint contains derivatives of the cutoff, frame, mu and
+\(\nabla\tau\). Its principal second derivatives have not acquired a
+sign. This formula does remove an unnecessary independent closure
+error, but it does not give an L2 estimate on B from an L2 estimate on A.
+All norms here are tensor norms: Z_i have squared length two, and
+their dual (1,0)-forms have squared norm one half. Thus
+\(|\mathcal A|^2=(|A_1|^2+|A_2|^2)/2\) and
+\(|\mu(\nabla\tau)^{0,1}|^2=\kappa_0^2|B|^2\).
+Evaluating (3.1) on Z_1,Z_2 does not preserve these norm factors.
+
+## 4. The remaining Weyl interaction in actual derivative variables
+
+Retain the opposite-Weyl frame of the phase-curvature proof. Set
+\(D=(W_{22}-W_{33})/2\), \(E_0=W_{23}\), and
+\(C_0=\nabla_{\overline Z_2}\tau\). Subscripts 1,2 now denote spinor
+components, not tangent indices. The free planar contribution to
+\(\operatorname{Re}\langle\nabla\tau\wedge
+ F_{\rm LC}^{S^-}(W^-)\wedge\nabla\tau\rangle\) is exactly
+
+\[
+ \boxed{\operatorname{Re}\left[(D-iE_0)
+    \left\{\overline{B_1}(C_0)_2
+       -\overline{(A_2)_1}(A_1)_2\right\}\right]d\mu.}   \tag{4.1}
+\]
+
+There is no N = 0 or torsion-Dirac = 0 hypothesis here. To verify it,
+write \(\nabla\tau=(x,y)\) as two complex one-forms. The old wedge
+matrix used derivatives divided by square root m; here that factor
+is absorbed: its second row plus i times its third row, multiplied
+by m, is the contraction of \(\overline x\wedge y\). Since
+
+\[
+ \Omega_2+i\Omega_3=(e^1-ie^2)\wedge(e^3+ie^4),
+\]
+
+evaluate directly \((\overline x\wedge y)(Z_1,\overline Z_2)\).
+It equals
+\(\overline{B_1}(C_0)_2-\overline{(A_2)_1}(A_1)_2\), proving (4.1).
+This also reproduces the earlier \(4m\{D(au+bv)+E_0(av-bu)\}\)
+under that calculation's additional pointwise constraints.
+
+Substituting (2.2) into (4.1) does not turn it into a nonnegative
+curvature square. Integration by parts differentiates the opposite
+Weyl block, the cutoff and C_0. In particular it leaves symmetric
+barred second derivatives of tau, not just curvature commutators.
+These are precisely the quantities that a further signed integral
+identity would have to absorb. No estimate for them follows from
+separate L2 bounds for curvature and the first derivative of tau.
+
+### 4.1 A finite jet check of the surviving derivative
+
+This check locates a genuine principal symbol; it is not a closed
+solution or a theorem ruling out additional global cancellations.
+At a point put \(z_1=x_1+ix_2,z_2=x_3+ix_4\) and retain the constant
+Clifford matrices. For a positive spinor increment (H,G), the two
+Dirac rows are
+
+\[
+ D^+(H,G)=\bigl((\partial_1+i\partial_2)H+
+                   (\partial_3-i\partial_4)G,
+       (-\partial_3-i\partial_4)H+(\partial_1-i\partial_2)G\bigr).
+\]
+
+The linearized torsion at \(\Phi=\sqrt\rho e_1\) is
+\(T(H,G)=\rho((\partial_1+i\partial_2)G,
+                    - (\partial_3+i\partial_4)G)\).
+Both polynomial seeds
+
+\[
+ (H,G)=(\overline z_1\overline z_2,|z_1|^2-|z_2|^2),
+ \qquad (H,G)=(0,\overline z_2^3/6)
+\]
+
+solve this flat D-plus system exactly. Their torsions are respectively
+\(\rho(2z_1,2z_2)\) and \(\rho(0,-\overline z_2^2)\); both solve
+the negative Dirac system
+
+\[
+ D^-\tau=\bigl((A_2)_2-(A_1)_1,-B_2-(C_0)_1\bigr)=0.
+\]
+
+They give \((A_1)_1=(A_2)_2=4\rho\) and
+\(\nabla_{\overline Z_2}^2\tau_2=-8\rho\), respectively.
+After substituting (2.2) in (4.1), the adjoint retains the term
+
+\[
+ \frac{f}{2\kappa_0}\operatorname{Re}\left[(D-iE_0)
+ \left\{\overline{(A_2)_1}\nabla_{\overline Z_1}
+                          \nabla_{\overline Z_2}\tau_2
+       -\overline{(A_1)_1}\nabla_{\overline Z_2}^2\tau_2\right\}\right],
+\]
+
+in addition to curvature, derivative-Weyl, cutoff and frame terms.
+Here f denotes the scalar weight of that integration. Reversing the
+cubic seed reverses this displayed pairing while leaving the lower
+jets unchanged. Its fully symmetric third-spinor jet also leaves the
+principal curvature-commutator constraints unchanged. Thus neither
+the two Dirac contractions nor commuting antisymmetric derivatives
+makes this symmetric symbol vanish pointwise. The exact integral
+formula (3.2), not this isolated symbol, is the global identity to use.
+
+## 5. The global condition to which the calculation must return
+
+The same-solution characteristic localization in I41, Section 7, is
+
+\[
+ 16\pi^2\int d\chi\wedge T_\tau
+     =2\int\vartheta^2|W^-|^2+\int\vartheta^2 k,
+\]
+\[
+ k=9(|F_A^+|^2-|F_A^-|^2)+s^2/24
+                                -|\operatorname{Ric}^{\circ}|^2/2.
+\]
+
+Here \(\chi=1-\vartheta^2\) cuts off the fixed low-torsion transition
+band. Along a putative actual zero-end sequence, the last integral
+divided by V tends to 20/3. A sufficient new estimate is that the net
+flux after subtracting the displayed opposite-Weyl payment has upper
+limit strictly below \(20V/3\); an o(V) bound would suffice but is
+stronger than necessary. Such a bound is not proved by (3.2) or (4.1).
+
+The update is therefore precise: exact closure need not be added to
+the actual bracket, and its (2,0) curvature forcing is only Ricci error.
+The symmetric derivative interaction and its global signed absorption
+remain unresolved. O10 stays open with the original actual supply,
+class-square and normalization requirements.

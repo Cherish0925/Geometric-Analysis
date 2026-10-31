@@ -1,0 +1,1181 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage[margin=25mm]{geometry}
+\usepackage{booktabs,longtable,array,tabularx,enumitem}
+\usepackage{xcolor,hyperref,microtype}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!45!black}
+\setlength{\emergencystretch}{3em}
+\setlist{nosep,leftmargin=*}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\dd}{\,dV_g}
+\newcommand{\Rplus}{\mathbf R^+}
+\newcommand{\sref}[1]{\textsf{[#1]}}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{question}[proposition]{Question}
+\theoremstyle{remark}
+\newtheorem*{scope}{Scope}
+\title{Einstein Gaps on Four-Manifolds\\[4pt]
+\large Four Public Problems: Overnight Results, Proof Mechanisms,\\
+Remaining Connections, and Questions for Further Research}
+\author{Research synthesis from Sessions S1003A01 and S1003A02}
+\date{7--8 October 2026\quad (all times: China Standard Time, UTC+8)}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report connects the work performed after the evening restart on
+7 October to four specified problems: Einstein nonexistence on nonminimal
+surfaces of general type, optimal total curvature, smooth non-Bach-flat
+global minimizers, and the negative-scalar-curvature four-dimensional
+Goldberg problem. It covers A01 Steps 48--55 and A02 Steps 53--64.
+The principal joint advance is a background-sensitive Burns insertion law,
+including the cancellation of previously uncontrolled curvature sectors and
+a logarithmic saving on general K\"ahler--Einstein backgrounds. Other work
+includes conditional minimizer and bubble arguments, quantitative
+Eguchi--Hanson obstruction costs, zero-defect constructions, a Weyl-channel
+reformulation of the lower-bound problem, and actual-field compatibility
+identities. Several tempting deductions were corrected or withdrawn.
+No complete solution of one of the four requested problems is recorded in
+this interval. The report identifies exactly which mathematical connections
+are missing, distinguishes them from execution delays, and asks for concrete
+new arguments rather than another reorganization of the research programme.
+\end{abstract}
+
+\paragraph{How to use these two files.}
+Read this synthesis first. The separate, self-contained
+\texttt{02\_Mathematical\_Source\_Companion.tex} retains all eighteen
+mathematical working notes from this interval, a Step chronology, and the ten
+delivered collaboration messages. Source keys such as \sref{A02.61} below
+identify these notes. The companion preserves historical assertions and their
+corrections; the present report uses the later corrected statements.
+``Manuscript result'' means that a proof is written in those sources, not that
+this compilation has independently reproved all preceding analysis or
+established literature priority. Numerical observations and proposed routes
+are identified separately.
+
+\tableofcontents
+
+\section{The four questions and their present positions}
+\label{sec:four}
+
+The common problem is not simply to exclude an Einstein metric. It is to
+understand how well its equation can be satisfied by \emph{all} allowed
+metrics, what geometry realizes the optimum, and what information actual
+fields contribute beyond numerical curvature budgets.
+
+\begin{enumerate}[label=\textbf{Q\arabic*.}]
+\item \textbf{Einstein metrics on nonminimal surfaces of general type.}
+Let $X$ be a minimal complex surface of general type, $A=c_1^2(X)>0$, and
+$M=X\# k\overline{\CP}^{\,2}$, $k\ge1$. Determine Einstein existence or
+nonexistence on the underlying smooth manifold, not merely within its
+K\"ahler metrics. The remaining small-blowup range is particularly important.
+\item \textbf{Optimal total curvature.} Determine
+\[
+ p_*(M)=\inf_{g\in\operatorname{Met}(M)}
+ \int_M|\Ric_g^\circ|^2\,dV_g,
+\]
+or a matching asymptotic law in a specified family. Equivalently determine the
+total curvature infimum with the curvature-operator norm convention below.
+An improved recovery construction gives an upper bound, not the infimum.
+\item \textbf{A non-Bach-flat global minimizer.} Produce a smooth closed
+metric that attains this unrestricted infimum and is not Bach-flat, or obtain
+an exclusion theorem answering the specified existence problem. A stationary
+point, an orbifold minimizer, and a smooth global minimizer on the original
+smooth manifold are different objects.
+\item \textbf{Negative Goldberg in dimension four.} For a closed
+almost-K\"ahler four-manifold $(M,g,J,\omega)$ with
+\[
+ d\omega=0,\qquad \omega=g(J\cdot,\cdot),\qquad
+ \Ric_g=\lambda g,\quad\lambda<0,
+\]
+prove $\nabla\omega=0$, or construct a closed strictly almost-K\"ahler
+counterexample. A finite jet at one point is neither alternative.
+\end{enumerate}
+
+\begin{center}\small
+\begin{tabularx}{\textwidth}{@{}p{.08\textwidth}p{.16\textwidth}XX@{}}
+\toprule
+Problem & Initial emphasis & Actual overnight work & Missing conclusion\\
+\midrule
+Q1 & A01 & Supply analysis; exact-Einstein entry; joint constructions;
+conditional links from A02 & A new argument deciding the remaining
+nonminimal Einstein candidates\\
+Q2 & A02, with A01 & General-background savings; Weyl-channel and
+frame-twist formulations & A lower bound for all competitors matching an
+actual recovery sequence\\
+Q3 & A02 & Selected minimizing sequences; smooth and orbifold bubbles;
+conditional attainment & Exclusion or control of the remaining degeneration
+channels and smooth attainment on the required manifold\\
+Q4 & A01, later overlapping A02 & Canonical connection, finite jets,
+Darboux compatibility, almost-K\"ahler identities & A genuinely new global
+constraint, or a complete counterexample\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The allocation was deliberately flexible. It did not amount to four
+independent full-time attacks. In particular, A01 Steps 49--52 responded to
+A02's question about general-background insertion, whereas A02 Steps 62--64
+moved toward field identities overlapping Q4. This overlap produced a real
+construction theorem, but the final Q1 and Q3 conclusions did not receive an
+equally sustained direct attack throughout the interval.
+
+\section{Conventions and the inherited mathematical backbone}
+
+For a closed oriented four-manifold put
+\[
+ P=\int|\Ric^\circ|^2,\quad S=\int s^2,\quad
+ R=\int|\Ric|^2=P+\frac S4,\quad
+ W_\pm=\int|W^\pm|^2,\quad T_\pm=2\chi\pm3\tau.
+\]
+All integrals use the same metric; Weyl norms are curvature-operator norms.
+Then
+\begin{align}
+ 4\pi^2T_\pm&=\frac S{24}+2W_\pm-\frac P2,\label{eq:cw}\\
+ \int|\Rm_{\rm op}|^2&=8\pi^2\chi+P.\label{eq:full}
+\end{align}
+Thus Q2 is a global curvature-variation problem with a topological additive
+constant, not a problem of subtracting separately minimized Ricci and scalar
+energies.
+
+When $R>0$, distinguish
+\[
+ \mathcal J(g)=\frac{4P}{R},\qquad
+ \mathcal E(g)=4-\frac{(\int s)^2}{\Vol(g)R}
+ =\mathcal J(g)+\frac{S-(\int s)^2/\Vol(g)}R.
+\]
+We use $\alpha_{\rm rel}=\inf\mathcal E$ for the relative problem and $p_*$
+for $\inf P$. Some A02 source notes call $p_*$ ``$\alpha$''; their zero-gap
+and local $P$ estimates must not be inserted into formulas for
+$\alpha_{\rm rel}$ without the established comparison. In particular,
+$P=0$ includes Ricci-flat metrics, whereas $\mathcal J$ is undefined when
+$R=0$.
+
+In the actual monopole setting, the budget is
+$p=(a_g^+)^2\ge A>0$. Earlier work, not new overnight work, supplies:
+\begin{itemize}
+\item the N1 critical separation, including the negative-class-square cost,
+\[
+ \mathcal J(g)+\left(\frac{T_+}{A}-\frac23\right)_+
+ \ge \frac{c_*}{1+(-a^2)_+/(2\pi^2A)};
+\]
+\item same-solution coercivity of I40/I41 type,
+\[
+ \Sigma\le C\{\Pi+\sqrt{\Pi Y}\},\quad
+ \Sigma=S-32\pi^2p,\quad \Pi=P+D_2,\quad Y=(T_+-a^2)_+;
+\]
+\item finite-density endpoint control, for every fixed $B<\infty$,
+\[
+ \chi/A\le B\quad\Longrightarrow\quad
+ \kappa_\beta\ge c(B)\frac{(\beta-2)^2}{\beta^2},\qquad\beta\ge2,
+\]
+with its specified actual conformal supply and normalization;
+\item the linear scale in the original balanced family, actual strict
+sub-four recovery constructions, and the web contribution giving an analytic
+negative logarithmic term inside any fixed complex-hyperbolic collar;
+\item the conditional-on-FD2 two-orientation surface-bundle argument and its
+Kodaira-slope consequence. This is an inherited separate application, not a
+new overnight solution of Q1--Q4.
+\end{itemize}
+Each retains its original hypotheses. Neither the existing backbone nor its
+publication is logically contingent on solving all four questions.
+
+\subsection{What Q1 already inherits}
+For the ordinary blowup family $T_+=A-k$ and $a^2=T_+$, N1 gives
+\[
+ \mathcal J(g)+\left(\frac13-\frac kA\right)_+\ge\varepsilon_0.
+\]
+Consequently $k/A>1/3-\varepsilon_0$ excludes nonzero Einstein metrics;
+the positive scalar-energy budget excludes Ricci-flat ones independently.
+This strengthens the classical one-third obstruction in the matching
+actual-supply range. It does not settle all $k\ge1$.
+
+The surface-bundle/Kodaira argument cannot simply be copied onto these
+blowups. The usual reversed-orientation connected-sum invariants often
+vanish, so that argument's second actual supplier has not been provided.
+Vanishing of a familiar invariant is not itself a theorem that no actual
+class exists. The exact missing input is an appropriate supplier or a
+different Einstein-specific argument. \sref{A01.48}
+
+\section{Joint advance: a general-background Burns insertion law}
+\label{sec:burns}
+
+\subsection{From a special cell to a tensorial mechanism}
+The earlier analytic complex-hyperbolic construction produced
+\[
+ \frac{P(g_\varepsilon)}{8\pi^2}
+ =1-9\varepsilon^2\log(1/\varepsilon)+O_R(\varepsilon^2).
+\]
+The overnight question was whether uncontrolled $W^-$ destroys this saving
+on a general negative K\"ahler--Einstein surface. Initial low-degree
+numerical correctors appeared to incur a $W^-$ cost. Enlarging the angular
+corrector space removed it. The important conclusion was not convergence
+of another decimal: an explicit geometric correction explained the
+cancellation.
+
+Write
+\[
+ \Rplus=W^++\frac{s}{12}I,\qquad
+ \mathscr C(g)=(2W_g^+,s_g/\sqrt{12}).
+\]
+The exact curvature identity becomes
+\[
+ P(g)=\int|\mathscr C(g)|^2-8\pi^2T_+(M).
+\]
+The scalar-flat ASD Burns metric satisfies $\mathscr C(g_B)=0$.
+This representation is why the logarithmic interaction can be computed
+from the second jet of the background rather than an uncontrolled collection
+of its higher derivatives.
+
+\begin{proposition}[The corrected insertion statement in the overnight manuscripts]
+Let $g$ be smooth and $P$-critical on a neighbourhood containing the complete
+support of an insertion at $p$. Let $\zeta\in\Lambda_p^+$ be unit length and
+$K$ a fixed degree-zero angular corrector. The matched smooth Burns insertion
+on $X\#\overline{\CP}^{\,2}$ has
+\begin{equation}
+ P(g_\varepsilon)=P(g)+8\pi^2
+ -8\pi^2\varepsilon\Rplus_p(\zeta,\zeta)
+ +4\pi^2\Phi(\Rm_p,\zeta,K)\varepsilon^2\log(1/\varepsilon)
+ +O(\varepsilon^2).\label{eq:insertion}
+\end{equation}
+When $\Ric_p^\circ=0$ and $\zeta$ is an eigenvector of $\Rplus_p$,
+the optimized coefficient is
+\begin{equation}
+ \Phi_{\rm opt}=-\mu\left(\mu-\frac s8\right)-|T|^2,
+ \qquad T=\left(\Rplus_p|_{\zeta^\perp}\right)^\circ,
+ \quad\Rplus_p\zeta=\mu\zeta.\label{eq:phi}
+\end{equation}
+In particular, for an Einstein background and a kernel direction,
+\begin{equation}
+ P(g_\varepsilon)=P(g)+8\pi^2
+ -4\pi^2|T|^2\varepsilon^2\log(1/\varepsilon)+O(\varepsilon^2).
+ \label{eq:kernel}
+\end{equation}
+\end{proposition}
+
+The Einstein-background proof is in \sref{A01.52}; the more general
+critical-background remainder is in \sref{A02.59}, with Part D controlling
+the earlier text. The independently obtained Ricci-sector corrector below
+extends the \emph{algebraic} cancellation. A full generalized rigidity
+statement must still use the correct critical-background argument; Einstein
+Bianchi identities cannot be transferred merely by changing the name of
+the background.
+
+\subsection{Why the logarithm and its remainder are controlled}
+The source proofs use the following sequence.
+\begin{enumerate}
+\item Write the exact Burns metric as $\delta+\varepsilon k_B$. The
+blowup changes $T_+$ by $-1$, accounting for the $8\pi^2$ term.
+\item On a rescaled annulus put $z=\varepsilon/r^2$ and
+\[
+ G_{z,r}=B_z+r^2(q(r,\theta)+zK(\theta)).
+\]
+Since $\mathscr C(B_z)=0$, the first nonzero squared-curvature density is
+$r^4|C_2(z,\theta)|^2$. Third and fourth background jets enter only at
+higher powers of $r$ and do not generate the logarithmic coefficient.
+\item The critical annular term is a multiple of
+$\varepsilon^2\,dr/r$. Integrating from a fixed multiple of
+$\sqrt\varepsilon$ to a fixed outer radius produces
+$\tfrac12\varepsilon^2\log(1/\varepsilon)$.
+The factorization bounds the remaining terms by $O(\varepsilon^2)$.
+\item The core and outer matching region contribute $O(\varepsilon^2)$.
+The order-$\varepsilon$ term is a distributional boundary flux; criticality
+removes the additional bulk first variation. Its corrected value is
+$-8\pi^2\Rplus_p(\zeta,\zeta)$.
+\end{enumerate}
+Fixed radii, fixed insertion data and a fixed smooth background are essential
+to this stated remainder. It is not automatically uniform on a degenerating
+family or when the number of insertions diverges.
+
+\subsection{The two cancellation formulas}
+For the pure $W^-$ second jet $h_W$, A01 found the degree-zero corrector
+\[
+ K_W=\frac32\operatorname{sym}(h_Wk_B)
+       -\frac14\tr(h_Wk_B)\delta.
+\]
+It satisfies
+\[
+ D^2(W^+,s)_\delta[h_W,k_B]+D(W^+,s)_\delta[K_W]=0.
+\]
+The tensor identity, together with representation-theoretic cancellation of
+the integrated cross terms, explains the vanishing $W^-$ cost.
+\sref{A01.50, A01.52, A02.59D}
+
+For a trace-free symmetric tensor $E$, put
+\[
+ u=|x|^2,\quad q=x^TEx,\quad
+ E_H=\frac{E+J^TEJ}{2},\quad q_H=x^TE_Hx,
+\]
+\[
+ f=-q/4,\qquad V=-uEx/12+qx/6,\qquad
+ K_E=\mathcal L_Vk_B-\frac q2k_B-\frac{q_H}{4u}\delta.
+\]
+The pure-Ricci jet is $h_E=2f\delta+\mathcal L_V\delta$.
+Conformal covariance of $W^+$, diffeomorphism covariance, and first-order
+Burns harmonicity of $f_\varepsilon=f-\varepsilon q_H/(8u)$ imply
+\[
+ D^2(W^+,s)_\delta[h_E,k_B]+D(W^+,s)_\delta[K_E]=0.
+\]
+Thus the cancellation is structural, not a fitted list of coefficients.
+Exact evaluations at rational points provide additional computational checks
+of the derived identity, not its sole proof. \sref{A01.53R}
+
+\subsection{The exact coefficient and its limits}
+In the $(s,W^+)$ sector, symmetry reduces the degree-zero corrector calculation
+to ten invariant tensors. A01 recovered the rational quadratic form by exact
+polarization; A02 independently calculated the same expression. In terms of
+the three eigenvalues of $\Rplus$,
+\[
+ \Phi_{\rm opt}
+ =-\frac12\mu_1(\mu_1-\mu_2-\mu_3)
+  -\frac12(\mu_2-\mu_3)^2.
+\]
+Here $\mu_1$ corresponds to the insertion direction and
+$\mu_1+\mu_2+\mu_3=s/4$.
+
+Two corrections matter. First, the coefficient is nonpositive on the
+\emph{kernel} stratum, not on the whole cone $\Rplus\le0$:
+for $W^+=0$ it is $s^2/288>0$, beneath a positive first-order cost.
+Second, non-eigenvector correctors include a logarithmic frame-rotation null
+direction, so the eigenvector formula is not an unrestricted quadratic
+minimum in every curvature regime. These corrections preserve the
+K\"ahler--Einstein application. \sref{A01.52, A02.59D}
+
+\subsection{The global upper bound that changed during the night}
+For a K\"ahler--Einstein surface,
+$\Rplus=\operatorname{diag}(s/4,0,0)$ in the K\"ahler frame. A unit
+$\zeta\perp\omega$ gives $\mu=0$ and $|T|^2=s^2/32$. Therefore, at fixed
+distinct insertion points,
+\begin{equation}
+ \frac{P(\widetilde g_\varepsilon)}{8\pi^2}
+ =k-\frac{ks^2}{64}\varepsilon^2\log(1/\varepsilon)
+   +O(\varepsilon^2)<k.\label{eq:generalke}
+\end{equation}
+At $s=-24$ the coefficient is $9$, recovering the special complex-hyperbolic
+calculation. For $s\ne0$, the negative logarithm dominates the remainder.
+
+The manuscript extends the competitor to a minimal general-type surface
+whose canonical model has ADE points. Choose insertion balls in the regular
+locus where the desingularized background equals the KE metric exactly.
+Fix $\varepsilon$ so that its saving is strict; only then take the resolution
+scale sufficiently small that the background $P$ is less than this saving.
+This gives
+\[
+ p_*\bigl(X\#k\overline{\CP}^{\,2}\bigr)<8\pi^2k.
+\]
+In the matched fixed-complex K\"ahler comparison range of the source's
+Theorem $K_\infty$, the K\"ahler infimum remains $8\pi^2k$. The new
+competitors therefore lie genuinely below that restricted optimization.
+
+This does \emph{not} decide whether $p_*>0$, whether $p_*$ is attained, or
+whether $p_*$ has scale $k$, $k^2/A$, or another scale as $k/A\to0$.
+Nor does a fixed-background estimate immediately give a uniform saving
+on every prescribed degenerating family. \sref{A02.59, Part D.5}
+
+\section{The variational route to Q2 and Q3}
+\label{sec:variational}
+
+\subsection{A selected minimizing sequence instead of arbitrary-sequence classification}
+A02 used Anderson's perturbation of $P$, on unit volume,
+\[
+ Z^{2p}_\varepsilon(g)=P(g)+\varepsilon\int(1+|\Ric|^2)^p,
+\]
+to study a selected minimizing sequence and its generalized limit.
+This is a genuine change of proof organization: one need not classify every
+possible near-minimizing sequence if one can obtain a suitable selected
+sequence that determines the same infimum.
+
+It does not remove the analytic content of the selected-sequence theorem.
+The consolidated record explicitly keeps separate: compact orbifold bulk
+versus collapse; lower semicontinuity; bubble-scale convergence and decay;
+energy equality; removable singularities; and reconstruction of the original
+smooth type. The earlier drafts occasionally treated several of these as
+automatic; \sref{A02.58} and \sref{A02.59D} restore their proper roles.
+
+Under the relevant energy identity, the Euler terms telescope to
+\[
+ p_*(M)=\sum_aP(V_a,g_a)+\sum_jP(N_j,g_j).
+\]
+This equality is useful once its hypotheses hold. It is not by itself an
+exclusion of orbifold absorption, partial collapse, or exotic smooth caps.
+
+\subsection{Moving a bubble and testing its background}
+The sources extend the first-order Burns response to an ASD scalar-flat AE
+bubble with the required homogeneous tail. Its leading interaction is a
+pairing of $\Rplus_p$ with the bubble's flux tensor, optimized over insertion
+frames. Under an admissible one-attachment relocation and energy equality,
+a favorable relocation would contradict minimality.
+
+This gives conditional curvature restrictions on the bulk, such as
+$\Rplus\le0$ when suitable Burns directions can be tested. The new kernel
+coefficient then tests the boundary of that cone. It rules out the familiar
+KE-type splitting at suitable kernel points, but it does not eliminate the
+strictly negative cone. Moreover, the bulk is generally $P$-critical, not
+known to be Einstein; an argument using $\delta W^+=0$ must not be applied
+without that extra fact. \sref{A02.53, A02.58, A01.52, A02.59D}
+
+\subsection{Smooth AE costs and why they do not settle all bubbles}
+For scalar-flat AE bubbles, the source's topological expression includes
+\[
+ \frac{P(N)}{8\pi^2}\ge
+ 4(e-1)+4b_1+b^- -5b^+,
+\]
+where $e$ is the number of ends, in the stated compactification setting.
+If a valid SW argument first forces $b^+=0$, this becomes a positive cost
+for exceptional rank and extra ends. Burns has cost $8\pi^2$; a two-ended
+conformally flat scalar-flat neck has cost $32\pi^2$.
+
+The order matters: a nonpositive charge does not itself imply one end or
+vanishing $b^+$. The one-sided SW cap argument is separately recorded as an
+input rather than inferred from the standard two-sided splitting theorem.
+The $k=1$ argument can then force the exceptional class into the bulk under
+its smooth-cone, decay, and semicontinuity assumptions. Even there, a
+homotopy-sphere cap is not automatically a standard smooth $S^4$.
+\sref{A02.53--54, A02.58}
+
+\subsection{Orbifold channels: an actual obstruction to a simple cost sum}
+For an ALE end with group $\Gamma$ the two oriented charges are
+\[
+ c_\pm(N)=\frac2{|\Gamma|}-2\chi(N)\mp3\tau(N)\mp3\eta(\partial N).
+\]
+The bookkeeping uses
+\[
+ T_+^{\rm orb}(V)=T_+(M)+c_+(N),
+\]
+and nonnegative costs must be added as
+$\sum_j\max\{c_+(N_j),c_-(N_j),0\}$, not as the maximum of a signed total.
+
+Several calculations identify genuine surviving channels:
+\begin{itemize}
+\item The LeBrun scalar-flat metric on $\mathcal O(-n)$ has
+$P=8\pi^2(n-2)^2/n$. Thus ordinary AE costs cannot simply be assigned to
+arbitrary ALE ends.
+\item Wahl rational-ball fillings have charge pair
+$(0,-4(1-1/n^2))$ in the source convention; Ricci-flat ALE fillings can have
+zero $P$.
+\item The lattice and linking-form calculations exclude some proposed
+absorptions, but a compatible lattice is not a realized smooth filling.
+The $[5,2]$ construction establishes a stated homeomorphism, not the missing
+diffeomorphism.
+\item The relevant fundamental-group conclusion is a quotient by the normal
+closure of boundary loops, not automatically simple connectivity.
+\end{itemize}
+The earlier finite-list and collapse claims were correspondingly weakened.
+The remaining inequality concerns the actual non-K\"ahler bulk together
+with its bubble Weyl energy; it is not supplied by the topological charges
+alone. \sref{A02.55--56, A02.58}
+
+\subsection{The precise route to a non-Bach-flat minimizer}
+In four dimensions, a smooth closed $P$-critical metric has constant scalar
+curvature by its conformal Euler--Lagrange equation. If it is also Bach-flat,
+the remaining equation implies $s\Ric^\circ=0$. Hence in the negative-scalar
+range a smooth minimizer is either Einstein or non-Bach-flat.
+
+This is a useful bridge, not an existence proof. To answer Q3 on a candidate
+$M$ one still needs smooth global attainment on $M$, exclusion of the
+Einstein alternative, and the negative-scalar input. A conditional orbifold
+minimum or a lower-energy competitor does not provide the first requirement.
+The remaining assumptions in \sref{A02.58} are therefore mathematical
+work, not merely presentation details.
+
+\section{Zero defect, approximation, and exact existence}
+
+\subsection{Three constructive mechanisms}
+The corrected \sref{A02.59D} organizes several ways to obtain $p_*=0$.
+\begin{enumerate}
+\item \textbf{Einstein orbifold plus Ricci-flat ALE replacements.}
+For compatible cone-end identifications and derivative-controlled ALE decay
+of order $\tau>0$, the matching annulus satisfies
+\[
+ P_{\rm ann}\le C\bigl(t^4+(\lambda/t)^{2\tau}\bigr).
+\]
+Taking $t=\lambda^{\tau/(\tau+2)}$ makes the error vanish. Insertions in a
+finite tree are made at each parent's native scale. This proves a
+sufficient zero-defect construction, not unrestricted Einstein existence.
+\item \textbf{Bounded-curvature collapse.} With the spectral bound
+$-3g\le\Ric\le3g$, one has $|\Ric^\circ|^2\le36$. Thus
+\[
+ p_*(M)\le36\Vol_{|r|}(M)\le36\operatorname{MinVol}(M).
+\]
+Appropriate polarized positive-rank F-structures or explicit collapsing
+sequences therefore give $p_*=0$. This is an elementary combination of
+classical mechanisms, not a new general existence theorem.
+\item \textbf{Partial collapse adjoining an Einstein cusp region.}
+The source constructs matched doubles and fillings with vanishing neck
+costs. For a real-hyperbolic torus cusp neck
+\[
+ g=dt^2+e^{-2f(t)}g_{\rm flat},\qquad
+ |\Ric^\circ|^2=3(f'')^2,
+\]
+so the turning-neck cost is $O(e^{-3T})$. The corresponding
+complex-hyperbolic Heisenberg calculation gives $O(e^{-4T})$; the specified
+torus fillings have $P\le C_\gamma e^{-2T}$.
+\end{enumerate}
+
+The reverse description in the source is conditional on Anderson's selected
+limit theorem and Einstein removable-singularity regularity. It describes a
+\emph{selected} sequence with compact orbifold bulk, a complete noncompact
+Einstein domain plus collapse, or total collapse. These are not mutually
+exclusive topological classes, and not a classification of every zero-defect
+sequence.
+
+\subsection{What these examples do and do not settle}
+Attainment of $p_*=0$ is equivalent to existence of an Einstein metric on
+the smooth manifold. It is not equivalent to existence of a KE metric for a
+chosen complex structure, nor to ampleness of its canonical bundle.
+Likewise, an obstruction to Einstein desingularization near one prescribed
+orbifold excludes that limiting regime, not all Einstein metrics on the
+resolution. The source withdrew the stronger claims.
+
+These examples clarify why Q1 and Q2 are not equivalent: nonexistence of a
+precise solution need not imply a positive integral distance from it. They
+also show why Q3 cannot be decided by producing arbitrarily good approximate
+metrics alone.
+
+\section{A second substantive calculation: the Eguchi--Hanson cost}
+\label{sec:eh}
+
+The corrected \sref{A02.61, Section 5} quantifies a prescribed
+desingularization regime. Let an Einstein orbifold have an
+$\mathbb R^4/\mathbb Z_2$ point $p$, and insert Eguchi--Hanson at scale $a$
+with unit resolution direction $\zeta$. Let $o_i$ be the three trace-free
+kernel tensors constructed from the $L^2$ ASD harmonic form and parallel SD
+forms. In the source normalization,
+\[
+ \|o_i\|_{L^2(EH_a)}^2=\frac{\pi^2}{a^4},\qquad
+ B_i=\int_{EH_1}\langle D\Ric[\widehat h_2],o_i\rangle
+     =\pi^2(\Rplus_p\zeta)_i.
+\]
+The first formula is an exact radial integral; the second is a boundary flux
+of the background quadratic jet. The harmonic form's displayed potential is
+defined off the bolt: the form is not globally exact.
+
+For a fixed weighted neighbourhood of the correctly extended glued metric,
+with weight $0\le w<2$ and bounded size parameter $\delta$,
+\begin{equation}
+ P(g)\ge\pi^2a^4
+       \bigl(|\Rplus_p\zeta|-\epsilon_w(a,\delta)\bigr)_+^2,
+ \qquad \epsilon_w(a,\delta)\longrightarrow0.\label{eq:ehlower}
+\end{equation}
+The proof tests $\Ric^\circ$ against the cut-off kernel tensor, uses
+Cauchy--Schwarz, and exploits that its adjoint equation kills the leading
+interior error. Comparison with the \emph{exact} Einstein background cancels
+the dangerous higher-jet terms. The weights make the remaining scaled
+integrals tend to zero even when their unscaled integrals grow.
+
+Using the cited Biquard--Ozuch linear solution and matching, the adapted
+competitor satisfies, for globally Einstein background,
+\begin{equation}
+ P(g_a^*)=\pi^2a^4|\Rplus_p\zeta|^2+O(a^6).
+ \label{eq:ehupper}
+\end{equation}
+When $\Rplus_p\zeta=0$, the stated upper remainder improves to
+$O(a^8\log(1/a))$. The adapted metric belongs to a bounded neighbourhood of a
+generic centre, not to the vanishing neighbourhood originally asserted.
+Thus the sharp comparison requires either the adapted centre or a generic
+neighbourhood large enough to contain that competitor. An additive
+comparison remains meaningful when $|\Rplus_p\zeta|$ is small; a
+multiplicative asymptotic requires it bounded away from zero.
+
+\paragraph{The common invariant with Burns.}
+On $\ker\Rplus$, let $u,v$ be the other eigenvalues, $u+v=\Lambda=s/4$.
+Then
+\[
+ \Phi_{\rm opt}=-\frac{(u-v)^2}{2}
+              =-\frac{\Lambda^2}{2}+2uv.
+\]
+The determinant $uv$ also occurs in the cited second EH obstruction.
+This is a useful relationship between a cost-reducing insertion and an
+Einstein desingularization obstruction. It is not a newly proved
+second-order EH theorem: the relevant obstruction is already in Ozuch's
+work, while an $a^8$ minimized-defect law remains unfinished.
+
+\begin{scope}
+Equations \eqref{eq:ehlower}--\eqref{eq:ehupper} concern metrics in specified
+weighted neighbourhoods. They do not prove that arbitrary $P$-near-minimizers
+enter those neighbourhoods, and their $a^4$ cost tends to zero. They cannot
+be used as a scale-independent positive gap or to discard every orbifold
+channel in Q3.
+\end{scope}
+
+\section{A global reformulation: the Weyl channel and what it does not bound}
+\label{sec:weyl}
+
+Let $M=X\#k\overline{\CP}^{\,2}$ have the actual sign-family supply used
+in the source. For a conformal class use its negative Yamabe representative
+$\widehat g$, normalized by $s=-4$, and write
+\[
+ \kappa=\frac A2-\frac3{8\pi^2}W_+,\quad
+ \upsilon=\frac{Y[g]^2}{32\pi^2}-A,\quad
+ p=\frac{P(\widehat g)}{8\pi^2}.
+\]
+Here $\kappa$ is a conformal Weyl deficit, not the endpoint parameter
+$\kappa_\beta$. Equation \eqref{eq:cw} gives the exact relation
+\begin{equation}
+ p=k-\frac43\kappa+\frac13\upsilon,
+ \qquad P(g)\ge P(\widehat g).\label{eq:channel}
+\end{equation}
+If $\Pi=\max(a_\varepsilon^+)^2-A\ge0$, the classical combined estimate
+becomes
+\begin{equation}
+ 2\sqrt{A+\upsilon}+\sqrt{A-2\kappa}
+ \ge3\sqrt{A+\Pi}.\label{eq:lebrun}
+\end{equation}
+Thus, for $0\le\kappa\le A/2$,
+\begin{align}
+ \upsilon&\ge A\left[\left(\frac{3-\sqrt{1-2\kappa/A}}2\right)^2-1\right],\\
+ p&\ge L_A(k,\kappa)
+ :=k-\kappa+\frac12\left(A-\kappa-\sqrt{A^2-2A\kappa}\right).
+ \label{eq:L}
+\end{align}
+The function decreases only up to $4A/9$ and then increases. Its minimum
+recovers $k-A/3$. For $\kappa<0$, the scalar bound gives
+$p\ge k-4\kappa/3$. These corrected ranges matter.
+
+\subsection{A precise conditional quadratic-scale implication}
+If a new global theorem established $\kappa[g]\le k$ for every metric,
+then for $0<k/A<1/3$,
+\begin{equation}
+ p_*(M)\ge4\pi^2\left(A-k-\sqrt{A^2-2Ak}\right)
+ =\frac{2\pi^2k^2}{A}\left(1+O(k/A)\right).\label{eq:quadratic}
+\end{equation}
+A stronger bound $\kappa\le(1-c)k$ would instead force a linear cost.
+Neither global Weyl bound is proved. The exact reformulation identifies the
+missing quantity; it is not itself the missing theorem.
+
+\subsection{Why a proposed rigidity conclusion was withdrawn}
+The original Step 62 Corollary D inferred from $p/k\to0$ that
+$\kappa/k\to1$, $\upsilon-\kappa=o(k)$ and $\Pi=o(k)$. This is invalid:
+\[
+ p=(k-\kappa)+\frac13(\upsilon-\kappa)
+\]
+is not a sum of two known nonnegative terms. The formal values
+$(\kappa,\upsilon)=(2k,5k)$ give $p=0$ by cancellation. They are not a
+constructed metric, but they disprove that algebraic inference.
+
+The corrected conclusion is only
+\[
+ \kappa\ge k-p,\qquad \upsilon=4\kappa-3k+3p,
+\]
+together with \eqref{eq:lebrun}. Hence small $P$ does not automatically put
+all competitors near the equality case of the classical estimate.
+\sref{A02.62, corrected by A02.63}
+
+\subsection{What the existing cells reveal}
+For the recorded numerical cells, $\kappa/\upsilon$ is about $0.258$--$0.265$,
+only slightly above the saving threshold $1/4$, while $\kappa/k$ remains
+small. Indeed
+\[
+ \frac pk=1-\frac\kappa k\frac{4-1/\eta}{3},\qquad
+ \eta=\kappa/\upsilon.
+\]
+This explains their modest savings within that family. It does not show that
+all geometries share its efficiency. A diffuse or differently organized
+competitor could be qualitatively different. The proposed $k^2/A$ scale is
+still a candidate, not a proved recovery law.
+
+\section{Actual-field structure: Chern flux, frame twist, and zero sets}
+
+\subsection{A Hodge--Gauss estimate}
+For a smooth orthogonal almost complex structure $J$, let $|\Omega|^2=2$ and
+locally write
+\[
+ \nabla\Omega=\alpha\otimes\phi+\beta\otimes J\phi.
+\]
+The canonical curvature form is
+\[
+ \gamma_J=\Rm_{\rm op}(\Omega)+\alpha\wedge\beta,
+ \qquad[\gamma_J]=2\pi c_1(J).
+\]
+Its ASD part separates primitive Ricci curvature from frame twist.
+Harmonic projection and the triangle inequality yield
+\begin{equation}
+ P(g)\ge2\left(2\pi|c_1(J)^-|-
+       \|(\alpha\wedge\beta)^-\|_2\right)_+^2.
+ \label{eq:twist}
+\end{equation}
+For a maximizing sign class with square $A-k$ and projection square
+$A+\Pi$, $|c_1(J)^-|^2=k+\Pi$. Thus any sub-standard-cost metric must carry
+the missing exceptional Chern flux in the twist term. This describes a
+necessary mechanism, not a bound on its maximum possible size.
+\sref{A02.63}
+
+An estimate controlling that twist by $P$ for \emph{arbitrary} $J$ is false:
+even an Einstein product can carry a nonparallel orthogonal $J$ in a class
+whose ASD Chern projection is nonzero. A useful strengthening must specify
+an actually controlled choice of field.
+
+\subsection{The exact almost-K\"ahler balance}
+For $d\Omega=0$, set $u=|\nabla\Omega|^2/4$, and use the usual
+$W^+=W_1^++W_2^++W_3^+$ decomposition with transverse star-Ricci form
+$\rho_*''$. The source combines the Chern-form identity and
+\eqref{eq:cw} to give
+\begin{equation}
+ P=2\|\gamma_J^-\|_2^2+\int u(5u+s)
+     +2\|\rho_*''\|_2^2+4\|W_3^+\|_2^2.\label{eq:ak}
+\end{equation}
+For Einstein metrics this gives
+\[
+ \int u(|s|-6u)=2\|\rho_*''\|_2^2+4\|W_3^+\|_2^2,
+ \qquad \frac12\int u^2\ge4\pi^2|c_1(J)^-|^2.
+\]
+These are integral constraints, not a pointwise bound on $u$. Algebraically
+optimizing them alone returns the classical obstruction, not a stronger
+global lower bound. Constant-torsion equality models can be excluded by
+Chern-class and period arguments, but a quantitative separation of general
+degenerating competitors remains missing.
+
+\subsection{The new obstruction to a simple SW normalization argument}
+The Step 64 analysis separates a bounded, amplitude-weighted SW field from
+a globally nonvanishing unit almost-complex form. Near a transverse isolated
+spinor zero, the normalized field has the Hopf-map model. In its standard
+Euclidean normalization,
+\[
+ |\nabla n|^2=8/r^2,\qquad |(\alpha\wedge\beta)^-|^2=8/r^4,
+\]
+so its unweighted squared-twist integral diverges logarithmically. Its
+boundary Hopf class also prevents replacing it by a smooth unit field inside
+the ball while leaving the exterior unchanged. The corresponding
+amplitude-weighted quantities can remain integrable and tend to zero with
+the core radius.
+
+Consequently one cannot use an estimate for the weighted SW field to control
+the unweighted twist in \eqref{eq:twist} without retaining zero-set boundary
+terms or providing a different field. The hand calculation is written in
+\sref{A02.64}; its staged local checking script had not run at the recorded
+Step boundary. The general zero-set geometry is not assumed transverse.
+
+\subsection{Why diffuse modes remain relevant}
+The AAD transport identity controls variation of the torsion amplitude but
+annihilates its constant mode. It does not determine the orientation or
+harmonic projection of the quadratic twist. Small isolated cores can also
+have vanishing first-derivative cost in the relevant weak norm.
+Thus the latest note does not favor either a positive cost per exceptional
+class or the proposed quadratic law. What is needed is a relation involving
+the harmonic flux, actual zero/core data, and the remaining curvature
+compatibility, or a genuine diffuse closed construction. Merely applying
+Cauchy--Schwarz to the already available identity cannot supply it.
+
+\section{The boundary-cost formulation}
+
+For an exceptional region $U\cong(\#_m\overline{\CP}^{\,2})\setminus B^4$,
+define $Q(U)=\int_U(4|W^+|^2+s^2/12)$ and let $\mathfrak b(\partial U)$
+denote the stated Gauss--Bonnet/signature boundary contribution. Localized
+Chern--Weil gives
+\[
+ P(U)=Q(U)+8\pi^2(m-2)+2\mathfrak b(\partial U).
+\]
+If it replaces a reference ball with boundary contribution matched to error
+$\delta$, then
+\[
+ P_g(U)\ge8\pi^2m-Q_h(B)-2\delta.
+\]
+For a KE reference of scalar curvature $-4$, $Q_h(B)=4\Vol_h(B)$.
+This applies to thick interiors as well as small model caps. It identifies
+two ways the apparent fixed local cost can be avoided: replacing substantial
+background volume or changing the boundary transgression.
+
+The missing step is not another evaluation of this identity. It is a
+quantitative bound for those terms for the regions supplied by actual global
+competitors, or a construction exploiting their freedom. Arbitrary
+near-minimizers have not been shown to contain the required matched regions.
+\sref{A02.63, corrected final section}
+
+\section{Goldberg: what the local investigation actually established}
+\label{sec:goldberg}
+
+\subsection{The transverse component remains the important unknown}
+For the Einstein almost-K\"ahler setting, write $q=|\nabla\omega|^2$ and
+\[
+ \eta=W^+(\omega)-\left(\frac s6+\frac q4\right)\omega,
+ \qquad \langle\eta,\omega\rangle=0.
+\]
+With the complementary trace-free block $V$, the inherited exact balance is
+\[
+ \int\left(|\eta|^2+2|V|^2+\frac{3q^2}{16}\right)
+ =-\frac s8\int q.
+\]
+For $s<0$ it permits nonzero torsion. The canonical-connection curvature gives
+the closed form
+\[
+ \beta=iF_{\mathcal A}-\frac s4\omega,
+ \quad \beta^+=\eta+\frac q8\omega,
+ \quad \beta^-=-\frac q8\widehat\omega.
+\]
+Its cup square is another expression of the same balance, not an independent
+positive term. The Hodge estimate bounds the ASD Chern projection by torsion
+energy, but does not force torsion to vanish. \sref{A01.48, A01.53G}
+
+The source also records restricted observations near or on KE backgrounds.
+For example, on a compact negative KE surface a constant-length SD harmonic
+form in the complex orientation is the K\"ahler form up to sign: the
+holomorphic $(2,0)$ part would otherwise have constant nonzero norm,
+incompatible with the negative Ricci form. Uses of Einstein rigidity or
+deformation theory beyond that observation retain their cited hypotheses.
+These are not the general Goldberg conclusion.
+
+\subsection{Finite jets: useful tests, not a local existence theorem}
+A01's degree-four numerical engine solved the truncated compatibility,
+closedness and Einstein equations for KE, Ricci-flat and negative-Einstein
+test data, with residual squares of order $10^{-27}$ in the recorded runs.
+The negative tests had nonzero transverse $\eta$ and generic curvature blocks.
+Thus that finite order did not force the desired integrability.
+
+Higher-degree jobs were partly blocked and later exceeded the available
+memory. Their incomplete runs are not evidence for or against existence.
+Even a successful finite jet would still require formal compatibility at all
+orders, convergence or a local existence theorem, and ultimately the global
+closed-manifold condition.
+
+\subsection{A decisive correction to the counting argument}
+An earlier formal-dimension count predicted a negative number of degrees of
+freedom at degree $15$. Step 55 identifies the omitted universal relation.
+For Darboux-compatible variations $hJ+Jh=0$,
+\[
+ (\sigma_{\Ric}(\xi)h)(J\xi,J\xi)
+ -\frac12|\xi|^2\tr(\sigma_{\Ric}(\xi)h)=0.
+\]
+Including its prolongations changes the count to
+\[
+ f_{\rm corr}(N)=N^2+8N-5,\qquad N\ge4.
+\]
+The former negative count therefore supplied no negative-scalar obstruction.
+Its coordinate-free Ricci projection becomes a differential consequence of
+$\nabla\Ric=0$ after imposing Einstein, not a new equation separating the
+negative case from the controls. This does not prove local existence at all
+orders either. \sref{A01.55}
+
+The remaining route is the complete actual almost-K\"ahler
+Ricci/Bianchi system with transverse curvature and torsion retained. The
+long Weyl--Bochner formula in Step 48 was explicitly a hand-derived candidate
+requiring further checking; it is not used here as an established new global
+estimate. Repeating the degree ladder without incorporating the corrected
+symbol relations would repeat an invalid inference.
+
+\section{Chronology: every Step in the requested interval}
+\label{sec:chronology}
+
+Times below are Step start times. The last Step in each Session was still
+running in the captured record. A completed Step is an execution boundary,
+not a completed public problem.
+
+\begin{longtable}{@{}p{.13\textwidth}p{.13\textwidth}p{.67\textwidth}@{}}
+\toprule A01 Step & Start & Mathematical trajectory\\\midrule\endhead
+48 & Oct 7, 21:53 & Read the four-problem and collected-research files;
+separate Q1 supply from surface-bundle supply; identify the canonical and
+Weyl--Bochner Goldberg mechanisms; reply on the two-ended quotient cell.\\
+49 & 22:46 & Respond to A02's general-KE question. Build an independent
+background-jet evaluator; observe that the apparent $W^-$ penalty changes
+when the corrector space is enlarged.\\
+50 & Oct 8, 00:49 & Derive the chiral-square interpretation and explicit
+$W^-$ corrector; exact cancellation; communicate the general-KE mechanism.\\
+51 & 01:48 & Independent spectral checks and exact invariant reductions.
+Abandon an invalid quadratic-jet calculation in the raw Ricci representation.
+The proposed division of labour was not answered within this Step.\\
+52 & 03:00 & Exact rational coefficient, fixed-configuration remainder,
+kernel-insertion theorem; correct the whole-cone sign claim; send message
+833. Distinguish Einstein from merely $P$-critical bulk.\\
+53 & 04:27 & Derive the Ricci corrector from covariance and harmonicity.
+Return to Goldberg finite jets and the closed canonical form. Start expensive
+higher-degree calculations; prepare a collaboration message.\\
+54 & 06:20 & Shell and message sending blocked. Read actual-field sources
+and work on symbol/AAD compatibility. The proposed degree-15 obstruction
+was subsequently corrected.\\
+55 & 08:17 & Correct the Darboux count and Ricci compatibility interpretation.
+Runner interruption and same-Step recovery at 09:32; mathematical message
+834 sent at 09:37.\\
+\bottomrule
+\end{longtable}
+
+\begin{longtable}{@{}p{.13\textwidth}p{.13\textwidth}p{.67\textwidth}@{}}
+\toprule A02 Step & Order & Mathematical trajectory\\\midrule\endhead
+53 & Evening & Read the new sources; specialize the selected-minimizer
+entrance to $P$; develop bubble relocation and conditional attainment;
+ask A01 about arbitrary $W^-$ in the KE insertion.\\
+54 & Evening & Work on $k=1$ ball quotients, smooth bubble charges,
+topology and the Einstein/non-Bach-flat alternative. Add corrections to
+the order of the SW and topological arguments.\\
+55 & Late evening & Compute orbifold charges, linking forms and T-chain
+lattice conditions; attempt to exclude orbifold absorption and collapse.\\
+56 & Before midnight & Correct fundamental-group and collapse deductions;
+retain conditional orbifold attainment; prove a zero-energy upper
+construction using compatible Ricci-flat ALE fillings; study Wahl interaction.\\
+57 & After midnight & General-background numerical Burns coefficient;
+independent exact-background and normal-coordinate checks; identify
+the kernel saving and the need for rigorous remainder control.\\
+58 & After midnight & Consolidate assumptions, verify the invariant sector,
+exchange messages 831--832 with A01; retain rather than conceal the remaining
+attainment assumptions; formulate EH obstruction-cost work.\\
+59 & Early morning & Write the critical-background remainder and exact
+coefficient; general-KE competitor; organize zero-gap mechanisms. Later
+Part D repairs supersede earlier excess claims.\\
+60 & Early morning & Find and correct the frozen self-dual-projector error;
+check the corrected density independently; compute EH flux; pursue exact
+Ricci correctors. Several symbolic runs time out or fail to produce results.\\
+61 & Morning & Apply the Step 59 corrections; derive the EH kernel norm,
+local lower cost and matching upper construction with revised neighbourhoods.
+Prepare feedback to A01, not yet sent through the blocked shell.\\
+62 & Morning & Rewrite the global problem in $(\kappa,\upsilon)$;
+identify a possible Weyl bound behind the quadratic scale. A claimed
+necessary equality structure is later withdrawn.\\
+63 & Morning & Hodge--Gauss/frame-twist estimate, AK identity, equality-locus
+exclusion and localized boundary-cost formula. Correct Step 62 and arbitrary
+twist coercivity; shell and collaboration remain blocked.\\
+64 & Current snapshot & Analyze diffuse torsion, uncontrolled harmonic
+projection, and the Hopf singularity of normalized SW spinors. Neither
+positive per-class cost nor a quadratic-scale law follows.\\
+\bottomrule
+\end{longtable}
+
+\section{Collaboration, execution, and research efficiency}
+
+\subsection{Delivered collaboration and its mathematical effect}
+The group record contains ten messages in the extracted interval:
+\begin{center}\small
+\begin{tabularx}{\textwidth}{@{}llX@{}}
+\toprule Message/time & Sender & Content and use\\\midrule
+825, 22:13 & A01 & Quotient-neck topology and standard baseline; symmetry
+limitation for the suggested cell.\\
+826--828, 22:14--22:58 & A02 & Selected-minimizer entrance, conditional
+attainment, charge corrections, general-KE question.\\
+829, 00:35 & A02 & Orbifold conservation, surviving channels and construction
+questions.\\
+830, 01:38 & A01 & Chiral reduction, explicit $W^-$ corrector, general-KE
+saving mechanism.\\
+831--832, 01:56--02:51 & A02 & Independent coefficient, proposed remainder
+division, exact-sector comparison and correction requests.\\
+833, 04:05 & A01 & Exact formula, remainder proof, corrected sign scope,
+Einstein versus $P$-critical warning.\\
+834, 09:37 & A01 & Geometric Ricci corrector, corrected Goldberg count,
+request concerning the remaining critical-background statement.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+The proof files actually use these exchanges. This was substantive
+collaboration. It was nevertheless intermittent: A02's Step 61 and Step 63
+feedback drafts remained unsent at the Step 63 boundary; A01's Step 53 draft
+was also blocked before its essential content was delivered in message 834.
+At the 09:42 read check, A02 had retrieved through message 833, not 834.
+
+\subsection{Execution losses are real but not the whole explanation}
+The operational record identifies memory throttling of the shared Session
+scope and an erroneous exclusive environment lease on a long mathematical
+job. Ordinary output filenames had been classified as shared-installation
+changes. A02's Step 63 explicitly records that no shell scripts and no group
+messages were sent during that Step. A01 also lost execution and messaging
+opportunities. Subsequent higher-degree jobs exceeded the 96 GiB hard memory
+budget and did not complete. The native recovery preserved research files
+and resumed A01's same Step 55 at 09:32.
+
+These failures explain lost execution and broken exchanges. They do not
+prove that repairing the system supplies a missing global mathematical
+inequality. The latter difficulty was already visible in the proof records.
+No percentage of the night is assigned to either cause without adequate
+timing attribution.
+
+\subsection{The mathematical reason completion has not followed}
+There are four distinct issues.
+\begin{enumerate}
+\item \textbf{The successful construction and the missing lower bound have
+different quantifiers.} A local insertion plus gluing builds competitors.
+It does not require, and therefore does not supply, control over every
+near-minimizer. Repeating its optimization cannot alone determine $p_*$.
+\item \textbf{Several conclusions depended on assumptions not yet obtained
+from the minimizing sequence.} Smooth cone points, decay, energy equality,
+removability and smooth topology reconstruction cannot be silently supplied
+by a numerical cost or an abstract compactness citation.
+\item \textbf{Some apparent constraints were redundant or false.}
+The whole-cone sign assertion, the Weyl-channel equality inference, the
+degree-15 count and the unrestricted field-normalization route were removed
+or corrected. This was necessary mathematical work, but did not close the
+four targets.
+\item \textbf{Complementarity weakened after the constructive success.}
+Both Sessions spent substantial time on overlapping local curvature and
+almost-K\"ahler mechanisms. That work is relevant, but direct Q1
+nonexistence and Q3 smooth attainment did not advance at the same rate.
+The shared lower-bound frontier remained unresolved.
+\end{enumerate}
+The interval therefore contains genuine theorem-level construction progress,
+conditional structural results and useful elimination of invalid routes,
+but not a complete answer to one of Q1--Q4. It would be equally inaccurate to
+call all of it trivial or to call every new identity a major breakthrough.
+
+\section{Specific questions for the external mathematical discussion}
+\label{sec:requests}
+
+The requested help is mathematical: identify a new connection, a usable
+existing theorem with matching hypotheses, a counterexample to a proposed
+estimate, or a substantially different construction. The following questions
+are deliberately not instructions to follow a single route.
+
+\begin{enumerate}
+\item \textbf{Q1, exact Einstein rather than all-metric coercivity.}
+Can the actual monopole sign family and $\delta W^+=0$ force a restriction
+excluding $X\#k\overline{\CP}^{\,2}$ below the N1 window? Which genuinely
+Einstein-specific information has not been used by the classical numerical
+budgets? Alternatively, does a plausible exact construction survive the
+known topological and actual-field constraints?
+\item \textbf{Q2, the new Weyl information.}
+Can one establish or refute a bound such as $\kappa\le k$ in a stated
+small-$k/A$ category, or replace it with a coupled bound sufficient for a
+matching lower estimate? Existing inequalities mostly bound
+$\upsilon$ \emph{below} in terms of $\kappa$; another inequality in the same
+direction may add no information. The cancellation example in
+Section~\ref{sec:weyl} must remain allowed unless geometry rules it out.
+\item \textbf{Q2, genuinely different competitors.}
+Can diffuse deformation, ASD gluing, or interacting defects achieve a scale
+smaller than the cellwise linear one? A candidate should include the actual
+closed metric, topology and transition costs, not only an algebraic energy
+density. The existing strict saving already rules out treating the standard
+unit cost as an unrestricted lower bound.
+\item \textbf{Q3, the shortest valid attainment argument.}
+Which of the assumptions retained in \sref{A02.58} actually follow from the
+precise selected-minimizer theory, and which require new analysis? Can one
+choose a concrete manifold on which all remaining channels can be decided,
+without presupposing general bubble classification or smooth Poincar\'e?
+An orbifold example is useful, but is not the requested smooth example.
+\item \textbf{Q4, beyond the finite-jet count.}
+Does an established local existence or formal-integrability theorem decide
+the negative Einstein almost-K\"ahler local system with full transverse
+curvature? If local flexibility persists, which closed-manifold identity or
+global geometric structure could control $\eta$ and the torsion's harmonic
+component? Neither the corrected symbol count nor a recycled cup-square
+identity supplies this.
+\item \textbf{Joint actual-field analysis.}
+Can the normalized-spinor singularity be handled by a punctured Chern-form
+identity retaining its boundary Hopf charges, or by another controlled
+actual field? Would this yield a new global bound, rather than another
+necessary condition for low-cost metrics?
+\item \textbf{The EH/Burns relation.}
+Can the common determinant invariant connect an actual near-minimizing
+sequence to the local sharp neighbourhood theorem, or does it mainly
+describe a separate desingularization regime? Please distinguish the
+source's new energy calculation from the cited known EH obstruction.
+\end{enumerate}
+
+The useful end of the discussion would be a small number of precise new
+lemmas or constructions, each explaining which full problem it changes and
+why its hypotheses are available. The hypotheses and even candidate scales
+may change when the mathematics requires it. A complete solution of a
+natural restricted case is valuable; relabeling a conditional calculation as
+a solution of the full public problem is not.
+
+\appendix
+\section{Source navigation and correction precedence}
+
+All keys refer to complete text reproduced in the companion. Paths below
+are relative to the corresponding Session's \texttt{workspace/notes/}.
+\small
+\begin{longtable}{@{}p{.15\textwidth}p{.79\textwidth}@{}}
+\toprule Key & Source and role\\\midrule\endhead
+A01.48 & \path{step48_problems1_4_goldberg_bochner_and_supply.md}:
+initial Q1/Q4 supply analysis and candidate identities.\\
+A01.49 & \path{step49_kernel_log_coefficient_general_background.md}:
+early general-background calculation, later exact improvements supersede
+its provisional cost interpretation.\\
+A01.50 & \path{step50_wminus_completed_square_and_general_KE_construction.md}:
+explicit $W^-$ correction and chiral-square mechanism.\\
+A01.52 & \path{step52_kernel_insertion_theorem.md}:
+exact coefficient, Einstein-background remainder and its restrictions.\\
+A01.53R & \path{step53_ric0_geometric_corrector.md}:
+covariant Ricci-sector correction.\\
+A01.53G & \path{step53_goldberg_jets_and_canonical_form.md}:
+finite jets and canonical form; counting interpretation superseded by 55.\\
+A01.55 & \path{step55_darboux_ricci_compatibility.md}:
+corrected Darboux symbol and connection to the actual AAD system.\\
+A02.53 & \path{step53_anderson_entrance_bubble_exclusion_attainment.md}:
+selected minimizer, relocation and analytic assumptions.\\
+A02.54 & \path{step54_k1_ball_quotient_attainment_theorem.md}:
+conditional $k=1$ argument; read its correction section.\\
+A02.55 & \path{step55_k1_orbifold_gate_charges_lattices_collapse.md}:
+charges and lattice calculations; read A02.56 Section 0 first.\\
+A02.56 & \path{step56_orbifold_attainment_zero_energy_bound_Tpoint_interaction.md}:
+corrected orbifold argument and ALE upper constructions.\\
+A02.57 & \path{step57_kernel_burns_coefficient_general_background.md}:
+general coefficient computation, superseded in scope by A02.59D.\\
+A02.58 & \path{step58_consolidated_hypothesis_ledger.md}:
+conditional dependencies; its then-open KE remainder is advanced in 59.\\
+A02.59 / 59D & \path{step59_rigorous_burns_expansion_and_zero_gap_structure.md}:
+general remainder, upper construction and zero-gap mechanisms;
+\textbf{Part D overrides earlier parts}.\\
+A02.61 & \path{step61_EH_quantitative_obstruction.md}:
+EH flux and energy cost; \textbf{Section 5 overrides Sections 2--4}.\\
+A02.62 & \path{step62_weyl_channel_reduction.md}:
+Weyl/Yamabe coordinates; Corollary D and other statements are corrected in 63.\\
+A02.63 & \path{step63_frame_twist_flux_and_AK_identity.md}:
+frame-twist, AK and boundary-cost relations;
+\textbf{the later correction section controls earlier statements}.\\
+A02.64 & \path{step64_diffuse_twist_AAD_and_SW_zeros.md}:
+mean-mode and normalized-spinor obstructions; current incomplete Step.\\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\paragraph{Selected computational anchors.}
+The proof notes identify the original scripts and receipts, including A01
+\path{step50_exact_identity.py}, \path{step52_exact_su2minus_fast.py},
+\path{step53_ric0_geometric_corrector.py},
+\path{step53_ak_einstein_jets.py}; and A02
+\path{step59_exact_log_coefficient.py},
+\path{step60_EH_obstruction_pairing.py},
+\path{step61_EH_cokernel_norm.py}, and
+\path{step64_hopf_spinor_twist.py}.
+The companion is a mathematical text collection, not a new execution of
+these computations. Pending, failed and superseded scripts retain those
+statuses. In particular, a staged script is not counted as a successful
+calculation.
+
+\section{Literature used by the Sessions}
+
+This is the focused source list used in the overnight arguments, not a new
+exhaustive priority search. Original theorem numbers and assumptions are
+discussed in the companion.
+\begin{thebibliography}{9}
+\bibitem{Anderson}
+M. T. Anderson, \emph{Canonical metrics on 3-manifolds and 4-manifolds},
+Asian J. Math. \textbf{10} (2006), 127--163.
+\href{https://arxiv.org/abs/math/0511034}{arXiv:math/0511034}.
+The selected-sequence and degeneration arguments use Theorem 4.10 and its
+surrounding regularity and energy discussion.
+\bibitem{LeBrun}
+C. LeBrun, \emph{Ricci curvature, minimal volumes, and Seiberg--Witten theory},
+\href{https://arxiv.org/abs/math/0003068}{arXiv:math/0003068}.
+Classical scalar/Weyl bounds, equality analysis and recovery constructions.
+\bibitem{Optimal}
+C. LeBrun, \emph{Curvature Functionals, Optimal Metrics, and the Differential
+Topology of 4-Manifolds},
+\href{https://arxiv.org/abs/math/0404251}{arXiv:math/0404251}.
+The curvature-variation background for Q2 and Q3.
+\bibitem{AAD}
+V. Apostolov, J. Armstrong and T. Dr\u aghici,
+\emph{Local models and integrability of certain almost K\"ahler
+4-manifolds}, Math. Ann. \textbf{323} (2002), 633--666.
+\href{https://arxiv.org/abs/math/0109098}{arXiv:math/0109098}.
+Canonical connection, Ricci/Bianchi identities and restricted integrability.
+\bibitem{Blair}
+C. LeBrun, \emph{Einstein metrics, symplectic minimality, and
+pseudo-holomorphic curves}, Ann. Global Anal. Geom. \textbf{28}
+(2005), 157--177.
+\href{https://arxiv.org/abs/math/0409290}{arXiv:math/0409290}.
+\bibitem{Ozuch}
+T. Ozuch, \emph{Higher order obstructions to the desingularization of
+Einstein metrics}. The Session's source object and \sref{A02.61} specify
+Section 2.1, Lemma 2.3, Theorem 0.2, and the later corrections concerning
+second-order obstructions and their hypotheses.
+\end{thebibliography}
+
+\paragraph{Snapshot and continuity.}
+The extraction time is 8 October 2026, 09:58:28 CST (UTC+8).
+Both Sessions were running at the snapshot; this compilation neither paused
+them nor changed their goals, research messages, files or model settings.
+It is an increment to the earlier manuscript and 7 October handoff, not a
+replacement for the month-wide research corpus. The next mathematical update
+should change an estimate, an admissible class, an existence statement, or a
+missing proof connection identified above.
+\end{document}

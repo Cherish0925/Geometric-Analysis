@@ -1,0 +1,55 @@
+{
+  "scope": "independent exact full Ricci tensor from noncoordinate structure equations via Koszul and curvature contraction",
+  "provenance": [
+    "research/20260912.tex: BUN:shape, BUN:ricci-matrix, BUN:slow-bound",
+    "research/20260916_global.tex: bundleRicci"
+  ],
+  "metric": "dt^2+b(t)^2 dtheta^2+du^2+a(u)^2(ds+z(t) zeta'(u)du)^2",
+  "structure_equations": [
+    "de1=k e0 wedge e1",
+    "de3=j e2 wedge e3+v e0 wedge e2"
+  ],
+  "parameters": "j=tanh u, k=tanh t, v=a zeta' z'; j_u=1-j^2, k_t=1-k^2; v_t and v_u independent jets",
+  "ricci_plus_metric": [
+    [
+      "-v**2/2",
+      "0",
+      "0",
+      "j*v + v_u/2"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "-v**2/2",
+      "-k*v/2 - v_t/2"
+    ],
+    [
+      "j*v + v_u/2",
+      "0",
+      "-k*v/2 - v_t/2",
+      "v**2/2"
+    ]
+  ],
+  "scalar_curvature": "-v**2/2 - 4",
+  "off_diagonal_characteristic_polynomial": "lambda^2 (lambda^2-alpha^2-beta^2)",
+  "limits": "Local tensor identity and norm algebra; not a computer proof of the closed bundle gluing, derivative bounds, or Einstein nonexistence.",
+  "negative_controls": [
+    {
+      "mutation": "omit ED 03 mixed component",
+      "rejected": true
+    },
+    {
+      "mutation": "omit moving-frame quadratic term",
+      "rejected": true
+    }
+  ],
+  "group": "ed_ricci",
+  "status": "passed",
+  "elapsed_seconds": 0.028470632000008322
+}

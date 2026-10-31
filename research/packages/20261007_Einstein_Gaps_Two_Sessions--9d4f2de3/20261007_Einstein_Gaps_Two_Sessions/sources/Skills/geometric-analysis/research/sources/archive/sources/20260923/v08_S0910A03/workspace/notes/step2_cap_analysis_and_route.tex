@@ -1,0 +1,221 @@
+% ALE Cap Analysis and Negative-Branch Structure
+% S0910A03 Step 2 continuation
+% Connects: MV first-obstruction analysis (Step 1) + Theorem A (this step)
+
+\section{ALE Cap Obstruction for Blowups}
+
+\subsection{Setup}
+
+Let $(X^4, g_X)$ be a Kähler--Einstein surface of general type with $\mathrm{Ric}_{g_X} = -g_X$.
+The manifold $M = X \# k\overline{\mathbb{CP}}^2$ is obtained by blowing up $X$ at $k$ points.
+We ask: can $M$ admit a Riemannian metric $g$ with $\|\mathrm{Ric}_g + g\|_{\mathrm{op}} \leq \delta$
+for arbitrarily small $\delta > 0$?
+
+\subsection{The ALE gluing obstruction}
+
+Any metric on $M$ constructed by gluing an ALE cap into a small ball excised from $(X, g_X)$
+faces a \textbf{fundamental first-obstruction barrier}:
+
+\textbf{Observation 1.} The ordinary blowup of $\mathbb{C}^2$ at the origin produces
+$\widetilde{\mathbb{C}^2} = \mathrm{Tot}(\mathcal{O}(-1) \to \mathbb{CP}^1)$, with 
+exceptional divisor $E$ satisfying $E \cdot E = -1$. This space does \emph{not} admit
+a Ricci-flat ALE Kähler metric.
+
+\textit{Reason:} A Ricci-flat ALE Kähler surface is necessarily hyper-Kähler (by Bochner
+vanishing and the holonomy reduction). The only simply connected hyper-Kähler ALE 4-manifolds
+are the minimal resolutions of $\mathbb{C}^2/\Gamma$ for finite $\Gamma \subset \mathrm{SU}(2)$,
+which have exceptional divisors with self-intersection $-2$ (ADE configurations).
+Since $E \cdot E = -1 \neq -2$, the blowup space does not arise as such a resolution.
+
+\textbf{Observation 2.} The natural ALE metric on $\mathcal{O}(-1)$ is the Burns metric,
+which is scalar-flat Kähler but \emph{not} Ricci-flat. Its Ricci tensor is nonzero:
+$\mathrm{Ric}_{\text{Burns}} \neq 0$.
+
+\textbf{Consequence (connecting to Step 1 MV analysis):}
+In the Morteza--Viaclovsky framework, the first obstruction $\lambda$ at a resolution point
+is determined by the leading Ricci term of the ALE cap. For the Burns metric cap:
+\begin{itemize}
+\item The refined metric $h_t = g_{\mathrm{cal}} + t\cdot h_{\mathrm{Burns}}$ satisfies
+      $\mathrm{Ric}(h_t) = t\Lambda h_t + t\lambda o + R_t$ with $|R_t| = O(t^2 \rho^2)$.
+\item The endomorphism $E_t = g_t^{-1}(\mathrm{Ric}(g_t) - \Lambda g_t) = \lambda g_{\mathrm{cal}}^{-1}o + O(t^{1/2})$.
+\item Since the Burns metric is not Ricci-flat, $\lambda \neq 0$.
+\item Therefore $\|E_t\|_\infty \to |\lambda| \cdot \|g_{\mathrm{cal}}^{-1}o\|_\infty > 0$ as $t \to 0$.
+\end{itemize}
+
+\textbf{Conclusion:} ALE gluing with Burns caps produces an $O(1)$ Ricci deviation that
+does \emph{not} vanish as the cap shrinks. This eliminates the ALE gluing route for
+constructing tight negative pinching on $X \# k\overline{\mathbb{CP}}^2$ for any $k \geq 1$.
+
+\subsection{Can non-ALE constructions succeed?}
+
+The ALE obstruction is specific to the gluing approach. In principle, $M = X \# k\overline{\mathbb{CP}}^2$
+could admit a completely different metric (not obtained by gluing) with $\mathrm{Ric} \approx -g$.
+
+\textbf{What would such a metric look like?}
+\begin{enumerate}
+\item It would need $s \approx -4$ everywhere (from Ricci trace).
+\item It would need $|\mathrm{Ric}_0| \ll 1$ everywhere (Ricci isotropy).
+\item It would NOT necessarily resemble the Kähler--Einstein metric $g_X$ on most of $M$.
+\item The sectional curvature could be wild (no ALE cap constraint applies).
+\end{enumerate}
+
+\textbf{Known construction mechanisms for $\mathrm{Ric} < 0$:}
+\begin{itemize}
+\item Lohkamp's $h$-principle: gives $\mathrm{Ric} < 0$ (one-sided) on any closed $M^n$, $n \geq 3$.
+      Does NOT give two-sided control $\mathrm{Ric} \approx -g$.
+\item Convex integration for Ricci: not known to produce two-sided pinching.
+      The ARTT mixed convex integration (2025) works for scalar curvature only; the
+      trace-free Ricci oscillates with amplitude $O(N)$ in the corrugation.
+\item Proposition C (DRic symbol): the perturbative route around flat/Einstein is
+      blocked because the symbol kernel is pure gauge.
+\end{itemize}
+
+\textbf{Assessment:} No known construction mechanism produces tight two-sided Ricci
+pinching ($\mathrm{Ric} \approx -g$) on an arbitrary closed manifold. The only manifolds
+known to admit $\mathrm{Ric} \approx -g$ are those that actually have an Einstein metric
+with $\Lambda < 0$ (and then small perturbations remain close).
+
+
+\section{Structure of the Negative-Branch Problem}
+
+\subsection{Three layers of obstruction}
+
+For $M = X \# k\overline{\mathbb{CP}}^2$ to be a negative-branch counterexample,
+three conditions must hold simultaneously:
+\begin{enumerate}
+\item[(i)] $M$ has no Einstein metric (any $\Lambda$) --- provided by LeBrun (1996/1998).
+\item[(ii)] $M$ admits a metric with $\|\mathrm{Ric} + g\|_{\mathrm{op}} \leq \delta$ for
+      arbitrarily small $\delta$ --- \textbf{unestablished}.
+\item[(iii)] $k/A \leq 2/3 + \delta^2/(1-\delta)^2$ --- required by Theorem A for
+      LeBrun 1996 manifolds (and an analog for LeBrun 1998 manifolds).
+\end{enumerate}
+
+\textbf{Layer 1: Topological exclusion (Theorem A).}
+For $k/A > 2/3$: condition (iii) fails for small $\delta$, so these manifolds are eliminated.
+
+\textbf{Layer 2: ALE cap obstruction.}
+For any $k \geq 1$: the ALE gluing route to (ii) fails because the Burns cap has nonzero
+first obstruction. This eliminates the most natural construction method.
+
+\textbf{Layer 3: Absence of alternative constructions.}
+No known mechanism produces tight two-sided Ricci pinching on manifolds without
+an Einstein metric. This is not a proof, but a strong structural indicator.
+
+\subsection{Can we prove that tight pinching implies Einstein existence?}
+
+This would be the strongest possible positive result: showing that
+$\|\mathrm{Ric} + g\|_{\mathrm{op}} \leq \delta$ (for sufficiently small $\delta$ depending on $n$)
+implies $M$ admits an Einstein metric.
+
+\textbf{Known results in this direction:}
+\begin{itemize}
+\item Min-Oo 1990: under additional scale-invariant full sectional curvature bounds, 
+      tight negative Ricci pinching $\implies$ Einstein (via Ricci flow convergence).
+      \textit{Issue:} the extra curvature bound is essential to Min-Oo's argument.
+\item Anderson 1989/1990: convergence/stability results for Einstein metrics under
+      additional curvature or volume bounds.
+\item Ye 1993: alternative approach, but the exact theorem and its relationship to Min-Oo
+      are still under investigation (Min-Oo's projection non-orthogonality issue).
+\end{itemize}
+
+\textbf{The gap:} None of these results work with pure Ricci pinching alone.
+The sectional curvature (or Weyl curvature) can blow up while Ricci stays controlled.
+
+\textbf{Key question:} Is the extra curvature assumption truly necessary, or is it an
+artifact of the proof method (Ricci flow + maximum principle requiring full curvature control)?
+
+\subsection{Candidate approach: Ricci flow with surgery}
+
+Under tight negative Ricci pinching:
+\begin{enumerate}
+\item The scalar curvature is nearly constant: $s \approx -4$.
+\item The Ricci flow starting from such a metric has $\partial_t g = -2(\mathrm{Ric} + g) - 2g$
+      (normalized), which is a small perturbation of the shrinking flow.
+\item If the flow develops singularities, they must come from Weyl curvature concentration
+      (since Ricci is controlled by assumption).
+\item In dimension 4, Weyl concentration corresponds to bubble formation (ALE gravitational
+      instantons splitting off).
+\end{enumerate}
+
+This suggests a possible proof strategy:
+\begin{enumerate}
+\item Run normalized Ricci flow from a tightly pinched metric.
+\item Either the flow converges to Einstein (done), or singularities form.
+\item If singularities form, they must be Weyl-type (non-Ricci).
+\item In dimension 4, such singularities split off gravitational instantons.
+\item The topology change from splitting off instantons is well-understood.
+\item Show that the resulting manifold still has controlled topology, and iterate.
+\end{enumerate}
+
+This is a very ambitious program but it connects to existing 4D Ricci flow theory
+(Bamler, Chen--Wang, Ozuch, etc.).
+
+
+\section{Structure of the Positive-Branch Problem}
+
+Under tight positive pinching $\|\mathrm{Ric} - g\|_{\mathrm{op}} \leq \delta$:
+
+\textbf{Strong constraints:}
+\begin{enumerate}
+\item $s > 0$ (scalar curvature positive).
+\item $\pi_1(M)$ finite (Myers' theorem).
+\item $\mathrm{diam}(M) \leq C(n, \delta)$ (diameter bound from Ricci lower bound).
+\item $\mathrm{Vol}(M) \leq C(n, \delta) \cdot \mathrm{diam}^n$ (Bishop--Gromov).
+\item $2\chi > 3|\tau|$ in dimension 4 (Theorem B).
+\item SW invariant vanishes (Witten vanishing for $s > 0$).
+\end{enumerate}
+
+\textbf{Dimension 4 analysis:}
+Simply connected 4-manifolds with $2\chi > 3|\tau|$ and positive scalar curvature include:
+\begin{itemize}
+\item $\mathbb{CP}^2 \# k\overline{\mathbb{CP}}^2$ with $k \leq 8$: Einstein exists 
+      (Kähler--Einstein on del Pezzo, by Tian--Yau).
+\item $S^2 \times S^2$: Einstein exists (product metric).
+\item $S^4$: Einstein exists (round metric).
+\item Non-simply-connected cases: pass to universal cover, which is controlled.
+\end{itemize}
+
+\textbf{Key observation:} Among ALL known closed 4-manifolds, there is no example of a 
+manifold that both (a) admits tight positive Ricci pinching and (b) has no Einstein metric.
+Every known obstruction to Einstein metrics (Hitchin--Thorpe, SW/monopole) is eliminated
+by tight positive pinching.
+
+This strongly suggests $P_4^+$ is true.
+
+
+\section{Summary and Route Comparison}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Branch} & \textbf{Status} & \textbf{Most promising route} \\
+\hline
+$P_n^+$ ($n=2$) & Solved (uniformization) & --- \\
+$P_n^+$ ($n=3$) & Solved (Hamilton) & --- \\
+$P_4^+$ & Strong evidence for TRUE & Classify simply connected 4-mflds \\
+ & & with $2\chi > 3|\tau|$ and $s > 0$ \\
+\hline
+$P_n^-$ ($n=2$) & Solved (uniformization) & --- \\
+$P_n^-$ ($n=3$) & Open & Ricci flow (Hamilton--Perelman) \\
+$P_4^-$ & Compatibility window exists & Analyze window + alternative \\
+ & No known construction for & constructions for tight pinching \\
+ & tight neg. pinching on no-Einstein & \\
+\hline
+$n \geq 5$ & Wide open & Fundamentally different tools \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Strongest overall route for dimension 4:}
+Prove $Q_4$ (both branches TRUE) by showing that tight Ricci pinching in dimension 4
+forces the manifold topology to be compatible with Einstein existence, using the 4D
+Chern--Weil structure and the absence of viable construction mechanisms for counterexamples.
+
+\textbf{Riskiest gap:}
+The negative branch, where the compatibility window ($25/57 \leq k/A \leq 2/3$) exists
+and we cannot yet prove that these manifolds don't admit tight pinching.
+
+\textbf{Next computational target:}
+Apply the LeBrun 1998 Weyl estimate quantitatively to near-Einstein metrics.
+If this narrows or closes the compatibility window, it would eliminate all known
+4D obstructions to $P_4^-$.

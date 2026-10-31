@@ -1,0 +1,782 @@
+% !TeX program = xelatex
+% Compile twice with XeLaTeX. Uses standard xeCJK and Fandol fonts.
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=24mm]{geometry}
+\usepackage{fontspec,xeCJK}
+\setmainfont{lmroman10-regular.otf}[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf,BoldItalicFont=lmroman10-bolditalic.otf]
+\setCJKmainfont{FandolSong-Regular.otf}[Script=Default,BoldFont=FandolSong-Bold.otf]
+\setCJKsansfont{FandolHei-Regular.otf}[Script=Default,BoldFont=FandolHei-Bold.otf]
+\setCJKmonofont{FandolSong-Regular.otf}[Script=Default]
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,longtable,tabularx,array,enumitem,microtype}
+\usepackage{xcolor,xurl,hyperref,bookmark}
+\hypersetup{unicode=true,colorlinks=true,linkcolor=black,urlcolor=black,citecolor=black,pdftitle={丘成桐第26题：命题审计、文献全景与开放研究体系}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\renewcommand{\baselinestretch}{1.18}
+\setlist{nosep,leftmargin=1.7em,topsep=0.35em}
+\setlength{\emergencystretch}{3em}
+\renewcommand{\contentsname}{目录}
+\renewcommand{\refname}{来源与阅读定位}
+\theoremstyle{definition}
+\newtheorem{definition}{定义}[section]
+\newtheorem{proposition}[definition]{命题}
+\newtheorem{remark}[definition]{说明}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\inj}{\operatorname{inj}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\id}{\operatorname{Id}}
+\newcommand{\Met}{\operatorname{Met}}
+\newcommand{\Ein}{\mathcal E}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\src}[3]{\footnote{\raggedright #1，#2。\href{#3}{原始来源链接}。}}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\title{丘成桐第26题：\\命题审计、文献全景与开放研究体系}
+\author{}\date{}
+\begin{document}
+\maketitle
+\vspace{-2em}
+
+本文面向 Qiushi Engine 的长期数学研究。文献状态截点为2026年9月10日。目标是建立可修订的数学对象、证据体系和探索空间，使新的构造、定理、反例与失败经验能够持续积累；本文不提供第26题的完整解答，也不预设任何路线接近成功。
+
+\textbf{本次修订的证据进展。}已逐页核对用户提供的 \texttt{two\_major\_open\_problem\_list.pdf}：PDF第77页（印刷页65）收录第26题题文，第13页注明1982年历史出处。该文件自称后期重编并加入评注，不是1982年原版扫描件；与历史原版的逐字比对仍待完成。第\ref{sec:definition}节现已列出附件题文、中文释义与精确量词，并证明：在本文规定的流形类别中，不限常数正负的存在区间命题等价于正、负归一化分支至少一支成立。修订日期：2026年9月10日。
+
+已核查文献展示了近 Einstein 度量的扰动构造、几何极限、曲率估计、拓扑障碍、特殊结构与计算机辅助证明等多条研究线；它们的假设与结论不同，不能相加成一个“完成百分比”。在本文所列且已核对的来源中，未发现能直接完成本文一般归一化目标的定理或反例。这个结论不排除未收录、未发表、未取得全文或遗漏的成果。
+
+对旧工作保持可推翻的态度，意味着重新检查命题、证明和适用范围。它既不意味着赋予已有理论99\%的错误概率，也不意味着把新想法自动视为更可靠。已证明的结论、未核对的引用、条件性推导、数值现象和研究设想，分别承担不同的证据角色。
+
+\tableofcontents
+\newpage
+
+\section{研究对象与当前判断}
+
+核心数学问题可以严格表述为：在固定维数中，一个闭光滑流形若具有足够接近 Einstein 条件的 Ricci 曲率，是否必然承载某个 Einstein 度量？这里的“足够接近”能否只依赖维数，而不依赖流形的拓扑、体积、注入半径、全曲率、谱隙等额外数据，是问题的关键。
+
+必须区分三个层次。第一，给定某个已知 Einstein 度量，研究它附近的稳定性或变形；第二，给定带附加几何条件的近 Einstein 度量，证明附近有精确解；第三，在所有闭流形和所有满足纯 Ricci 夹逼的度量中，获得统一的底层存在性结论。前两层可以非常深刻，但只有补齐额外假设与量词之间的桥梁，才能完成第三层。
+
+\begin{longtable}{P{0.25\textwidth}P{0.68\textwidth}}
+\toprule
+需要纠正的预设 & 本文采用的判断\\\midrule
+26题已经被证明是AI最容易完整解决的问题 & 没有支持这种排序的可比较成功率数据；领域匹配不等于可解性预测。\\
+反例路线天然优于存在路线 & 两者需要不同的困难突破，均保留；按可检验的数学进展调整投入。\\
+几篇新论文已把问题压缩为最后一步 & 已识别多种不同障碍，尚无经核实的统一归约。\\
+没有搜到解答，所以确定全球仍开放 & 只能报告已覆盖来源中的状态，并保留原题、旧文献和未发表材料的核查缺口。\\
+小残差说明距离精确解很近 & 还需要反算子、非线性、规范、正则性和全局结构控制。\\
+所有路线应获得相同可信度 & 应使用相同的证据标准；有证明和无证明的陈述不享有相同结论权重。\\\bottomrule
+\end{longtable}
+
+研究的价值不由短期内是否能宣传为“攻破原题”单独决定。新的量词澄清、可复用估计、严格的族内否定、有效的存在定理和经证明的失败机制，都可以构成积累，但必须按实际覆盖范围命名。
+
+\section{原题身份、规范化与量词}\label{sec:definition}
+
+\subsection{历史出处、已取得题文与版本边界}
+
+历史来源为 Shing-Tung Yau 的 \emph{Problem section}，收入 \emph{Seminar on Differential Geometry}，Annals of Mathematics Studies 第102卷，Princeton University Press，1982年，第669--706页；章节 DOI 为 \texttt{10.1515/9781400881918-035}。用户提供的重编文件第13页也明确列出这一书目。\src{Yau}{1982年问题章节；书目已定位，附件载有出处脚注，历史原版尚待逐字比对}{https://doi.org/10.1515/9781400881918-035}
+
+\begin{longtable}{P{0.24\textwidth}P{0.69\textwidth}}
+\toprule
+附件定位 & 已直接核对的内容\\\midrule
+PDF第1页 & 标题为 \emph{Open Problems in Geometric Analysis}，副标题为 \emph{A reorganized volume from the Yau series}。\\
+PDF第5页（印刷页iii） & 编辑说明称汇入 Zhu--Chen 评注，用于后续逐题修订；该说明不是独立的版本认证。\\
+PDF第13页 & \emph{Problem Section} 标题、Yau署名及上述1982年出处脚注。\\
+PDF第77页（印刷页65） & \emph{Problem 26} 题文；随后出现 Status、Related open problems 等评注。\\
+PDF第78页（印刷页66） & 评注续页、参考文献；其中一项明确标为 AI-generated formulation。\\\bottomrule
+\end{longtable}
+
+附件第77页的题文如下；保留原句与符号含义，仅调整数学排版：
+\begin{quote}
+Find for each $N$ constants $c_N<C_N$ so that if the Ricci curvature of a compact manifold satisfies $c_N\delta_{ij}\le R_{ij}\le C_N\delta_{ij}$ then the manifold admits an Einstein metric.
+\end{quote}
+中文释义：对每个维数 $N$，寻找常数 $c_N<C_N$，使得一个紧流形的 Ricci 曲率若满足该夹逼条件，该流形便承载某个 Einstein 度量。这里按正交归一标架解释 $\delta_{ij}$，坐标无关的写法为 $c_Ng\le\Ric_g\le C_Ng$，而非逐分量比较。
+
+\textbf{题文明确了什么。}两个常数严格有序，未写正负限制；常数按维数选择，随后条件作用于满足它的流形和度量。结论只要求承载某个 Einstein 度量，未要求输入度量本身是 Einstein，也未要求输出接近输入、具有同一曲率符号或来自某条流。
+
+\textbf{仍需区分的约定。}这句话只写 compact，未逐项写明无边界、连通、光滑性和维数下限。下文采用闭、连通、光滑实流形的标准研究设置，并将原句的 $N$ 记为 $n$；这些是明确声明的工作约定，不伪装成原句中另有的字词。不同年份的列表可能复用题号，后续仍应取得1982年原版及相邻说明核对，尤其确认流形类别。
+
+\textbf{评注的使用边界。}附件所写“仍开放”、对各路线的评价，以及“现代版本可能需要额外假设”，都是需要独立核查的后期评述，不能归为1982年题文，也不能据此给研究系统加上非塌缩或全曲率条件。明确标为 AI-generated 的内容同样只作为待检验建议。附件身份及内容可供复核，但其编辑者身份、发布授权与历史原版一致性尚未完成独立认证。
+
+\subsection{对象、符号和范数}
+
+本文默认 $n\ge2$，$M$ 为非空、闭、连通的光滑实 $n$ 维流形，闭表示紧致且无边界；$g$ 为光滑正定 Riemann 度量。除专门讨论特征数的四维部分外，不默认定向、单连通、Kähler、齐性或旋转对称。$n$ 是实维数，不是复维数。
+
+\begin{definition}
+令
+\[
+\Ein(M)=\{(h,\lambda):h\in\Met^\infty(M),\ \lambda\in\mathbb R,
+\ \Ric_h=\lambda h\}.
+\]
+“$M$ 承载 Einstein 度量”表示 $\Ein(M)\ne\varnothing$。$h$ 和 $g$ 位于同一光滑流形上；不要求 $h=g$，不要求 $h$ 接近 $g$，也不默认 $\lambda$ 与输入 Ricci 曲率同号。
+\end{definition}
+
+把 $\Ric_g$ 视为对称 $(0,2)$ 张量，令 $A_g=g^{-1}\Ric_g$ 为自伴随端同态。张量不等式 $ag\le\Ric_g\le bg$ 表示对所有 $x\in M$ 和 $v\in T_xM$ 有
+\[
+a\,g_x(v,v)\le\Ric_g(v,v)\le b\,g_x(v,v).
+\]
+等价地，$A_g(x)$ 的每个特征值都在 $[a,b]$ 中。它不是标量曲率的上下界，也不是坐标矩阵中每个分量的上下界。
+
+对于 $\sigma\in\{+1,-1\}$，定义
+\begin{equation}\label{eq:delta}
+\delta_\sigma(g)=\sup_{x\in M}\|A_g(x)-\sigma\id\|_{\op,g}.
+\end{equation}
+这是逐点最大特征值偏差的全局上确界。若使用张量 Hilbert--Schmidt 范数，则
+\[
+\|A-\sigma\id\|_{\op}\le|\Ric-\sigma g|_g
+\le\sqrt n\,\|A-\sigma\id\|_{\op}.
+\]
+二者可在维数常数下转换，但不能在引用精确阈值时直接混用。
+
+\subsection{正负分支与更强的命题}
+
+\begin{definition}[固定维数的底层存在性分支]\label{def:branch}
+对固定 $n$ 和 $\sigma\in\{+1,-1\}$，定义命题
+\begin{equation}\label{eq:P}
+P_n^\sigma:\quad
+\exists\varepsilon_n^\sigma\in(0,1)\ \forall M^n\ \forall g\in\Met^\infty(M),\quad
+\delta_\sigma(g)\le\varepsilon_n^\sigma\ \Longrightarrow\ \Ein(M)\ne\varnothing.
+\end{equation}
+常数不得依赖 $M$、$g$ 或其未声明的几何参数。
+\end{definition}
+
+正分支就是 $(1-\varepsilon)g\le\Ric_g\le(1+\varepsilon)g$。负分支则是
+\[
+(-1-\varepsilon)g\le\Ric_g\le(-1+\varepsilon)g.
+\]
+负数的不等号顺序不能按正分支机械抄写。
+
+与 $P_n^\sigma$ 相比，“存在 $h$ 且 $\Ric_h=\sigma h$”更强；“在指定背景范数及微分同胚规范后，存在这样的 $h$ 且 $\|h-g\|_{C^{2,\alpha}}$ 有统一上界”又更强。稳定性结论失败，不能据此否定底层存在性。反过来，底层存在性的证明不必给出从输入度量连续选取输出度量的算法。
+
+\subsection{尺度为何必须固定}
+
+对于常数 $c>0$，
+\begin{equation}\label{eq:scale}
+\Ric_{cg}=\Ric_g\quad\hbox{作为 $(0,2)$ 张量},\qquad
+A_{cg}=c^{-1}A_g.
+\end{equation}
+所以把度量放大即可令 $\|\Ric_{cg}\|_{cg,\op}$ 趋于零；没有尺度限制的“Ricci 绝对值趋于零”几乎不传达 Einstein 存在性信息。零中心问题如需研究，必须另行指定体积、直径或其他合理尺度条件，其数学内容也随之改变。
+
+若 $a<b$ 且 $ab>0$，设
+\[
+\mu=\frac{a+b}{2},\qquad
+\widetilde g=|\mu|g,\qquad
+\varepsilon=\frac{b-a}{|a+b|},\quad \sigma=\operatorname{sign}\mu.
+\]
+则 $ag\le\Ric_g\le bg$ 等价于
+\[
+(\sigma-\varepsilon)\widetilde g\le\Ric_{\widetilde g}
+\le(\sigma+\varepsilon)\widetilde g.
+\]
+若文献使用 $\Ric\approx-(n-1)g$，改取 $\widetilde g=(n-1)g$ 后，误差的算子范数也要除以 $n-1$。不能只替换公式中的系数而保留全部常数。
+
+若 $a<0<b$，任何固定闭流形上的任意度量经充分放大，Ricci 特征值都会落入该区间。因此，在存在无 Einstein 度量流形的维数中，这类跨零区间不能提供所需充分条件。这里明确要求零在区间内部；若零只是端点，缩放不能改变 Ricci 曲率的符号，关于该预先指定区间自身的充分性需要另作分析。这不妨碍下一节对“存在某个区间”的命题作完整分支归约。
+
+\subsection{附件题文的精确量词与分支等价}
+
+在前述流形类别中，按附件题文定义固定维数的存在区间命题
+\begin{equation}\label{eq:Q}
+\begin{split}
+Q_n:\quad &\exists a,b\in\mathbb R,\ a<b,\quad
+\forall M^n\ \forall g\in\Met^\infty(M),\\
+&ag\le\Ric_g\le bg\quad\Longrightarrow\quad\Ein(M)\ne\varnothing.
+\end{split}
+\end{equation}
+这里 $a,b$ 对应题文的 $c_N,C_N$。在本文 $n\ge2$ 的范围中，整体目标为 $\forall n\ge2\ Q_n$。为避免曲率符号约定影响解释，始终同时保留两支。
+
+\begin{proposition}\label{prop:branches}
+对每个固定维数，在上述同一流形类别内，
+\[
+Q_n\quad\Longleftrightarrow\quad P_n^+\vee P_n^-.
+\]
+这一等价不要求先给 $a,b$ 添加同号条件。
+\end{proposition}
+\begin{proof}
+若 $P_n^\sigma$ 成立，直接取 $a=\sigma-\varepsilon_n^\sigma$、$b=\sigma+\varepsilon_n^\sigma$，即可得到 $Q_n$。
+
+反之，假设 $Q_n$ 对某个 $[a,b]$ 成立。任一非退化实区间都包含非退化闭子区间 $[u,v]\subset[a,b]$，使 $uv>0$。置
+\[
+\mu=(u+v)/2,\qquad \sigma=\operatorname{sign}\mu,\qquad
+\varepsilon=(v-u)/|u+v|\in(0,1).
+\]
+对任意满足 $\delta_\sigma(h)\le\varepsilon$ 的度量 $h$，令 $g=h/|\mu|$。由式\eqref{eq:scale}，$A_g=|\mu|A_h$，故 $A_g$ 的特征值位于 $[u,v]\subset[a,b]$。应用 $Q_n$ 得到 $\Ein(M)\ne\varnothing$。这对所有 $M,h$ 成立，因而给出 $P_n^\sigma$。
+\end{proof}
+
+这个论证也处理了允许零端点或跨零区间的情况：存在区间命题可限制到同号子区间。研究某个预先指定的含零区间仍是另一命题，但它不再是上述等价的未决缺口。符号可随维数改变；不需要预先选定一支对所有维数同时成立。
+
+分别要求正、负两支都成立的 $P_n^+\wedge P_n^-$ 是更强目标，附件题文没有提出这个合取要求。
+
+\begin{longtable}{P{0.31\textwidth}P{0.62\textwidth}}
+\toprule
+目标 & 完整证明或完整否定所需内容\\\midrule
+$P_n^+$ & 证明一个只依赖 $n$ 的正阈值；或给出固定 $n$ 中误差趋零且都无任何 Einstein 度量的反例序列。\\
+$P_n^+\wedge P_n^-$ & 正面需两支；反面任意一支失败即足够。\\
+$P_n^+\vee P_n^-$ & 正面任意一支成立即足够；反面需同一维数中两支都失败。\\
+$\forall n\ (P_n^+\vee P_n^-)$ & 否定时必须固定一个维数，并在该维数中否定两支；不同维数中的两种失败不能直接拼接。\\
+附加几何假设下的命题 & 必须按受限命题命名，另证假设可移除，才能升级为一般目标。\\\bottomrule
+\end{longtable}
+
+因此，依照附件题文和本文流形约定，完整否定整体目标需要找到\textbf{同一个固定维数}，在该维数中同时否定正、负两支。两支反例可以来自不同光滑流形；只否定正分支，或只证明某一族不存在邻近 Einstein 度量，都不够。上述逻辑等价已有完整证明；尚待历史原版核验的是题文与约定的来源一致性，两者不能混为一项未决数学问题。
+
+\subsection{反例的严格量词与等价的间隙问题}
+
+否定 $P_n^\sigma$ 意味着
+\begin{equation}\label{eq:neg}
+\forall\varepsilon\in(0,1)\ \exists M_\varepsilon^n\ \exists g_\varepsilon:\quad
+\delta_\sigma(g_\varepsilon)\le\varepsilon,\qquad
+\Ein(M_\varepsilon)=\varnothing.
+\end{equation}
+其中维数固定，流形可以依赖 $\varepsilon$。可等价地构造 $\varepsilon_j\downarrow0$ 的序列。只展示一个误差为 $10^{-6}$ 的例子仍不足够，因为未知的充分阈值可能更小。反之，不必额外要求所有度量都在同一个拓扑类型上；固定流形的构造是更强的成果。
+
+定义
+\[
+\Gamma_n^\sigma=
+\inf_{\substack{M^n\ \mathrm{closed,smooth,connected}\\\Ein(M)=\varnothing}}
+\ \inf_{g\in\Met^\infty(M)}\delta_\sigma(g),
+\]
+空集的下确界约定为 $+\infty$。由定义可得
+\[
+P_n^\sigma\quad\Longleftrightarrow\quad\Gamma_n^\sigma>0.
+\]
+这是工作命题的等价重写，便于同时组织存在路线和反例路线，并非新的几何定理。每个固定流形各有正间隙，不保证这些间隙对所有流形仍有正下界；反例序列也未必有光滑收敛子列。
+
+\section{基本几何：输入控制了什么，缺少什么}
+
+\subsection{Ricci、标量曲率与完整曲率}
+
+取单位球面截面曲率为正的约定。设 $s=\tr_g\Ric_g$，$E=\Ric_g-(s/n)g$。在 $n\ge3$ 时，曲率张量分解为
+\[
+\Rm=W+\frac{1}{n-2}E\mathbin{\star} g
++\frac{s}{2n(n-1)}g\mathbin{\star} g,
+\]
+其中 $\mathbin{\star}$ 为 Kulkarni--Nomizu 积，$W$ 为 Weyl 曲率；范数和张量约定应在计算中固定。对于 $n\ge4$，Ricci 夹逼直接控制 $E$ 和 $s$，但代数上不控制 $W$。这解释了为何无法把完整曲率控制下的紧性定理直接套用；它并不单独证明某个实际流形序列一定发生 Weyl 爆破。
+
+Einstein 条件也不等于常截面曲率。在维数至少四时，$E=0$ 可以同时有 $W\ne0$。因此，试图从纯 Ricci 夹逼推出“所有截面曲率都接近一个常数”，通常是在证明比目标强得多的陈述；必须先检查它是否被已知 Einstein 模型否定。
+
+\subsection{正分支、负分支与塌缩}
+
+当 $\delta_+(g)\le\varepsilon<1$，Myers 比较给出
+\[
+\diam(M,g)\le\pi\sqrt{\frac{n-1}{1-\varepsilon}},
+\qquad \pi_1(M)\ \hbox{有限}.
+\]
+这提供了有用约束，但不是体积或注入半径的统一正下界。固定三维的透镜空间族说明，即使是精确正 Einstein 模型，也可能在变化的商族中出现小体积和小注入半径。
+
+一般高维中，负 Ricci 的双边夹逼不推出负截面曲率，也不自动给出直径上界。例如两个闭双曲曲面的乘积可归一化为 $\Ric=-g$，混合二平面的截面曲率却为零。负 Einstein 存在性与负截面 Einstein 存在性不同：近期负曲率构造的重要假设正是比 Ricci 条件更强的截面信息。另一方面，某些退化是精确 Einstein 度量本来就允许的，不能把“发生退化”当成不存在性的证据。
+
+\subsection{低维与特殊结构的边界}
+
+二维中，按本文要求 Einstein 常数为常数的约定，Einstein 度量就是常高斯曲率度量；闭曲面的均匀化提供存在性。不要利用二维恒等式 $\Ric=Kg$ 把任意非恒曲率度量称作本文意义下的 Einstein 度量。
+
+三维中 Weyl 张量恒为零。Hamilton 的经典定理从闭三维流形上的正 Ricci 度量得到常正曲率度量，因此正分支在三维无需接近程度这一额外假设。\src{Hamilton}{Three-manifolds with positive Ricci curvature，JDG 17 (1982), 255--306}{https://doi.org/10.4310/jdg/1214436922}
+若负分支的 Ricci 特征值 $r_i\in[-1-\varepsilon,-1+\varepsilon]$，则 Ricci 特征标架中的截面曲率满足
+\[
+K_{ij}=\frac{r_i+r_j-r_k}{2}<0\qquad(\varepsilon<1/3).
+\]
+这一标架同时对角化三维曲率算子，故所有二平面均满足 $K\le(-1+3\varepsilon)/2<0$。结合三维几何化和闭负截曲率流形的拓扑性质，可得到其承载双曲度量的结论；这一步是调用三维理论，而不是单靠上述代数公式。它不保证输入度量与双曲度量的统一距离估计。\src{Kleiner--Lott}{Notes on Perelman\textquotesingle s papers，Geom. Topol. 12 (2008), 2587--2855；v5修订于2013}{https://arxiv.org/abs/math/0605667v5}\src{Perelman}{Ricci flow with surgery on three-manifolds，2003；三维几何化的基础文献}{https://arxiv.org/abs/math/0303109}
+
+若输入还具有 Kähler 结构，Ricci 形式与第一 Chern 类的关系带来额外工具。负第一 Chern 类情形的 Aubin--Yau 存在理论、零第一 Chern 类的 Calabi--Yau 理论，以及 Fano 情形的 Kähler--Einstein 稳定性理论，是重要的参照体系，均不能在没有复结构的流形上直接使用。\src{Yau}{On the Ricci curvature of a compact Kähler manifold and the complex Monge--Ampère equation, I，1978}{https://doi.org/10.1002/cpa.3160310304}
+
+\section{拓扑障碍与反例路线的实际约束}\label{sec:obstruction}
+
+\subsection{排除所有 Einstein 度量与排除一个模型族}
+
+反例需要同时证明两件事：近 Einstein 的输入度量确实存在；底层光滑流形上所有 Einstein 度量都不存在。拓扑不变量、微分拓扑不变量、群、熵、特征数或全局积分恒等式可能提供第二部分；每个障碍都有维数、定向、光滑结构、符号或附加结构的适用范围。
+
+“指定对称群下无解”“指定复结构下无 Kähler--Einstein 度量”“沿某个参数族不能拼接”“给定奇异极限不能去奇点”，只排除了相应子类。允许全部光滑度量时，可能存在破坏对称性、改变复结构、远离当前参数域或符号不同的 Einstein 度量。
+
+\subsection{四维的一个可直接复算的限制}
+
+在闭、定向的四维流形上，令 $E=\Ric-(s/4)g$。这里 $|W^\pm|$ 是 $\operatorname{End}(\Lambda^\pm)$ 上曲率算子的 Hilbert--Schmidt 范数，$|E|^2=\tr[(g^{-1}E)^2]$，均不是前文的算子范数。Chern--Gauss--Bonnet 与签名公式给出
+\begin{equation}\label{eq:GB}
+2\chi(M)\pm3\tau(M)=\frac1{4\pi^2}\int_M
+\left(2|W^\pm|^2+\frac{s^2}{24}-\frac{|E|^2}{2}\right)dV_g.
+\end{equation}
+Einstein 情形 $E=0$ 给出 Hitchin--Thorpe 必要条件 $2\chi\ge3|\tau|$。\src{LeBrun}{Einstein metrics, four-manifolds, and differential topology；Chern--Weil 恒等式及其应用}{https://arxiv.org/abs/math/0404359}
+
+\begin{proposition}[标准恒等式的定量推论；不宣称最优或新颖]\label{prop:gap}
+若 $M^4$ 闭且定向，且对 $\sigma=\pm1$ 有
+\[
+\delta_\sigma(g)\le\varepsilon<\frac{1}{1+\sqrt3},
+\]
+则 $2\chi(M)>3|\tau(M)|$。
+\end{proposition}
+
+\begin{proof}
+写 Ricci 特征值为 $\sigma+e_i$，$|e_i|\le\varepsilon$。于是
+\[
+|s|\ge4(1-\varepsilon),\qquad
+|E|^2=\sum_i(e_i-\bar e)^2\le\sum_i e_i^2\le4\varepsilon^2.
+\]
+将它们代入式\eqref{eq:GB}并舍去非负的 Weyl 项，得到
+\[
+2\chi\pm3\tau\ge\frac{\Vol_g(M)}{4\pi^2}
+\left[\frac23(1-\varepsilon)^2-2\varepsilon^2\right]>0.
+\]
+两种符号均成立，故结论成立。
+\end{proof}
+
+这个简单推论同时约束正、负归一化反例路线。若一个候选流形因为违反或等于 Hitchin--Thorpe 边界而被排除 Einstein 度量，那么它也不可能支持任意紧的 $\pm1$ Ricci 夹逼。不能先选择这种拓扑，再假定通过优化或缩小拼接尺度总能把相对误差降到零。
+
+例如 $M=\#_5\mathbb{CP}^2$ 有 $\chi=7$、$\tau=5$，从而 $2\chi-3\tau=-1$，不存在任何 Einstein 度量。这类连通和可具有正 Ricci 度量，但命题\ref{prop:gap}阻止它们成为任意紧夹逼的反例。正 Ricci 构造的来源要区分：Sha--Yang 的经典工作处理球面乘积的连通和；$\mathbb{CP}^2$ 连通和的相关来源包括 Perelman 的构造以及后续 core metric 方法，不能混署。\src{Reiser}{Positive Ricci curvature on connected sums of fibre bundles，2024；引言及参考文献中的 Perelman、Burdick 线索}{https://arxiv.org/abs/2406.02274}
+
+\subsection{更精细的障碍与相容性问题}
+
+LeBrun 的 Seiberg--Witten 方法能在 Hitchin--Thorpe 条件尚未排除的情形下给出更强的 Einstein 障碍，说明仅检查 $\chi$、$\tau$ 不够。\src{LeBrun}{Four-manifolds without Einstein metrics，Math. Res. Lett. 3 (1996), 133--147}{https://arxiv.org/abs/dg-ga/9511015}
+但一个有用障碍还必须与近 Einstein 输入共存。若障碍本身已经通过积分曲率不等式给出 $\delta_\sigma$ 的正下界，它会证明某类候选不可能，而不会直接产生反例。
+
+对正分支，依赖非零 Dirac 指标或适当 monopole 条件的正标量曲率障碍，有时会把输入度量一并排除。负分支没有这一直接冲突，但需要重新核对尺度、体积、光滑结构和阻碍是否排除全部符号。一个流形可能承载不同符号的 Einstein 度量，符号不能仅凭输入猜定。LeBrun 2025年的文章回顾了高维反号 Einstein 度量共存的构造。\src{LeBrun}{Einstein Constants and Smooth Topology，arXiv:2502.10560v2，2025-03-30；引言、Theorem 1.1}{https://arxiv.org/abs/2502.10560v2}
+
+\subsection{Kähler 反例搜索中的具体纠偏}
+
+对给定 Fano 复流形，Kähler--Einstein 存在性可由适当的 K-polystability 条件刻画；这是附加结构内的精确理论。\src{Chen--Donaldson--Sun}{Kähler--Einstein metrics on Fano manifolds III，2013预印本、2015期刊论文；完成存在方向}{https://arxiv.org/abs/1302.0282}
+必要方向可参见 Berman 的 K-polystability 定理。\src{Berman}{K-polystability of Q-Fano varieties admitting Kahler--Einstein metrics，arXiv:1205.6214v3}{https://arxiv.org/abs/1205.6214v3}若某复结构不满足存在条件，不能自动推出其底层光滑流形没有一般 Einstein 度量。
+
+四维的直接例子是 $\mathbb{CP}^2\#2\overline{\mathbb{CP}}{}^2$：Chen--LeBrun--Weber 构造了正 Einstein 度量，其作用正是展示一般 Einstein 存在性超出给定 Kähler--Einstein 范畴的可能。该文还给出 del Pezzo 底层流形的正 Einstein 存在结论。\src{Chen--LeBrun--Weber}{On conformally Kähler, Einstein manifolds，Theorem A、Corollary 2}{https://arxiv.org/abs/0705.0710}
+这类已知模型应作为系统的反误判样例，而不是被放入“无 Einstein”的候选库。
+
+\section{存在性文献：从经典方法到2026年进展}\label{sec:existence}
+
+\subsection{经典基线与原文缺口}
+
+Anderson 的 \emph{Ricci curvature bounds and Einstein metrics on compact manifolds}（JAMS 2, 1989, 455--490）是必须纳入的经典来源；1990年的 \emph{Convergence and rigidity of manifolds under Ricci curvature bounds} 则与后续有界几何下的紧性、刚性和稳定性论证密切相关。\src{Anderson}{本人出版目录；1989与1990两篇论文的书目信息，原文定理未在本文完整核准}{https://www.math.stonybrook.edu/~anderson/publ.pdf}
+本文没有取得这两篇原文的全部定理文本，所以不根据标题反推假设，更不将它们当成原题已被解决的依据。后续录入必须包含常数依赖、范数、极限正则性和是否保留微分同胚类型。
+
+\textbf{附件带来的具体核查线索。}重编文件第77页的评注指向 Anderson 1989年的 Corollary B(4)，称其在带紧性、导数及其他几何控制的类别中给出近 Einstein 到 Einstein 的存在结论。这使下一次核查可以直达具体定理，而非只按标题搜索；但本文尚未取得该推论的原始完整文本，评注所列各项假设及其必要性不能直接记为已核准事实，更不能据此认定原题必须增加这些假设。
+
+同页及续页还补充了 Catino--Djadli 的三维积分夹逼、Hamilton 的四维曲率算子、Böhm--Wilking、Brendle--Schoen、Qing--Shi--Wu 的非紧流背景，以及 Ge--Tao--Zhou 的外在子流形刚性等文献入口。应分别核对维数、积分或逐点范数、紧性及外在数据，再判断与本题的关系；本次修订保留这些线索，没有将仅由评注转述的结果升级为已核验依赖。附件中的排序、开放状态和书目细节也须接受同一核查标准。
+
+Min-Oo 的 \emph{Almost Einstein manifolds of negative Ricci curvature}（JDG 32, 1990, 457--472）是通过几何流处理近 Einstein 问题的直接线索。\src{Min-Oo}{作者研究目录；论文书目确认，完整定理假设待原文复核}{https://math.mcmaster.ca/minoo/research.html}
+Ye 的 \emph{Ricci flow, Einstein metrics and space forms}（Trans. AMS 338, 1993, 871--896）也是流与稳定性的重要基线。本文对它的了解以相关原始研究的引用为界，未将未取得的原文细节填入空白。它们不能被压缩为“Ricci 误差小即可无条件收敛”。
+
+\subsection{Jäckel：去除若干全局阈值依赖，但保留具体结构}
+
+Jäckel 的结果已于2026年8月4日正式发表于 \emph{Journal of Geometric Analysis} 36, article 309。公开 arXiv v2（2025年12月29日）已把维数范围扩展为全部实维 $n\ge4$；旧索引中的“至多12维”不能代表该版本。\src{Jäckel}{Effective Stability of Negatively Curved Einstein Metrics in Dimensions at Least Four；期刊版本与刊期}{https://link.springer.com/article/10.1007/s12220-026-02563-1}
+
+其公开 v2 的 Theorem 1.1 可用统一记号转述为：固定
+\[
+n\ge4,\quad\alpha\in(0,1),\quad K>0,\quad\Lambda\ge0.
+\]
+存在 $\varepsilon_0,C>0$，依赖 $n,\alpha,K,\Lambda$。闭流形上的背景度量 $\bar g$ 满足
+\begin{align*}
+\|\Ric_{\bar g}+(n-1)\bar g\|_{C^0}&\le\varepsilon, &
+\|\Ric_{\bar g}+(n-1)\bar g\|_{L^2}&\le\varepsilon,\\
+\sec_{\bar g}&\le-K<0, &
+\|\nabla\Ric_{\bar g}\|_{C^0}&\le\Lambda,
+\end{align*}
+且在论文规定的薄部上 $\sec_{\bar g}\equiv-1$，则当 $\varepsilon\le\varepsilon_0$ 时，存在
+\[
+\Ric_{g_0}=-(n-1)g_0,\qquad
+\|g_0-\bar g\|_{C^{2,\alpha}}\le C\varepsilon^{1-\alpha}.
+\]
+以上所有张量范数、体积形式及 Hölder 范数均相对于 $\bar g$，$L^2$ 为未除以总体积的通常范数。薄部按文中的 Margulis 尺度定义。以上核对的是公开 v2 的定理文本，未声称逐字比对付费期刊全文。\src{Jäckel}{arXiv:2502.16692v2，Theorem 1.1、Sections 1.2与2；背景度量记号作统一}{https://arxiv.org/html/2502.16692v2}
+
+其贡献是使阈值不依赖整体直径和体积上界、也不依赖注入半径下界；机制包括覆盖空间原像计数、混合范数和改进的双曲管谱估计。保留的截面负性、薄部精确结构、导数界和两个误差范数，仍须分别处理才能接近纯 Ricci 目标。不能从“去掉三种依赖”推出“只依赖维数”。
+
+\subsection{Hamenstädt--Jäckel：有效双曲化与特殊覆盖构造}
+
+2022年的 \emph{Stability of Einstein metrics and effective hyperbolization in large Hempel distance} 的 Theorem 1 使用近双曲截面控制、注入半径下界、Ricci 导数界以及对所有基点成立的加权 $L^2$ 误差。三维薄部结果则采用更具体的衰减条件。\src{Hamenstädt--Jäckel}{arXiv:2206.10438v2，Theorems 1--2，Proposition 6.1}{https://arxiv.org/abs/2206.10438v2}
+这里的权重和基点一致性是证明结构的一部分。其关于接近性失效的例子，不能改写成底层不存在双曲度量。
+
+两人的 \emph{Negatively curved Einstein metrics on Gromov--Thurston manifolds}（公开 v2：2025年1月20日）对每个 $n\ge4$ 和每个 $\varepsilon>0$，构造无限多个特选流形 $X$，各自具有 $[-1-\varepsilon,-1+\varepsilon]$ 截面夹逼度量及负截面 Einstein 度量，却不同胚于闭局部对称空间；$X$ 可以依赖 $\varepsilon$；作者页面标为 JEMS 待刊。\src{Hamenstädt--Jäckel}{arXiv:2411.12956v2，Theorem 1；范围为文中构造的特选族}{https://arxiv.org/html/2411.12956v2}
+这直接说明“没有局部对称结构”不足以否定 Einstein 存在性，也说明过去看似反例的几何拓扑模型可能成为新存在定理的来源。
+
+\subsection{Fine--Premoselli：局部模型、分歧覆盖与精确修正}
+
+Fine--Premoselli 在2020年 JAMS 论文中，在特选双曲四维流形及全测地曲面上作循环分歧覆盖，构造非局部齐性的负截面 Einstein 度量。对固定分支次数，几何参数需要进入可控范围；一般分歧覆盖不自动满足条件。\src{Fine--Premoselli}{Examples of compact Einstein four-manifolds with negative curvature，JAMS 33 (2020), 991--1038}{https://arxiv.org/abs/1802.00608}
+
+这条路线的可借鉴结构是：先决定光滑全局拓扑，再构造局部模型和拼接度量，随后在合适范数中估计误差与线性反算子，最后修正为精确解。对原题而言，存在性路线可尝试扩大可修正的模型；反例路线则必须解释为何近似构造存在而任何精确 Einstein 度量均被排除。后者不是将最后一步优化关闭即可获得。
+
+\subsection{Anderson--Bamler：填充、尺度分离与近核}
+
+Anderson 的高维 Dehn 填充从具有环面 cusp 的有限体积双曲背景出发，在足够长的填充参数下构造 Einstein 度量；填满所有 cusp 可获得紧例。\src{Anderson}{Dehn filling and Einstein metrics in higher dimensions，JDG 73 (2006), 219--261，Theorem 1.1}{https://www.math.stonybrook.edu/~anderson/dehn.pdf}
+Bamler 的推广使多 cusp 及填充尺度的处理更有效，定理中有背景体积上界等明确参数。\src{Bamler}{Construction of Einstein metrics by generalized Dehn filling，JEMS 14 (2012), 887--909，Theorem 1.1}{https://arxiv.org/abs/0911.4730v2}
+
+关键经验是：残差缩小的同时，近核可能导致反算子增长；必须把环面模参数等低频自由度纳入分析。填充得到 Einstein 度量不意味着全部截面曲率严格负，也不提供任意 Ricci 夹逼输入的统一反算子界。该方法同时提示可探索新的参数选择、阻碍映射和不同尺度的耦合。
+
+\subsection{2025--2026年的复几何模型}
+
+Guenancia--Hamenstädt 的 \emph{Kähler--Einstein metrics of negative curvature} 在每个复维 $n\ge2$ 构造负截面 Kähler--Einstein 例子，其万有覆盖不与球双全纯。公开 v3 于2026年5月3日修正并重写第3节；旧版不能继续充当同一论证的最终依据。\src{Guenancia--Hamenstädt}{arXiv:2503.02838v3，主定理及版本说明}{https://arxiv.org/abs/2503.02838v3}
+其新内容包括具体截面曲率控制和非球模型；$c_1<0$ 下的 Kähler--Einstein 存在本身有经典理论保障。
+
+Lafont--Minemyer 给出相关局部模型的显式描述，推导 warping 函数、标架括号及混合曲率项，适合作为符号计算的复核对象。\src{Lafont--Minemyer}{An explicit description of the Kähler--Einstein metrics of Guenancia--Hamenstädt，arXiv:2505.00517，Sections 2--3}{https://arxiv.org/abs/2505.00517}
+“显式局部模型”不能写成整个紧流形上全局度量的闭式公式。其引言中关于 isolated 的讨论须与固定流形局部刚性、随构造参数变化的统一控制分别解释；本文不采用未经澄清的扩大解读。
+
+\subsection{Ricci 流的反面边界与未发表手稿}
+
+Farrell--Ontaneda 证明了某些近双曲输入不能按其规定的意义经 Ricci 流光滑收敛。相关流形本身甚至已有双曲度量，所以这是普适流方案的限制，不是底层 Einstein 不存在性。文中“smoothly converge”包含收敛到负截面 Einstein 度量的要求，不能丢掉定义。\src{Farrell--Ontaneda}{A caveat on the convergence of the Ricci flow for pinched negatively curved manifolds，主定理及定义}{https://arxiv.org/abs/math/0311176v2}
+因此，不能将 Ricci 流指定为唯一方法，也不能因某条流失败就排除变分、椭圆或新的非局部构造。
+
+近期文献反复引用 Tian 的未发表稿 \emph{A Pinching Theorem on Manifolds with Negative Curvature}。这是一条真实的引用线索，但本文未取得该手稿；Jäckel 作者页面还列有相关硕士论文和博士论文。\src{Jäckel}{作者研究页面；论文状态及与 Tian 夹逼定理相关的学位论文入口}{https://www.friederjaeckel.com/research}
+它们需要逐一比较，不能把“依循某未发表稿”扩大成“原题已有秘密完整证明”。
+
+\section{紧性、退化、变形与最新边界}\label{sec:frontier}
+
+\subsection{有界 Ricci 下的全曲率与奇异集}
+
+Jiang--Naber 的 \emph{L² Curvature Bounds on Manifolds with Bounded Ricci Curvature}（Annals 193, 2021, 107--222）在双边 Ricci 界和单位球非塌缩条件下给出局部全曲率 $L^2$ 控制，并研究极限奇异集的结构。常数含非塌缩参数。\src{Jiang--Naber}{arXiv:1605.05583v2；有界 Ricci、单位球体积下界与曲率能量结论}{https://arxiv.org/abs/1605.05583v2}
+它提供分析曲率集中和退化的核心工具，但不直接给出光滑紧性或输入流形上的 Einstein 度量。
+
+Cheeger--Naber 的余维四与正则性工作是这一脉络的重要前驱。四维中，在 Ricci 界、体积下界和直径上界等条件下，微分同胚类型的有限性可以帮助压缩受控候选序列。\src{Cheeger--Naber}{Regularity of Einstein Manifolds and the Codimension 4 Conjecture；正则性及四维有限性}{https://arxiv.org/abs/1406.6534}
+它并不消除体积下界，也不说明有限多个拓扑中的每一个都存在 Einstein 度量。塌缩情形必须独立保留，不能因为工具较少而从目标中删除。
+
+\subsection{“almost Einstein”并非全领域统一定义}
+
+Tian--Wang 的 \emph{On the structure of almost Einstein manifolds}（JAMS 28, 2015, 1169--1209）有其专门定义，包含 Ricci 下界、非塌缩、统一时间内的归一化 Ricci 流，以及时空积分标量缺陷趋零等条件。其结论描述极限的 Einstein 正则部分和奇异补集。\src{Tian--Wang}{arXiv:1202.2912，Definition 1、Theorem 1，原稿第2--3页}{https://arxiv.org/abs/1202.2912}
+
+引用时应逐项证明这些条件，不能把论文题名中的术语替换为式\eqref{eq:delta}。即使证明极限正则部分 Einstein，还需解决奇点、拓扑和回到每个输入流形的问题。极限存在不等于每个近似对象上有目标解。
+
+\subsection{去奇点理论与阻碍空间}
+
+Biquard 在四维 Einstein 轨形的最简单奇点附近发现曲率阻碍，并在相应渐近双曲边值条件下研究去奇点与边界数据空间中的壁。\src{Biquard}{Désingularisation de métriques d'Einstein I；奇点曲率阻碍与渐近双曲设置}{https://arxiv.org/abs/1105.4904}
+Ozuch 的 \emph{Noncollapsed degeneration of Einstein 4-manifolds I, II}（Geometry \& Topology 26, 2022）将非塌缩退化与精确拼接模型、加权 Hölder 控制和局部阻碍联系起来。\src{Ozuch}{Noncollapsed degeneration of Einstein 4-manifolds I，2022, 1483--1528}{https://doi.org/10.2140/gt.2022.26.1483}
+\src{Ozuch}{Noncollapsed degeneration of Einstein 4-manifolds II，2022, 1529--1634}{https://doi.org/10.2140/gt.2022.26.1529}
+
+这些成果使“某个极限附近为何不能得到精确解”成为可证明的陈述。更高阶阻碍表明，消去首阶项并不保证全部阻碍消失；Pohozaev 型恒等式、对称性和守恒量可提供新的检测机制。\src{Ozuch}{Integrability of Einstein deformations and desingularizations，2021}{https://arxiv.org/abs/2105.13193}
+\src{Ozuch}{Higher order obstructions to the desingularization of Einstein metrics，2020}{https://arxiv.org/abs/2012.13316}
+若想据此证伪 $P_n^\sigma$，仍须同时完成无权 $C^0$ Ricci 误差趋零和远离该极限的一切 Einstein 度量的排除。
+
+\subsection{LeBrun--Ozuch 2026：特殊正 Einstein 极限的刚性}
+
+2026年2月5日的 v2 研究已经为 Einstein 的紧定向四维流形序列，其 Einstein 常数固定为正。Theorem B 的极限是 Hermitian Einstein 轨形，至少含一个真正奇点，且冒出的 Ricci-flat ALE 空间按诱导定向为反自对偶；在这些条件下得到序列最终具有 Kähler--Einstein 结构等刚性。\src{LeBrun--Ozuch}{Desingularizations of Conformally Kaehler, Einstein Orbifolds，arXiv:2601.19215v2，Theorem B}{https://arxiv.org/html/2601.19215v2}
+
+删去“输入已经 Einstein”“实际奇点”“泡的反自对偶条件”中的任一项，都需要新的证明。本文仅确认预印本来源，没有把未确认的刊物状态补写进去。
+
+\subsection{Yichen Yao 2026：高维轨形消解的条件}
+
+\emph{Resolution of compact Einstein orbifolds in general dimensions} 的 v2（2026年7月5日）把去奇点阻碍推进到高维设置。Theorem 1.2 涉及负 Einstein 轨形、具有 Ricci 界、直径上界、体积下界和临界曲率能量界 $\int|\Rm|^{m/2}dV\le E_0$ 的 Einstein 消解序列，以及某奇点具有光滑 ALE 吹起（此处 $m$ 为实维数）；它联系奇点处 Weyl 曲率、泡的渐近量和重整化体积。Theorem 1.4 对含 $\mathbb R^m/\mathbb Z_2$ 奇点的双曲轨形给出相应消解序列的排除。\src{Yichen Yao}{arXiv:2603.14929v2，Theorems 1.2与1.4；一般奇点群与泡树另需分析}{https://arxiv.org/html/2603.14929v2}
+
+不能仅据摘要把结论扩展为所有双曲轨形、所有奇点群和所有泡树均已处理。对本项目，这既是新的积分阻碍来源，也是一条需要先验证泡模型假设的迁移路线。
+
+\subsection{稳定性、版本纠错与ALF新进展}
+
+Kröncke 的 Ricci 流稳定性研究把谱与变分信息同局部动力学联系起来。稳定或不稳定是关于已存在解的额外性质。\src{Kröncke}{Stability of Einstein metrics under Ricci flow，Comm. Anal. Geom. 28 (2020), 351--394}{https://doi.org/10.4310/CAG.2020.v28.n2.a5}
+Biquard--Ozuch 对 conformally Kähler Einstein 度量的研究包含不稳定例子；公开 v3（2025年2月9日）明确修补一处原来缺失的不稳定性论证。\src{Biquard--Ozuch}{Instability of conformally Kähler, Einstein metrics，arXiv:2310.10109v3；版本说明}{https://arxiv.org/abs/2310.10109v3}
+这种修订要求跟踪具体依赖，不支持“旧文献整体不可信”的跳跃。
+
+Ozuch 于2026年8月31日提交的工作在完备定向、Ricci-flat 的 ALF 四维空间具有非零有界 Killing 场的条件下，研究线性稳定性与局部 hyperkähler 结构的等价。其第5节解释了同一方法为何不能直接移用于 ALE 端。\src{Ozuch}{Stability of gravitational instantons with a bounded Killing vector field，arXiv:2608.31008v1，Theorem 1.2、Section 5}{https://arxiv.org/html/2608.31008v1}
+ALF、ALE、紧流形是不同几何类别；一个新的非紧模型恒等式可以启发研究，但必须另证端部增长、可积性及拼接后的有效性。
+
+\section{计算、特殊模型与2026年新线索}
+
+\subsection{计算机辅助证明已有范例，但不自动给出原题反例}
+
+Buttsworth--Hodgkinson 构造 $S^{12}$ 上一个新的 $O(3)\times O(10)$ 不变 Einstein 度量，将问题化为射击与严格的误差、线性化和不动点估计。\src{Buttsworth--Hodgkinson}{Computationally-assisted proof of a novel O(3)×O(10)-invariant Einstein metric on S¹²，arXiv:2412.01184}{https://arxiv.org/abs/2412.01184}
+它说明数值发现可转化为证明；但球面本来已有圆 Einstein 度量，新的非圆度量不会否定 $P_n^\sigma$。本文核查了论文的证明结构，未重新运行其计算证书，不声称复现已完成。
+
+与一般 PDE 相比，齐性度量可能把 Einstein 方程化为代数系统，余齐性一度量可能化为带奇异端点的 ODE。简化有利于探索，但需要额外核对非对角 Ricci 方程、正定性、各向同性表示、奇异轨道的光滑闭合及全部参数分支。
+
+\subsection{检测法与不能静默丢弃的自由度}
+
+Siffert 于2026年9月3日提交的 \emph{New Homogeneous Einstein Metrics from Detection} 保留破坏对称性的参数，消去其他不变方程，再从代数条件重建正定度量。其个数、阈值和唯一性结论限定在指定的分支或固定族中。\src{Siffert}{arXiv:2609.03593v1，Theorem 1.1及引言；预印本}{https://arxiv.org/html/2609.03593v1}
+可借鉴的原则是：过早令两个参数相等，会人为移除可能的新解；代数根也必须能重建合法度量。这不是所有度量的分类，更不是原题的自主AI完整解答。
+
+同作者2026年8月的 \emph{Einstein Metrics and Equivariant Harmonic Maps: The Einstein Detection Principle} 提出借助等变调和映射研究余齐性一 Einstein 局部变形的框架。\src{Siffert}{arXiv:2608.04952，2026-08-05；目前仅核到摘要，完整假设待全文}{https://arxiv.org/abs/2608.04952}
+本文把它保留为新方法线索，而不依据摘要为其补造完整定理。
+
+\subsection{族内不存在性与全局不存在性的区别}
+
+Araujo--Grajales--Grama 的 \emph{Cohomogeneity One Einstein Metrics on Complex Projective Spaces}，v2 更新于2026年8月24日，讨论指定作用、对角不变度量和全测地奇异轨道。它导出包括非对角约束在内的方程及端点条件，并在相应模型类别内给出不存在性或必要条件。\src{Araujo--Grajales--Grama}{arXiv:2605.28539v2，引言、Proposition 2.1及各模型；预印本}{https://arxiv.org/html/2605.28539v2}
+
+复射影空间具有 Fubini--Study Einstein 度量，所以绝不能把这些族内结论转写为“复射影空间没有 Einstein 度量”。这一例子应进入系统验收：即便解算器严格证明选定方程族无解，结论范围仍受输入 ansatz 限制。
+
+\subsection{形式化线索的证据等级}
+
+2026年8月的 \emph{A Lean Formalization of Hamilton's Three-Manifold Theorem} 是值得进一步核对的形式化线索。\src{Chow--Liao--Qin}{arXiv:2608.21502，2026-08-21；仅摘要线索，代码与全文未完成核验}{https://arxiv.org/abs/2608.21502}
+采用它之前，应检查形式命题、导入公理、依赖中的未完成证明和数学对象是否等价于所声称的经典定理。编译成功或标题写有 formalization，均不足以证明完整数学依赖已被验证。本文没有把该线索作为任何一般存在结论的已验证依赖。
+
+\section{文献之间的关系与尚缺的桥梁}\label{sec:bridges}
+
+下表中的“桥梁”是本文对研究结构的分析，不是各论文已经证明的额外定理。每条线都可产生独立价值；它们之间只有在全部假设匹配时才存在逻辑蕴含。
+
+\begin{longtable}{P{0.18\textwidth}P{0.33\textwidth}P{0.40\textwidth}}
+\toprule
+研究线 & 已提供的资源 & 通往一般目标尚缺的桥梁\\\midrule\endhead
+有界 Ricci 紧性 & 非塌缩下的曲率能量、奇异集和收敛结构 & 处理塌缩；控制奇点；把极限信息变成同一光滑流形的存在性。\\
+椭圆变形 & 规范固定、线性估计、局部反函数方法 & 只由原输入获得统一估计，或创造不需要这种估计的新方法。\\
+Ricci 流 & 平滑化、局部动力学、典范结构 & 适用的存在时间、稳定性、退化控制，以及原拓扑上的目标解。\\
+拼接与去奇点 & 近似度量、局部模型、阻碍方程 & 存在路线需解掉全部阻碍；反例路线还需无权误差趋零及全局无 Einstein。\\
+拓扑与规范理论 & 特征数、光滑结构和曲率积分障碍 & 障碍必须与任意紧 Ricci 夹逼输入共存，且排除全部度量。\\
+复杂或特殊结构 & 可用的模型、存在判据、代数与表示论 & 说明哪些结论能脱离原结构；不能把受限不存在性扩大。\\
+齐性、ODE和数值 & 候选搜索、分支发现、可验证的有限方程 & 全局光滑性、连续区域误差、遗漏自由度和 ansatz 完备性。\\
+新工具与跨领域思想 & 尚待创造的恒等式、范数、障碍、构造原理 & 必须先形成精确命题和适用条件，再证明它实际跨过哪一缺口。\\\bottomrule
+\end{longtable}
+
+\subsection{不能互相替代的几组概念}
+
+\begin{longtable}{P{0.36\textwidth}P{0.57\textwidth}}
+\toprule
+观察或结果 & 仍不能推出\\\midrule
+Einstein 残差的加权范数趋零 & 无权逐点 Ricci 夹逼；须控制权重随退化参数的行为。\\
+$L^2$ 缺陷很小 & $C^0$ 缺陷很小；尖峰可能被积分平均掩盖。\\
+输入度量 GH 接近 Einstein 轨形 & 原流形上存在光滑 Einstein 度量。\\
+无法去掉某个奇点 & 该消解拓扑上不存在远处的 Einstein 度量。\\
+某个 Einstein 度量不稳定 & 不存在 Einstein 度量。\\
+代数消元多项式存在实根 & 所有分母合法、度量正定、全方程成立、全局光滑。\\
+所有已试 ansatz 均失败 & 原问题的数学否定。\\
+算法不能连续地选取解 & 每个输入所对应的底层存在性失败。\\\bottomrule
+\end{longtable}
+
+不同范数还受到几何常数影响。例如 $\|f\|_{L^2}\le\Vol(M)^{1/2}\|f\|_{C^0}$，若体积无上界，右侧不能给出统一转换。Sobolev 嵌入、Schauder 常数和 Poincaré 常数也可能在塌缩或长颈中恶化。任何“常数吸收”都应展示其依赖，不能藏入一个没有说明的 $C$。
+
+\subsection{为何“小误差所以有解”会断裂}
+
+在固定规范和合适 Banach 空间中，可示意写
+\[
+F(g+h)=r+Lh+N(h),\qquad r=F(g),\quad N(0)=0.
+\]
+若 $L:X\to Y$ 是同构，$\|L^{-1}\|\le\beta$、$\|r\|_Y\le\eta$，且半径 $\rho$ 内
+\[
+\|N(h)-N(k)\|_Y\le K(\|h\|_X+\|k\|_X)\|h-k\|_X,
+\]
+则一个足够的收缩条件为
+\begin{equation}\label{eq:contraction}
+\beta\eta+\beta K\rho^2\le\rho,\qquad2\beta K\rho<1.
+\end{equation}
+这只是通用解析模板。真正应用时还须证明所用函数空间、所有常数和度量正定性，证明规范方程的解确实解原 Einstein 方程，并通过正则性恢复光滑性。
+
+若 $L$ 有核或余核，必须处理投影方程之外的有限维阻碍映射。若几何参数 $t\to0$ 时 $\eta(t)\to0$ 而 $\beta(t)\to\infty$，能否满足式\eqref{eq:contraction}取决于实际速率；单看残差下降毫无保证。正分支中的规范消除也不能直接复制依赖负 Ricci 的最大值原理论证。
+
+两个初等反误判例子足以检验逻辑：$F(x)=e^{-x}$ 的残差可趋零而无零点；$F_t(x)=x^2+t$ 在 $t>0$ 时无实零点，虽然 $t\to0$ 的极限方程有零点。它们不是几何反例，只表明缺少紧性、可解性或阻碍分析的推理形式不成立。
+
+\section{开放探索：允许新问题、新构造与新工具}\label{sec:exploration}
+
+研究应主动提出新的假设、构造、原理、计算方法和数学工具，并允许发现原先的路线组织方式本身不合适。新颖不是豁免证明的理由：每个新概念应说明它检测什么、何时有效、在哪个已知模型上可验证、如何接回原始量词。以下方向是可增删的研究空间，不是排名，也不是封闭任务清单。
+
+\subsection{统一间隙与结构性存在}
+
+可直接研究 $\Gamma_n^\sigma$ 是否为正，也可寻找足以建立正下界的结构分解。一个可能策略是按曲率集中、局部覆盖、长颈和塌缩类型分类，再证明每类输入都承载目标度量。需要警惕：分类本身可能与原题同样困难；若某类尚未覆盖，不能把分类表的空白当成“不发生”。
+
+新进展可以是一个原先未知的统一几何约束，或者证明某种退化必然只发生在本来已有 Einstein 度量的拓扑上。研究不必坚持输出度量接近输入，允许存在性通过全局拓扑或非局部方法获得。
+
+\subsection{紧夹逼与全局障碍的相容构造}
+
+反例方向应同时推进输入构造和无解障碍，并尽早测试两者是否互相排斥。可研究手术、分歧覆盖、商、丛、异光滑结构和复合拼接，也可以创造新的全局不变量。已有障碍若给出正缺陷下界，应将它转化为经证明的排除区，而不是不断重复优化。
+
+需要解决的关键问题是：能否在固定维数中将归一化 Ricci 缺陷压至任意小，同时保留一个排除全部 Einstein 度量的全局性质？成功候选可以是一族不同流形；但仅让维数增长、仅令加权残差下降或仅排除局部对称度量，都不满足要求。
+
+\subsection{退化、泡与新的积分恒等式}
+
+Pohozaev 型恒等式、重整化体积、曲率通量及更高阶匹配条件，可能捕捉普通残差优化忽略的障碍。新的研究可以改变端模型、试探张量或权重，比较 ALE、ALF、锥端、纤维化端等不同情形的可积性，而不预先断言某个端模型统一支配全部退化。
+
+应把“某极限不可消解”与“全局无 Einstein”之间的缺口写成明确命题。例如，是否能证明某个候选拓扑上的任意 Einstein 度量都必然落入同一退化类别？这比计算首阶匹配项更难，却可能是反例路线真正缺失的全局部分。
+
+\subsection{新函数空间、近核分解与非扰动存在}
+
+塌缩会破坏标准函数空间中的一致估计，新的局部覆盖范数、多尺度分解或几何适应的低频参数可能恢复部分控制。应同时研究有利和不利情形：某种近核是否可作为模参数吸收，还是生成真正阻碍？一个范数若把危险区域权重压低，也可能隐藏原题要求的无权夹逼失败。
+
+若统一反算子估计本来不成立，可探索变分、度理论、连续性方法或新的几何流程。此时必须面对不紧性、规范群作用、拓扑改变及目标方程的正则性。不得把“局部反函数法失败”升级为“所有存在方法都失败”。
+
+\subsection{对称模型与破坏对称性的发现}
+
+对称模型可用于形成可计算假设，同时应保留对非对称扰动的测试。乘积度量、齐性空间和余齐性模型是实验室，不是所有流形的代表。产品因子的尺度可调整成同一 Einstein 常数时，底层早已有 Einstein 度量；不能将原来的非 Einstein 产品输入误认为反例。
+
+一个透明的 ODE 基线为
+\[
+g=dt^2+a(t)^2g_{S^p}+b(t)^2g_{S^q},\quad n=p+q+1,
+\]
+其中球面因子取单位截面曲率，在 $a,b>0$ 的内部区间，三个 Ricci 特征值为
+\begin{align*}
+r_t&=-p\frac{a''}{a}-q\frac{b''}{b},\\
+r_p&=(p-1)\frac{1-(a')^2}{a^2}-\frac{a''}{a}
+-q\frac{a'b'}{ab},\\
+r_q&=(q-1)\frac{1-(b')^2}{b^2}-\frac{b''}{b}
+-p\frac{a'b'}{ab}.
+\end{align*}
+这些由 warped product 曲率公式直接得到，是可复算的基线，不是新解。若在端点塌缩 $S^p$，通常需 $a(t)=t+O(t^3)$、$b(t)=b_0+O(t^2)$ 及完整的奇偶光滑延拓条件；仅满足首两项并不足以认证全局光滑。端点的表观分母奇异必须以光滑变量或严格展开处理。
+
+\subsection{跨领域迁移与理论重新组织}
+
+可以从谱理论、微分拓扑、代数几何、群论、非线性分析、动力系统与数值验证中引入新的结构。迁移必须说明两边对象的对应关系：例如代数稳定性是否依赖复结构；熵不变量需要何种曲率或同伦假设；某种灵活性原理是否真适用于 Levi--Civita 曲率的非线性兼容约束。
+
+研究的审美应体现为清晰的机制、尽量少而必要的假设、可解释的反例和可复用的证明。简洁是论证组织的目标，不是提前丢掉变量、边界条件、例外情形或不利证据的许可。
+
+\section{Qiushi Engine 的长期研究规范}\label{sec:engine}
+
+\subsection{任务主张与可修订范围}
+
+系统的最高任务是：核准历史题文，在明确的数学命题上持续寻求完整证明或严格证伪；同时创造能够解释其结构、限制和可能机制的新数学。本文给出的路线可被替换、拆分或否定，研究系统必须允许提出本文未列出的方向。
+
+不得把“50步”“接近99\%”“必须短期发表”写成数学完成标准。资源预算可以限定一次实验，不能决定定理真值。长期积累也不等于无期限重复同一失败计算：每轮研究应给出新增证据、可复用对象或一个范围明确的否定结论。
+
+\subsection{探索、执行、表达的衔接}
+
+在 Explore 阶段，先核对目标命题、已知约束与候选来源，并提出彼此不同的机制；每项设想都写出一个可被反驳的预测。保留尚未选定路线的空间，但无需为每种猜测分配相同资源。投入应由可检验性、潜在影响和已有证据调整，不由作者名气或模型语气决定。
+
+在 Execute 阶段，分别开展文献核查、符号推导、反例搜索、数值探索和严格验证。新发现若改变原先假设，应立即标记依赖它的旧结论失效，重新计算必要部分。不同代理的一致意见只能形成复核线索，不能替代独立证明。
+
+在 Express 阶段，输出实际命题、假设、证明、代码证书和未解项。结果必须回到原题量词：解决了一个模型、一个分支、一个维数，还是完整问题？只有最后一个判断得到证据支持，才使用“完整解决”。
+
+\subsection{证据状态与研究记录}
+
+\begin{longtable}{P{0.21\textwidth}P{0.43\textwidth}P{0.27\textwidth}}
+\toprule
+记录类型 & 最少保存内容 & 允许支持的结论\\\midrule\endhead
+原题与版本 & 原页、准确转写、量词、符号、日期、解释差异 & 目标身份及工作命题关系。\\
+外部定理 & 原文版本、定位、全部假设、结论、勘误、实际阅读深度 & 仅在核对适用条件后引用。\\
+新假设 & 精确命题、提出理由、已测模型、潜在反驳 & 研究设想。\\
+符号恒等式 & 坐标或标架、约定、定义域、分母、独立推导 & 声明域内的精确等式。\\
+数值候选 & 全局对象说明、参数、误差范数、精度、种子、求解状态 & 候选或现象。\\
+严格证书 & 连续域覆盖、误差界、余项、可复算输入、检查器 & 证书真正覆盖的命题。\\
+失败与排除 & 失败范围、失败类型、适用假设、能否复用 & 特定计算失败或严格排除。\\
+完成判定 & 原题逐项对应、全部依赖、剩余假设检查 & 完整或部分解决的准确身份。\\\bottomrule
+\end{longtable}
+
+“未找到候选”“求解器超时”“区间不确定”“估计过粗”“已证明不可能”应是五种不同状态。旧路线若被反例推翻，应保留导致失败的精确机制，不能仅删除不利记录；也不能把局部失败泛化为对整类思想的否定。
+
+\subsection{新方法的最小研究单元}
+
+每个方法单元应能用一段自足文字回答：正在证明哪个命题；为何已有工具没有覆盖它；提出了什么新机制；哪个计算或引理可以检验该机制；什么结果会否定它；若主目标失败，哪些内容仍然成立。允许新的构造改变研究重点，但不允许在结果不利后静默更换成功标准。
+
+对一个有效构造，优先形成最小可解释模型，再检验尺度、退化和拓扑边界。对一个新不变量，先确认坐标、规范、定向和光滑结构依赖，再讨论其障碍性质。对一个新算法，先明确它输出的是候选、条件性证据，还是可检查的证明对象。
+
+\subsection{计算能力按数学职责接入}
+
+符号系统可负责联络、曲率、线性化、坐标变换和带参数展开；精确代数系统可负责消元与实根隔离；区间与球算术可负责不等式包络、积分和根验证；ODE/PDE 后端可负责探索及带误差界的局部验证。使用 SageMath、SymPy、FLINT/Arb、CAPD、FEniCSx/PETSc 或 Lean 等现有工具时，应以实际需要和兼容性选取，不把软件安装清单当作数学突破。
+
+工具必须显式返回假设和适用域。计算 $\Ric$ 的坐标矩阵后，应通过广义特征值问题
+\[
+\Ric\,v=\lambda g\,v
+\]
+或等价的正定矩阵变换检查夹逼，不能拿坐标分量的数值大小代替式\eqref{eq:delta}。在非坐标标架中，必须纳入括号系数；端点和过渡图不能从验证域中消失。
+
+\subsection{持续复核而不使探索停滞}
+
+证明检查强度应随结论升级：早期探索不必先形式化整套几何；但一旦结论依赖某个引理，就应核对其实际原文和使用条件。对关键新引理，安排不共享原推理路径的复核，尝试反例、不同坐标推导或不同参数极限。
+
+当新版本修正上游定理时，沿引用依赖查找受到影响的构造和证书。记录版本、输入、精度、范数、参数及代码提交；改变其中任何数学相关项后，旧证书不得自动继承。定期扩大文献关键词和追踪引用网络，可以减少信息闭塞；这是一项研究职责，本文没有声称已经替系统执行未来的长期任务。
+
+\section{严格完成的验收条件}\label{sec:acceptance}
+
+\subsection{存在性定理}
+
+一个完成 $P_n^\sigma$ 的证明必须给出或严格证明存在一个正阈值，只依赖 $n$。它必须覆盖所有目标流形和输入度量，含可能的塌缩、曲率集中、无对称性与复杂光滑结构，或者逐项证明这些情形不妨碍结论。阈值不必数值显式；但若实际还依赖体积下界、谱隙或其他量，就只证明了受限版本。
+
+输出必须是同一光滑流形上的光滑正定度量 $h$，满足 $\Ric_h=\lambda h$。若构造经有限覆盖、轨形消解或手术得到解，需证明它确实下降或返回原流形；覆盖空间上有 Einstein 度量不会自动下降到任意商，必须检查群作用保持度量。
+
+\subsection{反例序列}
+
+必须同时完成以下三项，缺一不可：
+\begin{enumerate}
+\item \textbf{全局对象。}固定维数中的闭光滑流形与正定光滑度量，包含坐标覆盖、过渡关系、商作用或拼接端点的合法性。
+\item \textbf{任意紧误差。}按式\eqref{eq:delta}证明全流形上误差趋零；估计覆盖所声明的完整序列或参数域，并严格证明误差趋零；每个度量上的空间验证仍须覆盖全流形，不能以有限采样代替。
+\item \textbf{全部度量的排除。}对每个同一光滑流形，证明不存在任意 $\lambda\in\mathbb R$ 的 Einstein 度量，而非仅排除候选族内、附近或某个符号的解。
+\end{enumerate}
+若要否定可任选符号的存在命题，还须在同一个固定维数中否定另一分支。由命题\ref{prop:branches}，两支均失败已经否定全部非退化实区间，无须额外列举零端点或跨零区间。
+
+\subsection{数值与计算机辅助证明}
+
+从数值候选升级为严格结果，至少须控制舍入、截断、网格或谱尾、参数区间、根隔离以及连续区域的覆盖。有限元残差和网格收敛可以支持探索，却不自动给出无限维反算子界。一个局部球内唯一解也不排除球外存在其他解。
+
+若使用区间 Newton、Krawczyk 或收缩映射，应陈述适用定理与输入域，并验证其全部条件；ODE 的首端局部展开、内部积分和末端闭合须接成同一证明。对 PDE 还需检查函数空间、边界条件、规范和正则性。独立检查器应复算足够关键的数学内容，不能只验证文件哈希或照抄生成器给出的“通过”。
+
+\subsection{必要的反误判用例}
+
+系统验收可以使用：圆球与不同尺度的球；Einstein 产品与不匹配尺度的产品；非平直 Ricci-flat 模型；含坐标奇点的光滑模型；只在采样点小而在中间有尖峰的缺陷；有局部实根但度量非正定的代数候选；缺失末端光滑条件的 ODE 解；仅族内无解却已知底层存在 Einstein 度量的复射影空间例子。
+
+还应包括逻辑验收：阈值偷偷依赖 $M$、维数随误差改变、用无 Kähler--Einstein 代替无 Einstein、把权重范数替换为无权范数、把稳定性失败替换为不存在性。这些错误即使出现在长篇推导或多个代理一致结论中，也必须阻止“原题完成”的判定。
+
+\section{专家网络、来源更新与明确缺项}
+
+\subsection{按具体贡献寻找研究联系}
+
+下表记录可核对的研究关系，不断言每个人长期直接攻关第26题，也不以名单表示优先级。相关论文的链接与定位见前文及文末来源。
+
+\begin{longtable}{P{0.30\textwidth}P{0.34\textwidth}P{0.27\textwidth}}
+\toprule
+研究者或合作群 & 可核对的相关工作 & 可澄清的具体问题\\\midrule\endhead
+Michael T. Anderson & Ricci 界、紧性、Einstein 构造、Dehn 填充 & 原题现代解释与经典定理遗漏。\\
+Min-Oo、Rugang Ye & 近 Einstein 与 Ricci 流稳定性 & 夹逼条件和几何常数的实际依赖。\\
+Ursula Hamenstädt、Frieder Jäckel & 负曲率稳定性、有效双曲化、覆盖构造 & 薄部假设、加权误差及 Tian 手稿关系。\\
+Joel Fine、Bruno Premoselli & 分歧覆盖与负 Einstein 拼接 & 误差、近核和全局光滑构造。\\
+江文帅、Aaron Naber；Jeff Cheeger & 有界 Ricci、曲率能量、非塌缩极限 & 哪些退化可控，纯 Ricci 输入还缺什么。\\
+Gang Tian、Bing Wang & almost Einstein 极限结构 & 专门定义与本文夹逼条件的关系。\\
+Claude LeBrun、Olivier Biquard、Tristan Ozuch & 全局障碍、去奇点、稳定性与刚性 & 局部阻碍能否转为底层全局排除。\\
+Klaus Kröncke、Richard Bamler & 谱与动力学；多尺度填充构造 & 反算子、稳定性、近核的控制机制。\\
+Yichen Yao & 高维 Einstein 轨形消解阻碍 & ALE 吹起假设、泡树及高维积分量。\\
+Timothy Buttsworth、Liam Hodgkinson & 计算机辅助 Einstein 存在证明 & 证书实现、误差与端点闭合。\\
+Anna Siffert；Araujo、Grajales、Grama & 齐性检测、余齐性局部结构和边界方程 & 破坏对称性、隐藏分支、受限唯一性。\\
+Henri Guenancia；Lafont、Minemyer & 复几何负曲率构造及显式模型 & 曲率公式、复维与实维、模型迁移。\\\bottomrule
+\end{longtable}
+
+本文没有联系上述专家，不存在“专家已经确认原题仍开放”的证据。后续若开展学术核对，应提供原题页面、精确工作命题和一条可具体回答的问题；不要发送“我们99\%接近突破，请确认”的叙述性请求。
+
+\subsection{本次覆盖与来源深度}
+
+覆盖的主线包括：原题身份与量词；正负归一化；低维、Kähler 与拓扑边界；近 Einstein 稳定性；覆盖、手术与填充；非塌缩极限、去奇点和高阶阻碍；特殊模型、计算辅助与2026年新方法。前述文献提供进一步追踪 Koiso、Bando--Kasue--Nakajima、Cheeger--Tian、Besson--Courtois--Gallot、特殊 holonomy、塌缩理论等方向的入口；本文未对这些全部原始证明逐篇复证。
+
+核查来源时应区分四种深度：书目定位；摘要或作者概述；关键定理和相关正文；完整证明与计算复现。本文对多数核心近期文献达到关键定理与相关正文层面，对个别项目仅达到书目或摘要层面，已在对应位置明示。正式发表是来源状态，不能代替适用条件核对；预印本未发表也不能自动判错。
+
+检索词应围绕数学机制扩展，包括 almost Einstein、Ricci pinching、Einstein stability、Einstein defect、bounded Ricci、noncollapsed degeneration、desingularization、obstruction、Dehn filling、branched covers、cohomogeneity one、Kähler--Einstein、exotic smooth structures 等。只检索“Yau26”会遗漏大量相关结果，但宽检索也不能把所有同名或邻近问题混在一起。
+
+\subsection{必须补齐或保持待定的项目}
+
+\begin{enumerate}
+\item \textbf{历史原版与重编题文的比对。}附件第77页的题文和第13页的出处脚注已经直接核对；后续取得1982年原版，检查逐字一致性、相邻说明和默认流形类别。本文命题\ref{prop:branches}已解决工作类别内的区间与两分支等价，不再把零端点列为这项等价的未决问题。
+\item \textbf{经典全文。}Anderson 1989/1990、Min-Oo 1990、Ye 1993 的精确假设和定理页码仍需完整复核。附件新增 Anderson 1989 Corollary B(4) 的定位线索及其他参考文献入口，应回到各原论文检查。没有这些全文，不能宣称已排除所有经典解决。
+\item \textbf{Tian 未发表稿。}核对原稿、学位论文与后续公开定理之间的内容关系；未知不等于不存在，也不等于已解决。
+\item \textbf{版本差异。}Jäckel 公开 v2 与期刊最终文本、Hamenstädt--Jäckel 的待刊版本及新预印本的后续修订，需持续比对。
+\item \textbf{摘要线索。}Siffert 2026年8月的检测原理和 Hamilton 定理形式化线索，尚缺全文或代码审计，不能作为已验证的证明依赖。
+\item \textbf{计算复现。}本文没有复跑 Buttsworth--Hodgkinson 等论文的证书；只有真正复算后才记录“复现通过”。
+\item \textbf{未覆盖和未发表信息。}没有全球穷尽的开放状态认证；新增文献或专家提供原文后，应按实际内容更新，而非维护既有结论。
+\end{enumerate}
+
+\section{研究任务的自足表述}
+
+围绕丘成桐1982年问题集第26题开展长期、开放、严格的数学研究。以已核对的附件题文为当前依据，在本文闭、连通、光滑实流形的约定下，目标为 $\forall n\ge2\ Q_n$，等价于 $\forall n\ge2\ (P_n^+\vee P_n^-)$；继续与历史原版及相邻说明比对。每项研究注明维数、分支、附加条件与成功标准。独立核对文献，允许纠正已有理解；不预设命题真假、路线优先级或任何方法已接近成功。
+
+主动探索新的假设、构造、几何机制、分析工具、全局障碍与计算方法；既可沿已知理论推进，也可重新组织研究对象并跨领域引入思想。每项阶段成果保留精确条件、失败经验和可复用内容。数值用于发现，严格推导与可检查证书用于证明；研究过程中始终追踪同一光滑流形、固定维数、全局光滑性、归一化误差、全部度量的存在或排除，以及与历史原题之间的逻辑关系。
+
+目标是完整证明或严格证伪核准后的原题。未完成时，按实际范围交付新定理、构造、证书或失败机制，列明剩余论证；模型确信与外部评价不能代替证明。
+
+\newpage
+\section{来源与阅读定位}
+以下目录与正文脚注及附件定位相互对应。网络链接指向原论文、出版社或作者维护页面；用户提供的重编文件另列文件名、页码和校验值。来源深度以正文的明确说明为准。目录出现不表示整篇证明已复证，也不表示所有预印本均已正式发表。
+\begin{enumerate}[label={[\arabic*]},leftmargin=2.2em,itemsep=0.55em]
+\raggedright
+\item Yau。\emph{Problem section}，\emph{Seminar on Differential Geometry}，Annals of Mathematics Studies 102，Princeton University Press，1982，669--706。历史书目已定位；附件第13页亦有该出处，历史原版尚待逐字比对。\url{https://doi.org/10.1515/9781400881918-035}。
+\item 用户提供的 \texttt{two\_major\_open\_problem\_list.pdf}，共268页。封面题为 \emph{Open Problems in Geometric Analysis: A reorganized volume from the Yau series}；本次核对PDF第1、5、13、77、78页，其中第26题位于PDF第77页、印刷页65。作为重编题文与评注来源使用，不认证为1982年原版扫描件。文件 SHA-256：\nolinkurl{5be4d0e1c6d7a17c2cbe7a01028610290d6115a631d3dd425ce1acbb3fa20531}。校验值只标识本次文件，不证明其历史真实性。
+\item Hamilton。Three-manifolds with positive Ricci curvature，JDG 17 (1982), 255--306。\url{https://doi.org/10.4310/jdg/1214436922}。
+\item Kleiner--Lott。Notes on Perelman\textquotesingle s papers，Geom. Topol. 12 (2008), 2587--2855；v5修订于2013。\url{https://arxiv.org/abs/math/0605667v5}。
+\item Perelman。Ricci flow with surgery on three-manifolds，2003；三维几何化的基础文献。\url{https://arxiv.org/abs/math/0303109}。
+\item Yau。On the Ricci curvature of a compact Kähler manifold and the complex Monge--Ampère equation, I，1978。\url{https://doi.org/10.1002/cpa.3160310304}。
+\item LeBrun。Einstein metrics, four-manifolds, and differential topology；Chern--Weil 恒等式及其应用。\url{https://arxiv.org/abs/math/0404359}。
+\item Reiser。Positive Ricci curvature on connected sums of fibre bundles，2024；引言及参考文献中的 Perelman、Burdick 线索。\url{https://arxiv.org/abs/2406.02274}。
+\item LeBrun。Four-manifolds without Einstein metrics，Math. Res. Lett. 3 (1996), 133--147。\url{https://arxiv.org/abs/dg-ga/9511015}。
+\item LeBrun。Einstein Constants and Smooth Topology，arXiv:2502.10560v2，2025-03-30；引言、Theorem 1.1。\url{https://arxiv.org/abs/2502.10560v2}。
+\item Chen--Donaldson--Sun。Kähler--Einstein metrics on Fano manifolds III，2013预印本、2015期刊论文；完成存在方向。\url{https://arxiv.org/abs/1302.0282}。
+\item Berman。K-polystability of Q-Fano varieties admitting Kahler--Einstein metrics，arXiv:1205.6214v3。\url{https://arxiv.org/abs/1205.6214v3}。
+\item Chen--LeBrun--Weber。On conformally Kähler, Einstein manifolds，Theorem A、Corollary 2。\url{https://arxiv.org/abs/0705.0710}。
+\item Anderson。本人出版目录；1989与1990两篇论文的书目信息，原文定理未在本文完整核准。\url{https://www.math.stonybrook.edu/~anderson/publ.pdf}。
+\item Min-Oo。作者研究目录；论文书目确认，完整定理假设待原文复核。\url{https://math.mcmaster.ca/minoo/research.html}。
+\item Jäckel。Effective Stability of Negatively Curved Einstein Metrics in Dimensions at Least Four；期刊版本与刊期。\url{https://link.springer.com/article/10.1007/s12220-026-02563-1}。
+\item Frieder Jäckel。Effective stability of negatively curved Einstein metrics in dimensions at least 4。arXiv:2502.16692v2，Theorem 1.1、Sections 1.2与2；背景度量记号作统一。\url{https://arxiv.org/html/2502.16692v2}。
+\item Ursula Hamenstädt, Frieder Jäckel。Stability of Einstein metrics and effective hyperbolization in large Hempel distance。arXiv:2206.10438v2，Theorems 1--2，Proposition 6.1。\url{https://arxiv.org/abs/2206.10438v2}。
+\item Ursula Hamenstädt, Frieder Jäckel。Negatively curved Einstein metrics on Gromov--Thurston manifolds。arXiv:2411.12956v2，Theorem 1；范围为文中构造的特选族。\url{https://arxiv.org/html/2411.12956v2}。
+\item Fine--Premoselli。Examples of compact Einstein four-manifolds with negative curvature，JAMS 33 (2020), 991--1038。\url{https://arxiv.org/abs/1802.00608}。
+\item Anderson。Dehn filling and Einstein metrics in higher dimensions，JDG 73 (2006), 219--261，Theorem 1.1。\url{https://www.math.stonybrook.edu/~anderson/dehn.pdf}。
+\item Bamler。Construction of Einstein metrics by generalized Dehn filling，JEMS 14 (2012), 887--909，Theorem 1.1。\url{https://arxiv.org/abs/0911.4730v2}。
+\item Henri Guenancia, Ursula Hamenstädt。Kähler--Einstein metrics of negative curvature。arXiv:2503.02838v3，主定理及版本说明。\url{https://arxiv.org/abs/2503.02838v3}。
+\item Lafont--Minemyer。An explicit description of the Kähler--Einstein metrics of Guenancia--Hamenstädt，arXiv:2505.00517，Sections 2--3。\url{https://arxiv.org/abs/2505.00517}。
+\item Farrell--Ontaneda。A caveat on the convergence of the Ricci flow for pinched negatively curved manifolds，主定理及定义。\url{https://arxiv.org/abs/math/0311176v2}。
+\item Jäckel。作者研究页面；论文状态及与 Tian 夹逼定理相关的学位论文入口。\url{https://www.friederjaeckel.com/research}。
+\item Wenshuai Jiang, Aaron Naber。L² Curvature Bounds on Manifolds with Bounded Ricci Curvature。Annals of Mathematics 193 (2021), 107--222；arXiv:1605.05583v2；有界 Ricci、单位球体积下界与曲率能量结论。\url{https://arxiv.org/abs/1605.05583v2}。
+\item Cheeger--Naber。Regularity of Einstein Manifolds and the Codimension 4 Conjecture；正则性及四维有限性。\url{https://arxiv.org/abs/1406.6534}。
+\item Gang Tian, Bing Wang。On the structure of almost Einstein manifolds。JAMS 28 (2015), 1169--1209；arXiv:1202.2912，Definition 1、Theorem 1，原稿第2--3页。\url{https://arxiv.org/abs/1202.2912}。
+\item Biquard。Désingularisation de métriques d'Einstein I；奇点曲率阻碍与渐近双曲设置。\url{https://arxiv.org/abs/1105.4904}。
+\item Ozuch。Noncollapsed degeneration of Einstein 4-manifolds I，2022, 1483--1528。\url{https://doi.org/10.2140/gt.2022.26.1483}。
+\item Ozuch。Noncollapsed degeneration of Einstein 4-manifolds II，2022, 1529--1634。\url{https://doi.org/10.2140/gt.2022.26.1529}。
+\item Ozuch。Integrability of Einstein deformations and desingularizations，2021。\url{https://arxiv.org/abs/2105.13193}。
+\item Ozuch。Higher order obstructions to the desingularization of Einstein metrics，2020。\url{https://arxiv.org/abs/2012.13316}。
+\item LeBrun--Ozuch。Desingularizations of Conformally Kaehler, Einstein Orbifolds，arXiv:2601.19215v2，Theorem B。\url{https://arxiv.org/html/2601.19215v2}。
+\item Yichen Yao。Resolution of compact Einstein orbifolds in general dimensions。arXiv:2603.14929v2，Theorems 1.2与1.4；一般奇点群与泡树另需分析。\url{https://arxiv.org/html/2603.14929v2}。
+\item Kröncke。Stability of Einstein metrics under Ricci flow，Comm. Anal. Geom. 28 (2020), 351--394。\url{https://doi.org/10.4310/CAG.2020.v28.n2.a5}。
+\item Biquard--Ozuch。Instability of conformally Kähler, Einstein metrics，arXiv:2310.10109v3；版本说明。\url{https://arxiv.org/abs/2310.10109v3}。
+\item Ozuch。Stability of gravitational instantons with a bounded Killing vector field，arXiv:2608.31008v1，Theorem 1.2、Section 5。\url{https://arxiv.org/html/2608.31008v1}。
+\item Buttsworth--Hodgkinson。Computationally-assisted proof of a novel O(3)×O(10)-invariant Einstein metric on S¹²，arXiv:2412.01184。\url{https://arxiv.org/abs/2412.01184}。
+\item Anna Siffert。New Homogeneous Einstein Metrics from Detection。arXiv:2609.03593v1，Theorem 1.1及引言；预印本。\url{https://arxiv.org/html/2609.03593v1}。
+\item Anna Siffert。Einstein Metrics and Equivariant Harmonic Maps: The Einstein Detection Principle。arXiv:2608.04952，2026-08-05；目前仅核到摘要，完整假设待全文。\url{https://arxiv.org/abs/2608.04952}。
+\item Anderson L. A. de Araujo, Brian Grajales, Lino Grama。Cohomogeneity One Einstein Metrics on Complex Projective Spaces。arXiv:2605.28539v2，引言、Proposition 2.1及各模型；预印本。\url{https://arxiv.org/html/2605.28539v2}。
+\item Chow--Liao--Qin。A Lean Formalization of Hamilton's Three-Manifold Theorem。arXiv:2608.21502，2026-08-21；仅摘要线索，代码与全文未完成核验。\url{https://arxiv.org/abs/2608.21502}。
+\end{enumerate}
+\end{document}

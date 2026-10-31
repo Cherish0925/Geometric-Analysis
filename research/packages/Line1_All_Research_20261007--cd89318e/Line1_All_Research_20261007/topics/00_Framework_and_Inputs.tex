@@ -1,0 +1,167 @@
+\documentclass[UTF8,11pt,fontset=none]{ctexart}
+\usepackage[a4paper,margin=23mm,headheight=15pt,footskip=11mm]{geometry}
+\usepackage{fontspec}
+\IfFontExistsTF{TeX Gyre Termes}{\setmainfont{TeX Gyre Termes}}{\setmainfont{lmroman10-regular.otf}[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf,BoldItalicFont=lmroman10-bolditalic.otf]}
+\IfFontExistsTF{TeX Gyre Heros}{\setsansfont{TeX Gyre Heros}}{\setsansfont{lmsans10-regular.otf}[BoldFont=lmsans10-bold.otf,ItalicFont=lmsans10-oblique.otf]}
+\IfFontExistsTF{DejaVu Sans Mono}{\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]}{\setmonofont{lmmono10-regular.otf}}
+\IfFontExistsTF{Noto Serif CJK SC}{\setCJKmainfont{Noto Serif CJK SC}[AutoFakeSlant=0.15]}{\setCJKmainfont{FandolSong-Regular.otf}[BoldFont=FandolSong-Bold.otf,ItalicFont=FandolKai-Regular.otf]}
+\IfFontExistsTF{Noto Sans CJK SC}{\setCJKsansfont{Noto Sans CJK SC}}{\setCJKsansfont{FandolHei-Regular.otf}}
+\IfFontExistsTF{Noto Sans Mono CJK SC}{\setCJKmonofont{Noto Sans Mono CJK SC}}{\setCJKmonofont{FandolFang-Regular.otf}}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,esint,bm}
+\usepackage{booktabs,longtable,array,calc}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=1.7em,topsep=3pt}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,fontsize=\small}
+\usepackage{xurl}
+\usepackage[unicode,hidelinks,bookmarksnumbered]{hyperref}
+\usepackage{bookmark}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small 第一科学主线：近期研究全稿}
+\fancyhead[R]{\small 2026-10-07}\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\providecommand{\tightlist}{\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\avint}{\fint}
+\newcommand{\Jcal}{\mathcal J}
+\newcommand{\Ecal}{\mathcal E}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\Rea}{\operatorname{Re}}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{3pt plus 1pt}
+\setlength{\emergencystretch}{3em}
+\linespread{1.10}\allowdisplaybreaks[2]
+\setlength{\abovedisplayskip}{8pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{8pt plus 2pt minus 2pt}
+\renewcommand{\arraystretch}{1.12}
+\setcounter{tocdepth}{1}\setcounter{secnumdepth}{2}
+\pdfstringdefDisableCommands{\def\fint{int}\def\mathcal#1{#1}\def\mathfrak#1{#1}\def\mathscr#1{#1}\def\operatorname#1{#1}\def\varepsilon{epsilon}\def\chi{chi}\def\beta{beta}\def\rho{rho}\def\tau{tau}\def\Phi{Phi}\def\sigma{sigma}\def\kappa{kappa}\def\nabla{D}\def\mathbb#1{#1}\def\({}\def\){}\def\textsuperscript#1{#1}\def\textsubscript#1{#1}}
+\title{共同记号与直接输入}
+\author{第一科学主线·近期研究分卷}
+\date{2026年10月7日}
+\begin{document}
+\maketitle
+\section{范围与组织}\label{ch0:ux8303ux56f4ux4e0eux7ec4ux7ec7}
+
+本文汇集本会话十份研究原稿中的数学内容，时间为 2026 年9月29日至10月7日。每章保留假设、定义、命题、推导和适用范围；共同记号在此固定。系统及其他网页的结果作为来源明确的前置，外部论文的方法作为接入记录，本会话新增连接按原研究稿编排。
+
+十章不是十个互不相干的结论：前五章记录 O10 分析及 O11 变分入口的推进；第六章整理外部方法；第七章证明定量 Ricci 流推论；后三章分别接通统一手术端点与覆盖恢复、解析低成本单元和双取向间隙。最后汇总与最新系统成果的关系。
+
+\section{曲率、缺陷和归一化}\label{ch0:ux66f2ux7387ux7f3aux9677ux548cux5f52ux4e00ux5316}
+
+设 \(M\) 为闭、连通、定向光滑四流形，记 \[
+T_\pm=2\chi\pm3\tau,\qquad
+P=\int_M|\operatorname{Ric}^{\circ}|^2,\qquad
+S_2=\int_Ms^2,\qquad R=\int_M|\operatorname{Ric}|^2=P+S_2/4.
+\] Weyl 使用作用于二形式的曲率算子 Hilbert--Schmidt 范数，Ricci 使用二张量范数。于是 \[
+4\pi^2T_\pm=S_2/24+2\int|W^\pm|^2-P/2,
+\qquad\int|\operatorname{Rm}_{\rm op}|^2=8\pi^2\chi+P.
+\] 定义 \[
+\mathcal E(g)=\inf_{\lambda\ne0}
+\frac{\int|\operatorname{Ric}-\lambda g|^2}{\lambda^2V},
+\quad\mathcal J(g)=4P/R\quad(R>0),\quad
+\alpha(M)=\inf_g\mathcal E(g).
+\] 若 \(S_1=\int s\)，则 \[
+\mathcal E=4-\frac{S_1^2}{VR}
+=\mathcal J+\frac{S_2-S_1^2/V}{R}\ge\mathcal J.
+\] 常标量代表上 \(\mathcal E=\mathcal J\)。Ricci-flat 时 \(R=0\)，\(\mathcal J\) 不定义，而原定义给 \(\mathcal E=4\)；相应实际正预算独立排除非负标量曲率分支。
+
+区域平均一律仍除以总体积：\(\fint_Z f=V^{-1}\int_Zf\)。原始单元费用 \[
+J_\Lambda(C)=\int_C|\operatorname{Ric}+\Lambda g|^2
+\] 与无量纲比例 \(\mathcal J\) 不同。局部 \(\Lambda=6\) 与全局 \(\Lambda=1\) 由 \(\widetilde g=6g\) 联系，\(J_1(\widetilde g)=J_6(g)\)。各证明内的 \(\nabla^*\nabla\) 非负；Ricci 流一章另用 \(\Delta=\operatorname{div}\nabla\) 并就地注明。
+
+\section{实际供给与有限参数输入}\label{ch0:ux5b9eux9645ux4f9bux7ed9ux4e0eux6709ux9650ux53c2ux6570ux8f93ux5165}
+
+连接记 \(\mathcal A\)，拓扑预算记 \(A>0\)。在负 Yamabe 代表 \(\hat g\)、\(s_{\hat g}=-4\) 上，使用同一个结构的实际解 \[
+D_{\mathcal A}\Phi=0,\qquad F_{\mathcal A}^+=2i\sigma(\Phi),
+\quad a=c_1(L),\quad p=(a^+)^2\ge A.
+\] 每个全度量应用须逐共形类有相应供给。普通、special monopole、BF、Pin\(^-\) 各自在其既有供给条件内使用。原文件中 \(A\) 兼用于连接时，\(F_A,D_A\) 指连接，\(\chi/A\) 等拓扑比例中的 \(A\) 指正预算。\cite{Base,N1}
+
+定义 \[
+D_\beta=(1+\beta^{-1})S_2+6(\beta+1)\int|W^+|^2-72\pi^2p,
+\quad\kappa_\beta=\fint|\operatorname{Ric}+g|^2+D_\beta/V.
+\] 继承 \(D_\beta\ge0\)，以及 \(a^2\ge T_+\) 时的参数估计 \[
+r+\frac{D_\beta}{\beta V}\ge c_{\rm par}
+\frac{(\beta-2)^2}{\beta^4},\qquad r=P(\hat g)/V.
+\] \(D_\beta/V\) 与 \(D_\beta/(\beta V)\) 保持区别。实际标量预算为 \(16V\ge32\pi^2p\ge32\pi^2A\)。
+
+\section{N1 回接与负类平方成本}\label{ch0:n1-ux56deux63a5ux4e0eux8d1fux7c7bux5e73ux65b9ux6210ux672c}
+
+在同一共形类中，令 \(\delta_S=S_2(g)-S_2(\hat g)\ge0\)，则 \[
+P(g)=P(\hat g)+\delta_S/12,\quad R(g)=R(\hat g)+\delta_S/3,
+\quad\mathcal J(g)\ge\min\{\mathcal J(\hat g),1\}.
+\] \(\beta=8\) 时 \[
+D_8=108\pi^2(T_+-2p/3)+\frac{27}{2}P.
+\] 置 \(d=(T_+/A-2/3)_+\)。参数式和标量预算给 \[
+\frac{43}{16}r+\frac{27}{4}d\ge c_8.
+\] 在 \(\mathcal J(g)<1\) 分支，\(r\le4\mathcal J(g)/3\)，所以 \[
+\mathcal J(g)+d\ge\varepsilon_N,
+\qquad\varepsilon_N=\min\{1,4c_8/27\}.
+\] 这是已有主会话 N1 回接。\cite{N1}
+
+保留成本的参数式为 \[
+(1+b_a)\left(r+\frac{D_8}{8V}\right)\ge c_{8,\rm raw},
+\qquad b_a=\frac{(-a^2)_+}{V}.
+\] 主会话已得 \(y=(T_+-a^2)_+/A\) 下的 \(\mathcal J+d\ge c/(1+y)\)。 本会话补充的直接负平方版本置 \(\nu=(-a^2)_+/A\)，使用 \(b_a\le\nu/(2\pi^2)\) 得 \[
+\boxed{\mathcal J+d\ge
+\frac{c_*}{1+\nu/(2\pi^2)},\qquad
+c_* =\min\{1,4c_{8,\rm raw}/27\}.}
+\] 两式记录不同成本；只有右端大于 \(d\) 时，才单独给出正 \(\mathcal J\) 间隙。
+
+\section{强流输入与有限密度前置}\label{ch0:ux5f3aux6d41ux8f93ux5165ux4e0eux6709ux9650ux5bc6ux5ea6ux524dux7f6e}
+
+收到的强流补充在原 O10 零端假设下，令 \(q_\Phi=|\nabla_{\mathcal A}\Phi|^2\)，给出固定 \(\epsilon_0>0\) 及 \[
+\fint\left(\frac{q_\Phi}{L^2+q_\Phi}\right)^{\epsilon_0}
+\left(|\nabla_{\mathcal A}^2\Phi|^2+q_\Phi^2\right)
+\le CL^{-2\epsilon_0}+C\sqrt\eta.
+\] 继而有归一化强 \(L^2\) 收敛 \[
+D^-_{3\mathcal A}\tau_{\rm sp}\to0,\quad
+|\tau_{\rm sp}|^2\to128/81,\quad q_\Phi\to4/9,
+\quad\nabla\zeta\to0,\quad N\to0,
+\] 以及同解行列式曲率的有界模型拟合。后续章节分别写明使用哪一组结论。此处的 \(N\) 为完整类型投影，不仅是 Dirac 迹。\cite{Strong}
+
+有限密度结论 FD 是：对于每个固定有限 \(B\)，原供给、\(p\ge A>0\)、\(a^2\ge T_+\) 下有 \[
+\chi/A\le B\quad\Longrightarrow\quad
+\kappa_\beta\ge c_{\rm FD}(B)\frac{(\beta-2)^2}{\beta^2}.
+\] 本书第3章收录本会话的第五线丛证明；收到的后续补充以秩一陈数配对给出另一证明。第8、10章作为明确前置使用 FD。\cite{R03,FD}
+
+\section{O11 的继承变分关系}\label{ch0:o11-ux7684ux7ee7ux627fux53d8ux5206ux5173ux7cfb}
+
+原平衡族为 \[
+M_j=X_j\#k_j\overline{\mathbb{CP}}^{\,2}
+\#\ell_j(S^1\times S^3),\quad
+Q_j=k_j+4\ell_j,\quad h_j=Q_j/A_j\to0,
+\] \[
+k_j/Q_j\to2/9,\qquad\ell_j/Q_j\to7/36.
+\] 继承 \[
+\rho_j=\frac{\inf_gP(g)}{8\pi^2A_j},\qquad
+\alpha_j=4\rho_j+O(h_j^2),\qquad
+\inf\mathcal J=\inf\mathcal E=\alpha_j<1,
+\] \[
+8\pi^2A_j+P\le R\le8\pi^2A_jU_j+4P,
+\qquad U_j=1+h_j+O(h_j^2).
+\] 后来的严格次四构造已改变相应族的候选最优值；早期关于 \(4\) 的研究目标按其时间位置保留在来源索引中，不作为当前已证下界。\cite{Base,System}
+
+\begin{thebibliography}{P99}
+\small
+\bibitem[P01]{Base} Qiushi 项目，\emph{20260929 Line1 Integrated Manuscript}，2026-09-29；第25节与相应直接引用。
+
+\bibitem[P02]{N1} 主会话与项目补充，\emph{单解无迹 Ricci 积分障碍与类平方短缺版}，2026-09-28，\path{03_N1_Complete_Inheritance.md}。
+
+\bibitem[P03]{Strong} 所提供网页续研，\emph{O10 Strong Current}，2026-09-29，R1--R2 及同解曲率拟合。
+
+\bibitem[R03]{R03} 本会话研究原稿，\emph{第五幂线丛与任意固定有限密度端点}，2026-09-29。\path{O10_Finite_Density_Fifth_Line.md}。
+
+\bibitem[P05]{FD} 所提供网页续研，\emph{O10 closes at every fixed finite Euler density}，2026-09-29，\path{O10_All_Finite_Density.md}。
+
+\bibitem[P08]{System} S1003A01、S1003A02，\emph{Mathematical Synthesis}，2026-10-07；\path{20261007_Einstein_Gaps_Two_Sessions(1).zip} 中 \path{01_Mathematical_Synthesis.md}。
+
+\end{thebibliography}
+\end{document}

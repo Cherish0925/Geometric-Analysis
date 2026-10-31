@@ -1,0 +1,252 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{esint}
+\setmathfont{Asana Math}
+\setlength{\emergencystretch}{3em}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\hypertarget{beyond-prescribed-saturation-exact-realization-and-numerical-boundary-geometry}{%
+\section{Beyond prescribed saturation: exact realization and numerical
+boundary
+geometry}\label{beyond-prescribed-saturation-exact-realization-and-numerical-boundary-geometry}}
+
+24 September 2026. Current first-line research entry. This note connects
+four new proof notes to the retained integral obstruction theory; it
+does not replace their proofs or the earlier three-line history.
+
+\hypertarget{the-main-change-in-the-mathematics}{%
+\subsection{1. The main change in the
+mathematics}\label{the-main-change-in-the-mathematics}}
+
+The preceding KE theorem used gauge saturation to force a half-flat
+bubble, then topology to exclude it. That is no longer the strongest
+route to \textbf{general Einstein existence}. A stronger existing ALE
+nonembedding result excludes every bubble under vanishing second
+homotopy. Saturation remains useful for identifying Kähler or locally
+symmetric structure, but is not necessary for existence in the bounded,
+noncollapsed regime.
+
+The distinction is mathematical, not terminological: \[
+ \text{general existence needs compactness and preservation of smooth type;}
+\] \[
+ \text{identifying a KE or symmetric output uses additional actual structure.}
+\] A KE metric already supplies the existential Einstein output. It must
+not be described as an output shortfall.
+
+\hypertarget{pointwise-only-realization-for-both-signs}{%
+\subsection{2. Pointwise-only realization for both
+signs}\label{pointwise-only-realization-for-both-signs}}
+
+The \href{20260924_ale_boundary_compatibility.md}{all-ALE proof}
+establishes \[
+ \boxed{
+ \begin{gathered}
+ \pi_2(M)=0,\qquad \operatorname{diam}(g)\le D,\qquad V_g\ge v>0,\\
+ \|\operatorname{Ric}_g^\sharp-\sigma I\|_\infty<\varepsilon(D,v)
+ \end{gathered}
+ \ \Longrightarrow\
+ \exists h\text{ on the same smooth }M:\operatorname{Ric}_h=\sigma h .
+ }\tag{1}
+\] Here \(\sigma=\pm1\); the threshold is uniform across the stated
+smooth types. There is no Weyl, saturation, monopole, or torsion-free
+fundamental-group hypothesis in (1).
+
+The strengthened topological input is \textbf{classical}: Zhang's ALE
+nonembedding argument and
+\href{https://arxiv.org/pdf/2305.03154v3}{Bamler--Chen, Lemma 4.35}.
+Lift a proposed core to the universal cover of \(M\). It may not lift as
+itself when its fundamental-group image is nontrivial, but it lifts as a
+finite cover, because an ALE Ricci-flat core has finite fundamental
+group. This lifted core is still nonflat Ricci-flat ALE, whereas its
+ambient has integer \(H_1=H_2=0\). The classical lemma excludes it.
+
+The previous mixed-chirality rational-ball alternative is therefore
+resolved in this topology. No classification of general Ricci-flat ALE
+spaces is needed. The detailed note explains the boundary-homology and
+eta mechanism, including why the quaternion example survives a
+group-order test but fails the curvature identities.
+
+For \(\sigma=+1\), Myers supplies a uniform diameter bound when
+\(\delta_+<1/2\). The threshold in (1) then depends only on \(v\). For
+\(\sigma=-1\), an actual monopole projection \(p\ge A_0>0\) gives \[
+ V_g\ge\frac{2\pi^2A_0}{(1+\delta_-)^2}.
+\] It can replace the volume hypothesis, without any small gauge
+deficit. A positive-square integral actual class permits \(A_0=1\).
+
+This is an enlargement of the project's covered input regime. The proof
+credits the existing no-bubble and compactness theory; it does not
+establish global priority for the resulting corollary.
+
+\hypertarget{two-topology-free-routes-identify-the-exact-geometry}{%
+\subsection{3. Two topology-free routes identify the exact
+geometry}\label{two-topology-free-routes-identify-the-exact-geometry}}
+
+\hypertarget{bilateral-actual-gauge-input}{%
+\subsubsection{Bilateral actual gauge
+input}\label{bilateral-actual-gauge-input}}
+
+The \href{20260924_bilateral_realization.md}{bilateral theorem} uses
+actual conformal monopole structures in both orientations. With bounded
+diameter, one uniform positive projection floor, and \[
+ \delta_-+\frac{\mathfrak D_+}{V}
+              +\frac{\mathfrak D_-}{V}\longrightarrow0,
+\] its uniform-threshold conclusion is an exact metric on the same
+smooth manifold whose universal cover is \[
+                       \mathbb H^2_{-1}\times\mathbb H^2_{-1}.
+\] No homotopy hypothesis remains. Both Weyl halves vanish on a
+hypothetical harmonic-radius blowup, making it flat before an ALE
+theorem is required. Two global actual forms pass to parallel
+opposite-orientation forms and give a parallel two-plane splitting. The
+quotient need not be a globally marked direct product.
+
+The paper also replaces the two functional assumptions by a single raw
+Ricci-energy excess under actual projection budgets. This is an exact
+identity, not an additional independent discovery. Existing non-Kähler
+shear examples satisfy bilateral saturation, so deleting diameter from
+this KE/bidisk statement is actually false.
+
+\hypertarget{one-actual-class-at-the-miyaokayau-numerical-boundary}{%
+\subsubsection{One actual class at the Miyaoka--Yau numerical
+boundary}\label{one-actual-class-at-the-miyaokayau-numerical-boundary}}
+
+The \href{20260924_chern_boundary_realization.md}{Chern-boundary
+theorem} assumes \[
+ A=2\chi+3\tau=3(2\chi-3\tau)>0,\qquad p\ge A.
+\] It has \textbf{no separately imposed saturation condition}. Classical
+identities give, with \(P=\int|\operatorname{Ric}^{\circ}|^2\), \[
+ S-32\pi^2A+48W_-=12P,\qquad
+ \mathfrak D_2+72\pi^2(p-A)+54W_-=18P.
+\] Consequently \[
+ \frac{\mathfrak D_2}{V}\le72\delta_-^2,\qquad
+ \frac1V\int|W^-|^2\le\delta_-^2.
+\] Thus small pointwise defect and bounded diameter imply
+complex-hyperbolic geometry on the same oriented smooth manifold. Again
+there is no \(\pi_2\) or fundamental-group assumption. The classical
+exact Miyaoka--Yau classification is not being rediscovered: this is its
+explicitly proved approximate-to-exact composition in the
+bounded-diameter setting.
+
+\hypertarget{a-different-realization-route-does-not-need-diameter}{%
+\subsection{4. A different realization route does not need
+diameter}\label{a-different-realization-route-does-not-need-diameter}}
+
+The \href{20260924_local_to_global_scope.md}{local-to-global proof}
+first shows \[
+ \pi_2=0+\text{bounded Ricci}+\inf_x\operatorname{Vol}B_1(x)>0
+ \ \Longrightarrow\ \text{uniform local harmonic radius}.       \tag{2}
+\] Only one local Jiang--Naber energy budget is needed for a blowup, so
+total volume and diameter do not enter.
+
+A classical Bianchi-gauge solver then produces an exact negative
+Einstein metric if there is also a full tensor \(L^2\) spectral gap,
+bounded \(\nabla\operatorname{Ric}\), and a sufficiently small mixed
+residual \[
+ \delta_-^{\,1-\alpha}+\|\operatorname{Ric}+g\|_{L^2}.
+\] The proof specifies the inverse, mixed Hölder--Sobolev norms,
+nonlinear estimates, positivity radius, and gauge removal. It does not
+obtain the global inverse from local regularity. Teichmüller kernels are
+not deleted, and the \(L^2\) residual is unnormalized. Bounded-volume
+support of the residual gives a direct pointwise-smallness corollary
+even when the surrounding exact region has unbounded volume.
+
+This is a useful sufficient criterion with a classical solver, not a
+claim to have solved arbitrary large-diameter degeneration.
+
+\hypertarget{what-this-changes-for-yau26}{%
+\subsection{5. What this changes for
+Yau26}\label{what-this-changes-for-yau26}}
+
+Within \(\pi_2=0\), a sequence of manifolds with \textbf{no Einstein
+metric} and pointwise defect tending to zero must obey:
+
+\begin{itemize}
+\tightlist
+\item
+  Positive sign: total volume tends to zero, since Myers already bounds
+  diameter and (1) rules out every positive-volume subsequence.
+\item
+  Negative sign with a uniform positive actual projection budget:
+  diameter tends to infinity, since the budget prevents total-volume
+  collapse.
+\end{itemize}
+
+These are deductions about possible original-problem witnesses, not
+constructions of such witnesses. Nonzero \(\pi_2\), uncontrolled
+collapse, and large-scale global inversion remain outside (1). The fixed
+non-Kähler shear objects still have undecided general Einstein
+existence.
+
+The first-line structure is now clearer: the integral theory supplies
+diameter-free obstructions in incompatible topological regions; the
+compact regime supplies general exact realization; actual saturation and
+numerical equality identify stronger output geometry; global spectral
+control gives a separate noncompactness-tolerant repair route. There is
+no reason to force all four jobs into one auxiliary-form estimate.
+
+\hypertarget{proof-and-artifact-status}{%
+\subsection{6. Proof and artifact
+status}\label{proof-and-artifact-status}}
+
+All four statements have proofs in the linked English notes, with
+classical inputs and inherited PDE dependencies identified. Finite
+checks verify the displayed identities, real model calibrations, and
+normalization only. They do not independently certify the geometric
+proofs or originality.
+
+Earlier proofs, source archives, live Sessions, and installed Skills are
+unchanged. The previous
+\href{20260923_realization_and_rigidity.md}{realization and rigidity
+entry} remains the account of the preceding stage. Current catalogue IDs
+are I24--I27; these identify result families, not four independent
+claims of world-first discovery.
+
+\end{document}

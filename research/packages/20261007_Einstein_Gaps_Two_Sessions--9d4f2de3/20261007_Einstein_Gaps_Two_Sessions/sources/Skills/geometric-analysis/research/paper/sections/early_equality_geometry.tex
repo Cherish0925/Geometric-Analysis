@@ -1,0 +1,1051 @@
+\section{Equality geometry on a fixed Kähler--Einstein exterior}
+\label{sec:early-equality-geometry}
+
+The results in this section concern a different limit from a general
+small-Ricci-residual sequence.  The classification of ordinary monopole
+classes uses a specified, fixed Kähler--Einstein exterior.  The subsequent
+first-order analysis uses exact Einstein metrics, bounded diameter, and
+volume approaching a specified scalar-curvature bound.  Neither kind of
+input is inferred from small integral Einstein defect.
+
+Two-forms have their exterior-algebra norm, and $W^+$ has its
+Hilbert--Schmidt norm as an endomorphism of $\Lambda^+$.  The scalar
+Laplacian is $\Delta=d^*d\geq0$.  In particular, a negative
+Kähler--Einstein four-metric with $\Ric=-g$ has scalar curvature $-4$
+and self-dual Weyl eigenvalues $(-2/3,1/3,1/3)$.
+
+\subsection{All ordinary classes on one fixed exterior}
+
+We first record the scalar specialization of the monopole identity.
+In the normalization $|F_A^+|^2=|\Phi|^4/8$, an unperturbed monopole
+solution on a metric of scalar curvature $-4$ satisfies
+\[
+ 0\leq y:=|\Phi|^2\leq4,
+ \qquad 4\int|\nabla_A\Phi|^2=\int(4y-y^2).
+\]
+If the determinant class $K$ has $K^2=1$, Chern--Weil gives
+$\int y^2=32\pi^2+8\|F_A^-\|_2^2$.  Consequently
+\begin{equation}\label{eq:eqg-sw-defect}
+ 16(V-2\pi^2)
+ =\|4-y\|_2^2+8\|\nabla_A\Phi\|_2^2+8\|F_A^-\|_2^2.
+\end{equation}
+Indeed, expanding the first square and using the preceding two
+identities gives exactly $16V-32\pi^2$.  No Einstein assumption is
+needed in this identity.
+
+\begin{theorem}[Identification of every ordinary monopole class]
+\label{thm:eqg-ordinary}
+Let $N$ be a closed, simply connected, oriented smooth four-manifold.
+Suppose that $K^2=1$ and that $K$ and $-K$ are ordinary monopole classes.
+Assume that there are metrics $g_j$ with
+\[
+ s_{g_j}=-4,\qquad V_j\longrightarrow2\pi^2,
+\]
+and marked smooth convergence on compact subsets of the regular locus
+of a fixed negative Kähler--Einstein orbifold $(X,g_0,\omega_0)$
+with one Wahl singularity.  Let $C\subset X_{\rm reg}$ be the compact
+core obtained by removing a neighborhood of that point, identified
+with a submanifold of $N$.  Assume that
+\begin{equation}\label{eq:eqg-core-cohomology}
+ H^2(N;\mathbb R)\longrightarrow H^2(C;\mathbb R)
+ \text{ is an isomorphism},\qquad
+ K|_C=[\omega_0/(2\pi)].
+\end{equation}
+Then the complete set of ordinary monopole classes is $\{K,-K\}$.
+\end{theorem}
+
+\begin{proof}
+Fix an ordinary monopole class $a$.  On the same metric $g_j$, take
+solutions in classes $a$ and $K$.  Choose the simultaneous curvature
+sign convention so that $f_{a,j}/(2\pi)$ and $f_{K,j}/(2\pi)$ represent
+these real classes.  The maximum principle gives
+$|f_{a,j}^+|,|f_{K,j}^+|\leq\sqrt2$.  For this fixed $a$,
+\[
+ \|f_{a,j}^-\|_2^2
+ =\|f_{a,j}^+\|_2^2-4\pi^2a^2
+ \leq2V_j-4\pi^2a^2=O_a(1).
+\]
+This bound remains valid when $a^2<0$.
+Equation~\eqref{eq:eqg-sw-defect} gives
+$\|f_{K,j}^-\|_2\to0$.  Hence
+\[
+ 4\pi^2a\cdot K
+ =\int\langle f_{a,j}^+,f_{K,j}^+\rangle
+       -\int\langle f_{a,j}^-,f_{K,j}^-\rangle
+\]
+implies $|a\cdot K|\leq1$.
+Both classes are characteristic.  Since $N$ is simply connected,
+$H^2(N;\mathbb Z)$ is torsion-free, and $a-K=2x$ for an integral
+class $x$.  Thus $a\cdot K=1+2x\cdot K$ is odd.  After changing the
+sign of $a$, assume $a\cdot K=1$.
+
+Put $D_j=2-\langle f_{a,j}^+,f_{K,j}^+\rangle\geq0$.
+The preceding pairing is saturated, so $\int D_j\to0$, and
+\[
+ |f_{a,j}^+-f_{K,j}^+|^2\leq2D_j,
+ \qquad D_j\geq(4-|\Phi_{a,j}|^2)/2.
+\]
+The bounded amplitude therefore satisfies $|\Phi_{a,j}|^2\to4$
+in $L^2$, and the spinor Weitzenböck identity gives
+$\|\nabla_{A_{a,j}}\Phi_{a,j}\|_2\to0$.
+
+It is essential to identify the full exterior curvature, not just its
+self-dual part.  On a fixed contractible regular ball, abelian Coulomb
+gauge and the full $L^2$ curvature bound give a $W^{1,2}$ bound for the
+connection.  The pointwise spinor bound then gives an ordinary
+$W^{1,2}$ bound for the spinor.  After a subsequence the connections
+converge strongly in $L^p$ for $p<4$.  Compactness in $L^2$, together
+with the uniform pointwise spinor bound, gives strong spinor convergence
+in every finite $L^p$.  These convergences pass to the covariant
+derivative equation.  Its limit is a nonzero parallel spinor whose
+quadratic form has the same direction as that of the limiting
+$K$-solution.
+
+On a Kähler--Einstein ball, write the local Spin$^c$ bundle as the
+canonical bundle of spinors tensored with a line bundle.  A parallel
+spinor lies in the degree-zero or degree-two line.  The parallel-section
+equation determines the determinant curvature to be the canonical
+curvature or its negative.  The direction of its quadratic form fixes
+which sign occurs.  Thus the two limiting determinant curvatures
+coincide.  In particular,
+\[
+ f_{a,j}-f_{K,j}\rightharpoonup0
+ \quad\hbox{in }L^2_{\rm loc}(X_{\rm reg}).
+\]
+The same conclusion holds for every convergent subsequence on a
+regular ball.
+
+Pair with a closed two-form supported in $\operatorname{int}C$.
+The resulting topological pairing of $(a-K)|_C$ is zero.
+Poincaré--Lefschetz duality and
+\eqref{eq:eqg-core-cohomology} imply $a=K$ in real cohomology.
+Torsion-freeness gives equality of integral classes.  Restoring the
+possible sign proves the theorem.
+\end{proof}
+
+The core isomorphism is satisfied, for example, when the marked
+complement is a rational homology ball with rational-homology-sphere
+boundary.  This observation does not construct the required metric
+sequence.  A numerical Yamabe invariant, or knowledge of just the
+nonzero Seiberg--Witten basic classes, cannot replace the fixed-exterior
+and cohomological hypotheses of Theorem~\ref{thm:eqg-ordinary}.
+
+\subsection{Hodge correction without a positive spectral gap}
+
+\begin{lemma}[A closed form and its self-dual harmonic part]
+\label{lem:eqg-hodge}
+Let $\Omega$ be a closed real two-form on a closed oriented
+four-manifold, and let $\alpha$ be its harmonic representative.
+Set $\psi=\alpha^+$.  Then
+\begin{equation}\label{eq:eqg-hodge}
+ \|\psi-\Omega^+\|_2^2+\|\alpha^-\|_2^2
+ =\|\Omega^-\|_2^2.
+\end{equation}
+In particular, each term on the left is bounded by the right, without
+any assumption on the first positive two-form eigenvalue.
+\end{lemma}
+
+\begin{proof}
+Write $\Omega=\alpha+d\xi$.  Stokes gives
+$\int d\xi\wedge d\xi=0$, hence
+$\|(d\xi)^+\|_2=\|(d\xi)^-\|_2$.
+The harmonic form $\alpha^-$ is orthogonal to the exact form $d\xi$,
+and thus to $(d\xi)^-$.  Since
+$\psi-\Omega^+=-(d\xi)^+$, Pythagoras proves
+\eqref{eq:eqg-hodge}.
+\end{proof}
+
+\begin{proposition}[The four-term volume identity]
+\label{prop:eqg-four-term}
+Suppose $s_g=-4$, $K^2=1$, and $\alpha$ is the harmonic representative
+of $2\pi K$.  Assume that $\psi=\alpha^+$ is nowhere zero and that
+its induced almost-complex structure has canonical class $K$.
+Set $u=|\psi|_g/\sqrt2$ and $\widehat g=ug$.  Then
+\begin{equation}\label{eq:eqg-four-term}
+ V-2\pi^2
+ =\|u-1\|_2^2+3\|d\sqrt u\|_2^2
+ +\frac14\int|\widehat\nabla\psi|_{\widehat g}^2
+                      \,d\mu_{\widehat g}
+ +\frac12\|\alpha^-\|_2^2.
+\end{equation}
+Unmarked norms use $g$.  Only the self-dual part $\psi$, not the
+entire class representative $\alpha$, is the almost-Kähler form.
+\end{proposition}
+
+\begin{proof}
+The form $\psi$ is closed and has $\widehat g$-norm $\sqrt2$.
+Write
+\[
+ U_r=\int u^r\,d\mu_g,\quad
+ H=\|d\sqrt u\|_2^2,\quad R=\|\alpha^-\|_2^2,\quad
+ T=\int|\widehat\nabla\psi|^2_{\widehat g}\,d\mu_{\widehat g}.
+\]
+The intersection pairing gives $2U_2-R=4\pi^2$.
+The almost-Kähler canonical-connection formula is
+\[
+ \int\left(s_{\widehat g}
+            +\frac12|\widehat\nabla\psi|^2\right)d\mu_{\widehat g}
+ =4\pi c_1(TN)\cdot[\psi]=-4U_2.
+\]
+Here $c_1(TN)=-K$ and
+$\int\alpha\wedge\psi=\int\psi\wedge\psi=2U_2$.
+The conformal scalar formula gives
+$\int s_{\widehat g}\,d\mu_{\widehat g}=6H-4U_1$.
+It follows that $U_1-U_2=3H/2+T/8$.
+Substitution in $\|u-1\|_2^2=U_2-2U_1+V$ proves
+\eqref{eq:eqg-four-term}, including the anti-self-dual term.
+\end{proof}
+
+\subsection{A first-derivative estimate with bounded bundle curvature}
+
+\begin{lemma}\label{lem:eqg-bundle-gradient}
+Assume the scalar Sobolev inequality
+\begin{equation}\label{eq:eqg-sobolev}
+ \|f\|_4^2\leq S(\|df\|_2^2+\|f\|_2^2)
+\end{equation}
+on a closed four-manifold.  Let $E$ be a metric vector bundle with
+compatible connection, $|\Ric|\leq K_R$, and $|F^E|\leq K_F$.
+If $\nabla^*\nabla v=H$, then
+\begin{equation}\label{eq:eqg-bundle-gradient}
+ \|\nabla v\|_\infty
+ \leq C(S,K_R,K_F)
+ \bigl(\|\nabla v\|_2+\|H\|_\infty
+                         +K_F\|v\|_\infty\bigr).
+\end{equation}
+No derivative bound on $H$ or $F^E$, no full-curvature bound, and no
+upper bound for total volume is required.
+\end{lemma}
+
+\begin{proof}
+Put $U=\nabla v$ and use $[\nabla_i,\nabla_j]v=F^E_{ij}v$.
+One commutation gives
+\[
+ \nabla^*\nabla U=\nabla^*T+AU,
+ \qquad T_{ij}=-g_{ij}H+F^E_{ij}v,
+ \qquad (AU)_j=-\Ric_j{}^kU_k-F^E_{ij}U^i.
+\]
+Thus $|A|\leq C(K_R+K_F)$ and
+$T_0:=\|T\|_\infty\leq C(\|H\|_\infty+K_F\|v\|_\infty)$.
+The derivatives of $H$ and $F^E$ remain inside a divergence.
+
+Here is the needed bounded-source estimate.  Write $w=|U|$ and
+$w_k=(w-k)_+$.  On $\{w>k\}$ write $U=we$, $|e|=1$,
+and test the equation with $w_ke$.  The principal term is
+\[
+ |dw_k|^2+w_kw|\nabla e|^2.
+\]
+The angular part of the divergence source is at most
+$T_0w_k|\nabla e|$ and is absorbed by half the second term plus
+$C T_0^2w_k/w$.  The radial part is treated by Young's inequality.
+With $A_k=\{w>k\}$, the Sobolev inequality therefore gives
+\[
+ \|w_k\|_4^2
+ \leq C\left((T_0^2+k^2)|A_k|
+                     +\int_{A_k}w_k^2\right).
+\]
+Choose $k_0=C_0\|U\|_2$ with $C_0$ sufficiently large.
+Then $|A_{k_0}|\leq C_0^{-2}$, and Hölder's inequality absorbs the
+last term for every $k\geq k_0$.  For $h>k\geq k_0$ this yields
+\[
+ |A_h|\leq
+ \frac{C(T_0^2+k^2)^2}{(h-k)^4}|A_k|^2.
+\]
+Apply this to $k_n=k_0+(k_0+T_0)(1-2^{-n})$.
+Increasing $C_0$ once makes the initial measure small enough for the
+quadratic iteration $Y_{n+1}\leq C16^nY_n^2$ to tend to zero.
+Thus $w\leq2k_0+T_0$ almost everywhere.  If $U=0$ the conclusion
+is immediate.  Smooth approximation of $|U|$ justifies the tests at
+its zero set.  This proves \eqref{eq:eqg-bundle-gradient}.
+Only a single curvature commutation was used; the final iteration
+requires no curvature control for $T^*N\otimes E$.
+\end{proof}
+
+\subsection{The exact Einstein endpoint and its first-order energies}
+
+Fix a closed, simply connected oriented $N$ with
+$\chi(N)=47$, $\tau(N)=-31$ (hence $b_+(N)=7$), and a monopole
+class $K$ such that
+\begin{equation}\label{eq:eqg-endpoint-topology}
+ K^2=2\chi(N)+3\tau(N)=1.
+\end{equation}
+Consider an exact sequence
+\begin{equation}\label{eq:eqg-endpoint-sequence}
+ \Ric(g_j)=-g_j,\qquad
+ d_j:=\Vol(g_j)-2\pi^2>0,\qquad d_j\longrightarrow0,
+ \qquad\diam(g_j)\leq D,
+ \qquad\varepsilon_j:=\sqrt{d_j}.
+\end{equation}
+The parameter $\varepsilon_j$ is not an Einstein residual: the residual
+is identically zero.  These are the topological data of the specified
+rational blowdown of a $(-4)$-section in $E(4)$.  The arguments below
+use the displayed hypotheses, not a classification of its possible
+limits or an assertion that the exact sequence exists.
+
+We use the classical noncollapsed compactness theorem for exact Einstein
+four-metrics: a subsequence converges smoothly off finitely many points
+to a compact Einstein orbifold, with volume convergence.  Its hypotheses
+hold here.  The monopole inequality bounds volume below; Ricci curvature
+and diameter then give uniform local noncollapse and
+\eqref{eq:eqg-sobolev}; the Einstein Gauss--Bonnet identity gives a fixed
+full-curvature $L^2$ bound.  This is the exact Einstein compactness
+input, not a smooth compactness assertion for arbitrary bounded-Ricci
+metrics; see \href{https://arxiv.org/pdf/0810.4830}{Anderson, Theorem 5.3}.
+
+\begin{proposition}[Global control of one Weyl half]
+\label{prop:eqg-half-weyl}
+For a sequence \eqref{eq:eqg-endpoint-sequence}, the limit is negative
+Kähler--Einstein.  After discarding finitely many terms,
+\begin{equation}\label{eq:eqg-half-weyl}
+ \|W_j^+\|_\infty\leq C,\qquad
+ \|\nabla W_j^+\|_\infty\longrightarrow0,
+ \qquad
+ \operatorname{spec}(W_j^+)\longrightarrow(-2/3,1/3,1/3)
+ \text{ uniformly}.
+\end{equation}
+No bound for $W_j^-$ is asserted.
+\end{proposition}
+
+\begin{proof}
+The spinor quadratic forms $\beta_j=-iF_{A_j}^+$ satisfy
+\[
+ |\beta_j|\leq\sqrt2,\qquad
+ \|\nabla\beta_j\|_2^2\leq Cd_j,\qquad
+ \bigl\||\beta_j|-\sqrt2\bigr\|_2^2\leq2d_j
+\]
+by \eqref{eq:eqg-sw-defect} and the differential of the quadratic map.
+On each fixed regular core, Rellich compactness and the smooth metric
+convergence give a parallel limit of length $\sqrt2$.
+On an orbifold covering ball this bounded parallel form extends across
+the center: a cutoff at radius $r$ contributes at most $Cr^3$ to its
+distributional first derivative.  Elliptic regularity then extends the
+parallel equation smoothly.  The resulting parallel orthogonal complex
+structure makes the limit Kähler--Einstein.
+
+The self-dual Chern--Weil identity is
+\[
+ \int_N|W_j^+|^2=2\pi^2-\frac{V_j}{3}
+ \longrightarrow\frac{4\pi^2}{3}
+ =\int_X|W_0^+|^2.
+\]
+Smooth convergence on regular cores exhausts this energy.  Thus no
+$W^+$ energy concentrates at the finitely many singular points.
+The Einstein half-Weyl equation is
+\begin{equation}\label{eq:eqg-weyl-pde}
+ \nabla^*\nabla W^+=2W^++6(W^+)^2-2|W^+|^2I.
+\end{equation}
+Kato's inequality gives the scalar inequality
+$\Delta|W^+|\leq C(|W^+|+|W^+|^2)$ in the weak sense.
+Its small-$L^2$ local estimate is
+\[
+ \sup_{B_{r/2}}|W^+|
+ \leq C(r^{-2}+1)\|W^+\|_{L^2(B_r)}.
+\]
+To obtain it, test with cutoff powers of $|W^+|$: the quadratic
+coefficient is absorbed using its small $L^2$ norm and
+\eqref{eq:eqg-sobolev}, first raising the exponent above the critical
+one, after which the usual Sobolev iteration applies.  All constants
+use the displayed scalar inequality and the uniform local Sobolev
+constant, not $W^-$.  The absence of atoms, and smooth convergence
+away from the singular set, give a fixed finite covering by such
+small-energy balls.  This proves the global $W^+$ bound.
+
+Pairing \eqref{eq:eqg-weyl-pde} with $W^+$ gives
+\begin{equation}\label{eq:eqg-weyl-energy}
+ \int|\nabla W^+|^2=2\int|W^+|^2+18\int\det W^+\longrightarrow0.
+\end{equation}
+The cubic integral converges because $W^+$ is now uniformly bounded
+and the exceptional neighborhoods have uniformly small volume.
+Treat $W^+$ as a section of $\operatorname{Sym}_0(\Lambda^+)$.
+The curvature of this bundle depends only on $W^+$ and the fixed
+scalar curvature.  The Einstein connection on $\Lambda^+$ is
+Yang--Mills.  In the first commutation of
+\eqref{eq:eqg-weyl-pde}, its curvature-divergence term therefore
+vanishes and the contracted cotangent term is Ricci.  For
+$U=\nabla W^+$ one obtains $|\nabla^*\nabla U|\leq C|U|$.
+Sobolev iteration gives $\|U\|_\infty\leq C\|U\|_2\to0$.
+Finally compare spectra along paths of length at most $D$ with a
+regular base point.  Parallel transport preserves eigenvalues, so
+this derivative estimate gives uniform spectral convergence.
+\end{proof}
+
+The lowest eigenline is now simple.  Simple connectivity makes this
+real line bundle orientable.  Choose its global eigenform $\omega_j$
+of squared length two, with signs agreeing on a fixed regular core,
+and write
+\begin{equation}\label{eq:eqg-eigenvalues}
+ \lambda_1=-2/3-q,\qquad
+ \lambda_2=1/3+q/2-b,\qquad
+ \lambda_3=1/3+q/2+b,\qquad b\geq0.
+\end{equation}
+The associated almost-complex structure will be denoted by $J_j$.
+
+\begin{proposition}[First-order energy ratios]
+\label{prop:eqg-ratios}
+For \eqref{eq:eqg-endpoint-sequence},
+\begin{gather}
+ \|q_j\|_\infty\leq Cd_j,\qquad
+ \|b_j\|_\infty+\|\nabla W_j^+\|_\infty
+                  +\|\nabla\omega_j\|_\infty
+ \leq C\sqrt{d_j},                                      \label{eq:eqg-rates}\\
+ \frac{\int b_j^2}{d_j}\longrightarrow\frac12,
+ \quad
+ \frac{\int|\nabla W_j^+|^2}{d_j}\longrightarrow10,
+ \quad
+ \frac{\int|\nabla\omega_j|^2}{d_j}\longrightarrow4,
+ \quad
+ \frac{\int|d\omega_j|^2}{d_j}\longrightarrow0.          \label{eq:eqg-ratios}
+\end{gather}
+\end{proposition}
+
+\begin{proof}
+Complete $\omega_1=\omega$ locally to a quaternionic frame
+$(\omega_1,\omega_2,\omega_3)$ of squared lengths two, and write
+\[
+ \nabla\omega_1=\beta\otimes\omega_2+\gamma\otimes\omega_3,
+ \quad
+ \nabla\omega_2=-\beta\otimes\omega_1+\alpha\otimes\omega_3,
+ \quad
+ \nabla\omega_3=-\gamma\otimes\omega_1-\alpha\otimes\omega_2.
+\]
+The curvature of the projected canonical-line connection gives a
+global closed form
+\begin{equation}\label{eq:eqg-canonical-form}
+ \Omega=d\alpha=(1+q)\omega-\beta\wedge\gamma,
+ \qquad [\Omega/(2\pi)]=K_J,
+ \qquad |\Omega^-|\leq\tfrac14|\nabla\omega|^2.
+\end{equation}
+This is a local connection formula: it does not say that $\Omega$
+is globally exact.  The formula follows by projecting the
+$\Lambda^+$ curvature matrix $W^+-I/3$ onto the transverse rotation
+line; its lowest entry is $-1-q$.  The last bound follows from
+$|\nabla\omega|^2=2(|\beta|^2+|\gamma|^2)$.
+By Proposition~\ref{prop:eqg-half-weyl}, $\Omega$ is uniformly close
+to $\omega$, hence eventually symplectic and taming $J$.
+The canonical square is $K_J^2=2\chi+3\tau=1$.
+
+Let $\alpha_0$ be the harmonic representative of $\Omega$ and
+$\psi=\alpha_0^+$.  Lemma~\ref{lem:eqg-hodge} gives
+$\|\psi-\omega\|_2\to0$.  The harmonic two-form equation
+\[
+ \nabla^*\nabla\psi=(2W^++4I/3)\psi
+\]
+and Sobolev iteration first give a uniform pointwise bound.
+Its integrated equation gives $\|\nabla\psi\|_2\to0$,
+since $\psi$ approaches the lowest axis in $L^2$.
+Commuting once, using the Yang--Mills property as above, gives a
+bounded-coefficient equation for $\nabla\psi$ with source
+$2(\nabla W^+)\psi$.  Consequently
+$\|\nabla\psi\|_\infty\to0$.
+A point where $|\psi-\omega|$ is small exists by the $L^2$ bound
+and the volume lower bound.  Comparison along paths of length at
+most $D$ makes this closeness uniform.  Thus $\psi$ is nowhere zero
+and determines an almost-complex structure homotopic to $J$.
+Proposition~\ref{prop:eqg-four-term} applies with $K_J$; in particular
+$u=|\psi|/\sqrt2\to1$ uniformly and
+$\widehat T:=\int|\widehat\nabla\psi|^2\leq4d$.
+
+In the conformal metric $\widehat g=ug$, decompose $W^+$ relative
+to the unit axis $\psi/\sqrt2$ as
+\[
+ W^+_{\widehat g}=
+ \begin{pmatrix}a&v^{\mathsf T}\\v&-aI/2+\widehat B\end{pmatrix},
+ \qquad\tr\widehat B=0,
+ \quad w=W^+_{\widehat g}(\psi,\psi)=2a,
+ \quad t=|\widehat\nabla\psi|^2.
+\]
+The classical weighted harmonic-Weyl identity for an Einstein
+conformal class is
+\[
+ \int\left(8|W^+|^2
+       -4|W^+(\psi)^\perp|^2-s_{\widehat g}w\right)
+             u^{-1/2}\,d\mu_{\widehat g}=0;
+\]
+see \href{https://arxiv.org/pdf/1408.1078}{LeBrun, equation (3)}.
+Since $w-s_{\widehat g}/3=t/2$, substituting
+$|W^+|^2=3a^2/2+2|v|^2+|\widehat B|^2$ and
+$|W^+(\psi)^\perp|^2=2|v|^2$ gives
+\begin{equation}\label{eq:eqg-weighted-weyl}
+ \int(|v|^2+|\widehat B|^2)u^{-1/2}\,d\mu_{\widehat g}
+ =-\frac3{16}\int wt\,u^{-1/2}\,d\mu_{\widehat g}.
+\end{equation}
+The right side is $O(d)$.  The two eigenvalues near $1/3$ split by
+at most a constant times the norm of the off-axis block, by the
+eigenvalue perturbation inequality.  Since $u$ stays bounded above
+and below, this gives $B_2:=\int b^2\leq Cd$.
+
+Put $Q=\int q^2$ and $G=\int|\nabla W^+|^2$.
+The topological energy identity and
+\eqref{eq:eqg-weyl-energy}, evaluated on
+\eqref{eq:eqg-eigenvalues}, give exactly
+\begin{equation}\label{eq:eqg-algebraic-energies}
+ 2\int q=-d-\tfrac32Q-2B_2,
+ \qquad
+ G=d+\tfrac92\int(1+q)(4b^2-q^2).
+\end{equation}
+Thus $G\leq Cd$.  The first-commutator estimate in the proof of
+Proposition~\ref{prop:eqg-half-weyl} gives
+$\|\nabla W^+\|_\infty\leq C\sqrt d$.
+The simple-eigenline derivative formula gives the same bound for
+$\nabla\omega$.  The eigenvalue functions are Lipschitz with
+derivative at most $|\nabla W^+|$; using $B_2\leq Cd$ and diameter
+then gives $\|b\|_\infty\leq C\sqrt d$.
+
+Let $\nu=\omega/\sqrt2$.  Differentiating its eigenvalue equation
+twice, and substituting \eqref{eq:eqg-weyl-pde}, gives
+\begin{equation}\label{eq:eqg-radial-mass}
+ (\Delta+2)q=4b^2-3q^2
+       -2\sum_{k=2,3}(\lambda_k-\lambda_1)
+                              |(\nabla\nu)_k|^2.
+\end{equation}
+For clarity, the last term is the usual simple-eigenvalue correction:
+the second derivative of the eigenvalue is its differentiated matrix
+entry minus twice the squared derivative of the eigenvector, weighted
+by the other eigenvalue differences.  All entries are smooth even
+when the two transverse eigenvalues coincide.  The inverse maximum
+principle for $\Delta+2$, the preceding bounds, and $q\to0$ give
+$\|q\|_\infty\leq Cd+C\|q\|_\infty^2\leq Cd$ after absorption.
+This proves \eqref{eq:eqg-rates}.
+
+Equation~\eqref{eq:eqg-canonical-form} and
+Lemma~\ref{lem:eqg-hodge} now imply
+\[
+ \|\alpha_0^-\|_2+\|u-1\|_2=O(d),
+ \qquad\|\psi-\omega\|_2=O(d).
+\]
+The four-term identity bounds $\|\nabla\psi\|_2$ by $C\sqrt d$;
+this follows also by the conformal connection formula and its
+$\|d\sqrt u\|_2$ term.  The once-commuted harmonic equation therefore
+gives $\|\nabla\psi\|_\infty=O(\sqrt d)$.
+The angle between $\psi$ and the lowest axis is $O(d)$ in $L^2$
+and $O(\sqrt d)$ uniformly, by diameter comparison.
+If $\mu=\langle W^+\psi,\psi\rangle/|\psi|^2$, it follows that
+$\mu+2/3=O(d)$.  The norm equation for the harmonic form reads
+\[
+ 2u\Delta u=4u^2(\mu+2/3)-|\nabla\psi|^2+2|du|^2.
+\]
+It yields $\|\Delta u\|_\infty=O(d)$.  Integration by parts gives
+$\int|du|^2=\int(u-1)\Delta u=O(d^2)$.
+The four-term identity consequently becomes
+$\widehat T=4d+O(d^2)$.
+
+In the block decomposition, the angle estimate gives
+$\int|v|^2=O(d^2)$, while
+$\int|\widehat B|^2=2B_2+o(d)$.
+The latter follows by rotating the nearly degenerate transverse
+plane, using its $O(d)$ $L^2$ angle error, and $u\to1$;
+all conformal weights also tend uniformly to one.
+Since $w\to-4/3$, equation~\eqref{eq:eqg-weighted-weyl} gives
+$2B_2=d+o(d)$.  Then \eqref{eq:eqg-algebraic-energies} gives
+$G=10d+o(d)$.
+
+Integrating \eqref{eq:eqg-radial-mass} and using
+\eqref{eq:eqg-algebraic-energies} yields
+\[
+ 2\int\sum_{k>1}(\lambda_k-\lambda_1)|(\nabla\nu)_k|^2
+ =d+6B_2-\tfrac32Q.
+\]
+The eigenvalue differences tend uniformly to one, so
+$\int|\nabla\omega|^2=4d+o(d)$.
+Finally the self-dual Hodge--Weitzenböck formula gives the exact identity
+\[
+ d+\|d\omega\|_2^2+\tfrac32Q+2B_2
+ =\tfrac12\|\nabla\omega\|_2^2.
+\]
+Substitution proves the last limit in \eqref{eq:eqg-ratios}.
+\end{proof}
+
+These positive limiting energies are compatible with each other.
+They are necessary conditions on a putative exact endpoint sequence,
+not a contradiction and not a universal near-Einstein estimate.
+
+\subsection{The holomorphic first-order tensor}
+
+\begin{proposition}\label{prop:eqg-holomorphic}
+Under \eqref{eq:eqg-endpoint-sequence}, the fixed orbifold limit $X$
+carries a nonzero tensor
+\[
+ \sigma\in H^0_{\rm orb}(X,\Omega^1\otimes K_X).
+\]
+If $B_j$ denotes the trace-free transverse block in
+\eqref{eq:eqg-eigenvalues}, its normalized regular-locus limit
+$B_1=\lim B_j/\varepsilon_j$ corresponds to $\partial_{K_X}\sigma$
+under a fixed nonzero real bundle isomorphism.  In particular their
+vanishing at any regular or orbifold point is equivalent.
+\end{proposition}
+
+\begin{proof}
+Set $A_j=\nabla\omega_j/\varepsilon_j$.
+Equation~\eqref{eq:eqg-rates} bounds $A_j$ uniformly.  On a fixed
+regular core, the once-commuted Einstein equation and the spectral
+projection formula give uniform bounds for all derivatives of $A_j$:
+the metric coefficients converge smoothly there, and the homogeneous
+equation for $\nabla W^+$ has right side linear in $\nabla W^+$.
+Local elliptic estimates and differentiation therefore retain the
+factor $\varepsilon_j$.  Extract a smooth local limit $A$.
+The exceptional neighborhoods have volume $O(r^4)$ uniformly, so
+the pointwise bound prevents loss of its normalized energy.  By
+\eqref{eq:eqg-ratios},
+\[
+ \int_X|A|^2=4,\qquad \operatorname{Alt}A=0,
+ \qquad A\in T^*X\otimes\omega_0^\perp.
+\]
+Complexifying, the alternation map
+$\Lambda^{0,1}\otimes\Lambda^{2,0}\to\Lambda^{2,1}$ is an
+isomorphism in complex dimension two.  Thus
+$A=\sigma+\overline\sigma$ with
+$\sigma\in\Omega^{1,0}\otimes K_X$.
+
+For $J_j$-type vectors $Z$ and $\overline U$, the exact Einstein
+curvature identity and the lowest-eigenline condition give
+\[
+ R^{\Lambda^+}_{g_j}(Z,\overline U)\omega_j=0.
+\]
+Indeed the self-dual part of a $(1,1)$ bivector is in the lowest-axis
+line, and the block-diagonal curvature operator preserves that line;
+its infinitesimal rotation fixes $\omega_j$.
+Divide $d_\nabla\nabla\omega_j=R^{\Lambda^+}\omega_j$ by
+$\varepsilon_j$ and take its mixed-type part.  Its $K_X$ component
+is $\nabla^{0,1}\sigma=0$.  The tensor is bounded near each
+orbifold point.  On a smooth covering ball its holomorphic
+coefficients extend by Hartogs, equivariantly.  The positive energy
+above proves that $\sigma\ne0$.
+
+The $(2,0)$ part of the same curvature equation is the transverse
+matrix $B_j+q_jI/2$.  The scalar part disappears after division by
+$\varepsilon_j$, since $q_j=O(\varepsilon_j^2)$.
+In a unitary transverse frame, a trace-free symmetric matrix has
+entries $\left(\begin{smallmatrix}x&y\\y&-x\end{smallmatrix}\right)$;
+its action on the complex transverse line is represented by the
+nonzero complex coefficient $x+iy$, up to the fixed frame convention.
+The exterior covariant derivative on the limiting side is
+$\partial_{K_X}\sigma$.  This gives the asserted real bundle
+isomorphism and the vanishing equivalence, without a phase-dependent
+identification of their numerical coefficients.
+\end{proof}
+
+For a merely approximate Einstein sequence the mixed curvature
+equation has a trace-free Ricci source.  Division by
+$\varepsilon_j$ need not make it vanish.  Thus the holomorphic
+conclusion above cannot be transferred without a relative error
+estimate and the stated compactness hypotheses.
+
+\subsection{Critical norms on a finite bubble tree}
+
+\begin{lemma}[The physical-scale Hessian sum]
+\label{lem:eqg-tree}
+Suppose a sequence has a fixed finite noncollapsed Einstein bubble-tree
+decomposition.  Assume that the rescaled charts on each core and
+dyadic neck block have uniform smooth geometric bounds, and that a
+tensor $J_j$ obeys
+\[
+ |\nabla^2J_j|\leq C\varepsilon_j/r
+\]
+on a block of physical scale $r$.  Core volumes are at most $Cr^4$,
+and each neck has the usual dyadic scales between the physical
+parent and child scales.  Then
+\begin{equation}\label{eq:eqg-tree}
+ \|\nabla^2J_j\|_{L^p}\leq C_p\varepsilon_j\quad(1\leq p<4),
+ \qquad
+ \|\nabla^2J_j\|_{L^{4,\infty}}\leq C\varepsilon_j.
+\end{equation}
+After fixing the outer scale, the corresponding strong estimate is
+\[
+ \|\nabla^2J_j\|_4^4
+ \leq C\varepsilon_j^4
+ \left(1+\sum_{u\to v}\log\frac{a_{u,j}}{a_{v,j}}\right),
+\]
+where $a_{v,j}$ are cumulative physical node scales.
+\end{lemma}
+
+\begin{proof}
+A core of scale $a$ contributes at most
+$C_p\varepsilon_j^pa^{4-p}$ to the $p$th power of the norm.
+A neck contributes at most
+$C_p\varepsilon_j^p\sum_k r_k^{4-p}$.
+For $p<4$ the dyadic geometric series is bounded by its largest
+scale, uniformly in the number of annuli.  There are only finitely
+many cores and necks.  This proves the first assertion.
+For a threshold $t>0$, only blocks with $r\leq C\varepsilon_j/t$
+can contribute to $\{|\nabla^2J_j|>t\}$.
+On each neck their volumes sum to at most
+$C(\varepsilon_j/t)^4$.  A core either contributes nothing or obeys
+the same bound.  Summing over the fixed finite tree proves the weak
+$L^4$ assertion.  At $p=4$ each neck annulus costs
+$C\varepsilon_j^4$, and their number is bounded by a constant plus
+the logarithm of the physical scale ratio.  This proves the last
+estimate.
+\end{proof}
+
+In the endpoint setting, the displayed block bound follows from the
+uniform first-derivative bound and the local homogeneous elliptic
+equation on these specified rescaled charts.  The lemma does not
+supply the charts or a bubble decomposition.  It gives neither a
+strong $L^{4,1}$ estimate nor an example attaining the logarithmic
+upper bound.
+
+\subsection{A fixed-background critical deformation estimate}
+
+Here the background is a fixed compact smooth complex orbifold of
+complex dimension two.  All constants in this subsection belong to
+that background.  Let $D=\bar\partial$ on $T^{1,0}$-valued forms,
+let $H_q$ and $G_q$ be its harmonic projection and Green operator,
+and set
+\[
+ \mathcal B=W^{1,(4,1)}(\Lambda^{0,1}\otimes T^{1,0}),\qquad
+ \mathcal Y=L^{4,1}(\Lambda^{0,2}\otimes T^{1,0}),
+ \qquad F(\mu)=D\mu+\tfrac12[\mu,\mu].
+\]
+The endpoint embedding $\mathcal B\hookrightarrow C^0$, fixed-background
+elliptic estimates, and the first-order bracket give
+\[
+ B:=D^*G_2:\mathcal Y\longrightarrow\mathcal B,
+ \qquad
+ \|[u,v]\|_{\mathcal Y}\leq C\|u\|_{\mathcal B}\|v\|_{\mathcal B}.
+\]
+These are strong Lorentz spaces; the weak $L^4$ conclusion of
+Lemma~\ref{lem:eqg-tree} is not the required input.
+
+\begin{proposition}[Conditional projection and integrable retraction]
+\label{prop:eqg-kuranishi}
+Let $f:H^1\to H^2$ be the local Kuranishi obstruction map.
+Suppose a fixed linear functional $\ell$ satisfies
+\[
+ \ell f(h)=a(h)f(h),\qquad a(0)=0,
+\]
+where $a(h)$ is an analytic family of linear functionals.
+For sufficiently small $\mu\in\mathcal B$ with $D^*\mu=0$,
+\begin{equation}\label{eq:eqg-kuranishi-projection}
+ |\ell H_2F(\mu)|\leq C\|\mu\|_{\mathcal B}\|F(\mu)\|_{\mathcal Y}.
+\end{equation}
+If, more strongly, every actual obstruction for the smooth Dolbeault
+deformation problem vanishes on every Artin small extension, then
+arbitrary sufficiently small $\mu\in\mathcal B$ admits $\nu$ with
+\begin{equation}\label{eq:eqg-kuranishi-retraction}
+ F(\nu)=0,\qquad
+ \|\nu\|_{\mathcal B}\leq C\|\mu\|_{\mathcal B},\qquad
+ \|\mu-\nu\|_{\mathcal B}\leq C\|F(\mu)\|_{\mathcal Y},
+ \qquad D^*(\mu-\nu)=0.
+\end{equation}
+Smooth $\mu$ gives smooth $\nu$, without a uniform assertion about
+all its higher derivatives.
+\end{proposition}
+
+\begin{proof}
+The map $\mathcal K(\mu)=\mu+B[\mu,\mu]/2$ is analytic with
+derivative the identity at zero.  The Banach inverse function theorem
+makes it locally analytically invertible with a fixed Lipschitz inverse.
+Complex dimension two gives $DB=1-H_2$.
+If $D^*\mu=0$, Hodge decomposition yields
+\[
+ \mathcal K(\mu)=H_1\mu+BF(\mu).
+\]
+Set $h=H_1\mu$ and $\nu=\mathcal K^{-1}(h)$.
+Then $\|\mu-\nu\|_{\mathcal B}\leq C\|F(\mu)\|_{\mathcal Y}$,
+and $F(\nu)$ is harmonic, equal to $f(h)$.
+Since $H_2D=0$, the bracket difference estimate gives
+\[
+ \|H_2F(\mu)-f(h)\|
+ \leq C\|\mu\|_{\mathcal B}\|F(\mu)\|_{\mathcal Y}.
+\]
+Also $\|f(h)\|\leq C\|F(\mu)\|_{\mathcal Y}$.
+Using $a(h)=O(|h|)$ proves
+\eqref{eq:eqg-kuranishi-projection}.
+
+For the stronger assertion let
+$P_Z=H_1+DG_0D^*$, the projection to $\ker D$ in degree one.
+Then $\mathcal K(\mu)=P_Z\mu+BF(\mu)$.
+For a smooth closed $v$, the function
+$F(\mathcal K^{-1}(tv))$ is harmonic-valued and analytic in $t$.
+If its coefficients of orders less than $n$ vanish, its coefficient
+of order $n$ is precisely the harmonic representative of the
+obstruction to lifting the preceding formal solution over the
+corresponding Artin small extension.  The assumption makes this
+coefficient zero.  Induction and analyticity make the entire function
+zero near $t=0$.  Smooth closed forms are dense in the closed
+subspace of $\mathcal B$, so this remains true there by continuity.
+Take $\nu=\mathcal K^{-1}(P_Z\mu)$.
+The Lipschitz bound proves both norm inequalities in
+\eqref{eq:eqg-kuranishi-retraction}, and
+$D^*B=0$, $D^*P_Z=D^*$ give its last assertion.
+
+For a smooth input the equation
+$\nu+B[\nu,\nu]/2=P_Z\mu$ first improves regularity to
+$W^{1,p}$ for some $p>4$: the continuous coefficient $\nu$ is
+small, so the first-order principal perturbation is absorbed in
+the fixed-background elliptic $L^p$ estimate.  One can obtain this
+estimate by Neumann inversion with that coefficient frozen and
+then use uniqueness in $\mathcal B$.  The system
+$(D\nu+[\nu,\nu]/2,D^*\nu)=(0,D^*\mu)$ is now a uniformly
+elliptic quasilinear system with Hölder coefficients.  Schauder
+iteration gives smoothness.
+\end{proof}
+
+The obstruction hypothesis here is about the smooth Dolbeault
+deformation problem on this orbifold.  Formal local triviality of a
+selected quotient-singularity smoothing parameter is not that
+hypothesis, and it does not identify two different deformation
+complexes.
+
+\subsection{A low-power Dirac gap with its spectral hypotheses retained}
+
+\begin{lemma}\label{lem:eqg-dirac}
+In the exact endpoint setting, use the $U(2)$ projection
+$\nabla^U=\nabla-\tfrac12J\nabla J$ and its induced determinant
+connection on
+\[
+ S_m=\Lambda^{0,*}\otimes K_J^m,
+ \qquad L_m=K_J^{2m-1},\qquad m=1,2.
+\]
+Suppose the regular-locus limit is the corresponding canonical
+Dirac operator on $X$, and
+$H^{0,1}_{\rm orb}(X,K_X^m)=0$.
+Then, along this fixed convergent subsequence, there is $\lambda_m>0$
+such that
+\[
+ \|\mathcal D^-_{m,j}\eta\|_2^2
+ \geq\lambda_m\|\eta\|_2^2.
+\]
+When $\tau(N)=-31$, the even kernel dimensions are respectively
+$4$ and $5$.
+\end{lemma}
+
+\begin{proof}
+For $P_{10}=(I-iJ)/2$, the curvature of the projected canonical
+connection is
+\[
+ F^{K_J}=-\operatorname{Tr}\left(
+ P_{10}R^{TN}P_{10}
+ +P_{10}(\nabla P_{10}\wedge\nabla P_{10})P_{10}\right).
+\]
+This formula has no independent $\nabla^2J$ term.  The Einstein
+lowest-axis condition and \eqref{eq:eqg-rates} give, in the consistent
+canonical sign convention, $iF^{K_J}=\omega+O(d_j)$.
+In particular the zeroth-order potential in the Dirac Weitzenböck
+formula is uniformly bounded for the two fixed values of $m$.
+This does not bound the entire negative-spinor connection curvature.
+
+If the asserted gap failed, choose unit eigenspinors for
+$(\mathcal D^-_{m,j})^*\mathcal D^-_{m,j}$ with eigenvalues tending
+to zero.  The bounded Weitzenböck potential and the uniform Sobolev
+inequality give a uniform pointwise bound by scalar Moser iteration.
+They also give a uniform covariant $W^{1,2}$ bound.  Smooth local
+elliptic convergence on the regular locus yields a limiting odd
+harmonic spinor.  The uniform pointwise bound and the $O(r^4)$
+volume of exceptional neighborhoods prevent loss of its unit mass.
+On an orbifold covering ball, a cutoff at radius $r$ has an error
+of $L^2$ norm $O(r)$ in the Dirac equation; removal of the point and
+elliptic regularity therefore extend the limit across the center.
+The nonzero limit belongs to $H^{0,1}_{\rm orb}(X,K_X^m)$,
+contradicting the hypothesis.
+
+The gap eliminates the odd kernel.  The Spin$^c$ index is
+\[
+ \operatorname{ind}\mathcal D^+_m
+ =\frac{(2m-1)^2K_J^2-\tau(N)}8.
+\]
+For $K_J^2=1$ and $\tau=-31$ this equals
+$4+m(m-1)/2$, giving $4$ and $5$.
+\end{proof}
+
+These are limit-dependent spectral gaps.  The dimension four at
+$m=1$ is a spinor-kernel dimension, not a claim that there are four,
+or three, independent holomorphic canonical sections before separating
+the degree-two component.  No quadratic improvement of a multiplication
+error follows from this lemma.
+
+\subsection{A bubble-period estimate retaining the radial term}
+
+\begin{proposition}\label{prop:eqg-bubble-period}
+Let $g_j$ be exact Einstein metrics with $\Ric(g_j)=-g_j$.
+On a fixed compact core, possibly after finite covering, assume
+\[
+ a_j^{-2}\Phi_j^*g_j\longrightarrow k\quad\hbox{smoothly},
+ \qquad a_j\longrightarrow0,
+\]
+where the core lies in a nonflat hyperKähler ALE space and has
+$H^1=0$.  Suppose a simple lowest self-dual Weyl axis is represented
+by $\omega_j$, $|\omega_j|^2=2$, and write
+\[
+ W_j^+=(-2/3-q_j)P_j+(1/3+q_j/2)(I-P_j)+B_j,
+ \qquad B_j|_{P_j^\perp}\in\operatorname{Sym}_0(P_j^\perp).
+\]
+All the following bounds are in the physical metric on the chosen
+core:
+\[
+ Q_j=\|q_j\|_\infty\to0,\quad
+ M_j=\|B_j\|_\infty,\quad
+ \delta_j=\|\nabla\omega_j\|_\infty\to0,\quad
+ G_j=\|\nabla B_j\|_\infty+\|dq_j\|_\infty,
+ \quad K_j=1+Q_j+\delta_j^2.
+\]
+Assume a closed two-cycle has nonzero limiting transverse period
+vector.  On a fixed smaller core,
+\begin{equation}\label{eq:eqg-bubble-period}
+ \left||B_j|_{\rm op}-\frac{|q_j|}{2}\right|
+ \leq C\left(a_jG_j+a_j\delta_jK_j+a_j^2K_jM_j\right).
+\end{equation}
+In particular, if $M_j+G_j+\delta_j=O(\varepsilon_j)$ and
+$Q_j=O(\varepsilon_j^2)$ with $\varepsilon_j\to0$, then
+\begin{equation}\label{eq:eqg-bubble-vanishing}
+ \sup|B_j|\leq C(a_j\varepsilon_j+\varepsilon_j^2)
+ =o(\varepsilon_j).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Use the unit-scale pullback metrics.  The lowest axis tends to a
+parallel axis.  Its perpendicular plane bundle is homotopic to the
+constant transverse plane of the hyperKähler frame and is therefore
+trivial.  In a global oriented self-dual frame write its rotation
+connection as $\alpha_1$, with remaining connection components
+$\alpha_2,\alpha_3$.  Then
+$|\alpha_2|+|\alpha_3|\leq Ca_j\delta_j$.
+Choose the compatible curvature signs so that the exact equations are
+\begin{align}
+ d\alpha_1+\alpha_2\wedge\alpha_3
+     &=a_j^2(1+q_j)\omega_1,\label{eq:eqg-bubble-curvature}\\
+ \binom{d\alpha_2+\alpha_3\wedge\alpha_1}
+       {d\alpha_3+\alpha_1\wedge\alpha_2}
+     &=-a_j^2(B_j+q_jI/2)\binom{\omega_2}{\omega_3}.
+       \nonumber
+\end{align}
+In particular $|d\alpha_1|\leq Ca_j^2K_j$.
+On this fixed domain impose an abelian Coulomb gauge with normal
+boundary condition.  Its harmonic one-form space is zero because
+$H^1=0$.  The Hodge estimate in $W^{1,p}$, $p>4$, gives
+$\|\alpha_1\|_\infty\leq Ca_j^2K_j$.
+The curvature to which this abelian estimate is applied is the closed
+form $d\alpha_1$, not the generally nonclosed first component of the
+nonabelian curvature.
+
+Integrating the first equation on a cycle, dividing by $a_j^2$,
+and passing to the limit shows that its lowest-axis period is zero.
+Let $\zeta_j$ be the vector of its two transverse periods;
+by hypothesis $|\zeta_j|\geq c>0$.
+Stokes applied to the other two equations gives, at any fixed
+reference point $x_*$,
+\[
+ |(B_j(x_*)+q_j(x_*)I/2)\zeta_j|
+ \leq C(a_jG_j+a_j\delta_jK_j+a_j^2K_jM_j).
+\]
+The first term bounds variation of the physical coefficients along
+the unit core.  The mixed connection integrals give the second.
+The transverse-frame rotation of $B_j$ is its commutator with
+$\alpha_1$ and gives the last term; the scalar matrix commutes with
+that rotation.  The same estimates transfer from $x_*$ to every
+point of the smaller core.
+
+A real trace-free symmetric $2\times2$ matrix satisfies
+$B^2=|B|_{\rm op}^2I$.  Therefore
+\[
+ |(B+tI)\zeta|\geq
+ \bigl||B|_{\rm op}-|t|\bigr|\,|\zeta|.
+\]
+This proves \eqref{eq:eqg-bubble-period}.  Substituting the stipulated
+rates and adding $|q_j|/2$ proves
+\eqref{eq:eqg-bubble-vanishing}.
+\end{proof}
+
+The radial term cannot be omitted.  The matrix
+$B=\operatorname{diag}(-q/2,q/2)$ annihilates $(1,0)^{\mathsf T}$
+after addition of $qI/2$, even though $B$ need not vanish.  Thus
+$q=o(\varepsilon)$, not merely $q=O(\varepsilon)$, is needed for
+the stated first-order conclusion from one transverse period.
+Two independent transverse periods would give a stronger conclusion,
+but $b_2\geq2$ alone does not give their independence.
+
+\begin{corollary}[Vanishing at every actual singular point]
+\label{cor:eqg-all-points}
+For \eqref{eq:eqg-endpoint-sequence}, the tensor of
+Proposition~\ref{prop:eqg-holomorphic} satisfies
+\[
+ (\partial_{K_X}\sigma)(p)=0
+ \quad\hbox{at every orbifold singularity }p\in X.
+\]
+\end{corollary}
+
+\begin{proof}
+Fix a singular point and isolate it by an exterior annulus where
+convergence is smooth.  Choose a maximum-curvature point inside.
+The maximum tends to infinity; otherwise noncollapse and Einstein
+regularity would remove the singularity.  Rescale by the inverse
+square root of that maximum.  Its distance from the exterior boundary
+tends to infinity in the rescaled metric.  On every fixed rescaled
+ball curvature is at most one, and at the base point it is one.
+Noncollapse and the exact equation give a complete smooth nonflat
+Ricci-flat limit.  The fixed total curvature bound and Euclidean
+volume growth give ALE asymptotics.  The uniform $W^+$ bound makes
+this limit anti-self-dual.
+
+The classification of Ricci-flat anti-self-dual ALE spaces supplies
+a finite simply connected hyperKähler cover.  A nonflat such cover
+has a nonzero period of its hyperKähler triple; this is the
+nondegeneracy condition in the hyperKähler ALE period classification.
+These are the classical ALE inputs, including the quotient case;
+see \href{https://arxiv.org/pdf/1102.2442}{Wright, Theorem A and
+Sections 2--3}.  The first equation of
+\eqref{eq:eqg-bubble-curvature} makes every limiting lowest-axis
+period zero.  Some transverse period is therefore nonzero.
+Choose a fixed simply connected compact core containing its cycle.
+
+The bounds \eqref{eq:eqg-rates} give
+$M_j+G_j+\delta_j=O(\varepsilon_j)$ and
+$Q_j=O(\varepsilon_j^2)$ on this core.  The derivative bound for
+$B_j$ follows by differentiating its spectral projection; no gap
+between its two transverse eigenvalues is required.
+Proposition~\ref{prop:eqg-bubble-period} shows that
+$|B_j|/\varepsilon_j\to0$ on the core.
+Globally $|\nabla(B_j/\varepsilon_j)|\leq C$.
+Compare its scalar norm to a regular exterior point at distance
+at most $Cr$ from the singular point, first let $j\to\infty$,
+then $r\downarrow0$.  This gives $B_1(p)=0$.
+Proposition~\ref{prop:eqg-holomorphic} identifies its vanishing with
+that of $\partial_{K_X}\sigma$.
+Only scalar norms were transported; no synchronization of phases
+across the neck, no smoothness of a root bubble, and no comparison
+between the volume defect and a bubble scale was used.
+\end{proof}
+
+\begin{corollary}[The remaining evaluation hypothesis]
+\label{cor:eqg-conditional-gap}
+Assume \eqref{eq:eqg-endpoint-topology}, and assume that $N$ admits
+no Kähler structure compatible with the chosen orientation.
+Suppose that every orbifold limit of every exact sequence
+\eqref{eq:eqg-endpoint-sequence} has a set of actual singular points
+$S_X$ for which
+\[
+ H^0_{\rm orb}(X,\Omega^1\otimes K_X)
+ \longrightarrow\bigoplus_{p\in S_X}(K_X^2)_p,
+ \qquad
+ \sigma\longmapsto\bigl((\partial_{K_X}\sigma)(p)\bigr)_{p\in S_X}
+\]
+is injective.  For every finite $D$ there is $\eta_N(D)>0$ such that
+\[
+ \Ric(g)=-g,\quad\diam(g)\leq D
+ \quad\Longrightarrow\quad
+ \Vol(g)\geq2\pi^2+\eta_N(D).
+\]
+\end{corollary}
+
+\begin{proof}
+The scalar monopole inequality gives $V\geq2\pi^2$.
+Equality in \eqref{eq:eqg-sw-defect} makes the spinor quadratic form
+parallel and nonzero on $N$, contradicting the assumed absence of
+a compatible Kähler structure.  Hence every such volume is strictly
+larger than $2\pi^2$.
+If no positive uniform gap existed, choose metrics with
+$0<V_j-2\pi^2<1/j$ and the same diameter bound.  The preceding
+propositions produce a nonzero holomorphic tensor on a subsequential
+orbifold limit, whereas Corollary~\ref{cor:eqg-all-points} puts it in
+the kernel of the asserted injective evaluation map.  This is a
+contradiction.  Injectivity on that one extracted limit is sufficient;
+no uniform inverse norm over a moduli space is used.
+\end{proof}
+
+The evaluation and classification of all possible limits are additional
+hypotheses in this final corollary.  They have not been deduced from
+the numerical data $K^2=1$, $\chi=47$, $\tau=-31$.
+Even under that hypothesis the conclusion concerns exact Einstein
+metrics near one volume endpoint with bounded diameter.  It neither
+excludes exact Einstein metrics at larger volume nor supplies a
+diameter bound for arbitrary saturating sequences.

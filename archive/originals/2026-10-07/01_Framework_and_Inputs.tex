@@ -1,0 +1,274 @@
+\documentclass[UTF8,11pt,fontset=none]{ctexart}
+\usepackage[a4paper,margin=25mm,headheight=15pt,footskip=13mm]{geometry}
+\usepackage{fontspec}
+\IfFontExistsTF{TeX Gyre Termes}{\setmainfont{TeX Gyre Termes}}{\setmainfont{TeXGyreTermes}}
+\IfFontExistsTF{TeX Gyre Heros}{\setsansfont{TeX Gyre Heros}}{\setsansfont{TeXGyreHeros}}
+\IfFontExistsTF{DejaVu Sans Mono}{\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]}{\setmonofont{Latin Modern Mono}}
+\IfFontExistsTF{Noto Serif CJK SC}{\setCJKmainfont{Noto Serif CJK SC}[AutoFakeSlant=0.15]}{\setCJKmainfont{FandolSong-Regular.otf}[BoldFont=FandolSong-Bold.otf,ItalicFont=FandolKai-Regular.otf]}
+\IfFontExistsTF{Noto Sans CJK SC}{\setCJKsansfont{Noto Sans CJK SC}}{\setCJKsansfont{FandolHei-Regular.otf}}
+\IfFontExistsTF{Noto Sans Mono CJK SC}{\setCJKmonofont{Noto Sans Mono CJK SC}}{\setCJKmonofont{FandolFang-Regular.otf}}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,esint,bm}
+\usepackage{booktabs,longtable,array,calc}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=1.7em,topsep=4pt}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,fontsize=\small}
+\usepackage{xurl}
+\usepackage[unicode,hidelinks,bookmarksnumbered]{hyperref}
+\usepackage{bookmark}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 第一科学主线：近期数学补充}
+\fancyhead[R]{\small 2026-10-07}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\setlength{\emergencystretch}{3em}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{3.5pt plus 1pt}
+\linespread{1.12}
+\setlength{\abovedisplayskip}{10pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{10pt plus 2pt minus 2pt}
+\allowdisplaybreaks[2]
+\renewcommand{\arraystretch}{1.15}
+\let\cleardoublepage\clearpage
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{2}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{assumption}[theorem]{前置}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{说明}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\id}{\operatorname{Id}}
+\newcommand{\dd}{\,\mathrm d}
+\pdfstringdefDisableCommands{\def\fint{int}\def\mathcal#1{#1}\def\mathfrak#1{#1}\def\mathscr#1{#1}\def\operatorname#1{#1}\def\texorpdfstring#1#2{#2}}
+
+\renewcommand{\thesection}{1.\arabic{section}}
+\title{第一科学主线：近期研究补充\\[6pt]\large 1．共同记号、继承定理与实际研究边界}
+\author{数学研究交接稿}\date{2026年10月7日}
+\begin{document}
+\maketitle
+\tableofcontents
+\clearpage
+本分卷固定其他六卷共同使用的对象、范数和前置定理。N1、I40/I41、有限密度 O10 和原平衡族的变分归约是继承输入，不被重新计作原记录汇编的独立成果。证明补充的逻辑地位分为：原稿输入、以该输入为前提的推论、给定几何类别中的构造，以及尚未成立的迁移接口。\cite{I01,I02,B01}
+
+\section{曲率与缺陷的约定}\label{v1-ux66f2ux7387ux4e0eux7f3aux9677ux7684ux7ea6ux5b9a}
+
+设 \(M\) 为闭、连通、定向光滑四流形。写 \[
+ T_\pm=2\chi(M)\pm3\tau(M),\qquad
+ P(g)=\int_M|\operatorname{Ric}^{\circ}_g|^2\,dV_g,
+\] \[
+ S(g)=\int_Ms_g^2\,dV_g,\qquad
+ R(g)=\int_M|\operatorname{Ric}_g|^2\,dV_g=P(g)+\tfrac14S(g).
+\] \(\tau(M)\) 为签名。Ricci 使用二张量范数；Weyl 使用作用在二形式上的曲率算子 Hilbert--Schmidt 范数。于是 \[
+ 4\pi^2T_\pm=\frac{S}{24}+2\int_M|W^\pm|^2-\frac P2,
+ \qquad
+ \int_M|\operatorname{Rm}_{\mathrm{op}}|^2=8\pi^2\chi(M)+P.
+\tag{1.1}
+\] 最后一个等式只在这里的闭流形和范数约定下使用；有边界或非紧版本必须保留边界修正。
+
+定义 \[
+ \mathcal E(g)=\inf_{\lambda\ne0}
+ \frac{\int_M|\operatorname{Ric}_g-\lambda g|^2}
+ {\lambda^2 V_g},\qquad
+ \mathcal J(g)=\frac{4P(g)}{R(g)}\quad(R>0),\qquad
+ \alpha(M)=\inf_g\mathcal E(g).
+\] 令 \(S_1=\int_Ms_g\,dV_g\)。当 \(R>0\) 时，以 \(1/\lambda\) 最小化一个二次式，得到 \[
+ \mathcal E(g)=4-\frac{S_1^2}{VR}
+ =\mathcal J(g)+\frac{S-S_1^2/V}{R}\ge\mathcal J(g).
+\tag{1.2}
+\] 当 \(S_1=0\) 时，该下确界可由 \(|\lambda|\to\infty\) 逼近。Ricci-flat 度量上 \(R=0\)、\(\mathcal J\) 不定义，而原定义给出 \(\mathcal E=4\)。不能将这类度量代入 \(\mathcal J=0\)；有关非存在性的应用须以正实际供给独立排除它们。
+
+子区域上的平均一律仍除以全流形体积： \[
+ \fint_Z f:=\frac1{V_g}\int_Z f\,dV_g.
+\] 局部单元的原始费用采用另一个记号：在 \(\operatorname{Ric}=-\Lambda g\) 的背景上， \[
+ J_\Lambda(C,g):=\int_C|\operatorname{Ric}_g+\Lambda g|^2\,dV_g,
+ \qquad\Lambda>0.
+\] 它不等于 \(\mathcal J\)。第五卷局部采用 \(\Lambda=6\)，第四、六卷及 O10 通常采用 \(\Lambda=1\)。这两个规范通过 \(\widetilde g=6g\) 转换，且 \(J_1(\widetilde g)=J_6(g)\)。
+
+\section{同一实际解与共形比较}\label{v1-ux540cux4e00ux5b9eux9645ux89e3ux4e0eux5171ux5f62ux6bd4ux8f83}
+
+所使用的实际输入是在负 Yamabe 代表 \(\widehat g\)、\(s_{\widehat g}=-4\) 上存在一个普通解 \[
+ D_{\mathcal A}\Phi=0,\qquad F_{\mathcal A}^+=2i\sigma(\Phi),
+ \qquad a=c_1(L),\qquad p=(a^+)^2\ge A>0.
+\tag{1.3}
+\] 每一步中的 \(p,a\) 和 \(\Phi\) 必须属于同一个 \(\operatorname{Spin}^c\) 结构。全度量结论要求逐共形类提供相应输入，且具有应用所需的统一预算 \(A\)。普通、special monopole、BF 与 Pin\({}^{-}\) 只在各自供给已经核实的范围内代入。
+
+若旧供给要求同一结构在整个共形类上有实际解，则 \(p>0\) 排除非负 Yamabe 代表：未扰动方程的 Weitzenböck 恒等式迫使非负常标量代表上的旋量为零，继而 \(F^+=0\)，与正调和投影矛盾。故旧供给能够接入负 Yamabe 单解版本。\cite{I01}
+
+置 \[
+ \delta_S=S(g)-S(\widehat g)\ge0.
+\] 四维 Weyl 共形不变性和式(1.1)给 \[
+ P(g)=P(\widehat g)+\delta_S/12,\qquad
+ R(g)=R(\widehat g)+\delta_S/3.
+\] 因此 \[
+ \mathcal J(g)=
+ \frac{R(\widehat g)}{R(\widehat g)+\delta_S/3}\mathcal J(\widehat g)
+ +\frac{\delta_S/3}{R(\widehat g)+\delta_S/3},
+\] 从而 \[
+ \boxed{\mathcal J(g)\ge\min\{\mathcal J(\widehat g),1\}.}
+\tag{1.4}
+\] 这是精确共形比较，不要求共形因子接近常数。在常标量且 \(R>0\) 的代表上，\(\mathcal E=\mathcal J\)。
+
+\section{N1 的有限参数回接}\label{v1-n1-ux7684ux6709ux9650ux53c2ux6570ux56deux63a5}
+
+定义 \[
+ D_\beta=(1+\beta^{-1})S+6(\beta+1)\int|W^+|^2-72\pi^2p.
+\tag{1.5}
+\] 继承的单解有限参数估计在 \(a^2\ge T_+\) 时给 \[
+ r+\frac{D_\beta}{\beta V}\ge
+ c_0\frac{(\beta-2)^2}{\beta^4},\qquad r=\frac{P(\widehat g)}V.
+\tag{1.6}
+\] 取 \(\beta=8\)，记 \(c_8=9c_0/1024\)。由式(1.1)， \[
+ D_8=108\pi^2(T_+-2p/3)+\frac{27}{2}P.
+\tag{1.7}
+\] 由实际标量预算 \(16V\ge32\pi^2p\ge32\pi^2A\)，并令 \[
+ d=\left(\frac{T_+}{A}-\frac23\right)_+,
+\] 可得 \[
+ \frac{D_8}{8V}\le\frac{27}{4}d+\frac{27}{16}r,
+ \qquad \frac{43}{16}r+\frac{27}{4}d\ge c_8.
+\] 若 \(\mathcal J(g)<1\)，式(1.4)及 \(R(\widehat g)=P+4V\) 给 \[
+ r=\frac{4\mathcal J(\widehat g)}{4-\mathcal J(\widehat g)}
+ \le\frac43\mathcal J(g).
+\] 于是 \[
+ c_8\le\frac{27}{4}(\mathcal J(g)+d).
+\] 与 \(\mathcal J(g)\ge1\) 分支合并，得到 \[
+ \boxed{\mathcal J(g)+d\ge\varepsilon_N,
+ \qquad \varepsilon_N=\min\{1,c_0/768\}.}
+\tag{1.8}
+\] 它恢复原 \(\mathcal E\)-gap，并将支付加强为无迹 Ricci 比例。\cite{I01}
+
+去掉 \(a^2\ge T_+\) 时，原成本式为 \[
+ (1+b)\left(r+\frac{D_8}{8V}\right)\ge c_{8,\mathrm{raw}},
+ \qquad b=\frac{(-a^2)_+}{V}.
+\] 令 \(y=(T_+-a^2)_+/A\)，则 \[
+ b\le\frac r{8\pi^2}+\frac y{2\pi^2}.
+\] 在 \(\mathcal J(g)<1\) 分支使用 \(r<4/3\)，得到 \[
+ \left(1+\frac1{6\pi^2}+\frac y{2\pi^2}\right)(\mathcal J+d)
+ \ge\frac{4c_{8,\mathrm{raw}}}{27},
+\] 从而 \[
+ \boxed{\mathcal J+d\ge\frac{c}{1+y}.}
+\tag{1.9}
+\] 对话中另行记录的直接补充，是令 \(\nu=(-a^2)_+/A\)，直接使用 \(b\le\nu/(2\pi^2)\)，得到 \[
+ \boxed{\mathcal J+d\ge
+ \frac{c_*}{1+\nu/(2\pi^2)},\qquad
+ c_*=\min\{1,4c_{8,\mathrm{raw}}/27\}.}
+\tag{1.10}
+\] 式(1.9)记录相对拓扑短缺，式(1.10)记录本参数证明的负类平方成本；不主张任一依赖最优。只有右端严格大于 \(d\)，才有单独的正 \(\mathcal J\)-gap。
+
+\section{I40/I41 与有限密度端点：作为明确前置保留}\label{v1-i40i41-ux4e0eux6709ux9650ux5bc6ux5ea6ux7aefux70b9ux4f5cux4e3aux660eux786eux524dux7f6eux4fddux7559}
+
+继承的精细强制为 \[
+ \Sigma=S-32\pi^2p,\quad \Pi=P+D_2,\quad Y=(T_+-a^2)_+,
+\] \[
+ \boxed{\Sigma,\ (p-T_+)_+\le C\{\Pi+\sqrt{\Pi Y}\}.}
+\tag{1.11}
+\] 它的核心机制是实际场选定相容曲率模型，消去不小背景的作用，再用 Hessian、联络能量和同场弱 Bianchi 测试闭合。第八参数的 N1 与第二参数附近的精细强制是互补输出，不能彼此省略。\cite{I01,B01}
+
+\textbf{前置 FD。} 在原实际共形供给、\(p\ge A>0\)、\(a^2\ge T_+\) 下，对于每个固定有限 \(B\)，存在 \(c_{\mathrm{FD}}(B)>0\)，使 \[
+ \frac{\chi(M)}A\le B\quad\Longrightarrow\quad
+ \boxed{\kappa_\beta(g)\ge c_{\mathrm{FD}}(B)
+ \frac{(\beta-2)^2}{\beta^2}},\qquad\beta\ge2,
+\tag{1.12}
+\] \[
+ \kappa_\beta(g)=\fint|\operatorname{Ric}+g|^2+\frac{D_\beta(g)}{V_g}.
+\] FD 不预设点态曲率、直径、非塌缩或统一 Sobolev 条件，但常数允许依赖 \(B\)。本汇编第四、六卷均将 FD 作为前置，而不是通过其推论反向认证它。FD 的原始完整证明随包保留。\cite{I02}
+
+\section{FD 中可独立使用的秩一 Chern 配对引理}\label{v1-fd-ux4e2dux53efux72ecux7acbux4f7fux7528ux7684ux79e9ux4e00-chern-ux914dux5bf9ux5f15ux7406}
+
+为明确六卷的关键依赖，这里保留 FD 源稿中线丛引理的证明。设 \((M_j,g_j)\) 为闭四流形，\(K_j\) 为 Hermitian 线丛，\(F_j=-iF^{K_j}\) 为实曲率。假设 \[
+ \fint|\operatorname{Ric}_{g_j}|^2\le C_R,\qquad
+ F_j=F_{0,j}+e_j,\quad |F_{0,j}|\le C_F,\quad\|e_j\|_{2,\mathrm{av}}\to0,
+\] 以及光滑截面 \(\sigma_j\) 满足 \[
+ \fint|\nabla\sigma_j|^2\le E,
+ \qquad |\sigma_j|\to\ell>0\quad\text{于归一化 }L^2.
+\] 则源稿给出 \[
+ \boxed{\frac{c_1(K_j)^2[M_j]}{V_j}
+ =\frac1{4\pi^2V_j}\int_{M_j}F_j\wedge F_j\to0.}
+\tag{1.13}
+\] 有界模型 \(F_{0,j}\) 不要求闭合；真实曲率 \(F_j\) 是闭形式。
+
+\textbf{谱尺度选择。} 对 \(\sigma_j\) 作固定径向截断，得到 \(|s_j|\le M\)、\(\fint|\nabla s_j|^2\le E'\)，且 \(d_j=\fint(|s_j|-\ell)^2\to0\)。置 \[
+ L_j=\nabla^*\nabla,\qquad u_{j,\epsilon}=(I+\epsilon L_j)^{-1}s_j.
+\] 最大值原理和谱计算给 \[
+ |u_{j,\epsilon}|\le M,\quad
+ \fint|u_{j,\epsilon}-s_j|^2\le\epsilon E',\quad
+ \fint|\nabla u_{j,\epsilon}|^2\le E'.
+\] 若 \(K_j(\epsilon)=\fint|L_ju_{j,\epsilon}|^2\)，则 \[
+ \int_0^1K_j(\epsilon)\,d\epsilon
+ =\frac1{V_j}\sum_\nu\frac{\lambda_\nu^2}{1+\lambda_\nu}|(s_j)_\nu|^2\le E'.
+\] 取 \(d_j+\|e_j\|_2^2\le\delta_j\downarrow0\)，可在 \([\delta_j^{1/2},\delta_j^{1/4}]\) 中选 \(\epsilon_j\)，使 \[
+ \epsilon_jK_j(\epsilon_j)\le\frac{4E'}{|\log\delta_j|}\to0.
+\tag{1.14}
+\] 不需要统一谱隙。
+
+\textbf{低幅度区的二次能量。} 源稿对有界线丛截面的换指标及插值给 \[
+ \fint\bigl(|\nabla^2u_j|^2+|\nabla u_j|^4\bigr)
+ \le C(1+K_j),
+\] 其中只使用 Ricci 收缩及线丛曲率，不使用曲率导数或 Sobolev 常数。令 \(Z_j=\{|u_j|\le3\ell/4\}\)，则 \[
+ \frac{\operatorname{Vol}Z_j}{V_j}\le C\epsilon_j,
+ \qquad
+ \fint_{Z_j}|\nabla u_j|^2\le C\sqrt{\epsilon_j(1+K_j)}\to0.
+\tag{1.15}
+\]
+
+\textbf{秩一 transgression。} 置 \(a_j=|u_j|^2\)、\(j_j=\operatorname{Im}\langle u_j,\nabla u_j\rangle\)。用固定截断 \(\chi\) 定义全局光滑一形式 \[
+ \theta_j=\chi(a_j)j_j/a_j.
+\] 在线丛上有精确式 \[
+ d\theta_j=\chi(a_j)F_j+\chi'(a_j)\,da_j\wedge j_j/a_j.
+\] 由 \(dF_j=0\) 和 Stokes， \[
+ \left|\frac1{V_j}\int F_j\wedge F_j\right|
+ \le C\fint_{Z_j}|F_j|^2
+     +C\fint_{Z_j}|F_j|\,|\nabla u_j|^2.
+\] 有界模型部分由式(1.15)消失，误差部分满足 \[
+ \fint |e_j|\,|\nabla u_j|^2
+ \le C\sqrt{\delta_j(1+K_j)}\to0,
+\] 因为 \(\delta_j/\epsilon_j\le\delta_j^{1/2}\)。这证明式(1.13)。\cite{I02}
+
+在 O10 应用中还必须从实际强流与同丛辅助截面取得 \(\sigma_j=\Phi_j\wedge t(v_j)\in L_j^5\) 的上述幅度与 Dirichlet 预算。它们依赖固定密度，而实际曲率预算要求 \[
+ \frac{c_1(L_j^5)^2[M_j]}{V_j}\to\frac{25}{6\pi^2}>0.
+\] 不能因为线丛引理成立，就省略从实际系统取得 \(\sigma_j\) 的这部分分析。
+
+\section{原平衡族的变分归约与当前参照值}\label{v1-ux539fux5e73ux8861ux65cfux7684ux53d8ux5206ux5f52ux7ea6ux4e0eux5f53ux524dux53c2ux7167ux503c}
+
+原手术族为 \[
+ M_j=X_j\#k_j\overline{\mathbb{CP}}^{\,2}\#\ell_j(S^1\times S^3),
+ \quad A_j=c_1^2(X_j)>0,\quad Q_j=k_j+4\ell_j,\quad h_j=Q_j/A_j\to0,
+\] \[
+ \frac{k_j}{Q_j}\to\frac29,\qquad \frac{\ell_j}{Q_j}\to\frac7{36}.
+\] 在相应实际输入下，原稿已有 \[
+ c_1h_j\le\alpha_j\le\frac{4h_j}{1+h_j},\qquad
+ \alpha_j=4\rho_j+O(h_j^2),\quad
+ \rho_j=\frac{\inf_gP(g)}{8\pi^2A_j}.
+\tag{1.16}
+\] 当 \(\inf\mathcal E<1\) 时，式(1.4)允许对 \(\mathcal J\) 的极小化序列作 Yamabe 替换，因而 \(\inf\mathcal J=\inf\mathcal E\)。这里没有极小值取得性的假设。
+
+最新完整单元已经在其适用族上给出严格次四恢复。因此 \(4\) 只保留为标准恢复的比较值，不再作为这些同一族上必须成立的全局最优值。O10 的一般无密度目标与 O11 的匹配最优值仍然未由本汇编解决。\cite{B01,R03,R04}
+
+\begin{thebibliography}{E99}
+\small
+\bibitem[I01]{I01} 项目继承稿，\emph{单解无迹 Ricci 积分障碍与类平方短缺版}，2026-09-28。随包原件：\path{source_notes/I01_N1_Complete_Inheritance.md}。
+
+\bibitem[I02]{I02} 项目前置，\emph{O10 closes at every fixed finite Euler density}，2026-09-29；§§1--4 的命题、秩一引理和实际场应用。\path{source_notes/I02_All_Finite_Density.md}。
+
+\bibitem[R03]{R03} 本会话证明补充，\emph{统一手术端点与预定残余覆盖塔上的低成本恢复}，2026-10-07。\path{source_notes/R03_Uniform_Endpoint_and_Tower.md}。
+
+\bibitem[R04]{R04} 本会话构造补充，\emph{任意固定复双曲领口中的解析低成本单吹起构造}，2026-10-07。\path{source_notes/R04_Arbitrary_Collar_Construction.md}。
+
+\bibitem[B01]{B01} S1003A01 / S1003A02，\emph{Mathematical Synthesis}，2026-10-07 快照。记录严格便宜单元、KE 转移、背景响应与当前范围。\path{source_notes/B01_Two_Session_Synthesis.md}。
+
+\end{thebibliography}
+
+\end{document}

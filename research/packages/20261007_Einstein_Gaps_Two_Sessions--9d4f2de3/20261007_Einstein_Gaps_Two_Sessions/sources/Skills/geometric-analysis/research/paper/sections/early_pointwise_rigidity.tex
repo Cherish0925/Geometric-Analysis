@@ -1,0 +1,448 @@
+% Mathematical sources: mathematics/current/skill/research/20260912.tex,
+% lines 175--220; mathematics/current/curvature_box.md, first two sections;
+% mathematics/current/rigidity.md, Sections 1--3 (lines 8--235).
+\section{Pointwise Ricci pinching and spectral exclusion}
+\label{sec:early-pointwise-rigidity}
+
+The integral obstruction has two useful pointwise precursors.  The first
+retains the correlation between the four Ricci eigenvalues in the
+Chern--Weil density and proves strictness at its algebraic endpoint.
+The second uses the harmonic-Weyl equation to exclude a fixed spectral
+box.  Its proof also identifies an obstruction to extending the same
+scalar-multiplier strategy over the whole curvature space.
+
+\subsection{The strict ratio-three endpoint}
+
+Write $E=\Ric^\circ=\Ric-sg/4$.  Ricci tensors have their tensor norm,
+and Weyl tensors have their Hilbert--Schmidt endomorphism norm.  Thus
+\begin{equation}\label{eq:epr-cw}
+ 4\pi^2(2\chi\pm3\tau)
+ =\int_M\left(2|W^\pm|^2+\frac{s^2}{24}
+                                      -\frac{|E|^2}{2}\right)d\mu.
+\end{equation}
+For $\sigma\in\{1,-1\}$, set
+\[
+ \delta_\sigma(g)
+ =\|g^{-1}\Ric_g-\sigma I\|_{L^\infty,\mathrm{op}}.
+\]
+
+\begin{proposition}[Strictness at Ricci eigenvalue ratio three]
+\label{prop:epr-ratio-three}
+Let $M$ be a closed connected oriented four-manifold.  Suppose
+$\sigma\Ric_g$ is positive definite and, at every point,
+\begin{equation}\label{eq:epr-ratio-three}
+ \lambda_{\max}(\sigma g^{-1}\Ric_g)
+ \leq3\lambda_{\min}(\sigma g^{-1}\Ric_g).
+\end{equation}
+Then $2\chi(M)>3|\tau(M)|$.  In particular, the conclusion holds if
+$\delta_\sigma(g)\leq1/2$.
+\end{proposition}
+
+\begin{proof}
+Let $r_1,\ldots,r_4>0$ be the eigenvalues of
+$\sigma g^{-1}\Ric_g$, and put
+\[
+ a=\min_i r_i,\qquad \mathsf S=\sum_i r_i,
+ \qquad \mathsf Q=\sum_i r_i^2.
+\]
+The inequalities $a\leq r_i\leq3a$ imply
+$r_i^2\leq4ar_i-3a^2$.  Consequently
+\begin{equation}\label{eq:epr-density-endpoint}
+ \mathsf Q\leq4a\mathsf S-12a^2,\qquad
+ F:=\frac{s^2}{24}-\frac{|E|^2}{2}
+ =\frac{\mathsf S^2-3\mathsf Q}{6}
+ \geq\frac{(\mathsf S-6a)^2}{6}\geq0.
+\end{equation}
+Equality $F=0$ holds precisely when the eigenvalues are a permutation
+of $(3a,a,a,a)$.  Indeed, equality requires each $r_i$ to be $a$ or
+$3a$ and their sum to be $6a$.
+
+Equation~\eqref{eq:epr-cw} first gives $2\chi\geq3|\tau|$.
+Suppose equality holds.  Then $F\equiv0$ and one Weyl half vanishes.
+The simple eigenvalue $3\sigma a$ of $g^{-1}\Ric_g$ defines a smooth
+real eigenline bundle.  On its orientation cover, of degree at most
+two, choose a smooth unit section $V$.  This nowhere-zero vector
+field makes the Euler characteristic of the cover zero; multiplicativity
+under finite covers gives $\chi(M)=0$.  The assumed equality then
+gives $\tau(M)=0$.  Applying \eqref{eq:epr-cw} to the other chirality
+shows that the remaining Weyl half also vanishes.
+
+Work on that closed cover and put $\theta=V^\flat$.  The equality
+eigenvalues give
+\[
+ \Ric=\sigma a(g+2\theta\otimes\theta),\qquad
+ s=6\sigma a,
+ \qquad
+ \mathsf P=\tfrac12(\Ric-sg/6)
+             =\sigma a\,\theta\otimes\theta,
+\]
+where $\mathsf P$ is the Schouten tensor.  Since $W=0$,
+$\mathsf P$ is Codazzi.  For $X,Y\perp V$, comparison of
+$(\nabla_X\mathsf P)(V,Y)$ and
+$(\nabla_V\mathsf P)(X,Y)$ gives
+$\langle\nabla_XV,Y\rangle=0$.  Since $V$ has unit length,
+$\nabla_XV=0$ for every $X\perp V$.
+
+With $B=\nabla_VV\perp V$, it follows that
+\begin{equation}\label{eq:epr-eigenline}
+ \nabla V=\theta\otimes B,\qquad
+ d\theta=\theta\wedge B^\flat,\qquad
+ d^*\theta=0,\qquad
+ |d\theta|^2=|\nabla\theta|^2.
+\end{equation}
+The integrated Bochner identity for this one-form is
+\[
+ \int\bigl(|d\theta|^2+|d^*\theta|^2\bigr)
+ =\int\bigl(|\nabla\theta|^2+\Ric(V,V)\bigr).
+\]
+Thus $\int\Ric(V,V)=0$, whereas $\Ric(V,V)=3\sigma a$ has a
+strict fixed sign.  This contradiction proves strictness.  Finally,
+$\delta_\sigma\leq1/2$ places the $r_i$ in $[1/2,3/2]$, which
+implies \eqref{eq:epr-ratio-three}.
+\end{proof}
+
+Hence every metric on a manifold with $2\chi\leq3|\tau|$ has
+$\delta_\sigma>1/2$.  This pointwise strict inequality for each
+metric does not assert that the infimum over all metrics is strictly
+larger than $1/2$.
+
+\begin{lemma}[The sharp Ricci-box density]
+\label{lem:epr-ricci-box}
+For $0\leq\delta\leq1/2$, the exact minimum of $F$ over Ricci
+eigenvalues satisfying $\delta_\sigma\leq\delta$ is
+\begin{equation}\label{eq:epr-box-minimum}
+ q_*(\delta)=
+ \begin{cases}
+  \dfrac23(1-\delta)^2,&0\leq\delta\leq1/3,\\[1mm]
+  \dfrac23(1+\delta)(1-2\delta),&1/3\leq\delta\leq1/2.
+ \end{cases}
+\end{equation}
+Consequently
+\begin{equation}\label{eq:epr-box-topology}
+ 4\pi^2(2\chi\pm3\tau)\geq q_*(\delta)\Vol_g(M).
+\end{equation}
+The minimum is algebraically sharp; no closed metric realizing a
+minimizing curvature pattern everywhere is asserted.
+\end{lemma}
+
+\begin{proof}
+Use $r_i\in[1-\delta,1+\delta]$ and the expression for $F$ in
+\eqref{eq:epr-density-endpoint}.  Its second derivative in each
+individual coordinate $r_i$, with the others fixed, is $-2/3$.
+Repeated minimization in one coordinate therefore places a minimum
+at a vertex of the box.  If $m$ coordinates equal $1+\delta$, then
+\[
+ F_m(\delta)=\frac23+\frac{(2m-4)\delta}{3}
+       +\left(\frac{(2m-4)^2}{6}-2\right)\delta^2.
+\]
+The five values are
+\begin{align*}
+ F_0&=\tfrac23(1-\delta)^2,
+ &F_1&=\tfrac23(1+\delta)(1-2\delta),\\
+ F_2&=\tfrac23-2\delta^2,
+ &F_3&=\tfrac23(1-\delta)(1+2\delta),\\
+ F_4&=\tfrac23(1+\delta)^2.
+\end{align*}
+Now
+\[
+ F_1-F_0=\tfrac23\delta(1-3\delta),\qquad
+ F_2-F_1=\tfrac23\delta(1-\delta),\qquad
+ F_3-F_1=\tfrac43\delta,\qquad F_4\geq F_0.
+\]
+These comparisons prove \eqref{eq:epr-box-minimum}; integration in
+\eqref{eq:epr-cw} proves \eqref{eq:epr-box-topology}.
+\end{proof}
+
+The density is positive below $\delta=1/2$, and vanishes at that
+endpoint.  Proposition~\ref{prop:epr-ratio-three} supplies the
+differential argument needed for strict topology at the endpoint.
+The number $1/2$ is the sharp algebraic nonnegativity endpoint for
+this Ricci box, not an Einstein-existence threshold.
+
+\subsection{The harmonic-Weyl equation and a spectral box}
+
+In the rest of this section we use
+$\Delta=\operatorname{tr}_g\nabla^2$, so that
+$\int f\Delta f=-\int|df|^2$.  This sign is opposite to the
+nonnegative scalar Laplacian used in some later sections.  The
+connection trace Laplacian has the same sign.  Put
+\[
+ A=W^+,\quad x=|A|^2,\quad y=\det A,\qquad
+ A_0=\operatorname{diag}(-1/6,1/12,1/12),
+ \quad x_0=1/24,\quad y_0=-1/864.
+\]
+The associated four-index Weyl tensor has squared norm $4x$.
+For $\operatorname{div}W^+=0$, the classical harmonic-Weyl formulas
+in these conventions are
+\begin{equation}\label{eq:epr-weyl-equation}
+ \Delta A=\frac{s}{2}A-6A^2+2|A|^2I,
+ \qquad
+ \frac12\Delta x=|\nabla A|^2+\frac{s}{2}x-18y.
+\end{equation}
+We use their eigenframe form as recalled in
+\href{https://arxiv.org/pdf/1903.11818}{Peng Wu, Section 2}.
+
+At $s=-4$ and $A=A_0$, the scalar reaction in the second identity is
+\begin{equation}\label{eq:epr-norm-reaction}
+ \frac{s}{2}x_0-18y_0=-\frac1{12}+\frac1{48}=-\frac1{16}.
+\end{equation}
+Also
+\begin{equation}\label{eq:epr-matrix-reaction}
+ A_0^2=-\frac1{12}A_0+\frac1{72}I,
+ \qquad -2A_0-6A_0^2+2x_0I=-\frac32A_0.
+\end{equation}
+Thus the ordinary norm identity at this algebraic spectrum calls for
+gradient energy $1/16$.  Even if one could pass its cubic term to a
+limit, it would not by itself give a contradiction.  The first-order
+Bianchi equations exclude an exact constant-spectrum metric, but
+small averaged spectral error alone does not remove possible
+derivative energy.
+
+\begin{proposition}[An explicit pointwise spectral exclusion]
+\label{prop:epr-spectral-box}
+Let $M$ be a closed oriented four-manifold with $s=-4$ and
+$\operatorname{div}W^+=0$.  There is a point where at least one
+ordered eigenvalue of $W^+$ differs from
+$(-1/6,1/12,1/12)$ by more than $10^{-4}$.  In particular, this
+holds for every closed Einstein four-manifold with $\Ric=-g$.
+No volume, diameter, injectivity-radius or topological hypothesis
+is required.
+\end{proposition}
+
+\begin{proof}
+Work first on the open dense set where eigenvalue multiplicities
+are locally constant.  Let $\lambda_1\leq\lambda_2\leq\lambda_3$
+be the ordered eigenvalues.  In a local self-dual eigenframe
+$\omega_i$ with $|\omega_i|^2=2$, write the connection one-forms
+as $a,b,c$ with the harmonic-Weyl convention, and set
+\[
+ X=(\lambda_1-\lambda_2)\iota_{a^\sharp}\omega_3,\quad
+ Y=(\lambda_2-\lambda_3)\iota_{b^\sharp}\omega_1,\quad
+ Z=(\lambda_3-\lambda_1)\iota_{c^\sharp}\omega_2.
+\]
+Here $X,Y,Z$ are one-forms; the musical isomorphism identifies them
+with the corresponding gradient vectors.  The eigenframe equations
+give
+\begin{equation}\label{eq:epr-first-jets}
+ d\lambda_1=-X+Z,\qquad
+ d\lambda_2=X-Y,\qquad
+ d\lambda_3=Y-Z,
+\end{equation}
+and
+\begin{align}
+ \Delta x={}&8(|X|^2+|Y|^2+|Z|^2)
+ -4(\langle X,Y\rangle+\langle X,Z\rangle+\langle Y,Z\rangle)
+ +sx-36y,\label{eq:epr-delta-x}\\
+ \Delta y={}&-4\lambda_3|X|^2-4\lambda_1|Y|^2-4\lambda_2|Z|^2
+ -4\lambda_2\langle X,Y\rangle-4\lambda_1\langle X,Z\rangle
+ \nonumber\\
+ &\hspace{18mm}-4\lambda_3\langle Y,Z\rangle
+ +\frac32sy-x^2.\label{eq:epr-delta-y}
+\end{align}
+Choose the smooth invariant polynomial
+\begin{equation}\label{eq:epr-polynomial}
+ f(x,y)=x+36y+24(x-1/24)^2,
+ \qquad a_0(x)=f_x=1+48(x-1/24).
+\end{equation}
+For the following calculation put
+$p=\lambda_1-\lambda_2$, $q=\lambda_2-\lambda_3$,
+and $r=\lambda_3-\lambda_1$.  Then
+\[
+ dx=2(pX+qY+rZ).
+\]
+At $s=-4$, equations \eqref{eq:epr-delta-x}--\eqref{eq:epr-delta-y}
+and the chain rule yield
+\begin{equation}\label{eq:epr-polynomial-laplacian}
+ \Delta f=\sum_{i,j=1}^3M_{ij}\langle V_i,V_j\rangle
+                       +\mathcal P(x,y),\qquad
+ (V_1,V_2,V_3)=(X,Y,Z),
+\end{equation}
+where $M$ is symmetric and
+\begin{align*}
+ M_{11}&=8a_0-144\lambda_3+192p^2,
+ &M_{22}&=8a_0-144\lambda_1+192q^2,\\
+ M_{33}&=8a_0-144\lambda_2+192r^2,
+ &M_{12}&=-2a_0-72\lambda_2+192pq,\\
+ M_{13}&=-2a_0-72\lambda_1+192pr,
+ &M_{23}&=-2a_0-72\lambda_3+192qr,
+\end{align*}
+and
+\begin{equation}\label{eq:epr-polynomial-reaction}
+ \mathcal P=(-4x-36y)a_0-216y-36x^2.
+\end{equation}
+At the target,
+\begin{equation}\label{eq:epr-target-matrix}
+ M_0=\begin{pmatrix}8&-8&-2\\-8&32&-8\\-2&-8&8\end{pmatrix},
+ \qquad \mathcal P_0=\frac1{16}.
+\end{equation}
+The leading principal minors of $M_0-I$ are $7,153,243$, so
+$M_0>I$.
+
+Suppose every eigenvalue stays within
+$\varepsilon=10^{-4}$ of its target.  Expansion of $x$ and $y$ gives
+\begin{align*}
+ |x-x_0|&\leq\tfrac23\varepsilon+3\varepsilon^2
+                                      \leq\varepsilon,\\
+ |y-y_0|&\leq\tfrac5{144}\varepsilon
+              +\tfrac13\varepsilon^2+\varepsilon^3
+                                      \leq\varepsilon/20.
+\end{align*}
+Hence $|a_0-1|\leq48\varepsilon$.
+Each diagonal entry of $M-M_0$ is bounded in absolute value by
+$720\varepsilon+768\varepsilon^2\leq721\varepsilon$;
+each off-diagonal entry is bounded by
+$360\varepsilon+768\varepsilon^2\leq361\varepsilon$.
+The maximum absolute row sum therefore gives
+\begin{equation}\label{eq:epr-matrix-margin}
+ \|M-M_0\|_{\mathrm{op}}\leq1443\varepsilon<\frac12,
+ \qquad M\geq\frac12I.
+\end{equation}
+Moreover
+\[
+ |-4x-36y+1/8|\leq\tfrac{29}{5}\varepsilon,
+ \qquad |a_0|<2,
+\]
+and expansion of \eqref{eq:epr-polynomial-reaction} yields
+\[
+ |\mathcal P-\mathcal P_0|
+ \leq\tfrac{157}{5}\varepsilon+36\varepsilon^2
+ <32\varepsilon.
+\]
+Thus $\mathcal P>1/32$, and
+\begin{equation}\label{eq:epr-positive-laplacian}
+ \Delta f\geq\tfrac12(|X|^2+|Y|^2+|Z|^2)+\tfrac1{32}
+ \geq\tfrac1{32}.
+\end{equation}
+Although the local eigenframes need not extend across multiplicity
+changes, $f$ is a globally smooth polynomial in $W^+$.
+The final inequality extends by continuity from the dense
+multiplicity strata.  Its integral contradicts $\int_M\Delta f=0$.
+\end{proof}
+
+This proposition excludes uniform closeness to a spectral box.  Small
+averaged density need not place every point in that box.  Outside it,
+the derivative quadratic form of this polynomial need not be positive;
+the polynomial also has fourth-order curvature growth.  These features
+matter when passing from pointwise exclusion to an integral theorem.
+
+\subsection{An obstruction to global invariant scalar multipliers}
+
+For a $C^2$ function $f$ of a trace-free symmetric matrix, write the
+chain rule for the harmonic-Weyl equation as
+\[
+ \Delta(f(A))=\mathcal Q_f(\nabla A)
+              +\mathcal P_f(A),\qquad
+ \mathcal P_f(A)=Df_A\left[\frac{s}{2}A-6A^2+2|A|^2I\right].
+\]
+The derivative term is restricted to first jets satisfying the
+algebraic first-order harmonic-Weyl relations.  Positivity on all such
+jets is stronger than positivity along one prescribed metric.
+
+\begin{proposition}[Global scalar-multiplier obstruction]
+\label{prop:epr-global-multiplier}
+Let $f$ be a $C^2$, orthogonally invariant real function on the entire
+vector space of trace-free symmetric $3\times3$ matrices.  If
+$\mathcal Q_f$ is nonnegative on every algebraically admissible
+harmonic-Weyl first jet, then, for scalar curvature $s=-4$,
+\[
+ \mathcal P_f(A_0)\leq0.
+\]
+\end{proposition}
+
+\begin{proof}
+Restrict to the negative repeated-eigenvalue ray
+\[
+ A(u)=\frac{u}{\sqrt6}\operatorname{diag}(-2,1,1),
+ \qquad u>0,\qquad \psi(u)=f(A(u)).
+\]
+At this spectrum use the admissible first jet $Y=0$, $Z=-X$.
+Equation~\eqref{eq:epr-first-jets} gives
+\[
+ d\lambda_1=-2X,\qquad d\lambda_2=X,\qquad d\lambda_3=X,
+ \qquad |du|^2=6|X|^2,
+ \qquad |\nabla A|^2=10|X|^2.
+\]
+The last equality also follows by comparing
+\eqref{eq:epr-delta-x} with \eqref{eq:epr-weyl-equation}.
+The derivative of $A$ has a radial part and a part tangent to its
+orthogonal-conjugation orbit.  Isotropy at the repeated eigenvalue
+makes $Df$ radial.  On the ray and its conjugation orbits,
+$f(A)-\psi(|A|)$ and its first derivative vanish; its Hessian
+therefore vanishes on the chosen tangent jet.  The derivative term
+equals that of the radial function $\psi(|A|)$:
+\begin{align}
+ \mathcal Q_f
+ &=\psi''(u)|du|^2
+       +\frac{\psi'(u)}{u}\bigl(|\nabla A|^2-|du|^2\bigr)
+       \nonumber\\
+ &=\left(\psi''(u)+\frac{2}{3u}\psi'(u)\right)|du|^2.
+ \label{eq:epr-radial-derivative}
+\end{align}
+Nonnegativity for this jet at every $u>0$ implies
+\begin{equation}\label{eq:epr-monotone-multiplier}
+ (u^{2/3}\psi'(u))'\geq0.
+\end{equation}
+Smooth invariance at the zero matrix forces $Df_0=0$, since the
+only invariant linear functional on trace-free symmetric matrices
+is zero.  Thus $\psi'(u)=O(u)$ as $u\downarrow0$.
+Integrating \eqref{eq:epr-monotone-multiplier} from zero gives
+$\psi'(u)\geq0$ for all $u>0$.
+
+At $u_0=1/\sqrt{24}$, equation~\eqref{eq:epr-matrix-reaction}
+gives
+\[
+ \mathcal P_f(A_0)=-\frac32u_0\psi'(u_0)\leq0.
+\]
+This proves the assertion using only admissible algebraic first
+jets; it does not assume that every such jet extends to a closed
+Einstein metric.
+\end{proof}
+
+The obstruction allows arbitrary nonhomogeneous growth of $f$.
+For the successful local polynomial \eqref{eq:epr-polynomial},
+the coefficient in \eqref{eq:epr-radial-derivative} tends to
+$-10/3$ as $u\downarrow0$.  A cutoff does not remove the derivative
+cost created by this loss of sign.
+
+\begin{corollary}[The local homogeneous obstruction]
+\label{cor:epr-homogeneous-multiplier}
+No $C^2$, orthogonally invariant, degree-two homogeneous function
+near the nonzero target orbit can have both a nonnegative full
+derivative quadratic form on all admissible harmonic-Weyl first
+jets and a positive algebraic reaction at $A_0$ when $s=-4$.
+\end{corollary}
+
+\begin{proof}
+Write the invariant homogeneous function locally as
+\[
+ f(A)=x\varphi(z),\qquad z=\frac{y}{x^{3/2}},
+ \qquad z_0=-\frac1{3\sqrt6}.
+\]
+Euler homogeneity and \eqref{eq:epr-matrix-reaction} give
+\begin{equation}\label{eq:epr-homogeneous-reaction}
+ \mathcal P_f(A_0)=-3f(A_0)=-\frac18\varphi(z_0).
+\end{equation}
+Use again $Y=0$, $Z=-X$.  Its radial eigenvalue derivatives are
+$(-2X,X,X)$, while the eigenframe connection supplies the
+orbit-tangent part of $\nabla A$.  Hence
+\[
+ |d|A||^2=6|X|^2,\qquad |\nabla A|^2=10|X|^2.
+\]
+At the repeated eigenvalue, the first matrix derivative of $z$
+vanishes, and its Hessian annihilates this radial-and-orbit tangent
+jet.  The derivative term consequently is
+\begin{equation}\label{eq:epr-homogeneous-derivative}
+ \mathcal Q_f=\frac{10}{3}\varphi(z_0)|d|A||^2
+                         =20\varphi(z_0)|X|^2.
+\end{equation}
+Its nonnegativity requires $\varphi(z_0)\geq0$, whereas
+\eqref{eq:epr-homogeneous-reaction} is positive only if
+$\varphi(z_0)<0$.  These conditions are incompatible.
+\end{proof}
+
+The corollary uses homogeneity near the target instead of regularity
+at the zero matrix.  It leaves open nonhomogeneous local, singular,
+nonlocal and coupled multipliers.  Inverse powers of $|A|$, for
+example, alter the radial sign calculation but introduce a zero-set
+problem.  None of these pointwise conclusions supplies the
+unrestricted averaged weak zero-Weyl endpoint.

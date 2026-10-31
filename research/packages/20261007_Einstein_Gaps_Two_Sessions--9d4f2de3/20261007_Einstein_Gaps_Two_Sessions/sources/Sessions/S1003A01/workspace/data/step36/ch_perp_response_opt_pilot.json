@@ -1,0 +1,56 @@
+{
+ "record": "data/perp_area/x00.03_X128_d20.json",
+ "outer": "ch",
+ "threshold": 0.995670030355131,
+ "nlog2": 7,
+ "seeds": [
+  0
+ ],
+ "cap_einstein_max_residual": [
+  2.6645352591003757e-15,
+  8.881784197001252e-16
+ ],
+ "records": [
+  {
+   "a": 0.5,
+   "b": 1.5,
+   "xa": 0.042248594977202,
+   "coeff": [
+    -0.12897373290220945,
+    0.020891474662112844,
+    -0.0001476162572065952
+   ],
+   "seed": 0,
+   "n": 128,
+   "D_over_8pi2": 1.4700575644632305,
+   "P_over_8pi2": 1.1721377782026472,
+   "margin_vs_certified": 0.47438753410809953,
+   "core_D_over_8pi2": 0.45945398335631404,
+   "annulus_D_over_8pi2": 1.0106035811069165,
+   "volume": 31.462737605415597,
+   "delta_volume": -0.5175722747294564,
+   "scalar_integral": -134.40101216811198,
+   "delta_scalar_integral": -6.47977264753176,
+   "scalar_square": 665.8955095350165,
+   "delta_scalar_square": 154.2105514526956,
+   "scalar_residual_square": 23.52280346919244,
+   "ledger_a_over_8pi2": 0.0023448726670035843,
+   "ledger_b_over_8pi2": 1.5023448726670037,
+   "ledger_b_minus_a_over_8pi2": 1.5,
+   "min_metric_eigenvalue": 0.4085414639440928,
+   "optimization": {
+    "success": false,
+    "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+    "nit": 12,
+    "fun": 1.4700575644632314,
+    "jac": [
+     1.5283447121761107e-07,
+     5.516341355371601e-07,
+     -6.789802586401519e-07
+    ]
+   }
+  }
+ ],
+ "seconds": 137.96271324157715,
+ "status": "floating QMC construction experiment; topology and bolt are inherited from certified cell; ledger a,b derived, not independently integrated"
+}

@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/data/qiushi/qiushi_engine_v08/users/user2/Sessions/S1003A01/workspace/scripts/neutral_flux_bolt.py", line 118, in <module>
+    main()
+  File "/data/qiushi/qiushi_engine_v08/users/user2/Sessions/S1003A01/workspace/scripts/neutral_flux_bolt.py", line 111, in main
+    rec = json.loads(Path(p).read_text()); rec['_path'] = p
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/data/qiushi/runtime/toolchains/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/qiushi/runtime/toolchains/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../data/perp_area/x00.03_X8_J_d8.json'

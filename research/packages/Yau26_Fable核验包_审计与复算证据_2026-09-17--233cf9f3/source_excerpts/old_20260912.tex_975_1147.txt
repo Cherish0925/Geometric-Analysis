@@ -1,0 +1,173 @@
+0975: \]
+0976: 达到：主残差矩阵
+0977: \(-3Q-\sigma e/24\) 的算子范数恰为 \(1/8\)，
+0978: 选择长度 \(\sqrt L\) 的两端缓变平台使
+0979: \(\eta'=L^{-1}+O(L^{-3/2})\)。
+0980: 
+0981: 若标量曲率精确为 \(4\sigma\)，残差 \(T=\Ric-\sigma g\) 精确无迹、无散度。
+0982: 取 \(\varphi=r^{-2}\)，利用
+0983: \[
+0984: r^{-4}(e-4P_r)=-\tfrac12\operatorname{Hess}_e(r^{-2}),\qquad
+0985: Q-\frac{\sigma}{144}(e-4P_r)-\frac{\sigma}{48}e
+0986: =-\frac{\sigma}{12}P_J
+0987: \]
+0988: 消去迹与 Hessian 测试项，得到更强的
+0989: \[
+0990: \liminf L\delta_\sigma(g)\ge\frac16 .
+0991: \]
+0992: 纯 Weyl 插值达到此首项。非线性及一阶端点误差的稳健版本分母为
+0993: \(v_\Gamma L/12+O(1+BR^2)\)，分子为
+0994: \(v_\Gamma/72-O(\epsilon_-+\epsilon_++(B^2+B)R^2)\)。
+0995: 以 EH 而非欧氏度量作背景时，仅新增 \(O((a/b)^4)\) 误差。改变内端其余 Weyl 分量而保持
+0996: \(\mathcal R_{\mathrm{in},+}\xi=0\)，不会消去该测试通量：球面矩阵平均保证与固定 \(K\) 的配对仍为 \(I_K\)。
+0997: 
+0998: 在 \(U(2)\) 与两极反射不变的足球双消解中，径向公式
+0999: \[
+1000: v'(t)=J_a(t)^{-1}\int_0^tJ_a(s)\Delta v(s)\,ds
+1001: \]
+1002: 直接给无最小尺度损失的 Hessian 界。取
+1003: \(T_a=|\log a|,\ b=aT_a,\ R=T_a^{-1}\)，则
+1004: \(L/T_a\to1\)、标量源为 \(O(T_a^{-2})\)。
+1005: 常标量小解的 Hessian 亦为 \(O(T_a^{-2})\)，从而该明确模型满足
+1006: \[
+1007: s_{\widehat g_a}=4,\qquad
+1008: |\log a|\,\delta_+(\widehat g_a)\longrightarrow\frac16 .
+1009: \]
+1010: 无常标量约束的对应构造则为 \(1/8\)。这两个常数衡量指定退化方案的效率；误差本身趋零，绝非原题的普遍正间隙。一般无核 \(A_1\) 情形还可通过固定权重和固定幂次族的对角选择达到 \(1/6\)，不需要令端点逆的常数一致。
+1011: 
+1012: \section{临界导数能量：三阶可小，四阶不自动小}
+1013: 对旧纯 Weyl 对数构造，残差 \(T_a=\Ric(g_a)-\sigma g_a\) 满足
+1014: \[
+1015: \|\nabla^kT_a\|_{L^{4/k}}\le
+1016: C_k(L^{k/4-1}+a+R^2)\to0,\qquad k=1,2,3.
+1017: \]
+1018: 关键积分为
+1019: \(\int L^{-4/k}r^{-4}r^3dr\)，其 \(k/4\) 次幂恰为 \(L^{k/4-1}\)；核与普通截断部分按物理尺度计算。
+1020: 于是完整 \(W^{1,4},W^{2,2},W^{3,4/3}\) 范数均趋零，仍无 Ricci 导数最大范数控制。
+1021: 
+1022: 若至少一处 \(K\ne0\)，固定截断 \(\psi\) 下四阶有精确下界
+1023: \[
+1024: \int_{\rm log\ annulus}|\nabla^4T_a|\,dV
+1025: \longrightarrow
+1026: 3\!\left(\int_0^1|\psi'|\right)
+1027: \int_{S^3/\{\pm1\}}\left|D^4(K/r^2)\right|_{r=1}\,d\omega>0 .
+1028: \]
+1029: 所有导数落在截断系数上的额外项多出 \(L^{-1}\)，非线性与连接差积分为 \(o(1)\)。
+1030: 若角张量的四阶导数为零，则其零次齐次分量为常数，正规条件
+1031: \(K(x,\cdot)=0\) 又迫使 \(K=0\)，矛盾。
+1032: 合适 \(4/3<\mu<2\) 的常标量修正不会消除该下界。
+1033: 该结论针对所分析的构造，并非所有近 Einstein 序列的四阶障碍。
+1034: 
+1035: \section{标准光滑模型：几何构造与拓扑识别须分别证明}
+1036: \label{FND:standardmodels}
+1037: 
+1038: \begin{proposition}[球面悬挂消解的标准光滑类型]
+1039: 令 \(r\ge1\)、\(p=r+1\)，\(\Gamma=\mathbb Z_p\subset SU(2)\) 作用为
+1040: \((z_1,z_2)\mapsto(\zeta z_1,\zeta^{-1}z_2)\)。它在
+1041: \(S^4\subset\mathbb R\oplus\mathbb C^2\) 上的商只有两个 \(A_r\) 点。
+1042: 在南北两极采用反射 \((t,z)\mapsto(-t,z)\) 兼容的标准 ALE 标记，
+1043: 所得光滑流形为
+1044: \[
+1045: M_r\cong\#r(S^2\times S^2).
+1046: \]
+1047: 以本章 ADE 延拓及反射不变的标量修正为输入，构造稿给出
+1048: \[
+1049: \Ric_{g_{r,a}}-g_{r,a}\longrightarrow0\quad\hbox{于最大算子范数},
+1050: \qquad s_{g_{r,a}}=4,
+1051: \]
+1052: \[
+1053: (M_r,g_{r,a})\longrightarrow S^4/\mathbb Z_{r+1},\qquad
+1054: \operatorname{Vol}(M_r,g_{r,a})\longrightarrow\frac{24\pi^2}{r+1}.
+1055: \]
+1056: 几何断言继承前述构造稿的待独立审查状态；拓扑识别不依赖该分析构造。
+1057: \end{proposition}
+1058: \begin{proof}
+1059: 设 \(W\) 是 framing 全为 \(-2\) 的 \(A_r\) 链 plumbing。
+1060: 去掉两个锥邻域后的外部是 \((S^3/\Gamma)\times I\)。反射在截面标记中为恒等，
+1061: 故消解是标准双倍 \(D(W)=W\cup_{\mathrm{id}}(-W)\)，没有任意 lens space 粘接映射。
+1062: \(W\) 单连通、spin，\(D(W)\) 是 \(W\times I\) 的光滑化边界，因而也单连通、spin，且
+1063: \(b_2(D(W))=2r\)、\(\tau(D(W))=0\)。标准 toric 作用沿恒等边界粘接延拓。
+1064: Orlik--Raymond 的\emph{光滑}环面作用分类遂给上述微分同胚；仅用交叉形式分类不足以得到此结论。\footnote{P. Orlik, F. Raymond, \emph{Actions of the torus on 4-manifolds. I}, \url{https://webhomes.maths.ed.ac.uk/~v1ranick/papers/orlikraymond1.pdf}，\S5。}
+1065: 几何结论由两个兼容 ALE 核和偶反射标量逆得到；归一化 \(\Ric=g\) 的圆球体积为 \(24\pi^2\)。
+1066: \end{proof}
+1067: 
+1068: 每个固定 \(r\) 的常数可以依赖 \(r\)。对角选择 \(r_j\to\infty\)、再取足够小的 \(a_j\)，仍可令
+1069: \[
+1070: \delta_+(g_{r_j,a_j})\le j^{-1},\qquad b_2(M_{r_j})\to\infty,
+1071: \qquad\operatorname{Vol}(g_{r_j,a_j})\to0.
+1072: \]
+1073: Myers 定理同时给统一直径上界。这一条件性后果说明，纯正 Ricci 近似条件不能在这条构造成立时再提供统一体积下界或 \(b_2\) 上界；它并未排除这些流形上的其他 Einstein 度量。
+1074: 
+1075: 另一个固定输入是
+1076: \(\mathcal O=(S^2\times S^2)/\langle(r_\pi,r_\pi)\rangle\)，
+1077: 其中每个球面的曲率为 \(1\)，\(r_\pi\) 是旋转 \(\pi\)。它有四个 \(A_1\) 点，体积 \(8\pi^2\)。
+1078: 有效环面格为
+1079: \[
+1080: L=\mathbb Z^2+\mathbb Z(1/2,1/2),\quad
+1081: u=(1,0),\ v=(0,1),\ p=(1/2,1/2),\ m=(1/2,-1/2).
+1082: \]
+1083: 每个角的负、正 EH 填入分别插入特征直线 \((a+b)/2\)、\((a-b)/2\)，
+1084: 相邻格行列式绝对值均为 \(1\)，所以两种方向均允许标准环面作用延拓。
+1085: 全负方向的新直线依次为 \(p,m,p,m\)；翻转一个核交换该处 \(p,m\)。
+1086: 对八边形 quasitoric 流形，\(w_2=0\) 当且仅当存在
+1087: \(\ell:L\to\mathbb F_2\)，对所有特征向量取值 \(1\)。
+1088: 由于 \(m=u-p\)，这等价于新直线全为 \(p\) 或全为 \(m\)，即恰在两个相对角翻转。
+1089: 这是 Davis--Januszkiewicz 上同调公式的直接应用。\footnote{M. Davis, T. Januszkiewicz, \emph{Convex polytopes, Coxeter orbifolds and torus actions}, \url{https://people.math.osu.edu/davis.12/old_papers/DJ_toric.dmj.pdf}，Corollary 3.9、Theorem 4.14、Corollary 6.8。}
+1090: 令 \(k\) 为正 EH 核数；\(\chi=8\)、\(\tau=2k-4\)，结合光滑环面分类得到
+1091: \[
+1092: \begin{array}{c|c}
+1093: \text{选择}&\text{有向微分同胚类型}\\ \hline
+1094: k=0&\mathbb{CP}^2\#5\overline{\mathbb{CP}}{}^2\\
+1095: k=1&2\mathbb{CP}^2\#4\overline{\mathbb{CP}}{}^2\\
+1096: k=2\text{，相邻}&3\mathbb{CP}^2\#3\overline{\mathbb{CP}}{}^2\\
+1097: k=2\text{，相对}&\#3(S^2\times S^2)\\
+1098: k=3&4\mathbb{CP}^2\#2\overline{\mathbb{CP}}{}^2\\
+1099: k=4&5\mathbb{CP}^2\#\overline{\mathbb{CP}}{}^2.
+1100: \end{array}
+1101: \]
+1102: 在给定定向分支内标准正交粘接相差 \(SO(4)\) 中的路径，边界同痕延拓到领圈，故不会改变这些光滑类型。
+1103: 这不涉及任意抽象边界微分同胚。上述模型继承 \(A_1\) 构造稿的近 Einstein 结论，
+1104: 但没有相应的全局 Einstein 不存在性证书。
+1105: 
+1106: 还可对来源作一项独立筛选。若正 Kähler--Einstein 轨形只有 \(N\) 个 \(A_1\) 点，
+1107: 最小复消解为 \(\mathbb{CP}^2\#m\overline{\mathbb{CP}}{}^2\)、\(0\le m\le8\)，则
+1108: \[
+1109: c_1^2=9-m,\qquad c_2^{\mathrm{orb}}=m+3-\frac32N,
+1110: \qquad3c_2^{\mathrm{orb}}-c_1^2
+1111: =\frac3{8\pi^2}\int|W^-|^2\ge0.
+1112: \]
+1113: 因此 \(N\le8m/9\le m-1\)（存在奇点时）。任意翻转 \(k\le N\) 个核后仍有
+1114: \(b^-=m-k\ge1\)，所以这个来源不能产生正定交叉形式的新模型。
+1115: 若最小消解为 \(S^2\times S^2\)，同式给 \(N=0\)。
+1116: 这是 Chern--Weil 公式的推论，范围限于这里明确假设的正 KE 来源。
+1117: 
+1118: \section{某条修正路线无解，与流形无解是不同结论}
+1119: \label{FND:routeobstructions}
+1120: 
+1121: \begin{proposition}[保留球面开集的共形修正不可能 Einstein 化]
+1122: 设 \(M^4\) 闭、连通、单连通，\(b_2(M)>0\)，而 \(g\) 在某个非空开集 \(U\) 上局部共形平坦。
+1123: 则不存在全局 Einstein 度量 \(h\)，使 \(h|_U\) 与 \(g|_U\) 共形。
+1124: 特别地，\([g]\) 不含任何符号的 Einstein 度量。
+1125: \end{proposition}
+1126: \begin{proof}
+1127: 共形不变性给 \(W_h|_U=0\)。Einstein 度量的调和坐标实解析性使 \(W_h\equiv0\)，
+1128: 故 \(h\) 是常截面曲率度量；闭且单连通迫使其为圆球，与 \(b_2>0\) 矛盾。\footnote{D. DeTurck, J. Kazdan, \emph{Some regularity theorems in Riemannian geometry}, Theorem 5.2，\url{https://www.numdam.org/article/ASENS_1981_4_14_3_249_0.pdf}。}
+1129: \end{proof}
+1130: 球面悬挂构造保留一个圆球开集，任意后续共形常标量修正不改变此排除。
+1131: \(r=1\) 时底层 \(S^2\times S^2\) 明明承载乘积 Einstein 度量，
+1132: 说明不能把共形类内无解升级为所有度量无解。
+1133: 
+1134: Huang--Ozuch 的固定 Ricci 常数四维球面／双曲轨形 GH 隔离定理还给另一种局部排除。\footnote{Y. Huang, T. Ozuch, \emph{Regularity of Einstein 5-manifolds via 4-dimensional gap theorems}, Theorem 1.1，\url{https://arxiv.org/html/2512.21317v2}。}
+1135: 对每个固定 \(p\ge2\)，存在 \(\eta_p>0\)，使任意光滑 \(\Ric_h=h\) 的四维流形 \((N,h)\) 满足
+1136: \(d_{GH}((N,h),S^4/\mathbb Z_p)\ge\eta_p\)。
+1137: 因此对上述趋于该轨形的构造，当 \(a\) 足够小时，
+1138: \[
+1139: \inf_{(N,h):\Ric_h=h}d_{GH}((M_{p-1},g_a),(N,h))\ge\eta_p/2.
+1140: \]
+1141: 若 \(e^{-t}g_a\le\phi^*h\le e^tg_a\) 且 \(\operatorname{diam}(g_a)\le D\)，
+1142: 恒等对应关系给 \(d_{GH}\le\tfrac12(e^{t/2}-1)D\)，于是
+1143: \[
+1144: t\ge2\log(1+\eta_p/D).
+1145: \]
+1146: 常数依赖固定轨形；这一结论固定归一化正 Einstein 常数，并不排除远处或其他尺度的 Einstein 度量。
+1147: 

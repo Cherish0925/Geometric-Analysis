@@ -1,0 +1,323 @@
+% !TeX program = pdflatex
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,mathrsfs,microtype}
+\usepackage[margin=23mm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\setlength{\emergencystretch}{3em}
+\allowdisplaybreaks[2]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diver}{\operatorname{div}}
+\newcommand{\Met}{\operatorname{Met}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\numberwithin{equation}{section}
+\title{A genuine descent direction on the harmonic-alignment branch\\[3pt]
+\large Trace-free Ricci criticality and almost-K\"ahler equality geometry}
+\author{Qiushi research continuation}
+\date{8 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study the unrestricted functional $P(g)=\int|\Ric_g^\circ|^2$ on closed
+four-manifolds. For a constant-scalar almost-K\"ahler metric with
+$J$-invariant Ricci tensor, we derive the exact first variation
+$DP_g[\Ric_g^\circ]=-sP(g)/2$. Thus every non-Einstein member with
+$s\ne0$ has an explicit volume-preserving descending path, without a
+K\"ahler, symmetry, period, or spectral assumption. Applied to the
+harmonic-flux equality theorem in the supplied October 8 manuscript,
+this excludes its entire non-Einstein equality branch from being a
+smooth global $P$-minimizer. A related identity retains the amplitude
+correlation in the more general harmonic-product case. These results
+provide an additional obstruction to proposed minimizers; they do not
+establish smooth attainment on the Godeaux blowup or solve the general
+non-Bach-flat minimizer problem.
+\end{abstract}
+
+\section{Functional and conventions}
+Let $(M,g)$ be a smooth closed connected oriented four-manifold and put
+\[
+ Z=\Ric-\frac{s}{4}g,\qquad P(g)=\int_M|Z|^2\,dV_g.
+\]
+Two-forms have the form norm, so $|e^{12}+e^{34}|^2=2$; they are
+identified with skew endomorphisms when composed. Weyl curvature is an
+endomorphism of $\Lambda^2$. Write
+\[
+ \mathscr R(H,H)=R_{ikjl}H^{ij}H^{kl},\qquad
+ R_{ikjl}g^{kl}=\Ric_{ij},
+\]
+with positive sectional curvature convention. The rough Laplacian
+$\nabla^*\nabla$ and scalar Laplacian $\Delta_0=d^*d$ are nonnegative.
+A constant-scalar metric has $\diver Z=0$ by contracted Bianchi.
+
+The classical gradients of $\int|\Ric|^2$ and $\int s^2$ in
+\cite[(2.5), (2.9)]{GV} give, at constant scalar curvature,
+\begin{equation}\label{eq:gradient}
+ \mathcal G_P=\nabla^*\nabla Z-2\mathscr R(Z)+\tfrac12|Z|^2g.
+\end{equation}
+Here $DP_g[H]=\int\ip{\mathcal G_P}{H}\,dV_g$. Consequently
+\begin{equation}\label{eq:variation}
+ DP_g[Z]=\int_M\bigl(|\nabla Z|^2-2\mathscr R(Z,Z)\bigr)\,dV_g.
+\end{equation}
+The direction $Z$ is fixed at the base metric for this derivative.
+No differentiation of a choice of a field along a metric family is used.
+The conformal trace equation for a closed $P$-critical metric is
+$\Delta_0s=0$, so every such metric has constant scalar curvature.
+Scale invariance makes criticality on unit-volume metrics equivalent
+to unrestricted criticality.
+
+\section{The opposite-duality product identity}
+
+\begin{lemma}\label{lem:algebra}
+Let $\phi\in\Lambda^+$, $\psi\in\Lambda^-$, and $H=\phi\circ\psi$.
+Then $H$ is symmetric and trace-free and
+\begin{align}
+ |H|^2&=|\phi|^2|\psi|^2,\label{eq:isometry}\\
+ \mathscr R(H,H)&=
+ |\psi|^2\ip{W^+\phi}{\phi}
+ +|\phi|^2\ip{W^-\psi}{\psi}
+ -\frac{s}{12}|\phi|^2|\psi|^2.\label{eq:curvature}
+\end{align}
+For smooth forms put $f=|\phi|^2$ and $h=|\psi|^2$. Then
+\begin{equation}\label{eq:derivatives}
+ |\nabla H|^2=h|\nabla\phi|^2+f|\nabla\psi|^2
+                  +\tfrac12\ip{df}{dh}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Opposite-duality skew endomorphisms commute. Their composition realizes
+an isometry $\Lambda^+\otimes\Lambda^-\simeq S^2_0$ with these norms.
+This proves \eqref{eq:isometry} and, after differentiating the product,
+\eqref{eq:derivatives}. Explicitly the cross term is
+$2\sum_i\ip{\nabla_i\phi}{\phi}\ip{\psi}{\nabla_i\psi}$.
+
+At a point with both forms nonzero, choose an oriented orthonormal frame
+such that $\phi=a(e^{12}+e^{34})$ and
+$\psi=b(e^{12}-e^{34})$. Then
+$H=ab\operatorname{diag}(-1,-1,1,1)$ and
+\[
+ \mathscr R(H,H)
+ =2a^2b^2(K_{12}+K_{34}-K_{13}-K_{14}-K_{23}-K_{24}).
+\]
+Using $s=2\sum_{i<j}K_{ij}$ and the two diagonal curvature blocks
+$W^\pm+sI/12$ gives \eqref{eq:curvature}. The trace-free Ricci block
+drops out of this contraction; it has not been assumed zero.
+The identities extend over zero sets by continuity.
+\end{proof}
+
+\begin{proposition}[Harmonic-product first variation]\label{prop:product}
+Suppose $s$ is constant and there are smooth harmonic forms
+$\phi\in\Omega^+(M)$ and $\psi\in\Omega^-(M)$ such that
+$Z=\phi\circ\psi$. Then
+\begin{equation}\label{eq:main-general}
+ \boxed{DP_g[Z]=-\frac{s}{2}P(g)
+           -\frac12\int_M\ip{d|\phi|^2}{d|\psi|^2}\,dV_g.}
+\end{equation}
+In particular, if either harmonic form has constant length, then
+$DP_g[Z]=-sP(g)/2$.
+\end{proposition}
+\begin{proof}
+The harmonic two-form Weitzenb\"ock equations are
+\[
+ \nabla^*\nabla\phi=2W^+\phi-\frac{s}{3}\phi,
+ \qquad
+ \nabla^*\nabla\psi=2W^-\psi-\frac{s}{3}\psi.
+\]
+Thus
+\[
+ |\nabla\phi|^2=2\ip{W^+\phi}{\phi}-\frac{s}{3}f-\tfrac12\Delta_0f,
+ \quad
+ |\nabla\psi|^2=2\ip{W^-\psi}{\psi}-\frac{s}{3}h-\tfrac12\Delta_0h.
+\]
+Substitute these in \eqref{eq:derivatives}, subtract twice
+\eqref{eq:curvature}, and integrate. The scalar term is $-sfh/2$.
+The amplitude terms are
+\[
+ -\tfrac12\int(h\Delta_0f+f\Delta_0h)
+       +\tfrac12\int\ip{df}{dh}
+ =-\tfrac12\int\ip{df}{dh}.
+\]
+Equation \eqref{eq:variation} now proves the assertion.
+All fields are smooth on the original closed manifold, so there are
+no puncture or end terms in this integration.
+\end{proof}
+
+For a nonzero negative-scalar $P$-critical metric in this general
+harmonic-product class, \eqref{eq:main-general} requires
+\begin{equation}\label{eq:amplitude}
+ \int_M\ip{d|\phi|^2}{d|\psi|^2}\,dV_g=|s|P(g)>0.
+\end{equation}
+This is a necessary condition, not an exclusion of every
+Einstein--Maxwell geometry. When neither amplitude is constant, its
+correlation cannot be omitted.
+
+\section{An unrestricted descent for the almost-K\"ahler branch}
+
+\begin{theorem}\label{thm:AK}
+Let $(M^4,g,J,\Omega)$ be closed almost-K\"ahler, with constant
+scalar curvature $s$ and $J$-invariant Ricci tensor. Then
+\begin{equation}\label{eq:AK-variation}
+ \boxed{DP_g[Z]=-\frac{s}{2}P(g).}
+\end{equation}
+If $s\ne0$ and $g$ is not Einstein, it is not even a stationary point
+of the unrestricted $P$ functional. An explicit descending family is
+\begin{equation}\label{eq:path}
+ g_t(X,Y)=g\bigl(\exp(t\operatorname{sgn}(s)Z^\sharp)X,Y\bigr),
+ \qquad t>0\text{ small}.
+\end{equation}
+It preserves the volume form pointwise and satisfies
+\begin{equation}\label{eq:descent}
+ P(g_t)=P(g)-\frac{|s|}{2}P(g)t+O_g(t^2).
+\end{equation}
+Moreover
+\begin{equation}\label{eq:gradient-lower}
+ \|\mathcal G_P\|_{L^2}\ge\frac{|s|}{2}\sqrt{P(g)}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Use the convention $\Omega^\sharp=J$; changing its sign has no effect
+on the argument. The symmetric endomorphism $Z^\sharp$ commutes with
+$J$ and is trace-free. Therefore $\psi=-JZ^\sharp$ is an anti-self-dual
+two-form and $Z=\Omega\circ\psi$.
+
+The almost-K\"ahler form is self-dual, closed, and of constant norm
+$\sqrt2$, hence harmonic. For forms of opposite duality the product
+rule, when the first form is closed, gives
+\[
+ \diver(\Omega\circ\psi)=\Omega(d^*\psi).
+\]
+Indeed $d^*\Omega=0$; the remaining differentiated anti-self-dual
+endomorphisms commute with $\Omega$, yielding the displayed identity.
+Contracted Bianchi gives $\diver Z=0$. Since $J$ is invertible,
+$d^*\psi=0$; anti-self-duality gives $d\psi=0$. Thus $\psi$ is
+harmonic globally, including at its zeros. This also recovers the
+usual harmonic primitive-Ricci-form fact without assuming that $J$
+is integrable.
+
+Apply Proposition~\ref{prop:product} with $\phi=\Omega$, whose norm
+is constant. The derivative of \eqref{eq:path} at zero is
+$\operatorname{sgn}(s)Z$. The endomorphism exponential is positive,
+and its determinant is one because $\tr Z=0$. This proves
+\eqref{eq:descent} and volume preservation. The family need not remain
+in the almost-K\"ahler subspace: Q3 asks about all metrics.
+Finally, Cauchy--Schwarz applied to
+$|DP_g[Z]|=(|s|/2)P(g)$ proves \eqref{eq:gradient-lower}.
+\end{proof}
+
+\begin{corollary}\label{cor:critical}
+A smooth closed $P$-critical metric which admits an almost-K\"ahler
+structure with invariant Ricci tensor is Einstein if $s\ne0$.
+If $s=0$, it is Bach-flat. In particular no metric in this class
+answers the non-Bach-flat global-minimizer problem.
+\end{corollary}
+\begin{proof}
+Criticality first makes $s$ constant. For $s\ne0$,
+\eqref{eq:AK-variation} forces $P=0$.
+For $s=0$, write
+\[
+ P=\left(\int|\Ric|^2-\frac13\int s^2\right)
+                    +\frac1{12}\int s^2.
+\]
+The last functional has zero gradient at $s=0$. The first is,
+up to a topological term and a nonzero factor, the Weyl functional.
+Thus criticality is Bach-flatness \cite[Section 1.4]{GV}.
+\end{proof}
+
+\section{Application to the supplied harmonic-flux equality theorem}
+For a nonzero harmonic anti-self-dual form $h$, set
+\[
+ H=\|h\|_2^2,\quad \mathfrak F_h=\sqrt2\int_M|B^*h|\,dV_g,
+ \quad L_h=\frac{P/2-\mathfrak F_h^2/H}{4\pi^2},
+ \qquad |Z|^2=4|B|^2.
+\]
+The supplied manuscript \cite[Section 3.2]{Source} proves that at
+constant scalar curvature, $L_h=0$ implies either Einstein geometry,
+or a global almost-K\"ahler structure with invariant Ricci tensor and
+primitive Ricci form a constant multiple of $h$. Its bounded harmonic
+form extends across the zeros of $h$ by the stated removability argument.
+
+Combining that result with Theorem~\ref{thm:AK}, rather than solving
+the negative Blair--Ianus integrability problem, gives
+\begin{equation}\label{eq:equality-exclusion}
+ \boxed{s\ne0,\ P(g)>0,\ L_h(g)=0
+     \quad\Longrightarrow\quad
+     g\text{ is not an unrestricted local }P\text{-minimizer}.}
+\end{equation}
+In the normalization $s=-4$, the actual path $g_t=g(e^{-tZ^\sharp}\cdot,\cdot)$
+has $DP_g[-Z]=-2P(g)<0$. Replacing $g_t$ by its negative Yamabe
+representative, and rescaling if desired, cannot increase $P$; hence
+the decrease is not an artifact of leaving the constant-scalar locus.
+
+If a non-Einstein, negative-scalar smooth global minimizer $g_*$ exists,
+then for every nonzero harmonic ASD form $h$ one must have $L_h(g_*)>0$.
+In fact, provided $b^->0$,
+\begin{equation}\label{eq:fixed-gap}
+ \min_{\substack{h\in\mathcal H^-(g_*)\\\|h\|_2=1}}L_h(g_*)>0.
+\end{equation}
+The sphere is compact in a fixed finite-dimensional vector space, and
+$h\mapsto\int|B^*h|$ is continuous. A zero minimum would contradict
+\eqref{eq:equality-exclusion}. This positive number is allowed to
+depend on $g_*$; it is not uniform over degenerating geometries.
+
+The latest product calculation in \cite[Section 4]{Source} concerns
+$P/(8\pi^2)-|a_g^-|^2$ with a moving harmonic period. The present
+calculation concerns $P$ itself under unrestricted metric variations.
+These stationarity conditions are different. In particular the
+new conclusion does not contradict stationarity of the corrected
+functional at a non-Einstein cscK metric.
+
+\section{The precise Q3 conclusion}
+Keep the Godeaux blowup $M=X\#\overline{\CP}^{\,2}$ used in the
+previous continuation, with the inherited estimates
+\[
+  \frac{16\pi^2}{3}\le P_*(M)<8\pi^2,
+\]
+and negative Yamabe constant for every conformal class. If $P_*(M)$
+is attained smoothly, the attaining metric is non-Einstein and
+non-Bach-flat. This reduction, the strict upper construction, and the
+previous negative-lattice exclusion are project inputs \cite{Prior}.
+
+The present result adds a definitive restriction on such an attaining
+metric: it cannot belong to the entire harmonic-flux equality branch,
+even if its almost-complex structure is nonintegrable. There is no need
+to decide integrability of that branch before excluding it from Q3.
+The proof supplies a signed, admissible metric variation, not only a
+nonnegative decomposition.
+
+It does not exclude arbitrary ALE or partially collapsed minimizing
+limits. It also does not imply that a minimizing sequence has
+$L_h\to0$. Smooth attainment on the fixed manifold, or another complete
+example for Q3, remains to be proved. The four public questions are not
+claimed solved by this note.
+
+\begin{thebibliography}{9}
+\bibitem{GV}
+M. T. Gursky and J. A. Viaclovsky,
+\emph{Rigidity and stability of Einstein metrics for quadratic curvature
+functionals}, arXiv:1105.4648v2 (2013).
+\url{https://arxiv.org/abs/1105.4648}.
+The variational conventions used here are equations (2.5) and (2.9).
+\bibitem{Source}
+Qiushi, \emph{Einstein Gaps on Four-Manifolds: Subsequent Mathematical
+Developments}, 8 October 2026,
+\texttt{03\_Subsequent\_Mathematical\_Developments(1).tex}.
+Harmonic-flux decomposition, equality theorem, and constrained product
+variation are the supplied inputs discussed in Section 4.
+\bibitem{Prior}
+\emph{Global period constraints for the Q3 minimizing problem},
+8 October 2026,
+\texttt{Q3\_Global\_Period\_Constraints.tex}; and the earlier supplied
+four-problem synthesis. These supply the fixed attainment problem, not
+an existence theorem.
+\end{thebibliography}
+\end{document}

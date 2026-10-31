@@ -1,0 +1,147 @@
+# A dimension-independent Einstein repair corollary
+
+24 September 2026. This is a short extension of
+[the uniformly local repair theorem](20260924_uniformly_local_repair.md),
+not a new proof of its weighted inverse. That proof is dimension-independent
+once its local harmonic charts are supplied. The four-dimensional
+topological mechanism for producing those charts is not used here.
+
+## 1. Uniformly local repair in dimension \(n\ge3\)
+
+Fix \(n\ge3\), \(0<\alpha<1\), \(\rho>0\), \(\Lambda,C_G,\lambda>0\),
+and \(d,H\ge0\), with
+\[
+                              H^2<8\lambda.                 \tag{1}
+\]
+A uniformly controlled harmonic atlas means harmonic coordinate charts
+centred at every point, with nested coordinate balls of radii \(\rho\)
+and \(2\rho\), uniform ellipticity
+\(\Lambda^{-1}I\le(g_{ij})\le\Lambda I\), and coefficient
+\(C^{2,\alpha}\) bounds at most \(\Lambda\) on the larger balls.
+Uniformly local norms are suprema over the smaller charts, not sums.
+The constants below depend on these atlas data.
+
+**Corollary 1.** There exist \(\varepsilon,C>0\), depending only on the
+fixed data above, with the following property. Let \((M^n,g)\) be a
+closed connected smooth Riemannian manifold with such an atlas and
+\[
+ \operatorname{Vol}_g B_R(x)\le C_G(1+R)^d e^{HR}
+       \quad\text{for all }x\in M,\ R\ge0.                  \tag{2}
+\]
+For the full Bianchi-gauged linearization
+\[
+ L_g=\tfrac12\Delta_{L,g}+I,
+ \qquad
+ \Phi_g(h)=\operatorname{Ric}_h+h+\delta_h^*(B_gh),
+ \quad B_gu=\delta_gu+\tfrac12d\operatorname{tr}_gu,
+\]
+assume positive quadratic coercivity on **all** symmetric two-tensors:
+\[
+ Q_g(u):=\int_M\langle L_gu,u\rangle\,d\mu_g
+                       \ge\lambda\|u\|_{L^2(g)}^2.          \tag{3}
+\]
+If \(E=\operatorname{Ric}_g+g\) satisfies
+\[
+                   \|E\|_{C^{0,\alpha}_{\rm uloc}}<\varepsilon,
+\]
+then there is a smooth metric \(h\) on the same smooth manifold with
+\[
+ \operatorname{Ric}_h=-h,
+ \qquad
+ \|h-g\|_{C^{2,\alpha}_{\rm uloc}}
+                   \le C\|E\|_{C^{0,\alpha}_{\rm uloc}}.     \tag{4}
+\]
+Neither orientation, \(\pi_2\), gauge-theoretic classes, nor a diameter,
+total-volume or total-\(L^2\)-residual bound is assumed.
+
+**Proof.** The Lichnerowicz operator has principal part
+\(\tfrac12\nabla^*\nabla\) in every dimension. Choose
+\(H/2<a<\sqrt{2\lambda}\) and put
+\(\phi_x=e^{-a\operatorname{dist}_g(x,\cdot)}\). The weighted identity
+\[
+ Q_g(\phi_xu)
+ =\int_M\phi_x^2\langle L_gu,u\rangle
+             +\tfrac12\int_M|d\phi_x|^2|u|^2
+\]
+and (2)--(3) give, exactly as in the preceding theorem,
+\[
+ \|u\|_{L^2(B_1(x))}
+ \le \frac{e^a\sqrt{J_a}}{\lambda-a^2/2}\|L_gu\|_\infty,
+ \qquad
+ J_a=C_Ge^H\sum_{j\ge0}(j+2)^d e^{-(2a-H)j}<\infty.        \tag{5}
+\]
+Local Moser and Schauder estimates in the supplied atlas therefore yield
+\[
+ \|L_g^{-1}f\|_{C^{2,\alpha}_{\rm uloc}}
+                   \le C_I\|f\|_{C^{0,\alpha}_{\rm uloc}}.
+\]
+Fredholm theory and (3) give this inverse on each closed \(M\).
+Only the local constants change with \(n\); no dimension enters the
+absorption coefficient \(\lambda-a^2/2\) or the growth condition (1).
+The uniformly local Hölder quadratic estimate for
+\(\Phi_g(g+u)-E-L_gu\) gives the same contraction proof. Smallness makes
+\(h=g+u\) positive definite and \(\operatorname{Ric}_h\) negative
+definite. Finally, \(b=B_gh\) satisfies
+\(\nabla_h^*\nabla_hb-\operatorname{Ric}_h(b)=0\); integration forces
+\(b=0\). Elliptic bootstrapping gives smoothness. \(\square\)
+
+If additionally \(\|\nabla\operatorname{Ric}_g\|_\infty\le K_1\),
+the atlas gives
+\(\|E\|_{C^{0,\alpha}_{\rm uloc}}
+\le C\delta_-^{1-\alpha}\) for \(\delta_-\le1\).
+Thus small pointwise Ricci defect alone suffices with these same fixed
+geometric and operator data. An absolute spectral gap is not (3), and
+genuine kernels have not been removed.
+
+## 2. Actual large-diameter examples in every dimension \(n\ge3\)
+
+Fix a closed hyperbolic \((N^n,h)\), normalized by
+\(\operatorname{Ric}_h=-h\), and an epimorphism
+\(\pi_1(N)\to\mathbb Z\).
+[Millson's compact examples](https://math.umd.edu/~jjm/papers/bettinumber.pdf)
+provide such a choice in every \(n\ge3\). Let \((N_m,h_m)\) be the finite
+cyclic covers. The fixed infinite cyclic cover has a proper cocompact
+\(\mathbb Z\)-action, so counting its bounded fundamental regions gives
+\[
+ \operatorname{Vol}_{h_m}B_R(x)\le C_N(1+R),
+ \qquad \operatorname{Vol}(N_m,h_m)=m\operatorname{Vol}(N,h).
+\]
+Consequently their diameters tend to infinity. This bound concerns the
+actual cyclic quotients, not their universal covers or arbitrary covers.
+
+For sectional curvature \(-1/(n-1)\), the classical Koiso estimate gives
+\[
+ Q_{h_m}(u)\ge\lambda_n\|u\|_2^2,
+ \qquad \lambda_n=\frac{n-2}{2(n-1)}>0.                     \tag{6}
+\]
+This is [Jäckel's Lemma 2.4](https://arxiv.org/html/2502.16692v2),
+rescaled from \(\operatorname{Ric}=-(n-1)g\); its quadratic estimate,
+unlike his principal theorem's stated dimensional scope, also applies
+in dimension three.
+
+All sufficiently small \(C^3_{\rm uloc}(h_m)\) perturbations \(g_m\)
+have uniform harmonic atlas and Ricci-derivative bounds, satisfy (2)
+with \(H=0,d=1\), and satisfy (3) with \(\lambda=\lambda_n/2\).
+The last assertion follows from the almost-Einstein Koiso estimate and
+uniform negative sectional curvature; it is not spectral continuity
+with a constant depending on \(m\). Corollary 1 supplies a uniform
+repair threshold independent of \(m\).
+
+The residual can genuinely be distributed over all cells. For disjoint
+lifts \(\beta_j\) of a fixed bump, equal to one on a smaller ball, take
+\(f_m=t\sum_{j=1}^m c_j\beta_j\), \(1\le c_j\le2\), and
+\(g_m=e^{2f_m}h_m\). On the smaller balls,
+\[
+ |\operatorname{Ric}_{g_m}+g_m|_{g_m}^2\,d\mu_{g_m}
+ =n(e^{2tc_j}-1)^2e^{(n-4)tc_j}\,d\mu_{h_m}.
+\]
+Hence \(\|E_m\|_2\ge c t\sqrt m\) while
+\(\|E_m\|_{C^{0,\alpha}_{\rm uloc}}\le Ct\), uniformly in \(m\).
+Small fixed \(t\) is allowed despite the divergent total residual.
+
+This corollary makes one transferable analytic module explicit. It gives
+uniform correction on known hyperbolic smooth types and a general
+conditional solver, not new Einstein topologies or a dimension-only
+Yau26 threshold. In higher dimensions, the controlled atlas remains an
+input; the four-dimensional topological regularity theorem has not been
+extended by this argument.

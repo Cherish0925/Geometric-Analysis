@@ -1,0 +1,644 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  10pt,
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[a4paper,margin=18mm]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{esint}
+\usepackage{xeCJK}
+\setmainfont{DejaVu Serif}
+\setmonofont{DejaVu Sans Mono}
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKmonofont{Noto Sans Mono CJK SC}
+\setmathfont{Asana Math}
+\setmathfont{Latin Modern Math}[range=\lrcorner]
+\setlength{\emergencystretch}{3em}
+\allowdisplaybreaks
+\hypersetup{hypertexnames=false}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\hypertarget{signed-characteristic-mass-and-the-missing-bulk-selection}{%
+\section{Signed characteristic mass and the missing bulk
+selection}\label{signed-characteristic-mass-and-the-missing-bulk-selection}}
+
+28 September 2026. Continuation from \texttt{0fb009c}. The first-order
+target is still the infimum over all metrics on the original balanced
+family. This text identifies exactly what I55's measurable bulk
+selection requires, supplies it in a classical Kähler setting, and tests
+its necessity with actual smooth metrics. In particular, a competitive
+energy bound is not enough to impose that selection, even after
+constant-scalar normalization. This does not produce a coefficient below
+four.
+
+\hypertarget{the-signed-measure-behind-i55}{%
+\subsection{1. The signed measure behind
+I55}\label{the-signed-measure-behind-i55}}
+
+Use the complex orientation on
+
+\[
+ M=X\#k\overline{\mathbb{CP}}^{\,2}\#\ell(S^1\times S^3),
+ \qquad A=c_1^2(X),\quad Q=k+4\ell,\quad h=Q/A,
+\]
+
+where X is one of the complex-hyperbolic covers already used in the
+actual family. All curvature norms have the conventions of I54--I55. For
+any smooth metric put
+
+\[
+ f_g=\frac{s^2/12+4|W^+|^2-|\operatorname{Ric}^{\circ}|^2}{8\pi^2},
+ \quad N(g)=\int_M(f_g)_-,\quad T_U=\int_U f_g.
+ \tag{1.1}
+\]
+
+Chern--Weil gives \(T_M=A-Q\). N is the negative mass of this particular
+Levi-Civita characteristic density, not an ADM mass, a characteristic
+number by itself, or the torsion energy denoted N in earlier cell
+formulas. Let \(R=\int|\operatorname{Ric}|^2\),
+\(P=\int|\operatorname{Ric}^{\circ}|^2\), and \(L_s=\int(s-\bar s)^2\).
+Then
+
+\[
+ \mathcal E=\frac{4P+L_s}{R},\qquad 8\pi^2N\le P.
+ \tag{1.2}
+\]
+
+Consider h tending to zero and competitive actual metrics
+\(\mathcal E=O(h)\). The classical Ricci lower bound in this family is
+\(R\ge8\pi^2(A+Q)\). The signature formula gives
+
+\[
+ \int|W^+|^2\ge12\pi^2\tau
+   =4\pi^2A/3-12\pi^2k.
+\]
+
+Combining it with \(R=4P-12\int|W^+|^2+24\pi^2(A-Q)\) and
+\(4P\le\mathcal E R\) proves
+
+\[
+ R=8\pi^2A+O(Q),\qquad P+L_s=O(Q),\qquad N=O(Q).
+ \tag{1.3}
+\]
+
+These are bounds on actual metrics, not an optimization of formal
+curvature moments. They use the classical lower bound already supplied
+in I44.
+
+\textbf{Proposition 1.} In this competitive regime the following
+conditions are equivalent:
+
+\[
+ \begin{aligned}
+ &\text{there are measurable }U_j\text{ with }
+ T_{U_j}=A_j+o(Q_j),\quad R_{U_j}=8\pi^2A_j+o(A_j);\\
+ &N(g_j)\ge Q_j-o(Q_j).
+ \end{aligned} \tag{1.4}
+\]
+
+The first condition is precisely the intrinsic sufficient interface in
+\href{20260928_localization_and_coupled_filling.md}{I55, Section 4.1}.
+
+\emph{Proof.} Necessity follows from \(T_{M\setminus U}=-Q+o(Q)\). For
+sufficiency choose a measurable \(C\subset\{f<0\}\) with negative mass
+\(\min(N,Q)\). Such a set exists because the finite measure \((f)_-dV\)
+has no atoms. On \(\{f<0\}\),
+\(s^2/12\le|\operatorname{Ric}^{\circ}|^2\), so
+\(|\operatorname{Ric}|^2\le4|\operatorname{Ric}^{\circ}|^2\).
+Consequently \(R_C=O(Q)\). For \(U=M\setminus C\), (1.3) now gives both
+required estimates. QED.
+
+The coefficient consequence can also be seen immediately from (1.2):
+(1.4) implies \(\liminf\mathcal E/h\ge4\). I55 adds its equality
+information. Neither argument proves (1.4) from competitiveness.
+
+\hypertarget{a-genuine-supplier-from-holomorphic-morse-inequalities}{%
+\subsection{2. A genuine supplier from holomorphic Morse
+inequalities}\label{a-genuine-supplier-from-holomorphic-morse-inequalities}}
+
+For this section let \(M=\operatorname{Bl}_k X\) with its specified
+complex structure, with no handles, and X a closed complex-hyperbolic
+surface. For every smooth Hermitian metric on the canonical line bundle
+write \(\Theta=(i/2\pi)F_{K_M}\). The weak holomorphic Morse inequality
+gives
+
+\[
+ \limsup_{m\to\infty}\frac{2h^1(M,K_M^m)}{m^2}
+ \le\int_{M(\Theta,1)}-\Theta^2. \tag{2.1}
+\]
+
+Here \(M(\Theta,1)\) is the locus with one positive and one negative
+curvature eigenvalue. The classical input, including its signature
+convention, is \href{https://arxiv.org/html/1003.5067}{Demailly,
+equations (1.11)--(1.12)}. Only the inequality is needed, not a converse
+or a conjectured equality.
+
+In the present case the left side is exactly k. Indeed K\_X is ample,
+Kodaira vanishing and Riemann--Roch give
+
+\[
+ h^0(X,K_X^m)=\frac{A}{2}m(m-1)+\chi(\mathcal O_X),\qquad m\ge2.
+\]
+
+Pluricanonical sections and \(\chi(\mathcal O)\) are unchanged by
+blowup, while \(K_M^2=A-k\). Serre duality gives \(h^2(M,K_M^m)=0\): an
+antipluricanonical effective divisor would have negative pairing with
+the pullback of the ample K\_X. Thus
+
+\[
+ h^1(M,K_M^m)=\frac{k}{2}m(m-1),\qquad
+ \int_{M(\Theta,1)}-\Theta^2\ge k. \tag{2.2}
+\]
+
+If g is Kähler, its induced canonical curvature is minus the Ricci form
+divided by \(2\pi\). Squaring removes that sign. The Kähler identity
+\(|W^+|^2=s^2/24\) gives
+
+\[
+ \Theta^2=\frac{s^2/4-|\operatorname{Ric}^{\circ}|^2}{8\pi^2}\,dV
+          =f_g\,dV.
+\]
+
+The signature-one set is exactly the negative-density set. Hence
+
+\[
+ \boxed{N(g)\ge k\quad\text{for every Kähler metric on }\operatorname{Bl}_k X.}
+ \tag{2.3}
+\]
+
+This is a consequence of classical holomorphic Morse theory, not a new
+Morse theorem. It supplies spatially signed curvature information, in
+addition to the familiar integrated Ricci lower bounds. Applying
+Proposition 1 proves the I55 selection for competitive Kähler sequences
+in this pure-blowup class. Handles and non-Kähler metrics are not
+covered. For a conformally Kähler metric the canonical Chern curvature
+still satisfies (2.2), but it is no longer the density (1.1). The
+distinction is essential in the following construction.
+
+\hypertarget{an-exact-radial-primitive-and-an-actual-loss-of-negative-mass}{%
+\subsection{3. An exact radial primitive and an actual loss of negative
+mass}\label{an-exact-radial-primitive-and-an-actual-loss-of-negative-mass}}
+
+Take the ordinary one-bolt metric K\_F of I54, with
+\(r\ge r_0=\sqrt\mu\), volume element \(2\pi^2r^3dr\), \(F(r_0)=0\),
+\(F'(r_0)=2/r_0\), and a full CH outer collar. For \(G=e^{2\phi}K_F\),
+define
+
+\[
+ q=2F+\frac{rF'}2+rF\phi'-2,\qquad
+ B=q^2+(2+q)r^2F(\phi')^2.
+ \tag{3.1}
+\]
+
+Direct substitution of the conformal Ricci eigenvalues gives the exact
+identity
+
+\[
+ \boxed{\int_{\{r\in[a,b]\}} f_G\,dV_G=B(b)-B(a).} \tag{3.2}
+\]
+
+For a reproducible derivation, let \(r_v=-F''/2-5F'/(2r)\),
+\(r_h=-F'/r+4(1-F)/r^2\). The three scaled Ricci eigenvalues, the
+horizontal one having multiplicity two, are
+
+\[
+\begin{aligned}
+ A_0&=r_v-3F\phi''-(2F'+3F/r)\phi',\\
+ A_3&=r_v-F\phi''-(2F'+5F/r)\phi'-2F(\phi')^2,\\
+ A_H&=r_h-F\phi''-(F'+5F/r)\phi'-2F(\phi')^2.
+\end{aligned}
+\]
+
+Put \(S=A_0+A_3+2A_H\). Conformal Weyl invariance and
+\(s_{K_F}=2(r_v+r_h)\) reduce the density to
+
+\[
+ B'=\frac{r^3}{4}\left\{\frac{S^2}{12}
+ +\frac{[2(r_v+r_h)]^2}{6}
+ -\left(A_0^2+A_3^2+2A_H^2-\frac{S^2}{4}\right)\right\}.
+ \tag{3.3}
+\]
+
+Expansion proves (3.2); the checking program independently verifies the
+identity for arbitrary smooth F and phi. At an ordinary smooth bolt B=1;
+on a CH collar B=r\^{}4/4. Thus the relative characteristic integral is
+correct at both ends, including its normalization.
+
+For the uncut constant-scalar recovery metric use
+
+\[
+ F_\mu=1+\frac{r^2}{6}-\frac{c}{2r^2}+\frac{\mu^3}{3r^4},
+ \qquad c=\mu(\mu+2).
+\]
+
+It has s=-4 and \(q_0=(r^2-c/r^2)/2\). The function \(B_0=q_0^2\)
+decreases from one to zero at \(r_*=c^{1/4}\), then increases. Its
+negative mass is exactly one. Equivalently \(8\pi^2f=4(1-c^2/r^8)\), and
+direct integration on \([\sqrt\mu,r_*]\) gives one.
+
+Fix a small positive mu. Choose smooth eta supported near r\_* with
+\(\eta'(r_*)\ne0\), and set \(\phi=\varepsilon\eta\). The nondegenerate
+minimum persists. Its position first shifts so as to cancel the linear
+change in q; the remaining value is
+
+\[
+ \min B_\varepsilon
+ =2r_*^2F_\mu(r_*)\eta'(r_*)^2\varepsilon^2+O_\mu(\varepsilon^3)>0.
+ \tag{3.4}
+\]
+
+Cut F\_mu to CH in a fixed annulus outside r\_* where B\_0' is strictly
+positive. For sufficiently small mu that cutoff remains C2-close to CH
+on the annulus, so its density is positive there. Small epsilon
+preserves the single inner minimum and creates no additional negative
+density outside. The complete smooth cell therefore satisfies
+
+\[
+ N(G_\varepsilon)=1-\min B_\varepsilon<1. \tag{3.5}
+\]
+
+Its cost J is still strictly above \(8\pi^2\), by I54's complete
+conformal-Kähler estimate. It is not a cheaper cell.
+
+Holding mu and epsilon fixed, repetition in covers with k/A tending to
+zero gives actual closed metrics with \(\mathcal E=O(k/A)\) but
+\(N/k<1\) by a fixed amount. The exact repetition formula is I54 (2.1).
+Thus competitiveness alone does not supply Proposition 1, already in the
+pure-blowup family.
+
+The fixed-mu qualification cannot be dropped. If the perturbation is
+confined to \(r\asymp\mu^{1/4}\) while mu tends to zero, B\_0 at the
+support boundaries is O(mu). The accumulated negative variation is then
+already at least \(1-O(\mu)\). Formula (3.4) is not uniform for a fixed
+perturbation amplitude in that limit; new shoulder minima can appear. In
+particular this argument does not refute selection for shrinking
+near-minimizers.
+
+\hypertarget{constant-scalar-cells-and-the-original-balanced-family}{%
+\subsection{4. Constant-scalar cells and the original balanced
+family}\label{constant-scalar-cells-and-the-original-balanced-family}}
+
+The conformal bump in Section 3 disappears under Yamabe minimization of
+its original conformal class. A separate construction is needed to test
+the scalar-minus-four formulation of the selection target.
+
+\hypertarget{a-scalar-minus-four-cell-with-n-less-than-one}{%
+\subsubsection{4.1 A scalar-minus-four cell with N less than
+one}\label{a-scalar-minus-four-cell-with-n-less-than-one}}
+
+On a fixed truncation of K\_\{F\_mu\}, solve the radial equation
+
+\[
+ (r^3F_\mu u_a')'=\frac23r^3(u_a^3-u_a),\qquad
+ u_a(r_0)=1+a,\qquad (r^3F_\mu u_a')(r_0)=0. \tag{4.1}
+\]
+
+It is the conformal scalar equation for \(u_a^2K_{F_\mu}\) to have s=-4.
+Smooth bolt regularity gives a smooth local solution and smooth
+dependence on a; for fixed mu and fixed finite outer radius it stays
+positive for sufficiently small a. For a\textgreater0 it initially
+exceeds one, and the integrated equation shows that it increases, so
+\(u_a'(r_*)>0\). Differentiating at a=0 gives \(v(r_0)=1\) and
+
+\[
+ (r^3F_\mu v')'=\frac43r^3v,\qquad v'(r_*)>0.
+\]
+
+Use \(\phi_a=\log u_a\) in (3.1). The same minimum calculation now gives
+
+\[
+ N_{\rm inner}=1-2r_*^2F_\mu(r_*)v'(r_*)^2a^2+O_\mu(a^3)<1.
+ \tag{4.2}
+\]
+
+This inner metric is not CH on its outer collar. To complete it without
+changing its inner region or its scalar curvature, apply
+\href{https://arxiv.org/html/1003.5146}{Delay, Theorem 1.1 and
+Propositions 2.2--2.5} on a fixed annulus. The theorem glues
+sufficiently close smooth metrics with a smooth supported correction,
+interpolating their scalar curvatures, provided the reference adjoint
+scalar operator has no kernel.
+
+That nondegeneracy holds for CH. In geometric Laplacian convention a
+kernel function satisfies \(\operatorname{Hess}f-(\Delta f)g+fg=0\),
+hence \(\operatorname{Hess}f=(f/3)g\). Commuting derivatives forces
+every sectional curvature of a plane containing a nonzero gradient to
+equal -1/3. CH has different holomorphic and totally real sectional
+curvatures at every point, so the gradient vanishes and then f=0. The
+uniform nearby inverse in Delay's proposition permits the small inner
+metric as reference as well.
+
+Choose mu sufficiently small that K\_\{F\_mu\} is close to CH on the
+fixed annulus, then choose a sufficiently small. Both metrics have
+scalar -4, so the glued metric has scalar -4 everywhere. The correction
+tends to zero in C2 with the annular data; the annulus retains
+f\textgreater0, since CH has strictly positive f there. Consequently the
+completed cell has
+
+\[
+ s=-4,\qquad N_C=1-\delta<1,\qquad J_C<\infty. \tag{4.3}
+\]
+
+We can also choose \(J_C>8\pi^2\). At a=0 the unchanged inner core
+already has cost \(8\pi^2+8\pi^2\mu+O(\mu^2)\) when truncated at a fixed
+radius; the remainder contributes nonnegative cost. Choose a smaller if
+necessary and use continuous dependence. Parameters are now fixed, not
+sent to zero together with h.
+
+\hypertarget{adding-handles-while-retaining-the-negative-mass-loss}{%
+\subsubsection{4.2 Adding handles while retaining the negative-mass
+loss}\label{adding-handles-while-retaining-the-negative-mass-loss}}
+
+Insert k\_j copies of (4.3) into disjoint ball lifts in X\_j. This
+produces a closed scalar-minus-four metric B\_j on
+\(X_j\#k_j\overline{\mathbb{CP}}^2\), equal to CH away from the cells,
+and \(N(B_j)=k_j(1-\delta)\). There are enough disjoint lifts because
+\(k_j/A_j\to0\).
+
+For each fixed j add the required ell\_j handles by the classical
+shrinking scalar-flat conformally-flat neck construction. All necks are
+placed in the unchanged CH region. Denote the resulting metric by
+g\_\{j,e\}. The construction, with all transition regions included, has
+the following fixed-j limits:
+
+\[
+ \begin{aligned}
+ &g_{j,e}\longrightarrow B_j\quad\text{smoothly off the finitely many mouths},\\
+ &\operatorname{Vol}(g_{j,e})\longrightarrow\operatorname{Vol}(B_j),
+ \quad\int s_{g_{j,e}}^2\longrightarrow16\operatorname{Vol}(B_j),\\
+ &R(g_{j,e})\longrightarrow R(B_j)+32\pi^2\ell_j.
+ \end{aligned} \tag{4.4}
+\]
+
+Here the scalar curvature can be bounded independently of e for each
+fixed j. A scaled scalar-flat neck has zero scalar curvature. Cut its
+Euclidean-end error at radius equal to the square root of the neck
+scale: its second-derivative error is O(1), the CH Taylor error also
+gives O(1), and the transition volume tends to zero. The inserted
+self-dual Weyl energy tends to zero. The last limit in (4.4) follows
+from the relative identity I54 (1.1), with handle weight four. These are
+exactly the classical shrinking handles already used in I44, not a new
+scalar-curvature gluing theorem for handles.
+
+Take the negative Yamabe representative
+\(\widehat g_{j,e}=u_{j,e}^2g_{j,e}\) with scalar -4. Such a
+representative exists by the same all-metric actual positive supply as
+before; no new monopole solution on a manifold with boundary is being
+assumed. For fixed j the scalar lower bound and maximum principle bound
+u uniformly from above. Interior elliptic estimates give subsequential
+smooth convergence away from the mouths. The limit extends across those
+points: it is a bounded solution of a semilinear elliptic equation on
+the smooth B\_j.
+
+The limit is not zero. The actual scalar bound gives
+\(16\operatorname{Vol}(\widehat g_{j,e})\ge32\pi^2A_j\), whereas the
+uniform upper bound on u makes the volume of the disappearing necks
+negligible. The strong maximum principle makes the limiting solution
+positive. Uniqueness of the scalar-minus-four representative in a
+negative conformal class then forces this limit to be one. Therefore
+
+\[
+ u_{j,e}\longrightarrow1\text{ locally smoothly off the mouths},\qquad
+ S(g_{j,e})-S(\widehat g_{j,e})\longrightarrow0. \tag{4.5}
+\]
+
+The exact conformal identities of I41 now imply
+\(R(\widehat g_{j,e})\to R(B_j)+32\pi^2\ell_j\). Subtract the convergent
+energies on the complement of small fixed balls, then let those ball
+radii shrink. The total remaining P-energy tends to \(32\pi^2\ell_j\).
+Since \(8\pi^2N\le P\) on every measurable region,
+
+\[
+ \limsup_{e\to0}N(\widehat g_{j,e})
+ \le k_j(1-\delta)+4\ell_j. \tag{4.6}
+\]
+
+Choose a diagonal e\_j so that all fixed-j errors in (4.4)--(4.6) are
+o(Q\_j). The topology is now exactly the original balanced M\_j, with
+its inherited actual conformal/weight supply and class-square budget.
+Since \(k_j/Q_j\to2/9\), the resulting metrics satisfy
+
+\[
+ \boxed{s_{g_j}=-4,\qquad \mathcal E(g_j)=O(h_j),\qquad
+ \limsup\frac{N(g_j)}{Q_j}\le1-\frac{2\delta}{9}<1.} \tag{4.7}
+\]
+
+Thus Proposition 1's bulk selection does not follow even from the
+constant-scalar competitive inputs on the original balanced family. This
+is a failure of that stronger proposed intermediate statement, not a
+failure of I55 with its hypotheses.
+
+For completeness, the same fixed-j energy limits give
+
+\[
+ \frac{\mathcal E(g_j)}{h_j}
+ \longrightarrow\frac{28}{9}+\frac{J_C}{9\pi^2}>4. \tag{4.8}
+\]
+
+The actual sequence is not asymptotically minimizing: the inherited
+upper bound has coefficient at most four. It therefore does not answer
+the unrestricted coefficient problem or refute selection for sequences
+whose excess over the actual infimum is o(h).
+
+\hypertarget{the-compensation-that-a-sharp-argument-must-retain}{%
+\subsection{5. The compensation that a sharp argument must
+retain}\label{the-compensation-that-a-sharp-argument-must-retain}}
+
+The sign partition gives an exact nonnegative remainder
+
+\[
+ Z(g)=\int_{\{f\ge0\}}|\operatorname{Ric}^{\circ}|^2
+       +\int_{\{f<0\}}\left(\frac{s^2}{12}+4|W^+|^2\right),
+ \qquad P=8\pi^2N+Z. \tag{5.1}
+\]
+
+Consequently
+
+\[
+ \mathcal E=\frac{32\pi^2N+4Z+L_s}{R},\qquad
+ \frac{\mathcal E}{h}
+ =\frac{4N}{Q}+\frac{Z}{2\pi^2Q}+\frac{L_s}{8\pi^2Q}+o(1)
+ \tag{5.2}
+\]
+
+on every competitive sequence. This is an identity, not another
+independent coercivity theorem. It explains why losing negative mass
+need not lower the defect. The scalar-minus-four examples above lose
+mass and pay a larger nonnegative Z remainder.
+
+For the actual variational target, I41 permits replacing near-minimizers
+by their negative Yamabe representatives. In this reduced class the
+coefficient-four lower bound is equivalent to the still unproved
+compensated inequality
+
+\[
+ Z(g_j)\ge8\pi^2\bigl(Q_j-N(g_j)\bigr)-o(Q_j).
+ \tag{5.3}
+\]
+
+When N already exceeds Q the inequality is automatic; otherwise its
+content is the payment by the rest of the actual curvature. Equation
+(4.7) shows why one cannot simply delete this case. The genuinely
+remaining alternatives are to prove (5.3) from actual geometry or the
+actual field equations, to supply the stronger selection only for true
+near-minimizers, or to construct a complete cell/sequence whose total
+first-order cost is below four. No such sequence is constructed here.
+The unrestricted weak zero-Weyl endpoint is also unchanged by these
+arguments.
+
+\hypertarget{a-necessary-degeneration-property-of-actual-near-minimizers}{%
+\subsubsection{5.1 A necessary degeneration property of actual
+near-minimizers}\label{a-necessary-degeneration-property-of-actual-near-minimizers}}
+
+There is a variational consequence that goes beyond relabelling (5.3).
+Fix a nontrivial marked cell C of I54, with q\textgreater0 and a fixed
+open CH collar. Let K be a compact family in the C4 topology consisting
+of smooth positive metrics on C, all with that fixed collar. Allow a
+finite union of such families on finitely many fixed cell types.
+
+\textbf{Proposition 2.} Let g\_j be scalar-minus-four metrics on the
+original balanced M\_j with
+
+\[
+ \mathcal E(g_j)-\alpha_j=o(h_j),\qquad
+ \alpha_j=\inf_{g\text{ on }M_j}\mathcal E(g).
+ \tag{5.4}
+\]
+
+If g\_j contains n\_j disjoint marked full-collar cells whose pullback
+metrics lie in K, then \(n_j=o(Q_j)\). No hypothesis that a smooth
+global minimizer exists is used. More strongly, there is a fixed C4
+neighborhood of K with the same conclusion. The actual cells in this
+neighborhood need not themselves have exact CH collars; all variations
+are supported away from their boundaries.
+
+\emph{Proof.} The inherited upper bound on alpha\_j and (5.4) first give
+\(\mathcal E(g_j)=O(h_j)\). Every cell in K has positive J: zero would
+make it Einstein, contradicting I54's topology and open-collar argument.
+Compactness and continuity give \(J\ge j_0>0\). Since the initial
+metrics have s=-4, their cell J equals P. Equation (1.3) therefore gives
+n\_j=O(Q\_j).
+
+I54, Proposition 2 proves that every smooth nontrivial full-CH-collar
+cell has a compactly supported smooth metric variation strictly
+decreasing J. For each metric in K choose one sufficiently small finite
+variation. Continuity in the initial metric makes that same variation
+decrease J by a fixed positive amount on a neighborhood. A finite
+subcover of K therefore supplies a uniform number d\textgreater0 and
+finitely many variations such that each cell can be changed with
+\(\Delta J\le-d\). Their changes in volume, scalar integral and Ricci
+energy are uniformly bounded. All modified metrics remain positive and
+keep the complete collar.
+
+Apply those changes simultaneously on the n\_j disjoint cells. Put
+\(v=\Delta V\), \(i=\Delta\int s\), \(r=\Delta R\). Their absolute
+values are O(n\_j), and
+
+\[
+ \Delta J=r+2i+4v\le-d n_j.
+\]
+
+The actual identity \(\mathcal E=4-I^2/(VR)\), expanded at \(I=-4V\),
+\(R=4V+P\), gives
+
+\[
+ \mathcal E(g'_j)-\mathcal E(g_j)
+ =\frac{4\Delta J}{R}
+  +O\left(\frac{h_jn_j}{A_j}+\frac{n_j^2}{A_j^2}\right).
+ \tag{5.5}
+\]
+
+For example, its linear remainder is exactly \(-4Pr/R^2\); the remaining
+terms are quadratic in the finite moment changes. Bounds (1.3), scalar
+-4 and \(n_j/A_j=O(h_j)\) justify the uniform expansion. Consequently,
+for some d'\textgreater0 and all large j with n\_j\textgreater0,
+
+\[
+ \mathcal E(g'_j)\le\mathcal E(g_j)-d' n_j/A_j.
+\]
+
+Although the varied metric need not retain constant scalar curvature, it
+is an allowed competitor for alpha\_j. Combining this inequality with
+(5.4) proves n\_j=o(Q\_j). QED.
+
+The neighborhood assertion follows from the same finite subcover:
+positivity of J, admissibility of the finitely many supported
+variations, the strict J decrease and their moment bounds all persist in
+a sufficiently small C4 neighborhood of K. The actual metric is
+untouched at its boundary, so no new matching argument is needed.
+
+Thus the fixed smooth cells responsible for (4.7) cannot persist with
+positive Q-density in a true near-minimizer. A positive-density cell
+description of such a sequence, if one exists, must leave every fixed
+smooth compact family, vary its collar/scale, or change its geometric
+decomposition. The proposition does not extract any cell description,
+nor give a uniform descent rate for degenerating cells. That rate,
+measured against the missing characteristic mass rather than merely the
+number of cells, is a remaining route to (5.3).
+
+\hypertarget{verification-and-next-use}{%
+\subsection{6. Verification and next
+use}\label{verification-and-next-use}}
+
+\texttt{tools/check\_signed\_characteristic\_mass.py} checks (3.3), the
+recovery primitive and its exact negative mass, the minimum's quadratic
+coefficient, and the Kähler/Riemann--Roch normalizations. Its actual
+complete-cell integration at mu=0.01, outer radius 2.5 and epsilon=0.01
+gives N=0.999973955691314 and J/(2 pi squared)=4.077939349922743. The
+numerical receipt illustrates Section 3, not the constant-scalar
+existence theorem, which uses (4.1), localized scalar deformation and
+the fixed-j limiting proof.
+
+The two primary external inputs are Demailly's weak holomorphic Morse
+inequality and Delay's localized scalar gluing theorem. The SW supply,
+shrinking handles, conformal energy identities, and cover dilution are
+inherited with their original assumptions. No full concentration
+decomposition, geometric compactness, or universal near-minimizer
+classification has been inferred from these inputs.
+
+\end{document}

@@ -1,0 +1,302 @@
+# From weighted coercivity to uniformly local Einstein repair
+
+24 September 2026. This continuation removes the unnormalized global
+\(L^2\) residual from the preceding
+[diameter-free repair criterion](20260924_local_to_global_scope.md), on a
+specified growth--coercivity regime. The additional information is a
+quantitative bound on propagation through the whole manifold, not another
+smallness condition on the residual's support.
+
+## 1. Statement
+
+For a smooth metric on a closed four-manifold use the Bianchi-gauged operator
+\[
+ \Phi_g(h)=\operatorname{Ric}_h+h+\delta_h^*(B_gh),\qquad
+ B_gu=\delta_gu+\tfrac12d\operatorname{tr}_gu.
+\]
+Its derivative at \(g\) is
+\[
+ L_g=\tfrac12\Delta_{L,g}+I
+     =\tfrac12\nabla^*\nabla+V_g,                            \tag{1}
+\]
+where \(V_g\) is the symmetric curvature endomorphism. Unlike the earlier
+absolute spectral gap, the condition used here is **positive coercivity**:
+\[
+ \int_M\langle L_gu,u\rangle\,d\mu_g
+              \ge\lambda\int_M|u|^2\,d\mu_g
+ \quad\text{for every smooth symmetric two-tensor }u.         \tag{2}
+\]
+No kernel or low mode has been projected out.
+
+**Theorem A (pointwise repair with controlled volume growth).** Fix
+\(v,K_1,C_G,\lambda>0\), \(d,H\ge0\), and \(0<\alpha<1\), with
+\[
+                              H^2<8\lambda.                 \tag{3}
+\]
+There are \(\varepsilon,C>0\), depending only on these data, such that
+the following holds. Suppose a closed connected oriented smooth
+four-manifold \(M\), with \(\pi_2(M)=0\), carries a smooth metric \(g\)
+satisfying
+\[
+ \inf_x\operatorname{Vol}_gB_1(x)\ge v,\qquad
+ \|\nabla\operatorname{Ric}_g\|_\infty\le K_1,                 \tag{4}
+\]
+the positive coercivity (2), and the actual-manifold growth bound
+\[
+ \operatorname{Vol}_g B_R(x)\le C_G(1+R)^d e^{HR}
+       \quad(x\in M,\ R\ge0).                               \tag{5}
+\]
+If
+\[
+ \delta_-(g)=\|g^{-1}\operatorname{Ric}_g+I\|_{\infty,\mathrm{op}}
+                    <\varepsilon,                          \tag{6}
+\]
+then the same smooth manifold has a smooth metric \(h\) with
+\[
+ \operatorname{Ric}_h=-h,\qquad
+ \|h-g\|_{C^{2,\alpha}_{\mathrm{uloc}}}
+                       \le C\delta_-(g)^{1-\alpha}.           \tag{7}
+\]
+Here the uniformly local Hölder norm is the supremum of coefficient norms
+in a uniformly controlled small harmonic atlas, not a sum over that atlas.
+There is no diameter, total-volume, total-residual, or support-volume bound.
+The theorem does not require a gauge class or a prescribed complex structure.
+
+The topological assumption is one supplier of local bounded geometry. If
+uniform \(C^{2,\alpha}\) harmonic charts are provided directly, the same
+theorem holds without \(\pi_2(M)=0\) and without using (4) to obtain them;
+in that formulation the residual hypothesis is
+\(\|\operatorname{Ric}+g\|_{C^{0,\alpha}_{\mathrm{uloc}}}<\varepsilon\).
+Thus the main analytic conclusion is a genuine uniformly local
+\(C^{0,\alpha}\to C^{2,\alpha}\) inverse and repair estimate.
+
+## 2. The inverse estimate: both decay and growth are retained
+
+Choose once and for all
+\[
+ H/2<a<\sqrt{2\lambda},\qquad c_a=\lambda-a^2/2>0.             \tag{8}
+\]
+For a fixed centre \(x\), put \(\phi_x(y)=e^{-a d_g(x,y)}\).
+This positive Lipschitz function satisfies
+\(|d\phi_x|\le a\phi_x\) almost everywhere. No differentiability of the
+distance function at its cut locus is assumed.
+
+For any smooth tensor \(u\), integration by parts gives the exact identity
+\[
+ \int\langle L_g(\phi_xu),\phi_xu\rangle
+ =\int\phi_x^2\langle L_gu,u\rangle
+       +\tfrac12\int|d\phi_x|^2|u|^2.                       \tag{9}
+\]
+For Lipschitz \(\phi_x\), use density in \(H^1\) in the quadratic-form
+identity. The zeroth-order terms agree on both sides; the factor
+\(1/2\) is the leading coefficient in (1).
+
+If \(L_gu=f\), (2), (8), Cauchy--Schwarz, and (9) give
+\[
+ c_a\|\phi_xu\|_2^2
+ \le\int\phi_x^2\langle f,u\rangle
+ \le\|\phi_xf\|_2\|\phi_xu\|_2,
+\quad
+ \|\phi_xu\|_2\le c_a^{-1}\|\phi_xf\|_2.                    \tag{10}
+\]
+The right side can now be bounded by a **local supremum**, rather than the
+global \(L^2\) norm. Splitting into unit annuli and using (5),
+\[
+ \begin{aligned}
+ \int_M e^{-2a d_g(x,y)}\,d\mu_g(y)
+ &\le C_G e^H\sum_{m=0}^{\infty}
+            (m+2)^d e^{-(2a-H)m}\ =:J_a<\infty.
+ \end{aligned}                                             \tag{11}
+\]
+The constant is independent of \(x\), diameter, and total volume. Therefore
+\[
+ \|u\|_{L^2(B_1(x))}
+        \le e^a c_a^{-1}\sqrt{J_a}\,\|f\|_\infty.             \tag{12}
+\]
+
+In the regime of Theorem A, \(\delta_-<1/2\) bounds Ricci uniformly.
+The local regularity theorem in the preceding continuation, using
+\(\pi_2=0\) and the unit-ball lower bound, supplies uniform harmonic
+radii. The Ricci derivative bound and the harmonic metric equation then
+supply uniform \(C^{2,\alpha}\) metric bounds on smaller charts. In
+particular the coefficients of (1), including \(V_g\), have uniform
+\(C^{0,\alpha}\) bounds.
+
+Local Moser estimates for the connection Laplacian with bounded potential
+give, for a fixed \(0<\rho\le1\),
+\[
+ |u|(x)\le C_{\rm loc}
+       \bigl(\|u\|_{L^2(B_\rho(x))}+\|f\|_{C^0(B_\rho(x))}\bigr).
+\]
+Combining this with (12), then applying local Schauder estimates, proves
+\[
+ \boxed{\quad
+ \|u\|_{C^{2,\alpha}_{\rm uloc}}
+     \le C_I\|L_gu\|_{C^{0,\alpha}_{\rm uloc}}.
+ \quad}                                                     \tag{13}
+\]
+On each closed manifold, positive coercivity and elliptic Fredholm theory
+give existence and uniqueness of \(u=L_g^{-1}f\). Equation (13) makes the
+inverse uniform across the family. We have not deduced (13) from an
+unweighted \(L^2\) gap alone: (11) is the additional global step.
+
+For polynomial growth, \(H=0\), every \(\lambda>0\) permits a choice in
+(8). For exponential growth, the sufficient condition (3) is the precise
+comparison needed by this argument. It is not claimed optimal. In
+particular failure of (3) does not imply failure of an Einstein inverse.
+
+## 3. Nonlinear repair
+
+In the uniformly local Hölder spaces put
+\[
+ E=\operatorname{Ric}_g+g,\qquad
+ \Phi_g(g+u)=E+L_gu+N_g(u).
+\]
+Uniform \(C^{2,\alpha}\) bounds give, in a fixed sufficiently small ball,
+\[
+ \|N_g(u)-N_g(z)\|_{C^{0,\alpha}_{\rm uloc}}
+ \le C_N\bigl(\|u\|_{C^{2,\alpha}_{\rm uloc}}
+             +\|z\|_{C^{2,\alpha}_{\rm uloc}}\bigr)
+                \|u-z\|_{C^{2,\alpha}_{\rm uloc}}.             \tag{14}
+\]
+This is a local Hölder product estimate: neither summation over all charts
+nor a volume factor appears. By (4) and tensor interpolation,
+\[
+ \|E\|_{C^{0,\alpha}_{\rm uloc}}\le C\delta_-^{1-\alpha}.       \tag{15}
+\]
+Equations (13)--(15) make
+\(u\mapsto-L_g^{-1}(E+N_g(u))\) a contraction in the ball of radius
+\(2C_I\|E\|_{C^{0,\alpha}_{\rm uloc}}\) when (6) is sufficiently small.
+The resulting \(h=g+u\) is positive definite and has negative definite
+Ricci tensor. Applying \(B_h\) to \(\Phi_g(h)=0\) gives, for \(b=B_gh\),
+\[
+              \nabla_h^*\nabla_h b-\operatorname{Ric}_h(b)=0.
+\]
+Integration on the closed manifold gives \(b=0\), so \(h\) is Einstein.
+Elliptic bootstrapping gives smoothness. This proves Theorem A.
+
+## 4. A nonempty large-diameter family with distributed residual
+
+Fix an oriented closed hyperbolic four-manifold \((N,h)\) with
+\(\operatorname{Ric}_h=-h\) and an epimorphism
+\(\varphi:\pi_1(N)\to\mathbb Z\). Such compact examples exist by
+[Millson's construction](https://math.umd.edu/~jjm/papers/bettinumber.pdf),
+which gives nonzero first Betti number in every dimension at least three.
+Let \((\widehat N,\widehat h)\) be the cyclic infinite cover and
+\((N_m,h_m)\) its quotient by \(m\mathbb Z\).
+
+**Lemma B (the correct cover-growth bound).** There is \(C_N<\infty\),
+depending only on this fixed cyclic cover, such that
+\[
+ \operatorname{Vol}_{h_m}B_R(x)\le C_N(1+R)
+                 \quad(m\ge1,\ R\ge0).                      \tag{16}
+\]
+
+**Proof.** The deck group \(\mathbb Z\) acts properly and cocompactly on
+\(\widehat N\). Choose a bounded fundamental region of finite volume.
+The orbit map of this action is a quasi-isometry: equivalently, only
+\(O(1+R)\) translates of the region can meet a radius-\(R\) ball, with
+constants depending on the fixed region and deck generator. Counting their
+volumes proves the linear bound on \(\widehat N\), uniformly in the centre.
+Every radius-\(R\) ball in \(N_m\) is the image of a radius-\(R\) ball in
+\(\widehat N\), by lifting shortest paths from its centre. Its volume is
+at most the volume upstairs, proving (16). \(\square\)
+
+The cover used in this argument is **not** the universal hyperbolic cover,
+and (16) is not asserted for arbitrary finite covers. Since
+\(\operatorname{Vol}(N_m)=m\operatorname{Vol}(N)\), (16) also shows
+\(\operatorname{diam}(N_m)\to\infty\).
+
+Choose \(\eta>0\) small and consider any smooth metrics \(g_m\) with
+\[
+                  \|g_m-h_m\|_{C^3_{\rm uloc}(h_m)}\le\eta.   \tag{17}
+\]
+The constants below are uniform in \(m\). The metrics are uniformly
+bilipschitz to \(h_m\), so (16) remains a polynomial bound with adjusted
+constant, and unit balls stay uniformly noncollapsed. They have
+\(\pi_2=0\), bounded Ricci derivative, and sectional curvature uniformly
+close to \(-1/3\).
+
+For the exact \(h_m\), Koiso's estimate gives
+\[
+                \int\langle L_{h_m}u,u\rangle
+                              \ge\tfrac13\|u\|_2^2.          \tag{18}
+\]
+Its almost-Einstein version gives, for \(\eta\) sufficiently small,
+positive coercivity with \(\lambda=1/4\) for every \(g_m\) in (17).
+Thus \(H=0,d=1,\lambda=1/4,a=1/2\) work simultaneously, with
+\[
+ c_a=\tfrac18,\qquad
+ J_a\le C_N\sum_{j=0}^{\infty}(j+2)e^{-j}
+        =C_N\frac{2-e^{-1}}{(1-e^{-1})^2}.                    \tag{19}
+\]
+Theorem A applies to every metric in (17) whose pointwise Ricci residual
+is below its fixed threshold. The required threshold is independent of
+the number of cyclic cells, and the metrics need not be deck-invariant.
+
+This family contains residuals which are small everywhere but not small
+in global \(L^2\). For an explicit example, choose a ball in one fixed
+fundamental cell and a smooth bump \(\beta\) supported there and equal to
+one on a smaller ball. On its \(m\) disjoint translates choose arbitrary
+coefficients \(c_j\in[1,2]\), and put
+\[
+ f_m=t\sum_{j=1}^m c_j\beta_j,\qquad g_m=e^{2f_m}h_m.          \tag{20}
+\]
+For small fixed \(t>0\), (17), all uniform constants and
+\(\delta_-(g_m)\le C t\) hold. On each smaller ball the conformal factor
+is constant, so \(\operatorname{Ric}_{g_m}+g_m
+=(e^{2tc_j}-1)h_m\). Consequently
+\[
+ \|\operatorname{Ric}_{g_m}+g_m\|_{L^2(g_m)}
+                           \ge c t\sqrt m.                  \tag{21}
+\]
+For sufficiently small fixed \(t\), Theorem A repairs every \(g_m\),
+although (21) diverges. This is a real gain over the earlier mixed-norm
+criterion, not merely a change from one notation for the residual to
+another. The underlying covers already admit hyperbolic metrics; this
+application establishes a **uniform repair neighbourhood for distributed
+perturbations**, not previously unknown Einstein topologies.
+
+## 5. Scope relative to classical analysis and the Yau26 program
+
+The weighted quadratic-form identity is classical; see
+[Jäckel, Remark 2.6](https://arxiv.org/html/2502.16692v2).
+His Lemma 2.4 supplies the almost-Einstein Koiso estimate used in (18),
+after scaling from \(\operatorname{Ric}=-(n-1)g\) to \(\operatorname{Ric}=-g\).
+The local Moser estimate is his Lemma 2.2. The new composition here uses
+the **actual quotient's slow volume growth** to convert weighted residual
+norms into uniformly local norms, and then uses the preceding topological
+regularity result as a source of controlled charts.
+
+Jäckel's Theorem 1.1 permits collapse, under its negative-sectional and
+hyperbolic-thin-part hypotheses, but retains a small global \(L^2\)
+residual. The present argument requires local noncollapse and (3),(5),
+but permits errors spread throughout arbitrarily large volume.
+[Premoselli's repair analysis](https://numdam.org/item/10.5802/tsg.367.pdf)
+uses a different weighted inverse tailored to its gluing regions and
+source support. None of these results is an unrestricted replacement for
+the others. No global-priority claim is made for the weighted principle.
+
+There are two important mathematical exclusions from the present theorem.
+First, the earlier assumption
+\(\|L_gu\|_2\ge\lambda\|u\|_2\) is not interchangeable with (2);
+negative eigenvalues invalidate the weighted coercivity step. Second,
+products of hyperbolic curves have genuine Teichmüller kernels, so they
+do not satisfy (2). An obstruction equation cannot be bypassed by deleting
+those tensors. The growth comparison also concerns all balls on the actual
+manifold; a global entropy number without uniform finite-radius bounds
+does not by itself supply (11).
+
+The scientific increment is therefore specific: the prior no-diameter
+criterion required \(\delta^{1-\alpha}+\|E\|_2\) to be small; here a
+verified growth--coercivity condition makes **pointwise small Ricci error**
+sufficient in a family of unbounded diameter and volume. It remains a
+restricted sufficient answer to the original same-smooth-manifold
+existence question, not a dimension-only Yau26 threshold.
+
+## 6. Reproduction scope
+
+`check_uniformly_local_repair.py` verifies the factor in (9), the growth
+threshold and constants in (19), and the four-dimensional scaling in
+(21). These are finite algebraic checks. They do not certify the elliptic,
+covering-space or nonlinear arguments above.

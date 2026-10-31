@@ -1,0 +1,55 @@
+{
+ "record": "data/perp_area/x00.03_X128_d20.json",
+ "threshold": 0.995670030355131,
+ "nlog2": 7,
+ "seeds": [
+  0
+ ],
+ "cap_einstein_max_residual": [
+  2.6645352591003757e-15,
+  8.881784197001252e-16
+ ],
+ "records": [
+  {
+   "a": 0.5,
+   "b": 1.5,
+   "xa": 0.042248594977202,
+   "coeff": [
+    0.11220721631341862,
+    -0.00485203101447648,
+    -0.011874009414830628
+   ],
+   "seed": 0,
+   "n": 128,
+   "D_over_8pi2": 2.2082691807820214,
+   "P_over_8pi2": 1.5328953181780456,
+   "margin_vs_certified": 1.2125991504268905,
+   "core_D_over_8pi2": 0.45945398335631404,
+   "annulus_D_over_8pi2": 1.7488151974257073,
+   "volume": 34.552226918724635,
+   "delta_volume": -1.0679317497880945,
+   "scalar_integral": -147.67130906624533,
+   "delta_scalar_integral": -5.19067439219441,
+   "scalar_square": 841.8363729259505,
+   "delta_scalar_square": 271.91383422974684,
+   "scalar_residual_square": 53.32538277389534,
+   "ledger_a_over_8pi2": 0.06147739326095834,
+   "ledger_b_over_8pi2": 1.5614773932609582,
+   "ledger_b_minus_a_over_8pi2": 1.5,
+   "min_metric_eigenvalue": 0.4089177027217299,
+   "optimization": {
+    "success": true,
+    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+    "nit": 10,
+    "fun": 2.20826918078275,
+    "jac": [
+     -5.564280974867941e-08,
+     -3.053211758974328e-07,
+     5.183883822201807e-08
+    ]
+   }
+  }
+ ],
+ "seconds": 101.52832913398743,
+ "status": "floating QMC construction experiment; topology and bolt are inherited from certified cell; ledger a,b derived, not independently integrated"
+}

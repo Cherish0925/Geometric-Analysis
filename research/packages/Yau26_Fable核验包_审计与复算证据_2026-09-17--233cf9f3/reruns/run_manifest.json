@@ -1,0 +1,76 @@
+[
+  {
+    "name": "baseline_five_groups",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "/mnt/data/yau26_fable_audit_20260917/input_baseline/qiushi-yau26/scripts/reproduce.py",
+      "--output",
+      "/mnt/data/yau26_fable_audit_20260917/reruns/baseline_five"
+    ],
+    "cwd": "/mnt/data/yau26_fable_audit_20260917/reruns",
+    "elapsed_sec": 4.957,
+    "returncode": 0,
+    "status": "completed",
+    "log": "/mnt/data/yau26_fable_audit_20260917/reruns/baseline_five_groups.log"
+  },
+  {
+    "name": "v1_core",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "v1_core.py"
+    ],
+    "cwd": "/mnt/data/yau26_fable_audit_20260917/new/yau26_verification_artifacts/verify",
+    "elapsed_sec": 5.983,
+    "returncode": 0,
+    "status": "completed",
+    "log": "/mnt/data/yau26_fable_audit_20260917/reruns/v1_core.log"
+  },
+  {
+    "name": "v1b_family",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "v1b_family.py"
+    ],
+    "cwd": "/mnt/data/yau26_fable_audit_20260917/new/yau26_verification_artifacts/verify",
+    "elapsed_sec": 1.969,
+    "returncode": 0,
+    "status": "completed",
+    "log": "/mnt/data/yau26_fable_audit_20260917/reruns/v1b_family.log"
+  },
+  {
+    "name": "v1c_htilde",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "v1c_htilde.py"
+    ],
+    "cwd": "/mnt/data/yau26_fable_audit_20260917/new/yau26_verification_artifacts/verify",
+    "elapsed_sec": 1.78,
+    "returncode": 0,
+    "status": "completed",
+    "log": "/mnt/data/yau26_fable_audit_20260917/reruns/v1c_htilde.log"
+  },
+  {
+    "name": "c1_ricci_slow",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "c1_ricci_slow.py"
+    ],
+    "cwd": "/mnt/data/yau26_fable_audit_20260917/new/yau26_verification_artifacts/audit_bundle",
+    "elapsed_sec": 8.341,
+    "returncode": 0,
+    "status": "completed",
+    "log": "/mnt/data/yau26_fable_audit_20260917/reruns/c1_ricci_slow.log"
+  },
+  {
+    "name": "r4_OT_identities",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "r4_OT_identities.py"
+    ],
+    "cwd": "/mnt/data/yau26_fable_audit_20260917/new/yau26_verification_artifacts/final_review",
+    "elapsed_sec": 14.321,
+    "returncode": 0,
+    "status": "completed",
+    "log": "/mnt/data/yau26_fable_audit_20260917/reruns/r4_OT_identities.log"
+  }
+]

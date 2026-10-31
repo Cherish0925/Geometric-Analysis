@@ -1,0 +1,1501 @@
+% Standalone article. Compile twice with pdfLaTeX; no external bibliography or figures.
+\documentclass[a4paper,11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[margin=23mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{booktabs,longtable,array,enumitem,xurl}
+\usepackage[hidelinks,bookmarksnumbered]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{Pointwise near-Einstein constructions}\fancyfoot[C]{\thepage}
+\setlength{\parskip}{4pt}\setlength{\emergencystretch}{3em}
+\allowdisplaybreaks[3]\setcounter{tocdepth}{2}\numberwithin{equation}{section}
+\setlist{itemsep=2pt,topsep=4pt,parsep=0pt,leftmargin=2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Conditional criterion}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{problem}[theorem]{Open problem}
+\newtheorem{remark}[theorem]{Remark}
+\DeclareMathOperator{\Ric}{Ric}\DeclareMathOperator{\Rm}{Rm}
+\DeclareMathOperator{\Vol}{Vol}\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Id}{Id}\DeclareMathOperator{\Div}{div}
+\DeclareMathOperator{\Met}{Met}\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\arsinh}{arsinh}\DeclareMathOperator{\TT}{TT}
+\DeclareMathOperator{\Sym}{Sym}\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\dist}{dist}
+\newcommand{\R}{\mathbb R}\newcommand{\Z}{\mathbb Z}
+\newcommand{\CP}{\mathbb{CP}}\newcommand{\op}{\mathrm{op}}
+\newcommand{\dd}{\,d\mu_g}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\source}[2]{\par\smallskip{\small
+  Proof source: \href{../references/rounds/#1}{\nolinkurl{#1}}, #2.}\par}
+\newcommand{\base}[2]{\par\smallskip{\small
+  Inherited source: \href{#1}{\nolinkurl{#1}}, #2.}\par}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\title{Pointwise near-Einstein constructions on fixed smooth manifolds\\
+  \large Closed sheared topology, exact open models, and correction in all tensor modes}
+\author{}
+\date{21 September 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We develop constructions measured by the global, unweighted Ricci
+endomorphism defect. Two inherited mechanisms---marked $A_1$ resolution
+using a corrected Eguchi--Hanson core and logarithmic Weyl interpolation,
+and slow interpolation on a fixed surface bundle---are connected with
+exact complete double-cylinder models, nonlinear repair obstructions, and
+fixed closed gluings with integral shear and arbitrary mapping classes.
+For the closed gluings we retain every Ricci block, prove the small-error
+estimate, and record the volume and almost-parallel-curvature properties.
+For the balanced surface bundle, a receiver-weighted inverse retaining the
+whole closed fibre and its transfer modes gives a linear-size exclusion
+neighborhood for arbitrary tensor perturbations. Complete two-ended
+approximate metrics provide a separate test of exact connector obstructions.
+We formulate the remaining all-mode problem through a Schur complement,
+actual marked boundary response, and a Banach-space a posteriori criterion
+whose hypotheses imply the full equation. These conditional tools do not
+establish a new closed Einstein metric or exclude every Einstein metric
+on the constructed manifolds. Positive and negative branches, actual smooth
+topology, higher-dimensional extensions, and the distinction between exact
+and approximate matching remain explicit throughout.
+\end{abstract}
+\tableofcontents
+\clearpage
+
+\section{The construction problem and its quantifiers}\label{sec:problem}
+\subsection{The interval question and its two sign branches}\label{sec:quantifiers}
+Let $Q_n$ be the following working question. Do there exist real constants
+$c_n<C_n$, depending only on $n$, such that every closed connected smooth
+$n$-manifold carrying a metric
+\[
+             c_ng\le\Ric_g\le C_ng
+\]
+also carries some smooth positive-definite Einstein metric
+$h$, with $\Ric_h=\lambda h$? The output has no prescribed sign,
+proximity, complex structure, fibration, or symmetry. The working statement
+is fixed independently of the remaining historical comparison between the
+1982 question page and later renumberings.
+
+For $\sigma\in\{+1,-1\}$, set
+\begin{equation}\label{eq:defect}
+ \delta_\sigma(g)=\norm{g^{-1}\Ric_g-\sigma\Id}_{L^\infty,\op},
+ \qquad e_\sigma(M)=\inf_{g\in\Met(M)}\delta_\sigma(g).
+\end{equation}
+Let $P_n^\sigma$ assert that a positive threshold depending only on $n$
+for $\delta_\sigma$ implies the same unrestricted Einstein conclusion.
+Then
+\begin{equation}\label{eq:branches}
+                  Q_n\quad\Longleftrightarrow\quad P_n^+\lor P_n^-.
+\end{equation}
+Indeed, for $\widehat g=ag$ the covariant Ricci tensor is unchanged and
+its endomorphism is divided by $a$. Every nondegenerate interval contains
+a nonzero interior point $\mu$ and a same-sign neighborhood; scaling a
+metric close to $\operatorname{sign}(\mu)$ by $1/|\mu|$ puts it in that
+interval. Conversely a sufficiently small interval centered at $+1$ or
+$-1$ is an admissible interval.
+
+An affirmative result in every dimension needs at least one successful
+sign in each dimension. A complete disproof needs both signs to fail in
+one and the same dimension, possibly on different manifolds or on changing
+topologies. A fixed $M$ with $e_\sigma(M)=0$ supplies a branch counterexample
+only after every Einstein metric on that same smooth $M$ is excluded.
+Higher-dimensional construction gaps obstruct an all-dimensional
+affirmative proof; they are not extra requirements on a complete
+fixed-dimensional disproof.
+
+\subsection{Approximation, correction, and global existence}\label{sec:levels}
+A family with small defect, a solution of a projected correction equation,
+and an exact Einstein metric are three different mathematical outputs.
+Integral rigidity, construction, and global classification are current
+research emphases, not a restriction on possible methods. An existence
+argument, a new invariant, or a different equivalent formulation is
+relevant whenever it returns to \eqref{eq:branches}.
+
+Theorems recalled below retain the hypotheses of the archived proofs.
+Algebraic deductions and conditional analytic criteria are proved where
+stated; proposed extensions are identified as open problems.
+The new closed sheared examples make
+the distinction particularly sharp: a qualitative global theorem forces
+every hypothetical exact output to have no local Killing field, while
+the constructed inputs are locally almost symmetric.
+
+\subsection{Norms, scale, and compactness}\label{sec:norms}
+In dimension four write $s=\tr_g\Ric$ and
+$E^\circ=\Ric-\frac{s}{4}g$. The norms of $W^\pm$ are the
+Hilbert--Schmidt operator norms on $\Lambda^2_\pm$; $\Rm_{\rm full}$
+uses the four-index tensor norm. On a closed oriented manifold,
+\begin{align}
+8\pi^2\chi&=\int_M\left(|W^+|^2+|W^-|^2+
+          \frac{s^2}{24}-\frac{|E^\circ|^2}{2}\right)\dd,\label{eq:CGB}\\
+12\pi^2\tau&=\int_M(|W^+|^2-|W^-|^2)\dd,\\
+\int_M|\Rm_{\rm full}|^2\dd
+ &=32\pi^2\chi+4\int_M|E^\circ|^2\dd.\label{eq:energy}
+\end{align}
+The Eguchi--Hanson curvature energy is $12\pi^2$ in curvature-operator
+normalization and $48\pi^2$ in four-index normalization. For a metric
+with $\Ric\approx-3g$,
+\[
+ \delta_-(3g)=\tfrac13\norm{g^{-1}\Ric_g+3\Id}_\infty.
+\]
+Below an operator norm of a covariant Ricci defect always means that
+one index has first been raised with the actual metric.
+Finite-$L^p$ smallness, a weighted norm, or small support volume cannot
+replace \eqref{eq:defect}. A complete noncompact Einstein metric is
+not a closed-manifold counterexample.
+
+\subsection{What has changed in the construction problem}\label{sec:progress}
+The baseline already supplies $A_1$ logarithmic interpolation and the
+fixed Dehn-twist bundle $E_D$. The later work integrates an entire
+nonlinear open-model source, enlarges an arbitrary-tensor closed repair
+exclusion neighborhood, and produces fixed closed topologies with
+nonzero integral shear. Each result must identify its smooth object,
+global error norm, and precise information about exact Einstein output.
+The transition between these results explains the current direction.
+Exact local models make boundary flux and external response unavoidable.
+The closed receiver then selects a weighted norm in which every relevant
+transfer mode can be retained, even though maximum-norm modulation fails.
+Two-ended approximations show how the defect infimum can vanish inside
+a class with no exact symmetric connector. Returning to compact geometry,
+the fixed sheared construction separates slow mapping-class variation
+from a rapid shear transition at a collapsed throat. Its remaining exact
+equation must combine all these lessons: complete modes, actual boundary
+response, and a scale-aware nonlinear estimate.
+For the latest objects, preserving circle symmetry in a closed exact
+ansatz would remove every possible solution. Small nonsymmetric modes,
+including exponentially weak transmission through long collars, therefore
+belong to the correction problem.
+\source{SYNTHESIS.md}{construction and global-classification interfaces}
+
+\section{Marked \texorpdfstring{$A_1$}{A1} resolution and logarithmic Weyl matching}
+\label{sec:A1}
+\subsection{A fixed smooth resolution}\label{sec:A1-theorem}
+\begin{theorem}[Inherited marked $A_1$ approximation]\label{thm:A1}
+Let $(M_0,g_0)$ be a fixed closed oriented Einstein four-orbifold,
+$\Ric_{g_0}=\sigma g_0$, with finitely many $A_1$ points. Fix equivariant
+normal coordinates, end orientations, boundary markings, and the actual
+smooth Eguchi--Hanson fillings. Suppose the smooth core correction satisfies
+\[
+ D\Ric_{g_{\rm EH}}\widetilde h=g_{\rm EH},\qquad
+ \widetilde h=H_*+O_2(\rho^{-2}),
+\]
+and its quadratic asymptotic term and the exterior jet are in a common
+radial gauge. Then the fixed resolution $M$ carries smooth positive
+metrics $g_a$ with
+\[
+             \delta_\sigma(g_a)\le C/|\log a|\longrightarrow0.
+\]
+They converge in Gromov--Hausdorff topology to $(M_0,g_0)$, and their
+rescaled cores converge to the prescribed Eguchi--Hanson metrics.
+Constants depend on the fixed finite marked data.
+\end{theorem}
+The explicit core below supplies the stated hypothesis in the inherited
+$A_1$ setting. This is not an assertion for arbitrary ALE models.
+A local obstruction to exact desingularization leaves open distant
+Einstein metrics, and the theorem alone does not identify the smooth
+type associated with an arbitrary boundary marking.
+\base{20260916_construction.tex}{the marked $A_1$ theorem and three-region proof}
+
+\subsection{The nonzero Ricci source in the core}\label{sec:A1-core}
+A bare scaled Ricci-flat bubble cannot work:
+\[
+ (a^2g_{\rm EH})^{-1}
+   \bigl(\Ric_{a^2g_{\rm EH}}-\sigma a^2g_{\rm EH}\bigr)
+       =-\sigma\Id .
+\]
+The inherited construction on the $\mathcal O(-2)$ disk bundle uses
+the biaxial family
+\begin{align}
+c_\Lambda&=(1-\Lambda/4)^2-1,\\
+G_\Lambda(r)&=\frac{\sqrt{1+c_\Lambda r^2}}{r^4}
+ \int_1^r\frac{s^3(4-\Lambda s^2)}
+ {(1+c_\Lambda s^2)^{3/2}}\,ds,\\
+F_\Lambda&=(1+c_\Lambda r^2)G_\Lambda,\\
+q_\Lambda&=F_\Lambda^{-1}dr^2+
+ \frac{r^2}{4}(\sigma_1^2+\sigma_2^2+G_\Lambda\sigma_3^2).
+\end{align}
+Here the invariant one-forms and angle periods have the fixed bolt
+normalization of the source; the expression is used only where the
+square root and positive metric coefficients are defined. The equation
+\[
+r(1+c_\Lambda r^2)G_\Lambda'
+ +(4+3c_\Lambda r^2)G_\Lambda=4-\Lambda r^2
+\]
+together with Bianchi gives $\Ric(q_\Lambda)=\Lambda q_\Lambda$.
+Differentiating at $\Lambda=0$ and subtracting the gauge term generated
+by $V=\frac5{72}(r^3-r^{-1})\partial_r$ gives $\widetilde h$.
+Bolt smoothness is checked in genuine smooth coordinates, not by
+examining a single singular polar coefficient.
+
+If $k=g_{\rm EH}$ and $r=a\rho$, the corrected core
+$G_a=a^2(k+a^2\sigma\widetilde h)$ satisfies
+\begin{equation}\label{eq:core-error}
+ \norm{G_a^{-1}\Ric(G_a)-\sigma\Id}_{\op}
+                   \le C(a^2+r^2).
+\end{equation}
+An $O(a^2)$ relative metric correction produces an order-one original-scale
+Ricci correction because Ricci contains two derivatives and one index is
+raised at the shrinking scale.
+
+\subsection{The full Weyl jet and the logarithmic annulus}\label{sec:A1-log}
+Equal Ricci contractions of the inner and outer quadratic jets imply,
+in the common radial gauge, that their difference is
+\[
+ K_{ij}=-\tfrac13C_{ikjl}x^kx^l,\qquad
+ \tr K=\Div K=\Delta K=0,\qquad K(x,\cdot)=0 .
+\]
+The algebraic Weyl tensor $C$ ranges over the full ten-dimensional
+space $\Sym^2_0(\Lambda^+)\oplus\Sym^2_0(\Lambda^-)$, not just
+the biaxial subspace. For $t=\log r$,
+\begin{equation}\label{eq:log-Weyl}
+ D\Ric_e[\eta(\log r)K]
+             =-\frac{\eta_{tt}+6\eta_t}{2r^2}K.
+\end{equation}
+To see the coefficient $6$, use the homogeneity-two identity
+$x\cdot\nabla K=2K$ in the radial product rule for $\Delta(\eta K)$
+in dimension four. The trace and divergence identities eliminate the
+other linearized Ricci terms.
+
+Choose $a\ll b=a^{1/2}\ll R=a^{1/4}\ll1$ and
+$L=\log(R/(8b))$. A fixed profile rescaled to this logarithmic interval
+has $\eta_t=O(L^{-1})$, $\eta_{tt}=O(L^{-2})$.
+Since $K=O(r^2)$, \eqref{eq:log-Weyl} costs $O(L^{-1})$.
+The separate core bound \eqref{eq:core-error}, ALE-tail matching,
+exterior normal-coordinate remainder, and nonlinear annular estimates
+complete the proof. The linear identity alone does not prove the theorem.
+
+The first ALE obstruction can remain order one after raising an index
+for a specified fixed matching. Logarithmic matching changes the matching
+mechanism. These statements are compatible. Logarithmic cutoffs and a
+pointwise Ricci-approximation problem already occur in Ozuch's work
+\cite{OzuchII}; comparison must concern the full norm, marking, and
+geometric limit.
+
+\subsection{Extensions and retained restrictions}\label{sec:A1-extensions}
+Collinear ADE periods require the full $3b_2$-dimensional obstruction
+space. Type-T and Wahl descent additionally require covers, periods,
+finite averaging, and kernel conditions; $b_2=0$ of a quotient is not
+a proof that its linearized kernel vanishes. Constant-scalar-curvature
+correction requires a weight separated from the actual endpoint near-kernel:
+an estimate for $0<\mu<2$ does not extend automatically to $\mu=2$.
+Quartic matching requires a new extension theorem and tail estimates.
+
+Spherical suspensions, the chirality at both poles, and four-node product
+quotients need actual equivariant or Kirby data to determine smooth
+type \cite{OR}. The archived same-chirality applications and
+negative-branch GH separation are retained as such; the earlier
+$S^2\times S^2$ application is not counted again.
+Constants $1/3$ for a specified logarithmic profile, $1/8$ in another
+restricted optimization, and $1/6$ for a constant-scalar model belong to
+different gauges, cutoffs, and scales. None is a universal sharp constant.
+\base{20260912.tex}{Chapters 1--4: flux, ADE/type-T/Wahl, scalar correction, and smooth models}
+
+\section{A fixed surface bundle: slow interpolation and cubic repair}
+\label{sec:ED}
+\subsection{Keeping the monodromy fixed}\label{sec:ED-topology}
+Fix $F=\Sigma_p$, $B=\Sigma_q$, $p,q\ge2$, and a nonseparating
+Dehn twist $D$. On a fixed fibre collar put
+\[
+ h_z=du^2+a(u)^2(ds+z\zeta'(u)\,du)^2,\qquad
+ a(u)=a_0\cosh u,\quad 0\le z\le1.
+\]
+Every $h_z$ is hyperbolic with the same area form, and
+$h_1=D^*h_0$. A nonintegral local coordinate shear need not extend to
+an isotopy of the whole fibre; it cannot remove the monodromy.
+On a base collar with $b(t)=\ell\cosh t$ and half-length $L\to\infty$,
+set $z(t)=\eta(t/L)$ and
+\[
+          G_\ell=dt^2+b(t)^2d\theta^2+h_{z(t)}.
+\]
+The metric is product outside the collar and closes using the fixed $D$.
+All parameters describe metrics on one smooth bundle $E_D$.
+
+\subsection{Every Ricci component}\label{sec:ED-Ricci}
+Write $j=\tanh u$, $k=\tanh t$, $Q=a\zeta'$, and $v=Qz'$.
+In the orthonormal coframe
+$(dt,b\,d\theta,du,a(ds+z\zeta'\,du))$ the exact defect is
+\begin{equation}\label{eq:ED-matrix}
+(\Ric+G_\ell)_{\rm ON}=
+\begin{pmatrix}
+-v^2/2&0&0&(v_u+2jv)/2\\
+0&0&0&0\\
+0&0&-v^2/2&-(v_t+kv)/2\\
+(v_u+2jv)/2&0&-(v_t+kv)/2&v^2/2
+\end{pmatrix}.
+\end{equation}
+Differentiating frame coefficients alone would miss the quadratic
+diagonal terms in the covariant derivative of the shape operator.
+The mixed terms are essential to the estimate.
+Since $z'=O(L^{-1})$, $z''=O(L^{-2})$, the global unweighted error is
+$O(L^{-1})$. Moreover,
+\[
+\Vol(G_\ell)=16\pi^2(p-1)(q-1),\qquad
+\norm{\nabla^m\Rm}_\infty\le C_m,\qquad
+\norm{\nabla^m(\Ric+G_\ell)}_\infty\le C_m/L .
+\]
+The injectivity radius collapses and the diameter grows. In the shear
+region $K(e_0,e_3)=v^2/4>0$ wherever $v\ne0$, so strict-negative-
+sectional-curvature correction theorems do not apply.
+\base{20260912.tex}{Chapter 6, BUN:slow, BUN:ricci-matrix, and BUN:slow-geometric}
+
+\subsection{Balanced collars and the meaning of cubic order}\label{sec:ED-balanced}
+Pinch the fibre waist $\varepsilon$ and the base waist
+$\beta=\varepsilon^2$. Balancing the mixed sources gives
+\begin{equation}\label{eq:balanced}
+ \delta_-(G_\varepsilon)=\frac{2}{\pi^4}\varepsilon^2+O(\varepsilon^4).
+\end{equation}
+Three scalar correction equations, with their actual tail estimates,
+produce an $O(\varepsilon^2)$ tensor correction on the same closed
+manifold and a defect $O(\varepsilon^3)$. It need not preserve the
+original projection as a Riemannian submersion.
+Global TT pairings and the conformal Ricci equation give bounds in
+specified neighborhoods or conformal classes. Cubic optimality there
+is not an all-metric lower bound for $e_-(E_D)$.
+The baseline free-quotient construction also permits independent and
+noncommuting mapping classes. Later multitwist examples refine its
+group and representation information, not the underlying interpolation
+mechanism.
+\base{20260916_global.tex}{the bundle-input and charged-center sections}
+
+\section{Exact complete double-cylinder metrics}\label{sec:exact-open}
+\subsection{All bounded invariant directions and an actual nonlinear family}
+\label{sec:exact-family}
+On $X=(\R\times S^1)^2$, with fixed angle periods, let
+\begin{gather*}
+ g_0=dt^2+\cosh^2t\,dy^2+du^2+\cosh^2u\,dx^2,\\
+ f=\sech^2t,\qquad r=\sech^2u,\qquad J(v)=\arctan(\sinh v),\qquad
+ W=\cosh t\cosh u .
+\end{gather*}
+For the orthonormal coframe $(e^0,e^1,e^2,e^3)$, put
+$T_1=(e^0)^2-(e^1)^2$, $S_1=e^0e^1+e^1e^0$ and similarly
+$T_2,S_2$. Let $P_t=\partial_t^2+\tanh t\,\partial_t$.
+The Bianchi-gauged operator $2L=\nabla^*\nabla-2\mathring R$
+has all ten invariant tensor blocks:
+\[
+\begin{array}{c|c}
+\text{two factor traces}&-P_t-P_u+2\\
+T_1,S_1&-P_t-P_u+2-4f\\
+T_2,S_2&-P_t-P_u+2-4r\\
+\text{four mixed polarizations}&-P_t-P_u+2-f-r .
+\end{array}
+\]
+The classification in the source allows arbitrary joint $(t,u)$
+dependence and yields exactly
+\begin{align}\label{eq:eight-kernel}
+H[z]={}&f[(a_0+a_1J(u))T_1+(b_0+b_1J(u))S_1]\\
+ &+r[(A_0+A_1J(t))T_2+(B_0+B_1J(t))S_2].\nonumber
+\end{align}
+These eight bounded fields are not $L^2$ on the full product.
+In the invariant $L^2(W\,dt\,du)$ domain the source proves instead
+$\langle Lv,v\rangle\ge\frac18\norm v_2^2$.
+
+Define the exact hyperbolic cylinder
+\[
+h_{\alpha,\gamma}(v,\theta)
+=\frac{\cosh^2v}{\sinh^2v+e^{-\alpha}}\,dv^2
+ +(\sinh^2v+e^{-\alpha})(d\theta+\gamma\sech^3v\,dv)^2 .
+\]
+Let its first pair of parameters depend affinely on $J(u)$ and its
+second pair affinely on $J(t)$ as in \eqref{eq:eight-kernel}.
+Their sum is a reference $g[z]$ of determinant one in the background
+frame. Define $H^m_\delta$ by $W^\delta k\in H^m(g_0)$ within
+the invariant tensor subspace.
+
+\begin{theorem}[Archived complete nonlinear family]\label{thm:open-family}
+For sufficiently small $z\in\R^8$ there is an analytic correction
+$k[z]\in H^6_{1/4}$, with higher regularity, such that
+\[
+ G[z]=g[z]+k[z],\qquad \Ric(G[z])=-G[z],\qquad
+ \beta_{g[z]}k[z]=0,\qquad \norm{k[z]}_{H^6_{1/4}}\le C|z|^2.
+\]
+The metrics are smooth, complete, and $T^2$ invariant, and for each fixed $j$,
+$|\nabla_0^jk[z]|\le C_j|z|^2W^{-3/4}$.
+Uniqueness is in the stated correction space and gauge.
+\end{theorem}
+\begin{proof}[Analytic mechanism]
+Set $\xi=J(t)$, $\eta=J(u)$, $p=\cos\xi$, $q=\cos\eta$.
+The exact nonlinear residual has smooth frame coefficients on the
+closed square and vanishes on all four faces. Hadamard division gives
+$E[z]=pqR[z]$ with $R[z]=O(|z|^2)$ smooth. Thus the whole source,
+not just its quadratic truncation, lies in $H^m_\delta$ for $\delta<1/2$.
+Conjugation by $W^\delta$ gives
+\[
+\operatorname{Re}\langle L_\delta v,v\rangle
+\ge(1/8-\delta^2)\norm v_2^2,
+\]
+using $|\nabla\log W|^2\le2$ and the combined skew-adjoint drift terms.
+At $\delta=1/4$ this yields the inverse by coercivity and regularity.
+Contraction solves
+\[
+\Ric(g[z]+k)+g[z]+k+
+\delta^*_{g[z]+k}\beta_{g[z]}k=0
+\]
+in a ball of radius $C|z|^2$.
+The Bianchi one-form $\omega$ is $L^2$ and solves
+$(\nabla^*\nabla-\Ric)\omega=0$. Negative Ricci follows from
+$C^2$ proximity; cutoff integration forces $\omega=0$.
+\end{proof}
+A moving reference is necessary: a constant cylinder length change
+has a fixed-reference Bianchi error independent of the other radial
+variable and therefore outside $L^2$, regardless of its quadratic size.
+The eight parameters are marked boundary/kernel parameters, not eight
+proved inequivalent moduli.
+\source{round2_construction.md}{all blocks, bounded kernel, physical scales, and invariant gap}
+\source{round3_construction.md}{nonlinear target space, inverse, moving gauge, contraction, and Bianchi removal}
+
+\subsection{Charge, endpoint flux, and unchanged-core insertion}\label{sec:charge}
+Write a genuine invariant Einstein metric as
+\[
+G=h+H_{ab}(d\theta^a+\mathcal A^a)(d\theta^b+\mathcal A^b),\quad
+v=\sqrt{\det H},\quad F=d\mathcal A,\quad \mathfrak q=vH*_hF .
+\]
+With generators $(\partial_y,\partial_x)$ and quotient orientation
+$dt\wedge du$, the mixed equation gives $d\mathfrak q=0$.
+Neither $H$ nor $h$ is assumed diagonal. Put $c=\pi^2/2$. Then
+\begin{equation}\label{eq:charge}
+\int_{\R^2}F=c(-b_1,B_1)^{\mathsf T}
+ =\mathsf M[z]\mathfrak q[z],\qquad
+\mathsf M[z]=\int_{\R^2}v^{-1}H^{-1}dA_h>0,\qquad \mathsf M[0]=c\Id.
+\end{equation}
+The density is bounded by a constant times
+$\operatorname{diag}(\sech^3t\sech u,\sech t\sech^3u)$.
+The correction to $\mathcal A$ has boundary integral tending to zero,
+also after fixed parameter derivatives, so Stokes uses actual end markings.
+The finite twist energy is
+\[
+\mathcal E_{\rm tw}=\mathfrak q^{\mathsf T}\mathsf M\mathfrak q
+=c\,\mathfrak q\cdot(-b_1,B_1)
+=c^2(-b_1,B_1)\mathsf M^{-1}(-b_1,B_1)^{\mathsf T}.
+\]
+It vanishes exactly when $b_1=B_1=0$. Constant twists $b_0,B_0$
+are removed by angular shifts built from $\int_0^v\sech^3w\,dw$,
+but these alter the end markings. Real lift differences do not vanish
+merely because their torus values agree.
+
+At second order the two net receiver sources are
+\[
+I_1=\frac{\pi^2}{8}(a_1^2-3b_1^2-A_1^2-B_1^2),\qquad
+I_2=\frac{\pi^2}{8}(A_1^2-3B_1^2-a_1^2-b_1^2).
+\]
+Homogeneous end shifts move opposite face fluxes without changing their
+sum $-I_i$. \emph{If} the actual exterior response vanished, these
+relations would force $b_1=B_1=0$ and $a_1^2=A_1^2$.
+That premise is unproved on $E_D$. The exterior source, adjoint
+detector defect, gauge terms, and physical periods must all be retained.
+The matrix in \eqref{eq:charge} is a two-channel twist response, not
+a full tensor Dirichlet-to-Neumann map.
+\source{round3_matching_next.md}{conditional matching and the actual exterior detector}
+\source{round4_construction.md}{nonlinear charge, finite scattering matrix, and twist energy}
+
+For $(b_1,B_1)\ne0$, the archived exact-core theorem excludes any
+unchanged nonempty open piece of $G[z]$ in a connected closed Einstein
+four-manifold. Escaping fixed-radius balls on the complete cover approach
+product geometry with $\nabla\Rm\to0$. A cocompact isometry group would
+bring them into a compact region, force $\nabla\Rm=0$ on an open set,
+and hence everywhere by analyticity. The resulting
+$\mathbb H^2\times\mathbb H^2$ geometry has integrable orthogonal
+complement to every locally free two-dimensional abelian Killing action,
+contradicting nonzero charge. Analytic continuation of a local isometry
+between complete simply connected analytic covers transfers the closed
+insertion to this contradiction. This argument neither gives a
+quantitative distance from exact metrics nor excludes changes on every
+open set.
+\source{round4_exact_core.md}{analytic continuation and cocompactness}
+
+\section{An arbitrary-tensor repair obstruction on the closed bundle}
+\label{sec:closed-repair}
+\subsection{The linear-size exclusion ball}\label{sec:exclusion}
+\begin{theorem}[Archived closed repair theorem]\label{thm:exclusion}
+For the balanced $G_\varepsilon$ on the fixed $E_D$, with the specified
+single nonseparating fibre degeneration, there are $c_*,c_1,\varepsilon_0>0$
+such that every smooth symmetric tensor $h$ satisfying
+$\norm h_{C^2(G_\varepsilon)}\le c_*\varepsilon$ and
+$0<\varepsilon<\varepsilon_0$ gives a positive metric with
+\[
+                \delta_-(G_\varepsilon+h)\ge c_1\varepsilon^3.
+\]
+There is no symmetry, support, block, or gauge restriction. If
+$\norm h_{C^2}=o(\varepsilon)$, then
+\[
+\liminf_{\varepsilon\to0}\varepsilon^{-3}
+\delta_-(G_\varepsilon+h)\ge\frac1{16\pi^4(p-1)}.
+\]
+\end{theorem}
+Reducing the radius by a fixed factor and rescaling also excludes nearby
+Einstein metrics with other Einstein constants. The inherited cubic
+construction lies in this ball, so the order is sharp within the stated
+neighborhood. The radius tends to zero; no distant Einstein metric is
+excluded.
+
+\subsection{The receiver measure, full kernel, and error ledger}\label{sec:weighted}
+Let $E(g)=\Ric_g+g$. The actual global TT receiver $Q_\varepsilon$
+obeys, with $\beta=\varepsilon^2$,
+\begin{align}
+\beta^{-1}\int\langle E(G_\varepsilon),Q_\varepsilon\rangle
+ &=-c_0\varepsilon^3(1+o(1)),&c_0&=\frac1{2\pi^2},\\
+\beta^{-1}\norm{J_GQ_\varepsilon}_1&\le C\varepsilon^2,&
+\beta^{-1}\int|Q_\varepsilon|_*&\longrightarrow M_0=8\pi^2(p-1).
+\end{align}
+The nuclear norm $|\cdot|_*$ is dual to the operator norm.
+Base-TT quadratic cancellation alone does not control the sign of
+arbitrary quadratic responses. Passing to the whole fibre preserves the
+thick region and both cusp limits, which a double-cylinder limit could lose.
+
+After angular averaging, use the comparison product with the actual
+closed fibre $F_\varepsilon$, per unit base-circle coordinate length, and
+\[
+d\nu=\sech t\,dt\,dA_{F_\varepsilon},\qquad
+\norm U_{H^j_\nu}^2=\sum_{i=0}^j\int|\nabla^iU|^2d\nu .
+\]
+Its mass is $4\pi^2(p-1)$, uniformly in $\varepsilon$.
+For smooth invariant $V\in H^2_\nu$, the archived estimate is
+\begin{equation}\label{eq:weighted-inverse}
+V=K+r,\qquad K=f(aT+bS)+A+J(t)B,\quad
+A,B\in\TT(F_\varepsilon),\qquad
+\norm r_{H^2_\nu}\le C\norm{LV}_{L^2_\nu}.
+\end{equation}
+All product geometric derivatives are included. The scalar gap
+$\lambda_1(F_\varepsilon)\ge\lambda_*>0$ uses connectedness of the thick
+complement for a single nonseparating pinch; it does not extend to an
+arbitrary separating degeneration \cite{Ji}.
+
+For completeness, with nonnegative fibre Laplacians and
+$P=\partial_t^2+\tanh t\,\partial_t$, the blocks of $2L$ are
+\[
+\begin{array}{c|c}
+\text{factor traces}&-P+\Delta_F+2\\
+\text{horizontal trace-free}&-P+\Delta_F+2-4f\\
+\text{mixed one-form coefficients}&-P+\Delta_{H,F}+2-f\\
+\text{fibre trace-free}&-P+A_F .
+\end{array}
+\]
+Here $A_F=2P_F\delta_F$ has nonzero spectrum at least two.
+For a scalar coefficient,
+\[
+\int\sech t\, u(-P+V_0)u
+=\int\sech t\,\bigl((u')^2+(V_0+2f-1)u^2\bigr).
+\]
+The resonant horizontal block factors through
+\[
+D_1=\partial_t+2\tanh t,\quad D_2=-\partial_t+\tanh t,\qquad
+D_2D_1=-P+2-4f,\quad D_1D_2=-P+2-f .
+\]
+The partner is coercive; the kernel of $D_1$ is spanned by $f$.
+The vertical TT equation $-Pu=F$ has homogeneous solutions $A+JB$,
+and its zero-data integral inverse is
+\[
+r(t)=-\int_0^t\sech u\int_0^u\cosh s\,F(s)\,ds\,du .
+\]
+After conjugating by $\sqrt{\sech t}$ its kernel has integrable
+exponential decay on each half-line. These estimates prove
+\eqref{eq:weighted-inverse} on the full weighted domain, with exhaustion
+justifying integrations at infinity. The transfer $JB$ is retained,
+without claiming that it integrates to a global bundle parameter.
+
+The kernel has a signed quadratic receiver:
+\begin{equation}\label{eq:signed}
+\mathcal B(K,K):=\frac12\int\langle D^2E[K,K],Q_0\rangle
+             =-\frac{\pi}{8}\norm B_{L^2(F_\varepsilon)}^2\le0 .
+\end{equation}
+A determinant-preserving fibre path makes its horizontal Ricci
+variation minus the squared fibre velocity. Together with
+$|\mathcal B(U,V)|\le C\norm U_{H^2_\nu}\norm V_{H^2_\nu}$,
+this bounds only the positive response needed to cancel the source.
+A uniform maximum-norm inverse is neither asserted nor needed.
+\source{round6_weighted_inverse.md}{weighted domains, partner operators, fibre TT transfer, gauge inverse, and receiver}
+
+Set $a=\norm h_{C^2}$ and
+$\eta=\delta_-(G_\varepsilon+h)+\varepsilon^2+\varepsilon a+a^2$.
+The finite marked collar, cutoff, angular averaging, and product
+comparison give forcing $O(\eta)$ and
+$\norm{V_{\rm osc}}_{H^1_\nu}^2\le C\beta a^2$.
+If $H=V+\mathcal L_Xg_*$ and $F=DE(H)$, naturality gives
+\[
+D^2E[H,H]-D^2E[V,V]=2\mathcal L_XF-DE[W].
+\]
+Only the second term disappears against the exact receiver. The first
+costs $Ca\eta$. Including the exterior mass and every same-order term,
+\begin{align}\label{eq:ledger}
+\beta^{-1}\int\langle E(G+h),Q_\varepsilon\rangle
+\le{}&-c_0\varepsilon^3(1+o(1))\\
+ &+C[\varepsilon^2a+a\eta+\eta^2+
+                 (\varepsilon+\beta)a^2+a^3].\nonumber
+\end{align}
+To prove Theorem~\ref{thm:exclusion}, first separate the case where the
+desired lower bound already holds. Otherwise $\delta_-$ is at most
+a fixed small multiple of $\varepsilon^3$, and
+$a\le c_*\varepsilon$ makes the positive side of \eqref{eq:ledger}
+smaller than half the source after choosing $c_*$ once.
+Duality with $M_0$ yields the contradiction. For $a=o(\varepsilon)$,
+all ledger terms are $o(\varepsilon^3)$ and the coefficient is $c_0/M_0$.
+\source{round6_construction.md}{the finite-collar reduction and complete error ledger}
+\source{round6_receiver_review.md}{the nonzero gauge forcing and scalar-gap hypotheses}
+
+\subsection{What would enlarge the exclusion theorem}\label{sec:larger-repairs}
+A global TT modulation counterexample has unit maximum size,
+residual $\Theta(1/|\log\varepsilon|)$, and fixed positive distance
+from reference tangents plus arbitrary infinitesimal diffeomorphisms.
+It disproves an overstrong uniform maximum-norm inverse; its much larger
+residual does not defeat Theorem~\ref{thm:exclusion}.
+At $a=C\varepsilon$ for arbitrary fixed $C$, several cubic-order
+terms in \eqref{eq:ledger} compete. Extending the result to every such
+$C$, to an arbitrary $o(1)$ neighborhood, or to another background
+requires new signed information. Conversely, changes beyond this
+radius may be a route toward an exact metric. Neither outcome is
+predetermined.
+\source{round5_modulation.md}{the maximum-norm counterexample and its scale}
+
+\section{Fixed closed gluings with mapping classes and integral shear}
+\label{sec:sheared}
+\subsection{The marked smooth object and its approximation theorem}
+\label{sec:sheared-theorem}
+Fix finitely many compact oriented surfaces $B_v$ with nonempty boundary
+and $\chi(B_v)<0$, and closed oriented surfaces $F_v$ of a common genus
+$p\ge2$. Pair every boundary in a connected finite graph, using fixed maps
+\begin{equation}\label{eq:gluing}
+\Psi_e(\phi,x)=(-\phi+u_e(x),f_e(x)),\qquad
+u_e:F_v\to\R/(2\pi\Z),\quad f_e:F_v\to F_w.
+\end{equation}
+Each $f_e$ preserves orientation; its mapping class may have infinite
+order and need not commute with any other one or extend over a block.
+The resulting closed smooth oriented $M$ is fixed before $\ell$ varies.
+
+\begin{theorem}[Archived fixed closed gluing]\label{thm:sheared}
+The manifold $M$ carries smooth positive metrics $G_\ell$, $\ell\downarrow0$,
+such that
+\begin{align}
+\norm{G_\ell^{-1}\Ric_{G_\ell}+3\Id}_\infty
+ &\le C(|\log\ell|^{-1}+\ell),\label{eq:sheared-bound}\\
+\Vol(G_\ell)&=\frac{4\pi^2}{9}\chi(M),\qquad
+\norm{\nabla^j\Rm_{G_\ell}}_\infty\le C_j .
+\end{align}
+Every fixed covariant derivative of the defect has the same small
+order bound. The marked gluing maps and integral shear classes do not
+vary. For these families one also has
+$\norm{\nabla^j\Rm_{G_\ell}}_\infty\to0$ for every $j\ge1$.
+Consequently $e_-(M)=0$ after scaling by three, with volume
+$4\pi^2\chi(M)$ in that normalization.
+\end{theorem}
+
+\subsection{Long collars absorb the mapping class}\label{sec:path-blocks}
+Give each factor curvature $-3$ and every base boundary length $\ell$.
+The hyperbolic collar theorem \cite{Rupflin} gives
+\[
+a_\ell(t)=\frac{\ell}{2\pi}\cosh(\sqrt3t),\qquad
+L_\ell=\frac1{2\sqrt3}\arsinh
+           \frac1{\sinh(\sqrt3\ell/2)}\asymp|\log\ell|.
+\]
+In a signed collar $[-L_\ell,L_\ell]$, the right product pulls back to
+\[
+dt^2+a_\ell^2(d\phi+\beta_e)^2+f_e^*h_w,\qquad
+\beta_e=-u_e^*d\phi .
+\]
+The closed one-form $\beta_e$ has periods in $2\pi\Z$ and need not be exact.
+Choose a fixed smooth path of hyperbolic metrics $h_z$ from $h_v$
+to $f_e^*h_w$, constant near its endpoints, and traverse it on
+$[-L_\ell,-1]$ with $z'=O(L_\ell^{-1})$. The metric there is
+$g=dt^2+a_\ell^2d\phi^2+h_{z(t)}$. No global isotopy to $f_e$ is assumed.
+
+Put $S=\frac12h^{-1}\dot h$, $H=\tr S$, $k=a_\ell'/a_\ell$,
+and $U=a_\ell^{-1}\partial_\phi$. Gauss--Codazzi gives every block of
+$E=\Ric+3g$:
+\begin{align}
+E_{tt}&=-\dot H-\tr S^2,& E_{UU}&=-kH,\label{eq:path-Ricci}\\
+E_{FF}^{\sharp}&=-D_tS-(k+H)S,&
+E_{tF}&=\Div_h S-dH,\qquad E_{tU}=E_{UF}=0.\nonumber
+\end{align}
+In particular a nonzero fibre-area trace cannot be dropped.
+The fixed compact path gives
+$S,H,\Div S,dH=O(L_\ell^{-1})$ and
+$D_tS,\dot H=O(L_\ell^{-2})$, while $|k|\le\sqrt3$.
+The full defect is $O(L_\ell^{-1})$. Coefficients are circle invariant;
+the circle connection uses $k$, and there is no hidden $\ell^{-1}$ loss.
+The path need not preserve its pointwise area form. Its total fibre
+area is fixed by Gauss--Bonnet.
+
+\subsection{The collapsed throat absorbs a nonexact integral shear}
+\label{sec:shear-blocks}
+After the fibre path has ended, fix $h=f_e^*h_w$ and on $[0,1]$ use
+\[
+g=dt^2+a_\ell^2(d\phi+z_s\beta_e)^2+h,
+\]
+where $z_s$ is a fixed smooth step, constant near both endpoints.
+Set $b=\beta_e$, $D=\Div_hb$ (divergence of the dual vector field).
+For horizontal fibre vectors $X,Y$, every nonzero error block is
+\begin{align}
+E_{tt}&=-a^2(z_s')^2|b|^2/2,&
+E_{UU}&=a^2(z_s')^2|b|^2/2,\label{eq:shear-Ricci}\\
+E_{XY}&=-a^2(z_s')^2b(X)b(Y)/2,&
+E_{tU}&=az_s'D/2,\nonumber\\
+E_{XU}&=-a(z_s''+3kz_s')b(X)/2,&E_{tX}&=0.\nonumber
+\end{align}
+The coefficient $3k$ is the derivative of $a^3$ in the mixed
+connection equation, and is necessary even when $b$ is harmonic.
+In the actual orthonormal splitting,
+\[
+\norm E_\op\le
+\frac{a^2(z_s')^2|b|^2}{2}
+\frac a2\sqrt{(z_s')^2D^2+(z_s''+3kz_s')^2|b|^2}.
+\]
+Since $a=O(\ell)$ on this fixed interval, the full error is $O(\ell)$.
+Outside it the connection is flat. At the right endpoint the metric is
+the actual pullback by \eqref{eq:gluing}; a nonexistent global real
+primitive of $\beta_e$ is never introduced.
+
+\subsection{Assembly, volume, almost parallel curvature, and both orientations}
+\label{sec:assembly}
+The two operations have disjoint supports. Their profiles are constant
+near every interface, so all jets match. The finite number of disjoint
+collars makes the global bound the maximum of the regional bounds,
+proving \eqref{eq:sheared-bound}. The shear has determinant one;
+the fibre paths have fixed total area. Consequently
+\[
+\Vol(G_\ell)=\sum_v\operatorname{Area}(B_v)\operatorname{Area}(F_v)
+=\frac{4\pi^2}{9}\sum_v\chi(B_v)\chi(F_v)
+=\frac{4\pi^2}{9}\chi(M).
+\]
+The gluing hypersurfaces have zero Euler characteristic.
+
+Let $\mathcal R_0$ be the algebraic curvature tensor of two
+curvature-$-3$ planes in the local actual splitting, and $P$ its first
+plane projection. With $\epsilon_\ell=L_\ell^{-1}+\ell$,
+\[
+|\nabla^j(\Rm-\mathcal R_0)|\le C_j\epsilon_\ell\quad(j\ge0),\qquad
+|\nabla^jP|\le C_j\epsilon_\ell\quad(j\ge1).
+\]
+The only mixing coefficients are $S=O(L_\ell^{-1})$ and
+$az_s'\beta_e=O(\ell)$. Since $\mathcal R_0$ is algebraic in $g$ and $P$,
+\[
+-3-C\epsilon_\ell\le\sec\le C\epsilon_\ell,\qquad
+\norm{\nabla^j\Rm}_\infty\le C_j\epsilon_\ell\quad(j\ge1).
+\]
+Collapse and growing diameter remain possible. Almost parallel curvature
+does not imply the existence of a locally symmetric metric on $M$.
+
+One can additionally make these metrics almost K\"ahler in both
+orientations. Isotope $f_e$ to preserve chosen equal-total-area forms;
+the boundary isotopy extends over a collar and preserves smooth type.
+For a fibre path with endpoint area form $\omega$, choose
+$d\sigma_z=\omega_z-\omega$ through a fixed linear primitive operator.
+Then $\sigma_0=\sigma_1=0$. Moser's argument in an auxiliary parameter
+on $(1-s)\omega+s\omega_z$ gives identity pullbacks at both endpoints,
+avoiding spurious endpoint holonomy. The common-area path admits
+\[
+\Omega_\pm=a_\ell dt\wedge(d\phi+z_s\beta_e)\pm\omega,\qquad
+\Omega_\pm^2=\pm2a_\ell dt\wedge(d\phi+z_s\beta_e)\wedge\omega\ne0.
+\]
+These closed forms match the product forms and are metric-compatible.
+Complex integrability is not asserted.
+\source{round11_closed_gluing.md}{complete Ricci blocks, fixed markings, volume, curvature, and endpoint-fixed Moser construction}
+
+\subsection{Which gluings give new smooth objects}\label{sec:new-topology}
+Identity mapping classes, and some finite-isometry holonomies, can return
+to old surface bundles after interchanging the surface roles.
+Instead, self-glue $F_{h,2}\times\Sigma_g$, $h\ge1$, $g\ge2$, with
+a nonzero integral shear $u$ and an infinite-order mapping class $f$.
+Writing $A=\pi_1(F_{h,2})$, $\Gamma=\pi_1(\Sigma_g)$, the actual group is
+\[
+\left\langle A\times\Gamma,t\ \middle|\
+tc_1t^{-1}=c_2^{-1},\
+t\gamma t^{-1}=c_2^{u(\gamma)}f_*(\gamma)\ (\gamma\in\Gamma)\right\rangle .
+\]
+The archived group theorem excludes every extension of one closed
+hyperbolic surface group by another. Asphericity and positive Euler
+characteristic eliminate the remaining oriented closed surface-bundle
+possibilities. Thus the specified examples genuinely lie outside that
+class. They have $\chi=4h(g-1)>0$ and $\tau=0$.
+Their walls have nonamenable group $\Z\times\Gamma$ and the pieces are
+products of hyperbolic surfaces; obstruction theorems for infranil-fibre
+higher graph manifolds do not automatically apply.
+\source{round11_graph_topology.md}{the HNN presentation, nonextension, and no-surface-bundle theorem}
+
+\section{Complete approximate connectors and exact exclusions}\label{sec:connectors}
+\subsection{Local charged centers and a one-ended charge release}\label{sec:one-ended}
+The baseline already contains stable analytic Koiso germs with nonzero
+charge, all Cauchy constraints, and genuine periodic torus data.
+The later explicit parametrization uses
+$M(\theta)=R_\theta\operatorname{diag}(e^a,e^{-a})R_\theta^{\mathsf T}$,
+$Q_0=\mathfrak q^{\mathsf T}M^{-1}\mathfrak q/2$, and
+$b=2\sinh a/\sqrt{12+2Q_0}$.
+The $\Ric=-3g$ evolution has central $H=0$, $H'=3-Q_0$,
+positive orbit-plane curvature $3+Q_0/2$, and a strictly stable
+center when $\max Q_0<3$. This is analytic local existence, not a
+smooth elliptic Cauchy well-posedness theorem or a complete continuation.
+
+A different complete metric on $D^2\times T^2$ releases charge.
+For a fixed cutoff $\chi$ equal to one on $[0,1]$ and zero on $[2,\infty)$,
+put
+\[
+m_R(r)=\chi(r/R),\quad V_R=r^2-m_R/r,\quad
+g_R=\frac{dr^2}{V_R}+V_Rd\vartheta^2+r^2(dx^2+dy^2),\quad r\ge1.
+\]
+Period $4\pi/3$ for $\vartheta$ makes the bolt smooth.
+The inner region is an exact toral Einstein black hole and the far
+region is exactly hyperbolic. The error eigenvalues are
+$m_R''/(2r),m_R''/(2r),m_R'/r^2,m_R'/r^2$, so the full defect
+is $O(R^{-3})$. For integral generators
+$\partial_x+c\partial_\vartheta,\partial_y$, the charge is
+$(c(3m_R-rm_R'),0)$ and changes across the small-error transition.
+This one-ended topology is not a two-ended torus connector.
+\source{round6_global.md}{charged germs, support-volume limitation, and one-ended bolt construction}
+
+\subsection{An explicit two-ended Kottler approximation}\label{sec:Kottler}
+On the fixed $\R_u\times S^1_\phi\times\Sigma$, with
+$K_{h_\Sigma}=-1$ and $\phi$ of period $2\pi$, put $y=d\cosh u$ and
+\begin{equation}\label{eq:Kottler}
+g_d=\frac{1+y}{3+y}\,du^2+
+\frac{y^2(y+3)}{3(y+1)}\,d\phi^2+\frac{(1+y)^2}{3}h_\Sigma.
+\end{equation}
+For $0<d<1/2$ this is smooth and complete with two AH ends of fixed
+conformal metric $d\phi^2+h_\Sigma$. Its exact defect is
+\begin{equation}\label{eq:Kottler-defect}
+\norm{g_d^{-1}\Ric_{g_d}+3\Id}_\infty
+                 =\frac{d(2d+3)}{(1+d)^2}<3d.
+\end{equation}
+Indeed, with $r=(1+y)/\sqrt3$,
+$F=r^2-1+2/(3\sqrt3r)$ and $q=F(1-d^2/y^2)$, the metric is
+$dr^2/q+Fd\phi^2+r^2h_\Sigma$ doubled at $y=d$.
+The Ricci-error eigenvalues are
+\[
+-\frac{3d^2}{y(1+y)^2},\qquad
+\frac{d^2(2y+3)}{y(1+y)^2}\quad\text{with multiplicity three}.
+\]
+The second dominates and decreases for $y\ge d$, proving the
+continuous supremum. A fixed cutoff in $d^2/y^2$ produces exact
+Kottler exteriors with $O(d^2)$ transition error and $O(d)$ central
+error. The physical error-support length is $O(\log(1/d))$.
+Curvature derivatives of fixed order remain bounded; the smallest
+circle radius is comparable to $d$.
+
+The optical zero mode
+$w=(1+y)^{3/2}/(y\sqrt{y+3})$, normalized by its maximum, has total
+endpoint overlap $2d\sqrt{d+3}/(1+d)^{3/2}\to0$.
+Thus the product of error and support length can tend to zero without
+contradicting the zero mode: its boundary overlap also tends to zero.
+The parameter derivative further gives a non-gauge approximate
+infinitesimal deformation, with unit-scale distance from gauge and
+$O(d)$ linearized error; this alone is not a weighted or boundary-fixed
+inverse statement.
+\source{round10_kottler.md}{the eigenvalues, exact-end cutoff, optical localization, and approximate deformation}
+
+The exact free-circle connector theorem excludes a two-ended smooth
+conformally compact negative Einstein metric within its stated
+free-circle class. It is compatible with \eqref{eq:Kottler-defect}.
+The boundary is $S^1\times\Sigma$, not $T^3$, and the statement is
+not a free-$T^2$ counterexample or a closed result. Boundary circle
+symmetry need not extend to interior isometries: the required relative
+fundamental-group hypothesis fails for the disconnected boundary here.
+Completely nonsymmetric fillings are not thereby excluded.
+\source{round9_connector.md}{the exact free-circle boundary-connectivity theorem and its scope}
+
+\subsection{Fixed nontrivial circle bundles}\label{sec:cusp-doubling}
+Let $P_m\to\Sigma$ have Chern number $m$. Suppose an exact invariant
+$\Ric=-3g$ source has one PE end and one cusp, with relative covariant
+two-jet error $O(e^{-\beta r})$ from
+\[
+G_0=\tfrac13dr^2+c_0^2e^{-2r}\theta^2+h,\quad
+h=\tfrac13h_\Sigma,\quad d\theta=f\,dA_h,\quad
+f\operatorname{Area}(h)=2\pi m .
+\]
+The Li--Liu construction supplies the relevant surface-cusp sources
+\cite{LiLiu}; the source hypothesis includes their precise asymptotics.
+Join two copies through
+$g_C=dt^2+a(t)^2\theta^2+h$, $a=d\cosh(\sqrt3t)$.
+Its error eigenvalues are
+$0,a^2f^2/2,-a^2f^2/2,-a^2f^2/2$, with zero mixed components.
+At a seam $a(T)=a_0$, the relative two-jet mismatch with the exponential
+cusp is $O(d^2/a_0^2)$. Nonlinear connection-difference estimates give
+\begin{equation}\label{eq:cusp-bound}
+\delta_{-3}(g_{a_0,d})\le
+ C(a_0^\beta+a_0^2+d^2/a_0^2),
+\end{equation}
+where $\delta_{-3}(g)=\norm{g^{-1}\Ric_g+3\Id}_\infty$.
+Taking $d=a_0^2$ yields complete approximations on the same
+$\R\times P_m$, with two unchanged PE ends.
+The connection is global on the bundle; no global base potential is
+required. Fixed Chern flux costs $a^2|F|^2$ when the circle collapses.
+The trivial-bundle exact formula \eqref{eq:Kottler-defect} is not reused
+for $m\ne0$. Flat $T^3$ AH cusps and ACH Nil cusps have different
+curvature balances and are not covered by this substitution.
+\source{round10_cusp_doubling.md}{source hypotheses, global connection, relative seam estimates, and cusp-type limits}
+\source{round10_connector.md}{connector comparisons and charge leakage}
+
+\section{Correction in all modes and actual matching}\label{sec:all-modes}
+\subsection{The full projected equation and its Schur complement}\label{sec:Schur}
+Fix the Einstein constant or include it among the unknowns, and fix a
+geometric gauge. Write
+$F_g(h)=r+Lh+N(h)$ between declared Banach spaces. For a closed smooth
+background one possible local choice is the Bianchi-gauged metric
+neighborhood in $C^{k+2,\alpha}(S^2T^*M)$ mapping to
+$C^{k,\alpha}(S^2T^*M)$, $k\ge0$, $0<\alpha<1$.
+On degenerating families a weighted or anisotropic norm may be preferable;
+its domain, transmission conditions, and gauge variables must be specified.
+For a boundary problem these conditions belong to the operator domain.
+
+Let $X=X_0\oplus X_1$ and $Y=Y_0\oplus Y_1$ be topological direct
+sums with bounded projections, and write $h=z+v$.
+Both equations $\Pi_1F_g(z+v)=0$ and $\Pi_0F_g(z+v)=0$ are necessary.
+The low-mode space must retain genuine kernels, degenerating near-kernels,
+global parameters, and necessary frame and gauge variables. Dropping
+the scalar kernel or relabeling TT transfer as gauge changes the problem.
+
+\begin{criterion}[Banach-space Schur elimination]\label{thm:Schur}
+Let $L:X\to Y$ be bounded with blocks $L_{ij}:X_j\to Y_i$.
+Suppose $L_{11}:X_1\to Y_1$ is a bounded isomorphism with bounded inverse
+in the stated spaces and boundary conditions. Then
+$L(z+v)=-r$ is equivalent to
+\begin{align}
+(L_{00}-L_{01}L_{11}^{-1}L_{10})z
+ &=-r_0+L_{01}L_{11}^{-1}r_1,\label{eq:Schur}\\
+v&=-L_{11}^{-1}(r_1+L_{10}z).\nonumber
+\end{align}
+The whole $L$ is a bounded isomorphism if and only if the Schur
+operator $X_0\to Y_0$ in \eqref{eq:Schur} is.
+\end{criterion}
+\begin{proof}
+The second row uniquely determines $v$; substitution gives the first
+row. Conversely the displayed pair solves both rows. The same
+substitution constructs bounded inverses in either direction.
+\end{proof}
+This is an algebraic fact under an analytic isomorphism hypothesis,
+not an established inverse theorem for the closed gluing. A nonlinear
+reduction needs a $C^1$ solution $v(z)$ on a controlled domain and the
+remaining obstruction $\mathcal O(z)=\Pi_0F_g(z+v(z))$.
+At a solved complement equation,
+$Dv=-(D_v\Pi_1F)^{-1}D_z\Pi_1F$, so $D\mathcal O$ is the
+corresponding Schur complement. External response changes both the
+effective source and the low-mode operator; neither $r_0$ nor
+$L_{00}$ alone decides solvability.
+
+\subsection{Angular coercivity and long-collar near-kernels}\label{sec:angular}
+For a local circle radius $a(t)$, a nonzero Fourier mode $m$ has
+principal cost $m^2/a^2$. This may improve inversion of high modes,
+but says nothing by itself about the zero mode, long transfer modes,
+connection couplings, negative potentials, or gauge. A complete method
+needs estimates in mixed norms: control high modes through the principal
+operator, retain low-mode propagation, and return exterior effects
+through the actual boundary response.
+
+For the self-glued manifolds of Section~\ref{sec:new-topology}, the
+archived global result states that nonzero $u$ forces a discrete
+universal-cover isometry group for every metric, and hence no local
+Killing germ anywhere for any Einstein metric. Its proof uses the
+specific group properties, universal-cover rigidity \cite{FW}, and
+analytic continuation; it is not an arbitrary-tensor distance bound.
+An exact solution must therefore have angular dependence in every
+open region where the approximation has a circle symmetry, however
+small that dependence may be.
+\source{round12_symmetry.md}{complete local symmetry breaking, including finite covers}
+
+\subsection{Both ends must be realized by one boundary problem}\label{sec:matching}
+Actual matching includes the two induced metrics, second fundamental
+forms, connection holonomy, constraints, periods, and the fixed
+topological markings. The realizable Cauchy data form constrained
+sets; two independent successful half-core constructions do not prove
+their intersection. Ellipticity prevents arbitrary independent
+prescription of all Dirichlet and Neumann data. A claim that several
+endpoint values are adjustable needs an appropriately indexed boundary
+problem, its kernel, and parameter derivative.
+
+A useful first target is a finite-domain boundary response with a
+proved principal symbol, cokernel, and parameter dependence, followed
+by control as the truncation length grows. If its inverse grows
+faster than the source decays, finite-domain solvability does not close
+the gluing. The same discipline applies to graph blocks, multi-node
+orbifolds, and noncompact cores, without forcing them into one model.
+
+\subsection{An exact invariant identity and its escape directions}\label{sec:invariant-repair}
+For an invariant collar
+$g=dt^2+h_t+a^2\theta^2$, put $S=\frac12h^{-1}\dot h$,
+$H=\tr S$, $d\theta=dt\wedge\beta+B$, and
+$Q=|\beta|^2+\frac14|B|_{\rm tens}^2$.
+The exact vertical-minus-normal Ricci identity is
+\begin{equation}\label{eq:scalar-difference}
+\Ric(U,U)-\Ric(T,T)
+=H'-(a_t/a)H+|S|^2-\Delta_ha/a+a^2Q.
+\end{equation}
+Here $\Delta_h=\operatorname{div}\nabla$ in this formula. For any
+Einstein constant the left side vanishes.
+When $a=a(t)$ it gives the positive receiver
+\[
+\int_{-L}^L(|S|^2/a+aQ)\,dt
+             =H(-L)/a(-L)-H(L)/a(L).
+\]
+Let $I_a=\int a\,dt$ and let $C_\partial$ be the maximum norm of
+the endpoint expression. The marked Teichm\"uller displacement satisfies
+$d_{\mathcal T}([h_-],[h_+])^2\le I_aC_\partial$.
+For a radius comparable within factor $\Lambda$ to the cosh radius
+and $|H(\pm L)|\le\eta$,
+\[
+\eta\ge\frac{\sqrt3}{4\Lambda^2}
+                     d_{\mathcal T}([h_-],[h_+])^2 .
+\]
+The collapse scale cancels. Pseudo-Anosov translation length
+$\log\lambda(f)>0$ remains an obstruction as the reference conformal
+structure changes. This applies to an invariant unit-normal-foliation
+sector, unlike Theorem~\ref{thm:exclusion}.
+
+Spatial radius variation is a genuine additional term:
+$\int_F(\Delta a)/a^2=2\int_F|\nabla a|^2/a^3$, not zero.
+In the common-area sector $H\equiv0$, multiplying
+\eqref{eq:scalar-difference} by $a$ and integrating over the closed
+fibre forces $S=d\theta=0$; then $\Delta a=0$, so the metric is
+locally a product of equal-curvature surfaces. Exact connection
+transport contributes nonnegative receiver energy and cannot cancel it.
+None of these identities identifies the cokernel of the unrestricted
+Einstein problem.
+\source{round12_repair.md}{exact connection transport, Teichm\"uller displacement, spatial radius, and common-area rigidity}
+
+\section{Open construction directions}\label{sec:directions}
+\subsection{Other ALE data and higher dimensions}\label{sec:other-ALE}
+\begin{problem}
+Choose an actual ADE, type-T, or noncollinear-period core; compute the
+image of the quadratic source in every obstruction direction, prove
+the solvability conditions and tails, and then identify the marked
+global smooth filling. Determine separately whether unweighted Ricci
+approximation, exact desingularization, and global Einstein existence hold.
+\end{problem}
+Yao's higher-dimensional obstruction \cite{Yao} supplies a comparison
+under noncollapse, uniform energy, and the specified smooth Ricci-flat
+ALE blow-up assumptions. It is not a classification of all
+higher-dimensional resolutions. Huang--Ozuch's dimension-five gap
+analysis \cite{HO} is another dimension-specific input.
+The dimension and sign hypotheses must survive any transplantation.
+
+\subsection{The positive branch and complete multi-node coupling}\label{sec:positive}
+Marked resolutions of spherical and product quotients test $P_4^+$.
+A finite-dimensional reduction must include sources, receivers,
+same and opposite chirality, adjacency, diagonal terms, and self-action.
+A proposed $t^3$ sign cannot be read through an $O(t^{5/2})$
+remainder; prove $o(t^3)$ or include same-order logarithms explicitly.
+Rigorous spectral tails and continuous-operator estimates take priority
+over additional floating-point digits.
+A genuine transverse zero would lead toward existence. A local nonzero
+obstruction still leaves the unrestricted Einstein problem on the
+smooth resolution. Mixed-chirality rows are not assumed unsolvable.
+\base{20260916_construction.tex}{full-kernel and four-node coupling calculations}
+
+\subsection{Simultaneous shear and mapping-class variation}\label{sec:network}
+The present construction separates the two supports to close the error
+estimate. Overlapping transitions, several noncommuting connection
+directions, or a graph of responding nodes could enlarge the smooth
+input class or alter the exact correction equation. The integral
+shear and marking must remain fixed. If $f_\ell$ varies, determine
+whether smooth type is constant or explicitly study a changing-topology
+sequence.
+\begin{problem}
+For a fixed gluing graph, derive a nonlinear low-mode system with the
+actual topological holonomy. Its edge variables must come from
+realizable geometric boundary data. Decide whether this system is
+only necessary or is equivalent to the full equation with controlled
+complement and gauge.
+\end{problem}
+
+\subsection{Small symmetry breaking may carry decisive information}\label{sec:small-asymmetry}
+The no-local-Killing theorem gives no lower bound on the size of
+asymmetry. A completely nonsymmetric exact metric could in principle
+use very small angular components to connect the local product regions.
+Their transmission through a long collar may be exponential, while
+their quadratic feedback may enter a receiver direction. Proving that
+this cannot cancel the source would give quantitative rigidity;
+constructing a cancellation would give a new exact mechanism.
+Deleting a mode because it is visually small settles neither question.
+
+\subsection{Changing the reference beyond the old neighborhood}\label{sec:beyond-ball}
+On $E_D$ one may vary background moduli, conformal class, or a transfer
+parameter, or examine metrics not close to $G_\varepsilon$.
+For $h\sim C\varepsilon$ the small-$c_*$ theorem does not apply.
+If a dangerous mode enters a new reference family, recompute the
+global TT pairing, its measure, and its signs in that family; constants
+from the old background cannot be reused without comparison.
+Both an enlarged exclusion and a successful exact construction are
+legitimate outcomes.
+
+\section{A posteriori certification of the full equation}\label{sec:posteriori}
+\begin{theorem}[Injective-preconditioner contraction]\label{thm:posteriori}
+Let $X,Y$ be real Banach spaces, $U\subset X$ open,
+$\overline B_X(x_0,r)\subset U$, and $F:U\to Y$ continuously
+Fr\'echet differentiable. Let $A:Y\to X$ be bounded linear and
+\emph{injective}. Suppose
+\[
+\norm{AF(x_0)}_X\le Y_0,\qquad
+\norm{I_X-ADF(x_0)}_{\mathcal L(X)}\le Z_0,
+\]
+and for all $x,y$ in the closed ball,
+\[
+\norm{A(DF(x)-DF(y))}_{\mathcal L(X)}
+                  \le Z_2\norm{x-y}_X .
+\]
+If
+\begin{equation}\label{eq:radii}
+Y_0+Z_0r+\tfrac12Z_2r^2\le r,\qquad Z_0+Z_2r<1,
+\end{equation}
+then the ball contains exactly one zero of $F$.
+\end{theorem}
+\begin{proof}
+Set $T(x)=x-AF(x)$. Taylor's integral formula on the convex ball gives
+$\norm{T(x)-x_0}\le Y_0+Z_0r+\frac12Z_2r^2\le r$.
+Also
+$\norm{DT(x)}\le Z_0+Z_2\norm{x-x_0}\le Z_0+Z_2r<1$.
+Thus $T$ is a strict contraction of the complete closed ball into
+itself. Its unique fixed point $x_*$ satisfies $AF(x_*)=0$.
+Injectivity of $A$ gives $F(x_*)=0$. Every zero is a fixed point,
+so uniqueness follows within the stated ball.
+\end{proof}
+The injectivity assumption cannot be dropped: contraction proves
+$AF=0$, and a nonzero residual in $\ker A$ would remain invisible.
+It suffices, for example, to construct $A$ as a bounded isomorphism;
+alternatively a separate verified left bound on the relevant residual
+space can establish injectivity. A numerical inverse of a finite
+matrix proves neither property for the full function-space operator.
+
+For an Einstein application one must additionally verify that the
+certified ball consists of positive metrics, includes all continuous
+spectral tails and boundary conditions, and has a valid gauge-removal
+argument. A zero of a gauged equation is not automatically an Einstein
+metric. On a closed negative-Ricci ball the usual Bianchi equation and
+integration can remove the gauge; in other settings the appropriate
+boundary or decay and kernel arguments are separate requirements.
+Uniqueness is local to the chosen gauge and ball.
+
+A practical candidate is a certified low-mode numerical inverse joined
+to an analytic high-mode inverse, with rigorous bounds for
+$Y_0,Z_0,Z_2$ and all coupling errors. Wang's construction
+\cite{Wang} provides a specific external example where rigorous local
+numerics, a fixed-point correction, and a separate complete AH
+extension are all proved. It does not discharge the boundary, kernel,
+or closed-topology conditions here. Failure of \eqref{eq:radii} may
+reflect a poor candidate, a missing mode, a large inverse, or excessive
+nonlinearity; it is not a nonexistence theorem.
+
+\section{Two all-mode programs}\label{sec:programs}
+\subsection{The complete low-energy system on a fixed sheared manifold}
+\label{sec:program-A}
+Fix one $M(h,g;u,f)$ and use $G_\ell$ as reference, without imposing
+its circle symmetry on the unknown. In a chosen Bianchi or DeTurck
+gauge, analyze $L_\ell=DF_{G_\ell}(0)$ on the thick product blocks,
+mapping-class collars, and shear throats. Thick-region kernels come
+from actual product deformations and global parameter/gauge data.
+The collar must retain fibre TT transfer, constants, and small
+eigenmodes; the throat must retain all mixed connection components.
+Every interface uses $\Psi_e$, including holonomy.
+
+The first target is a complete decomposition
+$X_\ell=K_\ell\oplus X_{1,\ell}$ in stated mixed norms and a proved
+complement inverse bound $B_\ell$. Uniform boundedness of
+$\dim K_\ell$ is itself a question. The second target is the full
+effective equation $\mathcal O_\ell(z)=0$, including self-interaction,
+external response, and complement feedback. Only then compare
+$B_\ell$, the residual, the nonlinear constants, and the positivity
+radius to obtain either exact correction or a quantitative exclusion.
+A rapidly growing inverse suggests moving dangerous modes into the
+reference or using the receiver-weighted method; a finite invertible
+matrix alone does not settle the continuous equation.
+
+\subsection{Can cross-node or cross-edge cancellation create a true zero?}
+\label{sec:program-B}
+On four-node orbifolds and finite gluing graphs, preserve one parameter
+space containing scale ratios, angles, finite kernels, actual background
+deformations, and necessary frames. Equal local leading terms do not
+imply equal global response. Quotienting by a geometric symmetry requires
+proved equivariance.
+If
+\[
+\mathcal O(t,z)=t^k\mathcal O_k(z)+\mathcal R(t,z),
+\]
+find actual zeros of $\mathcal O_k$ and their transversality.
+A stable finite-dimensional argument needs
+$\norm{\mathcal R}_{C^1}=o(t^k)$, unless same-order logarithms
+are incorporated into the leading term. Nonvanishing at one fixed
+$z$ excludes at most its neighborhood. A topological obstruction must
+be shown to apply throughout the allowed parameter space.
+
+A source can lie outside the receiver directions while having zero
+receiver pairing; it must not be set to zero. The archived four-node
+corrections distinguish ordered from physically symmetrized
+polarizations (including the entries indexed $23$ and $32$).
+Those labels denote tensor components, not an unexplained numerical
+factor: their joint source contraction contributes a factor of two.
+Their normalization and pairing rules must be restored before
+using a coupling coefficient. This preserves the source correction
+without treating ordered components as independent physical obstructions.
+
+\section{Interfaces with global Einstein existence}\label{sec:interfaces}
+\subsection{Fixed manifolds versus changing topology}\label{sec:changing-topology}
+If $e_\sigma(M_r)=0$ for each fixed $r$, diagonal selection gives
+metrics on $M_r$ with uniformly vanishing defect. It proves no
+Einstein nonexistence on any $M_r$. Conversely, a topology-dependent
+positive lower bound $c(M_r)\to0$ is not a construction attaining it.
+For a surgery or gluing parameter, compare realized upper bounds
+and valid global lower bounds in the same norm and on the same objects.
+Only approximate realizability together with unrestricted nonexistence
+can give a changing-topology branch counterexample.
+
+\subsection{Exact and degenerating control families}\label{sec:controls}
+Each model has useful direct checks: zero shear returns a product or
+standard resolution; one node returns the actual core; fixed nonzero
+shear retains its integral periods; a declared higher-order error is
+smaller than its leading term. Degenerating exact Einstein families
+test overstrong claims of uniform inverse bounds or vanishing local
+sources. Classical Kodaira base changes give exact Einstein controls
+with infinite monodromy and a normalized harmonic gap tending to zero.
+Their positive signature differs from $E_D$; they invalidate an
+overbroad strategy without resolving its zero-signature case.
+\source{round10_bundle.md}{Kodaira controls and exact harmonic/Hodge formulas}
+
+For computation, reconstruct Ricci and Bianchi from the full metric
+rather than using the equation being checked to infer its own residual.
+Before certification verify positivity, smooth endpoints, fixed
+markings, and the global supremum. Interval finite-dimensional bounds
+and analytic tail estimates can complement one another.
+
+\subsection{Constructions constrain possible obstructions}\label{sec:new-obstructions}
+A fixed nonzero integral shear can have vanishing Ricci cost.
+An obstruction depending only on that integer and ordinary $L^p$
+size must account for this fact. It may need the exact Einstein PDE,
+nonlocal block response, or an unavoidable topological coupling.
+Construction formulas can therefore refute an overstrong proposed
+global inequality as well as produce inputs for it.
+
+An inherited concentration selection rule makes this explicit.
+For pointwise approximation with exterior convergence and vanishing
+replacement volume, let $E\ge0$ be concentrated self-dual Weyl energy
+and $T=2\chi+3\tau$. In the source conventions,
+\[
+T=T_0+\frac{E}{2\pi^2},\qquad
+\alpha^2(M)\le\min\left\{\frac{V_0}{2\pi^2},
+                         J_0+\frac{E}{12\pi^2}\right\},
+\]
+and
+$T-\frac23(J_0+E/(12\pi^2))=F_0+4E/(9\pi^2)$, $F_0\ge0$.
+Thus concentration alone does not move locally symmetric bulk into
+the required critical monopole range. A bulk realizing the needed
+geometry and saturation has not been constructed; the same
+special-monopole hypotheses cannot also violate their established gap.
+\source{round7_endpoint.md}{concentration, scalar cap, and the reversed slope restriction}
+
+Likewise the inherited free-quotient construction realizes the
+noncommuting full-generator bundle $E_{\rm full}$; later calculations
+show that its rank-one representations factor through the base.
+This group information does not become an arbitrary Einstein
+obstruction.
+\source{round8_multitwist.md}{fixed marked monodromy and rank-one representation calculations}
+
+Two failed bridges remain informative. Compact convergence on a
+complete model does not erase physical-period-normalized exterior
+receiver flux. A growing AH core cannot be inserted into a fixed
+closed topology without actual scale, volume, and boundary matching.
+The construction of Section~\ref{sec:sheared} solves a compact marked
+problem; it does not rely on the unproved AH-to-cusp closure.
+
+\section{Recent external comparisons and their hypotheses}\label{sec:literature}
+\subsection{Negative K\"ahler--Einstein second variations}\label{sec:Nagy}
+Nagy's 2026 analysis \cite{Nagy} gives gauge-normalized second-order
+deformation information on compact negative K\"ahler--Einstein
+backgrounds: the expansion is determined by the squared infinitesimal
+deformation and the divergence of its Kodaira--Spencer bracket.
+This suggests recomputing genuine quadratic kernel responses on
+product blocks. Boundary terms, noncompact domains, non-K\"ahler
+backgrounds, and degenerating constants require separate analysis;
+the result does not automatically remove third-order obstructions.
+
+\subsection{Stability without a diameter bound still has geometric hypotheses}
+\label{sec:Jackel}
+J\"ackel's effective stability theorem \cite{Jackel} does not require
+an upper diameter or volume bound, but its stated application requires
+strictly negative sectional curvature, exact hyperbolic thin geometry,
+Ricci derivative bounds, and both $C^0$ and $L^2$ error control.
+The positive sectional curvature in \eqref{eq:ED-matrix} and the
+different thin geometry of the sheared families prevent an automatic
+application. One can seek a new family satisfying those conditions
+or determine exactly how the current family escapes them.
+
+\subsection{Removing singularities does not identify the input smooth structure}
+\label{sec:removability}
+Antonelli--Sz\'ekelyhidi's 2026 work \cite{AS} concerns removability
+for $L^\infty$ Einstein metrics and RCD spaces. The four-dimensional
+scope described in its abstract allows a change of smooth structure
+under its codimension assumptions. A recovered Einstein geometry
+advances the present problem only after its smooth type is identified
+with the original input. We use this as a research comparison, not
+as an unverified black-box theorem on the constructed manifolds.
+The recent survey \cite{LeBrunSurvey} supplies a field map, not a
+substitute for checking the assumptions and provenance of individual results.
+
+\section{Scope of the resulting construction theory}\label{sec:scope}
+Marked orbifold approximation, surface-bundle approximation with
+quantitative repair obstructions, and fixed closed sheared topology
+are distinct centers. Exact open models, charge identities, and
+approximate connectors can support them or merit separate study.
+The number of papers is not a mathematical constraint.
+
+A stronger result should enlarge the realized smooth topologies,
+admissible markings or singularities, rigorous continuous estimates,
+exact correction range, or global existence information.
+Every construction here carries an explicit approximation assertion
+on a specified object; its unrestricted Einstein question remains
+separate. On the new self-glued manifolds, topology excludes
+nonnegative Einstein constants and several special negative
+geometries, while completely nonsymmetric negative Einstein existence
+remains unresolved; see the companion
+\href{20260921_global.tex}{global manuscript}.
+Resolving this negative instance alone would not defeat both
+branches of \eqref{eq:branches}.
+
+If a route is excluded, retain its valid formulas and failure mechanism
+and permit a different topology, background, all-mode ansatz, or method.
+If an exact metric is found, that is a positive geometric result.
+Finite-order cancellation must still be distinguished from actual
+integrability of the full equation.
+
+\appendix
+\section{Proof navigation and inherited boundaries}\label{app:sources}
+This article integrates the dated construction synthesis with the
+archived twelve-round proof material. Baseline manuscripts remain in
+this directory; original round files remain under
+\nolinkurl{../references/rounds/}. They retain full parameter
+dependencies, reviews, scripts, and historical intermediate arguments.
+This article compiles without reading those files, but it does not
+replace their complete proofs. No fresh execution of every historical
+program or comprehensive priority determination is reported.
+
+\small
+\begin{longtable}{L{.34\textwidth}L{.59\textwidth}}
+\toprule Source & Content and current use\\\midrule\endhead
+\href{20260916_construction.tex}{\nolinkurl{20260916_construction.tex}}
+& Marked $A_1$ core/annulus/exterior proof; balanced $E_D$; complete-kernel and four-node calculations. Inherited constructions, not new-round claims.\\
+\href{20260912.tex}{\nolinkurl{20260912.tex}}
+& Flux and ALE extensions; fixed $E_D$, all Ricci blocks, geometric bounds, three-scalar correction, global pairings.\\
+\href{20260916_global.tex}{\nolinkurl{20260916_global.tex}}
+& Geometric free-quotient monodromy and already-existing charged Koiso germs.\\
+\href{../references/rounds/construction.md}{\nolinkurl{construction.md}}
+& Exact polarized base-TT cancellation and correction scales; later whole-fibre arguments remove the dominant-mode restriction.\\
+\href{../references/rounds/independent_review.md}{\nolinkurl{independent_review.md}}
+& Contractions, geometric Taylor remainders, background measure, and distinction between cubic order and an optimal coefficient.\\
+\href{../references/rounds/round2_construction.md}{\nolinkurl{round2_construction.md}}
+& Ten blocks, bounded nonseparable kernel, invariant $L^2$ gap, exact cylinder parametrization, quadratic sources, physical scales, and the collapsing-normalization failed shortcut.\\
+\href{../references/rounds/round2_construction_review.md}{\nolinkurl{round2_construction_review.md}}
+& Kernel scope, linear correction, normalization, and open versus closed objects.\\
+\href{../references/rounds/round3_construction.md}{\nolinkurl{round3_construction.md}}
+& Whole nonlinear source, weighted inverse, moving gauge, contraction, Bianchi removal, end models, second-variation flux, and prior-work boundaries.\\
+\href{../references/rounds/round3_construction_review.md}{\nolinkurl{round3_construction_review.md}}
+& Weighted coercivity, complete target space, gauge removal, and end decay beyond formal Ricci expansion.\\
+\href{../references/rounds/round3_matching_next.md}{\nolinkurl{round3_matching_next.md}}
+& End shifts, conditional matching, exterior adjoint defect, physical periods, and the actual horizontal closed detector; no invented vertical detector.\\
+\href{../references/rounds/round4_construction.md}{\nolinkurl{round4_construction.md}}
+& Nonlinear charge, positive finite response matrix, constant-twist gauge, boundary energy, and higher coefficients of the same mechanism.\\
+\href{../references/rounds/round4_exact_core.md}{\nolinkurl{round4_exact_core.md}}
+& Unchanged exact-core insertion obstruction through cocompactness and analytic continuation.\\
+\href{../references/rounds/round4_review_construction.md}{\nolinkurl{round4_review_construction.md}}
+& Fixed-radius decay, arbitrary cocompact groups, and no quantitative small-repair claim.\\
+\href{../references/rounds/round5_construction.md}{\nolinkurl{round5_construction.md}}
+& Whole-fibre tightness, arbitrary perturbations, weak quadratic convergence, bounded gauge, and the superseded $\varepsilon^{3/2}$ exclusion radius.\\
+\href{../references/rounds/round5_receiver_independent.md}{\nolinkurl{round5_receiver_independent.md}}
+& Independent complete-kernel and determinant-preserving signed receiver.\\
+\href{../references/rounds/round5_construction_rigidity_review.md}{\nolinkurl{round5_construction_rigidity_review.md}}
+& Tight detector mass, justified $C^1$ convergence, gauge response, and exterior terms; no unjustified strong $C^2$ convergence.\\
+\href{../references/rounds/round5_rank_obstruction.md}{\nolinkurl{round5_rank_obstruction.md}}
+& Rank-one receiver obstruction in its stated repair class, not unrestricted Einstein nonexistence.\\
+\href{../references/rounds/round5_modulation.md}{\nolinkurl{round5_modulation.md}}
+& Logarithmic approximate TT mode defeating maximum-norm modulation; later replaced by the sufficient receiver-weighted inverse.\\
+\href{../references/rounds/round6_weighted_inverse.md}{\nolinkurl{round6_weighted_inverse.md}}
+& Nonseparating scalar gap, all weighted blocks, partner factorization, actual closed-fibre transfer, gauge, and signed quadratic response.\\
+\href{../references/rounds/round6_construction.md}{\nolinkurl{round6_construction.md}}
+& Linear-size closed exclusion, finite collars, angular error, nonzero gauge forcing, all same-order errors, and limits beyond the small fixed multiple.\\
+\href{../references/rounds/round6_receiver_review.md}{\nolinkurl{round6_receiver_review.md}}
+& Weighted domains and the term $\mathcal L_XF$ that cannot be discarded.\\
+\href{../references/rounds/round6_global.md}{\nolinkurl{round6_global.md}}
+& Refinement of charged germs; local support-volume limitation; one-ended $D^2\times T^2$ charge release; conditional end flattening, not closed gluing.\\
+\href{../references/rounds/round7_endpoint.md}{\nolinkurl{round7_endpoint.md}}
+& Concentration identity, scalar cap, critical ratio, reversed KE slope, and missing saturated bulk.\\
+\href{../references/rounds/round8_multitwist.md}{\nolinkurl{round8_multitwist.md}}
+& Explicit fixed free-quotient bundles with inherited interpolation, rank-one curve killing, representation volumes, and full-generator examples.\\
+\href{../references/rounds/round9_connector.md}{\nolinkurl{round9_connector.md}}
+& Exact free-circle smooth-boundary obstruction; not a theorem for double-cylinder product asymptotics.\\
+\href{../references/rounds/round10_kottler.md}{\nolinkurl{round10_kottler.md}}
+& Smooth fixed double, exact Ricci eigenvalues, exact exteriors, optical localization, failed symmetry-extension hypothesis, and approximate non-gauge mode.\\
+\href{../references/rounds/round10_cusp_doubling.md}{\nolinkurl{round10_cusp_doubling.md}}
+& Li--Liu source hypotheses, global bundle connection, complete central Ricci blocks, relative two-jets, seam error, Chern flux, and cusp-type restrictions.\\
+\href{../references/rounds/round10_bundle.md}{\nolinkurl{round10_bundle.md}}
+& Classical Kodaira base changes and harmonic/Hodge formulas; exact control family with a different signature from $E_D$.\\
+\href{../references/rounds/round11_closed_gluing.md}{\nolinkurl{round11_closed_gluing.md}}
+& Finite marked blocks, real collars, path and shear Ricci blocks, all-jet assembly, exact volume, almost parallel curvature, and both-orientation almost K\"ahler structures.\\
+\href{../references/rounds/round11_graph_topology.md}{\nolinkurl{round11_graph_topology.md}}
+& HNN group, nonextension of integral shear, examples beyond all oriented surface bundles, and inapplicable infranil graph obstructions.\\
+\href{../references/rounds/round12_repair.md}{\nolinkurl{round12_repair.md}}
+& Exact scalar constraint, positive receiver, marked displacement, transport backreaction, spatial-radius escape, and common-area rigidity.\\
+\href{../references/rounds/round12_symmetry.md}{\nolinkurl{round12_symmetry.md}}
+& Discrete universal-cover isometries and total local symmetry breaking; no quantitative asymmetric gap.\\
+\href{../references/rounds/round6_verification.md}{\nolinkurl{round6_verification.md}},
+\href{../references/rounds/round10_verification.md}{\nolinkurl{round10_verification.md}}
+& Symbolic, coordinate-Ricci, scaling, Kottler, and cusp checks; no continuous PDE certificate.\\
+\href{../references/rounds/round11_verification.md}{\nolinkurl{round11_verification.md}},
+\href{../references/rounds/round12_verification.md}{\nolinkurl{round12_verification.md}}
+& Full path/shear blocks, deliberately wrong formulas rejected, topology consistency, and the spatial-lapse scalar identity within its exact scope.\\
+\bottomrule
+\end{longtable}
+\normalsize
+The original \nolinkurl{*check*.py} files and recorded reproduction
+outputs remain associated with their proof versions. Finite algebra,
+integer topology bookkeeping, sampling, continuous spectral tails,
+nonlinear remainders, and global PDE arguments have different roles.
+The archived additional checks of OT topology, specific chirality
+applications, negative GH separation, and independent coordinate
+calculations remain distinct from failed problem-W splicing and a
+specified cutoff's $1/3$ leading term. Historical reviews and source
+files are preserved, not overwritten by this article.
+
+\begin{thebibliography}{99}
+\bibitem{OzuchII} T.~Ozuch, \emph{Noncollapsed degeneration of Einstein
+4-manifolds II}, Geometry \& Topology (2022).
+\url{https://arxiv.org/abs/1909.12960}. See the pointwise Ricci
+approximation discussion and logarithmic cutoffs.
+\bibitem{OzuchInt} T.~Ozuch, \emph{Integrability of Einstein deformations
+and desingularizations}. \url{https://arxiv.org/abs/2105.13193}.
+\bibitem{Biquard} O.~Biquard, \emph{D\'esingularisation de m\'etriques
+d'Einstein. I}, Inventiones Mathematicae (2013).
+\url{https://arxiv.org/abs/1105.4904}.
+\bibitem{OR} P.~Orlik and F.~Raymond, \emph{Actions of the torus on
+4-manifolds. I}.
+\url{https://webhomes.maths.ed.ac.uk/~v1ranick/papers/orlikraymond1.pdf}.
+\bibitem{Rupflin} M.~Rupflin and P.~Topping, \emph{Horizontal curves
+of hyperbolic metrics}, Appendix A.
+\url{https://arxiv.org/abs/1605.06691}.
+\bibitem{Ji} L.~Ji and R.~Wentworth, \emph{Spectral convergence on
+degenerating surfaces}. \url{https://math.umd.edu/~raw/papers/spectrum.pdf}.
+\bibitem{Nagy} P.-A.~Nagy, \emph{Einstein deformations of K\"ahler
+Einstein metrics}, 9 March 2026.
+\url{https://arxiv.org/abs/2603.09028v1}.
+\bibitem{Yao} Y.~Yao, \emph{Resolution of compact Einstein orbifolds
+in general dimensions}, version 2, 5 July 2026.
+\url{https://arxiv.org/abs/2603.14929v2}.
+\bibitem{HO} Y.~Huang and T.~Ozuch, \emph{Regularity of Einstein
+5-manifolds via 4-dimensional gap theorems}.
+\url{https://arxiv.org/abs/2512.21317}.
+\bibitem{Jackel} F.~J\"ackel, \emph{Effective stability of negatively
+curved Einstein metrics in dimensions at least 4}.
+\url{https://arxiv.org/abs/2502.16692}. The comparison retains the
+sectional-curvature, thin-region, derivative, and error hypotheses.
+\bibitem{AS} G.~Antonelli and G.~Sz\'ekelyhidi, \emph{Removability of
+non-isolated singularities for Einstein metrics and RCD spaces},
+September 2026. \url{https://arxiv.org/abs/2609.01464};
+\url{https://cvgmt.sns.it/paper/7959/}.
+Used only as the qualified comparison in Section~\ref{sec:removability}.
+\bibitem{LiLiu} M.~Li and H.~Liu, \emph{Poincar\'e--Einstein
+4-manifolds with cusps}, 25 May 2026.
+\url{https://arxiv.org/abs/2605.25462v1}.
+\bibitem{FW} B.~Farb and S.~Weinberger, \emph{Isometries, rigidity
+and universal covers}, Annals of Mathematics 168 (2008).
+\url{https://math.uchicago.edu/~farb/papers/isoms.pdf}.
+\bibitem{Wang} Q.~S.~Wang, \emph{Computer-assisted construction of
+$SU(2)$-invariant negative Einstein metrics}, Annals of Global Analysis
+and Geometry 69 (2026), no.~3, Paper 18.
+\url{https://arxiv.org/abs/2504.21644v2}.
+\bibitem{LeBrunSurvey} C.~LeBrun, \emph{An Overview of Einstein
+4-Manifolds}, 2 September 2026.
+\url{https://arxiv.org/abs/2609.03033}.
+\end{thebibliography}
+\end{document}

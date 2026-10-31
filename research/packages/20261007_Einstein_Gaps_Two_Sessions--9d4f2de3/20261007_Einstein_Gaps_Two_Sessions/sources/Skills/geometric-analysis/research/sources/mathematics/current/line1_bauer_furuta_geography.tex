@@ -1,0 +1,460 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{mathrsfs}
+\usepackage{esint}
+\setmathfont{Asana Math}
+\setlength{\emergencystretch}{3em}
+
+\author{}
+\date{23 September 2026}
+
+\begin{document}
+
+\hypertarget{two-chirality-integral-rigidity-beyond-ordinary-seibergwitten-type}{%
+\section{Two-chirality integral rigidity beyond ordinary Seiberg--Witten
+type}\label{two-chirality-integral-rigidity-beyond-ordinary-seibergwitten-type}}
+
+23 September 2026. This note applies the existing quantitative
+functional pencil to Bauer--Furuta detected connected sums. The new
+application is an actual family with even positive and negative Betti
+numbers and no almost-complex structure in either orientation. The
+differential estimate is inherited; the actual gauge supply, geography,
+topology and application are proved together below. No claim of
+exhaustive literature priority is made.
+
+\hypertarget{the-analytic-input-and-the-distinct-gauge-category}{%
+\subsection{1. The analytic input and the distinct gauge
+category}\label{the-analytic-input-and-the-distinct-gauge-category}}
+
+Use tensor norms for Ricci and the Hilbert--Schmidt norm on the Weyl
+endomorphism of two-forms. For a closed connected oriented smooth
+four-manifold set
+
+\[
+ T_\pm=2\chi\pm3\tau,\qquad
+ \mathcal E(g)=\inf_{\lambda\ne0}
+ \frac{\int|\operatorname{Ric}_g-\lambda g|^2}
+      {\lambda^2\operatorname{Vol}_g(M)}.
+\]
+
+The actual-class version of the existing
+\href{line1_two_chirality_topology.md}{two-chirality theorem}, Section
+2, says: if there is a number \(A>0\) such that every metric admits an
+actual conformally solvable Spin\(^c\) structure satisfying
+
+\[
+ (a_g^+)^2\ge A,\qquad a_g^2\ge T_+,
+ \qquad h=1-T_+/A\in(0,1/3),
+\]
+
+then a universal constant \(c>0\) gives
+
+\[
+ \mathcal E(g)+(U-F(h))_+\ge ch^2,\qquad
+ U=\frac{3\min(T_+,T_-)}A,
+ \qquad F(h)=\frac{(4-\sqrt{1-3h})^2}{9}.
+ \tag{1}
+\]
+
+The constant is independent of the number of ordinary basic classes, the
+rank of cohomology, and the virtual dimension of the chosen structure.
+The only nonclassical analytic premise in this note is (1), whose proof
+uses the \href{line1_functional_pencil.md}{functional-pencil theorem}
+and \href{line1_energy_envelope_gap.md}{energy-envelope transfer}.
+
+The following source theorem supplies actual structures where ordinary
+Seiberg--Witten invariants vanish. For two or three simply connected
+symplectic four-manifolds \(X_i\) with \(b_+(X_i)\equiv3\pmod4\),
+Bauer's nonvanishing theorem gives nonzero Bauer--Furuta invariants for
+the connected sum of their canonical structures. Adding a manifold with
+negative-definite intersection form and determinant square \(-b_2\)
+preserves this nonvanishing. Independent canonical and exceptional signs
+give actual monopole classes. See Ishida--LeBrun, Theorem 9, Corollary
+8, Proposition 10 and Corollary 11 in
+\href{https://arxiv.org/html/math/0111228}{\emph{Curvature, Connected
+Sums, and Seiberg--Witten Theory}}. For two or three positive summands
+no fourth-summand congruence is needed.
+
+\hypertarget{a-quantitative-theorem-for-decomposable-symplectic-building-blocks}{%
+\subsection{2. A quantitative theorem for decomposable symplectic
+building
+blocks}\label{a-quantitative-theorem-for-decomposable-symplectic-building-blocks}}
+
+\textbf{Theorem 1.} Let \(r\in\{2,3\}\). Let \(X_1,\ldots,X_r\) be
+simply connected symplectic four-manifolds with
+\(b_+(X_i)\equiv3\pmod4\), and suppose
+
+\[
+ A=\sum_{i=1}^r c_1^2(X_i)>0.
+\]
+
+For nonnegative integers \(k,m\), put
+
+\[
+ M=\Bigl(\#_{i=1}^r X_i\Bigr)
+       \# k\overline{\mathbb{CP}}^{\,2}
+       \# m(S^1\times S^3),\qquad
+ D=4(r-1)+k+4m,\qquad h=D/A.
+ \tag{2}
+\]
+
+If \(0<h<1/3\), every smooth metric on \(M\) satisfies (1), with the
+same universal constant as in the existing two-chirality theorem. In
+particular, if
+
+\[
+ U\le F(h)+\frac c2h^2,
+ \tag{3}
+\]
+
+then
+
+\[
+ \mathcal E(g)\ge\frac c2h^2,
+ \qquad
+ \|g^{-1}\operatorname{Ric}_g-\sigma I\|_{\infty,\mathrm{op}}
+       \ge h\sqrt{c/8}\quad(\sigma=\pm1).
+ \tag{4}
+\]
+
+Under condition (3), \(M\) has no Einstein metric of any sign.
+
+\textbf{Proof.} Canonical classes on the symplectic summands have
+mod-two Seiberg--Witten invariant one. Write \(c_i=c_1(X_i)\) and
+\(\alpha=\sum_i c_i\), using the orthogonal connected-sum splitting. The
+source theorem gives, for every exceptional sign choice, an actual
+monopole class
+
+\[
+ a_{\epsilon}=\alpha+\sum_{j=1}^k\epsilon_jE_j,
+ \qquad \epsilon_j\in\{\pm1\},\quad E_iE_j=-\delta_{ij}.
+ \tag{5}
+\]
+
+Here \(\epsilon=(\epsilon_1,\ldots,\epsilon_k)\). These are first Chern
+classes of specified Spin\(^c\) structures with solutions for every
+metric, not merely formal characteristic vectors. The handle factors are
+included in the negative-definite gluing theorem; its proof allows a
+nontrivial Picard torus on that summand.
+
+Topology and the almost-complex structure on each summand give
+
+\[
+ T_+(M)=A-4(r-1)-k-4m=A-D,
+ \qquad a_{\epsilon}^2=A-k,
+\]
+
+\[
+ a_{\epsilon}^2-T_+(M)=4(r-1+m)\ge0.
+ \tag{6}
+\]
+
+In particular these are special classes, with actual virtual dimension
+\(r-1+m\). For any metric, averaging (5) over the exceptional signs
+gives
+
+\[
+ 2^{-k}\sum_{\epsilon}(a_{\epsilon,g}^+)^2
+   =(\alpha_g^+)^2+\sum_j(E_{j,g}^+)^2
+   \ge\alpha^2=A.
+ \tag{7}
+\]
+
+Choose one maximizing structure. The choice can depend on the metric,
+but the resulting structure solves the unperturbed equations on all
+metrics and hence on every conformal metric. The same chosen class
+therefore supplies every positive auxiliary weight in the analytic
+theorem. Its square is positive here, since \(k/A\le h<1/3\), so the
+negative-square cost is actually zero. Equations (6)--(7) verify all
+inputs to (1), proving (1) and (4).
+
+A nonzero Einstein constant makes \(\mathcal E=0\), contradicting (4).
+Ricci-flatness is not a zero-defect case of this definition; instead the
+actual class and (7) give the signed scalar estimate
+\(\int s_-^2\ge32\pi^2A>0\), which rules it out separately. This proves
+the final assertion. \(\square\)
+
+This extension changes the source of the gauge information. Splitting
+\(M\) into two pieces of positive \(b_+\) makes its ordinary
+Seiberg--Witten invariants vanish by the standard connected-sum
+vanishing theorem. Actual Bauer--Furuta classes persist nevertheless.
+Thus ordinary basic classes on \(M\) cannot be silently substituted for
+(5).
+
+\hypertarget{why-low-signature-building-blocks-do-not-realize-the-new-strip}{%
+\subsection{3. Why low-signature building blocks do not realize the new
+strip}\label{why-low-signature-building-blocks-do-not-realize-the-new-strip}}
+
+This is a useful selection calculation, not a general obstruction to the
+connected-sum method. Write
+
+\[
+ \rho=\frac{\sum_i\tau(X_i)}A,\quad x=k/A,
+ \qquad h=\frac{4(r-1)+k+4m}A.
+\]
+
+The exact opposite-orientation budget is
+
+\[
+ \frac{3T_-}A=3(1-6\rho)-3h+18x.
+ \tag{8}
+\]
+
+For zero-signature building blocks and \(h<1/3\), the signature of \(M\)
+is \(-k\); hence \(U=3T_+/A=3(1-h)>2\), while \(F(h)<16/9\). They cannot
+approach \(U=F(h)\) in this range. This explains why simply taking
+several product-like inputs does not realize the desired two-chirality
+strip.
+
+For positive signature, (8) instead shows what must change: the building
+blocks need a sufficiently positive ratio \(\rho\), and handle addition
+must supply enough of the surgery budget. Both are realized in the
+following construction.
+
+\hypertarget{an-actual-infinite-family-with-no-almost-complex-structure}{%
+\subsection{4. An actual infinite family with no almost-complex
+structure}\label{an-actual-infinite-family-with-no-almost-complex-structure}}
+
+Braungardt--Kotschick's geography theorem realizes every sufficiently
+large lattice point strictly below any fixed slope less than nine by
+simply connected minimal symplectic manifolds: Theorem 4 of
+\href{https://arxiv.org/pdf/math/0306021}{\emph{Einstein metrics and the
+number of smooth structures on a four-manifold}}. Take its parameter
+\(\epsilon=1/20\). Consequently, for every sufficiently large integer
+\(n\), choose such a manifold \(X_n\) with
+
+\[
+ \chi_h(X_n)=20n,\qquad c_1^2(X_n)=178n.
+ \tag{9}
+\]
+
+Indeed \(178n\le(9-1/20)20n-c(1/20)=179n-c(1/20)\) for large \(n\). Here
+\(\chi_h=(\chi+\tau)/4\) is the topological Todd number for a symplectic
+manifold; no complex structure on \(X_n\) is assumed. The two defining
+topological equations imply
+
+\[
+ \chi(X_n)=62n,\quad \tau(X_n)=18n,\quad
+ b_+(X_n)=40n-1\equiv3\pmod4,\quad b_-(X_n)=22n-1.
+ \tag{10}
+\]
+
+Take two copies of \(X_n\). Set
+
+\[
+ A_n=356n,\quad h_0=\frac{19}{300},\quad F_0=F(h_0)=\frac{961}{900},
+ \quad u_0=\frac{105}{89},
+\]
+
+\[
+ x_0=\frac{781}{180225},\qquad y_0=\frac{42533}{2883600}.
+ \tag{11}
+\]
+
+These positive rational numbers satisfy
+
+\[
+ x_0+4y_0=h_0,\qquad u_0+15x_0-12y_0=F_0.
+ \tag{12}
+\]
+
+Define the even nonnegative surgery counts, for sufficiently large
+\(n\),
+
+\[
+ k_n=2\left\lfloor\frac{x_0A_n}{2}\right\rfloor,
+ \qquad m_n=2\left\lfloor\frac{y_0A_n}{2}\right\rfloor-4,
+\]
+
+\[
+ M_n=X_n\#X_n\#k_n\overline{\mathbb{CP}}^{\,2}
+                    \#m_n(S^1\times S^3).
+ \tag{13}
+\]
+
+\textbf{Theorem 2 (realized Bauer--Furuta strip).} There exists \(n_0\)
+such that, for every \(n\ge n_0\) and every smooth metric on \(M_n\),
+
+\[
+ \boxed{\mathcal E(g)\ge\frac{c h_0^2}{8}>0,\qquad
+ \delta_\sigma(g)\ge h_0\sqrt{c/32}\quad(\sigma=\pm1).}
+ \tag{14}
+\]
+
+The manifolds \(M_n\) are pairwise nonhomeomorphic, have vanishing
+ordinary Seiberg--Witten invariants, and admit no almost-complex
+structure in either orientation. Both strict Hitchin--Thorpe
+inequalities hold. Their numerical data lie on the allowed side of the
+classical optimized energy envelope, but inside its new quantitative
+exclusion strip for large \(n\).
+
+\textbf{Proof.} Connected-sum topology gives
+
+\[
+ \chi(M_n)=124n-2+k_n-2m_n,\qquad \tau(M_n)=36n-k_n,
+\]
+
+\[
+ T_+=A_n-4-k_n-4m_n,
+ \quad T_-=140n-4+5k_n-4m_n.
+ \tag{15}
+\]
+
+Write \(k_n=x_0A_n-\alpha_n\) and \(m_n=y_0A_n-\beta_n-4\), with
+\(0\le\alpha_n,\beta_n<2\). Since
+\(\tau(M_n)/A_n\ge9/89-x_0=196/2025>0\), the smaller chirality is
+\(T_-\). Thus, exactly,
+
+\[
+ h_n=h_0-\frac{\alpha_n+4\beta_n+12}{A_n},\qquad
+ U_n=F_0+\frac{-15\alpha_n+12\beta_n+36}{A_n}.
+ \tag{16}
+\]
+
+For large \(n\), \(0<h_n<h_0\). The numerator of the correction in
+\(U_n\) lies strictly between 6 and 60. Also
+
+\[
+ F'(h)=\frac{4-\sqrt{1-3h}}{3\sqrt{1-3h}},\qquad
+ 0<F'(h)\le31/27<2\quad(0\le h\le h_0).
+\]
+
+Since \(\alpha_n+4\beta_n+12<22\), it follows that
+
+\[
+ \boxed{0<U_n-F(h_n)<\frac{104}{A_n},\qquad h_n\longrightarrow h_0.}
+ \tag{17}
+\]
+
+Theorem 1 applies by (10). Choose \(n_0\) so that \(h_n\ge h_0/2\) and
+\(104/A_n\le c h_0^2/8\). Then (1) implies
+\(\mathcal E\ge ch_0^2/4-ch_0^2/8\), proving (14).
+
+The Betti numbers are
+
+\[
+ b_1(M_n)=m_n,\qquad b_+(M_n)=80n-2,\qquad
+ b_-(M_n)=44n-2+k_n.
+ \tag{18}
+\]
+
+They are all even. An almost-complex four-manifold necessarily has
+\((\chi+\tau)/4\in\mathbb Z\), equivalently \(1-b_1+b_+\) even. Equation
+(18) makes this number odd. Reversing orientation replaces \(b_+\) by
+the also-even \(b_-\), so the same contradiction holds there. No
+almost-complex structure exists in either orientation. The positive and
+negative summands in (18) also allow the ordinary connected-sum
+vanishing argument in both orientations. The second Betti number
+\(b_2=124n-4+k_n\) is strictly increasing, which gives pairwise distinct
+homeomorphism types even without fixing the orientation.
+
+Finally \(T_+/A_n\to281/300>0\) and \(T_-/A_n\to961/2700>0\), proving
+strict Hitchin--Thorpe. By (17), the classical Einstein energy interval
+\([F(h_n),U_n]\) has positive length. Both Weyl energies can be positive
+inside it. It is the quantitative separation, not the classical
+scalar--Weyl numerical inequalities alone, that eliminates this
+interval. \(\square\)
+
+\hypertarget{the-precise-increase-in-scope}{%
+\subsection{5. The precise increase in
+scope}\label{the-precise-increase-in-scope}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  These are not merely new choices of a complex general-type base in the
+  earlier application. A Kähler surface has odd \(b_+=1+2p_g\), and
+  blowups and \(S^1\times S^3\) additions preserve \(b_+\). Both \(b_+\)
+  and \(b_-\) in (18) are even, so neither orientation of \(M_n\) can be
+  diffeomorphic to any member of that former category.
+\item
+  Ordinary Seiberg--Witten invariants on the whole manifold vanish. The
+  application genuinely uses actual classes retained by stable
+  cohomotopy. It is not obtained by declaring arbitrary cohomology
+  vectors to be monopoles. The virtual dimension is \(1+m_n\), not zero.
+\item
+  The previously recorded universal one-third estimate has
+  \(\varepsilon_0\le1/4\), whereas \(1/3-h_n>1/3-h_0=27/100\). It does
+  not itself force positive Einstein defect on this family. The
+  classical connected-sum nonexistence threshold \(D\ge A/3\) likewise
+  does not apply.
+\item
+  The new differential input is still the existing functional pencil.
+  Bauer's nonvanishing and Braungardt--Kotschick geography are classical
+  inputs. This note supplies a realized extension of the quantitative
+  obstruction, not a new Bauer--Furuta theorem or new symplectic
+  geography.
+\item
+  These manifolds cannot be Yau26 counterexamples: (14) forbids the
+  required arbitrarily tight pointwise inputs. The result establishes a
+  further category of no-Einstein smooth types on which the original
+  pointwise hypotheses are uniformly impossible.
+\end{enumerate}
+
+For large \(n\), \(\pi_1(M_n)\) is the infinite free group of rank
+\(m_n\). Myers' theorem already excludes strictly positive Ricci
+curvature on these objects. The positive-sign pointwise corollary is
+therefore not a second independent discovery; the substantive extension
+is the uniform all-metrics integral gap and its negative-sign pointwise
+consequence, supplied by the actual Bauer--Furuta classes.
+
+The threshold \(n_0\) depends on the inherited analytic constant and the
+geography existence threshold. No explicit numerical value is claimed.
+We choose one available \(X_n\) at each lattice point. Although the
+source geography gives infinitely many smooth structures there, this
+note does not assert that all remain pairwise distinct after the new
+connected sum.
+
+\texttt{check\_line1\_bauer\_furuta\_geography.py} checks the exact
+topology, rational parameters, parity obstruction, sign of the floor
+errors, and comparison with the old recorded band. Those checks do not
+prove gauge nonvanishing, the geography theorem or the inherited
+analytic theorem.
+
+\end{document}

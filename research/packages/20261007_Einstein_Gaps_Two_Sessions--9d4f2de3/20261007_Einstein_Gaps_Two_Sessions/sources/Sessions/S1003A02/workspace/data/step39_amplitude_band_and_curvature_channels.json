@@ -1,0 +1,51 @@
+{
+ "normalizations": {
+  "costs": "P and Theorem-C channels divided by 8*pi^2",
+  "amplitude_and_band_volume": "closed Yamabe representative scaled to scalar -4",
+  "yamabe_channels_status": "finite-grid numerical decomposition; P interval is exact-dyadic Arb"
+ },
+ "amplitude_polynomial": {
+  "m_exact": "(rho - 2)*(rho**3 - 10*rho**2 + 2*rho + 4)/6",
+  "rho_star": 0.7757889809583222,
+  "positive_band": [
+   0.7757889809583222,
+   2.0
+  ],
+  "rho_at_m_max": 1.45861873485089,
+  "m_max": 1.015553405258532
+ },
+ "certified_P_interval": [
+  0.9956627327532543,
+  0.9956627327711142
+ ],
+ "normalized_tariff_deficit_interval": [
+  0.004337267228885833,
+  0.0043372672467456574
+ ],
+ "necessary_linear_amplitude_deficit_L_per_class": [
+  0.08561422346182451,
+  0.08561422381436333
+ ],
+ "necessary_shallow_band_volume_per_class": [
+  0.33721209743776887,
+  0.3372120988263273
+ ],
+ "curvature_channels_X128_N2400": {
+  "P_minus_1_from_certificate_midpoint": -0.00433726723781569,
+  "P_minus_1_numerical_profile": -0.00433726723756811,
+  "four_Delta_Wplus": -0.07513410430321739,
+  "scalar_channel_total": 0.07079683706564928,
+  "sum_fourWplus_and_scalar": -0.00433726723756811,
+  "48_RV_hat": 0.07080821103928858,
+  "Q_square": 1.5429001074821512e-06,
+  "Q_grad": 3.3881969044169216e-07,
+  "yamabe_rhs_sum": 0.07081009275908651,
+  "yamabe_identity_residual": -1.3255693437227989e-05
+ },
+ "structural_reading": {
+  "volume_side": "L=E int(2-rho), K, and the quadratic amplitude term enter the scalar slack Sigma=16V-32*pi^2*p; exactly L=K+(1/2)int(2-rho)^2.",
+  "weyl_curvature_side": "pairwise amplitude variance and 2|w|^2 equal the nonconstant self-dual Walsh-curvature energy; Wplus-W0 is direct Weyl misalignment.",
+  "bridge": "zeta is covariant spinor variation and couples amplitude/direction transport to curvature alignment.",
+  "missing_measurement": "The realized fraction (8*pi^2-P)/(4L) requires actual closed-host monopoles; the failed isolated-cell ODE outputs do not provide it."
+ }
+}

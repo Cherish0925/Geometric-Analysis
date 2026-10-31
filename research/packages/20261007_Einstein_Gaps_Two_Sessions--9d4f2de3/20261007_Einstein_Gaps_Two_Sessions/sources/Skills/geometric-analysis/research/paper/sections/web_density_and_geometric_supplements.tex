@@ -1,0 +1,1350 @@
+% Mathematical sources: the September 29--30 web increment, other_web/03--05,
+% and research/A/working_notes/o10_geometry_endpoint_20260929.md, Sections 3--9.
+% The preserved originals, rather than this translation, remain the source record.
+
+\section{The fifth determinant power and a positive potential}
+\label{sec:web-positive-potential}
+
+All integrals in this section are normalized by the total volume, including
+integrals over subsets.  We write
+\(\|u\|_{p,\mathrm{av}}=(V^{-1}\int |u|^p)^{1/p}\).
+The rough Laplacian is nonnegative, and Hermitian products are conjugate-linear
+in their first argument.  Our exterior-algebra normalization is
+\(\lvert e^{12}\pm e^{34}\rvert^2=2\).
+
+\begin{theorem}[Finite-density exclusion by a positive line potential]
+\label{thm:web-pp-exclusion}
+There is no sequence of closed, smooth, actual O10 configurations satisfying
+\[
+ s_j=-4,\qquad \beta_j\longrightarrow\infty,\qquad
+ \kappa_j:=\frac{P_j+D_{\beta_j}}{V_j}\longrightarrow0,
+ \qquad \sup_j\fint_{M_j}|W_j^-|^2<\infty.
+\]
+Consequently, under the actual conformal monopole-supply hypotheses, with
+\(p\ge A>0\), \(a^2\ge T_+\), and \(\chi(M)/A\le B\), every fixed
+finite \(B\ge0\) admits a constant \(c(B)>0\) such that
+\begin{equation}
+ \fint_M|\Ric_g+g|^2+\frac{D_\beta(g,a)}{V_g}
+ \ge c(B)\frac{(\beta-2)^2}{\beta^2},\qquad \beta\ge2.
+ \label{eq:web-pp-finite-density}
+\end{equation}
+No pointwise curvature bound, noncollapse, diameter bound, or uniform Sobolev
+constant is assumed.
+\end{theorem}
+
+We give the full positive-potential argument, using the actual-field estimates
+of Sections~\ref{sec:web-strong-current} and~\ref{sec:web-direct-resolvent}.
+In particular, the proof uses their strong-current conclusions and not merely
+a formal spinor with the same pointwise algebraic identities.
+
+\subsection{Actual fields and the remaining derivative}
+
+Suppose that the excluded sequence exists.  Put
+\(L=\det S^+\) and \(E=S^-\otimes L\), so that \(\det E=L^3\).
+The actual unitary connection on \(L\) is denoted by \(A\); locally write
+\(A=i\mathfrak a\), with \(\mathfrak a\) real.  On \(L^k\) write
+\(D_k=d+ki\mathfrak a\).  The negative quadratic map has the normalization
+\[
+ c(q_-(z))z=\frac{|z|^2}{2}z,\qquad
+ |q_-(z)|^2=\frac{|z|^4}{8},\qquad Q_z=-iq_-(z).
+\]
+The actual monopole and its cubic torsion satisfy
+\[
+ D_A\Phi=0,\qquad F_A^+=2i\sigma(\Phi),\qquad
+ \rho=|\Phi|^2\le2,\qquad \rho_*:=\frac43,
+\]
+\[
+ \tau=t_\Phi\in\Gamma(E),\qquad m_*:=\frac{128}{81},\qquad
+ |\tau|^2\longrightarrow m_*,\qquad D^-_{3A}\tau\longrightarrow0
+ \quad\hbox{in }L^2_{\mathrm{av}}.
+\]
+The strong-current estimates give uniform integrability of
+\(|\nabla\Phi|^4\), a normalized \(L^2\) Hessian bound, and
+\begin{equation}
+ \rho\longrightarrow\rho_*,\quad
+ \zeta:=\langle\Phi,\nabla_A\Phi\rangle\longrightarrow0,\quad
+ \nabla\zeta\longrightarrow0,\quad
+ N_\tau:=(\nabla\tau)^{1,0}_{J_+}\longrightarrow0
+ \quad\hbox{in }L^2_{\mathrm{av}}.
+ \label{eq:web-pp-strong-input}
+\end{equation}
+Moreover, \(\zeta\to0\) in \(L^4_{\mathrm{av}}\).  The bounded
+same-bundle resolvent construction supplies \(v\in\Gamma(E)\) with
+\begin{equation}
+ \begin{gathered}
+ |v|+|\nabla^*\nabla v|\le C,\qquad
+ v-\tau\longrightarrow0\quad\hbox{in }H^1_{\mathrm{av}}\cap L^4_{\mathrm{av}},\\
+ D^-_{3A}v\longrightarrow0,\qquad
+ (\nabla^*\nabla-2)v\longrightarrow0,\qquad
+ m:=|v|^2\longrightarrow m_*
+ \quad\hbox{in }L^2_{\mathrm{av}}.
+ \end{gathered}
+ \label{eq:web-pp-resolvent-input}
+\end{equation}
+For \(K:=\sup_j\fint|W_j^-|^2<\infty\), Hessian interchange and
+bounded-section interpolation give
+\begin{equation}
+ \|\nabla v\|_{4,\mathrm{av}}+\|\nabla^2v\|_{2,\mathrm{av}}\le C_K,
+ \qquad \fint|\nabla v|^2\longrightarrow2m_*,\qquad
+ dm,\ j_v:=\Im\langle v,\nabla v\rangle\longrightarrow0
+ \quad\hbox{in }L^2_{\mathrm{av}}.
+ \label{eq:web-pp-derivative-input}
+\end{equation}
+
+On a fixed region where \(\rho\) and \(m\) are bounded away from zero,
+choose adapted frames as below and put
+\(Z_1=e_1-ie_2\), \(Z_2=e_3-ie_4\).  The first prolongation gives
+\begin{equation}
+ \nabla_{Z_1}v,\quad\nabla_{Z_2}v,\quad
+ \nabla_{\bar Z_1}v\longrightarrow0
+ \quad\hbox{in }L^2_{\mathrm{av}}.
+ \label{eq:web-pp-first-prolongation}
+\end{equation}
+The Dirac trace also makes \((\nabla_{\bar Z_2}v)_1\) small; only
+\((\nabla_{\bar Z_2}v)_2\) remains.  Equivalently, the same reduction
+follows from the mass, phase, type, and Dirac identities for the bounded
+resolvent.  No critical spectral equality or numerical upper bound on \(K\)
+is used.  The low-amplitude sets have relative volume tending to zero, and
+their \(\nabla v\) energy tends to zero by the \(L^4\) bound in
+\eqref{eq:web-pp-derivative-input}.
+
+The actual anti-self-dual curvature fit is
+\begin{equation}
+ f:=-iF_A^-=-\frac{27}{32}Q_v+o_{L^2_{\mathrm{av}}}(1).
+ \label{eq:web-pp-curvature-fit}
+\end{equation}
+Indeed, the same-field model is
+\(K_{\mathrm{fit}}=-(9/8)\rho^3Q_\tau/S\), with \(S\to2m_*\),
+and \((9/8)\rho_*^3/(2m_*)=27/32\).  The transfer
+\(v-\tau\to0\) in \(L^4\) transfers the quadratic map in \(L^2\).
+No derivative of the fitted curvature is taken.
+
+\subsection{The globally defined fifth-power section}
+
+On the good-amplitude region take adapted spinorial and orthonormal frames
+such that \(\Phi=\sqrt\rho(1,0)\) and \(v=\sqrt m(1,0)\).  Write
+\(\theta_1=e^1-ie^2\), \(\theta_2=e^3-ie^4\).  The connection matrices are
+\begin{equation}
+ \Omega_+=\begin{pmatrix}ip&-\bar\eta\\\eta&i(\mathfrak a-p)\end{pmatrix},
+ \qquad
+ \Omega_E=\begin{pmatrix}iq&-\bar b\\b&i(3\mathfrak a-q)\end{pmatrix},
+ \label{eq:web-pp-adapted-connections}
+\end{equation}
+where the real one-forms \(p=\Im\zeta/\rho\) and \(q=j_v/m\) are
+phase currents, not the monopole projection square.  The actual cubic
+identity and \eqref{eq:web-pp-first-prolongation} yield
+\begin{equation}
+ \eta=\kappa\theta_1+\epsilon_\eta,
+ \quad\kappa=\frac{\sqrt m}{2\rho^{3/2}}\in\mathbb R,
+ \qquad b=c_0\theta_2+\epsilon_b,
+ \quad c_0=\frac{b_3+ib_4}{2}.
+ \label{eq:web-pp-connection-errors}
+\end{equation}
+Here \(\epsilon_\eta,\epsilon_b,p,q\to0\) in normalized \(L^2\).
+All these quantities, as well as \(\eta,b,c_0\), are bounded in normalized
+\(L^4\) on every fixed lower-amplitude cutoff.  The bounds are bounds on
+covariant derivatives of actual fields, not on the local potential
+\(\mathfrak a\).
+
+For a section of \(E\), the invariant cubic expression
+\[
+ t(v)=\sum_{i=1}^4c^-(e^i)v\otimes(v\wedge\nabla_i v)
+ \in\Gamma(S^+\otimes L^4)
+\]
+satisfies, in these frames,
+\[
+ t(v)=m^{3/2}(-b_1+ib_2,-b_3-ib_4).
+\]
+Consequently the coefficient \(c_0\) in
+\eqref{eq:web-pp-connection-errors} is the coefficient of the section
+\begin{equation}
+ c_0=-\frac{\Phi\wedge t(v)}{2\sqrt\rho\,m^{3/2}}
+ \quad\hbox{of }L^5.
+ \label{eq:web-pp-invariant-section}
+\end{equation}
+Choose fixed smooth cutoffs \(\chi_\rho,\chi_m\), zero near zero and one
+on neighborhoods of \(\rho_*,m_*\), with derivative supports separated
+from these limiting amplitudes.  Define globally, by smooth extension by zero,
+\begin{equation}
+ c=\chi_\rho(\rho)\chi_m(m)c_0\in\Gamma(L^5).
+ \label{eq:web-pp-global-section}
+\end{equation}
+Under a determinant-frame change by \(e^{it}\), the coefficients of
+\(c_0,\theta_2,b\) transform respectively by
+\(e^{-5it},e^{2it},e^{-3it}\).  Thus the local formula is consistent
+with \(D_5=d+5i\mathfrak a\), also directly determined by the wedge in
+\eqref{eq:web-pp-invariant-section}.
+
+Differentiating that invariant expression, including its cutoffs, gives
+\begin{equation}
+ |c|\le C|\nabla v|,
+ \qquad |D_5c|\le C\bigl(|\nabla^2v|+|\nabla v|^2
+                    +|\nabla\Phi|\,|\nabla v|\bigr).
+ \label{eq:web-pp-section-budget}
+\end{equation}
+Hence \(\|c\|_{4,\mathrm{av}}+\|D_5c\|_{2,\mathrm{av}}\le C_K\).
+Its mass is not lost:
+\begin{equation}
+ \fint|c|^2\longrightarrow1.
+ \label{eq:web-pp-positive-mass}
+\end{equation}
+To see this, on the good-amplitude region
+\[
+ |\nabla v|^2=\frac{|dm|^2}{4m}+m|q|^2+m|b|^2.
+\]
+The first two integrals tend to zero.  The connection error gives
+\(|b|^2=2|c_0|^2+o_{L^1_{\mathrm{av}}}(1)\); since
+\(m-m_*\to0\) in \(L^2\) and \(|b|^2\) is bounded in \(L^2\),
+one may replace \(m\) by \(m_*\) in its integral.  The excluded
+low-amplitude sets carry vanishing gradient energy.  Now use
+\(\fint|\nabla v|^2\to2m_*\).  Boundedness of the fourth moment is
+sufficient here; uniform integrability of that fourth moment is not assumed.
+
+\subsection{The Cartan identity and its weak Cauchy--Riemann consequence}
+
+For clarity, the Clifford matrices from \(S^+\) to \(S^-\) are
+\[
+ C_1=I,\quad C_2=\operatorname{diag}(i,-i),\quad
+ C_3=\begin{pmatrix}0&1\\-1&0\end{pmatrix},\quad
+ C_4=\begin{pmatrix}0&-i\\-i&0\end{pmatrix};
+\]
+the reverse matrices are \(-C_i^*\).  Subtracting
+\(i\mathfrak a I/2\) and \(3i\mathfrak a I/2\) from the two
+matrices in \eqref{eq:web-pp-adapted-connections} gives their traceless
+Levi-Civita parts.  The identities
+\[
+ \Omega_{-,\mathrm{LC}}C_j-C_j\Omega_{+,\mathrm{LC}}
+   =\sum_i\Gamma^i{}_jC_i,\qquad
+ de^i=-\Gamma^i{}_j\wedge e^j
+\]
+then give, when \(\eta=\kappa\theta_1\) and \(b=c_0\theta_2\),
+\[
+ d\theta_2=i(2\mathfrak a-p-q)\wedge\theta_2-\bar c_0\Xi_-,
+ \qquad
+ \Xi_-=e^{13}+e^{24}+i(e^{14}-e^{23}).
+\]
+The \(\kappa\) term cancels and \(\Xi_-\) is anti-self-dual.
+For the actual connections the same linear computation is
+\begin{equation}
+ d_{-2A}\theta_2=-i(p+q)\wedge\theta_2-\bar c_0\Xi_-+\mathcal R,
+ \qquad |\mathcal R|\le C(|\epsilon_\eta|+|\epsilon_b|).
+ \label{eq:web-pp-cartan}
+\end{equation}
+The off-diagonal curvature of \(E\) is
+\((F^E)_{21}=db+i(3\mathfrak a-2q)\wedge b\).  Substitution gives the
+full error identity
+\begin{equation}
+ \begin{split}
+ (F^E)_{21}={}&D_5c_0\wedge\theta_2-|c_0|^2\Xi_-
+       +d_{3A}\epsilon_b-i(p+3q)\wedge c_0\theta_2\\
+       &-2iq\wedge\epsilon_b+c_0\mathcal R.
+ \end{split}
+ \label{eq:web-pp-offdiagonal-curvature}
+\end{equation}
+Its self-dual part contains no \(|c_0|^2\Xi_-\) term.  The central
+curvature is diagonal, and the remaining self-dual off-diagonal curvature
+comes from the trace-free Ricci block.  Thus
+\(\lvert((F^E)_{21})^+\rvert\le C|\Ric^\circ|\).  If
+\(\mathcal L(\alpha)=(\alpha\wedge\theta_2)^+\), we obtain
+\begin{equation}
+ \mathcal L(D_5c_0)=-(d_{3A}\epsilon_b)^++G,
+ \qquad \|G\|_{4/3,\mathrm{av}}\longrightarrow0.
+ \label{eq:web-pp-local-cr}
+\end{equation}
+For example, the phase terms are products of small \(L^2\) factors and
+bounded \(L^4\) factors.  There is no anti-self-dual Weyl term in this
+particular self-dual curvature block.
+
+Let \(J_-\) have fundamental form \(\Omega_-=e^{12}-e^{34}\), acting
+on one-forms by \((J_-\alpha)(X)=-\alpha(J_-X)\).
+In the self-dual basis
+\[
+ \Psi_1=e^{12}+e^{34},\quad\Psi_2=e^{13}-e^{24},\quad
+ \Psi_3=e^{14}+e^{23},\qquad |\Psi_i|^2=2,
+\]
+the coefficients of \(\mathcal L(\alpha)\) are
+\[
+ \frac12(-i\alpha_3-\alpha_4,\ \alpha_1+i\alpha_2,
+                                    -i\alpha_1+\alpha_2).
+\]
+With \(\mathcal D=\operatorname{diag}(2,1,1)\), the exact symbol
+identity is
+\begin{equation}
+ \mathcal L^*\mathcal D\mathcal L=I-iJ_-.
+ \label{eq:web-pp-cr-symbol}
+\end{equation}
+The target basis has not been normalized to unit length; its factor of two
+is part of this identity.  In particular, the constrained direction is
+\(\alpha_1+i\alpha_2=\alpha_3-i\alpha_4=0\), the opposite
+Cauchy--Riemann direction to the initial \(J_+\) direction.
+On fixed lower-amplitude regions the bundle maps in this computation are
+bounded, and their covariant first derivatives are bounded by
+\(C(|\nabla\Phi|+|\nabla v|)\).
+
+Introduce the global smooth bounded two-form and its skew endomorphism
+\[
+ \bar\Omega=-\frac4{m_*}Q_v,\qquad \bar J=J_{\bar\Omega}.
+\]
+It is not necessary that \(\bar J^2=-I\).  For every sequence of smooth
+test sections \(w\in\Gamma(L^5)\) satisfying
+\begin{equation}
+ \|w\|_\infty+\|D_5w\|_{4,\mathrm{av}}
+                  +\|D_5^2w\|_{2,\mathrm{av}}\le C_w,
+ \label{eq:web-pp-test-class}
+\end{equation}
+we claim that
+\begin{equation}
+ \Re\fint\langle D_5c-i\bar J D_5c,D_5w\rangle\longrightarrow0.
+ \label{eq:web-pp-global-weak-cr}
+\end{equation}
+Here are all the localization errors.  Test the cutoff version of
+\eqref{eq:web-pp-local-cr} with \(\mathcal D\mathcal L(D_5w)\).
+The \(G\) term tends to zero by the \(L^{4/3}\)--\(L^4\) pairing.
+Move the derivative on \(\epsilon_b\) onto this test.  The resulting
+adjoint is bounded pointwise by
+\[
+ C\bigl(|D_5^2w|+
+       (|\nabla\Phi|+|\nabla v|+|d\chi|)|D_5w|\bigr),
+\]
+and hence in normalized \(L^2\).  Its pairing with
+\(\epsilon_b\to0\) in \(L^2\) vanishes.  The unitary bundle
+connections match in this integration by parts, so no estimate on a bare
+gauge potential is needed.  Replacing \(c_0\) with \(c=\chi c_0\)
+introduces \(c_0d\chi\).  Both factors have bounded \(L^4\) norms;
+the product is bounded in \(L^2\) and supported on sets of vanishing
+relative volume.  It therefore tends to zero in \(L^{4/3}\).  Two nested
+fixed cutoffs make the maps and tests smooth before either amplitude vanishes.
+Finally, on the good region \(Q_v=-m\Omega_-/4\), so
+\(\bar J=(m/m_*)J_-\).  Boundedness of \(m\) and its \(L^2\)
+convergence imply \(\bar J-J_-\to0\) in \(L^4\).  The remaining
+error is controlled by the \(L^4\)--\(L^2\)--\(L^4\) product of
+this difference, \(D_5c\), and \(D_5w\).  This proves
+\eqref{eq:web-pp-global-weak-cr}.  At no point has a derivative of the
+small structural error been asserted to converge strongly.
+
+\subsection{The potential and a legal dual resolvent test}
+
+The Hopf divergence identity, \(D^-_{3A}v\to0\), and \(j_v\to0\)
+give \(\delta\bar\Omega\to0\) in \(L^2_{\mathrm{av}}\).
+Since \(F^{L^5}=5F_A\), the potential in the line-bundle identity is
+\begin{equation}
+ \begin{split}
+ \mathfrak q&:=-i\langle F^{L^5},\bar\Omega\rangle
+       =5\langle f,\bar\Omega\rangle\\
+ &\longrightarrow
+ 5\frac{27}{32}\frac4{m_*}\frac{m_*^2}{8}
+       =\frac{135m_*}{64}=\frac{10}{3}
+       \quad\hbox{in }L^2_{\mathrm{av}}.
+ \end{split}
+ \label{eq:web-pp-positive-potential}
+\end{equation}
+The self-dual curvature is orthogonal to \(\bar\Omega\), and
+\(|Q_v|^2=m^2/8\).  This calculation concerns the scalar line \(L^5\);
+it is not the Lichnerowicz potential of the rank-two bundle containing
+\(t(v)\).  The latter cubic lies in the positive spinor line orthogonal
+to \(\Phi\), where the determinant-nine potential tends to \(-7\),
+not \(+5\).  Passing to \(\Phi\wedge t(v)\) changes both the bundle
+and the operator; the positive value above is computed independently.
+
+For any real global two-form \(\Omega\) and sections \(c,w\) of the
+same line bundle, integration by parts and the curvature commutator give
+\begin{equation}
+ \begin{split}
+ &\Re\int\langle D_5c-iJ_\Omega D_5c,D_5w\rangle\\
+ &\quad=\Re\int\left\langle c,
+   \Delta_{5A}w-i\langle F^{L^5},\Omega\rangle w
+                    +i\,\delta\Omega\mathbin{\cdot}D_5w\right\rangle,
+ \qquad\Delta_{5A}=D_5^*D_5.
+ \end{split}
+ \label{eq:web-pp-line-pairing}
+\end{equation}
+In an orthonormal frame the skew term is
+\(i\Omega_{ij}\overline{D_ic}D_jw\); moving \(D_i\) gives
+\(-\tfrac i2\Omega_{ij}[D_i,D_j]w\), which fixes the displayed
+curvature sign.  The remaining term is the codifferential term.  Neither
+closedness of \(\Omega\) nor the identity \(J_\Omega^2=-I\) is required.
+Apply this to \(\bar\Omega\).  The potential error is controlled by
+\(\|\mathfrak q-10/3\|_2\|c\|_2\|w\|_\infty\), and the drift
+error by \(\|\delta\bar\Omega\|_2\|c\|_4\|D_5w\|_4\).
+Thus \eqref{eq:web-pp-global-weak-cr} implies
+\begin{equation}
+ \Re\fint\langle c,(\Delta_{5A}+10/3)w\rangle\longrightarrow0
+ \quad\hbox{for every test in \eqref{eq:web-pp-test-class}}.
+ \label{eq:web-pp-weak-positive-equation}
+\end{equation}
+
+Fix a large \(M\) and a smooth radial cap \(T_M\), equal to the identity
+on \(|c|\le M\), with \(|T_M(c)|\le2M\) and
+\(\Re\langle c,T_M(c)\rangle\ge0\).  Solve on the same line bundle
+\begin{equation}
+ (\Delta_{5A}+10/3)w=T_M(c).
+ \label{eq:web-pp-dual-resolvent}
+\end{equation}
+The positive potential gives invertibility and the maximum-principle bound
+\(\|w\|_\infty\le3(2M)/10\); its rough Laplacian is also bounded.
+We verify rather than assume that this is an admissible test.  For a bounded
+section of a unitary bundle, Hessian interchange and divergence interpolation
+give, with \(I=\fint|D^2w|^2\), \(J=\fint|Dw|^4\),
+\begin{align}
+ I&\le C\fint|D^*Dw|^2+C\|w\|_\infty^2\fint|F_D|^2
+       +C\fint(|\Ric|+|F_D|)|Dw|^2,\label{eq:web-pp-hessian-test}\\
+ J&\le C\|w\|_\infty^2I.\label{eq:web-pp-interpolation-test}
+\end{align}
+The second inequality follows by integrating the divergence of
+\(|Dw|^2\Re\langle w,Dw\rangle\).  In the first inequality all
+curvature derivatives have been removed by integration by parts; the tangent
+curvature contracts to Ricci.  Cauchy--Schwarz and Young's inequality absorb
+the last term using the second inequality.  Here \(F_D=5F_A\), whose
+normalized \(L^2\) norm is uniformly bounded by the actual curvature fit;
+the Ricci norm is likewise bounded.  There is no \(W^-\) block in this
+line connection.  It follows that
+\(\|D_5^2w\|_{2,\mathrm{av}}+\|D_5w\|_{4,\mathrm{av}}\le C_M\).
+No derivative of \(T_M(c)\) has been used.
+
+Equations~\eqref{eq:web-pp-weak-positive-equation} and
+\eqref{eq:web-pp-dual-resolvent} now imply
+\(\Re\fint\langle c,T_M(c)\rangle\to0\).  On the other hand,
+\[
+ \liminf\Re\fint\langle c,T_M(c)\rangle
+ \ge1-\limsup\fint_{\{|c|>M\}}|c|^2
+ \ge1-\frac{C_K}{M^2}.
+\]
+Choose \(M\) first, so that the last quantity is positive.  This is the
+required contradiction and proves the sequential assertion.
+
+\subsection{Returning to all parameters and all allowed metrics}
+
+If \eqref{eq:web-pp-finite-density} failed at fixed finite \(B\), a
+sequence would have its left side divided by
+\((\beta-2)^2/\beta^2\) tending to zero.  The case \(\beta=2\) is
+vacuous.  The finite-parameter theorem of
+Section~\ref{sec:single-parameter} excludes bounded \(\beta\), so
+\(\beta\to\infty\) and the defect tends to zero.  The exact conformal
+comparison
+\[
+ \widehat\kappa\le
+ \frac{\kappa}{1-\sqrt\kappa-\kappa/16}
+\]
+passes to the scalar-curvature representative \(s=-4\) while retaining
+the actual supply and the topological budget.  On that representative,
+\(p/V\le1/(2\pi^2)\), and Gauss--Bonnet yields
+\[
+ \fint|W^-|^2\le\frac{8\pi^2\chi}{V}-\frac23+\frac{P}{2V}
+           \le4B-\frac23+o(1).
+\]
+This contradicts the sequential assertion and proves the theorem.
+
+\begin{remark}[The remaining dependence on density]
+An unrestricted O10 escape sequence, if one exists, must have
+\(\fint|W^-|^2\to\infty\).  The endpoint identities
+\(p/V\to2/(9\pi^2)\), \(\fint|W^+|^2\to0\), and Gauss--Bonnet
+then also force \(\chi/p\to\infty\) and \(\chi/A\to\infty\).
+The finite \(K\) budget was used for the original resolvent Hessian bound,
+the first-derivative reduction, and the mass and derivative bounds for \(c\).
+The absence of \(W^-\) from the final line resolvent does not remove those
+earlier uses.  Likewise, this proof gives no O11 sharp coefficient: its
+nonzero limiting torsion amplitude is absent at the allowed K\"ahler--Einstein
+end, where the relevant smaller energy scale is \(Q=Ah=o(V)\).
+\end{remark}
+
+\section{A Chern obstruction with growing Dirichlet energy}
+\label{sec:web-growing-energy-chern}
+
+The following quantitative line-bundle lemma does not assume bounded
+Dirichlet energy along a sequence.  This is useful independently of the
+stronger polynomial density estimate in Section~\ref{sec:web-density-rate}.
+Throughout this section, subset integrals are again divided by the total
+volume.
+
+\begin{proposition}[Growing-energy logarithmic Chern estimate]
+\label{prop:web-gec-lemma}
+Let \((M^4,g)\) be closed, smooth, and oriented, and let \(K\to M\)
+be a Hermitian line bundle with unitary connection \(\nabla\).  Write
+\(F=-iF^K\) for its real curvature.  Suppose
+\[
+ \fint|\Ric|^2\le C_R,\qquad F=F_0+e_F,
+ \qquad |F_0|\le C_F.
+\]
+The model \(F_0\) need not be closed.  Let \(s\) be a smooth section,
+\(|s|\le M_0\), and fix \(\ell>0\).  Put
+\[
+ \mathsf E=1+\fint|\nabla s|^2,\qquad
+ d=\fint(|s|-\ell)^2,\qquad
+ \Delta=d+\fint|e_F|^2.
+\]
+If \(0<\Delta\le e^{-4}\), then
+\begin{equation}
+ \frac{|c_1(K)^2[M]|}{V}
+ \le\frac{C\mathsf E}{\sqrt{\log(1/\Delta)}}.
+ \label{eq:web-gec-logarithmic-bound}
+\end{equation}
+Here \(C\) depends only on \(C_R,C_F,M_0,\ell\), and the dimension,
+not on \(\mathsf E\), volume, or any noncollapse or Sobolev constant.
+If \(\Delta=0\), the line bundle is trivial and its Chern square vanishes.
+In particular, a lower bound \(|c_1(K)^2[M]|/V\ge q_0>0\) implies
+\begin{equation}
+ \log(1/\Delta)\le C_{q_0}\mathsf E^2.
+ \label{eq:web-gec-logarithmic-lower-bound}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Let \(L=\nabla^*\nabla\),
+\(u_\varepsilon=(I+\varepsilon L)^{-1}s\), and
+\(K(\varepsilon)=\fint|Lu_\varepsilon|^2\).  The maximum principle
+and spectral calculus give
+\begin{equation}
+ |u_\varepsilon|\le M_0,\quad
+ \fint|u_\varepsilon-s|^2\le\varepsilon\mathsf E,\quad
+ \fint|\nabla u_\varepsilon|^2\le\mathsf E.
+ \label{eq:web-gec-resolvent-bounds}
+\end{equation}
+For \(\lambda>0\),
+\(\int_0^\infty\lambda^2(1+\varepsilon\lambda)^{-2}
+\,d\varepsilon=\lambda\), and the zero eigenvalue contributes zero.
+Hence
+\[
+ \int_0^\infty K(\varepsilon)\,d\varepsilon
+       =\fint|\nabla s|^2\le\mathsf E.
+\]
+Averaging with respect to \(d\varepsilon/\varepsilon\) on
+\([\Delta^{1/2},\Delta^{1/4}]\) supplies a parameter satisfying
+\begin{equation}
+ \Delta^{1/2}\le\varepsilon\le\Delta^{1/4},\qquad
+ \varepsilon K(\varepsilon)\le
+              \frac{4\mathsf E}{\log(1/\Delta)}.
+ \label{eq:web-gec-parameter}
+\end{equation}
+
+For any section \(u\) bounded by \(M_0\), the Hessian interchange and
+interpolation inequalities
+\eqref{eq:web-pp-hessian-test}--\eqref{eq:web-pp-interpolation-test} give
+\[
+ \int|\nabla^2u|^2\le C\int|Lu|^2+CM_0^2\int|F|^2
+             +C\int(|\Ric|+|F|)|\nabla u|^2,
+ \qquad
+ \int|\nabla u|^4\le CM_0^2\int|\nabla^2u|^2.
+\]
+Cauchy--Schwarz and Young's inequality therefore give
+\begin{equation}
+ \fint\bigl(|\nabla^2u|^2+|\nabla u|^4\bigr)
+ \le C\left(\fint|Lu|^2+\fint|\Ric|^2+\fint|F|^2\right).
+ \label{eq:web-gec-hessian}
+\end{equation}
+In particular, for the selected \(u=u_\varepsilon\),
+\(\fint|\nabla u|^4\le C(K(\varepsilon)+1)\).  The curvature
+terms are bounded because \(\|e_F\|_{2,\mathrm{av}}^2\le\Delta\le e^{-4}\).
+This estimate neither chooses uniformly controlled coordinate charts nor
+uses the full Riemann tensor.
+
+Let \(Z=\{|u|\le3\ell/4\}\).  Since a point of \(Z\) must have
+either \(|s|-\ell\) or \(|u-s|\) separated from zero, the amplitude
+defect and \eqref{eq:web-gec-resolvent-bounds} imply
+\begin{equation}
+ \mu(Z):=\frac{\Vol Z}{V}
+ \le C(d+\varepsilon\mathsf E)\le C\varepsilon\mathsf E.
+ \label{eq:web-gec-low-set}
+\end{equation}
+The last inequality uses \(d\le\Delta\le\varepsilon\) and
+\(\mathsf E\ge1\).  It remains a valid bound even when its right side
+exceeds one.
+
+Write \(a=|u|^2\), \(j_u=\Im\langle u,\nabla u\rangle\), and
+choose a fixed smooth \(\chi(a)\) equal to zero for \(|u|\le\ell/2\)
+and one for \(|u|\ge3\ell/4\).  The real one-form
+\(\theta=\chi(a)j_u/a\), extended by zero near the zeros of \(u\),
+is globally smooth.  In a local unit frame write
+\(u=re^{i\varphi}\) and \(\nabla=d+i\alpha\); then
+\(j_u/a=d\varphi+\alpha\).  This proves the exact identity
+\[
+ d\theta=\chi F+\chi'\,da\wedge j_u/a.
+\]
+Since the actual curvature \(F\) is closed, Stokes' theorem yields
+\begin{equation}
+ \left|\frac1V\int F\wedge F\right|
+ \le C\fint_Z|F|^2+C\fint_Z|F|\,|\nabla u|^2.
+ \label{eq:web-gec-chern-cutoff}
+\end{equation}
+Split \(F=F_0+e_F\).  The first term is at most
+\(C(\mu(Z)+\Delta)\).  The second is bounded by
+\(C\sqrt{\mu(Z)(K(\varepsilon)+1)}
+ +C\sqrt{\Delta(K(\varepsilon)+1)}\).  Consequently
+\[
+ \left|\frac1V\int F\wedge F\right|
+ \le C\left[\varepsilon\mathsf E+\Delta
+   +\sqrt{\varepsilon\mathsf E(K(\varepsilon)+1)}
+   +\sqrt{\Delta(K(\varepsilon)+1)}\right].
+\]
+Set \(\mathsf L=\log(1/\Delta)\ge4\).  Using
+\eqref{eq:web-gec-parameter}, this is at most
+\[
+ C\left[\mathsf E\Delta^{1/4}+\Delta
+       +\frac{2\mathsf E}{\sqrt{\mathsf L}}
+       +\sqrt{\mathsf E}\Delta^{1/8}
+       +\frac{2\sqrt{\mathsf E}\Delta^{1/4}}{\sqrt{\mathsf L}}
+       +\sqrt\Delta\right]
+ \le\frac{C\mathsf E}{\sqrt{\mathsf L}}.
+\]
+Finally \(c_1(K)^2[M]=(4\pi^2)^{-1}\int F\wedge F\), which proves
+\eqref{eq:web-gec-logarithmic-bound} and its stated consequence.  If
+\(\Delta=0\), smoothness and \(|s|=\ell>0\) almost everywhere imply
+that \(s\) is a nowhere-zero section, proving the last remaining case.
+\end{proof}
+
+\subsection{Quantitative mass and energy for the actual fifth-power section}
+
+We retain the growth of the negative spin connection explicitly.  On an
+actual scalar-normalized O10 configuration with \(\beta\ge4\), put
+\[
+ x=\kappa_\beta+\beta^{-2},\qquad
+ b=\fint|W^-|^2,\qquad \mathsf K=1+b.
+\]
+Use the bounded same-bundle section \(v\) and the strong-current fields
+of Sections~\ref{sec:web-strong-current} and~\ref{sec:web-direct-resolvent}.
+They obey, without an upper bound on \(b\),
+\[
+ |\Phi|+|v|+|Tv|\le C,\qquad
+ \fint|\nabla\Phi|^4+\fint|\nabla v|^2\le C,
+ \qquad T=\nabla_{3A}^*\nabla_{3A}.
+\]
+Let \(\mathfrak e\) dominate the following primitive errors:
+\begin{equation}
+ \begin{split}
+ &\|\rho-\rho_*\|_2+\||v|^2-m_*\|_2+\|Tv-2v\|_2
+       +\|D^-_{3A}v\|_2\\
+ &\quad+\|N_v\|_{2,\{\rho\ge c_0\}}
+       +\|f-K_{\mathrm{fit}}\|_2+\|\Ric+g\|_2,
+ \qquad 0<c_0<\rho_*/4.
+ \end{split}
+ \label{eq:web-gec-primitive-errors}
+\end{equation}
+Here all norms are normalized, and \(K_{\mathrm{fit}}\) is the bounded
+same-field curvature model.  One may use the larger primitive aggregate
+\(\eta_D\) of Proposition~\ref{prop:web-primitive-rate}; fixed comparison
+constants are absorbed in \(\mathfrak e\).  For now assume only
+\(0<\mathfrak e\le1\).  The complete curvature of \(E=S^-\otimes L\)
+has \(\fint|F^E|^2\le C\mathsf K\).  The fixed-rank version of
+\eqref{eq:web-gec-hessian} gives
+\begin{equation}
+ \fint\bigl(|\nabla^2v|^2+|\nabla v|^4\bigr)\le C\mathsf K.
+ \label{eq:web-gec-growing-hessian}
+\end{equation}
+Thus no \(b\)-independent fourth-moment bound is being asserted.
+
+Put \(a=|v|^2\), \(q=|\nabla v|^2\), and \(q_*=2m_*\).
+The equation \(Tv=2v+r_v\) yields
+\begin{equation}
+ \Delta a=4a-2q+r_a,\qquad
+ r_a=2\Re\langle v,r_v\rangle,\qquad
+ \|r_a\|_2\le C\mathfrak e,\qquad
+ \left|\fint q-q_*\right|\le C\mathfrak e.
+ \label{eq:web-gec-mass-equation}
+\end{equation}
+Testing with \(a-m_*\), and using \(\|q\|_2\le C\mathsf K^{1/2}\),
+gives
+\begin{equation}
+ \|da\|_2^2\le C\mathfrak e\mathsf K^{1/2}.
+ \label{eq:web-gec-radial}
+\end{equation}
+For \(\mathcal T(q)=q/(1+q)\),
+\(|d\mathcal T(q)|\le C|\nabla^2v|\), so
+\[
+ \left|\fint\langle da,d\mathcal T(q)\rangle\right|
+       \le C\mathfrak e^{1/2}\mathsf K^{3/4}.
+\]
+Pair \eqref{eq:web-gec-mass-equation} with \(\mathcal T(q)\), and
+subtract \(\mathcal T(q_*)\) times its mean identity.  The errors from
+\(a-m_*\) and \(r_a\) are at most \(C\mathfrak e\), while
+\[
+ (\mathcal T(q)-\mathcal T(q_*))(q-q_*)
+       =\frac{(q-q_*)^2}{(1+q)(1+q_*)}.
+\]
+It follows that
+\begin{equation}
+ \fint\frac{(q-q_*)^2}{1+q}
+       \le C\mathfrak e^{1/2}\mathsf K^{3/4},\qquad
+ \|q-q_*\|_1\le C\mathfrak e^{1/4}\mathsf K^{3/8}.
+ \label{eq:web-gec-covariance}
+\end{equation}
+The second inequality uses Cauchy--Schwarz and the uniform bound
+\(\fint q\le C\), not a growing \(L^1\) budget.
+
+Let \(G=\{\rho\ge c_0,\ a\ge m_*/4\}\).  The amplitude errors and
+\eqref{eq:web-gec-growing-hessian} give
+\begin{equation}
+ \mu(M\setminus G)\le C\mathfrak e^2,\qquad
+ \fint_{M\setminus G}q\le C\mathfrak e\mathsf K^{1/2}.
+ \label{eq:web-gec-bad-amplitudes}
+\end{equation}
+The type-projection identity
+\(\lvert j_v+J_+da/2\rvert^2\le2a|N_v|^2\), together with
+\eqref{eq:web-gec-radial} and \eqref{eq:web-gec-bad-amplitudes}, implies
+\(\|j_v\|_2^2\le C\mathfrak e\mathsf K^{1/2}\).
+On \(G\), use the adapted frames and write
+\[
+ A_i=\nabla_{Z_i}v,\qquad B=\nabla_{\bar Z_1}v,\qquad
+ C^{\mathrm{vec}}=\nabla_{\bar Z_2}v,\qquad
+ c_2=(C^{\mathrm{vec}})_2.
+\]
+The first components are controlled by
+\((\nabla v)_1=(da/2+ij_v)/\sqrt a\), the \(A_i\) by the type
+projection, and the remaining unwanted component by the Dirac trace
+\[
+ D^-v=((A_1)_1-(A_2)_2,\ B_2+(C^{\mathrm{vec}})_1)
+\]
+up to the immaterial common sign of the reverse Clifford convention.
+The total quadratic energy of all components except \(c_2\) is therefore
+at most \(C\mathfrak e\mathsf K^{1/2}\).  This reduction uses no
+derivative of a bracket identity.
+
+Define the global polynomial section
+\(\varsigma=\Phi\wedge t(v)\in\Gamma(L^5)\).
+In the adapted frame its norm is
+\[
+ |\varsigma|^2=\rho a^2|c_2|^2,\qquad
+ 2q=|A_1|^2+|A_2|^2+|B|^2+|C^{\mathrm{vec}}|^2.
+\]
+Thus the component estimate controls
+\(|\varsigma|^2-2\rho a^2q\) in \(L^1\).  Use
+\eqref{eq:web-gec-covariance} for \(q-q_*\), and the \(L^2\) amplitude
+errors paired with \(\|q\|_2\le C\mathsf K^{1/2}\) for the coefficient
+\(\rho a^2-\rho_*m_*^2\).  On the complement of \(G\), the global
+polynomial estimate \(|\varsigma|^2\le Cq\) and
+\eqref{eq:web-gec-bad-amplitudes} control the omitted integral.  Hence
+\begin{equation}
+ \bigl\||\varsigma|^2-\ell_*^2\bigr\|_1
+ \le C\bigl(\mathfrak e^{1/4}\mathsf K^{3/8}
+                  +\mathfrak e\mathsf K^{1/2}\bigr)
+ \le C\mathfrak e^{1/4}\mathsf K,
+ \quad
+ \ell_*^2=4\rho_*m_*^3=\frac{33554432}{1594323}.
+ \label{eq:web-gec-polynomial-mass}
+\end{equation}
+Direct covariant differentiation, using the bounded amplitudes, gives
+\[
+ |D_5\varsigma|\le C\bigl(|\nabla\Phi|\,|\nabla v|
+                        +|\nabla v|^2+|\nabla^2v|\bigr),
+ \qquad 1+\fint|D_5\varsigma|^2\le C\mathsf K.
+\]
+A fixed smooth radial cap, equal to the identity near \(\ell_*\), gives
+a bounded section \(s\in\Gamma(L^5)\) such that
+\begin{equation}
+ |s|\le M_*,\qquad
+ \mathsf E_s:=1+\fint|D_5s|^2\le C\mathsf K,\qquad
+ d_s:=\fint(|s|-\ell_*)^2\le C\mathfrak e^{1/4}\mathsf K.
+ \label{eq:web-gec-capped-section}
+\end{equation}
+For the amplitude estimate use
+\((r-\ell_*)^2\le|r^2-\ell_*^2|\) and the fixed Lipschitz constant
+of the radial cap.
+
+The line curvature \(5(-iF_A)\) is a uniformly bounded model plus an
+error of normalized \(L^2\) norm at most \(C\mathfrak e\).  This is a
+consequence of the actual determinant-field fit and involves no \(W^-\).
+Thus
+\begin{equation}
+ \Delta_s:=d_s+\|e_{F^{L^5}}\|_2^2
+       \le C\mathsf K\mathfrak e^{1/4}.
+ \label{eq:web-gec-total-error}
+\end{equation}
+The same actual curvature identities give
+\(\fint|-iF_A^+|^2\to8/9\) and
+\(\fint|-iF_A^-|^2\to2/9\), whence
+\begin{equation}
+ \frac{c_1(L^5)^2[M]}V\longrightarrow\frac{25}{6\pi^2}.
+ \label{eq:web-gec-chern-density}
+\end{equation}
+In particular, for uniformly small primitive error, this density is at least
+\(25/(12\pi^2)\).  Proposition~\ref{prop:web-primitive-rate} supplies
+a uniform threshold in terms of \(x\).
+
+If \(0<\Delta_s<e^{-4}\), Proposition~\ref{prop:web-gec-lemma} yields
+\(\log(1/\Delta_s)\le C\mathsf K^2\).  But
+\eqref{eq:web-gec-total-error} gives the inequality in the other direction
+\[
+ \log(1/\Delta_s)\ge\tfrac14\log(1/\mathfrak e)-\log(C\mathsf K).
+\]
+If instead \(\Delta_s\ge e^{-4}\), then
+\(C\mathsf K\mathfrak e^{1/4}\ge e^{-4}\) gives the same conclusion
+directly.  The case \(\Delta_s=0\) is excluded by the positive Chern
+density.  We have proved
+\begin{equation}
+ \log(1/\mathfrak e)\le C(1+b)^2.
+ \label{eq:web-gec-primitive-obstruction}
+\end{equation}
+This argument uses quantitative mass--phase--Dirac reduction, not the weak
+Cauchy--Riemann argument of Section~\ref{sec:web-positive-potential}.
+
+\subsection{Exponential escape and finite-density bounds}
+
+\begin{corollary}[An exponential escape constraint]
+\label{cor:web-gec-exponential}
+Under the actual O10 hypotheses, there are universal positive constants
+\(c,C\) such that every scalar-normalized representative with \(\beta\ge4\)
+satisfies
+\begin{equation}
+ \kappa_\beta+\beta^{-2}\ge
+       c\exp\bigl[-C(1+\fint|W^-|^2)^2\bigr].
+ \label{eq:web-gec-exponential-escape}
+\end{equation}
+For \(\chi(M)/A\le B\), \(B\ge0\), the original allowed metrics
+and all \(\beta\ge2\) satisfy
+\begin{equation}
+ \fint|\Ric_g+g|^2+\frac{D_\beta(g,a)}{V_g}
+ \ge c_1e^{-C_1(1+B)^2}\frac{(\beta-2)^2}{\beta^2}.
+ \label{eq:web-gec-exponential-density}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Section~\ref{sec:web-primitive-rate} gives, with a fixed
+\(0<\epsilon_0\le1\),
+\[
+ \gamma=\frac{\epsilon_0}{1+\epsilon_0},\qquad
+ \vartheta=\frac\gamma{16}>0,\qquad
+ \mathfrak e\le Cx^\vartheta.
+\]
+For small \(x\), combine this with
+\eqref{eq:web-gec-primitive-obstruction}:
+\(\vartheta\log(1/x)-\log C\le C(1+b)^2\).
+Enlarging constants handles all other \(x\), proving
+\eqref{eq:web-gec-exponential-escape}.
+
+On a scalar-normalized representative with \(\kappa_\beta\le1\),
+the scalar budget and Gauss--Bonnet give
+\[
+ \frac AV\le\frac1{2\pi^2},\qquad
+ b\le4B-\frac23+\frac P{2V}\le C(1+B).
+\]
+Choose \(m_B=c_0e^{-C_0(1+B)^2}\le1/8\), so that
+\(\kappa_\beta+\beta^{-2}\ge m_B\) for \(\beta\ge4\), and let
+\(\beta_B=(2/m_B)^{1/2}\ge4\).  For \(\beta\ge\beta_B\),
+\(\kappa_\beta\ge m_B/2\).  For \(2\le\beta\le\beta_B\), the
+finite-parameter estimate of Section~\ref{sec:single-parameter} gives
+\[
+ \kappa_\beta\ge c_f\frac{(\beta-2)^2}{\beta^4}
+       \ge\frac{c_fm_B}{2}\frac{(\beta-2)^2}{\beta^2}.
+\]
+If \(\kappa_\beta\ge1\), the required estimate is immediate after
+decreasing \(c_0\).  Finally, the exact conformal comparison used in
+Section~\ref{sec:web-positive-potential} gives
+\(\widehat\kappa\le2\kappa_g\) when \(\kappa_g<1/16\);
+larger defects are again harmless.  This transfers the inequality back to
+the original allowed metric and proves
+\eqref{eq:web-gec-exponential-density}.
+\end{proof}
+
+\begin{remark}[Comparison with the later polynomial bound]
+Equation~\eqref{eq:web-gec-exponential-escape} excludes, for example,
+an escape with \(1+b=o(\sqrt{\log(1/x)})\).  The positive-potential
+quantitative continuation, combined with the primitive rate, proves the
+stronger estimate \eqref{eq:web-polynomial-density}, namely
+\(x\ge c(1+b)^{-24/\gamma}\).  The logarithmic Chern lemma and its
+growing-energy proof remain independent useful statements; the exponential
+corollary is not the best density dependence now available.  Neither bound
+is independent of density, and no optimality of these exponents is claimed.
+\end{remark}
+
+\begin{remark}[Why a Dirichlet-energy dependence is necessary]
+On a fixed smooth four-manifold take a Hermitian line bundle with nonzero
+Chern square and a smooth transverse section \(s_0\).  With a fixed
+connection, set
+\(s_\varepsilon=s_0/(|s_0|^2+\varepsilon^2)^{1/2}\).
+Then \(|s_\varepsilon|\to1\) in \(L^2\), while the connection and
+Chern square do not change.  Near the codimension-two zero set, transversality
+identifies \(|s_0|\) with the normal radius \(r\); the angular derivative
+contributes \(\int_\varepsilon^1r^{-2}r\,dr=O(|\log\varepsilon|)\),
+and the remaining contributions are bounded.  Thus the Dirichlet energy
+can grow logarithmically while the amplitude defect vanishes.  This is a
+line-bundle example, not a counterexample to the actual O10 equations.
+\end{remark}
+
+\section{Inverse-amplitude tests without a density bound}
+\label{sec:web-inverse-amplitude}
+
+The estimates in this section do not assume a bound on the anti-self-dual
+Weyl energy.  They exclude concentration in successively deeper amplitude
+wells, but do not assert that all radial concentration disappears.
+
+Let \((M_j,g_j)\) be closed smooth four-manifolds with probability measures
+\(d\mu_j=dV_j/V_j\), and let \(E_j\) be Hermitian bundles with unitary
+connections.  Write \(L_j=\nabla_j^*\nabla_j\).  Assume that smooth
+sections \(v_j\) satisfy
+\begin{equation}
+ |v_j|+|L_jv_j|\le C,\qquad
+ m_j:=|v_j|^2\longrightarrow m_*>0\quad\hbox{in }L^2(d\mu_j),
+ \qquad
+ r_j:=L_jv_j-\lambda v_j\longrightarrow0\quad\hbox{in }L^2(d\mu_j),
+ \label{eq:web-ia-resolvent-hypotheses}
+\end{equation}
+where \(\lambda>0\) is fixed.  Suppose there are regions \(G_j\) with
+orthogonal almost-complex structures \(J_j\), whose orthogonal complex
+type projections \(\mathsf P_j=(I-iJ_j)/2\) satisfy
+\begin{equation}
+ N_j:=\mathsf P_j\nabla_jv_j,
+ \qquad \int_{G_j}|N_j|^2\,d\mu_j\longrightarrow0,
+ \qquad
+ \int_{M_j\setminus G_j}|\nabla_jv_j|^2\,d\mu_j\longrightarrow0.
+ \label{eq:web-ia-type-hypotheses}
+\end{equation}
+Choosing the conjugate type changes none of the argument.
+Set \(q_j=|\nabla_jv_j|^2\).  Pairing \(L_jv_j\) with \(v_j\) gives
+\(\int q_j\,d\mu_j\to\lambda m_*\).
+
+For the actual O10 section, \(\lambda=2\), \(m_*=128/81\), and one
+may take \(G_j=\{\rho_j>c\}\), for any fixed \(0<c<\rho_*\).
+The type conclusion is supplied by the strong-current and same-bundle
+estimates.  The complementary energy conclusion does not require an
+\(L^4\) gradient estimate: choose \(\chi(\rho)=1\) for \(\rho\le c\)
+and zero above a second fixed threshold smaller than \(\rho_*\).
+Testing \(L_jv_j\) with \(\chi(\rho_j)^2v_j\) and absorbing the cross
+term gives
+\[
+ \int\chi^2|\nabla v_j|^2\,d\mu_j
+       \le C\int(\chi^2+|d\chi|^2)\,d\mu_j=o(1).
+\]
+The last step uses \(\rho_j\to\rho_*\) and \(d\rho_j\to0\) in
+\(L^2\), not a commutation of covariant derivatives.
+
+\begin{proposition}[Inverse-amplitude moment]
+\label{prop:web-ia-moment}
+Under \eqref{eq:web-ia-resolvent-hypotheses} and
+\eqref{eq:web-ia-type-hypotheses}, for every fixed \(0<p<1\) and
+\(\varepsilon>0\),
+\begin{equation}
+ \limsup_{j\to\infty}\int
+       \frac{q_j}{(m_j+\varepsilon)^p}\,d\mu_j
+       \le\frac{\lambda m_*}{(1-p)(m_*+\varepsilon)^p}.
+ \label{eq:web-ia-moment}
+\end{equation}
+No curvature, Hessian, diameter, noncollapse, or Sobolev bound is required.
+The parameters \(p,\varepsilon\) are fixed before taking the limit in \(j\).
+\end{proposition}
+
+\begin{proof}
+On \(G_j\), decompose \(\nabla v=N+A\) into its orthogonal types.
+A pure-type complex one-form \(\alpha\) satisfies
+\(|2\Re\alpha|^2=2|\alpha|^2\).  Apply this to the scalar one-form
+\(\langle v,A\rangle\) and use weighted Young's inequality on the
+remaining term.  For every \(\delta>0\),
+\begin{equation}
+ |dm|^2\le2(1+\delta)m q+C_\delta m|N|^2
+       \quad\hbox{on }G_j;
+ \qquad |dm|^2\le4mq\quad\hbox{on }M_j\setminus G_j.
+ \label{eq:web-ia-refined-kato}
+\end{equation}
+This is pointwise type algebra, not a regularity assertion.
+
+The smooth global test \((m+\varepsilon)^{-p}v\) in the equation for
+\(Lv\) gives exactly
+\begin{equation}
+ \int\frac{q}{(m+\varepsilon)^p}\,d\mu
+ =\Re\int\frac{\langle Lv,v\rangle}{(m+\varepsilon)^p}\,d\mu
+       +\frac p2\int\frac{|dm|^2}{(m+\varepsilon)^{p+1}}\,d\mu.
+ \label{eq:web-ia-test-identity}
+\end{equation}
+Call the first term on the right \(F_j\), and the two parts of the left
+side \(I_{G,j}\) and \(I_{G^c,j}\).  If \(p(1+\delta)<1\),
+\eqref{eq:web-ia-refined-kato} yields
+\[
+ [1-p(1+\delta)]I_{G,j}
+ \le F_j+|2p-1|I_{G^c,j}
+       +C_{p,\delta}\varepsilon^{-p}\int_{G_j}|N_j|^2\,d\mu_j.
+\]
+For fixed \(\varepsilon\), the two error terms tend to zero by
+\eqref{eq:web-ia-type-hypotheses}.  Boundedness of \(m_j\), its
+\(L^2\) convergence, and the residual convergence show that
+\(F_j\to\lambda m_* /(m_*+\varepsilon)^p\).
+First take the limit in \(j\), and then let \(\delta\downarrow0\).
+This proves \eqref{eq:web-ia-moment}; no sequence-dependent choice of
+\(\delta\) or \(\varepsilon\) was made inside a finite-error estimate.
+\end{proof}
+
+\begin{corollary}[Energy in deep amplitude wells]
+\label{cor:web-ia-deep-wells}
+For each fixed \(0<t<m_*\) and \(0<p<1\),
+\begin{equation}
+ \limsup_j\int_{\{m_j\le t\}}q_j\,d\mu_j
+       \le\frac{\lambda m_*}{1-p}\left(\frac t{m_*}\right)^p.
+ \label{eq:web-ia-low-amplitude-power}
+\end{equation}
+For \(0<t<m_*/e\), this implies
+\begin{equation}
+ \limsup_j\int_{\{m_j\le t\}}q_j\,d\mu_j
+       \le e\lambda t\log\frac{m_*}{t},\qquad
+ \lim_{t\downarrow0}\limsup_j\int_{\{m_j\le t\}}q_j\,d\mu_j=0.
+ \label{eq:web-ia-low-amplitude-log}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+The integral on \(\{m_j\le t\}\) is bounded by
+\((t+\varepsilon)^p\int q_j(m_j+\varepsilon)^{-p}\,d\mu_j\).
+Apply Proposition~\ref{prop:web-ia-moment}, then let
+\(\varepsilon\downarrow0\).  This proves
+\eqref{eq:web-ia-low-amplitude-power}.  For the logarithmic estimate take
+the fixed value \(p=1-1/\log(m_*/t)\in(0,1)\) and simplify.
+\end{proof}
+
+The order of the two limits in \eqref{eq:web-ia-low-amplitude-log} is
+essential.  It does not prove vanishing energy at every fixed
+\(0<t<m_*\), convergence \(dm_j\to0\) in \(L^2\), or uniform
+integrability of \(q_j\) on arbitrary small-volume sets.  In particular,
+it does not establish the fifth-power section's nonzero mass without a
+density bound.
+
+This distinction can be seen within the scalar moment identities themselves.
+On the amplitude interval \([0,m_*]\), take the formal measures
+\[
+ d\nu_q(t)=\lambda\,dt,\qquad d\nu_R(t)=2\lambda t\,dt.
+\]
+For every smooth \(F\), integration by parts gives
+\[
+ \int F\,d\nu_q+\frac12\int F'\,d\nu_R
+       =\lambda m_*F(m_*).
+\]
+These measures satisfy the limiting mass identity and attain the
+inverse-amplitude moment constant as \(\varepsilon\downarrow0\).
+They obey deep-well energy vanishing, but
+\(\nu_R([0,m_*])=\lambda m_*^2>0\).  Thus the type algebra and the
+scalar mass identities used here alone do not exclude energy at fixed
+intermediate amplitudes.  These are formal measures, not actual solutions
+or a geometric counterexample.
+
+\begin{lemma}[A quadratic-energy relation for bounded line tests]
+\label{lem:web-ia-quadratic-test}
+Under \eqref{eq:web-ia-resolvent-hypotheses}, let \(w_j\) be smooth
+sections of any Hermitian line bundles with unitary rough Laplacians
+\(L_w\).  If
+\[
+ \|w_j\|_\infty+\|L_ww_j\|_\infty
+       +\|\nabla w_j\|_{4,\mathrm{av}}\le C,
+\]
+then
+\begin{equation}
+ \int(q_j-\lambda m_*)|w_j|^2\,d\mu_j\longrightarrow0.
+ \label{eq:web-ia-quadratic-test}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The scalar identity is
+\(\Delta m_j=2\lambda m_j-2q_j+2\Re\langle r_j,v_j\rangle\).
+By self-adjointness of \(\Delta\), the left side of
+\eqref{eq:web-ia-quadratic-test} equals
+\[
+ \lambda\int(m_j-m_*)|w_j|^2\,d\mu_j
+ +\int\Re\langle r_j,v_j\rangle|w_j|^2\,d\mu_j
+ -\frac12\int(m_j-m_*)\Delta|w_j|^2\,d\mu_j.
+\]
+The first two terms tend to zero.  The identity
+\(\Delta|w_j|^2=2\Re\langle L_ww_j,w_j\rangle
+-2|\nabla w_j|^2\) gives a uniform normalized \(L^2\) bound for its
+Laplacian, so the third term tends to zero as well.
+\end{proof}
+
+The lemma does not require an \(L^2\) bound or uniform integrability for
+\(q_j\), but also does not identify \(q_j\) with the fifth-line density
+\(|c_j|^2\).  Their intervening radial and phase contributions must still
+be controlled.
+
+\section{Low-order geometric transfer of the endpoint form}
+\label{sec:web-geometric-transfer}
+
+These results transfer an actual bounded form to an auxiliary metric; they
+do not require solving a new monopole equation on that metric.  Their
+geometric hypotheses are explicit, and no existence of the auxiliary
+regularization is assumed as a consequence of a mean Ricci defect.
+
+On a closed oriented smooth four-manifold let \(*_g\omega=\omega\),
+\(|\omega|_g\le L_0\), and \(0\le t\le1/4\).  Define
+\begin{equation}
+ \begin{split}
+ Z_t(g,\omega)={}&|\Ric_g+g|_g^2+
+ \left|W_g^+-t\left(\frac{|\omega|_g^2}{3}I-\omega\otimes\omega\right)\right|_g^2\\
+ &+(|\omega|_g^2-2)^2+|d\omega|_g^2,
+ \qquad z=\frac1{V_g}\int Z_t(g,\omega).
+ \end{split}
+ \label{eq:web-gt-defect}
+\end{equation}
+Write
+\[
+ r_g=\fint_g|\Ric_g+g|^2,\quad
+ P_g=\int|\Ric_g^\circ|^2,\quad
+ S_g=\int s_g^2,\quad C_g=\int|W_g^+|^2,
+\]
+where Weyl curvature has its Hilbert--Schmidt norm on two-forms.
+The bounded-Ricci--Euler form gap
+\eqref{proof:bounded-ricci-endpoint:e3.2} says that
+\[
+ |\Ric_g|\le K,\quad \frac{8\pi^2\chi(M)}{V_g}\le\Lambda
+ \quad\Longrightarrow\quad z\ge c(K,L_0,\Lambda)>0,
+\]
+including \(t=0\).  That result, with its pointwise Ricci assumption,
+is the input to the transfer arguments below.
+
+\subsection{First-derivative budget and self-dual projection}
+
+If \(z\le1\), then
+\begin{equation}
+ \fint_g|\nabla^g\omega|^2\le C_{L_0}.
+ \label{eq:web-gt-form-gradient}
+\end{equation}
+Indeed, the self-dual Hodge--Weitzenb\"ock identity gives
+\[
+ \int|\nabla\omega|^2
+ =2\int|d\omega|^2-\frac13\int s_g|\omega|^2
+                  +2\int\langle W_g^+\omega,\omega\rangle.
+\]
+The trace estimate is \(\fint_g|s_g|\le4+2\sqrt z\), while the
+bounded algebraic model in \eqref{eq:web-gt-defect} gives
+\(\fint_g|W_g^+|\le C_{L_0}t+\sqrt z\).  Boundedness of \(\omega\)
+now proves \eqref{eq:web-gt-form-gradient}.  No assumption of almost
+parallelness or control of \(W^-\) is used.
+
+Let \(h\) be another metric on the same smooth manifold with
+\(\delta:=\|h-g\|_{L^\infty(g)}\le\delta_0\), where \(\delta_0>0\)
+is a sufficiently small dimensional constant.  The metrics are uniformly
+equivalent and \(V_h/V_g=1+O(\delta)\).  Set
+\[
+ q=\frac1{V_g}\int|\nabla^h-\nabla^g|_g^2\,dV_g,
+ \qquad \omega_h=\frac12(\omega+*_h\omega).
+\]
+Then \(\omega_h\) is \(h\)-self-dual, \(|\omega_h|_h\le CL_0\),
+and
+\begin{equation}
+ \fint_h\bigl[(|\omega_h|_h^2-2)^2+|d\omega_h|_h^2\bigr]
+       \le C_{L_0}(z+\delta^2+q).
+ \label{eq:web-gt-self-dual-transfer}
+\end{equation}
+For the proof put \(\mathcal A=(*_h-*_g)/2\).  Since the Hodge stars
+are parallel for their respective metric connections,
+\[
+ |\mathcal A|\le C\delta,\qquad
+ |\nabla^g\mathcal A|\le C|\nabla^h-\nabla^g|.
+\]
+Consequently
+\[
+ |d\omega_h|_g\le|d\omega|_g+C\delta|\nabla^g\omega|_g
+                      +CL_0|\nabla^h-\nabla^g|_g.
+\]
+Square, integrate, and use \eqref{eq:web-gt-form-gradient}.  The amplitude
+estimate follows from
+\(\bigl||\omega_h|_h^2-2\bigr|
+\le\bigl||\omega|_g^2-2\bigr|+C_{L_0}\delta\).
+Uniform metric and volume equivalence prove
+\eqref{eq:web-gt-self-dual-transfer}.
+
+\subsection{Topological transfer of the self-dual Weyl energy}
+
+The Chern--Weil identity for the same \(T_+=2\chi+3\tau\) is
+\(4\pi^2T_+=2C_g+S_g/24-P_g/2\).  Subtracting its versions for
+\(g\) and \(h\) gives the exact formula
+\begin{equation}
+ C_h-C_g=\frac{S_g-S_h}{48}+\frac{P_h-P_g}{4}.
+ \label{eq:web-gt-chern-weil-transfer}
+\end{equation}
+Let \(r_h=\fint_h|\Ric_h+h|_h^2\).  When \(z,r_h\le1\),
+\[
+ S_g\le(4+2\sqrt{r_g})^2V_g,\qquad
+ S_h\ge(4-2\sqrt{r_h})^2V_h,\qquad P_h\le r_hV_h.
+\]
+Also \(C_g/V_g\le C_{L_0}t^2+2z\).  Insert these in
+\eqref{eq:web-gt-chern-weil-transfer} and discard the favorable
+\(-P_g/4\) term to obtain
+\begin{equation}
+ \frac{C_h}{V_h}\le
+       C_{L_0}(t^2+\sqrt z+\delta+\sqrt{r_h}).
+ \label{eq:web-gt-weyl-transfer}
+\end{equation}
+Thus the self-dual Weyl energy transfers to zero when
+\(t,z,\delta,r_h\to0\), without estimating the tensor difference
+\(W_h^+-W_g^+\) or the change in \(W^-\).  For a nonzero limiting
+\(t\), an energy estimate by itself does not retain the prescribed Weyl
+model direction; this argument is specifically an endpoint transfer.
+
+\begin{proposition}[A lower bound for regularization cost]
+\label{prop:web-gt-cost}
+Fix \(K,L_0,\Lambda\).  Suppose \(g,\omega,t\) satisfy
+\eqref{eq:web-gt-defect}, \(z\le1\), and
+\(8\pi^2\chi/V_g\le\Lambda\).  If \(h\) is a metric on the same
+manifold with \(|\Ric_h|_h\le K\) and
+\(\|h-g\|_{L^\infty(g)}=\delta\le\delta_0\), then
+\begin{equation}
+ t^2+\sqrt z+\delta+q+\sqrt{r_h}\ge c(K,L_0,\Lambda)>0.
+ \label{eq:web-gt-regularization-cost}
+\end{equation}
+If additionally \(s_g=s_h=-4\), then, with
+\(v_{\mathrm{vol}}=|V_h/V_g-1|\),
+\begin{equation}
+ t^2+z+v_{\mathrm{vol}}+\delta^2+q+r_h
+       \ge c(K,L_0,\Lambda)>0.
+ \label{eq:web-gt-normalized-cost}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+If \(r_h\ge1\), the first inequality is immediate after decreasing
+\(c\).  Otherwise \eqref{eq:web-gt-self-dual-transfer} and
+\eqref{eq:web-gt-weyl-transfer} imply
+\[
+ \fint_h Z_0(h,\omega_h)
+       \le C_{L_0}(t^2+\sqrt z+\delta+q+\sqrt{r_h}).
+\]
+The volume comparison implies
+\(8\pi^2\chi/V_h\le C\max\{\Lambda,0\}\).  Apply the
+bounded-Ricci--Euler form gap to \((h,\omega_h,0)\).
+If both scalar curvatures equal \(-4\), then
+\(S_g-S_h=16(V_g-V_h)\) in
+\eqref{eq:web-gt-chern-weil-transfer}.  Thus its Weyl estimate is instead
+\(C_h/V_h\le C_{L_0}(t^2+z+v_{\mathrm{vol}}+r_h)\).
+Combine this with \eqref{eq:web-gt-self-dual-transfer} and the same form
+gap to prove \eqref{eq:web-gt-normalized-cost}.
+\end{proof}
+
+In particular, an endpoint sequence with bounded Euler density,
+\(t_j,z_j\to0\), cannot simultaneously admit auxiliary metrics with a
+uniform pointwise Ricci bound, \(\|h_j-g_j\|_\infty\to0\), normalized
+squared connection difference tending to zero, and \(r_{h_j}\to0\).
+For actual O10 fields, the scalar reduction supplies the bounded forms to
+which this statement applies.  The finite-density O10 exclusion is already
+proved above by a different argument; the transfer proposition remains an
+independent geometric restriction and is not an assertion that the needed
+auxiliary metrics exist.
+
+\subsection{Connection cost under an actual Bianchi gauge}
+
+There is a conditional improvement when the two metrics have a specified
+common identification.  Write \(u=h-g\), and assume under that identification
+\begin{equation}
+ B_gu:=\delta_gu+\tfrac12d\tr_gu=0.
+ \label{eq:web-gt-bianchi-gauge}
+\end{equation}
+For sufficiently small \(\delta=\|u\|_\infty\),
+\begin{equation}
+ \int|\nabla^gu|^2\,dV_g
+ \le C\delta\int|\Ric_h-\Ric_g|_g\,dV_g
+            +C\delta^2\int|\Rm_g|_g\,dV_g.
+ \label{eq:web-gt-bianchi-energy}
+\end{equation}
+Indeed, the principal term of the linearized Ricci difference is
+\(\tfrac12\nabla^*\nabla u\).  The other linear terms are the
+background curvature acting on \(u\), and the Bianchi divergence term,
+which vanishes by \eqref{eq:web-gt-bianchi-gauge}.  The nonlinear terms
+have the form \(O(u\nabla^2u)+O(|\nabla u|^2)\), with uniformly bounded
+coefficients for small \(u\).  Pair with \(u\) and integrate by parts.
+One integration by parts in the first nonlinear term, including the
+coefficient derivative, bounds all nonlinear terms by
+\(C\delta\int|\nabla u|^2\), which can be absorbed.  The background
+curvature term is at most \(C\delta^2\int|\Rm_g|\).  This proves
+\eqref{eq:web-gt-bianchi-energy}.
+
+Put \(E_g=\Ric_g+g\) and \(E_h=\Ric_h+h\).  Then
+\(\Ric_h-\Ric_g=E_h-E_g-u\).  The full-curvature Gauss--Bonnet
+identity and Cauchy--Schwarz give
+\[
+ \fint_g|\Rm_g|\le C\sqrt{\max\{\Lambda,0\}+r_g}.
+\]
+The difference of Levi-Civita connections and \(\nabla^gu\) have
+uniformly comparable norms.  After dividing
+\eqref{eq:web-gt-bianchi-energy} by \(V_g\) and comparing the two
+volume forms, we obtain
+\begin{equation}
+ q\le C\delta(\sqrt{r_g}+\sqrt{r_h})
+       +C\delta^2\left(1+\sqrt{\max\{\Lambda,0\}+r_g}\right).
+ \label{eq:web-gt-bianchi-cost}
+\end{equation}
+There is no Sobolev constant or pointwise \(W^-\) bound here.  The
+metric gauge \eqref{eq:web-gt-bianchi-gauge} is an additional hypothesis;
+this calculation does not produce it.  In particular, it must not be
+replaced by an unproved assertion that every smoothing admits a
+small-cost common Bianchi identification.  It is also distinct from the
+covariant weak field-curvature test of Section~\ref{sec:web-weak-bianchi}.
+
+\subsection{What the classical smoothing statements supply}
+
+The assumptions of the available comparison theorems are stronger than the
+mean-normalized hypotheses used here.  In
+\href{https://arxiv.org/pdf/1710.09324}{Zerg\"ange, Theorem 1.2}, the
+four-manifolds have a bound on the unnormalized total \(L^2\) curvature,
+unnormalized trace-free Ricci norm tending to zero, two-sided diameter
+bounds, and
+\(\Vol B_r(x)\ge\delta\omega_4r^4\) for all small balls, with
+\(\delta\) sufficiently close to one.  Those hypotheses do not directly
+cover volume-growing or collapsing normalized-defect sequences; its
+Gromov--Hausdorff conclusion alone also does not provide the connection
+cost above.  \href{https://arxiv.org/pdf/0911.3104}{Li's Ricci-flow smoothing
+Theorem 1.1} assumes an initial pointwise Ricci bound and a small full
+curvature integral on every ball of the specified radius.  The relevant
+four-dimensional estimates of
+\href{https://arxiv.org/pdf/1406.6534}{Cheeger--Naber} likewise assume
+pointwise Ricci control and noncollapse.  These particular statements do
+not construct the auxiliary metrics required here.  This observation does
+not exclude a different regularization argument.
+
+\subsection{Replacement inside a set of small capacity}
+
+Global \(C^0\) proximity can be replaced by exact agreement on the
+retained region, at the cost of an explicit capacity term.
+
+\begin{proposition}[Small-capacity replacement cost]
+\label{prop:web-gt-capacity}
+Retain the hypotheses on \(g,\omega,t,z\) and the Euler density from
+Proposition~\ref{prop:web-gt-cost}.  Let \(0\le\chi\le1\) be smooth,
+put \(\Omega=\{\chi<1\}\), and suppose \(h=g\) on a neighborhood
+of \(\{\chi>0\}\).  Inside \(\{\chi=0\}\), the metric \(h\) may
+differ arbitrarily, but it is smooth on the same oriented manifold and
+satisfies \(|\Ric_h|_h\le K\).  Define
+\[
+ \alpha_g=\frac{\Vol_g\Omega}{V_g},\qquad
+ \alpha_h=\frac{\Vol_h\Omega}{V_g},\qquad
+ c_\chi=\frac1{V_g}\int|d\chi|_g^2\,dV_g.
+\]
+If \(\alpha_g+\alpha_h\le1/2\), then
+\begin{equation}
+ t^2+\sqrt z+\alpha_g+\sqrt{\alpha_h}+c_\chi
+       \ge c(K,L_0,\Lambda)>0.
+ \label{eq:web-gt-capacity-cost}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The globally smooth form \(\omega_h=\chi\omega\) is \(h\)-self-dual
+and bounded by \(L_0\): where it is nonzero, \(h=g\), and at its
+zeros the claim is immediate.  All nonzero terms in
+\(d(\chi\omega)=d\chi\wedge\omega+\chi d\omega\) are supported where
+the metrics agree.  Since \(V_h/V_g\) is bounded above and below,
+\[
+ \fint_h|d\omega_h|_h^2\le C(z+L_0^2c_\chi),\qquad
+ \fint_h(|\omega_h|_h^2-2)^2\le C_{L_0}(z+\alpha_h).
+\]
+Outside \(\Omega\) the metrics coincide; thus
+\[
+ \left|\frac{V_h}{V_g}-1\right|\le\alpha_g+\alpha_h,\qquad
+ r_h\le C\bigl(z+(K+2)^2\alpha_h\bigr).
+\]
+Apply the exact identity \eqref{eq:web-gt-chern-weil-transfer} using
+this volume comparison, the scalar trace estimates, and the displayed
+bound on \(r_h\).  When the proposed left side in
+\eqref{eq:web-gt-capacity-cost} is small, \(r_h\le1\) and the previous
+calculation gives
+\[
+ \frac{C_h}{V_h}
+       \le C_{K,L_0}(t^2+\sqrt z+\alpha_g+\sqrt{\alpha_h}).
+\]
+If that left side is not small, the desired lower bound already holds
+after decreasing its constant.  It follows in the remaining case that
+\(\fint_hZ_0(h,\omega_h)\) is bounded by a fixed multiple of the
+left side of \eqref{eq:web-gt-capacity-cost}.  Volume comparability
+retains an upper Euler-density bound for \(h\), so the bounded-Ricci
+form gap proves the assertion.
+\end{proof}
+
+This criterion permits arbitrarily large changes to the metric in the
+replaced region and does not require small interior curvature energy,
+extension of the monopole or torsion through that region, or transport of
+the anti-self-dual Weyl tensor.  It does require both small normalized
+volume and small quadratic cutoff capacity, and an actual bounded-Ricci
+filling agreeing with the retained exterior.  Small volume alone implies
+neither of these latter requirements.  No such replacement construction
+is asserted from the weak mean Ricci defect.

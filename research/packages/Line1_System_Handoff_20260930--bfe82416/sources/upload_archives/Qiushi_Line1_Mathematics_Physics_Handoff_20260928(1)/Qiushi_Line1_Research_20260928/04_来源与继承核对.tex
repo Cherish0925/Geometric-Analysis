@@ -1,0 +1,273 @@
+% Compile with XeLaTeX. This file is standalone; references are mapped in section 4 of the package.
+\documentclass[UTF8,a4paper,11pt,fontset=fandol]{ctexart}
+\usepackage[left=23mm,right=23mm,top=25mm,bottom=24mm,headheight=16pt]{geometry}
+\usepackage{fontspec}
+\setmainfont{lmroman10-regular.otf}[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf,BoldItalicFont=lmroman10-bolditalic.otf]
+\setsansfont{lmsans10-regular.otf}[BoldFont=lmsans10-bold.otf,ItalicFont=lmsans10-oblique.otf,BoldItalicFont=lmsans10-boldoblique.otf]
+\setmonofont{lmmono10-regular.otf}[Scale=0.84,ItalicFont=lmmono10-italic.otf,BoldFont=lmmonolt10-bold.otf]
+\usepackage{amsmath,amssymb,mathtools,bm,esint,mathrsfs}
+\usepackage{longtable,booktabs,array,calc,etoolbox}
+\usepackage{graphicx}
+\usepackage{fancyvrb}
+\usepackage{xurl}
+\usepackage{fancyhdr,lastpage}
+\usepackage[unicode,hidelinks]{hyperref}
+\hypersetup{pdftitle={来源、继承关系与推导定位},pdfauthor={Qiushi Engine research handoff},pdfsubject={Quantitative Einstein compatibility and mathematical physics}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\setlength{\emergencystretch}{3em}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.22}
+\AtBeginEnvironment{longtable}{\small}
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{2}
+\ctexset{
+ section={format=\Large\bfseries\raggedright,beforeskip=1.3em,afterskip=0.6em},
+ subsection={format=\large\bfseries\raggedright,beforeskip=1em,afterskip=0.4em},
+ subsubsection={format=\normalsize\bfseries\raggedright,beforeskip=0.8em,afterskip=0.3em}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily Qiushi Engine · 第一科学主线}
+\fancyhead[R]{\small 2026-09-28}
+\fancyfoot[C]{\small \thepage\ / \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\newcommand{\handoffpart}[1]{\clearpage\section{#1}}
+\begin{document}
+\begin{titlepage}
+\thispagestyle{empty}
+\vspace*{2cm}
+{\large\sffamily QIUSHI ENGINE\par}
+\vspace{1.3cm}
+{\Huge\bfseries 来源、继承关系与推导定位\par}
+\vspace{0.8cm}
+{\Large 原稿快照与公开文献的可追溯入口\par}
+\vspace{1.2cm}
+{\large 跨会话研究综合与证明方案\par}
+\vfill
+{\normalsize 原稿状态基线：2026年9月27日，快照 \texttt{844e62f}\par}
+\vspace{0.35cm}
+{\normalsize 整理日期：2026年9月28日\par}
+\vspace{1cm}
+{\small 保留已取得的强结论，沿真实方程继续推进全局数学与物理问题。\par}
+\end{titlepage}
+\tableofcontents
+\clearpage
+\section{1. 内部研究依据}\label{ux5185ux90e8ux7814ux7a76ux4f9dux636e}
+
+\textbf{{[}S0{]} 原稿包。}
+\texttt{Yau26\_Line1\_Recent\_Research\_20260927.zip}，快照
+\texttt{844e62f}。包含六组证明阅读卷及导读，MD与TeX是同一内容的两种格式，不是两套独立成果。本次整理直接读取了包内与
+I40/I41、核心代价、首项及流相关的正文段落；本套文件不是对全部历史原稿的重新证明。
+
+重要定位：
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+原稿包文件
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+与本套文件的关系
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{00\_READ\_FIRST.md} &
+当前状态、旧状态被后稿替代的说明、I44/I45/I47/I49/X06边界 \\
+\texttt{01\_linear\_gap\_and\_actual\_applications.md} & Source 1
+§§4--5：I40；Source 2 Part I §§1--4：I41、共形约化、BF实际新窗口 \\
+\texttt{02\_endpoint\_covering\_and\_sharp\_subfamilies.md} &
+几何零端、覆盖估计、只添柄子族精确下确界与局部实际模型 \\
+\texttt{03\_full\_cores\_signed\_extrema\_and\_flow.md} & Source 1
+§1：完整核心与边界恒等式；Source 2
+§§1、3--6：流、X06、Hessian与受限提取 \\
+\texttt{04\_analytic\_foundations.md} &
+实际场、二阶预算与前置解析工具 \\
+\texttt{05\_actual\_topology\_and\_prior\_field\_equations.md} &
+实际拓扑供给及先前场方程 \\
+\texttt{06\_review\_records\_and\_source\_map.md} &
+原路径、来源映射与历史核查记录 \\
+\end{longtable}
+
+\textbf{{[}S1{]} 独立审读报告。}
+\texttt{Yau26\_Line1\_External\_Review\_20260927.md}，2026-09-27。主要使用§§二--五的核心定理、证明机制、三个开放连接和经典比较，以及§七的固定流形量词。
+
+\textbf{{[}S2{]} 统一任务书。}
+\texttt{Yau26\_Line1\_Research\_Directive\_20260927.md}，2026-09-27，接续
+I40/I41 与
+\texttt{e58b867}。主要使用§§3--7的弱积分零端、高指数模型、同尺度首项、标记传递及新范畴目标。
+
+\textbf{{[}S3{]} 深化报告。}
+\texttt{Qiushi\_Einstein\_研究主线深化与证明方案\_20260926.md}。用于经典继承表、复双曲边界恒等式、多实际场判据、固定
+\(E_D\) 与慢模态路线。其§8曾将线性阶列为待证，已被{[}S0--S2{]}中的
+I40/I41 更新；不得恢复旧状态。
+
+\texttt{e58b867} 的完整源码不在本次可读取的 \texttt{844e62f}
+原稿包中，因此高指数局部模型按{[}S2{]}中的摘要接续。最新
+\texttt{LINE1\_CURRENT.md} 和
+\texttt{20260927\_marked\_charge\_and\_first\_order\_flux.md}
+应由拥有工作区的接收会话读取；本套文件不虚构它们的后续内容。
+
+\section{2.
+公开数学与物理文献}\label{ux516cux5f00ux6570ux5b66ux4e0eux7269ux7406ux6587ux732e}
+
+以下标号与正文一致。外部文献用作经典背景、模型定义或最近邻比较；它们不是
+I40/I41 新证明的替代证据。
+
+\textbf{{[}R1{]} Claude LeBrun.} \emph{Ricci Curvature, Minimal Volumes,
+and Seiberg--Witten Theory.} Inventiones Mathematicae 145 (2001),
+279--316. arXiv:math/0003068. 重点比较：原论文的曲率能量、等号／极值和
+Einstein 障碍，尤其原稿复用的 Theorem 4.3 拼接输入。
+\href{https://arxiv.org/abs/math/0003068}{原文入口}
+
+\textbf{{[}R2{]} D. Kotschick.} \emph{Monopole Classes and Einstein
+Metrics.} International Mathematics Research Notices 2004(12), 593--609.
+arXiv:math/0306022. 重点比较：special monopole classes 与 Theorem 12
+的完整假设。 \href{https://arxiv.org/abs/math/0306022}{原文入口}
+
+\textbf{{[}R3{]} Masashi Ishida and Claude LeBrun.} \emph{Curvature,
+Connected Sums, and Seiberg--Witten Theory.} arXiv:math/0111228.
+重点比较：BF实际类供给、Yamabe／曲率变分和 Einstein
+障碍；不能只将其归为纯拓扑代数。
+\href{https://arxiv.org/abs/math/0111228}{原文入口}
+
+\textbf{{[}R4{]} Claude LeBrun.} \emph{Four-Manifolds, Curvature Bounds,
+and Convex Geometry.} arXiv:math/0611450.
+重点比较：单极子类凸包、双手性限制与边界情况；必须区分已知类集合与完整类集合。
+\href{https://arxiv.org/abs/math/0611450}{原文入口}
+
+\textbf{{[}R5{]} David M. J. Calderbank and Michael A. Singer.}
+\emph{Einstein Metrics and Complex Singularities.} Inventiones
+Mathematicae 156 (2004), 405--443. arXiv:math/0206229.
+用途：I47锐利上界的标量平坦 Kähler ALE
+模型；该经典构造不是本项目新增构造。
+\href{https://arxiv.org/abs/math/0206229}{原文入口}
+
+\textbf{{[}R6{]} M. F. Atiyah, N. J. Hitchin and I. M. Singer.}
+\emph{Self-Duality in Four-Dimensional Riemannian Geometry.} Proceedings
+of the Royal Society of London A 362 (1978), 425--461.
+用途：四维手性曲率分解与诱导联络的经典结构。
+\href{https://royalsocietypublishing.org/rspa/article/362/1711/425/14679/Self-duality-in-four-dimensional-Riemannian}{期刊入口}
+
+\textbf{{[}R7{]} Edward Witten.} \emph{Monopoles and Four-Manifolds.}
+Mathematical Research Letters 1 (1994), 769--796. arXiv:hep-th/9411102.
+用途：SW方程与四维超对称规范理论的经典联系；并不提供本项目所设想的一般定量
+BPS 间隙。 \href{https://arxiv.org/abs/hep-th/9411102}{原文入口}
+
+\textbf{{[}R8{]} Claude LeBrun.} \emph{The Einstein--Maxwell Equations,
+Extremal Kähler Metrics, and Seiberg--Witten Theory.} arXiv:0803.3734.
+用途：真实 Einstein--Maxwell 变分问题及其与 SW
+曲率估计的直接关系，是物理迁移必须比较的最近邻工作。
+\href{https://arxiv.org/abs/0803.3734}{原文入口}
+
+\textbf{{[}R9{]} K. S. Stelle.} \emph{Renormalization of
+Higher-Derivative Quantum Gravity.} Physical Review D 16 (1977),
+953--969.
+用途：高导数／二次曲率引力的基础模型背景；不用于声称本项目解决量子一致性问题。
+\href{https://doi.org/10.1103/PhysRevD.16.953}{期刊入口}
+
+\textbf{{[}R10{]} Alberto Salvio.} \emph{Quadratic Gravity.} Frontiers
+in Physics 6 (2018), 77. arXiv:1804.09944.
+用途：二次曲率作用量、耦合与高导数问题的研究综述；与{[}R9{]}共同固定物理语境。
+\href{https://arxiv.org/abs/1804.09944}{原文入口}
+
+\textbf{{[}R11{]} Guido Festuccia and Nathan Seiberg.} \emph{Rigid
+Supersymmetric Theories in Curved Superspace.} JHEP 06 (2011), 114.
+arXiv:1105.0689.
+用途：真实曲空间超对称依赖辅助场与完整变分，不能由``非Einstein''直接推出超对称破缺。
+\href{https://arxiv.org/abs/1105.0689}{原文入口}
+
+\textbf{{[}R12{]} Andrea Braides.} \emph{A Handbook of
+\(\Gamma\)-Convergence.}
+用途：变分极限的状态空间、下极限和恢复序列等正式要求。此文献为{[}S2{]}给出的定义性来源；本套文件没有宣称已证明当前几何问题的
+\(\Gamma\) 极限。
+\href{https://cvgmt.sns.it/media/doc/paper/57/Handbook.pdf}{作者稿入口}
+
+\textbf{{[}R13{]} Masashi Ishida, Shinichiroh Matsuo and Nobuhiro
+Nakamura.} \emph{Yamabe Invariants and the
+\(\mathrm{Pin}^-(2)\)-monopole Equations.} Mathematical Research Letters
+23(4) (2016). arXiv:1505.05948.
+用途：扭曲单极子供给、Yamabe／Einstein障碍与相应流结论。
+\href{https://arxiv.org/abs/1505.05948}{原文入口}
+
+\textbf{{[}R14{]} American Physical Society.} \emph{About Physical
+Review Letters}, acceptance
+criteria，访问日期2026-09-28。用途：核对重要物理问题、关键方法和广泛物理意义的编辑标准，不预测录用。
+\href{https://journals.aps.org/prl/about}{官方页面}
+
+\textbf{{[}R15{]} American Physical Society.} \emph{About Physical
+Review X}, acceptance
+criteria，访问日期2026-09-28。用途：核对基础发现、关键跨学科联系和显著推进的编辑标准，不预测录用。
+\href{https://journals.aps.org/prx/about}{官方页面}
+
+\textbf{{[}R16{]} Maciej Dunajski, Jan Gutowski, Wafic Sabra and Paul
+Tod.} \emph{Cosmological Einstein--Maxwell Instantons and Euclidean
+Supersymmetry: Anti-Self-Dual Solutions.} Classical and Quantum Gravity
+28 (2011), 025007. arXiv:1006.5149.
+用途：一个具有明确方程和经典分类的四维欧氏超引力入口。
+\href{https://arxiv.org/abs/1006.5149}{原文入口}
+
+\textbf{{[}R17{]} Marco M. Caldarelli and Dietmar Klemm.} \emph{All
+Supersymmetric Solutions of N=2, D=4 Gauged Supergravity.} JHEP 09
+(2003), 019. arXiv:hep-th/0307022. 用途：Killing
+spinor、完整场方程与精确分类的 Lorentzian 比较；不直接当作欧氏定理使用。
+\href{https://arxiv.org/abs/hep-th/0307022}{原文入口}
+
+\textbf{{[}R18{]} Mauro Carfora, Claudio Dappiaggi, Nicolò Drago and
+Paolo Rinaldi.} \emph{Ricci Flow from the Renormalization of Nonlinear
+Sigma Models in the Framework of Euclidean Algebraic Quantum Field
+Theory.} arXiv:1809.07652. 用途：一圈 sigma-model 重整化流与 Ricci flow
+的联系。 \href{https://arxiv.org/abs/1809.07652}{原文入口}
+
+\section{3.
+本套文件新增整理的演绎与研究建议}\label{ux672cux5957ux6587ux4ef6ux65b0ux589eux6574ux7406ux7684ux6f14ux7eceux4e0eux7814ux7a76ux5efaux8bae}
+
+以下内容区别于原稿编号，便于接收会话追踪。
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+内容
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+性质
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+定位
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(\mathcal E\) 的显式公式与标量方差分解 &
+直接代数推导，原项目已有相关关系 & 第一份文件式(5) \\
+\(P+D_2\ge cAh\) 的明确常数形式 & 从 I41 与原稿恒等式直接推出 &
+第二份文件式(M7) \\
+正耦合二次曲率作用量间隙 & 本次补充的直接推论；物理查新仍需完成 &
+第三份文件式(P7) \\
+曲率手性块范数、诱导联络解释 & 经典结构的明确归一化与应用解释 &
+第三份文件式(P1)--(P2) \\
+Einstein--matter应力与Maxwell手性下界 &
+条件于原几何定理及选定真实场方程的直接推论 & 第三份文件式(P11)--(P15) \\
+一圈流去整体尺度的残差公式 & 直接投影计算，不是完整RG固定点结论 &
+第三份文件式(P23) \\
+缺陷有效理论、一般BPS间隙、全模态紧化 & 待证研究目标 &
+第二份§9、第三份§§9--13 \\
+\end{longtable}
+
+简单恒等式可以精确复算，但它们不能替代 I40/I41
+的解析证明，也不能自行认证后续物理目标的全球原创性。接收会话应保留这种依赖方向。
+
+\section{4.
+继续研究时的最小查新合同}\label{ux7ee7ux7eedux7814ux7a76ux65f6ux7684ux6700ux5c0fux67e5ux65b0ux5408ux540c}
+
+对每个拟称为新结果的命题，记录：最近邻原文定理；完整输入；当前定理恢复了什么；严格新增的量词、对象或数值范围；一个真实实例；尚不能被该比较覆盖的文献范围。
+
+若目标是解决一项物理猜想，应取得它的原始或公认现代准确陈述，再证明映射到当前框架。若做到了新的物理结论但没有解决那个猜想，应保留结果自身的价值，不把名称借来提高等级。
+\end{document}

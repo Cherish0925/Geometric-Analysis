@@ -1,0 +1,371 @@
+% !TeX program = pdflatex
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=25mm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}\newtheorem{assumption}[theorem]{Input}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\Hull}{\operatorname{Hull}}
+\newcommand{\sgn}{\operatorname{sign}}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\R}{\mathbb R}
+\newcommand{\HH}{\mathbb H}
+\newcommand{\av}{\mathop{\fint}}
+\usepackage{esint}
+\numberwithin{equation}{section}
+\title{Mixed monopole pairings and a pinched strictly almost-K\"ahler Einstein example}
+\author{Qiushi first scientific line: mathematical continuation}
+\date{8 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Starting from the project's finite-density endpoint proposition, we derive a quantitative two-orientation inequality that allows a positive class to belong to a convex hull of actual monopole classes and explicitly records loss in the mixed intersection pairing. Surface-bundle and symplectic-pair consequences follow from the same statement. Separately, the research system's complete strictly almost-K\"ahler Einstein metric on $\R^4$ is shown to have sharp global sectional-curvature range $(-2,-1/3]$ in its normalization $\Ric=-3g$. Its smallest curvature-operator eigenvalue is an intrinsic radial coordinate. Every smooth isometric quotient has infinite volume; consequently its Einstein germ cannot occur in a complete finite-volume Einstein manifold. The first part is an implication from the stated FD2 input. The second part uses the supplied complete model and exact curvature blocks, not FD2.
+\end{abstract}
+
+\section{Inputs and conventions}
+Let $M$ be a closed oriented four-manifold, $e=\chi(M)>0$, and choose the orientation so that $\tau=\sgn(M)\ge0$. Put
+\[
+ T_\pm=2e\pm3\tau,\quad
+ P=\int|\Ric^\circ|^2,\quad S=\int s^2,\quad
+ R=P+S/4,\quad \cJ=4P/R.
+\]
+Two-forms have their form norm, and Weyl curvature has its curvature-operator Hilbert--Schmidt norm. Thus
+\begin{equation}\label{cw}
+4\pi^2T_\pm=S/24+2\int|W^\pm|^2-P/2.
+\end{equation}
+All class squares and intersections, unless expressly marked otherwise, are evaluated on $[M]$. In particular $b^2[\bar M]=-b^2[M]$.
+
+An actual monopole class means the real first Chern class of a fixed $\operatorname{Spin}^c$ structure whose unperturbed Seiberg--Witten equations have a solution for every smooth metric in question. Such a class $c$ satisfies the scalar estimate
+\begin{equation}\label{scalar}
+ \int s^2\ge32\pi^2\|c^+\|^2.
+\end{equation}
+A class on $\bar M$ satisfies the analogous estimate with the original negative Hodge projection. Ordinary, Bauer--Furuta or covering constructions enter below only when they provide these actual classes; a formal intersection vector is not a substitute for this input. Convex-hull use of actual classes is classical \cite{LeBrun}.
+
+\begin{assumption}[FD2: the project endpoint proposition]\label{fd}
+On a closed oriented four-manifold, suppose a negative Yamabe representative, normalized by $s=-4$, has the actual conformal monopole supply specified in the project. For an actual class $c$, assume
+\[
+ p_c=\|c^+\|^2\ge A_c>0,\qquad c^2\ge T_+,\qquad \chi/A_c\le2.
+\]
+There is one constant $c_{\rm FD}(2)>0$, independent of the manifold and its geometry, such that for every finite $\beta\ge2$,
+\begin{equation}\label{fd-est}
+ \frac{P+D_\beta(c)}{V}\ge c_{\rm FD}(2)(1-2/\beta)^2,
+\quad
+ D_\beta(c)=(1+\beta^{-1})S+6(\beta+1)\int|W^+|^2-72\pi^2p_c.
+\end{equation}
+\end{assumption}
+This is the only nonclassical analytic input to Sections 2--3. It is the $B=2$ instance used in the supplied two-orientation proof \cite{ProjectFD,ProjectPair}. Set
+\begin{equation}\label{eps}
+ c=\min\{1,c_{\rm FD}(2)\},\qquad \varepsilon_{\rm pair}=(c/200)^2.
+\end{equation}
+
+\section{A mixed-pairing inequality beyond surface bundles}
+\begin{theorem}[Pairing loss and quantitative separation]\label{pair}
+Let $\mathcal C_+$ be a nonempty finite set of actual monopole classes on $M$, and let
+\[
+ a\in\Hull(\mathcal C_+),\qquad a^2\ge T_+.
+\]
+Let $b$ be an actual monopole class on $\bar M$ with $-b^2\ge T_-$. Under Input~\ref{fd}, every smooth metric satisfies
+\begin{equation}\label{pair-est}
+\boxed{\quad
+\cJ(g)+(1-t)_++(t-z)_+\ge\varepsilon_{\rm pair},\qquad
+ t=\frac{3\tau}{e},\quad z=\frac{|a\cdot b|}{e}.
+\quad}
+\end{equation}
+The vector $a$ need not itself be a monopole class. No fibration, symplectic splitting or equality of the two class squares is assumed.
+\end{theorem}
+
+\begin{proof}
+The positivity $a^2\ge T_+>0$ excludes a nonnegative Yamabe representative. Indeed, on such a representative the unperturbed Weitzenb\"ock identity makes every positive projection from $\mathcal C_+$ vanish. Then $a^+=0$, contrary to $a^2>0$. All conformal classes are therefore negative and $R>0$.
+
+Write $a=\sum_i\lambda_i a_i$, with $\lambda_i\ge0$ and $\sum_i\lambda_i=1$. By \eqref{scalar} and convexity,
+\begin{equation}\label{convex}
+ \|a^+\|\le\sum_i\lambda_i\|a_i^+\|\le\sqrt{S/(32\pi^2)}.
+\end{equation}
+There is no assertion that a Seiberg--Witten solution exists for the convex combination.
+
+If $\cJ(g)\ge1$, the conclusion is immediate. Otherwise pass to $\widehat g\in[g]$ with $s=-4$. Put $\delta_S=S(g)-S(\widehat g)\ge0$. Equation~\eqref{cw} and conformal invariance of Weyl energy give
+\[
+ P(g)=P(\widehat g)+\delta_S/12,\qquad
+ R(g)=R(\widehat g)+\delta_S/3.
+\]
+Consequently $\cJ(g)$ is a weighted average of $\cJ(\widehat g)$ and $1$, so
+\[
+ j:=\cJ(\widehat g)\le\cJ(g)<1.
+\]
+It suffices to prove the inequality for $j$. All subsequent norms and integrals use $\widehat g$.
+
+Set
+\[
+ u=\frac{V}{2\pi^2e},\quad r=\frac PV=\frac{4j}{4-j},\quad
+ w=\frac1V\int|W^-|^2,\quad U=\frac{\|a^+\|^2}{e},\quad
+ Z=\frac{\|b^-\|^2}{e}.
+\]
+Equation~\eqref{convex} and the square of $a$ imply $2+t\le U\le u$. Equation~\eqref{cw} gives
+\begin{equation}\label{weyl}
+ w=\frac{2-t}{u}-\frac13+\frac{j}{4-j}\ge0.
+\end{equation}
+Since $j<1$, this forces $t<2$ and
+\begin{equation}\label{u-bound}
+ 2+t\le u\le C(j)(2-t),\qquad C(j)=\frac{3(4-j)}{4(1-j)},
+ \qquad t\le1+\frac{9j}{16-7j}\le1+j.
+\end{equation}
+The actual scalar estimate for $b$ gives $2-t\le Z\le u$.
+
+Let
+\[
+ d=j+(1-t)_++(t-z)_+.
+\]
+If $d\ge1/256$, then $d\ge\varepsilon_{\rm pair}$. Assume $0<d<1/256$. Put
+\[
+ X=\|a^-\|^2/e=U-a^2/e,\qquad
+ Y=\|b^+\|^2/e=Z+b^2/e.
+\]
+Both are nonnegative, and the class-square assumptions give
+\[
+ X\le U-(2+t),\qquad Y\le Z-(2-t).
+\]
+Writing $d_-=(1-t)_+$, estimates~\eqref{weyl}--\eqref{u-bound} yield
+\begin{equation}\label{small}
+ 1-d\le t\le1+d,\quad 3-d\le u\le3+5d<4,\quad
+ X\le4d,\quad w\le d,\quad r\le4d/3.
+\end{equation}
+For example $C(j)\le3+3j$ for $j\le1/4$; hence
+$X\le4d_-+3j(1+d_-)\le4d$ and
+$w\le d_-/2+j/3\le d$.
+Crucially,
+\begin{equation}\label{cross-lower}
+ z\ge t-(t-z)_+\ge1-d_--(t-z)_+\ge1-d.
+\end{equation}
+The original surface-bundle proof used $z=t$; \eqref{cross-lower} is its replacement.
+
+The same-metric Hodge decomposition and Cauchy--Schwarz give
+\begin{equation}\label{cross}
+ z\le\sqrt{UY}+\sqrt{XZ}
+   \le\sqrt{u\{Z-(2-t)\}}+4\sqrt d.
+\end{equation}
+The quantity $1-d-4\sqrt d$ is positive. Therefore
+\begin{align}
+ \frac Zu&\ge\frac{2-t}{u}+\frac{(1-d-4\sqrt d)^2}{u^2}\\
+ &\ge\frac13-\frac d3+
+       \frac{(1-d-4\sqrt d)^2}{(3+5d)^2}
+ \ge\frac49-2\sqrt d.\label{Z-bound}
+\end{align}
+For the final elementary bound, use
+$(1-d-4\sqrt d)^2\ge1-2d-8\sqrt d$ and
+$(3+5d)^{-2}\ge1/9-10d/27$. Their nonnegative product gives the lower bound
+$1/9-8\sqrt d/9-16d/27$ for the last fraction; adding the first two terms proves the asserted estimate on $d\le1/256$.
+
+Apply FD2 on $\bar M$ to the actual class $b$, with
+\[
+ A_-=T_-=e(2-t)>0.
+\]
+Indeed $\|b^-\|^2\ge-b^2\ge A_-$, $b^2[\bar M]\ge T_+(\bar M)$, and
+$e/A_-=1/(2-t)\le1/(1-d)<2$.
+Its left-hand side is exactly
+\[
+ \bar\kappa_\beta=r+16(1+\beta^{-1})+6(\beta+1)w-36Z/u.
+\]
+Take the finite parameter $\beta=d^{-1/2}\ge16$. By
+\eqref{small} and \eqref{Z-bound},
+\[
+ \bar\kappa_\beta\le94\sqrt d+\frac{22}{3}d<100\sqrt d,
+ \qquad
+ \bar\kappa_\beta\ge c(1-2\sqrt d)^2\ge c/2.
+\]
+Thus $d\ge(c/200)^2$.
+
+If $d=0$, then $j=0$, $t=1$, $z\ge1$, $u=U=3$, and $X=w=r=0$.
+Equation~\eqref{cross} gives $Z/u\ge4/9$, so
+$\bar\kappa_\beta\le16/\beta$ for every finite $\beta$. FD2 contradicts this as $\beta\to\infty$. This completes all cases. Returning from $j$ to $\cJ(g)$ proves \eqref{pair-est}.
+\end{proof}
+
+\begin{corollary}[A finite-configuration form]\label{config}
+Let $\mathcal C_-$ be a finite nonempty set of actual monopole classes on $\bar M$. Suppose the following set of pairs is nonempty and define
+\[
+ z_*:=\frac1e\max\{\,|a\cdot b|:
+ a\in\Hull(\mathcal C_+),\ a^2\ge T_+,\
+ b\in\mathcal C_-,\ -b^2\ge T_-\,\}.
+\]
+Then, under FD2,
+\[
+ \cJ(g)+(1-t)_++(t-z_*)_+\ge\varepsilon_{\rm pair}
+\]
+for every smooth metric. Enlarging either supplied class set can only improve this inequality.
+\end{corollary}
+\begin{proof}
+The maximum exists by compactness of the finite convex hull and finiteness of $\mathcal C_-$. Apply Theorem~\ref{pair} to a maximizing pair. The last assertion follows from monotonicity of the maximum and of $(t-z_*)_+$.
+\end{proof}
+
+The resulting quantity uses the mixed intersection data, not only the separate class squares. It is a finite-dimensional cohomological optimization; no assertion is made here that it gives a complete characterization of all geometric polarizations. In particular it does not manufacture an opposite-orientation monopole class on a blowup where none has been supplied.
+
+\begin{corollary}[Einstein consequence]
+Under the preceding hypotheses, an Einstein metric must satisfy
+\[
+ t\le1,\qquad \min\{t,z_*\}\le1-\varepsilon_{\rm pair}.
+\]
+If $z_*\ge t-\delta$, with $0\le\delta<\varepsilon_{\rm pair}$, then
+\[
+ 3\tau\le(1-\varepsilon_{\rm pair}+\delta)e.
+\]
+\end{corollary}
+\begin{proof}
+An Einstein metric is negative by the actual positive scalar budget and has $j=0$. Equation~\eqref{u-bound} gives $t\le1$. For $t\le1$,
+$(1-t)+(t-z_*)_+=1-\min\{t,z_*\}$. The conclusion follows.
+\end{proof}
+
+\section{Geometric inputs: bundles and symplectic pairs}
+The surface-bundle classes in the supplied proof satisfy
+\[
+ a=x+y,\quad b=x-y,\quad x^2=0,\quad x\cdot y=e,\quad y^2=3\tau.
+\]
+Thus $a^2=T_+$, $-b^2=T_-$, $|a\cdot b|=3\tau$, so Theorem~\ref{pair} recovers the existing surface-bundle inequality with the same convenient constant. This recovery is not a separate new solution of the Kodaira-slope question.
+
+A symplectic pair is a pair of closed rank-two forms whose kernel foliations are complementary. The forms $\omega_1+\omega_2$ and $\omega_1-\omega_2$ induce opposite orientations \cite{BandeK}. Write the corresponding oriented plane-bundle splitting as
+\[
+ TM=E_1\oplus E_2,\qquad x=e(E_1),\quad y=e(E_2).
+\]
+The two first Chern classes are, up to an overall sign, $a=x+y$ and $b=x-y$, and
+\[
+ x\cdot y=e,\qquad x^2+y^2=3\tau.
+\]
+For example, $b_2^+(M),b_2^-(M)>1$ ensure actual canonical-class supply through the usual symplectic monopole theorem. With that supply and $e>0$, the new general inequality specializes to
+\begin{equation}\label{symp-pair}
+\boxed{
+ \cJ(g)+\left(1-\frac{3\tau}{e}\right)_+
+ +\frac{2}{e}\bigl(\min\{x^2,y^2\}\bigr)_+
+ \ge\varepsilon_{\rm pair}.
+}
+\end{equation}
+Indeed, since $x^2+y^2=3\tau\ge0$,
+$(3\tau-|x^2-y^2|)_+=2(\min\{x^2,y^2\})_+$.
+The formula explicitly records the extra topological term; it does not assume that this term vanishes for every symplectic pair. If one Euler square is nonpositive, the surface-bundle form of the inequality follows without requiring either foliation to be a fibration. Classical constructions include symplectic pairs on manifolds that are not surface bundles \cite{BandeK}; the Euler squares and actual supply must be evaluated on a chosen such example before declaring a new individual application.
+
+\section{Sharp sectional pinching of the complete explicit model}
+This part is independent of FD2. Its input is the system's complete simply connected pair $(N,g,\Omega)$ with $N\cong\R^4$, $\Ric=-3g$, $d\Omega=0$, $|\Omega|^2=2$ and
+\[
+ |\nabla\Omega|^2=\frac{36(1-x^2)^3}{(1+3x^2)^3}>0,
+ \qquad 1/3\le x<1.
+\]
+The construction, bolt extension and completeness belong to the source model \cite{ProjectFino,ProjectSubsequent}. The curvature blocks computed there are
+\begin{equation}\label{Rblocks}
+ \mathcal R^-=-I,\qquad \mathcal R^+=\operatorname{diag}(r_1,r_2,r_3),\qquad D=1+3x^2,
+\end{equation}
+where
+\begin{align}
+ r_1&=-\frac{3(x-1)^2(21x^4+18x^3+12x^2-2x-1)}{D^3},\\
+ r_2&=-\frac{3(x+1)^2(21x^4-18x^3+12x^2+2x-1)}{D^3},\\
+ r_3&=\frac{9(x-1)^2(x+1)^2(5x^2-1)}{D^3}.
+\end{align}
+They obey $r_1+r_2+r_3=-3$.
+
+\begin{theorem}[Sharp global sectional range]\label{pinch}
+For the source complete metric, every sectional curvature satisfies
+\[
+ \boxed{-2<\sec_g\le-\tfrac13.}
+\]
+The upper endpoint is attained at $x=1/\sqrt3$, and the infimum $-2$ is approached as $x\to1$. Thus the complete strictly almost-K\"ahler example is uniformly negatively curved, with sharp global pinching ratio $1/6$ in this normalization.
+\end{theorem}
+\begin{proof}
+The following rational factorizations determine all needed signs:
+\begin{align}
+ r_1-r_2&=\frac{48x^3}{D^2}>0,\\
+ r_3-r_2&=\frac{12(x+1)^2(3x-1)(3x^3-3x^2+x+1)}{D^3}\ge0,\\
+ r_2'&=\frac{72x(x-1)^2(x+1)(3x^2-3x-2)}{D^4}<0
+ \qquad(1/3<x<1),\\
+ \tfrac13-r_3&=\frac{4(7-3x^2)(3x^2-1)^2}{3D^3}\ge0.
+\end{align}
+The cubic in the second line is $3(x-1/3)^3+10/9>0$. Since
+$r_2(1/3)=-4/3$ and $\lim_{x\to1}r_2=-3$, we have
+$-3<r_2\le-4/3$.
+For $z=x-1/3\ge0$,
+\[
+21x^4+18x^3+12x^2-2x-1
+=21z^4+46z^3+44z^2+\tfrac{136}{9}z+\tfrac{16}{27}>0,
+\]
+so $r_1\le0$. It follows that
+\[
+ -3<\min_i r_i=r_2,\qquad \max_i r_i\le1/3.
+\]
+A unit simple bivector has equal squared norms $1/2$ in its self-dual and anti-self-dual projections. Therefore its sectional curvature is
+\[
+ \sec(\sigma)=\tfrac12\langle\mathcal R^+u,u\rangle-\tfrac12,
+ \qquad |u|=1.
+\]
+Conversely every unit $u\in\Lambda^+$ occurs in such a bivector, by pairing it with any unit element of $\Lambda^-$. Hence the pointwise extrema are $(\min_i r_i-1)/2$ and $(\max_i r_i-1)/2$. The displayed bounds and the equality $r_3(1/\sqrt3)=1/3$ prove the result.
+\end{proof}
+
+The strengthening here is sectional, not another verification of the Einstein equation. It shows that completeness, uniform negative sectional curvature and the Einstein almost-K\"ahler equations are simultaneously compatible with strict nonintegrability. This remains a noncompact statement.
+
+\section{No finite-volume quotient of the metric}
+The source already excludes compact quotients that preserve both $g$ and $\Omega$ using the torsion amplitude. The next conclusion needs only the metric and applies without preserving $\Omega$.
+
+\begin{theorem}[Metric quotients have infinite volume]\label{no-quotient}
+Let $\Gamma$ be any discrete group acting freely and properly by isometries of the complete metric in Theorem~\ref{pinch}. Then
+\[
+ \Vol(N/\Gamma)=\infty.
+\]
+\end{theorem}
+\begin{proof}
+The smallest eigenvalue of the full curvature operator is $r_2(x)$, since $r_2\le-4/3<-1$ and $r_2\le r_1,r_3$. Its strict monotonicity recovers $x$ intrinsically. Every isometry therefore preserves $x$ and the bolt $x=1/3$.
+
+On the regular set write $dr=\sqrt{G(x)}\,dx$. An isometry preserving $r$ preserves its unit gradient, hence commutes with radial flow. In the product representation
+\[
+ N\setminus\mathrm{bolt}=(0,\infty)_r\times\mathrm{SL}(2,\R),
+\]
+it has the form $(r,p)\mapsto(r,\varphi(p))$, with $\varphi$ independent of $r$. Thus the quotient of every regular level is the same manifold $Y=\mathrm{SL}(2,\R)/\Gamma$ (with the action just obtained, not assumed to be left translation). The invariant orbit density $|\sigma_1\wedge\sigma_2\wedge\sigma_3|$ descends, because it is a positive constant multiple of the volume density of any fixed level. Its total mass $\mathfrak v$ is positive, possibly infinite.
+
+The source metric has volume density
+\begin{equation}\label{volume}
+ dV=\frac{64x(1+3x^2)}{3(1-x^2)^3}\,dx\,
+       |\sigma_1\wedge\sigma_2\wedge\sigma_3|.
+\end{equation}
+The bolt has measure zero. Tonelli's theorem and \eqref{volume} give
+\[
+ \Vol(N/\Gamma)=\mathfrak v\int_{1/3}^1
+          \frac{64x(1+3x^2)}{3(1-x^2)^3}\,dx=\infty,
+\]
+since the integrand is asymptotic to $32/[3(1-x)^3]$. Freeness and properness ensure that $Y$ contains an open set of positive quotient measure, so $\mathfrak v$ cannot vanish.
+\end{proof}
+
+\begin{corollary}[An Einstein germ cannot be preserved in a finite-volume completion]\label{germ}
+No connected complete finite-volume Einstein four-manifold has a nonempty open subset locally isometric to the source metric. In particular, no closed Einstein metric can retain this metric exactly on an open patch while altering its complement.
+\end{corollary}
+\begin{proof}
+Einstein metrics are real analytic in harmonic coordinates \cite[Theorem 5.2]{DK}. A local isometry between complete simply connected real-analytic Riemannian manifolds extends to a global isometry, by analytic continuation of local isometries \cite[Chapter VI, Corollary 6.4]{KN}; compare \cite[Theorem 5.4]{DK}. Apply this to $N\cong\R^4$ and the complete universal cover of the proposed Einstein manifold. Its universal cover is then isometric to $N$, so the manifold is an isometric quotient of $N$. Theorem~\ref{no-quotient} contradicts finite volume.
+\end{proof}
+
+This conclusion concerns preservation of an exact Einstein germ. It does not rule out changing the model everywhere, nor does it give a quantitative obstruction to approximate gluing. In particular it is not a proof of the closed Goldberg conjecture.
+
+\section{What has changed in the common research line}
+The first continuation replaces the exact bundle pairing by a quantitative mixed-pairing loss and allows convex-hull input on one side. Its dependence is
+\[
+ \text{actual monopole scalar bounds}+\text{FD2}
+ +\text{same-metric Hodge pairing}\Longrightarrow\eqref{pair-est}.
+\]
+It extends an established project implication but does not establish FD2 independently, and it has not supplied an opposite-orientation class for every nonminimal general-type surface.
+
+The second continuation starts from the system's explicit complete metric, and obtains sharp sectional pinching and a metric-only obstruction to finite-volume quotients. It uses no monopole endpoint estimate. The original Fino construction remains the system's contribution; the new content here is the global curvature range and the consequence of the intrinsic radial eigenvalue.
+
+No smooth non-Bach-flat absolute $P$-minimizer is constructed in this note. General O10 and the sharp unrestricted $P$ infima also retain their prior status. The results above have their stated narrower completion criteria and proofs.
+
+\begin{thebibliography}{9}
+\bibitem{ProjectFD} Qiushi project, \emph{O10\_All\_Finite\_Density.md}, finite-density endpoint statement; the present note uses only its fixed $B=2$ instance.
+\bibitem{ProjectPair} Qiushi continuation, \emph{Line1\_Two\_Orientation\_Global\_Gap.md}, 7 October 2026, Sections 1--6.
+\bibitem{ProjectFino} System A01 construction and companion continuation, \emph{Q4\_Complete\_Example\_and\_Fino\_Question.tex}, 8 October 2026, Sections 1--4.
+\bibitem{ProjectSubsequent} System A01/A02, \emph{03\_Subsequent\_Mathematical\_Developments.tex}, 8 October 2026, Section 2; explicit orbit volume formula.
+\bibitem{LeBrun} C. LeBrun, \emph{Four-Manifolds, Curvature Bounds, and Convex Geometry}, arXiv:math/0611450, Sections 3--4. \url{https://arxiv.org/abs/math/0611450}.
+\bibitem{BandeK} G. Bande and D. Kotschick, \emph{The geometry of symplectic pairs}, Trans. Amer. Math. Soc. 358 (2006), 1643--1655. \url{https://arxiv.org/abs/math/0407441}.
+\bibitem{DK} D. M. DeTurck and J. L. Kazdan, \emph{Some regularity theorems in Riemannian geometry}, Ann. Sci. \`Ecole Norm. Sup. (4) 14 (1981), 249--260. \url{https://doi.org/10.24033/asens.1405}.
+\bibitem{KN} S. Kobayashi and K. Nomizu, \emph{Foundations of Differential Geometry}, Vol. I, Interscience, 1963, Chapter VI, Corollary 6.4, p. 256.
+\end{thebibliography}
+\end{document}

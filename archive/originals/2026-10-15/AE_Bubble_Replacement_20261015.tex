@@ -1,0 +1,238 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\Met}{\operatorname{Met}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\W}{\mathcal W}
+\title{Euclidean-end bubbles and unrestricted curvature minimization}
+\author{Research continuation}
+\date{15 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We give a direct application of the Chang--Gursky--Yang sphere theorem to
+asymptotically Euclidean four-manifolds with Euler characteristic one.
+Below a specified curvature threshold their cores are standard smooth balls.
+A replacement argument then excludes positive-energy bubbles of this type
+from genuine minimizing sequences for the squared traceless Ricci curvature.
+This fills the trivial-end branch left open by the preceding aspherical-core
+argument. It does not prove smooth attainment of the global infimum.
+The sphere theorem and the analytic facts about AE ends are classical inputs;
+no priority claim is made for the consequences recorded here.
+\end{abstract}
+
+\section{Conventions and the target}
+For a smooth four-dimensional metric put
+\[
+ P(g)=\int|\Ric_g^\circ|^2\,dV_g,\qquad
+ S(g)=\int s_g^2\,dV_g,\qquad
+ \W(g)=\int|W_g|_{\mathrm{op}}^2\,dV_g.
+\]
+The tensor norm satisfies $|W|_{(0,4)}^2=4|W|_{\mathrm{op}}^2$.
+On a closed manifold,
+\[
+ \int|\operatorname{Rm}|_{\mathrm{op}}^2=8\pi^2\chi+P.
+\]
+The problem under investigation asks for a closed smooth four-manifold on
+which $P$ attains its unrestricted global minimum at a non-Bach-flat metric;
+see LeBrun \cite[Section 11]{LeBrun}. All competitors below are smooth
+metrics on the same manifold. No restriction to a conformal class is imposed.
+
+An AE end of order $\tau>0$ is identified with $\R^4\setminus B$ and satisfies
+\[
+ |\partial^a(g_{ij}-\delta_{ij})|\le C_a r^{-\tau-|a|},
+ \qquad |a|\le2.
+\]
+We assume a smooth complete connected oriented manifold with exactly one
+such end and no boundary. Its compact core $N_R$ has boundary $S^3$.
+The differentiated decay makes the curvature energies finite and gives
+the AE Gauss--Bonnet formula
+\begin{equation}\label{gb}
+ 8\pi^2(\chi(N)-1)=\W(g)-\tfrac12P(g)+\tfrac1{24}S(g).
+\end{equation}
+
+\section{A standard smooth core from an integral bound}
+\begin{theorem}\label{standard}
+Let $(N,g)$ satisfy the preceding AE assumptions, $s_g\ge0$, and
+$\chi(N)=1$. If $P(g)<16\pi^2$, then the one-point compactification
+defined by the AE coordinates is diffeomorphic to $S^4$.
+Every sufficiently large compact core is diffeomorphic to the standard
+$B^4$, with its end parametrization extendible across the core.
+No Bach-flatness assumption is required.
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{gb} gives
+\begin{equation}\label{weyl}
+ \W(g)=\tfrac12P(g)-\tfrac1{24}S(g)<8\pi^2.
+\end{equation}
+Choose a smooth cutoff $\zeta$ equal to one for $r\le R$ and zero for
+$r\ge2R$, with the usual $R^{-a}$ derivative bounds, and set on the end
+\[
+ g_R=\delta+\zeta(g-\delta).
+\]
+Extend $g_R=g$ over the core. For large $R$ these are positive definite,
+uniformly equivalent to $g$, and exactly Euclidean outside $2R$.
+On the transition annulus,
+\[
+ |\operatorname{Rm}(g_R)|\le C R^{-2-\tau},\qquad
+ \Vol_{g_R}(\{R<r<2R\})\le C R^4.
+\]
+Consequently
+\begin{equation}\label{cut}
+ \|(s_{g_R})_-\|_{L^2}=O(R^{-\tau}),\qquad
+ \W(g_R)\longrightarrow\W(g).
+\end{equation}
+The first estimate uses $s_g\ge0$ on the unchanged region.
+
+A connected AE manifold of dimension four satisfies a homogeneous Sobolev
+inequality $\|f\|_4^2\le C\int|df|^2$ for compactly supported smooth $f$.
+The constant is for this fixed manifold, not for an arbitrary family.
+Uniform metric equivalence gives one constant $C_0$ for all large $R$.
+Thus
+\[
+ \int\bigl(6|df|_{g_R}^2+s_{g_R}f^2\bigr)dV_{g_R}
+ \ge\bigl(6/C_0-\|(s_{g_R})_-\|_2\bigr)\|f\|_{4,g_R}^2.
+\]
+The coefficient is positive for large $R$. This proves positive Yamabe
+constant for $g_R$. The AE Yamabe framework, including its relation to
+compactification, is discussed in \cite{DM}.
+
+Take a positive smooth function $u$ equal to $r^{-2}$ outside a still larger
+compact set. The metric $\widehat g_R=u^2g_R$ extends smoothly across the
+added point: in inverted coordinates it is exactly Euclidean there.
+Call the resulting closed oriented manifold $\widehat N$. It has
+$\chi(\widehat N)=2$. Conformal invariance of the Yamabe quotient and
+the zero $W^{1,2}$ capacity of a point imply
+\[
+ Y(\widehat N,[\widehat g_R])=Y(N,[g_R])>0.
+\]
+For completeness, the equality of infima follows by cutting a smooth
+test function off in a ball of radius $\varepsilon$ around the added point:
+the gradient error is $O(\varepsilon^2)$ and its $L^4$ error tends to zero.
+Conformal invariance of Weyl energy gives
+\[
+ \int_{\widehat N}|W_{\widehat g_R}|_{(0,4)}^2
+ =4\W(g_R)<32\pi^2=16\pi^2\chi(\widehat N)
+\]
+for sufficiently large $R$, by \eqref{weyl}--\eqref{cut}.
+Theorem A of Chang--Gursky--Yang \cite{CGY} now yields
+$\widehat N\cong S^4$ (the $\mathbb{RP}^4$ alternative is excluded).
+Their theorem gives a diffeomorphism, not conformal roundness; the former
+is exactly what is needed here.
+
+The complement of a sufficiently large core is a coordinate ball about
+the added point, with its prescribed smooth parametrization. Under a
+diffeomorphism $\widehat N\to S^4$ this is an embedded standard disk.
+Shrinking the disk inside its parametrization and applying isotopy extension
+identifies its complement with a standard $B^4$. Equivalently one can
+straighten the diffeomorphism near the added point before removing that
+point. This also identifies the prescribed end collar with a Euclidean
+collar. No smooth Schoenflies statement for an arbitrary embedded $S^3$
+is being assumed.
+\end{proof}
+
+\section{The minimizing property supplies an actual replacement}
+Here a full-core rescaled limit means the following precise input.
+Let $g_j$ be metrics on a fixed closed $M$, with
+\[
+ P(g_j)\longrightarrow P_*(M):=\inf_{h\in\Met(M)}P(h).
+\]
+For every sufficiently large fixed $R$, suppose there are embeddings
+$\iota_{j,R}:N_{2R}\to M$ and numbers $\lambda_j>0$ such that
+\[
+ \lambda_j^{-2}\iota_{j,R}^*g_j\longrightarrow g
+ \quad\hbox{in }C^2(N_{2R}).
+\]
+The embeddings include the whole compact core, not just an annulus or the
+regular part of an orbifold.
+
+\begin{theorem}\label{replace}
+Under these assumptions, a limit satisfying the hypotheses of
+Theorem \ref{standard} cannot have $0<P(g)<16\pi^2$.
+\end{theorem}
+\begin{proof}
+By Theorem \ref{standard}, replace the metric on $N_R$ by a flat metric
+whose boundary collar agrees with the Euclidean AE coordinates. On
+$N_{2R}\setminus N_R$ interpolate to the pulled-back original metric,
+and leave the latter unchanged near $\partial N_{2R}$.
+For the limiting AE metric the transition energy is $O(R^{-2\tau})$.
+For fixed $R$, $C^2$ convergence gives the same estimate up to $o_j(1)$.
+The new metric is positive definite for large $R,j$, smooth, and agrees
+with $g_j$ outside $\iota_{j,R}(N_{2R})$ after scaling back.
+Scale invariance of $P$ gives an actual competitor $\widetilde g_j$ with
+\[
+ P(\widetilde g_j)
+ \le P(g_j)-\int_{N_R}|\Ric_g^\circ|^2dV_g
+             +C R^{-2\tau}+o_j(1).
+\]
+Choose $R$ first so that the removed integral exceeds $3P(g)/4$ and the
+transition term is less than $P(g)/4$. Then let $j\to\infty$. This gives
+\[
+ \limsup_j P(\widetilde g_j)\le P_*(M)-P(g)/2,
+\]
+contradicting the definition of $P_*(M)$.
+\end{proof}
+
+\section{What this closes, and what it does not}
+The preceding continuation, \emph{Scalar Curvature and Global Attainment}
+(12 October 2026), established that a nonnegative-scalar-curvature compact
+core with finite fundamental group at its connected boundary, embedded in a
+closed aspherical four-manifold, has nullhomotopic inclusion. For a spherical
+space-form boundary its homological consequences include $\chi(N)=1$.
+Its separate ALE calculation gave
+\[
+ P(N)\ge4\pi^2+S(N)/12
+\]
+for nontrivial end group, and excluded nonflat Ricci-flat ALE cores.
+The trivial end group had no positive lower bound from Gauss--Bonnet alone.
+
+Theorem \ref{replace} supplies the missing distinction for that branch:
+\emph{a small positive-energy AE core may be an admissible geometry, but
+cannot survive in a genuine global minimizing sequence with full-core
+smooth convergence}. For scalar-flat limits with trivial end group,
+$P=0$ implies flatness: Ricci-flatness and the Euclidean asymptotic volume
+ratio give the equality case of Bishop--Gromov comparison. Hence any
+nonflat limit of this type has $P\ge16\pi^2$.
+
+Combining the two results, within the stated smooth, one-ended ALE
+blow-up setting on an aspherical ambient manifold, the remaining nonflat
+limits have energy at least $4\pi^2$; the trivial-end branch has the stronger
+$16\pi^2$ bound. Thus a sequence of total energy strictly below $4\pi^2$
+has none of these limits. This is a consequence conditional on the existence
+of the indicated blow-up description, not a theorem producing that
+description for arbitrary minimizing sequences.
+
+It still does not establish the desired smooth global minimizer. Nontrivial
+end groups, orbifold convergence without an embedded smooth full core,
+multiple-ended phenomena, and collapse have not all been excluded. In
+particular, the previously analyzed scalar-flat $Q_8$ core has energy
+$4\pi^2$ and is not a ball; Theorem \ref{replace} does not remove it.
+The earlier doubled-hyperbolic-cusp example also shows why exclusion of
+curvature bubbles alone cannot rule out long collapsing necks.
+
+No closed non-Bach-flat global $P$ minimizer is constructed or proved to
+exist in this note. The completed contribution is the standard-core and
+strict-replacement argument above, with its quantified applicability.
+
+\begin{thebibliography}{9}
+\bibitem{CGY} S.-Y. A. Chang, M. J. Gursky and P. C. Yang,
+\emph{A conformally invariant sphere theorem in four dimensions},
+Publ. Math. IHES \textbf{98} (2003), 105--143.
+\href{https://arxiv.org/abs/math/0309287}{arXiv:math/0309287}, Theorem A
+and the explicit norm convention following it.
+\bibitem{DM} J. Dilts and D. Maxwell,
+\emph{Yamabe classification and prescribed scalar curvature in the
+asymptotically Euclidean setting},
+\href{https://arxiv.org/abs/1503.04172}{arXiv:1503.04172}.
+\bibitem{LeBrun} C. LeBrun,
+\emph{Curvature functionals, optimal metrics, and the differential topology
+of 4-manifolds},
+\href{https://arxiv.org/abs/math/0404251}{arXiv:math/0404251}, Section 11.
+\end{thebibliography}
+\end{document}

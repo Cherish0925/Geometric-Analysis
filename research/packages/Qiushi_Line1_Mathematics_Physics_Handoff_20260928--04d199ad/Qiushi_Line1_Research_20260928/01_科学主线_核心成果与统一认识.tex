@@ -1,0 +1,444 @@
+% Compile with XeLaTeX. This file is standalone; references are mapped in section 4 of the package.
+\documentclass[UTF8,a4paper,11pt,fontset=fandol]{ctexart}
+\usepackage[left=23mm,right=23mm,top=25mm,bottom=24mm,headheight=16pt]{geometry}
+\usepackage{fontspec}
+\setmainfont{lmroman10-regular.otf}[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf,BoldItalicFont=lmroman10-bolditalic.otf]
+\setsansfont{lmsans10-regular.otf}[BoldFont=lmsans10-bold.otf,ItalicFont=lmsans10-oblique.otf,BoldItalicFont=lmsans10-boldoblique.otf]
+\setmonofont{lmmono10-regular.otf}[Scale=0.84,ItalicFont=lmmono10-italic.otf,BoldFont=lmmonolt10-bold.otf]
+\usepackage{amsmath,amssymb,mathtools,bm,esint,mathrsfs}
+\usepackage{longtable,booktabs,array,calc,etoolbox}
+\usepackage{graphicx}
+\usepackage{fancyvrb}
+\usepackage{xurl}
+\usepackage{fancyhdr,lastpage}
+\usepackage[unicode,hidelinks]{hyperref}
+\hypersetup{pdftitle={第一科学主线：核心成果与统一认识},pdfauthor={Qiushi Engine research handoff},pdfsubject={Quantitative Einstein compatibility and mathematical physics}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\setlength{\emergencystretch}{3em}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.22}
+\AtBeginEnvironment{longtable}{\small}
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{2}
+\ctexset{
+ section={format=\Large\bfseries\raggedright,beforeskip=1.3em,afterskip=0.6em},
+ subsection={format=\large\bfseries\raggedright,beforeskip=1em,afterskip=0.4em},
+ subsubsection={format=\normalsize\bfseries\raggedright,beforeskip=0.8em,afterskip=0.3em}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily Qiushi Engine · 第一科学主线}
+\fancyhead[R]{\small 2026-09-28}
+\fancyfoot[C]{\small \thepage\ / \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\newcommand{\handoffpart}[1]{\clearpage\section{#1}}
+\begin{document}
+\begin{titlepage}
+\thispagestyle{empty}
+\vspace*{2cm}
+{\large\sffamily QIUSHI ENGINE\par}
+\vspace{1.3cm}
+{\Huge\bfseries 第一科学主线：核心成果与统一认识\par}
+\vspace{0.8cm}
+{\Large 从 Einstein 精确障碍到退化无关的定量相容性\par}
+\vspace{1.2cm}
+{\large 跨会话研究综合与证明方案\par}
+\vfill
+{\normalsize 原稿状态基线：2026年9月27日，快照 \texttt{844e62f}\par}
+\vspace{0.35cm}
+{\normalsize 整理日期：2026年9月28日\par}
+\vspace{1cm}
+{\small 保留已取得的强结论，沿真实方程继续推进全局数学与物理问题。\par}
+\end{titlepage}
+\tableofcontents
+\clearpage
+\section{1.
+研究中心与本套文件的用途}\label{ux7814ux7a76ux4e2dux5fc3ux4e0eux672cux5957ux6587ux4ef6ux7684ux7528ux9014}
+
+\textbf{第一科学主线的中心问题是：拓扑与实际规范场怎样限制 Einstein
+方程的逼近；这种限制的最优尺度是什么；逼近边界时，哪些缺陷必须集中或传递，哪些精确几何能够实现。}
+
+这条主线应继续以改变几何与物理中的基本判断为目标。目标不是增加定理编号、提高措辞强度，或为现有公式寻找更多领域名称，而是建立可以解释旧结果、产生新判定、跨越真实适用范畴的理论。
+
+本套文件整理的是本会话最近围绕第一主线的多轮讨论，供``梳理Yau26突破困境''和``yau26研究主线深化''继续研究。它保留已经明确的数学贡献、深入研究的关键连接和物理迁移构想，并补充几个可以完整推导的接口。此前按一般
+LLM 适配性推荐 Yau 19、23
+的排序，不再作为当前资源分配依据：现在已有的具体证明、构造和技术积累，比抽象选题排名更重要。
+
+本次状态依据为：9月27日原稿包快照
+\texttt{844e62f}、同日独立审读报告与统一任务书，以及9月26日深化报告。\texttt{e58b867}
+的高指数模型在现有材料中仍通过进展摘要接续。接收会话应先读取自己的
+\texttt{LINE1\_CURRENT.md}
+与更新提交，若有更晚的完整证明，以其真实内容更新本套文件。{[}S0--S3{]}
+
+全文只使用三种状态：\textbf{已有原稿结论}指给定研究包中已有命题和证明；\textbf{直接推论}指本套文件明确展示的演绎；\textbf{研究目标}指尚需新的证明或构造。研究包的内部审读与正式外部同行验证是不同环节。这一说明适用于全文，不再逐段重复。
+
+\section{2.
+最强成果不是``又一个不存在性定理''}\label{ux6700ux5f3aux6210ux679cux4e0dux662fux53c8ux4e00ux4e2aux4e0dux5b58ux5728ux6027ux5b9aux7406}
+
+在度量空间不紧时，精确方程无解，不代表误差有正下界。可能不存在 Einstein
+度量，却存在误差趋零、几何越来越退化的序列。第一主线真正进入的，是这个从精确到近似的鸿沟。
+
+最新 I40/I41
+的主干表明：在明确的实际单极子输入与拓扑预算下，某些经典数值条件仍然允许的近
+Einstein
+行为，受到新的微分相容性限制。限制不只作用于标量曲率，也迫使无迹 Ricci
+曲率承担定量代价；在已经实现的平衡流形族上，该代价的正确小参数阶数是线性的。{[}S0，卷01；S1，§§二--三{]}
+
+可将当前贡献概括为：
+
+\[
+\boxed{\text{实际场提供微分信息}
+\;\Longrightarrow\;
+\text{退化无关的强制估计}
+\;\Longrightarrow\;
+\text{真实流形上的线性 Einstein 缺陷障碍}.}
+\]
+
+这里``退化无关''有准确含义：相应主估计不预设直径上界、统一 Sobolev
+常数或底空间非塌缩。它不意味着任意几何退化都已经分类，也不意味着不用实际类供给和类平方条件。
+
+\section{3.
+核心定理的准确形状}\label{ux6838ux5fc3ux5b9aux7406ux7684ux51c6ux786eux5f62ux72b6}
+
+设 \(M\) 为闭、连通、光滑、定向四流形，\(g\)
+为光滑黎曼度量。对原稿所用的实际 \(\mathrm{Spin}^c\)
+结构，记其行列式第一陈类为
+\(a\)。结构可以随最初的度量选择，但一旦选择，必须贯穿证明所需的共形变化与权重，不能在中途更换。Pin
+型供给须保留其自身的覆盖和不变权重范围。{[}S0，卷01 Source
+2，导言与§5{]}
+
+记
+
+\[
+\begin{gathered}
+T_\pm=2\chi(M)\pm3\tau(M),\qquad p=(a_g^+)^2>0,\\
+P=\int_M|\operatorname{Ric}^{\circ}|^2\,dV_g,
+\qquad R=\int_M|\operatorname{Ric}|^2\,dV_g,\\
+S_2=\int_Ms^2\,dV_g,\qquad
+\Sigma=S_2-32\pi^2p,\\
+D_2=\frac32S_2+18\int_M|W^+|^2\,dV_g-72\pi^2p,
+\qquad Y=(T_+-a^2)_+.
+\end{gathered}
+\]
+
+原实际方程及经典曲率估计提供 \(\Sigma,D_2\ge0\)。I41 的核心结论是
+
+\[
+\boxed{
+\begin{aligned}
+\Sigma&\le C\left(P+D_2+\sqrt{(P+D_2)Y}\right),\\
+(p-T_+)_+&\le C_T\left(P+D_2+\sqrt{(P+D_2)Y}\right).
+\end{aligned}}
+\tag{1}
+\]
+
+当 \(a^2\ge T_+\) 时，简化为
+
+\[
+\boxed{\Sigma\le C(P+D_2),\qquad
+(p-T_+)_+\le C_T(P+D_2).}
+\tag{2}
+\]
+
+这是全度量、无小误差前提的估计，而不是只对某条已经受控的近 Einstein
+序列成立。它的完整输入仍然是原稿的实际共形单极子可解性，而不是任意形式上的上同调类。{[}S0，卷01
+Source 2，Theorem 1{]}
+
+若逐度量实际供给保证 \(p\ge A>0\)，设
+
+\[
+h=1-\frac{T_+}{A},\qquad
+U=\frac{3\min(T_+,T_-)}A,\qquad
+\mathcal J(g)=\frac{4P}{R}.
+\]
+
+在原稿规定的范围，特别是 \(0<h\le1/3\) 及相应类平方条件下，得到
+
+\[
+\boxed{\mathcal J(g)+(U-1-h)_+\ge ch.}
+\tag{3}
+\]
+
+式(3)不是对所有四流形成立的纯拓扑公式。它综合了实际类供给、双手性曲率预算和新的微分估计。{[}S0，卷01
+Source 1，Theorem 4；Source 2，§§2--4{]}
+
+\section{4.
+必须准确理解的``距离''：方程残差，而非度量空间距离}\label{ux5fc5ux987bux51c6ux786eux7406ux89e3ux7684ux8dddux79bbux65b9ux7a0bux6b8bux5deeux800cux975eux5ea6ux91cfux7a7aux95f4ux8dddux79bb}
+
+项目的相对 Einstein 缺陷为
+
+\[
+\mathcal E(g)=\inf_{\lambda\ne0}
+\frac{\int_M|\operatorname{Ric}_g-\lambda g|^2\,dV_g}
+{\lambda^2\operatorname{Vol}_g(M)}.
+\tag{4}
+\]
+
+它测量的是\textbf{方程残差}。没有另行证明稳定性或逆算子估计之前，不能将它等同于
+\(g\) 到 Einstein 度量模空间的 \(C^k\)、Sobolev 或 Gromov--Hausdorff
+距离。当前主线恰恰允许不存在统一几何紧性的情形，这个区别特别重要。
+
+令 \(V=\operatorname{Vol}_g(M)\)、\(S_1=\int_Ms\,dV_g\)。当 \(R>0\)
+时，直接对 \(1/\lambda\) 最小化可得
+
+\[
+\boxed{
+\mathcal E(g)=4-\frac{S_1^2}{VR}
+=\frac{4P}{R}+\frac{S_2-S_1^2/V}{R}
+\ge\mathcal J(g).
+}
+\tag{5}
+\]
+
+因此，I41 去掉标量方差的实质是：拓扑代价不能全部由 \(S_2-S_1^2/V\)
+吸收，无迹 Ricci 本身必须承担代价。常标量代表上
+\(\mathcal E=\mathcal J\)，使变分问题能够更直接地接到曲率平方泛函。
+
+式(4)排除了 \(\lambda=0\)，精确 Ricci-flat 度量反而有
+\(\mathcal E=4\)。若要证明``不存在任何 Einstein 度量''，必须另外排除零
+Einstein 常数。实际正规范预算常能提供这种排除，但逻辑上不能省略。
+
+归一化 \(\operatorname{Ric}=-g\) 的逐点缺陷为
+
+\[
+\delta_-(g)=\|\operatorname{Ric}^{\sharp}+I\|_{L^\infty,\mathrm{op}}.
+\]
+
+四维直接有
+\(\mathcal E(g)\le4\delta_-(g)^2\)。反向控制不成立：积分小量不能替代 Yau
+26 所需的逐点夹逼。{[}S3，§2；式(5)为直接代数推导{]}
+
+\section{5.
+真正可迁移的分析机制}\label{ux771fux6b63ux53efux8fc1ux79fbux7684ux5206ux6790ux673aux5236}
+
+I40
+的关键，不是要求整个曲率背景趋零，而是识别出\textbf{背景曲率在实际旋量所选方向上的作用消去}。这种表示层面的消去，比粗暴控制完整曲率更精细。
+
+设同一个实际解产生旋量 \(\Phi\)，记
+
+\[
+K=\int|\nabla_A\Phi|^2,\qquad
+B=\int|F_A^-|^2,\qquad
+\Theta=rV+D_2+\varepsilon V.
+\]
+
+这里 \(A\) 在 \(\nabla_A,F_A\) 中是联络记号，与拓扑预算 \(A>0\)
+不是同一对象；正式写稿可将联络改记为 \(\mathcal A\)
+避免冲突。\(\varepsilon\) 是可选择的平滑误差，不是额外几何条件。
+
+原稿的证明链为：
+
+\[
+\begin{aligned}
+&|F_{\mathrm{bg}}\Phi|^2
+\le C(\rho-\rho_0)^2,\\
+&\|\nabla_A^2\Phi\|_2^2+
+\|\nabla_A\Phi\|_4^4\le C(K+\Theta+B),\\
+&B\le\sqrt6K+C\Theta,\\
+&K\le C\Theta+C\sqrt{\Theta K}
+\quad\Longrightarrow\quad K\le C\Theta.
+\end{aligned}
+\tag{6}
+\]
+
+第一步的背景只是点态代数曲率模型，不需要来自另一个真实联络，也没有对该模型求导。第二步先交换
+Hessian
+的两个槽位，再积分分部，避免引入没有控制的曲率导数。第三步保留同一实际解的
+Chern--Weil 符号，用类平方预算控制另一手性能量。第四步以实际场构造的
+Weyl 模型做弱 Bianchi
+自测试，并在旋量低幅度区域单独使用方程，而不是在零点除以幅度。{[}S0，卷01
+Source 1，§4{]}
+
+这使原来的独立背景体积项 \(CV\) 消失，估计能够探测 \(Ah\) 而不只是 \(V\)
+尺度。I41 再通过负 Yamabe 代表及精确共形能量恒等式，把归一化近 Einstein
+控制转成式(1)--(2)的全尺度结论。
+
+\textbf{可迁移的是这一整条闭合机制，而不是``SW''或``BPS''两个标签。}在新体系中，必须重新寻找实际场供给、背景作用消去、拓扑预算和微分自测试；其中任何一项都不能只凭类比补上。
+
+\section{6.
+线性阶的意义：从零点排除到近似代价规律}\label{ux7ebfux6027ux9636ux7684ux610fux4e49ux4eceux96f6ux70b9ux6392ux9664ux5230ux8fd1ux4f3cux4ee3ux4ef7ux89c4ux5f8b}
+
+对已经实现的平衡族 \(M_j\)，原稿有
+
+\[
+U_j=1+h_j+O(h_j^2),\qquad h_j\to0,
+\]
+
+以及
+
+\[
+\boxed{c_1h_j\le\alpha_j:=\inf_g\mathcal E(g)
+\le\frac{4h_j}{1+h_j}.}
+\tag{7}
+\]
+
+因此 \(\alpha_j\asymp h_j\)：正确阶数已经闭合。不能将它写成
+\(\alpha_j\sim4h_j\)，也不能假定 \(\alpha_j/h_j\)
+已有极限。最佳首项与近极小几何仍是重要目标。{[}S0，导读§4.1；卷01{]}
+
+对具体手术族，\(h=(k+4\ell)/A\)
+将吹起数、添柄数与背景拓扑预算联系起来。于是式(7)提示一种值得发展的研究图像：在相对拓扑改变很小的极限，最低几何缺陷仍有非零的一阶代价。这里
+\(h\) 是指定族的参数，不是任意四流形上已经存在的通用``缺陷密度''。
+
+更有内容的下一问是：这个一阶代价由局部核心、颈部、单值变换还是弥散曲率承担？不同几何机制能否实现同一阶数却改变最佳系数？若能回答，结果的意义会超过一次常数优化。
+
+\section{7.
+完整核心与边界实现：统一图像中已有的两端}\label{ux5b8cux6574ux6838ux5fc3ux4e0eux8fb9ux754cux5b9eux73b0ux7edfux4e00ux56feux50cfux4e2dux5df2ux6709ux7684ux4e24ux7aef}
+
+I47 对奇数 \(n\ge3\)、指定取向的循环商
+\(1/n(1,-2)\)，以及具有相容向外平坦锥领口的完整光滑填充，给出
+
+\[
+\boxed{
+\inf\int_\Omega
+\left(|\operatorname{Ric}^{\circ}|^2+4|W^+|^2+\frac{s^2}{12}\right)dV
+=4\pi^2\frac{n-1}{n}.
+}
+\tag{8}
+\]
+
+这里的贡献是完整填充的锐利代价；上界复用 Calderbank--Singer
+的经典标量平坦 Kähler ALE 构造，而不是重新构造了该经典度量。{[}S0，卷03
+Source 1，§1；R5{]}
+
+式(8)说明局部方程可解不意味着全局填充免费。但它尚未与式(7)自动组成``微观核心求和等于宏观代价''的定理。原稿的锐利模型甚至允许
+Euler 数和 \(W^-\)
+能量无界增长，而式(8)保持有界。因此，单个核心的正代价不能按内部拓扑复杂度盲目累加；多尺度内部边界的
+transgression 项还会相互抵消。
+
+另一方面，在 \(\chi=3\tau>0\) 的复双曲数值边界，原稿的精确恒等式为
+
+\[
+\boxed{
+D_2+72\pi^2(p-T_+)+54\int|W^-|^2
+=18P+144\pi^2(\chi-3\tau).
+}
+\tag{9}
+\]
+
+在 \(p\ge T_+\) 的输入下，式(9)将同一 Ricci 缺陷接到多个非负缺陷上。I26
+在其实际输入与有界直径等条件下进一步得到同一光滑类型上的复双曲实现；I25
+在另一数值面得到双圆盘相关实现。这些是各自范围内的真实存在性结果，不只是形式结构。{[}S3，§§4、7{]}
+
+由此可以形成一个\textbf{尚待进一步完成的统一问题}：不相容区域存在正代价；相容边界可能强迫标准几何；不紧方向则由缺陷传递和全局填充决定。称它为``可实现区域与边界理论''比直接宣称完整相图更准确。物理上的相变还需要作用量、控制参数和态的变化，不能只由几何边界命名产生。
+
+\section{8.
+为什么值得追求更高层次的成果}\label{ux4e3aux4ec0ux4e48ux503cux5f97ux8ffdux6c42ux66f4ux9ad8ux5c42ux6b21ux7684ux6210ux679c}
+
+当前主线的价值来自三个可检查的增量。
+
+首先，研究对象从精确零点扩展到所有允许退化的近似输入。其次，证明使用实际场的微分相容性，而不只是重新排列拓扑数字。再次，真实流形族与匹配阶数，使所得下界不是没有实例的抽象限制。
+
+这些增量已经构成集中发展主线的理由。但更大的理论价值还取决于能否完成至少一个决定性连接：确定最佳首项及其几何；删除一个控制真实退化的关键假设；判定固定
+\(E_D\) 的全部 Einstein
+候选；在自然边界取得新的精确实现；或在真实物理系统中产生此前没有的判定。
+
+研究应以有资格改变一个领域基本认识的结果为目标。所谓顶级研究品味，体现为发现真正共同的机制、抓住决定性连接，并愿意用真实反例修正预设的统一图像，而不是预先要求所有分支服从同一种美观结论。
+
+\section{9.
+怎样理解``包含前人''}\label{ux600eux6837ux7406ux89e3ux5305ux542bux524dux4eba}
+
+需要同时区分四种关系：\textbf{作为输入使用、恢复相同结论、严格加强、在新对象上得到新结论。}它们都有价值，但不是同一件事。{[}S1，§五；S3，§3{]}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+经典来源
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+当前可建立的关系
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+不应合并的内容
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+LeBrun 的曲率估计与 Einstein 障碍 &
+在正预算及实际输入范围恢复相关障碍，并加强为定量缺陷 &
+原文同时有锐利能量、等号几何和最小体积结果，并非只有``0/1'' \\
+Kotschick 的 special monopole classes & 在对应类平方范围加入新的强制控制
+& 类概念与原有拓扑机制本身仍是经典输入 \\
+Ishida--LeBrun 的 BF 连通和应用 &
+将其实际类供给送入新分析，产生新定量窗口 & 这不重新证明 Bauer--Furuta
+非消失理论 \\
+Pin 型单极子应用 & 在其覆盖与权重范围中定量加强 &
+不能把不变权重可解性扩大成所有权重可解性 \\
+LeBrun 的凸包与双手性预算 & 与新可行域逐项比较 &
+已知类集合的最优预算，不等于全部未知实际类的预算 \\
+Hitchin--Thorpe 与经典实现理论 & 共同使用曲率恒等式，在特殊输入下加强 &
+有额外规范输入的结论不涵盖所有四流形上的原定理 \\
+\end{longtable}
+
+``前人的四大成果''必须落到具体论文、定理和量词，不以期刊标签代替继承证明。较强而准确的目标是：\textbf{让若干经典结论在共同机制下得到解释，并明确展示新理论多决定了哪一类几何。}{[}R1--R4，R13{]}
+
+最新 BF 构造中，明确供给的符号类集合 \(\mathcal C_0\)
+的两类经典优化预算均为
+\(A\)。新窗口超出了这一整组已知类的经典优化，不仅超出一个粗略单类预算。但完整单极子集合可能更大：若完整预算为
+\(A(1+\delta)\)，\(O(Ah)\)
+的提升可能改变经典排除范围。因此``新的强制定理''和``某个流形首次被证明没有
+Einstein 度量''要分别查新。{[}S1，§五{]}
+
+\section{10.
+从数学到物理：迁移什么，怎样才算成功}\label{ux4eceux6570ux5b66ux5230ux7269ux7406ux8fc1ux79fbux4ec0ux4e48ux600eux6837ux624dux7b97ux6210ux529f}
+
+值得迁移的母机制是
+
+\[
+\text{拓扑／通量信息}
+\longrightarrow\text{实际场及校准结构}
+\longrightarrow\text{微分相容性}
+\longrightarrow\text{不可消除的方程残差或作用量代价}.
+\tag{10}
+\]
+
+其物理价值不是由``都是四维''保证的。四维的具体优势在于：二形式具有实手性分解，曲率平方积分处于临界尺度，特征数由曲率积分表达，Levi-Civita
+曲率和规范场可在同一手性语言下比较。{[}R6--R7{]}
+
+第三份文件将物理迁移分成三个层次：
+
+\textbf{直接接口。}
+将已有定理变成确定的欧氏曲率平方作用量下界、Einstein--matter
+无迹应力下界，或受 Levi-Civita
+约束的手性联络缺陷。这些可以现在推导，但仍要判断物理新颖性。
+
+\textbf{实质推广。}
+在有固定耦合、通量与边界条件的物理系统中，确定最小反作用、锐利作用量代价、存在与非存在范围、饱和态或退化机制。这需要新的解、全局判定或变分分析。
+
+\textbf{长期高风险推广。}
+将校准消去机制扩展到真实超引力的超对称变分、完整紧化方程或含高阶修正的重整化流。必须完成模型专属证明，不能把欧氏几何残差直接称为真空能、质量隙或超对称破缺能。
+
+这一划分不是压低目标，而是让每一次跨领域跃迁都得到新的、可发表的科学内容。
+
+\section{11.
+研究与论文的组织方式}\label{ux7814ux7a76ux4e0eux8bbaux6587ux7684ux7ec4ux7ec7ux65b9ux5f0f}
+
+保持一个科学中心，允许多篇论文自然生长，不要求所有结果挤入同一篇。
+
+数学母论文首先完整呈现 I40/I41 的新分析、真实 BF
+应用、线性阶匹配和必要反例。继续研究的主要价值在于零端、最优首项、全局实现，而不是因为可以成文就停止。
+
+第一篇物理论文应只回答一个明确问题，例如：\textbf{在指定四维规范---引力体系中，拓扑怎样强迫不可消除的反作用，最低代价能否达到？}第二篇只有在新的机制确实出现后，才讨论核心作用量、有效缺陷理论或超引力推广。不能把同一个不等式换三种名称拆成三篇。
+
+PRL/PRX
+的公开标准强调重要物理问题、具有显著影响的新方法或关键的新联系。{[}R14--R15{]}
+对 Nature、Science、Nature
+Physics，研究目标应是能被相关科学共同体理解为新的基本事实，而不是从``数学很强''直接推断适刊。这里没有必要预判录用概率；需要逐项建立足以支持目标期刊的科学内容。
+
+\section{12.
+本轮讨论形成的最终立场}\label{ux672cux8f6eux8ba8ux8bbaux5f62ux6210ux7684ux6700ux7ec8ux7acbux573a}
+
+第一主线已经有值得集中发展的数学核心：\textbf{实际规范场使精确不相容性在特定弱误差与退化范畴中保持定量效力，并在真实平衡族上决定
+Einstein 缺陷的线性阶。}
+
+下一层不是把这个核心命名为更大的理论，而是补上从局部到全局、从最优阶到最优值、从几何残差到真实物理量的连接。最有希望形成强统一性的对象，是带实际场与拓扑标记的近
+Einstein
+几何及其缺陷传递；有效缺陷泛函是值得争取的结果，而不是当前已经拥有的终点。
+
+\textbf{保持母问题，允许方法变化；以完整定理、真实构造和物理后果判断进展。}数学深化见第二份文件，物理方程与迁移任务见第三份文件，文献和原稿定位见第四份来源表。
+\end{document}

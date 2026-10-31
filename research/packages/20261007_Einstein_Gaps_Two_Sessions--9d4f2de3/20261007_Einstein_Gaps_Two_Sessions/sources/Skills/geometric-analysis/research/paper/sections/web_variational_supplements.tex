@@ -1,0 +1,842 @@
+\section{Threshold variations and the scalar Hessian}
+\label{sec:web-threshold-variation}
+
+This supplement retains the distinct information obtained by selecting
+near-minimizers of the relative defect, rather than of $P$ itself.
+All asymptotic statements concern the balanced family
+\eqref{webvar:family}, and all selected representatives have $s=-4$.
+Set
+\begin{equation}\label{webvar:threshold-functional}
+ \gamma_j=\frac{\alpha_j}{4(4-\alpha_j)}=O(h_j),\qquad
+ F_j=R-\frac{S}{4-\alpha_j}=P-\gamma_jS.
+\end{equation}
+The coefficient $\gamma_j$ is unrelated to the blow-up number $k_j$.
+For large $j$, $\alpha_j<1$ and $\inf\J=\alpha_j$, so
+$F_j=R(\J-\alpha_j)/(4-\alpha_j)\ge0$ on every metric.
+On scalar-$-4$ representatives, $\J=\E$.
+
+\subsection{Fourth-order Taylor selection}
+
+\begin{proposition}[Threshold selection]\label{webvar:threshold-selection}
+For every $\varepsilon_j\downarrow0$, one can choose $s_{g_j}=-4$
+with $\E(g_j)-\alpha_j\le\varepsilon_j^2h_j^2$ such that
+\begin{equation}\label{webvar:threshold-budgets}
+ R=8\pi^2A_j+O(Q_j),\quad V=2\pi^2A_j+O(Q_j),\quad P=O(Q_j),
+\end{equation}
+and, uniformly for $H\in\mathcal T(g_j,A_j)$,
+\begin{equation}\label{webvar:threshold-variations}
+ |DF_j[H]|\le C\varepsilon_jQ_j,\qquad
+ D^2F_j[H,H]\ge-C\varepsilon_jQ_j.
+\end{equation}
+This sequence has $P(g_j)-p_j=O(A_jh_j^2)$; it need not have the
+arbitrarily small $P$-error in Proposition~\ref{webvar:selection}.
+\end{proposition}
+\begin{proof}
+The definition of $\alpha_j$ and the exact conformal comparison allow
+the prescribed defect accuracy on scalar-$-4$ representatives.
+The two-sided curvature budget gives
+\eqref{webvar:threshold-budgets}.  In particular
+\[
+ 0\le F_j(g_j)
+ =\frac{R(g_j)}{4-\alpha_j}(\E(g_j)-\alpha_j)
+ \le C A_j\varepsilon_j^2h_j^2.
+\]
+The connection-difference calculation in
+Lemma~\ref{webvar:variation-remainder} applies through fourth order:
+differentiating in the affine metric parameter adds inverse metrics
+and $H$, but no spatial derivatives beyond $\nabla^2H$.
+For either $P$ or $S$, the second and fourth derivatives are bounded
+by
+\[
+ C\int(|\Ric_{g_j}|^2+|\nabla^2H|^2+|\nabla H|^4)\le C A_j.
+\]
+The Ricci difference formula suffices here; no derivative of curvature
+is required.  Since $\gamma_j$ is bounded, the same estimate holds
+for $F_j(g_j+tH)$ on $|t|\le1/4$.
+
+Let $f(t)=F_j(g_j+tH)$ and $d_j=C A_j\varepsilon_j^2h_j^2$.
+Nonnegativity of $f(\pm t)$ and $f(0)\le d_j$ give
+$|f'(0)|\le d_j/t+C A_jt$.  Take $t=\varepsilon_jh_j$.
+The symmetric fourth-order expansion gives
+$f''(0)\ge-2d_j/t^2-C A_jt^2$; take
+$t=\sqrt{\varepsilon_jh_j}$.  These prove
+\eqref{webvar:threshold-variations}.  Finally, on these representatives,
+$\E=4P/(8\pi^2A_j)+O(h_j^2)$.
+Comparison with \eqref{webvar:reduction} gives
+$P(g_j)-p_j=O(A_jh_j^2)$.
+\end{proof}
+
+Write $Z=\Ric+g=\Ric^\circ$.  Since $DS[H]=8\int\langle Z,H\rangle$,
+\begin{equation}\label{webvar:threshold-first-correction}
+ |DP[H]|\le C\varepsilon_jQ_j+
+       8\gamma_j\sqrt P\,\|H\|_2
+       \le C(\varepsilon_j+\sqrt{h_j})Q_j=o(Q_j).
+\end{equation}
+Here $\|H\|_2\le\sqrt V$.  At second order the exact relation is
+\begin{equation}\label{webvar:threshold-second-correction}
+ D^2P[H,H]=D^2F_j[H,H]+\gamma_jD^2S[H,H].
+\end{equation}
+The general test budget only gives $|D^2S|=O(A_j)$, so this
+correction can be $O(Q_j)$.  It cannot be discarded at first order
+in the surgery cost.
+
+\subsection{An exact identity without a TT projection}
+
+Use the positive rough Laplacian $L=\nabla^*\nabla$ and the conventions
+\[
+ \Rm(H,K)=R_{ikjl}H^{ij}K^{kl},\qquad
+ C(H)_{ijk}=\nabla_kH_{ij}-\nabla_jH_{ik}.
+\]
+The norm of $C(H)$ includes all ordered indices.  For trace-free $H$ set
+$b_i=\nabla^jH_{ij}$, $\phi=\langle Z,H\rangle$, and
+$\psi=\nabla^ib_i-\phi=Ds[H]$.  Also write
+$Z:H^2=Z_{ij}H^i{}_kH^{kj}$.
+
+\begin{proposition}[Trace-free scalar Hessian]
+\label{webvar:scalar-hessian}
+On any smooth closed four-manifold with $s=-4$, every smooth
+trace-free symmetric $H$ satisfies
+\begin{equation}\label{webvar:scalar-hessian-formula}
+ \begin{split}
+ D^2S[H,H]={}&2\|\psi\|_2^2+2\|C(H)\|_2^2-4\|b\|_2^2
+              +\frac83\|H\|_2^2\\
+ &-4\int W(H,H)-8\int Z:H^2 .
+ \end{split}
+\end{equation}
+The derivative is along $g+tH$ and does not assume criticality.
+For a TT tensor, $b=0$ and $\psi=-\phi$.
+\end{proposition}
+\begin{proof}
+Put $I(g)=\int s_g$ and $\mathcal H(g)=I(g)+2V(g)$.
+For every metric,
+$S=\int(s+4)^2-8\mathcal H$.  At $s=-4$ this gives
+\[
+ D^2S[H,H]=2\|Ds[H]\|_2^2-8D^2\mathcal H[H,H].
+\]
+The covariant tensor gradient of $\mathcal H$ is
+$-\Ric+(s/2+1)g=-Z$ at the base metric.  Differentiate this gradient,
+the inverse metrics in its pairing with $H$, and the volume.
+The last contribution vanishes because $\tr H=0$, and the result is
+\[
+ D^2\mathcal H[H,H]
+ =-\int\langle D\Ric[H],H\rangle-\|H\|_2^2+2\int Z:H^2.
+\]
+For trace-free $H$, the Ricci linearization is
+\[
+ D\Ric[H]=\tfrac12\{LH+\Ric\circ H+H\circ\Ric-2\Rm(H)\}
+                 +\operatorname{sym}\nabla b .
+\]
+Its pairing gives
+\begin{equation}\label{webvar:hilbert-hessian}
+ D^2\mathcal H[H,H]
+ =-\tfrac12\|\nabla H\|_2^2+\int\Rm(H,H)+\|b\|_2^2+\int Z:H^2.
+\end{equation}
+One integration by parts and commutation of covariant derivatives give
+\begin{equation}\label{webvar:cotton-integration}
+ \tfrac12\|C(H)\|_2^2
+ =\|\nabla H\|_2^2-\|b\|_2^2-\int\Rm(H,H)+\int\Ric:H^2.
+\end{equation}
+For example, expand the square defining $C(H)$; in its cross term,
+move $\nabla_k$ to the other factor, commute it past $\nabla_j$,
+and use $\nabla^kH_{ik}=b_i$.  The divergence term gives $\|b\|^2$,
+and the two curvature actions give the last two terms.
+The four-dimensional curvature decomposition on trace-free tensors is
+\begin{equation}\label{webvar:curvature-on-tracefree}
+ \Rm(H,H)=W(H,H)+\tfrac13|H|^2-Z:H^2.
+\end{equation}
+Substituting \eqref{webvar:cotton-integration} and
+\eqref{webvar:curvature-on-tracefree} into
+\eqref{webvar:hilbert-hessian} yields
+\[
+ D^2\mathcal H
+ =-\tfrac14\|C(H)\|_2^2+\tfrac12\|b\|_2^2
+      +\tfrac12\int W(H,H)-\tfrac13\|H\|_2^2+\int Z:H^2.
+\]
+Multiplication by $-8$ proves the formula.
+\end{proof}
+
+Several backgrounds check the coefficients independently.  For sectional
+curvature $-1/3$, $Z=W=0$, and the TT formula becomes
+$D^2S=2\|C(H)\|_2^2+(8/3)\|H\|_2^2$.
+On a product of curvature-$-1$ surfaces, a Teichm\"uller tensor on
+one factor is TT and Codazzi, and $W(H,H)=2|H|^2/3$, giving zero.
+For the parallel TT direction $H=g_1-g_2$ on the same product,
+$|H|^2=4$ and $W(H,H)=-16/3$; the formula gives $32V$.
+Directly,
+$s(g+tH)=-4/(1-t^2)$, $d\mu_{g+tH}=(1-t^2)d\mu_g$, and
+$S(g+tH)=16V/(1-t^2)$, whose second derivative is also $32V$.
+
+For a non-Einstein product with factor curvatures
+$\kappa_1+\kappa_2=-2$, put $a=\kappa_1+1$ and take a
+Teichm\"uller direction $H$ on the first factor.  It is Codazzi,
+$Z:H^2=a|H|^2$, and $W(H,H)=2|H|^2/3$.
+Thus $D^2S[H,H]=-8a\|H\|_2^2$.
+Along the nonlinear Teichm\"uller path, $S$ is constant and the
+fixed-area constraint gives
+$\int\tr(g_1'')=\int|H|^2$.
+Since $DS[g_1'']=8a\int\tr(g_1'')$, differentiation of
+$S(g_t)=\mathrm{constant}$ confirms the same affine Hessian.
+This check retains the inverse-metric derivative responsible for
+the coefficient $-8$.
+
+\subsection{The actual Weyl budget and threshold stability}
+
+Let $w_3^\pm$ be the largest eigenvalues of the two Weyl operators and set
+$\xi_W=(w_3^++w_3^--1/3)_+$.  On the late balanced family
+$U_j=3T_-/A_j$.  For the actual class with $p\ge A_j$, put
+\begin{equation}\label{webvar:weyl-budget}
+ \begin{split}
+ \mathcal B_j&=D_2/18+3W_-\\
+ &=P+2\pi^2A_j\{U_j-1-h_j-2(p/A_j-1)\}
+ \le P+O(A_jh_j^2)=O(Q_j).
+ \end{split}
+\end{equation}
+The equality follows by substituting the two chiral identities
+and $D_2=24V+18W_+-72\pi^2p$.
+The model $W_0$ in \eqref{webvar:single-decomposition} has largest
+eigenvalue $\rho^2/12\le1/3$.
+For a trace-free three-dimensional symmetric operator, the largest
+eigenvalue is at most $\sqrt{2/3}$ times its Hilbert--Schmidt norm.
+Consequently
+\[
+ \xi_W\le\sqrt{2/3}(|W^+-W_0|+|W^-|),\qquad
+ \int\xi_W^2\le\frac89(D_2/18+3W_-)=\frac89\mathcal B_j.
+\]
+Here $(a+b)^2\le(4/3)(a^2+3b^2)$ and the exact field decomposition
+control the last step.  Under the standard algebraic identification
+$S_0^2T^*\cong\Lambda^+\otimes\Lambda^-$,
+\[
+ W(H,H)\le(w_3^++w_3^-)|H|^2\le(1/3+\xi_W)|H|^2.
+\]
+For $\|H\|_\infty\le1$, H\"older's inequality therefore gives
+\[
+ \int(4\xi_W+8|Z|)|H|^2
+ \le(4\|\xi_W\|_2+8\|Z\|_2)\|H\|_4^2
+ \le C\sqrt{A_jQ_j}.
+\]
+Combine this with \eqref{webvar:scalar-hessian-formula} and
+\eqref{webvar:threshold-second-correction} to obtain
+\begin{equation}\label{webvar:tracefree-threshold-stability}
+ \begin{split}
+ D^2P[H,H]\ge{}&
+ \gamma_j\{2\|Ds[H]\|_2^2+2\|C(H)\|_2^2
+                  +\tfrac43\|H\|_2^2-4\|\operatorname{div}H\|_2^2\}\\
+ &-C(\varepsilon_j+\sqrt{h_j})Q_j .
+ \end{split}
+\end{equation}
+This holds uniformly for all trace-free $H\in\mathcal T(g_j,A_j)$.
+For TT tests the divergence penalty vanishes and $Ds[H]=-\langle Z,H\rangle$.
+More generally $\|\operatorname{div}H\|_2^2=o(A_j)$ makes its penalty
+$o(Q_j)$, without solving a TT projection problem.
+
+Along a subsequence with $\alpha_j/h_j\to c\in(0,4]$ one has
+$\gamma_j/h_j\to c/16$.  Thus for the TT tests,
+\begin{equation}\label{webvar:threshold-spectral-constraint}
+ \frac{D^2P[H,H]}{Q_j}\ge
+ \left(\frac c8+o(1)\right)
+   \frac{\|C(H)\|_2^2+\|\langle Z,H\rangle\|_2^2}{A_j}
+ +\left(\frac c{12}+o(1)\right)\frac{\|H\|_2^2}{A_j}-o(1).
+\end{equation}
+The displayed norm ratios are bounded by the amplitude, critical
+budget, and $P=O(Q_j)$.  This necessary positive second-order cost
+does not imply $c\ge4$: a smaller $c$ demands a smaller cost.
+No admissible TT direction contradicting this inequality has been
+constructed here.  Although $Z$ is TT at constant scalar curvature,
+its amplitude and critical derivative budget are not controlled,
+so the substitution $H=Z$ is not licensed by this selection.
+
+\section{Adaptive variations and positive curvature compensation}
+\label{sec:web-curvature-compensation}
+
+The following tests are bounded without truncating a concentrated
+curvature source before inversion.  They are admissible nonconformal
+variations, but admissibility alone does not determine their first
+or second variation.
+
+\subsection{An adaptive rough-Laplacian resolvent}
+
+\begin{lemma}[A bounded adaptive test]\label{webvar:adaptive-test}
+Let $g$ be a smooth metric on a closed four-manifold with
+$\int|\Rm|^2=O(A)$.  Let $B$ be a smooth symmetric trace-free
+two-tensor, and let $\Upsilon$ be a smooth tensor satisfying
+$|B|\le c_*|\Upsilon|$ and $\int|\Upsilon|^2=O(Q)$.
+Set
+\begin{equation}\label{webvar:adaptive-equation}
+ v=\sqrt{1+|\Upsilon|^2},\qquad (L+v)H=B,\qquad L=\nabla^*\nabla.
+\end{equation}
+There is a unique smooth solution in the symmetric trace-free bundle,
+and it satisfies
+\begin{equation}\label{webvar:adaptive-graph}
+ \|H\|_\infty\le c_*,\qquad
+ \int(|H|^2+|\nabla H|^2+|LH|^2)=O(Q),
+\end{equation}
+\begin{equation}\label{webvar:adaptive-critical-general}
+ \int(|\nabla^2H|^2+|\nabla H|^4)=O(Q+A).
+\end{equation}
+If $Q=O(A)$ the last bound is $O(A)$.  Constants depend on the
+tensor type and stated budget constants, not on geometric compactness
+or derivatives of $\Upsilon$.  On the actual balanced family,
+\begin{equation}\label{webvar:adaptive-critical-sharp}
+ \int(|\nabla^2H|^2+|\nabla H|^4)=O(Q).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The positive potential $v\ge1$ makes $L+v$ invertible; the induced
+connection preserves symmetry and trace.  Kato's inequality and
+the maximum principle, or their regularized form at zeros, give
+$(\Delta+v)|H|\le|B|\le c_*v$, so $\|H\|_\infty\le c_*$.
+Pairing \eqref{webvar:adaptive-equation} with $H$ gives
+\[
+ \int(|\nabla H|^2+v|H|^2)=\int\langle B,H\rangle .
+\]
+Hence $\|H\|_2\le\|B\|_2=O(\sqrt Q)$ and
+$\|\nabla H\|_2^2=O(Q)$.
+Moreover
+$\int v^2|H|^2=\int|H|^2+\int|\Upsilon|^2|H|^2=O(Q)$,
+so $LH=B-vH$ proves the remaining graph-norm bound.
+
+The required Hessian estimate can be obtained without differentiating
+$v$.  Integration of a divergence gives
+\begin{equation}\label{webvar:bounded-section-interpolation}
+ \int|\nabla H|^4\le C\|H\|_\infty^2\int|\nabla^2H|^2.
+\end{equation}
+Indeed, integrate one derivative in
+$\nabla H*\nabla H*\nabla H*\nabla H$ onto the other factors.
+The result is bounded by
+$C\|H\|_\infty\int|\nabla^2H||\nabla H|^2$,
+and Cauchy--Schwarz proves the assertion.
+Commuting derivatives in the integrated Hessian square and moving
+curvature derivatives off the curvature yields terms of the forms
+$\Rm*H*\nabla^2H$ and $\Rm*\nabla H*\nabla H$, besides $\|LH\|_2^2$.
+H\"older, \eqref{webvar:bounded-section-interpolation}, and Young give
+\[
+ \int|\nabla^2H|^2
+ \le C\left(\int|LH|^2+\|H\|_\infty^2\int|\Rm|^2\right).
+\]
+Together with the graph bound this proves
+\eqref{webvar:adaptive-critical-general}.
+
+For the actual balanced family, \eqref{webvar:weyl-budget} gives
+$\|\xi_W\|_2^2=O(Q)$.  A trace-free three-dimensional Weyl block has
+nonnegative largest eigenvalue, and all its eigenvalues have absolute
+value at most twice that largest eigenvalue.  Thus, at $s=-4$,
+\begin{equation}\label{webvar:actual-curvature-envelope}
+ |\Rm|\le C(1+e),\qquad e=\xi_W+|Z|,\qquad \|e\|_2^2=O(Q).
+\end{equation}
+In the Hessian commutation estimate, the resulting upper bound is
+\[
+ \|LH\|_2^2+C\int(1+e)|\nabla H|^2
+ +C\int(1+e)|H||\nabla^2H|+C\int(1+e)^2|H|^2.
+\]
+Set $X=\|\nabla^2H\|_2^2$.
+The bounded-coefficient terms use \eqref{webvar:adaptive-graph}.
+The remaining terms are at most
+$C Q+C\sqrt Q\,\sqrt X$, by $\|H\|_\infty\le c_*$,
+$\|e\|_2=O(\sqrt Q)$, and
+$\|\nabla H\|_4^2\le C\|H\|_\infty\sqrt X$.
+Young's inequality absorbs $\sqrt X$, yielding $X=O(Q)$.
+Equation~\eqref{webvar:bounded-section-interpolation} proves
+\eqref{webvar:adaptive-critical-sharp}.  No derivative of $e$,
+$\Upsilon$, or the Weyl eigenvalues has been used.
+\end{proof}
+
+After a fixed rescaling, these tensors belong to
+$\mathcal T(g_j,A_j)$.  They also satisfy
+$\|\operatorname{div}H\|_2^2=O(Q_j)=o(A_j)$.
+The exact scalar-Hessian formula
+\eqref{webvar:scalar-hessian-formula} now gives
+\begin{equation}\label{webvar:adaptive-scalar-correction}
+ |D^2S[H,H]|=O(Q_j),\qquad \gamma_jD^2S[H,H]=o(Q_j).
+\end{equation}
+To see this directly, $Ds[H]=\operatorname{div}\operatorname{div}H-
+\langle Z,H\rangle$ has squared $L^2$ norm $O(Q_j)$; the Cotton,
+divergence, and tensor norms have the same bound.  The remaining
+curvature terms use \eqref{webvar:actual-curvature-envelope} and
+$\|H\|_4^2\le\|H\|_\infty\|H\|_2$.
+Thus the second-order threshold correction is lower order for these
+localized tests.  This differs from a bulk test with mass and
+derivative budget of order $A_j$, for which the correction can be
+of order $Q_j$.
+
+Two concrete sources will be useful.  The direct Ricci test is
+\begin{equation}\label{webvar:direct-resolvent}
+ (L+\sqrt{1+|Z|^2})H_Z=Z,\qquad \|H_Z\|_\infty\le1,
+\end{equation}
+and it has the positive pairing
+\begin{equation}\label{webvar:direct-pairing}
+ \int\langle Z,H_Z\rangle
+  =\int(|\nabla H_Z|^2+\sqrt{1+|Z|^2}|H_Z|^2)\ge0.
+\end{equation}
+For the same ordinary solution as in
+\eqref{webvar:ordinary-fields}, put
+$\omega=iF_{\mathcal A}^+$ and $\eta=iF_{\mathcal A}^-$ and define
+\begin{equation}\label{webvar:mixed-resolvent}
+ B_{ij}=\omega_i{}^k\eta_{jk}+\eta_i{}^k\omega_{jk},\qquad
+ (L+\sqrt{1+|\eta|^2})H_{\mathcal A}=B.
+\end{equation}
+Opposite chirality makes $B$ symmetric and trace-free.
+The spinor maximum principle gives $|\omega|\le\sqrt2$, so
+$|B|\le c_*|\eta|$.  Also
+\[
+ \int|\eta|^2=\int|\omega|^2-4\pi^2a^2
+ \le2V-4\pi^2(A-k)=O(Q).
+\]
+Lemma~\ref{webvar:adaptive-test} therefore applies without truncating
+$B$ or differentiating $\eta$.
+
+The potential retains the source scale.  In a Euclidean local model,
+write $B_\ell(x)=\ell^{-2}\overline B(x/\ell)$ and
+$\Upsilon_\ell(x)=\ell^{-2}\overline\Upsilon(x/\ell)$.
+With $x=\ell y$, the equation becomes
+\[
+ \left(-\sum_a\partial_{y_a}^2+
+       \sqrt{\ell^4+|\overline\Upsilon|^2}\right)\overline H_\ell
+       =\overline B.
+\]
+There is no residual factor $\ell^2$ on the source, so an order-one
+test amplitude and a scale-invariant Hessian budget are possible.
+Truncating the source to bounded amplitude before inversion at unit
+scale would leave such a factor and diminish the core test.
+This calculation is a scaling model, not a newly constructed monopole
+core.  In \eqref{webvar:mixed-resolvent}, vanishing of $\omega$ can
+still make the mixed source fail to detect a core.
+
+\subsection{A positive nonlinear identity}
+
+\begin{proposition}[Resolvent compensation]\label{webvar:resolvent-positive}
+Let $Z$ be any smooth section of a Euclidean vector bundle with a
+metric connection over a smooth closed Riemannian manifold.
+Set $v=\sqrt{1+|Z|^2}$ and $(L+v)H=Z$.
+Then
+\begin{equation}\label{webvar:positive-resolvent}
+ \mathfrak D(Z):=\int|Z|^2-\int v\langle Z,H\rangle
+ \ge\int|\nabla H|^2+\int v^{-1}|LH|^2\ge0.
+\end{equation}
+The statement is independent of dimension and curvature sign.
+\end{proposition}
+\begin{proof}
+Let $z=Z/v$ and define the fiberwise map
+$\mathcal F(u)=u/\sqrt{1-|u|^2}$ on the open unit ball.
+Compactness gives
+$m=\max_M|Z|/\sqrt{1+|Z|^2}<1$.
+From $(L+v)H=vz$ and the maximum principle, $|H|\le m<1$.
+Thus $\mathcal F(H)$ is a smooth global section; no uniform
+separation of $m$ from one across a sequence is needed.
+One has $\mathcal F(z)=Z$ and $LH=v(z-H)$.
+The fiber derivative is
+\[
+ D\mathcal F(u)[w]
+ =\frac{w}{\sqrt{1-|u|^2}}
+   +\frac{u\langle u,w\rangle}{(1-|u|^2)^{3/2}}.
+\]
+Hence $\langle D\mathcal F(u)[w],w\rangle\ge|w|^2$.
+Integration along a segment in the unit ball gives
+$\langle\mathcal F(u)-\mathcal F(w),u-w\rangle\ge|u-w|^2$.
+The exact decomposition is
+\begin{equation}\label{webvar:positive-resolvent-decomposition}
+ \begin{split}
+ \mathfrak D(Z)
+ &=\int v\langle\mathcal F(z)-\mathcal F(H),z-H\rangle
+          +\int\langle\mathcal F(H),LH\rangle\\
+ &=\int v\langle\mathcal F(z)-\mathcal F(H),z-H\rangle
+          +\int\langle D\mathcal F(H)[\nabla H],\nabla H\rangle.
+ \end{split}
+\end{equation}
+Metric compatibility gives
+$\nabla\mathcal F(H)=D\mathcal F(H)[\nabla H]$.
+Applying both monotonicity inequalities and using $LH=v(z-H)$
+proves \eqref{webvar:positive-resolvent}.
+\end{proof}
+
+The same proof with
+$v_\lambda=\sqrt{\lambda^2+|Z|^2}$, $\lambda>0$,
+$(L+v_\lambda)H_\lambda=Z$, and
+$\mathcal F_\lambda(u)=\lambda u/\sqrt{1-|u|^2}$ gives
+\begin{equation}\label{webvar:positive-resolvent-lambda}
+ \int|Z|^2-\int v_\lambda\langle Z,H_\lambda\rangle
+ \ge\lambda\int|\nabla H_\lambda|^2
+       +\lambda\int v_\lambda^{-1}|LH_\lambda|^2.
+\end{equation}
+The positivity concerns the difference of the two integrals in
+\eqref{webvar:positive-resolvent}; it does not assert positivity of
+the weighted pairing alone.
+
+\subsection{First variations and the remaining curvature term}
+
+At $s=-4$, the classical first-variation formulas are
+\begin{equation}\label{webvar:curvature-gradients}
+ \operatorname{grad}P=LZ-2\Rm(Z)+\tfrac12|Z|^2g,\qquad
+ \operatorname{grad}S=8Z.
+\end{equation}
+They follow from the Ricci-square and scalar-square formulas in
+\cite[Section~2.1, equations (2.5) and (2.9)]{GurskyViaclovsky},
+with the positive rough-Laplacian convention and $P=R-S/4$.
+For fixed $\gamma$ and any trace-free $H$,
+\begin{equation}\label{webvar:resolvent-first-general}
+ D(P-\gamma S)[H]
+ =\int\langle Z,LH-2\Rm(H)-8\gamma H\rangle.
+\end{equation}
+Self-adjointness of the curvature action and integration by parts
+justify the expression even when $\operatorname{div}H\ne0$.
+For $H_Z$ from \eqref{webvar:direct-resolvent}, it becomes
+\begin{equation}\label{webvar:resolvent-first-direct}
+ D(P-\gamma S)[H_Z]
+ =P-\int(v_Z+8\gamma)\langle Z,H_Z\rangle
+                  -2\int\Rm(Z,H_Z),\quad v_Z=\sqrt{1+|Z|^2}.
+\end{equation}
+For \eqref{webvar:mixed-resolvent} it becomes
+\begin{equation}\label{webvar:resolvent-first-mixed}
+ D(P-\gamma S)[H_{\mathcal A}]
+ =\int\langle Z,B\rangle-\int(v_{\mathcal A}+8\gamma)
+       \langle Z,H_{\mathcal A}\rangle-2\int\Rm(Z,H_{\mathcal A}).
+\end{equation}
+Every tensor in the latter equation belongs to the same metric and
+the same actual monopole solution.
+
+For the $P$-selection in Proposition~\ref{webvar:selection},
+\eqref{webvar:resolvent-first-direct} and
+\eqref{webvar:positive-resolvent} give
+\begin{equation}\label{webvar:forced-curvature-compensation}
+ 2\int\Rm(Z,H_Z)
+ =\mathfrak D(Z)+o(Q)
+ \ge\int|\nabla H_Z|^2+\int v_Z^{-1}|LH_Z|^2-o(Q).
+\end{equation}
+For the threshold selection the same conclusion holds, because
+$\gamma=O(h)$ and $\int\langle Z,H_Z\rangle=O(Q)$.
+This uses the appropriate weak stationarity separately on each
+selection; it does not identify the two minimizing sequences.
+Equivalently,
+\[
+ P=\int v_Z\langle Z,H_Z\rangle+2\int\Rm(Z,H_Z)+o(Q).
+\]
+The graph estimate implies
+$|\int v_Z\langle Z,H_Z\rangle|
+\le\|Z\|_2\|v_ZH_Z\|_2=O(Q)$ and $\mathfrak D(Z)=O(Q)$.
+The actual curvature envelope also gives, independently of stationarity,
+\begin{equation}\label{webvar:curvature-coupling-size}
+ \int|\Rm(Z,H)|
+ \le C\|Z\|_2\|H\|_2+
+       C\|H\|_\infty\|\xi_W+|Z|\|_2\|Z\|_2=O(Q).
+\end{equation}
+This improves the $O(\sqrt{AQ})$ bound from the full curvature
+budget alone, but is not $o(Q)$.  Equation
+\eqref{webvar:forced-curvature-compensation} forces the curvature
+coupling to pay a nonnegative quantity; it contains no term
+$8\pi^2Q$ and does not prove the sharp topological cost.
+
+All these variations hold with $H$ fixed after solving its equation
+at the base metric.  Differentiating the displayed resolvent identities
+as functions of the base metric introduces $D_gH$ and $D_gv$.
+Such a derivative is not automatically the affine second variation.
+
+\subsection{The fourth-order symbol and the volume route}
+
+The correction $-\gamma S$ does not produce arbitrary high-frequency
+negative directions.  At a point choose a frequency
+$\zeta=|\zeta|e^0$ and, modulo infinitesimal diffeomorphisms, use
+$H_{0i}=0$.  Write its spatial block as
+$H_{ab}=K_{ab}+(t/3)\delta_{ab}$, $\tr K=0$.
+The principal Ricci symbols have entries
+$\sigma(D\Ric)_{00}=|\zeta|^2t/2$ and
+$\sigma(D\Ric)_{ab}=|\zeta|^2H_{ab}/2$, up to a common sign.
+Thus
+\[
+ |\sigma(D\Ric^\circ)H|^2
+ =|\zeta|^4(|K|^2/4+t^2/12),\qquad
+ |\sigma(Ds)H|^2=|\zeta|^4t^2.
+\]
+For $\gamma=\alpha/[4(4-\alpha)]$ the fourth-order symbol of the
+Hessian is consequently
+\begin{equation}\label{webvar:threshold-principal-symbol}
+ |\zeta|^4\left\{\frac12|K|^2+
+                    \frac{2(1-\alpha)}{3(4-\alpha)}t^2\right\}.
+\end{equation}
+It is positive for $\alpha<1$ and uniformly positive as $\alpha\to0$.
+On each fixed smooth background, frequencies sufficiently above its
+curvature and variation scales therefore have a dominating positive
+fourth-order term.  This does not exclude a test at the curvature
+concentration scale, or a macroscopic or low-frequency variation.
+
+There is a distinct sufficient scalar condition.  Keep separate
+$\Delta_S=S-32\pi^2A=16(V-2\pi^2A)$ and
+$\Sigma=S-32\pi^2p$, where $p\ge A$ is the actual projection square.
+The classical Ricci estimate gives
+\begin{equation}\label{webvar:scalar-slack-route}
+ P\ge8\pi^2Q+8\pi^2(p-A)-\Sigma/4.
+\end{equation}
+Indeed, subtract $S/4$ from $R\ge8\pi^2(2p-T_+)$ and use
+$T_+=A-Q$.  Thus $\Sigma=o(Q)$ suffices for coefficient four.
+The stronger condition $\Delta_S=o(Q)$, equivalently
+$V=2\pi^2A+o(Q)$, also suffices, because
+$0\le\Sigma\le\Delta_S$.
+
+The degree-one map $M\to X$ allows the Besson--Courtois--Gallot
+entropy inequality \cite{BessonCourtoisGallot1995},
+\begin{equation}\label{webvar:entropy-volume}
+ h_{\rm vol}(g)^4V(g)\ge h_{\rm vol}(g_X)^4V(g_X).
+\end{equation}
+It is a lower bound on a product.  An entropy upper bound still
+gives a volume lower bound, whereas the scalar route requires an
+upper bound close to the known minimum.  Even under the additional
+pointwise hypothesis $\Ric_g\ge-g$, Bishop comparison gives
+$h_{\rm vol}(g)^2\le3$.  In the normalization $\Ric_{g_X}=-g_X$,
+the complex-hyperbolic entropy has square $8/3$.  Hence this
+combination gives only $V(g)\ge(64/81)V(g_X)$, weaker than
+the monopole bound $V(g)\ge V(g_X)$.  The sharp Ricci-volume
+corollary in \cite{BessonCourtoisGallot1995} concerns real-hyperbolic
+targets and cannot be transferred in that form to this target.
+
+The entropy estimate of \cite[Theorem~1.4]{ChenWei} requires a
+small integral negative-Ricci error with exponent $p>n/2$ and
+diameter control.  The present four-dimensional critical $p=2$
+budget supplies neither hypothesis.  Its real-hyperbolic stability
+theorem additionally assumes a nearly minimal volume upper bound
+\cite[Theorem~1.5]{ChenWei}; that conclusion cannot manufacture
+the same bound as a premise.  These observations limit this direct
+use of entropy comparison and do not exclude a new coupled
+entropy-curvature theorem.
+
+\section{The Codazzi decomposition and its scope}
+\label{sec:web-codazzi-scope}
+
+The positive rough-resolvent identity does not transfer automatically
+to another elliptic system.  We give the exact bilinear Codazzi
+decomposition, identify its symbol, and exhibit the pointwise failure
+of the radial positivity step that such a transfer would need.
+All formulas use the conventions of
+Section~\ref{sec:web-threshold-variation}, with $s=-4$ and $Z=\Ric+g$.
+The contracted Bianchi identity gives $\operatorname{div}Z=0$.
+
+\subsection{Bilinear decomposition and principal symbol}
+
+\begin{proposition}[Codazzi first variation]
+\label{webvar:codazzi-first-variation}
+Every smooth symmetric trace-free $H$, without a divergence condition,
+satisfies
+\begin{equation}\label{webvar:codazzi-P}
+ DP[H]=\frac12\int\langle C(Z),C(H)\rangle
+             +\int\left\langle\left(\frac23\Id-W\right)Z,H\right\rangle.
+\end{equation}
+For fixed $\gamma$,
+\begin{equation}\label{webvar:codazzi-threshold}
+ D(P-\gamma S)[H]=\frac12\int\langle C(Z),C(H)\rangle
+       +\int\left\langle
+              \left(\left(\frac23-8\gamma\right)\Id-W\right)Z,H\right\rangle.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Polarize \eqref{webvar:cotton-integration}.  Since
+$\operatorname{div}Z=0$, the divergence pairing vanishes, and
+\[
+ \frac12\int\langle C(Z),C(H)\rangle
+ =\int\langle\nabla Z,\nabla H\rangle
+             -\int\Rm(Z,H)+\int\Ric:ZH.
+\]
+Here $\Ric:ZH=-\langle Z,H\rangle+\tr(Z^2H)$.
+The curvature decomposition is
+\[
+ \Rm(Z,H)=W(Z,H)+\frac13\langle Z,H\rangle-\tr(Z^2H).
+\]
+Solve the first equation for the derivative pairing and substitute
+into the trace-free test of \eqref{webvar:curvature-gradients},
+$DP[H]=\int\langle\nabla Z,\nabla H\rangle-2\int\Rm(Z,H)$.
+The cubic traces cancel, giving \eqref{webvar:codazzi-P}.
+Subtracting $\gamma DS[H]=8\gamma\int\langle Z,H\rangle$
+gives \eqref{webvar:codazzi-threshold}.
+\end{proof}
+
+For a coefficient check, take the product of surfaces with curvatures
+$-1+a$ and $-1-a$.  Then $Z=a(g_1-g_2)$ is parallel and
+$W(Z,Z)=-(4/3)|Z|^2$, so \eqref{webvar:codazzi-P} gives $DP[Z]=2P$.
+Along the affine path,
+\[
+ P(g+tZ)=\frac{4a^2(1+t)^2}{1-a^2t^2}\,V(g),
+\]
+which has the same derivative at zero.
+
+The distributional operator in \eqref{webvar:codazzi-threshold}
+on the trace-free tensor bundle is
+\[
+ K_\gamma=\tfrac12C^*C+
+          \left(\left(\tfrac23-8\gamma\right)\Id-W\right).
+\]
+For a unit covector $\zeta$, its principal quadratic form is
+\[
+ \tfrac12|\sigma_C(\zeta)H|^2=|H|^2-|H\zeta|^2.
+\]
+To estimate it, take $\zeta=e_1$ and write $H$ in blocks with
+first diagonal entry $a$, remaining first column $b$, and remaining
+$3$ by $3$ block $B$.  Trace-freeness gives $\tr B=-a$, whence
+$|B|^2\ge a^2/3$.  Therefore
+$|H\zeta|^2=a^2+|b|^2\le(3/4)|H|^2$, and
+\begin{equation}\label{webvar:codazzi-symbol}
+ \frac14|H|^2\le\tfrac12|\sigma_C(\zeta)H|^2\le|H|^2.
+\end{equation}
+Thus the system is strongly elliptic.  Its zero-order form satisfies
+\begin{equation}\label{webvar:codazzi-potential}
+ \left\langle
+    \left(\left(\tfrac23-8\gamma\right)\Id-W\right)H,H\right\rangle
+ \ge(\tfrac13-8\gamma-\xi_W)|H|^2.
+\end{equation}
+Strong ellipticity is not Kato domination or a scalar maximum principle.
+It does not supply the $L^\infty$ estimate enjoyed by
+$(L+\sqrt{1+|Z|^2})^{-1}$.
+
+\subsection{Failure of radial positivity for the Codazzi operator}
+
+The proof of Proposition~\ref{webvar:resolvent-positive} uses
+$D\mathcal F\ge\Id$ for
+$\mathcal F(U)=U/\sqrt{1-|U|^2}$, which makes
+$\langle\nabla\mathcal F(H),\nabla H\rangle$ nonnegative.
+The corresponding pointwise statement for $C$ is false.
+In Euclidean four-space, with $\zeta=e_1$, set
+\[
+ U=\frac r{\sqrt2}\operatorname{diag}(1,-1,0,0),\qquad
+ V=\operatorname{diag}(2,1,-3,0),\qquad 0<r<1.
+\]
+Prescribe the first jet $H=U$, $\partial_1H=V$, and
+$\partial_iH=0$ for $i\ne1$.  It is realized by a smooth local
+trace-free tensor remaining in the unit ball on a sufficiently small
+neighborhood.  If $f=(1-r^2)^{-1/2}$, then
+$D\mathcal F(U)V=fV+f^3\langle U,V\rangle U$.
+For the symbol pairing
+$\mathcal B(A,B)=\langle A,B\rangle-\langle A\zeta,B\zeta\rangle$,
+direct calculation gives
+\[
+ \mathcal B(V,V)=10,\qquad
+ \langle U,V\rangle=r/\sqrt2,\qquad
+ \mathcal B(U,V)=-r/\sqrt2.
+\]
+Hence
+\begin{equation}\label{webvar:codazzi-radial-counterexample}
+ \frac12\langle C(\mathcal F(H)),C(H)\rangle
+       =10f-\frac{r^2}{2}f^3<0
+       \quad\text{when }r^2>\frac{20}{21}.
+\end{equation}
+At $r^2=99/100$ the value is $-395$.
+This refutes the pointwise positivity used in a direct substitution
+of the Codazzi operator into the previous monotonicity proof.
+It does not refute an independently compensated global integral
+inequality or every possible Codazzi-resolvent method.
+
+At a smooth critical point of $P-\gamma S$, the unrestricted test
+$H=Z$ is legitimate.  Equations~\eqref{webvar:codazzi-threshold} and
+\eqref{webvar:codazzi-potential} then yield
+\begin{equation}\label{webvar:stationary-codazzi}
+ \frac12\|C(Z)\|_2^2+
+                 \left(\frac13-8\gamma\right)P
+             \le\int\xi_W|Z|^2.
+\end{equation}
+This is the diagonal Cotton information already present in the
+manuscript.  On the balanced family, if $P\asymp Q$ and
+$\gamma=O(h)$, \eqref{webvar:weyl-budget} and Cauchy--Schwarz give
+\begin{equation}\label{webvar:stationary-fourth-moment}
+ \int|Z|^4\ge\left(\frac18-o(1)\right)P.
+\end{equation}
+Indeed, square
+$(1/3-o(1))P\le\|\xi_W\|_2(\int|Z|^4)^{1/2}$
+and use $\|\xi_W\|_2^2\le(8/9)\{P+O(Ah^2)\}$.
+This precludes distributing all defect with amplitude $O(\sqrt h)$
+over volume of order $A$.  A general selected near-minimizer only
+has weak stationarity for the specified bounded test class, however;
+it need not admit the test $H=Z$.  Consequently
+\eqref{webvar:stationary-codazzi}--\eqref{webvar:stationary-fourth-moment}
+cannot be transferred to that sequence without further bounds.
+For a legal adaptive test, the bilinear Codazzi pairing itself has
+no established sign, as \eqref{webvar:codazzi-radial-counterexample}
+explains.
+
+\subsection{Yamabe correction and the variation of the class budget}
+
+Let $H$ be trace-free, $g_t=g+tH$, and
+$\widehat g_t=u_t^2g_t$ its scalar-$-4$ representative, with $u_0=1$.
+Differentiating the scalar transformation law gives
+\begin{equation}\label{webvar:yamabe-variation}
+ (6\Delta+8)\dot u=-Ds[H],\qquad
+ Ds[H]=\operatorname{div}\operatorname{div}H-\langle Z,H\rangle,
+\end{equation}
+where $\Delta=d^*d$ on functions.  Integration on the closed manifold
+therefore gives
+\begin{equation}\label{webvar:yamabe-volume-variation}
+ \dot V=4\int\dot u=\tfrac12\int\langle Z,H\rangle,\qquad
+ \dot S=16\dot V=8\int\langle Z,H\rangle.
+\end{equation}
+At constant scalar curvature the purely conformal first variation of
+$P=4W_++S/12-8\pi^2T_+$ is zero.  Thus
+\[
+ \left.\frac d{dt}P(\widehat g_t)\right|_{t=0}=DP[H].
+\]
+Moving to the Yamabe slice does not turn small $DP$ into small $DS$.
+For the direct adaptive test,
+$\int\langle Z,H_Z\rangle
+=\int(|\nabla H_Z|^2+v_Z|H_Z|^2)\ge0$,
+but the present bound is only $O(Q)$.
+
+For a fixed actual class $a$, let $\vartheta$ be its real harmonic
+representative, normalized by $[\vartheta]=a$, and set
+$p=(a_g^+)^2$.  Its stress tensor is
+\[
+ T(\vartheta)_{ij}
+ =\vartheta_{ik}\vartheta_j{}^k
+             -\tfrac14\vartheta_{ab}\vartheta^{ab}g_{ij}.
+\]
+The variation of $p$ is
+\begin{equation}\label{webvar:projection-variation}
+ p'[H]=-\frac12\int\langle H,T(\vartheta)\rangle
+       =-\int H^{ij}\vartheta^+_{ik}(\vartheta^-)_j{}^k.
+\end{equation}
+To verify it, use
+$p=(\|\vartheta\|_2^2+a^2)/2$.
+The change of harmonic representative is exact, so its pairing with
+$\vartheta$ integrates to zero.  Variation of the inverse metrics
+and volume in the remaining norm gives
+$-\int\langle H,T(\vartheta)\rangle$.
+Pure self-dual and anti-self-dual stresses vanish in four dimensions,
+leaving the mixed expression in \eqref{webvar:projection-variation}.
+Conformal invariance of the middle-degree Hodge star makes the formula
+unchanged by the Yamabe correction.
+Consequently the scalar slack satisfies
+\begin{equation}\label{webvar:slack-variation}
+ \Sigma_a'[H]
+ =8\int\langle Z,H\rangle+16\pi^2\int\langle H,T(\vartheta)\rangle,
+ \qquad \Sigma_a=S-32\pi^2p.
+\end{equation}
+Different actual sign classes give different harmonic stresses.
+No proved identity makes the relevant stress equal to
+$-Z/(2\pi^2)$ or makes their sum supply the missing sign.
+An inequality with an unsaturated remainder of order $Q$ also
+cannot be differentiated as though it were an equality at a
+$P$-near-minimizer.
+
+\subsection{A formal stable minimum compatible with the scalar budgets}
+
+The following is a model of energy data, not a metric construction.
+In the balanced first-order normalization put
+$t=P/(8\pi^2Q)$,
+$x=(S-32\pi^2A)/(32\pi^2Q)$, and $b=W_-/(2\pi^2Q)$.
+For any fixed $0<\eta<1/2$, let
+\[
+ t(x)=1-2\eta x+\eta x^2,\qquad
+ b(x)=t(x)+\frac13-\frac x3,\qquad 0\le x\le1+\delta,
+\]
+where $\delta>0$ is sufficiently small.  Then
+$t+x-1=(1-2\eta)x+\eta x^2\ge0$ and $b>0$.
+These are the sharp Ricci constraint and the opposite-chirality
+nonnegativity constraint at this order.  With the formal choice $p=A$,
+the corresponding identities are
+\begin{equation}\label{webvar:formal-stable-budget}
+ D_2=36\pi^2Q(x+t-1)\ge0,\qquad D_2/18+3W_-=P.
+\end{equation}
+For the second, substitute
+$W_-=2\pi^2Q(t+1/3-x/3)$.
+At the recovery endpoint $x=0$, $t=1$.
+At the interior point $x=1$,
+$t'=0$, $t''=2\eta>0$, and $t=1-\eta<1$, while
+$S-32\pi^2A=32\pi^2Q$.
+Thus the scalar budgets and a stable one-variable minimum can
+coexist formally with a lower cost and scalar slack of order $Q$.
+This supplies no actual metric or solution of the field equations.
+It identifies the extra work a sharp proof must do: use geometric
+or simultaneous-field information beyond these scalar constraints
+and the sign of a formal variation.  The global topological
+compensation, and hence the unrestricted O11 coefficient, remains open.

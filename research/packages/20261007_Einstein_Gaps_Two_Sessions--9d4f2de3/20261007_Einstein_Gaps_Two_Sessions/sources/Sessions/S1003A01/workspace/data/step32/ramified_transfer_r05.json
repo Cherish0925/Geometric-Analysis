@@ -1,0 +1,32 @@
+{
+ "symbolic": {
+  "k": "-2*(Delta - Q)/9",
+  "ell": "(2*Delta + 7*Q)/36",
+  "Tplus_balanced": "A - Q",
+  "Tminus_balanced": "(A + Q)/3",
+  "k_over_Q_limit": "-2*(r - 1)/9",
+  "ell_over_Q_limit": "(2*r + 7)/36",
+  "upper_coefficient": "4*(2*eta*r - 2*eta + 9)/9"
+ },
+ "certified_input": {
+  "X": 128.0,
+  "radius_Ric_minus_1": 7.64512629467772,
+  "J_over_8pi2_upper": 0.9956710815089548,
+  "eta": 0.004328918491045219,
+  "r0_coefficient": 3.9961520724524044
+ },
+ "example": {
+  "k": 11111112,
+  "ell": 22222223,
+  "Q_actual": 100000004,
+  "Delta": 50000000,
+  "Delta_over_Q": 0.4999999800000008,
+  "k_over_Q": 0.11111111555555538,
+  "ell_over_Q": 0.22222222111111115,
+  "balance_residual": 0,
+  "U_top": 1.000100000004,
+  "U_minus_1_minus_h": -9.950265437985717e-17,
+  "construction_coefficient": 3.9980760361492433
+ },
+ "interpretation": "For Delta/Q->r<1, Q->infinity and Q=o(A), rounding contributes O(1/A)=o(h); the replicated-cell plus separated-handle upper coefficient is 4-(8 eta/9)(1-r)."
+}

@@ -1,0 +1,412 @@
+\documentclass[UTF8,11pt,fontset=none]{ctexart}
+\usepackage[a4paper,margin=23mm,headheight=15pt,footskip=11mm]{geometry}
+\usepackage{fontspec}
+\IfFontExistsTF{TeX Gyre Termes}{\setmainfont{TeX Gyre Termes}}{\setmainfont{lmroman10-regular.otf}[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf,BoldItalicFont=lmroman10-bolditalic.otf]}
+\IfFontExistsTF{TeX Gyre Heros}{\setsansfont{TeX Gyre Heros}}{\setsansfont{lmsans10-regular.otf}[BoldFont=lmsans10-bold.otf,ItalicFont=lmsans10-oblique.otf]}
+\IfFontExistsTF{DejaVu Sans Mono}{\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]}{\setmonofont{lmmono10-regular.otf}}
+\IfFontExistsTF{Noto Serif CJK SC}{\setCJKmainfont{Noto Serif CJK SC}[AutoFakeSlant=0.15]}{\setCJKmainfont{FandolSong-Regular.otf}[BoldFont=FandolSong-Bold.otf,ItalicFont=FandolKai-Regular.otf]}
+\IfFontExistsTF{Noto Sans CJK SC}{\setCJKsansfont{Noto Sans CJK SC}}{\setCJKsansfont{FandolHei-Regular.otf}}
+\IfFontExistsTF{Noto Sans Mono CJK SC}{\setCJKmonofont{Noto Sans Mono CJK SC}}{\setCJKmonofont{FandolFang-Regular.otf}}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,esint,bm}
+\usepackage{booktabs,longtable,array,calc}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=1.7em,topsep=3pt}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,fontsize=\small}
+\usepackage{xurl}
+\usepackage[unicode,hidelinks,bookmarksnumbered]{hyperref}
+\usepackage{bookmark}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small 第一科学主线：近期研究全稿}
+\fancyhead[R]{\small 2026-10-07}\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\providecommand{\tightlist}{\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\avint}{\fint}
+\newcommand{\Jcal}{\mathcal J}
+\newcommand{\Ecal}{\mathcal E}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\Rea}{\operatorname{Re}}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{3pt plus 1pt}
+\setlength{\emergencystretch}{3em}
+\linespread{1.10}\allowdisplaybreaks[2]
+\setlength{\abovedisplayskip}{8pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{8pt plus 2pt minus 2pt}
+\renewcommand{\arraystretch}{1.12}
+\setcounter{tocdepth}{1}\setcounter{secnumdepth}{2}
+\pdfstringdefDisableCommands{\def\fint{int}\def\mathcal#1{#1}\def\mathfrak#1{#1}\def\mathscr#1{#1}\def\operatorname#1{#1}\def\varepsilon{epsilon}\def\chi{chi}\def\beta{beta}\def\rho{rho}\def\tau{tau}\def\Phi{Phi}\def\sigma{sigma}\def\kappa{kappa}\def\nabla{D}\def\mathbb#1{#1}\def\({}\def\){}\def\textsuperscript#1{#1}\def\textsubscript#1{#1}}
+\title{统一手术端点与预定覆盖塔恢复}
+\author{第一科学主线·近期研究分卷}
+\date{2026年10月7日}
+\begin{document}
+\maketitle
+\noindent\textbf{原稿编号：}R08。
+
+本章包含两项组合推导：用 N1 与有限密度端点的互补参数区间，消除指定实际手术范畴的密度损失；用覆盖塔中的不交提升，推广已存在低成本单元的复制范围。严格次四单元、原区间数据与端部共形选择来自用户系统。\cite{R08,N1,FD,System,Conformal}
+
+\section{固定的原稿输入}\label{ch8:ux56faux5b9aux7684ux539fux7a3fux8f93ux5165}
+
+对闭、连通、定向光滑四流形，记
+
+\[
+T=2\chi+3\tau,\quad
+P(g)=\int|\operatorname{Ric}^{\circ}_g|^2,\quad
+R(g)=\int|\operatorname{Ric}_g|^2,
+\quad\mathcal J=4P/R,
+\] \[
+\mathcal E(g)=\inf_{\lambda\ne0}
+\frac{\int|\operatorname{Ric}_g-\lambda g|^2}{\lambda^2V_g},
+\qquad \alpha(M)=\inf_g\mathcal E(g),
+\] \[
+D_\beta=(1+\beta^{-1})\int s^2
++6(\beta+1)\int|W^+|^2-72\pi^2p,
+\qquad
+\kappa_\beta=\fint|\operatorname{Ric}+g|^2+D_\beta/V.
+\]
+
+保留原 O10 的实际共形单极子供给和同一类的预算
+
+\[
+p=(a^+)^2\ge A>0,\qquad a^2\ge T.
+\]
+
+全度量应用须在每一个共形类内满足原供给条件；每次证明中的 p、a 与实际解来自同一结构。本文不将一个共形类上的一个解扩大成全部共形类的供给。以下引用原稿已有结论：
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{N1：}存在普适 \(\varepsilon_N>0\)，有 \[
+  \mathcal J(g)+(T/A-2/3)_+\ge\varepsilon_N.
+  \]
+\item
+  \textbf{有限密度端点：}每个固定有限 \(B\) 有 \(c_{\rm FD}(B)>0\)，使 \[
+  \chi/A\le B\implies
+  \kappa_\beta\ge c_{\rm FD}(B)(\beta-2)^2/\beta^2,
+  \quad\beta\ge2.
+  \]
+\item
+  \textbf{基本比较：}\(D_\beta\ge0\)，且 \[
+  \mathcal J\le\mathcal E\le\fint|\operatorname{Ric}+g|^2.
+  \] 最后一项只是取 \(\lambda=-1\)。原负 Yamabe／正实际供给使所用 \(R>0\)；不把 Ricci-flat 度量代入未定义的 \(4P/R\)。
+\end{itemize}
+
+以下推论以这三项为前置。
+
+\section{一个地理条件足以去掉整族手术上的密度损失}\label{ch8:ux4e00ux4e2aux5730ux7406ux6761ux4ef6ux8db3ux4ee5ux53bbux6389ux6574ux65cfux624bux672fux4e0aux7684ux5bc6ux5ea6ux635fux5931}
+
+\subsection{定理 1：分区闭合}\label{ch8:ux5b9aux7406-1ux5206ux533aux95edux5408}
+
+设一族原允许对象满足
+
+\[
+Q:=A-T\ge0,\qquad \chi(M)\le C A+Q
+\tag{8.1}\label{eq:r8:1}
+\]
+
+其中 \(C\) 为固定有限常数。则同一个常数
+
+\[
+c_{\rm geo}(C)=\min\{\varepsilon_N,c_{\rm FD}(C+1/3)\}>0
+\]
+
+使整族、所有原允许度量与所有 \(\beta\ge2\) 满足
+
+\[
+\boxed{\kappa_\beta(g)\ge
+c_{\rm geo}(C)\frac{(\beta-2)^2}{\beta^2}.}
+\tag{8.2}\label{eq:r8:2}
+\]
+
+结论没有要求 \(\chi(M)/A\) 在这族中有统一上界。它要求的是明确的仿射地理约束 \eqref{eq:r8:1}。
+
+\textbf{证明。}
+
+若 \(Q/A\ge1/3\)，则 \(T/A=1-Q/A\le2/3\)。N1 直接给
+
+\[
+\kappa_\beta\ge\mathcal E\ge\mathcal J\ge\varepsilon_N.
+\]
+
+若 \(Q/A<1/3\)，则 \eqref{eq:r8:1} 给
+
+\[
+\chi/A<C+1/3.
+\]
+
+此时只需调用有限密度定理在\textbf{单个固定数} \(B=C+1/3\) 处的常数。结合 \(0\le(\beta-2)^2/\beta^2\le1\)，两个区间合并即得 \eqref{eq:r8:2}。证毕。
+
+这里没有令 \(B\to\infty\)，也没有将 \(c_{\rm FD}(B)\) 假设成统一正数。机制是：手术过多而可能导致密度失控的部分，已被 N1 单独覆盖；只有手术较少的部分需要有限密度分析。
+
+\subsection{推论 1：一般型主体上的任意吹起和添柄}\label{ch8:ux63a8ux8bba-1ux4e00ux822cux578bux4e3bux4f53ux4e0aux7684ux4efbux610fux5439ux8d77ux548cux6dfbux67c4}
+
+\cite{LeBrunRicci,Noether}
+
+设 X 为光滑紧致极小复一般型曲面，\(A=c_1^2(X)>0\)。令
+
+\[
+M=X\#k\overline{\mathbb{CP}}^{\,2}
+\#\ell(S^1\times S^3),\qquad k,\ell\ge0.
+\]
+
+限定在原文献／项目已经验证其实际共形供给的范围内（例如原稿使用的 \(p_g(X)\ge1\) 范畴），保留相应的腔室、极化及手柄输入。对所供给的类有
+
+\[
+T=A-k-4\ell,\qquad a^2=A-k,\qquad Q=k+4\ell.
+\]
+
+存在一个不依赖 X、k、\(\ell\)、度量和 \(\beta\) 的常数 \(c_*>0\)，使
+
+\[
+\boxed{\kappa_\beta(g)\ge
+c_*\frac{(\beta-2)^2}{\beta^2}.}
+\tag{8.3}\label{eq:r8:3}
+\]
+
+\textbf{地理估计。}经典 Noether 不等式及曲面 Noether 公式为
+
+\[
+p_g(X)\le A/2+2,
+\qquad
+\chi(X)=12\{1-q_{\rm hol}(X)+p_g(X)\}-A.
+\]
+
+它们推出 \(\chi(X)\le35A\)：若 \(A=1\)，整数性给 \(p_g\le2\)，故 \(\chi\le35\)；若 \(A\ge2\)，则 \(\chi\le5A+36\le23A\le35A\)。这只是一个方便的统一界，不主张 35 最佳。
+
+因而
+
+\[
+\chi(M)=\chi(X)+k-2\ell\le35A+Q.
+\]
+
+由定理 1，可取
+
+\[
+c_* =\min\{\varepsilon_N,c_{\rm FD}(106/3)\}.
+\]
+
+纯吹起 \(\ell=0\) 已是源稿 Corollary K 的结论；这里将同一逻辑明确接到混合吹起---添柄范畴。不能把这个纯吹起特例重新登记为首次获得。
+
+\subsection{推论 2：实际供给已验证的多一般型主体}\label{ch8:ux63a8ux8bba-2ux5b9eux9645ux4f9bux7ed9ux5df2ux9a8cux8bc1ux7684ux591aux4e00ux822cux578bux4e3bux4f53}
+
+\cite{BF}
+
+令
+
+\[
+M=(\#_{i=1}^{r}X_i)\#k\overline{\mathbb{CP}}^{\,2}
+\#\ell(S^1\times S^3),
+\quad A=\sum_i A_i,\quad A_i=c_1^2(X_i)>0.
+\]
+
+\textbf{明确附加前置：}该具体连通和须已由普通／BF 等原理论供给所需的实际类，满足 \(p\ge A\) 及 \(a^2=A-k\)。本文不宣称任意 r、任意连通和自动有这个供给。
+
+准确的特征数是
+
+\[
+T=A-k-4\ell-4(r-1),\qquad
+Q=k+4\ell+4(r-1),
+\] \[
+\chi(M)=\sum_i\chi(X_i)+k-2\ell-2(r-1).
+\]
+
+于是 \(a^2-T=4\ell+4(r-1)\ge0\)，且
+
+\[
+\chi(M)\le35A+Q.
+\]
+
+同一个 \(c_*\) 仍然有效。新分析不承担 BF 非消失证明；其准确同余、\(b^+\) 和连接条件仍由供给文献承担。平方为零的主体、任意辛一般型或任意实际单极子流形没有被上述 Noether 论证覆盖，不能删去这些范围限制。
+
+\section{任意预定嵌套残余覆盖塔上的低成本恢复}\label{ch8:ux4efbux610fux9884ux5b9aux5d4cux5957ux6b8bux4f59ux8986ux76d6ux5854ux4e0aux7684ux4f4eux6210ux672cux6062ux590d}
+
+\subsection{引理 2：固定几何块在残余塔中拥有正比例的互不相交位置}\label{ch8:ux5f15ux7406-2ux56faux5b9aux51e0ux4f55ux5757ux5728ux6b8bux4f59ux5854ux4e2dux62e5ux6709ux6b63ux6bd4ux4f8bux7684ux4e92ux4e0dux76f8ux4ea4ux4f4dux7f6e}
+
+设 \(X=\Gamma\backslash\mathbb{CH}^2\) 为紧致光滑复双曲曲面。设
+
+\[
+\Gamma\supseteq\Gamma_1\supseteq\Gamma_2\supseteq\cdots,
+\qquad [\Gamma:\Gamma_j]<\infty,
+\qquad \bigcap_j\Gamma_j=\{1\}.
+\tag{8.4}\label{eq:r8:4}
+\]
+
+不要求各子群正规。记 \(X_j=\Gamma_j\backslash\mathbb{CH}^2\)， \(A_j=c_1^2(X_j)\)。给定任意固定半径 R 和标记球，存在 \(j_0\)，使每个 \(j\ge j_0\) 都含有至少
+
+\[
+[\Gamma_{j_0}:\Gamma_j]=A_j/A_{j_0}
+\]
+
+个互不相交、等距的该标记球。
+
+\textbf{证明。}在普遍覆盖中固定中心 p。由作用的适当不连续性，集合
+
+\[
+\mathcal F_R=\{\gamma\in\Gamma\setminus\{1\}:d(p,\gamma p)\le2R\}
+\]
+
+有限。嵌套性和交集为平凡群保证存在 \(j_0\) 使 \(\Gamma_{j_0}\cap\mathcal F_R=\varnothing\)。故所选球在 \(X_{j_0}\) 中嵌入。对任意 \(j\ge j_0\)，取这个球在覆盖映射 \(X_j\to X_{j_0}\) 下的全部提升。因球单连通且局部等距，这些提升互不相交、均等距于原球，数量正是覆盖度数。证毕。
+
+这不要求覆盖塔包含某个另行挑选的有限指数正规子群；只需要在它自己某一级嵌入一个固定球。也不需要整个覆盖的单射半径处处趋于无穷。
+
+\subsection{\texorpdfstring{定理 2：严格次四恢复适用于每一条满足 \eqref{eq:r8:4} 的覆盖塔}{定理 2：严格次四恢复适用于每一条满足  的覆盖塔}}\label{ch8:ux5b9aux7406-2ux4e25ux683cux6b21ux56dbux6062ux590dux9002ux7528ux4e8eux6bcfux4e00ux6761ux6ee1ux8db3-ux7684ux8986ux76d6ux5854}
+
+在上述预先给定的塔上，取任意符合原平衡条件的整数序列
+
+\[
+Q_j=k_j+4\ell_j\to\infty,\qquad h_j=Q_j/A_j\to0,
+\] \[
+k_j/Q_j\to2/9,\qquad \ell_j/Q_j\to7/36,
+\] \[
+M_j=X_j\#k_j\overline{\mathbb{CP}}^{\,2}
+\#\ell_j(S^1\times S^3).
+\]
+
+设一个固定光滑普通吹起单元 C 在完整领口精确匹配 \(\operatorname{Ric}=-g\) 的复双曲球，完整成本为
+
+\[
+J_C=\int_C|\operatorname{Ric}+g|^2.
+\]
+
+则
+
+\[
+\boxed{\limsup_j\frac{\alpha(M_j)}{h_j}
+\le\frac{28}{9}+\frac{J_C}{9\pi^2}.}
+\tag{8.5}\label{eq:r8:5}
+\]
+
+\textbf{证明。}选 R 使单元的整个外领口和缓冲区位于固定球内。引理 2 提供 \(A_j/A_{j_0}\) 个位置。由于
+
+\[
+k_j+\ell_j=O(Q_j)=o(A_j),
+\]
+
+对充分大 j，可以在互不相交位置放入所有固定吹起块与标准收缩手柄。手柄尺度可逐 j 选择，使总过渡误差为 \(o(Q_j)\)。每个固定单元的体积和总标量改变量有限；因此
+
+\[
+V_j=2\pi^2A_j+O(Q_j),\quad
+T_j:=\int s_{g_j}+4V_j=O(Q_j),
+\] \[
+D_j:=\int|\operatorname{Ric}_{g_j}+g_j|^2
+=k_jJ_C+32\pi^2\ell_j+o(Q_j).
+\]
+
+对这些真实光滑闭度量，精确恒等式为
+
+\[
+\mathcal E(g_j)=
+\frac{4D_j-T_j^2/V_j}{4V_j+D_j-2T_j}.
+\tag{8.6}\label{eq:r8:6}
+\]
+
+因为 \(Q_j=o(A_j)\)，有 \(T_j^2/V_j=O(Q_j^2/A_j)=o(Q_j)\)，故
+
+\[
+\frac{\mathcal E(g_j)}{h_j}
+=\frac{k_jJ_C+32\pi^2\ell_j}{2\pi^2Q_j}+o(1).
+\]
+
+代入原比例即得 \eqref{eq:r8:5}。闭流形的实际供给继承原项目／经典理论，不需要把预指定的局部 SW 解逐个拼起来。证毕。
+
+这是对已有单元复制公式的量词加强，不是新的廉价单元构造。它覆盖嵌套且交集平凡的事先指定覆盖塔，不覆盖任意不嵌套覆盖序列，也不覆盖交集非平凡的任意塔。
+
+\section{把现有 P 证书接入恢复：不必继续使用稍大的原始 J 证书}\label{ch8:ux628aux73b0ux6709-p-ux8bc1ux4e66ux63a5ux5165ux6062ux590dux4e0dux5fc5ux7ee7ux7eedux4f7fux7528ux7a0dux5927ux7684ux539fux59cb-j-ux8bc1ux4e66}
+
+源稿 A01 Step22 已证明：每个光滑 exact-CH-ended 单元，在 \(\operatorname{Ric}=-6g\) 规范下有正共形因子 u，满足 \(u\to1\)、\(s_{u^2g}=-24\)，且
+
+\[
+P(g)-P(u^2g)
+=24\int|du|^2+3\int(\Delta u/u)^2\ge0.
+\]
+
+同时 \(J_6(u^2g)=P(u^2g)\)。衰减率与远端截断恢复说明：对任意固定 \(\epsilon>0\)，存在另一个 smooth exact-CH-ended 单元，成本
+
+\[
+J_6\le P(g)+\epsilon.
+\tag{8.7}\label{eq:r8:7}
+\]
+
+以上使用源稿的完整端共形选择。
+
+Step33 的原区间文件记录规范化 P 的精确二进有理上端
+
+\[
+p_{\rm cert}=
+\frac{338806471362324583565914367157197246841}
+{340282366920938463463374607431768211456}
+<1.
+\]
+
+原轮廓还须经过已证明的任意小能量损失光滑化；在 \eqref{eq:r8:7} 中一起计入 \(\epsilon\) 即可。再将度量乘6，转换为 \(\operatorname{Ric}=-g\) 的领口。四维中的 P 与相应原始残差积分保持所需尺度不变。
+
+对每个固定 \(\epsilon\) 先应用定理 2，再令 \(\epsilon\downarrow0\)，便得
+
+\[
+\boxed{
+\limsup_j\frac{\alpha(M_j)}{h_j}
+\le\frac{28}{9}+\frac89p_{\rm cert}
+=3.996144651352101510817871499\ldots
+<3.996144652<4.
+}
+\tag{8.8}\label{eq:r8:8}
+\]
+
+这个数值比直接使用原始 J 证书稍小，原因是利用已证的共形选择消除了可降低的标量残差。这里使用原区间数据与共形选择的组合，所得仍为上界。
+
+极限次序尤其重要：共形尾部截断所需半径可以依赖 \(\epsilon\)，但固定 \(\epsilon\) 后半径固定；残余塔引理给出其后全部足够高层的安放位置。因此不需要未经证明的、关于 \(\epsilon\) 的统一非紧椭圆常数。
+
+\section{已有稳定单元能量与全部残余塔的关系}\label{ch8:ux5df2ux6709ux7a33ux5b9aux5355ux5143ux80fdux91cfux4e0eux5168ux90e8ux6b8bux4f59ux5854ux7684ux5173ux7cfb}
+
+A02 theorem\_package\_v1 §5.1 已经证明构造层面的次可加性及
+
+\[
+\gamma_{\rm bal}
+=\lim_{n\to\infty}\frac{\mathfrak P_{8n,7n}}{72\pi^2n}
+=\inf_n\frac{\mathfrak P_{8n,7n}}{72\pi^2n}.
+\]
+
+这个 Fekete 结论沿用系统原稿。结合引理 2，可以增加下面的覆盖范围陈述：对每条满足 \eqref{eq:r8:4} 的预定覆盖塔，
+
+\[
+\boxed{\limsup_j\alpha(M_j)/h_j\le\gamma_{\rm bal}.}
+\tag{8.9}\label{eq:r8:9}
+\]
+
+证明只需先固定 n 和一个近最优完整 \((8n,7n)\)-单元，在原塔上复制
+
+\[
+N_j=\min\{\lfloor k_j/(8n)\rfloor,\lfloor\ell_j/(7n)\rfloor\}
+\]
+
+次。原比例保证 \(36nN_j/Q_j\to1\)，剩余手术为 \(o(Q_j)\)。按 \eqref{eq:r8:6} 得上界 \(J_C/(72\pi^2n)\)，随后分别对单元取下确界、对 n 取下确界。每一步均先固定单元再令 j 趋于无穷；无需同时增长的树形紧性定理。
+
+不能反向写成 \(\lim\alpha/h=\gamma_{\rm bal}\)：任意全局竞争度量是否能够以足够小的损失局部化到这些标记单元，仍没有证明。即使局部比能量已存在，其数值本身和是否等于全局极值也尚未确定。
+
+\begin{thebibliography}{P99}
+\small
+\bibitem[R08]{R08} 本会话研究原稿，\emph{统一手术端点与预定覆盖塔恢复}，2026-10-07。\path{Line1_Uniform_Endpoint_and_Residual_Tower_Recovery.md}。
+
+\bibitem[P02]{N1} 主会话与项目补充，\emph{单解无迹 Ricci 积分障碍与类平方短缺版}，2026-09-28，\path{03_N1_Complete_Inheritance.md}。
+
+\bibitem[P05]{FD} 所提供网页续研，\emph{O10 closes at every fixed finite Euler density}，2026-09-29，\path{O10_All_Finite_Density.md}。
+
+\bibitem[P08]{System} S1003A01、S1003A02，\emph{Mathematical Synthesis}，2026-10-07；\path{20261007_Einstein_Gaps_Two_Sessions(1).zip} 中 \path{01_Mathematical_Synthesis.md}。
+
+\bibitem[P10]{Conformal} S1003A01 Step22，\emph{Exact CH-ended conformal selection}；Step33，\emph{Surgery slope law and ASD retention} 及原始 P 区间数据。
+
+\bibitem[E07]{LeBrunRicci} C. LeBrun, \emph{Ricci Curvature, Minimal Volumes, and Seiberg--Witten Theory}, Invent. Math. \textbf{145} (2001), 279--316. \url{https://arxiv.org/abs/math/0003068}.
+
+\bibitem[E12]{Noether} 曲面 Noether 不等式及 Noether 公式；来源稿引用 F. Catanese, M. Chen and D.-Q. Zhang, \emph{The Noether inequality for smooth minimal 3-folds}, arXiv:math/0507606 引言的曲面回顾。 \url{https://arxiv.org/abs/math/0507606}.
+
+\bibitem[E11]{BF} M. Ishida and C. LeBrun, \emph{Curvature, Connected Sums, and Seiberg--Witten Theory}, Comm. Anal. Geom. \textbf{11} (2003), 809--836. \url{https://arxiv.org/abs/math/0111228}.
+
+\end{thebibliography}
+\end{document}

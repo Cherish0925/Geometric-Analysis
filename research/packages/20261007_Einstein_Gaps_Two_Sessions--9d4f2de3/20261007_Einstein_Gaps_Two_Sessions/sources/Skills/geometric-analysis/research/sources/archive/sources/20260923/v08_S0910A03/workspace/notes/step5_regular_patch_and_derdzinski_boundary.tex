@@ -1,0 +1,226 @@
+% Step 5 research note: regular patches, spectral saturation, and the
+% Derdzinski boundary branch for the critical Ishida--LeBrun sequence.
+% WARNING (superseded in Step 6): the weak Cotton correction below remains valid,
+% but the assertion that the calibrated constant-spectrum Einstein profile is
+% locally compatible is false.  The complete projector divergence equation forces
+% the simple eigenform parallel.  Use
+% step6_local_projector_obstruction_and_collapse_reduction.tex instead.
+
+\section{Setting and exact deficits}
+Let $M$ be a fixed critical Ishida--LeBrun manifold, with
+\[
+ D=A/3,\qquad
+ \delta_i=\|g_i^{-1}(\Ric_{g_i}+g_i)\|_{L^\infty}\longrightarrow0.
+\]
+For a selected sign monopole class $a$ (fixed after taking a subsequence),
+the quantitative decomposition in
+\texttt{workspace/codex\_loop/work/quantitative\_deficit\_analysis.md}
+gives
+\[
+ R_i=O(A\delta_i^2),\qquad
+ \Delta_{a,i}=O(A\delta_i^2),
+\]
+and therefore
+\[
+ D_{\rm amp,i}+D_{\rm quad,i}+D_{\rm Hodge,i}+D_{\rm eig,i}\to0,
+ \qquad J_{A,i}\to0.                                      \tag{1}
+\]
+Writing $w_i=|W^+_i|$, $q_i=-s_i+\sqrt6w_i$, and using the worker's
+rescaled variables $\psi_i,\varphi_i$, one also has
+\[
+ \|f_i\varphi_i+6\sqrt2\pi H_i\|_2\to0,
+ \qquad
+ \left\||2\pi H_i|-\frac{q_i}{3\sqrt2}\right\|_2\to0,    \tag{2}
+\]
+where $H_i$ is the harmonic self-dual representative of $a^+$ and
+$f_i\to\sqrt{q_i}$.  The curvature completion gives
+\[
+ s_i\to-4\quad\hbox{uniformly},\qquad
+ w_i\to\frac1{2\sqrt6}\quad\hbox{in }L^2,
+ \qquad q_i\to\frac92\quad\hbox{in }L^2.                  \tag{3}
+\]
+The rescaled spinor normalization in (1)--(2) is not the same as the
+unrescaled Seiberg--Witten normalization sometimes used in the literature;
+constants must not be mixed between them.
+
+\section{A rigorous regular-patch extraction statement}
+Suppose that a sequence of unit balls $B_1(p_i)$ is noncollapsed:
+\[
+ \Vol_{g_i}B_1(p_i)\ge v>0.                                \tag{4}
+\]
+Cheeger--Naber Theorem~1.13 gives, in dimension four and under bounded
+Ricci curvature,
+\[
+ \Vol\!\left(T_r\{x\in B_1(p_i):r_h(x)\le r\}\right)
+ \le C(v)r^4.                                               \tag{5}
+\]
+This concerns harmonic radius, not the stronger curvature regularity scale.
+Choose $\rho=\rho(v)>0$ so small that the right side of (5), with $2\rho$,
+is less than half a Bishop--Gromov lower bound for $\Vol B_{1/2}(p_i)$.
+Then a subset of uniformly positive volume in $B_{1/2}(p_i)$ is covered by
+balls $B_\rho(x_i)$ on which the harmonic radius stays uniformly positive.
+Thus (4) yields positive-measure regular patches, not a uniform harmonic
+radius on the whole ball or the whole manifold.
+
+In harmonic coordinates on a smaller patch,
+\[
+ g_i\to g_\infty\quad\hbox{strongly in }C^{1,\beta}_{\rm loc},
+ \qquad g_i\rightharpoonup g_\infty\quad\hbox{in }W^{2,p}_{\rm loc}
+\]
+for every finite $p$ and suitable $\beta<1$.  The harmonic-coordinate
+Ricci equation is
+\[
+ (\Ric g_i)_{ab}=-\frac12g_i^{kl}\partial_k\partial_l(g_i)_{ab}
+                 +Q_{ab}(g_i,\partial g_i).                  \tag{6}
+\]
+Since $E_i:=\Ric(g_i)+g_i\to0$ in $L^\infty$, (6) passes to the limit in
+the distributional sense and gives
+\[
+ \Ric(g_\infty)=-g_\infty.                                  \tag{7}
+\]
+Elliptic regularity then makes $g_\infty$ smooth.  Interior $W^{2,p}$
+estimates applied after identifying the smooth limit yield strong
+$W^{2,p}_{\rm loc}$ convergence, enough to pass algebraic curvature
+expressions in $L^p$.  One must not instead assert that $E_i\to0$ in
+$C^\alpha$ or that $g_i\to g_\infty$ in $C^{2,\alpha}$; no derivatives of
+$E_i$ are controlled.
+
+For the fixed critical manifold the deficits above are absolute
+$O(A\delta_i^2)$ quantities, so they restrict to every such patch.  Strong
+$W^{2,p}$ convergence therefore passes (3) and the nonnegative algebraic
+spectral defect to the limit.  In particular,
+\[
+ s_\infty=-4,\qquad |W^+_\infty|=\frac1{2\sqrt6}.             \tag{8}
+\]
+Local elliptic compactness for the harmonic forms $H_i$, together with
+(2), gives a harmonic self-dual limit $H_\infty$ satisfying
+\[
+ |H_\infty|=\frac{3}{4\sqrt2\pi}>0.                          \tag{9}
+\]
+The limiting SW quadratic form is consequently nonzero.  The equality
+$D_{\rm eig}=0$ says it spans the lowest eigenspace and saturates the sharp
+trace-free $3\times3$ estimate
+\[
+ \lambda_{\min}(W^+)\ge-\sqrt{\frac23}|W^+|.
+\]
+Hence
+\[
+ \lambda_{\min}=-\frac16,
+ \qquad
+ \operatorname{Spec}(W^+_\infty)
+   =\left(-\frac16,\frac1{12},\frac1{12}\right).             \tag{10}
+\]
+Thus the worker's amplitude, Hodge projection, and nonnegative eigenvalue
+defects really do force the full calibrated spectrum on every regular
+patch to which they pass.
+
+\section{Superseded Step-5 branch: do not use as a conclusion}
+The spectrum (10) has a simple negative eigenvalue and a double positive
+eigenvalue.  In the notation $\alpha\ge\beta\ge\gamma$ it lies at
+\[
+ \alpha=\beta=\frac1{12},\qquad \gamma=-\frac16,
+ \qquad \rho=\beta/\alpha=1,                                \tag{11}
+\]
+and
+\[
+ \frac{\det W^+}{|W^+|^3}=-\frac1{3\sqrt6}.                  \tag{12}
+\]
+This is the opposite boundary from the simple-largest, $\det W^+>0$
+branch used by many modern conformal-Kaehler theorems.  In particular, the
+formula $\alpha^{2/3}g$ associated with a simple positive largest
+eigenline cannot be imported into (11).
+
+Derdzinski's original local two-eigenvalue theorem instead implies that,
+after orienting the simple lowest eigenline on a local double cover, there
+is a positive function $f$ such that
+\[
+ \widetilde g=f^2g_\infty
+\]
+is Kaehler with negative scalar curvature $\widetilde s$.  Weyl conformal
+weight and (10) give
+\[
+ f^2\widetilde s=-1.                                         \tag{13}
+\]
+Using the div--grad Laplacian, the four-dimensional scalar-curvature
+transformation, $s_{g_\infty}=-4$, and (13) give
+\[
+ \Delta_{g_\infty}f=-\frac12f.                               \tag{14}
+\]
+Positive solutions of (14) are locally possible and need not be constant
+on noncompact pointed limits.  Thus a smooth Einstein regular patch with
+(10) is locally conformally Kaehler, not contradictory.
+
+For reference, the standard Einstein--Weyl Weitzenbock identity in these
+endomorphism conventions is
+\[
+ \Delta|W^+|^2=2|\nabla W^+|^2+s|W^+|^2-36\det W^+.          \tag{15}
+\]
+At (10), $|W^+|^2=1/24$, $\det W^+=-1/864$, and $s=-4$.
+Since the norm is constant, (15) yields
+\[
+ |\nabla W^+|^2=\frac1{16},                                  \tag{16}
+\]
+not $1/24$.  The model is therefore nonparallel and is compatible with the
+Bochner identity.
+
+On a closed manifold, by contrast, integrating (14) would give
+$0=-\frac12\int f<0$.  Equivalently, LeBrun's exact saturation produces a
+global almost-Kaehler form, and Armstrong then makes an Einstein saturated
+metric Kaehler--Einstein.  A Kaehler metric with $s=-4$ has spectrum
+$(-2/3,1/3,1/3)$ and $|W^+|^2=2/3$, contradicting (8).  The obstruction is
+therefore global and compact, not local.
+
+\section{Weak Bianchi control and compactness distinctions}
+The identity relating $\delta W^+$ to the Cotton tensor contains derivatives
+of $\Ric^\circ$ and $s$.  The estimate $\|\Ric+g\|_\infty\le\delta$ gives no
+pointwise or $L^2$ estimate for these derivatives.  What follows directly is
+only a distributional bound after moving derivatives to a compactly
+supported test tensor $T$:
+\[
+ |\langle\delta W^+,T\rangle|
+ \le C\delta\bigl(\|\nabla T\|_{L^1}+\|T\|_{L^1}\bigr),      \tag{17}
+\]
+up to the conventional algebraic projection constants.  Any strong Cotton
+or $\nabla W^+$ estimate requires additional regularity or an elliptic
+identity; it cannot be assumed from pinching.
+
+A single noncollapsed ball plus (5) produces regular patches even if
+curvature concentrates elsewhere.  It does not recover the smooth topology,
+remove orbifold points, control ALE bubble trees, bound the diameter, or stop
+collapse escaping to infinity.  Thin regions of vanishing volume may violate
+the calibrated Weyl profile at negligible total cost.  Likewise, the
+unconditional Walsh argument gives $L^1$ spatial orthogonality; phase
+separation additionally requires spectral/eigenline control.
+
+The same distinction applies to the positive branch.  Myers gives a diameter
+bound, but a volume lower bound does not by itself remove curvature
+concentration or identify the original smooth topology.  Moreover no
+universal normalized volume lower bound can hold: round lens-space quotients
+have exact positive Einstein metrics and volumes tending to zero.  Such
+collapse already has the desired conclusion and should be handled by lifting,
+equivariant descent, or classification rather than excluded as a prerequisite.
+
+\section{Step-6 correction}
+The conclusion above was overturned by retaining the full product-rule terms in
+$\delta(\omega\otimes\omega)=0$.  For constant distinct eigenvalues, projection
+first along $\omega$ gives $\delta\omega=0$, and projection orthogonal to
+$\omega$ gives $\omega_{ab}\nabla^a\omega_{cd}=0$; nondegeneracy then forces
+$\nabla\omega=0$.  This contradicts the Einstein--Weyl identity, which requires
+$|\nabla W^+|^2=1/16$ at the calibrated spectrum.  Derdzi\'nski Proposition 5
+independently fixes the conformal K\"ahler factor as $(24|W^+|^2)^{1/3}$, hence
+constant here.  The corrected theorem and collapse reduction are in
+\texttt{workspace/notes/step6\_local\_projector\_obstruction\_and\_collapse\_reduction.tex}.
+
+\section{Sources}
+The harmonic-radius measure estimate is Cheeger--Naber, Theorem~1.13,
+\texttt{Knowledge/objects/papers/1406.6534-Regularity-of-Einstein-Manifolds-and-the-Codimension-4-Conject--487f466da601--0ffa6f2917a4/object.md}.
+The two-eigenvalue and conformal-Kaehler discussion is supported by
+Derdzinski expositions in
+\texttt{Knowledge/objects/papers/Conformal-Kaehler-rigidity-of-Einstein-four-manifolds--ee41ec8c511e--4518ab125268/object.md}
+and
+\texttt{Knowledge/objects/papers/Desingularizations-of-Conformally-Kaehler-Einstein-Orbifolds--8fe1aa31deb8--5b19d560b771/object.md}.
+The exact monopole equality mechanism is in LeBrun's
+\texttt{Ricci-curvature-minimal-volumes-and-Seiberg-Witten-theory} object.
+Independent checks are saved in
+\texttt{trace/ttcs/results/step5\_ttcs01\_verifier1\_integration.md} and
+\texttt{step5\_ttcs01\_verifier2\_integration.md}.

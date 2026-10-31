@@ -1,0 +1,81 @@
+0001: \section{已知的 Einstein 障碍与紧夹逼的相容性}\label{sec:obstructions}
+0002: 
+0003: 分支反例需要同一个 $M$ 同时满足 $e_\sigma(M)=0$ 与“无任何 Einstein 度量”。据我们所知，四维中现有的不存在性证书只有四类：Hitchin--Thorpe（HT）、Seiberg--Witten（LeBrun 型曲率估计 \cite{LeBrun01,IL}）、单纯体积（Gromov、Kotschick）、体积熵（Besson--Courtois--Gallot \cite{BCG}、Sambusetti \cite{Sambusetti}、Di Cerbo \cite{DiCerbo}）。本节汇总它们与紧夹逼的定量关系；各条均已逐式复核（第~\ref{sec:verification}节）。
+0004: 
+0005: \subsection{Hitchin--Thorpe：被紧夹逼自动满足}
+0006: \begin{proposition}\status{已证}\label{prop:HT}
+0007: 闭定向四维流形若承载 $\delta_\sigma(g)\le\varepsilon<\frac12$ 的度量（$\sigma=\pm1$），则 $2\chi(M)>3|\tau(M)|$，并且 $2\chi\pm3\tau\ge\frac{\Vol_g}{4\pi^2}\min\{\frac23(1-\varepsilon)^2,\frac23(1+\varepsilon)(1-2\varepsilon)\}$。
+0008: \end{proposition}
+0009: \begin{proof}
+0010: $2\chi\pm3\tau=\frac1{4\pi^2}\int(2|W^\pm|^2+\frac{s^2}{24}-\frac{|E|^2}2)$，而 $\frac{s^2}{24}-\frac{|E|^2}{2}=\frac{s^2}6-\frac{|\Ric|^2}2=:F$ 对每个 Ricci 特征值是凹函数，在特征值箱体 $[\sigma-\varepsilon,\sigma+\varepsilon]^4$ 上的最小值在顶点取得；按高端点个数 $j=0,\dots,4$ 计算五个顶点值，最小者为 $\frac23(1-\varepsilon)^2$（$j=0$）与 $\frac23(1+\varepsilon)(1-2\varepsilon)$（$j=1$）中较小的一个，当 $\varepsilon<\frac12$ 时为正。
+0011: \end{proof}
+0012: （资料包基础篇给出的阈值 $1/(1+\sqrt3)$ 有效但不锐；长稿已给出端点 $1/2$，两处应统一。）因此违反或达到 HT 等号的流形（如 $\#_5\CP^2$、$S^1\times S^3$）不可能提供紧夹逼输入。
+0013: 
+0014: \subsection{Seiberg--Witten 禁区的误差窗口}
+0015: \begin{proposition}[资料包 \texttt{FND:SWgap}]\status{已证（依赖 LeBrun \cite{LeBrun01}）}\label{prop:SW}
+0016: 设 $X$ 为具非平凡 SW 不变量的极小一般型复曲面，$M=X\#k\CPb\#\ell(S^1\times S^3)$，$K=k+4\ell$，$c=c_1^2(X)$，$r=K/c-\frac13$。若 $c/3\le K<c$，则 $M$ 上\emph{每个}度量满足
+0017: \[
+0018: \delta_-(g)\ge\Phi(r)=\begin{cases}\sqrt{r/2},&0\le r\le2(2-\sqrt3)^2,\\ 2\sqrt r/(\sqrt6+\sqrt r),&2(2-\sqrt3)^2\le r<\frac23.\end{cases}
+0019: \]
+0020: 特别地 $\delta_-(g)\le\delta$ 蕴含 $K/c\le\frac13+\max\{2\delta^2,6\delta^2/(2-\delta)^2\}$（$\delta\le2-\sqrt3$ 时即 $\frac13+2\delta^2$）。
+0021: \end{proposition}
+0022: 于是固定的超临界比例 $K/c>1/3$ 给出正间隙。注意 $\Phi(0)=0$：LeBrun 定理在 $K=c/3$ 处是非严格的，故恰在临界比例上、以及（由下面的定理~\ref{thm:U}）在 $(\frac13-\gamma)c\le k<\frac c3$ 的“边界带”内，流形不承载 Einstein 度量，而本命题不给出 $e_-$ 的正下界。
+0023: 
+0024: \subsection{统一拓扑间隙与必要塌缩}
+0025: \begin{theorem}[资料包 \texttt{thm:exact}；新结果]\status{已证；审稿结论“正确，需小幅修订”}\label{thm:U}
+0026: 存在与 $X,k$ 无关的 $\gamma>0$：对一切满足 $b_+>1$ 的极小一般型复曲面 $X$ 与 $k\ge(\frac13-\gamma)c_1^2(X)$，$X\#k\CPb$ 不承载任何 Einstein 度量。更一般地，若 $M$ 对每个度量有满足 $(a^+)^2\ge A$ 的 monopole 类且 $\chi(M)\le LA$，则任何 Einstein 度量迫使 $(2\chi+3\tau)/A\ge\frac23+\eta(L)$。
+0027: \end{theorem}
+0028: 证明把 LeBrun 估计中的近等号转化为非负密度 $\mathcal D$ 的小平均（$\fint\mathcal D\le436\delta^2+675d$，$d=(\frac13-\frac kA)_+$），用 Fubini 选点、带缓冲的局部等距展开的重数传输引理，以及\emph{不需体积下界}的 Cheeger--Tian \cite{CT} 四维 Einstein $\varepsilon$-正则性取得光滑局部极限；极限满足 $\mathcal D\equiv0$，即 $\Ric=-g$ 且 $\operatorname{spec}W^+=(-\frac16,\frac1{12},\frac1{12})$，而 Derdziński \cite{Derd} 型论证表明这在任何开集上不可能。
+0029: 
+0030: \begin{theorem}[局部正密度；资料包 \texttt{thm:local}]\status{已证（依赖 Cheeger--Naber \cite{CN}）}\label{thm:local}
+0031: 对任意 $K,r,v>0$ 存在 $\eta_0(K,r,v)>0$：完备定向四维流形若满足 $|\Ric|_{\op}\le K$、$\Vol B_r(p)\ge v$，则 $\fint_{B_{2r}(p)}\mathcal D\ge\eta_0$。
+0032: \end{theorem}
+0033: 
+0034: \begin{theorem}[必要塌缩]\status{已证}\label{thm:collapse}
+0035: 设 $M_i=X_i\#k_i\CPb$ 如上，$\delta_-(g_i)\to0$ 且 $(\frac13-k_i/A_i)_+\to0$。则对每个固定 $r,v>0$，$\Vol\{p:\Vol B_r(p)\ge v\}/\Vol(M_i)\to0$，且 $\diam(M_i,g_i)\to\infty$。
+0036: \end{theorem}
+0037: 由此，在临界比例上（$d=0$）或沿 $d_i\to0$ 的序列，近 Einstein 输入只能来自几乎处处塌缩的度量；对边界带内固定的 $d>0$，定理~\ref{thm:local}型的局部密度下界只给出“$v$-非塌缩点的体积比例 $\le C(r,v)(436\delta^2+675d)$”，并不排除 $e_-=0$。另一方面，定理~\ref{thm:A1}的构造不会落入这一范畴：对 Kähler--Einstein $A_1$ 轨形，反手性节点产生正自交球面，使 SW 不变量为零，而全标准手性的解消是极小曲面（$k=0$）。因此 SW 边界带是一类“全部 Einstein 不存在性已知、紧夹逼输入既未构造也未排除”的固定流形。若资料包所述的弱调和片假设 (SC)（有界 Ricci、小 $L^2$ 曲率能量的塌缩球上存在原度量的统一弱调和展开片）成立，则得到无条件的一致间隙 $\delta^2+d\ge c>0$，从而 $d<c$ 的那部分边界带被一致排除。(SC) 目前未证；Y.~Li \cite{Li} 的四维 Ricci 流平滑定理给出的是 $|\Rm|\le C/t$，不足以推出所需的原度量控制。
+0038: 
+0039: \subsection{熵障碍：度二 BCG 与图流形预算}
+0040: \begin{proposition}\status{已证（依赖 BCG）}\label{prop:BCG}
+0041: 设 $N$ 为闭定向实双曲四维流形，则 $N\#N$ 不承载任何 Einstein 度量，且 $e_-(N\#N)\ge\varepsilon_\chi=\frac{1-\sqrt{1-1/\chi_N}}{1+\sqrt{1-1/\chi_N}}=\frac1{4\chi_N}+O(\chi_N^{-2})$。
+0042: \end{proposition}
+0043: 间隙依赖 $\chi_N$；令 $\chi_N\to\infty$ 时下界趋零，但这既不构造近 Einstein 度量，也不是维数一致的界（资料包另对普通点处的短连接把手给出覆盖体积障碍）。
+0044: 
+0045: 对 Di Cerbo \cite{DiCerbo} 的 extended graph 四维流形（含纯实双曲块，沿 $T^3$ 尖点截面以仿射映射粘合；该范畴内已知无任何 Einstein 度量，证明用到 Connell--Suárez-Serrato \cite{CSS} 的最小体积计算），$\Ric\approx-g$ 归一化下任何 $\delta_-(g)=\delta\le\frac13$ 的度量满足
+0046: \[
+0047: \frac{V_*}{(1+\delta)^2}\le\Vol_g\le\frac{V_*}{(1-\delta)^2},\qquad \fint|W|^2\le\frac83\delta,\qquad \|W\|_\infty\ge\frac{1-3\delta}{\sqrt3},
+0048: \]
+0049: $V_*=12\pi^2\chi(M)$（$|W|$ 为 $\Lambda^2$ 上的 Hilbert--Schmidt 范数）。这些是相容性条件而非矛盾：局部极限可以是真双曲几何。图流形是否满足 $e_-=0$ 归结为第~\ref{sec:reduction}节的问题~W。
+0050: 
+0051: \subsection{正交传递 $T^2$ 对称类的完全排除}
+0052: 本小节采用 $\Ric\approx-3g$ 规范，$\mathcal E=\Ric+3g$，$\epsilon=\|g^{-1}\mathcal E\|_{\infty,\op}$（换到 $\delta_-$ 须除以 $3$）。设完备四维 $(X,g)$ 具有自由、等距、正交传递的 $T^2$ 作用，$g=\gamma_B+e^\sigma M_{ab}d\xi^ad\xi^b$，$\det M=1$，$U:B\to\HH^2$ 描述 $M$，$e=|dU|^2$。称 $B$ 的一个端为\emph{精确端}，若在紧集外 $\gamma_B=dt^2+e^{2t}dz^2$、$e^\sigma=c\,e^{2t}$、$U$ 为常值，其中 $t\to+\infty$（外扩端）或 $t\to-\infty$（尖点端）。
+0053: 
+0054: \begin{theorem}[资料包 \texttt{thm:OT}]\status{已证}\label{thm:OT}
+0055: 若 $B\cong S^1\times\R$ 且两端均为精确外扩端，则 $12-8\epsilon\le\mathcal B(\epsilon):=\bigl[\frac{4\epsilon}{\sqrt{3+\epsilon}}+\sqrt{2(3+\epsilon)+\frac{20\epsilon^2}{3+\epsilon}}\bigr]^2$；故 $\epsilon<\epsilon_*\approx0.24625$ 时不存在这样的度量。
+0056: \end{theorem}
+0057: 其证明的上界部分实际上给出：对任意具有限个精确端的完备底面，
+0058: \begin{equation}\label{eq:supe}
+0059: \sup_Be\le\mathcal B(\epsilon),
+0060: \end{equation}
+0061: 因为论证只用到完备性、$\Ric^4_f\ge-(3+\epsilon)\gamma_B$ 给出的 $CD(-(3+\epsilon),4)$ 条件（及 Erbar--Kuwada--Sturm／Bakry--Gentil--Ledoux 的 Fisher 信息 Riccati 不等式）以及 $e$ 与张力配对项具紧支集。本报告用一个逐点引理取代原证明中的极小分隔面，从而得到对底面拓扑的完全分类。
+0062: 
+0063: \begin{lemma}[临界点引理]\status{已证；新}\label{lem:critical}
+0064: 令 $\mu=e^{\sigma/2}$（轨道面积的平方根）。在 $\mu$ 的任一临界点 $p$，若 $\nabla^2\mu(p)$ 不是正定的，则 $e(p)\ge12-8\epsilon$。
+0065: \end{lemma}
+0066: \begin{proof}
+0067: 纤维块的迹给 $\Delta\sigma+|\nabla\sigma|^2=6-\tr\mathcal E_F$，$|\tr\mathcal E_F|\le2\epsilon$；底面块 $\Ric_g|_B=K_B\gamma_B-\nabla^2\sigma-\frac12d\sigma^2-\frac12U^*h_{\HH^2}=-3\gamma_B+\mathcal E_B$ 的无迹部分给 $(\nabla^2\sigma)_0+\frac12(d\sigma^2)_0=-\frac12(U^*h)_0-(\mathcal E_B)_0$。由 $\nabla^2\mu=\frac\mu2\nabla^2\sigma+\frac\mu4d\sigma^2$ 得
+0068: \[
+0069: \Delta\mu=\mu\bigl(3-\tfrac12\tr\mathcal E_F-\tfrac14|\nabla\sigma|^2\bigr),\qquad(\nabla^2\mu)_0=-\tfrac\mu4(U^*h)_0-\tfrac\mu2(\mathcal E_B)_0 .
+0070: \]
+0071: 在临界点 $\Delta\mu\ge(3-\epsilon)\mu$。设 $\nabla^2\mu(p)$ 的特征值 $\lambda_1\ge\lambda_2$，$\lambda_2\le0$，则 $\|(\nabla^2\mu)_0\|_{\op}=\frac{\lambda_1-\lambda_2}2\ge\frac{\lambda_1+\lambda_2}2\ge\frac{(3-\epsilon)\mu}2$。另一方面 $\|(U^*h)_0\|_{\op}\le e/2$，$\|(\mathcal E_B)_0\|_{\op}\le\epsilon$，故 $\frac{3-\epsilon}2\le\frac e8+\frac\epsilon2$，即 $e\ge12-8\epsilon$。
+0072: \end{proof}
+0073: 
+0074: \begin{proposition}[正交传递类的底面分类]\status{已证；新}\label{prop:morse}
+0075: 设 $B$ 连通、拓扑有限，全部端为精确端，且 $\epsilon<\epsilon_*$。则 $B\cong\R^2$ 且唯一的端是外扩端（AdS soliton 型），或 $B\cong S^1\times\R$ 且恰有一个外扩端与一个尖点端（形变尖点型）。特别地：不存在两端外扩的连接器（即定理~\ref{thm:OT}），也不存在底面亏格 $\ge1$ 或端数 $\ge3$ 的这类度量，从而在“端部精确、作用自由”的假设下，Di Cerbo 范畴中的 $\Sigma\times T^2$ 型块与 $T^3$ 连接颈均不能用正交传递度量实现 $\epsilon<\epsilon_*$。
+0076: \end{proposition}
+0077: \begin{proof}
+0078: 由式~\eqref{eq:supe}与 $\mathcal B(\epsilon)<12-8\epsilon$，引理~\ref{lem:critical}表明 $\mu$ 的每个临界点处 Hessian 正定，即全为非退化极小点。把各端在精确区域内截断得紧曲面 $B_T$；外扩端边界上 $\nabla\mu$ 指向外，尖点端边界上指向内。带边 Morse 理论给 $\chi(B_T)-\chi(\partial_-B_T)=\#\{\text{极小点}\}$，而 $\partial_-B_T$ 为圆周之并，故 $\chi(B)=\#\{\text{极小点}\}\ge0$。$B$ 非紧（紧时 $\mu$ 有极大点，与临界点处 $\Delta\mu>0$ 矛盾），于是（$B$ 可定向时）$(\text{亏格},\text{端数})\in\{(0,1),(0,2)\}$；$B$ 不可定向时 $\chi\ge0$ 只允许开 Möbius 带，此时 $\mu$ 无临界点，而单个外扩端（尖点端）迫使内部最小（最大）点，矛盾。情形 $(0,1)$：若唯一的端是尖点端，则 $\mu$ 在内部取得最大值，矛盾。情形 $(0,2)$：$\mu$ 无临界点；两端皆外扩则 $\mu$ 有内部最小点，皆为尖点则有内部最大点，均矛盾。
+0079: \end{proof}
+0080: 
+0081: 带联络扭转（非正交传递）的 $T^2$ 对称类不在上述结论内：此时式~\eqref{eq:supe}的 Bochner 论证中出现无定号项（资料包已指出），而引理~\ref{lem:critical}加强为 $e\ge12+2Q-8\epsilon$（$Q$ 为扭转能量密度）。资料包另证明了固定螺旋（Bianchi VII$_0$）标架类在反射中心后的不变区域障碍。

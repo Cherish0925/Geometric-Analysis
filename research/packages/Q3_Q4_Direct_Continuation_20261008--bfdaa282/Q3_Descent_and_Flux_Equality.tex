@@ -1,0 +1,264 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[margin=27mm]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\setlength{\emergencystretch}{2em}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\grad}{\operatorname{grad}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diver}{\operatorname{div}}
+\newcommand{\dd}{\,dV_g}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\title{Traceless-Ricci Descent and Harmonic-Flux Equality\\
+\large A continuation of the smooth global minimizer problem}
+\author{}
+\date{8 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For a closed almost-K\"ahler four-manifold with $J$-invariant Ricci tensor,
+we derive an exact first variation of the traceless-Ricci energy from the
+classical Bach identity of Apostolov--Dr\u aghici. It gives an explicit
+volume-preserving descending deformation in the nonpositive-scalar range.
+Combined with the supplied manuscript's harmonic-flux equality theorem,
+it shows that no non-Bach-flat critical metric can lie in that equality
+class. This eliminates a candidate construction route for the smooth
+global minimizer problem; it does not establish smooth attainment.
+\end{abstract}
+
+\section{Convention and the classical input}
+
+All manifolds below are smooth, closed, connected and four-dimensional.
+For a Riemannian metric set
+\[
+ E=\Ric-\frac{s}{4}g,\quad
+ P(g)=\int_M|E|^2\dd,\quad S(g)=\int_Ms^2\dd,\quad
+ \mathcal W(g)=\int_M|W_{\mathrm{op}}|^2\dd.
+\]
+The Weyl norm is the curvature-operator norm. Chern--Gauss--Bonnet reads
+\begin{equation}
+ P=2\mathcal W+\frac{S}{12}-16\pi^2\chi(M).
+ \label{eq:GB}
+\end{equation}
+Use the Bach normalization $B=\grad\mathcal W$ of
+\cite[\S2.3, equation (15)]{AD}. This specifies its sign and coefficient;
+vanishing is independent of that choice. For an almost-K\"ahler structure
+$(g,J,\Omega)$ with $J$-invariant Ricci, their Lemma~3 gives
+\begin{equation}
+ B=-\frac13(\nabla ds)^{\mathrm{inv}}
+   +\frac16(\nabla ds)^{\mathrm{anti}}
+   -\frac{\Delta s}{12}g-\frac{s}{6}E+\mathcal T,
+ \label{eq:AD}
+\end{equation}
+where $\mathcal T$ is symmetric and $J$-anti-invariant, and
+$\Delta=d^*d$ is nonnegative. We use this established identity, rather
+than claim a new formula for the Bach tensor.
+
+The contracted Bianchi identity gives $\diver E=ds/4$. Since $E$ is
+trace-free and $J$-invariant, integrating \eqref{eq:AD} against $E$ yields
+\begin{equation}
+ D\mathcal W_g[E]
+ =\int_M\langle B,E\rangle\dd
+ =\frac1{12}\int_M|ds|^2\dd-\frac16\int_Ms|E|^2\dd.
+ \label{eq:B-pair}
+\end{equation}
+Indeed, the anti-invariant terms are orthogonal to $E$, and
+$\int\langle\nabla ds,E\rangle=-\int|ds|^2/4$.
+
+\section{A genuine global metric deformation}
+
+\begin{theorem}\label{thm:descent}
+Let $(M,g,J,\Omega)$ be closed almost-K\"ahler, and suppose
+$\Ric(JX,JY)=\Ric(X,Y)$. Then
+\begin{equation}
+ \boxed{DP_g[E]=\frac18\int_M|ds|^2\dd
+                    -\frac12\int_Ms|E|^2\dd.}
+ \label{eq:main}
+\end{equation}
+The smooth global metric path
+\begin{equation}
+ g_t(X,Y)=g\bigl(\exp(-tE^\sharp)X,Y\bigr)
+ \label{eq:path}
+\end{equation}
+is positive definite and preserves the volume form for every real $t$.
+If $s\le0$, it strictly decreases $P$ for all sufficiently small $t>0$,
+unless $ds\equiv0$ and $sE\equiv0$.
+\end{theorem}
+
+\begin{proof}
+For a covariant metric variation $h$,
+\[
+ s'[h]=-\langle\Ric,h\rangle
+       +\diver\diver h-\Delta_{\mathrm{div}}\tr h,
+ \qquad \Delta_{\mathrm{div}}=\diver\nabla=-\Delta.
+\]
+For $h=E$, this becomes
+$s'[E]=-|E|^2+\Delta_{\mathrm{div}}s/4$, while
+$dV'[E]=0$. Thus
+\begin{equation}
+ DS_g[E]=-2\int_Ms|E|^2\dd-\frac12\int_M|ds|^2\dd.
+ \label{eq:S-pair}
+\end{equation}
+Combine \eqref{eq:GB}, \eqref{eq:B-pair} and \eqref{eq:S-pair} to obtain
+\eqref{eq:main}. The endomorphism $E^\sharp$ is self-adjoint and
+trace-free. Consequently $\exp(-tE^\sharp)$ is positive definite with
+determinant one. Hence \eqref{eq:path} is an actual metric path, not
+a formal curvature variation, and has fixed volume form. Its derivative
+at zero is $-E$, giving
+\begin{equation}
+ \left.\frac{d}{dt}P(g_t)\right|_{t=0}
+ =-\frac18\int_M|ds|^2\dd+\frac12\int_Ms|E|^2\dd.
+ \label{eq:negative}
+\end{equation}
+Both terms are nonpositive when $s\le0$. Equality requires both
+$ds=0$ and $s|E|^2=0$; connectedness gives the stated exceptions.
+\end{proof}
+
+The varied metrics need not remain almost-K\"ahler. This is appropriate
+for an infimum over \emph{all} smooth metrics, including a unit-volume
+normalization. In particular the deformation is not a claim about a
+minimum restricted to a fixed symplectic form.
+
+\begin{corollary}\label{cor:csc}
+For a constant-scalar metric in Theorem~\ref{thm:descent},
+\[
+ DP_g[E]=-\frac{s}{2}P(g).
+\]
+If $s\ne0$ and $P(g)>0$, the path
+$g(\exp(t\operatorname{sgn}(s)E^\sharp)\cdot,\cdot)$ has derivative
+$-|s|P(g)/2<0$. Thus a constant-nonzero-scalar $P$-critical metric in
+this entire almost-K\"ahler, $J$-invariant-Ricci class is Einstein.
+\end{corollary}
+
+If $s<0$, one may also conformally correct this path to retain the initial
+constant scalar curvature. The linearization of the equation
+$6\Delta_g u+s_gu=s_0u^3$ at $u=1$, $s_g=s_0<0$, is
+$6\Delta_g-2s_0$, which is invertible. The implicit function theorem
+gives the correction. Since the conformal first variation of $P$ vanishes
+at a constant-scalar metric, the strict derivative is unchanged.
+
+\begin{corollary}
+If $s\le-\sigma<0$ and $P>0$ in Theorem~\ref{thm:descent}, then
+\[
+ \|\grad P\|_{L^2}
+ \ge \frac{\|ds\|_{L^2}^2}{8\sqrt P}
+       +\frac{\sigma}{2}\sqrt P.
+\]
+\end{corollary}
+\begin{proof}
+Apply Cauchy--Schwarz to $DP[E]=\int\langle\grad P,E\rangle$ and
+use \eqref{eq:main} and $\|E\|_2=\sqrt P$.
+\end{proof}
+This estimate concerns the exact geometric class in the theorem.
+It does not supply the derivative control needed to extend the identity
+to arbitrary nearly aligned, degenerating metrics.
+
+\section{Consequence for the supplied harmonic-flux decomposition}
+
+Write $\mathcal B:\Lambda^+\to\Lambda^-$ for the off-diagonal curvature
+block, so $P=4\|\mathcal B\|_2^2$. For a nonzero harmonic anti-self-dual
+two-form $h$, put
+\[
+ H=\|h\|_2^2,\qquad F_h=\sqrt2\int_M|\mathcal B^*h|\dd,
+ \qquad L_h=\frac{P/2-F_h^2/H}{4\pi^2}\ge0.
+\]
+The supplied continuation \cite[Sections 4--5]{Input} proves the following
+equality statement, including removal across the harmonic zero set:
+\begin{quote}
+At constant scalar curvature, $L_h=0$ implies that $g$ is Einstein or
+admits a smooth global almost-K\"ahler structure with $J$-invariant Ricci.
+\end{quote}
+This is the precise additional input used in the next proposition.
+
+\begin{proposition}\label{prop:flux}
+Assuming the equality statement above, a smooth closed $P$-critical metric
+with $L_h=0$ for some nonzero harmonic anti-self-dual $h$ is Bach-flat.
+If its scalar curvature is nonzero, it is Einstein.
+\end{proposition}
+\begin{proof}
+For $g_t=e^{2tf}g$, conformal invariance of $\mathcal W$ and
+\eqref{eq:GB} give
+\[
+ DP_g[2fg]=\int_M f\Delta s\dd.
+\]
+Criticality implies that $s$ is constant. If $s\ne0$, the equality
+statement and Corollary~\ref{cor:csc} force $E=0$. If $s=0$, the
+first variation of $S$ vanishes, and \eqref{eq:GB} gives
+$\grad P=2B$. Criticality then implies $B=0$.
+\end{proof}
+
+Therefore, on the negative-Yamabe candidates with $P_*>0$ already
+identified in the project, a hypothetical smooth global minimizer must have
+\begin{equation}
+ L_h(g)>0\qquad\text{for every nonzero }h\in\mathcal H_g^-.
+ \label{eq:positive-remainder}
+\end{equation}
+At a fixed such metric with $b_->0$, compactness of the harmonic unit
+sphere and continuity give $\min_{\|h\|_2=1}L_h(g)>0$.
+This last positive number depends on the metric. It is not a uniform
+bound along a minimizing sequence.
+
+The direction of this consequence matters: forcing $L_h=0$ would
+\emph{exclude} the desired non-Bach-flat minimizer. It would not establish
+its existence. A sharp inequality attained by such a minimizer must
+accommodate a nonzero harmonic-alignment remainder or a different
+geometric structure.
+
+\section{Two normalization checks and the remaining problem}
+
+For a product of constant-curvature surfaces with Gaussian curvatures
+$a,b$ and product volume $V$, one has $s=2(a+b)$ and
+$P=(a-b)^2V$. The eigenvalues of $E^\sharp$ on the two factors are
+$(a-b)/2$ and $-(a-b)/2$. Under
+$g_t=g(\exp(tE^\sharp)\cdot,\cdot)$,
+\[
+ P(g_t)=V\bigl(ae^{-t(a-b)/2}-be^{t(a-b)/2}\bigr)^2.
+\]
+Its derivative is $-(a+b)(a-b)^2V=-sP/2$, independently checking the
+coefficient and sign of Corollary~\ref{cor:csc}.
+
+There is also a direct distinction between the two global variational
+problems in the supplied manuscript. Let
+\[
+ R=\int|\Ric|^2=P+S/4,\quad
+ T_s=\int s,\quad V=\operatorname{Vol}(M),\quad
+ \mathcal E=4-\frac{T_s^2}{VR}.
+\]
+At a smooth $P$-critical metric with nonzero constant scalar curvature,
+the first variation of $S-T_s^2/V$ vanishes. Thus
+\begin{equation}
+ \boxed{D\mathcal E_g[E]=\frac{2sP^2}{R^2}.}
+ \label{eq:distinct}
+\end{equation}
+Indeed, $\mathcal E=4P/R$ to first order there, $DP=0$, and
+$DS[E]=-2sP$. If $P>0$, \eqref{eq:distinct} is nonzero. Hence smooth
+attainment of the normalized defect does not produce the sought
+non-Bach-flat $P$-minimizer.
+
+\paragraph{What remains.}
+The target is still a smooth global minimizer of $P$ on a closed manifold
+which is not Bach-flat. No smooth-attainment theorem or such metric is
+constructed here. The result proved here is the explicit descending
+deformation and the consequent exclusion of the supplied flux-equality
+class. The Bach identity is classical; the connection to the project's
+flux equality is the continuation recorded in this note.
+
+\begin{thebibliography}{9}
+\bibitem{AD}
+V. Apostolov and T. Dr\u aghici,
+\emph{Almost K\"ahler 4-manifolds with $J$-invariant Ricci tensor and
+special Weyl tensor}, Quart. J. Math. 51 (2000), 275--294.
+\href{https://arxiv.org/abs/math/9911196}{arXiv:math/9911196}.
+The input is \S2.3, equation (15), Lemma~3.
+\bibitem{Input}
+Supplied project manuscript, \emph{Einstein Gaps on Four-Manifolds:
+Subsequent Mathematical Developments}, 8 October 2026,
+\texttt{03\_Subsequent\_Mathematical\_Developments.tex},
+Sections 4--5 (harmonic flux, equality and removability).
+\end{thebibliography}
+\end{document}

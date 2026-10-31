@@ -1,0 +1,138 @@
+--- v1/03_A03_全局拓扑兼容与反例闭合.tex
++++ v2/03_A03_全局拓扑兼容与反例闭合.tex
+@@ -5,7 +5,7 @@
+ \usepackage{xurl}
+ \usepackage[hidelinks,bookmarksnumbered]{hyperref}
+ \usepackage{fancyhdr}
+-\pagestyle{fancy}\fancyhf{}\fancyhead[L]{Yau26\quad 研究主线与续接基线}\fancyhead[R]{2026-09-16}\fancyfoot[C]{\thepage}
++\pagestyle{fancy}\fancyhf{}\fancyhead[L]{Yau26\quad 研究续接基线·覆盖补全v2}\fancyhead[R]{2026-09-16}\fancyfoot[C]{\thepage}
+ \setlength{\parskip}{4pt}\linespread{1.13}
+ \setlength{\emergencystretch}{3em}
+ \setlist{itemsep=2pt,topsep=4pt,parsep=0pt,leftmargin=2em}
+@@ -41,7 +41,7 @@
+ 
+ \title{主线三：近Einstein构造与全局拓扑的闭合\\[0.5em]{\large S0910A03｜图流形、曲面丛、全局存在性与Yau26的决定性接口}}
+ \author{Qiushi Engine\quad 科学续接稿}
+-\date{2026年9月16日}
++\date{2026年9月16日\quad 覆盖补全版 v2}
+ \begin{document}
+ \maketitle
+ \begin{abstract}
+@@ -53,6 +53,18 @@
+ \endgroup
+ \clearpage
+ 
++\section*{覆盖复核说明：本稿的边界与原始研究的优先性}
++\addcontentsline{toc}{section}{覆盖复核说明}
++本版为原三份续接稿的覆盖补全版（v2）。它\emph{不声称把全部原始证明和300步记录压缩成了无损替代物}。上一版覆盖了主要目标，但遗漏或过度压缩了部分最终成果、技术依赖和候选分支；本版补回具体条目，并配套保存可访问原件与逐步索引。正文中“完整”“已核查”等表述只能按紧邻的来源和范围理解，不能解释为对原工作区全部研究的认证。
++
++必须区分三类内容：原始归档或轨迹记载的研究；用户转述的Codex原稿审读；上一版编辑者的代数补充、外部参考与路线建议。后两类不得替换前一类。原稿中尚未取得的系数、PDE细节、程序和历史题页，仍以\emph{原件待取得}记录，不能根据摘要补成已证内容。上一版新定义的密度或新推论属于可选校验材料，不是原研究新增了一项已经认证的成果。
++
++A01/A02/A03的三份分工是编辑组织建议，不是历史上三个会话原有任务的逐字复制。先读取各自Step100的实际交接和当前工作区，再决定是否采用建议；任何原有路线不因未被安排为首要方向就被宣告失败或删除。总体目标仍是原始Yau26，不预定真或假，也不预定所有有效突破必然来自当前两条成果主线。
++
++配套\path{审计/300步原始任务索引.json}逐条保存三份实际上传轨迹的300个步骤的\path{tx_task}、\path{rx_task}、状态及行号；\path{审计/研究条目覆盖表.tsv}列出本次人工对照的研究单元。\path{原始材料/}保留三份完整meta-trace及两份输入ZIP，字节校验见\path{审计/原件校验.tsv}。这些索引证明可追溯与原件保留，\emph{不证明每条历史主张正确，也不等于数学语义覆盖率100\%}。
++
++旧ZIP引用的\path{meta_trace_report (93)(1).md}、\path{(94)(1).md}、\path{(95)(1).md}，与本次可见的\path{(100).md}及两份时间戳文件，尚无逐字同一性证明。三份现有轨迹按其内部工作区标记对应A01/A02/A03；不能只因都为100步就替换旧文件身份。归档另外引用的\path{Yau26_Ricci_pinching_research.md}、\path{Yau26_synthesis.tex/pdf}、\path{Yau26_uniform_gap.tex}和服务器工作区，不在当前可打包原件中。
++
+ \section{原题、量词与成功标准}
+ 本会话组的工作命题保持为：对每个维数 $n\ge2$，是否存在只依赖 $n$ 的实常数 $c_n<C_n$，使任意闭、连通、光滑实流形 $M^n$ 只要承载一个度量 $g$ 满足
+ \begin{equation}\label{eq:Q}
+@@ -120,7 +132,7 @@
+ \end{longtable}
+ 曲面丛的 $\mathsf P_-$ 与图流形的 $\mathsf N$ 属于不同对象，不能相加。一个图流形局部free-$T^2$区域也不意味着整个闭流形具有自由环面作用。第三主线应保留这些差异，而不是用同一个“长颈”名称将不同拓扑合并。
+ 
+-\section{图流形的外部基线与一项直接可推导的饱和约束}
++\section{图流形基线与上一版编辑者的可选饱和约束}
+ \subsection{先固定Di Cerbo范畴，不能只用名称}
+ 采用Di Cerbo文中定义的闭、定向extended graph四流形，检查真实双曲块、非纯块、边界仿射粘合及周边子群的条件\cite{DiCerbo}。不能把任意有图式分解的流形都包含进去，也不能将无非平凡拼接的闭双曲流形当成无Einstein例。
+ 
+@@ -131,7 +143,7 @@
+ 该文Lemmas 8--9给出 $\tau(M)=0$、$\chi(M)=3V_0/(4\pi^2)$，以及 $\Ric\ge-3g$ 规范下的最小Ricci体积为 $V_0$。它们与全局不存在性证明共同构成可靠基线。没有纯块的 $\chi=\tau=0$ 情形本来就受紧夹逼的Chern--Weil障碍限制，不应作为本路线的主要候选。
+ 
+ \subsection{近负Einstein序列必须同时饱和体积与Weyl预算}
+-以下为\status{本稿重算}的文献推论，不宣称文献首次。改用原题的 $\Ric\approx-g$ 归一化，令
++以下为\status{上一版编辑者补充}的文献推论，并非原归档已经核准的新增成果。本次仅保留以供比较，不以它替代原Step100相对CGB任务，也不把它强制指定为优先路线。改用原题的 $\Ric\approx-g$ 归一化，令
+ \[
+ V_*=9V_0=12\pi^2\chi(M).
+ \]
+@@ -356,7 +368,72 @@
+ 
+ A03不接管A01已经审读的精确间隙主证明，也不复制A02十维Weyl核计算。需要调用时传递完整条件与版本。若发现新的更有效全局机制，允许转向；但必须说明它改变了 $\mathsf P_\sigma$ 或 $\mathsf N$ 的哪一部分，不能仅增添一组相关术语。
+ 
+-这一安排保留300步中的有价值内容，又把后续计算约束在原题真正需要的闭合处：同一光滑对象、同一归一化、全部方程、全部Einstein符号和明确常数依赖。
++这一安排是可调整的编辑建议，不是已穷尽300步价值的证明；原始成果与分支由覆盖表和原件继续保留。后续必须仍围绕：同一光滑对象、同一归一化、全部方程、全部Einstein符号和明确常数依赖。
++
++\section{覆盖补全：遗漏的存在性分支、全局筛选与最终接续}\label{sec:restore-a03}
++上一版把本稿过度集中在图流形和全局反例，而未充分保留已有的\emph{Einstein存在性}工作。本节恢复这些内容，来源为三份实际上传meta-trace与归档明示的条目；本轮不对未附的证明和代码再作认证。
++
++\subsection{Q-Gorenstein平滑：一个不能被删去的存在性研究簇}
++A01第49--53步研究的链条为
++\[
++\begin{gathered}
++\text{全局Q-Gorenstein平滑}\longrightarrow\text{canonical ample保持}\\
++\longrightarrow\text{Aubin--Yau负KE}\\
++\longrightarrow\text{simultaneous resolution/Ehresmann}\\
++\longrightarrow\text{指定smooth resolution上Einstein}.
++\end{gathered}
++\]
++它可能将原反例候选转化为存在性例子。只证明局部节点有平滑方向，不等于全局平滑；中央复结构非ample，也不等于底层光滑流形无Einstein。
++
++第51步\emph{报告}对BCGP的 $G=\Z_4^2$、$K^2=2$、六个 $A_1$ 节点行完成了存在性证明：通过
++\[
++T_X^0\simeq(\pi_*T_Y)^G,\qquad
++H^2(X,T_X^0)=H^2(Y,T_Y)^G,
++\]
++及等变Serre对偶、K\"unneth与特征标计算使两项不变空间消失，再用全局平滑、ample与微分同胚桥。其原稿为\path{Sessions/S0910A01/workspace/notes/step51_reflexive_bridge_einstein_existence_proof.md}。17/17检查是源记录的附带证据，不代替整条几何证明；本次未取得原稿，故准确状态是\emph{轨迹报告了闭合个案，需恢复原证明与查新}，不是“从未有结果”，也不是本次已重新验证世界首创。
++
++第50步的经典Campedelli构造使用七条直线
++\[
++x,y,z,x-y,y-z,x-z,x-y+z=0
++\]
++并检查三重点标签；不能仅因基本群或 $K^2$ 相同就把它与BCGP行认成同一平滑分支。第52步作了 $K^2=4,6$ 多行的holomorphic Lefschetz obstruction扫描；第53步在 $\mathbb Q(\zeta_{60})$ 精确检查BCGP \S6.9的 $d_{21}=d_{12}=1$、四个节点轨道。即使 $\dim\ker\beta\ge2$，仍不推出存在所有节点坐标都非零的平滑方向。这些具体结果和缺口应共同保留。
++
++此研究簇由本稿组织承接，但仍属于原A01已开展的工作；这不是把功劳或实际工作区转移给A03，也不要求A01丢弃原分支。
++
++\subsection{全局工具为何与近Einstein输入错位}
++A02第86--92步的来源审计依次处理PSC与monopole不相容、反向 $A_1$ 填充中的 $+2$ 球对具体BF资料的限制，以及ALE Euler/signature预算与BCG熵界的关系。BF论证必须保留closed-to-relative接口、非零性、取向和嵌入球条件；不能从“不适用这个BF证书”断言没有任何全局障碍。
++
++A01第91--92步的 $N\#N$ 双曲／Sambusetti--BCG路线不应只留一句“目标依赖”。它具有明确的无Einstein或度映射障碍对象，缺的是对应的任意紧点态输入及统一性；其阈值必须保留目标、直径、次数等真实依赖。原入口为\path{step91_sambusetti_bcg_quantitative_route.md}及第92步修正版。A02第90步熵推论曾在第92步修正缩放方向：$\widehat g=(1+\epsilon/3)g$，四维体积乘 $(1+\epsilon/3)^2$，不能使用倒数版本。
++
++相应资料也保留了ALE添加对 $\chi-\frac32|\tau|$ 的影响分析；它说明某些经典障碍不能直接与给定近似构造配对，\emph{不等于全局Einstein存在性已经证明}。粗alignment、未知Ricci-flat分类、某个复结构的K\"ahler限制，都不能代替缺失的全符号排除。
++
++\subsection{图流形末步的具体对象、数值证据和原样待办}
++A03第100步并非只有相对CGB公式。其引用的候选块为\texttt{24cdc1.1}，源记录列出：可定向单 $T^3$ cusp、$\chi=2$、截面曲率 $-1$ 体积 $8\pi^2/3$、最大cusp体积16、$b_1=1,b_3=0$。\emph{这是轨迹引用的外部数据，本次未重新核准该三角剖分或原文}；但为了不丢失具体研究对象，必须原范围保留，而不是只写“某个24-cell”。
++
++原第100步要求：核准周边 $H_1$ 像及primitive character、互素覆盖度子序列、一cusp条件、两块取向相容的仿射粘合和Di Cerbo假设；同时计算 $R,N$ 联动时的真实Weyl、体积和所有Ricci块。已有JSON的connector/Weyl密度是\emph{占位参数}，$N^{-2}$缩放核对不是一个已测量的实际连接器。旧Step99的JSON未重生成，不能继承其连接器解释。
++
++A03第69步还记录Koiso数值演化的分辨率梯队：6/8/10/12模在早期约 $t\lesssim0.4$ 相互趋近，并出现 $H$ 先正后负；更晚阶段刚性与分辨率依赖增强，不能当作几何爆破证明。该初始族的 $S'(0)$ 与互补截面曲率关系只限制相应反射中心。它不是一般双端Einstein连接器的不存在性定理。
++
++第94--96步的带荷中心、水平Noether配对、cusp indicial根和全局残差map也应保存。第96步报告全系统主符号rank六，及特定规范中的scalar根 $-1,0,3$、orbit根 $0,3$；这些是\emph{原模型的局部分析资料}，不自动给全局Fredholm逆或双端解。第93步曾因在最大值处 $LQ<0$ 误判矛盾，第94步已撤回；第95--96步又修正了 $K_X$ 为恒等配对而非新障碍的解释。
++
++原入口另包括\path{step94_charge_sign_correction_and_global_flux.md}、\path{step96_charged_koiso_local_evolution_and_joint_matching.md}、\path{step100_relative_cgb_scaling.py}和\path{step100_relative_cgb_scaling.json}。这些路径与原最后待办已完整保存在300步索引，不以本版路线建议替换。
++
++\subsection{曲面丛：存在的输入、失败的推断与尚缺的原始定义}
++$E_D$ 的全部种数、单值化、度量系数和误差常数在当前ZIP中未给全；不能自行补全这个对象。归档保存的核心内容是最大范数近負Einstein输入、长collar的逆估计问题，以及一般Einstein度量不必适配给定纤维化。
++
++具体地，$L^2$谱控制不自动提供长度一致的 $L^\infty$逆；近零模和Green核可能随颈长放大。A03第68--69步已用乘积双曲例及目标Teichm\"uller优化检查，否定“调和、submersion、唯一能量极小就推出水平共形／调和态射”的捷径。须保留这些明确失败机制，不能只留下“曲面丛还缺全局障碍”的一句话。
++
++\subsection{一般正分支与高维必须有明确接续位置}
++本版将一般四维正分支的非塌缩集中、塌缩、单连通条件性体积归约恢复在A02；它不是A03可无限期代管的尾注。A03负责各构造的same-smooth-type判断与全符号存在性，不承担替代所有维数理论的任务。
++
++归档09保留的高维关键观察为
++\[
++A_U\|\Rm\|_{L^{n/2}(U)}\lesssim r^2
++\left(\fint_U|\Rm|^{n/2}\right)^{2/n},
++\]
++这是其相应Sobolev/能量约定下的尺度结构，\emph{不是任意塌缩域免费获得Sobolev不等式}。待补的是拓扑驱动的全局预算和禁止局部曲率模式，而非仅把四维指数换成 $n/2$。
++
++$n=5$、余维四ALE束、群表示不变量、全维正分支与新的全部Einstein不存在性，均应保留为证据驱动的开放分叉；不因为当前两条成果成熟就宣布这些路线没有价值。乘积只传播已构造输入，不传播任意Einstein非存在性。原题完整解决的最高目标不因分成三份续接稿而缩小。
+ 
+ \section{结果交付与论文标准}
+ 研究结论以具体命题和证明为单位，而不是以Agent数量、步数或平台认可次数为单位。同一公式在多个会话复算，可以提高证据质量，不产生多项独立新发现。
+@@ -390,5 +467,6 @@
+ 
+ \bibitem{CodexReview} 用户在本会话提供的 Codex 原稿审读报告（截至2026-09-16）：\path{Sessions/S0910A03/workspace/briefing/Yau26_uniform_gap.tex}，重点位置原稿约第277行；另核查 A02 第83步构造笔记。结论为在所审读依赖链中未发现实质缺口，且精确拓扑间隙不依赖(SC)。本引用是审读报告的来源定位，不声称原稿全文已包含于归档。
+ 
++\bibitem{CoverageAudit} 本版覆盖复核资料（2026-09-16）：\path{审计/研究条目覆盖表.tsv}、\path{审计/300步原始任务索引.json}、\path{审计/原件校验.tsv}。恢复内容来自实际上传三份meta-trace及两个归档的明确条目；并非本次重新证明全部原稿。
+ \end{thebibliography}
+ \end{document}

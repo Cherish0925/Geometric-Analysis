@@ -1,0 +1,108 @@
+% Qiushi Engine PRL supplementary-material template.
+% It shares the paper's verified title, author identity, notation, bibliography,
+% figure language, and journal profile, while remaining single-column for readable
+% derivations, protocols, additional results, and reproducibility information.
+% Build with: latexmk -lualatex -interaction=nonstopmode -halt-on-error main.tex
+% If the LuaLaTeX font cache is not writable, prefix that command with
+% TEXMFVAR=/tmp/qiushi_texmf_var (or another session-writable cache directory).
+% Remove every placeholder and inspect every rendered page before final delivery.
+\documentclass[aps,prl,onecolumn,10pt,superscriptaddress,nofootinbib,longbibliography]{revtex4-2}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{amsthm}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xurl}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+
+\graphicspath{{figures/}{../figures/}{./}{../../workspace/figures/}}
+\sisetup{detect-all=true,per-mode=symbol}
+\Urlmuskip=0mu plus 2mu
+\emergencystretch=2em
+\allowdisplaybreaks
+
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\theequation}{S\arabic{equation}}
+
+\providecommand{\dd}{\mathop{}\!\mathrm{d}}
+\providecommand{\dv}[2]{\frac{\dd #1}{\dd #2}}
+\providecommand{\pdv}[2]{\frac{\partial #1}{\partial #2}}
+\providecommand{\vect}[1]{\boldsymbol{#1}}
+\providecommand{\mat}[1]{\mathbf{#1}}
+\providecommand{\E}{\mathbb{E}}
+\providecommand{\Var}{\operatorname{Var}}
+\providecommand{\argmin}{\operatorname*{arg\,min}}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\begin{document}
+
+\title{Supplementary Material: Article Title}
+
+\author{Qiushi Engine}
+\noaffiliation
+% Add only real, user-approved author and affiliation metadata. Keep it identical
+% to the main paper; never duplicate the author name as an affiliation.
+
+\date{\today}
+
+\maketitle
+
+\section{Definitions and notation}
+
+Text.
+
+\section{Derivations and proofs}
+
+Text.
+
+\begin{equation}
+  \mathcal{A}(u,v)=\mathcal{B}(u,v)+\mathcal{R}(u,v).
+  \label{eq:s-example}
+\end{equation}
+
+\section{Protocols and reproducibility}
+
+Text.
+
+\section{Additional results}
+
+Text.
+
+\begin{figure}[t]
+  \centering
+  \fbox{\rule{0pt}{1.7in}\rule{0.86\textwidth}{0pt}}
+  \caption{Supplementary figure caption.\label{fig:s-example}}
+\end{figure}
+
+\begin{table}[t]
+  \caption{Supplementary table caption.\label{tab:s-example}}
+  \begin{ruledtabular}
+  \begin{tabular}{lccc}
+  Case & Value A & Value B & Uncertainty \\
+  \colrule
+  A & -- & -- & -- \\
+  B & -- & -- & -- \\
+  \end{tabular}
+  \end{ruledtabular}
+\end{table}
+
+\IfFileExists{refs.bib}{\bibliographystyle{apsrev4-2}\bibliography{refs}}{}
+
+\end{document}

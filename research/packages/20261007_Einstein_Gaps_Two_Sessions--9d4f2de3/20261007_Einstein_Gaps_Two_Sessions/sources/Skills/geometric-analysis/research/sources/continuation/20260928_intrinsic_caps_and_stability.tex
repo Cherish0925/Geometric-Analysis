@@ -1,0 +1,542 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{esint}
+\setmathfont{Asana Math}
+\setlength{\emergencystretch}{3em}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\hypertarget{low-energy-matched-caps-and-gauge-free-first-order-stability}{%
+\section{Low-energy matched caps and gauge-free first-order
+stability}\label{low-energy-matched-caps-and-gauge-free-first-order-stability}}
+
+28 September 2026. Continuation of I44 and I52, after the marked-center
+construction. All statements below concern actual smooth metrics.
+
+The local construction fills a nearly Euclidean annulus at a cost
+controlled by its full curvature energy and its zeroth-order deviation.
+It preserves the original outer collar exactly. Applied on sufficiently
+long annular ranges, it removes the gauge and scalar-curvature
+hypotheses from the lower first-order bound near selected recovery
+metrics. It does not parametrize arbitrary near-minimizers.
+
+\hypertarget{a-matched-cap-from-zeroth-order-closeness-and-critical-energy}{%
+\subsection{1. A matched cap from zeroth-order closeness and critical
+energy}\label{a-matched-cap-from-zeroth-order-closeness-and-critical-energy}}
+
+Let \(e\) denote the Euclidean metric and
+\(\mathcal A=\{1<|x|<4\}\subset\mathbb R^4\). The curvature norm can use
+either standard tensor convention; the universal constants absorb that
+fixed choice.
+
+\textbf{Theorem 1 (small-energy matched cap).} There are
+\(a_0,\varepsilon_0,C>0\) such that every smooth metric \(g\) on
+\(\mathcal A\) with \[
+ a=\|g-e\|_{L^\infty(e)}\le a_0,\qquad
+ E_0=\int_{\mathcal A}|\operatorname{Rm}_g|^2\,dV_g
+          \le\varepsilon_0
+\] has a smooth extension \(G\) to \(B_4\), equal to \(g\) on
+\(\{7/2<|x|<4\}\), satisfying \[
+ \int_{B_4}|\operatorname{Rm}_G|^2\,dV_G
+                         \le C(E_0+a^2).                    \tag{1.1}
+\] There is no derivative bound on the input. No boundary diffeomorphism
+is needed. In particular (1.1) bounds the self-dual Weyl cost.
+
+The proof uses a localized Ricci--DeTurck deformation. The metric is not
+required to solve any stationary equation. The small \(C^0\) hypothesis
+supplies the parabolic and Sobolev control; we do not invoke
+curvature-only harmonic-coordinate regularity.
+
+\hypertarget{regularization-and-a-uniform-smoothing-time}{%
+\subsubsection{1.1 Regularization and a uniform smoothing
+time}\label{regularization-and-a-uniform-smoothing-time}}
+
+Embed \(B_5\) in a fixed flat torus. Extend \(g\) as
+\(g_0=e+\zeta(g-e)\), where \(\zeta\) is supported in \(\mathcal A\) and
+equals one on \[
+ \Omega=\{9/8<|x|<15/4\}.
+\] This is a smooth positive extension with the same small supremum
+bound. Its curvature away from \(\Omega\) can be arbitrarily large; no
+estimate below charges that curvature.
+
+Choose a fixed smooth radial cutoff with \[
+ \operatorname{supp}\chi\subset\{5/4<|x|<13/4\},\qquad
+ \chi=1\ \text{on }\{7/4<|x|<9/4\},\qquad 0\le\chi\le1 .
+\] For \(0<\eta<1\), put \(q=\chi^2+\eta^2\), and solve \[
+ \partial_tg_\eta=-2q\,\operatorname{Ric}(g_\eta)
+                    +\mathcal L_{qW(g_\eta)}g_\eta,\qquad
+ W^k(g)=g^{ab}\Gamma(g)^k_{ab},\qquad g_\eta(0)=g_0.   \tag{1.2}
+\] The background connection is the flat one. The full Lie derivative
+\(\mathcal L_{qW}\), not \(q\mathcal L_W\), is important both for the
+coordinate equation and the geometric energy identity. For every fixed
+\(\eta>0\), this is a smooth strictly parabolic system. Local existence
+is the classical DeTurck reduction and quasilinear parabolic existence
+theorem.
+
+Here is the uniform continuation estimate needed for the proof. Write
+\(u=g_\eta-e\). In flat coordinates (1.2) takes the form \[
+ \partial_tu=q\,g_\eta^{ab}\partial_{ab}u
+             +q\,\mathcal Q(g_\eta,Du,Du)
+             +Dq\cdot\mathcal B(g_\eta)Du,              \tag{1.3}
+\] with smooth bounded algebraic coefficients while \(|u|\) is small.
+Set \[
+ L=\partial_t-qg_\eta^{ab}\partial_{ab},\qquad
+ v=|u|_e^2,\qquad w=q|Du|_e^2 .
+\] The fixed cutoff gives \[
+ |Dq|^2/q+|D^2q|\le C_\chi
+\] uniformly in \(\eta\). Differentiating (1.3), using ellipticity near
+\(e\), and absorbing mixed Hessian terms by Young's inequality gives \[
+ Lv\le-cw+Cv,\qquad
+ Lw\le-cq^2|D^2u|^2+Cw^2+Cw.                         \tag{1.4}
+\] For clarity, differentiation of the principal coefficient contributes
+\(qDq\,Du\,D^2u\) and \(q^2(Du)^2D^2u\). Their costs are bounded by a
+fraction of \(q^2|D^2u|^2\) plus \(Cw+Cw^2\). The differentiated cutoff
+drift contributes \(D^2q\,w\) and \((|Dq|/\sqrt q)w^{3/2}\), bounded by
+the same right side. No third derivative of \(q\) or input derivative
+bound is used. In the first inequality the nonlinear term is
+\(O(|u|w)\); choosing \(a_0\) small absorbs it.
+
+Fix \(T>0\) independent of the input, and take \(K>2e^{CT}\). Then
+\(v\le a^2e^{Ct}\) while the solution exists. At a spatial maximum of
+\(F=w/(Ka^2-v)\), the quotient gradient terms cancel, and (1.4) implies
+\[
+ LF\le\{C(Ka^2-v)-c\}F^2+CF
+                   \le-c'F^2+CF.                    \tag{1.5}
+\] After reducing \(a_0\), scalar comparison yields \[
+ \|u(t)\|_\infty\le Ca,\qquad
+ q|Du(t)|^2\le Ca^2/t\quad(0<t\le T).                \tag{1.6}
+\] The case \(a=0\) is the stationary flat solution.
+
+For fixed \(\eta\), the second estimate is an ordinary gradient bound on
+every \([\delta,T]\), because \(q\ge\eta^2\). Together with uniform
+ellipticity and small \(\|u\|_\infty\), smooth parabolic continuation
+extends this solution to the same time \(T\). The constants for higher
+global derivatives may depend on \(\eta\); that is harmless. On compact
+subbands where \(\chi=1\), interior parabolic estimates applied to (1.3)
+instead give \[
+ \|g_\eta(T)-e\|_{C^2(\{15/8<|x|<17/8\})}\le Ca,     \tag{1.7}
+\] uniformly in \(\eta\). One first uses (1.6) on \([T/2,T]\); rescaling
+\(u\) by \(a\) gives bounded coefficients and then the usual interior
+bootstrap. This explains the linear dependence on \(a\) in (1.7), not
+just a bound independent of the input.
+
+\hypertarget{keeping-the-actual-outer-collar}{%
+\subsubsection{1.2 Keeping the actual outer
+collar}\label{keeping-the-actual-outer-collar}}
+
+For a fixed smooth \(g_0\), let \(H(s)\) be its ordinary smooth
+Ricci--DeTurck flow on its initial existence interval. For \(\eta^2T\)
+in that interval, \(h_\eta(t)=H(\eta^2t)\) tends to \(g_0\) in
+\(C^\infty\), uniformly for \(0\le t\le T\). On any collar \(U\) where
+\(\chi=0\), both \(g_\eta\) and \(h_\eta\) solve the same
+\(\eta^2\)-speed DeTurck equation.
+
+Their difference \(z\), initially zero, satisfies \[
+ \partial_t z=\eta^2g_\eta^{ab}\partial_{ab}z
+       +\eta^2\mathcal Q(g_\eta,Dz,Dz)
+       +\eta^2B_{g_0}Dz+\eta^2C_{g_0}z.               \tag{1.8}
+\] The last two coefficients, also depending algebraically on
+\(g_\eta,z\), are bounded by constants of this fixed smooth datum,
+uniformly for small \(\eta\); this follows by expanding
+\(Dg_\eta=Dh_\eta+Dz\). Smallness of \(z\) absorbs its quadratic
+gradient term in the equation for \(|z|^2\). Therefore \[
+ (\partial_t-\eta^2g_\eta^{ab}\partial_{ab})|z|^2
+                                      \le C_{g_0}\eta^2|z|^2 .
+\] Exponential barriers from the two boundary components of \(U\) give,
+on every smaller collar at distance \(d>0\), \[
+ |z|\le C_{g_0}\exp[-c d^2/(\eta^2t)],\qquad 0<t\le T. \tag{1.9}
+\] For example use barriers
+\(e^{-\lambda r+C\eta^2\lambda^2t+ C_{g_0}\eta^2t}\) in the radial
+distance, and optimize \(\lambda\). Terms from the radial Hessian are
+absorbed by increasing \(C\).
+
+Interior parabolic estimates on spatial scale \(\eta\sqrt t\), followed
+by differentiation on smaller collars, multiply (1.9) only by powers of
+\((\eta\sqrt t)^{-1}\). The rescaled coefficient bounds follow from
+(1.6) and interior bootstrapping; the coefficients involving \(h_\eta\)
+are smooth for this fixed datum. Thus, for each fixed integer \(m\), \[
+ g_\eta\longrightarrow g_0\quad\hbox{in }C^m
+ \text{ on smaller }\{\chi=0\}\text{ collars, uniformly on }[0,T].
+                                                               \tag{1.10}
+\] Exponential decay also handles \(t\downarrow0\). No smooth limit
+through the degeneracy interface is asserted. Only collars a positive
+distance from \(\operatorname{supp}\chi\) are used.
+
+There is an independent classical check of this collar step. On a ball
+inside such a buffer put \(s=\eta^2t\). The rescaled flow is the
+ordinary small-\(C^0\) DeTurck flow.
+\href{https://arxiv.org/pdf/0706.0421}{Schnürer--Schulze--Simon, Theorem
+4.4} gives interior derivatives up to the initial time, depending on the
+fixed smooth initial metric, not on boundary derivatives. Integrating
+the local equation gives \(O_{g_0}(\eta^2T)\) convergence in each fixed
+interior \(C^m\) norm. This checks the uniform-in-time version of
+(1.10); it is not used to assert a global smooth degenerate flow.
+
+\hypertarget{critical-energy-is-retained-in-the-annulus}{%
+\subsubsection{1.3 Critical energy is retained in the
+annulus}\label{critical-energy-is-retained-in-the-annulus}}
+
+Put \(E_\eta(t)=\int_\Omega|\operatorname{Rm}(g_\eta)|^2\). The
+geometric curvature variation for \(-2q\operatorname{Ric}\) has the
+structure \[
+ q\Delta\operatorname{Rm}
+ +\nabla q*\nabla\operatorname{Rm}
+ +\nabla^2q*\operatorname{Rm}
+ +q\operatorname{Rm}*\operatorname{Rm}.
+\] It is the localized Ricci curvature equation of
+\href{https://www.numdam.org/item/10.24033/asens.1644.pdf}{Yang, Section
+9, equation (9.7)}. Here only that equation is used, not his theorem's
+additional \(L^p\) Ricci hypothesis. The Lie derivative in (1.2)
+contributes only boundary transport to the integral.
+
+Integrate the \(\nabla^2q\) term by parts. Metric compatibility then
+gives, with \(D_\eta=\int_\Omega q|\nabla\operatorname{Rm}|^2\), \[
+ E_\eta'\le-cD_\eta+CE_\eta+
+          C\int_\Omega q|\operatorname{Rm}|^3+B_\eta. \tag{1.11}
+\] Every mixed derivative is absorbed using \(|\nabla q|^2/q\le C\),
+which follows from the coordinate cutoff bound and zeroth-order metric
+equivalence. In particular no bound on the metric Hessian of \(\chi\) is
+assumed. Near \(\partial\Omega\), \(q=\eta^2\) and \(Dq=0\). Equation
+(1.10), with \(m=3\), bounds all diffusion and transport fluxes there,
+so \[
+                         |B_\eta|\le C_{g_0}\eta^2.   \tag{1.12}
+\] Large curvature of the arbitrary extension outside \(\Omega\) does
+not enter this inequality.
+
+One may alternatively estimate the Hessian term directly:
+\(|\nabla_g^2q|\le C(1+a/\sqrt t)\) by (1.6). This replaces \(CE_\eta\)
+in (1.11) by \(C(1+a/\sqrt t)E_\eta\). Its uniformly integrable time
+coefficient gives the same conclusion below, without that integration by
+parts.
+
+The inhomogeneous Sobolev inequality on the fixed annulus is uniform
+because \(g_\eta\) stays uniformly close to \(e\). Apply it and Kato's
+inequality to \(\sqrt q|\operatorname{Rm}|\): \[
+ \|\sqrt q|\operatorname{Rm}|\|_4^2
+        \le C(D_\eta+E_\eta),\qquad
+ \int_\Omega q|\operatorname{Rm}|^3
+        \le C\sqrt{E_\eta}(D_\eta+E_\eta).             \tag{1.13}
+\] No zero boundary values are needed in this inhomogeneous inequality.
+Choose \(\varepsilon_0\) small and then \(\eta\) small for the fixed
+datum. A continuity bootstrap absorbs the first term on the right of
+(1.13) into (1.11). Gronwall gives \[
+                     E_\eta(T)\le CE_0+C_{g_0}\eta^2. \tag{1.14}
+\] Both the time and \(C\) are independent of input derivatives.
+
+\hypertarget{finishing-the-smooth-cap}{%
+\subsubsection{1.4 Finishing the smooth
+cap}\label{finishing-the-smooth-cap}}
+
+On \(15/8<|x|<17/8\), interpolate from \(e\) on the inside to
+\(g_\eta(T)\) on the outside using a fixed smooth cutoff. Equation (1.7)
+bounds its full curvature cost by \(Ca^2\). Use \(e\) further inside and
+\(g_\eta(T)\) up to radius \(27/8\).
+
+On \(27/8<|x|<7/2\), interpolate back to the original \(g\), then use
+\(g\) for \(7/2<|x|<4\). This second collar lies in the region of
+(1.10). Its metric converges in \(C^2\) to the original one for this
+fixed datum, so its curvature integral equals the original collar
+integral plus \(o_\eta(1)\). Convex interpolation preserves positivity.
+
+The resulting smooth cap has total cost \[
+ C(E_0+a^2)+C_{g_0}\eta^2+o_\eta(1).
+\] If \(E_0+a^2>0\), choose \(\eta\) so that the last errors are at most
+\(E_0+a^2\). This choice may depend on every derivative of the
+individual input, but the final bound does not. If both quantities are
+zero, the input is \(e\) and the flat cap suffices. This proves Theorem
+1.
+
+\hypertarget{near-einstein-energy-supplies-the-global-curvature-budget}{%
+\subsection{2. Near-Einstein energy supplies the global curvature
+budget}\label{near-einstein-energy-supplies-the-global-curvature-budget}}
+
+For a closed oriented four-manifold set \[
+ \mathcal E(g)=\inf_{\lambda\ne0}
+   \frac{\int|\operatorname{Ric}_g-\lambda g|^2\,dV_g}{\lambda^2V_g},
+ \qquad V_g=\operatorname{Vol}_g(M),
+\] and write \[
+ P=\int|\operatorname{Ric}^{\circ}|^2,\quad
+ S=\int s^2,\quad R=P+S/4,\quad
+ L_s=S-\frac{(\int s)^2}{V}\ge0 .
+\] In the actual positive-budget family \(R>0\), and
+\(\mathcal E=(4P+L_s)/R\). Hence \(P\le\mathcal E R/4\). The
+Chern--Gauss--Bonnet identity gives \[
+ 8\pi^2\chi
+ =\int(|W^+|^2+|W^-|^2)+R/6-2P/3
+ \ge(1-\mathcal E)R/6.                               \tag{2.1}
+\] Consequently, if \(\mathcal E<1/2\), \[
+ R\le96\pi^2\chi,\qquad
+                   \int|\operatorname{Rm}|^2\le C\chi. \tag{2.2}
+\] The second estimate follows by inserting this bound into the same
+identity and the curvature decomposition. These bounds need neither
+scalar normalization nor a volume estimate.
+
+On the balanced actual family \[
+ M_j=X_j\# k_j\overline{\mathbb {CP}}^{\,2}
+           \#\ell_j(S^1\times S^3),\quad
+ A_j=c_1^2(X_j),\quad Q_j=k_j+4\ell_j,\quad 0<h_j=Q_j/A_j\to0,
+\] one has \(\chi(M_j)=A_j/3+k_j-2\ell_j=O(A_j)\). Thus every sequence
+with bounded \(\mathcal E/h_j\) automatically has full curvature energy
+\(O(A_j)\).
+
+Here \(X_j\) has its complex orientation and is a finite cover of the
+fixed closed complex-hyperbolic surface used in I44/I52. The blowup and
+handle class supply is the inherited actual one of I03, not a formal
+vector on a cap. Its two classical all-metric budgets used below are,
+explicitly, \[
+             S\ge32\pi^2A,\qquad R\ge8\pi^2A(1+h).
+\] They are the scalar and Ricci-energy inequalities detailed in
+\href{20260927_covering_geometry_and_sharp_subfamilies.md}{I44, Sections
+5--6}, with classical input from
+\href{https://arxiv.org/html/math/0003068}{LeBrun}. No monopole supply
+is demanded on the auxiliary capped manifold.
+
+\hypertarget{long-marked-annuli-force-the-optimal-first-order-lower-bound}{%
+\subsection{3. Long marked annuli force the optimal first-order lower
+bound}\label{long-marked-annuli-force-the-optimal-first-order-lower-bound}}
+
+\textbf{Theorem 2 (annular first-order stability).} On the actual family
+above, suppose that around every marked blowup core there are \(L_j\)
+disjoint fixed-ratio annular bands, all core families mutually disjoint.
+Each band has marked coordinates, identifying its filled inside with the
+corresponding blowdown ball. It encloses only its designated blowup, not
+a handle or another core. Assume, after scaling each band to
+\(\mathcal A\), that \[
+ \max_{i,\nu}\|g_j-e\|_{C^0(\mathcal A_{i,\nu,j})}
+          =a_j\longrightarrow0,\qquad
+                         L_jh_j\longrightarrow\infty. \tag{3.1}
+\] Then \[
+                       \liminf_j\frac{\mathcal E(g_j)}{h_j}\ge4.
+                                                               \tag{3.2}
+\] There is no scalar, gauge, derivative, or stationary assumption. Away
+from these annuli the metric is arbitrary.
+
+\textbf{Proof.} If the ratio has no bounded subsequence there is nothing
+to prove. On any bounded subsequence, (2.2) supplies total curvature
+energy \(O(A_j)\). Choose a minimum-energy band for each blowup. Their
+total energy satisfies \[
+                         \sum_i E_{i,j}\le CA_j/L_j.   \tag{3.3}
+\] Call a selected band bad if \(E_{i,j}>\varepsilon_0\), and let
+\(b_j\) be the number of bad blowups. Then
+\(b_j\le CA_j/(L_j\varepsilon_0)=o(Q_j)\). Theorem 1 applies to every
+good band. Replace only those insides by matched balls; all handles and
+bad blowups remain unchanged. The resulting closed manifold is
+\(N_j=X_j\#b_j\overline{\mathbb{CP}}^{\,2}  \#\ell_j(S^1\times S^3)\).
+The sum of self-dual Weyl cap costs is \[
+ C_{+,j}\le C\left(A_j/L_j+k_j a_j^2\right)=o(Q_j).    \tag{3.4}
+\] Indeed \(A_j/(L_jQ_j)=1/(L_jh_j)\to0\) and \(k_j\le Q_j\). No maximum
+individual energy needs to tend to zero.
+
+The partial-blowdown version of
+\href{20260927_covering_geometry_and_sharp_subfamilies.md}{I44, Theorem
+5} retains the cost of the \(b_j\) unremoved blowups. Suppressing \(j\),
+the signature formula and the original scalar identity give \[
+ \begin{aligned}
+ B_M&=12\pi^2(k-b)+B_N+K_+-C_+,\\
+ P_M&=8\pi^2(Q-6b)+(S_M-S_0)/12+4(B_N+K_+-C_+),
+ \end{aligned}                                             \tag{3.5}
+\] where \(S_0=32\pi^2A\), \(B_N=\int_N|W_N^-|^2\), and \(K_+\) is the
+positive-Weyl energy of the removed cores. Consequently \[
+\begin{aligned}
+ &(1+h)R_M\left(\mathcal E_M-\frac{4h}{1+h}\right)\\
+ &\quad=\frac{1-3h}{3}(S_M-S_0)+16(B_N+K_+-C_+)
+                 +(1+h)L_s-192\pi^2b .
+\end{aligned}                                             \tag{3.6}
+\] The actual scalar/projection budget on \(M\) gives \(S_M\ge S_0\) and
+\(R_M\ge8\pi^2A(1+h)\). For \(h\le1/3\) all terms except the two
+displayed costs are nonnegative. Hence \[
+ \frac{\mathcal E(g_j)}{h_j}\ge\frac4{1+h_j}
+       -\frac{24b_j+2C_{+,j}/\pi^2}{Q_j(1+h_j)^2}.     \tag{3.7}
+\] The two costs are \(o(Q_j)\), proving (3.2). No conformal reduction
+occurred. The cap is an auxiliary smooth metric, so it need not carry a
+new monopole solution. The original actual supplier remains on \(M_j\),
+exactly as required by I44. QED.
+
+The proof gives a finite, all-metric estimate, not only a sequential
+statement. For \(0<h\le1/7\), \(a\le a_0\), \(L\ge1\), and \(\chi/A\)
+bounded as on this family, \[
+ \boxed{\mathcal E(g)\ge\frac{4h}{1+h}
+                -C\left(\frac1L+\frac{k}{A}a^2\right).} \tag{3.8}
+\] If \(\mathcal E<1/2\), the proof just given applies with
+\(b\le CA/(L\varepsilon_0)\), whether or not \(A/L\) is small. If
+\(\mathcal E\ge1/2\), (3.8) follows immediately from \(4h/(1+h)\le1/2\).
+This explains why the competitive-energy premise is not an assumption of
+the result.
+
+There is a useful robustness form. Leave \(r\) marked blowups without
+any prescribed annular family, and let \(a_i\) be the maximal amplitude
+over the \(L\) bands of each remaining blowup. Discard also those with
+\(a_i>a_0\), at most \(a_0^{-2}\sum_i a_i^2\) of them. The same
+partial-cap proof gives \[
+ \mathcal E(g)\ge\frac{4h}{1+h}
+       -C\left(\frac rA+\frac1L+\frac1A\sum_i a_i^2\right).
+                                                               \tag{3.8a}
+\] Thus \(r=o(Q)\), \(\sum_i a_i^2=o(Q)\), and \(Lh\to\infty\) suffice
+for (3.2). A maximum amplitude tending to zero at every core is not
+necessary. The unstructured regions are retained, not silently filled,
+and their number is charged in the identity.
+
+One can average amplitudes over the bands as well. If \(a_{i\nu}\) is
+the amplitude of band \(\nu\) at core \(i\), select the band minimizing
+\(E_{i\nu}+a_{i\nu}^2\). The sum of selected scores is at most
+\(CA/L+L^{-1}\sum_{i,\nu}a_{i\nu}^2\). Discard scores larger than
+\(\min\{\varepsilon_0,a_0^2\}\); the others satisfy both cap hypotheses.
+Thus (3.8a) improves to \[
+ \mathcal E(g)\ge\frac{4h}{1+h}
+       -C\left(\frac rA+\frac1L+
+                      \frac1{AL}\sum_{i,\nu}a_{i\nu}^2\right).
+                                                               \tag{3.8b}
+\] This is the same partial-cap argument, not a regularity assertion for
+the discarded bands.
+
+\textbf{Corollary 3 (arbitrary \(C^0\)-small perturbations of selected
+recoveries).} The CH shrinking-surgery bases can be selected so that
+every sequence of smooth metrics \(g_j\) satisfying \[
+                   \|g_j-g_j^0\|_{L^\infty(g_j^0)}\to0
+\] obeys (3.2). This removes the TT, Bianchi, constant-scalar and
+amplitude-rate assumptions from the lower-bound part of I52.
+
+\textbf{Proof.} At each fixed \(j\), choose \(L_j\) with
+\(L_jh_j\to\infty\). Inside each disjoint CH blowup chart choose a
+finite annular range of that many bands, with outer radius so small that
+the scaled CH deviation on every band is at most a prescribed
+\(\varepsilon_j\to0\). Keep its innermost radius positive at this fixed
+\(j\), and then take the actual donor scale sufficiently smaller. The
+exterior Yamabe convergence of I52 is uniform on this fixed finite
+union, so the normalized recovery is Euclidean-close there. Choose the
+donor scales to make that additional error at most \(\varepsilon_j\),
+along with all previous recovery selections. Now take the outer
+\(j\)-diagonal.
+
+This order of choices matters. No control of the Yamabe factor on every
+rescaled donor is inferred from exterior convergence. For the stated
+competitors, the annular amplitude in (3.1) is at most
+\(C(\varepsilon_j+\|g_j-g_j^0\|_\infty)\), which tends to zero. Theorem
+2 applies. QED.
+
+The statement is invariant under simultaneous pullback. Thus a
+competitor which can be made \(C^0\)-close to these bases by any
+orientation-preserving diffeomorphism is also covered; no bound on that
+diffeomorphism is needed. The compact moving-center selection from the
+companion proof remains available by choosing the finite annular ranges
+uniformly at each fixed compact configuration set. The old exact-slice
+quadratic remainder and equality characterization remain separate
+stronger conclusions inside their specified slices.
+
+\hypertarget{the-minimum-over-every-shrinking-zeroth-order-neighborhood}{%
+\subsubsection{3.1 The minimum over every shrinking zeroth-order
+neighborhood}\label{the-minimum-over-every-shrinking-zeroth-order-neighborhood}}
+
+This extension determines an actual variational infimum, not only the
+energy of a prescribed perturbation. Let \(b_j\to0\) be the maximum
+Euclidean error of the selected base on its marked annuli. For small
+fixed \(\rho_0>0\), define \[
+ m_j(\rho)=\inf\left\{\frac{\mathcal E(g)}{h_j}:
+       g\text{ smooth},\
+       \|g-g_j^0\|_{L^\infty(g_j^0)}\le\rho\right\},
+ \qquad 0\le\rho\le\rho_0 .
+\] The amplitude on each band is at most \(b_j+(1+b_j)\rho\). Equation
+(3.8) and \(k_j\le Q_j\) give \[
+ \frac4{1+h_j}
+   -C\left((L_jh_j)^{-1}+(b_j+\rho)^2\right)
+ \le m_j(\rho)\le\frac{\mathcal E(g_j^0)}{h_j}.        \tag{3.9}
+\] The right side tends to four by the actual recovery construction. It
+follows for every radius sequence \(\rho_j\to0\), with no rate relative
+to \(h_j\), that \[
+                         \lim_j m_j(\rho_j)=4.        \tag{3.10}
+\] Also both iterated lower/upper limits as \(\rho\downarrow0\) equal
+four. No existence of the inner \(j\)-limit for a fixed positive
+\(\rho\) is asserted: (3.9) gives only the interval \([4-C\rho^2,4]\) in
+that case.
+
+For the intrinsic distance \[
+ d_j(g)=\inf_{\varphi\in\operatorname{Diff}^+(M_j)}
+       \|\varphi^*g-g_j^0\|_{L^\infty(g_j^0)},
+\] approximate the infimum by diffeomorphisms and use invariance of
+\(\mathcal E\). The same lower bound holds with \(\rho=d_j(g)\) whenever
+this distance is small. In particular, for every fixed \(\delta>0\), a
+subsequence satisfying \(\mathcal E(g_j)/h_j\le4-\delta\) must
+eventually satisfy \[
+                    d_j(g_j)\ge c\min\{\rho_0,\sqrt\delta\}>0.
+                                                               \tag{3.11}
+\] The vanishing \(b_j,(L_jh_j)^{-1},h_j\) errors are absorbed first.
+This is separation from the selected recovery orbits, not a
+classification of such a putative new geometry. It also does not prove
+that every coefficient-four sequence approaches those orbits. The
+quadratic error in (3.9) is a proved bound, not a claim of optimal
+amplitude dependence.
+
+\hypertarget{what-changed-and-what-remains}{%
+\subsection{4. What changed and what
+remains}\label{what-changed-and-what-remains}}
+
+The matched cap is stronger than the previously requested vanishing
+modulus: its cost is quadratic in the zeroth-order amplitude plus the
+actual curvature energy. The localized flow does not need to preserve
+the gauge fields or converge to an Einstein metric. It constructs a
+temporary filling metric used in an exact topological identity. This
+distinction avoids imposing unnecessary flow conditions.
+
+The fixed-base exact-gauge obstruction in X09 therefore does not block
+the first-order estimate. The intrinsic cap argument covers arbitrary
+\(C^0\)-nearby competitors without solving that gauge. The unrestricted
+infimum over every metric on \(M_j\) is still not computed: no theorem
+here supplies the long Euclidean-close annuli for all near-minimizers.
+The general weak zero-Weyl endpoint is also unchanged.
+
+Classical inputs are DeTurck's strictly parabolic formulation, smooth
+parabolic existence and interior estimates, Yang's localized curvature
+evolution, and the Sobolev inequality on a fixed annulus. The localized
+continuation, collar freezing, matching construction, and their
+application to the actual surgery problem are proved above. This record
+makes no worldwide priority claim.
+
+\end{document}

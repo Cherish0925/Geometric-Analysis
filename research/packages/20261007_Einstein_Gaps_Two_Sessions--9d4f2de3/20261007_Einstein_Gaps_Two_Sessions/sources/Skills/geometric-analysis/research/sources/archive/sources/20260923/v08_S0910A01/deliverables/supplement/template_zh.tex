@@ -1,0 +1,270 @@
+% Qiushi Supplementary Material Template
+% Compile with LuaLaTeX.
+% If the LuaLaTeX font cache is unavailable, prefix the compile command with TEXMFVAR=/tmp/qiushi_texmf_var.
+% Keep figure files under figures/ or ../../workspace/figures/.
+% Use refs.bib with \cite{...} when references are used.
+% LaTeX supplies section numbers; section titles contain title text only.
+% Supplementary equations, figures, and tables use S-numbered labels.
+\documentclass[10pt,a4paper]{ctexart}
+
+\usepackage[
+  a4paper,
+  top=16mm,
+  bottom=18mm,
+  left=18mm,
+  right=18mm,
+  headheight=14pt,
+  headsep=4mm,
+  footskip=9mm
+]{geometry}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{newtxtext}
+  \usepackage{newtxmath}
+\else
+  \usepackage{fontspec}
+  \defaultfontfeatures{Ligatures=TeX}
+  \IfFontExistsTF{TeX Gyre Termes}
+    {\setmainfont{TeX Gyre Termes}}
+    {\setmainfont{Latin Modern Roman}}
+  \IfFontExistsTF{TeX Gyre Heros}
+    {\setsansfont{TeX Gyre Heros}[Scale=0.92]}
+    {\setsansfont{Latin Modern Sans}[Scale=0.92]}
+  \setmonofont{Latin Modern Mono}[Scale=0.90]
+\fi
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{makecell}
+\usepackage{xurl}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{fancyhdr}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage{bookmark}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\providecommand{\bibcommenthead}{}
+
+\definecolor{QiushiBlue}{HTML}{003F88}
+\definecolor{QiushiInk}{HTML}{111111}
+\definecolor{QiushiRed}{HTML}{C83232}
+\definecolor{QiushiGold}{HTML}{C08400}
+
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\setlength{\textfloatsep}{9pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+\setlength{\bibsep}{2pt plus 0.2ex}
+\sisetup{detect-all=true,per-mode=symbol}
+\emergencystretch=4em
+\allowdisplaybreaks
+\raggedbottom
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\hbadness=3500
+\vbadness=3500
+\hfuzz=0.3pt
+
+\graphicspath{{figures/}{../figures/}{./}{../../workspace/figures/}}
+\Urlmuskip=0mu plus 2mu
+\newcolumntype{Y}{>{\raggedright\arraybackslash\hspace{0pt}}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash\hspace{0pt}}p{#1}}
+\DeclareUrlCommand\SafePath{\urlstyle{tt}\footnotesize}
+\DeclareUrlCommand\SafeURL{\urlstyle{same}\footnotesize}
+\DeclareUrlCommand\SafeCode{\urlstyle{tt}\footnotesize}
+\newcommand{\SafeImage}[2][]{\includegraphics[max width=\linewidth,keepaspectratio,#1]{#2}}
+\newcommand{\SafeWideImage}[2][]{\includegraphics[max width=\textwidth,keepaspectratio,#1]{#2}}
+\newcommand{\QiushiTableFont}{\footnotesize}
+\NewDocumentEnvironment{SafeTabularX}{m +b}{%
+  \begingroup\QiushiTableFont
+  \setlength{\tabcolsep}{3.5pt}%
+  \renewcommand{\arraystretch}{1.08}%
+  \begin{tabularx}{\linewidth}{#1}#2\end{tabularx}%
+  \endgroup
+}{}
+\NewDocumentEnvironment{SafeLongTable}{m +b}{%
+  \begingroup\QiushiTableFont
+  \setlength{\tabcolsep}{3.5pt}%
+  \renewcommand{\arraystretch}{1.08}%
+  \begin{longtable}{#1}#2\end{longtable}%
+  \endgroup
+}{}
+
+\providecommand{\dd}{\mathop{}\!\mathrm{d}}
+\providecommand{\dv}[2]{\frac{\dd #1}{\dd #2}}
+\providecommand{\pdv}[2]{\frac{\partial #1}{\partial #2}}
+\providecommand{\vect}[1]{\boldsymbol{#1}}
+\providecommand{\mat}[1]{\mathbf{#1}}
+\providecommand{\E}{\mathbb{E}}
+\providecommand{\Var}{\operatorname{Var}}
+\providecommand{\argmin}{\operatorname*{arg\,min}}
+
+\newtheorem{theorem}{定理}
+\newtheorem{proposition}{命题}
+\newtheorem{lemma}{引理}
+\newtheorem{corollary}{推论}
+\theoremstyle{definition}
+\newtheorem{definition}{定义}
+\theoremstyle{remark}
+\newtheorem{remark}{注}
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\theequation}{S\arabic{equation}}
+\renewcommand{\contentsname}{目录}
+\renewcommand{\cfttoctitlefont}{\hfill\bfseries\normalsize}
+\renewcommand{\cftaftertoctitle}{\hfill}
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}
+\setlength{\cftbeforesecskip}{4pt}
+\setlength{\cftsecnumwidth}{2.8em}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+
+\titleformat{\section}
+  {\centering\normalfont\bfseries\normalsize}
+  {\thesection.}{0.7em}{}
+\titleformat{\subsection}
+  {\normalfont\bfseries\normalsize}
+  {\thesubsection}{0.7em}{}
+\titlespacing*{\section}{0pt}{14pt plus 2pt minus 2pt}{8pt}
+\titlespacing*{\subsection}{0pt}{9pt plus 1pt minus 1pt}{4pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\captionsetup{
+  font=footnotesize,
+  labelfont=bf,
+  labelsep=period,
+  justification=raggedright,
+  singlelinecheck=false,
+  hypcap=false
+}
+
+\newcommand{\PaperTitle}{概括主结果的论题标题}
+\newcommand{\PaperAuthors}{Qiushi Discovery Engine}
+\newcommand{\PaperAffiliations}{%
+  Qiushi Discovery Engine}
+\newcommand{\PaperFootnotes}{%
+  Prepared by Qiushi Discovery Engine.}
+
+\newcommand{\supplementtitle}{%
+  \thispagestyle{empty}
+  \begin{center}
+    {\bfseries 补充材料：\PaperTitle\par}
+    \vspace{10pt}
+    {\normalsize\PaperAuthors\par}
+    \vspace{4pt}
+    {\itshape\footnotesize\PaperAffiliations\par}
+  \end{center}
+  \vspace{18pt}}
+
+\newcommand{\suppplotpanel}[3]{%
+  \begin{tikzpicture}[x=1mm,y=1mm]
+    \draw[black!45,line width=0.35pt] (0,0) rectangle (#2,#3);
+    \node[anchor=north west,font=\bfseries\scriptsize] at (1,#3-1) {#1};
+    \draw[black!70,line width=0.35pt] (8,7) -- (#2-5,7);
+    \draw[black!70,line width=0.35pt] (8,7) -- (8,#3-6);
+    \draw[QiushiBlue,line width=0.9pt] plot[smooth] coordinates
+      {(9,8) (22,17) (38,13) (58,28) (#2-8,#3-8)};
+    \draw[QiushiRed,line width=0.8pt] plot[smooth] coordinates
+      {(9,10) (25,12) (42,18) (58,18) (#2-8,#3-13)};
+  \end{tikzpicture}}
+
+\newcommand{\suppimagepanel}[3]{%
+  \begin{tikzpicture}[x=1mm,y=1mm]
+    \shade[left color=black!10,right color=black!2] (0,0) rectangle (#2,#3);
+    \draw[black!45,line width=0.35pt] (0,0) rectangle (#2,#3);
+    \node[anchor=north west,font=\bfseries\scriptsize] at (1,#3-1) {#1};
+    \foreach \px/\py in {0.24/0.36,0.43/0.60,0.63/0.42,0.78/0.70} {
+      \fill[QiushiBlue!35] ({#2*\px},{#3*\py}) circle (2.2);
+    }
+    \draw[black,line width=0.8pt] (#2-18,5) -- (#2-6,5);
+    \node[font=\scriptsize,anchor=south] at (#2-12,5.6) {50 \textmu m};
+  \end{tikzpicture}}
+
+\newcommand{\submissionrefs}{%
+  \IfFileExists{refs.bib}{%
+    \bibliographystyle{unsrtnat}%
+    \bibliography{refs}%
+  }{}}
+
+\begin{document}
+
+\renewcommand{\PaperTitle}{论文标题}
+\supplementtitle
+\tableofcontents
+\newpage
+
+\section{定义与记号}
+
+正文。
+
+\section{推导与证明}
+
+正文。
+
+\begin{equation}
+  \mathcal{A}(u,v) = \mathcal{B}(u,v) + \mathcal{R}(u,v).
+  \label{eq:s-example-zh}
+\end{equation}
+
+\section{方法协议}
+
+正文。
+
+\section{附加结果}
+
+正文。
+
+\begin{figure}[t]
+  \centering
+  \fbox{\rule{0pt}{1.7in}\rule{0.80\textwidth}{0pt}}
+  \caption{补充图图注。\label{fig:s-example-zh}}
+\end{figure}
+
+\begin{table}[t]
+  \caption{补充表表注。\label{tab:s-example-zh}}
+  \begin{tabular}{lcc}
+  \toprule
+  行 & 列 A & 列 B \\
+  \midrule
+  A & -- & -- \\
+  B & -- & -- \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{附加材料}
+
+正文。
+
+\submissionrefs
+
+\end{document}
+
+

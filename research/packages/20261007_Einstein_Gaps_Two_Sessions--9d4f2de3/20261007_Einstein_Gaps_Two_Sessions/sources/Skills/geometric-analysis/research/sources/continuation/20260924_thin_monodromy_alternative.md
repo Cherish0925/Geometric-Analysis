@@ -1,0 +1,568 @@
+# Thin-fiber monodromy, global reduction, and Einstein realization
+
+24 September 2026. This note removes the reference-fiber thickness
+hypothesis from the preceding cycle theorem, at the cost of an explicit
+alternative: finite monodromy or a common invariant essential multicurve.
+For irreducible monodromy the alternative gives exact negative
+Kähler–Einstein existence on the same smooth total space. For reducible
+monodromy it gives an actual decomposition of the surface bundle, not an
+assertion that its pieces already have compatible Einstein metrics.
+
+The proof uses classical hyperbolic collars, quasiconformal length
+distortion, and compactness of thick moduli. It does not invoke an
+unverified Teichmüller Margulis theorem or claim novelty for these
+classical facts. The project-level extension is their composition with
+the actual cycle budget and pointwise Ricci input. The previous
+[cycle theorem](20260924_cycle_holonomy_realization.md) and
+[Ricci theorem](20260924_ricci_monodromy_realization.md) are inputs.
+Their finite-monodromy realization is retained, not rediscovered.
+
+## 1. Statements with original geometric inputs
+
+Let
+\[
+ F_f\longrightarrow M\xrightarrow{\pi}B_b,\qquad f,b\ge2,
+\tag{1}
+\]
+be a smooth oriented bundle of closed oriented surfaces. Its monodromy
+is \(\rho:\pi_1(B,b_0)\to\operatorname{Mod}(F_f)\). A multicurve
+means a finite nonempty set of distinct isotopy classes of disjoint
+essential simple closed curves. Call the image of \(\rho\)
+**irreducible** when it preserves no such multicurve setwise. This is
+a property of the entire group; it is not a claim that each element is
+pseudo-Anosov or that the image is infinite.
+
+For any smooth metric \(g\) use its orthogonal Ehresmann connection.
+For a loop \(\gamma\) based at \(b_0\), let \(\Phi_t\) denote
+actual horizontal transport and set
+\[
+ h_t=\Phi_t^*(g|_{F_{\gamma(t)}}),\qquad
+ A_t=h_t^{-1}\dot h_t,\qquad
+ A_t^0=A_t-\tfrac12\operatorname{tr}(A_t)I.
+\]
+For a finite based generating system \(\Gamma\) define
+\[
+ \mathcal J_g(\gamma)
+   =\frac12\int_0^1\sup_{F_{b_0}}\|A_t^0\|_{\rm op}\,dt,
+ \qquad
+ \mathcal J_g(\Gamma)=\max_{\gamma\in\Gamma}\mathcal J_g(\gamma).
+\tag{2}
+\]
+All loops in \(\Gamma\) have the same base point. No representative
+chosen merely to make the mapping-class displacement small replaces
+the transport in (2).
+
+**Theorem A (global thin-fiber alternative).** There is a constant
+\(\mu_f>0\), depending only on fiber genus, such that
+\[
+                         \mathcal J_g(\Gamma)<\mu_f             \tag{3}
+\]
+has the following consequence. Either the monodromy image is finite,
+or it preserves a multicurve \(C\) with at most \(3f-3\) components.
+In the latter case \(C\) can be chosen so that every component has
+length less than \(1\) in the curvature \(-1\) uniformization of
+the reference fiber.
+
+If the monodromy is irreducible, it therefore has finite image and the
+same smooth \(M\) carries a metric \(\widehat g\) with
+\[
+ \operatorname{Ric}_{\widehat g}=-\widehat g,\qquad
+ (\widetilde M,\widetilde{\widehat g})
+     \cong\mathbb H^2_{-1}\times\mathbb H^2_{-1}.              \tag{4}
+\]
+The output is Kähler in both orientations. There is no reference
+systole assumption, no prescribed Einstein background, and no claim
+that the input metric is already Einstein or close to the output.
+The constant is independent of base genus and generator count.
+
+The alternatives need not be disjoint: a finite group can preserve a
+multicurve. The assertion relevant to an infinite image is that one
+**common** multicurve is preserved by every element, not merely that
+each generator has its own reduction system.
+
+**Theorem B (pointwise Ricci realization without a thick fiber).**
+Suppose \(\pi:(M,g)\to(B,k)\) is a Riemannian submersion with
+minimal fibers. Intrinsic fiber curvature is unrestricted and the
+horizontal distribution need not be integrable. Define
+\[
+ \delta=\|\operatorname{Ric}_g^{\sharp}+I\|_{\infty,\rm op},
+ \quad \eta=\|(K_k+1)_+\|_\infty,
+ \quad D_B=\operatorname{diam}(B,k).
+\tag{5}
+\]
+If
+\[
+                         2D_B\sqrt{\delta+\eta}<\mu_f,          \tag{6}
+\]
+then the finite-or-reducible conclusion of Theorem A holds. In
+particular, if \(\rho\) is irreducible, (4) holds on the original
+smooth total space. For a hyperbolic base \(K_k=-1\), this is the
+sufficient condition
+\[
+                   \delta<\frac{\mu_f^2}{4D_B^2}.             \tag{7}
+\]
+Consequently every such submersion with **infinite irreducible**
+monodromy satisfies the input obstruction
+\[
+                   (\delta+\eta)D_B^2\ge\frac{\mu_f^2}{4}.   \tag{8}
+\]
+This concerns the specified submersion metrics, not arbitrary metrics
+on \(M\). In the irreducible small-input case it nevertheless proves
+the exact Einstein existence requested by Yau26 for that input class.
+No total-space diameter, volume, injectivity-radius or auxiliary
+monopole assumption is used.
+
+## 2. A simultaneous short-curve lemma
+
+On Teichmüller space use
+\(d_T(x,y)=\tfrac12\inf\log K\). For a curve class \(c\), write
+\(\ell_x(c)\) for its hyperbolic geodesic length.
+
+Two classical facts enter the proof. First, the collar theorem implies
+that all simple geodesics of length at most \(1\) are pairwise
+disjoint. Indeed the collar inequality for intersecting simple
+geodesics gives
+\(\sinh(\ell(c)/2)\sinh(\ell(d)/2)>1\), whereas
+\(\sinh^2(1/2)<1\). Thus there are at most
+\[
+                              N_f=3f-3                         \tag{9}
+\]
+such classes. Primary sources are Keen,
+[*Collars on Riemann surfaces*](https://doi.org/10.1515/9781400881642-021),
+and Buser,
+[*The collar theorem and examples*](https://doi.org/10.1007/BF01168048).
+
+Second, Wolpert's quasiconformal length inequality gives
+\[
+ e^{-2d_T(x,y)}\ell_x(c)
+       \le\ell_y(c)\le e^{2d_T(x,y)}\ell_x(c).                 \tag{10}
+\]
+See [*The length spectra as moduli for compact Riemann surfaces*](https://annals.math.princeton.edu/1979/109-2/p03).
+The needed normalization can also be checked directly. The cyclic
+cover corresponding to \(c\), with core length \(\ell\), is a
+conformal annulus of modulus \(\pi/\ell\). A \(K\)-quasiconformal
+map lifts to the corresponding cyclic covers and changes annular
+modulus by a factor between \(K^{-1}\) and \(K\). Take the infimum
+over marked maps to obtain (10). This argument applies to every
+essential simple class, not just a chosen pants decomposition.
+
+Put
+\[
+ a_f=\frac{\log2}{N_f+1}=\frac{\log2}{3f-2},
+ \qquad \nu_f=\frac{a_f}{4}.                                 \tag{11}
+\]
+
+**Lemma 1 (a common reduction, with no generator-count bound).**
+Suppose \(\operatorname{sys}(x)<1/2\), and let \(S\) be any set
+of mapping classes satisfying
+\[
+                          d_T(x,sx)<\nu_f\quad(s\in S).        \tag{12}
+\]
+Then \(\langle S\rangle\) preserves a nonempty multicurve all of
+whose \(x\)-lengths are less than \(1\).
+
+**Proof.** In the interval \([-\log2,0]\), list the logarithms of
+the lengths in \([1/2,1]\). There are at most \(N_f\) entries,
+including repetitions if distinct curves have equal lengths. Insert
+the two endpoints. Among the resulting at most \(N_f+1\) gaps there
+is one \((u,v)\) with
+\[
+                            v-u\ge a_f.                       \tag{13}
+\]
+There is no curve length with logarithm in this open interval. Let
+\(t=\exp((u+v)/2)\) and define
+\[
+                            C=\{c:\ell_x(c)<t\}.              \tag{14}
+\]
+It is nonempty because the systole is less than \(1/2\), and it is
+a multicurve by the collar theorem. Every member of \(C\) has
+length at most \(e^u\). The action convention may invert \(s\)
+in (10), but \(d_T(x,s^{-1}x)=d_T(x,sx)\), so
+\[
+ \ell_x(sc)\le e^{2d_T(x,sx)}\ell_x(c)
+     < e^{a_f/2}e^u\le e^{(u+v)/2}=t.                        \tag{15}
+\]
+Hence \(sC\subset C\). Since \(s\) is a bijection of curve
+classes and \(C\) is finite, \(sC=C\). The same \(C\) works for
+all generators, and is therefore preserved by their entire group.
+Repeated length values and curves lying at the endpoints of the gap
+cause no problem: the strict inequality in (12) supplies the strict
+inequality in (15). \(\square\)
+
+This is a length-gap argument, not an assertion that small moves of
+the generators make every group element a small move. Long words
+may accumulate arbitrarily large displacement.
+
+**Lemma 2 (thick finite-isotropy neighbourhood).** Some
+\(\varepsilon_{f,1/2}>0\) has the property that, if
+\(\operatorname{sys}(x)\ge1/2\) and
+\(d_T(x,sx)<\varepsilon_{f,1/2}\) for every \(s\in S\), then
+\(\langle S\rangle\) is finite.
+
+**Proof.** Mumford compactness gives a compact set in Teichmüller
+space meeting every orbit with this systole bound. If the assertion
+failed, conjugate to obtain \(x_j\to x\) in that compact set and
+sets \(S_j\) generating infinite groups, with all displacements
+less than \(1/j\). Uniformly in \(s\in S_j\),
+\[
+                  d_T(x,sx)\le2d_T(x,x_j)+1/j\longrightarrow0.
+\tag{16}
+\]
+Properness of the mapping-class action and properness of the
+finite-dimensional Teichmüller metric imply that the set of mapping
+classes moving \(x\) by at most \(1\) is finite. Its positive
+displacements have a positive minimum. Thus for large \(j\) every
+member of \(S_j\) fixes \(x\). The stabilizer is finite, giving a
+contradiction. A finite ineffective kernel, such as the genus-two
+hyperelliptic involution, does not affect this argument. This is the
+lemma proved in the preceding cycle note, with \(\iota=1/2\).
+The classical compactness source is Mumford,
+[*A remark on Mahler's compactness theorem*](https://doi.org/10.2307/2037802).
+\(\square\)
+
+Fix once and for all
+\[
+                \mu_f=\min\{\varepsilon_{f,1/2},\nu_f\}>0.   \tag{17}
+\]
+Lemmas 1–2 give the following purely geometric alternative for every
+\(x\in\mathcal T_f\): the subgroup generated by any collection of
+\(\mu_f\)-small moves is finite or has a common short multicurve.
+The second conclusion is not replaced by “each generator is
+reducible.”
+
+## 3. From the actual connection to the group alternative
+
+For completeness the differential-to-discrete step has no compactness
+hypothesis. For two fixed nonzero tangent vectors on the reference
+fiber,
+\[
+ \left|\frac d{dt}\log\frac{h_t(v,v)}{h_t(w,w)}\right|
+                      \le2\|A_t^0\|_{\rm op}.                \tag{18}
+\]
+Integration bounds the logarithm of the quasiconformal dilatation of
+the identity between \(h_0\) and \(h_1\) by
+\(\int\sup\|A_t^0\|_{\rm op}\,dt\). The endpoint metric is
+the pullback by the actual return map, which represents
+\(\rho(\gamma)\). Therefore
+\[
+                 d_T(x_0,\rho(\gamma)x_0)
+                                   \le\mathcal J_g(\gamma).  \tag{19}
+\]
+Noncommuting shape operators and a curved connection are allowed.
+The mapping classes of return maps are invariant under based
+homotopy and compose as monodromy, even though the actual return
+diffeomorphisms need not form a representation.
+
+Apply (17) to (19) for the generating system. This proves the
+alternative in Theorem A. If \(\rho\) is irreducible, the short
+multicurve is impossible, so the image \(G\) is finite. Kerckhoff's
+[Nielsen realization theorem](https://annals.math.princeton.edu/1983/117-2/p02)
+realizes \(G\) by orientation-preserving isometries of one hyperbolic
+fiber. On the connected kernel cover \(\widehat B\to B\), use a
+lifted hyperbolic base metric. The diagonal action on
+\(\widehat B\times F_f\) is free, regardless of fixed points of
+the fiber action, since its base action is free. The product metric
+descends with Ricci tensor equal to minus the metric.
+
+This construction gives the original smooth bundle, not just a
+manifold with an isomorphic group. For \(f\ge2\), Earle–Eells
+contractibility of \(\operatorname{Diff}_0^+(F_f)\) gives
+\(B\operatorname{Diff}^+(F_f)\simeq B\operatorname{Mod}(F_f)\).
+The two bundles with the same monodromy are therefore smoothly
+bundle-isomorphic. Pull back the product-quotient metric. The
+product complex structures with either sign on the fiber descend,
+giving (4) in both orientations. This concludes Theorem A.
+The primary contractibility source is Earle–Eells,
+[*The diffeomorphism group of a compact Riemann surface*](https://doi.org/10.1090/S0002-9904-1967-11746-4).
+
+## 4. Ricci input and the scale of irreducible monodromy
+
+For a horizontal vector \(X\), write
+\[
+ g(S_XU,V)=\langle(\nabla_UV)^{\mathcal H},X\rangle,
+ \qquad A_XY=\tfrac12[X,Y]^{\mathcal V}.
+\]
+Minimality gives \(\operatorname{tr}S_X=0\). The classical
+horizontal Ricci identity, already used in retained Round 20, is
+\[
+ \operatorname{Ric}_g(X,X)
+      =K_k-|S_X|_{\rm HS}^2-2\sum_a|A_Xe_a|^2
+                      \quad(|X|=1).                         \tag{20}
+\]
+The mean-curvature derivative term vanishes because the fibers are
+pointwise minimal. The source is O'Neill,
+[*The fundamental equations of a submersion*](https://doi.org/10.1307/mmj/1028999604).
+Equation (5) consequently implies
+\[
+                         |S_X|_{\rm op}
+                               \le\sqrt{\delta+\eta}\,|X|.  \tag{21}
+\]
+Horizontal transport differentiates the vertical metric by
+\(h_t^{-1}\dot h_t=-2\Phi_t^*S_{\dot\gamma^{\mathcal H}}\).
+Thus (2) gives
+\[
+                    \mathcal J_g(\gamma)
+                          \le\sqrt{\delta+\eta}\,
+                                      \operatorname{Length}_k(\gamma).
+\tag{22}
+\]
+
+For each \(a>0\), a finite based generating system of a closed
+Riemannian manifold can be chosen with lengths below
+\(2\operatorname{diam}+a\). One direct proof is to subdivide any
+loop into sufficiently short arcs and join the subdivision points
+to the base point by paths of length at most the diameter. Each
+resulting loop has length below \(2\operatorname{diam}+a\).
+The set of their possible homotopy classes is finite: in the proper
+universal cover it is represented by deck transformations whose
+orbit points lie in a fixed compact ball. These classes generate
+the fundamental group. No bound on their number is needed here.
+
+Under (6), choose \(a>0\) small enough that
+\((2D_B+a)\sqrt{\delta+\eta}<\mu_f\) and apply Theorem A to
+(22). If \(\delta+\eta=0\), every cycle budget is zero and the
+same argument applies directly. This proves Theorem B and its
+contrapositive (8).
+
+There is also an explicit thickness consequence, without the implicit
+constant in Mumford compactness. If \(\rho\) is irreducible and
+*some* fiber has conformal hyperbolic systole less than \(1/2\),
+base the short generators there. Lemma 1 and (22) give
+\[
+ (\delta+\eta)D_B^2
+                  \ge\frac{(\log2)^2}{64(3f-2)^2}.            \tag{23}
+\]
+Hence, below this scale, irreducibility forces every fiber to be
+conformally thick. This is not a lower bound for four-dimensional
+ball volumes. It identifies the missing information in the earlier
+thick-fiber theorem: here a global topological property supplies the
+fiber thickness needed for finite-monodromy detection.
+
+## 5. The reducible alternative is a genuine global decomposition
+
+**Proposition 3 (fiberwise realization of the invariant multicurve).**
+If \(\rho\) preserves a multicurve \(C\) of size \(r\), then
+\(M\) contains a smooth submanifold \(\mathcal C\) whose
+projection to \(B\) is a bundle with fiber the corresponding union
+of \(r\) circles. After a connected finite base cover of degree at
+most \(2^r r!\), its circle components and orientations can be
+labeled globally. Cutting the pulled-back total space along them
+gives genuine surface bundles with boundary over that base cover.
+
+**Proof.** Isotopy classes of curves in the fibers form a discrete
+local system. The monodromy-invariant set \(C\) gives a global
+section of the associated local system of multicurves. Uniformize
+the vertical metric in each fiber to curvature \(-1\). These
+metrics vary smoothly with the base: the conformal curvature equation
+has an invertible linearization at its negative-curvature solution,
+and uniqueness makes the local solutions agree.
+
+In each fiber take the unique geodesic representatives of the
+specified classes. In a local bundle chart the classes are fixed.
+Their unparametrized geodesic representatives depend smoothly on
+the hyperbolic metric: the periodic normal Jacobi operator along
+a closed hyperbolic geodesic has no kernel. The representatives
+are disjoint, and uniqueness makes the local families agree under
+changes of chart. Their union is the required embedded smooth
+\(\mathcal C\). It is compact and its projection is a submersion,
+so it is a bundle by local triviality for proper submersions.
+
+The action on oriented components maps \(\pi_1(B)\) to the
+signed permutation group of order \(2^r r!\). Pass to the
+connected cover associated with its kernel. An orientation of a
+curve, together with the fiber orientation, orients its normal
+line. Thus every boundary side obtained by cutting is labeled.
+Every component of a cut connected surface meets some such boundary
+side; consequently the components are also fixed. Fiberwise tubular
+neighborhoods and cutting now produce the stated smooth bundles
+with boundary. No assertion that the circle bundles are trivial is
+needed or made. \(\square\)
+
+This decomposition keeps rather than discards residual monodromy.
+After the finite cover, let \(S_v\) be the cut fiber components and
+let \(\overline S_v\) be the punctured surfaces obtained by capping
+their boundary circles with marked punctures. Restriction defines
+\[
+ \rho_v:\pi_1(\overline B)\longrightarrow
+                              \operatorname{PMod}(\overline S_v).
+\tag{24}
+\]
+For the subgroup fixing curves and their sides, the kernel of the
+product restriction map is precisely the free abelian group
+\[
+                         \mathcal T_C\cong\mathbb Z^r        \tag{25}
+\]
+of Dehn twists about \(C\). A representative trivial after capping
+can be isotoped to the identity off annular neighborhoods; its
+remaining annular mapping classes are integer twists. Conversely
+all those twists vanish after capping, and twists in distinct
+essential nonparallel curves are independent. This is the standard
+multicurve restriction sequence; see Hubbard–Koch, Proposition 2.5
+of [*An analytic construction of the Deligne–Mumford compactification
+of the moduli space of curves*](https://arxiv.org/abs/1301.0062).
+
+Thus the remaining data are the representations (24) **and** the
+annular twist data (25). If the joint image in (24) is finite, a
+further finite base cover reduces the image to \(\mathcal T_C\).
+Theorems A–B do not prove that additional premise. A common
+multicurve alone cannot replace it: a mapping class supported on a
+once-punctured torus with homological action
+\(\left(\begin{smallmatrix}2&1\\1&1\end{smallmatrix}\right)\)
+is pseudo-Anosov on that component and extends by the identity
+across its boundary. It preserves the boundary curve but is not
+virtually a multitwist. This example explains the retained
+restriction data; it is not claimed to satisfy the smallness
+constant in (3).
+
+In particular, neither this reduction nor a local bidisk description
+solves the Einstein matching problem along \(\mathcal C\).
+No invariant multicurve is silently promoted to a global marked
+product or to finite monodromy.
+
+## 6. Actual tests of both alternatives
+
+### 6.1 A nonempty finite irreducible realization class
+
+Finite image is compatible with irreducibility. On the smooth genus-two
+curve
+\[
+                           y^2=x^5-1
+\tag{26}
+\]
+consider \(\phi(x,y)=(\zeta_5x,y)\). Its action on holomorphic
+one-forms \(dx/y,x\,dx/y\) has eigenvalues \(\zeta_5,\zeta_5^2\),
+and its action on \(H^1(F;\mathbb Q)\) has the irreducible
+characteristic polynomial
+\(\Phi_5(t)=t^4+t^3+t^2+t+1\).
+
+If a multicurve were preserved, its at most three components would
+each be fixed by this order-five action. A nonseparating component
+would give an invariant rational line in \(H_1\), impossible by
+irreducibility of \(\Phi_5\). A separating component divides the
+genus-two surface into two one-holed tori. The order-five action
+cannot exchange these two sides, and their homology would give a
+proper invariant rational two-plane, also impossible. Thus
+\(\langle\phi\rangle\) is irreducible.
+
+Map a surface group onto this cyclic group, take its kernel cover,
+and form the diagonal product quotient. It satisfies (1) with
+nontrivial finite irreducible monodromy. The quotient product metric
+has \(\delta=\eta=\mathcal J=0\). Small, base-dependent vertical
+metric perturbations with fixed fiber area form, supported over a
+base chart, give genuinely nonproduct minimal submersion inputs
+with \(\delta\to0\). For example, exponentiate a smooth
+trace-free self-adjoint vertical endomorphism with a small
+base-dependent coefficient, leaving the horizontal and base
+metrics fixed. The determinant and hence vertical area form stay
+fixed; the full Ricci tensor varies smoothly. These inputs need
+not be Einstein, but the conclusion still concerns the same
+smooth bundle.
+
+### 6.2 The thin Dehn-twist family realizes the other branch
+
+The retained fixed bundle \(E_D\), with monodromy
+\(\rho(\gamma)=D^{u(\gamma)}\) for one nonseparating Dehn twist,
+provides an actual infinite reducible example. Section 6 of the
+preceding cycle note gives, on a fixed hyperbolic base and with
+minimal intrinsically hyperbolic fibers, metrics \(g_\lambda\)
+such that
+\[
+ \delta_-(g_\lambda)=O(\lambda),\qquad
+ \mathcal J_{g_\lambda}(\Gamma)=O(\lambda),\qquad
+              \operatorname{sys}(x_\lambda)\le\lambda\to0.
+\tag{27}
+\]
+The full Ricci matrix, not merely the horizontal block, was computed
+there. These metrics also have actual opposite-orientation monopole
+classes and bilateral near-saturation; they are not formal
+almost-parallel tensor examples.
+
+Here the common invariant curve is precisely available as the
+twisting curve. The monodromy remains infinite cyclic however
+small the budget becomes. With fiber genus \(f\) and base genus
+\(b\), the split fundamental-group extension and the rank-one
+transvection on fiber homology give
+\[
+                              b_1(E_D)=2f+2b-1.               \tag{28}
+\]
+It is odd, so \(E_D\) admits no Kähler structure. Consequently
+one cannot replace the finite-or-reducible alternative by KE
+realization for every small-budget bundle. This is not a claim
+that \(E_D\) has no general Einstein metric. The retained
+example is used as a test, not counted as a new construction.
+
+### 6.3 A signature-zero infinite irreducible test
+
+Choose a pants decomposition \(P\) of \(F_f\) and, for each
+component \(p\), a simple transverse curve \(q_p\) supported in
+the adjacent one-holed torus or four-holed sphere. The collection
+\(P\cup\{q_p\}\) fills: a curve disjoint from \(P\) is
+isotopic to a pants curve, and that class meets its transverse
+curve. Let \(G\) be generated by the twists in this collection.
+
+The group \(G\) is infinite and irreducible. Indeed, if it
+preserved a finite multicurve \(C\), a power of each generating
+twist would fix every member \(c\) of \(C\). The annular
+intersection formula
+\[
+                    i(T_a^n c,c)=|n|\,i(a,c)^2               \tag{29}
+\]
+forces \(i(a,c)=0\) for every generating curve \(a\). The
+filling property rules out such an essential \(c\). Infinitude
+already follows from one nontrivial twist.
+
+Realize this representation through a free quotient of a base
+surface group: use one free generator for each twist, send one
+member of each standard handle pair to that generator and the
+other to the identity. Actual twist diffeomorphisms give a
+suspension bundle. The representation extends over a handlebody,
+so the total four-manifold bounds the associated oriented
+five-dimensional bundle and has signature zero.
+
+The inherited free-quotient construction in
+[Round 20, Section 2](../mathematics/current/round20_construction.md)
+already constructs \(\delta_-\to0\) metrics of the required
+minimal hyperbolic-base submersion type on these fixed bundles.
+No such family is new here. What (8) newly supplies in the project
+is the thickness-independent bound
+\[
+             \operatorname{diam}(B,k_j)
+                         \ge\frac{\mu_f}{2\sqrt{\delta_-(g_j)}}.
+\tag{30}
+\]
+It remains valid even if one tries to degenerate the conformal
+fibers simultaneously. The earlier signature barrier is zero on
+these objects; the earlier cycle theorem required a thick
+reference fiber. Irreducibility detects a global obstruction to
+small-cycle deformation that both numerical signature and
+uncontrolled fiber pinching miss. Equation (30) is an obstruction
+to a bounded-base-scale input, not to Einstein existence on the
+underlying total manifold.
+
+## 7. What has changed in the first-line realization mechanism
+
+The previous sufficient condition used a conformally thick fiber
+to convert small cycle deformation into finite monodromy. The new
+argument distinguishes two ways of escaping that step. In thin
+moduli, small simultaneous displacement forces a common short
+multicurve; in thick moduli it forces finite image. Thus global
+irreducibility supplies the required thickness rather than
+assuming it. Under the submersion hypotheses this is a genuine
+Ricci-input-to-Einstein-output theorem, with a genus-only constant
+and no fiber systole in the statement.
+
+The reducible case produces a smooth global cutting locus and
+retains both component and annular monodromy. It is the specific
+alternative exhibited by the actual \(E_D\) near-Einstein
+family. A further theorem controlling those remaining transition
+data would be needed for an Einstein realization there. The
+current conclusion neither presumes that such a theorem holds
+nor treats the existence problem as settled by local products.
+
+The substantive inputs and their roles are separate: hyperbolic
+collars and quasiconformal length distortion give Lemma 1;
+Mumford compactness gives Lemma 2; O'Neill gives (20);
+Nielsen realization and contractibility of \(\operatorname{Diff}_0\)
+give exact output once finite monodromy has actually been detected.
+No new gauge solvability or compactness theorem is asserted by
+this composition.

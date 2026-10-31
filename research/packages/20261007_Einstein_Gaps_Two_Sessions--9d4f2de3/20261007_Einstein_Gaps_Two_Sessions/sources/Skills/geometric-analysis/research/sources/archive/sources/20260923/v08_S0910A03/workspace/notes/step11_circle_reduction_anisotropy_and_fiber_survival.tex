@@ -1,0 +1,305 @@
+% Step 11: Circle reduction of W+ anisotropy and the fiber survival dichotomy
+% S0910A03 Agent2 (Constructor) — Explore
+%
+% This note develops the static circle reduction of W+ for the
+% negative-branch calibrated sequence, corrects the initial formula
+% (following TTCS verification), and establishes the key dichotomy
+% connecting W+ anisotropy to fixed-scale fiber survival.
+%
+% Supersedes: the uncorrected formulas in circle_reduction_weyl.py and
+% verify_static_incompatibility.py.  Corrected script: corrected_circle_reduction.py.
+%
+% STEP 12 REPAIR: the static formula in Sections 1--2 remains valid, as does
+% the spherical cohomogeneity-one calibrated exclusion.  The claimed general
+% static rigidity, the fiber-survival/high-twist dichotomy, and the inference
+% from toric orthogonal transitivity to a static chosen circle are withdrawn.
+% Small ell^2|F|^2 does not control ell*nabla F or (nabla ell)*F, and quotient
+% geometry was not derived.  See workspace/notes/step12_reduced_equations_accessibility.md.
+
+\section{Static circle reduction of $W^+$: corrected formula}
+
+Let $(M^4,g)$ be an oriented Riemannian four-manifold with a static free
+circle action, so $g=q+\ell^2d\psi^2$ where $q=g_B$ is the base metric on
+$B^3$ and $\ell:B\to\R_{>0}$ is the orbit-length function.  If $\Ric_g=-g$,
+the warped-product Ricci equations give
+\begin{equation}\label{eq:static-einstein}
+ \Ric_B=h-g_B,\qquad \Delta_B\ell=\ell,\qquad
+ h\coloneqq\ell^{-1}\operatorname{Hess}_B\ell,\quad \tr h=1.
+\end{equation}
+In the adapted orthonormal frame $e_1,e_2,e_3$ for $B$ and $e_4=\ell^{-1}\partial_\psi$,
+the self-dual 2-forms are
+\[
+ \omega_1=\frac{e^{12}+e^{34}}{\sqrt2},\qquad
+ \omega_2=\frac{e^{13}-e^{24}}{\sqrt2},\qquad
+ \omega_3=\frac{e^{14}+e^{23}}{\sqrt2}.
+\]
+The static warped-product curvature gives $R_{abcd}=R^B_{abcd}$,
+$R_{a4b4}=-h_{ab}$, $R_{abc4}=0$.  In three dimensions,
+$R^B_{abcd}$ is determined by $\Ric_B=h-I$ and $s_B=-2$.
+
+\medskip
+\noindent\textbf{Proposition (Corrected static reduction).}
+\emph{The curvature operator on $\Lambda^2_+$ in the Besse convention is}
+\begin{equation}\label{eq:rhat-static}
+ \widehat R_+=
+ \begin{pmatrix}
+  -h_{33}&h_{23}&-h_{13}\\
+  h_{23}&-h_{22}&h_{12}\\
+  -h_{13}&h_{12}&-h_{11}
+ \end{pmatrix}.
+\end{equation}
+\emph{Consequently,}
+\begin{equation}\label{eq:spec-rhat}
+ \boxed{\operatorname{Spec}(\widehat R_+)=-\operatorname{Spec}(h),}
+\end{equation}
+\emph{and}
+\begin{equation}\label{eq:wplus-static}
+ W^+=\widehat R_++\frac13I,
+ \qquad
+ \boxed{\operatorname{Spec}(W^+)
+  =\left\{\frac13-\eta_i\right\}_{i=1,2,3},}
+\end{equation}
+\emph{where $\eta_1,\eta_2,\eta_3$ are the eigenvalues of $h$.}
+
+\begin{proof}
+For the diagonal entries, use $\tr h=1$ and the three-dimensional identity
+$K_{ab}=(h_a+h_b-h_c-1)/\ldots$ to simplify:
+\[
+ (\widehat R_+)_{11}=\frac12(K_{12}-h_{33})
+ =\frac{h_{11}+h_{22}-3h_{33}-1}{4}=-h_{33},
+\]
+where the last step uses $h_{11}+h_{22}=1-h_{33}$.  Similarly for the other
+diagonal entries.  Off-diagonal entries use $R^B_{1213}=\Ric^B_{23}=h_{23}$
+and $R_{a4b4}=-h_{ab}$.  The eigenvalue statement follows because the matrix
+\eqref{eq:rhat-static} is conjugate to $-h$ by the index permutation
+$1\leftrightarrow3$ (a diagonal orthogonal transformation).
+\end{proof}
+
+\noindent\textbf{Calibrated Hessian spectrum.}
+The calibrated self-dual Weyl spectrum
+$(-\frac16,\frac1{12},\frac1{12})$ requires
+\begin{equation}\label{eq:h-calibrated}
+ \boxed{\operatorname{Spec}(h)=\left(\frac12,\frac14,\frac14\right),
+ \qquad \tr h=1.}
+\end{equation}
+The simple $W^+$ eigenvalue $-1/6$ corresponds to the large Hessian
+eigenvalue $1/2$; the double eigenvalue $1/12$ corresponds to the
+smaller pair $1/4$.  This means the warping function $\ell$ has
+\emph{stronger} curvature in the direction singled out by the simple
+$W^+$ eigenline.
+
+\medskip
+\noindent\textbf{Verification.}
+For constant curvature $K=-1/3$: $h=\frac13I$, $\widehat R_+=-\frac13I$,
+$W^+=0$.  Script \texttt{corrected\_circle\_reduction.py} confirms both
+the isotropic and calibrated cases.
+
+\section{Static cohomogeneity-one incompatibility}
+
+For $g=dt^2+a(t)^2g_{S^2}+\ell(t)^2d\psi^2$ with $\Ric=-g$, let
+$u=\ell''/\ell$ and $v=a'\ell'/(a\ell)$.  Then $h=\diag(u,v,v)$ and
+\[
+ \Spec(W^+)=\left(\frac13-v,\frac13-v,\frac13-u\right).
+\]
+The calibrated target gives $u=\frac12$, $v=\frac14$.
+
+\medskip
+\noindent\textbf{Proposition (Static ODE incompatibility).}
+\emph{There is no smooth cohomogeneity-one static circle Einstein metric
+with constant calibrated $W^+$ spectrum.}
+
+\begin{proof}
+From the radial Einstein equation:
+\[
+ a''=\frac{a(1-u)}{2}=\frac{a}{4}.
+\]
+From the angular Einstein equation together with the calibrated $v$:
+\[
+ (a')^2=1+\frac{a^2}{2}.
+\]
+Differentiating: $a''=a/2$, contradicting $a''=a/4$.  The relative gap is
+$|a/2-a/4|/(a/2)=1/2$.
+\end{proof}
+
+\noindent\textbf{Scope of the ODE calculation.}
+If constant $u,v$ are allowed to float \emph{within this spherical
+cohomogeneity-one ansatz}, the same elimination gives $u=v$.  Combined with
+$u+2v=1$, this forces $u=v=\frac13$ and hence $W^+=0$.  This is not a
+classification of general static Einstein circle metrics.  For example,
+$\mathbb H^2\times\mathbb H^2$, using polar circles in the first factor, has
+$\operatorname{Spec}(h)=(1,0,0)$ and constant
+$\operatorname{Spec}(W^+)=(-2/3,1/3,1/3)$ up to orientation.
+
+\section{Twisted reduction and sign correction}
+
+For a general Kaluza--Klein metric $g=q+\ell^2\theta^2$, $\theta=d\psi+A$,
+$F=dA$, the vertical Einstein equation becomes
+\[
+ -\frac{\Delta_B\ell}{\ell}+\frac{\ell^2}{4}F_{ab}F^{ab}=-1,
+\]
+giving
+\begin{equation}\label{eq:tr-h-twisted}
+ \boxed{\tr h=1+\frac{\ell^2}{4}F_{ab}F^{ab}\ge1,}
+\end{equation}
+with equality only when $F=0$.  This corrects the earlier sign error;
+twist \emph{increases} $\tr h$ above the static value $1$.
+
+The horizontal Einstein equation is modified to
+\[
+ \Ric_B=h+\frac{\ell^2}{2}(F^2)_{\rm sym}-g_B,
+\]
+and the full curvature operator on $\Lambda^2_+$ acquires additional terms:
+\[
+ \widehat R_+=\widehat R_+^{\rm static}+\widehat R_+^{\rm twist}.
+\]
+For the Taub--NUT--AdS family,
+$\widehat R_+^{\rm static}+\widehat R_+^{\rm twist}=-\frac13I$
+(i.e., $W^+=0$ in the half-flat orientation).
+
+\section{Near-NUT behavior: corrected analysis}
+
+A critical correction from the TTCS verification: near a smooth NUT
+where $\ell\to0$, the quotient-base geometry degenerates.  Setting
+$d=r-\nu$ (distance from the NUT in the Taub--NUT--AdS radial coordinate),
+\[
+ \ell^2\sim2\nu d,\qquad
+ h_{\rm ang}\sim\frac{1}{8\nu d}\to\infty,\qquad
+ \ell^2|F|^2\sim\frac{1}{2\nu d}\to\infty.
+\]
+Both the static Hessian contribution and the twist correction diverge
+individually while canceling in the total (smooth) curvature.
+
+\medskip
+\noindent\textbf{Consequence.}
+The static formula $W^+\approx\frac13I-h$ does \emph{not} dominate near
+a smooth NUT.  The net $W^+$ depends on the precise balance between
+divergent Hessian and twist terms.  In particular, it is \emph{not}
+correct to conclude that ``$W^+\to0$ near any smooth NUT.''  A
+NUT with appropriate twist could in principle produce any $W^+$
+eigenvalue structure.
+
+This removes one initially proposed mechanism (NUT forces isotropic $W^+$,
+creating calibrated deficit) and replaces it with the more precise dichotomy
+below.
+
+\section{Withdrawn fiber-survival/high-twist dichotomy}
+
+The following division was proposed by the TTCS generator but is \emph{not
+established}; it is retained only as a record of the superseded proposal.
+
+\medskip
+\noindent\textbf{Superseded proposed division.}
+The following alternatives were conjectured for the calibrated good set, but
+the asserted implication in the second item was not proved:
+
+\begin{enumerate}
+\item[\textbf{(S)}] \textbf{Fiber survival.}
+\emph{The circle fiber class survives at a fixed buffer scale
+$\rho\ge\rho_0(K)>0$: a buffered normal cover at that scale unwraps
+the fiber, the cover is noncollapsed, and the mean-transport carries
+the calibrated deficit.  This produces the forbidden calibrated Einstein
+germ (Steps~5--6), giving a contradiction.}
+
+\item[\textbf{(D)}] \textbf{Fiber death with high twist.}
+\emph{The fiber contracts within every fixed buffer scale.  The static
+incompatibility forces}
+\[
+ \ell^2|F|^2=\tau\ge c_Q>0
+\]
+\emph{on a definite fraction of the region; otherwise the leading-order
+$W^+$ would be forced toward $W^+=0$ (static isotropic), contradicting
+the calibrated deficit bound.}
+\end{enumerate}
+
+The fiber-length function $\ell(p)$ can be arbitrarily small at a good
+point (a conformal rescaling $\ell\mapsto\varepsilon\ell$ does not change
+$h=\Hess\ell/\ell$).  The curvature mean bounds $h$, not $\ell$.
+
+In the non-degenerate case (\textbf{S}), the Harnack estimate for the
+positive eigenfunction equation $\Delta_B\ell=(1+\tau/4)\ell$ gives
+\[
+ \sup_{B_{R/2}}\ell\le C_H\inf_{B_{R/2}}\ell,\qquad
+ |\nabla\log\ell|\le C_H/R,
+\]
+provided the base geometry, twist energy $\tau$, and base harmonic
+radius are controlled.  Under these conditions, a positive fiber length
+at a good point remains positive throughout a fixed-radius neighborhood,
+supplying the buffer domain for the covering chart.
+
+Case \textbf{(D)} requires a diffuse mechanism:
+$\ell^2|F|^2\ge c>0$ must persist on a positive-volume subset to maintain
+the calibrated anisotropy.  This ``scaled twist energy'' acts as a source
+of non-basic curvature.
+
+\section{Relation to Pontryagin and accessibility}
+
+The Strategist's correction clarifies that the positive lower bound on
+$|\Xi|^2=|\iota_VF_{A_+}|^2$ (from the calibrated Pontryagin density,
+Step~10) is \emph{not discriminating}: for any Einstein metric with
+$\Ric=-g$, the Levi-Civita connection on $\Lambda^2_+$ has self-dual
+curvature, giving $|\iota_VF|^2=|F|^2/2$ automatically.  The isotropic
+scalar contribution $s^2/24$ provides $88.9\%$ of the calibrated
+characteristic density; the anisotropic $2|W^+|^2$ term adds only
+$11.1\%$.
+
+The \emph{distinguishing} information is the eigenvalue structure:
+the calibrated curvature operator on $\Lambda^2_+$ has spectrum
+$(-1/2,-1/4,-1/4)$, while the isotropic (hyperbolic) spectrum is
+$(-1/3,-1/3,-1/3)$.  The anisotropy
+\[
+ |W^+|^2=1/24
+\]
+is the correct measure of deviation from the benign Einstein background,
+not the total characteristic density.
+
+\section{Peer results and integration}
+
+S0910A01 (Step~12): independently verified the Taub--NUT--AdS multiscale
+computation and agrees that the target is multiscale rank recovery, not
+NUT charge counting.  Their rank-one Cartan structure equations support
+the diffuse mixed-curvature picture.
+
+S0910A02 (Step~12): developed toric determinant calculations for $T^2$-invariant
+metrics.  Key finding: $\tr_h\Ric^V=-\Delta_Bw/w+|F|_h^2/2$ with
+$w=\sqrt{\det h}$, leading to $\Delta_Bw=(|F|^2/2-2\lambda)w$.
+For $\lambda=-1$: $\Delta_Bw=(|F|^2/2+2)w$, giving strong subharmonicity
+of the orbit-volume function.  Their orthogonal transitivity lemma
+(conserved twist constants vanish at degeneration edges) is relevant to
+our dichotomy: if twist vanishes near bolts/edges, the remaining collapse
+is static and incompatible with the calibrated spectrum.
+
+\section{Current research position (repaired in Step 12)}
+
+\textbf{What is established:}
+\begin{itemize}
+\item The corrected static circle reduction formula
+$\Spec(W^+)=\{1/3-\eta_i\}$, verified against constant curvature,
+$\mathbb H^2\times\mathbb H^2$, and Taub--NUT--AdS.
+\item The calibrated spectrum is incompatible with the displayed spherical
+cohomogeneity-one static ansatz.  General calibrated exclusion comes instead
+from the Step 6 projector/Derdzi\'nski Einstein-germ argument.
+\item Buffered fiber survival plus a supplied controlled cover chart leads to
+the forbidden germ.  No converse from failure of accessibility to high
+$\ell^2|F|^2$ has been proved.
+\item The Pontryagin density is not discriminating; the $W^+$ anisotropy is.
+\end{itemize}
+
+\textbf{What remains open:}
+\begin{itemize}
+\item Can derivative twisting $\ell\nabla F+(\nabla\ell)F$ or quotient
+geometry degeneration prevent every fixed-scale buffered chart while the
+calibrated profile and curvature means remain controlled?
+\item Can the weighted quotient structure inherited from four-dimensional
+Ricci bounds be upgraded, together with the complete reduced equations, to
+fixed-scale cover reconstruction?  The earlier Harnack argument assumed the
+ordinary base control it was meant to obtain.
+\item The positive branch, higher dimensions, and Lean formalization.
+\end{itemize}
+
+\section{Files and references}
+\begin{itemize}
+\item Corrected script: \texttt{workspace/scripts/corrected\_circle\_reduction.py}
+\item TTCS generator: \texttt{trace/ttcs/results/step11\_ttcs01\_generator1\_integration.md}
+\item TTCS verifier: \texttt{trace/ttcs/results/step11\_ttcs01\_verifier1\_integration.md}
+\item Previous notes: Steps~6, 9, 10 (local obstruction, Weitzenb\"ock, Pontryagin)
+\end{itemize}

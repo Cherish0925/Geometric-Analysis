@@ -1,0 +1,12 @@
+{
+ "constraint_residual": "0",
+ "bianchi_residual": "0",
+ "scalar_minus24_C_minus_e0_residual": "0",
+ "scalar_minus24_S_equation_residual": "0",
+ "q_difference_residual": "0",
+ "P_g_minus_P_h": "4*z*(-k**2*exp(2*q) + k**2 + 2*z*exp(q)*sinh(2*q))*exp(-q)/k**2",
+ "D_pin_identity": "(W q_prime)_prime = W*(P_g-P_h-D)",
+ "D_pin_green": "M = q1-q0-W0*q0prime*K0-integral(W*(P_g-P_h)*K) = -integral(W*D*K)",
+ "D_pin_bound": "P_hat >= M^2/(8*integral(W*K^2))",
+ "scope": "Exact on any diagonal interval; a quantitative lower bound requires control of P_g-P_h, W, and endpoint data."
+}

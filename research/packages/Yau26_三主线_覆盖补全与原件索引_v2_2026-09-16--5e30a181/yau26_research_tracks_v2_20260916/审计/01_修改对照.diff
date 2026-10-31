@@ -1,0 +1,380 @@
+--- v1/01_A01_统一拓扑间隙与近Einstein刚性.tex
++++ v2/01_A01_统一拓扑间隙与近Einstein刚性.tex
+@@ -5,7 +5,7 @@
+ \usepackage{xurl}
+ \usepackage[hidelinks,bookmarksnumbered]{hyperref}
+ \usepackage{fancyhdr}
+-\pagestyle{fancy}\fancyhf{}\fancyhead[L]{Yau26\quad 研究主线与续接基线}\fancyhead[R]{2026-09-16}\fancyfoot[C]{\thepage}
++\pagestyle{fancy}\fancyhf{}\fancyhead[L]{Yau26\quad 研究续接基线·覆盖补全v2}\fancyhead[R]{2026-09-16}\fancyfoot[C]{\thepage}
+ \setlength{\parskip}{4pt}\linespread{1.13}
+ \setlength{\emergencystretch}{3em}
+ \setlist{itemsep=2pt,topsep=4pt,parsep=0pt,leftmargin=2em}
+@@ -41,7 +41,7 @@
+ 
+ \title{主线一：Einstein统一拓扑间隙与近等号刚性\\[0.5em]{\large S0910A01｜从已审读的精确定理走向无额外几何假设的Ricci夹逼结论}}
+ \author{Qiushi Engine\quad 科学续接稿}
+-\date{2026年9月16日}
++\date{2026年9月16日\quad 覆盖补全版 v2}
+ \begin{document}
+ \maketitle
+ \begin{abstract}
+@@ -53,6 +53,18 @@
+ \endgroup
+ \clearpage
+ 
++\section*{覆盖复核说明：本稿的边界与原始研究的优先性}
++\addcontentsline{toc}{section}{覆盖复核说明}
++本版为原三份续接稿的覆盖补全版（v2）。它\emph{不声称把全部原始证明和300步记录压缩成了无损替代物}。上一版覆盖了主要目标，但遗漏或过度压缩了部分最终成果、技术依赖和候选分支；本版补回具体条目，并配套保存可访问原件与逐步索引。正文中“完整”“已核查”等表述只能按紧邻的来源和范围理解，不能解释为对原工作区全部研究的认证。
++
++必须区分三类内容：原始归档或轨迹记载的研究；用户转述的Codex原稿审读；上一版编辑者的代数补充、外部参考与路线建议。后两类不得替换前一类。原稿中尚未取得的系数、PDE细节、程序和历史题页，仍以\emph{原件待取得}记录，不能根据摘要补成已证内容。上一版新定义的密度或新推论属于可选校验材料，不是原研究新增了一项已经认证的成果。
++
++A01/A02/A03的三份分工是编辑组织建议，不是历史上三个会话原有任务的逐字复制。先读取各自Step100的实际交接和当前工作区，再决定是否采用建议；任何原有路线不因未被安排为首要方向就被宣告失败或删除。总体目标仍是原始Yau26，不预定真或假，也不预定所有有效突破必然来自当前两条成果主线。
++
++配套\path{审计/300步原始任务索引.json}逐条保存三份实际上传轨迹的300个步骤的\path{tx_task}、\path{rx_task}、状态及行号；\path{审计/研究条目覆盖表.tsv}列出本次人工对照的研究单元。\path{原始材料/}保留三份完整meta-trace及两份输入ZIP，字节校验见\path{审计/原件校验.tsv}。这些索引证明可追溯与原件保留，\emph{不证明每条历史主张正确，也不等于数学语义覆盖率100\%}。
++
++旧ZIP引用的\path{meta_trace_report (93)(1).md}、\path{(94)(1).md}、\path{(95)(1).md}，与本次可见的\path{(100).md}及两份时间戳文件，尚无逐字同一性证明。三份现有轨迹按其内部工作区标记对应A01/A02/A03；不能只因都为100步就替换旧文件身份。归档另外引用的\path{Yau26_Ricci_pinching_research.md}、\path{Yau26_synthesis.tex/pdf}、\path{Yau26_uniform_gap.tex}和服务器工作区，不在当前可打包原件中。
++
+ \section{原题、量词与成功标准}
+ 本会话组的工作命题保持为：对每个维数 $n\ge2$，是否存在只依赖 $n$ 的实常数 $c_n<C_n$，使任意闭、连通、光滑实流形 $M^n$ 只要承载一个度量 $g$ 满足
+ \begin{equation}\label{eq:Q}
+@@ -208,7 +220,214 @@
+ \]
+ 要求 $|\nabla W^+|^2=1/16$，矛盾。等价地，局部K\"ahler--Einstein谱应为 $(-2/3,1/3,1/3)$。这个论证针对\emph{开集上持续成立的}模式；它不排除某点的代数曲率恰好取同样数值。
+ 
+-\section{把代数缺陷写完整：一组可直接复算的连接估计}
++\section{从精确方程到近似方程：三个可竞争的证明方向}
++\begin{target}[主攻联合间隙]\label{tar:joint}
++在指定吹起族内，证明或严格否定存在统一 $c_*>0$，使所有度量在 $\delta_-\le1/4$ 时满足
++\begin{equation}\label{eq:joint}
++\delta_-^2+\left(\frac13-\frac{k}{A}\right)_+\ge c_*.
++\end{equation}
++不得额外默认有界直径、非塌缩或全曲率上确界。若只能得到带这些条件的版本，则准确记录它加强了哪个已有定理。
++\end{target}
++
++\subsection{方向A：正体积比例的局部展开可达性}
++目标不必是“处处正则”，而是至少在一组固定正比例、局部平均 $\Phi_*$ 趋零的中心上，产生固定尺度受控展开。已知有界Ricci的尺度选择\cite[Theorem 3.4]{GJ2017}可以把小绝对能量转成某个可比尺度上的小归一化能量，但不自动给点态曲率界。Naber--Zhang与Jiang--Kong--Xu需要额外的纤维化秩、模型或局部覆盖几何\cite{NZ,JKX}。
++
++真正要证明的是这些额外结构能否由\emph{本问题的}小校准密度和能量预算获得；或者秩下降、不可展开区域是否必消耗固定正比例的校准缺陷。若构造出同时满足全部预算而不可展开的反模型，就限定这一方向，不重复把覆盖结构当成一般有界Ricci的免费结论。
++
++\subsection{方向B：弱测试张量与直接定量刚性}
++寻找不先要求全曲率点态界的估计：将 $\Ric+g$ 的导数通过分部积分移到受控测试张量上，用 $\mathcal G$、谱间隔和Hodge缺陷控制局部几何。$\norm{\Ric+g}_\infty\to0$ 不控制 $\nabla\Ric$；不能把 Bianchi 恒等式写成点态 $\operatorname{div}W=O(\delta)$。
++
++有价值的结果应是明确的“密度小则有一个禁止模式可被传递的片”定理，或者一个给定测试空间中的反例。使用有限 $W^{2,p}$ 强收敛往往足够传递二次曲率量，不必强求输入序列 $C^\infty$ 收敛。需要说明 $p$、规范、边界缓冲及系数紧性的实际来源。
++
++\subsection{方向C：有控制的局部平滑与终端重新校准}
++如果采用局部流，最小需求是得到一个定义在原闭流形上的终端度量，使正比例支撑区上曲率受控，并且 $Q(T)/A\to0$；再对终端度量重新应用原稿对应的密度与终端重新校准引理。附录式\eqref{eq:119}是另行重算的候选版本。无需分别运输所有初始SW形式的缺陷。
++
++但这一简化不解决流的共同存在时间、支撑过渡区域和退化系数问题。必须从实际初始数据证明，而不是因为权重代数通过检查就宣称流存在。若该接口的复杂性长期超过直接弱刚性路线，应保存有效引理后调整路线，而不是以“已经投入几十步”为理由继续同一闭合循环。
++
++\subsection{同等允许的反向结果}
++若在已由定理\ref{thm:topgap}排除Einstein的拓扑上构造 $\delta_-\to0$，则得到真正负分支反例。构造应满足所有临界密度和能量约束；只展示一个塌缩局部模型或某种负Ricci度量不够。新禁止带内部的固定 $k/A<1/3$ 不受 $d\to0$ 的同一必要退化结论直接覆盖，可以重新检查，但不能因此预先认定那里容易构造。
++
++
++\section{必须保留的300步技术积累及其当前边界}
++\subsection{旧IL连接和族与新吹起族不能混成一个范畴}
++旧研究还处理 $M=(\#_{j=1}^{m}X_j)\#N$，$m=2,3$，使用
++\[
++A=\sum_j c_1^2(X_j),\qquad D=4m-(2\chi+3\tau)(N),\qquad
++2\chi(M)+3\tau(M)=A-D.
++\]
++相应临界参数是 $D/A$，某些具体例子中 $D=k+4$ 或 $k+8$，不是一律 $k/A$。Bauer--Furuta给出全符号类的条件须从Ishida--LeBrun原文逐项恢复\cite{IL}。
++
++临界近等号记录包括 $\Vol/A\to32\pi^2/9$、$\int|W^+|^2/(\pi^2A)\to4/27$、正负投影收敛及多形式空间相分离。这些是有用的几何约束。一般符号平均应写为实际投影范数的和；不能把 $(K_X^+)^2$ 无理由等同于 $A$。固定 $A$ 的绝对误差趋零与变化 $A_i$ 时的 $o(A_i)$ 必须区分。
++
++\subsection{选择支撑、加权Moser与共同时间}
++用 $a=\zeta^2$ 表示截断权重，避免与Euler数 $\chi(M)$ 混淆。旧路线的有效代数骨架是
++\[
++K_p=\int a^{p-2}\mathcal K^p,\qquad
++Z_p=a^{(p-1)/2}\mathcal K^{p/2},\qquad
++K_{3p/2}\le K_p^{1/2}K_{2p}^{1/2}.
++\]
++它来自精确Cauchy--Schwarz配权，而不是将 $\norm{Z_p}_3^3$ 错当成 $K_{3p/2}$。梯度耗散含 $a^{p-1}\mathcal K^{p-2}|\nabla\mathcal K|^2$。实指数的Kato正则化与主系数 $a\mapsto a+\varepsilon$ 是不同操作；每一步极限都需统一估计。
++
++归一化Sobolev常数与小能量的乘积可以在选择支撑上抵消塌缩体积因子，但不能据此宣布全局无权Sobolev常数统一。有界 $aE$ 只在 $a=1$ 的平台给无权控制；过渡区仍可能是最难部分。每个数据存在 $T_i>0$ 不等于存在统一 $T_0>0$。全阶导数分配脚本仅验证列举与代数，不证明PDE的存在、延拓和极限。
++
++\subsection{终端几何与全局闭性}
++多个中心不能各自演化后被当成同一个终端闭度量。需要一个由不交支撑/着色构造的全局权重及一套共同流。Ricci流没有有限传播速度；区域远离初始坏点不足以使该区域自动不受影响。SW/Chern--Weil的终端应用要求同一闭流形与规范一致的度量，不能只在若干片上重新定义。
++
++\section{Prior-art审计：要回答的不是名称是否出现}
++\begin{longtable}{L{.23\textwidth}L{.33\textwidth}L{.35\textwidth}}
++\toprule 最近来源 & 已有内容 & 本项目需要确认的增量\\\midrule\endhead
++LeBrun\cite{LeBrun2001} & $1/3$ 不存在性与SW曲率估计 & 指定无限族的统一 $\gamma$ 是否已有等价定理或直接推论；不把尖锐积分式等同于尖锐Einstein阈值。\\
++Cheeger--Tian\cite{CT2006} & 精确4维Einstein、无体积下界的小能量正则性 & 与近饱和缺陷及展开重数传输组合后，是否产生此前未有的族一致结论。\\
++Derdzi\'nski\cite{Derdzinski} & harmonic $W^+$ 的两本征值局部结构 & 禁止谱本身是经典机制；新增重点应在量化强迫和跨退化传递。\\
++Ge--Jiang\cite{GJ2017} & 精确定理复述、有界Ricci尺度选择 & 不重新命名已有尺度选择；真正新增接口是近似方程下的正则/密度传递。\\
++Anderson、Naber--Zhang\cite{Anderson1989,NZ} & 不同附加假设下的紧性与正则性 & 逐项核对附加条件，不能从题名推断可解决本题；核查既有推论是否覆盖统一间隙。\\\bottomrule
++\end{longtable}
++按定理相互蕴含关系查新：保持同一范畴、同一归一化、同一常数依赖；检索拓扑近饱和、monopole退化、局部密度、Einstein塌缩及最小体积文献的交叉，而不是仅搜索“uniform topology gap”。未获得全文的文章标为来源待核，不替它补写定理。
++
++\section{从Step101继续：三种合理的科研终点}
++第一次接续先核对主原稿、Codex审读对应版本和最近会话修正，固定定理\ref{thm:topgap}的真实陈述与依赖图。若原稿已有本文件概述中缺省的细节，不重复造证明；若发现具体缺口，写清楚失效位置和受影响结论。先保留原稿的密度定义和证明。附录式\eqref{eq:119}--\eqref{eq:meanPhi}只是上一版编辑者的可选交叉校验，不应成为继续原研究的额外前置任务，也不替换原成果。
++
++若精确结果和必要退化完整且查新支持，第一种终点是完成一篇以\emph{统一拓扑间隙及定量近等号退化}为核心的投稿稿。不能把第一稿的价值取决于尚未解决的式\eqref{eq:joint}；也不为追求期刊名人为添上未经证明的广泛推广。
++
++第二种终点是实质加强式\eqref{eq:joint}：在三个竞争方向中选择一个最小分析接口，先证明真实输入上的统一版本，再推广范畴。可先获得覆盖可达的正比例定理、受控秩下降代价或保留密度的平滑定理；这些要明确说明排除了哪些先前仍开放的序列。
++
++第三种终点是构造满足全部预算的逃逸模型，并与A03的全局拓扑机制拼接。模型失败时，只排除该模型，不宣布一般塌缩不存在。A02提供的曲率尖峰必须作为正则性压力测试保留，但它的底层本来有Einstein度量，不能误当此处的拓扑反例。
++
++每次路线分叉用一条可判真的命题决定，而非预先耗满100步。论文整理、证明推进和新方向探索允许切换；切换应由证据触发，禁止重复宣布“只差一个标准技术步骤”而未展示该步骤。
++
++\section{跨会话接口与原稿定位}
++A01持有本主线主定理与密度；A02持有近似构造和正则性反例；A03持有同一光滑拓扑的全局存在/不存在性。交接只需要准确的输入、输出、常数依赖与可用版本，不能传递“同伴已突破”的评价替代数学。
++
++\asset{主原稿（优先读取）}{qiushi_engine_v08/users/user2/Sessions/S0910A03/workspace/briefing/Yau26_uniform_gap.tex}
++\asset{累积研究稿}{Skills/qiushi-yau26/references/research/20260912.tex}
++\asset{旧IL组装（逐模块核对状态）}{Sessions/S0910A01/workspace/notes/step68_restricted_IL_canonical_assembly.md}
++\asset{终端重新校准}{Sessions/S0910A01/workspace/notes/step67_terminal_recalibration_recovery.md}
++\asset{选支撑的独立模块}{Sessions/S0910A01/workspace/notes/step70_selected_support_lemma.md}
++\asset{实指数缺陷Moser}{Sessions/S0910A01/workspace/notes/step70_defect_moser_real_exponent.md}
++\asset{共同bootstrap}{Sessions/S0910A01/workspace/notes/step55_joint_bootstrap_background_continuation_repair.md}
++\asset{局部禁止谱与退化}{Sessions/S0910A03/workspace/notes/step6_local_projector_obstruction_and_collapse_reduction.tex}
++\asset{平均传输的修正版}{Sessions/S0910A03/workspace/notes/step8_cover_mean_transport_and_model_scope_corrections.md}
++
++以上为轨迹提供的工作区定位，不表示这些原稿字节已经收进本交付包。A03第31--60步的加权估计、选择支撑、正则化与延拓笔记保留为条件性技术储备；使用时以最后修正为准，不从早期“完成”标签倒推证明状态。
++
++\subsection{必须继承的纠错}
++纯 $W^+$ 独立下界的早期推导已撤回；不丢弃符号不利的梯度项，不把 $F_A^+$ 当成调和形式。compact Armstrong定理不直接用于非紧正则片。平均缺陷传输要保留重数。Noether比例界不等于全局体积界。正Ricci给体积上界，不给体积下界。旧的 $A^{-1/2}$ 界仅限制特定旧链，不能否定新精确统一间隙。Min-Oo旧论证的来源争议没有解决前，不把其存在性当作本主线依赖\cite{Ye1993}。
++
++\section{覆盖补全：原始负分支的分析细节与分支资产}\label{sec:restore-a01}
++本节按原归档和轨迹补回上一版压缩掉的内容；均继承原来源的条件和证据状态，\emph{本次没有重新执行这些数学实验或复核未提供的原稿}。
++
++\subsection{原始临界量与完整能量轮廓}
++旧IL连接和族使用 $q=D-A/3$，单曲面吹起族使用 $q=k-A/3$，不能混用。归档04以
++\[
++S=\frac1{4\pi^2}\int\frac{s^2}{24},\quad
++W=\frac1{4\pi^2}\int2|W^+|^2,\quad
++R=\frac1{8\pi^2}\int|\Ric^\circ|^2,\quad I=S+W
++\]
++记录临界式 $I-R=2A/3$。所记载的临界序列轮廓完整包括
++\[
++\frac{S}{A}\to\frac{16}{27},\quad \frac{W}{A}\to\frac{2}{27},\quad
++\frac{R}{A}\to0,\quad \frac{\Vol}{A}\to\frac{32\pi^2}{9},\quad
++\frac{\int|\Ric|^2}{\pi^2 A}\to\frac{128}{9}.
++\]
++这些是相应假想序列的\emph{必要后果}，不是已经构造了该序列。A03第3--6步区分固定 $A$ 的绝对误差与变化 $A_i$ 的归一化误差，并记录固定拓扑气泡的附加限制：当所需光滑非塌缩放大极限存在时，$\Ric=0$ 与 $W^+=0$ 同时出现；这不能用作一般Ricci-flat四流形分类。
++
++归档04的符号平均写法带有 ``schematic form'' 限定。具体使用必须恢复真实canonical投影；不能只保留简式 $A+\sum\|E_j^+\|^2$ 而漏掉其条件。A03第4步的Codex分析另记载Hodge投影、spinor振幅、Weitzenb\"ock与最低本征线缺陷的逐项控制，以及Walsh极化所得的空间 $L^1$ 正交／相分离。关键不是一句“exceptional方向近ASD”，而是哪些形式能在同一正则区共享最低本征线、哪些转移区必须承担缺陷。具体非负项及常数须回到\path{workspace/codex_loop/work/quantitative_deficit_analysis.md}。
++
++旧 $L^2$ 极小化拼接若含精确scalar-flat区域，则该区域上 $|s+4|=4$，因此 $\delta_-\ge1$，不因体积缩小而消失。这个\emph{不同近似范数不能互换}的排除机制须与新点态构造一直对照。
++
++\subsection{局部正密度、有界直径的更一般版本与缺失原稿}
++9月15日进展包另陈述：对其定义的非负密度 $\mathcal D$，在完整四维流形上给定 $|\Ric|_{\op}\le K$、$\Vol B_r(p)\ge v$，存在 $\eta_0(K,r,v)>0$，使
++\[
++\fint_{B_{2r}(p)}\mathcal D\ge\eta_0(K,r,v).
++\]
++该条不是只有口号的“局部非塌缩有作用”，而是原密度的局部定量下界；同时原包给出在 $|\Ric|\le K$、$\diam\le D$ 下
++\[
++\fint_M|\Ric+g|^2+\left(\frac13-\frac{k}{A}\right)_+\ge c(K,D).
++\]
++这些陈述连同 $(SC)$ 条件延伸都应保存。但归档没有附 $\mathcal D$ 的完整定义和原稿全部证明，故\emph{不能将上一版编辑者的 $\Phi_*$ 代入后宣称就是原定理}。Codex提及的109、436、675属于原密度的计算，当前仅有审读转述；本版不填造其来源式。
++
++\subsection{选择支撑与Sobolev符号：不是只保留“体积抵消”四个字}
++归档06保留 $7r\le R$、外层 $B_{7r}$ 不交、严格gradient buffer、内部 $a=1$ 平台和单一全局 $a=\sum_\alpha\zeta_\alpha^2$。其极大函数对象为
++\[
++\mathcal M_R f(x)=\sup_{0<s\le R}\fint_{B_s(x)}f.
++\]
++所用平方形式Sobolev系数满足
++\[
++\|u\|_4^2\le\mathcal S(\|\nabla u\|_2^2+r^{-2}\|u\|_2^2),\quad
++\mathcal S\asymp r^2/\sqrt V,
++\quad K_2\le K_0V\ \Longrightarrow\ \mathcal S K_2^{1/2}\lesssim r^2\sqrt{K_0}.
++\]
++A03第33--34步曾因将已为平方形式的系数再次平方而误判塌缩障碍；第34步修复只消除了该假障碍，没有自动建立整个族一致PDE定理。以上公式按原能量记号使用；不同稿中的 $S,\mathcal S,H_2,K_2$ 先做字典再比较。
++
++\subsection{原Moser迭代与终端119Q：保留原记号下的结论}
++归档02/06保留了迭代的指数信息，而不只是一次H\"older不等式：
++\[
++p_{j+1}=\frac32p_j,\qquad \sum_{j=0}^{\infty}p_j^{-1}=\frac3{p_0}.
++\]
++这决定相应时间平滑指数 $t^{-3/p_0}$；多项式 $p$ 损失与几何时间截断损失是否可乘积求和，必须连同耗散吸收的条件核对。它不是“形式递推正确就得到PDE解”。
++
++归档02的B12与A01第67步，\emph{在相应IL范畴及 $q\ge0$ 条件下}记录原终端重新校准：
++\[
++D_{\rm av}=J-q-\frac23\sum|e_\ell^+|^2\le J\le\frac{Q}{8\pi^2},
++\]
++\[
++\int(s+8\sqrt6|W^+|)^2\le108Q,\qquad
++\int\mathcal G_{\rm gap}\le6Q,\qquad \int\Phi\le119Q.
++\]
++这里 $Q=\int|\Ric+g|^2$，$\Phi$ 为\emph{原终端笔记的密度}。这些公式不能被本稿附录中新定义的 $\Phi_*$ 和另外的常数悄然替换。原结论的作用是重新应用闭流形拓扑，而非证明整个流动存在；在 $q<0$ 或新的吹起范畴中使用必须重新证明适用范围。
++
++\subsection{高阶延拓的真正归纳单元与基础层顺序}
++设 $U=aT$、$C_j=\nabla^j\zeta$，源归档的有效结构是
++\[
++\nabla^{m+2}a=2\zeta C_{m+2}+\text{低阶项},\qquad
++ a(\nabla^2a)T=(\nabla^2a)U.
++\]
++最高截断jet应以 $\zeta C_{m+2}U$ 或更好权重出现；分部积分若击中 $\zeta$，必须真实降低相应导数阶。正确配对为 $(U_m,C_{m+1})$，而不是独立控制两列量。归档给出的基础顺序是
++\[
++U_0\in L^\infty,\ T_0\in L^q
++\ \longrightarrow\ (U_1,C_2)
++\ \longrightarrow\ T_1
++\ \longrightarrow\ T_0\in L^\infty
++\ \longrightarrow\ m\ge2.
++\]
++这是避免基础 $W^{1,p}$ 与 $L^\infty$ 循环依赖的修复。固定背景connection层记录为
++\[
++\partial_t A_m=g^{-1}*U_{m+1}
+++P_m(A_{\le m-1},U_{\le m},g^{-1}),
++\]
++必须检查是否偷偷出现当前阶未控 $A_m$ 系数。
++
++原first-exit所需时间积分不是附属量：若
++\[
++\|aE(t)\|_\infty\lesssim\delta(r^2/t)^{1/3},\qquad T=\theta r^2,
++\]
++则积分量控制metric drift、moving Sobolev和平台保留。A01第55步用耦合的 $\Gamma(T)$ 与 $V(T)=\int_0^T\|aE\|_\infty dt$ 组织共同bootstrap，而非假设演化中无权 $|E|\le\delta$ 始终成立。A01第60、70步、A03第56--60步的实际tensor证明仍是使用这些接口的必要原件。
++
++\subsection{塌缩模型与特征密度：保留曾经改变路线的具体信息}
++A03第8步保留正常覆盖中的Borel截面、deck平移和倍增体积比较，这与Codex后来的缓冲局部等距重数引理不是同一组假设；不能只写一个“cover transport”名字后混用。源记录明确区分固定尺度覆盖几何、最大幂零秩与小平均值传输。
++
++nil$^3$的修正式为 $v''=(3-\rho/2)v$，而非已撤回的 $3+\mu$。圆周模型的最大值分析限制 $\rho$ 并导致周期矛盾；有限区间排除还需端点 $\limsup\rho<6$ 及相应有限距离条件。复双曲cusp具有有限体积、无限长度，故“有限体积控制cusp长度”不能再次使用。
++
++Lott型精确适配局部阿贝尔模型的轨道体积方程
++\[
++\Delta v=(|F|^2/4-\lambda N)v
++\]
++在闭基底或带有额外容量、有界 $v$ 等条件时有排除力，不是任意塌缩序列分类。A03第10--12步还保留了 $\Lambda^2_+$ 联络的特征密度及transgression路线：局部NUT电荷没有边界资料不能当成整数；$|\iota_VF|^2=|F|^2/2$ 在精确Einstein自对偶联络中是恒等性质，并非独有的新障碍。判别应指向校准曲率各向异性，而不只是mixed curvature的大小。
++
++\subsection{跨会话不能遗失的其他原始成果}
++A01第49--53步另有Q-Gorenstein平滑、具体BCGP商曲面与Einstein存在性工作，已在本版A03恢复专节；它不是负间隙证明的一部分，也不能因新的三份分工而删除。A01第91--92步的双曲 $N\#N$／BCG路线仍按目标依赖阈值保存。A01第100步的AA/BB手性结果与A02第100步四节点交换是不同条目，后者由本版A02单独恢复。三者都可从300步索引按原会话回到实际文件。
++
++\section{结果交付与论文标准}
++研究结论以具体命题和证明为单位，而不是以Agent数量、步数或平台认可次数为单位。同一公式在多个会话复算，可以提高证据质量，不产生多项独立新发现。
++
++可完成的结果应及时冻结成可独立阅读的数学稿：准确的假设与量词，新增结论相对最接近文献的差别，所有分析接口及常数依赖，完整证明，必要时附有限计算及独立复算说明。假设增多或结论缩小必须在主定理中显式反映。无需等到整个Yau26解决才允许发表严谨的中间结果，也不把一个证明链拆成若干缺乏独立贡献的论文。
++
++Annals、Inventiones、JAMS、Acta可以作为高质量写作与结果强度的目标，但任何文件都不预设已达到其录用标准。完整性、首创性、重要性和选刊是四项判断。用经典工具证明新的重要定理可以完全原创；出现一个新名称、搜不到同名词或构造了“框架”，并不能确认首创性。按\emph{精确命题及假设}进行查新，并记录最近定理、包含关系及真正新增的证明步骤。
++
++无论本轮选择论文收束还是进一步探索，结束时只需留下四类必要材料：更新后的主定理与证明；当前最小未闭合命题；确切被否定的模型及原因；可供同伴直接使用的来源、版本和计算。除非出现新的反证或新缺口，不再次从零争论已审读的同一结果。反过来，发现具体错误就修正所有依赖它的结论，而不是只新增一份不被后续读取的纠错说明。
++
++\appendix
++\section{可选附录：上一版编辑者重算的连接估计}
+ 这一节为\status{本稿重算}，用于接续与交叉校验，\emph{不替代}原稿中定义不同的密度及109、436、675等常数，也不声明这些代数组合在文献中首次出现。
+ 
+ 取适用LeBrun估计的monopole类 $a$，使 $(a^+)^2\ge A$。此处正投影范数不是类的拓扑自交数 $a^2=A-k$。令 $\omega=|W^+|$、$w=\lambda_{\min}(W^+)$，
+@@ -262,35 +481,8 @@
+ 
+ 这说明从小Ricci缺陷到小\emph{平均校准缺陷}的代数环节已经可以明确写出。尚未解决的不是“再找一个平方恒等式”，而是在任意塌缩的近似方程上取得足以传递这个密度的正则区域。
+ 
+-\section{从精确方程到近似方程：三个可竞争的证明方向}
+-\begin{target}[主攻联合间隙]\label{tar:joint}
+-在指定吹起族内，证明或严格否定存在统一 $c_*>0$，使所有度量在 $\delta_-\le1/4$ 时满足
+-\begin{equation}\label{eq:joint}
+-\delta_-^2+\left(\frac13-\frac{k}{A}\right)_+\ge c_*.
+-\end{equation}
+-不得额外默认有界直径、非塌缩或全曲率上确界。若只能得到带这些条件的版本，则准确记录它加强了哪个已有定理。
+-\end{target}
+-
+-\subsection{方向A：正体积比例的局部展开可达性}
+-目标不必是“处处正则”，而是至少在一组固定正比例、局部平均 $\Phi_*$ 趋零的中心上，产生固定尺度受控展开。已知有界Ricci的尺度选择\cite[Theorem 3.4]{GJ2017}可以把小绝对能量转成某个可比尺度上的小归一化能量，但不自动给点态曲率界。Naber--Zhang与Jiang--Kong--Xu需要额外的纤维化秩、模型或局部覆盖几何\cite{NZ,JKX}。
+-
+-真正要证明的是这些额外结构能否由\emph{本问题的}小校准密度和能量预算获得；或者秩下降、不可展开区域是否必消耗固定正比例的校准缺陷。若构造出同时满足全部预算而不可展开的反模型，就限定这一方向，不重复把覆盖结构当成一般有界Ricci的免费结论。
+-
+-\subsection{方向B：弱测试张量与直接定量刚性}
+-寻找不先要求全曲率点态界的估计：将 $\Ric+g$ 的导数通过分部积分移到受控测试张量上，用 $\mathcal G$、谱间隔和Hodge缺陷控制局部几何。$\norm{\Ric+g}_\infty\to0$ 不控制 $\nabla\Ric$；不能把 Bianchi 恒等式写成点态 $\operatorname{div}W=O(\delta)$。
+-
+-有价值的结果应是明确的“密度小则有一个禁止模式可被传递的片”定理，或者一个给定测试空间中的反例。使用有限 $W^{2,p}$ 强收敛往往足够传递二次曲率量，不必强求输入序列 $C^\infty$ 收敛。需要说明 $p$、规范、边界缓冲及系数紧性的实际来源。
+-
+-\subsection{方向C：有控制的局部平滑与终端重新校准}
+-如果采用局部流，最小需求是得到一个定义在原闭流形上的终端度量，使正比例支撑区上曲率受控，并且 $Q(T)/A\to0$；再对终端度量重新应用式\eqref{eq:119}或原稿对应密度。无需分别运输所有初始SW形式的缺陷。
+-
+-但这一简化不解决流的共同存在时间、支撑过渡区域和退化系数问题。必须从实际初始数据证明，而不是因为权重代数通过检查就宣称流存在。若该接口的复杂性长期超过直接弱刚性路线，应保存有效引理后调整路线，而不是以“已经投入几十步”为理由继续同一闭合循环。
+-
+-\subsection{同等允许的反向结果}
+-若在已由定理\ref{thm:topgap}排除Einstein的拓扑上构造 $\delta_-\to0$，则得到真正负分支反例。构造应满足所有临界密度和能量约束；只展示一个塌缩局部模型或某种负Ricci度量不够。新禁止带内部的固定 $k/A<1/3$ 不受 $d\to0$ 的同一必要退化结论直接覆盖，可以重新检查，但不能因此预先认定那里容易构造。
+-
+-
+-\subsection{一个足够完成矛盾、但不要求输入曲率处处有界的接口}
++
++\subsection{上一版编辑者整理的条件性传递准则}
+ \begin{proposition}[受控谐和片上的密度传递准则]\label{prop:minimalbridge}
+ 设假想序列满足 $\delta_-(g_i)^2+d_i\to0$。假设可选定固定半径的局部展开片及谐和坐标，将其识别到同一个欧氏球 $B_2$，使拉回度量 $\widetilde g_i$ 一致正定、具有统一 $C^{1,\alpha}$ 控制，且拉回的 $\Phi_*$ 在该球的平均值趋零。则这样的序列不可能存在。
+ \end{proposition}
+@@ -299,79 +491,6 @@
+ \end{proof}
+ 该命题的分析含义是：最终需要的是\emph{一个小密度受控片}，不是把所有输入度量变成有界曲率。真正待证的是这样的片能否在任意塌缩序列中找到，以及底空间平均值能否传到同一片。它不与A02的尖峰构造矛盾，因为尖峰例并不满足本主线的趋零禁止谱密度。
+ 
+-\section{必须保留的300步技术积累及其当前边界}
+-\subsection{旧IL连接和族与新吹起族不能混成一个范畴}
+-旧研究还处理 $M=(\#_{j=1}^{m}X_j)\#N$，$m=2,3$，使用
+-\[
+-A=\sum_j c_1^2(X_j),\qquad D=4m-(2\chi+3\tau)(N),\qquad
+-2\chi(M)+3\tau(M)=A-D.
+-\]
+-相应临界参数是 $D/A$，某些具体例子中 $D=k+4$ 或 $k+8$，不是一律 $k/A$。Bauer--Furuta给出全符号类的条件须从Ishida--LeBrun原文逐项恢复\cite{IL}。
+-
+-临界近等号记录包括 $\Vol/A\to32\pi^2/9$、$\int|W^+|^2/(\pi^2A)\to4/27$、正负投影收敛及多形式空间相分离。这些是有用的几何约束。一般符号平均应写为实际投影范数的和；不能把 $(K_X^+)^2$ 无理由等同于 $A$。固定 $A$ 的绝对误差趋零与变化 $A_i$ 时的 $o(A_i)$ 必须区分。
+-
+-\subsection{选择支撑、加权Moser与共同时间}
+-用 $a=\zeta^2$ 表示截断权重，避免与Euler数 $\chi(M)$ 混淆。旧路线的有效代数骨架是
+-\[
+-K_p=\int a^{p-2}\mathcal K^p,\qquad
+-Z_p=a^{(p-1)/2}\mathcal K^{p/2},\qquad
+-K_{3p/2}\le K_p^{1/2}K_{2p}^{1/2}.
+-\]
+-它来自精确Cauchy--Schwarz配权，而不是将 $\norm{Z_p}_3^3$ 错当成 $K_{3p/2}$。梯度耗散含 $a^{p-1}\mathcal K^{p-2}|\nabla\mathcal K|^2$。实指数的Kato正则化与主系数 $a\mapsto a+\varepsilon$ 是不同操作；每一步极限都需统一估计。
+-
+-归一化Sobolev常数与小能量的乘积可以在选择支撑上抵消塌缩体积因子，但不能据此宣布全局无权Sobolev常数统一。有界 $aE$ 只在 $a=1$ 的平台给无权控制；过渡区仍可能是最难部分。每个数据存在 $T_i>0$ 不等于存在统一 $T_0>0$。全阶导数分配脚本仅验证列举与代数，不证明PDE的存在、延拓和极限。
+-
+-\subsection{终端几何与全局闭性}
+-多个中心不能各自演化后被当成同一个终端闭度量。需要一个由不交支撑/着色构造的全局权重及一套共同流。Ricci流没有有限传播速度；区域远离初始坏点不足以使该区域自动不受影响。SW/Chern--Weil的终端应用要求同一闭流形与规范一致的度量，不能只在若干片上重新定义。
+-
+-\section{Prior-art审计：要回答的不是名称是否出现}
+-\begin{longtable}{L{.23\textwidth}L{.33\textwidth}L{.35\textwidth}}
+-\toprule 最近来源 & 已有内容 & 本项目需要确认的增量\\\midrule\endhead
+-LeBrun\cite{LeBrun2001} & $1/3$ 不存在性与SW曲率估计 & 指定无限族的统一 $\gamma$ 是否已有等价定理或直接推论；不把尖锐积分式等同于尖锐Einstein阈值。\\
+-Cheeger--Tian\cite{CT2006} & 精确4维Einstein、无体积下界的小能量正则性 & 与近饱和缺陷及展开重数传输组合后，是否产生此前未有的族一致结论。\\
+-Derdzi\'nski\cite{Derdzinski} & harmonic $W^+$ 的两本征值局部结构 & 禁止谱本身是经典机制；新增重点应在量化强迫和跨退化传递。\\
+-Ge--Jiang\cite{GJ2017} & 精确定理复述、有界Ricci尺度选择 & 不重新命名已有尺度选择；真正新增接口是近似方程下的正则/密度传递。\\
+-Anderson、Naber--Zhang\cite{Anderson1989,NZ} & 不同附加假设下的紧性与正则性 & 逐项核对附加条件，不能从题名推断可解决本题；核查既有推论是否覆盖统一间隙。\\\bottomrule
+-\end{longtable}
+-按定理相互蕴含关系查新：保持同一范畴、同一归一化、同一常数依赖；检索拓扑近饱和、monopole退化、局部密度、Einstein塌缩及最小体积文献的交叉，而不是仅搜索“uniform topology gap”。未获得全文的文章标为来源待核，不替它补写定理。
+-
+-\section{从Step101继续：三种合理的科研终点}
+-第一次接续先核对主原稿、Codex审读对应版本和最近会话修正，冻结定理\ref{thm:topgap}的真实陈述与依赖图。若原稿已有本文件概述中缺省的细节，不重复造证明；若发现具体缺口，写清楚失效位置和受影响结论。接着将式\eqref{eq:119}--\eqref{eq:meanPhi}与原密度逐项比对，选择更简洁、适用范围更清楚的版本。
+-
+-若精确结果和必要退化完整且查新支持，第一种终点是完成一篇以\emph{统一拓扑间隙及定量近等号退化}为核心的投稿稿。不能把第一稿的价值取决于尚未解决的式\eqref{eq:joint}；也不为追求期刊名人为添上未经证明的广泛推广。
+-
+-第二种终点是实质加强式\eqref{eq:joint}：在三个竞争方向中选择一个最小分析接口，先证明真实输入上的统一版本，再推广范畴。可先获得覆盖可达的正比例定理、受控秩下降代价或保留密度的平滑定理；这些要明确说明排除了哪些先前仍开放的序列。
+-
+-第三种终点是构造满足全部预算的逃逸模型，并与A03的全局拓扑机制拼接。模型失败时，只排除该模型，不宣布一般塌缩不存在。A02提供的曲率尖峰必须作为正则性压力测试保留，但它的底层本来有Einstein度量，不能误当此处的拓扑反例。
+-
+-每次路线分叉用一条可判真的命题决定，而非预先耗满100步。论文整理、证明推进和新方向探索允许切换；切换应由证据触发，禁止重复宣布“只差一个标准技术步骤”而未展示该步骤。
+-
+-\section{跨会话接口与原稿定位}
+-A01持有本主线主定理与密度；A02持有近似构造和正则性反例；A03持有同一光滑拓扑的全局存在/不存在性。交接只需要准确的输入、输出、常数依赖与可用版本，不能传递“同伴已突破”的评价替代数学。
+-
+-\asset{主原稿（优先读取）}{qiushi_engine_v08/users/user2/Sessions/S0910A03/workspace/briefing/Yau26_uniform_gap.tex}
+-\asset{累积研究稿}{Skills/qiushi-yau26/references/research/20260912.tex}
+-\asset{旧IL组装（逐模块核对状态）}{Sessions/S0910A01/workspace/notes/step68_restricted_IL_canonical_assembly.md}
+-\asset{终端重新校准}{Sessions/S0910A01/workspace/notes/step67_terminal_recalibration_recovery.md}
+-\asset{选支撑的独立模块}{Sessions/S0910A01/workspace/notes/step70_selected_support_lemma.md}
+-\asset{实指数缺陷Moser}{Sessions/S0910A01/workspace/notes/step70_defect_moser_real_exponent.md}
+-\asset{共同bootstrap}{Sessions/S0910A01/workspace/notes/step55_joint_bootstrap_background_continuation_repair.md}
+-\asset{局部禁止谱与退化}{Sessions/S0910A03/workspace/notes/step6_local_projector_obstruction_and_collapse_reduction.tex}
+-\asset{平均传输的修正版}{Sessions/S0910A03/workspace/notes/step8_cover_mean_transport_and_model_scope_corrections.md}
+-
+-以上为轨迹提供的工作区定位，不表示这些原稿字节已经收进本交付包。A03第31--60步的加权估计、选择支撑、正则化与延拓笔记保留为条件性技术储备；使用时以最后修正为准，不从早期“完成”标签倒推证明状态。
+-
+-\subsection{必须继承的纠错}
+-纯 $W^+$ 独立下界的早期推导已撤回；不丢弃符号不利的梯度项，不把 $F_A^+$ 当成调和形式。compact Armstrong定理不直接用于非紧正则片。平均缺陷传输要保留重数。Noether比例界不等于全局体积界。正Ricci给体积上界，不给体积下界。旧的 $A^{-1/2}$ 界仅限制特定旧链，不能否定新精确统一间隙。Min-Oo旧论证的来源争议没有解决前，不把其存在性当作本主线依赖\cite{Ye1993}。
+-
+-\section{结果交付与论文标准}
+-研究结论以具体命题和证明为单位，而不是以Agent数量、步数或平台认可次数为单位。同一公式在多个会话复算，可以提高证据质量，不产生多项独立新发现。
+-
+-可完成的结果应及时冻结成可独立阅读的数学稿：准确的假设与量词，新增结论相对最接近文献的差别，所有分析接口及常数依赖，完整证明，必要时附有限计算及独立复算说明。假设增多或结论缩小必须在主定理中显式反映。无需等到整个Yau26解决才允许发表严谨的中间结果，也不把一个证明链拆成若干缺乏独立贡献的论文。
+-
+-Annals、Inventiones、JAMS、Acta可以作为高质量写作与结果强度的目标，但任何文件都不预设已达到其录用标准。完整性、首创性、重要性和选刊是四项判断。用经典工具证明新的重要定理可以完全原创；出现一个新名称、搜不到同名词或构造了“框架”，并不能确认首创性。按\emph{精确命题及假设}进行查新，并记录最近定理、包含关系及真正新增的证明步骤。
+-
+-无论本轮选择论文收束还是进一步探索，结束时只需留下四类必要材料：更新后的主定理与证明；当前最小未闭合命题；确切被否定的模型及原因；可供同伴直接使用的来源、版本和计算。除非出现新的反证或新缺口，不再次从零争论已审读的同一结果。反过来，发现具体错误就修正所有依赖它的结论，而不是只新增一份不被后续读取的纠错说明。
+ 
+ \begin{thebibliography}{99}
+ \bibitem{Yau1982} S.-T. Yau, \emph{Problem Section}, in \emph{Seminar on Differential Geometry}, Annals of Mathematics Studies 102, Princeton University Press, 1982, pp. 669--706. 历史题页仍需在工作区逐字核对；本稿采用任务书中的区间命题。
+@@ -400,5 +519,6 @@
+ 
+ \bibitem{CodexReview} 用户在本会话提供的 Codex 原稿审读报告（截至2026-09-16）：\path{Sessions/S0910A03/workspace/briefing/Yau26_uniform_gap.tex}，重点位置原稿约第277行；另核查 A02 第83步构造笔记。结论为在所审读依赖链中未发现实质缺口，且精确拓扑间隙不依赖(SC)。本引用是审读报告的来源定位，不声称原稿全文已包含于归档。
+ 
++\bibitem{CoverageAudit} 本版覆盖复核资料（2026-09-16）：\path{审计/研究条目覆盖表.tsv}、\path{审计/300步原始任务索引.json}、\path{审计/原件校验.tsv}。恢复内容来自实际上传三份meta-trace及两个归档的明确条目；并非本次重新证明全部原稿。
+ \end{thebibliography}
+ \end{document}

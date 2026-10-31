@@ -1,0 +1,11 @@
+{
+  "model": "aligned U(2) Burns cell with complex-space-form collar K=x+kappa*x^2, X=0.25, degree=8, nq=500",
+  "normalization": "P = integral |Ric0|^2 /(8*pi^2), x0=a^2, scalar_bulk=-24*kappa, Rplus(omega,omega)=-6*kappa",
+  "runs": [
+    {"kappa": 1.0, "x0": 0.003, "P": 1.0185325464118484, "slope": 6.177515470616142, "predicted_slope": 6.0, "nit": 3497, "grad_inf": 5.434905053780525e-7},
+    {"kappa": 1.0, "x0": 0.001, "P": 1.0060581121906624, "slope": 6.058112190662435, "predicted_slope": 6.0, "nit": 2732, "grad_inf": 3.0817745155786724e-7},
+    {"kappa": -1.0, "x0": 0.003, "P": 0.9830578644218115, "slope": -5.647378526062822, "predicted_slope": -6.0, "nit": 3138, "grad_inf": 1.4305669976399926e-7},
+    {"kappa": -1.0, "x0": 0.001, "P": 0.9941059312961685, "slope": -5.894068703831468, "predicted_slope": -6.0, "nit": 2879, "grad_inf": 2.5766112765612803e-7}
+  ],
+  "interpretation": "The same-metric P crosses below 1 for the positive-Kähler-Einstein sign. At fixed X the explicit Kähler seed has P=1+6*kappa*x0+9*(kappa^2+X^-2)*x0^2+O(x0^3), so finite-X effects are second order."
+}

@@ -1,0 +1,2264 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[margin=23mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{booktabs,longtable,tabularx,array,enumitem}
+\usepackage{xurl}
+\urlstyle{same}
+\usepackage[hidelinks,bookmarksnumbered]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{Uniform topological gaps and near-equality geometry}\fancyfoot[C]{\thepage}
+\setlength{\parskip}{4pt}\linespread{1.13}
+\setlength{\emergencystretch}{3em}
+\setlist{itemsep=2pt,topsep=4pt,parsep=0pt,leftmargin=2em}
+\setcounter{tocdepth}{1}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{target}[theorem]{Research target}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\owedge}{\mathbin{\bigcirc\mkern-15mu\wedge}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\spec}{\operatorname{Spec}}
+\newcommand{\Met}{\operatorname{Met}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\dd}{\,d\mu_g}
+\newcommand{\avgint}{\mathop{\rlap{\,\raisebox{0.1ex}{\tiny$-$}}\int}\nolimits}
+\newcommand{\fint}{\mathop{\rlap{\,\raisebox{0.1ex}{\tiny$-$}}\int}\nolimits}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{Uniform Topological Gaps for Einstein Metrics\\and Near-Equality Geometry\\[0.5em]{\large Curvature defects, collapse, weighted local flows, and smoothings of complex surfaces}}
+\author{Qiushi Engine}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+The relation between Ricci pinching and the existence of Einstein metrics requires a distinction between rigidity of the exact equation and degeneration of metrics with small residual. Under a uniform monopole lower bound $\mathrm{MP}(A)$ and a relative Euler bound $\chi\le LA$, we prove that Einstein metrics satisfy $(2\chi+3\tau)/A\ge2/3+\eta(L)$. A uniform forbidden band for blow-ups of surfaces of general type follows as an application. The proof converts near equality in Seiberg--Witten and Chern--Weil inequalities into a nonnegative curvature density, then excludes an Einstein germ on a fixed-scale local development that may overlap in the base. For the approximate equation, we obtain a noncollapsed local density floor, collapse in volume measure, and a bounded-diameter gap; the corresponding gap under arbitrary collapse remains open. Spinor and Walsh decompositions and the energy and continuation analysis of weighted local flows retain the quantitative information needed for further progress. Circle actions, Nil fibers, and global smoothings of product-quotient surfaces illustrate additional geometric mechanisms.
+\end{abstract}
+\begingroup
+\small\linespread{1.0}\selectfont\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\section{Ricci pinching and the existence of Einstein metrics}
+Consider the following interval formulation: for each dimension $n\ge2$, do there exist real constants $c_n<C_n$, depending only on $n$, such that every closed connected smooth real manifold $M^n$ admitting a metric $g$ with
+\begin{equation}\label{eq:Q}
+ c_ng\le\Ric_g\le C_ng,
+\end{equation}
+also admits a smooth Einstein metric $h$, meaning $\Ric_h=\lambda h$ for some $\lambda\in\R$? The metric $h$ need not be close to $g$ or have the same Ricci sign. The conclusion concerns the same \emph{smooth manifold}, not merely its homeomorphism type.
+
+This is the Ricci-pinching problem concerning Einstein existence in Yau's Problem~26\cite{Yau1982}. Throughout, \eqref{eq:Q} is the precise formulation under consideration, with inequalities interpreted pointwise as inequalities of quadratic forms.
+
+Define
+\begin{equation}\label{eq:defect}
+ \delta_\sigma(g)=\norm{g^{-1}\Ric_g-\sigma\Id}_{L^\infty,\op},\qquad
+ e_\sigma(M)=\inf_{g\in\Met(M)}\delta_\sigma(g),\qquad \sigma\in\{+1,-1\}.
+\end{equation}
+Let $P_n^\sigma$ assert the existence of $\varepsilon_n>0$, depending only on $n$, such that $\delta_\sigma(g)<\varepsilon_n$ implies that $M$ admits an Einstein metric. Then
+\begin{equation}\label{eq:branches}
+ Q_n\quad\Longleftrightarrow\quad P_n^+\ \lor\ P_n^-.
+\end{equation}
+The proof is a scaling argument. Under $\widehat g=ag$, Ricci is unchanged as a $(0,2)$ tensor, while its endomorphism becomes $a^{-1}g^{-1}\Ric_g$. Every nondegenerate interval contains a nonzero interior point $\mu$ and a smaller neighborhood of the same sign. Scaling a metric with $\Ric\approx\operatorname{sign}(\mu)g$ by $1/|\mu|$ places its Ricci endomorphism in that neighborhood. Conversely, choose a sufficiently small interval centered at $+1$ or $-1$.
+
+Thus a \emph{proof} in a fixed dimension requires only one sign branch, whereas a \emph{complete counterexample} must defeat both branches in the same dimension, possibly on different manifolds. Each counterexample manifold must exclude Einstein metrics of every sign. Establishing $e_\sigma(M)=0$ is a separate result; it becomes a counterexample to that branch only when combined with nonexistence of all Einstein metrics on the same $M$.
+
+Uniformization settles dimension two; Hamilton's positive-Ricci theorem supplies the positive branch in dimension three. The main discussion below is four-dimensional: Seiberg--Witten theory, the self-dual Weyl decomposition, and the curvature integral formulas used here are dimension-specific.
+
+\subsection{Curvature norms and integral identities}
+The tensors $W^\pm$ and the signature identity below are used on oriented four-manifolds. The nonorientable case requires a separate analysis of the orientation double cover and equivariant descent: existence on the cover alone does not imply existence on the original manifold. Put $s=\tr_g\Ric$ and $E=\Ric-\frac{s}{4}g$. We use the Hilbert--Schmidt curvature \emph{operator} norms of $W^\pm$ on $\Lambda^2_\pm$, and tensor norms for $E$ and Ricci. Thus
+\begin{align}
+8\pi^2\chi(M)&=\int_M\left(|W^+|^2+|W^-|^2+\frac{s^2}{24}-\frac{|E|^2}{2}\right)\dd,\label{eq:CGB}\\
+12\pi^2\tau(M)&=\int_M(|W^+|^2-|W^-|^2)\dd,\label{eq:signature}\\
+|\Rm_{\rm full}|^2&=4(|W^+|^2+|W^-|^2)+2|E|^2+\frac{s^2}{6}.
+\end{align}
+If $\mathcal R$ denotes the full curvature operator, then $|\Rm_{\rm full}|^2=4|\mathcal R|^2$. For Einstein metrics, $\int|\mathcal R|^2=8\pi^2\chi$ and $\int|\Rm_{\rm full}|^2=32\pi^2\chi$. The Eguchi--Hanson energy $12\pi^2$ uses the former convention; it is $48\pi^2$ in the latter.
+Combining the first two formulas and eliminating the total Weyl energy gives
+\begin{align}
+4\pi^2T(M)&=\int_M\left(\frac{s^2}{24}+2|W^+|^2-\frac{|E|^2}{2}\right)\dd,
+\qquad T(M):=2\chi(M)+3\tau(M),\label{eq:relative-cw}\\
+\int_M|\Rm_{\rm full}|^2\dd&=32\pi^2\chi(M)+4\int_M|E|^2\dd.
+\label{eq:relative-full-energy}
+\end{align}
+The second identity remains exact without the Einstein assumption. Relative topological bounds and the average Ricci residual therefore control the average full-curvature energy.
+
+The condition $\delta_\sigma\le\delta$ implies
+\begin{equation}
+ |s-4\sigma|\le4\delta,\qquad |E|^2\le4\delta^2,\qquad
+ |\Ric-\sigma g|^2\le4\delta^2.
+\end{equation}
+Small $L^p$ integrals, small weighted norms, and local exact solutions are not substitutes for the global unweighted supremum of the Ricci endomorphism required by the original problem.
+
+\section{Uniform topological gaps and necessary degeneration}
+\subsection{A uniform gap for exact Einstein metrics}
+\begin{definition}[Uniform monopole input]\label{def:MP}
+A closed connected smooth oriented four-manifold $M$ satisfies $\mathrm{MP}(A)$ if $A>0$, $b_+(M)>1$, and for every smooth metric $g$ there is a monopole class $a_g$ whose self-dual harmonic projection satisfies
+\[
+(a_g^+)^2\ge A.
+\]
+Here a monopole class is an actual Seiberg--Witten class with solutions for every metric, as required by its definition. The selected class $a_g$ may depend on $g$, whereas $A$ is fixed. The square of the positive projection is not the topological self-intersection of the class.
+\end{definition}
+
+This input has three consequences with distinct roles:
+\begin{align}
+&M\text{ admits no metric of everywhere nonnegative scalar curvature},\label{eq:MP-sign}\\
+&\int_Ms^2\dd\ge32\pi^2A,\label{eq:MP-scalar}\\
+&\int_M\left(\frac23s+2\lambda_{\min}(W^+)\right)_{-}^{\!2}\dd
+ \ge32\pi^2A,\qquad x_-:=\min\{x,0\}.\label{eq:MP-spectrum}
+\end{align}
+The first two follow from the SW Weitzenb\"ock formula. Nonnegative scalar curvature forces both the spinor and the self-dual connection curvature to vanish, contradicting $a_g^+\ne0$; the usual integral estimate gives the scalar-curvature bound. The third is equation~(11) in the proof of LeBrun's Theorem~2.3\cite{LeBrun2001}. The numerical inequality \eqref{eq:MP-spectrum} alone cannot replace \eqref{eq:MP-sign}, because it also contains a Weyl term. The assumption $b_+>1$ avoids chamber choices; an extension to $b_+=1$ requires explicit polarization hypotheses.
+
+\begin{theorem}[Uniform gap under a relative Euler bound]\label{thm:relative-gap}
+For every $L>0$ there exists $\eta(L)>0$. If $M$ satisfies $\mathrm{MP}(A)$ and $\chi(M)\le LA$ and admits an Einstein metric, then
+\begin{equation}\label{eq:relative-gap}
+\frac{T(M)}A\ge\frac23+\eta(L).
+\end{equation}
+The constant is independent of $M,A$, total volume, diameter, and total full-curvature energy.
+\end{theorem}
+
+The mechanism requires only a monopole lower bound and a relative Euler upper bound; blow-ups are one source of these inputs.
+\begin{theorem}[Application to blow-ups of surfaces of general type]\label{thm:topgap}
+Let $X$ be a closed minimal complex surface of general type, with $b_+(X)>1$ and $A=c_1^2(X)>0$, and put
+\[
+M=X\#k\overline{\CP^2},\qquad k\in\Z_{\ge0}.
+\]
+There exists $\gamma\in(0,1/3)$, independent of $X,k$, such that
+\begin{equation}\label{eq:topgap}
+ k\ge(1/3-\gamma)A\quad\Longrightarrow\quad
+ M\text{ admits no Einstein metric}.
+\end{equation}
+\end{theorem}
+
+LeBrun's Corollary~3.4 excludes Einstein metrics when $k\ge A/3$\cite{LeBrun2001}. Theorem~\ref{thm:topgap} strengthens this to a positive-width band uniform as $X,k$ vary. Individual strict inequalities $k/A<1/3$ do not exclude $k_i/A_i\uparrow1/3$, and integrality gives no uniform width when $A_i\to\infty$. The next section proves Theorem~\ref{thm:relative-gap} before verifying the blow-up inputs. The companion \path{20260916_uniform_gap.tex} gives an independent treatment of this mechanism.
+
+This is a \emph{global} nonexistence theorem for a specified infinite family of manifolds. Its use of local limits does not make the conclusion local. Nevertheless, it is neither $P_4^-$ nor an existence theorem for all four-manifolds.
+
+\subsection{Necessary degeneration near the critical ratio}
+\begin{theorem}[Necessary degeneration]\label{thm:collapse}
+For the preceding blow-up family, suppose $M_i=X_i\#k_i\overline{\CP^2}$ and
+\[
+\delta_i=\delta_-(g_i)\longrightarrow0,
+\qquad d_i=\left(\frac13-\frac{k_i}{A_i}\right)_+\longrightarrow0,
+\]
+Then for every fixed $r,v>0$,
+\begin{equation}\label{eq:measurecollapse}
+\frac{\Vol_{g_i}\{p:\Vol_{g_i}B_r(p)\ge v\}}
+{\Vol_{g_i}M_i}\longrightarrow0,
+\qquad \diam(M_i,g_i)\longrightarrow\infty.
+\end{equation}
+The bounded-diameter version is: if $\delta_-\le1/4$ and $\diam\le D$, then
+\begin{equation}\label{eq:diambound}
+\delta_-^2+\left(\frac13-\frac{k}{A}\right)_+\ge c(D)>0.
+\end{equation}
+\end{theorem}
+
+Theorem~\ref{thm:topgap} enlarges the topological region of Einstein nonexistence; Theorem~\ref{thm:collapse} directly constrains approximate inputs allowed in the original problem. These results are related, but neither follows automatically from the other. In particular, $d_i\to0$ describes approach to the original boundary $1/3$, not every fixed ratio in the interior of the new forbidden band.
+
+\section{A local proof of the uniform gap for exact Einstein metrics}
+\label{sec:relative-proof}
+\subsection{A uniform average-energy bound, not a total-energy bound}
+Suppose $M$ satisfies the hypotheses of Theorem~\ref{thm:relative-gap} and admits an Einstein metric. Equation~\eqref{eq:MP-sign} excludes a nonnegative Einstein constant, so rescale to $\Ric=-g$. The scalar estimate and \eqref{eq:relative-full-energy} give
+\begin{equation}\label{eq:budget}
+ \Vol_gM\ge2\pi^2A,
+ \qquad \fint_M|\Rm_{\rm full}|^2\dd
+ \le16\frac{\chi(M)}A\le16L.
+\end{equation}
+Volume, total curvature energy, and diameter may all be unbounded. The quantity that must remain bounded is $\chi/A$, not $\chi$ itself.
+
+In this normalization, put $u=|W^+|$, $w=\lambda_{\min}(W^+)$, and define
+\begin{equation}\label{eq:exact-density}
+f=-\frac83-2\sqrt{\frac23}\,u,\qquad b=-\frac83+2w<0,\qquad
+F=(-4+8\sqrt6u)^2+18(f^2-b^2)\ge0.
+\end{equation}
+Nonnegativity follows from $f\le b<0$. The pointwise identity \eqref{eq:joint-density-identity}, proved in the next section, and \eqref{eq:MP-spectrum} imply
+\begin{equation}\label{eq:exact-density-budget}
+t:=\frac{T(M)}A-\frac23\ge0,\qquad
+0\le\int_MF\dd\le864\pi^2At,\qquad \fint_MF\dd\le432t.
+\end{equation}
+If the uniform gap failed, we could therefore choose an Einstein sequence with $t_i\to0$. We keep the original normalization $\Ric=-g_i$ throughout the following argument.
+
+\subsection{Choosing a fixed-scale center with both small energy and small average defect}
+Assume $\Ric\ge-3\kappa g$, and let $v_{-\kappa}(r)$ be the volume of a radius-$r$ ball in four-dimensional constant sectional curvature $-\kappa$. Set
+\[
+D_\kappa(r)=\frac{v_{-\kappa}(2r)}{v_{-\kappa}(r)},\qquad
+\mathcal A_rH(x)=\Vol(B_r(x))^{-1}\int_{B_r(x)}H,\qquad H\ge0.
+\]
+Local Bishop--Gromov doubling and Fubini give
+\begin{equation}\label{eq:fubini}
+ \int_M\mathcal A_rH(x)\,d\mu(x)\le D_\kappa(r)\int_MH\,d\mu.
+\end{equation}
+Indeed, $y\in B_r(x)$ implies $B_r(y)\subset B_{2r}(x)$ and hence
+$\Vol B_r(y)\le D_\kappa(r)\Vol B_r(x)$. After interchanging the integrals, the kernel
+$\int_{B_r(y)}[\Vol B_r(x)]^{-1}d\mu(x)$ is at most $D_\kappa(r)$. No absolute volume lower bound is needed.
+
+Interchanging integrals for the absolute energy also gives
+\begin{equation}\label{eq:absolute-average}
+\int_M\left(\int_{B_R(p)}|\Rm_{\rm full}|^2\dd\right)d\mu(p)
+\le v_{-\kappa}(R)\int_M|\Rm_{\rm full}|^2\dd.
+\end{equation}
+For the exact sequence we may take $\kappa=1$. Let $\varepsilon_*$ be the Einstein small-energy threshold below. Choose a fixed $R\le1$, depending only on $L$, such that
+\begin{equation}\label{eq:fixed-radius}
+16L\,v_{-1}(R)\le\varepsilon_*/4.
+\end{equation}
+Markov's inequality then ensures that
+$\mathcal G_i=\{p:\int_{B_R(p)}|\Rm_{\rm full}|^2\le\varepsilon_*\}$
+has volume at least $3\Vol(M_i)/4$. For any previously fixed small scale $s$, \eqref{eq:fubini} also allows us to select $p_i$ in the \emph{same} set $\mathcal G_i$ such that
+\begin{equation}\label{eq:same-center-density}
+\mathcal A_sF_i(p_i)\le\frac43D_1(s)\fint_{M_i}F_i\dd
+\longrightarrow0.
+\end{equation}
+This is averaging over the good set; it does not identify separately selected low-energy and low-density centers.
+
+Here $R=R(L)>0$, and subsequently $s$ also depends only on $L$. Neither is a sequence-dependent scale tending to zero. Keeping this scale preserves the nonzero Einstein constant in the limit; blowing up at vanishing scales would instead produce a Ricci-flat limit and lose the local contradiction.
+
+\subsection{What regularity without noncollapse provides}
+Cheeger--Tian's four-dimensional Einstein small-energy estimate, restated explicitly as Ge--Jiang's Theorem~1.1, asserts that if $\Ric=\lambda g$, $|\lambda|\le3$, and $\int_{B_r}|\Rm|^2\le\varepsilon$ for $r\le1$, then $\sup_{B_{r/2}}|\Rm|\le Cr^{-2}$. The constants $\varepsilon,C$ are independent of any ball-volume lower bound\cite{CT2006,GJ2017}. Changing curvature-norm conventions changes only universal constants.
+
+This gives a \emph{bound} at a fixed scale, not curvature tending to zero as the absolute energy vanishes on collapsed balls. Nor does it directly bound the injectivity radius of the base. We instead pull the metric back within a sufficiently small conjugate radius to obtain a controlled local development.
+For each $p\in\mathcal G_i$, the inner-ball curvature is bounded by
+$K_R=C_*R^{-2}$. Fix $\rho<R/4$ with
+$\rho\sqrt{K_R}<\pi/4$. Then
+\begin{equation}\label{eq:exponential-piece}
+\pi_{i,p}=\exp_p:B_\rho(0)\subset T_pM_i\longrightarrow M_i,
+\qquad h_{i,p}=\pi_{i,p}^*g_i
+\end{equation}
+is a local diffeomorphism with a locally isometric pullback metric. Rauch comparison gives
+$Q_0^{-1}I\le h_{i,p}\le Q_0I$ uniformly. By the Gauss lemma, the source distance from the origin to $v$ is $|v|$. The source center therefore has a fixed cut- and conjugate-point-free radius, even if the target injectivity radius tends to zero. Choose
+$3s\sqrt{Q_0}<\rho$ so that the closed source $3s$-ball is compactly contained in the domain. Only after fixing this $s$ do we select $p_i$ in \eqref{eq:same-center-density}.
+
+\subsection{Overlapping developments: transferring a small average defect}
+\begin{lemma}[Multiplicity transfer for a buffered local isometry]\label{lem:transport}
+Let $\pi:(\widetilde U,\widetilde g)\to(M,g)$ be a local isometry with $\pi(\tilde p)=p$, complete target, and $\overline B_{3s}(\tilde p)$ compactly contained in $\widetilde U$. Write $\widetilde B_a=B_a^{\widetilde g}(\tilde p)$ and $B_a=B_a^g(p)$. For $F\ge0$,
+\begin{equation}\label{eq:transport}
+\fint_{\widetilde B_s}\pi^*F\le
+\frac{\Vol(\widetilde B_{3s})}{\Vol(\widetilde B_s)}\fint_{B_s}F.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For $x,y\in B_s$, choose a broken geodesic through $p$ of total length less than $2s$. Lift it from every preimage of $x$ in $\widetilde B_s$. Local isometry keeps each lift in $\widetilde B_{3s}$, and compact containment prevents interruption at the source boundary. Uniqueness of forward and reverse lifting makes the endpoints distinct. Thus $n_s(x)\le n_{3s}(y)$, where $n_a$ counts preimages in $\widetilde B_a$. Fibers in the closed buffer ball are discrete and closed, so these multiplicities are finite. Integration over $y\in B_s$ gives
+\[
+n_s(x)\Vol B_s\le\int_{B_s}n_{3s}(y)\,d\mu(y)\le\Vol\widetilde B_{3s}.
+\]
+A local isometry preserves volume and $\pi(\widetilde B_s)\subset B_s$. The area formula yields
+$\int_{\widetilde B_s}\pi^*F=\int_{B_s}F n_s\le(\Vol\widetilde B_{3s}/\Vol B_s)\int_{B_s}F$; divide by $\Vol\widetilde B_s$. No global injectivity, regular covering, deck transformations, or sequence-uniform multiplicity bound is required.
+\end{proof}
+
+The source volume ratio is uniformly bounded on a controlled development, so a small \emph{average} density transfers from the base. Small absolute integrals alone do not suffice: on $U\times S^1_\ell$, the integral of a fixed density can vanish as $\ell\to0$, while the density on the development is unchanged.
+For the source in \eqref{eq:exponential-piece}, ellipticity gives explicitly
+\begin{equation}\label{eq:source-volume-ratio}
+B^{\rm Euc}_{s/\sqrt{Q_0}}\subset\widetilde B_s,
+\qquad \frac{\Vol\widetilde B_{3s}}{\Vol\widetilde B_s}\le3^4Q_0^8.
+\end{equation}
+This supplies a fixed Euclidean interior domain with positive volume and a boundary buffer, on which the density integral still tends to zero.
+
+\subsection{The forbidden object is an Einstein germ, not pointwise algebraic data}
+Near equality at the critical ratio forces a smooth developed limit to satisfy
+\begin{equation}\label{eq:forbidden}
+\Ric=-g,\quad s=-4,\quad
+\spec(W^+)=(-1/6,1/12,1/12).
+\end{equation}
+Choose a local unit form $\omega$ spanning the simple eigenline and complete it to an orthonormal frame $(\omega,\eta,\theta)$ of $\Lambda^+$. The constant spectrum gives
+$W^+=\frac1{12}\Id-\frac14\omega\otimes\omega$. Write
+$\nabla\omega=a\otimes\eta+c\otimes\theta$.
+The Einstein equation gives $\operatorname{div}W^+=0$. Projecting its second two-form factor onto $\eta,\theta$ yields
+$\iota_{a^\sharp}\omega=\iota_{c^\sharp}\omega=0$.
+A nonzero self-dual two-form in dimension four is nondegenerate; hence $a=c=0$ and $\nabla\omega=\nabla W^+=0$. This agrees with the constant-norm case of Derdzi\'nski's Proposition~5\cite{Derdzinski}. A repeated eigenvalue without constant spectrum would not justify this conclusion.
+
+However, \eqref{eq:forbidden} gives $|W^+|^2=1/24$ and $\det W^+=-1/864$. Substitution into the Einstein--Weyl identity
+\[
+\Delta|W^+|^2=2|\nabla W^+|^2+s|W^+|^2-36\det W^+
+\]
+requires $|\nabla W^+|^2=1/16$, a contradiction. Equivalently, the local K\"ahler--Einstein spectrum would have to be $(-2/3,1/3,1/3)$. This argument excludes a pattern \emph{persisting on an open set}; it does not exclude algebraic curvature taking those values at a single point.
+
+\subsection{Completing the general theorem and applying it to blow-ups}\label{sec:relative-application}
+On the selected source patches, $\Ric(h_i)=-h_i$ still holds. Curvature, central injectivity radius, and the buffer are uniformly controlled, so local Einstein compactness in harmonic coordinates gives a smoothly convergent subsequence on a smaller fixed domain. Equation~\eqref{eq:same-center-density}, Lemma~\ref{lem:transport}, and the source volume ratio imply $\int F_i\to0$ there. Thus $F_\infty=0$. Since $s=-4$, the first square gives $u^2=1/24$ and hence $f=-3$; the second gives $b=-3$, or $w=-1/6$. Trace-freeness and the norm force the other two eigenvalues to be $1/12$, giving the contradiction \eqref{eq:forbidden}. This proves Theorem~\ref{thm:relative-gap}. Every constant used to select the patches depends only on $L$; hypothesis (SC) for the approximate equation is not used.
+
+To verify the blow-up inputs, let $a$ be the pullback of the canonical class of $X$ and let $e_1,\ldots,e_k$ be the exceptional classes. The standard SW blow-up classes include all
+$a+\sum\varepsilon_je_j$, $\varepsilon_j\in\{\pm1\}$\cite{LeBrun2001}. Projecting with respect to any metric and averaging gives
+\begin{equation}\label{eq:blowup-MP}
+2^{-k}\sum_{\varepsilon}\left\|a^++\sum_j\varepsilon_je_j^+\right\|^2
+=\|a^+\|^2+\sum_j\|e_j^+\|^2\ge a^2=A.
+\end{equation}
+At least one class therefore satisfies Definition~\ref{def:MP}; moreover $T(M)=A-k$ and $\chi(M)=\chi(X)+k$.
+Equation~\eqref{eq:exact-density-budget} first gives the \emph{nonstrict} necessary condition $k\le A/3$. Noether's inequality gives $A\ge2p_g-4$; together with
+$\chi(X)=12(1-q+p_g)-A$ and $q\ge0$, this yields $\chi(X)\le5A+36$. Since $A$ is a positive integer,
+\begin{equation}\label{eq:blowup-Euler-budget}
+\frac{\chi(M)}A\le5+\frac{36}A+\frac13\le\frac{124}3<42.
+\end{equation}
+Theorem~\ref{thm:relative-gap} thus applies uniformly with $L=42$, giving
+$k/A\le1/3-\eta(42)$. Taking
+$\gamma=\min\{\eta(42)/2,1/12\}$ proves Theorem~\ref{thm:topgap}. The classical nonstrict bound supplies $L$ before the uniform gap is invoked, so there is no circular use of the new $\gamma$. Other monopole families must independently establish their own $\chi/A$ bound.
+
+\begin{corollary}[Relative Euler escape near the critical value]\label{cor:Euler-escape}
+If $M_i$ satisfies $\mathrm{MP}(A_i)$ and admits an Einstein metric, and $T(M_i)/A_i\to2/3$, then $\chi(M_i)/A_i\to\infty$.
+\end{corollary}
+\begin{proof}
+Otherwise a subsequence has bounded relative Euler characteristic and admits a common $L$, contradicting \eqref{eq:relative-gap}.
+\end{proof}
+
+\section{The joint scalar-curvature and Weyl-spectral defect}
+We control the Ricci residual, scalar normalization, Weyl norm, and lowest eigenvalue simultaneously. The joint estimate improves the constants obtained by estimating terms separately; both estimates concern the same density.
+
+Assume $\mathrm{MP}(A)$ and choose an applicable monopole class $a$ with $(a^+)^2\ge A$. Its positive projection is not its topological square; in the blow-up case the latter is $a^2=A-k$. Set $\omega=|W^+|$ and $w=\lambda_{\min}(W^+)$, and write
+\begin{align}
+ I&=\frac1{4\pi^2}\int_M(s^2/24+2\omega^2)\dd,
+ &J&=\frac1{8\pi^2}\int_M|E|^2\dd,\\
+ D_a&=I-\frac23(a^+)^2\ge0,
+ &d_T&=\left(\frac{T(M)}A-\frac23\right)_+.
+\end{align}
+Chern--Weil gives $I-J=T(M)$, hence
+\begin{equation}\label{eq:Da-general}
+D_a=J+T(M)-\frac23A-\frac23\big((a^+)^2-A\big)\le J+Ad_T.
+\end{equation}
+For the blow-up family, $T=A-k$; with $q=k-A/3$ and $d=(-q/A)_+=d_T$, this is
+\begin{equation}\label{eq:Da}
+D_a=J-q-\frac23\big((a^+)^2-A\big)\le J+Ad.
+\end{equation}
+LeBrun's Theorem~2.3 and equation~(11) in its proof respectively give
+\begin{align}
+\int(s-\sqrt6\omega)^2\dd&\ge72\pi^2(a^+)^2,\\
+\int\left(\frac23s+2w\right)_{-}^{\!2}\dd&\ge32\pi^2(a^+)^2,
+\end{align}
+where $u_-=\min(u,0)$; all monopole and polarization hypotheses must hold\cite{LeBrun2001}.
+
+Completing the square pointwise gives
+\begin{equation}\label{eq:square}
+27(s^2/24+2\omega^2)-(s-\sqrt6\omega)^2
+=\frac18(s+8\sqrt6\omega)^2.
+\end{equation}
+Consequently $\int(s+8\sqrt6\omega)^2\le864\pi^2D_a$. Set
+\[
+f=\tfrac23s-2\sqrt{2/3}\,\omega,\quad a_*=\tfrac23s+2w,
+\quad\mathcal G=f^2-(a_{*,-})^2.
+\]
+The inequality $w\ge-\sqrt{2/3}\omega$ implies $a_*\ge f$. If $a_*<0$, then
+$f\le a_*<0$, so $f^2\ge a_*^2$; if $a_*\ge0$, then
+$\mathcal G=f^2$. Thus $\mathcal G\ge0$ without assuming $s<0$.
+Since $\int f^2\le48\pi^2I$, we obtain
+\begin{equation}
+\int\mathcal G\dd\le48\pi^2D_a.
+\end{equation}
+Put $Q(g)=\int|\Ric+g|^2\dd$ and use the density
+\begin{equation}\label{eq:Phistar}
+\Phi_*:=|\Ric+g|^2+(s+4)^2+(s+8\sqrt6\omega)^2+\mathcal G.
+\end{equation}
+Write $P=\int|E|^2$, $Z=\int(s+4)^2$, and $B=\int(s+8\sqrt6\omega)^2$. Then $Q=P+Z/4$. The pointwise identity
+\begin{equation}\label{eq:joint-density-identity}
+(s+8\sqrt6\omega)^2+18\mathcal G
+=216(s^2/24+2\omega^2)-18(a_{*,-})^2
+\end{equation}
+and the spectral monopole estimate imply, with $T=2\chi+3\tau$,
+\[
+B+18\int\mathcal G\le108P+864\pi^2(T-2A/3).
+\]
+Hence, under the same monopole input,
+\begin{equation}\label{eq:109}
+\boxed{\int\Phi_*\le109Q+864\pi^2(T-2A/3)_+.}
+\end{equation}
+Indeed, $Q+Z+108P=5Q+104P\le109Q$; the positive part only weakens the preceding estimate. If $|\Ric|_{\op}\le K$, the scalar monopole inequality and $|s|\le4K$ give the more general averaged form
+\begin{equation}\label{eq:general-L2-budget}
+V\ge\frac{2\pi^2A}{K^2},\qquad
+\fint_M\Phi_*\dd\le109\fint_M|\Ric+g|^2\dd+432K^2d_T.
+\end{equation}
+Combining the same volume bound with $\chi\le LA$ and \eqref{eq:relative-full-energy} yields
+\begin{equation}\label{eq:approximate-energy-budget}
+\fint_M|\Rm_{\rm full}|^2\dd
+\le16LK^2+4\fint_M|\Ric+g|^2\dd.
+\end{equation}
+Thus the topological input supplies an average curvature budget even for the approximate equation; it does not supply a pointwise curvature estimate.
+For the blow-up family, $T=A-k$, so the right-hand side is $109Q+864\pi^2Ad$. If $\delta_-\le1/4$, the estimate $Q/\Vol\le4\delta_-^2$ and the volume lower bound below give
+\begin{equation}\label{eq:436675}
+\boxed{\fint\Phi_*\le436\delta_-^2+432(1+\delta_-)^2d
+\le436\delta_-^2+675d.}
+\end{equation}
+Keeping the joint budget for $B+18\int\mathcal G$ avoids the loss from estimating the two terms separately.
+
+Estimating the nonnegative terms separately yields a coarser bound.
+Since $\int(s+4)^2\le4Q$ and $J\le Q/(8\pi^2)$,
+\begin{equation}\label{eq:119}
+\boxed{\int_M\Phi_*\dd\le119Q+912\pi^2 A d.}
+\end{equation}
+In particular, $q\ge0$ recovers a terminal recalibration bound of the form $119Q$; for exact $\Ric=-g$, only $912\pi^2Ad$ remains.
+
+If $\delta_-\le1/4$, the scalar monopole bound gives $\Vol\ge2\pi^2A/(1+\delta_-)^2$. Therefore
+\begin{equation}\label{eq:meanPhi}
+\fint_M\Phi_*\le476\delta_-^2+456(1+\delta_-)^2d
+\le713(\delta_-^2+d).
+\end{equation}
+Any smooth zero-density limit satisfies \eqref{eq:forbidden}: the first two terms give $\Ric=-g$ and $s=-4$, the third gives $\omega=1/(2\sqrt6)$, and the last forces the smallest eigenvalue to attain the extremal trace-free symmetric-operator bound, with the other two eigenvalues equal.
+
+This completes the algebraic passage from a small Ricci residual to a small \emph{average calibration defect}. The remaining issue is to obtain a sufficiently controlled region on which this density can be passed to a limit for approximate equations under arbitrary collapse.
+
+\section{Local positive density and quantitative degeneration}\label{sec:local-density}
+The next result is purely local. It assumes neither monopole classes nor an average full-curvature bound, and the input metric need not be Einstein.
+
+\begin{theorem}[A noncollapsed local density floor]\label{thm:local-density}
+For every $K,r,v>0$ there is $\eta_0(K,r,v)>0$ such that every complete smooth oriented four-manifold satisfying
+\[
+|\Ric|_{\op}\le K,\qquad \Vol B_r(p)\ge v
+\]
+obeys
+\begin{equation}\label{eq:local-density-floor}
+\fint_{B_{2r}(p)}\Phi_*\dd\ge\eta_0(K,r,v).
+\end{equation}
+If the hypotheses cannot be realized for the given parameters, the assertion is vacuous.
+\end{theorem}
+\begin{proof}
+Suppose the asserted averages tend to zero along a sequence. The Ricci lower bound gives $\Vol B_{2r}(p_i)\le v_{-K/3}(2r)$, so
+\begin{equation}\label{eq:local-density-integral}
+\int_{B_{2r}(p_i)}\Phi_{*,i}\,d\mu_i\longrightarrow0.
+\end{equation}
+Choose a fixed
+\[
+0<\rho\le\min\{r/4,\sqrt{3/(2K)}/2,1\}.
+\]
+Volume comparison gives
+$\Vol B_\rho(p_i)\ge v\,v_{-K/3}(\rho)/v_{-K/3}(r)$.
+In $\hat g_i=\rho^{-2}g_i$, therefore, the Ricci tensor has Hilbert--Schmidt norm at most $2K\rho^2\le3$, and $\Vol_{\hat g_i}B_1(p_i)\ge v_0>0$, with $v_0$ depending only on $K,r,v$.
+
+Cheeger--Naber's harmonic-radius estimate\cite[Theorem 1.13]{CN} gives, in this rescaled metric,
+\begin{equation}\label{eq:local-harmonic-radius}
+\Vol\{x\in B_1(p_i):r_h(x)\le t\}\le C(v_0/2)t^4.
+\end{equation}
+The published estimate also controls the $t$-neighborhood of this set; the weaker form displayed here suffices. Fix $t<1/4$ with $C(v_0/2)t^4<v_0/2$. At some $q_i\in B_\rho(p_i)$ the original harmonic radius is at least $t\rho$. Shrinking by a fixed factor gives embedded, orientation-preserving harmonic charts on a common Euclidean domain, with images contained in $B_{2r}(p_i)$. Harmonic radius supplies ellipticity and first-derivative bounds. The bounded-Ricci equation then supplies interior $W^{2,p}$ and $C^{1,\alpha}$ bounds for each finite $p$ and $\alpha<1$; no Ricci derivative bound is required\cite[Definition 2.9 and the ensuing regularity statement]{CN}.
+
+Pulling back \eqref{eq:local-density-integral} through these embedded charts gives a uniformly controlled patch with vanishing density integral. The detailed difference-equation argument in Section~\ref{sec:strong-density-bridge} applies: bounded Ricci and the first term of $\Phi_*$ give $\Ric+g\to0$ in every finite $L^p$; the harmonic-coordinate equation yields a smooth Einstein limit and strong $W^{2,p}$ convergence on a smaller domain. Consequently all the quadratic terms in $\Phi_*$ converge strongly in $L^1$. The limit has zero density on a nonempty open set, contradicting \eqref{eq:forbidden}.
+\end{proof}
+The argument selects one uniform harmonic patch. It does not upgrade a two-sided Ricci bound and noncollapse to a curvature bound throughout the original ball.
+
+\subsection{The proportion of noncollapsed centers}\label{sec:quantitative-collapse}
+For fixed $r,v>0$, put
+$N_{r,v}(g)=\{p:\Vol_gB_r(p)\ge v\}$. Integrating \eqref{eq:local-density-floor} over this set and applying \eqref{eq:fubini} gives
+\begin{equation}\label{eq:noncollapsed-proportion}
+\frac{\Vol N_{r,v}(g)}{V}
+\le C(K,r,v)\fint_M\Phi_*\dd,
+\qquad C(K,r,v)=\frac{D_{K/3}(2r)}{\eta_0(K,r,v)}.
+\end{equation}
+Under $\mathrm{MP}(A)$, the right-hand side is at most
+\begin{equation}\label{eq:noncollapsed-L2}
+C(K,r,v)\left(109\fint_M|\Ric+g|^2\dd+432K^2d_T\right).
+\end{equation}
+For the blow-up family with $\delta_-\le1/4$, fix $K=5/4$ and use \eqref{eq:436675} to obtain
+\begin{equation}\label{eq:noncollapsed-delta}
+\frac{\Vol N_{r,v}(g)}{V}\le C(5/4,r,v)(436\delta_-^2+675d).
+\end{equation}
+This proves the volume-proportion assertion of Theorem~\ref{thm:collapse}. It also proves its averaged-$L^2$ analogue under a fixed Ricci bound, without requiring a pointwise small residual.
+
+For each fixed $r$, the model-ball upper bound and a decomposition into $N_{r,v}$ and its complement give
+\[
+\fint_M\Vol B_r(p)\,d\mu(p)
+\le v+v_{-K/3}(r)\frac{\Vol N_{r,v}}{V}.
+\]
+Thus vanishing average density forces this mean ball volume to tend to zero, by first taking the sequence limit and then $v\downarrow0$. Neither conclusion implies $\sup_p\Vol B_r(p)\to0$: a set of exceptional centers with vanishing volume proportion remains possible.
+
+\subsection{Why a diameter bound gives a gap}\label{sec:diameter-gap-proof}
+In the blow-up family, $A\ge1$ and \eqref{eq:436675} uses
+$V\ge V_*:=32\pi^2/25$. If $\diam\le D$, Bishop--Gromov with the weaker lower bound $\Ric\ge-3g$ gives, at every center,
+\begin{equation}\label{eq:diameter-ball-lower}
+\Vol B_1(p)\ge V_*\frac{v_{-1}(1)}{v_{-1}(D+1)}=:v_D>0.
+\end{equation}
+Hence $N_{1,v_D}=M$. Formula \eqref{eq:noncollapsed-delta} has left-hand side one and proves \eqref{eq:diambound}, for example with
+$c(D)=[675C(5/4,1,v_D)]^{-1}$.
+If the diameters of a near-critical sequence failed to tend to infinity, a bounded-diameter subsequence would contradict this estimate. This completes Theorem~\ref{thm:collapse}.
+
+More generally, under $\mathrm{MP}(A)$, $A\ge A_0>0$, $|\Ric|_{\op}\le K$ and $\diam\le D$, the same argument uses
+$V\ge2\pi^2A_0/K^2$ and yields
+\begin{equation}\label{eq:diameter-L2-gap}
+\fint_M|\Ric+g|^2\dd+d_T\ge c(K,D,A_0)>0.
+\end{equation}
+The extra lower bound on $A$ is needed to obtain an absolute ball-volume threshold in this argument. The constants in \eqref{eq:noncollapsed-proportion} depend on the fixed $v$, and those in \eqref{eq:diameter-L2-gap} depend on $D$; neither is a dimension-only Yau~26 threshold.
+
+\subsection{An explicit estimate on the supercritical side}\label{sec:supercritical-gap}
+There is a different, explicit residual obstruction when the topological parameter already exceeds the classical boundary. Let
+\[
+M=X\#k\overline{\CP^2}\#\ell(S^1\times S^3),\quad
+c=c_1^2(X),\quad K_0=k+4\ell,\quad
+\rho_*=K_0/c-1/3,
+\]
+with the monopole and polarization hypotheses of LeBrun's connected-sum estimate\cite{LeBrun2001}. For $c/3\le K_0<c$, the estimate in \path{20260912.tex}, Proposition~\texttt{FND:SWgap}, is
+\begin{equation}\label{eq:supercritical-explicit}
+\delta_-(g)\ge\Psi(\rho_*),\qquad
+\Psi(\rho_*)=
+\begin{cases}
+\sqrt{\rho_*/2},&0\le\rho_*\le2(2-\sqrt3)^2,\\[1mm]
+2\sqrt{\rho_*}/(\sqrt6+\sqrt{\rho_*}),
+&2(2-\sqrt3)^2\le\rho_*<2/3.
+\end{cases}
+\end{equation}
+Here is the optimization responsible for the two branches. If $\delta=\delta_-(g)<1$, write the Ricci eigenvalues as $-y_i$, where $y_i\in[1-\delta,1+\delta]$. Then
+\begin{equation}\label{eq:Ricci-box-optimization}
+\frac{|E|^2}{s^2}\le\mathfrak a(\delta):=
+\begin{cases}
+\delta^2/4,&\delta\le2-\sqrt3,\\
+3\delta^2/[4(2-\delta)^2],&\delta\ge2-\sqrt3.
+\end{cases}
+\end{equation}
+Indeed, the derivative of $(t^2+B)/(t+A)^2$ has the sign of $At-B$, so a maximum over the eigenvalue box lies at a vertex. If $m$ coordinates take $1+\delta$, the value of $|E|^2/s^2$ is
+$m(4-m)\delta^2/[4+(2m-4)\delta]^2$. Comparing $m=1,2$ gives \eqref{eq:Ricci-box-optimization}; the $m=3$ value is no larger than the $m=1$ value.
+
+Set $\mathcal E=\int|E|^2$ and
+$\mathcal I=\int(s^2/24+2|W^+|^2)$.
+The monopole bound and Chern--Weil identity give
+$\mathcal I\ge8\pi^2c/3$ and
+$\mathcal E=2\mathcal I-8\pi^2(c-K_0)$.
+Since $c-K_0>0$, these imply
+$3\rho_*\le\mathcal E/\mathcal I\le24\mathfrak a(\delta)$.
+Inverting the two branches proves \eqref{eq:supercritical-explicit}; values $\delta\ge1/2$ satisfy it automatically because $\Psi\le1/2$. In particular, small $\delta$ forces
+$0\le K_0/c-1/3\le2\delta^2$.
+At the exact boundary this estimate is zero, whereas the preceding density argument still detects noncollapse. These are complementary obstructions, not competing estimates of the same range.
+
+\section{Three analytic questions for the approximate equation}
+\begin{target}[A diameter-independent joint gap]\label{tar:joint}
+For the specified blow-up family, prove or disprove the existence of a uniform $c_*>0$ such that every metric with $\delta_-\le1/4$ satisfies
+\begin{equation}\label{eq:joint}
+\delta_-^2+\left(\frac13-\frac{k}{A}\right)_+\ge c_*.
+\end{equation}
+The constant must be independent of diameter, volume ratios, and the supremum of full curvature; versions with additional bounds on these quantities are weaker statements.
+\end{target}
+
+\subsection{Access to local developments on a positive volume proportion}
+Regularity everywhere is unnecessary: it suffices to obtain fixed-scale controlled developments on a set of centers of fixed positive volume proportion where the local average of $\Phi_*$ tends to zero. The bounded-Ricci scale-selection result\cite[Theorem 3.4]{GJ2017} converts small absolute energy to small normalized energy at a comparable scale, but does not automatically give pointwise curvature bounds. The results of Naber--Zhang and Jiang--Kong--Xu require additional fibration-rank, model, or local-covering hypotheses\cite{NZ,JKX}.
+
+The question is whether small calibration density and the energy budget force these structures, or whether rank loss and regions without such developments consume a fixed proportion of calibration defect. A model satisfying all the budgets but admitting no suitable development would disprove this sufficient approach.
+
+One sufficient statement, denoted by (SC), can be formulated without asking for bounded full curvature: there are universal $\varepsilon,c,Q_0>0$ and $\alpha\in(0,1)$ such that, for a complete oriented four-manifold with $|\Ric|\le3$ and $\int_{B_1(p)}|\Rm_{\rm full}|^2<\varepsilon$, a point of $B_{1/2}(p)$ admits an orientation-preserving local diffeomorphism $\pi:B_c(0)\to M$ whose pullback of the \emph{original metric} has uniform ellipticity and harmonic $C^{1,\alpha}$ control. These constants must be independent of the volume of the base ball. Shrinking the domain supplies the buffer required by Lemma~\ref{lem:transport}; bounded Ricci then gives the needed interior $W^{2,p}$ estimates.
+
+\begin{proposition}[A conditional extension under (SC)]\label{prop:SC-density}
+If (SC) holds, then for every $K,C_0>0$ there is $\eta_1(K,C_0)>0$ such that
+\[
+|\Ric|_{\op}\le K,\qquad \fint_M|\Rm_{\rm full}|^2\dd\le C_0
+\quad\Longrightarrow\quad \fint_M\Phi_*\dd\ge\eta_1(K,C_0)
+\]
+on closed oriented four-manifolds.
+\end{proposition}
+\begin{proof}
+If the density averages tended to zero, \eqref{eq:absolute-average} would select a fixed small scale $R=R(K,C_0)$ and a positive proportion of low-energy centers. Choose among them a center where $\mathcal A_RF_i\to0$, here taking $F_i=\Phi_{*,i}$. Apply (SC) after rescaling this ball. If the new patch is centered at $q_i\in B_{R/2}(p_i)$ and has a fixed smaller radius $s$, ball inclusion and comparison give
+\[
+\mathcal A_s\Phi_{*,i}(q_i)
+\le\frac{v_{-K/3}(2R)}{v_{-K/3}(s)}\mathcal A_R\Phi_{*,i}(p_i)
+\longrightarrow0.
+\]
+Indeed, $B_s(q_i)\subset B_R(p_i)\subset B_{2R}(q_i)$ after fixing $s<R/2$. Lemma~\ref{lem:transport} transfers this average to the buffered source patch. Section~\ref{sec:strong-density-bridge} then produces the forbidden Einstein germ.
+\end{proof}
+For $\mathrm{MP}(A)$ and $\chi\le LA$, \eqref{eq:approximate-energy-budget} has $C_0\le25L+1$ when $\delta_-\le1/4$. Thus (SC), if proved, would combine with \eqref{eq:general-L2-budget} to give a joint gap depending on $L$. This is a conditional implication, not an additional unconditional theorem: neither a smoothing theorem for a different metric nor the cited covering results establish (SC) with these quantifiers. The exact theorem above requires no such assumption.
+
+\subsection{Weak testing and direct quantitative rigidity}
+One can seek estimates without an initial pointwise full-curvature bound: integrate derivatives of $\Ric+g$ onto controlled test tensors and use $\mathcal G$, spectral separation, and Hodge defects to control local geometry. The condition $\norm{\Ric+g}_\infty\to0$ does not control $\nabla\Ric$; Bianchi cannot be replaced by a pointwise assertion $\operatorname{div}W=O(\delta)$.
+
+A sufficient analytic conclusion is that small density produces a controlled patch on which the curvature pattern passes to a limit. Strong $W^{2,p}$ convergence for a finite exponent already passes quadratic curvature quantities; smooth convergence of the input sequence is unnecessary. The required exponent, gauge, boundary buffer, and coefficient compactness must be included in the hypotheses.
+
+The sourced eigenline identity in \path{20260912.tex}, equations \texttt{WYL:source}--\texttt{WYL:sourceenergy}, makes the relative-scale issue explicit. For a normalized self-dual operator $A$ with spectrum $(1,\rho,-1-\rho)$, let $\eta=\rho+1/2$ and use a local eigenframe of squared length two with
+$\nabla\omega_1=a\otimes\omega_2-c\otimes\omega_3$.
+Set $U=\iota_{a^\sharp}\omega_2$, $V=\iota_{c^\sharp}\omega_3$, $\ell_1=U-V=*d\omega_1$, and $H_1=U+V$. The positively contracted divergence projection $q$ satisfies
+\begin{equation}\label{eq:sourced-eigenline}
+q=(1-\rho)U-(2+\rho)V=\frac32\ell_1-\eta H_1,
+\end{equation}
+obtained by differentiating $A\omega_1=\omega_1$ and projecting the divergence onto that line. With $D=|\ell_1|^2$ and $N=|\ell_1|^2+|H_1|^2$, squaring gives
+\begin{equation}\label{eq:sourced-eigenline-energy}
+(9+4\eta^2)D-4\eta^2N
+=4|q|^2+8\eta\langle q,H_1\rangle.
+\end{equation}
+The cross term has no fixed sign. Recovering $\sqrt D=O(|\eta|\sqrt N)$ requires the relative estimate $|q|=O(|\eta|\sqrt N)$; mere convergence $q\to0$ does not suffice. In the slow-interpolation models of that chapter, $|q|\asymp L^{-1}$ whereas $|\eta|\sqrt N=O(L^{-2})$, so the source contributes at the leading order. This calculation identifies the missing scale, rather than supplying a source-free rigidity theorem for approximate Einstein metrics.
+
+\subsection{Controlled local smoothing and terminal recalibration}
+If a terminal metric can be constructed on the original closed manifold with controlled curvature on a support region of positive volume proportion and $Q(T)/A\to0$, then \eqref{eq:109} or \eqref{eq:119} can be reapplied to that metric. This does not require transporting the defects of every initial SW form separately.
+
+This terminal reduction is separate from common existence time, support-transition regions, and degeneracy of the coefficients. Appendix~\ref{app:flow} derives estimates on already existing smooth solutions and specifies the conditions needed for continuation.
+
+\subsection{The alternative of a counterexample}
+Constructing $\delta_-\to0$ on topologies already excluded by Theorem~\ref{thm:topgap} would give genuine negative-branch counterexamples. Such a construction must satisfy all critical density and energy constraints; a collapsed local model or a negative-Ricci metric alone is insufficient. A fixed ratio $k/A<1/3$ inside the new forbidden band is not directly covered by the degeneration theorem requiring $d\to0$. This is a distinct construction regime, not evidence that construction there is easy.
+
+
+\subsection{A sufficient local interface without everywhere bounded curvature}
+\begin{proposition}[Density transfer on controlled harmonic patches]\label{prop:minimalbridge}
+Suppose a hypothetical sequence satisfies $\delta_-(g_i)^2+d_i\to0$. Assume there are fixed-radius local developments and harmonic coordinates identifying them with a common Euclidean ball $B_2$, such that the pullback metrics $\widetilde g_i$ are uniformly positive definite with uniform $C^{1,\alpha}$ control, and the pulled-back density $\Phi_*$ has average tending to zero on that ball. Then such a sequence cannot exist.
+\end{proposition}
+\begin{proof}
+First extract a $C^{1,\beta}$ convergent subsequence, $\beta<\alpha$. In harmonic coordinates, the Ricci equation has principal part $-\frac12 g^{ab}\partial_a\partial_b g_{jk}$, with lower-order terms involving only first derivatives of the metric. Since $\Ric_{\widetilde g_i}+\widetilde g_i\to0$ uniformly, the distributional limit satisfies $\Ric_{g_\infty}=-g_\infty$. Interior elliptic estimates first give $W^{2,p}$ control for every finite $p$, and the limiting Einstein equation gives smoothness. Applying uniform estimates to the difference equation gives strong $W^{2,p}$ convergence on smaller balls. Taking $p>4$ suffices to pass every quadratic curvature density used here. Thus $\Phi_*(g_\infty)=0$, producing the Einstein germ excluded by \eqref{eq:forbidden}.
+\end{proof}
+The necessary analytic object is \emph{one controlled patch with small density}, not a curvature bound everywhere on every input metric. The unresolved issue is finding such a patch under arbitrary collapse and transferring the base average to that same patch. Examples with small Ricci residual and unbounded full-curvature spikes do not automatically have the vanishing forbidden-spectrum density assumed here.
+
+\subsection{Why strong convergence on the same patch suffices}\label{sec:strong-density-bridge}
+There is a version applicable to a smoothing endpoint: on the same fixed harmonic patch, replace uniform convergence of
+$\Ric_{\widetilde g_i}+\widetilde g_i$ to zero by a uniform Ricci bound and
+$\int\Phi_*(\widetilde g_i)\to0$.
+The Ricci bound is needed only on that patch. Set
+$e_i=\Ric_{\widetilde g_i}+\widetilde g_i$. The density bound gives $e_i\to0$ in $L^2$;
+uniform ellipticity and $|e_i|\le C$ imply, for every finite $p\ge2$,
+\[
+\|e_i\|_p^p\le C^{p-2}\|e_i\|_2^2\longrightarrow0.
+\]
+On a slightly smaller ball, the harmonic-coordinate equation is
+\[
+-\tfrac12\widetilde g_i^{ab}\partial_a\partial_b\widetilde g_i
+ +\mathcal N(\widetilde g_i^{-1},\partial\widetilde g_i)
+=-\widetilde g_i+e_i,
+\]
+where $\mathcal N$ is quadratic in first derivatives. With $v_i=\widetilde g_i-g_\infty$,
+subtracting the smooth limiting equation leaves only
+\[
+e_i-v_i-(\mathcal N_i-\mathcal N_\infty)
+ +\tfrac12(\widetilde g_i^{ab}-g_\infty^{ab})\partial_a\partial_bg_\infty.
+\]
+These terms tend to zero in $L^p$. Uniform interior estimates therefore upgrade weak $W^{2,p}$ convergence to strong convergence.
+The estimate concerns the \emph{difference equation in a common gauge}; the Einstein equation for the limit alone does not imply strong curvature convergence.
+
+Identify $\Lambda^+$ using oriented orthonormal frames depending continuously on the metric.
+Strong $L^p$ curvature convergence and Lipschitz continuity of the smallest eigenvalue of a symmetric matrix give strong $L^2$ convergence of
+$s_i,|W_i^+|,w_i$. The inequality
+\[
+\|b_i^2-b^2\|_1\le\|b_i-b\|_2(\|b_i\|_2+\|b\|_2)
+\]
+and Lipschitz continuity of the negative-part map yield $\Phi_{*,i}\to\Phi_{*,\infty}$ in $L^1$.
+Nonnegativity forces the limiting integral to vanish; smoothness then makes the density identically zero on the open set, contradicting \eqref{eq:forbidden}.
+No pointwise curvature convergence of the approximate metrics is asserted.
+
+\section{Connected sums and the critical topological budget}
+\subsection{Monopole input for connected sums}
+Another class is $M=(\#_{j=1}^{m}X_j)\#N$, $m=2,3$, with
+\[
+A=\sum_j c_1^2(X_j),\qquad D=4m-(2\chi+3\tau)(N),\qquad
+2\chi(M)+3\tau(M)=A-D.
+\]
+The relevant ratio is $D/A$; in certain examples $D=k+4$ or $k+8$, so it is not always $k/A$. We state explicitly the geometric input supplied by Ishida--LeBrun theory\cite{IL}: every sign combination listed below is a monopole class, and the rescaled Seiberg--Witten estimates apply to it. The topological numbers $A,D$ alone do not guarantee this hypothesis.
+
+Critical near equality gives $\Vol/A\to32\pi^2/9$, $\int|W^+|^2/(\pi^2A)\to4/27$, convergence of the appropriate positive and negative projections, and spatial phase separation of several forms. These constrain the geometry. Sign averages must involve the actual projected norms; $(K_X^+)^2$ cannot simply be identified with $A$. Absolute errors tending to zero for fixed $A$ must be distinguished from $o(A_i)$ when $A_i$ varies.
+
+\subsection{Support selection, weighted Moser iteration, and a common time}
+Appendix~\ref{app:flow} studies smoothing that preserves a small Ricci residual, using a seven-radius buffer, relative Sobolev constants, mixed weights with real exponents, and coupling of derivatives at the same order. This is one possible approach; common existence and continuation for general degenerating initial data remain to be established.
+
+\subsection{Terminal geometry on one closed manifold}
+Independently evolved centers cannot be treated as a single terminal metric on the closed manifold. One needs a global weight assembled from disjoint supports or a coloring construction, and one common flow. Ricci flow has no finite propagation speed: distance from initially bad points does not make a region unaffected. Terminal SW/Chern--Weil arguments require one metric on the same closed manifold in a consistent normalization, not metrics redefined separately on several patches.
+
+\section{An analytic decomposition of Seiberg--Witten near equality}
+On the critical IL connected-sum locus $D=A/3$, we analyze the scalar--Weyl inequality
+\begin{equation}\label{eq:primitiveSW}
+\int(s-\sqrt6|W^+|)^2\ge72\pi^2(a^+)^2.
+\end{equation}
+We use only actual monopole classes and their positive projections, not an independent lower bound involving $W^+$ alone.
+Put $\omega_W=|W^+|$ and $q_0=-s+\sqrt6\omega_W$.
+If $\delta_-<1$, then $q_0>0$.
+Let $H_a$ be the real harmonic self-dual form representing $a^+$, with
+$\int|H_a|^2=(a^+)^2=:p$. Normalize so that the harmonic self-dual part of $iF_A$ is $2\pi H_a$.
+
+\subsection{Retaining all defects in the Weitzenb\"ock formulas}
+For a smooth positive function $f$, solve the rescaled Seiberg--Witten equations
+\[
+D_A\Phi=0,\qquad -iF_A^+=f\sigma(\Phi).
+\]
+Solvability follows from conformal covariance. Apply the definition of a monopole class to
+$\widehat g=f^{-2}g$ to solve the ordinary equations, then transform the spinor back to $g$ using conformal covariance of the Dirac operator.
+Under the natural bundle identification, $|\Phi|_g=f^{-3/2}|\widehat\Phi|_{\widehat g}$ and
+$\sigma_g(\Phi)=f^{-1}\sigma_{\widehat g}(\widehat\Phi)$.
+The self-dual splitting of two-forms in dimension four is conformally invariant, so the curvature equation becomes exactly the displayed equation.
+Thus every positive $f$ can be chosen on the same original metric without an additional weighted-solvability assumption\cite[Lemma 3.7 and Proposition 3.8]{LeBrunConvex}.
+Set
+$\rho=|\Phi|^2$,$\psi=2\sqrt2\,\sigma(\Phi)$,
+$\varphi=\tfrac32\psi$,$u=|\varphi|=\tfrac32\rho$.
+Then $|\psi|=\rho$ and $f\varphi=-3\sqrt2\,iF_A^+$.
+Define four nonnegative quantities:
+\begin{align*}
+D_{\rm amp}&=2\int|d\rho|^2,\\
+D_{\rm quad}&=\int(4\rho|\nabla_A\Phi|^2-|\nabla\psi|^2),\\
+D_{\rm Hodge}&=\int(|d\psi|^2+|d^*\psi|^2),\\
+D_{\rm eig}&=2\int\bigl(W^+(\psi,\psi)+\sqrt{2/3}\,\omega_W|\psi|^2\bigr).
+\end{align*}
+The second uses the differential estimate for the spinor quadratic map; the fourth uses the lowest-eigenvalue bound for a trace-free symmetric operator in dimension three.
+
+Multiply the spinor Weitzenb\"ock identity by $\rho$ and integrate:
+\[
+2\int|d\rho|^2+4\int\rho|\nabla_A\Phi|^2+\int s\rho^2+\int f\rho^3=0.
+\]
+The self-dual two-form Weitzenb\"ock identity gives
+\[
+D_{\rm Hodge}=\int|\nabla\psi|^2+\tfrac{s}{3}|\psi|^2-2W^+(\psi,\psi).
+\]
+Subtracting and rearranging, with $D_0=D_{\rm amp}+D_{\rm quad}+D_{\rm Hodge}+D_{\rm eig}$, yields
+\[
+D_0=\int\left(\tfrac23q_0\rho^2-f\rho^3\right).
+\]
+Therefore
+\begin{equation}\label{eq:spinor-deficit}
+P_f:=\int(q_0u^2-fu^3)=\frac{27}{8}D_0.
+\end{equation}
+This identifies the total differential defect in the original inequality quantitatively.
+
+\subsection{Two H\"older inequalities and harmonic projection}
+Put
+\[
+X_f=\left(\int q_0^3f^{-2}\right)^{1/3},\quad
+A_f=\left(\int f^4\right)^{1/3},\quad
+Z_f=\int fu^3,\quad C_f=\int f^2u^2,
+\]
+\[
+H_1=X_fZ_f^{2/3}-\int q_0u^2\ge0,\qquad
+H_2=A_fZ_f^{2/3}-C_f\ge0,\qquad
+J_A=\int|iF_A^+-2\pi H_a|^2.
+\]
+Orthogonality of the Hodge decomposition gives
+$C_f=18\int|F_A^+|^2=72\pi^2p+18J_A$.
+Moreover $P_f+H_1=Z_f^{2/3}(X_f-Z_f^{1/3})$, so
+\begin{equation}\label{eq:all-deficit}
+A_fX_f^2-72\pi^2p
+=18J_A+H_2+
+A_f\frac{X_f+Z_f^{1/3}}{Z_f^{2/3}}(P_f+H_1).
+\end{equation}
+Every term is nonnegative, and $p>0$ excludes vanishing denominators.
+
+For the optimal weight $f=\sqrt{q_0}$, write
+\[
+\mathcal E=\int q_0^2,\quad
+\Delta_a=\mathcal E-72\pi^2p,\quad
+\vartheta=(Z_f/\mathcal E)^{1/3}\in(0,1].
+\]
+Then $X_f=A_f=\mathcal E^{1/3}$ and $H_1=H_2=:H$, so \eqref{eq:all-deficit} becomes
+\[
+\Delta_a=18J_A+H+(P_f+H)\frac{1+\vartheta}{\vartheta^2}.
+\]
+Since $(1+\vartheta)/\vartheta^2\ge2$,
+\begin{equation}\label{eq:quantSW}
+J_A\le\Delta_a/18,\quad P_f\le\Delta_a/2,\quad
+H\le\Delta_a/3,\quad D_0\le4\Delta_a/27.
+\end{equation}
+In particular,
+$\int|d\psi|^2\le2\Delta_a/27$,
+$\int|d\rho|^2\le2\Delta_a/27$.
+
+The amplitude defect in H\"older can also be quantified. For the probability measure
+$d\nu=f^4d\mu/\mathcal E$, set $r_0=u/f$.
+We have $\int r_0^3d\nu\le\int r_0^2d\nu\le1$ and
+$(\int r_0^2)^2\le(\int r_0)(\int r_0^3)$, hence
+\[
+\int f^2(u-f)^2\le\mathcal E-\int f^2u^2\le\Delta_a.
+\]
+Consequently,
+\begin{align}
+\|f\varphi+6\sqrt2\pi H_a\|_2^2&\le\Delta_a,\label{eq:formprojection}\\
+\left\||2\pi H_a|-\frac{q_0}{3\sqrt2}\right\|_2
+&\le2\sqrt{\Delta_a/18}.\label{eq:harmonicnorm}
+\end{align}
+At its zero set, $|W^+|$ is generally only Lipschitz, so the optimal $f$ need not be smooth.
+Choose smooth positive $f_j\to\sqrt{q_0}$ uniformly and solve the rescaled equations for each $f_j$.
+Equation~\eqref{eq:all-deficit} holds for each solution, and the bounds above hold with $\Delta_a+o(1)$.
+No convergence of spinors along a prescribed sequence is required.
+
+\subsection{Critical topology bounds the analytic defects by $A\delta^2$}
+Write
+\[
+S=\frac1{4\pi^2}\int s^2/24,\quad
+W=\frac1{4\pi^2}\int2|W^+|^2,\quad
+R=\frac1{8\pi^2}\int|\Ric^\circ|^2,\quad I=S+W.
+\]
+The critical relation and Ricci pinching give
+\[
+I-R=\frac23A,\qquad R\le\kappa S,\qquad
+\kappa=\frac{3\delta^2}{(1-\delta)^2}.
+\]
+If $\kappa<1$, then
+\begin{equation}\label{eq:Rmax}
+R\le\frac{2A}{3}\frac{\kappa}{1-\kappa}.
+\end{equation}
+Here $c_j$ is the image of the first Chern class of $X_j$ in the connected sum, with
+$c_j^2=c_1^2(X_j)>0$, and $E_\ell$ is a diagonal integral basis for the negative-definite intersection form of $N$.
+Each $E_\ell$ has square $-1$, and distinct connected-sum factors are orthogonal. Under the critical relation of this section,
+$b_-(N)=A/3-4m+4-4b_1(N)$, so every sign class has square
+$A-b_-(N)=2A/3+4m-4+4b_1(N)>0$. Thus every vertex below has
+$p_\epsilon>0$, making the denominators in the two-H\"older decomposition legitimate. Write the full sign classes as
+$a_\epsilon=\sum_j\epsilon_jc_j+\sum_\ell\epsilon_\ell E_\ell$,
+$p_\epsilon=(a_\epsilon^+)^2$. Sign averaging cancels the cross terms and gives
+\[
+\operatorname{Av}_\epsilon p_\epsilon
+=A+P_{\rm per},\qquad
+P_{\rm per}=\sum_j\|c_j^-\|_2^2+\sum_\ell\|E_\ell^+\|_2^2,\qquad
+0\le P_{\rm per}\le\tfrac32R.
+\]
+Here $\|c_j^+\|_2^2=c_j^2+\|c_j^-\|_2^2$, whereas the negative-definite factor contributes the actual
+$\|E_\ell^+\|_2^2$, which is not $E_\ell^2$.
+The last bound follows by applying
+$p_\epsilon\le\tfrac32I=A+\tfrac32R$ to every sign and then averaging.
+Thus the anti-self-dual error in every canonical direction and the self-dual error in every negative-definite direction are controlled by the same $R$;
+one does not transfer the conclusion for a maximizing sign to every other sign.
+Put $K=\mathcal E/(72\pi^2)$. Equation~\eqref{eq:square} gives
+$K\le\tfrac32I=A+\tfrac32R$.
+Choose a sign with $p_\epsilon\ge A+P_{\rm per}$. Then
+\[
+0\le\Delta_\epsilon\le108\pi^2R
+\le72\pi^2A\frac{\kappa}{1-\kappa};
+\qquad
+\operatorname{Av}_\epsilon\Delta_\epsilon\le108\pi^2R.
+\]
+This controls the four differential defects, projection error, and amplitude error in \eqref{eq:quantSW} simultaneously.
+
+Set $x=\|s\|_2$, $y=\||W^+|\|_2$, and
+\[
+D_{\rm tri}=2\sqrt6\left(xy+\int s|W^+|\right),\qquad
+D_{\rm CS}=(x-8\sqrt6y)^2.
+\]
+Both quantities are nonnegative, and the exact identity is
+\[
+\int(s+8\sqrt6|W^+|)^2=D_{\rm CS}+8D_{\rm tri}.
+\]
+Hence
+\[
+D_{\rm CS}\le864\pi^2R,\qquad D_{\rm tri}\le108\pi^2R,\qquad
+(\sqrt S-2\sqrt2\sqrt W)^2\le9R.
+\]
+As $R/A\to0$,
+\[
+\frac SA\to\frac{16}{27},\quad
+\frac WA\to\frac{2}{27},\quad
+\frac{\Vol M}{A}\to\frac{32\pi^2}{9},\quad
+\frac{\int|W^+|^2}{\pi^2A}\to\frac4{27}.
+\]
+These are normalized limits; they do not bound total volume when $A\to\infty$.
+If $t_0=s+8\sqrt6|W^+|$, then
+$q_0-\tfrac92=\tfrac18t_0-\tfrac98(s+4)$, so
+\[
+\left\|q_0-\tfrac92\right\|_2
+\le\tfrac{3\sqrt6}{2}\pi\sqrt R
++\tfrac92\delta\sqrt{\Vol M}.
+\]
+Together with \eqref{eq:harmonicnorm}, this shows that the norm of the harmonic representative approaches, in normalized $L^2$,
+$c_0=3/(4\sqrt2\pi)$.
+
+\subsection{The sign cube, Walsh polarization, and spatial phase separation}
+Let $x_r$ denote the harmonic self-dual representatives of all signed coordinates, so that
+$H_\epsilon=\sum_r\epsilon_rx_r$.
+Put $\mathcal L=q_0/(6\sqrt2\pi)$, so $\int\mathcal L^2=K$.
+Equation~\eqref{eq:harmonicnorm} and sign averaging imply
+\[
+\operatorname{Av}_\epsilon\||H_\epsilon|-\mathcal L\|_2^2\le6R+o(1).
+\]
+The Walsh orthogonality identities are
+\[
+\operatorname{Av}_\epsilon|H_\epsilon|^2=\sum_r|x_r|^2,\qquad
+\operatorname{Av}_\epsilon\epsilon_p\epsilon_q|H_\epsilon|^2
+=2\langle x_p,x_q\rangle\quad(p\ne q).
+\]
+To identify the spatial functions being controlled, set
+$e_\epsilon=\||H_\epsilon|-\mathcal L\|_2$. Since
+$\|H_\epsilon\|_2^2\le K$ and $\|\mathcal L\|_2^2=K$,
+\[
+\bigl\||H_\epsilon|^2-\mathcal L^2\bigr\|_1
+\le e_\epsilon(\|H_\epsilon\|_2+\|\mathcal L\|_2)
+\le2\sqrt K\,e_\epsilon.
+\]
+Averaging the constant Walsh coefficient gives the total norm budget. In the
+$\epsilon_p\epsilon_q$ coefficient the $\mathcal L^2$ term cancels.
+Using $\operatorname{Av}e_\epsilon\le(\operatorname{Av}e_\epsilon^2)^{1/2}$ gives
+\begin{equation}\label{eq:walsh}
+\left\|\sum_r|x_r|^2-\mathcal L^2\right\|_1\le2\sqrt{6KR}+o(1),\qquad
+\|\langle x_p,x_q\rangle\|_1\le\sqrt{6KR}+o(1).
+\end{equation}
+This is spatial near-orthogonality, not near-collinearity.
+
+If, in addition, the lowest Weyl eigenline has gap $\lambda_2-\lambda_1\ge\gamma>0$
+and $f\le F_*$, let $\Pi^\perp$ denote projection off this line. The spectral defect decomposes pointwise as
+\begin{equation}\label{eq:eigenline-deficit}
+W^+(\psi,\psi)+\sqrt{2/3}\,\omega_W|\psi|^2
+=\sum_{j=1}^3(\lambda_j+\sqrt{2/3}\,\omega_W)|\psi_j|^2
+\ge\gamma|\Pi^\perp\psi|^2.
+\end{equation}
+Since $\varphi=3\psi/2$ and $D_{\rm eig}\le4\Delta_\epsilon/27$,
+\[
+\|\Pi^\perp\varphi\|_2^2\le\frac{\Delta_\epsilon}{6\gamma}.
+\]
+Write $H_\epsilon$ as $-f\varphi/(6\sqrt2\pi)$ plus the error in
+\eqref{eq:formprojection}. The inequality $|u+v|^2\le2|u|^2+2|v|^2$ gives
+\[
+\|\Pi^\perp H_\epsilon\|_2^2
+\le\frac{\Delta_\epsilon}{36\pi^2}
+ +\frac{F_*^2\Delta_\epsilon}{216\gamma\pi^2}+o(1).
+\]
+Only after sign averaging do we obtain
+\[
+\operatorname{Av}_\epsilon\|\Pi^\perp H_\epsilon\|_2^2
+\le\left(3+\frac{F_*^2}{2\gamma}\right)R+o(1).
+\]
+The left-hand side equals $\sum_r\|\Pi^\perp x_r\|_2^2$.
+These estimates can be restricted to subdomains with the same spectral gap and bound on $f$.
+Projection notation does not remove regions where the gap is uncontrolled.
+
+\subsubsection{Quantitative phase separation and its compactness application}\label{sec:walsh-phases}
+Using a local unit section $e$ of the eigenline, write $x_r=\alpha_re+y_r$,
+$y_r=\Pi^\perp x_r$. Changing the sign of $e$ leaves $\alpha_r^2$ and
+$\alpha_p\alpha_q$ unchanged, so the following quantities are globally defined. With
+$C_\gamma=3+F_*^2/(2\gamma)$,
+\begin{align}
+\|\alpha_p\alpha_q\|_1
+&\le\sqrt{6KR}+C_\gamma R+o(1)\quad(p\ne q),\label{eq:phase-products}\\
+\left\|\sum_r\alpha_r^2-\mathcal L^2\right\|_1
+&\le2\sqrt{6KR}+C_\gamma R+o(1).\label{eq:phase-mass}
+\end{align}
+The first estimate uses
+$\alpha_p\alpha_q=\langle x_p,x_q\rangle-\langle y_p,y_q\rangle$
+and Cauchy--Schwarz; the second uses
+$\sum|x_r|^2=\sum\alpha_r^2+\sum|y_r|^2$.
+Thus, for fixed $b>0$, the set on which two specified phases simultaneously satisfy $|\alpha_p|,|\alpha_q|\ge b$
+has volume at most the right-hand side of \eqref{eq:phase-products} divided by $b^2$.
+Near-collinearity does not identify all canonical directions. Combined with near-orthogonality, it forces their mass to avoid overlap in the same region.
+
+If $A_i$ varies, then $K_i\asymp A_i$ and $R_i=O(A_i\delta_i^2)$.
+Dividing \eqref{eq:walsh}, \eqref{eq:phase-products}, and \eqref{eq:phase-mass}
+by $\Vol M_i\asymp A_i$ gives errors $O(\delta_i)+O(\delta_i^2)$.
+These are statements for normalized volume measure; absolute $L^1$ errors may still grow.
+
+On a fixed connected manifold and for a fixed finite sign cube, suppose in addition that there is a common smooth limiting metric
+and the harmonic forms converge in $C^0$ under the same marking. Then
+\[
+\sum_r|x_{r,\infty}|^2=c_0^2,\qquad
+\langle x_{p,\infty},x_{q,\infty}\rangle=0,
+\qquad x_{r,\infty}\text{ lie in the same eigenline}.
+\]
+Exactly one form is nonzero at each point. The sets
+$\{|x_{r,\infty}|>0\}$ are pairwise disjoint open sets covering $M$; connectedness allows only one to be nonempty.
+On the other hand, the harmonic self-dual representative of each canonical factor satisfies
+$\int|c_j^+|^2\ge c_j^2>0$. Under this fixed compactness assumption at least two limiting forms must be nonzero, a contradiction.
+If phase separation is obtained only on several open sets, a nonzero harmonic form vanishes on another open set,
+and unique continuation gives the same contradiction.
+Without common geometric compactness and equicontinuity, these open-set limits need not exist:
+transition regions may narrow, and the integral estimates alone do not produce a global symplectic structure.
+
+On a fixed finite sign cube, a vanishing average of nonnegative defects forces the defect at every vertex to vanish.
+When topology varies and the dimension of the cube grows, this gives average or selected-vertex control, not simultaneous control of all vertices.
+
+\subsection{From integral near equality to a genuinely nonvanishing structure}
+Define
+\[
+D_{\rm conf}(g)=\int(s-\sqrt6|W^+|)^2
+-\inf_{\widehat g\in[g]}\int(s_{\widehat g}-\sqrt6|W^+_{\widehat g}|)^2.
+\]
+Conformal invariance of middle-dimensional Hodge theory and \eqref{eq:primitiveSW} imply
+$0\le D_{\rm conf}\le\Delta_a$. This is a gap in functional values; by itself it controls neither the conformal Euler--Lagrange residual nor distance to a minimizer.
+
+A uniform four-dimensional Sobolev constant upgrades the $L^2$ and gradient control of the spinor amplitude to $L^4$, but still gives no positive pointwise lower bound.
+One sufficient nonvanishing criterion is that harmonic forms $H_i$ satisfy
+\[
+[H_i]_{C^\alpha}\le L,\qquad
+\Vol B_r(x)\ge vr^4\ (0<r\le r_0),\qquad
+\||H_i|-c_0\|_2\to0.
+\]
+If $|H_i|<c_0/2$ at a point, then on the ball of radius
+$r_*=\min\{r_0,(c_0/(4L))^{1/\alpha}\}$,
+$\bigl||H_i|-c_0\bigr|\ge c_0/4$,
+whose squared integral is at least $(c_0^2/16)vr_*^4$, a contradiction.
+Thus eventually $\inf|H_i|\ge c_0/2$.
+Identifying the first Chern class of the resulting symplectic structure further requires upgrading \eqref{eq:formprojection} to $C^0$, so that the harmonic form and the spinor quadratic form are homotopic through nonzero self-dual forms. Sobolev control alone is insufficient.
+
+On a fixed critical IL manifold, a uniform positive $C^{2,\alpha}$ harmonic radius and bounded diameter
+give, by Cheeger compactness, a $C^{2,\beta}$ subsequential limit; Ricci pinching makes it negative Einstein.
+The critical Chern--Weil identity forces equality in the monopole curvature inequality, yielding a K\"ahler--Einstein structure incompatible with the connected-sum topology.
+Thus a near-critical sequence must lose this form of bounded geometry.
+This does not exclude collapse, long ends, degeneration of the Weyl eigenline, or transition regions of small capacity; these remain the cases to address when passing from integral defects to global structure.
+
+
+\appendix
+\section{Weighted analysis of a degenerate local flow}\label{app:flow}
+Consider the equation with fixed scalar coefficient on a closed four-manifold,
+\begin{equation}\label{eq:cutflow}
+\partial_tg=-2a(\Ric+g),\qquad a=\chi^2,\quad 0\le\chi\le1.
+\end{equation}
+The equation degenerates where $\chi=0$. The differential identities, weak energy estimates, and Moser estimates in this appendix first apply to a given smooth solution. We then distinguish the analytic conditions for a common existence time from those for a smooth restart. The uniform gap for exact Einstein metrics does not use this appendix.
+
+\subsection{Shifted curvature and the fixed coefficient}
+Use the contraction conventions
+\[
+(h\owedge k)_{ijkl}=h_{ik}k_{jl}+h_{jl}k_{ik}-h_{il}k_{jk}-h_{jk}k_{il},
+\qquad \Ric(R)_{jl}=g^{ik}R_{ijkl}.
+\]
+Set
+\[
+G=\frac{g\owedge g}{2(n-1)},\quad T=\Rm+G,\quad
+E_-=\Ric+g,\quad U=aT,\quad V=aE_-.
+\]
+Then $\nabla G=0$, $\Ric(G)=g$, and
+\begin{equation}\label{eq:shift-contract}
+\Ric(T)=E_-,\qquad \Ric(U)=V,\qquad \partial_tg=-2\Ric(U).
+\end{equation}
+$T=0$ corresponds to sectional curvature $-1/(n-1)$, not sectional curvature $-1$ in general dimension. For an arbitrary velocity $h$,
+\[
+\partial_tG=\frac{h\owedge g}{n-1};
+\]
+so under \eqref{eq:cutflow},
+\[
+\partial_tG=-\frac{2a}{n-1}E_-\owedge g.
+\]
+The contraction itself also varies with $g$:
+$(\partial_tg^{ik})G_{ijkl}+g^{ik}(\partial_tG)_{ijkl}=h_{jl}$.
+These identities allow the normalization and Ricci terms to be treated as one velocity.
+
+Write
+\[
+U_m=\nabla^mU,\qquad T_m=\nabla^mT,\qquad C_m=\nabla^m\chi.
+\]
+$C_m$ denotes covariant derivatives of the cutoff, not of curvature; $\nabla$ depends on $g(t)$. The notation $*$ denotes finite sums of universal tensor contractions. Terms involving the highest derivatives or essential weights are displayed separately.
+
+\subsection{Volume and energy bounds for connected-sum families}
+To construct a family of local supports, consider
+\[
+M=\Bigl(\#_{j=1}^{m}X_j\Bigr)\#N,\quad m=2,3,\quad b_+(N)=0,
+\]
+where each $X_j$ is a minimal complex surface of general type and the hypotheses of the applicable Ishida--LeBrun full-sign monopole theorem hold. Set
+\[
+A=\sum_jc_1^2(X_j)>0,\quad
+D=4m-(2\chi+3\tau)(N),\quad q=D-A/3\ge0.
+\]
+Equivalently for this budget argument, assume directly that each metric admits an applicable monopole class with $(a^+)^2\ge A$. Suppose $\delta_-(g)=\delta<1/4$, and put
+\[
+I=\frac1{4\pi^2}\int(s^2/24+2|W^+|^2),\qquad
+J=\frac1{8\pi^2}\int|\Ric^\circ|^2.
+\]
+Then
+\[
+I=J+\frac23A-q,\qquad I\ge\frac23A,\qquad
+I\ge\frac{(1-\delta)^2}{6\pi^2}\Vol M,\qquad
+J\le\frac{\delta^2}{2\pi^2}\Vol M.
+\]
+Consequently,
+\begin{equation}\label{eq:IL-volume}
+\Vol M\le\frac{4\pi^2A}{(1-\delta)^2-3\delta^2},
+\qquad 0\le q\le J\le C\delta^2A.
+\end{equation}
+The denominator is bounded below positively when $\delta\le1/4$. The scalar monopole estimate also gives $\Vol M\ge2\pi^2A/(1+\delta)^2$, so $\Vol M\asymp A$.
+
+Noether's inequality gives $c_2(X_j)\le5c_1^2(X_j)+36$. Since
+\[
+D=4m-4+4b_1(N)+b_-(N),\qquad
+\chi(M)=\sum_jc_2(X_j)+\chi(N)-2m,
+\]
+equation~\eqref{eq:IL-volume} implies $\chi(M)\le CA$. In the curvature-operator convention,
+\[
+\int|\mathcal R|^2=8\pi^2\chi(M)+\int|\Ric^\circ|^2\le CA.
+\]
+The full-curvature tensor energy is four times this expression. Thus, for
+$F_T=(1+|T|^2)^{1/2}$, we still have $\int F_T^2\le CA$. The selection argument requires these totals to be proportional to $A$, not a uniform upper bound on total volume.
+
+\subsection{Maximal-function selection and disjoint macroscopic supports}
+Put $f=F_T^2$. A uniform Ricci lower bound provides relative volume doubling at fixed scales. Let
+\[
+\mathcal M_Rf(x)=\sup_{0<s\le R}\fint_{B_s(x)}f,\qquad
+R=10r,\qquad \Lambda=\widetilde\gamma^2/r^4.
+\]
+Vitali selection gives
+\begin{equation}\label{eq:maximal}
+\Vol\{\mathcal M_Rf>\Lambda\}\le
+\frac{C(n,R)}{\Lambda}\int_Mf.
+\end{equation}
+Indeed, choose at each bad point a ball with average exceeding $\Lambda$. Extract a disjoint subfamily whose fivefold dilates cover the bad set. Local doubling bounds the dilated volumes; then
+$\Lambda\sum\Vol B_s<\sum\int_{B_s}f\le\int f$ proves \eqref{eq:maximal}.
+First fix a small $\widetilde\gamma$, then choose $r$ using only the budgets so that the bad-set volume is at most
+$CA r^4/\widetilde\gamma^2\le c_VA/2$. The good set has volume at least $c_VA/2$.
+
+Choose a maximal $r$-separated net $\{p_\alpha\}$ in the good set. The balls $B_r(p_\alpha)$ cover that set, and the balls $B_{r/2}(p_\alpha)$ are disjoint. Join centers by an edge when their $B_{7r}$ balls intersect. Adjacent centers are less than $14r$ apart, their $r/2$ balls lie in $B_{15r}(p_\alpha)$, and
+\[
+B_{15r}(p_\alpha)\subset B_{29r}(p_\beta).
+\]
+Bishop--Gromov comparison yields
+\[
+\Vol B_{r/2}(p_\beta)\ge
+\frac{V_{\rm mod}(r/2)}{V_{\rm mod}(29r)}
+\Vol B_{15r}(p_\alpha).
+\]
+Summing over the disjoint small balls of neighboring centers bounds the degree by $D_0$, depending only on the fixed scale and Ricci lower bound. Color the graph with at most $D_0+1$ colors. Some color class satisfies
+\[
+\sum_j\Vol B_r(p_j)\ge\frac{c_V}{2(D_0+1)}A.
+\]
+The $B_{7r}(p_j)$ balls of this color are pairwise disjoint. No individual ball needs an absolute volume lower bound.
+
+Choose smooth cutoffs
+\[
+\chi_j=1\ \hbox{on }B_{5r}(p_j),\quad
+\operatorname{supp}\chi_j\Subset B_{6r}(p_j),\qquad
+\eta_j=1\ \hbox{on }B_{6r}(p_j),\quad
+\operatorname{supp}\eta_j\Subset B_{7r}(p_j).
+\]
+Smoothing buffered Lipschitz distance cutoffs preserves $|d\chi_j|\le C/r$. Higher cutoff derivatives are finite for each fixed smooth datum, but this construction does not bound them uniformly along a degenerating sequence. Set
+\[
+a=\sum_j\chi_j^2.
+\]
+Disjoint supports make this a global smooth coefficient. Wherever an auxiliary cutoff varies,
+\[
+a=0,\qquad da=0,\qquad a|d\eta_j|^2=0.
+\]
+The velocity vanishes there, so that region is stationary; this is not an assertion of finite propagation speed for Ricci flow. Energies on the supports can be summed while retaining one terminal metric on the same closed manifold.
+
+\subsection{Relative Sobolev constants and initial seeds}
+Use the squared-form Sobolev coefficient
+\begin{equation}\label{eq:relative-sob}
+\|u\|_4^2\le S\bigl(\|\nabla u\|_2^2+r^{-2}\|u\|_2^2\bigr),
+\qquad S\le Cr^2V_{\rm loc}^{-1/2}.
+\end{equation}
+Here $u$ is supported in the macroscopic ball and $V_{\rm loc}$ is its volume. The relative Sobolev estimate depends on the Ricci lower bound and fixed-radius doubling and Poincar\'e constants. The maximal-function bound at a good center gives
+\[
+H_2(0):=\int\eta^2F_T^2\le
+C(1+\widetilde\gamma^2/r^4)V_{\rm loc}.
+\]
+Therefore
+\begin{equation}\label{eq:smallgamma}
+\gamma_0=S(0)\sqrt{H_2(0)}
+\le C(r^2+\widetilde\gamma).
+\end{equation}
+The collapsed volume cancels in this product, although the unweighted constant $S$ may diverge under collapse. The initial defects satisfy
+$Q(0)=\int\eta^2|E_-|^2\le C\delta^2V_{\rm loc}$,
+$J_6(0)=\int\eta^2a^4|E_-|^6\le C\delta^6V_{\rm loc}$.
+In the energy calculations below, $F=(1+|\Rm|^2)^{1/2}$ can replace $F_T$; the two are uniformly comparable in fixed dimension.
+
+\subsection{Tensor variation for the full velocity}
+For $h=\partial_tg$, the exact formulas are
+\[
+\partial_t\Gamma^\ell{}_{jk}
+=\frac12g^{\ell m}(\nabla_jh_{km}+\nabla_kh_{jm}-\nabla_mh_{jk}),
+\qquad
+\partial_tR^\ell{}_{kij}
+=\nabla_i(\partial_t\Gamma^\ell{}_{jk})
+-\nabla_j(\partial_t\Gamma^\ell{}_{ik}).
+\]
+Substitute $h=-2aE_-$ and put $S_{jkm}=\nabla_jE_{-,km}+\nabla_kE_{-,jm}-\nabla_mE_{-,jk}$. Then
+\[
+\partial_t\Gamma^\ell{}_{jk}
+=-g^{\ell m}(aS_{jkm}+a_jE_{-,km}+a_kE_{-,jm}-a_mE_{-,jk}).
+\]
+The highest cutoff-derivative term has components
+\[
+\mathcal H^\ell{}_{kij}
+=-g^{\ell m}(a_{ik}E_{-,jm}-a_{im}E_{-,jk}
+-a_{jk}E_{-,im}+a_{jm}E_{-,ik}),
+\]
+and the first-order cutoff term is
+\begin{align*}
+\mathcal B^\ell{}_{kij}=-g^{\ell m}\bigl[
+&a_i(\nabla_kE_{-,jm}-\nabla_mE_{-,jk})
+-a_j(\nabla_kE_{-,im}-\nabla_mE_{-,ik})\\
+&+a_k(\nabla_iE_{-,jm}-\nabla_jE_{-,im})
+-a_m(\nabla_iE_{-,jk}-\nabla_jE_{-,ik})\bigr].
+\end{align*}
+Passing to fully covariant curvature adds $h_{\ell p}R^p{}_{kij}$. Every Hessian-cutoff term contains $E_-$; there is no independent forcing term $(\nabla^2a)*g$. If $E_-=0$, the flow is stationary for every cutoff.
+
+\subsection{Three weak energies and one integration by parts}
+Set
+\[
+H_2=\int\eta^2F^2,\quad D_2=\int\eta^2a|\nabla\Rm|^2,\quad
+Y=\int\eta^2aF^3,\quad D_3=\int\eta^2a^2F|\nabla\Rm|^2.
+\]
+For a test weight $w$ and real $p\ge2$, the principal term has the exact structure
+\begin{align*}
+p\int waF^{p-2}\langle\Rm,\Delta\Rm\rangle
+={}&-p\int waF^{p-2}|\nabla\Rm|^2
+-p(p-2)\int waF^{p-2}|\nabla F|^2\\
+&-p\int\langle d(wa),F^{p-2}\langle\Rm,\nabla\Rm\rangle\rangle.
+\end{align*}
+Integrate the Hessian-cutoff term by parts only once:
+\[
+\int wF^{p-2}\Rm*(\nabla^2a)*E_-
+=-\int da*\nabla(wF^{p-2}\Rm*E_-).
+\]
+Using $|E_-|\le CF$, $|\nabla E_-|\le C|\nabla\Rm|$, and
+$da=2\chi\,d\chi$, we obtain
+\[
+C_p\int w|da|F^{p-1}|\nabla\Rm|
+\le\varepsilon\int waF^{p-2}|\nabla\Rm|^2
++C_{p,\varepsilon}\int w|d\chi|^2F^p.
+\]
+This estimate follows directly from the product $2\chi\,d\chi$, without division by $a$ at its zeros. Terms from the evolving norm and volume are bounded by $CaF^{p+1}$, and
+$\partial_t d\mu=-a\tr(E_-)\,d\mu$.
+
+With $w=\eta^2,p=2$, the identity $a=da=0$ on $\operatorname{supp}d\eta$ gives
+\begin{equation}\label{eq:H2energy}
+H_2'+cD_2\le CY+Cr^{-2}H_2.
+\end{equation}
+For $w=\eta^2a,p=3$, the test weight contributes another factor $a$, so
+\begin{equation}\label{eq:H3energy}
+Y'+cD_3\le Cr^{-2}Y+C\int\eta^2a^2F^4.
+\end{equation}
+The right-hand side is not $\int aF^4$. Equation~\eqref{eq:relative-sob} gives
+\[
+Y=\int F(\chi F)^2
+\le C\gamma(D_2+r^{-2}H_2),\qquad
+\int a^2F^4=\int F(aF^{3/2})^2
+\le C\gamma(D_3+r^{-2}Y),
+\]
+where $\gamma=S\sqrt{H_2}$. The corresponding gradient estimates are
+$\|\nabla(\chi F)\|_2^2\le C(D_2+r^{-2}H_2)$ and
+$\|\nabla(aF^{3/2})\|_2^2\le C(D_3+r^{-2}Y)$.
+A small current value of $\gamma$ absorbs the reaction terms without requiring pointwise curvature bounds.
+
+If $S$ remains comparable to its initial value and $\gamma\le\gamma_*$ on the given time interval, integrating \eqref{eq:H2energy} yields
+\[
+\int_0^tS^2Y(s)\,ds\le C\gamma_0^3.
+\]
+After absorption, $Y'\le Cr^{-2}Y$. Choose a time in $[0,s]$ where $Y$ is no larger than its time average and compare forward to obtain
+\begin{equation}\label{eq:positive-seed}
+S^2Y(s)\le C\gamma_0^3/s,\qquad 0<s\le\theta r^2.
+\end{equation}
+The integral seed produces the positive-time bound; one cannot instead integrate $1/s$ from zero.
+
+\subsection{Exact homogeneity of the residual equation}
+Use the Lichnerowicz Laplacian
+\[
+(\Delta_LE_-)_{ij}=\Delta E_{-,ij}
++2R_{ikjl}E_{-,kl}-R_i{}^kE_{-,kj}-R_j{}^kE_{-,ki}.
+\]
+Put $\tau=\tr E_-$. The contracted Bianchi identity $\operatorname{div}E_-=\tfrac12d\tau$ gives
+\begin{align}
+\partial_tE_{-,ij}&=a(\Delta_LE_{-,ij}-2E_{-,ij})+\mathcal C_a(E_-)_{ij},\\
+\mathcal C_a(E_-)_{ij}
+&=(\Delta a)E_{-,ij}+2a^k\nabla_kE_{-,ij}+\tau a_{ij}\notag\\
+&\quad+\tfrac12(a_i\tau_j+a_j\tau_i)
+-a_i{}^kE_{-,kj}-a_j{}^kE_{-,ki}
+-a^k(\nabla_iE_{-,kj}+\nabla_jE_{-,ki}).\notag
+\end{align}
+Including the variation of the inverse metric gives
+\begin{equation}\label{eq:Enorm}
+(\partial_t-a\Delta)|E_-|^2
+=-2a|\nabla E_-|^2+4aR_{ikjl}E_{-,ij}E_{-,kl}
++2\langle E_-,\mathcal C_a(E_-)\rangle .
+\end{equation}
+In particular, an additional damping term $-4a|E_-|^2$ must not be inserted: it has already canceled against the Lichnerowicz terms and the variation of the norm.
+
+For any fixed scalar test function $b$, one integration by parts in the Hessian terms gives
+\begin{align*}
+\int2b\langle E_-,\mathcal C_a(E_-)\rangle
+=\int\bigl[&
+-2|E_-|^2\langle da,db\rangle
+-2\tau E_-(db,da)+4E_-^2(db,da)\\
+&+b\{-\tau\langle da,d\tau\rangle+2E_-(da,d\tau)\}\bigr].
+\end{align*}
+For $b=\eta^2$, every term containing $db$ vanishes; the remaining terms are bounded by
+$\varepsilon\int\eta^2a|\nabla E_-|^2+Cr^{-2}\int\eta^2|E_-|^2$
+Thus
+\begin{equation}\label{eq:Qenergy}
+Q'+cX\le Cr^{-2}Q+C\int\eta^2aF|E_-|^2,\qquad
+Q=\int\eta^2|E_-|^2,\quad X=\int\eta^2a|\nabla E_-|^2.
+\end{equation}
+The final potential term satisfies
+\[
+\int aF|E_-|^2
+\le\|F\|_2\|\chi E_-\|_4^2
+\le C\gamma(X+r^{-2}Q).
+\]
+Curvature occurs only as a potential multiplying the residual; there is no additive error independent of the residual.
+
+\subsection{Real-exponent energies and mixed weights}
+Put $s_\varepsilon=|E_-|^2+\varepsilon$. For every real $p\ge3$, define
+\[
+J_{p,\varepsilon}=\int\eta^2a^{p-2}s_\varepsilon^{p/2},\qquad
+z_p=\eta a^{(p-1)/2}s_\varepsilon^{p/4},
+\]
+\[
+D_{p,\varepsilon}=\int\eta^2a^{p-1}s_\varepsilon^{p/2-1}|\nabla E_-|^2,\qquad
+Q_{p,\varepsilon}=\int\eta^2a^{p-1}s_\varepsilon^{p/2-2}|\nabla s_\varepsilon|^2.
+\]
+Test \eqref{eq:Enorm}, integrate the $\mathcal C_a$ term by parts once as above,
+and substitute $\nabla s_\varepsilon=2\langle E_-,\nabla E_-\rangle$ to obtain
+\[
+J_{p,\varepsilon}'+c_1pD_{p,\varepsilon}+c_2p^2Q_{p,\varepsilon}
+\le Cp^N(1+r^{-2})J_{p,\varepsilon}
++Cp\int\eta^2a^{p-1}F s_\varepsilon^{p/2}+R_\varepsilon.
+\]
+For fixed $p$ on a fixed compact smooth time interval, the integral of the regularization remainder $R_\varepsilon$ tends to zero. This is Kato regularization of the norm, not replacement of the principal coefficient by $a+\varepsilon$.
+
+Since $\eta=1$ on the support where $a>0$, the exact three-factor decomposition is
+\[
+\eta^2a^{p-1}F s_\varepsilon^{p/2}
+=(aF^3)^{1/3}
+(\eta^2a^{p-2}s_\varepsilon^{p/2})^{1/3}z_p^{4/3}.
+\]
+H\"older, Sobolev, and Young inequalities give
+\[
+\int\eta^2a^{p-1}F s_\varepsilon^{p/2}
+\le\epsilon(D_{p,\varepsilon}+Q_{p,\varepsilon}+r^{-2}J_{p,\varepsilon})
++C_{\epsilon,p}S^2YJ_{p,\varepsilon},
+\]
+where $C_{\epsilon,p}$ grows at most polynomially in $p$. Consequently,
+\begin{equation}\label{eq:realp}
+J_p'+cD_p\le Cp^N(1+r^{-2}+S^2Y)J_p.
+\end{equation}
+This does not require the initial $\gamma$ to satisfy $\gamma<c/p$ for all $p$. For the fixed seed $p=6$, direct absorption of the $L^2$ potential gives, if $\gamma_*$ is sufficiently small,
+\[
+J_6(s)\le e^{C(1+r^{-2})s}J_6(0)
+\le C\delta^6V_{\rm loc}.
+\]
+
+For curvature take $f=F$, and for the residual take $f=|E_-|$. Write
+$H_p(f)=\int\eta^2a^{p-2}f^p$. The relevant exponent-raising identity is
+\begin{equation}\label{eq:mixed-recurrence}
+H_{3p/2}(f)
+=\int(a^{p-2}f^p)^{1/2}
+\bigl(a^{(p-1)/2}f^{p/2}\bigr)^2
+\le H_p(f)^{1/2}\|z_p\|_4^2.
+\end{equation}
+The weight exponent is exactly $(p-2)/2+(p-1)=3p/2-2$.
+In contrast, $\|z_p\|_3^3$ has half a power of $a$ too little and cannot replace the left-hand side.
+
+\subsection{Time iteration, endpoints, and volume cancellation}
+Fix $0<t\le\theta r^2$ and let
+\[
+p_k=p_0(3/2)^k,\qquad
+\tau_k=t(1-2^{-k-1}),\qquad
+I_k=\int_{\tau_k}^{t}H_{p_k}(s)\,ds.
+\]
+On $[t/2,t]$, \eqref{eq:positive-seed} bounds the potential coefficient by $C/t$.
+Time cutoffs, \eqref{eq:realp}, and \eqref{eq:mixed-recurrence} yield
+\[
+I_{k+1}\le Cp_k^N S(L_kI_k)^{3/2},\qquad
+L_k=Cp_k^N4^k(t^{-1}+r^{-2}).
+\]
+Take the $1/p_{k+1}$ powers and multiply, using
+\[
+\sum_{k\ge0}\frac1{p_{k+1}}=\frac2{p_0},\qquad
+\sum_{k\ge0}\frac{3/2}{p_{k+1}}=\frac3{p_0},
+\]
+and convergence of the products involving $p_k,4^k$. This gives
+\begin{equation}\label{eq:weighted-endpoint}
+\|af(t)\|_\infty
+\le CS^{2/p_0}t^{-3/p_0}
+\left(\int_{t/2}^{t}H_{p_0}(s)\,ds\right)^{1/p_0}.
+\end{equation}
+Time continuity gives the endpoint. If $af(t)>c$ at some terminal point, then $af>c$ in a fixed small spatial neighborhood over a sufficiently short time interval. For large $k$, that interval contains $[\tau_k,t]$; its length to the power $1/p_k$ tends to one. Hence $\liminf I_k^{1/p_k}\ge c$. Taking all such $c$ proves the endpoint estimate without assigning positive measure to a single time.
+
+For curvature use $p_0=3$ and \eqref{eq:positive-seed}; for the residual use $p_0=6$ and the $J_6$ seed. Respectively,
+\[
+\|aF(t)\|_\infty\le C\gamma_0/t,\qquad
+\|aE_-(t)\|_\infty
+\le CS^{1/3}t^{-1/2}(\delta^6V_{\rm loc}t)^{1/6}
+\le C\delta(r^2/t)^{1/3}.
+\]
+The latter estimate is integrable from zero:
+\[
+\int_0^T\|aE_-(t)\|_\infty\,dt
+\le\frac32C\delta r^{2/3}T^{2/3}.
+\]
+When the supports have common constants, the global endpoint is the maximum of the supportwise endpoints; it does not grow with the number of supports.
+
+Ordinary unweighted Moser iteration cannot replace this argument. The dissipation for $U=aT$ is only
+$\int a|\nabla|U|^{p/2}|^2$; Sobolev controls
+$\|\chi|U|^{p/2}\|_4$, not $\||U|^{p/2}\|_4$.
+The reaction $\int|U|^{p+1}$ has no additional factor $a$ either.
+For example, with $a(x)=x^2$, a triangular spike on $[\varepsilon,2\varepsilon]$ gives
+\[
+\int w_\varepsilon^2=\varepsilon/3,\quad
+\int w_\varepsilon^4=\varepsilon/5,\quad
+\int x^2|w_\varepsilon'|^2=28\varepsilon/3.
+\]
+Thus the ratio of the squared unweighted $L^4$ norm to the degenerate Dirichlet energy diverges.
+The degenerate energy alone lacks the required coercivity.
+
+\subsection{A joint bootstrap for the metric, Sobolev constant, and small energy}
+Define
+\[
+\mathcal V(t)=\int_0^t\|aE_-(s)\|_\infty\,ds,\qquad
+\Gamma(t)=\sup_{s\le t}S(s)\sqrt{H_2(s)}.
+\]
+The velocity equation gives
+\[
+e^{-2\mathcal V(t)}g(0)\le g(t)\le e^{2\mathcal V(t)}g(0),
+\qquad S(t)\le e^{8\mathcal V(t)}S(0).
+\]
+The same comparison controls the first derivative of the cutoff, without assuming that a Ricci lower bound persists along the flow.
+The energy inequality gives
+\[
+H_2(t)\le H_2(0)\exp\{C_H(1+r^{-2})t+C_V\mathcal V(t)\}.
+\]
+Consequently, for $T=\theta r^2$ and $r\le1$,
+\[
+\Gamma(T)\le\gamma_0
+\exp\{(8+C_V/2)\mathcal V(T)+C_H\theta\}.
+\]
+First choose $\mathcal V_*,\theta$ so that the exponential factor is at most $3/2$,
+then take $\gamma_0\le\gamma_*/2$. At a hypothetical first time when either
+$\Gamma=\gamma_*$ or $\mathcal V=\mathcal V_*$, the preceding bound improves the former to
+$3\gamma_*/4$, whereas
+\[
+\mathcal V(T)\le\frac32C_E\delta\theta^{2/3}r^2
+\]
+improves the latter to $\mathcal V_*/2$ if $\delta\le\mathcal V_*/(3C_E\theta^{2/3}r^2)$.
+Neither budget can therefore be the first cause of exit for a smooth solution. This closes the bootstrap on its given existence interval; termination through uncontrolled higher derivatives still requires a continuation argument.
+
+\subsection{The highest cutoff jet and same-order coupling}
+The shifted curvature satisfies
+\[
+(\partial_t-a\Delta)T
+=a(T*T+G*T)+da*\nabla T+\nabla^2a*T.
+\]
+Multiply by $a$ and reorganize the product rule:
+\[
+(\partial_t-a\Delta)U
+=da*\nabla U+\nabla^2a*U+d\chi*d\chi*U+U*U+aG*U.
+\]
+At derivative order $m$,
+\[
+\nabla^{m+2}a
+=2\chi C_{m+2}+\sum_{j=1}^{m+1}c_{m,j}C_j*C_{m+2-j}.
+\]
+Since $a(\nabla^2a)T=(\nabla^2a)U$, the potentially dangerous terms are
+\[
+\chi C_{m+2}*U,\quad C_1*C_{m+1}*U,\quad
+\chi C_{m+1}*\nabla U,\quad\chi C_1*\nabla U_m.
+\]
+The factor $\chi$ in the first term cannot be dropped, and $C_{m+1}$ cannot yet be regarded as lower order.
+
+\subsubsection{Why commutators introduce no new unweighted curvature at the current order}\label{sec:jet-commutators}
+Write $B_j=\nabla^ja$, distinguishing $B_0=a$. For any tensor $Z$,
+the Leibniz rule and spatial and temporal commutators give
+\[
+[\nabla^m,\Delta]Z
+=\sum_{r+s=m}\nabla^r\Rm*\nabla^sZ,\qquad
+\partial_t\nabla^mZ
+=\nabla^m\partial_tZ+
+\sum_{r+s=m-1}\nabla^r(\partial_t\Gamma)*\nabla^sZ.
+\]
+Here $*$ denotes finite contraction sums with fixed coefficients.
+Apart from the principal term $a\Delta U_m$, the equation for $U_m$ therefore has only the following derivative distributions:
+\[
+\begin{array}{ll}
+B_r*U_{m+2-r},&1\le r\le m+2,\\
+C_{r+1}*C_{s+1}*U_t,&r+s+t=m,\\
+U_i*U_j,&i+j=m,\\
+B_\ell*\nabla^r\Rm*U_s,&\ell+r+s=m,\\
+U_{r+1}*U_s,&r+s=m-1,\\
+B_r*U_{m-r},&0\le r\le m.
+\end{array}
+\]
+In the fourth row, terms with $\ell\ge1$ contain curvature derivatives of order at most $m-1$. The case $\ell=0,r=m$
+appears to involve the unknown $T_m$, but the product identity gives
+\begin{equation}\label{eq:current-curvature-elimination}
+aT_m=U_m-\sum_{q=1}^m\binom mq B_q*T_{m-q}.
+\end{equation}
+Except for the current-order $U_m$, the right-hand side contains only products of lower-order curvature and cutoff derivatives up to $C_m$.
+Another family that might introduce an unweighted $T$ must first be rewritten as a whole:
+$(da*da)*T=4(C_1*C_1)*U$. Differentiate only after this rewrite; estimating the products separately loses the cancellation.
+The temporal commutator comes from $\partial_t\Gamma=g^{-1}*\nabla\Ric(U)$.
+Reordering the existing derivatives introduces curvature factors of order at most $m-2$.
+Thus the same-order pair is $(U_m,C_{m+1})$; one must not assume $T_m$ is known before estimating $U_m$.
+
+Suppose $|U|\le K$ on the given time interval. The $L^p$ energy of $U_m$
+has dissipation $\mathcal D_{m,p}=\int\chi^2|\nabla U_m|^2|U_m|^{p-2}$.
+Integrate the highest jet by parts:
+\begin{align*}
+\int |U_m|^{p-2}U_m*\chi C_{m+2}*U
+={}&-\int\nabla(|U_m|^{p-2}U_m)*\chi C_{m+1}*U\\
+&-\int|U_m|^{p-2}U_m*C_1*C_{m+1}*U\\
+&-\int|U_m|^{p-2}U_m*\chi C_{m+1}*\nabla U
++\mathcal L_m .
+\end{align*}
+$\mathcal L_m$ consists of curvature commutators from reordering covariant derivatives. The first term is bounded by
+\[
+\epsilon\mathcal D_{m,p}
++C_{p,\epsilon}K^2\int|C_{m+1}|^2|U_m|^{p-2},
+\]
+where
+\[
+\int|C_{m+1}|^2|U_m|^{p-2}
+\le\|C_{m+1}\|_p^2\|U_m\|_p^{p-2}.
+\]
+The second term is bounded by $CK\|C_1\|_\infty\|C_{m+1}\|_p\|U_m\|_p^{p-1}$.
+For the third, move one further derivative from $C_{m+1}=\nabla C_m$. The resulting terms include
+\[
+\nabla(|U_m|^{p-2}U_m)*\chi C_m*\nabla U,\quad
+|U_m|^{p-2}U_m*C_1*C_m*\nabla U,\quad
+|U_m|^{p-2}U_m*\chi C_m*\nabla^2U.
+\]
+The first is controlled by the dissipation and $\int|C_m|^2|\nabla U|^2|U_m|^{p-2}$.
+For $m=1$, the $\nabla^2U=\nabla U_1$ in the final term can be paired with the dissipation.
+For $m=2$, it still contains the current $U_2$; only for $m\ge3$ is $\nabla^2U$ lower order.
+The base case and $m=2$ therefore require separate treatment.
+
+\subsubsection{Signed Hessian terms and the first coupled level}\label{sec:jet-base-pair}
+The case $m=1$ closes directly, without knowing $U_1\in L^4$ in advance.
+The essential point is to retain the signed Hessian contraction. If $Y$ is the current tensor and
+\[
+\mathcal H_p(Y)=\int\chi(C_2)_{ij}\mathcal B^{ij}(Y),\quad
+|\mathcal B(Y)|\le C_p|Y|^p,\quad
+|\nabla\mathcal B(Y)|\le C_p|Y|^{p-1}|\nabla Y|,
+\]
+then moving one derivative from $C_2=\nabla C_1$ gives
+\begin{equation}\label{eq:signed-hessian}
+|\mathcal H_p(Y)|\le
+\epsilon\int\chi^2|\nabla Y|^2|Y|^{p-2}
++C_{p,\epsilon}\|C_1\|_\infty^2\|Y\|_p^p.
+\end{equation}
+A derivative falling on $\chi$ produces $C_1*C_1$; a derivative falling on $\mathcal B$ retains
+the factor $\chi$ needed for dissipation. Replacing the integrand first by
+$\chi|C_2||Y|^p$ would prevent this signed integration by parts.
+
+Take $Y=U_1$. Integration by parts in the highest term $\chi C_3*U$ produces
+\[
+\nabla(|U_1|^{p-2}U_1)*\chi C_2*U,\quad
+|U_1|^{p-2}U_1*C_1*C_2*U,\quad
+|U_1|^{p-2}U_1*\chi C_2*U_1.
+\]
+The first two use $|U|\le K$, the dissipation, and same-exponent Young inequalities. The third is precisely
+\eqref{eq:signed-hessian}, not a potential requiring $\|C_2\|_\infty$.
+At the same time, $\partial_tC_2=-(\partial_t\Gamma)*C_1$, with
+$|\partial_t\Gamma|\le C|U_1|$. Metric and volume variation contribute only bounded coefficients $|U|$.
+Once the independent seed $T_0\in L^p$ is established, we obtain
+\begin{equation}\label{eq:first-coupled-energy}
+\frac d{dt}\bigl(\|U_1\|_p^p+\|C_2\|_p^p\bigr)
++c\mathcal D_{1,p}
+\le C_p\bigl(1+\|T_0\|_p^p+\|U_1\|_p^p+\|C_2\|_p^p\bigr).
+\end{equation}
+These are constants for the \emph{given datum} on a positive-time interval. This base argument does not insert higher initial cutoff derivatives into the preceding sequence-uniform Moser constants.
+
+\subsubsection{A same-exponent estimate for the higher-order remainder}\label{sec:jet-same-exponent}
+For $m\ge2$, there is also a direct treatment that does not move a second derivative.
+Fix a finite $p\ge2$, and put $Y=U_m$, $Z=C_{m+1}$.
+The remainder after integrating the highest jet by parts is
+\[
+I_m=\int\chi|Z|\,|U_1|\,|Y|^{p-1}
+\le\|\chi|Y|^{p/2}\|_4\|Z\|_p\|U_1\|_4
+\|Y\|_p^{p/2-1}.
+\]
+The four reciprocal H\"older exponents are
+$1/4,1/p,1/4,1/2-1/p$, summing to one; for $p=2$ the last factor is interpreted as one.
+On a positive-time interval for the given datum, the finite Sobolev constant $S_\tau$ gives
+\[
+\|\chi|Y|^{p/2}\|_4^2
+\le C_pS_\tau\bigl(\mathcal D_{m,p}+
+(1+\|C_1\|_\infty^2)\|Y\|_p^p\bigr).
+\]
+Young's inequality yields
+\begin{equation}\label{eq:same-exponent-residual}
+I_m\le\epsilon\mathcal D_{m,p}
++C_{m,p,\tau}\bigl(\|Z\|_p^p+\|Y\|_p^p\bigr).
+\end{equation}
+The bound $U_1\in L^4$ comes from the completed base level.
+The current-order $Z$ stays in $L^p$: no current-order assumption $C_{m+1}\in L^{2p}$ is needed,
+so estimating $p$ does not first require estimating $2p$ at the same order. Direct current Hessian terms still use
+\eqref{eq:signed-hessian}. The finitely many lower-order factors may be assigned larger finite exponents;
+that is different from raising the exponent of a current-order unknown.
+
+The evolution of the cutoff jets follows from the fixed scalar $\chi$ and \eqref{eq:shift-contract}:
+\[
+\partial_tC_{m+1}
+=\sum_{q=0}^{m-1}\nabla^q(\partial_t\Gamma)*\nabla^{m-q}\chi,
+\qquad \partial_t\Gamma=g^{-1}*\nabla V.
+\]
+The only highest same-order term is $U_m*C_1$. If the remaining commutators and products are controlled by lower-order finite-$L^q$ bounds, set
+\[
+\mathcal X_{m,p}=(\varepsilon+\|U_m\|_p^p)^{2/p},\qquad
+\mathcal Z_{m+1,p}=(\varepsilon+\|C_{m+1}\|_p^p)^{2/p},
+\]
+The same-exponent pairing above gives
+\[
+\mathcal X_{m,p}'+c(\varepsilon+\|U_m\|_p^p)^{2/p-1}\mathcal D_{m,p}
+\le C_{m,p}(1+\mathcal X_{m,p}+\mathcal Z_{m+1,p}),\qquad
+\mathcal Z_{m+1,p}'\le C_{m,p}(1+\mathcal X_{m,p}+\mathcal Z_{m+1,p}).
+\]
+Add the inequalities and apply Gronwall. One finite exponent allocation places each of two squared lower-order factors in $L^{4p}$ and each of at most four ordinary lower-order factors in $L^{8p}$, while retaining the same exponent $p$ for $U_m,C_{m+1}$. This provides sufficient estimates at every fixed order without an infinitely ascending same-order exponent dependency.
+
+The unweighted $T_m$ must be treated after this same-order pair. Integrating the highest term
+$\chi C_{m+2}*T$ by parts produces
+\[
+\int|C_{m+1}|^2|T|^2|T_m|^{p-2},\qquad
+\int|U_m||T||T_m|^{p-1},
+\]
+These require $C_{m+1},T\in L^{4p}$ and $U_m,T\in L^{2p}$, respectively.
+At order zero, $|U|\le K$, metric comparison, and one integration by parts give
+\[
+\frac d{dt}\int|T|^p+c_p\int a|\nabla T|^2|T|^{p-2}
+\le C_p\int|T|^p.
+\]
+Thus the admissible base order is
+$U\in L^\infty,\ T\in L^q,\ C_1\in L^\infty$,
+first estimate $(U_1,C_2)$, then $T_1$, use Sobolev on the fixed support to obtain the required zeroth-order control, and proceed to higher orders.
+At no point is $T$ recovered as $U/a$ near the zero set.
+More explicitly, after $(U_1,C_2)$ is controlled, the highest terms for $T_1$ leave only contractions of the types
+$\chi C_2*T_0*\nabla T_1$ and $\chi C_2*T_1$, together with known forcing.
+Use the already established $C_2,T_0\in L^{2p}$ for the former and
+\eqref{eq:signed-hessian} for the latter to obtain $T_1\in L^p$.
+Only then, choosing $p>4$ on each fixed closed manifold, does the finite Sobolev constant give
+$T_0\in L^\infty$. This supports subsequent positive-time continuation; it cannot be inserted retrospectively into the hypotheses of the first coupled level.
+
+\subsection{A fixed background connection and conditional smooth restart}
+At a positive time $\tau$, fix $\bar\nabla=\nabla^{g(\tau)}$ and put
+$\mathscr A=\nabla^{g(t)}-\bar\nabla$. If the preceding same-order pair and unweighted curvature estimates hold on
+$[\tau,T)$ at every required finite order and exponent, then
+\begin{equation}\label{eq:background}
+\partial_t\bar\nabla^m\mathscr A
+=g^{-1}*U_{m+1}
++\mathcal P_m(\mathscr A,\ldots,\bar\nabla^{m-1}\mathscr A;
+U_0,\ldots,U_m;g^{-1}).
+\end{equation}
+Start from
+$\partial_t\mathscr A=\tfrac12g^{-1}*(\nabla h+\nabla h-\nabla h)$,
+$h=-2\Ric(U)$.
+Using $\bar\nabla Z=\nabla Z+\mathscr A*Z$, expand
+$\bar\nabla^m\nabla U$ order by order. Its highest term is $\nabla^{m+1}U$;
+in the remaining terms the highest background derivative of $\mathscr A$ is at most $m-1$.
+The same is true for $\bar\nabla^mg^{-1}$ because
+$\bar\nabla g=\mathscr A*g$. Thus \eqref{eq:background} contains no hidden current-order background-connection coefficient.
+
+First integrate the $U_1$ bound to control $\mathscr A$, then integrate successively to bound
+$\bar\nabla^m\mathscr A$ in finite $L^p$ spaces.
+The identity $\bar\nabla g=\mathscr A*g$ and fixed-background Sobolev estimates bound all required fixed-coordinate derivatives of the metric and its inverse.
+Applying the same conversion to the velocity makes $g(t)$ Cauchy in each $C^m$ norm, producing a smooth positive-definite terminal metric.
+These bounds are datum-dependent: their constants may depend on higher initial derivatives and the cutoff, and are not automatically uniform along a collapsing sequence.
+
+The restart equation must transport the coefficient correctly. For a background metric $s$, define
+\[
+W(\widehat g,s)^k=\widehat g^{pq}
+(\Gamma(\widehat g)^k{}_{pq}-\Gamma(s)^k{}_{pq}),
+\]
+and use
+\[
+\partial_t\widehat g
+=-2\widehat a(\Ric(\widehat g)+\widehat g)
++\mathcal L_{\widehat aW}\widehat g,\quad
+\partial_t\phi\circ\phi^{-1}=-\widehat aW,\quad
+\widehat a=a\circ\phi^{-1}.
+\]
+Equivalently, $\partial_t\widehat a=(\widehat aW)\cdot\nabla\widehat a$.
+After pulling back $g=\phi^*\widehat g$, the Lie terms cancel, and both the Ricci and normalization terms recover the fixed coefficient $a$.
+The system is still not uniformly parabolic where $a=0$.
+Restarting from the terminal metric requires local existence for this degenerate system and the correct gauge pullback.
+A restart at an earlier time that identifies solutions on an overlap additionally requires gauge-compatible uniqueness;
+the smooth endpoint splice below does not use that uniqueness.
+
+\subsubsection{Double regularization for datum-wise existence and high--low derivative allocation}\label{sec:tame-start}
+Local existence can be studied on a fixed smooth background $\bar g$. Write $D=\nabla^{\bar g}$,
+and let $\beta$ denote the transported $\chi$, so $\widehat a=\beta^2$.
+Let $\mathscr R$ be the zeroth-order term from background curvature and $\mathscr Q$ the term quadratic in
+$D\widehat g$, so that the usual Ricci--DeTurck expression is
+$\widehat g^{-1}D^2\widehat g+\mathscr R+\mathscr Q$.
+A concrete approximating system is
+\begin{align}
+\partial_t\widehat g
+&=(\beta^2+\epsilon)
+ \bigl(\widehat g^{-1}D^2\widehat g+\mathscr R+\mathscr Q\bigr)
+-2\beta^2\widehat g
++2\operatorname{sym}\bigl(d(\beta^2)\otimes W^\flat\bigr),\notag\\
+\partial_t\beta
+&=\beta^2W\cdot D\beta+\nu\Delta_{\bar g}\beta,
+\qquad 0<\epsilon,\nu\le1.\label{eq:double-regularized-start}
+\end{align}
+For fixed positive parameters, the second-order principal blocks are
+$(\beta^2+\epsilon)\widehat g^{ab}\xi_a\xi_b$ and
+$\nu\bar g^{ab}\xi_a\xi_b$, so this is an ordinary strongly parabolic system.
+The scalar maximum principle preserves $0\le\beta\le1$.
+The construction temporarily allows the exterior region to evolve, and is used only for existence from a fixed smooth datum.
+Sequence-uniform estimates on the exact support must be applied separately after the parameters vanish.
+
+To pass to zero in both parameters, the estimates must contain neither $\epsilon^{-1}$ nor $\nu^{-1}$.
+In dimension four, fix an integer $s_0\ge7$. Under
+\[
+\lambda\bar g\le\widehat g\le\lambda^{-1}\bar g,
+\qquad \|\widehat g\|_{H^{s_0}}+\|\beta\|_{H^{s_0}}\le R_0
+\]
+the lower norm controls $W^{4,\infty}$. For $m\ge s_0$,
+a typical remainder monomial is $\prod_{\ell=1}^N D^{q_\ell}v_\ell$, where
+$q_\ell\le m$, $\sum q_\ell\le m+2$, and each $v_\ell$ is
+$\widehat g,\beta$, or a controlled smooth combination of them.
+For $q_\ell>4$, put $\theta_\ell=(q_\ell-4)/(m-4)$.
+Gagliardo--Nirenberg interpolation gives
+\[
+\|D^{q_\ell}v_\ell\|_{2/\theta_\ell}
+\le C_{m,R_0}\bigl(1+\|v_\ell\|_{H^m}^{\theta_\ell}\bigr).
+\]
+If there are at least two high-order factors, then
+$\sum(q_\ell-4)\le m+2-8<m-4$; with only one such factor,
+$\theta_\ell\le1$. Place the remaining factors in $L^\infty$. H\"older and
+$x^\theta\le1+x$ give
+\begin{equation}\label{eq:tame-remainder}
+\left\|\prod_{\ell=1}^ND^{q_\ell}v_\ell\right\|_2
+\le C_{m,R_0}\bigl(1+\|\widehat g\|_{H^m}+\|\beta\|_{H^m}\bigr).
+\end{equation}
+The high derivatives enter linearly on the right. Arbitrarily high coefficient derivatives are not claimed to be controlled by a fixed
+$H^{s_0}$ norm.
+
+The order-$m+1$ factors not covered by \eqref{eq:tame-remainder} require separate treatment.
+The principal coefficient $B=(\beta^2+\epsilon)\widehat g^{-1}$ satisfies
+\[
+DB=2\beta D\beta\,\widehat g^{-1}
++(\beta^2+\epsilon)D\widehat g^{-1}.
+\]
+Thus first-coefficient-derivative commutators in the principal part are absorbed by weighted dissipation using
+$\beta^2/(\beta^2+\epsilon)\le1$.
+In the Lie cross term, putting every derivative on $d(\beta^2)$ gives the unique highest term
+$2\beta D^{m+1}\beta*W$. Pair with $D^m\widehat g$ and move one derivative to obtain
+\[
+-\int\beta D^{m+1}\widehat g*D^m\beta*W
+-\int D\beta*D^m\widehat g*D^m\beta*W
+-\int\beta D^m\widehat g*D^m\beta*DW.
+\]
+The first uses the same weighted Young estimate; the other two have controlled lower-order coefficients.
+In the transport equation, integrate $\beta^2W\cdot D(D^m\beta)$ in divergence form first.
+The highest part of $D^mW$ contains $D^{m+1}\widehat g$, and
+$\beta^4/(\beta^2+\epsilon)\le1$ again supplies the required dissipation factor.
+The term $\nu\Delta_{\bar g}$ contributes positive scalar dissipation; its inverse coefficient is not needed to estimate these cross terms.
+
+For these principal terms and \eqref{eq:tame-remainder}, the required higher-order energy estimate is
+\begin{equation}\label{eq:tame-start-energy}
+\mathscr E_m'+c_m\mathscr D_m
+\le C_{m,R_0,\lambda}(1+\mathscr E_m),\qquad
+\begin{cases}
+\mathscr E_m=\|\widehat g\|_{H^m}^2+b_m\|\beta\|_{H^m}^2,\\
+\mathscr D_m=\sum_{j\le m}\int(\beta^2+\epsilon)|D^{j+1}\widehat g|^2
++\nu\|D^{m+1}\beta\|_2^2,
+\end{cases}
+\end{equation}
+where $b_m>0$ can be fixed at each order. If these uniform estimates are established for the full coordinate system,
+the first-exit argument at $m=s_0$ gives a datum-dependent time, and Gronwall can then be applied at successive orders on that same interval.
+Bounds for all spatial derivatives let the equation control each finite time derivative as well;
+a diagonal subsequence in the two parameters then gives a smooth limit.
+The extra terms $\epsilon(\widehat g^{-1}D^2\widehat g+\mathscr R+\mathscr Q)$
+and $\nu\Delta_{\bar g}\beta$ vanish in the limit.
+Pulling back along $-\beta^2W$ gives $\phi^*\beta=\chi$ and restores the fixed coefficient in \eqref{eq:cutflow}.
+
+This construction specifies the estimates needed for datum-wise local existence and their role.
+Its background Sobolev constant, $R_0$, and initial higher cutoff derivatives may depend on the individual datum;
+it does not by itself give a family-uniform time. Finite derivative-allocation checks verify the exponents in
+\eqref{eq:tame-remainder}, but do not replace \eqref{eq:tame-start-energy} for the full coupled system,
+the parameter limit, or the gauge pullback.
+
+\subsubsection{Why the ungauged difference energy does not prove the required uniqueness}\label{sec:ungauged-restart}
+Let $\mathcal F(g)=-2a(\Ric_g+g)$. In a flat frame on a plateau where $a=1$,
+the second-order principal symbol of its linearization is
+\[
+\sigma_\xi(D\mathcal F)h_{ij}
+=-|\xi|^2h_{ij}-\xi_i\xi_j\tr h
+ +\xi_i\xi^kh_{kj}+\xi_j\xi^kh_{ki}.
+\]
+Take $\xi=e_1$, $h=\operatorname{diag}(1,-\zeta,0,0)$, and $0<\zeta<1$.
+Then $\sigma_\xi(D\mathcal F)h=\operatorname{diag}(\zeta,\zeta,0,0)$, so
+\[
+\langle\sigma_\xi(D\mathcal F)h,h\rangle=\zeta-\zeta^2>0.
+\]
+At frequency $k$, this term grows like $k^2$.
+Thus treating $\nabla\operatorname{div}h$ and $\nabla^2\tr h$ as lower order
+and deriving Gronwall uniqueness from the bare $L^2$ difference energy lacks principal-symbol coercivity.
+This disproves that energy argument, not uniqueness of the geometric equation itself.
+
+\subsubsection{Direct splicing at a smooth endpoint}\label{sec:smooth-terminal-splice}
+Assume continuation estimates at every finite order hold on $[\tau,T_*)$ for the same solution.
+For each $s$, sufficiently high curvature and connection estimates give
+\[
+\sup_{\tau\le t<T_*}
+\bigl(\|g(t)\|_{H^s(\bar g)}+\|\partial_tg(t)\|_{H^s(\bar g)}\bigr)<\infty.
+\]
+The second term makes $g(t)$ Cauchy in every $H^s$, hence $g(t)\to g_*$ in $C^\infty$.
+Integrable metric drift makes $g_*$ positive definite. This requires finite-order estimates whose order increases with $s$,
+not a single fixed $H^7$ bound implying all smoothness at once.
+
+Recursively define differential operators on finite spatial jets by
+\[
+\mathcal F_1=\mathcal F,\qquad
+\mathcal F_{\ell+1}(g)=D\mathcal F_\ell(g)[\mathcal F(g)].
+\]
+The autonomous equation gives
+\begin{equation}\label{eq:time-jet-splice}
+\lim_{t\uparrow T_*}\partial_t^\ell g(t)=\mathcal F_\ell(g_*)
+\quad\text{in }C^\infty,\qquad \ell\ge1.
+\end{equation}
+If datum-wise local existence produces any smooth solution $g^+(u)$ from $g_*$, its initial time derivatives also equal
+$\mathcal F_\ell(g_*)$. Join the old solution for $t<T_*$ to
+$g^+(t-T_*)$ for $t\ge T_*$. Every space-time derivative matches at the junction, producing a smooth extension.
+The splice is made only at the endpoint; no comparison of branches before $T_*$ is required.
+
+This also fixes the quantifiers in the common-time argument. Each initial datum only needs a positive starting time;
+sequence-uniform first-cutoff, Moser, and drift bounds prevent budget exhaustion before $\theta r^2$.
+If a maximally extendible smooth branch nevertheless ended at $T_*<\theta r^2$,
+then $\|U\|_\infty\le C\gamma_0/T_*$ would be finite on $[T_*/2,T_*)$,
+and datum-wise higher estimates plus the endpoint splice would extend it, a contradiction.
+Higher-order constants may depend on that datum and on $T_*$; only the lower-order budgets and target time
+$\theta r^2$ must be uniform for the sequence.
+
+\subsection{The common-time problem and terminal recalibration}
+The remaining common-time problem is to establish
+\eqref{eq:tame-start-energy} and the datum-wise smooth limit for the same coupled system, then connect the weak energies,
+first-exit argument, and all positive-time continuation estimates for the exact flow.
+Replacing $a$ by $a+\varepsilon$ evolves the previously stationary region, so the buffer cancellation $a=da=0$ no longer applies directly.
+The double-regularization start allows higher-order bounds depending on a single smooth exterior; it provides no exterior bounds uniform across a degenerating sequence.
+The exact-support, sequence-uniform first-exit argument therefore cannot be run directly on those approximating solutions.
+
+Once these existence conditions hold, the terminal step needs only a global metric on the closed manifold and
+$Q(T)/A\to0$, not transport of every initial spinor.
+In the IL regime $q=D-A/3\ge0$, \eqref{eq:109} gives
+$\int\Phi_*(g(T))\le109Q(T)$; the coarser \eqref{eq:119} gives $119Q(T)$.
+For blow-ups with $k/A<1/3$, the term $864\pi^2Ad$ or $912\pi^2Ad$ must remain.
+Fixed-scale terminal curvature bounds, positive-proportion supports, and average-density transfer then lead to the forbidden Einstein germ.
+Alternatively, one might construct weakly regular patches with these terminal properties directly, without a local flow.
+
+\subsection{From a positive-proportion terminal support to the same small-density development}\label{sec:terminal-liouville}
+We give the terminal step independently. It uses an already existing smooth terminal metric on the closed manifold;
+it does not assume that the common-time problem has been solved.
+
+For the disjoint auxiliary supports, put $Q_j(t)=\int\eta_j^2|E_-|^2d\mu_t$.
+Where $1-\sum_j\eta_j^2$ is nonzero, $a$ vanishes in a neighborhood and both metric and curvature are stationary.
+The exact global decomposition is therefore
+\begin{equation}\label{eq:global-stationary-Q}
+Q_{\rm global}(t)
+=\int_M\left(1-\sum_j\eta_j^2\right)|E_-(0)|^2d\mu_0
++\sum_jQ_j(t).
+\end{equation}
+Integrating the absorbed estimate \eqref{eq:Qenergy} supportwise and summing gives
+$Q_{\rm global}(T)\le e^{C(1+r^{-2})T}Q_{\rm global}(0)$;
+with no growth of the constant in the number of supports. Equation~\eqref{eq:109} then gives, for that same terminal metric,
+\[
+\int_M\Phi_*(g(T))d\mu_T
+\le109Q_{\rm global}(T)
+ +864\pi^2\left(T(M)-\tfrac23A\right)_+.
+\]
+Here $T(M)=2\chi+3\tau$ is the topological number and $T$ is the observation time.
+In the IL regime $D\ge A/3$, the final term is zero. If initially $\Vol/A\le C_V$, then
+\begin{equation}\label{eq:terminal-density-constant}
+\frac1A\int_M\Phi_*(g(T))d\mu_T
+\le436C_V e^{C(1+r^{-2})T}\delta^2.
+\end{equation}
+$C$ comes only from the dimension, fixed support scale, first-derivative cutoff bound, and small-energy absorption threshold listed above.
+This comparison contains no higher cutoff constants. If an actual estimate for $Q_j$ introduces such constants,
+the sequence-uniform form of \eqref{eq:terminal-density-constant} cannot be invoked.
+
+Take the initially selected set $P=\bigcup_jB_r^{g(0)}(p_j)$ and assume
+$\Vol_{g(0)}P\ge c_PA$. Since $g(T)\ge e^{-2\mathcal V_*}g(0)$,
+\[
+\Vol_{g(T)}P\ge e^{-4\mathcal V_*}c_PA.
+\]
+Each $p\in P$ has initial distance at least $4r$ from the exterior of its plateau $B_{5r}^{g(0)}(p_j)$.
+If $\rho e^{\mathcal V_*}<3r$, every radial $g(T)$ geodesic of length at most $\rho$ starting at $p$
+stays in that plateau. There $a=1$, so
+$\|aF(T)\|_\infty\le C\gamma_0/T$ becomes an ordinary curvature bound.
+Shrinking a fixed $\rho$ ensures $|\sec|\le K$ and $\rho\sqrt K<\pi/2$,
+where $K,\rho$ do not depend on the base injectivity radius.
+
+For $p\in P$, pull back the terminal metric to the tangent ball $\mathcal B_\rho(p)=\{|v|_{g(T)}<\rho\}$
+and define
+\[
+\mathcal A_\rho^{\exp}H(p)
+=\frac{\displaystyle\int_{S_pM}\int_0^\rho
+H(\exp_p(tu))j(p,u,t)\,dt\,dS_p(u)}
+{\displaystyle\int_{S_pM}\int_0^\rho j(p,u,t)\,dt\,dS_p(u)},\qquad H\ge0.
+\]
+Set $s_K(t)=\sin(\sqrt Kt)/\sqrt K$ and
+$s_{-K}(t)=\sinh(\sqrt Kt)/\sqrt K$, both interpreted as $t$ when $K=0$.
+Radial Jacobi comparison gives $s_K(t)^3\le j(p,u,t)\le s_{-K}(t)^3$.
+Write $\omega_3=\Vol S^3$ and $dL=d\mu_T(p)dS_p(u)$. The geodesic flow
+$\phi_t:SM\to SM$ preserves Liouville measure, hence
+\begin{align}
+\int_P\mathcal A_\rho^{\exp}H\,d\mu_T
+&\le\frac{\displaystyle\int_0^\rho s_{-K}(t)^3
+\int_{SP}H(\pi\phi_tz)\,dL(z)\,dt}
+{\displaystyle\omega_3\int_0^\rho s_K(t)^3dt}\notag\\
+&\le C_L(K,\rho)\int_MH\,d\mu_T,\qquad
+C_L(K,\rho)=\frac{\int_0^\rho s_{-K}(t)^3dt}
+{\int_0^\rho s_K(t)^3dt}.\label{eq:liouville-average}
+\end{align}
+The second step enlarges $SP$ to $SM$ and uses invariance; nonnegativity justifies the enlargement.
+No uniform Ricci lower bound outside the plateaux is required for the terminal metric,
+nor is a pointwise multiplicity estimate for its exponential maps.
+
+If $\int\Phi_{*,i}=o(A_i)$, then \eqref{eq:liouville-average} and
+$\Vol(P_i)\ge c_0A_i$ select $p_i\in P_i$ such that
+\begin{equation}\label{eq:terminal-selected-mean}
+\mathcal A_\rho^{\exp}\Phi_{*,i}(p_i)
+\le\frac{C_L(K,\rho)}{c_0A_i}\int_{M_i}\Phi_{*,i}\longrightarrow0.
+\end{equation}
+The topological scale $A_i$ cancels in the same inequality, with no threshold loss $A_i^{-1/2}$.
+Mere positivity of $\Vol(P_i)$, without a fixed proportion, would not justify this selection.
+
+Radial geodesics are not identified in the pullback ball, and the Gauss lemma gives distance $|v|$ from the center to $v$.
+The absence of conjugate points and the curvature bound give a fixed central injectivity radius and interior buffer.
+Shrinking to a fixed inner ball produces a uniform harmonic patch. Its volume lower bound and the original pullback-ball volume upper bound depend only on
+$K,\rho$, so \eqref{eq:terminal-selected-mean} also controls the absolute defect integral on that patch.
+Curvature bounds there give Ricci bounds, and the $L^2$-to-strong-$W^{2,p}$ argument of Section~\ref{sec:strong-density-bridge}
+produces the forbidden zero-density Einstein germ.
+This completes the terminal chain of algebraic recalibration, positive-proportion center selection, average transfer, and local contradiction.
+The unresolved input is still the single degenerate flow, or an alternative regularity mechanism, producing these terminal data.
+
+\section{Exact reductions of symmetric collapsed models}\label{app:reduction}
+Every reduction here assumes an actual local isometric group action or a specified homogeneous model. A general collapsing sequence with bounded Ricci curvature does not automatically satisfy these hypotheses.
+
+\subsection{Three-dimensional Nil fibers: signs, a periodic obstruction, and an Einstein cusp}
+In a fixed Heisenberg frame $[X_1,X_2]=X_3$, consider
+\[
+g=dt^2+\sum_{i=1}^3 a_i(t)^2\sigma_i^2,\qquad
+f_i=a_i'/a_i,\quad v=a_1a_2a_3,\quad
+\mu=\frac{a_3^2}{2a_1^2a_2^2}.
+\]
+The intrinsic fiber Ricci components are $(-\mu,-\mu,+\mu)$. The tangential equations for $\Ric_g=-g$ are therefore
+\begin{align*}
+f_1'+f_1(f_1+f_2+f_3)+\mu&=1,\\
+f_2'+f_2(f_1+f_2+f_3)+\mu&=1,\\
+f_3'+f_3(f_1+f_2+f_3)-\mu&=1.
+\end{align*}
+The normal equation is $\sum_i(f_i'+f_i^2)=1$. Put $F_0=\sum_i f_i=v'/v$. Adding the tangential equations gives $F_0'+F_0^2+\mu=3$, while the last gives $f_3'+F_0f_3=1+\mu$. Hence
+\[
+\boxed{v''=(3-\mu)v,}\qquad
+\boxed{(vf_3)'=(1+\mu)v>0.}
+\]
+The sign $-\mu$ in the first identity allows different volume behavior. The second gives a contradiction by periodic integration only when $v,f_3$ are regular periodic data; it does not apply to an interval or singular end without those boundary conditions.
+
+An exact Einstein interval model is
+\[
+a_1=a_2=e^{t/\sqrt6},\qquad
+a_3=\sqrt{2/3}\,e^{2t/\sqrt6}.
+\]
+Here $\mu=1/3$ and $v''/v=8/3$, and the normal equation also holds. This explicitly exhibits a cusp compatible with the negative Einstein equation. The periodic obstruction therefore coexists with cusp existence.
+
+\subsection{Circle reduction removes the fiber period, not the reconstruction problem}
+On a regular domain with a free isometric circle action, write
+\[
+g=q+\ell^2(d\psi+\mathcal A)^2.
+\]
+Fix $p$ and set $y=\ell(p)\psi$, $v=\ell/\ell(p)$, and $\mathcal B=\ell(p)\mathcal A$. On the unwrapped fiber,
+\[
+g=q+v^2(dy+\mathcal B)^2,\qquad v(p)=1.
+\]
+The absolute collapse scale $\ell(p)$ disappears from the local coefficients and remains only in the period $2\pi\ell(p)$. This normalization alone gives neither uniform upper and lower bounds for $v$ on a fixed ball nor an unwrapping on the required buffered domain.
+
+Put $F=d\mathcal A$, $u=d\log\ell$, $Z=\ell F$, $z=*_{q}Z$, and $H=\ell^{-1}\operatorname{Hess}_q\ell=\nabla u+u\otimes u$, with $|z|^2=\sum_{a<b}Z_{ab}^2$. For the exact equation $\Ric_g=-\kappa g$, in a fixed orientation and frame convention, the reduced equations are
+\begin{align*}
+\tr_q H&=\kappa+\tfrac12|z|^2,
+&dz&=-2u\wedge z,&\operatorname{div}_qz&=\langle u,z\rangle,\\
+\Ric^q_{ab}&=-\kappa q_{ab}+H_{ab}
++\tfrac12\sum_cZ_{ac}Z_{bc}.
+\end{align*}
+In particular, four-dimensional Ricci control does not give ordinary two-sided base Ricci bounds: $H$ and the twist term on the right remain uncontrolled.
+
+Use the unit vertical vector $V$ to identify the self-dual and anti-self-dual three-dimensional spaces. The electric Weyl block gives
+\[
+H=\frac{\kappa}{3}I+\frac14(|z|^2I-z\otimes z)
+-\frac12(W^++W^-).
+\]
+Thus calibrating $W^+$ does not control the sign of $H$; $W^-$ can change its smallest eigenvalue. Set further
+\[
+\alpha_+=u-z/2,\qquad \alpha_-=u+z/2.
+\]
+The chiral decomposition is
+\begin{align*}
+W^\pm&=-[\operatorname{sym}\nabla\alpha_\pm+
+\alpha_\pm\otimes\alpha_\pm]_0,\\
+d\alpha_+&=\alpha_+\wedge\alpha_-,\qquad
+d\alpha_-=-\alpha_+\wedge\alpha_-.
+\end{align*}
+The subscript $0$ denotes the trace-free part, and orientation reversal exchanges the signs. Large $u,z$ can cancel in one chiral combination and remain in the other; control of the twist amplitude alone cannot replace control of its derivatives or the base geometry.
+
+The differential relations follow directly from $du=0$ and $dz=-2u\wedge z$. The average of the quadratic tensors satisfies
+\[
+\frac12\sum_{\pm}
+(\operatorname{sym}\nabla\alpha_\pm+\alpha_\pm\otimes\alpha_\pm)
+=H+\tfrac14z\otimes z;
+\]
+Taking the trace-free part using $\tr H=\kappa+|z|^2/2$ recovers the preceding identity for $(W^++W^-)/2$ and fixes the factor $1/4$ in the quadratic twist term.
+
+Without twist, $\operatorname{Spec}(W^+)=\{\kappa/3-\eta_i\}$, where $\eta_i$ are the eigenvalues of $H$. A polar-coordinate circle action on local $\mathbb H^2\times\mathbb H^2$ has $\kappa=1$ and $\operatorname{Spec}(H)=(1,0,0)$, hence $\operatorname{Spec}(W^+)=(-2/3,1/3,1/3)$. This disproves the overstrong assertion that a static constant spectrum must vanish. The actual forbidden spectrum still requires the Einstein-germ rigidity proved above.
+
+These formulas concern exact symmetric domains. Extending them to approximate Einstein metrics requires the corresponding errors and their norms; extending them to general collapse requires actual local actions, covers, or limiting structures. Neither follows from a compatible pointwise jet.
+
+\section{Smoothings of product-quotient surfaces and Einstein existence}\label{sec:product-quotients}
+\subsection{Geometric data of a six-node product quotient}
+Let $G=\Z_4^2$ act on genus-three curves $C_1,C_2$ with branching generating vectors
+\[
+((1,3),(1,0),(2,1)),\qquad ((3,2),(0,1),(1,1)).
+\]
+Each generator has order four, the sum in each vector is zero, and the entries generate $G$. Riemann--Hurwitz gives
+$2g(C_i)-2=16[-2+3(1-1/4)]=4$.
+The diagonal quotient $X=(C_1\times C_2)/G$ has six $A_1$ points.
+Its minimal resolution $S$ has
+\[
+K_S^2=2,\qquad p_g(S)=q(S)=0,\qquad \pi_1(S)=\Z_2^3.
+\]
+The existence proof below uses only the branching representation, the six nodes, and the quasi-\'etale quotient map.
+The fundamental group is not used to identify this surface with other Campedelli surfaces.
+Since $p_g=q=0$, we have $b_+(S)=1$; this is not an IL connected sum with $m=2,3$ as above.
+
+\subsection{The reflexive tangent sheaf and the cohomology comparison}
+Let $Y=C_1\times C_2$ and let $\pi:Y\to X$ be the finite quotient.
+Each nonidentity element has a finite fixed set on either curve, so the nonfree locus of the diagonal action is finite.
+Thus $\pi$ is \'etale in codimension one and $X$ is a normal projective surface.
+Put $T_X^0=\mathcal Hom(\Omega_X^1,\mathcal O_X)$. Then
+\begin{equation}\label{eq:reflexive}
+T_X^0\cong(\pi_*T_Y)^G.
+\end{equation}
+
+The proof combines depth and comparison in codimension one. Let $A$ be a normal local ring of dimension two.
+A finite presentation of a finite $A$-module $M$ expresses $M^\vee$ as the kernel of a map between free modules.
+The image is torsion-free and has depth at least one; normality gives $\operatorname{depth}A=2$,
+so the depth lemma yields $\operatorname{depth}M^\vee\ge2$.
+Together with torsion-freeness this gives $S_2$, hence reflexivity.
+Applied to $\Omega_X^1$, it proves that $T_X^0$ is reflexive.
+
+On the other hand, the local semilocal ring $B$ of $\pi_*\mathcal O_Y$ is finite over $A$.
+A system of parameters of $A$ remains a system of parameters in each maximal localization of $B$.
+Since $Y$ is smooth, it is a regular sequence on the locally free module defining $T_Y$.
+Thus $\pi_*T_Y$ has depth two. In characteristic zero the Reynolds operator
+$|G|^{-1}\sum_{g\in G}g$ is an $A$-linear projection;
+its invariant direct summand inherits torsion-freeness and depth two, so $(\pi_*T_Y)^G$ is reflexive as well.
+On the free-action locus, \'etale descent identifies the two sheaves. Reflexive sheaves on a normal surface are determined by their restriction away from codimension two,
+proving \eqref{eq:reflexive}.
+
+A finite morphism is affine, so $R^j\pi_*T_Y=0$ for $j>0$.
+The Reynolds direct-sum decomposition is compatible with cohomology, giving
+\[
+H^2(X,T_X^0)=H^2(Y,T_Y)^G.
+\]
+Equivariant Serre duality and the K\"unneth decomposition then give
+\begin{equation}\label{eq:qg-obstruction}
+H^2(X,T_X^0)^*\cong
+\bigl[H^0(2K_{C_1})\otimes H^0(K_{C_2})\bigr]^G
+\oplus
+\bigl[H^0(K_{C_1})\otimes H^0(2K_{C_2})\bigr]^G.
+\end{equation}
+The Serre-duality trace pairing is $G$-invariant. Commuting invariants with duality uses complete reducibility of finite-group representations in characteristic zero.
+
+\subsection{Explicit characters and unobstructedness}
+Represent a character by $(a,b)\in\Z_4^2$, meaning
+$(x,y)\mapsto\exp(2\pi i(ax+by)/4)$.
+The character formula for the branching vectors gives
+\[
+\begin{aligned}
+H^0(K_{C_1}) &: (2,3),(3,0),(3,1),\\
+H^0(K_{C_2}) &: (0,3),(1,2),(3,3).
+\end{aligned}
+\]
+Neither curve is hyperelliptic. If the hyperelliptic involution $\iota$ belonged to $G$,
+it would have eight fixed points on a genus-three curve, whereas every order-two element in the given branching data has at most four.
+If $\iota\notin G$, then $G$ injects into $\operatorname{PGL}_2$, whose finite abelian subgroups are cyclic or the Klein four group, not $\Z_4^2$.
+Genus-three canonical multiplication therefore gives
+$H^0(2K_C)\cong\operatorname{Sym}^2H^0(K_C)$.
+Adding characters term by term yields
+\[
+\begin{aligned}
+H^0(2K_{C_1}) &: (0,2),(1,0),(1,3),(2,0),(2,1),(2,2),\\
+H^0(2K_{C_2}) &: (0,1),(0,2),(1,1),(2,0),(2,2),(3,2).
+\end{aligned}
+\]
+For example, $2(2,3)=(0,2)$ and $(2,3)+(3,0)=(1,3)$, with all additions modulo four.
+The first bicanonical character set is disjoint from the negatives of the second curve's canonical characters;
+the second is likewise disjoint from the negatives of the first curve's canonical characters.
+Both invariant spaces in \eqref{eq:qg-obstruction} vanish, hence
+\begin{equation}\label{eq:H2zero}
+H^2(X,T_X^0)=0.
+\end{equation}
+
+\subsection{From local nodes to a negative KE metric on the same smooth manifold}
+Each $A_1$ point has local equation $xy-z^2=0$ and Gorenstein smoothing
+$xy-z^2=\tau$. The local smoothing is unobstructed.
+For these normal projective surfaces, the local-to-global $\mathbb Q$-Gorenstein deformation theorem lifts arbitrary local smoothings globally when
+$H^2(T_X^0)=0$.
+Equivalently, the higher lifting obstructions for the local smoothing parameters vanish.
+Choose the six parameters as $\tau_j(t)=a_jt+O(t^2)$, $a_j\ne0$,
+to obtain an actual analytic one-parameter family, not merely a first-order deformation vector.
+
+Since $\pi$ is unramified in codimension one, $\pi^*K_X=K_Y$.
+The canonical bundles of the two curves of genus greater than one are ample, so their exterior tensor product $K_Y$ is ample.
+Descent of ampleness under a finite morphism makes $K_X$ ample.
+Some relative canonical power of the $\mathbb Q$-Gorenstein family is a line bundle.
+Ampleness on fibers is open, so nearby smooth fibers $X_t$ have ample canonical bundle.
+The Aubin--Yau theorem supplies their negative K\"ahler--Einstein metrics.
+
+Finally, the result must be placed on the specified smooth resolution $S$.
+A one-parameter smoothing of ADE singularities admits a simultaneous resolution after finite base change.
+The resulting family is a proper smooth differentiable family with central fiber $S$ and nonzero fibers isomorphic to $X_t$.
+Ehresmann's theorem gives $S\cong_{\rm diff}X_t$, so pulling back the KE metric yields
+an Einstein metric on $S$.
+Locally, the $A_1$ Milnor fiber is also diffeomorphic to the disk bundle of Euler number $-2$,
+but local identifications alone require tracking the boundary gluings. Simultaneous resolution supplies global compatibility of the markings.
+This argument depends on ADE type; it does not identify smoothing fibers with minimal resolutions for arbitrary quotient singularities.
+
+
+\subsection{Lefschetz characters and product-quotient calculations}
+For general product-quotient surfaces, use the holomorphic Lefschetz formula. This avoids misapplying the special identity $H^0(2K)=\operatorname{Sym}^2H^0(K)$ to hyperelliptic curves and does not require decomposing every irreducible representation of a nonabelian group first.
+
+For a nonidentity automorphism $u$ of a curve $C$ of genus $g\ge2$, let $\lambda_p$ be the tangent multiplier at a fixed point $p$. With the same pullback convention on both curves,
+\begin{align*}
+\chi_{1,C}(u)&:=\tr(u\mid H^0(K_C))
+=1+\sum_{p\in\operatorname{Fix}(u)}\frac{\lambda_p}{1-\lambda_p},\\
+\chi_{2,C}(u)&:=\tr(u\mid H^0(2K_C))
+=\sum_{p\in\operatorname{Fix}(u)}\frac{\lambda_p^2}{1-\lambda_p}.
+\end{align*}
+The term one in the first formula comes from $H^1(K_C)\cong H^0(\mathcal O_C)^*$; the second uses $H^1(2K_C)=0$. At the identity, use $\chi_{1,C}(1)=g$ and $\chi_{2,C}(1)=3g-3$ rather than the fixed-point denominator formula.
+
+For a branching generator $e_i$ and stabilizer $H_i=\langle e_i\rangle$, the coset $aH_i$ contributes a fixed point of $u$ exactly when $a^{-1}ua=e_i^k\ne1$; the local multiplier is determined by $k/|e_i|$. Reversing the exponent convention consistently dualizes both curve representations and leaves invariant dimensions unchanged. The required dual obstruction dimensions are the group averages
+\begin{align*}
+d_{21}&=\frac1{|G|}\sum_{u\in G}\chi_{2,C_1}(u)\chi_{1,C_2}(u),\\
+d_{12}&=\frac1{|G|}\sum_{u\in G}\chi_{1,C_1}(u)\chi_{2,C_2}(u),\qquad
+d=d_{21}+d_{12}.
+\end{align*}
+The calculation must check group and branching orders, generation, the source's left-multiplication relations, Riemann--Hurwitz genera, $H^0(K)^G=0$ for the quotient curves, both multiplier conventions, and the final near-integer values. Numerical averaging identifies candidate integers; exact dimensions require character identities or cyclotomic-field arithmetic.
+
+The table lists group-average values for twenty branching data sets, ordered by BCGP section number. The genera follow the two branching vectors displayed in each section; in some rows this reverses the curve order of the original master table. Other, unexamined $K^2=2$ rows are not included.
+\begin{longtable}{@{}lclcrrr@{}}
+\toprule Source section & $K^2$ & $G$ & $(g_1,g_2)$ & $d_{21}$ & $d_{12}$ & $d$\\\midrule\endhead
+6.7 & 2 & $\Z_4^2$ & $(3,3)$ & 0 & 0 & 0\\
+6.9 & 4 & $\mathfrak S_5$ & $(4,21)$ & 1 & 1 & 2\\
+6.10 & 4 & $\mathfrak A_5$ & $(11,4)$ & 2 & 1 & 3\\
+6.11 & 4 & $\mathfrak S_4\times\Z_2$ & $(13,3)$ & 2 & 1 & 3\\
+6.12 & 4 & $\mathfrak S_4\times\Z_2$ & $(13,3)$ & 3 & 1 & 4\\
+6.13 & 4 & $\Z_2^4\rtimes\Z_2$ & $(5,5)$ & 2 & 2 & 4\\
+6.14 & 4 & $\mathfrak S_4$ & $(7,3)$ & 3 & 1 & 4\\
+6.15 & 4 & $\mathfrak S_3\times\Z_3$ & $(4,4)$ & 2 & 1 & 3\\
+6.16 & 4 & $\Z_3^2\rtimes\Z_2$ & $(4,4)$ & 2 & 2 & 4\\
+6.17 & 4 & $D_4\times\Z_2$ & $(5,3)$ & 3 & 2 & 5\\
+6.18 & 4 & $\Z_4\times\Z_2$ & $(3,3)$ & 2 & 2 & 4\\
+6.19 & 4 & $\Z_2^3$ & $(3,3)$ & 3 & 3 & 6\\
+6.20 & 6 & $\mathfrak A_6$ & $(19,16)$ & 2 & 2 & 4\\
+6.21 & 6 & $\mathfrak A_6$ & $(19,16)$ & 2 & 2 & 4\\
+6.22 & 6 & $\mathfrak S_5\times\Z_2$ & $(11,19)$ & 2 & 2 & 4\\
+6.23 & 6 & $\operatorname{PSL}(2,7)$ & $(19,8)$ & 2 & 2 & 4\\
+6.24 & 6 & $\operatorname{PSL}(2,7)$ & $(19,8)$ & 2 & 2 & 4\\
+6.25 & 6 & $\mathfrak A_5$ & $(16,4)$ & 3 & 2 & 5\\
+6.26 & 6 & $\mathfrak S_4\times\Z_2$ & $(19,3)$ & 4 & 2 & 6\\
+6.27 & 6 & $D_4\times\Z_2$ & $(7,3)$ & 4 & 3 & 7\\\bottomrule
+\end{longtable}
+The explicit characters above independently verify row~6.7. Exact computation in $\mathbb Q(\zeta_{60})$ gives $d_{21}=d_{12}=1$ for row~6.9; its 240 candidate point pairs form four node orbits of size sixty. Its local-to-global boundary map therefore has the form
+\[
+\beta:\mathbb C^4\longrightarrow H^2(X,T_X^0),\qquad
+\dim H^2(X,T_X^0)=2,\quad \dim\ker\beta\ge2.
+\]
+This dimension bound does not guarantee a kernel vector with all four coordinates nonzero. The actual boundary map, or its dual residue/evaluation map, is needed, together with higher-order lifting. The source branching representation divides the four nodes into two pairs; the deck group before quotienting does not by itself give a transitive symmetry on the quotient nodes.
+
+Apart from the explicit character proof for row~6.7 and exact cyclotomic computation for row~6.9, the entries are numerical values. More importantly, $d>0$ only means that the sufficient condition $H^2(T_X^0)=0$ is unavailable. It proves neither failure of simultaneous smoothing of all nodes, nor nonexistence of other complex structures, nor nonexistence of non-K\"ahler Einstein metrics. These twenty entries are not a classification of the entire BCGP table.
+
+
+The character, group-average, and node-orbit calculations are recorded in
+\path{../references/computations.md} under
+\path{step50_z4x4_character_smoothing_test.py},
+\path{step51_reflexive_bridge_verify.py},
+\path{step52_lefschetz_obstruction_dimensions.py}, and
+\path{step53_s69_nodes_exact_boundary.py}. Branching data and outputs appear in
+\path{../references/experiments.md} under the same basenames.
+
+\subsection{Related limits and deformation problems}\label{sec:related-tools}
+The companion manuscripts \path{20260910.tex} and \path{20260912.tex} provide broader geometric context. The following topics directly concern the curvature defects and smoothing mechanisms considered here.
+\begin{itemize}
+\item \path{20260910.tex} treats the sign branches, four-dimensional Hitchin--Thorpe compatibility, the LeBrun and IL settings, and existence and counterexample questions in different dimensions.
+\item Chapter~1 of \path{20260912.tex} contains the strict Hitchin--Thorpe budget, the classical existence reduction for the complex/symplectic positive branch, explicit SW pinching obstructions, finite-cover and entropy approaches, and the distinction between necessary degeneration at fixed and varying topology. Results assuming full-curvature bounds, diameter bounds, noncollapse, or Bach-flatness retain those hypotheses.
+\item Chapter~5 studies the specific rational blowdown $W_{4,1}$, with $\chi=47$, $\tau=-31$, $b_+=7$, and $K^2=1$. Exact negative Einstein, volume approaching $2\pi^2$, and bounded diameter are \emph{joint special hypotheses}. Its volume defect $d=\Vol-2\pi^2$ is not $\delta_-$; that exact sequence cannot be identified with a general approximate Einstein sequence.
+\item Its SW saturation identity, four-term defect decomposition, closed calibration form $\Omega=(1+q)\omega-b\wedge c$, Hodge correction, and half-Weyl estimates provide tools for upgrading integral near equality to geometric structure. Control of a single positive class does not control the entire Hodge positive plane, and first-order closure of the half-Weyl equation does not extend automatically to all higher orders.
+\item Holomorphic sections of $H^0(\Omega^1\otimes K)$, low Dirac spectral gaps, Dolbeault/Kuranishi theory, Lorentz spaces and bubble trees, exterior Green--Jacobi terms, bicanonical residues, and local KE fluxes must each retain their objects and scales. Formal deformations, actual integrable deformations, and $\mathbb Q$-Gorenstein smoothings are distinct interfaces.
+\item The chapter's conditional volume--diameter gap still requires classification of all possible limits and injectivity of the corresponding finite-point evaluation maps. It is not unconditional without both inputs. Known quintic-surface KE degenerations show that fixed topology and SW saturation alone do not bound diameter.
+\end{itemize}
+These questions distinguish existence, uniform rigidity, quantitative degeneration, and counterexample construction. In every case the curvature estimates, topological obstructions, and deformation constructions must concern the same smooth object.
+
+\subsubsection{Saturation on a fixed KE exterior and a four-term volume identity}\label{sec:fixed-KE-tools}
+The fixed-exterior assumption has a concrete role in the ordinary-monopole identification of \path{20260912.tex}, Proposition~\texttt{GAU:ordinary}. There, $N$ is simply connected, $K^2=1$, and $\pm K$ are ordinary monopole classes. A constant-scalar-curvature sequence has $s=-4$, $V_j\to2\pi^2$, and smooth local convergence to a specified negative KE orbifold away from its Wahl point. Its compact core $C$ must satisfy
+\[
+H^2(N;\mathbb R)\xrightarrow{\cong}H^2(C;\mathbb R),
+\qquad K|_C=[\omega_0/(2\pi)].
+\]
+For the real curvatures $f_{a,j}$ and $f_{K,j}$ of SW solutions in classes $a$ and $K$, the estimates give $\|f_{a,j}^-\|_2=O_a(1)$ and $\|f_{K,j}^-\|_2\to0$. The intersection pairing and $|f_{a,j}^+|,|f_{K,j}^+|\le\sqrt2$ then give $|a\cdot K|\le1$. Characteristic-class parity makes this an odd integer. After choosing the sign, saturation gives the same limiting parallel spinor quadratic form on the fixed exterior.
+One must still identify the full curvature, not only its self-dual part. On a fixed contractible regular ball, abelian Coulomb compactness gives weak $L^2$ limits of the curvatures. Expressing the local Spin$^c$ structure as a twist of the canonical structure, the nonzero parallel spinor identifies its determinant curvature with the canonical curvature; its quadratic-form direction fixes the sign. Thus $f_{a,j}-f_{K,j}\rightharpoonup0$ in $L^2_{\rm loc}$. Pairing with compactly supported closed two-forms gives $(a-K)|_C=0$. The core isomorphism and torsion-freeness then give $a=K$ as an integral class. Neither the numerical Yamabe invariant nor the formal dimension of a class replaces this exterior and cohomological input.
+
+The corresponding volume accounting can be stated independently. Assume $s_g=-4$, $K^2=1$, and let $\alpha$ be the harmonic representative of $2\pi K$. Suppose $\psi=\alpha^+$ has no zeros and induces an almost-complex structure with canonical class $K$. With $u=|\psi|_g/\sqrt2$ and $\widehat g=ug$, the identity of \texttt{GAU:four-term} is
+\begin{equation}\label{eq:fixed-KE-four-term}
+V-2\pi^2=\|u-1\|_2^2+3\|d\sqrt u\|_2^2
++\frac14\int|\widehat\nabla\psi|_{\widehat g}^2d\mu_{\widehat g}
++\frac12\|\alpha^-\|_2^2.
+\end{equation}
+To check the coefficients, write $U_j=\int u^j$, $H=\|d\sqrt u\|_2^2$, $R=\|\alpha^-\|_2^2$, and $\widehat T=\int|\widehat\nabla\psi|^2d\mu_{\widehat g}$. The intersection form gives $2U_2-R=4\pi^2$. The almost-K\"ahler canonical-connection identity and the conformal scalar formula give
+$6H-4U_1+\widehat T/2=-4U_2$.
+Substituting these two relations into $\|u-1\|_2^2=U_2-2U_1+V$ proves \eqref{eq:fixed-KE-four-term}. The anti-self-dual term cannot be dropped: $\psi$ need not represent the entire class $2\pi K$.
+
+Under the additional exact Einstein compactness hypotheses of that chapter, put $d_j=V_j-2\pi^2$ and $s_j=\sqrt{d_j}$, normalize the lowest eigenform by $|\omega_j|^2=2$, and write the Weyl eigenvalues as
+$(-2/3-q_j,\,1/3+q_j/2-b_j,\,1/3+q_j/2+b_j)$.
+The resulting first-order ratios are
+\begin{equation}\label{eq:fixed-KE-ratios}
+\frac{\int b_j^2}{d_j}\to\frac12,\qquad
+\frac{\int|\nabla W_j^+|^2}{d_j}\to10,\qquad
+\frac{\int|\nabla\omega_j|^2}{d_j}\to4,\qquad
+\frac{\int|d\omega_j|^2}{d_j}\to0.
+\end{equation}
+These compatible positive energies constrain matching terms; they do not themselves give a contradiction. Their derivation uses global half-Weyl control and the four-term identity, not merely small Ricci residual.
+
+\subsubsection{Critical bundle estimates and the endpoint needed for deformation theory}\label{sec:critical-bundle-tools}
+The useful bundle-gradient estimate in \texttt{GAU:bundle-gradient} assumes a fixed Sobolev bound, bounded Ricci curvature, and a bounded unitary-bundle curvature $F^E$. For $\nabla^*\nabla u=H$ it gives
+\[
+\|\nabla u\|_\infty\le C(S,K_R,K_F)
+\bigl(\|\nabla u\|_2+\|H\|_\infty+K_F\|u\|_\infty\bigr).
+\]
+Its mechanism is the first commutation written as
+$\nabla^*\nabla(\nabla u)=\nabla^*T+A\nabla u$, with
+$|T|\le C(|H|+K_F|u|)$ and $A$ bounded. Derivatives of the source and bundle curvature stay inside a divergence; the test argument then needs no new full-Riemann-curvature bound. This is a first-derivative statement, not an unrestricted higher-commutator estimate.
+
+On a fixed complete finite noncollapsed Einstein bubble tree, a block estimate $|\nabla^2J_j|\le Cs_j/r$ costs $C_ps_j^pr^{4-p}$ in $p$-energy at physical scale $r$. Summing the actual cumulative node scales and dyadic neck scales gives
+\begin{equation}\label{eq:bubble-critical-interface}
+\|\nabla^2J_j\|_{L^p}\le C_ps_j\quad(1\le p<4),\qquad
+\|\nabla^2J_j\|_{L^{4,\infty}}\le Cs_j.
+\end{equation}
+At $p=4$ the same calculation permits a logarithm of each parent-to-child physical scale ratio. It does not give strong $L^{4,1}$ control. The constants depend on the fixed finite tree and models, as specified in \texttt{GAU:Hessian-critical}.
+
+This distinction matters for the fixed-orbifold Lorentz--Kuranishi construction: it uses
+$\mathcal B=W^{1,(4,1)}$, $\mathcal Y=L^{4,1}$, the embedding $\mathcal B\hookrightarrow C^0$, and the bounded operator $\bar\partial^*G_2:\mathcal Y\to\mathcal B$.
+The retraction estimate
+$\|\mu-\nu\|_{\mathcal B}\le C\|\bar\partial\mu+[\mu,\mu]/2\|_{\mathcal Y}$
+with integrable $\nu$ requires vanishing of the actual smooth Dolbeault obstruction for every Artin small extension. A selected obstructed Wahl smoothing parameter does not supply this assumption, and weak $L^4$ does not supply the required Lorentz endpoint. Likewise the low-power canonical Dirac gap for $m=1,2$ requires $H^{0,1}(K_X^m)=0$ on the specified limit and nonconcentration of normalized spinors; its constant is limit-dependent. The associated approximate multiplication error is of order $s_j$, not automatically $s_j^2$.
+
+\subsubsection{Net flux, bubble periods, and the remaining evaluation condition}\label{sec:period-evaluation-tools}
+An exterior Green--Jacobi response, a bicanonical residue, and a local KE reference expansion are different terms in a matching problem. In \texttt{GAU:net-flux}, a genuine local third-order preimage $h_6$ gives, against a TT $L^2$ Jacobi field $o$ on every finite bubble domain,
+\begin{equation}\label{eq:KE-net-flux-interface}
+0=\int_{B_R}\langle\mathbf S_3,o\rangle
++\frac12\int_{\partial B_R}
+\bigl(\langle h_6,\nabla_\nu o\rangle-\langle\nabla_\nu h_6,o\rangle\bigr)
+-\int_{\partial B_R}(\mathcal B_kh_6)(o(\nu,\cdot)^\sharp),
+\end{equation}
+where $\mathcal B_k=\delta+\tfrac12d\tr$. A positive coefficient in the bulk source is therefore not the sign of a net Einstein obstruction: the reference solution, logarithmic terms, and gauge boundary contribution must be retained together.
+
+The Stokes argument of \texttt{GAU:period-local} uses an actual smoothly convergent hyperK\"ahler ALE bubble core, possibly after finite covering, with $H^1=0$ and a nonzero transverse period. In the decomposition
+$W^+=(-2/3-q)P+(1/3+q/2)(I-P)+B$,
+the period tests $B+qI/2$, not $B$ alone. If $a_j\to0$ is the physical bubble scale, $q_j=O(s_j^2)$, and $B_j,\nabla B_j,dq_j,\nabla\omega_j$ are $O(s_j)$, the actual connection-curvature equations and Stokes give
+$\sup|B_j|\le C(a_js_j+s_j^2)=o(s_j)$ on a smaller core.
+The stronger radial estimate $q_j=o(s_j)$ prevents cancellation between the trace and trace-free transverse terms.
+
+Together with the nonzero holomorphic first-order term, this produces
+\[
+0\ne b_1\in H^0_{\rm orb}(X,\Omega^1\otimes K_X),\qquad
+(\partial_Kb_1)(p)=0\quad\text{at every actual orbifold singularity }p.
+\]
+To infer a volume gap, one still needs classification of every possible limit and injectivity of
+\begin{equation}\label{eq:finite-evaluation-interface}
+b\longmapsto\bigl((\partial_Kb)(p)\bigr)_{p\in S_X}
+\quad\text{on }H^0_{\rm orb}(X,\Omega^1\otimes K_X).
+\end{equation}
+If those inputs hold, the nonzero $b_1$ cannot lie in the kernel. This is the conditional bounded-diameter gap of \texttt{GAU:gap-conditional}, not a general theorem for approximate Einstein metrics. The curvature-spike constructions in \path{20260916_construction.tex} similarly disprove unrestricted curvature control from a small $C^0$ Ricci residual, not the special small-calibration-density regularity interface in Proposition~\ref{prop:minimalbridge}.
+
+\subsection{Related calculations}
+Finite calculations for the tensor and energy identities are recorded in
+\path{../references/computations.md} under
+\path{verify_tensor_energy_ledger.py},
+\path{verify_weighted_moser_coupling.py},
+\path{verify_shifted_curvature.py}, and
+\path{verify_deficit_constants.py}.
+The Nil and circle reductions correspond to
+\path{step9_nil3_orbit_volume_corrected.py} and
+\path{verify_chiral_reduction_identity.py}.
+These programs check contractions, weight exponents, constants, and finite-group arithmetic. Degenerate-flow existence and global geometric statements rest on the analysis in the text and the stated external theorems.
+
+\begin{thebibliography}{99}
+\bibitem{Yau1982} S.-T. Yau, \emph{Problem Section}, in \emph{Seminar on Differential Geometry}, Annals of Mathematics Studies 102, Princeton University Press, 1982, pp. 669--706.
+
+\bibitem{LeBrun2001} C. LeBrun, \emph{Ricci curvature, minimal volumes, and Seiberg--Witten theory}, Invent. Math. 145 (2001), 279--316. \url{https://arxiv.org/abs/math/0003068}.
+
+\bibitem{LeBrunConvex} C. LeBrun, \emph{Four-Manifolds, Curvature Bounds, and Convex Geometry}, arXiv:math/0611450 (2006). Lemma 3.7 and Proposition 3.8. \url{https://arxiv.org/abs/math/0611450}.
+
+\bibitem{CT2006} J. Cheeger and G. Tian, \emph{Curvature and injectivity radius estimates for Einstein 4-manifolds}, J. Amer. Math. Soc. 19 (2006), 487--525. DOI: \url{https://doi.org/10.1090/S0894-0347-05-00511-4}.
+
+\bibitem{GJ2017} H. Ge and W. Jiang, \emph{$\epsilon$-regularity for shrinking Ricci solitons and Ricci flows}, arXiv:1707.05511. \url{https://arxiv.org/abs/1707.05511}.
+
+\bibitem{Derdzinski} A. Derdzi\'nski, \emph{Self-dual K\"ahler manifolds and Einstein manifolds of dimension four}, Compositio Math. 49 (1983), 405--433, Proposition 5. \url{https://www.numdam.org/item/CM_1983__49_3_405_0/}.
+
+\bibitem{CN} J. Cheeger and A. Naber, \emph{Regularity of Einstein manifolds and the codimension 4 conjecture}, arXiv:1406.6534. \url{https://arxiv.org/abs/1406.6534}.
+
+\bibitem{NZ} A. Naber and R. Zhang, \emph{Topology and $\epsilon$-regularity theorems on collapsed manifolds with Ricci curvature bounds}, Geom. Topol. 20 (2016), 2575--2664. \url{https://doi.org/10.2140/gt.2016.20.2575}.
+
+\bibitem{JKX} W. Jiang, L. Kong and S. Xu, \emph{Convergence of Ricci-limit spaces under bounded Ricci curvature and local covering geometry I}, arXiv:2205.00373. \url{https://arxiv.org/abs/2205.00373}.
+
+\bibitem{Anderson1989} M. T. Anderson, \emph{Ricci curvature bounds and Einstein metrics on compact manifolds}, J. Amer. Math. Soc. 2 (1989), 455--490. \url{https://doi.org/10.1090/S0894-0347-1989-0999661-1}.
+
+\bibitem{Ye1993} R. Ye, \emph{Ricci flow, Einstein metrics and space forms}, Trans. Amer. Math. Soc. 338 (1993), 871--896. \url{https://doi.org/10.1090/S0002-9947-1993-1108615-3}.
+
+\bibitem{IL} M. Ishida and C. LeBrun, \emph{Curvature, Connected Sums, and Seiberg--Witten Theory}, Comm. Anal. Geom. 11 (2003), 809--836. Proposition 10, Corollary 11 and Theorem D. \url{https://arxiv.org/abs/math/0111228}.
+
+\end{thebibliography}
+\end{document}

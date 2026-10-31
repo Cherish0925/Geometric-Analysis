@@ -1,0 +1,234 @@
+# Half-flat bubble exclusion beyond aspherical topology
+
+23 September 2026. This continuation weakens the topology in the compact-core
+argument, and therefore in the compact-regime realization theorem. It does not
+alter the archived proofs. The classification of half-flat ALE spaces is a
+classical input; the extension below identifies the homotopical information
+actually needed for their exclusion.
+
+## 1. The topological hypothesis
+
+Let \(M\) be a closed connected smooth oriented four-manifold satisfying
+\[
+ \pi_1(M)\text{ is torsion-free},\qquad \pi_2(M)=0.       \tag{H}
+\]
+Equivalently, the second condition says
+\(H_2(\widetilde M;\mathbb Z)=0\): the universal cover is simply
+connected, so this is the degree-two Hurewicz theorem. No vanishing of
+\(\pi_3(M)\), no contractibility, and no assumption on spin are required.
+
+**Theorem 1 (compact-core exclusion under (H)).** No sufficiently large
+compact core of a nonflat smooth Ricci-flat ALE four-manifold with one
+identically vanishing Weyl half embeds smoothly in a manifold satisfying (H).
+The assertion is independent of the orientation of the proposed embedding.
+
+**Proof.** Reverse orientation on the ALE space if necessary, so that
+\(W^+=0\). Let \(B\) be a large core with one connected spherical
+space-form boundary \(Y\), and with the homotopy type of the ALE space.
+The classification of Wright, together with Suvaina's description of the
+Kähler ALE quotients, gives the following alternatives:
+
+1. \(\pi_1(B)\) is finite and the rational intersection form of \(B\)
+   is negative definite, with \(b_2(B)>0\); or
+2. \(B\) is a rational homology ball with
+   \[
+   \pi_1(B)=H_1(B;\mathbb Z)=\mathbb Z_n,
+   \qquad Y=L(n^2,nr-1),\quad n\ge2,\ (n,r)=1.
+   \tag{1}
+   \]
+
+These are the same classification inputs used in the
+[inherited compact-core proof](../mathematics/current/line1_aspherical_no_bubbles.md).
+The nonflat assumption excludes the Euclidean case.
+
+Suppose \(i:B\hookrightarrow M\) is an embedding. The image of the
+finite group \(\pi_1(B)\) in the torsion-free group \(\pi_1(M)\) is
+trivial. Thus \(i\) lifts to an embedding into \(\widetilde M\).
+The lift is injective since its composition with the covering projection
+is injective. This does not assert that a limiting fundamental group
+injects into the fundamental group of \(M\).
+
+In the first case a compact rational two-cycle in the interior of \(B\)
+has nonzero self-intersection. Its image is zero in
+\(H_2(\widetilde M;\mathbb Q)\), which vanishes by (H).
+Intersection of compact cycles is unchanged by an embedding, up to an
+overall orientation sign, and is zero for a null-homologous compact cycle.
+This is a contradiction.
+
+In the second case put
+\(C=\widetilde M\setminus\operatorname{int}B\) and apply integral
+Mayer--Vietoris using collar enlargements. Since
+\(H_1(\widetilde M;\mathbb Z)=H_2(\widetilde M;\mathbb Z)=0\),
+\[
+ \mathbb Z_{n^2}\cong H_1(Y;\mathbb Z)
+ \cong H_1(B;\mathbb Z)\oplus H_1(C;\mathbb Z)
+ \cong\mathbb Z_n\oplus H_1(C;\mathbb Z).               \tag{2}
+\]
+The last summand has order \(n\). The right side has exponent at most
+\(n\), whereas the left side has exponent \(n^2\). This contradiction
+also works for composite \(n\). Only the first two homology groups of
+the universal cover were used. \(\square\)
+
+### 1.1 What an arbitrary remaining ALE core would have to be
+
+There is also a classification-free part of this argument. If a connected
+compact oriented four-manifold \(B\) has finite fundamental group and
+connected rational-homology-three-sphere boundary and embeds in a manifold
+satisfying (H), then
+\[
+                         H_2(B;\mathbb Q)=0.             \tag{2a}
+\]
+Indeed the map \(H_2(B;\mathbb Q)\to H_2(B,\partial B;\mathbb Q)\)
+is an isomorphism by the boundary homology sequence. Poincaré--Lefschetz
+duality therefore makes the rational intersection pairing nondegenerate.
+The lifted embedding into \(\widetilde M\), whose second homology
+vanishes, makes every such pairing zero. Nondegeneracy implies (2a).
+Also \(H_1(B;\mathbb Q)=0\) by finiteness of its fundamental group.
+Connected boundary and duality give \(H_3(B;\mathbb Q)=0\), so \(B\)
+is a rational homology ball.
+
+In particular, a remaining smooth Ricci-flat ALE bubble (these have finite
+fundamental group and spherical-space-form ends) could not carry nonzero
+rational second homology. Combining this with Theorem 1 and the
+[paired-concentration theorem](20260923_critical_chiral_threshold.md), a
+surviving bubble would have to be a **rational homology ball with both
+Weyl halves nonzero and carrying positive critical mass**. This does not
+claim that such Ricci-flat ALE spaces exist, or exclude them by importing
+the classification restricted to half-flat spaces. It narrows precisely
+the unresolved compact-regime degeneration.
+
+## 2. The enlarged class contains genuinely nonaspherical manifolds
+
+**Proposition 2.** Suppose \(X_1,\ldots,X_N\) are closed oriented
+four-manifolds satisfying (H). Then
+\[
+ M=X_1\#\cdots\#X_N\#m(S^1\times S^3)
+ \tag{3}
+\]
+also satisfies (H).
+
+**Proof.** Van Kampen identifies \(\pi_1(M)\) with the free product
+of the \(\pi_1(X_i)\) and a free group of rank \(m\). A finite-order
+element of a free product is conjugate into one of its factors; this
+group is therefore torsion-free.
+
+Cut (3) along its connected-sum three-spheres. Its universal cover is a
+tree of universal covers of punctured factors, glued along three-spheres.
+Removing a locally finite collection of open four-balls does not change
+\(H_1\) or \(H_2\): excision gives relative groups only in degree four.
+Consequently each lifted vertex piece has vanishing \(H_1,H_2\).
+The same holds for the punctured universal cover of \(S^1\times S^3\),
+whose unpunctured cover is \(\mathbb R\times S^3\).
+Mayer--Vietoris over finite subtrees, followed by the direct limit,
+gives \(H_2(\widetilde M;\mathbb Z)=0\); edge three-spheres have no
+first or second homology. Compact singular cycles involve only finitely
+many pieces. Hurewicz now gives \(\pi_2(M)=0\). \(\square\)
+
+For a concrete distinction, take
+\[
+ M=(\Sigma_g\times\Sigma_h)\#m(S^1\times S^3),
+ \qquad g,h\ge2,\quad m>0.                            \tag{4}
+\]
+It satisfies (H), but is not aspherical. If it were aspherical it
+would be a \(K(\pi,1)\) for
+\(\pi=\pi_1(\Sigma_g\times\Sigma_h)*F_m\).
+Another finite \(K(\pi,1)\) is
+\((\Sigma_g\times\Sigma_h)\vee\bigvee_{i=1}^m S^1\), of Euler
+characteristic \(\chi(\Sigma_g\times\Sigma_h)-m\). In contrast the
+connected sum (4) has Euler characteristic
+\(\chi(\Sigma_g\times\Sigma_h)-2m\). Homotopy invariance contradicts
+\(m>0\). Thus Theorem 1 is a genuine enlargement of the topological
+scope, not another definition of asphericity.
+
+## 3. Consequences for compactness and exact realization
+
+**Corollary 3.** Every assertion in
+[compact-regime realization](20260923_compact_realization.md), including
+its critical equiintegrability version, remains valid with “aspherical”
+replaced by (H), with the same stated geometric dependencies.
+
+**Proof.** In that proof the geometric inputs are Ricci bounds, diameter,
+volume, and one-sided Weyl control. Harmonic-radius blow-up produces a
+smooth nonflat half-flat Ricci-flat ALE space and embeds its compact
+core in the original manifold. Asphericity enters only in forbidding
+that embedding. Apply Theorem 1 instead. The later diffeomorphism
+compactness and Einstein-limit argument are unchanged. \(\square\)
+
+In particular, for \(q>2\), fixed \(D,v,\Lambda>0\), and topology
+(H),
+\[
+ \operatorname{diam}(g)\le D,\quad V_g\ge v,\quad
+ \|W_g^+\|_{L^q}\le\Lambda,\quad
+ \|\operatorname{Ric}^{\sharp}_g+I\|_{\infty,\mathrm{op}}
+       <\varepsilon(D,v,\Lambda,q)
+ \ \Longrightarrow\ \exists h:\operatorname{Ric}_h=-h.
+ \tag{5}
+\]
+The conclusion concerns the same smooth manifold. It does not assume
+that the input is close to a previously known Einstein metric.
+
+The theorem also supplies the topological step in the new
+[critical chiral threshold](20260923_critical_chiral_threshold.md) and
+[gauge-saturation realization](20260923_gauge_saturation_ke.md).
+Those notes prove their analytical inputs independently of Proposition 2.
+
+## 4. An application to handle additions with actual gauge supply
+
+For (4), let \(A=8(g-1)(h-1)>0\). The canonical SW class on the
+product, followed by the handle surgery formula retaining the degree-one
+insertions, supplies an actual conformally solvable class with
+\[
+ a^2=A,\qquad (a_g^+)^2\ge A.
+ \tag{6}
+\]
+The supply statement, not merely this intersection calculation, is the
+classical input detailed in the
+[polarized closure](../mathematics/current/lebrun_stability_closure.md),
+Sections 1--2. Here \(b_+>1\), so no chamber choice is necessary.
+
+If \(m\) is odd, then \(b_1(M)=2g+2h+m\) is odd. No complex
+structure on this smooth manifold can be Kähler, in either orientation,
+since a compact Kähler manifold has even first Betti number.
+Apply the gauge-saturation realization theorem with its extension (H).
+For every fixed diameter bound \(D\), it follows that
+\[
+ \delta_-(g)+\frac{\mathfrak D_2(g,a)}{V_g}
+       \ge\varepsilon(D,A_0)>0,
+ \qquad (a_g^+)^2\ge A_0>0,\quad \operatorname{diam}(g)\le D.
+ \tag{7}
+\]
+One may choose \(A_0=8\) simultaneously for all products in (4).
+When the sum on the left is small, the scalar monopole bound supplies
+the volume lower bound used by the realization theorem; it is not an
+additional hypothesis on these examples.
+
+For instance \(g=2,h=11,m=1\) gives \(A=80\),
+\((2\chi+3\tau)(M)=76\), and handle ratio \(4m/A=1/20\).
+The old displayed one-third-band inequality with constant at most
+\(1/4\) is vacuous at zero defect for this ratio, since
+\(1/3-1/20=17/60>1/4\). Statement (7) is a different conclusion:
+it forbids joint gauge saturation and pointwise Einstein approximation
+under a diameter bound. It does not replace that old unrestricted
+integral gap or prove a gap for \(\delta_-\) alone.
+
+No assertion is made that every topology in this infinite family admits
+metrics satisfying a common diameter bound and very small Ricci defect.
+Indeed (6) and volume comparison restrict the available topologies when
+\(D\) is fixed. Nor does (7) exclude all non-Kähler Einstein metrics:
+such a metric could have positive \(\mathfrak D_2/V\). Its precise
+increment is an application of a new exact-realization implication to
+nonaspherical smooth topology.
+
+## 5. Dependencies and further scope
+
+Theorem 1 uses [Wright, *Quotients of gravitational instantons*](https://arxiv.org/abs/1102.2442)
+and [Suvaina, *ALE Ricci-flat Kähler metrics and deformations of quotient surface singularities*](https://arxiv.org/abs/1102.2672).
+The actual gauge supplier in Section 4 is the one in
+[LeBrun, Proposition 3.2](https://arxiv.org/html/math/0003068), with the
+handle insertions recorded in the inherited closure proof.
+
+The condition (H) is sufficient, not proved necessary. More generally
+the same argument works whenever finite core groups map trivially into
+\(\pi_1(M)\) and the lifted ambient has the two homology vanishings used
+above. Manifolds with nonzero \(\pi_2\), torsion in \(\pi_1\), or
+unbounded-diameter collapse are not settled by this extension.

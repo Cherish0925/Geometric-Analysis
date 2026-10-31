@@ -1,0 +1,64 @@
+{
+  "kappaV_coefficients": {
+    "S": "13/12 + 1/beta",
+    "W": "6*beta + 10",
+    "Tp": "-8 pi^2",
+    "p": "-72 pi^2"
+  },
+  "gamma_max": "(9*beta - theta + 6)/(theta + 9)",
+  "a(theta,beta)": "(-beta**2*theta + 3*beta**2/4 - 11*beta*theta/4 + beta/2 - theta + 6)/(beta*(9*beta - theta + 6))",
+  "a_inf(theta)": "1/12 - theta/9",
+  "pointwise_min_bound(a)": "(4*beta**2*theta - 3*beta**2 + 11*beta*theta - 2*beta + 4*theta - 24)/(beta**2*theta - 3*beta**2 + 3*beta*theta - 2*beta + theta - 6)",
+  "a(theta=0,beta)": "(beta**2/4 + beta/6 + 2)/(beta*(3*beta + 2))",
+  "kappa_KE": "4*(beta - 2)**2/beta",
+  "beta_infinity_critical": {
+    "p/V": "2/(9*pi**2)",
+    "T+/V": "1/(6*pi**2)",
+    "T+/p": "3/4",
+    "chi/V for W=0 Einstein bulk (W- term excluded)": "1/(12*pi**2)"
+  },
+  "table": [
+    {
+      "theta": "-1",
+      "a_inf": "7/36",
+      "beta0_first_positive": 2.01,
+      "c_inf": 1.75
+    },
+    {
+      "theta": "0",
+      "a_inf": "1/12",
+      "beta0_first_positive": 2.01,
+      "c_inf": 1.0
+    },
+    {
+      "theta": "1/4",
+      "a_inf": "1/18",
+      "beta0_first_positive": 2.01,
+      "c_inf": 0.7272727272727273
+    },
+    {
+      "theta": "1/2",
+      "a_inf": "1/36",
+      "beta0_first_positive": 2.01,
+      "c_inf": 0.4
+    },
+    {
+      "theta": "2/3",
+      "a_inf": "1/108",
+      "beta0_first_positive": 2.01,
+      "c_inf": 0.14285714285714285
+    },
+    {
+      "theta": "7/10",
+      "a_inf": "1/180",
+      "beta0_first_positive": 2.01,
+      "c_inf": 0.08695652173913043
+    },
+    {
+      "theta": "37/50",
+      "a_inf": "1/900",
+      "beta0_first_positive": 2.01,
+      "c_inf": 0.017699115044247787
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+frame-diagonality residual: Matrix([[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]])
+R0= -Derivative(Z(r), (r, 2))/(2*X(r)*Z(r)) + Derivative(Z(r), r)**2/(4*X(r)*Z(r)**2) - Derivative(Y(r), (r, 2))/(X(r)*Y(r)) + Derivative(Y(r), r)**2/(2*X(r)*Y(r)**2) + Derivative(X(r), r)*Derivative(Z(r), r)/(4*X(r)**2*Z(r)) + Derivative(X(r), r)*Derivative(Y(r), r)/(2*X(r)**2*Y(r))
+R1= 1/Y(r) - Z(r)/(2*Y(r)**2) - Derivative(Y(r), (r, 2))/(2*X(r)*Y(r)) - Derivative(Y(r), r)*Derivative(Z(r), r)/(4*X(r)*Y(r)*Z(r)) + Derivative(X(r), r)*Derivative(Y(r), r)/(4*X(r)**2*Y(r))
+R3= Z(r)/(2*Y(r)**2) - Derivative(Z(r), (r, 2))/(2*X(r)*Z(r)) + Derivative(Z(r), r)**2/(4*X(r)*Z(r)**2) - Derivative(Y(r), r)*Derivative(Z(r), r)/(2*X(r)*Y(r)*Z(r)) + Derivative(X(r), r)*Derivative(Z(r), r)/(4*X(r)**2*Z(r))
+
+STDERR:

@@ -1,0 +1,315 @@
+\section{Quadratic curvature actions and coupled fields}
+\label{sec:quadratic-matter}
+
+The scalar-free estimate and the traceless-Ricci window have direct
+consequences for curvature actions and Euclidean coupled equations.  We
+give the normalizations and algebra explicitly.  These consequences do
+not require the existence of a minimizing metric or of a solution to a
+coupled field equation.
+
+Let $M$ be a closed connected oriented smooth four-manifold.  Write
+\[
+ V=\Vol_g(M),\quad S=\int_Ms^2\,d\mu_g,\quad
+ P=\int_M|\Ric^\circ|^2\,d\mu_g,\quad
+ R=\int_M|\Ric|^2\,d\mu_g=P+\frac S4,
+ \quad W_\pm=\int_M|W^\pm|^2\,d\mu_g.
+\]
+Ricci curvature has the tensor norm, two-forms have the exterior-algebra
+norm, and Weyl curvature has the Hilbert--Schmidt norm as an operator on
+two-forms.  Set $T_\pm=2\chi(M)\pm3\tau(M)$.
+
+For the estimates involving topology, assume that $A>0$ is fixed and
+\begin{equation}\label{eq:qm-supply}
+ T_+=A(1-h),\qquad 0<h\le\frac13.
+\end{equation}
+For every metric under consideration, assume there is a Spin$^c$
+structure whose unperturbed Seiberg--Witten equations are solvable for
+every metric in its conformal class, and whose real first Chern class
+$a$ satisfies
+\[
+ p=(a_g^+)^2\ge A,\qquad a^2\ge T_+.
+\]
+The selected structure may depend on $g$, but is fixed throughout its
+conformal class.  These are the actual input hypotheses of
+Theorems~\ref{thm:lc-scalar-free} and~\ref{thm:linear-window}; a
+formal characteristic class with the same square is not sufficient.
+Define
+\[
+ D_2=\frac32S+18W_+-72\pi^2p,\qquad
+ \Sigma=S-32\pi^2p.
+\]
+Both quantities are nonnegative.  Theorem~\ref{thm:lc-scalar-free}
+supplies a universal constant $C>0$ such that
+\begin{equation}\label{eq:qm-slack}
+ \Sigma\le C(P+D_2).
+\end{equation}
+
+\subsection{A quadratic-action gap and an absolute Ricci budget}
+
+\begin{proposition}[Positive-coupling curvature actions]
+\label{prop:qm-action}
+Let $u,v>0$ be fixed and put
+\[
+ \mathscr I_{u,v}(g)=uP+v\left(\frac32S+18W_+\right),
+ \qquad K_C=\frac92+\frac98C.
+\]
+Under the stated supply hypotheses,
+\begin{equation}\label{eq:qm-action-gap}
+ \mathscr I_{u,v}(g)-72\pi^2vA
+ \ge\frac{36\pi^2\min\{u,v\}}{K_C}\,Ah.
+\end{equation}
+In terms of the full Weyl operator, the same action is
+\begin{equation}\label{eq:qm-action-signature}
+ \mathscr I_{u,v}(g)
+ =uP+\frac32vS+9v\int_M|W|^2\,d\mu_g+108\pi^2v\tau(M).
+\end{equation}
+The proof of \eqref{eq:qm-action-gap} only needs $h>0$, not the upper
+bound in \eqref{eq:qm-supply}.
+\end{proposition}
+
+\begin{proof}
+The chiral Chern--Weil identity is
+\[
+ 4\pi^2T_+=\frac S{24}+2W_+-\frac P2.
+\]
+Substituting it into the definitions gives two exact identities:
+\begin{equation}\label{eq:qm-exact-identities}
+ D_2=\frac92R-36\pi^2(2p-T_+),\qquad
+ 36\pi^2(p-T_+)=\frac92P+\frac98\Sigma-D_2.
+\end{equation}
+Since $p-T_+\ge Ah$, \eqref{eq:qm-slack} and $D_2\ge0$ imply
+\[
+ 36\pi^2Ah
+ \le\frac92P+\frac98\Sigma-D_2
+ \le K_C(P+D_2).
+\]
+On the other hand,
+\[
+ \mathscr I_{u,v}-72\pi^2vA
+ =uP+vD_2+72\pi^2v(p-A)
+ \ge\min\{u,v\}(P+D_2).
+\]
+This proves the gap.  Finally the signature identity
+$W_+-W_-=12\pi^2\tau(M)$ gives
+$W_+=\frac12(W_++W_-)+6\pi^2\tau(M)$, proving
+\eqref{eq:qm-action-signature}.
+\end{proof}
+
+The subtracted budget in \eqref{eq:qm-action-gap} uses the fixed number
+$A$, not the metric-dependent projection $p$.  No assertion about
+sharpness or attainment of this action bound is implicit in the estimate.
+
+For the following consequences set
+\begin{equation}\label{eq:qm-mu}
+ U=\frac{3\min\{T_+,T_-\}}A,\qquad L_h=1+(1+c_0)h,
+ \qquad
+ \mu=\begin{cases}
+ \displaystyle\frac{(L_h-U)_+}{L_h+U/18},&U>0,\\[6pt]
+ 1,&U\le0,
+ \end{cases}
+\end{equation}
+where $c_0>0$ is the universal constant in
+Theorem~\ref{thm:linear-window}.  Thus $0\le\mu\le1$ and that theorem
+gives $\J(g)\ge\mu$ for every metric with the stated supply.  Put
+\begin{equation}\label{eq:qm-P-bound}
+ \mathscr P(A,h,U)=2\pi^2A(1+h)\mu.
+\end{equation}
+The first identity in \eqref{eq:qm-exact-identities} and $D_2\ge0$ give
+\[
+ R\ge8\pi^2(2p-T_+)\ge8\pi^2A(1+h).
+\]
+Since $P=R\J/4$, we have proved the absolute bound
+\begin{equation}\label{eq:qm-absolute-P}
+ P\ge\mathscr P(A,h,U).
+\end{equation}
+This bound is positive whenever $U<L_h$.  On the balanced families of
+Theorem~\ref{thm:vg-balanced-family},
+$U_j=1+h_j+O(h_j^2)$ and $h_j\to0$.  Formula~\eqref{eq:qm-mu}
+then gives $\mu_j/h_j\to18c_0/19$.  Consequently there are constants
+$c_{\mathrm J},C_0>0$, independent of $j$, such that, for all sufficiently
+large $j$,
+\begin{equation}\label{eq:qm-balanced-P}
+ \J(g)\ge c_{\mathrm J}h_j,\qquad
+ P(g)\ge C_0A_jh_j\quad\hbox{for every smooth }g,
+ \qquad C_0=2\pi^2c_{\mathrm J}.
+\end{equation}
+
+\subsection{The mixed chiral curvature block}
+
+\begin{proposition}\label{prop:qm-chiral-block}
+Relative to $\Lambda^2=\Lambda^+\oplus\Lambda^-$, write the Riemann
+curvature operator as
+\[
+ \mathcal R_g=
+ \begin{pmatrix}
+ W^++\frac{s}{12}\mathrm{Id}&B\\
+ B^*&W^-+\frac{s}{12}\mathrm{Id}
+ \end{pmatrix}.
+\]
+Then
+\begin{equation}\label{eq:qm-block-norm}
+ |B|_{\mathrm{HS}}^2=\frac14|\Ric^\circ|^2,
+ \qquad 4\int_M|B|_{\mathrm{HS}}^2\,d\mu_g=P.
+\end{equation}
+In particular the integral on the left of the second identity is at
+least $\mathscr P(A,h,U)$ under the supply hypotheses.
+\end{proposition}
+
+\begin{proof}
+At a point diagonalize $\Ric^\circ$ with eigenvalues $q_1,\ldots,q_4$,
+where $\sum_iq_i=0$.  Use the orthonormal chiral bases
+$(e^{1j}\pm *e^{1j})/\sqrt2$, $j=2,3,4$.  The traceless-Ricci part
+of the curvature operator has mixed block with diagonal entries,
+up to signs,
+\[
+ \frac{q_1+q_2}{2},\qquad
+ \frac{q_1+q_3}{2},\qquad
+ \frac{q_1+q_4}{2}.
+\]
+Their squared sum is
+\[
+ \frac14\left(3q_1^2+2q_1\sum_{i=2}^4q_i+
+                          \sum_{i=2}^4q_i^2\right)
+ =\frac14\sum_{i=1}^4q_i^2.
+\]
+This proves the pointwise identity; integration and
+\eqref{eq:qm-absolute-P} prove the rest.
+\end{proof}
+
+Thus the bound measures a compulsory failure of the Levi-Civita curvature
+operator to preserve the two chiral summands.  It concerns the curvature
+of one common metric, not arbitrary independently chosen gauge
+connections.  The operator norm in \eqref{eq:qm-block-norm} fixes the
+representation constant and should not be replaced by an unspecified
+Lie-algebra trace norm.
+
+\subsection{Trace-free stress and Maxwell or Yang--Mills overlap}
+
+\begin{proposition}[Conditional estimates for coupled solutions]
+\label{prop:qm-stress}
+Suppose a Riemannian metric with the stated supply is part of a smooth
+solution of
+\begin{equation}\label{eq:qm-einstein-matter}
+ \Ric-\frac12s\,g+\Lambda g=\kappa T,
+ \qquad \Lambda\in\mathbb R,\quad \kappa\ne0,
+\end{equation}
+where $T$ is the stress tensor in the specified normalization.  Then
+\begin{equation}\label{eq:qm-stress-bound}
+ \int_M|T^\circ|^2\,d\mu_g
+ =\frac P{\kappa^2}\ge\frac{\mathscr P(A,h,U)}{\kappa^2}.
+\end{equation}
+If $T$ is trace-free, necessarily $s=4\Lambda$ and $\Lambda<0$, and
+\begin{equation}\label{eq:qm-stress-dimensionless}
+ \frac{P}{\Lambda^2V}\ge\frac{4\mu}{4-\mu}.
+\end{equation}
+On the balanced families this also gives, for all sufficiently large $j$,
+$\int|T^\circ|^2\ge C_0A_jh_j/\kappa^2$ and
+$P/(\Lambda^2V)\ge4c_{\mathrm J}h_j/(4-c_{\mathrm J}h_j)$.
+\end{proposition}
+
+\begin{proof}
+The trace-free part of \eqref{eq:qm-einstein-matter} is
+$\Ric^\circ=\kappa T^\circ$, which proves
+\eqref{eq:qm-stress-bound}.  If $\tr_gT=0$, the trace equation is
+$-s+4\Lambda=0$.  The actual scalar inequality
+$\int s_-^2\,d\mu_g\ge32\pi^2p>0$ rules out nonnegative constant
+scalar curvature, so $\Lambda<0$.  Now $R=P+4\Lambda^2V$ and
+\[
+ \frac{4P}{P+4\Lambda^2V}=\J(g)\ge\mu.
+\]
+Rearranging proves \eqref{eq:qm-stress-dimensionless}, since
+$\mu\le1<4$.  Use \eqref{eq:qm-balanced-P} for the final assertions.
+\end{proof}
+
+For a real Maxwell two-form use the normalization
+\begin{equation}\label{eq:qm-maxwell-stress}
+ T_{ij}=F_{ik}F_j{}^k-\frac14g_{ij}F_{k\ell}F^{k\ell},
+ \qquad |F|^2=\frac12F_{ij}F^{ij}.
+\end{equation}
+An Einstein--Maxwell solution also satisfies $dF=d{*F}=0$.
+For Yang--Mills curvature, choose a positive invariant inner product on
+the gauge Lie algebra, sum \eqref{eq:qm-maxwell-stress} over an
+orthonormal Lie-algebra basis, and impose the corresponding Yang--Mills
+equation.  The following estimate needs only the resulting stress tensor
+and \eqref{eq:qm-einstein-matter}.
+
+\begin{corollary}[Chiral overlap]\label{cor:qm-overlap}
+Every such Einstein--Maxwell or Einstein--Yang--Mills solution with the
+stated supply satisfies
+\begin{equation}\label{eq:qm-overlap}
+ \int_M|F^+|^2|F^-|^2\,d\mu_g
+ \ge\frac{\mathscr P(A,h,U)}{4\kappa^2}.
+\end{equation}
+For Maxwell fields the exact identity behind this estimate is
+\begin{equation}\label{eq:qm-maxwell-identity}
+ |T|^2=4|F^+|^2|F^-|^2.
+\end{equation}
+For Lie-algebra-valued curvature one has instead
+$|T|\le2|F^+||F^-|$.
+\end{corollary}
+
+\begin{proof}
+At a point choose an oriented orthonormal frame with
+$F=a\,e^{12}+b\,e^{34}$.  Then
+\[
+ |F^+|^2=\frac{(a+b)^2}{2},\qquad
+ |F^-|^2=\frac{(a-b)^2}{2}.
+\]
+The diagonal entries of $T$ are two copies of $(a^2-b^2)/2$ and two
+copies of its negative.  Thus
+$|T|^2=(a^2-b^2)^2=4|F^+|^2|F^-|^2$.
+For a Lie-algebra-valued form write $F=\sum_\alpha F^\alpha t_\alpha$
+in an orthonormal basis.  By the real-form identity, the triangle
+inequality, and Cauchy--Schwarz,
+\[
+ |T|\le\sum_\alpha|T(F^\alpha)|
+ =2\sum_\alpha|(F^\alpha)^+||(F^\alpha)^-|
+ \le2|F^+||F^-|.
+\]
+In both cases the stress tensor is trace-free.  Integrating the squared
+inequality and applying Proposition~\ref{prop:qm-stress} proves
+\eqref{eq:qm-overlap}.
+\end{proof}
+
+When $\mu>0$, no solution in this class has a purely self-dual or purely
+anti-self-dual real field.  The overlap estimate does not separately
+bound the two $L^2$ energies without additional information: one factor
+can grow or concentrate while the other decreases.  The assertions are
+conditional on an actual coupled solution, and neither construct such
+a solution nor determine the complete set of admissible fluxes.
+
+\subsection{The leading Ricci residual modulo constant rescaling}
+
+\begin{proposition}\label{prop:qm-ricci-residual}
+For any constant $\gamma\in\mathbb R$, define
+$\mathcal B_\gamma(g)=\gamma\Ric_g$.  If
+$I=\int_Ms\,d\mu_g$ and $L_s=S-I^2/V$, then
+\begin{equation}\label{eq:qm-residual}
+ \inf_{\lambda\in\mathbb R}
+   \int_M|\mathcal B_\gamma(g)-\lambda g|^2\,d\mu_g
+ =\gamma^2\left(P+\frac{L_s}{4}\right)
+ =\frac{\gamma^2R}{4}\E(g)
+ \ge\gamma^2\mathscr P(A,h,U).
+\end{equation}
+The infimum is attained at $\lambda=\gamma I/(4V)$.
+\end{proposition}
+
+\begin{proof}
+The trace-free and pure-trace summands are orthogonal, so
+\[
+ \int_M|\gamma\Ric-\lambda g|^2\,d\mu_g
+ =\gamma^2P+4\int_M\left(\frac{\gamma s}{4}-\lambda\right)^2\,d\mu_g.
+\]
+The last term is minimized by its mean and has minimum
+$\gamma^2L_s/4$.  The identity
+$\E=(4P+L_s)/R$ and \eqref{eq:qm-absolute-P} give the remaining claims.
+\end{proof}
+
+In a model normalized so that its leading metric beta tensor is
+$\beta^{(1)}=\alpha'\Ric$, this is the residual obtained by removing
+only the constant scaling direction, with $\gamma=\alpha'$.
+It is not a bound after minimizing over Lie derivatives
+$\mathcal L_Xg$, additional background fields, or higher-order terms.
+All estimates in this section use a positive-definite metric and the
+real splitting $*^2=1$ on two-forms; no Lorentzian continuation is
+asserted.

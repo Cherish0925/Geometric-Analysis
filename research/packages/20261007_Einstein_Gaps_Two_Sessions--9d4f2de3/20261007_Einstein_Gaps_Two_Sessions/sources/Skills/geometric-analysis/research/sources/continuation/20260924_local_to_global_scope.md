@@ -1,0 +1,311 @@
+# Topological local regularity and a diameter-free Einstein repair criterion
+
+24 September 2026. This note separates a local geometric extension from the
+classical global elliptic solver it can support. It does not infer a uniform
+inverse from a curvature bound or from absence of a known obstruction.
+
+## 1. The geometric statement needs neither diameter nor a Weyl bound
+
+Write \(V_{-K/3}(r)\) for the four-dimensional model-ball volume,
+\(\omega_4=\pi^2/2\), and \(\theta=v/V_{-K/3}(1)\).
+For a nonempty class below \(0<\theta\le1\).
+
+**Theorem 1 (diameter-free local regularity).** Fix \(K,v>0\) and
+\(0<\alpha<1\). Closed connected oriented smooth four-manifolds with
+\[
+ \|\operatorname{Ric}^{\sharp}\|_{\infty,\mathrm{op}}\le K,
+ \qquad \inf_{x\in M}\operatorname{Vol}B_1(x)\ge v,                \tag{2}
+\]
+and \(\pi_2(M)=0\)
+have a uniform positive \(C^{1,\alpha}\) harmonic radius. Its bound depends
+only on \(K,v,\alpha\), not on diameter, total volume or topology.
+No Weyl bound or condition on \(\pi_1(M)\) is required.
+No finite number of smooth types
+or global compactness is asserted without a diameter bound.
+
+**Proof.** Relative Bishop comparison gives
+\[
+ \operatorname{Vol}B_r(x)\ge
+ v\frac{V_{-K/3}(r)}{V_{-K/3}(1)}\ge\theta\omega_4r^4,
+ \qquad 0<r\le1.                                             \tag{4}
+\]
+The local Jiang--Naber curvature estimate, after a fixed rescaling, gives
+\[
+ \int_{B_a(x)}|\operatorname{Rm}|^2\le C(K,v)                  \tag{5}
+\]
+for a fixed \(a=a(K)>0\). Only a ball around the eventual blowup centre is
+used; a global covering and a total-energy bound are unnecessary.
+
+Suppose the minimum harmonic radius \(\rho_j\) tends to zero, at \(x_j\).
+Rescale by \(\rho_j^{-2}\). Every rescaled harmonic radius is at least one,
+Ricci tends uniformly to zero, and (4) gives Euclidean lower volume growth
+on every fixed rescaled ball. The harmonic-coordinate argument in
+[the compact realization proof](20260923_compact_realization.md), section 4,
+therefore gives a complete nonflat smooth Ricci-flat pointed limit \(X\).
+In particular, the harmonic metric equation gives strong local \(W^{2,p}\)
+convergence, for each finite \(p\), without differentiating the Ricci error.
+The harmonic-radius normalization excludes a flat limit.
+
+For each fixed \(R\), the rescaled radius-\(R\) ball lies inside the original
+\(B_a(x_j)\) for large \(j\). Passing (5) to the limit and exhausting in
+\(R\) gives finite **total** curvature energy on \(X\), with bound
+\(C(K,v)\). The lower volume ratio is at least \(\theta\). The Ricci-flat
+asymptotic theorem then gives an ALE end of positive order. Optimal decay
+order is not needed.
+
+A compact core \(B\) of \(X\) embeds in \(M_j\). The strengthened
+topological input is
+[Bamler--Chen, Lemma 4.35](https://arxiv.org/pdf/2305.03154v3): no nontrivial
+Ricci-flat ALE core embeds in a smooth four-manifold with integer
+\(H_2=0\) and torsion-free integer \(H_1\). The proof cites Zhang's
+Theorem 6.1 and the earlier Anderson argument; it does not assume
+half-flatness.
+
+For completeness, applying that lemma here does not require the original
+fundamental group to be torsion-free. A Ricci-flat ALE space has finite
+fundamental group. A connected component of the preimage of \(B\) in
+\(\widetilde M_j\) is therefore a finite cover \(\widehat B\) of \(B\),
+embedded in \(\widetilde M_j\). Its interior carries the lifted complete
+nonflat Ricci-flat ALE metric: the cover is finite and the end remains an
+ALE end. Hurewicz and \(\pi_2(M_j)=0\) give
+\(H_1(\widetilde M_j;\mathbb Z)=H_2(\widetilde M_j;\mathbb Z)=0\).
+Lemma 4.35 now excludes \(\widehat B\), the required contradiction.
+This proves the harmonic-radius bound. \(\square\)
+
+The finite-cover use of this lemma is developed separately in
+[the topological continuation](20260924_ale_boundary_compatibility.md).
+
+The external curvature input in (5) is
+[Jiang--Naber, Theorem 1.6](https://arxiv.org/html/1605.05583).
+It controls local full curvature energy from bounded Ricci and noncollapse;
+it is not an Einstein regularity theorem imposed on the input metrics.
+The local use of that theorem is the reason diameter disappears from this
+part of the argument.
+
+This stronger classical topological input supersedes the need for chiral
+concentration control in this local regularity theorem. The older
+half-flat argument remains valid but is not the strongest available one.
+
+## 2. What replaces compactness in a global existence argument
+
+Theorem 1 supplies local geometry. A global inverse is a different input.
+We give a sufficient condition that yields an exact metric, rather than
+another necessary condition on a hypothetical output.
+
+For a smooth background metric \(g\), let
+\[
+ B_gu=\delta_gu+\tfrac12d\operatorname{tr}_gu,
+ \qquad
+ \Phi_g(h)=\operatorname{Ric}_h+h+\delta_h^*(B_gh).               \tag{9}
+\]
+Here divergence is minus covariant contraction and \(\delta_h^*\) is its
+formal adjoint on one-forms. The derivative at \(g\) is the self-adjoint
+elliptic operator
+\[
+ L_g=\tfrac12\Delta_{L,g}+I,
+ \quad
+ \Delta_{L,g}u=\nabla^*\nabla u+\operatorname{Ric}\circ u
+             +u\circ\operatorname{Ric}-2\mathring R u.          \tag{10}
+\]
+An **absolute spectral gap** means
+\[
+ \|L_gu\|_{L^2}\ge\lambda\|u\|_{L^2}
+       \quad\text{for every smooth symmetric two-tensor }u.     \tag{11}
+\]
+This permits negative eigenvalues but excludes both a kernel and small
+eigenvalues of either sign. It is not a scalar Laplacian gap.
+
+**Theorem 2 (topological local geometry plus a global inverse).** Fix
+\(v,K_1,\lambda>0\) and \(0<\alpha<1\).
+There exist \(\varepsilon,C>0\), depending only on these data, such that
+the following holds. Let a closed connected oriented smooth four-manifold
+with \(\pi_2(M)=0\) carry a smooth metric satisfying
+\[
+ \inf_x\operatorname{Vol}B_1(x)\ge v,\qquad
+ \|\nabla\operatorname{Ric}\|_\infty\le K_1,
+ \qquad (11).                                                \tag{12}
+\]
+Write \(E=\operatorname{Ric}_g+g\) and
+\(\delta=\|g^{-1}E\|_{\infty,\mathrm{op}}\). If
+\[
+ \delta^{1-\alpha}+\|E\|_{L^2(M,g)}<\varepsilon,                \tag{13}
+\]
+then there is a smooth metric \(h\) on the same smooth manifold with
+\[
+ \operatorname{Ric}_h=-h,\qquad
+ \|h-g\|_{C^{2,\alpha}}+\|h-g\|_{H^2}
+       \le C\bigl(\delta^{1-\alpha}+\|E\|_2\bigr).             \tag{14}
+\]
+The Hölder norm is measured in uniformly controlled small harmonic charts;
+an equivalent intrinsic bounded-geometry norm gives the same statement.
+There is no diameter or total-volume bound. Neither a Kähler output nor
+negative sectional curvature is required. Condition (13) uses the
+**unnormalized** integral residual, not its mean.
+
+**Proof.** Take \(\varepsilon\) small enough that \(\delta<1/2\). Then the
+Ricci bound needed in Theorem 1 holds with \(K=2\). First use its harmonic
+radius conclusion with an exponent strictly larger than \(\alpha\).
+In these coordinates the bound on \(\nabla\operatorname{Ric}\), the
+controlled Christoffel symbols and the Ricci bound control the coordinate
+\(C^{0,\alpha}\) norm of Ricci. Schauder estimates in the harmonic metric
+equation therefore give uniform \(C^{2,\alpha}\) bounds for the metric on
+smaller charts, and a uniform curvature bound. These local constants have
+no diameter or volume dependence.
+
+Use the Banach spaces
+\[
+ X=C^{2,\alpha}\cap H^2,\qquad Y=C^{0,\alpha}\cap L^2,
+ \quad \|u\|_X=\|u\|_{C^{2,\alpha}}+\|u\|_{H^2},
+ \quad \|f\|_Y=\|f\|_{C^{0,\alpha}}+\|f\|_2.                   \tag{15}
+\]
+For each individual closed manifold, (11) and self-adjoint elliptic
+Fredholm theory give a unique inverse and
+\(\|L_g^{-1}f\|_2\le\lambda^{-1}\|f\|_2\).
+Uniform local elliptic estimates, summed in a bounded-overlap atlas, give
+\[
+ \|u\|_{H^2}\le C(\|L_gu\|_2+\|u\|_2).                      \tag{16}
+\]
+The atlas may have arbitrarily many members; its overlap bound, rather
+than its cardinality, enters this inequality. Local Moser estimates for a
+connection Laplacian with bounded zero-order coefficients, followed by
+Schauder estimates, give
+\[
+ \|u\|_{C^{2,\alpha}}
+       \le C(\|L_gu\|_{C^{0,\alpha}}+\|u\|_2).                \tag{17}
+\]
+Thus
+\[
+                         \|L_g^{-1}f\|_X\le C_I\|f\|_Y       \tag{18}
+\]
+uniformly across (12). Local bounded-geometry estimates and the explicit
+global hypothesis (11), not compactness of the whole manifold, give (18).
+
+Expand
+\[
+ \Phi_g(g+u)=E+L_gu+N_g(u).
+\]
+For \(\|u\|_X,\|z\|_X\le\rho\), with a fixed small \(\rho\), the standard
+coordinate formula for Ricci and (9) gives
+\[
+ \|N_g(u)-N_g(z)\|_Y
+     \le C_N(\|u\|_X+\|z\|_X)\|u-z\|_X.                    \tag{19}
+\]
+For clarity, its second-order terms have the form
+\(u*\nabla^2u\), \(\nabla u*\nabla u\), and bounded curvature times
+\(u*u\), with smooth coefficients for positive-definite \(g+u\).
+Hölder product estimates bound their first norm in (15); their \(L^2\)
+norm is bounded by one \(C^{2,\alpha}\) factor and one \(H^2\) factor.
+There is no multiplication by \(\operatorname{Vol}(M)^{1/2}\).
+
+Tensor interpolation, using \(\nabla E=\nabla\operatorname{Ric}\), yields
+\[
+ \|E\|_{C^{0,\alpha}}\le C\delta^{1-\alpha},\qquad \delta\le1,
+                                                                  \tag{20}
+\]
+where \(C\) can depend on \(K_1\) and the chart data. On the ball of
+radius \(R=2C_I\|E\|_Y\) in \(X\), the map
+\(u\mapsto-L_g^{-1}(E+N_g(u))\) is a contraction when
+\(R\le\rho\) and \(2C_IC_NR<1\). This gives a positive-definite solution
+\(h=g+u\) of \(\Phi_g(h)=0\) and (14).
+
+Smallness in \(C^{2,\alpha}\) makes \(\operatorname{Ric}_h\) negative
+definite. Put \(b=B_gh\). Applying the contracted Bianchi operator for
+\(h\) gives
+\[
+ 0=2B_h\delta_h^*b=\nabla_h^*\nabla_h b-\operatorname{Ric}_h(b).
+\]
+Integration on the closed manifold forces \(b=0\). Hence
+\(\operatorname{Ric}_h=-h\). Elliptic bootstrapping of the gauged equation
+with smooth background makes \(h\) smooth. \(\square\)
+
+The Bianchi-gauge operator, local Moser estimate and hybrid-norm repair
+method are classical. For primary statements see
+[Jäckel, sections 2 and 4--5](https://arxiv.org/html/2502.16692v2) and
+[Premoselli, section 4.1](https://numdam.org/item/10.5802/tsg.367.pdf).
+The contribution here is the geometric input to this solver: topological
+core exclusion and local noncollapse supply controlled charts without
+global diameter. The spectral gap remains an independent hypothesis.
+
+## 3. A pointwise-input application with localized error
+
+**Corollary 3.** In Theorem 2, suppose \(E\) vanishes outside a measurable
+set \(\Omega\) of volume at most \(V_0\). A sufficiently small pointwise
+defect \(\delta<\delta_0(v,K_1,\lambda,V_0,\alpha)\) then gives an
+exact negative Einstein metric on the same smooth manifold, with no bound
+on the total volume or diameter.
+
+Indeed, in four dimensions \(|E|\le2\delta\), so
+\[
+ \|E\|_2\le2\delta\sqrt{V_0}.                               \tag{21}
+\]
+Take \(\delta_0\) to satisfy (13). Exact Einstein regions of arbitrarily
+large volume do not increase the residual bound. Their possible effect on
+small global eigenvalues must still be tested through (11).
+
+This gives a sufficient same-smooth-type realization statement, not a
+claim that every original Yau26 input has localized error. The repaired
+metric is not forced to respect an input symmetry or complex structure.
+
+## 4. Which information cannot be discarded
+
+1. **Averaging does not provide (13).** If
+   \(r=\fint|\operatorname{Ric}+g|^2\), then
+   \(\|E\|_2=\sqrt{r\operatorname{Vol}(M)}\). Small \(r\) with growing
+   volume is insufficient. For an explicit normalization test, take covers
+   \((M_j,h_j)\) of degree \(N_j\to\infty\) of a fixed closed hyperbolic
+   four-manifold, scaled to \(\operatorname{Ric}_{h_j}=-h_j\), and put
+   \(g_j=(1+t_j)h_j\), \(t_j=N_j^{-1/4}\). Then
+   \[
+    \delta_-(g_j)=\frac{t_j}{1+t_j}\to0,
+    \quad \|\operatorname{Ric}_{g_j}+g_j\|_2
+       =2t_j\sqrt{N_j\operatorname{Vol}(h_1)}\to\infty.        \tag{22}
+   \]
+   These manifolds already have Einstein metrics; (22) disproves an
+   implication between norms, not an existence assertion.
+2. **A local regularity theorem does not eliminate global kernels.** On
+   \(\Sigma_g\times\Sigma_h\) with the standard negative Einstein product,
+   a Teichmüller deformation of one factor, in transverse-traceless gauge,
+   gives a nonzero tensor in \(\ker L_g\). Thus Theorem 2 deliberately does
+   not replace the previous compact KE realization theorem: that theorem
+   can accommodate such moduli without inverting a full operator. Deleting
+   these modes requires an obstruction equation and an integrability
+   argument, not merely a choice of notation.
+3. **Neither gauge saturation nor a Weyl estimate is needed in Theorem 2.**
+   The stronger topological input now handles curvature concentration.
+   It does not supply unit-ball noncollapse, the linear gap, or the small
+   unnormalized residual. The previous actual-form estimates can still
+   provide geometric structure, but they do not replace these hypotheses.
+4. **This is not a replacement of Jäckel's theorem.** His Theorem 1.1 has
+   strict negative sectional curvature, an exactly hyperbolic thin part,
+   bounded Ricci derivative and small unnormalized residual; it allows
+   arbitrarily small injectivity radius. Here local noncollapse and a
+   topological regularity mechanism replace that thin-part analysis,
+   while the global linear gap is explicit rather than obtained from
+   negative sectional curvature. Neither statement subsumes the other.
+
+## 5. Relation to the first scientific line
+
+The previous compact realization mechanism was
+\[
+ \text{gauge saturation plus bounded diameter}
+ \Longrightarrow\text{smooth compact limit}
+ \Longrightarrow\text{same-type KE existence}.
+\]
+The present sufficient mechanism is different:
+\[
+ \text{vanishing }\pi_2\text{ plus local noncollapse and bounded Ricci}
+ \Longrightarrow\text{uniform local geometry},
+\]
+followed by a separately verified global inverse and small mixed residual,
+which imply a genuine solution on the original manifold. This obtains
+Einstein existence without diameter, but not from unrestricted Yau26 input.
+It identifies two distinct missing pieces in a large-scale degeneration:
+local concentration control and global low-mode solvability. Replacing
+diameter by either one alone would omit the other.
+
+Theorem 1 is the local scope extension obtained from the stronger classical
+ALE exclusion. Theorem 2 and Corollary 3 are its explicit composition with a
+classical solver, not a newly invented inverse-function method or a claim
+of global priority. They supply a usable sufficient theorem with all
+additional input stated, rather than assigning another round of work to
+an unspecified global matching problem.

@@ -1,0 +1,24 @@
+name: Restore original research archive
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'archive/transport_parts/**'
+permissions:
+  contents: write
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reassemble and verify original bytes
+        run: python3 tools/reassemble_archive.py archive/transport_parts/9d4f2de378ca/manifest.json
+      - name: Preserve original archive
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add archive/originals/2026-10-07/20261007_Einstein_Gaps_Two_Sessions.zip catalog/large_archive_restoration.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Restore original research archive after chunked transfer'
+            git push origin HEAD:main
+          fi

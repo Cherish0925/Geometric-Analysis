@@ -1,0 +1,851 @@
+% !TeX program = xelatex
+% Standalone source: xelatex 20260929_Line1_Synthesis.tex (run twice).
+% No external figures, bibliography database, or input files are required.
+\documentclass[UTF8,fontset=fandol,zihao=-4,a4paper]{ctexart}
+\usepackage[margin=24mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{esint}
+\usepackage{booktabs,longtable,tabularx,array}
+\usepackage{enumitem,xcolor,graphicx}
+\usepackage{tikz,forest}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\usepackage{xurl}
+\usepackage[unicode,colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 第一科学主线：共同机制与研究全景}
+\fancyhead[R]{\small 2026年9月29日}
+\fancyfoot[C]{\thepage}
+\setlength{\parskip}{0.35em}
+\setlength{\emergencystretch}{2em}
+\setcounter{tocdepth}{2}
+\setlist{nosep,topsep=0.4em,leftmargin=2em}
+\renewcommand{\arraystretch}{1.2}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newtheorem{proposition}{命题}[section]
+\newtheorem{corollary}[proposition]{推论}
+\theoremstyle{remark}
+\newtheorem*{remark}{说明}
+\DeclareMathOperator{\Ric}{Ric}
+\DeclareMathOperator{\Vol}{Vol}
+\DeclareMathOperator{\Rm}{Rm}
+\DeclareMathOperator{\diver}{div}
+\newcommand{\E}{\mathcal E}
+\newcommand{\J}{\mathcal J}
+\newcommand{\avg}{\mathop{\fint}}
+\newcommand{\src}[1]{\par\noindent{\footnotesize 来源：#1。}\par}
+\hypersetup{pdftitle={第一科学主线：共同机制、成果全景与论文收束},pdfauthor={Yau26研究工程}}
+
+\begin{document}
+\begin{titlepage}
+\centering
+\vspace*{18mm}
+{\LARGE\bfseries 第一科学主线\par}
+\vspace{5mm}
+{\Large 共同机制、成果全景与论文收束\par}
+\vspace{7mm}
+{\large 实际规范场、积分 Einstein 刚性与真实几何边界\par}
+\vspace{10mm}
+{2026年9月29日\par}
+\vspace{12mm}
+\begin{minipage}{0.9\textwidth}
+本稿综合最近两轮本地讨论、两组网页会话的最新意见、N1完整继承稿及本地原始证明。目标是把一个持续发展的数学工作讲成一条清楚的证明主线：共同思想是什么，哪些结论已经形成，哪些新推论应吸收，哪些问题真正值得继续研究，以及一篇完整论文应当怎样收束。
+
+主体是实际规范场对曲率微分相容性的定量约束。有限参数理论、N1无迹Ricci间隙、I40/I41线性强制与不同规范来源上的应用，是这一主体的互补组成。一般弱积分零端O10和原平衡族最佳首项O11仍是主要深化问题；精确实现保留独立的全局条件。
+
+本稿完整写出最近新增的N1继承、两种类平方成本、正间隙区域、极值相等及全曲率归约。长期分析证明按原稿定位保留，不以综述替代。文中“已有结果”指相应原稿已写出命题及证明；尚未成立的目标单独列出。
+\end{minipage}
+\vfill
+{\small 数学基线：\texttt{0b14907}；综合至本次提供的2026年9月29日讨论。\par}
+{\small 单一可编译源文件；不依赖外部图片、附录文件或文献数据库。\par}
+\end{titlepage}
+\tableofcontents
+\newpage
+
+\section{总判断：一条共同主干，而不是不断增加的课题清单}
+
+第一科学主线最清楚的中心是：
+\begin{quote}
+实际规范场不只提供拓扑数值下界，还能选出曲率的相容模式。场方程、联络曲率与Einstein方程的微分恒等式必须同时成立；不相容部分因此必须承担不可消除的积分代价。
+\end{quote}
+
+这项研究的对象可以理解为\emph{曲率的真实可实现性}。分别满足标量、Weyl与Ricci的数值预算，并不保证这些数据来自同一个真实度量和同一个实际场。项目的分析工作，正是在数值允许区域中进一步识别微分方程不允许的部分。这里不预设真实可实现集合是凸集，也不预设障碍消失后必然存在精确解。
+
+论文的贡献应分清三种层次。第一种是新的分析机制：实际场的构造、所需二阶控制、相容背景作用消去和弱Bianchi闭合。第二种是该机制的强推论：参数非饱和、N1、平方成本与变分归约。第三种是真实应用和边界：不同规范来源、线性拓扑窗口、匹配构造及反例。三个层次彼此依赖，但不能把每次重述、归约或常数吸收都计算成一套新的方法。
+
+目前最重要的事实有四项：
+\begin{enumerate}
+\item 原统一积分障碍没有被替换；N1从参数理论重新推出并加强它。
+\item I40/I41已把指定平衡族的二次级下界推进为线性级，并去掉额外标量方差项。
+\item N1的平方短缺版已经完成；本次再吸收直接按负类平方支付的推论。
+\item 现有结果尚未汇合为包含所有最新加强的连续主稿；O10与O11也尚未解决。这是两类不同的未完成工作。
+\end{enumerate}
+
+所谓“研究到位”，在本阶段应落实为明确的定理、真实适用范围和匹配边界，而不是要求论文包含所有四维几何理论。保全全部历史工作，也不意味着所有历史尝试都必须成为主文的一节。
+
+\section{记号、输入与问题的量词}
+\label{sec:notation}
+
+除另行说明，$M$为闭、连通、定向光滑四流形，$g$为光滑度量。积分采用当前度量。Ricci使用协变二张量范数，$W^\pm$使用作用于二形式丛的曲率算子Hilbert--Schmidt范数。置
+\begin{gather}
+V=\Vol_g(M),\quad T_\pm=2\chi(M)\pm3\tau(M),\quad T=T_+,\notag\\
+P=\int_M|\Ric^\circ|^2,\qquad S=\int_Ms^2,\qquad
+R=\int_M|\Ric|^2=P+S/4,\label{eq:energies}\\
+p=(a_g^+)^2\ge A>0,\qquad
+Y=(T-a^2)_+,\quad y=Y/A,\quad \nu=(-a^2)_+/A.\label{eq:costs}
+\end{gather}
+这里$a$必须来自实际使用的Spin$^c$结构；形式上合适的上同调向量不够。$p$是其自对偶调和投影平方，$a^2$是交叉形式平方。
+
+相对Einstein缺陷与无迹Ricci比例分别为
+\begin{align}
+\E(g)&=\inf_{\lambda\ne0}
+\frac{\int_M|\Ric_g-\lambda g|^2}{\lambda^2V},\label{eq:E}\\
+\J(g)&=\frac{4P}{R}\qquad(R>0).\label{eq:J}
+\end{align}
+若$R>0$，直接优化$1/\lambda$给出
+\begin{equation}
+\E=4-\frac{(\int s)^2}{VR}
+=\frac{4P+L_s}{R}\ge\J,
+\qquad L_s=\int_M(s-\bar s)^2.
+\label{eq:relative}
+\end{equation}
+常标量曲率时$\E=\J$。非Ricci-flat Einstein度量满足$\E=\J=0$；Ricci-flat时$R=0$、$\J$不定义，而原定义给$\E=4$。
+
+\subsection{两个不同的实际输入层次}
+
+旧版共形供给要求：对给定$g$，同一个实际Spin$^c$结构在其整个共形类中具有所需未扰动解，等价接口给出证明所用的正权重解。不同原始度量允许选不同结构，但不能在一次证明改变权重时偷偷换类。
+
+N1使用更弱的逐共形类输入：$[g]$为负Yamabe类，其归一化常标量代表$\widehat g$满足$s_{\widehat g}=-4$，且在$\widehat g$上有一个实际普通SW解。按项目规范缩放旋量后，写成
+\begin{equation}
+D_A\Phi=0,\qquad F_A^+=2i\sigma(\Phi),\qquad
+|\sigma(\Phi)|^2=|\Phi|^4/8.
+\label{eq:single}
+\end{equation}
+一次推导中的$p,a^2$及实际场均属于同一个结构。全度量应用仍须对每个待测共形类提供相应输入，并使用统一预算$A$；短缺版的统一结论还须控制相应成本。
+
+\subsection{与原始逐点问题的关系}
+
+按项目采用的归一化，
+\[
+\delta_\sigma(g)=\|g^{-1}\Ric_g-\sigma I\|_{L^\infty,\mathrm{op}},
+\qquad \sigma=\pm1.
+\]
+四维中$\E\le4\delta_\sigma^2$。积分正间隙因此可以排除足够紧的逐点输入；反向由积分小量推出逐点小量不成立。原始存在性问题要求同一光滑流形承载某个Einstein度量，输出不必接近输入，也不必保持其符号或额外结构。
+
+\section{知识树与证明依赖图}
+
+\subsection{成果知识树}
+
+\begin{center}
+\begin{forest}
+for tree={grow'=east,draw=black!35,rounded corners,align=left,
+font=\small,anchor=west,parent anchor=east,child anchor=west,
+edge={black!45},l sep=7mm,s sep=4mm,inner sep=5pt}
+[第一科学主线, text width=23mm
+ [实际供给, text width=23mm
+  [普通／special类、BF、Pin$^-$、覆盖\\
+   保留各自可解性与预算, text width=77mm]]
+ [共同分析, text width=23mm
+  [保留误差、Hessian、弱Bianchi\\
+   相容背景作用消去与共形转移, text width=77mm]]
+ [主体输出, text width=23mm
+  [有限参数与N1；I40/I41线性强制\\
+   经典障碍加强与真实双手性应用, text width=77mm]]
+ [边界与构造, text width=23mm
+  [恢复序列、精确子族、核心成本\\
+   局域锐利性、反例与变分归约, text width=77mm]]
+ [核心深化, text width=23mm
+  [O10：一般弱积分零端\\
+   O11：原平衡族全度量最佳首项, text width=77mm]]
+ [结构与实现, text width=23mm
+  [周期、允许Weyl、受限精确实现\\
+   慢模态、覆盖、完整填充与全局转移, text width=77mm]]
+]
+\end{forest}
+\end{center}
+
+这一树按数学作用分类，不是时间顺序，也不要求每个分支全部完成才允许主论文收束。新实际对象和完整经典预算分别扩展适用范围、确定比较强度；它们在后文单独说明。
+
+\subsection{主证明图}
+
+\begin{center}
+\begin{tikzpicture}[
+ box/.style={draw=black!45,rounded corners,align=center,text width=54mm,
+ minimum height=12mm,inner sep=5pt,font=\small},
+ arr/.style={-{Latex[length=2mm]},thick},
+ goal/.style={box,draw=blue!55!black,dashed}]
+\node[box,text width=116mm] (supply) at (0,0)
+ {实际规范供给与正投影预算\\原供给推出负Yamabe；N1提炼代表度量上的单解输入};
+\node[box] (param) at (-3.25,-2.05) {同一实际解的有限参数分析\\I51及相应共形转移};
+\node[box] (fine) at (3.25,-2.05) {相容背景作用消去\\精细Hessian与弱Bianchi闭合};
+\node[box] (n1) at (-3.25,-4.15) {$\beta=8$：N1及成本版\\原积分障碍的无迹Ricci加强};
+\node[box] (linear) at (3.25,-4.15) {I40/I41：标量松弛强制\\双手性线性窗口与真实应用};
+\node[goal] (o10) at (-3.25,-6.3) {O10：一般弱积分零端\\需新的全局实际信息};
+\node[goal] (o11) at (3.25,-6.3) {O11：全度量最佳首项\\需匹配下界与构造};
+\draw[arr] (supply) -- (param);
+\draw[arr] (supply) -- (fine);
+\draw[arr] (param) -- (n1);
+\draw[arr] (fine) -- (linear);
+\draw[arr,dashed] (param.west) -- ++(-0.35,0) |- (o10.west);
+\draw[arr,dashed] (linear) -- (o11);
+\end{tikzpicture}
+\end{center}
+
+实线表示已有的证明关系，虚线表示加强目标。右侧精细分支不能由左侧$\beta=8$的一次代入替代；反过来，小$h$线性窗口单独也不能推出整个原临界障碍。两者共同构成论文，不必强行压成一个公式。
+
+精确实现还有另一条有条件的链：实际形式与允许曲率结构，加上相应紧性、无泡、单值或完整填充信息，才通向同一光滑类型的精确几何。这里没有“当前障碍不触发便自动存在”的箭头。
+
+\section{研究怎样发展到现在}
+
+\begin{longtable}{L{28mm}L{65mm}L{54mm}}
+\toprule 阶段 & 改变了什么认识 & 在当前理论中的位置 \\\midrule
+\endfirsthead
+\toprule 阶段 & 改变了什么认识 & 在当前理论中的位置 \\\midrule
+\endhead
+早期近似构造与全局判定 & 区分一个度量序列、局部修复失败和同一流形所有Einstein输出。 & 固定$E_D$等对象继续保存，不混同积分主论文。 \\
+内禀积分校准 & 由实际场在原度量上自测试，取得无需预设几何紧性的代价型间隙。 & 共同分析的起点；原独立主稿已有完整组织。 \\
+极化与真实供给 & 度量依赖选类、指定chamber、手术、BF与Pin$^-$进入同一分析。 & 各自的非消失、正预算和量词是实际输入。 \\
+参数化与双手性 & 不同曲率模式可由同一参数族探测；另一手性给出能量上预算。 & 形成非饱和估计、能量窗口和拓扑应用。 \\
+允许结构与实现 & 实际形式、周期、无泡、全局数据与填充在规定范畴内连接到精确几何。 & 已完成的正面分支；不等待所有普遍化目标。 \\
+集中与有符号通量 & 识别旋量低幅度层、扭率及特征数可能承载代价的位置。 & 为核心加强提供问题；并非每条局部分析都独立成为主结果。 \\
+I40/I41 & 消去背景体积损失，再剥离标量方差，建立线性拓扑代价。 & 当前精细强制的主体。 \\
+I45--I55及真实反例 & 扩大有条件零端、完整核心、恢复邻域与局域首项的覆盖；否定过强的自动提取。 & 描述真实边界与证明工具；O10/O11仍未因此普遍闭合。 \\
+I51与最新回接 & 同一常权重解支持有限参数分析；N1、成本版及变分归约接回共同主干。 & 已有分析的有效提炼和加强，不重复计为另一套分析方法。 \\
+本次综合 & 纳入$\nu$成本、正间隙区域、慢模态完成范围、$E_D$属数体积式及BF比较性质。 & 更新同一理论的状态，不另造研究方向。 \\
+\bottomrule
+\end{longtable}
+
+早期八卷与最新十二卷中的条目有继承和重复。79个早期条目与47个最新条目是阅读来源数量，不是126个独立定理。有限计算支持系数、范数、缩放和构造搜索；它们应伴随所支持的数学保存，而不替代解析证明。
+
+\section{有限参数核心与N1的完整继承}
+\label{sec:n1}
+
+本节把最近几轮分散出现的短证明写在一起。使用的分析前提是I51在标量$-4$代表上的同解估计。其证明取式\eqref{eq:single}中的任意实际解，最大值原理给幅度控制，再以该解完成Hessian与弱Bianchi步骤；这里不另调用随参数变化的新解。
+
+定义
+\begin{equation}
+D_\beta=(1+\beta^{-1})S+6(\beta+1)\int|W^+|^2-72\pi^2p,
+\qquad\beta\ge2.
+\label{eq:pencil}
+\end{equation}
+在$\widehat g$上置$r=P(\widehat g)/V$、$b=(-a^2)_+/V$。I51提供
+\begin{equation}
+(1+b)\left(r+\frac{D_\beta}{\beta V}\right)
+\ge c_0\frac{(\beta-2)^2}{\beta^4}.
+\label{eq:i51}
+\end{equation}
+在类平方条件$a^2\ge T$下，可用Chern--Weil与小量/大量分支去掉成本因子。定理在更强旧供给下的全度量陈述，与这里提炼出的代表度量单解证明，应分别写清。
+
+\subsection{为什么取\texorpdfstring{$\beta=8$}{β=8}}
+
+基本恒等式为
+\begin{equation}
+4\pi^2T=\frac1{24}S+2\int|W^+|^2-\frac12P.
+\label{eq:cw}
+\end{equation}
+参数泛函中Weyl项与标量平方项的系数比为$6\beta$；式\eqref{eq:cw}中的比为48。因此$\beta=8$正好对齐，得到
+\begin{equation}
+D_8=108\pi^2(T-2p/3)+\frac{27}{2}P.
+\label{eq:d8}
+\end{equation}
+令$d=(T/A-2/3)_+$。单解标量预算和$s_{\widehat g}=-4$给
+\begin{equation}
+16V\ge32\pi^2p\ge32\pi^2A,
+\qquad A/V\le1/(2\pi^2).
+\label{eq:scalarbudget}
+\end{equation}
+由于$T-2p/3\le Ad$，有
+\begin{equation}
+H:=r+\frac{D_8}{8V}
+\le\frac{43}{16}r+\frac{27}{4}d.
+\label{eq:Hupper}
+\end{equation}
+
+\subsection{精确共形比较}
+
+记$\Delta=S(g)-S(\widehat g)\ge0$。I41中的共形恒等式给
+\begin{equation}
+P(g)=P(\widehat g)+\Delta/12,
+\qquad R(g)=R(\widehat g)+\Delta/3.
+\label{eq:conf}
+\end{equation}
+从而
+\begin{equation}
+\J(g)=\frac{R(\widehat g)}{R(\widehat g)+\Delta/3}\J(\widehat g)
++\frac{\Delta/3}{R(\widehat g)+\Delta/3}.
+\label{eq:weightedJ}
+\end{equation}
+这是$\J(\widehat g)$与1的加权平均，而不是任意共形变化下的单调性声明。当$\J(g)<1$时，
+\begin{equation}
+\J(\widehat g)\le\J(g),\qquad
+r=\frac{4\J(\widehat g)}{4-\J(\widehat g)}
+\le\frac43\J(g).
+\label{eq:rJ}
+\end{equation}
+结合式\eqref{eq:Hupper}，得
+\begin{equation}
+H\le\frac{43}{12}\J(g)+\frac{27}{4}d
+\le\frac{27}{4}\bigl(\J(g)+d\bigr).
+\label{eq:Hgap}
+\end{equation}
+
+\subsection{N1：原临界障碍的无迹Ricci加强}
+
+\begin{proposition}[N1]
+在第\ref{sec:notation}节的负Yamabe单解输入、$p\ge A>0$及$a^2\ge T$下，有绝对常数$\varepsilon>0$使
+\begin{equation}
+\boxed{\J(g)+(T/A-2/3)_+\ge\varepsilon.}
+\label{eq:N1}
+\end{equation}
+\end{proposition}
+\begin{proof}
+式\eqref{eq:i51}的去成本版本在$\beta=8$处给$H\ge c_8>0$。
+若$\J(g)<1$，式\eqref{eq:Hgap}给$\J+d\ge4c_8/27$；否则$\J+d\ge1$。故可取$\varepsilon=\min\{1,4c_8/27\}$。若用$\widehat c_0$记去成本版本的常数，则$c_8=9\widehat c_0/1024$，因此$\varepsilon=\min\{1,\widehat c_0/768\}$。它不必等于原始成本式中的$c_0$；这些是可用常数，不是最佳常数。
+\end{proof}
+
+\subsection{直接负类平方成本：本次补入的推论}
+
+保留原始成本式，记
+\[
+(1+b)H\ge c_{8,\mathrm{raw}}>0,
+\qquad \nu=\frac{(-a^2)_+}{A}.
+\]
+由式\eqref{eq:scalarbudget}，$b\le\nu/(2\pi^2)$。于是有以下不再要求$a^2\ge T$的结论。
+
+\begin{corollary}[负类平方成本版]
+在负Yamabe单解输入及$p\ge A>0$下，
+\begin{equation}
+\boxed{\J(g)+d\ge\frac{c_*}{1+\nu/(2\pi^2)},\qquad
+c_*=\min\{1,4c_{8,\mathrm{raw}}/27\}.}
+\label{eq:nucost}
+\end{equation}
+特别地，若$a^2\ge0$，则$\J+d\ge c_*$，不必另假设$a^2\ge T$。
+\end{corollary}
+\begin{proof}
+当$\J(g)<1$时，结合$(1+b)H\ge c_{8,\mathrm{raw}}$、式\eqref{eq:Hgap}及$b\le\nu/(2\pi^2)$即得结论。当$\J(g)\ge1$时，右端不超过1，结论直接成立。
+\end{proof}
+
+\subsection{相对拓扑短缺成本}
+
+令$y=(T-a^2)_+/A$。由式\eqref{eq:cw}，
+\[
+\frac{(-T)_+}{V}\le\frac{r}{8\pi^2},\qquad
+b\le\frac r{8\pi^2}+\frac y{2\pi^2}.
+\]
+在$\J(g)<1$分支，由式\eqref{eq:rJ}得
+\begin{equation}
+1+b\le1+\frac1{6\pi^2}+\frac y{2\pi^2}.
+\end{equation}
+再次使用式\eqref{eq:Hgap}，并处理$\J(g)\ge1$分支，得到
+\begin{equation}
+\boxed{\J(g)+d\ge\frac{c_y}{1+y},\qquad
+c_y=\min\left\{1,\frac{4c_{8,\mathrm{raw}}}{27(1+1/(6\pi^2))}\right\}.}
+\label{eq:ycost}
+\end{equation}
+因此有界归一化平方短缺$y\le L$时，存在统一的$c_y/(1+L)$下界。这个版本已经完成，不应继续列为待证事项。
+
+$y$与$\nu$是两种不同成本：前者比较$a^2$与拓扑阈值$T$，后者只记录负类平方。二者互补，不能无条件断言$\nu\le y$；例如$T<0$时这种比较未必成立。在$0\le a^2<T$区域，$y>0$但$\nu=0$，故N1没有负类平方损失。另一方面，$a^2\ge T$给$y=0$，即使$a^2$为负，仍可由拓扑吸收得到无成本间隙。
+
+\subsection{正间隙究竟排除哪个区域}
+\label{sec:positive}
+
+以上结论首先约束$\J+d$，不是对任意拓扑都单独给$\J>0$。准确地，
+\begin{equation}
+\J(g)\ge\frac{c_y}{1+y}-d,
+\qquad
+\J(g)\ge\frac{c_*}{1+\nu/(2\pi^2)}-d.
+\label{eq:positiveJ}
+\end{equation}
+只有当相应右端严格为正，才得到非平凡的无迹Ricci正间隙。例如，全度量应用中若$A,L$统一，且
+\[
+y\le L,\qquad (T/A-2/3)_+<c_y/(1+L),
+\]
+则所有度量有统一正$\J$间隙。把“有界短缺下的统一障碍不等式”说成“任何有界短缺拓扑都无Einstein度量”会遗漏这个区域条件。
+
+\subsection{旧供给、覆盖和Ricci-flat分支}
+
+旧共形实际供给与$p>0$排除非负Yamabe代表：在非负常标量代表上，未扰动SW的Weitzenböck恒等式使旋量消失，进而$F_A^+=0$，与正调和投影矛盾。因此旧输入确实提供N1所需的负Yamabe单解，而非被新陈述缩小。
+
+在已有实际Pin$^-$提升条件下，双覆盖上的代表为$\pi^*\widehat g$。积分、类平方、$T$与预算$A$按覆盖次数缩放，$\J,T/A,y,\nu$保持不变，因此结论无常数损失地下降。只使用底空间度量与所需相容输入的提升，不要求覆盖上任意非不变度量都有解。
+
+Ricci-flat时不能代入$\J=0$。旧全度量正预算给$\int s_-^2\ge32\pi^2A>0$，独立排除Ricci-flat；新单解版本须逐共形类满足其负Yamabe输入。$A=0$的角点不在本定理内。
+
+\src{I51第2.3节；I41第1节及第3、5节；N1完整继承稿第2--5节；2026年9月29日辅助网页会话的$\nu$推论}
+
+\section{I40/I41：为什么线性强制是分析主干}
+
+\subsection{早期积分校准怎样检测不相容性}
+
+早期独立主稿考虑禁止曲率轨道
+\[
+\mathcal O=\operatorname{Orb}\operatorname{diag}(-1/6,1/12,1/12),
+\qquad F_{\mathcal O}=\operatorname{dist}(W^+,\mathcal O)^2.
+\]
+令$q=-s+\sqrt6|W^+|$，并记
+\[
+\mathcal C=\int(|\Ric+g|^2+F_{\mathcal O}),\qquad
+\Delta_+=\int q_+^2-72\pi^2p,\qquad
+\kappa_{\rm cal}=\frac{\mathcal C+\Delta_+}{V}.
+\]
+实际供给保证$\Delta_+\ge0$。修改正权重使旋量有界，同时用标量误差支付修改代价；实际曲率矩仍保留其拓扑下界。由旋量的二次型构造光滑自对偶二形式$\psi$，再定义
+\[
+A_\psi=\frac{|\psi|^2}{24}I-\frac18\psi\otimes\psi,
+\qquad J_\psi=\diver W(A_\psi),
+\]
+其中$W(A_\psi)$是对应的Weyl四张量。它在零点仍光滑，不必微分不稳定的特征向量。
+
+二阶预算使弱Bianchi可以用同一个$J_\psi$自测试。记$Y_\psi=\avg|J_\psi|^2$，在平滑化误差趋零的意义下，已有
+\begin{align*}
+Y_\psi&\le C_1\sqrt{\kappa_{\rm cal}}
+                 \sqrt{1+\kappa_{\rm cal}+B_a}+o(1),\\
+Y_\psi&\ge\frac1{16}-C_2(\sqrt{\kappa_{\rm cal}}+\kappa_{\rm cal})+o(1),
+\qquad B_a=\frac{(-a^2)_+}{V}.
+\end{align*}
+上下界比较产生$(1+B_a)\kappa_{\rm cal}\ge c>0$。核心困难是合法取得同一个测试场的两种估计，并使常数不随几何退化失控；最后的代数比较本身很短。
+
+这说明精确等号不可能如何被提升为统一的不可逼近。它没有把小Ricci误差当作小Ricci导数，而是通过分部积分把导数转移到实际受控的测试张量上。
+
+\subsection{从有背景成本到线性闭合}
+
+I40的关键不是把背景曲率假设为小，而是在真实旋量的Hessian恒等式中保留一个相容的代数曲率模型。这个模型不需要本身实现为某个联络曲率；它作为代数分解的一部分，在校准幅度上对指定旋量的作用消失。
+
+在原稿$\beta=2$、$r+D_2/V\le1$的分析分支，记$K=\int|\nabla_A\Phi|^2$、$B=\int|F_A^-|^2$，以及$\Theta=rV+D_2+\varepsilon V$，其中$r=\avg|\Ric+g|^2$，$\varepsilon$是可趋零的平滑化误差。以$W_0$表示该分支实际场选出的光滑Weyl模型，置$J_\Phi=\diver W(W_0)$。精细步骤得到
+\begin{align}
+\int\bigl(|\nabla_A^2\Phi|^2+|\nabla_A\Phi|^4\bigr)
+&\le C(K+\Theta+B),\notag\\
+B&\le\sqrt6K+C\Theta\qquad(a^2\ge T),\notag\\
+\|J_\Phi\|_2^2&\le C\sqrt{\Theta(K+\Theta)},\notag\\
+K&\le C(\Theta+\|J_\Phi\|_2^2)\le C\Theta+C\sqrt{\Theta K}.
+\label{eq:bootstrap}
+\end{align}
+于是$K\le C\Theta$。与粗预算相比，决定性差别是没有独立的$CV$项。低幅度区域另行控制，所以没有在旋量零点非法除以模长。
+
+I41再用精确共形能量关系，把结果转移成全尺度曲率估计。置
+\[
+\Sigma=S-32\pi^2p,\qquad \Pi=P+D_2,
+\qquad D_2=\tfrac32S+18\int|W^+|^2-72\pi^2p.
+\]
+在原稿实际供给下，
+\begin{equation}
+\boxed{\Sigma\le C\{\Pi+\sqrt{\Pi Y}\},\qquad
+(p-T)_+\le C_T\{\Pi+\sqrt{\Pi Y}\}.}
+\label{eq:I41}
+\end{equation}
+特别$a^2\ge T$时，$\Sigma\le C(P+D_2)$。它不要求标量方差、直径、非塌缩或统一Sobolev常数作为额外输入。
+
+这条强制关系的意义是：实际规范信息要求的标量松弛不能独立隐藏在标量变化中；它必须由无迹Ricci和真实的泛函缺陷承担。N1是原临界拓扑间隙的加强；式\eqref{eq:I41}则保留能量变量并产生线性窗口，二者有不同的判断能力。
+
+对$T=A(1-h)$、$0<h\le1/3$的相应应用，令
+\[
+U=\frac{3\min\{T_+,T_-\}}A
+=\frac{3(2\chi-3|\tau|)}A.
+\]
+结合另一手性预算，已有
+\begin{equation}
+\boxed{\J+(U-1-h)_+\ge ch.}
+\label{eq:linearwindow}
+\end{equation}
+平方短缺的相应输出为$c h^2/(h+y)$；若$y\le Lh$，仍保留线性阶。这里$y$必须和$h$按同一尺度比较，不能与N1中$y\le L$的固定间隙条件混用。
+
+\src{\path{line1_integral_rigidity_paper.md}第4--6节；\path{20260927_mixed_current_and_signed_cores.md}第4--5节；\path{20260927_conformal_separation_and_zero_end.md}第一部分}
+
+\section{真实应用与经典理论的准确关系}
+
+\subsection{四类输入的共同分析与不同来源}
+
+\begin{longtable}{L{31mm}L{58mm}L{58mm}}
+\toprule 经典来源 & 提供什么 & 当前理论增加什么 \\\midrule
+\endfirsthead
+\toprule 经典来源 & 提供什么 & 当前理论增加什么 \\\midrule
+\endhead
+LeBrun相关曲率与手术障碍 & 实际规范曲率预算、等号几何、规定复曲面和手术范畴。 & 在匹配的正预算范围恢复精确障碍，并给积分、无迹Ricci定量加强。 \\
+Kotschick的special类 & 满足相应平方条件的实际单极子信息及光滑结构应用。 & 用这些真实输入驱动统一相容性与成本估计。 \\
+Ishida--LeBrun的BF供给 & 普通数值SW不变量不能充分表达的实际连通和信息。 & 新线性窗口、全度量积分强制及指定真实族。 \\
+Ishida--Matsuo--Nakamura的Pin$^-$理论 & 扭曲可解性、真实双覆盖提升和相应曲率预算。 & 在保持相容量词的提升上应用共同分析并下降。 \\
+\bottomrule
+\end{longtable}
+
+使用BF或Pin$^-$的供给得到新结论，并不意味着新积分定理反向证明了整套稳定上同伦或扭曲规范理论。LeBrun的精确能量下确界、最小体积等结果也有各自构造与假设，不能由一条相对缺陷估计自动全部恢复。
+
+一般型手术应用有
+\[
+M=X\#k\overline{\mathbb{CP}^{2}}\#\ell(S^1\times S^3),
+\quad A=c_1^2(X),\quad T=A-k-4\ell.
+\]
+N1在相应实际供给与成本条件下成为
+\[
+\J(g)+\left(\frac13-\frac{k+4\ell}{A}\right)_+
+\ge\varepsilon
+\]
+或对应成本版。指定$b_+=1$的chamber、正预算与各应用的供给条件均须随命题保留。
+
+\subsection{已知BF预算与完整BF预算是两件事}
+
+对已经明确供给的符号类集合$\mathcal C_0$，已有比较给其经典凸包与正子空间优化预算均为$A$。新的BF线性窗口超出的是这整组已知实际类所给的相应经典预算。
+
+但$\mathcal C_0$未必等于全部单极子类集合。若额外类将预算提高$O(Ah)$，就可能影响某个具体流形是否已被完整经典障碍排除。要作最强比较，可能需要达到例如$A+o(Ah)$的完整预算上控。
+
+因此应区分：把已知集合的计算与新定理并列说明，是已有数学的论文工作；控制全部可能类，是尚未完成的实质数学。准确限定主张可以让当前论文成立，却不会替代后一个问题的证明。后者不属于N1或I40/I41的解析前提。
+
+\subsection{能量包络的历史位置}
+
+此前参数理论给出的数值根
+\[
+F(h)=\frac{(4-\sqrt{1-3h})^2}{9},\qquad
+G(h)=\frac{(4+\sqrt{1-3h})^2}{9}
+\]
+及相应窗口，在原稿规定的范围内继续保留。对于$0\le h\le1/3$，
+\[
+F(h)-(1+h)=\frac{4h^2}{(1+\sqrt{1-3h})^2}.
+\]
+这解释旧二阶分离与经典能量尺度的关系；I40/I41在所覆盖窗口进一步产生线性强制。不能把数值根本身与实际度量可达到的几何边界混为一谈。
+
+\section{极值、恢复构造与全曲率归约}
+\label{sec:variational}
+
+固定项目已经实现的平衡族
+\begin{equation}
+M_j=X_j\#k_j\overline{\mathbb{CP}^{2}}
+\#\ell_j(S^1\times S^3),\qquad
+Q_j=k_j+4\ell_j=A_jh_j,
+\label{eq:family}
+\end{equation}
+其中$X_j$来自指定闭复双曲曲面的覆盖，平衡手术数使
+$h_j\to0$、$U_j=1+h_j+O(h_j^2)$。所有比较均在同一真实族上进行。
+
+经典收缩手术构造提供上界，线性强制提供全度量下界：
+\begin{equation}
+c_1h_j\le\inf_g\J(g)\le\inf_g\E(g)
+\le\frac{4h_j}{1+h_j}.
+\label{eq:order}
+\end{equation}
+因此正确阶已经是$h$，不是$h^2$。仅添柄的指定子族还已有精确下确界；这个结果不直接决定含吹起的原平衡族。
+
+\subsection{为什么两个下确界相等}
+
+当$h_j$足够小时，恢复上界小于1。取$\J$的极小化序列，使其最终满足$\J<1$。式\eqref{eq:weightedJ}给
+\[
+\E(\widehat g)=\J(\widehat g)\le\J(g),
+\]
+因而$\inf\E\le\inf\J$。结合$\J\le\E$，得到
+\begin{equation}
+\boxed{\inf_g\E(g)=\inf_g\J(g)}
+\label{eq:infequal}
+\end{equation}
+在该族充分大指标上成立。这里用到了逐共形类实际供给、负Yamabe代表及低于1的极值范围。它不是任意流形、任意能量区间的无条件恒等式，也不要求下确界达到。
+
+\subsection{从相对缺陷到无迹Ricci与全曲率}
+
+置$\alpha=\inf_g\E(g)$、$\rho=\inf_gP(g)/(8\pi^2A)$。
+标量预算和双手性Chern--Weil分别给
+\begin{equation}
+P+8\pi^2A\le R\le4P+8\pi^2AU.
+\label{eq:Rbounds}
+\end{equation}
+对$x=P/(8\pi^2A)$且$U>0$，
+\[
+\frac{4x}{U+4x}\le\J(g)\le\frac{4x}{1+x}.
+\]
+两端关于$x$连续递增。对每个度量，$x\ge\rho$，故$\J(g)\ge4\rho/(U+4\rho)$；取下确界得到左侧不等式。沿$P$的极小化序列取得右侧上界，再用式\eqref{eq:infequal}，得
+\begin{equation}
+\frac{4\rho}{U+4\rho}\le\alpha\le\frac{4\rho}{1+\rho}.
+\label{eq:rhobounds}
+\end{equation}
+恢复上界给$\alpha=O(h)$，左式推出$\rho=O(h)$；再用$U=1+O(h)$得到
+\begin{equation}
+\boxed{\alpha_j=4\rho_j+O(h_j^2).}
+\label{eq:rhoreduction}
+\end{equation}
+因此候选首项4等价于
+\begin{equation}
+\inf_gP(g)=8\pi^2Q_j+o(Q_j).
+\label{eq:Ptarget}
+\end{equation}
+若$\Rm_{\mathrm{op}}$使用曲率算子范数，四维Gauss--Bonnet还给
+\[
+\int_M|\Rm_{\mathrm{op}}|^2=8\pi^2\chi(M)+P.
+\]
+所以式\eqref{eq:Ptarget}等价于相应最优全曲率能量公式。这个归约允许直接研究所有竞争度量，不能通过把两个独立下确界相减来替代其共同极值问题。
+
+\subsection{带补偿的首项表达}
+
+最新局域研究给另一条精确入口。定义
+\[
+f=\frac{s^2/12+4|W^+|^2-|\Ric^\circ|^2}{8\pi^2},
+\qquad N=\int f_-,
+\]
+\[
+Z=\int_{\{f\ge0\}}|\Ric^\circ|^2
++\int_{\{f<0\}}\left(s^2/12+4|W^+|^2\right).
+\]
+则$P=8\pi^2N+Z$，$Z\ge0$。在竞争序列上，
+\begin{equation}
+\frac{\E}{h}=\frac{4N}{Q}+\frac{Z}{2\pi^2Q}
++\frac{L_s}{8\pi^2Q}+o(1).
+\label{eq:compensate}
+\end{equation}
+对归约后的$s=-4$真正近极小序列，要取得首项4，尚须
+\begin{equation}
+Z\ge8\pi^2(Q-N)-o(Q).
+\label{eq:Ztarget}
+\end{equation}
+这与式\eqref{eq:Ptarget}是相接的入口，不是另一个独立主线。$N$是指定特征密度的负部质量，不是扭率能量。
+
+\src{I41第3节；\texttt{20260928\_signed\_characteristic\_selection.md}第5节；最新Atlas第7节}
+
+\section{局部研究、反例与已有边界应怎样保留}
+
+\begin{longtable}{L{27mm}L{69mm}L{51mm}}
+\toprule 内容 & 已经提供的信息 & 没有由此得到的结论 \\\midrule
+\endfirsthead
+\toprule 内容 & 已经提供的信息 & 没有由此得到的结论 \\\midrule
+\endhead
+I45/I48受控零端 & 在有界Ricci、指定椭圆曲率或驻点／Sobolev等各自条件下取得零端间隙。 & 原始弱积分输入尚未自动给出这些附加条件。 \\
+I47完整核心 & 指定奇数商、取向与完整领口下，整个光滑填充有锐利成本。 & 任意弱序列未自动分解成这些核心；成本不统一控制Euler复杂性。 \\
+I50相对电荷 & 在实际带标记核心与领口下，保留相对行列式电荷及有限树的边界抵消。 & 行列式电荷不控制全部扭率指数。 \\
+I52/I53恢复邻域 & 指定恢复族中先控制规范切片，再扩展到任意收缩$C^0$邻域及相应标记环带。 & 未覆盖所有真正近极小度量。 \\
+I55局域首项 & 满足外部积分预算时，允许任意内部几何并给首项4。 & 未从任意近极小输入自动提取该外部。 \\
+X01等号反例 & cscK饱和不等于Einstein；相关过强余项目标应撤回。 & 不否定加上正确实际条件后的强制估计。 \\
+X06实际TT族 & 通用有符号估计中的Weyl支付不能无条件删除或降低到所否定的系数。 & 它不位于原平衡窗口，不否定该族首项4。 \\
+X07高指数核心 & 局部真实解可有零行列式电荷、高扭率指数及小次临界成本。 & 未给出满足全部原供给的闭流形O10逃逸序列。 \\
+X09标记移动 & 固定基底精确Bianchi规范可能缺少一致控制。 & 实例仍有首项4，不是低成本构造。 \\
+X10竞争序列 & 仅$\E=O(h)$不能自动给所需负部选择。 & 构造成本高于4，未否定真正近极小序列的补偿。 \\
+完整单元替换 & 真正近极小序列中，固定光滑紧致族的非平凡完整领口块只能有$o(Q)$个。 & 排除过贵单元，并不自动排除可能过便宜的退化几何。 \\
+\bottomrule
+\end{longtable}
+
+这些结果应作为主定理的工具、边界或研究历史保存。重复考察已被排除的局部范畴，或把“没有找到更便宜构造”写成全局下界，都不会增加主理论的判断能力。
+
+I47的具体成本值得单独保留。对奇数$n\ge3$、指定取向的商$\frac1n(1,-2)$，在外向欧氏锥领口固定的整个光滑填充范畴内，
+\[
+\inf_{\Omega,g}\int_\Omega
+\left(|\Ric^\circ|^2+4|W^+|^2+\frac{s^2}{12}\right)
+=4\pi^2\frac{n-1}{n}.
+\]
+内部尺度分解的边界项相消，最外层标记决定保留的边界项。该锐利模型的Euler数可以随$n$增长，而成本保持有界；所以“完整核心有正代价”与“它控制全部拓扑复杂性”并非同一命题。
+
+\section{结构与精确实现：已经完成的分支和剩余全局信息}
+
+\subsection{已有正面结果不是未来设想}
+
+项目已有实际二形式、真实调和类、多类周期与正惯性结论；在相应假设下，还形成了无泡紧性、双取向近饱和的双圆盘实现、陈数边界复双曲实现、有限覆盖输入的底空间实现、轨形紧化及带标记填充的充分条件。
+
+这些结果使用的全局信息不同。不能合并为一个要求所有条件同时成立的总定理，也不能把这些条件全部删去，画成“障碍消失$\Rightarrow$精确存在”。得到Kähler--Einstein已经满足相应输入上“存在某个Einstein度量”的输出要求；其限制在输入范围，不在输出过强。
+
+\begin{longtable}{L{24mm}L{76mm}L{47mm}}
+\toprule 成果组 & 已经接通的数学 & 继续保留的输入 \\\midrule
+\endfirsthead
+\toprule 成果组 & 已经接通的数学 & 继续保留的输入 \\\midrule
+\endhead
+I12多类周期 & 实际共同近饱和限制交叉配对、正惯性与低谱；符号分布可以不经全局定向直接进入联合半正定判据。 & 共同近饱和不能由任意有限类集合自动推出；标准符号供给尚未产生新分离。 \\
+I13--I14允许Weyl & 保留幅度导数与源项，研究相应谱分支的微分结构。 & 调和Weyl与谱控制须由相应输入提供，不能从积分近Einstein自动推出。 \\
+I24无泡实现 & 在规定拓扑及紧性范围内，由逐点近Einstein得到同一光滑类型的精确解。 & $\pi_2=0$、直径和正体积下界等对应条件。 \\
+I25双取向实现 & 两个实际场控制两半Weyl集中，得到双圆盘局部对称几何。 & 实际双供给、投影下界、直径与双侧近饱和。 \\
+I26陈数边界 & 数值关系使近饱和自动成立，继而得到复双曲实现。 & $A=T_+=3T_->0$、实际供给与直径。 \\
+I28有限覆盖 & 先把归一化曲率信息传到底空间，再在底空间实现，允许覆盖次数无界。 & 每层预算、相应饱和与底空间直径；不预设形式或所选度量下降。 \\
+I27/I29局部修复 & 局部几何与全张量强制在指定传播范围内给无直径修复。 & 实际局部正则性、强制常数及适配的体积增长，不能删除核。 \\
+I31/I34/I37整核心 & 轨形紧化、实际形式、全核心匹配与全局复平滑在各自充分条件下连接到负KE。 & 终端ALE不等于整个填充；核心尺度与原始误差的关系须保留。 \\
+I32/I35单值结构 & 小回路形变识别有限单值群或共同多曲线；在相应不可约范围扩展厚纤维结论。 & 真实曲面丛、全局回路数据与分支条件。 \\
+\bottomrule
+\end{longtable}
+
+I26特别体现“让中间条件成为结论”。在其数值面上，
+\[
+\boxed{D_2+72\pi^2(p-A)+54\int|W^-|^2=18P.}
+\]
+左侧三项非负，因此原始逐点Ricci误差同时控制泛函缺陷、投影超额和另一手性Weyl；并非先假设输入已有这些性质。I25则通过两个实际场排除两半曲率的集中。这两条机制相互补充，没有把所有实现都强迫进入同一个数值面。
+
+\subsection{慢模态的完成范围：I33与I36分别保留}
+
+I33取固定双曲曲面$B,F$及指定$m$阶循环覆盖$B_m$，令$h_m=b_m+f$。完整核$K_m=T_{B_m}\oplus T_F$积分成实际Einstein族$H_m(k)$，约化方程全部为零。在原稿调和规范与一致局部范数$X_m=C^{3,\alpha}_{\rm uloc}$、$Y_m=C^{1,\alpha}_{\rm uloc}$中，
+\[
+\|g-h_m\|_{X_m}<cm^{-2}
+\ \Longrightarrow\
+\|g-H_m(\Pi_m(g-h_m))\|_{X_m}
+\le Cm^2\|\Ric_g+g\|_{Y_m}.
+\]
+输入允许所有张量方向。实际非线性例子证明$m^2$修复损失不能换成一致常数；这不等于已经证明$cm^{-2}$是最优分类半径。因此不能把整个慢模态分支写成“完整非线性问题尚未开始或尚未解决”。
+
+I36对指定单位纤维$L^2$速度的水平双曲路径$h_v$和$G=\gamma+h_{v(x)}$，保留所有Ricci块及法向加速度，取得完整非线性能量恒等式。双曲基底下，其两个实际类满足
+\[
+q_+=q_-=\frac9{4V}\int_B|dv|^2+\frac92\avg_M|\Ric_G+G|^2.
+\]
+固定幅度循环族有真实的误差缩放与距离结论；其中固定距离仅针对保纤维微分同胚下的乘积输出。这是真实结果，不只是线性化计算。
+
+真正未完成的是：一般输入能否提供这些全局结构，以及能否覆盖全部所需Einstein候选和允许的微分同胚。I33的全张量收缩邻域结论，与I36的固定幅度特殊慢族结论不能拼成“固定幅度、全部输出”的新定理。必要尺度损失应作为几何信息保留。
+
+\subsection{固定\texorpdfstring{$E_D$}{E-D}：属数、体积与全局存在性}
+
+令$g_f,g_b\ge2$为原构造的纤维与底面属数，避免与单极子预算$p$混淆。固定相应$E_D$上的原度量序列满足
+\begin{equation}
+\Vol(G_\ell)=16\pi^2(g_f-1)(g_b-1),
+\qquad \delta_-(G_\ell)\longrightarrow0.
+\label{eq:EDvolume}
+\end{equation}
+这是近负Einstein归一化中的精确体积式，不是再作独立体积归一化后的声明。$16\pi^2$仅对应$g_f=g_b=2$。
+该精确式属于原慢领口族，不自动搬到后续张量或共形校正后的度量上。
+
+尚未决定的是该固定光滑流形是否承载任意精确负Einstein度量。原序列附近不能修复、某种保纤维或对称模型失败、下确界不达到，都不能排除其他候选。固定属数二的原对象还有其特定拓扑数据；这些数据不应无说明推广到全部属数。
+
+\subsection{无直径的陈数边界实现}
+
+I26在$p\ge T_+=3T_->0$及实际规范输入、直径控制下，已有同一光滑流形上的复双曲实现。O12研究保留相应拓扑预算上界、删除直径条件后是否仍成立。
+
+自动近饱和与体积控制已经存在；一般长端、塌缩及完整填充仍未被原输入控制。$\tau=0$的剪切例子不在该陈数面上，不能用来直接否定O12。这个问题与固定$E_D$、O10、O11各有自己的量词，没有已证箭头把它们全部合并。
+
+\section{两项主攻问题与两类实质扩展}
+\label{sec:open}
+
+\subsection{O10：一般弱积分零Weyl端}
+
+原实际输入下，先在$p\ge A>0$、$a^2\ge T_+$、$\chi/A\le B$的范畴争取
+\begin{equation}
+\boxed{\kappa_\beta:=\avg_M|\Ric+g|^2+D_\beta/V
+\ge c(B)\frac{(\beta-2)^2}{\beta^2},\qquad\beta\ge2.}
+\label{eq:O10}
+\end{equation}
+不另加点态Ricci、直径、非塌缩、Sobolev或驻点条件。去掉$B$及一般自对偶形式版是更强层次，应分开表述。
+
+注意式\eqref{eq:O10}的$D_\beta/V$与式\eqref{eq:i51}的$D_\beta/(\beta V)$不同。已有有限参数及紧区间结论把真正困难集中到$\beta_j\to\infty$、$\kappa_{\beta_j}\to0$的实际序列。
+
+零端的形式不是近平行分支：相应Hodge恒等式在目标归一化下迫使平均导数能量趋于$8/3$。最新全局计算消除了若干行列式与标量导数配对，但用于制造矛盾的正拓扑量也同时相消，留下平方差与临界Ricci配对。仅证明配对趋零，还不能制造矛盾。
+
+固定受控外部的延拓成本已有信息；缺少的是外部与核心共同退化时，完整实际方程是否仍强迫$V$尺度净代价。完成方式有两种：从原输入得到统一间隙；或构造满足全部原条件的闭流形逃逸，并据此确定必要边界。局部实际解、形式曲率数据、未匹配填充均不足以完成后者。
+
+\subsection{O11：原平衡族全度量最佳首项}
+
+已知式\eqref{eq:order}及式\eqref{eq:rhoreduction}。剩余目标是决定$\alpha_j/h_j$的极限，或者准确的上下极限，并有匹配下界与真实构造。
+
+若候选首项为4，可直接证明式\eqref{eq:Ptarget}，或证明式\eqref{eq:Ztarget}，或从真正近极小输入提供足够的标记环带／外部预算。任何一个充分连接成立即可，不要求所有方法都成功。
+
+反向构造须在同一个真实族中完成光滑度量、拓扑及全部过渡代价，并把误差控制到$o(Q)$。一个低于4的真实上界会改变候选答案，但最佳值仍需新下界匹配。对全部近极小几何分类是更强结果，不是数值极值问题完成的附加定义。
+
+\subsection{更弱输入的新实际对象}
+
+单解输入已经从原证明提炼出来；尚未提供的是一个严格超出旧供应链的新自然对象，并在其上兑现完整结论。已有BF与Pin$^-$应用不应重复布置为“首次考虑”的方向。
+
+可研究不同真实方程，但必须重新提供实际解、代数校准、剩余联络能量及微分闭合。换一个更宽名称没有完成新供给。多实际类联合判据也只有在获得真实分离配置或新的空间相容性后，才形成新增拓扑应用。
+
+\subsection{完整经典预算：独立的数学问题}
+
+完整BF类集合预算的上控，关系到最强经典比较，不是N1或I40/I41成立所欠的证明。若能够完成所需精度的上控，它本身也是实质数学；若暂不完成，论文应采用已经证明的比较范围。这两种选择不能混成“只改措辞就完成了预算问题”。
+
+\subsection{跨尺度结构是方法，不是新的强制总目标}
+
+实际场、完整标记核心、边界通量和外部退化之间的传递可能同时帮助O10与O11。但须达到不同强度：
+\[
+\text{O10：控制或强迫 }V\text{尺度净量};\qquad
+\text{O11：精确到 }o(Q),\quad Q=Ah.
+\]
+电荷守恒不自动给目标缺陷下界，每个核心有正成本也不自动给足够总成本；$o(V)$更不自动是$o(Q)$。完整泡树或$\Gamma$极限可以是成果，但前者需要实际提取与匹配，后者需要状态空间、收敛、下极限和恢复序列，不能用形式加性表达提前宣布。
+
+\section{主论文怎样收束，研究怎样继续}
+
+\subsection{建议的连续正文}
+
+\begin{longtable}{L{27mm}L{76mm}L{44mm}}
+\toprule 章节 & 要完成的数学表达 & 当前状态 \\\midrule
+\endfirsthead
+\toprule 章节 & 要完成的数学表达 & 当前状态 \\\midrule
+\endhead
+问题与主定理 & 给准确实际输入、N1及成本版、I41和主要应用。 & 内容已存在，最强版本尚须汇合。 \\
+共同分析 & 实际场、非负余量、Hessian及弱Bianchi；区分经典步骤和新增估计。 & 原始证明分布在主稿与续稿。 \\
+有限参数与继承 & I51、$\beta=8$、负Yamabe、覆盖下降与正间隙区域。 & 短证明已闭合，本稿完整写出。 \\
+精细强制 & 相容背景消去、类平方吸收、I40/I41与线性窗口。 & 已有主体证明。 \\
+实际应用 & 四类来源逐项代入，突出真实BF／Pin$^-$范围与定量增量。 & 既有应用保留；完整类预算另列。 \\
+真实边界与极值 & 线性匹配、精确子族、全曲率归约及必要反例。 & 阶与归约已完成，O11仍开放。 \\
+端点与展望 & 已有条件性零端、O10准确范围、最短剩余连接。 & 不把未来目标写入已证摘要。 \\
+\bottomrule
+\end{longtable}
+
+\subsection{完成现有论文所需的有限工作}
+
+\begin{enumerate}
+\item 将原主稿与最新续稿汇成一个稳定正文。统一记号、范数、常数依赖和实际解量词；不再要求读者遍历研究轮次。
+\item 把本稿已写出的N1、两种平方成本、正间隙区域、覆盖与Ricci-flat处理、极值相等和全曲率归约并入相应章节。这些不是待发现的新桥梁。
+\item 给四类经典输入与新结论的逐条对应，完成足以支撑论文主张的最近邻比较。最强BF完整预算主张若仍无证明，应与现有已证比较分开。
+\item 对承担主结论的分析链作独立通读，使每个引用的引理、量词与误差尺度在连续正文中可见。此项服务于定理本身，不以文件数量或计算通过次数衡量数学成熟度。
+\end{enumerate}
+
+这四项完成后，可以说现有主论文已经收束。若希望在此基础上进一步增强理论，则持续推进第\ref{sec:open}节的准确目标；不能在每次完成一个目标后，又把所有相邻领域自动加为新的完成条件。
+
+\subsection{适合继续并行的任务}
+
+O10可由直接方程与真实闭构造两路互相检验；O11可由全局下界与真实低成本构造两路互相检验。新实际对象与完整经典预算各自服务于适用范围和比较强度。主稿随完成的数学更新。
+
+这些是围绕少数问题的分工，不是六条新科学主线。任务分类也不是先后阶段：必要的证明、构造、比较和写作可以同时推进。每个技术引理应接回一个明确结论；若一个局部结果只排除某条路线，就把它的准确作用保存，而不继续靠同义重述累计进展。
+
+\subsection{不需要等待的事项}
+
+固定$E_D$、无直径复双曲实现、全局平滑、一般慢模态修复以及新的物理迁移，应按其独立数学价值继续。它们不共同构成当前障碍论文的欠账。下游的二次曲率作用量、无迹应力、Maxwell手性、手性联络与RG残差等公式可以作为应用资料，但新的耦合解、独立物理机制或其他重大问题仍须各自证明。
+
+研究的集中不等于丢弃广度：已有成果完整留在研究工程中，主文只选取建立共同机制、展示判断能力和决定适用边界所必需的部分。
+
+\section{本轮讨论应固定的更新}
+
+\begin{enumerate}
+\item N1原回接、旧供给推出负Yamabe、Pin下降、正预算与Ricci-flat边界已写清；剩余是并入连续主稿。
+\item 有界$y$短缺版已完成；本稿再写出按$\nu$支付的版本。$a^2\ge0$足以消去后者成本，但任何正$\J$间隙仍须扣除$d$。
+\item 原平衡族低缺陷范围内$\inf\J=\inf\E$已成立；$\alpha=4\rho+O(h^2)$是可核对的归约，不是最佳首项已定。
+\item I33已完成指定循环覆盖范畴的完整核非线性修复，I36已完成指定固定幅度慢族分析；缺少的是更广输入与全部候选的覆盖，不是原非线性工作整体未完成。
+\item 完整BF预算上控是实质数学，不能全部降为编辑；它也不是当前分析定理的前提。
+\item 固定$E_D$体积为$16\pi^2(g_f-1)(g_b-1)$；属数均为2时才为$16\pi^2$。
+\item O10、O11仍开放；新供给、完整经典预算和独立实现分支各有自己的完成标准。
+\end{enumerate}
+
+最后的研究中心无需再改名：\emph{实际场的微分相容性，怎样使拓扑要求成为真实曲率必须支付的定量代价。} 继续深化应当改变输入范围、全局结论或最优边界。共同机制越清楚，越应减少并列的小标题，让真正承担证明的思想处于中心。
+
+\appendix
+\section{来源与原始证明定位}
+
+本稿是综合说明与必要短证明，不是数百页原稿的替代。以下路径均相对于现有\texttt{Yau26\_Research}工程；这一个\texttt{.tex}文件本身不需要读取这些路径即可编译。网页新材料的文件名也列出，便于继续交流时定位。
+
+\begin{longtable}{L{29mm}L{118mm}}
+\toprule 内容 & 原稿与位置 \\\midrule
+\endfirsthead
+\toprule 内容 & 原稿与位置 \\\midrule
+\endhead
+原统一积分障碍 & \path{mathematics/current/line1_integral_rigidity_paper.md}：定理1.2--1.3，实际权重、二阶估计与弱Bianchi自测试。 \\
+参数族与供给 & \path{mathematics/current/line1_functional_pencil.md}；\path{continuation/20260927_constant_weight_and_global_fit.md}第1--2节，尤其第2.3节。 \\
+I40线性分析 & \path{continuation/20260927_mixed_current_and_signed_cores.md}第4--5节。 \\
+I41与共形变分 & \path{continuation/20260927_conformal_separation_and_zero_end.md}第一部分第1--5节。 \\
+真实平衡族 & \path{continuation/20260926_boundary_compatibility.md}第3节及I40/I41中的应用。 \\
+精确子族与全曲率 & \path{continuation/20260927_covering_geometry_and_sharp_subfamilies.md}；曲率算子恒等式见第4节。 \\
+受控零端与核心 & \path{continuation/20260927_local_geometry_and_variational_extrema.md}；\path{continuation/20260927_full_core_cost_and_extremal_metrics.md}。 \\
+相对电荷与实际场 & \path{continuation/20260927_marked_charge_and_first_order_flux.md}；\path{continuation/20260928_actual_torsion_prolongation.md}。 \\
+一般零端的当前断点 & \path{continuation/20260928_signed_quartic_flux.md}第6.4--7节；最终式(6.6)及实际局部核心。 \\
+首项邻域与封帽 & \path{continuation/20260927_endpoint_covariance_and_surgery_limits.md}；\path{continuation/20260928_intrinsic_caps_and_stability.md}。 \\
+完整单元与局域首项 & \path{continuation/20260928_relative_cell_cost.md}；\path{continuation/20260928_localization_and_coupled_filling.md}。 \\
+X10与补偿目标 & \path{continuation/20260928_signed_characteristic_selection.md}第4--5节。 \\
+结构与实现全景 & \path{navigation/RESEARCH_MAP.md}；\path{catalog/results.json}中的I24--I37与O02/O12；各条保留实际原稿路径。 \\
+慢模态原始证明 & \path{continuation/20260924_integrable_kernel_cyclic_repair.md}第1、4--5节；\path{continuation/20260924_nonlinear_slow_moduli.md}；\path{continuation/20260924_moduli_energy_gauge.md}。 \\
+固定$E_D$ & \path{mathematics/current/skill/research/20260916_construction.tex}中的固定Dehn-twist曲面丛与slow-collar定理，$V_0=16\pi^2(p-1)(q-1)$。 \\
+长期因果脉络 & \path{navigation/EVOLUTION.md}；\path{navigation/CLAIMS_AND_CORRECTIONS.md}。 \\
+网页综合与N1 & \path{00_Line1_Research_Atlas_20260928.md}；\path{03_N1_Complete_Inheritance.md}及同文副本\path{03_N1_Complete_Inheritance (1).md}。 \\
+本次新增讨论 & 用户在2026年9月29日转交的主网页会话四项修正，以及辅助网页会话的$\nu$推论、正间隙区域与极值相等说明。 \\
+\bottomrule
+\end{longtable}
+
+\subsection*{文献关系的原始入口}
+
+以下是既有研究采用的主要入口，不是一份重新穷尽全部相关文献的清单。
+\begin{enumerate}
+\item C.~LeBrun，\emph{Ricci Curvature, Minimal Volumes, and Seiberg--Witten Theory}，\url{https://arxiv.org/abs/math/0003068}。实际规范曲率预算、等号、手术障碍与能量构造应分别比较。
+\item D.~Kotschick，\emph{Monopole Classes and Einstein Metrics}，\url{https://arxiv.org/abs/math/0306022}。对应special类与Einstein障碍的实际输入。
+\item M.~Ishida、C.~LeBrun，\emph{Curvature, Connected Sums, and Seiberg--Witten Theory}，\url{https://arxiv.org/abs/math/0111228}。BF供给与连通和曲率应用。
+\item M.~Ishida、S.~Matsuo、N.~Nakamura，\emph{Yamabe Invariants and the Pin$^-(2)$-monopole Equations}，\url{https://arxiv.org/abs/1505.05948}。真实扭曲供给与覆盖提升。
+\item C.~LeBrun，\emph{Curvature Functionals, Optimal Metrics, and the Differential Topology of 4-Manifolds}，\url{https://arxiv.org/abs/math/0404251}。全曲率与最优度量问题的直接比较背景。
+\end{enumerate}
+
+紧性、ALE、消奇、复几何存在性和辛填充等文献，在相应实现原稿中按定理假设使用。它们是互补输入，不能因为进入同一研究工程，就被宣称为当前积分不等式的全部推论。
+
+\section{给后续会话的有限接续}
+
+后续接续以本稿的共同主干与原始证明为起点，不再把已完成的线性阶、去标量方差、N1回接、平方短缺版、Pin兼容或指定慢模态非线性修复重新列为尚未开始。
+
+首先完成现有最强版本的连续正文。新研究集中于O10的全局实际约束和O11的全度量最优代价；按明确对象推进新供给与完整经典预算。核心分解、跨尺度传递和变分稳定性只在接通这些结论时成为主攻工具。独立实现继续保留，但不转化为现有障碍论文的无限前置条件。
+
+一次有效的新推进应能清楚回答：哪条结论更强了，哪项实质假设被删除了，哪个真实对象首次进入适用范围，或者哪种几何边界被匹配构造或反例决定了。未取得这些改变时，保存具体剩余项及已排除路线即可，不必再重写整项研究的中心。
+
+\end{document}

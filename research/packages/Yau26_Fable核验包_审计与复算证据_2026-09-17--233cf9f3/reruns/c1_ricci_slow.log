@@ -1,0 +1,66 @@
+det h_z = a(u)**2  (z-independent => dA_{h_z}=dA_{h_0})
+Gauss curvature of h_z (generic a): -Derivative(a(u), (u, 2))/a(u)  -> equals -a''/a
+   with a = a0 cosh u: -1
+
+[check 2] Phi_ON(computed from coordinates) - claimed matrix, with a''=a, b''=b:
+⎡0  0  0  0⎤
+⎢          ⎥
+⎢0  0  0  0⎥
+⎢          ⎥
+⎢0  0  0  0⎥
+⎢          ⎥
+⎣0  0  0  0⎦
+
+[check 3] generic defect minus claimed matrix (NO normalisation imposed):
+⎡     2                                                    ⎤
+⎢    d                                                     ⎥
+⎢    ───(b(t))                                             ⎥
+⎢      2                                                   ⎥
+⎢    dt                                                    ⎥
+⎢1 - ─────────        0              0              0      ⎥
+⎢      b(t)                                                ⎥
+⎢                                                          ⎥
+⎢                    2                                     ⎥
+⎢                   d                                      ⎥
+⎢                   ───(b(t))                              ⎥
+⎢                     2                                    ⎥
+⎢                   dt                                     ⎥
+⎢      0        1 - ─────────        0              0      ⎥
+⎢                     b(t)                                 ⎥
+⎢                                                          ⎥
+⎢                                   2                      ⎥
+⎢                                  d                       ⎥
+⎢                                  ───(a(u))               ⎥
+⎢                                    2                     ⎥
+⎢                                  du                      ⎥
+⎢      0              0        1 - ─────────        0      ⎥
+⎢                                    a(u)                  ⎥
+⎢                                                          ⎥
+⎢                                                  2       ⎥
+⎢                                                 d        ⎥
+⎢                                                 ───(a(u))⎥
+⎢                                                   2      ⎥
+⎢                                                 du       ⎥
+⎢      0              0              0        1 - ─────────⎥
+⎣                                                   a(u)   ⎦
+
+[check 4] scalar curvature + 4 + v^2/2 = 0
+K(e0,e3) - v^2/4 = 0    (sign convention check: K(e0,e1) = -1 )
+K(e0,e2) = -3*a(u)**2*Derivative(z(t), t)**2*Derivative(zeta(u), u)**2/4
+K(e2,e3) = (a(u)*Derivative(z(t), t)*Derivative(zeta(u), u) - 2)*(a(u)*Derivative(z(t), t)*Derivative(zeta(u), u) + 2)/4
+
+[check 5] eigenvalues of defect matrix: {-V**2/2: 1, -sqrt(V**4/4 + alpha**2 + beta**2): 1, sqrt(V**4/4 + alpha**2 + beta**2): 1, 0: 1}
+          eigenvalues of off-diagonal part: {-sqrt(alpha**2 + beta**2): 1, sqrt(alpha**2 + beta**2): 1, 0: 2}
+
+[check 6] A0=0.8333 A1=1.5527 M1=1.2500 M2=3.8442
+   L       sup|Phi|_op (exact matrix)   claimed bound     L*sup
+     5     1.940367e-01               2.785495e-01     0.9702
+    10     9.701314e-02               1.239775e-01     0.9701
+    20     4.873686e-02               5.842638e-02     0.9747
+    40     2.450562e-02               2.835999e-02     0.9802
+    80     1.228849e-02               1.397168e-02     0.9831
+   160     6.151735e-03               6.934401e-03     0.9843
+   320     3.077285e-03               3.454423e-03     0.9847
+All C1 checks passed.
+
+STDERR:

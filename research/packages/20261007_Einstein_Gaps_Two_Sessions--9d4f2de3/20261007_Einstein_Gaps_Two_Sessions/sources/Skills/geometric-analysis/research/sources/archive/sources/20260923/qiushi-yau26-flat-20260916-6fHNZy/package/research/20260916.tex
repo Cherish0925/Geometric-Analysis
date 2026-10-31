@@ -1,0 +1,599 @@
+% !TeX program = xelatex
+\documentclass[UTF8,fontset=fandol,zihao=-4]{ctexart}
+\usepackage[a4paper,margin=23mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,longtable,array,enumitem,xurl,xcolor}
+\usepackage[unicode,colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\newfontfamily\tracefont{DejaVu Sans}
+\setlength{\emergencystretch}{3em}
+\setlength{\parskip}{.3em}
+\setlist{nosep,topsep=4pt,leftmargin=2em}
+\allowdisplaybreaks
+\newcommand{\file}[1]{\path{#1}}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\dd}{\,d\mu_g}
+\title{Yau 26：累积研究的整合与续接\\\large 网页端推导、三个会话与完整证明之间的联系}
+\author{Qiushi 用户研究资料整理}
+\date{2026年9月16日}
+\begin{document}
+\maketitle
+\begin{abstract}
+本文连接两份历史研究长稿、新上传的网页端研究、独立统一间隙证明稿，以及
+S0910A01、S0910A02、S0910A03 的前100个研究步骤。
+网页端在读取轨迹后继续推导的内容，与会话内的构造、估计和证明同等纳入；
+来源平台不决定数学价值，具体命题、推导和后续修正才决定如何使用。
+两份历史长稿完整保留，统一间隙原稿另存全文；三份专题续稿补充后期结果与被摘要省略的接口。
+本篇给出问题、研究联系、来源覆盖和逐步定位，不用新的摘要替代旧证明。
+\end{abstract}
+\tableofcontents
+
+\section{先读什么：七份文件各自保存什么}
+本目录直接保存 TeX，不附 PDF、OCR 副本或单独的索引文件。
+目录结构为 \file{qiushi-yau26/research/} 与 \file{qiushi-yau26/references/}
+平级；前者放研究正文，后者只放工具格式。历史逐步引文中的
+\file{references/research/} 是旧路径，相同文件名现位于 \file{research/}。
+本篇的日期表示整合时间，不表示每个结果首次得到的时间。
+\begin{longtable}{p{.31\textwidth}p{.62\textwidth}}
+\toprule 文件 & 数学内容与用途\\\midrule\endhead
+\file{20260910.tex} & 原问题、量词、文献假设、早期推导与开放路线，完整保留。\\
+\file{20260912.tex} & 6558行累积研究长稿：局部构造、代数几何、刚性、曲面丛、Weyl源项、调和映射及全局约束，完整保留。\\
+\file{20260916.tex} & 本整合篇：科学联系、不同版本的关系、研究入口和300步来源定位。\\
+\file{20260916_uniform_gap.tex} & 上传的\file{Yau26_uniform_gap.tex}逐字节保留；原稿日期为9月14日，含精确 Einstein 统一间隙与必要退化的完整论证及条件性延伸。\\
+\file{20260916_rigidity.tex} & 临界拓扑、近等号密度、必要退化、局部展开与近似方程的延伸；另保留未闭合局部流路线的有效结构。\\
+\file{20260916_construction.tex} & 核心修正、对数 Weyl 插值、点态 Ricci 缺陷、更多局部模型、全局平滑与多节点约化。\\
+\file{20260916_global.tex} & 同一光滑流形上的全局存在性或不存在性；曲面丛、图流形、连接器、全局拓扑及其他维数。\\
+\bottomrule
+\end{longtable}
+三份专题按数学对象组织，不为会话固定角色。任何会话都可使用全部材料，
+继续其他路线，或提出材料中尚未出现的新构造和新证明方法。
+全文较长时，先搜索章节标题和公式，再读取相关证明的完整段落；文献检索、
+纯解析方法、Shell、其他 Skill 和 MCP 的使用不受这些文件限制。
+
+\section{研究目标与统一语言}
+工作命题保持不变：对每个维数 $n\ge2$，是否存在仅依赖维数的实常数
+$c_n<C_n$，使闭、连通、光滑实流形上的光滑 Riemann 度量 $g$ 若满足
+\[
+ c_ng\le\Ric_g\le C_ng,
+\]
+同一光滑流形 $M$ 就承载某个光滑 Einstein 度量 $h$？
+不等式按二次型理解；不预设夹逼常数符号，不要求 $h$ 接近 $g$，
+也不限制输出 Einstein 常数的符号。历史1982年原题题页的逐字核对与
+这一明确工作命题分开记录，不能把重编本的评注并入原题。
+
+定义
+\[
+ \delta_\sigma(g)=\|g^{-1}\Ric_g-\sigma I\|_{L^\infty,\mathrm{op}},
+ \qquad e_\sigma(M)=\inf_{g\in\operatorname{Met}(M)}\delta_\sigma(g),
+ \qquad \sigma\in\{+1,-1\}.
+\]
+任一非退化区间都含严格同号子区间，缩放后得到某个归一化分支。
+反向取足够小的归一化区间即可。因此固定维数的工作命题等价于至少一支具有
+维数统一的有效阈值。否定须在同一维数使两支均失败；两支的流形可不同。
+这种归约不需要声称任意跨零或触零区间都可直接用缩放反驳：
+触零端点仍有单侧符号限制。
+
+单个固定无 Einstein 流形满足 $e_\sigma(M)=0$ 是一种充分的分支反例形式，
+但不是唯一形式；也可是一列不同的无 Einstein 流形，其缺陷下确界趋零。
+反之，对每个 $M$ 分别有 $e_\sigma(M)>0$，不自动给出只依赖维数的统一下界。
+
+\section{科学联系：刚性、构造与同一对象上的全局判断}
+\subsection{精确解的统一刚性，不等同于所有近似解的间隙}
+对指定的闭极小一般型复曲面 $X$、$b_+(X)>1$，令
+$A=c_1^2(X)>0$、$M=X\#k\overline{\mathbb{CP}}^{\,2}$。
+统一间隙原稿的主结论是存在与 $X,k$ 无关的 $\gamma>0$，使
+\[
+ k\ge(1/3-\gamma)A\quad\Longrightarrow\quad
+ M\text{ 不承载任何 Einstein 度量}.
+\]
+其论证通过 monopole 下界与拓扑预算、精确 Einstein 的局部正则性、
+允许重叠的展开片平均传输，最终得到不可能的局部 Weyl 谱。
+关键是族一致性，而不是重新发现经典 $1/3$ 阈值。
+这一证明不依赖尚未闭合的退化局部 Ricci 流。
+原稿另证近边界近负 Einstein 序列的固定尺度非塌缩中心体积分数趋零、直径逃逸。
+它们不是已经构造出这种序列，也不等于排除了所有塌缩序列。
+
+\subsection{构造是独立数学内容，不以反例最终闭合为前提}
+固定四维 Einstein 轨形、有限个 $A_1$ 节点、解消标记及核心与尾项条件下，
+研究稿给出
+\[
+ \delta_\sigma(g_a)\le C/|\log a|\longrightarrow0.
+\]
+核心并非只有一个线性恒等式，而是核心修正、对数环带、外部匹配及全域误差的组合。
+Weyl 二次项 $K$ 的机制是
+\[
+ D\Ric_e[\eta(\log r)K]
+ =-\frac{\eta''+6\eta'}{2r^2}K,
+ \qquad K=O(r^2).
+\]
+慢变对数尺度允许有限的 Weyl 差异与趋零的 Ricci 缺陷并存。
+历史长稿还含 ADE、type T、Wahl、常标量修正及更细局部估计；
+不能因较新的续稿只突出 $A_1$ 就把这些研究删除或记为从未开展。
+具体外推仍保留其各自求解器、核、尾项和全局拓扑条件。
+
+\subsection{第三个问题：让两端作用于同一光滑对象}
+反例需要同时证明
+\[
+ e_\sigma(M)=0
+ \quad\text{与}\quad
+ M\text{ 不承载任何 Einstein 度量}.
+\]
+在一个族有输入构造、另一个族有不存在性，不构成它们的连接。
+一个轨形附近无精确解，也不能排除远处的 Einstein 度量。
+反过来，若具体平滑被证实有 Kähler--Einstein 度量，应保留为存在性结果和
+路线判断，而不是为坚持反例目标而忽略它。
+因此全局问题既允许不存在性突破，也允许新的存在性定理，
+还允许证明某种连接器或退化机制的严格边界。
+
+\section{保留的研究范围不止两条主线}
+下列导航使旧稿的具体推导继续可用，不要求重新复述或重跑已有工作。
+\begin{longtable}{p{.23\textwidth}p{.42\textwidth}p{.27\textwidth}}
+\toprule 主题 & 保存的内容 & 详细位置\\\midrule\endhead
+量词与早期障碍 & 缩放、四维夹逼、文献条件、Min--Oo/Ye/Lohkamp 的适用范围 & 9月10稿；9月12稿第1章；三专题共同定义\\
+定量刚性 & 完成平方、monopole 符号平均、近 ASD 类、禁谱、平均能量与展开传输 & 9月12稿第1、5章；rigidity；uniform\_gap\\
+退化局部流 & $7r$ 支撑、平方 Sobolev 常数、加权 Moser、交错导数、first-exit、终端重新校准 & rigidity 附录及所列工作笔记；不等于完整存在性定理\\
+局部输入构造 & EH 核心、对数插值、ADE/type T/Wahl、常标量修正、通量锐系数与高阶界 & 9月12稿第2章；construction\\
+局部可行性边界 & 相反翘曲尖峰、Lohkamp 单侧宽度、Heisenberg/长颈/平均曲率障碍、碰到障碍后的替代构造 & 9月12稿第3章；construction/global\\
+代数几何与平滑 & 高度四椭圆曲面、典范覆盖、Artin 障碍、Ext、Wahl/ADE、Q-Gorenstein 与 KE 存在性链 & 9月12稿第4章；construction/global\\
+多节点与手性 & 同手性消去、遗漏 Green 模修正、完整实线性判据、四节点交换与可行尺度窗 & construction；原A01/A02末步笔记\\
+曲面丛 & $\mathcal E_D$、完整 Ricci 矩阵、慢插值、二阶/三阶修正、TT、共形下界、$L^2$ 与 $L^\infty$ 逆界 & 9月12稿第6章；global\\
+Weyl 与调和路线 & 源项、适配 Einstein 方程、调和映射/Hodge、不能无条件下沉的几何结构 & 9月12稿第7--9章；global\\
+图流形与连接器 & 周边格点、各向异性中心、Koiso、带荷抵消、完整矩阵、相对CGB及双参数误差 & 9月12稿第10章；global；A03末步笔记\\
+其他几何与维数 & 正分支塌缩、覆盖、自由圆与Nil模型、乘积传播、$n\ge5$ 的能量预算与拓扑缺口 & construction/global；9月10稿\\
+\bottomrule
+\end{longtable}
+这里的“保存”包括有条件推导、构造尝试、已经否定的具体方案和仍可使用的局部工具，
+不是把所有条目统一列为新定理。后续选择应由当前数学问题决定，
+不能把目录中的分类变成固定研究边界。
+
+\section{不同材料之间已经明确的修正}
+\begin{enumerate}
+\item 新上传 \file{Yau26_source_package/Yau26_synthesis.tex} 与现有
+\file{20260912.tex} 的 SHA256 完全一致；这是同一长稿再次提供，不是另一份新增证明。
+\item 根目录覆盖说明描述了三份续稿的 v2 修复，但实际收到的三份 TeX 仍含其指出的旧问题，
+且没有附上所称的完整 v1/v2 差分与300步索引。因此本版从实际文件和服务器工作笔记补充，
+不凭说明认定修复已经发生。
+\item 网页环境的“未取得原稿”不代表服务器也没有。
+统一间隙原稿、两份历史稿、Step83 构造笔记和曲面丛定义均可在此定位。
+原文的来源边界属于其写作时环境；本目录按实际可读文件更新。
+\item 三稿 A01 的 $\Phi_*$ 与统一间隙稿的 $\mathcal D$ 点态定义相同。
+$119Q+912\pi^2Ad$ 是较粗估计，$109Q+864\pi^2Ad$ 是联合估计；
+不是不同密度。旧 IL 终端 $119Q$ 还需保留其 $q\ge0$ 等适用条件，
+不能脱离拓扑参数机械替换常数。详细公式与推导在 rigidity。
+\item 固定拼接方案中首障碍保持 order one，不能升级为所有近 Einstein 构造的禁令；
+对数尺度和修正核心正是后续需要保留的研究。
+\item $B_{++}=B_{--}=0$ 或四节点 $q_{\rm diag}=0$，不能取代完整同阶约化、
+全局 Green 项和非线性余项。主项 $t^3$ 不能被较大的 $O(t^{5/2})$ 余项控制符号。
+\item 紧 Ricci 夹逼不直接给出点态全曲率界；相反翘曲例子的整体背景曲率能量
+不会随局部扰动一起消失。需区分局部、扰动与整个闭流形积分。
+\item $a\mapsto a+\varepsilon$ 会改变本应静止的局部流外区；有限代数枚举
+和某个单独初值的短时存在性都不自动提供序列一致的观察时间。
+\item 曲面丛的适配结构、调和态射或下沉条件不能施加到所有候选 Einstein 度量。
+图流形的一种对称连接器失败，也不排除非齐次或其他连接器。
+\end{enumerate}
+
+\section{来源覆盖与研究贡献的归属}
+\subsection{哪些是全文，哪些是提炼，哪些仍在原工作区}
+五份新稿不是所有研究的无损替代物。完整阅读研究资料应包括七份 TeX；
+复算或复核某些中间论证时，还需要下表列出的原始笔记、程序和数据。
+\begin{longtable}{p{.25\textwidth}p{.34\textwidth}p{.33\textwidth}}
+\toprule 来源 & 本目录实际保存方式 & 不应由此声称\\\midrule\endhead
+9月10日原研究稿 & 全文原样保留，迁移前后字节校验一致 & 新五稿已经重录它的每项文献条件\\
+9月12日网页累积长稿 & 全文原样保留；与新上传 synthesis.tex 字节一致 & 三篇专题提要足以替代其6558行推导\\
+统一间隙原稿 & 全文原样保留，不改写原证明 & 排版与字节检查就是一次新的数学证明核验\\
+网页三篇续接稿及两份进展归档 & 按数学问题整合，补回遗漏公式，纠正版本和范围冲突 & 整理稿与每份原文逐字等同\\
+三个会话前300步 & 每步有可回溯索引；专题补入关键论证与后期修正 & 每步的完整上下文、工具输出、证明均已内嵌\\
+原工作区笔记、程序与数据 & 相关核心数学纳入正文，详细证据提供准确路径 & 仅复制本Skill就携带全部可复算程序与数据\\
+\bottomrule
+\end{longtable}
+
+具体而言，只读新五稿会遗漏历史稿中不少完整论证：第1、5章的夹逼、
+SW饱和、Dirac与Kuranishi分析；第2--4章的ADE/type-T/Wahl、标量端点、
+锐通量与高度四椭圆曲面；第6--10章的曲面丛高阶修正、TT/共形类界、
+逆算子、Weyl源项、调和方法及全局约束。专题中的标题和公式入口是为了定位，
+不是这些证明的替代版本。
+
+\subsection{网页归档 B1--B21 的落点}
+这里沿用原归档的编号定位内容，不沿用其“原创突破”标题作为评价。
+完整源文件位于后文列出的9月16日归档，以下为内容对应关系。
+\begin{longtable}{p{.14\textwidth}p{.40\textwidth}p{.38\textwidth}}
+\toprule 原编号 & 数学内容 & 当前正文与范围\\\midrule\endhead
+B1 & weighted 与无权 Ricci 缺陷的尺度差别 & construction 的核心误差；结论限于原拼接框架，不排除后来对数构造\\
+B2--B5 & IL临界地理、饱和轮廓、符号平均、mixed SW & rigidity、uniform\_gap与9月12稿第1/5章；IL连接和与单曲面吹起条件分别保留\\
+B6--B11 & Sobolev体积抵消、选支撑、Moser、共同时间及截断权重 & rigidity的可选流附录；保留有效计算和原笔记章节，不声称流存在与序列一致延拓已闭合\\
+B12 & 终端重新校准 & rigidity的原密度及$q\ge0$条件，与新联合预算区分\\
+B13--B14 & EH角模与精确核心修正 & construction；详细解消/尾项论证并读9月12稿第2章\\
+B15 & $C^0$-safe余核投影目标 & construction的试探张量、$L^1$质量与零ADM质量限制；仍是有条件目标\\
+B16 & 正分支塌缩及覆盖归约 & construction的几何分类与条件性有限覆盖命题；不宣称产生Einstein度量\\
+B17 & 多节点、Green核与手性 & construction补齐算子核、作用对象、双线性表与最新模型；全同阶几何仍有未算项\\
+B18--B19 & 各向异性中心、Koiso与符号反转 & global中的原中心、OT障碍及后续带荷/双端匹配；局部芽不等于完整连接器\\
+B20 & $n\ge5$ 的预算与拓扑缺口 & global与历史两稿；不把四维结论直接升维\\
+B21 & 撤回、修复与重新组装 & 三专题及本篇修正节；保留修正原因，不把已撤回论证重新记为成功\\
+\bottomrule
+\end{longtable}
+
+本轮再次对照发现，原先仅有概述的材料还包括 A01 的修正约化、Lefschetz
+群平均及有限扫描，A02 的完整算子核、一般齐次通量与 AA/BB 消去证明，
+A03 的 Jacobi--Maxwell 分隔面控制、带荷 Koiso 芽、Noether 恒等式及共享参数
+双端匹配。现按对应专题补入其定义、公式、推导和范围，不增加独立文件。
+原程序、运行数据和长篇中间估计仍以所引工作区文件为复算依据。
+
+这说明内容覆盖需要不断与原材料核对，不能凭文件数、编译成功或“300/300”
+索引宣告数学语义无遗漏。当前可核查的是原稿没有删减、具体遗漏得到补入、
+已知外部依赖有位置；并没有把全部历史证明重新逐行核验或全部程序重新执行。
+归档中引用但此次未实际提供的 \file{Yau26_Ricci_pinching_research.md}
+也不能当作已经取得全文；若后续补入，应继续与现有推导对照。
+
+\subsection{网页研究作为研究输入，而不是轨迹的附属摘要}
+本轮来源包括 S0910A03 的 briefing 中的两份研究归档、三份科学续接 TeX、
+覆盖修订说明、统一间隙证明、source package；并与共享 Skill 两份历史长稿及
+三个会话的 canonical Meta-Trace 对照。新 TeX 保存网页端继续推导产生的估计、
+构造和研究判断，不将它们全部归为会话原有成果。
+\begin{itemize}
+\item 统一间隙证明原稿独立保存，不用轨迹摘要替代；其论证、条件性延伸和参考文献完整保留。
+\item 三份网页续接稿作为底稿，在保留科学内容基础上修正来源可得性、密度关系、
+遗漏结果与过时任务安排。新补入的工作区材料注明会话、Step 和文件。
+\item 全归档的 B1--B21 是整理单元，包含经典输入、推导、数值结果、开放接口和撤回，
+不是21个已经确认首创的突破。它们由专题导航覆盖，原归档完整留在 briefing。
+\item 旧进展包、CSV/JSON 索引、有限代数检查是定位与记录材料；
+它们不代替定理正文。PDF 和由其转换的 Markdown 是派生副本，不再复制到 Skill。
+\end{itemize}
+
+\subsection{来源路径}
+以下路径均相对于 user2 研究根目录，而非机器固定绝对路径。
+\begin{itemize}
+\item \file{Sessions/S0910A03/workspace/briefing/Yau26_uniform_gap.tex}。
+\item \file{Sessions/S0910A03/workspace/briefing/Yau26_source_package/}。
+\item 同一 briefing 下的“Yau26\_三主线科学续接稿\_2026-09-16/”。
+\item 同一 briefing 下的“Yau26\_第26题\_完整逐步研究归档\_2026-09-16/”，
+内层目录 \file{Yau26_full_research_archive_2026-09-16/}。
+\item \file{Sessions/S0910A03/workspace/briefing/Yau26_parallel_progress/Yau26_research_progress_2026-09-15/}。
+\item 各会话 \file{Sessions/S0910A0X/trace/exports/meta_trace/meta_trace_report.md}
+与 \file{cell_relays.json}；详细数学文件在同一会话 \file{workspace/notes/}、
+\file{workspace/scripts/}、\file{workspace/data/} 和 \file{workspace/proofs/}。
+\end{itemize}
+原始材料不删除、不覆盖。正式数学论证可从索引回到完整正文、代码和数据。
+共同讨论或不同模型同意不增加定理数量，也不自动证明原创性。
+
+\section{如何继续研究而不失去已积累的内容}
+研究可从已有定理的真正新增部分、仍未闭合的关键接口或新的对象出发。
+例如：精确 Einstein 刚性如何对弱近似稳定；哪些退化仍允许保留禁谱；
+对数匹配在何种核与尾项条件下适用于更多模型；具体解消是否有远处 Einstein 度量；
+曲面丛、非齐次连接器或全新几何如何同时满足输入与全局约束。
+这些是可比较的数学问题，不是必须依次完成的流程。
+
+新发现应写明对象、结论、关键推导及其与原问题的关系；
+一个被排除的方案保留失败机制和仍未排除的自由度。
+若原目标未闭合而一个独立定理已完整成立，继续完善其证明和文献比较是有意义的；
+也可继续追求更强结论，不能将阶段成果自动等同于最高目标完成。
+本轮整理不重新宣告全部历史论证正确、不重做全球查新，也不把论文档次评价当作数学证据。
+
+\appendix
+\section{前300个研究步骤的逐会话来源定位}\label{sec:steps}
+下表从三份 canonical Cell-Relay 逐项生成，保留会话、步骤、研究状态与
+当步交接文字的短摘录。摘录只是搜索入口，遇到长度限制以省略号标出；
+不是把该步的所有推导压缩成一个结论，也不代表该步没有被后续修正。
+按步骤查阅对应会话的完整 Meta-Trace 和工作文件，再结合本篇修正与专题稿使用。
+300条定位成功不同于300项证明已验证，更不同于300项新成果。
+\subsection{S0910A01：Step 1--100}
+\file{Sessions/S0910A01/trace/exports/meta_trace/meta_trace_report.md}
+\tracefont\footnotesize
+\begin{longtable}{r p{.12\textwidth} >{\raggedright\arraybackslash}p{.73\textwidth}}
+\toprule Step & 原记录状态 & 当步交接短摘录（完整内容见原记录）\\\midrule\endhead
+1 & Evaluate & I began by inspecting the session briefing. The briefing directory contains Session.md, aligned\_research\_goal.md, and original\_research\_goal.md; the aligned and original goals coincide in substance and match the human scientist's later confirmation. I read Ses ...\\
+2 & Evaluate & Starting from the Step 1 field map and the Strategist's two sharp observations (Min-Oo hypothesis needs rechecking; LeBrun quantitative bounds may produce more than the crude jet test), I systematically developed the mathematical mechanism analysis for Yau 26. ...\\
+3 & Evaluate & Starting from the Step 2 quantitative analysis and the Strategist's direction to check the mixed SW estimate, I read the Ishida-LeBrun paper 'Spin Manifolds, Einstein Metrics, and Differential Topology' (Knowledge object) and found Proposition 4: (1/4π²)∫(s²/2 ...\\
+4 & Reflect & I began from the Step 3 handoff and the new Strategist and peer corrections. The prior handoff had made the cap computation too central and had overstated the ALE bubble obstruction. I searched the workspace for affected statements, reread the Step 3 notes and ...\\
+5 & Evaluate & Starting from the Strategist's identification of the Cauchy-Schwarz remainder and curvature-ratio consequence, I verified the formula ∫(s+8√6|W⁺|)² ≤ 864π²D\_a algebraically and symbolically (script \nolinkurl{`scripts/step5_curvature_ratio_verification.py`,} all 10 checks ...\\
+6 & Evaluate & I began by rereading the Step 5 negative-branch note \nolinkurl{`Sessions/S0910A01/workspace/notes/step5_curvature_ratio_and_rigidity.md`,} the Step 5 route assessment, LeBrun 2001 around the proof of the mixed estimate, and the recent session-group history including S091 ...\\
+7 & Process & Starting from the Step 6 handoff to develop the Derdziński tensor route with the Strategist's analytic observations, I developed three tools: the Cheeger-Naber harmonic-radius bridge (Remark 1.11 gives harmonic-radius measure-theoretic control under bounded Ri ...\\
+8 & Process & I followed the Step 7 handoff but repaired its strength using the current Strategist note. First, I recovered the Derdziński primary source directly from Numdam: PDF saved at \nolinkurl{Sessions/S0910A01/workspace/data/sources/derdzinski_1983_self_dual_kahler_einstein_fo} ...\\
+9 & Repair & Starting from the Step 8 handoff to develop the local-cover unwrapping theorem, I pursued two mathematical objects: the general normal-cover transport lemma and the nil3 orbit-volume equation. For the transport lemma, the Strategist observed that model-specifi ...\\
+10 & Repair & I evaluated the Step 9 handoff against the Strategist note and peer messages \#243-\#245. The strongest Step 9 result, the normal-cover mean theorem, was retained; the broad regular-collapse conclusion was repaired. I read the erroneous Step 9 collapse note, the ...\\
+11 & Process & Starting from the Step 10 handoff and the Strategist's identification of the Noether bound and chart-accessibility separation, I developed three results and incorporated two peer findings. (1) Noether energy bound: verified that χ\_top(X) ≤ 5A+36 for all minima ...\\
+12 & Process & I began from the Step 11 handoff and the new Strategist and peer corrections, then tested the load-bearing Taub-NUT-AdS claims by direct computation. I read the flawed Step 11 Taub-NUT script, the Step 11 chart-accessibility note and route plan, A03's correcte ...\\
+13 & Process & Starting from the Step 12 handoff to build a full rank-one Kaluza-Klein reduction with base curvature, I wrote \nolinkurl{`workspace/scripts/step13_rank1_reduction.py`,} a comprehensive symbolic curvature dictionary for the circle-reduced four-dimensional metric in normal ...\\
+14 & Evaluate & I began by evaluating Step 13 in light of the current Strategist correction. I read \nolinkurl{`workspace/notes/step13_normalized_accessibility_theorem.md`,} \nolinkurl{`workspace/plans/route_assessment_step13.md`,} the Step 13 TTCS generator and verifier integrations, A03's reduced- ...\\
+15 & Evaluate & Starting from the Step 14 handoff to develop the localized smoothing-to-accessibility bridge, I built the full cutoff-smoothing architecture in \nolinkurl{`workspace/notes/step15_cutoff_smoothing_architecture.md`.} The construction has: (1) good-set packing via maximal fu ...\\
+16 & Evaluate & I reviewed the Step 15 smoothing architecture against the Strategist correction, the actual Step 15 files, A03's Step 15 note, the Step 15 TTCS verifier, Ye Li source lines 219-278 and 273-342, the Step 8 Derdziński tensor-deficit theorem, A03's Step 14 cutoff ...\\
+17 & Evaluate & Starting from the Step 16 handoff to develop the transition-inclusive cutoff-flow stability theorem, I built the support-scale-consistent architecture in \nolinkurl{workspace/notes/step17_support_scale_li_bootstrap.md.} The construction chooses ALL radii as fixed multiple ...\\
+18 & Reflect & I started from the Step 18 Strategist correction and inspected the actual Step 17 support-scale note, the Step 17 TTCS verifier, A03's cutoff-flow notes, Li's theorem passages, and A03 verification scripts. I patched \nolinkurl{`workspace/notes/step17_support_scale_li_bo} ...\\
+19 & Process & Starting from the Step 18 handoff to build the tensor estimate preserving the Whitney-ball cancellations, I constructed the Whitney-ball reduction in \nolinkurl{`workspace/notes/step19_whitney_tensor_estimate.md`} with three verified uniform cancellations. Script `step19\_ ...\\
+20 & Process & I followed the Step 20 Strategist note by testing the structural simplification E=Ric+g=contr(Rm)+g in the weighted cutoff-flow analysis. I read the Step 19 Whitney note, TTCS verifier, A03 Step 19 note, Li source lines 213-352, and the Step 19 route plan. I w ...\\
+21 & Process & Starting from the Step 20 handoff, I built the conditional finite-exponent smoothing lemma in \nolinkurl{`workspace/notes/step21_finite_exponent_smoothing_lemma.md`.} The core construction: (1) BG energy transfer from per-component maximal-function control to Whitney-ball ...\\
+22 & Repair & I began from the Strategist correction to Step 21 and inspected \nolinkurl{`workspace/notes/step21_finite_exponent_smoothing_lemma.md`,} \nolinkurl{`workspace/plans/route_assessment_step21.md`,} A03's weighted Wang hierarchy note, and recent peer messages. I wrote `workspace/scripts/ ...\\
+23 & Process & Starting from the Step 22 handoff to close the componentwise energy gap, I identified and resolved two structural obstacles. First, the exact tensor inequality for q=2 energy was analyzed through the Sobolev absorption: the testing variable v = η\_α a\textasciicircum{}\{1/2\} F h ...\\
+24 & Process & I began by testing the Step 23 handoff against the Strategist correction. I read the Step 23 cooperative theorem and route file, the Step 20 tensor-structure note, the Step 16 smoothing correction, A03's critical-energy formulation, and recent peer messages. T ...\\
+25 & Process & Starting from the Step 24 handoff to develop the exact tensor energy derivation, I derived the q=2 curvature energy inequality and the triangular defect energy inequality at the schematic tensor level for the buffered cutoff flow ∂\_tg = -2χ²(Ric+g). The deriva ...\\
+26 & Process & I read and incorporated the completed Codex worker output. \nolinkurl{`workspace/codex_loop/Research_Report.md`} and \nolinkurl{`workspace/codex_loop/work/tensor_energy_derivation.md`} confirm the Step 24-25 tensor weights for the buffered selected-support flow: q=2 gives H2'+cD2 <=  ...\\
+27 & Evaluate & Built the unified three-factor Moser iteration \nolinkurl{(workspace/notes/step27_unified_weak_moser_iteration.md)} with the core algebraic identity a\textasciicircum{}\{p-1\}Ff\textasciicircum{}p = (aF³)\textasciicircum{}\{1/3\}(a\textasciicircum{}\{p-2\}f\textasciicircum{}p)\textasciicircum{}\{1/3\}z\_p\textasciicircum{}\{4/3\} and the four-dimensional volume cancellation table. Script step27\_thre ...\\
+28 & Process & Step 28 corrected and strengthened the restricted four-dimensional negative-route handoff. I wrote \nolinkurl{workspace/notes/step28_terminal_recalibration_pullback.md} and \nolinkurl{workspace/plans/route_assessment_step28.md.} The new terminal argument redoes the Seiberg--Witten/Ch ...\\
+29 & Process & Step 29 assembled the simultaneous selected-support flow theorem and corrected a critical Moser weight gap. The bootstrap architecture in \nolinkurl{workspace/notes/step29_simultaneous_support_theorem.md} organizes the complete non-circular chain: H₂ persistence  ->  β  ->  S²Y ...\\
+30 & Repair & Step 30 corrected the Step 29 handoff before it could guide further work incorrectly. I read the Step 29 simultaneous-support theorem and route assessment, A03's consolidated Ishida--LeBrun theorem, A03's shifted-curvature continuation material, the Step 29 TT ...\\
+31 & Process & Step 31 built the explicit general-p tensor power inequality, corrected the Moser output form, and resolved A03's m=2 continuation question. Starting from Step 30's repair of the weighted Moser hierarchy and the corrected family geography, I derived the full e ...\\
+32 & Repair & I began from the Step 31 handoff and the Strategist correction, reading the Step 31 general-p tensor note, Step 31 route assessment, A03 Step 32 analytic review, A03 weighted Moser/continuation Codex material, and peer messages. I wrote and ran workspace/scrip ...\\
+33 & Process & Step 33 built the explicit curvature power inequality (3.1) with TTCS-corrected Hessian treatment (two valid routes: direct pointwise or honest tensor IBP), the defect hierarchy (4.4) with the same S²Y coefficient, and J₆ persistence from time zero (4.7) via b ...\\
+34 & Process & Step 34 rebuilt the fixed-exponent layer around the integrated-potential observation and corrected the Step 33 tensor bookkeeping. I wrote \nolinkurl{`workspace/notes/step34_integrated_potential_q3_and_defect.md`,} first deriving B(t)=int\_0\textasciicircum{}t S\textasciicircum{}2Y <= C gamma\textasciicircum{}3 from the lo ...\\
+35 & Process & Step 35 derived the two Hessian-a contraction tensors at the index level and proved their derivative structures from first principles. The curvature tensor B\textasciicircum{}\{pq\}\_curv = R\textasciicircum{}p\_j\textasciicircum{}q\_l E\textasciicircum{}\{jl\} was obtained from the all-lower Riemann variation using pair symmetry and ...\\
+36 & Process & Step 36 followed the Step 35 handoff and the Strategist note by making the degenerate-flow analytic platform the central work. I first read A03's companion notes on degenerate-flow existence, cutoff-jet continuation, first-exit assembly, and the Step 36 Precep ...\\
+37 & Process & Step 37 proved the shifted continuation theorem (Theorem 1.1) and assembled the first-exit closure (Section 3), closing the degenerate cutoff-flow platform. The continuation adapts Wang's staggered induction to U = χ²(Rm+G): the L\textasciicircum{}p(Rm) propagation uses sup|U| ...\\
+38 & Repair & Step 38 corrected the Step 37 continuation/first-exit closure error and preserved the repaired analytic route in files. I read the Step 37 note, the Step 37 TTCS result, Wang/Yang source passages around Lemmas 4.5--4.14, and the Step 37 route assessment. I ins ...\\
+39 & Process & Step 39 assembled the complete conditional defect gap theorem for the four-dimensional negative Ishida-LeBrun branch in \nolinkurl{`workspace/notes/step39_complete_conditional_defect_gap_theorem.md`} (659 lines, 7 sections). This is the first document containing the full  ...\\
+40 & Review & Step 40 reviewed the Step 39 assembled negative-flow theorem and A03's Step 41 response against the whole research state. I read the Step 39 theorem note and route assessment, A03 Step 37 transported DeTurck note, A03 Step 40 staggered all-order continuation c ...\\
+41 & Process & Step 41 produced the corrected restricted negative defect gap theorem note \nolinkurl{(workspace/notes/step41_corrected_restricted_defect_gap_theorem.md,} 982 lines), addressing all seven Step 40 Preceptor review interfaces. Three genuinely new derivations were constructe ...\\
+42 & Repair & Step 42 began from the Step 41 handoff but followed the Strategist correction rather than inheriting the assertion that H-DT was the only remaining input. I read the Step 41 TTCS integration, the Step 41 theorem note and route file, A03's Step 43 corrected the ...\\
+43 & Process & Step 43 resolved both remaining analytic inputs (H-WU and H-DT) for the restricted four-dimensional negative Ishida-LeBrun defect gap theorem. For H-WU, I derived the tensor-level cutoff-jet provenance for U\_m = ∇\textasciicircum{}m(χ²(Rm+G)), proving that all C\_\{m+2\} sources  ...\\
+44 & Review & Step 44 independently read the restricted negative Ishida--LeBrun support/first-exit/terminal chain against A01 Step 43, A03 Step 45, TTCS outputs, and the earlier Step 28/34/36 evidence. I ran the existing scripts: \nolinkurl{`step43_weighted_evolution_verify.py`} passed ...\\
+45 & Evaluate & Step 45 consolidated the restricted four-dimensional negative Ishida-LeBrun defect gap theorem into \nolinkurl{`workspace/notes/step45_consolidated_IL_negative_gap_proof.md`} (686 lines, 10 sections). The proof is organized around Proposition 3.2: a quantitative local Φ l ...\\
+46 & Reflect & Step 46 began as an Orchestrator Explore response to the Strategist correction of Step 45. I first inspected \nolinkurl{`Sessions/S0910A01/workspace/plans/route_assessment_step45.md`} and searched the workspace for statements about `Vol/A`, strict Hitchin--Thorpe, known n ...\\
+47 & Reflect & Step 47 continued the Explore correction from Step 46. I first read BBCG `Differentiable rigidity under Ricci curvature lower bound` lines 1--140 and metadata, the stale \nolinkurl{`workspace/plans/route_assessment_step45.md`,} and the Step 46 constants script. I inserted ...\\
+48 & Review & Step 48 reviewed the Step 47 handoff and the new Strategist connection between positive and negative product-orbifold constructions. I read \nolinkurl{`Sessions/S0910A01/workspace/plans/route_assessment_step47_entropy_degree_theorem.md`,} `Sessions/S0910A01/workspace/scri ...\\
+49 & Process & Step 49 identified a Q-Gorenstein smoothing mechanism that reverses the interpretation of product-quotient surfaces from counterexample candidates to Einstein existence evidence. Starting from the Strategist's observation that kernel-directed Eguchi-Hanson at  ...\\
+50 & Process & Step 50 followed the Step 49 handoff but incorporated the Strategist's correction that the product-quotient smoothing mechanism must remain conditional. I first read the Step 49 Q-Gorenstein smoothing note, the Step 49 route file, BCGP source passages around t ...\\
+51 & Process & Step 51 established a complete Einstein existence proof for the BCGP Z₄² K²=2 product-quotient resolution via the reflexive extension bridge. The proof chain: (1) T\_X⁰ ≅ (π\_*T\_Y)\textasciicircum{}G by reflexive extension (dual-of-coherent for T\_X⁰, MCM for invariant pushforwar ...\\
+52 & Process & Step 52 read the Step 51 proof note, the Step 51 route assessment, and BCGP source lines covering Table 2 and §6.7, §6.9--§6.27. I wrote \nolinkurl{`Sessions/S0910A01/workspace/scripts/step52_lefschetz_obstruction_dimensions.py`,} implementing a uniform holomorphic Lefsch ...\\
+53 & Evaluate & Step 53 evaluated the Step 52 handoff and the new Strategist and peer inputs against the full Yau 26 goal. I read the Step 52 Lefschetz note, the Step 52 data and script, the BCGP source passages for §6.9 and the node count, the A03 Step55 direct-flow note and ...\\
+54 & Process & Step 54 wrote a coherent first-exit and continuation derivation for the restricted IL theorem on the exact transported-cutoff flow \nolinkurl{(Sessions/S0910A01/workspace/notes/step54_first_exit_continuation_derivation.md,} 643 lines, 12 sections). It takes A03 Step 56's  ...\\
+55 & Repair & Step 55 repaired the restricted IL analytic interface from Step 54. I created \nolinkurl{`Sessions/S0910A01/workspace/notes/step55_joint_bootstrap_background_continuation_repair.md`,} replacing the unsupported evolving |E(t)|<=delta and Ricci-lower-bound Sobolev control w ...\\
+56 & Verify & Step 56 assembled the common observation time theorem (Proposition 1.1) and terminal compactness mechanism (Proposition 1.2, §4-§5) for the restricted IL cutoff flow, with TTCS corrections incorporated. The proof note is \nolinkurl{`workspace/notes/step56_common_time_and} ...\\
+57 & Review & Step 57 reviewed and repaired the Step 56 common-time continuation interface for the restricted four-dimensional negative Ishida-LeBrun route. It found that Step 56’s raw metric-difference overlap uniqueness is invalid because ungauged Ricci has principal gaug ...\\
+58 & Process & Step 58 wrote and verified the proof-level all-order continuation component for the restricted four-dimensional negative IL cutoff-flow theorem. The note \nolinkurl{`workspace/notes/step58_all_order_continuation_proof.md`} (712 lines) corrects the two Step 57 errors: (1)  ...\\
+59 & Repair & Step 59 evaluated the Step 58 handoff in light of the Strategist correction and repaired the restricted IL continuation status. I read the Step 58 all-order note, its TTCS verification, A03 Step 57/37/38/39 base and continuation notes, A02 Step 61 toric-cone n ...\\
+60 & Process & Step 60 constructed the base-pair continuation proof at tensor-index level for the restricted IL cutoff-flow theorem. I read the Step 59 handoff, the Step 59 induction ledger repair note, the Step 59 route assessment, the A03 Step 38 signed-Hessian lemma, and  ...\\
+61 & Process & Step 61 ran gate audits (not confirmations) of the three load-bearing analytic modules for the restricted IL cutoff-flow theorem. Results: (1) DEFECT MOSER ENDPOINT -- GATE FAILED. J\_6 persistence via two-factor absorption is sound and Y-independent, but the L ...\\
+62 & Process & Step 62 closed the defect Moser blocking gap identified in the Step 61 gate audit. The proof note is \nolinkurl{workspace/notes/step62_defect_moser_general_p_proof.md} (453 lines). Three TTCS verification rounds produced the structural clarification: (1) Two-factor (Y-fre ...\\
+63 & Process & Step 63 closed the curvature endpoint tensor identities (Premise C1) at index level. Proof note: \nolinkurl{workspace/notes/step63_curvature_variation_index_proof.md} (698 lines, 57 equations). TTCS verification \nolinkurl{(trace/ttcs/results/step63_ttcs01_verifier1_integration.md)}  ...\\
+64 & Process & Step 64 performed the required cross-note convention consistency work after the Step 63 KN sign repair. I wrote \nolinkurl{`workspace/notes/step64_convention_consistency_sweep.md`,} then used TTCS \nolinkurl{(`trace/ttcs/results/step64_ttcs01_verifier1_integration.md`)} to independen ...\\
+65 & Process & Step 65 constructed the per-datum existence theorem for the exact degenerate cutoff flow as a self-contained proof note \nolinkurl{(`workspace/notes/step65_per_datum_existence_theorem.md`,} 603 lines). The theorem proves: for any closed Riemannian manifold, smooth positiv ...\\
+66 & Reflect & Step 66 began by evaluating the Step 65 handoff against the original Yau26 goal. I read \nolinkurl{`Sessions/S0910A01/workspace/notes/step65_per_datum_existence_theorem.md`} around the uniformity discussion, \nolinkurl{`workspace/plans/route_assessment_step65.md`,} and `workspace/bri ...\\
+67 & Verify & Step 67 reviewed the Step 66 handoff in light of the Strategist correction and recovered the existing terminal IL argument. I read \nolinkurl{`workspace/notes/step45_consolidated_IL_negative_gap_proof.md`} §§2 and 7, \nolinkurl{`workspace/notes/step56_common_time_and_terminal_compac} ...\\
+68 & Verify & Step 68 constructed the canonical restricted IL negative-gap theorem assembly at \nolinkurl{`workspace/notes/step68_restricted_IL_canonical_assembly.md`} (814 lines). All nine modules are combined under one curvature convention: terminal calibration (Step 67, ∫Φ≤119Q), se ...\\
+69 & Repair & Step 69 critically reviewed the Step 68 restricted IL canonical assembly in light of the Strategist correction and repaired the specific mathematical regressions instead of reopening a broad review. I read the assembly, the Step 24 buffered-support estimate, S ...\\
+70 & Process & Step 70 built two self-contained proof modules expanding the most load-bearing interfaces of the restricted IL assembly. The selected-support lemma \nolinkurl{(workspace/notes/step70_selected_support_lemma.md,} 824 lines, 33/33 structural checks) proves: full-curvature bu ...\\
+71 & Repair & Step 71 evaluated the Step 70 handoff against the full Yau 26 goal and the Strategist correction. I read the Step 70 defect Moser note, the Step 62 defect Moser source, the Step 70 selected-support lemma, the Step 68 assembly around §6.5, the Step 70 route ass ...\\
+72 & Process & Step 72 verified the bounded Step 71 repairs and then converted the graph-neck reflection identity into executable evidence. Verification: `python \nolinkurl{Sessions/S0910A01/workspace/scripts/step71_regression_repairs_verify.py`} passed 18/18; the selected-support verif ...\\
+73 & Reflect & Step 73 developed three structural results for the graph-neck construction, verified them through TTCS, and repaired five genuine errors. Preissmann obstruction (Proposition 2.1): for every metric h on T\textasciicircum{}3, max |Ric\_h + 2h|\_op > 2/3, proven via K\_\{ij\} < 0 unde ...\\
+74 & Evaluate & Step 74 evaluated the Step 73 handoff in light of the Strategist correction, A02/A03 peer work, and TTCS verification. I read A02's \nolinkurl{`step73_global_positive_proof_allocation.md`,} manuscript `20260912.tex` around FND:flux and the constant-scalar A1 model, recent ...\\
+75 & Evaluate & Step 75 evaluated the Step 74 handoff under the Strategist's correction. I read A02's \nolinkurl{`Sessions/S0910A02/workspace/notes/step74_ell_classification_tower_impossibility_and_hardness_propagation.md`,} A02's Step68 spectral/symmetry/multipole note, `Sessions/S0910A ...\\
+76 & Process & Step 76 constructed the reduced Ozuch obstruction map for Einstein desingularization of \$(S\textasciicircum{}2 \textbackslash{}times S\textasciicircum{}2)/\textbackslash{}mathbb\{Z\}\_2\$ and discovered that all obstructions through second order vanish automatically. The note \nolinkurl{`workspace/notes/step76_mixed_row_reduced_obstructi} ...\\
+77 & Repair & Step 77 repaired the Step 76 mixed-row product-orbifold obstruction analysis through source reading, peer comparison, executable symbolic checks, TTCS verification, and note updates. I began from the Strategist correction that Ozuch Definition 1.8 uses the ful ...\\
+78 & Process & Step 78 constructed the A-equivariant diagonal reduction for the positive mixed-row desingularization of (S²×S²)/Z₂ and established three structural theorems: (1) Scalar kernel elimination by A-symmetry—the antipodal A(x,y)=(-x,-y) makes all four Ozuch kernel  ...\\
+79 & Repair & Step 79 repaired the Step 78 positive mixed-row computation using source reading, executable algebra, TTCS verification, and peer correction. I read Ozuch's Definition 1.14, Remark 1.15, Proposition 1.16, the H⁴ curvature formula, the λ and μ setup, Lemma 2.14 ...\\
+80 & Process & Step 80 established the J-symmetry all-order obstruction elimination theorem for the product orbifold (S²×S²)/⟨(r\_π,r\_π)⟩. The discrete symmetry J(z,w)=(z̄,w̄) = diag(1,-1,1,-1) on tangent spaces acts on SD/ASD bases as diag(-1,+1,-1), commutes with the quotie ...\\
+81 & Process & Step 81 executed and verified the L-exchange refinement of the positive mixed-row product-orbifold route. I wrote and ran \nolinkurl{Sessions/S0910A01/workspace/scripts/step81_L_symmetry_scale_ledger.py,} producing \nolinkurl{workspace/data/step81_L_symmetry_scale_ledger.json.} It ve ...\\
+82 & Reflect & Step 82 synthesized the positive mixed-row construction with three independent frameworks and discovered a decisive consistency check. Starting from the Step 81 handoff requesting the radial Green coefficient computation, I first read the Ozuch Integrability p ...\\
+83 & Reflect & Step 83 evaluated the Step 82 handoff under the Strategist note and corrected the route meaning of the del Pezzo connection. I read the Step 82 note and route assessment, the Step 82 TTCS verifier result, the Step 81 L-exchange note, A02’s inter-node kernel-bl ...\\
+84 & Process & Step 84 constructed two structural results for the positive mixed-row product-orbifold desingularization. First, the T-symmetry specialization (c=1/2, κ=-1) was verified: T exchanges A-pair and B-pair nodes, G=⟨T,S₀,S₂⟩ acts transitively on all four nodes, and ...\\
+85 & Process & Step 85 executed a corrected computational bridge for the product-orbifold Green-response coefficient. Starting from the Strategist warning, I did not use the scalar pole recipe as the obstruction. I made the target coefficient explicit as c\_ij\textasciicircum{}epsilon=L\_i G\_P ...\\
+86 & Process & Step 86 resolved the leading-order chirality question for the product-orbifold mixed-row desingularization through three mathematical advances, building on the Step 85 Green-response computational bridge and the Strategist's boundary-duality direction. The fir ...\\
+87 & Repair & Step 87 corrected the false Step 86 product-orbifold Green-response vanishing assertion. I first read the Step 86 note, scripts, data, TTCS verification, and recent peer messages. The Strategist's objection was confirmed: Step 86's script tested diagonal D\_\{ij ...\\
+88 & Process & Step 88 established three mathematical results for the product-orbifold mixed-chirality desingularization, building on the Step 87 correction of the Step 86 vanishing claim. (1) Four-node structural non-cancellation theorem. The axial Killing-Killing mode h=(* ...\\
+89 & Repair & Step 89 repaired the Step 88 product-orbifold chirality calculation under the Strategist's correction. I read the Step 88 structural note, route file, source/receiver scripts, random proportionality script, and Step 88 TTCS result. The Step 88 axial source the ...\\
+90 & Process & Step 90 constructed the K-symmetry (single-factor meridian reflection) theorem for the product orbifold desingularization. K(z,w)=(bar z,w) is an orientation-reversing isometry that fixes all four A\_1 nodes and exchanges omega\_2\textasciicircum{}+ with omega\_2\textasciicircum{}-. It was verifi ...\\
+91 & Process & Step 91 executed and corrected the product-orbifold K-odd interaction calculation and opened a quantitative Sambusetti--BCG negative-branch check. For the product branch, I wrote and ran \nolinkurl{`workspace/scripts/step91_receiver_simplification.py`,} producing `workspa ...\\
+92 & Evaluate & Step 92 performed a route reassessment and produced corrections plus a new product-branch sector theorem. I read Step 91's Sambusetti--BCG note, product receiver/adjacent Green note, route assessment, Step 47 entropy-degree plan and script, Step 91 TTCS result ...\\
+93 & Evaluate & Step 93 attempted to extend the product-orbifold chirality-odd coefficient calculation to the AA/BB trace-free tensor sectors, following the Step 92 handoff. The step produced four scripts and data files, a TTCS verification, and a synthesis note documenting a ...\\
+94 & Repair & Step 94 repaired the Step 93 AA/BB tensor-sector conclusion and rebalanced the route assessment. I read the Step 93 script, note, TTCS result, route assessment, A02's Chern-Weil/entropy note, A03's resolvent theorem, and the relevant Ozuch source lines. I wrot ...\\
+95 & Process & Step 95 absorbed A02's critical curvature correction and produced three mathematical results for the product-orbifold positive branch. Starting from the Step 94 handoff requesting source-compatible Ozuch coefficient construction, I first read A02's Step 92 cro ...\\
+96 & Repair & Step 96 began from the Strategist warning that Step 95 had collapsed gauge invariance, Ozuch source matching, isotropy, all-compatible calibration, and remainder ordering into an unsupported mixed-row obstruction. I read the Step 95 note/data/route files, Step ...\\
+97 & Reflect & Step 97 first completed the repair inherited from Step 96. The duplicated stale fragment in \nolinkurl{`Sessions/S0910A01/workspace/scripts/step96_kernel_plane_ab_map.py`} was removed. A first 120-second rerun timed out without output, so syntax was checked separately wit ...\\
+98 & Reflect & Step 98 began from the Step 97 handoff requesting reconciliation of source-compatible block maps with A02's corrected node-dependent T² representation. The Strategist identified that A02's determinantal framework contained a solvability error (|Q|>|P| does not ...\\
+99 & Verify & Step 99 began by reading the Step 98 synthesis, the Step 98 script/data, Step 96 source/receiver code, Ozuch source lines, and peer corrections. The Step 98 note was rewritten as \nolinkurl{`Sessions/S0910A01/workspace/notes/step98_trace_obstruction_theorem.md`} so it no  ...\\
+100 & Evaluate & Step 100 proved the same-chirality vanishing B\_\{++\} = B\_\{--\} = 0 in the AA/BB tensor-scalar spectral model on (S²×S²)/Z₂ as a complete finite-dimensional algebraic identity, not a numerical observation. The proof uses three mechanisms: tensor-pole parity (diff ...\\
+\bottomrule\end{longtable}
+\normalfont\normalsize
+\subsection{S0910A02：Step 1--100}
+\file{Sessions/S0910A02/trace/exports/meta_trace/meta_trace_report.md}
+\tracefont\footnotesize
+\begin{longtable}{r p{.12\textwidth} >{\raggedright\arraybackslash}p{.73\textwidth}}
+\toprule Step & 原记录状态 & 当步交接短摘录（完整内容见原记录）\\\midrule\endhead
+1 & Process & Step 1 began by obeying the human scientist's clarification that the original aligned goal should not be modified. I inspected \nolinkurl{`Sessions/S0910A02/workspace/briefing/`,} confirmed `original\_research\_goal.md` and `aligned\_research\_goal.md` are identical, read the ...\\
+2 & Process & Step 2 built precise mathematical objects from the Step 1 state, the Strategist's sign-blind insight, and S0910A01's quantitative analysis. The main construction is the complete per-sign Einstein census for dimension 4, formalized as Lemma 1 (sign-blind CGB: δ ...\\
+3 & Repair & Step 3 began by evaluating the Agent2 handoff and the Strategist's warning before running the assigned collapse computations. I read the Step 2 construction note and scripts, S0910A01's mixed Seiberg--Witten script, and the session-group history. The first act ...\\
+4 & Repair & Step 4 began from the Agent3 handoff and Strategist note, with the first task to cap remaining Step-3 repairs and then redirect the research toward higher-value existence-side and accounting questions. I read \nolinkurl{`Sessions/S0910A02/workspace/notes/step3_correction} ...\\
+5 & Repair & Step 5 began from the Step 4 Preceptor handoff asking for CGB accounting updates and positive-branch development. I read all accumulated notes, peer messages (\#210-\#216), and the dossier. The main construction was the all-dimensional positive-branch program in ...\\
+6 & Process & I read the Step-5 erratum, corrected positive-branch plan, main Step-5 note, A01 Step-7 local-vs-global rigidity note, A03 compactness synthesis, and source search results around Cheeger-Naber, Naber-Zhang, and Kaluza-Klein/O'Neill formulas. A focused knowledg ...\\
+7 & Process & Step 7 built four constructions for the positive branch of Yau Problem 26 in dimension 4. Construction 1: free collapse is closed by χ ≥ 2 (CGB) vs χ = 0 (free S¹-bundle), with the dimensional asymmetry that odd dimensions have genuine Einstein-compatible coll ...\\
+8 & Review & Step 8 critically reviewed Step 7's four positive-branch constructions against the exact Yau 26 target. I read the Step 7 note, the Step 7 TTCS verifier integration and branch context, A03's negative-branch orbit-volume note, Step 4 CGB accounting, A01/A03 rep ...\\
+9 & Evaluate & Step 9 built three verified theorems from Cheeger-Naber [1406.6534] for the positive branch of Yau Problem 26. Theorem A (Noncollapsed Positive Finiteness, dim 4): |Ric-g|\_op ≤ δ < 1/2 plus Vol ≥ v > 0 gives at most C(δ,v) diffeomorphism types, via CN Thm 1.12 ...\\
+10 & Evaluate & Step 10 evaluated the Step 9 handoff and the Strategist's proposal to commit beyond the required nine-step Explore opening. I read the Step 9 noncollapsed finiteness note, the Step 8 projection-bridge target and review, Step 9 TTCS verification, current sessio ...\\
+11 & Process & Step 11 built three mathematical results in the first Execute step after the nine-step Explore opening. (1) The CZ Hessian spike on S²(1)×S²(1): an explicit counterexample to the C⁰-Ricci analogue of Cheeger-Tian pointwise ε-regularity. The opposite warping f₁ ...\\
+12 & Verify & Step 12 executed the toric determinant program proposed by the Strategist. I read the Step 11 CZ spike note and peer corrections \#252-\#254, including A03/A01 Taub-NUT-AdS repairs and diffuse Pontryagin conclusions. I then wrote and ran exact symbolic scripts.  ...\\
+13 & Verify & Step 13 independently verified and stress-tested the Step 12 toric determinant route. I read the Step 12 synthesis and data files, A01's repaired Taub-NUT/diffuse Pontryagin note, and relevant Knowledge sources. I found that Step 12's formula tr\_h Ric\textasciicircum{}V = -Del ...\\
+14 & Process & Step 14 corrected and extended the toric positive-branch route with five discoveries. (1) CZ spike determinant invariance: w = sin x sin y independent of u (dw/du = 0), so volume-breaking needs small p AND q. (2) Faber-Krahn base-area bound: Area(Ω) ≥ πj₀²/(2( ...\\
+15 & Verify & Step 15 executed the corrected toric pinched-relaxation program rather than the misleading exact high-corner Einstein FEM. Source checking showed that arXiv:2311.04840 classifies only nonnegatively curved T\textasciicircum{}2-invariant Einstein 4-manifolds and states the gener ...\\
+16 & Verify & Step 16 verified and corrected the Step 15 boundary-germ pivot. I attempted focused retrieval for Euclidean Schwarzschild-de Sitter/Nariai and Atiyah-LeBrun edge-cone sources; broad retrieval was initially poor, but local Knowledge searches found the needed ob ...\\
+17 & Reflect & Step 17 proved the Exact Separated Einstein Rigidity Theorem (cohomogeneity-one Ric=g with S¹×SO(3) and two S² bolts ⟹ Nariai S²×S²; proof via first integral a(a')²=κ(a−1)−(a³−1)/3, cone-angle μ=1⟺A=0, dμ/dA=−4/3), verified the General T\textasciicircum{}k Spectral Identity (t ...\\
+18 & Reflect & Step 18 corrected Step 17's route assessment and made the correction operational. I verified from the Step 2 note that tight normalized Ricci pinching in either sign forces strict Hitchin--Thorpe for \textbackslash{}(\textbackslash{}varepsilon<1/(1+\textbackslash{}sqrt3)\textbackslash{}), so HT violators such as \textbackslash{}(\textbackslash{}\#\_5 ...\\
+19 & Process & Step 19 executed the finite rod/corner matching test requested after Step 18. I first read the Step-18 toric crux plan, Step-18 residual scaffold, Step-18 correction note, Step-15 boundary-bubble note/data, and the toric source smoothness lemmas. I confirmed f ...\\
+20 & Process & Step 20 established three results for the toric BUILD/BREAK fork. (1) A grounded TTCS verifier corrected the proposed 2D eigenvalue reduction: the fork is a full coupled Dirichlet-to-Neumann flux problem, not a pure spectral question. Area ≥ c does not imply ∫ ...\\
+21 & Evaluate & Step 21 executed two route-changing audits. For the toric positive-branch \#\_k(S\textasciicircum{}2 x S\textasciicircum{}2) line, I wrote and ran \nolinkurl{`Sessions/S0910A02/workspace/scripts/step21_toric_rod_identity_alpha_audit.py`,} producing \nolinkurl{`workspace/data/step21_toric_rod_identity_alpha_audit.json`} ...\\
+22 & Evaluate & Step 22 critically audited the negative-branch cutoff-flow route and corrected the interpretation of Step 21. I read A02 Step 21, A01 `step20\_closed\_tensor\_estimate.md`, A01 \nolinkurl{`step21_finite_exponent_smoothing_lemma.md`,} A01 `plans/route\_assessment\_step21.md`, A ...\\
+23 & Process & Step 23 followed the Step 22 handoff and the strategist’s note by reopening the all-dimensional scope question while preserving the exact Yau-26 proposition. I first attempted to retrieve the two long-standing classical source obligations: Anderson 1989 JAMS a ...\\
+24 & Process & Step 24 followed the Step-23 handoff and strategist note by writing the durable route note \nolinkurl{`Sessions/S0910A02/workspace/notes/step24_all_dim_positive_collapse_architecture.md`} and constructing a reproducible KK audit in \nolinkurl{`Sessions/S0910A02/workspace/scripts/ste} ...\\
+25 & Process & Step 25 delivered three connected results. (1) Sign correction: the individual warping equations −Δ\_B p = (K\_B−1)p (Step 14) were wrong; the correct form is −Δ\_B p = (1−K\_B)p, verified by TTCS and S²×S² anchor \nolinkurl{(`trace/ttcs/results/step25_ttcs01_verifier1_integ} ...\\
+26 & Reflect & Step 26 executed the Step-25 abelian-forcing handoff and corrected it substantially. I read Step-24/25 positive-collapse notes and data, checked Naber--Zhang/Rong source excerpts, and attempted focused retrieval of Kapovitch--Wilking/O'Neill sources. The retri ...\\
+27 & Process & Step 27 performed the requested Preceptor consolidation of Step 26 and strengthened it. I read \nolinkurl{`workspace/notes/step26_nilpotent_abelian_forcing_audit.md`,} \nolinkurl{`workspace/data/step26_nilpotent_submersion_balance.json`,} \nolinkurl{`workspace/data/step26_heisenberg_moving_fram} ...\\
+28 & Process & Step 28 established the ansatz-free Bochner center bound for positive-collapse abelian forcing. I wrote and ran \nolinkurl{`workspace/scripts/step28_bochner_killing_center_bound.py`,} producing \nolinkurl{`workspace/data/step28_bochner_killing_center_bound.json`,} which verifies all  ...\\
+29 & Reflect & Step 29 executed the handoff from Step 28 and corrected the research allocation. I read the Step-28 Bochner theorem note, the horizontal-twist JSON, the Step-28 TTCS integration, and A01's terminal-recalibration note. I wrote and ran `Sessions/S0910A02/workspa ...\\
+30 & Evaluate & Step 30 followed the Step-29 handoff and the strategist's correction by re-evaluating the whole positive-branch route rather than continuing to hunt only for a collapse almost-Killing bridge. I searched the session notes for the dormant noncollapsed bubble/Poh ...\\
+31 & Process & Step 31 constructed the Route-A mathematical core. I read and source-verified Ozuch 2021 Corollaries 4.10-4.11, Remark 0.5-0.6, and Theorem 0.9 for the first Ozuch obstruction to EH desingularization. I wrote and ran \nolinkurl{`workspace/scripts/step31_noncollapsed_dich} ...\\
+32 & Reflect & Step 32 evaluated the Step-31 handoff in light of the strategist correction and redirected execution away from a misleading Page-metric flux experiment. I read the Step-1 obstruction-amplitude material, Step-7 Construction 3, Step-8 Preceptor review, Step-31 n ...\\
+33 & Evaluate & Step 33 consolidated Route A after Step 32's correction and the new strategist note. I created \nolinkurl{`Sessions/S0910A02/workspace/scripts/step33_routeA_source_indicial_topology.py`} and ran it to \nolinkurl{`workspace/data/step33_routeA_source_indicial_topology.json`;} after rep ...\\
+34 & Process & Step 34 executed the Step-33 handoff and the strategist's mode-diagonal/resonance reframing. I wrote and ran \nolinkurl{`workspace/scripts/step34_indicial_modediag_resonance.py`} producing \nolinkurl{`workspace/data/step34_indicial_modediag_resonance.json`,} confirming mode-diagonali ...\\
+35 & Repair & Step 35 followed the Step-34 handoff but repaired its main resonance conclusion in light of the strategist note. I read the Step-34 note and data, searched local Knowledge for Anderson/Cheeger-Naber/Ozuch epsilon-regularity and for edge-cone/Weyl sources, and  ...\\
+36 & Repair & Step 36 corrected the collapsed positive-branch energy accounting and discovered the NUT-vs-strut structural distinction. I read the Step 34/35 data, the strategist's edge-cone correction, the Atiyah-LeBrun Theorem A formula from arXiv:1203.6389 (source-confir ...\\
+37 & Repair & Step 37 performed the requested Preceptor review of Steps 34--36 and corrected the most important error in Step 36. I read \nolinkurl{`workspace/notes/step36_edge_cone_accounting_correction.md`,} \nolinkurl{`workspace/data/step36_edge_cone_strut_scaling.json`,} `workspace/data/step36 ...\\
+38 & Process & Step 38 repaired the collapsed positive-branch record following the Step 37 Preceptor review. I retracted Step 36's false 'NUT-only' claim and marked the Step 36 note as partially superseded. I then established the exact period algebra: for m equal-length alte ...\\
+39 & Repair & Step 39 executed the prior compact-period handoff adversarially and found that it needed substantial repair before an m=6 computation could be meaningful. I read Step 38's period-transport note and data, Step 13's exact toric Einstein source synthesis, the Liu ...\\
+40 & Evaluate & Step 40 constructed three structural findings for the collapsed positive toric route. First, by combining Liu's Theorem 3.1 and Proposition 5 with the algebraic observation h(v,v)=a²p²+b²q² (which forces rod labels to have one zero component for codimension-2  ...\\
+41 & Evaluate & Step 41 critically reviewed Step 40's diagonal toric route and corrected its status. I read the Step-40 note and data, Liu's toric Einstein source, relevant Route-A and negative-flow notes, Broder's cohomogeneity-one source, and A01/A03 peer updates. I verifie ...\\
+42 & Evaluate & Step 42 built the Route A mode-projection framework and discovered its precise reach. I confirmed Bridge 1 is resolved by Cheeger-Naber Theorem 1.13 (source-verified: harmonic-radius weak-type L² estimate under |Ric| ≤ 3, not Einstein). I constructed Bridge 2  ...\\
+43 & Evaluate & Step 43 evaluated the Step 42 handoff and repaired its route interpretation. I read the Step 42 mode-projection note and data, the det R\_+ computation, Step 9's noncollapsed finiteness note, Ozuch's noncollapsed degeneration and higher-obstruction sources, LeB ...\\
+44 & Evaluate & Step 44 executed the decisive bi-Kähler orbifold test and established that Route A's first-order Ozuch chirality obstruction cannot close the noncollapsed positive branch for \#\_k(S²×S²). The product Einstein orbifold (S²×S²)/Z₂ has R₊ = R₋ = diag(Λ,0,0) at all ...\\
+45 & Repair & Step 45 performed a Preceptor correction of Step 44. I read Step 44’s bi-Kähler note/data/scripts, Step 43’s chirality note, Ozuch source lines for the first obstruction, Step 9’s energy quantum record, Armstrong’s orbit-space fundamental-group statement from  ...\\
+46 & Process & Step 46 constructed the mode-projection vector-obstruction theorem as a conditional object with precisely identified dependencies. Three computational/analytic results were established: (1) Γ-invariant l=2 TT harmonic classification for all ADE types, finding  ...\\
+47 & Repair & Step 47 performed the requested Preceptor review of Step 46. I read the Step 46 conditional theorem, its invariant-mode and annulus-window data, the Step 45 bi-Kähler review, the Step 11 CZ spike warning, and Ozuch source passages including the vector obstruct ...\\
+48 & Evaluate & Step 48 constructed the H4\_dual Jacobi-field flux architecture and performed the ζ-realizability + second-order analysis at the bi-Kähler locus. The H4\_dual formulation uses the Ozuch obstruction mode o\_k (smooth at EH bolt, |o\_k| \textasciitilde{} ρ\textasciicircum{}\{-4\}) as the test field o ...\\
+49 & Verify & Step 49 evaluated the Step-48 handoff against the exact Yau--26 operator-norm target and corrected the allocation. I read \nolinkurl{`workspace/notes/step48_H4dual_and_biKahler_realizability.md`,} the Step-48 data files, Step 45's bi-Kähler topology/energy review and scri ...\\
+50 & Review & Step 50 verified and hardened the Step-49 positive product-quotient wall. I read the Step-49 note/data, Step-45 topology review, Ozuch's EH passages, LeBrun--Ozuch's Del Pezzo/product-quotient passages, SW/PSC source snippets, A01 \#378's Q-Gorenstein smoothing ...\\
+51 & Review & Step 51 critically audited the Step-50 product-quotient reduction and the newest A03 normalized Yang reports. I read A02 Step 50's reduction note and data, A03 \nolinkurl{`step50_normalized_yang_wang_verification.md`,} A03 \nolinkurl{`step51_normalized_yang_precise_estimate.md`,} A01 ...\\
+52 & Evaluate & Step 52 independently audited the negative cutoff-flow chain and found it broken at a more fundamental level than Step 51 expected. Three findings were established: (1) The flat T⁴ falsification was confirmed — the normalized cutoff flow creates curvature from ...\\
+53 & Evaluate & Step 53 evaluated the Step 52 handoff and the Strategist's proposed reallocation. I read the Step 52 negative-chain audit, Step 51 audit, Step 3-4 LeBrun/Chern-Weil notes, Step 49 positive product-quotient wall, A01's Q-Gorenstein smoothing notes, the session- ...\\
+54 & Reflect & Step 54 reviewed the Step 53 crepant/noncrepant wall under the Strategist's correction and the new peer messages. I first inspected \nolinkurl{`Sessions/S0910A02/workspace/data/step53_crepant_wall_and_stratum_probe.json`} and its script, searched the local notes for the o ...\\
+55 & Reflect & Step 55 followed the corrected Step-54 handoff and Strategist note by reexamining the negative ADE/ALE wall in the smooth category. I first read the Step-54 audit data and script, the Step-50 reversed-bubble reduction note, the Step-45 bi-Kähler review, and St ...\\
+56 & Reflect & Step 56 critically audited the Step-55 negative bi-Kähler mixed-wall rather than accepting it as a refutation route. I first inspected and reran \nolinkurl{`Sessions/S0910A02/workspace/scripts/step55_negative_bikahler_mixed_wall.py`;} the produced `Sessions/S0910A02/works ...\\
+57 & Reflect & Step 57 completed the four-dimensional noncollapsed wall into a clean unified dichotomy. Starting from the Step-56 audit and the Strategist's direction, I built three interlocking research objects. (1) Kähler exclusion theorem. For 1≤r≤35 in the negative (Σ₂×Σ ...\\
+58 & Reflect & Step 58 performed three concrete checks and route corrections. First, after two `knowledge\_request` misretrievals, I used the user-supplied arXiv id to download Biquard `arXiv:1105.4904` directly. The PDF and text are saved under `workspace/data/source\_text/`. ...\\
+59 & Evaluate & Step 59 developed the H4-dual necessity bridge to its precise analytic crux. I read the Ozuch obstruction theory (lines 370-650), Biquard Lemma 4.2 estimates, the Step-48/49 flux architecture, and the Step-57/58 correction notes. I wrote and ran `workspace/scr ...\\
+60 & Process & Step 60 followed the Strategist's correction rather than continuing the Step-59 weighted-lemma framing. I read Step 59, Step 34/42/49 H4-dual material, Step 11 and Step 29 warping/twist-spike records, then wrote and ran \nolinkurl{`workspace/scripts/step60_resonant_flux_} ...\\
+61 & Process & Step 61 followed the Strategist's correction to replace the Step-60 flat-base-T² model with the toric form of the flat cone R⁴/Z₂. I wrote and ran four scripts producing four data files and one research note. The first script `step61\_toric\_cone\_warp\_ricci.py`  ...\\
+62 & Repair & Step 62 critically reviewed the Step-61 toric-cone Weyl drift handoff and found it materially invalid as a near-Ricci-pinched model. I read \nolinkurl{`workspace/notes/step61_toric_cone_weyl_and_bianchi_theorem.md`,} \nolinkurl{`workspace/data/step61_weyl_eigenvalues.json`,} Step-47/ ...\\
+63 & Process & Step 63 completed two adjudications. (1) IL m=1 collar: the signed-Hessian term closes by one IBP with ||C1||\_infty. Flat-T4 gate does NOT kill the weighted m=1 estimate (T=Rm+G, G!=0 on flat T4, ||T|| bounded away from 0). The m=1 collar is NOT the IL failure ...\\
+64 & Evaluate & Step 64 completed prong one of the Strategist's two-pronged attack and adjudicated the Step-63 allocation question. (1) SMOOTH-TYPE IDENTIFICATION: built and ran \nolinkurl{workspace/scripts/step64_positive_mirror_homeomorphism.py} -> \nolinkurl{workspace/data/step64_positive_mirror} ...\\
+65 & Process & Step 65 attempted the metric-export half of the balanced-row Einstein experiment and converted it into a corrected, precisely-scoped computational problem. Work developed as follows. (1) Recovered the construction record (Step 49 operator-norm note) and read B ...\\
+66 & Process & Step 66 executed the corrected metric-export investigation from the Step-65 handoff and Strategist note. First, I checked the session-group inbox: A01/A03 updates strengthened the restricted negative IL/graph side but did not alter the positive chi=8 allocatio ...\\
+67 & Process & Step 67 restructured the positive-branch approach by reading the primary Ozuch obstruction sources and computing the curvature framework at the A₁ points of (S²×S²)/Z₂. Three interlocking results were established. (1) Curvature verification: R⁺=R⁻=diag(Λ,0,0)  ...\\
+68 & Verify & Step 68 began from Step 67's handoff to compute the mixed EH obstruction, but the strategist's note and source checks showed that the computation was not yet well-posed. I read the Step-67 notes/data, Ozuch and LeBrun--Ozuch source sections, and retrieved Krön ...\\
+69 & Verify & Step 69 independently reviewed and consolidated the Step-68 spectral/kernel/flux/formalization state. I read the Step-68 note and JSON ledgers, the relevant 20260912 manuscript sections, the TTCS integration and branch records, Kroencke's source around Lemma 4 ...\\
+70 & Process & Step 70 built two precise mathematical constructions from the Step-69 review and the Strategist's plateau assessment. (1) The necessity-flux dichotomy theorem was formulated in \nolinkurl{workspace/notes/step70_necessity_flux_dichotomy.md} with full hypotheses. It combine ...\\
+71 & Verify & Step 71 executed three connected audits after the Step-70 handoff and Strategist correction. First, I reread Step-70 dichotomy/consolidation, Step-58 collapse ceiling, Step-64 positive mirror topology, Step-9 noncollapsed compactness, Step-24 positive collapse ...\\
+72 & Evaluate & Step 72 independently reviewed the Step-71 collapse quantum/formalization outputs and assimilated the Strategist correction. I read \nolinkurl{`Sessions/S0910A02/workspace/notes/step71_collapse_quantum_and_lean_scope.md`,} \nolinkurl{`workspace/data/step71_u2_ale_quantum_probe.json`} ...\\
+73 & Evaluate & Step 73 followed the Step-72 handoff by rebuilding the global allocation around the exact Yau--26 quantifiers, then repaired that allocation using sources, peer input, and TTCS. I first recovered the dimension-general FND:flux proposition from `Skills/qiushi-y ...\\
+74 & Process & Step 74 built three structural results reshaping the P₄⁺ proof architecture. (1) The ℓ-classification proves ℓ=2 is the unique unweighted log-critical mode for all d≥4: H₂=log(R/b) while H\_ℓ=b\textasciicircum{}\{2-ℓ\}/(ℓ-2) for ℓ>2. TTCS-verified, dimension-general. (2) The stru ...\\
+75 & Verify & Step 75 began from the Step-74 handoff and the Strategist correction. I first reread the Step-74 structural note, Step-68 spectral/symmetry note, Step-64 positive-mirror topology note, Step-67 ambient-jet note, and recent session-group messages including A03's ...\\
+76 & Repair & Step 76 performed the requested Preceptor audit of the Step-75 mixed-row ledger and then repaired several load-bearing formulations. I read the Step-75 data/script, the Step-64 topology note, the Step-68 symmetry/kernel note, Ozuch source lines around 608--646 ...\\
+77 & Process & Step 77 built three connected mathematical constructions from the Step-76 audit and A01's Step-78 equivariant reduction. (1) The MIXED-CHIRALITY INTER-NODE KERNEL BLOCK framework identifies the faithful obstruction object M\_\{ji\}\textasciicircum{}\{ε\_j\}[φ\_i] = Π\_\{ker R\textasciicircum{}\{ε\_j\}\} dR ...\\
+78 & Evaluate & Step 78 evaluated the Step-77 handoff against the whole Yau--26 resolution state and the new Strategist/A01 corrections. I did not run the requested Biq16 local \textbackslash{}(\textbackslash{}mu\_2,\textbackslash{}mu\_3\textbackslash{}) computation because the order bookkeeping made it non-decisive: pattern-dependent i ...\\
+79 & Verify & Step 79 built three structural results for P\_4\textasciicircum{}+ and had them TTCS-verified with corrections. (1) HARMONIC-FORM ALIGNMENT CLOSURE: the summed Weitzenböck mechanism cannot obstruct positive Einstein on χ=8 mixed rows. All classical estimates give lower bounds o ...\\
+80 & Verify & Step 80 audited the Step-79 handoff under the Strategist correction and peer updates. I read the Step-79 note \nolinkurl{`Sessions/S0910A02/workspace/notes/step79_alignment_closure_and_collapse_transition.md`,} the TTCS integration and branch records under `Sessions/S0910 ...\\
+81 & Process & Step 81 built the definitive analysis of the harmonic-form alignment mechanism for positive Einstein 4-manifolds. Starting from the Strategist's claim of \textasciitilde{}20\% margin, I pinned all conventions to Wu/LeBrun and Gursky-LeBrun sources, wrote exact computation scri ...\\
+82 & Reflect & Step 82 source-checked and corrected the sign-leg status of the fixed positive-mirror mixed-row refutation route. Starting from Step 81, the crude harmonic-form alignment and naive CLR mechanisms were already capped: b\_+ cancels to exactly the Gursky--LeBrun i ...\\
+83 & Verify & Step 83 performed an Agent1-level reconstruction and verification of the current Yau--26 route. I read the cumulative construction in \nolinkurl{`Skills/qiushi-yau26/references/research/20260912.tex`} around the EH core, log-Weyl annulus, flux estimates, and product-quoti ...\\
+84 & Evaluate & Step 84 independently audited the Step 83 reconstruction from the Preceptor perspective. I read \nolinkurl{`Sessions/S0910A02/workspace/notes/step83_near_pinched_construction_and_frontier_reduction.md`,} the TTCS integration \nolinkurl{`Sessions/S0910A02/trace/ttcs/results/step83_tt} ...\\
+85 & Process & Step 85 constructed three structural results and a comprehensive reduction note. (1) The all-dimensional interval prerequisite (Theorem 1): for n≥3, Yau-26 false ⟹ some closed n-manifold has no Einstein metric. Proof via Lohkamp + rescaling into [c,0]. For n≥5 ...\\
+86 & Verify & Step 86 redirected the queued Execute work away from a redundant Burns-frame computation and toward the Strategist's bounded source question about Bauer--Furuta survival under +2 spheres. I first read Step 85's reduction note and L2 data, confirming that the v ...\\
+87 & Reflect & Step 87 began by accepting the Step 86 handoff but immediately incorporating the Strategist's correction. I sent session-group message \#606 to alert A03 and A01 that the Sambusetti--BCG route may change the negative branch: for M=N\#N with N closed real-hyperbo ...\\
+88 & Verify & Step 88 built the three structural results that Step 87 identified but did not write. (1) WARPED-PRODUCT WAIST BARRIER: proved that for warped product g=dr²+f(r)²g\_F with Einstein 3-fiber Ric\_F=2kg\_F, at any waist (f'=0, f''≥0), the Ricci defect from -3 satisf ...\\
+89 & Repair & Step 89 audited Step 88's requested structural claims rather than approving them. I read \nolinkurl{`workspace/notes/step88_sambusetti_bcg_waist_and_disjointness.md`,} \nolinkurl{`workspace/data/step88_warped_waist_and_bcg_threshold.json`,} the patched `workspace/notes/step85\_yau26\_e ...\\
+90 & Process & Step 90 proved three structural theorems and assembled the triple disjointness result. (1) ALE NON-DECREASE: for any Ricci-flat ALE 4-space, |Δτ| ≤ (2/3)Δχ with equality iff half-flat. Hence χ(M) − (3/2)|τ(M)| ≥ χ\_orb − (3/2)|τ\_orb| for any orbifold+ALE resolu ...\\
+91 & Repair & Step 91 began by reading the Step 90 triple-disjointness note and verification data, then tested the strategist's two corrections against sources and computations. I read BBCG's primary source \nolinkurl{`Knowledge/objects/papers/Differentiable-rigidity-under-Ricci-curva} ...\\
+92 & Process & Step 92 completed three connected tasks. (1) REPAIR: Fixed the BCG rescaling direction in Step 90's entropy-inaccessibility note (ĝ = (1+ε/3)g, not inverse; volume factor (1+ε/3)², not divided). Patched Step 85's reduction note with BBCG non-uniform-gap, scala ...\\
+93 & Repair & Step 93 corrected a load-bearing curvature error from Step 92 and reorganized the positive-branch target. I first read the Step 92 note and found the false assertions in §§2.5 and 3.1: the product orbifold was called conformally flat with R\textasciicircum{}±=(Λ/3)I=I/3, leadi ...\\
+94 & Process & Step 94 proved three structural results for the mixed-chirality coefficient program and the high-dimensional target. (1) Gate 1: The local second obstruction μ₁ = C·det(R\_⊥) = 0 identically on K = ker R\textasciicircum{}± for the product orbifold, because R\textasciicircum{}+ = diag(Λ,0,0) giv ...\\
+95 & Repair & Step 95 acted on the strategist correction to Step 94. I read the Step 94 three-gate note, Step 77 inter-node framework, Ozuch source lines around the obstruction tower and global nu\_l equations, LeBrun--Ozuch/OSS-related sources, A01 notes on scalar kernels a ...\\
+96 & Process & Step 96 completed three deferred repairs and a structural advance. Gate 1 proof repaired: T² weight parity (beta=0 subcircle gives weight 1, no quadratic monomial z\textasciicircum{}a·zbar\textasciicircum{}b with a+b=2 and a-b=1 exists). Selection rules corrected: sigma\_j=eps\_j·s\_A\textasciicircum{}j·s\_B\textasciicircum{}j org ...\\
+97 & Reflect & Step 97 evaluated the Step96 handoff under the Strategist's variational correction and found that the queued tensor-sector decision was under-specified. I first inspected the current A02 framework \nolinkurl{(`workspace/notes/step96_corrected_selection_and_determinantal.} ...\\
+98 & Verify & Step 98 critically reviewed the positive Gate-3 framework rather than continuing coefficient arithmetic blindly. I read A02's \nolinkurl{`workspace/notes/step96_corrected_selection_and_determinantal.md`,} patched \nolinkurl{`workspace/notes/step94_three_gates_and_highdim_theorem.md`} ...\\
+99 & Verify & Step 99 independently audited A01 Step98's trace-obstruction computation and patched A02's route state. I read A01's \nolinkurl{`Sessions/S0910A01/workspace/notes/step98_trace_obstruction_theorem.md`,} scripts \nolinkurl{`step98_full_chirality_tensor_maps.py`} and `step96\_kernel\_plan ...\\
+100 & Verify & Step 100 proved two results that together close the positive mirror at leading inter-node order. Starting from the Step 99 handoff which identified the adjacent-balanced scale-ratio window as a possible existence window and the uncomputed diagonal tensor coeff ...\\
+\bottomrule\end{longtable}
+\normalfont\normalsize
+\subsection{S0910A03：Step 1--100}
+\file{Sessions/S0910A03/trace/exports/meta_trace/meta_trace_report.md}
+\tracefont\footnotesize
+\begin{longtable}{r p{.12\textwidth} >{\raggedright\arraybackslash}p{.73\textwidth}}
+\toprule Step & 原记录状态 & 当步交接短摘录（完整内容见原记录）\\\midrule\endhead
+1 & Evaluate & 人类确认 aligned\_research\_goal.md 原样作为稳定研究目标。本步完整阅读了 briefing、qiushi-yau26 指南及研究底稿，并核对了区间归一化、缩放、量词和低维结果。外部检索覆盖原始题文、Lohkamp 柔性、Min-Oo/Ye/Anderson 稳定性、轨形解消与四维无 Einstein 拓扑；历史 1982 年 Problem 26 原页、Anderson 1989 Corollary B(4) 和 Ye 1993 全定理文本仍未取得完整可读版本。官方 Ye 来源片段指出 Mi ...\\
+2 & Evaluate & Starting from Step 1's identification of the orbifold desingularization mechanism, ALE cap analysis, and the problem's branch structure (P\_n\textasciicircum{}± normalization, low-dimensional solutions, quantifier analysis), this step developed the complete quantitative 4D obst ...\\
+3 & Reflect & 本步从 Strategist 对 Step 2 的两项纠正出发，重新读取 Ishida-LeBrun 2001、LeBrun 1998、LeBrun 2001、LeBrun 2006 以及 Ishida-LeBrun 2003 的实际全文段落。首先核对了 Weitzenböck 公式中负梯度项，撤回 Step 2 的纯 W\_+ 下界及其错误独立推导，同时保留有正式来源的 Proposition 4。该区别通过会话组消息 \#209 发送给 S0910A01、S0910A02；A01 在 \#210 中确认已修复本地笔记 ...\\
+4 & Reflect & 本步从 Step 3 的临界近等号分析出发，发展了三项新的定量约束并精确定位了完成证明的唯一剩余障碍。 Weyl profile L² 集中 ∫(|W+|−1/(2√6))² = O(Aδ²) 从 completion square 和一致 s -> −4 严格推出，经 SymPy 脚本（\nolinkurl{workspace/scripts/verify_weyl_profile.py}）和 S0910A01 独立核验确认。此结果排除了 KE 块体几何（体积分数 O(δ²)）和实双曲几何作为正体积 bulk，并限制固定拓扑上的光滑非塌缩气泡 ...\\
+5 & Reflect & 本步首先完整读取了 Codex 成功任务的详细文件 \nolinkurl{Sessions/S0910A03/workspace/codex_loop/work/quantitative_deficit_analysis.md}，并把其精确分解与 Step 4 的 Weyl 模长轮廓、紧致性笔记结合。随后检索并阅读了 Derdziński 相关现代来源、LeBrun-Ozuch 的共形 Kähler Einstein 轨形论文、Cheeger-Naber 四维正则性、Anderson 轨形紧致性以及最新可去奇点材料。外部检索新增了 Cat ...\\
+6 & Repair & 本步从 Step 5 的符号分支争议出发，读取了 \nolinkurl{`workspace/notes/step5_regular_patch_and_derdzinski_boundary.tex`}、Codex 的 `quantitative\_deficit\_analysis.md`、两份 Step 5 TTCS 集成、S0910A01 的局部刚性笔记、Cheeger-Naber 正则性原文以及现代 Derdziński 论述。随后对 Strategist 提出的投影恒等式逐指标复算，保留 δ(ω⊗ω) 的两个乘积法则项，建立了“h ...\\
+7 & Verify & 本步从 Step 6 的塌缩归约出发，发展了完整的轨道体积排除机制。首先阅读 Lott (1708.06780) 的自由阿贝尔 Einstein 适配度量轨道体积方程 Δv = (|F|²/4 - λN)v，在 λ = -1 下识别出严格正系数 |F|²/4 + N ≥ 1，使 v 严格次调和。对抛物基底（dim ≥ 2 紧空间补有限点）和圆周基底分别建立了排除论证，并推导近 Einstein 版本（系数 N(1-δ)）。代数验证脚本 \nolinkurl{verify_orbit_volume_negative_einstein.py} ...\\
+8 & Reflect & 本步从 Strategist 对 Step 7 的两项关键纠正出发，完整读取并检查了 \nolinkurl{`workspace/notes/step7_orbit_volume_negative_einstein_collapse.tex`}、`step7\_consolidated\_status.md`、\nolinkurl{`step6_collapsed_unwrapping_route.md`}、S0910A01 的覆盖传输与局部刚性笔记，以及 Naber-Zhang 原文的 Theorems 5.1、Propositions 6.4-6.5。首先确认旧 ...\\
+9 & Reflect & This step developed three interconnected constructions from the Strategist's guidance to apply |Rm|\textasciicircum{}2 maximal-function selection alongside the calibrated deficit, and to compute the Weitzenbock gradient energy. The Weitzenbock computation required resolving a  ...\\
+10 & Reflect & 本步从 Strategist 对 Step 9 的纠正出发，读取了 Step 9 的 maximal-function、Taub-NUT、Codex 缺陷分解、同伴 accessible-cover 与正支资料，并检索了 Taub-NUT-AdS、缓冲局部覆盖以及 Chern-Simons transgression 的来源。Akbar-D’Eath 原文支持所用 Taub-NUT-AdS 度量的 Einstein 与 Weyl half-flat 性质；Naber-Zhang 及 Huang-Wang 的资料确认 ...\\
+11 & Process & 本步从 Strategist 的各向异性指导出发，建立了静态圆约化公式并发现了关键符号/因子错误。初始推导给出 W⁺ = 2J(h - I/3)，要求校准 h = (3/8, 3/8, 1/4)。TTCS 验证器通过逐指标重算发现正确公式为 Spec(W⁺) = \{1/3 - η\_i\}，要求校准 h = (1/2, 1/4, 1/4)。余同一性一协同更强：a'' = a/4 vs a'' = a/2（相对间隙 1/2）。扭曲符号修正：tr(h) = 1 + ℓ²|F|²/4 > 1。关键的近 NUT 修正：h 和扭 ...\\
+12 & Reflect & 本步依照 Strategist 的修正重新读取 Step 11 静态圆约化、TTCS 记录以及 A01/A02 的 Taub-NUT 与 toric 文件，撤回“纤维死亡必然产生正比例高 ℓ²|F|²”和“一般静态常谱只能双曲”的表述。\nolinkurl{`workspace/notes/step11_circle_reduction_anisotropy_and_fiber_survival.tex`} 与 `step11\_consolidated\_status.md` 已加入替代说明；H²×H² 被明确记录为一般静态分类的反例，T² ...\\
+13 & Process & This step began from the Strategist\textbackslash{}u2019s guidance that Ye Li\textbackslash{}u2019s smoothing hypothesis is satisfied at small radius r\textbackslash{}u2080 on maximal-function good points, and from A01\textbackslash{}u2019s Step 14 identification of the same localization question and withdrawal of the  ...\\
+14 & Repair & Starting from the Strategist's correction, this step re-examined the entire Step 13 smoothing argument against Ye Li's source. It confirmed that the inner-ball/outer-ball inequality did not close, that curvature-energy persistence had merely been assumed, and  ...\\
+15 & Process & This step established three interconnected results for the 4D negative-branch program. First, the L² completion-square chain (Theorem 1): for any metric g on a fixed critical Ishida-LeBrun 4-manifold M, the Einstein defect E = Ric+g controls the calibrated Wey ...\\
+16 & Reflect & This step independently reviewed Step 15 against Li’s source, the cutoff-flow calculations, the Codex monopole decomposition, and peer work. It found the definite domain mismatch in the purported plateau localization and rejected the use of finite parabolic pr ...\\
+17 & Process & This step established two principal results and two important corrections for the 4D negative-branch cutoff-flow program. The first result is the closure of the coupled L² curvature-defect energy system under the normalized cutoff flow. Using the 4D Sobolev-en ...\\
+18 & Process & This step re-examined the Step 17 cutoff-flow construction under the Strategist’s corrections and replaced its unconditional statements by a simultaneous first-exit framework. The old assertion that |aRm|≤C/t preserves E was removed: direct exponent checks sho ...\\
+19 & Process & This step proved two results and formulated one conditional architecture for the 4D negative-branch cutoff-flow program. The first proved result is that Wang's curvature-control parameter β = A₀²·‖Rm‖\_\{L²\} is volume-independent in dimension 4: β = C\_S²C\_V\textasciicircum{}\{1/2 ...\\
+20 & Process & This step replaced the transition use of an unweighted Li potential by Wang-compatible weighted moments. The main development is recorded in \nolinkurl{`Sessions/S0910A03/workspace/notes/step20_weighted_wang_hierarchy_and_whitney_correction.md`,} with a shorter synthesis  ...\\
+21 & Process & Step 21 established the derivative-free first-exit architecture for the 4D negative-branch cutoff-flow program. The main results are recorded in \nolinkurl{`workspace/notes/step21_derivative_free_first_exit_and_plateau_regularity.md`} with corrections in `step21\_correctio ...\\
+22 & Process & Step 22 refuted the Step 21 Nash semigroup shortcut and established a clean two-stage architecture for the 4D negative-branch cutoff-flow program. The inverse-square counterexample (V=κ/|x|² in R⁴) proves that critical form smallness alone does not imply Nash  ...\\
+23 & Process & Step 23 re-evaluated the Step 22 handoff in light of the Strategist's corrections, A01 message \#306, A01's TTCS reading, Wang's fixed q=2,3 calculation, and Yang's original local-Ricci-flow theorem. It rejected the reduction of the smoothing theorem to one ten ...\\
+24 & Process & Step 24 corrected the curvature evolution formula and rebuilt the conditional gap theorem chain. The critical finding: the normalization -2ag produces a linear damping -2aRm in the (0,4) tensor evolution (from index lowering h\_\{lm\}R\textasciicircum{}m\_\{ijk\}), not zero as previ ...\\
+25 & Repair & Step 25 corrected the two substantive errors inherited from Step 24 and rebuilt the single-support argument around the proper whole-support estimates. The Step 24 note was prefaced with a supersession notice at \nolinkurl{`Sessions/S0910A03/workspace/notes/step24_correct} ...\\
+26 & Process & Step 26 resolved two of three remaining analytic obstacles and corrected five errors identified by TTCS verification. The general-p weighted tensor inequality was proved as a complete lemma for all p ≥ 3, extending A01's index-level q=2,3 template. The derivat ...\\
+27 & Verify & Step 27 replaced the incomplete continuation specification by a shifted-curvature derivation. Wang’s Section 4, Yang’s transported-coefficient DeTurck construction, A01’s full-velocity tensor memo, and the Step 26 first-exit framework were read together. The f ...\\
+28 & Review & Step 28 inspected the completed session Codex report and its work artifacts, read the A03 Steps 23-27 analytic notes and A01's independent Moser and continuation notes, reran \nolinkurl{`workspace/codex_loop/work/verify_shifted_curvature.py`} and `verify\_deficit\_constants ...\\
+29 & Process & Step 29 produced three new structural results for the four-dimensional negative-branch program. The family extension showed that the calibration algebra extends to the entire Ishida-LeBrun no-Einstein family (D ≥ A/3), with the topological excess σ = D - A/3 ≥ ...\\
+30 & Reflect & Step 30 independently re-examined the Step 29 handoff, read the first-exit, Moser, continuation, terminal-density, Wang/Yang, and Noether materials, and ran two focused TTCS verifications. TTCS records are \nolinkurl{`Sessions/S0910A03/trace/ttcs/results/step30_ttcs01_ve} ...\\
+31 & Process & Step 31 resolved the weighted vs. unweighted Moser controversy, established the coupled continuation theorem, corrected the support geometry and terminal density, and received three independent confirmations (TTCS, Codex, own derivation). The main research not ...\\
+32 & Review & Step 32 critically reviewed the Step 31 handoff and corrected its mathematical status. I read the Step 31 weighted Moser and coupled-continuation notes, the Step 31 TTCS integration, the Codex weighted-Moser/continuation work, the earlier shifted-curvature con ...\\
+33 & Reflect & Step 33 began from the Step 32 Preceptor review and the Strategist's instruction to separate sequence-uniform zero-order estimates from per-metric continuation constants. I read the Step 32 review note, the Step 31 TTCS integration, A01's general-p power inequ ...\\
+34 & Reflect & Step 34 corrected the Step 33 direction before it could mislead the session group. I sent peer message \#332 retracting A03 \#330's extra Sobolev factor and fixed-manifold conclusion, and replied to A02 \#331 in \#333 clarifying that the embedding coefficient in t ...\\
+35 & Process & Step 35 proved the unregularized J₆ defect persistence lemma, assembled the first-exit bootstrap, and addressed degenerate flow existence and cutoff-jet continuation. Five notes totaling 44k chars were produced. The J₆ lemma (`workspace/notes/step35\_unregulari ...\\
+36 & Review & Step 36 reviewed the Step 35 analytic handoff at the load-bearing interfaces. I read the Step 35 J6, bootstrap, existence, continuation, and status notes; the Step 27 transported DeTurck and shifted-curvature notes; the Codex shifted-continuation material; Yan ...\\
+37 & Process & Step 37 built the three corrected analytic interfaces demanded by the Step 36 Preceptor review. The transported-coefficient DeTurck existence theorem adapts Yang Theorem 8.2 to the normalized flow ∂\_tg=-2χ²(Ric+g), using hat\_a=(χ∘φ\_t\textasciicircum{}\{-1\})² with full Lie-deriv ...\\
+38 & Repair & Step 38 re-examined the Step 37 handoff against its TTCS result, the shifted-curvature notes, Wang's Section 4 source, A01's index-level curvature tensor derivation, and the K₂-Y-Moser records. It wrote \nolinkurl{`workspace/notes/step38_hessian_ibp_and_conditional_moser} ...\\
+39 & Process & Step 39 proved the two missing analytic constructions identified by Step 38's TTCS review. The general-p homogeneous defect power inequality (Theorem 7.1) derives H\_p' + c||∇z\_p||² ≤ Cp⁴(1+r⁻²+S²Y)H\_p for every real p≥6 using s=|E|² directly (no Kato regulariz ...\\
+40 & Process & Step 40 began by rejecting the Step 39 premise that only terminal geometry remained. The general-p homogeneous defect inequality was retained, while the all-order continuation and first-exit statements were withdrawn as proved results. Supersession notices wer ...\\
+41 & Evaluate & Step 41 proved the continuation criterion (Theorem 3.1) for the normalized cutoff flow and confirmed that it discharges A01's hypothesis (H1), making the four-dimensional negative IL gap theorem unconditional modulo all-order induction formalization. The main  ...\\
+42 & Repair & Step 42 independently examined A01’s assembled theorem against the underlying equations rather than accepting its H1 list. The inspected sources included \nolinkurl{`Sessions/S0910A01/workspace/notes/step39_complete_conditional_defect_gap_theorem.md`,} A01 Steps 34, 35, 2 ...\\
+43 & Process & Step 43 resolved two critical interface gaps. (A) The terminal spectral density ∫G ≤ 6Q + 48π²(−q\_top)\_+ was derived from the chain f = −2q/3, ∫f² = (4/9)E, the LeBrun conformal/Yamabe decomposition D\_spec ≤ (4/9)Δ\_a, the CW+monopole bound Δ\_a ≤ 108π²(R − q\_to ...\\
+44 & Verify & Step 44 corrected the continuation base and developed two start/restart constructions. \nolinkurl{`workspace/notes/step44_zero_order_T_seed_repair.md`} proves, on an existing smooth finite slab with |U|≤K, the per-datum estimate d/dt∫|T|\textasciicircum{}p+c\_p∫a|T|\textasciicircum{}\{p-2\}|∇T|²≤C\_p(K+1+||dχ ...\\
+45 & Verify & Step 45 independently examined and repaired the Step 44 tensor ledger and coefficient-regularization construction. The main artifact is \nolinkurl{`Sessions/S0910A03/workspace/notes/step45_coordinate_tensor_ledger_and_regularized_closure.md`.} It replaces the inconsistent ...\\
+46 & Verify & Step 46 performed the requested connected verification of the restricted negative Ishida-LeBrun argument. It read the updated A03 theorem and Step 45 flow files, A01's corrected theorem, topology, support, K2-Y, tensor, global-Q, H-WU, H-DT, and terminal-pullb ...\\
+47 & Verify & Step 47 consolidated the restricted four-dimensional negative Ishida-LeBrun defect gap theorem into a single self-contained proof file: \nolinkurl{`Sessions/S0910A03/workspace/notes/step47_consolidated_negative_IL_gap_theorem.md`} (23.9k chars, 588 lines, nine sections).  ...\\
+48 & Repair & Step 48 followed the Strategist's correction rather than performing the numerical tests proposed in Step 47. It examined \nolinkurl{`Sessions/S0910A03/workspace/notes/step47_consolidated_negative_IL_gap_theorem.md`,} `step47\_status.md`, the Step 44-45 start and tensor not ...\\
+49 & Verify & Step 49 constructed the normalized cutoff-flow existence theorem and corrected the restricted theorem statement. The main deliverables are \nolinkurl{workspace/notes/step49_normalized_flow_existence_and_extension.md} (26k chars, 603 lines) and step49\_corrected\_restricted\_ ...\\
+50 & Verify & Step 50 performed a connected verification of Step 49 and replaced its flawed flow construction. Files read included \nolinkurl{`step49_normalized_flow_existence_and_extension.md`,} \nolinkurl{`step44_normalized_yang_tame_start_restart.md`,} \nolinkurl{`step45_coordinate_tensor_ledger_and_regul} ...\\
+51 & Process & Step 51 proved the precise L\textasciicircum{}p perturbation estimate for the normalized cutoff flow, resolving the flow-existence bottleneck identified by Step 48's correction and Step 50's verification. The main file is \nolinkurl{`workspace/notes/step51_normalized_yang_precise_estimat} ...\\
+52 & Repair & Step 52 corrected the previous step's analytic status. It read Step 50 and Step 51 notes, Yang's Theorem 8.2 source lines, Xu's detailed local Ricci-flow proof, and A02's positive-branch note. It wrote and ran \nolinkurl{`workspace/scripts/step52_flat_cutoff_forcing_test} ...\\
+53 & Reflect & Step 53 built the coupled transported-coefficient start theorem for ∂\_tg = -2χ²(Ric+g) and confirmed A02's scaling limitation. Main file: \nolinkurl{`workspace/notes/step53_coupled_transported_coefficient_start.md`} (506 lines). The system (ĝ, χ̂=χ∘φ⁻¹) with DeTurck gauge ...\\
+54 & Reflect & Step 54 restored the correct family-uniform interpretation of the Ishida-LeBrun route, withdrew the invalid Step 53 contraction, and created a sharper transported-square construction. The A-scaling correction is explicit: retained cores have total volume ≥αVol ...\\
+55 & Process & Step 55 proved Theorem 9.1: per-datum smooth existence for ∂\_tg = -2χ²(Ric+g) on closed manifolds via direct nonlinear construction. The method uses ε-regularization of the coupled DeTurck metric + transported cutoff, standard Galerkin for ε>0, ε-uniform joint ...\\
+56 & Repair & Step 56 replaced the false Step 55 arbitrary-order derivative split with a genuine tame construction. The principal artifact is \nolinkurl{workspace/notes/step56_tame_direct_flow_repair.md.} It proves the required interpolation count, introduces a doubly strongly paraboli ...\\
+57 & Process & Step 57 completed two self-contained mathematical objects. (1) The H₂ evolution derivation \nolinkurl{(workspace/notes/step57_H2_evolution_and_continuation_bridge.md,} 547 lines) gives the complete unweighted shifted-curvature energy inequality H₂' + (2−δ₀)D₂ ≤ C₁∫η²aF\_T³ ...\\
+58 & Verify & Step 58 repaired and independently checked the critical-to-subcritical curvature branch on the exact normalized cutoff flow. The main artifact is \nolinkurl{`Sessions/S0910A03/workspace/notes/step58_critical_to_subcritical_bridge.md`.} It replaces the invalid dependence o ...\\
+59 & Process & Step 59 assembled the complete finite-regularity continuation bridge and identified the coupled bootstrap closure. Main artifact: \nolinkurl{`workspace/notes/step59_finite_regularity_continuation_and_common_time.md`} (595 lines, 20.6k chars). The W\textasciicircum{}\{1,p\} bridge gives boun ...\\
+60 & Verify & Step 60 corrected the continuation and terminal-chart interfaces. The principal artifact is \nolinkurl{`Sessions/S0910A03/workspace/notes/step60_all_order_continuation_and_terminal_chart.md`.} It disproves the proposed ungauged overlap-uniqueness estimate by an explicit R ...\\
+61 & Review & Step 61 independently examined the load-bearing Step 60 continuation and terminal modules. It read the Step 56 flow construction, Step 57-58 energy work, Step 6 projector obstruction, Step 43 spectral density, support notes, TTCS records, Codex report, peer re ...\\
+62 & Evaluate & Step 62 returned from the long cutoff-flow development to the full quantifiers of Yau Problem 26 and compared existence and counterexample mechanisms through the distinction between localizable and evacuable topology. It read `workspace/notes/step61\_preceptor\_ ...\\
+63 & Process & Step 63 investigated extended graph 4-manifolds as Yau 26 counterexample candidates, producing one verified result, one critical correction, and one foundational reduction. The flat-slice mean curvature barrier H² ≥ 9−6δ for flat T³ slices with ‖Ric+3g‖op ≤ δ  ...\\
+64 & Process & Step 64 completed four connected research actions. (1) Margin analysis of Di Cerbo's extended-graph exclusion: decomposed into CSS minimal-Ricci-volume, Gauss-Bonnet, LeBrun Lemma 7, and Preissmann steps; showed each is exactly saturated and the CSS entropy in ...\\
+65 & Process & Step 65 executed the Strategist's mandated mu\_4 correction and built the entropy-slice fusion program. (1) Read the Step 64 files; found step64\_mu4\_bifurcation.md contained three backwards claims (mu\_4 unknown; Weyl absorbs the discrepancy; caveat retracting t ...\\
+66 & Process & Step 66 executed the decisive curved-slice collar fork computation and closed the graph-manifold counterexample route in the model class. Built a full 4D Ricci pipeline in JAX for the doubly-warped collar class g = dr\textasciicircum{}2 + exp(2(l\_theta + mu*phi0))dtheta\textasciicircum{}2 + ex ...\\
+67 & Reflect & Step 67 first corrected the active record and group understanding. Group message \#478 superseded the false Step 65-66 consequences: negative Ricci on T³ is allowed by Lohkamp and is not excluded by Preissmann; the Step 66 residuals 4.4035, 1.5164, 4.8857, and  ...\\
+68 & Reflect & Step 68 absorbed the 20260912.tex manuscript (Chapters 3, 6, 8, 10 in detail; structure scan of all 152 sections) and identified the central organizing principle: two complementary difficulties. The surface bundle E\_D achieves δ = Θ(ε³) with exact formulas (ba ...\\
+69 & Reflect & Step 69 corrected the Step 68 surface-bundle and graph-neck records in \nolinkurl{`workspace/notes/step68_einstein_nonexistence_analysis.md`,} `step68\_manuscript\_absorption.md`, `step68\_status.md`, and \nolinkurl{`workspace/plans/step68_route_map.md`,} then sent group message \#487. I ...\\
+70 & Process & Step 70 derived the critical identity e\textasciicircum{}\{2t\}(H-3) = -3 - ∫₀ᵗ e\textasciicircum{}\{2s\}|S-I|² ds for reflection-symmetric Einstein half-cores (Ric=-3g, S(0)=0 on T³), proving H < 3 at all finite times and R ≥ (1/2)log(6/δ) for approximate cores. Corrected the principal part to el ...\\
+71 & Reflect & Step 71 re-examined the Step 70 relay against the weighted normal equation, A01's independent shear computations, the Li-Liu source, and clean-context verification. It corrected the sign and interpretation of the reflection identity, withdrew the flat-T³ cosh  ...\\
+72 & Reflect & Step 72 established a structural obstruction to the T²-invariant graph-manifold construction for the negative branch of Yau 26, through three verified results: (1) conformal gauge ellipticity with det=2k⁶ for the (E\_\{tt\}+E\_\{zz\}, E\_\{xx\}, E\_\{yy\}) system in (φ,b, ...\\
+73 & Reflect & Step 73 repaired the two strongest overextensions from Step 72 and replaced one of them with a verified constructive result. Group message \#512 explained that exact drift-Laplacian rigidity does not exclude approximate diagonal T\textasciicircum{}2 necks and that products exte ...\\
+74 & Process & Step 74 established three structural results for the graph-manifold core-entry problem and corrected a sign error in the linearized mode analysis. The z-independent impossibility proves δ ≥ 3/2 for all z-independent diagonal T²-invariant cores on R × T³, via | ...\\
+75 & Reflect & Step 75 corrected the Step 74 core formulation before substantial computation. Group message \#526 circulated that bounded radial basis functions do not imply frequency-uniform stability, the prescribed CMC source does not establish geometric core entry, fixed  ...\\
+76 & Reflect & Step 76 first repaired the quantitative and conceptual record inherited from Step 75. The reflected-center estimate was strengthened to λ\_min S′(0)≤−3+3δ by retaining the component cancellation e−E\_vv=E\_11+E\_22−E\_nn. The correction was propagated into `workspa ...\\
+77 & Process & Step 77 corrected three errors in the Step 76 scattering formulation and produced a stronger geometric bound. Error 1: the twist energy in eq (9.5) had p² incorrectly inside the e\textasciicircum{}\{-φ\} factor; corrected in the note. Error 2: the Step 76 question whether the Li ...\\
+78 & Process & Step 78 evaluated the Step 77 handoff against the finite connector actually required by the graph construction. It derived the full Ricci tensor for g=dr²+a(r)²dz²+b(r)²ω₁²+c(r)²ω₂², where ω₁=cos(kz)dx+sin(kz)dy and ω₂=−sin(kz)dx+cos(kz)dy. For integer k and z ...\\
+79 & Process & Step 79 derived and verified the complete orthogonally transitive T²-invariant Einstein reduction for Ric = −3g. Starting from the Step 78 Bianchi VII₀ barrier and the Strategist's twist-vanishing observation, the Step built the full system in conformal gauge  ...\\
+80 & Process & Step 80 corrected the Step 79 forcing interpretation and executed a joint core-entry experiment. \nolinkurl{`workspace/scripts/step80_base_identity_verify.py`} verifies exactly that E\_B=Ric(γ\_B)−Hessσ−½dσ²−½U*h\_H²+3γ\_B and that the physical cusp source weight is e\textasciicircum{}\{3r\}; i ...\\
+81 & Process & Step 81 established five structural results for reflected Einstein evolution from T²-invariant centers on T³. The exact S'(0) eigenvalue formula Spec=\{-3, 3±√(3(k²+12))\} was derived by TTCS and verified numerically to 4-digit accuracy for k=1,...,12. The angul ...\\
+82 & Process & Step 82 extended the volume-weighted center contraction into exact slice balances for the full OT class. For dμ=e\textasciicircum{}aρ dz, V=∫dμ, I=∫u dμ, and J=∫v dμ, it established J′=6V−∫E\_orbit dμ and I′=3V+∫R(q\_r)dμ−∫E\_zz dμ. The contracted Gauss calculation initially used ...\\
+83 & Evaluate & Step 83 corrected the K-production sign analysis and completed a systematic search for monotone functionals in the full coupled OT system. TTCS verification caught three errors: Cov(H,|b|²) is indefinite (not positive), ⟨h²(v-2u)⟩ is indefinite (pointwise sign ...\\
+84 & Reflect & Step 84 corrected the central errors underlying Step 83’s route choice. It reread the OT reduction, K-production derivations, and both Step 83 TTCS integrations, then requested precise scope statements from A01 and A02 in group messages \#603-\#604. The correcte ...\\
+85 & Process & Step 85 derived and verified the Bochner comparison theorem for the OT orbit-map energy density. The weighted Bochner formula ½Le = |DdU|² + ½|dU(∇σ)|² + Q(A) − 3e was established using the corrected drift curvature Ric\_B − Hess σ and the Einstein base equatio ...\\
+86 & Process & Step 86 independently reworked the forced Bochner handoff. It derived the exact forcing conversion e\textasciicircum{}(−σ)div(e\textasciicircum{}σM\textasciicircum{}(−1)dM)=−2Ê₀ and |F|²=2tr(Ê₀²), hence |F|≤2δ under operator Ricci defect δ. It replaced the infinite-dimensional premise by Ric\_f\textasciicircum{}4=−3γ\_B+(1/2)U*h ...\\
+87 & Process & Step 87 established the massive-resolvent forced connector obstruction theorem. Starting from the forced Bochner inequality (Steps 85-86), a massive comparison with κ=6+2δ yielded (-L+κ)e ≤ κ²+8δ²-2div\_σ V. The TTCS-corrected Riccati Fisher information bound I ...\\
+88 & Process & Step 88 strengthened the Step 87 theorem by replacing reflection with a variational minimal separator. The complete derivation is in \nolinkurl{`workspace/notes/step88_reflection_free_minimal_separator.md`.} On a free-OT quotient cylinder with two exact outward-expanding  ...\\
+89 & Process & Step 89 derived and verified the complete variable-fibre T\textbackslash{}u00b2 Abelian reduction with twist, resolving the most important open symmetry-class question from Step 88. The work proceeded through three phases: symbolic Ricci computation, sign-error discovery and ...\\
+90 & Reflect & Step 90 began by rechecking Step 89 against the forced variable-charge equations and withdrew the conclusion that free-T² forcing was essentially closed. \nolinkurl{`workspace/notes/step89_twist_bochner_and_resolvent.md`} now carries explicit supersession language. Symbol ...\\
+91 & Process & Step 91 verified three structural results and identified a curvature-energy tradeoff. (1) The flat-slice barrier kills the radial cylindrical throat: R(q\_r)=0 on constant-coefficient T³ slices  ->  H²≥9−6δ  ->  δ≥3/2 for cylindrical interpolation, making the Step 90 ...\\
+92 & Reflect & Step 92 first repaired the Step 91 geometry. It replaced the reversed contracted-Gauss interpretation by R\_Σ = -6 + D + ℋ² - |II|², distinguished ℋ = 0 from ∂rℋ = 0, and preserved the flat-slice threshold δ ≥ 3/2. The correction was inserted into workspace/not ...\\
+93 & Process & Step 93 began from the Step 92 handoff requesting tubular-collar mathematics for the free-T\textbackslash{}u00b2 charged connector. Three results were produced, one withdrawn, and one new identity discovered. The Koiso OT theorem was proved: exact Einstein continuation of th ...\\
+94 & Process & Step 94 first corrected Step 93 at the source files. \nolinkurl{`workspace/notes/step93_signed_transport_and_koiso_ot.md`,} \nolinkurl{`workspace/scripts/step93_Q_supersolution_verify.py`,} \nolinkurl{`workspace/scripts/step93_Q_maximum_principle.py`,} and their JSON output now state that negati ...\\
+95 & Process & Step 95 derived the K\_X charge-work quadratic form identity: for A=e\textasciicircum{}\{-3σ\}M\textasciicircum{}\{-1\}, K\_X = X(A)+(div\_σX)A, the charge one-form satisfies ∫m\_q(X)dμ\_σ = -(1/2)∫q\textasciicircum{}TK\_Xq dμ\_σ. This was verified symbolically in \nolinkurl{workspace/scripts/step95_KX_charge_quadratic.py} with zero ...\\
+96 & Process & Step 96 did not run the proposed radial cylindrical boundary-value problem. It established that curving only the two-dimensional quotient base leaves radial level T³ metrics intrinsically flat, so the existing δ≥3/2 barrier already excludes that model. It also ...\\
+97 & Process & Step 97 developed the two-ended matching problem through four progressively refined trial metric constructions and discovered the orbit-shape conformal dilution mechanism. Phase 1: A sigmoid-interpolation trial on [0,R]×S¹ smoothly connected the Koiso center f ...\\
+98 & Repair & Step 98 corrected the Step 97 exterior and spectral interpretations, inserted supersession text into \nolinkurl{workspace/notes/step97_orbit_shape_mechanism_and_matching.md,} and developed a complete tensor implementation. The main derivation and numerical record are cons ...\\
+99 & Reflect & Step 99 established three structural results for the free-T² connector problem. (1) The Raychaudhuri floor δ\_min(R)\textasciitilde{}12e\textasciicircum{}\{-2R\} rigorously bounds the normal-block operator norm on any half-cylinder with H(0)=0, H(R)=3. The exact weighted projection integral sepa ...\\
+100 & Repair & Step 100 re-examined Step 99 against the original Yau 26 quantifiers, the older Step 2/64 Chern-Gauss-Bonnet work, the graph-manifold topology, the charged connector files, and primary records for one-cusped hyperbolic four-manifolds. It withdrew the finite ta ...\\
+\bottomrule\end{longtable}
+\normalfont\normalsize
+\end{document}

@@ -1,0 +1,18 @@
+\section{四维的第二类构造：固定 Dehn-twist 曲面丛}\label{sec:bundle}
+
+\begin{theorem}[资料包长稿第六章；本次逐式复核]\status{已证}\label{thm:ED}
+设 $F=\Sigma_p$、$B=\Sigma_q$（$p,q\ge2$），$D$ 为 $F$ 上一条非分离简单闭曲线的 Dehn twist，$u:\pi_1(B)\twoheadrightarrow\Z$ 为本原满同态，$E_D\to B$ 为单值化 $\gamma\mapsto[D]^{u(\gamma)}$ 的光滑曲面丛。则在这个\emph{固定}的闭光滑四维流形上存在度量族 $G_\ell$，体积恒为 $V_0$，满足
+\[
+\delta_-(G_\ell)\le C/L\longrightarrow0,
+\]
+其中 $L\sim\log(1/\ell)$ 为基底双曲领圈的半宽。因此 $e_-(E_D)=0$。
+\end{theorem}
+\begin{proof}[证明概要与核验]
+纤维领圈上取 $h_z=du^2+a(u)^2(ds+z\zeta'(u)du)^2$，$a=a_0\cosh u$；对每个 $z$ 它是双曲度量（$K=-a''/a=-1$，面积形式与 $z$ 无关），且 $h_1=D^*h_0$。在基底的长双曲领圈上令 $z$ 从 $0$ 缓慢变到 $1$，领圈外 $z$ 为常数，于是 $g_B+h_{z}$ 经 $\operatorname{id}\times D$ 粘合下降到固定的 $E_D$。Ricci 缺陷矩阵（含两个底--纤维混合分量）在正交标架下可显式写出，其算子范数恰为 $\sqrt{v^4/4+\alpha^2+\beta^2}$，三项分别为 $O(L^{-2})$、$O(L^{-1})$、$O(L^{-1})$。本次核验用两条独立路线（坐标 Christoffel 符号；正交标架 Koszul 公式）符号复现了完整的 $4\times4$ Ricci 矩阵，并对显式轮廓数值得到 $L\cdot\sup\|\cdot\|_{\op}\to0.985$，确认速率为 $c/L$。
+\end{proof}
+
+资料包进一步证明：同时退化纤维与基底领圈并取平衡轮廓，$\delta_-(G_\varepsilon)=\frac{2}{\pi^4}\varepsilon^2+O(\varepsilon^4)$；一次真实的二阶张量校正把上确界残差降到 $O(\varepsilon^3)$；在校正背景的整个共形类内 $\inf_u\delta_-(u^2\widetilde G_\varepsilon)=\Theta(\varepsilon^3)$，且这些共形类不含任何符号的 Einstein 度量。复核结论：首系数 $2/\pi^4$、两个抵消恒等式、三个标量方程的分解、Bianchi 相容性与数值 PDE 验证均成立；这些下界与排除\emph{仅限所述共形类}（原稿对此陈述准确），不涉及 $E_D$ 上其他度量。
+
+\begin{remark}
+$E_D$ 是否承载 Einstein 度量未知。它在两个定向下都是辛流形，$\tau=0$，$\chi=4(p-1)(q-1)$；基本群无限且非几乎交换，故任何 Einstein 度量必有 $\lambda<0$；在 $\Ric=-3g$ 规范下，LeBrun 的数量曲率估计 $\int s^2\ge32\pi^2c_1^2$ 给 $\Vol\ge\frac{4\pi^2}{9}\chi$（等号当且仅当度量为 Kähler--Einstein），而 Gauss--Bonnet 给 $\Vol\le\frac{4\pi^2}{3}\chi$。两者相容，不产生矛盾；更细的必要条件见资料包长稿“曲面丛候选的拓扑”一节。
+\end{remark}

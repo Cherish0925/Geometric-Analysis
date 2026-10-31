@@ -1,0 +1,176 @@
+% Step 9 historical addendum, substantially corrected in Step 10.
+% The claims below that Taub--NUT--AdS refutes adjustable-buffer cover
+% regularity, has an all-radius bounded curvature maximal function, or forces
+% an exclusively global-topology route are withdrawn.  The exact correction is
+% workspace/notes/step10_multiscale_cover_and_diffuse_pontryagin.tex.
+
+\section{Superseded assessment of Taub--NUT--AdS}
+
+\textbf{Step--10 correction.}  The computation below only controls balls of
+radius at most $1/3$ around a point at distance $1/2$ from the NUT.  Balls
+reaching the NUT have divergent normalized curvature energy as $\nu\to0$.
+Moreover, choosing a smaller buffered domain before taking its universal
+cover unwraps the Hopf circle at a fixed scale.  The unwrapped annular limit
+is real hyperbolic and has calibrated scalar--Weyl deficit $16$, not $0$.
+Thus this family does not refute the simultaneous multiscale
+curvature-plus-calibration accessibility question.  See the Step--10 note for
+exact Weyl formulas, corrected volume factors, and homothetic scaling.
+
+\textbf{The claimed regularity}---that controlled maximal $\fint|\operatorname{Rm}|^2 \le K$
+at every scale on the local universal cover, together with $\operatorname{Ric}\ge-3g$,
+forces noncollapse---is \textbf{false}.
+
+\subsection{The countermodel}
+The Taub--NUT--Anti-de~Sitter metric with NUT parameter $\nu>0$
+and cosmological length $\ell=\sqrt3$ is
+\[
+g_\nu = \frac{dr^2}{F_\nu(r)}
++ (r^2-\nu^2)(d\theta^2+\sin^2\theta\,d\phi^2)
++ 4\nu^2 F_\nu(r)(d\psi+\cos\theta\,d\phi)^2,
+\]
+where
+\[
+F_\nu(r) = \frac{r-\nu}{r+\nu}
+\left(1+\frac{(r-\nu)(r+3\nu)}{\ell^2}\right),
+\qquad r\ge\nu.
+\]
+This metric satisfies \textbf{exactly}
+\[
+\operatorname{Ric}_{g_\nu} = -g_\nu.
+\]
+At $r=\nu$ the metric has a smooth ``NUT'' (bolt of dimension zero):
+after the coordinate change $r=\nu+\rho^2/(8\nu)$,
+the metric near $\rho=0$ is the flat $\mathbb R^4$ metric.
+
+\subsection{Why it is a countermodel}
+Choose a basepoint $p_\nu$ at distance $1/2$ from the NUT.
+For all $q\in B_{1/3}(p_\nu)$, the distance to the NUT lies in $[1/6,5/6]$.
+In this fixed annular band:
+\begin{enumerate}
+\item $\sup|\operatorname{Rm}|^2 \le K_0$ (curvature bounded uniformly in $\nu$).
+\item Hence $\fint_{B_r(p_\nu)}|\operatorname{Rm}|^2 \le K_0$ for all $r\le 1/3$.
+\item The volume form scales as $\nu\cdot\sin\theta\,(r^2-\nu^2)\,dr\,d\theta\,d\phi\,d\psi$,
+so $\operatorname{Vol}(B_s(p_\nu)) = O(\nu) \to 0$ for fixed $s$.
+\end{enumerate}
+
+\subsection{Why the local universal cover is still collapsed}
+The $\psi$-circle at $p_\nu$ has length $O(\nu)$ and generates collapse.
+However, this circle can be \emph{contracted to a point}
+by sweeping radially to the NUT at $r=\nu$, which lies
+at distance $1/2 < 1$ from $p_\nu$.
+Therefore the $\psi$-circle is \textbf{nullhomotopic in $B_1(p_\nu)$}.
+
+The local universal cover of $B_1(p_\nu)$ does not unwrap
+nullhomotopic loops. So the cover is isometric to the original
+ball near the annular band, and
+\[
+\operatorname{Vol}(B_s(\tilde p_\nu)) = O(\nu) \to 0.
+\]
+
+\subsection{The precise obstruction}
+The failure of the Naber--Zhang package is at the
+\textbf{maximal fibered nilpotency rank} condition.
+The GH model (dimension 3), its noncollapsing radius, and the
+curvature bounds are all satisfied. But the short fiber
+is contractible in the buffered domain, so its fundamental-group
+image is trivial. The fibered rank is 0, not the required $4-3=1$.
+
+\textbf{Maximal rank is an independent geometric hypothesis, not a
+consequence of curvature bounds, Ricci pinching, or
+controlled maximal curvature function.}
+
+\subsection{What the countermodel does NOT settle}
+\begin{itemize}
+\item The Taub--NUT--AdS space is \emph{noncompact}.
+On a closed manifold, global topology constrains which fibers
+can contract. The Pontryagin class $p_1(\Lambda^2_+)$ integrates to
+$2\chi+3\tau \ne 0$ on the critical Ishida--LeBrun manifold,
+and the TTCS generator shows this must localize on regions
+where the SD bundle is not pulled back from the base.
+\item The total four-index Riemann energy is infinite because the Einstein
+background has infinite volume, but its full-Weyl core energy is finite and
+converges to $32\pi^2$ as $\nu\to0$.  This distinction matters for any
+energy comparison.
+\item The model has no Seiberg--Witten monopole classes.
+The Ishida--LeBrun manifolds have specific monopole structure
+that constrains the near-saturation energy profile.
+\end{itemize}
+
+\section{Revised research direction}
+
+The general regularity approach (maximal curvature function $\to$ noncollapse)
+is \textbf{not viable}. The research must now use the specific structure
+of the closed manifold problem:
+
+\subsection{What the form analysis establishes}
+The TTCS generator analysis provides rank-dependent results:
+\begin{itemize}
+\item \textbf{Flat rank $\ge 2$:}
+Flat regular torus bundles are excluded.
+If $H$ is a definite pair (two independent near-harmonic forms with locally
+nondegenerate Gram matrix), then closedness and constant amplitude
+force $\nabla H \to 0$, contradicting the Weitzenb\"ock gradient energy
+$\int|\nabla H|^2 = (1+o(1))\int|H|^2$.
+\item \textbf{Flat rank 3:}
+Three independent forms with locally nondegenerate Gram matrix
+give a full $\Lambda^2_+$ trivialization with $\nabla \to 0$,
+same contradiction. But this requires \emph{local} nondegeneracy
+of the Gram matrix, not just global independence.
+\item \textbf{Rank 1:}
+A single form reduces to a weighted harmonic 1-form on the
+3D base, which can have $O(1)$ horizontal rotation. Not excluded.
+\item \textbf{Nil-twisted models:}
+Heisenberg-type structure can produce constant-length, closed,
+self-dual forms with $O(1)$ covariant derivative.
+Not excluded by form properties alone.
+\end{itemize}
+
+\subsection{The Pontryagin localization mechanism}
+The generator identifies $p_1(\Lambda^2_+) = 2\chi + 3\tau$ as a
+localization tool. On a regular fibered collapse where the
+self-dual forms are basic (pulled back from the base),
+$\Omega_E \wedge \Omega_E = 0$ (the base has dimension $\le 3$).
+So the nonzero $\int p_1 = 2A/3$ must concentrate on:
+\begin{itemize}
+\item Non-basic vertical connection curvature
+\item Nil/bundle twist regions
+\item Singular fibers or curvature concentration
+\item Genuinely 4D (noncollapsed) regions
+\end{itemize}
+This gives a \emph{charge localization} mechanism:
+a positive amount of topological energy must sit
+in the ``bad'' regions that escape the regularity framework.
+
+\subsection{New research target}
+The problem is now:
+\[
+\boxed{
+\text{Can a closed critical Ishida--LeBrun 4-manifold support a }
+\delta_i\to0\text{ sequence}
+}
+\]
+\[
+\boxed{
+\text{whose collapsed regions are entirely composed of
+NUT-type contractible fibers,}
+}
+\]
+\[
+\boxed{
+\text{nil/solvable cusps, and curvature-concentrating
+singular strata?}
+}
+\]
+
+The Pontryagin charge $2A/3$, the monopole near-saturation,
+the Weitzenb\"ock gradient energy, and the $\int|\operatorname{Rm}|^2$
+budget must together account for the energy distribution
+across these regions. The question is whether the energy
+budget is sufficient.
+
+\section{Files}
+\begin{itemize}
+\item TTCS verifier (countermodel): \texttt{trace/ttcs/results/step9\_ttcs01\_verifier1\_integration.md}
+\item TTCS generator (form analysis): \texttt{trace/ttcs/results/step9\_ttcs01\_generator1\_integration.md}
+\item Verification script: \texttt{workspace/scripts/verify\_weitzenbock\_clean.py}
+\end{itemize}

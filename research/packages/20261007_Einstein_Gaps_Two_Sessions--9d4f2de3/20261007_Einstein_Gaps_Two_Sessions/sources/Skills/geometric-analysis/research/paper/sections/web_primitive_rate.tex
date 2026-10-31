@@ -1,0 +1,254 @@
+\section{From the original defect to the fifth-line error}
+\label{sec:web-primitive-rate}
+
+All norms and integrals in this section are normalized by volume. We
+work on the scalar-minus-four Yamabe representative, with $\beta\ge2$,
+the original actual conformal monopole supply, $p\ge A>0$, and
+$a^2\ge T_+$. No density bound is imposed until the final subsection.
+Write
+\[
+ x=\kappa_\beta+\beta^{-2},\qquad
+ b=\fint |W^-|^2,\qquad
+ \rho_*=\frac43,\qquad m_*=\frac{128}{81}.
+\]
+We work with the actual positive spinor $\Phi$, its cubic opposite-spinor
+field $\tau$, and the quantities
+\[
+ \rho=|\Phi|^2,\quad q=|\nabla\Phi|^2,\quad
+ \zeta=\langle\Phi,\nabla\Phi\rangle,\quad m=|\tau|^2,
+ \quad \nu=2\rho^2q-m\ge0.
+\]
+The connections in derivatives are the induced actual connections.
+The strong-current estimates of Section~\ref{sec:web-strong-current}
+provide a fixed $0<\epsilon_0\le1$. Write
+\[
+ \gamma=\frac{\epsilon_0}{1+\epsilon_0}\le\frac12.
+\]
+The error $\mathfrak e_D$ below is the full sum of primitive errors in
+the fifth-line estimate of Section~\ref{sec:web-density-rate}: it
+includes both the $H^1$ and the $L^4$ differences between the bounded
+auxiliary field and $\tau$, the amplitude errors, the full prolonged
+first-order equation, the Dirac error, the curvature fit, and the
+adapted positive-spinor connection errors. In particular, it is not
+an independently adjustable error parameter.
+
+\begin{proposition}\label{prop:web-primitive-rate}
+For sufficiently small $x$, the auxiliary field can be chosen so that
+\[
+ \mathfrak e_D\le Cx^{\gamma/16},
+\]
+where $C$ is independent of $b$. Consequently, on the actual endpoint
+class,
+\begin{equation}\label{eq:web-polynomial-density}
+ \kappa_\beta+\beta^{-2}\ge c(1+b)^{-24/\gamma}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+We give all transfers required by the primitive error list. The
+previously established exact budgets are
+\begin{align*}
+ \|\rho-\rho_*\|_2^2+\|\zeta\|_2^2+
+ \|\Ric^\circ\|_2^2&\le Cx,\\
+ \fint\frac{(S-2m_*)^2}{S}&\le C\sqrt{x},\qquad
+ S=m_*+m+\nu=m_*+2\rho^2q,\\
+ \|f-K\|_2^2&\le C\sqrt{x},\qquad
+ K=-\frac98\frac{\rho^3Q}{S},\qquad |Q|^2=\frac{m^2}{8},\\
+ 0\le\rho\le2,\qquad \nu&\le4\rho|\zeta|^2.
+\end{align*}
+Here $f$ is the actual anti-self-dual determinant curvature in the
+normalization of the polynomial curvature identity, and $Q$ is the
+quadratic Hopf tensor of $\tau$. The strong-current tail estimate is
+\[
+ \fint_{q>L^2}q^2\le CL^{-2\epsilon_0}+C\sqrt{x}.
+\]
+Split at $L=x^{-1/(2+2\epsilon_0)}$. The boundedness of $\Phi$ and
+$|\zeta|^2\le Cq$ give
+\[
+ \fint |\zeta|^2q+\fint|\zeta|^4\le Cx^\gamma,
+ \qquad \|\nu\|_2\le Cx^{\gamma/2}.
+\]
+The weighted variance of $S$, together with $\fint S\le C$, implies
+$\|m-m_*\|_1\le Cx^{1/4}$. On $m\le M$ use
+$(m-m_*)^2\le CM|m-m_*|$; on its complement use the tail estimate.
+Taking $M=x^{-1/[4(1+\epsilon_0)]}$ yields
+\begin{equation}\label{eq:web-mass-rate}
+ \|m-m_*\|_2\le Cx^{\gamma/8}.
+\end{equation}
+The full cubic Dirac formula, including its axial cancellation, gives
+\[
+ \|D\tau\|_2^2\le C\left(x+\fint|\zeta|^2q\right),
+ \qquad \|D\tau\|_2\le Cx^{\gamma/2}.
+\]
+
+For the phase-curvature transfer set
+$h(\rho,S)=2-\frac98\rho^6/S$. On $0\le\rho\le2$, $S\ge m_*$,
+this function is bounded and Lipschitz, and
+$h(\rho_*,2m_*)=0$. The required product estimate follows from
+\[
+ |hQ|\le C|m-m_*|+Cm_*|h|,
+\]
+not from an $L^2$ product estimate. Thus
+\[
+ \|hQ\|_2\le C\bigl(\|m-m_*\|_2+\|\rho-\rho_*\|_2+
+                 \|S-2m_*\|_2\bigr)\le Cx^{\gamma/8}.
+\]
+The polynomial curvature identity implies
+$\|\rho^2(d\operatorname{Im}\zeta)^-\|_2\le Cx^{\gamma/8}$.
+Fix $0<c_0<\rho_*$. The volume fraction of $\{\rho<c_0\}$ is at
+most $Cx$, and splitting $q\le R$ and $q>R$ gives
+\[
+ \fint_{\rho<c_0}q^2
+ \le C\bigl(xR^2+R^{-\epsilon_0}+\sqrt{x}\bigr).
+\]
+At $R=x^{-1/(2+\epsilon_0)}$ this suffices to remove the weight,
+because $\epsilon_0/[2(2+\epsilon_0)]\ge\gamma/8$.
+Indeed, $|d\zeta|\le C(q+\rho|F^{S^+}|)$ and $F^{S^+}$ is a
+bounded model plus an $L^2$ error. Stokes' identity on the closed
+manifold recovers the other chirality. Consequently
+\[
+ \|d\operatorname{Im}\zeta\|_2+
+ \|q-4/9\|_2+\|\Delta\rho\|_2\le Cx^{\gamma/8}.
+\]
+In the Bochner identities for $\operatorname{Im}\zeta$ and $d\rho$,
+the Ricci error satisfies
+\[
+ \left|\fint(\Ric+g)(\zeta,\zeta)\right|
+ \le Cx^{1/2}\|\zeta\|_4^2\le Cx^{(1+\gamma)/2}.
+\]
+It follows that
+\begin{equation}\label{eq:web-full-prolongation-rate}
+ \|\nabla\zeta\|_2+\|N_\tau\|_2\le Cx^{\gamma/8}.
+\end{equation}
+Here $N_\tau$ is the full polynomial prolonged equation, not merely
+its Dirac trace.
+
+We next construct a bounded auxiliary section without losing the
+rate. Write the actual Lichnerowicz equation as
+\[
+ D^*D\tau=L\tau-(1+\Gamma)\tau+e\tau,
+ \qquad L=\nabla^*\nabla,\qquad
+ \Gamma=\frac{27}{32}\frac{\rho^3m}{S},
+ \qquad \|e\|_2\le Cx^{1/4}.
+\]
+In particular $0\le\Gamma\le C$. Fix $m_*<M_1<M_2$, choose a
+nondecreasing smooth cutoff $\psi(m)$ equal to zero below $M_1$
+and one above $M_2$, and put $\chi=\psi^2$. Then
+$m^2|\chi'|^2\le C\chi$. Testing by $\chi\tau$ gives
+\begin{align*}
+ \fint\chi|\nabla\tau|^2+\tfrac12\fint\chi'|dm|^2
+ &=\operatorname{Re}\fint\langle D\tau,D(\chi\tau)\rangle
+   +\fint(1+\Gamma)\chi m
+   -\operatorname{Re}\fint\chi\langle e\tau,\tau\rangle.
+\end{align*}
+The second term on the left is nonnegative. The cutoff derivative on
+the right obeys
+\[
+ |D\tau|\,|d\chi|\sqrt m
+ \le\varepsilon\chi|\nabla\tau|^2+C_\varepsilon|D\tau|^2.
+\]
+On $m\ge M_1$, one has $m\le C(m-m_*)^2$. Absorption gives
+\begin{equation}\label{eq:web-tail-gradient-rate}
+ \fint_{m\ge M_2}|\nabla\tau|^2
+ \le C\bigl(\|D\tau\|_2^2+\|m-m_*\|_2^2+
+                 \|e\|_2\|m\|_2\bigr)
+ \le Cx^{\gamma/4}.
+\end{equation}
+Choose a fixed smooth radial cap $u=T(\tau)$ whose change is supported
+in this high-amplitude region. Then
+\[
+ |u|\le C,\qquad \|u-\tau\|_{H^1}+\|Du\|_2\le Cx^{\gamma/8}.
+\]
+Write $D^*D=L+\mathcal V$. Since $u$ is pointwise collinear with
+$\tau$, $(\mathcal V+2)u=(1-\Gamma)u+eu$, so
+$\|(\mathcal V+2)u\|_2\le Cx^{\gamma/8}$. Set
+$v=3(I+L)^{-1}u$. The identity
+\[
+ (I+L)(v-u)=-D^*Du+(\mathcal V+2)u
+\]
+and an energy test yield
+\begin{equation}\label{eq:web-resolvent-rate}
+ \|v-\tau\|_{H^1}+\|(L-2)v\|_2+\|Dv\|_2
+ \le Cx^{\gamma/8},\qquad |v|+|Lv|\le C.
+\end{equation}
+The last bound is the connection maximum principle.
+
+The $L^4$ transfer is essential. Boundedness and the $L^2$ estimate
+give $\|v-u\|_4^4\le Cx^{\gamma/4}$. On the cap region,
+$m^2\le C(m-m_*)^2$, hence also
+$\|u-\tau\|_4^4\le Cx^{\gamma/4}$. Therefore
+\begin{equation}\label{eq:web-fourth-norm-transfer}
+ \|v-\tau\|_4\le Cx^{\gamma/16}.
+\end{equation}
+The auxiliary mass $|v|^2$ differs from $m_*$ in $L^2$ by
+$O(x^{\gamma/8})$, by comparison with the bounded cap. The full
+first-order error transfers by the $H^1$ bound. For the Hopf tensors,
+\[
+ \|Q_v-Q_\tau\|_2
+ \le C(\|v\|_4+\|\tau\|_4)\|v-\tau\|_4
+ \le Cx^{\gamma/16}.
+\]
+The bounded-coefficient decomposition already used for $hQ$ proves
+$\|K+(27/32)Q_\tau\|_2\le Cx^{\gamma/8}$, and hence
+\[
+ \|-iF_A^-+(27/32)Q_v\|_2\le Cx^{\gamma/16}.
+\]
+On a fixed positive-amplitude region, the positive-spinor phase
+coefficient is $\operatorname{Im}\zeta/\rho$, with $L^2$ error
+$O(x^{1/2})$. The off-diagonal connection error is bounded by
+$C(|v-\tau|+|\zeta|)$, by the actual cubic algebraic formula.
+The cutoffs keep all denominators bounded. These estimates cover
+every term in $\mathfrak e_D$ and prove its asserted rate.
+
+The fifth-line positive-potential estimate excludes any actual
+endpoint sequence for which
+$\mathfrak e_D(1+b)^{3/2}\to0$. If
+\eqref{eq:web-polynomial-density} failed, a sequence would satisfy
+$x(1+b)^{24/\gamma}\to0$, and therefore
+\[
+ \mathfrak e_D(1+b)^{3/2}
+ \le C\bigl(x(1+b)^{24/\gamma}\bigr)^{\gamma/16}\longrightarrow0.
+\]
+This is the required contradiction.
+\end{proof}
+
+\subsection{A direct resolvent alternative}
+The cap-gradient estimate can also be bypassed. Let
+$(4+L)v=6T(\tau)$ and $w=v-\tau$. Then
+\[
+ (4+L)w=6(T\tau-\tau)-D^*D\tau-(\Gamma-1)\tau+e\tau.
+\]
+On $m\le2m_*+1$, the bounded rational coefficient is Lipschitz;
+on the complement, $m\le C(m-m_*)^2$. Thus
+\[
+ \|(\Gamma-1)\tau\|_2
+ \le C\bigl(\|\rho-\rho_*\|_2+\|m-m_*\|_2+\|\nu\|_2\bigr)
+ \le Cx^{\gamma/8}.
+\]
+When the equation is tested by $w$, the curvature error requires only
+\[
+ \left|\fint\langle e\tau,w\rangle\right|
+ \le\|e\|_2\|\tau\|_4\|w\|_4\le Cx^{1/4};
+\]
+indeed $\|w\|_4\le\|v\|_\infty+\|\tau\|_4\le C$.
+Absorption proves $\|w\|_{H^1}^2\le Cx^{\gamma/4}$, and the
+bounded-cap argument again gives \eqref{eq:web-fourth-norm-transfer}.
+No Sobolev constant enters either construction.
+
+\subsection{All parameters at fixed topological density}
+For $\chi/A\le B$ and $\kappa_\beta\le1$, the Euler budget gives
+$1+b\le C(1+B)$. Put $N=24/\gamma$ and $m_B=c(1+B)^{-N}$.
+Equation~\eqref{eq:web-polynomial-density} implies
+$\kappa_\beta+\beta^{-2}\ge m_B$. For
+$\beta\ge(2/m_B)^{1/2}$ the second term is at most $m_B/2$.
+For the remaining parameters the finite-parameter estimate supplies
+the matching lower bound after decreasing the universal constant.
+The exact conformal transfer of Section~\ref{sec:finite-density-endpoint}
+therefore yields
+\[
+ \fint|\Ric_g+g|^2+\frac{D_\beta(g)}{V_g}
+ \ge c'(1+B)^{-N}\frac{(\beta-2)^2}{\beta^2}.
+\]
+The exponent is not claimed to be optimal. The estimate still permits
+$b$ to grow at or faster than $x^{-\gamma/24}$; it is a quantitative
+density-dependent endpoint theorem, not a density-independent one.

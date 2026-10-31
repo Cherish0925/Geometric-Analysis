@@ -1,0 +1,183 @@
+% Step 3 research note: Ishida--LeBrun boundary and near saturation
+% This note supersedes the over-broad conclusions and the false Weyl-only derivation in Step 2.
+
+\section{Correction and live critical family}
+
+The published mixed scalar--Weyl estimate is retained:
+\[
+ \frac1{4\pi^2}\int_M\left(\frac{s^2}{24}+2|W_+|^2\right)d\mu
+ \geq \frac23(a^+)^2.
+\]
+The previous attempted deduction
+\(\int|W_+|^2\ge(4\pi^2/3)(a^+)^2\) is withdrawn.  For a self-dual form \(\varphi\), the relevant Weitzenb\"ock estimate contains
+\[
+ \int(-W_+)(\varphi,\varphi)
+ \geq -\frac16\int s|\varphi|^2-\frac12\int|\nabla\varphi|^2.
+\]
+The last term has the wrong sign to discard.  Moreover, \(F_A^+\) need not be harmonic and the pointwise spinor bound used in the 1998 argument is obtained only after passing to a negative constant-scalar-curvature Yamabe representative.  The genuine stronger primitive estimate is
+\[
+ \int_M(s-\sqrt6|W_+|)^2d\mu\ge72\pi^2(a^+)^2,
+\]
+and the mixed inequality follows from the exact completion of squares
+\[
+ 27\int\left(\frac{s^2}{24}+2|W_+|^2\right)
+ -\int(s-\sqrt6|W_+|)^2
+ =\frac18\int(s+8\sqrt6|W_+|)^2.
+\]
+
+The critical counterexample candidates have therefore not disappeared.  Let
+\[
+ M=\left(\#_{j=1}^mX_j\right)\#N,\qquad m=2\ \hbox{or}\ 3,
+\]
+where the \(X_j\) are the symplectic summands used by Ishida--LeBrun, put
+\[
+ A=\sum_{j=1}^m c_1^2(X_j),\qquad
+ D=4m-(2\chi+3\tau)(N).
+\]
+Then
+\[
+ T:=(2\chi+3\tau)(M)=A-D.
+\]
+Ishida--LeBrun exclude every Einstein metric when \(D\ge A/3\).  At the exact boundary
+\[
+ D=A/3,\qquad T=2A/3,
+\]
+their proof uses strictness for every individual metric.  It supplies no positive infimum over all metrics.  This is the sharp family on which to study whether
+\(\inf_g\|g^{-1}(\operatorname{Ric}_g+g)\|_{L^\infty}\) can vanish.
+
+\section{Exact necessary structure of a pinched boundary sequence}
+
+Assume on one such boundary manifold (or on a varying sequence of such manifolds) that
+\[
+ \delta_i:=\|g_i^{-1}(\operatorname{Ric}_{g_i}+g_i)\|_{L^\infty}\longrightarrow0.
+\]
+Set
+\[
+ S_i=\frac1{4\pi^2}\int\frac{s_i^2}{24},\quad
+ W_i=\frac1{4\pi^2}\int2|W_{+,i}|^2,\quad
+ R_i=\frac1{4\pi^2}\int\frac{|\operatorname{Ric}_i^\circ|^2}{2},
+\quad I_i=S_i+W_i.
+\]
+Chern--Gauss--Bonnet gives
+\[
+ I_i-R_i=\frac{2A}{3}.                                      \tag{1}
+\]
+If \(e_1,\dots,e_4\in[-\delta_i,\delta_i]\) are the eigenvalues of
+\(g_i^{-1}(\operatorname{Ric}_{g_i}+g_i)\), then
+\[
+ |s_i+4|\le4\delta_i,
+ \qquad |\operatorname{Ric}_i^\circ|^2
+ =\sum(e_\alpha-\bar e)^2\le4\delta_i^2.
+\]
+Consequently
+\[
+ R_i\le q_iS_i,\qquad q_i=\frac{3\delta_i^2}{(1-\delta_i)^2}.
+\]
+The mixed monopole estimate gives \(I_i\ge2A/3\), and (1) implies
+\[
+ 0\le R_i\le \frac{(2A/3)q_i}{1-q_i},\qquad
+ I_i\to\frac{2A}{3}.                                      \tag{2}
+\]
+Here and below convergence is normalized by \(A\) if the topology varies.
+
+Use all Bauer--Furuta sign choices
+\[
+ a_{\varepsilon,\eta}=\sum_j\varepsilon_jc_j+\sum_\ell\eta_\ell E_\ell.
+\]
+For every sign vector,
+\[
+ (a_{\varepsilon,\eta}^+)^2\le\frac32I_i=A+\frac32R_i.
+\]
+Averaging over signs cancels cross terms and yields
+\[
+ \operatorname{Av}(a_{\varepsilon,\eta}^+)^2
+ =A+\sum_j\|c_{j,i}^-\|_2^2+\sum_\ell\|E_{\ell,i}^+\|_2^2.
+\]
+Thus
+\[
+ \sum_j\|c_{j,i}^-\|_2^2+\sum_\ell\|E_{\ell,i}^+\|_2^2
+ \le\frac32R_i=O(A\delta_i^2).                            \tag{3}
+\]
+The period plane therefore asymptotically contains the canonical positive directions of all symplectic summands and becomes orthogonal to the negative directions of \(N\).  This is a substantive restriction on any degeneration, not merely an integral curvature statement.
+
+Let
+\[
+ K_i=\frac1{72\pi^2}\int(s_i-\sqrt6|W_{+,i}|)^2.
+\]
+The scalar--Weyl bound gives \(K_i\ge(a^+)^2\), while the completion square gives
+\(I_i\ge(2/3)K_i\).  Equations (2)--(3) force, for every fixed sign vertex,
+\[
+ K_i\to A,
+ \qquad \frac1{864\pi^2}\int(s_i+8\sqrt6|W_{+,i}|)^2\to0. \tag{4}
+\]
+Since \(s_i\to-4\) uniformly, solving the two linear energy relations gives the unique profile
+\[
+ \boxed{R_i\to0,\quad S_i\to\frac{16A}{27},\quad
+ W_i\to\frac{2A}{27},\quad K_i\to A}.                    \tag{5}
+\]
+In unnormalized notation,
+\[
+ \boxed{\operatorname{Vol}(M,g_i)\to\frac{32\pi^2A}{9}}, \tag{6}
+\]
+\[
+ \boxed{\frac1{\pi^2A}\int|W_+|^2\to\frac4{27},\qquad
+ \frac1{\pi^2A}\int|\operatorname{Ric}^\circ|^2\to0}.   \tag{7}
+\]
+In particular, the volume cannot escape on the exact boundary; it is automatically calibrated at order \(A\).  The reverse-orientation formula also fixes the total \(W_-\) energy, but does not prevent its concentration.
+
+\section{Why known integral minimizers do not construct the sequence}
+
+Ishida--LeBrun's exact \(L^2\)-Ricci infimum is attained only as a degenerating gluing sequence.  Its pieces are negative K\"ahler--Einstein orbifolds, scalar-flat anti-self-dual Green-function connectors, Ricci-flat gravitational instantons, and interpolation annuli.  For an exact scalar-flat region,
+\[
+ |s+4|=4\le4\delta,
+\]
+so \(\delta\ge1\), independently of how little volume that region has.  Hence the standard integral-minimizing neck cannot be a uniform almost-\(\operatorname{Ric}=-g\) neck.
+
+This is also visible numerically.  Under the extra hypotheses of the 2003 connected-sum theorem, at \(D=A/3\),
+\[
+ \mathcal I_r=8\pi^2(A+D)=\frac{32\pi^2A}{3},
+\]
+whereas a hypothetical sequence satisfying (5)--(7) would have
+\[
+ \int|\operatorname{Ric}|^2\to\frac{128\pi^2A}{9},
+\]
+which is strictly larger.  It is therefore a different variational regime; exact knowledge of \(\mathcal I_r\) neither constructs nor excludes it.
+
+At a vanishing geometric scale \(\ell_i\), rescale by \(\widehat g_i=\ell_i^{-2}g_i\).  Then
+\[
+ \operatorname{Ric}_{\widehat g_i}
+ =-\ell_i^2\widehat g_i+O(\delta_i\ell_i^2)\widehat g_i.
+\]
+Every smooth noncollapsed blow-up limit is Ricci-flat.  Thus any bubble/cap in a pointwise pinched sequence must be Ricci-flat, whereas Burns and scalar-flat ASD connectors are not enough.  A complete noncollapsed separating connector with at least two ALE ends would be Ricci-flat; the splitting theorem then gives a line factor and linear growth, incompatible with four-dimensional ALE growth.  This excludes that specific multi-ended noncollapsed neck channel, not anisotropic collapse or cusp-like escape.
+
+\section{The near-equality mechanism and its unresolved upgrade}
+
+The exact equality proof has two stages.  Proposition 3.8 first turns equality of
+\(\int(s-\sqrt6|W_+|)^2\) into a closed self-dual form of constant nonzero norm, lying in the lowest \(W_+\)-eigenline, with the other two eigenvalues equal and \(s+s^*\) a negative constant.  Convex-hull equality then aligns all relevant monopole vertices.  Finally the Blair-connection identities and Chern--Weil formula force \(s^*=s\), hence \(\nabla\omega=0\), and \(\operatorname{Ric}^\circ=0\), yielding a negative K\"ahler--Einstein metric.
+
+Equations (2)--(4) show that every inequality in this chain is asymptotically saturated.  What is not in the source is a quantitative theorem upgrading this total deficit to a globally nonvanishing almost-K\"ahler form.  The missing statement should track the two H\"older steps, the rescaled Seiberg--Witten Weitzenb\"ock identity, the harmonic projection defect, and the conformal minimization.  Under a uniform Sobolev/harmonic-radius hypothesis it should imply, after gauge,
+\[
+ \|F_{A_i}^+-2\pi h_i^{a}\|_2\to0,
+ \quad \|d\psi_i\|_2\to0,
+ \quad ||\psi_i|-c|\to0,
+\]
+and eventually a positive pointwise lower bound for the harmonic representative.  That would produce a symplectic structure with the forbidden Chern class and rule out the boundary sequence.
+
+Without such compactness, the natural alternative is phase separation.  Writing \(u_{j,i}\) for the harmonic representative of \(c_j^+\), all sign combinations
+\(\sum_j\varepsilon_ju_{j,i}\) nearly saturate the same constant-length equality.  If quantitative equality holds locally, Walsh polarization forces
+\[
+ \sum_j|u_{j,i}|^2\approx c^2,
+ \qquad \langle u_{p,i},u_{q,i}\rangle\approx0\quad(p\ne q).
+\]
+Because self-dual forms of a fixed orientation at one point form a three-dimensional Euclidean space and any two nonzero harmonic self-dual forms defining the same lowest eigenline are collinear, simultaneous near equality of distinct sign vertices cannot persist homogeneously.  The plausible escape is spatial localization: different canonical classes dominate on different macroscopic pieces, their zero/transition sets lying in collapsing or curvature-concentrating regions.  The connected-sum topology and the uncontrolled \(W_-\) energy would be carried precisely by those regions.
+
+This yields the central dichotomy worth proving:
+\begin{quote}
+For an Ishida--LeBrun boundary sequence satisfying \(\delta_i\to0\), either the near-equality forms admit a uniform nonzero limit and create a forbidden symplectic/K\"ahler structure, or their mass phase-separates across a thin topology core.  In the latter case that core must be anisotropically collapsed or cusp-like; it cannot be the standard scalar-flat ASD connector and any noncollapsed bubble is Ricci-flat.
+\end{quote}
+
+The two decisive mathematical problems are therefore: (i) a quantitative near-equality theorem for the genuine scalar--Weyl estimate, with explicit dependence on Sobolev/harmonic radius; and (ii) a collapse/compactness theorem for \(C^0\)-almost negative Einstein four-metrics with the calibrated energy profile (3)--(7), describing whether phase-separated monopole forms can pass through a thin topology core.
+
+\section{Relation to the complete Yau problem}
+
+This boundary analysis addresses only the normalized negative branch in dimension four.  Even if it produced a counterexample sequence, a full refutation of Yau's interval statement would still require failure of the positive branch in the same dimension.  Conversely, proving a positive gap on these boundary families would be a major rigidity theorem but would not alone prove the full statement in all dimensions.  Its value is that it isolates the precise interface where a genuine all-Einstein obstruction and arbitrarily tight Ricci pinching might coexist, and turns the previous qualitative strictness into a sharply calibrated compactness-versus-degeneration problem.

@@ -1,0 +1,176 @@
+# Einstein-defect bridges without a Kähler assumption
+
+23 September 2026. Two conclusions are distinguished: control of the
+**original metric** uses the scalar-band variance estimate and its spectral
+factor; control of a **conformal Yamabe representative** needs neither.
+The metrics in both statements need not initially be Kähler. The
+all-metric absolute-energy selection theorem is in the companion
+[`line1_energy_selection.md`](line1_energy_selection.md), not repeated here.
+
+## 1. Common hypotheses and exact accounting
+
+Let \((M,g)\) be a closed connected oriented smooth four-manifold. A
+specified Spin\(^c\) class \(a\) is assumed to have ordinary
+Seiberg–Witten solutions for every metric conformal to \(g\). The class
+may be selected separately for each metric, but is fixed as its conformal
+weight varies. Write
+\[
+ p=(a_g^+)^2>0,\quad A=a^2,\quad T=2\chi+3\tau,\quad V=\operatorname{Vol}(g),
+\]
+\[
+ S_2=\int s^2,\quad P=\int|\operatorname{Ric}^{\circ}|^2,\quad
+ L=\int(s-\bar s)^2,\quad R_2=P+S_2/4,
+\]
+\[
+ D=\frac1{4\pi^2}\int\left(\frac{s^2}{24}+\frac{|W^+|^2}{2}\right)-\frac p2.
+ \tag{1}
+\]
+Weyl norms are Hilbert–Schmidt operator norms. Classical monopole
+inequalities give \(D\ge0\) and \(B_p:=S_2-32\pi^2p\ge0\).
+Chern–Weil then gives the exact identities
+\[
+ R_2=8\pi^2(2p-T)+32\pi^2D,\qquad
+ P+B_p/4=8\pi^2(p-T)+32\pi^2D.
+ \tag{2}
+\]
+These identities and the scalar inequality are classical inputs, not new
+existence results. Normalized weighted derivations are given in
+`round3_monopole_input.md`, Section 6.
+
+## 2. The original-metric bridge
+
+Assume \(-S\le s\le-s_0<0\), and put
+\[
+ K=S/\sqrt{s_0},\quad C_0=(1+3S/(2s_0))^2,\quad
+ C_{\rm var}=\frac23+\frac{4C_0}{3}+\frac{2K^2}{\lambda_1(g)}.
+ \tag{3}
+\]
+Here \(\lambda_1(g)>0\) is the first positive scalar Laplace eigenvalue.
+The actual-form remainder proved in
+[`line1_scalar_band_remainder.md`](line1_scalar_band_remainder.md),
+equation (11), gives \(L\le144\pi^2C_{\rm var}D\).
+
+Let \(\kappa=-\bar s/4>0\) and
+\(Q_\kappa=\int|\operatorname{Ric}+\kappa g|^2=P+L/4\).
+**Theorem 1.** Without assuming any Ricci bound,
+\[
+ Q_\kappa\le8\pi^2(p-T)+(32\pi^2+36\pi^2C_{\rm var})D.
+ \tag{4}
+\]
+In particular, define the nonnegative supply
+\[
+ \mathcal P=(p-A)+(A-T)_+,\quad
+ U=8\pi^2\mathcal P+(32\pi^2+36\pi^2C_{\rm var})D.
+ \tag{5}
+\]
+For the relative integral Einstein defect one has
+\[
+ \boxed{Q_\kappa\le U,\qquad
+ \mathcal E(g):=\inf_{\lambda\ne0}
+ \frac{\int|\operatorname{Ric}-\lambda g|^2}{\lambda^2V}
+ \le\frac{4U}{4\kappa^2V+U}\le\frac{16U}{s_0^2V}.}
+ \tag{6}
+\]
+**Proof.** Drop the nonnegative \(B_p/4\) in (2), and add the
+scalar-variance bound divided by four. Also
+\(p-A=\|a_g^-\|_2^2\ge0\), hence \(p-T\le\mathcal P\).
+Direct minimization in \(1/\lambda\) gives
+\(\mathcal E=4Q_\kappa/(4\kappa^2V+Q_\kappa)\);
+\(\kappa\ge s_0/4\) completes the proof.
+
+For a sequence in a fixed scalar band, sufficient conditions are
+\(\mathcal P/V\to0\), \(D/V\to0\), and
+\(D/(\lambda_1V)\to0\). A uniform spectral gap suffices for the last
+condition but is not mandatory. It cannot simply be deleted. At
+\(D=\mathcal P=0\), the conclusion is negative Kähler–Einstein;
+\(D=0\) alone gives only cscK. Unequal-curvature hyperbolic products
+have \(D=0\) and \(p-A>0\).
+
+## 3. Supplying an actual form and its joint analytic budget
+
+Constant-rescale to \(\bar s=-4\), and use the scalar-band parameters
+of that normalization. Then \(r:=\fint|\operatorname{Ric}+g|^2\le U/V\).
+Suppose \(U/V\le r_0\), \(D/V\le d_0\), and
+\((-a^2)_+/V\le a_0\). Sections 6–7 of the scalar-band note supply a
+smooth actual weighted-monopole form \(\omega\), for every prescribed
+\(\eta>0\), with
+\[
+ \|\omega\|_\infty\le\frac{\sqrt3}{2}K,\quad
+ B_\omega:=\fint|\Delta_H\omega|^2
+       \le C(S,s_0,8+2r_0,a_0,d_0),
+ \tag{7}
+\]
+\[
+\begin{aligned}
+ A_{\omega,1/2}&=\frac12\left(\frac{|\omega|^2}{3}I-\omega\otimes\omega\right),\\
+ d_{1/2}&:=\fint\left(|\operatorname{Ric}+g|^2
+       +|W^+-A_{\omega,1/2}|^2+(|\omega|^2-2)^2\right)\\
+ &\le\frac{4U}{V}+\frac{16\pi^2(10C_0+8)}3\frac D V+\eta.
+\end{aligned}
+\tag{8}
+\]
+Consequently
+\[
+ (1+B_\omega)d_{1/2}\le C\left(\frac U V+\frac D V+\eta\right).
+ \tag{9}
+\]
+The constant in (9) depends only on the displayed budgets. To check the
+inputs, \(\fint|\operatorname{Ric}|^2\le8+2r_0\); the bounded-spinor
+Hessian estimate controls \(\Delta_H\omega\) without derivatives of
+the conformal weight or \(W^-\). This is an explicit invocation of the
+inherited Hessian lemma, not a consequence of finite algebra checks.
+If the chosen class additionally satisfies \(a^2\ge T\), Chern–Weil
+gives \((-a^2)_+/V\le r_0/(8\pi^2)\), so no independent square-cost
+bound is needed in this special case.
+
+Unlike a circular composition, Ricci control in (7)–(9) is an **output**
+of Theorem 1. However, \(1/2\) is the realizable Kähler–Einstein root
+in `round21_analytic.md`; (9) is a calibrated-form and source-budget
+statement, not a forbidden-root contradiction or an exact metric repair.
+
+## 4. A conformal bridge without scalar-band or spectral assumptions
+
+Return to only the hypotheses of Section 1. Define
+\[
+ \theta(g)=\frac{p-T+4D(g)}p\ge0.
+ \tag{10}
+\]
+Nonnegativity follows from (2). **Theorem 2.** The conformal class has a
+negative constant-scalar-curvature Yamabe representative \(\widehat g\)
+satisfying
+\[
+ \boxed{\mathcal E(\widehat g)
+       \le\frac{4\theta(g)}{1+\theta(g)}.}
+ \tag{11}
+\]
+**Proof.** The Yamabe theorem supplies a minimizer. Its scalar curvature
+cannot be nonnegative because the same conformal Spin\(^c\) structure
+has \(p>0\) and an actual solution. Thus its Yamabe constant \(Y<0\).
+Normalize \(\widehat g=u^2g\) by \(\int u^4=1\). Then
+\[
+ Y=\int(6|du|^2+su^2)\ge-\|s_-\|_2,
+ \quad S_2(\widehat g)=Y^2\le S_2(g).
+ \tag{12}
+\]
+The quantities \(p\) and \(\int|W^+|^2\) are conformally invariant,
+so \(D(\widehat g)\le D(g)\). Since \(\widehat g\) has constant
+scalar curvature, \(\mathcal E(\widehat g)=4P(\widehat g)/R_2(\widehat g)\).
+By (2) and \(B_p(\widehat g)\ge0\), this is at most
+\[
+ \frac{4[p-T+4D(\widehat g)]}{2p-T+4D(\widehat g)}.
+\]
+The expression increases with \(D\), its derivative having the sign of
+\(p>0\). Replacing \(D(\widehat g)\) by \(D(g)\) proves (11).
+
+Theorem 2 changes the metric conformally; it does not remove the
+spectral term from Theorem 1 on the original metric. Neither conclusion
+upgrades integral approximation to pointwise Ricci pinching or to an
+Einstein metric. Relative to Round 17, the direction is reversed:
+Ricci and scalar errors are derived here from actual period/topological
+data and LeBrun saturation instead of being supplied as hypotheses.
+
+Sources: [LeBrun, Propositions 4.1–4.2](https://arxiv.org/abs/math/0003068),
+the classical Yamabe theorem, the scalar-band remainder cited above, and
+the normalized monopole inequalities in `round3_monopole_input.md`.
+`line1_ricci_remainder_check.py` checks finite algebra, including the
+companion energy-selection identities; it does not certify these PDE inputs.

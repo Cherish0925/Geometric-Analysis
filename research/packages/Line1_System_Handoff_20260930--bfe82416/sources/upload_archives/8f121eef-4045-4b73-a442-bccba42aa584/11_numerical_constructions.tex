@@ -1,0 +1,2144 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  10pt,
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[a4paper,margin=18mm]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{esint}
+\providecommand{\Ric}{\operatorname{Ric}}
+\usepackage{fvextra}
+\usepackage{array}
+\fvset{breaklines=true,breakanywhere=true}
+\usepackage{xeCJK}
+\setmainfont{DejaVu Serif}
+\setmonofont{DejaVu Sans Mono}
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKmonofont{Noto Sans Mono CJK SC}
+\setmathfont{Asana Math}
+\setmathfont{Latin Modern Math}[range=\lrcorner]
+\setlength{\emergencystretch}{3em}
+\allowdisplaybreaks
+\hypersetup{hypertexnames=false}
+\pdfstringdefDisableCommands{\def\nolinkurl#1{#1}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\hypertarget{ux7b2cux5341ux4e00ux5377ux771fux5b9eux8026ux5408ux533aux57dfux7684ux6570ux503cux6784ux9020ux8bb0ux5f55}{%
+\section{第十一卷：真实耦合区域的数值构造记录}\label{ux7b2cux5341ux4e00ux5377ux771fux5b9eux8026ux5408ux533aux57dfux7684ux6570ux503cux6784ux9020ux8bb0ux5f55}}
+
+本卷不含程序。它保存冻结提交0b14907的六份构造回执的全部JSON值，并补明参数的数学含义。JSON／JSONL转成独立缩进记录；源文件哈希逐项列出。这里的成功标志是数值优化器状态，不是数学存在性或全局最优证书。正文的严格下界不依赖搜索未找到反例。
+
+\hypertarget{ux53c2ux6570ux5982ux4f55ux5b9aux4e49ux5b9eux9645ux5ea6ux91cf}{%
+\subsection{参数如何定义实际度量}\label{ux53c2ux6570ux5982ux4f55ux5b9aux4e49ux5b9eux9645ux5ea6ux91cf}}
+
+以下是本地 \nolinkurl{tools/search_coupled_cell.py}
+已用构造的数学转写，不是新模型。取bolt半径 \(b>0\)、外半径
+\(R>b\)、\(\mu=b^2\)，令 \[
+x=\frac{\log(r/b)}{\log(R/b)}\in[0,1].
+\] 定义光滑阶跃 \(S(x)=0\) 于 \(x\le0.65\)，\(S(x)=1\) 于
+\(x\ge0.9\)；中间令 \(y=(x-0.65)/0.25\)， \[
+S(x)=\frac{1}{1+\exp(1/y-1/(1-y))},\qquad c(x)=1-S(x).
+\] 令 \(L_k(x)=P_k(2x-1)\)，其中 \(P_k\)
+是Legendre多项式。程序按明确的有限网格归一化： \[
+m_{k,p}=\max_{i=0,\ldots,2000}
+\left|(i/2000)^p L_k(i/2000)c(i/2000)\right|,
+\qquad B_{k,p}(x)=\frac{x^pL_k(x)c(x)}{m_{k,p}}.
+\] 该归一化只是构造定义，不把网格最大值称为连续最大值。给定每组 \(n\)
+个系数，顺序是 \[
+(v_0,\ldots,v_{n-1},w_0,\ldots,w_{n-1},\phi_0,\ldots,\phi_{n-1}),
+\] 分别展开于 \(B_{k,1},B_{k,2},B_{k,0}\)，得到 \(v,w,\phi\)。径向函数为
+\[
+F(r)=e^{v(x)}\left[1+\frac{r^2}{6}
++c(x)\left(-\frac{\mu+\mu^2/2}{r^2}
++\frac{\mu^3}{3r^4}\right)\right].
+\] 代入第三卷完整耦合泛函的实际度量 \[
+g=e^{2\phi}\left[\frac{dr^2}{F}
++r^2\{e^{2w}\sigma_1^2+e^{-2w}\sigma_2^2+F\sigma_3^2\}\right].
+\]
+轨道一形式与普通bolt的周期采用该稿的固定约定。幂次与平坦截断保留光滑bolt及完整不变复双曲外领口；所有过渡区域计入积分。残差的四个分量、共形和三轴导数项，见第三卷相对区域稿§6.3；同卷局域稿§8保留其完整平方分解。\nolinkurl{J_over_2pi2}为完整
+\(\int|\operatorname{Ric}+g|^2/(2\pi^2)\)，比较阈值4，不是只计算核心内部的截断能量。
+
+积分使用x变量的分段Gauss--Legendre求积；分段加入0.65、0.9两个截断断点。回执同时保存粗细求积、标量恒等式误差、系数和优化器状态。第八卷保存实际使用的检验范围。以下记录未在打包时重新搜索或优化，避免覆盖原结果。
+
+四组搜索合计28个起点，没有找到低于4的例子。单独的负方向实例说明对称化不普遍单调，但其成本从约12.3549降到12.3355，仍不接近低于4；后续联合优化又回到约4.1627。约束未达到指定容差的返回保留为失败。上述事实不是全类排除证明。
+
+\hypertarget{ux5168ux90e8ux539fux6570ux503cux4e0eux53c2ux6570}{%
+\subsection{全部原数值与参数}\label{ux5168ux90e8ux539fux6570ux503cux4e0eux53c2ux6570}}
+
+以下代码块是纯数值数据，不是执行代码；未独立进行区间算术认证。各记录对应的是已保存的有限计算，其量词不能扩张到所有度量或任意参数。
+
+\hypertarget{verificationcomputations20260928_coupled_cell_small.jsonl}{%
+\subsection{verification/computations/\nolinkurl{20260928_coupled_cell_small.jsonl}}\label{verificationcomputations20260928_coupled_cell_small.jsonl}}
+
+Original SHA-256:
+\nolinkurl{3ec43956c417c496bf43bbf4d89559973fe1da35a015fd45cfa660570461e389}.
+
+\hypertarget{record-1}{%
+\subsubsection{Record 1}\label{record-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"baseline"}\FunctionTok{,}
+  \DataTypeTok{"bolt"}\FunctionTok{:} \FloatTok{0.1}\FunctionTok{,}
+  \DataTypeTok{"radius"}\FunctionTok{:} \FloatTok{1.0}\FunctionTok{,}
+  \DataTypeTok{"count"}\FunctionTok{:} \DecValTok{5}\FunctionTok{,}
+  \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.126026580565748}\FunctionTok{,}
+  \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{0.0}\FunctionTok{,}
+  \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.0234479930204543e{-}11}\FunctionTok{,}
+  \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{0.0}\FunctionTok{,}
+  \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.0}\FunctionTok{,}
+  \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.001767543738559696}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-2}{%
+\subsubsection{Record 2}\label{record-2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{0}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{6}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{2.955120489673849e{-}05}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{0.010259418929878222}\OtherTok{,}
+    \FloatTok{{-}0.00572375356106752}\OtherTok{,}
+    \FloatTok{{-}0.005434648461665454}\OtherTok{,}
+    \FloatTok{{-}0.00938238458596732}\OtherTok{,}
+    \FloatTok{0.00010811056487629742}\OtherTok{,}
+    \FloatTok{{-}3.1091721870987584e{-}17}\OtherTok{,}
+    \FloatTok{2.5199080739980212e{-}17}\OtherTok{,}
+    \FloatTok{{-}1.816803954548477e{-}17}\OtherTok{,}
+    \FloatTok{8.520410435729689e{-}18}\OtherTok{,}
+    \FloatTok{{-}2.5434456592989628e{-}18}\OtherTok{,}
+    \FloatTok{0.008961567232284688}\OtherTok{,}
+    \FloatTok{{-}0.005707770299209406}\OtherTok{,}
+    \FloatTok{0.002610213628856309}\OtherTok{,}
+    \FloatTok{0.005075692983659086}\OtherTok{,}
+    \FloatTok{0.0028443788829378}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.052345152651139}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{4.537260415380765e{-}35}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.5703438549508064e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{5.764133371064325e{-}18}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.015039397586487474}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0017675752538864518}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.052345152650423}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{4.5372604153807654e{-}35}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{1.709743457922741e{-}14}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{5.764137413543981e{-}18}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.015046964647688479}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.00025419000892611023}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-3}{%
+\subsubsection{Record 3}\label{record-3}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{1}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{8}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{5.539251435491189e{-}06}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{0.010260288585599428}\OtherTok{,}
+    \FloatTok{{-}0.005724464225260184}\OtherTok{,}
+    \FloatTok{{-}0.005434126133080477}\OtherTok{,}
+    \FloatTok{{-}0.009382605292608578}\OtherTok{,}
+    \FloatTok{0.00010814759357846486}\OtherTok{,}
+    \FloatTok{{-}2.1536496447342863e{-}08}\OtherTok{,}
+    \FloatTok{1.873369744367885e{-}08}\OtherTok{,}
+    \FloatTok{{-}1.2157125534690538e{-}08}\OtherTok{,}
+    \FloatTok{6.794764936687341e{-}09}\OtherTok{,}
+    \FloatTok{{-}1.1441026532119545e{-}09}\OtherTok{,}
+    \FloatTok{0.008961682833537472}\OtherTok{,}
+    \FloatTok{{-}0.0057080221317606285}\OtherTok{,}
+    \FloatTok{0.002610428908276909}\OtherTok{,}
+    \FloatTok{0.005075597166574617}\OtherTok{,}
+    \FloatTok{0.0028444032404932756}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.052345152643639}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{2.1428832931049226e{-}17}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.5703417120675134e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{4.1626982530448696e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.01504009915676102}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.001767575258385421}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.052345152642925}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{2.142883293104916e{-}17}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{1.689681880723343e{-}14}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{4.162703694837598e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.015047667346097676}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.00025419000901921816}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-4}{%
+\subsubsection{Record 4}\label{record-4}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{2}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{7}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{2.442871580075107e{-}05}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{0.010261373454262628}\OtherTok{,}
+    \FloatTok{{-}0.005725352173102311}\OtherTok{,}
+    \FloatTok{{-}0.005433472252012504}\OtherTok{,}
+    \FloatTok{{-}0.009382883222457903}\OtherTok{,}
+    \FloatTok{0.00010819423238245651}\OtherTok{,}
+    \FloatTok{1.3680470136734105e{-}08}\OtherTok{,}
+    \FloatTok{{-}1.1814837416446231e{-}08}\OtherTok{,}
+    \FloatTok{7.514905690854601e{-}09}\OtherTok{,}
+    \FloatTok{{-}4.071431055265683e{-}09}\OtherTok{,}
+    \FloatTok{6.557736990236515e{-}10}\OtherTok{,}
+    \FloatTok{0.008961826501614546}\OtherTok{,}
+    \FloatTok{{-}0.005708334903400077}\OtherTok{,}
+    \FloatTok{0.002610697399624401}\OtherTok{,}
+    \FloatTok{0.005075477455255152}\OtherTok{,}
+    \FloatTok{0.002844434346830905}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.052345152648685}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{9.371314202553717e{-}18}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.5703429178193862e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{2.7135208356033592e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.015040973256664389}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.001767575264014328}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.052345152647966}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{9.371314202553688e{-}18}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{1.6884761288504934e{-}14}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{2.713662915920759e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.015048542857735797}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.00025419000913571107}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{verificationcomputations20260928_coupled_cell_wide.jsonl}{%
+\subsection{verification/computations/\nolinkurl{20260928_coupled_cell_wide.jsonl}}\label{verificationcomputations20260928_coupled_cell_wide.jsonl}}
+
+Original SHA-256:
+\nolinkurl{70840fb5a9dea34ed0bb019fa876c23ac5470a3a2c4582f3119d0b58e9f81949}.
+
+\hypertarget{record-1-1}{%
+\subsubsection{Record 1}\label{record-1-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"baseline"}\FunctionTok{,}
+  \DataTypeTok{"bolt"}\FunctionTok{:} \FloatTok{0.2}\FunctionTok{,}
+  \DataTypeTok{"radius"}\FunctionTok{:} \FloatTok{4.0}\FunctionTok{,}
+  \DataTypeTok{"count"}\FunctionTok{:} \DecValTok{9}\FunctionTok{,}
+  \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.16735777833556}\FunctionTok{,}
+  \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{0.0}\FunctionTok{,}
+  \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}3.183231456205249e{-}11}\FunctionTok{,}
+  \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{0.0}\FunctionTok{,}
+  \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.0}\FunctionTok{,}
+  \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0022991008377484246}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-2-1}{%
+\subsubsection{Record 2}\label{record-2-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{0}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{5}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{1.1427642867264064e{-}05}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{0.0019276385538815172}\OtherTok{,}
+    \FloatTok{0.0003063625882790539}\OtherTok{,}
+    \FloatTok{{-}0.00030274295436565074}\OtherTok{,}
+    \FloatTok{0.0005268427850859338}\OtherTok{,}
+    \FloatTok{0.0006281132397512651}\OtherTok{,}
+    \FloatTok{0.0011973577165810497}\OtherTok{,}
+    \FloatTok{0.0003324351288258912}\OtherTok{,}
+    \FloatTok{0.00018621259299423355}\OtherTok{,}
+    \FloatTok{{-}0.00032568462879315846}\OtherTok{,}
+    \FloatTok{7.176660100221248e{-}16}\OtherTok{,}
+    \FloatTok{{-}3.691175669254294e{-}16}\OtherTok{,}
+    \FloatTok{9.735129361079847e{-}16}\OtherTok{,}
+    \FloatTok{{-}6.57625803937598e{-}16}\OtherTok{,}
+    \FloatTok{7.83792221343856e{-}16}\OtherTok{,}
+    \FloatTok{{-}3.8481052008470763e{-}16}\OtherTok{,}
+    \FloatTok{6.337786364458833e{-}16}\OtherTok{,}
+    \FloatTok{{-}1.14927045502391e{-}16}\OtherTok{,}
+    \FloatTok{1.5283768170093272e{-}16}\OtherTok{,}
+    \FloatTok{0.001726020047779488}\OtherTok{,}
+    \FloatTok{{-}0.001278174493315643}\OtherTok{,}
+    \FloatTok{{-}0.00010151286245413624}\OtherTok{,}
+    \FloatTok{0.0004061115852771498}\OtherTok{,}
+    \FloatTok{6.0630800555610797e{-}05}\OtherTok{,}
+    \FloatTok{{-}0.0003781146788317933}\OtherTok{,}
+    \FloatTok{{-}0.0004543724561864191}\OtherTok{,}
+    \FloatTok{{-}0.00025005718569404573}\OtherTok{,}
+    \FloatTok{{-}5.202385327376158e{-}05}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.162710092036787}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{6.478421450395215e{-}33}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}4.4565240386873484e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{2.2830430530877026e{-}17}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.002678668350815515}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0022990970747677844}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.162710092036686}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{6.47842145040105e{-}33}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{1.7053025658242404e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{2.2833684156831933e{-}17}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.0026789320891280706}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0003306970115545534}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-3-1}{%
+\subsubsection{Record 3}\label{record-3-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{1}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{13}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{1.920758375911541e{-}05}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{0.0019274984098470727}\OtherTok{,}
+    \FloatTok{0.00030649554465313227}\OtherTok{,}
+    \FloatTok{{-}0.0003028678157286617}\OtherTok{,}
+    \FloatTok{0.0005269354242159152}\OtherTok{,}
+    \FloatTok{0.0006280825548280177}\OtherTok{,}
+    \FloatTok{0.0011973725401992449}\OtherTok{,}
+    \FloatTok{0.0003324298556639396}\OtherTok{,}
+    \FloatTok{0.00018621376659345515}\OtherTok{,}
+    \FloatTok{{-}0.00032568516719982146}\OtherTok{,}
+    \FloatTok{{-}4.939368969874721e{-}08}\OtherTok{,}
+    \FloatTok{4.7040496997923213e{-}08}\OtherTok{,}
+    \FloatTok{{-}3.888861308781958e{-}08}\OtherTok{,}
+    \FloatTok{3.401100256945184e{-}08}\OtherTok{,}
+    \FloatTok{{-}1.2079708865705616e{-}08}\OtherTok{,}
+    \FloatTok{6.361344997227827e{-}09}\OtherTok{,}
+    \FloatTok{{-}4.102334172337204e{-}09}\OtherTok{,}
+    \FloatTok{6.756478549344268e{-}10}\OtherTok{,}
+    \FloatTok{{-}7.004966018114155e{-}10}\OtherTok{,}
+    \FloatTok{0.001726006797195575}\OtherTok{,}
+    \FloatTok{{-}0.0012781440827348777}\OtherTok{,}
+    \FloatTok{{-}0.00010154337870387319}\OtherTok{,}
+    \FloatTok{0.0004061303886994722}\OtherTok{,}
+    \FloatTok{6.062145233980767e{-}05}\OtherTok{,}
+    \FloatTok{{-}0.000378111555318311}\OtherTok{,}
+    \FloatTok{{-}0.00045437403074239275}\OtherTok{,}
+    \FloatTok{{-}0.0002500569663622034}\OtherTok{,}
+    \FloatTok{{-}5.20240718312121e{-}05}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.162710092037306}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{2.925907375252532e{-}16}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}4.456494779613596e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{6.2316864557074785e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.0026785612096821157}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.002299097073267057}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.162710092037204}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{2.9259073752524183e{-}16}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{1.7082284731994928e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{6.231687538646486e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.0026788246707192564}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.00033069701152344856}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-4-1}{%
+\subsubsection{Record 4}\label{record-4-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{2}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{12}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{3.5126835995618586e{-}05}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{0.0019272068475887757}\OtherTok{,}
+    \FloatTok{0.00030676666307096335}\OtherTok{,}
+    \FloatTok{{-}0.0003031133804000766}\OtherTok{,}
+    \FloatTok{0.0005271057388845756}\OtherTok{,}
+    \FloatTok{0.0006280302580348584}\OtherTok{,}
+    \FloatTok{0.001197394979665315}\OtherTok{,}
+    \FloatTok{0.0003324222841182349}\OtherTok{,}
+    \FloatTok{0.0001862151201812605}\OtherTok{,}
+    \FloatTok{{-}0.0003256861114552046}\OtherTok{,}
+    \FloatTok{{-}4.992162329921405e{-}07}\OtherTok{,}
+    \FloatTok{4.6762384749094896e{-}07}\OtherTok{,}
+    \FloatTok{{-}3.758075141705359e{-}07}\OtherTok{,}
+    \FloatTok{3.102176498360922e{-}07}\OtherTok{,}
+    \FloatTok{{-}1.0605261841960381e{-}07}\OtherTok{,}
+    \FloatTok{4.999899247070425e{-}08}\OtherTok{,}
+    \FloatTok{{-}3.4098355732731234e{-}08}\OtherTok{,}
+    \FloatTok{4.725246148001236e{-}09}\OtherTok{,}
+    \FloatTok{{-}6.585286890833379e{-}09}\OtherTok{,}
+    \FloatTok{0.001725976555036345}\OtherTok{,}
+    \FloatTok{{-}0.0012780747489267127}\OtherTok{,}
+    \FloatTok{{-}0.00010161004220700418}\OtherTok{,}
+    \FloatTok{0.00040616999780725756}\OtherTok{,}
+    \FloatTok{6.0604469003933974e{-}05}\OtherTok{,}
+    \FloatTok{{-}0.00037810638940354973}\OtherTok{,}
+    \FloatTok{{-}0.00045437606893751687}\OtherTok{,}
+    \FloatTok{{-}0.0002500567620359541}\OtherTok{,}
+    \FloatTok{{-}5.202429062364226e{-}05}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.162710092041213}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{3.573415776207096e{-}14}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}4.452950622911141e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{6.772753477874866e{-}08}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.0026783313725972395}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.002299097070379383}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.16271009204111}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{3.5734157762069515e{-}14}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{9.257757662287753e{-}14}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{6.772756046842981e{-}08}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.00267859430106677}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.00033069701146361177}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-5}{%
+\subsubsection{Record 5}\label{record-5}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{3}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{12}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{6.308386999286823e{-}06}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{0.001927966123846691}\OtherTok{,}
+    \FloatTok{0.000306061671088833}\OtherTok{,}
+    \FloatTok{{-}0.0003024764841847432}\OtherTok{,}
+    \FloatTok{0.0005266665988821834}\OtherTok{,}
+    \FloatTok{0.0006281640832993963}\OtherTok{,}
+    \FloatTok{0.00119733847086369}\OtherTok{,}
+    \FloatTok{0.0003324411447458559}\OtherTok{,}
+    \FloatTok{0.0001862119055185254}\OtherTok{,}
+    \FloatTok{{-}0.00032568371978340866}\OtherTok{,}
+    \FloatTok{{-}1.1317839270805369e{-}07}\OtherTok{,}
+    \FloatTok{1.056122885533573e{-}07}\OtherTok{,}
+    \FloatTok{{-}8.425259882395382e{-}08}\OtherTok{,}
+    \FloatTok{6.848900106474919e{-}08}\OtherTok{,}
+    \FloatTok{{-}2.312284481474514e{-}08}\OtherTok{,}
+    \FloatTok{1.051124396128307e{-}08}\OtherTok{,}
+    \FloatTok{{-}7.27947213643795e{-}09}\OtherTok{,}
+    \FloatTok{9.43966632803792e{-}10}\OtherTok{,}
+    \FloatTok{{-}1.45648777702753e{-}09}\OtherTok{,}
+    \FloatTok{0.0017260557377498324}\OtherTok{,}
+    \FloatTok{{-}0.001278256426380301}\OtherTok{,}
+    \FloatTok{{-}0.00010143594910012441}\OtherTok{,}
+    \FloatTok{0.0004060665815251203}\OtherTok{,}
+    \FloatTok{6.064819104778692e{-}05}\OtherTok{,}
+    \FloatTok{{-}0.00037811968893151394}\OtherTok{,}
+    \FloatTok{{-}0.00045437107987999586}\OtherTok{,}
+    \FloatTok{{-}0.00025005725534875}\OtherTok{,}
+    \FloatTok{{-}5.202380327729495e{-}05}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.162710092036686}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{1.9109930152757362e{-}15}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}4.4563329393858205e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{1.5620596620232413e{-}08}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.002678931124133386}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0022990970778511747}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.162710092036585}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{1.910993015275659e{-}15}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{1.155978307368917e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{1.5621130093832407e{-}08}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.0026791954303979483}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.00033069701161843437}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-6}{%
+\subsubsection{Record 6}\label{record-6}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{4}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{13}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{3.5746810320487894e{-}05}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{0.0019285037299466854}\OtherTok{,}
+    \FloatTok{0.0003055598107021661}\OtherTok{,}
+    \FloatTok{{-}0.00030201836891424543}\OtherTok{,}
+    \FloatTok{0.0005263442762980404}\OtherTok{,}
+    \FloatTok{0.0006282648701446513}\OtherTok{,}
+    \FloatTok{0.0011972940325831825}\OtherTok{,}
+    \FloatTok{0.0003324563371605707}\OtherTok{,}
+    \FloatTok{0.00018620905857244275}\OtherTok{,}
+    \FloatTok{{-}0.0003256819274230062}\OtherTok{,}
+    \FloatTok{{-}5.326141834647162e{-}07}\OtherTok{,}
+    \FloatTok{4.927920386308904e{-}07}\OtherTok{,}
+    \FloatTok{{-}3.867296890400016e{-}07}\OtherTok{,}
+    \FloatTok{3.033578177747714e{-}07}\OtherTok{,}
+    \FloatTok{{-}9.943738817177706e{-}08}\OtherTok{,}
+    \FloatTok{4.108642699415279e{-}08}\OtherTok{,}
+    \FloatTok{{-}2.972662658191103e{-}08}\OtherTok{,}
+    \FloatTok{3.1605257712848473e{-}09}\OtherTok{,}
+    \FloatTok{{-}6.499284503781397e{-}09}\OtherTok{,}
+    \FloatTok{0.0017261104865004002}\OtherTok{,}
+    \FloatTok{{-}0.0012783820749280958}\OtherTok{,}
+    \FloatTok{{-}0.00010131432434597685}\OtherTok{,}
+    \FloatTok{0.0004059936500906642}\OtherTok{,}
+    \FloatTok{6.068032706120047e{-}05}\OtherTok{,}
+    \FloatTok{{-}0.0003781298078596043}\OtherTok{,}
+    \FloatTok{{-}0.00045436690307272315}\OtherTok{,}
+    \FloatTok{{-}0.00025005775684363196}\OtherTok{,}
+    \FloatTok{{-}5.202333770428482e{-}05}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.162710092041738}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{4.609012037515639e{-}14}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}4.4575993685359136e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{7.627584571262651e{-}08}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.0026793523103575034}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.002299097083262214}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.162710092041638}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{4.609012037515449e{-}14}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{1.029335392359625e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{7.627786576239375e{-}08}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.002679617614940813}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0003306970117305646}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-7}{%
+\subsubsection{Record 7}\label{record-7}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{5}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{18}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{1.5807487000266868e{-}05}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{0.0019281402017299644}\OtherTok{,}
+    \FloatTok{0.00030589986822823057}\OtherTok{,}
+    \FloatTok{{-}0.0003023300648966213}\OtherTok{,}
+    \FloatTok{0.0005265652067383179}\OtherTok{,}
+    \FloatTok{0.0006281951537007793}\OtherTok{,}
+    \FloatTok{0.0011973251736868017}\OtherTok{,}
+    \FloatTok{0.0003324456273206007}\OtherTok{,}
+    \FloatTok{0.00018621110630690632}\OtherTok{,}
+    \FloatTok{{-}0.0003256831567181866}\OtherTok{,}
+    \FloatTok{{-}6.647422497928677e{-}08}\OtherTok{,}
+    \FloatTok{6.141390763703495e{-}08}\OtherTok{,}
+    \FloatTok{{-}4.827843238164047e{-}08}\OtherTok{,}
+    \FloatTok{3.786141862510884e{-}08}\OtherTok{,}
+    \FloatTok{{-}1.2555621599603001e{-}08}\OtherTok{,}
+    \FloatTok{5.265497699795173e{-}09}\OtherTok{,}
+    \FloatTok{{-}3.8818975697267e{-}09}\OtherTok{,}
+    \FloatTok{4.381689137518835e{-}10}\OtherTok{,}
+    \FloatTok{{-}8.467113643581778e{-}10}\OtherTok{,}
+    \FloatTok{0.0017260738331112667}\OtherTok{,}
+    \FloatTok{{-}0.0012782979018425675}\OtherTok{,}
+    \FloatTok{{-}0.0001013960955423845}\OtherTok{,}
+    \FloatTok{0.0004060429346631099}\OtherTok{,}
+    \FloatTok{6.065830384786242e{-}05}\OtherTok{,}
+    \FloatTok{{-}0.00037812274757584183}\OtherTok{,}
+    \FloatTok{{-}0.0004543698752562455}\OtherTok{,}
+    \FloatTok{{-}0.0002500573721145514}\OtherTok{,}
+    \FloatTok{{-}5.202367347246119e{-}05}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.162710092037067}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{7.237238611179233e{-}16}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}4.4564516663012366e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{9.519078951558293e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.002679068447277507}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.002299097079572256}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.162710092036966}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{7.237238611178932e{-}16}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{1.1441056158273393e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{9.51958748706095e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.002679333070945411}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.00033069701165409747}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-8}{%
+\subsubsection{Record 8}\label{record-8}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{6}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{11}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{2.645781772928418e{-}05}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{0.0019283351800117004}\OtherTok{,}
+    \FloatTok{0.0003057186548877054}\OtherTok{,}
+    \FloatTok{{-}0.0003021660125923662}\OtherTok{,}
+    \FloatTok{0.0005264516983402021}\OtherTok{,}
+    \FloatTok{0.0006282298987126208}\OtherTok{,}
+    \FloatTok{0.0011973104254659219}\OtherTok{,}
+    \FloatTok{0.00033245055599168133}\OtherTok{,}
+    \FloatTok{0.00018621026328831088}\OtherTok{,}
+    \FloatTok{{-}0.0003256825425081555}\OtherTok{,}
+    \FloatTok{5.27432594940245e{-}08}\OtherTok{,}
+    \FloatTok{{-}4.7780450683626064e{-}08}\OtherTok{,}
+    \FloatTok{3.6342406260051144e{-}08}\OtherTok{,}
+    \FloatTok{{-}2.620554554397751e{-}08}\OtherTok{,}
+    \FloatTok{8.215674601295343e{-}09}\OtherTok{,}
+    \FloatTok{{-}2.6257192247726396e{-}09}\OtherTok{,}
+    \FloatTok{2.3423048863826566e{-}09}\OtherTok{,}
+    \FloatTok{{-}1.3374931837522966e{-}10}\OtherTok{,}
+    \FloatTok{6.370201490178082e{-}10}\OtherTok{,}
+    \FloatTok{0.0017260940635567574}\OtherTok{,}
+    \FloatTok{{-}0.0012783443531754438}\OtherTok{,}
+    \FloatTok{{-}0.00010135152534218337}\OtherTok{,}
+    \FloatTok{0.0004060163633522015}\OtherTok{,}
+    \FloatTok{6.0669598798731605e{-}05}\OtherTok{,}
+    \FloatTok{{-}0.00037812623260083205}\OtherTok{,}
+    \FloatTok{{-}0.0004543685674608144}\OtherTok{,}
+    \FloatTok{{-}0.00025005751229991124}\OtherTok{,}
+    \FloatTok{{-}5.2023548135042184e{-}05}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.162710092038019}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{5.422914077991878e{-}16}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}4.456469809546569e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{8.125539204243582e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.002679222208960098}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.00229909708149841}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.162710092037917}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{5.422914077991642e{-}16}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{1.7107254799022322e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{8.125631317449363e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.002679487187841245}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.00033069701169400966}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-9}{%
+\subsubsection{Record 9}\label{record-9}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{7}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{11}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{2.6272277157754855e{-}05}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{0.001927369722386647}\OtherTok{,}
+    \FloatTok{0.00030661920125332255}\OtherTok{,}
+    \FloatTok{{-}0.0003029857322756325}\OtherTok{,}
+    \FloatTok{0.0005270272793447214}\OtherTok{,}
+    \FloatTok{0.0006280504011796022}\OtherTok{,}
+    \FloatTok{0.0011973902259579073}\OtherTok{,}
+    \FloatTok{0.0003324229512578777}\OtherTok{,}
+    \FloatTok{0.0001862157293620973}\OtherTok{,}
+    \FloatTok{{-}0.0003256858996585635}\OtherTok{,}
+    \FloatTok{9.40501683966003e{-}09}\OtherTok{,}
+    \FloatTok{{-}7.926629652667413e{-}09}\OtherTok{,}
+    \FloatTok{5.584805593369887e{-}09}\OtherTok{,}
+    \FloatTok{{-}2.8850304749794016e{-}09}\OtherTok{,}
+    \FloatTok{8.948861163518548e{-}10}\OtherTok{,}
+    \FloatTok{2.3503160466901048e{-}11}\OtherTok{,}
+    \FloatTok{3.6342452124378335e{-}10}\OtherTok{,}
+    \FloatTok{1.993746261851353e{-}12}\OtherTok{,}
+    \FloatTok{1.573353526123691e{-}10}\OtherTok{,}
+    \FloatTok{0.0017259949084695515}\OtherTok{,}
+    \FloatTok{{-}0.0012781176759696672}\OtherTok{,}
+    \FloatTok{{-}0.00010157123411018705}\OtherTok{,}
+    \FloatTok{0.00040614654155608396}\OtherTok{,}
+    \FloatTok{6.061192837446733e{-}05}\OtherTok{,}
+    \FloatTok{{-}0.0003781089323695344}\OtherTok{,}
+    \FloatTok{{-}0.00045437628551502117}\OtherTok{,}
+    \FloatTok{{-}0.00025005676979216856}\OtherTok{,}
+    \FloatTok{{-}5.2024555488422366e{-}05}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.162710092037959}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{2.774153815519883e{-}17}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}4.456521264533533e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{1.744273804573652e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.002678464139801658}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0022990970718057852}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.162710092037859}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{2.7741538155197314e{-}17}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{1.1371457925977123e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{1.744274661947852e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.0026787273304985687}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.00033069701149315373}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{verificationcomputations20260928_coupled_cell_smallbolt.jsonl}{%
+\subsection{verification/computations/\nolinkurl{20260928_coupled_cell_smallbolt.jsonl}}\label{verificationcomputations20260928_coupled_cell_smallbolt.jsonl}}
+
+Original SHA-256:
+\nolinkurl{7ce99292e47ee5285b4b92c5cd5b94e7337fbdcaf07abbd04e05d4000ce6c506}.
+
+\hypertarget{record-1-2}{%
+\subsubsection{Record 1}\label{record-1-2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"baseline"}\FunctionTok{,}
+  \DataTypeTok{"bolt"}\FunctionTok{:} \FloatTok{0.03}\FunctionTok{,}
+  \DataTypeTok{"radius"}\FunctionTok{:} \FloatTok{3.0}\FunctionTok{,}
+  \DataTypeTok{"count"}\FunctionTok{:} \DecValTok{12}\FunctionTok{,}
+  \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.00361849438625}\FunctionTok{,}
+  \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{0.0}\FunctionTok{,}
+  \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}5.968558980384842e{-}13}\FunctionTok{,}
+  \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{0.0}\FunctionTok{,}
+  \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.0}\FunctionTok{,}
+  \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.00353193768168647}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-2-2}{%
+\subsubsection{Record 2}\label{record-2-2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{0}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{4}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{2.653555068767914e{-}06}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{{-}0.004490687861389745}\OtherTok{,}
+    \FloatTok{{-}0.005260987263355894}\OtherTok{,}
+    \FloatTok{{-}0.007287599095472125}\OtherTok{,}
+    \FloatTok{{-}0.009356446994912289}\OtherTok{,}
+    \FloatTok{{-}0.005867008194439049}\OtherTok{,}
+    \FloatTok{{-}0.005944034214979562}\OtherTok{,}
+    \FloatTok{{-}0.0043707248548597085}\OtherTok{,}
+    \FloatTok{{-}0.002571947072077083}\OtherTok{,}
+    \FloatTok{{-}0.001721301712872644}\OtherTok{,}
+    \FloatTok{{-}0.0007491587132534137}\OtherTok{,}
+    \FloatTok{{-}0.00030410721720832855}\OtherTok{,}
+    \FloatTok{{-}6.092550707196252e{-}05}\OtherTok{,}
+    \FloatTok{7.324956266063745e{-}15}\OtherTok{,}
+    \FloatTok{1.3651118509846714e{-}14}\OtherTok{,}
+    \FloatTok{1.0099212569097096e{-}14}\OtherTok{,}
+    \FloatTok{2.5007244475209837e{-}14}\OtherTok{,}
+    \FloatTok{8.381271152942378e{-}15}\OtherTok{,}
+    \FloatTok{1.663831721053013e{-}14}\OtherTok{,}
+    \FloatTok{7.581946857073699e{-}15}\OtherTok{,}
+    \FloatTok{7.84901823575872e{-}15}\OtherTok{,}
+    \FloatTok{2.7115177403830018e{-}15}\OtherTok{,}
+    \FloatTok{3.6439623005336665e{-}15}\OtherTok{,}
+    \FloatTok{4.042533991004042e{-}16}\OtherTok{,}
+    \FloatTok{8.080529120371791e{-}16}\OtherTok{,}
+    \FloatTok{0.0009204382145939433}\OtherTok{,}
+    \FloatTok{0.0020681641440125874}\OtherTok{,}
+    \FloatTok{0.0030995501122402457}\OtherTok{,}
+    \FloatTok{0.003599220438087976}\OtherTok{,}
+    \FloatTok{0.003525182745835521}\OtherTok{,}
+    \FloatTok{0.0030232272641455833}\OtherTok{,}
+    \FloatTok{0.002314941605364847}\OtherTok{,}
+    \FloatTok{0.0015902125054009489}\OtherTok{,}
+    \FloatTok{0.0009683119046315649}\OtherTok{,}
+    \FloatTok{0.0005054125074927266}\OtherTok{,}
+    \FloatTok{0.0002092220978444977}\OtherTok{,}
+    \FloatTok{5.3336868970745186e{-}05}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.003604484077048}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{4.311277261860938e{-}32}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.1269207789155189e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{5.0172681175853825e{-}17}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.00020206494599951967}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0035319369714770935}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.003604484077047}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{4.311277252556818e{-}32}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.8474111129762605e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{5.0181045542447006e{-}17}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.0002020657383982885}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0005083135555760708}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-3-2}{%
+\subsubsection{Record 3}\label{record-3-2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{1}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{22}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{1.9726674746829466e{-}05}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{{-}0.004491050559192014}\OtherTok{,}
+    \FloatTok{{-}0.005260681321477379}\OtherTok{,}
+    \FloatTok{{-}0.007288009146483322}\OtherTok{,}
+    \FloatTok{{-}0.009356180124010993}\OtherTok{,}
+    \FloatTok{{-}0.00586717894400413}\OtherTok{,}
+    \FloatTok{{-}0.005943986116772265}\OtherTok{,}
+    \FloatTok{{-}0.004370792102990858}\OtherTok{,}
+    \FloatTok{{-}0.002571942420442276}\OtherTok{,}
+    \FloatTok{{-}0.0017213231447652877}\OtherTok{,}
+    \FloatTok{{-}0.000749154002548138}\OtherTok{,}
+    \FloatTok{{-}0.00030411255652871297}\OtherTok{,}
+    \FloatTok{{-}6.092290615412907e{-}05}\OtherTok{,}
+    \FloatTok{{-}1.4855118277971002e{-}07}\OtherTok{,}
+    \FloatTok{1.623264996892557e{-}07}\OtherTok{,}
+    \FloatTok{{-}1.5263441099056895e{-}07}\OtherTok{,}
+    \FloatTok{1.7943237988078738e{-}07}\OtherTok{,}
+    \FloatTok{{-}6.953080840287744e{-}08}\OtherTok{,}
+    \FloatTok{5.495374458455271e{-}08}\OtherTok{,}
+    \FloatTok{{-}3.0190924862669756e{-}08}\OtherTok{,}
+    \FloatTok{1.0879731297917957e{-}08}\OtherTok{,}
+    \FloatTok{{-}5.689588491304224e{-}09}\OtherTok{,}
+    \FloatTok{2.349209120410406e{-}09}\OtherTok{,}
+    \FloatTok{{-}6.181443204307298e{-}10}\OtherTok{,}
+    \FloatTok{2.9121479526934886e{-}10}\OtherTok{,}
+    \FloatTok{0.0009204275131215569}\OtherTok{,}
+    \FloatTok{0.0020682913391858447}\OtherTok{,}
+    \FloatTok{0.0030995560975022648}\OtherTok{,}
+    \FloatTok{0.0035993707857768366}\OtherTok{,}
+    \FloatTok{0.00352524980877004}\OtherTok{,}
+    \FloatTok{0.0030233276085767286}\OtherTok{,}
+    \FloatTok{0.0023150065891664982}\OtherTok{,}
+    \FloatTok{0.0015902645454112703}\OtherTok{,}
+    \FloatTok{0.0009683437497278015}\OtherTok{,}
+    \FloatTok{0.0005054308525472625}\OtherTok{,}
+    \FloatTok{0.0002092300551950223}\OtherTok{,}
+    \FloatTok{5.33404496036178e{-}05}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.003604484077725}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{2.807330951852997e{-}17}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.126917971584567e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{1.2307141088569293e{-}08}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.0002018261559998651}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0035319369638455223}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.003604484077723}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{2.8073309518498447e{-}17}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.8471303798810756e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{1.230799965680999e{-}08}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.00020182833363117326}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0005083135554175293}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-4-2}{%
+\subsubsection{Record 4}\label{record-4-2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{2}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{22}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{1.9169409331742877e{-}05}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{{-}0.004490329858289212}\OtherTok{,}
+    \FloatTok{{-}0.005261231962829399}\OtherTok{,}
+    \FloatTok{{-}0.007287171778722127}\OtherTok{,}
+    \FloatTok{{-}0.009356645665641646}\OtherTok{,}
+    \FloatTok{{-}0.0058668018014965476}\OtherTok{,}
+    \FloatTok{{-}0.005944058121386864}\OtherTok{,}
+    \FloatTok{{-}0.004370623835932059}\OtherTok{,}
+    \FloatTok{{-}0.0025719476463213014}\OtherTok{,}
+    \FloatTok{{-}0.001721266050273936}\OtherTok{,}
+    \FloatTok{{-}0.0007491656025578346}\OtherTok{,}
+    \FloatTok{{-}0.00030409861269235257}\OtherTok{,}
+    \FloatTok{{-}6.092995026593905e{-}05}\OtherTok{,}
+    \FloatTok{2.001215870529241e{-}08}\OtherTok{,}
+    \FloatTok{{-}2.310714131185853e{-}08}\OtherTok{,}
+    \FloatTok{2.1762573218028127e{-}08}\OtherTok{,}
+    \FloatTok{{-}2.8573253592193812e{-}08}\OtherTok{,}
+    \FloatTok{1.1295489951842021e{-}08}\OtherTok{,}
+    \FloatTok{{-}1.0750818891617072e{-}08}\OtherTok{,}
+    \FloatTok{5.916433917115971e{-}09}\OtherTok{,}
+    \FloatTok{{-}2.792766767693332e{-}09}\OtherTok{,}
+    \FloatTok{1.3376412448105938e{-}09}\OtherTok{,}
+    \FloatTok{{-}7.662465546424222e{-}10}\OtherTok{,}
+    \FloatTok{1.6111429525490054e{-}10}\OtherTok{,}
+    \FloatTok{{-}1.0622700667424763e{-}10}\OtherTok{,}
+    \FloatTok{0.0009204255400205436}\OtherTok{,}
+    \FloatTok{0.0020679938713923113}\OtherTok{,}
+    \FloatTok{0.003099454980795152}\OtherTok{,}
+    \FloatTok{0.003598984509181964}\OtherTok{,}
+    \FloatTok{0.003525020291468029}\OtherTok{,}
+    \FloatTok{0.0030230453122513344}\OtherTok{,}
+    \FloatTok{0.0023148112971596527}\OtherTok{,}
+    \FloatTok{0.0015901134413207245}\OtherTok{,}
+    \FloatTok{0.0009682511658084588}\OtherTok{,}
+    \FloatTok{0.0005053779510636538}\OtherTok{,}
+    \FloatTok{0.00020920724421625534}\OtherTok{,}
+    \FloatTok{5.333063724691187e{-}05}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.003604484077612}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{3.1704504069908613e{-}19}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.1269207472110148e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{1.4330459577940072e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.00020227260223008132}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0035319369790325463}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.003604484077611}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{3.1704504069816217e{-}19}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.8474079425258536e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{1.4331533353576243e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.0002022721031395018}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0005083135557331598}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-5-1}{%
+\subsubsection{Record 5}\label{record-5-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{3}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{30}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{7.481650271383711e{-}06}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{{-}0.004490572044165056}\OtherTok{,}
+    \FloatTok{{-}0.005261095039370194}\OtherTok{,}
+    \FloatTok{{-}0.007287467821112348}\OtherTok{,}
+    \FloatTok{{-}0.00935655025659903}\OtherTok{,}
+    \FloatTok{{-}0.005866953542018902}\OtherTok{,}
+    \FloatTok{{-}0.00594406053592462}\OtherTok{,}
+    \FloatTok{{-}0.004370703668470078}\OtherTok{,}
+    \FloatTok{{-}0.002571952429759659}\OtherTok{,}
+    \FloatTok{{-}0.0017212955671656682}\OtherTok{,}
+    \FloatTok{{-}0.0007491604994298648}\OtherTok{,}
+    \FloatTok{{-}0.00030410602099990316}\OtherTok{,}
+    \FloatTok{{-}6.092602006640602e{-}05}\OtherTok{,}
+    \FloatTok{4.266331846900384e{-}08}\OtherTok{,}
+    \FloatTok{{-}4.599509191104714e{-}08}\OtherTok{,}
+    \FloatTok{4.3550513907607024e{-}08}\OtherTok{,}
+    \FloatTok{{-}4.980030399090072e{-}08}\OtherTok{,}
+    \FloatTok{1.9409558647125017e{-}08}\OtherTok{,}
+    \FloatTok{{-}1.4351536216639773e{-}08}\OtherTok{,}
+    \FloatTok{7.971836298713833e{-}09}\OtherTok{,}
+    \FloatTok{{-}2.43602012257689e{-}09}\OtherTok{,}
+    \FloatTok{1.3467092956726133e{-}09}\OtherTok{,}
+    \FloatTok{{-}3.9147283703600045e{-}10}\OtherTok{,}
+    \FloatTok{1.2717925974902552e{-}10}\OtherTok{,}
+    \FloatTok{{-}3.517371880140456e{-}11}\OtherTok{,}
+    \FloatTok{0.0009204445468433191}\OtherTok{,}
+    \FloatTok{0.002068132166061841}\OtherTok{,}
+    \FloatTok{0.003099560910182534}\OtherTok{,}
+    \FloatTok{0.003599186944002351}\OtherTok{,}
+    \FloatTok{0.0035251766988120105}\OtherTok{,}
+    \FloatTok{0.003023208354305988}\OtherTok{,}
+    \FloatTok{0.002314932055475601}\OtherTok{,}
+    \FloatTok{0.001590203424663837}\OtherTok{,}
+    \FloatTok{0.0009683070678772357}\OtherTok{,}
+    \FloatTok{0.0005054092710591575}\OtherTok{,}
+    \FloatTok{0.00020922093926432523}\OtherTok{,}
+    \FloatTok{5.333623775656604e{-}05}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.00360448407714}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{2.3934127551898468e{-}18}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.1269205395742434e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{3.6008913737148773e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.00020214194389506912}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.003531936974128884}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.003604484077139}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{2.393412755188261e{-}18}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.8473871788487086e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{3.6009906553025054e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.00020214226119683303}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0005083135556311654}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-6-1}{%
+\subsubsection{Record 6}\label{record-6-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{4}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{19}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{7.508704450810512e{-}06}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{{-}0.004490592292012591}\OtherTok{,}
+    \FloatTok{{-}0.005261106975454754}\OtherTok{,}
+    \FloatTok{{-}0.007287500775537285}\OtherTok{,}
+    \FloatTok{{-}0.009356568879903285}\OtherTok{,}
+    \FloatTok{{-}0.005866982499699658}\OtherTok{,}
+    \FloatTok{{-}0.005944066799143203}\OtherTok{,}
+    \FloatTok{{-}0.00437072930426821}\OtherTok{,}
+    \FloatTok{{-}0.0025719493609125377}\OtherTok{,}
+    \FloatTok{{-}0.0017213088055723687}\OtherTok{,}
+    \FloatTok{{-}0.0007491556113517631}\OtherTok{,}
+    \FloatTok{{-}0.00030410979866506236}\OtherTok{,}
+    \FloatTok{{-}6.092398080858834e{-}05}\OtherTok{,}
+    \FloatTok{3.155773294885698e{-}08}\OtherTok{,}
+    \FloatTok{{-}3.4173932065782554e{-}08}\OtherTok{,}
+    \FloatTok{3.2347553497053346e{-}08}\OtherTok{,}
+    \FloatTok{{-}3.735928501836427e{-}08}\OtherTok{,}
+    \FloatTok{1.4580721754220725e{-}08}\OtherTok{,}
+    \FloatTok{{-}1.1025145042129133e{-}08}\OtherTok{,}
+    \FloatTok{6.1240196706271775e{-}09}\OtherTok{,}
+    \FloatTok{{-}1.97207190849637e{-}09}\OtherTok{,}
+    \FloatTok{1.0710554603799276e{-}09}\OtherTok{,}
+    \FloatTok{{-}3.4960296860745747e{-}10}\OtherTok{,}
+    \FloatTok{1.0482260843751941e{-}10}\OtherTok{,}
+    \FloatTok{{-}3.5133144569178706e{-}11}\OtherTok{,}
+    \FloatTok{0.0009204574693329888}\OtherTok{,}
+    \FloatTok{0.00206816947607264}\OtherTok{,}
+    \FloatTok{0.003099615539911117}\OtherTok{,}
+    \FloatTok{0.0035992514056064785}\OtherTok{,}
+    \FloatTok{0.003525242023677903}\OtherTok{,}
+    \FloatTok{0.0030232669120156103}\OtherTok{,}
+    \FloatTok{0.002314979461942353}\OtherTok{,}
+    \FloatTok{0.001590237790382322}\OtherTok{,}
+    \FloatTok{0.0009683289403806571}\OtherTok{,}
+    \FloatTok{0.0005054219816952877}\OtherTok{,}
+    \FloatTok{0.0002092263039297102}\OtherTok{,}
+    \FloatTok{5.333883383641528e{-}05}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.003604484077136}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{1.2729970216350169e{-}18}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.1269206516158168e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{2.6352812000166147e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.00020214178146861394}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0035319369735375356}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.003604484077133}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{1.2729970216340096e{-}18}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.7052898358540241e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{2.63560044904108e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.00020214213009138058}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0005083135556187533}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-7-1}{%
+\subsubsection{Record 7}\label{record-7-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{5}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{24}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{3.5781360508493722e{-}06}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{{-}0.0044907275283309345}\OtherTok{,}
+    \FloatTok{{-}0.005260971495399397}\OtherTok{,}
+    \FloatTok{{-}0.007287647831455834}\OtherTok{,}
+    \FloatTok{{-}0.009356441825418506}\OtherTok{,}
+    \FloatTok{{-}0.005867034992998055}\OtherTok{,}
+    \FloatTok{{-}0.0059440383702190165}\OtherTok{,}
+    \FloatTok{{-}0.0043707420648098445}\OtherTok{,}
+    \FloatTok{{-}0.0025719469337155748}\OtherTok{,}
+    \FloatTok{{-}0.0017213100731232624}\OtherTok{,}
+    \FloatTok{{-}0.0007491559730966567}\OtherTok{,}
+    \FloatTok{{-}0.00030410977424718004}\OtherTok{,}
+    \FloatTok{{-}6.09241295003956e{-}05}\OtherTok{,}
+    \FloatTok{2.300760066439116e{-}07}\OtherTok{,}
+    \FloatTok{{-}2.490067290276237e{-}07}\OtherTok{,}
+    \FloatTok{2.353068591317027e{-}07}\OtherTok{,}
+    \FloatTok{{-}2.71279936432284e{-}07}\OtherTok{,}
+    \FloatTok{1.05586006157183e{-}07}\OtherTok{,}
+    \FloatTok{{-}7.97069924583468e{-}08}\OtherTok{,}
+    \FloatTok{4.418105709462368e{-}08}\OtherTok{,}
+    \FloatTok{{-}1.4275001416105164e{-}08}\OtherTok{,}
+    \FloatTok{7.764607970188356e{-}09}\OtherTok{,}
+    \FloatTok{{-}2.581391782887411e{-}09}\OtherTok{,}
+    \FloatTok{7.73990031401309e{-}10}\OtherTok{,}
+    \FloatTok{{-}2.6903116190352834e{-}10}\OtherTok{,}
+    \FloatTok{0.0009204445549579041}\OtherTok{,}
+    \FloatTok{0.002068196442898371}\OtherTok{,}
+    \FloatTok{0.0030995817347092653}\OtherTok{,}
+    \FloatTok{0.0035992699164172567}\OtherTok{,}
+    \FloatTok{0.003525226031820113}\OtherTok{,}
+    \FloatTok{0.0030232691308928338}\OtherTok{,}
+    \FloatTok{0.0023149745811869428}\OtherTok{,}
+    \FloatTok{0.0015902365065071}\OtherTok{,}
+    \FloatTok{0.0009683274520347746}\OtherTok{,}
+    \FloatTok{0.0005054212993239016}\OtherTok{,}
+    \FloatTok{0.0002092259811124063}\OtherTok{,}
+    \FloatTok{5.333868458783853e{-}05}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.00360448407724}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{6.901779082380459e{-}17}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.1269138771364365e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{1.9311547749286985e{-}08}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.00020204465147068826}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.003531936970671698}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.003604484077238}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{6.901779082374916e{-}17}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.988829482220043e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{1.9312192705987396e{-}08}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.00020204555719298796}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0005083135555592809}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-8-1}{%
+\subsubsection{Record 8}\label{record-8-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{6}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{17}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{2.5599693621309704e{-}06}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{{-}0.00449067689723168}\OtherTok{,}
+    \FloatTok{{-}0.005261025229482185}\OtherTok{,}
+    \FloatTok{{-}0.007287591124825248}\OtherTok{,}
+    \FloatTok{{-}0.009356496671099604}\OtherTok{,}
+    \FloatTok{{-}0.005867013550763779}\OtherTok{,}
+    \FloatTok{{-}0.005944053054066318}\OtherTok{,}
+    \FloatTok{{-}0.004370736917083015}\OtherTok{,}
+    \FloatTok{{-}0.002571948670497756}\OtherTok{,}
+    \FloatTok{{-}0.0017213100497064338}\OtherTok{,}
+    \FloatTok{{-}0.0007491556789835053}\OtherTok{,}
+    \FloatTok{{-}0.00030411000693365505}\OtherTok{,}
+    \FloatTok{{-}6.0923951670294414e{-}05}\OtherTok{,}
+    \FloatTok{{-}2.5045869411927342e{-}08}\OtherTok{,}
+    \FloatTok{2.7211407861129334e{-}08}\OtherTok{,}
+    \FloatTok{{-}2.568974086244606e{-}08}\OtherTok{,}
+    \FloatTok{2.985638730339651e{-}08}\OtherTok{,}
+    \FloatTok{{-}1.1614988685594606e{-}08}\OtherTok{,}
+    \FloatTok{8.921650254080959e{-}09}\OtherTok{,}
+    \FloatTok{{-}4.928295723905784e{-}09}\OtherTok{,}
+    \FloatTok{1.6552898217720029e{-}09}\OtherTok{,}
+    \FloatTok{{-}8.838340817839525e{-}10}\OtherTok{,}
+    \FloatTok{3.1818235040642874e{-}10}\OtherTok{,}
+    \FloatTok{{-}9.003619445242105e{-}11}\OtherTok{,}
+    \FloatTok{3.5403848367523584e{-}11}\OtherTok{,}
+    \FloatTok{0.0009204498318982903}\OtherTok{,}
+    \FloatTok{0.0020681894680928247}\OtherTok{,}
+    \FloatTok{0.003099597239694852}\OtherTok{,}
+    \FloatTok{0.0035992671196396794}\OtherTok{,}
+    \FloatTok{0.0035252364065731373}\OtherTok{,}
+    \FloatTok{0.003023271604774325}\OtherTok{,}
+    \FloatTok{0.002314979714207882}\OtherTok{,}
+    \FloatTok{0.001590238957203399}\OtherTok{,}
+    \FloatTok{0.0009683295019211381}\OtherTok{,}
+    \FloatTok{0.0005054223194539174}\OtherTok{,}
+    \FloatTok{0.0002092264590287074}\OtherTok{,}
+    \FloatTok{5.333890680586763e{-}05}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.003604484077056}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{8.009570197019352e{-}19}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.126920698819817e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{2.0870158435578674e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.00020207984143593718}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.003531936971838065}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.003604484077054}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{8.009570197012118e{-}19}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.9895116505580835e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{2.0872209431403873e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.00020208052298629028}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0005083135555834873}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-9-1}{%
+\subsubsection{Record 9}\label{record-9-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{7}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{22}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{8.322950220465303e{-}06}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{{-}0.00449085982670202}\OtherTok{,}
+    \FloatTok{{-}0.005260858060325544}\OtherTok{,}
+    \FloatTok{{-}0.00728779859549747}\OtherTok{,}
+    \FloatTok{{-}0.009356339245896943}\OtherTok{,}
+    \FloatTok{{-}0.005867099458465225}\OtherTok{,}
+    \FloatTok{{-}0.0059440162796385995}\OtherTok{,}
+    \FloatTok{{-}0.004370769043442419}\OtherTok{,}
+    \FloatTok{{-}0.0025719427679900962}\OtherTok{,}
+    \FloatTok{{-}0.0017213191686052472}\OtherTok{,}
+    \FloatTok{{-}0.0007491533556703941}\OtherTok{,}
+    \FloatTok{{-}0.00030411200424918194}\OtherTok{,}
+    \FloatTok{{-}6.09230468384488e{-}05}\OtherTok{,}
+    \FloatTok{1.3892288441139707e{-}10}\OtherTok{,}
+    \FloatTok{{-}4.324435005217699e{-}12}\OtherTok{,}
+    \FloatTok{2.1128086310585333e{-}11}\OtherTok{,}
+    \FloatTok{3.239456559218358e{-}10}\OtherTok{,}
+    \FloatTok{{-}1.3743058490479775e{-}10}\OtherTok{,}
+    \FloatTok{3.3075815237446376e{-}10}\OtherTok{,}
+    \FloatTok{{-}1.771385313932405e{-}10}\OtherTok{,}
+    \FloatTok{1.495773508259748e{-}10}\OtherTok{,}
+    \FloatTok{{-}6.297297246858864e{-}11}\OtherTok{,}
+    \FloatTok{5.526677194409265e{-}11}\OtherTok{,}
+    \FloatTok{{-}9.474379775932917e{-}12}\OtherTok{,}
+    \FloatTok{8.696465816123846e{-}12}\OtherTok{,}
+    \FloatTok{0.0009204408607525769}\OtherTok{,}
+    \FloatTok{0.0020682425086151466}\OtherTok{,}
+    \FloatTok{0.0030995844149531546}\OtherTok{,}
+    \FloatTok{0.0035993247729643107}\OtherTok{,}
+    \FloatTok{0.0035252507616810647}\OtherTok{,}
+    \FloatTok{0.0030233060727675766}\OtherTok{,}
+    \FloatTok{0.0023149984630497925}\OtherTok{,}
+    \FloatTok{0.001590255885079435}\OtherTok{,}
+    \FloatTok{0.0009683391427517173}\OtherTok{,}
+    \FloatTok{0.0005054282749491778}\OtherTok{,}
+    \FloatTok{0.00020922888451105153}\OtherTok{,}
+    \FloatTok{5.3340096404558186e{-}05}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.0036044840771545}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{4.2089025760853897e{-}22}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.12692077887343e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{4.036030861815879e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.00020195855293427578}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0035319369677543804}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.003604484077153}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{4.208902576114342e{-}22}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.8474111087673579e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{4.0360288351782435e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.00020195997452155003}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0005083135554986548}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-10}{%
+\subsubsection{Record 10}\label{record-10}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{8}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{19}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{2.5544881232475322e{-}05}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{{-}0.004490394975583429}\OtherTok{,}
+    \FloatTok{{-}0.0052614824227246206}\OtherTok{,}
+    \FloatTok{{-}0.007287337481648795}\OtherTok{,}
+    \FloatTok{{-}0.009356981108038903}\OtherTok{,}
+    \FloatTok{{-}0.005866998328151172}\OtherTok{,}
+    \FloatTok{{-}0.005944200803177177}\OtherTok{,}
+    \FloatTok{{-}0.0043708038688136915}\OtherTok{,}
+    \FloatTok{{-}0.0025719688658032273}\OtherTok{,}
+    \FloatTok{{-}0.0017213519573381184}\OtherTok{,}
+    \FloatTok{{-}0.0007491457874978377}\OtherTok{,}
+    \FloatTok{{-}0.00030412202025468285}\OtherTok{,}
+    \FloatTok{{-}6.0916925708471274e{-}05}\OtherTok{,}
+    \FloatTok{7.222181331458329e{-}07}\OtherTok{,}
+    \FloatTok{{-}7.761107084156725e{-}07}\OtherTok{,}
+    \FloatTok{7.30749125849806e{-}07}\OtherTok{,}
+    \FloatTok{{-}8.280592672989301e{-}07}\OtherTok{,}
+    \FloatTok{3.1952998826207455e{-}07}\OtherTok{,}
+    \FloatTok{{-}2.3318350049753023e{-}07}\OtherTok{,}
+    \FloatTok{1.2849630809078485e{-}07}\OtherTok{,}
+    \FloatTok{{-}3.901372220052735e{-}08}\OtherTok{,}
+    \FloatTok{2.17846750232781e{-}08}\OtherTok{,}
+    \FloatTok{{-}6.556226213529338e{-}09}\OtherTok{,}
+    \FloatTok{2.1738118776274393e{-}09}\OtherTok{,}
+    \FloatTok{{-}6.732254718699924e{-}10}\OtherTok{,}
+    \FloatTok{0.0009205453687546525}\OtherTok{,}
+    \FloatTok{0.0020682804141983245}\OtherTok{,}
+    \FloatTok{0.003099939174713619}\OtherTok{,}
+    \FloatTok{0.0035995044349805905}\OtherTok{,}
+    \FloatTok{0.0035255716082093816}\OtherTok{,}
+    \FloatTok{0.003023525767331534}\OtherTok{,}
+    \FloatTok{0.0023152006773190423}\OtherTok{,}
+    \FloatTok{0.0015903915621364778}\OtherTok{,}
+    \FloatTok{0.0009684275477309024}\OtherTok{,}
+    \FloatTok{0.000505476489996704}\OtherTok{,}
+    \FloatTok{0.00020925013909206563}\OtherTok{,}
+    \FloatTok{5.334862829644339e{-}05}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.0036044840799985}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{7.389475643072099e{-}16}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.1268468841590882e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{6.217684372646904e{-}08}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.00020235286446678875}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.003531936978227015}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.003604484079997}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{7.389475643067172e{-}16}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.8400216373331934e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{6.218805975474524e{-}08}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.00020235208239962596}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0005083135557156956}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-11}{%
+\subsubsection{Record 11}\label{record-11}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{9}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{25}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{1.443764102528444e{-}05}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{{-}0.004490907742691468}\OtherTok{,}
+    \FloatTok{{-}0.005260723910635702}\OtherTok{,}
+    \FloatTok{{-}0.007287822387925026}\OtherTok{,}
+    \FloatTok{{-}0.009356190958001708}\OtherTok{,}
+    \FloatTok{{-}0.005867065152501666}\OtherTok{,}
+    \FloatTok{{-}0.005943972192733581}\OtherTok{,}
+    \FloatTok{{-}0.004370716679032363}\OtherTok{,}
+    \FloatTok{{-}0.0025719434009576947}\OtherTok{,}
+    \FloatTok{{-}0.0017212896866482534}\OtherTok{,}
+    \FloatTok{{-}0.0007491633483908474}\OtherTok{,}
+    \FloatTok{{-}0.00030410346057680576}\OtherTok{,}
+    \FloatTok{{-}6.0927796780580175e{-}05}\OtherTok{,}
+    \FloatTok{4.0279965708224384e{-}08}\OtherTok{,}
+    \FloatTok{{-}4.6929939066336445e{-}08}\OtherTok{,}
+    \FloatTok{4.39577570714189e{-}08}\OtherTok{,}
+    \FloatTok{{-}5.862453122266474e{-}08}\OtherTok{,}
+    \FloatTok{2.306793468215865e{-}08}\OtherTok{,}
+    \FloatTok{{-}2.2580949881004298e{-}08}\OtherTok{,}
+    \FloatTok{1.2359213543954887e{-}08}\OtherTok{,}
+    \FloatTok{{-}6.090979185203226e{-}09}\OtherTok{,}
+    \FloatTok{2.8876836958738106e{-}09}\OtherTok{,}
+    \FloatTok{{-}1.7401267815291976e{-}09}\OtherTok{,}
+    \FloatTok{3.5948580641511515e{-}10}\OtherTok{,}
+    \FloatTok{{-}2.481334932251256e{-}10}\OtherTok{,}
+    \FloatTok{0.0009203986383776122}\OtherTok{,}
+    \FloatTok{0.0020681691757722526}\OtherTok{,}
+    \FloatTok{0.0030994220748268167}\OtherTok{,}
+    \FloatTok{0.0035991768540697363}\OtherTok{,}
+    \FloatTok{0.003525075740136078}\OtherTok{,}
+    \FloatTok{0.0030231612382521783}\OtherTok{,}
+    \FloatTok{0.0023148770061130657}\OtherTok{,}
+    \FloatTok{0.0015901696581523716}\OtherTok{,}
+    \FloatTok{0.000968283924766661}\OtherTok{,}
+    \FloatTok{0.000505396767594161}\OtherTok{,}
+    \FloatTok{0.00020921538407282482}\OtherTok{,}
+    \FloatTok{5.333390318791592e{-}05}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.003604484077374}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{1.260998896877627e{-}18}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.1269206528156292e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{2.8474083635854958e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.00020188685851893257}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0035319369669336263}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.003604484077372}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{1.2609988968733602e{-}18}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.9895070501393118e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{2.8474555736047153e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.00020188861965372295}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0005083135554819251}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-12}{%
+\subsubsection{Record 12}\label{record-12}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{10}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{19}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{1.9388087462645963e{-}05}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{{-}0.004491089001945731}\OtherTok{,}
+    \FloatTok{{-}0.005260721194064111}\OtherTok{,}
+    \FloatTok{{-}0.007288073361171342}\OtherTok{,}
+    \FloatTok{{-}0.00935624369729935}\OtherTok{,}
+    \FloatTok{{-}0.005867235537137846}\OtherTok{,}
+    \FloatTok{{-}0.005944016563639494}\OtherTok{,}
+    \FloatTok{{-}0.004370839811887616}\OtherTok{,}
+    \FloatTok{{-}0.002571945864270069}\OtherTok{,}
+    \FloatTok{{-}0.0017213461124739732}\OtherTok{,}
+    \FloatTok{{-}0.0007491480373227991}\OtherTok{,}
+    \FloatTok{{-}0.0003041189333693249}\OtherTok{,}
+    \FloatTok{{-}6.091939727554258e{-}05}\OtherTok{,}
+    \FloatTok{9.422848198076903e{-}08}\OtherTok{,}
+    \FloatTok{{-}1.0451826682971345e{-}07}\OtherTok{,}
+    \FloatTok{9.364911692491055e{-}08}\OtherTok{,}
+    \FloatTok{{-}1.110750771028516e{-}07}\OtherTok{,}
+    \FloatTok{3.9070918546396853e{-}08}\OtherTok{,}
+    \FloatTok{{-}3.219526211904667e{-}08}\OtherTok{,}
+    \FloatTok{1.4757426213441848e{-}08}\OtherTok{,}
+    \FloatTok{{-}6.677663769499069e{-}09}\OtherTok{,}
+    \FloatTok{2.6869168157199483e{-}09}\OtherTok{,}
+    \FloatTok{{-}2.0132681820354526e{-}09}\OtherTok{,}
+    \FloatTok{3.934520488800222e{-}10}\OtherTok{,}
+    \FloatTok{{-}3.812944451605639e{-}10}\OtherTok{,}
+    \FloatTok{0.0009204554974612785}\OtherTok{,}
+    \FloatTok{0.0020683695066246624}\OtherTok{,}
+    \FloatTok{0.0030996731495744182}\OtherTok{,}
+    \FloatTok{0.0035995065205373105}\OtherTok{,}
+    \FloatTok{0.0035253879525578504}\OtherTok{,}
+    \FloatTok{0.0030234504433214173}\OtherTok{,}
+    \FloatTok{0.0023151056703691634}\OtherTok{,}
+    \FloatTok{0.0015903355635219967}\OtherTok{,}
+    \FloatTok{0.00096838892886535}\OtherTok{,}
+    \FloatTok{0.0005054562463345385}\OtherTok{,}
+    \FloatTok{0.00020924108142801454}\OtherTok{,}
+    \FloatTok{5.3345218418187154e{-}05}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.003604484077672}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{1.4192138923011355e{-}17}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.1269193597016266e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{8.520890656460768e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.0002018290985189379}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.003531936963147317}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.0036044840776706}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{1.4192138922991224e{-}17}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.8472691915870305e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{8.521222635022515e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.00020183129238639767}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0005083135554028356}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-13}{%
+\subsubsection{Record 13}\label{record-13}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{11}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{14}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{2.7692618229143e{-}05}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{{-}0.0044912695176872915}\OtherTok{,}
+    \FloatTok{{-}0.005260629320018582}\OtherTok{,}
+    \FloatTok{{-}0.007288289359293955}\OtherTok{,}
+    \FloatTok{{-}0.009356196681098505}\OtherTok{,}
+    \FloatTok{{-}0.005867342024726536}\OtherTok{,}
+    \FloatTok{{-}0.005944034626020066}\OtherTok{,}
+    \FloatTok{{-}0.004370893885231735}\OtherTok{,}
+    \FloatTok{{-}0.0025719565283725547}\OtherTok{,}
+    \FloatTok{{-}0.001721365189527988}\OtherTok{,}
+    \FloatTok{{-}0.0007491469663175838}\OtherTok{,}
+    \FloatTok{{-}0.0003041234228160157}\OtherTok{,}
+    \FloatTok{{-}6.091702168380573e{-}05}\OtherTok{,}
+    \FloatTok{{-}2.662452940686578e{-}07}\OtherTok{,}
+    \FloatTok{3.509363397421831e{-}07}\OtherTok{,}
+    \FloatTok{{-}3.016403242326566e{-}07}\OtherTok{,}
+    \FloatTok{4.857901860749728e{-}07}\OtherTok{,}
+    \FloatTok{{-}1.7534132878431972e{-}07}\OtherTok{,}
+    \FloatTok{2.2821224445585846e{-}07}\OtherTok{,}
+    \FloatTok{{-}1.1325119549124579e{-}07}\OtherTok{,}
+    \FloatTok{8.021668943859659e{-}08}\OtherTok{,}
+    \FloatTok{{-}3.396285102250062e{-}08}\OtherTok{,}
+    \FloatTok{2.931715601199881e{-}08}\OtherTok{,}
+    \FloatTok{{-}5.364650921624147e{-}09}\OtherTok{,}
+    \FloatTok{4.915834771608219e{-}09}\OtherTok{,}
+    \FloatTok{0.0009204690519598967}\OtherTok{,}
+    \FloatTok{0.0020684752531768048}\OtherTok{,}
+    \FloatTok{0.0030997515421791804}\OtherTok{,}
+    \FloatTok{0.003599658481258253}\OtherTok{,}
+    \FloatTok{0.003525505413752121}\OtherTok{,}
+    \FloatTok{0.003023570900916677}\OtherTok{,}
+    \FloatTok{0.0023151956167833704}\OtherTok{,}
+    \FloatTok{0.001590401149383697}\OtherTok{,}
+    \FloatTok{0.0009684298076557985}\OtherTok{,}
+    \FloatTok{0.0005054785151885629}\OtherTok{,}
+    \FloatTok{0.0002092508895717671}\OtherTok{,}
+    \FloatTok{5.334886575647748e{-}05}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.003604484078448}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{4.284593492475337e{-}17}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.1269164943220264e{-}11}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{1.6475667887648072e{-}08}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.00020172839085644408}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.003531936959956878}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.003604484078447}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{4.2845934924261755e{-}17}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.8469826536270177e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{1.6475716172086847e{-}08}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.0002017311470317008}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0005083135553365216}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{verificationcomputations20260928_coupled_cell_large.jsonl}{%
+\subsection{verification/computations/\nolinkurl{20260928_coupled_cell_large.jsonl}}\label{verificationcomputations20260928_coupled_cell_large.jsonl}}
+
+Original SHA-256:
+\nolinkurl{6abdfbf5b3c3ac387348824efb7ed03bf1661ae6e56eb9d8985f8e611e29b5c3}.
+
+\hypertarget{record-1-3}{%
+\subsubsection{Record 1}\label{record-1-3}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"baseline"}\FunctionTok{,}
+  \DataTypeTok{"bolt"}\FunctionTok{:} \FloatTok{0.5}\FunctionTok{,}
+  \DataTypeTok{"radius"}\FunctionTok{:} \FloatTok{8.0}\FunctionTok{,}
+  \DataTypeTok{"count"}\FunctionTok{:} \DecValTok{10}\FunctionTok{,}
+  \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{5.078945704833261}\FunctionTok{,}
+  \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{0.0}\FunctionTok{,}
+  \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}2.355591277591884e{-}10}\FunctionTok{,}
+  \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{0.0}\FunctionTok{,}
+  \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.0}\FunctionTok{,}
+  \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0021284982140865605}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-2-3}{%
+\subsubsection{Record 2}\label{record-2-3}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{0}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{5}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{6.673266082873553e{-}06}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{{-}0.003480830822227961}\OtherTok{,}
+    \FloatTok{{-}0.006902540603985874}\OtherTok{,}
+    \FloatTok{{-}0.00929678850553718}\OtherTok{,}
+    \FloatTok{{-}0.011335574075119651}\OtherTok{,}
+    \FloatTok{{-}0.006571994806364876}\OtherTok{,}
+    \FloatTok{{-}0.006546152829977932}\OtherTok{,}
+    \FloatTok{{-}0.0046579470849001155}\OtherTok{,}
+    \FloatTok{{-}0.0027388705715620785}\OtherTok{,}
+    \FloatTok{{-}0.0016341340364266336}\OtherTok{,}
+    \FloatTok{{-}0.0007452602990180992}\OtherTok{,}
+    \FloatTok{{-}1.9493501872940755e{-}16}\OtherTok{,}
+    \FloatTok{{-}1.1813537231539538e{-}16}\OtherTok{,}
+    \FloatTok{{-}2.3059912058052037e{-}16}\OtherTok{,}
+    \FloatTok{{-}2.8574173574203054e{-}16}\OtherTok{,}
+    \FloatTok{{-}1.3045637087884426e{-}16}\OtherTok{,}
+    \FloatTok{{-}2.6414058796943316e{-}16}\OtherTok{,}
+    \FloatTok{{-}2.7826167572798155e{-}17}\OtherTok{,}
+    \FloatTok{{-}1.5189788278077455e{-}16}\OtherTok{,}
+    \FloatTok{2.114906412002896e{-}17}\OtherTok{,}
+    \FloatTok{{-}5.623510789656096e{-}17}\OtherTok{,}
+    \FloatTok{0.0016151095389290164}\OtherTok{,}
+    \FloatTok{0.00073774566938328}\OtherTok{,}
+    \FloatTok{0.002354672788947048}\OtherTok{,}
+    \FloatTok{0.002970199211048816}\OtherTok{,}
+    \FloatTok{0.002642409299583564}\OtherTok{,}
+    \FloatTok{0.0019973075859198793}\OtherTok{,}
+    \FloatTok{0.001391505228887489}\OtherTok{,}
+    \FloatTok{0.0008951578563372643}\OtherTok{,}
+    \FloatTok{0.0005398114725592204}\OtherTok{,}
+    \FloatTok{0.00026573864411657156}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{5.0652741367490925}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{1.520326836201439e{-}32}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.507032720837742e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{1.178101261210279e{-}17}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.0017552036231830881}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.002128503293891496}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{5.065274136748879}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{1.5203268362757504e{-}32}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{1.5203268362757504e{-}32}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{1.17902762352138e{-}17}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.0017552205149706547}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.00030607797017590866}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-3-3}{%
+\subsubsection{Record 3}\label{record-3-3}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{1}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{27}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{2.9148689842670756e{-}05}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{{-}0.0034810638092641322}\OtherTok{,}
+    \FloatTok{{-}0.006902322393900361}\OtherTok{,}
+    \FloatTok{{-}0.009296997001457289}\OtherTok{,}
+    \FloatTok{{-}0.011335432265290423}\OtherTok{,}
+    \FloatTok{{-}0.006572039554161729}\OtherTok{,}
+    \FloatTok{{-}0.006546139226346428}\OtherTok{,}
+    \FloatTok{{-}0.004657952991673542}\OtherTok{,}
+    \FloatTok{{-}0.002738870893579214}\OtherTok{,}
+    \FloatTok{{-}0.0016341348945211847}\OtherTok{,}
+    \FloatTok{{-}0.0007452605746373399}\OtherTok{,}
+    \FloatTok{3.666197940098811e{-}07}\OtherTok{,}
+    \FloatTok{{-}3.170160788177529e{-}07}\OtherTok{,}
+    \FloatTok{2.532537871241265e{-}07}\OtherTok{,}
+    \FloatTok{{-}1.5600569055231627e{-}07}\OtherTok{,}
+    \FloatTok{6.101059392302315e{-}08}\OtherTok{,}
+    \FloatTok{{-}6.832552369946995e{-}09}\OtherTok{,}
+    \FloatTok{1.96528189354058e{-}08}\OtherTok{,}
+    \FloatTok{6.964435875686373e{-}09}\OtherTok{,}
+    \FloatTok{2.5572552129516198e{-}09}\OtherTok{,}
+    \FloatTok{3.2632932991421045e{-}09}\OtherTok{,}
+    \FloatTok{0.0016150917531307727}\OtherTok{,}
+    \FloatTok{0.0007377901578121807}\OtherTok{,}
+    \FloatTok{0.0023546272988862987}\OtherTok{,}
+    \FloatTok{0.0029702330023459677}\OtherTok{,}
+    \FloatTok{0.0026423947417533494}\OtherTok{,}
+    \FloatTok{0.001997313867897594}\OtherTok{,}
+    \FloatTok{0.0013915048792481337}\OtherTok{,}
+    \FloatTok{0.0008951584125200991}\OtherTok{,}
+    \FloatTok{0.0005398117582573858}\OtherTok{,}
+    \FloatTok{0.0002657388052191079}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{5.065274136750738}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{1.185812229135499e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.5069141396148285e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{5.723885058167878e{-}08}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.0017550737170027987}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0021285032917087274}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{5.065274136750524}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{1.185812229136338e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{1.185812229136338e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{5.72389093053669e{-}08}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.001755089562438342}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.00030607797013069483}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-4-3}{%
+\subsubsection{Record 4}\label{record-4-3}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{2}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{22}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{5.698983268900711e{-}05}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{{-}0.00348132492545099}\OtherTok{,}
+    \FloatTok{{-}0.006902073467322692}\OtherTok{,}
+    \FloatTok{{-}0.009297241798523821}\OtherTok{,}
+    \FloatTok{{-}0.011335252937618764}\OtherTok{,}
+    \FloatTok{{-}0.006572101321554192}\OtherTok{,}
+    \FloatTok{{-}0.0065461139119339}\OtherTok{,}
+    \FloatTok{{-}0.0046579639221503814}\OtherTok{,}
+    \FloatTok{{-}0.0027388695747839905}\OtherTok{,}
+    \FloatTok{{-}0.001634136197385994}\OtherTok{,}
+    \FloatTok{{-}0.0007452607678206236}\OtherTok{,}
+    \FloatTok{7.493876139083028e{-}08}\OtherTok{,}
+    \FloatTok{{-}6.019954785104907e{-}08}\OtherTok{,}
+    \FloatTok{4.521690769215674e{-}08}\OtherTok{,}
+    \FloatTok{{-}1.6420361090344375e{-}08}\OtherTok{,}
+    \FloatTok{6.652827652368245e{-}09}\OtherTok{,}
+    \FloatTok{5.3908805164340555e{-}09}\OtherTok{,}
+    \FloatTok{1.4189877255797378e{-}09}\OtherTok{,}
+    \FloatTok{2.984991270178824e{-}09}\OtherTok{,}
+    \FloatTok{1.99179055837976e{-}10}\OtherTok{,}
+    \FloatTok{9.615824415474043e{-}10}\OtherTok{,}
+    \FloatTok{0.001615073322808136}\OtherTok{,}
+    \FloatTok{0.0007378365676237656}\OtherTok{,}
+    \FloatTok{0.0023545789758329704}\OtherTok{,}
+    \FloatTok{0.0029702700733546927}\OtherTok{,}
+    \FloatTok{0.0026423773261128928}\OtherTok{,}
+    \FloatTok{0.0019973222919539677}\OtherTok{,}
+    \FloatTok{0.0013915033181656816}\OtherTok{,}
+    \FloatTok{0.0008951595916183605}\OtherTok{,}
+    \FloatTok{0.0005398118378667181}\OtherTok{,}
+    \FloatTok{0.00026573903146347974}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{5.06527413675134}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{7.0684271089812564e{-}15}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.5070256524106332e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{1.3790532604186818e{-}08}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.0017549346590397333}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0021285032890496643}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{5.065274136751124}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{7.0684271089872754e{-}15}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{7.0684271089872754e{-}15}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{1.3790585511054742e{-}08}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.0017549492748767965}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0003060779700755966}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-5-2}{%
+\subsubsection{Record 5}\label{record-5-2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{3}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{22}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{2.633436271670176e{-}05}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{{-}0.0034806723895377378}\OtherTok{,}
+    \FloatTok{{-}0.0069026955375950496}\OtherTok{,}
+    \FloatTok{{-}0.00929663019581295}\OtherTok{,}
+    \FloatTok{{-}0.011335700833276804}\OtherTok{,}
+    \FloatTok{{-}0.00657194721444056}\OtherTok{,}
+    \FloatTok{{-}0.0065461769354962325}\OtherTok{,}
+    \FloatTok{{-}0.004657936799276049}\OtherTok{,}
+    \FloatTok{{-}0.0027388727875616407}\OtherTok{,}
+    \FloatTok{{-}0.0016341329865784413}\OtherTok{,}
+    \FloatTok{{-}0.0007452602765068125}\OtherTok{,}
+    \FloatTok{{-}5.757621548314778e{-}07}\OtherTok{,}
+    \FloatTok{4.837372302543643e{-}07}\OtherTok{,}
+    \FloatTok{{-}3.7758336252191543e{-}07}\OtherTok{,}
+    \FloatTok{1.9736138767708745e{-}07}\OtherTok{,}
+    \FloatTok{{-}7.781259284871141e{-}08}\OtherTok{,}
+    \FloatTok{{-}1.0309529001950918e{-}08}\OtherTok{,}
+    \FloatTok{{-}2.2727956636272452e{-}08}\OtherTok{,}
+    \FloatTok{{-}1.580040115613923e{-}08}\OtherTok{,}
+    \FloatTok{{-}2.9886610957335486e{-}09}\OtherTok{,}
+    \FloatTok{{-}6.038744784105761e{-}09}\OtherTok{,}
+    \FloatTok{0.0016151194046468568}\OtherTok{,}
+    \FloatTok{0.000737720584116857}\OtherTok{,}
+    \FloatTok{0.002354699818008346}\OtherTok{,}
+    \FloatTok{0.0029701774550237752}\OtherTok{,}
+    \FloatTok{0.0026424209057029327}\OtherTok{,}
+    \FloatTok{0.00199730129055837}\OtherTok{,}
+    \FloatTok{0.001391507236410845}\OtherTok{,}
+    \FloatTok{0.0008951566835812925}\OtherTok{,}
+    \FloatTok{0.0005398116391523933}\OtherTok{,}
+    \FloatTok{0.0002657384792830716}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{5.065274136752111}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{3.393064997065387e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.5066934143380356e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{9.624530977182511e{-}08}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.001755282271049447}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.002128503295690338}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{5.065274136751896}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{3.393064997068007e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{3.393064997068007e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{9.624531440249432e{-}08}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.001755299959124198}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.00030607797021319676}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{record-6-2}{%
+\subsubsection{Record 6}\label{record-6-2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"fit"}\FunctionTok{,}
+  \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{4}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{21}\FunctionTok{,}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{2.3507349763382953e{-}05}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{{-}0.00348101095808103}\OtherTok{,}
+    \FloatTok{{-}0.00690237273920669}\OtherTok{,}
+    \FloatTok{{-}0.009296947590273703}\OtherTok{,}
+    \FloatTok{{-}0.01133546832315959}\OtherTok{,}
+    \FloatTok{{-}0.00657202721519839}\OtherTok{,}
+    \FloatTok{{-}0.006546144206065701}\OtherTok{,}
+    \FloatTok{{-}0.004657950864329582}\OtherTok{,}
+    \FloatTok{{-}0.0027388711250846596}\OtherTok{,}
+    \FloatTok{{-}0.0016341346457475429}\OtherTok{,}
+    \FloatTok{{-}0.0007452605321523966}\OtherTok{,}
+    \FloatTok{{-}4.208991626571813e{-}09}\OtherTok{,}
+    \FloatTok{4.890620907169347e{-}09}\OtherTok{,}
+    \FloatTok{{-}4.714967861992845e{-}09}\OtherTok{,}
+    \FloatTok{6.131275958765019e{-}09}\OtherTok{,}
+    \FloatTok{{-}2.4109659781730693e{-}09}\OtherTok{,}
+    \FloatTok{2.1152802187102657e{-}09}\OtherTok{,}
+    \FloatTok{{-}1.0852815334537133e{-}09}\OtherTok{,}
+    \FloatTok{4.128955817172537e{-}10}\OtherTok{,}
+    \FloatTok{{-}1.511480374963499e{-}10}\OtherTok{,}
+    \FloatTok{5.240362807952545e{-}11}\OtherTok{,}
+    \FloatTok{0.0016150955037286027}\OtherTok{,}
+    \FloatTok{0.0007377807332957181}\OtherTok{,}
+    \FloatTok{0.002354637125401333}\OtherTok{,}
+    \FloatTok{0.0029702255008659654}\OtherTok{,}
+    \FloatTok{0.0026423982727878056}\OtherTok{,}
+    \FloatTok{0.00199731218949527}\OtherTok{,}
+    \FloatTok{0.0013915051912138183}\OtherTok{,}
+    \FloatTok{0.0008951581888549556}\OtherTok{,}
+    \FloatTok{0.0005398117407346913}\OtherTok{,}
+    \FloatTok{0.00026573876349749375}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"coarse"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{5.065274136749454}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{1.22778724055128e{-}18}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{{-}1.5070327196099548e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{3.07046399434812e{-}10}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.0017551019464581929}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.0021285032922439932}
+  \FunctionTok{\},}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{5.06527413674924}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{1.2277872405522222e{-}18}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{1.2277872405522222e{-}18}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{3.0704630758942575e{-}10}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.0017551180401328096}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.00030607797014178573}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{verificationcomputations20260928_coupled_negative_mode.json}{%
+\subsection{verification/computations/\nolinkurl{20260928_coupled_negative_mode.json}}\label{verificationcomputations20260928_coupled_negative_mode.json}}
+
+Original SHA-256:
+\nolinkurl{116b0c60d5615392699695ccc97ec0c2a0c803ec373bc700e44ab16801970d39}.
+
+\hypertarget{record-1-4}{%
+\subsubsection{Record 1}\label{record-1-4}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"kind"}\FunctionTok{:} \StringTok{"actual finite{-}profile test; floating{-}point, not an energy certificate"}\FunctionTok{,}
+  \DataTypeTok{"bolt"}\FunctionTok{:} \FloatTok{0.2}\FunctionTok{,}
+  \DataTypeTok{"radius"}\FunctionTok{:} \FloatTok{4.0}\FunctionTok{,}
+  \DataTypeTok{"count"}\FunctionTok{:} \DecValTok{8}\FunctionTok{,}
+  \DataTypeTok{"parameter\_order"}\FunctionTok{:} \StringTok{"v[8], w[8], phi[8] as in tools/\nolinkurl{search_coupled_cell.py}"}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{0.702923509582947}\OtherTok{,}
+    \FloatTok{{-}0.5033666404306336}\OtherTok{,}
+    \FloatTok{0.11570720339483911}\OtherTok{,}
+    \FloatTok{0.054270871420732746}\OtherTok{,}
+    \FloatTok{{-}0.04110088954495145}\OtherTok{,}
+    \FloatTok{{-}0.03338994752846746}\OtherTok{,}
+    \FloatTok{{-}0.010266835388925812}\OtherTok{,}
+    \FloatTok{0.005756070823178598}\OtherTok{,}
+    \FloatTok{0.2601035269625085}\OtherTok{,}
+    \FloatTok{{-}0.20645371146755823}\OtherTok{,}
+    \FloatTok{0.09608697586293655}\OtherTok{,}
+    \FloatTok{{-}0.023287451273375726}\OtherTok{,}
+    \FloatTok{{-}0.0036869434302575026}\OtherTok{,}
+    \FloatTok{0.004221947703958626}\OtherTok{,}
+    \FloatTok{{-}0.0044973425646330336}\OtherTok{,}
+    \FloatTok{0.0023704772602304667}\OtherTok{,}
+    \FloatTok{0.14768347130527584}\OtherTok{,}
+    \FloatTok{{-}0.2770914209404472}\OtherTok{,}
+    \FloatTok{0.16815747718947097}\OtherTok{,}
+    \FloatTok{0.0014589566836315006}\OtherTok{,}
+    \FloatTok{{-}0.030556994285664985}\OtherTok{,}
+    \FloatTok{0.011609297573933324}\OtherTok{,}
+    \FloatTok{0.009517813965645749}\OtherTok{,}
+    \FloatTok{0.0010831572427387282}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"finite\_amplitude"}\FunctionTok{:} \FloatTok{0.19639015258580517}\FunctionTok{,}
+  \DataTypeTok{"\nolinkurl{base_cost_over_2pi2}"}\FunctionTok{:} \FloatTok{12.354924696876633}\FunctionTok{,}
+  \DataTypeTok{"\nolinkurl{finite_cost_over_2pi2}"}\FunctionTok{:} \FloatTok{12.335535274566897}\FunctionTok{,}
+  \DataTypeTok{"threshold"}\FunctionTok{:} \DecValTok{4}\FunctionTok{,}
+  \DataTypeTok{"construction"}\FunctionTok{:} \StringTok{"Biaxial cost minimization with a negative triaxial Hessian constraint, then finite amplitude minimization in that direction. Setting w coefficients to zero recovers the biaxial base."}\FunctionTok{,}
+  \DataTypeTok{"search"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"quadrature"}\FunctionTok{:} \OtherTok{[}
+      \DecValTok{36}\OtherTok{,}
+      \DecValTok{14}
+    \OtherTok{]}\FunctionTok{,}
+    \DataTypeTok{"first\_stage"}\FunctionTok{:} \StringTok{"SLSQP, min biaxial cost, lambda\_min(Q,N2)\textless{}=0, bounds [{-}4,4]\^{}16, maxiter180, ftol1e{-}9"}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{first_stage_cost}"}\FunctionTok{:} \FloatTok{11.545417902523095}\FunctionTok{,}
+    \DataTypeTok{"second\_stage"}\FunctionTok{:} \StringTok{"SLSQP, lambda\_min(Q,N2)\textless{}={-}1, maxiter120, ftol1e{-}9"}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{second_stage_success}"}\FunctionTok{:} \KeywordTok{false}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{second_stage_lambda}"}\FunctionTok{:} \FloatTok{{-}0.9999993807298994}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{second_stage_boundary}"}\FunctionTok{:} \StringTok{"Failed the specified constraint tolerance; not recorded as constrained optimization success."}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{finite_amplitude_stage}"}\FunctionTok{:} \StringTok{"bounded scalar minimization on (0,2), xatol1e{-}12"}\FunctionTok{,}
+    \DataTypeTok{"joint\_stage"}\FunctionTok{:} \StringTok{"least\_squares jac=cs, bounds=({-}6,6), max\_nfev200, ftol=xtol=1e{-}11, gtol1e{-}10; converged back to w approximately zero"}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{verificationcomputations20260928_coupled_negative_mode_joint.json}{%
+\subsection{verification/computations/\nolinkurl{20260928_coupled_negative_mode_joint.json}}\label{verificationcomputations20260928_coupled_negative_mode_joint.json}}
+
+Original SHA-256:
+\nolinkurl{08335d4c8a7b086fbd594be59818bfc505ad2fbb607f2069550e92fa61d13422}.
+
+\hypertarget{record-1-5}{%
+\subsubsection{Record 1}\label{record-1-5}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"success"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"evaluations"}\FunctionTok{:} \DecValTok{10}\FunctionTok{,}
+  \DataTypeTok{"optimality"}\FunctionTok{:} \FloatTok{2.246273684524078e{-}06}\FunctionTok{,}
+  \DataTypeTok{"parameters"}\FunctionTok{:} \OtherTok{[}
+    \FloatTok{0.0027359418110632157}\OtherTok{,}
+    \FloatTok{0.0008977961208698062}\OtherTok{,}
+    \FloatTok{0.0009821627540353359}\OtherTok{,}
+    \FloatTok{0.0014672587710594682}\OtherTok{,}
+    \FloatTok{0.0017082849632476592}\OtherTok{,}
+    \FloatTok{0.0016309927878994368}\OtherTok{,}
+    \FloatTok{0.0011871749389115777}\OtherTok{,}
+    \FloatTok{0.0002169599964491382}\OtherTok{,}
+    \FloatTok{{-}4.326883301177804e{-}08}\OtherTok{,}
+    \FloatTok{4.153829466291249e{-}08}\OtherTok{,}
+    \FloatTok{{-}3.044778771530527e{-}08}\OtherTok{,}
+    \FloatTok{2.5401512832082983e{-}08}\OtherTok{,}
+    \FloatTok{{-}6.468234536691991e{-}09}\OtherTok{,}
+    \FloatTok{3.019852296156076e{-}09}\OtherTok{,}
+    \FloatTok{{-}6.475102221413821e{-}10}\OtherTok{,}
+    \FloatTok{{-}1.4299821641440836e{-}12}\OtherTok{,}
+    \FloatTok{0.0018048199416875984}\OtherTok{,}
+    \FloatTok{{-}0.0011224085484224642}\OtherTok{,}
+    \FloatTok{0.00014494632293535832}\OtherTok{,}
+    \FloatTok{0.0006863898419545289}\OtherTok{,}
+    \FloatTok{0.00032027767833051643}\OtherTok{,}
+    \FloatTok{{-}0.00017309264591863443}\OtherTok{,}
+    \FloatTok{{-}0.00031789272972496834}\OtherTok{,}
+    \FloatTok{{-}0.00016907311691468504}
+  \OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"refined"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"\nolinkurl{J_over_2pi2}"}\FunctionTok{:} \FloatTok{4.162715591768544}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{N_over_2pi2}"}\FunctionTok{:} \FloatTok{3.2000745482423983e{-}16}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{scalar_identity_error}"}\FunctionTok{:} \FloatTok{1.1400684517644026e{-}13}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_w}"}\FunctionTok{:} \FloatTok{6.360863715910604e{-}09}\FunctionTok{,}
+    \DataTypeTok{"\nolinkurl{max_abs_phi}"}\FunctionTok{:} \FloatTok{0.002730259781180743}\FunctionTok{,}
+    \DataTypeTok{"min\_F"}\FunctionTok{:} \FloatTok{0.000175460924872036}
+  \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+
+\end{document}

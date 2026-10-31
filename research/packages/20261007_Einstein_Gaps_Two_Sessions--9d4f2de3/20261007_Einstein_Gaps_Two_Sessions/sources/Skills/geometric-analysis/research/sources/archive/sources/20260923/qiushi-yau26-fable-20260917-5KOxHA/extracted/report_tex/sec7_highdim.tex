@@ -1,0 +1,15 @@
+\section{高维 $n\ge5$}\label{sec:highdim}
+
+\begin{proposition}\status{已证}\label{prop:product}
+设 $e_\sigma(M^4)=0$，$(Y^k,g_Y)$ 为闭 Einstein 流形且 $\Ric_{g_Y}=\sigma g_Y$。则 $e_\sigma(M\times Y)=0$。从而对每个 $n\ge6$ 与每个符号，$P_n^\sigma$ 蕴含一批具体的闭 $n$ 维流形承载 Einstein 度量（本报告未查到关于它们的现成存在性结论），例如 $(\CPb\#\CPb)\times S^{n-4}$（$\sigma=+1$，球面取 $\Ric=g$ 的尺度）与 $M_-\times Y_{\rm hyp}^{\,n-4}$（$\sigma=-1$，$M_-$ 为推论~\ref{cor:models}(2) 的混合解消或 $E_D$，$Y_{\rm hyp}$ 为适当缩放的闭双曲流形）。
+\end{proposition}
+\begin{proof}
+乘积度量的 Ricci 端同态是两因子的直和，故 $\delta_\sigma(g\oplus g_Y)=\max\{\delta_\sigma(g),0\}$。
+\end{proof}
+
+log-Weyl 机制本身与维数无关：恒等式~\eqref{eq:logid}对一切 $d\ge3$ 成立，只需一个带无障碍核心修正的 Ricci-flat ALE 空间（预期 $\mathbb C^m/\Z_m$ 上的 Calabi 度量及其余齐性一 Einstein 形变族可以胜任；本报告未验证这一点）。但这些构造对原题的意义受制于如下事实：
+
+\begin{proposition}\status{逻辑事实}
+对 $n\ge5$，$Q_n$ 的否定以“存在不承载任何 Einstein 度量的闭 $n$ 维流形”为前提。目前在维数 $\ge5$ 没有任何已知的 Einstein 存在性障碍；“是否每个 $n\ge5$ 维闭流形都承载 Einstein 度量”本身是公开问题。若后者为真，则 $Q_n$ 对一切 $n\ge5$ 平凡成立。
+\end{proposition}
+乘积只传播输入夹逼，不传播“无 Einstein 度量”：未知的 Einstein 度量不必按乘积分裂。因此高维部分既不能由四维结论推出，也不能用现有工具否定；全维肯定证明则需要在一个符号分支内对一切紧夹逼输入（包括塌缩输入）构造 Einstein 度量，这超出了现有存在性理论（扰动法、Dehn 填充、分歧覆盖、Kähler 方法）的范围。

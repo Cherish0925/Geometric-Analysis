@@ -1,0 +1,252 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\RR}{\mathcal R_+}
+\newcommand{\dd}{\,dV_g}
+\title{Q4: A Green-Potential Refinement\\of Determinant Rigidity}
+\author{}
+\date{14 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For a closed negative Einstein four-manifold, let $\Psi$ solve
+$(\Delta+2a)\Psi=\det(W^+-a\Id/3)$, where $\Ric=-ag$.
+An almost-K\"ahler structure is parallel if $\Psi$ is nonpositive at
+just one of its torsion zeros. In particular, the metric-only condition
+$\Psi\le0$ everywhere is sufficient. This recovers pointwise determinant
+rigidity and replaces its sign assumption by a global Green-potential
+condition. An exact identity quantifies the positive potential required
+at every torsion zero of any hypothetical non-K\"ahler closed solution.
+The potential condition is not proved automatic under the general
+negative Goldberg hypotheses.
+\end{abstract}
+
+\section{The metric potential and the result}
+Let $(M^4,g,J,\Omega)$ be smooth, closed, connected and almost-K\"ahler,
+with the orientation induced by $J$, and assume
+\[
+ \Ric=-ag,\qquad a>0,\qquad s=-4a,\qquad |\Omega|^2=2.
+\]
+Curvature acts on two-forms; all operator norms are Hilbert--Schmidt
+norms. Set
+\[
+ \RR=W^+-\frac a3\Id,\qquad A=-\RR,\qquad
+ \tr A=a,\qquad u=\sigma_2(A)=\frac{a^2}{3}-\frac12|W^+|^2.
+\]
+Use the nonnegative Laplacian $\Delta=-\operatorname{div}\nabla$.
+The strictly positive operator $L_a=\Delta+2a$ has an inverse
+$\mathcal G_a$. Define two globally smooth scalar functions
+\begin{equation}\label{eq:potentials}
+ \Psi=\mathcal G_a(\det\RR),\qquad
+ \mathcal D=\mathcal G_a(|\nabla A|^2).
+\end{equation}
+These are functions determined by the metric and orientation, independently
+of the choice of a compatible almost-K\"ahler form.
+
+\begin{theorem}\label{thm:main}
+If $q(p)=|\nabla\Omega|^2(p)=0$ and $\Psi(p)\le0$ at some $p\in M$,
+then
+\[
+ \nabla\Omega=0,\qquad \RR=-a\,n\otimes n,
+ \qquad n=\Omega/\sqrt2.
+\]
+Consequently, the metric-only condition $\Psi\le0$ on all of $M$
+forces every compatible almost-K\"ahler form in this orientation to
+be parallel.
+\end{theorem}
+The global sign corollary uses Armstrong's torsion-zero theorem, recalled
+below. No condition on the Betti numbers, injectivity radius or a family
+of metrics is introduced. The conclusion is conditional on the displayed
+potential sign, not a resolution of Q4 without additional assumptions.
+
+\section{Two identities and positivity of the inverse}
+The scalar identity proved in the preceding determinant note \cite{Project}
+is
+\begin{equation}\label{eq:scalar}
+ (\Delta+2a)u=|\nabla A|^2-18\det\RR.
+\end{equation}
+For completeness, the classical Einstein Weyl--Weitzenb\"ock equation
+\cite{Derdzinski} is
+\[
+ \nabla^*\nabla W^++\frac s2W^+-6(W^+)^2+2|W^+|^2\Id=0.
+\]
+Pairing with $W^+$ gives
+\[
+ \Delta|W^+|^2=-s|W^+|^2+36\det W^+-2|\nabla W^+|^2.
+\]
+The algebraic shift yields
+\[
+ |W^+|^2=\frac{2a^2}{3}-2u,\qquad
+ \det W^+=-\frac{2a^3}{27}+\frac a3u-\det A.
+\]
+Since $\det A=-\det\RR$, these imply \eqref{eq:scalar} and hence
+\begin{equation}\label{eq:resolvent}
+ \boxed{u=\mathcal D-18\Psi.}
+\end{equation}
+
+The inverse is positivity preserving. In heat-kernel notation,
+\begin{equation}\label{eq:heat}
+ \mathcal G_a f(x)=\int_0^\infty e^{-2at}(e^{-t\Delta}f)(x)\,dt
+ =\int_M G_a(x,y)f(y)\,dV_g(y).
+\end{equation}
+The heat kernel on a connected closed manifold is strictly positive for
+$t>0$, and $G_a(x,y)>0$ away from its integrable diagonal singularity.
+Equivalently, positivity follows from the weak and strong maximum
+principles for $L_a$. Thus
+\[
+ \mathcal D\ge0,\qquad
+ \mathcal D(p)=0\ \Longrightarrow\ \nabla A\equiv0.
+\]
+The constant mode gives $\mathcal G_a1=1/(2a)$; no projection onto
+mean-zero functions is involved.
+
+Now suppose $q(p)=0$. The harmonic-form equation gives
+\begin{equation}\label{eq:harmonic}
+ \nabla^*\nabla n=2(a\Id-A)n,\qquad
+ q=4\bigl(a-\langle An,n\rangle\bigr).
+\end{equation}
+Relative to $\mathbb Rn\oplus n^\perp$, at $p$ write
+\[
+ A(p)=\begin{pmatrix}a&z^*\\z&C\end{pmatrix},\qquad\tr C=0.
+\]
+Therefore, without any determinant assumption,
+\begin{equation}\label{eq:zero}
+ \boxed{u(p)=-|z|^2-\frac12|C|^2\le0.}
+\end{equation}
+In the inherited almost-Hermitian notation,
+\[
+ W^+=\begin{pmatrix}t&v^*\\v&-t\Id/2+V_\Omega\end{pmatrix},\quad
+ t=\frac s6+\frac q4,\quad v=\eta/\sqrt2,\quad\tr V_\Omega=0,
+\]
+so $z=-v$, $C=-V_\Omega$ at a torsion zero. Equation \eqref{eq:zero}
+is exactly
+\[
+ u(p)=-\frac12\bigl(|\eta(p)|^2+|V_\Omega(p)|^2\bigr).
+\]
+
+\section{Proof of rigidity}
+Assume $q(p)=0$ and $\Psi(p)\le0$. Equations \eqref{eq:resolvent}
+and \eqref{eq:zero} show
+\[
+ 0\ge u(p)=\mathcal D(p)-18\Psi(p)\ge0.
+\]
+Hence $u(p)=\mathcal D(p)=\Psi(p)=0$ and $\nabla A\equiv0$.
+The determinant of $\RR$ is consequently constant. By uniqueness of
+$L_a^{-1}$,
+\[
+ \Psi=\frac{\det\RR}{2a}
+\]
+is constant, and its value zero at $p$ implies $\det\RR=0$.
+Parallelness makes $u$ constant as well, so $u=0$. The characteristic
+polynomial of the symmetric operator $A$ is therefore
+\[
+ t^3-at^2+u t-\det A=t^2(t-a).
+\]
+It follows that $A^2=aA$ and $\Pi=A/a$ is a global parallel orthogonal
+rank-one projection. At $p$, \eqref{eq:harmonic} gives $\Pi n=n$.
+Globally let $v=\Pi n$. Then
+\[
+ \nabla^*\nabla v=2\Pi(a\Id-A)n=0.
+\]
+Integration gives $\nabla v=0$, and $|v(p)|=1$ implies $|v|=1$ everywhere.
+Since $|n|=1$ and $\Pi$ is an orthogonal projection, $n=v$ throughout
+$M$. Thus $\nabla\Omega=0$ and $A=a\,n\otimes n$.
+
+To deduce the metric-only corollary, a torsion zero exists by Armstrong's
+classical observation \cite[Theorem 2.2.4]{Armstrong}. Indeed, a nowhere-zero
+Nijenhuis tensor, regarded as a section of
+$\Lambda^{0,2}T^*M\otimes T^{1,0}M$, would force
+\[
+ 0=c_2(\Lambda^{0,2}T^*M\otimes T^{1,0}M)[M]
+   =5\chi+6\tau=\chi+2(2\chi+3\tau).
+\]
+Both $\chi$ and $2\chi+3\tau$ are strictly positive by the Einstein
+Chern--Weil formulas when $s\ne0$. This is impossible. In the
+almost-K\"ahler class $N_J(p)=0$ is equivalent to $q(p)=0$.
+This completes the proof of Theorem~\ref{thm:main}.
+
+\section{The exact requirement on the remaining case}
+At every torsion zero, without any extra sign assumption,
+\eqref{eq:resolvent} and \eqref{eq:zero} give
+\begin{equation}\label{eq:balance}
+ \boxed{
+ 18\Psi(p)=\mathcal D(p)
+       +\frac12\bigl(|\eta(p)|^2+|V_\Omega(p)|^2\bigr).
+ }
+\end{equation}
+Equivalently, with $d=\det\RR$ and $d_\pm=\max\{\pm d,0\}$,
+\begin{align}\label{eq:signed}
+ 18\int_M G_a(p,y)d_+(y)\,dV_g(y)
+ ={}&18\int_M G_a(p,y)d_-(y)\,dV_g(y)\notag\\
+ &+\int_MG_a(p,y)|\nabla A(y)|^2\,dV_g(y)\notag\\
+ &+\frac12\bigl(|\eta(p)|^2+|V_\Omega(p)|^2\bigr).
+\end{align}
+
+\begin{corollary}
+Every hypothetical closed non-K\"ahler negative Einstein almost-K\"ahler
+structure satisfies $\Psi(p)>0$ at every torsion zero $p$.
+In particular, the positive-determinant part has strictly larger
+$G_a(p,\cdot)$-weighted mass than the negative part at each such point.
+\end{corollary}
+\begin{proof}
+Equation \eqref{eq:balance} gives $\Psi(p)\ge0$.
+Equality would invoke Theorem~\ref{thm:main} and make the structure
+K\"ahler. Therefore the inequality is strict.
+\end{proof}
+
+The previous pointwise condition $\det\RR\le0$ implies $\Psi\le0$
+by positivity of $\mathcal G_a$, so its rigidity theorem is recovered.
+The potential criterion does not require the determinant to be
+nonpositive at every point. To distinguish the two sign conditions
+at the scalar level, on a circle consider $f=-c+\varepsilon\cos(kx)$:
+\[
+ (\Delta+2a)^{-1}f=-\frac c{2a}
+                       +\frac{\varepsilon}{k^2+2a}\cos(kx).
+\]
+If $c<\varepsilon\le c(1+k^2/(2a))$, then $f$ changes sign but its
+potential is nonpositive. This illustrates the logical relaxation for
+scalar functions; it does not construct an Einstein metric with that
+particular determinant. No additional family of Einstein metrics
+satisfying the relaxed condition is claimed here.
+
+The sign of $\Psi$ is scale invariant. Under $g\mapsto cg$, one has
+$a\mapsto a/c$, $\Delta\mapsto\Delta/c$, $\det\RR\mapsto c^{-3}\det\RR$
+and $\Psi\mapsto c^{-2}\Psi$.
+
+\paragraph{Remaining Q4 statement.}
+The argument uses no new FD or monopole estimate. It replaces the preceding
+pointwise sign hypothesis by a global potential condition, and identifies
+exactly the weighted determinant balance required by every possible
+non-K\"ahler closed solution. The unaugmented Einstein and almost-K\"ahler
+hypotheses have not been shown to force $\Psi\le0$ at a torsion zero;
+\eqref{eq:signed} permits positive determinant contribution to dominate.
+Thus the unrestricted closed negative Goldberg question is not settled.
+
+\begin{thebibliography}{9}
+\bibitem{Derdzinski}
+A.~Derdzi\'nski,
+\emph{Self-dual K\"ahler manifolds and Einstein manifolds of dimension four},
+Compositio Math. \textbf{49} (1983), 405--433.
+\url{https://archive.numdam.org/item/CM_1983__49_3_405_0/}.
+\bibitem{Armstrong}
+J.~Armstrong, \emph{Almost-K\"ahler Geometry}, D.Phil. thesis, Oxford (1998),
+Theorem 2.2.4.
+\url{https://johnarmstrongmaths.com/publications/resources/thesis.pdf}.
+\bibitem{Project}
+Supplied research note, \emph{A Determinant-Sign Case of the Four-Dimensional
+Negative Goldberg Problem}, 13 October 2026,
+\texttt{Q4\_Determinant\_Sign\_Rigidity.tex}.
+The scalar equation and pointwise-sign theorem are inherited inputs;
+the Green-potential argument and \eqref{eq:balance} are derived here.
+\end{thebibliography}
+\end{document}

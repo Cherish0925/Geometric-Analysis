@@ -1,0 +1,592 @@
+% !TeX program = xelatex
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper,margin=25mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,esint,booktabs,longtable,array}
+\usepackage{xcolor,enumitem,fancyhdr,microtype,xurl}
+\usepackage[unicode,colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\hypersetup{pdftitle={Uniform gaps at the Einstein topological boundary and necessary collapse}}
+\newtheoremstyle{paper}{8pt}{8pt}{\normalfont}{0pt}{\bfseries}{.}{.4em}{}
+\theoremstyle{paper}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\renewcommand{\proofname}{Proof}
+\DeclareMathOperator{\Ric}{Ric}
+\DeclareMathOperator{\Rm}{Rm}
+\DeclareMathOperator{\Vol}{Vol}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Id}{Id}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\dd}{\,d\mu}
+\newcommand{\av}{\fint}
+\newcommand{\Dcal}{\mathcal D}
+\numberwithin{equation}{section}
+\setlength{\parskip}{.3em}
+\setlength{\emergencystretch}{3em}
+\linespread{1.12}
+\allowdisplaybreaks[2]
+\setlist{nosep,topsep=5pt,leftmargin=2em}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Uniform gaps and necessary collapse}
+\fancyhead[R]{\small Four-dimensional geometry}
+\fancyfoot[C]{\thepage}
+\title{Uniform gaps at the Einstein topological boundary\\[2mm]\large and necessary collapse of near-Einstein metrics}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+For four-manifolds with a positive uniform monopole-class lower bound and bounded ratio of Euler characteristic to that bound, the topological ratios of Einstein metrics are uniformly separated from the classical LeBrun boundary. The proof combines a nonnegative calibration density with Cheeger--Tian regularity for Einstein four-manifolds and requires no volume lower bound.
+
+For general metrics with bounded Ricci curvature, the same density has a positive average lower bound on noncollapsed balls. Together with monopole curvature inequalities, this implies that, on blowups of minimal complex surfaces of general type, a sequence with vanishing Ricci defect and blowup ratio approaching the classical boundary has a vanishing volume fraction of noncollapsed centers at every fixed scale, and its diameter tends to infinity. An analogous result holds for the mean-square Ricci defect under a pointwise Ricci bound.
+
+We also formulate a weak harmonic-coordinate hypothesis (SC), without a volume lower bound, and derive a conditional uniform near-Einstein gap. The first two results do not depend on (SC). The conclusions concern the specified four-dimensional topological classes.
+\end{abstract}
+\tableofcontents
+
+\section{Problem, main results, and related work}
+
+\subsection{Ricci pinching and Einstein existence}
+
+We study the following interval statement related to Yau's Problem 26. In a fixed dimension $n$, do real constants $c<C$ exist such that every closed, connected, smooth $n$-manifold admitting a metric with
+\[
+cg\le\Ric_g\le Cg,
+\]
+also admits an Einstein metric? The signs of $c,C$ are unrestricted, and the conclusion concerns some Einstein metric on the same smooth manifold.
+
+Normalize the input to $\Ric\approx\sigma g$, $\sigma\in\{+1,-1\}$. Existence of a suitable interval is equivalent to a dimension-dependent sufficient defect threshold for at least one of these signs: every nondegenerate interval contains a strictly same-sign subinterval, which can be reached by constant scaling. Disproving this working formulation therefore requires defeating both branches in the same fixed dimension. The output Einstein metric need not be close to the input or have the same sign.
+
+We investigate a class of topological constraints in the four-dimensional negative branch: the boundary for exact Einstein metrics and necessary degeneration near that boundary. The conclusions do not settle existence or construct counterexamples in general dimensions.
+
+\subsection{A direct form of the main results}
+
+Let $X$ be a closed minimal complex surface of general type with $b_+(X)>1$, and put
+\[
+A=c_1^2(X)>0,\qquad M=X\#k\overline{\mathbf{CP}}^{\,2},\qquad k\in\mathbf Z_{\ge0}.
+\]
+Here $A$ is a positive integer, and we use the complex orientation. We prove the following statements.
+
+\begin{theorem}[Uniform blowup gap for exact Einstein metrics]\label{thm:intro-exact}
+There is a constant $\gamma>0$, independent of $X,k$, such that
+\[
+k\ge\left(\frac13-\gamma\right)c_1^2(X)
+\quad\Longrightarrow\quad
+M\text{ admits no Einstein metric}.
+\]
+No explicit value of the constant is given. Uniformity allows $A$, total volume, total curvature energy, and diameter to be unbounded.
+\end{theorem}
+
+\begin{theorem}[Necessary degeneration near the boundary]\label{thm:intro-collapse}
+Let $M_i=X_i\#k_i\overline{\mathbf{CP}}^{\,2}$ belong to this family, let $g_i$ be arbitrary smooth metrics, and suppose
+\[
+\delta_i=\|g_i^{-1}\Ric_{g_i}+\Id\|_{\infty,\op}\longrightarrow0,
+\qquad d_i=\left(\frac13-\frac{k_i}{A_i}\right)_+\longrightarrow0.
+\]
+Then, for every fixed $r,v>0$,
+\begin{equation}\label{eq:intro-collapse}
+\frac{\Vol_{g_i}\{p\in M_i:\Vol_{g_i}B_r(p)\ge v\}}
+{\Vol_{g_i}M_i}\longrightarrow0,
+\end{equation}
+and $\diam(M_i,g_i)\to\infty$.
+\end{theorem}
+
+Equation \eqref{eq:intro-collapse} concerns normalized volume measure. It does not assert uniform collapse at every point, the existence of a particular Gromov--Hausdorff limit, or the existence of such an approximating sequence.
+
+\subsection{Relation to classical curvature obstructions}
+
+LeBrun's monopole curvature estimates relate Einstein existence to four-dimensional topology and give the classical boundary for the blowup family \cite{lebrun2001,lebrun2004}. The question here is whether a bound on the relative Euler characteristic upgrades strictness for each individual metric to a uniform positive gap over the entire family.
+
+The local contradiction comes from Derdzi\'nski's structure theory for the self-dual Weyl tensor \cite{derd}. Two distinct regularity inputs produce the local limits. Exact Einstein metrics admit the collapse-tolerant Cheeger--Tian theorem \cite{ct,gejiang}; general bounded-Ricci metrics use the Cheeger--Naber harmonic-radius estimate under noncollapse \cite{cn}. The exact topological gap therefore requires no global noncollapse, whereas the local density floor for near-Einstein metrics still depends on a ball-volume lower bound.
+
+\section{Norms, monopole input, and calibration density}
+
+\subsection{Norms and topological formulas}
+
+Unless stated otherwise, $M$ is a closed, connected, oriented, smooth four-manifold; local statements also allow complete noncompact manifolds. For a symmetric two-tensor $T$, $|T|$ is its metric-induced Hilbert--Schmidt norm, and $|T|_{\op}$ is the largest absolute relative eigenvalue.
+
+For $W^+$, use the Hilbert--Schmidt \emph{operator} norm on $\Lambda^+$ and write
+\[
+u=|W^+|,\qquad w=\lambda_{\min}(W^+).
+\]
+For $\Rm$, use the full four-index tensor norm. The squared four-index Weyl norm is therefore four times the corresponding squared operator norm. Set
+\[
+s=\tr_g\Ric_g,\quad \Ric^\circ=\Ric-\frac{s}{4}g,\quad
+T(M)=2\chi(M)+3\tau(M).
+\]
+With these conventions, the Chern--Weil identities are
+\begin{align}
+4\pi^2T(M)&=\int_M\left(\frac{s^2}{24}+2u^2-\frac{|\Ric^\circ|^2}{2}\right)\dd,\label{eq:cw}\\
+\int_M|\Rm|^2\dd&=32\pi^2\chi(M)+4\int_M|\Ric^\circ|^2\dd.\label{eq:fullrm}
+\end{align}
+In particular, an Einstein metric satisfies $\int|\Rm|^2=32\pi^2\chi$.
+
+\subsection{A uniform monopole lower bound}
+
+For $A>0$, denote the following assumption by $\mathrm{MP}(A)$:
+\begin{quote}
+$b_+(M)>1$, and for every smooth metric $g$ there is a monopole class $a_g$ satisfying $(a_g^+)^2\ge A$. The superscript $+$ denotes the self-dual harmonic projection with respect to $g$.
+\end{quote}
+The class may vary with the metric, but $A$ is fixed. The standard Seiberg--Witten Weitzenb\"ock argument and LeBrun curvature estimates give \cite{lebrun2001,lebrun2004}
+\begin{align}
+&M\text{ admits no metric with }s\ge0\text{ everywhere},\label{eq:no-psc}\\
+&\int_Ms^2\dd\ge32\pi^2A,\label{eq:scalar}\\
+&\int_M\left(\frac23s+2w\right)_{-}^{\!2}\dd\ge32\pi^2A.\label{eq:spectral}
+\end{align}
+Here $x_-:=\min\{x,0\}$. Exclusion of nonnegative scalar curvature does not follow from \eqref{eq:spectral} alone: it uses an actual monopole class and its nonzero self-dual projection. This input is essential for excluding zero and positive Einstein constants.
+
+For the blowup family, the standard Seiberg--Witten blowup classes include all sign choices of the exceptional classes. Their canonical-class part $a$, pulled back from $X$, satisfies $a^2=A$, hence $(a^+)^2\ge A$. Averaging over exceptional signs cancels the cross terms, so at least one combination has self-dual square at least $A$. Thus this family satisfies $\mathrm{MP}(A)$. Also,
+\begin{equation}\label{eq:blow-top}
+T(M)=A-k,\qquad \chi(M)=\chi(X)+k.
+\end{equation}
+
+\subsection{Nonnegative density and explicit bounds}
+
+Define
+\begin{gather}
+E=\Ric+g,\quad e=s+4=\tr E,\quad
+f=\frac{2s}{3}-2\sqrt{\frac23}\,u,\quad b=\frac{2s}{3}+2w,\label{eq:defs}\\
+G=f^2-b_-^2,\qquad
+\Dcal=|E|^2+e^2+(s+8\sqrt6u)^2+G.\label{eq:density}
+\end{gather}
+Since $W^+$ is a trace-free real symmetric operator on a three-dimensional space, $w\ge-\sqrt{2/3}\,u$, and hence $f\le b$. If $b<0$, then $f^2\ge b^2$; if $b\ge0$, then $G=f^2$. Thus $G\ge0$ and $\Dcal\ge0$, without first assuming $s<0$.
+
+Put
+\[
+Q=\int|E|^2,\quad P=\int|E^\circ|^2,\quad
+Z=\int e^2,\quad B=\int(s+8\sqrt6u)^2.
+\]
+All integrals without an indicated volume element are taken with respect to $g$. Orthogonal decomposition gives $Q=P+Z/4$. Direct expansion yields the pointwise identity
+\begin{equation}\label{eq:calibration}
+(s+8\sqrt6u)^2+18G
+=216\left(\frac{s^2}{24}+2u^2\right)-18b_-^2.
+\end{equation}
+Equations \eqref{eq:cw} and \eqref{eq:spectral} imply
+\begin{equation}\label{eq:budget-raw}
+B+18\int G\le108P+864\pi^2\left(T(M)-\frac23A\right).
+\end{equation}
+Since $G\ge0$, we also have
+\begin{align}
+\int\Dcal
+&\le Q+Z+108P+864\pi^2\left(T(M)-\frac23A\right)_+\notag\\
+&\le109Q+864\pi^2\left(T(M)-\frac23A\right)_+.\label{eq:budget-general}
+\end{align}
+The last step uses $Q+Z+108P=5Q+104P\le109Q$.
+
+In the blowup family, write $d=(1/3-k/A)_+$. Equation \eqref{eq:blow-top} reduces this estimate to
+\begin{equation}\label{eq:budget-blow}
+\int\Dcal\le109\int|\Ric+g|^2+864\pi^2Ad.
+\end{equation}
+If $|\Ric|_{\op}\le K$, then $|s|\le4K$. Equation \eqref{eq:scalar} gives
+\begin{equation}\label{eq:l2-budget}
+V\ge\frac{2\pi^2A}{K^2},\qquad
+\av_M\Dcal\le109\av_M|\Ric+g|^2+432K^2d.
+\end{equation}
+
+If $\delta=\|g^{-1}\Ric+\Id\|_{\infty,\op}\le1/4$, then $|E|^2\le4\delta^2$ and $|s|\le5$, so
+\begin{equation}\label{eq:delta-budget}
+V\ge\frac{32\pi^2}{25}A,\qquad
+\boxed{\av_M\Dcal\le436\delta^2+675d.}
+\end{equation}
+These explicit constants are convenient upper bounds, not claimed optimal values.
+
+\section{Local contradiction and transfer of averages}
+
+\subsection{The classical forbidden-spectrum mechanism}
+
+\begin{lemma}[No local zero-density metric]\label{lem:forbidden}
+No smooth oriented four-dimensional metric on a nonempty open set satisfies $\Dcal\equiv0$.
+\end{lemma}
+\begin{proof}
+Zero density first gives $\Ric=-g$, hence $s=-4$. The relation $s+8\sqrt6u=0$ then gives $u^2=1/24$ and $f=-3$. Since $G=0$, we obtain $b_-=-3$ and $w=-1/6$. Combining zero trace with squared norm $1/24$ yields
+\begin{equation}\label{eq:forbidden-spectrum}
+\operatorname{spec}(W^+)=\left(-\frac16,\frac1{12},\frac1{12}\right).
+\end{equation}
+The Einstein condition implies $\delta W^+=0$. On a smaller open set, choose a local unit self-dual two-form $\omega$ for the simple eigenvalue. Then
+\[
+W^+=\frac1{12}\Id-\frac14\omega\otimes\omega.
+\]
+Complete it to a local orthonormal frame $(\omega,\eta,\theta)$ and write $\nabla\omega=a\otimes\eta+c\otimes\theta$. Projecting $\delta W^+=0$ onto $\eta$ and $\theta$ in the second two-form factor gives $\iota_{a^\sharp}\omega=0$ and $\iota_{c^\sharp}\omega=0$. A nonzero self-dual two-form is nondegenerate, so $a=c=0$ and $\omega$ is parallel. After multiplication by the appropriate constant, $\omega$ defines a local parallel complex structure. The metric is therefore locally K\"ahler.
+
+A K\"ahler four-metric with this orientation satisfies $|W^+|^2=s^2/24=2/3$, contradicting $1/24$. This is the classical mechanism in Derdzi\'nski's local structure theorem and LeBrun's strict inequalities \cite{derd,lebrun2004}.
+\end{proof}
+
+\subsection{Boundedness of the averaging operator}
+
+Under $\Ric\ge-3\kappa g$, let $v_{-\kappa}(r)$ be the volume of the four-dimensional model ball of constant sectional curvature $-\kappa$. Define
+\[
+A_rH(p)=\av_{B_r(p)}H,\qquad
+D_\kappa(r)=\frac{v_{-\kappa}(2r)}{v_{-\kappa}(r)}.
+\]
+\begin{lemma}[Fubini and volume doubling]\label{lem:fubini}
+Every nonnegative integrable function $H$ on a closed manifold satisfies
+\begin{equation}\label{eq:average-fubini}
+\int_M A_rH\dd\le D_\kappa(r)\int_MH\dd.
+\end{equation}
+If $\av_M|\Rm|^2\le C_0$, then
+\begin{equation}\label{eq:absolute-fubini}
+\int_M\left(\int_{B_R(p)}|\Rm|^2\dd\right)\dd(p)
+\le v_{-\kappa}(R)C_0V.
+\end{equation}
+\end{lemma}
+\begin{proof}
+If $d(p,q)<r$, ball containment and Bishop--Gromov comparison give
+$\Vol B_r(q)\le\Vol B_{2r}(p)\le D_\kappa(r)\Vol B_r(p)$.
+After exchanging integrals, the integral of the kernel over $p\in B_r(q)$ is at most $D_\kappa(r)$, proving the first estimate. In the second, exchanging integrals leaves the inner factor $\Vol B_R(q)$, which is bounded by the model-ball volume.
+\end{proof}
+
+\subsection{Local isometric unfolding with overlap}
+
+\begin{lemma}[Multiplicity transfer of average density]\label{lem:transfer}
+Let $\pi:(\widetilde U,h)\to(M,g)$ be a local isometry with $\pi(\tilde p)=p$, and suppose the closed source ball $\overline B^h_{3s}(\tilde p)$ is compactly contained in $\widetilde U$. For $H\ge0$,
+\begin{equation}\label{eq:transfer}
+\av_{B_s^h(\tilde p)}\pi^*H
+\le\frac{\Vol_h B_{3s}^h(\tilde p)}{\Vol_h B_s^h(\tilde p)}\av_{B_s^g(p)}H.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Write $m_a(q)=\#(\pi^{-1}(q)\cap B_{as}^h(\tilde p))$. Any $q,y\in B_s^g(p)$ can be joined through $p$ by a path of total length less than $2s$. From each preimage of $q$ in $B_s^h(\tilde p)$, this path has a unique lift: the lift remains in $B_{3s}^h(\tilde p)$, whose compact containment prevents escape through the source boundary. Distinct starting points have distinct endpoints, by uniqueness of the reverse lift. Hence $m_1(q)\le m_3(y)$.
+
+Integration over $y\in B_s^g(p)$ gives
+\[
+m_1(q)\Vol_gB_s(p)\le\int_{B_s(p)}m_3(y)\dd(y)
+\le\Vol_hB_{3s}^h(\tilde p).
+\]
+Multiply by $H(q)$, integrate, and apply the area formula to obtain \eqref{eq:transfer}. Fibers in a compact closed source ball are discrete and closed, so their multiplicities are finite. No sequence-uniform multiplicity bound, regular covering, or deck transformation is required.
+\end{proof}
+
+If the source is the Euclidean ball $B_\rho(0)$ and $Q_0^{-1}I\le h\le Q_0I$, choosing $3s\sqrt{Q_0}<\rho$ supplies the buffer and gives
+\[
+B^{\mathrm{Euc}}_{s/\sqrt{Q_0}}\subset B_s^h(0),\qquad
+\frac{\Vol_hB_{3s}^h}{\Vol_hB_s^h}\le3^4Q_0^8.
+\]
+This also supplies a fixed Euclidean domain for the subsequent limit.
+
+\section{A uniform topological gap for exact Einstein metrics}
+
+\begin{theorem}[Uniform gap under a relative Euler bound]\label{thm:exact}
+For every $L>0$, there is $\eta(L)>0$ such that, if $M$ satisfies $\mathrm{MP}(A)$ and $\chi(M)\le LA$ and admits an Einstein metric, then
+\begin{equation}\label{eq:exact-gap}
+\frac{2\chi(M)+3\tau(M)}A\ge\frac23+\eta(L).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+\textbf{Normalization and average curvature bound.}
+By \eqref{eq:no-psc}, every Einstein metric has negative Einstein constant. Constant scaling gives $\Ric=-g$ and $s=-4$. Equations \eqref{eq:scalar} and \eqref{eq:fullrm} imply
+\begin{equation}\label{eq:exact-curv-budget}
+V\ge2\pi^2A,\qquad \av_M|\Rm|^2\le16L.
+\end{equation}
+This bounds the average curvature energy; the total energy may be unbounded.
+
+\textbf{From the topological boundary to local density.}
+Here $b=-8/3+2w<0$. Define
+\[
+F=(-4+8\sqrt6u)^2+18(f^2-b^2)\ge0.
+\]
+Set $t=T(M)/A-2/3$. Equations \eqref{eq:calibration} and \eqref{eq:budget-raw} give
+\begin{equation}\label{eq:exact-F}
+0\le\int_MF\dd\le864\pi^2At,\qquad \av_MF\le432t.
+\end{equation}
+In particular, $t\ge0$. If \eqref{eq:exact-gap} fails, choose a sequence with $t_i\to0$.
+
+\textbf{Selecting low-energy balls at a fixed scale.}
+Cheeger--Tian regularity for Einstein four-manifolds \cite{ct,gejiang} gives universal $\varepsilon_*,C_*>0$: when $|\lambda|\le3$, $\Ric=\lambda g$, and $R\le1$,
+\begin{equation}\label{eq:CT}
+\int_{B_R(p)}|\Rm|^2\le\varepsilon_*
+\quad\Longrightarrow\quad
+\sup_{B_{R/2}(p)}|\Rm|\le C_*R^{-2}.
+\end{equation}
+No ball-volume lower bound is assumed; using the four-index norm only changes the universal constants. Choose a fixed $R\le1$, depending only on $L$, such that
+\[
+16L\,v_{-1}(R)\le\varepsilon_*/4.
+\]
+By \eqref{eq:absolute-fubini}, centers satisfying the small-energy condition occupy at least $3/4$ of each $M_i$ by volume. Denote this set by $\mathcal G_i$. On these balls, \eqref{eq:CT} gives the uniform curvature bound $K_R=C_*R^{-2}$.
+
+\textbf{Unfolding collapsed balls and transferring average density.}
+Choose fixed $\rho<R/4$ with $\rho\sqrt{K_R}<\pi/4$. For each $p\in\mathcal G_i$, the exponential map
+\[
+\pi_{i,p}=\exp_p:B_\rho(0)\subset T_pM_i\longrightarrow M_i
+\]
+is a local diffeomorphism by the conjugate-radius estimate. Rauch comparison makes the pullback metric $h_{i,p}=\pi_{i,p}^*g_i$ uniformly elliptic, and the Gauss lemma gives distance $|v|$ from the source center to $v$. The source center therefore has a fixed injectivity-radius lower bound and an interior buffer, even when the base manifold's injectivity radius tends to zero.
+
+Choose a uniformly small $s>0$ such that the source $3s$-ball is compactly contained in $B_\rho(0)$. Equation \eqref{eq:average-fubini} permits a choice $p_i\in\mathcal G_i$ with
+\[
+A_sF_i(p_i)\le\frac43D_1(s)\av_{M_i}F_i\longrightarrow0.
+\]
+Lemma \ref{lem:transfer} then makes the average of $F_i$ on the source $s$-ball tend to zero as well.
+
+\textbf{Smooth limit and contradiction.}
+On the source, $\Ric=-h_i$, with uniform bounds on curvature, central injectivity radius, and the interior buffer. Standard local Einstein compactness in harmonic coordinates yields a smoothly convergent subsequence on a smaller fixed domain. Choose orientation-preserving charts with images inside the source $s$-ball. The transferred density is nonnegative with integral tending to zero, so $F_\infty\equiv0$. The limit is already Einstein, and $F=0$ is then equivalent to $\Dcal=0$. Lemma \ref{lem:forbidden} gives a contradiction. Thus $t$ has a positive lower bound depending only on $L$.
+\end{proof}
+
+\begin{remark}
+The proof does not resolve a singular Einstein limit back to the original manifold. It requires only an impossible smooth limit on one local unfolding. These charts may overlap; global noncollapse and upper bounds on total volume, diameter, or total curvature energy are unnecessary.
+\end{remark}
+
+\subsection{Application to blowups of surfaces of general type}
+
+\begin{proof}[Proof of Theorem \ref{thm:intro-exact}]
+If $M$ admits an Einstein metric, \eqref{eq:budget-raw} with $P=0$ first gives $k\le A/3$. Noether's inequality for a minimal complex surface of general type is $A\ge2p_g-4$ \cite{liedtke}. Using
+\[
+\chi(\mathcal O_X)=1-q(X)+p_g\le A/2+3,
+\qquad \chi(X)=12\chi(\mathcal O_X)-A,
+\]
+gives $\chi(X)\le5A+36$. Since $A\ge1$,
+\[
+\frac{\chi(M)}A\le41+\frac13<42.
+\]
+Apply Theorem \ref{thm:exact} with $L=42$ to obtain
+\[
+1-\frac{k}{A}\ge\frac23+\eta(42),\qquad
+\frac{k}{A}\le\frac13-\eta(42).
+\]
+Taking $\gamma=\min\{\eta(42)/2,1/12\}>0$ proves the claim. The non-strict classical bound supplies $L$ before the uniform-gap theorem is applied, so the argument is not circular.
+\end{proof}
+
+\begin{corollary}[Topological escape near the boundary]
+If a sequence of Einstein four-manifolds satisfies $\mathrm{MP}(A_i)$ and
+$T(M_i)/A_i\to2/3$, then $\chi(M_i)/A_i\to\infty$.
+\end{corollary}
+\begin{proof}
+Otherwise a subsequence has bounded ratio, contradicting Theorem \ref{thm:exact}.
+\end{proof}
+
+\section{A noncollapsed local density floor under bounded Ricci curvature}
+
+This section assumes neither monopole classes, the Einstein equation, nor an average full-curvature bound.
+
+\begin{theorem}[Positive local density]\label{thm:local}
+For every $K,r,v>0$, there is $\eta_0(K,r,v)>0$ such that a complete, smooth, oriented four-manifold satisfying
+\[
+|\Ric|_{\op}\le K,\qquad \Vol B_r(p)\ge v,
+\]
+also satisfies
+\begin{equation}\label{eq:local-floor}
+\av_{B_{2r}(p)}\Dcal\ge\eta_0(K,r,v).
+\end{equation}
+If no metric satisfies the hypotheses for the chosen parameters, the statement is vacuous.
+\end{theorem}
+
+\begin{proof}
+Suppose instead that a sequence satisfies the hypotheses and its left-hand side tends to zero. The Ricci lower bound gives $\Vol B_{2r}(p_i)\le v_{-K/3}(2r)$, hence
+\begin{equation}\label{eq:local-int-small}
+\int_{B_{2r}(p_i)}\Dcal_i\longrightarrow0.
+\end{equation}
+
+\textbf{A uniform harmonic chart from noncollapse.}
+Fix
+\[
+0<\rho\le\min\{r/4,\sqrt{3/(2K)}/2,1\}.
+\]
+Volume comparison gives $\Vol B_\rho(p_i)\ge v\,v_{-K/3}(\rho)/v_{-K/3}(r)$. After rescaling $\tilde g_i=\rho^{-2}g_i$, the Hilbert--Schmidt norm satisfies $|\Ric|_{\tilde g_i}\le2K\rho^2\le3$, and $\Vol_{\tilde g_i}B_1(p_i)\ge v_0>0$, with $v_0$ depending only on $K,r,v$.
+
+Cheeger--Naber's Theorem 1.13 \cite{cn} gives, for the harmonic radius $r_h$ of the original metric,
+\begin{equation}\label{eq:CN}
+\Vol\bigl(T_t\{x\in B_1(p_i):r_h(x)\le t\}\bigr)\le C(v_0/2)t^4.
+\end{equation}
+Choose fixed $0<t<1/4$ such that the right-hand side is less than $v_0/2$. The bad set cannot cover $B_1(p_i)$, so some $q_i\in B_\rho(p_i)$ has harmonic radius at least $t\rho$ in the original metric. Shrinking by a fixed factor gives embedded harmonic charts on the same Euclidean ball $\Omega$, with images inside $B_{2r}(p_i)$.
+
+The definition of harmonic radius gives uniform ellipticity and first-derivative bounds. The bounded-Ricci equation then supplies interior $W^{2,p}$ and $C^{1,\alpha}$ bounds for each fixed $p>4$; see \cite{cn}, equations (7.12)--(7.14). This input requires no $\nabla\Ric$ bound. The derivative assumption used there for a stronger pointwise curvature-scale estimate is a distinct hypothesis.
+
+\textbf{Strong convergence from density rather than Ricci derivatives.}
+Denote the pullback metrics by $h_i$, using charts that preserve the chosen orientation. On a slightly smaller fixed domain, pass to a subsequence with
+\[
+h_i\to h_\infty\text{ in }C^{1,\beta},\qquad
+h_i\rightharpoonup h_\infty\text{ in }W^{2,p},\quad0<\beta<\alpha<1.
+\]
+By \eqref{eq:local-int-small} and embeddedness, $E_i=\Ric(h_i)+h_i\to0$ in $L^2$. Since $|E_i|\le2(K+1)$ and the coordinates are uniformly elliptic, interpolation gives $E_i\to0$ in every finite $L^p$, $p\ge2$.
+
+The harmonic-coordinate equation is
+\begin{equation}\label{eq:ricci-pde}
+-\frac12h_i^{ab}\partial_a\partial_b(h_i)_{jk}
++\mathcal N_{jk}(h_i^{-1},\partial h_i)
+=-(h_i)_{jk}+(E_i)_{jk},
+\end{equation}
+where $\mathcal N$ is quadratic in first derivatives. The limit first satisfies $\Ric(h_\infty)=-h_\infty$ weakly and is then smooth by elliptic regularity. Subtracting the two equations leaves $E_i$, $h_i-h_\infty$, $\mathcal N_i-\mathcal N_\infty$, and the principal-coefficient difference multiplied by $\partial^2h_\infty$, all tending to zero in $L^p$. Uniform interior $W^{2,p}$ estimates give
+\[
+h_i\longrightarrow h_\infty\quad\text{strongly in }W^{2,p}.
+\]
+Curvature therefore converges strongly in $L^p$.
+
+\textbf{Passing the squared-curvature density to the limit.}
+Identify $\Lambda^+$ using oriented orthonormal frames varying continuously with the metric. Lipschitz continuity of eigenvalues of symmetric matrices gives strong $L^2$ convergence of $s_i,u_i,w_i$; the negative-part map is also Lipschitz. The estimate
+\[
+\|a_i^2-a^2\|_{L^1}\le\|a_i-a\|_{L^2}(\|a_i\|_{L^2}+\|a\|_{L^2}),
+\]
+gives $\Dcal_i\to\Dcal_\infty$ strongly in $L^1$, while the volume forms converge uniformly. Equation \eqref{eq:local-int-small} forces $\Dcal_\infty=0$ on a nonempty limiting open set, contradicting Lemma \ref{lem:forbidden}.
+\end{proof}
+
+\begin{remark}
+Weak curvature convergence would not suffice: the upgrade to strong $W^{2,p}$ is essential. The uniform pointwise Ricci bound upgrades $L^2$ smallness of $E_i$ to every finite $L^p$, avoiding an additional Ricci-derivative hypothesis.
+\end{remark}
+
+\section{Quantitative collapse and bounded-diameter gaps}
+
+Write
+\[
+N_{r,v}(g)=\{p\in M:\Vol_gB_r(p)\ge v\}.
+\]
+The threshold $v$ is a fixed positive number. The convention $\Vol B_r\ge\nu r^4$ is recovered by setting $v=\nu r^4$ throughout.
+
+\begin{theorem}[Volume fraction of noncollapsed centers]\label{thm:proportion}
+On a closed oriented four-manifold with $|\Ric|_{\op}\le K$,
+\begin{equation}\label{eq:proportion}
+\frac{\Vol N_{r,v}(g)}V
+\le C(K,r,v)\av_M\Dcal,
+\qquad C(K,r,v)=\frac{D_{K/3}(2r)}{\eta_0(K,r,v)}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Theorem \ref{thm:local} gives $A_{2r}\Dcal\ge\eta_0$ on $N_{r,v}$. Integrate over this set and apply \eqref{eq:average-fubini} to obtain
+$\eta_0\Vol N_{r,v}\le D_{K/3}(2r)\int_M\Dcal$.
+\end{proof}
+
+\begin{corollary}[$L^2$ and maximum-defect bounds for blowups]\label{cor:quant-collapse}
+For the blowup family of Section 1, if $|\Ric|_{\op}\le K$, then
+\begin{equation}\label{eq:proportion-L2}
+\frac{\Vol N_{r,v}}V\le C(K,r,v)
+\left[109\av_M|\Ric+g|^2+432K^2\left(\frac13-\frac{k}{A}\right)_+\right].
+\end{equation}
+If $\delta\le1/4$, take $K=5/4$ to obtain
+\begin{equation}\label{eq:proportion-delta}
+\boxed{\frac{\Vol N_{r,v}}V\le C(r,v)(436\delta^2+675d).}
+\end{equation}
+\end{corollary}
+\begin{proof}
+Substitute \eqref{eq:l2-budget} and \eqref{eq:delta-budget}, respectively, into \eqref{eq:proportion}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{thm:intro-collapse}]
+Equation \eqref{eq:proportion-delta} immediately gives \eqref{eq:intro-collapse}. If the diameter does not tend to infinity, some subsequence satisfies $\diam(M_i,g_i)\le D$. Since $A_i\ge1$, \eqref{eq:delta-budget} gives
+$V_i\ge V_*:=32\pi^2/25$. The bound $\Ric\ge-3g$ and Bishop--Gromov comparison then give, for every center,
+\[
+\Vol B_1(p)\ge V_*\frac{v_{-1}(1)}{v_{-1}(D+1)}=:v_D>0.
+\]
+Thus $N_{1,v_D}=M_i$, contradicting the vanishing volume fraction.
+\end{proof}
+
+\begin{corollary}[Bounded-diameter near-Einstein gap]\label{cor:diam}
+For every $D>0$, there is $c(D)>0$ such that metrics on the blowup family with $\delta\le1/4$ and $\diam(M,g)\le D$ satisfy
+\begin{equation}\label{eq:diam-gap}
+\delta^2+\left(\frac13-\frac{k}{A}\right)_+\ge c(D).
+\end{equation}
+More generally, under $|\Ric|_{\op}\le K$ and $\diam\le D$, there is $c(K,D)>0$ such that
+\begin{equation}\label{eq:diam-L2}
+\av_M|\Ric+g|^2+\left(\frac13-\frac{k}{A}\right)_+\ge c(K,D).
+\end{equation}
+\end{corollary}
+\begin{proof}
+The volume lower bound in the preceding proof makes the left-hand side of \eqref{eq:proportion-delta} equal to one. Absorb its two numerical coefficients to obtain \eqref{eq:diam-gap}. For the general case, repeat the argument using $V\ge2\pi^2/K^2$, the Ricci lower bound $-Kg$, and \eqref{eq:proportion-L2}.
+\end{proof}
+
+Collapse in volume measure also implies, for every fixed $r>0$,
+\begin{equation}\label{eq:mean-ball}
+\av_{M_i}\Vol B_r(p)\dd(p)\longrightarrow0.
+\end{equation}
+Indeed, split the integral into $N_{r,v}$ and its complement. The first part is controlled by the uniform model-ball upper bound and its vanishing volume fraction; the second is at most $v$. Then let $v\downarrow0$. This does not imply $\sup_p\Vol B_r(p)\to0$.
+
+The dependence of $C(K,r,v)$ on $v$ is essential: replacing $v$ by $v_i\to0$ does not leave a uniform constant. Likewise, the bounded-diameter threshold depends on $D$ and is not a dimension-only Yau 26 threshold.
+
+\section{A conditional extension to arbitrary collapse}
+
+\subsection{Exact and near-Einstein regularity}
+
+The estimate \eqref{eq:CT} used in Theorem \ref{thm:exact} requires the exact Einstein equation. A general original metric with bounded Ricci curvature need not satisfy it, so the pointwise full-curvature estimate cannot be transferred directly.
+
+A weaker sufficient statement would provide a uniform weak harmonic chart of the original metric in a small-energy ball, allowing its image to overlap. Denote the following assertion by (SC).
+
+\begin{quote}
+There exist universal $\varepsilon,c,Q_0>0$ and $\alpha\in(0,1)$ such that, for a complete oriented four-dimensional metric with $|\Ric|\le3$ and $\int_{B_1(p)}|\Rm|^2<\varepsilon$, some point of $B_{1/2}(p)$ admits an orientation-preserving local diffeomorphism $\pi:B_c(0)\to M$. The pullback $h=\pi^*g$ has uniform ellipticity and harmonic $C^{1,\alpha}$ control, with constants independent of the base-ball volume.
+\end{quote}
+
+Shrinking the Euclidean chart supplies an interior buffer. The bounded-Ricci equation then gives $W^{2,p}$ bounds, so these need not be assumed separately. If the unit-scale assertion holds, four-dimensional energy scale invariance gives the corresponding statement at smaller scales.
+
+Li's smoothing theory for bounded-Ricci four-metrics and work of Lott and Liu on collapsing geometry are relevant \cite{li,lott,liu}, but none is identified here with (SC). Removing the additional hypothesis below requires weak harmonic charts of the original metric with exactly these quantifiers: radius, ellipticity, and $C^{1,\alpha}$ bounds independent of the base-ball volume. Coordinate control for a smoothed metric alone does not establish this statement.
+
+\begin{proposition}[Uniform density floor assuming (SC)]\label{prop:conditional}
+If (SC) holds, then for every $K,C_0>0$ there is $\eta_1(K,C_0)>0$ such that a closed oriented four-dimensional metric satisfying
+\[
+|\Ric|_{\op}\le K,\qquad\av_M|\Rm|^2\le C_0
+\]
+has $\av_M\Dcal\ge\eta_1(K,C_0)$.
+\end{proposition}
+\begin{proof}
+Suppose instead that the average density tends to zero. Lemma \ref{lem:fubini} selects low-energy centers at a fixed small scale with the average density on the same balls tending to zero. Apply (SC). If the chart center moves from the original center to another point in a fixed interior ball, volume comparison and ball containment still bound the density average on its fixed smaller ball by a uniform multiple of the original average.
+
+Lemma \ref{lem:transfer} carries this average to the weak chart. Bounded Ricci curvature of the original metric and $\int\Dcal\to0$ imply $E\to0$ in every finite $L^p$. The strong $W^{2,p}$ limit argument of Theorem \ref{thm:local} then applies and produces the forbidden-spectrum contradiction.
+\end{proof}
+
+This proposition depends on (SC); the conclusions of the first six sections do not. Even if (SC) holds, the resulting applications require the specified relative topology and average-curvature bounds, rather than giving a general dimension-uniform Yau 26 threshold.
+
+\subsection{Selecting normalized low-energy balls}
+
+Under $\av_M|\Rm|^2\le C_0$, the averaging estimate also gives directly
+\begin{equation}\label{eq:normalized-choice}
+\Vol\left\{p:R^4\av_{B_R(p)}|\Rm|^2>\varepsilon\right\}
+\le\frac{D_\kappa(R)C_0R^4}{\varepsilon}V.
+\end{equation}
+Taking a fixed small $R$ yields a positive volume fraction of normalized low-energy centers. For any such center, $y\in B_{R/2}(p)$, and $0<r\le R/2$, volume comparison further gives
+\begin{equation}\label{eq:subball}
+r^4\av_{B_r(y)}|\Rm|^2
+\le C(\kappa,R)R^4\av_{B_R(p)}|\Rm|^2.
+\end{equation}
+This uses only $B_r(y)\subset B_R(p)$ and
+$\Vol B_r(y)\ge c(\kappa,R)(r/R)^4\Vol B_R(p)$.
+
+Thus one can directly select a ball on which every interior subball has small critically normalized energy, without first improving absolute small energy to normalized small energy. Deriving uniform weak harmonic charts of the original metric from these estimates remains a separate regularity problem.
+
+\section{Conclusions and open questions}
+
+The argument converts \emph{near-equality at a global topological boundary} into \emph{near-equality for a locally impossible curvature spectrum}, then obtains a contradiction through a local limit. It requires neither global correction of the input to an Einstein metric nor resolution of singularities, and gives nonexistence gaps and necessary degeneration.
+
+The four-dimensional small-energy theorem for exact Einstein metrics allows collapse. The Cheeger--Naber harmonic-radius estimate for general bounded-Ricci metrics is used here with a fixed volume lower bound. The former yields the uniform exact-Einstein topological gap; the latter yields necessary collapse of near-boundary near-Einstein metrics. Extending this particular local-limit proof under arbitrary collapse requires additional control. For the specified blow-up family, the companion \path{20260921_rigidity.tex} now proves an integral near-Einstein gap by a different argument, without (SC).
+
+The constants in the two main results are nonexplicit and give no new explicit minimal blowup integer. The assumption $b_+>1$ avoids Seiberg--Witten chamber dependence; an extension to $b_+=1$ must address it. The complex-surface family considered here has an obstruction to nonnegative scalar curvature and therefore cannot supply a positive-branch near-$+1$ Ricci counterexample.
+
+Whether (SC), or a sufficient substitute, follows with the stated local-energy and volume quantifiers remains open. The later integral theorem rules out the near-critical sequence for the specified blow-up family; it does not show that collapse alone is contradictory or establish (SC) for general bounded-Ricci inputs. Its actual-monopole and square hypotheses must be checked for other topological families.
+
+\appendix
+\section{Classical inputs}
+
+Equations \eqref{eq:scalar} and \eqref{eq:spectral} use LeBrun's scalar-curvature estimate and the least-$W^+$-eigenvalue estimate in the proof of \cite{lebrun2001}, Theorem 2.3; related forms appear in \cite{lebrun2004}, Lemmas 16--17. The forbidden local spectrum uses Derdzi\'nski's local structure theorem \cite{derd}, Proposition 5, with the K\"ahler curvature relation of Proposition 2. A global complex structure is not required.
+
+Curvature control for exact Einstein metrics without a volume lower bound comes from Cheeger--Tian \cite{ct}; see also the statement in \cite{gejiang}, Theorem 1.1. The noncollapsed argument uses Cheeger--Naber \cite{cn}, Theorem 1.13 and equations (7.12)--(7.14), obtaining interior control from the original metric's harmonic radius. These two inputs have different geometric hypotheses.
+
+The uniform relative Euler bound for blowups uses the classical Noether inequality; \cite{liedtke}, Theorem 2.1 records a more general form. The related work of Li, Lott, and Liu \cite{li,lott,liu} concerns the regularity question in Section 7 but is not used as a proof of (SC).
+
+\begin{thebibliography}{99}
+\bibitem{lebrun2001}
+C. LeBrun, \emph{Ricci Curvature, Minimal Volumes, and Seiberg--Witten Theory}, Invent. Math. 145 (2001), 279--316.
+\url{https://arxiv.org/abs/math/0003068}.
+\bibitem{lebrun2004}
+C. LeBrun, \emph{Einstein Metrics, Four-Manifolds, and Differential Topology}, Surveys in Differential Geometry 8 (2003), 235--255; arXiv version (2004).
+\url{https://arxiv.org/abs/math/0404359}.
+\bibitem{derd}
+A. Derdzi\'nski, \emph{Self-dual K\"ahler manifolds and Einstein manifolds of dimension four}, Compositio Math. 49 (1983), 405--433.
+\url{https://www.numdam.org/item/CM_1983__49_3_405_0/}.
+\bibitem{ct}
+J. Cheeger and G. Tian, \emph{Curvature and injectivity radius estimates for Einstein 4-manifolds}, J. Amer. Math. Soc. 19 (2006), 487--525.
+\url{https://doi.org/10.1090/S0894-0347-05-00511-4}.
+\bibitem{gejiang}
+H. Ge and W. Jiang, \emph{$\epsilon$-Regularity for Shrinking Ricci Solitons and Ricci Flows}, arXiv:1707.05511.
+\url{https://arxiv.org/abs/1707.05511}.
+\bibitem{cn}
+J. Cheeger and A. Naber, \emph{Regularity of Einstein manifolds and the codimension 4 conjecture}, Ann. of Math. 182 (2015), 1093--1165.
+\url{https://arxiv.org/abs/1406.6534}.
+\bibitem{liedtke}
+C. Liedtke, \emph{Algebraic Surfaces of General Type with Small $c_1^2$ in Positive Characteristic}, arXiv:math/0702548.
+\url{https://arxiv.org/abs/math/0702548}.
+\bibitem{li}
+Y. Li, \emph{Smoothing Riemannian metrics with bounded Ricci curvatures in dimension four}, Adv. Math. 223 (2010), 1924--1957.
+\url{https://doi.org/10.1016/j.aim.2009.10.014}.
+\bibitem{lott}
+J. Lott, \emph{The collapsing geometry of almost Ricci-flat 4-manifolds}, Section 3.1, arXiv:1708.06780.
+\url{https://arxiv.org/abs/1708.06780}.
+\bibitem{liu}
+H. Liu, \emph{A compactness theorem for hyperkähler 4-manifolds with boundary}, arXiv:2202.07151, Remark 5.5.
+\url{https://arxiv.org/abs/2202.07151}.
+\end{thebibliography}
+\end{document}

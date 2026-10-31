@@ -1,0 +1,271 @@
+# O10 低幅度能量的无密度估计；O11 极小序列接口的准确范围
+
+日期：2026-09-30。
+
+## 结果状态
+
+本文未证明无密度 O10 的统一间隙，未决定 O11 的最优首项，也未构造这两个问题的合法全局反例。
+
+第1—4节是从提供的 O10 端点输入独立推导的一个新补充引理及其直接后果。它不使用反手性 Weyl 能量上界，说明辅助截面的梯度能量不能全部藏在模长趋向零的最深区域。它不排除固定深度的径向过渡层集中，不能被写成完整径向强收敛或第五线丛非消失质量。
+
+第5节核对 Anderson 极小序列定理与 O11 的逻辑关系，不把引用既有结构定理登记为 O11 的新锐利下界。
+
+本文不主张这些辅助结论具有全球首创性；有限代数脚本不认证 PDE 前置。
+
+## 1. 明确的继承输入
+
+各流形均闭、光滑，积分用概率测度 $d\mu_j=dV_j/V_j$。令 $E_j$ 为 Hermitian 丛，连接为酉连接，$L_j=\nabla_j^*\nabla_j$。
+
+假设已有光滑截面 $v_j$ 满足
+\[
+ |v_j|+|L_jv_j|\le C,\qquad
+ m_j:=|v_j|^2\longrightarrow m_*>0\quad\text{in }L^2(d\mu_j),
+\]
+\[
+ r_j:=L_jv_j-\lambda v_j\longrightarrow0\quad\text{in }L^2(d\mu_j),\qquad \lambda>0.
+\tag{1.1}
+\]
+
+在 O10 中 $\lambda=2$，$m_*=128/81$。这些是所给有界同丛 resolvent 的前置，并不包含 $dm_j\to0$。
+
+进一步，存在区域 $G_j$，上面有正交几乎复结构 $J_j$，使复化余切丛的正交类型投影 $\mathsf P_j$ 满足
+\[
+ N_j:=\mathsf P_j\nabla_jv_j,\qquad
+ \int_{G_j}|N_j|^2\,d\mu_j\longrightarrow0,
+\tag{1.2}
+\]
+以及
+\[
+ \int_{M_j\setminus G_j}|\nabla_jv_j|^2\,d\mu_j\longrightarrow0.
+\tag{1.3}
+\]
+
+这里 $\mathsf P=(I-iJ)/2$；换用共轭类型不改变本证明。
+
+对所给 O10 输入，可取 $G_j=\{\rho_j>c\}$，其中 $0<c<\rho_*=4/3$ 固定。(1.2) 是已有首阶投影。(1.3) 不需要 $L^4$ 梯度估计：以 $\chi(\rho_j)^2v_j$ 测试 $L_jv_j$，得
+\[
+ \int\chi^2|\nabla v_j|^2\,d\mu_j
+ \le C\int(\chi^2+|d\chi|^2)\,d\mu_j=o(1),
+\]
+其中 $\chi=1$ 于 $\rho\le c$，在另一个固定的、低于 $\rho_*$ 的阈值之前变为0。右端使用已有 $\rho_j\to\rho_*$ 和 $d\rho_j\to0$。此步不交换协变导数。
+
+记 $q_j=|\nabla_jv_j|^2$。由 (1.1) 配对 $v_j$ 可知
+\[
+ \int q_j\,d\mu_j\longrightarrow\lambda m_*.
+\tag{1.4}
+\]
+
+## 2. 逆幅度矩估计
+
+**命题。** 在 (1.1)—(1.3) 下，对每个固定 $0<p<1$、$\varepsilon>0$，
+\[
+ \boxed{
+ \limsup_{j\to\infty}\int
+ \frac{q_j}{(m_j+\varepsilon)^p}\,d\mu_j
+ \le\frac{\lambda m_*}{(1-p)(m_*+\varepsilon)^p}.
+ }
+\tag{2.1}
+\]
+
+常数不使用曲率、直径、非塌缩、Sobolev 常数或 Hessian 预算。顺序是：先固定 $p,\varepsilon$，再令 $j\to\infty$。不声称对任意事先指定的 $\varepsilon_j\to0$ 有同一有限误差估计。
+
+### 2.1 类型投影的点态代数
+
+在 $G_j$ 上写 $\nabla v=N+A$，其中 $N=\mathsf P\nabla v$，$A=(I-\mathsf P)\nabla v$。二者正交，$q=|N|^2+|A|^2$。
+
+一个纯 $(1,0)$ 或 $(0,1)$ 复一形式 $\alpha$ 满足 $|2\operatorname{Re}\alpha|^2=2|\alpha|^2$。因此对任何 $\delta>0$，
+\[
+ |dm|^2
+ \le 2(1+\delta)m q+C_\delta m|N|^2.
+\tag{2.2}
+\]
+这是对 $dm=2\operatorname{Re}\langle v,\nabla v\rangle$ 使用加权 Young，不是导数估计。在补集上仍有一般 Kato 界
+\[
+ |dm|^2\le4mq.
+\tag{2.3}
+\]
+
+### 2.2 在原闭流形上测试
+
+用光滑截面 $(m+\varepsilon)^{-p}v$ 测试 $Lv$。精确地，
+\[
+ \int\frac q{(m+\varepsilon)^p}
+ =\operatorname{Re}\int\frac{\langle Lv,v\rangle}{(m+\varepsilon)^p}
+ +\frac p2\int\frac{|dm|^2}{(m+\varepsilon)^{p+1}}.
+\tag{2.4}
+\]
+所有积分仍为归一化积分。
+
+将第一项写为 $F_j$，并把左端分成 $I_{G,j}+I_{G^c,j}$。由 (2.2)—(2.3)，只要 $p(1+\delta)<1$，
+\[
+ [1-p(1+\delta)]I_{G,j}
+ \le F_j+|2p-1|I_{G^c,j}
+   +C_{p,\delta}\varepsilon^{-p}\int_{G_j}|N_j|^2.
+\tag{2.5}
+\]
+
+固定 $\varepsilon$ 后，(1.3) 使 $I_{G^c,j}\to0$，(1.2) 使最后一项趋0。由有界幅度、(1.1) 和连续函数收敛，
+\[
+ F_j\longrightarrow\frac{\lambda m_*}{(m_*+\varepsilon)^p}.
+\]
+故
+\[
+ \limsup_j I_{G,j}\le
+ \frac{\lambda m_*}
+ {[1-p(1+\delta)](m_*+\varepsilon)^p}.
+\]
+最后令 $\delta\downarrow0$，得到 (2.1)。没有在有限误差中任意指定 $\delta_j$ 或 $\varepsilon_j$。
+
+## 3. 深低幅度区的能量排除
+
+对每个固定 $0<t<m_*$，由 (2.1)，
+\[
+ \begin{aligned}
+ \limsup_j\int_{\{m_j\le t\}}q_j
+ &\le (t+\varepsilon)^p
+       \limsup_j\int\frac{q_j}{(m_j+\varepsilon)^p}\\
+ &\le\frac{\lambda m_*}{1-p}
+       \left(\frac{t+\varepsilon}{m_*+\varepsilon}\right)^p.
+ \end{aligned}
+\]
+令 $\varepsilon\downarrow0$，得到
+\[
+ \boxed{
+ \limsup_j\int_{\{m_j\le t\}}q_j\,d\mu_j
+ \le\frac{\lambda m_*}{1-p}\left(\frac t{m_*}\right)^p,
+ \qquad 0<p<1.
+ }
+\tag{3.1}
+\]
+
+当 $0<t<m_*/e$ 时，取固定的
+\[
+ p=1-\frac1{\log(m_*/t)},
+\]
+便有
+\[
+ \boxed{
+ \limsup_j\int_{\{m_j\le t\}}q_j\,d\mu_j
+ \le e\lambda\,t\log\frac{m_*}{t}.
+ }
+\tag{3.2}
+\]
+
+在 O10 中 $\lambda=2$。特别地，
+\[
+ \lim_{t\downarrow0}\limsup_j
+ \int_{\{m_j\le t\}}|\nabla v_j|^2\,d\mu_j=0.
+\tag{3.3}
+\]
+
+### 3.1 不能从这里推出什么
+
+(3.3) 只控制模长趋于零的最深井。它不证明对固定 $0<t<m_*$，$\int_{m_j\le t}q_j\to0$；不证明 $dm_j\to0$ 于 $L^2$；不证明 $q_j$ 在所有小体积集合上一致可积；也不证明第五线丛截面的非零质量。
+
+固定中间幅度层 $a<m_j<b<m_*$ 的体积可以趋零，但这里仍可能有非零径向能量。将这个区别省去，就会再次把一个合法中间估计误写成 O10 已解。
+
+### 3.2 为何这类矩估计不能单独消灭全部径向缺陷
+
+取振幅变量 $t\in[0,m_*]$，考虑纯形式的能量测度
+\[
+ d\nu_q(t)=\lambda\,dt,\qquad d\nu_R(t)=2\lambda t\,dt.
+\tag{3.4}
+\]
+对光滑测试 $F$，它们满足
+\[
+ \int F\,d\nu_q+\frac12\int F'\,d\nu_R
+ =\lambda m_* F(m_*),
+\]
+与 (2.4) 的极限质量关系相容，并在 $\varepsilon\downarrow0$ 时达到 (2.1) 的逆幅度矩常数。
+
+O10 取 $\lambda=2$ 时，$d\nu_R=4t\,dt$ 正是前轮文件已显示的径向预算。它还满足 (3.3)，但总径向能量 $\nu_R([0,m_*])=\lambda m_*^2$ 非零。
+
+这不是原方程的实际反例。它只严格说明：已用的类型代数、标量质量关系及其逆幅度矩，并不足以排除全部径向集中。不能再把同类标量权重的形式变化当作自动能够闭合的证明路线。
+
+## 4. 一个可以直接接入弱测试的二次能量关系
+
+若线丛测试 $w_j$ 满足
+\[
+ \|w_j\|_\infty+\|L_ww_j\|_\infty
+ +\|\nabla w_j\|_{4,\mathrm{av}}\le C,
+\]
+则
+\[
+ \boxed{
+ \int(q_j-\lambda m_*)|w_j|^2\,d\mu_j\longrightarrow0.
+ }
+\tag{4.1}
+\]
+
+证明：由
+\[
+ \Delta m_j=2\lambda m_j-2q_j
+       +2\operatorname{Re}\langle r_j,v_j\rangle
+\]
+及 Stokes，左边等于
+\[
+ \lambda\int(m_j-m_*)|w_j|^2
+ +\int\operatorname{Re}\langle r_j,v_j\rangle|w_j|^2
+ -\frac12\int(m_j-m_*)\Delta|w_j|^2.
+\]
+其中
+\[
+ \Delta|w_j|^2
+ =2\operatorname{Re}\langle L_ww_j,w_j\rangle
+       -2|\nabla w_j|^2
+\]
+有一致 $L^2$ 界，三项均趋0。
+
+(4.1) 不需要 $q_j$ 的一致 $L^2$ 或全局一致可积性，但也不把 $q_j$ 等同于第五线丛的 $|c_j|^2$。两者之间的径向项仍须保留。
+
+## 5. O11：Anderson 接口的核对与仍缺的下界
+
+外部核对来源：M. T. Anderson, *Canonical Metrics on 3-Manifolds and 4-Manifolds*, arXiv:math/0511034，Theorem 4.10，(4.43)、(4.45)，以及 (4.65) 后的讨论。
+
+论文提供特殊选择的理想极小序列：紧轨形情形有 ALE 项参与的能量等式；开放/塌缩情形有相应下半连续不等式。它没有证明任意给定近极小序列自动具有该结构，也没有证明原异常类和连接柄全部进入指定的完整 AE 核心。
+
+其 (4.65) 明确允许沿球面空间形式、而不只是沿三维球面作广义连通和；随后专门指出开放极限域与原流形拓扑的关系仍需研究。本文引用这一明确范围，不以 2005 年的讨论冒充 2026 年前沿的穷尽结论。
+
+### 5.1 核心费用需要保留端部修正
+
+对满足相应渐近条件、有限拓扑型、负定交叉形式的完整 ALE 四流形 N，记 e 为端数，r=b1(N)，m=b2(N)，G=\sum_a|\Gamma_a|^{-1}。以
+\[
+ \tau(N)=\frac1{12\pi^2}\int(W_+^2-W_-^2)-\eta_\infty
+\]
+固定 $\eta_\infty$ 的符号。
+
+若无其他边界项残留，相对 Gauss–Bonnet、signature 及 $\chi(N)=2-2r+m-e$ 给出精确式
+\[
+ \begin{aligned}
+ P_N={}&4\int|W^+|^2+\frac1{12}\int s^2
+ +8\pi^2m+32\pi^2r\\
+ &+16\pi^2(e-2+G)-24\pi^2\eta_\infty.
+ \end{aligned}
+\tag{5.1}
+\]
+
+AE 情形 $G=e,\eta_\infty=0$ 才给出
+\[
+ P_N\ge8\pi^2m+32\pi^2(r+e-1)+\frac1{12}\int s^2.
+\tag{5.2}
+\]
+
+这些费用与用户新稿一致，本文不将它们重新登记为新结果。其意义是：拥有一个二周期，不自动拥有 $8\pi^2$ 的无迹 Ricci 成本。Eguchi–Hanson 的 $m=1,e=1,G=1/2,\eta_\infty=0$ 使 (5.1) 的拓扑部分为0，符合它的 Ricci-flat 性。
+
+### 5.2 尚未完成的真实连接
+
+要对原 $M_j=X_j\#k_j\overline{\mathbb{CP}}^2\#\ell_j(S^1\times S^3)$ 得到
+\[
+ \inf_gP(g)\ge8\pi^2(k_j+4\ell_j)-o(Q_j),
+\]
+仍须证明选定理想极小序列中的主体、完整核心与塌缩部分，对原标记的总实际支付足够，且不遗漏、重复计算或删除端部修正。
+
+下半连续性提供的是正确的能量方向，不提供这项标记结论。本文没有证明它，也没有构造系数低于4的同族度量。
+
+## 6. 已取得与未取得
+
+本轮新增推导：在已列明的实际端点输入下，得到无密度的逆幅度矩和深低幅度梯度能量排除 (2.1)—(3.3)，以及适用于有界线丛测试的二次能量关系 (4.1)。它们均不增加 $W^-$ 预算。
+
+仍未取得：固定深度径向集中消失、第五线丛质量完整保留、无密度 O10 的统一间隙、O11 的匹配锐利下界或新最优构造。
+
+源资料：用户上传的 `O10_Double_Weighted_Test.md`、`00_Research_Result(2).md`、`O10_Alternative_Global.md`、`O10_All_Finite_Density.md`，以及原稿的强流/实际同丛输入。本文未独立重证这些上游结果。Armstrong 与 Anderson 原文用于核查已有精确定理的范围，不被用来代替弱极限与标记传递的未证步骤。

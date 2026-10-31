@@ -1,0 +1,893 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,esint}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setlength{\emergencystretch}{2em}
+\title{Two Proof Increments for the Weak Endpoint and Extremal Questions}
+\author{Qiushi Line 1: research supplement}
+\date{29 September 2026}
+\begin{document}
+\maketitle
+\noindent\textbf{Scope.} This supplement proves two intermediate upgrades from explicitly identified estimates in the supplied integrated manuscript. It does not assert a solution of unrestricted O10 or the optimal coefficient in O11. The manuscript's inherited inputs are not independently re-proved here.
+\tableofcontents
+\bigskip
+\hypertarget{o10-a-strong-current-upgrade-from-the-actual-constant-weight-equation}{%
+\section{O10: a strong-current upgrade from the actual constant-weight
+equation}\label{o10-a-strong-current-upgrade-from-the-actual-constant-weight-equation}}
+
+Date: 2026-09-29. Source:
+the supplied integrated manuscript (source hash recorded in the accompanying status file), especially
+\texttt{sec:single-parameter}, \texttt{sec:endpoint-covariance},
+\texttt{sec:phase-curvature}, \texttt{sec:torsion-prolongation}, and
+\texttt{sec:quartic-flux}.
+
+\hypertarget{result-and-scope}{%
+\subsection{Result and scope}\label{result-and-scope}}
+
+There is a new global estimate available before attempting any further
+manipulation of the final quartic flux identity. The actual
+constant-weight positive spinor has uniformly integrable fourth-power
+first derivative along every hypothetical O10 endpoint sequence. This
+upgrades the cubic torsion Dirac equation, its length, the original
+current derivative, and the full first torsion projection to strong
+critical statements. It uses no diameter, Sobolev, noncollapse,
+pointwise Ricci bound, or Euler-density upper bound.
+
+It does \textbf{not} complete O10: it does not estimate the fourth-power
+derivative of the cubic torsion, its relative-index flux, or the
+remaining curvature-weighted radial-horizontal interaction. In
+particular it does not contradict the shrinking actual local torsion
+cores already constructed in the manuscript.
+
+All averages below use the actual total volume, even when the manifold
+varies. Thus every vanishing squared norm is an \texttt{o(V)} statement,
+not an unnormalized smallness assumption.
+
+\hypertarget{a-slow-gradient-truncation-lemma}{%
+\subsection{1. A slow gradient truncation
+lemma}\label{a-slow-gradient-truncation-lemma}}
+
+Let \((M_j,g_j)\) be closed Riemannian manifolds of fixed dimension and
+\(E_j\) Hermitian bundles of fixed rank, with unitary connections. Let
+\(u_j\) satisfy
+
+\[
+ |u_j|\le C_0,\qquad \nabla^*\nabla u_j=f_j(|u_j|^2)u_j,
+ \qquad |f_j|+|f'_j|\le C_0.
+\]
+
+Suppose
+
+\[
+ \operatorname{Ric}_{g_j}=R_{0,j}+e_j,
+ \quad F_j=F_{0,j}+E_j,
+ \quad |R_{0,j}|+|F_{0,j}|\le C_0,
+\]
+
+where the symbol \(E_j\) on the right denotes a curvature error, and
+assume
+
+\[
+ \mu_j:=\fint(|e_j|^2+|E_j|^2)\longrightarrow0,
+ \qquad \sup_j\mu_j\le C_0.
+\]
+
+No independent Hessian or fourth-power gradient budget is needed: these
+follow from the displayed hypotheses by the unweighted version of the
+argument below.
+
+There is \(\epsilon>0\), depending only on the displayed constants,
+dimension, and rank, such that, with
+
+\[
+ q=|\nabla u|^2,\quad H=\nabla^2u,\quad
+ w_L=\left(\frac q{L^2+q}\right)^\epsilon,
+ \qquad L\ge1,
+\]
+
+one has
+
+\[
+ \boxed{\fint w_L(|H|^2+q^2)
+              \le C L^{-2\epsilon}+C\mu_j.}\tag{1}
+\]
+
+Consequently
+
+\[
+ \boxed{\lim_{L\to\infty}\limsup_j
+       \fint_{\{|\nabla u_j|\ge L\}}|\nabla u_j|^4=0.}\tag{2}
+\]
+
+This establishes uniform integrability of \(|\nabla u_j|^4\) relative to
+normalized volume. Formula (1) also controls \(|H|^2\) on the
+large-gradient set. It does \textbf{not}, by itself, prove uniform
+integrability of \(|H|^2\) on arbitrary small-volume sets.
+
+\hypertarget{proof}{%
+\subsubsection{Proof}\label{proof}}
+
+Use the smooth regularization
+
+\[
+ w_{L,\delta}=\left(\frac{q+\delta}{L^2+q+\delta}\right)^\epsilon,
+ \quad \delta>0.
+\]
+
+It obeys
+
+\[
+ |dw_{L,\delta}|\,|\nabla u|\le2\epsilon w_{L,\delta}|H|.
+\tag{3}
+\]
+
+Put \(P_i=\nabla_i u\), \(H_{ij}=\nabla_iP_j\), and \(I=\int w|H|^2\),
+\(J=\int wq^2\), \(A_w=\int w(1+q)\). Antisymmetry gives the exact
+algebraic identity
+
+\[
+ I=\int w\operatorname{Re}\langle H_{ij},H_{ji}\rangle
+       +\frac12\int w\sum_{i,j}|F_{ij}u|^2.
+\tag{4}
+\]
+
+In the first term integrate the derivative indexed by \(j\) in
+\(H_{ji}\). Then commute the two derivatives in
+\(\nabla_jH_{ij}=\nabla_j\nabla_iP_j\). The commutator on the
+covector-valued section \(P\) contains only
+\(\operatorname{Ric}*P+F*P\), and \(\sum_j\nabla_jP_j=-f(|u|^2)u\). In
+particular \textbf{no derivative of either curvature occurs}. The
+derivative of \(f(|u|^2)u\) is bounded by \(C|P|\). The derivative of
+the scalar weight contributes at most \(2\epsilon I\), by (3). Thus,
+after taking \(\epsilon\) sufficiently small,
+
+\[
+ I\le C A_w+C\int w(|e|+|E|)q+C\int (|e|^2+|E|^2).
+\tag{5}
+\]
+
+The term involving \(F^2\) in (4) was bounded using \(F=F_0+E\) and
+bounded \(F_0\). No derivative of the bounded model is required.
+
+For completeness, a weighted bounded-section interpolation follows by
+integrating the divergence of \(wq\operatorname{Re}\langle u,P\rangle\).
+The derivative of \(q\) contributes at most \(C\int wq|H|\); the
+derivative of \(w\) has the same bound by (3); the trace Hessian term is
+bounded by \(C\int wq\). Therefore
+
+\[
+ J\le C\int wq+C\sqrt{IJ},\qquad
+ J\le C_1(I+A_w).\tag{6}
+\]
+
+Since \(0\le w\le1\), for any fixed \(a>0\),
+
+\[
+ \int w(|e|+|E|)q
+ \le aJ+C_a\int(|e|^2+|E|^2).
+\tag{7}
+\]
+
+Choose \(a\) after \(C_1\) so that (5)--(7) absorb the resulting
+multiple of \(I\). It follows that
+
+\[
+ I+J\le C A_w+C\mu_jV_j.
+\tag{8}
+\]
+
+Before estimating the weighted right side, take \(w\equiv1\) in
+(4)--(8). Testing the section equation by \(u\) gives \[
+\int q=\int f(|u|^2)|u|^2\le CV.
+\] The same absorption then proves \[
+\fint(|H|^2+q^2)\le C(1+\mu_j)\le C.
+\] Thus the energy budget used in the following step is a consequence,
+not an extra hypothesis.
+
+For \(0<\epsilon\le1\),
+
+\[
+ w_{L,\delta}\le L^{-2\epsilon}(q+\delta)^\epsilon.
+\]
+
+The just-proved normalized \(q^2\) bound controls the average of
+\((q+\delta)^\epsilon(1+q)\), uniformly for \(0<\delta\le1\). Divide (8)
+by \(V_j\), then let \(\delta\downarrow0\), obtaining (1). On
+\(q\ge L^2\), \(w_L\ge2^{-\epsilon}\), so (2) follows. Every calculation
+is on a closed manifold with a globally smooth regularized scalar
+weight.
+
+\hypertarget{apply-the-lemma-to-the-hypothetical-o10-endpoint}{%
+\subsection{2. Apply the lemma to the hypothetical O10
+endpoint}\label{apply-the-lemma-to-the-hypothetical-o10-endpoint}}
+
+Use the manuscript's exact Yamabe reduction and a single ordinary
+solution rescaled to
+
+\[
+ s=-4,\quad D_A\Phi=0,\quad F_A^+=2i\sigma(\Phi),
+ \quad \rho=|\Phi|^2\le2.
+\]
+
+Set \(P=\nabla_A\Phi\), \(H=\nabla_AP\), \(\zeta=\langle\Phi,P\rangle\),
+\(\tau=t_\Phi\), \(m=|\tau|^2\), \(\rho_*=4/3\), \(m_*=128/81\), and
+\(\eta=r+D_\beta/V+\beta^{-2}\to0\).
+
+The actual semilinear equation is
+
+\[
+ \nabla_A^*\nabla_A\Phi=(1-\rho/2)\Phi.\tag{9}
+\]
+
+The latest bounded ASD fit supplies the lemma's full
+connection-curvature hypothesis. The old Hessian budget is consistent
+with, and can also be recovered from, the unweighted part of the lemma.
+With
+
+\[
+ f=-iF_A^-,\quad Q=-iq_-(\tau),\quad
+ S=m_*+2\rho^2|P|^2,\quad
+ K=-\frac98\frac{\rho^3Q}{S},
+\]
+
+the manuscript proves
+
+\[
+ |K|\le C,\qquad \fint|f-K|^2\le C\sqrt\eta.
+\tag{10}
+\]
+
+The traceless curvature of \(S^+\) contains \(W^++s/12\) and the
+off-diagonal Ricci block; it contains \textbf{no \(W^-\)}. Its central
+part is \(F_A/2\). Retain the scalar block, the bounded actual self-dual
+determinant curvature, and the bounded ASD model \(iK\) as \(F_0\). The
+remaining curvature has
+
+\[
+ \fint|F^{S^+}-F_0|^2\le C\sqrt\eta,
+ \quad |F_0|\le C,
+ \quad \fint|\operatorname{Ric}+g|^2\le\eta.
+\tag{11}
+\]
+
+Here \(W^+\to0\) follows from the same-solution parameter estimate,
+including its bounded axial model of size \(O(\beta^{-1})\). Applying
+(1) gives
+
+\[
+ \boxed{\fint w_L(|H|^2+|P|^4)
+         \le C L^{-2\epsilon}+C\sqrt\eta.}\tag{12}
+\]
+
+There is no hypothesis on the opposite Weyl curvature and hence no use
+of \(\chi/A\le B\) in this result.
+
+\hypertarget{strong-critical-consequences}{%
+\subsection{3. Strong critical
+consequences}\label{strong-critical-consequences}}
+
+\hypertarget{the-mixed-spinor-product-and-torsion-dirac-residual}{%
+\subsubsection{3.1 The mixed spinor product and torsion Dirac
+residual}\label{the-mixed-spinor-product-and-torsion-dirac-residual}}
+
+The old identity gives \(\fint|\zeta|^2\le C\eta\), while
+\(|\zeta|\le\sqrt2|P|\). Splitting into \(|P|\le L\) and its complement
+in (12) yields
+
+\[
+ \fint|\zeta|^2|P|^2
+ \le C\{L^2\eta+L^{-2\epsilon}+\sqrt\eta\}\to0.
+\tag{13}
+\]
+
+For example choosing \(L=\eta^{-1/(2+2\epsilon)}\) gives a bound by
+\(C\eta^{\epsilon/(1+\epsilon)}+C\sqrt\eta\). Also
+\(\fint|\zeta|^4\to0\). The exact cubic equation, with axial
+cancellation retained, now implies
+
+\[
+ \boxed{\|D^-_{3A}\tau\|_{L^2_{\rm avg}}\to0.}\tag{14}
+\]
+
+This is stronger than the previous \(L^q\), \(q<2\), conclusion.
+
+\hypertarget{torsion-length-and-positive-spinor-energy-density}{%
+\subsubsection{3.2 Torsion length and positive-spinor energy
+density}\label{torsion-length-and-positive-spinor-energy-density}}
+
+The existing torsion-length concentration gives \(m\to m_*\) in
+normalized measure. Since \(m\le2\rho^2|P|^2\le8|P|^2\), (12) makes
+\(m^2\) uniformly integrable. Vitali on the probability spaces
+\((M_j,dV_j/V_j)\) gives
+
+\[
+ \boxed{\|m-m_*\|_{L^2_{\rm avg}}\to0.}\tag{15}
+\]
+
+The exact algebraic defect satisfies
+
+\[
+ \nu=2\rho^2|P|^2-m,\quad
+ 0\le\nu\le4\rho|\zeta|^2,
+\]
+
+so \(\nu\to0\) in normalized \(L^2\). On \(\rho\ge c>0\), use (15) and
+\(\rho\to\rho_*\) in measure; on \(\rho<c<\rho_*\), its relative volume
+tends to zero and (12) controls \(|P|^4\). Consequently
+
+\[
+ \boxed{\big\||P|^2-4/9\big\|_{L^2_{\rm avg}}\to0.}\tag{16}
+\]
+
+The scalar equation \(\Delta\rho=-2|P|^2+2\rho-\rho^2\) therefore gives
+
+\[
+ \|\Delta\rho\|_{L^2_{\rm avg}}\to0.\tag{17}
+\]
+
+\hypertarget{the-full-current-derivative}{%
+\subsubsection{3.3 The full current
+derivative}\label{the-full-current-derivative}}
+
+The actual polynomial curvature equation is
+
+\[
+ \rho^3 f+2Q=2\rho^2(d\gamma)^-+\mathcal R,
+ \quad \gamma=\operatorname{Im}\zeta,
+ \quad |\mathcal R|\le
+ C(\rho^3|\operatorname{Ric}^{\circ}|+
+              \rho^{3/2}|\zeta||P|).
+\tag{18}
+\]
+
+Real/imaginary conventions may reverse both signs of the derivative
+term; only its norm is used here. By (13), \(\mathcal R\to0\) in
+normalized \(L^2\). Furthermore
+
+\[
+ \rho^3 f+2Q
+ =\rho^3(f-K)+\left(2-\frac98\frac{\rho^6}{S}\right)Q.
+\tag{19}
+\]
+
+The first term is small by (10). The coefficient in the second is
+uniformly bounded, converges to zero in measure, and \(|Q|^2=m^2/8\) is
+uniformly integrable by (15). Thus the second term is small in
+normalized \(L^2\). Equation (18) proves \(\rho^2(d\gamma)^-\to0\) in
+that norm.
+
+This weighted assertion becomes unweighted without assuming a pointwise
+lower bound for \(\rho\). Indeed
+
+\[
+ |d\zeta|\le C(|P|^2+\rho|F^{S^+}|).
+\tag{20}
+\]
+
+The squares on the right are uniformly integrable, respectively by (12)
+and the bounded-model fit (11). The set \(\{\rho<c\}\), for any fixed
+\(0<c<\rho_*\), has vanishing relative volume. On its complement divide
+by \(\rho^2\); on that set use (20). Hence
+
+\[
+ \|(d\gamma)^-\|_{L^2_{\rm avg}}\to0.
+\tag{21}
+\]
+
+The real part \(\operatorname{Re}\zeta=d\rho/2\) is exact, and
+\(\gamma\) is a globally smooth one-form with \(\delta\gamma=0\). Stokes
+gives exactly
+
+\[
+ \int|d\gamma^+|^2=\int|d\gamma^-|^2,
+\]
+
+so \(d\gamma\to0\) in normalized \(L^2\). The one-form and scalar
+Bochner formulas yield
+
+\[
+ \int|\nabla\gamma|^2
+ =\int|d\gamma|^2-\int\operatorname{Ric}(\gamma,\gamma),
+\]
+
+\[
+ \int|\nabla^2\rho|^2
+ =\int(\Delta\rho)^2-\int\operatorname{Ric}(d\rho,d\rho).
+\]
+
+The \(-g\) terms are small by the original current bound. The
+Ricci-error pairings are bounded by its \(L^2_{\rm avg}\) norm times the
+squared \(L^4_{\rm avg}\) norm of \(\gamma\) or \(d\rho\), which tend to
+zero by (13). Therefore
+
+\[
+ \boxed{\|\nabla\zeta\|_{L^2_{\rm avg}}\to0.}\tag{22}
+\]
+
+This proves the conclusion sought from the manuscript's current--Hessian
+correlation \(\mathcal B\) \textbf{without adding \(\mathcal B\to0\) as
+a hypothesis} and without claiming that \(\mathcal B\) itself has been
+estimated.
+
+\hypertarget{the-full-first-torsion-projection}{%
+\subsubsection{3.4 The full first torsion
+projection}\label{the-full-first-torsion-projection}}
+
+Use the already proved actual identity
+
+\[
+ N=\sqrt{\rho/2}\,\mathcal L(\nabla\zeta)+\mathcal R_N,
+\quad
+ |\mathcal R_N|\le C\{\rho^{3/2}(
+ |\operatorname{Ric}^{\circ}|+|W^+-W_0|)+|\zeta||P|\}.
+\]
+
+Equations (13), (22), and the curvature errors give
+
+\[
+ \boxed{\|N\|_{L^2_{\rm avg}}\to0.}\tag{23}
+\]
+
+This is the complete displayed first torsion projection, not merely its
+Dirac trace.
+
+\hypertarget{the-remaining-torsion-gradient-has-a-fixed-nonzero-mean}{%
+\subsubsection{3.5 The remaining torsion gradient has a fixed nonzero
+mean}\label{the-remaining-torsion-gradient-has-a-fixed-nonzero-mean}}
+
+The unweighted twisted Lichnerowicz identity is now legitimate at the
+limiting strength:
+
+\[
+ \fint|\nabla_{3A}\tau|^2
+ =\fint|D^-_{3A}\tau|^2+\fint m
+       -\frac32\fint\langle c(F_A^-)\tau,\tau\rangle.
+\]
+
+Replace \(f=-iF_A^-\) by its bounded fit \(K\) using Cauchy--Schwarz
+with the uniformly bounded \(L^2\) norm of \(m\). The Clifford identity
+and (15) then give
+
+\[
+ \frac32\fint\langle c(F_A^-)\tau,\tau\rangle
+ =-\frac{27}{32}\fint\frac{\rho^3m^2}{S}
+ \longrightarrow-m_*.
+\]
+
+The bounded coefficient \(\rho^3/S\), convergence in measure, and
+uniform integrability of \(m^2\) justify this replacement. Consequently
+
+\[
+ \boxed{\fint|\nabla_{3A}\tau|^2\longrightarrow
+              2m_* =256/81.}\tag{25}
+\]
+
+Thus the strengthened first projection does not imply that the torsion
+is parallel: its surviving derivative energy is nonzero and sits in the
+complementary type component.
+
+\hypertarget{what-has-actually-been-removed-and-what-remains}{%
+\subsection{4. What has actually been removed, and what
+remains}\label{what-has-actually-been-removed-and-what-remains}}
+
+The previous chain had only subcritical torsion-length convergence and
+weak Dirac control, and had left \(\nabla\zeta\) behind an unresolved
+current--Hessian covariance. Equations (14)--(16), (22), and (23)
+genuinely strengthen that chain.
+
+The critical quantity needed for the final signed characteristic flux is
+still of higher differential order. Neither
+
+\[
+ \fint|D\tau|^2\to0,\quad
+ \fint|N|^2\to0,\quad
+ \fint(m-m_*)^2\to0
+\]
+
+controls
+
+\[
+ \fint_{\{a<m<b\}}
+      |\langle\tau,\nabla\tau\rangle|^2|\nabla\tau|^2,
+\tag{24}
+\]
+
+or the curvature-weighted radial--horizontal product in
+\texttt{proof:phase-curvature:e3.6}. The first quantity involves fourth
+powers of \textbf{\(\nabla\tau\)}, which contains the original Hessian.
+Formula (12) controls fourth powers of \textbf{\(\nabla\Phi\)}; these
+must not be conflated.
+
+The local actual simple torsion-zero cores remain compatible with
+(14)--(23): their contributions to the strong quadratic norms vanish
+under shrinking, while their transition flux stays of order one. Thus
+one cannot append an unsupported topological vanishing conclusion to the
+new strong-current theorem.
+
+The shortest remaining global step is to control the signed interaction
+in the final identity
+
+\[
+ \|\vartheta W^--\widetilde H\|_2^2-
+ \|\widetilde H\|_2^2
+ =\|\vartheta\mathsf R\|_2^2-
+ 2\int\vartheta\langle\mathsf R,H^+\rangle
+\]
+
+using (14)--(23), the full actual commutator/bracket, and the exterior
+matching. The old positive \(20V/3\) has already canceled in this
+identity and cannot be reinserted. A proof of a uniform signed
+separation, or a complete calibrated closed escape construction, is
+still required for O10.
+
+\hypertarget{independent-verification-within-this-turn}{%
+\subsection{Independent verification within this
+turn}\label{independent-verification-within-this-turn}}
+
+The slow-truncation lemma was independently checked by the root agent
+and \texttt{o10\_counterexample}. The latter supplied the
+derivative-free weighted Hessian interchange (4), which is stronger and
+cleaner than commuting the rough Laplacian and integrating a
+derivative-of-curvature term. Both checks explicitly preserve the
+distinction between gradient fourth-power uniform integrability and full
+Hessian-square uniform integrability.
+
+\clearpage
+% Standalone insertion fragment. Requires amsmath, amssymb, and amsthm.
+% All notation is defined below; no project-specific macros are used.
+% This fragment does not assert a solution of the unrestricted coefficient problem.
+
+\section{Variational selection at the topological defect scale}
+\label{sec:o11-variational-selection-20260929}
+
+We extract additional variational information from a sufficiently accurate
+minimizing sequence. The argument uses finite metric variations directly;
+it does not require a smooth minimizer, an Ekeland principle, or geometric
+compactness. The test class is critical under four-dimensional scaling and
+therefore admits variations supported on shrinking regions.
+
+\paragraph{Setting and inherited estimates.}
+Let
+\[
+ M_j=X_j\mathbin{\#}k_j\overline{\mathbb{CP}}^{\,2}
+       \mathbin{\#}\ell_j(S^1\times S^3),
+ \qquad A_j=c_1^2(X_j),\quad Q_j=k_j+4\ell_j>0,
+ \quad h_j=Q_j/A_j\longrightarrow0,
+\]
+be the balanced complex-hyperbolic surgery family. For a smooth metric set
+\[
+ P(g)=\int_{M_j}|\operatorname{Ric}^{\circ}_g|^2\,dV_g,
+ \qquad R(g)=\int_{M_j}|\operatorname{Ric}_g|^2\,dV_g,
+ \qquad S(g)=\int_{M_j}s_g^2\,dV_g.
+\]
+Ricci norms are tensor norms. Curvature and Weyl norms below are the
+Hilbert--Schmidt norms of their operators on two-forms. Define
+\[
+ p_j=\inf_{g\text{ on }M_j}P(g),\qquad
+ \mathcal E(g)=4-
+ \frac{\bigl(\int_{M_j}s_g\,dV_g\bigr)^2}
+      {\operatorname{Vol}(g)R(g)},\qquad
+ \alpha_j=\inf_{g\text{ on }M_j}\mathcal E(g).
+\]
+We use the following established properties of this family:
+\begin{enumerate}
+\item Every conformal class is negative Yamabe. Passing to its negative
+Yamabe representative does not increase $P$, since
+\[
+ P(g)-P(\widehat g)=\frac{S(g)-S(\widehat g)}{12}\ge0.
+\]
+The representative can be scaled to $s_{\widehat g}=-4$ without changing
+$P$.
+\item The recovery construction gives $p_j\le8\pi^2Q_j$. For every metric,
+\[
+ 8\pi^2A_j+P(g)\le R(g)
+ \le8\pi^2A_jU_j+4P(g),\qquad U_j=1+O(h_j).
+\]
+\item The variational comparison gives
+\[
+ \alpha_j=\frac{4p_j}{8\pi^2A_j}+O(h_j^2).
+\]
+Moreover, $\chi(M_j)=A_j/3+O(Q_j)$ and
+\[
+ \int_{M_j}|\operatorname{Rm}_g|^2\,dV_g
+       =8\pi^2\chi(M_j)+P(g).
+\]
+\end{enumerate}
+All constants in these inherited estimates are uniform along the family.
+The new argument below is conditional only on these displayed inputs.
+
+\paragraph{Critical test budget.}
+For a smooth symmetric covariant two-tensor $H$, put
+\[
+ \mathfrak D_g(H)=\int_M
+      \bigl(|\nabla^2H|_g^2+|\nabla H|_g^4\bigr)\,dV_g.
+\]
+Under $(g,H)\mapsto(\lambda^2g,\lambda^2H)$, both
+$\|H\|_{L^\infty(g)}$ and $\mathfrak D_g(H)$ remain unchanged.
+In particular no pointwise bound on the derivatives of $H$ is imposed.
+
+\paragraph{Lemma 1 (uniform finite-variation remainders).}
+Suppose $g$ is a smooth metric on a closed four-manifold and
+\[
+ \int_M|\operatorname{Rm}_g|^2\,dV_g\le KA.
+\]
+If
+\[
+ \|H\|_{L^\infty(g)}\le1,\qquad \mathfrak D_g(H)\le A,
+\]
+then $g_t=g+tH$ is positive definite for $|t|\le t_0$, where $t_0>0$
+is dimensional, and
+\begin{equation}
+ \left|\frac{d^m}{dt^m}P(g_t)\right|\le C_K A,
+ \qquad m=2,3,\quad |t|\le t_0.
+ \label{eq:o11-var-remainder-20260929}
+\end{equation}
+The constants do not require a diameter bound, injectivity-radius bound,
+Sobolev inequality, or noncollapsing hypothesis.
+
+\begin{proof}
+The amplitude bound makes $g_t$ uniformly equivalent to $g$. In terms of
+the background connection $\nabla=\nabla^g$, the difference tensor is
+\[
+ (\nabla^{g_t}-\nabla^g)^k{}_{ab}
+ =\frac t2(g_t)^{kc}
+   \bigl(\nabla_aH_{bc}+\nabla_bH_{ac}-\nabla_cH_{ab}\bigr).
+\]
+The curvature difference is the covariant derivative of this tensor plus
+its quadratic product. Thus it consists of contractions of
+\[
+ t\,g_t^{-1}\nabla^2H
+ \quad\text{and}\quad
+ t^2g_t^{-1}g_t^{-1}\nabla H\nabla H.
+\]
+Changing contractions or lowering indices also involves the background
+curvature and the uniformly equivalent metrics. Differentiating in $t$
+through order three only inserts further uniformly bounded inverse
+metrics and copies of $H$. Consequently the curvature, traceless Ricci
+tensor, and their required $t$-derivatives are bounded pointwise by
+\[
+ C_m\bigl(|\operatorname{Rm}_g|+|\nabla^2H|+|\nabla H|^2\bigr).
+\]
+The volume density relative to $dV_g$, together with its first three
+$t$-derivatives, is uniformly bounded. Differentiating
+$|\operatorname{Ric}^{\circ}_{g_t}|_{g_t}^2dV_{g_t}$ and applying Young's
+inequality to the cross terms bounds each integral in
+\eqref{eq:o11-var-remainder-20260929} by
+\[
+ C\int_M\bigl(|\operatorname{Rm}_g|^2
+                  +|\nabla^2H|^2+|\nabla H|^4\bigr)\,dV_g
+ \le C_KA.
+\]
+No coordinate neighborhood of a uniform radius is used.
+\end{proof}
+
+\paragraph{Proposition 2 (weak stationarity and stability at scale $Q_j$).}
+For every prescribed sequence $\varepsilon_j>0$ there are smooth metrics
+$g_j$ on $M_j$ such that
+\[
+ s_{g_j}=-4,\qquad 0\le P(g_j)-p_j\le\varepsilon_j,
+ \qquad P(g_j)-p_j\longrightarrow0,
+ \qquad \mathcal E(g_j)-\alpha_j=o(h_j),
+\]
+and, uniformly over all smooth symmetric two-tensors satisfying
+\[
+ \|H\|_{L^\infty(g_j)}\le1,\qquad
+ \mathfrak D_{g_j}(H)\le A_j,
+\]
+one has
+\begin{equation}
+ |DP_{g_j}[H]|=o(Q_j),\qquad
+ D^2P_{g_j}[H,H]\ge-o(Q_j).
+ \label{eq:o11-var-selection-20260929}
+\end{equation}
+Here $D^2P_{g_j}[H,H]$ means the second derivative along $g_j+tH$.
+It is not being identified with an intrinsic Hessian at an assumed
+critical point.
+
+\begin{proof}
+Choose any $\eta_j\downarrow0$ and set
+\begin{equation}
+ \delta_j=\min\left\{
+       \varepsilon_j,j^{-1},\eta_j^3\frac{Q_j^3}{A_j^2}
+                    \right\}.
+ \label{eq:o11-var-delta-20260929}
+\end{equation}
+The definition of the infimum supplies a smooth metric with $P\le
+p_j+\delta_j$. Replace it by the negative Yamabe representative and
+scale to $s=-4$. The inherited conformal formula and scale invariance
+preserve
+\begin{equation}
+             0\le P(g_j)-p_j\le\delta_j.
+ \label{eq:o11-var-gap-20260929}
+\end{equation}
+Since $p_j\le8\pi^2Q_j$ and $\delta_j=o(Q_j)$, these metrics satisfy
+$P(g_j)=O(Q_j)$. The two-sided Ricci estimate yields
+\[
+ R(g_j)=8\pi^2A_j+O(Q_j).
+\]
+At scalar curvature $-4$, $R=P+4\operatorname{Vol}$, and hence
+\[
+ \operatorname{Vol}(g_j)=2\pi^2A_j+O(Q_j).
+\]
+The curvature identity and Euler-characteristic estimate then give
+\[
+ \int_{M_j}|\operatorname{Rm}_{g_j}|^2\,dV_{g_j}=O(A_j).
+\]
+Thus Lemma 1 applies uniformly to the stated test class.
+
+For such an $H$, put $F(t)=P(g_j+tH)$. Every $g_j+tH$ with
+$|t|\le t_0$ is an admissible global competitor, so
+\[
+                  F(t)\ge p_j\ge F(0)-\delta_j.
+\]
+Taylor expansion for both signs of $t$, using $|F''|\le CA_j$, gives
+\[
+ |F'(0)|\le\frac{\delta_j}{t}+CA_jt,
+ \qquad 0<t\le t_0.
+\]
+Choosing $t$ comparable to $\sqrt{\delta_j/A_j}$ gives
+\begin{equation}
+ |DP_{g_j}[H]|\le C\sqrt{A_j\delta_j}
+       \le C\eta_j^{3/2}Q_j\sqrt{h_j}=o(Q_j).
+ \label{eq:o11-var-first-20260929}
+\end{equation}
+To estimate the second variation, add the inequalities for $t$ and $-t$.
+The bound $|F'''|\le CA_j$ gives
+\[
+ F''(0)\ge-\frac{2\delta_j}{t^2}-CA_jt.
+\]
+Taking $t$ comparable to $(\delta_j/A_j)^{1/3}$, which is at most a
+constant times $\eta_jh_j$, yields
+\begin{equation}
+ D^2P_{g_j}[H,H]\ge-CA_j^{2/3}\delta_j^{1/3}
+                        \ge-C\eta_jQ_j.
+ \label{eq:o11-var-second-20260929}
+\end{equation}
+Because $\eta_j\to0$, this is the asserted lower bound $-o(Q_j)$.
+Both estimates are uniform over the entire test class.
+
+Finally, constant scalar curvature gives $\mathcal E=4P/R$. The Ricci
+estimate implies
+\[
+ \mathcal E(g_j)=\frac{4P(g_j)}{8\pi^2A_j}+O(h_j^2).
+\]
+Comparing with the inherited formula for $\alpha_j$ and using
+\eqref{eq:o11-var-gap-20260929} gives
+\[
+ 0\le\mathcal E(g_j)-\alpha_j
+       =O(h_j^2)+O(\delta_j/A_j)=o(h_j).
+\]
+The prescribed absolute accuracy and convergence to zero follow from
+\eqref{eq:o11-var-delta-20260929}.
+\end{proof}
+
+The conclusion is a selection statement about sufficiently accurate
+global near-minimizers. It does not say that every competitive sequence
+with $P=O(Q)$ is approximately stationary or stable.
+
+\paragraph{The resulting weak equation.}
+Write $W_+(g)=\int|W_g^+|^2\,dV_g$ and $T_+=2\chi+3\tau$.
+Chern--Weil gives
+\[
+                 P=4W_++S/12-8\pi^2T_+.
+\]
+At a closed constant-scalar-curvature metric with $s=-4$, the scalar
+square variation is
+\[
+ DS_g[H]=8\int_M\langle\operatorname{Ric}^{\circ}_g,H\rangle_g\,dV_g.
+\]
+Indeed the general scalar variation, integrated against the constant
+scalar curvature, has no surviving divergence terms; its gradient is
+$-2s\operatorname{Ric}^{\circ}$.
+Proposition 2 therefore yields
+\begin{equation}
+ 4DW_{+,g_j}[H]
+ +\frac23\int_{M_j}
+       \langle\operatorname{Ric}^{\circ}_{g_j},H\rangle_{g_j}\,dV_{g_j}
+       =o(Q_j)
+ \label{eq:o11-var-weak-equation-20260929}
+\end{equation}
+uniformly in the critical test class. Keeping the Weyl first variation
+in this form avoids importing a separate Bach-tensor sign or norm
+convention.
+
+\paragraph{Shrinking supports.}
+For a test tensor of fixed amplitude on a region of radius $r$ with
+controlled rescaled geometry, the estimates
+\[
+ |\nabla H|=O(r^{-1}),\qquad |\nabla^2H|=O(r^{-2}),\qquad
+ \operatorname{Vol}(\operatorname{supp}H)=O(r^4)
+\]
+give $\mathfrak D_g(H)=O(1)$, even when $r\to0$.
+This illustrates how a microscopic test can satisfy the budget. The
+controlled rescaled geometry in this illustration is not a hypothesis
+of Proposition 2. A fixed constant multiple of the displayed budget
+can also be allowed by multiplying $H$ by a fixed sufficiently small
+constant.
+
+\paragraph{Corollary 3 (disjoint-region selection without smooth precompactness).}
+Let $g_j$ be selected as in Proposition 2. For each $j$, let
+$H_{ji}$ be finitely many smooth symmetric two-tensors with pairwise
+disjoint supports, and suppose
+\[
+ \|H_{ji}\|_{L^\infty(g_j)}\le1,
+ \qquad \sum_i\mathfrak D_{g_j}(H_{ji})\le A_j.
+\]
+Then
+\begin{equation}
+ \sum_i|DP_{g_j}[H_{ji}]|=o(Q_j),\qquad
+ \sum_i\bigl(-D^2P_{g_j}[H_{ji},H_{ji}]\bigr)_+=o(Q_j).
+ \label{eq:o11-var-multiregion-20260929}
+\end{equation}
+
+\begin{proof}
+Choose signs $\epsilon_i\in\{-1,1\}$ to make
+$DP[\epsilon_iH_{ji}]\ge0$, and put $H=\sum_i\epsilon_iH_{ji}$.
+Disjointness makes the amplitude bound persist and the derivative
+budgets add. The linearity of the first variation and Proposition 2 give
+the first conclusion.
+
+For the second conclusion, sum only the tensors whose second variations
+are negative. The functional $P$ is the integral of a local expression
+in the second jet of the metric. Mixed second variations therefore
+vanish for disjoint supports. The second variation along the sum is
+exactly the sum of the negative second variations. Proposition 2 again
+gives the result.
+\end{proof}
+
+This corollary assumes neither a fixed smooth compact family of cell
+metrics nor uniform collar geometry or cell scale. It does require the
+actual test tensors to satisfy the total critical budget. In particular,
+a family of defects admitting definite descent per unit defect cannot
+have positive $Q_j$-density if its descent tests satisfy that budget.
+The existence of such tests for all potentially inexpensive defects has
+not been proved here.
+
+\paragraph{An unresolved instability criterion for the sharp coefficient.}
+The following is a sufficient criterion, not an established curvature
+inequality. Suppose that for every fixed $\epsilon\in(0,1)$ there are
+$c_\epsilon>0$ and $j_\epsilon$ such that every smooth metric on $M_j$,
+$j\ge j_\epsilon$, satisfying
+\[
+ s_g=-4,\qquad P(g)\le8\pi^2(1-\epsilon)Q_j
+\]
+admits a smooth symmetric tensor with
+\[
+ \|H\|_{L^\infty(g)}\le1,\qquad \mathfrak D_g(H)\le A_j,
+\]
+for which at least one of
+\begin{equation}
+ |DP_g[H]|\ge c_\epsilon Q_j,
+ \qquad
+ D^2P_g[H,H]\le-c_\epsilon Q_j
+ \label{eq:o11-var-open-instability-20260929}
+\end{equation}
+holds. Then
+\[
+ \frac{p_j}{8\pi^2Q_j}\longrightarrow1,
+ \qquad \frac{\alpha_j}{h_j}\longrightarrow4.
+\]
+
+\begin{proof}[Proof of the conditional implication]
+If the lower limit of $p_j/(8\pi^2Q_j)$ were less than one, choose a
+subsequence with a fixed strict gap below one. The selected metrics of
+Proposition 2 remain below a slightly weaker fixed threshold, because
+$P(g_j)-p_j=o(Q_j)$. Both alternatives in
+\eqref{eq:o11-var-open-instability-20260929} contradict the corresponding
+uniform estimates in Proposition 2. Hence the lower limit is at least
+one. The recovery upper bound gives the first limit, and the inherited
+variational comparison gives the second.
+\end{proof}
+
+Proving \eqref{eq:o11-var-open-instability-20260929}, or constructing
+genuine metrics with a smaller first-order cost, remains the substantive
+unrestricted problem. In particular, one cannot insert
+$H=\operatorname{Ric}^{\circ}$ in the preceding weak equation without
+checking its amplitude and critical derivative budget. Nor do these
+selection statements establish smooth convergence, a bubble-tree
+decomposition, or the signed-curvature compensation inequality.
+
+\end{document}

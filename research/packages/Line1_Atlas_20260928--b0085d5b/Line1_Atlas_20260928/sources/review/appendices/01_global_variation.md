@@ -1,0 +1,159 @@
+# O11 全局变分路线：可严格闭合的等价约化与经典结果核查
+
+审读范围：00导读；03卷 I55、X10；05卷 I40/I41，特别是 I41 §3.1–3.2；06卷完整核心与变分稿、signed balance；07卷实际规范供给与 joint-field certificates。
+
+**结果：没有得到 O11 的系数4证明或反例。得到一个无区域选择、无局部核心供给的新整理命题：O11 与原平衡族的 Berger 全曲率最小值的一阶渐近完全等价，且有明确有限参数上下界。经典 LeBrun Ricci 能量最小值不能短接这一缺口。多 monopole 的纯投影、配对矩阵与符号凸优化路线，原稿已有精确排除，不能重新当作突破。**
+
+## 1. 变分问题的有限参数比较
+
+沿用原族
+\[
+M=X\#k\overline{\mathbb{CP}}^2\#\ell(S^1\times S^3),\quad
+A=c_1^2(X),\quad Q=k+4\ell,\quad h=Q/A,
+\]
+以及 \(C_A=8\pi^2A\)、\(U=3(2\chi-3\tau)/A>0\)。设
+\[
+P(g)=\int|\operatorname{Ric}^{\circ}|^2,\qquad
+\rho(M)=\frac{\inf_gP(g)}{C_A},\qquad
+\alpha(M)=\inf_g\mathcal E(g).
+\]
+
+**命题 A。** 在原稿实际全度量供给下，
+\[
+\boxed{\frac{4\rho}{U+4\rho}\le\alpha\le
+\frac{4\rho}{1+\rho}.}\tag{A1}
+\]
+这不需要存在极小度量。
+
+**证明。** 对每个度量，原稿的 scalar budget 给
+\(S_2\ge4C_A\)，所以 \(R=P+S_2/4\ge P+C_A\)。反向取向的 Chern–Weil 恒等式给
+\[
+R=4P+C_AU-12\int|W^-|^2\le4P+C_AU.
+\]
+因此
+\[
+\mathcal E(g)\ge\frac{4P(g)}{R(g)}
+\ge\frac{4P(g)}{4P(g)+C_AU}
+\ge\frac{4\rho}{4\rho+U}.
+\]
+上界须处理标量方差，不能直接把 \(\mathcal E\) 替换成 \(4P/R\)。取逼近 \(\inf P\) 的度量，按 I41 §1 换成负 Yamabe 代表再归一化到 \(s=-4\)。同一共形类中
+\[
+P(g)-P(\widehat g)=\frac{S_2(g)-S_2(\widehat g)}{12}\ge0.
+\]
+故 Yamabe 代表仍逼近 \(\inf P\)，且没有标量方差。于是
+\[
+\mathcal E(\widehat g)=\frac{4P(\widehat g)}{R(\widehat g)}
+\le\frac{4P(\widehat g)}{P(\widehat g)+C_A}.
+\]
+取极限证明上界。证毕。
+
+原恢复序列给 \(0\le\rho\le h\)。平衡族满足 \(U=1+h+O(h^2)\)，所以 (A1) 一致给出
+\[
+\boxed{\alpha=4\rho+O(h^2).}\tag{A2}
+\]
+常数仅需 \(U=1+O(h)\) 中的统一常数，不用 Sobolev、直径、非塌缩或任何 core 提取。
+
+## 2. O11 等价于标准全曲率最小值的一阶计算
+
+使用原稿曲率算子 Hilbert–Schmidt 范数。四维 Gauss–Bonnet 给
+\[
+\mathcal K(g):=\int|\operatorname{Rm}_{\mathrm{op}}|^2
+=8\pi^2\chi(M)+P(g).
+\]
+记 \(I_{\mathrm{Rm}}(M)=\inf_g\mathcal K(g)\)。由 (A2)，
+\[
+\boxed{
+\frac{\alpha(M_j)}{h_j}\to4
+\iff
+I_{\mathrm{Rm}}(M_j)
+=8\pi^2\chi(M_j)+8\pi^2Q_j+o(Q_j).
+}\tag{A3}
+\]
+右侧等价于 \(\inf P=8\pi^2Q+o(Q)\)。由于恢复上界已经存在，真正待证的是右侧下界。
+
+因为 \(\chi(M)=A/3+k-2\ell\)，右侧可写为
+\[
+I_{\mathrm{Rm}}(M_j)=8\pi^2\left(A_j/3+2k_j+2\ell_j\right)+o(Q_j).
+\]
+在 \(k/Q\to2/9\)、\(\ell/Q\to7/36\) 的原平衡比例下，也就是
+\[
+I_{\mathrm{Rm}}(M_j)=8\pi^2A_j/3+(20\pi^2/3)Q_j+o(Q_j).
+\]
+这揭示 O11 是“受手术扰动的全曲率最小能量的一阶响应”，不是单纯把某个已知 SW 常数算精确。它与经典最优度量问题有严格的变分等价，而不是术语上的联系。
+
+已有 I40/I41 的 \(\alpha\ge c_1h\) 也立刻成为标准全曲率功能量上的实际定量定理：
+\[
+\boxed{
+8\pi^2\chi(M)+\frac{8\pi^2c_1Q}{4-c_1h}
+\le I_{\mathrm{Rm}}(M)
+\le8\pi^2\chi(M)+8\pi^2Q.
+}\tag{A3b}
+\]
+左式由 (A1) 上界反解 \(\rho\ge\alpha/(4-\alpha)\)，右式由恢复族。这里是已有线性强制的严格推论，不将其重复计为一个新的独立解析突破。
+
+## 3. 真正近极小序列的转移
+
+对 \(s=-4\)、\(P/C_A=O(h)\) 的竞争序列，由同样两壁
+\[
+1+P/C_A\le R/C_A\le U+4P/C_A=1+O(h).
+\]
+因此一致地有
+\[
+\mathcal E(g)=4P(g)/C_A+O(h^2).
+\]
+结合 (A2)，
+\[
+\boxed{
+\mathcal E(g_j)-\alpha(M_j)=o(h_j)
+\iff
+P(g_j)-\inf_gP=o(Q_j)
+}\tag{A4}
+\]
+在这类 Yamabe 代表中成立。也即 X10 的真正近极小有限变分论证可以在标准全曲率功能量上进行；无需先求完整 bulk–neck–core decomposition。
+
+不能把 (A4) 未经说明推广为“任意 \(P\) 近极小度量本身都是 \(\mathcal E\) 近极小”：其标量方差需要控制。正确操作是先取 Yamabe 代表。I41 §3.1 的精确 excess 分解已经证明反方向的共形损失控制，不能把该已完成工作重新列为未知。
+
+## 4. 为什么经典 Ricci 最小值不解决 (A3)
+
+LeBrun 经典结果和原稿 I44 供给
+\[
+\inf_g R(g)=8\pi^2(A+Q),\qquad \inf_g S_2(g)=32\pi^2A.
+\]
+但 \(P=R-S_2/4\)，两个独立下界不能相减为 \(P\) 下界。一个度量可以支付较大的标量平方并降低无迹 Ricci 代价；O11 正是要排除足以改变一阶系数的这种交换。
+
+原文可核对：Claude LeBrun, *Curvature Functionals, Optimal Metrics, and the Differential Topology of 4-Manifolds*, arXiv:math/0404251，§11，PDF 第39–40页。那里明确区分 full-curvature 最小值尚不能精确计算和 scalar/Ricci 最小值可以精确计算。其列出的普通一般型吹起问题不等同于含 handles 的本族；引用时应说本目标属于同一标准变分问题的特定渐近族，不能说该论文已提出完全相同的 O11。
+
+本次检索没有发现适用原平衡族的已知全曲率一阶下界。2004 文献的开放陈述不能单独作为“2026仍无任何进展”的完备证明；可确定的是它所证明的 Ricci 定理并不包含所需结论。
+
+一手文献：
+- https://arxiv.org/pdf/math/0404251 （本次检索 ref turn97view0 / turn98view0）
+- https://arxiv.org/pdf/math/0003068 （本次检索 ref turn97view1）
+
+## 5. 多实际类、有限覆盖与 BF 是否有未使用捷径
+
+第一，06卷 full-core/extremal 原稿式(1.7)已精确证明
+\[
+\frac89D+32\pi^2(p-A)-\Sigma
+=\frac13S_2+16\int|W^+|^2-32\pi^2A
+=4P-32\pi^2Q.
+\]
+**所选投影 \(p\) 完全消去。** 仅选更大的 \(p\)，或对同类 scalar inequality 取所有 exceptional signs 的平均，不会改变目标。
+
+第二，07卷 joint-field certificates §2.1 的 Proposition 3 已严格排除了标准 sign-supplier 的纯 cup/Gram/PSD 分离方案。其配对矩阵形如
+\(Q_{ij}=\sum w_r s_rs_r^T-B\)，\(B\succeq0\)，所得证书被经典 scalar budget 支配。完整独立 sign cube 更有精确判别 \(Q\in\mathrm{CUT}-\mathrm{PSD}\iff\sum w_r\le1\)。这覆盖 ordinary blow-up 与相应 BF 正块供给。不能重新花时间求更大的矩阵或更多符号，以为它能自动增加一阶下界。
+
+第三，渐近 CH 覆盖最终 \(b_+>1\)：由 \(\chi_{\mathrm{hol}}=A/9\)、\(b_+=1+2p_g=2A/9-1+2q\) 可见。因此原渐近族可以使用全部 exceptional-sign 的 ordinary 实际供给；真正缺的不是简单类数，而是不同实际解之间尚未建立的**微分**信息。选择最优投影与纯拓扑配对已经用尽其该层面的效力。
+
+第四，若只把度量与实际类拉到 \(d\) 重有限覆盖上，\(P,S_2,R,A,\chi,\tau\) 同乘 \(d\)，\(\mathcal E,h\) 不变；这不能改善系数。覆盖上存在不来自拉回的新 BF/Pin-minus 供给必须另行证明，不能由“可以取覆盖”推出。
+
+## 6. 对下一轮全局工作的实质约束
+
+能改变 O11 的新全局结果必须直接证明 (A3) 的一阶下界，或在原流形族构造严格低于其恢复值的真实度量。下列工作不足以改变它：
+
+- 重做 Yamabe 归约或标量方差控制；I41 已完成。
+- 优化 I40 的普适常数；I41 §3.2 的真实乘积检验已经说明该方式无法达到4。
+- 增大 monopole 投影或做已有 Gram 矩阵分离；投影从目标中精确相消，配对证书已有 no-go。
+- 把 LeBrun 的 Ricci 最小值当作全曲率最小值。
+- 把近极小序列直接宣布为 Euler–Lagrange 解。转到 \(P\) 功能量使标准变分工具可用，但仍须实际构造具有所需残差与正则性的近临界序列。
+
+命题 A–(A4) 是本轮可检查的新整理结果。它把目标缩短到经典无约束全曲率变分，不替代未知的全局下界；没有声称 O11 已解。

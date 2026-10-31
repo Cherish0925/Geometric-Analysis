@@ -1,0 +1,550 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{esint}
+\setmathfont{Asana Math}
+\setlength{\emergencystretch}{3em}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\hypertarget{bilateral-monopole-saturation-and-exact-bidisk-realization}{%
+\section{Bilateral monopole saturation and exact bidisk
+realization}\label{bilateral-monopole-saturation-and-exact-bidisk-realization}}
+
+24 September 2026. A continuation of the actual-form and
+compact-realization arguments. The new feature is the removal of
+\textbf{every topological no-bubble hypothesis}: saturation in both
+orientations eliminates the complete Weyl curvature on a harmonic-radius
+blowup. The resulting two global parallel forms give an exact locally
+symmetric metric on the original smooth manifold. This is a composition
+theorem, not a new construction of a bidisk quotient or a claim of
+unrestricted Yau26 realization.
+
+\hypertarget{conventions-and-theorem}{%
+\subsection{1. Conventions and theorem}\label{conventions-and-theorem}}
+
+Let \(M\) be a closed connected oriented smooth four-manifold. Write
+\(M_+=M\) and \(M_-=-M\). A Spin\(^c\) structure on \(M_\sigma\) is
+called an \textbf{actual conformal input for \(g\)} here if its
+unperturbed Seiberg--Witten equations are solvable for every metric in
+\([g]\). The structure is fixed while the positive conformal weight
+varies. It may depend on the input metric. The two structures below are
+independent; no common spinor, connection, or equation between the
+orientations is postulated.
+
+Let \(a_\sigma\) be their real first Chern classes, and set \[
+ p_+=\|\operatorname{proj}_{\mathcal H^+_g}a_+\|_{L^2}^2,
+ \qquad
+ p_-=\|\operatorname{proj}_{\mathcal H^-_g}a_-\|_{L^2}^2.
+ \tag{1}
+\] Thus \(p_-\) is positive energy, not its negative square in the
+original orientation. All norms on \(W^\pm:\Lambda^\pm\to\Lambda^\pm\)
+are Hilbert--Schmidt operator norms, norms on two-forms are
+exterior-algebra norms, and Ricci uses the tensor norm. Define \[
+ \delta=\|\operatorname{Ric}_g^\sharp+I\|_{\infty,\mathrm{op}},
+ \qquad r=\fint_M|\operatorname{Ric}_g+g|^2\le4\delta^2,
+ \qquad V=\operatorname{Vol}(g),
+ \tag{2}
+\] \[
+ \mathfrak D_\sigma
+ =\frac32\int_M(s^2+12|W^\sigma|^2)-72\pi^2p_\sigma,
+ \qquad q_\sigma=\mathfrak D_\sigma/V\ge0.
+ \tag{3}
+\] Nonnegativity is the classical monopole curvature inequality in the
+respective orientation.
+
+\textbf{Theorem A (bilateral realization).} For every \(D,A_0>0\) there
+exists \(\varepsilon(D,A_0)>0\) with the following property. Suppose
+\(M,g\) has actual conformal inputs in both orientations, with \[
+ p_+>0,\quad p_->0,\quad \max\{p_+,p_-\}\ge A_0,
+ \qquad \operatorname{diam}(g)\le D,
+ \tag{4}
+\] and \[
+                    \delta+q_++q_-<\varepsilon(D,A_0).
+ \tag{5}
+\] Then the \textbf{same smooth manifold} admits a smooth metric \(h\)
+with \(\operatorname{Ric}_h=-h\) whose universal Riemannian cover is \[
+                    \mathbb H^2_{-1}\times\mathbb H^2_{-1}.
+ \tag{6}
+\] Moreover, \(h\) admits global parallel compatible complex structures
+\(J_+,J_-\) inducing the two opposite orientations. In particular it is
+negative Kähler--Einstein in both orientations.
+
+There is no hypothesis on \(\pi_1(M)\), \(\pi_2(M)\), an ALE core, the
+intersection form, or an a priori complex or symplectic structure. No
+separate volume lower bound, Weyl bound, curvature-energy bound, Sobolev
+constant, class-square cost, or Ricci-derivative bound is required. The
+threshold is uniform over varying manifolds and actual class choices.
+
+The conclusion is not that \(g\) is already Einstein, nor that \(M\) is
+a globally marked direct product of two surfaces. A compact quotient of
+the bidisk need not be a direct product. The actual inputs and smallness
+of both deficits remain real restrictions. In particular, this theorem
+is not the earlier one-sided theorem with all conditions simply removed.
+
+If either actual integral Chern class has positive square in its own
+orientation, its projection has \(p_\sigma\ge1\). Then one may set
+\(A_0=1\). No negative-square bound on the other class is introduced.
+
+\hypertarget{the-inherited-gauge-estimates-and-the-volume-regime}{%
+\subsection{2. The inherited gauge estimates and the volume
+regime}\label{the-inherited-gauge-estimates-and-the-volume-regime}}
+
+For each orientation put \(\kappa_\sigma=r+q_\sigma\). The
+\href{../mathematics/current/line1_composed_application.md}{actual-form
+theorem}, Sections 2--3, gives, when \(\kappa_\sigma\le1/2880\), a
+smooth global form \(\omega_\sigma\in\Omega^\sigma(M)\) for every
+\(\eta>0\) sufficiently small, such that \[
+ \|\omega_\sigma\|_\infty\le2\sqrt3,
+ \qquad
+ \fint(|\omega_\sigma|^2-2)^2\le720\kappa_\sigma+\eta,
+ \tag{7}
+\] \[
+ \fint|\nabla\omega_\sigma|^2
+ \le13\kappa_\sigma+4\sqrt{2\kappa_\sigma}+\eta.
+ \tag{8}
+\] These are its zeroth- and first-order conclusions. They have no
+negative-square cost. The second-order estimate from that theorem is not
+used. In particular, the proof below does not implicitly add the budget
+that is needed for a different weak-Bianchi application.
+
+The same classical completed-square estimate, before constructing forms,
+gives, with \(w_\sigma=\sqrt6|W^\sigma|\), \[
+ \fint(w_\sigma-2)^2\le q_\sigma+2r\le2\kappa_\sigma.
+ \tag{9}
+\] Indeed \(\int(s+2w_\sigma)^2\le2\mathfrak D_\sigma\), whereas
+\(\fint(s+4)^2\le4r\), and \(w_\sigma-2=[(s+2w_\sigma)-(s+4)]/2\).
+
+Consider a sequence satisfying (4) and \(\delta_j+q_{+,j}+q_{-,j}\to0\).
+For late terms, \(\delta_j\le1/2\), so
+\(-3g_j\le\operatorname{Ric}_{g_j}\le3g_j\). Use the scalar monopole
+inequality in whichever orientation has \(p_\sigma\ge A_0\): \[
+ 32\pi^2 A_0\le\int s_-^2
+ \le16(1+\delta_j)^2V_j,
+ \qquad V_j\ge v_0:=8\pi^2A_0/9.
+ \tag{10}
+\] The two choices of orientation give the same scalar curvature and
+volume. Bishop--Gromov comparison and the diameter bound consequently
+give \[
+ V_j\le V_0(D),\qquad
+ c(D,A_0)\rho^4\le\operatorname{Vol}_{g_j}B_\rho(x)
+ \le C\rho^4\quad(0<\rho\le1).
+ \tag{11}
+\] For example \(V_0(D)=V_{-1}(D+1)\) suffices; the lower estimate
+follows by comparing with the entire manifold inside a \((D+1)\)-ball.
+
+The elementary inequality \(w^2/6\le (w-2)^2/3+4/3\) turns (9) into, for
+every measurable set \(E\subset M_j\), \[
+ \int_E|W^\sigma_{g_j}|^2
+ \le\frac43\operatorname{Vol}_{g_j}(E)
+       +\frac23\kappa_{\sigma,j}V_j.
+ \tag{12}
+\] This holds in \textbf{both} orientations. That is the information
+absent from the one-sided realization theorem.
+
+\hypertarget{topology-free-exclusion-of-harmonic-radius-collapse}{%
+\subsection{3. Topology-free exclusion of harmonic-radius
+collapse}\label{topology-free-exclusion-of-harmonic-radius-collapse}}
+
+\textbf{Lemma 1 (topology-free critical compactness).} Fix \(K,D,v>0\)
+and a modulus \(\eta(\rho)\to0\) as \(\rho\downarrow0\). A family of
+closed connected smooth four-manifolds satisfying \[
+ |\operatorname{Ric}|\le K,\qquad\operatorname{diam}\le D,
+ \qquad V\ge v,\qquad
+ \sup_x\int_{B_\rho(x)}(|W^+|^2+|W^-|^2)\le\eta(\rho)
+ \tag{13a}
+\] has a uniform positive \(C^{1,\alpha}\) harmonic radius for each
+fixed \(\alpha<1\). It is precompact modulo diffeomorphisms in
+\(C^{1,\beta}\), \(\beta<1\), and weak finite \(W^{2,p}\), and has
+finitely many smooth types. A sequence in this family with
+\(\operatorname{Ric}+g\to0\) uniformly has a smooth negative Einstein
+limit on its eventual smooth type and strong finite \(W^{2,p}\)
+convergence. No topological, ALE, or separately supplied
+curvature-energy hypothesis enters this lemma.
+
+For the sequence in Section 2, (11)--(12) give a common modulus in
+(13a). Given a target error, choose a tail for which the
+\(\kappa_{\sigma,j}\) terms are small, then choose \(\rho\) small for
+its volume terms; the remaining finitely many smooth metrics also have
+vanishing small-ball energies. The proof below gives both the lemma and
+a direct proof for the sequence, without naming that modulus.
+
+Fix \(0<\alpha<1\) and a standard \(C^{1,\alpha}\) harmonic-radius
+definition with fixed metric-comparability and scaled norm bounds.
+Suppose the global minimum \(\rho_j\) tends to zero, attained at
+\(x_j\). Rescale \[
+ \widehat g_j=\rho_j^{-2}g_j,
+ \qquad r_h(\widehat g_j,x_j)=1,
+ \qquad r_h(\widehat g_j,x)\ge1.
+ \tag{13}
+\] The rescaled Ricci norm is \(O(\rho_j^2)\), and (11) gives a uniform
+Euclidean lower growth estimate on every fixed rescaled ball. The
+rescaled manifolds are complete, their diameters tend to infinity, and
+the normalized harmonic charts give a pointed complete limit, initially
+in \(C^{1,\beta}\), \(\beta<\alpha\).
+
+For clarity, the regularity improvement uses the actual Ricci tensors,
+not their derivatives. In a harmonic chart the metric equation is \[
+ g^{ab}\partial_a\partial_b g_{ij}
+       =-2\operatorname{Ric}_{ij}+Q_{ij}(g,\partial g).
+ \tag{14}
+\] Its limit is weakly Ricci-flat and hence smooth by elliptic
+bootstrapping. Subtract the equation of this smooth limit from (14). The
+coefficients converge in \(C^1\), the quadratic lower-order terms
+converge, and the Ricci tensors converge uniformly to zero. Interior
+elliptic estimates therefore give strong \(W^{2,p}_{\mathrm{loc}}\)
+convergence for every finite \(p\). Taking \(p>4/(1-\alpha)\) recovers
+strong \(C^{1,\alpha}\) convergence on smaller charts. Curvature
+consequently converges strongly in local finite \(L^p\) spaces.
+Compatible harmonic charts give the usual embeddings of compact subsets
+into late terms. These are the same harmonic-coordinate steps spelled
+out in \href{20260923_compact_realization.md}{the compact-realization
+proof}, Section 4.
+
+For any fixed \(R\), four-dimensional scale invariance and (12) give \[
+ \int_{B_R(x_j,\widehat g_j)}|W^\sigma_{\widehat g_j}|^2
+ \le \frac43C(R\rho_j)^4
+       +\frac23V_0(D)\kappa_{\sigma,j}\longrightarrow0
+       \quad(\sigma=+,-).
+ \tag{15}
+\] Thus \textbf{both} Weyl halves of the Ricci-flat limit vanish. The
+limit is flat; for the general lemma, (15) is replaced by the bound
+\(\eta(R\rho_j)\to0\), with exactly the same conclusion. A complete
+smooth flat four-manifold with positive Euclidean four-dimensional
+volume growth is \(\mathbb R^4\): a nontrivial infinite flat deck group
+reduces the volume-growth degree, whereas a finite group of Euclidean
+isometries fixes a point and cannot act freely.
+
+On a Euclidean ball of radius larger than two the harmonic-coordinate
+defining bounds have strict margins. Strong \(W^{2,p}\) convergence,
+followed by solving the harmonic-coordinate Dirichlet problem on a
+slightly smaller ball, transfers a chart of radius greater than one to
+\(x_j\). This contradicts (13). Hence the original harmonic radii are
+bounded below along the sequence.
+
+This argument does not produce a nonflat ALE bubble and then try to
+classify or forbid its core. It makes every putative blowup \textbf{flat
+before any ALE theorem is invoked}. Neither a global full-curvature
+energy estimate nor Jiang--Naber, Bando--Kasue--Nakajima, an ALE
+classification, or a hypothesis on the smooth topology is needed here.
+
+The diameter and harmonic-radius bounds now give a finite-atlas compact
+limit on a closed smooth manifold. After a subsequence and
+orientation-preserving diffeomorphisms \(\phi_j:N\to M_j\), \[
+ h_j:=\phi_j^*g_j\longrightarrow h
+ \quad\text{in }C^{1,\alpha}\text{ and strong finite }W^{2,p},
+ \qquad\operatorname{Ric}_h=-h.
+ \tag{16}
+\] The same elliptic argument proves smoothness of \(h\); it does not
+claim smooth convergence of the original approximate metrics.
+Smooth-type preservation is the ordinary harmonic-atlas compactness
+conclusion, not a homeomorphism of a possibly singular limit.
+
+\hypertarget{two-global-forms-force-exact-product-geometry}{%
+\subsection{4. Two global forms force exact product
+geometry}\label{two-global-forms-force-exact-product-geometry}}
+
+Choose \(\eta_j\downarrow0\) and forms from (7)--(8) in both
+orientations. Pull them back by the \textbf{same} diffeomorphisms in
+(16). Uniform boundedness, the vanishing covariant derivatives in (8),
+and \(h_j\to h\) in \(C^1\) make the two sequences bounded in
+\(H^1(N,h)\). After a common subsequence they converge strongly in
+\(L^2\) to global forms \(\omega_+,\omega_-\). The connection
+differences tend uniformly to zero; hence their distributional covariant
+derivatives for \(h\) vanish. Elliptic regularity and the amplitude
+estimates give \[
+ \nabla^h\omega_\pm=0,
+ \qquad *_h\omega_\pm=\pm\omega_\pm,
+ \qquad|\omega_\pm|_h^2=2.
+ \tag{17}
+\] In particular, neither form vanishes. There is no eigenline sign
+choice and no two-fold cover: the approximating forms were global.
+
+Define \(J_\pm\) by \(h(J_\pm X,Y)=\omega_\pm(X,Y)\). In four dimensions
+(17) gives \(J_\pm^2=-I\). Self-dual and anti-self-dual skew
+endomorphisms commute, so \[
+ K=-J_+J_-,\qquad K^*=K,\qquad K^2=I,\qquad
+ \operatorname{tr}K=0,\qquad\nabla K=0.
+ \tag{18}
+\] The trace follows equally from the orthogonality of the two forms.
+Consequently \(TN=E_1\oplus E_2\), the two orthogonal rank-two parallel
+eigenbundles of \(K\). Parallel distributions are integrable and their
+leaves are totally geodesic. On the complete simply connected universal
+cover the de Rham splitting is a global Riemannian product of two
+complete simply connected surfaces. Since \(\operatorname{Ric}_h=-h\),
+the Ricci tensor of each factor is minus its metric. In dimension two
+this means constant Gaussian curvature \(-1\). Both factors are
+\(\mathbb H^2_{-1}\), proving (6). Parallelness of \(J_\pm\) also proves
+their integrability and the global Kähler assertions directly.
+
+If Theorem A failed for fixed \(D,A_0\), choose counterexamples with
+\(\delta_j+q_{+,j}+q_{-,j}<1/j\). Sections 2--4 give (16)--(18). Pulling
+\(h,J_+,J_-\) forward to each late \(M_j\) contradicts its being a
+counterexample. This proves a fixed threshold uniform across changing
+smooth types. It does not assume that an individual small-error metric
+can be improved into a whole sequence on its own manifold. \(\square\)
+
+\hypertarget{raw-ricci-energy-formulation}{%
+\subsection{5. Raw Ricci-energy
+formulation}\label{raw-ricci-energy-formulation}}
+
+Let \[
+ T_\pm=2\chi(M)\pm3\tau(M),\quad
+ R_2=\int_M|\operatorname{Ric}|^2,\quad
+ S_2=\int_Ms^2,\quad P=\int_M|\operatorname{Ric}^{\circ}|^2.
+\] Since \(R_2=P+S_2/4\) and
+\(4\pi^2T_\sigma=S_2/24+2\int|W^\sigma|^2-P/2\), \[
+ \boxed{
+ \mathfrak D_\sigma
+   =\frac92\bigl[R_2-8\pi^2(2p_\sigma-T_\sigma)\bigr].}
+ \tag{19}
+\] This is a classical Chern--Weil identity, the exact deficit form of
+LeBrun's Ricci-energy estimate. It is not a new inequality.
+
+Suppose independent actual projection budgets are available,
+\(p_\sigma\ge A_\sigma>0\), and \(\max(A_+,A_-)\ge A_0\). Define the
+nonnegative averaged two-sided energy excess \[
+ e_{\rm bi}
+ =\frac{R_2-8\pi^2(A_++A_--2\chi)}{V}.
+ \tag{20}
+\] Adding (19) and using \(T_++T_-=4\chi\) gives the exact decomposition
+\[
+ \boxed{
+ e_{\rm bi}
+ =\frac{q_++q_-}{9}
+   +\frac{8\pi^2}{V}
+      \bigl[(p_+-A_+)+(p_--A_-)\bigr].}
+ \tag{21}
+\] Every term on the right is nonnegative. Thus no cancellation between
+the orientations is hidden by the single energy condition.
+
+\textbf{Corollary B (energy-to-geometry realization).} Under the
+actual-input, budget and diameter assumptions just stated, without any
+topological restriction, the condition \[
+                  \delta+9e_{\rm bi}<\varepsilon(D,A_0)
+ \tag{22}
+\] implies the full conclusion of Theorem A.
+
+Indeed (21) gives \(q_++q_-\le9e_{\rm bi}\), so (5) follows. This
+replaces the two separately displayed functional deficits by a raw
+Ricci-energy excess above the average of two genuine gauge bounds. It
+does not replace the existence of the two actual inputs by numerical
+cohomology data, and it does not claim that (20) is the attained global
+Ricci-energy infimum on every supplied topology.
+
+The exact counterpart using the actual projections is \[
+ q_++q_-=9\,\frac{R_2-8\pi^2(p_++p_--2\chi)}{V}.
+ \tag{23}
+\] Neither (22) nor (23) follows from \(\delta\ll1\) alone. Their
+purpose is a checkable interface for independent topological or
+variational inputs.
+
+\hypertarget{consequences-tests-and-scope}{%
+\subsection{6. Consequences, tests, and
+scope}\label{consequences-tests-and-scope}}
+
+\hypertarget{topology-is-now-a-conclusion-not-an-assumption}{%
+\subsubsection{6.1 Topology is now a conclusion, not an
+assumption}\label{topology-is-now-a-conclusion-not-an-assumption}}
+
+Let \(\mathcal B\) denote the smooth manifolds admitting a metric with
+universal Riemannian cover (6) and the two global parallel structures of
+Theorem A. If \(M\notin\mathcal B\), then every input meeting (4) obeys
+\[
+                  \delta+q_++q_-\ge\varepsilon(D,A_0).
+ \tag{24}
+\] Examples of independently checkable exclusions from \(\mathcal B\)
+are \(\pi_2(M)\ne0\), torsion in \(\pi_1(M)\), or \(\tau(M)\ne0\).
+Indeed (6) is contractible; a finite-order deck isometry of this
+Hadamard space has a fixed point and cannot act freely; and for the
+product metric both Weyl halves have the same squared norm \(2/3\), so
+the signature is zero. The output also has \(\chi(M)>0\).
+
+Thus the theorem does not merely improve a threshold within the old
+no-ALE-core class. It tests inputs on \textbf{arbitrary} smooth
+four-manifolds and, when they pass, deduces the topology and geometry
+that the earlier realization theorem had partly assumed. The new
+condition is bilateral saturation; neither theorem subsumes the other on
+all its inputs.
+
+Equation (24) is a joint deficit gap, not a pointwise-only gap on every
+non-bidisk manifold. No claim follows that such a manifold has no other
+Einstein metric.
+
+\hypertarget{actual-equality-models}{%
+\subsubsection{6.2 Actual equality
+models}\label{actual-equality-models}}
+
+For \(M=\Sigma_g\times\Sigma_h\), \(g,h\ge2\), take the product of
+curvature \(-1\) metrics and complex structures \(J_+=(J_1,J_2)\),
+\(J_-=(J_1,-J_2)\). The canonical Spin\(^c\) structures in the two
+orientations supply actual classes: both are general-type Kähler
+surfaces with \(b_\pm>1\), and their canonical Seiberg--Witten
+invariants are nonzero. Set \(A=8(g-1)(h-1)=2\chi(M)\). Then \[
+ V=2\pi^2A,\quad p_+=p_-=A,
+ \quad |W^+|^2=|W^-|^2=2/3,
+ \quad \delta=q_+=q_-=e_{\rm bi}=0
+ \tag{25}
+\] with \(A_+=A_-=A\). This verifies simultaneous saturation in a real
+nonempty family. It is a classical equality model, not a newly
+constructed family. The theorem's increment is the uniform implication
+for arbitrary smooth inputs and changing topologies, without a presumed
+product structure.
+
+Unequally scaled hyperbolic products remain cscK in both orientations
+and have \(q_+=q_-=0\), while generally \(\delta\ne0\). They test why
+simultaneous functional equality must not be identified with the input
+metric itself being Einstein. Their underlying manifold already admits
+the normalized product metric, consistently with the existence
+conclusion.
+
+\hypertarget{diameter-cannot-simply-be-dropped-even-with-both-inputs}{%
+\subsubsection{6.3 Diameter cannot simply be dropped, even with both
+inputs}\label{diameter-cannot-simply-be-dropped-even-with-both-inputs}}
+
+The fixed nonzero-shear self-gluings of
+\href{../mathematics/current/round11_closed_gluing.md}{Round 11},
+Section 6, carry symplectic structures in \textbf{both} orientations.
+Their canonical classes are actual monopole inputs with
+\(p_\pm\ge A=2\chi>0\); this follows from \(b_\pm>1\) and Taubes as
+recorded in \href{../mathematics/current/round11_variational.md}{the
+variational proof}, Sections 1--2. The actual normalized metrics
+\(g_\ell\) satisfy \[
+ \tau=0,\quad V_\ell=2\pi^2A,\quad
+ \delta_\ell\to0,
+ \tag{26}
+\] and \href{../mathematics/current/round11_kahler.md}{the global
+topology proof} excludes a Kähler structure on every finite cover.
+
+Using (19), \(R_2/V\le4(1+\delta_\ell)^2\), \(T_\pm=A\), and
+\(p_\pm\ge A\), one obtains the simultaneous bounds \[
+ 0\le q_{\pm,\ell}
+ \le18\bigl[(1+\delta_\ell)^2-1\bigr]
+ =36\delta_\ell+18\delta_\ell^2\longrightarrow0.
+ \tag{27}
+\] Thus bilateral actual saturation and pointwise almost-Einstein input
+do occur on a fixed manifold with no bidisk metric, when diameter is
+unrestricted. Theorem A forces \(\operatorname{diam}(g_\ell)\to\infty\).
+Equation (27) uses the direct Ricci-energy estimate and is slightly
+tighter than the separate scalar/traceless estimates in the one-sided
+note; that numerical improvement is not a separate mathematical
+achievement.
+
+These are inherited constructions and a new consequence, not a new
+counterexample construction. They disprove diameter-free \textbf{bidisk
+or KE} realization with these inputs. They do not decide whether those
+manifolds carry a general non-Kähler Einstein metric, and therefore do
+not furnish Yau26 counterexamples.
+
+\hypertarget{what-is-and-is-not-new-in-the-proof}{%
+\subsubsection{6.4 What is and is not new in the
+proof}\label{what-is-and-is-not-new-in-the-proof}}
+
+The scalar and curvature-functional bounds, Chern--Weil algebra,
+harmonic compactness and de Rham splitting are classical. The actual
+global form estimates are inherited first-line results. The new
+composition uses the \textbf{second actual orientation} twice: to rule
+out all harmonic-radius blowups without topology, and to upgrade the
+limiting KE structure to an exact bidisk realization. It thereby
+connects two-sided near-optimal Ricci energy to exact geometry on the
+same smooth manifold.
+
+The result establishes the Yau26 existence output on its stated inputs;
+locally symmetric negative KE is more than the required output. The
+remaining limitations are the diameter, actual bilateral class supply,
+and simultaneous-saturation inputs. The proof supplies neither a
+dimension-only threshold nor an effective numerical constant. No
+exhaustive priority claim is made.
+
+\hypertarget{dependencies-and-finite-verification}{%
+\subsection{7. Dependencies and finite
+verification}\label{dependencies-and-finite-verification}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{../mathematics/current/line1_composed_application.md}{Inherited
+  actual-form theorem}, Sections 2--3: global forms and the explicit
+  amplitude/gradient estimates.
+\item
+  \href{20260923_gauge_saturation_ke.md}{One-sided realization},
+  Sections 3--6: the original composition and one-form limit. The
+  present argument replaces its topological no-bubbling step, not its
+  form supply.
+\item
+  \href{20260923_compact_realization.md}{Harmonic-coordinate realization
+  proof}, Sections 3--5: the metric-equation convergence and
+  preservation of smooth type. Its ALE and classification steps are not
+  used here.
+\item
+  \href{https://arxiv.org/html/math/0003068}{LeBrun, \emph{Ricci
+  Curvature, Minimal Volumes, and Seiberg--Witten Theory}}, Theorem 2.3
+  and Propositions 4.1--4.2: actual-conformal curvature inequality, cscK
+  equality, and Ricci-energy identity. The energy reformulation above is
+  classical algebra; it is not attributed as a new part of this
+  continuation.
+\item
+  \href{https://doi.org/10.1007/BF01233434}{Anderson, \emph{Convergence
+  and rigidity of manifolds under Ricci curvature bounds}}, and
+  \href{https://arxiv.org/html/1705.10071}{Zhang--Zhu, \emph{Bounds on
+  harmonic radius and limits of manifolds with bounded Bakry--Émery
+  Ricci curvature}}, Section 2, especially its construction of larger
+  harmonic charts in a Euclidean limit: the harmonic-coordinate
+  compactness framework. The Ricci-flat equation and strong
+  finite-Sobolev upgrade needed here are written explicitly in Section
+  3.
+\item
+  \href{check_bilateral_realization.py}{Finite check} verifies (19),
+  (21), the product normalization, and the commuting opposite-handed
+  complex structures. It is not a computer proof of gauge solvability,
+  harmonic compactness, or the realization theorem.
+\end{itemize}
+
+\end{document}

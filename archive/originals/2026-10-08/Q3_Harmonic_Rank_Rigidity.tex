@@ -1,0 +1,344 @@
+% !TeX program = pdflatex
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,mathrsfs,microtype}
+\usepackage[margin=24mm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks[2]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diver}{\operatorname{div}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\Hharm}{\mathcal H}
+\newcommand{\GP}{\mathcal G_P}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\numberwithin{equation}{section}
+\title{Harmonic rank alignment and negative-scalar\\[3pt]trace-free Ricci criticality}
+\author{Qiushi research continuation}
+\date{8 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For the unrestricted functional $P(g)=\int|\Ric_g^\circ|^2$ on a closed
+oriented four-manifold, we exclude a constant-negative-scalar non-Einstein
+critical metric whose mixed curvature block has image in a harmonic
+anti-self-dual line. Neither constant amplitude nor removability of the other
+factor is assumed. The proof retains the full pointwise Euler--Lagrange
+operator, shows that the Ricci tensor must vanish at zeros of the aligned
+harmonic form, and tests the remaining equation at a maximum of its squared
+norm. A consequence is that a negative-scalar Riemannian Einstein--Maxwell
+metric can be $P$-critical only if it is Einstein. This strengthens the
+harmonic-alignment exclusions in the supplied manuscripts; it does not prove
+smooth attainment of the unrestricted infimum on the Godeaux blowup.
+\end{abstract}
+
+\section{Functional, curvature block, and the statement}
+Let $(M^4,g)$ be smooth, closed, connected and oriented. Set
+\[
+ E=\Ric-\frac{s}{4}g,\qquad P(g)=\int_M|E|^2\,dV_g.
+\]
+Two-forms have the form norm, with $|e^{12}+e^{34}|^2=2$.
+We compose their skew endomorphisms using $g$ and identify the resulting
+self-adjoint endomorphisms with symmetric two-tensors. Write
+\[
+ \mathcal R=\begin{pmatrix}W^++sI/12&B^*\\B&W^-+sI/12\end{pmatrix},
+ \qquad B:\Lambda^+\longrightarrow\Lambda^-,\qquad |E|^2=4|B|^2.
+\]
+The curvature contraction is $\mathscr R(H)_{ij}=R_{ikjl}H^{kl}$,
+with $R_{ikjl}g^{kl}=\Ric_{ij}$ and positive sectional curvature on a sphere.
+The rough Laplacian $L=\nabla^*\nabla$ is nonnegative.
+
+\begin{theorem}\label{thm:main}
+Suppose $s$ is a negative constant and $0\ne h\in\Hharm^-(M,g)$ satisfies
+\begin{equation}\label{eq:align}
+ \im B_x\subset\mathbb R h_x\qquad(x\notin Z(h)).
+\end{equation}
+Let $\GP$ be the unrestricted $L^2$ gradient of $P$. Then
+\begin{equation}\label{eq:infty}
+ \boxed{\|\GP\|_\infty\ge\frac{|s|}{2}\|E\|_\infty.}
+\end{equation}
+If $E\not\equiv0$, there is a smooth nonnegative cutoff $\chi$, supported
+away from $Z(h)$, such that the volume-form-preserving metrics
+\begin{equation}\label{eq:path}
+ g_t(X,Y)=g\bigl(e^{-t\chi E^\sharp}X,Y\bigr)
+\end{equation}
+satisfy $P(g_t)<P(g)$ for all sufficiently small $t>0$.
+In particular, a $P$-critical metric satisfying \eqref{eq:align} is Einstein.
+\end{theorem}
+
+The condition is exact rank alignment with a specified global harmonic
+form. It is not the assertion that a general $P$-minimizer has this structure.
+No lower bound for $|h|$ is required. The proof will not extend or integrate
+an unbounded quotient across $Z(h)$.
+
+\section{The pointwise first variation}
+The classical gradients of $\int|\Ric|^2$ and $\int s^2$ in
+\cite[(2.5), (2.9)]{GV}, combined as $P=\int|\Ric|^2-\frac14\int s^2$,
+give at constant scalar curvature
+\begin{equation}\label{eq:grad}
+ \GP=LE-2\mathscr R(E)+\frac12|E|^2g,
+ \qquad DP_g[k]=\int_M\ip{\GP}{k}\,dV_g.
+\end{equation}
+The trace of the full gradient at an arbitrary metric is a nonzero multiple
+of $\Delta s$; hence every smooth closed $P$-critical metric has constant
+scalar curvature. Scale invariance makes unit-volume criticality equivalent
+to unrestricted criticality.
+
+\begin{lemma}[Opposite-duality tensor algebra]\label{lem:algebra}
+If $E=\phi\circ\psi$ with $\phi\in\Lambda^+$ and $\psi\in\Lambda^-$,
+then
+\begin{align}
+ |E|^2&=|\phi|^2|\psi|^2,&
+ (E^\sharp)^2&=\frac{|E|^2}{4}I,\label{eq:norm}\\
+ \mathscr R(E)&=(W^+\phi)\circ\psi+\phi\circ(W^-\psi)
+               -\frac{s}{12}E+\frac{|E|^2}{4}g.
+ \label{eq:action}
+\end{align}
+Here $E$ is the trace-free Ricci tensor of the curvature used in
+\eqref{eq:action}.
+\end{lemma}
+\begin{proof}
+Opposite-duality skew endomorphisms commute and their product realizes the
+isometric identification $\Lambda^+\otimes\Lambda^-\simeq S_0^2$:
+\begin{equation}\label{eq:inner}
+ \ip{\alpha\circ\beta}{\gamma\circ\delta}
+ =\ip{\alpha}{\gamma}\ip{\beta}{\delta}
+ \quad(\alpha,\gamma\in\Lambda^+,\ \beta,\delta\in\Lambda^-).
+\end{equation}
+At a point with both forms nonzero one can choose an oriented orthonormal
+frame with $\phi=a(e^{12}+e^{34})$, $\psi=b(e^{12}-e^{34})$.
+Their product is $ab\operatorname{diag}(-1,-1,1,1)$, proving
+\eqref{eq:norm}; zero cases follow by continuity.
+
+For completeness decompose the curvature tensor as
+\[
+ R_{ikjl}=W_{ikjl}+\frac12
+ (E_{ij}g_{kl}+E_{kl}g_{ij}-E_{il}g_{kj}-E_{kj}g_{il})
+ +\frac{s}{12}(g_{ij}g_{kl}-g_{il}g_{kj}).
+\]
+Contraction with $E^{kl}$ gives
+\[
+ \mathscr R(E)=W(E)+\frac12|E|^2g-E^2-\frac{s}{12}E.
+\]
+Under the same product identification,
+$W(E)=(W^+\phi)\circ\psi+\phi\circ(W^-\psi)$.
+This is verified by multiplication in the displayed frame for arbitrary
+symmetric trace-free $3\times3$ matrices $W^+,W^-$; equivariance gives the
+identity in all frames. Equation \eqref{eq:norm} proves \eqref{eq:action}.
+\end{proof}
+
+\begin{proposition}[Local harmonic-product formula]\label{prop:local}
+On any open set where $E=\phi\circ\psi$ and both opposite-duality forms
+are smooth and harmonic, constant scalar curvature implies
+\begin{equation}\label{eq:pointgrad}
+ \boxed{\GP=-\frac{s}{2}E-
+ 2\sum_{i=1}^4(\nabla_{e_i}\phi)\circ(\nabla_{e_i}\psi).}
+\end{equation}
+Writing $a=|\phi|^2$ and $b=|\psi|^2$, one has pointwise
+\begin{equation}\label{eq:contract}
+ \boxed{\ip{\GP}{E}=-\frac{s}{2}ab-\frac12\ip{da}{db}.}
+\end{equation}
+\end{proposition}
+\begin{proof}
+The harmonic two-form Weitzenb\"ock equations are
+\[
+ L\phi=2W^+\phi-\frac{s}{3}\phi,\qquad
+ L\psi=2W^-\psi-\frac{s}{3}\psi.
+\]
+Apply the product rule
+\[
+ L(\phi\circ\psi)=(L\phi)\circ\psi+\phi\circ(L\psi)
+ -2\sum_i(\nabla_{e_i}\phi)\circ(\nabla_{e_i}\psi).
+\]
+Substitution of \eqref{eq:action} into \eqref{eq:grad} cancels both Weyl
+terms and the scalar multiple of $g$, leaving \eqref{eq:pointgrad}.
+Equation \eqref{eq:inner} then gives
+\[
+ \sum_i\ip{(\nabla_{e_i}\phi)\circ(\nabla_{e_i}\psi)}{\phi\circ\psi}
+ =\frac14\ip{da}{db},
+\]
+which proves \eqref{eq:contract}. This is a pointwise calculation, so there
+are no discarded boundary or zero-set terms.
+\end{proof}
+
+\section{Harmonic zeros and the maximum argument}
+
+\begin{lemma}[Alignment at a zero]\label{lem:zeros}
+Let $h\not\equiv0$ be a harmonic anti-self-dual two-form on a connected
+four-manifold, and let $B:\Lambda^+\to\Lambda^-$ be smooth and satisfy
+\eqref{eq:align}. Then $B=0$ at every point of $Z(h)$.
+\end{lemma}
+\begin{proof}
+The zero set of a nonzero harmonic form has empty interior by unique
+continuation for the Hodge--Dirac operator \cite{Baer}. Thus $\operatorname{rank}B\le1$
+everywhere, since its $2\times2$ minors vanish on a dense set.
+Suppose $h(p)=0$ and $B(p)\ne0$. After shrinking to a connected ball $U$
+choose a smooth local section $v$ of $\Lambda^+$ with $Bv\ne0$ throughout
+$U$, and put $\theta=Bv/|Bv|$. This is a smooth unit anti-self-dual form.
+The alignment gives $h=f\theta$ on $U$, including its zero set, for the
+smooth real function $f=\ip{h}{\theta}$.
+Since $dh=0$,
+\[
+ df\wedge\theta+f\,d\theta=0.
+\]
+A nonzero anti-self-dual two-form is nondegenerate. Therefore
+$\alpha\mapsto\alpha\wedge\theta$ is an isomorphism from one-forms to
+three-forms; there is a smooth one-form $\omega$ on $U$ with $df=f\omega$.
+Along every path from $p$, this is a scalar homogeneous linear ODE.
+The initial value $f(p)=0$ implies $f=0$ on $U$, contradicting unique
+continuation of $h$. Hence $B(p)=0$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{thm:main}]
+On $M\setminus Z(h)$ set
+\[
+ \beta_h=\frac{B^*h}{|h|^2},\qquad \phi=-2\beta_h.
+\]
+The mixed-block/tensor identification gives $E=\phi\circ h$.
+Contracted Bianchi at constant scalar curvature gives $\diver E=0$.
+For a self-dual $\phi$ and closed anti-self-dual $h$,
+\begin{equation}\label{eq:div}
+ \diver(\phi\circ h)=h(d^*\phi).
+\end{equation}
+To check the only potentially extra term, contract $dh=0$ with
+$\phi^{ik}$. The two differentiated terms give the same contraction,
+while $\phi^{ik}\nabla_jh_{ik}=0$ by opposite duality. Thus the derivative
+falling on $h$ vanishes. This proves \eqref{eq:div} with the indicated
+skew-endomorphism convention. As $h$ is invertible off its zeros,
+$d^*\phi=0$, and self-duality gives $d\phi=0$. The local product formula
+therefore applies without any assertion of a global smooth extension of
+$\phi$.
+
+Assume $E\not\equiv0$ and choose $p$ where $|E|^2$ has its positive
+maximum. Lemma \ref{lem:zeros} and $|E|^2=4|B|^2$ imply $h(p)\ne0$.
+Hence both $a=|\phi|^2$ and $b=|h|^2$ are positive near $p$ and
+$|E|^2=ab$. At $p$,
+\[
+ 0=d(ab)=b\,da+a\,db,
+ \qquad \ip{da}{db}=-\frac ba|da|^2\le0.
+\]
+Equation \eqref{eq:contract} now gives
+\begin{equation}\label{eq:max}
+ \ip{\GP}{E}(p)=\frac{|s|}{2}|E|^2(p)
+                  +\frac{b(p)}{2a(p)}|da|^2(p)>0.
+\end{equation}
+Cauchy--Schwarz at $p$ proves \eqref{eq:infty}. By continuity a nonnegative
+smooth cutoff $\chi\not\equiv0$ can be chosen near $p$ so that
+\[
+ DP_g[-\chi E]=-\int_M\chi\ip{\GP}{E}\,dV_g<0.
+\]
+The exponential in \eqref{eq:path} is positive and has determinant one
+because $\tr E=0$. It therefore gives the claimed actual metrics and
+first-order strict descent. For $E=0$ all assertions are immediate.
+\end{proof}
+
+\begin{remark}[The constant is sharp]
+For a product of two closed constant-negative-curvature surfaces with
+unequal Gaussian curvatures, the Ricci tensor is parallel and the two
+factors in its harmonic-product expression can both be chosen parallel.
+Then \eqref{eq:pointgrad} becomes $\GP=-sE/2$, and equality holds in
+\eqref{eq:infty}. The theorem excludes criticality, not existence of such
+Einstein--Maxwell metrics.
+\end{remark}
+
+\section{Einstein--Maxwell and the Q3 interface}
+
+\begin{corollary}\label{cor:EM}
+Let $(g,F)$ be a smooth Riemannian Einstein--Maxwell solution on a closed
+oriented four-manifold, in the convention
+\[
+ dF=d^*F=0,\qquad (\Ric+F\circ F)_0=0.
+\]
+If its scalar curvature is negative, then $P$-criticality of $g$ is
+equivalent to $g$ being Einstein. Every non-Einstein member admits the
+localized volume-preserving descent in \eqref{eq:path}.
+\end{corollary}
+\begin{proof}
+The Maxwell stress tensor is divergence-free, so contracted Bianchi makes
+$s$ constant. The standard four-dimensional decomposition \cite{LeBrunEM}
+is $(F\circ F)_0=2F^+\circ F^-$. Hence
+\[
+ E=(-2F^+)\circ F^-.
+\]
+Both factors are globally smooth harmonic forms. If $F^-\equiv0$, the
+metric is already Einstein. Otherwise its mixed block is aligned with
+$F^-$, and Theorem \ref{thm:main} applies. Conversely, an Einstein metric
+has $P=0$ and is an absolute $P$-minimum.
+\end{proof}
+
+\begin{corollary}[Strict rank remainder at a putative minimizer]
+Suppose $g_*$ is a smooth non-Einstein $P$-critical metric with $s<0$.
+For every $0\ne h\in\Hharm^-(M,g_*)$, define off $Z(h)$
+\[
+ B_{\perp,h}=B-\frac{h\otimes B^*h}{|h|^2}.
+\]
+Then $\int|B_{\perp,h}|^2>0$. If $b^-(M)>0$, one further has
+\begin{equation}\label{eq:rankgap}
+ \min_{\substack{h\in\Hharm^-(g_*)\\\|h\|_2=1}}
+       \int_M|B_{\perp,h}|^2\,dV_{g_*}>0.
+\end{equation}
+The positive number in \eqref{eq:rankgap} may depend on $g_*$.
+\end{corollary}
+\begin{proof}
+A vanishing integral would give \eqref{eq:align} on the complement of
+$Z(h)$ by smoothness there, contradicting Theorem \ref{thm:main}.
+The unit sphere of the harmonic space is compact, and convergence in it
+is smooth. A nonzero harmonic form has a measure-zero nodal set
+\cite{Baer}; dominated convergence, using $|B_{\perp,h}|^2\le|B|^2$,
+shows that the displayed integral is continuous in $h$. Its positive
+minimum proves \eqref{eq:rankgap}.
+\end{proof}
+
+\paragraph{What this changes in the supplied proof.}
+The supplied continuation \cite{Project} separates full flux equality from
+weaker rank alignment. Its global Einstein--Maxwell conclusion required
+boundedness of the quotient factor at zeros of the harmonic form. Theorem
+\ref{thm:main} removes that intermediate requirement for the negative-scalar
+criticality question: it uses the original smooth mixed curvature block to
+show $E=0$ at those zeros and works at a positive maximum away from them.
+Both amplitudes are allowed to vary. The earlier integrated formula
+\[
+ DP_g[E]=-\frac{s}{2}P-\frac12\int
+       \ip{d|\phi|^2}{d|\psi|^2}
+\]
+is recovered when both factors are global, but its unsigned correlation is
+not used to obtain the contradiction. The full pointwise equation is the
+additional information.
+
+For the fixed Godeaux blowup the supplied lower and strict upper bounds
+remain $16\pi^2/3\le P_*(M)<8\pi^2$. No argument here proves smooth
+attainment of $P_*(M)$ or forces an arbitrary minimizing sequence into
+harmonic rank alignment. The zero-mode ALE and partial-collapse problems
+are not removed by this candidate-class exclusion. The present conclusions
+use classical curvature identities and unique continuation, not FD2 or the
+project's conditional gluing expansion.
+
+\begin{thebibliography}{9}
+\bibitem{GV} M. J. Gursky and J. A. Viaclovsky,
+\emph{Rigidity and stability of Einstein metrics for quadratic curvature
+functionals}, arXiv:1105.4648v2 (2013).
+\url{https://arxiv.org/abs/1105.4648}. Equations (2.5), (2.9).
+\bibitem{LeBrunEM} C. LeBrun,
+\emph{The Einstein--Maxwell equations, extremal K\"ahler metrics, and
+Seiberg--Witten theory}, arXiv:0803.3734v2 (2008).
+\url{https://arxiv.org/abs/0803.3734}.
+\bibitem{Baer} C. B\"ar,
+\emph{Zero sets of solutions to semilinear elliptic systems of first order},
+Invent. Math. 138 (1999), 183--202.
+\url{https://arxiv.org/abs/math/9805065}.
+\bibitem{Project} Supplied project manuscript,
+\emph{Einstein Gaps on Four-Manifolds: Subsequent Mathematical Developments},
+8 October 2026, subsection ``The weaker rank-aligned system'';
+and the preceding note \emph{A genuine descent direction on the
+harmonic-alignment branch}. These are the research context, not additional
+analytic hypotheses for Theorem \ref{thm:main}.
+\end{thebibliography}
+\end{document}

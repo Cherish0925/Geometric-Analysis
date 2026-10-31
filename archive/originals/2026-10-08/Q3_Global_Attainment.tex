@@ -1,0 +1,255 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=26mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,hyperref,microtype}
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=blue}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}[proposition]{Lemma}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\vol}{\operatorname{Vol}}
+\title{Smooth attainment and a genuine bubbling sublevel\\on a Godeaux blowup}
+\author{Research continuation}
+\date{8 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+The existence target is a smooth global minimizer of
+$P(g)=\int|\Ric_g^\circ|^2$ which is not Bach-flat. On the fixed classical
+Godeaux blowup, the supplied strict Burns insertion theorem gives
+$p_*<8\pi^2$. We exhibit an actual Eguchi--Hanson degeneration on this
+same smooth manifold at a level strictly below $8\pi^2$. Thus this bound
+is not a compactness threshold. We also give one aggregate characteristic
+class estimate for marked negative-definite splittings, identifying precisely
+why it does not detect this degeneration. These conclusions do not establish
+attainment or nonattainment of $p_*$.
+\end{abstract}
+
+\section{The existence question}
+Let $X$ be the quotient of the smooth Fermat quintic by the free action
+\[
+ \gamma[x_1:x_2:x_3:x_4]
+ =[\zeta x_1:\zeta^2x_2:\zeta^3x_3:\zeta^4x_4],\qquad \zeta^5=1,
+\]
+where $\zeta$ is primitive, and put $M=X\#\overline{\CP}^{\,2}$.
+Then $K_X^2=1$, $\chi(M)=12$, $\tau(M)=-8$, and $T=2\chi+3\tau=0$.
+The inherited classical monopole estimates and the project's strict
+negative K\"ahler--Einstein insertion theorem give
+\begin{equation}\label{eq:interval}
+ \frac{16\pi^2}{3}\le p_*(M):=\inf_{g\in\operatorname{Met}(M)}P(g)<8\pi^2.
+\end{equation}
+Here the strict upper bound is an input from the supplied manuscript,
+not independently re-proved in this note. The exact input is its general
+KE expansion, at one insertion point,
+\[
+ \frac{P(g_\varepsilon)}{8\pi^2}
+ =1-\frac{s^2}{64}\varepsilon^2\log(1/\varepsilon)+O(\varepsilon^2).
+\]
+It is supported in a regular coordinate ball and keeps the outside metric
+unchanged; see the source record at the end.
+
+A smooth minimizer would have constant scalar curvature by conformal
+variation. All conformal classes here have negative Yamabe constant by
+the actual monopole input. A Bach-flat $P$-critical metric of nonzero
+constant scalar curvature is Einstein, by the two Euler--Lagrange equations.
+But Einstein and $T=0$ imply $s=W^+=0$ by Chern--Weil, contradicting the
+scalar estimate $\int s^2\ge32\pi^2$. Thus smooth attainment on this $M$
+would solve the desired non-Bach-flat minimizer problem.
+
+The inference missing from \eqref{eq:interval} is smooth attainment.
+Anderson's ideal-minimizer theorem \cite{Anderson} admits orbifold and
+open/collapsing alternatives; it does not remove them from
+\eqref{eq:interval}.
+
+\section{An explicit nodal Godeaux degeneration}
+Define the invariant quintic
+\begin{align*}
+ F={}&2(x_1^5+x_2^5+x_3^5+x_4^5)\\
+ &-x_1^3x_3x_4-x_1^2x_2^2x_4-x_1^2x_2x_3^2-x_1x_2^3x_3\\
+ &-x_1x_2x_4^3-x_1x_3^2x_4^2-x_2^2x_3x_4^2-x_2x_3^3x_4.
+\end{align*}
+Every monomial has weight zero modulo five. At $[1:1:1:1]$ the gradient
+vanishes and the homogeneous Hessian is
+\[
+ 40I_4-10\mathbf 1\mathbf 1^{\mathsf T}.
+\]
+Its only kernel is the radial line, so the projective singularity is a node.
+For completeness, exact polynomial reduction gives, in the chart $x_4=1$,
+\[
+ \left(\partial_{x_i}F\big|_{x_4=1}:1\le i\le4\right)
+ = (x_1-x_3^3,\ x_2-x_3^2,\ x_3^5-1)
+ \quad\hbox{in }\mathbb Q[x_1,x_2,x_3].
+\]
+On $x_4=0$, in each of the three charts $x_i=1$, the derivative ideal is
+the unit ideal. Hence the hypersurface has precisely five nodes, a single
+free $\mathbb Z_5$ orbit. The derivative-ideal calculation and the Hessian
+were verified by exact rational arithmetic in the accompanying script.
+
+The only fixed points of nonidentity group elements in projective space
+are the coordinate vertices; none lies on $F=0$. Therefore
+\[
+ Z_0=\{F=0\}/\mathbb Z_5
+\]
+has exactly one $A_1$ singularity. Its canonical bundle is ample:
+the quotient pullback is $\mathcal O(1)$ by adjunction.
+
+The invariant pencil $F+u\sum x_i^5$ smooths the nodes for generic small
+$u\ne0$. The smooth invariant quintics avoiding the fixed vertices form
+a connected complex Zariski-open set. Equivariant Ehresmann triviality
+identifies their quotients with the same oriented smooth $X$.
+The $A_1$ Milnor fibre is diffeomorphic to the disk bundle of degree $-2$;
+equivalently, its smoothing and minimal resolution have the same oriented
+smooth filling. Consequently $X$ contains a smooth sphere $C$ with
+\[
+ C^2=-2,\qquad K_X\cdot C=0.
+\]
+After a blowup outside this region, $E\cdot C=0$ as well. This is an
+embedded sphere, rather than just a root of the intersection lattice.
+
+\section{Bubbling strictly below the known upper threshold}
+\begin{proposition}\label{prop:bubble}
+Assume the supplied local strict Burns insertion theorem stated in
+Section~1. There are smooth metrics $g_\lambda$ on the fixed manifold $M$
+such that
+\[
+ P(g_\lambda)\longrightarrow q<8\pi^2,
+\]
+and a rescaled region converges to the nonflat Ricci-flat
+Eguchi--Hanson metric. After volume normalization this sequence has no
+smooth convergent subsequence modulo diffeomorphisms.
+\end{proposition}
+\begin{proof}
+The ample canonical orbifold $Z_0$ admits a negative KE orbifold metric
+$h_0$ by the orbifold Aubin--Yau theorem; see \cite{Kobayashi,Suvaina}.
+Apply the supplied insertion at a regular point away from the node.
+Fix its parameter sufficiently small to obtain an orbifold metric $h$
+on the one-point blowup of $Z_0$ with $P(h)=q<8\pi^2$. It equals $h_0$
+near the node.
+
+Replace the node with Eguchi--Hanson at length scale $\lambda$. In shared
+end coordinates the differentiated expansions are
+\[
+ h=\delta+O(r^2),\qquad
+ g_{\mathrm{EH},\lambda}=\delta+O(\lambda^4r^{-4}).
+\]
+Interpolate at $\rho=\lambda^{1/2}$. The annulus has volume $O(\rho^4)$
+and curvature bounded by $C(1+\lambda^4\rho^{-6})$, so
+\[
+ \int_{\mathrm{annulus}}|\Ric^\circ|^2
+ \le C(\rho^4+\lambda^8\rho^{-8})\longrightarrow0.
+\]
+The removed Einstein orbifold ball and the inserted Ricci-flat interior
+both have $P=0$. Thus $P(g_\lambda)\to q$. The resulting smooth manifold
+is the smoothing of $Z_0$ blown up at a separate point, hence is $M$.
+The total volume tends to the positive volume of $h$, whereas the maximum
+Riemann curvature in the EH region grows as $\lambda^{-2}$. Uniform
+volume normalization preserves this curvature divergence.
+\end{proof}
+
+This proposition makes no assertion that $q=p_*(M)$. It disproves the
+suggested compactness of the whole sublevel below $8\pi^2$, not smooth
+attainment itself. Its ALE interpolation is classical; the supplied strict
+Burns saving is what puts the sequence below that threshold.
+
+\section{What the actual classes control in an entire splitting}
+The following estimate collects all marked components simultaneously.
+It is conditional on an appropriate splitting and actual field passage;
+it is not a claim that every minimizing sequence already supplies them.
+
+\begin{proposition}\label{prop:aggregate}
+Suppose a bulk $B$ and finitely many ALE pieces $N_i$ give a marked rational
+orthogonal decomposition, with negative-definite core subspaces. Assume
+relative Chern--Weil additivity $T_B+\sum_iT_i=0$ and actual bulk monopole
+input for the restrictions of $K+E$ and $K-E$, sufficient for the classical
+mixed curvature estimate. Write
+\[
+ K=K_B+\sum_iK_i,\qquad E=E_B+\sum_iE_i,\qquad
+ d=-\sum_iK_i^2,\quad e=-\sum_iE_i^2.
+\]
+With the standard operator norm for Weyl curvature, put
+\[
+ C_i=\int_{N_i}\left(4|W^+|^2+\frac{s^2}{12}\right)\ge0.
+\]
+Then the total energy of the configuration satisfies
+\begin{equation}\label{eq:aggregate}
+ P_B+\sum_iP_i\ge
+ \frac{16\pi^2}{3}\bigl(1+d+\max\{e-1,0\}\bigr)+\sum_iC_i.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Since $K^2=1$ and $E^2=-1$, one has $K_B^2=1+d$ and $E_B^2=e-1$.
+The average of the two self-dual projection squares is
+\[
+ \frac{|(K_B+E_B)^+|^2+|(K_B-E_B)^+|^2}{2}
+ =|K_B^+|^2+|E_B^+|^2
+ \ge1+d+\max\{e-1,0\}.
+\]
+Apply the classical inequality
+$P_B\ge8\pi^2(\frac23\max_\pm|(K_B\pm E_B)^+|^2-T_B)$.
+For each core, relative Chern--Weil gives $P_i=C_i-8\pi^2T_i$.
+Addition cancels all the relative $T$ terms and yields
+\eqref{eq:aggregate}.
+\end{proof}
+
+In particular, configurations of total energy less than $8\pi^2$ satisfy
+\[
+ d+\max\{e-1,0\}+\frac{3}{16\pi^2}\sum_iC_i<\frac12.
+\]
+For the actual $A_1$ sphere above, both restrictions vanish and the
+Ricci-flat ASD core has $C_i=0$. The aggregate estimate thus retains only
+$16\pi^2/3$. The missing information cannot be supplied by counting that
+sphere again.
+
+For comparison, $r$ disjoint degree-$-3$ cores with canonical degree one
+give $d=r/3$, excluding $r\ge2$ at this energy. A chain
+$[-3,-2,\ldots,-2]$ of rank $r$ with canonical degrees $(1,0,\ldots,0)$
+instead has $d=r/(2r+1)<1/2$, from its inverse intersection matrix.
+This last calculation does not assert that every such chain embeds in $M$.
+
+\section{Attainment does not require compactness of every minimizing sequence}
+There is also a concrete example within the construction above. On the
+unblown smooth $X$, a negative KE metric exists and attains $\inf P=0$.
+Resolving the node of $(Z_0,h_0)$ by shrinking EH metrics, without making
+the Burns insertion, gives another sequence on $X$ with $P\to0$ and
+unbounded curvature. Thus a smooth global minimizer and a degenerating
+minimizing sequence coexist on the same smooth manifold.
+
+Accordingly, the existence target for $M$ is to obtain at least one smooth
+global minimizer. Strict comparison with all ideal boundary configurations
+would be one sufficient route, if their compactification and regularity
+were established; it is not a necessary extra theorem. A suitable selection
+of minimizing sequences or a smooth minimizing construction could also
+succeed. Proposition~\ref{prop:bubble} does not decide among these routes.
+
+What is unresolved is a genuinely minimizing comparison: no result here
+shows that a smooth competitor is lower than every relevant optimized
+singular configuration, and no smooth metric is shown to attain $p_*(M)$.
+The previous single-core mass calculations therefore remain tools for one
+stratum, rather than a proof of Q3.
+
+\paragraph{Provenance of the nonclassical input.}
+The strict insertion expansion is taken from the supplied
+\texttt{01\_Research\_Synthesis.tex}, subsection ``The global upper bound
+that changed during the night'', and its referenced A02.59D source.
+That subsection already extends the construction to canonical models
+with ADE points. The explicit nodal quintic, its exact finite verification,
+and the aggregate calculation above explain the consequence for this fixed
+candidate. They are not assertions of a newly proved general attainment
+theorem or an exhaustive originality claim.
+
+\begin{thebibliography}{9}
+\bibitem{Anderson} M. T. Anderson, \emph{Canonical metrics on
+3-manifolds and 4-manifolds}, especially Theorem 4.10 and Remark 4.12,
+\href{https://arxiv.org/abs/math/0511034}{arXiv:math/0511034}.
+\bibitem{Kobayashi} R. Kobayashi, \emph{Einstein--K\"ahler V-metrics on
+open Satake V-surfaces with isolated quotient singularities},
+Math. Ann. \textbf{272} (1985), 385--398,
+\href{https://doi.org/10.1007/BF01455566}{doi:10.1007/BF01455566}.
+\bibitem{Suvaina} I. \c Suvaina, \emph{The Yamabe invariant of a class
+of symplectic manifolds}, Proposition 2.4 and proof of Theorem 3.4,
+\href{https://arxiv.org/abs/1410.1236}{arXiv:1410.1236}.
+\bibitem{LeBrun} C. LeBrun, \emph{Ricci curvature, minimal volumes,
+and Seiberg--Witten theory},
+\href{https://arxiv.org/abs/math/0003068}{arXiv:math/0003068}.
+\end{thebibliography}
+\end{document}

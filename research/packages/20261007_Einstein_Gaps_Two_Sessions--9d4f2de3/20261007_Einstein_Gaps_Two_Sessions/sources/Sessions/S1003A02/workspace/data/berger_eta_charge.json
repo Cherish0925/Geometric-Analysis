@@ -1,0 +1,28 @@
+{
+ "gamma": [
+  "2 - lambda**2",
+  "lambda",
+  "lambda"
+ ],
+ "signature_transgression": "U**2*lambda**2 - 2*U*V*lambda**2 + V**2*lambda**2 + 2*lambda**4 - 4*lambda**2 + 2",
+ "decomposition_residual": "0",
+ "controlled_collar_U_eq_V": "2*(lambda - 1)**2*(lambda + 1)**2",
+ "rho": "(lambda - 1)*(lambda + 1)",
+ "eta_APS_blowup_orientation_raw_round_anchored": "2*(lambda - 1)**2*(lambda + 1)**2/3",
+ "eta_reverse_orientation": "-2*(lambda - 1)**2*(lambda + 1)**2/3",
+ "check_s_equals_3eta_plus_jet": "0",
+ "round": {
+  "lambda": 1,
+  "s": "U**2 - 2*U*V + V**2",
+  "eta_APS": "0"
+ },
+ "adiabatic_limit": {
+  "lambda_to_0_s": "2",
+  "eta_APS": "2/3",
+  "euler_flux": 0,
+  "chiral_charge_bplus": -2,
+  "round_chiral_charge_bplus": 2,
+  "price": 4
+ },
+ "scope": "eta is intrinsic; the lambda^2(U-V)^2 term is the nonproduct collar/second-fundamental-form correction"
+}

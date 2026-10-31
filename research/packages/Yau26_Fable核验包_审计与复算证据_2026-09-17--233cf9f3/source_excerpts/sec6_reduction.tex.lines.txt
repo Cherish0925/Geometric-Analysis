@@ -1,0 +1,49 @@
+0001: \section{归约定理：原题与公开问题的逻辑关系}\label{sec:reduction}
+0002: 
+0003: \subsection{$Q_4$ 成立意味着什么，否定 $Q_4$ 需要什么}
+0004: \begin{theorem}[归约定理]\status{已证}\label{thm:R}
+0005: \begin{enumerate}
+0006: \item[(a)] 若 $P_4^+$ 成立，则 $\CPb\#\CPb$（等价地 $\CP^2\#\CP^2$）承载 Einstein 度量；同样，$2\CP^2\#4\CPb$、$3\CP^2\#3\CPb$、$\#3(S^2\times S^2)$ 均承载 Einstein 度量（后三者作为 $(S^2\times S^2)/\Z_2$ 的解消，其拓扑识别引自资料包）。
+0007: \item[(b)] 若 $P_4^-$ 成立，则每个闭的负 Einstein 四维 $A_1$ 轨形的\emph{每一种}手性解消都承载 Einstein 度量（例如 $\mathcal O_{g,h}=(C_g\times C_h)/\Z_2$ 的全部混合手性解消），并且每个 Dehn-twist 曲面丛 $E_D$ 都承载 Einstein 度量。
+0008: \item[(c)] 因此 $Q_4$ 成立蕴含 (a) 的结论或 (b) 的结论。
+0009: \item[(d)] 若 $P_4^+$ 不成立，则存在闭四维流形 $M$：基本群有限，承载 $\delta_+<\frac12$ 的度量（从而承载正数量曲率度量，且 $M$ 及其一切有限覆盖满足严格不等式 $2\chi>3|\tau|$），而不承载任何 Einstein 度量。对这样的 $M$（不可定向时对其定向二重覆盖）及其一切有限覆盖：单纯体积与最小体积熵为零；任一 monopole 类满足 $a^+=0$，LeBrun 型估计的拓扑下界 $(a^+)^2>0$ 无从成立；HT 障碍失效。
+0010: \item[(e)] 对 $n\ge5$，否定 $Q_n$ 蕴含存在不承载任何 Einstein 度量的闭 $n$ 维流形。
+0011: \end{enumerate}
+0012: \end{theorem}
+0013: \begin{proof}
+0014: (a)(b)：推论~\ref{cor:football}、\ref{cor:models}与定理~\ref{thm:ED}给出所列流形满足 $e_\sigma=0$；$P_4^\sigma$ 的定义即给结论。(c) 由命题~\ref{prop:branches}。(d)：否定 $P_4^+$ 给出无 Einstein 度量的 $M$ 与 $\delta_+(g)<\frac12$ 的度量；Myers 定理给有限基本群，$s>0$；命题~\ref{prop:HT}给严格 HT，而提升度量满足同样的夹逼，故对有限覆盖亦然。有限基本群使单纯体积与体积熵为零，到双曲流形的映射度数为零，故 Gromov--Kotschick 与 BCG／Sambusetti 型证书不适用。正数量曲率度量下 Seiberg--Witten 方程只有可约解，故任一 monopole 类满足 $a^+_g=0$、$a^2\le0$；$b_+=1$ 时虚维数非负要求 $a^2\ge2\chi+3\tau>0$（严格 HT），零扰动下无墙，正数量曲率度量给出不变量为零，反定向同理。于是 LeBrun／Ishida--LeBrun \cite{LeBrun01,IL} 估计所需的 $(a^+)^2\ge a^2>0$ 无从成立。(e) 是定义的直接推论。
+0015: \end{proof}
+0016: 
+0017: \begin{remark}[这些结论为何构成“困难性证明”]
+0018: （1）据我们所知，(a) 中各流形是否承载 Einstein 度量是四维几何中长期公开的问题：已知的单连通正 Einstein 四维流形的例子只有（见 \cite{Viaclovsky,LeBrun03}） $S^4$、$\CP^2$、$S^2\times S^2$ 与 $\CP^2\#k\CPb$（$1\le k\le8$）；LeBrun 定理 \cite{LeBrun09} 表明承载辛结构的四维流形具有 $\lambda>0$ 的 Einstein 度量当且仅当它是 del Pezzo 曲面，而 $\CP^2\#\CP^2$ 不是近复流形，不在该定理范围内。对 (b) 中的混合手性解消，正自交球面使 SW 不变量在两个定向下都为零，同样没有已知的存在性或不存在性结果。（2）(d) 表明，据我们所知，文献中现有的全部 Einstein 不存在性证书对否定 $P_4^+$ 所需的流形均不适用；“正数量曲率、严格 HT、无 Einstein 度量”的四维流形目前一个也不知道；(e) 所要求的高维无 Einstein 流形也一个都不知道（$n\ge5$ 时尚无任何已知的 Einstein 存在性障碍）。（3）因此：\emph{证明} $Q_4$ 至少与在 $\CP^2\#\CP^2$（或相应负分支流形）上构造 Einstein 度量一样难；\emph{否定} $Q_4$ 至少与发现一种适用于正数量曲率四维流形的新 Einstein 障碍一样难，并且还需同时否定负分支。
+0019: \end{remark}
+0020: 
+0021: \subsection{负分支的一条可归约路线：问题 W}
+0022: “全部 Einstein 不存在性已被证明、而紧夹逼输入既未构造也未排除”的具体范畴目前有两类：SW 边界带 $(\frac13-\gamma)c\le k\le\frac c3$ 上的吹起流形（第~\ref{sec:obstructions}节；临界比例处必要塌缩），以及熵等号型流形，其代表是 Di Cerbo 的图流形。对后者，下述条件定理把问题归结为一个适定的渐近双曲 Einstein 存在性问题。
+0023: 
+0024: 称完备 Einstein 流形 $(X^4,h)$（$\Ric_h=-3h$）的一个端为\emph{渐近双曲（AH）端}，若存在闭三维流形 $Y$ 与端部坐标使 $h=dt^2+e^{2t}\bar q(t)$，$t\ge t_0$，其中 $\bar q(t)$ 是 $Y$ 上的度量族，$\bar q(t)\to\gamma$，且 $\|\partial_t^j(\bar q(t)-\gamma)\|_{C^{2-j}(Y)}\le Ce^{-2t}$（$j=0,1,2$）。具光滑共形无穷远的共形紧 Einstein 度量满足此条件（Fefferman--Graham 展开）。
+0025: 
+0026: \begin{problem}[问题 W]\status{开放}\label{prob:W}
+0027: $T^3\times\R$ 上是否存在两端均为 AH 端的完备 Einstein 度量？
+0028: \end{problem}
+0029: 
+0030: \begin{theorem}[条件定理]\status{已证}\label{thm:W}
+0031: 若问题~W 的答案是肯定的，则 $P_4^-$ 不成立：存在固定的闭四维流形 $M$（Di Cerbo 意义下由两个纯实双曲块组成的 extended graph 流形），$e_-(M)=0$ 而 $M$ 不承载任何 Einstein 度量。
+0032: \end{theorem}
+0033: \begin{proof}
+0034: 设 $(X,h)$ 为所述度量。取两个具有环面尖点的有限体积实双曲四维流形 $N_\pm$（为简单计设各只有一个尖点；多尖点时逐对处理），其尖点为 $ds^2+e^{-2s}g^\pm_{\rm cusp}$。经仿射识别 $T^3\to$ 尖点截面并平移 $s$，可把尖点的一段写成 $dt^2+e^{2t}\gamma^\flat_\pm$，$\gamma^\flat_\pm$ 为 $T^3$ 上的平坦度量。在 $X$ 的每个端上取 $r_0\ge t_0$、$K\ge1$ 与光滑台阶函数 $\beta$，令
+0035: \[
+0036: \tilde q(t)=\bigl(1-\beta(\tfrac{t-r_0}{K})\bigr)\bar q(t)+\beta(\tfrac{t-r_0}{K})\gamma^\flat,\qquad g=dt^2+e^{2t}\tilde q(t).
+0037: \]
+0038: 记 $J=\tilde q^{-1}\partial_t\tilde q$，则 $\|J\|_{C^1}+\|\partial_tJ\|_{C^0}\le C(K^{-1}+e^{-2r_0})$。Gaussian 坐标下的 Ricci 公式（资料包 \texttt{eq:fullRic}，已复核）给出 $\mathcal E=\Ric_g+3g$ 的三个块：
+0039: \begin{align*}
+0040: \mathcal E_{tt}&=-\tr J-\tfrac12\partial_t\tr J-\tfrac14\tr J^2,\qquad
+0041: \mathcal E_{t\cdot}=\tfrac12(\operatorname{div}_{\tilde q}J-d\tr J),\\
+0042: \mathcal E_T^\sharp&=e^{-2t}\Ric(\tilde q)^\sharp-\tfrac12\partial_tJ-\tfrac32J-\tfrac12(\tr J)\Id-\tfrac14(\tr J)J,
+0043: \end{align*}
+0044: 混合块的物理范数还须乘 $e^{-t}$。$t\le r_0$ 时 $g=h$ 精确 Einstein；$t\ge r_0+K$ 时 $g$ 为精确双曲尖点；中间 $\|g^{-1}\mathcal E\|_{\op}\le C(K^{-1}+e^{-2r_0})$，$C$ 只依赖 $\bar q$ 与 $\gamma^\flat$ 的 $C^2$ 界。令 $K,r_0\to\infty$ 得到 $X$ 上缺陷任意小、两端在紧集外分别等于 $dt^2+e^{2t}\gamma^\flat_\pm$ 的完备度量；把两端与 $N_\pm$ 的尖点沿等距的一段粘合，得到闭流形 $M=\overline N_+\cup_{T^3}\overline N_-$ 上的光滑度量，外部为精确双曲。$M$ 的微分同胚型与参数无关，粘合映射是仿射的，故 $M$ 属于 Di Cerbo 定理的范畴，不承载任何 Einstein 度量；归一化到 $\Ric\approx-g$ 后 $e_-(M)=0$。
+0045: \end{proof}
+0046: 
+0047: \begin{remark}[关于问题 W 的已知约束]\label{rem:W}
+0048: （i）Cai--Galloway 定理 \cite{CG}：$\Ric\ge-3g$ 且衰减充分快的共形紧流形，只要共形无穷远有一个分支含非负数量曲率的代表，无穷远就连通。$T^3$ 上的共形类要么含平坦度量，要么是 Yamabe 负的；故问题 W 中两端的共形无穷远都必须是\emph{不共形于平坦度量}（Yamabe 负）的环面，平坦环面边界被排除。（ii）正交传递 $T^2$ 对称的解不存在：精确 Einstein 时 Bochner 公式给 $\frac12Le\ge\frac12e^2-3e$，AH 端上 $e\to0$，故 $\sup e\le6$；而环面面积函数 $\mu\to\infty$ 于两端，由引理~\ref{lem:critical}（$\epsilon=0$）与 Morse 计数必有 $e\ge12$ 的临界点，矛盾。（iii）固定螺旋标架的余齐性一类同样被排除（资料包 \texttt{prop:helical}）。（iv）反过来，Riccati 比较表明缺陷为 $\epsilon$ 的连接器长度 $\gtrsim\log(1/\epsilon)$；启发式地，非塌缩、曲率有界的近 Einstein 连接器序列（$\epsilon\to0$）以喉部为基点的极限应是 $T^3\times\R$ 型的完备 Einstein 度量，即问题 W 的解（端部的 AH 性质尚需论证）。在这个意义上，图流形路线与问题 W 密切相关。（v）资料包的全矩阵最小二乘试验与本次的 Gaussian 规范演化试验（第~\ref{sec:verification}节）都因 Cauchy 问题的椭圆不适定性而不能给出结论；正确的数值表述是以两端共形无穷远为 Dirichlet 数据的椭圆边值问题（Einstein--DeTurck 规范）。
+0049: \end{remark}

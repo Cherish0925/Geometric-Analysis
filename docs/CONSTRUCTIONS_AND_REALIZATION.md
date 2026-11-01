@@ -319,6 +319,70 @@ $$
 
 来源：9月21日 [构造分卷](../archive/originals/2026-09-21/02_近Einstein构造_闭拓扑与全模态修正_20260921.tex) §§5、8–11；[全局判定分卷](../archive/originals/2026-09-21/03_全局Einstein判定_对称破缺与原题闭合_20260921.tex) §§6–7。
 
+### 有限长度连接器的必需误差
+
+在 Gaussian 坐标中写 $g=dr^2+q(r)$，令 $B=\tfrac12q^{-1}\partial_rq$、$H=\operatorname{tr}B$、$E=\operatorname{Ric}+3g$。Ricci 的法向方程为
+$$
+H'+\frac{H^2}{3}+|B^\circ|^2=3-E_{rr}.
+$$
+对连接最小截面 $H(0)=0$ 与双曲扩张端 $H(R)=3$ 的区域，置 $u=H-3\tanh r$，则
+$$
+\int_0^R\cosh^2r(-E_{rr})\,dr
+=3\cosh^2R(1-\tanh R)
++\int_0^R\cosh^2r\left(|B^\circ|^2+\frac{u^2}{3}\right)dr.
+$$
+这个恒等式保留了形算子的全部无迹分量。若 $\|E\|_{\mathrm{op}}\le\delta$，标量 Riccati 比较给出必要条件
+$$
+1\le k\tanh(kR),\qquad k=\sqrt{1+\delta/3}.
+$$
+其最小允许误差在 $R\to\infty$ 时为 $12e^{-2R}(1+o(1))$。因而有限长度不能精确完成这组边界数据；误差趋零必须允许长度增长。这个法向条件仍须与切向、混合 Ricci 方程和端部匹配共同满足。
+
+### 双曲拼接中的相对曲率与体积恒等式
+
+设闭四流形由有限体积、截面曲率 $-1$ 的双曲块截断后拼接而成。令 $N$ 为替换区域，外部保留精确双曲度量；$V_{\rm rem}$ 是被移去的完整尖点尾部体积。假定拼接保持这些双曲块 Euler 数之和。记 $V_N=\operatorname{Vol}(N)$、$e=\operatorname{tr}E$。对参考双曲块和实际闭度量分别使用 Chern–Gauss–Bonnet，再减去共同外部，得到
+$$
+\boxed{\;
+2\int_N|W|^2+12(V_N-V_{\rm rem})
+=\int_N\left(|E^\circ|^2+2e-\frac{e^2}{12}\right).
+\;}
+$$
+证明只需代入 $s=-12+e$ 与
+$8\pi^2\chi=\int(|W|^2+s^2/24-|E^\circ|^2/2)$。
+若 $\|E\|_{\mathrm{op}}\le\delta$，四个特征值均在 $[-\delta,\delta]$，所以
+$$
+\left|2\int_N|W|^2+12(V_N-V_{\rm rem})\right|
+\le(8\delta+4\delta^2)V_N.
+$$
+特别地，近 Einstein 替换必须满足
+$$
+V_{\rm rem}-V_N=\frac16\int_N|W|^2+O(\delta V_N).
+$$
+Weyl 能量可以由移去和插入体积之差抵偿。故仅有 Weyl 非负性不能推出连接器的统一正费用。
+
+对尖点 $dt^2+e^{-2t}q_*$，横截面体积 $A(T)$ 与尾部体积满足 $V_{\rm tail}(T)=A(T)/3$。在一个尖点的 $N$ 重循环覆盖中取截断深度 $T_N=\log N+T_0$，两者均按 $N^{-2}$ 缩小；匹配的二维格商连接器的体积、Weyl 能量和残差积分也具有同一因子。因此塌缩参数本身不能改变上述无量纲相容关系。外部若仅近似双曲，其曲率积分与参考体积的差必须保留。
+
+两项证明及完整矩阵连接器的来源分别见[法向 Riccati 比较](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/archive/sources/20260923/v08_S0910A03/workspace/notes/step99_raychaudhuri_cgb_and_cost_structure.md) §1 和[相对 Chern–Gauss–Bonnet 证明](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/archive/sources/20260923/v08_S0910A03/workspace/notes/step100_relative_cgb_graph_budget.md) §§2–5。局部自由环面作用并不使完成后的闭流形 Euler 数为零；前一来源中相应错误应用已被后一证明订正。
+
+### 四节点乘积模型的手性相消
+
+在 $(S^2\times S^2)/\mathbb Z_2$ 的四个 $A_1$ 点上，线性化的张量–标量谱分解提供一个可精确计算的相互作用模型。令 $D=\operatorname{diag}(1,-1)$、$O=\bigl(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\bigr)$。接收端与源端的同手性双线性映射满足
+$$
+\begin{aligned}
+R_+(D,D)&=-D/2,&R_+(O,O)&=D/2,&R_+(D,O)&=R_+(O,D)=-O/2,\\
+S_+(D,D)&=-D/4,&S_+(O,O)&=D/4,&S_+(D,O)&=S_+(O,D)=-O/4.
+\end{aligned}
+$$
+与单位矩阵的混合输入为零。电、磁张量极化在节点分别为 $D,O,O,-D$。若张量因子的源点和接收点对跖，极化项逐对抵消；若该因子同点而标量因子对跖，则
+$$
+\operatorname{Block}_D=\operatorname{Block}_O
+=\tfrac14(D\otimes D+O\otimes O),
+$$
+而标量 $\cos2\varphi$、$\sin2\varphi$ 的相对节点符号相反，再次抵消。因此在 AA、BB 两个张量–标量扇区，每个固定谱次数的不同节点同手性块均为零。
+
+交叉手性改变 $S_-(O,D)$ 的符号，使两标量块互为相反数，原有节点符号遂使贡献相加。这个有限维恒等式说明手性如何改变传递，但完整 Einstein 障碍还包括一形式扇区、自作用、补空间 Schur 项、投影变化和非线性余项。现有计算不能省去这些项，直接推出闭流形不承载 Einstein 度量。
+
+来源：[节点极化与逐次数相消证明](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/archive/sources/20260923/v08_S0910A01/workspace/notes/step100_chirality_cancellation_proof.md)。四节点交换关系与其数值首阶模型见[共同接收方程](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/archive/sources/20260923/v08_S0910A02/workspace/notes/step100_four_node_closure_and_structural_vanishing.md)；后者的首阶数值排除未升级为完整非线性障碍。
+
 ## 8. 有界几何与精确实现
 
 整合稿从有界直径、体积正下界、单手性超临界 Weyl 控制与拓扑排泡出发，建立调和坐标紧性和同一光滑类型的 Einstein 输出。后续 “Bounded-geometry realization without gauge saturation or Weyl bounds” 进一步陈述：
@@ -349,6 +413,64 @@ $$
 在陈数边界，数值关系与单极子解存在性条件强迫饱和和另一手性曲率小。有限覆盖版本将积分估计按度数归一化后下降，并在底空间完成紧性；阈值依赖底空间直径和归一化正投影下界，与覆盖度数无关。其结论是底空间的局部对称 Riemannian 度量，覆盖上的复结构可不下降。
 
 来源：整合稿 `sec:compact-realization`、`sec:ale-boundary`、`sec:gauge-ke`、`sec:bilateral`、`sec:chern-boundary`、`sec:virtual-realization`。这些实现定理保留各自的全局几何条件，与无直径积分障碍具有不同的适用范畴。
+
+### 无直径条件的局部一致修复
+
+存在另一条依靠正强制和体积增长的实现路径。设闭 $n$ 维流形（$n\ge3$）具有统一 $C^{2,\alpha}$ 调和坐标，完整 Bianchi 规范线性化
+$$
+L_g=\tfrac12\nabla^*\nabla+V_g
+$$
+在**全部**对称二张量上满足 $\langle L_gu,u\rangle_{L^2}\ge\lambda\|u\|_2^2$。假设实际流形的每个球满足
+$$
+\operatorname{Vol}B_R(x)\le C_G(1+R)^d e^{HR},\qquad H^2<8\lambda.
+$$
+选择 $H/2<a<\sqrt{2\lambda}$、$\phi_x=e^{-a d(x,\cdot)}$。二次型恒等式为
+$$
+\langle L_g(\phi_xu),\phi_xu\rangle_{L^2}
+=\int\phi_x^2\langle L_gu,u\rangle
++\frac12\int|d\phi_x|^2|u|^2.
+$$
+因此，$L_gu=f$ 时
+$$
+\|\phi_xu\|_2\le(\lambda-a^2/2)^{-1}\|\phi_xf\|_2,
+\qquad
+\int\phi_x^2\le C_Ge^H\sum_{m\ge0}(m+2)^d e^{-(2a-H)m}<\infty.
+$$
+加上局部 Moser 与 Schauder 估计，得到与总量、直径无关的逆估计
+$$
+\|L_g^{-1}f\|_{C^{2,\alpha}_{\rm uloc}}
+\le C\|f\|_{C^{0,\alpha}_{\rm uloc}}.
+$$
+局部一致范数取所有坐标球的上确界。非线性二次余项的收缩与 Bianchi 恢复于是给出
+$$
+\|\operatorname{Ric}_g+g\|_{C^{0,\alpha}_{\rm uloc}}<\epsilon
+\Longrightarrow
+\operatorname{Ric}_h=-h,quad
+\|h-g\|_{C^{2,\alpha}_{\rm uloc}}
+\le C\|\operatorname{Ric}_g+g\|_{C^{0,\alpha}_{\rm uloc}}.
+$$
+若另有 $\|\nabla\operatorname{Ric}\|_\infty\le K_1$，插值将右侧控制为 $C\delta_-^{1-\alpha}$。
+
+固定实双曲流形的循环覆盖提供直径、体积皆趋于无穷的实例。无限循环覆盖由 $\mathbb Z$ 余紧作用，基本域计数给有限循环商的统一线性球体积增长。每个基本域中的独立小扰动可使全局 $L^2$ 残差按 $\sqrt m$ 增长，而上述局部一致修复仍成立。双曲曲面乘积含真实 Teichmüller 核，不满足这里的正强制条件，须使用第6节的完整核修复。
+
+来源：[四维局部一致修复](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/continuation/20260924_uniformly_local_repair.md)、[任意维数版本](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/continuation/20260924_higher_dimensional_local_repair.md)。条件 $H^2<8\lambda$ 是该加权证明的充分条件；绝对谱隙不能替代正二次型强制。
+
+### 剪切流形上谱退化所迫使的直径逃逸
+
+对第5节中具有非零整数剪切的指定自粘合族，已有非球面性、$\tau=0$、所有有限覆盖非 Kähler、$\mathbb Z^2\subset\pi_1$ 及实际类平方 $2\chi>0$。设 $\operatorname{Ric}_g=-g$，按递增顺序排列 $W^+$ 的特征值，记
+$$
+t=-\tfrac34\lambda_1(W^+),\qquad b=\lambda_3(W^+)-\lambda_2(W^+).
+$$
+对固定 $0\le\theta<1/\sqrt3$，若 $b\le4\theta t$，则任意直径上界 $D$ 都给统一分离
+$$
+\operatorname{diam}g\le D\quad\Longrightarrow\quad
+\fint b^2\ge\epsilon(D,\theta)>0.
+$$
+这里允许 $W^+$ 的零点。最大值原理先给 $t\le[2(1-3\theta^2)]^{-1}$；实际标量预算给 $V\ge4\pi^2\chi$，与直径比较合用控制体积和 Euler 数。若完整曲率失控，最大曲率处放大产生非平坦 Ricci-flat 反自对偶 ALE 核心，其嵌入被该非球面拓扑排除。因而有光滑紧性。
+
+若 $\fint b^2\to0$，极限具有至多两个自对偶 Weyl 特征值。其非零分支给至多二重覆盖上的 Kähler 结构；零分支结合 $\tau=0$ 给实双曲度量。前者与非虚 Kähler 性矛盾，后者与基本群中的 $\mathbb Z^2$ 矛盾。所以在这一谱区域，分裂能量趋零必使直径趋于无穷，无须另列反手性 Weyl 爆破的可能。
+
+完整证明及指定拓扑族见[非球面核心排除与谱逃逸](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/mathematics/current/line1_aspherical_no_bubbles.md) §§2–3。该定理保留相对谱夹逼，不排除区域外的精确 Einstein 度量。
 
 ## 9. 谐和形式的零点、完整填充与退化尺度
 

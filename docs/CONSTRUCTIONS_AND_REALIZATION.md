@@ -344,7 +344,7 @@ M\cong(\widehat B\times F)/G,
 
 ### 有限长度连接区域的 Ricci 残差下界
 
-在 Gaussian 坐标中写 $`g=dr^2+q(r)`$，令 $`B=\tfrac12q^{-1}\partial_rq`$、$`H=\mathop{\mathrm{tr}}\nolimitsB`$、$`E=\mathop{\mathrm{Ric}}\nolimits+3g`$。Ricci 的法向方程为
+在 Gaussian 坐标中写 $`g=dr^2+q(r)`$，令 $`B=\tfrac12q^{-1}\partial_rq`$、$`H=\mathop{\mathrm{tr}}\nolimits B`$、$`E=\mathop{\mathrm{Ric}}\nolimits+3g`$。Ricci 的法向方程为
 
 ```math
 H'+\frac{H^2}{3}+|B^\circ|^2=3-E_{rr}.
@@ -368,7 +368,7 @@ H'+\frac{H^2}{3}+|B^\circ|^2=3-E_{rr}.
 
 ### 双曲拼接中的相对曲率与体积恒等式
 
-设闭四流形由有限体积、截面曲率 $`-1`$ 的双曲块截断后拼接而成。令 $`N`$ 为替换区域，外部保留精确双曲度量；$`V_{\rm rem}`$ 是被移去的完整尖点尾部体积。假定拼接保持这些双曲块 Euler 数之和。记 $`V_N=\mathop{\mathrm{Vol}}\nolimits(N)`$、$`e=\mathop{\mathrm{tr}}\nolimitsE`$。对参考双曲块和实际闭度量分别使用 Chern–Gauss–Bonnet，再减去共同外部，得到
+设闭四流形由有限体积、截面曲率 $`-1`$ 的双曲块截断后拼接而成。令 $`N`$ 为替换区域，外部保留精确双曲度量；$`V_{\rm rem}`$ 是被移去的完整尖点尾部体积。假定拼接保持这些双曲块 Euler 数之和。记 $`V_N=\mathop{\mathrm{Vol}}\nolimits(N)`$、$`e=\mathop{\mathrm{tr}}\nolimits E`$。对参考双曲块和实际闭度量分别使用 Chern–Gauss–Bonnet，再减去共同外部，得到
 
 ```math
 \boxed{\;
@@ -427,7 +427,7 @@ S_+(D,D)&=-D/4,&S_+(O,O)&=D/4,&S_+(D,O)&=S_+(O,D)=-O/4.
 整合稿从有界直径、体积正下界、单手性超临界 Weyl 控制与 ALE 气泡的拓扑排除出发，建立调和坐标紧性和同一光滑类型的 Einstein 度量。后续 “Bounded-geometry realization without gauge saturation or Weyl bounds” 进一步陈述：
 
 ```math
-\pi_2(M)=0,\quad\mathop{\mathrm{diam}}\nolimitsg\le D,\quad V_g\ge v,
+\pi_2(M)=0,\quad\mathop{\mathrm{diam}}\nolimits g\le D,\quad V_g\ge v,
 \quad\delta_\sigma(g)\lt \epsilon(D,v)
 \Longrightarrow\exists h\text{ on }M:\mathop{\mathrm{Ric}}\nolimits_h=\sigma h.
 ```
@@ -464,7 +464,7 @@ L_g=\tfrac12\nabla^*\nabla+V_g
 在**全部**对称二张量上满足 $`\langle L_gu,u\rangle_{L^2}\ge\lambda\|u\|_2^2`$。假设实际流形的每个球满足
 
 ```math
-\mathop{\mathrm{Vol}}\nolimitsB_R(x)\le C_G(1+R)^d e^{HR},\qquad H^2\lt 8\lambda.
+\mathop{\mathrm{Vol}}\nolimits B_R(x)\le C_G(1+R)^d e^{HR},\qquad H^2\lt 8\lambda.
 ```
 
 选择 $`H/2\lt a\lt \sqrt{2\lambda}`$、$`\phi_x=e^{-a d(x,\cdot)}`$。二次型恒等式为
@@ -517,7 +517,7 @@ t=-\tfrac34\lambda_1(W^+),\qquad b=\lambda_3(W^+)-\lambda_2(W^+).
 对固定 $`0\le\theta\lt 1/\sqrt3`$，若 $`b\le4\theta t`$，则任意直径上界 $`D`$ 都给统一分离
 
 ```math
-\mathop{\mathrm{diam}}\nolimitsg\le D\quad\Longrightarrow\quad
+\mathop{\mathrm{diam}}\nolimits g\le D\quad\Longrightarrow\quad
 \mathop{\rlap{-}\int}\nolimits b^2\ge\epsilon(D,\theta)>0.
 ```
 
@@ -574,7 +574,7 @@ r_{\alpha,Q}(x)^4\le C\kappa V,
 将 Wahl 有理球收缩为 $`\frac1{n^2}(1,n-1)`$ 点时，恢复族的统一标量界使实际旋量有界，缩小填充内的四次质量趋零。阿贝尔可去奇点与实上同调平方不变，将解、联络能量和旋量导数能量传到轨形。该转移保留
 
 ```math
-a^2,\quad T_+,\quad\mathop{\mathrm{ind}}\nolimitsD,
+a^2,\quad T_+,\quad\mathop{\mathrm{ind}}\nolimits D,
 ```
 
 而

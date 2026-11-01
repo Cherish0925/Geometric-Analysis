@@ -307,7 +307,7 @@ $`F`$ 为丛联络曲率。式中没有曲率导数。对 $`\Lambda^+`$ 联络�
 \tag{12}
 ```
 
-其次，令 $`J_\psi=\mathop{\mathrm{div}}\nolimitsW(A_\psi)`$，其中 $`W(A_\psi)`$ 是对应的代数 Weyl 四张量。弱 Bianchi 恒等式在同一 $`J_\psi`$ 上测试给
+其次，令 $`J_\psi=\mathop{\mathrm{div}}\nolimits W(A_\psi)`$，其中 $`W(A_\psi)`$ 是对应的代数 Weyl 四张量。弱 Bianchi 恒等式在同一 $`J_\psi`$ 上测试给
 
 ```math
 \mathop{\rlap{-}\int}\nolimits|J_\psi|^2\le C_K\sqrt{d(1+B+d)}.
@@ -383,7 +383,7 @@ W_0=\frac{9\beta}{8(\beta+1)^2}
 ```
 
 其参数依赖来自如下计算。置 $`t=1/\beta`$、$`d_\beta=D_\beta/V`$、$`\omega=\sqrt2\psi/c_\beta`$，则
-$`W_0=t(|\omega|^2I/3-\omega\otimes\omega)`$。若 $`J_t=\mathop{\mathrm{div}}\nolimitsW(W_0)`$、$`X=\mathop{\rlap{-}\int}\nolimits|J_t|^2`$，同场测试给
+$`W_0=t(|\omega|^2I/3-\omega\otimes\omega)`$。若 $`J_t=\mathop{\mathrm{div}}\nolimits W(W_0)`$、$`X=\mathop{\rlap{-}\int}\nolimits|J_t|^2`$，同场测试给
 
 ```math
 X\le Ct\sqrt{(r+td_\beta)(1+r+d_\beta+b_a)}.
@@ -903,7 +903,7 @@ $`a>0`$ 时，逐点最小化 $`as^2+(s+4)^2/4`$ 给
 $`\kappa_\beta\ge16a/(1+4a)`$。多项式满足
 
 ```math
-\mathop{\mathrm{disc}}\nolimitsN_\theta
+\mathop{\mathrm{disc}}\nolimits N_\theta
 =\frac{57}{16}(\theta-2/3)(\theta+142/19),
 \quad N_{2/3}(\beta)=\frac{(\beta-8)^2}{12},
 \quad \lim_{\beta\to\infty}a=\frac1{12}-\frac\theta9.

@@ -217,7 +217,7 @@ Q_X=\nabla_X\omega-dv\wedge\iota_X\omega
 \mathfrak p=d\omega+2dv\wedge\omega.
 ```
 
-共形联络公式给 $`Q=e^{-2v}\widehat\nabla\widehat\omega`$、$`\mathfrak p=\mathop{\mathrm{Alt}}\nolimitsQ`$。在自对偶正交标架中展开 $`\nabla\mathsf A`$，振幅导数与这两个表达式中的 $`dv`$ 项精确合并，得到
+共形联络公式给 $`Q=e^{-2v}\widehat\nabla\widehat\omega`$、$`\mathfrak p=\mathop{\mathrm{Alt}}\nolimits Q`$。在自对偶正交标架中展开 $`\nabla\mathsf A`$，振幅导数与这两个表达式中的 $`dv`$ 项精确合并，得到
 
 ```math
 \boxed{|\mathfrak j|^2=2t^2|Q|^2+4t^2|\mathfrak p|^2,}
@@ -392,7 +392,7 @@ $`\mathcal P_F(\mathsf A_0)=-3u_0\psi'(u_0)/2\le0`$。这排除所述全局标�
 
 ### 2.10 Ricci 残差与 Cotton 张量的弱估计
 
-令 $`E=\mathop{\mathrm{Ric}}\nolimits+g`$、$`e=\mathop{\mathrm{tr}}\nolimitsE=s+4`$，采用 Cotton 约定
+令 $`E=\mathop{\mathrm{Ric}}\nolimits+g`$、$`e=\mathop{\mathrm{tr}}\nolimits E=s+4`$，采用 Cotton 约定
 
 ```math
 C_{ijk}=\nabla_kE_{ij}-\nabla_jE_{ik}
@@ -471,7 +471,7 @@ $`\mathbb D`$ 保持不定 Hermitian 形式 $`h_{W^-}-h_E`$。取 $`\Gamma=\math
 
 ```math
 D_{A,C}\phi=0,\qquad
-F_A^+=Q(\phi)+\frac12\mathop{\mathrm{tr}}\nolimitsQ(\phi)I_E+\frac12F_C^+I_E.
+F_A^+=Q(\phi)+\frac12\mathop{\mathrm{tr}}\nolimits Q(\phi)I_E+\frac12F_C^+I_E.
 ```
 
 其中源旋量联络的中心曲率为 $`F_CI/2`$，不能由二次映射的整体缩放消除。
@@ -479,13 +479,13 @@ F_A^+=Q(\phi)+\frac12\mathop{\mathrm{tr}}\nolimitsQ(\phi)I_E+\frac12F_C^+I_E.
 若 $`E\cong W^+`$，取迹后两边的行列式曲率代表同一上同调类，因此
 
 ```math
-\mathop{\mathrm{tr}}\nolimitsF_A^+-F_C^+=2\mathop{\mathrm{tr}}\nolimitsQ(\phi)
+\mathop{\mathrm{tr}}\nolimits F_A^+-F_C^+=2\mathop{\mathrm{tr}}\nolimits Q(\phi)
 \quad\Longrightarrow\quad
-\mathcal H_g^+(\mathop{\mathrm{tr}}\nolimitsQ(\phi))=0.
+\mathcal H_g^+(\mathop{\mathrm{tr}}\nolimits Q(\phi))=0.
 ```
 
 若 $`\phi`$ 的像落在目标线丛 $`R_0\subset E`$，则对应普通旋量属于 $`(W^+)^*\otimes R_0`$，其行列式为 $`B=L^{-1}\otimes R_0^2`$。按原稿明确的对偶 Clifford 约定，
-$`\mathop{\mathrm{tr}}\nolimitsQ(\phi)=4q_{\rm std}(\phi)`$。普通方程 $`F_B^+=q_{\rm std}(\phi)`$ 因而只有在 $`c_1(B)_g^+=0`$ 时才能原样嵌入该块系统。特别地，正平方普通单极子类不能这样提供非阿贝尔解。
+$`\mathop{\mathrm{tr}}\nolimits Q(\phi)=4q_{\rm std}(\phi)`$。普通方程 $`F_B^+=q_{\rm std}(\phi)`$ 因而只有在 $`c_1(B)_g^+=0`$ 时才能原样嵌入该块系统。特别地，正平方普通单极子类不能这样提供非阿贝尔解。
 
 该系统本身还有精确等号分类。令 $`V=W^-\oplus E`$，$`F_0`$ 为 $`\mathbb D`$ 的迹零曲率；分次反自对偶性给正能量恒等式
 

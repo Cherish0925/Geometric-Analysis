@@ -25,7 +25,7 @@ Z=\{x\in M:q(x)=0\}.
 
 ```math
 W^+=\begin{pmatrix}t&v^*\\v&-tI/2+B\end{pmatrix},\qquad
-t=\frac{s}{6}+\frac q4,\qquad \mathop{\mathrm{tr}}\nolimitsB=0,
+t=\frac{s}{6}+\frac q4,\qquad \mathop{\mathrm{tr}}\nolimits B=0,
 ```
 
 其中
@@ -459,25 +459,25 @@ h\in\mathcal P_{n+2}\otimes\mathop{\mathrm{Sym}}\nolimits^2_{\mathrm{anti}\text{
 除了线性收缩 Bianchi 方程，还恰好有一个标量微分相容式：
 
 ```math
-\mathscr B(E)_j=\partial_iE_{ij}-\frac12\partial_j\mathop{\mathrm{tr}}\nolimitsE,
+\mathscr B(E)_j=\partial_iE_{ij}-\frac12\partial_j\mathop{\mathrm{tr}}\nolimits E,
 \qquad
 \mathscr P(E)=J_{ia}J_{jb}\partial_a\partial_bE_{ij}
-+\frac12\Delta_0\mathop{\mathrm{tr}}\nolimitsE.
++\frac12\Delta_0\mathop{\mathrm{tr}}\nolimits E.
 ```
 
 对所有 $`n\ge0`$，有齐次多项式空间上的正合关系
 
 ```math
-\boxed{\mathop{\mathrm{im}}\nolimitsL_n
+\boxed{\mathop{\mathrm{im}}\nolimits L_n
 =\ker(\mathscr B,\mathscr P),\qquad
-\dim\mathop{\mathrm{coker}}\nolimitsL_n
+\dim\mathop{\mathrm{coker}}\nolimits L_n
 =4\binom{n+2}{3}+\binom{n+1}{3}.}
 \tag{F}
 ```
 
 负次数空间及相应二项式系数取零。这一结论同时给出常系数算法：给定次数 $`n`$ 的源，先计算其 Bianchi 四分量与标量 $`\mathscr P`$；两者消失时，线性度量修正存在。
 
-**证明结构。** 反 $`J`$ 不变性给出 $`\mathop{\mathrm{tr}}\nolimitsh=0`$、$`J^ThJ=-h`$。代入 $`L_n`$ 可直接验证 $`\mathscr B L_n=\mathscr P L_n=0`$。为证明没有遗漏相容条件，写
+**证明结构。** 反 $`J`$ 不变性给出 $`\mathop{\mathrm{tr}}\nolimits h=0`$、$`J^ThJ=-h`$。代入 $`L_n`$ 可直接验证 $`\mathscr B L_n=\mathscr P L_n=0`$。为证明没有遗漏相容条件，写
 
 ```math
 h=\mu_{ab}\,dz_a dz_b+\nu_{ab}\,d\bar z_a d\bar z_b,
@@ -622,7 +622,7 @@ H_{ij}=\mathop{\rlap{-}\int}\nolimits_M\langle\nabla\psi_i,\nabla\psi_j\rangle\,
 
 ```math
 X\in\ker\mathsf C_g,\qquad X\succeq0,\qquad
-\mathop{\mathrm{tr}}\nolimitsX=1,\qquad\mathop{\mathrm{rank}}\nolimitsX=1.
+\mathop{\mathrm{tr}}\nolimits X=1,\qquad\mathop{\mathrm{rank}}\nolimits X=1.
 ```
 
 这里 $`X=uu^T`$、$`|u|=1`$ 对应 $`\Omega=\sqrt2\sum_i u_i\psi_i`$。因为
@@ -647,10 +647,10 @@ X\in\ker\mathsf C_g,\qquad X\succeq0,\qquad
 固定紧负 Kähler–Einstein 曲面或紧轨形 $`(V,g,J,\omega)`$，则
 
 ```math
-H_g^+=\mathbb R\omega\oplus\mathop{\mathrm{Re}}\nolimitsH^{2,0}(V).
+H_g^+=\mathbb R\omega\oplus\mathop{\mathrm{Re}}\nolimits H^{2,0}(V).
 ```
 
-对 $`\beta\in\mathop{\mathrm{Re}}\nolimitsH^{2,0}(V)`$，有精确的点态分解
+对 $`\beta\in\mathop{\mathrm{Re}}\nolimits H^{2,0}(V)`$，有精确的点态分解
 
 ```math
 |b\omega+\beta|^2=2b^2+|\beta|^2.
@@ -658,7 +658,7 @@ H_g^+=\mathbb R\omega\oplus\mathop{\mathrm{Re}}\nolimitsH^{2,0}(V).
 
 若 $`\beta=\mathop{\mathrm{Re}}\nolimits\theta`$ 具有非零常模长，则全纯典范形式 $`\theta`$ 无零点，因而平凡化 $`K_V`$；这与 $`c_1(V)=[\rho/(2\pi)]\ne0`$ 矛盾。故常模长自对偶调和形式只能是 $`\omega`$ 的常数倍。
 
-令 $`Q_0(\beta)=|\beta|^2-\mathop{\rlap{-}\int}\nolimits|\beta|^2`$。有限维空间 $`\mathop{\mathrm{Re}}\nolimitsH^{2,0}(V)`$ 的 $`L^2`$ 单位球面紧，且 $`Q_0`$ 在其上无零点，因此存在依赖该背景的 $`c_V>0`$，使
+令 $`Q_0(\beta)=|\beta|^2-\mathop{\rlap{-}\int}\nolimits|\beta|^2`$。有限维空间 $`\mathop{\mathrm{Re}}\nolimits H^{2,0}(V)`$ 的 $`L^2`$ 单位球面紧，且 $`Q_0`$ 在其上无零点，因此存在依赖该背景的 $`c_V>0`$，使
 
 ```math
 \|Q_0(\beta)\|_{L^2}\ge c_V\|\beta\|_{L^2}^2.
@@ -918,7 +918,7 @@ g^{-1}g_t=I+tH_1+\frac{t^2}{2}H_2+O(t^3),\qquad
 \omega_t=\omega+t\beta_1+\frac{t^2}{2}\beta_2+O(t^3).
 ```
 
-在同时作用于度量与形式的规范变换后，$`H_1`$ 为反 $`J`$ 不变的 Kodaira–Spencer 方向，$`\beta_1\in\mathop{\mathrm{Re}}\nolimitsH^{2,0}`$。负 KE 的二阶 Einstein 正规形给出 $`H_2^+=H_1^2`$；这里上标 $`+`$ 表示 $`J`$-不变部分，而非 Hodge 自对偶部分。该输入及二阶 Einstein 可解性见 [Nagy，Theorem 1.6](https://arxiv.org/html/2603.09028)。
+在同时作用于度量与形式的规范变换后，$`H_1`$ 为反 $`J`$ 不变的 Kodaira–Spencer 方向，$`\beta_1\in\mathop{\mathrm{Re}}\nolimits H^{2,0}`$。负 KE 的二阶 Einstein 正规形给出 $`H_2^+=H_1^2`$；这里上标 $`+`$ 表示 $`J`$-不变部分，而非 Hodge 自对偶部分。该输入及二阶 Einstein 可解性见 [Nagy，Theorem 1.6](https://arxiv.org/html/2603.09028)。
 
 形式与度量混合项可用全纯二形式的一级运输处理。若 $`\beta_1=\mathop{\mathrm{Re}}\nolimits\theta`$，则 Kodaira–Spencer 闭性及 $`\partial\bar\partial`$ 引理产生一个闭形式变分 $`\beta'`$，满足
 

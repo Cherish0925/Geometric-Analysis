@@ -913,7 +913,7 @@ DP_g[\mathop{\mathrm{Ric}}\nolimits^{\circ}]
 ```
 
 常非零标量时，每个非 Einstein 度量均有保体积形式的下降方向。负标量下进一步的精确谐和秩对齐条件
-$`\mathop{\mathrm{im}}\nolimitsB_x\subset\mathbb Rh_x`$
+$`\mathop{\mathrm{im}}\nolimits B_x\subset\mathbb Rh_x`$
 给出局部化下降，无须对零集上的商另加有界假设。因此负标量 Einstein–Maxwell 非 Einstein 度量也不可能成为 $`P`$-临界点。
 
 来源：[曲率通量等号与下降方向](../archive/originals/2026-10-08/Q3_Descent_and_Flux_Equality.tex) §§2–3；[谐和方向约束下的下降变分](../archive/originals/2026-10-08/Q3_Harmonic_Alignment_Descent.tex) §§2–5；[谐和秩条件与刚性](../archive/originals/2026-10-08/Q3_Harmonic_Rank_Rigidity.tex) §§1、4。完整点态方程允许两个幅度同时变化。
@@ -951,7 +951,7 @@ $`B'_0=\dot\Phi\otimes h_0+\Phi_0\otimes\dot h`$，而非固定 $`h_0`$。线性
 ```
 
 增广对齐、标量和 Bianchi 系统的主符号是单射：其核满足
-$`k^\circ=\sigma\circ h_0`$、$`\sigma\perp\omega`$、$`\mathop{\mathrm{tr}}\nolimitsk=0`$、$`(\sigma\circ h_0)\xi=0`$，而相反手性的二形式给
+$`k^\circ=\sigma\circ h_0`$、$`\sigma\perp\omega`$、$`\mathop{\mathrm{tr}}\nolimits k=0`$、$`(\sigma\circ h_0)\xi=0`$，而相反手性的二形式给
 $`(\sigma\circ h_0)^2=|\sigma|^2|h_0|^2I/4`$。因此 $`K=\ker\ell_2\cap\mathcal S`$ 有限维，且
 $`\ell_2(k)\ge c\|k-\pi_Kk\|_{H^2}^2`$。若另有 $`\Xi|_K=0`$，先扣除同周期的一阶 Kähler 变分，再用 Moser 修正消去恰当部分；固定辛形式下的 Blair–Ianus 恒等式
 $`\mathop{\mathrm{Hess}}\nolimits\int|\nabla\omega|^2=2\|(\nabla\omega)'\|_2^2`$
@@ -1194,7 +1194,7 @@ DS[H]=-2s\int\langle\mathop{\mathrm{Ric}}\nolimits^{\circ},H\rangle=0
 \tag{6.1}
 ```
 
-于是非零 Einstein 轨形的这种解消满足 $`P_*=\alpha=0`$，不必另外假设标量方差消失。若主体 Ricci-flat，则只能直接推出 $`P_*=0`$；上述简单截断族反而 $`\mathcal E\to4`$，因为标量仅支撑在体积趋零的过渡区，$`T_s^2\le4\mathop{\mathrm{Vol}}\nolimits(\mathop{\mathrm{supp}}\nolimitss)R`$。
+于是非零 Einstein 轨形的这种解消满足 $`P_*=\alpha=0`$，不必另外假设标量方差消失。若主体 Ricci-flat，则只能直接推出 $`P_*=0`$；上述简单截断族反而 $`\mathcal E\to4`$，因为标量仅支撑在体积趋零的过渡区，$`T_s^2\le4\mathop{\mathrm{Vol}}\nolimits(\mathop{\mathrm{supp}}\nolimits s)R`$。
 
 若填充仅标量平坦，令 $`Q=\sum_jP(N_j)`$，同一计算给
 
@@ -1476,8 +1476,8 @@ q_j=(2\chi+3\tau)(C_j)
 若端部满足 Dai–Wei 的圆纤维尖点渐近，链接作为 $`\partial\overline\Omega`$ 的 Euler 数为 $`e`$，其边界公式为
 
 ```math
-\mathscr Q_+^\infty=-e+3\mathop{\mathrm{sign}}\nolimitse,\qquad
-\mathscr Q_-^\infty=e-3\mathop{\mathrm{sign}}\nolimitse.
+\mathscr Q_+^\infty=-e+3\mathop{\mathrm{sign}}\nolimits e,\qquad
+\mathscr Q_-^\infty=e-3\mathop{\mathrm{sign}}\nolimits e.
 ```
 
 所用渐近条件及绝热 eta 公式见 Dai–Wei，[Hitchin–Thorpe inequality for noncompact Einstein 4-manifolds](https://web.math.ucsb.edu/~dai/paper/dwAIM.pdf)，Theorems 3.5、5.1。
@@ -1485,7 +1485,7 @@ q_j=(2\chi+3\tau)(C_j)
 对作为补域边界的 $`e_{\rm out}=-e`$，
 
 ```math
-q_+=(2\chi+3\tau)(C)+e_{\rm out}-3\mathop{\mathrm{sign}}\nolimitse_{\rm out}.
+q_+=(2\chi+3\tau)(C)+e_{\rm out}-3\mathop{\mathrm{sign}}\nolimits e_{\rm out}.
 \tag{7.4}
 ```
 

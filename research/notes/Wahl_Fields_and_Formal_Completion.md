@@ -18,7 +18,7 @@ Qiushi Engine Team, Zhejiang University · [作者与通讯信息](../../AUTHORS
 ```math
 g_\epsilon=g\quad(r\ge2\rho),\qquad
 \sup|s_{g_\epsilon}|\le C_g,\qquad
-\mathop{\mathrm{Vol}}\nolimits_{g_\epsilon}\{r<R\}\le C_g(\rho^4+R^4).
+\mathop{\mathrm{Vol}}\nolimits_{g_\epsilon}\{r\lt R\}\le C_g(\rho^4+R^4).
 \tag{1}
 ```
 
@@ -66,7 +66,7 @@ a_V^2=a_M^2,\qquad
 **证明。** 有限性先固定结构。对 $`U=|\Phi|^2`$，（3）的最大值原理给 $`0\le U\le C_g`$。因而
 
 ```math
-\limsup_{j\to\infty}\int_{r<R}U_j^2\le C_gR^4.
+\limsup_{j\to\infty}\int_{r\lt R}U_j^2\le C_gR^4.
 \tag{6}
 ```
 
@@ -91,7 +91,7 @@ a'\in W^{1,2},\qquad da'=F,\quad d^*a'=0,\quad\iota_\nu a'=0.
 
 ```math
 \Phi\in W^{1,4},\quad a'\in W^{2,4}
-\subset C^{0,\alpha}\cap W^{1,p}\quad(p<\infty),
+\subset C^{0,\alpha}\cap W^{1,p}\quad(p\lt \infty),
 ```
 
 再取 $`p>4`$ 迭代，得到光滑延拓。Coulomb 解的唯一性使其保持 $`\Gamma`$-等变性；实原函数在有限群作用下的常数差构成 $`\Gamma\to\mathbb R`$ 的同态，故为零。延拓保持原 Spin$`^c`$ 提升，偶数 $`n`$ 时也保留完整提升而非仅行列式字符。
@@ -138,10 +138,10 @@ T_-^{\rm orb}=T_-(M)-4d.
 
 ```math
 H(a)=\frac1p\sum_{r=1}^{p-1}\frac{\zeta^{ra}}{1-\zeta^{-r}}
-=\frac{p-1-2a}{2p}\quad(0\le a<p)
+=\frac{p-1-2a}{2p}\quad(0\le a\lt p)
 ```
 
-可得 $`\delta(m)-\delta(m-1)=H([-(n+1)m]_p)`$。写 $`m=an+b`$、$`0\le a,b<n`$、$`c=n-a-1`$，求和后
+可得 $`\delta(m)-\delta(m-1)=H([-(n+1)m]_p)`$。写 $`m=an+b`$、$`0\le a,b\lt n`$、$`c=n-a-1`$，求和后
 
 ```math
 2n^2[\delta(an+b)-\delta(0)]=
@@ -273,7 +273,7 @@ Fischer 分解给齐次多项式上 $`\Delta_0:\mathcal P_{k+1}\to\mathcal P_{k-
 以下复实现采用奇数 $`n\ge3`$ 的标记 $`(-4)`$-球分支，或 $`n=2`$ 的标记 $`(-3)`$-球分支。其收缩链为 $`[n+2,2,\ldots,2]`$，差异系数为 $`a_i=-(n-i)/n`$。若一条 $`(-1)`$-曲线横截第 $`i`$ 个分量一次，则其像满足
 
 ```math
-K_V\cdot C=-1-a_i=-i/n<0.
+K_V\cdot C=-1-a_i=-i/n\lt 0.
 ```
 
 所以这一复结构的典范类不 nef。实际场转移还将正手性的标量和 Weyl 障碍传给 $`V`$；反手性量则必须按（8）重新计算。

@@ -84,7 +84,7 @@ R(g)=R(\widehat g)+\delta/3,
 \tag{4}
 ```
 
-因此 $`\mathcal J(g)`$ 是 $`\mathcal J(\widehat g)`$ 与 $`1`$ 的加权平均；若 $`\mathcal J(g)<1`$，则
+因此 $`\mathcal J(g)`$ 是 $`\mathcal J(\widehat g)`$ 与 $`1`$ 的加权平均；若 $`\mathcal J(g)\lt 1`$，则
 
 ```math
 \mathcal E(\widehat g)=\mathcal J(\widehat g)
@@ -92,9 +92,9 @@ R(g)=R(\widehat g)+\delta/3,
 \tag{5}
 ```
 
-这还决定负 Yamabe 共形类内的下确界：$`\inf_{g\in[g_0]}\mathcal J(g)=\min\{\mathcal J(\widehat g),1\}`$。当 $`\mathcal J(\widehat g)>1`$，取局部支撑的正共形因子 $`u_n=1+\epsilon\chi\sin(nx^1)`$，固定小 $`\epsilon>0`$，式 (3) 中的 Laplace 平方项趋于无穷；式 (4) 遂趋于 $`1`$，而有限 $`\delta`$ 不取得该值。若 $`\mathcal J(\widehat g)<1`$，极小值恰由常数缩放的 Yamabe 代表取得；等于 $`1`$ 时整个共形类均有 $`\mathcal J=1`$。
+这还决定负 Yamabe 共形类内的下确界：$`\inf_{g\in[g_0]}\mathcal J(g)=\min\{\mathcal J(\widehat g),1\}`$。当 $`\mathcal J(\widehat g)>1`$，取局部支撑的正共形因子 $`u_n=1+\epsilon\chi\sin(nx^1)`$，固定小 $`\epsilon>0`$，式 (3) 中的 Laplace 平方项趋于无穷；式 (4) 遂趋于 $`1`$，而有限 $`\delta`$ 不取得该值。若 $`\mathcal J(\widehat g)\lt 1`$，极小值恰由常数缩放的 Yamabe 代表取得；等于 $`1`$ 时整个共形类均有 $`\mathcal J=1`$。
 
-对在 Yamabe 替换下封闭、且每个共形类均为负的竞争度量集合，只要 $`\inf\mathcal J<1`$，便有
+对在 Yamabe 替换下封闭、且每个共形类均为负的竞争度量集合，只要 $`\inf\mathcal J\lt 1`$，便有
 
 ```math
 \inf_g\mathcal E(g)=\inf_g\mathcal J(g).
@@ -410,7 +410,7 @@ r+\frac{D_8}{8V}\le\frac{43}{16}r+\frac{27}{4}d.
 ```
 
 当 $`a^2\ge T_+`$ 时，在式 (17) 中消去因子 $`1+b_a`$，得到左端至少为
-$`c_8=9c_0/1024`$。若原度量 $`\mathcal J(g)<1`$，式 (4) 及
+$`c_8=9c_0/1024`$。若原度量 $`\mathcal J(g)\lt 1`$，式 (4) 及
 $`\mathcal J(\widehat g)=4r/(r+4)`$ 给 $`r\le4\mathcal J(g)/3`$；于是
 
 ```math
@@ -428,7 +428,7 @@ $`\mathcal J(g)\ge1`$ 分支直接成立。因此
 ```
 
 该式把经典曲率不等式退化的临界比例推进为统一正分离。在
-$`(T_+/A-2/3)_+<\varepsilon_N`$ 的范围内，它给出正的无迹 Ricci 下界
+$`(T_+/A-2/3)_+\lt \varepsilon_N`$ 的范围内，它给出正的无迹 Ricci 下界
 $`\varepsilon_N-(T_+/A-2/3)_+`$。
 
 例如 $`M=X\#k\overline{\mathbb{CP}}^{\,2}`$，$`X`$ 为提供所需实际类的一般型极小复曲面，$`A=c_1^2(X)>0`$，则
@@ -459,7 +459,7 @@ c_*=\min\{1,4c_{8,\mathrm{raw}}/27\}.}
 \tag{N1-ν}
 ```
 
-因此 $`a^2\ge0`$ 已足以使这条临界间隙不损失常数，包括 $`0\le a^2<T_+`$ 的情形。
+因此 $`a^2\ge0`$ 已足以使这条临界间隙不损失常数，包括 $`0\le a^2\lt T_+`$ 的情形。
 
 若要以相对于 $`T_+`$ 的短缺表示，则 (1) 给
 
@@ -468,7 +468,7 @@ c_*=\min\{1,4c_{8,\mathrm{raw}}/27\}.}
 b_a\le\frac r{8\pi^2}+\frac y{2\pi^2}.
 ```
 
-在 $`\mathcal J(g)<1`$ 分支，$`r<4/3`$，故
+在 $`\mathcal J(g)\lt 1`$ 分支，$`r\lt 4/3`$，故
 
 ```math
 \left(1+\frac1{6\pi^2}+\frac y{2\pi^2}\right)
@@ -550,7 +550,7 @@ K\le C\Pi+C\sqrt{\Pi(K+\Pi+Y)}
 \le C'\bigl(\Pi+\sqrt{\Pi Y}\bigr).
 ```
 
-末步吸收 $`\sqrt{\Pi K}`$，并由精确超额式控制 $`\Sigma`$。它避免以背景体积 $`V`$ 代替 $`K`$ 而丢失线性阶。该论证用于 $`\Pi/V\le1`$；补集直接由 $`0\le\Sigma\le16V<16\Pi`$ 处理。负 Yamabe 代表上的估计经 (3) 转回原度量：
+末步吸收 $`\sqrt{\Pi K}`$，并由精确超额式控制 $`\Sigma`$。它避免以背景体积 $`V`$ 代替 $`K`$ 而丢失线性阶。该论证用于 $`\Pi/V\le1`$；补集直接由 $`0\le\Sigma\le16V\lt 16\Pi`$ 处理。负 Yamabe 代表上的估计经 (3) 转回原度量：
 
 ```math
 \Sigma=\widehat\Sigma+\delta,\qquad
@@ -565,7 +565,7 @@ K\le C\Pi+C\sqrt{\Pi(K+\Pi+Y)}
 
 便同时取得 (I41) 的两个结论。$`Y=0`$ 时 $`\Sigma\le C\Pi`$，所以任意尺度 $`Q_j>0`$ 上的 $`\Sigma_j\ge c_1Q_j`$ 都强迫 $`\Pi_j\ge(c_1/C)Q_j`$。
 
-令 $`T_-=2\chi-3\tau`$、$`h=1-T_+/A`$、$`U=3\min(T_+,T_-)/A`$。在 $`p\ge A>0`$、$`a^2\ge T_+`$ 和 $`0<h\le1/3`$ 下，结合另一手性的 Chern–Weil 关系，得到
+令 $`T_-=2\chi-3\tau`$、$`h=1-T_+/A`$、$`U=3\min(T_+,T_-)/A`$。在 $`p\ge A>0`$、$`a^2\ge T_+`$ 和 $`0\lt h\le1/3`$ 下，结合另一手性的 Chern–Weil 关系，得到
 
 ```math
 \mathcal J+(U-1-h)_+\ge ch.
@@ -608,7 +608,7 @@ U=3\min(T_+,T_-)/A.
 
 当 $`U\le0`$，已有 $`\mathcal J\ge1`$。式 (20) 说明线性间隙来自两项共同作用：实际场要求 Ricci 能量超出经典最低值，另一手性又限制接近 Einstein 时可容许的总能量。
 
-还有一个不同参数区间的上能量边界。设 $`1/4<h<1/3`$，定义
+还有一个不同参数区间的上能量边界。设 $`1/4\lt h\lt 1/3`$，定义
 
 ```math
 G(h)=\frac{(4+\sqrt{1-3h})^2}{9},\qquad
@@ -629,7 +629,7 @@ $`t_*\downarrow0`$ 时右端为 $`\frac49c_*'(h-1/4)^2+O((h-1/4)^3)`$。这条�
 
 ### 2.8 经典积分不等式与线性强制估计的比较
 
-下面的形式数据将微分强制与积分代数清楚地区分。对 $`0<h\le1/4`$，取
+下面的形式数据将微分强制与积分代数清楚地区分。对 $`0\lt h\le1/4`$，取
 
 ```math
 \begin{gathered}
@@ -812,7 +812,7 @@ $`u_{j,\epsilon}=(I+\epsilon\mathscr L_j)^{-1}s_j`$。最大值原理与谱分�
 
 式 (11) 的线丛版本给
 $`\mathop{\rlap{-}\int}\nolimits(|\nabla^2u_j|^2+|\nabla u_j|^4)\le C(1+\|\mathscr L_ju_j\|_2^2)`$。
-对固定 $`0<\ell_0<\ell_1<\ell`$，低模长集 $`Z_j=\{|u_j|\le\ell_1\}`$ 的测度为 $`O(\epsilon_j)`$。因此
+对固定 $`0\lt \ell_0\lt \ell_1\lt \ell`$，低模长集 $`Z_j=\{|u_j|\le\ell_1\}`$ 的测度为 $`O(\epsilon_j)`$。因此
 
 ```math
 \mathop{\rlap{-}\int}\nolimits_{Z_j}|\nabla u_j|^2\to0,
@@ -835,9 +835,9 @@ $`d\alpha_j=F_j`$、$`|\alpha_j|\le C|\nabla u_j|/|u_j|`$。
 
 ### 3.4 密度范围与常数依赖
 
-有限密度定理的量词是对每个固定 $`B<\infty`$ 取得 $`c_{\rm FD}(B)>0`$。其证明进一步给出关于 $`B`$ 的定量下界。线丛的对数陈数估计与第五线丛正势估计分别产生指数型和多项式型控制；两者均保留实际场误差与原曲率缺陷的联系。
+有限密度定理的量词是对每个固定 $`B\lt \infty`$ 取得 $`c_{\rm FD}(B)>0`$。其证明进一步给出关于 $`B`$ 的定量下界。线丛的对数陈数估计与第五线丛正势估计分别产生指数型和多项式型控制；两者均保留实际场误差与原曲率缺陷的联系。
 
-令 $`x=\kappa_\beta+\beta^{-2}`$。设 $`0<\epsilon_0\le1`$ 为慢梯度截断中的固定指数，$`\gamma=\epsilon_0/(1+\epsilon_0)`$。以 $`\mathfrak e_D`$ 表示该稿所列实际场误差之和，包括辅助截面与扭率的 $`H^1`$、$`L^4`$ 差，则
+令 $`x=\kappa_\beta+\beta^{-2}`$。设 $`0\lt \epsilon_0\le1`$ 为慢梯度截断中的固定指数，$`\gamma=\epsilon_0/(1+\epsilon_0)`$。以 $`\mathfrak e_D`$ 表示该稿所列实际场误差之和，包括辅助截面与扭率的 $`H^1`$、$`L^4`$ 差，则
 
 ```math
 \mathfrak e_D\le Cx^{\gamma/16}.
@@ -865,7 +865,7 @@ c_{\rm FD}(B)\ge c_0(1+B)^{-N}.
 设同一 Spin$`^c`$ 结构在整个共形类均有实际未扰动解，且
 
 ```math
-p\ge A>0,\qquad a^2\ge T_+,\qquad T_+/A\le\theta<3/4.
+p\ge A>0,\qquad a^2\ge T_+,\qquad T_+/A\le\theta\lt 3/4.
 ```
 
 则存在只依赖 $`\theta`$ 的 $`c_L(\theta)>0`$，使该共形类内所有度量和所有有限 $`\beta\ge2`$ 满足
@@ -909,7 +909,7 @@ $`\kappa_\beta\ge16a/(1+4a)`$。多项式满足
 \quad \lim_{\beta\to\infty}a=\frac1{12}-\frac\theta9.
 ```
 
-所以 $`\theta<2/3`$ 时该下界直接统一为正；$`2/3\le\theta<3/4`$ 时，可能非正的参数落在一个有界区间，并远离 $`\beta=2`$。该区间内 $`a^2\ge T_+>0`$，式 (17) 的负类平方修正项为零，有限参数估计给正下界；在 $`\beta=2`$ 的邻域仍用 $`N_\theta(2)=10-21\theta/2>0`$。最后由 §3 的共形比较将结论转回原度量。$`T_+\le0`$ 分支直接取 $`\theta=0`$，得到 $`\kappa_\beta\ge1`$。
+所以 $`\theta\lt 2/3`$ 时该下界直接统一为正；$`2/3\le\theta\lt 3/4`$ 时，可能非正的参数落在一个有界区间，并远离 $`\beta=2`$。该区间内 $`a^2\ge T_+>0`$，式 (17) 的负类平方修正项为零，有限参数估计给正下界；在 $`\beta=2`$ 的邻域仍用 $`N_\theta(2)=10-21\theta/2>0`$。最后由 §3 的共形比较将结论转回原度量。$`T_+\le0`$ 分支直接取 $`\theta=0`$，得到 $`\kappa_\beta\ge1`$。
 
 三个数 $`2/3,8,3/4`$ 因而分别来自同一个多项式的判别式零点、双根和最高次系数消失。$`\theta\uparrow3/4`$ 时这条证明的常数退化，尚不能据此断言统一常数不存在。
 
@@ -925,7 +925,7 @@ $`\kappa_\beta\ge16a/(1+4a)`$。多项式满足
 Q:=A-T_+\ge0,\qquad \chi(M)\le CA+Q,
 ```
 
-其中 $`C<\infty`$ 固定，则
+其中 $`C\lt \infty`$ 固定，则
 
 ```math
 \kappa_\beta\ge c_{\rm geo}(C)\frac{(\beta-2)^2}{\beta^2},\quad
@@ -933,7 +933,7 @@ c_{\rm geo}(C)=\min\{\varepsilon_N,c_{\rm FD}(C+1/3)\}>0.
 \tag{GEO}
 ```
 
-证明分区：$`Q/A\ge1/3`$ 时 N1 直接给正间隙；$`Q/A<1/3`$ 时只需固定密度 $`C+1/3`$ 的 FD。该结论允许族内 $`\chi/A`$ 无界，统一常数依赖固定的拓扑数不等式中的常数 $`C`$。
+证明分区：$`Q/A\ge1/3`$ 时 N1 直接给正间隙；$`Q/A\lt 1/3`$ 时只需固定密度 $`C+1/3`$ 的 FD。该结论允许族内 $`\chi/A`$ 无界，统一常数依赖固定的拓扑数不等式中的常数 $`C`$。
 
 对满足所列单极子可解性条件的光滑极小复一般型曲面 $`X`$，$`A=c_1^2(X)>0`$。Noether 不等式与公式给
 
@@ -989,7 +989,7 @@ $`|\mathcal C|\le C`$、$`|\nabla\mathcal C|\le C(1+|\nabla\Phi|+|\nabla v|)`$�
 
 证明只把 Hessian 的一个导数移到另外三个因子，不交换协变导数；常数不依赖 $`\|\nabla^2v\|_2`$ 或 $`\mathop{\rlap{-}\int}\nolimits|W^-|^2`$。固定模长截断所产生的张量须满足上述全局性和导数条件。它控制的是明确的一类弱配对，不能把仅有界的径向系数变成小量。
 
-[低幅度能量估计](../archive/originals/2026-09-29/O10_Low_Amplitude_Energy_and_O11_Scope.md) 进一步给出如下结论。令 $`d\mu_j=dV_j/V_j`$、$`\mathscr L_j=\nabla_j^*\nabla_j`$；假设 $`|v_j|+|\mathscr L_jv_j|\le C`$、$`m_j=|v_j|^2\to m_*`$ 于 $`L^2(d\mu_j)`$、$`(\mathscr L_j-2)v_j\to0`$ 于 $`L^2(d\mu_j)`$。另假设区域 $`G_j`$ 上的一个正交复类型投影 $`\mathsf P_j`$ 满足 $`\int_{G_j}|\mathsf P_j\nabla v_j|^2d\mu_j\to0`$，且 $`\int_{M_j\setminus G_j}|\nabla v_j|^2d\mu_j\to0`$。记 $`q_j=|\nabla v_j|^2`$，则对固定 $`0<\theta<1`$、$`\varepsilon>0`$ 有
+[低幅度能量估计](../archive/originals/2026-09-29/O10_Low_Amplitude_Energy_and_O11_Scope.md) 进一步给出如下结论。令 $`d\mu_j=dV_j/V_j`$、$`\mathscr L_j=\nabla_j^*\nabla_j`$；假设 $`|v_j|+|\mathscr L_jv_j|\le C`$、$`m_j=|v_j|^2\to m_*`$ 于 $`L^2(d\mu_j)`$、$`(\mathscr L_j-2)v_j\to0`$ 于 $`L^2(d\mu_j)`$。另假设区域 $`G_j`$ 上的一个正交复类型投影 $`\mathsf P_j`$ 满足 $`\int_{G_j}|\mathsf P_j\nabla v_j|^2d\mu_j\to0`$，且 $`\int_{M_j\setminus G_j}|\nabla v_j|^2d\mu_j\to0`$。记 $`q_j=|\nabla v_j|^2`$，则对固定 $`0\lt \theta\lt 1`$、$`\varepsilon>0`$ 有
 
 ```math
 \limsup_j\mathop{\rlap{-}\int}\nolimits\frac{q_j}{(m_j+\varepsilon)^\theta}
@@ -998,14 +998,14 @@ $`|\mathcal C|\le C`$、$`|\nabla\mathcal C|\le C(1+|\nabla\Phi|+|\nabla v|)`$�
 
 ```math
 \limsup_j\mathop{\rlap{-}\int}\nolimits_{\{m_j\le t\}}q_j
-\le2\mathrm e\,t\log(m_*/t),\qquad0<t<m_*/\mathrm e.
+\le2\mathrm e\,t\log(m_*/t),\qquad0\lt t\lt m_*/\mathrm e.
 ```
 
 这里 $`\mathrm e=\exp(1)`$。因此 $`\lim_{t\downarrow0}\limsup_j\mathop{\rlap{-}\int}\nolimits_{\{m_j\le t\}}q_j=0`$。估计不要求 $`\mathop{\rlap{-}\int}\nolimits|W^-|^2`$ 有统一上界；极限次序为先固定 $`\theta,\varepsilon`$，再令 $`j\to\infty`$。
 
 ### 5.2 中间幅度集中
 
-上述估计仍容许固定中间幅度层 $`0<u_0<m_j<u_1<m_*`$ 在体积趋零时保留非零径向能量。无密度证明所需的两个结论——第五线丛截面经固定截断后的正 $`L^2`$ 质量，以及该截面满足相应弱曲率方程——尚未同时得到。
+上述估计仍容许固定中间幅度层 $`0\lt u_0\lt m_j\lt u_1\lt m_*`$ 在体积趋零时保留非零径向能量。无密度证明所需的两个结论——第五线丛截面经固定截断后的正 $`L^2`$ 质量，以及该截面满足相应弱曲率方程——尚未同时得到。
 
 [完整径向方程与弱曲率估计](../archive/originals/2026-09-29/O10_Alternative_Global.md) §8 保留完整径向项后给出
 
@@ -1018,7 +1018,7 @@ d=-\frac{m_3+i m_4}{2m},
 
 [局部几乎 Kähler 模型与延拓条件](../archive/originals/2026-09-29/O10_Local_Model_And_Prolongation_Audit.md) 指出：由 Armstrong 的局部结果，不存在同时满足 $`\mathop{\mathrm{Ric}}\nolimits=-g`$、$`W^+=0`$、$`d\omega=0`$、$`|\omega|^2=2`$ 的几乎 Kähler 局部解，其中取向由 $`\omega`$ 决定。原稿在缩小双曲球上构造的实际 SW 解并不提供常模长闭相容形式，因而属于另一类局部对象；其闭流形延拓仍需验证全部过渡条件。
 
-开放问题是证明完整径向、相位和曲率方程排除上述集中，或构造满足全部原假设的闭流形端点序列。FD 的量词为 $`\forall B<\infty\ \exists c(B)>0`$；一般端点问题要求 $`\exists c>0`$ 对全部允许对象成立。
+开放问题是证明完整径向、相位和曲率方程排除上述集中，或构造满足全部原假设的闭流形端点序列。FD 的量词为 $`\forall B\lt \infty\ \exists c(B)>0`$；一般端点问题要求 $`\exists c>0`$ 对全部允许对象成立。
 
 ### 5.3 一阶场的稳定子与线丛选择
 
@@ -1114,7 +1114,7 @@ a^2=2e+3\tau,\qquad b^2[M]=-2e+3\tau,
 
 Thurston 的曲面丛辛构造与 Taubes 非消失定理分别提供两取向的类；典范类的整体符号不影响平方和绝对配对。$`b_1(M)\ge2b\ge4`$，故正取向 $`b_2^+>1`$，而 $`a^2>0`$ 保证每个共形类均负。
 
-仅需考虑 $`\mathcal J(g)<1`$，在同一负 Yamabe 代表上置
+仅需考虑 $`\mathcal J(g)\lt 1`$，在同一负 Yamabe 代表上置
 
 ```math
 j=\mathcal J(\widehat g)\le\mathcal J(g),\quad
@@ -1130,14 +1130,14 @@ w=\frac{2-t}{u}-\frac13+\frac{j}{4-j}\ge0.
 \tag{23}
 ```
 
-因此 $`t<2`$，并有
+因此 $`t\lt 2`$，并有
 
 ```math
 u\le\frac{3(4-j)}{4(1-j)}(2-t),\qquad
  t\le1+\frac{9j}{16-7j}\le1+j.
 ```
 
-$`t<2`$ 又推出 $`b_2^-(M)>e/6+b_1-1>1`$，所以反取向类 $`b`$ 的单极子方程也对每个光滑度量可解。令
+$`t\lt 2`$ 又推出 $`b_2^-(M)>e/6+b_1-1>1`$，所以反取向类 $`b`$ 的单极子方程也对每个光滑度量可解。令
 
 ```math
 Z=\|b^-\|_2^2/e,\quad X=\|a^-\|_2^2/e=U-(2+t),
@@ -1151,10 +1151,10 @@ Z=\|b^-\|_2^2/e,\quad X=\|a^-\|_2^2/e=U-(2+t),
 \tag{24}
 ```
 
-令 $`d=j+(1-t)_+`$。若 $`0<d\le1/256`$，由 (23) 可得
+令 $`d=j+(1-t)_+`$。若 $`0\lt d\le1/256`$，由 (23) 可得
 
 ```math
-1-d\le t\le1+d,\quad3-d\le u\le3+5d<4,
+1-d\le t\le1+d,\quad3-d\le u\le3+5d\lt 4,
 \quad X\le4d,\quad w\le d,\quad r\le4d/3.
 ```
 
@@ -1171,7 +1171,7 @@ Z=\|b^-\|_2^2/e,\quad X=\|a^-\|_2^2/e=U-(2+t),
 
 ```math
 p_b=eZ\ge A_-,\qquad
-\frac{\chi(\bar M)}{A_-}=\frac1{2-t}<2.
+\frac{\chi(\bar M)}{A_-}=\frac1{2-t}\lt 2.
 ```
 
 反取向参数缺陷为
@@ -1184,7 +1184,7 @@ p_b=eZ\ge A_-,\qquad
 取有限 $`\beta=d^{-1/2}\ge16`$，式 (25) 给
 
 ```math
-\bar\kappa_\beta<100\sqrt d,
+\bar\kappa_\beta\lt 100\sqrt d,
 ```
 
 而 FD2 给 $`\bar\kappa_\beta\ge c(1-2\sqrt d)^2\ge c/2`$，其中
@@ -1256,7 +1256,7 @@ a\in\mathop{\mathrm{Hull}}\nolimits(\mathcal C_+),\quad a^2\ge T_+;
 
 ## 7. Ricci 流的标量曲率增长
 
-设闭四流形满足全度量 $`P(g)\ge p_0>0`$ 和 $`\mathcal Y(M)<0`$。例如，若 $`\mathcal J\ge j_0>0`$、$`S\ge32\pi^2A`$，则由 $`P=\mathcal JR/4\ge\mathcal JS/16`$ 可取 $`p_0=2\pi^2Aj_0`$。这里只使用单独的 $`P`$ 正下界。
+设闭四流形满足全度量 $`P(g)\ge p_0>0`$ 和 $`\mathcal Y(M)\lt 0`$。例如，若 $`\mathcal J\ge j_0>0`$、$`S\ge32\pi^2A`$，则由 $`P=\mathcal JR/4\ge\mathcal JS/16`$ 可取 $`p_0=2\pi^2Aj_0`$。这里只使用单独的 $`P`$ 正下界。
 
 考虑体积保持的 Ricci 流
 

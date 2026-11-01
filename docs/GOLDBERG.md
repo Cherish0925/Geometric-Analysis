@@ -53,7 +53,7 @@ d\sigma_2=2\sigma_3\wedge\sigma_1,\qquad
 d\sigma_3=2\sigma_1\wedge\sigma_2.
 ```
 
-令 $`D=1+3x^2`$。对 $`1/3<x<1`$，取
+令 $`D=1+3x^2`$。对 $`1/3\lt x\lt 1`$，取
 
 ```math
 \begin{aligned}
@@ -224,7 +224,7 @@ Einstein 度量及其调和形式的解析正则性将形式唯一性提升为�
 以 $`\mathop{\mathrm{Ric}}\nolimits_{\mathrm{CH}}=-6g`$ 归一化，固定一个精确复双曲领口的光滑 $`\mathcal O(-1)`$ 单元 $`g_*`$，使
 
 ```math
-J_6(g_*):=\int|\mathop{\mathrm{Ric}}\nolimits_{g_*}+6g_*|^2<8\pi^2.
+J_6(g_*):=\int|\mathop{\mathrm{Ric}}\nolimits_{g_*}+6g_*|^2\lt 8\pi^2.
 ```
 
 其从外领口向内传输的自对偶闭形式在 bolt 上为零。取单调截断 $`\chi`$，在 bolt 邻域等于一，在外领口等于零，并在塌缩方向与纤维方向的平面内旋转轨道度量：
@@ -240,7 +240,7 @@ p'(0)=-\pi\int\chi'(r)\Phi(r)\,dr>0,
 \qquad \Phi=\psi_+(0)\frac{\phi_f}{\psi_+}>0.
 ```
 
-这里 $`\psi_+`$ 为正的齐次传输解，$`\phi_f`$ 为原零周期解的非零纤维系数；旋转方向取上述符号。闭自对偶一阶系统的唯一性排除正则轨道上的共同零点，非零 $`p`$ 则排除 bolt 上的零点。因此充分小的 $`\epsilon\ne0`$ 给出辛形式，而平滑二阶连续性保留 $`J_6(g_\epsilon)<8\pi^2`$。
+这里 $`\psi_+`$ 为正的齐次传输解，$`\phi_f`$ 为原零周期解的非零纤维系数；旋转方向取上述符号。闭自对偶一阶系统的唯一性排除正则轨道上的共同零点，非零 $`p`$ 则排除 bolt 上的零点。因此充分小的 $`\epsilon\ne0`$ 给出辛形式，而平滑二阶连续性保留 $`J_6(g_\epsilon)\lt 8\pi^2`$。
 
 在紧复双曲商的互不相交精确球领口内插入这些单元，得到纯吹起上的整体共形几乎 Kähler 竞争度量。一般仅接近复双曲的背景还需要同时延拓度量与闭形式；已有单独的度量匹配不能替代这一要求。
 
@@ -384,7 +384,7 @@ c_2(\mathcal N)[M]=5\chi(M)+6\tau(M).
 
 ```math
 \deg(\bar K^{\otimes2}|_C)
-=\frac{s}{4\pi}\mathop{\mathrm{Area}}\nolimits_g(C)<0.
+=\frac{s}{4\pi}\mathop{\mathrm{Area}}\nolimits_g(C)\lt 0.
 ```
 
 故 $`\xi`$ 必有零点。其[切向微分方程](../archive/originals/2026-10-15/Goldberg_Global_Connections_20261015.tex)为
@@ -746,7 +746,7 @@ D_W(g)=\mathcal T(g,\Omega),\qquad
 \mathcal T_-=12\pi^2\tau(M).
 ```
 
-因此 $`\tau<0`$ 时不存在这样的反取向结构，$`\tau=0`$ 时它必为 Kähler；$`\tau>0`$ 时等式只规定扭率能量，尚不给出矛盾。这是固定分支的结论，不把整个 Einstein 模空间假定为连通。
+因此 $`\tau\lt 0`$ 时不存在这样的反取向结构，$`\tau=0`$ 时它必为 Kähler；$`\tau>0`$ 时等式只规定扭率能量，尚不给出矛盾。这是固定分支的结论，不把整个 Einstein 模空间假定为连通。
 
 ## 典范曲线与扭率能量的积分下界
 
@@ -831,7 +831,7 @@ s^2V\ge32\pi^2K_0^2+32\pi^2r
 
 ## 非塌缩退化中的能量传递
 
-固定闭定向光滑四流形 $`M`$。设 $`g_j`$ 为 Einstein 度量，标量曲率统一为 $`s_0<0`$，体积有正下界、直径有上界。取一个收敛子列，其极限为具有有限奇点集 $`S`$ 的紧 Einstein 轨形 $`(V,g_V)`$，并在 $`V\setminus S`$ 上光滑收敛。这是四维 Einstein 轨形紧性所给的情形；几何背景见 [Ozuch 的非塌缩退化研究](https://arxiv.org/abs/1909.12957)。
+固定闭定向光滑四流形 $`M`$。设 $`g_j`$ 为 Einstein 度量，标量曲率统一为 $`s_0\lt 0`$，体积有正下界、直径有上界。取一个收敛子列，其极限为具有有限奇点集 $`S`$ 的紧 Einstein 轨形 $`(V,g_V)`$，并在 $`V\setminus S`$ 上光滑收敛。这是四维 Einstein 轨形紧性所给的情形；几何背景见 [Ozuch 的非塌缩退化研究](https://arxiv.org/abs/1909.12957)。
 
 记 $`m_+\ge0`$ 为奇点处集中的自对偶 Weyl 总能量。它包括所有核心和颈部，无须先把集中分解为完整气泡树。标量固定和体积收敛给出
 
@@ -911,7 +911,7 @@ D_W(V)\ge4\pi^2k+m_+.
 
 ### 二阶长度障碍
 
-设 $`\mathop{\mathrm{Ric}}\nolimits_g=Eg`$、$`E<0`$，考虑满足耦合 Einstein、闭性、自对偶与常长度方程至二阶的形式展开
+设 $`\mathop{\mathrm{Ric}}\nolimits_g=Eg`$、$`E\lt 0`$，考虑满足耦合 Einstein、闭性、自对偶与常长度方程至二阶的形式展开
 
 ```math
 g^{-1}g_t=I+tH_1+\frac{t^2}{2}H_2+O(t^3),\qquad
@@ -969,7 +969,7 @@ ALE 的 $`L^2`$ 上同调在反自对偶侧，故不增加自对偶调和维数�
 
 ### 常标量 Kähler 比较族的二次法向能量
 
-设光滑化中的消失类 $`\delta`$ 满足 $`\delta^2=-2`$、$`c_1\cdot\delta=0`$。对标量曲率 $`s=4E<0`$ 的 Kähler 比较度量，令 $`\rho`$ 为 Ricci 形式，$`\rho_0=\rho-E\omega`$。它闭、原始且反自对偶，因而调和，并有
+设光滑化中的消失类 $`\delta`$ 满足 $`\delta^2=-2`$、$`c_1\cdot\delta=0`$。对标量曲率 $`s=4E\lt 0`$ 的 Kähler 比较度量，令 $`\rho`$ 为 Ricci 形式，$`\rho_0=\rho-E\omega`$。它闭、原始且反自对偶，因而调和，并有
 
 ```math
 P(g)=2\|\rho_0\|_2^2

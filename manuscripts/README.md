@@ -13,7 +13,7 @@ Four working manuscripts on Einstein geometry, curvature functionals, and almost
 | **Einstein Gaps on Four-Manifolds** | [PDF](einstein_gaps.pdf) · [LaTeX](einstein_gaps.tex) | 21 | Gauge equations and curvature compatibility; normalized Einstein gaps; endpoint estimates with bounded Euler density; two-orientation applications. |
 | **Curvature Extremals on Four-Manifolds: Surgery, Orbifolds, and Attainment** | [PDF](curvature_extremals.pdf) · [LaTeX](curvature_extremals.tex) | 19 | Curvature bounds from surgery; almost-minimizing sequences; exact orbifold infima; asymptotically locally Euclidean degeneration and attainment. |
 | **Approximate Einstein Metrics and Geometric Realization in Dimension Four** | [PDF](einstein_realization.pdf) · [LaTeX](einstein_realization.tex) | 17 | Approximation on fixed manifolds; Teichmüller deformations; nonlinear correction of approximate metrics; orbifold resolutions and fillings. |
-| **Almost-Kähler Einstein Four-Manifolds: Constructions and Rigidity** | [PDF](almost_kahler_einstein.pdf) · [LaTeX](almost_kahler_einstein.tex) | 18 | Complete noncompact constructions; torsion zeros and Green potentials; deformation and degeneration; rigidity on closed manifolds. |
+| **Almost-Kähler Einstein Four-Manifolds: Constructions and Rigidity** | [PDF](almost_kahler_einstein.pdf) · [LaTeX](almost_kahler_einstein.tex) | 18 | Complete noncompact constructions; torsion zeros and Green potentials; deformation and degeneration; curvature and cohomological criteria for integrability. |
 
 ## Supplementary exposition
 

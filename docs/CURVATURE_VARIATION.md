@@ -62,7 +62,7 @@ R(g)=R(\widehat g)+\delta/3,
 \tag{1.3}
 ```
 
-特别地，$`\mathcal J(g)<1`$ 时 $`\mathcal E(\widehat g)=\mathcal J(\widehat g)\le\mathcal J(g)`$。若每个共形类均为负类且 $`\inf\mathcal E<1`$，便有 $`\inf\mathcal E=\inf\mathcal J`$。
+特别地，$`\mathcal J(g)\lt 1`$ 时 $`\mathcal E(\widehat g)=\mathcal J(\widehat g)\le\mathcal J(g)`$。若每个共形类均为负类且 $`\inf\mathcal E\lt 1`$，便有 $`\inf\mathcal E=\inf\mathcal J`$。
 
 设每个共形类均为负 Yamabe 类，全度量标量下界为 $`S\ge32\pi^2A>0`$，且 $`T_+>0`$。写 $`p_*=P_*/(8\pi^2)`$。对 $`P`$ 极小化序列作负 Yamabe 替换，并用 $`I_+\ge0`$，得到
 
@@ -105,8 +105,8 @@ P=S/12-2d,\quad R=S/3-2d,\quad
 因此
 
 ```math
-\alpha(M)<1\quad\Longleftrightarrow\quad
-W_*(M):=\inf_gW(g)<8\pi^2\chi(M).
+\alpha(M)\lt 1\quad\Longleftrightarrow\quad
+W_*(M):=\inf_gW(g)\lt 8\pi^2\chi(M).
 \tag{1.8}
 ```
 
@@ -125,7 +125,7 @@ W_*(M):=\inf_gW(g)<8\pi^2\chi(M).
 d_*(M\#N)\ge d_*(M)+d_*(N)-16\pi^2.
 ```
 
-例如 $`\#n\overline{\mathbb{CP}}^{\,2}`$ 满足 $`W_*=12n\pi^2`$、$`d_*=4\pi^2(4-n)`$，故 $`n\le3`$ 时 $`\alpha<1`$，$`n\ge4`$ 时 $`\alpha=1`$。
+例如 $`\#n\overline{\mathbb{CP}}^{\,2}`$ 满足 $`W_*=12n\pi^2`$、$`d_*=4\pi^2(4-n)`$，故 $`n\le3`$ 时 $`\alpha\lt 1`$，$`n\ge4`$ 时 $`\alpha=1`$。
 
 来源：[相对缺陷与联合共形极值](../archive/originals/2026-10-08/03_Subsequent_Mathematical_Developments.tex) §§1、5–6。
 
@@ -187,7 +187,7 @@ $`j\ge(\sqrt{C^2+4H^2}-C)/2`$：任何 Einstein 候选必须偏离该绝对 Ricc
 =1-9\epsilon^2\log(1/\epsilon)+O_{R_0}(\epsilon^2),
 ```
 
-其中 $`J_6(g)=\int|\mathop{\mathrm{Ric}}\nolimits_g+6g|^2`$。两式均包括 Burns 核心、颈部和外过渡；内外过渡的总误差为 $`O_{R_0}(\epsilon^2)`$。因此充分小的正 $`\epsilon`$ 给出 $`P,J_6<8\pi^2`$。
+其中 $`J_6(g)=\int|\mathop{\mathrm{Ric}}\nolimits_g+6g|^2`$。两式均包括 Burns 核心、颈部和外过渡；内外过渡的总误差为 $`O_{R_0}(\epsilon^2)`$。因此充分小的正 $`\epsilon`$ 给出 $`P,J_6\lt 8\pi^2`$。
 
 来源：[固定复双曲领口内的对数渐近展开](../archive/originals/2026-10-07/O11_Arbitrary_Collar_Logarithmic_Construction.md) §§0–6。颈部推导及符号计算程序见该文 §8。
 
@@ -210,7 +210,7 @@ k_j/Q_j\to2/9,\quad\ell_j/Q_j\to7/36
 
 ```math
 \limsup_j\frac{\alpha(M_j)}{h_j}
-\le4-\frac89\delta_{X_0}<4.
+\le4-\frac89\delta_{X_0}\lt 4.
 ```
 
 其中 $`\delta_{X_0}>0`$ 是固定单元相对于 $`8\pi^2`$ 的归一化能量下降量，可依赖 $`X_0`$。极限次序为：固定领口和一个足够小的正插入参数，再令覆盖度数趋于无穷。
@@ -218,7 +218,7 @@ k_j/Q_j\to2/9,\quad\ell_j/Q_j\to7/36
 另一路使用一个已有固定半径单元：对于事先给定、嵌套且子群交集平凡的残余覆盖塔，某一级以后具有正比例的该单元安放位置。此结论也适用于非正规塔，仅使用固定球在某一级的嵌入。在该量词下，区间计算与共形尾部恢复给出
 
 ```math
-\limsup_j\alpha(M_j)/h_j\le3.9961446513521015108\ldots<4.
+\limsup_j\alpha(M_j)/h_j\le3.9961446513521015108\ldots\lt 4.
 ```
 
 区间计算给出特定单元的显式上界；任意固定小领口的构造扩大了覆盖序列的适用范围。
@@ -244,7 +244,7 @@ k_j/Q_j\to2/9,\quad\ell_j/Q_j\to7/36
 P(g_x)=P(g)+8\pi^2\bigl(1-xR^+_p(\zeta,\zeta)\bigr)+O(x^{6/5}).
 ```
 
-证明由标量平坦、自对偶平坦的 Burns 尾部及其球面 transgression 给出；其中标量通量为 $`4\pi^2x`$，自对偶通量为 $`\pi^2\zeta\otimes\zeta`$。在负 KE 背景上，$`\omega^\perp`$ 是一阶响应的核；实双曲背景则 $`R^+=sI/12<0`$，每个方向的一阶能量变化均为正。这个任意背景的一阶结论不要求 $`P`$-临界性。
+证明由标量平坦、自对偶平坦的 Burns 尾部及其球面 transgression 给出；其中标量通量为 $`4\pi^2x`$，自对偶通量为 $`\pi^2\zeta\otimes\zeta`$。在负 KE 背景上，$`\omega^\perp`$ 是一阶响应的核；实双曲背景则 $`R^+=sI/12\lt 0`$，每个方向的一阶能量变化均为正。这个任意背景的一阶结论不要求 $`P`$-临界性。
 
 若背景在插入支撑邻域内为 $`P`$-临界，再选择角修正，可进一步展开为
 
@@ -264,7 +264,7 @@ T=(R^+|_{\zeta^\perp})^{\circ}.
 
 ```math
 \frac{P(\widetilde g_\epsilon)}{8\pi^2}
-=k-\frac{ks^2}{64}\epsilon^2\log(1/\epsilon)+O(\epsilon^2)<k.
+=k-\frac{ks^2}{64}\epsilon^2\log(1/\epsilon)+O(\epsilon^2)\lt k.
 ```
 
 这里 $`T`$ 是 $`\zeta^\perp`$ 上限制算子的无迹部分；$`\Phi`$ 为插入角修正所确定的二阶对数系数。系数公式适用于所列特征向量方向；一般方向还含旋转零模。其非正性在核方向成立，在整个 $`R^+\le0`$ 锥上则不成立。余项常数依赖固定光滑背景和插入数据。
@@ -285,7 +285,7 @@ T=(R^+|_{\zeta^\perp})^{\circ}.
 这证明对每个固定极小一般型曲面 $`X`$ 和每个 $`k\ge1`$，
 
 ```math
-\boxed{P_*(X\#k\overline{\mathbb{CP}}^{\,2})<8\pi^2k.}
+\boxed{P_*(X\#k\overline{\mathbb{CP}}^{\,2})\lt 8\pi^2k.}
 \tag{2.1}
 ```
 
@@ -293,7 +293,7 @@ T=(R^+|_{\zeta^\perp})^{\circ}.
 
 ### 2.4 归一化上界与不相交插入区域
 
-设一个固定复双曲单元的完整 $`P`$ 能量为 $`8\pi^2p_c`$，$`p_c<1`$。在复双曲覆盖中能安放 $`8n`$ 个该单元和 $`7n`$ 个独立柄单元时，令 $`Q=36n`$、$`h=Q/A`$、
+设一个固定复双曲单元的完整 $`P`$ 能量为 $`8\pi^2p_c`$，$`p_c\lt 1`$。在复双曲覆盖中能安放 $`8n`$ 个该单元和 $`7n`$ 个独立柄单元时，令 $`Q=36n`$、$`h=Q/A`$、
 
 ```math
 C_c=\frac{28}{9}+\frac89p_c.
@@ -306,7 +306,7 @@ C_c=\frac{28}{9}+\frac89p_c.
 \tag{2.2}
 ```
 
-已构造的单元满足 $`p_c<0.995662732772`$，从而 $`C_c<3.996144651353`$。这里不需要先令 $`h\to0`$；假设是所需完整单元确实能同时安放。选择一个具有足够大整体注入半径的有限正规覆盖后，其所有进一步有限覆盖继承这些位置。对任意固定基底覆盖序列，则使用 §2.1 的小领口单元，节省常数允许依赖基底。
+已构造的单元满足 $`p_c\lt 0.995662732772`$，从而 $`C_c\lt 3.996144651353`$。这里不需要先令 $`h\to0`$；假设是所需完整单元确实能同时安放。选择一个具有足够大整体注入半径的有限正规覆盖后，其所有进一步有限覆盖继承这些位置。对任意固定基底覆盖序列，则使用 §2.1 的小领口单元，节省常数允许依赖基底。
 
 一般固定负 KE 背景也可取局部单元的固定能量下降量 $`\eta_X>0`$。若吹起占 $`Q=k+4\ell`$ 的比例为 $`\vartheta=k/Q`$，相应构造给
 
@@ -373,7 +373,7 @@ d_*(Y\#k\overline{\mathbb{CP}}^{\,2})
 \tag{2.4}
 ```
 
-所以 $`k<A/3+\eta n`$ 已保证 $`\alpha<1`$。这改善了只由 Kähler 恢复看到的 $`k<A/3`$ 区域。
+所以 $`k\lt A/3+\eta n`$ 已保证 $`\alpha\lt 1`$。这改善了只由 Kähler 恢复看到的 $`k\lt A/3`$ 区域。
 
 该结论取决于能够同时选取的不相交插入球的数目。在 $`\mathop{\mathrm{Ric}}\nolimits=-g`$ 的复双曲归一化中，令 $`X_R=\sinh^2(R/\sqrt6)`$。若整体注入半径大于 $`2R`$，最大不相交 $`R`$-球族满足
 
@@ -381,7 +381,7 @@ d_*(Y\#k\overline{\mathbb{CP}}^{\,2})
 \frac{1}{9[4X_R(1+X_R)]^2}\le\frac NA\le\frac1{9X_R^2}.
 ```
 
-上述球数估计给出了 $`k<A/3`$ 之外的适用区间。插入球的尺度和数目共同决定全局能量下降量。式 (2.2)–(2.4) 给出上界；与之匹配的下界仍待确定。
+上述球数估计给出了 $`k\lt A/3`$ 之外的适用区间。插入球的尺度和数目共同决定全局能量下降量。式 (2.2)–(2.4) 给出上界；与之匹配的下界仍待确定。
 
 ### 2.6 无对称限制的完整单元共形归约
 
@@ -394,7 +394,7 @@ d_*(Y\#k\overline{\mathbb{CP}}^{\,2})
 其中 $`\Delta=\mathop{\mathrm{div}}\nolimits\nabla`$。不要求原度量的标量处处为负，也不要求任何对称性。证明在精确端上用 $`1-e^{-a(r-R)}`$ 与 $`1+(M-1)e^{-a(r-R)}`$ 作上下屏障，在核心内分别延为零和足够大的常数，随后作穷竭并使用强最大值原理。线性化 $`-6\Delta+48`$ 给出
 
 ```math
-|\nabla^j(u-1)|=O(e^{-mr}),\qquad 4<m<2+2\sqrt3,
+|\nabla^j(u-1)|=O(e^{-mr}),\qquad 4\lt m\lt 2+2\sqrt3,
 ```
 
 对每个固定 $`j`$ 成立。这个衰减快于端的体积增长，故共形 transgression 的线性边界项消失，得到精确能量差
@@ -410,7 +410,7 @@ J_6(g)-J_6(\widehat g)
 =P(g)-P(\widehat g)+\frac14\int(s_g+24)^2.
 ```
 
-因而，在同一标记单元上，精确复双曲端的 $`P`$ 与 $`J_6`$ 下确界相等，也等于常标量 $`-24`$、渐近速率 $`\mu`$ 满足 $`2<\mu<2+2\sqrt3`$ 的单元的 $`P`$ 下确界。逆向证明将渐近端在单位环带上截回精确端，附加平方残差为 $`O(e^{(4-2\mu)R})`$。这一步给下确界归约，不给取得性。
+因而，在同一标记单元上，精确复双曲端的 $`P`$ 与 $`J_6`$ 下确界相等，也等于常标量 $`-24`$、渐近速率 $`\mu`$ 满足 $`2\lt \mu\lt 2+2\sqrt3`$ 的单元的 $`P`$ 下确界。逆向证明将渐近端在单位环带上截回精确端，附加平方残差为 $`O(e^{(4-2\mu)R})`$。这一步给下确界归约，不给取得性。
 
 若单元有 $`k`$ 个吹起和 $`\ell`$ 个柄，相对模型球的 Weyl 差为 $`\Delta I_+`$，则
 
@@ -485,7 +485,7 @@ F=(y_g-y_h)\left(1-\frac{y_f+y_g+y_h}{4}-\zeta\cosh q\right)
 $`P([T,\infty))/(8\pi^2)\ge(c/2)e^{4T}(|\Phi(T)|-\delta_T)_+^2`$。
 系数 $`1/2`$ 是标准端线性问题的最优值。因此在已经展开的大体积非标准 CR 端，恢复标准无穷远具有正的能量下界。
 
-反之，若完整对角端始终处于一个充分小的标准渐近复双曲块，$`s=-24`$、$`P<\infty`$ 且 $`\Phi(t)\to0`$，则存在保持任意给定内部紧集、外部精确复双曲的 $`g_R`$，满足
+反之，若完整对角端始终处于一个充分小的标准渐近复双曲块，$`s=-24`$、$`P\lt \infty`$ 且 $`\Phi(t)\to0`$，则存在保持任意给定内部紧集、外部精确复双曲的 $`g_R`$，满足
 
 ```math
 P(g_R)\longrightarrow P(g).
@@ -498,14 +498,14 @@ P(g_R)\longrightarrow P(g).
 H(z)=\left(\sqrt{1+z}+\frac1{\sqrt{1+z}},\sqrt{1+z},\sqrt{1+z},\sqrt{1+z},0,z\right)
 ```
 
-的切向。扣除同 $`\zeta`$ 的 $`H`$ 后，$`P<\infty`$ 给加权残差 $`e^{2t}e\in L^2`$，其中 $`e_i=\mathop{\mathrm{Ric}}\nolimits_{ii}+6`$。稳定方向用 Duhamel 公式，出射方向用有界终端条件，零速率方向用 (2.20)；余项吸收遂给所有物理偏差 $`o(e^{-2t})`$。将相位匹配后的 $`D_i=\log a_i-\log a_i^{\rm CH}`$ 在 $`[R,R+1]`$ 截断，附加能量不超过
+的切向。扣除同 $`\zeta`$ 的 $`H`$ 后，$`P\lt \infty`$ 给加权残差 $`e^{2t}e\in L^2`$，其中 $`e_i=\mathop{\mathrm{Ric}}\nolimits_{ii}+6`$。稳定方向用 Duhamel 公式，出射方向用有界终端条件，零速率方向用 (2.20)；余项吸收遂给所有物理偏差 $`o(e^{-2t})`$。将相位匹配后的 $`D_i=\log a_i-\log a_i^{\rm CH}`$ 在 $`[R,R+1]`$ 截断，附加能量不超过
 
 ```math
 C\int_R^{R+1}\mathcal V|e|^2dt
 +C\mathcal V(R)\sup_{[R,R+1]}(|D|+|D'|)^2=o(1).
 ```
 
-同法对 $`J_6<\infty`$ 给 $`J_6`$ 的截断收敛。若完整标准端类的下确界为零，仍需取得性才能得到 Einstein 填充；(2.21) 本身仅连接两个极值域。
+同法对 $`J_6\lt \infty`$ 给 $`J_6`$ 的截断收敛。若完整标准端类的下确界为零，仍需取得性才能得到 Einstein 填充；(2.21) 本身仅连接两个极值域。
 
 来源：[无对称约束分解](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/notes/step34_characteristic_constraint_calculus_and_N_probe.md) §2；[CR 输运与标准端截断](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/notes/step26_truncation_flux_and_branch_completeness.md) §§1–2。
 
@@ -526,7 +526,7 @@ P(g)-8\pi^2k
 
 结合 (2.1)，$`P`$ 的极小化序列不可能始终位于全局共形 Kähler 类中。$`\tau(M)\ge0`$ 时，相反取向的共形 Kähler 度量也受相应比较限制。
 
-共形 almost-Kähler 类中存在 $`P<8\pi^2k`$ 的度量：精确复双曲领口中的旋转单元具有无零闭自对偶二形式，其 almost-Kähler 归一化伴随一个随异常周期趋零而发散的标量平方层。这并不增加原度量的 $`P`$。构造及两种泛函的换算见 [低能量插入单元的辛形式与共形归一化](GOLDBERG.md#严格低于标准插入能量的辛构造与共形归一化)。
+共形 almost-Kähler 类中存在 $`P\lt 8\pi^2k`$ 的度量：精确复双曲领口中的旋转单元具有无零闭自对偶二形式，其 almost-Kähler 归一化伴随一个随异常周期趋零而发散的标量平方层。这并不增加原度量的 $`P`$。构造及两种泛函的换算见 [低能量插入单元的辛形式与共形归一化](GOLDBERG.md#严格低于标准插入能量的辛构造与共形归一化)。
 
 对固定吹起复结构，还可以看出下界的严格性。写 Kähler 类为 $`\pi^*a-\sum e_iE_i`$，$`e_i>0`$，令 $`q=K_X\cdot a`$。Hodge 指标定理给 $`q^2\ge Aa^2`$，故
 
@@ -564,7 +564,7 @@ p\ge k-\kappa+
 \tag{3.3}
 ```
 
-若 $`\kappa<0`$，则 $`p\ge k-4\kappa/3`$。Einstein 候选在 $`0<k<A/3`$ 时必须满足
+若 $`\kappa\lt 0`$，则 $`p\ge k-4\kappa/3`$。Einstein 候选在 $`0\lt k\lt A/3`$ 时必须满足
 
 ```math
 \kappa\ge k+
@@ -576,7 +576,7 @@ p\ge k-\kappa+
 
 ```math
 p_*\ge p_{\rm flat}:=\frac{A-k-\sqrt{A^2-2Ak}}2
-\sim\frac{k^2}{4A},\qquad 0<k<A/2.
+\sim\frac{k^2}{4A},\qquad 0\lt k\lt A/2.
 \tag{3.5}
 ```
 
@@ -587,7 +587,7 @@ p_*\ge p_{\rm flat}:=\frac{A-k-\sqrt{A^2-2Ak}}2
 \sim(k/A)^2.
 ```
 
-式 (3.5) 以全度量不等式 $`\kappa\le k`$ 为前提。$`p/k\to0`$ 并不强迫 $`\kappa/k\to1`$，因为 (3.2) 允许 $`\kappa`$ 与 $`\upsilon`$ 同时增长并抵消。实际需要确定的是全部可实现二元数据 $`(\kappa,\upsilon)`$；单独优化 Weyl 能量无法决定 $`P_*`$。例如设 $`\Theta_*(M)=\sup_{[g]}2\kappa/A`$，则 (1.8) 给 $`\alpha<1\iff\Theta_*>(3k/A-1)/2`$，但 $`\Theta_*`$ 本身还不足以计算正间隙。
+式 (3.5) 以全度量不等式 $`\kappa\le k`$ 为前提。$`p/k\to0`$ 并不强迫 $`\kappa/k\to1`$，因为 (3.2) 允许 $`\kappa`$ 与 $`\upsilon`$ 同时增长并抵消。实际需要确定的是全部可实现二元数据 $`(\kappa,\upsilon)`$；单独优化 Weyl 能量无法决定 $`P_*`$。例如设 $`\Theta_*(M)=\sup_{[g]}2\kappa/A`$，则 (1.8) 给 $`\alpha\lt 1\iff\Theta_*>(3k/A-1)/2`$，但 $`\Theta_*`$ 本身还不足以计算正间隙。
 
 ### 3.3 近极小、近驻点和近稳定的统一选择
 
@@ -643,7 +643,7 @@ D^2P_{g_j}[H,H]\ge-C_KA_j^{2/3}\delta_j^{1/3}=-o(Q_j).
 
 其中 $`\mathcal N`$ 是按符号类平均的加权非可积能量：在实际场给出的单位方向 $`n`$ 和幅度 $`\rho`$ 上，取 $`\nabla n`$ 的 $`W_2`$ 分量，积分 $`\rho^2|(\nabla n)_{W_2}|^2/2`$。各权重、零集处理及非负余项见[同场分解](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/notes/step40_nijenhuis_form_and_pointwise_exhaustion.md)。
 
-因此 $`P<8\pi^2Q`$ 要求 $`\mathcal N>\mathcal B`$。若另有全局强制 $`P\ge c\mathcal N`$，才会得到 $`P\ge8\pi^2Qc/(1+c)`$；(3.8) 本身没有提供这个新不等式。
+因此 $`P\lt 8\pi^2Q`$ 要求 $`\mathcal N>\mathcal B`$。若另有全局强制 $`P\ge c\mathcal N`$，才会得到 $`P\ge8\pi^2Qc/(1+c)`$；(3.8) 本身没有提供这个新不等式。
 
 单个符号翻转的相对曲率 $`h=(f-f')/2`$ 满足
 
@@ -657,7 +657,7 @@ D^2P_{g_j}[H,H]\ge-C_KA_j^{2/3}\delta_j^{1/3}=-o(Q_j).
 
 ```math
 C_+=\frac{I_+}{2\pi^2}+\frac{S}{96\pi^2},\qquad
-\varphi=\frac{\mathop{\mathrm{Vol}}\nolimits\{s^*\ge0\}}V<1.
+\varphi=\frac{\mathop{\mathrm{Vol}}\nolimits\{s^*\ge0\}}V\lt 1.
 ```
 
 Blair 恒等式给 $`\int(-2s-\delta)=\ell`$，而
@@ -775,7 +775,7 @@ $`\Delta V_{\rm free}=\Delta V-2\pi^2\Pi_g\ge0`$，便有
 L=\tfrac12(\nabla^*\nabla-2\mathring R).
 ```
 
-Koiso 恒等式在无迹横截张量上给 $`L\ge1`$；规范与迹部分由 Hodge Laplacian 和标量 Laplacian 的非负性给 $`L\ge6`$。这不使用覆盖的第一特征值下界。若 $`|d\phi|\le a<\sqrt2`$，加权分部积分进一步给
+Koiso 恒等式在无迹横截张量上给 $`L\ge1`$；规范与迹部分由 Hodge Laplacian 和标量 Laplacian 的非负性给 $`L\ge6`$。这不使用覆盖的第一特征值下界。若 $`|d\phi|\le a\lt \sqrt2`$，加权分部积分进一步给
 
 ```math
 \|e^\phi L^{-1}e^{-\phi}\|_{2\to2}\le(1-a^2/2)^{-1}.
@@ -880,7 +880,7 @@ $`\int|F^+|^2|F^-|^2\ge p_0/(4\varkappa^2)`$。
 本节研究闭光滑流形上是否存在非 Bach-flat 的光滑全局 $`P`$ 极小元。两种明确候选为：Horikawa 单吹起和 Godeaux 单吹起，均具有
 
 ```math
-16\pi^2/3\le P_*<8\pi^2.
+16\pi^2/3\le P_*\lt 8\pi^2.
 ```
 
 经典曲率下界已排除 Einstein 度量；若取得，则负 Yamabe 性、$`P`$-临界性和变分关系保证极小元非 Bach-flat。尚缺的是光滑取得性本身。
@@ -955,7 +955,7 @@ $`k^\circ=\sigma\circ h_0`$、$`\sigma\perp\omega`$、$`\mathop{\mathrm{tr}}\nol
 $`(\sigma\circ h_0)^2=|\sigma|^2|h_0|^2I/4`$。因此 $`K=\ker\ell_2\cap\mathcal S`$ 有限维，且
 $`\ell_2(k)\ge c\|k-\pi_Kk\|_{H^2}^2`$。若另有 $`\Xi|_K=0`$，先扣除同周期的一阶 Kähler 变分，再用 Moser 修正消去恰当部分；固定辛形式下的 Blair–Ianus 恒等式
 $`\mathop{\mathrm{Hess}}\nolimits\int|\nabla\omega|^2=2\|(\nabla\omega)'\|_2^2`$
-遂将 $`K`$ 放入 $`d_2`$ 的根空间。由 $`d_2\le C\ell_2`$ 得 $`c_K>0`$，并对 $`0<c<c_K`$ 有
+遂将 $`K`$ 放入 $`d_2`$ 的根空间。由 $`d_2\le C\ell_2`$ 得 $`c_K>0`$，并对 $`0\lt c\lt c_K`$ 有
 
 ```math
 L(g_0+k)\ge c q_0^2\delta(g_0+k)-C\|k\|_{C^{2,\gamma}}^3,
@@ -965,7 +965,7 @@ L(g_0+k)\ge c q_0^2\delta(g_0+k)-C\|k\|_{C^{2,\gamma}}^3,
 
 这是带周期前提的局部结论。一般的 $`\Xi|_K=0`$ 尚未证明，$`\mathcal S`$ 也只是线性切片；不能据此断言所有常标量 Kähler 度量都是局部极小元。
 
-曲面乘积给出一个显式鞍点机制。取 $`M=\Sigma_1(K_1)\times\Sigma_2(K_2)`$，$`K_1<K_2<0`$，令 $`Q`$ 为第一因子的非零全纯二次微分的实部，$`\Delta_2f=\mu f`$、$`\mu>0`$。实际度量族
+曲面乘积给出一个显式鞍点机制。取 $`M=\Sigma_1(K_1)\times\Sigma_2(K_2)`$，$`K_1\lt K_2\lt 0`$，令 $`Q`$ 为第一因子的非零全纯二次微分的实部，$`\Delta_2f=\mu f`$、$`\mu>0`$。实际度量族
 
 ```math
 g_t=g_1(e^{tf g_1^{-1}Q}\,\cdot,\cdot)\oplus g_2
@@ -987,7 +987,7 @@ g_t=g_1(e^{tf g_1^{-1}Q}\,\cdot,\cdot)\oplus g_2
 \tag{4.1e}
 ```
 
-$`0<\mu<K_2-K_1`$ 时存在严格下降。由于 $`s_0<0`$，$`6\Delta-2s_0`$ 可逆，可作 $`O(t^2)`$ 共形修正使标量精确为常数；(4.1a) 的驻定性保持二次系数，二形式的 Hodge 分解也不变。分开的通量系数为
+$`0\lt \mu\lt K_2-K_1`$ 时存在严格下降。由于 $`s_0\lt 0`$，$`6\Delta-2s_0`$ 可逆，可作 $`O(t^2)`$ 共形修正使标量精确为常数；(4.1a) 的驻定性保持二次系数，二形式的 Hodge 分解也不变。分开的通量系数为
 
 ```math
 \ell_2=\frac{\mu^2}{32\pi^2}\|k\|_2^2,
@@ -1002,7 +1002,7 @@ $`0<\mu<K_2-K_1`$ 时存在严格下降。由于 $`s_0<0`$，$`6\Delta-2s_0`$ �
 
 ### 4.2 低于标准插入能量的子水平集与退化
 
-[Godeaux 吹起的极小化与退化](../archive/originals/2026-10-08/Q3_Global_Attainment.tex) §§2–5 构造一个显式节点 Godeaux 退化，配合固定严格插入得到 $`P<8\pi^2`$ 的退化序列，其缩放核心为 Ricci-flat Eguchi–Hanson。因此次 $`8\pi^2`$ 子水平集可非紧。该构造未确定退化序列是否极小，光滑取得性仍为独立问题。
+[Godeaux 吹起的极小化与退化](../archive/originals/2026-10-08/Q3_Global_Attainment.tex) §§2–5 构造一个显式节点 Godeaux 退化，配合固定严格插入得到 $`P\lt 8\pi^2`$ 的退化序列，其缩放核心为 Ricci-flat Eguchi–Hanson。因此次 $`8\pi^2`$ 子水平集可非紧。该构造未确定退化序列是否极小，光滑取得性仍为独立问题。
 
 同稿的带标记整体分裂估计保留规范类在主体和各渐近局部欧氏（ALE）核心的分量；相对特征数项相加抵消后，某些核心被排除，但规范类在嵌入 $`(-2)`$-球上的限制可为零；Ricci-flat 核心具有非平凡二循环而 $`P=0`$。
 
@@ -1016,7 +1016,7 @@ P\ge4\pi^2+S/12,
 
 满足这些嵌入条件的 Ricci-flat ALE 核心只能平坦。Aspherical 指环境流形的万有覆盖可缩。
 
-[渐近欧氏气泡的替换](../archive/originals/2026-10-15/AE_Bubble_Replacement_20261015.tex) §§2–3 处理平凡端群：对满足原稿微分衰减条件、$`s\ge0,\chi=1,P<16\pi^2`$ 的完备单端渐近欧氏（AE）流形，利用经典 Chang–Gursky–Yang 球定理证明紧核心为标准光滑球；若它作为完整核心以 $`C^2`$ 缩放收敛出现在 $`P`$ 极小化序列中，正能量可由平坦填充和小能量过渡严格降低，因此不可能保留这样的气泡。
+[渐近欧氏气泡的替换](../archive/originals/2026-10-15/AE_Bubble_Replacement_20261015.tex) §§2–3 处理平凡端群：对满足原稿微分衰减条件、$`s\ge0,\chi=1,P\lt 16\pi^2`$ 的完备单端渐近欧氏（AE）流形，利用经典 Chang–Gursky–Yang 球定理证明紧核心为标准光滑球；若它作为完整核心以 $`C^2`$ 缩放收敛出现在 $`P`$ 极小化序列中，正能量可由平坦填充和小能量过渡严格降低，因此不可能保留这样的气泡。
 
 替换定理以完整核心的光滑缩放收敛为输入。一般极小化序列的轨形、中间尺度、多端及塌缩分支仍待分析；边界为 $`S^3/Q_8`$ 的正能量核心属于非平凡端群分支。
 
@@ -1025,7 +1025,7 @@ P\ge4\pi^2+S/12,
 对紧复双曲主体还可在明确的气泡分解范围内限制异常拓扑的去向。设 $`b^+(X)\ge3`$，$`M_k=X\#k\overline{\mathbb{CP}}^{\,2}`$，且一个 $`P`$ 极小化序列具有有限主体—气泡图分解：所有锥群平凡，缩放气泡标量平坦、完整 AE，并有使边界 Chern–Weil 项收敛的导数衰减；各分离尺度的能量满足下半连续性。则每个加帽气泡 $`\widehat N_i`$ 的 $`b^+`$ 为零，并且
 
 ```math
-\sum_i\bigl[4(e_i-1)+4b_1(\widehat N_i)+b_2(\widehat N_i)\bigr]<k,
+\sum_i\bigl[4(e_i-1)+4b_1(\widehat N_i)+b_2(\widehat N_i)\bigr]\lt k,
 \tag{4.3}
 ```
 
@@ -1035,13 +1035,13 @@ P\ge4\pi^2+S/12,
 
 对这类 AE 气泡，边界曲率恒等式给
 $`P(N_i)\ge8\pi^2[4(e_i-1)+4b_1+b_2]`$。
-再用插入构造给出的 $`P_*(M_k)<8\pi^2k`$ 和下半连续性即得 (4.3)。因此异常拓扑不能全部逃入光滑 AE 气泡。特别 $`k=1`$ 时每个气泡单端且帽为同伦四维球面，主体连通，并有 $`M_1\cong V\#\Sigma`$，$`\Sigma`$ 为同伦球面，故 $`V`$ 与 $`M_1`$ 同胚。
+再用插入构造给出的 $`P_*(M_k)\lt 8\pi^2k`$ 和下半连续性即得 (4.3)。因此异常拓扑不能全部逃入光滑 AE 气泡。特别 $`k=1`$ 时每个气泡单端且帽为同伦四维球面，主体连通，并有 $`M_1\cong V\#\Sigma`$，$`\Sigma`$ 为同伦球面，故 $`V`$ 与 $`M_1`$ 同胚。
 
 若再有能量恒等式、平凡锥点的光滑可去性及极限的局部极小性，则主体达到 $`P_*(V)`$。其标量是负常数：正标量由上述必要性排除；零标量连同无正标量度量会迫使 Ricci-flat，从而基本群虚交换，与 $`\Gamma`$ 矛盾。常非零标量的 Bach-flat $`P`$-临界点必为 Einstein，所以主体极小元或者 Einstein，或者给出非 Bach-flat 全局极小元。在本节更强的完整核心替换条件下，还可删除正能量的平凡端群气泡。一般极小化序列是否进入这些分解与可去性假设，仍是这项条件性取得结论的前提。
 
 ### 4.4 实双曲吹起：一个取决于 Yamabe 值的精确问题
 
-设 $`Y`$ 为闭实双曲四维流形，$`M_k=Y\#k\overline{\mathbb{CP}}^{\,2}`$，$`Y_{\rm hyp}<0`$ 为双曲共形类的 Yamabe 常数。其全度量恒等式为
+设 $`Y`$ 为闭实双曲四维流形，$`M_k=Y\#k\overline{\mathbb{CP}}^{\,2}`$，$`Y_{\rm hyp}\lt 0`$ 为双曲共形类的 Yamabe 常数。其全度量恒等式为
 
 ```math
 P(g)=8\pi^2k+4I_+(g)+\frac{S(g)-Y_{\rm hyp}^2}{12},
@@ -1062,7 +1062,7 @@ P_*(M_k)=8\pi^2k\quad\text{且不取得}.
 \tag{4.2}
 ```
 
-$`k<2\chi(Y)`$ 时不取得；$`k>2\chi(Y)`$ 时 $`\alpha=1`$ 及不取得不需要上述 Yamabe 假设。临界 $`k=2\chi(Y)`$ 的取得要求常非零标量的相应半共形平坦度量。
+$`k\lt 2\chi(Y)`$ 时不取得；$`k>2\chi(Y)`$ 时 $`\alpha=1`$ 及不取得不需要上述 Yamabe 假设。临界 $`k=2\chi(Y)`$ 的取得要求常非零标量的相应半共形平坦度量。
 
 式 (4.1) 是无条件恒等式，(4.2) 的非平凡小 $`k`$ 分支则依赖尚未证明的 Yamabe 值。对任意极小化序列只能由等式推得其趋于半共形平坦及 Yamabe 极值；把每份 $`8\pi^2`$ 分配给单个异常类仅在指定的 Burns 恢复序列中成立。
 
@@ -1172,9 +1172,9 @@ DS[H]=-2s\int\langle\mathop{\mathrm{Ric}}\nolimits^{\circ},H\rangle=0
 \mathcal E-1=\frac{(q-1)B+6w+L_s}{R}.
 ```
 
-故 $`k<A/3`$ 和 $`k>A/3`$ 时 $`\alpha_{\mathrm{orb}}`$ 均不取得。在边界 $`k=A/3`$，取得等价于 $`W^-=0`$ 且标量为负常数；还必须有 $`\sigma>0`$。这一边界上的存在性没有由上述公式决定。
+故 $`k\lt A/3`$ 和 $`k>A/3`$ 时 $`\alpha_{\mathrm{orb}}`$ 均不取得。在边界 $`k=A/3`$，取得等价于 $`W^-=0`$ 且标量为负常数；还必须有 $`\sigma>0`$。这一边界上的存在性没有由上述公式决定。
 
-另一方面，光滑解消满足 (2.1) 的 $`P_*(M_k)<8\pi^2k`$。若其极小化序列在正规部 $`C^2_{\rm loc}`$ 收敛到 $`V_m`$ 上的光滑轨形度量，则非负性与下半连续性已给
+另一方面，光滑解消满足 (2.1) 的 $`P_*(M_k)\lt 8\pi^2k`$。若其极小化序列在正规部 $`C^2_{\rm loc}`$ 收敛到 $`V_m`$ 上的光滑轨形度量，则非负性与下半连续性已给
 
 ```math
 \liminf_iP(g_i)\ge P(V_m)>8\pi^2k>P_*(M_k),
@@ -1292,7 +1292,7 @@ x_{\min}=\frac A{27}\left(4-\sqrt{1-3k/A}\right)^2,
 ```math
 \sum_j\left(1-\frac1{|\Gamma_j|}\right)
 \le k_b+\beta(k,A),\qquad
-\beta(k,A)=\frac{k(5y+1)}{18(1+y)}<\frac k6.
+\beta(k,A)=\frac{k(5y+1)}{18(1+y)}\lt \frac k6.
 \tag{6.9}
 ```
 
@@ -1350,7 +1350,7 @@ ALE 解消的首项还可精确到一个局部二次能量项。设 Einstein 轨
 ```math
 |\nabla^j(a^{-2}g-a^{-2}\widetilde g_a)|
 \le\delta a^2(1+|y|)^{w-j},
-\quad 0\le j\le2,\quad0\le w<2,
+\quad 0\le j\le2,\quad0\le w\lt 2,
 \tag{6.12}
 ```
 
@@ -1362,7 +1362,7 @@ P(g)\ge\pi^2a^4\bigl(|\mathbf R_p^+\zeta|-\varepsilon_w(a,\delta)\bigr)_+^2,
 \tag{6.13}
 ```
 
-取截断的 $`\sum_i(\mathbf R^+\zeta)_io_i`$ 作测试，Cauchy–Schwarz 和 (6.10)–(6.11) 给主项。背景的 Einstein jet 方程消去原本不衰减的二次余项；余核衰减 $`r^{-4}`$、$`w<2`$ 使扰动通量和非线性项均为 $`o(a^2)`$。因此此处限制的是规定解消邻域中的逼近速率，并非尺度无关的正间隙。
+取截断的 $`\sum_i(\mathbf R^+\zeta)_io_i`$ 作测试，Cauchy–Schwarz 和 (6.10)–(6.11) 给主项。背景的 Einstein jet 方程消去原本不衰减的二次余项；余核衰减 $`r^{-4}`$、$`w\lt 2`$ 使扰动通量和非线性项均为 $`o(a^2)`$。因此此处限制的是规定解消邻域中的逼近速率，并非尺度无关的正间隙。
 
 若背景全局 Einstein，Biquard–Ozuch 的模余核线性解给适配的解消度量
 
@@ -1416,7 +1416,7 @@ ALE 轨形解消不是所有退化的统一模型。完备有限体积 Einstein 
 
 设 $`M=X\#k\overline{\mathbb{CP}}^{\,2}`$ 上一列度量具有下列实际极限：
 
-- 在开集 $`\Omega`$ 上，经微分同胚后 $`C^2_{\rm loc}`$ 收敛到完备有限体积、标量常数 $`s_\infty<0`$ 的 Einstein 度量；
+- 在开集 $`\Omega`$ 上，经微分同胚后 $`C^2_{\rm loc}`$ 收敛到完备有限体积、标量常数 $`s_\infty\lt 0`$ 的 Einstein 度量；
 - $`P(g_i)\to0`$、$`L_s(g_i)\to0`$、$`\bar s_i\to s_\infty`$，且总体积收敛到 $`\mathop{\mathrm{Vol}}\nolimits(\Omega,g_\infty)`$；
 - $`\Omega_\rho\uparrow\Omega`$ 是嵌套紧穷竭，其补域各连通分支 $`C_j^{(\rho)}`$ 的拓扑和所接端的集合固定。
 
@@ -1524,14 +1524,14 @@ g_0=dr^2+\pi^*g_B+e^{-2\kappa r}f^2\eta^2,
 $`g-g_0=o(1)`$、$`\mathop{\mathrm{Ric}}\nolimits_g-\mathop{\mathrm{Ric}}\nolimits_{g_0}=o(1)`$，则
 
 ```math
-\boxed{\lambda=-\kappa^2,\qquad df=0,\qquad K_B=\lambda<0.}
+\boxed{\lambda=-\kappa^2,\qquad df=0,\qquad K_B=\lambda\lt 0.}
 \tag{7.7}
 ```
 
 证明直接来自径向和混合 Ricci 分量：
 $`\mathop{\mathrm{Ric}}\nolimits_{g_0}(\partial_r,\partial_r)=-\kappa^2`$，
 $`\mathop{\mathrm{Ric}}\nolimits_{g_0}(\partial_r,\widehat Y)=\kappa Y(f)/f`$。
-于是 Einstein 方程先给 $`\lambda=-\kappa^2`$、$`df=0`$；联络曲率的 O'Neill 项为 $`O(e^{-2\kappa r})`$，水平分量遂给 $`K_B=\lambda`$，最后 Gauss–Bonnet 给 $`\chi^{\rm orb}(B)<0`$。
+于是 Einstein 方程先给 $`\lambda=-\kappa^2`$、$`df=0`$；联络曲率的 O'Neill 项为 $`O(e^{-2\kappa r})`$，水平分量遂给 $`K_B=\lambda`$，最后 Gauss–Bonnet 给 $`\chi^{\rm orb}(B)\lt 0`$。
 
 相对 $`C^2`$ 收敛足以保证这里的两个收敛条件；仅有纤维尖点重标切丛上的光滑延拓并不足够。例如扰动 $`xq(\theta)dy^2`$ 沿单位竖直向量 $`x^{-1}\partial_\theta`$ 的导数不趋零。因此 (7.7) 排除的是所述相对渐近范围内的 $`S^2`$ 或 $`T^2`$ 固定基底端；实、复双曲的缩小基底尖点不在此模型中。
 
@@ -1578,12 +1578,12 @@ Gauss 方程给 $`r_i`$ 有界；排序 $`x_1\ge x_2\ge x_3`$ 后，$`r_1+r_2\ge
 因此 $`\lambda_a`$ 最终符号固定。正号使
 $`(\log v)'=\frac32\lambda_a+\frac12(\lambda_a+2\lambda_c)>0`$，与 $`v\to0`$ 矛盾；负号使 $`a`$ 递减，(7.11) 的右端继而有正下界，故 $`\lambda_a`$ 一致为负，迫使 $`a\to0`$，又与 $`a\ge b_0`$ 矛盾。此证明覆盖所有双轴剖面；有限商不正规时，只需球面提升的双轴性质，不要求全局 $`U(2)`$ 作用下降。
 
-一般三轴端也可在 $`\liminf\sigma_2>0`$ 下排除有限体积，其中 $`\sigma_2=\sum_{i<j}\lambda_i\lambda_j`$。因为 $`H^2\ge3\sigma_2`$，体积收缩分支具有 $`H<0`$；任意对和 $`u=\lambda_i+\lambda_j\ge0`$ 会给 $`\sigma_2\le Hu-3u^2/4\le0`$，故所有对和都一致为负，使所有 $`a_ia_j\to0`$，违反第二大尺度的正下界。对 $`\mathop{\mathrm{Ric}}\nolimits=-3g`$，一个充分条件为
+一般三轴端也可在 $`\liminf\sigma_2>0`$ 下排除有限体积，其中 $`\sigma_2=\sum_{i\lt j}\lambda_i\lambda_j`$。因为 $`H^2\ge3\sigma_2`$，体积收缩分支具有 $`H\lt 0`$；任意对和 $`u=\lambda_i+\lambda_j\ge0`$ 会给 $`\sigma_2\le Hu-3u^2/4\le0`$，故所有对和都一致为负，使所有 $`a_ia_j\to0`$，违反第二大尺度的正下界。对 $`\mathop{\mathrm{Ric}}\nolimits=-3g`$，一个充分条件为
 
 ```math
 \liminf s_\Sigma>-6,
 \qquad\text{例如}\quad
-\limsup\frac{(a_1^2-a_2^2)^2}{a_1^2a_2^2a_3^2}<3
+\limsup\frac{(a_1^2-a_2^2)^2}{a_1^2a_2^2a_3^2}\lt 3
 \quad(a_3\text{ 为最小尺度}).
 \tag{7.12}
 ```
@@ -1597,7 +1597,7 @@ $`(\log v)'=\frac32\lambda_a+\frac12(\lambda_a+2\lambda_c)>0`$，与 $`v\to0`$ �
 | 变分问题 | 已有结论 | 尚未决定的内容 |
 |---|---|---|
 | 平衡手术族 | 渐近系数严格小于 $`4`$ 的构造、有限参数归一化、覆盖与安放条件 | 匹配的全度量下界及最佳首项 |
-| 一般型纯吹起曲面 | $`P_*<8\pi^2k`$；共形 Kähler 分离；联合 $`(\kappa,\upsilon)`$ 可行区 | $`P_*`$ 的精确值和小 $`k/A`$ 时的真实尺度 |
+| 一般型纯吹起曲面 | $`P_*\lt 8\pi^2k`$；共形 Kähler 分离；联合 $`(\kappa,\upsilon)`$ 可行区 | $`P_*`$ 的精确值和小 $`k/A`$ 时的真实尺度 |
 | 非 Bach-flat 光滑极小元 | 明确正能量候选、下降方向、退化例和部分气泡替换 | 至少一个符合全部条件的光滑取得实例 |
 | 固定成对 $`A_1`$ 轨形 | 精确下确界及除临界参数外的不取得性 | 临界参数 $`k=A/3`$ 时的常负标量自对偶度量是否存在 |
 | Ricci-flat ALE 解消的 Einstein 主体 | 标量、混合曲率和根格的有限参数必要条件 | 相容的实际嵌入、Einstein 主体与完整拼接 |

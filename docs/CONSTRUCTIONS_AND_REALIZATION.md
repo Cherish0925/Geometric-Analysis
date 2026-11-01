@@ -16,9 +16,9 @@ Qiushi Engine Team, Zhejiang University · [作者与通讯信息](../AUTHORS.md
 \qquad \sigma\in\{-1,1\}.
 ```
 
-记 $`Q_n`$ 为如下命题：存在只依赖维数的实数 $`a_n<b_n`$，使任意承载 $`a_ng\le\mathop{\mathrm{Ric}}\nolimits_g\le b_ng`$ 的闭光滑 $`M^n`$ 都承载某个 $`\mathop{\mathrm{Ric}}\nolimits_h=\lambda h`$。这里 $`h`$ 位于同一光滑流形，$`\lambda\in\mathbb R`$；$`h`$ 与输入 $`g`$ 的距离和 Einstein 常数符号均不受指定。
+记 $`Q_n`$ 为如下命题：存在只依赖维数的实数 $`a_n\lt b_n`$，使任意承载 $`a_ng\le\mathop{\mathrm{Ric}}\nolimits_g\le b_ng`$ 的闭光滑 $`M^n`$ 都承载某个 $`\mathop{\mathrm{Ric}}\nolimits_h=\lambda h`$。这里 $`h`$ 位于同一光滑流形，$`\lambda\in\mathbb R`$；$`h`$ 与输入 $`g`$ 的距离和 Einstein 常数符号均不受指定。
 
-设 $`P_n^\sigma`$ 表示某个维数常数 $`\epsilon_n^\sigma>0`$ 使 $`\delta_\sigma<\epsilon_n^\sigma`$ 推出 Einstein 存在。缩放归约为
+设 $`P_n^\sigma`$ 表示某个维数常数 $`\epsilon_n^\sigma>0`$ 使 $`\delta_\sigma\lt \epsilon_n^\sigma`$ 推出 Einstein 存在。缩放归约为
 
 ```math
 Q_n\quad\Longleftrightarrow\quad P_n^+\ \text{或}\ P_n^-.
@@ -181,7 +181,7 @@ Yamabe、约束体积、标量平方积分和 Ricci 平方积分这四个极值�
 亏格均为 2 的 $`E_D`$ 具有 $`\chi=4,\tau=0,b_1=7`$，点态逼近序列体积为 $`16\pi^2`$。任意归一化精确负 Einstein 候选满足
 
 ```math
-16\pi^2<V(h)<48\pi^2,\qquad\mathop{\mathrm{Ric}}\nolimits_h=-h.
+16\pi^2\lt V(h)\lt 48\pi^2,\qquad\mathop{\mathrm{Ric}}\nolimits_h=-h.
 ```
 
 群论还限制相关剪切流形上的 Einstein 度量：其局部 Killing 场芽空间处处为零。因此剩余候选属于非 Kähler、完全非局部齐性的负 Einstein 几何。
@@ -273,7 +273,7 @@ H_m(k)=h_m+k+R_m(k),\quad
 其唯一增长来源是基底上的低频标量模态；迹、混合及共形 Killing 分量具有固定正势。TT 投影由
 $`P_Ts=s-D(\delta D)^{-1}\delta s`$ 表示，正势逆与局部椭圆估计给其统一有界性，所以增长的核维数不再引入损失。
 
-因此，对已在调和规范中且 $`\|g-h_m\|_{X_m}<cm^{-2}`$ 的度量，
+因此，对已在调和规范中且 $`\|g-h_m\|_{X_m}\lt cm^{-2}`$ 的度量，
 
 ```math
 \boxed{\;
@@ -320,7 +320,7 @@ d_T(x_0,\rho(\gamma)x_0)\le\mathscr C_g(\gamma).
 
 证明对两切向量的长度比求导并积分，直接控制返回映射的拟共形伸缩，无须矩阵同时对角化。
 
-固定纤维亏格和其双曲代表的 systole 正下界后，Teichmüller 厚部模映射类群紧，群作用适当。故存在统一阈值，使同一起点的一组生成闭路全部满足 $`\mathscr C_g<\epsilon`$ 时，单值群包含在一个有限稳定子中。Nielsen 实现及高亏格曲面 $`\mathrm{Diff}_0`$ 的可缩性随后给出原光滑丛
+固定纤维亏格和其双曲代表的 systole 正下界后，Teichmüller 厚部模映射类群紧，群作用适当。故存在统一阈值，使同一起点的一组生成闭路全部满足 $`\mathscr C_g\lt \epsilon`$ 时，单值群包含在一个有限稳定子中。Nielsen 实现及高亏格曲面 $`\mathrm{Diff}_0`$ 的可缩性随后给出原光滑丛
 
 ```math
 M\cong(\widehat B\times F)/G,
@@ -428,7 +428,7 @@ S_+(D,D)&=-D/4,&S_+(O,O)&=D/4,&S_+(D,O)&=S_+(O,D)=-O/4.
 
 ```math
 \pi_2(M)=0,\quad\mathop{\mathrm{diam}}\nolimitsg\le D,\quad V_g\ge v,
-\quad\delta_\sigma(g)<\epsilon(D,v)
+\quad\delta_\sigma(g)\lt \epsilon(D,v)
 \Longrightarrow\exists h\text{ on }M:\mathop{\mathrm{Ric}}\nolimits_h=\sigma h.
 ```
 
@@ -464,10 +464,10 @@ L_g=\tfrac12\nabla^*\nabla+V_g
 在**全部**对称二张量上满足 $`\langle L_gu,u\rangle_{L^2}\ge\lambda\|u\|_2^2`$。假设实际流形的每个球满足
 
 ```math
-\mathop{\mathrm{Vol}}\nolimitsB_R(x)\le C_G(1+R)^d e^{HR},\qquad H^2<8\lambda.
+\mathop{\mathrm{Vol}}\nolimitsB_R(x)\le C_G(1+R)^d e^{HR},\qquad H^2\lt 8\lambda.
 ```
 
-选择 $`H/2<a<\sqrt{2\lambda}`$、$`\phi_x=e^{-a d(x,\cdot)}`$。二次型恒等式为
+选择 $`H/2\lt a\lt \sqrt{2\lambda}`$、$`\phi_x=e^{-a d(x,\cdot)}`$。二次型恒等式为
 
 ```math
 \langle L_g(\phi_xu),\phi_xu\rangle_{L^2}
@@ -480,7 +480,7 @@ L_g=\tfrac12\nabla^*\nabla+V_g
 ```math
 \|\phi_xu\|_2\le(\lambda-a^2/2)^{-1}\|\phi_xf\|_2,
 \qquad
-\int\phi_x^2\le C_Ge^H\sum_{m\ge0}(m+2)^d e^{-(2a-H)m}<\infty.
+\int\phi_x^2\le C_Ge^H\sum_{m\ge0}(m+2)^d e^{-(2a-H)m}\lt \infty.
 ```
 
 加上局部 Moser 与 Schauder 估计，得到与总量、直径无关的逆估计
@@ -493,7 +493,7 @@ L_g=\tfrac12\nabla^*\nabla+V_g
 局部一致范数取所有坐标球的上确界。非线性二次余项的收缩与 Bianchi 恢复于是给出
 
 ```math
-\|\mathop{\mathrm{Ric}}\nolimits_g+g\|_{C^{0,\alpha}_{\rm uloc}}<\epsilon
+\|\mathop{\mathrm{Ric}}\nolimits_g+g\|_{C^{0,\alpha}_{\rm uloc}}\lt \epsilon
 \Longrightarrow
 \mathop{\mathrm{Ric}}\nolimits_h=-h,\quad
 \|h-g\|_{C^{2,\alpha}_{\rm uloc}}
@@ -504,7 +504,7 @@ L_g=\tfrac12\nabla^*\nabla+V_g
 
 固定实双曲流形的循环覆盖提供直径、体积皆趋于无穷的实例。无限循环覆盖由 $`\mathbb Z`$ 余紧作用，基本域计数给有限循环商的统一线性球体积增长。每个基本域中的独立小扰动可使全局 $`L^2`$ 残差按 $`\sqrt m`$ 增长，而上述局部一致修复仍成立。双曲曲面乘积的线性化具有 Teichmüller 核，不满足这里的正强制条件，须使用第6节的完整核修复。
 
-来源：[四维局部一致修复](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/continuation/20260924_uniformly_local_repair.md)、[任意维数版本](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/continuation/20260924_higher_dimensional_local_repair.md)。条件 $`H^2<8\lambda`$ 是该加权证明的充分条件；这里要求二次型正定，而不只是谱与零点分离。
+来源：[四维局部一致修复](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/continuation/20260924_uniformly_local_repair.md)、[任意维数版本](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/continuation/20260924_higher_dimensional_local_repair.md)。条件 $`H^2\lt 8\lambda`$ 是该加权证明的充分条件；这里要求二次型正定，而不只是谱与零点分离。
 
 ### 剪切流形上谱退化所迫使的直径逃逸
 
@@ -514,7 +514,7 @@ L_g=\tfrac12\nabla^*\nabla+V_g
 t=-\tfrac34\lambda_1(W^+),\qquad b=\lambda_3(W^+)-\lambda_2(W^+).
 ```
 
-对固定 $`0\le\theta<1/\sqrt3`$，若 $`b\le4\theta t`$，则任意直径上界 $`D`$ 都给统一分离
+对固定 $`0\le\theta\lt 1/\sqrt3`$，若 $`b\le4\theta t`$，则任意直径上界 $`D`$ 都给统一分离
 
 ```math
 \mathop{\mathrm{diam}}\nolimitsg\le D\quad\Longrightarrow\quad
@@ -560,7 +560,7 @@ r_{\alpha,Q}(x)^4\le C\kappa V,
 对直径有界且 Hodge 投影平方具有正下界的近饱和序列，若轨形极限的每个**完整填充**内都有坐标尺度下界 $`\rho_j`$，且
 
 ```math
-\kappa_jV_j<c_0\rho_j^4,
+\kappa_jV_j\lt c_0\rho_j^4,
 ```
 
 便可排除填充中的谐和零点。在极限奇点为 $`A_1`$ 且填充 $`b_2=1`$，或填充为有理同调球的指定范畴，接触填充分类和相对标记给出 Milnor 纤维对应。再满足全局射影 $`\mathbb Q`$-Gorenstein 平滑条件时，原光滑流形取得负 Kähler–Einstein 度量。局部填充对应与全局复平滑是此证明中两个独立输入。

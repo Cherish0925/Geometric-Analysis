@@ -83,7 +83,7 @@ D_\beta=(1+\beta^{-1})\int s^2+6(\beta+1)\int|W^+|^2-72\pi^2p,
 \sigma=\Phi\wedge t(v)\in\Gamma(L^5).
 ```
 
-这里 $`S^-`$ 是负旋量丛，$`t(v)`$ 是原稿定义的一阶三次旋量表达式。在固定 Euler 密度 $`\chi/A\le B<\infty`$ 下，$`|\sigma|`$ 趋于正常数，且 $`\int|\nabla\sigma|^2/V`$ 有界。线丛引理给 $`c_1(L^5)^2[M]/V\to0`$，同一实际曲率恒等式则给极限 $`25/(6\pi^2)`$。由此得到有限密度命题
+这里 $`S^-`$ 是负旋量丛，$`t(v)`$ 是原稿定义的一阶三次旋量表达式。在固定 Euler 密度 $`\chi/A\le B\lt \infty`$ 下，$`|\sigma|`$ 趋于正常数，且 $`\int|\nabla\sigma|^2/V`$ 有界。线丛引理给 $`c_1(L^5)^2[M]/V\to0`$，同一实际曲率恒等式则给极限 $`25/(6\pi^2)`$。由此得到有限密度命题
 
 ```math
 \kappa_\beta:=\mathop{\rlap{-}\int}\nolimits|\mathop{\mathrm{Ric}}\nolimits+g|^2+D_\beta/V
@@ -92,7 +92,7 @@ D_\beta=(1+\beta^{-1})\int s^2+6(\beta+1)\int|W^+|^2-72\pi^2p,
 
 这里仍要求同一 Spin$`^c`$ 结构在整个共形类上的单极子解存在性，以及 $`p\ge A>0`$、$`a^2\ge T_+`$；常数依赖 $`B`$。另一证明以 $`L^5`$ 上的弱 Cauchy–Riemann 型方程和正势算子完成矛盾。
 
-若 $`Q=A-T_+\ge0`$ 且 $`\chi\le CA+Q`$，则按 $`Q/A\ge1/3`$ 和 $`Q/A<1/3`$ 分别使用临界间隙与有限密度端点定理，得到依赖 $`C`$ 的统一端点常数。双取向应用则使用有限密度定理在 $`B=2`$ 时的特例，结合实际类间的交叉配对，推出曲面丛间隙及 Kodaira 斜率上界。这些应用仅使用固定密度的端点估计，不依赖一般无密度端点问题的解答。
+若 $`Q=A-T_+\ge0`$ 且 $`\chi\le CA+Q`$，则按 $`Q/A\ge1/3`$ 和 $`Q/A\lt 1/3`$ 分别使用临界间隙与有限密度端点定理，得到依赖 $`C`$ 的统一端点常数。双取向应用则使用有限密度定理在 $`B=2`$ 时的特例，结合实际类间的交叉配对，推出曲面丛间隙及 Kodaira 斜率上界。这些应用仅使用固定密度的端点估计，不依赖一般无密度端点问题的解答。
 
 原稿：[有限 Euler 密度端点定理](../archive/originals/2026-09-29/O10_All_Finite_Density.md) §§2–5；[第五张量幂线丛的正势证明](../archive/originals/2026-09-29/O10_Finite_Density_Fifth_Line.md)；[统一端点估计与剩余有限覆盖构造](../archive/originals/2026-10-07/Line1_Uniform_Endpoint_and_Residual_Tower_Recovery.md) §2；[双取向间隙与 Kodaira 斜率](../archive/originals/2026-10-07/Line1_Two_Orientation_Global_Gap.md) §§1–7。
 
@@ -197,7 +197,7 @@ D_W(V)=\lim D_W(g_j)+m_+,\qquad
 
 ### 2.7 变振幅 Weyl 模型的带源恒等式
 
-设 $`\omega\in\Omega^+(M)`$ 光滑、$`|\omega|^2=2`$，且 $`0<\tau_0\le |t|\le T_0`$。定义
+设 $`\omega\in\Omega^+(M)`$ 光滑、$`|\omega|^2=2`$，且 $`0\lt \tau_0\le |t|\le T_0`$。定义
 
 ```math
 \mathsf A=t\left(\frac23I-\omega\otimes\omega\right),\qquad
@@ -270,8 +270,8 @@ H_2\le C_{T_0}(1+B_\phi+d_0),
 在精确方程 $`\delta W^+=0`$ 下，上述二阶导数界可以由另一条恒等式替代。设最低特征值处处单重，
 
 ```math
-\lambda_1<\lambda_2\le\lambda_3,\qquad
-t=-\frac34\lambda_1>0,\quad b=\lambda_3-\lambda_2,\quad z=\frac b{4t}<1.
+\lambda_1\lt \lambda_2\le\lambda_3,\qquad
+t=-\frac34\lambda_1>0,\quad b=\lambda_3-\lambda_2,\quad z=\frac b{4t}\lt 1.
 ```
 
 必要时在最低特征线的取向双覆盖上选择 $`|\omega|^2=2`$ 的特征形式；下述能量密度及归一化积分均下降到 $`M`$。取 $`u=t^{1/3}`$，并以上一节的定义令 $`v=\log u`$。则
@@ -292,7 +292,7 @@ k=\frac{1-\rho}{2+\rho}=\frac{1-z}{1+z}.
 将带权 Weyl–Weitzenböck 方程与 $`\Omega\otimes\Omega`$ 配对，其中 $`\Omega=u^2\omega`$，再用闭流形上的
 $`\int\langle\Omega,\Delta_H\Omega\rangle=2\int|d\Omega|^2`$，便得上述平衡。最低特征线始终光滑，公式只依赖 $`b^2`$，所以可穿过 $`\lambda_2=\lambda_3`$ 的重根集。
 
-设 $`t\ge m>0`$、$`z\le\theta<1`$，并记 $`u_0=2^{-1/3}`$。在自对偶形式的 Weitzenböck 公式中以 $`(u-u_0)\Omega/u`$ 测试，标量项产生非负恢复势
+设 $`t\ge m>0`$、$`z\le\theta\lt 1`$，并记 $`u_0=2^{-1/3}`$。在自对偶形式的 Weitzenböck 公式中以 $`(u-u_0)\Omega/u`$ 测试，标量项产生非负恢复势
 
 ```math
 V(u)=u(u^3-u_0^3)(u-u_0).
@@ -437,7 +437,7 @@ C^+_{g_{\epsilon,k}}=\epsilon k\cos(k\theta)\,\mathcal T
 
 ```math
 \|\mathop{\mathrm{Ric}}\nolimits_{g_j}+g_j\|_\infty\to0,\qquad
-\sup_j\|\mathop{\mathrm{Rm}}\nolimits_{g_j}\|_\infty<\infty,\qquad
+\sup_j\|\mathop{\mathrm{Rm}}\nolimits_{g_j}\|_\infty\lt \infty,\qquad
 \int|C^+_{g_j}|^2\to\infty.
 ```
 
@@ -495,7 +495,7 @@ $`\mathop{\mathrm{tr}}\nolimitsQ(\phi)=4q_{\rm std}(\phi)`$。普通方程 $`F_B
 ```
 
 若 $`M`$ 闭、Einstein、$`\chi>0`$、$`\tau=0`$，则 $`F_0=0`$，块曲率的非对角部分进一步给 $`\nabla_{A,C}\phi=0`$。秩零强迫平坦，矛盾；秩一的平行线分裂给
-$`c_1(W^+)^2-4c_2(W^+)=0`$，与 $`2\chi>0`$ 矛盾；秩二的平行极分解使 $`\phi=fI`$，方程遂给 $`W^+=W^-=0`$ 和 $`s/12=-2f^2<0`$。反向取常负截面曲率度量、$`A=\nabla_C^+`$、$`\phi=\sqrt{-k/2}\,I`$ 即得解。
+$`c_1(W^+)^2-4c_2(W^+)=0`$，与 $`2\chi>0`$ 矛盾；秩二的平行极分解使 $`\phi=fI`$，方程遂给 $`W^+=W^-=0`$ 和 $`s/12=-2f^2\lt 0`$。反向取常负截面曲率度量、$`A=\nabla_C^+`$、$`\phi=\sqrt{-k/2}\,I`$ 即得解。
 
 因此，该明确辅助系统在上述零签名范畴可解，当且仅当度量具有常负截面曲率。这个结论限定于所写出的丛、二次映射和分次方程；普通 Seiberg–Witten 方程的可解性因而不直接蕴含这一非阿贝尔系统的可解性。
 

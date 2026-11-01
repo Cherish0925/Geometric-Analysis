@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Build the source index and file inventory without rereading file contents."""
+"""Build the source index and a deterministic inventory of repository bytes."""
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 from collections import defaultdict
@@ -21,7 +22,7 @@ def read_records(path: Path) -> list[dict]:
 def repository_files(root: Path):
     """Yield tracked-content candidates, including symlinks but never .git."""
     for directory, dirs, names in os.walk(root, followlinks=False):
-        dirs[:] = sorted(d for d in dirs if d not in {".git", "__pycache__"})
+        dirs[:] = sorted(d for d in dirs if d != ".git")
         for name in list(dirs):
             path = Path(directory) / name
             if path.is_symlink():
@@ -37,12 +38,28 @@ def repository_files(root: Path):
 
 def file_record(path: Path, root: Path) -> dict:
     if path.is_symlink():
-        size = len(os.fsencode(os.readlink(path)))
+        data = os.fsencode(os.readlink(path))
+        size = len(data)
+        sha256 = hashlib.sha256(data).hexdigest()
+        blob = hashlib.sha1(f"blob {size}\0".encode() + data).hexdigest()
         mode = "120000"
     else:
         size = path.stat().st_size
+        sha = hashlib.sha256()
+        git = hashlib.sha1(f"blob {size}\0".encode())
+        with path.open("rb") as stream:
+            for data in iter(lambda: stream.read(1024 * 1024), b""):
+                sha.update(data)
+                git.update(data)
+        sha256, blob = sha.hexdigest(), git.hexdigest()
         mode = "100755" if path.stat().st_mode & 0o111 else "100644"
-    return {"path": path.relative_to(root).as_posix(), "size": size, "mode": mode}
+    return {
+        "path": path.relative_to(root).as_posix(),
+        "size": size,
+        "sha256": sha256,
+        "git_blob_sha": blob,
+        "mode": mode,
+    }
 
 
 def label(text: str) -> str:
@@ -68,9 +85,6 @@ def write_source_index(root: Path, sources: list[dict], packages: list[dict]) ->
         "- [Source metadata](sources.json), [package metadata](packages.json), "
         "[archive member records](archive_members.json), and [complete file inventory](files.json).",
         "",
-        "Server research is indexed separately in [server_sources.json](server_sources.json), "
-        "with mathematical navigation in [the server collection](../research/server/README.md).",
-        "",
         "## Original sources",
         "",
     ]
@@ -88,15 +102,13 @@ def write_source_index(root: Path, sources: list[dict], packages: list[dict]) ->
     for item in sorted(packages, key=lambda x: (x["expanded_path"], x["archive"])):
         number = "shared" if item.get("duplicate") else str(item.get("files", ""))
         lines.append(f"| {link(item['archive'])} | {number} | {link(item['expanded_path'])} |")
-    lines += ["", "## Maintaining the catalog", "",
-              "`python3 tools/build_catalog.py` refreshes this index and the path/size inventory. "
-              "Git records content versions; normal catalog maintenance does not hash the source collection.", "",
-              "`python3 tools/check_archive.py --full` checks source locations, sizes, and the inventory. "
-              "The original archive digests remain in their historical metadata and can be checked "
-              "explicitly with `--content` when byte verification is needed.", "",
-              "`python3 tools/server_sources.py materialize sessions/S1003A01 /tmp/S1003A01` "
-              "reconstructs a scientific source tree from the deduplicated server map. "
-              "Use an empty output directory. Other collection names are listed in that map.", ""]
+    lines += ["", "## Integrity checks", "", "Run from the repository root:", "", "```sh",
+              "python3 tools/check_archive.py", "python3 tools/build_catalog.py",
+              "python3 tools/check_archive.py --full", "```", "",
+              "`build_catalog.py` regenerates this index before hashing repository files. "
+              "`files.json` excludes itself and Git metadata. It records SHA-256 hashes, "
+              "Git blob object IDs, file sizes, and Git modes; it can therefore be compared "
+              "with a remote Git tree without changing the research sources.", ""]
     (root / "catalog" / "README.md").write_text("\n".join(lines), encoding="utf-8")
 
 

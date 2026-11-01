@@ -308,18 +308,3 @@ $$
 沿 Green 势方法，需由原始 Einstein–几乎 Kähler 系统进一步控制零点处的整体曲率配对；沿调和乘积方法，需限制负 Einstein 度量所实现的秩一核；构造方向则需得到闭的精确 Einstein 相容结构。这些是同一闭问题的不同表述与研究入口。
 
 最新的公式衔接与来源对应见[10 月 15 日合并稿](../research/packages/Goldberg_Two_Conversations_Merged_20261015--5a0ab1f2/Goldberg_Two_Conversations_Merged_20261015.tex)。Armstrong 的零点存在性、Derdziński 的 Weyl 方程、Sekigawa 恒等式、第三 Gray 定理、di Scala–Nagy 唯一性及 Watson 的浸没刚性在各原稿中保留为经典输入。
-
-## 服务器补充：作用量、非塌缩极限与节点比较
-
-[A01 Step83](../research/server/sessions/S1003A01/workspace/notes/step83_normalized_action_weyl_deficit_and_AKE_degenerations.md)将闭AKE恒等式写为
-\[
-D=\int\left(\frac{s^2}{24}-|W^+|^2\right)
-=\frac{\widehat S^2}{16}-2\pi^2(2\chi+3\tau)
-=\int\left(|W_3^+|^2+\frac{3}{32}|\nabla\Omega|^4\right),
-\qquad\widehat S=V^{-1/2}\int s.
-\]
-Einstein局部模空间的连通分支上，归一化作用量保持不变；含负KE度量的分支因此没有同取向严格AKE度量。在该稿(N)的归一化非塌缩轨形收敛条件下，同一恒等式还排除自对偶Weyl和上述扭率能量的集中，反手性曲率仍可集中。
-
-[Step85](../research/server/sessions/S1003A01/workspace/notes/step85_coupled_center_theorem_neck_trace_and_endpoint_reduction.md)在负KE背景的二阶形式系统中得到中心障碍 $|\beta|^2-\fint|\beta|^2$；移动领口下的形式转移有其明确假设。[Step87](../research/server/sessions/S1003A01/workspace/notes/step87_csck_calibration_and_nodal_endpoint_rigidity.md)通过CSCK比较族计算节点法向障碍，但加权调制、参数匹配与共同约化仍是待接通条件。上述结果限制了特定退化方式，没有涵盖一般塌缩或直径发散的闭候选。
-
-显式Fino构造与这些条件性刚性结果的完整来源、计算和后续修正见[A01导览](../research/server/sessions/S1003A01/README.md)；与公开文献的具体比较见[10月31日记录](../research/server/codex/project/continuation/20261031_Kodaira_Fino_Literature_and_Proof_Status.md)。

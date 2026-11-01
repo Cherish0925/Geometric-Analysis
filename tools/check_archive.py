@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check source locations and inventory; optionally verify historical archive digests."""
+"""Verify archived source bytes and, optionally, the complete repository catalog."""
 
 from __future__ import annotations
 
@@ -36,23 +36,22 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--full", action="store_true", help="Also check every file against catalog/files.json.")
-    parser.add_argument("--content", action="store_true", help="Also read bytes and check historical digests.")
     args = parser.parse_args()
     root = args.root.resolve()
     errors: list[str] = []
     checked: dict[str, tuple[int, str]] = {}
 
-    def verify(relative: str, expected_size: int | None, expected_sha: str | None, origin: str) -> None:
+    def verify(relative: str, expected_size: int | None, expected_sha: str, origin: str) -> None:
         try:
             path = safe_path(root, relative)
             if path.is_symlink() or not path.is_file():
                 raise ValueError("missing regular file")
             if relative not in checked:
-                checked[relative] = (path.stat().st_size, sha256(path) if args.content and expected_sha else "")
+                checked[relative] = (path.stat().st_size, sha256(path))
             size, digest = checked[relative]
             if expected_size is not None and size != expected_size:
                 errors.append(f"{origin}: {relative}: bytes {size}, expected {expected_size}")
-            if args.content and expected_sha and digest != expected_sha:
+            if digest != expected_sha:
                 errors.append(f"{origin}: {relative}: SHA256 mismatch")
         except (OSError, ValueError) as error:
             errors.append(f"{origin}: {relative}: {error}")
@@ -75,11 +74,6 @@ def main() -> int:
                 if count != item["files"]:
                     errors.append(f"packages.json: {item['expanded_path']}: {count} files, expected {item['files']}")
 
-        server_map = root / "catalog/server_sources.json"
-        if server_map.exists():
-            for item in read_records(server_map):
-                verify(item["repository_path"], item["bytes"], None, "server_sources.json")
-
         if args.full:
             inventory = read_records(root / "catalog/files.json")
             indexed = {item["path"]: item for item in inventory}
@@ -92,7 +86,7 @@ def main() -> int:
                 errors.append(f"files.json: unlisted {relative}")
             for relative in sorted(indexed.keys() & actual.keys()):
                 observed = file_record(actual[relative], root)
-                for field in ("size", "mode"):
+                for field in ("size", "sha256", "git_blob_sha", "mode"):
                     if observed[field] != indexed[relative][field]:
                         errors.append(f"files.json: {relative}: {field} mismatch")
     except (OSError, ValueError, KeyError, TypeError) as error:
@@ -104,7 +98,7 @@ def main() -> int:
         print(f"FAILED: {len(errors)} issue(s).")
         return 1
     print(f"OK: {len(sources):,} source records, {len(members):,} member records, {len(packages):,} package records.")
-    print(f"Checked {len(checked):,} distinct source locations.")
+    print(f"Verified {len(checked):,} distinct archived files.")
     if args.full:
         print(f"Verified complete catalog: {len(inventory):,} files.")
     return 0

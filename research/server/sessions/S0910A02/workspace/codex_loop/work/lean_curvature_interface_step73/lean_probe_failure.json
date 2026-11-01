@@ -1,6 +1,0 @@
-{
-  "command": "ELAN_HOME=/data/qiushi/tools/lean/elan Skills/qiushi-lean-proof/scripts/lean_probe",
-  "diagnosis": "The probe helper hard-codes USER_ROOT/.cache/qiushi-lean-proof; in this runner /workspace/.cache is read-only. This is a probe-helper filesystem failure, not a Lean/Mathlib failure. lean_check and the strict dependency audit both compiled successfully in the configured project.",
-  "observed_error": "[Errno 30] Read-only file system: '/workspace/.cache/qiushi-lean-proof/<temporary-directory>'",
-  "status": "tooling_error"
-}

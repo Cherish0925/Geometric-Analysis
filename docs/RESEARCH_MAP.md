@@ -47,21 +47,6 @@ $Q$ 是原平衡族的手术参数，$Q=Ah$。在已获得严格次四构造的�
 
 点态逼近分支由固定轨形解消和固定曲面丛构造出发，通过周期、慢模态及修正方程研究精确 Einstein 实现。它与积分间隙之间的联系由各自的归一化、体积与几何控制条件决定，见[点态构造与精确实现](CONSTRUCTIONS_AND_REALIZATION.md)。
 
-## 服务器后续结果如何接入
-
-```mermaid
-flowchart LR
-  R["严格较低的光滑恢复费用"] --> V["全度量最优性：允许背景与手术耦合"]
-  O["配对 A1 轨形的精确极值与非取得"] --> V
-  F["实际场、标记与手性预算转移"] --> W["Wahl 与 Einstein 域的剩余几何"]
-  C["帽区域费用与塌缩端"] --> W
-  W --> G["Q1 的存在性及 Q2/Q3 的全局极值"]
-  J["许可 SW jets 的形式补全"] --> H["需要全局归一化和尺度信息"]
-  H --> G
-```
-
-指定轨形上的精确值已经得到；相应光滑流形的全度量最优值仍需匹配下界。Wahl 场极限定理保留实际供给、可去奇点与指标条件，形式补全则说明高阶零点本身不构成有限 jet 可解性阻碍。连续来源见 [A01](../research/server/sessions/S1003A01/README.md)、[A02](../research/server/sessions/S1003A02/README.md)及[早期与 Codex 工程](../research/server/README.md)。
-
 ## 几乎 Kähler–Einstein 几何
 
 设 $\operatorname{Ric}=-ag$、$a>0$，并有相容闭二形式 $\Omega$、$|\Omega|^2=2$。研究分为完备非紧存在性和闭流形刚性。

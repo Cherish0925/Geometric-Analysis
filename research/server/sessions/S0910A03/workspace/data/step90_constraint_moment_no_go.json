@@ -1,7 +1,0 @@
-{
-  "constraint_ode": "C_prime = -2(u+H) C - w b",
-  "integrating_factor": "C(L) = -exp(-2 I(L)) integral_0^L exp(2 I(s)) w(s)b(s) ds",
-  "monotone_discharge": "w>=0 and b<=0 with nontrivial wb implies C(L)>0",
-  "two_moment_implication": "C(L)=0 with w(L)=0 requires either sign-changing wb, an additional horizontal source, or singular/degenerate behavior.",
-  "small_control_warning": "Sign-changing b can in principle cancel the moment, but a pilot two-mode solve required max|b|/delta about 26 for Q0=10, delta=.03, L=1; this is one poor basis, not a lower bound."
-}

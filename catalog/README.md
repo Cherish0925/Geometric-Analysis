@@ -6,8 +6,6 @@ This index links every source entry and extracted package recorded in the archiv
 - Package records: **71**.
 - [Source metadata](sources.json), [package metadata](packages.json), [archive member records](archive_members.json), and [complete file inventory](files.json).
 
-Server research is indexed separately in [server_sources.json](server_sources.json), with mathematical navigation in [the server collection](../research/server/README.md).
-
 ## Original sources
 
 ### 2026-09-03
@@ -544,10 +542,14 @@ Identical archives share an extracted directory. The original archive paths and 
 | [archive/originals/2026-09-26/八份正文_下载后解压.zip](../archive/originals/2026-09-26/%E5%85%AB%E4%BB%BD%E6%AD%A3%E6%96%87_%E4%B8%8B%E8%BD%BD%E5%90%8E%E8%A7%A3%E5%8E%8B.zip) | 8 | [research/packages/八份正文_下载后解压--2e3a9035](../research/packages/%E5%85%AB%E4%BB%BD%E6%AD%A3%E6%96%87_%E4%B8%8B%E8%BD%BD%E5%90%8E%E8%A7%A3%E5%8E%8B--2e3a9035) |
 | [archive/originals/2026-10-01/第一科学主线_物理推导_20261001.zip](../archive/originals/2026-10-01/%E7%AC%AC%E4%B8%80%E7%A7%91%E5%AD%A6%E4%B8%BB%E7%BA%BF_%E7%89%A9%E7%90%86%E6%8E%A8%E5%AF%BC_20261001.zip) | 3 | [research/packages/第一科学主线_物理推导_20261001--dfdb8300](../research/packages/%E7%AC%AC%E4%B8%80%E7%A7%91%E5%AD%A6%E4%B8%BB%E7%BA%BF_%E7%89%A9%E7%90%86%E6%8E%A8%E5%AF%BC_20261001--dfdb8300) |
 
-## Maintaining the catalog
+## Integrity checks
 
-`python3 tools/build_catalog.py` refreshes this index and the path/size inventory. Git records content versions; normal catalog maintenance does not hash the source collection.
+Run from the repository root:
 
-`python3 tools/check_archive.py --full` checks source locations, sizes, and the inventory. The original archive digests remain in their historical metadata and can be checked explicitly with `--content` when byte verification is needed.
+```sh
+python3 tools/check_archive.py
+python3 tools/build_catalog.py
+python3 tools/check_archive.py --full
+```
 
-`python3 tools/server_sources.py materialize sessions/S1003A01 /tmp/S1003A01` reconstructs a scientific source tree from the deduplicated server map. Use an empty output directory. Other collection names are listed in that map.
+`build_catalog.py` regenerates this index before hashing repository files. `files.json` excludes itself and Git metadata. It records SHA-256 hashes, Git blob object IDs, file sizes, and Git modes; it can therefore be compared with a remote Git tree without changing the research sources.

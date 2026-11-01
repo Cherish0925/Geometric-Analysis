@@ -128,6 +128,181 @@ $$
 
 Fino 的 *Almost Kähler 4-dimensional Lie groups with $J$-invariant Ricci tensor*（2005）在 Corollary 2.1 之后询问：实四维 Lie 群上是否存在非不变、非 Ricci 平坦的严格几乎 Kähler–Einstein 度量。将上述结构拉回 $(\mathbb R^4,+)$，即给出这一存在性问句的肯定例子，并具有完备性。这里不主张历史上的首次解答。该例非紧且体积无限；闭负 Goldberg 问题仍涉及紧致性带来的整体条件。
 
+## 对称局部实现与封闭限制
+
+### 正则 nut 点的刚性
+
+设一个光滑 Einstein–几乎 Kähler 对 $(g,\Omega)$ 在一个孤立固定点附近同时具有完整的 $\mathrm{SU}(2)$ 不变性，正则轨道为三维球面，固定点为光滑 nut。取 $\operatorname{Ric}=-3g$，并取在 nut 处允许非零不变自对偶二形式的手性，则该局部对只能是复双曲 Kähler 对。
+
+首先，无须预先假定度量对角。沿法向测地线写
+
+$$
+g=dt^2+H_{ij}(t)\sigma_i\sigma_j,\qquad
+ d\sigma_i=2\sigma_j\wedge\sigma_k.
+$$
+
+在某一正则轨道上对角化 $H=\operatorname{diag}(a_i^2)$，混合 Einstein 方程为
+
+$$
+(n_k-n_j)K_{jk}=0,\qquad
+K_{jk}=\frac{H'_{jk}}{2a_ja_k},\qquad
+n_i=-\frac{2a_i}{a_ja_k}.
+$$
+
+故 $[H,H']=0$。用一个常数 $\mathrm{SO}(3)$ 变换同时对角化 $H,H'$ 后，空间 Einstein 方程的唯一性将这个固定标架保持为对角标架；重特征值及其交叉不增加新的自由度。
+
+令 $u=t^2$、$a_i=tf_i(u)$，并定义
+
+$$
+H_i=1+2u\frac{f_i'}{f_i},\qquad
+Z_i=\frac{f_i}{f_jf_k}.
+$$
+
+正则 nut 的 Einstein 方程与约束为
+
+$$
+2uH_i'-H_i+H_i\sum_jH_j
+-2\bigl[Z_i^2-(Z_j-Z_k)^2\bigr]-3u=0,
+$$
+$$
+\sum_{i<j}H_iH_j+\sum_iZ_i^2-2\sum_{i<j}Z_iZ_j-3u=0.
+$$
+
+初项为 $f_i=1+(1/6+d_i)u+\cdots$、$\sum_i d_i=0$。写 $\Omega=\sum_i x_i\omega_i$、$X_i=x_i^2$，闭性及常长度条件恰为
+
+$$
+uX_i'=(2Z_i-H_j-H_k)X_i,\qquad
+\sum_iX_i=1,\qquad R_i:=X_i(0)\ge0.
+$$
+
+由上式递推所得的前五个正次长度系数为有理多项式。其共同零集在 $\sum R_i=1$、$\sum d_i=0$ 下为三条直线，即
+
+$$
+(d_1,d_2,d_3)=(1/6,-1/12,-1/12),\qquad
+(R_1,R_2,R_3)=(1,r,-r)
+$$
+
+及其置换。这里允许复系数的代数消元尚保留参数 $r$；实际条件 $R_i\ge0$ 将其压到 $r=0$。[精确代数程序](../research/computations/bianchi_ix_nut.py)由上述 ODE 生成前五阶约束，并检验它们的根理想恰为这三条直线的交理想。程序只需 SymPy 与 Singular；全阶结论还使用下面的唯一性论证。
+
+在每阶 $u^n$、$n\ge2$，新的三个度量系数在 Einstein 递推中的特征值分别为
+
+$$
+4(n+2)(n-1)\quad\text{（无迹部分）},\qquad
+2(n+2)(2n+1)\quad\text{（迹部分）}.
+$$
+
+它们均非零，闭形式的传输也唯一；因此有限代数约束已经确定全部 Taylor 系数。实际解为
+
+$$
+a_1=\frac{\sinh(\sqrt2t)}{\sqrt2},\qquad
+a_2=a_3=\sqrt2\sinh(t/\sqrt2),\qquad
+\Omega=\pm\omega_1.
+$$
+
+Einstein 度量及其调和形式的解析正则性将形式唯一性提升为光滑局部唯一性。这排除了完整 $\mathrm{SU}(2)$ 对称的严格非可积 nut；不变度量上的非不变形式、较小对称群及一般局部解仍是不同的问题。
+
+### 双曲 bolt 的封闭限制
+
+上述 Fino 模型可以对双曲底空间取紧商，但将两个双曲 bolt 用三维轨道领口连接，不能得到闭 Einstein 度量。更一般地，若光滑闭四流形由曲面 $\Sigma_i$ 上的二维圆盘丛及乘积领口组成，则
+
+$$
+\chi(M)=\sum_i\chi(\Sigma_i).
+$$
+
+所有 bolt 的亏格均大于一时，右端为负，与 Einstein 的 Gauss–Bonnet 公式矛盾。没有 bolt 而轨道空间为圆周时，$\chi=0$，同一公式迫使度量平坦。这仅处理所述光滑圆盘丛拼接；不同外部、轨形端点及不能按此分解的闭几何需要各自的匹配分析。
+
+## 低成本单元的辛形式与共形归一化
+
+[曲率变分中的严格节省构造](CURVATURE_VARIATION.md)还具有一个结构性质：严格低于标准吹起费用的度量，可以同时承载与外部形式精确匹配的无零自对偶闭二形式。本节记 $P(g)=\int|\operatorname{Ric}^{\circ}|^2$、$S(g)=\int s^2$。
+
+以 $\operatorname{Ric}_{\mathrm{CH}}=-6g$ 归一化，固定一个精确复双曲领口的光滑 $\mathcal O(-1)$ 单元 $g_*$，使
+
+$$
+J_6(g_*):=\int|\operatorname{Ric}_{g_*}+6g_*|^2<8\pi^2.
+$$
+
+其从外领口向内传输的自对偶闭形式在 bolt 上为零。取单调截断 $\chi$，在 bolt 邻域等于一，在外领口等于零，并在塌缩方向与纤维方向的平面内旋转轨道度量：
+
+$$
+H_\epsilon=R(\epsilon\chi)H_*R(\epsilon\chi)^T.
+$$
+
+bolt 附近的常旋转是固定右平移的拉回，外部旋转为恒等，故度量的光滑性、拓扑标记和外领口不变。由未改变的外部 Kähler 形式积分闭自对偶方程，所得形式 $\Omega_\epsilon$ 的异常周期 $p=\int_E\Omega_\epsilon$ 满足
+
+$$
+p'(0)=-\pi\int\chi'(r)\Phi(r)\,dr>0,
+\qquad \Phi=\psi_+(0)\frac{\phi_f}{\psi_+}>0.
+$$
+
+这里 $\psi_+$ 为正的齐次传输解，$\phi_f$ 为原零周期解的非零纤维系数；旋转方向取上述符号。闭自对偶一阶系统的唯一性排除正则轨道上的共同零点，非零 $p$ 则排除 bolt 上的零点。因此充分小的 $\epsilon\ne0$ 给出辛形式，而平滑二阶连续性保留 $J_6(g_\epsilon)<8\pi^2$。
+
+在紧复双曲商的互不相交精确球领口内插入这些单元，得到纯吹起上的整体共形几乎 Kähler 竞争度量。一般仅接近复双曲的背景还需要同时延拓度量与闭形式；已有单独的度量匹配不能替代这一要求。
+
+### 小异常周期形成的标量层
+
+记 $p$ 为小异常周期，$r$ 为到 bolt 的法向距离，bolt 面积为 $\pi b^2$。设
+
+$$
+f_p=|\Omega_p|_{g_p}/\sqrt2,\qquad
+\widehat g_p=f_pg_p=v_p^2g_p,\qquad v_p=\sqrt{f_p}.
+$$
+
+光滑 bolt 展开中，周期分量与原形式的一阶法向分量正交，因而
+
+$$
+f_p^2=a_0^2p^2+\kappa^2r^2+O(p^2r^2+r^4),\qquad
+a_0=(\pi b^2)^{-1},\quad\kappa>0.
+$$
+
+故归一化层的尺度为 $r\asymp|p|$。在这一层，若 $\mathscr D=\operatorname{div}\nabla=-\Delta$，则
+
+$$
+\frac{\mathscr Dv_p}{v_p}
+=\frac{\kappa^2(4a_0^2p^2+\kappa^2r^2)}
+{4(a_0^2p^2+\kappa^2r^2)^2}+O(1),
+$$
+$$
+S(\widehat g_p)
+=\int\left(s_{g_p}-6\frac{\mathscr Dv_p}{v_p}\right)^2dV_{g_p}
+\sim\frac{C_E}{p^2},\qquad
+C_E=36(2\pi^2b^2)\frac{7\kappa^2}{32a_0^2}>0.
+$$
+
+常数来自 $dV_{g_p}=2\pi^2b^2r\,dr+O(r^3)dr$ 及
+
+$$
+\int_0^\infty
+\left[\frac{\kappa^2(4a_0^2p^2+\kappa^2r^2)}
+{4(a_0^2p^2+\kappa^2r^2)^2}\right]^2r\,dr
+=\frac{7\kappa^2}{32a_0^2p^2}.
+$$
+
+总体积具有正极限，标量积分保持有界，因此标量方差具有同一首项。在闭插入度量上，共形 Chern–Weil 恒等式精确给出
+
+$$
+P(\widehat g_p)-P(g_p)
+=\frac{S(\widehat g_p)-S(g_p)}{12}
+\sim\frac{C_E}{12p^2}.
+$$
+
+原度量 $g_p$ 光滑收敛并保持严格节省；发散发生在将相容形式归一到常长度的代表上。因此，共形 Kähler 类的费用下界不能推广为共形几乎 Kähler 类的同一下界。
+
+整体周期也随之变化。在外部 $\operatorname{Ric}=-g$ 归一化下，令 $A=K_X^2>0$，用拉回的主体典范类 $K_X$ 写
+
+$$
+[\psi]=\pm2\pi K_X-\sum_i s_i\operatorname{PD}(E_i),\qquad
+[\psi]^2=4\pi^2A-\sum_i s_i^2.
+$$
+
+与主体类的归一化配对为
+
+$$
+\frac{|2\pi K_X\cdot[\psi]|}{\sqrt{4\pi^2A[\psi]^2}}
+=\left(1-\frac{\sum_i s_i^2}{4\pi^2A}\right)^{-1/2}.
+$$
+
+这是二次周期效应；若改与吹起后相容结构的典范类配对，则还出现异常分量的一次项。
+
 ## 扭率零点及零曲线
 
 局部选取与 $\Omega$ 正交、长度为 $\sqrt2$ 的二形式 $\phi,J\phi$，写成
@@ -176,6 +351,14 @@ $$
 
 这一计数与正局部指数相容。
 
+在 $Z$ 上，$\langle W^+n,n\rangle=s/6$，从而
+
+$$
+\lambda_{\min}(W^+)\le s/6,\qquad |W^+|^2\ge s^2/24.
+$$
+
+因此闭负 Einstein 度量若处处满足 $\lambda_{\min}(W^+)>s/6$，就不能携带该取向的相容几乎 Kähler 形式。特别地，$W^+=0$ 的负 Einstein 度量被排除。该结论将非零扭率丛的总陈数限制在上述曲率区域；它本身没有给出该区域的体积或能量下界。完备 Fino 模型在每个有限点满足严格的相反曲率界，并仅在无穷远趋近 Kähler 值，说明这里确实使用了闭性。
+
 [零曲线分析](../archive/originals/2026-10-15/Goldberg_Torsion_Zeros_and_Weyl_Equation_20261015.tex)进一步证明：当 $s\ne0$ 时，不存在紧致无边界嵌入曲面 $C\subset Z$ 满足
 
 $$
@@ -205,6 +388,48 @@ $$
 
 其中 $D$ 为诱导的典范 Hermitian 联络，$r$ 是横向曲率分量的法向导数。方程保留这一非齐次项，容许秩下降及负指数。
 
+### 高阶零点的首项
+
+若扭率一形式 $\vartheta$ 在一点的第一非零 Taylor 项为次数 $m\ge2$ 的齐次多项式，则在适配的复正交标架中必有
+
+$$
+\boxed{f_m(z)=\kappa(\bar z_2)^m e_1.}
+\tag{Z}
+$$
+
+这一必要条件与标量曲率的符号无关。它限制首项的方向和类型，并不保证该多项式能延拓为实际解。
+
+证明从 Einstein–几乎 Kähler 方程的主部开始。半扭子方程先给出
+
+$$
+f_m=z\,h(\bar z)+g(\bar z),\qquad
+\deg h=m-1,\quad\deg g=m.
+$$
+
+令 $w=\bar z$、$C=z\otimes D_wh+D_wg$，并将 $C$ 分为转置对称部分 $C_s$ 和转置反对称部分 $C_a$。对 $q$ 应用调和形式方程与完整 Weyl 方程，在次数 $2m-2$ 比较系数，得到
+
+$$
+\|C_a\|^2-\|C_s\|^2-8|h|^2
+-6\operatorname{Re}\sum_j\overline{f_{m,j}}\,\partial_{w_j}h=0.
+$$
+
+最后一项来自 $\nabla W^+$ 与 $\nabla\Omega$ 的乘积，不能删去。Euler 齐次公式将其改写为
+
+$$
+\operatorname{tr}(\overline{Dg}Dg)+(m+1)(m+3)|h|^2
++2(m+3)\operatorname{Re}\sum_j\overline{g_j}\,\partial_{w_j}h=0.
+$$
+
+前两项与最后一对共轭项具有不同复双次数，故分别为零。若 $g_1,g_2$ 作为多项式线性独立，则 $Dh=0$；若 $g=vG$ 取值于固定复直线，则
+$\operatorname{tr}(\overline{Dg}Dg)=|\sum\bar v_i\partial_{w_i}G|^2\ge0$，同样得到 $h=0$。
+
+在矩阵空间上，Hermitian 形式
+$\mathcal H(U,V)=\operatorname{tr}(\bar U V)$ 的符号为 $(3,1)$。恒等式 $\mathcal H(Dg,Dg)=0$ 表明 $Dg$ 的各多项式系数张成全迷向子空间，故维数至多一。写 $Dg=M p(w)$，混合偏导相等迫使 $M=v\otimes\ell$ 为秩一，$p$ 为 $(\ell\cdot w)^{m-1}$ 的倍数；迷向性又给出 $\ell\cdot\bar v=0$。一次相容的酉标架变换即得式 (Z)。
+
+沿零曲线，这个首项使异常点处横向 Weyl 截面的切向一次项消失，却不决定绕数。例如 $z|z|^2$ 与 $\bar z|z|^2$ 都没有一次项，绕数分别为 $+1$ 和 $-1$。上述非齐次传输方程仍保留法向源 $r$；仅对标量恒等式继续微分，尚不能将 $r$ 写成对 $\xi,\bar\xi$ 的有界零阶作用。
+
+### 有限阶相容模型
+
 有限阶模型说明上述正指数与 Einstein 方程的低阶相容条件并不矛盾。在 Darboux 坐标中固定 $\Omega_0=dx_1\wedge dx_2+dx_3\wedge dx_4$，取对称矩阵多项式 $H=H_2+H_4+H_6$，使 $H\Omega_0+\Omega_0H=0$，并令 $g=e^H$。则 $g\Omega_0g=\Omega_0$，所以正定性和几乎 Kähler 相容性精确成立。所给有理系数满足
 
 $$
@@ -213,6 +438,77 @@ $$
 $$
 
 故 $\det D\vartheta(0)=1/4>0$。完整系数及计算见[零点与 Weyl 方程正文](../archive/originals/2026-10-15/Goldberg_Torsion_Zeros_and_Weyl_Equation_20261015.tex) §3。更高阶的浮点重构保留了非退化零点，但未给出精确的全阶形式解。已成立的结论是显示 Taylor 阶内的相容性，不能由此推出精确 Einstein 局部解或闭流形上的实现。
+
+## Darboux 表示下的线性相容结构
+
+固定平坦 $\mathbb C^2$ 的标准辛形式，以反 $J$ 不变对称张量 $h$ 表示相容度量的线性变化。令 $\mathcal P_n$ 为四个实变量的次数 $n$ 齐次多项式空间，$\Delta_0=-\sum\partial_i^2$。线性 Ricci 算子为
+
+$$
+L_nh=\frac12\left(\partial_k\partial_i h_{kj}
++\partial_k\partial_jh_{ki}+\Delta_0h_{ij}\right),\qquad
+h\in\mathcal P_{n+2}\otimes\operatorname{Sym}^2_{\mathrm{anti}\text{-}J}.
+$$
+
+除了线性收缩 Bianchi 方程，还恰好有一个标量微分相容式：
+
+$$
+\mathscr B(E)_j=\partial_iE_{ij}-\frac12\partial_j\operatorname{tr}E,
+\qquad
+\mathscr P(E)=J_{ia}J_{jb}\partial_a\partial_bE_{ij}
++\frac12\Delta_0\operatorname{tr}E.
+$$
+
+对所有 $n\ge0$，有齐次多项式空间上的正合关系
+
+$$
+\boxed{\operatorname{im}L_n
+=\ker(\mathscr B,\mathscr P),\qquad
+\dim\operatorname{coker}L_n
+=4\binom{n+2}{3}+\binom{n+1}{3}.}
+\tag{F}
+$$
+
+负次数空间及相应二项式系数取零。这一结论同时给出常系数算法：给定次数 $n$ 的源，先计算其 Bianchi 四分量与标量 $\mathscr P$；两者消失时，线性度量修正存在。
+
+**证明结构。** 反 $J$ 不变性给出 $\operatorname{tr}h=0$、$J^ThJ=-h$。代入 $L_n$ 可直接验证 $\mathscr B L_n=\mathscr P L_n=0$。为证明没有遗漏相容条件，写
+
+$$
+h=\mu_{ab}\,dz_a dz_b+\nu_{ab}\,d\bar z_a d\bar z_b,
+\qquad \mu=\bar\nu,
+\qquad v_a=\partial_{\bar z_1}\nu_{a2}-\partial_{\bar z_2}\nu_{a1}.
+$$
+
+在 $\ker L_n$ 上，$\partial_{z_b}v_a=\delta_{ab}h_0(\bar z)$，因此主扭率像为
+
+$$
+\mathsf T_n(\ker L_n)
+=\{z h_0(\bar z)+g_0(\bar z):
+\deg h_0=n,\ \deg g_0=n+1\}.
+$$
+
+这个像的实维数为 $6n+10$。反全纯对称 $\nu$ 及多项式 Poincaré 引理产生全部 $g_0$；对 $h_0=w_1^n$，显式提升为
+
+$$
+\nu_{11}=-w_1^nw_2z_1-\frac n2w_1^{n-1}w_2^2z_2,
+\qquad \nu_{12}=-w_1^nw_2z_2,
+\qquad \nu_{22}=0.
+$$
+
+$n=0$ 时第二项取零。直接代入得到 $L_nh=0$、$v=zw_1^n$；酉群作用张成全部次数 $n$ 的 $h_0$。
+
+若 $v=0$，则 $\nu=\bar\partial\bar\partial\phi$，剩余方程为 $\partial\bar\partial(\sum\partial_z\partial_{\bar z}\operatorname{Re}\phi)=0$。虚部给出 Hamiltonian 规范方向；扣除势的冗余后得到
+
+$$
+\dim\ker L_n=\binom{n+7}{3}+(n+5)^2+2n-10,
+$$
+$$
+\dim\bigl((\ker L_n\cap\ker\mathsf T_n)/
+\text{Hamiltonian 规范}\bigr)=(n+1)(n+5).
+$$
+
+特别在 $n=0$，后一个空间的五维是实际的 $W^-$ 曲率自由度，不能一并当作规范删除。另一方面，Fischer 内积将 $(\mathscr B,\mathscr P)$ 的伴随变成符号矩阵的乘法；该矩阵在任意非零实余向量上秩为五，故伴随在相应多项式次数上单射。由此两类相容条件独立且维数正好等于上述余核，得到 (F)。
+
+非线性 Einstein 方程的每阶源还依赖此前选择的曲率与扭率系数。式 (F) 确定线性相容条件，不证明整个非线性 Taylor 塔可解；数值上某一截断的满秩也不替代全阶形式解或解析收敛。尤其固定一个较低阶提升后得到的“障碍”，必须再对所有允许的较高阶修正取商，才能解释为与提升选择无关的几何限制。
 
 ## 行列式与 Green 势刚性
 
@@ -363,6 +659,29 @@ $$
 
 长度缺陷是二次的，其平方为四次；导数能量则仍为二次。这解释了为什么在 Kähler 方向附近，范数方差与扭率能量不能直接用同阶常数互相控制。
 
+### Kähler 背景的反取向结构
+
+同取向的长度论证对任意紧 Kähler 曲面同样成立：相容自对偶调和形式写为 $b\omega_I+\operatorname{Re}\theta$，常长度迫使典范形式 $\theta$ 具有常模长，从而平行；非 Ricci 平坦时只能是 $\pm\omega_I$。
+
+反取向则出现不同的几何。两个正交复结构 $I,J$ 此时交换，$-IJ$ 为对称对合，给出正交的 $I$-不变二平面丛 $D_+\oplus D_-$。若
+
+$$
+\omega_I=\omega_++\omega_-,\qquad
+\Omega_J=\omega_+-\omega_-,
+$$
+
+则 $d\omega_\pm=0$，故它们的核为可积平面分布，叶为极小复曲线。两组叶都全测地恰好等价于 $\nabla J=0$。这些是光滑复线分布，不能自动当作全纯线子丛；正交投影若全纯，Hermitian 自伴性已经迫使它平行。
+
+当 $g$ 为 KE、$\operatorname{Ric}=Eg$ 时，按两个分布作常数伸缩
+
+$$
+g_{a,b}=a\,g|_{D_+}+b\,g|_{D_-},\qquad a,b>0,
+$$
+
+仍是 $I$-Kähler，其 Ricci 形式不变，Ricci 特征值为 $E/a,E/b$。这是 Apostolov–Drăghici–Moroianu 的[常 Ricci 特征值分裂表述](https://arxiv.org/abs/math/0007122)。负特征值时，是否必为平行分裂仍需额外结论。
+
+若 $x=c_1(D_+^{1,0})$、$y=c_1(D_-^{1,0})$，则 $xy=\chi$、$x^2+y^2=3\tau$，但两个取向的典范类之间的交叉积为 $x^2-y^2$，并未由这些特征数确定。因此，反取向实际类存在本身不能恢复曲面丛中的固定交叉配对证明。对标准局部 $\mathbb H^2\times\mathbb H^2$ 度量，两种取向都已有平行 Kähler 形式，故上述同取向论证排除严格相容形式；这不宣称同一流形的全部 Einstein 度量均已分类。
+
 ### 联络变分
 
 对于 $\Lambda^+=\mathbb Rn\oplus n^\perp$ 上的 Levi-Civita 联络，写 $\mathcal A=D_0+C$，其中 $D_0$ 保持分裂，$C$ 为非对角部分。固定丛上的联络路径 $\mathcal A_t=D_0+tC$ 满足
@@ -420,6 +739,86 @@ $$
 $$
 
 因此 $\tau<0$ 时不存在这样的反取向结构，$\tau=0$ 时它必为 Kähler；$\tau>0$ 时等式只规定扭率能量，尚不给出矛盾。这是固定分支的结论，不把整个 Einstein 模空间假定为连通。
+
+## 典范曲线与扭率的整体费用
+
+设 $\gamma$ 为第一典范 Hermitian 联络的实曲率形式，$[\gamma]=2\pi c_1(M,J)$。对任意单位 $J$-复二平面 $\Pi$，典范曲率公式给出
+
+$$
+\gamma(\Pi)=\frac s4+|\vartheta_{\Pi^\perp}|^2.
+\tag{K1}
+$$
+
+证明使用 $\gamma=\rho^*-\tfrac12\phi_T$：$J$-反不变曲率分量在 $\Pi$ 上为零，$\rho^*(\Pi)=(s+q)/4$，而 $\tfrac12\phi_T(\Pi)=|\vartheta_\Pi|^2$。由 $q=4|\vartheta|^2$ 即得 (K1)。这一典范联络及曲线估计的经典来源是 LeBrun，[*Einstein Metrics, Symplectic Minimality, and Pseudo-Holomorphic Curves*](https://arxiv.org/abs/math/0409290)，§3。
+
+由于 $s$ 为常数，
+
+$$
+\beta=\gamma-\frac s4\Omega
+$$
+
+是闭二形式，且在每个 $J$-复二平面上非负。故 $\beta(C)\ge0$ 对所有实际 $J$-全纯流 $C$ 成立；同时 $\Omega+t\beta$ 对每个 $t\ge0$ 均驯服同一个 $J$。这将典范曲率作用于整个实际曲线锥，而不仅作用于一个特征数。
+
+令 $K=-c_1(M,J)$。只要 $\operatorname{PD}(K)$ 有实际 $J$-全纯流 $C_K$，就有精确等式
+
+$$
+\boxed{\mathcal T-\int_M|v|^2
+=2\pi\int_{C_K}|\vartheta^\perp|^2\,dA\ge0.}
+\tag{K2}
+$$
+
+为核对常数，记 $Q_\vartheta=\int q$。Weyl 块分解与式 (T) 给出
+
+$$
+\frac{|s|}{16}Q_\vartheta=\mathcal T+\int|v|^2,
+\qquad
+2\pi c_1\cdot[\Omega]=\frac{sV}{2}+\frac{Q_\vartheta}{4}.
+$$
+
+于是
+
+$$
+2\pi[\beta]\cdot K
+=-4\pi^2c_1^2+\frac{s^2V}{8}+\frac{sQ_\vartheta}{16}
+=\mathcal T-\int|v|^2,
+$$
+
+再用 (K1) 即得 (K2)。$v$ 是本文的单位自对偶标架分量，即 $|v|^2=|\eta|^2/2$。实际流的供给是必要输入：$b^+>1$ 时可使用相应 Taubes 理论；$b^+=1$ 时须另核对 chamber 和所用类。
+
+进一步设 $b^+>1$、$K=K_0+\sum_{i=1}^r e_i$ 为已确定的吹起典范类分解，$e_i\cdot e_j=-\delta_{ij}$、$K_0\cdot e_i=0$，并且 $\operatorname{PD}(K_0)$ 及每个异常类 $E_i=\operatorname{PD}(e_i)$ 都有对这个 $J$ 的实际流。经典带符号基本类供给在其适用的非有理、非直纹吹起范畴中给出这些流。由
+
+$$
+[\beta]\cdot K_0\ge0,\qquad
+\beta(E_i)=2\pi+\frac{|s|}{4}\int_{E_i}\Omega
+$$
+
+得到
+
+$$
+\boxed{\mathcal T-\int|v|^2
+\ge4\pi^2r+\frac{\pi|s|}{2}\sum_i\int_{E_i}\Omega,}
+\tag{K3}
+$$
+$$
+s^2V\ge32\pi^2K_0^2+32\pi^2r
++8\pi|s|\sum_i\int_{E_i}\Omega.
+$$
+
+这里对曲线的积分包含各分量重数；奇异流也可按正则部分积分。对任一 $c_1\cdot C=d>0$ 的实际流，还直接有
+
+$$
+\int_Cq\,dA\ge8\pi d+|s|\int_C\Omega.
+$$
+
+因此异常曲线周围不能存在扭率恒为零的邻域。这些结论约束非极小候选的整体费用，尚不排除 $r=0$ 的严格几乎 Kähler 几何。
+
+另一个已闭合的经典分支是 $b^-=0$，见 Kim 的 [harmonic Weyl 结果](https://doi.org/10.1016/j.difgeo.2024.102141)。由 (T) 和签名公式，
+
+$$
+8\pi^2(\chi-3\tau)=\mathcal T+3\int|W^-|^2.
+$$
+
+而 $b^-=0$、$b^+\ge1$ 给出 $\chi-3\tau=2-2b_1-2b^+\le0$，故 $\mathcal T=0$，几乎 Kähler 结构可积。一般严格候选必须同时满足 $b^-\ge1$ 与 $\chi>3\tau$。
 
 ## 非塌缩退化中的能量传递
 

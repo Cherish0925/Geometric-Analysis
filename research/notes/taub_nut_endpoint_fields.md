@@ -7,7 +7,7 @@
 取 Gibbons–Hawking 度量
 
 $$
-g_ell=H(dx_1^2+dx_2^2+dx_3^2)+H^{-1}\eta^2,
+g_\ell=H(dx_1^2+dx_2^2+dx_3^2)+H^{-1}\eta^2,
 \quad H=1+\ell/r,\quad
 \eta=d\psi+\ell\cos\theta\,d\varphi,
 $$
@@ -32,8 +32,7 @@ $$
 t(\Phi)=\sum_i c(e^i)\Phi\otimes(\Phi\wedge\nabla_i\Phi).
 $$
 
-在平行行列式平凡化中，$\Phi_\ell\wedge\nabla_i\Phi_\ell
-=\sqrt{\rho_*}a\,\partial_i\bar f\,e_1\wedge e_2$；又因
+在平行行列式平凡化中，$\Phi_\ell\wedge\nabla_i\Phi_\ell=\sqrt{\rho_*}a\,\partial_i\bar f\,e_1\wedge e_2$；又因
 $\langle d\bar f,d\bar f\rangle_{\mathbb C}=0$，二次项消失，得到
 
 $$

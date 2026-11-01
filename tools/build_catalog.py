@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the source index and a deterministic inventory of repository bytes."""
+"""Build the source index and a path, size and mode inventory."""
 
 from __future__ import annotations
 
@@ -36,7 +36,15 @@ def repository_files(root: Path):
             yield path
 
 
-def file_record(path: Path, root: Path) -> dict:
+def file_record(path: Path, root: Path, *, content_hashes: bool = False) -> dict:
+    if not content_hashes:
+        stat = path.lstat()
+        return {
+            "path": path.relative_to(root).as_posix(),
+            "size": len(os.fsencode(os.readlink(path))) if path.is_symlink() else stat.st_size,
+            "mode": "120000" if path.is_symlink() else
+                    ("100755" if stat.st_mode & 0o111 else "100644"),
+        }
     if path.is_symlink():
         data = os.fsencode(os.readlink(path))
         size = len(data)
@@ -97,18 +105,18 @@ def write_source_index(root: Path, sources: list[dict], packages: list[dict]) ->
             )
         lines.append("")
     lines += ["## Extracted packages", "", "Identical archives share an extracted directory. "
-              "The original archive paths and their hashes remain recorded separately.", "",
+              "The original archive references remain recorded separately.", "",
               "| Archive | Extracted files | Extraction |", "| --- | ---: | --- |"]
     for item in sorted(packages, key=lambda x: (x["expanded_path"], x["archive"])):
         number = "shared" if item.get("duplicate") else str(item.get("files", ""))
         lines.append(f"| {link(item['archive'])} | {number} | {link(item['expanded_path'])} |")
-    lines += ["", "## Integrity checks", "", "Run from the repository root:", "", "```sh",
-              "python3 tools/check_archive.py", "python3 tools/build_catalog.py",
-              "python3 tools/check_archive.py --full", "```", "",
-              "`build_catalog.py` regenerates this index before hashing repository files. "
-              "`files.json` excludes itself and Git metadata. It records SHA-256 hashes, "
-              "Git blob object IDs, file sizes, and Git modes; it can therefore be compared "
-              "with a remote Git tree without changing the research sources.", ""]
+    lines += ["", "## Maintenance", "",
+              "Regenerate this index and the path, size and mode inventory with "
+              "python3 tools/build_catalog.py. Normal updates do not read or hash file contents.",
+              "",
+              "Git records revisions of the maintained mathematical text. Original-source "
+              "metadata is retained for checking a particular archived version when needed.",
+              ""]
     (root / "catalog" / "README.md").write_text("\n".join(lines), encoding="utf-8")
 
 

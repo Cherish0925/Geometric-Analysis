@@ -85,9 +85,12 @@ def main() -> int:
             for relative in sorted(actual.keys() - indexed.keys()):
                 errors.append(f"files.json: unlisted {relative}")
             for relative in sorted(indexed.keys() & actual.keys()):
-                observed = file_record(actual[relative], root)
+                observed = file_record(
+                    actual[relative], root,
+                    content_hashes=any(field in indexed[relative] for field in ("sha256", "git_blob_sha")),
+                )
                 for field in ("size", "sha256", "git_blob_sha", "mode"):
-                    if observed[field] != indexed[relative][field]:
+                    if field in indexed[relative] and observed[field] != indexed[relative][field]:
                         errors.append(f"files.json: {relative}: {field} mismatch")
     except (OSError, ValueError, KeyError, TypeError) as error:
         errors.append(f"Manifest error: {error}")

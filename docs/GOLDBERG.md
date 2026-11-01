@@ -485,7 +485,7 @@ $$
 
 若严格几乎 Kähler–Einstein 度量序列满足 $\mathcal T_j\to0$，它必须离开光滑 Einstein 模空间的每个紧子集。若同时满足上述非塌缩和直径条件，则极限为 Kähler–Einstein 轨形，且至少有一个奇点。不同成员可能处于不同连通分支；作用量局部常数本身不排除这种序列。若能另证该轨形的充分小邻域只含有限个 Einstein 连通分支，则各分支的常作用量与极限连续性相结合，才排除严格正的扭率趋零。
 
-相同传递公式也限制一般型吹起流形的 Einstein 极限。对 $M=X\#k\overline{\mathbb{CP}}^{,2}$、$A=c_1^2(X)>0$，经典 Ricci 积分下界给出
+相同传递公式也限制一般型吹起流形的 Einstein 极限。对 $M=X\#k\overline{\mathbb{CP}}^{\,2}$、$A=c_1^2(X)>0$，经典 Ricci 积分下界给出
 
 $$
 \widehat S(g)^2\ge32\pi^2(A+k),\qquad D_W(g)\ge4\pi^2k.

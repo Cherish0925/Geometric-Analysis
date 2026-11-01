@@ -4,7 +4,7 @@
 
 ## 1. 泛函与共形归约
 
-设 $M$ 为闭连通定向光滑四维流形。Ricci 使用张量范数，Weyl 和完整曲率使用曲率算子范数。记
+设 $M$ 为闭连通定向光滑四维流形。Ricci 使用张量范数；Weyl 和完整曲率作为二形式上的自伴算子，使用 Hilbert–Schmidt 范数。记
 
 $$
 P=\int_M|\operatorname{Ric}^{\circ}|^2,\quad S=\int_Ms^2,\quad
@@ -122,7 +122,7 @@ $$
 d_*(M\#N)\ge d_*(M)+d_*(N)-16\pi^2.
 $$
 
-例如 $\#n\overline{\mathbb{CP}}^{,2}$ 满足 $W_*=12n\pi^2$、$d_*=4\pi^2(4-n)$，故 $n\le3$ 时 $\alpha<1$，$n\ge4$ 时 $\alpha=1$。
+例如 $\#n\overline{\mathbb{CP}}^{\,2}$ 满足 $W_*=12n\pi^2$、$d_*=4\pi^2(4-n)$，故 $n\le3$ 时 $\alpha<1$，$n\ge4$ 时 $\alpha=1$。
 
 来源：[相对缺陷与联合共形极值](../archive/originals/2026-10-08/03_Subsequent_Mathematical_Developments.tex) §§1、5–6。
 
@@ -239,7 +239,7 @@ $$
 这证明对每个固定极小一般型曲面 $X$ 和每个 $k\ge1$，
 
 $$
-\boxed{P_*(X\#k\overline{\mathbb{CP}}^{,2})<8\pi^2k.}
+\boxed{P_*(X\#k\overline{\mathbb{CP}}^{\,2})<8\pi^2k.}
 \tag{2.1}
 $$
 
@@ -283,7 +283,7 @@ $$
 若 $\eta=-\Delta I_+/(2\pi^2)>0$，在 $Y$ 的 $N$ 个不相交固定球中选 $n\le\min(k,N)$ 个使用该单元，其余吹起采用小尺度经典恢复，则
 
 $$
-d_*(Y\#k\overline{\mathbb{CP}}^{,2})
+d_*(Y\#k\overline{\mathbb{CP}}^{\,2})
 \ge4\pi^2\left(A/3-k+\eta n\right).
 \tag{2.4}
 $$
@@ -342,7 +342,7 @@ $$
 
 ### 3.1 Kähler 类与低成本竞争者分离
 
-设 $X$ 为极小一般型曲面，$A=c_1^2(X)>0$，$M=X\#k\overline{\mathbb{CP}}^{,2}$。对原取向上任意复结构的 Kähler 度量 $h$ 及 $g=u^2h$，全度量标量预算和 $I_+(h)=S(h)/24$ 给
+设 $X$ 为极小一般型曲面，$A=c_1^2(X)>0$，$M=X\#k\overline{\mathbb{CP}}^{\,2}$。对原取向上任意复结构的 Kähler 度量 $h$ 及 $g=u^2h$，全度量标量预算和 $I_+(h)=S(h)/24$ 给
 
 $$
 P(g)-8\pi^2k
@@ -625,7 +625,7 @@ $$
 
 ### 4.4 实双曲吹起：一个取决于 Yamabe 值的精确问题
 
-设 $Y$ 为闭实双曲四维流形，$M_k=Y\#k\overline{\mathbb{CP}}^{,2}$，$Y_{\rm hyp}<0$ 为双曲共形类的 Yamabe 常数。其全度量恒等式为
+设 $Y$ 为闭实双曲四维流形，$M_k=Y\#k\overline{\mathbb{CP}}^{\,2}$，$Y_{\rm hyp}<0$ 为双曲共形类的 Yamabe 常数。其全度量恒等式为
 
 $$
 P(g)=8\pi^2k+4I_+(g)+\frac{S(g)-Y_{\rm hyp}^2}{12},
@@ -669,7 +669,7 @@ $$
 以下下确界取遍这一固定轨形上的全部光滑轨形度量。其精确值为
 
 $$
-\boxed{P_{*,\mathrm{orb}}(V_m)=8\pi^2k,qquad
+\boxed{P_{*,\mathrm{orb}}(V_m)=8\pi^2k,\qquad
 \alpha_{\mathrm{orb}}(V_m)=\min\left\{1,\frac{4k}{A+k}\right\}.}
 \tag{5.1}
 $$
@@ -678,9 +678,9 @@ $$
 
 ### 5.1 光滑解消与下界转移
 
-两个奇点由复取向的 Eguchi–Hanson 空间解消后，$O$ 的光滑解消微分同胚于 $\overline{\mathbb{CP}}^{,2}\#\overline{\mathbb{CP}}^{,2}$。证明需要光滑拓扑：原有 $T^2$ 作用延拓过两个 $\mathcal O(-2)$ 核心；解消单连通，交形式为 $-I_2$，轨道空间是四边形圆盘。Orlik–Raymond 的光滑环面作用分类给出上述微分同胚。单独知道交形式不足以替代这一步。所用光滑分类见 Orlik–Raymond，[Actions of the torus on 4-manifolds I](https://www.ams.org/tran/1970-152-02/S0002-9947-1970-0268911-3/)，§§4–5。
+两个奇点由复取向的 Eguchi–Hanson 空间解消后，$O$ 的光滑解消微分同胚于 $\overline{\mathbb{CP}}^{\,2}\#\overline{\mathbb{CP}}^{\,2}$。证明需要光滑拓扑：原有 $T^2$ 作用延拓过两个 $\mathcal O(-2)$ 核心；解消单连通，交形式为 $-I_2$，轨道空间是四边形圆盘。Orlik–Raymond 的光滑环面作用分类给出上述微分同胚。单独知道交形式不足以替代这一步。所用光滑分类见 Orlik–Raymond，[Actions of the torus on 4-manifolds I](https://www.ams.org/tran/1970-152-02/S0002-9947-1970-0268911-3/)，§§4–5。
 
-因此 $V_m$ 解消为 $M_k=X\#k\overline{\mathbb{CP}}^{,2}$。对任意轨形度量，用缩小的 Eguchi–Hanson 核心解消，在其平坦端与轨形正规坐标间选取能量趋零的过渡环带，得到
+因此 $V_m$ 解消为 $M_k=X\#k\overline{\mathbb{CP}}^{\,2}$。对任意轨形度量，用缩小的 Eguchi–Hanson 核心解消，在其平坦端与轨形正规坐标间选取能量趋零的过渡环带，得到
 
 $$
 S(g_\epsilon)\to S(g),\qquad P(g_\epsilon)\to P(g),\qquad
@@ -792,7 +792,7 @@ $$
 
 ### 6.2 同时保留标量与手性 Weyl 能量
 
-设紧轨形 $V$ 的孤立奇点由有足够二阶渐近衰减的标量平坦 ALE 空间 $N_j$ 解消为 $M=X\#k\overline{\mathbb{CP}}^{,2}$，$A=c_1^2(X)>0$。取与 $M$ 一致的取向，令 $\Gamma_j$ 为端群，$\eta_{\Gamma_j}$ 使用定向签名公式的约定。定义
+设紧轨形 $V$ 的孤立奇点由有足够二阶渐近衰减的标量平坦 ALE 空间 $N_j$ 解消为 $M=X\#k\overline{\mathbb{CP}}^{\,2}$，$A=c_1^2(X)>0$。取与 $M$ 一致的取向，令 $\Gamma_j$ 为端群，$\eta_{\Gamma_j}$ 使用定向签名公式的约定。定义
 
 $$
 a_\pm(N)=\frac2{|\Gamma|}-2\chi(N)\mp3\tau(N)\mp3\eta_\Gamma.
@@ -940,7 +940,7 @@ $$
 
 共同边界的两侧取向相反，边界项随之反号。
 
-设 $M=X\#k\overline{\mathbb{CP}}^{,2}$ 上一列度量具有下列实际极限：
+设 $M=X\#k\overline{\mathbb{CP}}^{\,2}$ 上一列度量具有下列实际极限：
 
 - 在开集 $\Omega$ 上，经微分同胚后 $C^2_{\rm loc}$ 收敛到完备有限体积、标量常数 $s_\infty<0$ 的 Einstein 度量；
 - $P(g_i)\to0$、$L_s(g_i)\to0$、$\bar s_i\to s_\infty$，且总体积收敛到 $\operatorname{Vol}(\Omega,g_\infty)$；

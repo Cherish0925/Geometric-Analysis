@@ -27,12 +27,13 @@ $P(g)=0$ 等价于 $g$ 为 Einstein 度量。$\mathcal E$ 采用非零 Einstein 
 | 积分间隙 | 单解参数估计、N1 无迹 Ricci 间隙、类平方短缺估计、I40/I41 线性强制及规范理论应用 | 弱化解存在性条件、确定最佳常数依赖、扩大适用流形类 |
 | 参数端点 | 对每个固定有限 $B$，在 $\chi/A\le B$ 下得到 $c(B)>0$；由拓扑数关系进一步得到所列手术族的统一常数 | 一般无密度条件下的统一估计或闭流形反例 |
 | 双取向应用 | 固定密度端点 FD2 与交叉配对给出曲面丛间隙及 Kodaira 斜率分离；推广至一侧凸包与配对短缺 | 最佳分离常数及更一般的双取向规范结构 |
-| 曲率极值 | 严格低于标准手术能量的构造、相应族的严格次四上界、一般负 Kähler–Einstein 背景推广 | 全部光滑度量上的匹配下界与精确极值 |
+| 曲率极值 | 背景曲率作用产生严格较低的手术上界；Weyl–Yamabe 精确归约；指定成对 $A_1$ 轨形上的精确值与非取得性 | 一般吹起与平衡族的全度量最优值 |
 | 极小值取得性 | 共形 Kähler 类的能量分离、候选度量的下降方向与临界点排除、谐和秩刚性及部分 AE/ALE 退化分析 | 非 Bach-flat 光滑全局极小元的存在 |
-| 点态逼近与精确实现 | 固定轨形解消、固定剪切流形上的逼近序列、周期与慢模态分析，以及所列有界几何条件下的 Einstein 实现 | 固定对象的全部 Einstein 存在性及一般退化下的实现 |
-| 几乎 Kähler–Einstein 几何 | 完备非紧严格例子、扭率零点结构、行列式符号与 Green 势刚性条件 | 闭四维负 Goldberg 猜想 |
+| 点态逼近与精确实现 | 固定轨形与剪切流形上的逼近；循环覆盖完整核修复；闭路变形及完整填充条件下的精确实现 | 固定对象的全部 Einstein 存在性及一般退化下的实现 |
+| 几何退化与实际场 | ALE 混合曲率转移、根格限制及补域电荷；Wahl 收缩中的实际场、局部字符和形式延拓 | 将局部拓扑与场信息转为统一全局障碍 |
+| 几乎 Kähler–Einstein 几何 | 完备非紧严格例子、Green 势刚性、调和秩条件、模空间作用量及非塌缩退化中的能量传递 | 闭四维负 Goldberg 猜想 |
 
-各结论的假设、常数依赖及证明来源列于下述专题。Kodaira 分离依赖 FD2；严格次四构造适用于相应恢复族；非紧存在性与闭流形刚性分别处理。
+各专题以定义、命题、推导与构造组织，注明实际供给、取向、归一化和常数依赖。Kodaira 斜率分离由 FD2 与双取向配对推出；Fino 的非不变存在性问句由完备非紧实例回答。一般吹起极值、光滑取得性和闭负 Goldberg 保留各自尚未解决的部分。
 
 ## 阅读顺序
 
@@ -42,9 +43,9 @@ $P(g)=0$ 等价于 $g$ 为 Einstein 度量。$\mathcal E$ 采用非零 Einstein 
 4. [点态构造与精确实现](docs/CONSTRUCTIONS_AND_REALIZATION.md)：解消、固定流形、周期、慢模态及存在性。
 5. [曲率变分](docs/CURVATURE_VARIATION.md)：O11、严格上界、Q1–Q3 与极小值取得性。
 6. [几乎 Kähler–Einstein 几何](docs/GOLDBERG.md)：Fino 存在性问题、零点结构与闭负 Goldberg。
-7. [研究沿革](docs/RESEARCH_HISTORY.md)：主要推导的先后关系及修正。
+7. [研究沿革](docs/RESEARCH_HISTORY.md)：从曲率预算到微分强制、从标准核心费用到背景相互作用，以及研究方向改变的数学原因。
 
-连续数学正文见 [10月7日研究总稿](archive/originals/2026-10-07/00_All_Recent_Research.tex)、[四题综述](archive/originals/2026-10-08/01_Research_Synthesis.tex)、[后续数学进展](archive/originals/2026-10-08/03_Subsequent_Mathematical_Developments.tex) 及 [Goldberg 合并稿](research/packages/Goldberg_Two_Conversations_Merged_20261015--5a0ab1f2/Goldberg_Two_Conversations_Merged_20261015.tex)。
+早期连续文稿见 [10月7日研究总稿](archive/originals/2026-10-07/00_All_Recent_Research.tex)、[四题综述](archive/originals/2026-10-08/01_Research_Synthesis.tex)、[后续数学进展](archive/originals/2026-10-08/03_Subsequent_Mathematical_Developments.tex) 及 [Goldberg 合并稿](research/packages/Goldberg_Two_Conversations_Merged_20261015--5a0ab1f2/Goldberg_Two_Conversations_Merged_20261015.tex)。
 
 ## 原稿与程序
 

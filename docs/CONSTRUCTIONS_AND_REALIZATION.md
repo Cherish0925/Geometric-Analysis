@@ -36,7 +36,7 @@ $$
 \mathcal E(g)\le\fint|\operatorname{Ric}_g-\sigma g|^2\le4\delta_\sigma(g)^2.
 $$
 
-这里 $\fint=V^{-1}\int$。Ricci 使用张量范数，$W^\pm$ 使用其在自对偶或反自对偶二形式上的算子范数。全度量积分正间隙因此排除相应点态逼近。小积分残差则容许小支撑高曲率扰动，给出的几何控制较弱。
+这里 $\fint=V^{-1}\int$。Ricci 使用张量范数，$W^\pm$ 使用其作为自对偶或反自对偶二形式上算子的 Hilbert–Schmidt 范数。全度量积分正间隙因此排除相应点态逼近。小积分残差则容许小支撑高曲率扰动，给出的几何控制较弱。
 
 来源：整合稿 “Normalization and the underlying Einstein existence problem”（`sec:normalized-existence`）；[早期点态构造分卷](../archive/originals/2026-09-16/02_A02_点态近Einstein解消与Weyl匹配.tex) §1。
 
@@ -65,7 +65,7 @@ $$
 
 调和 Weyl 方程还给出特定曲率谱区域的排除结果，并用于后续实际场校准。其范围由相应谱条件确定；Kähler–Einstein 谱构成相容的等号模型。
 
-来源：整合稿 “Pointwise Ricci pinching and spectral exclusion”（`sec:early-pointwise-rigidity`）。曲率算子范数平方与四指标张量范数平方相差四倍；精确 Einstein 时分别有 $\int|\operatorname{Rm}_{\rm op}|^2=8\pi^2\chi$、$\int|\operatorname{Rm}_{(0,4)}|^2=32\pi^2\chi$。
+来源：整合稿 “Pointwise Ricci pinching and spectral exclusion”（`sec:early-pointwise-rigidity`）。曲率算子的 Hilbert–Schmidt 范数平方与四指标张量范数平方相差四倍；精确 Einstein 时分别有 $\int|\operatorname{Rm}_{\rm op}|^2=8\pi^2\chi$、$\int|\operatorname{Rm}_{(0,4)}|^2=32\pi^2\chi$。
 
 ## 3. 固定轨形解消：让点态 Ricci 残差趋零
 
@@ -233,7 +233,81 @@ $$
 
 该族的周期精确固定、谐和代表恒长非零，局部误差趋零，而标记纤维结构保持非零振幅。其到保纤维产品类的距离有正下界。流形本身承载精确产品度量；关于全部 Einstein 度量及任意微分同胚的距离是另一问题。
 
-来源：整合稿 `sec:period-inertia`、`sec:periods`、`sec:positive-planes`、`sec:slow-moduli`、`sec:moduli-gauge`。覆盖次数一致的非线性约化还需同时处理完整慢场、连接变量、基底核和法向逆。
+来源：整合稿 `sec:period-inertia`、`sec:periods`、`sec:positive-planes`、`sec:slow-moduli`、`sec:moduli-gauge`。下述循环覆盖定理完成了指定乘积范畴中的完整核修复。一般纤维变化仍需同时处理慢场、连接变量和法向方程。
+
+### 完整核上的非线性修复及其最优损失
+
+固定双曲曲面 $(B,b)$、$(F,f)$ 和 $\pi_1(B)\twoheadrightarrow\mathbb Z$。令 $B_m$ 为 $m$ 重循环覆盖，$h_m=b_m+f$。使用提升的统一局部坐标，置
+$$
+X_m=C^{3,\alpha}_{\mathrm{uloc}},\qquad
+Y_m=C^{1,\alpha}_{\mathrm{uloc}}.
+$$
+在相对于 $h_m$ 的调和映射规范中，Einstein 算子的线性化为
+$$
+L_m=\tfrac12\nabla^*\nabla-\mathring R,\qquad
+K_m=\ker L_m=T_{B_m}\oplus T_F,
+$$
+其中 $T_\Sigma$ 是曲面上的横截无迹张量空间。全部核由两因子的 Teichmüller 变形积分为精确 Einstein 族
+$$
+H_m(k)=h_m+k+R_m(k),\quad
+\Pi_mR_m(k)=0,\quad
+\|R_m(k)\|_{X_m}\le C\|k\|_{X_m}^2.
+$$
+常数不依赖 $m$，虽然 $\dim K_m$ 随覆盖增长。
+
+在核补空间上，
+$$
+\|u\|_{X_m}\le Cm^2\|L_mu\|_{Y_m},\qquad \Pi_mu=0.
+$$
+其唯一增长来源是基底标量慢通道；迹、混合及共形 Killing 通道具有固定正势。TT 投影由
+$P_Ts=s-D(\delta D)^{-1}\delta s$ 表示，正势逆与局部椭圆估计给其统一有界性，所以增长的核维数不再引入损失。
+
+因此，对已在调和规范中且 $\|g-h_m\|_{X_m}<cm^{-2}$ 的度量，
+$$
+\boxed{\;
+\|g-H_m(\Pi_m(g-h_m))\|_{X_m}
+\le Cm^2\|\operatorname{Ric}_g+g\|_{Y_m}.
+\;}
+$$
+证明是在核补上反演并吸收二次余项；完整精确族使剩余核方程恒等消失。它同时分类该邻域中的全部精确解。
+
+这个二次损失由实际度量达到。取无限循环覆盖上的调和坐标 $z$、$z(\tau x)=z(x)+1$，则
+$$
+v_m=\cos(2\pi z/m),\qquad
+\Delta v_m=\frac{4\pi^2}{m^2}|dz|^2v_m.
+$$
+对非零 $q\in T_F$，张量 $v_mq$ 与整个核正交。以幅度 $\theta m^{-2}$ 扰动并作二次阶规范修正，得到
+$$
+\|\operatorname{Ric}_{g_m}+g_m\|_{Y_m}\le Cm^{-4},
+\qquad
+\operatorname{dist}_{X_m}(g_m,\{\operatorname{Ric}_h=-h\})\ge cm^{-2}.
+$$
+任意靠近的 Einstein 输出均可用统一的调和映射逆放入上述规范，故距离下界包括所有微分同胚拉回的输出。由此排除残差到距离的统一 $\theta$ 次估计中 $\theta>1/2$ 的情形。每个 $M_m$ 本身仍承载 $h_m$。
+
+完整证明见[可积核与循环覆盖修复](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/continuation/20260924_integrable_kernel_cyclic_repair.md)。
+
+### 沿闭路的变形如何决定单值性
+
+对实际曲面丛 $\pi:M\to B$，用输入度量的正交 Ehresmann 联络沿闭路 $\gamma$ 搬运纤维度量，得到同一纤维上的 $h_t$。定义
+$$
+\mathscr C_g(\gamma)
+=\frac12\int_0^1\sup_F\|(h_t^{-1}\dot h_t)^\circ\|_{\rm op}\,dt.
+$$
+若 $x_0$ 为起点纤维的 Teichmüller 点，$\rho$ 为映射类单值表示，则
+$$
+d_T(x_0,\rho(\gamma)x_0)\le\mathscr C_g(\gamma).
+$$
+证明对两切向量的长度比求导并积分，直接控制返回映射的拟共形伸缩，无须矩阵同时对角化。
+
+固定纤维亏格和其双曲代表的 systole 正下界后，Teichmüller 厚部模映射类群紧，群作用适当。故存在统一阈值，使同一起点的一组生成闭路全部满足 $\mathscr C_g<\epsilon$ 时，单值群包含在一个有限稳定子中。Nielsen 实现及高亏格曲面 $\mathrm{Diff}_0$ 的可缩性随后给出原光滑丛
+$$
+M\cong(\widehat B\times F)/G,
+$$
+并赋予精确双曲乘积商度量。这是一条由实际闭路变形到同一流形精确实现的连接。
+
+厚度和沿完整闭路的累计量都参与证明。固定 Dehn twist 可以沿越来越长的领口缓慢实现，其局部导数趋零而单值性不变；纤维自身退化时，Dehn twist 的 Teichmüller 位移也可趋零。两种构造分别说明为何局部小量与单值性结论之间不能略去这些条件。
+
+证明及最小纤维黎曼下沉的 Ricci 应用见[闭路变形与单值性](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/continuation/20260924_cycle_holonomy_realization.md)。
 
 ## 7. 完备非紧精确模型、连接器与完整修正方程
 
@@ -276,12 +350,62 @@ $$
 
 来源：整合稿 `sec:compact-realization`、`sec:ale-boundary`、`sec:gauge-ke`、`sec:bilateral`、`sec:chern-boundary`、`sec:virtual-realization`。这些实现定理保留各自的全局几何条件，与无直径积分障碍具有不同的适用范畴。
 
-## 9. 退化情形中的实现问题
+## 9. 谐和形式的零点、完整填充与退化尺度
 
 固定剪切逼近族表明，删除直径后，双圆盘近饱和可以伴随非 Kähler 拓扑。复双曲陈数边界 $\chi=3\tau>0$ 则位于该剪切族之外；其无直径实现涉及有限体积长颈、塌缩与填充，仍待解决。
 
-轨形平滑的已证充分条件保留整个核心的相对标记、实际场的跨尺度信息以及缺陷与核心尺度的比值。特定退化例显示，全局缺陷趋零与该尺度比条件可以分离；一般情形仍需建立核心尺度的非零场和 Milnor 填充对应。
+### 零点需要多少局部缺陷
 
-积分 gap 描述不可逼近区域，构造给出曲率极值的上界，周期与慢模态刻画退化，有界几何实现定理则产生同一光滑对象上的精确解。Goldberg 问题在 Einstein 方程已成立的前提下，进一步研究相容辛结构的可积性。这些问题通过实际场与曲率的相容性相连，各自保留独立的存在性或刚性要求。
+若在半径 $\rho$ 的坐标邻域中，$\rho^{-2}g$ 具有统一椭圆性与 $C^{1,\alpha}$ 控制，调和二形式 $\Omega$ 满足 $\Omega(x)=0$，则
+$$
+\int_{U_{x,\rho}}(|\Omega|-\sqrt2)^2\,dV_g\ge c\rho^4.
+$$
+缩放到单位球后，小幅度缺陷给出 $\Omega$ 的 $L^2$ 上界；对一阶 Hodge–Dirac 方程逐次使用 $W^{1,p}$ 内部估计，得到统一 Hölder 控制。零点附近一个固定比例小球上模长保持小，从而产生固定正的幅度缺陷；缩放恢复 $\rho^4$。
+
+实际共形供给给出的谐和代表 $\Omega=-2\pi H_a$ 满足
+$$
+\int(|\Omega|-\sqrt2)^2\le818\kappa V,\qquad
+\kappa=\fint|\operatorname{Ric}+g|^2+D_2/V,
+$$
+这里取相应小缺陷范围。因此
+$$
+H_a(x)=0\quad\Longrightarrow\quad
+r_{\alpha,Q}(x)^4\le C\kappa V,
+$$
+其中 $r_{\alpha,Q}$ 是具有上述固定坐标控制的最大尺度。
+
+对有界直径、正投影预算下的近饱和序列，若轨形极限的每个**完整填充**内都有坐标尺度下界 $\rho_j$，且
+$$
+\kappa_jV_j<c_0\rho_j^4,
+$$
+便可排除填充中的谐和零点。在极限奇点为 $A_1$ 且填充 $b_2=1$，或填充为有理同调球的指定范畴，接触填充分类和相对标记给出 Milnor 纤维对应。再满足全局射影 $\mathbb Q$-Gorenstein 平滑条件时，原光滑流形取得负 Kähler–Einstein 度量。局部填充对应与全局复平滑是此证明中两个独立输入。
+
+局部零点费用的四次尺度不能由平均量取代。在 Kähler 曲面的一个 Darboux 球中插入缩小的 near-symplectic 零圈模型，可保持上同调类及外部形式，并选择使之自对偶的度量；所得形式就是全闭流形上该类的调和代表。幅度缺陷为 $O(\rho^4)$，一阶导数能量为 $O(\rho^2)$，零圈仍存在。该模型的点态 Ricci 缺陷可增长为 $\rho^{-2}$，所以它只说明周期与平均形式误差不足以保证非零性，并非近 Einstein 反例。
+
+完整局部估计、相对填充与零圈构造见[谐和零点的尺度与几何实现](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/continuation/20260924_harmonic_zero_scale.md)。
+
+### Wahl 退化中的实际场
+
+将 Wahl 有理球收缩为 $\frac1{n^2}(1,n-1)$ 点时，恢复族的统一标量界使实际旋量有界，缩小填充内的四次质量趋零。阿贝尔可去奇点与实上同调平方不变，将解、联络能量和旋量导数能量传到轨形。该转移保留
+$$
+a^2,\quad T_+,\quad\operatorname{ind}D,
+$$
+而
+$$
+T_-^{\rm orb}=T_-(M)-4\sum_\nu(1-n_\nu^{-2}).
+$$
+两手性的变化因此必须分别处理。
+
+在指定典范标记下，一些可延拓字符强迫 $\Phi(p)=\nabla_A\Phi(p)=0$；对同时供给的符号类求平均，仍可在强迫零点子族中保留正投影预算。这推出逐度量的严格标量不等式。它若要成为统一 Einstein 障碍，还须控制零点的几何尺度以及同一场的 Weyl 和调和投影缺陷。
+
+这种缺项无法仅由提高 Taylor 展开阶数补足。对任意固定允许的等变度量展开，辅助 SW 系统的平坦主算子在齐次多项式上满射，故允许的 Dirac 首项可以逐阶完成。这个结论保留了实际全局场问题：形式级数的收敛、全局幅度和退化尺度尚未由形式递归决定。
+
+上述场转移、指标公式、首项次数和形式延拓的连续证明见[Wahl 退化中的实际规范场](../research/notes/Wahl_Fields_and_Formal_Completion.md)。
+
+## 10. 存在性与逼近的剩余连接
+
+积分 gap 描述不可逼近区域，构造给出曲率极值的上界，周期与慢模态刻画退化，有界几何实现定理产生同一光滑对象上的精确解。精确实现需要的全局信息已具体化为：慢通道的逆界、完整闭路的单值变形、完整填充的非零场与标记，以及独立的平滑或变形方程。
+
+这里还须区分两个尺度不变量。体积塌缩构造若使 $P\to0$，只决定 $P_*=0$；它并不自动使 $\alpha=\inf\mathcal E$ 为零。例如 $\chi=\tau=0$ 时，长圆柱上界与 Chern–Weil 下界给 $\alpha=1$。由非零 Einstein 主体取得 $\alpha=0$，还需控制标量平均、方差和完整恢复积分，见[曲率变分](CURVATURE_VARIATION.md)。
 
 尚未解决的全局目标包括 $E_D$ 的负 Einstein 存在性、一般退化下的精确实现、目标流形的全度量最优曲率值以及闭负 Goldberg 问题。

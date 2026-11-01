@@ -53,7 +53,7 @@ $$
 
 ### 2.1 积分障碍、有限密度端点与双取向应用
 
-I41 在其实际单解输入下给出
+I41 从负 Yamabe 代表上的一个实际解出发，给出
 $$
 \Sigma\le C\{\Pi+\sqrt{\Pi Y}\},\qquad \Pi=P+D_2.
 $$
@@ -73,7 +73,7 @@ $$
 \kappa_\beta:=\fint|\operatorname{Ric}+g|^2+D_\beta/V
 \ge c_{\rm FD}(B)\frac{(\beta-2)^2}{\beta^2}.
 $$
-它使用 $p\ge A>0$、$a^2\ge T_+$；常数依赖 $B$。另一证明以 $L^5$ 上的弱 Cauchy–Riemann 型方程和正势算子完成矛盾。
+这里仍要求同一结构的整共形类实际供给，以及 $p\ge A>0$、$a^2\ge T_+$；常数依赖 $B$。另一证明以 $L^5$ 上的弱 Cauchy–Riemann 型方程和正势算子完成矛盾。
 
 若 $Q=A-T_+\ge0$ 且 $\chi\le CA+Q$，则按 $Q/A\ge1/3$ 和 $Q/A<1/3$ 分别使用 N1 与有限密度命题，得到依赖 $C$ 的统一端点常数。双取向应用则取固定 $B=2$ 的命题 **FD2**，结合实际类间的交叉配对，推出曲面丛间隙及 Kodaira 斜率上界。FD2 是这些结论的分析前置；一般无密度端点命题不在此依赖链中。
 
@@ -123,6 +123,42 @@ $$
 其他两条约化分别使用规范曲率与全局闭反不变形式的正交关系，以及调和形式乘积中的正半定、迹一、秩一矩阵条件。完备非紧严格几乎 Kähler–Einstein 构造不满足闭性假设，故与上述闭几何问题分列。
 
 原稿：[Q4_Canonical_Orthogonality.tex](../archive/originals/2026-10-12/Q4_Canonical_Orthogonality.tex)；[Q4_Harmonic_Product_Reduction.tex](../archive/originals/2026-10-13/Q4_Harmonic_Product_Reduction.tex)；[Q4_Green_Potential_Rigidity.tex](../archive/originals/2026-10-14/Q4_Green_Potential_Rigidity.tex)；[Goldberg_Two_Conversations_Merged_20261015.tex](../research/packages/Goldberg_Two_Conversations_Merged_20261015--5a0ab1f2/Goldberg_Two_Conversations_Merged_20261015.tex)。
+
+### 2.4 保留全部核的几何修复
+
+在循环覆盖的双曲乘积上，Einstein 线性化的核包含维数随覆盖增长的 Teichmüller 方向。把这些方向积分为精确 Einstein 族，随后仅在核补空间求解，得到
+$$
+\|g-H_m(k)\|_{C^{3,\alpha}_{\rm uloc}}
+\le Cm^2\|\operatorname{Ric}_g+g\|_{C^{1,\alpha}_{\rm uloc}}
+$$
+及 $cm^{-2}$ 的修复邻域。增长损失来自实际慢通道；统一投影估计处理核维数的增长。慢模态构造达到这一损失，因而它同时说明修复结果的尺度。
+
+对于曲面丛，沿完整闭路积累的纤维度量变形控制单值映射的 Teichmüller 位移。固定厚部内的群作用适当性再将小位移转换为有限单值性。这里起作用的是实际闭路的累计量，局部导数小并不消除长领口上的 Dehn twist。详见[完整核修复与闭路变形](CONSTRUCTIONS_AND_REALIZATION.md)。
+
+### 2.5 实际场的转移与带标记的解消
+
+退化中的场传递需要同时处理方程、能量和拓扑。Wahl 有理球的恢复族具有统一标量界，最大值原理因而控制实际旋量。收缩区的体积趋零排除四次旋量质量集中；阿贝尔可去奇点给出轨形场；实上同调配对和 Chern–Weil 恒等式再传递联络能量。顺序不能倒置为“先假设极限有一个具有正确预算的场”。
+
+在 $\frac1{n^2}(1,n-1)$ 奇点，转移保留 $a^2$、$T_+$ 和相应 Dirac 指标，而
+$$
+T_-^{\rm orb}=T_-(M)-4(1-n^{-2}).
+$$
+局部字符还记录哪些实际旋量必须在奇点消失。指定符号类族的平均能够在保留这种零点约束时仍提供正投影预算。具体字符、Fourier 指标计算、强迫零点与连续证明见[Wahl 实际场](../research/notes/Wahl_Fields_and_Formal_Completion.md)。
+
+相同的逐阶分析也给出一项方法边界：辅助 SW 主算子在等变齐次多项式上有右逆，允许的 Dirac 首项可完成到任意形式阶。因此全局排除必须利用实际场、振幅或几何尺度；仅增加有限阶展开不会产生该辅助系统不存在的局部障碍。
+
+### 2.6 用相反符号的缺陷恒等式排除集中
+
+在固定拓扑、非塌缩且直径有界的负 Einstein 序列中，设自对偶 Weyl 的集中质量为 $m_+\ge0$。若每个度量具有同取向相容几乎 Kähler 形式，则该常模长调和形式可延拓到轨形极限。
+
+令 $D_W=s^2V/24-\int|W^+|^2$，$\mathcal T$ 为专题中定义的非负扭率能量。光滑与轨形上的恒等式均给 $D_W=\mathcal T$，而能量传递给
+$$
+D_W(V)=\lim D_W(g_j)+m_+,\qquad
+\lim\mathcal T(g_j)=\mathcal T(V)+m_{\mathcal T}.
+$$
+因此 $m_++m_{\mathcal T}=0$，两项集中同时消失。这个论证保留集中测度，再由同一全局关系确定其质量；不需要先逐项证明所有导数强收敛。反手性 Weyl 仍可集中。
+
+另一个全局约束来自规范化 Einstein–Hilbert 作用。解析 Einstein 解集上的临界值局部常数，使具有同取向 Kähler–Einstein 轨形端点的连通分支不能含严格几乎 Kähler–Einstein 度量。所需紧性、解析模空间及端点条件见[作用量与能量传递](GOLDBERG.md)。
 
 ## 3. 经典结果与本项目推导的关系
 

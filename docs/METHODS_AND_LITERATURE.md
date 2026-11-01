@@ -160,6 +160,244 @@ $$
 
 另一个全局约束来自规范化 Einstein–Hilbert 作用。解析 Einstein 解集上的临界值局部常数，使具有同取向 Kähler–Einstein 轨形端点的连通分支不能含严格几乎 Kähler–Einstein 度量。所需紧性、解析模空间及端点条件见[作用量与能量传递](GOLDBERG.md)。
 
+### 2.7 变振幅 Weyl 模型的带源恒等式
+
+设 $\omega\in\Omega^+(M)$ 光滑、$|\omega|^2=2$，且 $0<\tau_0\le |t|\le T_0$。定义
+$$
+\mathsf A=t\left(\frac23I-\omega\otimes\omega\right),\qquad
+Z_W=W^+-\mathsf A,\qquad E=\operatorname{Ric}-\sigma g,\quad \sigma\in\{-1,1\}.
+$$
+令 $\mathcal W(\mathsf A)$ 为相应四指标 Weyl 张量，故 $|\mathcal W(\mathsf A)|^2=4|\mathsf A|^2$；记
+$$
+\mathfrak j=\operatorname{div}\mathcal W(\mathsf A),\quad
+v=\frac13\log|t|,\quad \widehat g=e^{2v}g,\quad\widehat\omega=e^{2v}\omega,
+$$
+$$
+Q_X=\nabla_X\omega-dv\wedge\iota_X\omega
+       +X^\flat\wedge\iota_{\nabla v}\omega,\qquad
+\mathfrak p=d\omega+2dv\wedge\omega.
+$$
+共形联络公式给 $Q=e^{-2v}\widehat\nabla\widehat\omega$、$\mathfrak p=\operatorname{Alt}Q$。在自对偶正交标架中展开 $\nabla\mathsf A$，振幅导数与这两个表达式中的 $dv$ 项精确合并，得到
+$$
+\boxed{|\mathfrak j|^2=2t^2|Q|^2+4t^2|\mathfrak p|^2,}
+$$
+$$
+\int_M\left(|\widehat\nabla\widehat\omega|_{\widehat g}^2
+             +2|d\widehat\omega|_{\widehat g}^2\right)dV_{\widehat g}
+=\frac12\int_M|t|^{-4/3}|\mathfrak j|^2\,dV_g.
+$$
+该恒等式不要求 $\omega$ 闭合。它把模型的散度源同时分解为共形联络偏差与闭性偏差。
+
+进一步记
+$$
+d_0=\fint(|E|^2+|Z_W|^2),\quad
+H_2=\fint|\nabla^2\mathsf A|^2,\quad
+\phi=\sqrt{|t|}\,\omega,\quad
+B_\phi=\fint|\Delta_H\phi|^2.
+$$
+弱 Bianchi 测试给
+$$
+\left|\int\langle\mathfrak j,Z\rangle\right|
+\le C(\|E\|_2+\|Z_W\|_2)\|\nabla Z\|_2.
+$$
+取 $Z=\mathfrak j$，再使用有界截面的 Hessian 估计，得到
+$$
+\fint|\mathfrak j|^2\le C\sqrt{d_0H_2},\qquad
+H_2\le C_{T_0}(1+B_\phi+d_0),
+$$
+因而
+$$
+\boxed{\fint(|Q|^2+2|\mathfrak p|^2)
+\le C_{\tau_0,T_0}\sqrt{d_0(1+B_\phi+d_0)}.}
+$$
+常数不依赖 $W^-$、Ricci 导数或几何紧性参数；振幅导数保留在 $B_\phi$ 中。$\mathfrak j=0$ 时恢复经典共形 Kähler 机制；小的积分联络偏差本身不提供一个邻近 Kähler 度量。
+
+原稿：[变振幅 Weyl 校准及散度源](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/mathematics/current/line1_variable_calibration.md)，含标架逐项计算及 Hessian 估计。
+
+### 2.8 调和 Weyl 的有符号平衡
+
+在精确方程 $\delta W^+=0$ 下，上述二阶预算可以由另一条恒等式替代。设最低特征值处处单重，
+$$
+\lambda_1<\lambda_2\le\lambda_3,\qquad
+t=-\frac34\lambda_1>0,\quad b=\lambda_3-\lambda_2,\quad z=\frac b{4t}<1.
+$$
+必要时在最低特征线的取向双覆盖上选择 $|\omega|^2=2$ 的特征形式；下述能量密度及归一化积分均下降到 $M$。取 $u=t^{1/3}$，并以上一节的定义令 $v=\log u$。则
+$$
+\boxed{
+\int_M\frac32\frac{1-z^2}{1+z^2}t^{2/3}|Q|^2
+=\frac32\int_Mt^{-1/3}b^2,\qquad
+|\mathfrak p|^2=\frac{z^2}{1+z^2}|Q|^2.}
+$$
+证明在 $\widehat g=u^2g$ 上以负权 $F=-3/(4u)$ 归一化 Weyl 张量，使选定特征值成为 $1$。这是张量权，度量的共形因子仍为正。其余特征值为 $\rho,-1-\rho$，其中 $\rho=-1/2+3z/2$。加权散度方程的第一行将两个联络分量之比固定为
+$$
+k=\frac{1-\rho}{2+\rho}=\frac{1-z}{1+z}.
+$$
+将带权 Weyl–Weitzenböck 方程与 $\Omega\otimes\Omega$ 配对，其中 $\Omega=u^2\omega$，再用闭流形上的
+$\int\langle\Omega,\Delta_H\Omega\rangle=2\int|d\Omega|^2$，便得上述平衡。最低特征线始终光滑，公式只依赖 $b^2$，所以可穿过 $\lambda_2=\lambda_3$ 的重根集。
+
+设 $t\ge m>0$、$z\le\theta<1$，并记 $u_0=2^{-1/3}$。在自对偶形式的 Weitzenböck 公式中以 $(u-u_0)\Omega/u$ 测试，标量项产生非负恢复势
+$$
+V(u)=u(u^3-u_0^3)(u-u_0).
+$$
+上述精确平衡控制其余联络项，从而
+$$
+\fint\bigl(|du|^2+|\nabla\omega|^2+V(u)\bigr)
+\le C_{m,\theta}\fint\bigl(b^2+(s+4)^2\bigr).
+$$
+此式无需 $t$ 的上界。若另有 $t\le M_0$，则
+$$
+\boxed{
+\fint\bigl(|dt|^2+(t-\tfrac12)^2+|\nabla\omega|^2\bigr)
+\le C_{m,M_0,\theta}\fint\bigl(b^2+(s+4)^2\bigr).}
+$$
+这在精确调和 Weyl 范畴内去除了独立二阶预算。零分裂、$s=-4$ 时给出 $t=1/2$ 和平行特征形式；小 Ricci 残差不能替代 $\delta W^+=0$。
+
+原稿：[负特征值的调和 Weyl 平衡](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/mathematics/current/line1_signed_harmonic_weyl.md)。
+
+### 2.9 局部谱排除与全局标量乘子的限制
+
+本节单独采用 $\Delta=\operatorname{tr}_g\nabla^2$，故 $\int f\Delta f=-\int|df|^2$。在 $s=-4$、$\delta W^+=0$ 时，令
+$$
+\mathsf A=W^+,\quad x=|\mathsf A|^2,\quad y=\det\mathsf A,\quad
+\mathsf A_0=\operatorname{diag}(-1/6,1/12,1/12).
+$$
+调和 Weyl 方程为
+$$
+\Delta\mathsf A=-2\mathsf A-6\mathsf A^2+2xI.
+$$
+在 $\mathsf A_0$ 处，$\frac12\Delta x$ 的代数项为 $-1/16$，可由梯度能量抵消，故单独的范数恒等式不排除该谱。
+
+多项式
+$$
+f(x,y)=x+36y+24(x-1/24)^2
+$$
+则利用一阶 Bianchi 关系得到更强的局部信息。在特征标架中写
+$d\lambda_1=-X+Z$、$d\lambda_2=X-Y$、$d\lambda_3=Y-Z$，则
+$$
+\Delta f=\sum_{i,j=1}^3 M_{ij}\langle V_i,V_j\rangle+\mathcal P,\qquad
+(V_1,V_2,V_3)=(X,Y,Z).
+$$
+目标谱处
+$$
+M_0=\begin{pmatrix}8&-8&-2\\-8&32&-8\\-2&-8&8\end{pmatrix}>I,\qquad
+\mathcal P_0=\frac1{16}.
+$$
+$M_0-I$ 的顺序主子式为 $7,153,243$。逐项估计表明，三个有序特征值均距目标值不超过 $10^{-4}$ 时，$M\ge I/2$ 且 $\mathcal P>1/32$。于是 $\Delta f\ge1/32$，与闭流形上积分为零矛盾。故每个闭的 $s=-4$、调和 $W^+$ 四流形都必须在某一点离开该谱盒。这是点态谱排除；小的平均谱误差并不保证处处处于谱盒中。
+
+上述局部乘子不能无代价地改成整个曲率空间上的正乘子。具体地，设 $F$ 是整个 $\operatorname{Sym}^2_0(\mathbb R^3)$ 上的 $C^2$ 正交不变函数，并写
+$$
+\Delta F(\mathsf A)=\mathcal Q_F(\nabla\mathsf A)+
+\mathcal P_F(\mathsf A).
+$$
+若 $\mathcal Q_F$ 对所有满足一阶调和 Weyl 代数关系的导数都非负，则
+$$
+\boxed{\mathcal P_F(\mathsf A_0)\le0.}
+$$
+证明只需限制到
+$$
+\mathsf A(u)=\frac u{\sqrt6}\operatorname{diag}(-2,1,1),\qquad
+\psi(u)=F(\mathsf A(u)).
+$$
+允许的一阶数据 $Y=0,Z=-X$ 给 $|du|^2=6|X|^2$、$|\nabla\mathsf A|^2=10|X|^2$，因此
+$$
+\mathcal Q_F=
+\left(\psi''+\frac{2}{3u}\psi'\right)|du|^2\ge0
+\quad\Longrightarrow\quad (u^{2/3}\psi')'\ge0.
+$$
+原点处的光滑不变性给 $\psi'(u)=O(u)$，从而 $\psi'\ge0$。而 $u_0=1/\sqrt{24}$ 处的反应项为
+$\mathcal P_F(\mathsf A_0)=-3u_0\psi'(u_0)/2\le0$。这排除所述全局标量乘子策略；它不排除带实际场、非局部项或联合测试的估计。
+
+原稿：[点态谱分析与标量乘子](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/paper/sections/early_pointwise_rigidity.tex)，其中保留谱盒的全部系数及误差界。
+
+### 2.10 小 Ricci 残差给出的弱源及其真实限制
+
+令 $E=\operatorname{Ric}+g$、$e=\operatorname{tr}E=s+4$，采用 Cotton 约定
+$$
+C_{ijk}=\nabla_kE_{ij}-\nabla_jE_{ik}
+-\frac16\bigl((\nabla_ke)g_{ij}-(\nabla_je)g_{ik}\bigr).
+$$
+相应有 $\operatorname{div}\mathcal W(W^+)=-C^+/2$。以归一化 $H^1$ 范数的对偶定义 $H^{-1}_{\rm av}$，分部积分直接给出
+$$
+\|\operatorname{div}\mathcal W(W^+)\|_{H^{-1}_{\rm av}}
+\le C\|E\|_{L^2_{\rm av}},
+$$
+$$
+\|a*C\|_{H^{-1}_{\rm av}}
+\le C\|E\|_\infty
+\bigl(\|a\|_\infty+\|\nabla a\|_{L^2_{\rm av}}\bigr)
+$$
+对有界 $W^{1,2}$ 张量 $a$ 成立。后式由导数落到 $a\varphi$ 的两项得到；无需比较不同度量的 Sobolev 空间。
+
+这个弱估计不能升级为 Cotton 的 $L^2$ 估计。固定闭负 Einstein 度量 $g_0$，在一个坐标片上取 $d\theta\ne0$ 及相对于 $d\theta$ 横向无迹的对称张量 $q$，使其 Cotton 主符号非零。令
+$$
+g_{\epsilon,k}=g_0+\epsilon k^{-2}\chi\sin(k\theta)\,q.
+$$
+二阶 Ricci 主符号与三阶 Cotton 主符号分别给
+$$
+\operatorname{Ric}_{g_{\epsilon,k}}+g_{\epsilon,k}
+=\frac{\epsilon}{2}|d\theta|^2\chi\sin(k\theta)\,q
++O(\epsilon/k+\epsilon^2/k^2),
+$$
+$$
+C^+_{g_{\epsilon,k}}=\epsilon k\cos(k\theta)\,\mathcal T
++O(\epsilon+\epsilon^2/k),
+$$
+其中固定张量 $\mathcal T$ 在一个开集上非零。取 $\epsilon_j=j^{-1}$、$k_j=j^2$，便有同一闭流形上的实际度量序列
+$$
+\|\operatorname{Ric}_{g_j}+g_j\|_\infty\to0,\qquad
+\sup_j\|\operatorname{Rm}_{g_j}\|_\infty<\infty,\qquad
+\int|C^+_{g_j}|^2\to\infty.
+$$
+所以即使曲率有界，也不能把近 Einstein 输入当成调和 Weyl 方程使用。积分 Weyl 恒等式仍保留
+$$
+0=\int\left(
+|\nabla W^+|^2-|\operatorname{div}\mathcal W(W^+)|^2
++\frac s2|W^+|^2-18\det W^+\right);
+$$
+同场方法的作用正是用实际测试对象及其导数预算处理该弱源。
+
+原稿：[弱曲率源与一阶控制的范围](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/paper/sections/analytic_limitations.tex)。共形归约中另一个独立的点态限制，以及标量方差的薄颈例子，见[间隙专题 §§1.2–1.3](GAPS_AND_ENDPOINTS.md)。
+
+### 2.11 非阿贝尔辅助系统的实际供给问题
+
+从普通 SW 解到非阿贝尔统一化，需要独立说明目标方程及其解的存在性。一个具体的 Clifford 块系统揭示了这里的约束。令 $W^\pm$ 为行列式 $L$ 的 Spin$^c$ 旋量丛，$C$ 为 $L$ 上的酉联络；令 $E$ 为秩二 Hermitian 丛，$A$ 为其联络，$\phi:W^+\to E$。对右 Clifford 乘法 $c_j:W^-\to W^+$，置
+$$
+\Theta_j=\phi c_j,\qquad
+Q(\phi)=-\frac12(\Theta\wedge\Theta^*)^+,\qquad
+\mathbb D=
+\begin{pmatrix}
+\nabla_C^-&\Theta^*/\sqrt2\\
+\Theta/\sqrt2&A
+\end{pmatrix}.
+$$
+$\mathbb D$ 保持不定 Hermitian 形式 $h_{W^-}-h_E$。取 $\Gamma=\operatorname{diag}(I,-I)$，定义分次 Hodge 算子 $*_\Gamma B=\Gamma(*B)\Gamma$。在 Einstein 度量上，直接计算块曲率得：$\mathbb D$ 的迹零曲率分次反自对偶，当且仅当
+$$
+D_{A,C}\phi=0,\qquad
+F_A^+=Q(\phi)+\frac12\operatorname{tr}Q(\phi)I_E+\frac12F_C^+I_E.
+$$
+其中源旋量联络的中心曲率为 $F_CI/2$，不能由二次映射的整体缩放消除。
+
+若 $E\cong W^+$，取迹后两边的行列式曲率代表同一上同调类，因此
+$$
+\operatorname{tr}F_A^+-F_C^+=2\operatorname{tr}Q(\phi)
+\quad\Longrightarrow\quad
+\mathcal H_g^+(\operatorname{tr}Q(\phi))=0.
+$$
+若 $\phi$ 的像落在目标线丛 $R_0\subset E$，则对应普通旋量属于 $(W^+)^*\otimes R_0$，其行列式为 $B=L^{-1}\otimes R_0^2$。按源稿明确的对偶 Clifford 约定，
+$\operatorname{tr}Q(\phi)=4q_{\rm std}(\phi)$。普通方程 $F_B^+=q_{\rm std}(\phi)$ 因而只有在 $c_1(B)_g^+=0$ 时才能原样嵌入该块系统。特别地，正平方普通单极子类不能这样提供非阿贝尔解。
+
+该系统本身还有精确等号分类。令 $V=W^-\oplus E$，$F_0$ 为 $\mathbb D$ 的迹零曲率；分次反自对偶性给正能量恒等式
+$$
+\int|F_0|^2
+=8\pi^2c_2(V)-3\pi^2c_1(V)^2=-12\pi^2\tau.
+$$
+若 $M$ 闭、Einstein、$\chi>0$、$\tau=0$，则 $F_0=0$，块曲率的非对角部分进一步给 $\nabla_{A,C}\phi=0$。秩零强迫平坦，矛盾；秩一的平行线分裂给
+$c_1(W^+)^2-4c_2(W^+)=0$，与 $2\chi>0$ 矛盾；秩二的平行极分解使 $\phi=fI$，方程遂给 $W^+=W^-=0$ 和 $s/12=-2f^2<0$。反向取常负截面曲率度量、$A=\nabla_C^+$、$\phi=\sqrt{-k/2}\,I$ 即得解。
+
+因此，该明确辅助系统在上述零签名范畴可解，当且仅当度量具有常负截面曲率。这个结论限定于所写出的丛、二次映射和分次方程；它说明普通规范供给不能未经证明转移到另一个统一化系统。
+
+完整 Clifford 代数、特征类计算及等号分类见[连续原稿“An auxiliary Clifford-block system and its supply obstruction”](../archive/originals/2026-09-29/27b3cef6-aeed-442c-9e66-fef1a757828e.tex)，标签 $\texttt{sec:clifford-block}$。
+
 ## 3. 经典结果与本项目推导的关系
 
 下表列出所收原稿引用的主要文献。第二列陈述经典结果；第三列列出本项目采用这些结果的命题及来源。

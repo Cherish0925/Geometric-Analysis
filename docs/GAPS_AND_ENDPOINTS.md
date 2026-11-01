@@ -101,6 +101,94 @@ $$
 
 证明来源：[共形分离与线性强制](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/continuation/20260927_conformal_separation_and_zero_end.md) Part I §§1、3；[单解继承](../archive/originals/2026-09-28/03_N1_Complete_Inheritance.md) §§1、4。
 
+### 1.2 点态近 Einstein 输入的共形归约
+
+共形比较还保留一个不使用规范场的定量结论。若闭四维度量满足
+$$
+\delta_-(g):=\|g^{-1}\operatorname{Ric}_g+I\|_{\infty,\mathrm{op}}
+\le\epsilon\le\tfrac14,
+$$
+则唯一的 $s_{\widehat g}=-4$ 代表 $\widehat g=u^2g$ 满足
+$$
+1-\epsilon\le u^2\le1+\epsilon,\qquad
+\|du\|_\infty\le4\epsilon,
+$$
+$$
+\int_g\bigl((u-1)^2+|du|^2+|\nabla^2u|^2\bigr)
+\le\tfrac38\int_g(s_g+4)^2\le6\epsilon^2V_g,
+$$
+$$
+\int_{\widehat g}|\operatorname{Ric}_{\widehat g}+\widehat g|^2
+\le P(g)\le4\epsilon^2V_g.
+$$
+右侧的导数和测度属于输入 $g$；最后一式左侧属于 $\widehat g$。这些常数不依赖直径、注入半径或标量谱隙。
+
+令 $e=s_g+4$、$v=u-1$，标量方程写成
+$$
+6\Delta_gv+4u(u+1)v=-eu.
+$$
+最大值原理先控制 $u$；与 $v$ 配对、再用积分 Bochner 式，分别控制 $v,dv,\nabla^2v$。为得到最大梯度界，将方程改写为
+$$
+(\Delta_g+4/3)v=F,\qquad \|F\|_\infty\le2\epsilon.
+$$
+在 $\operatorname{Ric}\ge-Kg$ 下，热半群给
+$$
+\|\nabla(\Delta_g+m)^{-1}f\|_\infty
+\le\left(\frac{\sqrt K}{m}+\sqrt{\frac{\pi}{2m}}\right)\|f\|_\infty.
+$$
+取 $K=5/4,m=4/3$ 即得所述常数。曲率积分界则由 $P(\widehat g)\le P(g)$ 和 $s_{\widehat g}=-4$ 得出。
+
+该归约不能保持点态 Ricci 小量。固定双曲曲面乘积 $(\Sigma_1\times\Sigma_2,h_1+h_2)$，在第一因子的等温坐标圆盘取截断函数 $\chi$，令
+$$
+v_L=-\frac{\log L}{2L}\chi(x,y)\,xy
+\log(x^2+y^2+e^{-2L}),\qquad
+g_L=e^{2v_L}h_1+h_2.
+$$
+直接微分给
+$$
+\|v_L\|_{C^1}+\|\Delta_{h_1}v_L\|_\infty
+=O((\log L)/L),\qquad
+\nabla^2v_L(0)=(\log L)(dx\otimes dy+dy\otimes dx).
+$$
+二维 Ricci 仅由 Gaussian 曲率决定，故 $\delta_-(g_L)=O((\log L)/L)\to0$。对实际 Yamabe 因子作代换 $u_L=e^{-v_L/3}w_L$，标量方程中的 $\Delta v_L$ 精确消去；固定曲面上的隐函数定理给 $w_L\to1$ 于 $C^{2,\alpha}$。四维共形 Ricci 公式遂给
+$$
+\liminf_{L\to\infty}
+\frac{\delta_-(u_L^2g_L)}{\log L}\ge\tfrac23.
+$$
+输入仍具有统一截面曲率界、直径上界、正注入半径和标量谱隙。因而从积分结论返回点态问题时，不能把 Yamabe 替换当作保持 $L^\infty$ Ricci 残差的操作。
+
+完整估计和反例见[负 Yamabe 归约](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/mathematics/current/line1_yamabe_endpoint.md)。
+
+### 1.3 标量方差需要全局连通信息
+
+对原度量的标量方差，实际规范预算也不能替代全局控制。固定 $M=\Sigma_g\times\Sigma_h$，在第一因子沿分离测地线取长度 $\ell\to0$ 的双曲度量，得到精确负 Einstein 乘积 $g_\ell$。在长领口两侧把度量分别乘以不同常数 $c_-^2,c_+^2$，并在固定长度的中央领口光滑过渡，记所得度量为 $\widetilde g_\ell$。过渡区体积为 $O(\ell)$，其曲率及任意固定阶导数有统一界；适当选择过渡后，标量曲率保持在固定负区间。
+
+同一个实际典范类 $a$ 在这族上满足 $p=a^2=T_+=A$。令
+$$
+B_\ell=S(\widetilde g_\ell)-32\pi^2A,\qquad
+D=\frac1{4\pi^2}\left(\frac S{24}+\frac{W_+}{2}\right)-\frac p2.
+$$
+共形变换及 Chern–Weil 精确给出
+$$
+B_\ell=O(\ell),\qquad D(\widetilde g_\ell)=\frac{B_\ell}{96\pi^2},
+\qquad P(\widetilde g_\ell)=\frac{B_\ell}{12}\to0.
+$$
+记两侧未缩放体积为 $V_-,V_+>0$，并置
+$$
+H_0=V_-+V_+,\quad H_2=V_-c_-^2+V_+c_+^2,\quad
+H_4=V_-c_-^4+V_+c_+^4.
+$$
+由于过渡体积趋零，
+$$
+S-I^2/V\longrightarrow16\left(H_0-\frac{H_2^2}{H_4}\right)>0,
+\qquad
+\mathcal E(\widetilde g_\ell)\longrightarrow
+4\left(1-\frac{H_2^2}{H_0H_4}\right)>0.
+$$
+例如 $V_-=V_+$、$c_-=1,c_+=\sqrt2$ 时，最后极限为 $2/5$。该族的标量谱隙趋零：两侧不同的标量尺度通过越来越细的领口相接。它证明原度量上的小规范缺陷、小 $P$ 和固定负标量区间不能强迫 $\mathcal E\to0$。逐共形类取 Yamabe 代表仍给 §1.1 的正确极值归约。
+
+构造、实际类和精确能量式见[共形长颈与标量方差](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/mathematics/current/line1_conformal_neck.md) §§2–6。
+
 ## 2. 从经典预算到同场微分相容性
 
 ### 2.1 经典估计的归一化后果

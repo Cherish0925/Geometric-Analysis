@@ -1,0 +1,167 @@
+{
+  "step": 78,
+  "purpose": "rank-one orthogonality of second obstruction",
+  "dR_structure": {
+    "formula": "dR = [[-4,0,0],[0,12c^2-4,12cs],[0,12cs,12s^2-4]]",
+    "entry_11": -4.0,
+    "entry_12": 0.0,
+    "entry_13": 0.0,
+    "kernel_block_det": -32.0,
+    "block_diagonal": true,
+    "R_times_rho_zeta": "ZERO for all in-kernel zeta"
+  },
+  "second_obstruction_analysis": {
+    "mu_1": "0 by determinant formula (proved, Step 76)",
+    "mu_2_mechanism": "R^- @ rho(zeta)^- = 0 since rho in ker(R^-)",
+    "mu_3_mechanism": "same: rho in ker(R^-) makes curvature contraction vanish",
+    "conjecture": "ALL mu_k = 0 for rank-1 curvature + in-kernel EH",
+    "caveat": "This argument captures the leading curvature contraction. Higher-order terms in the Biq16 formula may involve iterated curvature or Hessian of R, which need separate verification."
+  },
+  "alpha_tests": [
+    {
+      "alpha_deg": 0,
+      "rho_vec": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "dR_11": -4.0,
+      "dR_12": 0.0,
+      "dR_13": 0.0,
+      "first_row": [
+        -4.0,
+        0.0,
+        0.0
+      ],
+      "kernel_block": [
+        [
+          8.0,
+          0.0
+        ],
+        [
+          0.0,
+          -4.0
+        ]
+      ],
+      "kernel_block_determinant": -32.0,
+      "R_dR_norm": 4.0,
+      "dR_R_norm": 4.0
+    },
+    {
+      "alpha_deg": 15,
+      "rho_vec": [
+        0.0,
+        0.9659258262890683,
+        0.25881904510252074
+      ],
+      "dR_11": -4.0,
+      "dR_12": 0.0,
+      "dR_13": 0.0,
+      "first_row": [
+        -4.0,
+        0.0,
+        0.0
+      ],
+      "kernel_block": [
+        [
+          7.19615242,
+          3.0
+        ],
+        [
+          3.0,
+          -3.19615242
+        ]
+      ],
+      "kernel_block_determinant": -32.0,
+      "R_dR_norm": 4.0,
+      "dR_R_norm": 4.0
+    },
+    {
+      "alpha_deg": 30,
+      "rho_vec": [
+        0.0,
+        0.8660254037844387,
+        0.49999999999999994
+      ],
+      "dR_11": -4.0,
+      "dR_12": 0.0,
+      "dR_13": 0.0,
+      "first_row": [
+        -4.0,
+        0.0,
+        0.0
+      ],
+      "kernel_block": [
+        [
+          5.0,
+          5.19615242
+        ],
+        [
+          5.19615242,
+          -1.0
+        ]
+      ],
+      "kernel_block_determinant": -32.0,
+      "R_dR_norm": 4.0,
+      "dR_R_norm": 4.0
+    },
+    {
+      "alpha_deg": 45,
+      "rho_vec": [
+        0.0,
+        0.7071067811865476,
+        0.7071067811865475
+      ],
+      "dR_11": -4.0,
+      "dR_12": 0.0,
+      "dR_13": 0.0,
+      "first_row": [
+        -4.0,
+        0.0,
+        0.0
+      ],
+      "kernel_block": [
+        [
+          2.0,
+          6.0
+        ],
+        [
+          6.0,
+          2.0
+        ]
+      ],
+      "kernel_block_determinant": -32.0,
+      "R_dR_norm": 4.0,
+      "dR_R_norm": 4.0
+    },
+    {
+      "alpha_deg": 60,
+      "rho_vec": [
+        0.0,
+        0.5000000000000001,
+        0.8660254037844386
+      ],
+      "dR_11": -4.0,
+      "dR_12": 0.0,
+      "dR_13": 0.0,
+      "first_row": [
+        -4.0,
+        0.0,
+        0.0
+      ],
+      "kernel_block": [
+        [
+          -1.0,
+          5.19615242
+        ],
+        [
+          5.19615242,
+          5.0
+        ]
+      ],
+      "kernel_block_determinant": -32.0,
+      "R_dR_norm": 4.0,
+      "dR_R_norm": 4.0
+    }
+  ]
+}

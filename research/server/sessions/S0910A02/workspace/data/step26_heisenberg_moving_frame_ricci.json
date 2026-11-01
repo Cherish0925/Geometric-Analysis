@@ -1,0 +1,256 @@
+{
+  "title": "Step 26 moving-frame Ricci derivation for diagonal H3 cohomogeneity-one model",
+  "brackets": {
+    "[e0,e1]": "-k1 e1",
+    "[e0,e2]": "-k1 e2",
+    "[e0,e3]": "-k3 e3",
+    "[e1,e2]": "b e3",
+    "e0_derivatives": {
+      "b": "bp",
+      "k1": "k1p",
+      "k3": "k3p"
+    }
+  },
+  "Gamma_nonzero": [
+    {
+      "i": 1,
+      "j": 0,
+      "k": 1,
+      "value": "k1"
+    },
+    {
+      "i": 1,
+      "j": 1,
+      "k": 0,
+      "value": "-k1"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "k": 3,
+      "value": "b/2"
+    },
+    {
+      "i": 1,
+      "j": 3,
+      "k": 2,
+      "value": "-b/2"
+    },
+    {
+      "i": 2,
+      "j": 0,
+      "k": 2,
+      "value": "k1"
+    },
+    {
+      "i": 2,
+      "j": 1,
+      "k": 3,
+      "value": "-b/2"
+    },
+    {
+      "i": 2,
+      "j": 2,
+      "k": 0,
+      "value": "-k1"
+    },
+    {
+      "i": 2,
+      "j": 3,
+      "k": 1,
+      "value": "b/2"
+    },
+    {
+      "i": 3,
+      "j": 0,
+      "k": 3,
+      "value": "k3"
+    },
+    {
+      "i": 3,
+      "j": 1,
+      "k": 2,
+      "value": "-b/2"
+    },
+    {
+      "i": 3,
+      "j": 2,
+      "k": 1,
+      "value": "b/2"
+    },
+    {
+      "i": 3,
+      "j": 3,
+      "k": 0,
+      "value": "-k3"
+    }
+  ],
+  "Ric_convention_A_sum_R_i_j_l_i": [
+    [
+      "-2*k1**2 - 2*k1p - k3**2 - k3p",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "-b**2/2 - 2*k1**2 - k1*k3 - k1p",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "-b**2/2 - 2*k1**2 - k1*k3 - k1p",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "b**2/2 - 2*k1*k3 - k3**2 - k3p"
+    ]
+  ],
+  "Ric_convention_B_sum_R_j_i_i_l": [
+    [
+      "-2*k1**2 - 2*k1p - k3**2 - k3p",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "-b**2/2 - 2*k1**2 - k1*k3 - k1p",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "-b**2/2 - 2*k1**2 - k1*k3 - k1p",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "b**2/2 - 2*k1*k3 - k3**2 - k3p"
+    ]
+  ],
+  "expected_session_matrix": [
+    [
+      "-2*k1**2 - 2*k1p - k3**2 - k3p",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "-b**2/2 - k1*(2*k1 + k3) - k1p",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "-b**2/2 - k1*(2*k1 + k3) - k1p",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "b**2/2 - k3*(2*k1 + k3) - k3p"
+    ]
+  ],
+  "matches_expected": {
+    "Ric_A": true,
+    "Ric_B": true,
+    "negative_Ric_A": false,
+    "negative_Ric_B": false
+  },
+  "diff_A_minus_expected": [
+    [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0"
+    ]
+  ],
+  "diff_B_minus_expected": [
+    [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0"
+    ]
+  ],
+  "vertical_Ric_equals_1_substitution": {
+    "Ric_matrix_after_using_vertical_eqs": [
+      [
+        "b**2/2 + 2*k1**2 + 4*k1*k3 + 3",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "Ric00_minus_1_after_vertical_eqs": "(b**2 + 4*k1**2 + 8*k1*k3 + 4)/2",
+    "constraint_for_Ric00_equals_1": "b**2 + 4*k1**2 + 8*k1*k3 + 4",
+    "relation": "Ric00-1 = 1/2*(4 k1^2 + 8 k1 k3 + b^2 + 4), so the displayed constraint is equivalent to Ric00=1."
+  },
+  "conclusion": "The moving-frame calculation matches the Step-26 cohomogeneity-one H3 formulas under convention Ric_A. The T-active local model is algebraically consistent, so a Milnor-only abelian-forcing proof is false once second fundamental form terms are allowed."
+}

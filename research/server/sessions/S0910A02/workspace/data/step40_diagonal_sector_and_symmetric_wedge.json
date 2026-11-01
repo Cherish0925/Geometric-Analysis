@@ -1,0 +1,338 @@
+{
+  "diagonal_sector": {
+    "claim": "Diagonal fiber metric h=diag(p^2,q^2) allows only rod labels (\u00b11,0) and (0,\u00b11)",
+    "proof": "h(v,v) = a^2 p^2 + b^2 q^2. On a rod (codim-2), this must vanish identically. Since p,q > 0 in the interior, the zero set of h(v,v) for |a|,|b| >= 1 would be {p=0} \u2229 {q=0}, which is codim-4 (vertices). Only a=0 or b=0 gives codim-2 rods.",
+    "consequence": "The diagonal sector IS the alternating-label sector. Any Einstein metric on a simply connected 4-manifold with a diagonal T^2 action must be diagonal (Liu Prop 5), so this is the complete sector for alternating actions.",
+    "non_diagonal_examples": {
+      "Page_F1": {
+        "labels": "[(1,0),(0,1),(-1,1),(0,-1)]",
+        "circle_classes": 3,
+        "note": "(-1,1) requires h_{11}-2h_{12}+h_{22} -> 0, impossible diagonally"
+      },
+      "CLW_dP2": {
+        "labels": "5 edges with 3+ circle classes",
+        "circle_classes": ">=3",
+        "note": "Not in diagonal sector"
+      },
+      "toric_KE_dP3": {
+        "labels": "[(1,0),(0,1),(-1,1),(-1,0),(0,-1),(1,-1)]",
+        "circle_classes": 3,
+        "note": "Not in diagonal sector"
+      }
+    },
+    "diagonal_examples": {
+      "S4": {
+        "m": 2,
+        "topology": "S^4",
+        "has_Einstein": true
+      },
+      "S2xS2": {
+        "m": 4,
+        "topology": "S^2 x S^2",
+        "has_Einstein": true,
+        "note": "Product metric is the unique diagonal Einstein (Liu Prop 4 for sec>=0)"
+      },
+      "hash_k_S2xS2_k2": {
+        "m": 6,
+        "topology": "#_2(S^2 x S^2)",
+        "has_Einstein": "UNKNOWN"
+      },
+      "hash_k_S2xS2_k3": {
+        "m": 8,
+        "topology": "#_3(S^2 x S^2)",
+        "has_Einstein": "UNKNOWN"
+      }
+    }
+  },
+  "polygon_comparison": {
+    "4": {
+      "m": 4,
+      "topology": "#_1(S^2 x S^2)",
+      "s_reg_H2(-1)": null,
+      "status": "No right-angled polygon in H^2 for m=4; flat only",
+      "Gauss_Bonnet_int_K_dA": 0.0,
+      "GB_note": "int K_Sigma dA = 0.0000 (= 2pi - m*pi/2)"
+    },
+    "5": {
+      "m": 5,
+      "topology": "#_1(S^2 x S^2)",
+      "s_reg_H2(-1)": 1.0612750619050362,
+      "L_rod_over_s_reg_large_A": 2.0931816348266925,
+      "gap_percent_large_A": 109.31816348266925,
+      "A_match": 0.14786733793624704,
+      "A_match_note": "L_rod = s_reg at this A; for A > A_match, L_rod > s_reg",
+      "Gauss_Bonnet_int_K_dA": -1.5707963267948966,
+      "GB_note": "int K_Sigma dA = -1.5708 (= 2pi - m*pi/2)"
+    },
+    "6": {
+      "m": 6,
+      "topology": "#_2(S^2 x S^2)",
+      "s_reg_H2(-1)": 1.316957896924817,
+      "L_rod_over_s_reg_large_A": 1.686797637393264,
+      "gap_percent_large_A": 68.6797637393264,
+      "A_match": 0.270960667870401,
+      "A_match_note": "L_rod = s_reg at this A; for A > A_match, L_rod > s_reg",
+      "Gauss_Bonnet_int_K_dA": -3.141592653589793,
+      "GB_note": "int K_Sigma dA = -3.1416 (= 2pi - m*pi/2)"
+    },
+    "8": {
+      "m": 8,
+      "topology": "#_3(S^2 x S^2)",
+      "s_reg_H2(-1)": 1.5285709194809982,
+      "L_rod_over_s_reg_large_A": 1.4532799497673539,
+      "gap_percent_large_A": 45.32799497673538,
+      "A_match": 0.44963114457067793,
+      "A_match_note": "L_rod = s_reg at this A; for A > A_match, L_rod > s_reg",
+      "Gauss_Bonnet_int_K_dA": -6.283185307179586,
+      "GB_note": "int K_Sigma dA = -6.2832 (= 2pi - m*pi/2)"
+    },
+    "10": {
+      "m": 10,
+      "topology": "#_4(S^2 x S^2)",
+      "s_reg_H2(-1)": 1.6169216675118867,
+      "L_rod_over_s_reg_large_A": 1.3738708025958544,
+      "gap_percent_large_A": 37.38708025958544,
+      "A_match": 0.5633669625999107,
+      "A_match_note": "L_rod = s_reg at this A; for A > A_match, L_rod > s_reg",
+      "Gauss_Bonnet_int_K_dA": -9.42477796076938,
+      "GB_note": "int K_Sigma dA = -9.4248 (= 2pi - m*pi/2)"
+    },
+    "12": {
+      "m": 12,
+      "topology": "#_5(S^2 x S^2)",
+      "s_reg_H2(-1)": 1.6628858910586215,
+      "L_rod_over_s_reg_large_A": 1.335895313697668,
+      "gap_percent_large_A": 33.58953136976679,
+      "A_match": 0.6372541673021879,
+      "A_match_note": "L_rod = s_reg at this A; for A > A_match, L_rod > s_reg",
+      "Gauss_Bonnet_int_K_dA": -12.566370614359172,
+      "GB_note": "int K_Sigma dA = -12.5664 (= 2pi - m*pi/2)"
+    },
+    "20": {
+      "m": 20,
+      "topology": "#_9(S^2 x S^2)",
+      "s_reg_H2(-1)": 1.727486786766596,
+      "L_rod_over_s_reg_large_A": 1.2859383273415024,
+      "gap_percent_large_A": 28.593832734150237,
+      "A_match": 0.7649501298102052,
+      "A_match_note": "L_rod = s_reg at this A; for A > A_match, L_rod > s_reg",
+      "Gauss_Bonnet_int_K_dA": -25.132741228718345,
+      "GB_note": "int K_Sigma dA = -25.1327 (= 2pi - m*pi/2)"
+    },
+    "50": {
+      "m": 50,
+      "topology": "#_24(S^2 x S^2)",
+      "s_reg_H2(-1)": 1.7571548694983234,
+      "L_rod_over_s_reg_large_A": 1.264226339772439,
+      "gap_percent_large_A": 26.42263397724389,
+      "A_match": 0.8357455203132993,
+      "A_match_note": "L_rod = s_reg at this A; for A > A_match, L_rod > s_reg",
+      "Gauss_Bonnet_int_K_dA": -72.25663103256525,
+      "GB_note": "int K_Sigma dA = -72.2566 (= 2pi - m*pi/2)"
+    },
+    "100": {
+      "m": 100,
+      "topology": "#_49(S^2 x S^2)",
+      "s_reg_H2(-1)": 1.761350826753149,
+      "L_rod_over_s_reg_large_A": 1.2612146514696105,
+      "gap_percent_large_A": 26.121465146961054,
+      "A_match": 0.8465072475756666,
+      "A_match_note": "L_rod = s_reg at this A; for A > A_match, L_rod > s_reg",
+      "Gauss_Bonnet_int_K_dA": -150.79644737231007,
+      "GB_note": "int K_Sigma dA = -150.7964 (= 2pi - m*pi/2)"
+    }
+  },
+  "hexagonal_comparison": {
+    "m": 6,
+    "s_reg_H2(-1)": 1.316957896924817,
+    "cos_pi_6": 0.8660254037844387,
+    "sqrt2_cos_pi_6": 1.2247448713915892,
+    "arccosh_val": 0.6584789484624085,
+    "L_rod_over_s_reg_large_A": 1.686797637393264,
+    "gap_percent": 68.6797637393264,
+    "interpretation": "For m=6, the constant-curvature right-angled hexagon has side 1.316958/sqrt(A), while the rod requires pi/sqrt(2A) = 2.221441/sqrt(A). The rod is 68.7% longer than the polygon side. This gap is much larger than the asymptotic 26% at m -> infinity."
+  },
+  "eigenvalue_analysis": {
+    "4": {
+      "m": 4,
+      "flat_rectangle_L": 3.141592653589793,
+      "flat_lambda_1": 2.0,
+      "note": "Product metric: L=pi, lambda_1 = 2. Only known diagonal Einstein."
+    },
+    "6": {
+      "m": 6,
+      "area_formula": "Area = 1.0*pi/A",
+      "Faber_Krahn_A_upper": 0.3458374889166002,
+      "FK_note": "lambda_1 >= 2 requires A <= 0.3458 (Faber-Krahn)",
+      "L_rod_at_FK_A": 2.4154130585669105,
+      "s_reg_at_FK_A": 2.239421566011883,
+      "gap_at_FK_A_percent": 7.858792432210326,
+      "Cheeger_A_upper": 3.468756204545274,
+      "Cheeger_note": "Rough Cheeger: A <= 3.4688"
+    },
+    "8": {
+      "m": 8,
+      "area_formula": "Area = 2.0*pi/A",
+      "Faber_Krahn_A_upper": 0.6916749778332004,
+      "FK_note": "lambda_1 >= 2 requires A <= 0.6917 (Faber-Krahn)",
+      "L_rod_at_FK_A": 2.0349604109768915,
+      "s_reg_at_FK_A": 1.8379536735839521,
+      "gap_at_FK_A_percent": 10.718808652493529,
+      "Cheeger_A_upper": 4.673058111765969,
+      "Cheeger_note": "Rough Cheeger: A <= 4.6731"
+    },
+    "10": {
+      "m": 10,
+      "area_formula": "Area = 3.0*pi/A",
+      "Faber_Krahn_A_upper": 1.0375124667498006,
+      "FK_note": "lambda_1 >= 2 requires A <= 1.0375 (Faber-Krahn)",
+      "L_rod_at_FK_A": 1.7915360511582048,
+      "s_reg_at_FK_A": 1.587421722213259,
+      "gap_at_FK_A_percent": 12.858229548500821,
+      "Cheeger_A_upper": 5.228871357738841,
+      "Cheeger_note": "Rough Cheeger: A <= 5.2289"
+    },
+    "20": {
+      "m": 20,
+      "area_formula": "Area = 8.0*pi/A",
+      "Faber_Krahn_A_upper": 2.7666999113328017,
+      "FK_note": "lambda_1 >= 2 requires A <= 2.7667 (Faber-Krahn)",
+      "L_rod_at_FK_A": 1.2290802907811793,
+      "s_reg_at_FK_A": 1.0385650562040774,
+      "gap_at_FK_A_percent": 18.34408287078608,
+      "Cheeger_A_upper": 5.968421196906357,
+      "Cheeger_note": "Rough Cheeger: A <= 5.9684"
+    }
+  },
+  "b_plus_analysis": {
+    "known_examples": {
+      "S4": {
+        "b+": 0,
+        "b-": 0
+      },
+      "CP2": {
+        "b+": 1,
+        "b-": 0
+      },
+      "S2xS2": {
+        "b+": 1,
+        "b-": 1
+      },
+      "Page_F1": {
+        "b+": 1,
+        "b-": 1
+      },
+      "CLW_dP2": {
+        "b+": 1,
+        "b-": 2
+      },
+      "toric_KE_dP3": {
+        "b+": 1,
+        "b-": 3
+      },
+      "KE_dP4": {
+        "b+": 1,
+        "b-": 4
+      },
+      "KE_dP5": {
+        "b+": 1,
+        "b-": 5
+      },
+      "KE_dP6": {
+        "b+": 1,
+        "b-": 6
+      },
+      "KE_dP7": {
+        "b+": 1,
+        "b-": 7
+      },
+      "KE_dP8": {
+        "b+": 1,
+        "b-": 8
+      }
+    },
+    "stress_family": {
+      "hash_k_S2xS2": "b+ = k, b- = k for k >= 1",
+      "first_unknown_diagonal": {
+        "k": 2,
+        "m": 6,
+        "b+": 2,
+        "b-": 2
+      }
+    },
+    "observation": "Every known simply connected positive Einstein 4-manifold has b+ <= 1. No theorem prohibits b+ >= 2 without additional hypotheses. Liu proved the classification under sec >= 0. The diagonal T^2 action on #_k(S^2xS^2) has b+ = k; if b+ <= 1 is necessary, this immediately excludes k >= 2.",
+    "known_non_existence_theorems": {
+      "Ricci_flat": "Lambda = 0 on compact => no Killing fields unless parallel, hence flat torus. b+ free.",
+      "negative_Einstein": "Lambda < 0 on compact => no Killing fields (Bochner). No T^2 action possible.",
+      "positive_Einstein": "Lambda > 0: T^2 action possible. b+ <= 1 for all known examples."
+    },
+    "question": "Is there a closed simply connected positive Einstein 4-manifold with an isometric T^2 action having fixed points and b+ >= 2? The known list S^4, CP^2, S^2xS^2, Page, CLW, dP3 all have b+ <= 1. This is a topology-uniform question that may be cheaper to decide from sources."
+  },
+  "m4_symmetric_sector": {
+    "framework": "For the diagonal action on S^2 x S^2 with Z_2 symmetry a(x,y) = b(y,x): the two eigenfunction equations merge into one, but the traceless horizontal Einstein equation provides an independent constraint. Together with the Dirichlet eigenvalue condition lambda_1 = 2, this is an overdetermined system.",
+    "product_metric_check": {
+      "g_Sigma": "flat: dx^2 + dy^2",
+      "a": "sin(x)",
+      "b": "sin(y)",
+      "K_Sigma": 0,
+      "eigenvalue": "lambda_1 = 2 for [0,pi]^2",
+      "traceless_check": "(-sin x dx^2) + (-sin y dy^2) = -(dx^2 + dy^2) after dividing by sin",
+      "status": "product metric satisfies all equations"
+    },
+    "uniqueness_question": "Is the product metric the ONLY diagonal T^2-Einstein metric on S^2 x S^2? Liu Prop 4 proves uniqueness with sec >= 0 (forcing flat orbit space). Without sec >= 0, the orbit space could be non-flat. A definitive uniqueness proof would immediately tell us whether the m=6 extension is blocked or open.",
+    "connection_to_liu": "Liu Prop 3: given g_Sigma, at most one Einstein metric exists. But different g_Sigma could give different Einstein metrics. The coupled system (eigenfunction + horizontal traceless) must be solved simultaneously for both g_Sigma and a. This is genuinely overdetermined."
+  },
+  "b_plus_versus_m": {
+    "4": {
+      "k": 1,
+      "b+": 1,
+      "b-": 1,
+      "b2": 2,
+      "chi": 4,
+      "known_diagonal_Einstein": true
+    },
+    "6": {
+      "k": 2,
+      "b+": 2,
+      "b-": 2,
+      "b2": 4,
+      "chi": 6,
+      "known_diagonal_Einstein": false
+    },
+    "8": {
+      "k": 3,
+      "b+": 3,
+      "b-": 3,
+      "b2": 6,
+      "chi": 8,
+      "known_diagonal_Einstein": false
+    },
+    "10": {
+      "k": 4,
+      "b+": 4,
+      "b-": 4,
+      "b2": 8,
+      "chi": 10,
+      "known_diagonal_Einstein": false
+    },
+    "12": {
+      "k": 5,
+      "b+": 5,
+      "b-": 5,
+      "b2": 10,
+      "chi": 12,
+      "known_diagonal_Einstein": false
+    }
+  },
+  "summary": {
+    "diagonal_sector_result": "The diagonal twist-free framework covers EXACTLY the alternating-label toric sector: labels \u00b1e1, \u00b1e2 only. Page, CLW, dP3 are NOT in this sector. The only known diagonal Einstein 4-manifolds are S^4 (m=2) and S^2xS^2 (m=4).",
+    "polygon_gap": "For m=6 in constant-curvature H^2(-A): rod is 68.7% longer than polygon side (at large A). This gap grows with smaller m: m=6: 68.7%, m=8: 45.3%, m\u2192\u221e: 26.1%. Variable K_B could narrow the gap but faces Gauss-Bonnet and eigenvalue constraints.",
+    "eigenvalue_constraint": "The orbit volume is the principal Dirichlet eigenfunction with eigenvalue 2. Faber-Krahn bounds the edge curvature A from above (for constant curvature). For m=6: A <= ~0.35 from Faber-Krahn, which still leaves a ~8% gap.",
+    "b_plus_observation": "All known simply connected positive Einstein 4-manifolds have b+ <= 1. The diagonal stress family #_k(S^2xS^2) for k >= 2 has b+ >= 2. If b+ <= 1 is necessary, all m >= 6 diagonal Einstein are excluded. This is open; Liu proved it only with sec >= 0.",
+    "next_steps": [
+      "1. Search for a b+ >= 2 non-existence theorem in the positive Einstein literature",
+      "2. Set up the linearized stability analysis at the product metric (m=4) to check for non-flat deformations",
+      "3. Formulate the m=6 eigenfunction BVP on the hexagonal wedge and check feasibility"
+    ]
+  }
+}

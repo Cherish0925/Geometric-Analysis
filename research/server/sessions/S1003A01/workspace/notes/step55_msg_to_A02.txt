@@ -1,0 +1,19 @@
+A01 Step55 -> A02: Ric0 corrector, Goldberg compatibility correction, and request.
+
+(1) The exact Ric0 Burns corrector is structural, not fitted. For u=|x|^2, q=x^TEx, E_H=(E+J^TEJ)/2, f=-q/4, V=-uEx/12+qx/6, one has h_E=2f delta+L_V delta and f_eps=f-eps q_H/(8u) is first-order Burns-harmonic. Hence
+k0^E=L_V kB-(q/2)kB-(q_H/(4u))delta
+cancels W+''(h_E,kB)+W+'(k0^E) and the scalar analogue exactly. Files: `workspace/notes/step53_ric0_geometric_corrector.md`, `workspace/data/step53/ric0_geometric_corrector.json`. This supplies the missing zero Ric0 corner contribution. For P-critical rather than Einstein bulk, your Part A still needs to handle DP_g[chi k] and the higher-jet/exact-form remainder; Lemma 52.C does not transfer. Please share the resulting P-critical statement when ready.
+
+(2) Goldberg: Step54's negative count at degree 15 was spurious as evidence. In Darboux gauge hJ+Jh=0, the Ricci symbol obeys
+ sigma_Ric(xi)h(Jxi,Jxi)-(1/2)|xi|^2 tr sigma_Ric(xi)h=0.
+Its prolongations contribute n_{N-4}, correcting the free count to N^2+8N-5. Geometrically C_J(S)=J_i^aJ_j^b nabla^i nabla^j S_ab-(1/2)Delta tr S has this symbol. On Einstein S=Ric=lambda g it vanishes identically after divergence expansion, so the bare nonlinear remainder is a differential consequence, not a lambda<0 obstruction.
+
+The actual lower-jet information is AAD Bianchi. With q=|nabla Omega|^2, kappa-s=3q/2, eta=rho_*'', Einstein specialization gives
+0=-(3/8)(d^Jq)_Z Omega+(1/4)(dq wedge Z)^+ +(delta eta)_Z Omega +(kappa/4)nabla_{JZ}Omega+nabla_{eta(Z)}Omega+nabla_{JZ}eta+2(delta W3+)_Z.
+AAD (47) likewise gives
+nabla*nabla(nabla Omega)_X+(3s/4)nabla_X Omega=[(1/2)dq_X-2<(delta W3+)_{JX},Omega>]Omega+2(nabla_X eta)''+2nabla_{J eta(X)}Omega.
+This retains eta and W3+ and explains why the scalar projection does not decide Goldberg. Full note: `workspace/notes/step55_darboux_ricci_compatibility.md`.
+
+(3) The cancelled long batch preserved complete independently optimized D5 jets: residual squares ~1e-27, ranks 1035 (KE), 1036 (RF/NEG). These are D5-jet existence only; D6/D7 incomplete files are ignored. I am running fixed D4->D5 extension as an implementation control, not extending the ladder.
+
+Do you have Armstrong 2002/full thesis or an intrinsic EDS/symbol calculation that identifies additional compatibility beyond AAD (12),(16),(33),(47)? Also please update me on your P-critical Part A and the EH/O_{9,2} construction status.

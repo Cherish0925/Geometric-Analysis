@@ -1,0 +1,1326 @@
+{
+  "model": "full SPD logarithmic matrix, piecewise cubic Hermite inner transition",
+  "parameters": {
+    "nr": 31,
+    "ns": 64,
+    "R": 1.0,
+    "wind": 2,
+    "S": 1.0,
+    "Qmax": 0.5,
+    "richer": false,
+    "max_nfev": 6,
+    "knots": "0,0.2,0.45,0.7,1",
+    "output": "workspace/data/step98_spd_spline_transition_N64.json"
+  },
+  "positive_half": {
+    "side": "positive",
+    "parameter_count": 54,
+    "baseline": {
+      "operator_sup": 27.927783591825694,
+      "peak_r": 0.3454915028125263,
+      "peak_s_index": 40,
+      "frobenius_rms": 6.434947676430613,
+      "center_operator_sup": 0.012124307477906427,
+      "end_operator_sup": 1.0741905091707618,
+      "minimum_q_eigenvalue": 0.1933795754092979,
+      "blocks": {
+        "nn": 11.614381278784753,
+        "normal_tangential_frobenius": 0.06546544625441726,
+        "tangential_operator": 27.927635708400757
+      }
+    },
+    "baseline_vector_norm": 906.3915620261758,
+    "linear_svd": {
+      "singular_values": [
+        2574.229275000047,
+        2573.6449179418696,
+        2556.40139902462,
+        1797.9730872061848,
+        1797.2841664633388,
+        1791.3343601293477,
+        1709.3937150362235,
+        1672.6604989271425,
+        1641.6992248846373,
+        1528.8903388650167,
+        1486.5367832410298,
+        1447.1591775378026,
+        1446.7571180466962,
+        1407.2314061524035,
+        1325.762254807347,
+        1315.0895644237396,
+        1261.3698025921437,
+        1257.5015894492797,
+        1249.3875489796064,
+        1240.2534408092397,
+        1239.4120274663678,
+        1178.368959761462,
+        1134.2279116795085,
+        1111.436665465522,
+        1063.9788190400584,
+        1055.30462468003,
+        1002.5501004170663,
+        997.7540539531702,
+        982.8423016081362,
+        981.4748297834101,
+        978.1964054561276,
+        950.1562065105284,
+        910.3565874663186,
+        902.0413168466318,
+        873.6018831226967,
+        871.4938114841241,
+        868.2333736991509,
+        863.2735462199249,
+        863.0951353401229,
+        687.5957937491871,
+        669.0911145437375,
+        658.5207838527809,
+        624.1041633108499,
+        622.3190299754899,
+        597.3344905968455,
+        597.2151259641128,
+        577.297749936008,
+        552.4368741646565,
+        533.7883713997696,
+        501.01394488882545,
+        497.47835883421243,
+        494.8340368300775,
+        490.5541645293805,
+        490.35242705189864
+      ],
+      "condition_nonzero": 5.2497533059576185,
+      "residual_norm": 906.3915620261758,
+      "range_projection_norm": 646.1007585307898,
+      "linear_inaccessible_norm": 635.6881889245616,
+      "range_fraction": 0.7128274198476385,
+      "ridge": 0.01,
+      "predicted_correction_norm": 0.5978657076520915,
+      "modes": [
+        {
+          "index": 0,
+          "s": 2574.229275000047,
+          "left_projection": 34.01448229807362,
+          "undamped_required_coefficient": -0.013213462619048568,
+          "ridge_coefficient": -0.013213462618849169
+        },
+        {
+          "index": 1,
+          "s": 2573.6449179418696,
+          "left_projection": 2.2437265029975465e-06,
+          "undamped_required_coefficient": -8.718088837180549e-10,
+          "ridge_coefficient": -8.718088837048929e-10
+        },
+        {
+          "index": 2,
+          "s": 2556.40139902462,
+          "left_projection": -123.25795632947191,
+          "undamped_required_coefficient": 0.04821541577019175,
+          "ridge_coefficient": 0.04821541576945396
+        },
+        {
+          "index": 3,
+          "s": 1797.9730872061848,
+          "left_projection": 84.14712844052339,
+          "undamped_required_coefficient": -0.046801105666869035,
+          "ridge_coefficient": -0.0468011056654213
+        },
+        {
+          "index": 4,
+          "s": 1797.2841664633388,
+          "left_projection": -7.259936502382408e-06,
+          "undamped_required_coefficient": 4.039392678047329e-09,
+          "ridge_coefficient": 4.039392677922279e-09
+        },
+        {
+          "index": 5,
+          "s": 1791.3343601293477,
+          "left_projection": 190.87205381814093,
+          "undamped_required_coefficient": -0.10655300208965932,
+          "ridge_coefficient": -0.10655300208633876
+        },
+        {
+          "index": 6,
+          "s": 1709.3937150362235,
+          "left_projection": -271.37756988721907,
+          "undamped_required_coefficient": 0.1587566208417166,
+          "ridge_coefficient": 0.1587566208362835
+        },
+        {
+          "index": 7,
+          "s": 1672.6604989271425,
+          "left_projection": 12.696846638203183,
+          "undamped_required_coefficient": -0.007590809160823156,
+          "ridge_coefficient": -0.007590809160551842
+        },
+        {
+          "index": 8,
+          "s": 1641.6992248846373,
+          "left_projection": 3.9061525636575e-08,
+          "undamped_required_coefficient": -2.3793350843130152e-11,
+          "ridge_coefficient": -2.379335084224734e-11
+        },
+        {
+          "index": 9,
+          "s": 1528.8903388650167,
+          "left_projection": -2.4081096880974682e-08,
+          "undamped_required_coefficient": 1.575070249894539e-11,
+          "ridge_coefficient": 1.5750702498271566e-11
+        },
+        {
+          "index": 10,
+          "s": 1486.5367832410298,
+          "left_projection": -14.452647443523665,
+          "undamped_required_coefficient": 0.009722361132573661,
+          "ridge_coefficient": 0.009722361132133695
+        },
+        {
+          "index": 11,
+          "s": 1447.1591775378026,
+          "left_projection": 1.4164886829702398e-09,
+          "undamped_required_coefficient": -9.788064125608175e-13,
+          "ridge_coefficient": -9.7880641251408e-13
+        },
+        {
+          "index": 12,
+          "s": 1446.7571180466962,
+          "left_projection": 2.166156811305611,
+          "undamped_required_coefficient": -0.0014972498039133168,
+          "ridge_coefficient": -0.0014972498038417843
+        },
+        {
+          "index": 13,
+          "s": 1407.2314061524035,
+          "left_projection": -3.145063293350157e-08,
+          "undamped_required_coefficient": 2.2349297205846655e-11,
+          "ridge_coefficient": 2.234929720471807e-11
+        },
+        {
+          "index": 14,
+          "s": 1325.762254807347,
+          "left_projection": -11.939759081577474,
+          "undamped_required_coefficient": 0.009005957922155883,
+          "ridge_coefficient": 0.009005957921643494
+        },
+        {
+          "index": 15,
+          "s": 1315.0895644237396,
+          "left_projection": 8.276595088715072e-08,
+          "undamped_required_coefficient": -6.293560007330605e-11,
+          "ridge_coefficient": -6.293560006966701e-11
+        },
+        {
+          "index": 16,
+          "s": 1261.3698025921437,
+          "left_projection": -7.623022094001429e-08,
+          "undamped_required_coefficient": 6.043447431780866e-11,
+          "ridge_coefficient": 6.043447431401026e-11
+        },
+        {
+          "index": 17,
+          "s": 1257.5015894492797,
+          "left_projection": -1.2846744060563464,
+          "undamped_required_coefficient": 0.0010216085743628897,
+          "ridge_coefficient": 0.0010216085742982845
+        },
+        {
+          "index": 18,
+          "s": 1249.3875489796064,
+          "left_projection": 20.62673967070117,
+          "undamped_required_coefficient": -0.0165094807352189,
+          "ridge_coefficient": -0.016509480734161256
+        },
+        {
+          "index": 19,
+          "s": 1240.2534408092397,
+          "left_projection": -9.270882394603614e-08,
+          "undamped_required_coefficient": 7.474990263727513e-11,
+          "ridge_coefficient": 7.474990263241565e-11
+        },
+        {
+          "index": 20,
+          "s": 1239.4120274663678,
+          "left_projection": -3.2004922050247577,
+          "undamped_required_coefficient": 0.00258226653776087,
+          "ridge_coefficient": 0.002582266537592769
+        },
+        {
+          "index": 21,
+          "s": 1178.368959761462,
+          "left_projection": -449.4030142750547,
+          "undamped_required_coefficient": 0.38137716591416976,
+          "ridge_coefficient": 0.38137716588670395
+        },
+        {
+          "index": 22,
+          "s": 1134.2279116795085,
+          "left_projection": 15.10998118218659,
+          "undamped_required_coefficient": -0.013321820973187373,
+          "ridge_coefficient": -0.01332182097215184
+        },
+        {
+          "index": 23,
+          "s": 1111.436665465522,
+          "left_projection": -7.297880239427488e-08,
+          "undamped_required_coefficient": 6.566168335260734e-11,
+          "ridge_coefficient": 6.566168334729185e-11
+        },
+        {
+          "index": 24,
+          "s": 1063.9788190400584,
+          "left_projection": -5.3973391594489953e-08,
+          "undamped_required_coefficient": 5.072788163507405e-11,
+          "ridge_coefficient": 5.0727881630592985e-11
+        },
+        {
+          "index": 25,
+          "s": 1055.30462468003,
+          "left_projection": -23.593890514447352,
+          "undamped_required_coefficient": 0.02235742169859348,
+          "ridge_coefficient": 0.022357421696585934
+        },
+        {
+          "index": 26,
+          "s": 1002.5501004170663,
+          "left_projection": -19.773161043640737,
+          "undamped_required_coefficient": 0.019722865755452016,
+          "ridge_coefficient": 0.01972286575348975
+        },
+        {
+          "index": 27,
+          "s": 997.7540539531702,
+          "left_projection": 1.9436219771092418e-07,
+          "undamped_required_coefficient": -1.9479970734355603e-10,
+          "ridge_coefficient": -1.9479970732398827e-10
+        },
+        {
+          "index": 28,
+          "s": 982.8423016081362,
+          "left_projection": -4.456312913155634,
+          "undamped_required_coefficient": 0.004534107766692756,
+          "ridge_coefficient": 0.004534107766223376
+        },
+        {
+          "index": 29,
+          "s": 981.4748297834101,
+          "left_projection": -4.3248056002088514e-08,
+          "undamped_required_coefficient": 4.4064355691762785e-11,
+          "ridge_coefficient": 4.4064355687188444e-11
+        },
+        {
+          "index": 30,
+          "s": 978.1964054561276,
+          "left_projection": -3.0287329721969973,
+          "undamped_required_coefficient": 0.0030962421813283147,
+          "ridge_coefficient": 0.0030962421810047337
+        },
+        {
+          "index": 31,
+          "s": 950.1562065105284,
+          "left_projection": -9.600610695758541e-09,
+          "undamped_required_coefficient": 1.0104244575759828e-11,
+          "ridge_coefficient": 1.0104244574640612e-11
+        },
+        {
+          "index": 32,
+          "s": 910.3565874663186,
+          "left_projection": 5.882245842522265,
+          "undamped_required_coefficient": -0.006461474463422714,
+          "ridge_coefficient": -0.006461474462643049
+        },
+        {
+          "index": 33,
+          "s": 902.0413168466318,
+          "left_projection": 6.830360586408005e-10,
+          "undamped_required_coefficient": -7.572115000547503e-13,
+          "ridge_coefficient": -7.572114999616902e-13
+        },
+        {
+          "index": 34,
+          "s": 873.6018831226967,
+          "left_projection": 2.539185958428848e-09,
+          "undamped_required_coefficient": -2.906571067993247e-12,
+          "ridge_coefficient": -2.9065710676123975e-12
+        },
+        {
+          "index": 35,
+          "s": 871.4938114841241,
+          "left_projection": 4.568845428127754,
+          "undamped_required_coefficient": -0.005242544890074626,
+          "ridge_coefficient": -0.005242544889384365
+        },
+        {
+          "index": 36,
+          "s": 868.2333736991509,
+          "left_projection": 10.74764058727394,
+          "undamped_required_coefficient": -0.012378746213685716,
+          "ridge_coefficient": -0.012378746212043603
+        },
+        {
+          "index": 37,
+          "s": 863.2735462199249,
+          "left_projection": 2.2215137535726613e-07,
+          "undamped_required_coefficient": -2.5733601629520053e-10,
+          "ridge_coefficient": -2.5733601626067e-10
+        },
+        {
+          "index": 38,
+          "s": 863.0951353401229,
+          "left_projection": 4.490930147257062,
+          "undamped_required_coefficient": -0.005203285203881153,
+          "ridge_coefficient": -0.005203285203182663
+        },
+        {
+          "index": 39,
+          "s": 687.5957937491871,
+          "left_projection": 281.1993414874084,
+          "undamped_required_coefficient": -0.40896024094932276,
+          "ridge_coefficient": -0.408960240862823
+        },
+        {
+          "index": 40,
+          "s": 669.0911145437375,
+          "left_projection": -9.041820291591277,
+          "undamped_required_coefficient": 0.013513585960197692,
+          "ridge_coefficient": 0.01351358595717913
+        },
+        {
+          "index": 41,
+          "s": 658.5207838527809,
+          "left_projection": -1.8279566114176847e-07,
+          "undamped_required_coefficient": 2.7758525717638444e-10,
+          "ridge_coefficient": 2.77585257112373e-10
+        },
+        {
+          "index": 42,
+          "s": 624.1041633108499,
+          "left_projection": -15.418630021795789,
+          "undamped_required_coefficient": 0.024705218981396496,
+          "ridge_coefficient": 0.024705218975053792
+        },
+        {
+          "index": 43,
+          "s": 622.3190299754899,
+          "left_projection": -8.585794017564136e-08,
+          "undamped_required_coefficient": 1.3796451022721076e-10,
+          "ridge_coefficient": 1.3796451019158686e-10
+        },
+        {
+          "index": 44,
+          "s": 597.3344905968455,
+          "left_projection": 6.120238852518952e-08,
+          "undamped_required_coefficient": -1.0245915728729682e-10,
+          "ridge_coefficient": -1.0245915725858136e-10
+        },
+        {
+          "index": 45,
+          "s": 597.2151259641128,
+          "left_projection": 3.74229074169284,
+          "undamped_required_coefficient": -0.006266235697984846,
+          "ridge_coefficient": -0.006266235696227954
+        },
+        {
+          "index": 46,
+          "s": 577.297749936008,
+          "left_projection": -7.250773740027907e-09,
+          "undamped_required_coefficient": 1.2559851031519935e-11,
+          "ridge_coefficient": 1.2559851027751292e-11
+        },
+        {
+          "index": 47,
+          "s": 552.4368741646565,
+          "left_projection": -9.918061633738954,
+          "undamped_required_coefficient": 0.01795329402791246,
+          "ridge_coefficient": 0.01795329402202973
+        },
+        {
+          "index": 48,
+          "s": 533.7883713997696,
+          "left_projection": -1.9139792915953852e-08,
+          "undamped_required_coefficient": 3.585651906534229e-11,
+          "ridge_coefficient": 3.585651905275797e-11
+        },
+        {
+          "index": 49,
+          "s": 501.01394488882545,
+          "left_projection": -7.631258753051035e-08,
+          "undamped_required_coefficient": 1.523162944046279e-10,
+          "ridge_coefficient": 1.5231629434394774e-10
+        },
+        {
+          "index": 50,
+          "s": 497.47835883421243,
+          "left_projection": 10.225371574804738,
+          "undamped_required_coefficient": -0.02055440481625534,
+          "ridge_coefficient": -0.020554404807950014
+        },
+        {
+          "index": 51,
+          "s": 494.8340368300775,
+          "left_projection": -0.5916500309506435,
+          "undamped_required_coefficient": 0.001195653465434133,
+          "ridge_coefficient": 0.0011956534649458337
+        },
+        {
+          "index": 52,
+          "s": 490.5541645293805,
+          "left_projection": 3.776754322511703,
+          "undamped_required_coefficient": -0.0076989547650359496,
+          "ridge_coefficient": -0.007698954761836628
+        },
+        {
+          "index": 53,
+          "s": 490.35242705189864,
+          "left_projection": 1.760401863113249e-08,
+          "undamped_required_coefficient": -3.5900747421546444e-11,
+          "ridge_coefficient": -3.590074740661551e-11
+        }
+      ]
+    },
+    "least_squares": {
+      "success": false,
+      "status": 0,
+      "message": "The maximum number of function evaluations is exceeded.",
+      "nfev": 6,
+      "cost": 391901.4663516041,
+      "optimality": 420637.18242729583,
+      "theta_norm": 0.025279296463382603
+    },
+    "final": {
+      "operator_sup": 27.332434345004156,
+      "peak_r": 0.3454915028125263,
+      "peak_s_index": 40,
+      "frobenius_rms": 6.2853954692444605,
+      "center_operator_sup": 0.012124307477906427,
+      "end_operator_sup": 1.0741905091707245,
+      "minimum_q_eigenvalue": 0.1948046519242428,
+      "blocks": {
+        "nn": 11.57621306674493,
+        "normal_tangential_frobenius": 0.06937930256982351,
+        "tangential_operator": 27.332295590091597
+      }
+    },
+    "final_vector_norm": 885.3264554407082,
+    "line": [
+      {
+        "alpha": 0,
+        "vector_norm": 906.3915620261758,
+        "operator_sup": 27.927783591825694,
+        "peak_r": 0.3454915028125263,
+        "peak_s_index": 40,
+        "frobenius_rms": 6.434947676430613,
+        "center_operator_sup": 0.012124307477906427,
+        "end_operator_sup": 1.0741905091707618,
+        "minimum_q_eigenvalue": 0.1933795754092979,
+        "blocks": {
+          "nn": 11.614381278784753,
+          "normal_tangential_frobenius": 0.06546544625441726,
+          "tangential_operator": 27.927635708400757
+        }
+      },
+      {
+        "alpha": 0.125,
+        "vector_norm": 903.6878386273949,
+        "operator_sup": 27.852351018656062,
+        "peak_r": 0.3454915028125263,
+        "peak_s_index": 40,
+        "frobenius_rms": 6.415752530169759,
+        "center_operator_sup": 0.012124307477906427,
+        "end_operator_sup": 1.074190509170768,
+        "minimum_q_eigenvalue": 0.1935571382850934,
+        "blocks": {
+          "nn": 11.609609494070723,
+          "normal_tangential_frobenius": 0.06548421187372323,
+          "tangential_operator": 27.852204308796296
+        }
+      },
+      {
+        "alpha": 0.25,
+        "vector_norm": 901.0041674003099,
+        "operator_sup": 27.7772102249461,
+        "peak_r": 0.3454915028125263,
+        "peak_s_index": 40,
+        "frobenius_rms": 6.396699744761619,
+        "center_operator_sup": 0.012124307477906427,
+        "end_operator_sup": 1.0741905091707205,
+        "minimum_q_eigenvalue": 0.19373486420072783,
+        "blocks": {
+          "nn": 11.60483792480603,
+          "normal_tangential_frobenius": 0.06550314435743124,
+          "tangential_operator": 27.77706467926485
+        }
+      },
+      {
+        "alpha": 0.5,
+        "vector_norm": 895.6972107874113,
+        "operator_sup": 27.62779978310156,
+        "peak_r": 0.3454915028125263,
+        "peak_s_index": 40,
+        "frobenius_rms": 6.359022884609976,
+        "center_operator_sup": 0.012124307477906427,
+        "end_operator_sup": 1.0741905091708164,
+        "minimum_q_eigenvalue": 0.1940908057504696,
+        "blocks": {
+          "nn": 11.59529543497589,
+          "normal_tangential_frobenius": 0.0655415079313718,
+          "tangential_operator": 27.62765653781917
+        }
+      },
+      {
+        "alpha": 0.75,
+        "vector_norm": 890.4711525550448,
+        "operator_sup": 27.47954391876675,
+        "peak_r": 0.3454915028125263,
+        "peak_s_index": 40,
+        "frobenius_rms": 6.321920364365766,
+        "center_operator_sup": 0.012124307477906427,
+        "end_operator_sup": 1.074190509170783,
+        "minimum_q_eigenvalue": 0.1944474012578111,
+        "blocks": {
+          "nn": 11.58575381402629,
+          "normal_tangential_frobenius": 0.06677216669634717,
+          "tangential_operator": 27.479402936940655
+        }
+      },
+      {
+        "alpha": 1.0,
+        "vector_norm": 885.3264554407082,
+        "operator_sup": 27.332434345004156,
+        "peak_r": 0.3454915028125263,
+        "peak_s_index": 40,
+        "frobenius_rms": 6.2853954692444605,
+        "center_operator_sup": 0.012124307477906427,
+        "end_operator_sup": 1.0741905091707245,
+        "minimum_q_eigenvalue": 0.1948046519242428,
+        "blocks": {
+          "nn": 11.57621306674493,
+          "normal_tangential_frobenius": 0.06937930256982351,
+          "tangential_operator": 27.332295590091597
+        }
+      }
+    ],
+    "largest_coefficients": [
+      {
+        "name": "value@0.450:cos2s*E12",
+        "value": -0.014819201042397671
+      },
+      {
+        "name": "value@0.450:1*E00",
+        "value": -0.0106969390755608
+      },
+      {
+        "name": "value@0.200:cos2s*E12",
+        "value": -0.0094366232961559
+      },
+      {
+        "name": "value@0.450:sin2s*E22",
+        "value": -0.0075050581927302695
+      },
+      {
+        "name": "value@0.450:sin2s*E11",
+        "value": -0.007475043432821363
+      },
+      {
+        "name": "value@0.200:1*E00",
+        "value": -0.006341512221049723
+      },
+      {
+        "name": "value@0.200:sin2s*E22",
+        "value": -0.004297847376140667
+      },
+      {
+        "name": "value@0.200:sin2s*E11",
+        "value": -0.004238204201282434
+      },
+      {
+        "name": "value@0.700:1*E00",
+        "value": 0.0025291461740710106
+      },
+      {
+        "name": "value@0.700:cos2s*E12",
+        "value": 0.00209546789210016
+      },
+      {
+        "name": "value@0.450:1*E22",
+        "value": -0.0018914874202309497
+      },
+      {
+        "name": "value@0.700:1*E22",
+        "value": 0.001857887853627734
+      },
+      {
+        "name": "value@0.700:1*E11",
+        "value": 0.0017984457996109574
+      },
+      {
+        "name": "value@0.200:1*E22",
+        "value": -0.0012551187358588265
+      },
+      {
+        "name": "value@0.450:sin2s*E00",
+        "value": 0.0009076743813444114
+      },
+      {
+        "name": "value@0.700:sin2s*E22",
+        "value": 0.0008368935982172447
+      }
+    ]
+  },
+  "negative_half": {
+    "side": "negative",
+    "parameter_count": 54,
+    "baseline": {
+      "operator_sup": 14.073299271841467,
+      "peak_r": 0.3960441545911204,
+      "peak_s_index": 24,
+      "frobenius_rms": 3.230366406881738,
+      "center_operator_sup": 0.012124307477906427,
+      "end_operator_sup": 1.0741905091706074,
+      "minimum_q_eigenvalue": 0.2504916501726715,
+      "blocks": {
+        "nn": 10.461981671521404,
+        "normal_tangential_frobenius": 0.046061550605707914,
+        "tangential_operator": 14.073299271841456
+      }
+    },
+    "baseline_vector_norm": 455.0117577761778,
+    "linear_svd": {
+      "singular_values": [
+        2543.7697659865366,
+        2543.645723557018,
+        2522.285174609752,
+        1782.359732241956,
+        1782.298533679046,
+        1772.342999321834,
+        1429.6601714006715,
+        1414.9421622342356,
+        1400.756414934428,
+        1364.4809748966586,
+        1336.8268799023526,
+        1325.7716671306969,
+        1324.4119613461337,
+        1314.8175113978837,
+        1275.7351013048585,
+        1274.4632066480294,
+        1259.8704437039169,
+        1258.3539115020646,
+        1252.1360351335363,
+        1251.5833780721334,
+        1243.7869415861865,
+        1011.8563048531288,
+        1011.7483938612581,
+        1008.2055178425063,
+        971.9315065250613,
+        968.7743322807371,
+        964.6775900094048,
+        934.7553888518482,
+        916.8887883943703,
+        915.5436022952132,
+        914.9179321485207,
+        902.6186293258829,
+        880.5368823878852,
+        879.4414883923303,
+        872.7358921923758,
+        872.6646338436348,
+        869.1856884282911,
+        868.1967058633973,
+        864.8924390371164,
+        580.3497763443962,
+        568.5130528781416,
+        562.6678746010223,
+        542.8974377547677,
+        537.2848061239956,
+        530.4023857207385,
+        530.0278986521935,
+        523.1468935349021,
+        505.6709983860386,
+        503.35509304740555,
+        496.4853467021127,
+        496.1356540883354,
+        493.4847512582583,
+        493.3284085277376,
+        491.6356723937263
+      ],
+      "condition_nonzero": 5.174095186382975,
+      "residual_norm": 455.0117577761778,
+      "range_projection_norm": 189.4780856361795,
+      "linear_inaccessible_norm": 413.6831574746738,
+      "range_fraction": 0.41642459210775945,
+      "ridge": 0.01,
+      "predicted_correction_norm": 0.23409414775321133,
+      "modes": [
+        {
+          "index": 0,
+          "s": 2543.7697659865366,
+          "left_projection": 3.731217119325283,
+          "undamped_required_coefficient": -0.0014668061430780568,
+          "ridge_coefficient": -0.0014668061430553885
+        },
+        {
+          "index": 1,
+          "s": 2543.645723557018,
+          "left_projection": 6.294967565616124e-07,
+          "undamped_required_coefficient": -2.474781573281865e-10,
+          "ridge_coefficient": -2.4747815732436156e-10
+        },
+        {
+          "index": 2,
+          "s": 2522.285174609752,
+          "left_projection": -39.476547478444004,
+          "undamped_required_coefficient": 0.015651103957565707,
+          "ridge_coefficient": 0.015651103957319695
+        },
+        {
+          "index": 3,
+          "s": 1782.359732241956,
+          "left_projection": 6.108452296407318,
+          "undamped_required_coefficient": -0.0034271713986288002,
+          "ridge_coefficient": -0.003427171398520919
+        },
+        {
+          "index": 4,
+          "s": 1782.298533679046,
+          "left_projection": -2.342742081188514e-06,
+          "undamped_required_coefficient": 1.3144498729697054e-09,
+          "ridge_coefficient": 1.3144498729283263e-09
+        },
+        {
+          "index": 5,
+          "s": 1772.342999321834,
+          "left_projection": 77.82759858676356,
+          "undamped_required_coefficient": -0.04391226676582544,
+          "ridge_coefficient": -0.0439122667644275
+        },
+        {
+          "index": 6,
+          "s": 1429.6601714006715,
+          "left_projection": -64.25357396308374,
+          "undamped_required_coefficient": 0.04494324962563167,
+          "ridge_coefficient": 0.0449432496234328
+        },
+        {
+          "index": 7,
+          "s": 1414.9421622342356,
+          "left_projection": 2.9559921331644295e-08,
+          "undamped_required_coefficient": -2.0891257692800886e-11,
+          "ridge_coefficient": -2.0891257691757398e-11
+        },
+        {
+          "index": 8,
+          "s": 1400.756414934428,
+          "left_projection": 4.947818788720568,
+          "undamped_required_coefficient": -0.0035322478169426655,
+          "ridge_coefficient": -0.0035322478167626433
+        },
+        {
+          "index": 9,
+          "s": 1364.4809748966586,
+          "left_projection": 1.4248973773558812e-08,
+          "undamped_required_coefficient": -1.0442779368644538e-11,
+          "ridge_coefficient": -1.0442779368083643e-11
+        },
+        {
+          "index": 10,
+          "s": 1336.8268799023526,
+          "left_projection": -3.3021303274123337,
+          "undamped_required_coefficient": 0.002470125621392005,
+          "ridge_coefficient": 0.0024701256212537855
+        },
+        {
+          "index": 11,
+          "s": 1325.7716671306969,
+          "left_projection": 2.437115464020251e-08,
+          "undamped_required_coefficient": -1.8382618398345934e-11,
+          "ridge_coefficient": -1.838261839730008e-11
+        },
+        {
+          "index": 12,
+          "s": 1324.4119613461337,
+          "left_projection": 1.5530412402714757,
+          "undamped_required_coefficient": -0.0011726270115326978,
+          "ridge_coefficient": -0.001172627011465846
+        },
+        {
+          "index": 13,
+          "s": 1314.8175113978837,
+          "left_projection": 9.486723225881267e-09,
+          "undamped_required_coefficient": -7.215239486577268e-12,
+          "ridge_coefficient": -7.2152394861598995e-12
+        },
+        {
+          "index": 14,
+          "s": 1275.7351013048585,
+          "left_projection": -3.5602935175942395e-08,
+          "undamped_required_coefficient": 2.7907780494184638e-11,
+          "ridge_coefficient": 2.7907780492469876e-11
+        },
+        {
+          "index": 15,
+          "s": 1274.4632066480294,
+          "left_projection": -2.3191152707479423,
+          "undamped_required_coefficient": 0.0018196800493342261,
+          "ridge_coefficient": 0.0018196800492221946
+        },
+        {
+          "index": 16,
+          "s": 1259.8704437039169,
+          "left_projection": -9.50683825041565e-08,
+          "undamped_required_coefficient": 7.545885609052242e-11,
+          "ridge_coefficient": 7.545885608576843e-11
+        },
+        {
+          "index": 17,
+          "s": 1258.3539115020646,
+          "left_projection": -4.211036393025635,
+          "undamped_required_coefficient": 0.0033464642613929094,
+          "ridge_coefficient": 0.0033464642611815694
+        },
+        {
+          "index": 18,
+          "s": 1252.1360351335363,
+          "left_projection": -4.108197332578819,
+          "undamped_required_coefficient": 0.0032809512842913217,
+          "ridge_coefficient": 0.0032809512840820563
+        },
+        {
+          "index": 19,
+          "s": 1251.5833780721334,
+          "left_projection": 4.487006040058963e-08,
+          "undamped_required_coefficient": -3.585063623144698e-11,
+          "ridge_coefficient": -3.585063622915834e-11
+        },
+        {
+          "index": 20,
+          "s": 1243.7869415861865,
+          "left_projection": 3.2165018640643637,
+          "undamped_required_coefficient": -0.0025860553415703157,
+          "ridge_coefficient": -0.00258605534140315
+        },
+        {
+          "index": 21,
+          "s": 1011.8563048531288,
+          "left_projection": -18.246980590085407,
+          "undamped_required_coefficient": 0.018033173784230125,
+          "ridge_coefficient": 0.018033173782468822
+        },
+        {
+          "index": 22,
+          "s": 1011.7483938612581,
+          "left_projection": -1.1287033996976636e-05,
+          "undamped_required_coefficient": 1.1155969276017884e-08,
+          "ridge_coefficient": 1.1155969274928046e-08
+        },
+        {
+          "index": 23,
+          "s": 1008.2055178425063,
+          "left_projection": 60.80700115321691,
+          "undamped_required_coefficient": -0.06031210906615538,
+          "ridge_coefficient": -0.06031210906022195
+        },
+        {
+          "index": 24,
+          "s": 971.9315065250613,
+          "left_projection": -2.1920467377167503e-07,
+          "undamped_required_coefficient": 2.255351043772577e-10,
+          "ridge_coefficient": 2.2553510435338275e-10
+        },
+        {
+          "index": 25,
+          "s": 968.7743322807371,
+          "left_projection": -79.42774456316633,
+          "undamped_required_coefficient": 0.08198787056648534,
+          "ridge_coefficient": 0.08198787055774952
+        },
+        {
+          "index": 26,
+          "s": 964.6775900094048,
+          "left_projection": 15.117544163676893,
+          "undamped_required_coefficient": -0.015671084640340314,
+          "ridge_coefficient": -0.015671084638656345
+        },
+        {
+          "index": 27,
+          "s": 934.7553888518482,
+          "left_projection": 2.981252902270788e-08,
+          "undamped_required_coefficient": -3.189340160887047e-11,
+          "ridge_coefficient": -3.189340160522037e-11
+        },
+        {
+          "index": 28,
+          "s": 916.8887883943703,
+          "left_projection": -3.6050564202269797,
+          "undamped_required_coefficient": 0.003931836080731287,
+          "ridge_coefficient": 0.003931836080263594
+        },
+        {
+          "index": 29,
+          "s": 915.5436022952132,
+          "left_projection": -2.211165366899956e-08,
+          "undamped_required_coefficient": 2.415139335097418e-11,
+          "ridge_coefficient": 2.415139334809291e-11
+        },
+        {
+          "index": 30,
+          "s": 914.9179321485207,
+          "left_projection": -3.277530906617714,
+          "undamped_required_coefficient": 0.0035823222952041395,
+          "ridge_coefficient": 0.003582322294776183
+        },
+        {
+          "index": 31,
+          "s": 902.6186293258829,
+          "left_projection": -2.12826703128915e-08,
+          "undamped_required_coefficient": 2.3578806842028482e-11,
+          "ridge_coefficient": 2.3578806839134384e-11
+        },
+        {
+          "index": 32,
+          "s": 880.5368823878852,
+          "left_projection": 3.611469884993384,
+          "undamped_required_coefficient": -0.0041014407882604695,
+          "ridge_coefficient": -0.004101440787731487
+        },
+        {
+          "index": 33,
+          "s": 879.4414883923303,
+          "left_projection": 6.447439894940871e-08,
+          "undamped_required_coefficient": -7.331289210300008e-11,
+          "ridge_coefficient": -7.331289209352101e-11
+        },
+        {
+          "index": 34,
+          "s": 872.7358921923758,
+          "left_projection": -6.794436067413769,
+          "undamped_required_coefficient": 0.007785214436804763,
+          "ridge_coefficient": 0.007785214435782636
+        },
+        {
+          "index": 35,
+          "s": 872.6646338436348,
+          "left_projection": -9.921374314970912e-07,
+          "undamped_required_coefficient": 1.1369057402122976e-09,
+          "ridge_coefficient": 1.136905740063008e-09
+        },
+        {
+          "index": 36,
+          "s": 869.1856884282911,
+          "left_projection": -10.686892836006713,
+          "undamped_required_coefficient": 0.012295293144243245,
+          "ridge_coefficient": 0.012295293142615774
+        },
+        {
+          "index": 37,
+          "s": 868.1967058633973,
+          "left_projection": -6.570150963032298e-08,
+          "undamped_required_coefficient": 7.56758338134728e-11,
+          "ridge_coefficient": 7.567583380343309e-11
+        },
+        {
+          "index": 38,
+          "s": 864.8924390371164,
+          "left_projection": 5.895308747085302,
+          "undamped_required_coefficient": -0.006816233419323843,
+          "ridge_coefficient": -0.00681623341841263
+        },
+        {
+          "index": 39,
+          "s": 580.3497763443962,
+          "left_projection": 114.54922639808254,
+          "undamped_required_coefficient": -0.19737963391598817,
+          "ridge_coefficient": -0.19737963385738477
+        },
+        {
+          "index": 40,
+          "s": 568.5130528781416,
+          "left_projection": -2.209963478472519e-07,
+          "undamped_required_coefficient": 3.887269548666309e-10,
+          "ridge_coefficient": 3.887269547463591e-10
+        },
+        {
+          "index": 41,
+          "s": 562.6678746010223,
+          "left_projection": -5.745121382668022,
+          "undamped_required_coefficient": 0.010210501864428966,
+          "ridge_coefficient": 0.010210501861203869
+        },
+        {
+          "index": 42,
+          "s": 542.8974377547677,
+          "left_projection": -9.080445113438463e-09,
+          "undamped_required_coefficient": 1.6725894214922033e-11,
+          "ridge_coefficient": 1.672589420924719e-11
+        },
+        {
+          "index": 43,
+          "s": 537.2848061239956,
+          "left_projection": 5.216130418673728,
+          "undamped_required_coefficient": -0.009708315513895139,
+          "ridge_coefficient": -0.009708315510532077
+        },
+        {
+          "index": 44,
+          "s": 530.4023857207385,
+          "left_projection": 2.4424191474834255e-08,
+          "undamped_required_coefficient": -4.604841933666152e-11,
+          "ridge_coefficient": -4.604841932029321e-11
+        },
+        {
+          "index": 45,
+          "s": 530.0278986521935,
+          "left_projection": -1.7363034948544558,
+          "undamped_required_coefficient": 0.0032758718914036363,
+          "ridge_coefficient": 0.003275871890237553
+        },
+        {
+          "index": 46,
+          "s": 523.1468935349021,
+          "left_projection": -1.5451555258523613e-08,
+          "undamped_required_coefficient": 2.95357870790697e-11,
+          "ridge_coefficient": 2.953578706827772e-11
+        },
+        {
+          "index": 47,
+          "s": 505.6709983860386,
+          "left_projection": -1.9724644178783985,
+          "undamped_required_coefficient": 0.0039006872535185073,
+          "ridge_coefficient": 0.0039006872519930327
+        },
+        {
+          "index": 48,
+          "s": 503.35509304740555,
+          "left_projection": -2.328745770681718e-08,
+          "undamped_required_coefficient": 4.626447219562351e-11,
+          "ridge_coefficient": 4.6264472177363595e-11
+        },
+        {
+          "index": 49,
+          "s": 496.4853467021127,
+          "left_projection": -0.5119625716611961,
+          "undamped_required_coefficient": 0.0010311735785595493,
+          "ridge_coefficient": 0.0010311735781412194
+        },
+        {
+          "index": 50,
+          "s": 496.1356540883354,
+          "left_projection": -3.123598347637672e-08,
+          "undamped_required_coefficient": 6.295855421593074e-11,
+          "ridge_coefficient": 6.295855419035348e-11
+        },
+        {
+          "index": 51,
+          "s": 493.4847512582583,
+          "left_projection": -4.935193062904522,
+          "undamped_required_coefficient": 0.010000700224922976,
+          "ridge_coefficient": 0.01000070022081637
+        },
+        {
+          "index": 52,
+          "s": 493.3284085277376,
+          "left_projection": 8.546057339369118e-09,
+          "undamped_required_coefficient": -1.732326213459611e-11,
+          "ridge_coefficient": -1.732326212747812e-11
+        },
+        {
+          "index": 53,
+          "s": 491.6356723937263,
+          "left_projection": 2.3664500467993457,
+          "undamped_required_coefficient": -0.004813422173532141,
+          "ridge_coefficient": -0.004813422171540701
+        }
+      ]
+    },
+    "least_squares": {
+      "success": false,
+      "status": 0,
+      "message": "The maximum number of function evaluations is exceeded.",
+      "nfev": 6,
+      "cost": 98714.38105816933,
+      "optimality": 102937.6777584518,
+      "theta_norm": 0.02778975897700662
+    },
+    "final": {
+      "operator_sup": 13.765227035785239,
+      "peak_r": 0.3960441545911204,
+      "peak_s_index": 24,
+      "frobenius_rms": 3.154527932613379,
+      "center_operator_sup": 0.012124307477906427,
+      "end_operator_sup": 1.0741905091705974,
+      "minimum_q_eigenvalue": 0.2504916501726715,
+      "blocks": {
+        "nn": 10.413339663305711,
+        "normal_tangential_frobenius": 0.04586161222503727,
+        "tangential_operator": 13.765227034453888
+      }
+    },
+    "final_vector_norm": 444.32956475609257,
+    "line": [
+      {
+        "alpha": 0,
+        "vector_norm": 455.0117577761778,
+        "operator_sup": 14.073299271841467,
+        "peak_r": 0.3960441545911204,
+        "peak_s_index": 24,
+        "frobenius_rms": 3.230366406881738,
+        "center_operator_sup": 0.012124307477906427,
+        "end_operator_sup": 1.0741905091706074,
+        "minimum_q_eigenvalue": 0.2504916501726715,
+        "blocks": {
+          "nn": 10.461981671521404,
+          "normal_tangential_frobenius": 0.046061550605707914,
+          "tangential_operator": 14.073299271841456
+        }
+      },
+      {
+        "alpha": 0.125,
+        "vector_norm": 453.52359936645735,
+        "operator_sup": 14.034277215412784,
+        "peak_r": 0.3960441545911204,
+        "peak_s_index": 24,
+        "frobenius_rms": 3.2198011921313006,
+        "center_operator_sup": 0.012124307477906427,
+        "end_operator_sup": 1.0741905091707933,
+        "minimum_q_eigenvalue": 0.2504916501726715,
+        "blocks": {
+          "nn": 10.45589959313364,
+          "normal_tangential_frobenius": 0.045847264114010404,
+          "tangential_operator": 14.034277215392233
+        }
+      },
+      {
+        "alpha": 0.25,
+        "vector_norm": 452.078480892827,
+        "operator_sup": 13.995402856504988,
+        "peak_r": 0.3960441545911204,
+        "peak_s_index": 24,
+        "frobenius_rms": 3.2095415403939582,
+        "center_operator_sup": 0.012124307477906427,
+        "end_operator_sup": 1.0741905091706259,
+        "minimum_q_eigenvalue": 0.2504916501726715,
+        "blocks": {
+          "nn": 10.449818033778929,
+          "normal_tangential_frobenius": 0.04563571049233954,
+          "tangential_operator": 13.995402856422656
+        }
+      },
+      {
+        "alpha": 0.5,
+        "vector_norm": 449.3186792750453,
+        "operator_sup": 13.918094985390407,
+        "peak_r": 0.3960441545911204,
+        "peak_s_index": 24,
+        "frobenius_rms": 3.1899482655315414,
+        "center_operator_sup": 0.012124307477906427,
+        "end_operator_sup": 1.07419050917073,
+        "minimum_q_eigenvalue": 0.2504916501726715,
+        "blocks": {
+          "nn": 10.437656478278665,
+          "normal_tangential_frobenius": 0.045220869570688785,
+          "tangential_operator": 13.918094985059962
+        }
+      },
+      {
+        "alpha": 0.75,
+        "vector_norm": 446.73490334604236,
+        "operator_sup": 13.84137118946342,
+        "peak_r": 0.3960441545911204,
+        "peak_s_index": 24,
+        "frobenius_rms": 3.171604689082543,
+        "center_operator_sup": 0.012124307477906427,
+        "end_operator_sup": 1.0741905091706752,
+        "minimum_q_eigenvalue": 0.2504916501726715,
+        "blocks": {
+          "nn": 10.425497017325057,
+          "normal_tangential_frobenius": 0.045070074516224586,
+          "tangential_operator": 13.84137118871724
+        }
+      },
+      {
+        "alpha": 1.0,
+        "vector_norm": 444.32956475609257,
+        "operator_sup": 13.765227035785239,
+        "peak_r": 0.3960441545911204,
+        "peak_s_index": 24,
+        "frobenius_rms": 3.154527932613379,
+        "center_operator_sup": 0.012124307477906427,
+        "end_operator_sup": 1.0741905091705974,
+        "minimum_q_eigenvalue": 0.2504916501726715,
+        "blocks": {
+          "nn": 10.413339663305711,
+          "normal_tangential_frobenius": 0.04586161222503727,
+          "tangential_operator": 13.765227034453888
+        }
+      }
+    ],
+    "largest_coefficients": [
+      {
+        "name": "value@0.450:cos2s*E12",
+        "value": -0.015603706175365627
+      },
+      {
+        "name": "value@0.450:1*E00",
+        "value": -0.012798531437889556
+      },
+      {
+        "name": "value@0.200:cos2s*E12",
+        "value": -0.008575659020784693
+      },
+      {
+        "name": "value@0.200:1*E00",
+        "value": -0.007377071105117572
+      },
+      {
+        "name": "value@0.450:sin2s*E11",
+        "value": -0.006486424956069607
+      },
+      {
+        "name": "value@0.450:sin2s*E22",
+        "value": -0.00645212350715362
+      },
+      {
+        "name": "value@0.700:1*E00",
+        "value": 0.006286262146686393
+      },
+      {
+        "name": "value@0.700:1*E11",
+        "value": 0.004862532344006585
+      },
+      {
+        "name": "value@0.700:1*E22",
+        "value": 0.004640690322370264
+      },
+      {
+        "name": "value@0.450:1*E11",
+        "value": -0.003786250833185575
+      },
+      {
+        "name": "value@0.200:sin2s*E11",
+        "value": -0.0034648708099630295
+      },
+      {
+        "name": "value@0.200:sin2s*E22",
+        "value": -0.0034201793017551597
+      },
+      {
+        "name": "value@0.450:1*E22",
+        "value": -0.0028548367069700115
+      },
+      {
+        "name": "value@0.200:1*E11",
+        "value": -0.0026480752219555526
+      },
+      {
+        "name": "value@0.200:1*E22",
+        "value": -0.0021137456157030348
+      },
+      {
+        "name": "value@0.450:1*E01",
+        "value": 0.0017807779295499425
+      }
+    ]
+  },
+  "joint": {
+    "baseline_operator_sup": 27.927783591825694,
+    "final_operator_sup": 27.332434345004156,
+    "baseline_vector_norm": 1014.1900036121526,
+    "final_vector_norm": 990.5713981432873
+  },
+  "status": "Finite-dimensional nonlinear matching experiment; not an existence/nonexistence result."
+}

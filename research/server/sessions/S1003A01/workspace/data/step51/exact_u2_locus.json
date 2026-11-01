@@ -1,0 +1,12 @@
+{
+ "F_of_c": "3*c0**2/4 - c0*c1/2 - c0*c2 + c0*lam - c0*s/12 + 11*c1**2/4 - 5*c1*c2 + 5*c1*lam - c1*s/12 + 3*c2**2 - 6*c2*lam + c2*s/6 + 2*lam**2 - 5*lam*s/24 + s**2/144",
+ "Fopt": "(-24*lam + s)*(12*lam + s)/288",
+ "opt_corrector": "[{c0: c2 - lam + s/16, c1: c2 - lam + s/48}]",
+ "hessian": "Matrix([[3/2, -1/2, -1, 0], [-1/2, 11/2, -5, 0], [-1, -5, 6, 0], [0, 0, 0, 0]])",
+ "hessian_eigs": "{13/2 - sqrt(73)/2: 1, sqrt(73)/2 + 13/2: 1, 0: 2}",
+ "a_eps_coef_density": "0",
+ "eps2_coef_density(pure Burns)": "0",
+ "A02_Phi": "(-24*lam + s)*(12*lam + s)/288",
+ "Fopt_minus_A02": "0",
+ "kernel_point_value (lam=-s/12)": "0"
+}

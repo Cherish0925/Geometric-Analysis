@@ -1,0 +1,31 @@
+{
+  "flat_slice_barrier": {
+    "H_squared_lower": "9 - 6*delta",
+    "H_squared_minus_S_squared_interval": "[6 - 4*delta, 6 + 4*delta]",
+    "critical_delta": 1.5,
+    "conclusion": "H cannot vanish on flat T^3 slices when delta < 3/2"
+  },
+  "raychaudhuri_H0": {
+    "flat_slice": "H_prime <= -3 + 5*delta < 0 for delta < 0.6",
+    "non_flat_slice": "H_prime can be positive if R_N is sufficiently negative",
+    "conclusion": "Non-flat torus slices can allow H reversal"
+  },
+  "cosh_model": {
+    "f": "cosh(r)",
+    "defect_max": 2.0,
+    "defect_profile": "2/cosh^2(r)",
+    "H_profile": "3*tanh(r)",
+    "R_M_midpoint": -6.0,
+    "R_M_asymptotic": -12.0,
+    "R_N_intrinsic": "2*sech^2(r) * f^2 ... non-flat at midpoint",
+    "conclusion": "Defect = 2 > 1.5 at midpoint; flat-slice barrier is violated"
+  },
+  "combined_obstruction": {
+    "flat_slice_barrier": "delta < 3/2 prevents H=0 on flat slices",
+    "non_flat_escape": "Ric_N=-2 slices allow exact Einstein funnel dr^2+cosh^2*g_N",
+    "compact_issue": "Matching flat cusp boundaries to non-flat Einstein collar requires transition",
+    "cosh_defect": "Pure cosh warped product with flat slices has defect 2",
+    "exact_einstein": "cosh warped product with Ric_N=-2 is exact Einstein but non-compact",
+    "schoen_yau": "T^3 carries metrics with Ric=-2 (Lohkamp) and R <= 0 (Schoen-Yau)"
+  }
+}

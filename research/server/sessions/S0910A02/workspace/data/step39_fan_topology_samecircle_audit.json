@@ -1,0 +1,476 @@
+{
+  "title": "Step 39 fan topology and same-circle audit",
+  "scope": "Calibration for compact toric period-defect route; not a metric construction.",
+  "reports": [
+    {
+      "name": "CP2 FS",
+      "expected": "CP2",
+      "labels": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "m": 3,
+      "adjacent_dets": [
+        1,
+        1,
+        1
+      ],
+      "same_unoriented_classes": {},
+      "max_same_circle_count": 1,
+      "eliminated_pair": [
+        0,
+        1
+      ],
+      "free_indices": [
+        2
+      ],
+      "intersection_matrix": [
+        [
+          "1"
+        ]
+      ],
+      "rank": 1,
+      "det_abs": 1,
+      "even_form": false,
+      "b_plus": 1,
+      "b_minus": 0,
+      "signature": 1,
+      "eigenvalues_numeric": [
+        1.0
+      ],
+      "identified_form": "odd unimodular form with b+=1, b-=0: connected sum of 1 CP2 and 0 CPbar (orientation convention)"
+    },
+    {
+      "name": "S2xS2 product rectangle",
+      "expected": "#1(S2xS2)",
+      "labels": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "m": 4,
+      "adjacent_dets": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "same_unoriented_classes": {
+        "(1, 0)": [
+          1,
+          3
+        ],
+        "(0, 1)": [
+          2,
+          4
+        ]
+      },
+      "max_same_circle_count": 2,
+      "eliminated_pair": [
+        0,
+        1
+      ],
+      "free_indices": [
+        2,
+        3
+      ],
+      "intersection_matrix": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ]
+      ],
+      "rank": 2,
+      "det_abs": 1,
+      "even_form": true,
+      "b_plus": 1,
+      "b_minus": 1,
+      "signature": 0,
+      "eigenvalues_numeric": [
+        -1.0,
+        1.0
+      ],
+      "identified_form": "even unimodular indefinite rank 2: consistent with #1(S2xS2)"
+    },
+    {
+      "name": "F1 Page fan",
+      "expected": "CP2#CPbar",
+      "labels": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "m": 4,
+      "adjacent_dets": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "same_unoriented_classes": {
+        "(0, 1)": [
+          2,
+          4
+        ]
+      },
+      "max_same_circle_count": 2,
+      "eliminated_pair": [
+        0,
+        1
+      ],
+      "free_indices": [
+        2,
+        3
+      ],
+      "intersection_matrix": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "rank": 2,
+      "det_abs": 1,
+      "even_form": false,
+      "b_plus": 1,
+      "b_minus": 1,
+      "signature": 0,
+      "eigenvalues_numeric": [
+        -0.6180339887498948,
+        1.618033988749895
+      ],
+      "identified_form": "odd unimodular form with b+=1, b-=1: connected sum of 1 CP2 and 1 CPbar (orientation convention)"
+    },
+    {
+      "name": "dP2 CLW fan",
+      "expected": "CP2#2CPbar",
+      "labels": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "m": 5,
+      "adjacent_dets": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "same_unoriented_classes": {
+        "(1, 0)": [
+          1,
+          3
+        ],
+        "(0, 1)": [
+          2,
+          5
+        ]
+      },
+      "max_same_circle_count": 2,
+      "eliminated_pair": [
+        0,
+        1
+      ],
+      "free_indices": [
+        2,
+        3,
+        4
+      ],
+      "intersection_matrix": [
+        [
+          "-1",
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "-1",
+          "1"
+        ],
+        [
+          "0",
+          "1",
+          "-1"
+        ]
+      ],
+      "rank": 3,
+      "det_abs": 1,
+      "even_form": false,
+      "b_plus": 1,
+      "b_minus": 2,
+      "signature": -1,
+      "eigenvalues_numeric": [
+        -2.414213562373095,
+        -1.0000000000000004,
+        0.41421356237309503
+      ],
+      "identified_form": "odd unimodular form with b+=1, b-=2: connected sum of 1 CP2 and 2 CPbar (orientation convention)"
+    },
+    {
+      "name": "dP3 toric KE hexagon",
+      "expected": "CP2#3CPbar, known KE",
+      "labels": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          1,
+          -1
+        ]
+      ],
+      "m": 6,
+      "adjacent_dets": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "same_unoriented_classes": {
+        "(1, 0)": [
+          1,
+          4
+        ],
+        "(0, 1)": [
+          2,
+          5
+        ],
+        "(1, -1)": [
+          3,
+          6
+        ]
+      },
+      "max_same_circle_count": 2,
+      "eliminated_pair": [
+        0,
+        1
+      ],
+      "free_indices": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "intersection_matrix": [
+        [
+          "-1",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "-1",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "-1",
+          "1"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "-1"
+        ]
+      ],
+      "rank": 4,
+      "det_abs": 1,
+      "even_form": false,
+      "b_plus": 1,
+      "b_minus": 3,
+      "signature": -2,
+      "eigenvalues_numeric": [
+        -2.618033988749895,
+        -1.618033988749895,
+        -0.38196601125010526,
+        0.618033988749895
+      ],
+      "identified_form": "odd unimodular form with b+=1, b-=3: connected sum of 1 CP2 and 3 CPbar (orientation convention)"
+    },
+    {
+      "name": "alternating spin hexagon",
+      "expected": "#2(S2xS2) candidate, unknown Einstein",
+      "labels": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "m": 6,
+      "adjacent_dets": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1
+      ],
+      "same_unoriented_classes": {
+        "(1, 0)": [
+          1,
+          3,
+          5
+        ],
+        "(0, 1)": [
+          2,
+          4,
+          6
+        ]
+      },
+      "max_same_circle_count": 3,
+      "eliminated_pair": [
+        0,
+        1
+      ],
+      "free_indices": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "intersection_matrix": [
+        [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0"
+        ]
+      ],
+      "rank": 4,
+      "det_abs": 1,
+      "even_form": true,
+      "b_plus": 2,
+      "b_minus": 2,
+      "signature": 0,
+      "eigenvalues_numeric": [
+        -1.618033988749895,
+        -0.6180339887498949,
+        0.6180339887498949,
+        1.6180339887498951
+      ],
+      "identified_form": "even unimodular indefinite rank 4: consistent with #2(S2xS2)"
+    }
+  ],
+  "key_distinction": "The known m=6 toric KE hexagon dP3 has three repeated classes of size 2 and an odd form/signature -2; the alternating spin m=6 fan has two classes of size 3 and an even signature-zero form consistent with #2(S2xS2)."
+}

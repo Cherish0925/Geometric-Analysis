@@ -1,0 +1,46 @@
+{
+ "conventions": "GH Taub-NUT, V=1+ell/r, eta=dpsi+ell cos th dph, psi period 4 pi ell, orientation dr dth dph dpsi",
+ "two_form_types": {
+  "minus_type_x3": {
+   "closed": false,
+   "self_dual": false,
+   "anti_self_dual": false
+  },
+  "plus_type_x3": {
+   "closed": true,
+   "self_dual": false,
+   "anti_self_dual": false
+  },
+  "minus_type_x3_over_V": {
+   "closed": true,
+   "self_dual": false,
+   "anti_self_dual": false
+  },
+  "plus_type_x3_over_V": {
+   "closed": false,
+   "self_dual": false,
+   "anti_self_dual": false
+  },
+  "minus_type_x1": {
+   "closed": false,
+   "self_dual": false,
+   "anti_self_dual": false
+  },
+  "plus_type_x1": {
+   "closed": true,
+   "self_dual": false,
+   "anti_self_dual": false
+  }
+ },
+ "hess_fbar_sq": "2*ell**2/(ell + r)**4",
+ "nabla_hess_fbar_sq": "12*ell**2*r/(ell + r)**7",
+ "E_R": "1024*pi**2*R**2*ell**2/(81*(R**2 + 2*R*ell + ell**2))",
+ "int_grad_v_4": "131072*pi**2/98415",
+ "int_grad2_v_sq": "2048*pi**2/405",
+ "int_grad3_Phi_sq": "64*pi**2/45",
+ "int_dm_sq": "262144*pi**2*ell**2/19683",
+ "det_ASD_mismatch_BR": "16*pi**2*ell**3*(-2*R*ell**2 - ell**3 + (4*R + ell + log(ell**(4*ell)/(R + ell)**(4*ell)))*(R**2 + 2*R*ell + ell**2))/(3*(R**2 + 2*R*ell + ell**2))",
+ "det_ASD_mismatch_lead_over_ell3R": "64*pi**2/3",
+ "mstar": "128/81",
+ "a_sq": "2/9"
+}

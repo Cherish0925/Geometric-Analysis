@@ -1,0 +1,47 @@
+{
+  "title": "Step 19 diagonal toric fixed-corner lowest-jet matching",
+  "smooth_diagonal_ansatz_scope": "For adjacent labels \u00b1e1, \u00b1e2, a diagonal fiber matrix with p vanishing on e1-rods and q on e2-rods satisfies the local smoothness parity conditions of Lemma 2.2: p^2=r^2+r^4 even, q^2=t^2 mu(r,0)^2+t^4 even, b=0 in r^2 t^2 R_even. This confirms local smoothness of the diagonal ansatz at standard-basis corners; it does not cover arbitrary labels.",
+  "jet_ansatz": {
+    "mu": "1+u r^2",
+    "p": "r+a r^3",
+    "q": "t(1+u r^2)+b t^3"
+  },
+  "base_edge_curvature": "K_B|_{p=0}= -2u, so A=-K=2u",
+  "path_expansions_t_equals_zr": {
+    "RicH_rr_minus1": "6*a**2*r**2 - 6*a + 2*b*r**2*u*z**2 + 4*r**2*u**2 - 4*u - 1",
+    "RicH_tt_minus1": "-4*a*r**2*u + 6*b**2*r**2*z**2 + 18*b*r**2*u - 6*b - 4*u - 1",
+    "RicH_rt": "6*b*r**2*u*z",
+    "rp_minus1": "6*a**2*r**2 - 8*a*r**2*u - 6*a + 2*b*r**2*u*z**2 + 4*r**2*u**2 - 4*u - 1",
+    "rq_minus1": "-4*a*r**2*u + 6*b**2*r**2*z**2 + 4*b*r**2*u*z**2 + 18*b*r**2*u - 6*b - 4*u - 1",
+    "K_corner": "2*u*(r**2*u - 1)"
+  },
+  "constant_terms": {
+    "RicH_rr_minus1": "-6*a - 4*u - 1",
+    "RicH_tt_minus1": "-6*b - 4*u - 1",
+    "RicH_rt": "0",
+    "rp_minus1": "-6*a - 4*u - 1",
+    "rq_minus1": "-6*b - 4*u - 1",
+    "K_corner": "-2*u"
+  },
+  "zeroth_order_conditions_equal_zero": [
+    "-6*a - 4*u - 1",
+    "-6*b - 4*u - 1",
+    "-6*a - 4*u - 1",
+    "-6*b - 4*u - 1"
+  ],
+  "solutions_for_exact_Ric_eq_g_to_order0": [
+    {
+      "a": "-(4*u + 1)/6",
+      "b": "-(4*u + 1)/6"
+    }
+  ],
+  "conditions_with_A_equals_2u": [
+    "-2*A - 6*a - 1",
+    "-2*A - 6*b - 1",
+    "-2*A - 6*a - 1",
+    "-2*A - 6*b - 1"
+  ],
+  "rod_ODE_expected_b_on_p0_edge": "b = -(1+2A)/6 = -A/3 - 1/6",
+  "interpretation": "The corner zeroth-order equations are consistent for arbitrary u/A once a and b are chosen as exact functions of u. With A=-K_B(0)=2u, both a and b equal -(2A+1)/6, exactly the Step-15 rod ODE cubic coefficient for a constant-curvature rod. Thus the standard-basis diagonal corner imposes no lowest-jet cap on A: adjacent large-negative-curvature rods can meet smoothly to this order. Any obstruction must enter through higher jets, finite-length matching/holonomy, nonlocal polygon compatibility, the spectral/eigenfunction condition, or through the full matrix/twist system.",
+  "caution": "This is a lowest-jet exact-Einstein corner calculation, not a pinched global construction and not a proof that all large-A rods close."
+}

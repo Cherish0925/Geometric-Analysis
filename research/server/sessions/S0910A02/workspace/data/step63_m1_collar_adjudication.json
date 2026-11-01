@@ -1,0 +1,45 @@
+{
+  "adjudication_question": "Does the m=1 collar term have signed form closing by one IBP with ||nabla chi||_inf?",
+  "binary_verdict": "YES_CONDITIONAL",
+  "detail": "The signed-Hessian term chi*C2*U1 closes by one IBP using only ||C1||_inf. The top-cutoff term chi*C3*U0 produces a C1*C2*U0 cross-term after IBP that requires the coupled C2 energy equation. The full coupled pair (U1,C2) energy closes structurally. The flat-T^4 gate does NOT kill the weighted m=1 estimate (apparent contradiction resolved: T=Rm+G, G!=0, ||T|| bounded away from 0). Remaining gaps are tensor-index precision, weighted-to-unweighted bridge, and imported analytic modules \u2014 not the m=1 signed structure itself.",
+  "flat_T4_gate": {
+    "flat_T4_scaling": {
+      "D_integrand_near_chi_zero": "s^(3p+2)|T|^p",
+      "J1_after_IBP_integrand": "s^(3p+2)|T|^p",
+      "scaling_match": true,
+      "ratio_D_over_J1_generic": "|nabla U1|^2 / (|C1|^2 |U1|^2)",
+      "ratio_for_nablaT_dominant": "s^4 |nabla T|^2 / |T|^2",
+      "can_be_small": true,
+      "note": "When |nabla T|/|T| ~ 1/s (power-law T near chi=0), ratio -> 0"
+    },
+    "verdict_candidates": {}
+  },
+  "closure_forms": {
+    "form_A_signed_hessian_IBP": {
+      "status": "CLOSES_structurally",
+      "uses_only_C1_inf": true,
+      "mechanism": "IBP moves one derivative off C2 onto B(U1); produces C1*C1*B and chi*C1*nabla B; both absorbed by eps*D + C(eps)||C1||_inf^2||U1||_p^p",
+      "caveat": "This handles ONLY the signed-Hessian term chi*C2*U1. The TOP-CUTOFF term chi*C3*U0 produces residual I_1."
+    },
+    "form_B_top_cutoff_residual_m1": {
+      "status": "REDUCES_to_form_A",
+      "explanation": "For m=1, V=U1 is current. The residual I_1 = int chi|C2||V|^p is the same structure as the signed-Hessian term. Form A IBP handles it.",
+      "m_ge_2_difference": "For m>=2, U1 is base data in L^4, enabling Holder split."
+    },
+    "form_C_coupled_pair_verdict": {
+      "status": "CONDITIONALLY_CLOSES",
+      "signed_hessian_alone": "closes with ||C1||_inf only (Form A)",
+      "top_cutoff_IBP_cross_term": "C1*C2*U0 requires coupled C2 energy",
+      "coupled_pair_needed": true,
+      "flat_T4_gate_weighted": "Weighted energy estimate MAY hold on flat-T^4; E'/E~2/t is for UNWEIGHTED energy. No direct contradiction at weighted level.",
+      "flat_T4_gate_unweighted": "Unweighted control requires T0-in-L^infty step AFTER pair estimate. Gate does not kill m=1 pair.",
+      "remaining_gap": "The m=1 pair estimate itself appears structurally sound. The ACTUAL gap is the BASE ORDER: (U0 in Linf, T0 in finite Lq) -> (U1,C2) -> T1 -> T0 in Linf. The step T0 in finite Lq -> (U1,C2) is the m=1 base, and it uses the signed-Hessian estimate of A03 Step 56 Sec 1. That estimate is the load-bearing piece."
+    }
+  },
+  "seed_check": {
+    "seed_estimate_status": "NOT_KILLED_by_flat_T4",
+    "resolution": "T = Rm + G, and G != 0 on flat T^4. ||T||^2 ~ ||G||^2 + O(t^2) is bounded away from 0. E'/E for ||T||^q is O(t), consistent with dE/dt <= CE. The E'/E ~ 2/t was for ||Rm||^2 only.",
+    "m1_base_verdict": "The signed-Hessian seed estimate survives the flat-T^4 gate. The m=1 coupled pair (U1,C2) estimate is structurally sound at the weighted level. The remaining gaps are: (1) exact tensor-index equations/reordering (A01 #433), (2) the step from weighted pair to T1 and T0-in-L^infty, (3) imported Moser/local-existence audits."
+  },
+  "implication_for_IL_chain": "The m=1 collar is NOT the failure point. The IL chain's scope remains a restricted family-level gap near p=1/3. The next investment should be either (a) tensor-index precision for the higher-order induction, or (b) the sharpness test: explicit near-pinched constructions on IL manifolds just above p=1/3 against the stable gap sqrt((p-1/3)/2)."
+}

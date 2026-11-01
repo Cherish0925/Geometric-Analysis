@@ -1,0 +1,307 @@
+{
+  "title": "Step 31: Noncollapsed positive dichotomy spectral and obstruction audit",
+  "scope": "Conditional theorem for four-dimensional positive noncollapsed branch; not a proof or refutation of Yau-26.",
+  "source": "Ozuch 2021 (arxiv:2105.13193), Corollaries 4.10-4.11, Remark 0.5-0.6, Theorem 0.9; Cheeger-Naber 2014 (arxiv:1406.6534)",
+  "examples": {
+    "S4_round": {
+      "manifold": "S^4 (round, Ric = g)",
+      "Lambda": 1,
+      "R_plus_matrix": [
+        [
+          0.3333333333333333,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.3333333333333333,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.3333333333333333
+        ]
+      ],
+      "R_plus_eigenvalues": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "det_R_plus": 0.037037037037037035,
+      "det_R_plus_zero": false,
+      "W_plus_eigenvalues": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "has_W_eigenvalue_minus_third": false,
+      "EH_desingularization_first_obstruction_compatible": false,
+      "note": "Conformally flat => W=0, R_+ = (1/3)Id invertible. Ozuch Theorem 0.9: S^4/Z_2 cannot be GH limit of smooth Einstein."
+    },
+    "CP2_fubini_study": {
+      "manifold": "CP^2 (Fubini-Study, Ric = g)",
+      "Lambda": 1,
+      "R_plus_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "R_plus_eigenvalues": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "det_R_plus": 0.0,
+      "det_R_plus_zero": true,
+      "W_plus_eigenvalues": [
+        0.6666666666666666,
+        -0.3333333333333333,
+        -0.3333333333333333
+      ],
+      "has_W_eigenvalue_minus_third": true,
+      "EH_desingularization_first_obstruction_compatible": true,
+      "note": "K\u00e4hler-Einstein always has W_+ eigenvalue -Lambda/3 on omega^perp. EH desingularization gives Page metric on CP^2 # bar{CP^2}."
+    },
+    "S2xS2_product": {
+      "manifold": "S^2 x S^2 (product, Ric = g)",
+      "Lambda": 1,
+      "R_plus_matrix": [
+        [
+          0.9999999999999998,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "R_plus_eigenvalues": [
+        0.9999999999999998,
+        0.0,
+        0.0
+      ],
+      "det_R_plus": 0.0,
+      "det_R_plus_zero": true,
+      "W_plus_eigenvalues": [
+        0.6666666666666665,
+        -0.3333333333333333,
+        -0.3333333333333333
+      ],
+      "has_W_eigenvalue_minus_third": true,
+      "EH_desingularization_first_obstruction_compatible": true
+    },
+    "H4_hyperbolic": {
+      "manifold": "H^4 (rescaled to Ric = -g)",
+      "Lambda": -1,
+      "R_plus_matrix": [
+        [
+          -0.3333333333333333,
+          -0.0,
+          -0.0
+        ],
+        [
+          -0.0,
+          -0.3333333333333333,
+          -0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          -0.3333333333333333
+        ]
+      ],
+      "R_plus_eigenvalues": [
+        -0.3333333333333333,
+        -0.3333333333333333,
+        -0.3333333333333333
+      ],
+      "det_R_plus": -0.037037037037037035,
+      "det_R_plus_zero": false,
+      "W_plus_eigenvalues": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "has_W_eigenvalue_minus_third": false,
+      "EH_desingularization_first_obstruction_compatible": false,
+      "note": "Conformally flat => W=0, R_+ = (-1/3)Id invertible. Ozuch Theorem 0.9 applies to H^4/Z_2."
+    },
+    "general_kahler_einstein": {
+      "manifold": "General K\u00e4hler-Einstein (Ric = 1g)",
+      "Lambda": 1,
+      "W_plus_eigenvalues_symbolic": [
+        "2*Lambda/3",
+        "-Lambda/3",
+        "-Lambda/3"
+      ],
+      "R_plus_eigenvalues_symbolic": [
+        "Lambda",
+        "0",
+        "0"
+      ],
+      "det_R_plus": 0,
+      "det_R_plus_zero": true,
+      "note": "ALL K\u00e4hler-Einstein 4-manifolds have det R_+ = 0 at every point. The K\u00e4hler direction omega_perp always provides the kernel. This includes CP^2, S^2 x S^2, del Pezzo surfaces, K3, etc."
+    }
+  },
+  "cross_check": {
+    "S2xS2_vs_CP2_same_R_plus_spectrum": true,
+    "both_have_det_R_plus_zero": true,
+    "explanation": "Both are K\u00e4hler-Einstein for the standard orientation. S^2 x S^2 is K\u00e4hler via (p,q) -> (p, J_2(q)) where J_2 is the complex structure on S^2 = CP^1."
+  },
+  "codimension_analysis": {
+    "space": "Trace-free symmetric 3x3 matrices (= fiber of W_+ bundle)",
+    "dimension": 5,
+    "det_R_plus_zero_locus_codimension": 1,
+    "in_eigenvalue_plane": {
+      "dimension": 2,
+      "locus": "Union of 3 lines: mu_1=-Lambda/3 OR mu_2=-Lambda/3 OR mu_1+mu_2=Lambda/3",
+      "codimension_in_plane": 1,
+      "note": "Generic positive Einstein 4-manifold has det R_+ != 0 at each point."
+    },
+    "kahler_exception": "K\u00e4hler-Einstein manifolds sit ENTIRELY in the zero locus."
+  },
+  "annular_flux_scaling": {
+    "description": "Annular flux scaling for obstruction detection",
+    "strategy": "Fix K (annular ratio), let delta->0, then K->infty",
+    "representative_checks": [
+      {
+        "K": 10,
+        "delta": 0.1,
+        "t": 0.01,
+        "bulk_error_over_signal": 156250.0,
+        "is_detectable": false
+      },
+      {
+        "K": 10,
+        "delta": 0.01,
+        "t": 0.01,
+        "bulk_error_over_signal": 15625.0,
+        "is_detectable": false
+      },
+      {
+        "K": 10,
+        "delta": 0.001,
+        "t": 0.01,
+        "bulk_error_over_signal": 1562.5,
+        "is_detectable": false
+      },
+      {
+        "K": 10,
+        "delta": 1e-06,
+        "t": 0.01,
+        "bulk_error_over_signal": 1.5625,
+        "is_detectable": false
+      },
+      {
+        "K": 50,
+        "delta": 0.1,
+        "t": 0.01,
+        "bulk_error_over_signal": 156250.0,
+        "is_detectable": false
+      },
+      {
+        "K": 50,
+        "delta": 0.01,
+        "t": 0.01,
+        "bulk_error_over_signal": 15625.0,
+        "is_detectable": false
+      },
+      {
+        "K": 50,
+        "delta": 0.001,
+        "t": 0.01,
+        "bulk_error_over_signal": 1562.5,
+        "is_detectable": false
+      },
+      {
+        "K": 50,
+        "delta": 1e-06,
+        "t": 0.01,
+        "bulk_error_over_signal": 1.5625,
+        "is_detectable": false
+      }
+    ],
+    "conclusion": "For fixed K and sufficiently small delta, bulk error is negligible compared to signal. Detection requires delta << t^4 / R^6, always achievable."
+  },
+  "ozuch_obstruction_verification": {
+    "remark_0_6": {
+      "spherical_hyperbolic": "W=0, Lambda!=0, c(Gamma)*V(g_b)<0 => impossible",
+      "hyperkahler_gluing": "Lambda=0, W^+=0, W_b^+=0 => obstruction vanishes",
+      "general_einstein": "Nontrivial algebraic condition on orbifold Weyl at p"
+    },
+    "corollary_4_11": {
+      "statement": "First obstruction vanishes => orbifold is NOT spherical/hyperbolic",
+      "contrapositive": "Spherical/hyperbolic orbifold => first obstruction nonzero => no EH desingularization (or any Ricci-flat ALE desingularization)"
+    },
+    "remark_0_7": "Higher-order obstructions exist for Einstein deformations g_t = g + t*h_1 + t^2*h_2 + ...",
+    "question_0_8": "Can higher-order Taub/Pohozaev obstructions recover [Ozu20] obstructions? OPEN.",
+    "implication_for_yau26": "The contrapositive direction is most valuable: if the orbifold limit has det R_+ != 0 at all singular points, no EH bubbling can occur, forcing the regular alternative (Einstein on M). For non-K\u00e4hler generic positive Einstein orbifolds, this is the expected situation."
+  },
+  "dichotomy_theorem": {
+    "theorem_statement": "Let (M^4, g_i) with ||Ric_{g_i} - g_i||_op <= delta_i -> 0 and Vol(M, g_i) >= v0 > 0. Then either: (A) M carries a smooth Einstein metric h with Ric_h = h [for large i], or (B) A subsequence converges to an Einstein orbifold (M_infty, g_infty) with Ric = g_infty, finitely many isolated singularities, and at each Z_2 singular point: W_+^{g_infty}(p) has eigenvalue -1/3, i.e., det R_+(p) = 0.",
+    "case_A_proof": {
+      "status": "UNCONDITIONAL",
+      "ingredients": [
+        "Myers diameter bound: diam <= pi*sqrt(3/(1-delta))",
+        "Bishop-Gromov + volume lower bound => local noncollapse",
+        "Cheeger-Naber: C^{1,alpha} cap W^{2,q} convergence off codim-4 set",
+        "If singular set empty: weak limit satisfies Ric=g, elliptic regularity => smooth",
+        "Cheeger-Gromov diffeomorphism recovery => Einstein on original M"
+      ]
+    },
+    "case_B_proof": {
+      "status": "CONDITIONAL on annular flux convergence",
+      "assumptions": [
+        "A1: Bubble-tree existence and finiteness for near-Einstein sequences (follows from CGB L^2-curvature budget in 4D: each EH bubble carries 12pi^2)",
+        "A2: The annular flux of the divergence-free cosmological Einstein tensor converges to the exact Ozuch boundary integral in the double limit (delta->0 first, then annular ratio K->infty)",
+        "A3: The first Ozuch obstruction for the exact limit (orbifold + ALE) must be satisfied"
+      ],
+      "note": "A2 is the core mathematical content to be established. The scaling argument suggests it holds but rigorous proof requires annular C^{1,alpha} control sufficient to make L_Z g close to L_Z g_infty."
+    },
+    "exclusion_corollary": "If the orbifold limit has det R_+(p) != 0 at every potential singular point, then case (B) is impossible, so case (A) holds: M carries an Einstein metric. For conformally flat orbifold limits (W=0, including spherical/hyperbolic), this is automatic (Ozuch Theorem 0.9).",
+    "what_this_does_NOT_do": [
+      "Does not handle collapsed positive branch (Route B)",
+      "Does not handle negative branch or n >= 5",
+      "In case (B), does not produce Einstein metric on M",
+      "Does not address higher-order obstructions (Ozuch Question 0.8)",
+      "Does not address multiple bubbles, bubble trees, or ALE type selection",
+      "Does not prove Yau-26"
+    ]
+  },
+  "key_spectral_result": {
+    "statement": "For positive Einstein Ric = g in dimension 4, R_+ = W_+ + (1/3)*Id on Lambda^2_+. det R_+ = 0 iff W_+ has eigenvalue -1/3.",
+    "conformally_flat_case": "W=0 => R_+ = (1/3)Id, det = 1/27 != 0. No EH desingularization. Applies to S^4, H^4.",
+    "kahler_einstein_case": "W_+ always has eigenvalue -Lambda/3 => det R_+ = 0 always. EH compatible. Applies to CP^2, S^2xS^2, del Pezzo, K3.",
+    "generic_non_kahler_case": "det R_+ != 0 is codimension-1 open condition. Expected to hold generically for non-K\u00e4hler orbifolds.",
+    "dichotomy_consequence": "Under noncollapsing, if orbifold limit is non-K\u00e4hler generic (det R_+ != 0 everywhere), then no EH bubbling => Einstein on original M."
+  },
+  "strategic_implications": [
+    "1. The noncollapsed positive dichotomy gives Einstein existence on M whenever the orbifold limit is 'generic enough' (non-K\u00e4hler, no special W_+ eigenvalue).",
+    "2. The obstruction excludes bubbling (contrapositive), not enables gluing. This avoids the entire higher-order obstruction problem.",
+    "3. Spherical/hyperbolic orbifold limits automatically give Einstein on M (Ozuch Thm 0.9 mechanism).",
+    "4. K\u00e4hler-Einstein orbifold limits are the hard case: det R_+ = 0 everywhere, so the first obstruction does not exclude bubbling.",
+    "5. For #_k(S^2 x S^2) stress family: orbifold limit (if noncollapsed) would need det R_+ = 0 at each singular point. With k bubbles and Weyl energy ~ k, this constrains the Weyl distribution.",
+    "6. The annular flux argument is the main open mathematical obligation. Its proof requires C^{1,alpha} annular control from Cheeger-Naber."
+  ]
+}

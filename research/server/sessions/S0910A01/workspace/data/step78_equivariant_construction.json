@@ -1,0 +1,226 @@
+{
+  "step": 78,
+  "purpose": "A-equivariant diagonal reduction for (S^2 x S^2)/Z2 desingularization",
+  "2form_compositions": {
+    "(1+,1-)": {
+      "diag": [
+        -0.9999999999999998,
+        -0.9999999999999998,
+        0.9999999999999998,
+        0.9999999999999998
+      ],
+      "factor_traceless": "False"
+    },
+    "(1+,2-)": {
+      "diag": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "factor_traceless": "True"
+    },
+    "(1+,3-)": {
+      "diag": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "factor_traceless": "True"
+    },
+    "(2+,1-)": {
+      "diag": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "factor_traceless": "True"
+    },
+    "(2+,2-)": {
+      "diag": [
+        -0.9999999999999998,
+        0.9999999999999998,
+        -0.9999999999999998,
+        0.9999999999999998
+      ],
+      "factor_traceless": "True"
+    },
+    "(2+,3-)": {
+      "diag": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "factor_traceless": "True"
+    },
+    "(3+,1-)": {
+      "diag": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "factor_traceless": "True"
+    },
+    "(3+,2-)": {
+      "diag": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "factor_traceless": "True"
+    },
+    "(3+,3-)": {
+      "diag": [
+        -0.9999999999999998,
+        0.9999999999999998,
+        0.9999999999999998,
+        -0.9999999999999998
+      ],
+      "factor_traceless": "True"
+    }
+  },
+  "H4_factor_tracelessness": {
+    "tested_angles": 37,
+    "max_factor_trace_magnitude": 5.551115123125783e-17,
+    "is_factor_traceless_for_all_alpha": "True",
+    "sample_H4_tensors": [
+      {
+        "alpha_deg": 0.0,
+        "diag": [
+          0.5,
+          -0.5,
+          0.5,
+          -0.5
+        ],
+        "trace": 0.0,
+        "trace_f1": 0.0,
+        "trace_f2": 0.0
+      },
+      {
+        "alpha_deg": 10.0,
+        "diag": [
+          0.5,
+          -0.5,
+          0.46984631,
+          -0.46984631
+        ],
+        "trace": 0.0,
+        "trace_f1": 0.0,
+        "trace_f2": 0.0
+      },
+      {
+        "alpha_deg": 20.0,
+        "diag": [
+          0.5,
+          -0.5,
+          0.38302222,
+          -0.38302222
+        ],
+        "trace": 0.0,
+        "trace_f1": 0.0,
+        "trace_f2": 0.0
+      },
+      {
+        "alpha_deg": 30.0,
+        "diag": [
+          0.5,
+          -0.5,
+          0.25,
+          -0.25
+        ],
+        "trace": 0.0,
+        "trace_f1": 0.0,
+        "trace_f2": 0.0
+      },
+      {
+        "alpha_deg": 40.0,
+        "diag": [
+          0.5,
+          -0.5,
+          0.08682409,
+          -0.08682409
+        ],
+        "trace": 0.0,
+        "trace_f1": 0.0,
+        "trace_f2": 0.0
+      }
+    ],
+    "conclusion": "H^4(zeta) for in-kernel zeta has ZERO projection onto ALL scalar eigenmodes f*g_k"
+  },
+  "A_symmetry": {
+    "A_preserves_orientation": true,
+    "A_preserves_diagonal_chirality": true,
+    "node_exchange": {
+      "NN": "SS",
+      "NS": "SN",
+      "SN": "NS",
+      "SS": "NN"
+    },
+    "scalar_kernel_parity": "A-odd (l1+l2=1 is odd)",
+    "shape_mode_g1_minus_g2_parity": "A-even (l1=l2=0, l1+l2=0 even)",
+    "consequence": "A-invariant residual is orthogonal to all four scalar kernel modes by symmetry"
+  },
+  "spectrum_A_invariant_scalar": {
+    "negative_eigenvalues": 1,
+    "zero_eigenvalues": 0,
+    "positive_eigenvalues": 31,
+    "kernel_status": "EMPTY in A-invariant sector (kernel modes are A-odd)",
+    "negative_mode": "(0,0) with mu=-Lambda, constant tensors g1,g2, zero Hessian",
+    "lowest_positive": {
+      "l1": 1,
+      "l2": 1,
+      "P_eigenvalue": 1.0,
+      "multiplicity_before_sigma": 9,
+      "sign": "positive",
+      "sector": "scalar"
+    }
+  },
+  "scalar_decoupling_theorem": {
+    "statement": "For zeta in ker(R^+), H^4(zeta) has zero coupling to the scalar sector",
+    "mechanism": "omega_k^+ circ omega_l^- for k,l in {2,3} has zero trace on each S^2 factor",
+    "consequence": "Inter-node Green response lives entirely in vector + TT sectors of P",
+    "these_sectors_are": "positive definite (no kernel, no negative eigenvalues)"
+  },
+  "equivariant_parameter_space": {
+    "orbit_1": {
+      "nodes": [
+        "NN",
+        "SS"
+      ],
+      "scale": "t1",
+      "kernel_angle": "alpha1"
+    },
+    "orbit_2": {
+      "nodes": [
+        "NS",
+        "SN"
+      ],
+      "scale": "t2",
+      "kernel_angle": "alpha2"
+    },
+    "dimension": 4,
+    "variables": "(t1, t2, alpha1, alpha2)",
+    "eliminated_by_symmetry": "all four scalar kernel projections nu_l"
+  },
+  "weyl_eigenvalues": [
+    0.6666666666666666,
+    -0.3333333333333333,
+    -0.3333333333333333
+  ],
+  "curvature_block": "R^+ = R^- = diag(Lambda, 0, 0), rank 1",
+  "omega1_circ_check": {
+    "omega1+_circ_omega1- = -(g1-g2)": true,
+    "matrix": [
+      -0.9999999999999998,
+      -0.9999999999999998,
+      0.9999999999999998,
+      0.9999999999999998
+    ],
+    "interpretation": "nonzero-eigenvalue EH direction couples to shape mode; in-kernel directions do not"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "step": 93,
+  "scope": "analytic structure of AA/BB coincident-point divergence via heat kernel",
+  "dimension_raising_identity": {
+    "formula": "d_x^2 p_t^{S^2}(x)|_{x=1} = 4*pi^2 * e^{-6t} * p_t^{S^6}(1)",
+    "verification": [
+      {
+        "t": 0.5,
+        "direct_spectral": 0.08163195231498999,
+        "dimension_raising_prediction": 0.08163195231498997,
+        "relative_error": 1.700043599871872e-16
+      },
+      {
+        "t": 0.2,
+        "direct_spectral": 1.991169689280818,
+        "dimension_raising_prediction": 1.991169689280818,
+        "relative_error": 0.0
+      },
+      {
+        "t": 0.1,
+        "direct_spectral": 17.906582982803577,
+        "dimension_raising_prediction": 17.90658298280358,
+        "relative_error": 1.98402659078637e-16
+      },
+      {
+        "t": 0.05,
+        "direct_spectral": 151.19881043633313,
+        "dimension_raising_prediction": 151.19881043633302,
+        "relative_error": 7.519029904635879e-16
+      }
+    ]
+  },
+  "ab_vs_aabb_comparison": [
+    {
+      "t": 0.5,
+      "Lmax": 100,
+      "AB_antipodal_deriv1": 0.03635927802295501,
+      "AABB_diagonal_deriv2": 0.08163195231498999,
+      "AABB_shorttime_prediction": 0.15915494309189535,
+      "ratio_aabb_to_pred": 0.5129086833819296,
+      "AB_finite": true,
+      "AABB_divergent": true
+    },
+    {
+      "t": 0.2,
+      "Lmax": 100,
+      "AB_antipodal_deriv1": 0.0006217842459772991,
+      "AABB_diagonal_deriv2": 1.991169689280818,
+      "AABB_shorttime_prediction": 2.4867959858108644,
+      "ratio_aabb_to_pred": 0.8006968406905971,
+      "AB_finite": true,
+      "AABB_divergent": true
+    },
+    {
+      "t": 0.1,
+      "Lmax": 100,
+      "AB_antipodal_deriv1": 3.206453562696419e-08,
+      "AABB_diagonal_deriv2": 17.906582982803577,
+      "AABB_shorttime_prediction": 19.894367886486915,
+      "ratio_aabb_to_pred": 0.9000830327947477,
+      "AB_finite": true,
+      "AABB_divergent": true
+    },
+    {
+      "t": 0.05,
+      "Lmax": 100,
+      "AB_antipodal_deriv1": 1.812510159307989e-17,
+      "AABB_diagonal_deriv2": 151.19881043633313,
+      "AABB_shorttime_prediction": 159.15494309189532,
+      "ratio_aabb_to_pred": 0.9500101441966,
+      "AB_finite": true,
+      "AABB_divergent": true
+    },
+    {
+      "t": 0.02,
+      "Lmax": 141,
+      "AB_antipodal_deriv1": 3.5173012131159082e-15,
+      "AABB_diagonal_deriv2": 2437.06165903978,
+      "AABB_shorttime_prediction": 2486.7959858108643,
+      "ratio_aabb_to_pred": 0.980000640561245,
+      "AB_finite": true,
+      "AABB_divergent": true
+    },
+    {
+      "t": 0.01,
+      "Lmax": 200,
+      "AB_antipodal_deriv1": -1.5490224600872108e-15,
+      "AABB_diagonal_deriv2": 19695.425793520306,
+      "AABB_shorttime_prediction": 19894.367886486914,
+      "ratio_aabb_to_pred": 0.9900000797159412,
+      "AB_finite": true,
+      "AABB_divergent": true
+    },
+    {
+      "t": 0.005,
+      "Lmax": 282,
+      "AB_antipodal_deriv1": 2.6188353857555705e-14,
+      "AABB_diagonal_deriv2": 158359.1699588359,
+      "AABB_shorttime_prediction": 159154.94309189531,
+      "ratio_aabb_to_pred": 0.9950000099425128,
+      "AB_finite": true,
+      "AABB_divergent": true
+    },
+    {
+      "t": 0.002,
+      "Lmax": 447,
+      "AB_antipodal_deriv1": 1.4856842515370914e-14,
+      "AABB_diagonal_deriv2": 2481822.3954195506,
+      "AABB_shorttime_prediction": 2486795.9858108647,
+      "ratio_aabb_to_pred": 0.9980000006354794,
+      "AB_finite": true,
+      "AABB_divergent": true
+    }
+  ],
+  "analytic_structure": {
+    "AB_sector": {
+      "heat_representation": "d_x p_t^{S^2}(-1) = 2*pi*e^{-2t}*p_t^{S^4}(-1) > 0",
+      "convergent": true,
+      "sign": "B(s) = -4*pi*d_t p_t^{S^2}(-1)|_{t=s/2} < 0 by p_t^{S^4}(-1) > 0",
+      "K_adj_AB": "\u2248 -0.031, finite and strictly negative"
+    },
+    "AABB_sector": {
+      "heat_representation": "d_x^2 p_t^{S^2}(1) = 4*pi^2*e^{-6t}*p_t^{S^6}(1)",
+      "convergent": false,
+      "short_time": "~ 1/(16*pi*t^3) as t->0",
+      "divergence_type": "coincident-point singularity in one S^2 factor"
+    }
+  },
+  "mathematical_conclusion": "The sector decomposition AB vs AA/BB is meaningful only for the AB sector, which involves separated-point evaluation in both factors. The AA/BB sectors involve coincident-point evaluation in one factor, creating a divergence analogous to a UV singularity. The physical inter-node Green coefficient is finite (smooth Green function between separated nodes), but extracting the AA/BB contribution requires the full singular source structure from the ALE model (Ozuch's H^4), not a naive mode-by-mode sum. The AB sign theorem K_adj^AB < 0 remains valid and is the only cleanly computable sector."
+}

@@ -1,0 +1,322 @@
+{
+  "status": "ok",
+  "sympy_verification": {
+    "u": "r**2*t*A(log(r))*cos(2*th)",
+    "laplacian_polar": "t*(4*Subs(Derivative(A(_xi_1), _xi_1), _xi_1, log(r)) + Subs(Derivative(A(_xi_1), (_xi_1, 2)), _xi_1, log(r)))*cos(2*th)",
+    "readable_formula": "Delta[t r^2 A(log r) cos(2theta)] = t (A''(log r) + 4 A'(log r)) cos(2theta)",
+    "constant_A_check": "If A'=A''=0, Delta u=0; the H2 coefficient can be nonzero with zero linear Ricci source."
+  },
+  "construction": {
+    "ansatz": "u=t r^2 A(log r) cos(2theta) in the 2D base of the opposite-warping metric; use A(s)=A0+DeltaA q(s/L), q=3z^2-2z^3.",
+    "why_this_is_the_neck_channel": "A changes the l=2/H2/Weyl block coefficient.  Ricci sees Delta u=t(A''+4A')cos2theta, so slow logarithmic variation makes Ricci defect O(t/L) while changing the coefficient by DeltaA.",
+    "matching_to_pinching": "Take L~1/delta and R=e^L=t^{-1/2}. Then t=exp(-2/delta) and the coefficient drift is O(1) with pointwise Ricci defect O(t delta) in the ALE frame, exactly the failure regime for the H4 flux theorem.",
+    "limitations": "Local linear/warped model only. A closed smooth near-pinched metric still requires end caps, nonlinear gradient estimates, full Riemannian positivity, and topology/bubble matching. Cutoffs must use long logarithmic shoulders; sharp endpoint cutoffs would create O(t) Ricci defects."
+  },
+  "schedules": [
+    {
+      "delta": 0.2,
+      "coefficient_drift_DeltaA": 0.5,
+      "log_neck_length_L": 5.0,
+      "outer_ALE_radius_R=e^L_log10": 2.1714724095162588,
+      "metric_scale_t=e^{-2L}_log10_1_over_t": 4.3429448190325175,
+      "dyadic_scales": 7.213475204444817,
+      "max_abs_A_prime": 0.15,
+      "max_abs_A_double_prime": 0.12,
+      "max_abs_Delta_u_over_t": 0.72,
+      "max_abs_Delta_u_over_t_delta": 3.5999999999999996,
+      "interpretation": "O(1) H2 coefficient drift with Ricci/Laplacian source O(t*delta) on a neck of length ~1/delta."
+    },
+    {
+      "delta": 0.2,
+      "coefficient_drift_DeltaA": 1.0,
+      "log_neck_length_L": 5.0,
+      "outer_ALE_radius_R=e^L_log10": 2.1714724095162588,
+      "metric_scale_t=e^{-2L}_log10_1_over_t": 4.3429448190325175,
+      "dyadic_scales": 7.213475204444817,
+      "max_abs_A_prime": 0.3,
+      "max_abs_A_double_prime": 0.24,
+      "max_abs_Delta_u_over_t": 1.44,
+      "max_abs_Delta_u_over_t_delta": 7.199999999999999,
+      "interpretation": "O(1) H2 coefficient drift with Ricci/Laplacian source O(t*delta) on a neck of length ~1/delta."
+    },
+    {
+      "delta": 0.2,
+      "coefficient_drift_DeltaA": 2.0,
+      "log_neck_length_L": 5.0,
+      "outer_ALE_radius_R=e^L_log10": 2.1714724095162588,
+      "metric_scale_t=e^{-2L}_log10_1_over_t": 4.3429448190325175,
+      "dyadic_scales": 7.213475204444817,
+      "max_abs_A_prime": 0.6,
+      "max_abs_A_double_prime": 0.48,
+      "max_abs_Delta_u_over_t": 2.88,
+      "max_abs_Delta_u_over_t_delta": 14.399999999999999,
+      "interpretation": "O(1) H2 coefficient drift with Ricci/Laplacian source O(t*delta) on a neck of length ~1/delta."
+    },
+    {
+      "delta": 0.1,
+      "coefficient_drift_DeltaA": 0.5,
+      "log_neck_length_L": 10.0,
+      "outer_ALE_radius_R=e^L_log10": 4.3429448190325175,
+      "metric_scale_t=e^{-2L}_log10_1_over_t": 8.685889638065035,
+      "dyadic_scales": 14.426950408889635,
+      "max_abs_A_prime": 0.075,
+      "max_abs_A_double_prime": 0.03,
+      "max_abs_Delta_u_over_t": 0.32999999999999996,
+      "max_abs_Delta_u_over_t_delta": 3.2999999999999994,
+      "interpretation": "O(1) H2 coefficient drift with Ricci/Laplacian source O(t*delta) on a neck of length ~1/delta."
+    },
+    {
+      "delta": 0.1,
+      "coefficient_drift_DeltaA": 1.0,
+      "log_neck_length_L": 10.0,
+      "outer_ALE_radius_R=e^L_log10": 4.3429448190325175,
+      "metric_scale_t=e^{-2L}_log10_1_over_t": 8.685889638065035,
+      "dyadic_scales": 14.426950408889635,
+      "max_abs_A_prime": 0.15,
+      "max_abs_A_double_prime": 0.06,
+      "max_abs_Delta_u_over_t": 0.6599999999999999,
+      "max_abs_Delta_u_over_t_delta": 6.599999999999999,
+      "interpretation": "O(1) H2 coefficient drift with Ricci/Laplacian source O(t*delta) on a neck of length ~1/delta."
+    },
+    {
+      "delta": 0.1,
+      "coefficient_drift_DeltaA": 2.0,
+      "log_neck_length_L": 10.0,
+      "outer_ALE_radius_R=e^L_log10": 4.3429448190325175,
+      "metric_scale_t=e^{-2L}_log10_1_over_t": 8.685889638065035,
+      "dyadic_scales": 14.426950408889635,
+      "max_abs_A_prime": 0.3,
+      "max_abs_A_double_prime": 0.12,
+      "max_abs_Delta_u_over_t": 1.3199999999999998,
+      "max_abs_Delta_u_over_t_delta": 13.199999999999998,
+      "interpretation": "O(1) H2 coefficient drift with Ricci/Laplacian source O(t*delta) on a neck of length ~1/delta."
+    },
+    {
+      "delta": 0.05,
+      "coefficient_drift_DeltaA": 0.5,
+      "log_neck_length_L": 20.0,
+      "outer_ALE_radius_R=e^L_log10": 8.685889638065035,
+      "metric_scale_t=e^{-2L}_log10_1_over_t": 17.37177927613007,
+      "dyadic_scales": 28.85390081777927,
+      "max_abs_A_prime": 0.0375,
+      "max_abs_A_double_prime": 0.0075,
+      "max_abs_Delta_u_over_t": 0.1575,
+      "max_abs_Delta_u_over_t_delta": 3.15,
+      "interpretation": "O(1) H2 coefficient drift with Ricci/Laplacian source O(t*delta) on a neck of length ~1/delta."
+    },
+    {
+      "delta": 0.05,
+      "coefficient_drift_DeltaA": 1.0,
+      "log_neck_length_L": 20.0,
+      "outer_ALE_radius_R=e^L_log10": 8.685889638065035,
+      "metric_scale_t=e^{-2L}_log10_1_over_t": 17.37177927613007,
+      "dyadic_scales": 28.85390081777927,
+      "max_abs_A_prime": 0.075,
+      "max_abs_A_double_prime": 0.015,
+      "max_abs_Delta_u_over_t": 0.315,
+      "max_abs_Delta_u_over_t_delta": 6.3,
+      "interpretation": "O(1) H2 coefficient drift with Ricci/Laplacian source O(t*delta) on a neck of length ~1/delta."
+    },
+    {
+      "delta": 0.05,
+      "coefficient_drift_DeltaA": 2.0,
+      "log_neck_length_L": 20.0,
+      "outer_ALE_radius_R=e^L_log10": 8.685889638065035,
+      "metric_scale_t=e^{-2L}_log10_1_over_t": 17.37177927613007,
+      "dyadic_scales": 28.85390081777927,
+      "max_abs_A_prime": 0.15,
+      "max_abs_A_double_prime": 0.03,
+      "max_abs_Delta_u_over_t": 0.63,
+      "max_abs_Delta_u_over_t_delta": 12.6,
+      "interpretation": "O(1) H2 coefficient drift with Ricci/Laplacian source O(t*delta) on a neck of length ~1/delta."
+    },
+    {
+      "delta": 0.02,
+      "coefficient_drift_DeltaA": 0.5,
+      "log_neck_length_L": 50.0,
+      "outer_ALE_radius_R=e^L_log10": 21.71472409516259,
+      "metric_scale_t=e^{-2L}_log10_1_over_t": 43.42944819032518,
+      "dyadic_scales": 72.13475204444818,
+      "max_abs_A_prime": 0.015,
+      "max_abs_A_double_prime": 0.0012,
+      "max_abs_Delta_u_over_t": 0.0612,
+      "max_abs_Delta_u_over_t_delta": 3.0599999999999996,
+      "interpretation": "O(1) H2 coefficient drift with Ricci/Laplacian source O(t*delta) on a neck of length ~1/delta."
+    },
+    {
+      "delta": 0.02,
+      "coefficient_drift_DeltaA": 1.0,
+      "log_neck_length_L": 50.0,
+      "outer_ALE_radius_R=e^L_log10": 21.71472409516259,
+      "metric_scale_t=e^{-2L}_log10_1_over_t": 43.42944819032518,
+      "dyadic_scales": 72.13475204444818,
+      "max_abs_A_prime": 0.03,
+      "max_abs_A_double_prime": 0.0024,
+      "max_abs_Delta_u_over_t": 0.1224,
+      "max_abs_Delta_u_over_t_delta": 6.119999999999999,
+      "interpretation": "O(1) H2 coefficient drift with Ricci/Laplacian source O(t*delta) on a neck of length ~1/delta."
+    },
+    {
+      "delta": 0.02,
+      "coefficient_drift_DeltaA": 2.0,
+      "log_neck_length_L": 50.0,
+      "outer_ALE_radius_R=e^L_log10": 21.71472409516259,
+      "metric_scale_t=e^{-2L}_log10_1_over_t": 43.42944819032518,
+      "dyadic_scales": 72.13475204444818,
+      "max_abs_A_prime": 0.06,
+      "max_abs_A_double_prime": 0.0048,
+      "max_abs_Delta_u_over_t": 0.2448,
+      "max_abs_Delta_u_over_t_delta": 12.239999999999998,
+      "interpretation": "O(1) H2 coefficient drift with Ricci/Laplacian source O(t*delta) on a neck of length ~1/delta."
+    },
+    {
+      "delta": 0.01,
+      "coefficient_drift_DeltaA": 0.5,
+      "log_neck_length_L": 100.0,
+      "outer_ALE_radius_R=e^L_log10": 43.42944819032518,
+      "metric_scale_t=e^{-2L}_log10_1_over_t": 86.85889638065036,
+      "dyadic_scales": 144.26950408889635,
+      "max_abs_A_prime": 0.0075,
+      "max_abs_A_double_prime": 0.0003,
+      "max_abs_Delta_u_over_t": 0.0303,
+      "max_abs_Delta_u_over_t_delta": 3.03,
+      "interpretation": "O(1) H2 coefficient drift with Ricci/Laplacian source O(t*delta) on a neck of length ~1/delta."
+    },
+    {
+      "delta": 0.01,
+      "coefficient_drift_DeltaA": 1.0,
+      "log_neck_length_L": 100.0,
+      "outer_ALE_radius_R=e^L_log10": 43.42944819032518,
+      "metric_scale_t=e^{-2L}_log10_1_over_t": 86.85889638065036,
+      "dyadic_scales": 144.26950408889635,
+      "max_abs_A_prime": 0.015,
+      "max_abs_A_double_prime": 0.0006,
+      "max_abs_Delta_u_over_t": 0.0606,
+      "max_abs_Delta_u_over_t_delta": 6.06,
+      "interpretation": "O(1) H2 coefficient drift with Ricci/Laplacian source O(t*delta) on a neck of length ~1/delta."
+    },
+    {
+      "delta": 0.01,
+      "coefficient_drift_DeltaA": 2.0,
+      "log_neck_length_L": 100.0,
+      "outer_ALE_radius_R=e^L_log10": 43.42944819032518,
+      "metric_scale_t=e^{-2L}_log10_1_over_t": 86.85889638065036,
+      "dyadic_scales": 144.26950408889635,
+      "max_abs_A_prime": 0.03,
+      "max_abs_A_double_prime": 0.0012,
+      "max_abs_Delta_u_over_t": 0.1212,
+      "max_abs_Delta_u_over_t_delta": 12.12,
+      "interpretation": "O(1) H2 coefficient drift with Ricci/Laplacian source O(t*delta) on a neck of length ~1/delta."
+    },
+    {
+      "delta": 0.005,
+      "coefficient_drift_DeltaA": 0.5,
+      "log_neck_length_L": 200.0,
+      "outer_ALE_radius_R=e^L_log10": 86.85889638065036,
+      "metric_scale_t=e^{-2L}_log10_1_over_t": 173.71779276130073,
+      "dyadic_scales": 288.5390081777927,
+      "max_abs_A_prime": 0.00375,
+      "max_abs_A_double_prime": 7.5e-05,
+      "max_abs_Delta_u_over_t": 0.015075,
+      "max_abs_Delta_u_over_t_delta": 3.015,
+      "interpretation": "O(1) H2 coefficient drift with Ricci/Laplacian source O(t*delta) on a neck of length ~1/delta."
+    },
+    {
+      "delta": 0.005,
+      "coefficient_drift_DeltaA": 1.0,
+      "log_neck_length_L": 200.0,
+      "outer_ALE_radius_R=e^L_log10": 86.85889638065036,
+      "metric_scale_t=e^{-2L}_log10_1_over_t": 173.71779276130073,
+      "dyadic_scales": 288.5390081777927,
+      "max_abs_A_prime": 0.0075,
+      "max_abs_A_double_prime": 0.00015,
+      "max_abs_Delta_u_over_t": 0.03015,
+      "max_abs_Delta_u_over_t_delta": 6.03,
+      "interpretation": "O(1) H2 coefficient drift with Ricci/Laplacian source O(t*delta) on a neck of length ~1/delta."
+    },
+    {
+      "delta": 0.005,
+      "coefficient_drift_DeltaA": 2.0,
+      "log_neck_length_L": 200.0,
+      "outer_ALE_radius_R=e^L_log10": 86.85889638065036,
+      "metric_scale_t=e^{-2L}_log10_1_over_t": 173.71779276130073,
+      "dyadic_scales": 288.5390081777927,
+      "max_abs_A_prime": 0.015,
+      "max_abs_A_double_prime": 0.0003,
+      "max_abs_Delta_u_over_t": 0.0603,
+      "max_abs_Delta_u_over_t_delta": 12.06,
+      "interpretation": "O(1) H2 coefficient drift with Ricci/Laplacian source O(t*delta) on a neck of length ~1/delta."
+    }
+  ],
+  "sample_profile_delta_0p02": {
+    "delta": 0.02,
+    "drift": 1.0,
+    "L": 50.0,
+    "profile": [
+      {
+        "z=s/L": 0.0,
+        "A_minus_A0": 0.0,
+        "A_prime": 0.0,
+        "A_double_prime": 0.0024,
+        "laplacian_coefficient_over_t": 0.0024
+      },
+      {
+        "z=s/L": 0.125,
+        "A_minus_A0": 0.04296875,
+        "A_prime": 0.013125,
+        "A_double_prime": 0.0018,
+        "laplacian_coefficient_over_t": 0.0543
+      },
+      {
+        "z=s/L": 0.25,
+        "A_minus_A0": 0.15625,
+        "A_prime": 0.0225,
+        "A_double_prime": 0.0012,
+        "laplacian_coefficient_over_t": 0.0912
+      },
+      {
+        "z=s/L": 0.375,
+        "A_minus_A0": 0.31640625,
+        "A_prime": 0.028125,
+        "A_double_prime": 0.0006,
+        "laplacian_coefficient_over_t": 0.1131
+      },
+      {
+        "z=s/L": 0.5,
+        "A_minus_A0": 0.5,
+        "A_prime": 0.03,
+        "A_double_prime": 0.0,
+        "laplacian_coefficient_over_t": 0.12
+      },
+      {
+        "z=s/L": 0.625,
+        "A_minus_A0": 0.68359375,
+        "A_prime": 0.028125,
+        "A_double_prime": -0.0006,
+        "laplacian_coefficient_over_t": 0.1119
+      },
+      {
+        "z=s/L": 0.75,
+        "A_minus_A0": 0.84375,
+        "A_prime": 0.0225,
+        "A_double_prime": -0.0012,
+        "laplacian_coefficient_over_t": 0.08879999999999999
+      },
+      {
+        "z=s/L": 0.875,
+        "A_minus_A0": 0.95703125,
+        "A_prime": 0.013125,
+        "A_double_prime": -0.0018,
+        "laplacian_coefficient_over_t": 0.050699999999999995
+      },
+      {
+        "z=s/L": 1.0,
+        "A_minus_A0": 1.0,
+        "A_prime": 0.0,
+        "A_double_prime": -0.0024,
+        "laplacian_coefficient_over_t": -0.0024
+      }
+    ]
+  },
+  "research_consequence": "The exponential failure channel is not merely formal ODE bookkeeping. The same opposite-warping Hessian mechanism that produced Step-11 C0-Ricci/small-L2/high-curvature spikes can locally realize an O(1) l=2 curvature-block drift across a neck while keeping the Ricci source O(delta). This makes the constructive counterexample channel credible and identifies the exact next obstruction to check: whether global caps and nonlinear terms can preserve the O(delta) Ricci defect."
+}

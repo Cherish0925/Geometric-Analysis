@@ -1,0 +1,692 @@
+{
+ "su2_left_invariant": {
+  "ricci_formula": true,
+  "r1_plus_r2": true,
+  "berger_scalar": true,
+  "round_scalar_6": true
+ },
+ "bianchi_IX": {
+  "gauss_constraint": true,
+  "mixed_sectional": true,
+  "flat_check": true,
+  "ricci_diagonal": true
+ },
+ "fibred_cusp_model": {
+  "Ric_rr_equals_minus1": true,
+  "Ric_r_horizontal_leading_equals_grad_log_f": true,
+  "fconst_fibre_minus1_base_KB": true,
+  "Ric_r_horizontal": "Derivative(f(x, y), x)/f(x, y)"
+ },
+ "genus_disc_bundle_caps": {
+  "formula": "c_+ = T_+(D_e(Sigma_g)) - (-e+3 sign e) = 4-4g+e",
+  "survivors_g_ge_2": [],
+  "rows": [
+   {
+    "g": 0,
+    "e": -6,
+    "c_plus": -2,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 0,
+    "e": -5,
+    "c_plus": -1,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 0,
+    "e": -4,
+    "c_plus": 0,
+    "admissible_charge": true,
+    "adjunction_allows": null
+   },
+   {
+    "g": 0,
+    "e": -3,
+    "c_plus": 1,
+    "admissible_charge": true,
+    "adjunction_allows": null
+   },
+   {
+    "g": 0,
+    "e": -2,
+    "c_plus": 2,
+    "admissible_charge": true,
+    "adjunction_allows": null
+   },
+   {
+    "g": 0,
+    "e": -1,
+    "c_plus": 3,
+    "admissible_charge": true,
+    "adjunction_allows": null
+   },
+   {
+    "g": 0,
+    "e": 0,
+    "c_plus": 4,
+    "admissible_charge": true,
+    "adjunction_allows": null
+   },
+   {
+    "g": 0,
+    "e": 1,
+    "c_plus": 5,
+    "admissible_charge": true,
+    "adjunction_allows": null
+   },
+   {
+    "g": 0,
+    "e": 2,
+    "c_plus": 6,
+    "admissible_charge": true,
+    "adjunction_allows": null
+   },
+   {
+    "g": 0,
+    "e": 3,
+    "c_plus": 7,
+    "admissible_charge": true,
+    "adjunction_allows": null
+   },
+   {
+    "g": 0,
+    "e": 4,
+    "c_plus": 8,
+    "admissible_charge": true,
+    "adjunction_allows": null
+   },
+   {
+    "g": 0,
+    "e": 5,
+    "c_plus": 9,
+    "admissible_charge": true,
+    "adjunction_allows": null
+   },
+   {
+    "g": 0,
+    "e": 6,
+    "c_plus": 10,
+    "admissible_charge": true,
+    "adjunction_allows": null
+   },
+   {
+    "g": 0,
+    "e": 7,
+    "c_plus": 11,
+    "admissible_charge": true,
+    "adjunction_allows": null
+   },
+   {
+    "g": 0,
+    "e": 8,
+    "c_plus": 12,
+    "admissible_charge": true,
+    "adjunction_allows": null
+   },
+   {
+    "g": 0,
+    "e": 9,
+    "c_plus": 13,
+    "admissible_charge": true,
+    "adjunction_allows": null
+   },
+   {
+    "g": 0,
+    "e": 10,
+    "c_plus": 14,
+    "admissible_charge": true,
+    "adjunction_allows": null
+   },
+   {
+    "g": 0,
+    "e": 11,
+    "c_plus": 15,
+    "admissible_charge": true,
+    "adjunction_allows": null
+   },
+   {
+    "g": 0,
+    "e": 12,
+    "c_plus": 16,
+    "admissible_charge": true,
+    "adjunction_allows": null
+   },
+   {
+    "g": 1,
+    "e": -6,
+    "c_plus": -6,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 1,
+    "e": -5,
+    "c_plus": -5,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 1,
+    "e": -4,
+    "c_plus": -4,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 1,
+    "e": -3,
+    "c_plus": -3,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 1,
+    "e": -2,
+    "c_plus": -2,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 1,
+    "e": -1,
+    "c_plus": -1,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 1,
+    "e": 0,
+    "c_plus": 0,
+    "admissible_charge": true,
+    "adjunction_allows": true
+   },
+   {
+    "g": 1,
+    "e": 1,
+    "c_plus": 1,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 1,
+    "e": 2,
+    "c_plus": 2,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 1,
+    "e": 3,
+    "c_plus": 3,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 1,
+    "e": 4,
+    "c_plus": 4,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 1,
+    "e": 5,
+    "c_plus": 5,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 1,
+    "e": 6,
+    "c_plus": 6,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 1,
+    "e": 7,
+    "c_plus": 7,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 1,
+    "e": 8,
+    "c_plus": 8,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 1,
+    "e": 9,
+    "c_plus": 9,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 1,
+    "e": 10,
+    "c_plus": 10,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 1,
+    "e": 11,
+    "c_plus": 11,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 1,
+    "e": 12,
+    "c_plus": 12,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 2,
+    "e": -6,
+    "c_plus": -10,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 2,
+    "e": -5,
+    "c_plus": -9,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 2,
+    "e": -4,
+    "c_plus": -8,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 2,
+    "e": -3,
+    "c_plus": -7,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 2,
+    "e": -2,
+    "c_plus": -6,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 2,
+    "e": -1,
+    "c_plus": -5,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 2,
+    "e": 0,
+    "c_plus": -4,
+    "admissible_charge": false,
+    "adjunction_allows": true
+   },
+   {
+    "g": 2,
+    "e": 1,
+    "c_plus": -3,
+    "admissible_charge": false,
+    "adjunction_allows": true
+   },
+   {
+    "g": 2,
+    "e": 2,
+    "c_plus": -2,
+    "admissible_charge": false,
+    "adjunction_allows": true
+   },
+   {
+    "g": 2,
+    "e": 3,
+    "c_plus": -1,
+    "admissible_charge": false,
+    "adjunction_allows": false
+   },
+   {
+    "g": 2,
+    "e": 4,
+    "c_plus": 0,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 2,
+    "e": 5,
+    "c_plus": 1,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 2,
+    "e": 6,
+    "c_plus": 2,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 2,
+    "e": 7,
+    "c_plus": 3,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 2,
+    "e": 8,
+    "c_plus": 4,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 2,
+    "e": 9,
+    "c_plus": 5,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 2,
+    "e": 10,
+    "c_plus": 6,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 2,
+    "e": 11,
+    "c_plus": 7,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 2,
+    "e": 12,
+    "c_plus": 8,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 3,
+    "e": -6,
+    "c_plus": -14,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 3,
+    "e": -5,
+    "c_plus": -13,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 3,
+    "e": -4,
+    "c_plus": -12,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 3,
+    "e": -3,
+    "c_plus": -11,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 3,
+    "e": -2,
+    "c_plus": -10,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 3,
+    "e": -1,
+    "c_plus": -9,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 3,
+    "e": 0,
+    "c_plus": -8,
+    "admissible_charge": false,
+    "adjunction_allows": true
+   },
+   {
+    "g": 3,
+    "e": 1,
+    "c_plus": -7,
+    "admissible_charge": false,
+    "adjunction_allows": true
+   },
+   {
+    "g": 3,
+    "e": 2,
+    "c_plus": -6,
+    "admissible_charge": false,
+    "adjunction_allows": true
+   },
+   {
+    "g": 3,
+    "e": 3,
+    "c_plus": -5,
+    "admissible_charge": false,
+    "adjunction_allows": true
+   },
+   {
+    "g": 3,
+    "e": 4,
+    "c_plus": -4,
+    "admissible_charge": false,
+    "adjunction_allows": true
+   },
+   {
+    "g": 3,
+    "e": 5,
+    "c_plus": -3,
+    "admissible_charge": false,
+    "adjunction_allows": false
+   },
+   {
+    "g": 3,
+    "e": 6,
+    "c_plus": -2,
+    "admissible_charge": false,
+    "adjunction_allows": false
+   },
+   {
+    "g": 3,
+    "e": 7,
+    "c_plus": -1,
+    "admissible_charge": false,
+    "adjunction_allows": false
+   },
+   {
+    "g": 3,
+    "e": 8,
+    "c_plus": 0,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 3,
+    "e": 9,
+    "c_plus": 1,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 3,
+    "e": 10,
+    "c_plus": 2,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 3,
+    "e": 11,
+    "c_plus": 3,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 3,
+    "e": 12,
+    "c_plus": 4,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   },
+   {
+    "g": 4,
+    "e": -6,
+    "c_plus": -18,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 4,
+    "e": -5,
+    "c_plus": -17,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 4,
+    "e": -4,
+    "c_plus": -16,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 4,
+    "e": -3,
+    "c_plus": -15,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 4,
+    "e": -2,
+    "c_plus": -14,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 4,
+    "e": -1,
+    "c_plus": -13,
+    "admissible_charge": false,
+    "adjunction_allows": null
+   },
+   {
+    "g": 4,
+    "e": 0,
+    "c_plus": -12,
+    "admissible_charge": false,
+    "adjunction_allows": true
+   },
+   {
+    "g": 4,
+    "e": 1,
+    "c_plus": -11,
+    "admissible_charge": false,
+    "adjunction_allows": true
+   },
+   {
+    "g": 4,
+    "e": 2,
+    "c_plus": -10,
+    "admissible_charge": false,
+    "adjunction_allows": true
+   },
+   {
+    "g": 4,
+    "e": 3,
+    "c_plus": -9,
+    "admissible_charge": false,
+    "adjunction_allows": true
+   },
+   {
+    "g": 4,
+    "e": 4,
+    "c_plus": -8,
+    "admissible_charge": false,
+    "adjunction_allows": true
+   },
+   {
+    "g": 4,
+    "e": 5,
+    "c_plus": -7,
+    "admissible_charge": false,
+    "adjunction_allows": true
+   },
+   {
+    "g": 4,
+    "e": 6,
+    "c_plus": -6,
+    "admissible_charge": false,
+    "adjunction_allows": true
+   },
+   {
+    "g": 4,
+    "e": 7,
+    "c_plus": -5,
+    "admissible_charge": false,
+    "adjunction_allows": false
+   },
+   {
+    "g": 4,
+    "e": 8,
+    "c_plus": -4,
+    "admissible_charge": false,
+    "adjunction_allows": false
+   },
+   {
+    "g": 4,
+    "e": 9,
+    "c_plus": -3,
+    "admissible_charge": false,
+    "adjunction_allows": false
+   },
+   {
+    "g": 4,
+    "e": 10,
+    "c_plus": -2,
+    "admissible_charge": false,
+    "adjunction_allows": false
+   },
+   {
+    "g": 4,
+    "e": 11,
+    "c_plus": -1,
+    "admissible_charge": false,
+    "adjunction_allows": false
+   },
+   {
+    "g": 4,
+    "e": 12,
+    "c_plus": 0,
+    "admissible_charge": true,
+    "adjunction_allows": false
+   }
+  ]
+ },
+ "all_ok": true
+}

@@ -1,0 +1,31 @@
+{
+  "conventions": {
+    "E": "Ric_g+3g",
+    "S_prime_equation": "S_prime+H S=Ric(q)+3I-E_T",
+    "contracted_gauss": "R(q)=-6+H^2-|S|^2+tr(E)-2E_rr",
+    "S_norm": "u^2+v^2/2+|B0|^2"
+  },
+  "pointwise_block_traces": {
+    "v_prime_plus_Hv": "-Eorb + Rorb + 6",
+    "u_prime_plus_Hu": "-Ezz + Rzz + 3",
+    "Rq_decomposition": "R(q)=Ric_q(zz)+tr_orbit Ric_q"
+  },
+  "integrated": {
+    "intrinsic_orbit_trace_integral": "0 on each closed free-T2 slice (Einstein-Hilbert variation under orbit homothety / direct divergence)",
+    "J_prime": "6V-integral E_orbit dmu",
+    "I_prime": "3V+integral R(q)dmu-integral E_zz dmu",
+    "I_prime_gauss_density": "-B0sq + Eorb - Err + 2*u*v + v**2/2 - 3",
+    "expected_density": "-B0sq + Eorb - Err + 2*u*v + v**2/2 - 3",
+    "identity_residual": "0"
+  },
+  "defect_formula": {
+    "exact_defect": "E_orbit-E_rr",
+    "reason": "tr(E)-2E_rr-E_zz = E_orbit-E_rr after insertion into I prime",
+    "traceE_symbol": "Eorb + Err + Ezz"
+  },
+  "first_return": {
+    "facts": "I=0 implies <u>=0; hence <uv>=Cov(u,v). At a differentiable first return from I<0, I_prime>=0.",
+    "necessary_inequality": "2 Cov(u,v)+<v^2>/2-<|B0|^2> >= 3-3delta",
+    "interpretation": "Mean reversal requires orbit expansion variance/correlation to beat radial orbit shear; this is necessary, not sufficient."
+  }
+}

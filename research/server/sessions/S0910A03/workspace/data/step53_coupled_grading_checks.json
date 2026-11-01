@@ -1,0 +1,103 @@
+{
+  "step": 53,
+  "total_checks": 19,
+  "passed": 19,
+  "results": [
+    {
+      "name": "metric_needs_V_order_2",
+      "pass": true,
+      "detail": "Metric eq principal part has nabla^2 V"
+    },
+    {
+      "name": "metric_needs_psi_order_0",
+      "pass": true,
+      "detail": "Metric eq coefficient psi^2 has no spatial derivatives of psi"
+    },
+    {
+      "name": "transport_needs_V_order_1",
+      "pass": true,
+      "detail": "Transport eq uses W ~ nabla V, so first derivatives of V"
+    },
+    {
+      "name": "transport_needs_psi_order_1",
+      "pass": true,
+      "detail": "Transport eq has psi^2 * W * nabla psi, first derivative of psi"
+    },
+    {
+      "name": "lower_triangular_coupling",
+      "pass": true,
+      "detail": "Metric needs psi at SAME order; transport needs V at order+1"
+    },
+    {
+      "name": "transport_IBP_identity",
+      "pass": true,
+      "detail": "int f*(a*W)*f_x = -1/2 int f^2 * d(a*W)/dx, eliminating top-order psi"
+    },
+    {
+      "name": "IBP_does_not_need_psi_order_k_plus_1",
+      "pass": true,
+      "detail": "d(psi^2 W)/dx has psi at order 1 and V at order 2, not psi at order 2"
+    },
+    {
+      "name": "ODE_uses_parabolic_gain",
+      "pass": true,
+      "detail": "ODE velocity needs V at H^p_tilde + 3=p_tilde + 3, available in L^2_t"
+    },
+    {
+      "name": "psi_regularity_from_phi",
+      "pass": true,
+      "detail": "psi in H^p_tilde + 2=p_tilde + 2 from phi in H^p_tilde + 2 and smooth chi"
+    },
+    {
+      "name": "metric_coefficient_available",
+      "pass": true,
+      "detail": "Metric needs psi at H^p_tilde + 2=p_tilde + 2: available"
+    },
+    {
+      "name": "I2_factorization",
+      "pass": true,
+      "detail": "chi1^2 - chi2^2 = (chi1+chi2)(chi1-chi2)"
+    },
+    {
+      "name": "I2_bounded_multiplier",
+      "pass": true,
+      "detail": "|a1-a2| <= 2*||chi||_inf * |chi1-chi2|, bounded in the ball"
+    },
+    {
+      "name": "flat_torus_a_double_prime",
+      "pass": true,
+      "detail": "a'' = -cos(x1)/2 - cos(2*x1)/2"
+    },
+    {
+      "name": "flat_torus_integral",
+      "pass": true,
+      "detail": "int (a'')^2 = pi/2"
+    },
+    {
+      "name": "flat_torus_curvature_energy",
+      "pass": true,
+      "detail": "int |Rm(t)|^2 = 48*pi**4 * t^2"
+    },
+    {
+      "name": "no_homogeneous_closure",
+      "pass": true,
+      "detail": "E'/E = 2/t rules out dE/dt <= CE for unshifted energy"
+    },
+    {
+      "name": "Lie_derivative_psi_order_1",
+      "pass": true,
+      "detail": "L_{aW}ghat introduces nabla(psi) through nabla(a) = 2*psi*nabla(psi)"
+    },
+    {
+      "name": "psi_not_in_principal_part",
+      "pass": true,
+      "detail": "psi appears in coefficient (order 0) of principal part, and at most order 1 in lower-order Lie derivative terms"
+    },
+    {
+      "name": "I1_identity",
+      "pass": true,
+      "detail": "|nabla a|^2 / a = 4*dpsi**2 = 4|nabla psi|^2"
+    }
+  ],
+  "disclaimer": "Structural and algebraic checks only. Does not verify full PDE existence, Sobolev multiplication bounds, Arzel\u00e0-Ascoli compactness, or Yau Problem 26."
+}

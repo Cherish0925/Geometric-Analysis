@@ -1,0 +1,44 @@
+{
+  "SUPERSEDED": "WITHDRAWN: ceiling claim wrong. See step95_bochner_cancellation.json",
+  "conclusion": "OT threshold \u03b4* applies to ALL free-T\u00b2 connectors regardless of twist",
+  "delta_star": 0.2462497636906685,
+  "mechanism": "Twist Qe term is favorable in Bochner; dropping it gives OT ceiling; separator floor gains 2Q_C \u2265 0",
+  "floor_formula": "12 - 8\u03b4 + 2Q_C",
+  "ceiling_formula": "B(\u03b4) from Step 87 (OT resolvent)",
+  "gap_sign": "floor - ceiling = gap_OT + 2Q_C \u2265 gap_OT > 0 for \u03b4 < \u03b4*",
+  "Q_C_bound": "Q_C \u2264 5\u03b4 from simple maximum principle (not needed for the theorem)",
+  "scope": "Free T\u00b2 action, two complete cusp-type expanding ends, cylindrical base",
+  "does_not_cover": [
+    "non-free T\u00b2 actions",
+    "non-cylindrical quotients",
+    "disk-cap topology",
+    "positive branch",
+    "higher dimensions",
+    "non-T\u00b2 metrics"
+  ],
+  "key_steps_used": [
+    "85 (Bochner)",
+    "86 (forced Bochner)",
+    "87 (resolvent ceiling)",
+    "88 (separator floor)",
+    "89 (drift curvature with twist)",
+    "92 (separator stability with twist)",
+    "95 (K_X and +Qe observation)"
+  ],
+  "verification": {
+    "at_delta_0.1": {
+      "floor_OT": 11.2,
+      "floor_charged_Q1": 13.2,
+      "ceiling": 7.453371072853198,
+      "gap_OT": 3.7466289271468014,
+      "gap_charged_Q1": 5.746628927146801
+    },
+    "at_delta_0.2": {
+      "floor_OT": 10.4,
+      "floor_charged_Q1": 12.4,
+      "ceiling": 9.15651251893416,
+      "gap_OT": 1.2434874810658396,
+      "gap_charged_Q1": 3.2434874810658396
+    }
+  }
+}

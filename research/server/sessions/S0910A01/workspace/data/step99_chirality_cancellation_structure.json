@@ -1,0 +1,739 @@
+{
+  "step": 99,
+  "purpose": "cancellation structure behind Step98 same-chirality zeros",
+  "checks": [
+    {
+      "sector": "AA",
+      "pair": "NS",
+      "Lmax": 16,
+      "tau": 0.08,
+      "total_raw_norms": {
+        "++": 0.0,
+        "+-": 0.032168061280287125,
+        "-+": 0.032168061280287125,
+        "--": 0.0
+      },
+      "total_raw_max_abs": {
+        "++": 0.0,
+        "+-": 0.01137312713445772,
+        "-+": 0.01137312713445772,
+        "--": 0.0
+      },
+      "term_counts": 2760,
+      "nonzero_individual_same_chirality_terms": 1800,
+      "group_summaries": {
+        "by_lt_ls": {
+          "max_norm": {
+            "++": 0.0,
+            "+-": 4.1655081466070065,
+            "-+": 4.1655081466070065,
+            "--": 0.0
+          },
+          "max_witness": {
+            "++": null,
+            "+-": "(2, 6)",
+            "-+": "(2, 6)",
+            "--": null
+          },
+          "nonzero_groups": {
+            "++": 0,
+            "+-": 225,
+            "-+": 225,
+            "--": 0
+          }
+        },
+        "by_lt_ls_kind": {
+          "max_norm": {
+            "++": 0.0,
+            "+-": 2.0827540733035033,
+            "-+": 2.0827540733035033,
+            "--": 0.0
+          },
+          "max_witness": {
+            "++": null,
+            "+-": "(2, 6, 'electric')",
+            "-+": "(2, 6, 'electric')",
+            "--": null
+          },
+          "nonzero_groups": {
+            "++": 0,
+            "+-": 450,
+            "-+": 450,
+            "--": 0
+          }
+        },
+        "by_lt_ls_kind_seed": {
+          "max_norm": {
+            "++": 1.0413770366517516,
+            "+-": 1.0413770366517516,
+            "-+": 1.0413770366517516,
+            "--": 1.0413770366517516
+          },
+          "max_witness": {
+            "++": "(2, 6, 'electric', 'c2')",
+            "+-": "(2, 6, 'electric', 'c2')",
+            "-+": "(2, 6, 'electric', 'c2')",
+            "--": "(2, 6, 'electric', 'c2')"
+          },
+          "nonzero_groups": {
+            "++": 900,
+            "+-": 900,
+            "-+": 900,
+            "--": 900
+          }
+        },
+        "by_lt_ls_kind_seed_mode": {
+          "max_norm": {
+            "++": 0.7363647643884054,
+            "+-": 0.7363647643884054,
+            "-+": 0.7363647643884054,
+            "--": 0.7363647643884054
+          },
+          "max_witness": {
+            "++": "(2, 6, 'electric', 'c2', 'c2')",
+            "+-": "(2, 6, 'electric', 'c2', 'c2')",
+            "-+": "(2, 6, 'electric', 'c2', 'c2')",
+            "--": "(2, 6, 'electric', 'c2', 'c2')"
+          },
+          "nonzero_groups": {
+            "++": 1800,
+            "+-": 1800,
+            "-+": 1800,
+            "--": 1800
+          }
+        }
+      }
+    },
+    {
+      "sector": "BB",
+      "pair": "NS",
+      "Lmax": 16,
+      "tau": 0.08,
+      "total_raw_norms": {
+        "++": 0.0,
+        "+-": 0.0,
+        "-+": 0.0,
+        "--": 0.0
+      },
+      "total_raw_max_abs": {
+        "++": 0.0,
+        "+-": 0.0,
+        "-+": 0.0,
+        "--": 0.0
+      },
+      "term_counts": 2760,
+      "nonzero_individual_same_chirality_terms": 1800,
+      "group_summaries": {
+        "by_lt_ls": {
+          "max_norm": {
+            "++": 0.0,
+            "+-": 0.0,
+            "-+": 0.0,
+            "--": 0.0
+          },
+          "max_witness": {
+            "++": null,
+            "+-": null,
+            "-+": null,
+            "--": null
+          },
+          "nonzero_groups": {
+            "++": 0,
+            "+-": 0,
+            "-+": 0,
+            "--": 0
+          }
+        },
+        "by_lt_ls_kind": {
+          "max_norm": {
+            "++": 0.0,
+            "+-": 2.0827540733035033,
+            "-+": 2.0827540733035033,
+            "--": 0.0
+          },
+          "max_witness": {
+            "++": null,
+            "+-": "(2, 6, 'electric')",
+            "-+": "(2, 6, 'electric')",
+            "--": null
+          },
+          "nonzero_groups": {
+            "++": 0,
+            "+-": 450,
+            "-+": 450,
+            "--": 0
+          }
+        },
+        "by_lt_ls_kind_seed": {
+          "max_norm": {
+            "++": 1.0413770366517516,
+            "+-": 1.0413770366517516,
+            "-+": 1.0413770366517516,
+            "--": 1.0413770366517516
+          },
+          "max_witness": {
+            "++": "(2, 6, 'electric', 'c2')",
+            "+-": "(2, 6, 'electric', 'c2')",
+            "-+": "(2, 6, 'electric', 'c2')",
+            "--": "(2, 6, 'electric', 'c2')"
+          },
+          "nonzero_groups": {
+            "++": 900,
+            "+-": 900,
+            "-+": 900,
+            "--": 900
+          }
+        },
+        "by_lt_ls_kind_seed_mode": {
+          "max_norm": {
+            "++": 0.7363647643884054,
+            "+-": 0.7363647643884054,
+            "-+": 0.7363647643884054,
+            "--": 0.7363647643884054
+          },
+          "max_witness": {
+            "++": "(2, 6, 'electric', 'c2', 'c2')",
+            "+-": "(2, 6, 'electric', 'c2', 'c2')",
+            "-+": "(2, 6, 'electric', 'c2', 'c2')",
+            "--": "(2, 6, 'electric', 'c2', 'c2')"
+          },
+          "nonzero_groups": {
+            "++": 1800,
+            "+-": 1800,
+            "-+": 1800,
+            "--": 1800
+          }
+        }
+      }
+    },
+    {
+      "sector": "AA",
+      "pair": "SN",
+      "Lmax": 16,
+      "tau": 0.08,
+      "total_raw_norms": {
+        "++": 0.0,
+        "+-": 0.0,
+        "-+": 0.0,
+        "--": 0.0
+      },
+      "total_raw_max_abs": {
+        "++": 0.0,
+        "+-": 0.0,
+        "-+": 0.0,
+        "--": 0.0
+      },
+      "term_counts": 2760,
+      "nonzero_individual_same_chirality_terms": 1800,
+      "group_summaries": {
+        "by_lt_ls": {
+          "max_norm": {
+            "++": 0.0,
+            "+-": 0.0,
+            "-+": 0.0,
+            "--": 0.0
+          },
+          "max_witness": {
+            "++": null,
+            "+-": null,
+            "-+": null,
+            "--": null
+          },
+          "nonzero_groups": {
+            "++": 0,
+            "+-": 0,
+            "-+": 0,
+            "--": 0
+          }
+        },
+        "by_lt_ls_kind": {
+          "max_norm": {
+            "++": 0.0,
+            "+-": 2.0827540733035033,
+            "-+": 2.0827540733035033,
+            "--": 0.0
+          },
+          "max_witness": {
+            "++": null,
+            "+-": "(2, 6, 'electric')",
+            "-+": "(2, 6, 'electric')",
+            "--": null
+          },
+          "nonzero_groups": {
+            "++": 0,
+            "+-": 450,
+            "-+": 450,
+            "--": 0
+          }
+        },
+        "by_lt_ls_kind_seed": {
+          "max_norm": {
+            "++": 1.0413770366517516,
+            "+-": 1.0413770366517516,
+            "-+": 1.0413770366517516,
+            "--": 1.0413770366517516
+          },
+          "max_witness": {
+            "++": "(2, 6, 'electric', 'c2')",
+            "+-": "(2, 6, 'electric', 'c2')",
+            "-+": "(2, 6, 'electric', 'c2')",
+            "--": "(2, 6, 'electric', 'c2')"
+          },
+          "nonzero_groups": {
+            "++": 900,
+            "+-": 900,
+            "-+": 900,
+            "--": 900
+          }
+        },
+        "by_lt_ls_kind_seed_mode": {
+          "max_norm": {
+            "++": 0.7363647643884054,
+            "+-": 0.7363647643884054,
+            "-+": 0.7363647643884054,
+            "--": 0.7363647643884054
+          },
+          "max_witness": {
+            "++": "(2, 6, 'electric', 'c2', 'c2')",
+            "+-": "(2, 6, 'electric', 'c2', 'c2')",
+            "-+": "(2, 6, 'electric', 'c2', 'c2')",
+            "--": "(2, 6, 'electric', 'c2', 'c2')"
+          },
+          "nonzero_groups": {
+            "++": 1800,
+            "+-": 1800,
+            "-+": 1800,
+            "--": 1800
+          }
+        }
+      }
+    },
+    {
+      "sector": "BB",
+      "pair": "SN",
+      "Lmax": 16,
+      "tau": 0.08,
+      "total_raw_norms": {
+        "++": 0.0,
+        "+-": 0.032168061280287125,
+        "-+": 0.032168061280287125,
+        "--": 0.0
+      },
+      "total_raw_max_abs": {
+        "++": 0.0,
+        "+-": 0.01137312713445772,
+        "-+": 0.01137312713445772,
+        "--": 0.0
+      },
+      "term_counts": 2760,
+      "nonzero_individual_same_chirality_terms": 1800,
+      "group_summaries": {
+        "by_lt_ls": {
+          "max_norm": {
+            "++": 0.0,
+            "+-": 4.1655081466070065,
+            "-+": 4.1655081466070065,
+            "--": 0.0
+          },
+          "max_witness": {
+            "++": null,
+            "+-": "(2, 6)",
+            "-+": "(2, 6)",
+            "--": null
+          },
+          "nonzero_groups": {
+            "++": 0,
+            "+-": 225,
+            "-+": 225,
+            "--": 0
+          }
+        },
+        "by_lt_ls_kind": {
+          "max_norm": {
+            "++": 0.0,
+            "+-": 2.0827540733035033,
+            "-+": 2.0827540733035033,
+            "--": 0.0
+          },
+          "max_witness": {
+            "++": null,
+            "+-": "(2, 6, 'electric')",
+            "-+": "(2, 6, 'electric')",
+            "--": null
+          },
+          "nonzero_groups": {
+            "++": 0,
+            "+-": 450,
+            "-+": 450,
+            "--": 0
+          }
+        },
+        "by_lt_ls_kind_seed": {
+          "max_norm": {
+            "++": 1.0413770366517516,
+            "+-": 1.0413770366517516,
+            "-+": 1.0413770366517516,
+            "--": 1.0413770366517516
+          },
+          "max_witness": {
+            "++": "(2, 6, 'electric', 'c2')",
+            "+-": "(2, 6, 'electric', 'c2')",
+            "-+": "(2, 6, 'electric', 'c2')",
+            "--": "(2, 6, 'electric', 'c2')"
+          },
+          "nonzero_groups": {
+            "++": 900,
+            "+-": 900,
+            "-+": 900,
+            "--": 900
+          }
+        },
+        "by_lt_ls_kind_seed_mode": {
+          "max_norm": {
+            "++": 0.7363647643884054,
+            "+-": 0.7363647643884054,
+            "-+": 0.7363647643884054,
+            "--": 0.7363647643884054
+          },
+          "max_witness": {
+            "++": "(2, 6, 'electric', 'c2', 'c2')",
+            "+-": "(2, 6, 'electric', 'c2', 'c2')",
+            "-+": "(2, 6, 'electric', 'c2', 'c2')",
+            "--": "(2, 6, 'electric', 'c2', 'c2')"
+          },
+          "nonzero_groups": {
+            "++": 1800,
+            "+-": 1800,
+            "-+": 1800,
+            "--": 1800
+          }
+        }
+      }
+    },
+    {
+      "sector": "AA",
+      "pair": "SS",
+      "Lmax": 16,
+      "tau": 0.08,
+      "total_raw_norms": {
+        "++": 0.0,
+        "+-": 0.0,
+        "-+": 0.0,
+        "--": 0.0
+      },
+      "total_raw_max_abs": {
+        "++": 0.0,
+        "+-": 0.0,
+        "-+": 0.0,
+        "--": 0.0
+      },
+      "term_counts": 2760,
+      "nonzero_individual_same_chirality_terms": 1800,
+      "group_summaries": {
+        "by_lt_ls": {
+          "max_norm": {
+            "++": 0.0,
+            "+-": 0.0,
+            "-+": 0.0,
+            "--": 0.0
+          },
+          "max_witness": {
+            "++": null,
+            "+-": null,
+            "-+": null,
+            "--": null
+          },
+          "nonzero_groups": {
+            "++": 0,
+            "+-": 0,
+            "-+": 0,
+            "--": 0
+          }
+        },
+        "by_lt_ls_kind": {
+          "max_norm": {
+            "++": 2.0827540733035033,
+            "+-": 0.0,
+            "-+": 0.0,
+            "--": 2.0827540733035033
+          },
+          "max_witness": {
+            "++": "(2, 6, 'electric')",
+            "+-": null,
+            "-+": null,
+            "--": "(2, 6, 'electric')"
+          },
+          "nonzero_groups": {
+            "++": 450,
+            "+-": 0,
+            "-+": 0,
+            "--": 450
+          }
+        },
+        "by_lt_ls_kind_seed": {
+          "max_norm": {
+            "++": 1.0413770366517516,
+            "+-": 1.0413770366517516,
+            "-+": 1.0413770366517516,
+            "--": 1.0413770366517516
+          },
+          "max_witness": {
+            "++": "(2, 6, 'electric', 'c2')",
+            "+-": "(2, 6, 'electric', 'c2')",
+            "-+": "(2, 6, 'electric', 'c2')",
+            "--": "(2, 6, 'electric', 'c2')"
+          },
+          "nonzero_groups": {
+            "++": 900,
+            "+-": 900,
+            "-+": 900,
+            "--": 900
+          }
+        },
+        "by_lt_ls_kind_seed_mode": {
+          "max_norm": {
+            "++": 0.7363647643884054,
+            "+-": 0.7363647643884054,
+            "-+": 0.7363647643884054,
+            "--": 0.7363647643884054
+          },
+          "max_witness": {
+            "++": "(2, 6, 'electric', 'c2', 'c2')",
+            "+-": "(2, 6, 'electric', 'c2', 'c2')",
+            "-+": "(2, 6, 'electric', 'c2', 'c2')",
+            "--": "(2, 6, 'electric', 'c2', 'c2')"
+          },
+          "nonzero_groups": {
+            "++": 1800,
+            "+-": 1800,
+            "-+": 1800,
+            "--": 1800
+          }
+        }
+      }
+    },
+    {
+      "sector": "BB",
+      "pair": "SS",
+      "Lmax": 16,
+      "tau": 0.08,
+      "total_raw_norms": {
+        "++": 0.0,
+        "+-": 0.0,
+        "-+": 0.0,
+        "--": 0.0
+      },
+      "total_raw_max_abs": {
+        "++": 0.0,
+        "+-": 0.0,
+        "-+": 0.0,
+        "--": 0.0
+      },
+      "term_counts": 2760,
+      "nonzero_individual_same_chirality_terms": 1800,
+      "group_summaries": {
+        "by_lt_ls": {
+          "max_norm": {
+            "++": 0.0,
+            "+-": 0.0,
+            "-+": 0.0,
+            "--": 0.0
+          },
+          "max_witness": {
+            "++": null,
+            "+-": null,
+            "-+": null,
+            "--": null
+          },
+          "nonzero_groups": {
+            "++": 0,
+            "+-": 0,
+            "-+": 0,
+            "--": 0
+          }
+        },
+        "by_lt_ls_kind": {
+          "max_norm": {
+            "++": 2.0827540733035033,
+            "+-": 0.0,
+            "-+": 0.0,
+            "--": 2.0827540733035033
+          },
+          "max_witness": {
+            "++": "(2, 6, 'electric')",
+            "+-": null,
+            "-+": null,
+            "--": "(2, 6, 'electric')"
+          },
+          "nonzero_groups": {
+            "++": 450,
+            "+-": 0,
+            "-+": 0,
+            "--": 450
+          }
+        },
+        "by_lt_ls_kind_seed": {
+          "max_norm": {
+            "++": 1.0413770366517516,
+            "+-": 1.0413770366517516,
+            "-+": 1.0413770366517516,
+            "--": 1.0413770366517516
+          },
+          "max_witness": {
+            "++": "(2, 6, 'electric', 'c2')",
+            "+-": "(2, 6, 'electric', 'c2')",
+            "-+": "(2, 6, 'electric', 'c2')",
+            "--": "(2, 6, 'electric', 'c2')"
+          },
+          "nonzero_groups": {
+            "++": 900,
+            "+-": 900,
+            "-+": 900,
+            "--": 900
+          }
+        },
+        "by_lt_ls_kind_seed_mode": {
+          "max_norm": {
+            "++": 0.7363647643884054,
+            "+-": 0.7363647643884054,
+            "-+": 0.7363647643884054,
+            "--": 0.7363647643884054
+          },
+          "max_witness": {
+            "++": "(2, 6, 'electric', 'c2', 'c2')",
+            "+-": "(2, 6, 'electric', 'c2', 'c2')",
+            "-+": "(2, 6, 'electric', 'c2', 'c2')",
+            "--": "(2, 6, 'electric', 'c2', 'c2')"
+          },
+          "nonzero_groups": {
+            "++": 1800,
+            "+-": 1800,
+            "-+": 1800,
+            "--": 1800
+          }
+        }
+      }
+    }
+  ],
+  "summary": {
+    "AA_NS": {
+      "total_raw_norms": {
+        "++": 0.0,
+        "+-": 0.032168061280287125,
+        "-+": 0.032168061280287125,
+        "--": 0.0
+      },
+      "nonzero_individual_same_chirality_terms": 1800,
+      "finest_group_nonzero_same": {
+        "++": 1800,
+        "+-": 1800,
+        "-+": 1800,
+        "--": 1800
+      },
+      "ltls_group_max_same": {
+        "++": 0.0,
+        "--": 0.0
+      }
+    },
+    "BB_NS": {
+      "total_raw_norms": {
+        "++": 0.0,
+        "+-": 0.0,
+        "-+": 0.0,
+        "--": 0.0
+      },
+      "nonzero_individual_same_chirality_terms": 1800,
+      "finest_group_nonzero_same": {
+        "++": 1800,
+        "+-": 1800,
+        "-+": 1800,
+        "--": 1800
+      },
+      "ltls_group_max_same": {
+        "++": 0.0,
+        "--": 0.0
+      }
+    },
+    "AA_SN": {
+      "total_raw_norms": {
+        "++": 0.0,
+        "+-": 0.0,
+        "-+": 0.0,
+        "--": 0.0
+      },
+      "nonzero_individual_same_chirality_terms": 1800,
+      "finest_group_nonzero_same": {
+        "++": 1800,
+        "+-": 1800,
+        "-+": 1800,
+        "--": 1800
+      },
+      "ltls_group_max_same": {
+        "++": 0.0,
+        "--": 0.0
+      }
+    },
+    "BB_SN": {
+      "total_raw_norms": {
+        "++": 0.0,
+        "+-": 0.032168061280287125,
+        "-+": 0.032168061280287125,
+        "--": 0.0
+      },
+      "nonzero_individual_same_chirality_terms": 1800,
+      "finest_group_nonzero_same": {
+        "++": 1800,
+        "+-": 1800,
+        "-+": 1800,
+        "--": 1800
+      },
+      "ltls_group_max_same": {
+        "++": 0.0,
+        "--": 0.0
+      }
+    },
+    "AA_SS": {
+      "total_raw_norms": {
+        "++": 0.0,
+        "+-": 0.0,
+        "-+": 0.0,
+        "--": 0.0
+      },
+      "nonzero_individual_same_chirality_terms": 1800,
+      "finest_group_nonzero_same": {
+        "++": 1800,
+        "+-": 1800,
+        "-+": 1800,
+        "--": 1800
+      },
+      "ltls_group_max_same": {
+        "++": 0.0,
+        "--": 0.0
+      }
+    },
+    "BB_SS": {
+      "total_raw_norms": {
+        "++": 0.0,
+        "+-": 0.0,
+        "-+": 0.0,
+        "--": 0.0
+      },
+      "nonzero_individual_same_chirality_terms": 1800,
+      "finest_group_nonzero_same": {
+        "++": 1800,
+        "+-": 1800,
+        "-+": 1800,
+        "--": 1800
+      },
+      "ltls_group_max_same": {
+        "++": 0.0,
+        "--": 0.0
+      }
+    }
+  },
+  "conclusion": [
+    "Within the implemented tensor-scalar model, same-chirality factors are individually nonzero. Therefore B_{++}=B_{--}=0 is not a support-selection statement for single modes.",
+    "The total same-chirality zero arises from signed cancellation in the complete electric/magnetic and scalar-polarization sum at fixed spectral truncation; this needs a structural identity, not just mode support bookkeeping.",
+    "The Step98 note should state this as an observed exact cancellation in the implemented spectral model until such an identity is proved."
+  ]
+}

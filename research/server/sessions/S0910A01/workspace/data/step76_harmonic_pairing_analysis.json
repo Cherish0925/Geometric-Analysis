@@ -1,0 +1,38 @@
+{
+  "step": 76,
+  "analysis": "representation_theoretic_harmonic_pairing",
+  "orbifold": "(S^2 x S^2)/Z_2",
+  "R_plus_at_nodes": "diag(Lambda, 0, 0)",
+  "R_minus_at_nodes": "diag(Lambda, 0, 0)",
+  "R_rank": 1,
+  "kernel_dimension": 2,
+  "first_obstruction_lambda": "vanishes automatically for zeta in ker(R)",
+  "second_obstruction_mu1": "vanishes by rank-1 cascade (det of 0x0 block)",
+  "H4_spherical_degree": 2,
+  "H4_representation": "V_1 x V_1 (l=2 tensor harmonic on S^3/Z_2)",
+  "V_l2_spherical_degree": 2,
+  "V_l2_representation": "l=2 tensor harmonic, same block V_1 x V_1",
+  "automatic_vanishing_by_rep_theory": false,
+  "reason": "H^4 and V_{l,2} both live in l=2 tensor harmonics on S^3/Z_2; their L^2 pairing is generically nonzero. theta_1^-(x) depends on x through quadratic functions (l=2), so the angular part of H^4 is not constant on S^3.",
+  "reduced_system_structure": {
+    "equations": "d <= 4 (global nu_l)",
+    "unknowns": "4 in-kernel angles alpha_j on (S^1)^4",
+    "form": "sum_j (A_l^j cos(alpha_j) + B_l^j sin(alpha_j)) = 0",
+    "generically_solvable": "yes if d <= 4 (dimension count)"
+  },
+  "theta_1_minus_formula": "theta_1^-(x) = sum_j (x^T (omega_1^+ circ omega_j^-) x) omega_j^-",
+  "H4_angular_type": "l=2 spherical harmonic (NOT constant on S^3)",
+  "conclusion": "The reduced nu_l system has generically nonzero coefficients. A zero exists when the trigonometric system is compatible, which is expected by dimension count (4 unknowns, <= 4 equations). Surjectivity at the zero would give an Einstein desingularization.",
+  "next_computation": "Explicit evaluation of A_l^j, B_l^j coefficients requires computing V_{l,2} from the orbifold kernel and evaluating the spherical integral. This can be done using the product structure and SO(4) representation theory.",
+  "curvature_verification": {
+    "method": "direct sectional curvature on S^2 x S^2",
+    "K_12": "Lambda (within S^2_1)",
+    "K_34": "Lambda (within S^2_2)",
+    "K_13": 0,
+    "K_14": 0,
+    "Rm_plus_omega1": "Lambda (=R_{1212}+R_{3434})/2 in normalized convention",
+    "Rm_plus_omega2": 0,
+    "Rm_plus_omega3": 0,
+    "confirms_rank_1": true
+  }
+}

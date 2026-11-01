@@ -1,0 +1,85 @@
+{
+  "sign_structure_corrected": {
+    "proven_positive": {
+      "IBP_orbit_velocity": "int_0^R m[f' + 2(x+y)f] dr = m(R)f(R) + int 2ymf dr >= 0 since y >= 0 (proven for delta < 3) and f = <|b|^2> >= 0. This covers ONLY the first two terms of Phi.",
+      "y_nonnegativity": "y' = 6 - <E_orb> - y(x+y). For delta < 3: 6-<E_orb> >= 6-2delta > 0. At any zero of y from above, y' > 0, contradiction. Hence y >= 0."
+    },
+    "indefinite": {
+      "Cov(H,|b|^2)": "Sign depends on spatial correlation of H and |b|^2",
+      "h^2(v-2u)": "Pointwise u <= 0 and v >= 0 NOT guaranteed. Only averages x = <u> <= 0 and y = <v> >= 0. Covariance decomposition: <h^2(v-2u)> = <h^2>(y-2x) + Cov(h^2,v-2u), and the covariance can make the whole term negative.",
+      "tension_h_A_b": "Full sign indefinite",
+      "Cov(v-u,k)": "Full sign indefinite"
+    },
+    "forcing": {
+      "bound": "|2<eps,b> + 2<h E_rs>| <= C delta (f^{1/2} + <h^2>^{1/2})",
+      "not_uniformly_small": "If f or <h^2> diverge, forcing can be O(1) even as delta -> 0"
+    }
+  },
+  "budget_corrected": {
+    "integrating_factor_identity": "m(R)K(R) - 12 = int_0^R m Phi dr",
+    "return_condition": "K(R) <= 6 + 2delta, m(R) <= 1",
+    "necessary_inequality": "int_0^R m Phi dr <= m(R)(6+2delta) - 12 <= -6 + 2delta",
+    "separating_positive": "P_orb = m(R)f(R) + int 2ymf dr >= 0. Remaining terms N satisfy N <= -6 + 2delta - P_orb <= -6 + 2delta. Cannot claim N <= -18 without proving P_orb >= 12.",
+    "early_production": "The center expansion m(r)K(r) - 12 = [<|tau|^2> + 3Var(k)/16]r^2 + O(r^4). This coefficient CAN be zero (for constant-speed loops with Var(k)=0, if tau=0, i.e., geodesic circles in H^2 with h=0). The k=2 rotating loop has tau^2=16, giving coefficient 16+0=16 > 0, but this is model-specific."
+  },
+  "bakry_emery_analysis": {
+    "cusp_background": {
+      "metric": "dr^2 + cosh^2(r) dz^2",
+      "sigma": "2r (orbit area = e^{2r})",
+      "Hess_sigma_orthonormal": {
+        "rr": 0.0,
+        "11": "2 tanh r"
+      },
+      "Ric_B_orthonormal": {
+        "rr": -1.0,
+        "11": -1.0
+      },
+      "bakry_emery_rr": -1.0,
+      "bakry_emery_11_formula": "-1 + 2 tanh r",
+      "bakry_emery_11_at_r0": -1.0,
+      "bakry_emery_11_at_rinf": 1.0,
+      "note": "r-eigenvalue is universally -1 on the round cusp"
+    },
+    "exact_einstein_identity": {
+      "formula": "Ric^sigma_B = 2 Hess sigma + (1/2) d sigma tensor d sigma + (1/2) U*h_{H^2} - 3 g_B",
+      "cusp_check": {
+        "rr": "-1 = 0 + 2 + 0 - 3",
+        "11": "4 tanh r - 3 = 4 tanh r + 0 + 0 - 3"
+      },
+      "crossover_r": 0.9729550745276566,
+      "note": "Without orbit stress, 11-component crosses zero at r \u2248 0.973"
+    },
+    "orbit_stress_effect": {
+      "sign": "positive semi-definite (U*h_{H^2} >= 0)",
+      "magnitude": "up to e_{H^2} = 12 for constant-speed loops",
+      "consequence": "Can make Ric^sigma_B more positive in orbit-gradient direction"
+    },
+    "obstruction_assessment": "The r-eigenvalue of Ric^sigma_B is -1 on the round cusp, indicating that the Bochner approach cannot give a positive lower bound. It can only give Ric^sigma >= -1 (or worse), which yields exponential growth estimates, not monotonicity. The orbit stress improves the tangential direction but does not help the radial direction. Therefore the Bochner route does NOT provide a monotone functional excluding the K-drop."
+  },
+  "conclusion": {
+    "proven": [
+      "K' + 2xK = Phi (exact kinematic identity)",
+      "y >= 0 for delta < 3 (from y' equation)",
+      "IBP: int mu [f'+2(x+y)f] dr = m(R)f(R) + int 2ymf dr >= 0",
+      "Necessary budget: int m Phi dr <= -6 + 2delta for return",
+      "K''(0) >= 72 (universal initial worsening)",
+      "K'(0) = 0 (by reflection symmetry)",
+      "The exact constant-exit obstruction from Step 79 convexity"
+    ],
+    "not_proven": [
+      "No Lyapunov/monotone functional excluding K-drop in full OT system",
+      "No universal lower bound on P_orb (orbit velocity contribution)",
+      "No control on Cov(H,|b|^2), h^2(v-2u), or tension terms",
+      "No Bochner obstruction (Ric^sigma_B has -1 eigenvalue)",
+      "No uniform control on area gradient growth h^2"
+    ],
+    "status": "The K-production framework organizes the problem but does NOT close it. The integrating-factor form correctly isolates the positive orbit-velocity contribution, but the remaining terms are all indefinite. No monotone quantity, Lyapunov function, Bochner estimate, or finite-moment closure has been found to prevent the K-drop. The problem remains genuinely open: the connector may or may not exist.",
+    "mechanisms_for_K_drop": [
+      "Phase flip: b aligns with tau later, making -2<tau,b> negative",
+      "Area gradient growth: h^2 increase lowers K directly",
+      "Weight redistribution: d mu concentrates on low-k regions",
+      "Covariance engineering: Cov(v-u,k) made negative",
+      "Noether-compatible oscillation: zero-mean but large L^2 orbit velocity"
+    ]
+  }
+}

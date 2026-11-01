@@ -1,0 +1,18 @@
+{
+  "P2_direct_per_norm_k2": "3*K1**2/2 - 3*K1*K2/2 + K1*mu/4 - K2*mu/4 + mu**2/4",
+  "generator_formula": "mu*(2*K1 - 2*K2 + mu)/4",
+  "omitted_background_Ricci_contribution": "(K1 - K2)*(6*K1 - mu)/4",
+  "four_P2_polynomial": "6*K1**2 - 6*K1*K2 + K1*mu - K2*mu + mu**2",
+  "discriminant_in_mu": "-(K1 - K2)*(23*K1 + K2)",
+  "formal_roots": [
+    "-K1/2 + K2/2 - sqrt(-(K1 - K2)*(23*K1 + K2))/2",
+    "-K1/2 + K2/2 + sqrt(-(K1 - K2)*(23*K1 + K2))/2"
+  ],
+  "example_K1_minus2_K2_minus1": "(mu**2 - mu + 12)/4",
+  "example_roots": [
+    "0.5 - 3.42782730020052*I",
+    "0.5 + 3.42782730020052*I"
+  ],
+  "is_generator_threshold_negative_example": "3",
+  "interpretation": "NONAUTHORITATIVE local-patch algebra. The displayed difference splits into an intrinsic-curvature transgression plus a torsion-normalization discrepancy; see step68_product_cscK_saddle_verification.md for the global coefficient mu(mu+K1-K2)/4."
+}

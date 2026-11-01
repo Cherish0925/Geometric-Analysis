@@ -417,3 +417,5 @@ $$
 N1 与 I40/I41 使用单解参数分析；FD 另使用端点的强流及线丛分析；GEO 由 N1 和 FD 分区推出；SB 及一般配对定理由 FD2 与双取向交叉关系推出。各命题的条件和输出不同。
 
 BF 应用族的完整凸包估计需要控制全部单极子类；已知符号类的优化与普通手术族的计算分别针对所列类集合。O11 的后续构造已在其所列族上将标准系数 $4$ 严格降低，所余问题是实际最优首项及匹配下界。一般无密度 O10 与精确 Einstein 存在性仍各有独立假设和待证结论。
+
+服务器中的连续解析工程见[Codex主稿与原始证明](../research/server/codex/README.md)。后续[实际Taub–NUT载体与第五线投影](../research/server/sessions/S1003A01/README.md)给出局部场、尾部和平均预算的具体模型，尚未把它们接成一般无密度O10的闭反例或统一估计。两项公开问题的数学证明与文献比较见[10月31日记录](../research/server/codex/project/continuation/20261031_Kodaira_Fino_Literature_and_Proof_Status.md)。

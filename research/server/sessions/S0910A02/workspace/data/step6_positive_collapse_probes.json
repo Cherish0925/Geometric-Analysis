@@ -1,0 +1,120 @@
+{
+  "kk_obstruction": {
+    "model": "principal S^1 connection metric over closed smooth 3D base",
+    "convention": "|2-form|^2=sum_{i<j} F_ij^2; Ric(U,U)=|phi|^2/2; Ric(X,U)=-(delta phi)(X)/2",
+    "exact_limit_equations": {
+      "vertical": "|b|^2=2",
+      "mixed": "db=0 and delta b=0 (since dphi=0 and Ric(X,U)=0)",
+      "horizontal": "Ric_B=2 g_B - (1/2)b\u2297b",
+      "bochner_consequence": "nonzero harmonic b on closed base with Ric_B(b,b)=|b|^2>0 is impossible"
+    },
+    "quantitative_delta_threshold_under_recorded_constants": 0.4142135623730951,
+    "samples": [
+      {
+        "delta": 0.01,
+        "bochner_lower_per_base_volume": 1.9602,
+        "mixed_error_upper_per_base_volume": 0.0004,
+        "contradiction_if_lower_exceeds_upper": true
+      },
+      {
+        "delta": 0.05,
+        "bochner_lower_per_base_volume": 1.805,
+        "mixed_error_upper_per_base_volume": 0.010000000000000002,
+        "contradiction_if_lower_exceeds_upper": true
+      },
+      {
+        "delta": 0.1,
+        "bochner_lower_per_base_volume": 1.62,
+        "mixed_error_upper_per_base_volume": 0.04000000000000001,
+        "contradiction_if_lower_exceeds_upper": true
+      },
+      {
+        "delta": 0.2,
+        "bochner_lower_per_base_volume": 1.2800000000000002,
+        "mixed_error_upper_per_base_volume": 0.16000000000000003,
+        "contradiction_if_lower_exceeds_upper": true
+      },
+      {
+        "delta": 0.4142135623730951,
+        "bochner_lower_per_base_volume": 0.6862915010152394,
+        "mixed_error_upper_per_base_volume": 0.6862915010152397,
+        "contradiction_if_lower_exceeds_upper": false
+      },
+      {
+        "delta": 0.45,
+        "bochner_lower_per_base_volume": 0.6050000000000001,
+        "mixed_error_upper_per_base_volume": 0.81,
+        "contradiction_if_lower_exceeds_upper": false
+      }
+    ],
+    "interpretation": "Smooth free circle collapse in dimension 4 cannot have delta_+ -> 0. Positive-pinched collapse must be quotient/orbifold/singular/fixed-stratum compatible, not a regular free S^1 bundle with bounded geometry."
+  },
+  "normalizations": {
+    "round_S4_unit_radius": {
+      "Ric_constant": 3.0,
+      "volume": 26.318945069571622
+    },
+    "round_S4_normalized_Ric_equals_g": {
+      "radius": 1.7320508075688772,
+      "volume": 236.87050562614456,
+      "volume_as_multiple_pi2": 23.999999999999996,
+      "beta0_times_volume": 157.9136704174297,
+      "8pi2_chi": 157.91367041742973,
+      "cgb_sharp": true
+    },
+    "ALE_Ricci_flat_energy_quantum": {
+      "formula": "(1/8\u03c0\u00b2)\u222b|Rm|\u00b2 = \u03c7(X) - 1/|\u0393|",
+      "Eguchi_Hanson": {
+        "chi": 2,
+        "Gamma_order": 2,
+        "energy": 118.4352528130723,
+        "energy_as_multiple_pi2": 12.0
+      }
+    }
+  },
+  "rotational_S4_search": {
+    "available": true,
+    "ansatz": "SO(4)-invariant warped product dr^2 + f(r)^2 g_{S^3}, f=(L/pi)sin(pi r/L)exp(sum a_k sin^2(k pi r/L))",
+    "delta_target": 0.1,
+    "modes": 3,
+    "round_metrics": {
+      "volume": 236.8705056267153,
+      "volume_over_round": 1.0000000000024094,
+      "ric_rad_min": 1.0000000000000002,
+      "ric_rad_max": 1.0000000000000004,
+      "ric_tan_min": 0.999999999388219,
+      "ric_tan_max": 1.0000000000023224,
+      "delta_plus_sup": 6.117809592254275e-10,
+      "L": 5.441398092702653,
+      "coeffs": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "best_metrics_refined_grid": {
+      "volume": 195.93332935437272,
+      "volume_over_round": 0.8271748685487104,
+      "ric_rad_min": 1.0981232810001802,
+      "ric_rad_max": 1.100129381804926,
+      "ric_tan_min": 1.0992047397070315,
+      "ric_tan_max": 1.1000491554736591,
+      "delta_plus_sup": 0.10012938180492603,
+      "L": 5.189855255317411,
+      "coeffs": [
+        -0.00019502652541721795,
+        5.1607539372448705e-05,
+        -1.413124836705401e-05
+      ]
+    },
+    "feasible_with_tolerance": true,
+    "optimizer": {
+      "differential_evolution_fun": 197.0742998869704,
+      "local_fun": 195.95242271691868,
+      "success": true,
+      "message_de": "Maximum number of iterations has been exceeded.",
+      "message_local": "Optimization terminated successfully."
+    },
+    "interpretation": "Within this small smooth rotational ansatz and search budget, no low-volume metric with Ricci eigenvalues in [0.9,1.1] was found if best volume stays near the round 24\u03c0\u00b2 value. This is heuristic only."
+  }
+}

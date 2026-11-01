@@ -1,0 +1,132 @@
+{
+  "eigenvalue_bounds": [
+    {
+      "k": 0,
+      "eigenvalues": [
+        -4.5,
+        -4.5,
+        -4.5,
+        -4.5
+      ],
+      "s": -18.0,
+      "|Ric\u00b0|\u00b2": 0.0,
+      "4\u03b4\u00b2": 9.0
+    },
+    {
+      "k": 1,
+      "eigenvalues": [
+        -1.5,
+        -4.5,
+        -4.5,
+        -4.5
+      ],
+      "s": -15.0,
+      "|Ric\u00b0|\u00b2": 6.75,
+      "4\u03b4\u00b2": 9.0
+    },
+    {
+      "k": 2,
+      "eigenvalues": [
+        -1.5,
+        -1.5,
+        -4.5,
+        -4.5
+      ],
+      "s": -12.0,
+      "|Ric\u00b0|\u00b2": 9.0,
+      "4\u03b4\u00b2": 9.0
+    },
+    {
+      "k": 3,
+      "eigenvalues": [
+        -1.5,
+        -1.5,
+        -1.5,
+        -4.5
+      ],
+      "s": -9.0,
+      "|Ric\u00b0|\u00b2": 6.75,
+      "4\u03b4\u00b2": 9.0
+    },
+    {
+      "k": 4,
+      "eigenvalues": [
+        -1.5,
+        -1.5,
+        -1.5,
+        -1.5
+      ],
+      "s": -6.0,
+      "|Ric\u00b0|\u00b2": 0.0,
+      "4\u03b4\u00b2": 9.0
+    }
+  ],
+  "cgb_floor_check": {
+    "Lambda": -3.0,
+    "delta_floor": 1.098076211353316,
+    "delta_floor_exact": "3/(1+sqrt(3)) = 1.0980762114",
+    "delta_floor_rationalized": "3(sqrt(3)-1)/2 = 1.0980762114",
+    "|Ric\u00b0|\u00b2_at_floor": 4.82308546376021,
+    "s\u00b2/12_at_floor": 4.823085463760209,
+    "identity_ratio": 1.0000000000000002,
+    "floor_exact": true
+  },
+  "yau26_implications": {
+    "negative_branch": {
+      "min_ratio_C_over_c": 0.46410161513775455,
+      "explanation": "On \u03c7=0 closed 4-manifold with c < C < 0: C/c \u2264 \u221a3/(2+\u221a3)",
+      "normalized_\u039b_minus3": {
+        "delta_floor": 1.098076211353316,
+        "c_n": -4.098076211353316,
+        "C_n": -1.901923788646684
+      }
+    },
+    "positive_branch": {
+      "min_ratio_C_over_c": 2.1547005383792515,
+      "explanation": "On \u03c7=0 closed 4-manifold with 0 < c < C: C/c \u2265 (2+\u221a3)/\u221a3"
+    },
+    "interval_crossing_zero": {
+      "explanation": "If c < 0 < C, the bound \u03b4 \u2265 |\u039b|/(1+\u221a3) with \u039b=(c+C)/2 near 0 gives a weak constraint. But constant rescaling of metrics does not change Ric, so any manifold admits metrics with arbitrarily narrow positive-to-negative intervals centered at 0."
+    },
+    "examples": [
+      {
+        "c": -4,
+        "C_min": -1.8564064605510182,
+        "ratio_C_c": 0.46410161513775455,
+        "Lambda": -2.928203230275509,
+        "delta": 1.0717967697244908,
+        "CGB_floor_check": 1.0717967697244908
+      },
+      {
+        "c": -3,
+        "C_min": -1.3923048454132636,
+        "ratio_C_c": 0.46410161513775455,
+        "Lambda": -2.196152422706632,
+        "delta": 0.8038475772933682,
+        "CGB_floor_check": 0.8038475772933682
+      },
+      {
+        "c": -2,
+        "C_min": -0.9282032302755091,
+        "ratio_C_c": 0.46410161513775455,
+        "Lambda": -1.4641016151377546,
+        "delta": 0.5358983848622454,
+        "CGB_floor_check": 0.5358983848622454
+      },
+      {
+        "c": -1,
+        "C_min": -0.46410161513775455,
+        "ratio_C_c": 0.46410161513775455,
+        "Lambda": -0.7320508075688773,
+        "delta": 0.2679491924311227,
+        "CGB_floor_check": 0.2679491924311227
+      }
+    ]
+  },
+  "connector_analysis": {
+    "key_identity": "4\u03b4\u00b2 - (4/3)(3-\u03b4)\u00b2 = (4/3)(2\u03b4\u00b2+6\u03b4-9)",
+    "delta_floor_for_connector_to_absorb_cusps": 1.0980762113533158,
+    "lhs_at_floor": -2.3684757858670005e-15,
+    "interpretation": "The CGB identity requires 4\u03b4\u00b2Vol(conn) \u2265 12Vol(cusps) + (4/3)(3-\u03b4)\u00b2Vol(conn). For \u03b4 < 3(\u221a3-1)/2, the LHS 4\u03b4\u00b2 is too small to cover even the connector's own s\u00b2 integral, regardless of cusp volume. The floor is sharp at \u03b4 = 3(\u221a3-1)/2 \u2248 1.098 when |W|=0 and all volumes balance. This means even the connector ALONE (as part of a closed \u03c7=0 manifold) cannot have operator-norm defect below 1.098."
+  }
+}

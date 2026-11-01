@@ -1,0 +1,97 @@
+{
+  "A": 1.0,
+  "solver_success": true,
+  "solver_nodes": 3061,
+  "u_min": 0.6228147216974117,
+  "u_max": 0.658345227921124,
+  "yamabe_equation_sup_residual": 1.1102230246251565e-16,
+  "scalar_min": -6.0000000000000036,
+  "scalar_max": -5.999999999999996,
+  "scalar_minus_target_sup": 4.440892098500626e-15,
+  "ricci_endomorphism_min": [
+    -8.323352590212455,
+    -8.146064038432288,
+    -8.146064038432288
+  ],
+  "ricci_endomorphism_max": [
+    -3.0000000000000004,
+    5.1460640384322875,
+    5.1460640384322875
+  ],
+  "koiso_Sprime_min": [
+    -5.323352590212455,
+    -5.1460640384322875,
+    -5.1460640384322875
+  ],
+  "koiso_Sprime_max": [
+    -4.440892098500626e-16,
+    8.146064038432288,
+    8.146064038432288
+  ],
+  "koiso_Sprime_trace_sup": 3.0000000000000044,
+  "volume_N1": 0.436438755581381,
+  "quotient_samples": {
+    "1": {
+      "volume": 0.436438755581381,
+      "lattice_lengths_relative": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matching_cover_lattice_before_cusp_scaling": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matching_uniform_cusp_scale": 1.0
+    },
+    "10": {
+      "volume": 0.00436438755581381,
+      "lattice_lengths_relative": [
+        1.0,
+        0.1,
+        0.1
+      ],
+      "matching_cover_lattice_before_cusp_scaling": [
+        10.0,
+        1.0,
+        1.0
+      ],
+      "matching_uniform_cusp_scale": 0.1
+    },
+    "100": {
+      "volume": 4.36438755581381e-05,
+      "lattice_lengths_relative": [
+        1.0,
+        0.01,
+        0.01
+      ],
+      "matching_cover_lattice_before_cusp_scaling": [
+        100.0,
+        1.0,
+        1.0
+      ],
+      "matching_uniform_cusp_scale": 0.01
+    },
+    "1000": {
+      "volume": 4.36438755581381e-07,
+      "lattice_lengths_relative": [
+        1.0,
+        0.001,
+        0.001
+      ],
+      "matching_cover_lattice_before_cusp_scaling": [
+        1000.0,
+        1.0,
+        1.0
+      ],
+      "matching_uniform_cusp_scale": 0.001
+    }
+  },
+  "interpretation": {
+    "local_geometry": "independent of N after X=x/N,Y=y/N",
+    "scalar": "exactly -6 up to numerical ODE residual",
+    "volume_scaling": "N^-2",
+    "cusp_match": "degree-N cover in theta has lattice (N,1,1); truncation scale 1/N gives (1,1/N,1/N)"
+  }
+}

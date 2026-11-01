@@ -1,0 +1,219 @@
+{
+  "title": "Step 21 weighted CZ/heat scaling audit",
+  "target_estimate": "|a Rm|(t) <= C beta/t with a=chi^2",
+  "model": "Gaussian high-curvature spike evolved by constant-diffusivity heat u_t=a0 Delta u; beta modeled by local L2 critical product.",
+  "main_result": "For k=4 active dimensions the worst positive-time ratio is constant (1/(8*pi) with this normalization); for k=2 fiber-invariant CZ-type spikes it is O(sigma) and tends to zero.  The ratio is independent of chi0=a0^1/2.  Thus the old elliptic CZ spike does not by itself falsify the weighted positive-time smoothing estimate.",
+  "important_contrast": "The initial elliptic ratio a0*B/beta can be arbitrarily large (especially for small sigma), which is exactly why Step 11 killed elliptic pointwise regularity.  The parabolic t^{-1} factor is large at small times and removes this immediate contradiction.",
+  "grouped_summary": {
+    "k2_sigma0.1": {
+      "max_over_chi0": 0.028209479177387822,
+      "min_over_chi0": 0.028209479177387822,
+      "elliptic_ratios": [
+        5.6418958354775635,
+        0.0005641895835477564,
+        5.641895835477564e-08
+      ]
+    },
+    "k2_sigma0.001": {
+      "max_over_chi0": 0.00028209479177387816,
+      "min_over_chi0": 0.00028209479177387816,
+      "elliptic_ratios": [
+        564.1895835477563,
+        0.05641895835477564,
+        5.6418958354775635e-06
+      ]
+    },
+    "k2_sigma1e-06": {
+      "max_over_chi0": 2.8209479177387823e-07,
+      "min_over_chi0": 2.8209479177387823e-07,
+      "elliptic_ratios": [
+        564189.5835477564,
+        56.41895835477564,
+        0.005641895835477563
+      ]
+    },
+    "k3_sigma0.1": {
+      "max_over_chi0": 0.02579025958288262,
+      "min_over_chi0": 0.02579025958288262,
+      "elliptic_ratios": [
+        13.401011981382842,
+        0.0013401011981382844,
+        1.3401011981382844e-07
+      ]
+    },
+    "k3_sigma0.001": {
+      "max_over_chi0": 0.0025790259582882617,
+      "min_over_chi0": 0.0025790259582882617,
+      "elliptic_ratios": [
+        13401.011981382844,
+        1.3401011981382847,
+        0.00013401011981382845
+      ]
+    },
+    "k3_sigma1e-06": {
+      "max_over_chi0": 8.155596172889319e-05,
+      "min_over_chi0": 8.155596172889319e-05,
+      "elliptic_ratios": [
+        423777208.12375766,
+        42377.72081237577,
+        4.237772081237576
+      ]
+    },
+    "k4_sigma0.1": {
+      "max_over_chi0": 0.03978873577297383,
+      "min_over_chi0": 0.03978873577297383,
+      "elliptic_ratios": [
+        31.83098861837906,
+        0.0031830988618379063,
+        3.1830988618379064e-07
+      ]
+    },
+    "k4_sigma0.001": {
+      "max_over_chi0": 0.039788735772973836,
+      "min_over_chi0": 0.039788735772973836,
+      "elliptic_ratios": [
+        318309.88618379075,
+        31.830988618379074,
+        0.003183098861837907
+      ]
+    },
+    "k4_sigma1e-06": {
+      "max_over_chi0": 0.039788735772973836,
+      "min_over_chi0": 0.039788735772973836,
+      "elliptic_ratios": [
+        318309886183.7907,
+        31830988.618379068,
+        3183.098861837907
+      ]
+    }
+  },
+  "sample_records": [
+    {
+      "k_active": 4,
+      "sigma": 1e-06,
+      "a0=chi0^2": 1.0,
+      "B_amplitude": 31622776601.683796,
+      "fiber_volume": 1.0,
+      "L2_norm_model_beta_without_A2": 0.09934588265796102,
+      "max_s": 0.5,
+      "max_R=t*a0*Linf/beta_model": 0.039788735772973836,
+      "elliptic_initial_ratio=a0*B/beta_model": 318309886183.7907,
+      "samples": [
+        {
+          "s=a0t/sigma2": 1e-06,
+          "t": 9.999999999999999e-19,
+          "u_center": 31622650110.956856,
+          "R=t*a0*u/l2": 3.183086129480656e-07
+        },
+        {
+          "s=a0t/sigma2": 0.001,
+          "t": 1e-15,
+          "u_center": 31496663959.191193,
+          "R=t*a0*u/l2": 0.0003170404561971772
+        },
+        {
+          "s=a0t/sigma2": 0.01,
+          "t": 1e-14,
+          "u_center": 30394825645.601494,
+          "R=t*a0*u/l2": 0.0030594952535927594
+        },
+        {
+          "s=a0t/sigma2": 0.1,
+          "t": 9.999999999999999e-14,
+          "u_center": 21960261528.947083,
+          "R=t*a0*u/l2": 0.022104853207207686
+        },
+        {
+          "s=a0t/sigma2": 0.5,
+          "t": 5e-13,
+          "u_center": 7905694150.420949,
+          "R=t*a0*u/l2": 0.039788735772973836
+        },
+        {
+          "s=a0t/sigma2": 1.0,
+          "t": 1e-12,
+          "u_center": 3513641844.6315327,
+          "R=t*a0*u/l2": 0.035367765131532294
+        },
+        {
+          "s=a0t/sigma2": 10.0,
+          "t": 1e-11,
+          "u_center": 71706976.4210517,
+          "R=t*a0*u/l2": 0.007217911251333122
+        },
+        {
+          "s=a0t/sigma2": 1000.0,
+          "t": 1e-09,
+          "u_center": 7897.794381590762,
+          "R=t*a0*u/l2": 7.94979537177415e-05
+        }
+      ]
+    },
+    {
+      "k_active": 2,
+      "sigma": 1e-06,
+      "a0=chi0^2": 1e-08,
+      "B_amplitude": 31622.776601683796,
+      "fiber_volume": 1.0,
+      "L2_norm_model_beta_without_A2": 0.05604991216397928,
+      "max_s": "infty_limit",
+      "max_R=t*a0*Linf/beta_model": 2.8209479177387823e-07,
+      "elliptic_initial_ratio=a0*B/beta_model": 0.005641895835477563,
+      "samples": [
+        {
+          "s=a0t/sigma2": 1e-06,
+          "t": 9.999999999999999e-11,
+          "u_center": 31622.71335625708,
+          "R=t*a0*u/l2": 5.641884551708459e-13
+        },
+        {
+          "s=a0t/sigma2": 0.001,
+          "t": 1.0000000000000001e-07,
+          "u_center": 31559.657287109574,
+          "R=t*a0*u/l2": 5.630634566344874e-10
+        },
+        {
+          "s=a0t/sigma2": 0.01,
+          "t": 1e-06,
+          "u_center": 31002.722158513523,
+          "R=t*a0*u/l2": 5.531270426938788e-09
+        },
+        {
+          "s=a0t/sigma2": 0.1,
+          "t": 9.999999999999999e-06,
+          "u_center": 26352.3138347365,
+          "R=t*a0*u/l2": 4.70157986289797e-08
+        },
+        {
+          "s=a0t/sigma2": 0.5,
+          "t": 4.9999999999999996e-05,
+          "u_center": 15811.388300841898,
+          "R=t*a0*u/l2": 1.4104739588693911e-07
+        },
+        {
+          "s=a0t/sigma2": 1.0,
+          "t": 9.999999999999999e-05,
+          "u_center": 10540.925533894599,
+          "R=t*a0*u/l2": 1.880631945159188e-07
+        },
+        {
+          "s=a0t/sigma2": 10.0,
+          "t": 0.001,
+          "u_center": 1505.8465048420853,
+          "R=t*a0*u/l2": 2.6866170645131257e-07
+        },
+        {
+          "s=a0t/sigma2": 1000.0,
+          "t": 0.1,
+          "u_center": 15.803486557563115,
+          "R=t*a0*u/l2": 2.8195381486644496e-07
+        }
+      ]
+    }
+  ],
+  "scientific_conclusion": [
+    "A direct transplant of the opposite-warp/CZ spike is not an immediate counterexample to A01/A03's zero-order weighted parabolic estimate; the degeneracy weight a cancels the slow diffusion in the constant-coefficient model.",
+    "The remaining falsification target is not high pointwise curvature at t=0 but the exact localized weak recurrence/finite-neighbor estimate under evolving normalized cutoff flow, especially transition terms and support leakage.",
+    "This supports reallocating away from toric numerics while not claiming the negative smoothing theorem is proved."
+  ]
+}

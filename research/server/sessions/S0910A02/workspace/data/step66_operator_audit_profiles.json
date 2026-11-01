@@ -1,0 +1,82 @@
+{
+  "status": "ok",
+  "Lambda": 1.0,
+  "summary": {
+    "raw": {
+      "max_defect": 1.0,
+      "median_defect": 1.0,
+      "sample_R_frame_at_2": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "r2metric": {
+      "max_defect": 8.921960688965633,
+      "median_defect": 7.00924378568077,
+      "sample_R_frame_at_2": [
+        -6.125,
+        -5.875,
+        -6.125
+      ]
+    },
+    "kpot_parallel": {
+      "max_defect": 1.0000000000000016,
+      "median_defect": 1.0,
+      "sample_R_frame_at_2": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "scalar_cutoff_0.15": {
+      "max_defect_all": 11.555286046224058,
+      "max_defect_far": 1.1358005884385536,
+      "median_defect_far": 3.0102564024803158e-06,
+      "sample_R_frame_at_2": [
+        0.9999856769557224,
+        0.9999949973419043,
+        0.9999205503705758
+      ],
+      "meta": {
+        "Rmax": 20.0,
+        "eps_bolt": 0.001,
+        "cutoff_width": 0.15,
+        "source_factor": "-0.5*Lambda*uK*chi"
+      }
+    },
+    "scalar_cutoff_0.3": {
+      "max_defect_all": 7.845668622028924,
+      "max_defect_far": 1.1358006197903177,
+      "median_defect_far": 2.8821763942143974e-06,
+      "sample_R_frame_at_2": [
+        0.9999872857069068,
+        0.999995564799542,
+        0.9999202913646711
+      ],
+      "meta": {
+        "Rmax": 20.0,
+        "eps_bolt": 0.001,
+        "cutoff_width": 0.3,
+        "source_factor": "-0.5*Lambda*uK*chi"
+      }
+    },
+    "scalar_cutoff_0.6": {
+      "max_defect_all": 5.006497788798593,
+      "max_defect_far": 1.1358007398411993,
+      "median_defect_far": 2.6630103933111826e-06,
+      "sample_R_frame_at_2": [
+        1.0000055608805198,
+        1.0000020110512515,
+        0.9999173490270504
+      ],
+      "meta": {
+        "Rmax": 20.0,
+        "eps_bolt": 0.001,
+        "cutoff_width": 0.6,
+        "source_factor": "-0.5*Lambda*uK*chi"
+      }
+    }
+  },
+  "interpretation": "raw/parallel profiles retain O(1) defect; scalar cutoff test is solver-agnostic first-order audit, not Biquard h."
+}

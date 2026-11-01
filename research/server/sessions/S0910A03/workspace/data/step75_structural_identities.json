@@ -1,0 +1,29 @@
+{
+  "linear_mode": {
+    "x_equation_residual": "0",
+    "psi_at_x_eq_k": "1",
+    "psi_x_at_x_eq_k": "0",
+    "limit_x_to_0": "sinh(k)/k",
+    "interpretation": "x=k exp(-t); psi(0)=1, psi_t(0)=0, lim_t_to_inf psi=sinh(k)/k"
+  },
+  "normal_balance": {
+    "Err_rewrite_residual": "0",
+    "weighted_derivative_residual": "0",
+    "identity": "(e^{2r}(H-3))'=-e^{2r}(|S-I|^2+E_rr)"
+  },
+  "orbit_shape": {
+    "trace_zero_norm_sq": "2*lambda1**2",
+    "trace_zero_det": "-lambda1**2",
+    "tangent_gauss_curvature": "lambda1**2",
+    "K_minus_half_norm_sq": "0"
+  },
+  "approximate_center": {
+    "scalar_error_bound": "|R_q+6|=|tr_T(E)-E_nn|<=4 delta",
+    "K_lower_at_downward_H_zero": "3-(R_q+6)/2",
+    "P_normal_upper_before_4d_tangential_error": "e - 3",
+    "direct_component_cancellation": "e-E_vv=E_11+E_22-E_nn",
+    "Sprime_selected_direction_bound": "E11 + E22 - Enn - 3",
+    "Sprime_box_upper": "3*delta - 3",
+    "result": "some eigenvalue of S'(0) <= -3+3 delta"
+  }
+}

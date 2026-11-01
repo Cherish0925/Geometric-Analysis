@@ -1,0 +1,114 @@
+
+******************************************************************************
+This program contains Ipopt, a library for large-scale nonlinear optimization.
+ Ipopt is released as open source code under the Eclipse Public License (EPL).
+         For more information visit https://github.com/coin-or/Ipopt
+******************************************************************************
+
+This is Ipopt version 3.14.11, running with linear solver MUMPS 5.4.1.
+
+Number of nonzeros in equality constraint Jacobian...:     4395
+Number of nonzeros in inequality constraint Jacobian.:      796
+Number of nonzeros in Lagrangian Hessian.............:     6527
+
+Total number of variables............................:      491
+                     variables with only lower bounds:        0
+                variables with lower and upper bounds:        0
+                     variables with only upper bounds:        0
+Total number of equality constraints.................:      310
+Total number of inequality constraints...............:      552
+        inequality constraints with only lower bounds:        0
+   inequality constraints with lower and upper bounds:      491
+        inequality constraints with only upper bounds:       61
+
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+   0  3.3699322e+01 2.63e+01 2.75e+01   0.0 0.00e+00    -  0.00e+00 0.00e+00   0
+   1  1.6104934e+02 1.06e+01 2.02e+04   1.1 2.03e+02    -  5.12e-01 4.79e-01f  1
+   2  1.4668158e+02 9.50e+00 1.60e+04   1.7 1.48e+01   0.0 6.05e-01 3.13e-01f  1
+   3  1.1835810e+02 3.74e+00 6.98e+04   1.7 2.35e+01  -0.5 6.79e-01 1.00e+00f  1
+   4  1.0452533e+02 7.14e-01 2.50e+04   1.7 2.87e+01  -1.0 9.68e-01 1.00e+00f  1
+   5  1.0505368e+02 7.48e-01 2.03e+04   1.7 4.73e+01  -0.5 3.80e-01 8.93e-02h  1
+   6  1.3307330e+02 1.99e-01 1.47e+04   1.7 6.17e+01  -1.0 1.00e+00 1.00e+00f  1
+   7  1.2987337e+02 3.75e-03 2.67e+03   0.7 8.40e+00  -1.5 1.00e+00 1.00e+00f  1
+   8  9.7497265e+01 8.11e-02 7.21e+02   0.2 3.09e+01    -  1.00e+00 1.00e+00f  1
+   9  7.8388972e+01 5.40e-03 2.07e+01   0.1 1.29e+01    -  1.00e+00 1.00e+00f  1
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  10  3.3411316e+01 1.69e-01 1.26e+01  -0.5 4.45e+01    -  6.87e-01 9.98e-01f  1
+  11  2.0638980e+01 2.82e-01 2.31e+01  -0.8 1.02e+01    -  9.97e-01 1.00e+00h  1
+  12  1.4380139e+01 3.83e-01 8.26e+00  -1.0 5.25e+00    -  9.92e-01 1.00e+00h  1
+  13  1.0643878e+01 6.93e-01 7.90e+00  -1.2 5.56e+00    -  1.00e+00 9.42e-01h  1
+  14  1.0082639e+01 6.22e-01 1.22e+01  -1.2 4.05e+00    -  9.48e-01 1.00e+00f  1
+  15  9.5157291e+00 6.10e-01 1.06e+01  -1.5 8.90e+00    -  1.00e+00 1.63e-01h  2
+  16  7.6471833e+00 2.71e-01 2.31e+00  -2.2 2.34e+00    -  1.00e+00 9.93e-01h  1
+  17  7.3652657e+00 1.37e-01 1.20e+00  -1.8 1.79e+00    -  1.00e+00 7.22e-01h  1
+  18  6.9378880e+00 8.73e-02 6.51e-01  -2.0 1.38e+00    -  1.00e+00 8.83e-01h  1
+  19  6.6833674e+00 5.56e-02 6.15e-01  -2.4 1.38e+00    -  1.00e+00 8.99e-01h  1
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  20  6.5251492e+00 1.98e-02 1.80e-01  -3.2 7.12e-01    -  1.00e+00 9.07e-01h  1
+  21  6.4905467e+00 4.56e-03 8.19e-02  -3.5 2.19e-01    -  1.00e+00 9.12e-01h  1
+  22  6.4796368e+00 3.19e-04 2.08e-02  -4.6 4.44e-02    -  1.00e+00 9.32e-01h  1
+  23  6.4787268e+00 4.89e-05 3.90e-02  -5.2 2.26e-02  -2.0 1.00e+00 8.51e-01h  1
+  24  6.4784222e+00 3.14e-05 3.79e-02  -6.5 2.98e-02  -2.4 1.00e+00 6.66e-01h  1
+  25  6.4781803e+00 7.76e-05 1.58e-01  -6.6 1.20e-01  -2.9 1.00e+00 6.52e-01H  1
+  26  6.4754021e+00 1.85e-03 1.22e-02  -5.9 2.77e-01  -3.4 1.00e+00 1.00e+00H  1
+  27  6.4797588e+00 1.63e-03 2.95e-02  -5.7 2.00e-01    -  1.00e+00 1.00e+00h  1
+  28  6.4778363e+00 1.75e-04 3.11e-03  -5.8 6.67e-02    -  1.00e+00 1.00e+00h  1
+  29  6.4775867e+00 1.06e-06 1.83e-05  -7.0 5.81e-03    -  1.00e+00 1.00e+00h  1
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  30  6.4775835e+00 7.69e-09 3.59e-07  -9.0 1.32e-03    -  1.00e+00 1.00e+00h  1
+  31  6.4775835e+00 9.56e-12 3.68e-10 -11.0 4.42e-05    -  1.00e+00 1.00e+00h  1
+
+Number of Iterations....: 31
+
+                                   (scaled)                 (unscaled)
+Objective...............:   6.4775834708864295e+00    6.4775834708864295e+00
+Dual infeasibility......:   3.6761166333221240e-10    3.6761166333221240e-10
+Constraint violation....:   9.5594643312324479e-12    9.5594643312324479e-12
+Variable bound violation:   0.0000000000000000e+00    0.0000000000000000e+00
+Complementarity.........:   4.4334680800218703e-11    4.4334680800218703e-11
+Overall NLP error.......:   3.6761166333221240e-10    3.6761166333221240e-10
+
+
+Number of objective function evaluations             = 37
+Number of objective gradient evaluations             = 32
+Number of equality constraint evaluations            = 37
+Number of inequality constraint evaluations          = 37
+Number of equality constraint Jacobian evaluations   = 32
+Number of inequality constraint Jacobian evaluations = 32
+Number of Lagrangian Hessian evaluations             = 31
+Total seconds in IPOPT                               = 0.199
+
+EXIT: Optimal Solution Found.
+{
+ "eps": 0.0625,
+ "N": 60,
+ "mode": "ch",
+ "success": true,
+ "return_status": "Solve_Succeeded",
+ "iterations": 31,
+ "cost": 6.4775834708864295,
+ "A": 0.8432276826248448,
+ "t_ch": 2.2849481657415374,
+ "T": 5.135077377966099,
+ "max_collocation_residual": 9.559464331232448e-12,
+ "initial_state": [
+  0.0,
+  0.3968502629920499,
+  0.5326188431109757,
+  -2.49244686709269e-30,
+  0.2549961945778718
+ ],
+ "terminal_state": [
+  1.6021067316469382,
+  1.0,
+  11.174393192289298,
+  8.123041819446845,
+  0.0
+ ],
+ "bplus_initial": -1.8958129346778092,
+ "bplus_terminal": -5025.993469397933,
+ "min_bplus": -5025.993469397933,
+ "max_bplus": -0.9999999900577641,
+ "max_charge_rise_minus_cost": 0.0
+}
+output /data/qiushi/qiushi_engine_v08/users/user2/Sessions/S1003A02/workspace/data/saturation_control/eps0p0625_N60_ch_bpmax_m1b.json

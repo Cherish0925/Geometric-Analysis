@@ -1,0 +1,106 @@
+{
+  "norm_p_sq_mean": 1.0,
+  "norm_q_sq_mean": 1.0,
+  "norm_p_minus_q_max": 7.771561172376096e-16,
+  "p2_minus_q2_max": 0.0,
+  "p_minus_q_max_over_S3": 1.9985106931566547,
+  "p_minus_q_mean_over_S3": 0.8997087735120891,
+  "at_1111": {
+    "p": [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    "q": [
+      0.0,
+      0.0,
+      -1.0
+    ],
+    "diff": [
+      -1.0,
+      0.0,
+      1.0
+    ]
+  },
+  "Gram_same": [
+    [
+      4.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      4.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      4.0
+    ]
+  ],
+  "Gram_cross": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      4.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "Gram_diff": [
+    [
+      4.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      4.0
+    ]
+  ],
+  "same_overlap_mean": 4.0,
+  "cross_overlap_mean": 1.3350741590898303,
+  "chirality_diff_mean": 2.6649258409101697,
+  "chirality_diff_std": 1.1944817327309813,
+  "chirality_diff_min": 2.6770829258282447e-05,
+  "chirality_diff_max": 3.9999999990992796,
+  "analytic_same_overlap": 4.0,
+  "analytic_cross_overlap": "4/3 (from <p_2^2> = 1/3)",
+  "analytic_chirality_diff": "8/3",
+  "analytic_chirality_diff_numerical": 2.6666666666666665,
+  "corrected_Delta_Frobenius_max": 1.4142135622138687,
+  "corrected_Delta_Frobenius_mean": 1.1071522144700057,
+  "corrected_Delta_Frobenius_min": 0.03036402391300541,
+  "crosscheck_at_1111": {
+    "H4_plus_O1_overlap": -2.0,
+    "H4_minus_O1_overlap": 0.0,
+    "difference": -2.0,
+    "predicted_from_Gram": 4.0
+  },
+  "summary": {
+    "key_identity": "tr(C_{ab}C_{cd}) = 4*delta_{ac}*delta_{bd}",
+    "Gram_same_chirality": "4*I_3 (all rho components couple equally)",
+    "Gram_cross_chirality": "diag(0,4,0) (only axial rho_2 survives)",
+    "Gram_difference": "diag(4,0,4) (rho_1 and rho_3 distinguish chirality)",
+    "pointwise_chirality_diff": "4*(1 - p_2^2) = 4*(p_1^2 + p_3^2), always >= 0",
+    "S3_mean_chirality_diff": "8/3 (exact, from <p_j^2> = 1/3 on S^3)",
+    "TTCS_caveat": "This is a LOCAL identity-pairing angular difference, not the globally Green-projected inter-node coefficient c_opp - c_same. The full source-to-receiver transfer matrix includes Bianchi correction, kernel projection, product spectral pseudo-inverse, node-frame transport, and radial extraction. Cancellation in the Green projection is mathematically possible but not proved or disproved.",
+    "what_is_established": "H^4_+(zeta) and H^4_-(zeta) are generically different symmetric 2-tensors. Their radial obstruction overlap differs by 4(1-p_2^2), which has definite sign >= 0 and mean 8/3 on S^3. This is a necessary INPUT to the inter-node Green response computation but not its OUTPUT.",
+    "decisive_remaining_computation": "Compute the full product Lichnerowicz Green transfer from source node to receiver node in the C_{ab} basis, including all 9 tensor components, Bianchi/gauge correction, kernel projection, and evaluate c_opp - c_same as a single real number."
+  }
+}

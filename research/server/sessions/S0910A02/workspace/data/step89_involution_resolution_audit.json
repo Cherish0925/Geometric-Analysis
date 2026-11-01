@@ -1,0 +1,99 @@
+{
+  "so4_orientation_preserving_order2_types": [
+    {
+      "minus_eigenspace_dimension": 0,
+      "plus_eigenspace_dimension": 4,
+      "determinant": 1,
+      "fixed_stratum_dimension": 4,
+      "kind": "identity, not a singular stabilizer"
+    },
+    {
+      "minus_eigenspace_dimension": 2,
+      "plus_eigenspace_dimension": 2,
+      "determinant": 1,
+      "fixed_stratum_dimension": 2,
+      "kind": "codimension-2 fixed surface (local model R^2 x (R^2/Z2))"
+    },
+    {
+      "minus_eigenspace_dimension": 4,
+      "plus_eigenspace_dimension": 0,
+      "determinant": 1,
+      "fixed_stratum_dimension": 0,
+      "kind": "isolated A1 point (local model R^4/{\u00b11})"
+    }
+  ],
+  "quotient_resolution_euler_examples": [
+    {
+      "chi_N": 4,
+      "isolated_fixed_points_k": 1,
+      "chi_underlying_quotient": 2.5,
+      "chi_orbifold": 2.0,
+      "chi_resolution": 3.5,
+      "chi_resolution_alt": 3.5
+    },
+    {
+      "chi_N": 100,
+      "isolated_fixed_points_k": 1,
+      "chi_underlying_quotient": 50.5,
+      "chi_orbifold": 50.0,
+      "chi_resolution": 51.5,
+      "chi_resolution_alt": 51.5
+    },
+    {
+      "chi_N": 100,
+      "isolated_fixed_points_k": 10,
+      "chi_underlying_quotient": 55.0,
+      "chi_orbifold": 50.0,
+      "chi_resolution": 65.0,
+      "chi_resolution_alt": 65.0
+    },
+    {
+      "chi_N": 72,
+      "isolated_fixed_points_k": 36,
+      "chi_underlying_quotient": 54.0,
+      "chi_orbifold": 36.0,
+      "chi_resolution": 90.0,
+      "chi_resolution_alt": 90.0
+    }
+  ],
+  "connected_sum_bcg_threshold_samples": [
+    {
+      "chi_N": 2,
+      "relative_eps_threshold": 0.17157287525380988,
+      "operator_delta_threshold": 0.5147186257614296,
+      "leading_operator_delta": 0.375
+    },
+    {
+      "chi_N": 10,
+      "relative_eps_threshold": 0.026334038989724026,
+      "operator_delta_threshold": 0.07900211696917207,
+      "leading_operator_delta": 0.075
+    },
+    {
+      "chi_N": 100,
+      "relative_eps_threshold": 0.002512578676009048,
+      "operator_delta_threshold": 0.007537736028027144,
+      "leading_operator_delta": 0.0075
+    },
+    {
+      "chi_N": 1000,
+      "relative_eps_threshold": 0.00025012507817970736,
+      "operator_delta_threshold": 0.000750375234539122,
+      "leading_operator_delta": 0.00075
+    }
+  ],
+  "group_quotient_template": {
+    "orbifold_group": "Gamma = Gamma0 \u22ca_<sigma_*> <t | t^2=1>",
+    "resolution_pi1": "Gamma / normal_closure{ gamma_j t : gamma_j t has isolated fixed point giving a resolved A1 point }",
+    "one_fixed_point_represented_by_t": "Gamma0 / normal_closure{ gamma sigma_*(gamma)^(-1) for gamma in Gamma0 } (coinvariants)",
+    "many_fixed_points_after_killing_t": "coinvariants further quotiented by normal_closure{ gamma_j : j>1 }, where gamma_j t are the other point stabilizers",
+    "rational_H1_coinvariant_dimension": "dim H1(M;Q)=dim H1(N;Q)^{sigma_*} only before any extra gamma_j relations are considered; with many nodes these relations can kill H1 entirely",
+    "negative_mirror_status": "Step57 van Kampen proves all 36-node sign-pattern fillings are simply connected; the Step88 infinite-pi1 coinvariant-only conclusion was false."
+  },
+  "route_cautions": [
+    "Positive b1 of the resolution is not enough for entropy obstruction; T^4 has b1>0 but zero simplicial volume.",
+    "Positive simplicial volume is still weaker than the Sambusetti/BCG certificate used here, which requires a nonzero-degree map to a closed real-hyperbolic 4-manifold with the sharp inequality violation.",
+    "Amenable-boundary additivity for simplicial volume cannot be applied across compressible RP3 A1 seams without compatibility/pi1-injectivity; the outside piece may have positive relative volume while the filled resolution has zero absolute simplicial volume.",
+    "The sharp existence question is a closed hyperbolic 4-manifold with an orientation-preserving isometric involution whose fixed set is nonempty finite and has no 2-dimensional components, followed by a separate degree-map/Sambusetti analysis for its A1 resolution."
+  ]
+}

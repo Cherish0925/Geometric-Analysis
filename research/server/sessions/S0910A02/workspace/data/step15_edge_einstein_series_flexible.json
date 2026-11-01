@@ -1,0 +1,115 @@
+{
+  "title": "Step 15 flexible formal Einstein edge series",
+  "edge_parameter": "A=a2=-K_B(edge), omega^2=1+2A",
+  "ansatz": "dr^2+a(r)^2ds^2+P(r)^2dtheta^2+(R(r)Q(s))^2dphi^2",
+  "solved_coefficients": {
+    "R2": "A/2",
+    "p3": "-(2*A + 1)/6",
+    "R4": "-A*(2*A + 1)/24",
+    "a4": "-A*(2*A + 1)/24",
+    "p5": "(22*A**2 + 10*A + 1)/120",
+    "R6": "A*(22*A**2 + 10*A + 1)/720",
+    "a6": "A*(22*A**2 + 10*A + 1)/720",
+    "p7": "-(584*A**3 + 312*A**2 + 42*A + 1)/5040",
+    "R8": "-A*(584*A**3 + 312*A**2 + 42*A + 1)/40320",
+    "a8": "-A*(584*A**3 + 312*A**2 + 42*A + 1)/40320",
+    "p9": "(28384*A**4 + 17840*A**3 + 3294*A**2 + 170*A + 1)/362880",
+    "R10": "A*(28384*A**4 + 17840*A**3 + 3294*A**2 + 170*A + 1)/3628800",
+    "a10": "A*(28384*A**4 + 17840*A**3 + 3294*A**2 + 170*A + 1)/3628800",
+    "p11": "-(2190128*A**5 + 1592744*A**4 + 376328*A**3 + 31624*A**2 + 682*A + 1)/39916800"
+  },
+  "free_unsolved_coefficients": [
+    "p13",
+    "R12",
+    "a12"
+  ],
+  "records": [
+    {
+      "power": 0,
+      "variables": [
+        "p3",
+        "R2"
+      ],
+      "solved": {
+        "R2": "A/2",
+        "p3": "-A/3 - 1/6"
+      },
+      "num_equations": 3
+    },
+    {
+      "power": 2,
+      "variables": [
+        "p5",
+        "R4",
+        "a4"
+      ],
+      "solved": {
+        "R4": "A*(-2*A - 1)/24",
+        "a4": "A*(-2*A - 1)/24",
+        "p5": "11*A**2/60 + A/12 + 1/120"
+      },
+      "num_equations": 4
+    },
+    {
+      "power": 4,
+      "variables": [
+        "p7",
+        "R6",
+        "a6"
+      ],
+      "solved": {
+        "R6": "A*(22*A**2 + 10*A + 1)/720",
+        "a6": "A*(22*A**2 + 10*A + 1)/720",
+        "p7": "-73*A**3/630 - 13*A**2/210 - A/120 - 1/5040"
+      },
+      "num_equations": 4
+    },
+    {
+      "power": 6,
+      "variables": [
+        "p9",
+        "R8",
+        "a8"
+      ],
+      "solved": {
+        "R8": "A*(-584*A**3 - 312*A**2 - 42*A - 1)/40320",
+        "a8": "A*(-584*A**3 - 312*A**2 - 42*A - 1)/40320",
+        "p9": "887*A**4/11340 + 223*A**3/4536 + 61*A**2/6720 + 17*A/36288 + 1/362880"
+      },
+      "num_equations": 4
+    },
+    {
+      "power": 8,
+      "variables": [
+        "p11",
+        "R10",
+        "a10"
+      ],
+      "solved": {
+        "R10": "A*(28384*A**4 + 17840*A**3 + 3294*A**2 + 170*A + 1)/3628800",
+        "a10": "A*(28384*A**4 + 17840*A**3 + 3294*A**2 + 170*A + 1)/3628800",
+        "p11": "-136883*A**5/2494800 - 199093*A**4/4989600 - 47041*A**3/4989600 - 3953*A**2/4989600 - 31*A/1814400 - 1/39916800"
+      },
+      "num_equations": 4
+    }
+  ],
+  "residual_after_substitution": [
+    {
+      "equation": "rr",
+      "nonzero_coefficients": []
+    },
+    {
+      "equation": "ss",
+      "nonzero_coefficients": []
+    },
+    {
+      "equation": "theta",
+      "nonzero_coefficients": []
+    },
+    {
+      "equation": "phi",
+      "nonzero_coefficients": []
+    }
+  ],
+  "finding": "Allowing the base normal jets to vary removes the artificial obstruction of the rigid cosh-base test. The formal separated Einstein equations solve recursively through the checked order, with a4,a6,... determined along with P and R coefficients from A. Thus arbitrarily large negative edge curvature is not locally excluded by the Einstein equations; a BUILD proof must use global rod/polygon compatibility or Biquard/Ozuch-type boundary-bubble obstruction."
+}

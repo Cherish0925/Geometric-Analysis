@@ -1,0 +1,36 @@
+{
+  "status": "ok",
+  "metric": "diag(1, 1, r1^2 e^{2v}, r2^2 e^{-2v}), v=v(r1,r2)",
+  "coords": [
+    "r1",
+    "r2",
+    "phi",
+    "psi"
+  ],
+  "flat_background_v0_Ricci_zero": true,
+  "nonzero_Ricci_components_general_v": {
+    "Ric[0][0]": "-2*(r1*Derivative(v(r1, r2), r1) + 1)*Derivative(v(r1, r2), r1)/r1",
+    "Ric[0][1]": "-2*Derivative(v(r1, r2), r1)*Derivative(v(r1, r2), r2) + Derivative(v(r1, r2), r1)/r2 - Derivative(v(r1, r2), r2)/r1",
+    "Ric[1][0]": "-2*Derivative(v(r1, r2), r1)*Derivative(v(r1, r2), r2) + Derivative(v(r1, r2), r1)/r2 - Derivative(v(r1, r2), r2)/r1",
+    "Ric[1][1]": "2*(-r2*Derivative(v(r1, r2), r2) + 1)*Derivative(v(r1, r2), r2)/r2",
+    "Ric[2][2]": "-r1*(r1*Derivative(v(r1, r2), r2) + r2*(r1*Derivative(v(r1, r2), (r1, 2)) + r1*Derivative(v(r1, r2), (r2, 2)) + Derivative(v(r1, r2), r1)))*exp(2*v(r1, r2))/r2",
+    "Ric[3][3]": "r2*(r1*(r2*Derivative(v(r1, r2), (r1, 2)) + r2*Derivative(v(r1, r2), (r2, 2)) + Derivative(v(r1, r2), r2)) + r2*Derivative(v(r1, r2), r1))*exp(-2*v(r1, r2))/r1"
+  },
+  "Ric_base_block": [
+    [
+      "-2*(r1*Derivative(v(r1, r2), r1) + 1)*Derivative(v(r1, r2), r1)/r1",
+      "-2*Derivative(v(r1, r2), r1)*Derivative(v(r1, r2), r2) + Derivative(v(r1, r2), r1)/r2 - Derivative(v(r1, r2), r2)/r1"
+    ],
+    [
+      "-2*Derivative(v(r1, r2), r1)*Derivative(v(r1, r2), r2) + Derivative(v(r1, r2), r1)/r2 - Derivative(v(r1, r2), r2)/r1",
+      "2*(-r2*Derivative(v(r1, r2), r2) + 1)*Derivative(v(r1, r2), r2)/r2"
+    ]
+  ],
+  "Ric_base_depends_only_on_first_derivatives_of_v": true,
+  "Ric_phi_normalized": "-Derivative(v(r1, r2), (r1, 2)) - Derivative(v(r1, r2), (r2, 2)) - Derivative(v(r1, r2), r2)/r2 - Derivative(v(r1, r2), r1)/r1",
+  "Ric_psi_normalized": "Derivative(v(r1, r2), (r1, 2)) + Derivative(v(r1, r2), (r2, 2)) + Derivative(v(r1, r2), r2)/r2 + Derivative(v(r1, r2), r1)/r1",
+  "interpretation": {
+    "flat_check": "v=0 gives Ricci=0, confirming toric cone form is flat R^4/Z_2 quotient background.",
+    "opposite_warping": "The base (r1,r2) Ricci block should contain only first derivatives of v (opposite-warping Hessian cancellation), while fiber blocks carry the 2nd-order operator."
+  }
+}

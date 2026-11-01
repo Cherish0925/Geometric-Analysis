@@ -1,6 +1,6 @@
 # 研究沿革与主要修正
 
-整理日期：2026-10-31。
+整理日期：2026-11-01。
 
 本记录按数学依赖与研究时间整理积分间隙、曲率极值、精确构造和负 Goldberg 分支。各命题的完整陈述及证明见所链接原稿；文献与材料范围见[方法与文献](METHODS_AND_LITERATURE.md)及[收录说明](COVERAGE.md)。
 
@@ -167,11 +167,11 @@ $$
 | 时间 | 文件／资料包 | 用途 |
 |---|---|---|
 | 2026-09-27 | [Yau26_Line1_Recent_Research_20260927.zip](../archive/originals/2026-09-27/Yau26_Line1_Recent_Research_20260927.zip) | I40/I41、线性阶、零端、核心能量 |
-| 2026-09-28 | `Yau26_Line1_Full_Continuation_20260928.zip` | 历史包名线索；本次未定位同名独立 ZIP，续研内容按现存原稿与包内目录索引 |
+| 2026-09-28 | [完整续研包](../archive/originals/2026-09-28/8f121eef-4045-4b73-a442-bccba42aa584.zip) | 本地原件已找回，并与仓库已有同字节资料包接通；原始名字保存在来源表 |
 | 2026-09-28/29 | [Qiushi_Line1_Unified_Gap_20260928.md](../archive/originals/2026-09-28/Qiushi_Line1_Unified_Gap_20260928.md) 及对应回接稿 | N1 与旧积分障碍的继承 |
 | 2026-09-29 | [20260929_Line1_Integrated_Manuscript.tex](../archive/originals/2026-09-29/27b3cef6-aeed-442c-9e66-fef1a757828e.tex) | 整月连续主稿及数学附录 |
 | 2026-09-29/30 | `Line1_Web_Increment_20260929_30` | 有限密度端点、定量依赖、O11 变分及比较 |
-| 2026-10-01 | `20261001_Line1_Integrated_Manuscript.tex` | 历史记录中的后续综合底稿；同名独立文件尚未取得 |
+| 2026-10-01 | [连续综合底稿](../research/server/codex/project/handoff/20261001_Line1_Integrated_Manuscript.tex) | 本地完整原件与模块化论文同时纳入 |
 | 2026-10-07 | [20261007_Einstein_Gaps_Two_Sessions.zip](../archive/originals/2026-10-07/20261007_Einstein_Gaps_Two_Sessions.zip) | 两系统会话的原稿、程序、文献及综述 |
 | 2026-10-07 | [Line1_All_Research_20261007.zip](../archive/originals/2026-10-07/Line1_All_Research_20261007.zip) | 网页续研总稿与十二分卷 |
 | 2026-10-08 | `20261008_Einstein_Gaps_Four_Problems` | 四题主稿、原始数学记录与后续增量 |
@@ -187,12 +187,22 @@ $$
 | 2026-10-15 | [Goldberg_Torsion_Zeros_and_Weyl_Equation_20261015.tex](../archive/originals/2026-10-15/Goldberg_Torsion_Zeros_and_Weyl_Equation_20261015.tex) | 零点与 Weyl 方程 |
 | 2026-10-15 | [Goldberg_Two_Conversations_Merged_20261015.zip](../archive/originals/2026-10-15/Goldberg_Two_Conversations_Merged_20261015.zip) | 两会话后期研究合并 |
 
+## 本服务器原研究与后续接续
+
+本次将早期三会话各100步、A01的95步、A02的108步以及两个会话组的数学交流接回原稿；Codex工程保留86个历史工作树中的独特数学版本、661条独特科研最终回复与214条研究提交记录。目录见[服务器研究入口](../research/server/README.md)。
+
+后期新增联系包括：一般背景的完整 Burns 插入、配对 $A_1$ 轨形的精确曲率极值与非取得、负 AKE 非塌缩极限中的自对偶能量无集中、Wahl 实际场与指标转移、Einstein 域补区域的手性费用。许可 SW 高阶零点可以形式补全，说明原先依赖有限阶可解性矛盾的路线没有获得所需全局障碍。详见两会话导览及相应专题。
+
+10月31日的[两项公开问题比较](../research/server/codex/project/continuation/20261031_Kodaira_Fino_Literature_and_Proof_Status.md)补充了实际证明阅读和精确计算：Fino构造的曲率程序已运行，光滑延拓、完备性和非齐性已检查；Kodaira应用及有限密度关键链未发现所检查部分的实质错误，全部上游旋量分量尚未完成一次独立重建。该记录没有确立任一结果的历史首答地位。
+
 ## 主要修正
 
 - **经典比较。** LeBrun 等经典理论已有定量曲率下界、部分精确极值及等号研究。本项目的比较集中于参数临界处的统一分离、线性强制、退化端点和新的构造上界。
 - **端点量词。** 任意固定有限 $B$ 的定理、特定拓扑关系下的整族统一定理、完全无密度条件的命题分别陈述。
 - **构造修正。** 严格次四上界已改变所覆盖平衡族的候选最优值；其余族保留各自的构造条件与下界问题。
 - **泛函比较。** Step 44 的双向比较已由后续稿订正；$P$、$\mathcal E$ 和局部残差积分分别保留。仍有效的独立结论与修正位置列于[曲率变分](CURVATURE_VARIATION.md)。
+- **填充证书。** A02早期ACH/Rossi填充的Fuchs余项证书存在分量顺序与余项界错误，尚未找到修复；它不影响独立的严格次四构造或显式Fino例。
+- **退化排除。** A02 Step104的cusp基本群排除和实际字符指定已由105–106撤回；Wahl、棱柱端和塌缩补域分别保留各自条件。
 - **几何范畴。** 有限阶形式解、局部精确解、完备非紧解和闭流形解分别记述。Fino 的存在性回答属于完备非紧范畴；Goldberg 的剩余问题属于闭流形范畴。
 
 ## 当前未解决的问题

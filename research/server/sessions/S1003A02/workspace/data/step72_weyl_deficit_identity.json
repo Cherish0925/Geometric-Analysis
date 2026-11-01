@@ -1,0 +1,36 @@
+{
+  "gauss_bonnet_eliminations": {
+    "P": "S/12 + 2*W - 16*pi**2*chi",
+    "R": "S/3 + 2*W - 16*pi**2*chi",
+    "orientation_free_numerator": "L + 6*W - 48*pi**2*chi",
+    "expected_numerator": "L + 6*W - 48*pi**2*chi",
+    "identity_residual": "0",
+    "E_minus_1": "3*(L + 6*W - 48*pi**2*chi)/(S + 6*W - 48*pi**2*chi)"
+  },
+  "yamabe_representative": {
+    "R": "(6*W + Y**2 - 48*pi**2*chi)/3",
+    "E": "(24*W + Y**2 - 192*pi**2*chi)/(6*W + Y**2 - 48*pi**2*chi)",
+    "E_in_deficit_D": "(24*D - Y**2)/(6*D - Y**2)",
+    "ratio_form": "(24*D - Y**2)/(6*D - Y**2)",
+    "residual": "0"
+  },
+  "connected_sum": {
+    "lower_deficit_from_subadditivity": "-WM - WN + 8*pi**2*chiM + 8*pi**2*chiN - 16*pi**2",
+    "expected": "-WM - WN + 8*pi**2*chiM + 8*pi**2*chiN - 16*pi**2",
+    "residual": "0"
+  },
+  "models": [
+    {
+      "name": "round_S4",
+      "E": "0",
+      "weyl_deficit_form": "0",
+      "residual": "0"
+    },
+    {
+      "name": "cylinder_RxS3_per_unit_length",
+      "E": "1",
+      "weyl_deficit_form": "1",
+      "residual": "0"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "title": "Step 14: crux analysis of int_w lower bound",
+  "flux_identity": {
+    "note": "see previous script"
+  },
+  "initial_K_B_formula": {
+    "MAJOR_DISCOVERY": "K_B = 3 + |grad log w|^2 >= 3 for polar positive Einstein T^2-invariant metrics",
+    "derivation": {
+      "step1": "Delta log w = Delta w / w - |grad w|^2/w^2 = -2 - |grad log w|^2",
+      "step2": "K_B = 1 - Delta log w = 1 + 2 + |grad log w|^2 = 3 + |grad log w|^2",
+      "conclusion": "K_B >= 3 everywhere on the orbit space of a positive Einstein polar T^2-invariant metric"
+    },
+    "gauss_bonnet_constraint": {
+      "identity": "int K_B dA = 2 pi - (pi/2) chi(M)",
+      "with_lower_bound": "3 * Area(Omega) <= 2 pi - (pi/2) chi(M)",
+      "chi_upper_bound": "chi(M) <= (4 pi - 6 Area(Omega)) / pi <= 4 (using Area >= 0)",
+      "simple_bound": "chi(M) <= 4. Equality at Area = 0 but Area > 0 gives strict: chi(M) <= 3 or chi(M) = 4 with K_B identically 3."
+    },
+    "verification": {
+      "S4_check": {
+        "chi": 2,
+        "OK": true,
+        "m_vertices": 2,
+        "int_K_B": "pi",
+        "3_times_area_S4_quarter": "3 * (pi * 3 / 4) = 9pi/4 < pi"
+      },
+      "note_S4": "S4: Area(Omega) = area of spherical lune = pi*R^2/4 * angle? Let me compute properly below.",
+      "S2xS2_check": {
+        "chi": 4,
+        "OK": true,
+        "m_vertices": 4,
+        "int_K_B": "0",
+        "but": "K_B = 3 + csc^2 x + csc^2 y >= 5; int K_B = 0 violates 3*A <= 0. CONTRADICTION."
+      },
+      "CP2_check": {
+        "chi": 3,
+        "OK": "to check"
+      }
+    },
+    "WAIT": "S^2 x S^2 has K_B = 1 + csc^2 x + csc^2 y >= 3 (at (pi/2,pi/2) K_B=3), int K_B should be checked."
+  },
+  "correction": {
+    "CORRECTION": "The base-horizontal Einstein reduction gives K_B = -|grad log w|^2/2 <= 0, NOT K_B >= 3.",
+    "derivation": {
+      "base_equation": "Ric_B - Hess(log w) = lambda g_B (polar, F=0)",
+      "2D_form": "K_B g_B - Hess(log w) = g_B => Hess(log w) = (K_B - 1) g_B",
+      "trace": "Delta log w = 2(K_B - 1)",
+      "eigenvalue": "Delta log w = -2 - |grad log w|^2 (from -Delta w = 2w)",
+      "combining": "2(K_B - 1) = -2 - |grad log w|^2 => K_B = -|grad log w|^2 / 2 <= 0"
+    },
+    "S2xS2_check": {
+      "w": "sin x sin y (flat orbit space)",
+      "grad_log_w": "(cot x, cot y)",
+      "K_B_formula": "-(cot^2 x + cot^2 y)/2",
+      "K_B_at_center": "-(0+0)/2 = 0 (flat at center, correct!)",
+      "K_B_at_x=0": "-inf (negative infinity at edge, consistent with degeneration)"
+    },
+    "gauss_bonnet_check": {
+      "S2xS2": "int K_B dA = int_0^pi int_0^pi -(cot^2 x + cot^2 y)/2 dx dy. Both int_0^pi cot^2 x dx diverge (-infinity). But this is the FLAT metric on the square; the orbit-space metric IS flat, and K_B should be 0. The discrepancy means the formula K_B = -|d log w|^2/2 is the base Gauss curvature only IF the base metric is the REDUCED metric, not the original quotient metric."
+    },
+    "resolution": "The base equation Hess(log w) = (K_B - 1) g_B forces log w to be a conformal function. In 2D, Hess f = (Delta f/2) g_B iff f is harmonic in isothermal coordinates PLUS a conformal factor. The formula K_B = -|d log w|^2/2 holds for the QUOTIENT metric g_B induced from the submersion, not for a conformally changed metric. For S^2 x S^2 with g_B = dx^2+dy^2, K_B = 0 (flat), and the formula gives 0 = -(cot^2 x + cot^2 y)/2 which is FALSE. So the base equation is WRONG for flat g_B."
+  },
+  "s2xs2_direct_check": {
+    "horizontal_equation_correct": "Ric_B - Hess(p)/p - Hess(q)/q = lambda g_B",
+    "horizontal_equation_log_form": "Ric_B - Hess(log p) - |d log p|^2 g_B? NO: Hess(log p) = Hess(p)/p - dp tensor dp/p^2",
+    "S2xS2_verification": {
+      "Hess_p_over_p": "diag(-1, 0)",
+      "Hess_q_over_q": "diag(0, -1)",
+      "sum": "diag(-1, -1) = -I",
+      "equation": "0 - (-I) = I = g_B. CHECK with lambda=1."
+    },
+    "log_w_equation": {
+      "Hess_log_w": "diag(-csc^2 x, -csc^2 y)",
+      "NOT_equal_to": "(K_B - 1) g_B = -I",
+      "reason": "Hess(log(pq)) = Hess(p)/p + Hess(q)/q - (dp^2/p^2 + dq^2/q^2)",
+      "missing_terms": "|d log p|^2 + |d log q|^2 tensor parts"
+    },
+    "conclusion": "The earlier formula K_B = -|grad log w|^2/2 was derived from the FALSE equation Hess(log w) = (K_B-1) g_B. The correct base equation is Ric_B - Hess p/p - Hess q/q = lambda g_B, which involves the fiber lengths SEPARATELY, not just their product w. This means the orbit-space curvature K_B is NOT determined by w alone; it depends on p and q separately. In particular K_B CAN be negative on some regions."
+  },
+  "final_conclusion": {
+    "K_B_formula_status": "RETRACTED. K_B is NOT determined by w alone. The earlier K_B >= 3 was wrong.",
+    "base_curvature_truth": "K_B depends on p, q separately via the horizontal Einstein equation Ric_B - Hess(p)/p - Hess(q)/q = lambda g_B. In 2D orbit space this gives 2 K_B - Delta p/p - Delta q/q = 2 lambda.",
+    "volume_gap_status": "The chi-uniform volume gap remains OPEN. The Faber-Krahn base-area bound is established; the unit-slope normalization per rod is correct; but whether all rods can simultaneously have small flux (int Q ds) while maintaining the eigenvalue equation and smooth toric topology is unresolved. The answer depends on the joint system for p, q, g_B and not just w. A decisive test is a numerical FEM computation on a multi-corner (m=6 or m=8) polygon with the full reduced Einstein system."
+  }
+}

@@ -1,0 +1,76 @@
+{
+ "record": "data/perp_area/x00.03_X128_d20.json",
+ "normalization": "profile uses Ric_CH=-6g; raw one-derivative and volume-weighted form integrals are converted explicitly below to gbar=6g, Ric=-g; reported integrals divide actual values by 2*pi^2 unless dimensionless",
+ "form": {
+  "Omega": "(1/2)d(phi sigma_f), equal to the host Kahler form on the collar",
+  "closed_self_dual_harmonic": true,
+  "exceptional_period": 0.0,
+  "bolt_zero": true,
+  "q_equals_norm_squared": "2*u^4"
+ },
+ "x0": 0.03,
+ "X": 128.0,
+ "pinning": {
+  "int_dVhat": 4096.000000007811,
+  "expected_X2_over_4": 4096.0,
+  "residual": 7.810740498825908e-09,
+  "int_q_dV_g": 8192.000000015621,
+  "expected_X2_over_2": 8192.0
+ },
+ "smooth_harmonic_form_on_g": {
+  "profile_scale_int_q_minus_2_sq": 0.0021273360285258345,
+  "profile_scale_int_two_minus_q": -0.006784056309229037,
+  "profile_scale_int_grad_Omega_sq_by_integrated_Weitzenbock": 0.0754119998065093,
+  "ric_minus_one_int_q_minus_2_sq": 0.07658409702693005,
+  "ric_minus_one_int_grad_psibar_sq": 0.45247199883905576,
+  "int_Wplus_minus_negative_Kahler_model_sq_scale_invariant": 0.022405367744409186,
+  "ric_minus_one_tracefree_Ricci_P_over_2pi2": 3.982651454024336,
+  "ric_minus_one_full_Einstein_residual_J_over_2pi2": 3.9826806443720573,
+  "ric_minus_one_scalar_deviation_over_2pi2": 2.919034772119744e-05,
+  "ric_minus_one_branch_P_numerator_over_2pi2": 4.081640918795675,
+  "ric_minus_one_branch_J_numerator_over_2pi2": 4.0816701091433965,
+  "ric_minus_one_branch_P_plus_derivative_over_2pi2": 4.534112917634731,
+  "ric_minus_one_branch_J_plus_derivative_over_2pi2": 4.534142107982452,
+  "weitz_integrand_min_not_pointwise_gradient_density": -1.8744537594707098,
+  "u_min_sample": 0.002042498961963574,
+  "u_max_sample": 1.0000028137938461
+ },
+ "singular_hatted_AK_mechanism": {
+  "scope": "ghat=u^2 g is singular at the bolt; pocket statistics do not invoke a closed smooth AK theorem",
+  "profile_scale_int_torsion_4nu2": 0.04885886548959678,
+  "ric_minus_one_int_torsion_4nu2": 0.2931531929375807,
+  "int_sstar": -98303.97557076789,
+  "int_positive_part_sstar": 0.0,
+  "positive_pocket_volume": 0.0,
+  "positive_pocket_fraction_of_replaced_CH_ball": 0.0,
+  "positive_pocket_fraction_global_coefficient_per_k_over_A": 0.0,
+  "pocket_components": [],
+  "sstar_sample_range": [
+   -1.2009872038557312e+18,
+   -23.50468300412702
+  ]
+ },
+ "cohomology_on_a_closed_CH_host": {
+  "class": "the pullback of the host Kahler class: collar matching and zero exceptional periods",
+  "period_angle_eta": 1.0,
+  "exceptional_area_alpha": 0.0,
+  "scope": "eta=1 is topological for this fixed pullback class on a negative KE host; an unrestricted harmonic/self-dual direction may drift outside this Hodge-index plane",
+  "AKGamma_not_applicable": "Omega has zeros and ghat is singular"
+ },
+ "global_sparse_replication": {
+  "host_normalized_volume_V_over_2pi2": "A/36",
+  "if_disjoint_cells_are_glued": "global pocket fraction = (36*Vpos)*(k/A); in Ric=-g normalization the branch average over the reference host volume is branch_per_cell*(k/A), with actual final-volume correction at finite density",
+  "profile_scale_torsion_per_cell_over_2pi2": 0.04885886548959678,
+  "ric_minus_one_torsion_per_cell_over_2pi2": 0.2931531929375807,
+  "negative_Kahler_branch_P_average_coefficient_per_k_over_A": 4.081640918795675,
+  "negative_Kahler_branch_J_average_coefficient_per_k_over_A": 4.0816701091433965,
+  "negative_Kahler_branch_derivative_average_coefficient_per_k_over_A": 0.45247199883905576
+ },
+ "sample_consistency": {
+  "max_rel_kappa_minus_shat_minus_6nu2": 3.2693356164128544e-14,
+  "s_range": [
+   -24.45770680092899,
+   -23.99968397295176
+  ]
+ }
+}

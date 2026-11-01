@@ -1,0 +1,362 @@
+{
+  "purpose": "Pin down natural SO(2)_A x SO(2)_B characters on kernel planes for product A1 nodes.",
+  "frame_convention": {
+    "N": "axis rotation acts by R(θ) on the local oriented tangent frame",
+    "S": "axis rotation acts by R(-θ) using the oriented frame (x,-y)",
+    "Lambda_plus_kernel_angle": "a+b for local factor angles a,b",
+    "Lambda_minus_kernel_angle": "a-b for local factor angles a,b",
+    "formula": "θ_j = s_A α + eps(chirality) s_B β, eps(+)=+1, eps(-)=-1",
+    "warning": "Changing pole-frame conventions conjugates signs; physical computations must calibrate on r=0 KE row. H^4(ξ)=H^4(-ξ), so projective signs are partly redundant."
+  },
+  "node_weights": {
+    "NN": {
+      "pole_signs": {
+        "s_A": 1,
+        "s_B": 1
+      },
+      "plus_weight": "α+β",
+      "minus_weight": "α-β",
+      "plus_coefficients_alpha_beta": [
+        1,
+        1
+      ],
+      "minus_coefficients_alpha_beta": [
+        1,
+        -1
+      ]
+    },
+    "NS": {
+      "pole_signs": {
+        "s_A": 1,
+        "s_B": -1
+      },
+      "plus_weight": "α-β",
+      "minus_weight": "α+β",
+      "plus_coefficients_alpha_beta": [
+        1,
+        -1
+      ],
+      "minus_coefficients_alpha_beta": [
+        1,
+        1
+      ]
+    },
+    "SN": {
+      "pole_signs": {
+        "s_A": -1,
+        "s_B": 1
+      },
+      "plus_weight": "-α+β",
+      "minus_weight": "-α-β",
+      "plus_coefficients_alpha_beta": [
+        -1,
+        1
+      ],
+      "minus_coefficients_alpha_beta": [
+        -1,
+        -1
+      ]
+    },
+    "SS": {
+      "pole_signs": {
+        "s_A": -1,
+        "s_B": -1
+      },
+      "plus_weight": "-α-β",
+      "minus_weight": "-α+β",
+      "plus_coefficients_alpha_beta": [
+        -1,
+        -1
+      ],
+      "minus_coefficients_alpha_beta": [
+        -1,
+        1
+      ]
+    }
+  },
+  "patterns": {
+    "diagonal_balanced_plus_NN_SS": {
+      "entries": {
+        "NN": {
+          "chirality": "+",
+          "weight": "α+β",
+          "coefficients_alpha_beta": [
+            1,
+            1
+          ]
+        },
+        "SS": {
+          "chirality": "+",
+          "weight": "-α-β",
+          "coefficients_alpha_beta": [
+            -1,
+            -1
+          ]
+        },
+        "NS": {
+          "chirality": "-",
+          "weight": "α+β",
+          "coefficients_alpha_beta": [
+            1,
+            1
+          ]
+        },
+        "SN": {
+          "chirality": "-",
+          "weight": "-α-β",
+          "coefficients_alpha_beta": [
+            -1,
+            -1
+          ]
+        }
+      },
+      "distinct_characters": {
+        "α+β": [
+          "NN",
+          "NS"
+        ],
+        "-α-β": [
+          "SS",
+          "SN"
+        ]
+      },
+      "interpretation": "For diagonal balanced, all nodes have weights ±(α+β), so a common SO(2) character is plausible after projectivizing/sign transport; for adjacent balanced, both α+β and α-β characters occur, so a single isotropic scalar reduction is less automatic."
+    },
+    "adjacent_balanced_plus_NN_NS": {
+      "entries": {
+        "NN": {
+          "chirality": "+",
+          "weight": "α+β",
+          "coefficients_alpha_beta": [
+            1,
+            1
+          ]
+        },
+        "NS": {
+          "chirality": "+",
+          "weight": "α-β",
+          "coefficients_alpha_beta": [
+            1,
+            -1
+          ]
+        },
+        "SN": {
+          "chirality": "-",
+          "weight": "-α-β",
+          "coefficients_alpha_beta": [
+            -1,
+            -1
+          ]
+        },
+        "SS": {
+          "chirality": "-",
+          "weight": "-α+β",
+          "coefficients_alpha_beta": [
+            -1,
+            1
+          ]
+        }
+      },
+      "distinct_characters": {
+        "α+β": [
+          "NN"
+        ],
+        "α-β": [
+          "NS"
+        ],
+        "-α-β": [
+          "SN"
+        ],
+        "-α+β": [
+          "SS"
+        ]
+      },
+      "interpretation": "For diagonal balanced, all nodes have weights ±(α+β), so a common SO(2) character is plausible after projectivizing/sign transport; for adjacent balanced, both α+β and α-β characters occur, so a single isotropic scalar reduction is less automatic."
+    },
+    "all_plus": {
+      "entries": {
+        "NN": {
+          "chirality": "+",
+          "weight": "α+β",
+          "coefficients_alpha_beta": [
+            1,
+            1
+          ]
+        },
+        "NS": {
+          "chirality": "+",
+          "weight": "α-β",
+          "coefficients_alpha_beta": [
+            1,
+            -1
+          ]
+        },
+        "SN": {
+          "chirality": "+",
+          "weight": "-α+β",
+          "coefficients_alpha_beta": [
+            -1,
+            1
+          ]
+        },
+        "SS": {
+          "chirality": "+",
+          "weight": "-α-β",
+          "coefficients_alpha_beta": [
+            -1,
+            -1
+          ]
+        }
+      },
+      "distinct_characters": {
+        "α+β": [
+          "NN"
+        ],
+        "α-β": [
+          "NS"
+        ],
+        "-α+β": [
+          "SN"
+        ],
+        "-α-β": [
+          "SS"
+        ]
+      },
+      "interpretation": "For diagonal balanced, all nodes have weights ±(α+β), so a common SO(2) character is plausible after projectivizing/sign transport; for adjacent balanced, both α+β and α-β characters occur, so a single isotropic scalar reduction is less automatic."
+    }
+  },
+  "diagonal_balanced_pair_character_checks": [
+    {
+      "source": "NN",
+      "receiver": "SS",
+      "source_chirality": "+",
+      "receiver_chirality": "+",
+      "source_weight": "α+β",
+      "receiver_weight": "-α-β",
+      "same_chirality": true,
+      "anisotropic_characters_match_up_to_sign": true,
+      "warning": "Character match is necessary but not sufficient for a nonzero physical Q_ji; full Green/slice/frame computation is required."
+    },
+    {
+      "source": "NN",
+      "receiver": "NS",
+      "source_chirality": "+",
+      "receiver_chirality": "-",
+      "source_weight": "α+β",
+      "receiver_weight": "α+β",
+      "same_chirality": false,
+      "anisotropic_characters_match_up_to_sign": true,
+      "warning": "Character match is necessary but not sufficient for a nonzero physical Q_ji; full Green/slice/frame computation is required."
+    },
+    {
+      "source": "NN",
+      "receiver": "SN",
+      "source_chirality": "+",
+      "receiver_chirality": "-",
+      "source_weight": "α+β",
+      "receiver_weight": "-α-β",
+      "same_chirality": false,
+      "anisotropic_characters_match_up_to_sign": true,
+      "warning": "Character match is necessary but not sufficient for a nonzero physical Q_ji; full Green/slice/frame computation is required."
+    },
+    {
+      "source": "SS",
+      "receiver": "NN",
+      "source_chirality": "+",
+      "receiver_chirality": "+",
+      "source_weight": "-α-β",
+      "receiver_weight": "α+β",
+      "same_chirality": true,
+      "anisotropic_characters_match_up_to_sign": true,
+      "warning": "Character match is necessary but not sufficient for a nonzero physical Q_ji; full Green/slice/frame computation is required."
+    },
+    {
+      "source": "SS",
+      "receiver": "NS",
+      "source_chirality": "+",
+      "receiver_chirality": "-",
+      "source_weight": "-α-β",
+      "receiver_weight": "α+β",
+      "same_chirality": false,
+      "anisotropic_characters_match_up_to_sign": true,
+      "warning": "Character match is necessary but not sufficient for a nonzero physical Q_ji; full Green/slice/frame computation is required."
+    },
+    {
+      "source": "SS",
+      "receiver": "SN",
+      "source_chirality": "+",
+      "receiver_chirality": "-",
+      "source_weight": "-α-β",
+      "receiver_weight": "-α-β",
+      "same_chirality": false,
+      "anisotropic_characters_match_up_to_sign": true,
+      "warning": "Character match is necessary but not sufficient for a nonzero physical Q_ji; full Green/slice/frame computation is required."
+    },
+    {
+      "source": "NS",
+      "receiver": "NN",
+      "source_chirality": "-",
+      "receiver_chirality": "+",
+      "source_weight": "α+β",
+      "receiver_weight": "α+β",
+      "same_chirality": false,
+      "anisotropic_characters_match_up_to_sign": true,
+      "warning": "Character match is necessary but not sufficient for a nonzero physical Q_ji; full Green/slice/frame computation is required."
+    },
+    {
+      "source": "NS",
+      "receiver": "SS",
+      "source_chirality": "-",
+      "receiver_chirality": "+",
+      "source_weight": "α+β",
+      "receiver_weight": "-α-β",
+      "same_chirality": false,
+      "anisotropic_characters_match_up_to_sign": true,
+      "warning": "Character match is necessary but not sufficient for a nonzero physical Q_ji; full Green/slice/frame computation is required."
+    },
+    {
+      "source": "NS",
+      "receiver": "SN",
+      "source_chirality": "-",
+      "receiver_chirality": "-",
+      "source_weight": "α+β",
+      "receiver_weight": "-α-β",
+      "same_chirality": true,
+      "anisotropic_characters_match_up_to_sign": true,
+      "warning": "Character match is necessary but not sufficient for a nonzero physical Q_ji; full Green/slice/frame computation is required."
+    },
+    {
+      "source": "SN",
+      "receiver": "NN",
+      "source_chirality": "-",
+      "receiver_chirality": "+",
+      "source_weight": "-α-β",
+      "receiver_weight": "α+β",
+      "same_chirality": false,
+      "anisotropic_characters_match_up_to_sign": true,
+      "warning": "Character match is necessary but not sufficient for a nonzero physical Q_ji; full Green/slice/frame computation is required."
+    },
+    {
+      "source": "SN",
+      "receiver": "SS",
+      "source_chirality": "-",
+      "receiver_chirality": "+",
+      "source_weight": "-α-β",
+      "receiver_weight": "-α-β",
+      "same_chirality": false,
+      "anisotropic_characters_match_up_to_sign": true,
+      "warning": "Character match is necessary but not sufficient for a nonzero physical Q_ji; full Green/slice/frame computation is required."
+    },
+    {
+      "source": "SN",
+      "receiver": "NS",
+      "source_chirality": "-",
+      "receiver_chirality": "-",
+      "source_weight": "-α-β",
+      "receiver_weight": "α+β",
+      "same_chirality": true,
+      "anisotropic_characters_match_up_to_sign": true,
+      "warning": "Character match is necessary but not sufficient for a nonzero physical Q_ji; full Green/slice/frame computation is required."
+    }
+  ]
+}

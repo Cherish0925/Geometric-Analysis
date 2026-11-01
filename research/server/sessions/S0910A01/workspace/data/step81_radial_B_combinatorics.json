@@ -1,0 +1,451 @@
+{
+  "step": 81,
+  "purpose": "combinatorial decomposition of the candidate radial B matrix for the A+J+L diagonal mixed row",
+  "nodes": [
+    {
+      "node": "NN",
+      "orbit": 1,
+      "chirality": 1,
+      "A": "SS",
+      "L": "SN"
+    },
+    {
+      "node": "NS",
+      "orbit": 2,
+      "chirality": -1,
+      "A": "SN",
+      "L": "SS"
+    },
+    {
+      "node": "SN",
+      "orbit": 2,
+      "chirality": -1,
+      "A": "NS",
+      "L": "NN"
+    },
+    {
+      "node": "SS",
+      "orbit": 1,
+      "chirality": 1,
+      "A": "NN",
+      "L": "NS"
+    }
+  ],
+  "representative_term_reports": {
+    "orbit1_representative_NN": [
+      {
+        "receiver": "NN",
+        "source": "NN",
+        "receiver_orbit": 1,
+        "source_orbit": 1,
+        "receiver_chirality": 1,
+        "source_chirality": 1,
+        "relation": "local_self",
+        "geometry": "local",
+        "same_chirality": true,
+        "candidate_scale_factor": "t1*t1^2",
+        "leading_kernel_block_expectation": "local higher radial self-response after mu1=0"
+      },
+      {
+        "receiver": "NN",
+        "source": "NS",
+        "receiver_orbit": 1,
+        "source_orbit": 2,
+        "receiver_chirality": 1,
+        "source_chirality": -1,
+        "relation": "cross_orbit",
+        "geometry": "adjacent",
+        "same_chirality": false,
+        "candidate_scale_factor": "t1*t2^2",
+        "leading_kernel_block_expectation": "opposite-chirality adjacent Green response: leading cross coefficient class C_adj"
+      },
+      {
+        "receiver": "NN",
+        "source": "SN",
+        "receiver_orbit": 1,
+        "source_orbit": 2,
+        "receiver_chirality": 1,
+        "source_chirality": -1,
+        "relation": "cross_orbit",
+        "geometry": "adjacent",
+        "same_chirality": false,
+        "candidate_scale_factor": "t1*t2^2",
+        "leading_kernel_block_expectation": "opposite-chirality adjacent Green response: leading cross coefficient class C_adj"
+      },
+      {
+        "receiver": "NN",
+        "source": "SS",
+        "receiver_orbit": 1,
+        "source_orbit": 1,
+        "receiver_chirality": 1,
+        "source_chirality": 1,
+        "relation": "same_orbit_companion",
+        "geometry": "diagonal",
+        "same_chirality": true,
+        "candidate_scale_factor": "t1*t1^2",
+        "leading_kernel_block_expectation": "same-chirality regular H4 response: leading chirality-split kernel block expected zero; keep possible higher/gauge contribution"
+      }
+    ],
+    "orbit2_representative_NS": [
+      {
+        "receiver": "NS",
+        "source": "NN",
+        "receiver_orbit": 2,
+        "source_orbit": 1,
+        "receiver_chirality": -1,
+        "source_chirality": 1,
+        "relation": "cross_orbit",
+        "geometry": "adjacent",
+        "same_chirality": false,
+        "candidate_scale_factor": "t2*t1^2",
+        "leading_kernel_block_expectation": "opposite-chirality adjacent Green response: leading cross coefficient class C_adj"
+      },
+      {
+        "receiver": "NS",
+        "source": "NS",
+        "receiver_orbit": 2,
+        "source_orbit": 2,
+        "receiver_chirality": -1,
+        "source_chirality": -1,
+        "relation": "local_self",
+        "geometry": "local",
+        "same_chirality": true,
+        "candidate_scale_factor": "t2*t2^2",
+        "leading_kernel_block_expectation": "local higher radial self-response after mu1=0"
+      },
+      {
+        "receiver": "NS",
+        "source": "SN",
+        "receiver_orbit": 2,
+        "source_orbit": 2,
+        "receiver_chirality": -1,
+        "source_chirality": -1,
+        "relation": "same_orbit_companion",
+        "geometry": "diagonal",
+        "same_chirality": true,
+        "candidate_scale_factor": "t2*t2^2",
+        "leading_kernel_block_expectation": "same-chirality regular H4 response: leading chirality-split kernel block expected zero; keep possible higher/gauge contribution"
+      },
+      {
+        "receiver": "NS",
+        "source": "SS",
+        "receiver_orbit": 2,
+        "source_orbit": 1,
+        "receiver_chirality": -1,
+        "source_chirality": 1,
+        "relation": "cross_orbit",
+        "geometry": "adjacent",
+        "same_chirality": false,
+        "candidate_scale_factor": "t2*t1^2",
+        "leading_kernel_block_expectation": "opposite-chirality adjacent Green response: leading cross coefficient class C_adj"
+      }
+    ]
+  },
+  "class_counts_per_representative": {
+    "orbit1_representative_NN": {
+      "local_self": 1,
+      "cross_orbit_adjacent_oppchir": 2,
+      "same_orbit_diagonal_samechir": 1
+    },
+    "orbit2_representative_NS": {
+      "cross_orbit_adjacent_oppchir": 2,
+      "local_self": 1,
+      "same_orbit_diagonal_samechir": 1
+    }
+  },
+  "decomposition": {
+    "single_representative_normalization": {
+      "F1": "t1*((s+d)*t1^2 + 2*c*t2^2) + higher/log terms",
+      "F2": "t2*(2*c*t1^2 + (s+d)*t2^2) + higher/log terms",
+      "a": "s+d (where d may vanish at the leading chirality-split Green block, but is retained until the full projected expansion proves it)",
+      "b": "2*c (two adjacent opposite-chirality sources for each representative receiver)"
+    },
+    "orbit_sum_normalization": {
+      "F1_sum": "2*t1*((s+d)*t1^2 + 2*c*t2^2) + ...",
+      "F2_sum": "2*t2*(2*c*t1^2 + (s+d)*t2^2) + ...",
+      "note": "Orbit averaging removes the common factor 2 and returns the single-representative form."
+    },
+    "important_correction": "For the opposite-corner/diagonal spin row, cross-orbit mixed-chirality pairs are adjacent, not diagonal. The diagonal geometry appears in same-orbit companion pairs with the same chirality, whose leading kernel-block shift is expected to vanish by the chirality split but must remain tracked for higher/gauge terms."
+  },
+  "symmetry_checks": {
+    "all_L_preserve_classes_after_orbit_exchange": true,
+    "all_A_preserve_classes_within_orbit": true,
+    "examples": [
+      {
+        "receiver_source": [
+          "NN",
+          "NN"
+        ],
+        "term": [
+          1,
+          "local_self",
+          "local",
+          true
+        ],
+        "L_receiver_source": [
+          "SN",
+          "SN"
+        ],
+        "L_term": [
+          2,
+          "local_self",
+          "local",
+          true
+        ],
+        "A_receiver_source": [
+          "SS",
+          "SS"
+        ],
+        "A_term": [
+          1,
+          "local_self",
+          "local",
+          true
+        ],
+        "L_preserves_class_after_orbit_exchange": true,
+        "A_preserves_class_within_orbit": true
+      },
+      {
+        "receiver_source": [
+          "NN",
+          "NS"
+        ],
+        "term": [
+          1,
+          "cross_orbit",
+          "adjacent",
+          false
+        ],
+        "L_receiver_source": [
+          "SN",
+          "SS"
+        ],
+        "L_term": [
+          2,
+          "cross_orbit",
+          "adjacent",
+          false
+        ],
+        "A_receiver_source": [
+          "SS",
+          "SN"
+        ],
+        "A_term": [
+          1,
+          "cross_orbit",
+          "adjacent",
+          false
+        ],
+        "L_preserves_class_after_orbit_exchange": true,
+        "A_preserves_class_within_orbit": true
+      },
+      {
+        "receiver_source": [
+          "NN",
+          "SN"
+        ],
+        "term": [
+          1,
+          "cross_orbit",
+          "adjacent",
+          false
+        ],
+        "L_receiver_source": [
+          "SN",
+          "NN"
+        ],
+        "L_term": [
+          2,
+          "cross_orbit",
+          "adjacent",
+          false
+        ],
+        "A_receiver_source": [
+          "SS",
+          "NS"
+        ],
+        "A_term": [
+          1,
+          "cross_orbit",
+          "adjacent",
+          false
+        ],
+        "L_preserves_class_after_orbit_exchange": true,
+        "A_preserves_class_within_orbit": true
+      },
+      {
+        "receiver_source": [
+          "NN",
+          "SS"
+        ],
+        "term": [
+          1,
+          "same_orbit_companion",
+          "diagonal",
+          true
+        ],
+        "L_receiver_source": [
+          "SN",
+          "NS"
+        ],
+        "L_term": [
+          2,
+          "same_orbit_companion",
+          "diagonal",
+          true
+        ],
+        "A_receiver_source": [
+          "SS",
+          "NN"
+        ],
+        "A_term": [
+          1,
+          "same_orbit_companion",
+          "diagonal",
+          true
+        ],
+        "L_preserves_class_after_orbit_exchange": true,
+        "A_preserves_class_within_orbit": true
+      },
+      {
+        "receiver_source": [
+          "NS",
+          "NN"
+        ],
+        "term": [
+          2,
+          "cross_orbit",
+          "adjacent",
+          false
+        ],
+        "L_receiver_source": [
+          "SS",
+          "SN"
+        ],
+        "L_term": [
+          1,
+          "cross_orbit",
+          "adjacent",
+          false
+        ],
+        "A_receiver_source": [
+          "SN",
+          "SS"
+        ],
+        "A_term": [
+          2,
+          "cross_orbit",
+          "adjacent",
+          false
+        ],
+        "L_preserves_class_after_orbit_exchange": true,
+        "A_preserves_class_within_orbit": true
+      },
+      {
+        "receiver_source": [
+          "NS",
+          "NS"
+        ],
+        "term": [
+          2,
+          "local_self",
+          "local",
+          true
+        ],
+        "L_receiver_source": [
+          "SS",
+          "SS"
+        ],
+        "L_term": [
+          1,
+          "local_self",
+          "local",
+          true
+        ],
+        "A_receiver_source": [
+          "SN",
+          "SN"
+        ],
+        "A_term": [
+          2,
+          "local_self",
+          "local",
+          true
+        ],
+        "L_preserves_class_after_orbit_exchange": true,
+        "A_preserves_class_within_orbit": true
+      },
+      {
+        "receiver_source": [
+          "NS",
+          "SN"
+        ],
+        "term": [
+          2,
+          "same_orbit_companion",
+          "diagonal",
+          true
+        ],
+        "L_receiver_source": [
+          "SS",
+          "NN"
+        ],
+        "L_term": [
+          1,
+          "same_orbit_companion",
+          "diagonal",
+          true
+        ],
+        "A_receiver_source": [
+          "SN",
+          "NS"
+        ],
+        "A_term": [
+          2,
+          "same_orbit_companion",
+          "diagonal",
+          true
+        ],
+        "L_preserves_class_after_orbit_exchange": true,
+        "A_preserves_class_within_orbit": true
+      },
+      {
+        "receiver_source": [
+          "NS",
+          "SS"
+        ],
+        "term": [
+          2,
+          "cross_orbit",
+          "adjacent",
+          false
+        ],
+        "L_receiver_source": [
+          "SS",
+          "NS"
+        ],
+        "L_term": [
+          1,
+          "cross_orbit",
+          "adjacent",
+          false
+        ],
+        "A_receiver_source": [
+          "SN",
+          "NN"
+        ],
+        "A_term": [
+          2,
+          "cross_orbit",
+          "adjacent",
+          false
+        ],
+        "L_preserves_class_after_orbit_exchange": true,
+        "A_preserves_class_within_orbit": true
+      }
+    ]
+  },
+  "candidate_B_form": "[[a,b],[b,a]] with a=s+d, b=2c in single-representative/averaged orbit normalization",
+  "positive_kernel_condition": "a+b=0; if a=-b!=0 then t1/t2 -> 1; if a=b=0 compute next layer",
+  "status": "coefficient architecture only; analytic values s,d,c require the full projected expansion and Green/self-response computation"
+}

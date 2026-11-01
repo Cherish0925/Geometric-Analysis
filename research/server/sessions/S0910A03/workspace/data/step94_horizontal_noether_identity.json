@@ -1,0 +1,16 @@
+{
+  "horizontal_tensor": "H=Ric_B-Hess(sigma)-1/2 dsigma^2-1/2 U*h-Q gamma+3 gamma",
+  "area_residual": "T=L sigma-6-Q",
+  "orbit_residual": "Z=tau_sigma(U)+grad_U Q",
+  "charge_work_one_form": "m_q=D_q Q[dq]=e^{-3sigma}<M^{-1}q,dq>",
+  "identity": "2 div_sigma H-d tr(H)=-dT-T dsigma-<Z,dU>-m_q",
+  "component_final_expression": "-T*sigma_j/2 - ZU/2 - dT/2 - dqQ/2 + dtrH/2",
+  "component_expected_expression": "-T*sigma_j/2 - ZU/2 - dT/2 - dqQ/2 + dtrH/2",
+  "tensor_coefficient_residual": "0",
+  "radial_div_sigma_H": "Cprime+(u+h)C",
+  "radial_lhs_2div_minus_dtrace": "2*C*h + 2*C*u + Cprime",
+  "radial_constraint_solved": "-2*C*h - 2*C*u - wb",
+  "radial_expected": "-2(u+h)C-wb",
+  "radial_residual": "0",
+  "interpretation": "The wb moment is the radial form of the invariant charge-work one-form D_qQ[dq]. The horizontal constraint is coupled to area, orbit, and charge residuals by Bianchi; it is not an independent freely tunable endpoint condition."
+}

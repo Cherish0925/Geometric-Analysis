@@ -1,0 +1,57 @@
+{
+  "purpose": "Logical audit of Step44 spin claim; not a full spin computation.",
+  "boundary_spin_fact": "RP^3 has two spin structures; a spin filling extends only selected boundary data. Gluing spin pieces requires matching spin structures on each boundary component.",
+  "Z2_resolution_rows": [
+    {
+      "r_reversed": 0,
+      "b_plus": 1,
+      "b_minus": 5,
+      "signature": -4,
+      "spin_allowed_by_Rokhlin": false,
+      "even_unimodular_lattice_possible": false,
+      "balanced_stress_rational_data": false,
+      "consequence": "cannot all be spin; naive all-pieces-spin argument fails"
+    },
+    {
+      "r_reversed": 1,
+      "b_plus": 2,
+      "b_minus": 4,
+      "signature": -2,
+      "spin_allowed_by_Rokhlin": false,
+      "even_unimodular_lattice_possible": false,
+      "balanced_stress_rational_data": false,
+      "consequence": "cannot all be spin; naive all-pieces-spin argument fails"
+    },
+    {
+      "r_reversed": 2,
+      "b_plus": 3,
+      "b_minus": 3,
+      "signature": 0,
+      "spin_allowed_by_Rokhlin": true,
+      "even_unimodular_lattice_possible": true,
+      "balanced_stress_rational_data": true,
+      "consequence": "parity still must be proved"
+    },
+    {
+      "r_reversed": 3,
+      "b_plus": 4,
+      "b_minus": 2,
+      "signature": 2,
+      "spin_allowed_by_Rokhlin": false,
+      "even_unimodular_lattice_possible": false,
+      "balanced_stress_rational_data": false,
+      "consequence": "cannot all be spin; naive all-pieces-spin argument fails"
+    },
+    {
+      "r_reversed": 4,
+      "b_plus": 5,
+      "b_minus": 1,
+      "signature": 4,
+      "spin_allowed_by_Rokhlin": false,
+      "even_unimodular_lattice_possible": false,
+      "balanced_stress_rational_data": false,
+      "consequence": "cannot all be spin; naive all-pieces-spin argument fails"
+    }
+  ],
+  "main_conclusion": "The assertion that the balanced r=2 resolution has form 3H requires an explicit parity/spin proof. Step44's argument from local liftability of -I4 and spinness of EH would incorrectly make all r spin, impossible by Rokhlin for nonzero-signature rows. Current rigorous topology: pi1=0 and b+=b-=3 for r=2; form is 3H only if evenness is separately established."
+}

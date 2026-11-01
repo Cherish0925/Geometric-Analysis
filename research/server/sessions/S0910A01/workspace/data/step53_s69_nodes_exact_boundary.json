@@ -1,0 +1,170 @@
+{
+  "exact_cyclotomic_Q_zeta_60": {
+    "term_H0_2K1_tensor_K2_exact": "1",
+    "term_H0_K1_tensor_2K2_exact": "1",
+    "total_cyclotomic_coeff_vector": [
+      "2",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "total_d_exact": "2"
+  },
+  "float_step52_recheck": {
+    "term12": 1,
+    "term21": 1,
+    "total": 2
+  },
+  "interpretation": {
+    "boundary_map": "beta: direct sum of four A1 local smoothing lines -> H^2(X,T_X^0)",
+    "dimension_implication": "rank(beta) <= 2, so dim ker(beta) >= 2",
+    "full_support_not_decided": "A vector smoothing all four nodes exists at first order iff ker(beta) is not contained in the union of the four coordinate hyperplanes; d=2 and node count 4 do not decide this.",
+    "next_object": "Compute the actual boundary map beta, equivalently the dual residue/evaluation map from H^0(Y,Omega^1_Y tensor K_Y)^G to the four local smoothing-dual lines.",
+    "symmetry_caution": "The quotient deck group is not an automorphism group of X after taking the diagonal quotient. In the displayed branch presentation all four nodes lie over the order-2 branch value of C1/G and split into two pairs over the two order-6 branch values of C2/G. Because C1/G has branch values of distinct orders (2,4,5) and the strict inner normalizer probe is trivial, this presentation alone does not establish transitivity on all four nodes."
+  },
+  "nodes": {
+    "branch_category_partition": {
+      "by_C1_C2_branch_pair": {
+        "C1#1(order2)-C2#2(order6)": 2,
+        "C1#1(order2)-C2#3(order6)": 2
+      },
+      "by_C1_branch_order": {
+        "2": 4
+      }
+    },
+    "candidate_pair_count_before_G_quotient": 240,
+    "node_orbit_count": 4,
+    "node_orbits": [
+      {
+        "C1_branch_indices": [
+          1
+        ],
+        "C1_branch_orders": [
+          2
+        ],
+        "C2_branch_indices": [
+          2
+        ],
+        "C2_branch_orders": [
+          6
+        ],
+        "node_id": 1,
+        "orbit_size_in_prequotient_candidate_pairs": 60,
+        "representative_C1_coset": [
+          "(12)",
+          "(125)"
+        ],
+        "representative_C2_coset": [
+          "(12)(345)",
+          "(12534)",
+          "(132)(45)",
+          "(13254)",
+          "(14)(25)",
+          "(1452)"
+        ],
+        "representative_common_involution": "(15)"
+      },
+      {
+        "C1_branch_indices": [
+          1
+        ],
+        "C1_branch_orders": [
+          2
+        ],
+        "C2_branch_indices": [
+          2
+        ],
+        "C2_branch_orders": [
+          6
+        ],
+        "node_id": 2,
+        "orbit_size_in_prequotient_candidate_pairs": 60,
+        "representative_C1_coset": [
+          "(12)",
+          "(125)"
+        ],
+        "representative_C2_coset": [
+          "(12)(45)",
+          "(1254)",
+          "(134)(25)",
+          "(13452)",
+          "(14)(253)",
+          "(14532)"
+        ],
+        "representative_common_involution": "(15)"
+      },
+      {
+        "C1_branch_indices": [
+          1
+        ],
+        "C1_branch_orders": [
+          2
+        ],
+        "C2_branch_indices": [
+          3
+        ],
+        "C2_branch_orders": [
+          6
+        ],
+        "node_id": 3,
+        "orbit_size_in_prequotient_candidate_pairs": 60,
+        "representative_C1_coset": [
+          "(12)",
+          "(125)"
+        ],
+        "representative_C2_coset": [
+          "(15)(23)",
+          "(15)(24)",
+          "(15)(34)",
+          "(23)",
+          "(24)",
+          "(34)"
+        ],
+        "representative_common_involution": "(15)"
+      },
+      {
+        "C1_branch_indices": [
+          1
+        ],
+        "C1_branch_orders": [
+          2
+        ],
+        "C2_branch_indices": [
+          3
+        ],
+        "C2_branch_orders": [
+          6
+        ],
+        "node_id": 4,
+        "orbit_size_in_prequotient_candidate_pairs": 60,
+        "representative_C1_coset": [
+          "(12)",
+          "(125)"
+        ],
+        "representative_C2_coset": [
+          "(15)",
+          "(15)(234)",
+          "(15)(243)",
+          "(234)",
+          "(243)",
+          "id"
+        ],
+        "representative_common_involution": "(15)"
+      }
+    ]
+  },
+  "row": "6.9 K2=4 G=S5",
+  "source_lines": "BCGP object.md lines 1149-1157 for \u00a76.9; lines 169-171 and 347 for node count 8-K^2"
+}

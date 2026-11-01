@@ -1,0 +1,687 @@
+{
+  "step": 99,
+  "purpose": "exact Step96 coefficient generation, support checks, partial-jet contractions, and low scalar degree fixed-pair cancellation",
+  "exact_vs_step96_float_max_diff": {
+    "Rplus": 0.0,
+    "Rminus": 0.0,
+    "Splus": 0.0,
+    "Sminus": 0.0
+  },
+  "support_nonzero_counts": {
+    "AA": {
+      "same_factor": {
+        "Rplus": 0,
+        "Rminus": 0,
+        "Splus": 16,
+        "Sminus": 16
+      },
+      "other_factor": {
+        "Rplus": 16,
+        "Rminus": 16,
+        "Splus": 16,
+        "Sminus": 16
+      },
+      "mixed_derivative": {
+        "Rplus": 0,
+        "Rminus": 0,
+        "Splus": 0,
+        "Sminus": 0
+      }
+    },
+    "BB": {
+      "same_factor": {
+        "Rplus": 0,
+        "Rminus": 0,
+        "Splus": 16,
+        "Sminus": 16
+      },
+      "other_factor": {
+        "Rplus": 16,
+        "Rminus": 16,
+        "Splus": 16,
+        "Sminus": 16
+      },
+      "mixed_derivative": {
+        "Rplus": 0,
+        "Rminus": 0,
+        "Splus": 0,
+        "Sminus": 0
+      }
+    }
+  },
+  "actual_partial_jet_nonzero_contractions": [],
+  "degree_cases": [
+    {
+      "sector": "AA",
+      "pair": "NS",
+      "lt": 2,
+      "ls": 0,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "NS",
+      "lt": 2,
+      "ls": 0,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "AA",
+      "pair": "SN",
+      "lt": 2,
+      "ls": 0,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "SN",
+      "lt": 2,
+      "ls": 0,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "AA",
+      "pair": "SS",
+      "lt": 2,
+      "ls": 0,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "SS",
+      "lt": 2,
+      "ls": 0,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "AA",
+      "pair": "NS",
+      "lt": 2,
+      "ls": 1,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "NS",
+      "lt": 2,
+      "ls": 1,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "AA",
+      "pair": "SN",
+      "lt": 2,
+      "ls": 1,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "SN",
+      "lt": 2,
+      "ls": 1,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "AA",
+      "pair": "SS",
+      "lt": 2,
+      "ls": 1,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "SS",
+      "lt": 2,
+      "ls": 1,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "AA",
+      "pair": "NS",
+      "lt": 2,
+      "ls": 2,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 8,
+        "-+": 8,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "NS",
+      "lt": 2,
+      "ls": 2,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "AA",
+      "pair": "SN",
+      "lt": 2,
+      "ls": 2,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "SN",
+      "lt": 2,
+      "ls": 2,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 8,
+        "-+": 8,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "AA",
+      "pair": "SS",
+      "lt": 2,
+      "ls": 2,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "SS",
+      "lt": 2,
+      "ls": 2,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "AA",
+      "pair": "NS",
+      "lt": 2,
+      "ls": 3,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 8,
+        "-+": 8,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "NS",
+      "lt": 2,
+      "ls": 3,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "AA",
+      "pair": "SN",
+      "lt": 2,
+      "ls": 3,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "SN",
+      "lt": 2,
+      "ls": 3,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 8,
+        "-+": 8,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "AA",
+      "pair": "SS",
+      "lt": 2,
+      "ls": 3,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "SS",
+      "lt": 2,
+      "ls": 3,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "AA",
+      "pair": "NS",
+      "lt": 3,
+      "ls": 1,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "NS",
+      "lt": 3,
+      "ls": 1,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "AA",
+      "pair": "SN",
+      "lt": 3,
+      "ls": 1,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "SN",
+      "lt": 3,
+      "ls": 1,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "AA",
+      "pair": "SS",
+      "lt": 3,
+      "ls": 1,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "SS",
+      "lt": 3,
+      "ls": 1,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "AA",
+      "pair": "NS",
+      "lt": 3,
+      "ls": 2,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 8,
+        "-+": 8,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "NS",
+      "lt": 3,
+      "ls": 2,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "AA",
+      "pair": "SN",
+      "lt": 3,
+      "ls": 2,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "SN",
+      "lt": 3,
+      "ls": 2,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 8,
+        "-+": 8,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "AA",
+      "pair": "SS",
+      "lt": 3,
+      "ls": 2,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "SS",
+      "lt": 3,
+      "ls": 2,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "AA",
+      "pair": "NS",
+      "lt": 4,
+      "ls": 5,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 8,
+        "-+": 8,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "NS",
+      "lt": 4,
+      "ls": 5,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "AA",
+      "pair": "SN",
+      "lt": 4,
+      "ls": 5,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "SN",
+      "lt": 4,
+      "ls": 5,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 8,
+        "-+": 8,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "AA",
+      "pair": "SS",
+      "lt": 4,
+      "ls": 5,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "SS",
+      "lt": 4,
+      "ls": 5,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "AA",
+      "pair": "NS",
+      "lt": 8,
+      "ls": 7,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 8,
+        "-+": 8,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "NS",
+      "lt": 8,
+      "ls": 7,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "AA",
+      "pair": "SN",
+      "lt": 8,
+      "ls": 7,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "SN",
+      "lt": 8,
+      "ls": 7,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 8,
+        "-+": 8,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "AA",
+      "pair": "SS",
+      "lt": 8,
+      "ls": 7,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    },
+    {
+      "sector": "BB",
+      "pair": "SS",
+      "lt": 8,
+      "ls": 7,
+      "nonzero_counts": {
+        "++": 0,
+        "+-": 0,
+        "-+": 0,
+        "--": 0
+      },
+      "same_zero_exact": true
+    }
+  ],
+  "degree_failure_count": 0,
+  "degree_failures": [],
+  "interpretation": [
+    "Step96 float coefficient arrays agree exactly with direct exact-rational construction from the form definitions.",
+    "Arbitrary same-factor support is a source risk (nonzero S) but actual electric/full-Lie magnetic m=2 partial jets contract to zero exactly with the exact coefficients.",
+    "Mixed derivative support is exactly invisible to both source and receiver arrays in AA/BB embeddings.",
+    "For tested fixed degree pairs, including ell_s=1 m0-only slices and ell_s=0 constant slices treated as zero in the T*Hess(f) part plus partial-jet zero, same-chirality ++/-- blocks vanish in the implemented finite-dimensional model."
+  ]
+}

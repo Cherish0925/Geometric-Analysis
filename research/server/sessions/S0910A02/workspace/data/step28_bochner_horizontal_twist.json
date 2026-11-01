@@ -1,0 +1,20 @@
+{
+  "title": "Step 28 Bochner bounds horizontal twist",
+  "scope": "Observation that Bochner also constrains the horizontal A-tensor",
+  "circle_bundle_decomposition": {
+    "formula": "|\u2207Z|\u00b2 = (b\u00b2/2)|Z|\u00b2 + (base+radial terms) + (|\u03c6|\u00b2/4)|Z|\u00b2",
+    "where": "b = fiber bracket, \u03c6 = connection curvature (horizontal twist)",
+    "bochner_gives": "\u222b(b\u00b2/2)|Z|\u00b2 + \u222b(|\u03c6|\u00b2/4)|Z|\u00b2 \u2264 \u222b|\u2207Z|\u00b2 = \u222bRic(Z,Z) \u2264 (\u039b+\u03b4)\u222b|Z|\u00b2",
+    "fiber_bracket_bound": "\u27e8b\u00b2\u27e9_{|Z|\u00b2} \u2264 2(\u039b+\u03b4)",
+    "horizontal_twist_bound": "\u27e8|\u03c6|\u00b2\u27e9_{|Z|\u00b2} \u2264 4(\u039b+\u03b4)",
+    "combined": "Both bounds from the SAME Bochner identity"
+  },
+  "induction_consequence": {
+    "quotient_Ricci_upper": "Ric_B(X,X) = Ric_M(X,X) + 2|A_X U|\u00b2 + T-terms. From two-sided pinching and \u27e8|\u03c6|\u00b2\u27e9 \u2264 4(\u039b+\u03b4): \u27e8Ric_B(X,X)\u27e9_{|Z|\u00b2} \u2264 (\u039b+\u03b4) + 2(\u039b+\u03b4) = 3(\u039b+\u03b4).",
+    "remaining_gap": "This is a WEIGHTED AVERAGE bound, not a POINTWISE bound. The induction needs pointwise Ricci control on the quotient. Averaging only gives quotient Ricci \u2264 3(\u039b+\u03b4) in the weighted L\u00b2 sense. Passing to pointwise requires either Moser iteration on the quotient, or a different mechanism.",
+    "partial_progress": "The observation is that the horizontal twist IS controlled by Bochner (not a separate ingredient), just at the L\u00b2 level. The gap is average-to-pointwise, not a missing bound entirely."
+  },
+  "H3_model_check": {
+    "note": "In the H3 cohomogeneity-one model, the base is 1-dimensional, so there are no horizontal 2-forms and |A|=0. The entire |\u2207Z|\u00b2 comes from fiber bracket (b\u00b2/2) and base variation (2k\u2083\u00b2). The horizontal twist bound is relevant for circle bundles over higher-dimensional bases, not for the codimension-one model."
+  }
+}

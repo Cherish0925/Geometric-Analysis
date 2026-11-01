@@ -1,0 +1,510 @@
+{
+  "target_manifold": "#_3(S^2 x S^2) spin balanced row (homeomorphism type; diffeotype of glued row not certified)",
+  "correct_topology": {
+    "k": 3,
+    "chi": 8,
+    "tau": 0,
+    "b_plus": 3,
+    "b_minus": 3
+  },
+  "corrected_energy_ledger": {
+    "CGB_identity": "8*pi^2*chi = int(|W|^2 + s^2/24 - |E|^2/2)",
+    "collapse_Ric_approx_g_Vol_to_0": "bounded-curvature regions contribute o(1); total concentration quantum equals chi",
+    "total_int_abs_W_sq": "64*pi^2",
+    "total_quantum_int_abs_W_sq_over_8pi2": "8",
+    "signature_tau_zero_chiral_each": "int|W+|^2 = int|W-|^2 = 32*pi^2 asymptotically, i.e. 4 units of 8*pi^2 each",
+    "strategist_correction": "24*pi^2 was wrong; chi(#_3(S^2xS^2))=8, so 8*pi^2*chi=64*pi^2"
+  },
+  "source_checked_quantum_formulas": {
+    "ALE": "Q_ALE = chi(ALE) - 1/|Gamma|",
+    "ALF": "Q_ALF = chi(ALF) (boundary term tends to zero)",
+    "source_anchor": "Knowledge/objects/papers/Curvature-cones-and-characteristic-numbers--8d08033cf0c7--47e3a363f7a4/object.md lines 400-417"
+  },
+  "integrality_obstruction_ALE_part": "Because ALF quanta are integers, any ALE part in a fixed Weyl half must have integer total quantum to be completed to the chiral target 4.",
+  "ADE_types_with_Q_le_8": [
+    {
+      "name": "A1",
+      "family": "A",
+      "Gamma_order": 2,
+      "rank": 1,
+      "chi": 2,
+      "Q": "3/2",
+      "Q_float": 1.5
+    },
+    {
+      "name": "A2",
+      "family": "A",
+      "Gamma_order": 3,
+      "rank": 2,
+      "chi": 3,
+      "Q": "8/3",
+      "Q_float": 2.6666666666666665
+    },
+    {
+      "name": "A3",
+      "family": "A",
+      "Gamma_order": 4,
+      "rank": 3,
+      "chi": 4,
+      "Q": "15/4",
+      "Q_float": 3.75
+    },
+    {
+      "name": "A4",
+      "family": "A",
+      "Gamma_order": 5,
+      "rank": 4,
+      "chi": 5,
+      "Q": "24/5",
+      "Q_float": 4.8
+    },
+    {
+      "name": "D4",
+      "family": "D",
+      "Gamma_order": 8,
+      "rank": 4,
+      "chi": 5,
+      "Q": "39/8",
+      "Q_float": 4.875
+    },
+    {
+      "name": "A5",
+      "family": "A",
+      "Gamma_order": 6,
+      "rank": 5,
+      "chi": 6,
+      "Q": "35/6",
+      "Q_float": 5.833333333333333
+    },
+    {
+      "name": "D5",
+      "family": "D",
+      "Gamma_order": 12,
+      "rank": 5,
+      "chi": 6,
+      "Q": "71/12",
+      "Q_float": 5.916666666666667
+    },
+    {
+      "name": "A6",
+      "family": "A",
+      "Gamma_order": 7,
+      "rank": 6,
+      "chi": 7,
+      "Q": "48/7",
+      "Q_float": 6.857142857142857
+    },
+    {
+      "name": "D6",
+      "family": "D",
+      "Gamma_order": 16,
+      "rank": 6,
+      "chi": 7,
+      "Q": "111/16",
+      "Q_float": 6.9375
+    },
+    {
+      "name": "E6",
+      "family": "E",
+      "Gamma_order": 24,
+      "rank": 6,
+      "chi": 7,
+      "Q": "167/24",
+      "Q_float": 6.958333333333333
+    },
+    {
+      "name": "A7",
+      "family": "A",
+      "Gamma_order": 8,
+      "rank": 7,
+      "chi": 8,
+      "Q": "63/8",
+      "Q_float": 7.875
+    },
+    {
+      "name": "D7",
+      "family": "D",
+      "Gamma_order": 20,
+      "rank": 7,
+      "chi": 8,
+      "Q": "159/20",
+      "Q_float": 7.95
+    },
+    {
+      "name": "E7",
+      "family": "E",
+      "Gamma_order": 48,
+      "rank": 7,
+      "chi": 8,
+      "Q": "383/48",
+      "Q_float": 7.979166666666667
+    }
+  ],
+  "exact_ADE_multiset_solutions_total_Q_8": [
+    {
+      "combo": [
+        "A2",
+        "A2",
+        "A2"
+      ],
+      "length": 3,
+      "chi_sum": 9,
+      "reciprocal_order_sum": "1",
+      "integrality_check": true
+    }
+  ],
+  "number_exact_ADE_total_solutions": 1,
+  "exact_ADE_multiset_solutions_one_chiral_half_Q_4": [],
+  "number_exact_ADE_chiral_half_solutions": 0,
+  "allowed_ADE_ALE_contributions_to_one_chiral_half_when_ALF_integer_quanta_allowed": [
+    {
+      "ALE_combo": [],
+      "ALE_Q": "0",
+      "ALF_integer_needed": "4"
+    },
+    {
+      "ALE_combo": [
+        "A1",
+        "A1"
+      ],
+      "ALE_Q": "3",
+      "ALF_integer_needed": "1",
+      "reciprocal_order_sum": "1"
+    }
+  ],
+  "nearest_ADE_multiset_sums_to_total_8": [
+    {
+      "combo": [
+        "A2",
+        "A2",
+        "A2"
+      ],
+      "Qsum": "8",
+      "difference_from_target": "0",
+      "chi_sum": 9,
+      "reciprocal_order_sum": "1"
+    },
+    {
+      "combo": [
+        "E7"
+      ],
+      "Qsum": "383/48",
+      "difference_from_target": "-1/48",
+      "chi_sum": 8,
+      "reciprocal_order_sum": "1/48"
+    },
+    {
+      "combo": [
+        "D7"
+      ],
+      "Qsum": "159/20",
+      "difference_from_target": "-1/20",
+      "chi_sum": 8,
+      "reciprocal_order_sum": "1/20"
+    },
+    {
+      "combo": [
+        "A1",
+        "A2",
+        "A3"
+      ],
+      "Qsum": "95/12",
+      "difference_from_target": "-1/12",
+      "chi_sum": 9,
+      "reciprocal_order_sum": "13/12"
+    },
+    {
+      "combo": [
+        "A1",
+        "A1",
+        "D4"
+      ],
+      "Qsum": "63/8",
+      "difference_from_target": "-1/8",
+      "chi_sum": 9,
+      "reciprocal_order_sum": "9/8"
+    },
+    {
+      "combo": [
+        "A7"
+      ],
+      "Qsum": "63/8",
+      "difference_from_target": "-1/8",
+      "chi_sum": 8,
+      "reciprocal_order_sum": "1/8"
+    },
+    {
+      "combo": [
+        "A1",
+        "A1",
+        "A4"
+      ],
+      "Qsum": "39/5",
+      "difference_from_target": "-1/5",
+      "chi_sum": 9,
+      "reciprocal_order_sum": "6/5"
+    },
+    {
+      "combo": [
+        "A1",
+        "A1",
+        "A1",
+        "A3"
+      ],
+      "Qsum": "33/4",
+      "difference_from_target": "1/4",
+      "chi_sum": 10,
+      "reciprocal_order_sum": "7/4"
+    },
+    {
+      "combo": [
+        "A1",
+        "A1",
+        "A2",
+        "A2"
+      ],
+      "Qsum": "25/3",
+      "difference_from_target": "1/3",
+      "chi_sum": 10,
+      "reciprocal_order_sum": "5/3"
+    },
+    {
+      "combo": [
+        "A1",
+        "A6"
+      ],
+      "Qsum": "117/14",
+      "difference_from_target": "5/14",
+      "chi_sum": 9,
+      "reciprocal_order_sum": "9/14"
+    },
+    {
+      "combo": [
+        "A1",
+        "D6"
+      ],
+      "Qsum": "135/16",
+      "difference_from_target": "7/16",
+      "chi_sum": 9,
+      "reciprocal_order_sum": "9/16"
+    },
+    {
+      "combo": [
+        "A2",
+        "D4"
+      ],
+      "Qsum": "181/24",
+      "difference_from_target": "-11/24",
+      "chi_sum": 8,
+      "reciprocal_order_sum": "11/24"
+    },
+    {
+      "combo": [
+        "A1",
+        "E6"
+      ],
+      "Qsum": "203/24",
+      "difference_from_target": "11/24",
+      "chi_sum": 9,
+      "reciprocal_order_sum": "13/24"
+    },
+    {
+      "combo": [
+        "A1",
+        "A1",
+        "A1",
+        "A1",
+        "A1"
+      ],
+      "Qsum": "15/2",
+      "difference_from_target": "-1/2",
+      "chi_sum": 10,
+      "reciprocal_order_sum": "5/2"
+    },
+    {
+      "combo": [
+        "A3",
+        "A3"
+      ],
+      "Qsum": "15/2",
+      "difference_from_target": "-1/2",
+      "chi_sum": 8,
+      "reciprocal_order_sum": "1/2"
+    },
+    {
+      "combo": [
+        "A2",
+        "A5"
+      ],
+      "Qsum": "17/2",
+      "difference_from_target": "1/2",
+      "chi_sum": 9,
+      "reciprocal_order_sum": "1/2"
+    },
+    {
+      "combo": [
+        "A2",
+        "A4"
+      ],
+      "Qsum": "112/15",
+      "difference_from_target": "-8/15",
+      "chi_sum": 8,
+      "reciprocal_order_sum": "8/15"
+    },
+    {
+      "combo": [
+        "A3",
+        "A4"
+      ],
+      "Qsum": "171/20",
+      "difference_from_target": "11/20",
+      "chi_sum": 9,
+      "reciprocal_order_sum": "9/20"
+    },
+    {
+      "combo": [
+        "A1",
+        "D5"
+      ],
+      "Qsum": "89/12",
+      "difference_from_target": "-7/12",
+      "chi_sum": 8,
+      "reciprocal_order_sum": "7/12"
+    },
+    {
+      "combo": [
+        "A2",
+        "D5"
+      ],
+      "Qsum": "103/12",
+      "difference_from_target": "7/12",
+      "chi_sum": 9,
+      "reciprocal_order_sum": "5/12"
+    }
+  ],
+  "nearest_ADE_multiset_sums_to_chiral_4": [
+    {
+      "combo": [
+        "A1",
+        "A2"
+      ],
+      "Qsum": "25/6",
+      "difference_from_target": "1/6",
+      "chi_sum": 5,
+      "reciprocal_order_sum": "5/6"
+    },
+    {
+      "combo": [
+        "A3"
+      ],
+      "Qsum": "15/4",
+      "difference_from_target": "-1/4",
+      "chi_sum": 4,
+      "reciprocal_order_sum": "1/4"
+    },
+    {
+      "combo": [
+        "A1",
+        "A1",
+        "A1"
+      ],
+      "Qsum": "9/2",
+      "difference_from_target": "1/2",
+      "chi_sum": 6,
+      "reciprocal_order_sum": "3/2"
+    },
+    {
+      "combo": [
+        "A4"
+      ],
+      "Qsum": "24/5",
+      "difference_from_target": "4/5",
+      "chi_sum": 5,
+      "reciprocal_order_sum": "1/5"
+    },
+    {
+      "combo": [
+        "D4"
+      ],
+      "Qsum": "39/8",
+      "difference_from_target": "7/8",
+      "chi_sum": 5,
+      "reciprocal_order_sum": "1/8"
+    },
+    {
+      "combo": [
+        "A1",
+        "A1"
+      ],
+      "Qsum": "3",
+      "difference_from_target": "-1",
+      "chi_sum": 4,
+      "reciprocal_order_sum": "1"
+    },
+    {
+      "combo": [
+        "A1",
+        "A3"
+      ],
+      "Qsum": "21/4",
+      "difference_from_target": "5/4",
+      "chi_sum": 6,
+      "reciprocal_order_sum": "3/4"
+    },
+    {
+      "combo": [
+        "A2"
+      ],
+      "Qsum": "8/3",
+      "difference_from_target": "-4/3",
+      "chi_sum": 3,
+      "reciprocal_order_sum": "1/3"
+    },
+    {
+      "combo": [
+        "A2",
+        "A2"
+      ],
+      "Qsum": "16/3",
+      "difference_from_target": "4/3",
+      "chi_sum": 6,
+      "reciprocal_order_sum": "2/3"
+    },
+    {
+      "combo": [
+        "A1",
+        "A1",
+        "A2"
+      ],
+      "Qsum": "17/3",
+      "difference_from_target": "5/3",
+      "chi_sum": 7,
+      "reciprocal_order_sum": "4/3"
+    },
+    {
+      "combo": [
+        "A5"
+      ],
+      "Qsum": "35/6",
+      "difference_from_target": "11/6",
+      "chi_sum": 6,
+      "reciprocal_order_sum": "1/6"
+    },
+    {
+      "combo": [
+        "D5"
+      ],
+      "Qsum": "71/12",
+      "difference_from_target": "23/12",
+      "chi_sum": 6,
+      "reciprocal_order_sum": "1/12"
+    }
+  ],
+  "interpretation": [
+    "The corrected total energy ledger is 64*pi^2, not 24*pi^2.",
+    "The all-ADE total quantum has exactly one small solution: three A2 bubbles, since 3*(3-1/3)=8.",
+    "But tau=0 imposes a chiral split of 4 units in each Weyl half. No all-ADE multiset has quantum 4; in particular 3*A2 cannot be split into two chiral groups of total 4.",
+    "Allowing ALF integer quanta, the only ADE ALE contributions to a single chiral half that can be completed to 4 are none, or two A1 bubbles plus one ALF unit. This is a concrete compatibility gate for collapsed concentration models.",
+    "This still is not a collapse contradiction: one must prove which concentration geometries occur (ALE vs ALF/ALG/collapsed), their Weyl chirality assignment, and whether the permitted ALF/A1 patterns are topologically/analytically compatible with the #3(S2xS2) collapse limit."
+  ]
+}

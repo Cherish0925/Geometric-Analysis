@@ -1,0 +1,387 @@
+{
+  "source_anchors": {
+    "Biquard_pdf": "Sessions/S0910A02/workspace/data/source_text/biquard_1105_4904.pdf",
+    "Biquard_text": "Sessions/S0910A02/workspace/data/source_text/biquard_1105_4904_pdftotext.txt",
+    "Biquard_title": "O. Biquard, D\u00e9singularisation de m\u00e9triques d'Einstein. I, arXiv:1105.4904 / Invent. Math. 192 (2013), 197-252",
+    "Biquard_relevant_lines": {
+      "theorem_0_1_AH_multi_singularities": "pdftotext lines 96-112: AH nondegenerate theorem, simultaneous/subset desingularization",
+      "orientation_reversal": "lines 146-153: det R^- handled by opposite-orientation Eguchi-Hanson; kernel line in O(4)/U(2)",
+      "local_approx_metric_scope": "lines 1264-1269: Section 4 constructs approximate Einstein metrics modulo EH obstructions, compact or noncompact up to Section 8",
+      "lemma_4_1": "lines 1331-1358: on EH_t, |nabla^k(Ric_{eh+th}-t Lambda h_t - t sum lambda o)|_eh <= c_k t^2 rho^{2-k}",
+      "matching_cutoff": "lines 1361-1399: beta=1/4 transition, chi_t with derivatives O(t^{k/4}), gluing g_t",
+      "lemma_4_2": "lines 1408-1429: raw glued metric estimate |nabla^k(Ric_{g_t}-Lambda g_t - t sum lambda chi_t o)|_eh <= c_k t^2 rho^{2-k}",
+      "naive_metric_warning": "lines 1430-1453: simple gluing only gives O(t) in eh norm, i.e. O(1) in g_t operator size"
+    },
+    "Cheeger_Tian_status": "Original JAMS PDF download failed (AMS 403; several public guesses 404/SSL). Exact theorem statement read from Ge-Jiang 2017 source lines 29-36, not the original paper.",
+    "Cheeger_Tian_secondary_statement": "There exist universal epsilon,C: if (M,g,p) is Einstein 4D, Ric=lambda g, |lambda|<=3, and int_{B_r(p)} |Rm|^2 <= epsilon for r<=1, then sup_{B_{r/2}} |Rm| <= C r^{-2}, with no volume assumption.",
+    "Step11_spike": "Sessions/S0910A02/workspace/notes/step11_cz_spike_and_proposition_A.md and data/step11_cz_hessian_spike.json"
+  },
+  "biquard_operator_norm_scaling": [
+    {
+      "t": 0.1,
+      "rho_core": 1.0,
+      "rho_transition": 1.7782794100389228,
+      "raw_eh_remainder_core": 0.010000000000000002,
+      "op_remainder_core": 0.1,
+      "raw_eh_remainder_transition": 0.0316227766016838,
+      "op_remainder_transition": 0.31622776601683794,
+      "worst_op_remainder": 0.31622776601683794,
+      "naive_remark_4_3_raw_eh": 0.1,
+      "naive_remark_4_3_op_size": 1.0,
+      "nonzero_first_obstruction_op_core_order": "|lambda| * |o|_eh = O(1) on the EH core",
+      "killed_first_obstruction_op_order": "O(t^{1/2}) worst, O(t) on core",
+      "higher_q_obstruction_op_core": {
+        "q=2": 0.1,
+        "q=3/2": 0.31622776601683794,
+        "formula": "a residual term t^q o has core operator size t^(q-1)"
+      }
+    },
+    {
+      "t": 0.01,
+      "rho_core": 1.0,
+      "rho_transition": 3.1622776601683795,
+      "raw_eh_remainder_core": 0.0001,
+      "op_remainder_core": 0.01,
+      "raw_eh_remainder_transition": 0.0010000000000000002,
+      "op_remainder_transition": 0.10000000000000002,
+      "worst_op_remainder": 0.1,
+      "naive_remark_4_3_raw_eh": 0.01,
+      "naive_remark_4_3_op_size": 1.0,
+      "nonzero_first_obstruction_op_core_order": "|lambda| * |o|_eh = O(1) on the EH core",
+      "killed_first_obstruction_op_order": "O(t^{1/2}) worst, O(t) on core",
+      "higher_q_obstruction_op_core": {
+        "q=2": 0.01,
+        "q=3/2": 0.1,
+        "formula": "a residual term t^q o has core operator size t^(q-1)"
+      }
+    },
+    {
+      "t": 0.0001,
+      "rho_core": 1.0,
+      "rho_transition": 10.0,
+      "raw_eh_remainder_core": 1e-08,
+      "op_remainder_core": 0.0001,
+      "raw_eh_remainder_transition": 1e-06,
+      "op_remainder_transition": 0.01,
+      "worst_op_remainder": 0.01,
+      "naive_remark_4_3_raw_eh": 0.0001,
+      "naive_remark_4_3_op_size": 1.0,
+      "nonzero_first_obstruction_op_core_order": "|lambda| * |o|_eh = O(1) on the EH core",
+      "killed_first_obstruction_op_order": "O(t^{1/2}) worst, O(t) on core",
+      "higher_q_obstruction_op_core": {
+        "q=2": 0.0001,
+        "q=3/2": 0.01,
+        "formula": "a residual term t^q o has core operator size t^(q-1)"
+      }
+    },
+    {
+      "t": 1e-08,
+      "rho_core": 1.0,
+      "rho_transition": 100.0,
+      "raw_eh_remainder_core": 1.0000000000000001e-16,
+      "op_remainder_core": 1e-08,
+      "raw_eh_remainder_transition": 1.0000000000000002e-12,
+      "op_remainder_transition": 0.0001,
+      "worst_op_remainder": 0.0001,
+      "naive_remark_4_3_raw_eh": 1e-08,
+      "naive_remark_4_3_op_size": 1.0,
+      "nonzero_first_obstruction_op_core_order": "|lambda| * |o|_eh = O(1) on the EH core",
+      "killed_first_obstruction_op_order": "O(t^{1/2}) worst, O(t) on core",
+      "higher_q_obstruction_op_core": {
+        "q=2": 1e-08,
+        "q=3/2": 0.0001,
+        "formula": "a residual term t^q o has core operator size t^(q-1)"
+      }
+    }
+  ],
+  "minimal_mixed_patterns": [
+    {
+      "name": "positive mirror (S^2 x S^2)/Z2, r=1 of 4 reversed",
+      "nodes": 4,
+      "reversed_count": 1,
+      "compatible_count": 3,
+      "is_genuinely_mixed": true,
+      "R_plus_diag": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "R_minus_diag": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "node_rows": [
+        {
+          "chirality": "compatible/tests R_plus",
+          "count": 3,
+          "R_block_diag": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "zeta_good": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "R_zeta_good": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "good_first_obstruction_killed": true,
+          "zeta_bad": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "R_zeta_bad": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "bad_first_obstruction_nonzero": true
+        },
+        {
+          "chirality": "reversed/tests R_minus",
+          "count": 1,
+          "R_block_diag": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "zeta_good": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "R_zeta_good": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "good_first_obstruction_killed": true,
+          "zeta_bad": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "R_zeta_bad": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "bad_first_obstruction_nonzero": true
+        }
+      ],
+      "operator_norm_consequence": "Because each active block has a 2D kernel and zeta is chosen in it, all first obstruction coefficients lambda_i vanish at every node. Biquard Lemma 4.2 then gives a complete raw Ricci residual with sup_g_t operator size O(t^{1/2}) for this finite disjoint pattern.",
+      "global_inverse_not_used": "No Einstein-modulo-obstruction solve, transversality, AH boundary, or small-eigenvalue estimate is needed for this near-pinched input metric; those enter only if one tries to perturb to an exact Einstein metric."
+    },
+    {
+      "name": "negative mirror (Sigma_2 x Sigma_2)/<iota x iota>, r=1 of 36 reversed",
+      "nodes": 36,
+      "reversed_count": 1,
+      "compatible_count": 35,
+      "is_genuinely_mixed": true,
+      "R_plus_diag": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "R_minus_diag": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "node_rows": [
+        {
+          "chirality": "compatible/tests R_plus",
+          "count": 35,
+          "R_block_diag": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "zeta_good": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "R_zeta_good": [
+            -0.0,
+            0.0,
+            0.0
+          ],
+          "good_first_obstruction_killed": true,
+          "zeta_bad": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "R_zeta_bad": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "bad_first_obstruction_nonzero": true
+        },
+        {
+          "chirality": "reversed/tests R_minus",
+          "count": 1,
+          "R_block_diag": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "zeta_good": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "R_zeta_good": [
+            -0.0,
+            0.0,
+            0.0
+          ],
+          "good_first_obstruction_killed": true,
+          "zeta_bad": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "R_zeta_bad": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "bad_first_obstruction_nonzero": true
+        }
+      ],
+      "operator_norm_consequence": "Because each active block has a 2D kernel and zeta is chosen in it, all first obstruction coefficients lambda_i vanish at every node. Biquard Lemma 4.2 then gives a complete raw Ricci residual with sup_g_t operator size O(t^{1/2}) for this finite disjoint pattern.",
+      "global_inverse_not_used": "No Einstein-modulo-obstruction solve, transversality, AH boundary, or small-eigenvalue estimate is needed for this near-pinched input metric; those enter only if one tries to perturb to an exact Einstein metric."
+    }
+  ],
+  "cheeger_tian_vs_c0_ricci": {
+    "available": true,
+    "path": "/data/qiushi/qiushi_engine_v08/users/user2/Sessions/S0910A02/workspace/data/step11_cz_hessian_spike.json",
+    "theoretical_rates": {
+      "ricci_defect": "O(Lambda^{-2/3})",
+      "center_curvature": "Omega(Lambda^{1/3})",
+      "local_added_L2_curvature": "O(Lambda^{-4/3}) at the Hessian-energy level"
+    },
+    "empirical_loglog_slopes_from_saved_data": {
+      "sup_delta_inner": -0.6666666581686627,
+      "Rm_center_lower_bound": 0.2831106323689212,
+      "L2_hess_sq": -1.3337850865224186
+    },
+    "largest_case": {
+      "Lambda": 500,
+      "a": 0.015874010519682,
+      "sigma": 7.124576406741286e-218,
+      "rho": 0.3,
+      "uxy_center_analytical": 7.9370052598409995,
+      "uxy_center_numerical": 7.9370052598409995,
+      "delta_center": 0.0,
+      "Rm_center_lower_bound": 24.449240966187467,
+      "rho2_Rm_center": 2.200431686956872,
+      "sup_delta_inner": 0.03222472571907975,
+      "sup_hess_inner": 0.7127930157317253,
+      "sup_grad": 0.005308954750513578,
+      "L2_hess_sq": 0.004885642470917194,
+      "a_times_Lambda": 7.9370052598409995
+    },
+    "regularity_conclusion": "This fixed-manifold sequence has ||Ric-g||_op -> 0 and local L2 curvature -> 0 but |Rm|(center)->infinity; it falsifies a Cheeger-Tian-style pointwise epsilon regularity theorem under C0 Ricci pinching, while not affecting the exact Einstein theorem."
+  },
+  "chern_weil_chiral_pinning": {
+    "formula": "A_\u00b1 := int|W^\u00b1|^2 = 2*pi^2*(2 chi \u00b1 3 tau) - 1/2*int(s^2/24 - |E|^2/2)",
+    "near_einstein_collapse": "If ||Ric-sigma g||_op -> 0 and Vol -> 0, then the integral term tends to 0; both chiral energies are topologically pinned with no slack.",
+    "examples": [
+      {
+        "k": 1,
+        "manifold": "#_k(S^2 x S^2)",
+        "chi": 4,
+        "tau": 0,
+        "chiral_energy_each_limit": 157.91367041742973,
+        "total_weyl_energy_limit": 315.82734083485946,
+        "rod_count_model": 4,
+        "rod_energy_each_model": 78.95683520871486,
+        "rod_total_model": 315.82734083485946,
+        "rod_budget_matches_total": true,
+        "interpretation": "rod counting saturates CGB exactly; no contradiction without proving an energy defect"
+      },
+      {
+        "k": 2,
+        "manifold": "#_k(S^2 x S^2)",
+        "chi": 6,
+        "tau": 0,
+        "chiral_energy_each_limit": 236.8705056261446,
+        "total_weyl_energy_limit": 473.7410112522892,
+        "rod_count_model": 6,
+        "rod_energy_each_model": 78.95683520871486,
+        "rod_total_model": 473.7410112522892,
+        "rod_budget_matches_total": true,
+        "interpretation": "rod counting saturates CGB exactly; no contradiction without proving an energy defect"
+      },
+      {
+        "k": 3,
+        "manifold": "#_k(S^2 x S^2)",
+        "chi": 8,
+        "tau": 0,
+        "chiral_energy_each_limit": 315.82734083485946,
+        "total_weyl_energy_limit": 631.6546816697189,
+        "rod_count_model": 8,
+        "rod_energy_each_model": 78.95683520871486,
+        "rod_total_model": 631.6546816697189,
+        "rod_budget_matches_total": true,
+        "interpretation": "rod counting saturates CGB exactly; no contradiction without proving an energy defect"
+      },
+      {
+        "k": 10,
+        "manifold": "#_k(S^2 x S^2)",
+        "chi": 22,
+        "tau": 0,
+        "chiral_energy_each_limit": 868.5251872958635,
+        "total_weyl_energy_limit": 1737.050374591727,
+        "rod_count_model": 22,
+        "rod_energy_each_model": 78.95683520871486,
+        "rod_total_model": 1737.050374591727,
+        "rod_budget_matches_total": true,
+        "interpretation": "rod counting saturates CGB exactly; no contradiction without proving an energy defect"
+      },
+      {
+        "k": 50,
+        "manifold": "#_k(S^2 x S^2)",
+        "chi": 102,
+        "tau": 0,
+        "chiral_energy_each_limit": 4026.798595644458,
+        "total_weyl_energy_limit": 8053.597191288916,
+        "rod_count_model": 102,
+        "rod_energy_each_model": 78.95683520871486,
+        "rod_total_model": 8053.597191288916,
+        "rod_budget_matches_total": true,
+        "interpretation": "rod counting saturates CGB exactly; no contradiction without proving an energy defect"
+      }
+    ],
+    "sample_error_bound": {
+      "chi": 22,
+      "tau": 0,
+      "volume": 0.001,
+      "delta": 0.01,
+      "Aplus_topological_limit": 868.5251872958635,
+      "Aminus_topological_limit": 868.5251872958635,
+      "A_total_topological_limit": 1737.050374591727,
+      "B_abs_bound_for_error_in_each_chiral_energy": 0.0003404333333333334,
+      "B_einstein_term_half": 0.0003333333333333333,
+      "identity": "int|W^\u00b1|^2 = 2*pi^2*(2 chi \u00b1 3 tau) - 1/2*int(s^2/24 - |E|^2/2)",
+      "collapse_limit": "if volume->0 and delta remains bounded (in particular delta->0), the last term is o(1)"
+    }
+  },
+  "route_consequences": {
+    "mixed_wall_conditional_repaired": "For the purpose of producing Yau-26 input metrics, Biquard Section 4 Lemma 4.2 is enough: once the first vector obstruction is killed at every selected A1 node, the complete unprojected Ricci defect of the glued approximate metric is small in g_t operator norm. The earlier phrase 'Biquard Section 14' was wrong for this estimate; Section 14 is transversality in the arXiv version.",
+    "conditionality_remaining": "The estimate directly covers the local/refined approximate metric. It does not prove that the smooth mixed fillings have no far-away Einstein metric, and it does not provide H4-dual necessity for arbitrary C0-Ricci-pinched degenerations.",
+    "positive_collapse_reframing": "Do not test almost-Killing production on symmetric exact Killing examples. The useful task is adversarial: try to globalize twist-spike/local-jet mechanisms into closed collapsing near-pinched families, or identify the obstruction that prevents this.",
+    "regularity_ceiling": "Cheeger-Tian is the right Einstein collapse-tolerant epsilon regularity theorem, but Step 11 structurally falsifies its C0-Ricci-pinched pointwise analogue: the missing term is uncontrolled second derivatives of Ricci/metric in the trace-free Hessian channel.",
+    "energy_defect_target": "Since Chern-Weil pins both chiral Weyl energies in collapsed tight pinching, counting cannot refute toric/rod collapse. A positive-collapse obstruction must prove forced loss/defect of energy to lower-dimensional limits, transition regions, or nonmaximal nilpotent topology."
+  }
+}

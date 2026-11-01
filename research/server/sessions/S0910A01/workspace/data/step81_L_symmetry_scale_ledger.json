@@ -1,0 +1,289 @@
+{
+  "step": 81,
+  "purpose": "verify L orbit-exchange symmetry and correct surviving radial scale ledger",
+  "local_linear_model": {
+    "L_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "J_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    ],
+    "sigma_matrix": [
+      [
+        -1.0,
+        -0.0,
+        -0.0,
+        -0.0
+      ],
+      [
+        -0.0,
+        -1.0,
+        -0.0,
+        -0.0
+      ],
+      [
+        -0.0,
+        -0.0,
+        -1.0,
+        -0.0
+      ],
+      [
+        -0.0,
+        -0.0,
+        -0.0,
+        -1.0
+      ]
+    ],
+    "orientation": "det L = -1, hence L swaps Lambda^+ and Lambda^-"
+  },
+  "commutation": {
+    "det_L": -1.0,
+    "L_squared_is_I": true,
+    "L_sigma_commute_local": true,
+    "L_J_commute_local": true,
+    "L_A_commute_local_representatives": true
+  },
+  "L_action_SD_to_ASD": {
+    "omega1+": {
+      "coefficients": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "nonzero_terms": [
+        [
+          "omega1-",
+          -1.0
+        ]
+      ]
+    },
+    "omega2+": {
+      "coefficients": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "nonzero_terms": [
+        [
+          "omega2-",
+          1.0
+        ]
+      ]
+    },
+    "omega3+": {
+      "coefficients": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "nonzero_terms": [
+        [
+          "omega3-",
+          1.0
+        ]
+      ]
+    }
+  },
+  "L_action_ASD_to_SD": {
+    "omega1-": {
+      "coefficients": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "nonzero_terms": [
+        [
+          "omega1+",
+          -1.0
+        ]
+      ]
+    },
+    "omega2-": {
+      "coefficients": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "nonzero_terms": [
+        [
+          "omega2+",
+          1.0
+        ]
+      ]
+    },
+    "omega3-": {
+      "coefficients": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "nonzero_terms": [
+        [
+          "omega3+",
+          1.0
+        ]
+      ]
+    }
+  },
+  "basis_change_SD_to_ASD_matrix_columns_are_images": [
+    [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "curvature_block_transport": {
+    "Rplus_diag_100_to_minus": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "matches_Rminus_diag_100": true
+  },
+  "radial_mode_transport": {
+    "omega2_plus_to_omega2_minus_sign": 1.0,
+    "transverse_signs_plus_to_minus": {
+      "omega1": -1.0,
+      "omega3": 1.0
+    },
+    "radial_projection_relation_sign_with_L_transported_basis": 1.0
+  },
+  "node_chirality_table": [
+    {
+      "node": "NN",
+      "chirality_plus1_diag_minus1_offdiag": 1,
+      "A_node": "SS",
+      "L_node": "SN",
+      "J_node": "NN",
+      "A_preserves_chirality": true,
+      "L_reverses_chirality": true,
+      "orbit": 1,
+      "L_orbit": 2
+    },
+    {
+      "node": "NS",
+      "chirality_plus1_diag_minus1_offdiag": -1,
+      "A_node": "SN",
+      "L_node": "SS",
+      "J_node": "NS",
+      "A_preserves_chirality": true,
+      "L_reverses_chirality": true,
+      "orbit": 2,
+      "L_orbit": 1
+    },
+    {
+      "node": "SN",
+      "chirality_plus1_diag_minus1_offdiag": -1,
+      "A_node": "NS",
+      "L_node": "NN",
+      "J_node": "SN",
+      "A_preserves_chirality": true,
+      "L_reverses_chirality": true,
+      "orbit": 2,
+      "L_orbit": 1
+    },
+    {
+      "node": "SS",
+      "chirality_plus1_diag_minus1_offdiag": 1,
+      "A_node": "NN",
+      "L_node": "NS",
+      "J_node": "SS",
+      "A_preserves_chirality": true,
+      "L_reverses_chirality": true,
+      "orbit": 1,
+      "L_orbit": 2
+    }
+  ],
+  "B_constraints": {
+    "candidate_form": "F_i(t1,t2)=t_i*(B_i1*t1^2 + B_i2*t2^2) + R_i",
+    "not_candidate_form": "sum_j B_ij*t_j^3 (missing receiver factor t_i)",
+    "L_relation_normalized": "F_2(t1,t2)=F_1(t2,t1)",
+    "B_form_under_L": "[[a,b],[b,a]]",
+    "positive_scale_leading_equation": "B*(t1^2,t2^2)^T=0 after dividing by t_i>0",
+    "positive_kernel_condition_exchange_symmetric": "a+b=0 with t1^2=t2^2, unless a=b=0 gives a fully zero candidate matrix",
+    "if_a_plus_b_nonzero": "no L-symmetric positive kernel at this candidate order",
+    "if_a_plus_b_zero": "equal-scale branch survives this order; next radial equation along t1=t2 is decisive",
+    "normalization_caveat": "If radial basis at the negative-chirality orbit is not L-transported, the relation includes a fixed sign/norm factor; with omega2+ -> +omega2- the natural tensor normalization has factor +1."
+  },
+  "remainder_target": {
+    "current_Ozuch_estimate": "t_i*lambda_i + t_i^2*mu_i = O(t_max^(5/2)); at comparable scales this is larger than degree-3 response",
+    "needed_projected_expansion": "After A+J+det lower-order cancellations, derive F_i=t_i*sum_j B_ij*t_j^2 + o(t_i*(t1^2+t2^2)) on the positive scale cone, or a multi-scale analogue with explicit powers/logs.",
+    "possible_terms_to_track": [
+      "local self-response t_i^3",
+      "regular inter-node response t_i*t_j^2",
+      "even shape-mode response (g1-g2), contributing effectively to B",
+      "even scalar/nonkernel corrections not killed by A or J",
+      "Bianchi/DeTurck correction terms",
+      "cutoff/matching terms, including possible logarithmic factors"
+    ]
+  },
+  "interpretation": "L is compatible with the diagonal mixed chirality assignment and relates the two A-orbit radial equations, reducing the candidate effective matrix to self/cross coefficients a,b. It does not by itself impose t1=t2 or force a+b=0."
+}

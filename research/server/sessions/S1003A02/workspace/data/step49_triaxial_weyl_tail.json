@@ -1,0 +1,26 @@
+{
+ "delta_v1": "4*(-sinh(r) + 1/cosh(r))*exp(-4*r)",
+ "delta_W11_exact": "-4*(-16*sinh(2*r) + sinh(4*r) + 4*cosh(2*r)**2 - 8*cosh(2*r) + 12)*exp(-4*r)/(cosh(4*r) - 1)",
+ "lim_e4r_delta_W11": "-12",
+ "lim_e6r_remainder_after_leading": "96",
+ "Ric_minus6_delta_Wplus_leading": [
+  "-12",
+  "12",
+  "0"
+ ],
+ "scalar_minus4_delta_Wplus_leading": [
+  "-2",
+  "2",
+  "0"
+ ],
+ "sorted_sigma_leading_coefficient": 2,
+ "dist_to_K_leading_coefficient": "2*sqrt(2)",
+ "Psi_leading_coefficient": "16",
+ "conclusions": {
+  "d_mu_min_first_variation": 0,
+  "d_norm_Wplus_sq_first_variation": 0,
+  "sigma": "2 |eps| e^(-4r) + O(|eps|e^(-6r)) + O(eps^2 e^(-8r))",
+  "dist": "2 sqrt(2) |eps| e^(-4r) + faster terms",
+  "Psi": "16 eps^2 e^(-8r) + O(eps^2 e^(-10r)) + higher eps order"
+ }
+}

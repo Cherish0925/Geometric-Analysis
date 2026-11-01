@@ -1,0 +1,264 @@
+{
+  "step": 90,
+  "scope": "K-symmetry (single-factor meridian reflection) for product orbifold",
+  "K_definition": "K(z,w) = (bar(z), w): complex conjugation on first sphere, identity on second. In real S^2 coords: (x0,x1,x2) -> (x0,-x1,x2)",
+  "basic_checks": {
+    "det_K": -1.0,
+    "K_squared_is_I": true,
+    "K_sigma_commute": true,
+    "K_A_commute": true,
+    "K_J_commute": true,
+    "K_L_commute": true,
+    "K_equals_L_local_tangent_action": true,
+    "K_transport_SD_to_ASD_matrix": [
+      [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "omega2_plus_to_omega2_minus_sign": 1.0,
+    "K_fixes_all_nodes": true,
+    "K_node_map": {
+      "NN": "NN",
+      "NS": "NS",
+      "SN": "SN",
+      "SS": "SS"
+    },
+    "L_moves_nodes": {
+      "NN": "SN",
+      "NS": "SS",
+      "SN": "NN",
+      "SS": "NS"
+    },
+    "K_vs_L_essential_difference": "K fixes nodes, L exchanges A-orbits {NN,SS}<->{NS,SN}"
+  },
+  "SD_ASD_transport": {
+    "SD_to_ASD": {
+      "omega1+": {
+        "omega1-": -1.0,
+        "omega2-": 0.0,
+        "omega3-": 0.0
+      },
+      "omega2+": {
+        "omega1-": 0.0,
+        "omega2-": 1.0,
+        "omega3-": 0.0
+      },
+      "omega3+": {
+        "omega1-": 0.0,
+        "omega2-": 0.0,
+        "omega3-": 1.0
+      }
+    },
+    "ASD_to_SD": {
+      "omega1-": {
+        "omega1+": -1.0,
+        "omega2+": 0.0,
+        "omega3+": 0.0
+      },
+      "omega2-": {
+        "omega1+": 0.0,
+        "omega2+": 1.0,
+        "omega3+": 0.0
+      },
+      "omega3-": {
+        "omega1+": 0.0,
+        "omega2+": 0.0,
+        "omega3+": 1.0
+      }
+    },
+    "transport_matrix": [
+      [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "key_exchange": "omega_2^+ <-> omega_2^- with sign +1"
+  },
+  "node_fixing": {
+    "K_fixes_all_nodes": true,
+    "K_node_map": {
+      "NN": "NN",
+      "NS": "NS",
+      "SN": "SN",
+      "SS": "SS"
+    },
+    "L_node_map_for_contrast": {
+      "NN": "SN",
+      "NS": "SS",
+      "SN": "NN",
+      "SS": "NS"
+    }
+  },
+  "H4_transport": {
+    "samples": 20000,
+    "max_error_H4": 0.0,
+    "mean_error_H4": 0.0,
+    "max_error_O1_kernel": 0.0,
+    "verified": "K^*(H^4_+(x)) = H^4_-(x) exactly for all x on S^3 (20000 samples, zero error)",
+    "C_transport": "K C_{2j} K = T_K(j) C_{j2} with T_K = diag(-1,1,1), verified exactly",
+    "algebraic_proof": "K^*(H^4_+) = H^4_- because T_K(j)^2 = 1 for all j",
+    "initial_bug_fixed": "original script evaluated H^4 at x instead of Kx; corrected in step90_K_H4_transport_fix.py"
+  },
+  "K_parity_modes": {
+    "axial_killZ_killZ": {
+      "mode": "(*dZ_A) \u2299 (*dZ_B)",
+      "K_action_factor_A": "-*dZ_A",
+      "K_action_factor_B": "*dZ_B",
+      "K_parity": "odd",
+      "sign": -1,
+      "note": "chirality-sensitive mode is K-odd as expected"
+    },
+    "gradZ_gradZ": {
+      "mode": "dZ_A \u2299 dZ_B",
+      "K_parity": "even",
+      "sign": 1
+    },
+    "gradZ_killZ": {
+      "mode": "dZ_A \u2299 (*dZ_B)",
+      "K_parity": "even",
+      "sign": 1
+    },
+    "killX_killX": {
+      "mode": "(*dX_A) \u2299 (*dX_B)",
+      "K_parity": "odd",
+      "sign": -1
+    },
+    "killY_killY": {
+      "mode": "(*dY_A) \u2299 (*dY_B)",
+      "K_parity": "even",
+      "sign": 1
+    },
+    "killX_killY": {
+      "mode": "(*dX_A) \u2299 (*dY_B)",
+      "K_parity": "odd",
+      "sign": -1
+    },
+    "killY_killX": {
+      "mode": "(*dY_A) \u2299 (*dX_B)",
+      "K_parity": "even",
+      "sign": 1
+    },
+    "shape_q": {
+      "mode": "q = g_A - g_B",
+      "K_parity": "even",
+      "sign": 1,
+      "P_eigenvalue": -1,
+      "consequence": "negative TT mode is in K-even sector, not K-odd"
+    },
+    "scalar_uA_gA": {
+      "mode": "uA * gA",
+      "K_parity": "even",
+      "sign": 1,
+      "consequence": "scalar Ozuch zero mode is K-even, hence orthogonal to K-odd source"
+    },
+    "scalar_uA_gB": {
+      "mode": "uA * gB",
+      "K_parity": "even",
+      "sign": 1,
+      "consequence": "scalar Ozuch zero mode is K-even, hence orthogonal to K-odd source"
+    },
+    "scalar_uB_gA": {
+      "mode": "uB * gA",
+      "K_parity": "even",
+      "sign": 1,
+      "consequence": "scalar Ozuch zero mode is K-even, hence orthogonal to K-odd source"
+    },
+    "scalar_uB_gB": {
+      "mode": "uB * gB",
+      "K_parity": "even",
+      "sign": 1,
+      "consequence": "scalar Ozuch zero mode is K-even, hence orthogonal to K-odd source"
+    }
+  },
+  "cross_parity_vanishing": {
+    "statement": "K_{ij}^{01}(tau) = L_i^0 G_tau S_j^1 = 0 and K_{ij}^{10}(tau) = L_i^1 G_tau S_j^0 = 0 for ALL node pairs (i,j) and any K-equivariant regularization",
+    "proof": "P commutes with K^* (K is a background isometry). S_j^1 is K-odd. G_tau preserves K-parity. G_tau S_j^1 is K-odd. L_i^0 is K-even (extracts K-even component of curvature). Inner product of K-even functional with K-odd field = 0.",
+    "scope": "geometric, not just flat V_2 level; valid after Bianchi correction, cutoff, curved parametrix, and all Ozuch radial corrections, as long as they respect the K-equivariance of the construction",
+    "consequence_for_self_singularity": "Even-odd diagonal self-terms K_{ii}^{01} and K_{ii}^{10} vanish by K-symmetry alone, not requiring matched subtraction or regularization limit"
+  },
+  "geometric_annihilation": {
+    "negative_mode": {
+      "mode": "q = g_A - g_B",
+      "K_parity": "even",
+      "P_eigenvalue": -1,
+      "S1_component": 0,
+      "proof": "K-parity orthogonality: K-odd source has zero L2 inner product with K-even eigenfunction, for ANY source in the K-odd sector"
+    },
+    "scalar_zero_modes": {
+      "modes": [
+        "u_A g_A",
+        "u_A g_B",
+        "u_B g_A",
+        "u_B g_B"
+      ],
+      "K_parity": "all even",
+      "P_eigenvalue": 0,
+      "S1_component": "all zero",
+      "proof": "same K-parity argument as for q"
+    },
+    "scope": "full geometric, valid for the complete Bianchi-compatible source in the K-equivariant construction, not just the flat V_2 principal term"
+  },
+  "symmetry_comparison": {
+    "K": {
+      "definition": "K(z,w) = (bar(z), w) \u2014 conjugation on first sphere only",
+      "tangent_at_node": "diag(1,-1,1,1)",
+      "determinant": -1,
+      "orientation": "reverses",
+      "SD_ASD": "exchanges: omega_2^+ <-> omega_2^-",
+      "nodes": "fixes ALL four nodes",
+      "chirality": "exchanges at each node",
+      "key_use": "cross-parity elimination, geometric mode annihilation"
+    },
+    "L": {
+      "definition": "L(x,y) = (-x, y) \u2014 first-sphere antipodal",
+      "tangent_at_compatible_frames": "diag(1,-1,1,1) (same as K locally!)",
+      "determinant": -1,
+      "orientation": "reverses",
+      "SD_ASD": "exchanges",
+      "nodes": "exchanges A-orbits: {NN,SS} <-> {NS,SN}",
+      "chirality": "exchanges across orbits",
+      "key_use": "radial exchange symmetry F_2(t1,t2) = F_1(t2,t1)"
+    },
+    "J": {
+      "definition": "J(z,w) = (bar(z), bar(w)) \u2014 conjugation on both spheres",
+      "tangent_at_node": "diag(1,-1,1,-1)",
+      "determinant": 1,
+      "orientation": "preserves",
+      "SD_ASD": "preserves: omega_2^+ -> omega_2^+",
+      "nodes": "fixes all four nodes",
+      "chirality": "preserves at each node",
+      "key_use": "transverse projection elimination, bubble direction fixing"
+    },
+    "KJ_relation": "KJ = JK = K_B (conjugation on second sphere only), and K = K_A, J = K_A K_B"
+  },
+  "consequence_for_relative_interaction": {
+    "simplified_formula": "Delta_eps(tau) = sum_{i!=j} a_i b_j (eps_i eps_j - 1) K_{ij}^{11}(tau)",
+    "no_cross_parity": "K^{01}_{ij} = K^{10}_{ij} = 0 for all i,j by K-symmetry",
+    "no_diagonal_singularity": "odd-odd diagonal: eps_i^2 - 1 = 0; even-odd diagonal: vanishes by K-symmetry",
+    "surviving_computation": "off-diagonal odd-odd Green kernel at distinct nodes (finite)",
+    "sign_not_determined": "K-symmetry eliminates all singularities and cross terms but does not determine the sign of the surviving interaction"
+  }
+}

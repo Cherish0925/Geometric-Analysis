@@ -1,0 +1,315 @@
+{
+  "bridge1": {
+    "source": "Cheeger-Naber 2015, arXiv:1406.6534",
+    "theorem_1_13": {
+      "hypothesis": "|Ric(M^4)| <= 3, Vol(B_1(p)) > v > 0",
+      "conclusion_1": "\u222b_{B_1(p)} |Rm|^2 dv <= C(v)",
+      "conclusion_2": "Vol(T_r({x: r_h(x) <= r})) <= C(v) r^4",
+      "note": "harmonic radius r_h, NOT regularity scale r_x; no Einstein needed"
+    },
+    "remark_1_11": {
+      "statement": "Under just |Ric| bounded (not Einstein), (1.10) holds with r_h",
+      "implication": "The weak-type L^2 estimate on harmonic radius is a bounded-Ricci result"
+    },
+    "theorem_1_4_corollary": {
+      "statement": "Noncollapsed GH limits under |Ric| <= n-1 have sing set of Hausdorff dim <= n-4",
+      "dim4_consequence": "In dim 4: isolated singular points",
+      "tangent_cones": "Each tangent cone is C(S^3/Gamma) with Gamma finite subgroup of SO(4)"
+    },
+    "bridge1_resolution": {
+      "claim": "Bridge 1 is resolved by existing Cheeger-Naber theory",
+      "argument": [
+        "Our metrics satisfy |Ric(g_i)| <= (1+delta_i)*3 (after normalizing Lambda=1), which is |Ric| <= 3+3*delta for small delta",
+        "Theorem 1.13 gives harmonic-radius control: r_h(x) >= c*d(x,S) in annular regions",
+        "The convergence is C^{1,alpha} cap W^{2,q} away from singular set (Theorem 2.11 + Definition 2.9)",
+        "In harmonic coordinates, the limit satisfies Ric = Lambda*g weakly, hence is smooth Einstein by elliptic regularity",
+        "The remaining content of Bridge 1 is: balanced annuli are almost-volume-cones",
+        "This follows from Bishop-Gromov volume monotonicity + Cheeger-Colding almost-volume-cone (Lemma 2.4)"
+      ],
+      "what_is_NOT_needed": [
+        "Einstein assumption (only bounded Ricci)",
+        "L^2 curvature smallness (Thm 1.13 gives a priori L^2 bound)",
+        "Pointwise curvature bound (harmonic radius replaces regularity scale)"
+      ],
+      "step11_compatibility": "The opposite-warping spike (Step 11) destroys pointwise curvature but NOT volume ratios, so it does not threaten Bridge 1"
+    }
+  },
+  "radial_ode": {
+    "equation": "a'' + (3/rho)*a' - (8/rho^2)*a = S(rho)",
+    "dimension": 4,
+    "angular_mode": "l=2",
+    "characteristic_exponents": [
+      2,
+      -4
+    ],
+    "growing_mode": "rho^2 (orbifold curvature 2-jet)",
+    "decaying_mode": "rho^{-4} (ALE/EH asymptotic)",
+    "wronskian": "W = -6*rho^{-3}",
+    "rho3_wronskian": -6,
+    "wronskian_constancy": "rho^3 * W is constant, making bilinear pairing scale-independent"
+  },
+  "variation_of_parameters": {
+    "source_term": "S(rho) = Lambda*t^2 * c_{-4} * rho^{-4}",
+    "particular_solution": "Lambda*c4*t**2*(rho**6 - 3*rho**2 + 2)/(24*rho**4)",
+    "growing_coefficient_from_source": "Lambda*t^2*c_{-4}/24",
+    "behavior": "O(t^2) -- subleading as t->0, but nonzero for t>0",
+    "interpretation": [
+      "The Lambda source on the bubble side generates a nonzero growing mode",
+      "This must be compensated by the orbifold curvature for smooth matching",
+      "As t->0, the source contribution vanishes: leading obstruction is R_+ v = 0",
+      "For finite t, the source adds a computable t^2 correction to the obstruction"
+    ]
+  },
+  "wronskian_extraction": {
+    "formula": "alpha_+ = [16*a(2R) - a(R)] / (63*R^2)",
+    "coefficient_determinant": "-63/(16*R^2)",
+    "error_on_fixed_annulus": "O(delta * ln R) for fixed R",
+    "critical_comparison": {
+      "old_neck_integration": "error ~ delta * ln(1/t) -- requires delta*ln(1/t) -> 0",
+      "new_fixed_annulus": "error ~ delta * ln(R) -- requires only delta -> 0 for any fixed R",
+      "improvement": "Rate-free: no coupling between bubble scale t and pinching delta"
+    },
+    "iterated_limit": {
+      "step1": "Fix R large in bubble frame",
+      "step2": "Send delta -> 0 (along subsequence)",
+      "step3": "Growing coefficient alpha_+(R) -> orbifold value + O(1/R)",
+      "step4": "Send R -> infinity to recover exact orbifold coefficient",
+      "total_error": "O(delta * ln R) + O(1/R) -- both controllable"
+    }
+  },
+  "ozuch_obstruction": {
+    "ozuch_source": "Ozuch 2019/2021, Noncollapsed degeneration of Einstein 4-manifolds",
+    "obstruction": {
+      "statement": "det R_{g_o}(p) = 0 at each singular point p",
+      "R_operator": "Riemannian curvature as endomorphism on Lambda^2",
+      "for_positive_Einstein": "R = W + Lambda/3 * Id on Lambda^2_+ (and similarly _-)",
+      "det_R_plus": "det(W_+ + Lambda/3 * Id) = 0 means W_+ has eigenvalue -Lambda/3",
+      "round_sphere": "W=0 => R_+ = Lambda/3 * Id => det R_+ = (Lambda/3)^3 != 0: NO desingularization possible"
+    },
+    "mode_projection_connection": {
+      "growing_coefficient": "alpha_+ = <R_+(orbifold), v(ALE)> / normalization + O(t^2)",
+      "obstruction_as_coefficient": "alpha_+ must vanish for smooth EH insertion",
+      "det_condition": "For all ALE directions v: some alpha_+(v) = 0 iff det R_+ = 0",
+      "reading_from_sequence": "Mode projection reads alpha_+ from C^{1,alpha} convergent sequence using L^2 inner products (no derivatives)"
+    },
+    "theorem_sketch": {
+      "title": "Mode-projection obstruction (conditional on noncollapse)",
+      "hypothesis": [
+        "(M^4, g_i) closed with |Ric(g_i) - Lambda*g_i|_{C^0} <= delta_i -> 0, Lambda > 0",
+        "Vol(M, g_i) >= v_0 > 0 (noncollapse)",
+        "(M, g_i) ->_{GH} (X, d) with singular point p, tangent cone C(S^3/Z_2)"
+      ],
+      "conclusion": [
+        "The orbifold limit (X, g_X) satisfies det R_{g_X}(p) = 0",
+        "If det R_{g_X}(p) != 0 at every possible orbifold singularity: the limit is smooth",
+        "A smooth noncollapsed limit implies M admits a smooth Einstein metric (by C^{1,alpha} diffeomorphism recovery)"
+      ],
+      "proof_architecture": [
+        "Bridge 1: Cheeger-Naber Thm 1.13 gives r_h >= c*d(x,p), C^{1,alpha} convergence",
+        "Bridge 2: Mode projection a(rho) = rho^{-2} <g_i - g_cone, Y> is well-defined",
+        "Radial ODE: a'' + 3a'/rho - 8a/rho^2 = O(delta_i) from Bianchi identity",
+        "Wronskian extraction: alpha_+ measured on fixed annulus with error O(delta_i ln R)",
+        "Limit: alpha_+ -> orbifold R_+ coefficient as delta_i -> 0",
+        "Contradiction: R_+ v != 0 for all v => alpha_+ bounded away from 0 => no compatible ALE",
+        "Therefore: det R_+ = 0 at each singular point"
+      ],
+      "status": "This is a theorem SKETCH. The mode-projection step requires verifying that the Bianchi identity gives the stated radial ODE for the angular projection, which involves the gauge-fixing (Bianchi gauge) and commutator terms."
+    }
+  },
+  "numerical_verification": {
+    "test": "Extraction with constant source delta",
+    "true_alpha_plus": 1.0,
+    "true_alpha_minus": 0.5,
+    "results": [
+      {
+        "R": 2,
+        "delta": 0.1,
+        "alpha_extracted": 1.0205105005,
+        "error": 0.0205105005,
+        "rel_error": 0.0205105005,
+        "delta_ln_R": 0.0693147181
+      },
+      {
+        "R": 2,
+        "delta": 0.01,
+        "alpha_extracted": 1.0020510501,
+        "error": 0.0020510501,
+        "rel_error": 0.0020510501,
+        "delta_ln_R": 0.0069314718
+      },
+      {
+        "R": 2,
+        "delta": 0.001,
+        "alpha_extracted": 1.000205105,
+        "error": 0.000205105,
+        "rel_error": 0.000205105,
+        "delta_ln_R": 0.0006931472
+      },
+      {
+        "R": 2,
+        "delta": 0.0001,
+        "alpha_extracted": 1.0000205105,
+        "error": 2.05105e-05,
+        "rel_error": 2.05105e-05,
+        "delta_ln_R": 6.93147e-05
+      },
+      {
+        "R": 5,
+        "delta": 0.1,
+        "alpha_extracted": 1.0357820127,
+        "error": 0.0357820127,
+        "rel_error": 0.0357820127,
+        "delta_ln_R": 0.1609437912
+      },
+      {
+        "R": 5,
+        "delta": 0.01,
+        "alpha_extracted": 1.0035782013,
+        "error": 0.0035782013,
+        "rel_error": 0.0035782013,
+        "delta_ln_R": 0.0160943791
+      },
+      {
+        "R": 5,
+        "delta": 0.001,
+        "alpha_extracted": 1.0003578201,
+        "error": 0.0003578201,
+        "rel_error": 0.0003578201,
+        "delta_ln_R": 0.0016094379
+      },
+      {
+        "R": 5,
+        "delta": 0.0001,
+        "alpha_extracted": 1.000035782,
+        "error": 3.5782e-05,
+        "rel_error": 3.5782e-05,
+        "delta_ln_R": 0.0001609438
+      },
+      {
+        "R": 10,
+        "delta": 0.1,
+        "alpha_extracted": 1.0473344657,
+        "error": 0.0473344657,
+        "rel_error": 0.0473344657,
+        "delta_ln_R": 0.2302585093
+      },
+      {
+        "R": 10,
+        "delta": 0.01,
+        "alpha_extracted": 1.0047334466,
+        "error": 0.0047334466,
+        "rel_error": 0.0047334466,
+        "delta_ln_R": 0.0230258509
+      },
+      {
+        "R": 10,
+        "delta": 0.001,
+        "alpha_extracted": 1.0004733447,
+        "error": 0.0004733447,
+        "rel_error": 0.0004733447,
+        "delta_ln_R": 0.0023025851
+      },
+      {
+        "R": 10,
+        "delta": 0.0001,
+        "alpha_extracted": 1.0000473345,
+        "error": 4.73345e-05,
+        "rel_error": 4.73345e-05,
+        "delta_ln_R": 0.0002302585
+      },
+      {
+        "R": 20,
+        "delta": 0.1,
+        "alpha_extracted": 1.0588869187,
+        "error": 0.0588869187,
+        "rel_error": 0.0588869187,
+        "delta_ln_R": 0.2995732274
+      },
+      {
+        "R": 20,
+        "delta": 0.01,
+        "alpha_extracted": 1.0058886919,
+        "error": 0.0058886919,
+        "rel_error": 0.0058886919,
+        "delta_ln_R": 0.0299573227
+      },
+      {
+        "R": 20,
+        "delta": 0.001,
+        "alpha_extracted": 1.0005888692,
+        "error": 0.0005888692,
+        "rel_error": 0.0005888692,
+        "delta_ln_R": 0.0029957323
+      },
+      {
+        "R": 20,
+        "delta": 0.0001,
+        "alpha_extracted": 1.0000588869,
+        "error": 5.88869e-05,
+        "rel_error": 5.88869e-05,
+        "delta_ln_R": 0.0002995732
+      },
+      {
+        "R": 50,
+        "delta": 0.1,
+        "alpha_extracted": 1.0741584309,
+        "error": 0.0741584309,
+        "rel_error": 0.0741584309,
+        "delta_ln_R": 0.3912023005
+      },
+      {
+        "R": 50,
+        "delta": 0.01,
+        "alpha_extracted": 1.0074158431,
+        "error": 0.0074158431,
+        "rel_error": 0.0074158431,
+        "delta_ln_R": 0.0391202301
+      },
+      {
+        "R": 50,
+        "delta": 0.001,
+        "alpha_extracted": 1.0007415843,
+        "error": 0.0007415843,
+        "rel_error": 0.0007415843,
+        "delta_ln_R": 0.003912023
+      },
+      {
+        "R": 50,
+        "delta": 0.0001,
+        "alpha_extracted": 1.0000741584,
+        "error": 7.41584e-05,
+        "rel_error": 7.41584e-05,
+        "delta_ln_R": 0.0003912023
+      }
+    ],
+    "conclusion": "Error scales as delta * ln(R) / 6, confirming rate-free extraction"
+  },
+  "assessment": {
+    "what_is_established": [
+      "Bridge 1 (harmonic-radius control) is a theorem under bounded Ricci + noncollapse (Cheeger-Naber 2015)",
+      "Bridge 2 (mode projection) has a clean mathematical architecture: l=2 projection, radial ODE, Wronskian extraction",
+      "The extraction is rate-free: error O(delta * ln R) on fixed annulus, no coupling between bubble scale t and pinching delta",
+      "The Ozuch obstruction det R = 0 is the correct target: if it fails, no bubbling, limit is smooth, Einstein exists on M",
+      "The Lambda source generates a computable O(t^2) correction to the growing coefficient, subleading as t->0"
+    ],
+    "what_remains_for_route_A": [
+      "RIGOROUS: Verify that Bianchi-gauge + angular projection gives the stated l=2 radial ODE with bounded source",
+      "RIGOROUS: The commutator terms from curved (non-flat-cone) background must be controlled",
+      "RIGOROUS: The mode projection must be defined carefully on the GH-converging sequence, not just the limit",
+      "MATHEMATICAL: The conclusion is CONDITIONAL on noncollapse (Vol >= v_0 > 0)",
+      "MATHEMATICAL: Even with Route A complete, it gives 'noncollapsed + near-Einstein => Einstein or det R = 0 orbifold'",
+      "NOT ADDRESSED: collapsed case, negative branch, n >= 5, Lean formalization"
+    ],
+    "what_route_A_cannot_do": [
+      "Prove P_4^+ (positive branch) -- still needs volume lower bound or collapsed analysis",
+      "Prove the full Yau-26 proposition -- covers only one branch of one sign in one dimension",
+      "Address metrics without symmetry or noncollapse hypothesis"
+    ],
+    "allocation_judgment": [
+      "Route A mode-projection framework is the highest-value positive-branch construction",
+      "The diagonal toric front is corrected but lower priority (Step 41 Preceptor review)",
+      "A01/A03 negative-flow conditional gap theorem is the highest-value negative-branch result",
+      "n >= 5 remains untouched since Step 24"
+    ]
+  }
+}

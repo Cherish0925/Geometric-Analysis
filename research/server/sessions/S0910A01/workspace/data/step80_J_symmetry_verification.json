@@ -1,0 +1,87 @@
+{
+  "step": 80,
+  "purpose": "J-symmetry complete verification",
+  "J_parity_SD": [
+    -1,
+    1,
+    -1
+  ],
+  "J_parity_ASD": [
+    -1,
+    1,
+    -1
+  ],
+  "commutation": {
+    "J_sigma_commute": true,
+    "J_squared_is_I": true,
+    "det_J": 1.0,
+    "sigma_is_neg_I4": true,
+    "det_sigma": 1.0,
+    "JA_eq_AJ_global": true
+  },
+  "rho_x_J_parity": {
+    "components_j_1_2_3": [
+      -1.0,
+      1.0,
+      -1.0
+    ],
+    "expected": [
+      -1,
+      1,
+      -1
+    ],
+    "interpretation": "\u03c1_{Jx}(\u03c9\u2082)_j = \u03b5_j \u00b7 \u03c1_x(\u03c9\u2082)_j with \u03b5=(-1,+1,-1)"
+  },
+  "rho_parity_numerical": {
+    "N_samples": 10000,
+    "max_parity_deviation": 0.0,
+    "verified": true
+  },
+  "H4_J_invariance": {
+    "max_deviation": 0.0,
+    "verified": "True",
+    "mechanism": "each summand has J-parity \u03b5_j\u00b2 = +1"
+  },
+  "adapted_obstruction_parity": {
+    "k=1 (\u03c6\u2081=\u03c9\u2082)": {
+      "J_parity": 1,
+      "killed_by_J": false
+    },
+    "k=2 (\u03c6\u2082=\u03c9\u2081)": {
+      "J_parity": -1,
+      "killed_by_J": true
+    },
+    "k=3 (\u03c6\u2083=\u03c9\u2083)": {
+      "J_parity": -1,
+      "killed_by_J": true
+    }
+  },
+  "combined_theorem": {
+    "A_symmetry": "removes 4 odd scalar kernel modes (\u03bd_l=0)",
+    "J_symmetry": "kills adapted k=2 and k=3 projections at ALL orders",
+    "determinant": "\u03bc\u2081=0 unconditionally (rank-one curvature)",
+    "conclusion": "ALL finite-dimensional Ozuch obstructions vanish in the A+J symmetric family",
+    "surviving_system": {
+      "parameters": "(t\u2081, t\u2082) \u2014 one EH scale per A-orbit",
+      "equations": "one \u03c9\u2082-projection per orbit at order \u2265 t\u00b3",
+      "dimension": "2 equations in 2 unknowns (balanced)",
+      "note": "J symmetry works to ALL orders, not just second"
+    }
+  },
+  "scalar_kernel_parities": {
+    "u1_A_parity": "odd (A exchanges N\u2194S, u\u2081(N)=-u\u2081(S))",
+    "u1_J_parity": "even (x\u2083 is J-invariant)",
+    "modes": "u\u2081g\u2081, u\u2081g\u2082, u\u2082g\u2081, u\u2082g\u2082",
+    "eliminated_by": "A-symmetry (A-odd), NOT by J (J-even)",
+    "shape_mode_g1_minus_g2": {
+      "A_parity": "even",
+      "J_parity": "even",
+      "status": "NOT eliminated by either; must remain in inverse"
+    }
+  },
+  "chirality_preservation": {
+    "J_fixes_all_nodes": true,
+    "J_fixes_insertion_direction": true,
+    "diagonal_pattern_preserved": true
+  }
+}

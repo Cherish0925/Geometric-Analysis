@@ -1,0 +1,72 @@
+{
+  "scope": "Numerical FEM probe for constant-curvature right-angled hyperbolic m-gons; not proof.",
+  "criterion": "constant-K diagonal Einstein with \u039b=1 requires A_match_side(m)=2/lambda1_unit(m)",
+  "mesh_notes": "Poincare disk, geodesic arcs approximated by boundary samples; P1 FEM; conformal invariance makes stiffness Euclidean and mass weighted by hyperbolic area factor.",
+  "cases": {
+    "5": {
+      "lambda1_unit_curvature_minus1": 3.1494790300616495,
+      "A_eig_for_lambda1_2": 0.6350256600885674,
+      "A_match_side": 0.14786733793624704,
+      "relative_A_gap_Aeig_over_Aside_minus1": 3.2945634171243317,
+      "lambda1_at_side_match": 0.4657050800612495,
+      "lambda1_defect_at_side_minus_2": -1.5342949199387506,
+      "rod_over_side_at_Aeig": 1.5656681358394853,
+      "rod_side_defect_at_Aeig_percent": 56.56681358394853,
+      "vertices": 2632,
+      "triangles": 5002,
+      "interior_grid_points": 2372
+    },
+    "6": {
+      "lambda1_unit_curvature_minus1": 1.5791983460659633,
+      "A_eig_for_lambda1_2": 1.2664653588210253,
+      "A_match_side": 0.270960667870401,
+      "relative_A_gap_Aeig_over_Aside_minus1": 3.6739822748989113,
+      "lambda1_at_side_match": 0.4279006385498661,
+      "lambda1_defect_at_side_minus_2": -1.572099361450134,
+      "rod_over_side_at_Aeig": 1.428259360689996,
+      "rod_side_defect_at_Aeig_percent": 42.8259360689996,
+      "vertices": 2808,
+      "triangles": 5302,
+      "interior_grid_points": 2496
+    },
+    "8": {
+      "lambda1_unit_curvature_minus1": 0.7922035389113034,
+      "A_eig_for_lambda1_2": 2.5246037183178047,
+      "A_match_side": 0.44963114457067793,
+      "relative_A_gap_Aeig_over_Aside_minus1": 4.614832844215844,
+      "lambda1_at_side_match": 0.35619938393363093,
+      "lambda1_defect_at_side_minus_2": -1.6438006160663692,
+      "rod_over_side_at_Aeig": 1.3277357521574649,
+      "rod_side_defect_at_Aeig_percent": 32.77357521574649,
+      "vertices": 2768,
+      "triangles": 5118,
+      "interior_grid_points": 2352
+    },
+    "10": {
+      "lambda1_unit_curvature_minus1": 0.5270702709759593,
+      "A_eig_for_lambda1_2": 3.7945604412418548,
+      "A_match_side": 0.5633669625999107,
+      "relative_A_gap_Aeig_over_Aside_minus1": 5.735504019849062,
+      "lambda1_at_side_match": 0.29693397763643803,
+      "lambda1_defect_at_side_minus_2": -1.7030660223635619,
+      "rod_over_side_at_Aeig": 1.2914192976761283,
+      "rod_side_defect_at_Aeig_percent": 29.14192976761283,
+      "vertices": 3088,
+      "triangles": 5654,
+      "interior_grid_points": 2568
+    },
+    "12": {
+      "lambda1_unit_curvature_minus1": 0.39271727695033265,
+      "A_eig_for_lambda1_2": 5.092722213626833,
+      "A_match_side": 0.6372541673021879,
+      "relative_A_gap_Aeig_over_Aside_minus1": 6.991665609950964,
+      "lambda1_at_side_match": 0.25026072130816696,
+      "lambda1_defect_at_side_minus_2": -1.749739278691833,
+      "rod_over_side_at_Aeig": 1.2747816282043372,
+      "rod_side_defect_at_Aeig_percent": 27.478162820433717,
+      "vertices": 3140,
+      "triangles": 5654,
+      "interior_grid_points": 2516
+    }
+  }
+}

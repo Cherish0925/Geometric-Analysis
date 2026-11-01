@@ -1,0 +1,38 @@
+{
+  "conventions": {
+    "metric": "dr^2+e^{2a}dz^2+e^{sigma+w}dx^2+e^{sigma-w}dy^2",
+    "E": "Ric+3g; all E components orthonormal",
+    "dmu": "e^{a+sigma} dz",
+    "u": "a_r",
+    "v": "sigma_r",
+    "B0_norm_sq": "w_r^2/2"
+  },
+  "symbolic": {
+    "J_point_residual": "(Derivative(a(r, z), z)*Derivative(s(r, z), z) - Derivative(s(r, z), z)**2 - Derivative(s(r, z), (z, 2)))*exp(-2*a(r, z))",
+    "J_divergence_expected": "((Derivative(a(r, z), z) - Derivative(s(r, z), z))*Derivative(s(r, z), z) - Derivative(s(r, z), (z, 2)))*exp(-2*a(r, z))",
+    "J_residual_minus_divergence": "0",
+    "I_point_residual": "(-Derivative(a(r, z), z)*Derivative(s(r, z), z) + Derivative(s(r, z), z)**2 + Derivative(s(r, z), (z, 2)))*exp(-2*a(r, z))",
+    "I_divergence_candidate": "(-(Derivative(a(r, z), z) - Derivative(s(r, z), z))*Derivative(s(r, z), z) + Derivative(s(r, z), (z, 2)))*exp(-2*a(r, z))",
+    "I_residual_minus_divergence": "0",
+    "contracted_gauss_residual": "0",
+    "turn_point_residual": "(-Derivative(a(r, z), z)*Derivative(s(r, z), z) + Derivative(s(r, z), z)**2 + Derivative(s(r, z), (z, 2)))*exp(-2*a(r, z))",
+    "turn_residual_minus_intrinsic_divergence": "0"
+  },
+  "integrated_balances": {
+    "J_prime": "6 V - integral tr_orbit(E) dmu",
+    "I_prime": "3 V + integral R(q_r) dmu - integral E_zz dmu",
+    "I_prime_gauss": "integral[-3+2uv+v^2/2-|B0|^2+E_orbit-E_rr] dmu",
+    "correction": "The exact contracted Gauss equation contains tr(E)-2E_rr; after cancellation in I prime the defect is E_orbit-E_rr.",
+    "turning_bound": "If ||E||_op<=delta and I first returns from negative values to 0, then 2Cov(u,v)+<v^2>/2-<|B0|^2> >= 3-3delta."
+  },
+  "numerical_periodic_test": {
+    "I_prime_fd": 0.06513607870850535,
+    "I_rhs_direct": 0.06513607870995486,
+    "I_rhs_turn_exact": 0.06513607870995765,
+    "gauss_integral_residual": 2.311647425099015e-17,
+    "J_prime_fd": -0.011068978506001413,
+    "J_rhs": -0.011068978512497551,
+    "I_error_direct": -1.4495071809506044e-12,
+    "J_error": 6.496138696410192e-12
+  }
+}

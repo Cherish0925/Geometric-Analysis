@@ -1,0 +1,37 @@
+{
+  "kind": "actual finite-profile test; floating-point, not an energy certificate",
+  "bolt": 0.2,
+  "radius": 4.0,
+  "count": 8,
+  "parameter_order": "v[8], w[8], phi[8] as in tools/search_coupled_cell.py",
+  "parameters": [
+    0.702923509582947, -0.5033666404306336,
+    0.11570720339483911, 0.054270871420732746,
+    -0.04110088954495145, -0.03338994752846746,
+    -0.010266835388925812, 0.005756070823178598,
+    0.2601035269625085, -0.20645371146755823,
+    0.09608697586293655, -0.023287451273375726,
+    -0.0036869434302575026, 0.004221947703958626,
+    -0.0044973425646330336, 0.0023704772602304667,
+    0.14768347130527584, -0.2770914209404472,
+    0.16815747718947097, 0.0014589566836315006,
+    -0.030556994285664985, 0.011609297573933324,
+    0.009517813965645749, 0.0010831572427387282
+  ],
+  "finite_amplitude": 0.19639015258580517,
+  "base_cost_over_2pi2": 12.354924696876633,
+  "finite_cost_over_2pi2": 12.335535274566897,
+  "threshold": 4,
+  "construction": "Biaxial cost minimization with a negative triaxial Hessian constraint, then finite amplitude minimization in that direction. Setting w coefficients to zero recovers the biaxial base.",
+  "search": {
+    "quadrature": [36, 14],
+    "first_stage": "SLSQP, min biaxial cost, lambda_min(Q,N2)<=0, bounds [-4,4]^16, maxiter180, ftol1e-9",
+    "first_stage_cost": 11.545417902523095,
+    "second_stage": "SLSQP, lambda_min(Q,N2)<=-1, maxiter120, ftol1e-9",
+    "second_stage_success": false,
+    "second_stage_lambda": -0.9999993807298994,
+    "second_stage_boundary": "Failed the specified constraint tolerance; not recorded as constrained optimization success.",
+    "finite_amplitude_stage": "bounded scalar minimization on (0,2), xatol1e-12",
+    "joint_stage": "least_squares jac=cs, bounds=(-6,6), max_nfev200, ftol=xtol=1e-11, gtol1e-10; converged back to w approximately zero"
+  }
+}

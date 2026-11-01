@@ -1,0 +1,39 @@
+{
+  "operator_conventions": {
+    "Ozuch_P": "1/2*nabla^*nabla - R^circ (linearization of Ric-Lambda g plus Bianchi gauge)",
+    "Kroencke_Delta_E": "nabla^*nabla - 2 R^circ = 2*Ozuch_P on Einstein backgrounds",
+    "important_factor_warning": "A claimed P(h_rel)=-4Lambda h_rel is not the Ozuch or Kroencke convention used in the cited sources; with Ric=Lambda g it is P=-Lambda and Delta_E=-2Lambda."
+  },
+  "quotient_action": {
+    "rho": "(z,w)->(-z,-w), a pi-rotation in each CP^1 coordinate, with four fixed nodes (0/∞,0/∞)",
+    "l1_harmonic_action_each_factor": "diag(-1,-1,+1)",
+    "lambda_2Lambda_scalar_invariant_multiplicity": 2
+  },
+  "full_P_kernel_scalar_sector": {
+    "dimension": 4,
+    "basis_schematic": [
+      "z1*g1",
+      "z1*g2",
+      "z2*g1",
+      "z2*g2"
+    ],
+    "meaning": "kernel of the gauged operator on all symmetric 2-tensors; these are scalar/conformal/gauge/automorphism-type directions, not TT Einstein deformations"
+  },
+  "TT_kernel": {
+    "scalar_sector_dimension": 0,
+    "factor_TT_dimension": 0,
+    "mixed_sector_dimension": 0,
+    "total_dimension": 0,
+    "direct_l1_check": "for f on one factor, Hess f=-Lambda f g_factor; trace-free gives A+B=0 and divergence-free gives A=0, so the scalar l=1 kernel contributes no TT tensor",
+    "quotient_argument": "any quotient TT kernel lifts to a rho-invariant TT kernel on the cover; cover TT kernel is zero"
+  },
+  "relative_mode": {
+    "tensor": "h_rel=g1-g2",
+    "TT": true,
+    "rho_invariant": true,
+    "P_eigenvalue_over_Lambda_Ozuch": -1,
+    "Delta_E_eigenvalue_over_Lambda_Kroencke": -2,
+    "not_kernel": true
+  },
+  "consequence_for_obstruction_program": "The TT infinitesimal Einstein deformation space is zero, so there is no small TT kernel amplification.  However the full gauged P-kernel has a 4-dimensional scalar sector on the orbifold quotient; a faithful Ozuch implementation must either quotient/fix these automorphism-normalization directions or include the corresponding v_l variables/projections.  Bubble parameters are not literally the only variables until this gauge issue is fixed."
+}

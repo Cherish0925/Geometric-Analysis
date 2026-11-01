@@ -1,0 +1,305 @@
+{
+  "model": "direct full SPD nodal transition",
+  "parameters": {
+    "nr": 11,
+    "ns": 12,
+    "R": 1.0,
+    "wind": 2,
+    "S": 1.0,
+    "Qmax": 0.5,
+    "max_nfev": 3,
+    "reg": 0.001,
+    "output": "workspace/data/step98_direct_spd_pilot.json"
+  },
+  "positive": {
+    "side": "positive",
+    "unknown_count": 648,
+    "regularization": 0.001,
+    "baseline": {
+      "operator_sup": 32.676176906139354,
+      "peak_r": 0.3454915028125263,
+      "peak_s_index": 1,
+      "frobenius_rms": 6.1109840292787245,
+      "center_operator_sup": 1.8788104815843985,
+      "end_operator_sup": 1.0741905091698034,
+      "minimum_q_eigenvalue": 0.19832650001817603,
+      "blocks": {
+        "nn": 10.585958682260166,
+        "normal_tangential_frobenius": 2.051645503953043,
+        "tangential_operator": 32.67247343138849
+      }
+    },
+    "baseline_geometric_norm": 222.02307552155816,
+    "final": {
+      "operator_sup": 4.069237955745408,
+      "peak_r": 0.3454915028125263,
+      "peak_s_index": 4,
+      "frobenius_rms": 0.7780831382092881,
+      "center_operator_sup": 1.8788104815843985,
+      "end_operator_sup": 1.0741905091698034,
+      "minimum_q_eigenvalue": 0.25049165017267166,
+      "blocks": {
+        "nn": 2.887452899042726,
+        "normal_tangential_frobenius": 1.878810481584378,
+        "tangential_operator": 4.069156787769222
+      }
+    },
+    "final_geometric_norm": 28.269164266999663,
+    "solver": {
+      "success": false,
+      "status": 0,
+      "message": "The maximum number of function evaluations is exceeded.",
+      "nfev": 3,
+      "cost_including_regularizer": 409.4586325563348,
+      "optimality": 4132.527473535592,
+      "step_norm": 7.397167104421854
+    },
+    "line": [
+      {
+        "alpha": 0,
+        "geometric_vector_norm": 222.02307552155816,
+        "operator_sup": 32.676176906139354,
+        "peak_r": 0.3454915028125263,
+        "peak_s_index": 1,
+        "frobenius_rms": 6.1109840292787245,
+        "center_operator_sup": 1.8788104815843985,
+        "end_operator_sup": 1.0741905091698034,
+        "minimum_q_eigenvalue": 0.19832650001817603,
+        "blocks": {
+          "nn": 10.585958682260166,
+          "normal_tangential_frobenius": 2.051645503953043,
+          "tangential_operator": 32.67247343138849
+        }
+      },
+      {
+        "alpha": 0.1,
+        "geometric_vector_norm": 186.37973255849266,
+        "operator_sup": 27.125905747642634,
+        "peak_r": 0.3454915028125263,
+        "peak_s_index": 2,
+        "frobenius_rms": 5.129933302521056,
+        "center_operator_sup": 1.8788104815843985,
+        "end_operator_sup": 1.0741905091698034,
+        "minimum_q_eigenvalue": 0.21133089028793225,
+        "blocks": {
+          "nn": 9.525561296687073,
+          "normal_tangential_frobenius": 1.878810481584378,
+          "tangential_operator": 27.124230291308542
+        }
+      },
+      {
+        "alpha": 0.25,
+        "geometric_vector_norm": 142.13140075780882,
+        "operator_sup": 20.194571752611225,
+        "peak_r": 0.3454915028125263,
+        "peak_s_index": 2,
+        "frobenius_rms": 3.9120380530250216,
+        "center_operator_sup": 1.8788104815843985,
+        "end_operator_sup": 1.0741905091698034,
+        "minimum_q_eigenvalue": 0.23237831743389575,
+        "blocks": {
+          "nn": 7.995962755873695,
+          "normal_tangential_frobenius": 1.878810481584378,
+          "tangential_operator": 20.194394408774887
+        }
+      },
+      {
+        "alpha": 0.5,
+        "geometric_vector_norm": 87.00093779457319,
+        "operator_sup": 11.784039355113322,
+        "peak_r": 0.3454915028125263,
+        "peak_s_index": 2,
+        "frobenius_rms": 2.39462200109594,
+        "center_operator_sup": 1.8788104815843985,
+        "end_operator_sup": 1.0741905091698034,
+        "minimum_q_eigenvalue": 0.25049165017267166,
+        "blocks": {
+          "nn": 5.633691347384081,
+          "normal_tangential_frobenius": 1.878810481584378,
+          "tangential_operator": 11.783307971458711
+        }
+      },
+      {
+        "alpha": 0.75,
+        "geometric_vector_norm": 48.79857363168031,
+        "operator_sup": 6.2589934410897685,
+        "peak_r": 0.3454915028125263,
+        "peak_s_index": 2,
+        "frobenius_rms": 1.3431365339582673,
+        "center_operator_sup": 1.8788104815843985,
+        "end_operator_sup": 1.0741905091698034,
+        "minimum_q_eigenvalue": 0.25049165017267166,
+        "blocks": {
+          "nn": 3.4592029396929522,
+          "normal_tangential_frobenius": 1.878810481584378,
+          "tangential_operator": 6.255644304043406
+        }
+      },
+      {
+        "alpha": 1,
+        "geometric_vector_norm": 28.26916426699902,
+        "operator_sup": 4.069237955745415,
+        "peak_r": 0.3454915028125263,
+        "peak_s_index": 4,
+        "frobenius_rms": 0.7780831382092706,
+        "center_operator_sup": 1.8788104815843985,
+        "end_operator_sup": 1.0741905091698034,
+        "minimum_q_eigenvalue": 0.25049165017267166,
+        "blocks": {
+          "nn": 2.887452899043126,
+          "normal_tangential_frobenius": 1.878810481584378,
+          "tangential_operator": 4.069156787769227
+        }
+      }
+    ]
+  },
+  "negative": {
+    "side": "negative",
+    "unknown_count": 648,
+    "regularization": 0.001,
+    "baseline": {
+      "operator_sup": 17.220113545792444,
+      "peak_r": 0.3454915028125263,
+      "peak_s_index": 0,
+      "frobenius_rms": 3.3789363041325373,
+      "center_operator_sup": 1.8788104815843985,
+      "end_operator_sup": 1.074190509169735,
+      "minimum_q_eigenvalue": 0.25049165017267166,
+      "blocks": {
+        "nn": 10.036722269220213,
+        "normal_tangential_frobenius": 1.878810481584378,
+        "tangential_operator": 17.22009788604192
+      }
+    },
+    "baseline_geometric_norm": 122.76285237215694,
+    "final": {
+      "operator_sup": 1.8788104815843985,
+      "peak_r": 0.0,
+      "peak_s_index": 7,
+      "frobenius_rms": 0.37949626258339875,
+      "center_operator_sup": 1.8788104815843985,
+      "end_operator_sup": 1.074190509169735,
+      "minimum_q_eigenvalue": 0.25049165017267166,
+      "blocks": {
+        "nn": 0.4943973766519951,
+        "normal_tangential_frobenius": 1.878810481584378,
+        "tangential_operator": 1.535045696493296
+      }
+    },
+    "final_geometric_norm": 13.787783925471624,
+    "solver": {
+      "success": false,
+      "status": 0,
+      "message": "The maximum number of function evaluations is exceeded.",
+      "nfev": 3,
+      "cost_including_regularizer": 101.32359792163213,
+      "optimality": 1287.7412937072781,
+      "step_norm": 5.4073735703859835
+    },
+    "line": [
+      {
+        "alpha": 0,
+        "geometric_vector_norm": 122.76285237215694,
+        "operator_sup": 17.220113545792444,
+        "peak_r": 0.3454915028125263,
+        "peak_s_index": 0,
+        "frobenius_rms": 3.3789363041325373,
+        "center_operator_sup": 1.8788104815843985,
+        "end_operator_sup": 1.074190509169735,
+        "minimum_q_eigenvalue": 0.25049165017267166,
+        "blocks": {
+          "nn": 10.036722269220213,
+          "normal_tangential_frobenius": 1.878810481584378,
+          "tangential_operator": 17.22009788604192
+        }
+      },
+      {
+        "alpha": 0.1,
+        "geometric_vector_norm": 106.27300091808878,
+        "operator_sup": 14.675147285935777,
+        "peak_r": 0.3454915028125263,
+        "peak_s_index": 0,
+        "frobenius_rms": 2.9250680805514055,
+        "center_operator_sup": 1.8788104815843985,
+        "end_operator_sup": 1.074190509169735,
+        "minimum_q_eigenvalue": 0.25049165017267166,
+        "blocks": {
+          "nn": 9.057091592243912,
+          "normal_tangential_frobenius": 1.878810481584378,
+          "tangential_operator": 14.675112762171192
+        }
+      },
+      {
+        "alpha": 0.25,
+        "geometric_vector_norm": 84.37496124671085,
+        "operator_sup": 11.453271309838584,
+        "peak_r": 0.3454915028125263,
+        "peak_s_index": 0,
+        "frobenius_rms": 2.322344375414239,
+        "center_operator_sup": 1.8788104815843985,
+        "end_operator_sup": 1.074190509169735,
+        "minimum_q_eigenvalue": 0.25049165017267166,
+        "blocks": {
+          "nn": 7.595317951202496,
+          "normal_tangential_frobenius": 1.878810481584378,
+          "tangential_operator": 11.453192310993128
+        }
+      },
+      {
+        "alpha": 0.5,
+        "geometric_vector_norm": 53.79987855886488,
+        "operator_sup": 7.254172478935388,
+        "peak_r": 0.3454915028125263,
+        "peak_s_index": 0,
+        "frobenius_rms": 1.4807929215377211,
+        "center_operator_sup": 1.8788104815843985,
+        "end_operator_sup": 1.074190509169735,
+        "minimum_q_eigenvalue": 0.25049165017267166,
+        "blocks": {
+          "nn": 5.165181372550242,
+          "normal_tangential_frobenius": 1.878810481584378,
+          "tangential_operator": 7.253987535430328
+        }
+      },
+      {
+        "alpha": 0.75,
+        "geometric_vector_norm": 29.010161811868286,
+        "operator_sup": 4.053755046585577,
+        "peak_r": 0.3454915028125263,
+        "peak_s_index": 6,
+        "frobenius_rms": 0.7984784243829868,
+        "center_operator_sup": 1.8788104815843985,
+        "end_operator_sup": 1.074190509169735,
+        "minimum_q_eigenvalue": 0.25049165017267166,
+        "blocks": {
+          "nn": 2.7425053459484143,
+          "normal_tangential_frobenius": 1.878810481584378,
+          "tangential_operator": 4.053504752930617
+        }
+      },
+      {
+        "alpha": 1,
+        "geometric_vector_norm": 13.787783925471606,
+        "operator_sup": 1.8788104815843985,
+        "peak_r": 0.0,
+        "peak_s_index": 7,
+        "frobenius_rms": 0.37949626258339825,
+        "center_operator_sup": 1.8788104815843985,
+        "end_operator_sup": 1.074190509169735,
+        "minimum_q_eigenvalue": 0.25049165017267166,
+        "blocks": {
+          "nn": 0.49439737665119665,
+          "normal_tangential_frobenius": 1.878810481584378,
+          "tangential_operator": 1.5350456964933075
+        }
+      }
+    ]
+  },
+  "joint": {
+    "baseline_sup": 32.676176906139354,
+    "final_sup": 4.069237955745408,
+    "baseline_norm": 253.70251080073984,
+    "final_norm": 31.452323188122435
+  },
+  "status": "Finite discretization only."
+}

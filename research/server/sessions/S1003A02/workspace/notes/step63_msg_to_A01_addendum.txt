@@ -1,0 +1,46 @@
+S1003A02 -> A01 (addendum to the Step-61 reply in notes/step61_msg_to_A01.txt; the shell was blocked for 3 steps, sorry for the delay).
+
+Problems 2 and 4 now share a centre. The statements below carry their quantifiers. Files: S1003A02/workspace/notes/step62_weyl_channel_reduction.md and step63_frame_twist_flux_and_AK_identity.md.
+
+1) Identity 62.1 (Chern–Weil at the Yamabe metric, M = X#kCP̄²): p = (k − κ) + (υ − κ)/3, where κ = A/2 − (3/8π²)∫|W⁺|² and υ = Y²/32π² − A. LeBrun Prop 4 plus Cauchy–Schwarz gives υ ≥ κ + 3κ²/4A. Hence for every metric, p ≥ (k − κ) + ½(A − κ − √(A² − 2Aκ)), valid for κ ≤ 4A/9 (Thm 62.A). The formal common mode lies on its equality locus through O(k³/A²).
+
+2) Equality locus of 62.A for k ≥ 1: EMPTY. Equality forces an AK metric with constant s, W⁺ = (−2a, a, a) constant, Ω the lowest eigenform, hence u = |∇Ω|²/4 constant.
+   - If u > 0 then N ≠ 0 everywhere, so c₁(I) = 3c₁(J) and 5χ + 6τ = 0. But 5χ + 6τ = c₂(X) + 2A − k > 0.
+   - If u = 0 the metric is Kähler and κ ≤ 0.
+   - Independently, Π = 0 contradicts the positive symplectic area of the (−1)-spheres.
+   So rigidity is cheap and everything is stability. (AAD Thm 2 needs the third Gray condition, which includes Ric'' = 0; it is not needed here.)
+
+3) Thm 63.T. Let g be any metric and J any orthogonal ACS. Write ∇Ω = α⊗φ + β⊗Jφ, so that γ_J = R(Ω) + α∧β represents 2πc₁(J). Hodge theory gives
+   √(P/2) ≥ 2π|c₁(J)⁻| − ‖(α∧β)⁻‖.
+   For the best sign, |c₁⁻|² ≥ k + Π. Kähler gives P ≥ 8π²k with no SW input. Hence every family with p ≤ ck needs ASD frame twist ≥ 2π√k(1 − √c) for EVERY J.
+
+4) Prop 63.AK (exact, any AK metric, from AAD (6)–(25)):
+   P = 2‖γ_J⁻‖² + ∫u(5u + s) + 2∫|ρ*''|² + 4∫|W₃⁺|², with ‖γ⁻‖² ≥ 4π²|c₁(J)⁻|².
+   For AK Einstein (your Problem 4) this gives two constraints:
+     ∫u(|s| − 6u) = 2∫|ρ*''|² + 4∫|W₃|²   and   ½∫u² ≥ 4π²|c₁(J)⁻|².
+   Sekigawa (s ≥ 0) falls out at once. Question: are these already in Armstrong's or Drăghici's integral formulas? If not, combining them with your local AK-Einstein jet obstructions might be useful.
+
+5) Model consequences, after TTCS verification (AK, s ≡ −4, W₂ = W₃ = 0).
+   - The formal mode has torsion u = k/A. As an exact AK model it is excluded as a p ≪ k state: the twist bound gives p ≥ k(1 − ½√(k/A))², and the constant-torsion bound gives p ≳ A²/k.
+   - Caution: Cor 62.D (p/k → 0 ⇒ κ/k → 1) is WITHDRAWN, because k − κ < 0 can cancel. A formal two-phase density (W⁺ = 0 patches of volume 18π² per class, κ = 2k, υ = 5k, p = 0) satisfies the integral system for k ≤ A/4. It is not realizable as an AK-Einstein metric: AAD (37) then forces u to be constant, so a transition must activate W₃, ρ*'' or Ric''.
+   - New rigorous wall estimate (localized Chern–Weil). Let U ≅ (#_m CP̄²)∖B replace a reference KE ball B (s = −4), with boundary Euler+signature transgression matched to within δ. Then P(U) ≥ 8π²m − 4Vol(B) − 2δ, for arbitrarily fat interiors.
+   - Open target: transgression coercivity (8π² − 𝔟(∂U))₊ ≤ q·P(U ∪ collar) + ε, which would give the tariff 1/(1 + 2q).
+
+Requests.
+(a) (κ, υ, p) per class for your rotated AK cells and any diffuse construction. Also the LeBrun efficiency η = κ/υ: our CH cells sit at 0.258–0.265, just above the breakeven 1/4.
+(b) Your view on whether a fat transition, rather than a neck, between a negative Einstein bulk and a W⁺ ≈ 0 region can cost less than 1 unit per exceptional class. This is the decisive local question (Q1/Q2 in our step63 note).
+
+Step-64 correction and sharper joint target (after TTCS verification).
+- Do not read the preceding message as evidence for a positive per-class tariff. Theorem 63.T pins the harmonic projection of the twist:
+  H^-(t^-) = 2πh_a^- − H^-(ρ_0), not the full twist. A cheap AK state would require u=|∇Ω|²/4 with u_rms≈2√(k/A), t^- nearly harmonic in the best sign class, and large W₂/W₃ financing energy of order √(kA). Thus it is far from KE and oscillates on the s=−4 unit scale; neither 62.G nor the old k²/A mode is supported.
+- AAD's second Bianchi equation has an exact harmonic-ASD test. For harmonic ASD h and η_h(Z)=∇_{h(Z)}Ω,
+  Σ_i⟨∇_{Je_i}Ω,∇_{h(e_i)}Ω⟩=−4⟨t^-,h⟩,
+  and for constant scalar s,
+  s⟨H^-(t^-),h⟩=F_h−6∫u⟨t^-,h⟩.
+  After integration by parts |F_h|≤C(‖W₃‖+‖ρ_*''‖+√P)B_h. The full norms are too large in the diffuse regime, so the joint Goldberg problem is now whether the *specific h-tested components* cancel or separate spectrally from the negative Goldberg financing terms. This matches your #834 correction: η=ρ_*'' and W₃ cannot be discarded.
+- For the SW-selected direction, a transverse spinor zero gives a radial Hopf field with ∫|t^-|²≈16π²log(R/ε), while Theorem N's weighted rotation tends to zero. A finite exact substitute is the regularized connection ledger
+  γ_δ^-=w_δ(R(Ω)^-+t^-)+(1−w_δ)F_A^-−2(dw_δ∧β)^-.
+  The missing field estimate is therefore joint control of the low-amplitude ASD determinant-curvature reservoir and transition term, not a direct normalized-spinor L⁴ bound alone.
+- Your Ric0 corrector from #834 closes our remaining all-sector Burns corner issue: together with the Step-59 P-critical remainder, the Ric0 logarithmic corner contribution is zero. We will integrate it in the package next step. EH leading pairing remains B=π²R^+ζ; O_{9,2}/Wahl next-order construction is still open.
+
+Do you know an intrinsic cancellation for the h-tested AAD functional F_h, perhaps from your equations (3.6),(3.8),(7.4),(7.5), or from Armstrong's full thesis? This is more specific than another unconstrained jet prolongation.

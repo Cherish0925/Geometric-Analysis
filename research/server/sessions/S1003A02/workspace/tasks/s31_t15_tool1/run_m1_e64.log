@@ -1,0 +1,116 @@
+
+******************************************************************************
+This program contains Ipopt, a library for large-scale nonlinear optimization.
+ Ipopt is released as open source code under the Eclipse Public License (EPL).
+         For more information visit https://github.com/coin-or/Ipopt
+******************************************************************************
+
+This is Ipopt version 3.14.11, running with linear solver MUMPS 5.4.1.
+
+Number of nonzeros in equality constraint Jacobian...:     5855
+Number of nonzeros in inequality constraint Jacobian.:     1056
+Number of nonzeros in Lagrangian Hessian.............:     8687
+
+Total number of variables............................:      651
+                     variables with only lower bounds:        0
+                variables with lower and upper bounds:        0
+                     variables with only upper bounds:        0
+Total number of equality constraints.................:      410
+Total number of inequality constraints...............:      732
+        inequality constraints with only lower bounds:        0
+   inequality constraints with lower and upper bounds:      651
+        inequality constraints with only upper bounds:       81
+
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+   0  6.4706033e+00 8.83e-01 1.07e+00   0.0 0.00e+00    -  0.00e+00 0.00e+00   0
+   1  1.7806022e+01 1.85e-01 9.07e+02   0.5 3.98e+00   0.0 9.77e-01 1.00e+00f  1
+   2  1.8849851e+01 7.97e-02 5.39e+02   0.7 7.67e-01   0.4 8.78e-01 1.00e+00f  1
+   3  2.1996744e+01 1.32e-02 9.03e+01   0.7 1.64e+00  -0.1 1.00e+00 1.00e+00f  1
+   4  2.9972911e+01 1.83e-02 3.13e+01   0.7 1.95e+00  -0.5 1.00e+00 1.00e+00f  1
+   5  3.1544821e+01 2.40e-03 8.01e+00   0.0 6.92e-01  -1.0 1.00e+00 1.00e+00f  1
+   6  1.7032078e+01 1.67e-02 7.08e+00  -2.1 5.79e+00    -  7.91e-01 1.00e+00f  1
+   7  1.6632581e+01 6.24e-01 4.08e+00  -0.8 3.65e+01    -  4.50e-01 1.00e+00f  1
+   8  1.7816643e+01 4.68e+00 5.64e+01  -0.8 9.19e+01    -  5.01e-01 1.00e+00h  1
+   9  1.9137482e+01 2.02e-01 2.54e+00  -0.8 1.60e+02    -  1.00e+00 1.00e+00h  1
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  10  2.1547482e+01 4.93e-02 6.98e+00  -0.8 5.98e+01    -  1.00e+00 1.00e+00H  1
+  11  2.1322256e+01 5.14e-03 1.60e-01  -0.8 1.02e+01    -  1.00e+00 1.00e+00h  1
+  12  1.3387474e+01 2.51e-01 2.17e+00  -1.1 1.21e+02    -  9.18e-01 9.97e-01f  1
+  13  1.2405636e+01 3.83e-01 4.75e+00  -1.1 7.65e+01    -  1.00e+00 1.00e+00h  1
+  14  1.1498349e+01 3.96e-02 3.20e-01  -1.1 1.21e+01    -  1.00e+00 1.00e+00h  1
+  15  1.1675067e+01 3.50e-02 4.68e-02  -1.1 1.69e+01    -  1.00e+00 1.00e+00h  1
+  16  9.4940775e+00 2.08e-01 1.65e+00  -1.5 9.86e+01    -  9.97e-01 4.97e-01f  1
+  17  8.2255397e+00 3.35e-01 2.18e+00  -1.6 5.10e+01    -  1.00e+00 7.26e-01h  1
+  18  7.8529630e+00 2.10e-01 1.27e+00  -1.6 1.84e+01    -  1.00e+00 9.39e-01h  1
+  19  7.5405971e+00 1.52e-02 2.08e+00  -1.6 8.23e-01  -1.5 9.51e-01 1.00e+00h  1
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  20  7.1500751e+00 5.18e-02 3.61e+00  -7.6 1.58e+01    -  6.82e-01 3.56e-01h  1
+  21  6.7581962e+00 9.67e-02 2.69e+00  -3.1 9.53e+00    -  1.00e+00 1.00e+00h  1
+  22  6.7424393e+00 1.07e-01 2.23e+00  -9.0 3.09e+01    -  3.64e-01 1.73e-01h  1
+  23  6.6804952e+00 4.52e-02 8.86e-01  -3.3 1.87e+00    -  1.00e+00 6.08e-01h  1
+  24  6.6379375e+00 6.71e-03 1.70e-01  -3.4 1.34e+00    -  1.00e+00 9.98e-01h  1
+  25  6.6219944e+00 4.20e-05 3.25e-03  -4.1 6.41e-02  -2.0 1.00e+00 1.00e+00h  1
+  26  6.6204118e+00 1.58e-05 1.11e-02  -6.0 4.61e-02  -2.4 1.00e+00 7.52e-01h  1
+  27  6.6199847e+00 1.18e-04 7.66e-03  -6.2 1.71e-01  -2.9 1.00e+00 8.04e-01h  1
+  28  6.6195812e+00 3.31e-05 9.59e-04  -6.3 7.12e-02  -2.5 1.00e+00 9.99e-01h  1
+  29  6.6194200e+00 1.57e-04 7.56e-03 -11.0 4.25e-01  -3.0 4.87e-01 3.43e-01h  1
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  30  6.6193166e+00 5.08e-04 9.91e-03  -5.8 4.79e-01    -  1.00e+00 8.82e-01h  1
+  31  6.6192254e+00 3.84e-04 3.92e-03  -7.8 6.45e-01    -  7.26e-01 5.98e-01h  1
+  32  6.6187056e+00 8.02e-06 5.51e-05  -7.3 6.10e-02    -  1.00e+00 1.00e+00h  1
+  33  6.6186998e+00 8.82e-11 1.53e-09  -9.4 9.66e-05    -  1.00e+00 1.00e+00h  1
+
+Number of Iterations....: 33
+
+                                   (scaled)                 (unscaled)
+Objective...............:   6.6186997630509117e+00    6.6186997630509117e+00
+Dual infeasibility......:   1.5254406626752370e-09    1.5254406626752370e-09
+Constraint violation....:   8.8246743246145343e-11    8.8246743246145343e-11
+Variable bound violation:   0.0000000000000000e+00    0.0000000000000000e+00
+Complementarity.........:   8.2123614042882689e-10    8.2123614042882689e-10
+Overall NLP error.......:   1.5254406626752370e-09    1.5254406626752370e-09
+
+
+Number of objective function evaluations             = 36
+Number of objective gradient evaluations             = 34
+Number of equality constraint evaluations            = 36
+Number of inequality constraint evaluations          = 36
+Number of equality constraint Jacobian evaluations   = 34
+Number of inequality constraint Jacobian evaluations = 34
+Number of Lagrangian Hessian evaluations             = 33
+Total seconds in IPOPT                               = 0.254
+
+EXIT: Optimal Solution Found.
+{
+ "eps": 0.015625,
+ "N": 80,
+ "mode": "ch",
+ "success": true,
+ "return_status": "Solve_Succeeded",
+ "iterations": 33,
+ "cost": 6.618699763050912,
+ "A": 0.8445353838276799,
+ "t_ch": 2.2183178744234717,
+ "T": 8.06951211464926,
+ "max_collocation_residual": 8.824674324614534e-11,
+ "initial_state": [
+  0.0,
+  0.25,
+  0.33593195274807847,
+  -1.0464827983066322e-33,
+  0.16049135659315353
+ ],
+ "terminal_state": [
+  1.5369368897370577,
+  1.0,
+  10.229784336551733,
+  7.403139863409246,
+  0.0
+ ],
+ "bplus_initial": -1.9766078881853035,
+ "bplus_terminal": -3826.706113877838,
+ "min_bplus": -3826.706113877838,
+ "max_bplus": -0.9999999913451695,
+ "max_charge_rise_minus_cost": 0.0
+}
+output /data/qiushi/qiushi_engine_v08/users/user2/Sessions/S1003A02/workspace/data/saturation_control/eps0p015625_N80_ch_bpmax_m1_e64.json

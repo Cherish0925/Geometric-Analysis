@@ -1,0 +1,369 @@
+{
+  "bootstrap_sample": {
+    "V_bound": 0.00022727272727272725,
+    "chosen": {
+      "T": 6.25e-05,
+      "V_star": 0.0009090909090909091,
+      "delta": 0.030303030303030297,
+      "theta": 0.001
+    },
+    "constants": {
+      "C_E": 8.0,
+      "C_H": 10.0,
+      "C_V": 6.0,
+      "gamma_star": 0.01,
+      "r": 0.25
+    },
+    "factor": 1.0202013400267558,
+    "gamma0": 0.005,
+    "gamma_improved": 0.005101006700133779,
+    "n": 4,
+    "passes": {
+      "V_improves": true,
+      "gamma_factor_le_3_over_2": true,
+      "gamma_improves": true
+    },
+    "target_V_bound": 0.00045454545454545455,
+    "target_gamma_bound": 0.0075
+  },
+  "checks": [
+    {
+      "details": "S(t) <= e^(8V) S(0), data={'n': 4, 'critical_p': 4.0, 'left_norm_exponent': 2.0, 'gradient_total_exponent': 8.0, 'l2_total_exponent': 6.0, 'used_exponent': 8.0}",
+      "name": "sobolev_transport_n4_exponent",
+      "pass": true
+    },
+    {
+      "details": "integral=5.04945630476223e-05, expected=5.04945630476223e-05",
+      "name": "defect_integral_r=0.125_theta=0.0001",
+      "pass": true
+    },
+    {
+      "details": "integral=0.0002343750000000001, expected=0.00023437500000000005",
+      "name": "defect_integral_r=0.125_theta=0.001",
+      "pass": true
+    },
+    {
+      "details": "integral=0.0010878723828779953, expected=0.001087872382877995",
+      "name": "defect_integral_r=0.125_theta=0.01",
+      "pass": true
+    },
+    {
+      "details": "integral=0.0002019782521904892, expected=0.0002019782521904892",
+      "name": "defect_integral_r=0.25_theta=0.0001",
+      "pass": true
+    },
+    {
+      "details": "integral=0.0009375000000000004, expected=0.0009375000000000002",
+      "name": "defect_integral_r=0.25_theta=0.001",
+      "pass": true
+    },
+    {
+      "details": "integral=0.004351489531511982, expected=0.00435148953151198",
+      "name": "defect_integral_r=0.25_theta=0.01",
+      "pass": true
+    },
+    {
+      "details": "integral=0.0008079130087619567, expected=0.0008079130087619568",
+      "name": "defect_integral_r=0.5_theta=0.0001",
+      "pass": true
+    },
+    {
+      "details": "integral=0.003750000000000001, expected=0.0037500000000000007",
+      "name": "defect_integral_r=0.5_theta=0.001",
+      "pass": true
+    },
+    {
+      "details": "integral=0.017405958126047925, expected=0.01740595812604792",
+      "name": "defect_integral_r=0.5_theta=0.01",
+      "pass": true
+    },
+    {
+      "details": "integral=0.0032316520350478273, expected=0.0032316520350478273",
+      "name": "defect_integral_r=1.0_theta=0.0001",
+      "pass": true
+    },
+    {
+      "details": "integral=0.015000000000000003, expected=0.015000000000000003",
+      "name": "defect_integral_r=1.0_theta=0.001",
+      "pass": true
+    },
+    {
+      "details": "integral=0.06962383250419169, expected=0.06962383250419169",
+      "name": "defect_integral_r=1.0_theta=0.01",
+      "pass": true
+    },
+    {
+      "details": "{\"gamma_factor_le_3_over_2\": true, \"gamma_improves\": true, \"V_improves\": true}",
+      "name": "bootstrap_factor",
+      "pass": true
+    },
+    {
+      "details": "gamma=0.005101006700133779 target=0.0075",
+      "name": "gamma_improvement",
+      "pass": true
+    },
+    {
+      "details": "V=0.00022727272727272725 target=0.00045454545454545455",
+      "name": "V_improvement",
+      "pass": true
+    },
+    {
+      "details": "bar\u2207^m A does not enter RHS for \u2202t bar\u2207^m A",
+      "name": "connection_conversion_triangular_A",
+      "pass": true
+    },
+    {
+      "details": "top evolving derivative is U_{m+1}",
+      "name": "connection_conversion_top_U",
+      "pass": true
+    },
+    {
+      "details": "nabla^j chi uses A-derivatives only up to j-2",
+      "name": "cutoff_jet_conversion",
+      "pass": true
+    },
+    {
+      "details": "bar\u2207^(m+1)g from bar\u2207^m A, not \u2207^m g",
+      "name": "metric_restart_uses_background_derivatives",
+      "pass": true
+    },
+    {
+      "details": "ratio=0.9672029468526361",
+      "name": "rauch_pullback_volume_positive",
+      "pass": true
+    }
+  ],
+  "cutoff_conversion_sample": [
+    {
+      "allowed": -1,
+      "j": 0,
+      "triangular": true,
+      "worst_A_derivative_order_in_nabla_j_chi": -1
+    },
+    {
+      "allowed": -1,
+      "j": 1,
+      "triangular": true,
+      "worst_A_derivative_order_in_nabla_j_chi": -1
+    },
+    {
+      "allowed": 0,
+      "j": 2,
+      "triangular": true,
+      "worst_A_derivative_order_in_nabla_j_chi": 0
+    },
+    {
+      "allowed": 1,
+      "j": 3,
+      "triangular": true,
+      "worst_A_derivative_order_in_nabla_j_chi": 1
+    },
+    {
+      "allowed": 2,
+      "j": 4,
+      "triangular": true,
+      "worst_A_derivative_order_in_nabla_j_chi": 2
+    },
+    {
+      "allowed": 3,
+      "j": 5,
+      "triangular": true,
+      "worst_A_derivative_order_in_nabla_j_chi": 3
+    },
+    {
+      "allowed": 4,
+      "j": 6,
+      "triangular": true,
+      "worst_A_derivative_order_in_nabla_j_chi": 4
+    },
+    {
+      "allowed": 5,
+      "j": 7,
+      "triangular": true,
+      "worst_A_derivative_order_in_nabla_j_chi": 5
+    },
+    {
+      "allowed": 21,
+      "j": 23,
+      "triangular": true,
+      "worst_A_derivative_order_in_nabla_j_chi": 21
+    },
+    {
+      "allowed": 22,
+      "j": 24,
+      "triangular": true,
+      "worst_A_derivative_order_in_nabla_j_chi": 22
+    },
+    {
+      "allowed": 23,
+      "j": 25,
+      "triangular": true,
+      "worst_A_derivative_order_in_nabla_j_chi": 23
+    }
+  ],
+  "metric_restart_orders_sample": [
+    {
+      "metric_derivative_order": 1,
+      "not_moving_covariant_metric_derivative": true,
+      "requires_A_derivative_order": 0
+    },
+    {
+      "metric_derivative_order": 2,
+      "not_moving_covariant_metric_derivative": true,
+      "requires_A_derivative_order": 1
+    },
+    {
+      "metric_derivative_order": 3,
+      "not_moving_covariant_metric_derivative": true,
+      "requires_A_derivative_order": 2
+    },
+    {
+      "metric_derivative_order": 4,
+      "not_moving_covariant_metric_derivative": true,
+      "requires_A_derivative_order": 3
+    },
+    {
+      "metric_derivative_order": 5,
+      "not_moving_covariant_metric_derivative": true,
+      "requires_A_derivative_order": 4
+    },
+    {
+      "metric_derivative_order": 24,
+      "not_moving_covariant_metric_derivative": true,
+      "requires_A_derivative_order": 23
+    },
+    {
+      "metric_derivative_order": 25,
+      "not_moving_covariant_metric_derivative": true,
+      "requires_A_derivative_order": 24
+    },
+    {
+      "metric_derivative_order": 26,
+      "not_moving_covariant_metric_derivative": true,
+      "requires_A_derivative_order": 25
+    }
+  ],
+  "rauch_pullback": {
+    "K": 10.0,
+    "condition_rho_sqrtK_lt_pi": true,
+    "euclidean_ball_volume": 0.0004934802200544679,
+    "n": 4,
+    "pullback_volume_lower": 0.0004772955230501687,
+    "ratio_to_euclidean": 0.9672029468526361,
+    "rho": 0.1,
+    "statement_scope": "pullback tangent ball only; no injectivity or base-ball volume lower bound asserted"
+  },
+  "sobolev_bilipschitz_exponent": {
+    "critical_p": 4.0,
+    "gradient_total_exponent": 8.0,
+    "l2_total_exponent": 6.0,
+    "left_norm_exponent": 2.0,
+    "n": 4,
+    "used_exponent": 8.0
+  },
+  "summary": {
+    "passed": 21,
+    "total": 21
+  },
+  "triangular_orders_sample": [
+    {
+      "allowed_A_order": -1,
+      "allowed_Y_order": 1,
+      "m": 0,
+      "top_Y_is_U_m_plus_1": true,
+      "triangular_for_A": true,
+      "worst_A_derivative_order_on_rhs": -1,
+      "worst_evolving_Y_derivative_order": 1
+    },
+    {
+      "allowed_A_order": 0,
+      "allowed_Y_order": 2,
+      "m": 1,
+      "top_Y_is_U_m_plus_1": true,
+      "triangular_for_A": true,
+      "worst_A_derivative_order_on_rhs": 0,
+      "worst_evolving_Y_derivative_order": 2
+    },
+    {
+      "allowed_A_order": 1,
+      "allowed_Y_order": 3,
+      "m": 2,
+      "top_Y_is_U_m_plus_1": true,
+      "triangular_for_A": true,
+      "worst_A_derivative_order_on_rhs": 1,
+      "worst_evolving_Y_derivative_order": 3
+    },
+    {
+      "allowed_A_order": 2,
+      "allowed_Y_order": 4,
+      "m": 3,
+      "top_Y_is_U_m_plus_1": true,
+      "triangular_for_A": true,
+      "worst_A_derivative_order_on_rhs": 2,
+      "worst_evolving_Y_derivative_order": 4
+    },
+    {
+      "allowed_A_order": 3,
+      "allowed_Y_order": 5,
+      "m": 4,
+      "top_Y_is_U_m_plus_1": true,
+      "triangular_for_A": true,
+      "worst_A_derivative_order_on_rhs": 3,
+      "worst_evolving_Y_derivative_order": 5
+    },
+    {
+      "allowed_A_order": 4,
+      "allowed_Y_order": 6,
+      "m": 5,
+      "top_Y_is_U_m_plus_1": true,
+      "triangular_for_A": true,
+      "worst_A_derivative_order_on_rhs": 4,
+      "worst_evolving_Y_derivative_order": 6
+    },
+    {
+      "allowed_A_order": 5,
+      "allowed_Y_order": 7,
+      "m": 6,
+      "top_Y_is_U_m_plus_1": true,
+      "triangular_for_A": true,
+      "worst_A_derivative_order_on_rhs": 5,
+      "worst_evolving_Y_derivative_order": 7
+    },
+    {
+      "allowed_A_order": 6,
+      "allowed_Y_order": 8,
+      "m": 7,
+      "top_Y_is_U_m_plus_1": true,
+      "triangular_for_A": true,
+      "worst_A_derivative_order_on_rhs": 6,
+      "worst_evolving_Y_derivative_order": 8
+    },
+    {
+      "allowed_A_order": 22,
+      "allowed_Y_order": 24,
+      "m": 23,
+      "top_Y_is_U_m_plus_1": true,
+      "triangular_for_A": true,
+      "worst_A_derivative_order_on_rhs": 22,
+      "worst_evolving_Y_derivative_order": 24
+    },
+    {
+      "allowed_A_order": 23,
+      "allowed_Y_order": 25,
+      "m": 24,
+      "top_Y_is_U_m_plus_1": true,
+      "triangular_for_A": true,
+      "worst_A_derivative_order_on_rhs": 23,
+      "worst_evolving_Y_derivative_order": 25
+    },
+    {
+      "allowed_A_order": 24,
+      "allowed_Y_order": 26,
+      "m": 25,
+      "top_Y_is_U_m_plus_1": true,
+      "triangular_for_A": true,
+      "worst_A_derivative_order_on_rhs": 24,
+      "worst_evolving_Y_derivative_order": 26
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "definition": "R_X=|1/2 int charge^T K_X charge dmu_sigma| / int(2|symgrad X|+sqrt(2)|div_sigma X|+|div X|+|dU(X)|)dmu_sigma",
+  "X": "sin^4(pi n/L) partial_n, L=0.02",
+  "runs": [
+    {
+      "N": 48,
+      "L": 0.02,
+      "success": true,
+      "numerator": 7.932509597656748e-09,
+      "denominator": 55.51277459062206,
+      "R_X": 1.4289521026745456e-10,
+      "terminal_ham_max": 0.08315836833830659,
+      "terminal_mom_max": 0.057872377348199174,
+      "selected_slices": [
+        {
+          "n": 0.0,
+          "charge_std": 7.463695179022353e-16,
+          "Qmax": 0.5000000000000002,
+          "num_slice": 0.0,
+          "den_slice": 0.0
+        },
+        {
+          "n": 0.005,
+          "charge_std": 5.954455902671971e-05,
+          "Qmax": 0.5024714894138254,
+          "num_slice": 252.75415386932872,
+          "den_slice": 4358.766908531424
+        },
+        {
+          "n": 0.01,
+          "charge_std": 0.00011952187630901889,
+          "Qmax": 0.5048867952033887,
+          "num_slice": 1.6743105792315616,
+          "den_slice": 9.515605847206817
+        },
+        {
+          "n": 0.015,
+          "charge_std": 0.00017997191434158112,
+          "Qmax": 0.5072462436019232,
+          "num_slice": -254.54700170700386,
+          "den_slice": 4359.877704800776
+        },
+        {
+          "n": 0.02,
+          "charge_std": 0.0002409339520263187,
+          "Qmax": 0.5095501157404023,
+          "num_slice": -1.8826392679497112e-45,
+          "den_slice": 3.201903519084865e-44
+        }
+      ]
+    },
+    {
+      "N": 64,
+      "L": 0.02,
+      "success": true,
+      "numerator": 2.336574855885996e-09,
+      "denominator": 55.512774335475555,
+      "R_X": 4.209075989907431e-11,
+      "terminal_ham_max": 0.009963659930889435,
+      "terminal_mom_max": 0.01007047501538403,
+      "selected_slices": [
+        {
+          "n": 0.0,
+          "charge_std": 7.234929677148804e-16,
+          "Qmax": 0.5000000000000002,
+          "num_slice": 0.0,
+          "den_slice": 0.0
+        },
+        {
+          "n": 0.005,
+          "charge_std": 9.267748390730214e-06,
+          "Qmax": 0.5024719307932888,
+          "num_slice": 252.75422918427972,
+          "den_slice": 4358.7669017132175
+        },
+        {
+          "n": 0.01,
+          "charge_std": 1.8601772615779782e-05,
+          "Qmax": 0.5048882548637441,
+          "num_slice": 1.6743836239166563,
+          "den_slice": 9.515636150602983
+        },
+        {
+          "n": 0.015,
+          "charge_std": 2.8009024811953076e-05,
+          "Qmax": 0.5072499768595387,
+          "num_slice": -254.5471573878698,
+          "den_slice": 4359.8776319974895
+        },
+        {
+          "n": 0.02,
+          "charge_std": 3.749659264188938e-05,
+          "Qmax": 0.509558405394679,
+          "num_slice": -1.882640984426263e-45,
+          "den_slice": 3.201903390238489e-44
+        }
+      ]
+    },
+    {
+      "N": 96,
+      "L": 0.02,
+      "success": true,
+      "numerator": 2.6568282548490064e-09,
+      "denominator": 55.51277432752708,
+      "R_X": 4.785976357754411e-11,
+      "terminal_ham_max": 0.00013161682800078012,
+      "terminal_mom_max": 0.00022888498406130716,
+      "selected_slices": [
+        {
+          "n": 0.0,
+          "charge_std": 6.642490637687073e-16,
+          "Qmax": 0.5000000000000002,
+          "num_slice": 0.0,
+          "den_slice": 0.0
+        },
+        {
+          "n": 0.005,
+          "charge_std": 1.972673196005919e-07,
+          "Qmax": 0.5024719277188977,
+          "num_slice": 252.75423111107102,
+          "den_slice": 4358.766901513211
+        },
+        {
+          "n": 0.01,
+          "charge_std": 3.9594209825092697e-07,
+          "Qmax": 0.5048882223569642,
+          "num_slice": 1.6743854909691038,
+          "den_slice": 9.5156369286566
+        },
+        {
+          "n": 0.015,
+          "charge_std": 5.961774188136065e-07,
+          "Qmax": 0.507249847942162,
+          "num_slice": -254.5471613809572,
+          "den_slice": 4359.877629909233
+        },
+        {
+          "n": 0.02,
+          "charge_std": 7.981311367396705e-07,
+          "Qmax": 0.5095580401941493,
+          "num_slice": -1.882641028491426e-45,
+          "den_slice": 3.2019033866270487e-44
+        }
+      ]
+    }
+  ],
+  "continuum_expectation": "For fixed charge and compactly supported X, the numerator is the integral of div_sigma(QX) and vanishes by algebraic integration by parts, independently of Einstein/Noether. This run checks implementation and charge conservation only.",
+  "scope": "This tests the same two-variable geometry and adjoint coefficients. It does not prove a global two-end estimate."
+}

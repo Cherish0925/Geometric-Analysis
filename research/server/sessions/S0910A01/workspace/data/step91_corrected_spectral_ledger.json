@@ -1,0 +1,307 @@
+{
+  "step": 91,
+  "scope": "corrected spectral ledger for K-odd quotient-descending product tensors",
+  "corrected_rules": {
+    "quotient_generator": "r_pi rotates each sphere by phi -> phi+pi; scalar and derived tensor modes transform by (-1)^m, so descent uses m_A+m_B parity, not ell_A+ell_B.",
+    "factor_tracefree_formula": "rough eigenvalue ell(ell+1)-4 and Rcirc=-1 give P=(ell_factor(ell_factor+1)+ell_other(ell_other+1))/2 - 1; minimum K-odd quotient value is 2 at ell=2,m=2,l_other=0.",
+    "independent_degrees": "ell_A and ell_B are independent; factor interchange only relates coefficients after summing or comparing symmetry-related node pairs.",
+    "mixed_oneform_formula": "P=(ell_A(ell_A+1)+ell_B(ell_B+1))/2 - 1 with ell_A,ell_B>=1; minimum is 1 at (1,1).",
+    "scalar_nonpositive_modes": "constant negative trace/shape directions and l=1 scalar zero modes are K-even or do not descend in their K-odd real components; they do not enter the K-odd quotient source sector."
+  },
+  "low_minima_by_sector": {
+    "scalar_trace_block_candidate": {
+      "sector": "scalar_trace_block_candidate",
+      "lA": 1,
+      "mA": 1,
+      "lB": 1,
+      "mB": 1,
+      "P_formula": "0.5*(lambda_A+lambda_B)-1",
+      "P": 1.0,
+      "descends_by_m_parity": true,
+      "K_odd_real_component": "sin(m_A phi_A) component"
+    },
+    "AA_or_BB_factor_tracefree": {
+      "sector": "AA_or_BB_factor_tracefree",
+      "l_factor": 2,
+      "m_factor": 2,
+      "l_other": 0,
+      "m_other": 0,
+      "P_formula": "0.5*(lambda_factor+lambda_other)-1",
+      "P": 2.0,
+      "descends_by_m_parity": true,
+      "rough_eigenvalue_factor": 2,
+      "Rcirc_on_TF": -1
+    },
+    "AB_oneform_product": {
+      "sector": "AB_oneform_product",
+      "lA": 1,
+      "mA": 0,
+      "lB": 1,
+      "mB": 0,
+      "P_formula": "0.5*(lambda_A+lambda_B)-1",
+      "P": 1.0,
+      "descends_by_m_parity": true,
+      "K_odd_options_on_A": [
+        "A coexact m=0"
+      ]
+    }
+  },
+  "lowest_rows_overall": [
+    {
+      "sector": "AB_oneform_product",
+      "lA": 1,
+      "mA": 0,
+      "lB": 1,
+      "mB": 0,
+      "P_formula": "0.5*(lambda_A+lambda_B)-1",
+      "P": 1.0,
+      "descends_by_m_parity": true,
+      "K_odd_options_on_A": [
+        "A coexact m=0"
+      ]
+    },
+    {
+      "sector": "AB_oneform_product",
+      "lA": 1,
+      "mA": 1,
+      "lB": 1,
+      "mB": 1,
+      "P_formula": "0.5*(lambda_A+lambda_B)-1",
+      "P": 1.0,
+      "descends_by_m_parity": true,
+      "K_odd_options_on_A": [
+        "A coexact cos",
+        "A exact sin"
+      ]
+    },
+    {
+      "sector": "scalar_trace_block_candidate",
+      "lA": 1,
+      "mA": 1,
+      "lB": 1,
+      "mB": 1,
+      "P_formula": "0.5*(lambda_A+lambda_B)-1",
+      "P": 1.0,
+      "descends_by_m_parity": true,
+      "K_odd_real_component": "sin(m_A phi_A) component"
+    },
+    {
+      "sector": "AA_or_BB_factor_tracefree",
+      "l_factor": 2,
+      "m_factor": 2,
+      "l_other": 0,
+      "m_other": 0,
+      "P_formula": "0.5*(lambda_factor+lambda_other)-1",
+      "P": 2.0,
+      "descends_by_m_parity": true,
+      "rough_eigenvalue_factor": 2,
+      "Rcirc_on_TF": -1
+    },
+    {
+      "sector": "scalar_trace_block_candidate",
+      "lA": 2,
+      "mA": 2,
+      "lB": 0,
+      "mB": 0,
+      "P_formula": "0.5*(lambda_A+lambda_B)-1",
+      "P": 2.0,
+      "descends_by_m_parity": true,
+      "K_odd_real_component": "sin(m_A phi_A) component"
+    },
+    {
+      "sector": "AB_oneform_product",
+      "lA": 1,
+      "mA": 0,
+      "lB": 2,
+      "mB": 0,
+      "P_formula": "0.5*(lambda_A+lambda_B)-1",
+      "P": 3.0,
+      "descends_by_m_parity": true,
+      "K_odd_options_on_A": [
+        "A coexact m=0"
+      ]
+    },
+    {
+      "sector": "AB_oneform_product",
+      "lA": 1,
+      "mA": 0,
+      "lB": 2,
+      "mB": 2,
+      "P_formula": "0.5*(lambda_A+lambda_B)-1",
+      "P": 3.0,
+      "descends_by_m_parity": true,
+      "K_odd_options_on_A": [
+        "A coexact m=0"
+      ]
+    },
+    {
+      "sector": "AB_oneform_product",
+      "lA": 1,
+      "mA": 1,
+      "lB": 2,
+      "mB": 1,
+      "P_formula": "0.5*(lambda_A+lambda_B)-1",
+      "P": 3.0,
+      "descends_by_m_parity": true,
+      "K_odd_options_on_A": [
+        "A coexact cos",
+        "A exact sin"
+      ]
+    },
+    {
+      "sector": "AB_oneform_product",
+      "lA": 2,
+      "mA": 0,
+      "lB": 1,
+      "mB": 0,
+      "P_formula": "0.5*(lambda_A+lambda_B)-1",
+      "P": 3.0,
+      "descends_by_m_parity": true,
+      "K_odd_options_on_A": [
+        "A coexact m=0"
+      ]
+    },
+    {
+      "sector": "AB_oneform_product",
+      "lA": 2,
+      "mA": 1,
+      "lB": 1,
+      "mB": 1,
+      "P_formula": "0.5*(lambda_A+lambda_B)-1",
+      "P": 3.0,
+      "descends_by_m_parity": true,
+      "K_odd_options_on_A": [
+        "A coexact cos",
+        "A exact sin"
+      ]
+    },
+    {
+      "sector": "AB_oneform_product",
+      "lA": 2,
+      "mA": 2,
+      "lB": 1,
+      "mB": 0,
+      "P_formula": "0.5*(lambda_A+lambda_B)-1",
+      "P": 3.0,
+      "descends_by_m_parity": true,
+      "K_odd_options_on_A": [
+        "A coexact cos",
+        "A exact sin"
+      ]
+    },
+    {
+      "sector": "scalar_trace_block_candidate",
+      "lA": 1,
+      "mA": 1,
+      "lB": 2,
+      "mB": 1,
+      "P_formula": "0.5*(lambda_A+lambda_B)-1",
+      "P": 3.0,
+      "descends_by_m_parity": true,
+      "K_odd_real_component": "sin(m_A phi_A) component"
+    },
+    {
+      "sector": "scalar_trace_block_candidate",
+      "lA": 2,
+      "mA": 1,
+      "lB": 1,
+      "mB": 1,
+      "P_formula": "0.5*(lambda_A+lambda_B)-1",
+      "P": 3.0,
+      "descends_by_m_parity": true,
+      "K_odd_real_component": "sin(m_A phi_A) component"
+    },
+    {
+      "sector": "scalar_trace_block_candidate",
+      "lA": 2,
+      "mA": 2,
+      "lB": 1,
+      "mB": 0,
+      "P_formula": "0.5*(lambda_A+lambda_B)-1",
+      "P": 3.0,
+      "descends_by_m_parity": true,
+      "K_odd_real_component": "sin(m_A phi_A) component"
+    },
+    {
+      "sector": "AA_or_BB_factor_tracefree",
+      "l_factor": 3,
+      "m_factor": 2,
+      "l_other": 0,
+      "m_other": 0,
+      "P_formula": "0.5*(lambda_factor+lambda_other)-1",
+      "P": 5.0,
+      "descends_by_m_parity": true,
+      "rough_eigenvalue_factor": 8,
+      "Rcirc_on_TF": -1
+    },
+    {
+      "sector": "AB_oneform_product",
+      "lA": 2,
+      "mA": 0,
+      "lB": 2,
+      "mB": 0,
+      "P_formula": "0.5*(lambda_A+lambda_B)-1",
+      "P": 5.0,
+      "descends_by_m_parity": true,
+      "K_odd_options_on_A": [
+        "A coexact m=0"
+      ]
+    },
+    {
+      "sector": "AB_oneform_product",
+      "lA": 2,
+      "mA": 0,
+      "lB": 2,
+      "mB": 2,
+      "P_formula": "0.5*(lambda_A+lambda_B)-1",
+      "P": 5.0,
+      "descends_by_m_parity": true,
+      "K_odd_options_on_A": [
+        "A coexact m=0"
+      ]
+    },
+    {
+      "sector": "AB_oneform_product",
+      "lA": 2,
+      "mA": 1,
+      "lB": 2,
+      "mB": 1,
+      "P_formula": "0.5*(lambda_A+lambda_B)-1",
+      "P": 5.0,
+      "descends_by_m_parity": true,
+      "K_odd_options_on_A": [
+        "A coexact cos",
+        "A exact sin"
+      ]
+    },
+    {
+      "sector": "AB_oneform_product",
+      "lA": 2,
+      "mA": 2,
+      "lB": 2,
+      "mB": 0,
+      "P_formula": "0.5*(lambda_A+lambda_B)-1",
+      "P": 5.0,
+      "descends_by_m_parity": true,
+      "K_odd_options_on_A": [
+        "A coexact cos",
+        "A exact sin"
+      ]
+    },
+    {
+      "sector": "AB_oneform_product",
+      "lA": 2,
+      "mA": 2,
+      "lB": 2,
+      "mB": 2,
+      "P_formula": "0.5*(lambda_A+lambda_B)-1",
+      "P": 5.0,
+      "descends_by_m_parity": true,
+      "K_odd_options_on_A": [
+        "A coexact cos",
+        "A exact sin"
+      ]
+    }
+  ],
+  "conclusion": "The Step90 lower bound P>=1 on the K-odd quotient tensor sector survives, but the enumeration and factor-TF minimum in step90_K_odd_spectral_analysis.py were incorrect. The actual low K-odd sector starts with AB one-form products at P=1 and factor trace-free products at P=2."
+}

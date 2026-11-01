@@ -1,0 +1,49 @@
+{
+  "norm_formula": "|g owedge Hess(a)|^2 = 12 (a''(x1))^2",
+  "int_dtRm_squared": {
+    "formula": "12 * (2pi)^3 * pi/2 = 48 pi^4",
+    "numerical": 4675.636369632116,
+    "check": 4675.636369632116
+  },
+  "numerical_quadrature": {
+    "int_app_sq": 1.5707963267948963,
+    "exact": 1.5707963267948966,
+    "relative_error": 1.4135798584282297e-16
+  },
+  "homogeneous_closure_false": {
+    "reason": "E(t) ~ Ct^2 near t=0 gives E'/E ~ 2/t -> infinity",
+    "consequence": "No homogeneous energy estimate E' <= CE at critical exponent",
+    "note": "The (2p-n)=0 cancellation concerns only constant homothety, not spatial Hessian"
+  },
+  "deturck_pullback": {
+    "standard_ricci_flow": "phi^* Ric(ghat) = Ric(phi^* ghat), so pullback works",
+    "normalized_cutoff_flow": "phi^*(a(Ric_ghat+ghat)) = (a o phi)(Ric_g+g), NOT a(Ric_g+g)",
+    "conclusion": "DeTurck pullback gives transported-cutoff flow, not fixed-cutoff flow",
+    "fix": "Need coupled system: (ghat, ahat=a o phi^{-1}) with ahat transport equation"
+  },
+  "coupled_system_assessment": {
+    "system_type": "coupled degenerate parabolic (metric) + first-order transport (scalar)",
+    "metric_equation": "Xu-type with coefficient ahat (not fixed a)",
+    "scalar_equation": "dt ahat = ahat W(ahat), first-order transport by DeTurck field",
+    "coupling_type": "through coefficients, NOT principal parts",
+    "main_difficulty": "ahat degenerates (-> 0 at support boundary) and evolves",
+    "plausibility": "standard coupled parabolic-transport theory applies in principle, but the degenerate coefficient evolution must be handled explicitly",
+    "status": "NOT yet proved; requires new coupled fixed-point argument"
+  },
+  "negative_chain_status": {
+    "A1_start": "NOT proved. Coupled system (5.2) is the correct target.",
+    "A2_first_exit": "Cannot verify without A1. Genuine cutoff forcing invalidates Step51's homogeneous L^p closure.",
+    "A3_metric_comparison": "Downstream of A1+A2.",
+    "A4_continuation": "Separate from start; shifted T/U/C may survive independently.",
+    "terminal_density": "Downstream of all above.",
+    "overall": "The negative chain breaks at A1 (start module). The coupled metric-transport system is the correct repair target. This is a non-trivial extension of Xu/Yang but structurally plausible."
+  },
+  "critical_product_analysis": {
+    "bar_beta_scaling": "O(A^{1/2}) for IL family with topological parameter A",
+    "yang_threshold": "c(4)^{-1} is a universal constant, so threshold may be exceeded for large A",
+    "fixed_topology": "All constants finite; per-manifold theorem with delta_0 ~ c/sqrt(A)",
+    "metric_comparison_constraint": "delta_0 <= c/sqrt(A) from metric drift integral",
+    "uniform_gap": "NO uniform gap across IL family (delta_0 -> 0 as A -> infinity)",
+    "per_manifold_gap": "YES, delta_0(M) > 0 for each fixed M, if start+H2 proved"
+  }
+}

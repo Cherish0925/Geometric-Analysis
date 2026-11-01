@@ -1,0 +1,178 @@
+{
+  "step": 92,
+  "scope": "finite exact m=2 adjacent AB polarization cancellation",
+  "matrices": {
+    "C": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        -1
+      ]
+    ],
+    "S": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "J": [
+      [
+        0,
+        -1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "J*C": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "J*S": [
+      [
+        -1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ]
+  },
+  "receiver_numerator": "-(A_01 B_10 + A_10 B_01), common factor 1/2 omitted",
+  "terms": [
+    {
+      "mode_A": "c",
+      "kind_A": "coexact",
+      "mode_B": "c",
+      "kind_B": "coexact",
+      "A_derivative": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "B_derivative": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "R_receiver_numerator_without_half": -2,
+      "R_source_numerator_without_half_and_without_common_(-1)^k": -2,
+      "relative_product_sign": 1
+    },
+    {
+      "mode_A": "c",
+      "kind_A": "coexact",
+      "mode_B": "s",
+      "kind_B": "exact",
+      "A_derivative": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "B_derivative": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "R_receiver_numerator_without_half": -2,
+      "R_source_numerator_without_half_and_without_common_(-1)^k": 2,
+      "relative_product_sign": -1
+    },
+    {
+      "mode_A": "s",
+      "kind_A": "exact",
+      "mode_B": "c",
+      "kind_B": "coexact",
+      "A_derivative": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "B_derivative": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "R_receiver_numerator_without_half": -2,
+      "R_source_numerator_without_half_and_without_common_(-1)^k": -2,
+      "relative_product_sign": 1
+    },
+    {
+      "mode_A": "s",
+      "kind_A": "exact",
+      "mode_B": "s",
+      "kind_B": "exact",
+      "A_derivative": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "B_derivative": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "R_receiver_numerator_without_half": -2,
+      "R_source_numerator_without_half_and_without_common_(-1)^k": 2,
+      "relative_product_sign": -1
+    }
+  ],
+  "sum_relative_product_signs": 0,
+  "cancellation_verified": true,
+  "interpretation": "After common degree-dependent amplitudes, denominator, heat factor, norm, and common (-1)^k antipodal parity are factored, the four m=2 adjacent polarizations have signs +,-,+,- and cancel mode by mode."
+}

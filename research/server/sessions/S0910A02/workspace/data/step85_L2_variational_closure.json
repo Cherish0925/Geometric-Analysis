@@ -1,0 +1,132 @@
+{
+  "purpose": "Step 85: variational closure, all-dimensional interval theorem, and LeBrun sequence question.",
+  "L2_closure": {
+    "formula": "int |E|^2 <= 4 * C^2 * omega_4 * a / L^2 = O(a / |log a|^2)",
+    "omega_4_unit_ball": 4.934802200544679,
+    "table": [
+      {
+        "a": 0.0001,
+        "R": 0.1,
+        "b": 0.01,
+        "L_leading": 2.3025850929940455,
+        "Cop_defect": 0.43429448190325187,
+        "single_ball_volume": 0.0004934802200544679,
+        "int_E_squared_upper_bound": 0.00037230456698455154,
+        "ratio_intE2_over_a": 3.7230456698455154
+      },
+      {
+        "a": 1e-08,
+        "R": 0.01,
+        "b": 0.0001,
+        "L_leading": 4.605170185988092,
+        "Cop_defect": 0.21714724095162588,
+        "single_ball_volume": 4.934802200544679e-08,
+        "int_E_squared_upper_bound": 9.307614174613785e-09,
+        "ratio_intE2_over_a": 0.9307614174613784
+      },
+      {
+        "a": 1e-16,
+        "R": 0.0001,
+        "b": 1e-08,
+        "L_leading": 9.210340371976184,
+        "Cop_defect": 0.10857362047581294,
+        "single_ball_volume": 4.934802200544679e-16,
+        "int_E_squared_upper_bound": 2.3269035436534463e-17,
+        "ratio_intE2_over_a": 0.23269035436534463
+      },
+      {
+        "a": 1e-32,
+        "R": 1e-08,
+        "b": 1e-16,
+        "L_leading": 18.420680743952367,
+        "Cop_defect": 0.05428681023790647,
+        "single_ball_volume": 4.93480220054468e-32,
+        "int_E_squared_upper_bound": 5.817258859133616e-34,
+        "ratio_intE2_over_a": 0.05817258859133616
+      },
+      {
+        "a": 1e-64,
+        "R": 1e-16,
+        "b": 9.999999999999999e-33,
+        "L_leading": 36.841361487904734,
+        "Cop_defect": 0.027143405118953235,
+        "single_ball_volume": 4.9348022005446785e-64,
+        "int_E_squared_upper_bound": 1.4543147147834036e-66,
+        "ratio_intE2_over_a": 0.014543147147834036
+      }
+    ],
+    "consequence": "The near-pinched family is a genuine degenerating minimizer of Z=int|E|^2 with inf Z = 0. No L^p instrument with p >= 2 can obstruct these rows. The direct variational method is disabled: the infimum is attained only in the degenerate limit (orbifold + Eguchi-Hanson bubbles).",
+    "variational_route_closed": true,
+    "reason": "The explicit family g_a satisfies Z(g_a) = O(a/|log a|^2) -> 0 while degenerating. Any almost-critical compactness/epsilon-regularity theory must handle this polynomial-vs-logarithmic mismatch. The unweighted C^0 operator norm is the sharp norm for the problem, exactly as the ell=2 classification implies."
+  },
+  "all_dimensional_interval_theorem": {
+    "statement": "For n >= 3: Yau-26 is false in dimension n ONLY IF there exists a closed connected smooth n-manifold carrying no Einstein metric of any sign lambda.",
+    "proof_sketch": "By Lohkamp, every closed n-manifold (n>=3) admits g with Ric_g < 0. After constant rescaling, c g' <= Ric_{g'} <= 0 for any c < 0. So the hypothesis class of interval [c, 0] equals ALL closed n-manifolds. If Yau-26 is false, this interval fails, so some manifold in the class has no Einstein metric.",
+    "dimensional_consequences": {
+      "n=2": "Every surface admits constant curvature (uniformization). Yau-26 trivially true.",
+      "n=3": "Yau-26 true by Hamilton: positive Ricci pinching gives space-form Einstein. Also, Sol/Nil manifolds have no Einstein (constant-curvature) metric, but the positive branch bypasses them.",
+      "n=4": "Plenty of no-Einstein manifolds (chi <= 0 by CGB; S1xS3; LeBrun families). Yau-26 reduces to strict branches P_4^+(delta) and P_4^-(delta).",
+      "n>=5": "NO certified closed n-manifold without an Einstein metric is known. This is the minimal prerequisite for any refutation. Either every closed n-manifold admits Einstein (making Yau-26 trivially true), or a new obstruction theorem in higher-dimensional geometry is required."
+    }
+  },
+  "lebrun_negative_branch": {
+    "question": {
+      "statement": "Does there exist a sequence of minimal complex surfaces X_i of general type with A_i = c_1^2(X_i) -> infinity, integers k_i >= A_i/3 with p_i = k_i/A_i -> 1/3, and metrics g_i on M_i = X_i # k_i CP-bar^2 with ||Ric_{g_i} + g_i||_op -> 0?",
+      "significance": "If yes: every strict negative interval is defeated, and dimension-four refutation reduces to the positive branch P_4^+ alone.",
+      "burns_core_tension": "The ordinary Burns (-1)-blowup core on Bl_1(C^2) = O(-1) is NOT Ricci-flat: its Ricci endomorphism has eigenvalues of order 1, giving operator-norm defect O(1), not O(1/|log a|). Naive local gluing cannot produce tight negative pinching. By contrast, the A_1 (Eguchi-Hanson) core is Ricci-flat, and only the Weyl transition produces the O(1/|log a|) defect.",
+      "pinching_monopole_incompatibility": "The manifolds that CAN be tightly pinched (A_1 mixed rows) are SW-void and hence outside the LeBrun reservoir. The manifolds WITH LeBrun obstruction require (-1)-blowups, which resist tight pinching. This is a structural tension, not a coincidence.",
+      "possible_escape": "A non-local construction (e.g., Ricci flow, conformal deformation, K\u00e4hler-edge methods) might avoid the Burns core. Alternatively, a different no-Einstein reservoir not requiring (-1)-blowups could provide the negative-branch sequence."
+    },
+    "stable_gap_degeneracy_table": [
+      {
+        "eta": 0.5,
+        "p": 0.8333333333333333,
+        "sqrt_rhs": 0.49999999999999994,
+        "delta_min": 0.3333333333333333,
+        "note": "delta_min -> 0 as eta -> 0"
+      },
+      {
+        "eta": 0.2,
+        "p": 0.5333333333333333,
+        "sqrt_rhs": 0.31622776601683794,
+        "delta_min": 0.24025307335204213,
+        "note": "delta_min -> 0 as eta -> 0"
+      },
+      {
+        "eta": 0.1,
+        "p": 0.43333333333333335,
+        "sqrt_rhs": 0.22360679774997902,
+        "delta_min": 0.18274399763155685,
+        "note": "delta_min -> 0 as eta -> 0"
+      },
+      {
+        "eta": 0.05,
+        "p": 0.3833333333333333,
+        "sqrt_rhs": 0.15811388300841894,
+        "delta_min": 0.1365270594958143,
+        "note": "delta_min -> 0 as eta -> 0"
+      },
+      {
+        "eta": 0.01,
+        "p": 0.3433333333333333,
+        "sqrt_rhs": 0.07071067811865478,
+        "delta_min": 0.06604088253131132,
+        "note": "delta_min -> 0 as eta -> 0"
+      },
+      {
+        "eta": 0.001,
+        "p": 0.3343333333333333,
+        "sqrt_rhs": 0.022360679774997907,
+        "delta_min": 0.0218716155827893,
+        "note": "delta_min -> 0 as eta -> 0"
+      },
+      {
+        "eta": 0.0001,
+        "p": 0.3334333333333333,
+        "sqrt_rhs": 0.007071067811865086,
+        "delta_min": 0.007021418882809232,
+        "note": "delta_min -> 0 as eta -> 0"
+      }
+    ]
+  }
+}

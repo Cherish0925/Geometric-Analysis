@@ -1,0 +1,248 @@
+{
+  "step": 59,
+  "total": 48,
+  "passed": 48,
+  "results": [
+    {
+      "name": "s0 > n/2 + 4",
+      "pass": true,
+      "detail": "s0=7, n/2+4=6.0"
+    },
+    {
+      "name": "s0 is integer",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Sobolev embedding H^s0 -> C^k",
+      "pass": true,
+      "detail": "s0 - n/2 = 5 >= 3 for C^2 metric"
+    },
+    {
+      "name": "W^{1,p} embedding p > n",
+      "pass": true,
+      "detail": "need p > 4 for L^infty"
+    },
+    {
+      "name": "T levels needed",
+      "pass": true,
+      "detail": "7 levels: T_0..T_6"
+    },
+    {
+      "name": "U pairs needed",
+      "pass": true,
+      "detail": "7 pairs: (U_1,C_2)..(U_7,C_8)"
+    },
+    {
+      "name": "highest cutoff jet",
+      "pass": true,
+      "detail": "C_8 = nabla^8 chi"
+    },
+    {
+      "name": "base pair covers m=0,1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "remaining T levels",
+      "pass": true,
+      "detail": "{2, 3, 4, 5, 6}"
+    },
+    {
+      "name": "remaining U pairs",
+      "pass": true,
+      "detail": "{2, 3, 4, 5, 6, 7}"
+    },
+    {
+      "name": "staggered order length",
+      "pass": true,
+      "detail": "14 stages = 2*s0 = 14: 7 T-levels + 7 U-pairs"
+    },
+    {
+      "name": "first stage is T_0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "last stage is (U_7,C_8)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "T_6 before (U_7,C_8)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "m=2: top cutoff C_4 integrated once",
+      "pass": true,
+      "detail": "C_4 -> C_3 by IBP"
+    },
+    {
+      "name": "m=2: residual uses U_1 not U_{m-1} or higher",
+      "pass": true,
+      "detail": "Holder-Sobolev with U_1 in L^4"
+    },
+    {
+      "name": "m=2: T_2 uses T_1 in residual (base pair)",
+      "pass": true,
+      "detail": "Holder-Sobolev with T_1 in L^4"
+    },
+    {
+      "name": "m=3: top cutoff C_5 integrated once",
+      "pass": true,
+      "detail": "C_5 -> C_4 by IBP"
+    },
+    {
+      "name": "m=3: residual uses U_1 not U_{m-1} or higher",
+      "pass": true,
+      "detail": "Holder-Sobolev with U_1 in L^4"
+    },
+    {
+      "name": "m=3: T_3 uses T_1 in residual (base pair)",
+      "pass": true,
+      "detail": "Holder-Sobolev with T_1 in L^4"
+    },
+    {
+      "name": "m=4: top cutoff C_6 integrated once",
+      "pass": true,
+      "detail": "C_6 -> C_5 by IBP"
+    },
+    {
+      "name": "m=4: residual uses U_1 not U_{m-1} or higher",
+      "pass": true,
+      "detail": "Holder-Sobolev with U_1 in L^4"
+    },
+    {
+      "name": "m=4: T_4 uses T_1 in residual (base pair)",
+      "pass": true,
+      "detail": "Holder-Sobolev with T_1 in L^4"
+    },
+    {
+      "name": "m=5: top cutoff C_7 integrated once",
+      "pass": true,
+      "detail": "C_7 -> C_6 by IBP"
+    },
+    {
+      "name": "m=5: residual uses U_1 not U_{m-1} or higher",
+      "pass": true,
+      "detail": "Holder-Sobolev with U_1 in L^4"
+    },
+    {
+      "name": "m=5: T_5 uses T_1 in residual (base pair)",
+      "pass": true,
+      "detail": "Holder-Sobolev with T_1 in L^4"
+    },
+    {
+      "name": "m=6: top cutoff C_8 integrated once",
+      "pass": true,
+      "detail": "C_8 -> C_7 by IBP"
+    },
+    {
+      "name": "m=6: residual uses U_1 not U_{m-1} or higher",
+      "pass": true,
+      "detail": "Holder-Sobolev with U_1 in L^4"
+    },
+    {
+      "name": "m=6: T_6 uses T_1 in residual (base pair)",
+      "pass": true,
+      "detail": "Holder-Sobolev with T_1 in L^4"
+    },
+    {
+      "name": "m=7: top cutoff C_9 integrated once",
+      "pass": true,
+      "detail": "C_9 -> C_8 by IBP"
+    },
+    {
+      "name": "m=7: residual uses U_1 not U_{m-1} or higher",
+      "pass": true,
+      "detail": "Holder-Sobolev with U_1 in L^4"
+    },
+    {
+      "name": "Holder exponents sum to 1",
+      "pass": true,
+      "detail": "1/4 + 1/5 + 1/4 + 3/10 = 1.0"
+    },
+    {
+      "name": "Sobolev critical in dim 4",
+      "pass": true,
+      "detail": "W^{1,2} -> L^4 is critical"
+    },
+    {
+      "name": "A_0 depends on U_1 = U_1",
+      "pass": true,
+      "detail": "have U_1 from staggered induction"
+    },
+    {
+      "name": "A_1 depends on U_2 = U_2",
+      "pass": true,
+      "detail": "have U_2 from staggered induction"
+    },
+    {
+      "name": "A_2 depends on U_3 = U_3",
+      "pass": true,
+      "detail": "have U_3 from staggered induction"
+    },
+    {
+      "name": "A_3 depends on U_4 = U_4",
+      "pass": true,
+      "detail": "have U_4 from staggered induction"
+    },
+    {
+      "name": "A_4 depends on U_5 = U_5",
+      "pass": true,
+      "detail": "have U_5 from staggered induction"
+    },
+    {
+      "name": "A_5 depends on U_6 = U_6",
+      "pass": true,
+      "detail": "have U_6 from staggered induction"
+    },
+    {
+      "name": "A_6 depends on U_7 = U_7",
+      "pass": true,
+      "detail": "have U_7 from staggered induction"
+    },
+    {
+      "name": "H^7 metric needs A_0..A_6",
+      "pass": true,
+      "detail": "A_0..A_6 = A_0..A_6 all controlled"
+    },
+    {
+      "name": "H^s0 -> C^k embedding",
+      "pass": true,
+      "detail": "s0=7 > n/2+2=4.0, so C^2 embedding for restart"
+    },
+    {
+      "name": "limit metric in H^s0",
+      "pass": true,
+      "detail": "weak-* compactness from uniform H^s0 bound"
+    },
+    {
+      "name": "limit metric positive definite",
+      "pass": true,
+      "detail": "bilipschitz from bounded |U|_infty"
+    },
+    {
+      "name": "sequence-uniform inputs are geometry-only",
+      "pass": true,
+      "detail": "9 inputs, none per-datum"
+    },
+    {
+      "name": "per-datum inputs in continuation only",
+      "pass": true,
+      "detail": "5 per-datum inputs"
+    },
+    {
+      "name": "no Y(0) in sequence-uniform chain",
+      "pass": true,
+      "detail": "Step 58 removes Y(0)"
+    },
+    {
+      "name": "no higher cutoff jet in seq-uniform chain",
+      "pass": true,
+      "detail": "only |d chi| appears"
+    }
+  ],
+  "note": "Structural/algebraic checks only. PDE tensor verification is separate."
+}

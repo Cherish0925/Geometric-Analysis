@@ -1,0 +1,24 @@
+{
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "compile": {
+    "ok": true,
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\"caption\":\"\",\"data\":\"'Yau26Step69.auditedCore' depends on axioms: [propext, Classical.choice, Quot.sound]\",\"endPos\":{\"column\":6,\"line\":124},\"fileName\":\"/qiushi-env/tmp/qiushi-yau26-lean-jregfwsx/Audit.lean\",\"isSilent\":false,\"keepFullRange\":false,\"kind\":\"[anonymous]\",\"pos\":{\"column\":0,\"line\":124},\"severity\":\"information\"}\n"
+  },
+  "declaration": "Yau26Step69.auditedCore",
+  "observed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "rejected_axioms": [],
+  "scope": "named Lean theorem only; mathematical statement correspondence and imported artifact trust remain separate",
+  "source_sha256": "05d394e5a03ce94b3e02dcedbb3ae1a87dad1c0b368e5a5093e18b50f9e23f66",
+  "status": "dependency_checked",
+  "verification": "fresh_process_compilation_and_transitive_axiom_policy"
+}

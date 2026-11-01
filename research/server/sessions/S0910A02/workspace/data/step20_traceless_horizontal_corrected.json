@@ -1,0 +1,18 @@
+{
+  "title": "Step 20 corrected traceless horizontal analysis",
+  "flat_base_residual": "(1+2A)/4 (constant, independent of r and s)",
+  "trig_identity_used": "csc^2 - cot^2 = 1",
+  "interpretation": "The residual equals the base curvature contribution, not a new constraint. Step 19 Fermi-coordinate corner matching already checked the full Einstein equations including traceless horizontal.",
+  "new_local_obstruction": false,
+  "decisive_question_remains_global": true,
+  "global_question": "Does the full coupled reduced system on the m-gon admit smooth solutions with total boundary flux -> 0 as m -> infinity?",
+  "numerical_checks": [
+    {
+      "A": 10,
+      "s": 0.01,
+      "r": 0.1,
+      "residual": 5.25,
+      "expected": 5.25
+    }
+  ]
+}

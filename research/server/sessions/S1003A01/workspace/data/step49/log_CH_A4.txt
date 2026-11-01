@@ -1,0 +1,41 @@
+WARNING:2026-10-07 23:39:01,836:jax._src.xla_bridge:794: An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.
+2026-10-07 23:41:05.246435: E external/xla/xla/service/slow_operation_alarm.cc:73] 
+********************************
+[Compiling module jit_per_point] Very slow compile? If you want to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+********************************
+2026-10-07 23:44:14.878207: E external/xla/xla/service/slow_operation_alarm.cc:140] The operation took 5m9.631989051s
+
+********************************
+[Compiling module jit_per_point] Very slow compile? If you want to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+********************************
+first chunk 314.37111830711365
+time 2524.300093650818 max bg Einstein residual 5.3302268750589315e-15
+{
+ "background": "CH",
+ "params": {
+  "NS": 12,
+  "NXI": 20,
+  "M": 24,
+  "RHO": 0.3,
+  "ANG": 4,
+  "K2": 0
+ },
+ "nbasis": 465,
+ "max_imag": 1.9446944055090398e-13,
+ "max_bg_residual": 5.3302268750589315e-15,
+ "F_ansatz_c0": 14.750000000000014,
+ "F_ansatz_cstar": -17.99999999999936,
+ "F_burns_only_kB": 11.999999999999883,
+ "opt_CHansatz_modes": {
+  "F": -17.99999999999949,
+  "null": 1,
+  "minpos": 1.0707041735298395,
+  "linresid": 1.562148229179609e-13
+ },
+ "opt_general_deg0": {
+  "F": -18.000000000000448,
+  "null": 190,
+  "minpos": 0.01663223428933563,
+  "linresid": 1.0814082700775742e-14
+ }
+}

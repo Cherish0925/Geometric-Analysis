@@ -1,0 +1,32 @@
+{
+  "flux_identity_4d": {
+    "assumed_operator_identity": "D Ric_e(eta(log r) K)=-(eta_tt+6 eta_t)K/(2 r^2)",
+    "o": "r^{-6} K",
+    "volume_scaling": "|K(r theta)|^2=r^4|K(theta)|^2, dV=r^3 dr dtheta, so r-powers reduce to d(log r)",
+    "eta_tt_integral": "0",
+    "eta_t_integral": "1",
+    "flux_coefficient_times_IK": "-3",
+    "matches_minus_(n+2)/2_for_n=4": true
+  },
+  "duality_lower_bound": {
+    "integral_norm_o": "L J_K",
+    "bound": "||D Ric u||_{op,infty} >= 3 I_K/(L J_K) in n=4"
+  },
+  "spherical_model_constants": {
+    "Q_spectrum_abs_values": [
+      "0",
+      "1/18",
+      "1/36",
+      "1/36"
+    ],
+    "HS_square_per_unit_volume": "1/216",
+    "nuclear_norm_per_unit_volume": "1/9",
+    "I_K": "v_Gamma/216",
+    "J_K": "v_Gamma/9",
+    "linear_unconstrained_constant": "1/8",
+    "linear_unconstrained_constant_statement": "1/(8 L)",
+    "constant_scalar_constant": "1/6",
+    "constant_scalar_constant_statement": "1/(6 L)"
+  },
+  "scope": "This audits the clean annulus constant algebra used by FND:flux and the sharp spherical-model constants.  It does not prove the nonlinear estimates or the applicability to arbitrary bubbling sequences; those require the manuscript's hypotheses and ambient tower/gauge localization."
+}

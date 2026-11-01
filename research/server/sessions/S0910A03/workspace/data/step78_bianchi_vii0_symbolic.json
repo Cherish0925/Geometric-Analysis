@@ -1,0 +1,61 @@
+{
+  "ansatz": "dr^2+a(r)^2 dz^2+b(r)^2 omega1^2+c(r)^2 omega2^2",
+  "forms": {
+    "omega1": "cos(kz) dx + sin(kz) dy",
+    "omega2": "-sin(kz) dx + cos(kz) dy",
+    "globality": "k integer when z has period 2*pi",
+    "structure": "d omega1=k dz wedge omega2; d omega2=-k dz wedge omega1"
+  },
+  "computed_normalized_Ricci_at_z0": {
+    "Rrr": "-(a(r)*b(r)*Derivative(c(r), (r, 2)) + a(r)*c(r)*Derivative(b(r), (r, 2)) + b(r)*c(r)*Derivative(a(r), (r, 2)))/(a(r)*b(r)*c(r))",
+    "Rz_unit": "-(k**2*b(r)**4 - 2*k**2*b(r)**2*c(r)**2 + k**2*c(r)**4 + 2*a(r)*b(r)**2*c(r)**2*Derivative(a(r), (r, 2)) + 2*a(r)*b(r)**2*c(r)*Derivative(a(r), r)*Derivative(c(r), r) + 2*a(r)*b(r)*c(r)**2*Derivative(a(r), r)*Derivative(b(r), r))/(2*a(r)**2*b(r)**2*c(r)**2)",
+    "Rb_unit": "(k**2*b(r)**4 - k**2*c(r)**4 - 2*a(r)**2*b(r)*c(r)**2*Derivative(b(r), (r, 2)) - 2*a(r)**2*b(r)*c(r)*Derivative(b(r), r)*Derivative(c(r), r) - 2*a(r)*b(r)*c(r)**2*Derivative(a(r), r)*Derivative(b(r), r))/(2*a(r)**2*b(r)**2*c(r)**2)",
+    "Rc_unit": "-(k**2*b(r)**4 - k**2*c(r)**4 + 2*a(r)**2*b(r)**2*c(r)*Derivative(c(r), (r, 2)) + 2*a(r)**2*b(r)*c(r)*Derivative(b(r), r)*Derivative(c(r), r) + 2*a(r)*b(r)**2*c(r)*Derivative(a(r), r)*Derivative(c(r), r))/(2*a(r)**2*b(r)**2*c(r)**2)"
+  },
+  "full_ricci_formula_checks_zero": {
+    "Rrr": "0",
+    "Rz_unit": "0",
+    "Rb_unit": "0",
+    "Rc_unit": "0"
+  },
+  "offdiagonal_ricci_at_z0": {
+    "Ric_01_at_z0": "0",
+    "Ric_02_at_z0": "0",
+    "Ric_03_at_z0": "0",
+    "Ric_12_at_z0": "0",
+    "Ric_13_at_z0": "0",
+    "Ric_23_at_z0": "0"
+  },
+  "intrinsic_slice_ricci": {
+    "Ric_z_unit": "-k**2*(b(r) - c(r))**2*(b(r) + c(r))**2/(2*a(r)**2*b(r)**2*c(r)**2)",
+    "Ric_omega1_unit": "k**2*(b(r) - c(r))*(b(r) + c(r))*(b(r)**2 + c(r)**2)/(2*a(r)**2*b(r)**2*c(r)**2)",
+    "Ric_omega2_unit": "-k**2*(b(r) - c(r))*(b(r) + c(r))*(b(r)**2 + c(r)**2)/(2*a(r)**2*b(r)**2*c(r)**2)"
+  },
+  "intrinsic_formula_checks_zero": {
+    "Ric_z_plus_K": "0",
+    "Ric_omega1_minus_L": "0",
+    "Ric_omega2_plus_L": "0",
+    "scalar_plus_K": "0"
+  },
+  "definitions": {
+    "K_algebraic": "k**2*(b(r) - c(r))**2*(b(r) + c(r))**2/(2*a(r)**2*b(r)**2*c(r)**2)",
+    "L_algebraic": "k**2*(b(r) - c(r))*(b(r) + c(r))*(b(r)**2 + c(r)**2)/(2*a(r)**2*b(r)**2*c(r)**2)",
+    "K_hyperbolic": "2*k^2*a^(-2)*sinh(d)^2",
+    "L_hyperbolic": "k^2*a^(-2)*sinh(2d)=K*coth(d)",
+    "L_minus_K_coth_d": "0"
+  },
+  "einstein_ode_checks_zero": {
+    "u_equation_from_Rz": "0",
+    "d_equation_from_Rb_minus_Rc": "0",
+    "K_log_derivative": "0"
+  },
+  "resulting_exact_odes": {
+    "u": "u' + H u = 3-K",
+    "d": "d'' + H d' = 2 K coth(d)",
+    "K": "(log K)' = -2u + 2 coth(d)d'"
+  },
+  "perturbed_odes_for_E_Ric_plus_3g": {
+    "u": "u' + H u = 3-K-E_z",
+    "d": "d'' + H d' = 2 K coth(d)-(E_omega1-E_omega2)"
+  }
+}

@@ -1,0 +1,351 @@
+{
+ "embeddings": {
+  "A1+A1 in Z^2": {
+   "gram": [
+    [
+     -2,
+     0
+    ],
+    [
+     0,
+     -2
+    ]
+   ],
+   "disc": 4,
+   "index_in_Z^k": 2,
+   "root_lattice_even": true,
+   "all_roots_norm_-2": true
+  },
+  "A3=D3 in Z^3 (chain e2-e3, e1-e2, e2+e3)": {
+   "gram": [
+    [
+     -2,
+     1,
+     0
+    ],
+    [
+     1,
+     -2,
+     1
+    ],
+    [
+     0,
+     1,
+     -2
+    ]
+   ],
+   "disc": 4,
+   "index_in_Z^k": 2,
+   "root_lattice_even": true,
+   "all_roots_norm_-2": true
+  },
+  "D4 in Z^4": {
+   "gram": [
+    [
+     -2,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     -2,
+     1,
+     1
+    ],
+    [
+     0,
+     1,
+     -2,
+     0
+    ],
+    [
+     0,
+     1,
+     0,
+     -2
+    ]
+   ],
+   "disc": 4,
+   "index_in_Z^k": 2,
+   "root_lattice_even": true,
+   "all_roots_norm_-2": true
+  },
+  "D5 in Z^5": {
+   "gram": [
+    [
+     -2,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     -2,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     -2,
+     1,
+     1
+    ],
+    [
+     0,
+     0,
+     1,
+     -2,
+     0
+    ],
+    [
+     0,
+     0,
+     1,
+     0,
+     -2
+    ]
+   ],
+   "disc": 4,
+   "index_in_Z^k": 2,
+   "root_lattice_even": true,
+   "all_roots_norm_-2": true
+  },
+  "D6 in Z^6": {
+   "gram": [
+    [
+     -2,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     -2,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     -2,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     1,
+     -2,
+     1,
+     1
+    ],
+    [
+     0,
+     0,
+     0,
+     1,
+     -2,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     1,
+     0,
+     -2
+    ]
+   ],
+   "disc": 4,
+   "index_in_Z^k": 2,
+   "root_lattice_even": true,
+   "all_roots_norm_-2": true
+  },
+  "(A1+A1)^2 in Z^4": {
+   "gram": [
+    [
+     -2,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     -2,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     -2,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     -2
+    ]
+   ],
+   "disc": 16,
+   "index_in_Z^k": 4,
+   "root_lattice_even": true,
+   "all_roots_norm_-2": true
+  }
+ },
+ "E_in_root_span": {
+  "A1+A1: E1": [
+   "1/2",
+   "1/2"
+  ],
+  "A1+A1: E2": [
+   "1/2",
+   "-1/2"
+  ],
+  "A3: E1": [
+   "1/2",
+   "1",
+   "1/2"
+  ],
+  "A3: E2": [
+   "1/2",
+   "0",
+   "1/2"
+  ],
+  "A3: E3": [
+   "-1/2",
+   "0",
+   "1/2"
+  ]
+ },
+ "single_lattice_overlattice": {
+  "A1": {
+   "disc": 2,
+   "square": false,
+   "note": "disc 2 not square: no overlattice"
+  },
+  "A2": {
+   "disc": 3,
+   "square": false,
+   "note": "disc 3: none"
+  },
+  "A3": {
+   "disc": 4,
+   "square": true,
+   "note": "index-2 overlattice D3^+ = Z^3 (odd)"
+  },
+  "A8": {
+   "disc": 9,
+   "square": true,
+   "note": "unique index-3 overlattice is E8 (even): no norm -1 vector"
+  },
+  "E6": {
+   "disc": 3,
+   "square": false,
+   "note": "disc 3: none"
+  },
+  "E7": {
+   "disc": 2,
+   "square": false,
+   "note": "disc 2: none"
+  },
+  "E8": {
+   "disc": 1,
+   "square": true,
+   "note": "unimodular even, not Z^8"
+  },
+  "D4": {
+   "disc": 4,
+   "square": true,
+   "note": "index-2 overlattices: Z^4 (odd) and the two other ones (even? D4^+ ~ D4); Z^4 occurs"
+  }
+ },
+ "eta": {
+  "EH(Z2)": "0",
+  "A3(Z4)": "1/2"
+ },
+ "characteristic": {
+  "X#(S4/Z2) + 2 EH": {
+   "chi_M - chi_X": "2",
+   "tau_M - tau_X": "-2",
+   "expected": [
+    2,
+    -2
+   ],
+   "ok": true,
+   "(2chi+3tau)_orb(Y) - c1^2(X)": "-2"
+  },
+  "X#Sigma4 + A3": {
+   "chi_M - chi_X": "3",
+   "tau_M - tau_X": "-3",
+   "expected": [
+    3,
+    -3
+   ],
+   "ok": true,
+   "(2chi+3tau)_orb(Y) - c1^2(X)": "-3"
+  },
+  "tau_orb(Sigma4)": "-1/2"
+ },
+ "link_charges": {
+  "Burns (D#CPbar2 cell, chi=2,tau=-1)": {
+   "charge": "1",
+   "sigma=+1,-1": [
+    "1",
+    "-5"
+   ]
+  },
+  "EH bubble": {
+   "charge": "0",
+   "sigma=+1,-1": [
+    "0",
+    "-6"
+   ]
+  },
+  "A3 Kronheimer bubble": {
+   "charge": "0",
+   "sigma=+1,-1": [
+    "0",
+    "-15"
+   ]
+  },
+  "S4/Z2 cell": {
+   "charge": "2",
+   "sigma=+1,-1": [
+    "2",
+    "2"
+   ]
+  },
+  "Sigma4 cell": {
+   "charge": "3",
+   "sigma=+1,-1": [
+    "3",
+    "0"
+   ]
+  },
+  "D#2CPbar2 cell": {
+   "charge": "2",
+   "sigma=+1,-1": [
+    "2",
+    "-10"
+   ]
+  },
+  "D#3CPbar2 cell": {
+   "charge": "3",
+   "sigma=+1,-1": [
+    "3",
+    "-15"
+   ]
+  }
+ }
+}

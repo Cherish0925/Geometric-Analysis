@@ -1,0 +1,53 @@
+{
+  "formulas": {
+    "chi_M": "chiX+k",
+    "tau_X_from_A_chi": "(A-2*chiX)/3",
+    "tau_M": "(A-2*chiX)/3 - k",
+    "p1_TM_integral": "3*tau_M = A-2*chiX-3*k",
+    "p1_Lambda_plus_integral": "2*chi_M+3*tau_M = A-k",
+    "p1_Lambda_minus_integral": "2*chi_M-3*tau_M = 4*chiX+5*k-A",
+    "near_k_A_over_3": {
+      "p1_TM_per_A": "1 - 2 chiX/A - 1 = -2 chiX/A (typically negative for general type)",
+      "p1_Lambda_plus_per_A": "1 - 1/3 = 2/3 (positive in the orientation where LeBrun uses W+)",
+      "warning": "If one says simply p1 without naming the bundle, the sign can be wrong. The calibrated density rho_+ used in LeBrun/Derdzinski arguments is for Lambda^2_+, not TM."
+    }
+  },
+  "samples": [
+    {
+      "chiX_over_A": 0.3333333333333333,
+      "A": 300.0,
+      "k": 100.0,
+      "tauM_over_A": -0.22222222222222218,
+      "int_p1_TM_over_A": -0.6666666666666665,
+      "int_p1_Lambda_plus_over_A": 0.6666666666666667,
+      "int_p1_Lambda_minus_over_A": 2.0
+    },
+    {
+      "chiX_over_A": 1,
+      "A": 300.0,
+      "k": 100.0,
+      "tauM_over_A": -0.6666666666666666,
+      "int_p1_TM_over_A": -2.0,
+      "int_p1_Lambda_plus_over_A": 0.6666666666666666,
+      "int_p1_Lambda_minus_over_A": 4.666666666666667
+    },
+    {
+      "chiX_over_A": 2,
+      "A": 300.0,
+      "k": 100.0,
+      "tauM_over_A": -1.3333333333333333,
+      "int_p1_TM_over_A": -4.0,
+      "int_p1_Lambda_plus_over_A": 0.6666666666666666,
+      "int_p1_Lambda_minus_over_A": 8.666666666666666
+    },
+    {
+      "chiX_over_A": 5,
+      "A": 300.0,
+      "k": 100.0,
+      "tauM_over_A": -3.3333333333333335,
+      "int_p1_TM_over_A": -10.0,
+      "int_p1_Lambda_plus_over_A": 0.6666666666666666,
+      "int_p1_Lambda_minus_over_A": 20.666666666666668
+    }
+  ]
+}

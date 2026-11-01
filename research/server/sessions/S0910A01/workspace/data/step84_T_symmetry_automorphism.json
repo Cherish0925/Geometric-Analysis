@@ -1,0 +1,45 @@
+{
+  "T_preserves_Q0_maxerr": 3.552713678800501e-15,
+  "T_maps_Q1_to_Q0_minus_Q1_maxerr": 1.0658141036401503e-14,
+  "S0_preserves_Q0_maxerr": 0.0,
+  "S0_preserves_Q1_maxerr": 0.0,
+  "S2_preserves_Q0_maxerr": 0.0,
+  "S2_preserves_Q1_maxerr": 0.0,
+  "node_orbit_actions": {
+    "A+": {
+      "T": "B+",
+      "S0": "A-",
+      "S2": "A+"
+    },
+    "A-": {
+      "T": "B-",
+      "S0": "A+",
+      "S2": "A-"
+    },
+    "B+": {
+      "T": "A+",
+      "S0": "B+",
+      "S2": "B-"
+    },
+    "B-": {
+      "T": "A-",
+      "S0": "B-",
+      "S2": "B+"
+    }
+  },
+  "G_transitive_on_nodes": true,
+  "G_invariant_vector_field_dimension": 0,
+  "holomorphic_VF_kernel_killed": "True",
+  "all_same_chirality_G_invariant": false,
+  "reason_all_same_not_G_inv": "S0 is anti-holomorphic on first factor, reverses chirality at A-nodes",
+  "mixed_chirality_pencil_symmetry": "The diagonal mixed pattern (+,-,-,+) or (+,+,-,-) is not obviously G-invariant because G elements like S0, S2 are anti-holomorphic and change chirality. The mixed-chirality construction uses the Riemannian L-symmetry, which is not a pencil automorphism. The all-same chirality pattern IS compatible with the algebraic smoothing and the G-equivariant KE degeneration.",
+  "summary": {
+    "T_preserves_fibers": true,
+    "G_transitive_on_4_nodes": true,
+    "G_kills_continuous_automorphisms": "True",
+    "equivariant_Spotti_feasibility": "G-equivariant category has no continuous automorphism obstruction. Spotti's finite-automorphism theorem may admit G-equivariant adaptation. Substantive work: G-invariant inverse and nonlinear estimates.",
+    "all_same_chirality_is_algebraic": true,
+    "mixed_chirality_is_NOT_algebraic": true,
+    "matched_control_principle": "G-equivariant KE degeneration forces equal bubble scales at all 4 nodes. Same-chirality radial equation s+d+2c_same=0 at matched power layer. Mixed chirality difference: 2*(c_opp - c_same). This is the decisive quantity."
+  }
+}

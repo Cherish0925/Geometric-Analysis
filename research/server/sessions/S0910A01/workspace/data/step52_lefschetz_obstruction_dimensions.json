@@ -1,0 +1,1022 @@
+{
+  "abelian_lefschetz_fourier_decomposition_dual_convention": {
+    "6.18 K2=4 G=Z4xZ2": {
+      "C1_2K": {
+        "(0, 0)": 1,
+        "(0, 1)": 1,
+        "(1, 1)": 1,
+        "(2, 0)": 2,
+        "(3, 1)": 1
+      },
+      "C1_K": {
+        "(0, 1)": 1,
+        "(1, 0)": 1,
+        "(3, 0)": 1
+      },
+      "C2_2K": {
+        "(0, 0)": 1,
+        "(1, 0)": 1,
+        "(2, 0)": 2,
+        "(2, 1)": 1,
+        "(3, 0)": 1
+      },
+      "C2_K": {
+        "(1, 1)": 1,
+        "(2, 1)": 1,
+        "(3, 1)": 1
+      }
+    },
+    "6.19 K2=4 G=Z2^3": {
+      "C1_2K": {
+        "(0, 0, 0)": 2,
+        "(0, 1, 0)": 1,
+        "(0, 1, 1)": 1,
+        "(1, 0, 0)": 1,
+        "(1, 1, 0)": 1
+      },
+      "C1_K": {
+        "(0, 0, 1)": 1,
+        "(1, 0, 1)": 1,
+        "(1, 1, 1)": 1
+      },
+      "C2_2K": {
+        "(0, 0, 0)": 2,
+        "(0, 0, 1)": 1,
+        "(0, 1, 0)": 1,
+        "(1, 0, 1)": 1,
+        "(1, 1, 1)": 1
+      },
+      "C2_K": {
+        "(0, 1, 1)": 1,
+        "(1, 0, 0)": 1,
+        "(1, 1, 0)": 1
+      }
+    },
+    "6.7 K2=2 G=Z4^2": {
+      "C1_2K": {
+        "(0, 2)": 1,
+        "(1, 0)": 1,
+        "(1, 3)": 1,
+        "(2, 0)": 1,
+        "(2, 1)": 1,
+        "(2, 2)": 1
+      },
+      "C1_K": {
+        "(2, 3)": 1,
+        "(3, 0)": 1,
+        "(3, 1)": 1
+      },
+      "C2_2K": {
+        "(0, 1)": 1,
+        "(0, 2)": 1,
+        "(1, 1)": 1,
+        "(2, 0)": 1,
+        "(2, 2)": 1,
+        "(3, 2)": 1
+      },
+      "C2_K": {
+        "(0, 3)": 1,
+        "(1, 2)": 1,
+        "(3, 3)": 1
+      }
+    }
+  },
+  "branch_system_check_convention": "For the displayed nonabelian permutation rows, the script checks the spherical-system identity using BCGP's left-product convention relative to the script's compose-after permutation multiplication. Every curve branch list also separately generates the full group and has the expected orders/signature.",
+  "formulas": {
+    "identity_traces": "trace_K=g, trace_2K=3g-3",
+    "obstruction_dimension": "|G|^{-1} sum_u (chi_2K,C1(u) chi_K,C2(u) + chi_K,C1(u) chi_2K,C2(u))",
+    "trace_2K_nonidentity": "sum_{p fixed} lambda_p^2/(1-lambda_p)",
+    "trace_K_nonidentity": "1 + sum_{p fixed} lambda_p/(1-lambda_p)"
+  },
+  "interpretation": "d=0 is a sufficient global-smoothing mechanism via Step 51 reflexive bridge and Lee-Park; d>0 is not a no-Einstein or no-smoothing theorem.",
+  "method": "holomorphic_lefschetz_tensor_character_average",
+  "note_on_character_orientation": "The stored Fourier lists use the tangent-sign=-1 dual convention, which matches the Step 50/51 abelian character tables for the K^2=2 row. Reversing the tangent multiplier exponent dualizes all abelian character labels; invariant dimensions are unchanged.",
+  "results": [
+    {
+      "K2": 2,
+      "branch_check_C1": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          4,
+          4,
+          4
+        ]
+      },
+      "branch_check_C2": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          4,
+          4,
+          4
+        ]
+      },
+      "complex_raw": {
+        "term12": [
+          1.3877787807814457e-17,
+          2.0816681711721685e-16
+        ],
+        "term21": [
+          1.5265566588595902e-16,
+          2.498001805406602e-16
+        ],
+        "total": [
+          1.6653345369377348e-16,
+          4.579669976578771e-16
+        ]
+      },
+      "genus_C1": 3,
+      "genus_C2": 3,
+      "group": "Z4^2",
+      "label": "6.7 K2=2 G=Z4^2",
+      "max_fixed_C1_nonidentity": 4,
+      "max_fixed_C2_nonidentity": 4,
+      "order": 16,
+      "term_H0_2K1_tensor_K2": 0,
+      "term_H0_K1_tensor_2K2": 0,
+      "total_obstruction_dual_invariant_dimension": 0
+    },
+    {
+      "K2": 4,
+      "branch_check_C1": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          2,
+          4,
+          4
+        ]
+      },
+      "branch_check_C2": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          2,
+          4,
+          4
+        ]
+      },
+      "complex_raw": {
+        "term12": [
+          2.0,
+          4.020306624191592e-17
+        ],
+        "term21": [
+          2.0,
+          4.020306624191592e-17
+        ],
+        "total": [
+          4.0,
+          8.040613248383184e-17
+        ]
+      },
+      "genus_C1": 3,
+      "genus_C2": 3,
+      "group": "Z4xZ2",
+      "label": "6.18 K2=4 G=Z4xZ2",
+      "max_fixed_C1_nonidentity": 8,
+      "max_fixed_C2_nonidentity": 8,
+      "order": 8,
+      "term_H0_2K1_tensor_K2": 2,
+      "term_H0_K1_tensor_2K2": 2,
+      "total_obstruction_dual_invariant_dimension": 4
+    },
+    {
+      "K2": 4,
+      "branch_check_C1": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "branch_check_C2": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "complex_raw": {
+        "term12": [
+          3.0,
+          -1.0715659492539339e-16
+        ],
+        "term21": [
+          3.0,
+          -1.0715659492539339e-16
+        ],
+        "total": [
+          6.0,
+          -2.1431318985078678e-16
+        ]
+      },
+      "genus_C1": 3,
+      "genus_C2": 3,
+      "group": "Z2^3",
+      "label": "6.19 K2=4 G=Z2^3",
+      "max_fixed_C1_nonidentity": 8,
+      "max_fixed_C2_nonidentity": 8,
+      "order": 8,
+      "term_H0_2K1_tensor_K2": 3,
+      "term_H0_K1_tensor_2K2": 3,
+      "total_obstruction_dual_invariant_dimension": 6
+    },
+    {
+      "K2": 4,
+      "branch_check_C1": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          4,
+          5
+        ]
+      },
+      "branch_check_C2": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          3,
+          6,
+          6
+        ]
+      },
+      "complex_raw": {
+        "term12": [
+          1.0,
+          9.18485099360515e-17
+        ],
+        "term21": [
+          1.0,
+          1.0353833357082879e-16
+        ],
+        "total": [
+          2.0,
+          1.953868435068803e-16
+        ]
+      },
+      "genus_C1": 4,
+      "genus_C2": 21,
+      "group": "S5",
+      "label": "6.9 K2=4 G=S5",
+      "max_fixed_C1_nonidentity": 6,
+      "max_fixed_C2_nonidentity": 8,
+      "order": 120,
+      "term_H0_2K1_tensor_K2": 1,
+      "term_H0_K1_tensor_2K2": 1,
+      "total_obstruction_dual_invariant_dimension": 2
+    },
+    {
+      "K2": 4,
+      "branch_check_C1": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          2,
+          3,
+          3
+        ]
+      },
+      "branch_check_C2": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          5,
+          5
+        ]
+      },
+      "complex_raw": {
+        "term12": [
+          1.0,
+          1.209493459317158e-16
+        ],
+        "term21": [
+          2.0,
+          3.061616997868383e-17
+        ],
+        "total": [
+          3.0,
+          1.5156551591039963e-16
+        ]
+      },
+      "genus_C1": 11,
+      "genus_C2": 4,
+      "group": "A5",
+      "label": "6.10 K2=4 G=A5",
+      "max_fixed_C1_nonidentity": 4,
+      "max_fixed_C2_nonidentity": 4,
+      "order": 60,
+      "term_H0_2K1_tensor_K2": 2,
+      "term_H0_K1_tensor_2K2": 1,
+      "total_obstruction_dual_invariant_dimension": 3
+    },
+    {
+      "K2": 4,
+      "branch_check_C1": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          2,
+          4,
+          4
+        ]
+      },
+      "branch_check_C2": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          4,
+          6
+        ]
+      },
+      "complex_raw": {
+        "term12": [
+          1.0,
+          6.602578808898372e-17
+        ],
+        "term21": [
+          2.0,
+          4.020306624191593e-17
+        ],
+        "total": [
+          3.0,
+          1.0622885433089965e-16
+        ]
+      },
+      "genus_C1": 13,
+      "genus_C2": 3,
+      "group": "S4xZ2",
+      "label": "6.11 K2=4 G=S4xZ2",
+      "max_fixed_C1_nonidentity": 8,
+      "max_fixed_C2_nonidentity": 8,
+      "order": 48,
+      "term_H0_2K1_tensor_K2": 2,
+      "term_H0_K1_tensor_2K2": 1,
+      "total_obstruction_dual_invariant_dimension": 3
+    },
+    {
+      "K2": 4,
+      "branch_check_C1": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "branch_check_C2": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          4,
+          6
+        ]
+      },
+      "complex_raw": {
+        "term12": [
+          1.0,
+          6.602578808898371e-17
+        ],
+        "term21": [
+          3.0,
+          -1.071565949253934e-16
+        ],
+        "total": [
+          4.0,
+          -4.1130806836409694e-17
+        ]
+      },
+      "genus_C1": 13,
+      "genus_C2": 3,
+      "group": "S4xZ2",
+      "label": "6.12 K2=4 G=S4xZ2",
+      "max_fixed_C1_nonidentity": 12,
+      "max_fixed_C2_nonidentity": 8,
+      "order": 48,
+      "term_H0_2K1_tensor_K2": 3,
+      "term_H0_K1_tensor_2K2": 1,
+      "total_obstruction_dual_invariant_dimension": 4
+    },
+    {
+      "K2": 4,
+      "branch_check_C1": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          2,
+          2,
+          4
+        ]
+      },
+      "branch_check_C2": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          2,
+          2,
+          4
+        ]
+      },
+      "complex_raw": {
+        "term12": [
+          2.0,
+          -1.0514636857725863e-17
+        ],
+        "term21": [
+          2.0,
+          -1.0514636857725857e-17
+        ],
+        "total": [
+          4.0,
+          -2.102927371545172e-17
+        ]
+      },
+      "genus_C1": 5,
+      "genus_C2": 5,
+      "group": "Z2^4_semidirect_Z2",
+      "label": "6.13 K2=4 G=Z2^4_semidirect_Z2",
+      "max_fixed_C1_nonidentity": 8,
+      "max_fixed_C2_nonidentity": 8,
+      "order": 32,
+      "term_H0_2K1_tensor_K2": 2,
+      "term_H0_K1_tensor_2K2": 2,
+      "total_obstruction_dual_invariant_dimension": 4
+    },
+    {
+      "K2": 4,
+      "branch_check_C1": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "branch_check_C2": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          3,
+          4,
+          4
+        ]
+      },
+      "complex_raw": {
+        "term12": [
+          1.0,
+          1.320515761779674e-16
+        ],
+        "term21": [
+          3.0,
+          -1.0715659492539337e-16
+        ],
+        "total": [
+          4.0,
+          2.4894981252574028e-17
+        ]
+      },
+      "genus_C1": 7,
+      "genus_C2": 3,
+      "group": "S4",
+      "label": "6.14 K2=4 G=S4",
+      "max_fixed_C1_nonidentity": 8,
+      "max_fixed_C2_nonidentity": 4,
+      "order": 24,
+      "term_H0_2K1_tensor_K2": 3,
+      "term_H0_K1_tensor_2K2": 1,
+      "total_obstruction_dual_invariant_dimension": 4
+    },
+    {
+      "K2": 4,
+      "branch_check_C1": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          2,
+          3,
+          3
+        ]
+      },
+      "branch_check_C2": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          3,
+          6,
+          6
+        ]
+      },
+      "complex_raw": {
+        "term12": [
+          1.0,
+          9.18485099360515e-17
+        ],
+        "term21": [
+          2.0,
+          3.061616997868383e-17
+        ],
+        "total": [
+          3.0,
+          1.2246467991473532e-16
+        ]
+      },
+      "genus_C1": 4,
+      "genus_C2": 4,
+      "group": "S3xZ3",
+      "label": "6.15 K2=4 G=S3xZ3",
+      "max_fixed_C1_nonidentity": 6,
+      "max_fixed_C2_nonidentity": 6,
+      "order": 18,
+      "term_H0_2K1_tensor_K2": 2,
+      "term_H0_K1_tensor_2K2": 1,
+      "total_obstruction_dual_invariant_dimension": 3
+    },
+    {
+      "K2": 4,
+      "branch_check_C1": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          2,
+          3,
+          3
+        ]
+      },
+      "branch_check_C2": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          2,
+          3,
+          3
+        ]
+      },
+      "complex_raw": {
+        "term12": [
+          2.0,
+          3.061616997868383e-17
+        ],
+        "term21": [
+          2.0,
+          3.061616997868383e-17
+        ],
+        "total": [
+          4.0,
+          6.123233995736766e-17
+        ]
+      },
+      "genus_C1": 4,
+      "genus_C2": 4,
+      "group": "Z3^2_semidirect_Z2",
+      "label": "6.16 K2=4 G=Z3^2_semidirect_Z2",
+      "max_fixed_C1_nonidentity": 6,
+      "max_fixed_C2_nonidentity": 6,
+      "order": 18,
+      "term_H0_2K1_tensor_K2": 2,
+      "term_H0_K1_tensor_2K2": 2,
+      "total_obstruction_dual_invariant_dimension": 4
+    },
+    {
+      "K2": 4,
+      "branch_check_C1": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "branch_check_C2": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          2,
+          2,
+          4
+        ]
+      },
+      "complex_raw": {
+        "term12": [
+          2.0,
+          -1.051463685772587e-17
+        ],
+        "term21": [
+          3.0,
+          -1.0715659492539338e-16
+        ],
+        "total": [
+          5.0,
+          -1.1767123178311925e-16
+        ]
+      },
+      "genus_C1": 5,
+      "genus_C2": 3,
+      "group": "D4xZ2",
+      "label": "6.17 K2=4 G=D4xZ2",
+      "max_fixed_C1_nonidentity": 8,
+      "max_fixed_C2_nonidentity": 8,
+      "order": 16,
+      "term_H0_2K1_tensor_K2": 3,
+      "term_H0_K1_tensor_2K2": 2,
+      "total_obstruction_dual_invariant_dimension": 5
+    },
+    {
+      "K2": 6,
+      "branch_check_C1": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          5,
+          5
+        ]
+      },
+      "branch_check_C2": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          3,
+          3,
+          4
+        ]
+      },
+      "complex_raw": {
+        "term12": [
+          2.0,
+          6.602578808898366e-17
+        ],
+        "term21": [
+          2.0,
+          5.971700597434816e-17
+        ],
+        "total": [
+          4.0,
+          1.2574279406333182e-16
+        ]
+      },
+      "genus_C1": 19,
+      "genus_C2": 16,
+      "group": "A6",
+      "label": "6.20 K2=6 G=A6",
+      "max_fixed_C1_nonidentity": 4,
+      "max_fixed_C2_nonidentity": 6,
+      "order": 360,
+      "term_H0_2K1_tensor_K2": 2,
+      "term_H0_K1_tensor_2K2": 2,
+      "total_obstruction_dual_invariant_dimension": 4
+    },
+    {
+      "K2": 6,
+      "branch_check_C1": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          5,
+          5
+        ]
+      },
+      "branch_check_C2": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          3,
+          3,
+          4
+        ]
+      },
+      "complex_raw": {
+        "term12": [
+          2.0,
+          6.602578808898366e-17
+        ],
+        "term21": [
+          2.0,
+          5.971700597434816e-17
+        ],
+        "total": [
+          4.0,
+          1.2574279406333182e-16
+        ]
+      },
+      "genus_C1": 19,
+      "genus_C2": 16,
+      "group": "A6",
+      "label": "6.21 K2=6 G=A6",
+      "max_fixed_C1_nonidentity": 4,
+      "max_fixed_C2_nonidentity": 6,
+      "order": 360,
+      "term_H0_2K1_tensor_K2": 2,
+      "term_H0_K1_tensor_2K2": 2,
+      "total_obstruction_dual_invariant_dimension": 4
+    },
+    {
+      "K2": 6,
+      "branch_check_C1": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          4,
+          6
+        ]
+      },
+      "branch_check_C2": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          4,
+          10
+        ]
+      },
+      "complex_raw": {
+        "term12": [
+          2.0,
+          1.1083675434361687e-16
+        ],
+        "term21": [
+          2.0,
+          4.793448131616052e-18
+        ],
+        "total": [
+          4.0,
+          1.1563020247523293e-16
+        ]
+      },
+      "genus_C1": 11,
+      "genus_C2": 19,
+      "group": "S5xZ2",
+      "label": "6.22 K2=6 G=S5xZ2",
+      "max_fixed_C1_nonidentity": 8,
+      "max_fixed_C2_nonidentity": 24,
+      "order": 240,
+      "term_H0_2K1_tensor_K2": 2,
+      "term_H0_K1_tensor_2K2": 2,
+      "total_obstruction_dual_invariant_dimension": 4
+    },
+    {
+      "K2": 6,
+      "branch_check_C1": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          7,
+          7
+        ]
+      },
+      "branch_check_C2": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          3,
+          3,
+          4
+        ]
+      },
+      "complex_raw": {
+        "term12": [
+          2.0,
+          6.602578808898367e-17
+        ],
+        "term21": [
+          2.0,
+          1.4219071637507406e-16
+        ],
+        "total": [
+          4.0,
+          2.0821650446405773e-16
+        ]
+      },
+      "genus_C1": 19,
+      "genus_C2": 8,
+      "group": "PSL(2,7)",
+      "label": "6.23 K2=6 G=PSL(2,7)",
+      "max_fixed_C1_nonidentity": 6,
+      "max_fixed_C2_nonidentity": 4,
+      "order": 168,
+      "term_H0_2K1_tensor_K2": 2,
+      "term_H0_K1_tensor_2K2": 2,
+      "total_obstruction_dual_invariant_dimension": 4
+    },
+    {
+      "K2": 6,
+      "branch_check_C1": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          7,
+          7
+        ]
+      },
+      "branch_check_C2": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          3,
+          3,
+          4
+        ]
+      },
+      "complex_raw": {
+        "term12": [
+          2.0,
+          6.602578808898367e-17
+        ],
+        "term21": [
+          2.0,
+          1.4219071637507406e-16
+        ],
+        "total": [
+          4.0,
+          2.0821650446405773e-16
+        ]
+      },
+      "genus_C1": 19,
+      "genus_C2": 8,
+      "group": "PSL(2,7)",
+      "label": "6.24 K2=6 G=PSL(2,7)",
+      "max_fixed_C1_nonidentity": 6,
+      "max_fixed_C2_nonidentity": 4,
+      "order": 168,
+      "term_H0_2K1_tensor_K2": 2,
+      "term_H0_K1_tensor_2K2": 2,
+      "total_obstruction_dual_invariant_dimension": 4
+    },
+    {
+      "K2": 6,
+      "branch_check_C1": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          3,
+          3,
+          3
+        ]
+      },
+      "branch_check_C2": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          5,
+          5
+        ]
+      },
+      "complex_raw": {
+        "term12": [
+          2.0,
+          5.971700597434817e-17
+        ],
+        "term21": [
+          3.0,
+          1.5308084989341915e-17
+        ],
+        "total": [
+          5.0,
+          7.502509096369009e-17
+        ]
+      },
+      "genus_C1": 16,
+      "genus_C2": 4,
+      "group": "A5",
+      "label": "6.25 K2=6 G=A5",
+      "max_fixed_C1_nonidentity": 6,
+      "max_fixed_C2_nonidentity": 4,
+      "order": 60,
+      "term_H0_2K1_tensor_K2": 3,
+      "term_H0_K1_tensor_2K2": 2,
+      "total_obstruction_dual_invariant_dimension": 5
+    },
+    {
+      "K2": 6,
+      "branch_check_C1": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          2,
+          2,
+          2,
+          4
+        ]
+      },
+      "branch_check_C2": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          4,
+          6
+        ]
+      },
+      "complex_raw": {
+        "term12": [
+          2.0,
+          4.793448131616046e-18
+        ],
+        "term21": [
+          4.0,
+          -1.1767123178311927e-16
+        ],
+        "total": [
+          6.0,
+          -1.1287778365150322e-16
+        ]
+      },
+      "genus_C1": 19,
+      "genus_C2": 3,
+      "group": "S4xZ2",
+      "label": "6.26 K2=6 G=S4xZ2",
+      "max_fixed_C1_nonidentity": 12,
+      "max_fixed_C2_nonidentity": 8,
+      "order": 48,
+      "term_H0_2K1_tensor_K2": 4,
+      "term_H0_K1_tensor_2K2": 2,
+      "total_obstruction_dual_invariant_dimension": 6
+    },
+    {
+      "K2": 6,
+      "branch_check_C1": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          2,
+          2,
+          2,
+          4
+        ]
+      },
+      "branch_check_C2": {
+        "generates_group": true,
+        "left_product_identity": true,
+        "orders": [
+          2,
+          2,
+          2,
+          4
+        ]
+      },
+      "complex_raw": {
+        "term12": [
+          3.0,
+          -7.174697681509352e-17
+        ],
+        "term21": [
+          4.0,
+          -1.1767123178311927e-16
+        ],
+        "total": [
+          7.0,
+          -1.894182085982128e-16
+        ]
+      },
+      "genus_C1": 7,
+      "genus_C2": 3,
+      "group": "D4xZ2",
+      "label": "6.27 K2=6 G=D4xZ2",
+      "max_fixed_C1_nonidentity": 16,
+      "max_fixed_C2_nonidentity": 8,
+      "order": 16,
+      "term_H0_2K1_tensor_K2": 4,
+      "term_H0_K1_tensor_2K2": 3,
+      "total_obstruction_dual_invariant_dimension": 7
+    }
+  ]
+}

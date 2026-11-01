@@ -1,0 +1,32 @@
+{
+  "axiom_audit": {
+    "output": "",
+    "status": "not_requested"
+  },
+  "compile": {
+    "command": "lake env lean <user-proof-file>",
+    "ok": true,
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "LeviCivita: count=0\nLevi_Civita: count=0\nleviCivita: count=0\nChristoffel: count=0\nRiemannCurvature: count=0\nriemannCurvature: count=0\nRiemannTensor: count=0\nriemannTensor: count=0\nRicci: count=0\nricci: count=0\nScalarCurvature: count=0\nscalarCurvature: count=0\nSectionalCurvature: count=0\nsectionalCurvature: count=0\nCovariantDerivative: count=163\n  CovariantDerivative.mk.sizeOf_spec\n  _private.Mathlib.Geometry.Manifold.VectorBundle.CovariantDerivative.Metric.0.CovariantDerivative.derivMetricTensorAux._proof_3\n  CovariantDerivative.derivMetricTensor\n  CovariantDerivative.ContMDiffCovariantDerivative.affine_combination\n  _private.Mathlib.Geometry.Manifold.VectorBundle.CovariantDerivative.Basic.0.IsCovariantDerivativeOn.difference.eq_1\n  CovariantDerivative.casesOn\n  _private.Mathlib.Geometry.Manifold.VectorBundle.CovariantDerivative.Metric.0.CovariantDerivative.derivMetricTensor._proof_7\n  ContMDiffCovariantDerivativeOn.affine_combination\n  CovariantDerivative.mk.injEq\n  CovariantDerivative.affineCombination._proof_1\n  _private.Mathlib.Geometry.Manifold.VectorBundle.CovariantDerivative.Metric.0.CovariantDerivative.tensorial_derivMetricTensorAux₁._abel_1_1\n  CovariantDerivative.contMDiffCovariantDerivativeOn_univ_iff\n  IsCovariantDerivativeOn.smul_const\n  IsCovariantDerivativeOn.zero._auto_1\n  CovariantDerivative.IsMetricCompatible.mvfderiv_inner_eq\n  CovariantDerivative.derivMetricTensor_apply_eq_extend\n  _private.Mathlib.Geometry.Manifold.VectorBundle.CovariantDerivative.Torsion.0.IsCovariantDerivativeOn.torsionAux\n  _private.Mathlib.Geometry.Manifold.VectorBundle.CovariantDerivative.Basic.0.IsCovariantDerivativeOn.differenceAux.eq_1\n  CovariantDerivative.torsion_self\n  ContMDiffCovariantDerivativeOn.contMDiff\n  IsCovariantDerivativeOn.add\n  _private.Mathlib.Geometry.Manifold.VectorBundle.CovariantDerivative.Metric.0.CovariantDerivative.derivMetricTensor._proof_2\n  IsCovariantDerivativeOn.casesOn\n  _private.Mathlib.Geometry.Manifold.VectorBundle.CovariantDerivative.Metric.0.CovariantDerivative.derivMetricTensorAux\n  CovariantDerivative.finiteAffineCombination._proof_3\n  CovariantDerivative.isMetricCompatible_iff\n  ContMDiffCovariantDerivativeOn.casesOn\n  CovariantDerivative.affineCombination\n  CovariantDerivative.of_isCovariantDerivativeOn_of_open_cover\n  CovariantDerivative\n  _private.Mathlib.Geometry.Manifold.VectorBundle.CovariantDerivative.Torsion.0.IsCovariantDerivativeOn.torsionAux_tensorial₂\n  CovariantDerivative.isCovariantDerivativeOn\n  CovariantDerivative.affine_combination\n  CovariantDerivative.noConfusionType\n  IsCovariantDerivativeOn.affine_combination\n  CovariantDerivative.rec\n  CovariantDerivative.ContMDiffCovariantDerivative.finiteAffineCombination\n  CovariantDerivative.ofIsCovariantDerivativeOnOfOpenCover._proof_1\n  _private.Mathlib.Geometry.Manifold.VectorBundle.CovariantDerivative.Metric.0.CovariantDerivative.IsMetricCompatible._proof_4\n  CovariantDerivative.addOneForm._proof_2\nRiemannianMetric: count=100\n  Bundle.ContMDiffRiemannianMetric.toContinuousRiemannianMetric._proof_2\n  Bundle.ContinuousRiemannianMetric.mk\n  Bundle.ContMDiffRiemannianMetric.toContinuousRiemannianMetric._proof_12\n  Bundle.ContinuousRiemannianMetric._sizeOf_inst\n  Bundle.ContMDiffRiemannianMetric.ctorIdx\n  Bundle.ContMDiffRiemannianMetric.toContinuousRiemannianMetric._proof_9\n  Bundle.RiemannianMetric.isVonNBounded\n  Bundle.ContMDiffRiemannianMetric.recOn\n  Bundle.RiemannianMetric.toCore._proof_2\n  Bundle.ContMDiffRiemannianMetric.mk.inj\n  Bundle.ContMDiffRiemannianMetric\n  PseudoEMetricSpace.ofRiemannianMetric._proof_3\n  Bundle.ContMDiffRiemannianMetric.mk.sizeOf_spec\n  Bundle.ContMDiffRiemannianMetric.toContinuousRiemannianMetric._proof_1\n  Bundle.ContinuousRiemannianMetric.noConfusion\n  Bundle.ContMDiffRiemannianMetric.toContinuousRiemannianMetric._proof_11\n  Bundle.RiemannianMetric.mk.sizeOf_spec\n  Bundle.RiemannianMetric.noConfusion\n  Bundle.ContMDiffRiemannianMetric.toRiemannianMetric\n  Bundle.RiemannianMetric.recOn\n  Bundle.ContinuousRiemannianMetric.rec\n  Bundle.ContinuousRiemannianMetric.mk.sizeOf_spec\n  Bundle.RiemannianMetric.pos\n  Bundle.RiemannianMetric.mk._flat_ctor\n  Bundle.RiemannianMetric.inner\n  PseudoEMetricSpace.ofRiemannianMetric\n  Bundle.ContMDiffRiemannianMetric.toContinuousRiemannianMetric._proof_5\n  Bundle.RiemannianMetric.mk.noConfusion\n  Bundle.ContinuousRiemannianMetric.pos\n  Bundle.RiemannianMetric.ctorIdx\n  Bundle.ContMDiffRiemannianMetric._sizeOf_inst\n  Bundle.ContinuousRiemannianMetric.mk._flat_ctor\n  Bundle.ContMDiffRiemannianMetric.toContinuousRiemannianMetric._proof_6\n  Bundle.RiemannianMetric.continuousAt\n  Bundle.ContinuousRiemannianMetric._sizeOf_1\n  Bundle.ContinuousRiemannianMetric.ctorIdx\n  EmetricSpace.ofRiemannianMetric\n  Bundle.ContMDiffRiemannianMetric.toContinuousRiemannianMetric._proof_4\n  Bundle.ContMDiffRiemannianMetric.casesOn\n  Bundle.RiemannianMetric.mk.injEq\n",
+    "timed_out": false
+  },
+  "declaration": "",
+  "independent_rebuild": "fresh_process_compile",
+  "natural_language_statement": "Environment-level declaration-name scan for curvature APIs in the locked Mathlib",
+  "runtime": {
+    "lake-manifest.json_sha256": "14a93e63a5df91ca2739c1c6c6e2a55a37b4677e040e25e4a0c9163eca92371c",
+    "lean-toolchain_sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "lean_version": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+    "project": "$QIUSHI_PROOF_LEAN_PROJECT"
+  },
+  "schema_version": 1,
+  "source": "Sessions/S0910A02/workspace/codex_loop/work/lean_curvature_interface_step73/MathlibCurvatureEnvironmentScan.lean",
+  "source_policy": {
+    "declares_axiom": false,
+    "placeholders": []
+  },
+  "source_sha256": "c8abd02ead6399b2128c051e87d0c938bbb5934c79a2337d900a69cfd0940b94",
+  "statement_correspondence": "human_review_required",
+  "status": "accepted"
+}

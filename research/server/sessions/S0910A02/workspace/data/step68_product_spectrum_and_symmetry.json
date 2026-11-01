@@ -1,0 +1,497 @@
+{
+  "nodes": {
+    "p1": [
+      "N",
+      "N"
+    ],
+    "p2": [
+      "N",
+      "S"
+    ],
+    "p3": [
+      "S",
+      "N"
+    ],
+    "p4": [
+      "S",
+      "S"
+    ]
+  },
+  "reflection_c": {
+    "map": "c:(z,w)->(conjugate(z),w)",
+    "commutes_with_rho": true,
+    "fixes_nodes": [
+      "p1",
+      "p2",
+      "p3",
+      "p4"
+    ],
+    "orientation": "reverses product orientation (reverses first S^2 only)",
+    "pattern_action_on_reversed_set": "S -> complement(S)",
+    "chiral_action_conventional_basis": {
+      "omega1_plus": "- omega1_minus",
+      "omega2_plus": "- omega2_minus (up to basis convention)",
+      "omega3_plus": "+ omega3_minus (up to basis convention)",
+      "Lambda_plus": "Lambda_minus",
+      "Lambda_minus": "Lambda_plus"
+    }
+  },
+  "pattern_orbits_under_node_symmetries": {
+    "r=0": [
+      {
+        "representative": [],
+        "orbit": [
+          []
+        ],
+        "complement": [
+          "p1",
+          "p2",
+          "p3",
+          "p4"
+        ],
+        "complement_orbit": [
+          [
+            "p1",
+            "p2",
+            "p3",
+            "p4"
+          ]
+        ]
+      }
+    ],
+    "r=1": [
+      {
+        "representative": [
+          "p1"
+        ],
+        "orbit": [
+          [
+            "p1"
+          ],
+          [
+            "p2"
+          ],
+          [
+            "p3"
+          ],
+          [
+            "p4"
+          ]
+        ],
+        "complement": [
+          "p2",
+          "p3",
+          "p4"
+        ],
+        "complement_orbit": [
+          [
+            "p1",
+            "p2",
+            "p3"
+          ],
+          [
+            "p1",
+            "p2",
+            "p4"
+          ],
+          [
+            "p1",
+            "p3",
+            "p4"
+          ],
+          [
+            "p2",
+            "p3",
+            "p4"
+          ]
+        ]
+      }
+    ],
+    "r=2": [
+      {
+        "representative": [
+          "p1",
+          "p2"
+        ],
+        "orbit": [
+          [
+            "p1",
+            "p2"
+          ],
+          [
+            "p1",
+            "p3"
+          ],
+          [
+            "p2",
+            "p4"
+          ],
+          [
+            "p3",
+            "p4"
+          ]
+        ],
+        "complement": [
+          "p3",
+          "p4"
+        ],
+        "complement_orbit": [
+          [
+            "p1",
+            "p2"
+          ],
+          [
+            "p1",
+            "p3"
+          ],
+          [
+            "p2",
+            "p4"
+          ],
+          [
+            "p3",
+            "p4"
+          ]
+        ]
+      },
+      {
+        "representative": [
+          "p1",
+          "p4"
+        ],
+        "orbit": [
+          [
+            "p1",
+            "p4"
+          ],
+          [
+            "p2",
+            "p3"
+          ]
+        ],
+        "complement": [
+          "p2",
+          "p3"
+        ],
+        "complement_orbit": [
+          [
+            "p1",
+            "p4"
+          ],
+          [
+            "p2",
+            "p3"
+          ]
+        ]
+      }
+    ],
+    "r=3": [
+      {
+        "representative": [
+          "p1",
+          "p2",
+          "p3"
+        ],
+        "orbit": [
+          [
+            "p1",
+            "p2",
+            "p3"
+          ],
+          [
+            "p1",
+            "p2",
+            "p4"
+          ],
+          [
+            "p1",
+            "p3",
+            "p4"
+          ],
+          [
+            "p2",
+            "p3",
+            "p4"
+          ]
+        ],
+        "complement": [
+          "p4"
+        ],
+        "complement_orbit": [
+          [
+            "p1"
+          ],
+          [
+            "p2"
+          ],
+          [
+            "p3"
+          ],
+          [
+            "p4"
+          ]
+        ]
+      }
+    ],
+    "r=4": [
+      {
+        "representative": [
+          "p1",
+          "p2",
+          "p3",
+          "p4"
+        ],
+        "orbit": [
+          [
+            "p1",
+            "p2",
+            "p3",
+            "p4"
+          ]
+        ],
+        "complement": [],
+        "complement_orbit": [
+          []
+        ]
+      }
+    ]
+  },
+  "convention_test_h_rel": {
+    "tensor": "h_rel = g1 - g2 = diag(1,1,-1,-1)",
+    "Rcirc_h_over_h": "1",
+    "Ozuch_P_equals": "-Lambda * h_rel",
+    "Ozuch_P_components_for_Lambda_1": [
+      "-1",
+      "-1",
+      "1",
+      "1"
+    ],
+    "Kroencke_Delta_E_equals": "-2*Lambda * h_rel (since Delta_E=2P)",
+    "Kroencke_Delta_E_components_for_Lambda_1": [
+      "-2",
+      "-2",
+      "2",
+      "2"
+    ],
+    "note_on_minus_4Lambda": "A -4*Lambda unit test is not the Ozuch P convention; it can only refer to a differently normalized Einstein/second-variation operator or to a metric variation scaled by an extra factor."
+  },
+  "low_scalar_spectrum_S2_units_Lambda": [
+    {
+      "l": 0,
+      "lambda_over_Lambda": 0,
+      "multiplicity": 1
+    },
+    {
+      "l": 1,
+      "lambda_over_Lambda": 2,
+      "multiplicity": 3
+    },
+    {
+      "l": 2,
+      "lambda_over_Lambda": 6,
+      "multiplicity": 5
+    },
+    {
+      "l": 3,
+      "lambda_over_Lambda": 12,
+      "multiplicity": 7
+    },
+    {
+      "l": 4,
+      "lambda_over_Lambda": 20,
+      "multiplicity": 9
+    },
+    {
+      "l": 5,
+      "lambda_over_Lambda": 30,
+      "multiplicity": 11
+    }
+  ],
+  "TT_kernel_argument": {
+    "factor": "S^2 with Ric=Lambda*g",
+    "factor_TT_kernel_dim": 0,
+    "lambda_l_over_Lambda": "l(l+1)",
+    "only_scalar_value_equal_2Lambda": "l=1, multiplicity 3 on each factor",
+    "l1_hessian_identity": "Hess(f) = -Lambda*f*g for first spherical harmonics",
+    "scalar_zero_mode_TT_check": {
+      "ansatz": "h = a*f*g1 + b*f*g2 (+ c*Hess f, but Hess f is proportional to f*g1 for l=1)",
+      "trace_condition": "a_eff + b = 0",
+      "divergence_condition": "a_eff = 0",
+      "conclusion": "a_eff=b=0; scalar full-kernel modes do not give TT tensors on S^2 x S^2"
+    },
+    "mixed_one_form_sector": "Rcirc=0 on mixed tensors and the rough 1-form spectrum on each S^2 is >= Lambda, so Ozuch P >= Lambda > 0 there",
+    "parallel_relative_scale_mode": {
+      "descends_to_orbifold": true,
+      "TT": true,
+      "Ozuch_P_eigenvalue_over_Lambda": -1,
+      "Kroencke_Delta_E_eigenvalue_over_Lambda": -2,
+      "role": "unique low negative mode / saddle direction, bounded away from 0"
+    },
+    "TT_kernel_dim_product": 0,
+    "TT_kernel_dim_Z2_orbifold": 0,
+    "reason_quotient_no_new_kernel": "an orbifold-smooth tensor on the quotient pulls back to a smooth sigma-invariant tensor on the cover; the cover TT kernel is zero",
+    "spectral_gap_around_zero_in_Ozuch_units_at_least": "Lambda (from h_rel at -Lambda and mixed/next positive sectors >= Lambda or 2Lambda)"
+  },
+  "scalar_parity_sample_for_sigma_quotient": [
+    {
+      "l1": 0,
+      "m1": 0,
+      "l2": 0,
+      "m2": 0,
+      "rho_product_sign": 1,
+      "scalar_descends": true
+    },
+    {
+      "l1": 0,
+      "m1": 0,
+      "l2": 1,
+      "m2": 0,
+      "rho_product_sign": 1,
+      "scalar_descends": true
+    },
+    {
+      "l1": 0,
+      "m1": 0,
+      "l2": 2,
+      "m2": 0,
+      "rho_product_sign": 1,
+      "scalar_descends": true
+    },
+    {
+      "l1": 1,
+      "m1": -1,
+      "l2": 1,
+      "m2": 1,
+      "rho_product_sign": 1,
+      "scalar_descends": true
+    },
+    {
+      "l1": 1,
+      "m1": -1,
+      "l2": 2,
+      "m2": 1,
+      "rho_product_sign": 1,
+      "scalar_descends": true
+    },
+    {
+      "l1": 1,
+      "m1": 0,
+      "l2": 0,
+      "m2": 0,
+      "rho_product_sign": 1,
+      "scalar_descends": true
+    },
+    {
+      "l1": 1,
+      "m1": 0,
+      "l2": 1,
+      "m2": 0,
+      "rho_product_sign": 1,
+      "scalar_descends": true
+    },
+    {
+      "l1": 1,
+      "m1": 0,
+      "l2": 2,
+      "m2": 0,
+      "rho_product_sign": 1,
+      "scalar_descends": true
+    },
+    {
+      "l1": 1,
+      "m1": 1,
+      "l2": 1,
+      "m2": -1,
+      "rho_product_sign": 1,
+      "scalar_descends": true
+    },
+    {
+      "l1": 1,
+      "m1": 1,
+      "l2": 2,
+      "m2": -1,
+      "rho_product_sign": 1,
+      "scalar_descends": true
+    },
+    {
+      "l1": 2,
+      "m1": -2,
+      "l2": 2,
+      "m2": 2,
+      "rho_product_sign": 1,
+      "scalar_descends": true
+    },
+    {
+      "l1": 2,
+      "m1": -1,
+      "l2": 1,
+      "m2": 1,
+      "rho_product_sign": 1,
+      "scalar_descends": true
+    },
+    {
+      "l1": 2,
+      "m1": -1,
+      "l2": 2,
+      "m2": 1,
+      "rho_product_sign": 1,
+      "scalar_descends": true
+    },
+    {
+      "l1": 2,
+      "m1": 0,
+      "l2": 0,
+      "m2": 0,
+      "rho_product_sign": 1,
+      "scalar_descends": true
+    },
+    {
+      "l1": 2,
+      "m1": 0,
+      "l2": 1,
+      "m2": 0,
+      "rho_product_sign": 1,
+      "scalar_descends": true
+    },
+    {
+      "l1": 2,
+      "m1": 0,
+      "l2": 2,
+      "m2": 0,
+      "rho_product_sign": 1,
+      "scalar_descends": true
+    },
+    {
+      "l1": 2,
+      "m1": 1,
+      "l2": 1,
+      "m2": -1,
+      "rho_product_sign": 1,
+      "scalar_descends": true
+    },
+    {
+      "l1": 2,
+      "m1": 1,
+      "l2": 2,
+      "m2": -1,
+      "rho_product_sign": 1,
+      "scalar_descends": true
+    },
+    {
+      "l1": 2,
+      "m1": 2,
+      "l2": 2,
+      "m2": -2,
+      "rho_product_sign": 1,
+      "scalar_descends": true
+    }
+  ],
+  "multipole_green_object": {
+    "wrong_object": "bare value sum Sum psi_l(p_i) psi_l(p_j)/lambda_l",
+    "why_wrong": "distant EH bubble contributes an r^{-4} TT quadrupole H^4 at p_i; its effect on node p_j is the quadratic term H_{j,2} in the Taylor expansion of the P-harmonic extension, hence a second jet at p_j after singular-part subtraction and gauge/orthogonality projection",
+    "right_object_schematic": "H2_ij = (1/2) second_derivative_at_pj [ solution of P h=0 on X\\{p_i}, h~H4(zeta_i) near p_i, h perpendicular to O(g_infty), Bianchi gauge ]",
+    "spectral_schematic": "contract source multipole derivatives at p_i and receiving second derivatives at p_j: Sum (D_j^2 psi_alpha)(p_j) * <psi_alpha, source_multipole_i>/lambda_alpha, not psi_alpha(p_i)psi_alpha(p_j)/lambda_alpha",
+    "kernel_status_needed_for_inverse": "O(g_infty)=0 on TT for this orbifold, apart from nonzero relative-scale negative eigenmode, so no kernel unknown enters; one still must project/gauge Killing directions in the nonlinear representation"
+  },
+  "scope": "This establishes symmetry, convention, kernel and correct-coupling-object gates; it does not compute the actual Ozuch mixed obstruction coefficients or prove any Yau-26 branch."
+}

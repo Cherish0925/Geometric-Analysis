@@ -1,0 +1,51 @@
+{
+  "dS3_equals_2_S1_wedge_S2_sign": -1,
+  "Ric_plus_6g_max_abs_at_samples": 3.984719963916892e-12,
+  "d_eta_equals_e03_plus_e12": false,
+  "d_eta_equals_e03_minus_e12": true,
+  "norm2_d_eta_at_samples": [
+    2.0,
+    1.999999999999996,
+    2.0000000000000635
+  ],
+  "norm2_eta": "tanh(r)**2/4",
+  "V_line_equals_9tanh2": true,
+  "sqrt_det_over_angular_equals_J_over_8_sin": "Abs(sin(theta)*sinh(r))/(8*sin(theta)*sinh(r))",
+  "cosh^-3_eigenvalue": "12",
+  "numerics": {
+    "line_Kinv": {
+      "decay_exponent": 5.60555127546399,
+      "L1_margin_over_e^{4r}": 1.6055512754639896,
+      "L1_norm_G": 0.21489939344310335,
+      "int_tanh2_G_should_be_1/9": 0.11111111101419242,
+      "L1_norm_dG_radial": 1.4522016172950978,
+      "check_r2_singularity_4pi2r2G_at_1e-3": 0.9999853753435435
+    },
+    "scalar_mu6": {
+      "decay_exponent": 5.16227766016838,
+      "L1_norm_G": 0.16666664444965998,
+      "exact_1/mu": 0.16666666666666666,
+      "L1_norm_dG_radial": 1.1719508914978278
+    },
+    "scalar_mu12": {
+      "decay_exponent": 6.0,
+      "L1_norm_G": 0.08333333333321209,
+      "exact_1/mu": 0.08333333333333333,
+      "L1_norm_dG_radial": 0.7586086459348371
+    },
+    "oneform_exact_correction": {
+      "kernel": "(1/6) d_x d_y (G_6-G_12)",
+      "decay_exponent": 5.16227766016838,
+      "L1_norm_dd_h_opnorm": 2.073812383947345,
+      "L1_contribution_(1/6)I": 0.34563539732455745,
+      "h_prime_times_r_at_1e-4": -0.07599077453613282
+    },
+    "B1_inverse_Linfty_bound": 0.6789687306578908,
+    "N_inverse_Linfty_bounds_hol-4_units": {
+      "one_forms_B1": 0.6789687306578908,
+      "psi_parallel_real_(Delta+12)": 0.08333333333333333,
+      "gauge_(Delta+6)": 0.16666666666666666,
+      "psi_perp_K^-1": 0.21489939344310335
+    }
+  }
+}

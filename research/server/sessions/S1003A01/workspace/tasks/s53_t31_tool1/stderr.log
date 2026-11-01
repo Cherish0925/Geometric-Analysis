@@ -1,0 +1,6 @@
+/bin/bash: line 103:  7616 Killed                  timeout 9000 python -u step53_ak_einstein_jets.py $D $1 $2 2 $D D${D}_$3 2>&1
+      7619 Done                    | grep -v WARNING
+      7622 Done                    | cut -c1-300 > ../data/step53_jets/log_D${D}_$3.txt
+/bin/bash: line 103:  7618 Killed                  timeout 9000 python -u step53_ak_einstein_jets.py $D $1 $2 2 $D D${D}_$3 2>&1
+      7621 Done                    | grep -v WARNING
+      7623 Done                    | cut -c1-300 > ../data/step53_jets/log_D${D}_$3.txt

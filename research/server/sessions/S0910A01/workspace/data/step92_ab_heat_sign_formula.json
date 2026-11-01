@@ -1,0 +1,195 @@
+{
+  "step": 92,
+  "scope": "AB adjacent heat sign formula after Step91 m=2 cancellation",
+  "formula": "K_adj^AB = (1/512) int_0^infty e^s A(s)B(s) ds, A=sum(2l+1)mu_l e^{-s mu_l/2}, B=sum(-1)^l(2l+1)mu_l e^{-s mu_l/2}",
+  "analytic_sign_reason": "A(s)>0 termwise. B(s)=-4*pi*d_t p_t(N,S)|_{t=s/2}; strict radial monotonicity of the S^2 heat kernel plus the semigroup makes the antipodal heat value strictly increasing, hence B(s)<0.",
+  "polarization_cancellation": {
+    "terms": [
+      {
+        "mode_pair": "c2-c2",
+        "oneform_type": "coexact-coexact",
+        "relative_sign": 1
+      },
+      {
+        "mode_pair": "c2-s2",
+        "oneform_type": "coexact-exact",
+        "relative_sign": -1
+      },
+      {
+        "mode_pair": "s2-c2",
+        "oneform_type": "exact-coexact",
+        "relative_sign": 1
+      },
+      {
+        "mode_pair": "s2-s2",
+        "oneform_type": "exact-exact",
+        "relative_sign": -1
+      }
+    ],
+    "sum_relative_signs": 0
+  },
+  "B_float_samples_with_roundoff_warning": [
+    {
+      "s": 0.003,
+      "L": 547,
+      "A_float": 444444.377739661,
+      "B_float": 9.687778611537418e-12,
+      "finite_precision_B_sign_reliable": false,
+      "finite_precision_B_sign": "positive_or_roundoff_zero",
+      "analytic_B_sign": "strictly negative for every s>0, by heat-kernel monotonicity",
+      "e_s_A_B_over_512_float": 8.434795249685173e-09
+    },
+    {
+      "s": 0.005,
+      "L": 424,
+      "A_float": 159999.93326978158,
+      "B_float": -2.4734928542150667e-12,
+      "finite_precision_B_sign_reliable": false,
+      "finite_precision_B_sign": "negative",
+      "analytic_B_sign": "strictly negative for every s>0, by heat-kernel monotonicity",
+      "e_s_A_B_over_512_float": -7.768407037396781e-10
+    },
+    {
+      "s": 0.01,
+      "L": 300,
+      "A_float": 39999.93320611054,
+      "B_float": -3.6932448043192665e-13,
+      "finite_precision_B_sign_reliable": false,
+      "finite_precision_B_sign": "negative",
+      "analytic_B_sign": "strictly negative for every s>0, by heat-kernel monotonicity",
+      "e_s_A_B_over_512_float": -2.914340861367067e-11
+    },
+    {
+      "s": 0.02,
+      "L": 212,
+      "A_float": 9999.933078408048,
+      "B_float": -1.9821799887900535e-14,
+      "finite_precision_B_sign_reliable": false,
+      "finite_precision_B_sign": "negative",
+      "analytic_B_sign": "strictly negative for every s>0, by heat-kernel monotonicity",
+      "e_s_A_B_over_512_float": -3.949627241604931e-13
+    },
+    {
+      "s": 0.05,
+      "L": 134,
+      "A_float": 1599.9326923870428,
+      "B_float": 1.0189387792923627e-14,
+      "finite_precision_B_sign_reliable": false,
+      "finite_precision_B_sign": "positive_or_roundoff_zero",
+      "analytic_B_sign": "strictly negative for every s>0, by heat-kernel monotonicity",
+      "e_s_A_B_over_512_float": 3.347299456262061e-14
+    },
+    {
+      "s": 0.1,
+      "L": 94,
+      "A_float": 399.93203908699945,
+      "B_float": 6.137339890149024e-15,
+      "finite_precision_B_sign_reliable": false,
+      "finite_precision_B_sign": "positive_or_roundoff_zero",
+      "analytic_B_sign": "strictly negative for every s>0, by heat-kernel monotonicity",
+      "e_s_A_B_over_512_float": 5.2981696454000905e-15
+    },
+    {
+      "s": 0.2,
+      "L": 80,
+      "A_float": 99.93069348990312,
+      "B_float": -8.058696770559473e-07,
+      "finite_precision_B_sign_reliable": true,
+      "finite_precision_B_sign": "negative",
+      "analytic_B_sign": "strictly negative for every s>0, by heat-kernel monotonicity",
+      "e_s_A_B_over_512_float": -1.921111851998408e-07
+    },
+    {
+      "s": 0.5,
+      "L": 80,
+      "A_float": 15.926303126539768,
+      "B_float": -0.08272550701601922,
+      "finite_precision_B_sign_reliable": true,
+      "finite_precision_B_sign": "negative",
+      "analytic_B_sign": "strictly negative for every s>0, by heat-kernel monotonicity",
+      "e_s_A_B_over_512_float": -0.00424259616434864
+    },
+    {
+      "s": 1.0,
+      "L": 80,
+      "A_float": 3.9173772306164523,
+      "B_float": -0.9138083258139545,
+      "finite_precision_B_sign_reliable": true,
+      "finite_precision_B_sign": "negative",
+      "analytic_B_sign": "strictly negative for every s>0, by heat-kernel monotonicity",
+      "e_s_A_B_over_512_float": -0.019005312993195862
+    },
+    {
+      "s": 2.0,
+      "L": 80,
+      "A_float": 0.8868907495958791,
+      "B_float": -0.7381648769805929,
+      "finite_precision_B_sign_reliable": true,
+      "finite_precision_B_sign": "negative",
+      "analytic_B_sign": "strictly negative for every s>0, by heat-kernel monotonicity",
+      "e_s_A_B_over_512_float": -0.00944805700524983
+    },
+    {
+      "s": 5.0,
+      "L": 80,
+      "A_float": 0.040436859071988254,
+      "B_float": -0.04041850493275814,
+      "finite_precision_B_sign_reliable": true,
+      "finite_precision_B_sign": "negative",
+      "analytic_B_sign": "strictly negative for every s>0, by heat-kernel monotonicity",
+      "e_s_A_B_over_512_float": -0.0004737618741450236
+    },
+    {
+      "s": 10.0,
+      "L": 80,
+      "A_float": 0.000272399581382196,
+      "B_float": -0.0002723995757676222,
+      "finite_precision_B_sign_reliable": true,
+      "finite_precision_B_sign": "negative",
+      "analytic_B_sign": "strictly negative for every s>0, by heat-kernel monotonicity",
+      "e_s_A_B_over_512_float": -3.192182561424716e-06
+    }
+  ],
+  "tau_ladder_m0_double_sum": [
+    {
+      "tau": 0.2,
+      "L": 120,
+      "K_tau_double_sum_m0_only": -0.03144249553045506
+    },
+    {
+      "tau": 0.1,
+      "L": 160,
+      "K_tau_double_sum_m0_only": -0.031442497319955284
+    },
+    {
+      "tau": 0.05,
+      "L": 220,
+      "K_tau_double_sum_m0_only": -0.031442497319956034
+    },
+    {
+      "tau": 0.02,
+      "L": 360,
+      "K_tau_double_sum_m0_only": -0.03144249731996411
+    },
+    {
+      "tau": 0.01,
+      "L": 520,
+      "K_tau_double_sum_m0_only": -0.031442497320009026
+    },
+    {
+      "tau": 0.005,
+      "L": 760,
+      "K_tau_double_sum_m0_only": -0.03144249732031596
+    },
+    {
+      "tau": 0.003,
+      "L": 1000,
+      "K_tau_double_sum_m0_only": -0.03144249731831768
+    }
+  ],
+  "interpretation": [
+    "The numerical Abel ladder matches Step91's stabilized AB value near -0.03144249732 because only the m=0 coexact-coexact double series remains after m=2 cancellation.",
+    "The strict sign proof is analytic and does not rely on the finite-precision B(s) samples; small-s direct alternating sums are ill-conditioned.",
+    "This proves at most the principal AB-sector adjacent sign in the Step89/91 normalization; it is not the full Ozuch coefficient and not a Yau-26 result."
+  ]
+}

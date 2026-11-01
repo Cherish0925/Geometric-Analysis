@@ -1,0 +1,126 @@
+{
+  "title": "Step 34: Collapsed-front energy and Schwarzschild rescaling verification",
+  "scope": "Structural observation for collapsed positive P_4^+ route; not a proof.",
+  "bolt_energy_check": [
+    {
+      "A": 1,
+      "K_sigma": 3,
+      "area_S2": 4.18879,
+      "rod_length": 1.813799,
+      "energy_strategist": 78.9568,
+      "energy_over_8pi2": 1.0,
+      "a_plus": 2.372281,
+      "mu": 0.553838,
+      "cone_angle_defect": 0.446162
+    },
+    {
+      "A": 5,
+      "K_sigma": 11,
+      "area_S2": 1.142397,
+      "rod_length": 0.947226,
+      "energy_strategist": 78.9568,
+      "energy_over_8pi2": 1.0,
+      "a_plus": 5.178908,
+      "mu": 0.305491,
+      "cone_angle_defect": 0.694509
+    },
+    {
+      "A": 10,
+      "K_sigma": 21,
+      "area_S2": 0.598399,
+      "rod_length": 0.685552,
+      "energy_strategist": 78.9568,
+      "energy_over_8pi2": 1.0,
+      "a_plus": 7.389867,
+      "mu": 0.227407,
+      "cone_angle_defect": 0.772593
+    },
+    {
+      "A": 50,
+      "K_sigma": 101,
+      "area_S2": 0.12442,
+      "rod_length": 0.3126,
+      "energy_strategist": 78.9568,
+      "energy_over_8pi2": 1.0,
+      "a_plus": 16.885339,
+      "mu": 0.109038,
+      "cone_angle_defect": 0.890962
+    },
+    {
+      "A": 100,
+      "K_sigma": 201,
+      "area_S2": 0.062519,
+      "rod_length": 0.221591,
+      "energy_strategist": 78.9568,
+      "energy_over_8pi2": 1.0,
+      "a_plus": 24.040782,
+      "mu": 0.0784,
+      "cone_angle_defect": 0.9216
+    },
+    {
+      "A": 1000,
+      "K_sigma": 2001,
+      "area_S2": 0.00628,
+      "rod_length": 0.070231,
+      "energy_strategist": 78.9568,
+      "energy_over_8pi2": 1.0,
+      "a_plus": 76.974189,
+      "mu": 0.025489,
+      "cone_angle_defect": 0.974511
+    }
+  ],
+  "schwarzschild_rescaling": {
+    "formula": "M\u0302 = \u221a(2A)(A+1/3)/(2A+1)^{3/2}",
+    "limit": "M\u0302 \u2192 1/2 as A \u2192 \u221e",
+    "data": [
+      {
+        "A": "10",
+        "M_hat": 0.4802048,
+        "rho_23": 0.36246012,
+        "limit": "approaching..."
+      },
+      {
+        "A": "100",
+        "M_hat": 0.49792755,
+        "rho_23": 0.17071354,
+        "limit": "approaching..."
+      },
+      {
+        "A": "1000",
+        "M_hat": 0.49979178,
+        "rho_23": 0.07935683,
+        "limit": "approaching..."
+      },
+      {
+        "A": "10000",
+        "M_hat": 0.49997917,
+        "rho_23": 0.0368397,
+        "limit": "ES at M=1/2"
+      },
+      {
+        "A": "100000",
+        "M_hat": 0.49999792,
+        "rho_23": 0.01709973,
+        "limit": "ES at M=1/2"
+      }
+    ],
+    "verification": "M\u0302(10\u2075) = 0.49999792, limit = 0.5"
+  },
+  "ES_properties": {
+    "Ricci_flat": true,
+    "ASD": false,
+    "ALE": false,
+    "ALF": true,
+    "topology": "R\u00b2 \u00d7 S\u00b2 (one S\u00b2 bolt)",
+    "Kretschner": "48M\u00b2/r\u2076",
+    "energy": "\u222b|Rm|\u00b2 = 8\u03c0\u00b2 for normalized M (from Gauss-Bonnet on decompactification)",
+    "key_difference_from_EH": "EH is ASD (W\u207a=0), ALE (r\u207b\u2074 decay), with (-2)-sphere bolt. ES is not ASD, ALF (circle at infinity), with S\u00b2 bolt. LeBrun-Ozuch admissibility requires ASD ALE: does NOT apply to ES."
+  },
+  "CGB_consistency": {
+    "CGB_bound": "\u222b|W|\u00b2 + (s\u00b2/24)Vol \u2264 8\u03c0\u00b2\u03c7",
+    "in_collapse": "Vol \u2192 0, s \u2192 4, so \u222b|W|\u00b2 \u2192 8\u03c0\u00b2\u03c7 exactly",
+    "alpha_family": "m rods \u00d7 8\u03c0\u00b2 per rod \u2248 8\u03c0\u00b2m \u2248 8\u03c0\u00b2(\u03c7-2)",
+    "consistency": "PASSED: up to corner contributions, energy is saturated",
+    "implication": "Collapse must place ALL Euler characteristic into curvature concentration \u2014 a quantization statement, not an inequality. The \u03b1-family achieves this with exactly one Schwarzschild quantum per rod."
+  }
+}

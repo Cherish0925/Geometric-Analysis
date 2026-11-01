@@ -1,0 +1,75 @@
+{
+  "title": "Step 22 collapse Sobolev and downstream-scope audit",
+  "thin_product_model": "S^1_ell x B^3 with fiber-independent test functions",
+  "norm_scaling": {
+    "L4_norm": "||u||_4 = ell^(1/4)||f||_4",
+    "gradient_L2_norm": "||grad u||_2 = ell^(1/2)||grad f||_2",
+    "sobolev_constant_lower_bound": "A_ell >= c ell^(-1/4)"
+  },
+  "hyperbolic_constant_curvature_model": {
+    "dimension": 4,
+    "sectional_curvature_for_Ric_minus_g": -0.3333333333333333,
+    "Rm_norm_squared": 2.6666666666666665,
+    "Einstein_defect_E": 0,
+    "downstairs_energy_as_volume_collapses": "int |Rm|^2 = (8/3) Vol -> 0",
+    "audit_consequence": "Any claim using only small unweighted downstairs L2 curvature energy to get dimension-only pointwise curvature control is false in collapsed regions. A scale-adapted claim may survive only if it keeps the Sobolev factor A^2 or works on an accessible noncollapsed cover with controlled mean transport."
+  },
+  "scale_table": [
+    {
+      "ell": 1.0,
+      "sobolev_A_lower_relative_to_ell1": 1.0,
+      "unweighted_L2_energy_Rm2": 2.6666666666666665,
+      "L2_norm_Rm": 1.632993161855452,
+      "A_lower_squared_times_L2_norm": 1.632993161855452
+    },
+    {
+      "ell": 0.1,
+      "sobolev_A_lower_relative_to_ell1": 1.7782794100389228,
+      "unweighted_L2_energy_Rm2": 0.26666666666666666,
+      "L2_norm_Rm": 0.5163977794943223,
+      "A_lower_squared_times_L2_norm": 1.632993161855452
+    },
+    {
+      "ell": 0.01,
+      "sobolev_A_lower_relative_to_ell1": 3.1622776601683795,
+      "unweighted_L2_energy_Rm2": 0.026666666666666665,
+      "L2_norm_Rm": 0.16329931618554522,
+      "A_lower_squared_times_L2_norm": 1.6329931618554525
+    },
+    {
+      "ell": 0.0001,
+      "sobolev_A_lower_relative_to_ell1": 10.0,
+      "unweighted_L2_energy_Rm2": 0.0002666666666666667,
+      "L2_norm_Rm": 0.016329931618554522,
+      "A_lower_squared_times_L2_norm": 1.6329931618554523
+    },
+    {
+      "ell": 1e-06,
+      "sobolev_A_lower_relative_to_ell1": 31.622776601683793,
+      "unweighted_L2_energy_Rm2": 2.6666666666666664e-06,
+      "L2_norm_Rm": 0.0016329931618554521,
+      "A_lower_squared_times_L2_norm": 1.632993161855452
+    },
+    {
+      "ell": 1e-08,
+      "sobolev_A_lower_relative_to_ell1": 100.0,
+      "unweighted_L2_energy_Rm2": 2.6666666666666667e-08,
+      "L2_norm_Rm": 0.00016329931618554522,
+      "A_lower_squared_times_L2_norm": 1.632993161855452
+    }
+  ],
+  "downstream_scope_if_lemma_granted": {
+    "granting_zero_order_weighted_moser": [
+      "On plateau regions one obtains bounded curvature at positive time and small Ric+g.",
+      "For critical Ishida-LeBrun 4-manifolds, Chern-Weil + monopole estimates give a 7/24 L2 Weyl-calibration inequality from small global L2 defect.",
+      "A contradiction requires transporting that calibration to a noncollapsed local limit; in collapsed charts this needs a local mean-transfer/noncollapsing-cover hypothesis, not just global L2 smallness.",
+      "The conclusion, if all transport and localization issues are solved, is a fixed-topology or standard-subclass uniform negative pinching gap for those Ishida-LeBrun 4-manifolds only."
+    ],
+    "does_not_follow": [
+      "No proof of the unrestricted four-dimensional negative branch P_4^-.",
+      "No proof of the positive branch P_4^+.",
+      "No mechanism for n>=5, because the L2-critical Sobolev exponent and Chern-Weil/Seiberg-Witten calibration are four-dimensional.",
+      "No Min-Oo endpoint: exact large-diameter hyperbolic manifolds have Ric=-g and unbounded diameter*curvature scale while already Einstein."
+    ]
+  }
+}

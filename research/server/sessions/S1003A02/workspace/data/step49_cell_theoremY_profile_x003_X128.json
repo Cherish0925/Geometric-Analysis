@@ -1,0 +1,99 @@
+{
+ "status": "floating quadrature; not interval certified",
+ "record": "../../S1003A01/workspace/data/perp_area/x00.03_X128_d20.json",
+ "normalization": "energies divided by 8pi^2; original cell Ric_CH=-6; Theorem-Y hatted metric scaled to scalar=-4",
+ "quadrature": {
+  "panels": 800,
+  "order": 12,
+  "nodes": 10644
+ },
+ "yamabe_solver": {
+  "nodes": 6198,
+  "iterations": 3,
+  "w_end": 7.390944240682149e-33,
+  "w_min": -1.1395888575903419e-08,
+  "w_max": 0.000314842760465795,
+  "w_bolt": 0.000314842760465795
+ },
+ "integrals": {
+  "P": 0.9956627327621826,
+  "saving_1_minus_P": 0.004337267237817355,
+  "scalar_channel_raw_grid": 0.10610117767906974,
+  "DeltaV_g_raw_grid": -0.030528183088790684,
+  "DeltaV_hat_raw_grid": 0.057314797610160895,
+  "D_W_original_raw_grid": -0.0015685718530577472,
+  "D_W_hat_raw_grid": 0.05699341527711145,
+  "stable_ledger": {
+   "DeltaV_hat": 0.053106158279466444,
+   "P_hat": 0.995660851042634,
+   "saving_hat": 0.004339148957365979,
+   "D_W_hat": 0.05419094551880794,
+   "D_W_over_DeltaV": 1.0204267692201137,
+   "fourDeltaWplus": -0.07514735999665459,
+   "conformal_defect_P_minus_Phat": 1.8817197979238434e-06
+  },
+  "Psi": 0.013232611821740136,
+  "dist2_to_K": 0.007502405793243647,
+  "Psi_over_dist2": 1.7637824701053724,
+  "LeBrun_magnitude_penalty": 0.004297071627638854,
+  "closed_replica_comparison": {
+   "Y0_saving_4DW_minus_4DeltaV": 0.004339148957365979,
+   "TheoremY_rhs_4DeltaV_minus_2Psi": 0.1859594094743855,
+   "TheoremY_slack": 0.18162026051701952,
+   "LeBrun_rhs": 0.20812756149022693,
+   "LeBrun_slack": 0.20378841253286095,
+   "scope": "formal closed replication with sign-family fields; isolated cell alone does not satisfy these closed inequalities"
+  },
+  "upper_pair_splitting_contribution_4sigma2": 0.010921715573873916
+ },
+ "pointwise": {
+  "x_minus_mu_min_hat_minmax": [
+   0.1873156573045787,
+   0.666685654261026
+  ],
+  "sigma_upper_pair_halfgap_minmax": [
+   4.5063372478004737e-10,
+   0.3021207040772045
+  ],
+  "Psi_minmax": [
+   -4.440892098500626e-16,
+   0.7408937244937548
+  ],
+  "dist2_minmax": [
+   2.7046804910407863e-16,
+   0.5072441843981924
+  ],
+  "mu_hat_at_max_Psi": [
+   -0.2013790700606614,
+   -0.2013790700568391,
+   0.4028623380975699
+  ],
+  "x_at_max_Psi": 0.03000000000023119
+ },
+ "radial_quantiles": {
+  "Psi": {
+   "0.1": 0.04938641221443932,
+   "0.5": 0.8139972414549609,
+   "0.9": 16.382977833515067
+  },
+  "orbit_dist2": {
+   "0.1": 0.04414455000728756,
+   "0.5": 0.6551288318294515,
+   "0.9": 15.007172570086635
+  },
+  "upper_pair_split_term": {
+   "0.1": 0.10059922566613391,
+   "0.5": 1.16646566709845,
+   "0.9": 18.51428872343726
+  },
+  "Ricci_defect": {
+   "0.1": 0.03179423712216811,
+   "0.5": 0.04398409208912064,
+   "0.9": 0.11127170930891295
+  }
+ },
+ "record_values": {
+  "P": 0.995662863506084,
+  "J": 0.9956701610930143
+ }
+}

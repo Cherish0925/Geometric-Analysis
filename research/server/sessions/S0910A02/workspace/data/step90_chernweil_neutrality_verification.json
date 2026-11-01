@@ -1,0 +1,267 @@
+{
+  "eguchi_hanson": {
+    "delta_chi": 1.5,
+    "abs_delta_tau": 1.0,
+    "ratio": 0.666666666666667,
+    "is_half_flat": true,
+    "equality_2_over_3": true,
+    "W_integral": "12\u03c0\u00b2"
+  },
+  "general_ALE_inequality": {
+    "theorem": "|\u0394\u03c4| \u2264 (2/3)\u0394\u03c7, equality iff half-flat",
+    "proof": "|12\u03c0\u00b2\u0394\u03c4| = |\u222b(|W\u207a|\u00b2\u2212|W\u207b|\u00b2)| \u2264 \u222b|W|\u00b2 = 8\u03c0\u00b2\u0394\u03c7",
+    "parametric": [
+      {
+        "f": 0.0,
+        "ratio": 0.666666666667,
+        "leq_2_3": true,
+        "equality": true
+      },
+      {
+        "f": 0.1,
+        "ratio": 0.533333333333,
+        "leq_2_3": true,
+        "equality": false
+      },
+      {
+        "f": 0.25,
+        "ratio": 0.333333333333,
+        "leq_2_3": true,
+        "equality": false
+      },
+      {
+        "f": 0.5,
+        "ratio": 0.0,
+        "leq_2_3": true,
+        "equality": false
+      },
+      {
+        "f": 0.75,
+        "ratio": 0.333333333333,
+        "leq_2_3": true,
+        "equality": false
+      },
+      {
+        "f": 0.9,
+        "ratio": 0.533333333333,
+        "leq_2_3": true,
+        "equality": false
+      },
+      {
+        "f": 1.0,
+        "ratio": 0.666666666667,
+        "leq_2_3": true,
+        "equality": true
+      }
+    ]
+  },
+  "non_decrease_examples": {
+    "theorem": "\u03c7(M) \u2212 (3/2)|\u03c4(M)| \u2265 \u03c7_orb \u2212 (3/2)|\u03c4_orb|",
+    "all_verified": true,
+    "examples": {
+      "Kummer_K3_aligned": {
+        "orbifold": "T\u2074/Z\u2082",
+        "k": 16,
+        "reversed": 0,
+        "chi": 24.0,
+        "tau": -16,
+        "surplus": 0.0,
+        "surplus_orb": 0.0,
+        "non_decrease": true,
+        "equality": true,
+        "known": "K3 surface: \u03c7=24, \u03c4=\u221216, surplus=0=orbifold surplus"
+      },
+      "pos_mirror_aligned": {
+        "orbifold": "(S\u00b2\u00d7S\u00b2)/Z\u2082",
+        "k": 4,
+        "reversed": 0,
+        "chi": 8.0,
+        "tau": -4,
+        "surplus": 2.0,
+        "surplus_orb": 2.0,
+        "non_decrease": true,
+        "equality": true
+      },
+      "pos_mirror_r=1": {
+        "orbifold": "(S\u00b2\u00d7S\u00b2)/Z\u2082",
+        "k": 4,
+        "reversed": 1,
+        "chi": 8.0,
+        "tau": -2,
+        "surplus": 5.0,
+        "surplus_orb": 2.0,
+        "non_decrease": true,
+        "equality": false
+      },
+      "pos_mirror_r=2": {
+        "orbifold": "(S\u00b2\u00d7S\u00b2)/Z\u2082",
+        "k": 4,
+        "reversed": 2,
+        "chi": 8.0,
+        "tau": 0,
+        "surplus": 8.0,
+        "surplus_orb": 2.0,
+        "non_decrease": true,
+        "equality": false
+      },
+      "pos_mirror_r=3": {
+        "orbifold": "(S\u00b2\u00d7S\u00b2)/Z\u2082",
+        "k": 4,
+        "reversed": 3,
+        "chi": 8.0,
+        "tau": 2,
+        "surplus": 5.0,
+        "surplus_orb": 2.0,
+        "non_decrease": true,
+        "equality": false
+      },
+      "pos_mirror_r=4": {
+        "orbifold": "(S\u00b2\u00d7S\u00b2)/Z\u2082",
+        "k": 4,
+        "reversed": 4,
+        "chi": 8.0,
+        "tau": 4,
+        "surplus": 2.0,
+        "surplus_orb": 2.0,
+        "non_decrease": true,
+        "equality": true
+      },
+      "neg_mirror_r=0": {
+        "orbifold": "(\u03a3\u2082\u00d7\u03a3\u2082)/<\u03b9\u00d7\u03b9>",
+        "k": 36,
+        "reversed": 0,
+        "chi": 56.0,
+        "tau": -36,
+        "surplus": 2.0,
+        "surplus_orb": 2.0,
+        "non_decrease": true,
+        "equality": true
+      },
+      "neg_mirror_r=18": {
+        "orbifold": "(\u03a3\u2082\u00d7\u03a3\u2082)/<\u03b9\u00d7\u03b9>",
+        "k": 36,
+        "reversed": 18,
+        "chi": 56.0,
+        "tau": 0,
+        "surplus": 56.0,
+        "surplus_orb": 2.0,
+        "non_decrease": true,
+        "equality": false
+      },
+      "neg_mirror_r=36": {
+        "orbifold": "(\u03a3\u2082\u00d7\u03a3\u2082)/<\u03b9\u00d7\u03b9>",
+        "k": 36,
+        "reversed": 36,
+        "chi": 56.0,
+        "tau": 36,
+        "surplus": 2.0,
+        "surplus_orb": 2.0,
+        "non_decrease": true,
+        "equality": true
+      },
+      "Davis_alpha_r=0": {
+        "orbifold": "Davis_alpha",
+        "k": 122,
+        "reversed": 0,
+        "chi": 196.0,
+        "tau": -122,
+        "surplus": 13.0,
+        "surplus_orb": 13.0,
+        "non_decrease": true,
+        "equality": true
+      },
+      "Davis_alpha_r=61": {
+        "orbifold": "Davis_alpha",
+        "k": 122,
+        "reversed": 61,
+        "chi": 196.0,
+        "tau": 0,
+        "surplus": 196.0,
+        "surplus_orb": 13.0,
+        "non_decrease": true,
+        "equality": false
+      },
+      "Davis_alpha_r=122": {
+        "orbifold": "Davis_alpha",
+        "k": 122,
+        "reversed": 122,
+        "chi": 196.0,
+        "tau": 122,
+        "surplus": 13.0,
+        "surplus_orb": 13.0,
+        "non_decrease": true,
+        "equality": true
+      },
+      "Davis_alpha_sigma_r=0": {
+        "orbifold": "Davis_alpha_sigma",
+        "k": 10,
+        "reversed": 0,
+        "chi": 28.0,
+        "tau": -10,
+        "surplus": 13.0,
+        "surplus_orb": 13.0,
+        "non_decrease": true,
+        "equality": true
+      },
+      "Davis_alpha_sigma_r=5": {
+        "orbifold": "Davis_alpha_sigma",
+        "k": 10,
+        "reversed": 5,
+        "chi": 28.0,
+        "tau": 0,
+        "surplus": 28.0,
+        "surplus_orb": 13.0,
+        "non_decrease": true,
+        "equality": false
+      },
+      "Davis_alpha_sigma_r=10": {
+        "orbifold": "Davis_alpha_sigma",
+        "k": 10,
+        "reversed": 10,
+        "chi": 28.0,
+        "tau": 10,
+        "surplus": 13.0,
+        "surplus_orb": 13.0,
+        "non_decrease": true,
+        "equality": true
+      }
+    }
+  },
+  "entropy_inaccessibility": {
+    "theorem": "For any A\u2081 resolution M of any real-hyperbolic 4-orbifold O: d\u00b7\u03c7(Y) \u2264 \u03c7_orb(O) for any degree-d map M\u2192Y (Y closed hyperbolic). Hence Sambusetti can never obstruct Einstein metrics on M.",
+    "proof_chain": [
+      "Near-pinched construction \u27f9 Ric_{g_a} \u2265 \u2212(3+\u03b5_a)g, Vol(g_a) \u2192 Vol(O)",
+      "Rescale \u27f9 Ric \u2265 \u22123g', Vol(g') \u2192 Vol(O)",
+      "BCG (BBCG Thm 1.1) \u27f9 d\u00b7Vol(Y) \u2264 Vol(O)",
+      "Hyperbolic: \u03c7 = 3Vol/(4\u03c0\u00b2) \u27f9 d\u00b7\u03c7(Y) \u2264 \u03c7_orb(O)",
+      "Chern\u2013Weil non-decrease \u27f9 \u03c7(M)\u2212(3/2)|\u03c4(M)| \u2265 \u03c7_orb(O) \u2265 d\u00b7\u03c7(Y)",
+      "\u2234 Sambusetti inequality \u03c7(M)\u2265(3/2)|\u03c4(M)|+d\u00b7\u03c7(Y) always satisfied \u220e"
+    ],
+    "answers_step88_question": "NEGATIVE for ALL orbifold+ALE resolutions",
+    "note": "Argument uses only: ALE inequality, near-pinched construction, BCG. Independent of node count, chirality pattern, specific lattice, \u03c0\u2081 computation."
+  },
+  "triple_disjointness": {
+    "theorem": "All three known families of no-Einstein certificates are independently blind to the audited near-pinched orbifold+ALE construction.",
+    "mechanisms": [
+      {
+        "name": "PSC / Weitzenb\u00f6ck \u22a5 monopole/BF",
+        "branch": "positive",
+        "scope": "class-level: all positively-pinched manifolds",
+        "reason": "Positive Ric pinching \u27f9 PSC \u27f9 Weitzenb\u00f6ck kills SW/BF classes"
+      },
+      {
+        "name": "IMT adjunction \u22a5 reversed A\u2081 nodes",
+        "branch": "negative (construction class)",
+        "scope": "A\u2081 construction class with reversed nodes",
+        "reason": "Reversed nodes insert non-torsion +2-spheres \u27f9 IMT BF adjunction kills standard BF invariants"
+      },
+      {
+        "name": "Chern\u2013Weil neutrality \u22a5 entropy/Sambusetti",
+        "branch": "all signs, all orbifold+ALE",
+        "scope": "every orbifold + Ricci-flat ALE resolution",
+        "reason": "Half-flat ALE: \u0394(\u03c7\u2212(3/2)|\u03c4|) = 0; BCG volume comparison: d\u00b7\u03c7(Y) \u2264 \u03c7_orb(O)"
+      }
+    ],
+    "consequence": "A refutation of Yau-26 in dim 4 must either: (a) construct near-pinched metrics outside the orbifold+ALE class (non-warped neck/connector), or (b) discover a no-Einstein mechanism outside monopole, BF, and entropy certificates."
+  }
+}

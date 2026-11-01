@@ -2,7 +2,7 @@
 
 本会话共有 95 个完成步骤，研究记录覆盖 2026 年 10 月 3 日至 10 月 14 日；本次保存截至 11 月 1 日取得的文件版本，包括步骤结束后的数学修订。它继承 N1、I40/I41、有限密度 O10 和原平衡族，先改变 O11 的候选最优值，再发展一般背景插入、轨形曲率转移、负 Einstein 几乎 Kähler 几何与 Wahl 点上的实际场分析。
 
-本文给出数学演进和主结果入口。[全部步骤交接](history/research_steps.jsonl)保存各步骤的原始研究总结与后续任务，[科研问答](history/research_dialogue.jsonl)保存实际沟通；历史交接中的判断以随后修订的证明为准。共同记号与跨会话关系见[总研究图](../../../../docs/RESEARCH_MAP.md)、[曲率变分](../../../../docs/CURVATURE_VARIATION.md)和[负 Goldberg 分支](../../../../docs/GOLDBERG.md)。
+本文给出数学演进和主结果入口。[全部步骤交接](history/research_steps.jsonl)保存各步骤的原始研究总结与后续任务，[科研问答](history/research_dialogue.jsonl)保存实际沟通；[科学指导](history/research_guidance.jsonl)与[逐步数学判断](history/research_judgments.jsonl)保留独立推导、修正和未决问题；历史交接中的判断以随后修订的证明为准。共同记号与跨会话关系见[总研究图](../../../../docs/RESEARCH_MAP.md)、[曲率变分](../../../../docs/CURVATURE_VARIATION.md)和[负 Goldberg 分支](../../../../docs/GOLDBERG.md)。
 
 ## 1. 核心问题和研究转折
 
@@ -16,9 +16,9 @@ P(g)=\int|\operatorname{Ric}^{\circ}|^2,\qquad
 
 | 步骤 | 问题与实际变化 | 连续证明入口 |
 |---|---|---|
-| 1–11 | 从尝试证明每个吹起单元固定费用，转为构造并严格包围费用低于 \(8\pi^2\) 的真实单元；闭流形上的首项 \(4\) 因而不再是正确的普遍最优值 | [有限尺度单元](workspace/notes/step10_rigorous_subthreshold_cell_and_O11.md)、[独立复核与混合费用](workspace/notes/step11_independent_review_O11_and_mixed_cost.md) |
-| 13–29 | 研究重叠尾部、领口阻力、bolt 面积、Hamilton–Jacobi 和共形归约；保留实际场非可积能量与正余项，区分真实降能与数值拟合 | [共形归约](workspace/notes/step22_exact_CH_conformal_reduction.md)、[几乎 Kähler 费用恒等式](workspace/notes/step28_AK_gap_identity_nijenhuis_transport.md)、[边界通量](workspace/notes/step29_boundary_corrected_AK_exterior_and_contact_capacity.md) |
-| 31–43 | 将严格节省接到分歧负 KE 背景、两参数手术族；分析实际调和形式、例外周期与辛结构，明确 cap 试验没有提供同等范围的改善 | [全局斜率律](workspace/notes/step33_surgery_slope_law_and_ASD_retention.md)、[周期预算](workspace/notes/step43_period_linear_lebrun_ledger_and_ricci_flow.md) |
+| 1–11 | 从尝试证明每个吹起单元固定费用，转为构造并严格包围费用低于 \(8\pi^2\) 的真实单元；闭流形上的首项 \(4\) 因而不再是正确的普遍最优值 | [有限尺度单元](../../../packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A01/workspace/notes/step10_rigorous_subthreshold_cell_and_O11.md)、[独立复核与混合费用](../../../packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A01/workspace/notes/step11_independent_review_O11_and_mixed_cost.md) |
+| 13–29 | 研究重叠尾部、领口阻力、bolt 面积、Hamilton–Jacobi 和共形归约；保留实际场非可积能量与正余项，区分真实降能与数值拟合 | [共形归约](../../../packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A01/workspace/notes/step22_exact_CH_conformal_reduction.md)、[几乎 Kähler 费用恒等式](../../../packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A01/workspace/notes/step28_AK_gap_identity_nijenhuis_transport.md)、[边界通量](../../../packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A01/workspace/notes/step29_boundary_corrected_AK_exterior_and_contact_capacity.md) |
+| 31–43 | 将严格节省接到分歧负 KE 背景、两参数手术族；分析实际调和形式、例外周期与辛结构，明确 cap 试验没有提供同等范围的改善 | [全局斜率律](../../../packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A01/workspace/notes/step33_surgery_slope_law_and_ASD_retention.md)、[周期预算](workspace/notes/step43_period_linear_lebrun_ledger_and_ricci_flow.md) |
 | 45–47、89–91 | 研究 O10 的实际 Taub–NUT 扭率载体与第五幂线丛投影；平均恒等式、局部能量与闭全局匹配之间的缺口得到具体化 | [有限标记块](workspace/notes/step46_o10_finite_marked_block_and_spinor_matching.md)、[实际扭率模型](workspace/notes/step47_o10_tn_core_free_at_energy_scale.md)、[投影与平均约束](workspace/notes/step90_review_and_tn_projected_charge5.md) |
 | 48–53 | 将 CH 负对数节省推广到一般 Einstein 背景的自对偶曲率核方向，给出显式修正项和完整缩放余项 | [一般背景插入定理](workspace/notes/step52_kernel_insertion_theorem.md) |
 | 55–68 | 从几何相容方程得到完备非紧严格 AKE 模型；研究扭率零点、零曲线、形式 jets 与高阶相容性 | [显式模型](workspace/notes/step58_verified_bianchiVIII_AKE_and_closed_zero_locus.md)、[零点结构](workspace/notes/step65_homogeneous_torsion_zero_classification_and_surface_transport.md)、[高阶模型](workspace/notes/step67_nondegenerate_zero_order6_reconstruction.md) |
@@ -42,13 +42,13 @@ Step 10 的三轴单元在 bolt 光滑闭合，在外部精确等于复双曲度
 \]
 这里的全局系数同时计入吹起和连接柄。A01 最初证明的是适当选择的覆盖族；网页后续的解析小领口及预定覆盖量词加强见[曲率变分主文](../../../../docs/CURVATURE_VARIATION.md)，不能倒写为最初数值单元已经覆盖任意塔。
 
-原始证据包括 [曲率与区间积分程序](workspace/scripts/perp_rigorous_enclosure.py)、[Step 33 推导](workspace/notes/step33_surgery_slope_law_and_ASD_retention.md)及相应 `workspace/data/perp_collar/`、`workspace/data/perp_area/` 中的固定参数和包围结果。这里改变的是最优性判断；真正的最优首项仍需要全度量下界。
+原始证据包括 [曲率与区间积分程序](../../../packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A01/workspace/scripts/perp_rigorous_enclosure.py)、[Step 33 推导](../../../packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A01/workspace/notes/step33_surgery_slope_law_and_ASD_retention.md)及相应 `workspace/data/perp_collar/`、`workspace/data/perp_area/` 中的固定参数和包围结果。这里改变的是最优性判断；真正的最优首项仍需要全度量下界。
 
 ### 共形归约与实际场解释
 
-[Step 22](workspace/notes/step22_exact_CH_conformal_reduction.md)对任意光滑精确 CH 端单元建立负常标量共形代表，控制其衰减、边界项和唯一性，从而将局部极值问题归约到常标量几何，而不要求单元有对称性。
+[Step 22](../../../packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A01/workspace/notes/step22_exact_CH_conformal_reduction.md)对任意光滑精确 CH 端单元建立负常标量共形代表，控制其衰减、边界项和唯一性，从而将局部极值问题归约到常标量几何，而不要求单元有对称性。
 
-[Step 28](workspace/notes/step28_AK_gap_identity_nijenhuis_transport.md)在规定对角单元类中，把节省写为实际 almost-Kähler 非可积能量与非负费用之差；[Step 29](workspace/notes/step29_boundary_corrected_AK_exterior_and_contact_capacity.md)补入切割边界的准确通量。[Step 40](workspace/notes/step40_harmonic_class_compatibility_and_period_stiffness.md)和[Step 41](workspace/notes/step41_symplectic_closure_bolt_layer_and_new_inputs.md)分析近似辛对、bolt 层和标量方差。它们解释局部节省如何产生，没有由此确定全部竞争度量的最优值。
+[Step 28](../../../packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A01/workspace/notes/step28_AK_gap_identity_nijenhuis_transport.md)在规定对角单元类中，把节省写为实际 almost-Kähler 非可积能量与非负费用之差；[Step 29](../../../packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A01/workspace/notes/step29_boundary_corrected_AK_exterior_and_contact_capacity.md)补入切割边界的准确通量。[Step 40](workspace/notes/step40_harmonic_class_compatibility_and_period_stiffness.md)和[Step 41](workspace/notes/step41_symplectic_closure_bolt_layer_and_new_inputs.md)分析近似辛对、bolt 层和标量方差。它们解释局部节省如何产生，没有由此确定全部竞争度量的最优值。
 
 ### 一般 Einstein 背景的核方向插入
 
@@ -188,7 +188,8 @@ Kodaira 全范畴斜率分离沿 FD2—双取向主链进入共同稿，不应�
 | `data/step50/wminus_compat_A4.npz`、`wminus_compat_A6.npz` | [step50_wminus_compatibility.py](workspace/scripts/step50_wminus_compatibility.py)；对应 JSON 与 Step 50 精确恒等式 |
 | `data/step50/natural_corrector.npz` | [step50_natural_corrector.py](workspace/scripts/step50_natural_corrector.py)；`natural_corrector.json` |
 | `data/step64/level6_lam-1.0_s0.npz`、`level6_lam0.0_s1.npz` | [step64_level6.py](workspace/scripts/step64_level6.py)，参数分别 `-1 0`、`0 1`；对应 JSON、[内在二次型程序](workspace/scripts/step64_intrinsic_quadric.py) |
-| `data/step67/reconstruct_neg_lam-40_j0.pt` | [step67_reconstruct_phi6.py](workspace/scripts/step67_reconstruct_phi6.py)；已保留相应系数与残差输出，此 checkpoint 用于继续数值优化 |
 | `data/step68/flat_mats.npz`、`multiplier_exact.npz` | [step68_flat_cokernel.py](workspace/scripts/step68_flat_cokernel.py)、[step68_multiplier_exact.py](workspace/scripts/step68_multiplier_exact.py)；对应 JSON 与精确有理计算 |
+
+有限阶候选的[实际 jet 系数](workspace/data/step67/reconstruct_neg_lam-40_j0.pt)已保存，不能以仅记录残差的 JSON 替代。
 
 这些材料保存已经发生的研究和当前数学状态。原始脚本中的 Session 相对路径属于执行时的研究环境，运行时按导入后的来源映射定位输入。

@@ -1,0 +1,64 @@
+{
+  "normalization": {
+    "space": "CH^2, holomorphic sectional curvature -4",
+    "rho_half_volume_growth": "2",
+    "volume_growth_exponent": "4"
+  },
+  "Kminus1_line_sector": {
+    "homogeneous_character_abs_l": "3",
+    "lowest_discrete_parameter_abs_l_minus_n": "1",
+    "landau_ground": "12",
+    "continuous_shift_H_of_nu_equals_shift_minus_nu2": "13",
+    "zero_energy_nu": "sqrt(13)",
+    "green_decay_exponent": "2 + sqrt(13)",
+    "L1_margin_over_volume_growth": "-2 + sqrt(13)",
+    "numeric_margin": 1.6055512754639893
+  },
+  "one_form_sector": {
+    "operator": "B1=dd*+(1/2)d*d+6",
+    "inverse_identity": "B1^{-1}=2(Delta_1+12)^{-1}-d(Delta_0+6)^{-1}(Delta_0+12)^{-1}d*",
+    "identity_residual_exact": "0",
+    "identity_residual_coexact": "0",
+    "exact_decay_exponent": "2 + sqrt(10)",
+    "exact_L1_margin": "-2 + sqrt(10)",
+    "coexact_decay_exponent": "2 + sqrt(13)",
+    "coexact_L1_margin": "-2 + sqrt(13)",
+    "numeric_margins": {
+      "exact": 1.1622776601683793,
+      "coexact": 1.6055512754639893
+    }
+  },
+  "kahler_orbit_saving": {
+    "f_star_factorization_residual": "0",
+    "f_star": "-(2-r)^2(r+1)-r^2(1-q)",
+    "G_norm_squared": "-2*(24*q*r**2 - r**4 - 8*r**2 - 64)/3",
+    "canonical_G_norm_squared": "32/3",
+    "boxmax_G_norm_squared": "224/3",
+    "canonical_linear_coefficient": "4*sqrt(6)/3",
+    "global_gradient_coefficient": "4*sqrt(42)/3",
+    "sharp_ratio_coefficient_numerical": 3.265986323710902,
+    "optimizer": {
+      "rho": 1.9999999999999996,
+      "q_cos2": 1.0
+    },
+    "boundary_checks": {
+      "q=0": {
+        "argmax": 1.667110892900256,
+        "max": 0.9004138223284004
+      },
+      "q=1": {
+        "argmax": 1.9999999697581585,
+        "max": 3.26598621295872
+      },
+      "r=0": {
+        "argmax": 0.9999999848790809,
+        "max": 0.0
+      },
+      "r=2": {
+        "argmax": 0.9999999848790809,
+        "max": 3.2650027346945394
+      }
+    },
+    "interpretation": "Pointwise pure quadratic control by |E|^2 is impossible: at rho=2,n=omega, f=4E(omega,omega)-4|E|^2. The sharp linear ratio is attained at this canonical state."
+  }
+}

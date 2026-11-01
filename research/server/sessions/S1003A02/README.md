@@ -1,6 +1,6 @@
 # S1003A02：Einstein 间隙、低成本构造与奇异极限
 
-本会话承接实际场强制估计、有限密度端点和曲率极值理论，研究其在全部竞争度量、手术构造及退化中的适用范围。现存记录包括 108 个完成步骤，时间从 2026 年 10 月 3 日至 10 月 14 日。原始目标见 [original_research_goal.md](workspace/briefing/original_research_goal.md)。
+本会话承接实际场强制估计、有限密度端点和曲率极值理论，研究其在全部竞争度量、手术构造及退化中的适用范围。现存记录包括 108 个完成步骤，时间从 2026 年 10 月 3 日至 10 月 14 日。原始目标见 [original_research_goal.md](../../../packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A01/workspace/briefing/original_research_goal.md)。
 
 阅读入口：
 
@@ -43,9 +43,9 @@ $$
 
 ## 2. 端点范围与真实构造：Steps 1–24
 
-[Step 1](workspace/notes/step1_field_compatibility_and_route_portfolio.md)将共同机制写为实际场供给、代数对齐、微分延拓和集中/实现。它从原 O10 中分离出尚未受控的低幅度径向集中；单纯增加标量矩估计不能提供完整场方程缺少的信息。
+[Step 1](../../../packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/notes/step1_field_compatibility_and_route_portfolio.md)将共同机制写为实际场供给、代数对齐、微分延拓和集中/实现。它从原 O10 中分离出尚未受控的低幅度径向集中；单纯增加标量矩估计不能提供完整场方程缺少的信息。
 
-[L′ 与 K](workspace/notes/step6_theorems_and_O11_rotation.md)扩展了端点控制：
+[L′ 与 K](../../../packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/notes/step6_theorems_and_O11_rotation.md)扩展了端点控制：
 
 - 固定 $\theta<3/4$，同一 Spin$^{c}$ 结构在整个共形类内实际可解，且 $p\ge A>0$、$a^2\ge T_+$、$T_+\le\theta A$ 时，L′ 对所有有限 $\beta\ge2$ 给 $\kappa_\beta\ge c_L(\theta)>0$，无需 Euler 密度界。
 - 对满足原实际供给的一般型曲面吹起，K 按 $k/A$ 分区，将 L′ 与一个固定有限密度端点常数组合，得到与吹起次数无关的参数估计。
@@ -60,7 +60,7 @@ $$
 
 $N_{2/3}(\beta)=(\beta-8)^2/12$，而 $\theta=3/4$ 消去其最高次项。这解释经典估计与有限参数强制各自在哪个区间发挥作用；一般无密度 O10 仍未闭合。
 
-[Theorem F](workspace/notes/step20_burns_response_and_neck_quantization.md)在任意固定光滑背景上计算标记吹起的响应：
+[Theorem F](../../../packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/notes/step20_burns_response_and_neck_quantization.md)在任意固定光滑背景上计算标记吹起的响应：
 
 $$
 P(\widehat g_x)=P(g)+8\pi^2
@@ -68,13 +68,13 @@ P(\widehat g_x)=P(g)+8\pi^2
 \qquad\mathbf R^+=W^++sI/12.
 $$
 
-背景曲率及插入方向共同决定修正项。核方向进入二阶计算。[严格低成本单元](workspace/notes/step11_subthreshold_perpendicular_cell.md)与 A01 的后续区间证书证明成本可以小于 $8\pi^2$；标准恢复首项 $4$ 因此不能作为固定的下界目标。
+背景曲率及插入方向共同决定修正项。核方向进入二阶计算。[严格低成本单元](../../../packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/notes/step11_subthreshold_perpendicular_cell.md)与 A01 的后续区间证书证明成本可以小于 $8\pi^2$；标准恢复首项 $4$ 因此不能作为固定的下界目标。
 
-同一阶段研究真实 Einstein 填充、CH 与实双曲背景的差别、Yamabe 归约及相对体积。须区分两项存在性材料：Fino 问题所用的完整 $\mathbb R^4$ 显式 almost-Kähler Einstein 例来自 A01；本会话的 ACH/Rossi $\mathcal O(-1)$ 填充是另一条计算辅助链。后者在 [Fuchsian 初值程序](workspace/scripts/ach_bolt_fuchs.py)中存在已指出的分量排列和余项界问题，尚未见本地修复。旧定理包 §6 的“完整认证”不能据此沿用；这不影响独立的严格次 $4$ 构造。
+同一阶段研究真实 Einstein 填充、CH 与实双曲背景的差别、Yamabe 归约及相对体积。须区分两项存在性材料：Fino 问题所用的完整 $\mathbb R^4$ 显式 almost-Kähler Einstein 例来自 A01；本会话的 ACH/Rossi $\mathcal O(-1)$ 填充是另一条计算辅助链。后者在 [Fuchsian 初值程序](../../../packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/scripts/ach_bolt_fuchs.py)中存在已指出的分量排列和余项界问题，尚未见本地修复。旧定理包 §6 的“完整认证”不能据此沿用；这不影响独立的严格次 $4$ 构造。
 
 ## 3. 哪种局部费用可以用于全局问题：Steps 25–48
 
-[特征数边界通量](workspace/notes/step33_link_charges_global_decomposition_static_channel.md)将有边界区域的费用写为
+[特征数边界通量](../../../packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/notes/step33_link_charges_global_decomposition_static_channel.md)将有边界区域的费用写为
 
 $$
 \frac{P(D)}{8\pi^2}
@@ -89,10 +89,10 @@ $$
 
 | 数学内容 | 原文与作用 |
 |---|---|
-| 标定、Hamilton–Jacobi 和对称单元分支 | [Step 35](workspace/notes/step35_calibration_theorem_and_branch_classification.md)：精确平方分解与校准流，区分真正的核和路径连接费用 |
-| 同度量多个实际场、振幅和 Nijenhuis/Weyl 关系 | [Step 40](workspace/notes/step40_nijenhuis_form_and_pointwise_exhaustion.md)：仿射预算的饱和范围及仍需控制的共同模态 |
-| 实际周期和扭率预算 | [Step 42](workspace/notes/step42_ak_torsion_profile_taubes_goldberg.md)：指出谐和投影控制尚不足以控制扭率的恰当部分 |
-| Cotton 配对及二次尺度候选 | [Step 43](workspace/notes/step43_w0_cotton_quadratic_law_and_debts.md)、[Step 47](workspace/notes/step47_consolidation_two_scale_program.md)：记录精确恒等式、候选尺度和未证连接 |
+| 标定、Hamilton–Jacobi 和对称单元分支 | [Step 35](../../../packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/notes/step35_calibration_theorem_and_branch_classification.md)：精确平方分解与校准流，区分真正的核和路径连接费用 |
+| 同度量多个实际场、振幅和 Nijenhuis/Weyl 关系 | [Step 40](../../../packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/notes/step40_nijenhuis_form_and_pointwise_exhaustion.md)：仿射预算的饱和范围及仍需控制的共同模态 |
+| 实际周期和扭率预算 | [Step 42](../../../packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/notes/step42_ak_torsion_profile_taubes_goldberg.md)：指出谐和投影控制尚不足以控制扭率的恰当部分 |
+| Cotton 配对及二次尺度候选 | [Step 43](../../../packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/notes/step43_w0_cotton_quadratic_law_and_debts.md)、[Step 47](workspace/notes/step47_consolidation_two_scale_program.md)：记录精确恒等式、候选尺度和未证连接 |
 | CH 附近与局部区域的强制 | [Step 46](workspace/notes/step46_lemmaM_elementary_and_AC.md)、[Step 48](workspace/notes/step48_yamabe_channel_and_localized_CH.md)：带指定邻域、规范和边界项的结论 |
 
 这些工具不把任意近极小序列自动变成已标记、边界受控的单元。纯吹起族的 $k^2/A$ 尺度在研究中曾是候选，并未成为上下界匹配的定理。
@@ -271,3 +271,5 @@ $$
 Q1 的一般非极小 Einstein 存在性、Q2 的光滑全度量精确极值、Q3 的无条件非 Bach-flat 光滑全局极小元、Q4 的闭负 Goldberg，均未在 Step 108 前获得完整解答。已获得的范围扩张、严格构造上界、指定轨形精确极值、整数拓扑实现和端部排除则各有独立数学内容。
 
 保存的程序与结果覆盖符号曲率、Arb/CAPD 区间计算、精确格论、有限阶 AKE 张量和数值构造。大型可重算 Hessian/算子缓存未重复纳入正文材料；数值见证、生成脚本、运行参数及结果保留。本文组织研究来源，不以这次归档重新赋予原计算新的证明等级。
+
+[逐步数学判断](history/research_judgments.jsonl)另保留108步的科学理解、独立修正和未决问题；评分与运行控制信息未列入这一数学记录。

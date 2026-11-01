@@ -1,0 +1,55 @@
+---
+retention_scope: session
+part: 3
+total_parts: 3
+---
+
+[Part 3/3 of: Weyl energy and connected sums of four-manifolds]
+
+\section*{References}
+[AGS13] Elsa Abbena, Sergio Garbiero, and Simon Salamon. "Bach-flat Lie groups in dimension 4". In: C. R. Math. Acad. Sci. Paris 351.7-8 (2013), pp. 303-306. issn: 1631-073X,1778-3569. DOI: 10.1016/j.crma.2013.04.011. URL: https://doi.org/10.1016/j.crma.2013.04. 011.
+[And05] Michael T. Anderson. "Orbifold compactness for spaces of Riemannian metrics and applications". In: Math. Ann. 331.4 (2005), pp. 739-778. issn: 0025-5831,1432-1807. doi: 10.1007/s00208-004-0603-5. URL: https://doi.org/10.1007/s00208-004-0603-5.
+[And06] Michael T. Anderson. "Canonical metrics on 3-manifolds and 4-manifolds". In: Asian J. Math. 10.1 (2006), pp. 127-163. ISSN: 1093-6106,1945-0036. DOI: 10.4310/AJM.2006.v10. n1.a8. URL: https://doi.org/10.4310/AJM.2006.v10.n1.a8.
+[And89] Michael T. Anderson. "Ricci curvature bounds and Einstein metrics on compact manifolds". In: J. Amer. Math. Soc. 2.3 (1989), pp. 455-490.
+[AV12] Antonio G. Ache and Jeff A. Viaclovsky. "Obstruction-flat asymptotically locally Euclidean metrics". In: Geom. Funct. Anal. 22.4 (2012), pp. 832-877. ISSN: 1016-443X,1420-8970. doi: 10.1007/s00039-012-0163-x. URL: https://doi.org/10.1007/s00039-012-0163-x.
+[Bac21] Rudolf Bach. "Zur Weylschen Relativitätstheorie und der Weylschen Erweiterung des Krümmungstensorbegriffs". In: Math. Z. 9.1 (1921), pp. 110-135. issn: 1432-1823. doi: 10.1007/BF01378338. URL: https://doi.org/10.1007/BF01378338.
+[Bes08] Arthur L. Besse. Einstein manifolds. Classics in Mathematics. Reprint of the 1987 edition. Springer-Verlag, Berlin, 2008, pp. xii+516.
+[BH11] Eric Bahuaud and Dylan Helliwell. "Short-time existence for some higher-order geometric flows". In: Comm. Partial Differential Equations 36.12 (2011), pp. 2189-2207. issn: 03605302,1532-4133. DOI: 10.1080/03605302.2011.593015. URL: https://doi.org/10. 1080/03605302.2011.593015.
+[BH15] Eric Bahuaud and Dylan Helliwell. "Uniqueness for some higher-order geometric flows". In: Bull. Lond. Math. Soc. 47.6 (2015), pp. 980-995. issn: 0024-6093,1469-2120. doi: 10.1112/blms/bdv076. URL: https://doi.org/10.1112/blms/bdv076.
+[BH23] Olivier Biquard and Hans-Joachim Hein. "The renormalized volume of a 4-dimensional Ricci-flat ALE space". In: J. Differential Geom. 123.3 (2023), pp. 411-429. issn: 0022-040X,1945-743X. DOI: 10.4310/jdg/1683307004. URL: https://doi.org/10.4310/jdg/1683307004.
+[Biq13] Olivier Biquard. "Désingularisation de métriques d'Einstein. I". In: Invent. Math. 192.1 (2013), pp. 197-252. ISSN: 0020-9910,1432-1297. DOI: 10.1007/s00222-012-0410-7. URL: https://doi.org/10.1007/s00222-012-0410-7.
+[BK03] Matthias Bauer and Ernst Kuwert. "Existence of minimizing Willmore surfaces of prescribed genus". In: Int. Math. Res. Not. 10 (2003), pp. 553-576. issn: 1073-7928,1687-0247. doi: 10.1155/S1073792803208072. URL: https://doi.org/10.1155/S1073792803208072.
+[BKN89] Shigetoshi Bando, Atsushi Kasue, and Hiraku Nakajima. "On a construction of coordinates at infinity on manifolds with fast curvature decay and maximal volume growth". In: Invent. Math. 97.2 (1989), pp. 313-349. ISSN: 0020-9910,1432-1297. DOI: 10.1007/BF01389045. URL: https://doi.org/10.1007/BF01389045.
+[Bre08] Simon Brendle. "Blow-up phenomena for the Yamabe equation". In: J. Amer. Math. Soc. 21.4 (2008), pp. 951-979. ISSN: 0894-0347,1088-6834. DOI: 10.1090/S0894-0347-07-00575-9. URL: https://doi.org/10.1090/S0894-0347-07-00575-9.
+[CG86] Jeff Cheeger and Mikhael Gromov. "Collapsing Riemannian manifolds while keeping their curvature bounded. I". In: J. Differential Geom. 23.3 (1986), pp. 309-346. issn: 0022-040X,1945-743X. URL: http://projecteuclid.org/euclid.jdg/1214440117.
+[CG90] Jeff Cheeger and Mikhael Gromov. "Collapsing Riemannian manifolds while keeping their curvature bounded. II". In: J. Differential Geom. 32.1 (1990), pp. 269-298. issn: 0022-040X,1945-743X. URL: http://projecteuclid.org/euclid.jdg/1214445047.
+[CLQ23] Jiaqi Chen, Peng Lu, and Jie Qing. "Conformal Bach flow". In: Ann. Global Anal. Geom. 63.2 (2023), Paper No. 19, 30. issn: 0232-704X,1572-9060. doi: 10.1007/s10455-023-09897-x. URL: https://doi.org/10.1007/s10455-023-09897-x.
+[CM20] Giovanni Catino and Paolo Mastrolia. A perspective on canonical Riemannian metrics. Vol. 336. Progress in Mathematics. Birkhäuser/Springer, Cham, 2020, pp. xix+247. ISBN: 978-3-030-57184-9. DOI: 10.1007/978-3-030-57185-6. URL: https://doi.org/10.1007/978-3-030-57185-6.
+[CT94] Jeff Cheeger and Gang Tian. "On the cone structure at infinity of Ricci flat manifolds with Euclidean volume growth and quadratic curvature decay". In: Invent. Math. 118.3 (1994), pp. 493-571. ISSN: 0020-9910,1432-1297. DOI: 10.1007/BF01231543. URL: https: //doi.org/10.1007/BF01231543.
+[Der83] Andrzej Derdziński. "Self-dual Kähler manifolds and Einstein manifolds of dimension four". In: Compositio Math. 49.3 (1983), pp. 405-433. issn: 0010-437X,1570-5846. url: http://www.numdam.org/item?id=CM_1983__49_3_405_0.
+[DF89] S. Donaldson and R. Friedman. "Connected sums of self-dual manifolds and deformations of singular spaces". In: Nonlinearity 2.2 (1989), pp. 197-239. issn: 0951-7715,1361-6544. URL: http://stacks.iop.org/0951-7715/2/197.
+[Flo91] Andreas Floer. "Self-dual conformal structures on $l \mathbf{C P}^{2}$ ". In: J. Differential Geom. 33.2 (1991), pp. 551-573. ISSN: 0022-040X,1945-743X. URL: http://projecteuclid.org/euclid.jdg/1214446330.
+[GG24] A. Rod Gover and Matthew J. Gursky. "The anti-self-dual deformation complex and a conjecture of Singer". In: J. Reine Angew. Math. 811 (2024), pp. 293-316. issn: 0075-4102,1435-5345. DOI: 10.1515/crelle-2024-0028. URL: https://doi.org/10.1515/crelle-2024-0028.
+[Gro00] Misha Gromov. "Spaces and questions". In: GAFA 2000 (Tel Aviv, 1999). 2000, pp. 118-161.
+[Gur98] Matthew J. Gursky. "The Weyl functional, de Rham cohomology, and Kähler-Einstein metrics". In: Ann. of Math. (2) 148.1 (1998), pp. 315-337. issn: 0003-486X,1939-8980. doi: 10.2307/120996. URL: https://doi.org/10.2307/120996.
+[GV16] Matthew J. Gursky and Jeff A. Viaclovsky. "Critical metrics on connected sums of Einstein four-manifolds". In: Adv. Math. 292 (2016), pp. 210-315. issn: 0001-8708,1090-2082. doi: 10.1016/j.aim.2015.11.054. URL: https://doi.org/10.1016/j.aim.2015.11.054.
+[Hit74] Nigel Hitchin. "Compact four-dimensional Einstein manifolds". In: J. Differential Geometry 9 (1974), pp. 435-441. ISSN: 0022-040X,1945-743X. URL: http://projecteuclid.org/euclid.jdg/1214432419.
+[Kob85] Osamu Kobayashi. "On a conformally invariant functional of the space of Riemannian metrics". In: J. Math. Soc. Japan 37.3 (1985), pp. 373-389. issn: 0025-5645,1881-1167. DOI: 10.2969/jmsj/03730373. URL: https://doi.org/10.2969/jmsj/03730373.
+[KS24] Klaus Kröncke and Áron Szabó. "Optimal coordinates for Ricci-flat conifolds". In: Calc. Var. Partial Differential Equations 63.7 (2024), Paper No. 188, 41. ISSN: 0944-2669,1432-0835. DOI: 10.1007/s00526-024-02780-y. URL: https://doi.org/10.1007/s00526-024-02780-y.
+[Kus96] Rob Kusner. "Estimates for the biharmonic energy on unbounded planar domains, and the existence of surfaces of every genus that minimize the squared-mean-curvature integral". In: Elliptic and parabolic methods in geometry (Minneapolis, MN, 1994). A K Peters, Wellesley, MA, 1996, pp. 67-72. ISBN: 1-56881-064-4.
+[LeB15] Claude LeBrun. "Weyl curvature, Del Pezzo surfaces, and almost-Kähler geometry". In: J. Geom. Anal. 25.3 (2015), pp. 1744-1772. ISSN: 1050-6926,1559-002X. DOI: 10.1007/s12220-014-9492-3. URL: https://doi.org/10.1007/s12220-014-9492-3.
+[LeB23] Claude LeBrun. "Curvature in the balance: the Weyl functional and scalar curvature of 4-manifolds". In: Pure Appl. Math. Q. 19.6 (2023), pp. 2737-2763. issn: 1558-8599,1558-8602. DOI: 10.4310/pamq.2023.v19.n6.a5. URL: https://doi.org/10.4310/pamq.2023.v19. n6.a5.
+[LP87] John M. Lee and Thomas H. Parker. "The Yamabe problem". In: Bull. Amer. Math. Soc. (N.S.) 17.1 (1987), pp. 37-91.
+[Ozu22a] Tristan Ozuch. "Noncollapsed degeneration of Einstein 4-manifolds, I". In: Geom. Topol. 26.4 (2022), pp. 1483-1528. ISSN: 1465-3060,1364-0380. DOI: 10.2140/gt.2022.26.1483. URL: https://doi.org/10.2140/gt.2022.26.1483.
+[Ozu22b] Tristan Ozuch. "Noncollapsed degeneration of Einstein 4-manifolds, II". In: Geom. Topol. 26.4 (2022), pp. 1529-1634. ISSN: 1465-3060,1364-0380. DOI: 10.2140/gt.2022.26.1529. URL: https://doi.org/10.2140/gt.2022.26.1529.
+[Ozu24] Tristan Ozuch. "Integrability of Einstein deformations and desingularizations". In: Comm. Pure Appl. Math. 77.1 (2024), pp. 177-220. ISSN: 0010-3640,1097-0312. doi: 10.1002/cpa. 22129. URL: https://doi.org/10.1002/cpa.22129.
+[Sch89] Richard M. Schoen. "Variational theory for the total scalar curvature functional for Riemannian metrics and related topics". In: Topics in calculus of variations (Montecatini Terme, 1987). Vol. 1365. Lecture Notes in Math. Springer, Berlin, 1989, pp. 120-154.
+[Sim86] Leon Simon. "Existence of Willmore surfaces". In: Miniconference on geometry and partial differential equations (Canberra, 1985). Vol. 10. Proc. Centre Math. Anal. Austral. Nat. Univ. Austral. Nat. Univ., Canberra, 1986, pp. 187-216. isbn: 0-86784-511-2.
+[Sim93] Leon Simon. "Existence of surfaces minimizing the Willmore functional". In: Comm. Anal. Geom. 1.2 (1993), pp. 281-326. ISSN: 1019-8385,1944-9992. DOI: 10.4310/CAG.1993.v1. n2.a4. URL: https://doi.org/10.4310/CAG.1993.v1.n2.a4.
+[Str10] Jeffrey Streets. "Asymptotic curvature decay and removal of singularities of Bach-flat metrics". In: Trans. Amer. Math. Soc. 362.3 (2010), pp. 1301-1324. issn: 0002-9947,1088-6850. DOI: 10.1090/S0002-9947-09-04960-5. URL: https://doi.org/10.1090/S0002-9947-09-04960-5.
+[Tau92] Clifford Henry Taubes. "The existence of anti-self-dual conformal structures". In: J. Differential Geom. 36.1 (1992), pp. 163-253. issn: 0022-040X,1945-743X. url: http: //projecteuclid.org/euclid.jdg/1214448445.
+[Tho69] John A. Thorpe. "Some remarks on the Gauss-Bonnet integral". In: J. Math. Mech. 18 (1969), pp. 779-786.
+[TV05a] Gang Tian and Jeff Viaclovsky. "Bach-flat asymptotically locally Euclidean metrics". In: Invent. Math. 160.2 (2005), pp. 357-415.
+[TV05b] Gang Tian and Jeff Viaclovsky. "Moduli spaces of critical Riemannian metrics in dimension four". In: Adv. Math. 196.2 (2005), pp. 346-372.
+[TV08] Gang Tian and Jeff Viaclovsky. "Volume growth, curvature decay, and critical metrics". In: Comment. Math. Helv. 83.4 (2008), pp. 889-911. issn: 0010-2571,1420-8946. doi: 10.4171/CMH/147. URL: https://doi.org/10.4171/CMH/147.
+[Via16] Jeff A. Viaclovsky. "Critical metrics for Riemannian curvature functionals". In: Geometric analysis. Vol. 22. IAS/Park City Math. Ser. Amer. Math. Soc., Providence, RI, 2016, pp. 197-274.

@@ -1,0 +1,191 @@
+{
+  "max_m": 64,
+  "checks": [
+    {
+      "name": "note_contains_B_{m+2}*U_0",
+      "ok": true,
+      "detail": "B_{m+2}*U_0"
+    },
+    {
+      "name": "note_contains_chi C_{m+2}*U_0",
+      "ok": true,
+      "detail": "chi C_{m+2}*U_0"
+    },
+    {
+      "name": "note_contains_B_2*U_m",
+      "ok": true,
+      "detail": "B_2*U_m"
+    },
+    {
+      "name": "note_contains_chi C_2*U_m",
+      "ok": true,
+      "detail": "chi C_2*U_m"
+    },
+    {
+      "name": "note_contains_partial_t A_m",
+      "ok": true,
+      "detail": "partial_t A_m"
+    },
+    {
+      "name": "note_contains_A_{\\le m-1}",
+      "ok": true,
+      "detail": "A_{\\le m-1}"
+    },
+    {
+      "name": "note_contains_U_0\\in L^\\infty,\\ T_0\\in",
+      "ok": true,
+      "detail": "U_0\\in L^\\infty,\\ T_0\\in L^q"
+    },
+    {
+      "name": "note_contains_highest cutoff jet `C_{m",
+      "ok": true,
+      "detail": "highest cutoff jet `C_{m+2}` occurs only paired"
+    },
+    {
+      "name": "note_contains_The analytic continuatio",
+      "ok": true,
+      "detail": "The analytic continuation machinery is reusable only after"
+    },
+    {
+      "name": "all_levels_extract_current_cutoff_terms",
+      "ok": true,
+      "detail": "checked m=2..64; failures=0"
+    },
+    {
+      "name": "base_order_preserved",
+      "ok": true,
+      "detail": "U0_Linf + finite-Lp T0 -> (U1,C2) -> T1 -> pointwise T0 -> general m>=2"
+    }
+  ],
+  "passed": 11,
+  "total": 11,
+  "all_passed": true,
+  "sample_levels": {
+    "2": {
+      "U_extracted": [
+        "chi*C_2*U_2",
+        "C_1*C_1*U_2",
+        "chi*C_3*U_1",
+        "chi*C_4*U_0",
+        "C_1*C_3*U_0"
+      ],
+      "U_lower_count": 2,
+      "T_extracted": [
+        "chi*C_2*T_2",
+        "C_1*C_1*T_2",
+        "chi*C_3*T_1",
+        "chi*C_4*T_0",
+        "C_1*C_3*T_0"
+      ],
+      "reaction_current": [
+        "U_0*U_2 (bounded U_0 coefficient)",
+        "U_2*U_0 (bounded U_0 coefficient)",
+        "a*U_2 (bounded a coefficient)"
+      ],
+      "spatial_current": [
+        "a*T_0*U_m (bounded T_0 after base pointwise step)",
+        "a*T_m*U_0 -> U_m*U_0 + lower by aT_m conversion"
+      ],
+      "time_current": [
+        "U_2*U_0 (bounded U_0 coefficient)"
+      ],
+      "background_top_U": 3,
+      "background_max_A_order": 1
+    },
+    "3": {
+      "U_extracted": [
+        "chi*C_2*U_3",
+        "C_1*C_1*U_3",
+        "chi*C_4*U_1",
+        "chi*C_5*U_0",
+        "C_1*C_4*U_0"
+      ],
+      "U_lower_count": 3,
+      "T_extracted": [
+        "chi*C_2*T_3",
+        "C_1*C_1*T_3",
+        "chi*C_4*T_1",
+        "chi*C_5*T_0",
+        "C_1*C_4*T_0"
+      ],
+      "reaction_current": [
+        "U_0*U_3 (bounded U_0 coefficient)",
+        "U_3*U_0 (bounded U_0 coefficient)",
+        "a*U_3 (bounded a coefficient)"
+      ],
+      "spatial_current": [
+        "a*T_0*U_m (bounded T_0 after base pointwise step)",
+        "a*T_m*U_0 -> U_m*U_0 + lower by aT_m conversion"
+      ],
+      "time_current": [
+        "U_3*U_0 (bounded U_0 coefficient)"
+      ],
+      "background_top_U": 4,
+      "background_max_A_order": 2
+    },
+    "8": {
+      "U_extracted": [
+        "chi*C_2*U_8",
+        "C_1*C_1*U_8",
+        "chi*C_9*U_1",
+        "chi*C_10*U_0",
+        "C_1*C_9*U_0"
+      ],
+      "U_lower_count": 8,
+      "T_extracted": [
+        "chi*C_2*T_8",
+        "C_1*C_1*T_8",
+        "chi*C_9*T_1",
+        "chi*C_10*T_0",
+        "C_1*C_9*T_0"
+      ],
+      "reaction_current": [
+        "U_0*U_8 (bounded U_0 coefficient)",
+        "U_8*U_0 (bounded U_0 coefficient)",
+        "a*U_8 (bounded a coefficient)"
+      ],
+      "spatial_current": [
+        "a*T_0*U_m (bounded T_0 after base pointwise step)",
+        "a*T_m*U_0 -> U_m*U_0 + lower by aT_m conversion"
+      ],
+      "time_current": [
+        "U_8*U_0 (bounded U_0 coefficient)"
+      ],
+      "background_top_U": 9,
+      "background_max_A_order": 7
+    },
+    "64": {
+      "U_extracted": [
+        "chi*C_2*U_64",
+        "C_1*C_1*U_64",
+        "chi*C_65*U_1",
+        "chi*C_66*U_0",
+        "C_1*C_65*U_0"
+      ],
+      "U_lower_count": 64,
+      "T_extracted": [
+        "chi*C_2*T_64",
+        "C_1*C_1*T_64",
+        "chi*C_65*T_1",
+        "chi*C_66*T_0",
+        "C_1*C_65*T_0"
+      ],
+      "reaction_current": [
+        "U_0*U_64 (bounded U_0 coefficient)",
+        "U_64*U_0 (bounded U_0 coefficient)",
+        "a*U_64 (bounded a coefficient)"
+      ],
+      "spatial_current": [
+        "a*T_0*U_m (bounded T_0 after base pointwise step)",
+        "a*T_m*U_0 -> U_m*U_0 + lower by aT_m conversion"
+      ],
+      "time_current": [
+        "U_64*U_0 (bounded U_0 coefficient)"
+      ],
+      "background_top_U": 65,
+      "background_max_A_order": 63
+    }
+  },
+  "failures": [],
+  "interpretation": "Combinatorial ledger only: verifies that current-order cutoff and signed-Hessian terms are extracted rather than hidden in a lower family, and records the non-circular base order. It does not prove tensor-index evolution formulas, derivative reordering lemmas, base estimates, or PDE estimates."
+}

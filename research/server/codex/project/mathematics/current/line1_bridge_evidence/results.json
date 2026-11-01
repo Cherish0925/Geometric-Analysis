@@ -1,0 +1,95 @@
+{
+  "baseline": "0263799",
+  "scope": "finite checks and artifact integrity",
+  "programs": [
+    {
+      "name": "check_line1_energy_selection.py",
+      "sha256": "d0748c5e7ee682449d98254a2041304227f035c32584e3c9cfeee560b2672dad",
+      "exit_code": 0,
+      "stdout": "{\n  \"exact_checks\": 16,\n  \"checks\": [\n    \"pointwise defect split\",\n    \"scalar inversion\",\n    \"exact energy excess\",\n    \"projected scalar loss\",\n    \"tracefree energy selection\",\n    \"relative defect numerator\",\n    \"relative minimizer profile\",\n    \"scalar surplus from q,t\",\n    \"retained scalar surplus\",\n    \"Einstein energy threshold\",\n    \"conformal Ricci energy drop\",\n    \"conformal tracefree energy drop\",\n    \"conformal LeBrun defect drop\",\n    \"two-scale variance and relative defect\",\n    \"two-scale moment numerator\",\n    \"two-scale exact example\"\n  ],\n  \"rejected_false_variants\": [\n    \"D and primitive cost force zero Einstein defect\",\n    \"Yamabe drop factor is one quarter\",\n    \"every minimizing sequence has no variance contribution\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "line1_conformal_neck_check.py",
+      "sha256": "98432549a961c7f2a29151189d1529710a41bc82d8c4f405eef979d2a1640ea8",
+      "exit_code": 0,
+      "stdout": "PASS: non-Kahler Ricci bridge\nPASS: scalar-band Bp expansion density\nPASS: scalar-band square-root coefficient\nPASS: conformal scalar-square expansion before integration\nPASS: exact conformal LB remainder\nPASS: exact conformal trace-free Ricci energy\nPASS: exact conformal total Ricci energy\nPASS: consistency with valid non-Kahler bridge\nPASS: strict positive two-bulk variance factorization\nPASS: relative Einstein-defect limit\nPASS: equal-side concrete limit 2/5\nPASS: scale-aware mean-normalized residual\nPASS: collar area primitive\nPASS: fixed-window collar area\nPASS: optional conformal Ricci block is trace-free\nPASS: fixed-topology side volumes\nAll exact checks passed; collar existence and SW nonvanishing remain proof inputs.\n",
+      "stderr": ""
+    },
+    {
+      "name": "line1_ricci_remainder_check.py",
+      "sha256": "aa044dcac31ab18340ea1e8d4b5cbdf3f053344e86d33ca3dd59ff1375e76854",
+      "exit_code": 0,
+      "stdout": "PASS: polarized Ricci-energy identity\nPASS: unpolarized equivalent identity\nPASS: scalar excess from signed square decomposition\nPASS: nonnegative scalar term estimate\nPASS: absolute Ricci excess splits into two nonnegative losses\nPASS: square root reduction in scalar excess bound\nPASS: linear coefficient in scalar excess bound\nPASS: trace-free energy difference identity\nPASS: finite trace-free lower remainder cancellation\nPASS: relative Einstein defect at negative mean scalar\nPASS: conditional inverse bridge coefficient\nPASS: conformal Ricci energy difference\nPASS: conformal trace-free Ricci energy difference\nPASS: conformal LeBrun defect difference\nAll 14 finite algebra checks passed; geometric inputs remain explicit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "check_line1_neck_coordinates.py",
+      "sha256": "9d42a4f2c4185b37cf637ff8a39f73f32ae4903efa4ebb31a7c54f4fecfb627f",
+      "exit_code": 0,
+      "stdout": "PASS: 10 independent symmetric Ricci components and scalar trace.\n",
+      "stderr": ""
+    },
+    {
+      "name": "line1_scalar_band_check.py",
+      "sha256": "8beb36eeb5b3629eb10a5f20678f7e47424d4e59515f62bc8ce6e0bf135702b0",
+      "exit_code": 0,
+      "stdout": "PASS: LeBrun energy square split\nPASS: full symmetric Weyl-matrix polynomial fit\nPASS: amplitude and scalar-Weyl mismatch relation\nPASS: scalar decomposition for Poincare estimate\nPASS: joint Hodge-eigen defect gradient identity\nPASS: four-defect identity from the two Weitzenbock identities\nPASS: normalization P = 27 D0 / 8\nPASS: scalar variance Poincare coefficient\nPASS: scalar variance amplitude coefficient\nPASS: unequal hyperbolic product LeBrun equality\nPASS: unequal product trace-free Ricci does not vanish\nPASS: unequal product relative Einstein defect\nPASS: normalized form has the allowed KE Weyl model\nPASS: normalized form amplitude error\nPASS: combined calibration defect constant\nAll 15 exact finite checks passed; no PDE certification is claimed.\n",
+      "stderr": ""
+    },
+    {
+      "name": "check_line1_remainders.py",
+      "sha256": "b32b12a50835b26081b5ec0d14bc4bedc26246953d5cb9c57360808b85e6a3ad",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"pass\",\n  \"groups\": 6,\n  \"rejected_wrong_variants\": [\n    \"cscK_implies_Einstein\",\n    \"omit_primitive_period\",\n    \"omit_blowup_term\",\n    \"wrong_Weyl_amplitude\"\n  ],\n  \"scope\": \"exact finite algebra; no PDE existence, limiting compactness or novelty certification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "check_lebrun_closure.py",
+      "sha256": "a07ac697cb422b0d9cb173a5e6a80f6513515580050665b091380137c4208033",
+      "exit_code": 0,
+      "stdout": "PASS: Chern-Weil lower-bound factorization\nPASS: spectral square\nPASS: calibration square\nPASS: nonpositive-budget energy identity\nPASS: transfer and positive-branch constants\nPASS: first 100 threshold examples (finite arithmetic only)\nScope: algebra and indexing; no PDE or SW existence certification.\n",
+      "stderr": ""
+    }
+  ],
+  "documents": [
+    {
+      "stem": "line1_energy_selection",
+      "pages": 6,
+      "hashes": {
+        "md": "8efe1995967e199432d9d9cea6bf2f9cdd263013ea6de09e99fef530d3fd64ae",
+        "tex": "3aad5d188b88770c933cb8e74b4a270309df584588d3eb349317a33ed7ea4c27",
+        "pdf": "da62388652121bee995e7d91c00117a9d973a0ccab6d3cac37a8877e0fdf7905"
+      },
+      "typesetting_errors": []
+    },
+    {
+      "stem": "line1_conformal_neck",
+      "pages": 6,
+      "hashes": {
+        "md": "6234623a6d9df672acdbf765cfb92423516cfe234858cbe092303344ab661d8a",
+        "tex": "ec0895d566552961b0463c9fa55e8ead68b9a51bec483683b87c6f7cf4cad8e5",
+        "pdf": "fb521330ada26ddacf378707ea765c7fffe251e2ade481ec10874dab35744be8"
+      },
+      "typesetting_errors": []
+    },
+    {
+      "stem": "line1_non_kahler_bridge",
+      "pages": 3,
+      "hashes": {
+        "md": "f70bf1feb3a122a4b644899a1f3f9c7ac23dd9443572d98714299c23cd758ced",
+        "tex": "be9317d78a40a40a45be4616c1ee9900f5cf5f13301257a63c41eeb31154aa2b",
+        "pdf": "1799c2655db6b0a7ba7f10b344e986538faa0170e12b135edf67f8d616b6dc29"
+      },
+      "typesetting_errors": []
+    }
+  ],
+  "local_links": 28,
+  "unchanged_original_sources": 7,
+  "limitations": [
+    "Finite checks do not certify global PDE or topology.",
+    "The fixed-metric form-budget theorem uses the inherited Hessian lemma.",
+    "No worldwide novelty certification or new Yau26 branch is claimed."
+  ],
+  "result": "pass"
+}

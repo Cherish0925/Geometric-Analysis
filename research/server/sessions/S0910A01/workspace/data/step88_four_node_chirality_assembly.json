@@ -1,0 +1,69 @@
+{
+  "scope": "four-node assembled chirality source and structural theorem",
+  "step": 88,
+  "node_signs": {
+    "NN": 1,
+    "NS": -1,
+    "SN": -1,
+    "SS": 1
+  },
+  "sign_vector": [
+    1,
+    -1,
+    -1,
+    1
+  ],
+  "sign_vector_equals_mixed_chirality_pattern": true,
+  "source_projections": {
+    "NN": {
+      "B_plus_over_pi2": 0.24999999999999994,
+      "B_minus_over_pi2": -0.24999999999999994,
+      "S_odd_over_pi2": 0.24999999999999994,
+      "S_even_over_pi2": 0.0
+    },
+    "NS": {
+      "B_plus_over_pi2": -0.24999999999999994,
+      "B_minus_over_pi2": 0.24999999999999994,
+      "S_odd_over_pi2": -0.24999999999999994,
+      "S_even_over_pi2": 0.0
+    },
+    "SN": {
+      "B_plus_over_pi2": -0.24999999999999994,
+      "B_minus_over_pi2": 0.24999999999999994,
+      "S_odd_over_pi2": -0.24999999999999994,
+      "S_even_over_pi2": 0.0
+    },
+    "SS": {
+      "B_plus_over_pi2": 0.24999999999999994,
+      "B_minus_over_pi2": -0.24999999999999994,
+      "S_odd_over_pi2": 0.24999999999999994,
+      "S_even_over_pi2": 0.0
+    }
+  },
+  "chirality_even_source_vanishes": true,
+  "chirality_odd_source_pattern": "s_j * pi^2/4",
+  "structural_theorem": {
+    "statement": "For h=(*dZ_A)\u2299(*dZ_B) at \u03bb=1, the four-node chirality-odd assembled source is \u03a3_j w_j \u03b5_j s_j (\u03c0\u00b2/2). For mixed-diagonal (\u03b5_j=s_j), this equals \u03a3 w_j > 0. For all-same with equal scales, it equals 0.",
+    "all_same_equal_scale_sum": 0,
+    "mixed_diagonal_equals_total_weight": true,
+    "mechanism": "The node-sign vector s=(+1,-1,-1,+1) COINCIDES with the mixed chirality assignment. This converts a signed alternating sum into an unsigned total."
+  },
+  "lambda_1_TT_eigenspace": {
+    "dimension_on_quotient": 5,
+    "chirality_sensitive_modes": 1,
+    "chirality_sensitive_mode": "*dZ_A \u2299 *dZ_B (the axial Killing-Killing mode)",
+    "reason": "Only the axial mode has V\u2080=0 and fully-mixed V\u2082 jet. Equatorial modes have V\u2080\u22600 and zero V\u2082 chirality source difference."
+  },
+  "normalized_coefficient": {
+    "value_over_pi2": 0.03515625,
+    "rational_exact": "9/256",
+    "formula": "(pi^2/2)^2 / (eigenvalue * ||h||^2) = pi^4/4 / (64*pi^2/9) = 9*pi^2/256"
+  },
+  "implications": [
+    "The axial mode provides a STRUCTURAL mechanism for chirality-dependent inter-node coupling that cannot be cancelled by scale choices in the mixed-diagonal construction.",
+    "The all-same construction with equal scales (consistent with the known KE degeneration for Bl\u2085P\u00b2) sees zero contribution from this mode.",
+    "This does not yet determine the full Ozuch coefficient: higher eigenspaces, negative modes, gauge corrections, and constant-jet receiver terms remain.",
+    "The structural theorem is exact for the V\u2082 boundary pairing; V\u2080 \u00d7 V\u2082 cross-terms and curved corrections could modify it.",
+    "P h = h > 0, so the nonzero source is not a solvability obstruction; it produces a definite correction field whose feedback into the radial equations is the physical content."
+  ]
+}

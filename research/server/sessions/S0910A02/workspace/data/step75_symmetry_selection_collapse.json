@@ -1,0 +1,607 @@
+{
+  "node_grid": {
+    "pNN": [
+      0,
+      0
+    ],
+    "pNS": [
+      0,
+      1
+    ],
+    "pSN": [
+      1,
+      0
+    ],
+    "pSS": [
+      1,
+      1
+    ]
+  },
+  "D8_size": 8,
+  "D8_elements": [
+    {
+      "label": "rf=0,cf=0,sw=0",
+      "rf": false,
+      "cf": false,
+      "sw": false,
+      "perm": {
+        "pNN": "pNN",
+        "pNS": "pNS",
+        "pSN": "pSN",
+        "pSS": "pSS"
+      }
+    },
+    {
+      "label": "rf=0,cf=0,sw=1",
+      "rf": false,
+      "cf": false,
+      "sw": true,
+      "perm": {
+        "pNN": "pNN",
+        "pNS": "pSN",
+        "pSN": "pNS",
+        "pSS": "pSS"
+      }
+    },
+    {
+      "label": "rf=0,cf=1,sw=0",
+      "rf": false,
+      "cf": true,
+      "sw": false,
+      "perm": {
+        "pNN": "pNS",
+        "pNS": "pNN",
+        "pSN": "pSS",
+        "pSS": "pSN"
+      }
+    },
+    {
+      "label": "rf=0,cf=1,sw=1",
+      "rf": false,
+      "cf": true,
+      "sw": true,
+      "perm": {
+        "pNN": "pSN",
+        "pNS": "pNN",
+        "pSN": "pSS",
+        "pSS": "pNS"
+      }
+    },
+    {
+      "label": "rf=1,cf=0,sw=0",
+      "rf": true,
+      "cf": false,
+      "sw": false,
+      "perm": {
+        "pNN": "pSN",
+        "pNS": "pSS",
+        "pSN": "pNN",
+        "pSS": "pNS"
+      }
+    },
+    {
+      "label": "rf=1,cf=0,sw=1",
+      "rf": true,
+      "cf": false,
+      "sw": true,
+      "perm": {
+        "pNN": "pNS",
+        "pNS": "pSS",
+        "pSN": "pNN",
+        "pSS": "pSN"
+      }
+    },
+    {
+      "label": "rf=1,cf=1,sw=0",
+      "rf": true,
+      "cf": true,
+      "sw": false,
+      "perm": {
+        "pNN": "pSS",
+        "pNS": "pSN",
+        "pSN": "pNS",
+        "pSS": "pNN"
+      }
+    },
+    {
+      "label": "rf=1,cf=1,sw=1",
+      "rf": true,
+      "cf": true,
+      "sw": true,
+      "perm": {
+        "pNN": "pSS",
+        "pNS": "pNS",
+        "pSN": "pSN",
+        "pSS": "pNN"
+      }
+    }
+  ],
+  "pattern_symmetry": {
+    "r1_single": {
+      "subset": [
+        "pNN"
+      ],
+      "orbit": [
+        [
+          "pNN"
+        ],
+        [
+          "pNS"
+        ],
+        [
+          "pSN"
+        ],
+        [
+          "pSS"
+        ]
+      ],
+      "stabilizer_size": 2,
+      "stabilizer": [
+        "rf=0,cf=0,sw=0",
+        "rf=0,cf=0,sw=1"
+      ],
+      "orientation_preserving_elements_mapping_to_complement": [],
+      "self_conjugate_after_c_if_complementer_exists": false
+    },
+    "r2_adjacent_row": {
+      "subset": [
+        "pNN",
+        "pNS"
+      ],
+      "orbit": [
+        [
+          "pNN",
+          "pNS"
+        ],
+        [
+          "pNN",
+          "pSN"
+        ],
+        [
+          "pNS",
+          "pSS"
+        ],
+        [
+          "pSN",
+          "pSS"
+        ]
+      ],
+      "stabilizer_size": 2,
+      "stabilizer": [
+        "rf=0,cf=0,sw=0",
+        "rf=0,cf=1,sw=0"
+      ],
+      "orientation_preserving_elements_mapping_to_complement": [
+        "rf=1,cf=0,sw=0",
+        "rf=1,cf=1,sw=0"
+      ],
+      "self_conjugate_after_c_if_complementer_exists": true
+    },
+    "r2_adjacent_col": {
+      "subset": [
+        "pNN",
+        "pSN"
+      ],
+      "orbit": [
+        [
+          "pNN",
+          "pNS"
+        ],
+        [
+          "pNN",
+          "pSN"
+        ],
+        [
+          "pNS",
+          "pSS"
+        ],
+        [
+          "pSN",
+          "pSS"
+        ]
+      ],
+      "stabilizer_size": 2,
+      "stabilizer": [
+        "rf=0,cf=0,sw=0",
+        "rf=1,cf=0,sw=0"
+      ],
+      "orientation_preserving_elements_mapping_to_complement": [
+        "rf=0,cf=1,sw=0",
+        "rf=1,cf=1,sw=0"
+      ],
+      "self_conjugate_after_c_if_complementer_exists": true
+    },
+    "r2_diagonal_main": {
+      "subset": [
+        "pNN",
+        "pSS"
+      ],
+      "orbit": [
+        [
+          "pNN",
+          "pSS"
+        ],
+        [
+          "pNS",
+          "pSN"
+        ]
+      ],
+      "stabilizer_size": 4,
+      "stabilizer": [
+        "rf=0,cf=0,sw=0",
+        "rf=0,cf=0,sw=1",
+        "rf=1,cf=1,sw=0",
+        "rf=1,cf=1,sw=1"
+      ],
+      "orientation_preserving_elements_mapping_to_complement": [
+        "rf=0,cf=1,sw=0",
+        "rf=0,cf=1,sw=1",
+        "rf=1,cf=0,sw=0",
+        "rf=1,cf=0,sw=1"
+      ],
+      "self_conjugate_after_c_if_complementer_exists": true
+    },
+    "r2_diagonal_anti": {
+      "subset": [
+        "pNS",
+        "pSN"
+      ],
+      "orbit": [
+        [
+          "pNN",
+          "pSS"
+        ],
+        [
+          "pNS",
+          "pSN"
+        ]
+      ],
+      "stabilizer_size": 4,
+      "stabilizer": [
+        "rf=0,cf=0,sw=0",
+        "rf=0,cf=0,sw=1",
+        "rf=1,cf=1,sw=0",
+        "rf=1,cf=1,sw=1"
+      ],
+      "orientation_preserving_elements_mapping_to_complement": [
+        "rf=0,cf=1,sw=0",
+        "rf=0,cf=1,sw=1",
+        "rf=1,cf=0,sw=0",
+        "rf=1,cf=0,sw=1"
+      ],
+      "self_conjugate_after_c_if_complementer_exists": true
+    },
+    "r3_complement_single": {
+      "subset": [
+        "pNN",
+        "pNS",
+        "pSN"
+      ],
+      "orbit": [
+        [
+          "pNN",
+          "pNS",
+          "pSN"
+        ],
+        [
+          "pNN",
+          "pNS",
+          "pSS"
+        ],
+        [
+          "pNN",
+          "pSN",
+          "pSS"
+        ],
+        [
+          "pNS",
+          "pSN",
+          "pSS"
+        ]
+      ],
+      "stabilizer_size": 2,
+      "stabilizer": [
+        "rf=0,cf=0,sw=0",
+        "rf=0,cf=0,sw=1"
+      ],
+      "orientation_preserving_elements_mapping_to_complement": [],
+      "self_conjugate_after_c_if_complementer_exists": false
+    }
+  },
+  "spin_adjacent_vs_diagonal": {
+    "input_from_step64": "A spin filling occurs exactly when the two reversed O(+2) pieces occupy the two seams on which the punctured orbifold boundary carries the distinguished opposite spin structure; orientation conventions may exchange the two diagonal pairs but not adjacent vs diagonal.",
+    "computed_product_spin_lift": {
+      "global_lift_+1": {
+        "signs": {
+          "pNN": 1,
+          "pNS": -1,
+          "pSN": -1,
+          "pSS": 1
+        },
+        "negative_pair": [
+          "pNS",
+          "pSN"
+        ],
+        "positive_pair": [
+          "pNN",
+          "pSS"
+        ],
+        "negative_pair_orbit": "diagonal"
+      },
+      "global_lift_-1": {
+        "signs": {
+          "pNN": -1,
+          "pNS": 1,
+          "pSN": 1,
+          "pSS": -1
+        },
+        "negative_pair": [
+          "pNN",
+          "pSS"
+        ],
+        "positive_pair": [
+          "pNS",
+          "pSN"
+        ],
+        "negative_pair_orbit": "diagonal"
+      }
+    },
+    "conclusion_up_to_global_lift": "The distinguished reversed pair is a diagonal pair (pNN,pSS) or (pNS,pSN). Therefore the diagonal r=2 pattern is the spin/Freedman #3(S2xS2) row; the adjacent r=2 pattern is the non-spin #3CP2#3CP2bar row.",
+    "caveat": "This uses the canonical product spin lift of rho(z,w)=(-z,-w) and the Step-64 seam rule. It fixes the adjacency class, not which of the two diagonal pairs under a global lift convention."
+  },
+  "local_chiral_actions": {
+    "row_flip_between_poles_with_oriented_pole_frames": {
+      "Lambda_plus_to_plus": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "Lambda_minus_to_minus": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "kernel_action": "identity in the chosen oriented pole frames"
+    },
+    "column_flip_between_poles_with_oriented_pole_frames": {
+      "Lambda_plus_to_plus": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "Lambda_minus_to_minus": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "kernel_action": "identity in the chosen oriented pole frames"
+    },
+    "factor_swap": {
+      "orientation": "preserving",
+      "Lambda_plus_to_plus": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "Lambda_minus_to_minus": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "kernel_plus_block_indices_2_3": "diag(1,-1) in this basis",
+      "kernel_minus_block_indices_2_3": "diag(1,-1) in this basis"
+    },
+    "complex_conjugation_first_factor_c": {
+      "orientation": "reversing",
+      "Lambda_plus_to_minus": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "Lambda_minus_to_plus": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "kernel_plus_to_minus_block_indices_2_3": "diag(1,-1) in this basis",
+      "kernel_minus_to_plus_block_indices_2_3": "diag(1,-1) in this basis"
+    }
+  },
+  "T2_selection_rule": {
+    "pole_derivative_order_rule": "A value/first/second jet at a pole can only see scalar/spin harmonics with |m|<=2 in each S^2 factor; higher azimuthal weights vanish to order >2 at the pole.",
+    "quotient_parity_rule_for_even_rank_tensors": "rho=(pi rotation in both factors) imposes m1+m2 even; the EH kernel product weights are even and pass this test.",
+    "EH_kernel_product_characters": [
+      [
+        -2,
+        0
+      ],
+      [
+        0,
+        -2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "excluded_by_EH_kernel_character": "mixed odd channels such as (±1,±1), all |m_a|>2 channels, and the scalar value-only (0,0) channel unless introduced by trace/gauge pieces to be sliced.",
+    "conservative_all_order2_even_weights_for_debugging": [
+      [
+        -2,
+        -2
+      ],
+      [
+        -2,
+        0
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -1,
+        -1
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        0,
+        -2
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        -1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        -2
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "remaining_infinite_sum": "The rule is not a finite-l truncation: for each allowed character, l_a may be arbitrarily large with l_a>=|m_a|. The Green computation is therefore reduced to a few character/tensor channels, not completed."
+  },
+  "collapse_volume_scale_ledger": {
+    "positive_pinched_collapse_setup": {
+      "assumptions": [
+        "Ric_gi ~= g_i",
+        "Vol(M_i,g_i)->0",
+        "diameter bounded above by Myers",
+        "chi>0 forces curvature concentration"
+      ],
+      "curvature_scale": "choose x_i with |Rm|(x_i)=Q_i -> infinity and r_i=Q_i^{-1/2}; then Ric_{r_i^{-2}g_i}=O(r_i^2)->0"
+    },
+    "if_inner_bubble_is_ALE": {
+      "rescaled_limit": "for each fixed R, Vol_{r_i^{-2}g_i}(B(x_i,R))/R^4 -> omega_4/|Gamma| (up to ALE asymptotic constants as R grows)",
+      "original_scale_translation": "Vol_{g_i}(B(x_i,R r_i)) ~ const*(R r_i)^4 for fixed R",
+      "no_immediate_contradiction": "Since R r_i -> 0 for fixed R, this local noncollapse is compatible with total Vol(M_i)->0. Bishop-Gromov permits the volume ratio to decrease on larger radii."
+    },
+    "what_would_be_needed_to_exclude_top_level_ALE": [
+      "a controlled annulus from the ALE end out to a scale comparable with the collapsed ambient scale, with no further curvature concentration and enough Ricci/regularity control to preserve a positive 4-volume ratio",
+      "or a proof that the outermost curvature blow-up model must include the collapsed transition in its pointed limit, forcing sub-Euclidean volume growth (ALF/ALG/ALH/AF-like) rather than ALE",
+      "or a bubble-tree analysis showing any ALE pieces are strictly inner children of a volume-collapsed parent instanton/transition region, so ADE arithmetic is only a subledger, not the top-level collapse accounting"
+    ],
+    "corrected_conclusion": "Volume collapse alone does not rule out inner ALE bubbles. It does sharpen the target: the outermost concentration/transition model in a collapsed P4+ sequence should be volume-collapsed at infinity unless a Euclidean-volume-ratio annulus survives. Therefore the ALF/ALG/APS table is central, while the ADE gate remains only a possible inner-bubble diagnostic."
+  },
+  "scope": "Executable symmetry/selection/scale ledger only. It does not compute Ozuch second obstructions, prove tower rigidity, find Einstein metrics, or rule out collapse."
+}

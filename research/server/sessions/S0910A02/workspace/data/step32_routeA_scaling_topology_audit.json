@@ -1,0 +1,323 @@
+{
+  "title": "Step 32 Route-A scaling/topology audit",
+  "scope": "Execution-level consistency checks and dimensional scaling; not a proof or refutation of Yau-26.",
+  "page_model_correction": {
+    "correction": "Page metric is on CP^2#CPbar^2 (one smooth blow-up, exceptional square -1), not a degenerating EH/A1 desingularization family.",
+    "smooth_blow_up": {
+      "operation": "blow up a smooth point on a complex surface",
+      "lattice_effect": "orthogonal sum with <-1>",
+      "exceptional_curve_square": -1
+    },
+    "A1_minimal_resolution": {
+      "local_model": "C^2/{±1}",
+      "ALE_model": "Eguchi--Hanson on T^*S^2",
+      "exceptional_curve_square": -2,
+      "lattice_effect": "adds a (-2)-root/chains of ADE roots in the minimal resolution, not a lone (-1)-class"
+    },
+    "intersection_lattice_checks": {
+      "CP2#CPbar_has_minus2_class": {
+        "form_diag": [
+          1,
+          -1
+        ],
+        "target_square": -2,
+        "search_bound": 12,
+        "exists_in_search_box": false,
+        "examples": [],
+        "num_examples_mod_sign_displayed_limited": 0
+      },
+      "CP2#2CPbar_has_minus2_class": {
+        "form_diag": [
+          1,
+          -1,
+          -1
+        ],
+        "target_square": -2,
+        "search_bound": 4,
+        "exists_in_search_box": true,
+        "examples": [
+          [
+            -4,
+            -3,
+            -3
+          ],
+          [
+            -4,
+            -3,
+            3
+          ],
+          [
+            -4,
+            3,
+            -3
+          ],
+          [
+            -4,
+            3,
+            3
+          ],
+          [
+            0,
+            -1,
+            -1
+          ],
+          [
+            0,
+            -1,
+            1
+          ]
+        ],
+        "num_examples_mod_sign_displayed_limited": 6
+      },
+      "CP2#3CPbar_has_minus2_class": {
+        "form_diag": [
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        "target_square": -2,
+        "search_bound": 3,
+        "exists_in_search_box": true,
+        "examples": [
+          [
+            -3,
+            -3,
+            -1,
+            -1
+          ],
+          [
+            -3,
+            -3,
+            -1,
+            1
+          ],
+          [
+            -3,
+            -3,
+            1,
+            -1
+          ],
+          [
+            -3,
+            -3,
+            1,
+            1
+          ],
+          [
+            -3,
+            -1,
+            -3,
+            -1
+          ],
+          [
+            -3,
+            -1,
+            -3,
+            1
+          ],
+          [
+            -3,
+            -1,
+            -1,
+            -3
+          ],
+          [
+            -3,
+            -1,
+            -1,
+            3
+          ]
+        ],
+        "num_examples_mod_sign_displayed_limited": 62
+      }
+    },
+    "conclusion": "The proposed Page annulus-flux test has no bubble scale t and no A1 exceptional (-2)-sphere; a null flux computation on Page would be only a consistency check for an exact rigid Einstein metric, not evidence against Route A."
+  },
+  "obstruction_amplitude_scaling": {
+    "model_estimate": "Ric(g_t)-Lambda g_t-t*lambda*chi_t*o = O_{g_cal}(t^2 rho^2), g_t~t g_cal on the Calabi/EH core.",
+    "operator_norm_conversion": "A (0,2)-tensor norm/endomorphism size scales by t^{-1}; hence t*lambda*o becomes lambda*(g_cal^{-1}o), while O(t^2 rho^2) becomes O(t rho^2).",
+    "non_scalar_distance": "inf_a ||lambda*g_cal^{-1}o - a Id||_op = |lambda|*(spectral spread of g_cal^{-1}o)/2.",
+    "assumed_spread_for_display": 2.0,
+    "samples": [
+      {
+        "t": 0.1,
+        "rho_transition=t^{-1/4}": 1.7782794100389228,
+        "remainder_core_op_scale=t": 0.1,
+        "remainder_transition_op_scale=t*rho^2=t^{1/2}": 0.31622776601683794,
+        "first_obstruction_op_distance_from_scalars": 1.0,
+        "core_lower_bound_after_remainder_model": 0.9
+      },
+      {
+        "t": 0.01,
+        "rho_transition=t^{-1/4}": 3.1622776601683795,
+        "remainder_core_op_scale=t": 0.01,
+        "remainder_transition_op_scale=t*rho^2=t^{1/2}": 0.10000000000000002,
+        "first_obstruction_op_distance_from_scalars": 1.0,
+        "core_lower_bound_after_remainder_model": 0.99
+      },
+      {
+        "t": 0.001,
+        "rho_transition=t^{-1/4}": 5.623413251903491,
+        "remainder_core_op_scale=t": 0.001,
+        "remainder_transition_op_scale=t*rho^2=t^{1/2}": 0.0316227766016838,
+        "first_obstruction_op_distance_from_scalars": 1.0,
+        "core_lower_bound_after_remainder_model": 0.999
+      },
+      {
+        "t": 0.0001,
+        "rho_transition=t^{-1/4}": 10.0,
+        "remainder_core_op_scale=t": 0.0001,
+        "remainder_transition_op_scale=t*rho^2=t^{1/2}": 0.01,
+        "first_obstruction_op_distance_from_scalars": 1.0,
+        "core_lower_bound_after_remainder_model": 0.9999
+      },
+      {
+        "t": 1e-05,
+        "rho_transition=t^{-1/4}": 17.78279410038923,
+        "remainder_core_op_scale=t": 1e-05,
+        "remainder_transition_op_scale=t*rho^2=t^{1/2}": 0.00316227766016838,
+        "first_obstruction_op_distance_from_scalars": 1.0,
+        "core_lower_bound_after_remainder_model": 0.99999
+      }
+    ],
+    "conclusion": "Within a gluing normal form with nonzero first obstruction coefficient, Yau26's pointwise Ricci-endomorphism pinching cannot tend to zero. Weighted or L^p smallness misses this scale-critical core defect."
+  },
+  "bilinear_flux_dimensional_scaling": {
+    "local_expansions": {
+      "orbifold_2jet_size": "|H_2| ~ r^2, |∂H_2| ~ r",
+      "ALE_rminus4_size": "|t^4 H^4| ~ t^4 r^{-4}, |∂(t^4 H^4)| ~ t^4 r^{-5}",
+      "boundary_area": "~ r^3"
+    },
+    "Wronskian_boundary_signal": "area*(H2*∂H4 - H4*∂H2) ~ r^3*(r^2*t^4*r^{-5}) ~ t^4 (and similarly for the other term), independent of r.",
+    "balance_radius": "r^2 = t^4/r^4 => r=t^(2/3); at this radius |H2|=|t^4H4|=t^(4/3).",
+    "delta_nonconservation_on_dyadic_balanced_shell": "If the residual is only ||Ric-g||_op<=delta, pairing with the natural linearized modes gives delta*∫|H2| or delta*∫|t^4H4| ~ delta*t^4. Thus exponent a=6 in delta*r^a, since r^6=t^4 at balance.",
+    "computed_exponent_a": 6,
+    "caution": "Across a long neck, pairing with t^4 r^{-4} over all dyadic shells can introduce logarithmic/summability issues; the rate-free statement is safest for a localized balanced-shell or genuinely conserved bilinear Wronskian identity.",
+    "why_linear_Eg_is_wrong_object": "The vector-field cosmological Einstein tensor flux has bulk scale delta*r^4 for Z~r, L_Z g~1. At r=t^(2/3) this is delta*t^(8/3), larger than t^4 unless delta<<t^(4/3), and in any case it is linear and blind to the H2-H4 Taub cross term.",
+    "samples": [
+      {
+        "t": 0.1,
+        "r_balance=t^(2/3)": 0.2154434690031884,
+        "H2_size=r^2": 0.046415888336127795,
+        "t4H4_size=t^4/r^4": 0.046415888336127774,
+        "Wronskian_signal_scale": 0.00010000000000000002,
+        "delta_bulk_pair_with_H2_no_delta": 0.00010000000000000006,
+        "delta_bulk_pair_with_t4H4_no_delta": 0.00010000000000000002,
+        "ratio_pair_H2_to_signal": 1.0000000000000004,
+        "ratio_pair_H4_to_signal": 1.0,
+        "linear_Eg_vector_flux_error_no_delta=r^4": 0.0021544346900318847,
+        "linear_Eg_error_to_signal_ratio_no_delta": 21.544346900318843,
+        "rate_needed_for_linear_Eg_delta_less_signal": "delta << 21.5^(-1) i.e. delta << t^(4/3)"
+      },
+      {
+        "t": 0.01,
+        "r_balance=t^(2/3)": 0.046415888336127795,
+        "H2_size=r^2": 0.0021544346900318843,
+        "t4H4_size=t^4/r^4": 0.0021544346900318825,
+        "Wronskian_signal_scale": 1e-08,
+        "delta_bulk_pair_with_H2_no_delta": 1.0000000000000007e-08,
+        "delta_bulk_pair_with_t4H4_no_delta": 9.999999999999999e-09,
+        "ratio_pair_H2_to_signal": 1.0000000000000007,
+        "ratio_pair_H4_to_signal": 0.9999999999999999,
+        "linear_Eg_vector_flux_error_no_delta=r^4": 4.641588833612781e-06,
+        "linear_Eg_error_to_signal_ratio_no_delta": 464.15888336127813,
+        "rate_needed_for_linear_Eg_delta_less_signal": "delta << 464^(-1) i.e. delta << t^(4/3)"
+      },
+      {
+        "t": 0.001,
+        "r_balance=t^(2/3)": 0.010000000000000002,
+        "H2_size=r^2": 0.00010000000000000005,
+        "t4H4_size=t^4/r^4": 9.999999999999994e-05,
+        "Wronskian_signal_scale": 1.0000000000000002e-12,
+        "delta_bulk_pair_with_H2_no_delta": 1.0000000000000014e-12,
+        "delta_bulk_pair_with_t4H4_no_delta": 1.0000000000000002e-12,
+        "ratio_pair_H2_to_signal": 1.000000000000001,
+        "ratio_pair_H4_to_signal": 1.0,
+        "linear_Eg_vector_flux_error_no_delta=r^4": 1.0000000000000008e-08,
+        "linear_Eg_error_to_signal_ratio_no_delta": 10000.000000000007,
+        "rate_needed_for_linear_Eg_delta_less_signal": "delta << 1e+04^(-1) i.e. delta << t^(4/3)"
+      },
+      {
+        "t": 0.0001,
+        "r_balance=t^(2/3)": 0.0021544346900318847,
+        "H2_size=r^2": 4.641588833612783e-06,
+        "t4H4_size=t^4/r^4": 4.641588833612771e-06,
+        "Wronskian_signal_scale": 1.0000000000000002e-16,
+        "delta_bulk_pair_with_H2_no_delta": 1.0000000000000027e-16,
+        "delta_bulk_pair_with_t4H4_no_delta": 1.0000000000000001e-16,
+        "ratio_pair_H2_to_signal": 1.0000000000000024,
+        "ratio_pair_H4_to_signal": 0.9999999999999999,
+        "linear_Eg_vector_flux_error_no_delta=r^4": 2.1544346900318878e-11,
+        "linear_Eg_error_to_signal_ratio_no_delta": 215443.46900318871,
+        "rate_needed_for_linear_Eg_delta_less_signal": "delta << 2.15e+05^(-1) i.e. delta << t^(4/3)"
+      },
+      {
+        "t": 1e-06,
+        "r_balance=t^(2/3)": 0.00010000000000000005,
+        "H2_size=r^2": 1.0000000000000008e-08,
+        "t4H4_size=t^4/r^4": 9.999999999999979e-09,
+        "Wronskian_signal_scale": 9.999999999999997e-25,
+        "delta_bulk_pair_with_H2_no_delta": 1.0000000000000027e-24,
+        "delta_bulk_pair_with_t4H4_no_delta": 9.999999999999997e-25,
+        "ratio_pair_H2_to_signal": 1.0000000000000029,
+        "ratio_pair_H4_to_signal": 1.0,
+        "linear_Eg_vector_flux_error_no_delta=r^4": 1.0000000000000018e-16,
+        "linear_Eg_error_to_signal_ratio_no_delta": 100000000.00000021,
+        "rate_needed_for_linear_Eg_delta_less_signal": "delta << 1e+08^(-1) i.e. delta << t^(4/3)"
+      }
+    ]
+  },
+  "classification_topology_audit": {
+    "conditional_if_branch_b_is_KE_Q_Fano_DuVal": [
+      {
+        "name": "degree 9",
+        "intersection_form": "<1>",
+        "smooth_type": "CP^2",
+        "known_einstein_status": "Fubini--Study Kähler--Einstein",
+        "route_relevance": "already Einstein"
+      },
+      {
+        "name": "degree 8 split",
+        "intersection_form": "H",
+        "smooth_type": "CP^1 x CP^1",
+        "known_einstein_status": "product Kähler--Einstein",
+        "route_relevance": "already Einstein"
+      },
+      {
+        "name": "degree 8 blow-up",
+        "intersection_form": "<1>⊕<-1>",
+        "smooth_type": "CP^2#CPbar",
+        "known_einstein_status": "Page positive Einstein, non-Kähler but conformally Kähler",
+        "route_relevance": "fills the no-KE-but-Einstein gap"
+      },
+      {
+        "name": "degree 7",
+        "intersection_form": "<1>⊕2<-1>",
+        "smooth_type": "CP^2#2CPbar",
+        "known_einstein_status": "Chen--LeBrun--Weber positive Einstein, non-Kähler but conformally Kähler",
+        "route_relevance": "fills the second no-KE-but-Einstein gap"
+      },
+      {
+        "name": "degrees 1--6",
+        "intersection_form": "<1>⊕k<-1>, 3<=k<=8",
+        "smooth_type": "CP^2#kCPbar in general-position del Pezzo smooth types",
+        "known_einstein_status": "Tian--Yau / del Pezzo Kähler--Einstein existence for the stable cases; source-grade details still to be read for every singular smoothing case",
+        "route_relevance": "suggests all smooth del Pezzo minimal resolutions carry some Einstein metric"
+      }
+    ],
+    "important_limits": [
+      "det R_+=0 alone is only an algebraic first-obstruction condition and does not imply Hermitian or Kähler geometry.",
+      "LeBrun--Ozuch Theorem B, per the dossier, assumes an exact positive Einstein sequence, Hermitian Einstein orbifold limit, a genuine singularity, and ASD Ricci-flat ALE bubbles. It cannot yet be applied to arbitrary C^0-pinched branch-(b) sequences.",
+      "Minimal resolutions of Du Val points are crepant; -K becomes nef rather than ample, so the natural KE metric on the singular Q-Fano does not automatically lift to a KE metric on the smooth resolution. Yau26 only needs some Einstein metric, and Page/CLW show non-KE Einstein metrics can fill low-degree gaps.",
+      "The Ozuch 2020 T^4/Z2 chessboard family is Lambda=0/K3-compatible evidence; it should not be carried as a positive Lambda counterexample locus without sign-specific checking."
+    ],
+    "route_value": "The classification bypass is potentially cheaper than A2: list KE orbifold limits with A1/Du Val singularities, compute their smooth minimal-resolution topologies, and check whether each topology already has a known Riemannian Einstein metric. If yes, noncollapsed branch-(b) closes within that classified subcase without proving ansatz-independent A2."
+  },
+  "route_decision": [
+    "Do not perform the Page annular E_g-flux experiment as a test of A2: Page is rigid and not an A1/EH degeneration family.",
+    "A2/amplitude should be reconnected to the Step-1/Step-7 core-defect scaling. The missing theorem is ansatz-independence/normal-form entry for arbitrary C^0 Ricci-pinched degenerations, not a numerical detection test on exact Einstein examples.",
+    "If a flux bridge is pursued, use a bilinear Taub/Wronskian identity at or localized near the balance radius r=t^(2/3); the old linear cosmological E_g flux has the wrong order for the H2-H4 obstruction.",
+    "In parallel, pursue the classification bypass for the branch-(b) KE/Hermitian exact-Einstein subcase, but keep its hypotheses explicit and do not infer Kähler from det R_+=0 alone."
+  ]
+}

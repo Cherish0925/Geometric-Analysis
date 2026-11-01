@@ -1,0 +1,21 @@
+{
+  "V": {
+    "0": "3*p(t, z) - r(t, z) - s(t, z) - u(t, z) + Derivative(p(t, z), t)/2 - Derivative(r(t, z), t)/2 - Derivative(s(t, z), t)/2 - Derivative(u(t, z), t)/2 + exp(-2*t)*Derivative(q(t, z), z)",
+    "1": "(6*q(t, z) - Derivative(p(t, z), z) + 2*Derivative(q(t, z), t) + Derivative(r(t, z), z) - Derivative(s(t, z), z) - Derivative(u(t, z), z))*exp(-2*t)/2",
+    "2": "0",
+    "3": "0"
+  },
+  "beta": {
+    "0": "-3*p(t, z) + r(t, z) + s(t, z) + u(t, z) - Derivative(p(t, z), t)/2 + Derivative(r(t, z), t)/2 + Derivative(s(t, z), t)/2 + Derivative(u(t, z), t)/2 - exp(-2*t)*Derivative(q(t, z), z)",
+    "1": "-3*q(t, z) + Derivative(p(t, z), z)/2 - Derivative(q(t, z), t) - Derivative(r(t, z), z)/2 + Derivative(s(t, z), z)/2 + Derivative(u(t, z), z)/2",
+    "2": "0",
+    "3": "0"
+  },
+  "Phi_minus": {
+    "tt": "((6*p(t, z) - 3*Derivative(p(t, z), t) - Derivative(p(t, z), (t, 2)))*exp(2*t) - Derivative(p(t, z), (z, 2)) + 4*Derivative(q(t, z), z))*exp(-2*t)/2",
+    "tz": "3*q(t, z) - Derivative(p(t, z), z) - Derivative(q(t, z), t)/2 - Derivative(q(t, z), (t, 2))/2 + Derivative(r(t, z), z) - exp(-2*t)*Derivative(q(t, z), (z, 2))/2",
+    "zz": "r(t, z)*exp(2*t) + s(t, z)*exp(2*t) + u(t, z)*exp(2*t) - 3*exp(2*t)*Derivative(r(t, z), t)/2 - exp(2*t)*Derivative(r(t, z), (t, 2))/2 - 2*Derivative(q(t, z), z) - Derivative(r(t, z), (z, 2))/2",
+    "xx": "r(t, z)*exp(2*t) + s(t, z)*exp(2*t) + u(t, z)*exp(2*t) - 3*exp(2*t)*Derivative(s(t, z), t)/2 - exp(2*t)*Derivative(s(t, z), (t, 2))/2 - Derivative(s(t, z), (z, 2))/2",
+    "yy": "r(t, z)*exp(2*t) + s(t, z)*exp(2*t) + u(t, z)*exp(2*t) - 3*exp(2*t)*Derivative(u(t, z), t)/2 - exp(2*t)*Derivative(u(t, z), (t, 2))/2 - Derivative(u(t, z), (z, 2))/2"
+  }
+}

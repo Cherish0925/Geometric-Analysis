@@ -1,0 +1,475 @@
+{
+  "status": "ok",
+  "theorem": {
+    "name": "Rate-limited H4 necessity (Bianchi/Cotton form)",
+    "hypothesis": {
+      "manifold": "Closed smooth 4-manifold (M^4, g_i) with ||Ric - Lambda g_i||_op <= delta_i -> 0, Lambda > 0",
+      "noncollapse": "Vol(B_1(x)) >= v_0 > 0 for all i, x",
+      "bubbling": "Cheeger-Naber convergence to orbifold (M_o, g_o) with A_1 point p, bubble scale t_i -> 0",
+      "rate": "delta_i * log(1/t_i) -> 0"
+    },
+    "conclusion": "The Eguchi-Hanson orientation zeta_pm must satisfy R_pm(p) zeta_pm = 0, where R_pm = W_pm + (Lambda/3)Id is the chiral Weyl block at the orbifold point p.",
+    "mechanism": "Second Bianchi / Wronskian flux: the accumulated Cotton-source drift from r=1 to R=t^{-1/2} is O(t delta log(1/t)), which is o(t) under the rate hypothesis, so the boundary flux identifies the ambient H2 coefficient.",
+    "failure_channel": {
+      "name": "Exponential neck drift",
+      "scale": "t_i ~ exp(-a/delta_i) for some a > 0",
+      "mechanism": "The Cotton source saturates the Bianchi constraint: div W ~ delta/r (flux) over ~1/delta dyadic scales produces O(1) Weyl rotation. The energy is almost free: |Rm| = O(1) locally, so the Chern-Weil integral \u222b|W|^2 sees only O(1) contribution from the neck.",
+      "status": "Named but not realized: local toric-cone warped model shows the mechanism; global capping, EH matching, and topology remain open."
+    },
+    "what_this_proves": "Under the rate hypothesis, every noncollapsed positive counterexample would have all A_1 bubble points in finite ADE chiral degeneracy loci. This is a classification, not a refutation.",
+    "what_this_does_not_prove": "The full Yau-26 proposition. The rate hypothesis may not hold for actual pinched sequences. Collapsed sequences are not covered. Higher dimensions are not covered."
+  },
+  "necessity_scaling_table": [
+    {
+      "delta": 0.1,
+      "t": 0.0001,
+      "log10_1_over_t": 4.0,
+      "neck_length_L_logscales": 4.605170185988091,
+      "absolute_flux_error_delta_B": 4.605170185988091e-05,
+      "signal_B": 0.0001,
+      "relative_error": 0.4605170185988091,
+      "necessity_holds": true
+    },
+    {
+      "delta": 0.1,
+      "t": 1e-08,
+      "log10_1_over_t": 8.0,
+      "neck_length_L_logscales": 9.210340371976184,
+      "absolute_flux_error_delta_B": 9.210340371976185e-09,
+      "signal_B": 1e-08,
+      "relative_error": 0.9210340371976184,
+      "necessity_holds": false
+    },
+    {
+      "delta": 0.1,
+      "t": 1e-16,
+      "log10_1_over_t": 16.0,
+      "neck_length_L_logscales": 18.420680743952367,
+      "absolute_flux_error_delta_B": 1.8420680743952368e-16,
+      "signal_B": 1e-16,
+      "relative_error": 1.842068074395237,
+      "necessity_holds": false
+    },
+    {
+      "delta": 0.1,
+      "t": 1e-40,
+      "log10_1_over_t": 40.0,
+      "neck_length_L_logscales": 46.051701859880914,
+      "absolute_flux_error_delta_B": 4.6051701859880915e-40,
+      "signal_B": 1e-40,
+      "relative_error": 4.605170185988092,
+      "necessity_holds": false
+    },
+    {
+      "delta": 0.1,
+      "t": 1e-80,
+      "log10_1_over_t": 80.0,
+      "neck_length_L_logscales": 92.10340371976183,
+      "absolute_flux_error_delta_B": 9.210340371976183e-80,
+      "signal_B": 1e-80,
+      "relative_error": 9.210340371976184,
+      "necessity_holds": false
+    },
+    {
+      "delta": 0.05,
+      "t": 0.0001,
+      "log10_1_over_t": 4.0,
+      "neck_length_L_logscales": 4.605170185988091,
+      "absolute_flux_error_delta_B": 2.3025850929940457e-05,
+      "signal_B": 0.0001,
+      "relative_error": 0.23025850929940456,
+      "necessity_holds": true
+    },
+    {
+      "delta": 0.05,
+      "t": 1e-08,
+      "log10_1_over_t": 8.0,
+      "neck_length_L_logscales": 9.210340371976184,
+      "absolute_flux_error_delta_B": 4.6051701859880925e-09,
+      "signal_B": 1e-08,
+      "relative_error": 0.4605170185988092,
+      "necessity_holds": true
+    },
+    {
+      "delta": 0.05,
+      "t": 1e-16,
+      "log10_1_over_t": 16.0,
+      "neck_length_L_logscales": 18.420680743952367,
+      "absolute_flux_error_delta_B": 9.210340371976184e-17,
+      "signal_B": 1e-16,
+      "relative_error": 0.9210340371976184,
+      "necessity_holds": false
+    },
+    {
+      "delta": 0.05,
+      "t": 1e-40,
+      "log10_1_over_t": 40.0,
+      "neck_length_L_logscales": 46.051701859880914,
+      "absolute_flux_error_delta_B": 2.3025850929940457e-40,
+      "signal_B": 1e-40,
+      "relative_error": 2.302585092994046,
+      "necessity_holds": false
+    },
+    {
+      "delta": 0.05,
+      "t": 1e-80,
+      "log10_1_over_t": 80.0,
+      "neck_length_L_logscales": 92.10340371976183,
+      "absolute_flux_error_delta_B": 4.6051701859880914e-80,
+      "signal_B": 1e-80,
+      "relative_error": 4.605170185988092,
+      "necessity_holds": false
+    },
+    {
+      "delta": 0.02,
+      "t": 0.0001,
+      "log10_1_over_t": 4.0,
+      "neck_length_L_logscales": 4.605170185988091,
+      "absolute_flux_error_delta_B": 9.210340371976184e-06,
+      "signal_B": 0.0001,
+      "relative_error": 0.09210340371976182,
+      "necessity_holds": true
+    },
+    {
+      "delta": 0.02,
+      "t": 1e-08,
+      "log10_1_over_t": 8.0,
+      "neck_length_L_logscales": 9.210340371976184,
+      "absolute_flux_error_delta_B": 1.8420680743952367e-09,
+      "signal_B": 1e-08,
+      "relative_error": 0.18420680743952367,
+      "necessity_holds": true
+    },
+    {
+      "delta": 0.02,
+      "t": 1e-16,
+      "log10_1_over_t": 16.0,
+      "neck_length_L_logscales": 18.420680743952367,
+      "absolute_flux_error_delta_B": 3.684136148790474e-17,
+      "signal_B": 1e-16,
+      "relative_error": 0.36841361487904734,
+      "necessity_holds": true
+    },
+    {
+      "delta": 0.02,
+      "t": 1e-40,
+      "log10_1_over_t": 40.0,
+      "neck_length_L_logscales": 46.051701859880914,
+      "absolute_flux_error_delta_B": 9.210340371976183e-41,
+      "signal_B": 1e-40,
+      "relative_error": 0.9210340371976183,
+      "necessity_holds": false
+    },
+    {
+      "delta": 0.02,
+      "t": 1e-80,
+      "log10_1_over_t": 80.0,
+      "neck_length_L_logscales": 92.10340371976183,
+      "absolute_flux_error_delta_B": 1.8420680743952366e-80,
+      "signal_B": 1e-80,
+      "relative_error": 1.8420680743952367,
+      "necessity_holds": false
+    },
+    {
+      "delta": 0.01,
+      "t": 0.0001,
+      "log10_1_over_t": 4.0,
+      "neck_length_L_logscales": 4.605170185988091,
+      "absolute_flux_error_delta_B": 4.605170185988092e-06,
+      "signal_B": 0.0001,
+      "relative_error": 0.04605170185988091,
+      "necessity_holds": true
+    },
+    {
+      "delta": 0.01,
+      "t": 1e-08,
+      "log10_1_over_t": 8.0,
+      "neck_length_L_logscales": 9.210340371976184,
+      "absolute_flux_error_delta_B": 9.210340371976184e-10,
+      "signal_B": 1e-08,
+      "relative_error": 0.09210340371976183,
+      "necessity_holds": true
+    },
+    {
+      "delta": 0.01,
+      "t": 1e-16,
+      "log10_1_over_t": 16.0,
+      "neck_length_L_logscales": 18.420680743952367,
+      "absolute_flux_error_delta_B": 1.842068074395237e-17,
+      "signal_B": 1e-16,
+      "relative_error": 0.18420680743952367,
+      "necessity_holds": true
+    },
+    {
+      "delta": 0.01,
+      "t": 1e-40,
+      "log10_1_over_t": 40.0,
+      "neck_length_L_logscales": 46.051701859880914,
+      "absolute_flux_error_delta_B": 4.605170185988091e-41,
+      "signal_B": 1e-40,
+      "relative_error": 0.46051701859880917,
+      "necessity_holds": true
+    },
+    {
+      "delta": 0.01,
+      "t": 1e-80,
+      "log10_1_over_t": 80.0,
+      "neck_length_L_logscales": 92.10340371976183,
+      "absolute_flux_error_delta_B": 9.210340371976183e-81,
+      "signal_B": 1e-80,
+      "relative_error": 0.9210340371976183,
+      "necessity_holds": false
+    }
+  ],
+  "exponential_channel_table": [
+    {
+      "delta": 0.1,
+      "a": 0.5,
+      "L_logscales": 5.0,
+      "t_simple_convention": 0.006737946999085467,
+      "t_repaired_convention": 4.539992976248485e-06,
+      "neck_scales_count": 5.0,
+      "relative_W_rotation": 0.25,
+      "cotton_source_per_scale": 0.1,
+      "total_cotton_drift": 0.5,
+      "is_O1_drift": true
+    },
+    {
+      "delta": 0.1,
+      "a": 1.0,
+      "L_logscales": 10.0,
+      "t_simple_convention": 4.5399929762484854e-05,
+      "t_repaired_convention": 2.061153622438558e-10,
+      "neck_scales_count": 10.0,
+      "relative_W_rotation": 0.5,
+      "cotton_source_per_scale": 0.1,
+      "total_cotton_drift": 1.0,
+      "is_O1_drift": true
+    },
+    {
+      "delta": 0.1,
+      "a": 2.0,
+      "L_logscales": 20.0,
+      "t_simple_convention": 2.061153622438558e-09,
+      "t_repaired_convention": 4.248354255291589e-19,
+      "neck_scales_count": 20.0,
+      "relative_W_rotation": 1.0,
+      "cotton_source_per_scale": 0.1,
+      "total_cotton_drift": 2.0,
+      "is_O1_drift": true
+    },
+    {
+      "delta": 0.1,
+      "a": 4.0,
+      "L_logscales": 40.0,
+      "t_simple_convention": 4.248354255291589e-18,
+      "t_repaired_convention": 1.8048513878454152e-36,
+      "neck_scales_count": 40.0,
+      "relative_W_rotation": 2.0,
+      "cotton_source_per_scale": 0.1,
+      "total_cotton_drift": 4.0,
+      "is_O1_drift": true
+    },
+    {
+      "delta": 0.1,
+      "a": 8.0,
+      "L_logscales": 80.0,
+      "t_simple_convention": 1.8048513878454153e-35,
+      "t_repaired_convention": 3.2574885322075213e-71,
+      "neck_scales_count": 80.0,
+      "relative_W_rotation": 4.0,
+      "cotton_source_per_scale": 0.1,
+      "total_cotton_drift": 8.0,
+      "is_O1_drift": true
+    },
+    {
+      "delta": 0.05,
+      "a": 0.5,
+      "L_logscales": 10.0,
+      "t_simple_convention": 4.5399929762484854e-05,
+      "t_repaired_convention": 1.030576811219279e-10,
+      "neck_scales_count": 10.0,
+      "relative_W_rotation": 0.25,
+      "cotton_source_per_scale": 0.05,
+      "total_cotton_drift": 0.5,
+      "is_O1_drift": true
+    },
+    {
+      "delta": 0.05,
+      "a": 1.0,
+      "L_logscales": 20.0,
+      "t_simple_convention": 2.061153622438558e-09,
+      "t_repaired_convention": 2.1241771276457945e-19,
+      "neck_scales_count": 20.0,
+      "relative_W_rotation": 0.5,
+      "cotton_source_per_scale": 0.05,
+      "total_cotton_drift": 1.0,
+      "is_O1_drift": true
+    },
+    {
+      "delta": 0.05,
+      "a": 2.0,
+      "L_logscales": 40.0,
+      "t_simple_convention": 4.248354255291589e-18,
+      "t_repaired_convention": 9.024256939227076e-37,
+      "neck_scales_count": 40.0,
+      "relative_W_rotation": 1.0,
+      "cotton_source_per_scale": 0.05,
+      "total_cotton_drift": 2.0,
+      "is_O1_drift": true
+    },
+    {
+      "delta": 0.05,
+      "a": 4.0,
+      "L_logscales": 80.0,
+      "t_simple_convention": 1.8048513878454153e-35,
+      "t_repaired_convention": 1.6287442661037606e-71,
+      "neck_scales_count": 80.0,
+      "relative_W_rotation": 2.0,
+      "cotton_source_per_scale": 0.05,
+      "total_cotton_drift": 4.0,
+      "is_O1_drift": true
+    },
+    {
+      "delta": 0.05,
+      "a": 8.0,
+      "L_logscales": 160.0,
+      "t_simple_convention": 3.257488532207521e-70,
+      "t_repaired_convention": 5.305615768731756e-141,
+      "neck_scales_count": 160.0,
+      "relative_W_rotation": 4.0,
+      "cotton_source_per_scale": 0.05,
+      "total_cotton_drift": 8.0,
+      "is_O1_drift": true
+    },
+    {
+      "delta": 0.02,
+      "a": 0.5,
+      "L_logscales": 25.0,
+      "t_simple_convention": 1.3887943864964021e-11,
+      "t_repaired_convention": 3.8574996959278354e-24,
+      "neck_scales_count": 25.0,
+      "relative_W_rotation": 0.25,
+      "cotton_source_per_scale": 0.02,
+      "total_cotton_drift": 0.5,
+      "is_O1_drift": true
+    },
+    {
+      "delta": 0.02,
+      "a": 1.0,
+      "L_logscales": 50.0,
+      "t_simple_convention": 1.9287498479639178e-22,
+      "t_repaired_convention": 7.440151952041673e-46,
+      "neck_scales_count": 50.0,
+      "relative_W_rotation": 0.5,
+      "cotton_source_per_scale": 0.02,
+      "total_cotton_drift": 1.0,
+      "is_O1_drift": true
+    },
+    {
+      "delta": 0.02,
+      "a": 2.0,
+      "L_logscales": 100.0,
+      "t_simple_convention": 3.720075976020836e-44,
+      "t_repaired_convention": 2.7677930534734753e-89,
+      "neck_scales_count": 100.0,
+      "relative_W_rotation": 1.0,
+      "cotton_source_per_scale": 0.02,
+      "total_cotton_drift": 2.0,
+      "is_O1_drift": true
+    },
+    {
+      "delta": 0.02,
+      "a": 4.0,
+      "L_logscales": 200.0,
+      "t_simple_convention": 1.3838965267367376e-87,
+      "t_repaired_convention": 3.8303391934280116e-176,
+      "neck_scales_count": 200.0,
+      "relative_W_rotation": 2.0,
+      "cotton_source_per_scale": 0.02,
+      "total_cotton_drift": 4.0,
+      "is_O1_drift": true
+    },
+    {
+      "delta": 0.02,
+      "a": 8.0,
+      "L_logscales": 400.0,
+      "t_simple_convention": 1.9151695967140057e-174,
+      "t_repaired_convention": 0.0,
+      "neck_scales_count": 400.0,
+      "relative_W_rotation": 4.0,
+      "cotton_source_per_scale": 0.02,
+      "total_cotton_drift": 8.0,
+      "is_O1_drift": true
+    },
+    {
+      "delta": 0.01,
+      "a": 0.5,
+      "L_logscales": 50.0,
+      "t_simple_convention": 1.9287498479639178e-22,
+      "t_repaired_convention": 3.7200759760208366e-46,
+      "neck_scales_count": 50.0,
+      "relative_W_rotation": 0.25,
+      "cotton_source_per_scale": 0.01,
+      "total_cotton_drift": 0.5,
+      "is_O1_drift": true
+    },
+    {
+      "delta": 0.01,
+      "a": 1.0,
+      "L_logscales": 100.0,
+      "t_simple_convention": 3.720075976020836e-44,
+      "t_repaired_convention": 1.3838965267367377e-89,
+      "neck_scales_count": 100.0,
+      "relative_W_rotation": 0.5,
+      "cotton_source_per_scale": 0.01,
+      "total_cotton_drift": 1.0,
+      "is_O1_drift": true
+    },
+    {
+      "delta": 0.01,
+      "a": 2.0,
+      "L_logscales": 200.0,
+      "t_simple_convention": 1.3838965267367376e-87,
+      "t_repaired_convention": 1.9151695967140058e-176,
+      "neck_scales_count": 200.0,
+      "relative_W_rotation": 1.0,
+      "cotton_source_per_scale": 0.01,
+      "total_cotton_drift": 2.0,
+      "is_O1_drift": true
+    },
+    {
+      "delta": 0.01,
+      "a": 4.0,
+      "L_logscales": 400.0,
+      "t_simple_convention": 1.9151695967140057e-174,
+      "t_repaired_convention": 0.0,
+      "neck_scales_count": 400.0,
+      "relative_W_rotation": 2.0,
+      "cotton_source_per_scale": 0.01,
+      "total_cotton_drift": 4.0,
+      "is_O1_drift": true
+    },
+    {
+      "delta": 0.01,
+      "a": 8.0,
+      "L_logscales": 800.0,
+      "t_simple_convention": 0.0,
+      "t_repaired_convention": 0.0,
+      "neck_scales_count": 800.0,
+      "relative_W_rotation": 4.0,
+      "cotton_source_per_scale": 0.01,
+      "total_cotton_drift": 8.0,
+      "is_O1_drift": true
+    }
+  ],
+  "bianchi_identity": {
+    "statement": "div W = Cotton = (nabla Ric - nabla^T Ric)/(n-2) - gradient scalar/(2(n-1)). For Ric = Lambda g + E: div W = div_E_tracefree/(n-2).",
+    "flux_form": "\u222b_{annulus} <div W, omega> = \u222b_{outer} <W, omega> - \u222b_{inner} <W, omega> (Stokes). Source bounded by t*delta per annular shell against omega ~ rho^{-4} decay."
+  },
+  "cotton_energy_estimate": {
+    "per_scale_W_rotation": "delta",
+    "over_L_scales": "delta * L = delta * log(R/r_0) ~ delta * log(1/t)/2",
+    "chern_weil_invisible": "True: |Rm|~1 in annular shells, contributes r^4 << R^4 = t^{-2} per shell, total O(1). Energy counting cannot see the drift."
+  }
+}

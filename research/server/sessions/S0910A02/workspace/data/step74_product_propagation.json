@@ -1,0 +1,125 @@
+{
+  "product_ricci_formula": {
+    "statement": "Ric_{g1+g2} = Ric_{g1} + Ric_{g2} (block-diagonal, no cross terms)",
+    "operator_norm": "||Ric_{g1+g2} - sigma(g1+g2)||_op = max(||Ric_{g1}-sigma g1||_op, ||Ric_{g2}-sigma g2||_op)",
+    "proof": "Product connection has vanishing mixed Christoffel symbols; Riemann and Ricci tensors inherit block-diagonal structure"
+  },
+  "propagation_table": {
+    "5": {
+      "factor_dim": 1,
+      "factor": "S^1",
+      "Ric_factor": 0,
+      "compatible_with_positive_sigma": false,
+      "note": "1-manifold is Ricci-flat; product construction fails for sigma=+1"
+    },
+    "6": {
+      "factor_dim": 2,
+      "factor": "S^2(Ric=sigma)",
+      "Ric_factor": "sigma",
+      "compatible_with_positive_sigma": true,
+      "scaling": "g_N = 1/sigma * g_round",
+      "A1_strata": "A1 x S^2 codim-4 strata",
+      "defect": "delta(g_a x g_N) = delta(g_a) = O(1/|log a|)"
+    },
+    "7": {
+      "factor_dim": 3,
+      "factor": "S^3(Ric=sigma)",
+      "Ric_factor": "sigma",
+      "compatible_with_positive_sigma": true,
+      "scaling": "g_N = 2/sigma * g_round",
+      "A1_strata": "A1 x S^3 codim-4 strata",
+      "defect": "delta(g_a x g_N) = delta(g_a) = O(1/|log a|)"
+    },
+    "8": {
+      "factor_dim": 4,
+      "factor": "S^4(Ric=sigma)",
+      "Ric_factor": "sigma",
+      "compatible_with_positive_sigma": true,
+      "scaling": "g_N = 3/sigma * g_round",
+      "A1_strata": "A1 x S^4 codim-4 strata",
+      "defect": "delta(g_a x g_N) = delta(g_a) = O(1/|log a|)"
+    },
+    "9": {
+      "factor_dim": 5,
+      "factor": "S^5(Ric=sigma)",
+      "Ric_factor": "sigma",
+      "compatible_with_positive_sigma": true,
+      "scaling": "g_N = 4/sigma * g_round",
+      "A1_strata": "A1 x S^5 codim-4 strata",
+      "defect": "delta(g_a x g_N) = delta(g_a) = O(1/|log a|)"
+    },
+    "10": {
+      "factor_dim": 6,
+      "factor": "S^6(Ric=sigma)",
+      "Ric_factor": "sigma",
+      "compatible_with_positive_sigma": true,
+      "scaling": "g_N = 5/sigma * g_round",
+      "A1_strata": "A1 x S^6 codim-4 strata",
+      "defect": "delta(g_a x g_N) = delta(g_a) = O(1/|log a|)"
+    },
+    "11": {
+      "factor_dim": 7,
+      "factor": "S^7(Ric=sigma)",
+      "Ric_factor": "sigma",
+      "compatible_with_positive_sigma": true,
+      "scaling": "g_N = 6/sigma * g_round",
+      "A1_strata": "A1 x S^7 codim-4 strata",
+      "defect": "delta(g_a x g_N) = delta(g_a) = O(1/|log a|)"
+    }
+  },
+  "transfer_theorem": {
+    "statement": "For n >= 6, if (O^4, g_O) is a positive Einstein 4-orbifold with A1 points and M^4 is the resolution of O carrying near-pinched metrics g_a with delta(g_a) <= C/|log a|, then M^4 x S^{n-4}(Ric=g) carries near-pinched metrics g_a x g_N with the same defect bound.",
+    "covers_dimensions": "n >= 6",
+    "gap_dimension": 5,
+    "gap_reason": "dim(N) = 1 forces Ric_N = 0, incompatible with sigma = +1",
+    "consequence": "If P_4^+ is a proof problem (positive Einstein existence on M^4), then the same problem propagates to all n >= 6 via products. A resolution of the 4D problem automatically resolves n >= 6."
+  },
+  "higher_obstruction_subcriticality": {
+    "Ozuch_scaling": {
+      "first_obstruction": "O(t) in (0,2)-form = O(1) in operator norm",
+      "second_obstruction": "O(t^2) in (0,2)-form = O(t) in operator norm",
+      "k_th_obstruction": "O(t^k) in (0,2)-form = O(t^{k-1}) in operator norm"
+    },
+    "near_pinched_dominant_error": "O(1/|log a|) from log-Weyl annulus",
+    "consequence": "For k >= 2, the k-th obstruction contributes O(t^{k-1}) to operator-norm defect, which is << O(1/|log a|). Therefore nonvanishing higher obstructions do NOT prevent delta \u2192 0 in the near-pinched construction. No theorem based on small delta can force higher obstructions to vanish.",
+    "flux_classification": {
+      "ell_2": "unweighted nuclear-norm mass = L = log(R/b), gives delta >= c/L",
+      "ell_gt_2": "mass = b^{2-ell}/(ell-2), gives delta >= c * b^{ell-2} \u2192 0"
+    },
+    "structural_conclusion": "The first Biquard obstruction is the UNIQUE obstruction mode detectable by C^0 Ricci-endomorphism pinching through the flux mechanism. Higher modes are invisible to the unweighted operator norm. This is a clean negative result explaining why the first obstruction is structurally special."
+  },
+  "mixed_row_hardness_reduction": {
+    "orbifold": "(S^2 x S^2)/Z_2 with 4 A_1 points",
+    "curvature": "R\u00b1 = diag(Lambda, 0, 0), ker(R\u00b1) 2-dimensional",
+    "first_obstruction": "automatically zero for both compatible and reversed EH",
+    "near_pinched": "FND:A1construction produces delta(g_a) <= C/|log a| on EVERY chirality pattern (r=0,1,2,3,4), since insertion direction is specified pointwise and local orientation-independence is proved by the c(z,w)=(z\u0304,w) reflection (Step 68)",
+    "hardness_reduction": "P_4^+ \u27f9 the closed manifold M (resolution in pattern r) carries an Einstein metric. The minimal open instances are r=1,2,3 (mixed patterns). r=0 is the del Pezzo KE control. r=4 is its orientation reverse.",
+    "mixed_rows": {
+      "r=0": "CP^2 # 5 CP\u0304^2 (del Pezzo dP4 KE \u2014 known)",
+      "r=1": "2CP^2 # 4CP\u0304^2 (Einstein status OPEN)",
+      "r=2_spin": "#3(S^2 x S^2) (Einstein status OPEN, same homeotype as collapse k=3)",
+      "r=2_nonspin": "3CP^2 # 3CP\u0304^2 (Einstein status OPEN)",
+      "r=3": "4CP^2 # 2CP\u0304^2 (equivalent to r=1 by reflection)"
+    },
+    "either_outcome_consequential": {
+      "vanishing": "All higher obstructions vanish + transversality \u27f9 new positive Einstein metric on s.c., PSC, SW-void, non-K\u00e4hler manifold. First instance of P_4^+ machinery.",
+      "nonvanishing": "Higher obstruction nonzero \u27f9 local desingularization route cannot decide these manifolds; leaves them as sharpest counterexample candidates, with only far (non-nearby) metrics unexcluded."
+    }
+  },
+  "honest_continuations": {
+    "A_tower_rigidity": {
+      "statement": "Prove that vanishing of the first Biquard obstruction (R\u00b1\u03b6=0) forces ALL higher obstructions to vanish. This is Ozuch Question 0.8 in a generalized form.",
+      "concrete_test": "On (S^2 x S^2)/Z_2 with R\u00b1 = diag(\u039b,0,0) and dim ker = 2, compute the second (and higher) obstruction for a general \u03b6 \u2208 ker(R\u00b1). If they vanish for all \u03b6, this is tower rigidity for the product geometry.",
+      "global_statement": "If the tower is rigid for ALL orbifolds satisfying (4), then combined with Ozuch existence/transversality, the noncollapsed P_4^+ branch closes."
+    },
+    "B_global_existence": {
+      "statement": "Find an Einstein metric on the resolution manifold by a method that does NOT go through orbifold degeneration/nearby-metric analysis.",
+      "examples": [
+        "Ricci flow with surgery starting from the near-pinched metric",
+        "Variational methods (Yamabe, Einstein-Hilbert, etc.)",
+        "New symmetry or K\u00e4hler-like structure on the resolution"
+      ],
+      "difficulty": "No current technique produces positive Einstein metrics on these topologies"
+    }
+  }
+}

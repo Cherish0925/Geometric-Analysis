@@ -1,0 +1,59 @@
+{
+  "S4_anchor": {
+    "ambient_radius_squared_for_Ric_equals_g": 3.0,
+    "orbit_space": "spherical lune in S^2(sqrt(3)) with two right-angle corners",
+    "w": "r1*r2 = degree-2 spherical harmonic restricted to lune",
+    "laplacian_eigenvalue": "l(l+1)/R^2 = 6/3 = 2, so Delta w = -2w",
+    "int_Omega_w_exact": "6",
+    "int_Omega_w_float": 6.0,
+    "Vol4_pi2_coefficient": "24",
+    "Vol4": "24*pi^2",
+    "edge_flux_each": 6.0,
+    "edge_flux_total": 12.0,
+    "check_2_int_w_equals_flux_total": true,
+    "fixed_sphere_area_each": "12*pi",
+    "fixed_sphere_area_total": "24*pi",
+    "flux_times_2pi_equals_total_fixed_sphere_area": "12.0*2*pi = 24.0*pi"
+  },
+  "GB_corner_identity_samples": [
+    {
+      "example": "S4",
+      "corners_chi_fixed_points_m": 2,
+      "int_K_B_over_pi": 1.0,
+      "comment": "For disk orbit space with geodesic edges and right-angle corners. Negative values are allowed; they must be accommodated by edge/rod curvature."
+    },
+    {
+      "example": "CP2",
+      "corners_chi_fixed_points_m": 3,
+      "int_K_B_over_pi": 0.5,
+      "comment": "For disk orbit space with geodesic edges and right-angle corners. Negative values are allowed; they must be accommodated by edge/rod curvature."
+    },
+    {
+      "example": "S2xS2",
+      "corners_chi_fixed_points_m": 4,
+      "int_K_B_over_pi": 0.0,
+      "comment": "For disk orbit space with geodesic edges and right-angle corners. Negative values are allowed; they must be accommodated by edge/rod curvature."
+    },
+    {
+      "example": "CP2#CPbar2_or_Page_topology",
+      "corners_chi_fixed_points_m": 4,
+      "int_K_B_over_pi": 0.0,
+      "comment": "For disk orbit space with geodesic edges and right-angle corners. Negative values are allowed; they must be accommodated by edge/rod curvature."
+    },
+    {
+      "example": "CP2#2CPbar2_or_CLW_topology",
+      "corners_chi_fixed_points_m": 5,
+      "int_K_B_over_pi": -0.5,
+      "comment": "For disk orbit space with geodesic edges and right-angle corners. Negative values are allowed; they must be accommodated by edge/rod curvature."
+    }
+  ],
+  "rayleigh_consequence": {
+    "exact_Einstein": "For T^2-invariant Ric=lambda*g and degeneration boundary, w>0 Dirichlet satisfies (-Delta_B + |F|_h^2/2)w = 2*lambda*w, hence lambda_1^Dir(-Delta_B) <= 2*lambda.",
+    "positive_C0_pinched": "If |Ric-g|_op <= delta, then tr_h Ric^V <= 2*(1+delta) and Rayleigh with w gives lambda_1^Dir(-Delta_B) <= 2*(1+delta).",
+    "sign_test": "Because lambda_1^Dir(-Delta_B+nonnegative potential)>0, a compact Einstein metric with a T^2 degeneration boundary cannot have lambda<=0. This matches Bochner/no-zero Killing fields."
+  },
+  "caveats": [
+    "GB formula assumes orbit space is a disk, edges are geodesic in quotient metric, and all corners have interior angle pi/2; these are local metric facts plus a torus-action topological input requiring source-scoped hypotheses.",
+    "The rayleigh inequality is an invariant-class result, not yet the simply connected volume gap required by Proposition A and not yet a general-collapse reduction."
+  ]
+}

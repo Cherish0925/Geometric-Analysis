@@ -1,0 +1,57 @@
+{
+  "title": "Step 14 crux: int_Omega w lower bound, unit closure, and chi-uniformity",
+  "flux_identity": {
+    "exact_equation": "-Delta_B w = 2 w (F=0), w=0 on boundary",
+    "divergence_identity": "2 int_Omega w = - int_dOmega (dw/dnu_out) = total boundary flux",
+    "S4": {
+      "int_w": 6,
+      "2int_w": 12,
+      "edge_flux_total": 12,
+      "Vol4": "24 pi^2",
+      "consistent": true
+    },
+    "meaning": "Vol_4 = 4 pi^2 int_Omega w and 2 int_Omega w = total boundary flux = (total fixed-sphere area)/pi in normalized units. So a volume LOWER bound is EQUIVALENT to a lower bound on total boundary flux of the eigenvalue-2 Dirichlet ground state."
+  },
+  "rectangle_ground_state_tests": [
+    {
+      "Lx": 3.141592653589793,
+      "Ly": 3.141592653589793,
+      "lambda_1": 2.0,
+      "int_w_Linf1": 4.0,
+      "area": 9.869604401089358,
+      "int_w_over_area": 0.4052847345693511
+    },
+    {
+      "Lx": 2.221441469079183,
+      "Ly": 4.442882938158366,
+      "lambda_1": 2.5,
+      "int_w_Linf1": 4.0,
+      "area": 9.869604401089358,
+      "int_w_over_area": 0.4052847345693511
+    },
+    {
+      "Lx": 0.5,
+      "Ly": 10.0,
+      "lambda_1": 39.577113648368325,
+      "int_w_Linf1": 2.0264236728467555,
+      "area": 5.0,
+      "int_w_over_area": 0.4052847345693511
+    },
+    {
+      "Lx": 10.0,
+      "Ly": 10.0,
+      "lambda_1": 0.19739208802178715,
+      "int_w_Linf1": 40.52847345693511,
+      "area": 100.0,
+      "int_w_over_area": 0.4052847345693511
+    }
+  ],
+  "unit_closure_analysis": {
+    "rectangle_Linf_normalization": "int_w/area = 4/pi^2 ~ 0.405, shape-independent",
+    "unit_slope_condition": "dw/dnu = 1 at rod  =>  pi/Lx = 1  =>  Lx = pi (edge scale O(1))",
+    "rectangle_consequence": "Vol_4 >= 16 pi^2 (verified Step 12); degeneration INCREASES volume",
+    "danger": "Multi-corner (large m = chi) polygon with NEGATIVE base curvature (m>=5) could in principle have many short edges while lambda_1 <= 2 and area >= A_base. Unit slope pins EACH edge's LOCAL scale, but hyperbolic geometry allows many unit-scale edges packed into bounded area. This is the chi -> infty escape route.",
+    "verdict": "The lever that could CLOSE the gap uniformly in chi is NOT available from lambda_1 + area alone. Unit slope pins local edge scale ~ O(1), but the number of edges m = chi is unbounded, and negative curvature can pack them. This points toward chi-DEPENDENT behavior, which does NOT power Proposition A. The honest conclusion: the invariant volume gap is likely chi-uniform FALSE, i.e. Vol can be bounded below per-topology but not uniformly in chi."
+  },
+  "conclusion": "Unit slope closure pins each edge to LOCAL scale O(1) and gives a PER-TOPOLOGY volume lower bound Vol >= c*m ... wait: if each edge has flux ~ O(1) and there are m edges, total flux ~ m, so int w ~ m/2, Vol ~ 2 pi^2 m -> INFINITY, NOT zero. This REVERSES the danger: unit closure + m edges gives Vol GROWING with chi, matching Vol(#_k(S^2xS^2)) <= 24 pi^2/(1-delta)^2 as an UPPER bound contradiction UNLESS edges become short. The genuine tension is between unit slope (wants long flux) and the Bishop volume ceiling (wants bounded volume). This tension is the real content and must be resolved carefully next."
+}

@@ -1,0 +1,75 @@
+{
+  "flat_slice_barrier": {
+    "R_qr": 0,
+    "H_squared_lower_bound": "9 - 6*delta",
+    "barrier_delta": "3/2",
+    "barrier_delta_float": 1.5,
+    "conclusion": "Radial cylindrical charged throat requires delta >= 3/2"
+  },
+  "separator_stability": {
+    "II_T1_formula": "II(e_T,e_1) = (1/2)sqrt(G_11)*f1",
+    "II_sq_twist": "(f1**2*exp(2*alpha) + f2**2)*exp(-alpha + sigma)/2",
+    "Q_definition": "f1**2*exp(alpha + sigma)/2 + f2**2*exp(-alpha + sigma)/2",
+    "II_sq_twist_equals_Q": true,
+    "residual": 0,
+    "stability_bound": "<|II|^2>_C <= 3 + delta",
+    "Q_C_bound": "Q_C <= 3 + delta",
+    "separator_floor_with_twist": "<e_s>_C >= 12 - 8*delta + 2*Q_C"
+  },
+  "toral_bh_equivalence": {
+    "G_xx": "k^2*f^2 + a^2",
+    "G_yy": "a^2",
+    "A_theta_x": "k*f^2/(k^2*f^2+a^2)",
+    "psi_squared": "f^2*a^2/(k^2*f^2+a^2)",
+    "base_check_residual": 0,
+    "mixed_check_residual": 0,
+    "cusp_alpha_limit": "(1/2)*log(1+k^2)",
+    "interpretation": "Large Q in radial ansatz reflects rotated T2 subgroup, not new curvature"
+  },
+  "combined_constraints": {
+    "separator_floor": "2*Q_C - 8*delta + 12",
+    "stability_Q_C_bound": "3 + delta",
+    "e_nu_upper_bound": "-2*Q_C + 2*delta + 6",
+    "total_orbit_energy_lower": "2*Q_C - 8*delta + 12",
+    "max_raised_floor": "18 - 6*delta",
+    "at_delta_0246": {
+      "Q_C_max": 3.246,
+      "max_floor": 16.524,
+      "step87_ceiling_CORRECTED": 10.025,
+        "note": "The value 12.0 was a script labeling error; B(0.246)=10.025",
+      "note": "Max floor > ceiling means Q_C cannot reach its maximum at delta=0.246"
+    }
+  },
+  "resolvent_floor_combination": {
+    "delta_0.05": {
+      "ceiling": 6.695953,
+      "Q_C_max_resolvent": 0.0,
+      "Q_C_max_stability": 3.05,
+      "binding": "resolvent"
+    },
+    "delta_0.1": {
+      "ceiling": 7.453371,
+      "Q_C_max_resolvent": 0.0,
+      "Q_C_max_stability": 3.1,
+      "binding": "resolvent"
+    },
+    "delta_0.15": {
+      "ceiling": 8.273332,
+      "Q_C_max_resolvent": 0.0,
+      "Q_C_max_stability": 3.15,
+      "binding": "resolvent"
+    },
+    "delta_0.2": {
+      "ceiling": 9.156513,
+      "Q_C_max_resolvent": 0.0,
+      "Q_C_max_stability": 3.2,
+      "binding": "resolvent"
+    },
+    "delta_0.246": {
+      "ceiling": 10.025139,
+      "Q_C_max_resolvent": 0.0,
+      "Q_C_max_stability": 3.246,
+      "binding": "resolvent"
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "status": "pass",
+  "scope": "Resolution consistency check for the 2D V4 toy only.",
+  "records": [
+    {
+      "subdivision": 2,
+      "vertices": 162,
+      "v4_reduced_variables": 42,
+      "reference_direct_literal_einstein_floor": 0.0021485140921777557,
+      "control_pass": true,
+      "runs": {
+        "control": {
+          "mechanism": "converged",
+          "final_model_defect_sup": 6.461976953531234e-09,
+          "final_direct_einstein_sup": 0.002148517691657359,
+          "final_direct_target_relative_sup": 6.951733913338568e-09,
+          "time_direct_target_relative_below_0.03": 0.9500000000000001,
+          "initial_seam_area_ratio_min": 0.9890863360490938,
+          "final_seam_area_ratio_min": 0.9999999778864387,
+          "max_interior_abs_curvature": 1.5434429374320273,
+          "max_symmetry_error_sup": 0.0,
+          "liouville_energy_upward_steps_above_1e-8": 0
+        },
+        "mixed": {
+          "mechanism": "converged",
+          "final_model_defect_sup": 3.5470493209288634e-09,
+          "final_direct_einstein_sup": 0.00214851535790217,
+          "final_direct_target_relative_sup": 3.817820234515846e-09,
+          "time_direct_target_relative_below_0.03": 0.7000000000000001,
+          "initial_seam_area_ratio_min": 0.7153353446883399,
+          "final_seam_area_ratio_min": 0.9999999653642001,
+          "max_interior_abs_curvature": 2.1320394478266445,
+          "max_symmetry_error_sup": 0.0,
+          "liouville_energy_upward_steps_above_1e-8": 0
+        }
+      }
+    },
+    {
+      "subdivision": 3,
+      "vertices": 642,
+      "v4_reduced_variables": 162,
+      "reference_direct_literal_einstein_floor": 0.0007155394399656068,
+      "control_pass": true,
+      "runs": {
+        "control": {
+          "mechanism": "converged",
+          "final_model_defect_sup": 3.5045144564094244e-09,
+          "final_direct_einstein_sup": 0.0007155418386695089,
+          "final_direct_target_relative_sup": 3.579129432753795e-09,
+          "time_direct_target_relative_below_0.03": 0.9,
+          "initial_seam_area_ratio_min": 0.9864483506861556,
+          "final_seam_area_ratio_min": 0.9999999799775109,
+          "max_interior_abs_curvature": 1.5050931735981632,
+          "max_symmetry_error_sup": 0.0,
+          "liouville_energy_upward_steps_above_1e-8": 0
+        },
+        "mixed": {
+          "mechanism": "converged",
+          "final_model_defect_sup": 1.3494183548345973e-09,
+          "final_direct_einstein_sup": 0.0007155406509111728,
+          "final_direct_target_relative_sup": 1.3782837801931543e-09,
+          "time_direct_target_relative_below_0.03": 0.65,
+          "initial_seam_area_ratio_min": 0.6750504719335065,
+          "final_seam_area_ratio_min": 0.9999999781777283,
+          "max_interior_abs_curvature": 2.0794764768658736,
+          "max_symmetry_error_sup": 0.0,
+          "liouville_energy_upward_steps_above_1e-8": 0
+        }
+      }
+    },
+    {
+      "subdivision": 4,
+      "vertices": 2562,
+      "v4_reduced_variables": 642,
+      "reference_direct_literal_einstein_floor": 0.0002152202974623485,
+      "control_pass": true,
+      "runs": {
+        "control": {
+          "mechanism": "converged",
+          "final_model_defect_sup": 2.6365232219660584e-09,
+          "final_direct_einstein_sup": 0.00021522201732282475,
+          "final_direct_target_relative_sup": 2.657915254660023e-09,
+          "time_direct_target_relative_below_0.03": 0.8500000000000001,
+          "initial_seam_area_ratio_min": 0.9865466155012005,
+          "final_seam_area_ratio_min": 0.9999999729749328,
+          "max_interior_abs_curvature": 1.4954767777937115,
+          "max_symmetry_error_sup": 0.0,
+          "liouville_energy_upward_steps_above_1e-8": 0
+        },
+        "mixed": {
+          "mechanism": "converged",
+          "final_model_defect_sup": 1.1391749765721215e-09,
+          "final_direct_einstein_sup": 0.00021522120127936972,
+          "final_direct_target_relative_sup": 1.1480838315001437e-09,
+          "time_direct_target_relative_below_0.03": 0.65,
+          "initial_seam_area_ratio_min": 0.6727506447235558,
+          "final_seam_area_ratio_min": 0.9999999808763321,
+          "max_interior_abs_curvature": 2.0703449782720442,
+          "max_symmetry_error_sup": 0.0,
+          "liouville_energy_upward_steps_above_1e-8": 0
+        }
+      }
+    }
+  ],
+  "direct_round_floor_observed_orders_under_edge_halving": [
+    1.5862360453682447,
+    1.7332171442261866
+  ],
+  "checks": {
+    "all_control_gates_pass": true,
+    "all_runs_classified_converged": true,
+    "literal_direct_round_floor_strictly_decreases": true,
+    "all_mesh_calibrated_direct_final_below_1e-7": true,
+    "exact_v4_symmetry_at_saved_times": true,
+    "liouville_energy_nonincreasing_at_1e-8_tolerance": true
+  }
+}

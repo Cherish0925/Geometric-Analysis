@@ -1,0 +1,67 @@
+{
+  "baseline": "ef6a282",
+  "programs": [
+    {
+      "name": "line1_yamabe_endpoint_check.py",
+      "sha256": "c7d52e96d54d542e21cc71428e68c7a54924661d7132bef2f4066bc0fe2fa2f9",
+      "exit_code": 0,
+      "stdout": "PASS: exact logarithmic bump Laplacian\nPASS: pointwise Laplacian bound numerator\nPASS: amplitude-one bump has exact trace-free Hessian at its center\nPASS: logarithmically amplified bump has the asserted central Hessian\nPASS: gauge cancellation in full scalar-normalization equation\nPASS: implicit-function linearization\nPASS: limiting Hessian has operator norm one and zero trace\nPASS: conformal coefficient cancels exactly at the unbounded endpoint\nPASS: positive-mass scalar equation expansion\nPASS: Laplacian L2 coefficient\nPASS: Bochner Hessian coefficient\nPASS: combined W2,2 coefficient has positive slack\nPASS: elementary upper bound for heat-resolvent constant\nPASS: interpolated Holder rate is log(L) times L^(alpha-1)\nAll 14 finite checks passed; the analytic proof remains separate.\n",
+      "stderr": ""
+    },
+    {
+      "name": "line1_canonical_shear_check.py",
+      "sha256": "35677493f5a136c9ccd6a200b68868ca2e63e12df9882ca422302f6f9da8757a",
+      "exit_code": 0,
+      "stdout": "PASS: closed canonical plane form\nPASS: symplectic volume normalization\nPASS: metric determinant\nPASS: exact norm squared two\nPASS: exact self-duality\nPASS: Euler curvature dt-circle entry\nPASS: Euler curvature shear correction\nPASS: negative hyperbolic Euler sign\nPASS: balanced Euler correction is odd\nPASS: full Ricci defect trace\nPASS: trace-free Ricci norm\nPASS: scalar square loss\nPASS: exact LB polynomial\nPASS: Ricci-energy identity at exact canonical period\nPASS: allowed negative-Einstein Weyl model\nPASS: canonical norm and volume give p=T\nPASS: surviving transvection is nilpotent\nPASS: transvection preserves intersection form\nPASS: nonzero powers retain the shear\nAll exact checks passed; global Euler patching, SW, and virtual Kahler obstruction are analytic/topological proofs.\n",
+      "stderr": ""
+    },
+    {
+      "name": "round11_closed_gluing_check.py",
+      "sha256": "528a08f7e8d5a4124011e6c6823c2cfcf1ed12a0c0d0f80fe36b2a839c7b8263",
+      "exit_code": 0,
+      "stdout": "PASS: shear orthonormal frame, all 16 matrix entries\nPASS: full shear Ricci defect, including divergence and 3k term, all 16 matrix entries\nPASS: path Ricci defect, including H and Codazzi terms, all 16 matrix entries\nPASS: three incorrect mixed/trace formulas rejected\nAll coordinate checks passed. Global assembly and uniform estimates are proved in the note.\n",
+      "stderr": ""
+    },
+    {
+      "name": "round15_rigidity_check.py",
+      "sha256": "4b532a86d758c648f561e4c75f554b67f8ac48a46bdd31beb2d6099977f55f9b",
+      "exit_code": 0,
+      "stdout": "PASS: exact scalar excess decomposition\nPASS: Kahler-model squared norm\nPASS: exact Weyl remainder identity\nPASS: amplitude bound nonnegative decomposition\nPASS: retained nonnegative remainder terms\nPASS: single Weyl-block constant\nPASS: full curvature-operator constant\nPASS: correctly scaled polynomial derivative\nPASS: full twelve-variable first-jet identity\nPASS: weighted self-test coefficients\nPASS: surviving algebraic source\nPASS: full four-index product norm\nPASS: shear canonical energy, orientation 1\nPASS: shear canonical energy, orientation -1\nPASS: normalized cubic source\nAll exact product-boundary checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "name": "round21_analytic_check.py",
+      "sha256": "70daa49126f257ed8e55b17e1b12958701002b24eed2582eb7ded81127ffa298",
+      "exit_code": 0,
+      "stdout": "PASS: Hessian identity signs and coefficients on a nonabelian connection\nPASS: full twelve-variable Weyl-divergence contraction\nPASS: zero-order divergence coercivity, full twelve-variable PSD matrix: {15/4 - sqrt(193)/4: 4, sqrt(193)/4 + 15/4: 4, 0: 4}\nPASS: polynomial weighted identity and calibrated constant 1/16\nPASS: general-amplitude identity, both calibration branches, and Hodge endpoint\nPASS: both Einstein signs and the signed Kahler calibration\n",
+      "stderr": ""
+    }
+  ],
+  "documents": [
+    {
+      "stem": "line1_yamabe_endpoint",
+      "pages": 4,
+      "hashes": {
+        "md": "62545dd028fbd09dc5e3d32388ac56f2f4019c30b90ccc3611b3557a65fbcead",
+        "tex": "a9c25cbdf46440a0b65fd3a77071904c081ee4c43ab8b7588c36eb979ec20a42",
+        "pdf": "15faa1ac6d83fa3d605017d9c7fd1232d7a49007915cc40b5e5c70dda69911a9"
+      },
+      "typesetting_errors": []
+    },
+    {
+      "stem": "line1_canonical_shear",
+      "pages": 7,
+      "hashes": {
+        "md": "5fb62edffa5d35755c378e741e400c47112b3b35458c74dfc720a88cd998d738",
+        "tex": "06dcf53251b77d914b17a20e86a9cfa9d9c14bd06e88fe5d81a2c7dc097efa1b",
+        "pdf": "6df909a30ce1b0382757beadf265aea8d507205264ebbefaa88ba7ce2adfcafd"
+      },
+      "typesetting_errors": []
+    }
+  ],
+  "local_links": 8,
+  "scope": "finite identities and artifact integrity",
+  "unchanged_uploaded_sources": 7,
+  "result": "pass",
+  "interpretation": "Finite checks do not certify global PDE or topology. See proof reviews."
+}

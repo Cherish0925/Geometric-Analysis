@@ -1,0 +1,355 @@
+{
+  "title": "Step 26 nilpotent submersion balance audit",
+  "scope": "Local/algebraic tests for positive Ricci collapse; not a global Yau-26 proof/refutation.",
+  "heisenberg_intrinsic_Ricci_formula": {
+    "bracket": "[e1,e2]=b e3 in an orthonormal fibre frame",
+    "Ric_diag": "(-b^2/2, -b^2/2, +b^2/2)",
+    "scalar": "-b^2/2",
+    "anisotropy_center_minus_generator": "b^2"
+  },
+  "twist_only_T_equals_0_analysis": {
+    "vertical_equation_model": "Ric_M^V = Ric_F + Q, Q>=0, rank(Q)<=binom(base_dim,2)",
+    "necessary_upper_pinching_bound": {
+      "delta": 0.1,
+      "necessary_b_squared_upper_from_center": 2.2,
+      "necessary_abs_b_upper": 1.4832396974191326
+    },
+    "exact_Ric_equals_1_rank_table": [
+      {
+        "b": 0.1,
+        "RicF_diag": [
+          -0.005000000000000001,
+          -0.005000000000000001,
+          0.005000000000000001
+        ],
+        "Q_needed_diag_for_Ric_equals_1": [
+          1.005,
+          1.005,
+          0.995
+        ],
+        "Q_needed_psd": true,
+        "rank_needed_if_psd": 3,
+        "minimal_base_dimension_by_rank_only": 3,
+        "interpretation": "twist-only exact Ric=1 algebraically possible by PSD/rank only"
+      },
+      {
+        "b": 0.7,
+        "RicF_diag": [
+          -0.24499999999999997,
+          -0.24499999999999997,
+          0.24499999999999997
+        ],
+        "Q_needed_diag_for_Ric_equals_1": [
+          1.2449999999999999,
+          1.2449999999999999,
+          0.755
+        ],
+        "Q_needed_psd": true,
+        "rank_needed_if_psd": 3,
+        "minimal_base_dimension_by_rank_only": 3,
+        "interpretation": "twist-only exact Ric=1 algebraically possible by PSD/rank only"
+      },
+      {
+        "b": 1.0,
+        "RicF_diag": [
+          -0.5,
+          -0.5,
+          0.5
+        ],
+        "Q_needed_diag_for_Ric_equals_1": [
+          1.5,
+          1.5,
+          0.5
+        ],
+        "Q_needed_psd": true,
+        "rank_needed_if_psd": 3,
+        "minimal_base_dimension_by_rank_only": 3,
+        "interpretation": "twist-only exact Ric=1 algebraically possible by PSD/rank only"
+      },
+      {
+        "b": 1.4142135623730951,
+        "RicF_diag": [
+          -1.0000000000000002,
+          -1.0000000000000002,
+          1.0000000000000002
+        ],
+        "Q_needed_diag_for_Ric_equals_1": [
+          2.0,
+          2.0,
+          -2.220446049250313e-16
+        ],
+        "Q_needed_psd": true,
+        "rank_needed_if_psd": 2,
+        "minimal_base_dimension_by_rank_only": 3,
+        "interpretation": "twist-only exact Ric=1 algebraically possible by PSD/rank only"
+      },
+      {
+        "b": 2.0,
+        "RicF_diag": [
+          -2.0,
+          -2.0,
+          2.0
+        ],
+        "Q_needed_diag_for_Ric_equals_1": [
+          3.0,
+          3.0,
+          -1.0
+        ],
+        "Q_needed_psd": false,
+        "rank_needed_if_psd": null,
+        "minimal_base_dimension_by_rank_only": null,
+        "interpretation": "twist-only exact Ric=1 impossible by center upper bound or rank"
+      }
+    ],
+    "main_conclusion": "With T=0, two-sided positive pinching controls the Heisenberg bracket by the centre direction: b^2/2 <= 1+delta. Exact Ric=1 additionally requires Q=I-Ric_F, so Q must be PSD and high rank; H3 over a 2-dimensional base is impossible by rank, but this is a T=0 theorem, not the desired general collapse theorem."
+  },
+  "cohomogeneity_one_T_active_model": {
+    "metric": "dt^2 + a(t)^2(theta1^2+theta2^2)+c(t)^2 theta3^2 on H3, [E1,E2]=E3",
+    "variables": "k1=a'/a, k3=c'/c, H=2k1+k3, b=c/a^2",
+    "vertical_Ricci_equations_Ric_equals_1": {
+      "generator": "-b^2/2 - k1' - H k1 = 1",
+      "center": "+b^2/2 - k3' - H k3 = 1",
+      "b_evolution": "b'/b = k3 - 2 k1",
+      "dt_dt_constraint": "4 k1^2 + 8 k1 k3 + b^2 + 4 = 0"
+    },
+    "sample_large_b_local_solution": {
+      "initial_choice": {
+        "b0": 20.0,
+        "x=k1/b0": 0.5,
+        "k1_0": 10.0,
+        "k3_0": -10.05,
+        "t_end": 0.01
+      },
+      "success": true,
+      "message": "The solver successfully reached the end of the integration interval.",
+      "max_abs_constraint_on_samples": 6.252776074688882e-13,
+      "max_abs_ricci_minus_1_on_samples": 2.8421709430404007e-13,
+      "samples": [
+        {
+          "t": 0.0,
+          "b": 20.0,
+          "k1=a_prime_over_a": 10.0,
+          "k3=c_prime_over_c": -10.05,
+          "mean_curvature_H": 9.95,
+          "b_prime": -601.0,
+          "T_norm_squared_diagonal_proxy_2k1sq_plus_k3sq": 301.0025,
+          "constraint_4k1sq_8k1k3_bsq_4": 0.0,
+          "ricci_components_from_equations": {
+            "r_00": 1.0,
+            "r_gen_1": 1.0,
+            "r_gen_2": 1.0,
+            "r_center": 1.0
+          }
+        },
+        {
+          "t": 0.0019999999999999987,
+          "b": 18.86603559629273,
+          "k1=a_prime_over_a": 9.433017798146365,
+          "k3=c_prime_over_c": -9.486023104687634,
+          "mean_curvature_H": 9.380012491605095,
+          "b_prime": -534.8909486808766,
+          "T_norm_squared_diagonal_proxy_2k1sq_plus_k3sq": 267.9482839029598,
+          "constraint_4k1sq_8k1k3_bsq_4": 0.0,
+          "ricci_components_from_equations": {
+            "r_00": 0.9999999999999432,
+            "r_gen_1": 0.9999999999999858,
+            "r_gen_2": 0.9999999999999858,
+            "r_center": 1.0
+          }
+        },
+        {
+          "t": 0.0040000000000000036,
+          "b": 17.853556096804738,
+          "k1=a_prime_over_a": 8.926778048402369,
+          "k3=c_prime_over_c": -8.982789298742516,
+          "mean_curvature_H": 8.870766798062222,
+          "b_prime": -479.1241979526304,
+          "T_norm_squared_diagonal_proxy_2k1sq_plus_k3sq": 240.06523623647985,
+          "constraint_4k1sq_8k1k3_bsq_4": 1.1368683772161603e-13,
+          "ricci_components_from_equations": {
+            "r_00": 1.0,
+            "r_gen_1": 0.9999999999999858,
+            "r_gen_2": 0.9999999999999858,
+            "r_center": 1.0
+          }
+        },
+        {
+          "t": 0.0059999999999999915,
+          "b": 16.944021179816293,
+          "k1=a_prime_over_a": 8.472010589908146,
+          "k3=c_prime_over_c": -8.531028457590649,
+          "mean_curvature_H": 8.412992722225644,
+          "b_prime": -431.64978061309455,
+          "T_norm_squared_diagonal_proxy_2k1sq_plus_k3sq": 216.32837341525303,
+          "constraint_4k1sq_8k1k3_bsq_4": 2.2737367544323206e-13,
+          "ricci_components_from_equations": {
+            "r_00": 1.0000000000001137,
+            "r_gen_1": 1.0,
+            "r_gen_2": 1.0,
+            "r_center": 0.9999999999999858
+          }
+        },
+        {
+          "t": 0.00799999999999998,
+          "b": 16.122480579503584,
+          "k1=a_prime_over_a": 8.061240289751792,
+          "k3=c_prime_over_c": -8.12326548463844,
+          "mean_curvature_H": 7.999215094865145,
+          "b_prime": -390.90157005470525,
+          "T_norm_squared_diagonal_proxy_2k1sq_plus_k3sq": 195.9546321521533,
+          "constraint_4k1sq_8k1k3_bsq_4": 3.410605131648481e-13,
+          "ricci_components_from_equations": {
+            "r_00": 1.0000000000001705,
+            "r_gen_1": 1.0,
+            "r_gen_2": 1.0,
+            "r_center": 0.9999999999999858
+          }
+        },
+        {
+          "t": 0.01,
+          "b": 15.3767452576548,
+          "k1=a_prime_over_a": 7.6883726288274,
+          "k3=c_prime_over_c": -7.753405897132475,
+          "mean_curvature_H": 7.623339360522325,
+          "b_prime": -355.66644207821395,
+          "T_norm_squared_diagonal_proxy_2k1sq_plus_k3sq": 178.33745036509333,
+          "constraint_4k1sq_8k1k3_bsq_4": 6.252776074688882e-13,
+          "ricci_components_from_equations": {
+            "r_00": 1.0000000000002842,
+            "r_gen_1": 0.9999999999999929,
+            "r_gen_2": 0.9999999999999929,
+            "r_center": 0.9999999999999929
+          }
+        }
+      ],
+      "interpretation": "The diagonal H3 cohomogeneity-one equations admit local exact Ric=+1 data with large b, but only with |T|~|k|~b and b changing on length scale 1/b. This defeats a pointwise Milnor-only abelian-forcing proof once T is allowed; a valid theorem must be graded/integrated/global."
+    },
+    "scaling_regimes": [
+      {
+        "regime": "homothetic",
+        "alpha": 1.0,
+        "gamma": 1.0,
+        "values": [
+          {
+            "eps": 0.1,
+            "a": 0.1,
+            "c": 0.1,
+            "b=c/a^2": 9.999999999999998,
+            "diameter_proxy": 0.1,
+            "b_times_diameter_proxy": 0.9999999999999999
+          },
+          {
+            "eps": 0.01,
+            "a": 0.01,
+            "c": 0.01,
+            "b=c/a^2": 100.0,
+            "diameter_proxy": 0.01,
+            "b_times_diameter_proxy": 1.0
+          },
+          {
+            "eps": 0.001,
+            "a": 0.001,
+            "c": 0.001,
+            "b=c/a^2": 1000.0000000000001,
+            "diameter_proxy": 0.001,
+            "b_times_diameter_proxy": 1.0000000000000002
+          },
+          {
+            "eps": 0.0001,
+            "a": 0.0001,
+            "c": 0.0001,
+            "b=c/a^2": 10000.0,
+            "diameter_proxy": 0.0001,
+            "b_times_diameter_proxy": 1.0
+          }
+        ]
+      },
+      {
+        "regime": "graded_keeps_b_constant",
+        "alpha": 1.0,
+        "gamma": 2.0,
+        "values": [
+          {
+            "eps": 0.1,
+            "a": 0.1,
+            "c": 0.010000000000000002,
+            "b=c/a^2": 1.0,
+            "diameter_proxy": 0.1,
+            "b_times_diameter_proxy": 0.1
+          },
+          {
+            "eps": 0.01,
+            "a": 0.01,
+            "c": 0.0001,
+            "b=c/a^2": 1.0,
+            "diameter_proxy": 0.01,
+            "b_times_diameter_proxy": 0.01
+          },
+          {
+            "eps": 0.001,
+            "a": 0.001,
+            "c": 1e-06,
+            "b=c/a^2": 1.0,
+            "diameter_proxy": 0.001,
+            "b_times_diameter_proxy": 0.001
+          },
+          {
+            "eps": 0.0001,
+            "a": 0.0001,
+            "c": 1e-08,
+            "b=c/a^2": 1.0,
+            "diameter_proxy": 0.0001,
+            "b_times_diameter_proxy": 0.0001
+          }
+        ]
+      },
+      {
+        "regime": "supergraded_b_to_0",
+        "alpha": 1.0,
+        "gamma": 2.5,
+        "values": [
+          {
+            "eps": 0.1,
+            "a": 0.1,
+            "c": 0.00316227766016838,
+            "b=c/a^2": 0.31622776601683794,
+            "diameter_proxy": 0.1,
+            "b_times_diameter_proxy": 0.0316227766016838
+          },
+          {
+            "eps": 0.01,
+            "a": 0.01,
+            "c": 1e-05,
+            "b=c/a^2": 0.1,
+            "diameter_proxy": 0.01,
+            "b_times_diameter_proxy": 0.001
+          },
+          {
+            "eps": 0.001,
+            "a": 0.001,
+            "c": 3.162277660168379e-08,
+            "b=c/a^2": 0.03162277660168379,
+            "diameter_proxy": 0.001,
+            "b_times_diameter_proxy": 3.1622776601683795e-05
+          },
+          {
+            "eps": 0.0001,
+            "a": 0.0001,
+            "c": 1.0000000000000002e-10,
+            "b=c/a^2": 0.010000000000000002,
+            "diameter_proxy": 0.0001,
+            "b_times_diameter_proxy": 1.0000000000000002e-06
+          }
+        ]
+      }
+    ],
+    "main_conclusion": "T can reproduce the opposite anisotropy locally: large b is compatible with the pointwise Ric=1 equations only if the fibre second fundamental form is also large and anisotropic. Thus abelian forcing must be a relative-rate/global statement: homothetic nonabelian collapse is ruled out, but graded nilpotent collapse can hide the bracket at the first collapse scale and should be treated by iterated abelian stages."
+  },
+  "source_status": {
+    "Kapovitch_Wilking_checked_via_Naber_Zhang_lines": [
+      "NZ object lines 373-389 quote KW Theorem 2.26 and refined Theorem 2.27"
+    ],
+    "ONeill_formula_source_status": "Direct O'Neill/Besse formulas not fully ingested; accessible submersion source lines 179-183 state A/T roles and cite Besse/O'Neill. The cohomogeneity-one equations use standard hypersurface evolution and should receive independent verification before theorem use."
+  },
+  "Yau26_implication": "This step strengthens the positive-branch architecture but does not solve Yau-26. It converts abelian forcing from an overstrong pointwise claim into a sharper conjectural theorem: under C^0 positive pinching, local lower-Ricci collapse groups are almost nilpotent; upper pinching plus O'Neill equations should forbid ungraded nonabelian bracket-scale collapse, while graded collapse factors through torus/circle stages."
+}

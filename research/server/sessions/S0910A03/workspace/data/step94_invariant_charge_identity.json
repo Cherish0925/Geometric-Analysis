@@ -1,0 +1,38 @@
+{
+  "F": "(beta**2*q2**2 - 2*beta*q1*q2 + q1**2 + q2**2*exp(2*alpha))*exp(-alpha)/2",
+  "M_inverse": "Matrix([[exp(-alpha), -beta*exp(-alpha)], [-beta*exp(-alpha), beta**2*exp(-alpha) + exp(alpha)]])",
+  "christoffels_nonzero": {
+    "Gamma^alpha_beta_beta": "exp(-2*alpha)",
+    "Gamma^beta_alpha_beta": "-1",
+    "Gamma^beta_beta_alpha": "-1"
+  },
+  "residual_HessF_minus_Fh": [
+    [
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0"
+    ]
+  ],
+  "residual_gradF2_minus_F2": "0",
+  "residual_HesslogF_minus_h_plus_dbdB": [
+    [
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0"
+    ]
+  ],
+  "residual_gradlogF2_minus_1": "0",
+  "L_beta_composed_U": "e - |d(beta o U)|^2 - Q",
+  "L_log_physical_Q": "-4*Q - b_energy + e - 18",
+  "expected_L_log_physical_Q": "-4*Q - b_energy + e - 18",
+  "chain_rule_residual": "0",
+  "transverse_decomposition_residual": "0",
+  "critical_point_expression": "-4*Q + e_perp - 18",
+  "interpretation": "For fixed nonzero charge, L log Q=-18-4Q+e_perp. The diagonal charge-aligned reduction has e_perp=0. In general e_perp>=0 can offset the negative reaction, so the diagonal identity does not extend unchanged and gives no maximum exclusion."
+}

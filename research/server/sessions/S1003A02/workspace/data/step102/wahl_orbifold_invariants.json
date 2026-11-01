@@ -1,0 +1,305 @@
+{
+ "description": "Wahl orbifold invariants: Dedekind sum s(n-1,n^2) = (n^2-1)/(6n^2) and K^2-invariance 2*chi_orb + 3*tau_orb = 2*chi(M) + 3*tau(M)",
+ "cases": 23,
+ "all_ok": true,
+ "reciprocity_checks": [
+  {
+   "n": 3,
+   "reciprocity_ok": true
+  },
+  {
+   "n": 5,
+   "reciprocity_ok": true
+  },
+  {
+   "n": 7,
+   "reciprocity_ok": true
+  },
+  {
+   "n": 11,
+   "reciprocity_ok": true
+  },
+  {
+   "n": 13,
+   "reciprocity_ok": true
+  }
+ ],
+ "rows": [
+  {
+   "n": 2,
+   "p": 4,
+   "q": 1,
+   "s_exact": "1/8",
+   "s_predicted": "1/8",
+   "match": true,
+   "sig_defect": "1/2",
+   "euler_corr": "3/4",
+   "K2_check": "0",
+   "K2_invariant": true
+  },
+  {
+   "n": 3,
+   "p": 9,
+   "q": 2,
+   "s_exact": "4/27",
+   "s_predicted": "4/27",
+   "match": true,
+   "sig_defect": "16/27",
+   "euler_corr": "8/9",
+   "K2_check": "0",
+   "K2_invariant": true
+  },
+  {
+   "n": 4,
+   "p": 16,
+   "q": 3,
+   "s_exact": "5/32",
+   "s_predicted": "5/32",
+   "match": true,
+   "sig_defect": "5/8",
+   "euler_corr": "15/16",
+   "K2_check": "0",
+   "K2_invariant": true
+  },
+  {
+   "n": 5,
+   "p": 25,
+   "q": 4,
+   "s_exact": "4/25",
+   "s_predicted": "4/25",
+   "match": true,
+   "sig_defect": "16/25",
+   "euler_corr": "24/25",
+   "K2_check": "0",
+   "K2_invariant": true
+  },
+  {
+   "n": 6,
+   "p": 36,
+   "q": 5,
+   "s_exact": "35/216",
+   "s_predicted": "35/216",
+   "match": true,
+   "sig_defect": "35/54",
+   "euler_corr": "35/36",
+   "K2_check": "0",
+   "K2_invariant": true
+  },
+  {
+   "n": 7,
+   "p": 49,
+   "q": 6,
+   "s_exact": "8/49",
+   "s_predicted": "8/49",
+   "match": true,
+   "sig_defect": "32/49",
+   "euler_corr": "48/49",
+   "K2_check": "0",
+   "K2_invariant": true
+  },
+  {
+   "n": 8,
+   "p": 64,
+   "q": 7,
+   "s_exact": "21/128",
+   "s_predicted": "21/128",
+   "match": true,
+   "sig_defect": "21/32",
+   "euler_corr": "63/64",
+   "K2_check": "0",
+   "K2_invariant": true
+  },
+  {
+   "n": 9,
+   "p": 81,
+   "q": 8,
+   "s_exact": "40/243",
+   "s_predicted": "40/243",
+   "match": true,
+   "sig_defect": "160/243",
+   "euler_corr": "80/81",
+   "K2_check": "0",
+   "K2_invariant": true
+  },
+  {
+   "n": 10,
+   "p": 100,
+   "q": 9,
+   "s_exact": "33/200",
+   "s_predicted": "33/200",
+   "match": true,
+   "sig_defect": "33/50",
+   "euler_corr": "99/100",
+   "K2_check": "0",
+   "K2_invariant": true
+  },
+  {
+   "n": 11,
+   "p": 121,
+   "q": 10,
+   "s_exact": "20/121",
+   "s_predicted": "20/121",
+   "match": true,
+   "sig_defect": "80/121",
+   "euler_corr": "120/121",
+   "K2_check": "0",
+   "K2_invariant": true
+  },
+  {
+   "n": 12,
+   "p": 144,
+   "q": 11,
+   "s_exact": "143/864",
+   "s_predicted": "143/864",
+   "match": true,
+   "sig_defect": "143/216",
+   "euler_corr": "143/144",
+   "K2_check": "0",
+   "K2_invariant": true
+  },
+  {
+   "n": 13,
+   "p": 169,
+   "q": 12,
+   "s_exact": "28/169",
+   "s_predicted": "28/169",
+   "match": true,
+   "sig_defect": "112/169",
+   "euler_corr": "168/169",
+   "K2_check": "0",
+   "K2_invariant": true
+  },
+  {
+   "n": 14,
+   "p": 196,
+   "q": 13,
+   "s_exact": "65/392",
+   "s_predicted": "65/392",
+   "match": true,
+   "sig_defect": "65/98",
+   "euler_corr": "195/196",
+   "K2_check": "0",
+   "K2_invariant": true
+  },
+  {
+   "n": 15,
+   "p": 225,
+   "q": 14,
+   "s_exact": "112/675",
+   "s_predicted": "112/675",
+   "match": true,
+   "sig_defect": "448/675",
+   "euler_corr": "224/225",
+   "K2_check": "0",
+   "K2_invariant": true
+  },
+  {
+   "n": 16,
+   "p": 256,
+   "q": 15,
+   "s_exact": "85/512",
+   "s_predicted": "85/512",
+   "match": true,
+   "sig_defect": "85/128",
+   "euler_corr": "255/256",
+   "K2_check": "0",
+   "K2_invariant": true
+  },
+  {
+   "n": 17,
+   "p": 289,
+   "q": 16,
+   "s_exact": "48/289",
+   "s_predicted": "48/289",
+   "match": true,
+   "sig_defect": "192/289",
+   "euler_corr": "288/289",
+   "K2_check": "0",
+   "K2_invariant": true
+  },
+  {
+   "n": 18,
+   "p": 324,
+   "q": 17,
+   "s_exact": "323/1944",
+   "s_predicted": "323/1944",
+   "match": true,
+   "sig_defect": "323/486",
+   "euler_corr": "323/324",
+   "K2_check": "0",
+   "K2_invariant": true
+  },
+  {
+   "n": 19,
+   "p": 361,
+   "q": 18,
+   "s_exact": "60/361",
+   "s_predicted": "60/361",
+   "match": true,
+   "sig_defect": "240/361",
+   "euler_corr": "360/361",
+   "K2_check": "0",
+   "K2_invariant": true
+  },
+  {
+   "n": 20,
+   "p": 400,
+   "q": 19,
+   "s_exact": "133/800",
+   "s_predicted": "133/800",
+   "match": true,
+   "sig_defect": "133/200",
+   "euler_corr": "399/400",
+   "K2_check": "0",
+   "K2_invariant": true
+  },
+  {
+   "n": 21,
+   "p": 441,
+   "q": 20,
+   "s_exact": "220/1323",
+   "s_predicted": "220/1323",
+   "match": true,
+   "sig_defect": "880/1323",
+   "euler_corr": "440/441",
+   "K2_check": "0",
+   "K2_invariant": true
+  },
+  {
+   "n": 22,
+   "p": 484,
+   "q": 21,
+   "s_exact": "161/968",
+   "s_predicted": "161/968",
+   "match": true,
+   "sig_defect": "161/242",
+   "euler_corr": "483/484",
+   "K2_check": "0",
+   "K2_invariant": true
+  },
+  {
+   "n": 23,
+   "p": 529,
+   "q": 22,
+   "s_exact": "88/529",
+   "s_predicted": "88/529",
+   "match": true,
+   "sig_defect": "352/529",
+   "euler_corr": "528/529",
+   "K2_check": "0",
+   "K2_invariant": true
+  },
+  {
+   "n": 24,
+   "p": 576,
+   "q": 23,
+   "s_exact": "575/3456",
+   "s_predicted": "575/3456",
+   "match": true,
+   "sig_defect": "575/864",
+   "euler_corr": "575/576",
+   "K2_check": "0",
+   "K2_invariant": true
+  }
+ ]
+}

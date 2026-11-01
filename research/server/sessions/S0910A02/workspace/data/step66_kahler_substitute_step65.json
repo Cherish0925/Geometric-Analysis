@@ -1,0 +1,63 @@
+{
+  "status": "ok",
+  "A_phi": "(r*(r**4 - 1)*Derivative(q(r), r) + (r**4 + 3)*q(r))/r**5",
+  "B_phi": "2*(r**4 - 1)*q(r)/r**5",
+  "Delta_A_plus_B": "Derivative(q(r), r) + 3*q(r)/r - Derivative(q(r), r)/r**4 + q(r)/r**5",
+  "AS_from_Delta": "Derivative(q(r), (r, 3)) + 4*Derivative(q(r), (r, 2))/r - 3*Derivative(q(r), r)/r**2 + 3*q(r)/r**3 - 2*Derivative(q(r), (r, 3))/r**4 + 8*Derivative(q(r), (r, 2))/r**5 - 10*Derivative(q(r), r)/r**6 + 10*q(r)/r**7 + Derivative(q(r), (r, 3))/r**8 - 12*Derivative(q(r), (r, 2))/r**9 + 45*Derivative(q(r), r)/r**10 - 45*q(r)/r**11",
+  "BS_from_Delta": "2*(r**4 - 1)*(r**6*Derivative(q(r), (r, 2)) + 3*r**5*Derivative(q(r), r) - 3*r**4*q(r) - r**2*Derivative(q(r), (r, 2)) + 5*r*Derivative(q(r), r) - 5*q(r))/r**11",
+  "frame_dRic_kaehler_variation": {
+    "00": "(-r**11*Derivative(q(r), (r, 3)) - 4*r**10*Derivative(q(r), (r, 2)) + 3*r**9*Derivative(q(r), r) - 3*r**8*q(r) + 2*r**7*Derivative(q(r), (r, 3)) - 8*r**6*Derivative(q(r), (r, 2)) + 10*r**5*Derivative(q(r), r) - 10*r**4*q(r) - r**3*Derivative(q(r), (r, 3)) + 12*r**2*Derivative(q(r), (r, 2)) - 45*r*Derivative(q(r), r) + 45*q(r))/(2*r**11)",
+    "11": "(-r**10*Derivative(q(r), (r, 2)) - 3*r**9*Derivative(q(r), r) + 3*r**8*q(r) + 2*r**6*Derivative(q(r), (r, 2)) - 2*r**5*Derivative(q(r), r) + 2*r**4*q(r) - r**2*Derivative(q(r), (r, 2)) + 5*r*Derivative(q(r), r) - 5*q(r))/r**11",
+    "33": "(-r**11*Derivative(q(r), (r, 3)) - 4*r**10*Derivative(q(r), (r, 2)) + 3*r**9*Derivative(q(r), r) - 3*r**8*q(r) + 2*r**7*Derivative(q(r), (r, 3)) - 8*r**6*Derivative(q(r), (r, 2)) + 10*r**5*Derivative(q(r), r) - 10*r**4*q(r) - r**3*Derivative(q(r), (r, 3)) + 12*r**2*Derivative(q(r), (r, 2)) - 45*r*Derivative(q(r), r) + 45*q(r))/(2*r**11)"
+  },
+  "comparisons_factor_times_ddc_Delta": {
+    "1": {
+      "diff00": "3*(-r**11*Derivative(q(r), (r, 3)) - 4*r**10*Derivative(q(r), (r, 2)) + 3*r**9*Derivative(q(r), r) - 3*r**8*q(r) + 2*r**7*Derivative(q(r), (r, 3)) - 8*r**6*Derivative(q(r), (r, 2)) + 10*r**5*Derivative(q(r), r) - 10*r**4*q(r) - r**3*Derivative(q(r), (r, 3)) + 12*r**2*Derivative(q(r), (r, 2)) - 45*r*Derivative(q(r), r) + 45*q(r))/(2*r**7*(r**4 - 1))",
+      "diff11": "3*(-r**10*Derivative(q(r), (r, 2)) - 3*r**9*Derivative(q(r), r) + 3*r**8*q(r) + 2*r**6*Derivative(q(r), (r, 2)) - 2*r**5*Derivative(q(r), r) + 2*r**4*q(r) - r**2*Derivative(q(r), (r, 2)) + 5*r*Derivative(q(r), r) - 5*q(r))/(4*r**9)",
+      "diff33": "3*(-r**15*Derivative(q(r), (r, 3)) - 4*r**14*Derivative(q(r), (r, 2)) + 3*r**13*Derivative(q(r), r) - 3*r**12*q(r) + 3*r**11*Derivative(q(r), (r, 3)) - 4*r**10*Derivative(q(r), (r, 2)) + 7*r**9*Derivative(q(r), r) - 7*r**8*q(r) - 3*r**7*Derivative(q(r), (r, 3)) + 20*r**6*Derivative(q(r), (r, 2)) - 55*r**5*Derivative(q(r), r) + 55*r**4*q(r) + r**3*Derivative(q(r), (r, 3)) - 12*r**2*Derivative(q(r), (r, 2)) + 45*r*Derivative(q(r), r) - 45*q(r))/(8*r**13)",
+      "holds": false
+    },
+    "-1": {
+      "diff00": "(r**11*Derivative(q(r), (r, 3)) + 4*r**10*Derivative(q(r), (r, 2)) - 3*r**9*Derivative(q(r), r) + 3*r**8*q(r) - 2*r**7*Derivative(q(r), (r, 3)) + 8*r**6*Derivative(q(r), (r, 2)) - 10*r**5*Derivative(q(r), r) + 10*r**4*q(r) + r**3*Derivative(q(r), (r, 3)) - 12*r**2*Derivative(q(r), (r, 2)) + 45*r*Derivative(q(r), r) - 45*q(r))/(2*r**7*(r**4 - 1))",
+      "diff11": "(r**10*Derivative(q(r), (r, 2)) + 3*r**9*Derivative(q(r), r) - 3*r**8*q(r) - 2*r**6*Derivative(q(r), (r, 2)) + 2*r**5*Derivative(q(r), r) - 2*r**4*q(r) + r**2*Derivative(q(r), (r, 2)) - 5*r*Derivative(q(r), r) + 5*q(r))/(4*r**9)",
+      "diff33": "(r**15*Derivative(q(r), (r, 3)) + 4*r**14*Derivative(q(r), (r, 2)) - 3*r**13*Derivative(q(r), r) + 3*r**12*q(r) - 3*r**11*Derivative(q(r), (r, 3)) + 4*r**10*Derivative(q(r), (r, 2)) - 7*r**9*Derivative(q(r), r) + 7*r**8*q(r) + 3*r**7*Derivative(q(r), (r, 3)) - 20*r**6*Derivative(q(r), (r, 2)) + 55*r**5*Derivative(q(r), r) - 55*r**4*q(r) - r**3*Derivative(q(r), (r, 3)) + 12*r**2*Derivative(q(r), (r, 2)) - 45*r*Derivative(q(r), r) + 45*q(r))/(8*r**13)",
+      "holds": false
+    },
+    "1/2": {
+      "diff00": "(-r**11*Derivative(q(r), (r, 3)) - 4*r**10*Derivative(q(r), (r, 2)) + 3*r**9*Derivative(q(r), r) - 3*r**8*q(r) + 2*r**7*Derivative(q(r), (r, 3)) - 8*r**6*Derivative(q(r), (r, 2)) + 10*r**5*Derivative(q(r), r) - 10*r**4*q(r) - r**3*Derivative(q(r), (r, 3)) + 12*r**2*Derivative(q(r), (r, 2)) - 45*r*Derivative(q(r), r) + 45*q(r))/(r**11 - r**7)",
+      "diff11": "-r*Derivative(q(r), (r, 2))/2 - 3*Derivative(q(r), r)/2 + 3*q(r)/(2*r) + Derivative(q(r), (r, 2))/r**3 - Derivative(q(r), r)/r**4 + q(r)/r**5 - Derivative(q(r), (r, 2))/(2*r**7) + 5*Derivative(q(r), r)/(2*r**8) - 5*q(r)/(2*r**9)",
+      "diff33": "(-r**15*Derivative(q(r), (r, 3)) - 4*r**14*Derivative(q(r), (r, 2)) + 3*r**13*Derivative(q(r), r) - 3*r**12*q(r) + 3*r**11*Derivative(q(r), (r, 3)) - 4*r**10*Derivative(q(r), (r, 2)) + 7*r**9*Derivative(q(r), r) - 7*r**8*q(r) - 3*r**7*Derivative(q(r), (r, 3)) + 20*r**6*Derivative(q(r), (r, 2)) - 55*r**5*Derivative(q(r), r) + 55*r**4*q(r) + r**3*Derivative(q(r), (r, 3)) - 12*r**2*Derivative(q(r), (r, 2)) + 45*r*Derivative(q(r), r) - 45*q(r))/(4*r**13)",
+      "holds": false
+    },
+    "-1/2": {
+      "diff00": "0",
+      "diff11": "0",
+      "diff33": "0",
+      "holds": true
+    },
+    "2": {
+      "diff00": "5*(-r**11*Derivative(q(r), (r, 3)) - 4*r**10*Derivative(q(r), (r, 2)) + 3*r**9*Derivative(q(r), r) - 3*r**8*q(r) + 2*r**7*Derivative(q(r), (r, 3)) - 8*r**6*Derivative(q(r), (r, 2)) + 10*r**5*Derivative(q(r), r) - 10*r**4*q(r) - r**3*Derivative(q(r), (r, 3)) + 12*r**2*Derivative(q(r), (r, 2)) - 45*r*Derivative(q(r), r) + 45*q(r))/(2*r**7*(r**4 - 1))",
+      "diff11": "5*(-r**10*Derivative(q(r), (r, 2)) - 3*r**9*Derivative(q(r), r) + 3*r**8*q(r) + 2*r**6*Derivative(q(r), (r, 2)) - 2*r**5*Derivative(q(r), r) + 2*r**4*q(r) - r**2*Derivative(q(r), (r, 2)) + 5*r*Derivative(q(r), r) - 5*q(r))/(4*r**9)",
+      "diff33": "5*(-r**15*Derivative(q(r), (r, 3)) - 4*r**14*Derivative(q(r), (r, 2)) + 3*r**13*Derivative(q(r), r) - 3*r**12*q(r) + 3*r**11*Derivative(q(r), (r, 3)) - 4*r**10*Derivative(q(r), (r, 2)) + 7*r**9*Derivative(q(r), r) - 7*r**8*q(r) - 3*r**7*Derivative(q(r), (r, 3)) + 20*r**6*Derivative(q(r), (r, 2)) - 55*r**5*Derivative(q(r), r) + 55*r**4*q(r) + r**3*Derivative(q(r), (r, 3)) - 12*r**2*Derivative(q(r), (r, 2)) + 45*r*Derivative(q(r), r) - 45*q(r))/(8*r**13)",
+      "holds": false
+    },
+    "-2": {
+      "diff00": "3*(r**11*Derivative(q(r), (r, 3)) + 4*r**10*Derivative(q(r), (r, 2)) - 3*r**9*Derivative(q(r), r) + 3*r**8*q(r) - 2*r**7*Derivative(q(r), (r, 3)) + 8*r**6*Derivative(q(r), (r, 2)) - 10*r**5*Derivative(q(r), r) + 10*r**4*q(r) + r**3*Derivative(q(r), (r, 3)) - 12*r**2*Derivative(q(r), (r, 2)) + 45*r*Derivative(q(r), r) - 45*q(r))/(2*r**7*(r**4 - 1))",
+      "diff11": "3*(r**10*Derivative(q(r), (r, 2)) + 3*r**9*Derivative(q(r), r) - 3*r**8*q(r) - 2*r**6*Derivative(q(r), (r, 2)) + 2*r**5*Derivative(q(r), r) - 2*r**4*q(r) + r**2*Derivative(q(r), (r, 2)) - 5*r*Derivative(q(r), r) + 5*q(r))/(4*r**9)",
+      "diff33": "3*(r**15*Derivative(q(r), (r, 3)) + 4*r**14*Derivative(q(r), (r, 2)) - 3*r**13*Derivative(q(r), r) + 3*r**12*q(r) - 3*r**11*Derivative(q(r), (r, 3)) + 4*r**10*Derivative(q(r), (r, 2)) - 7*r**9*Derivative(q(r), r) + 7*r**8*q(r) + 3*r**7*Derivative(q(r), (r, 3)) - 20*r**6*Derivative(q(r), (r, 2)) + 55*r**5*Derivative(q(r), r) - 55*r**4*q(r) - r**3*Derivative(q(r), (r, 3)) + 12*r**2*Derivative(q(r), (r, 2)) - 45*r*Derivative(q(r), r) + 45*q(r))/(8*r**13)",
+      "holds": false
+    }
+  },
+  "test_potentials": {
+    "phi_r2": {
+      "frame00": "0",
+      "frame11": "0",
+      "frame33": "0"
+    },
+    "EH_potential_q": {
+      "frame00": "0",
+      "frame11": "0",
+      "frame33": "0"
+    }
+  }
+}

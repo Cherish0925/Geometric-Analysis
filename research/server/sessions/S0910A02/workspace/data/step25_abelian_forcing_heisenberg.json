@@ -1,0 +1,31 @@
+{
+  "heisenberg_ricci": {
+    "bracket": "[e_1, e_2] = b e_3",
+    "Ric_e1": "-b^2/2 = -b**2/2",
+    "Ric_e2": "-b^2/2",
+    "Ric_e3": "+b^2/2",
+    "scalar": "-b^2/2",
+    "note": "Generating directions have negative Ricci -b\u00b2/2; center direction has positive Ricci +b\u00b2/2."
+  },
+  "product_obstruction": {
+    "statement": "For a PRODUCT g_B + eps^2 g_N with N = Heisenberg, Ric(e_1,e_1) = -b^2/2 but we need Ric >= (1-delta)eps^2. This requires b^2 <= -2(1-delta)eps^2 < 0, impossible for delta<1.",
+    "conclusion": "Products with nonabelian nilpotent fibers CANNOT have positive Ricci. The twist (A-tensor) is essential to compensate.",
+    "key_point": "For a SUBMERSION with twist A, fiber Ricci picks up |A_V|^2 >= 0, which can compensate -b^2/2. But this requires |A_V|^2 >= b^2/2 + (1-delta)eps^2."
+  },
+  "abelian_forcing_scaling": {
+    "fiber_Ricci_endomorphism": "For eps-scaled fiber: Ric-endo = Ric^{g_N}(hat_e) / eps^2. For Heisenberg e_1: -b^2/(2 eps^2).",
+    "twist_compensation": "O'Neill A-tensor adds +|A|^2/eps^2 (schematically). Balance: -b^2/2 + |A|^2 >= (1-delta) eps^2.",
+    "conclusion": "b^2 <= 2|A|^2 (for small eps). If twist is bounded, b <= C. If twist = O(eps) (as in near-flat collapse), b <= C eps. In either case, b/eps -> 0 as eps -> 0, forcing abelian limit.",
+    "caveat": "This argument assumes the collapsing sequence has local submersion structure. Under C^0 Ricci only, there is no general guarantee of this structure. The CZ spike shows C^0 Ricci doesn't control full curvature, so CFG-type fibration theorems don't directly apply."
+  },
+  "product_abelian_obstruction": {
+    "theorem": "Products B x N with nonabelian nilpotent N have fiber directions with negative Ricci endomorphism. They cannot satisfy Ric >= (1-delta)g for delta < 1.",
+    "proof": "Milnor: Ric^{g_N}(e_gen) = -b^2/2 < 0 for generating e_gen. Product: Ric^g(e_gen)/g(e_gen) = -b^2/(2 eps^2) < 0.",
+    "consequence": "Nonabelian nilpotent collapse with positive Ricci REQUIRES twist (A-tensor). Products are excluded. This is clean and dimension-free."
+  },
+  "summary": {
+    "main_result": "Product collapse with nonabelian nilpotent fiber is excluded by positive Ricci. For submersion collapse, bracket norm b satisfies b^2 <= 2(twist contribution) <= 2 eps^2 (1 + something bounded), forcing b = O(eps) -> 0. The fiber becomes abelian in the limit.",
+    "missing": "The passage from C^0 Ricci pinching to submersion structure with controlled twist. Under bounded sectional curvature (not available), this is CFG theory. Under C^0 Ricci only, this is the regularity gap.",
+    "implication": "If the regularity gap is closed, then tight positive pinching forces abelian collapse -> T^k determinant identity -> KK equations -> Einstein-Maxwell/Sasaki reduction. This is the all-dimensional positive-branch architecture."
+  }
+}

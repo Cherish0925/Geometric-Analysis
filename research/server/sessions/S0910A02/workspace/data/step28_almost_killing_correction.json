@@ -1,0 +1,44 @@
+{
+  "title": "Step 28 almost-Killing Bochner correction",
+  "scope": "Exact formula for the correction to the Bochner identity when Z is almost-Killing",
+  "weitzenboeck_decomposition": {
+    "setup": "\u03c9 = Z\u266d, \u03c3 = L_Z g, A = antisym(\u2207Z), S = \u03c3/2 = sym(\u2207Z)",
+    "orthogonality": "|\u2207Z|\u00b2 = |A|\u00b2 + |S|\u00b2 = |A|\u00b2 + |\u03c3|\u00b2/4  (A,S orthogonal in Frobenius)",
+    "hodge_laplacian_terms": {
+      "d\u03c9_ij": "\u2207_i Z_j - \u2207_j Z_i = 2A_ij",
+      "|d\u03c9|\u00b2": "2|A|\u00b2  (2-form norm convention: \u03a3_{i<j} (d\u03c9)\u00b2_{ij})",
+      "\u03b4\u03c9": "-div Z = -(1/2) tr \u03c3",
+      "|\u03b4\u03c9|\u00b2": "(1/4)(tr \u03c3)\u00b2"
+    },
+    "weitzenboeck": "\u222b(|d\u03c9|\u00b2 + |\u03b4\u03c9|\u00b2) = \u222b(|\u2207\u03c9|\u00b2 + Ric(Z,Z))",
+    "expanded": "\u222b(2|A|\u00b2 + (tr \u03c3)\u00b2/4) = \u222b(|A|\u00b2 + |\u03c3|\u00b2/4 + Ric(Z,Z))",
+    "solved_for_A": "|A|\u00b2 = Ric(Z,Z) + |\u03c3|\u00b2/4 - (tr \u03c3)\u00b2/4",
+    "total_gradient": "|\u2207Z|\u00b2 = |A|\u00b2 + |\u03c3|\u00b2/4 = Ric(Z,Z) + |\u03c3|\u00b2/2 - (tr \u03c3)\u00b2/4"
+  },
+  "exact_correction_formula": {
+    "formula": "\u222b|\u2207Z|\u00b2 = \u222bRic(Z,Z) + (1/2)\u222b|\u03c3|\u00b2 - (1/4)\u222b(tr \u03c3)\u00b2",
+    "killing_case": "\u03c3=0, tr \u03c3=0: \u222b|\u2207Z|\u00b2 = \u222bRic(Z,Z)  (classical Bochner)",
+    "almost_killing_upper": "Since (tr \u03c3)\u00b2 \u2265 0: \u222b|\u2207Z|\u00b2 \u2264 \u222bRic(Z,Z) + (1/2)\u222b|\u03c3|\u00b2",
+    "pointwise_bound": "If |\u03c3| \u2264 \u03c4 pointwise: \u222b|\u2207Z|\u00b2 \u2264 \u222bRic(Z,Z) + (\u03c4\u00b2/2) Vol(M)",
+    "fiber_application": "With \u222b(b\u00b2/2)|Z|\u00b2 \u2264 \u222b|\u2207Z|\u00b2 \u2264 (\u039b+\u03b4)\u222b|Z|\u00b2 + (\u03c4\u00b2/2)Vol, we get \u27e8b\u00b2\u27e9_{|Z|\u00b2} \u2264 2(\u039b+\u03b4) + \u03c4\u00b2 Vol/\u222b|Z|\u00b2"
+  },
+  "collapse_scale_analysis": {
+    "setup": "Fiber scale \u03b5, average |Z|\u00b2 ~ \u03b5\u00b2, Vol ~ \u03b5^k Vol_B",
+    "regime_1_tau_equals_epsilon": {
+      "description": "|L_Z g| ~ \u03b5  (almost-Killing at fiber scale)",
+      "correction": "\u03c4\u00b2 Vol/\u222b|Z|\u00b2 ~ \u03b5\u00b2 \u00b7 Vol/(\u03b5\u00b2 \u00b7 Vol) = O(1)",
+      "consequence": "\u27e8b\u00b2\u27e9 \u2264 2\u039b + O(1), bracket bounded but correction doesn't vanish"
+    },
+    "regime_2_tau_equals_epsilon_alpha": {
+      "description": "|L_Z g| ~ \u03b5^{1+\u03b1} for some \u03b1 > 0",
+      "correction": "\u03c4\u00b2 Vol/\u222b|Z|\u00b2 ~ \u03b5^{2\u03b1} \u2192 0",
+      "consequence": "\u27e8b\u00b2\u27e9 \u2192 2\u039b as \u03b5 \u2192 0, clean abelian forcing"
+    },
+    "requirement": "The almost-Killing bridge requires ||L_Z g|| = o(|Z|) in an average sense; i.e. the Lie derivative must be sublinear in the field norm. This is a quantitative condition on the N-structure at the collapse scale."
+  },
+  "verification_against_model": {
+    "H3_model_check": "For the diagonal H3 model with exact Killing Z=\u2202_{\u03c6\u2083}: \u03c3=0, correction=0, the formula reduces to the verified \u222b(2k\u2083\u00b2+b\u00b2/2)c\u00b2w = \u222bRic\u2083\u2083 c\u00b2w.",
+    "CH2_check": "For CH\u00b2 horosphere data with \u03c3=0 (exact Killing on noncompact CH\u00b2): the pointwise integrand |\u2207Z|\u00b2-Ric(Z,Z) = 4c\u00b2 > 0 cannot integrate to zero, independently confirming incompatibility with compactness."
+  },
+  "research_judgment": "The exact Weitzenb\u00f6ck formula converts the Bochner center bound from 'requires genuine Killing' to 'requires ||L_Z g||\u00b2\u00b7Vol/\u222b|Z|\u00b2 \u2192 0'. This is a quantitative, checkable condition at the collapse scale. The bridge from C\u2070 Ricci pinching to this condition passes through Kapovitch-Wilking/Naber-Zhang N-structures, where the local nilpotent groups act as approximate isometries with quantitative Lie-derivative control that must be verified against the collapse geometry."
+}

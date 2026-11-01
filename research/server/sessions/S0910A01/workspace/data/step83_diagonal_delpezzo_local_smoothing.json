@@ -1,0 +1,63 @@
+{
+  "family": {
+    "Q0": "x0^2+x1^2+x2^2+x3^2+x4^2",
+    "Q1_eps": "eps*x0^2-eps*x1^2+(1+kappa*eps)*x2^2+(1-kappa*eps)*x3^2+c*x4^2",
+    "central_eigenvalues": [
+      "0 (multiplicity 2)",
+      "1 (multiplicity 2)",
+      "c (multiplicity 1)"
+    ],
+    "smooth_for_small_eps_if": "eps != 0, kappa*eps != 0, and the five eigenvalues eps,-eps,1+kappa eps,1-kappa eps,c are distinct"
+  },
+  "nodes": [
+    {
+      "node": "A_plus",
+      "projective_point": "[1:i:0:0:0]",
+      "eigenvalue_pair": "0-pair (x0,x1)",
+      "redundant_equation": "Q0 = 2 sign*i*y + O(2) solves for y",
+      "local_G": "Q1_eps - 0*Q0",
+      "smoothing_constant_leading": "2*eps",
+      "central_quadratic_form_after_eliminating_y": "c*w_A1**2 + u_A1**2 + v_A1**2",
+      "nondegenerate_if": "c != 0"
+    },
+    {
+      "node": "A_minus",
+      "projective_point": "[1:-i:0:0:0]",
+      "eigenvalue_pair": "0-pair (x0,x1)",
+      "redundant_equation": "Q0 = 2 sign*i*y + O(2) solves for y",
+      "local_G": "Q1_eps - 0*Q0",
+      "smoothing_constant_leading": "2*eps",
+      "central_quadratic_form_after_eliminating_y": "c*w_A-1**2 + u_A-1**2 + v_A-1**2",
+      "nondegenerate_if": "c != 0"
+    },
+    {
+      "node": "B_plus",
+      "projective_point": "[0:0:1:i:0]",
+      "eigenvalue_pair": "1-pair (x2,x3)",
+      "redundant_equation": "Q0 = 2 sign*i*y + O(2) solves for y",
+      "local_G": "Q1_eps - 1*Q0",
+      "smoothing_constant_leading": "2*eps*kappa",
+      "central_quadratic_form_after_eliminating_y": "c*w_B1**2 - p_B1**2 - q_B1**2 - w_B1**2",
+      "nondegenerate_if": "c != 1"
+    },
+    {
+      "node": "B_minus",
+      "projective_point": "[0:0:1:-i:0]",
+      "eigenvalue_pair": "1-pair (x2,x3)",
+      "redundant_equation": "Q0 = 2 sign*i*y + O(2) solves for y",
+      "local_G": "Q1_eps - 1*Q0",
+      "smoothing_constant_leading": "2*eps*kappa",
+      "central_quadratic_form_after_eliminating_y": "c*w_B-1**2 - p_B-1**2 - q_B-1**2 - w_B-1**2",
+      "nondegenerate_if": "c != 1"
+    }
+  ],
+  "scale_consequences": {
+    "local_smoothing_parameters_up_to_units": {
+      "0-pair_nodes": "2*eps + O(eps^2)",
+      "1-pair_nodes": "2*kappa*eps + O(eps^2)"
+    },
+    "equal_magnitude_condition": "|kappa|=1 gives equal leading |s_j| at all four A1 nodes; kappa=1 gives the simplest real equal-scale path",
+    "spotti_scale_relation": "For local equation z1^2+z2^2+z3^2=s, Spotti uses delta^2=sqrt(|s|), hence equal |s_j| gives equal EH diameters/scales up to common constants in matched coordinates.",
+    "matched_control_use": "If this path is identified with the all-same-chirality KE degeneration in the Biquard-Ozuch chart, its radial equation gives s_self + d_same_diag + 2*c_same_adj = 0 at each coefficient layer visible in the matched expansion. This is a conditional coefficient relation, not an automatic conclusion for mixed chirality."
+  }
+}

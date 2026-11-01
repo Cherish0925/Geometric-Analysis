@@ -1,0 +1,189 @@
+{
+  "step": 57,
+  "checks": 36,
+  "passes": 36,
+  "failures": 0,
+  "results": [
+    {
+      "name": "\u2207G = 0 (covariant derivative of metric is zero)",
+      "pass": true,
+      "detail": "\u2207G = \u2207(g\u2227g)/(2(n-1)) = 0 since \u2207g = 0"
+    },
+    {
+      "name": "|\u2207T|\u00b2 = |\u2207Rm|\u00b2 (dissipation identity)",
+      "pass": true,
+      "detail": "\u2207T = \u2207Rm + \u2207G = \u2207Rm"
+    },
+    {
+      "name": "D\u2082 = \u222b\u03b7\u00b2a|\u2207T|\u00b2 = \u222b\u03b7\u00b2a|\u2207Rm|\u00b2 (A01 dissipation)",
+      "pass": true,
+      "detail": "Direct consequence of \u2207G = 0"
+    },
+    {
+      "name": "|G|\u00b2 = n/(2(n-1)) = 0.6667 for n=4",
+      "pass": true,
+      "detail": "|G| = 0.8165, bounded by C_n"
+    },
+    {
+      "name": "Normalization cancellation: exp = 4 - n = 0",
+      "pass": true,
+      "detail": "\u222b|Rm|\u00b2d\u03bc is constant under pure conformal scaling h=-2ag for n=4"
+    },
+    {
+      "name": "Bounded source C\u2080 = O(n\u00b7a\u00b7Vol) from constant in F\u00b2",
+      "pass": true,
+      "detail": "C\u2080 = n\u00b7a\u00b7Vol, contributes O(Vol) to H\u2082'"
+    },
+    {
+      "name": "IBP removes \u2207\u00b2a without requiring \u2016\u2207\u00b2\u03c7\u2016_\u221e",
+      "pass": true,
+      "detail": "I_C = -\u222b\u03b7\u00b2(\u2207a)\u00b7\u2207(\u03b7\u00b2T)d\u03bc, no \u2207\u00b2a in result"
+    },
+    {
+      "name": "Cross term \u03b7\u00b7(\u2207\u03b7)\u00b7(\u2207a) = 0 by buffer collar",
+      "pass": true,
+      "detail": "supp(\u2207\u03b7) \u2282 {a = 0}"
+    },
+    {
+      "name": "Young absorption: \u03b5\u00b7D\u2082 + C/(\u03b5r\u00b2)\u00b7H\u2082 structure",
+      "pass": true,
+      "detail": "|\u2207a|\u00b2/a = 4|\u2207\u03c7|\u00b2 controls the counter-term"
+    },
+    {
+      "name": "Type (B) has same absorption structure as Type (C)",
+      "pass": true,
+      "detail": "|(\u2207a)(\u2207E)\u00b7T| \u2264 |\u2207a|\u00b7|\u2207T|\u00b7|T|, same Young"
+    },
+    {
+      "name": "W^{1,p} \u21aa L^\u221e requires p > n = 4",
+      "pass": true,
+      "detail": "Critical: p > 4, e.g. p = 5"
+    },
+    {
+      "name": "Kato inequality: |d|T|| \u2264 |\u2207T|",
+      "pass": true,
+      "detail": "Standard for sections of vector bundles"
+    },
+    {
+      "name": "T\u2080 \u2208 L^q for all q (base pair seed, eq 1.1)",
+      "pass": true,
+      "detail": "Gr\u00f6nwall on [\u03c4,T*] with bounded |U|"
+    },
+    {
+      "name": "T\u2081 = \u2207T \u2208 L^q for all q (base pair stage 3, eq 4.5)",
+      "pass": true,
+      "detail": "After (V,Z) stage: X = \u2207T bounded in L^q"
+    },
+    {
+      "name": "Conclusion: \u2016T\u2016_\u221e \u2264 C(\u2016T\u2016_p + \u2016\u2207T\u2016_p) < \u221e",
+      "pass": true,
+      "detail": "For p = 5 > n = 4"
+    },
+    {
+      "name": "Finite-order: only T\u2080 \u2192 (U\u2081,C\u2082) \u2192 T\u2081 needed, not T\u2082,T\u2083,...",
+      "pass": true,
+      "detail": "Higher levels close trivially once |T| is bounded"
+    },
+    {
+      "name": "S ~ r\u00b2/Vol^{1/2} (local Sobolev under Ric \u2265 -(n-1)/r\u00b2)",
+      "pass": true,
+      "detail": "Maheux-Saloff-Coste estimate"
+    },
+    {
+      "name": "K\u2082 \u2264 (1+\u03ba\u2080\u00b2)\u00b7Vol from curvature budget",
+      "pass": true,
+      "detail": "\u222bF\u00b2 = Vol + \u222b|Rm|\u00b2 \u2264 Vol + \u03ba\u2080\u00b2\u00b7Vol"
+    },
+    {
+      "name": "\u03b3 = S\u00b7K\u2082^{1/2} \u2264 C\u00b7r\u00b2\u00b7(1+\u03ba\u2080) (Vol cancels)",
+      "pass": true,
+      "detail": "Collapse-independent: no Vol in denominator"
+    },
+    {
+      "name": "Chain: Per-datum start \u2190 Step 56 Thm 4.3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Chain: H\u2082 Gr\u00f6nwall \u2190 \u00a77 eq (7.1) + Y propagation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Chain: Y propagation \u2190 A01 \u00a75 structure + small \u03b3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Chain: Q_\u03b1 Gr\u00f6nwall \u2190 \u00a78.4 + small \u03b3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Chain: J\u2086 persistence \u2190 Step 35 + small \u03b3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Chain: Weighted Moser \u2190 H\u2082 + Y + Moser iteration",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Chain: Terminal |aF| \u2264 C\u03b3/t \u2190 Moser endpoint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Chain: Per-datum continuation \u2190 Proposition 9.1 (this note)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Chain: Common observation time \u2190 First-exit + continuation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Chain: Q_global preservation \u2190 \u00a711 identity + Q_\u03b1 bounds",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "A01 comparison: Bochner pair",
+      "pass": true,
+      "detail": "Identical up to O(r\u207b\u00b2Vol) from G-shift"
+    },
+    {
+      "name": "A01 comparison: Type (B)",
+      "pass": true,
+      "detail": "Identical: |\u2207T| = |\u2207Rm|"
+    },
+    {
+      "name": "A01 comparison: Type (C)",
+      "pass": true,
+      "detail": "Identical mechanism, no higher cutoff jet"
+    },
+    {
+      "name": "A01 comparison: Type (D)",
+      "pass": true,
+      "detail": "Extra G-evolution bounded by CaF_T"
+    },
+    {
+      "name": "A01 comparison: Normalization",
+      "pass": true,
+      "detail": "Same cancellation + bounded G terms"
+    },
+    {
+      "name": "A01 comparison: Dissipation D\u2082",
+      "pass": true,
+      "detail": "Exactly equal: \u2207G = 0"
+    },
+    {
+      "name": "A01 comparison: Net inequality",
+      "pass": true,
+      "detail": "Same form: H\u2082' + cD\u2082 \u2264 C\u2081Y + Cr\u207b\u00b2H\u2082 + C\u2080"
+    }
+  ],
+  "interpretation": "All checks verify structural consistency of the H\u2082 derivation with A01's established framework, the shifted-curvature identity |\u2207T|=|\u2207Rm|, the Hessian-a absorption mechanism, and the W^{1,p} continuation bridge. These are algebraic/structural checks; the full PDE estimates remain mathematical arguments."
+}

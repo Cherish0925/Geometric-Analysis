@@ -1,0 +1,40 @@
+{
+  "schema": "qiushi-yau26.reproduction.v1",
+  "status": "failed",
+  "started_utc": "2026-09-21T11:17:10.031020+00:00",
+  "selected_groups": [
+    "four_node"
+  ],
+  "mutation": "four-node-zero",
+  "versions": {
+    "python": "3.12.13",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0"
+  },
+  "inputs": {
+    "reproduce.py": {
+      "sha256": "aa84d9553b52c405655bfe281c45f19ad63814a6efb29a24e2ae239b58af78ab"
+    },
+    "math_checks.py": {
+      "sha256": "390b01202b929189e8d91c22afdcae9ec25298e12babe57a9faa7f6c491b368b"
+    },
+    "independent_checks.py": {
+      "sha256": "b7969515ff666683f398c978bba2f8be57677a79bcf7d4ed0036bded9331f3c1"
+    },
+    "source_archive.py": {
+      "sha256": "c8b10805eb4aa04da9f31953ad7af6f9960276e85b09b1c27639cbd012efcec6"
+    },
+    "data/four_node_fixture.json": {
+      "sha256": "aa8d6b585c07f370a905a982a391b535b44f6f3ec3d5282595f17110d487129b"
+    }
+  },
+  "groups": [
+    {
+      "group": "four_node",
+      "status": "failed",
+      "result": "four_node.json"
+    }
+  ],
+  "scope": "bounded symbolic and fixture checks, not a formal proof of the research papers or a spectral tail certificate",
+  "elapsed_seconds": 0.28177485242486
+}

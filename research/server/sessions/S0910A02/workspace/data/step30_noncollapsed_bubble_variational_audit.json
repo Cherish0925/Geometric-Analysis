@@ -1,0 +1,178 @@
+{
+  "title": "Step 30 noncollapsed bubble / variational-field route audit",
+  "scope": "Explore-level algebraic and scaling checks; not a proof or refutation of Yau 26.",
+  "eh_volume_gauge_expansion": {
+    "A_relative_series_in_x_rminus4": "-5*x**3/16 + 3*x**2/8 - x/2 + 1",
+    "B_over_r2_relative_series_in_x_rminus4": "x**3/16 - x**2/8 + x/2 + 1",
+    "relative_difference_series": {
+      "dr2": "-5*x**3/16 + 3*x**2/8 - x/2",
+      "alpha1": "-5*x**3/16 + 3*x**2/8 - x/2",
+      "alpha2_alpha3_each": "x**3/16 - x**2/8 + x/2",
+      "trace": "-x**3/2 + x**2/2"
+    },
+    "leading_coefficients": {
+      "dr2_relative_x_coeff": "-1/2",
+      "alpha1_relative_x_coeff": "-1/2",
+      "alpha2_relative_x_coeff": "1/2",
+      "alpha3_relative_x_coeff": "1/2",
+      "relative_trace_x_coeff": "0"
+    },
+    "interpretation": "The r^{-4} relative trace vanishes: Eguchi-Hanson is in volume gauge and ordinary ADM/mass/volume flux is blind at leading order. The anisotropic coefficient H^4 is nonzero and is detected only after pairing with the orbifold H_2 curvature term in the Biquard-Ozuch/Ozuch Pohozaev obstruction."
+  },
+  "eguchi_hanson_first_obstruction_algebra": {
+    "statement": "For an Eguchi-Hanson bubble with orientation v in Lambda^2_+, first obstruction = R_+ v; an orientation can kill it iff det(R_+)=0.",
+    "examples": {
+      "S4_Ric_eq_g": {
+        "eigenvalues_R_plus": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "det_R_plus": 0.037037037037037035,
+        "kernel_dim_numeric": 0,
+        "min_possible_obstruction_norm_over_unit_v": 0.3333333333333333,
+        "canonical_orientation_e1_obstruction_norm": 0.3333333333333333,
+        "some_orientation_kills_obstruction": false
+      },
+      "CP2_or_S2xS2_Ric_eq_g_relevant_orientation": {
+        "eigenvalues_R_plus": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "det_R_plus": 0.0,
+        "kernel_dim_numeric": 2,
+        "min_possible_obstruction_norm_over_unit_v": 0.0,
+        "canonical_orientation_e1_obstruction_norm": 1.0,
+        "some_orientation_kills_obstruction": true
+      },
+      "generic_det_zero_not_KE": {
+        "eigenvalues_R_plus": [
+          0.0,
+          0.3333333333333333,
+          0.6666666666666666
+        ],
+        "det_R_plus": 0.0,
+        "kernel_dim_numeric": 1,
+        "min_possible_obstruction_norm_over_unit_v": 0.0,
+        "canonical_orientation_e1_obstruction_norm": 0.6666666666666666,
+        "some_orientation_kills_obstruction": true
+      },
+      "indefinite_singular": {
+        "eigenvalues_R_plus": [
+          -0.2,
+          0.0,
+          1.0
+        ],
+        "det_R_plus": 0.0,
+        "kernel_dim_numeric": 1,
+        "min_possible_obstruction_norm_over_unit_v": 0.0,
+        "canonical_orientation_e1_obstruction_norm": 1.0,
+        "some_orientation_kills_obstruction": true
+      }
+    },
+    "source_formula": "Ozuch 2021 Theorem 4.6 and Corollary 4.10: for EH H^4=-theta_1^- o omega_1^+/(2 r^4), the radial and rotation Pohozaev obstructions are equivalent to R_e^{+,(1)}(H_2) omega_1^+ = 0."
+  },
+  "annular_detection_scaling": {
+    "model": "If EH bubble coefficient is t^4 and cone-field non-Killing error contributes ~ eta^2 r^4, detection requires eta^2 r^4 << t^4, i.e. eta << t^2/r^2.",
+    "samples": [
+      {
+        "t": 0.1,
+        "radius_r=t^alpha": 0.5623413251903491,
+        "alpha": 0.25,
+        "bubble_flux_scale_t4": 0.00010000000000000002,
+        "eta_threshold_sqrt(t4)/r2": 0.03162277660168379
+      },
+      {
+        "t": 0.1,
+        "radius_r=t^alpha": 0.31622776601683794,
+        "alpha": 0.5,
+        "bubble_flux_scale_t4": 0.00010000000000000002,
+        "eta_threshold_sqrt(t4)/r2": 0.09999999999999999
+      },
+      {
+        "t": 0.1,
+        "radius_r=t^alpha": 0.1778279410038923,
+        "alpha": 0.75,
+        "bubble_flux_scale_t4": 0.00010000000000000002,
+        "eta_threshold_sqrt(t4)/r2": 0.3162277660168379
+      },
+      {
+        "t": 0.01,
+        "radius_r=t^alpha": 0.31622776601683794,
+        "alpha": 0.25,
+        "bubble_flux_scale_t4": 1e-08,
+        "eta_threshold_sqrt(t4)/r2": 0.001
+      },
+      {
+        "t": 0.01,
+        "radius_r=t^alpha": 0.1,
+        "alpha": 0.5,
+        "bubble_flux_scale_t4": 1e-08,
+        "eta_threshold_sqrt(t4)/r2": 0.009999999999999998
+      },
+      {
+        "t": 0.01,
+        "radius_r=t^alpha": 0.03162277660168379,
+        "alpha": 0.75,
+        "bubble_flux_scale_t4": 1e-08,
+        "eta_threshold_sqrt(t4)/r2": 0.10000000000000002
+      },
+      {
+        "t": 0.001,
+        "radius_r=t^alpha": 0.1778279410038923,
+        "alpha": 0.25,
+        "bubble_flux_scale_t4": 1.0000000000000002e-12,
+        "eta_threshold_sqrt(t4)/r2": 3.1622776601683795e-05
+      },
+      {
+        "t": 0.001,
+        "radius_r=t^alpha": 0.03162277660168379,
+        "alpha": 0.5,
+        "bubble_flux_scale_t4": 1.0000000000000002e-12,
+        "eta_threshold_sqrt(t4)/r2": 0.0010000000000000005
+      },
+      {
+        "t": 0.001,
+        "radius_r=t^alpha": 0.005623413251903491,
+        "alpha": 0.75,
+        "bubble_flux_scale_t4": 1.0000000000000002e-12,
+        "eta_threshold_sqrt(t4)/r2": 0.0316227766016838
+      },
+      {
+        "t": 0.0001,
+        "radius_r=t^alpha": 0.1,
+        "alpha": 0.25,
+        "bubble_flux_scale_t4": 1.0000000000000002e-16,
+        "eta_threshold_sqrt(t4)/r2": 1e-06
+      },
+      {
+        "t": 0.0001,
+        "radius_r=t^alpha": 0.01,
+        "alpha": 0.5,
+        "bubble_flux_scale_t4": 1.0000000000000002e-16,
+        "eta_threshold_sqrt(t4)/r2": 0.00010000000000000002
+      },
+      {
+        "t": 0.0001,
+        "radius_r=t^alpha": 0.001,
+        "alpha": 0.75,
+        "bubble_flux_scale_t4": 1.0000000000000002e-16,
+        "eta_threshold_sqrt(t4)/r2": 0.010000000000000002
+      }
+    ],
+    "interpretation": "At natural intermediate annuli r=t^alpha, alpha<1, the needed cone closeness is much stronger than naive GH/C1 neck closeness. This supports replacing transplanted cone rotation fields by variational minimizers with prescribed asymptotics/boundary data, whose error is controlled by an energy minimum rather than by raw annular C1 closeness."
+  },
+  "variational_almost_killing_operator": {
+    "functional": "J(Z)=int_Omega |L_Z g|^2 dmu = 4 int |delta^* Z|^2 dmu",
+    "euler_lagrange_interior": "delta_g delta_g^* Z = 0 for fixed boundary/asymptotic data (sign conventions may change); on a closed manifold the kernel consists Killing fields.",
+    "komar_pohozaev_pairing": "For divergence-free symmetric T, int_boundary T(Z,n)=1/2 int_Omega <T,L_Z g>; if Z is Killing, the bulk term vanishes. For approximate/variational Z, the error is the minimized L_Z energy paired with the tensor being tested, not a derivative of Ricci.",
+    "relevance_to_Yau26": "This object can be used in two distinct places: (i) collapse, where central almost-Killing fields should be obtained by minimizing on covers/scale windows; (ii) noncollapsed bubbles, where rotation/conformal asymptotics can be imposed and the resulting minimizer may define the Pohozaev projection without needing full Biquard-Ozuch normal form for the original C0-pinched metric."
+  },
+  "route_decision": [
+    "For noncollapsed P4+, if the Cheeger-Naber singular set is empty, the limit is a smooth weak Einstein metric and M is eventually diffeomorphic to it; this half is conceptually closed modulo standard convergence/diffeomorphism details.",
+    "If singularities occur, finite CGB energy bounds the number of bubbles. The decisive bridge is a Pohozaev/Komar projection that works for C0 Ricci-pinched metrics and forces the Ozuch/Biquard first obstruction R_+ v to vanish.",
+    "The EH ordinary mass/volume flux is zero at leading order; the useful flux is the Taub/Pohozaev obstruction paired with the orbifold H2 curvature term and cone rotations/conformal radial field.",
+    "Cone-field transplantation requires unrealistically strong annular closeness; variational minimizers with prescribed asymptotics are a more faithful next execution target."
+  ]
+}

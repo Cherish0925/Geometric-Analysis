@@ -1,0 +1,418 @@
+{
+  "title": "Step 37 generalized Weyl rod period probe",
+  "scope": "Exploratory half-plane generalized Weyl period ratios; not a compact polygon proof and not a Yau-26 result.",
+  "formulae": {
+    "metric": "ds^2=e^{2U1}dphi1^2+e^{2U2}dphi2^2+e^{2nu}(dr^2+dz^2), U1+U2=log r",
+    "rod_potential": "u_[a,b]=1/2 log((Ra+Rb-(b-a))/(Ra+Rb+(b-a)))",
+    "nu_r": "-1/(2r)+(r/2) sum_i ((U_i,r)^2-(U_i,z)^2)",
+    "nu_z": "r sum_i U_i,r U_i,z",
+    "log_period_coeff": "ell_j=nu-(U_label-log r) near rod interior; same-label ell differences measure period mismatch"
+  },
+  "source_support": "Emparan-Reall lines 1358-1426: rod sources add to an infinite rod; spatial rods are bolts; avoiding conical singularity requires a coordinate period determined by the sources; multiple sources for the same coordinate can require different periods, producing conical singularities.",
+  "cases": [
+    {
+      "name": "equal_4_finite_rods_alt12",
+      "rows": [
+        {
+          "rod": 1,
+          "label": 1,
+          "a": 0.0,
+          "b": 1.0,
+          "length": 1.0,
+          "log_period_coeff": 1.0936248298922484
+        },
+        {
+          "rod": 2,
+          "label": 2,
+          "a": 1.0,
+          "b": 2.0,
+          "length": 1.0,
+          "log_period_coeff": -0.29266948978621066
+        },
+        {
+          "rod": 3,
+          "label": 1,
+          "a": 2.0,
+          "b": 3.0,
+          "length": 1.0,
+          "log_period_coeff": 1.0936248298922484
+        },
+        {
+          "rod": 4,
+          "label": 2,
+          "a": 3.0,
+          "b": 4.0,
+          "length": 1.0,
+          "log_period_coeff": -0.004987417360624913
+        }
+      ],
+      "by_label": {
+        "1": {
+          "count": 2,
+          "values": [
+            1.0936248298922484,
+            1.0936248298922484
+          ],
+          "range": 0.0,
+          "exp_range_ratio": 1.0,
+          "mean": 1.0936248298922484
+        },
+        "2": {
+          "count": 2,
+          "values": [
+            -0.29266948978621066,
+            -0.004987417360624913
+          ],
+          "range": 0.28768207242558574,
+          "exp_range_ratio": 1.3333333332984065,
+          "mean": -0.14882845357341778
+        }
+      }
+    },
+    {
+      "name": "equal_6_finite_rods_alt12",
+      "rows": [
+        {
+          "rod": 1,
+          "label": 1,
+          "a": 0.0,
+          "b": 1.0,
+          "length": 1.0,
+          "log_period_coeff": 1.3167683813207054
+        },
+        {
+          "rod": 2,
+          "label": 2,
+          "a": 1.0,
+          "b": 2.0,
+          "length": 1.0,
+          "log_period_coeff": -0.35720801090224774
+        },
+        {
+          "rod": 3,
+          "label": 1,
+          "a": 2.0,
+          "b": 3.0,
+          "length": 1.0,
+          "log_period_coeff": 1.4345514169784512
+        },
+        {
+          "rod": 4,
+          "label": 2,
+          "a": 3.0,
+          "b": 4.0,
+          "length": 1.0,
+          "log_period_coeff": -0.35720801090224774
+        },
+        {
+          "rod": 5,
+          "label": 1,
+          "a": 4.0,
+          "b": 5.0,
+          "length": 1.0,
+          "log_period_coeff": 1.3167683813207054
+        },
+        {
+          "rod": 6,
+          "label": 2,
+          "a": 5.0,
+          "b": 6.0,
+          "length": 1.0,
+          "log_period_coeff": -0.004987417340411193
+        }
+      ],
+      "by_label": {
+        "1": {
+          "count": 3,
+          "values": [
+            1.3167683813207054,
+            1.4345514169784512,
+            1.3167683813207054
+          ],
+          "range": 0.11778303565774584,
+          "exp_range_ratio": 1.1250000000015328,
+          "mean": 1.3560293932066205
+        },
+        "2": {
+          "count": 3,
+          "values": [
+            -0.35720801090224774,
+            -0.35720801090224774,
+            -0.004987417340411193
+          ],
+          "range": 0.35222059356183655,
+          "exp_range_ratio": 1.422222222183089,
+          "mean": -0.23980114638163555
+        }
+      }
+    },
+    {
+      "name": "equal_8_finite_rods_alt12",
+      "rows": [
+        {
+          "rod": 1,
+          "label": 1,
+          "a": 0.0,
+          "b": 1.0,
+          "length": 1.0,
+          "log_period_coeff": 1.4709190610918192
+        },
+        {
+          "rod": 2,
+          "label": 2,
+          "a": 1.0,
+          "b": 2.0,
+          "length": 1.0,
+          "log_period_coeff": -0.38537888786148566
+        },
+        {
+          "rod": 3,
+          "label": 1,
+          "a": 2.0,
+          "b": 3.0,
+          "length": 1.0,
+          "log_period_coeff": 1.6295240912700102
+        },
+        {
+          "rod": 4,
+          "label": 2,
+          "a": 3.0,
+          "b": 4.0,
+          "length": 1.0,
+          "log_period_coeff": -0.4499174089987581
+        },
+        {
+          "rod": 5,
+          "label": 1,
+          "a": 4.0,
+          "b": 5.0,
+          "length": 1.0,
+          "log_period_coeff": 1.6295240912700106
+        },
+        {
+          "rod": 6,
+          "label": 2,
+          "a": 5.0,
+          "b": 6.0,
+          "length": 1.0,
+          "log_period_coeff": -0.38537888786148544
+        },
+        {
+          "rod": 7,
+          "label": 1,
+          "a": 6.0,
+          "b": 7.0,
+          "length": 1.0,
+          "log_period_coeff": 1.4709190610918192
+        },
+        {
+          "rod": 8,
+          "label": 2,
+          "a": 7.0,
+          "b": 8.0,
+          "length": 1.0,
+          "log_period_coeff": -0.004987417333584321
+        }
+      ],
+      "by_label": {
+        "1": {
+          "count": 4,
+          "values": [
+            1.4709190610918192,
+            1.6295240912700102,
+            1.6295240912700106,
+            1.4709190610918192
+          ],
+          "range": 0.1586050301781914,
+          "exp_range_ratio": 1.1718750000018197,
+          "mean": 1.5502215761809148
+        },
+        "2": {
+          "count": 4,
+          "values": [
+            -0.38537888786148566,
+            -0.4499174089987581,
+            -0.38537888786148544,
+            -0.004987417333584321
+          ],
+          "range": 0.4449299916651738,
+          "exp_range_ratio": 1.5603809523365662,
+          "mean": -0.30641565051382835
+        }
+      }
+    },
+    {
+      "name": "m6_perturbed",
+      "rows": [
+        {
+          "rod": 1,
+          "label": 1,
+          "a": 0.0,
+          "b": 1.0,
+          "length": 1.0,
+          "log_period_coeff": 1.2354179499212592
+        },
+        {
+          "rod": 2,
+          "label": 2,
+          "a": 1.0,
+          "b": 2.2,
+          "length": 1.2000000000000002,
+          "log_period_coeff": -0.27730250161319236
+        },
+        {
+          "rod": 3,
+          "label": 1,
+          "a": 2.2,
+          "b": 3.1,
+          "length": 0.8999999999999999,
+          "log_period_coeff": 1.3052779152309422
+        },
+        {
+          "rod": 4,
+          "label": 2,
+          "a": 3.1,
+          "b": 4.2,
+          "length": 1.1,
+          "log_period_coeff": -0.2945030883588383
+        },
+        {
+          "rod": 5,
+          "label": 1,
+          "a": 4.2,
+          "b": 5.15,
+          "length": 0.9500000000000002,
+          "log_period_coeff": 1.2171216391720279
+        },
+        {
+          "rod": 6,
+          "label": 2,
+          "a": 5.15,
+          "b": 6.2,
+          "length": 1.0499999999999998,
+          "log_period_coeff": -0.004586129779607373
+        }
+      ],
+      "by_label": {
+        "1": {
+          "count": 3,
+          "values": [
+            1.2354179499212592,
+            1.3052779152309422,
+            1.2171216391720279
+          ],
+          "range": 0.0881562760589143,
+          "exp_range_ratio": 1.0921587869633635,
+          "mean": 1.252605834774743
+        },
+        "2": {
+          "count": 3,
+          "values": [
+            -0.27730250161319236,
+            -0.2945030883588383,
+            -0.004586129779607373
+          ],
+          "range": 0.28991695857923094,
+          "exp_range_ratio": 1.3363165137959043,
+          "mean": -0.19213057325054603
+        }
+      }
+    },
+    {
+      "name": "m8_perturbed",
+      "rows": [
+        {
+          "rod": 1,
+          "label": 1,
+          "a": 0.0,
+          "b": 1.0,
+          "length": 1.0,
+          "log_period_coeff": 1.4000270382153053
+        },
+        {
+          "rod": 2,
+          "label": 2,
+          "a": 1.0,
+          "b": 2.2,
+          "length": 1.2000000000000002,
+          "log_period_coeff": -0.2983179449846415
+        },
+        {
+          "rod": 3,
+          "label": 1,
+          "a": 2.2,
+          "b": 3.0,
+          "length": 0.7999999999999998,
+          "log_period_coeff": 1.4709686269280002
+        },
+        {
+          "rod": 4,
+          "label": 2,
+          "a": 3.0,
+          "b": 4.1,
+          "length": 1.0999999999999996,
+          "log_period_coeff": -0.3772321117417017
+        },
+        {
+          "rod": 5,
+          "label": 1,
+          "a": 4.1,
+          "b": 5.05,
+          "length": 0.9500000000000002,
+          "log_period_coeff": 1.5915257560471012
+        },
+        {
+          "rod": 6,
+          "label": 2,
+          "a": 5.05,
+          "b": 6.1,
+          "length": 1.0499999999999998,
+          "log_period_coeff": -0.4061039825275412
+        },
+        {
+          "rod": 7,
+          "label": 1,
+          "a": 6.1,
+          "b": 7.3999999999999995,
+          "length": 1.2999999999999998,
+          "log_period_coeff": 1.602387110563603
+        },
+        {
+          "rod": 8,
+          "label": 2,
+          "a": 7.3999999999999995,
+          "b": 8.299999999999999,
+          "length": 0.8999999999999995,
+          "log_period_coeff": -0.0048675279075811595
+        }
+      ],
+      "by_label": {
+        "1": {
+          "count": 4,
+          "values": [
+            1.4000270382153053,
+            1.4709686269280002,
+            1.5915257560471012,
+            1.602387110563603
+          ],
+          "range": 0.20236007234829767,
+          "exp_range_ratio": 1.2242887612843512,
+          "mean": 1.5162271329385024
+        },
+        "2": {
+          "count": 4,
+          "values": [
+            -0.2983179449846415,
+            -0.3772321117417017,
+            -0.4061039825275412,
+            -0.0048675279075811595
+          ],
+          "range": 0.40123645461996005,
+          "exp_range_ratio": 1.4936704120167257,
+          "mean": -0.2716303917903664
+        }
+      }
+    }
+  ],
+  "review_conclusion": "Alternating adjacent labels do not remove period mismatch. Equal finite alternating chains are symmetric enough in this half-plane probe to equalize some same-label periods, but perturbed chains show same-label period ranges. Compact polygon closing/monodromy is a separate finite computation and cannot be declared strut-free from Delzant adjacency alone."
+}

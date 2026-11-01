@@ -1,0 +1,117 @@
+{
+  "step": 73,
+  "checks": [
+    {
+      "name": "wp_normal_vanishes",
+      "pass": true,
+      "desc": "E_00 for cosh(t) = 0"
+    },
+    {
+      "name": "wp_tangential_coeff",
+      "pass": true,
+      "desc": "Tangential coefficient for cosh: 2"
+    },
+    {
+      "name": "wp_center_defect",
+      "pass": true,
+      "desc": "|Ric_g+3g|_op >= |Ric_h + 2h|_op / cosh^2(t)"
+    },
+    {
+      "name": "preissmann_upper_bound",
+      "pass": true,
+      "desc": "K_ij < (3c-2)/2; at c=2/3 this is 0"
+    },
+    {
+      "name": "preissmann_strict",
+      "pass": true,
+      "desc": "At c=1/2: K_ij < -1/4 < 0"
+    },
+    {
+      "name": "preissmann_boundary_nonflat",
+      "pass": true,
+      "desc": "At boundary c=2/3: R_h = -16/3 \u2260 0, so not flat"
+    },
+    {
+      "name": "preissmann_conclusion",
+      "pass": true,
+      "desc": "Every metric on T^3 has max |Ric_h + 2h|_op >= 2/3"
+    },
+    {
+      "name": "flat_torus_defect",
+      "pass": true,
+      "desc": "Flat T^3 gives |Ric_h + 2h|_op = 2 (worse than threshold)"
+    },
+    {
+      "name": "koiso_trace",
+      "pass": true,
+      "desc": "tr(S') = R_h + 9 = 3 => R_h = -6"
+    },
+    {
+      "name": "koiso_tangential_zero",
+      "pass": true,
+      "desc": "Tangential defect vanishes at Koiso center by construction"
+    },
+    {
+      "name": "isotropic_koiso_impossible",
+      "pass": true,
+      "desc": "Isotropic Koiso: Ric_h = -2h (hyperbolic), impossible on T^3"
+    },
+    {
+      "name": "t_only_constraint",
+      "pass": true,
+      "desc": "|S|^2 + 2(cross products) = H^2, so |S|^2 = H^2 - 6 requires cross = 3"
+    },
+    {
+      "name": "t_only_center_obstruction",
+      "pass": true,
+      "desc": "H(0)=0 with flat fiber: 0 = H^2 - 6 = -6, contradiction"
+    },
+    {
+      "name": "constraint_koiso",
+      "pass": true,
+      "desc": "t-only constraint at S=0 requires R^{(3)} = -6 (Koiso center)"
+    },
+    {
+      "name": "V0_ode_solution",
+      "pass": true,
+      "desc": "V_0' = sqrt(3)*tanh(sqrt(3)*t) satisfies V_0'' = 3 - V_0'^2: residual = 0"
+    },
+    {
+      "name": "V0_limit",
+      "pass": true,
+      "desc": "V_0' -> sqrt(3) as t -> inf (NOT 3 = cusp target)"
+    },
+    {
+      "name": "a0_btct_zero",
+      "pass": true,
+      "desc": "In a=0 gauge: b_t*c_t = 0 everywhere (at most one direction expands)"
+    },
+    {
+      "name": "a0_no_cusp",
+      "pass": true,
+      "desc": "a=0 gauge: S rank-1, cannot reach cusp S=I (gauge breaks)"
+    },
+    {
+      "name": "isotropic_lower_bound",
+      "pass": true,
+      "desc": "Isotropic tanh collar: center defect >= 2/3 from Preissmann"
+    },
+    {
+      "name": "anisotropy_necessary",
+      "pass": true,
+      "desc": "Koiso center needs Ric_h \u2260 -2h on T^3 => anisotropic S'(0)"
+    },
+    {
+      "name": "fiber_curvature_evolution",
+      "pass": true,
+      "desc": "Along collar: R^{(3)}(t) must increase from -6 toward 0 as H -> 3"
+    },
+    {
+      "name": "defect_components",
+      "pass": true,
+      "desc": "All three defect types (normal, mixed, tangential) must vanish for Einstein"
+    }
+  ],
+  "passed": 22,
+  "total": 22
+}

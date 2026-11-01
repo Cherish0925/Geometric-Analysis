@@ -1,0 +1,133 @@
+{
+  "S4_round": {
+    "manifold": "S^4 (round)",
+    "W_plus_eigenvalues": [
+      0,
+      0,
+      0
+    ],
+    "R_plus_eigenvalues": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "det_R_plus": 0.037037037,
+    "det_nonzero": "True",
+    "consequence": "NO EH desingularization possible near round geometry. Noncollapsed near-Einstein on S^4 converges smoothly."
+  },
+  "CP2": {
+    "manifold": "CP^2 (Fubini-Study)",
+    "W_plus_eigenvalues": [
+      0.666667,
+      -0.333333,
+      -0.333333
+    ],
+    "R_plus_eigenvalues": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "det_R_plus": 0.0,
+    "det_nonzero": "False",
+    "kernel_dimension": 2,
+    "consequence": "det R_+ = 0, kernel is 2-dimensional (Lambda^2_+,0 space). EH desingularization possible."
+  },
+  "S2xS2": {
+    "manifold": "S^2 x S^2 (product Einstein)",
+    "W_plus_eigenvalues": [
+      0.666667,
+      -0.333333,
+      -0.333333
+    ],
+    "R_plus_eigenvalues": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "det_R_plus": 0.0,
+    "det_nonzero": "False",
+    "kernel_dimension": 2,
+    "consequence": "det R_+ = 0. This is consistent: S^2 x S^2 orbifolds CAN be desingularized (and S^2 x S^2 itself IS Einstein)."
+  },
+  "general_KE": {
+    "manifold": "Any K\u00e4hler-Einstein 4-manifold (Ric = Lambda*g)",
+    "W_plus_eigenvalues": [
+      "2Lambda/3",
+      "-Lambda/3",
+      "-Lambda/3"
+    ],
+    "R_plus_eigenvalues": [
+      "Lambda",
+      "0",
+      "0"
+    ],
+    "det_R_plus": 0.0,
+    "det_nonzero": false,
+    "consequence": "det R_+ = 0 for ALL positive K\u00e4hler-Einstein surfaces. This includes CP^2, S^2xS^2, toric KE dP_3-dP_8.",
+    "universal_statement": "The Ozuch obstruction is ALWAYS satisfied for KE orbifolds \u2014 they can always be desingularized in principle."
+  },
+  "S4_quotient": {
+    "manifold": "S^4/Gamma (quotient of round sphere)",
+    "W_plus_eigenvalues": [
+      0,
+      0,
+      0
+    ],
+    "R_plus_eigenvalues": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "det_R_plus": 0.037037037,
+    "det_nonzero": true,
+    "consequence": "det R_+ != 0 at EVERY point. No desingularization by EH. Noncollapsed sequences converging to S^4/Gamma must be smooth."
+  },
+  "hyperbolic": {
+    "manifold": "Hyperbolic orbifold (constant negative curvature)",
+    "W_plus_eigenvalues": [
+      0,
+      0,
+      0
+    ],
+    "R_plus_eigenvalues": [
+      "Lambda/3 < 0",
+      "Lambda/3 < 0",
+      "Lambda/3 < 0"
+    ],
+    "det_R_plus": "nonzero (negative)",
+    "det_nonzero": true,
+    "consequence": "Hyperbolic orbifolds cannot be desingularized. This is consistent with hyperbolic rigidity."
+  },
+  "route_A_reach": {
+    "obstruction_effective": {
+      "S4_and_quotients": "det R_+ = (Lambda/3)^3 > 0: Route A gives smooth convergence",
+      "hyperbolic": "det R_+ != 0: no desingularization (but this is negative sign, not our case)"
+    },
+    "obstruction_trivial": {
+      "all_KE_surfaces": "det R_+ = 0 always: obstruction satisfied, desingularization possible in principle",
+      "includes": [
+        "CP^2",
+        "S^2 x S^2",
+        "Page (if conformally K\u00e4hler orbifold limit)",
+        "CLW",
+        "toric KE dP_3-dP_8"
+      ]
+    },
+    "implication_for_route_A": {
+      "strong_case": "If the GH limit of a noncollapsed near-Einstein sequence is close to a ROUND orbifold (S^4/Gamma type), Route A gives Einstein existence via smooth convergence.",
+      "weak_case": "If the GH limit has KE-type singular points, det R_+ = 0 is automatically satisfied and the obstruction is not effective. Further analysis (second-order, topology, LeBrun-Ozuch classification) is needed.",
+      "summary": "Route A eliminates the 'near-round' degeneration scenario but does not address the KE orbifold scenario without additional input."
+    },
+    "connection_to_stress_family": {
+      "#_k(S2xS2)": {
+        "noncollapsed_limit_candidates": [
+          "S^4/Gamma (near-round): excluded by det R_+ != 0 -> limit must be smooth -> Einstein on M",
+          "KE orbifold: det R_+ = 0, not excluded by first obstruction",
+          "But LeBrun-Ozuch (conditional on Hermitian/admissible): b_+ >= 2 excluded from Del Pezzo classification",
+          "So: EITHER the limit is smooth (Einstein exists on M) OR the limit has non-Hermitian singularities"
+        ],
+        "gap": "The gap is: can noncollapsed near-Einstein metrics on #_k(S^2xS^2) degenerate to a NON-Hermitian orbifold with Z_2 singularities and det R_+ = 0?"
+      }
+    }
+  }
+}

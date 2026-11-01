@@ -1,0 +1,173 @@
+{
+  "title": "Step 24 KK circle product family audit",
+  "oneill_equations_checked": [
+    "Ric_M^H = Ric_B - 1/2(phi o phi)",
+    "Ric_M(U,U)=1/2|phi|^2",
+    "Ric_M^mixed=+/-1/2 d^*phi",
+    "Ric_M=g in constant-length connection class iff |phi|^2=2, d*phi=0, Ric_B=g_B+1/2(phi o phi); dphi=0 is automatic from dF=0"
+  ],
+  "family": "B=S^2 with Ric=2 times any closed Einstein N^d with Ric=1; phi=sqrt(2) area_S2; total P_q -> B has c1=q[S^2] and t=sqrt(2)/q, giving (S^3(sqrt(2))/Z_q) x N^d.",
+  "dimension_records": [
+    {
+      "total_dimension_n": 4,
+      "base_dimension_m": 3,
+      "N_dimension_d=n-3": 1,
+      "candidate_base": "S^2_Ric=2 x S^1",
+      "vertical_Ric": 1.0,
+      "horizontal_residual_S2": 0.0,
+      "horizontal_residual_N_or_S1": -1.0,
+      "exact_KK_Einstein_equations_hold_for_model": false,
+      "interpretation": "No: n=4 would need a circle factor with Ric=1; this is the Step-6 Bochner/topology obstruction."
+    },
+    {
+      "total_dimension_n": 5,
+      "base_dimension_m": 4,
+      "N_dimension_d=n-3": 2,
+      "candidate_base": "S^2_Ric=2 x S^2_Ric=1",
+      "vertical_Ric": 1.0,
+      "horizontal_residual_S2": 0.0,
+      "horizontal_residual_N_or_S1": 0.0,
+      "exact_KK_Einstein_equations_hold_for_model": true,
+      "interpretation": "Yes: gives exact Ric=g on (S^3(sqrt(2))/Z_q) x S^{n-3} after choosing t=sqrt(2)/q."
+    },
+    {
+      "total_dimension_n": 6,
+      "base_dimension_m": 5,
+      "N_dimension_d=n-3": 3,
+      "candidate_base": "S^2_Ric=2 x S^3_Ric=1",
+      "vertical_Ric": 1.0,
+      "horizontal_residual_S2": 0.0,
+      "horizontal_residual_N_or_S1": 0.0,
+      "exact_KK_Einstein_equations_hold_for_model": true,
+      "interpretation": "Yes: gives exact Ric=g on (S^3(sqrt(2))/Z_q) x S^{n-3} after choosing t=sqrt(2)/q."
+    },
+    {
+      "total_dimension_n": 7,
+      "base_dimension_m": 6,
+      "N_dimension_d=n-3": 4,
+      "candidate_base": "S^2_Ric=2 x S^4_Ric=1",
+      "vertical_Ric": 1.0,
+      "horizontal_residual_S2": 0.0,
+      "horizontal_residual_N_or_S1": 0.0,
+      "exact_KK_Einstein_equations_hold_for_model": true,
+      "interpretation": "Yes: gives exact Ric=g on (S^3(sqrt(2))/Z_q) x S^{n-3} after choosing t=sqrt(2)/q."
+    },
+    {
+      "total_dimension_n": 8,
+      "base_dimension_m": 7,
+      "N_dimension_d=n-3": 5,
+      "candidate_base": "S^2_Ric=2 x S^5_Ric=1",
+      "vertical_Ric": 1.0,
+      "horizontal_residual_S2": 0.0,
+      "horizontal_residual_N_or_S1": 0.0,
+      "exact_KK_Einstein_equations_hold_for_model": true,
+      "interpretation": "Yes: gives exact Ric=g on (S^3(sqrt(2))/Z_q) x S^{n-3} after choosing t=sqrt(2)/q."
+    },
+    {
+      "total_dimension_n": 9,
+      "base_dimension_m": 8,
+      "N_dimension_d=n-3": 6,
+      "candidate_base": "S^2_Ric=2 x S^6_Ric=1",
+      "vertical_Ric": 1.0,
+      "horizontal_residual_S2": 0.0,
+      "horizontal_residual_N_or_S1": 0.0,
+      "exact_KK_Einstein_equations_hold_for_model": true,
+      "interpretation": "Yes: gives exact Ric=g on (S^3(sqrt(2))/Z_q) x S^{n-3} after choosing t=sqrt(2)/q."
+    },
+    {
+      "total_dimension_n": 10,
+      "base_dimension_m": 9,
+      "N_dimension_d=n-3": 7,
+      "candidate_base": "S^2_Ric=2 x S^7_Ric=1",
+      "vertical_Ric": 1.0,
+      "horizontal_residual_S2": 0.0,
+      "horizontal_residual_N_or_S1": 0.0,
+      "exact_KK_Einstein_equations_hold_for_model": true,
+      "interpretation": "Yes: gives exact Ric=g on (S^3(sqrt(2))/Z_q) x S^{n-3} after choosing t=sqrt(2)/q."
+    },
+    {
+      "total_dimension_n": 11,
+      "base_dimension_m": 10,
+      "N_dimension_d=n-3": 8,
+      "candidate_base": "S^2_Ric=2 x S^8_Ric=1",
+      "vertical_Ric": 1.0,
+      "horizontal_residual_S2": 0.0,
+      "horizontal_residual_N_or_S1": 0.0,
+      "exact_KK_Einstein_equations_hold_for_model": true,
+      "interpretation": "Yes: gives exact Ric=g on (S^3(sqrt(2))/Z_q) x S^{n-3} after choosing t=sqrt(2)/q."
+    },
+    {
+      "total_dimension_n": 12,
+      "base_dimension_m": 11,
+      "N_dimension_d=n-3": 9,
+      "candidate_base": "S^2_Ric=2 x S^9_Ric=1",
+      "vertical_Ric": 1.0,
+      "horizontal_residual_S2": 0.0,
+      "horizontal_residual_N_or_S1": 0.0,
+      "exact_KK_Einstein_equations_hold_for_model": true,
+      "interpretation": "Yes: gives exact Ric=g on (S^3(sqrt(2))/Z_q) x S^{n-3} after choosing t=sqrt(2)/q."
+    }
+  ],
+  "collapse_normalization": [
+    {
+      "q": 1,
+      "fiber_scale_t": 1.4142135623730951,
+      "fiber_length_2pi_t": 8.885765876316732,
+      "actual_volume_factor_relative_to_base": 8.885765876316732,
+      "q_dependence_ignoring_2pi": 1.4142135623730951,
+      "curvature_form_integral_over_S2": "2*pi*1",
+      "tF_fixed_norm": 1.4142135623730951
+    },
+    {
+      "q": 2,
+      "fiber_scale_t": 0.7071067811865476,
+      "fiber_length_2pi_t": 4.442882938158366,
+      "actual_volume_factor_relative_to_base": 4.442882938158366,
+      "q_dependence_ignoring_2pi": 0.7071067811865476,
+      "curvature_form_integral_over_S2": "2*pi*2",
+      "tF_fixed_norm": 1.4142135623730951
+    },
+    {
+      "q": 5,
+      "fiber_scale_t": 0.282842712474619,
+      "fiber_length_2pi_t": 1.7771531752633465,
+      "actual_volume_factor_relative_to_base": 1.7771531752633465,
+      "q_dependence_ignoring_2pi": 0.282842712474619,
+      "curvature_form_integral_over_S2": "2*pi*5",
+      "tF_fixed_norm": 1.4142135623730951
+    },
+    {
+      "q": 10,
+      "fiber_scale_t": 0.1414213562373095,
+      "fiber_length_2pi_t": 0.8885765876316732,
+      "actual_volume_factor_relative_to_base": 0.8885765876316732,
+      "q_dependence_ignoring_2pi": 0.1414213562373095,
+      "curvature_form_integral_over_S2": "2*pi*10",
+      "tF_fixed_norm": 1.4142135623730951
+    },
+    {
+      "q": 100,
+      "fiber_scale_t": 0.01414213562373095,
+      "fiber_length_2pi_t": 0.08885765876316733,
+      "actual_volume_factor_relative_to_base": 0.08885765876316733,
+      "q_dependence_ignoring_2pi": 0.01414213562373095,
+      "curvature_form_integral_over_S2": "2*pi*100",
+      "tF_fixed_norm": 1.4142135623730951
+    },
+    {
+      "q": 1000,
+      "fiber_scale_t": 0.0014142135623730952,
+      "fiber_length_2pi_t": 0.008885765876316733,
+      "actual_volume_factor_relative_to_base": 0.008885765876316733,
+      "q_dependence_ignoring_2pi": 0.0014142135623730952,
+      "curvature_form_integral_over_S2": "2*pi*1000",
+      "tF_fixed_norm": 1.4142135623730951
+    }
+  ],
+  "conclusions": [
+    "The Step-6 obstruction to constant-length free S^1 positive Einstein collapse is special to base dimension 3 / total dimension 4.",
+    "The proposed general odd-base obstruction from the kernel of a 2-form is false: for base S^2 x S^d, d>=2, the kernel lies in the Einstein factor Ric=1 and creates no Bochner contradiction.",
+    "For every total dimension n>=5, (S^3(sqrt(2))/Z_q) x S^{n-3} carries exact Ric=g metrics collapsing as q->infty with bounded curvature; these are finite quotients/products of fixed Einstein manifolds, so the Yau-26 conclusion holds trivially for the model.",
+    "This supports the revised positive-branch program: characterize positive-pinched collapse as Einstein-compatible rather than trying to forbid collapse."
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "formula": "Q_T(d,n)=d-1/(d*n^2) for cyclic class-T Ricci-flat Kahler ALE smoothing 1/(d n^2)(1,d n m-1), n>=2",
+  "source_anchors": [
+    "Knowledge/objects/papers/ALE-Ricci-flat-Kahler-metrics-and-deformations-of-quotient-surface-singu--9db598b6c84c--5ab7b434e210/object.md, Theorem B and Theorem 2.2",
+    "Knowledge/objects/papers/Desingularizations-of-Conformally-Kaehler-Einstein-Orbifolds--8fe1aa31deb8--5b19d560b771/object.md lines 80-88",
+    "Knowledge/objects/papers/On-the-classification-of-ALE-K\u00e4hler-manifolds--e1a7b4c34fa6--1e136e81370c/object.md lines 29-33"
+  ],
+  "ADE_atoms_relevant_to_Q_le_4": [
+    {
+      "name": "A1",
+      "chi": 2,
+      "reciprocal": "1/2",
+      "Q": "3/2"
+    },
+    {
+      "name": "A2",
+      "chi": 3,
+      "reciprocal": "1/3",
+      "Q": "8/3"
+    },
+    {
+      "name": "A3",
+      "chi": 4,
+      "reciprocal": "1/4",
+      "Q": "15/4"
+    }
+  ],
+  "exact_Q4_with_ADE_plus_classT_half_flat_ALE": {
+    "solutions": [],
+    "proof": [
+      "Every atom has Q=chi-r with chi a positive integer and 0<r<=chi/4.",
+      "If the sum is the integer T=4, then R=sum r=S-4, where S=sum chi. The bound R<=S/4 gives S<=16/3, hence S=5.",
+      "The listed partitions of S=5 exhaust all possibilities and each is impossible by elementary reciprocal-square bounds."
+    ],
+    "case_analysis": [
+      {
+        "integer_parts": "4+1",
+        "max_reciprocal": "1/2",
+        "needed": "1",
+        "status": "impossible"
+      },
+      {
+        "integer_parts": "3+2",
+        "max_reciprocal": "5/6",
+        "needed": "1",
+        "status": "impossible"
+      },
+      {
+        "integer_parts": "3+1+1",
+        "max_reciprocal": "5/6",
+        "needed": "1",
+        "status": "impossible"
+      },
+      {
+        "integer_parts": "2+2+1",
+        "max_reciprocal": "5/4",
+        "needed": "1",
+        "refinement": "If both chi=2 atoms are A1, reciprocal contribution already 1 and the chi=1 atom is positive; if at most one A1, max reciprocal <= 1/2+1/8+1/4=7/8.",
+        "status": "impossible"
+      },
+      {
+        "integer_parts": "2+1+1+1",
+        "max_reciprocal": "5/4",
+        "needed": "1",
+        "refinement": "Only possible large chi=2 atom is A1. Then need three inverse squares to sum 1/2. With one 1/4 left need two squares sum 1/4, impossible; with no 1/4 max is 1/3.",
+        "status": "impossible"
+      },
+      {
+        "integer_parts": "1+1+1+1+1",
+        "max_reciprocal": "5/4",
+        "needed": "1",
+        "refinement": "Need five integers n_i>=2 with sum 1/n_i^2=1. Fewer than four n_i=2 gives <=3/4+2/9<1; four n_i=2 already sum 1 with a fifth positive, contradiction.",
+        "status": "impossible"
+      }
+    ]
+  },
+  "integer_half_flat_ALE_totals_le_4_when_ALF_integer_quanta_are_allowed": {
+    "Q=1": [],
+    "Q=2": [],
+    "Q=3": [
+      {
+        "pattern": "2*A1",
+        "reciprocal_sum": "1",
+        "Q": "3"
+      },
+      {
+        "pattern": "A1 + 2*T(d=1,n=2)",
+        "reciprocal_sum": "1/2+1/4+1/4=1",
+        "Q": "3"
+      },
+      {
+        "pattern": "4*T(d=1,n=2)",
+        "reciprocal_sum": "4*(1/4)=1",
+        "Q": "3"
+      }
+    ],
+    "Q=4": []
+  },
+  "interpretation": [
+    "Adding Suvaina/Wright cyclic class-T U(2) Ricci-flat Kahler ALE atoms does not create a half-flat ALE chiral quantum Q=4.",
+    "Therefore the Step-71 pure half-flat ALE chiral impossibility survives the largest missing non-SU(2) ALE caveat, provided the concentration models are still Ricci-flat Kahler/half-conformally-flat and atomically assigned to one Weyl half.",
+    "When standard half-flat ALF integer quanta are allowed, the ALE part of one chiral half can be 0 or 3 (not only the old ADE pattern 2*A1; class-T patterns also give Q=3), then ALF supplies the remaining 4 or 1 units.",
+    "This is still an arithmetic compatibility gate, not a collapse theorem: non-half-flat Ricci-flat bubbles, transition energy, ALG/ALH regions, and topology/attachment remain open."
+  ]
+}

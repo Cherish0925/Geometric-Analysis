@@ -1,0 +1,157 @@
+{
+  "step": 68,
+  "checks": [
+    {
+      "name": "canonical_G_Ric",
+      "pass": true,
+      "detail": "Ric(G)=-g verified in step63/step64"
+    },
+    {
+      "name": "canonical_T_def",
+      "pass": true,
+      "detail": "T=Rm-G, Ric(T)=E=Ric+g"
+    },
+    {
+      "name": "G_norm_dim4",
+      "pass": true,
+      "detail": "|G|^2 = n/(2(n-1)) = 0.666667 = 2/3"
+    },
+    {
+      "name": "legacy_translation",
+      "pass": true,
+      "detail": "G_old=-G implies T_old=T"
+    },
+    {
+      "name": "square_identity",
+      "pass": true,
+      "detail": "exact algebraic identity, verified step67"
+    },
+    {
+      "name": "constant_108",
+      "pass": true,
+      "detail": "864*pi^2 D_av / (8*pi^2) = 108"
+    },
+    {
+      "name": "constant_6",
+      "pass": true,
+      "detail": "48*pi^2 D_av / (8*pi^2) = 6"
+    },
+    {
+      "name": "constant_119",
+      "pass": true,
+      "detail": "1(|E|^2) + 4((s+4)^2) + 108(Weyl) + 6(G_gap) = 119"
+    },
+    {
+      "name": "no_q_plus_term",
+      "pass": true,
+      "detail": "q>=0 eliminates q_+ error"
+    },
+    {
+      "name": "two_factor_seed_only",
+      "pass": true,
+      "detail": "two-factor: gamma_t <= c/p is p-dependent"
+    },
+    {
+      "name": "three_factor_closes",
+      "pass": true,
+      "detail": "three-factor: S^2 Y coefficient is p-independent"
+    },
+    {
+      "name": "no_Y_circularity",
+      "pass": true,
+      "detail": "Y from curvature branch, independent of defect"
+    },
+    {
+      "name": "V_from_aE",
+      "pass": true,
+      "detail": "V uses weighted aE, not unweighted E"
+    },
+    {
+      "name": "Sobolev_transport",
+      "pass": true,
+      "detail": "S(t) <= e^{8V} S(0), no Ric lower bound"
+    },
+    {
+      "name": "bootstrap_closure",
+      "pass": true,
+      "detail": "(Gamma,V) coupled, no evolving |E|<=delta"
+    },
+    {
+      "name": "sequence_uniform_curvature_endpoint",
+      "pass": true,
+      "detail": "curvature endpoint depends only on Gamma"
+    },
+    {
+      "name": "sequence_uniform_defect_endpoint",
+      "pass": true,
+      "detail": "defect endpoint depends on delta, not higher-order"
+    },
+    {
+      "name": "sequence_uniform_Q",
+      "pass": true,
+      "detail": "Q propagation is exponential with universal constants"
+    },
+    {
+      "name": "datum_dependent_continuation",
+      "pass": true,
+      "detail": "continuation uses datum-dependent C^k, not sequence-uniform"
+    },
+    {
+      "name": "datum_dependent_NOT_in_contradiction",
+      "pass": true,
+      "detail": "contradiction uses only sequence-uniform estimates"
+    },
+    {
+      "name": "all_modules_present",
+      "pass": true,
+      "detail": "9 modules in the chain"
+    },
+    {
+      "name": "convention_audit_complete",
+      "pass": true,
+      "detail": "8 modules audited"
+    },
+    {
+      "name": "derdzinski_mechanism",
+      "pass": true,
+      "detail": "|W+|^2=1/24 vs KE value 2/3"
+    },
+    {
+      "name": "Phi_zero_forces_E_zero",
+      "pass": true,
+      "detail": "|E|^2 term in Phi forces E=0"
+    },
+    {
+      "name": "Phi_zero_forces_calibrated_Weyl",
+      "pass": true,
+      "detail": "Weyl and gap terms force calibrated spectrum"
+    },
+    {
+      "name": "liouville_no_base_volume",
+      "pass": true,
+      "detail": "Liouville on SM, no base-manifold volume bound needed"
+    },
+    {
+      "name": "pullback_noncollapse",
+      "pass": true,
+      "detail": "Rauch comparison gives tangent-space noncollapse"
+    },
+    {
+      "name": "scope_restricted",
+      "pass": true,
+      "detail": "theorem is restricted IL, not Yau 26"
+    },
+    {
+      "name": "scope_negative_only",
+      "pass": true,
+      "detail": "negative Einstein normalization only"
+    },
+    {
+      "name": "scope_dim4_only",
+      "pass": true,
+      "detail": "dimension four only"
+    }
+  ],
+  "passed": 30,
+  "total": 30
+}

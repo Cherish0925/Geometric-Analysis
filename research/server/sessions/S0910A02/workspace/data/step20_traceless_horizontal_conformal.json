@@ -1,0 +1,13 @@
+{
+  "title": "Step 20: traceless horizontal forces conformal blow-up",
+  "flat_base_traceless_residual": "(1+2A)/4",
+  "conformal_correction": "phi ~ (1+2A) r^2 / 4 near rod",
+  "base_metric_near_rod": "g_B ~ exp((1+2A) r^2 / 2) (dr^2+ds^2)",
+  "eigenvalue_equation_in_flat": "-Delta_0 w = 2 exp((1+2A) r^2 / 2) w",
+  "collar_r_integral_per_rod": "2/(A(1+2A)) ~ 2/A^2",
+  "total_collar_contribution_A_eq_m2": "2m/m^4 = 2/m^3",
+  "needed_int_w": "1/(2m)",
+  "conclusion": "Collar integral 2/m^3 << 1/(2m): interior/transition dominates int w. The conformal blow-up exp(Ar^2/2) in the base metric creates a tension: the eigenvalue equation -Delta_0 w = 2 exp(Ar^2/2) w localizes w near rods, but the area element exp(2phi) amplifies the interior, so the integral of w is not dominated by the collar.",
+  "key_new_insight": "The traceless horizontal equation is NOT automatically satisfied in flat-base collar coordinates. It requires phi ~ A r^2 / 4, which changes the base geometry from flat to exponentially expanding. This was not tested in Step 19's corner matching, which only checked the vertical/trace equations.",
+  "open_question": "Does the exponentially expanding base metric, required by the traceless equation, change the global eigenvalue or flux in a way that obstructs or permits the collapsing seed? The transition from collar to interior carries most of int w and must be analyzed."
+}

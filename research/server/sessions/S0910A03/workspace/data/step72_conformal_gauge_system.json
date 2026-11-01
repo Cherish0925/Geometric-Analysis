@@ -1,0 +1,24 @@
+{
+  "tt": "3 - exp(-2*phi(t, z))*Derivative(b(t, z), t)**2 + exp(-2*phi(t, z))*Derivative(b(t, z), t)*Derivative(phi(t, z), t) - exp(-2*phi(t, z))*Derivative(b(t, z), (t, 2)) - exp(-2*phi(t, z))*Derivative(b(t, z), z)*Derivative(phi(t, z), z) - exp(-2*phi(t, z))*Derivative(c(t, z), t)**2 + exp(-2*phi(t, z))*Derivative(c(t, z), t)*Derivative(phi(t, z), t) - exp(-2*phi(t, z))*Derivative(c(t, z), (t, 2)) - exp(-2*phi(t, z))*Derivative(c(t, z), z)*Derivative(phi(t, z), z) - exp(-2*phi(t, z))*Derivative(phi(t, z), (t, 2)) - exp(-2*phi(t, z))*Derivative(phi(t, z), (z, 2))",
+  "tz": "-Derivative(b(t, z), t)*Derivative(b(t, z), z) + Derivative(b(t, z), t)*Derivative(phi(t, z), z) + Derivative(b(t, z), z)*Derivative(phi(t, z), t) - Derivative(c(t, z), t)*Derivative(c(t, z), z) + Derivative(c(t, z), t)*Derivative(phi(t, z), z) + Derivative(c(t, z), z)*Derivative(phi(t, z), t) - Derivative(b(t, z), t, z) - Derivative(c(t, z), t, z)",
+  "zz": "3 - exp(-2*phi(t, z))*Derivative(b(t, z), t)*Derivative(phi(t, z), t) - exp(-2*phi(t, z))*Derivative(b(t, z), z)**2 + exp(-2*phi(t, z))*Derivative(b(t, z), z)*Derivative(phi(t, z), z) - exp(-2*phi(t, z))*Derivative(b(t, z), (z, 2)) - exp(-2*phi(t, z))*Derivative(c(t, z), t)*Derivative(phi(t, z), t) - exp(-2*phi(t, z))*Derivative(c(t, z), z)**2 + exp(-2*phi(t, z))*Derivative(c(t, z), z)*Derivative(phi(t, z), z) - exp(-2*phi(t, z))*Derivative(c(t, z), (z, 2)) - exp(-2*phi(t, z))*Derivative(phi(t, z), (t, 2)) - exp(-2*phi(t, z))*Derivative(phi(t, z), (z, 2))",
+  "xx": "3 - exp(-2*phi(t, z))*Derivative(b(t, z), t)**2 - exp(-2*phi(t, z))*Derivative(b(t, z), t)*Derivative(c(t, z), t) - exp(-2*phi(t, z))*Derivative(b(t, z), (t, 2)) - exp(-2*phi(t, z))*Derivative(b(t, z), z)**2 - exp(-2*phi(t, z))*Derivative(b(t, z), z)*Derivative(c(t, z), z) - exp(-2*phi(t, z))*Derivative(b(t, z), (z, 2))",
+  "yy": "3 - exp(-2*phi(t, z))*Derivative(b(t, z), t)*Derivative(c(t, z), t) - exp(-2*phi(t, z))*Derivative(b(t, z), z)*Derivative(c(t, z), z) - exp(-2*phi(t, z))*Derivative(c(t, z), t)**2 - exp(-2*phi(t, z))*Derivative(c(t, z), (t, 2)) - exp(-2*phi(t, z))*Derivative(c(t, z), z)**2 - exp(-2*phi(t, z))*Derivative(c(t, z), (z, 2))",
+  "orbit_area_check": {
+    "Exx_plus_Eyy": "6 - exp(-2*phi(t, z))*Derivative(b(t, z), t)**2 - 2*exp(-2*phi(t, z))*Derivative(b(t, z), t)*Derivative(c(t, z), t) - exp(-2*phi(t, z))*Derivative(b(t, z), (t, 2)) - exp(-2*phi(t, z))*Derivative(b(t, z), z)**2 - 2*exp(-2*phi(t, z))*Derivative(b(t, z), z)*Derivative(c(t, z), z) - exp(-2*phi(t, z))*Derivative(b(t, z), (z, 2)) - exp(-2*phi(t, z))*Derivative(c(t, z), t)**2 - exp(-2*phi(t, z))*Derivative(c(t, z), (t, 2)) - exp(-2*phi(t, z))*Derivative(c(t, z), z)**2 - exp(-2*phi(t, z))*Derivative(c(t, z), (z, 2))",
+    "lap_flat_rho_over_rho": "Derivative(b(t, z), t)**2 + 2*Derivative(b(t, z), t)*Derivative(c(t, z), t) + Derivative(b(t, z), (t, 2)) + Derivative(b(t, z), z)**2 + 2*Derivative(b(t, z), z)*Derivative(c(t, z), z) + Derivative(b(t, z), (z, 2)) + Derivative(c(t, z), t)**2 + Derivative(c(t, z), (t, 2)) + Derivative(c(t, z), z)**2 + Derivative(c(t, z), (z, 2))"
+  },
+  "rho_identity_residual": "((6*exp(2*phi(t, z)) + Derivative(b(t, z), t)**2 + 2*Derivative(b(t, z), t)*Derivative(c(t, z), t) + Derivative(b(t, z), (t, 2)) + Derivative(b(t, z), z)**2 + 2*Derivative(b(t, z), z)*Derivative(c(t, z), z) + Derivative(b(t, z), (z, 2)) + Derivative(c(t, z), t)**2 + Derivative(c(t, z), (t, 2)) + Derivative(c(t, z), z)**2 + Derivative(c(t, z), (z, 2)))*exp(2*phi(t, z)) - 6*exp(2*phi(t, z)) + Derivative(b(t, z), t)**2 + 2*Derivative(b(t, z), t)*Derivative(c(t, z), t) + Derivative(b(t, z), (t, 2)) + Derivative(b(t, z), z)**2 + 2*Derivative(b(t, z), z)*Derivative(c(t, z), z) + Derivative(b(t, z), (z, 2)) + Derivative(c(t, z), t)**2 + Derivative(c(t, z), (t, 2)) + Derivative(c(t, z), z)**2 + Derivative(c(t, z), (z, 2)))*exp(-2*phi(t, z))",
+  "principal_symbols": {
+    "E_tt": "B*tau**2 + C*tau**2 + P*tau**2 + P*xi**2 + 3",
+    "E_zz": "B*xi**2 + C*xi**2 + P*tau**2 + P*xi**2 + 3",
+    "E_xx": "B*tau**2 + B*xi**2 + 3",
+    "E_yy": "C*tau**2 + C*xi**2 + 3",
+    "E_tz": "B*tau*xi + C*tau*xi",
+    "E_tt_plus_E_zz": "B*tau**2 + B*xi**2 + C*tau**2 + C*xi**2 + 2*P*tau**2 + 2*P*xi**2 + 6"
+  },
+  "symbol_matrix_ttzz_xx_yy": "Matrix([[2*tau**2 + 2*xi**2, tau**2 + xi**2, tau**2 + xi**2], [0, tau**2 + xi**2, 0], [0, 0, tau**2 + xi**2]])",
+  "det_ttzz_xx_yy": "2*(tau**2 + xi**2)**3",
+  "symbol_matrix_zz_xx_yy": "Matrix([[tau**2 + xi**2, xi**2, xi**2], [0, tau**2 + xi**2, 0], [0, 0, tau**2 + xi**2]])",
+  "det_zz_xx_yy": "(tau**2 + xi**2)**3"
+}

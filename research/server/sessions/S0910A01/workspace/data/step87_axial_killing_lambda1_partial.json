@@ -1,0 +1,112 @@
+{
+  "scope": "partial source-to-plus-receiver spectral response from the one-dimensional axial coexact lambda=1 channel h=(*dZ_A)\u2299(*dZ_B)",
+  "not_complete_coefficient": "does not include the rest of the lambda=1 eigenspace, higher eigenspaces, negative/zero modes, gauge projection, or Ozuch normalization of radial variables",
+  "node_frame_convention": "orientation-preserving geodesic frames on each S^2 factor; *dZ sign is + at N and - at S, so h sign is product of the two factor signs",
+  "node_signs": {
+    "NN": 1,
+    "NS": -1,
+    "SN": -1,
+    "SS": 1
+  },
+  "local_inputs": {
+    "source_difference_at_NN": "B_plus-B_minus = pi^2 for unnormalized h",
+    "plus_receiver_at_NN": "L_plus(h)=1 in the Step87 receiver Riemann convention",
+    "lambda_P": "1",
+    "norm_sq_on_quotient": "64*pi^2/9"
+  },
+  "partial_matrix": {
+    "NN": {
+      "NN": {
+        "node_sign_product": 1,
+        "normalized_axial_lambda1_partial_difference": "9/64",
+        "float": 0.140625
+      },
+      "NS": {
+        "node_sign_product": -1,
+        "normalized_axial_lambda1_partial_difference": "-9/64",
+        "float": -0.140625
+      },
+      "SN": {
+        "node_sign_product": -1,
+        "normalized_axial_lambda1_partial_difference": "-9/64",
+        "float": -0.140625
+      },
+      "SS": {
+        "node_sign_product": 1,
+        "normalized_axial_lambda1_partial_difference": "9/64",
+        "float": 0.140625
+      }
+    },
+    "NS": {
+      "NN": {
+        "node_sign_product": -1,
+        "normalized_axial_lambda1_partial_difference": "-9/64",
+        "float": -0.140625
+      },
+      "NS": {
+        "node_sign_product": 1,
+        "normalized_axial_lambda1_partial_difference": "9/64",
+        "float": 0.140625
+      },
+      "SN": {
+        "node_sign_product": 1,
+        "normalized_axial_lambda1_partial_difference": "9/64",
+        "float": 0.140625
+      },
+      "SS": {
+        "node_sign_product": -1,
+        "normalized_axial_lambda1_partial_difference": "-9/64",
+        "float": -0.140625
+      }
+    },
+    "SN": {
+      "NN": {
+        "node_sign_product": -1,
+        "normalized_axial_lambda1_partial_difference": "-9/64",
+        "float": -0.140625
+      },
+      "NS": {
+        "node_sign_product": 1,
+        "normalized_axial_lambda1_partial_difference": "9/64",
+        "float": 0.140625
+      },
+      "SN": {
+        "node_sign_product": 1,
+        "normalized_axial_lambda1_partial_difference": "9/64",
+        "float": 0.140625
+      },
+      "SS": {
+        "node_sign_product": -1,
+        "normalized_axial_lambda1_partial_difference": "-9/64",
+        "float": -0.140625
+      }
+    },
+    "SS": {
+      "NN": {
+        "node_sign_product": 1,
+        "normalized_axial_lambda1_partial_difference": "9/64",
+        "float": 0.140625
+      },
+      "NS": {
+        "node_sign_product": -1,
+        "normalized_axial_lambda1_partial_difference": "-9/64",
+        "float": -0.140625
+      },
+      "SN": {
+        "node_sign_product": -1,
+        "normalized_axial_lambda1_partial_difference": "-9/64",
+        "float": -0.140625
+      },
+      "SS": {
+        "node_sign_product": 1,
+        "normalized_axial_lambda1_partial_difference": "9/64",
+        "float": 0.140625
+      }
+    }
+  },
+  "interpretation": [
+    "The axial V0=0 channel alone gives a nonzero basis-independent one-dimensional contribution: +9/64 for same node-sign pairs and -9/64 for opposite node-sign pairs, in the present provisional normalization.",
+    "This demonstrates that the low-lying product resolvent contains chirality-sensitive propagation channels; cancellations, if present, must involve additional eigenspace components or the exact Ozuch receiver/source normalization rather than Step86 index matching.",
+    "The node signs are a convention-sensitive transport ledger; a complete calculation must transform source multipoles, receiver zeta directions, and local frames consistently."
+  ]
+}

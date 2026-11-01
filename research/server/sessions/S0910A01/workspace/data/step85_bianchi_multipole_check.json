@@ -1,0 +1,44 @@
+{
+  "scope": "flat leading Ozuch H^4 multipole gauge check only",
+  "numeric_divergence_check": {
+    "row_C2j": {
+      "max_scaled_divergence_norm_random": 1.3481600519334532e-13,
+      "mean_scaled_divergence_norm_random": 7.151202263005815e-15
+    },
+    "col_Cj2": {
+      "max_scaled_divergence_norm_random": 1.185244067699804e-13,
+      "mean_scaled_divergence_norm_random": 7.074585075748665e-15
+    }
+  },
+  "exact_symbolic_check": {
+    "row_C2j": {
+      "trace_zero": true,
+      "divergence_scaled_components": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "divergence_zero": true,
+      "laplacian_scaled_max_nonzero_repr": [],
+      "componentwise_harmonic": true
+    },
+    "col_Cj2": {
+      "trace_zero": true,
+      "divergence_scaled_components": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "divergence_zero": true,
+      "laplacian_scaled_max_nonzero_repr": [],
+      "componentwise_harmonic": true
+    }
+  },
+  "interpretation": {
+    "raw_H4_result": "The row and column H^4 leading sums are trace-free, divergence-free and harmonic on R^4 minus the origin; the flat P_e source is zero away from the singularity.",
+    "caution": "This does not mean every invariant compact-product source is TT. The actual S_j^epsilon in c_ij=L_i G_P^perp S_j^epsilon is a distributional/cutoff/gauge-corrected object produced by matching the ALE and orbifold expansions and projecting away global kernel modes.",
+    "use_for_next_step": "The flat multipole can be used as the singular model for deriving source moments; the next missing piece is the compact-product Bianchi correction and projection, not a pointwise trace-free assumption."
+  }
+}

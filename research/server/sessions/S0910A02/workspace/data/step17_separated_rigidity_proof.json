@@ -1,0 +1,93 @@
+{
+  "title": "Step 17 Separated Einstein Rigidity Theorem verification",
+  "theorem": "Exact Einstein Ric=g, cohomogeneity-one with S^1 x S^2 principal orbit and two S^2 bolts => Nariai/S^2 x S^2",
+  "symbolic_checks": {
+    "first_integral_zero_at_a_plus": "0",
+    "mu_form_equivalence": "0",
+    "mu_equals_1_solutions": [
+      "1"
+    ],
+    "A_when_a_plus_equals_1": [
+      "0"
+    ]
+  },
+  "linearization": {
+    "d_mu_dA_at_A_equals_0": "-4/3",
+    "interpretation": "mu(A) = 1 - (4/3)A + O(A^2), so any nonzero A gives a definite cone angle defect |1-mu| >= (4/3)A - O(A^2)"
+  },
+  "numerical_samples": [
+    {
+      "A": 0.0,
+      "kappa": 1.0,
+      "a_plus": 1.0,
+      "mu": 1.0,
+      "mu_minus_1": 0.0
+    },
+    {
+      "A": 0.001,
+      "kappa": 1.002,
+      "a_plus": 1.001998668441487,
+      "mu": 0.9986697695047232,
+      "mu_minus_1": -0.0013302304952768074
+    },
+    {
+      "A": 0.01,
+      "kappa": 1.02,
+      "a_plus": 1.0198684153570663,
+      "mu": 0.986969708042452,
+      "mu_minus_1": -0.013030291957548013
+    },
+    {
+      "A": 0.1,
+      "kappa": 1.2,
+      "a_plus": 1.1881943016134133,
+      "mu": 0.8912923504976509,
+      "mu_minus_1": -0.10870764950234912
+    },
+    {
+      "A": 0.5,
+      "kappa": 2.0,
+      "a_plus": 1.79128784747792,
+      "mu": 0.6747727084867521,
+      "mu_minus_1": -0.3252272915132479
+    },
+    {
+      "A": 1.0,
+      "kappa": 3.0,
+      "a_plus": 2.3722813232690143,
+      "mu": 0.553837913521567,
+      "mu_minus_1": -0.44616208647843303
+    },
+    {
+      "A": 4.0,
+      "kappa": 9.0,
+      "a_plus": 4.623475382979799,
+      "mu": 0.3346109688012336,
+      "mu_minus_1": -0.6653890311987665
+    },
+    {
+      "A": 9.0,
+      "kappa": 19.0,
+      "a_plus": 7.0,
+      "mu": 0.23809523809523808,
+      "mu_minus_1": -0.7619047619047619
+    },
+    {
+      "A": 100.0,
+      "kappa": 201.0,
+      "a_plus": 24.040782383616055,
+      "mu": 0.07839994797201028,
+      "mu_minus_1": -0.9216000520279897
+    },
+    {
+      "A": 10000.0,
+      "kappa": 20001.0,
+      "a_plus": 244.4535670285289,
+      "mu": 0.008131717388343875,
+      "mu_minus_1": -0.9918682826116562
+    }
+  ],
+  "mu_strictly_decreasing": true,
+  "conclusion": "Smooth closure at both bolts requires mu=1, hence a_+=1, hence A=0. The unique solution is S^2(1)xS^2(1) with Vol=16 pi^2. This is the classical fact that Euclidean Schwarzschild-de Sitter cannot simultaneously smooth both horizons (surface gravity ratio != 1 for A>0).",
+  "scope": "Applies only to the separated cohomogeneity-one class with two S^2 bolts. Does not address general toric polygons, general metrics, or n>=5."
+}

@@ -1,0 +1,207 @@
+{
+  "scalar_decoupling": {
+    "all_compositions": {
+      "omega_1^+ circ omega_1^-": {
+        "factor_trace_1": -2.0,
+        "factor_trace_2": 2.0,
+        "is_factor_traceless": false,
+        "matrix_diag": [
+          -1.0,
+          -1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "omega_1^+ circ omega_2^-": {
+        "factor_trace_1": 0.0,
+        "factor_trace_2": 0.0,
+        "is_factor_traceless": true,
+        "matrix_diag": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "omega_1^+ circ omega_3^-": {
+        "factor_trace_1": 0.0,
+        "factor_trace_2": 0.0,
+        "is_factor_traceless": true,
+        "matrix_diag": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "omega_2^+ circ omega_1^-": {
+        "factor_trace_1": 0.0,
+        "factor_trace_2": 0.0,
+        "is_factor_traceless": true,
+        "matrix_diag": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "omega_2^+ circ omega_2^-": {
+        "factor_trace_1": 0.0,
+        "factor_trace_2": 0.0,
+        "is_factor_traceless": true,
+        "matrix_diag": [
+          -1.0,
+          1.0,
+          -1.0,
+          1.0
+        ]
+      },
+      "omega_2^+ circ omega_3^-": {
+        "factor_trace_1": 0.0,
+        "factor_trace_2": 0.0,
+        "is_factor_traceless": true,
+        "matrix_diag": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "omega_3^+ circ omega_1^-": {
+        "factor_trace_1": 0.0,
+        "factor_trace_2": 0.0,
+        "is_factor_traceless": true,
+        "matrix_diag": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "omega_3^+ circ omega_2^-": {
+        "factor_trace_1": 0.0,
+        "factor_trace_2": 0.0,
+        "is_factor_traceless": true,
+        "matrix_diag": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "omega_3^+ circ omega_3^-": {
+        "factor_trace_1": 0.0,
+        "factor_trace_2": 0.0,
+        "is_factor_traceless": true,
+        "matrix_diag": [
+          -1.0,
+          1.0,
+          1.0,
+          -1.0
+        ]
+      }
+    },
+    "in_kernel_pairs_factor_traceless": true,
+    "out_of_kernel_omega1_circ_omega1": {
+      "factor_trace_1": -2.0,
+      "factor_trace_2": 2.0,
+      "is_factor_traceless": false,
+      "matrix_diag": [
+        -1.0,
+        -1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "omega1_product_is_g1_minus_g2": {
+      "matrix": [
+        [
+          -1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "equals_neg_g1_minus_g2": true
+    }
+  },
+  "H4_factor_tracelessness": {
+    "num_angles_tested": 37,
+    "max_factor_trace": 0.0,
+    "is_factor_traceless_all_angles": true
+  },
+  "r0_control_vanishing_theorem": {
+    "theorem": "On (S\u00b2\u00d7S\u00b2)/Z\u2082 with Ric=\u039bg, \u039b>0, for any EH kernel direction \u03b6 \u2208 ker R^\u03b5 at any A\u2081 node and any chirality \u03b5, the Ozuch second obstruction coefficients satisfy \u03bc_k(\u03b6^\u03b5) = 0 for k=1,2,3.",
+    "proof_step_1": {
+      "claim": "\u03bc_k = 0 for compatible (K\u00e4hler) EH insertions",
+      "argument": "The degree-4 del Pezzo surface Bl\u2084CP\u00b2 admits KE metrics with Ric = \u039bg (Tian 1990, Siu 1988). By LeBrun-Singer/Topiwala/Ozuch theory, these approach the product orbifold along nondegenerate comparable-scale sequences with all EH compatible (K\u00e4hler). Ozuch's necessary conditions (eq.(23), t\u00b2\u03bc_k = O(t^{5/2})) at comparable scales give |\u03bc_k| \u2264 Ct^{1/2}. Since \u03bc_k is t-independent (determined by orbifold geometry and \u03b6 only), taking t\u21920 forces \u03bc_k = 0."
+    },
+    "proof_step_2": {
+      "claim": "\u03bc_k for reversed EH = \u03bc_k for compatible EH",
+      "argument": "The reflection c(z,w)=(z\u0304,w) is an isometry of the product orbifold that (i) fixes every A\u2081 node, (ii) preserves the local orbifold chart, (iii) exchanges \u039b\u207a\u2194\u039b\u207b. Since R\u207a=R\u207b on the product and \u2207Rm\u22610, the local Ozuch source terms (\u039b\u00b7eh, Q^(2)(h\u2082,h\u2082), H\u2082, H\u2084) are all c-equivariant. Therefore \u03bc_k(\u03b6\u207b) = \u03bc_k(c_*\u03b6\u207a) = \u03bc_k(\u03b6\u207a) = 0."
+    },
+    "proof_step_3": {
+      "claim": "\u03bc_k = 0 at every node",
+      "argument": "Since \u2207Rm\u22610 on the product orbifold, the local H\u2082 and H\u2084 are the same algebraic object at all four nodes. Combined with D\u2088 symmetry permuting nodes, \u03bc_k is independent of the node."
+    },
+    "conclusion": "\u03bc_k = 0 (k=1,2,3) at every node, for both chiralities, in every pattern. The local Ozuch second obstruction system is trivially satisfied. This does NOT require computing the Biq16 formula \u2014 it follows from the existence of the r=0 KE control.",
+    "strength": "This is stronger than a direct Biq16 computation: it proves vanishing from the EXISTENCE of a KE desingularization, not from algebraic manipulation of curvature formulas. A01's planned Biq16 computation would serve as an independent algebraic cross-check."
+  },
+  "combined_finding": {
+    "statement": "The product orbifold (S\u00b2\u00d7S\u00b2)/Z\u2082 passes ALL currently controlled Ozuch finite-dimensional obstructions for every chirality pattern r=0,1,2,3,4. Specifically:",
+    "first_obstruction": "\u03bb_k = 0 for all in-kernel \u03b6 (rank-one R, 2D kernel)",
+    "second_obstruction_mu1": "\u03bc\u2081 = 0 (rank-one determinant = 0, Lemma 2.14)",
+    "second_obstruction_mu2_mu3": "\u03bc\u2082 = \u03bc\u2083 = 0 (r=0 KE control + c-symmetry)",
+    "scalar_projections": "\u03bd_l = 0 (A-symmetry eliminates scalar kernel modes, A01 Thm 2.1)",
+    "inter_node_interaction": "O(t\u00b3) << O(t^{5/2}) at comparable scales, below Ozuch remainder",
+    "pattern_dependence": "The first pattern-dependent effect is the mixed-chirality inter-node kernel block at order t\u00b3, which is currently invisible to Ozuch's finite-dimensional system.",
+    "consequence_for_construction": "With all finite-dimensional obstructions cleared and the scalar kernel eliminated by A-symmetry (A01 Thm 2.1), the remaining problem is purely analytical: a weighted inverse estimate on the positive-definite non-scalar sector (gap \u2265 \u039b, A01 Cor 3.2) plus nonlinear contraction. If this succeeds, it would produce an exact positive Einstein metric on every mixed-chirality resolution of the product orbifold.",
+    "what_this_does_NOT_prove": "This does not prove P\u2084\u207a or Yau-26. It establishes that the product quotient is an unobstructed candidate for Einstein desingularization in every chirality pattern. Whether the analytical estimates close is a separate PDE problem. And global Einstein existence (far from this orbifold degeneration) remains unaddressed."
+  },
+  "A_symmetry_check": {
+    "u1_g1": {
+      "l1_plus_l2": 1,
+      "A_parity": "odd",
+      "eliminated": true
+    },
+    "u1_g2": {
+      "l1_plus_l2": 1,
+      "A_parity": "odd",
+      "eliminated": true
+    },
+    "u2_g1": {
+      "l1_plus_l2": 1,
+      "A_parity": "odd",
+      "eliminated": true
+    },
+    "u2_g2": {
+      "l1_plus_l2": 1,
+      "A_parity": "odd",
+      "eliminated": true
+    },
+    "g1_minus_g2": {
+      "l1_plus_l2": 0,
+      "A_parity": "even",
+      "eliminated": false,
+      "role": "negative mode P(g1-g2)=-\u039b(g1-g2), survives A-restriction"
+    }
+  }
+}

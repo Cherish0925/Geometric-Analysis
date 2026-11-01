@@ -1,0 +1,17 @@
+{
+  "title": "Step 20 global flux-energy identity",
+  "identities": {
+    "v_flux_equals_rod_flux": "On each rod, the outward flux of w*grad v equals the rod flux Phi_i",
+    "stream_function": "psi defined by d(psi) = *(w dv); psi constant on rods with jumps = Phi_i",
+    "energy_of_psi": "int |grad psi|^2 = int w^2 |grad v|^2 = 2 int w^2 + 4 int K_B w^2",
+    "K_B_identity": "int K_B w = int w (from the eigenvalue equation)"
+  },
+  "rectangle_square_check": {
+    "int_w2": 2.4674011002723395,
+    "int_grad_psi2": 4.934802200544679,
+    "total_flux": 8.0,
+    "energy_to_flux2_ratio": 0.07710628438351061
+  },
+  "modulus_path": "A conformal modulus lower bound for the alternating-rod polygon would give a rigorous BUILD theorem: if the modulus is bounded below uniformly in m, then total flux >= c > 0.",
+  "open": "The conformal modulus of the m-gon with alternating Dirichlet BCs as m -> infinity must be computed or estimated."
+}

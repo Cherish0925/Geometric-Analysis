@@ -1,0 +1,24 @@
+{
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "compile": {
+    "ok": true,
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\"caption\":\"\",\"data\":\"`GeometryInterface`: universes `u`, `v` only occur together. This usually means there is a `max` expression in the type where none of these universes appear on their own.\\n\\nNote: This linter can be disabled with `set_option linter.checkUnivs false`\",\"endPos\":{\"column\":49,\"line\":30},\"fileName\":\"/qiushi-env/tmp/qiushi-yau26-lean-gqmrvobg/Audit.lean\",\"isSilent\":false,\"keepFullRange\":false,\"kind\":\"linter.checkUnivs\",\"pos\":{\"column\":0,\"line\":23},\"severity\":\"warning\"}\n{\"caption\":\"\",\"data\":\"'Yau26Step71.yau26Statement_unfold' depends on axioms: [propext, Classical.choice, Quot.sound]\",\"endPos\":{\"column\":6,\"line\":94},\"fileName\":\"/qiushi-env/tmp/qiushi-yau26-lean-gqmrvobg/Audit.lean\",\"isSilent\":false,\"keepFullRange\":false,\"kind\":\"[anonymous]\",\"pos\":{\"column\":0,\"line\":94},\"severity\":\"information\"}\n"
+  },
+  "declaration": "Yau26Step71.yau26Statement_unfold",
+  "observed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "rejected_axioms": [],
+  "scope": "named Lean theorem only; mathematical statement correspondence and imported artifact trust remain separate",
+  "source_sha256": "ec254233f461b92f3910a49e20283393a751983f7f1d5169369f7493cb36ba81",
+  "status": "dependency_checked",
+  "verification": "fresh_process_compilation_and_transitive_axiom_policy"
+}

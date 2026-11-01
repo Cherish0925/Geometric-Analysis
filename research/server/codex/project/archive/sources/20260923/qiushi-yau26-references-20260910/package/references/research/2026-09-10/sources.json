@@ -1,0 +1,58 @@
+{
+  "schema": "qiushi.research-reference-sources.v1",
+  "edition": "2026-09-10",
+  "title": "Yau26 Research Dossier",
+  "role": "revisable_research_reference",
+  "literature_cutoff": {
+    "date": "2026-09-10",
+    "basis": "declared_in_supplied_dossier",
+    "automatic_refresh": false
+  },
+  "files": [
+    {
+      "path": "Yau26_Research_Dossier.tex",
+      "source_name": "Yau26_Research_Dossier(2).tex",
+      "source_kind": "user_supplied_research_dossier",
+      "bytes": 78908,
+      "sha256": "d51a33125ce87b40b30c7da2cae42fce32aed787a8b9ed9828669f9324430884",
+      "transformation": "none; renamed without changing bytes"
+    },
+    {
+      "path": "Yau26_Research_Dossier.pdf",
+      "source_kind": "locally_compiled_derivative",
+      "derived_from": "Yau26_Research_Dossier.tex",
+      "bytes": 606603,
+      "sha256": "89dc6805149a639c62dd690c3883721a57c1e0d6b8f95923d497bc285b949224",
+      "pages": 27,
+      "build": {
+        "compiler": "XeTeX 0.999993 / TeX Live 2022/dev/Debian",
+        "flags": ["-no-shell-escape", "-interaction=nonstopmode", "-halt-on-error"],
+        "passes": 3,
+        "unresolved_references": false,
+        "missing_character_warnings": false,
+        "font_warning": "FandolSong-Regular does not contain requested Script Default"
+      }
+    },
+    {
+      "path": "two_major_open_problem_list.pdf",
+      "source_name": "two_major_open_problem_list.pdf",
+      "source_kind": "user_supplied_recompiled_problem_list_with_commentary",
+      "bytes": 985644,
+      "sha256": "5be4d0e1c6d7a17c2cbe7a01028610290d6115a631d3dd425ce1acbb3fa20531",
+      "pages": 268,
+      "problem_26_pdf_page": 77,
+      "problem_26_printed_page": 65,
+      "historical_original_authenticated": false,
+      "transformation": "none"
+    }
+  ],
+  "verification": {
+    "original_file_bytes_preserved": true,
+    "source_problem_page_text_and_location_checked": true,
+    "dossier_compiled_from_attached_tex": true,
+    "all_cited_papers_independently_reviewed_this_publication": false,
+    "mathematical_proofs_independently_verified_this_publication": false,
+    "historical_1982_original_word_for_word_comparison": "pending",
+    "additional_open_items": "dossier section 12"
+  }
+}

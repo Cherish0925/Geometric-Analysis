@@ -1,0 +1,97 @@
+{
+  "step": 71,
+  "checks": [
+    {
+      "name": "defect_uses_step62_J_weight",
+      "pass": true,
+      "detail": "J_p retains a^(p-2), not fixed a^2"
+    },
+    {
+      "name": "defect_uses_step62_z_weight",
+      "pass": true,
+      "detail": "Sobolev variable retains a^((p-1)/2)"
+    },
+    {
+      "name": "defect_large_p_controls_aE_transition",
+      "pass": true,
+      "detail": "large-p limit sees aE on 0<a<1"
+    },
+    {
+      "name": "defect_distinguishes_radial_and_sobolev",
+      "pass": true,
+      "detail": "Q_p not confused with full Sobolev gradient"
+    },
+    {
+      "name": "defect_three_factor_identity_step62",
+      "pass": true,
+      "detail": "three-factor identity matches Step62 weights"
+    },
+    {
+      "name": "defect_no_sup_time_route",
+      "pass": true,
+      "detail": "sup-time recurrence removed"
+    },
+    {
+      "name": "defect_retains_Lk_three_halves",
+      "pass": true,
+      "detail": "Moser product retains L_k^(3/2)"
+    },
+    {
+      "name": "defect_integrated_seed",
+      "pass": true,
+      "detail": "time-integrated seed used"
+    },
+    {
+      "name": "defect_final_endpoint",
+      "pass": true,
+      "detail": "final endpoint exponent restored by substituting seed"
+    },
+    {
+      "name": "support_complex_hypothesis_explicit",
+      "pass": true,
+      "detail": "Noether argument scoped to complex IL blocks"
+    },
+    {
+      "name": "support_noether_upper_c2",
+      "pass": true,
+      "detail": "Noether gives c2 <= 5K^2+36"
+    },
+    {
+      "name": "support_wrong_noether_removed",
+      "pass": true,
+      "detail": "old lower-bound implication removed"
+    },
+    {
+      "name": "support_volume_before_qOA",
+      "pass": true,
+      "detail": "volume upper bound obtained before using q_i=O(A_i)"
+    },
+    {
+      "name": "support_no_duplicate_budget",
+      "pass": true,
+      "detail": "duplicate old budget block removed"
+    },
+    {
+      "name": "support_shifted_budget",
+      "pass": true,
+      "detail": "shifted curvature budget retained"
+    },
+    {
+      "name": "assembly_mentions_step62_weights",
+      "pass": true,
+      "detail": "assembly records corrected Moser hierarchy"
+    },
+    {
+      "name": "assembly_mentions_Lk_factor",
+      "pass": true,
+      "detail": "assembly records corrected time arithmetic"
+    },
+    {
+      "name": "assembly_not_sup_time",
+      "pass": true,
+      "detail": "assembly does not inherit superseded sup-time route"
+    }
+  ],
+  "passed": 18,
+  "total": 18
+}

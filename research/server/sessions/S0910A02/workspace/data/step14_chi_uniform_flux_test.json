@@ -1,0 +1,152 @@
+{
+  "title": "Step 14: numerical tests for chi-uniform fork",
+  "known_examples": {
+    "S4": {
+      "chi": 2,
+      "m_corners": 2,
+      "m_rods": 2,
+      "GB_int_KB": 3.141592653589793,
+      "KB_constant": 0.3333333333333333,
+      "rods": [
+        {
+          "name": "S4_rod",
+          "KB_edge": 0.3333333333333333,
+          "omega": 0.5773502691896258,
+          "rod_length": 5.441398092702652,
+          "rod_flux": 5.999999999999999,
+          "fixed_sphere_area": 37.69911184307751
+        },
+        {
+          "name": "S4_rod",
+          "KB_edge": 0.3333333333333333,
+          "omega": 0.5773502691896258,
+          "rod_length": 5.441398092702652,
+          "rod_flux": 5.999999999999999,
+          "fixed_sphere_area": 37.69911184307751
+        }
+      ],
+      "total_flux": 12,
+      "int_w": 6,
+      "Vol4": 236.8705056261446,
+      "orbit_space": "spherical lune, S^2(sqrt(3)), area = 3*pi/2"
+    },
+    "S2xS2": {
+      "chi": 4,
+      "m_corners": 4,
+      "m_rods": 4,
+      "GB_int_KB": 0,
+      "KB_constant": 0,
+      "rods": [
+        {
+          "name": "S2xS2_rod",
+          "KB_edge": 0,
+          "omega": 1.0,
+          "rod_length": 3.141592653589793,
+          "rod_flux": 2.0,
+          "fixed_sphere_area": 12.566370614359172
+        },
+        {
+          "name": "S2xS2_rod",
+          "KB_edge": 0,
+          "omega": 1.0,
+          "rod_length": 3.141592653589793,
+          "rod_flux": 2.0,
+          "fixed_sphere_area": 12.566370614359172
+        },
+        {
+          "name": "S2xS2_rod",
+          "KB_edge": 0,
+          "omega": 1.0,
+          "rod_length": 3.141592653589793,
+          "rod_flux": 2.0,
+          "fixed_sphere_area": 12.566370614359172
+        },
+        {
+          "name": "S2xS2_rod",
+          "KB_edge": 0,
+          "omega": 1.0,
+          "rod_length": 3.141592653589793,
+          "rod_flux": 2.0,
+          "fixed_sphere_area": 12.566370614359172
+        }
+      ],
+      "total_flux": 8,
+      "int_w": 4,
+      "Vol4": 157.91367041742973,
+      "orbit_space": "flat square [0,pi]^2, area = pi^2"
+    }
+  },
+  "flux_vs_chi_uniform_KB": [
+    {
+      "chi": 2,
+      "m_rods": 2,
+      "avg_KB_at_area_10": 0.3141592653589793,
+      "avg_rod_flux_if_uniform": 5.380951608546158,
+      "total_flux_estimate": 10.761903217092316,
+      "Vol_estimate": 212.4314547110241,
+      "Bishop_ceiling": 236.8705056261446,
+      "violates_Bishop": false
+    },
+    {
+      "chi": 3,
+      "m_rods": 3,
+      "avg_KB_at_area_10": 0.15707963267948966,
+      "avg_rod_flux_if_uniform": 2.9161289188324897,
+      "total_flux_estimate": 8.748386756497469,
+      "Vol_estimate": 172.68623286871855,
+      "Bishop_ceiling": 236.8705056261446,
+      "violates_Bishop": false
+    },
+    {
+      "chi": 4,
+      "m_rods": 4,
+      "avg_KB_at_area_10": 0.0,
+      "avg_rod_flux_if_uniform": 2.0,
+      "total_flux_estimate": 8.0,
+      "Vol_estimate": 157.91367041742973,
+      "Bishop_ceiling": 236.8705056261446,
+      "violates_Bishop": false
+    },
+    {
+      "chi": 5,
+      "m_rods": 5,
+      "avg_KB_at_area_10": -0.15707963267948966,
+      "avg_rod_flux_if_uniform": 1.5218855527786235,
+      "total_flux_estimate": 7.609427763893118,
+      "Vol_estimate": 150.20408349658214,
+      "Bishop_ceiling": 236.8705056261446,
+      "violates_Bishop": false
+    },
+    {
+      "chi": 6,
+      "m_rods": 6,
+      "avg_KB_at_area_10": -0.3141592653589793,
+      "avg_rod_flux_if_uniform": 1.2282609098099249,
+      "total_flux_estimate": 7.369565458859549,
+      "Vol_estimate": 145.46939137375264,
+      "Bishop_ceiling": 236.8705056261446,
+      "violates_Bishop": false
+    },
+    {
+      "chi": 8,
+      "m_rods": 8,
+      "avg_KB_at_area_10": -0.6283185307179586,
+      "avg_rod_flux_if_uniform": 0.8862745517116444,
+      "total_flux_estimate": 7.090196413693155,
+      "Vol_estimate": 139.95486745834788,
+      "Bishop_ceiling": 236.8705056261446,
+      "violates_Bishop": false
+    }
+  ],
+  "uniform_KB_large_chi_analysis": {
+    "formula": "For uniform K_B = (2pi - pi*chi/2)/Area on all edges:",
+    "total_flux": "chi * 2 / (1 - 2*KB) = chi * 2 * Area / (Area + pi*chi - 4*pi)",
+    "large_chi_limit": "-> 2*Area/pi (BOUNDED, not zero!)",
+    "interpretation": "For uniform edge K_B consistent with Gauss-Bonnet, total flux approaches 2*Area/pi as chi -> infinity. With Area >= 9.08 (Faber-Krahn), total flux >= ~5.78. Vol >= 2*pi^2 * 5.78 = 114. This is a CHI-UNIFORM LOWER BOUND if the uniform-KB model is representative.",
+    "CRITICAL_CAVEAT": "This assumes K_B is the SAME constant on all edges. In reality, K_B varies, and the edge equation coefficients can differ across rods. The traceless condition constrains this variation. The question is whether nonuniform K_B can beat the uniform bound.",
+    "Area_FK_delta0": 9.084240829329445,
+    "total_flux_limit_at_FK_area": 5.7832073289000006,
+    "Vol_lower_limit": 114.15593701144735
+  },
+  "MAIN_FINDING": "Under the uniform-KB idealization, total flux -> 2*Area/pi > 0 as chi -> infinity, giving a CHI-UNIFORM volume lower bound. This is because negative K_B shrinks each rod's flux by factor 1/(1-2*KB), but there are chi rods, and the product chi/(1-2*KB) stabilizes because GB forces KB ~ -pi*chi/(2*Area). The fork therefore TILTS TOWARD BUILD (gap exists) under uniform KB. The remaining question is whether NONUNIFORM K_B can beat this by concentrating negative curvature at rod edges while keeping positive curvature in the interior."
+}

@@ -1,0 +1,251 @@
+{
+  "R3_check": {
+    "max_error": 1.3322676295501878e-15,
+    "R3_range": [
+      -4.5,
+      -4.45912597792919e-05
+    ],
+    "note": "R^{(3)} is NOT constant for antisymmetric oscillation"
+  },
+  "antisym_not_constant": {
+    "R3_average": -2.2545,
+    "is_constant": false,
+    "note": "Antisymmetric oscillation gives non-constant R^{(3)}"
+  },
+  "fiber_periodic_search": [
+    {
+      "B": 0.5,
+      "u0": 1.6570410109637732,
+      "periodicity_residual": 0.0,
+      "found_periodic": "True",
+      "R3_range": [
+        -6.000000000000001,
+        -5.999999999999998
+      ],
+      "R3_std": 4.815860319143169e-16,
+      "koiso_S_prime": {
+        "theta_range": [
+          -0.9778274794229964,
+          0.7073860770176181
+        ],
+        "x_range": [
+          -0.4999801817605123,
+          0.5
+        ],
+        "y_range": [
+          1.9366819558366803,
+          3.9263772006389392
+        ],
+        "trace_range": [
+          2.999999999999999,
+          3.0000000000000013
+        ],
+        "trace_should_be": 3.0
+      },
+      "Ric_h_plus_2h": {
+        "max_op_norm": 2.9263772006389392,
+        "min_op_norm": 0.9366819558366803,
+        "note": "If < 2/3 everywhere, Preissmann contradiction"
+      }
+    },
+    {
+      "B": 1.0,
+      "u0": 1.5608673626091063,
+      "periodicity_residual": 2.220446049250313e-16,
+      "found_periodic": "True",
+      "R3_range": [
+        -6.000000000000002,
+        -5.999999999999998
+      ],
+      "R3_std": 5.343852989089485e-16,
+      "koiso_S_prime": {
+        "theta_range": [
+          -2.0900281395800455,
+          0.9936454900646283
+        ],
+        "x_range": [
+          -0.9999405453797272,
+          1.2499967009385138
+        ],
+        "y_range": [
+          0.8030565854882554,
+          4.72447539953324
+        ],
+        "trace_range": [
+          2.9999999999999982,
+          3.0000000000000013
+        ],
+        "trace_should_be": 3.0
+      },
+      "Ric_h_plus_2h": {
+        "max_op_norm": 3.72447539953324,
+        "min_op_norm": 0.012030277318511473,
+        "note": "If < 2/3 everywhere, Preissmann contradiction"
+      }
+    },
+    {
+      "B": 1.5,
+      "u0": 1.4287525052091643,
+      "periodicity_residual": 2.220446049250313e-16,
+      "found_periodic": "True",
+      "R3_range": [
+        -6.000000000000002,
+        -5.999999999999998
+      ],
+      "R3_std": 5.904883742358415e-16,
+      "koiso_S_prime": {
+        "theta_range": [
+          -3.209344973810728,
+          0.9687637540928504
+        ],
+        "x_range": [
+          -1.499881090857647,
+          2.499981826212747
+        ],
+        "y_range": [
+          -0.28885210961390273,
+          5.442586598086208
+        ],
+        "trace_range": [
+          2.9999999999999982,
+          3.0000000000000013
+        ],
+        "trace_should_be": 3.0
+      },
+      "Ric_h_plus_2h": {
+        "max_op_norm": 4.442586598086208,
+        "min_op_norm": 0.1989811431507409,
+        "note": "If < 2/3 everywhere, Preissmann contradiction"
+      }
+    },
+    {
+      "B": 2.0,
+      "u0": 1.2023365775798478,
+      "periodicity_residual": 5.10702591327572e-15,
+      "found_periodic": "True",
+      "R3_range": [
+        -6.0000000000000036,
+        -5.999999999999997
+      ],
+      "R3_std": 6.799062365205315e-16,
+      "koiso_S_prime": {
+        "theta_range": [
+          -4.242227409018098,
+          0.8636276296259293
+        ],
+        "x_range": [
+          -1.9998018181942694,
+          4.249940026365431
+        ],
+        "y_range": [
+          -1.227424676104218,
+          6.112722305466565
+        ],
+        "trace_range": [
+          2.999999999999998,
+          3.0000000000000018
+        ],
+        "trace_should_be": 3.0
+      },
+      "Ric_h_plus_2h": {
+        "max_op_norm": 5.242227409018098,
+        "min_op_norm": 0.8065248062366446,
+        "note": "If < 2/3 everywhere, Preissmann contradiction"
+      }
+    }
+  ],
+  "collar_evolution": [
+    {
+      "B": 0.5,
+      "E00_at_center": {
+        "max_abs": 59322.668013332644,
+        "note": "Should be 0 if R^{(3)}=-6 everywhere"
+      },
+      "trace_Sp": {
+        "range": [
+          -59319.668013332644,
+          17.626836003345474
+        ],
+        "should_be": 3.0
+      },
+      "S_prime_eigenvalues_at_th0": {
+        "a_tt": -29663.168888685403,
+        "b_tt": -29660.833956470953,
+        "c_tt": 4.334831823709629
+      },
+      "anisotropy": {
+        "max_std_across_theta": 13984.845058118935,
+        "mean_std_across_theta": 238.75296962019297
+      }
+    },
+    {
+      "B": 1.0,
+      "E00_at_center": {
+        "max_abs": 54049.532379672106,
+        "note": "Should be 0 if R^{(3)}=-6 everywhere"
+      },
+      "trace_Sp": {
+        "range": [
+          -54046.532379672106,
+          16.412365953579965
+        ],
+        "should_be": 3.0
+      },
+      "S_prime_eigenvalues_at_th0": {
+        "a_tt": -27028.24588001505,
+        "b_tt": -27023.765788248886,
+        "c_tt": 5.47928859182873
+      },
+      "anisotropy": {
+        "max_std_across_theta": 12742.764421806462,
+        "mean_std_across_theta": 214.8241109721549
+      }
+    },
+    {
+      "B": 1.5,
+      "E00_at_center": {
+        "max_abs": 44804.31557776032,
+        "note": "Should be 0 if R^{(3)}=-6 everywhere"
+      },
+      "trace_Sp": {
+        "range": [
+          -44801.31557776032,
+          14.501826159911419
+        ],
+        "should_be": 3.0
+      },
+      "S_prime_eigenvalues_at_th0": {
+        "a_tt": -22406.841931111623,
+        "b_tt": -22400.656734704775,
+        "c_tt": 6.183088056081425
+      },
+      "anisotropy": {
+        "max_std_across_theta": 10564.143755644762,
+        "mean_std_across_theta": 173.45505818381554
+      }
+    },
+    {
+      "B": 2.0,
+      "E00_at_center": {
+        "max_abs": 30282.114408374262,
+        "note": "Should be 0 if R^{(3)}=-6 everywhere"
+      },
+      "trace_Sp": {
+        "range": [
+          -30279.114408374262,
+          11.902881052365839
+        ],
+        "should_be": 3.0
+      },
+      "S_prime_eigenvalues_at_th0": {
+        "a_tt": -15146.016026752872,
+        "b_tt": -15139.055196227104,
+        "c_tt": 5.956814605713058
+      },
+      "anisotropy": {
+        "max_std_across_theta": 7141.068378258724,
+        "mean_std_across_theta": 110.48664458695254
+      }
+    }
+  ]
+}

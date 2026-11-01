@@ -1,0 +1,488 @@
+{
+  "sign_correction": {
+    "correct_equation": "-Delta_B p = (1 - K_B) p,  -Delta_B q = (1 - K_B) q",
+    "wrong_equation_step14": "-Delta_B p = (K_B - 1) p",
+    "cross_gradient": "<grad p, grad q> = -K_B pq",
+    "anchor_S2xS2": "-Delta(sin x) = sin x = (1 - 0)(sin x). Correct.",
+    "derivation": "Besse doubly-warped Ricci for 2 one-dim fibers over 2D base; trace of horizontal equation gives gamma=K_B-1; substitution gives <grad p,grad q>/(pq) = -K_B. Checked on S^4 (K_B=1/3) and S^2xS^2 (K_B=0).",
+    "crosscheck_eigenvalue": "Delta(pq) = -(1-K_B)pq - (1-K_B)pq - 2K_B pq = -2pq. Hence -Delta w = 2w. Consistent with eigenvalue equation."
+  },
+  "green_identity_corrected": {
+    "derivation": "Green(p-eq * q): int <grad p, grad q> + int (Delta p)q = int_bdry q d_nu p. Substituting: -int K_B w - int (1-K_B)w = -int w. Boundary: -Phi_p. Hence Phi_p = int w.",
+    "result": "Phi_p = Phi_q = int_Omega w dA. Total flux = 2 int w.",
+    "key_consequence": "K_B cancels completely. There is NO interior weighted-curvature identity. The 'int K_B w = int w' from Step 20 was an artifact of the wrong sign in the individual equations.",
+    "anchor_S2xS2": "K_B=0, int w = 4. Phi_p (p-rods) = int sin y dy [x=0] + int sin y dy [x=pi] = 2 + 2 = 4 = int w. CHECK."
+  },
+  "rod_saturation": {
+    "Q": "sin(sqrt(1+2A) s)/sqrt(1+2A)",
+    "L": "pi/sqrt(1+2A)",
+    "Phi_i": "2/(2*A + 1)",
+    "G_i": "2*A/(2*A + 1)",
+    "Phi_equals_2minus2G": true,
+    "G_limit_A_inf": "1",
+    "Phi_limit_A_inf": "0",
+    "conclusion": "Single constant-curvature rod: G_i = 2A/(1+2A) -> 1, Phi_i -> 0. Rod saturation IS possible at the single-rod level."
+  },
+  "alpha_family_flux_data": {
+    "alpha_1.25": [
+      {
+        "m": 4,
+        "k": 1,
+        "chi": 4,
+        "A_m": 5.657,
+        "Phi_per_rod": 0.16242061,
+        "G_per_rod": 0.9187897,
+        "total_flux": 0.649682,
+        "int_w": 0.324841,
+        "Vol_4": 12.8242
+      },
+      {
+        "m": 6,
+        "k": 2,
+        "chi": 6,
+        "A_m": 9.391,
+        "Phi_per_rod": 0.10110705,
+        "G_per_rod": 0.94944648,
+        "total_flux": 0.606642,
+        "int_w": 0.303321,
+        "Vol_4": 11.9746
+      },
+      {
+        "m": 8,
+        "k": 3,
+        "chi": 8,
+        "A_m": 13.454,
+        "Phi_per_rod": 0.07166228,
+        "G_per_rod": 0.96416886,
+        "total_flux": 0.573298,
+        "int_w": 0.286649,
+        "Vol_4": 11.3165
+      },
+      {
+        "m": 10,
+        "k": 4,
+        "chi": 10,
+        "A_m": 17.783,
+        "Phi_per_rod": 0.05469623,
+        "G_per_rod": 0.97265188,
+        "total_flux": 0.546962,
+        "int_w": 0.273481,
+        "Vol_4": 10.7966
+      },
+      {
+        "m": 20,
+        "k": 9,
+        "chi": 20,
+        "A_m": 42.295,
+        "Phi_per_rod": 0.0233673,
+        "G_per_rod": 0.98831635,
+        "total_flux": 0.467346,
+        "int_w": 0.233673,
+        "Vol_4": 9.225
+      },
+      {
+        "m": 50,
+        "k": 24,
+        "chi": 50,
+        "A_m": 132.957,
+        "Phi_per_rod": 0.00749303,
+        "G_per_rod": 0.99625349,
+        "total_flux": 0.374651,
+        "int_w": 0.187326,
+        "Vol_4": 7.3953
+      },
+      {
+        "m": 100,
+        "k": 49,
+        "chi": 100,
+        "A_m": 316.228,
+        "Phi_per_rod": 0.00315729,
+        "G_per_rod": 0.99842136,
+        "total_flux": 0.315729,
+        "int_w": 0.157864,
+        "Vol_4": 6.2322
+      },
+      {
+        "m": 200,
+        "k": 99,
+        "chi": 200,
+        "A_m": 752.121,
+        "Phi_per_rod": 0.00132869,
+        "G_per_rod": 0.99933565,
+        "total_flux": 0.265738,
+        "int_w": 0.132869,
+        "Vol_4": 5.2455
+      },
+      {
+        "m": 500,
+        "k": 249,
+        "chi": 500,
+        "A_m": 2364.354,
+        "Phi_per_rod": 0.00042286,
+        "G_per_rod": 0.99978857,
+        "total_flux": 0.21143,
+        "int_w": 0.105715,
+        "Vol_4": 4.1735
+      }
+    ],
+    "alpha_1.5": [
+      {
+        "m": 4,
+        "k": 1,
+        "chi": 4,
+        "A_m": 8.0,
+        "Phi_per_rod": 0.11764706,
+        "G_per_rod": 0.94117647,
+        "total_flux": 0.470588,
+        "int_w": 0.235294,
+        "Vol_4": 9.289
+      },
+      {
+        "m": 6,
+        "k": 2,
+        "chi": 6,
+        "A_m": 14.697,
+        "Phi_per_rod": 0.06580273,
+        "G_per_rod": 0.96709864,
+        "total_flux": 0.394816,
+        "int_w": 0.197408,
+        "Vol_4": 7.7934
+      },
+      {
+        "m": 8,
+        "k": 3,
+        "chi": 8,
+        "A_m": 22.627,
+        "Phi_per_rod": 0.04323872,
+        "G_per_rod": 0.97838064,
+        "total_flux": 0.34591,
+        "int_w": 0.172955,
+        "Vol_4": 6.828
+      },
+      {
+        "m": 10,
+        "k": 4,
+        "chi": 10,
+        "A_m": 31.623,
+        "Phi_per_rod": 0.03113056,
+        "G_per_rod": 0.98443472,
+        "total_flux": 0.311306,
+        "int_w": 0.155653,
+        "Vol_4": 6.1449
+      },
+      {
+        "m": 20,
+        "k": 9,
+        "chi": 20,
+        "A_m": 89.443,
+        "Phi_per_rod": 0.01111819,
+        "G_per_rod": 0.99444091,
+        "total_flux": 0.222364,
+        "int_w": 0.111182,
+        "Vol_4": 4.3893
+      },
+      {
+        "m": 50,
+        "k": 24,
+        "chi": 50,
+        "A_m": 353.553,
+        "Phi_per_rod": 0.00282443,
+        "G_per_rod": 0.99858778,
+        "total_flux": 0.141222,
+        "int_w": 0.070611,
+        "Vol_4": 2.7876
+      },
+      {
+        "m": 100,
+        "k": 49,
+        "chi": 100,
+        "A_m": 1000.0,
+        "Phi_per_rod": 0.0009995,
+        "G_per_rod": 0.99950025,
+        "total_flux": 0.09995,
+        "int_w": 0.049975,
+        "Vol_4": 1.9729
+      },
+      {
+        "m": 200,
+        "k": 99,
+        "chi": 200,
+        "A_m": 2828.427,
+        "Phi_per_rod": 0.00035349,
+        "G_per_rod": 0.99982325,
+        "total_flux": 0.070698,
+        "int_w": 0.035349,
+        "Vol_4": 1.3955
+      },
+      {
+        "m": 500,
+        "k": 249,
+        "chi": 500,
+        "A_m": 11180.34,
+        "Phi_per_rod": 8.944e-05,
+        "G_per_rod": 0.99995528,
+        "total_flux": 0.044719,
+        "int_w": 0.02236,
+        "Vol_4": 0.8827
+      }
+    ],
+    "alpha_1.75": [
+      {
+        "m": 4,
+        "k": 1,
+        "chi": 4,
+        "A_m": 11.314,
+        "Phi_per_rod": 0.08464742,
+        "G_per_rod": 0.95767629,
+        "total_flux": 0.33859,
+        "int_w": 0.169295,
+        "Vol_4": 6.6835
+      },
+      {
+        "m": 6,
+        "k": 2,
+        "chi": 6,
+        "A_m": 23.002,
+        "Phi_per_rod": 0.04254966,
+        "G_per_rod": 0.97872517,
+        "total_flux": 0.255298,
+        "int_w": 0.127649,
+        "Vol_4": 5.0394
+      },
+      {
+        "m": 8,
+        "k": 3,
+        "chi": 8,
+        "A_m": 38.055,
+        "Phi_per_rod": 0.02593722,
+        "G_per_rod": 0.98703139,
+        "total_flux": 0.207498,
+        "int_w": 0.103749,
+        "Vol_4": 4.0958
+      },
+      {
+        "m": 10,
+        "k": 4,
+        "chi": 10,
+        "A_m": 56.234,
+        "Phi_per_rod": 0.01762607,
+        "G_per_rod": 0.99118696,
+        "total_flux": 0.176261,
+        "int_w": 0.08813,
+        "Vol_4": 3.4792
+      },
+      {
+        "m": 20,
+        "k": 9,
+        "chi": 20,
+        "A_m": 189.148,
+        "Phi_per_rod": 0.00527292,
+        "G_per_rod": 0.99736354,
+        "total_flux": 0.105458,
+        "int_w": 0.052729,
+        "Vol_4": 2.0817
+      },
+      {
+        "m": 50,
+        "k": 24,
+        "chi": 50,
+        "A_m": 940.151,
+        "Phi_per_rod": 0.00106309,
+        "G_per_rod": 0.99946845,
+        "total_flux": 0.053155,
+        "int_w": 0.026577,
+        "Vol_4": 1.0492
+      },
+      {
+        "m": 100,
+        "k": 49,
+        "chi": 100,
+        "A_m": 3162.278,
+        "Phi_per_rod": 0.00031618,
+        "G_per_rod": 0.99984191,
+        "total_flux": 0.031618,
+        "int_w": 0.015809,
+        "Vol_4": 0.6241
+      },
+      {
+        "m": 200,
+        "k": 99,
+        "chi": 200,
+        "A_m": 10636.592,
+        "Phi_per_rod": 9.401e-05,
+        "G_per_rod": 0.99995299,
+        "total_flux": 0.018802,
+        "int_w": 0.009401,
+        "Vol_4": 0.3711
+      },
+      {
+        "m": 500,
+        "k": 249,
+        "chi": 500,
+        "A_m": 52868.563,
+        "Phi_per_rod": 1.891e-05,
+        "G_per_rod": 0.99999054,
+        "total_flux": 0.009457,
+        "int_w": 0.004729,
+        "Vol_4": 0.1867
+      }
+    ],
+    "alpha_2.0": [
+      {
+        "m": 4,
+        "k": 1,
+        "chi": 4,
+        "A_m": 16.0,
+        "Phi_per_rod": 0.06060606,
+        "G_per_rod": 0.96969697,
+        "total_flux": 0.242424,
+        "int_w": 0.121212,
+        "Vol_4": 4.7853
+      },
+      {
+        "m": 6,
+        "k": 2,
+        "chi": 6,
+        "A_m": 36.0,
+        "Phi_per_rod": 0.02739726,
+        "G_per_rod": 0.98630137,
+        "total_flux": 0.164384,
+        "int_w": 0.082192,
+        "Vol_4": 3.2448
+      },
+      {
+        "m": 8,
+        "k": 3,
+        "chi": 8,
+        "A_m": 64.0,
+        "Phi_per_rod": 0.01550388,
+        "G_per_rod": 0.99224806,
+        "total_flux": 0.124031,
+        "int_w": 0.062016,
+        "Vol_4": 2.4483
+      },
+      {
+        "m": 10,
+        "k": 4,
+        "chi": 10,
+        "A_m": 100.0,
+        "Phi_per_rod": 0.00995025,
+        "G_per_rod": 0.99502488,
+        "total_flux": 0.099502,
+        "int_w": 0.049751,
+        "Vol_4": 1.9641
+      },
+      {
+        "m": 20,
+        "k": 9,
+        "chi": 20,
+        "A_m": 400.0,
+        "Phi_per_rod": 0.00249688,
+        "G_per_rod": 0.99875156,
+        "total_flux": 0.049938,
+        "int_w": 0.024969,
+        "Vol_4": 0.9857
+      },
+      {
+        "m": 50,
+        "k": 24,
+        "chi": 50,
+        "A_m": 2500.0,
+        "Phi_per_rod": 0.00039992,
+        "G_per_rod": 0.99980004,
+        "total_flux": 0.019996,
+        "int_w": 0.009998,
+        "Vol_4": 0.3947
+      },
+      {
+        "m": 100,
+        "k": 49,
+        "chi": 100,
+        "A_m": 10000.0,
+        "Phi_per_rod": 0.0001,
+        "G_per_rod": 0.99995,
+        "total_flux": 0.01,
+        "int_w": 0.005,
+        "Vol_4": 0.1974
+      },
+      {
+        "m": 200,
+        "k": 99,
+        "chi": 200,
+        "A_m": 40000.0,
+        "Phi_per_rod": 2.5e-05,
+        "G_per_rod": 0.9999875,
+        "total_flux": 0.005,
+        "int_w": 0.0025,
+        "Vol_4": 0.0987
+      },
+      {
+        "m": 500,
+        "k": 249,
+        "chi": 500,
+        "A_m": 250000.0,
+        "Phi_per_rod": 4e-06,
+        "G_per_rod": 0.999998,
+        "total_flux": 0.002,
+        "int_w": 0.001,
+        "Vol_4": 0.0395
+      }
+    ]
+  },
+  "traceless_collar_analysis": {
+    "step20_flat_residual": "(1+2A)/4, identical to base curvature effect, not new",
+    "step19_corner_matching": "Full Ricci tensor checked through first nontrivial order in Fermi coordinates; traceless included; A free",
+    "collar_behavior": "u = log w ~ log r + smooth(s), v ~ log r - smooth(s) near rod. Singularity is fixed by unit slope; regular part is what Step 19 corner matching constrains.",
+    "conclusion": "No additional obstruction from the traceless equation on the collar. BUILD theorem needs a GLOBAL PDE solvability argument, not a local or integral one."
+  },
+  "stream_function_energy": {
+    "identity": "int |grad psi|^2 = 2 int w^2 + 4 int K_B w^2",
+    "limitation": "Involves w^2-weighted curvature int K_B w^2, which can be small when w is small at the rods. No lower bound on total flux follows."
+  },
+  "summed_rod_identity": {
+    "identity": "int_Omega w dA = m + sum_i int_{rod_i} K_edge Q_i ds",
+    "constant_A_formula": "int w = m/(1+2A)",
+    "alpha_family": "A = m^alpha => int w ~ m^{1-alpha} -> 0 for alpha > 1",
+    "numerical_check": {
+      "m=10_alpha=1.25": {
+        "int_w": 0.27348117,
+        "check": true
+      },
+      "m=100_alpha=1.25": {
+        "int_w": 0.15786428,
+        "check": true
+      },
+      "m=10_alpha=1.5": {
+        "int_w": 0.1556528,
+        "check": true
+      },
+      "m=100_alpha=1.5": {
+        "int_w": 0.04997501,
+        "check": true
+      },
+      "m=10_alpha=2.0": {
+        "int_w": 0.04975124,
+        "check": true
+      },
+      "m=100_alpha=2.0": {
+        "int_w": 0.00499975,
+        "check": true
+      }
+    }
+  },
+  "verdict": {
+    "BUILD_or_BREAK": "BREAK-compatible at the level of all tested integral identities",
+    "what_was_tested": [
+      "Rod identity: Phi_i = 2 - 2G_i, with G_i -> 1 possible (BREAK).",
+      "Eigenvalue equation: total flux = 2 int w, compatible with int w -> 0.",
+      "Flux equi-partition (corrected): Phi_p = Phi_q = int w, no K_B identity.",
+      "Traceless equation: no additional collar obstruction (Step 19/20 check).",
+      "Stream function energy: involves w^2-weighted curvature, no flux lower bound.",
+      "Summed rod identity: int w = m + sum K_edge-charge, collapses for alpha > 1."
+    ],
+    "sign_correction": "Step 14 individual eq -Delta p = (K_B-1)p was WRONG. Correct: -Delta p = (1-K_B)p. This killed the false identity 'int K_B w = int w' and leaves ONLY the equi-partition.",
+    "what_BUILD_needs": "A global PDE solvability obstruction for the full coupled system on periodic-label polygons. No integral, spectral, or local identity among the four verified equations provides this. The missing object would be either (a) a nonlinear Pohozaev-type identity that forces int w >= c_0, or (b) a global regularity/smoothing argument that prevents the eigenfunction from having small boundary gradient.",
+    "what_BREAK_needs": "An actual smooth global metric with int w -> 0 satisfying all four equations. The alpha-family is formal rod/corner-compatible data, not a global smooth solution.",
+    "impact_on_yau26": "This analysis concerns only the T^2-invariant toric subproblem in dimension 4. It does not decide P_4^+, P_4^-, n>=5, or Lean. Even if the alpha-family is realized (BREAK), it only shows that #_k(S^2 x S^2) admits tight positive pinching with collapse. It does NOT refute Yau-26 because Einstein existence on #_k(S^2 x S^2) for large k is an independent open problem."
+  }
+}

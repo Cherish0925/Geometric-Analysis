@@ -1,0 +1,59 @@
+{
+  "step": 76,
+  "orbifold": "(S^2 x S^2)/Z_2",
+  "Lambda": "positive",
+  "O_g_o_dimension": 0,
+  "checks": {
+    "shape_deformation": {
+      "h": "g_1 - g_2 (shape deformation)",
+      "nabla_h": "0 (parallel tensor)",
+      "R_circ_h": "Lambda * h",
+      "P_g_h": "-Lambda * h",
+      "in_kernel": false,
+      "eigenvalue": "-Lambda (unstable direction)",
+      "reason": "R^circ acts as Lambda*Id on the {g_1 - g_2} subspace"
+    },
+    "tt_tensors": {
+      "tt_on_single_S2": "zero (dimension 2 has no TT tensors)",
+      "cross_tensor_lowest_eigenvalue": "Lambda > 0",
+      "cross_tensor_l1_l2": [
+        1,
+        1
+      ],
+      "tt_kernel": "zero (all eigenvalues positive)",
+      "reason": "Product of positive-curvature spaces, Lichnerowicz positive on cross TT"
+    },
+    "conformal_modes": {
+      "h": "f * g (conformal mode)",
+      "in_Bianchi_gauge_kernel": false,
+      "conformal_laplacian_eigenvalue": "2*Lambda/3 > 0",
+      "reason": "Positive Einstein has positive conformal Laplacian"
+    },
+    "killing_modes": {
+      "isometry_group": "SO(3) x SO(3)",
+      "dimension": 6,
+      "contribution_to_O(g_o)": 0,
+      "reason": "Killing fields satisfy L_X g = 0, contribute zero tensors"
+    }
+  },
+  "implication_for_Ozuch": {
+    "nu_l_system": "empty (d=0, no equations)",
+    "lambda_k_j": "all zero for zeta in ker(R)",
+    "mu_1_j": "zero by rank-1 cascade",
+    "mu_2_3_j": "plausibly zero (all 2x2 minors of diag(0,0,Lambda) vanish)",
+    "approximate_error_order": "O(t^{5/2}) or better",
+    "remaining_question": "higher-order iteration convergence"
+  },
+  "additional_verification": {
+    "R_plus_eigenvalues": [
+      1,
+      0,
+      0
+    ],
+    "R_plus_normalized": "diag(Lambda, 0, 0)",
+    "R_plus_rank": 1,
+    "W_plus_eigenvalues": "diag(2Lambda/3, -Lambda/3, -Lambda/3)",
+    "scalar_curvature": "4*Lambda",
+    "Hitchin_Thorpe": "2*chi = 2*4 = 8 > 3*|tau| = 0, satisfied"
+  }
+}

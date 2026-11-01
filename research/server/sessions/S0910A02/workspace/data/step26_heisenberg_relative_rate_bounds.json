@@ -1,0 +1,32 @@
+{
+  "title": "Step 26 exact H3 relative-rate bounds",
+  "model": "dt^2 + a^2(theta1^2+theta2^2)+c^2 theta3^2; b=c/a^2, k1=a_prime/a, k3=c_prime/c",
+  "constraint_exact_Ric_equals_1": "b**2 + 4*k1**2 + 8*k1*k3 + 4",
+  "constraint_derivative_along_vertical_ODE": {
+    "C_prime": "-2*(2*k1 + k3)*(b**2 + 4*k1**2 + 8*k1*k3 + 4)",
+    "C_prime_plus_2HC_simplifies_to": "0",
+    "meaning": "The Ric00=1 constraint is preserved by the vertical Einstein ODE."
+  },
+  "exact_bounds_certificates": {
+    "T_norm_squared": "2*k1**2 + k3**2",
+    "log_bracket_derivative_squared": "(-2*k1 + k3)**2",
+    "T_identity_check_zero": "0",
+    "T_certificate": "2|T|^2-(b^2+4)=2(2k1+k3)^2-C, hence on C=0: |T|^2 >= (b^2+4)/2.",
+    "rate_identity_check_zero": "0",
+    "rate_certificate": "(4/5)|d log b/dt|^2-(b^2+4)=(4/5)(3k1+k3)^2-C, hence on C=0: |d log b/dt|^2 >= 5/4 (b^2+4)."
+  },
+  "pinched_bounds_certificates": {
+    "rho_variables": "rho0=Ric00, rho1=Ric11=Ric22, rho3=Ric33",
+    "eliminated_constraint": "4k1^2+8k1k3+b^2 = 2rho0-4rho1-2rho3",
+    "S_range_if_all_rho_in_[1-delta,1+delta]": {
+      "S_min": "-8*delta - 4",
+      "S_max": "8*delta - 4"
+    },
+    "conservative_assumption_for_bounds": "S <= -4+8delta, i.e. C_S+4-8delta <=0",
+    "T_pin_identity_check_zero": "-S",
+    "T_bound": "|T|^2 >= (b^2+4-8delta)/2 whenever b^2+4>8delta.",
+    "rate_pin_identity_check_zero": "-S",
+    "rate_bound": "|d log b/dt|^2 >= 5/4 (b^2+4-8delta) whenever b^2+4>8delta."
+  },
+  "interpretation": "Large Heisenberg bracket is not pointwise impossible under positive Ricci pinching, but it forces large second fundamental form and fast relative bracket variation in this T-active model."
+}

@@ -1,0 +1,2299 @@
+{
+  "available_api_identifier_occurrences": {
+    "Boundaryless": {
+      "count": 91,
+      "matches": [
+        {
+          "file": "Geometry/Manifold/Bordism.lean",
+          "line": 122,
+          "text": "[boundaryless : BoundarylessManifold I M]"
+        },
+        {
+          "file": "Geometry/Manifold/Bordism.lean",
+          "line": 133,
+          "text": "[IsManifold I k M] [CompactSpace M] [BoundarylessManifold I M]"
+        },
+        {
+          "file": "Geometry/Manifold/Bordism.lean",
+          "line": 143,
+          "text": "instance {s : SingularManifold X k I} : BoundarylessManifold I s.M := s.boundaryless"
+        },
+        {
+          "file": "Geometry/Manifold/Bordism.lean",
+          "line": 207,
+          "text": "omit [CompactSpace M] [BoundarylessManifold I M] in"
+        },
+        {
+          "file": "Geometry/Manifold/Complex.lean",
+          "line": 50,
+          "text": "variable {H : Type*} [TopologicalSpace H] {I : ModelWithCorners \u2102 E H} [I.Boundaryless]"
+        },
+        {
+          "file": "Geometry/Manifold/Complex.lean",
+          "line": 61,
+          "text": "have hI : range I = univ := ModelWithCorners.Boundaryless.range_eq_univ"
+        },
+        {
+          "file": "Geometry/Manifold/Instances/Real.lean",
+          "line": 477,
+          "text": "lemma boundary_product [I.Boundaryless] :"
+        },
+        {
+          "file": "Geometry/Manifold/IntegralCurve/ExistUnique.lean",
+          "line": 120,
+          "text": "[CompleteSpace E] [BoundarylessManifold I M]"
+        },
+        {
+          "file": "Geometry/Manifold/IntegralCurve/ExistUnique.lean",
+          "line": 123,
+          "text": "exists_isMIntegralCurveAt_of_contMDiffAt t\u2080 hv BoundarylessManifold.isInteriorPoint"
+        },
+        {
+          "file": "Geometry/Manifold/IntegralCurve/ExistUnique.lean",
+          "line": 176,
+          "text": "theorem isMIntegralCurveAt_eventuallyEq_of_contMDiffAt_boundaryless [BoundarylessManifold I M]"
+        },
+        {
+          "file": "Geometry/Manifold/IntegralCurve/ExistUnique.lean",
+          "line": 180,
+          "text": "isMIntegralCurveAt_eventuallyEq_of_contMDiffAt BoundarylessManifold.isInteriorPoint hv h\u03b3 h\u03b3' h"
+        },
+        {
+          "file": "Geometry/Manifold/IntegralCurve/ExistUnique.lean",
+          "line": 226,
+          "text": "theorem isMIntegralCurveOn_Ioo_eqOn_of_contMDiff_boundaryless [BoundarylessManifold I M]"
+        },
+        {
+          "file": "Geometry/Manifold/IntegralCurve/ExistUnique.lean",
+          "line": 232,
+          "text": "ht\u2080 (fun _ _ \u21a6 BoundarylessManifold.isInteriorPoint) hv h\u03b3 h\u03b3' h"
+        },
+        {
+          "file": "Geometry/Manifold/IntegralCurve/ExistUnique.lean",
+          "line": 252,
+          "text": "theorem isMIntegralCurve_Ioo_eq_of_contMDiff_boundaryless [BoundarylessManifold I M]"
+        },
+        {
+          "file": "Geometry/Manifold/IntegralCurve/ExistUnique.lean",
+          "line": 255,
+          "text": "isMIntegralCurve_eq_of_contMDiff (fun _ \u21a6 BoundarylessManifold.isInteriorPoint) hv h\u03b3 h\u03b3' h"
+        },
+        {
+          "file": "Geometry/Manifold/IntegralCurve/ExistUnique.lean",
+          "line": 259,
+          "text": "lemma IsMIntegralCurve.periodic_of_eq [BoundarylessManifold I M]"
+        },
+        {
+          "file": "Geometry/Manifold/IntegralCurve/ExistUnique.lean",
+          "line": 268,
+          "text": "lemma IsMIntegralCurve.periodic_xor_injective [BoundarylessManifold I M]"
+        },
+        {
+          "file": "Geometry/Manifold/IntegralCurve/UniformTime.lean",
+          "line": 42,
+          "text": "lemma eqOn_of_isMIntegralCurveOn_Ioo [BoundarylessManifold I M]"
+        },
+        {
+          "file": "Geometry/Manifold/IntegralCurve/UniformTime.lean",
+          "line": 57,
+          "text": "lemma eqOn_abs_add_one_of_isMIntegralCurveOn_Ioo [BoundarylessManifold I M]"
+        },
+        {
+          "file": "Geometry/Manifold/IntegralCurve/UniformTime.lean",
+          "line": 71,
+          "text": "lemma isMIntegralCurve_abs_add_one_of_isMIntegralCurveOn_Ioo [BoundarylessManifold I M]"
+        },
+        {
+          "file": "Geometry/Manifold/IntegralCurve/UniformTime.lean",
+          "line": 91,
+          "text": "lemma exists_isMIntegralCurve_iff_exists_isMIntegralCurveOn_Ioo [BoundarylessManifold I M]"
+        },
+        {
+          "file": "Geometry/Manifold/IntegralCurve/UniformTime.lean",
+          "line": 104,
+          "text": "lemma eqOn_piecewise_of_isMIntegralCurveOn_Ioo [BoundarylessManifold I M]"
+        },
+        {
+          "file": "Geometry/Manifold/IntegralCurve/UniformTime.lean",
+          "line": 130,
+          "text": "lemma isMIntegralCurveOn_piecewise [BoundarylessManifold I M]"
+        },
+        {
+          "file": "Geometry/Manifold/IntegralCurve/UniformTime.lean",
+          "line": 162,
+          "text": "lemma exists_isMIntegralCurve_of_isMIntegralCurveOn [BoundarylessManifold I M]"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/Basic.lean",
+          "line": 82,
+          "text": "{I : ModelWithCorners \u211d E E} [I.Boundaryless]"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/Basic.lean",
+          "line": 85,
+          "text": "Here, `I.Boundaryless` is a typeclass property ensuring that there is no boundary (this is for"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/Basic.lean",
+          "line": 582,
+          "text": "section Boundaryless"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/Basic.lean",
+          "line": 585,
+          "text": "differs from the more general `BoundarylessManifold`, which requires every point on the manifold"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/Basic.lean",
+          "line": 587,
+          "text": "class ModelWithCorners.Boundaryless {\ud835\udd5c : Type*} [NontriviallyNormedField \ud835\udd5c] {E : Type*}"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/Basic.lean",
+          "line": 594,
+          "text": "(I : ModelWithCorners \ud835\udd5c E H) [I.Boundaryless] :"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/Basic.lean",
+          "line": 595,
+          "text": "range I = univ := ModelWithCorners.Boundaryless.range_eq_univ"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/Basic.lean",
+          "line": 597,
+          "text": "/-- If `I` is a `ModelWithCorners.Boundaryless` model, then it is a homeomorphism. -/"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/Basic.lean",
+          "line": 601,
+          "text": "(I : ModelWithCorners \ud835\udd5c E H) [I.Boundaryless] : H \u2243\u209c E where"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/Basic.lean",
+          "line": 608,
+          "text": "[NormedAddCommGroup E] [NormedSpace \ud835\udd5c E] : (modelWithCornersSelf \ud835\udd5c E).Boundaryless :="
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/Basic.lean",
+          "line": 614,
+          "text": "(I : ModelWithCorners \ud835\udd5c E H) [I.Boundaryless] {E' : Type v'} [NormedAddCommGroup E']"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/Basic.lean",
+          "line": 616,
+          "text": "[I'.Boundaryless] : (I.prod I').Boundaryless := by"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/Basic.lean",
+          "line": 619,
+          "text": "rw [Set.range_prodMap, ModelWithCorners.Boundaryless.range_eq_univ,"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/Basic.lean",
+          "line": 620,
+          "text": "ModelWithCorners.Boundaryless.range_eq_univ, univ_prod_univ]"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/Basic.lean",
+          "line": 622,
+          "text": "end Boundaryless"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/ExtChartAt.lean",
+          "line": 100,
+          "text": "lemma isOpen_extend_target [I.Boundaryless] : IsOpen (f.extend I).target := by"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/ExtChartAt.lean",
+          "line": 141,
+          "text": "theorem map_extend_nhds_of_boundaryless [I.Boundaryless] {x : M} (hx : x \u2208 f.source) :"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/ExtChartAt.lean",
+          "line": 156,
+          "text": "theorem extend_image_nhds_mem_nhds_of_boundaryless [I.Boundaryless] {x} (hx : x \u2208 f.source)"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/ExtChartAt.lean",
+          "line": 527,
+          "text": "theorem map_extChartAt_nhds_of_boundaryless [I.Boundaryless] (x : M) :"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/ExtChartAt.lean",
+          "line": 540,
+          "text": "theorem extChartAt_image_nhds_mem_nhds_of_boundaryless [I.Boundaryless]"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/ExtChartAt.lean",
+          "line": 565,
+          "text": "theorem isOpen_extChartAt_target [I.Boundaryless] (x : M) : IsOpen (extChartAt I x).target := by"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/ExtChartAt.lean",
+          "line": 570,
+          "text": "theorem extChartAt_target_mem_nhds [I.Boundaryless] (x : M) :"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/ExtChartAt.lean",
+          "line": 576,
+          "text": "theorem extChartAt_target_mem_nhds' [I.Boundaryless] {x : M} {y : E}"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/InteriorBoundary.lean",
+          "line": 29,
+          "text": "- `BoundarylessManifold.isInteriorPoint`: if `M` is boundaryless, every point is an interior point"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/InteriorBoundary.lean",
+          "line": 30,
+          "text": "- `ModelWithCorners.Boundaryless.boundary_eq_empty` and `of_boundary_eq_empty`:"
+        },
+        {
+          "file": "Geometry/Manifold/IsManifold/InteriorBoundary.lean",
+          "line": 48,
+          "text": "- `ModelWithCorners.BoundarylessManifold.open`: if `M` is boundaryless, so is `u : Opens M`"
+        }
+      ]
+    },
+    "Bundle.ContMDiffRiemannianMetric": {
+      "count": 0,
+      "matches": []
+    },
+    "CompactSpace": {
+      "count": 1159,
+      "matches": [
+        {
+          "file": "Algebra/Category/Ring/Topology.lean",
+          "line": 144,
+          "text": "instance [IsTopologicalRing R] [T1Space R] [CompactSpace R] :"
+        },
+        {
+          "file": "Algebra/Category/Ring/Topology.lean",
+          "line": 145,
+          "text": "CompactSpace (A \u27f6 R) :="
+        },
+        {
+          "file": "AlgebraicGeometry/AffineScheme.lean",
+          "line": 295,
+          "text": "instance (X : Scheme) [CompactSpace X] (\ud835\udcb0 : X.OpenCover) [\u2200 i, IsAffine (\ud835\udcb0.X i)] (i) :"
+        },
+        {
+          "file": "AlgebraicGeometry/AffineScheme.lean",
+          "line": 563,
+          "text": "CompactSpace X :="
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 49,
+          "text": "[\u2200 i, CompactSpace (D.obj i)] :"
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 130,
+          "text": "have _ (i) : CompactSpace (D'.obj i) := isCompact_iff_compactSpace.mp (hZcpt i)"
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 185,
+          "text": "[\u2200 i, CompactSpace (D.obj i)]"
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 278,
+          "text": "have (j : Over i) : CompactSpace \u21a5((opensDiagram D i U).obj j) :="
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 371,
+          "text": "[\u2200 {i j} (f : i \u27f6 j), IsAffineHom (D.map f)] [\u2200 i, CompactSpace (D.obj i)] :"
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 372,
+          "text": "CompactSpace c.pt := by"
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 407,
+          "text": "variable [\u2200 i, CompactSpace (D.obj i)] [LocallyOfFiniteType f] [IsCofiltered I]"
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 745,
+          "text": "{i : I} [CompactSpace (D.obj i)] (s : \u0393(D.obj i, \u22a4)) (hs : (c.\u03c0.app i).appTop s = 0) :"
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 769,
+          "text": "obtain \u27e8t, ht\u27e9 := CompactSpace.elim_nhds_subcover (U \u00b7) (fun x \u21a6 (U x).2.mem_nhds (hxU x))"
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 798,
+          "text": "have : CompactSpace \u21a5((opensDiagram D i U).obj (Over.mk (\ud835\udfd9 i))) :="
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 843,
+          "text": "(s : \u0393(c.pt, \u22a4)) [\u2200 i, CompactSpace (D.obj i)] [\u2200 i, QuasiSeparatedSpace (D.obj i)] :"
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 896,
+          "text": "obtain \u27e8\u03c3, h\u03c3\u27e9 := CompactSpace.elim_nhds_subcover (fun x \u21a6 ((c.\u03c0.app (i x)) \u207b\u00b9\u1d41 U x).1)"
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 962,
+          "text": "[\u2200 i, CompactSpace (D.obj i)] [\u2200 i, QuasiSeparatedSpace (D.obj i)] :"
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 972,
+          "text": "[\u2200 i, CompactSpace (D.obj i)] [\u2200 i, QuasiSeparatedSpace (D.obj i)] :"
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 988,
+          "text": "[\u2200 (i : I), CompactSpace (D.obj i)]"
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 1016,
+          "text": "obtain \u27e8\u03c3, h\u03c3\u27e9 := CompactSpace.elim_nhds_subcover"
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 1042,
+          "text": "[\u2200 (i : I), CompactSpace (D.obj i)]"
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 1050,
+          "text": "have (j : _) : CompactSpace ((D \u22d9 \u0393.rightOp \u22d9 Scheme.Spec).obj j) := by dsimp; infer_instance"
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 1069,
+          "text": "have (j : Over i) : CompactSpace ((opensDiagram D i U).obj j) :="
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 1081,
+          "text": "[\u2200 {i j} (f : i \u27f6 j), IsAffineHom (D.map f)] [\u2200 (i : I), CompactSpace (D.obj i)]"
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 1107,
+          "text": "[\u2200 (i : I), CompactSpace (D.obj i)]"
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 1126,
+          "text": "[\u2200 {i j} (f : i \u27f6 j), IsAffineHom (D.map f)] [\u2200 (i : I), CompactSpace (D.obj i)]"
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 1235,
+          "text": "[\u2200 i, CompactSpace (D.obj i)] [\u2200 i, QuasiSeparatedSpace (D.obj i)]"
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 1299,
+          "text": "have _ (x) : CompactSpace \u21a5((opensDiagram D k (\ud835\udcb1' j\u2081 \u2293 \ud835\udcb1' j\u2082)).obj x) :="
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 1346,
+          "text": "[\u2200 (i : I), CompactSpace (D.obj i).left] [\u2200 (i : I), QuasiSeparatedSpace (D.obj i).left]"
+        },
+        {
+          "file": "AlgebraicGeometry/AffineTransitionLimit.lean",
+          "line": 1351,
+          "text": "have (i : I) : CompactSpace ((D \u22d9 Over.forget S).obj i) := by dsimp; infer_instance"
+        },
+        {
+          "file": "AlgebraicGeometry/Artinian.lean",
+          "line": 165,
+          "text": "class IsArtinianScheme (X : Scheme.{u}) : Prop extends IsLocallyArtinian X, CompactSpace X"
+        },
+        {
+          "file": "AlgebraicGeometry/Artinian.lean",
+          "line": 192,
+          "text": "simp [isArtinianScheme_iff, (inferInstance : CompactSpace (Spec R))]"
+        },
+        {
+          "file": "AlgebraicGeometry/Cover/Open.lean",
+          "line": 81,
+          "text": "def OpenCover.finiteSubcover {X : Scheme.{u}} (\ud835\udcb0 : OpenCover.{v} X) [H : CompactSpace X] :"
+        },
+        {
+          "file": "AlgebraicGeometry/Cover/Open.lean",
+          "line": 84,
+          "text": "@CompactSpace.elim_nhds_subcover _ _ H (fun x : X => Set.range (\ud835\udcb0.f (\ud835\udcb0.idx x)))"
+        },
+        {
+          "file": "AlgebraicGeometry/Cover/Open.lean",
+          "line": 101,
+          "text": "instance [H : CompactSpace X] : Fintype \ud835\udcb0.finiteSubcover.I\u2080 := by"
+        },
+        {
+          "file": "AlgebraicGeometry/Cover/Open.lean",
+          "line": 105,
+          "text": "[H : \u2200 i, CompactSpace (\ud835\udcb0.X i)] : CompactSpace X := by"
+        },
+        {
+          "file": "AlgebraicGeometry/Cover/QuasiCompact.lean",
+          "line": 184,
+          "text": "[P.RespectsLeft @IsOpenImmersion] [CompactSpace S] [QuasiCompactCover \ud835\udcb0.toPreZeroHypercover] :"
+        },
+        {
+          "file": "AlgebraicGeometry/Fiber.lean",
+          "line": 124,
+          "text": "instance (f : X \u27f6 Y) [QuasiCompact f] (y : Y) : CompactSpace (f.fiber y) :="
+        },
+        {
+          "file": "AlgebraicGeometry/IdealSheaf/Basic.lean",
+          "line": 870,
+          "text": "have inst : CompactSpace X := HasAffineProperty.iff_of_isAffine.mp \u2039QuasiCompact f\u203a"
+        },
+        {
+          "file": "AlgebraicGeometry/IdealSheaf/Basic.lean",
+          "line": 874,
+          "text": "(inferInstanceAs <| CompactSpace (Spec _))"
+        },
+        {
+          "file": "AlgebraicGeometry/IdealSheaf/Basic.lean",
+          "line": 897,
+          "text": "lemma ker_toSpec\u0393 [CompactSpace X] : X.toSpec\u0393.ker = \u22a5 := by"
+        },
+        {
+          "file": "AlgebraicGeometry/Morphisms/Affine.lean",
+          "line": 112,
+          "text": "have : CompactSpace X := by"
+        },
+        {
+          "file": "AlgebraicGeometry/Morphisms/Affine.lean",
+          "line": 278,
+          "text": "have : CompactSpace V := isCompact_iff_compactSpace.mp hV"
+        },
+        {
+          "file": "AlgebraicGeometry/Morphisms/ClosedImmersion.lean",
+          "line": 248,
+          "text": "lemma isDominant_of_of_appTop_injective [CompactSpace X]"
+        },
+        {
+          "file": "AlgebraicGeometry/Morphisms/ClosedImmersion.lean",
+          "line": 256,
+          "text": "instance [CompactSpace X] : IsDominant X.toSpec\u0393 :="
+        },
+        {
+          "file": "AlgebraicGeometry/Morphisms/ClosedImmersion.lean",
+          "line": 264,
+          "text": "lemma stalkMap_injective_of_isOpenMap_of_injective [CompactSpace X]"
+        },
+        {
+          "file": "AlgebraicGeometry/Morphisms/Descent.lean",
+          "line": 48,
+          "text": "lemma Scheme.exists_hom_isAffine_of_isZariskiLocalAtSource (X : Scheme.{u}) [CompactSpace X]"
+        },
+        {
+          "file": "AlgebraicGeometry/Morphisms/Descent.lean",
+          "line": 141,
+          "text": "\u00b7 have _ : CompactSpace X := by simpa [\u2190 quasiCompact_iff_compactSpace f] using hf.2"
+        },
+        {
+          "file": "AlgebraicGeometry/Morphisms/FinitePresentation.lean",
+          "line": 148,
+          "text": "\u00b7 have inst : CompactSpace X := HasAffineProperty.iff_of_isAffine.mp \u2039QuasiCompact f\u203a"
+        },
+        {
+          "file": "AlgebraicGeometry/Morphisms/FinitePresentation.lean",
+          "line": 153,
+          "text": "HasAffineProperty.iff_of_isAffine.mpr (inferInstanceAs (CompactSpace (Spec _)))"
+        }
+      ]
+    },
+    "ConnectedSpace": {
+      "count": 392,
+      "matches": [
+        {
+          "file": "AlgebraicGeometry/Geometrically/Connected.lean",
+          "line": 41,
+          "text": "geometrically_connectedSpace : geometrically (ConnectedSpace \u00b7) f"
+        },
+        {
+          "file": "AlgebraicGeometry/Geometrically/Connected.lean",
+          "line": 44,
+          "text": "@GeometricallyConnected = geometrically (ConnectedSpace \u00b7) := by"
+        },
+        {
+          "file": "AlgebraicGeometry/Geometrically/Connected.lean",
+          "line": 66,
+          "text": "instance (s : S) [GeometricallyConnected f] : ConnectedSpace (f.fiber s) :="
+        },
+        {
+          "file": "AlgebraicGeometry/Geometrically/Connected.lean",
+          "line": 92,
+          "text": "lemma GeometricallyConnected.connectedSpace [GeometricallyConnected f] [ConnectedSpace S]"
+        },
+        {
+          "file": "AlgebraicGeometry/Geometrically/Connected.lean",
+          "line": 94,
+          "text": "ConnectedSpace X := by"
+        },
+        {
+          "file": "AlgebraicGeometry/Geometrically/Connected.lean",
+          "line": 99,
+          "text": "[GeometricallyConnected f] [Subsingleton S] [Nonempty S] : ConnectedSpace X :="
+        },
+        {
+          "file": "AlgebraicGeometry/Geometrically/Connected.lean",
+          "line": 100,
+          "text": "have : ConnectedSpace S := \u27e8\u2039_\u203a\u27e9"
+        },
+        {
+          "file": "AlgebraicGeometry/Geometrically/Connected.lean",
+          "line": 103,
+          "text": "instance [GeometricallyConnected f] [UniversallyOpen f] [ConnectedSpace Y] :"
+        },
+        {
+          "file": "AlgebraicGeometry/Geometrically/Connected.lean",
+          "line": 104,
+          "text": "ConnectedSpace \u21a5(pullback f g) :="
+        },
+        {
+          "file": "AlgebraicGeometry/Geometrically/Connected.lean",
+          "line": 107,
+          "text": "instance [GeometricallyConnected g] [UniversallyOpen g] [ConnectedSpace X] :"
+        },
+        {
+          "file": "AlgebraicGeometry/Geometrically/Connected.lean",
+          "line": 108,
+          "text": "ConnectedSpace \u21a5(pullback f g) :="
+        },
+        {
+          "file": "AlgebraicGeometry/Properties.lean",
+          "line": 65,
+          "text": "instance : ObjectProperty.IsClosedUnderIsomorphisms (C := Scheme) (ConnectedSpace \u00b7) :="
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/FundamentalGroup.lean",
+          "line": 56,
+          "text": "def fundamentalGroupMulEquivOfPathConnected [PathConnectedSpace X] :"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/FundamentalGroup.lean",
+          "line": 58,
+          "text": "fundamentalGroupMulEquivOfPath (PathConnectedSpace.somePath x\u2080 x\u2081)"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 26,
+          "text": "- `SimplyConnectedSpace.ofContractible` - A contractible space is simply connected"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 40,
+          "text": "class SimplyConnectedSpace (X : Type*) [TopologicalSpace X] : Prop where"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 44,
+          "text": "alias simply_connected_def := simplyConnectedSpace_iff"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 47,
+          "text": "SimplyConnectedSpace X \u2194"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 49,
+          "text": "simp only [simplyConnectedSpace_iff, equiv_punit_iff_unique,"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 54,
+          "text": "theorem ContinuousMap.HomotopyEquiv.simplyConnectedSpace [hY : SimplyConnectedSpace Y]"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 55,
+          "text": "(e : X \u2243\u2095 Y) : SimplyConnectedSpace X :="
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 58,
+          "text": "theorem ContinuousMap.HomotopyEquiv.simplyConnectedSpace_iff (e : X \u2243\u2095 Y) :"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 59,
+          "text": "SimplyConnectedSpace X \u2194 SimplyConnectedSpace Y :="
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 60,
+          "text": "\u27e8fun _ \u21a6 e.symm.simplyConnectedSpace, fun _ \u21a6 e.simplyConnectedSpace\u27e9"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 62,
+          "text": "namespace SimplyConnectedSpace"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 64,
+          "text": "variable {X : Type*} [TopologicalSpace X] [SimplyConnectedSpace X]"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 73,
+          "text": "instance (priority := 100) : PathConnectedSpace X :="
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 83,
+          "text": "SimplyConnectedSpace Y :="
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 84,
+          "text": "haveI : SimplyConnectedSpace Unit := \u27e8\u27e8FundamentalGroupoid.punitEquivDiscretePUnit\u27e9\u27e9"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 85,
+          "text": "(ContractibleSpace.hequiv Y Unit).some.simplyConnectedSpace"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 87,
+          "text": "end SimplyConnectedSpace"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 92,
+          "text": "SimplyConnectedSpace Y \u2194"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 93,
+          "text": "PathConnectedSpace Y \u2227 \u2200 x y : Y, Subsingleton (Path.Homotopic.Quotient x y) :="
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 96,
+          "text": "exact \u27e8inferInstance, fun x y => \u27e8uniqueOfSubsingleton \u27e6PathConnectedSpace.somePath x y\u27e7\u27e9\u27e9\u27e9"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 100,
+          "text": "SimplyConnectedSpace Y \u2194"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 101,
+          "text": "PathConnectedSpace Y \u2227 \u2200 {x y : Y} (p\u2081 p\u2082 : Path x y), Path.Homotopic p\u2081 p\u2082 := by"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 110,
+          "text": "SimplyConnectedSpace Y \u2194"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 111,
+          "text": "PathConnectedSpace Y \u2227 \u2200 (x : Y) (\u03b3 : Path x x), Path.Homotopic \u03b3 (Path.refl x) := by"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 137,
+          "text": "def IsSimplyConnected (s : Set X) : Prop := SimplyConnectedSpace s"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 139,
+          "text": "theorem IsSimplyConnected.simplyConnectedSpace {s : Set X} (hs : IsSimplyConnected s) :"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 140,
+          "text": "SimplyConnectedSpace s := hs"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 144,
+          "text": "have := hs.simplyConnectedSpace"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 145,
+          "text": "isPathConnected_iff_pathConnectedSpace.mpr inferInstance"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 153,
+          "text": "hf.homeomorphImage s |>.toHomotopyEquiv |>.simplyConnectedSpace_iff |>.symm"
+        },
+        {
+          "file": "AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean",
+          "line": 171,
+          "text": "\u2190 isPathConnected_iff_pathConnectedSpace]"
+        },
+        {
+          "file": "AlgebraicTopology/SingularHomology/HomologyZero.lean",
+          "line": 53,
+          "text": "instance [PathConnectedSpace X] : IsIso (X.singularHomology\u2080\u03b5 R) :="
+        },
+        {
+          "file": "AlgebraicTopology/SingularSet.lean",
+          "line": 108,
+          "text": "((TotallyDisconnectedSpace.continuousMapEquivOfConnectedSpace _ X).symm.trans"
+        },
+        {
+          "file": "AlgebraicTopology/TopologicalSimplex.lean",
+          "line": 53,
+          "text": "instance (n : SimplexCategory) : PathConnectedSpace (toTop\u2080.obj n) := by dsimp; infer_instance"
+        },
+        {
+          "file": "AlgebraicTopology/TopologicalSimplex.lean",
+          "line": 55,
+          "text": "instance (n : SimplexCategory) : PathConnectedSpace (toTop.{u}.obj n) :="
+        },
+        {
+          "file": "AlgebraicTopology/TopologicalSimplex.lean",
+          "line": 56,
+          "text": "ULift.up_surjective.pathConnectedSpace continuous_uliftUp"
+        }
+      ]
+    },
+    "ContMDiffCovariantDerivative": {
+      "count": 25,
+      "matches": [
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 30,
+          "text": "* `ContMDiffCovariantDerivativeOn`: A covariant derivative \u2207 on some set is called *of class* `C^k`"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 39,
+          "text": "* `ContMDiffCovariantDerivative`: A covariant derivative \u2207 is called *of class* `C^k`"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 107,
+          "text": "class ContMDiffCovariantDerivativeOn [IsManifold I 1 M] [VectorBundle \ud835\udd5c F V] (k : \u2115\u221e\u03c9)"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 249,
+          "text": "lemma _root_.ContMDiffCovariantDerivativeOn.affine_combination [IsManifold I 1 M]"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 253,
+          "text": "(Hcov : ContMDiffCovariantDerivativeOn (F := F) n cov u)"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 254,
+          "text": "(Hcov' : ContMDiffCovariantDerivativeOn (F := F) n cov' u) :"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 255,
+          "text": "ContMDiffCovariantDerivativeOn F n (fun \u03c3 \u21a6 (f \u2022 (cov \u03c3)) + (1 - f) \u2022 (cov' \u03c3)) u where"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 283,
+          "text": "lemma _root_.ContMDiffCovariantDerivativeOn.finite_affine_combination [IsManifold I 1 M]"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 286,
+          "text": "(hcov : \u2200 i \u2208 s, ContMDiffCovariantDerivativeOn F n (cov i) u)"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 288,
+          "text": "ContMDiffCovariantDerivativeOn F n (fun \u03c3 x \u21a6 \u2211 i \u2208 s, (f i x) \u2022 (cov i) \u03c3 x) u where"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 411,
+          "text": "class ContMDiffCovariantDerivative [IsManifold I 1 M] [VectorBundle \ud835\udd5c F V]"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 413,
+          "text": "contMDiff : ContMDiffCovariantDerivativeOn F k cov.toFun Set.univ"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 418,
+          "text": "ContMDiffCovariantDerivativeOn F k cov.toFun Set.univ \u2194 ContMDiffCovariantDerivative cov k :="
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 458,
+          "text": "lemma ContMDiffCovariantDerivative.affineCombination [IsManifold I 1 M] [VectorBundle \ud835\udd5c F V]"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 461,
+          "text": "(hcov : ContMDiffCovariantDerivative cov n) (hcov' : ContMDiffCovariantDerivative cov' n) :"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 462,
+          "text": "ContMDiffCovariantDerivative (affineCombination cov cov' f) n where"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 464,
+          "text": "ContMDiffCovariantDerivativeOn.affine_combination hf.contMDiffOn hcov.contMDiff hcov'.contMDiff"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 467,
+          "text": "alias ContMDiffCovariantDerivative.affine_combination :="
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 468,
+          "text": "ContMDiffCovariantDerivative.affineCombination"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 471,
+          "text": "lemma ContMDiffCovariantDerivative.finiteAffineCombination [IsManifold I 1 M] [VectorBundle \ud835\udd5c F V]"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 474,
+          "text": "(hcov : \u2200 i \u2208 s, ContMDiffCovariantDerivative (cov i) n) :"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 475,
+          "text": "ContMDiffCovariantDerivative (finiteAffineCombination cov hf) n where"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 477,
+          "text": "ContMDiffCovariantDerivativeOn.finite_affine_combination"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 481,
+          "text": "alias ContMDiffCovariantDerivative.finite_affine_combination :="
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 482,
+          "text": "ContMDiffCovariantDerivative.finiteAffineCombination"
+        }
+      ]
+    },
+    "CovariantDerivative": {
+      "count": 132,
+      "matches": [
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 27,
+          "text": "* `IsCovariantDerivativeOn`: A function from sections of a vector bundle `V` over a manifold `M` to"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 30,
+          "text": "* `ContMDiffCovariantDerivativeOn`: A covariant derivative \u2207 on some set is called *of class* `C^k`"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 33,
+          "text": "* `IsCovariantDerivativeOn.add_one_form`: Adding a one-form taking values in the endomorphisms of"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 35,
+          "text": "* `IsCovariantDerivativeOn.difference`: The difference of two covariant derivatives on a set,"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 37,
+          "text": "* `CovariantDerivative`: a globally defined covariant derivative on a vector bundle, as a bundled"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 39,
+          "text": "* `ContMDiffCovariantDerivative`: A covariant derivative \u2207 is called *of class* `C^k`"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 42,
+          "text": "* `CovariantDerivative.addOneForm`: Adding a one-form taking values in the endomorphisms of the"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 44,
+          "text": "* `CovariantDerivative.difference`: The difference of two covariant derivatives, as a one-form"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 60,
+          "text": "`IsCovariantDerivativeOn`."
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 91,
+          "text": "structure IsCovariantDerivativeOn"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 107,
+          "text": "class ContMDiffCovariantDerivativeOn [IsManifold I 1 M] [VectorBundle \ud835\udd5c F V] (k : \u2115\u221e\u03c9)"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 117,
+          "text": "namespace IsCovariantDerivativeOn"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 121,
+          "text": "In this section, we change `s` in `IsCovariantDerivativeOn F cov s`, proving the condition is"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 129,
+          "text": "(hcov : IsCovariantDerivativeOn F cov t) (hst : s \u2286 t) : IsCovariantDerivativeOn F cov s where"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 134,
+          "text": "{s : \u03b9 \u2192 Set M} (hcov : \u2200 i, IsCovariantDerivativeOn F cov (s i)) :"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 135,
+          "text": "IsCovariantDerivativeOn F cov (\u22c3 i, s i) where"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 147,
+          "text": "-- which will be added in the planned file `CovariantDerivative/Ehresmann.lean`."
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 154,
+          "text": "{s : Set M} (hcov : IsCovariantDerivativeOn F cov s)"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 189,
+          "text": "{s : Set M} (hcov : IsCovariantDerivativeOn F cov s)"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 204,
+          "text": "lemma zero [VectorBundle \ud835\udd5c F V] (hcov : IsCovariantDerivativeOn F cov s)"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 210,
+          "text": "theorem smul_const (hcov : IsCovariantDerivativeOn F cov s)"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 224,
+          "text": "derivative gives a covariant derivative. See `IsCovariantDerivativeOn.add_one_form`."
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 226,
+          "text": "the endomorphisms of the vector bundle. See `IsCovariantDerivativeOn.difference`."
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 237,
+          "text": "lemma affine_combination (hcov : IsCovariantDerivativeOn F cov s)"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 239,
+          "text": "(hcov' : IsCovariantDerivativeOn F cov' s) (g : M \u2192 \ud835\udd5c) :"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 240,
+          "text": "IsCovariantDerivativeOn F (fun \u03c3 \u21a6 (g \u2022 (cov \u03c3)) + (1 - g) \u2022 (cov' \u03c3)) s where"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 249,
+          "text": "lemma _root_.ContMDiffCovariantDerivativeOn.affine_combination [IsManifold I 1 M]"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 253,
+          "text": "(Hcov : ContMDiffCovariantDerivativeOn (F := F) n cov u)"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 254,
+          "text": "(Hcov' : ContMDiffCovariantDerivativeOn (F := F) n cov' u) :"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 255,
+          "text": "ContMDiffCovariantDerivativeOn F n (fun \u03c3 \u21a6 (f \u2022 (cov \u03c3)) + (1 - f) \u2022 (cov' \u03c3)) u where"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 264,
+          "text": "(h : \u2200 i, IsCovariantDerivativeOn F (cov i) u) {f : \u03b9 \u2192 M \u2192 \ud835\udd5c} (hf : \u2211 i \u2208 s, f i = 1) :"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 265,
+          "text": "IsCovariantDerivativeOn F (fun \u03c3 x \u21a6 \u2211 i \u2208 s, (f i x) \u2022 (cov i) \u03c3 x) u where"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 283,
+          "text": "lemma _root_.ContMDiffCovariantDerivativeOn.finite_affine_combination [IsManifold I 1 M]"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 286,
+          "text": "(hcov : \u2200 i \u2208 s, ContMDiffCovariantDerivativeOn F n (cov i) u)"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 288,
+          "text": "ContMDiffCovariantDerivativeOn F n (fun \u03c3 x \u21a6 \u2211 i \u2208 s, (f i x) \u2022 (cov i) \u03c3 x) u where"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 295,
+          "text": "lemma add_one_form (hcov : IsCovariantDerivativeOn F cov s)"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 297,
+          "text": "IsCovariantDerivativeOn F (fun \u03c3 x \u21a6 cov \u03c3 x + A x (\u03c3 x)) s where"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 317,
+          "text": "(hcov : IsCovariantDerivativeOn F cov s)"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 318,
+          "text": "(hcov' : IsCovariantDerivativeOn F cov' s)"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 320,
+          "text": "private theorem differenceAux_tensorial (hcov : IsCovariantDerivativeOn F cov s)"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 321,
+          "text": "(hcov' : IsCovariantDerivativeOn F cov' s)"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 355,
+          "text": "end IsCovariantDerivativeOn"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 365,
+          "text": "structure CovariantDerivative where"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 368,
+          "text": "isCovariantDerivativeOnUniv : IsCovariantDerivativeOn F toFun Set.univ"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 370,
+          "text": "namespace CovariantDerivative"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 374,
+          "text": "/-- Coercion of a `CovariantDerivative` to function -/"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 375,
+          "text": "instance : CoeFun (CovariantDerivative I F V)"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 379,
+          "text": "lemma isCovariantDerivativeOn (cov : CovariantDerivative I F V) {s : Set M} :"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 380,
+          "text": "IsCovariantDerivativeOn F cov s :="
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Basic.lean",
+          "line": 381,
+          "text": "cov.isCovariantDerivativeOnUniv.mono (fun _ _ \u21a6 trivial)"
+        }
+      ]
+    },
+    "IsMetricCompatible": {
+      "count": 6,
+      "matches": [
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 30,
+          "text": "* `CovariantDerivative.IsMetricCompatible`: predicate for a connection to be metric, namely that"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 36,
+          "text": "`CovariantDerivative.IsMetricCompatible` with the characterisation that parallel transport be an"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 155,
+          "text": "public def IsMetricCompatible [FiniteDimensional \u211d F] : Prop := derivMetricTensor cov = 0"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 160,
+          "text": "public lemma IsMetricCompatible.mvfderiv_inner_eq [FiniteDimensional \u211d F]"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 161,
+          "text": "(hcov : cov.IsMetricCompatible) {x : M} (X : \u03a0 x, TangentSpace I x) {\u03c3 \u03c4 : (x : M) \u2192 V x}"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 171,
+          "text": "cov.IsMetricCompatible \u2194 \u2200 {x : M} {X : \u03a0 x, TangentSpace I x} {\u03c3 \u03c4 : (x : M) \u2192 V x},"
+        }
+      ]
+    },
+    "IsPosSemidef": {
+      "count": 33,
+      "matches": [
+        {
+          "file": "Analysis/InnerProductSpace/Basic.lean",
+          "line": 1003,
+          "text": "section IsPosSemidef"
+        },
+        {
+          "file": "Analysis/InnerProductSpace/Basic.lean",
+          "line": 1013,
+          "text": "lemma isPosSemidef_inner : LinearMap.IsPosSemidef (inner\u2097 E) where"
+        },
+        {
+          "file": "Analysis/InnerProductSpace/Basic.lean",
+          "line": 1017,
+          "text": "end IsPosSemidef"
+        },
+        {
+          "file": "LinearAlgebra/BilinearForm/Properties.lean",
+          "line": 208,
+          "text": "structure IsPosSemidef [LE R] (B : BilinForm R M) extends"
+        },
+        {
+          "file": "LinearAlgebra/BilinearForm/Properties.lean",
+          "line": 214,
+          "text": "lemma isPosSemidef_def [LE R] : B.IsPosSemidef \u2194 B.IsSymm \u2227 B.IsNonneg :="
+        },
+        {
+          "file": "LinearAlgebra/BilinearForm/Properties.lean",
+          "line": 219,
+          "text": "lemma isPosSemidef_iff [LE R] {B : BilinForm R M} : B.IsPosSemidef \u2194 LinearMap.IsPosSemidef B :="
+        },
+        {
+          "file": "LinearAlgebra/BilinearForm/Properties.lean",
+          "line": 223,
+          "text": "lemma isPosSemidef_zero [Preorder R] : IsPosSemidef (0 : BilinForm R M) :="
+        },
+        {
+          "file": "LinearAlgebra/BilinearForm/Properties.lean",
+          "line": 226,
+          "text": "protected lemma IsPosSemidef.add [Preorder R] [AddLeftMono R] {B C : BilinForm R M}"
+        },
+        {
+          "file": "LinearAlgebra/BilinearForm/Properties.lean",
+          "line": 227,
+          "text": "(hB : B.IsPosSemidef) (hC : C.IsPosSemidef) : (B + C).IsPosSemidef :="
+        },
+        {
+          "file": "LinearAlgebra/BilinearForm/Properties.lean",
+          "line": 230,
+          "text": "protected lemma IsPosSemidef.smul [Preorder R] [PosMulMono R] {B : BilinForm R M} {c : R}"
+        },
+        {
+          "file": "LinearAlgebra/BilinearForm/Properties.lean",
+          "line": 231,
+          "text": "(hB : B.IsPosSemidef) (hc : 0 \u2264 c) : (c \u2022 B).IsPosSemidef :="
+        },
+        {
+          "file": "LinearAlgebra/SesquilinearForm/Basic.lean",
+          "line": 257,
+          "text": "structure IsPosSemidef [LE R] (B : M \u2192\u209b\u2097[I\u2081] M \u2192\u2097[R] R) extends"
+        },
+        {
+          "file": "LinearAlgebra/SesquilinearForm/Basic.lean",
+          "line": 261,
+          "text": "lemma isPosSemidef_def [LE R] {B : M \u2192\u209b\u2097[I\u2081] M \u2192\u2097[R] R} : B.IsPosSemidef \u2194 B.IsSymm \u2227 B.IsNonneg :="
+        },
+        {
+          "file": "LinearAlgebra/SesquilinearForm/Basic.lean",
+          "line": 265,
+          "text": "lemma isPosSemidef_zero [Preorder R] : IsPosSemidef (0 : M \u2192\u209b\u2097[I\u2081] M \u2192\u2097[R] R) where"
+        },
+        {
+          "file": "LinearAlgebra/SesquilinearForm/Basic.lean",
+          "line": 269,
+          "text": "protected lemma IsPosSemidef.add [Preorder R] [AddLeftMono R] {B C : M \u2192\u209b\u2097[I\u2081] M \u2192\u2097[R] R}"
+        },
+        {
+          "file": "LinearAlgebra/SesquilinearForm/Basic.lean",
+          "line": 270,
+          "text": "(hB : B.IsPosSemidef) (hC : C.IsPosSemidef) : (B + C).IsPosSemidef :="
+        },
+        {
+          "file": "LinearAlgebra/SesquilinearForm/Star.lean",
+          "line": 61,
+          "text": "B.IsPosSemidef \u2194 (toMatrix\u2082 b b B).PosSemidef := by"
+        },
+        {
+          "file": "Probability/Distributions/Gaussian/CharFun.lean",
+          "line": 18,
+          "text": "positive semidefinite (satisfying `f.toBilinForm.IsPosSemidef`) such that"
+        },
+        {
+          "file": "Probability/Distributions/Gaussian/CharFun.lean",
+          "line": 30,
+          "text": "satisfying `f.toBilinForm.IsPosSemidef` and `charFunDual \u03bc L = exp (L m * I - f L L / 2)`."
+        },
+        {
+          "file": "Probability/Distributions/Gaussian/CharFun.lean",
+          "line": 33,
+          "text": "satisfying `f.toBilinForm.IsPosSemidef` and `charFun \u03bc t = exp (\u27eat, m\u27eb * I - f t t / 2)`."
+        },
+        {
+          "file": "Probability/Distributions/Gaussian/CharFun.lean",
+          "line": 65,
+          "text": "satisfying `f.toBilinForm.IsPosSemidef` and `charFunDual \u03bc L = exp (L m * I - f L L / 2)`. -/"
+        },
+        {
+          "file": "Probability/Distributions/Gaussian/CharFun.lean",
+          "line": 69,
+          "text": "f.toBilinForm.IsPosSemidef \u2227 \u2200 L, charFunDual \u03bc L = exp (L m * I - f L L / 2) := by"
+        },
+        {
+          "file": "Probability/Distributions/Gaussian/CharFun.lean",
+          "line": 85,
+          "text": "(hf : f.toBilinForm.IsPosSemidef) (h : \u2200 L, charFunDual \u03bc L = exp (L m * I - f L L / 2)) :"
+        },
+        {
+          "file": "Probability/Distributions/Gaussian/CharFun.lean",
+          "line": 147,
+          "text": "satisfying `f.toBilinForm.IsPosSemidef` and `charFun \u03bc t = exp (\u27eat, m\u27eb * I - f t t / 2)`. -/"
+        },
+        {
+          "file": "Probability/Distributions/Gaussian/CharFun.lean",
+          "line": 151,
+          "text": "f.toBilinForm.IsPosSemidef \u2227 \u2200 t, charFun \u03bc t = exp (\u27eat, m\u27eb * I - f t t / 2) := by"
+        },
+        {
+          "file": "Probability/Distributions/Gaussian/CharFun.lean",
+          "line": 170,
+          "text": "(hf : f.toBilinForm.IsPosSemidef) (h : \u2200 t, charFun \u03bc t = exp (\u27eat, m\u27eb * I - f t t / 2)) :"
+        },
+        {
+          "file": "Probability/Distributions/Gaussian/CharFun.lean",
+          "line": 177,
+          "text": "have hg : g.toBilinForm.IsPosSemidef :="
+        },
+        {
+          "file": "Probability/Distributions/Gaussian/HasGaussianLaw/Independence.lean",
+          "line": 87,
+          "text": "lemma isPosSemidef_diagonalStrongDualPi (hL : \u2200 i, (L i).toBilinForm.IsPosSemidef) :"
+        },
+        {
+          "file": "Probability/Distributions/Gaussian/HasGaussianLaw/Independence.lean",
+          "line": 88,
+          "text": "(diagonalStrongDualPi L).toBilinForm.IsPosSemidef where"
+        },
+        {
+          "file": "Probability/Distributions/Gaussian/HasGaussianLaw/Independence.lean",
+          "line": 141,
+          "text": "(h\u2081 : L\u2081.toBilinForm.IsPosSemidef) (h\u2082 : L\u2082.toBilinForm.IsPosSemidef) :"
+        },
+        {
+          "file": "Probability/Distributions/Gaussian/HasGaussianLaw/Independence.lean",
+          "line": 142,
+          "text": "(diagonalStrongDualProd L\u2081 L\u2082).toBilinForm.IsPosSemidef where"
+        },
+        {
+          "file": "Probability/Moments/CovarianceBilin.lean",
+          "line": 109,
+          "text": "(covarianceBilin \u03bc).toBilinForm.IsPosSemidef where"
+        },
+        {
+          "file": "Probability/Moments/CovarianceBilinDual.lean",
+          "line": 317,
+          "text": "lemma isPosSemidef_covarianceBilinDual : (covarianceBilinDual \u03bc).toBilinForm.IsPosSemidef where"
+        }
+      ]
+    },
+    "LinearMap.trace": {
+      "count": 48,
+      "matches": [
+        {
+          "file": "Algebra/DirectSum/LinearMap.lean",
+          "line": 69,
+          "text": "See also `LinearMap.trace_restrict_eq_sum_trace_restrict`. -/"
+        },
+        {
+          "file": "Algebra/Lie/Killing.lean",
+          "line": 118,
+          "text": "LinearMap.trace_conj']"
+        },
+        {
+          "file": "Algebra/Lie/LieTheorem.lean",
+          "line": 111,
+          "text": "rw [hres, LinearMap.trace_lie]"
+        },
+        {
+          "file": "Algebra/Lie/Semisimple/Lemmas.lean",
+          "line": 26,
+          "text": "`f \u2208 LieAlgebra.derivedSeries k (Module.End k V) 1 \u2194 LinearMap.trace k _ f = 0`, and restate"
+        },
+        {
+          "file": "Algebra/Lie/Semisimple/Lemmas.lean",
+          "line": 68,
+          "text": "(h : \u2200 x, LinearMap.trace k _ (toEnd k L M x) = 0) : HasTrivialRadical k L := by"
+        },
+        {
+          "file": "Algebra/Lie/Semisimple/Lemmas.lean",
+          "line": 83,
+          "text": "lemma trace_toEnd_eq_zero {s : Set L} (hs : \u2200 x \u2208 s, LinearMap.trace R _ (toEnd R _ M x) = 0)"
+        },
+        {
+          "file": "Algebra/Lie/TraceForm.lean",
+          "line": 62,
+          "text": "LinearMap.trace_mul_comm R (\u03c6 x) (\u03c6 y)"
+        },
+        {
+          "file": "Algebra/Lie/TraceForm.lean",
+          "line": 82,
+          "text": "\u00b7 simp only [LinearMap.trace_mul_cycle' R (\u03c6 x) (\u03c6 z) (\u03c6 y)]"
+        },
+        {
+          "file": "Algebra/Lie/TraceForm.lean",
+          "line": 129,
+          "text": "rw [LieHom.map_lie, LinearMap.trace_lie_mul_eq, Ring.lie_def,"
+        },
+        {
+          "file": "Algebra/Lie/TraceForm.lean",
+          "line": 150,
+          "text": "\u2190 LinearEquiv.conj_comp, LinearMap.trace_conj', LinearMap.comp_sub, LinearMap.sub_comp,"
+        },
+        {
+          "file": "Algebra/Lie/TraceForm.lean",
+          "line": 155,
+          "text": "LinearMap.trace_id, \u2190 traceForm_apply_apply, h\u2081, h\u2082, sub_zero, sub_eq_zero] at this"
+        },
+        {
+          "file": "Algebra/Lie/TraceForm.lean",
+          "line": 266,
+          "text": "LinearMap.trace_eq_sum_trace_restrict' hds hfin hxy]"
+        },
+        {
+          "file": "Algebra/Lie/TraceForm.lean",
+          "line": 289,
+          "text": "required (see `LinearMap.trace_comp_eq_zero_of_commute_of_trace_restrict_eq_zero`)."
+        },
+        {
+          "file": "Algebra/Lie/TraceForm.lean",
+          "line": 301,
+          "text": "rw [\u2190 LinearMap.trace_baseChange, LinearMap.baseChange_comp, \u2190 toEnd_baseChange,"
+        },
+        {
+          "file": "Algebra/Lie/TraceForm.lean",
+          "line": 312,
+          "text": "apply LinearMap.trace_comp_eq_zero_of_commute_of_trace_restrict_eq_zero"
+        },
+        {
+          "file": "Algebra/Lie/TraceForm.lean",
+          "line": 446,
+          "text": "simp_rw [traceForm_apply_apply, LinearMap.trace_eq_sum_trace_restrict hds hxy,"
+        },
+        {
+          "file": "Algebra/Lie/Weights/Chain.lean",
+          "line": 181,
+          "text": "LinearMap.trace R _ (toEnd R H (genWeightSpaceChain M \u03b1 \u03c7 p q) x) = 0 := by"
+        },
+        {
+          "file": "Algebra/Lie/Weights/Chain.lean",
+          "line": 242,
+          "text": "erw [LinearMap.trace_eq_sum_trace_restrict_of_eq_biSup _ h\u2081 h\u2082 (genWeightSpaceChain M \u03b1 \u03c7 p q) h\u2083]"
+        },
+        {
+          "file": "Algebra/Lie/Weights/Chain.lean",
+          "line": 245,
+          "text": "\u2211 k \u2208 Finset.Ioo p q, (LinearMap.trace R { x // x \u2208 (genWeightSpace M (k \u2022 \u03b1 + \u03c7)) })"
+        },
+        {
+          "file": "Algebra/Lie/Weights/Killing.lean",
+          "line": 125,
+          "text": "exact LinearMap.trace_eq_zero_of_mapsTo_ne hds \u03c3 h\u03c3 hf"
+        },
+        {
+          "file": "Algebra/Lie/Weights/Linear.lean",
+          "line": 127,
+          "text": "LinearMap.trace R _ \u2218\u2097 (toEnd R L (genWeightSpace M \u03c7)).toLinearMap ="
+        },
+        {
+          "file": "Algebra/Lie/Weights/Linear.lean",
+          "line": 151,
+          "text": "LieHom.map_lie, Ring.lie_def, map_sub, LinearMap.trace_mul_comm, sub_self]"
+        },
+        {
+          "file": "Analysis/InnerProductSpace/Positive.lean",
+          "line": 251,
+          "text": "/-- `LinearMap.trace` as a positive linear map. -/"
+        },
+        {
+          "file": "Analysis/InnerProductSpace/Positive.lean",
+          "line": 253,
+          "text": ".mk\u2080 (LinearMap.trace \ud835\udd5c E) fun x h \u21a6 sub_zero x \u25b8 h.trace_nonneg"
+        },
+        {
+          "file": "Analysis/InnerProductSpace/Trace.lean",
+          "line": 30,
+          "text": "rw [LinearMap.trace_eq_matrix_trace \ud835\udd5c b.toBasis T]"
+        },
+        {
+          "file": "LinearAlgebra/Charpoly/BaseChange.lean",
+          "line": 54,
+          "text": "/-! Also see `LinearMap.trace_baseChange` in `Mathlib/LinearAlgebra/Trace` -/"
+        },
+        {
+          "file": "LinearAlgebra/PID.lean",
+          "line": 22,
+          "text": "* `LinearMap.trace_restrict_eq_of_forall_mem`"
+        },
+        {
+          "file": "LinearAlgebra/Trace.lean",
+          "line": 95,
+          "text": "LinearMap.trace R _ (Matrix.toLin b b A) = A.trace := by"
+        },
+        {
+          "file": "LinearAlgebra/Trace.lean",
+          "line": 100,
+          "text": "LinearMap.trace R _ A.toLin' = A.trace :="
+        },
+        {
+          "file": "LinearAlgebra/Trace.lean",
+          "line": 113,
+          "text": "rw [LinearMap.trace_mul_comm, \u2190 mul_assoc]"
+        },
+        {
+          "file": "LinearAlgebra/Trace.lean",
+          "line": 117,
+          "text": "rw [\u2190 mul_assoc, LinearMap.trace_mul_comm]"
+        },
+        {
+          "file": "LinearAlgebra/Trace.lean",
+          "line": 148,
+          "text": "LinearMap.trace R M \u2218\u2097 dualTensorHom R M M = contractLeft R M := by"
+        },
+        {
+          "file": "LinearAlgebra/Trace.lean",
+          "line": 163,
+          "text": "LinearMap.trace R M = contractLeft R M \u2218\u2097 (dualTensorHomEquivOfBasis b).symm.toLinearMap := by"
+        },
+        {
+          "file": "LinearAlgebra/Trace.lean",
+          "line": 173,
+          "text": "theorem trace_eq_contract : LinearMap.trace R M \u2218\u2097 dualTensorHom R M M = contractLeft R M :="
+        },
+        {
+          "file": "LinearAlgebra/Trace.lean",
+          "line": 178,
+          "text": "(LinearMap.trace R M) ((dualTensorHom R M M) x) = contractLeft R M x := by"
+        },
+        {
+          "file": "LinearAlgebra/Trace.lean",
+          "line": 184,
+          "text": "LinearMap.trace R M = contractLeft R M \u2218\u2097 (dualTensorHomEquiv R M M).symm.toLinearMap := by"
+        },
+        {
+          "file": "LinearAlgebra/Trace.lean",
+          "line": 317,
+          "text": "LinearMap.trace_map ((Matrix.toLinAlgEquiv'.symm.trans"
+        },
+        {
+          "file": "LinearAlgebra/Trace.lean",
+          "line": 355,
+          "text": "\u00b7 rw [LinearMap.trace, dif_neg H]"
+        },
+        {
+          "file": "LinearAlgebra/Trace.lean",
+          "line": 398,
+          "text": "have h1 : LinearMap.trace R S \u2218\u2097 f \u2218\u2097 Algebra.linearMap R S = LinearMap.id := by ext; simp [h]"
+        },
+        {
+          "file": "LinearAlgebra/Trace.lean",
+          "line": 402,
+          "text": "have h2 : (f \u2218\u2097 Algebra.linearMap R S) \u2218\u2097 LinearMap.trace R S = LinearMap.id :="
+        },
+        {
+          "file": "RepresentationTheory/Character.lean",
+          "line": 57,
+          "text": "LinearMap.trace k V (\u03c1 g)"
+        },
+        {
+          "file": "RepresentationTheory/Character.lean",
+          "line": 157,
+          "text": "LinearMap.trace k V (V.\u03c1 g)"
+        },
+        {
+          "file": "RingTheory/Trace/Basic.lean",
+          "line": 177,
+          "text": "simp_rw [Algebra.trace_apply, \u2190 LinearMap.trace_conj' _ e.toLinearEquiv]"
+        },
+        {
+          "file": "RingTheory/Trace/Defs.lean",
+          "line": 72,
+          "text": "(LinearMap.trace R S).comp (lmul R S).toLinearMap"
+        },
+        {
+          "file": "RingTheory/Trace/Defs.lean",
+          "line": 78,
+          "text": "theorem trace_apply (x) : trace R S x = LinearMap.trace R S (lmul R S x) :="
+        },
+        {
+          "file": "RingTheory/Trace/Defs.lean",
+          "line": 82,
+          "text": "trace R S = 0 := by ext s; simp [trace_apply, LinearMap.trace, h]"
+        },
+        {
+          "file": "RingTheory/Trace/Defs.lean",
+          "line": 89,
+          "text": "rw [trace_apply, LinearMap.trace_eq_matrix_trace _ b, \u2190 toMatrix_lmul_eq]; rfl"
+        },
+        {
+          "file": "RingTheory/Trace/Defs.lean",
+          "line": 95,
+          "text": "rw [trace_apply, LinearMap.trace_eq_matrix_trace R b, Matrix.trace]"
+        }
+      ]
+    },
+    "RiemannianBundle": {
+      "count": 68,
+      "matches": [
+        {
+          "file": "Geometry/Manifold/Riemannian/Basic.lean",
+          "line": 21,
+          "text": "of `[EMetricSpace M] [RiemannianBundle (fun (x : M) \u21a6 TangentSpace I x)]`."
+        },
+        {
+          "file": "Geometry/Manifold/Riemannian/Basic.lean",
+          "line": 38,
+          "text": "[RiemannianBundle (fun (x : M) \u21a6 TangentSpace I x)]"
+        },
+        {
+          "file": "Geometry/Manifold/Riemannian/Basic.lean",
+          "line": 39,
+          "text": "[IsContMDiffRiemannianBundle I \u221e E (fun (x : M) \u21a6 TangentSpace I x)]"
+        },
+        {
+          "file": "Geometry/Manifold/Riemannian/Basic.lean",
+          "line": 46,
+          "text": "`IsContMDiffRiemannianBundle` instance above, for example"
+        },
+        {
+          "file": "Geometry/Manifold/Riemannian/Basic.lean",
+          "line": 47,
+          "text": "`[IsContMDiffRiemannianBundle I n E (fun (x : M) \u21a6 TangentSpace I x)]`, and one should also add"
+        },
+        {
+          "file": "Geometry/Manifold/Riemannian/Basic.lean",
+          "line": 48,
+          "text": "`[IsContinuousRiemannianBundle E (fun (x : M) \u21a6 TangentSpace I x)]` (as above, Lean cannot infer"
+        },
+        {
+          "file": "Geometry/Manifold/Riemannian/Basic.lean",
+          "line": 69,
+          "text": "[RiemannianBundle (fun (x : M) \u21a6 TangentSpace% x)]"
+        },
+        {
+          "file": "Geometry/Manifold/Riemannian/Basic.lean",
+          "line": 126,
+          "text": "noncomputable instance : RiemannianBundle (fun (x : F) \u21a6 TangentSpace% x) :="
+        },
+        {
+          "file": "Geometry/Manifold/Riemannian/Basic.lean",
+          "line": 213,
+          "text": "variable [RiemannianBundle (fun (x : M) \u21a6 TangentSpace% x)]"
+        },
+        {
+          "file": "Geometry/Manifold/Riemannian/Basic.lean",
+          "line": 214,
+          "text": "[IsManifold I 1 M] [IsContinuousRiemannianBundle E (fun (x : M) \u21a6 TangentSpace% x)]"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 96,
+          "text": "variable [VectorBundle \u211d F V] [IsContMDiffRiemannianBundle I 1 F V] {x : M}"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 17,
+          "text": "We introduce a typeclass `[IsContMDiffRiemannianBundle IB n F E]` registering this property."
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 23,
+          "text": "use `[RiemannianBundle E]`, which endows the fibers with a scalar product while ensuring that"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 25,
+          "text": "constructor for `[RiemannianBundle E]` from a smooth family of metrics, which registers"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 26,
+          "text": "automatically `[IsContMDiffRiemannianBundle IB n F E]`."
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 39,
+          "text": "[IsContMDiffRiemannianBundle IB n F E]"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 64,
+          "text": "This assumption is spelled `IsContMDiffRiemannianBundle IB n F E` where `IB` is the model space of"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 66,
+          "text": "class IsContMDiffRiemannianBundle : Prop where"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 72,
+          "text": "lemma IsContMDiffRiemannianBundle.of_le [h : IsContMDiffRiemannianBundle IB n F E] (h' : n' \u2264 n) :"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 73,
+          "text": "IsContMDiffRiemannianBundle IB n' F E := by"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 77,
+          "text": "instance {a : \u2115\u221e\u03c9} [IsContMDiffRiemannianBundle IB \u221e F E] [h : LEInfty a] :"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 78,
+          "text": "IsContMDiffRiemannianBundle IB a F E :="
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 79,
+          "text": "IsContMDiffRiemannianBundle.of_le h.out"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 81,
+          "text": "instance {a : \u2115\u221e\u03c9} [IsContMDiffRiemannianBundle IB \u03c9 F E] :"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 82,
+          "text": "IsContMDiffRiemannianBundle IB a F E :="
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 83,
+          "text": "IsContMDiffRiemannianBundle.of_le le_top"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 85,
+          "text": "instance [IsContMDiffRiemannianBundle IB 1 F E] : IsContMDiffRiemannianBundle IB 0 F E :="
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 86,
+          "text": "IsContMDiffRiemannianBundle.of_le zero_le_one"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 88,
+          "text": "instance [IsContMDiffRiemannianBundle IB 2 F E] : IsContMDiffRiemannianBundle IB 1 F E :="
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 89,
+          "text": "IsContMDiffRiemannianBundle.of_le one_le_two"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 91,
+          "text": "instance [IsContMDiffRiemannianBundle IB 3 F E] : IsContMDiffRiemannianBundle IB 2 F E :="
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 92,
+          "text": "IsContMDiffRiemannianBundle.of_le (n := 3) (by norm_cast)"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 101,
+          "text": "instance : IsContMDiffRiemannianBundle IB n F\u2081 (Bundle.Trivial B F\u2081) := by"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 116,
+          "text": "[h : IsContMDiffRiemannianBundle IB n F E]"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 171,
+          "text": "[h : IsContMDiffRiemannianBundle IB 1 F E]"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 242,
+          "text": "This structure is used through `RiemannianBundle` for typeclass inference, to register the inner"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 264,
+          "text": "letI : RiemannianBundle E := \u27e8g.toRiemannianMetric\u27e9"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 265,
+          "text": "IsContMDiffRiemannianBundle IB n F E :="
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/Riemannian.lean",
+          "line": 266,
+          "text": "letI : RiemannianBundle E := \u27e8g.toRiemannianMetric\u27e9"
+        },
+        {
+          "file": "Topology/VectorBundle/Riemannian.lean",
+          "line": 18,
+          "text": "We introduce a typeclass `[IsContinuousRiemannianBundle F E]` registering this property."
+        },
+        {
+          "file": "Topology/VectorBundle/Riemannian.lean",
+          "line": 25,
+          "text": "class `[RiemannianBundle E]` containing the data of an inner"
+        },
+        {
+          "file": "Topology/VectorBundle/Riemannian.lean",
+          "line": 28,
+          "text": "defeq way with the initial topology. If the data used to register the instance `RiemannianBundle E`"
+        },
+        {
+          "file": "Topology/VectorBundle/Riemannian.lean",
+          "line": 30,
+          "text": "`[IsContinuousRiemannianBundle F E]` (and similarly if the data is smooth)."
+        },
+        {
+          "file": "Topology/VectorBundle/Riemannian.lean",
+          "line": 32,
+          "text": "The general theory should be built assuming `[IsContinuousRiemannianBundle F E]`, while the"
+        },
+        {
+          "file": "Topology/VectorBundle/Riemannian.lean",
+          "line": 33,
+          "text": "`[RiemannianBundle E]` mechanism is only to build data in specific situations, for instance for"
+        },
+        {
+          "file": "Topology/VectorBundle/Riemannian.lean",
+          "line": 58,
+          "text": "This assumption is spelled `IsContinuousRiemannianBundle F E` where `F` is the model fiber,"
+        },
+        {
+          "file": "Topology/VectorBundle/Riemannian.lean",
+          "line": 60,
+          "text": "class IsContinuousRiemannianBundle : Prop where"
+        },
+        {
+          "file": "Topology/VectorBundle/Riemannian.lean",
+          "line": 75,
+          "text": "instance : IsContinuousRiemannianBundle F\u2081 (Bundle.Trivial B F\u2081) := by"
+        },
+        {
+          "file": "Topology/VectorBundle/Riemannian.lean",
+          "line": 90,
+          "text": "{M : Type*} [TopologicalSpace M] [h : IsContinuousRiemannianBundle F E]"
+        },
+        {
+          "file": "Topology/VectorBundle/Riemannian.lean",
+          "line": 369,
+          "text": "This structure is used through `RiemannianBundle` for typeclass inference, to register the inner"
+        }
+      ]
+    },
+    "derivMetricTensor": {
+      "count": 26,
+      "matches": [
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 22,
+          "text": "* `CovariantDerivative.derivMetricTensor`: the tensor"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 25,
+          "text": "* `CovariantDerivative.derivMetricTensor_apply` and"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 26,
+          "text": "`CovariantDerivative.derivMetricTensor_apply_eq_extend` give formulas for applying"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 31,
+          "text": "`\u2207` is metric iff its `derivMetricTensor` vanishes"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 41,
+          "text": "`CovariantDerivative.derivMetricTensor`, to be simply the covariant derivative of the"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 84,
+          "text": "prefer using `derivMetricTensor` instead -/"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 85,
+          "text": "noncomputable def derivMetricTensorAux (\u03c3 \u03c4 : \u03a0 x : M, V x) (x : M) : TangentSpace I x \u2192L[\u211d] \u211d :="
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 89,
+          "text": "lemma derivMetricTensorAux_apply (\u03c3 \u03c4 : \u03a0 x : M, V x) {x : M} (X\u2080 : TangentSpace I x) :"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 90,
+          "text": "derivMetricTensorAux I cov \u03c3 \u03c4 x X\u2080 ="
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 98,
+          "text": "theorem tensorial_derivMetricTensorAux\u2081 (\u03c4 : \u03a0 x, V x) (h\u03c4 : MDiffAt (T% \u03c4) x) :"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 99,
+          "text": "TensorialAt I F (derivMetricTensorAux I cov \u00b7 \u03c4 x) x where"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 111,
+          "text": "theorem tensorial_derivMetricTensorAux\u2082 (\u03c3 : \u03a0 x, V x) (h\u03c3 : MDiffAt (T% \u03c3) x) :"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 112,
+          "text": "TensorialAt I F (derivMetricTensorAux I cov \u03c3 \u00b7 x) x where"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 127,
+          "text": "public noncomputable def derivMetricTensor [FiniteDimensional \u211d F] (x : M) :"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 129,
+          "text": "TensorialAt.mkHom\u2082 (derivMetricTensorAux I cov \u00b7 \u00b7 x) _"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 130,
+          "text": "(tensorial_derivMetricTensorAux\u2081 I cov) (tensorial_derivMetricTensorAux\u2082 I cov)"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 135,
+          "text": "public theorem derivMetricTensor_apply [FiniteDimensional \u211d F] (x : M)"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 137,
+          "text": "cov.derivMetricTensor x (\u03c3 x) (\u03c4 x) (X x) ="
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 139,
+          "text": "unfold derivMetricTensor"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 140,
+          "text": "rw [TensorialAt.mkHom\u2082_apply _ _ h\u03c3 h\u03c4, derivMetricTensorAux_apply]"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 143,
+          "text": "public theorem derivMetricTensor_apply_eq_extend [FiniteDimensional \u211d F]"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 145,
+          "text": "cov.derivMetricTensor x \u03c3\u2080 \u03c4\u2080 X\u2080 ="
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 149,
+          "text": "simp [derivMetricTensor, TensorialAt.mkHom\u2082_apply_eq_extend]"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 155,
+          "text": "public def IsMetricCompatible [FiniteDimensional \u211d F] : Prop := derivMetricTensor cov = 0"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 165,
+          "text": "simp [derivMetricTensor_apply _ _ h\u03c3 h\u03c4] at H"
+        },
+        {
+          "file": "Geometry/Manifold/VectorBundle/CovariantDerivative/Metric.lean",
+          "line": 179,
+          "text": "simp (disch := assumption) [derivMetricTensor_apply]"
+        }
+      ]
+    },
+    "torsion": {
+      "count": 899,
+      "matches": [
+        {
+          "file": "Algebra/AffineMonoid/Basic.lean",
+          "line": 13,
+          "text": "This file defines affine monoids as finitely generated cancellative torsion-free commutative"
+        },
+        {
+          "file": "Algebra/AffineMonoid/Basic.lean",
+          "line": 19,
+          "text": "/-- An affine monoid is a finitely generated cancellative torsion-free commutative monoid. -/"
+        },
+        {
+          "file": "Algebra/AffineMonoid/Basic.lean",
+          "line": 23,
+          "text": "/-- An affine monoid is a finitely generated cancellative torsion-free commutative monoid. -/"
+        },
+        {
+          "file": "Algebra/AffineMonoid/Embedding.lean",
+          "line": 22,
+          "text": "This file proves that finitely generated cancellative torsion-free commutative monoids embed into"
+        },
+        {
+          "file": "Algebra/AffineMonoid/UniqueSums.lean",
+          "line": 17,
+          "text": "In this file we show that finitely generated cancellative torsion-free commutative monoids have"
+        },
+        {
+          "file": "Algebra/BigOperators/Finprod.lean",
+          "line": 310,
+          "text": "/-- The torsion-free assumption makes sure that the result holds even when the support of `f` is"
+        },
+        {
+          "file": "Algebra/BigOperators/Finprod.lean",
+          "line": 318,
+          "text": "/-- The torsion-free assumption makes sure that the result holds even when the support of `f` is"
+        },
+        {
+          "file": "Algebra/CharP/LinearMaps.lean",
+          "line": 21,
+          "text": "endomorphisms of `M` when `M` contains a non-torsion element `x`."
+        },
+        {
+          "file": "Algebra/CharP/LinearMaps.lean",
+          "line": 43,
+          "text": "element `x` that is not torsion, then the characteristic of `R` is equal to the"
+        },
+        {
+          "file": "Algebra/CharP/LinearMaps.lean",
+          "line": 46,
+          "text": "(htorsion : \u2203 x : M, Ideal.torsionOf R M x = \u22a5) : CharP (M \u2192\u2097[R] M) p where"
+        },
+        {
+          "file": "Algebra/CharP/LinearMaps.lean",
+          "line": 51,
+          "text": "exact \u27e8fun h \u21a6 htorsion.casesOn fun x hx \u21a6 by simpa [\u2190 Ideal.mem_torsionOf_iff, hx] using h x,"
+        },
+        {
+          "file": "Algebra/Group/Defs.lean",
+          "line": 787,
+          "text": "/-- An additive monoid is torsion-free if scalar multiplication by every non-zero element `n : \u2115` is"
+        },
+        {
+          "file": "Algebra/Group/Defs.lean",
+          "line": 793,
+          "text": "/-- A monoid is torsion-free if power by every non-zero element `n : \u2115` is injective. -/"
+        },
+        {
+          "file": "Algebra/Group/EvenFunction.lean",
+          "line": 138,
+          "text": "section torsionfree"
+        },
+        {
+          "file": "Algebra/Group/EvenFunction.lean",
+          "line": 144,
+          "text": "If `f` is both even and odd, and its target is a torsion-free commutative additive group,"
+        },
+        {
+          "file": "Algebra/Group/EvenFunction.lean",
+          "line": 166,
+          "text": "end torsionfree"
+        },
+        {
+          "file": "Algebra/Group/Hom/Defs.lean",
+          "line": 504,
+          "text": "/-- If the codomain of an injective monoid homomorphism is torsion free,"
+        },
+        {
+          "file": "Algebra/Group/Hom/Defs.lean",
+          "line": 506,
+          "text": "@[to_additive /-- If the codomain of an injective additive monoid homomorphism is torsion free,"
+        },
+        {
+          "file": "Algebra/Group/Torsion.lean",
+          "line": 14,
+          "text": "This file proves lemmas about torsion-free monoids."
+        },
+        {
+          "file": "Algebra/Group/Torsion.lean",
+          "line": 15,
+          "text": "A monoid `M` is *torsion-free* if `n \u2022 \u00b7 : M \u2192 M` is injective for all non-zero natural numbers `n`."
+        },
+        {
+          "file": "Algebra/GroupWithZero/Torsion.lean",
+          "line": 15,
+          "text": "`NormalizationMonoid` structure and such that `M\u02e3` is torsion-free, then `M` is torsion-free."
+        },
+        {
+          "file": "Algebra/GroupWithZero/Torsion.lean",
+          "line": 18,
+          "text": "torsion-free."
+        },
+        {
+          "file": "Algebra/Module/Card.lean",
+          "line": 26,
+          "text": "/-- The cardinality of a nontrivial torsion-free module over a domain is at least the cardinality of"
+        },
+        {
+          "file": "Algebra/Module/DedekindDomain.lean",
+          "line": 14,
+          "text": "Over a Dedekind domain, an `I`-torsion module is the internal direct sum of its `p i ^ e i`-torsion"
+        },
+        {
+          "file": "Algebra/Module/DedekindDomain.lean",
+          "line": 16,
+          "text": "Therefore, as any finitely generated torsion module is `I`-torsion for some `I`, it is an internal"
+        },
+        {
+          "file": "Algebra/Module/DedekindDomain.lean",
+          "line": 17,
+          "text": "direct sum of its `p i ^ e i`-torsion submodules for some prime ideals `p i` and numbers `e i`."
+        },
+        {
+          "file": "Algebra/Module/DedekindDomain.lean",
+          "line": 33,
+          "text": "/-- Over a Dedekind domain, an `I`-torsion module is the internal direct sum of its `p i ^ e i`-"
+        },
+        {
+          "file": "Algebra/Module/DedekindDomain.lean",
+          "line": 34,
+          "text": "torsion submodules, where `I = \u220f i, p i ^ e i` is its unique decomposition in prime ideals. -/"
+        },
+        {
+          "file": "Algebra/Module/DedekindDomain.lean",
+          "line": 35,
+          "text": "theorem isInternal_prime_power_torsion_of_is_torsion_by_ideal"
+        },
+        {
+          "file": "Algebra/Module/DedekindDomain.lean",
+          "line": 38,
+          "text": "torsionBySet R M (p ^ (factors I).count \u2191p : Ideal R) := by"
+        },
+        {
+          "file": "Algebra/Module/DedekindDomain.lean",
+          "line": 42,
+          "text": "apply torsionBySet_isInternal (p := fun p => p ^ P.count p) _"
+        },
+        {
+          "file": "Algebra/Module/DedekindDomain.lean",
+          "line": 59,
+          "text": "/-- A finitely generated torsion module over a Dedekind domain is an internal direct sum of its"
+        },
+        {
+          "file": "Algebra/Module/DedekindDomain.lean",
+          "line": 60,
+          "text": "`p i ^ e i`-torsion submodules where `p i` are factors of `(\u22a4 : Submodule R M).annihilator` and"
+        },
+        {
+          "file": "Algebra/Module/DedekindDomain.lean",
+          "line": 62,
+          "text": "theorem isInternal_prime_power_torsion [Module.Finite R M]"
+        },
+        {
+          "file": "Algebra/Module/DedekindDomain.lean",
+          "line": 65,
+          "text": "torsionBySet R M (p ^ (factors (\u22a4 : Submodule R M).annihilator).count \u2191p : Ideal R) := by"
+        },
+        {
+          "file": "Algebra/Module/DedekindDomain.lean",
+          "line": 68,
+          "text": "refine isInternal_prime_power_torsion_of_is_torsion_by_ideal ?_ hM'"
+        },
+        {
+          "file": "Algebra/Module/DedekindDomain.lean",
+          "line": 72,
+          "text": "/-- A finitely generated torsion module over a Dedekind domain is an internal direct sum of its"
+        },
+        {
+          "file": "Algebra/Module/DedekindDomain.lean",
+          "line": 73,
+          "text": "`p i ^ e i`-torsion submodules for some prime ideals `p i` and numbers `e i`. -/"
+        },
+        {
+          "file": "Algebra/Module/DedekindDomain.lean",
+          "line": 74,
+          "text": "theorem exists_isInternal_prime_power_torsion [Module.Finite R M] (hM : Module.IsTorsion R M) :"
+        },
+        {
+          "file": "Algebra/Module/DedekindDomain.lean",
+          "line": 76,
+          "text": "DirectSum.IsInternal fun p : P => torsionBySet R M (p ^ e p : Ideal R) := by"
+        },
+        {
+          "file": "Algebra/Module/DedekindDomain.lean",
+          "line": 78,
+          "text": "isInternal_prime_power_torsion hM\u27e9"
+        },
+        {
+          "file": "Algebra/Module/Lattice.lean",
+          "line": 175,
+          "text": "-- any torsion free finite module over a PID is free"
+        },
+        {
+          "file": "Algebra/Module/PID.lean",
+          "line": 19,
+          "text": "* `Module.equiv_directSum_of_isTorsion` : A finitely generated torsion module over a PID is"
+        },
+        {
+          "file": "Algebra/Module/PID.lean",
+          "line": 22,
+          "text": "product of a free module (its torsion free part) and a direct sum of the form above (its torsion"
+        },
+        {
+          "file": "Algebra/Module/PID.lean",
+          "line": 28,
+          "text": "torsion hypotheses in the intermediate lemmas."
+        },
+        {
+          "file": "Algebra/Module/PID.lean",
+          "line": 33,
+          "text": "We first prove (`Submodule.isInternal_prime_power_torsion_of_pid`) that a finitely generated"
+        },
+        {
+          "file": "Algebra/Module/PID.lean",
+          "line": 34,
+          "text": "torsion module is the internal direct sum of its `p i ^ e i`-torsion submodules for some"
+        },
+        {
+          "file": "Algebra/Module/PID.lean",
+          "line": 36,
+          "text": "at `Submodule.isInternal_prime_power_torsion`."
+        },
+        {
+          "file": "Algebra/Module/PID.lean",
+          "line": 38,
+          "text": "Then we treat the case of a `p ^ \u221e`-torsion module (that is, a module where all elements are"
+        },
+        {
+          "file": "Algebra/Module/PID.lean",
+          "line": 39,
+          "text": "cancelled by scalar multiplication by some power of `p`) and apply it to the `p i ^ e i`-torsion"
+        }
+      ]
+    }
+  },
+  "curvature_name_patterns": {
+    "christoffel": {
+      "count": 0,
+      "matches": []
+    },
+    "generic_curvature": {
+      "count": 1,
+      "matches": [
+        {
+          "file": "MeasureTheory/Measure/Doubling.lean",
+          "line": 42,
+          "text": "of curvature -1, the area of a disc of radius `\u03b5` is `A(\u03b5) = 2\u03c0(cosh(\u03b5) - 1)` so"
+        }
+      ]
+    },
+    "levi_civita": {
+      "count": 0,
+      "matches": []
+    },
+    "ricci": {
+      "count": 0,
+      "matches": []
+    },
+    "riemann_curvature": {
+      "count": 0,
+      "matches": []
+    },
+    "scalar_curvature": {
+      "count": 0,
+      "matches": []
+    },
+    "sectional_curvature": {
+      "count": 0,
+      "matches": []
+    }
+  },
+  "interpretation_note": "A zero pattern count is source evidence, not a proof that no semantically equivalent API can exist under an unrelated name. The companion Lean environment-name scan and declaration probe address that residual risk.",
+  "mathlib_source_file_count": 8311,
+  "project_lock": {
+    "lake_manifest_sha256": "14a93e63a5df91ca2739c1c6c6e2a55a37b4677e040e25e4a0c9163eca92371c",
+    "lean_toolchain": "leanprover/lean4:v4.33.1",
+    "lean_toolchain_sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "mathlib_git_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "mathlib_input_rev": "v4.33.1"
+  },
+  "scope": "all *.lean files under the locked Mathlib/ source tree; comments included"
+}

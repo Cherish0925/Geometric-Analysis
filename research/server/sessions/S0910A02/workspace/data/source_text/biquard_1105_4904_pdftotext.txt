@@ -1,0 +1,3737 @@
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN.
+I.
+
+arXiv:1105.4904v1 [math.DG] 24 May 2011
+
+OLIVIER BIQUARD
+Abstract. We find a new obstruction for a real Einstein 4-orbifold
+with an A1 -singularity to be a limit of smooth Einstein 4-manifolds.
+The obstruction is a curvature condition at the singular point.
+For asymptotically hyperbolic metrics, with boundary at infinity
+a conformal metric, we prove that if the obstruction vanishes, one
+can desingularize Einstein orbifolds with such singularities.
+The Dirichlet problem consists in finding Einstein metrics with
+given conformal infinity on the boundary: we prove that our obstruction defines a wall in the space of conformal metrics on the
+boundary, and that all the Einstein metrics must have their conformal infinity on one side of the wall.
+
+Cet article est consacré aux limites de métriques d’Einstein en dimension 4. Par les théorèmes d’Anderson et Bando-Kasue-Nakajima
+[And89, BKN89], une suite (gi) de métriques d’Einstein sur des variétés compactes de dimension 4, à volume minoré et diamètre borné, et
+norme L2 de la courbure bornée, converge vers une métrique d’Einstein
+sur un orbifold ; en outre, près des singularités qui apparaissent, une
+limite d’éclatements ( gǫii ), où ǫi tend vers 0, converge vers une variété
+Ricci plate asymptotiquement localement euclidienne (ALE), c’est-àdire modelée à l’infini sur le quotient de R4 par un sous-groupe fini de
+SO(4).
+L’idée générale dans laquelle s’inscrit cet article est de raffiner le
+théorème de compacité en comprenant les limites possibles des suites
+de métriques d’Einstein. C’est une question importante en géométrie
+ou pour les applications des techniques géométriques en topologie. Plus
+précisément, nous étudions les métriques d’Einstein sur des orbifolds
+pour lesquelles on peut reconstruire les suites de métriques d’Einstein
+lisses convergeant vers la métrique orbifold. Si une telle construction est
+connue en géométrie kählérienne—l’exemple de certaines surfaces K3
+construites par désingularisation de surfaces de Kummer singulières—,
+ce n’est pas le cas en géométrie riemannienne, car l’équation d’Einstein
+réelle est difficile à manipuler : en particulier, elle est toujours obstruée
+dans cette situation.
+1
+
+2
+
+OLIVIER BIQUARD
+
+Les métriques ALE Ricci-plates ne sont pas classifiées, mais on suppose souvent qu’elles se réduisent aux instantons gravitationnels ALE,
+classifiés par Kronheimer [Kro89a, Kro89b]. Ce sont des métriques
+ALE hyperkählériennes, désingularisations ou lissifications des singularités kleiniennes C2 /Γ, où Γ est un sous-groupe fini de SU(2). Leur 2homologie est engendrée par les classes d’une configuration de sphères
+d’auto-intersection −2, contractées sur la singularité dans C2 /Γ. Le
+cas le plus simple est donc celui de la singularité C2 /Z2 , dans laquelle
+est contractée la seule sphère de sa désingularisation, la métrique de
+Eguchi-Hanson définie sur T ∗ S 2 .
+C’est ce cas que nous étudions dans cet article : le cas général d’une
+singularité kleinienne, nettement plus technique, sera traité dans un
+autre article. La singularité C2 /Z2 est aussi le cas le plus « générique » de convergence vers une singularité kleinienne, au sens où l’on
+ne contracte qu’une seule sphère d’auto-intersection −2. Une autre limitation de cet article est que nous ne résolvons la question que dans
+un cadre non compact, où un bout à l’infini est asymptotiquement
+hyperbolique (AH)—le cas compact posant les problèmes supplémentaires connus d’obstruction dans les équations d’Einstein. Néanmoins,
+une grande partie de notre construction est valable dans le cas compact
+et y soulève des questions intéressantes. Elle éclaire aussi le problème
+de Dirichlet à l’infini sur les variétés AH, étudié par Anderson, dans le
+cas où la variété possède un H 2 qui ne provient pas de son bord.
+Passons maintenant aux résultats de cet article. On part d’un orbifold M0 , à bord ∂M0 = {x = 0} (où x est une équation du bord),
+muni d’une métrique d’Einstein AH g0 , au sens où près du bord ∂M0
+2
+0
+on a g0 ∼ dx x+γ
+, où γ0 est une métrique sur ∂M0 . Le bord ∂M0 appa2
+raît donc comme bord à l’infini, sur lequel g0 n’induit intrinsèquement
+que la classe conforme [γ0 ], appelée infini conforme de g0 . Le but est
+de désingulariser la métrique aux points orbifold, ce qui sera possible
+sous une hypothèse de courbure. Pour l’énoncer, rappelons que la courbure riemannienne peut être vue comme endomorphisme symétrique
+des 2-formes, et qu’en dimension 4, celles-ci se décomposent en formes
+autoduales et anti-autoduales :
+Ω2 = Ω2+ ⊕ Ω2− .
+La courbure se décompose alors en
+R+ Ric0
+,
+R=
+Ric0 R−
+!
+
+R± = W ± +
+
+Scal
+,
+12
+
+où W + et W − , à trace nulle, sont les parties autoduales et anti-autoduales
+du tenseur de Weyl W .
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+3
+
+Enfin, précisons que g0 est dite non dégénérée si elle n’admet pas de
+déformation d’Einstein infinitésimale L2 .
+Théorème 0.1. Supposons que (M0 , g0 ) ait une singularité de la forme
+R4 /Z2 au point p0 , et que g0 soit non dégénérée. Soit M la variété
+obtenue à partir de M0 en éclatant p0 en une sphère d’auto-intersection
+−2. Supposons en outre qu’au point p0 on ait
+(1)
+
+det Rg+0 (p0 ) = 0.
+
+Alors il existe une famille gt (t > 0) de métriques d’Einstein AH sur
+M, telle que
+– le volume de la sphère éclatant p0 est t ;
+– quand t → 0, on a gt → g0 , avec convergence C ∞ sur tout compact
+en dehors de p0 ;
+– à la singularité, une bulle se forme : quand t → 0, on a gtt → eh.
+Si M0 compte plusieurs singularités de la forme R4 /Z2 , le même
+résultat reste vrai : on peut désingulariser ou bien toutes les singularités simultanément, ou bien seulement un sous-ensemble en laissant les
+singularités orbifold aux autres points.
+Un exemple explicite de désingularisation est connu : la famille de
+métriques AdS-Taub-Bolt, construite par Page-Pope [PP87], voir aussi
+[MS07]. C’est une famille à 1 paramètre de métriques d’Einstein AH
+sur T ∗ S 2 , dégénérant vers une métrique orbifold g0 . Cette métrique g0
+vérifie l’hypothèse de courbure det R+ (p0 ) = 0. En fait, elle coïncide
+avec le quotient par Z2 d’une métrique de Pedersen [Ped86], et en particulier est autoduale ; par [BR09, prop. 4.5.3], elle est non dégénérée.
+La méthode de démonstration du théorème consiste à recoller la métrique de Eguchi-Hanson de T ∗ S 2 , asymptote à R4 /Z2 , à la métrique
+orbifold après un changement d’échelle dépendant de t. Dans ce recollement apparaît un paramètre de jauge, ϕ ∈ SO(4), indiquant comment
+la carte à l’infini de Eguchi-Hanson est recollée à une carte de M0
+au point singulier. Comme la métrique de Eguchi-Hanson est U(2)invariante, le paramètre ϕ habite dans SO(4)/ U(2), qui s’identifie aux
+directions de Ω2+ R4 .
+Choisissons sur Eguchi-Hanson la carte à l’infini qui est complexe
+pour la structure complexe de T ∗ PC1 . Alors, dans notre méthode de
+recollement, il faut que la droite de Ω2+ R4 déterminée par ϕ soit dans le
+noyau de R+ (p0 ). Dans le cas non dégénéré où une seule valeur propre
+de R+ (p0 ) s’annule, la jauge de recollement est donc complètement
+déterminée ; dans le cas dégénéré où deux valeurs propres s’annulent,
+il y a plus de liberté.
+
+4
+
+OLIVIER BIQUARD
+
+Cela correspond bien à ce qui se passe dans le cas kählérien : les
+valeurs propres de R+ sont alors ( Scal
+, 0, 0) ; si la courbure scalaire de
+4
+M0 est non nulle, la structure complexe de M0 ne peut pas être recollée
+à celle de T ∗ PC1, la métrique Kähler-Einstein ne pouvant pas admettre
+de courbe holomorphe d’auto-intersection −2. Il faut donc la recoller
+à une autre structure complexe de Eguchi-Hanson, pour laquelle la
+section nulle n’est pas holomorphe.
+Enfin, si la métrique orbifold satisfait plutôt det Rg−0 (p0 ) = 0 en l’un
+des points singuliers, le théorème reste valable en recollant en p0 une
+métrique de Eguchi-Hanson avec l’orientation opposée. Par conséquent,
+compte tenu de la forme diagonale de R pour une métrique d’Einstein,
+on peut considérer que la vraie condition de courbure pour rendre possible le recollement est
+det Rg0 (p0 ) = 0,
+et une droite du noyau détermine un paramètre de recollement dans
+O(4)/ U(2), c’est-à-dire à la fois un choix d’orientation et un choix de
+structure complexe dans l’espace de Eguchi-Hanson recollé.
+Une partie de la démonstration du théorème 0.1 est valable sur les
+variétés compactes. Cela permet de penser que, M0 compacte ou non
+compacte, la condition de courbure det R+ (p0 ) = 0 soit nécessaire pour
+que g0 soit la limite d’une suite (gi ) de métriques d’Einstein convergeant
+vers g0 , telle que ( gǫii ) converge vers la métrique de Eguchi-Hanson.
+Voici un premier résultat dans cette direction. Pour l’énoncer, soit gt0
+1
+la métrique qu’on obtient en recollant une grande boule de rayon t− 4 ,
+1
+1
+contractée d’un facteur t 2 , dans une petite boule de rayon t 4 de M0 . Il
+s’agit du recollement le plus simple possible entre g0 et la métrique de
+Eguchi-Hanson qui désingularise la singularité. Soit ρ > 1 une fonction,
+qui satisfait :
+– en dehors d’un compact de Eguchi-Hanson, ρ coïncide avec le
+rayon ;
+– sur M0 , dans une boule fixe B autour de la singularité, la fonction
+1
+ρ coïncide avec t− 2 r, où r est le noyau ;
+– dans M0 − B, la fonction ρ est tronquée par une constante (donc
+1
+de l’ordre de t− 2 ).
+Il y a bien sûr un recollement sur la zone de transition entre les deux
+métriques. Alors :
+Théorème 0.2. Supposons que (M0 , g0) soit un orbifold compact, d’Einstein, non dégénéré, avec singularité de la forme R4 /Z2 au point p0 .
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+5
+
+Supposons qu’au point p0 on ait
+det Rg+0 (p0 ) 6= 0.
+Soit δ0 > 0 petit. Alors il existe ǫ > 0, tel que si g est une métrique sur
+M, proche dans C 2 de gt0 au sens où, pour k = 0, 1, 2,
+|∇k (g − gt0 )|gt0 6 ǫρ−δ0 −k ,
+(en fait il suffit d’avoir cette borne dans C 1,α ), alors g n’est pas d’Einstein.
+Voir l’énoncé technique précis C 1,α dans le corollaire 8.3, qui traite
+aussi le cas non compact (un autre poids est alors nécessaire à l’infini).
+Notons tout de suite que la condition sur la différence n’est pas trop
+forte, au sens où la borne C 2 exigée sur g − gt0 est loin d’empêcher g
+d’être Einstein par un argument local. Par ailleurs, la proximité deδ0
+mandée entre g et gt0 est d’ordre t 2 , ce qui est raisonnable puisqu’on
+s’attend à ce qu’une éventuelle métrique d’Einstein diffère en O(t) de la
+métrique gt0 (c’est le cas pour les métriques produites par le théorème
+0.1).
+On montrera dans un autre article que la condition de courbure (1)
+est nécessaire aussi, dans le même sens, pour désingulariser les autres
+singularités kleiniennes. Évidemment il serait souhaitable de démontrer que la condition est nécessaire sous des hypothèses beaucoup plus
+faibles sur la suite de métriques d’Einstein convergeant vers g0 :
+Question. Supposons qu’on ait une suite de métriques d’Einstein (gi ),
+convergeant vers un orbifold g0 avec une singularité C2 /Γ au point p,
+et telle qu’un éclatement au point p, soit gǫii , converge vers un instanton
+gravitationnel ALE. Alors a-t-on det Rg+0 (p0 ) = 0 ?
+L’hypothèse de non dégénérescence est évidemment satisfaite pour
+les métriques hyperboliques réelles, qui en revanche ne satisfont jamais
+la condition de courbure det R+ (p0 ) = 0. Donc le théorème 0.2 dit
+qu’on ne peut pas désingulariser un orbifold hyperbolique réel, avec
+des singularités d’ordre 2, par la métrique de Eguchi-Hanson. Il est
+intéressant de spécialiser la question précédente aux variétés hyperboliques :
+Sous-question. Si (M0 , g0 ) est un orbifold compact de dimension 4, hyperbolique réel, avec des singularités kleiniennes, est-il possible qu’existe
+une suite gi de métriques d’Einstein sur des variétés compactes, convergeant vers g0 en dehors des singularités, et telle qu’un éclatement aux
+singularités converge vers un instanton gravitationnel ALE ?
+
+6
+
+OLIVIER BIQUARD
+
+La même question fait également sens dans le cadre non compact.
+Dans le théorème 0.1, les métriques gt modifient l’infini conforme de
+g0 , et le comportement de l’infini conforme par rapport à t est déterminé. Cela éclaire le problème de Dirichlet à l’infini pour les métriques
+d’Einstein AH : étant donné une métrique conforme [γ] sur ∂M, trouver
+une métrique d’Einstein AH sur M dont l’infini conforme est [γ]. Ce
+problème est étudié par Anderson [And05, And08] par une théorie du
+degré qui compte le nombre de métriques d’Einstein d’infini conforme
+donné, sous l’hypothèse que toute la 2-homologie de M provienne de
+∂M, ce qui permet justement d’éviter la dégénérescence vers un orbifold. La démonstration du théorème 0.1 permet de préciser ce qui se
+passe dans ce cas, si les singularités sont kleiniennes. Notons C l’espace
+des métriques conformes sur ∂M0 . Pour γ ∈ C , proche de γ0 , il existe
+[Biq00] une métrique d’Einstein AH g0 (γ), d’infini conforme γ. Soit
+(2)
+
+C0 = {γ ∈ C , det Rg+0 (γ) (p0 ) = 0}.
+
+Alors le résultat suivant dit que, génériquement, on peut désingulariser
+d’un seul côté de C0 , et qu’ainsi C0 est un « mur » pour le problème
+de Dirichlet à l’infini ; les énoncés précis se trouvent sections 13 et 14 :
+Théorème 0.3. Sous une hypothèse « générique » sur γ0 , l’hypersurface C0 ⊂ C est lisse en γ0 , et :
+(1) les infinis conformes des métriques désingularisées construites
+par le théorème 0.1 remplissent l’intersection d’un voisinage ouvert de γ0 avec un seul côté de C0 ;
+
+(2) si une métrique d’Einstein AH g sur M, d’infini conforme γ, est
+proche au sens du théorème 0.2 d’un recollement de la métrique
+de Eguchi-Hanson avec une métrique orbifold d’Einstein, alors
+il faut que γ soit du côté de C0 déterminé ci-avant, et g est
+déterminée par γ.
+Ce théorème indique manifestement que, dans le cas général, chaque
+sphère d’auto-intersection −2 dans la 2-homologie de M donne naissance à un mur défini par (2) sur l’orbifold obtenu par contraction de
+cette sphère : le degré d’Anderson change à travers le mur, et la contribution des métriques que nous avons construites est exactement 1. Pour
+en déduire que la formule de passage de mur donne une différence égale
+à 1, il faudrait en outre montrer qu’il n’y a pas d’autre moyen de dégénérer vers g0 à travers des métriques d’Einstein, que par des métriques
+proches, au sens du théorème 0.2, des recollements modèles gt0 . Voir
+l’exemple de T ∗ S 2 à la fin de la section 14.
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+7
+
+Pour des sphères d’auto-intersection différente de −2, il y a dans
+[And08] quelques remarques tendant à suggérer que ce type de phénomène ne se produira pas.
+Les autres singularités kleiniennes correspondent à certaines configurations de sphères d’auto-intersection −2. On peut aussi les désingulariser, mais les obstructions à annuler portent non seulement sur R+ ,
+mais aussi sur les dérivées de la courbure. Ce problème beaucoup plus
+technique sera traité dans un autre article. Par rapport à la question
+ci-dessus, on s’attend à trouver les dégénérescences vers ces singularités
+plus compliquées aux intersections des diverses hypersurfaces C0 définies par les différentes sphères d’auto-intersection −2. On voit donc que
+la codimension sera supérieure à 1, et qu’il s’agit d’un cas beaucoup
+moins générique que celui traité dans cet article.
+Passons à présent au plan de cet article. On commence par analyser
+en profondeur l’équation infinitésimale d’Einstein pour la métrique de
+Eguchi-Hanson en § 1. Pour recoller la métrique de Eguchi-Hanson,
+après changement d’échelle, à la métrique orbifold donnée g0 , on modifie en § 2 la métrique de Eguchi-Hanson pour la faire coller à l’infini avec
+les termes d’ordre 2 de g0 au point singulier. C’est possible sous une
+condition sur ses termes d’ordre 2, interprétée en § 3 comme condition
+de courbure sur g0 au point singulier. Cette condition permet donc de
+fabriquer en § 4 un recollement qui est approximativement d’Einstein.
+Malheureusement, on ne peut pas le déformer en une vraie métrique
+d’Einstein, à cause des obstructions provenant de Eguchi-Hanson, et
+on est amené à définir en § 5 un problème d’Einstein modulo obstructions. On a été concis dans la résolution, effectuée en § 6–8, car elle
+suit un schéma général classique : néanmoins la démonstration reste
+délicate, car il faut d’une part contrôler une géométrie dont le rayon
+d’injectivité tend vers 0, et d’autre part obtenir un développement précis des obstructions. De ce développement est déduit en particulier le
+corollaire 8.3 qui dit que, sous certaines hypothèses, la condition de
+courbure det Rg+0 (p0 ) = 0 est nécessaire. Jusque là, toute la construction, y compris ce corollaire, reste valable si M0 est compacte.
+La résolution complète de l’équation exige de trouver de nouvelles
+déformations pour tuer les obstructions : celles-ci proviennent des déformations de l’infini conforme de M0 (ce n’est donc qu’ici qu’on utilise la
+non compacité de M0 ), permettant de perturber le germe de g0 au point
+singulier en § 9–10 (ceci repose sur le théorème de continuation unique
+de [Biq08]), puis on construit les métriques d’Einstein en § 11. Déterminer l’asymptotique précis des infinis conformes nécessaires requiert
+un raffinement des obstructions et des solutions approchées mené en
+
+8
+
+OLIVIER BIQUARD
+
+§ 12–13. Finalement, un argument de transversalité développé en § 14
+donne l’unicité générique des solutions.
+1. La linéarisation de l’équation d’Einstein pour
+Eguchi-Hanson
+La métrique de Eguchi-Hanson, eh, est une métrique hyperkählérienne sur T ∗ PC1 . À l’infini, elle est ALE (asymptotiquement localement
+euclidienne), c’est-à-dire asymptotique à la métrique plate de R4 /Z2 .
+On rappelle ici quelques faits standards. Choisissons des coordonnées
+(x1 , x2 , x3 , x4 ) sur R4 , soient r le rayon et (α1 , α2 , α3 ) une base de 1formes invariantes sur la sphère S 3 , satisfaisant dα1 = 2α2 ∧ α3 , . . .
+Plus précisément, on prend
+α1 = r12 (x1 dx2 − x2 dx1 + x3 dx4 − x4 dx3 ),
+α2 = r12 (x1 dx3 − x3 dx1 − x2 dx4 + x4 dx2 ),
+
+α3 = r12 (x1 dx4 − x4 dx1 + x2 dx3 − x3 dx2 ).
+
+On peut alors écrire la métrique de Eguchi-Hanson comme
+√
+r2
+2
+2 2
+1 + r 4 (α22 + α32 ),
+(3)
+eh = √
+(dr
++
+r
+α
+)
++
+1
+4
+1+r
+où la section nulle de T ∗ PC1 est représentée par r = 0, et la métrique y
+est équivalente à
+2
+
+2
+
+d( r2 )2 + 4( r2 )2 α12 + α22 + α32 .
+Pour obtenir une métrique qui s’étende de manière lisse à l’origine, on
+voit qu’il faut que 2α1 soit de longueur 2π sur les cercles autour du P 1 ,
+c’est-à-dire qu’il faut quotienter par l’action de Z2 sur ces cercles ; la
+formule (3) définit ainsi une métrique lisse sur T ∗ PC1 .
+Comme métrique hyperkählérienne, Eguchi-Hanson est kählérienne
+par rapport à trois structures complexes I1 , I2 et I3 ; on choisira I1
+comme la structure complexe donnant T ∗ PC1 , elle est donnée explicitement par les coordonnées complexes x1 + ix2 et x3 + ix4 . Les structures
+complexes I2 et I3 sont asymptotes, à l’infini, aux structures complexes
+de R4 données respectivement, d’une part par les coordonnées complexes x1 + ix3 et x2 − ix4 , d’autre part par les coordonnées complexes
+x1 + ix4 et x2 + ix3 .
+Enfin, à l’infini, notant la métrique euclidienne
+e = dr 2 + r 2 (α12 + α22 + α32 ),
+on a le développement asymptotique
+
+1 
+(4)
+eh = e + 4 − (dr 2 + r 2 α12 ) + α22 + α32 + O( r16 ),
+2r
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+9
+
+qui montre que la métrique de Eguchi-Hanson est asymptotique à la
+métrique plate de C2 /Z2 à des termes en O( r14 ) près.
+La cohomologie L2 de eh, concentrée en degré 2, est de dimension 1
+et représentée par la 2-forme anti-autoduale fermée
+(5)
+
+1
+Ω=
+1 + r4
+
+√
+r2
+√
+1 + r 4 α2 ∧ α3 .
+dr
+∧
+rα
+−
+1
+1 + r4
+!
+
+L’opérateur de linéarisation de l’équation d’Einstein, agissant sur les
+2-tenseurs symétriques, est
+◦
+1
+∗
+Beh h,
+deh Ric(h) = ∇∗eh ∇eh h − Reh h − δeh
+2
+
+où Beh = δeh h + 21 d treh h est l’opérateur de Bianchi.
+Dans la suite, sauf ambiguïté, on évitera les indices indiquant par
+rapport à quelle métrique est défini l’opérateur.
+Généralement, on considère h en jauge de Bianchi Bh = 0, ce qui
+mène à étudier plutôt
+◦
+1
+P = ∇∗ ∇ − R.
+2
+Puisque Riceh = 0, l’identité de Bianchi Bg Ricg = 0 implique Beh ◦
+deh Ric = 0, d’où on déduit immédiatement
+1
+∗
+Beh Peh = Beh δeh
+Beh = ∇∗eh ∇eh Beh .
+2
+Une conséquence de cette formule est le fait suivant : si Peh h = 0 et
+h = O(r δ ) pour un δ < 1, alors Beh h = 0. Par conséquent, le noyau de
+P , et particulièrement son noyau L2 , paramètre bien des déformations
+infinitésimales d’Einstein.
+Proposition 1.1. L’opérateur Peh pour la métrique de Eguchi-Hanson
+satisfait les propriétés suivantes :
+(1) Le noyau L2 de Peh , noté Oeh , est de dimension 3, engendré par
+les trois tenseurs
+oi (x, y) = Ω(Ii x, y),
+où Ω est la 2-forme harmonique L2 , et les Ii sont les trois structures complexes de la métrique de Eguchi-Hanson.
+(2) Le noyau de Peh sur les tenseurs u tels que |u| = O(r −δ ) pour
+un δ > 0 se réduit à Oeh .
+(3) Si v = O(r −δ ) pour un δ ∈ (0, 4), δ 6= 2, alors il existe u tel que
+Peh u = v,
+
+u = O(r 2−δ )
+
+si et seulement si le produit scalaire (v, oi) = 0 pour 1 6 i 6 3.
+
+10
+
+OLIVIER BIQUARD
+
+(4) Une solution k̂i de Peh k̂i = oi est donnée par
+k̂i = −
+
+3
+1
+(1 + r 4 ) 2 oi .
+12
+
+(5) Une solution ki , à trace nulle, de deh Ric ki = oi est donnée par
+3
+
+3
+1√
+1  (1 + r 4 ) 2 − 1 
+k1 = k̂1 −
+1 + r 4 eh + δ ∗
+∂r ,
+2
+8
+12
+r3
+ki = 2k̂i , i = 2, 3.
+Démonstration. On a tr P (h) = ∆ tr h, donc si P (h) = 0, il faut que
+tr h = 0. On est donc ramené au cas sans trace. On utilise alors l’isomorphisme Sym20 = Ω2− Ω2+ pour identifier h avec une 2-forme antiautoduale à valeurs dans les 2-formes autoduales. Par la formule (4.6)
+dans [BR09], on a alors la formule
+(6)
+
+P h = d− d∗− h,
+
+où d− : Ω1 Ω2+ → Ω2− Ω2+ est la différentielle extérieure. Comme la métrique est hyperkählérienne, le fibré Ω2+ est trivial, et trivialisé par les
+trois structures complexes parallèles Ii : l’identification
+de Ω2− Ω2+ avec
+
+Ω2− ⊗ R3 qui en résulte est donnée par h 7→ ωi (x, y) = h(x, Ii y) . Ainsi
+l’opérateur d− d∗− devient le laplacien ordinaire sur les ωi . Comme la
+cohomologie L2 est de dimension 1, on obtient la première assertion.
+Pour la seconde assertion, observons que si, pour une 2-forme antiautoduale ω telle que |ω| = O(r −δ ) on a d− d∗− ω = 0, alors par régularité
+elliptique |∇ω| = O(r −δ−1 ) ; par conséquent, dans l’intégration par
+parties
+Z
+Z
+Z
+r<R
+
+hd− d∗− ω, ωi =
+
+r<R
+−δ−1 −δ 3
+
+|d∗− ω|2 −
+
+r=R
+2(1−δ)
+
+d∗− ω ∧ ω
+
+le terme de bord est O(r
+r r ) = O(r
+), et donc, si δ > 1 on
+∗
+obtient d− ω = 0, c’est-à-dire dω = 0. On en déduit alors facilement
+qu’en réalité ω doit coïncider avec un multiple de la forme harmonique
+Ω.
+On utilise alors la théorie des opérateurs elliptiques dans les espaces
+à poids pour constater que l’opérateur d− d∗− n’a pas de poids critique
+dans l’intervalle (0, 2), et donc le noyau dans cet intervalle ne dépend
+pas du poids δ ∈ (0, 2). Puisque, pour δ > 1, il est réduit au noyau L2 ,
+il est donc réduit au noyau L2 sur tout l’intervalle (0, 2)
+La troisième assertion résulte aussi de la théorie des opérateurs elliptiques dans les espaces à poids. En effet, si δ n’est pas critique (d’où la
+restriction δ 6= 2), le conoyau de l’opérateur P : r δ−2 C 2,α → r δ C α est
+égal au noyau de P sur r 4−δ C α . Mais si δ ∈ (0, 4) alors 4 − δ ∈ (0, 4)
+et le noyau dans cet intervalle se réduit au noyau L2 .
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+11
+
+Compte tenu de la formule (6), la quatrième assertion se ramène à
+l’égalité d− d∗− Ξ = Ω, où
+Ξ=−
+
+3
+1
+(1 + r 4 ) 2 Ω.
+12
+
+Or on calcule
+(7)
+
+r4
+√
+d Ξ=
+α1 ,
+2 1 + r4
+∗
+
+qui mène à
+(8)
+
+dd∗ Ξ = ω1 + Ω.
+
+La partie anti-autoduale est donc Ω, d’où la formule.
+La dernière assertion est plus compliquée : le problème est que les
+k̂i ne sont plus en jauge de Bianchi, donc le calcul de Peh k̂i n’est pas
+suffisant pour obtenir deh Ric k̂i . Calculons donc le terme de jauge dans
+Peh k̂i. Observons que la formule (7) indique que d∗ Ξ est duale (au sens
+∂
+de la métrique) du champ de vecteurs de Killing 21 I1 r ∂r
+. Il en résulte
+(9)
+
+1
+1
+∇d∗ Ξ = dd∗Ξ = (ω1 + Ω).
+2
+2
+
+Compte tenu de k̂i (·, ·) = Ξ(Ii ·, ·), on en déduit δ k̂i = Ii d∗ Ξ, d’où, à
+l’aide de (8),
+1
+∇B k̂i (·, ·) = − (ω1 + Ω)(·, Ii ·).
+2
+En prenant la partie symétrique, on obtient
+1
+δ ∗ B k̂1 = (eh + o1 ),
+2
+1
+δ ∗ B k̂i = oi , i = 2, 3.
+2
+∗
+Puisque d Ric = P − δ B, on en déduit l’assertion sur k2 et k3 . En
+revanche,
+1
+(10)
+deh Ric k̂1 = (o1 − eh).
+2
+Pour compenser
+le terme eh, on introduit un terme à trace : la fonction
+√
+f (r) = 1 + r 4 satisfait ∆f = −8, et, plus précisément, df = −4I1 d∗ Ξ,
+donc par (9),
+∇df = 2(eh + o1 ).
+
+Il en résulte
+
+deh Ric(f eh) = P (f eh) − δ ∗ B(f eh)
+1
+= (∆f )eh − δ ∗ df
+2
+= −6eh − 2o1 .
+
+12
+
+OLIVIER BIQUARD
+
+1
+Combinant avec (10), on en déduit que deh Ric 23 (k̂1 − 12
+f eh) = o1 .
+
+
+
+3
+4 2
+
+
+
+1 ∗ (1+r ) −1
+δ
+∂r ,
+Le terme de jauge additionnel dans la proposition, 12
+r3
+permet d’annuler la trace (calcul laissé au lecteur).
+
+
+2. Le problème linéarisé sur Eguchi-Hanson
+Soit dans R4 un 2-tenseur symétrique H dont les coefficients sont
+des polynômes homogènes de degré 2, ainsi
+H = Hijklxi xj dxk dxl .
+
+(11)
+
+On pense à H comme le terme d’ordre 2 dans le développement à
+l’origine d’une métrique g = e + H + · · · sur R4 . La courbure en 0 de g
+ne dépend que de H et sera notée R(H). Il est important de noter que
+R(H) est linéaire en H. Les composantes de R(H) (courbure de Weyl,
+tenseur de Ricci et courbure scalaire) seront notées W (H), Ric(H) et
+Scal(H). On déduit aussi l’opérateur de courbure,
+R(H) : Λ2 R4 → Λ2 R4 .
+Dans la décomposition Λ2 R4 = Λ2+ R4 ⊕ Λ2− R4 , cet opérateur s’écrit
+(12)
+
+R(H) =
+
+Scal(H)
++ W+ (H)
+12
+
+Ric0 (H)
+
+Ric0 (H)
+.
+Scal(H)
++ W− (H)
+12
+!
+
+Enfin, il sera important dans la suite de noter que le tenseur H n’est
+pas forcément donné en jauge de Bianchi par rapport à la métrique
+euclidienne, et le défaut à être en jauge de Bianchi est mesuré par la
+1-forme
+Be H =
+
+X
+
+(−2Hkjkl + Hjlkk )xj dxl .
+
+k
+
+Dans cette section, on étudie un problème infinitésimal de déformation de eh par un tenseur asymptotique à l’infini à un tenseur H donné
+de type (11).
+Supposons que le tenseur H soit d’Einstein, c’est-à-dire
+Ric(H) = Λ
+
+X
+
+(dxi )2
+
+pour un réel Λ. Fixons les coordonnées (xi ) sur R4 comme dans la
+section 1, avec la métrique de Eguchi-Hanson donnée par la formule
+(3). Le problème que nous regardons s’écrit :
+(13)
+
+deh Ric(h) = Λeh,
+h = H + O(r −2+ǫ) pour tout ǫ > 0.
+
+Le but de cette section est le résultat suivant :
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+13
+
+Proposition 2.1. Le problème (13) a une solution si et seulement si,
+pour i = 1, 2, 3, on a
+lim
+
+Z
+
+r→∞ Sr /Z2
+
+∂
+3
+hH, oi i + oi (BH, ) volSr /Z2 = 0,
+r
+∂r
+!
+
+où les oi sont les solutions L2 de Peh h = 0.
+Remarquons que les termes principaux de H, BH et oi sont respectivement en r 2 , r et r −4 , tandis que le volume des sphères est en r 3 ,
+donc la limite est bien définie. De même, le choix de la métrique euclidienne ou de la métrique de Eguchi-Hanson pour calculer BH est sans
+importance, puisque seul le terme principal contribue à la limite.
+Démonstration. Remarquons qu’on peut mettre H en jauge de Bianchi,
+en trouvant un champ de vecteurs V sur R4 , dont les coefficients sont
+des polynômes homogènes de degré 3, tel que
+Be H̃ = 0,
+
+où
+
+H̃ = H + δe∗ V.
+
+En effet, il suffit de résoudre l’équation Be δe∗ V = −Be H, or Be δe =
+P
+2
+∇∗e ∇e = − (∂x∂ i )2 donc c’est toujours possible, H̃ est encore un tenseur
+dont les coefficients sont des polynômes de degré 2.
+Si on a une solution du système (13), alors on peut mettre h en jauge
+de Bianchi en résolvant
+∗
+Beh δeh
+v = −Beh h,
+(14)
+v = V + O(r −1),
+∗
+et en posant h̃ = h + δeh
+v, qui est alors solution du système
+
+deh Ric(h̃) = Λeh,
+(15)
+
+Beh h̃ = 0,
+h̃ = H̃ + O(r −2+ǫ ),
+
+donc, en particulier,
+(16)
+
+Peh h̃ = 0,
+h̃ = H̃ + O(r −2+ε ).
+
+Réciproquement, une solution de l’équation (16) satisfait automatiquement le système (15) : en effet, puisque Beh Peh = 21 ∇∗eh ∇eh Beh , si
+Peh h̃ = 0, alors w = Beh h̃ satisfait ∇∗eh ∇eh w = 0 ; en outre, compte tenu
+de l’asymptotique de h̃, on a w = O(r −3+ǫ ), donc il faut que ∇eh w = 0
+ce qui entraîne w = 0. On a donc montré que la résolution du système
+(13) se ramène à la résolution du système (16), où H̃ est en jauge de
+Bianchi à l’infini.
+
+14
+
+OLIVIER BIQUARD
+
+Or, la résolution du système (16) est maintenant facile : soit χ une
+fonction de coupure, donc
+
+1,
+
+χ(x) = 
+
+|x| > 2R,
+
+0,
+
+|x| < R,
+
+alors il faut trouver k = h̃ − χH̃ satisfaisant
+k = O(r −2),
+
+(17)
+
+Peh k = −Peh (χH̃).
+
+Sachant que H̃ est en jauge de Bianchi à l’infini, et que Ric(H̃) = Λe,
+on voit que
+Beh H̃ = O(r −3),
+
+deh Ric(H̃) − Λeh = O(r −4 ),
+
+donc au total
+Peh (χH̃) = O(r −4).
+Par la proposition 1.1, une solution de (17) est donc possible si et
+seulement si
+
+
+(18)
+
+
+
+Peh (χH̃), oi = 0,
+
+i = 1, 2, 3,
+
+où les oi engendrent le noyau de Peh . Dans ce cas, la solution k satisfait
+k = O(r −2+ǫ ) pour tout ǫ > 0.
+◦
+
+Puisque P = 21 ∇∗ ∇ − R, l’équation Peh oi = 0 entraîne
+(19)
+
+Z
+
+r6R
+
+hPeh v, oi i voleh =
+
+1
+2
+
+Z
+
+r=R
+
+
+
+
+
+h−∇~n v, oi i + hv, ∇~n oi i volSR /Z2 .
+
+Sachant que oi admet à l’infini un développement suivant les puissances
+de 1r , dont le terme principal est en r −4 , on déduit
+∇~n oi ∼
+
+−4
+oi .
+r
+
+De même, à l’infini, H̃ est homogène de degré 2, donc
+2
+∇~n H̃ ∼ H̃.
+r
+Passant à la limite dans (19), on déduit
+(20)
+
+
+
+
+
+1Z
+hH̃, oi i volSR /Z2 .
+r→∞ r Sr /Z2
+
+Peh (χH̃), oi = −3 lim
+
+Il reste à exprimer cette intégrale en fonction de H plutôt que H̃.
+Pour cela nous modifions un peu le calcul précédent : rappelons que
+H̃ = H + δe∗ V , où V a été choisi de sorte que Be δe∗ V = −Be H. Prolongeons V de manière quelconque sur tout T ∗ PC1 , en préservant son
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+15
+
+∗
+asymptotique, alors χH̃ = H ′ + δeh
+V , avec H ′ = H + O(r −2). La même
+intégration par parties que précédemment mène à :
+Z
+1
+hH, oii volSR /Z2 .
+(21)
+(Peh H ′ , oi ) = −3 lim
+r→∞ r Sr /Z2
+Faisons en revanche une intégration par parties différente sur l’autre
+∗
+∗
+∗
+terme : puisque Peh δeh
+= δeh
+Beh δeh
+et Beh oi = 0, on obtient
+
+Z
+
+r6R
+
+∗
+hPeh δeh
+V, oi i voleh =
+
+Compte tenu de Be δe∗ V
+R → ∞, on obtient
+(22)
+
+Z
+
+SR /Z2
+
+
+
+
+
+∗
+∗ Beh δeh
+V yoi .
+
+= −Be H près de l’infini, en passant à la limite
+Z
+
+∗
+(Peh δeh
+V, oi ) = lim
+
+r→∞ Sr /Z2
+
+
+
+
+
+∗ − BHyoi .
+
+La somme de (21) et (22) donne le résultat de la proposition.
+
+
+
+Si la condition de la proposition 2.1 n’est pas satisfaite, on ne peut
+plus résoudre le système (13). Néanmoins, on peut résoudre modulo
+l’espace d’obstruction Oeh , c’est-à-dire résoudre le système suivant :
+(23)
+
+3
+X
+
+deh Ric(h) = Λeh +
+
+λ i oi ,
+
+1
+
+h = H + O(r −2+ǫ) pour tout ǫ > 0,
+où les λi sont des constantes inconnues à trouver.
+Proposition 2.2. Le problème (23) a toujours une solution h. Les
+constantes λi sont déterminées par H :
+(24)
+
+1
+λi = −
+lim
+kΩk2L2 r→∞ Sr /Z2
+
+∂
+3
+hH, oi i + oi (BH, ) volSr /Z2 .
+r
+∂r
+!
+
+Z
+
+La solution est déterminée modulo jauge et modulo le noyau Oeh . En
+mettant H en jauge de Bianchi, on peut fixer une solution particulière
+en demandant
+(25)
+
+Beh h = 0,
+
+Z
+
+S2
+
+hh, oj ieh vol = 0.
+
+Démonstration. Observons que les tenseurs ki de la proposition 1.1
+n’ont pas de raison particulière d’être en jauge de Bianchi, mais on
+∗
+peut les mettre en jauge de Bianchi en posant k̃i = ki + δeh
+vi , où vi
+résoud le système (14).
+On montre alors la proposition en reprenant la démonstration de la
+proposition 2.1 : il s’agit de résoudre le système (17) pour un H̃ en
+jauge de Bianchi à l’infini. La solution est possible pourvu que les trois
+P
+conditions (18) soient satisfaites. En posant H̃ = H̃ ′ + 31 λi k̃i , où les λi
+sont données par (24), alors H̃ ′ satisfait les conditions (18) et on peut
+
+16
+
+OLIVIER BIQUARD
+
+donc résoudre le problème. Le prix à payer est que Peh k̃i = deh Ric k̃i =
+oi , donc on n’a résolu que l’équation (23).
+
+3. Reformulation des obstructions
+Le but de cette section est de recalculer la condition de résolution
+du système (13) sous une forme différente. En effet, la condition sur H
+trouvée dans la proposition 2.1 doit manifestement être invariante par
+difféomorphismes infinitésimaux de R4 dont la différentielle est l’identité à l’origine : donc cette condition ne peut être qu’une condition
+sur la courbure R(H) associée à H. En effet, on obtient une condition
+simple sur l’opérateur de courbure R(H) agissant sur Ω2 R4 :
+Théorème 3.1. Le système (13) a une solution si et seulement si
+(26)
+
+R+ (H)(dx1 ∧ dx2 + dx3 ∧ dx4 ) = 0.
+
+Notons qu’on pourrait écrire aussi bien la condition sur R(H), puisque
+la métrique est d’Einstein.
+Dans ce théorème, les coordonnées (xi ) ne sont pas quelconques,
+puisqu’à l’infini x1 + ix2 et x3 + ix4 sont complexes pour la structure
+complexe I1 de la métrique de Eguchi-Hanson—à savoir la structure de
+T ∗ PC1 .
+Pour démontrer le théorème, on commence par calculer explicitement
+les obstructions provenant de la proposition 2.1. Compte tenu de la
+proposition 1.1 de la formule (5), on a les asymptotiques explicites
+suivantes pour les oi :
+
+1  dr 2
+2
+2
+2
++
+α
+−
+α
+−
+α
+1
+2
+3 ,
+r2 r2
+
+1  dr
+(27)
+o2 ∼ 2
+· α3 + α1 · α2 ,
+r r
+
+1  dr
+o3 ∼ 2 −
+· α2 + α1 · α3 .
+r
+r
+Manifestement, la condition d’existence d’une solution au système (13)
+est invariante sous la transformation H → H + δ ∗ V , où V est un
+champ de vecteurs dont les coefficients sont homogènes de degré 3. Par
+conséquent, il suffit de tester la condition de la proposition 2.1 sur H
+∂
+mis en jauge radiale : ∂r
+yH = 0. Cela implique que H s’écrive sous la
+forme
+
+o1 ∼
+
+(28)
+
+H=
+
+X
+
+Hij βi βj ,
+
+ij
+
+où les Hij sont des fonctions homogènes de degré 0, et on a posé
+βi = r 2 αi = x1 dxi+1 − xi+1 dx1 + · · ·
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+17
+
+On calcule alors :
+Lemme 3.2. On a
+(29)
+
+lim
+
+Z
+
+r→∞ Sr /Z2
+
+∂
+3
+hH, o1i + o1 (BH, ) volSr /Z2
+r
+∂r
+!
+
+=
+
+Z
+
+S 3 /Z2
+
+(5H11 − H22 − H33 ) volS 3 /Z2 ,
+
+et pour i = 2, 3,
+(30)
+!
+Z
+Z
+3
+∂
+lim
+hH, oii + oi (BH, ) volSr /Z2 =
+6H1i volS 3 /Z2 .
+r→∞ Sr /Z2
+r
+∂r
+S 3 /Z2
+Démonstration. On a ∇β1 = dx1 ⊗ dx2 − dx2 ⊗ dx1 + dx3 ⊗ dx4 − dx4 ⊗
+dx3 = I1 , et, plus généralement,
+∇βi = Ii .
+
+On calcule alors aisément, toujours pour la métrique euclidienne,
+Bβi2 = 2rdr
+B(βi βj + βj βi ) = −2ǫkij βk .
+
+Enfin, on aura besoin, pour une fonction f , de la formule :
+
+
+1
+B(f T ) = f BT + − ∇f yT + (tr T )df .
+2
+Remarquons à présent que H = Hij βi βj avec Hij homogène de degré
+ij
+= 0. On obtient alors immédiatement
+0, donc ∂H
+∂r
+o1 (BH,
+
+∂
+∂
+) = BH( ) = 2(H11 + H22 + H33 );
+∂r
+∂r
+
+d’un autre côté,
+hH, o1 i = H11 − H22 − H33 ;
+
+ces deux formules ensemble donnent la première formule du lemme, les
+deux autres s’établissent de la même manière.
+
+Démonstration du théorème 3.1. Il reste à interpréter l’annulation de
+ces trois quantités en termes de la courbure R(H). Bien qu’un calcul explicite soit possible, nous préférons l’approche abstraite suivante.
+Notons S+ et S− les représentations spinorielles de Spin(4) = SU(2) ×
+SU(2), ce sont donc les représentations standard dans C2 des deux copies de SU(2) ; notons S±k leur produit symétrique, alors les représentations de SO(4) se décomposent en somme de produits tensoriels S+k S−l .
+En particulier, R4 = S+ S− (en fait c’est la partie réelle, mais comme
+toutes nos représentations sont réelles, nous oublierons ce détail dans
+la suite), les 2-formes se décomposent en Ω2 R4 = Ω2+ ⊕ Ω2− = S+2 ⊕ S−2 ,
+
+18
+
+OLIVIER BIQUARD
+
+et les 2-tenseurs symétriques en S 2 R4 = S+2 S−2 ⊕ R. Finalement, les
+deux demi-tenseurs de Weyl W± vivent dans les représentations S±4 .
+Le 2-tenseur H = Hijkl xi xj dxk dxl vit dans la représentation
+H = S 2 R4 ⊗ S 2 R4 ,
+mais la condition qu’il soit radial se traduit par
+∂
+yH = 0.
+∂xi
+Or les coefficients du vecteur V (H) sont homogènes de degré 3, donc
+V (H) ∈ V = S 3 R4 ⊗ R4 . On a les décompositions :
+V (H) := xi
+
+(31)
+H = S+4 S−4 ⊕ S+4 S−2 ⊕ S+4 ⊕ S+2 S−4 ⊕ 3S+2 S−2 ⊕ S+2 ⊕ S−4 ⊕ S−2 ⊕ 2R
+(32)
+V = S+4 S−4 ⊕ S+4 S−2 ⊕ S+2 S−4 ⊕ 2S+2 S−2 ⊕ S+2 ⊕ S−2 ⊕ R.
+
+Il est clair que V : H → V est surjectif. Comme il est aussi SO(4)équivariant, on en déduit que l’espace des 2-tenseurs H radiaux, à savoir
+ker V , se décompose suivant les représentations présentes dans (31)
+mais absentes dans (32), donc
+(33)
+
+ker V = R ⊕ S+2 S−2 ⊕ S+4 ⊕ S−4 .
+
+Cette décomposition coïncide avec celle de l’ensemble R des tenseurs
+de courbure à l’origine de R4 , qui, au vu des différentes composantes
+irréductibles de la courbure, voir (12), s’écrit aussi
+(34)
+
+R = R ⊕ S+2 S−2 ⊕ S+4 ⊕ S−4 .
+
+Cette coïncidence traduit le fait bien connu de géométrie riemannienne suivant lequel, dans des coordonnées géodésiques, les dérivées
+secondes de la métrique à l’origine sont déterminées par la courbure à
+l’origine. En conséquence, la courbure
+(35)
+
+R : ker V −→ R,
+
+est un isomorphisme. Compte tenu de la décomposition en facteurs
+irréductibles, cet isomorphisme est complètement déterminé par la décomposition, à une constante près dans chaque facteur.
+Nous pouvons donc expliciter l’isomorphisme (35) en calculant un
+exemple pour fixer les constantes. Dans notre cas, il suffira de traiter
+les facteurs R et S+4 . Utilisons la description suivante des éléments de
+R ⊕ S+4 :
+P
+– dans ker V , il s’agit des tenseurs qui se laissent écrire H = Hij βi βj ,
+où les Hij sont constantes ;
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+19
+
+– dans R, on peut identifier, via l’opérateur de courbure, le facteur
+R⊕S+4 aux endomorphismes symétriques de Ω2+ : on les écrira donc
+comme des matrices dans la base de Ω2+ donnée par les ωi (·, ·) =
+g(Ii·, ·) = dβi .
+Passons maintenant au calcul d’un exemple : la métrique hyperbolique complexe, à courbure sectionnelle holomorphe −1, s’écrit
+r
+g = dr 2 + sinh2 (r)α12 + 4 sinh2 ( )(α22 + α32 ),
+2
+ce qui correspond à
+1  2 β22 + β32 
+β +
+;
+3 1
+4
+on a Scal = −6 et, comme pour toute métrique I1 -kählérienne, l’opérateur de courbure, restreint à Ω2+ est donné par
+(36)
+
+H=
+
+R+ =
+
+(37)
+
+ Scal
+
+Scal 
++
+12
+
+6
+
+− Scal
+12
+
+− Scal
+12
+
+
+
+
+.
+
+La comparaison de (36) et (37) permet de fixer les constantes sur les
+facteurs R et S+4 , on obtient
+(38)
+
+
+R+ (
+
+X
+
+Hij αi αj ) =
+
+−5H11 +H22 +H33
+−6H12
+−6H13
+−6H21
+−5H22 +H33 +H11
+−6H23
+−6H31
+−6H32
+−5H33 +H11 +H22
+
+.
+
+Via le lemme 3.2, il apparaît ainsi que les annulations requises sont
+équivalentes à R+ (H)(I1 ) = 0. Le théorème est démontré.
+
+
+Remarque 3.3. La formule (38), avec le lemme 3.2, donne une formule directe pour les coefficients λi de la proposition 2.2 en termes
+de R(H)(I1 ).
+4. Construction d’une solution approchée
+Soit (M0 , g0 ) une variété d’Einstein, donc Ricg0 = Λg0 . Supposons
+que M0 ait une singularité orbifold de type R4 /Z2 au point p0 . On va
+construire sur la désingularisation M de la variété une famille de métriques (gt )t>0 , satisfaisant approximativement l’équation d’Einstein,
+modulo les obstructions présentes sur Eguchi-Hanson. Jusqu’à la section 8 incluse, la variété M0 peut être aussi bien compacte que non
+compacte.
+Dans des coordonnées géodésiques (xi ) au point p0 , on écrit
+(39)
+
+g0 = e + H + O(|x|4), avec H = Hijkl xi xj dxk dxl .
+
+(Le développement ne contient que des termes pairs, au vu de l’invariance sous Z2 ). Par la proposition 2.2, il existe sur Eguchi-Hanson une
+
+20
+
+OLIVIER BIQUARD
+
+solution h au système (23), c’est-à-dire une solution de deh Ric(h) =
+P
+Λeh + 31 λi oi , asymptote à H à l’infini, où les constantes λi sont déterminées par H. On prendra h normalisée par (25).
+Remarquons la présence d’un paramètre de jauge dans la construction : si ϕ ∈ SO(4), alors on peut appliquer ϕ à la carte dans laquelle est
+exprimée g0 , ce qui a pour effet de modifier H dans (39), et donc la solution h. De manière équivalente, on peut penser qu’on a appliqué ϕ−1
+à la métrique de Eguchi-Hanson. Comme celle-ci est U(2)-invariante, il
+ne reste en réalité que deux paramètres réels, dans SO(4)/ U(2). Donc
+on ne perd rien à restreindre ϕ à être dans le groupe Sp1 ⊂ SO(4) qui
+fixe Ω2− R4 , et le vrai paramètre est dans Sp1 /U1 = SO(4)/ U(2).
+Notons que ce paramètre de jauge peut être déjà utilisé de la manière
+suivante : dans le cas où Rg+0 (p0 )|Ω2+ R4 a un noyau non trivial, quitte
+à appliquer une jauge ϕ ∈ Sp1 /U1 , on peut supposer que ce noyau
+contient la forme dx1 ∧ dx2 + dx3 ∧ dx4 . Alors, par le théorème 3.1, on
+a λj = 0. Plus généralement, toujours grâce à ce paramètre de jauge,
+on peut assurer que dx1 ∧ dx2 + dx3 ∧ dx4 soit un vecteur propre de
+R(H), ce qui implique au moins
+λ2 = λ3 = 0.
+Considérons alors sur Eguchi-Hanson le 2-tenseur
+ht,ϕ = eh + th.
+La notation ici garde en mémoire le paramètre de jauge ϕ ∈ Sp1 /U1 .
+A priori il ne s’agit pas d’une métrique, puisque le terme th explose
+à l’infini et n’a pas de raison d’être positif. Néanmoins, ht,ϕ est une
+métrique sur des régions de plus en plus larges de Eguchi-Hanson. Pour
+l’énoncer correctement, voyons Eguchi-Hanson dans les coordonnées de
+la section 1, donc identifiée en dehors de la section nulle avec R4 /Z2 ,
+et définissons des régions de Eguchi-Hanson par
+1
+EHt> = { t−β 6 r 6 2t−β },
+2
+t
+EH = {r 6 2t−β },
+où β ∈]0, 21 [ sera fixé ultérieurement. Définissons sur Eguchi-Hanson
+une fonction ρ > 1 asymptote au rayon r près de l’infini : ρ est une
+fonction croissante de r satisfaisant
+ρ=
+
+
+r
+
+1
+
+si r > 2,
+si r 6 1.
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+21
+
+Lemme 4.1. Soit β ∈]0, 12 [, si t ≪ 1 alors ht,ϕ est une métrique sur la
+région EHt . En outre, sur cette région,
+
+
+∇k Richt,ϕ −tΛht,ϕ − t
+
+3
+X
+1
+
+λ j oj
+
+
+
+eh
+
+6 ck t2 ρ2−k .
+
+Démonstration. Puisque h = O(ρ2 ), sur EHt on a |h| 6 ct1−2β ; or
+β < 21 , d’où il résulte que ht,ϕ est une métrique dès que t est assez
+petit.
+P
+Comme h est solution de deh Ric(h) = Λeh + 31 λi oi , le membre
+de gauche de l’inégalité est constitué de −t2 h et de termes au moins
+quadratiques de Ric appliqués à th : comme th est petit, les termes
+les plus grands sont les termes quadratiques, qui contiennent toujours
+au moins 2 dérivées de h (termes en ∇2 h · h, ou ∇h · ∇h) ; vu que
+|∇k h| 6 ck ρ2−k , on en déduit le résultat.
+
+√
+Considérons l’homothétie st : EHt,β
+tx.
+> → M0 donnée par st (x) =
+Alors 1t ϕ∗ s∗t g0 est proche de ht,ϕ : sur EHt,β
+,
+>
+1 ∗ ∗
+ϕ st g0 = e + tH + O(t2 r 4 ),
+t
+ht,ϕ = e + tH + O(r −4 ) + O(tr −2+ε),
+et la dérivée k-ième satisfait la même estimation, avec les erreurs multipliées par r −k . Une coïncidence optimale est obtenue avec le choix
+1
+β= ,
+4
+qui sera dorénavant fixé. Par conséquent, sur EHt> ,
+k
+1
+|∇k ( ϕ∗ s∗t g0 − ht,ϕ )|e 6 ck t2+ 4 .
+t
+Choisissons une fonction de coupure χt = χt (r), à support dans EHt ,
+telle que
+1
+1 1
+(40)
+χt (r) = 1 si r 6 t− 4 , |∂rk χt | 6 ck t 4 k .
+2
+1
+Il suffit de choisir χt (ρ) = χ1 (t 4 ρ). On construit une métrique gt,ϕ en
+recollant :
+1
+– la métrique g0 de M0 dès que r > 2t 4 ,
+s∗ g
+– la métrique t[(1 − χt ) tt 0 + χt ϕ∗ ht,ϕ ] sur EHt ,
+via l’homothétie st . Les deux métriques coïncident au voisinage de r =
+1
+2t 4 , donc on a bien défini une métrique sur la désingularisation M de
+M0 , obtenue comme
+1 1
+M = M0t ∪st EHt , avec M0t = {r > t 4 } ∩ M0 .
+2
+On montre de manière similaire au lemme 4.1 :
+
+22
+
+OLIVIER BIQUARD
+
+Lemme 4.2. La métrique gt,ϕ satisfait l’estimation sur EHt :
+k
+
+∇ (Ricgt,ϕ −Λgt,ϕ − t
+
+3
+X
+
+λj χt oj )
+
+1
+
+eh
+
+6 ck t2 ρ2−k .
+
+
+On prendra garde que, dans ce lemme, le membre de gauche est
+concentré sur EHt , et la norme est exprimée par rapport à la métrique
+de Eguchi-Hanson, comme l’indique la notation. Par ailleurs, comme
+on a vu, les λj dépendent aussi de ϕ.
+On remarquera également que l’erreur sur oj provoquée par la troncature est absorbée dans le terme d’erreur t2 ρ2 .
+Remarque 4.3. Un choix plus simple de recollement serait la métrique
+(41)
+
+0
+gt,ϕ
+= χt teh + (1 − χt )ϕ∗ g0 ,
+
+dans laquelle on n’a pas fait coïncider les termes quadratiques de g0 en
+p0 avec ceux d’une métrique sur EH. Mais on vérifie immédiatement
+que cette métrique est une moins bonne approximation d’une métrique
+d’Einstein, car elle vérifie seulement sur EHt
+(42)
+
+0
+0
+)
+∇k (Ricgt,ϕ
+−Λgt,ϕ
+
+eh
+
+6 ctρ−k ,
+
+qui est moins bon que l’estimation du lemme 4.2.
+Notation. Pour alléger les notations dans la suite, on oubliera généralement la dépendance en ϕ pour noter gt au lieu de gt,ϕ . La dépendance
+en ϕ sera écrite quand elle est utilisée.
+5. Équation d’Einstein modulo les obstructions
+On a construit dans la section 4 une solution approchée gt de l’équation d’Einstein sur M. On souhaite déformer gt en une solution exacte,
+en appliquant la méthode de [Biq00, chapitre I] : pour chaque t > 0
+assez petit, on cherche une métrique g proche de gt , telle que
+(43)
+
+Φgt (g) := Ricg −Λg + δg∗ Bgt g = 0.
+
+En effet, par l’identité de Bianchi, une solution g doit satisfaire
+Bg δg∗ Bgt g = 0.
+Souvent [Biq00, lemme I.1.4], l’opérateur Bg δg∗ est injectif, donc en réalité Bgt g = 0 et donc Ricg = Λg. Le lemme 7.1 donnera des conditions
+sous lesquelles Bg δg∗ est inversible.
+Or, l’application de cette méthode nécessite un contrôle de la norme
+de l’inverse de la linéarisation de Φ. Comme Peh n’est pas inversible
+pour la métrique de Eguchi-Hanson, un tel contrôle n’existe pas. Le
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+23
+
+conoyau Oeh de Peh , étudié dans la section 1, apparaît ainsi comme
+obstruction à la résolution de l’équation d’Einstein. Aussi, dans un
+premier temps, résoudra-t-on seulement « modulo les obstructions ».
+Par la proposition 1.1, l’espace Oeh est engendré par les trois tenseurs
+oi . Pour poser l’équation d’Einstein modulo ce conoyau, on peut définir
+un espace d’obstructions tronquées, de dimension trois, O = hχt oi i, et
+écrire
+Ricg −Λg ∈ O.
+Néanmoins, cette équation pose problème, car le membre de gauche satisfait l’identité de Bianchi Bg (Ricg −Λg) = 0, qu’un élément de O n’a
+pas de raison de satisfaire a priori. Il semble ainsi difficile de résoudre
+l’équation en appliquant la méthode de l’équation (43).
+On contourne cette difficulté en faisant dépendre le second membre
+de l’équation de la métrique inconnue g. Pour toute métrique g, telle
+que l’opérateur Bg δg∗ sur les champs de vecteurs soit un isomorphisme
+(voir le lemme 7.1), on définit la projection
+(44)
+
+πg : L2 (Ω1 ) → L2 (Ω1 ) ∩ ker Bg ,
+
+par
+(45)
+
+πg = 1 − δg∗ (Bg δg∗ )−1 Bg .
+
+Faisons dépendre l’espace d’obstruction de la métrique g en posant
+(46)
+
+Og = hπg (χt oi )i.
+
+L’équation à résoudre devient
+(47)
+
+Ricg −Λg ∈ Og .
+
+À présent, la méthode de l’équation (43) peut être appliquée : en intégrant la jauge dans l’équation, on résout
+(48)
+
+Φgt (g) = Ricg −Λg + δg∗ Bgt g ∈ Og .
+
+Puisque Og ⊂ ker Bg , la même méthode que ci-dessus assure, si Bg δg∗
+est injectif, qu’une solution de Φgt g ∈ Og satisfait en réalité l’équation
+de jauge Bgt g = 0. On a donc montré :
+Lemme 5.1. Si la métrique g satisfait Φgt g ∈ Og , et si l’opérateur
+
+Bg δg∗ est injectif, alors Bgt g = 0 et Ricg −Λg ∈ Og .
+
+24
+
+OLIVIER BIQUARD
+
+6. Espaces fonctionnels
+Construisons maintenant les espaces fonctionnels nécessaires à la résolution du problème (47).
+Fixons un rayon rp0 inférieur au rayon d’injectivité de g0 au point
+p0 . Soit r̃ une fonction réelle définie sur M0 par
+
+r
+
+r̃ =
+
+1
+
+si r 6 12 rp0 ,
+sur M0 − B(p0 , rp0 ).
+
+Par ailleurs, si M0 est AH, on dispose d’un bout N =]0, x0 [×∂M de
+M0 , où la première coordonnée, x, est une équation du bord à l’infini.
+On prolonge x sur M0 de sorte que x0 6 x 6 1 sur M0 − N.
+Soit un fibré tensoriel E, et δ0 ∈ R un poids. On définit sur EH un
+espace à poids Cδk,α
+(EH, E) de sections de E par :
+0
+|s|α =
+kskC k,α =
+δ0
+
+|s(x) − s(y)|
+,
+d(x, y)α
+d(x,y)<ieh
+sup
+
+k
+X
+0
+
+
+
+sup ρδ0 +k |∇k s| + |ρδ0 +k+α ∇k s|α .
+
+Ici ieh est le rayon d’injectivité de la métrique de Eguchi-Hanson, et la
+différence |s(x) − s(y)| est évaluée, de manière usuelle, en transportant
+parallèlement s(y) en Ex le long de la géodésique de x à y.
+De manière similaire, on définit un espace à poids Cδk,α
+(M0 , E) par
+0
+(49)
+
+kskC k,α (M0 ) =
+δ0
+
+k
+X
+0
+
+
+
+sup r̃ δ0 +k |∇k s| + |r̃ δ0 +k+α ∇k s|α ,
+
+(M0 , E)
+puis, pour un couple de poids (δ0 , δ∞ ), un espace à poids Cδk,α
+0 ,δ∞
+par
+(50)
+
+kskC k,α
+
+δ0 ,δ∞
+
+−δ∞
+skC k,α (M0 ) .
+(M0 ) = kx
+δ
+0
+
+(Dans le cas où M0 est compact, on n’a plus besoin du poids x à
+l’infini, on peut garder la même définition en convenant que x ≡ 1,
+donc le poids δ∞ ne joue plus de rôle).
+Finalement la norme effectivement utilisée dans cet article est un
+recollement des normes sur EH et sur M0 : si (δ0 , δ∞ ) est un couple
+de poids comme ci-dessus, on définit Cδk,α
+(M, E) par la norme, pour
+0 ,δ∞ ;t
+une section s de E,
+(51)
+
+kskC k,α
+
+δ0 ,δ∞ ;t
+
+δ0 +ℓ
+
+= t 2 kχt skC k,α (EH) + k(1 − χt )skC k,α
+δ0
+
+δ0 ,δ∞
+
+(M0 ) .
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+25
+
+Ici ℓ := ℓ+ − ℓ− est le poids conforme du fibré E ⊂ T M ⊗ℓ+ ⊗ T ∗ M ⊗ℓ− .
+C’est le poids qui permet d’identifier les normes des sections de E pour
+deux métriques g et gt :
+ℓ
+
+t 2 |s| gt = |s|g .
+
+Compte tenu que, dans la région EHt> , on a
+r̃
+ρ∼ √ ,
+t
+δ0
+
+le facteur t 2 dans (51) fait exactement coïncider les normes à poids
+de EH et M0 dans la région de recollement. En particulier, les normes
+(M0 ) sont uniformément équivalentes
+des espaces Cδk,α
+(M) et Cδk,α
+0 ,δ∞ ;t
+0 ,δ∞
+pour les sections à support dans Mt − EH t : pour tout t > 0, si s est
+à support dans Mt − EH t , alors
+(52)
+
+C −1 kskC k,α
+
+δ0 ,δ∞
+
+(M0 ) ,
+(M0 ) 6 kskCδk,α
+(M ) 6 CkskCδk,α
+,δ∞ ;t
+,δ∞
+0
+
+0
+
+pour une constante C indépendante de t.
+Dans la suite de l’article, on considère les poids δ0 > 0 et δ∞ > 0
+fixés et suffisamment petits.
+7. La jauge de Bianchi
+Le lemme suivant montre que la projection πg définie par (45) existe
+de manière très générale pour les perturbations de gt :
+Lemme 7.1. Soit k > 1 un entier, soient δ ∈] − 1, 3[ et δ ′ ∈]0, 4[. Il
+existe des constantes η1 , η2 > 0, telles que si t < η1 et
+(53)
+
+kg − gt kC k,α
+
+δ0 ,δ∞ ;t
+
+δ0
+
+< η2 t 2 ,
+
+k+1,α
+k−1,α
+alors Bg δg∗ : Cδ,δ
+→ Cδ+2,δ
+′ ;t
+′ ;t soit inversible, et la norme de l’inverse
+soit bornée indépendamment de t et g.
+
+Démonstration. Tout d’abord, on vérifie que, sous l’hypothèse du lemme,
+toutes les métriques g ont des cartes dans lesquelles leurs coefficients
+se comparent de manière uniforme. Faisons le sur la partie EHt de M
+(c’est similaire sur la partie M0t de M0 ). Remarquons que sur EHt on
+peut tester la condition (53) indifféremment par rapport à gt ou teh,
+puisque |∇k ( gtt −eh)| = Oeh (tρ2−k ), donc la condition (53) est largement
+satisfaite pour la différence teh − gt .
+Sur un compact fixé de EH, la condition (53), compte tenu de la
+définition (51), nous dit que
+g
+k − ehkC k,α (EH) < η2 .
+t
+
+26
+
+OLIVIER BIQUARD
+
+Si η2 > 0 est assez petit, alors gt se compare uniformément à la métrique
+eh.
+Sur la partie non compacte : soit un anneau de la forme
+AR = {R 6 r 6 2R}.
+Considérons l’homothétie h de rapport R qui envoie l’anneau A1 dans
+l’anneau AR , alors on vérifie immédiatement que
+kg − tehkC k,α
+
+(AR ) ∼ t
+δ ,δ∞ ;t
+0
+
+δ0
+2
+
+Rδ0 k
+
+1 ∗ g
+h ( − eh)kC k,α (A1 ) .
+R2
+t
+
+1 g
+R2 t
+
+devient de plus en plus proche de la métrique plate
+La métrique
+de l’anneau AR quand R devient grand. Sous l’hypothèse (53), ces
+métriques sont se comparent uniformément.
+Les estimations elliptiques dans les espaces de Hölder à poids se
+montrent justement en se ramenant à un nombre fini d’ouverts relativement compacts sur lesquels la métrique est uniformément bornée par
+rapport à une métrique de référence :
+– un compact de EH ;
+– un anneau A1 (après changement d’échelle) ;
+– un compact de M0 ;
+– une boule hyperbolique pour les boules centrées sur des points
+allant vers ∂M0 .
+Soit un opérateur elliptique géométrique P , d’ordre d 6 k + 1. Sur chacun de ces ouverts, on dispose d’estimations elliptiques avec constante
+uniforme pour l’opérateur P . Les espaces fonctionnels définis section 6
+sont justement obtenus à partir de ces ouverts par changement d’échelle,
+et on en déduit immédiatement, si d 6 ℓ 6 k + 1, l’estimation elliptique
+(54)
+
+kskC ℓ,α
+
+δ0 ,δ∞ ;t
+
+
+
+6 c kskCδ0 ,δ ;t + kP skC ℓ−d,α
+0
+
+δ0 +d,δ∞ ;t
+
+∞
+
+
+
+,
+
+où la constante c peut être choisie indépendante de la métrique g satisfaisant (53).
+Passons à l’assertion sur Bg δg∗ . Il s’agit de montrer une estimation
+(55)
+
+kXkC k+1,α 6 ckBg δg∗ XkC k−1,α ,
+δ,δ ′ ;t
+
+δ+2,δ ′ ;t
+
+avec constante indépendante de g. Compte tenu de la régularité elliptique (54), avec constantes uniformes, il suffit de montrer une estimation
+(56)
+
+kXkC 0 ′ 6 ckBg δg∗ XkC 0
+δ,δ ;t
+
+δ+2,δ ′ ;t
+
+.
+
+Le raisonnement se fait classiquement par l’absurde, et on sera donc
+bref : s’il existe
+– des réels ti → 0,
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+– des métriques gi telles que kgi − gti kC k,α
+
+δ0 ,δ∞ ;t
+
+27
+
+< η2 ,
+
+– des champs de vecteurs Xi tels que kXi kC 0 ′ = 1 et kBgi δg∗i XkC 0 ′ →
+δ+2,δ ;t
+δ,δ ;t
+0,
+alors, en regardant le point xi ∈ M où la norme kXi kC 0 ′ est atteinte,
+δ,δ ;t
+on extrait de Xi (éventuellement après changement d’échelle) une limite
+non nulle X∞ sur une variété limite M∞ vers laquelle xi converge. La
+limite satisfait Bδ ∗ X∞ = 0, et on montre pour les trois limites possibles
+de M∞ que c’est impossible :
+2
+0
+(1) M∞ = M0 : alors X∞ ∈ Cδ,δ
+′ (M0 ), donc X∞ ∈ L (M0 ) (δ = 2
+n’est pas un poids critique en p0 à cause de l’action de Z2 ), mais
+Bg0 δg∗0 = 21 (∇∗ ∇ − Ric) est injectif sur L2 (M0 ) ;
+
+∗
+(2) M∞ = EH : alors X∞ ∈ Cδ0 (EH), à nouveau Beh δeh
+= 12 ∇∗ ∇
+n’a pas de noyau sur Cδ0 (M0 ) ; à nouveau c’est l’action de Z2
+qui interdit le poids critique 0 à l’infini ;
+
+(3) M∞ = C2 /Z2 (la partie intermédiaire entre EH et M0 ) : même
+argument.
+
+On en déduit en particulier que toute métrique assez proche de gt
+peut se mettre en jauge de Bianchi par rapport à gt :
+Lemme 7.2. Soit k > 1 un entier. Il existe des constantes η, ǫ, ǫ′ > 0,
+tels que pour tout t < η et toute métrique g sur M telle que kg −
+δ0
+gt kC k,α
+< ǫt 2 , il existe un difféomorphisme ϕ = expgt X avec kXkC k+1,α
+δ0
+
+δ0 ,δ∞ ;t
+
+δ0 −1,δ∞ ;t
+
+ǫ′ t 2 , tel que Bgt ϕ∗ g = 0.
+C’est une application du théorème des fonctions inverses, sous la
+forme explicite donnée par le lemme suivant :
+Lemme 7.3. Soit Φ : E → F une application lisse entre espaces de Banach, et soit Q = Φ − Φ(0) − d0 Φ. Supposons qu’existent des constantes
+strictement positives q, r0 et c telles que
+(1) kQ(x) −Q(y)k 6 qkx−yk(kxk + kyk) pour tous x, y ∈ B(0, r0 ) ;
+
+(2) d0 Φ est un isomorphisme, et k(d0 Φ)−1 k 6 c.
+
+1
+Si r 6 min(r0 , 2qc
+) et kΦ(0)k 6 2cr , alors l’équation Φ(x) = 0 admet
+une solution unique dans B(0, r).
+
+
+Démonstration du lemme 7.2. On applique le lemme 7.3 à l’opérateur
+entre les espaces
+(57)
+
+X 7−→ Φ(X, g) = B(expgt X)∗ gt g,
+δ0
+
+δ0
+
+−→ t− 2 Cδk−1,α
+.
+t− 2 Cδk+1,α
+0 −1,δ∞ ;t
+0 +1,δ∞ ;t
+
+<
+
+28
+
+OLIVIER BIQUARD
+δ0
+
+Le facteur t− 2 s’explique de la manière suivante : sur un grand
+compact K ⊂ EH, on a
+δ0
+
+t− 2 kXkC k+1,α
+
+δ0 −1,δ∞ ;t
+
+δ0
+
+t− 2 kXkC k−1,α
+
+δ0 +1,δ∞ ;t
+
+∼ kXkC k+1,α(eh) ,
+∼ tkXkC k−1,α (eh) .
+
+Sachant que
+
+g
+B(expgt X)∗ gt g = tB(exp gt X)∗ gtt ,
+t
+t
+on voit que sur K l’opérateur Φ entre les espaces (57) est identique à
+l’opérateur X 7→ B(exp gt X)∗ gtt gt entre les espaces standards C k+1,α →
+t
+
+C k−1,α pour la métrique de Eguchi-Hanson.
+Sur chaque ouvert où la métrique se ramène, par changement d’échelle,
+à une métrique uniformément proche d’un modèle (voir la démonstration du lemme 7.1), on peut faire la même opération et vérifier que
+l’opérateur Φ se ramène, après changement d’échelle, au même opérateur pour la métrique contrôlée, entre des espaces
+λC k+1,α → λC k−1,α ,
+
+(58)
+
+avec λ > 1 (le cas ci-dessus où λ = 1 étant le plus défavorable).
+La géométrie ainsi bien contrôlée, on peut passer à la démonstration
+du lemme : on a Φ(X, g) = 0 si et seulement si Bgt (expgt X)∗ g = 0, et
+∂Φ
+(X) = Bgt δg∗t X,
+∂X (0,gt )
+qui, par le lemme 7.1, est inversible, avec constante contrôlée indépenδ0
+damment de t. Si kg − gt kC k,α
+< ǫt 2 , et ǫ est assez petit, alors la
+δ0 ,δ∞ ;t
+
+∂Φ
+∂Φ
+(0, gt ) − ∂X
+(0, g)k est petite (c’est une quesnorme d’opérateur k ∂X
+∂Φ
+tion locale qui se voit dans les cartes ci-dessus), donc ∂X
+(0, g) demeure
+inversible, et la norme de l’inverse est contrôlée. En outre,
+
+(59)
+
+kΦ(0, g)kC k−1,α
+
+δ0 +1,δ∞ ;t
+
+δ0
+
+6 cǫt 2 .
+
+On applique le lemme 7.3 à l’opérateur X → Φ(X, g) entre les espaces
+(57), en écrivant
+∂Φ
+Φ(X, g) = Φ(0, g) +
+(X) + Q(X).
+∂X (0,g)
+Il reste à montrer l’estimation
+kQ(X)−Q(Y )k − δ0
+t
+
+k−1,α
+2 C
+δ0 +1,δ∞ ;t
+
+6 qkX−Y k − δ0
+t
+
+k+1,α
+2 C
+δ0 −1,δ∞ ;t
+
+kX+Y k − δ0
+t
+
+k+1,α
+2 C
+δ0 −1,δ∞ ;t
+
+C’est une estimation locale, qu’il suffit de vérifier dans chacune des
+cartes où Φ se ramène à un opérateur entre les espaces de Hölder standards (58). Comme Q représente des termes au moins quadratiques, une
+
+.
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+29
+
+telle estimation est immédiate entre les espaces de Hölder standards.
+Quand on multiplie les normes par λ comme dans (58), l’inégalité continue d’aller dans le bon sens si λ > 1, ce qui est justement le cas. On
+notera qu’obtenir exactement λ > 1 avec un minimum égal à 1 est la
+δ0
+raison d’être du facteur t− 2 dans (57).
+La constante q du lemme 7.3 est donc contrôlée. Si on prend ǫ assez
+petit dans (59), le lemme 7.3 fournit donc une unique solution.
+
+8. Résolution de l’équation modulo les obstructions
+Le lemme 7.1 donne un sens au problème Φgt (g) ∈ Og quand g est
+. Avant de résoudre le problème,
+une perturbation de gt dans Cδ2,α
+0 ,δ∞
+définissons pour υ = (υ1 , υ2, υ3 ) ∈ R3 assez petit une métrique
+(60)
+
+gt,υ = gt + tχt
+
+3
+X
+
+υ j oj .
+
+1
+
+Nous utilisons ainsi explicitement l’ambiguïté de la solution dans la
+proposition 2.2. Remarquons que
+(61)
+
+δ0
+
+ktoj kC 2,α
+
+δ0 ,δ∞ ;t
+
+= O(t1+ 4 ),
+
+donc gt,υ est une petite perturbation de gt .
+Proposition 8.1. Soit (M0 , g0 ) une métrique orbifold Einstein, avec
+singularité de type R4 /Z2 au point p0 . Supposons M0 compacte, ou
+alors non compacte AH ; dans tous les cas non dégénérée. Alors il existe
+η, ǫ > 0 tels que, pour t < η et υ = (υ1 , υ2 , υ3 ) avec |υ| < ǫ, il existe
+une unique solution ĝt de l’équation
+Ricĝt −Λĝt ∈ Oĝt ,
+satisfaisant les conditions suivantes :
+δ0
+
+(1) kĝt − gt kC 2,α
+
+δ0 ,δ∞
+
+6 ǫt 2 ;
+
+(2) ĝt est en jauge de Bianchi par rapport à gt , c’est-à-dire Bgt ĝt =
+0;
+(3) pour j = 1, 2, 3, on a sur la section nulle dans EH :
+
+(62)
+
+Z
+
+S2
+
+h 1t (ĝt − gt ), oj ieh voleh = υj .
+
+En outre, écrivant Ricĝt −Λĝt =
+(63)
+(64)
+
+kĝt − gt,υ kC 2,α
+
+δ0 ,δ∞ ;t
+
+P3
+
+1 λj (t)πĝt (χt oj ), on a les estimations
+
+δ0
+
+6 ct1+ 4 ,
+3
+
+λj (t) = tλj + O(t 2 −δ ) pour tout δ > 0.
+
+Les estimations sont uniformes par rapport à υ et à une variation de
+l’infini conforme et donc de la métrique orbifold d’Einstein g0 .
+
+30
+
+OLIVIER BIQUARD
+
+Quand nous faisons varier la métrique orbifold Einstein g0 à partir
+d’une variation γ de son infini conforme γ0 , nous notons explicitement
+la dépendance des objets intervenant dans la proposition par rapport
+à la jauge ϕ ∈ Sp1 /U1 et à γ : λj (ϕ, γ), λj (t, ϕ, γ), gt,ϕ,υ,γ , ĝt,ϕ,υ,γ . . . Le
+paramètre υ sera rapidement oublié car il ne sert en réalité que dans le
+corollaire 8.3 ci-dessous.
+Remarque 8.2. On peut remarquer que, par rapport à la métrique recollée plus naïve gt0 donnée par (41), on a
+(65)
+
+1
+
+kgt − gt0kC 2,α
+
+δ0 ,δ∞ ;t
+
+δ0
+
+= O(t 2 + 4 ).
+
+Il en résulte immédiatement que les (1) (2) et (3) de la proposition
+restent vrais en remplaçant gt par gt0. On obtient un gain en remplaçant
+gt0 par la meilleure solution approchée gt dans les estimations (63) et
+(64) sur la solution.
+On peut déduire de la proposition un énoncé montrant que la condition de courbure sur g0 au point p0 est une condition nécessaire pour
+résoudre l’équation d’Einstein par notre méthode de recollement :
+Corollaire 8.3. Sous les hypothèses de la proposition 8.1, si la condition de courbure det Rg+0 (p0 ) = 0 n’est pas satisfaite, alors il existe
+ǫ, η > 0 tels que si γ est assez proche de γ0 et t < η, alors il n’existe
+pas de jauge ϕ ∈ Sp1 /U1 et de métrique d’Einstein g telle que
+δ0
+
+0
+kg − gt,ϕ,γ
+kC 1,α
+
+δ0 ,δ∞ ;t
+
+6 ǫt 2 .
+
+0
+L’utilisation de la métrique recollée naïve gt,ϕ,γ
+dans l’énoncé permet
+d’avoir les hypothèses les plus simples possibles.
+
+Démonstration du corollaire 8.3. Pour tous les γ suffisamment proches
+de γ0 et tous les ϕ ∈ Sp1 , les λi (ϕ, γ) ne sont pas tous nuls, par exemple
+|λ1 (ϕ, γ)| > ǫ pour un ǫ > 0.
+
+0
+Si g est une métrique d’Einstein, proche de gt,ϕ,γ
+au sens du du corollaire, alors elle est également proche de gt,ϕ,γ par (65), donc, par le
+lemme 7.2, peut être mise en jauge de Bianchi par rapport à gt,ϕ,γ .
+La régularité de l’équation d’Einstein en jauge de Bianchi permet de
+déduire qu’en réalité, on dispose d’une borne
+δ0
+
+kg − gt,ϕ,γ kC 2,α
+
+δ0 ,δ∞ ;t
+
+6 ǫt 2 .
+
+Toujours par l’hypothèse, on a alors | S 2 h 1t (g − gt ), oj ieh voleh | < ǫ,
+donc on peut appliquer l’unicité dans la proposition 8.1 pour conclure
+que g coïncide avec l’une des métriques ĝt,ϕ,υ,γ . Mais, pour t < η avec
+R
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+31
+
+η assez petit, uniforme pour tous les infinis conformes γ proches de γ0 ,
+la métrique ĝt,ϕ,υ,γ ne peut pas être Einstein à cause de (64).
+
+Démonstration de la proposition 8.1. On considère l’opérateur
+(66) Φ(h, x) = Ricg −Λg + δg∗ Bgt g −
+vu comme agissant entre les espaces
+(67)
+
+3
+X
+
+xj πg (χt oj ),
+
+où g = gt,υ + h,
+
+1
+
+δ0
+
+δ0
+
+t− 2 0 Cδ2,α
+⊕ R3 −→ t− 2 Cδα0 +2,δ∞ ;t ,
+0 ,δ∞ ;t
+
+l’espace 0 C 2,α défini par la condition (62) sur gt,υ = g − h.
+La proposition se ramène à résoudre le problème Φ(h, x) = 0, et
+à en estimer la solution. En effet, si on a une solution (h, x), par les
+lemmes 5.1 et 7.1, la métrique ĝt = gt + h satisfait alors l’équation
+(Ric −Λ)ĝt ∈ Oĝt tout en étant en jauge de Bianchi par rapport à gt .
+À nouveau, il s’agit de voir qu’on peut appliquer le lemme 7.3, avec
+des constantes c et q uniformément bornées. Comme, par le lemme 4.2
+et l’estimation (61), on a au départ
+δ0
+
+kΦ(0)kCδα +2,δ∞ ;t = O(t1+ 4 ),
+0
+
+alors pour t assez petit on peut appliquer le lemme 7.3, et l’estimation
+(63) en résultera automatiquement. Dans la suite, le paramètre υ ne
+joue plus aucun rôle et on l’omettra.
+La différentielle de l’opérateur Φ s’écrit
+1
+(68)
+d0 Φ(h, x) = Ψ(h, x) + (Ricgt ◦h + h ◦ Ricgt −2Λh),
+2
+où
+(69)
+
+Ψ(h, x) = Pt h +
+
+3
+X
+
+xj πgt (χt oj ),
+
+1
+
+◦
+1
+Pt h = ∇∗gt ∇gt h − Rgt h.
+2
+δ0
+
+= O(t1+ 4 ), l’opérateur d(gt ,0) Φ
+Compte tenu de k Ricgt −Λgt kC 2,α
+δ0 +2,δ∞
+est une petite perturbation de Ψ et il nous suffira de borner inférieurement la norme de Ψ−1 entre les espaces apparaissant dans (67).
+δ0
+On notera que kχt oj kCδα ,δ∞ ;t ∼ t 2 , donc la norme standard sur R3
+0
+est exactement la norme adéquate dans (67). On en déduit, comme
+dans la démonstration du lemme 7.2, que tout l’opérateur Φ est lisse
+avec des coefficients contrôlées dans les cartes locales par la norme de
+δ0
+⊕ R3 . Il en résulte que les termes non linéaires de l’opérat− 2 Cδ2,α
+0 ,δ∞ ;t
+teur Φ satisfont l’estimation uniforme requise dans la condition (1) du
+lemme 7.3.
+
+32
+
+OLIVIER BIQUARD
+
+Pour appliquer ce lemme, il reste donc à montrer que l’opérateur d0 Φ
+admet un inverse borné uniformément, donc à montrer une estimation
+δ0
+
+(70)
+
+δ0
+
+t− 2 khkC 2,α
+
+δ0 ,δ∞ ;t
+
++ |x| 6 ct− 2 kΨ(h, x)kCδα +2,δ∞ ;t
+0
+
+pour une constante c indépendante de t. Le raisonnement se fait par
+contradiction, comme dans le lemme 7.1. Supposons donnés une suite
+ti → 0, et (hi , xi ) tels que
+δ
+
+− 0
+
+ti 2 khi kCδ0 ,δ ;t + |xi | = 1,
+0
+
+∞ i
+
+mais
+δ
+
+− 0
+
+ti 2 kΨ(hi , x)kCδ0 +2,δ ;t → 0.
+0
+
+∞ i
+
+Supposons dans un premier temps que xi → 0. Alors le raisonnement
+est très similaire à celui fait pour le lemme 7.1 : la norme est atteinte à
+un point pi , et on extrait, éventuellement après changement d’échelle,
+une limite h∞ de hi sur une variété limite M∞ vers laquelle pi converge.
+Les trois cas sont les mêmes :
+(1) M∞ = M0 : alors kh∞ kCδ0 ,δ = 1 et Pg0 h∞ = 0 ; cela implique0 ∞
+rait que h∞ soit L2 , mais par hypothèse, P n’a pas de noyau
+sur M0 , contradiction ;
+(2) M∞ = EH : alors kh∞ kCδ0 = 1 et Peh h∞ = 0, et en outre on
+0
+a (62) ; or le noyau de Peh dans Cδ00 consiste précisément des
+oj , mais ceux-ci sont interdits par la condition (62), d’où la
+contradiction ;
+(3) M∞ = C2 /Z2 : alors kh∞ kCδ0 = 1 et P h∞ = 21 ∇∗ ∇h∞ = 0, mais
+0
+la condition h∞ ∈ Cδ00 implique que h∞ soit lisse à l’origine (au
+sens orbifold), et tende vers 0 à l’infini : il n’existe pas de telle
+solution, d’où la contradiction.
+Finalement nous avons réduit la démonstration à établir xi → 0. Cela
+sera établi comme conséquence des faits suivants sur les produits scalaires L2 (il faut noter que le produit scalaire de 2-tenseurs symétriques
+est invariant conforme) :
+
+
+
+
+πgt (χt oj ), χt ok
+
+
+
+(71)
+
+u, χt oj
+
+(72)
+(73)
+
+
+
+
+
+Pt h, χt oj
+
+gt
+
+
+
+gt
+gt
+
+δ0
+
+6 ct− 2 kukCδα ,δ∞ ;t ,
+0
+
+6 ct
+
+δ
+1
+− 40
+2
+
+khkC 2,α
+
+,
+
+δ0 ,δ∞ ;t
+1
+−δ
+2
+
+= (oj , ok )eh + O(t
+
+) pour tout δ > 0.
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+δ0
+
+En effet, de (72) et (73) on déduit, puisque t− 2 khi kC 2,α
+
+δ0 ,δ∞ ;t
+
+(oj , ok )eh = ko1 k2eh δjk ,
+
+
+
+ko1 k2eh xi,j = Ψ(hi , xi ), χt oj
+donc, par (71), pour j = 1, 2, 3,
+
+
+
+33
+
+6 1 et
+
+1
+
++ O(t 2 −δ ),
+
+gt
+
+δ0
+
+1
+
+|xi,j | 6 ct− 2 kΨ(hi , xi )kCδα ,δ∞ ;t + O(t 2 ).
+0
+
+Cela prouve bien xi → 0 comme voulu.
+Il nous reste donc à démontrer les estimations (71), (72) et (73).
+L’estimation (71) s’obtient immédiatement par intégration à partir de
+la définition de la norme de l’espace Cδα0 ,δ∞ ;t . Pour l’estimation (72), on
+fait l’intégration par parties
+(74)
+
+
+
+Pt h, χt oj
+
+
+
+gt
+
+
+
+= h, Pt (χt oj )
+
+
+
+gt
+
+=
+
+
+
+h
+, P gtt (χt oj )
+t
+
+
+
+gt
+t
+
+.
+
+La seconde égalité est juste le résultat d’une homothétie sur la métrique. Comme les métriques gtt et eh sont uniformément équivalentes
+sur EHt , on peut estimer le second membre par rapport à eh. Or
+(75)
+
+|P gtt (χt oj )| 6 |(P gtt − Peh )(χt oj )| + |Peh (χt oj )|
+6 c(tρ−4 + 1EHt> ρ−6 ).
+δ0
+
+Intégrant contre h, sachant que | ht |eh 6 t− 2 ρ−δ0 khkC 2,α
+
+δ0 ,δ∞ ;t
+
+
+
+Pt h, χt oj
+
+
+
+gt
+
+1
+
+δ0
+
+6 ct 2 − 4 khkC 2,α
+
+δ0 ,δ∞ ;t
+
+, on déduit
+
+,
+
+ce qui prouve bien (72).
+Enfin, pour la dernière estimation (73), remarquons tout d’abord
+que, puisque Bgt = t12 B gtt , on a sur EH t
+|Bgt (χt oj )| gtt 6 ct−2
+
+(76)
+et par conséquent,
+(77)
+
+ 1EH t
+
+>
+
+ρ5
+
++
+
+δ+3
+
+δ
+
+kBgt (χt oj )kC k,α = t 2 sup ρ2+δ |Bgt (χt oj )| gtt 6 ct 4 .
+δ+2
+
+Si −1 < δ < 3, il en résulte, par le lemme 7.1,
+(78)
+
+t
+,
+ρ3
+
+δ
+
+kδg∗t (Bgt δg∗t )−1 Bgt (χt oj )kC k+1,α 6 ct 4 .
+δ+1
+
+En intégrant contre χt ok , il en résulte, dès que δ > 0,
+(79)
+
+
+
+δg∗t (Bgt δg∗t )−1 Bgt (χt oj ), χt ok
+
+
+
+1
+
+δ
+
+6 ct 2 − 4 .
+
+Les autres termes dans (73) viennent du fait que la métrique par rapport à laquelle on mesure le produit scalaire est gtt plutôt que eh, et
+
+34
+
+OLIVIER BIQUARD
+
+le terme de reste r>t− 41 |oj |2 , mais tous sont O(t) et on en déduit le
+résultat.
+Passons maintenant à la démonstration de l’estimation (64). On part
+de l’estimation du lemme 4.2,
+R
+
+(Ric −Λ)(gt ) −
+
+3
+X
+
+tλj (γ)χt oj
+
+eh
+
+1
+
+6 cρ2 t2 ,
+
+avec les estimations similaires pour les dérivées. En particulier,
+
+
+(Ric −Λ)(gt ) −
+
+(80)
+
+3
+X
+
+tλj (γ)χt oj , χt ok
+
+1
+
+
+
+3
+
+gt
+
+6 ct 2 .
+
+On écrit la solution de l’équation d’Einstein avec obstruction comme
+ĝt = gt + jt ,
+
+kjt kC 2,α
+
+δ0 ,δ∞ ;t
+
+δ0
+
+6 ct1+ 4 .
+
+Par l’estimation (72), on obtient
+3
+
+(Pt jt , χt oj )gt 6 ct 2 .
+
+(81)
+
+Par ailleurs, les estimations (78) et (79) restent valables pour ĝt , et on
+en déduit, pour tout δ > 0 petit,
+
+
+(82)
+
+δĝ∗t (Bĝt δĝ∗t )−1 Bĝt (χt toj ), χt ok
+
+Enfin, observons que
+(83)
+
+
+
+gt
+
+3
+
+6 ct 2 −δ .
+
+(Ric −Λ)(ĝt ) = (Ric −Λ)(gt ) + Pt (jt ) + Qt (jt ),
+
+où Qt contient les termes au moins quadratiques de Ric −Λ. Or on a
+vu
+δ0
+kQt (jt )kCδα +2,δ∞ ;t 6 ct− 2 kjt k2C 2,α
+6 c′ t2 ,
+0
+
+δ0 ,δ∞ ;t
+
+d’où résulte l’estimation
+
+
+
+(84)
+
+Qt jt , χt oj
+
+
+
+gt
+
+δ0
+
+6 ct2− 2 .
+
+Finalement, mettant ensemble (81), (82) et (84) dans l’équation (83),
+nous obtenons
+
+
+(Ric −Λ)(ĝt ) −
+
+3
+X
+1
+
+tλj (γ)πĝt (χt oj ), χt oj
+
+
+
+3
+
+gt
+
+6 ct 2 −δ .
+
+Compte tenu de (73), également valable pour ĝt , on en déduit le lemme.
+Enfin, l’uniformité des estimations par rapport à une variation de
+l’infini conforme est claire, puisque g0 (γ) (et en particulier λj (γ)) dépend de manière lisse de γ, et tous les opérateurs différentiels dépendent
+aussi de manière lisse de γ.
+
+Remarque 8.4. L’estimation (72) indique qu’un éventuel inverse de Pt :
+Cδ2,α
+→ Cδα0 +2,δ∞ ;t ne peut pas être borné sur χt oj .
+0 ,δ∞ ;t
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+35
+
+9. Solutions singulières sur l’orbifold
+Dans cette section, on commence à utiliser la non compacité de M0 ,
+pour y construire des solutions particulières des équations linéarisées,
+avec terme principal singulier donné au point orbifold. Le but est le
+lemme 9.1, qui garantit l’injectivité de l’opérateur associant au terme
+principal au point singulier le terme indéterminé à l’infini. Celui-ci sera
+appliqué dans la section 10 pour étendre par dualité des germes de solutions sur l’orbifold, et dans la section 12 pour construire des vecteurs
+propres approchés de Pt .
+Les deux opérateurs que nous avons en vue sont l’opérateur
+1
+Bδ ∗ = (∇∗ ∇ − Ric)
+2
+sur T M0 , et l’opérateur
+◦
+1
+P = (∇∗ ∇ − R)
+2
+2 ∗
+sur Sym0 T M. Le lien entre les deux opérateurs provient de la formule P δ ∗ = δ ∗ Bδ ∗ , qui garantit qu’à une solution X de Bδ ∗ X = 0
+correspond une solution h = δ ∗ X de P h = 0.
+D’une manière générale, soit E un fibré tensoriel, muni d’un laplacien géométrique P = ∇∗ ∇ + R, où R est un opérateur d’ordre 0
+(typiquement, un terme de courbure). Un voisinage du point orbifold
+p0 s’identifie à (]0, rp0 [×S 3 )/Z2 , on trivialise E sur ce voisinage, alors
+les termes principaux de P à l’origine sont ceux du laplacien de l’espace
+plat R4 , à savoir
+1
+1
+(85)
+− 3 ∂r (r 3 ∂r ) − 2 ∆S 3 ;
+r
+r
+en particulier on obtient comme solution approchée les
+(86)
+
+r k fk ,
+
+r −2−k fk ,
+
+où ∆S 3 fk = kfk .
+
+Les valeurs propres k du laplacien de la sphère S 3 sont des entiers
+naturels, mais compte tenu de l’invariance sous Z2 , on a en fait
+k ∈ k0 + 2N, où k0 =
+
+
+0
+1
+
+si le poids conforme de E est pair,
+s’il est impair.
+
+Notons Fk l’espace propre du laplacien scalaire sur la sphère S 3 , constitué de fonctions polynomiales de degré k.
+Supposons P inversible dans L2 (M0 ). Étant donné σk0 ∈ Ep0 ⊗ Fk0 ,
+σk0
+compte tenu de (86), la section s′ = r2+k
+est une solution approchée
+0
+′
+de l’équation P s = 0 près de p0 , et plus précisément
+1
+(87)
+P s′ = O( 2+k0 ).
+r
+
+36
+
+OLIVIER BIQUARD
+
+Par inversibilité de P , on peut alors résoudre P s′′ = −P s′ avec s′′ =
+O( r1k0 ) et on obtient une solution s = s′ + s′′ de P s = 0 qui satisfait
+s ∼ s′ près de p0 , et s est L2 à l’infini.
+Le procédé s’étend en partant d’une solution approchée s0 = r −2−k σk ,
+avec σk ∈ Ep0 ⊗ Fk . Alors P s0 ∼ r −2−k , et on peut corriger s0 par un
+s1 ∼ r −k (ou bien s1 ∼ r −k ln r) ; on construit ainsi une somme finie
+s′ = s0 + s1 + · · · + s[k/2] , solution de P s′ = O(r −2−k0 ), qu’on peut à
+nouveau corriger en une vraie solution s = s′ + s′′ , équivalente à s0 en
+p0 , et L2 à l’infini. L’ambiguïté dans la construction consiste en les solutions s de P s = 0, croissant moins vite en p0 que s0 , donc satisfaisant
+s = O(r −k ).
+À l’infini, l’opérateur P a la forme suivante : dans une trivialisation
+le long de géodésiques aboutissant à l’infini, les solutions de P s = 0
+ont un comportement gouverné par l’opérateur indiciel,
+Ind P = −(x∂x )2 − Hx∂x + P0 ,
+
+où H = 3 est la trace de la seconde forme fondamentale, et P0 est
+un opérateur d’ordre 0 agissant sur E|∂M0 . Une valeur propre µ de P0 ,
+d’espace propre Eµ , donne un poids critique
+q
+1
+(88)
+δ ± = (H ± H 2 + 4µ),
+2
+δ
+ce qui signifie que x e est une solution de l’opérateur indiciel si e ∈ Eµ .
+Soit δ0+ > H2 le plus petit poids critique L2 , correspondant à la valeur
+propre µ0 , alors la solution s fabriquée plus haut satisfait
++
+
+s ∼ σ∞ xδ0 ,
+
+σ∞ ∈ Eµ0 .
+
+Ce procédé définit une application linéaire
+(89)
+
+Sk∞ : Ep0 ⊗ Fk −→ Γ(∂M0 , Eµ0 ),
+
+σk 7−→ σ∞ ,
+
+défini à l’image près des Sℓ∞ pour ℓ < k.
+Décomposons maintenant le produit tensoriel Ep0 ⊗ Fk sous l’action
+du groupe SO(4) dans les cas que nous considérons :
+– pour E = T M0 , on a k0 = 1 et
+(90)
+
+Ep0 ⊗ F1 = S+ S− ⊗ S+ S− = S+2 S−2 ⊕ S+2 ⊕ S−2 ⊕ R;
+
+– pour E = Sym20 T M0 , on a k0 = 0 et
+(91)
+
+Ep0 ⊗ F0 = S+2 S−2 ,
+
+Ep0 ⊗ F2 = S+2 S−2 ⊗ S+2 S−2 = (S+4 ⊕ S+2 ⊕ R)(S−4 ⊕ S−2 ⊕ R).
+
+Le lemme suivant indique des cas d’injectivité de l’opérateur Sk∞ .
+Lemme 9.1. Supposons M0 asymptotiquement hyperbolique, non dégénérée, alors :
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+37
+
+(1) pour P = Bδ ∗ agissant sur T M0 , l’opérateur S1∞ restreint à
+S+2 S−2 ⊕ S+2 ⊕ S−2 est injectif ;
+◦
+
+(2) pour P = 12 (∇∗ ∇ − R) agissant sur Sym20 T ∗ M0 :
+– l’opérateur S0∞ est injectif ;
+– l’opérateur S2∞ est injectif sur S+4 S−4 ⊕ S+4 (S−2 ⊕ R) ⊕ (S+2 ⊕
+R)S−4 .
+Démonstration. Commençons par le premier cas. L’opérateur P = Bδ ∗ =
+1
+(∇∗ ∇ − Ric) = 21 (∇∗ ∇ + 3) a 2 poids critiques à l’infini :
+2
+– δ0+ = 4, avec espace propre les champs de vecteurs tangents au
+bord (les sections de T ∂M0 )
+– δ1+ > 4, avec espace propre les champs de vecteurs normaux au
+bord.
+Les solutions L2 de P s = 0 ont un développement formel en les puissances de x, déterminé par les deux termes indéterminés correspondant
+aux deux poids critiques. Observons également qu’on a un procédé de
+fabrication de solutions de P s = 0 : identifiant T M0 avec Ω1 M0 , et
+compte tenu de la formule de Bochner satisfaite par le laplacien de
+Hodge-De Rham sur Ω1 ,
+∆ = ∇∗ ∇ + Ric,
+
+on voit que P = 21 (∆ + 6). On déduit que si f est une fonction telle
+que (∆ + 6)f = 0, alors df satisfait P df = 0. En particulier le poids
+critique de ∆ + 6 sur les fonctions est égal à δ1+ .
+On comprend alors pourquoi le facteur R dans (90) a disparu dans
+l’énoncé du lemme : en effet, il existe une solution de l’équation (∆ +
+6)f = 0, telle que f ∼ r12 en p0 , et f est L2 à l’infini. Alors P (df ) = 0
+donc df fournit un élément du noyau de S1∞ .
+En fait, cela représente la seule possibilité de non injectivité de S1∞ .
+En effet, si une solution s de P s = 0 a un premier terme indéterminé
+σ∞ qui est nul, alors le développement formel de s à l’infini est de
+la forme df pour le développement formel d’une fonction f telle que
+(∆ + 6)f = 0. Il en résulte que le développement formel de ds à l’infini
+est identifiquement nul. Mais si s satisfait P s = 0, alors ds satisfait
+(∆ + 6)ds = 0 aussi, et, par unique continuation [Maz91], on déduit
+que ds est identiquement nulle sur M0 . En particulier, au voisinage
+de p0 , on a s = df avec f = O( r12 ). Cela n’est possible que si le terme
+principal σr31 de s en p0 satisfait en réalité que σ1 soit dans la composante
+R de la décomposition (90).
+Passons maintenant au second cas, de l’opérateur P agissant sur le
+fibré Sym20 T ∗ M0 . Il y a trois poids critiques à l’infini :
+– δ0+ = 3, avec espace propre Sym20 T ∗ ∂M0 ;
+
+38
+
+OLIVIER BIQUARD
+
+– δ1+ = 4, avec espace propre s’identifiant à T ∂M0 (par produit intérieur avec le vecteur normal) ;
+– δ2+ > 4, avec espace propre (3dx2 − γ)/x2 .
+Comme on a vu, si un champ de vecteurs satisfait Bδ ∗ X = 0, alors s =
+δ ∗ X satisfait P s = 0. Cela explique les poids δ1+ et δ2+ , qui coïncident
+avec les deux poids critiques de Bδ ∗ .
+Analysons maintenant les opérateurs S0∞ et S2∞ : si une solution s
+de P s = 0 a son premier terme indéterminé nul, σ∞ = 0, alors son
+développement à l’infini est celui de δ ∗ X, pour X un champ de vecteurs satisfaisant Bδ ∗ X = 0. En fait, le théorème d’unique continuation
+[Biq08], voir aussi [AH08], indique que, dans un voisinage de l’infini, on
+a exactement s = δ ∗ X. Comme cette équation contrôle complètement
+X et ses dérivées en fonction de celles de s, le champ de vecteurs X
+peut être continué analytiquement le long de n’importe quel chemin. Il
+en résulte que, près de p0 , on a aussi s = δ ∗ X avec Bδ ∗ X = 0 (mais,
+suivant la topologie, ce n’est pas forcément vrai globalement).
+Dans le cas où s ∼ σr20 , il faut que X ∼ 1r , et un tel X satisfaisant
+Bδ ∗ X = 0 n’existe pas. D’où l’injectivité de S0∞ .
+Dans le cas où s ∼ σr42 , il faut que X ∼ Xr31 , ce qui est possible. Alors
+les comportements asymptotiques possibles de X en p0 sont donnés
+par (90). Le terme dominant de s est obtenu algébriquement à partir
+de celui de X : en effaçant dans la seconde décomposition de (91) les
+représentations de SO(4) qui apparaissent dans (90), on déduit que ces
+comportements asymptotiques de s ne peuvent pas être obtenus comme
+δ ∗ X et par conséquent S2∞ est injectif sur ces représentations.
+
+10. Extension de germes sur l’orbifold
+L’existence de petites valeurs propres de l’opérateur Pt va être compensée par des déformations de la métrique, modifiant l’infini conforme
+de g0 . Par la proposition 1.1, l’espace des obstructions de l’équation
+d’Einstein pour la métrique de Eguchi-Hanson peut être tué par des
+tenseurs symétriques sur Eguchi-Hanson, à croissance quadratique, donc
+asymptotes à σ2 r 2 avec σ2 ∈ S+2 S−2 ⊗ S+2 S−2 comme dans (91). Certains de ces germes correspondent à l’action infinitésimale de SO(4)
+sur Eguchi-Hanson, donc à l’infini à δ ∗ X avec X ∼ X1 r.
+Dans le recollement, l’infini de Eguchi-Hanson est vu, après homothétie, comme le voisinage de p0 . Un ingrédient essentiel sera de prolonger
+σ2 r 2 (ou X1 r dans le cas d’un champ de vecteurs), vu comme un germe
+sur l’orbifold M0 en p0 , en une solution globale s de P s = 0 sur M0 .
+Évidemment, un tel s ne saurait être L2 au vu de la non dégénérescence
+de M0 . Il y a un plus petit poids critique δ0− non L2 , voir (88), plus
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+39
+
+précisément
+
+−1
+
+δ0− = 
+
+0
+
+pour Bδ ∗ agissant sur T M0 ,
+pour P agissant sur Sym20 T ∗ M0 .
+
+Le but de cette section est le lemme suivant, dans lequel on se rappellera
+les décompositions (90) et (91) : en particulier, on notera (Ep0 ⊗ F2 )0
+le sous-espace de (S+2 S−2 )⊗2 orthogonal au facteur trivial R, c’est-à-dire
+orthogonal à la partie sans trace du 2-tenseur r 2 dr 2 .
+Lemme 10.1. Supposons M0 asymptotiquement hyperbolique, non dégénérée. Alors
+(1) pour tout X1 ∈ S+2 S−2 ⊕ S+2 ⊕ S−2 , il existe un champ de vecteurs
+X sur M0 , satisfaisant Bδ ∗ X = 0, tel qu’en p0 on ait X ∼ X1 r
+et à l’infini on ait X ∼ X∞ x−1 , où X∞ est un champ de vecteurs
+sur ∂M0 ;
+(2) pour tout σ2 ∈ (Ep0 ⊗ F2 )0 , il existe une solution s de P s = 0,
+tel qu’en p0 on ait s ∼ σ2 r 2 et à l’infini s ∼ s∞ , où s∞ est un
+2-tenseur symétrique sans trace sur ∂M0 .
+Ce lemme permet la définition suivante.
+Définition 10.2. On notera S2∞ l’opérateur défini par le (2) du lemme
+10.1, qui à un germe σ2 ∈ (Ep0 ⊗ F2 )0 associe le 2-tenseur symétrique
+s∞ sur ∂M0 .
+Avant de nous attaquer au lemme, nous montrons que l’application
+entre valeurs à l’infini de solutions de l’équation P s = 0, et valeurs
+en p0 , est en un certain sens isométrique. Plus précisément, supposons
+données deux solutions s et t de l’équation P s = 0, avec les comportements asymptotiques « duaux » suivants :
+– au point p0 , on a s ∼ σk r −2−k et t ∼ τk r k ;
++
+−
+– à l’infini, on a s ∼ σ∞ xδ0 et t ∼ τ∞ xδ0 .
+Puisque l’opérateur P est du type ∇∗ ∇ + R, un calcul immédiat par
+intégration par parties fournit
+Z
+
+M0
+
+hP s, ti volM0 =
+=
+
+Z
+
+Z
+
+M0
+
+hs, P ti volM0 + lim
+
+Z
+
+M0
+
+hs, P ti volM0 −(2 + 2k)(σk , τk ) + (δ0+ − δ0− )(σ∞ , τ∞ ),
+
+∂M0
+
+
+
+
+
+h−∇~n s, ti + hs, ∇~n ti vol∂M0
+
+et il en résulte la formule, si P s = P t = 0,
+(92)
+
+(2 + 2k)(σk , τk ) = (δ0+ − δ0− )(σ∞ , τ∞ ).
+
+Démonstration du lemme 10.1. Démontrons la première partie du lemme :
+considérons l’application
+1
+: Γ(T ∂M0 ) −→ Tp0 M0 ⊗ F1 ,
+S∞
+
+40
+
+OLIVIER BIQUARD
+
+qui à un champ de vecteurs X∞ sur ∂M0 associe le germe X1 en p0 de
+la solution du problème
+X1
+quand x → 0.
+x
+Soit une fonction f solution de l’équation
+1
+(93)
+(∆ + 6)f = 0, f ∼ 2 en p0 ,
+r
+2
+et f est L à l’infini de M0 . Comme vu dans la démonstration du lemme
++
+9.1, on a alors f = O(xδ2 ) pour un δ2+ > 4. Appliquant la formule (92)
+à X et à df , on déduit que X1 est orthogonal à la composante R de
+Tp0 M0 ⊗ F1 . Ainsi, en réalité, au vu de la décomposition (90),
+Bδ ∗ X = 0,
+
+X∼
+
+1
+S∞
+: Γ(T ∂M0 ) −→ S+2 S−2 ⊕ S+2 ⊕ S−2 .
+
+1
+Supposons que cet opérateur S∞
+ne soit pas surjectif. Par conséquent,
+2 2
+2
+2
+il existe Y1 ∈ S+ S− ⊕ S+ ⊕ S− , tel que pour tout X∞ , on ait
+1
+(Y1 , S∞
+(X∞ )) = 0.
+
+(94)
+
+D’après le lemme 9.1, il existe Y champ de vecteurs sur M0 , solution
+de
+Y1
+Bδ ∗ Y = 0, Y ∼ 3 en p0 ,
+r
+4
+et, à l’infini, Y ∼ Y∞ x avec Y∞ 6= 0. D’après (92) et (94), on déduit
+(Y∞ , X∞ ) = 0
+
+pour tout X∞ , ce qui implique Y∞ = 0. On obtient une contradiction.
+1
+Donc S∞
+est en réalité surjectif, ce qui démontre la première assertion
+du lemme.
+Passons à présent à la seconde assertion, et considérons donc l’opéra◦
+
+teur P = 21 ∇∗ ∇− R. Par le lemme 9.1, nous avons un opérateur injectif
+S0∞ : Sym20 Tp0 M0 → Γ(Sym20 ∂M0 ), dont nous noterons l’image E0 . Si
+s∞ ∈ E0⊥ , alors la solution s de P s = 0 telle que s ∼ s∞ , d’après la
+formule (92), est nulle en p0 , donc s ∼ s2 r 2 avec s2 ∈ Sym20 Tp0 M0 ⊗ F2 .
+On a ainsi défini une application
+2
+S∞
+: E0⊥ −→ Sym20 Tp0 M0 ⊗ F2 .
+
+Utilisons (91) pour décomposer le but de cette application comme
+avec
+
+Sym20 Tp0 M0 ⊗ F2 = R ⊕ R1 ⊕ R2 ,
+R1 = Tp0 M0 ⊗ F1 = S+2 S−2 ⊕ S+2 ⊕ S−2 ,
+
+R2 = S+4 S−4 ⊕ S+4 (S−2 ⊕ R) ⊕ (S+2 ⊕ R)S−4 .
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+41
+
+2
+Commençons par observer que l’image de S∞
+est orthogonale au facteur
+R : cela se voit en intégrant la solution s contre δ ∗ df , où f est la fonction
+2
+construite par (93). Nous restreignons donc S∞
+en une application
+2
+S∞
+: E0⊥ −→ R1 ⊕ R2 ,
+
+dont nous voulons montrer la surjectivité. Il résulte déjà de la pre2
+mière partie du lemme que l’image de S∞
+contient R1 . Supposons donc
+2
+qu’existe s2 ∈ R2 , orthogonal à l’image de S∞
+. Par le lemme 9.1, il
+existe une solution s de P s = 0, telle qu’en p0 ,
+s2
+s ∼ 4,
+r
+et à l’infini,
+s ∼ s∞ x3 ,
+
+s∞ 6= 0.
+
+Par (92), il faut que s∞ ∈ E0 . Mais cela implique l’existence d’une
+solution t de P t = 0, tel qu’à l’infini t ∼ s∞ x3 et en p0 on ait seulement
+t = O(r −2). Par continuation unique à nouveau [Biq08], il faut que,
+près de l’infini, on ait s = t + δ ∗ X. Le champ de vecteurs X peut
+être continué analytiquement le long de chemins, et donc près de p0
+on obtient aussi l’existence de X tel que s = t + δ ∗ X. Mais cela est
+incompatible avec s2 ∈ R2 , qui est justement l’orthogonal des valeurs
+induites par les champs de vecteurs.
+2
+Il en résulte que S∞
+est surjective, et le lemme est démontré.
+
+11. Construction des métriques d’Einstein
+Les tenseurs sans trace kj de la proposition 1.1 ont une asymptotique
+à l’infini d’ordre 2,
+kj ∼ ηj ,
+
+où ηj ∈ Ep0 ⊗ F2 . Il est évident pour η2 , η3 , et il se vérifie par le calcul
+pour η1 , qu’en réalité ηj ∈ (Ep0 ⊗ F2 )0 .
+Lemme 11.1. Pour un infini conforme γ, soit λj (ϕ, γ) définies par
+(24). Alors
+
+
+∂λℓ
+S2∞ (ηj ) = δjℓ .
+∂γ (1,γ0 )
+Démonstration. La variation S2∞ (ηj ) de γ a été construite de sorte que
+la variation correspondante des termes quadratiques de g0 (γ) en p0
+soit égale aux termes quadratiques du tenseur kj à l’infini de EguchiHanson. Donc la solution h du problème (23) est modifiée par kj , tel
+que deh Ric(kj ) = oj , et le lemme en résulte immédiatement.
+
+
+42
+
+OLIVIER BIQUARD
+
+Par ailleurs, examinons l’influence du paramètre de jauge ϕ ∈ Sp1 /U1
+sur les coefficients λj . Le résultat dépend de la partie Rg+0 (p0 ) de l’opérateur de courbure en p0 agissant sur Ω2+ (p0 ). Supposons que det Rg+0 (p0 ) =
+0, ce qui signifie que la condition (26) est satisfaite, après action éventuelle de la jauge. On peut donc supposer qu’au départ, dans la base
+standard (I1 = dx1 ∧ dx2 + dx3 ∧ dx4 , I2 = dx1 ∧ dx3 − dx2 ∧ dx4 , I3 =
+dx1 ∧ dx4 + dx2 ∧ dx3 ) de Ω2+ (p0 ), l’opérateur de courbure a la forme
+diagonale
+(95)
+
+
+
+Rg+0 (p0 ) = 
+
+
+0
+
+
+
+a2
+a3
+
+
+
+
+avec par exemple a3 6= 0 puisque tr(R+ ) = 14 Scal 6= 0. On dira que
+Rg+0 (p0 ) est non dégénéré si on a aussi a2 6= 0. On peut représenter un
+élément de sp1 /u1 comme
+0 −ξ2 −ξ3
+
+
+ξ = ξ2 0
+0 .
+ξ3 0
+0
+
+
+
+
+Sachant que l’action de Sp1 sur Rg+0 (p0 ) est par conjugaison, et que
+(λ1 , λ2 , λ3 ) sont les coefficients de Rg+0 (p0 )(I1 ), on déduit immédiatement :
+Lemme 11.2. Si ξ ∈ sp1 /u1, alors
+∂λ1
+∂λj
+(96)
+= 0,
+(ξ) = aj ξj pour j = 2, 3.
+∂ϕ (1,γ0 )
+∂ϕ (1,γ0 )
+
+Soient γ(u1 , u2) une famille d’infinis conformes tels que
+∂γ
+(97)
+γ(0) = γ0 ,
+= S2∞ (ηj ).
+u=0
+∂uj
+On notera aussi
+γ(u) = γ(u, 0).
+On déduit immédiatement du développement (64), et des lemmes 11.1
+et 11.2, la construction des métriques d’Einstein :
+Théorème 11.3. Si (M0 , g0 ), non dégénéré, satisfait la condition de
+courbure det Rg+0 (p0 ) = 0, alors :
+– si Rg+0 (p0 ) est non dégénéré (une seule valeur propre de det Rg+0 (p0 )
+s’annule), alors pour t > 0 suffisamment petit, il existe un réel u(t)
+1
+et une jauge ϕ(t) ∈ Sp1 /U1 , tels que u(t) = O(t 2 −δ ) pour tout
+δ > 0, et, pour j = 1, 2, 3,
+
+
+
+
+λj t, ϕ(t), γ(u(t)) = 0,
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+43
+
+c’est-à-dire gt,ϕ(t),γ(u(t)) est une métrique d’Einstein ;
+– en général, pour t > 0 suffisamment petit, il existe des réels u1 (t), u2(t)
+1
+et une jauge ϕ(t) ∈ Sp1 /U1 , tels que uj (t) = O(t 2 −δ ) pour tout
+δ > 0, et, pour j = 1, 2, 3,
+
+
+
+
+λj t, ϕ(t), γ(u1(t), u2 (t)) = 0.
+
+
+Remarque 11.4. La seconde partie du théorème est toujours vraie : le
+lien avec la première provient du fait suivant : dans le cas non dégénéré,
+on peut choisir γ(u1 , u2 ) difféomorphe à γ(u1 ), ce qui est une manière
+détournée de changer la jauge à l’origine (on modifie la métrique g0 par
+une perturbation globale de la jauge au lieu de modifier le recollement) ;
+c’est une conséquence du (1) du lemme 10.1. C’est aussi pourquoi, dans
+la forme (95), le λ3 pourrait être compensé par une déformation de
+l’infini conforme par des difféomorphismes, équivalente au changement
+de jauge au recollement.
+Remarque 11.5. Les métriques fabriquées dans la proposition 8.1 dépendent d’un paramètre υ ∈ R3 . Le théorème a été énoncé en utilisant
+les métriques construites pour υ = 0, mais toute autre valeur (petite)
+de υ est possible. Si on fixe la famille γ(t) de déformations autorisées
+de l’infini conforme, on peut néanmoins s’attendre à un résultat d’unicité de la métrique d’Einstein, à infini conforme fixé. Mais il semble
+impossible de contrôler le noyau de la linéarisation Pgt après déformation, qui garde des petites valeurs propres issues du noyau de Peh (voir
+§ 12). Néanmoins, on verra en § 14 que génériquement, tel est bien
+le cas : les variables υ n’apportent pas de paramètre supplémentaire,
+et les métriques d’Einstein construites sont déterminées par leur infini
+conforme (théorème 14.1).
+12. Petites valeurs propres de la linéarisation
+Pour obtenir une meilleure approximation de la métrique d’Einstein, il faut raffiner substantiellement la construction faite jusqu’ici.
+La première étape consiste à remplacer les obstructions χt oi , obtenues par troncation naïve des obstructions de Eguchi-Hanson, par de
+meilleures approximations des vecteurs propres associés aux petites valeurs propres de l’opérateur Pt sur M.
+Sur Eguchi-Hanson, nous disposons donc d’un noyau de P , engendré par o1 , o2 et o3 , avec comportement asymptotique (27), que nous
+réécrivons
+ηj
+(98)
+oj ∼ 6 ,
+r
+
+44
+
+OLIVIER BIQUARD
+
+où les ηj sont des polynômes homogènes de degré 2, donc a priori
+ηj ∈ (S+2 S−2 )⊗2 . Il résulte de la formule (27), voir aussi la suite de la
+section 3, qu’en réalité on a
+(99)
+
+ηj ∈ S+4 ⊂ (S+2 S−2 )⊗2 .
+
+Comme vu en §9, il existe sur M0 des solutions ōj de l’équation
+P ōj = 0, qui soient L2 à l’infini et aient près de p0 le comportement
+ηj
+ōj ∼ 6 .
+r
+Compte tenu de ce comportement asymptotique, on a Bōj = O(r −3 ),
+donc on peut trouver un champ de vecteurs Xj = O(r −1 ), tel que
+Bδ ∗ Xj = −Bōj . En remplaçant ōj par ōj +δ ∗ Xj , on peut ainsi supposer
+Bōj = 0.
+Nous définissons alors le recollement oj,t sur M, par
+(100)
+
+oj,t = (1 − χt )tōj + χt oj ,
+
+où χt est la fonction de coupure définie par (40). Le facteur t est le facteur nécessaire pour faire coïncider les comportements asymptotiques
+de ōj en√p0 et de oj à l’infini après application de l’homothétie st , de
+rapport t.
+Par définition, Bgt oj,t et Pt oj,t ont leur support inclus dans EHt . Les
+1
+estimations suivantes améliorent d’un facteur t 2 les estimations (75) et
+(76) :
+Lemme 12.1. On a sur EHt les estimations, pour tout entier naturel
+k,
+|∇k Bgt oj,t | gtt 6 ck t−1 ρ−3−k ,
+
+|∇k P gtt oj,t | gtt 6 ck tρ−4−k .
+
+Démonstration. Les termes d’ordre r −4 de oj et tōj coïncident, donc la
+différence satisfait |oj − tōj |eh 6 cρ−6 sur EHt> . Il en résulte qu’on peut
+améliorer (76) en
+|Bgt (χt oj,t )| gtt 6 ct−2
+
+ 1EHt
+
+>
+
+ρ7
+
++
+
+t
+.
+ρ3
+
+La première estimation s’en déduit. L’amélioration de (75) est similaire.
+
+Ce lemme montre que la linéarisation Pt a des petites valeurs propres :
+en effet, quand t → 0, on a oj,t → oj sur EH, et plus précisément
+koj,tkL2 (gt ) → koj kL2 (eh)
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+45
+
+alors que
+kPt oj,tkL2 (gt ) = kP gtt t−1 oj,tkL2 ( gtt ) = O(1).
+
+En revanche, la troncation χt oj , utilisée auparavant, ne permet pas
+d’obtenir ces valeurs propres bornées.
+L’application importante pour nous est l’amélioration suivante des
+estimations (72) et (73) :
+Corollaire 12.2. On a les estimations
+δ0
+
+(Pt h, oj,t )gt 6 ct1− 2 khkC 2,α
+
+δ0 ,δ∞ ;t
+
+,
+
+(πgt oj,t , ok,t) 6 (oj , ok )eh + O(t1−δ ) pour tout δ > 0.
+Démonstration. Comme dans (74), on utilise l’intégration par parties
+
+
+Pt h, oj,t
+
+
+
+gt
+
+=
+
+
+
+h
+, P gtt oj,t
+t
+
+
+
+gt
+t
+
+,
+
+et la première estimation résulte alors immédiatement du lemme 12.1.
+Celui-ci nous fournit aussi, à la place de (77),
+δ
+
+1
+
+kBgt oj,t kC k,α 6 ct 2 + 4
+δ+2
+
+1
+
+qui améliore automatiquement d’un facteur t 2 l’estimation (73).
+
+
+
+Remarque 12.3. On déduit du corollaire que la proposition 8.1 reste
+valable en remplaçant χt oj par oj,t. Cela améliore l’estimation (64) en
+δ0
+
+λj (t) = tλj + O(t2− 2 ).
+Le poids δ20 restant vient de (84). Ce développement est insuffisant pour
+obtenir celui des solutions, qui requiert le terme en t2 de λj (t).
+13. Asymptotique de la solution
+La détermination de l’asymptotique de la solution quand t tend vers 0
+se fait en raffinant la construction des solutions approchées. La solution
+approchée gt a été construite en recollant g0 avec une modification
+ht de la métrique de Eguchi-Hanson par un terme asymptotique aux
+termes quadratiques de g0 en p0 . Une meilleure solution approchée sera
+obtenue, d’une part en raffinant ht pour obtenir la coïncidence avec les
+termes d’ordre 4 de g0 , d’autre part en modifiant g0 pour obtenir la
+coïncidence avec les termes en r −4 de la métrique de Eguchi-Hanson.
+Nous reprenons la section 2. On dispose sur EHt d’une métrique
+ht = eh+th, où h est solution du système (23). Pour pousser plus loin le
+développement d’une solution de Ric(g) = tΛg mod Oeh , développons
+formellement
+Ric(eh + u) = deh Ric(u) + Q(u) + R(u),
+
+46
+
+OLIVIER BIQUARD
+
+où Q(u) contient uniquement les termes quadratiques en u et R(u) les
+termes d’ordre au moins 3. Alors le terme t2 h2 de g sera obtenu en
+résolvant
+(101)
+
+deh Ric(h2 ) = Λh − Q(h)
+
+mod Oeh .
+
+À l’infini, le terme h2 doit être d’ordre 4, et pour recoller avec la métrique g0 sur M0 , on écrit en p0 le développement
+g0 = e + H + H2 + O(r 6),
+où H2 contient les termes d’ordre 4 de g0 seulement. Alors la condition
+à l’infini à considérer sur h2 est
+h2 = H2 + O(ρ2 ).
+
+(102)
+
+Le problème (101) (102) est à nouveau obstrué par les tenseurs oj , et
+on résout à la place le système
+deh Ric(h2 ) = Λh − Q(h) +
+
+(103)
+
+h2 = H2 + O(ρ2 ),
+
+3
+X
+
+µ j oj ,
+
+1
+
+où les constantes µj font partie des inconnues.
+Lemme 13.1. Le problème (103) a toujours une solution. Le tenseur
+ĥt = eh + th + t2 h2
+est une métrique sur EHt , satisfaisant
+(104)
+
+
+
+∇k Ricĥt −tΛĥt −
+
+3
+X
+1
+
+(tλj + t2 µj )oj
+
+
+
+eh
+
+6 ck t3 ρ4−k .
+
+Les constantes µj sont une fonction du 2-jet de la courbure de g0 au
+point p0 .
+Démonstration. La résolution de l’équation se fait comme en § 2. L’estimation est similaire à celle du lemme 4.2 : on est juste allé une étape
+plus loin dans la résolution de l’équation d’Einstein, en compensant
+par h2 les termes quadratiques, donc il ne reste plus dans Ricĥt −tΛĥt
+que les obstructions et les termes d’ordre au moins 3, ce qui mène au
+lemme.
+
+Si on varie la jauge ϕ et l’infini conforme γ, on obtient une métrique ĥt,ϕ,γ et des constantes λj (ϕ, γ) et µj (ϕ, γ). On a maintenant une
+métrique d’Einstein modulo obstructions à un ordre élevé par (104).
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+47
+
+Néanmoins, pour maintenir la qualité de l’approximation dans le recollement, il faut raffiner aussi g0 (γ(t)) de la manière suivante. Écrivons,
+par (4),
+σ
+1
+eh = e + 6 + O( 6 ),
+ρ
+ρ
+où σ est un terme homogène de degré 2. Comme dans la section 9,
+résolvons le problème
+Pg0 k = 0,
+Bg0 k = 0,
+σ
+k ∼ 6 en p0 ,
+r
+2
+et k est L à l’infini de M0 . Alors le tenseur
+(105)
+
+g0 + t2 k
+est une métrique sur M0t . Bien sûr tout dépend ici de l’infini conforme
+γ ainsi que de la jauge ϕ et on notera explicitement cette dépendance
+k(ϕ, γ).
+Nous pouvons maintenant définir une solution à un ordre élevé de
+l’équation d’Einstein modulo obstructions :
+(106)
+
+‫ג‬t,ϕ,γ = tχt ĥt,ϕ,γ + (1 − χt )(g0 (γ) + t2 k(ϕ, γ)).
+
+Elle satisfait
+
+Lemme 13.2. Sur EHt on a les estimations
+(107)
+∇k (Ric −Λ)(‫ג‬t ) −
+
+3
+X
+
+(tλj + t2 µj )oj,t
+
+1
+
+eh
+
+6 ck t3 ρ4−k ,
+
+et sur M0t ,
+(108)
+∇k (Ric −Λ)(‫ג‬t ) −
+
+3
+X
+1
+
+(tλj + t2 µj )oj,t
+
+g0
+
+6 ck (r 4−k 1EHt> + t4 r̃ −10−k x6 ).
+
+Démonstration. C’est une conséquence immédiate, d’une part de l’estimation (104), d’autre part du fait que les 2 métriques recollées, à savoir
+ĥt,ϕ,γ et g0 (γ) + t2 k(ϕ, γ) coïncident à un ordre élevé sur la transition
+EHt> :
+1
+ĥt,ϕ,γ − (g0 (γ) + t2 k(ϕ, γ)) 6 c( 6 + t3 ρ6 ).
+eh
+ρ
+On remarquera que les deux termes de droite sont du même ordre
+de grandeur. L’estimation (107) s’en déduit immédiatement. L’autre
+estimation (108) sur la partie M0t vient du fait que la métrique g0 (γ) +
+
+48
+
+OLIVIER BIQUARD
+
+t2 k(ϕ, γ) n’est plus d’Einstein qu’à l’ordre 1, et on doit donc tenir
+compte des termes quadratiques provenant de t2 k(ϕ, γ).
+
+Compte tenu, sur les 2-tenseurs, de l’égalité
+k
+
+|∇k · | g0 = t1+ 2 |∇k · |g0 ,
+t
+
+la majoration (107) et le terme r 4−k dans (108) donnent la même estimation sur la zone de transition EHt> . Le terme t4 x6 r̃ −10−k est provoqué
+par la correction t2 k(γ) de g0 (γ) : il est global sur M0 , mais d’ordre
+plus petit sur EHt> ; l’annulation x6 près de ∂M0 vient de |k| = O(x3 ).
+Notons que sans la correction t2 k(γ), les termes d’ordre O(ρ−4 ) ne se
+3
+recollent pas, et provoquent une erreur O(ρ−6) ∼ O(t 2 ) dans le tenseur
+de Ricci, ce qui serait insuffisant pour (107).
+Par le lemme 13.2, on obtient
+(109)
+
+k(Ric −Λ)(‫ג‬t ) −
+
+3
+X
+1
+
+3
+
+δ0
+
+(tλj + t2 µj )oj,tkCδα +2,δ∞ ;t = O(t 2 + 4 ).
+0
+
+La méthode de résolution de l’équation d’Einstein employée à partir de
+la solution approchée gt,ϕ,γ pour démontrer la proposition 8.1 s’applique
+aussi bien à partir de ‫ג‬t . On en déduit immédiatement l’existence et
+l’unicité d’une métrique ‫̂ג‬t , par exemple en jauge de Bianchi par rapport
+à ‫ג‬t , et telle que
+(110)
+
+Ric(‫̂ג‬t ) − Λ‫̂ג‬t =
+
+Cette métrique satisfait
+(111)
+
+k‫̂ג‬t − ‫ג‬t kC 2,α
+
+3
+X
+
+λ̂j (ϕ, γ)π‫̂ג‬t (oj,t)
+
+1
+
+δ0 ,δ∞ ;t
+
+3
+
+δ0
+
+= O(t 2 + 4 ).
+
+En outre, vu les estimations du corollaire 12.2, on en déduit
+(112)
+
+5
+
+λ̂j (ϕ, γ) = tλj (ϕ, γ) + t2 µj (ϕ, γ) + O(t 2 ).
+
+Par le lemme 11.1, on peut maintenant annuler les coefficients λ̂j des
+termes d’obstruction et raffiner ainsi le théorème 11.3 :
+Théorème 13.3. Si (M0 , g0 ), non dégénérée, satisfait la condition de
+courbure det Rg+0 (p0 ) = 0, avec jauge ajustée de sorte que les λj (γ0 ) =
+0, alors il existe une jauge ϕ(t) ∈ Sp1 /U1 et une famille d’infinis
+conformes γ(t) telle que γ(0) = γ0 , et pour tout t > 0 assez petit, la
+métrique ‫̂ג‬t,ϕ(t),γ(t) soit d’Einstein. Une telle famille γ(t) doit satisfaire
+(113)
+
+3
+
+λj (ϕ(t), γ(t)) = −tµj (ϕ(0), γ0 ) + O(t 2 ).
+
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+49
+
+Par exemple, dans le cas où Rg+0 (p0 ) est non dégénéré, γ(t) peut être
+choisie dans la famille à un paramètre γ(u) utilisée pour le théorème
+11.3, de sorte que
+γ̇(0) = −µ1 (γ0 )S2∞ (η1 ).
+Notons à nouveau (remarque 11.5) qu’aucune unicité de la métrique
+d’Einstein produite n’est prouvée, et qu’en particulier elle semble à
+première vue dépendre du paramètre υ de la proposition 8.1.
+La motivation pour obtenir une asymptotique en t beaucoup plus
+précise est l’analyse, dans le voisinage de γ0 , des infinis conformes obtenus comme bords de métriques d’Einstein lisses. Notons C l’espace
+des métriques conformes sur ∂M0 . Considérons l’hypersurface
+(114)
+
+C0 = {det Rg+0 (p0 ) = 0} ⊂ C .
+
+D’un point de vue technique, pour travailler dans des variétés banachiques, il faut regarder l’infini conforme γ dans un espace de Hölder
+C k,α. Si Rg+0 (p0 ) est non dégénéré, alors, d’après le lemme 11.1, C0
+est une hypersurface lisse au point γ0 . Le développement (113) a pour
+conséquence le résultat suivant :
+Théorème 13.4. Soit γ0 ∈ C0 . Si Rg+0 (p0 ) est non dégénéré et µ1 (γ0 ) 6=
+0 (par exemple fixons µ1 (γ0 ) > 0), alors dans un petit voisinage de
+C0 = {λ1 = 0}, les infinis conformes des métriques d’Einstein produites
+par le théorème 13.3 sont exactement les métriques conformes vérifiant
+λ1 < 0.
+
+La même chose est valable si on varie le paramètre apparent υ.
+Au vu de l’argument d’unicité (corollaire 8.3), sous les hypothèses
+du théorème, toutes les métriques d’Einstein suffisamment proches d’un
+0
+recollement naïf gt,ϕ,γ
+doivent coïncider avec une métrique d’Einstein
+dans la famille que nous avons construite, et donc satisfaire λ1 (γ) < 0
+dans le cas non dégénéré :
+Corollaire 13.5. Sous les mêmes hypothèses, si une métrique AH
+0
+d’Einstein g est suffisamment proche d’un recollement gt,ϕ,γ
+au sens
+du corollaire 8.3, alors son infini conforme doit satisfaire λ1 < 0. 
+Cela suggère fortement que l’hypersurface C0 est un mur pour la
+résolution du problème de Dirichlet à l’infini sur M, c’est-à-dire que
+la résolution n’est possible que d’un seul côté de C0 . Cela sera rendu
+précis en § 14.
+Enfin, on peut se demander si le côté de C0 où l’on peut désingulariser
+ne dépend que du signe de det Rg+0 (p0 ), par exemple serait toujours
+det Rg+0 (p0 ) > 0 (comme le suggère l’exemple des métriques Ads-TaubBolt, voir après le théorème 14.1. Là encore, une compréhension fine
+
+50
+
+OLIVIER BIQUARD
+
+des termes quadratiques de l’équation d’Einstein serait nécessaire pour
+trancher.
+14. Transversalité
+Dans cette section, nous donnons des arguments de transversalité
+visant à préciser l’espace des modules de métriques d’Einstein AH dans
+le voisinage de l’hypersurface C0 ⊂ C définie par (114).
+Soit γ0 ∈ C0 , tel que µ1 (γ0 ) 6= 0, (donc C0 est lisse en γ0 ), alors
+nous disposons d’une direction δ(γ0 ) = S2∞ (η1 ) dans C au point γ0 ,
+transverse à C0 , telle qu’on puisse résoudre l’équation d’Einstein pour
+tout infini conforme
+(115)
+
+γ(t) = γ0 + tδ(γ0 ),
+
+t > 0 petit.
+
+Cela nous permet de définir, dans un voisinage de γ0 , une projection
+(116)
+
+p : C −→ C0
+
+par p(γ0 + tδ(γ0 )) = γ0 .
+Faisons brièvement quelques rappels sur la théorie du degré introduite par Anderson [And08]. Notons E l’espace des modules des métriques d’Einstein AH sur M, modulo l’action des difféomorphismes
+de M induisant l’identité sur ∂M. Un détail technique, à nouveau, est
+qu’il faut considérer des infinis conformes de classe C k,α. Alors E est
+une variété banachique, et l’application qui à une métrique d’Einstein
+associe son infini conforme,
+(117)
+
+π : E −→ C ,
+
+est Fredholm d’indice 0. Quand on se limite à un ouvert C˜ ⊂ C , tel
+que π|π−1 (C˜) soit propre, alors le nombre de points, compté avec signe,
+d’une fibre de π en une valeur régulière de π̃, fournit le degré de π, un
+invariant de chaque composante connexe de C˜.
+Un voisinage de γ0 ∈ C0 ne peut pas être inclus dans C˜, puisque
+nous avons justement construit une famille d’éléments de E qui ne
+converge pas dans E , alors que leurs infinis conformes convergent vers
+γ0 . Nécessairement donc, le degré ne peut être défini que sur une région
+C˜ ⊂ C − C0 .
+
+Supposons à présent que le degré soit défini au moins sur une région
+C˜ := V − C0 , où V ⊂ C est un voisinage de γ0 . Nous considérons
+l’application
+π̃ := p ◦ π : π −1 (C˜) −→ C0 ,
+
+qui est manifestement Fredholm, d’indice égal à 1. Par le théorème de
+Sard-Smale, π̃ admet un ensemble dense de valeurs régulières, et si γ0
+
+DÉSINGULARISATION DE MÉTRIQUES D’EINSTEIN. I.
+
+51
+
+est régulière, alors π̃ −1 (γ0 ) est une sous-variété de dimension 1 dans E .
+Or nous disposons déjà dans la fibre π̃ −1 (γ0 ) de la famille de métriques
+d’Einstein gt,υ,γ0 construite par le théorème 11.3 pour υ et t > 0 assez
+petits. Il en résulte immédiatement que, quand on fait υ = 0, la famille
+à un paramètre gt,0,γ0 décrit déjà toute la fibre π̃ −1 (γ0 ) (près de g0 ).
+Par conséquent, la famille {gt,υ,γ0 , 0 < t < η2 , |υ| < ǫ} est incluse dans
+la famille {gt,0,γ0 , 0 < t < η}. On a ainsi démontré que, génériquement,
+le paramètre υ ne fabrique pas de nouvelles métriques :
+Théorème 14.1. Soit γ0 ∈ C0 . Supposons comme dans le théorème
+13.4 que µ1 (γ0 ) > 0. Si γ0 est une valeur régulière de π̃, alors la variation du paramètre υ dans les métriques d’Einstein gt,υ,γ0 revient à
+varier seulement le paramètre t de la famille gt,0,γ0 . Autrement dit, dans
+la famille de métriques d’Einstein construite, pour t et υ assez petits, la
+métrique gt,υ,γ0 est entièrement déterminée par son infini conforme. 
+Le théorème a pour conséquence immédiate que les métriques d’Einstein gt,γ , dont les infinis conformes sont exactement d’un seul côté
+de C0 , contribuent à une modification du degré d’Anderson par 1 à
+travers le mur C0 . Pour établir complètement ce fait, il faudrait en
+outre démontrer que les seules métriques d’Einstein dégénérant vers g0
+sont les métriques gt,γ , c’est-à-dire sont proches, au sens du corollaire
+8.3, du recollement d’une métrique d’Einstein orbifold avec la métrique
+d’Eguchi-Hanson.
+L’exemple le plus simple est M = T ∗ S 2 , désingularisation de R4 /Z2 ,
+de bord S 3 /Z2 . Une analyse simple de l’exemple de la famille de métriques AdS-Taub-Bolt [PP87] indique que l’une des métriques de Pedersen g0 se désingularise, et que la famille construite de désingularisations est du côté det R+ (p0 ) > 0 de C0 . Cela confirme bien ce qu’indique
+Anderson [And08, §7], selon lequel le degré pour la métrique ronde de
+S 3 /Z2 est nul, ce qui correspond à la métrique hyperbolique orbifold,
+satisfaisant det R+ (p0 ) < 0. Donc le degré doit être 1 ou 0 selon que
+det R+ (p0 ) est > 0 ou < 0.
+Références
+[AH08]
+
+M. T. Anderson et M. Herzlich – « Unique continuation results for
+Ricci curvature and applications », J. Geom. Phys. 58 (2008), no. 2,
+p. 179–207, Erratum (2010).
+
+[And89] M. T. Anderson – « Ricci curvature bounds and Einstein metrics on
+compact manifolds », J. Amer. Math. Soc. 2 (1989), no. 3, p. 455–490.
+[And05]
+
+, « Geometric aspects of the AdS/CFT correspondence »,
+AdS/CFT correspondence : Einstein metrics and their conformal boundaries (O. Biquard, éd.), IRMA Lectures in Mathematics and Theoretical
+Physics, vol. 8, European Mathematical Society, 2005, p. 1–31.
+
+52
+
+OLIVIER BIQUARD
+
+[And08]
+
+, « Einstein metrics with prescribed conformal infinity on 4manifolds », Geom. Funct. Anal. 18 (2008), no. 2, p. 305–366.
+
+[Biq00]
+
+O. Biquard – « Métriques d’Einstein asymptotiquement symétriques »,
+Astérisque 265 (2000), p. vi+109, English translation : SMF/AMS Texts
+and Monographs 13 (2006).
+
+[Biq08]
+
+, « Continuation unique à partir de l’infini conforme pour les métriques d’Einstein », Math. Res. Lett. 15 (2008), no. 6, p. 1091–1099.
+
+[BKN89] S. Bando, A. Kasue et H. Nakajima – « On a construction of coordinates at infinity on manifolds with fast curvature decay and maximal
+volume growth. », Invent. Math. 97 (1989), no. 2, p. 313–349.
+[BR09]
+
+O. Biquard et Y. Rollin – « Wormholes in ACH Einstein manifolds »,
+Trans. Amer. Math. Soc. 361 (2009), no. 4, p. 2021–2046.
+
+[Kro89a] P. B. Kronheimer – « The construction of ALE spaces as hyper-Kähler
+quotients. », J. Differential Geom. 29 (1989), no. 3, p. 665–683.
+[Kro89b]
+
+, « A Torelli-type theorem for gravitational instantons », J. Differential Geom. 29 (1989), no. 3, p. 685–697.
+
+[Maz91] R. Mazzeo – « Unique continuation at infinity and embedded eigenvalues
+for asymptotically hyperbolic manifolds », Amer. J. Math. 113 (1991),
+p. 25–45.
+[MS07]
+
+R. Mazzeo et M. Singer – « Some remarks on conic degeneration and
+bending of Poincaré-Einstein metrics », arXiv :0709.1498, 2007.
+
+[Ped86]
+
+H. Pedersen – « Einstein metrics, spinning top motions and monopoles », Math. Ann. 274 (1986), no. 1, p. 35–59.
+
+[PP87]
+
+D. N. Page et C. Pope – « Inhomogeneous Einstein metrics on complex
+line bundles. », Classical Quantum Gravity 4 (1987), p. 213–225.
+
+UPMC Université Paris 6 et École Normale Supérieure, UMR 8553
+du CNRS
+
+

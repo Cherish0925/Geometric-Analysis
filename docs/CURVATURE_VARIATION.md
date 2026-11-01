@@ -237,6 +237,43 @@ $$
 
 同一 10 月 12 日稿 §4 的双曲尖点加倍例说明另一个独立现象：可有闭 aspherical 流形上 $P_* =0$ 而不取得，曲率一致有界、退化来自塌缩环面颈。取得性因而同时涉及曲率集中和塌缩退化。
 
+### 4.4 配对 $A_1$ 轨形上的精确极值
+
+设 $X$ 为紧复双曲曲面，$A=c_1^2(X)$，在正则点作轨形连通和
+\[
+V_m=X\#m(S^4/\mathbb Z_2),\qquad k=2m>0.
+\]
+其取向匹配的 Eguchi–Hanson 解消是 $X\#k\overline{\mathbb{CP}}^2$。将光滑解消上的标量预算转移到任意轨形度量，令
+\[
+\sigma=S-32\pi^2A\ge0,\qquad w=\int|W|^2-\frac{4\pi^2A}{3}=2\int|W^-|^2\ge0,
+\]
+得到
+\[
+P=8\pi^2k+\frac{\sigma}{12}+2w,
+\qquad R=8\pi^2(A+k)+\frac{\sigma}{3}+2w.
+\]
+Green football 填充与长圆柱分别给出匹配上界，因此
+\[
+\boxed{P_{*,\mathrm{orb}}(V_m)=8\pi^2k,
+\qquad\alpha_{\mathrm{orb}}(V_m)=\min\{1,4k/(A+k)\}.}
+\]
+$P$ 的下确界不取得，且 $V_m$ 不承载 Einstein 轨形度量。$\alpha_{\mathrm{orb}}$ 在 $k\ne A/3$ 时也不取得；临界墙 $k=A/3$ 的取得性等价于指定负常标量、$W^-=0$ 轨形度量的存在，尚未决定。
+
+这精确计算了一个全轨形度量的极值问题。它与光滑解消上的严格上界 $P_*<8\pi^2k$ 同时成立，说明不能将奇点主体的费用直接当作全部光滑竞争度量的下界。
+
+来源：[A01 Step 74](../research/server/sessions/S1003A01/workspace/notes/step74_orbifold_transfer_theorem.md)、[A02 Step 93 的完整转移与取得性证明](../research/server/sessions/S1003A02/workspace/notes/step93_paired_A1_transfer_review.md)。
+
+### 4.5 Einstein 域、塌缩帽与手性费用
+
+在原稿 (E) 的条件下——局部 $C^2$ 收敛到完备有限体积负 Einstein 域、$P\to0$、标量方差趋零、总体积无损失以及固定拓扑的穷竭补域——每个帽区域具有非负极限费用 $c_j$。完整边界特征数关系给
+\[
+c_j=(2\chi+3\tau)(C_j)+\sum_{\ell\in J_j}\mathcal Q_+^\infty(L_\ell),
+\qquad 9k+8\sum_jc_j\le3A.
+\]
+多端帽一般首先控制入射端费用的总和；单个端极限另需其端部渐近。一个例外类一个 Hopf 帽时得到 $k\le A/11$；四类同帽可有 $c_+=0$，但反手性费用 $c_-=20$，对应 $\int|W^-|^2\to40\pi^2$。这种配置满足必要预算，尚未构造所需塌缩过渡。
+
+来源：[A02 Step 105](../research/server/sessions/S1003A02/workspace/notes/step105_cusp_channel_restored_and_cap_charge_theorem.md)及 [Step 106 修订](../research/server/sessions/S1003A02/workspace/notes/step106_independent_cap_charge_and_D4_candidate.md)。Step 104 以基本群排除全部 cusp 以及由可延拓字符直接指定实际场的两项推断已撤回；零费用分支仍在研究范围内。
+
 ## 5. 接续研究的精确状态
 
 | 问题 | 已改变的数学判断 | 仍需获得的结论 |

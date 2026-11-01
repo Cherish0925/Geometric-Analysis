@@ -1,0 +1,143 @@
+{
+  "scope": "Step89 corrected principal algebra and spectral-support checks",
+  "normalization": {
+    "C_convention": "C_ab=omega_a^+ o omega_b^- as trace-free involutions, tr(C_ab C_cd)=4 delta_ac delta_bd",
+    "V2_convention": "smooth tensor expansion h=V0 + V2 + O(r^4), V2=(1/2) H_ijpq x_p x_q with H=d_p d_q h_ij(0)",
+    "source_formula": "S_odd/pi^2 = -(1/32) D_ijpq H_ijpq = -(1/16) D_ijpq V_ijpq",
+    "receiver_formula": "R_odd=(delta R^+_22 - delta R^-_22)/2, where delta R^pm_22 is the curvature-operator matrix entry in the normalized SD/ASD basis (omega/sqrt(2)); delta R_ijkl=1/2(h_il,jk+h_jk,il-h_ik,jl-h_jl,ik)",
+    "correct_identity": "S_odd(V2) = (pi^2/2) R_odd(H), where V2=(1/2)H_ijpq x_p x_q",
+    "equivalent_tensor_relation": "D:H = -16 R_odd (Hessian variables); D:V = -8 R_odd (polynomial coefficient variables)",
+    "step88_factor_issue": "step88_source_receiver_proportionality used Hessian variables in the source contraction without the 1/2 converting H to V2, giving pi^2 instead of pi^2/2"
+  },
+  "C_orthogonality_max_integer_error": 0,
+  "identity_basis_test": {
+    "basis_dimension_symmetric_H": 100,
+    "nonzero_tests": 4,
+    "failures_count": 0,
+    "failures": [],
+    "D_relation_failures_count": 0
+  },
+  "named_modes_corrected": {
+    "gradA_gradB": {
+      "S_odd_over_pi2": "0",
+      "R_odd": "0",
+      "S_even_over_pi2_not_computed_here": "see Step87/88 if needed",
+      "identity_S_over_pi2_minus_Rodd_over_2": "0"
+    },
+    "gradA_killB": {
+      "S_odd_over_pi2": "0",
+      "R_odd": "0",
+      "S_even_over_pi2_not_computed_here": "see Step87/88 if needed",
+      "identity_S_over_pi2_minus_Rodd_over_2": "0"
+    },
+    "killA_gradB": {
+      "S_odd_over_pi2": "0",
+      "R_odd": "0",
+      "S_even_over_pi2_not_computed_here": "see Step87/88 if needed",
+      "identity_S_over_pi2_minus_Rodd_over_2": "0"
+    },
+    "killA_killB": {
+      "S_odd_over_pi2": "1/2",
+      "R_odd": "1",
+      "S_even_over_pi2_not_computed_here": "see Step87/88 if needed",
+      "identity_S_over_pi2_minus_Rodd_over_2": "0"
+    }
+  },
+  "shape_negative_mode_support": {
+    "mode": "q=g_A-g_B",
+    "TT": true,
+    "P_eigenvalue_unit_sphere_normalization": -1,
+    "scaled_by": 6,
+    "S_odd_over_pi2_scaled": "0",
+    "R_odd_scaled": "0",
+    "principal_odd_source_zero": true,
+    "reason_for_zero": "its quadratic metric expansion has tensor and derivative support inside one S^2 factor, so the fully mixed non-diagonal D contraction vanishes"
+  },
+  "scalar_zero_mode_support": {
+    "uA_gA": {
+      "scaled_by": 6,
+      "S_odd_over_pi2_scaled": "0",
+      "R_odd_scaled": "0",
+      "principal_odd_source_zero": true
+    },
+    "uA_gB": {
+      "scaled_by": 6,
+      "S_odd_over_pi2_scaled": "0",
+      "R_odd_scaled": "0",
+      "principal_odd_source_zero": true
+    },
+    "uB_gA": {
+      "scaled_by": 6,
+      "S_odd_over_pi2_scaled": "0",
+      "R_odd_scaled": "0",
+      "principal_odd_source_zero": true
+    },
+    "uB_gB": {
+      "scaled_by": 6,
+      "S_odd_over_pi2_scaled": "0",
+      "R_odd_scaled": "0",
+      "principal_odd_source_zero": true
+    }
+  },
+  "relative_interaction_algebra": {
+    "nodes": [
+      "NN",
+      "NS",
+      "SN",
+      "SS"
+    ],
+    "mixed_epsilon": [
+      1,
+      -1,
+      -1,
+      1
+    ],
+    "all_same_epsilon": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "formula": "Radial Delta_tau = sum_ij a_i b_j (epsilon_i epsilon_j - 1) K_ij^odd(tau) with a_i=t_i receiver weight and b_j=t_j^2 source weight. A purely energy-like comparison may use w_i w_j, but it is not Ozuch radial order. Diagonal odd-odd factors vanish before tau->0.",
+    "diagonal_relative_factors": {
+      "NN": 0,
+      "NS": 0,
+      "SN": 0,
+      "SS": 0
+    },
+    "nonzero_relative_pairs": {
+      "NN,NS": -2,
+      "NN,SN": -2,
+      "NS,NN": -2,
+      "NS,SS": -2,
+      "SN,NN": -2,
+      "SN,SS": -2,
+      "SS,NS": -2,
+      "SS,SN": -2
+    },
+    "axial_if_Kij_equals_kappa_sisj": {
+      "NN,NN": 0,
+      "NN,NS": 2,
+      "NN,SN": 2,
+      "NN,SS": 0,
+      "NS,NN": 2,
+      "NS,NS": 0,
+      "NS,SN": 0,
+      "NS,SS": 2,
+      "SN,NN": 2,
+      "SN,NS": 0,
+      "SN,SN": 0,
+      "SN,SS": 2,
+      "SS,NN": 0,
+      "SS,NS": 2,
+      "SS,SN": 2,
+      "SS,SS": 0
+    },
+    "interpretation": "relative comparison cancels common odd-odd self singularities algebraically; sign of the finite off-diagonal limit is not implied by positivity of a regularized full matrix. Even-odd and odd-even diagonal terms require separate symmetry or renormalization."
+  },
+  "order_bookkeeping": {
+    "inter_node_term": "t_i t_j^2 = O(t^3) for comparable scales",
+    "Ozuch_Prop_2_19_remainder": "O(t_max^(5/2)) in the necessary estimate",
+    "comparison": "t^3 is smaller than t^(5/2) as t->0, so Proposition 2.19 cannot decide this layer without a sharper projected expansion"
+  }
+}

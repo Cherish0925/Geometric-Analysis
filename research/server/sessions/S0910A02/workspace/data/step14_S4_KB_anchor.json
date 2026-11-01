@@ -1,0 +1,24 @@
+{
+  "title": "Step 14: S^4 anchor for corrected K_B formula",
+  "K_B_from_gradient_formula": "1/3",
+  "K_B_from_inner_product": "1/3",
+  "expected_K_B": "1/3 (S^2(sqrt(3)))",
+  "check": "0",
+  "edge_equation": {
+    "K_B_at_edge": "1/3",
+    "omega": "sqrt(3)/3",
+    "rod_length_L": "sqrt(3)*pi",
+    "rod_flux_Phi": "6",
+    "total_flux": "12",
+    "int_w": "6",
+    "Vol_4": "24*pi**2"
+  },
+  "KEY_EDGE_EQUATION_CORRECTED": {
+    "equation": "Q'' + (1 - 2 K_B|_edge) Q = 0",
+    "boundary_conditions": "Q(0)=0, Q'(0)=1, Q(L)=0, Q'(L)=-1",
+    "flux": "Phi = int_0^L Q ds = 2 / (1-2K_B) when K_B is constant on edge",
+    "positive_K_B": "EXPANDS rod (omega < 1, L > pi, Phi > 2)",
+    "negative_K_B": "SHRINKS rod (omega > 1, L < pi, Phi < 2)",
+    "large_negative_K_B": "Phi -> 0, L -> 0, rod disappears"
+  }
+}

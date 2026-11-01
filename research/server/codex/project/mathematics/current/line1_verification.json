@@ -1,0 +1,87 @@
+{
+  "date": "2026-09-23",
+  "baseline": "046166b",
+  "scope": "finite algebra, unchanged sources, local links, and typesetting",
+  "programs": [
+    {
+      "program": "check_line1_remainders.py",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"pass\",\n  \"groups\": 6,\n  \"rejected_wrong_variants\": [\n    \"cscK_implies_Einstein\",\n    \"omit_primitive_period\",\n    \"omit_blowup_term\",\n    \"wrong_Weyl_amplitude\"\n  ],\n  \"scope\": \"exact finite algebra; no PDE existence, limiting compactness or novelty certification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "program": "line1_scalar_band_check.py",
+      "exit_code": 0,
+      "stdout": "PASS: LeBrun energy square split\nPASS: full symmetric Weyl-matrix polynomial fit\nPASS: amplitude and scalar-Weyl mismatch relation\nPASS: scalar decomposition for Poincare estimate\nPASS: joint Hodge-eigen defect gradient identity\nPASS: four-defect identity from the two Weitzenbock identities\nPASS: normalization P = 27 D0 / 8\nPASS: scalar variance Poincare coefficient\nPASS: scalar variance amplitude coefficient\nPASS: unequal hyperbolic product LeBrun equality\nPASS: unequal product trace-free Ricci does not vanish\nPASS: unequal product relative Einstein defect\nPASS: normalized form has the allowed KE Weyl model\nPASS: normalized form amplitude error\nPASS: combined calibration defect constant\nAll 15 exact finite checks passed; no PDE certification is claimed.\n",
+      "stderr": ""
+    },
+    {
+      "program": "check_lebrun_closure.py",
+      "exit_code": 0,
+      "stdout": "PASS: Chern-Weil lower-bound factorization\nPASS: spectral square\nPASS: calibration square\nPASS: nonpositive-budget energy identity\nPASS: transfer and positive-branch constants\nPASS: first 100 threshold examples (finite arithmetic only)\nScope: algebra and indexing; no PDE or SW existence certification.\n",
+      "stderr": ""
+    }
+  ],
+  "documents": [
+    {
+      "name": "line1_unified_v2",
+      "pages": 7,
+      "checked_links": [
+        "round18_integral_limits.md",
+        "lebrun_stability_closure.md",
+        "round4_rigidity.md",
+        "round21_analytic.md",
+        "line1_scalar_band_remainder.md",
+        "line1_kahler_energy.md",
+        "round3_monopole_input.md",
+        "round4_rigidity.md",
+        "round5_rigidity.md",
+        "round13_chamber.md",
+        "round17_integral.md",
+        "round21_analytic.md",
+        "lebrun_stability_closure.md",
+        "line1_scalar_band_remainder.md",
+        "line1_kahler_energy.md",
+        "line1_sources_20260923/manifest.json",
+        "line1_source_coverage.tsv"
+      ],
+      "md_sha256": "49e6bb561f2a067246d527f442908406fdf6e829e32e0aac1e3d3790ecba7397",
+      "tex_sha256": "377eee612fae1fe1b90127fdc8688959cace0f5a7e78daf2c0a744995635f500",
+      "pdf_sha256": "2ec2d9ebbfe03a74fc7c5170f0b610a76ba5653b10c8b3195a411e267746fc2e",
+      "typesetting_errors": []
+    },
+    {
+      "name": "line1_scalar_band_remainder",
+      "pages": 9,
+      "checked_links": [
+        "round3_monopole_input.md",
+        "round21_analytic.md"
+      ],
+      "md_sha256": "30cc216b93a7a8f397d5ac4887e7e767b9e939d47ee02c122e6c79ee3cb4afbf",
+      "tex_sha256": "235f7d67c1cec9a6d65bf4e835cdc5da6651f3a06857d9c796ba6b86c4f4251e",
+      "pdf_sha256": "5433d5751e2463acf9cc586695b788954a80b77b3e92e8e8bb9d4d21cefa26fa",
+      "typesetting_errors": []
+    },
+    {
+      "name": "line1_kahler_energy",
+      "pages": 6,
+      "checked_links": [
+        "round17_integral.md",
+        "round18_periods.md",
+        "round21_comparison.md"
+      ],
+      "md_sha256": "97f1c930ef87b5cb9075850ec9c0f1a30d549ea976e0701644d8f86fc164aaf0",
+      "tex_sha256": "6875eb0f6e2db391294ecd5c26995aa7890ef6cc5eb1f0562b6a2a9dbd316103",
+      "pdf_sha256": "c67d8c0af1ad1fd39f72e9eab3a09db121dfc63d5a16692a6f2f41887f94a6c4",
+      "typesetting_errors": []
+    }
+  ],
+  "limitations": [
+    "No new independent proof of the inherited bundle Hessian/calibration lemma.",
+    "No certification of worldwide novelty or a complete Yau26 branch.",
+    "The literature inventory retains each source's original verification level."
+  ],
+  "unchanged_source_files": 7,
+  "checked_local_links": 22,
+  "result": "pass"
+}

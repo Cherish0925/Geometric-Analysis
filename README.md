@@ -27,7 +27,7 @@ $P(g)=0$ 等价于 $g$ 为 Einstein 度量。$\mathcal E$ 采用非零 Einstein 
 | 积分间隙 | 单解参数估计、N1 无迹 Ricci 间隙、类平方短缺估计、I40/I41 线性强制及规范理论应用 | 弱化解存在性条件、确定最佳常数依赖、扩大适用流形类 |
 | 参数端点 | 对每个固定有限 $B$，在 $\chi/A\le B$ 下得到 $c(B)>0$；由拓扑数关系进一步得到所列手术族的统一常数 | 一般无密度条件下的统一估计或闭流形反例 |
 | 双取向应用 | 固定密度端点 FD2 与交叉配对给出曲面丛间隙及 Kodaira 斜率分离；推广至一侧凸包与配对短缺 | 最佳分离常数及更一般的双取向规范结构 |
-| 曲率极值 | 严格低于标准手术能量的构造、相应族的严格次四上界、一般负 Kähler–Einstein 背景推广 | 全部光滑度量上的匹配下界与精确极值 |
+| 曲率极值 | 严格低于标准手术能量的构造、相应族的严格次四上界、一般负 Kähler–Einstein 背景推广及指定配对 $A_1$ 轨形的精确极值 | 全部光滑度量上的匹配下界与精确极值 |
 | 极小值取得性 | 共形 Kähler 类的能量分离、候选度量的下降方向与临界点排除、谐和秩刚性及部分 AE/ALE 退化分析 | 非 Bach-flat 光滑全局极小元的存在 |
 | 点态逼近与精确实现 | 固定轨形解消、固定剪切流形上的逼近序列、周期与慢模态分析，以及所列有界几何条件下的 Einstein 实现 | 固定对象的全部 Einstein 存在性及一般退化下的实现 |
 | 几乎 Kähler–Einstein 几何 | 完备非紧严格例子、扭率零点结构、行列式符号与 Green 势刚性条件 | 闭四维负 Goldberg 猜想 |
@@ -43,9 +43,10 @@ $P(g)=0$ 等价于 $g$ 为 Einstein 度量。$\mathcal E$ 采用非零 Einstein 
 5. [曲率变分](docs/CURVATURE_VARIATION.md)：O11、严格上界、Q1–Q3 与极小值取得性。
 6. [几乎 Kähler–Einstein 几何](docs/GOLDBERG.md)：Fino 存在性问题、零点结构与闭负 Goldberg。
 7. [研究沿革](docs/RESEARCH_HISTORY.md)：主要推导的先后关系及修正。
+8. [服务器研究入口](research/server/README.md)：五个运行会话的 503 步、Codex／子智能体的独特科研回复、原始程序和后续修订。
 
 连续数学正文见 [10月7日研究总稿](archive/originals/2026-10-07/00_All_Recent_Research.tex)、[四题综述](archive/originals/2026-10-08/01_Research_Synthesis.tex)、[后续数学进展](archive/originals/2026-10-08/03_Subsequent_Mathematical_Developments.tex) 及 [Goldberg 合并稿](research/packages/Goldberg_Two_Conversations_Merged_20261015--5a0ab1f2/Goldberg_Two_Conversations_Merged_20261015.tex)。
 
 ## 原稿与程序
 
-`archive/originals/` 保存原始文稿和资料包；`research/packages/` 保存展开后的证明、笔记、程序、计算数据与文献。各版本及其修正同时保留。全部文件见[来源索引](catalog/README.md)，材料范围见[收录说明](docs/COVERAGE.md)。
+`archive/originals/` 保存原始文稿和资料包；`research/packages/` 保存展开材料；`research/server/` 接入服务器新增的证明、计算、科研交流和研究演进。相同文件共用已有原件，[服务器来源表](catalog/server_sources.json)保留它们在各研究树中的位置，可据此恢复论文和计算目录。全部文件见[来源索引](catalog/README.md)，材料范围见[收录说明](docs/COVERAGE.md)。

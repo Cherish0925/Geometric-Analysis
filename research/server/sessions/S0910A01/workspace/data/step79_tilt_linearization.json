@@ -1,0 +1,41 @@
+{
+  "step": 79,
+  "purpose": "linearize first obstruction lambda under scale-dependent tilt from ker R",
+  "curvature_block": "R=diag(Lambda,0,0) in (omega1,omega2,omega3)",
+  "base_direction": "phi0=omega2; adapted frame at phi0: (phi1,phi2,phi3)=(omega2,omega1,omega3)",
+  "tilt": "phi(eps)=normalize(omega2 + eps*(a omega1 + b omega3))",
+  "lambda_series_to_order_eps3": [
+    "Lambda*a**2*c*eps**2",
+    "-Lambda*a**3*c*eps**3 - Lambda*a*b**2*c*eps**3/2 + Lambda*a*c*eps",
+    "0"
+  ],
+  "D_phi_lambda_at_phi0": [
+    "0",
+    "Lambda*a*c",
+    "0"
+  ],
+  "quadratic_terms": [
+    "Lambda*a**2*c",
+    "0",
+    "0"
+  ],
+  "rank": {
+    "variables": [
+      "a (out-of-kernel tilt toward omega1)",
+      "b (in-kernel rotation toward omega3)"
+    ],
+    "image": "span of obstruction component k=2 only, with Dlambda_2=c*Lambda*a",
+    "rank_over_nonzero_Lambda": 1,
+    "kernel_direction": "b is the in-kernel SO(2) rotation; it does not change lambda to first order"
+  },
+  "reduced_second_order_equation": {
+    "expansion": "If phi(t)=phi0+t*(a omega1+b omega3)+o(t), then t*lambda(phi(t))+t^2*mu(phi0)=t^2*(Dlambda(a,b)+mu)+o(t^2).",
+    "mu1": "not cancellable by first-order tilt; for product rank-one block mu1=0 by Ozuch Lemma 2.14 determinant formula in the adapted basis",
+    "mu2": "cancellable by choosing a=-mu2/(c*Lambda)",
+    "mu3": "surviving compatibility component in coker(Dlambda), unless an additional admissible variable changes it",
+    "solution_a_for_mu2": [
+      "-mu2/(Lambda*c)"
+    ]
+  },
+  "scientific_consequence": "The coefficient computation should output a required out-of-kernel tilt and a residual compatibility condition, not a two-number existence verdict mu2=mu3=0."
+}

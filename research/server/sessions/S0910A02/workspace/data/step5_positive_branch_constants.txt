@@ -1,0 +1,116 @@
+========================================================================
+Step 5: Positive-branch constants for Yau Problem 26
+========================================================================
+
+--- Myers diameter bound D(n, delta) ---
+  n= 2, delta=0.00: D = 3.1416
+  n= 2, delta=0.01: D = 3.1574
+  n= 2, delta=0.10: D = 3.3115
+  n= 2, delta=0.30: D = 3.7549
+  n= 3, delta=0.00: D = 4.4429
+  n= 3, delta=0.01: D = 4.4653
+  n= 3, delta=0.10: D = 4.6832
+  n= 3, delta=0.30: D = 5.3103
+  n= 4, delta=0.00: D = 5.4414
+  n= 4, delta=0.01: D = 5.4688
+  n= 4, delta=0.10: D = 5.7357
+  n= 4, delta=0.30: D = 6.5037
+  n= 5, delta=0.00: D = 6.2832
+  n= 5, delta=0.01: D = 6.3148
+  n= 5, delta=0.10: D = 6.6231
+  n= 5, delta=0.30: D = 7.5098
+  n=10, delta=0.00: D = 9.4248
+  n=10, delta=0.01: D = 9.4723
+  n=10, delta=0.10: D = 9.9346
+  n=10, delta=0.30: D = 11.2648
+  n=20, delta=0.00: D = 13.6939
+  n=20, delta=0.01: D = 13.7629
+  n=20, delta=0.10: D = 14.4346
+  n=20, delta=0.30: D = 16.3673
+
+--- Bishop volume upper bound V_n(delta) ---
+  n=2, delta=0.00: Vol <= 12.5664
+  n=2, delta=0.01: Vol <= 12.6933
+  n=2, delta=0.10: Vol <= 13.9626
+  n=3, delta=0.00: Vol <= 55.8309
+  n=3, delta=0.01: Vol <= 56.6790
+  n=3, delta=0.10: Vol <= 65.3899
+  n=4, delta=0.00: Vol <= 236.8705
+  n=4, delta=0.01: Vol <= 241.6799
+  n=4, delta=0.10: Vol <= 292.4327
+  n=5, delta=0.00: Vol <= 992.2009
+  n=5, delta=0.01: Vol <= 1017.4466
+  n=5, delta=0.10: Vol <= 1291.1994
+
+--- Optimal beta(delta) for 4D CGB ---
+  delta=0.00: beta=0.666667, alpha=0.666667, beta>0=True
+  delta=0.05: beta=0.601667, alpha=0.735000, beta>0=True
+  delta=0.10: beta=0.540000, alpha=0.806667, beta>0=True
+  delta=0.15: beta=0.481667, alpha=0.881667, beta>0=True
+  delta=0.20: beta=0.426667, alpha=0.960000, beta>0=True
+  delta=0.25: beta=0.375000, alpha=1.041667, beta>0=True
+  delta=0.30: beta=0.326667, alpha=1.126667, beta>0=True
+  delta=0.35: beta=0.270000, alpha=1.215000, beta>0=True
+  delta=0.40: beta=0.186667, alpha=1.306667, beta>0=True
+  delta=0.45: beta=0.096667, alpha=1.401667, beta>0=True
+  delta=0.50: beta=0.000000, alpha=1.500000, beta>0=False
+
+--- 4D noncollapse under |Rm| <= K ---
+  K=   1, delta=0.01: Vol >= 4.699625e+01
+  K=   1, delta=0.10: Vol >= 4.370305e+01
+  K=   1, delta=0.30: Vol >= 3.712704e+01
+  K=  10, delta=0.01: Vol >= 7.842350e-01
+  K=  10, delta=0.10: Vol >= 7.832501e-01
+  K=  10, delta=0.30: Vol >= 7.807717e-01
+  K= 100, delta=0.01: Vol >= 7.895147e-03
+  K= 100, delta=0.10: Vol >= 7.895047e-03
+  K= 100, delta=0.30: Vol >= 7.894794e-03
+  K=1000, delta=0.01: Vol >= 7.895678e-05
+  K=1000, delta=0.10: Vol >= 7.895677e-05
+  K=1000, delta=0.30: Vol >= 7.895675e-05
+
+--- Topological filter: 2*chi > 3*|tau| constraint ---
+  Simply connected 4-manifolds #k CP^2 # l CPbar^2:
+  Constraint: 2(2+k+l) > 3|k-l|
+  (0,0): chi=2, tau=0, 2chi-3|tau|=4, HT_OK, Einstein (S^4)
+  (1,0): chi=3, tau=1, 2chi-3|tau|=3, HT_OK, Einstein (CP^2)
+  (1,1): chi=4, tau=0, 2chi-3|tau|=8, HT_OK, Einstein (Page)
+  (2,0): chi=4, tau=2, 2chi-3|tau|=2, HT_OK, Unknown
+  (2,1): chi=5, tau=1, 2chi-3|tau|=7, HT_OK, Einstein? (CLW-type)
+  (2,2): chi=6, tau=0, 2chi-3|tau|=12, HT_OK, ?
+  (3,0): chi=5, tau=3, 2chi-3|tau|=1, HT_OK, Unknown
+  (3,1): chi=6, tau=2, 2chi-3|tau|=6, HT_OK, ?
+  (3,2): chi=7, tau=1, 2chi-3|tau|=11, HT_OK, ?
+  (3,3): chi=8, tau=0, 2chi-3|tau|=16, HT_OK, ?
+  (4,0): chi=6, tau=4, 2chi-3|tau|=0, HT_FAIL, ?
+  (4,1): chi=7, tau=3, 2chi-3|tau|=5, HT_OK, ?
+  (4,2): chi=8, tau=2, 2chi-3|tau|=10, HT_OK, ?
+  (4,3): chi=9, tau=1, 2chi-3|tau|=15, HT_OK, ?
+  (4,4): chi=10, tau=0, 2chi-3|tau|=20, HT_OK, ?
+  (5,0): chi=7, tau=5, 2chi-3|tau|=-1, HT_FAIL, ?
+  (5,1): chi=8, tau=4, 2chi-3|tau|=4, HT_OK, ?
+  (5,2): chi=9, tau=3, 2chi-3|tau|=9, HT_OK, ?
+  (5,3): chi=10, tau=2, 2chi-3|tau|=14, HT_OK, ?
+  (5,4): chi=11, tau=1, 2chi-3|tau|=19, HT_OK, ?
+  (5,5): chi=12, tau=0, 2chi-3|tau|=24, HT_OK, ?
+  (6,0): chi=8, tau=6, 2chi-3|tau|=-2, HT_FAIL, ?
+  (6,1): chi=9, tau=5, 2chi-3|tau|=3, HT_OK, ?
+  (6,2): chi=10, tau=4, 2chi-3|tau|=8, HT_OK, ?
+  (6,3): chi=11, tau=3, 2chi-3|tau|=13, HT_OK, ?
+  (6,4): chi=12, tau=2, 2chi-3|tau|=18, HT_OK, ?
+  (6,5): chi=13, tau=1, 2chi-3|tau|=23, HT_OK, ?
+  (6,6): chi=14, tau=0, 2chi-3|tau|=28, HT_OK, ?
+  (7,0): chi=9, tau=7, 2chi-3|tau|=-3, HT_FAIL, ?
+  (7,1): chi=10, tau=6, 2chi-3|tau|=2, HT_OK, ?
+  (7,2): chi=11, tau=5, 2chi-3|tau|=7, HT_OK, ?
+  (7,3): chi=12, tau=4, 2chi-3|tau|=12, HT_OK, ?
+  (7,4): chi=13, tau=3, 2chi-3|tau|=17, HT_OK, ?
+  (7,5): chi=14, tau=2, 2chi-3|tau|=22, HT_OK, ?
+  (7,6): chi=15, tau=1, 2chi-3|tau|=27, HT_OK, ?
+  (7,7): chi=16, tau=0, 2chi-3|tau|=32, HT_OK, ?
+
+--- Positive branch asymmetry summary ---
+  Positive: diam bounded, vol bounded, b1=0, pi1 finite, PSC
+  Negative: NO diam bound, NO vol bound, b1 unrestricted
+  Gap for P_n+: collapse only
+  Gap for P_n-: diameter + collapse

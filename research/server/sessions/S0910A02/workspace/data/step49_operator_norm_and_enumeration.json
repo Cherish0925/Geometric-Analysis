@@ -1,0 +1,374 @@
+{
+  "purpose": "Correct Step48 allocation: first obstruction is the whole local C0 pinching story; finite product-quotient orientation rows identify known-Einstein calibrations and mixed unknown targets.",
+  "scaling": {
+    "refined_remainder_bound_gcal_norm": "C * t^2 * rho^2 after subtracting first obstruction term",
+    "metric_scale_on_bubble": "g_t ~ t * g_cal, so |T|_{op,g_t} ~ t^{-1}|T|_{g_cal} for a (0,2) tensor",
+    "regions": [
+      {
+        "region": "bubble core rho <= O(1)",
+        "remainder_operator_norm": "O(t)",
+        "first_obstruction_operator_norm_if_lambda_nonzero": "O(1)"
+      },
+      {
+        "region": "intermediate bubble 1 <= rho <= t^(-1/4)",
+        "remainder_operator_norm": "O(t*rho^2)",
+        "maximum": "O(t^(1/2)) at rho=t^(-1/4)"
+      },
+      {
+        "region": "damage/transition zone rho ~ t^(-1/4)",
+        "remainder_operator_norm": "O(t^(1/2)) using Morteza-Viaclovsky/Ozuch refined matching"
+      },
+      {
+        "region": "orbifold exterior outside gluing balls",
+        "remainder_operator_norm": "0 if the original orbifold metric is exact Einstein"
+      }
+    ],
+    "uniform_four_bubble_consequence": "For finitely many A1 points with all first obstructions killed, sup |Ric(g_t)-Lambda g_t|_{op,g_t} <= C t^(1/2).",
+    "obstruction_order_table": [
+      {
+        "obstruction_tensor_order_in_gcal_norm": "t^1 * obstruction_mode",
+        "operator_norm_order_on_bubble_core": "t^0",
+        "vanishes_as_t_to_0": false,
+        "yau26_relevance": "load-bearing: order-one defect if nonzero"
+      },
+      {
+        "obstruction_tensor_order_in_gcal_norm": "t^2 * obstruction_mode",
+        "operator_norm_order_on_bubble_core": "t^1",
+        "vanishes_as_t_to_0": true,
+        "yau26_relevance": "does not prevent delta(t)->0; blocks only exact Einstein gluing"
+      },
+      {
+        "obstruction_tensor_order_in_gcal_norm": "t^3 * obstruction_mode",
+        "operator_norm_order_on_bubble_core": "t^2",
+        "vanishes_as_t_to_0": true,
+        "yau26_relevance": "does not prevent delta(t)->0; blocks only exact Einstein gluing"
+      },
+      {
+        "obstruction_tensor_order_in_gcal_norm": "t^4 * obstruction_mode",
+        "operator_norm_order_on_bubble_core": "t^3",
+        "vanishes_as_t_to_0": true,
+        "yau26_relevance": "does not prevent delta(t)->0; blocks only exact Einstein gluing"
+      }
+    ],
+    "critical_correction_to_step48": "Second and higher Ozuch obstructions are not load-bearing for Yau-26 C0 operator pinching. They obstruct exact Einstein desingularization but their residual tensors vanish in operator norm."
+  },
+  "a1_orientation_cases": [
+    {
+      "case": "diagonal half-turn Z2 quotient (S2 x S2)/Z2",
+      "A1_points": 4,
+      "source_status": "Steps 44-45 source/audit: four A1 points; curvature blocks R_+=R_-=diag(Lambda,0,0); topology parity/smooth type still needs proof for mixed rows.",
+      "table": [
+        {
+          "r_reversed": 0,
+          "compatible": 4,
+          "b_plus": 1,
+          "b_minus": 5,
+          "tau": -4,
+          "chi": 8,
+          "2chi_plus_3tau_in_chosen_orientation": 4,
+          "balanced_stress_family_k_if_bplus_eq_bminus": null,
+          "known_to_admit_positive_Einstein_in_session_record": true,
+          "known_reason_or_gap": "all one chirality; expected/crepant complex resolution has b_+=1 in one orientation and del Pezzo diffeotype (orientation reversal for r=N)",
+          "candidate_yau26_wall_target": false
+        },
+        {
+          "r_reversed": 1,
+          "compatible": 3,
+          "b_plus": 2,
+          "b_minus": 4,
+          "tau": -2,
+          "chi": 8,
+          "2chi_plus_3tau_in_chosen_orientation": 10,
+          "balanced_stress_family_k_if_bplus_eq_bminus": null,
+          "known_to_admit_positive_Einstein_in_session_record": false,
+          "known_reason_or_gap": "mixed chirality; not a Del Pezzo diffeotype in either orientation by b_+>1 and b_->1; no known Einstein metric recorded in this session",
+          "candidate_yau26_wall_target": true
+        },
+        {
+          "r_reversed": 2,
+          "compatible": 2,
+          "b_plus": 3,
+          "b_minus": 3,
+          "tau": 0,
+          "chi": 8,
+          "2chi_plus_3tau_in_chosen_orientation": 16,
+          "balanced_stress_family_k_if_bplus_eq_bminus": 3,
+          "known_to_admit_positive_Einstein_in_session_record": false,
+          "known_reason_or_gap": "mixed chirality; not a Del Pezzo diffeotype in either orientation by b_+>1 and b_->1; no known Einstein metric recorded in this session",
+          "candidate_yau26_wall_target": true
+        },
+        {
+          "r_reversed": 3,
+          "compatible": 1,
+          "b_plus": 4,
+          "b_minus": 2,
+          "tau": 2,
+          "chi": 8,
+          "2chi_plus_3tau_in_chosen_orientation": 22,
+          "balanced_stress_family_k_if_bplus_eq_bminus": null,
+          "known_to_admit_positive_Einstein_in_session_record": false,
+          "known_reason_or_gap": "mixed chirality; not a Del Pezzo diffeotype in either orientation by b_+>1 and b_->1; no known Einstein metric recorded in this session",
+          "candidate_yau26_wall_target": true
+        },
+        {
+          "r_reversed": 4,
+          "compatible": 0,
+          "b_plus": 5,
+          "b_minus": 1,
+          "tau": 4,
+          "chi": 8,
+          "2chi_plus_3tau_in_chosen_orientation": 28,
+          "balanced_stress_family_k_if_bplus_eq_bminus": null,
+          "known_to_admit_positive_Einstein_in_session_record": true,
+          "known_reason_or_gap": "all one chirality; expected/crepant complex resolution has b_+=1 in one orientation and del Pezzo diffeotype (orientation reversal for r=N)",
+          "candidate_yau26_wall_target": false
+        }
+      ],
+      "unknown_rows": [
+        {
+          "r_reversed": 1,
+          "compatible": 3,
+          "b_plus": 2,
+          "b_minus": 4,
+          "tau": -2,
+          "chi": 8,
+          "2chi_plus_3tau_in_chosen_orientation": 10,
+          "balanced_stress_family_k_if_bplus_eq_bminus": null,
+          "known_to_admit_positive_Einstein_in_session_record": false,
+          "known_reason_or_gap": "mixed chirality; not a Del Pezzo diffeotype in either orientation by b_+>1 and b_->1; no known Einstein metric recorded in this session",
+          "candidate_yau26_wall_target": true
+        },
+        {
+          "r_reversed": 2,
+          "compatible": 2,
+          "b_plus": 3,
+          "b_minus": 3,
+          "tau": 0,
+          "chi": 8,
+          "2chi_plus_3tau_in_chosen_orientation": 16,
+          "balanced_stress_family_k_if_bplus_eq_bminus": 3,
+          "known_to_admit_positive_Einstein_in_session_record": false,
+          "known_reason_or_gap": "mixed chirality; not a Del Pezzo diffeotype in either orientation by b_+>1 and b_->1; no known Einstein metric recorded in this session",
+          "candidate_yau26_wall_target": true
+        },
+        {
+          "r_reversed": 3,
+          "compatible": 1,
+          "b_plus": 4,
+          "b_minus": 2,
+          "tau": 2,
+          "chi": 8,
+          "2chi_plus_3tau_in_chosen_orientation": 22,
+          "balanced_stress_family_k_if_bplus_eq_bminus": null,
+          "known_to_admit_positive_Einstein_in_session_record": false,
+          "known_reason_or_gap": "mixed chirality; not a Del Pezzo diffeotype in either orientation by b_+>1 and b_->1; no known Einstein metric recorded in this session",
+          "candidate_yau26_wall_target": true
+        }
+      ]
+    },
+    {
+      "case": "diagonal V4 product quotient (Step45 audit model)",
+      "A1_points": 6,
+      "source_status": "Step45 bookkeeping model: six A1 points for a diagonal V4 action; actual group-action/smooth-type details require independent validation.",
+      "table": [
+        {
+          "r_reversed": 0,
+          "compatible": 6,
+          "b_plus": 1,
+          "b_minus": 7,
+          "tau": -6,
+          "chi": 10,
+          "2chi_plus_3tau_in_chosen_orientation": 2,
+          "balanced_stress_family_k_if_bplus_eq_bminus": null,
+          "known_to_admit_positive_Einstein_in_session_record": true,
+          "known_reason_or_gap": "all one chirality; expected/crepant complex resolution has b_+=1 in one orientation and del Pezzo diffeotype (orientation reversal for r=N)",
+          "candidate_yau26_wall_target": false
+        },
+        {
+          "r_reversed": 1,
+          "compatible": 5,
+          "b_plus": 2,
+          "b_minus": 6,
+          "tau": -4,
+          "chi": 10,
+          "2chi_plus_3tau_in_chosen_orientation": 8,
+          "balanced_stress_family_k_if_bplus_eq_bminus": null,
+          "known_to_admit_positive_Einstein_in_session_record": false,
+          "known_reason_or_gap": "mixed chirality; not a Del Pezzo diffeotype in either orientation by b_+>1 and b_->1; no known Einstein metric recorded in this session",
+          "candidate_yau26_wall_target": true
+        },
+        {
+          "r_reversed": 2,
+          "compatible": 4,
+          "b_plus": 3,
+          "b_minus": 5,
+          "tau": -2,
+          "chi": 10,
+          "2chi_plus_3tau_in_chosen_orientation": 14,
+          "balanced_stress_family_k_if_bplus_eq_bminus": null,
+          "known_to_admit_positive_Einstein_in_session_record": false,
+          "known_reason_or_gap": "mixed chirality; not a Del Pezzo diffeotype in either orientation by b_+>1 and b_->1; no known Einstein metric recorded in this session",
+          "candidate_yau26_wall_target": true
+        },
+        {
+          "r_reversed": 3,
+          "compatible": 3,
+          "b_plus": 4,
+          "b_minus": 4,
+          "tau": 0,
+          "chi": 10,
+          "2chi_plus_3tau_in_chosen_orientation": 20,
+          "balanced_stress_family_k_if_bplus_eq_bminus": 4,
+          "known_to_admit_positive_Einstein_in_session_record": false,
+          "known_reason_or_gap": "mixed chirality; not a Del Pezzo diffeotype in either orientation by b_+>1 and b_->1; no known Einstein metric recorded in this session",
+          "candidate_yau26_wall_target": true
+        },
+        {
+          "r_reversed": 4,
+          "compatible": 2,
+          "b_plus": 5,
+          "b_minus": 3,
+          "tau": 2,
+          "chi": 10,
+          "2chi_plus_3tau_in_chosen_orientation": 26,
+          "balanced_stress_family_k_if_bplus_eq_bminus": null,
+          "known_to_admit_positive_Einstein_in_session_record": false,
+          "known_reason_or_gap": "mixed chirality; not a Del Pezzo diffeotype in either orientation by b_+>1 and b_->1; no known Einstein metric recorded in this session",
+          "candidate_yau26_wall_target": true
+        },
+        {
+          "r_reversed": 5,
+          "compatible": 1,
+          "b_plus": 6,
+          "b_minus": 2,
+          "tau": 4,
+          "chi": 10,
+          "2chi_plus_3tau_in_chosen_orientation": 32,
+          "balanced_stress_family_k_if_bplus_eq_bminus": null,
+          "known_to_admit_positive_Einstein_in_session_record": false,
+          "known_reason_or_gap": "mixed chirality; not a Del Pezzo diffeotype in either orientation by b_+>1 and b_->1; no known Einstein metric recorded in this session",
+          "candidate_yau26_wall_target": true
+        },
+        {
+          "r_reversed": 6,
+          "compatible": 0,
+          "b_plus": 7,
+          "b_minus": 1,
+          "tau": 6,
+          "chi": 10,
+          "2chi_plus_3tau_in_chosen_orientation": 38,
+          "balanced_stress_family_k_if_bplus_eq_bminus": null,
+          "known_to_admit_positive_Einstein_in_session_record": true,
+          "known_reason_or_gap": "all one chirality; expected/crepant complex resolution has b_+=1 in one orientation and del Pezzo diffeotype (orientation reversal for r=N)",
+          "candidate_yau26_wall_target": false
+        }
+      ],
+      "unknown_rows": [
+        {
+          "r_reversed": 1,
+          "compatible": 5,
+          "b_plus": 2,
+          "b_minus": 6,
+          "tau": -4,
+          "chi": 10,
+          "2chi_plus_3tau_in_chosen_orientation": 8,
+          "balanced_stress_family_k_if_bplus_eq_bminus": null,
+          "known_to_admit_positive_Einstein_in_session_record": false,
+          "known_reason_or_gap": "mixed chirality; not a Del Pezzo diffeotype in either orientation by b_+>1 and b_->1; no known Einstein metric recorded in this session",
+          "candidate_yau26_wall_target": true
+        },
+        {
+          "r_reversed": 2,
+          "compatible": 4,
+          "b_plus": 3,
+          "b_minus": 5,
+          "tau": -2,
+          "chi": 10,
+          "2chi_plus_3tau_in_chosen_orientation": 14,
+          "balanced_stress_family_k_if_bplus_eq_bminus": null,
+          "known_to_admit_positive_Einstein_in_session_record": false,
+          "known_reason_or_gap": "mixed chirality; not a Del Pezzo diffeotype in either orientation by b_+>1 and b_->1; no known Einstein metric recorded in this session",
+          "candidate_yau26_wall_target": true
+        },
+        {
+          "r_reversed": 3,
+          "compatible": 3,
+          "b_plus": 4,
+          "b_minus": 4,
+          "tau": 0,
+          "chi": 10,
+          "2chi_plus_3tau_in_chosen_orientation": 20,
+          "balanced_stress_family_k_if_bplus_eq_bminus": 4,
+          "known_to_admit_positive_Einstein_in_session_record": false,
+          "known_reason_or_gap": "mixed chirality; not a Del Pezzo diffeotype in either orientation by b_+>1 and b_->1; no known Einstein metric recorded in this session",
+          "candidate_yau26_wall_target": true
+        },
+        {
+          "r_reversed": 4,
+          "compatible": 2,
+          "b_plus": 5,
+          "b_minus": 3,
+          "tau": 2,
+          "chi": 10,
+          "2chi_plus_3tau_in_chosen_orientation": 26,
+          "balanced_stress_family_k_if_bplus_eq_bminus": null,
+          "known_to_admit_positive_Einstein_in_session_record": false,
+          "known_reason_or_gap": "mixed chirality; not a Del Pezzo diffeotype in either orientation by b_+>1 and b_->1; no known Einstein metric recorded in this session",
+          "candidate_yau26_wall_target": true
+        },
+        {
+          "r_reversed": 5,
+          "compatible": 1,
+          "b_plus": 6,
+          "b_minus": 2,
+          "tau": 4,
+          "chi": 10,
+          "2chi_plus_3tau_in_chosen_orientation": 32,
+          "balanced_stress_family_k_if_bplus_eq_bminus": null,
+          "known_to_admit_positive_Einstein_in_session_record": false,
+          "known_reason_or_gap": "mixed chirality; not a Del Pezzo diffeotype in either orientation by b_+>1 and b_->1; no known Einstein metric recorded in this session",
+          "candidate_yau26_wall_target": true
+        }
+      ]
+    }
+  ],
+  "product_graph_all_ADE_classification": {
+    "scope": "orientation-preserving product graph actions Gamma -> SO(3)xSO(3) with both projections injective; excludes factor-swap groups, which remain to be enumerated separately",
+    "endpoint_weight_test": "For a stabilizer of order m, endpoint choices give local complex weights (1,a) and (1,-a). Requiring both to be ADE/SU(2) gives 1+a=0 and 1-a=0 mod m, hence m divides 2.",
+    "conclusion_in_scope": "Only C2 and D2=V4 graph actions can have exclusively A1/ADE isolated singularities in this product-action class.",
+    "so3_type_table": [
+      {
+        "type": "C_m",
+        "has_order_gt_2_stabilizer": "m>2",
+        "all_ADE_possible": "only m=2"
+      },
+      {
+        "type": "D_m",
+        "has_order_gt_2_stabilizer": "m>2 rotation axis plus order-2 axes",
+        "all_ADE_possible": "only m=2 (D2=V4)"
+      },
+      {
+        "type": "T",
+        "has_order_gt_2_stabilizer": "orders 3",
+        "all_ADE_possible": false
+      },
+      {
+        "type": "O",
+        "has_order_gt_2_stabilizer": "orders 3 and 4",
+        "all_ADE_possible": false
+      },
+      {
+        "type": "I",
+        "has_order_gt_2_stabilizer": "orders 3 and 5",
+        "all_ADE_possible": false
+      }
+    ],
+    "remaining_out_of_scope": "isometries exchanging the two S2 factors or non-graph actions; these need an Agent3 finite-group enumeration if the product-quotient wall becomes central."
+  },
+  "session_level_conclusions": [
+    "If R_epsilon(p) zeta = 0 at every A1 replacement, the refined four-bubble approximate metrics have delta_+(g_t) <= C t^(1/2) -> 0, regardless of higher-order exact-Einstein obstructions.",
+    "For (S2 x S2)/Z2, r=0 and r=4 are harmless for Yau-26 because the underlying del Pezzo degree-4 diffeotype is known to admit positive Einstein metrics; r=1,2,3 are concrete mixed-chirality targets, not resolved by current Einstein-existence knowledge.",
+    "The balanced r=2 row is not forced; Yau-26 is orientation-free, so every mixed row whose smooth manifold lacks known Einstein metrics matters.",
+    "Within product graph actions, the only all-ADE cases are Z2 and V4; factor-swap actions and smooth-type/parity remain open finite checks."
+  ]
+}

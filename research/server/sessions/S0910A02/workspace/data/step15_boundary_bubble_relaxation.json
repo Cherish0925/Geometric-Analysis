@@ -1,0 +1,1097 @@
+{
+  "title": "Step 15 boundary-bubble pinched-relaxation probes",
+  "source_scope_correction": {
+    "exact_FEM_warning": "Solving exact Einstein equations on m=8,10 would test nonexistence/classification, not the delta-pinched volume-gap question.",
+    "classification_status": "2311.04840 classifies T^2-invariant Einstein 4-manifolds only with nonnegative sectional curvature; LeBrun classifies Hermitian Einstein as KE or Page/CLW. General smooth T^2-invariant Einstein classification is not known from sources read here."
+  },
+  "R0_edge_ODE_spectral_GB_relaxation": {
+    "description": "Coarse necessary-condition model with constant K_B=-A on every rod, base area fixed above Faber-Krahn, and negative GB stored in thin boundary collars.",
+    "cases": [
+      {
+        "m": 4,
+        "chi": 4,
+        "A": 16.0,
+        "area_base": 10.0,
+        "area_fk_delta0": 9.084207267768617,
+        "lambda1_upper_target": 2.0,
+        "GB_target": 0.0,
+        "rod": {
+          "A": 16.0,
+          "K_B_edge": -16.0,
+          "omega": 5.744562646538029,
+          "rod_length": 0.5468810851045518,
+          "rod_flux": 0.06060606060606061,
+          "fixed_sphere_area": 0.3807991095260355
+        },
+        "total_flux": 0.24242424242424243,
+        "volume4": 4.785262739922113,
+        "collar_area_total_for_negative_GB": 0.0,
+        "collar_area_per_edge": 0.0,
+        "collar_width_estimate": 0.0,
+        "bubble_scale": 0.25,
+        "width_over_bubble_scale": 0.0,
+        "interpretation": "R0 feasible scaling if only spectral area, GB, and edge unit-closure constraints are imposed; it is not a Ricci-pinched metric."
+      },
+      {
+        "m": 6,
+        "chi": 6,
+        "A": 36.0,
+        "area_base": 10.0,
+        "area_fk_delta0": 9.084207267768617,
+        "lambda1_upper_target": 2.0,
+        "GB_target": -3.141592653589793,
+        "rod": {
+          "A": 36.0,
+          "K_B_edge": -36.0,
+          "omega": 8.54400374531753,
+          "rod_length": 0.3676956081990854,
+          "rod_flux": 0.0273972602739726,
+          "fixed_sphere_area": 0.17214206321039963
+        },
+        "total_flux": 0.1643835616438356,
+        "volume4": 3.2448014469334874,
+        "collar_area_total_for_negative_GB": 0.08726646259971647,
+        "collar_area_per_edge": 0.01454441043328608,
+        "collar_width_estimate": 0.03955557289498857,
+        "bubble_scale": 0.16666666666666666,
+        "width_over_bubble_scale": 0.2373334373699314,
+        "interpretation": "R0 feasible scaling if only spectral area, GB, and edge unit-closure constraints are imposed; it is not a Ricci-pinched metric."
+      },
+      {
+        "m": 8,
+        "chi": 8,
+        "A": 64.0,
+        "area_base": 10.0,
+        "area_fk_delta0": 9.084207267768617,
+        "lambda1_upper_target": 2.0,
+        "GB_target": -6.283185307179586,
+        "rod": {
+          "A": 64.0,
+          "K_B_edge": -64.0,
+          "omega": 11.357816691600547,
+          "rod_length": 0.2766018099159055,
+          "rod_flux": 0.015503875968992248,
+          "fixed_sphere_area": 0.09741372569270676
+        },
+        "total_flux": 0.12403100775193798,
+        "volume4": 2.448273959960151,
+        "collar_area_total_for_negative_GB": 0.09817477042468103,
+        "collar_area_per_edge": 0.01227184630308513,
+        "collar_width_estimate": 0.04436647145156464,
+        "bubble_scale": 0.125,
+        "width_over_bubble_scale": 0.3549317716125171,
+        "interpretation": "R0 feasible scaling if only spectral area, GB, and edge unit-closure constraints are imposed; it is not a Ricci-pinched metric."
+      },
+      {
+        "m": 10,
+        "chi": 10,
+        "A": 100.0,
+        "area_base": 10.0,
+        "area_fk_delta0": 9.084207267768617,
+        "lambda1_upper_target": 2.0,
+        "GB_target": -9.42477796076938,
+        "rod": {
+          "A": 100.0,
+          "K_B_edge": -100.0,
+          "omega": 14.177446878757825,
+          "rod_length": 0.22159086050231405,
+          "rod_flux": 0.009950248756218905,
+          "fixed_sphere_area": 0.06251925678785658
+        },
+        "total_flux": 0.09950248756218905,
+        "volume4": 1.9641003783262403,
+        "collar_area_total_for_negative_GB": 0.09424777960769379,
+        "collar_area_per_edge": 0.00942477796076938,
+        "collar_width_estimate": 0.04253234063627348,
+        "bubble_scale": 0.1,
+        "width_over_bubble_scale": 0.4253234063627348,
+        "interpretation": "R0 feasible scaling if only spectral area, GB, and edge unit-closure constraints are imposed; it is not a Ricci-pinched metric."
+      },
+      {
+        "m": 20,
+        "chi": 20,
+        "A": 400.0,
+        "area_base": 10.0,
+        "area_fk_delta0": 9.084207267768617,
+        "lambda1_upper_target": 2.0,
+        "GB_target": -25.132741228718345,
+        "rod": {
+          "A": 400.0,
+          "K_B_edge": -400.0,
+          "omega": 28.30194339616981,
+          "rod_length": 0.11100271842162451,
+          "rod_flux": 0.0024968789013732834,
+          "fixed_sphere_area": 0.01568835282691532
+        },
+        "total_flux": 0.049937578027465665,
+        "volume4": 0.9857282797592367,
+        "collar_area_total_for_negative_GB": 0.06283185307179587,
+        "collar_area_per_edge": 0.0031415926535897933,
+        "collar_width_estimate": 0.028301943396169815,
+        "bubble_scale": 0.05,
+        "width_over_bubble_scale": 0.5660388679233963,
+        "interpretation": "R0 feasible scaling if only spectral area, GB, and edge unit-closure constraints are imposed; it is not a Ricci-pinched metric."
+      },
+      {
+        "m": 50,
+        "chi": 50,
+        "A": 2500.0,
+        "area_base": 10.0,
+        "area_fk_delta0": 9.084207267768617,
+        "lambda1_upper_target": 2.0,
+        "GB_target": -72.25663103256525,
+        "rod": {
+          "A": 2500.0,
+          "K_B_edge": -2500.0,
+          "omega": 70.71774883294857,
+          "rod_length": 0.0444243871649669,
+          "rod_flux": 0.0003999200159968006,
+          "fixed_sphere_area": 0.002512771568558123
+        },
+        "total_flux": 0.01999600079984003,
+        "volume4": 0.394705234996575,
+        "collar_area_total_for_negative_GB": 0.0289026524130261,
+        "collar_area_per_edge": 0.000578053048260522,
+        "collar_width_estimate": 0.013012065785262539,
+        "bubble_scale": 0.02,
+        "width_over_bubble_scale": 0.6506032892631269,
+        "interpretation": "R0 feasible scaling if only spectral area, GB, and edge unit-closure constraints are imposed; it is not a Ricci-pinched metric."
+      },
+      {
+        "m": 100,
+        "chi": 100,
+        "A": 10000.0,
+        "area_base": 10.0,
+        "area_fk_delta0": 9.084207267768617,
+        "lambda1_upper_target": 2.0,
+        "GB_target": -150.79644737231007,
+        "rod": {
+          "A": 10000.0,
+          "K_B_edge": -10000.0,
+          "omega": 141.42489172702236,
+          "rod_length": 0.02221385935124971,
+          "rod_flux": 9.99950002499875e-05,
+          "fixed_sphere_area": 0.0006282871163621405
+        },
+        "total_flux": 0.00999950002499875,
+        "volume4": 0.1973822189108416,
+        "collar_area_total_for_negative_GB": 0.015079644737231007,
+        "collar_area_per_edge": 0.00015079644737231007,
+        "collar_width_estimate": 0.006788394802897073,
+        "bubble_scale": 0.01,
+        "width_over_bubble_scale": 0.6788394802897073,
+        "interpretation": "R0 feasible scaling if only spectral area, GB, and edge unit-closure constraints are imposed; it is not a Ricci-pinched metric."
+      }
+    ],
+    "finding": "Taking A=m^2 gives total_flux=2m/(1+2m^2) ~ 1/m and Vol4~2*pi^2/m, while the base area can remain above the spectral floor; hence spectral+GB+unit-closure alone cannot prove a chi-uniform volume gap."
+  },
+  "R1_local_truncated_edge_Ricci_probe": {
+    "metric": "dr^2+cosh(sqrt(A)r)^2 ds^2 + (r+(-A/3-1/6)r^3)^2 dtheta^2 + [sin(omega s)/omega*(1+A r^2/2)]^2 dphi^2, omega^2=1+2A",
+    "table": [
+      {
+        "A": 4,
+        "c": 0.01,
+        "max_delta": 0.001270828158497217,
+        "eig_min": 0.9991334218663551,
+        "eig_max": 1.0012708281584972,
+        "bad": 0
+      },
+      {
+        "A": 4,
+        "c": 0.02,
+        "max_delta": 0.005083250643782566,
+        "eig_min": 0.9965347496309146,
+        "eig_max": 1.0050832506437826,
+        "bad": 0
+      },
+      {
+        "A": 4,
+        "c": 0.05,
+        "max_delta": 0.03176763274975425,
+        "eig_min": 0.9783885944369209,
+        "eig_max": 1.0317676327497542,
+        "bad": 0
+      },
+      {
+        "A": 4,
+        "c": 0.1,
+        "max_delta": 0.1270338062719394,
+        "eig_min": 0.9142139303418887,
+        "eig_max": 1.1270338062719394,
+        "bad": 0
+      },
+      {
+        "A": 4,
+        "c": 0.2,
+        "max_delta": 0.5076480654707072,
+        "eig_min": 0.6671987600569929,
+        "eig_max": 1.5076480654707072,
+        "bad": 0
+      },
+      {
+        "A": 9,
+        "c": 0.01,
+        "max_delta": 0.002685166001839434,
+        "eig_min": 0.9981335225711758,
+        "eig_max": 1.0026851660018394,
+        "bad": 0
+      },
+      {
+        "A": 9,
+        "c": 0.02,
+        "max_delta": 0.010740434026807577,
+        "eig_min": 0.9925363606361497,
+        "eig_max": 1.0107404340268076,
+        "bad": 0
+      },
+      {
+        "A": 9,
+        "c": 0.05,
+        "max_delta": 0.06711770866066402,
+        "eig_min": 0.9534514501024792,
+        "eig_max": 1.067117708660664,
+        "bad": 0
+      },
+      {
+        "A": 9,
+        "c": 0.1,
+        "max_delta": 0.26833120807798494,
+        "eig_min": 0.8152154031298707,
+        "eig_max": 1.268331208077985,
+        "bad": 0
+      },
+      {
+        "A": 9,
+        "c": 0.2,
+        "max_delta": 1.0712948634877506,
+        "eig_min": 0.2829581763314997,
+        "eig_max": 2.0712948634877506,
+        "bad": 0
+      },
+      {
+        "A": 16,
+        "c": 0.01,
+        "max_delta": 0.004667669960348064,
+        "eig_min": 0.9967336636408105,
+        "eig_max": 1.004667669960348,
+        "bad": 0
+      },
+      {
+        "A": 16,
+        "c": 0.02,
+        "max_delta": 0.01867021974316785,
+        "eig_min": 0.9869386173701759,
+        "eig_max": 1.0186702197431678,
+        "bad": 0
+      },
+      {
+        "A": 16,
+        "c": 0.05,
+        "max_delta": 0.11666884318942294,
+        "eig_min": 0.9185394999336555,
+        "eig_max": 1.116668843189423,
+        "bad": 0
+      },
+      {
+        "A": 16,
+        "c": 0.1,
+        "max_delta": 0.46639487805893687,
+        "eig_min": 0.6766182997351047,
+        "eig_max": 1.4663948780589369,
+        "bad": 0
+      },
+      {
+        "A": 16,
+        "c": 0.2,
+        "max_delta": 1.8614420810903454,
+        "eig_min": -0.25496500109230347,
+        "eig_max": 2.8614420810903454,
+        "bad": 0
+      },
+      {
+        "A": 25,
+        "c": 0.01,
+        "max_delta": 0.0072172704014441535,
+        "eig_min": 0.9949338450388513,
+        "eig_max": 1.0072172704014442,
+        "bad": 0
+      },
+      {
+        "A": 25,
+        "c": 0.02,
+        "max_delta": 0.02886832700425046,
+        "eig_min": 0.979741519249928,
+        "eig_max": 1.0288683270042505,
+        "bad": 0
+      },
+      {
+        "A": 25,
+        "c": 0.05,
+        "max_delta": 0.18039418243857952,
+        "eig_min": 0.8736527211193514,
+        "eig_max": 1.1803941824385795,
+        "bad": 0
+      },
+      {
+        "A": 25,
+        "c": 0.1,
+        "max_delta": 0.7211159771131825,
+        "eig_min": 0.4984222532193835,
+        "eig_max": 1.7211159771131825,
+        "bad": 0
+      },
+      {
+        "A": 25,
+        "c": 0.2,
+        "max_delta": 2.877630964583723,
+        "eig_min": -0.9465767726241696,
+        "eig_max": 3.877630964583723,
+        "bad": 0
+      },
+      {
+        "A": 64,
+        "c": 0.01,
+        "max_delta": 0.0182667579350948,
+        "eig_min": 0.9871346311386715,
+        "eig_max": 1.0182667579350948,
+        "bad": 0
+      },
+      {
+        "A": 64,
+        "c": 0.02,
+        "max_delta": 0.07306500342485123,
+        "eig_min": 0.9485540947291193,
+        "eig_max": 1.0730650034248512,
+        "bad": 0
+      },
+      {
+        "A": 64,
+        "c": 0.05,
+        "max_delta": 0.4565679165965406,
+        "eig_min": 0.6791433723480693,
+        "eig_max": 1.4565679165965406,
+        "bad": 0
+      },
+      {
+        "A": 64,
+        "c": 0.1,
+        "max_delta": 1.8250313500258457,
+        "eig_min": -0.27376019556982717,
+        "eig_max": 2.8250313500258457,
+        "bad": 0
+      },
+      {
+        "A": 64,
+        "c": 0.2,
+        "max_delta": 7.28163738680739,
+        "eig_min": -3.9435542732698794,
+        "eig_max": 8.28163738680739,
+        "bad": 0
+      },
+      {
+        "A": 100,
+        "c": 0.01,
+        "max_delta": 0.028466566186381215,
+        "eig_min": 0.9799353567789185,
+        "eig_max": 1.0284665661863812,
+        "bad": 0
+      },
+      {
+        "A": 100,
+        "c": 0.02,
+        "max_delta": 0.11386306126053114,
+        "eig_min": 0.9197657030178032,
+        "eig_max": 1.1138630612605311,
+        "bad": 0
+      },
+      {
+        "A": 100,
+        "c": 0.05,
+        "max_delta": 0.7115045781443285,
+        "eig_min": 0.4995962871983894,
+        "eig_max": 1.7115045781443285,
+        "bad": 0
+      },
+      {
+        "A": 100,
+        "c": 0.1,
+        "max_delta": 2.844058755667433,
+        "eig_min": -0.9865438976180222,
+        "eig_max": 3.844058755667433,
+        "bad": 0
+      },
+      {
+        "A": 100,
+        "c": 0.2,
+        "max_delta": 11.346994332436964,
+        "eig_min": -6.709993463839902,
+        "eig_max": 12.346994332436964,
+        "bad": 0
+      },
+      {
+        "A": 400,
+        "c": 0.01,
+        "max_delta": 0.11346562464041199,
+        "eig_min": 0.9199414038032289,
+        "eig_max": 1.113465624640412,
+        "bad": 0
+      },
+      {
+        "A": 400,
+        "c": 0.02,
+        "max_delta": 0.45384950331322216,
+        "eig_min": 0.6798624391164375,
+        "eig_max": 1.4538495033132222,
+        "bad": 0
+      },
+      {
+        "A": 400,
+        "c": 0.05,
+        "max_delta": 2.8359932326198987,
+        "eig_min": -0.9966294083218405,
+        "eig_max": 3.8359932326198987,
+        "bad": 0
+      },
+      {
+        "A": 400,
+        "c": 0.1,
+        "max_delta": 11.336020531539532,
+        "eig_min": -6.9264078553396216,
+        "eig_max": 12.336020531539532,
+        "bad": 0
+      },
+      {
+        "A": 400,
+        "c": 0.2,
+        "max_delta": 45.22524938737132,
+        "eig_min": -29.76364970000045,
+        "eig_max": 46.22524938737132,
+        "bad": 0
+      },
+      {
+        "A": 1600,
+        "c": 0.01,
+        "max_delta": 0.4534623272843419,
+        "eig_min": 0.6799655919168063,
+        "eig_max": 1.4534623272843419,
+        "bad": 0
+      },
+      {
+        "A": 1600,
+        "c": 0.02,
+        "max_delta": 1.8137971477758583,
+        "eig_min": -0.2797506162329541,
+        "eig_max": 2.8137971477758583,
+        "bad": 0
+      },
+      {
+        "A": 1600,
+        "c": 0.05,
+        "max_delta": 11.333959618242261,
+        "eig_min": -6.981532180358281,
+        "eig_max": 12.333959618242261,
+        "bad": 0
+      },
+      {
+        "A": 1600,
+        "c": 0.1,
+        "max_delta": 45.30391529730332,
+        "eig_min": -30.685863524769807,
+        "eig_max": 46.30391529730332,
+        "bad": 0
+      },
+      {
+        "A": 1600,
+        "c": 0.2,
+        "max_delta": 180.73846994967425,
+        "eig_min": -121.9782720122218,
+        "eig_max": 181.73846994967425,
+        "bad": 0
+      }
+    ],
+    "best_by_A": [
+      {
+        "A": 4,
+        "c": 0.01,
+        "max_delta": 0.001270828158497217,
+        "eig_min": 0.9991334218663551,
+        "eig_max": 1.0012708281584972,
+        "bad": 0
+      },
+      {
+        "A": 9,
+        "c": 0.01,
+        "max_delta": 0.002685166001839434,
+        "eig_min": 0.9981335225711758,
+        "eig_max": 1.0026851660018394,
+        "bad": 0
+      },
+      {
+        "A": 16,
+        "c": 0.01,
+        "max_delta": 0.004667669960348064,
+        "eig_min": 0.9967336636408105,
+        "eig_max": 1.004667669960348,
+        "bad": 0
+      },
+      {
+        "A": 25,
+        "c": 0.01,
+        "max_delta": 0.0072172704014441535,
+        "eig_min": 0.9949338450388513,
+        "eig_max": 1.0072172704014442,
+        "bad": 0
+      },
+      {
+        "A": 64,
+        "c": 0.01,
+        "max_delta": 0.0182667579350948,
+        "eig_min": 0.9871346311386715,
+        "eig_max": 1.0182667579350948,
+        "bad": 0
+      },
+      {
+        "A": 100,
+        "c": 0.01,
+        "max_delta": 0.028466566186381215,
+        "eig_min": 0.9799353567789185,
+        "eig_max": 1.0284665661863812,
+        "bad": 0
+      },
+      {
+        "A": 400,
+        "c": 0.01,
+        "max_delta": 0.11346562464041199,
+        "eig_min": 0.9199414038032289,
+        "eig_max": 1.113465624640412,
+        "bad": 0
+      },
+      {
+        "A": 1600,
+        "c": 0.01,
+        "max_delta": 0.4534623272843419,
+        "eig_min": 0.6799655919168063,
+        "eig_max": 1.4534623272843419,
+        "bad": 0
+      }
+    ],
+    "representatives_midrod": [
+      {
+        "A": 36.0,
+        "c": 0.01,
+        "t": 0.5,
+        "r": 0.0016666666666666668,
+        "s": 0.1838478040995427,
+        "L": 0.3676956081990854,
+        "p": 0.001666610339506173,
+        "q": 0.11704699925349038,
+        "a": 1.0000500004166681,
+        "K_B": -36.0,
+        "p3": -12.166666666666666,
+        "omega": 8.54400374531753,
+        "ricci_operator_eigenvalues": [
+          1.0042671230167954,
+          0.9927340730843807,
+          1.0103337033909696,
+          0.9951339005373327
+        ],
+        "delta_from_Ric_equals_g": 0.010333703390969617,
+        "base_endomorphism": [
+          [
+            1.0042671230167954,
+            5.23080412517977e-22
+          ],
+          [
+            5.231327223028536e-22,
+            0.9927340730843807
+          ]
+        ],
+        "vertical_theta": 1.0103337033909696,
+        "vertical_phi": 0.9951339005373327,
+        "note": "Truncated edge expansion sampled at r=c/sqrt(A). Small c tests a very thin collar near the rod; large A is the boundary-bubble limit."
+      },
+      {
+        "A": 36.0,
+        "c": 0.02,
+        "t": 0.5,
+        "r": 0.0033333333333333335,
+        "s": 0.1838478040995427,
+        "L": 0.3676956081990854,
+        "p": 0.003332882716049383,
+        "q": 0.11706455542556979,
+        "a": 1.0002000066667556,
+        "K_B": -36.0,
+        "p3": -12.166666666666666,
+        "omega": 8.54400374531753,
+        "ricci_operator_eigenvalues": [
+          1.0170684130643295,
+          0.970945167327566,
+          1.0413336995299076,
+          0.9805424069841777
+        ],
+        "delta_from_Ric_equals_g": 0.04133369952990762,
+        "base_endomorphism": [
+          [
+            1.0170684130643295,
+            4.182509894407324e-21
+          ],
+          [
+            4.184183121444178e-21,
+            0.970945167327566
+          ]
+        ],
+        "vertical_theta": 1.0413336995299076,
+        "vertical_phi": 0.9805424069841777,
+        "note": "Truncated edge expansion sampled at r=c/sqrt(A). Small c tests a very thin collar near the rod; large A is the boundary-bubble limit."
+      },
+      {
+        "A": 36.0,
+        "c": 0.05,
+        "t": 0.5,
+        "r": 0.008333333333333333,
+        "s": 0.1838478040995427,
+        "L": 0.3676956081990854,
+        "p": 0.008326292438271606,
+        "q": 0.11718744863012573,
+        "a": 1.001250260438369,
+        "K_B": -36.0,
+        "p3": -12.166666666666666,
+        "omega": 8.54400374531753,
+        "ricci_operator_eigenvalues": [
+          1.1066742174353124,
+          0.8187950464420601,
+          1.2582871008415353,
+          0.8786873322363604
+        ],
+        "delta_from_Ric_equals_g": 0.2582871008415353,
+        "base_endomorphism": [
+          [
+            1.1066742174353124,
+            6.511896527120326e-20
+          ],
+          [
+            6.528189839412185e-20,
+            0.8187950464420601
+          ]
+        ],
+        "vertical_theta": 1.2582871008415353,
+        "vertical_phi": 0.8786873322363604,
+        "note": "Truncated edge expansion sampled at r=c/sqrt(A). Small c tests a very thin collar near the rod; large A is the boundary-bubble limit."
+      },
+      {
+        "A": 64.0,
+        "c": 0.01,
+        "t": 0.5,
+        "r": 0.00125,
+        "s": 0.13830090495795275,
+        "L": 0.2766018099159055,
+        "p": 0.0012499580078125,
+        "q": 0.08804949288709402,
+        "a": 1.0000500004166681,
+        "K_B": -64.0,
+        "p3": -21.5,
+        "omega": 11.357816691600547,
+        "ricci_operator_eigenvalues": [
+          1.0075335793445461,
+          0.9871346423784119,
+          1.0182667579350806,
+          0.9914010027268745
+        ],
+        "delta_from_Ric_equals_g": 0.01826675793508059,
+        "base_endomorphism": [
+          [
+            1.0075335793445461,
+            9.2712996818992e-22
+          ],
+          [
+            9.272226842772136e-22,
+            0.9871346423784119
+          ]
+        ],
+        "vertical_theta": 1.0182667579350806,
+        "vertical_phi": 0.9914010027268745,
+        "note": "Truncated edge expansion sampled at r=c/sqrt(A). Small c tests a very thin collar near the rod; large A is the boundary-bubble limit."
+      },
+      {
+        "A": 64.0,
+        "c": 0.02,
+        "t": 0.5,
+        "r": 0.0025,
+        "s": 0.13830090495795275,
+        "L": 0.2766018099159055,
+        "p": 0.0024996640625,
+        "q": 0.0880626996506889,
+        "a": 1.0002000066667556,
+        "K_B": -64.0,
+        "p3": -21.5,
+        "omega": 11.357816691600547,
+        "ricci_operator_eigenvalues": [
+          1.0301341451315835,
+          0.9485542744697955,
+          1.0730650034248441,
+          0.9656160407728294
+        ],
+        "delta_from_Ric_equals_g": 0.07306500342484412,
+        "base_endomorphism": [
+          [
+            1.0301341451315835,
+            7.413258406348058e-21
+          ],
+          [
+            7.416224105105466e-21,
+            0.9485542744697955
+          ]
+        ],
+        "vertical_theta": 1.0730650034248441,
+        "vertical_phi": 0.9656160407728294,
+        "note": "Truncated edge expansion sampled at r=c/sqrt(A). Small c tests a very thin collar near the rod; large A is the boundary-bubble limit."
+      },
+      {
+        "A": 64.0,
+        "c": 0.05,
+        "t": 0.5,
+        "r": 0.00625,
+        "s": 0.13830090495795275,
+        "L": 0.2766018099159055,
+        "p": 0.0062447509765625004,
+        "q": 0.08815514699585308,
+        "a": 1.001250260438369,
+        "K_B": -64.0,
+        "p3": -21.5,
+        "omega": 11.357816691600547,
+        "ricci_operator_eigenvalues": [
+          1.188331033614972,
+          0.679150367626546,
+          1.4565679165965264,
+          0.7856258124165407
+        ],
+        "delta_from_Ric_equals_g": 0.4565679165965264,
+        "base_endomorphism": [
+          [
+            1.188331033614972,
+            1.1541962335902001e-19
+          ],
+          [
+            1.1570841295513307e-19,
+            0.679150367626546
+          ]
+        ],
+        "vertical_theta": 1.4565679165965264,
+        "vertical_phi": 0.7856258124165407,
+        "note": "Truncated edge expansion sampled at r=c/sqrt(A). Small c tests a very thin collar near the rod; large A is the boundary-bubble limit."
+      },
+      {
+        "A": 100.0,
+        "c": 0.01,
+        "t": 0.5,
+        "r": 0.001,
+        "s": 0.11079543025115703,
+        "L": 0.22159086050231405,
+        "p": 0.0009999665,
+        "q": 0.07053808831393912,
+        "a": 1.0000500004166681,
+        "K_B": -100.0,
+        "p3": -33.5,
+        "omega": 14.177446878757825,
+        "ricci_operator_eigenvalues": [
+          1.0117334755923082,
+          0.9799353743333957,
+          1.028466566186367,
+          0.9866015626904101
+        ],
+        "delta_from_Ric_equals_g": 0.028466566186367004,
+        "base_endomorphism": [
+          [
+            1.0117334755923082,
+            1.4466178041273602e-21
+          ],
+          [
+            1.446762470729897e-21,
+            0.9799353743333957
+          ]
+        ],
+        "vertical_theta": 1.028466566186367,
+        "vertical_phi": 0.9866015626904101,
+        "note": "Truncated edge expansion sampled at r=c/sqrt(A). Small c tests a very thin collar near the rod; large A is the boundary-bubble limit."
+      },
+      {
+        "A": 100.0,
+        "c": 0.02,
+        "t": 0.5,
+        "r": 0.002,
+        "s": 0.11079543025115703,
+        "L": 0.22159086050231405,
+        "p": 0.001999732,
+        "q": 0.070548668498177,
+        "a": 1.0002000066667556,
+        "K_B": -100.0,
+        "p3": -33.5,
+        "omega": 14.177446878757825,
+        "ricci_operator_eigenvalues": [
+          1.0469336104394955,
+          0.9197659837416147,
+          1.113863061260517,
+          0.946424998590004
+        ],
+        "delta_from_Ric_equals_g": 0.11386306126051693,
+        "base_endomorphism": [
+          [
+            1.0469336104394955,
+            1.1567042340544155e-20
+          ],
+          [
+            1.1571669774422201e-20,
+            0.9197659837416147
+          ]
+        ],
+        "vertical_theta": 1.113863061260517,
+        "vertical_phi": 0.946424998590004,
+        "note": "Truncated edge expansion sampled at r=c/sqrt(A). Small c tests a very thin collar near the rod; large A is the boundary-bubble limit."
+      },
+      {
+        "A": 100.0,
+        "c": 0.05,
+        "t": 0.5,
+        "r": 0.005,
+        "s": 0.11079543025115703,
+        "L": 0.22159086050231405,
+        "p": 0.0049958125,
+        "q": 0.07062272978784215,
+        "a": 1.001250260438369,
+        "K_B": -100.0,
+        "p3": -33.5,
+        "omega": 14.177446878757825,
+        "ricci_operator_eigenvalues": [
+          1.2933225458968423,
+          0.49960721262750296,
+          1.7115045781443285,
+          0.6659752904105858
+        ],
+        "delta_from_Ric_equals_g": 0.7115045781443285,
+        "base_endomorphism": [
+          [
+            1.2933225458968423,
+            1.800913440684399e-19
+          ],
+          [
+            1.8054194774399695e-19,
+            0.49960721262750296
+          ]
+        ],
+        "vertical_theta": 1.7115045781443285,
+        "vertical_phi": 0.6659752904105858,
+        "note": "Truncated edge expansion sampled at r=c/sqrt(A). Small c tests a very thin collar near the rod; large A is the boundary-bubble limit."
+      },
+      {
+        "A": 400.0,
+        "c": 0.01,
+        "t": 0.5,
+        "r": 0.0005,
+        "s": 0.05550135921081226,
+        "L": 0.11100271842162451,
+        "p": 0.0004999833125,
+        "q": 0.035335029330012015,
+        "a": 1.0000500004166681,
+        "K_B": -400.0,
+        "p3": -133.5,
+        "omega": 28.30194339616981,
+        "ricci_operator_eigenvalues": [
+          1.0467332673062515,
+          0.9199414739803907,
+          1.113465624640412,
+          0.946606229075087
+        ],
+        "delta_from_Ric_equals_g": 0.11346562464041199,
+        "base_endomorphism": [
+          [
+            1.0467332673062515,
+            5.775665471848512e-21
+          ],
+          [
+            5.776243057648173e-21,
+            0.9199414739803907
+          ]
+        ],
+        "vertical_theta": 1.113465624640412,
+        "vertical_phi": 0.946606229075087,
+        "note": "Truncated edge expansion sampled at r=c/sqrt(A). Small c tests a very thin collar near the rod; large A is the boundary-bubble limit."
+      },
+      {
+        "A": 400.0,
+        "c": 0.02,
+        "t": 0.5,
+        "r": 0.001,
+        "s": 0.05550135921081226,
+        "L": 0.11100271842162451,
+        "p": 0.0009998665,
+        "q": 0.03534032931941204,
+        "a": 1.0002000066667556,
+        "K_B": -400.0,
+        "p3": -133.5,
+        "omega": 28.30194339616981,
+        "ricci_operator_eigenvalues": [
+          1.1869317807276047,
+          0.6798635613564309,
+          1.4538495033132222,
+          0.7864996474164059
+        ],
+        "delta_from_Ric_equals_g": 0.45384950331322216,
+        "base_endomorphism": [
+          [
+            1.1869317807276047,
+            4.618176747658012e-20
+          ],
+          [
+            4.620024264672972e-20,
+            0.6798635613564309
+          ]
+        ],
+        "vertical_theta": 1.4538495033132222,
+        "vertical_phi": 0.7864996474164059,
+        "note": "Truncated edge expansion sampled at r=c/sqrt(A). Small c tests a very thin collar near the rod; large A is the boundary-bubble limit."
+      },
+      {
+        "A": 400.0,
+        "c": 0.05,
+        "t": 0.5,
+        "r": 0.0025,
+        "s": 0.05550135921081226,
+        "L": 0.11100271842162451,
+        "p": 0.0024979140625,
+        "q": 0.03537742924521226,
+        "a": 1.001250260438369,
+        "K_B": -400.0,
+        "p3": -133.5,
+        "omega": 28.30194339616981,
+        "ricci_operator_eigenvalues": [
+          2.168268262439426,
+          -0.9965857320028635,
+          3.835993232619842,
+          -0.3311123792834678
+        ],
+        "delta_from_Ric_equals_g": 2.835993232619842,
+        "base_endomorphism": [
+          [
+            2.168268262439426,
+            7.190201549761269e-19
+          ],
+          [
+            7.208192038216322e-19,
+            -0.9965857320028635
+          ]
+        ],
+        "vertical_theta": 3.835993232619842,
+        "vertical_phi": -0.3311123792834678,
+        "note": "Truncated edge expansion sampled at r=c/sqrt(A). Small c tests a very thin collar near the rod; large A is the boundary-bubble limit."
+      },
+      {
+        "A": 2500.0,
+        "c": 0.01,
+        "t": 0.5,
+        "r": 0.0002,
+        "s": 0.02221219358248345,
+        "L": 0.0444243871649669,
+        "p": 0.000199993332,
+        "q": 0.014141428658346378,
+        "a": 1.0000500004166681,
+        "K_B": -2500.0,
+        "p3": -833.5,
+        "omega": 70.71774883294857,
+        "ricci_operator_eigenvalues": [
+          1.291732649387086,
+          0.4999841715357282,
+          1.708459873958418,
+          0.6666388937946977
+        ],
+        "delta_from_Ric_equals_g": 0.708459873958418,
+        "base_endomorphism": [
+          [
+            1.291732649387086,
+            3.607897649103303e-20
+          ],
+          [
+            3.6082584508947e-20,
+            0.4999841715357282
+          ]
+        ],
+        "vertical_theta": 1.708459873958418,
+        "vertical_phi": 0.6666388937946977,
+        "note": "Truncated edge expansion sampled at r=c/sqrt(A). Small c tests a very thin collar near the rod; large A is the boundary-bubble limit."
+      },
+      {
+        "A": 2500.0,
+        "c": 0.02,
+        "t": 0.5,
+        "r": 0.0004,
+        "s": 0.02221219358248345,
+        "L": 0.0444243871649669,
+        "p": 0.000399946656,
+        "q": 0.014143549766589717,
+        "a": 1.0002000066667556,
+        "K_B": -2500.0,
+        "p3": -833.5,
+        "omega": 70.71774883294857,
+        "ricci_operator_eigenvalues": [
+          2.166922334091396,
+          -0.9994533948926486,
+          3.8337579599246965,
+          -0.33297781035116714
+        ],
+        "delta_from_Ric_equals_g": 2.8337579599246965,
+        "base_endomorphism": [
+          [
+            2.166922334091396,
+            2.8848466228526223e-19
+          ],
+          [
+            2.886000715368456e-19,
+            -0.9994533948926486
+          ]
+        ],
+        "vertical_theta": 3.8337579599246965,
+        "vertical_phi": -0.33297781035116714,
+        "note": "Truncated edge expansion sampled at r=c/sqrt(A). Small c tests a very thin collar near the rod; large A is the boundary-bubble limit."
+      },
+      {
+        "A": 2500.0,
+        "c": 0.05,
+        "t": 0.5,
+        "r": 0.001,
+        "s": 0.02221219358248345,
+        "L": 0.0444243871649669,
+        "p": 0.0009991665,
+        "q": 0.014158397524293095,
+        "a": 1.001250260438369,
+        "K_B": -2500.0,
+        "p3": -833.5,
+        "omega": 70.71774883294857,
+        "ricci_operator_eigenvalues": [
+          8.292909330938073,
+          -11.469936326887959,
+          18.707434901701617,
+          -7.3107260496208255
+        ],
+        "delta_from_Ric_equals_g": 17.707434901701617,
+        "base_endomorphism": [
+          [
+            8.292909330938073,
+            4.491519011051e-18
+          ],
+          [
+            4.502757169029569e-18,
+            -11.469936326887959
+          ]
+        ],
+        "vertical_theta": 18.707434901701617,
+        "vertical_phi": -7.3107260496208255,
+        "note": "Truncated edge expansion sampled at r=c/sqrt(A). Small c tests a very thin collar near the rod; large A is the boundary-bubble limit."
+      }
+    ],
+    "finding": "The boundary jet supports arbitrarily large negative K_B at r=0 by construction, but the naive third-order truncation is Ricci-close only in an extremely thin sub-collar; at r=c/sqrt(A) the defect is governed mainly by c and truncation error, not by m alone. This means local jets do not immediately forbid boundary bubbles, but a genuine delta-pinched family needs the full higher-order/ALE gluing obstruction analysis, not this truncated ansatz."
+  },
+  "interpretation_for_Yau26": [
+    "The computation does not prove or refute P_4^+.",
+    "It refutes a possible shortcut: the unweighted spectral bound, Gauss-Bonnet, and rod unit-closure by themselves are too weak, because a relaxed edge-bubble scaling has total flux tending to zero.",
+    "The decisive remaining BUILD/BREAK question is exactly the Biquard/Ozuch boundary-bubble obstruction: can the large negative edge-curvature/shrinking-bolt jets be extended around the polygon with C^0 Ricci defect tending to zero, or does the first obstruction produce an O(1) non-scalar Ricci defect as in the interior Eguchi-Hanson gluing normal form?"
+  ]
+}

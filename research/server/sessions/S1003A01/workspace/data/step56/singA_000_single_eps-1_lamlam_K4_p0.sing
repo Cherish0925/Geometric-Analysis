@@ -1,0 +1,14 @@
+LIB "elim.lib";
+option(redSB);
+ring r=0,(a,b,c,A,B,C,l),dp;
+ideal I=A*B*c + A*C*b + B*C*a + a*b*c*l,
+-B*c - C*b,
+A*B*c + A*C*b + 2*a*b*c*l,
+-A^2*B*b*c^2 - A^2*C*b^2*c - A*B^2*a*c^2 - 2*A*B*C*a*b*c - A*C^2*a*b^2 + B*a^2*b*c^2*l + C*a^2*b^2*c*l,
+A^3*B*b^2*c^3 + A^3*C*b^3*c^2 + 2*A^2*B^2*a*b*c^3 + 4*A^2*B*C*a*b^2*c^2 + 2*A^2*C^2*a*b^3*c + 2*A^2*a*b^3*c^3*l + A*B^3*a^2*c^3 + 3*A*B^2*C*a^2*b*c^2 + 3*A*B*C^2*a^2*b^2*c + 7*A*B*a^2*b^2*c^3*l + A*C^3*a^2*b^3 + 7*A*C*a^2*b^3*c^2*l + 2*B^2*a^3*b*c^3*l + 4*B*C*a^3*b^2*c^2*l + 2*C^2*a^3*b^3*c*l - 2*a^3*b^3*c^3*l^2;
+ideal J=sat(I,a*b*c)[1];
+print("dim(J) (Krull, incl. complex):"); print(dim(std(J)));
+poly s0=4*B^2*c^2 + 4*B*C*b*c + 4*C^2*b^2;
+ideal Js0=sat(J,s0)[1];
+print("strict saturation 0:"); print(Js0); print(dim(std(Js0)));
+quit;

@@ -1,0 +1,142 @@
+{
+  "purpose": "Review Step 46 by adding the missing curvature-block invariance calculation.",
+  "main_principle": "At an orbifold fixed point, the Einstein curvature blocks R^\u00b1 commute with the local isotropy action. Therefore the traceless Weyl block W^\u00b1 lies in Sym^2_0(R^3)^G for the chiral block on which Gamma acts through G=Gamma/{\u00b11}<SO(3). This is the same spin-2 invariant representation as the l=2 harmonic computation.",
+  "cyclic_selected": [
+    {
+      "ADE": "A_1",
+      "binary_group": "Z_2",
+      "SO3_image_order": 1,
+      "spin2_invariant_dim_numeric": 5,
+      "expected_form": "arbitrary traceless symmetric 3x3 W",
+      "det_R_equation_for_a=Lambda_over_3": "det(aI+W)=0, one cubic equation in five variables",
+      "singularity_review": "A1 is the only cyclic type with no isotropy restriction on this block"
+    },
+    {
+      "ADE": "A_2",
+      "binary_group": "Z_3",
+      "SO3_image_order": 3,
+      "spin2_invariant_dim_numeric": 1,
+      "expected_form": "W=diag(-u/2,-u/2,u) in an adapted axis frame",
+      "det_R_equation_for_a=Lambda_over_3": "(a-u/2)^2*(a+u)=0",
+      "singularity_review": "one scalar invariant u controls the traceless Weyl block"
+    },
+    {
+      "ADE": "A_3",
+      "binary_group": "Z_4",
+      "SO3_image_order": 2,
+      "spin2_invariant_dim_numeric": 3,
+      "expected_form": "W=[[x,y,0],[y,z,0],[0,0,-x-z]] (Z2 case)",
+      "det_R_equation_for_a=Lambda_over_3": "det([[a+x,y,0],[y,a+z,0],[0,0,a-x-z]])=0",
+      "singularity_review": "A3 has a 3-dimensional restricted block"
+    },
+    {
+      "ADE": "A_4",
+      "binary_group": "Z_5",
+      "SO3_image_order": 5,
+      "spin2_invariant_dim_numeric": 1,
+      "expected_form": "W=diag(-u/2,-u/2,u) in an adapted axis frame",
+      "det_R_equation_for_a=Lambda_over_3": "(a-u/2)^2*(a+u)=0",
+      "singularity_review": "one scalar invariant u controls the traceless Weyl block"
+    },
+    {
+      "ADE": "A_5",
+      "binary_group": "Z_6",
+      "SO3_image_order": 3,
+      "spin2_invariant_dim_numeric": 1,
+      "expected_form": "W=diag(-u/2,-u/2,u) in an adapted axis frame",
+      "det_R_equation_for_a=Lambda_over_3": "(a-u/2)^2*(a+u)=0",
+      "singularity_review": "one scalar invariant u controls the traceless Weyl block"
+    },
+    {
+      "ADE": "A_7",
+      "binary_group": "Z_8",
+      "SO3_image_order": 4,
+      "spin2_invariant_dim_numeric": 1,
+      "expected_form": "W=diag(-u/2,-u/2,u) in an adapted axis frame",
+      "det_R_equation_for_a=Lambda_over_3": "(a-u/2)^2*(a+u)=0",
+      "singularity_review": "one scalar invariant u controls the traceless Weyl block"
+    }
+  ],
+  "dihedral_selected": [
+    {
+      "ADE": "D_4",
+      "SO3_image": "D_2",
+      "spin2_invariant_dim_numeric": 2,
+      "expected_form": "W=diag(x,y,-x-y) in the three half-turn axes",
+      "det_R_equation_for_a=Lambda_over_3": "(a+x)*(a+y)*(a-x-y)=0"
+    },
+    {
+      "ADE": "D_5",
+      "SO3_image": "D_3",
+      "spin2_invariant_dim_numeric": 1,
+      "expected_form": "W=diag(-u/2,-u/2,u) in the dihedral axis frame",
+      "det_R_equation_for_a=Lambda_over_3": "(a-u/2)^2*(a+u)=0"
+    },
+    {
+      "ADE": "D_6",
+      "SO3_image": "D_4",
+      "spin2_invariant_dim_numeric": 1,
+      "expected_form": "W=diag(-u/2,-u/2,u) in the dihedral axis frame",
+      "det_R_equation_for_a=Lambda_over_3": "(a-u/2)^2*(a+u)=0"
+    },
+    {
+      "ADE": "D_8",
+      "SO3_image": "D_6",
+      "spin2_invariant_dim_numeric": 1,
+      "expected_form": "W=diag(-u/2,-u/2,u) in the dihedral axis frame",
+      "det_R_equation_for_a=Lambda_over_3": "(a-u/2)^2*(a+u)=0"
+    }
+  ],
+  "exceptional": [
+    {
+      "type": "E6 / tetrahedral T",
+      "spin2_invariant_dim_numeric": 0,
+      "singular_values_of_constraint_matrix": [
+        3.7416573868,
+        3.3351320252,
+        3.0,
+        1.7320508076,
+        1.6961410243
+      ],
+      "curvature_consequence": "W=0 on the chiral block where the isotropy acts by the nontrivial SO(3) group",
+      "det_R_for_positive_Lambda": "det((Lambda/3)I)=Lambda^3/27 > 0; no kernel in that block"
+    },
+    {
+      "type": "E7 / octahedral O",
+      "spin2_invariant_dim_numeric": 0,
+      "singular_values_of_constraint_matrix": [
+        3.6225827286,
+        3.1622776602,
+        3.0,
+        2.6457513111,
+        2.2083691662
+      ],
+      "curvature_consequence": "W=0 on the chiral block where the isotropy acts by the nontrivial SO(3) group",
+      "det_R_for_positive_Lambda": "det((Lambda/3)I)=Lambda^3/27 > 0; no kernel in that block"
+    },
+    {
+      "type": "E8 / icosahedral I",
+      "spin2_invariant_dim_numeric": 0,
+      "singular_values_of_constraint_matrix": [
+        3.6381407309,
+        3.4815520165,
+        2.9603938965,
+        2.8051898716,
+        1.2287006717
+      ],
+      "curvature_consequence": "W=0 on the chiral block where the isotropy acts by the nontrivial SO(3) group",
+      "det_R_for_positive_Lambda": "det((Lambda/3)I)=Lambda^3/27 > 0; no kernel in that block"
+    }
+  ],
+  "k\u00e4hler_orientation_caution": {
+    "standard_complex_Kleinian_convention": "For a local complex/ADE quotient Gamma<SU(2) preserving the hyperk\u00e4hler triple, Gamma acts trivially on the K\u00e4hler self-dual block and by the adjoint action on the opposite block. If a note uses the opposite SU(2)_L/R naming, plus/minus labels must be swapped.",
+    "positive_KE_pinned_block": "In complex orientation, R_+ = diag(Lambda,0,0). This nonzero traceless Weyl block can occur only in the chiral block on which the isotropy action is trivial or at least has the needed invariant direction.",
+    "E_type_review": "For E6/E7/E8, the nontrivial isotropy block has W=0 and R=(Lambda/3)I, hence is invertible for Lambda>0. Thus E-type is not an extra double-degeneracy loophole for reversed bubbles in a positive KE limit; depending on convention it either obstructs the opposite block or would make the claimed KE orientation impossible."
+  },
+  "review_conclusion": [
+    "The word 'generic' should be removed from Step 46. The sequence supplies a fixed orbifold limit; the honest statement is a finite set of degeneracy alternatives at its singular points and gluing directions.",
+    "For A1, Gamma/{\u00b11} is trivial and both chiral blocks are unconstrained by isotropy; this is the main double-degeneracy locus exemplified by the bi-K\u00e4hler product quotient.",
+    "For A_k (k>=2) and D_k the degeneracy condition lives in a 1-, 2-, or 3-dimensional invariant curvature space and becomes explicit scalar equations in adapted coordinates.",
+    "For E-types the nontrivial block is scalar positive and cannot have a kernel for Lambda>0. Step 46's 'E-type compatible bubble locus' is therefore at least misframed and is not a KE loophole of the same kind as A1 double degeneracy."
+  ]
+}

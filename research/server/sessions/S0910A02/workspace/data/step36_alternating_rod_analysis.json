@@ -1,0 +1,58 @@
+{
+  "title": "Step 36: Alternating-rod Weyl regularity analysis",
+  "scope": "Structural question for collapsed P4+ route",
+  "rod_labels": {
+    "S2xS2_rectangle": {
+      "polygon": "Rectangle with vertices at (0,0), (1,0), (1,1), (0,1)",
+      "edge_normals": [
+        "(1,0)",
+        "(0,1)",
+        "(-1,0)",
+        "(0,-1)"
+      ],
+      "alternating": true,
+      "adjacent_labels_form_basis": true,
+      "smooth_metric": "Round product S\u00b2(1)\u00d7S\u00b2(1), which IS Einstein"
+    },
+    "k2_hexagon": {
+      "polygon": "Hexagon with 6 edges for #\u2082(S\u00b2\u00d7S\u00b2)",
+      "edge_normals": [
+        "(1,0)",
+        "(0,1)",
+        "(-1,1)",
+        "(-1,0)",
+        "(0,-1)",
+        "(1,-1)"
+      ],
+      "note": "For k\u22652, the Delzant polygon has 2+2k edges. NOT all edges need have the alternating (1,0)/(0,1) pattern; the standard Delzant realization uses more general primitive vectors. But the diagonal model studied in Steps 12-25 imposes the alternating pattern."
+    },
+    "distinction_from_Israel_Khan": {
+      "Israel_Khan": "In the Israel-Khan problem, all rods collapse the SAME S\u00b9. Adjacent bolts are both S\u00b2 fixed sets of the SAME U(1). Between them, the axis has a conical singularity (strut).",
+      "alternating_toric": "In the alternating toric model, adjacent rods collapse DIFFERENT S\u00b9 factors. Between them (at the NUT/corner), BOTH circles degenerate to give a fixed point. There is NO axis segment between bolts where one circle is regular; instead, the transition goes through a NUT (codimension-4 point).",
+      "critical_consequence": "A NUT is a POINT, not a codimension-2 surface. It does NOT have a cone angle. The Israel-Khan strut (codimension-2 conical deficit) is not the same object as a NUT (codimension-4 fixed point). The edge-cone defect term (1-\u03b2)\u03c7(\u03a3) applies to codimension-2 singularities \u03a3, not to isolated points. For a NUT, the relevant singularity is an orbifold point, which contributes to \u03c7 through the orbifold Euler characteristic, not through an edge-cone term."
+    }
+  },
+  "strut_free_examples": {
+    "multi_Taub_NUT": "The Gibbons-Hawking multi-center gravitational instantons are smooth, Ricci-flat, self-dual (W\u207b=0), ALF/ALE metrics with multiple NUT centers. These have NO struts. They are toric and have alternating rod labels. Example: multi-Eguchi-Hanson on resolved ALE spaces.",
+    "Euclidean_Schwarzschild": "A single Euclidean Schwarzschild has one smooth bolt and one asymptotic end. It is NOT self-dual and has both W\u207a and W\u207b nonzero. It is a single-rod solution with no strut.",
+    "two_Schwarzschild_on_same_axis": "Two Euclidean Schwarzschild solutions on the same axis (same circle collapsing) REQUIRE an Israel-Khan strut between them. This is the standard same-label obstruction.",
+    "alternating_rods_key_question": "For an alternating-label periodic array, the NUTs between rods are codimension-4 points, not codimension-2 struts. The regularity condition at each NUT is that both fiber functions vanish at the correct rate. Whether this can be satisfied globally in a periodic Ricci-flat solution is the key open question."
+  },
+  "strut_vs_nut_reframing": {
+    "for_alternating_labels": "In the alternating-label toric model, the potential singularities are NUTs (codimension-4 fixed points), NOT struts (codimension-2 edge-cone). The Atiyah-LeBrun edge-cone formulas do NOT apply to NUT singularities. NUT singularities are orbifold-type points that enter the Gauss-Bonnet through the orbifold Euler characteristic correction, not through (1-\u03b2)\u03c7(\u03a3) terms.",
+    "consequence_for_energy_budget": "The strut smoothing energy estimate \u222b|Rm|\u00b2 ~ (1-\u03b2)\u00b2|\u03a3|/\u03b5\u00b2 applies to codimension-2 deficits. A NUT is a POINT singularity with curvature concentrated in a ball of radius \u03b5, giving \u222b|Rm|\u00b2 ~ 1/\u03b5\u2074 \u00d7 \u03b5\u2074 = O(1) in 4D. So NUT smoothing costs O(1), not O(\u221aA).",
+    "revised_dichotomy": "If the collapsed \u03b1-family has ALTERNATING labels (which it does for the diagonal toric model on #_k(S\u00b2\u00d7S\u00b2)), then the singularities are NUTs, not struts. The energy budget is: \u03c7 bolts \u00d7 8\u03c0\u00b2 + \u03c7 nuts \u00d7 O(1) \u2264 8\u03c0\u00b2\u03c7. This is satisfied if the O(1) NUT energy is small enough. The OBSTRUCTION from divergent strut smoothing does NOT apply in this case.",
+    "warning": "This analysis assumes the alternating-label model. If some other collapse mode produces same-label adjacent rods (through a topology change or non-toric collapse), the strut analysis would apply. Also, the NUT smoothing O(1) estimate is crude and should be checked."
+  },
+  "what_this_changes": {
+    "collapsed_front_status": "The collapsed \u03b1-family adversary is NOT killed by the strut energy argument because it has alternating labels and NUT (not strut) singularities. The honest status is: the formal toric family with alternating labels and growing edge curvature A satisfies ALL checked local, integral, and CGB conditions. No global smooth metric has been constructed, but no topology-uniform energy obstruction has been found either.",
+    "what_would_kill_it": [
+      "A global Ricci-flat periodic solution with alternating labels \u2192 BREAK (requires separate Einstein nonexistence)",
+      "A topological obstruction from NUT-type orbifold constraints",
+      "A higher-order PDE obstruction in the nonlinear filling of the formal model",
+      "A Bochner/Killing-field obstruction from collapse (Steps 28-29)",
+      "A new integral identity that constrains NUT curvature more tightly"
+    ],
+    "what_would_be_BREAK": "A smooth collapsing family on #_k(S\u00b2\u00d7S\u00b2) with Ric\u2192g is a BREAK for the positive collapsed branch only if #_k(S\u00b2\u00d7S\u00b2) admits no Einstein metric of any sign. No such nonexistence result is known."
+  }
+}

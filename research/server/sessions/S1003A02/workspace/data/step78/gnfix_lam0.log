@@ -1,0 +1,43 @@
+Traceback (most recent call last):
+  File "/Sessions/S1003A02/workspace/scripts/step78_gn_fixedH2.py", line 61, in <module>
+    main(a.K, a.lam, a.seed, a.nh2, a.starts, a.init, a.iters, a.scale, a.h2src)
+  File "/Sessions/S1003A02/workspace/scripts/step78_gn_fixedH2.py", line 38, in main
+    jets, hist, sv = gn_solve(T, jets, [d for d in T.degs if d >= 4], list(range(2, K + 1, 2)), iters=iters, log=False)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Sessions/S1003A02/workspace/scripts/step78_real_tower.py", line 103, in gn_solve
+    Jm = torch.func.jacfwd(F)(x)
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/qiushi/runtime/releases/gpu-python-3-12-13-c5028c26082aae76bb0d68b42399085e0112394cf9a7fd14adcfb89cea5a1af1/lib/python3.12/site-packages/torch/_functorch/eager_transforms.py", line 1359, in wrapper_fn
+    results = vmap(push_jvp, randomness=randomness)(basis)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/qiushi/runtime/releases/gpu-python-3-12-13-c5028c26082aae76bb0d68b42399085e0112394cf9a7fd14adcfb89cea5a1af1/lib/python3.12/site-packages/torch/_functorch/apis.py", line 220, in wrapped
+    return vmap_impl(
+           ^^^^^^^^^^
+  File "/data/qiushi/runtime/releases/gpu-python-3-12-13-c5028c26082aae76bb0d68b42399085e0112394cf9a7fd14adcfb89cea5a1af1/lib/python3.12/site-packages/torch/_functorch/vmap.py", line 316, in vmap_impl
+    return _flat_vmap(
+           ^^^^^^^^^^^
+  File "/data/qiushi/runtime/releases/gpu-python-3-12-13-c5028c26082aae76bb0d68b42399085e0112394cf9a7fd14adcfb89cea5a1af1/lib/python3.12/site-packages/torch/_functorch/vmap.py", line 507, in _flat_vmap
+    batched_outputs = func(*batched_inputs, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/qiushi/runtime/releases/gpu-python-3-12-13-c5028c26082aae76bb0d68b42399085e0112394cf9a7fd14adcfb89cea5a1af1/lib/python3.12/site-packages/torch/_functorch/eager_transforms.py", line 1348, in push_jvp
+    output = _jvp_with_argnums(
+             ^^^^^^^^^^^^^^^^^^
+  File "/data/qiushi/runtime/releases/gpu-python-3-12-13-c5028c26082aae76bb0d68b42399085e0112394cf9a7fd14adcfb89cea5a1af1/lib/python3.12/site-packages/torch/_functorch/eager_transforms.py", line 1181, in _jvp_with_argnums
+    result_duals = func(*duals)
+                   ^^^^^^^^^^^^
+  File "/Sessions/S1003A02/workspace/scripts/step78_real_tower.py", line 95, in <lambda>
+    F = lambda x: T.Evec(unpack(x), orders)[0]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Sessions/S1003A02/workspace/scripts/step78_real_tower.py", line 51, in Evec
+    E, G = ricci_E(self.R, self.H(jets), self.lam)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Sessions/S1003A02/workspace/scripts/step77_gn_germ.py", line 92, in ricci_E
+    G = 0.5 * R.mm(gi, Tl, 'klp,lijp->kijp')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Sessions/S1003A02/workspace/scripts/step77_gn_germ.py", line 67, in mm
+    prod = torch.einsum(eq, A[..., self.I], B[..., self.J])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/qiushi/runtime/releases/gpu-python-3-12-13-c5028c26082aae76bb0d68b42399085e0112394cf9a7fd14adcfb89cea5a1af1/lib/python3.12/site-packages/torch/functional.py", line 373, in einsum
+    return _VF.einsum(equation, operands)  # type: ignore[attr-defined]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 10.46 GiB. GPU 0 has a total capacity of 79.18 GiB of which 9.93 GiB is free. Including non-PyTorch memory, this process has 17.44 GiB memory in use. Process 20 has 25.89 GiB memory in use. Process 19 has 25.89 GiB memory in use. Of the allocated memory 14.76 GiB is allocated by PyTorch, and 1.73 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)

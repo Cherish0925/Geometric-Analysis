@@ -1,0 +1,202 @@
+{
+  "step": 91,
+  "scope": "receiver simplification at product background for chirality-odd radial functional",
+  "R0_annihilates_radial_forms": {
+    "omega_plus_operator_entries": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "omega_minus_operator_entries": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "R0_omega_plus_max_abs_num": 0,
+    "R0_omega_minus_max_abs_num": 0
+  },
+  "frame_and_length_variation": {
+    "statement": "First-order variation of the insertion frame, Hodge splitting, or normalization contributes 2<delta omega, R0 omega_2^pm>; all such terms vanish because R0 omega_2^pm=0.",
+    "verified_operator_zero": true
+  },
+  "receiver_sparse_identity": {
+    "formula": "R_odd(H)=1/2(H_01,23 - H_03,12 - H_12,03 + H_23,01)",
+    "basis_dimension_symmetric_H": 100,
+    "failures_count": 0,
+    "failures": [],
+    "nonzero_basis_entries": [
+      {
+        "ij": [
+          0,
+          1
+        ],
+        "pq": [
+          2,
+          3
+        ],
+        "receiver_odd": "1/2"
+      },
+      {
+        "ij": [
+          0,
+          3
+        ],
+        "pq": [
+          1,
+          2
+        ],
+        "receiver_odd": "-1/2"
+      },
+      {
+        "ij": [
+          1,
+          2
+        ],
+        "pq": [
+          0,
+          3
+        ],
+        "receiver_odd": "-1/2"
+      },
+      {
+        "ij": [
+          2,
+          3
+        ],
+        "pq": [
+          0,
+          1
+        ],
+        "receiver_odd": "1/2"
+      }
+    ],
+    "depends_on_V0_or_V1": false
+  },
+  "background_curvature_times_h0_support": {
+    "statement": "Every possible one-index h0 correction to the odd mixed curvature components requires a product-curvature component with a mixed A/B antisymmetric pair; product curvature has only 01 and 23 support, so these corrections vanish.",
+    "support_terms": [
+      {
+        "base_component": [
+          0,
+          2,
+          1,
+          3
+        ],
+        "possible_R0_after_one_replacement": []
+      },
+      {
+        "base_component": [
+          1,
+          3,
+          0,
+          2
+        ],
+        "possible_R0_after_one_replacement": []
+      },
+      {
+        "base_component": [
+          0,
+          2,
+          0,
+          2
+        ],
+        "possible_R0_after_one_replacement": []
+      },
+      {
+        "base_component": [
+          1,
+          3,
+          1,
+          3
+        ],
+        "possible_R0_after_one_replacement": []
+      }
+    ],
+    "all_possible_lists_empty": true
+  },
+  "l1_coexact_receiver_census_NN": [
+    {
+      "mode": "star_dX_A_sym_star_dX_B",
+      "V0_nonzero": true,
+      "V1_nonzero": false,
+      "receiver_odd": "0",
+      "receiver_odd_float": 0.0,
+      "nonzero": false
+    },
+    {
+      "mode": "star_dX_A_sym_star_dY_B",
+      "V0_nonzero": true,
+      "V1_nonzero": false,
+      "receiver_odd": "0",
+      "receiver_odd_float": 0.0,
+      "nonzero": false
+    },
+    {
+      "mode": "star_dX_A_sym_star_dZ_B",
+      "V0_nonzero": false,
+      "V1_nonzero": true,
+      "receiver_odd": "0",
+      "receiver_odd_float": 0.0,
+      "nonzero": false
+    },
+    {
+      "mode": "star_dY_A_sym_star_dX_B",
+      "V0_nonzero": true,
+      "V1_nonzero": false,
+      "receiver_odd": "0",
+      "receiver_odd_float": 0.0,
+      "nonzero": false
+    },
+    {
+      "mode": "star_dY_A_sym_star_dY_B",
+      "V0_nonzero": true,
+      "V1_nonzero": false,
+      "receiver_odd": "0",
+      "receiver_odd_float": 0.0,
+      "nonzero": false
+    },
+    {
+      "mode": "star_dY_A_sym_star_dZ_B",
+      "V0_nonzero": false,
+      "V1_nonzero": true,
+      "receiver_odd": "0",
+      "receiver_odd_float": 0.0,
+      "nonzero": false
+    },
+    {
+      "mode": "star_dZ_A_sym_star_dX_B",
+      "V0_nonzero": false,
+      "V1_nonzero": true,
+      "receiver_odd": "0",
+      "receiver_odd_float": 0.0,
+      "nonzero": false
+    },
+    {
+      "mode": "star_dZ_A_sym_star_dY_B",
+      "V0_nonzero": false,
+      "V1_nonzero": true,
+      "receiver_odd": "0",
+      "receiver_odd_float": 0.0,
+      "nonzero": false
+    },
+    {
+      "mode": "star_dZ_A_sym_star_dZ_B",
+      "V0_nonzero": false,
+      "V1_nonzero": false,
+      "receiver_odd": "1",
+      "receiver_odd_float": 1.0,
+      "nonzero": true
+    }
+  ],
+  "interpretation": [
+    "The full linear chirality-odd receiver at the product background is exactly the Step-89 sparse second-jet functional in product normal coordinates.",
+    "V0-nonzero eigentensors do not require an additional receiver frame/background correction in this odd component; if they contribute, it must enter through the singular source/normalization side or through a different layer, not through L_i's linear odd receiver.",
+    "Among l=1 coexact-coexact product modes in this adapted NN frame, only star_dZ_A_sym_star_dZ_B has nonzero odd receiver; this preserves the axial unit test but does not compute the full Green coefficient."
+  ]
+}

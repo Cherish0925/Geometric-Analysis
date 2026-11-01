@@ -1,0 +1,191 @@
+{
+  "li_yau_verification": {
+    "effective_dimension": 4,
+    "curvature_K_at_delta_0": 3.0,
+    "kappa_at_delta_0": 6.0,
+    "C_kappa_numerical": 1.1351819595262334,
+    "C_kappa_upper_bound": 1.4315749984103514,
+    "bound_is_valid": "True",
+    "fisher_identity": "I(t) = integral p_t |grad log p_t|^2 dmu <= N/(2t)+NK/2 by Li-Yau under CD(-K,N)",
+    "cauchy_schwarz": "integral |grad_y p_t(x,y)| dmu(y) <= sqrt(I(t)) by Jensen and heat conservation"
+  },
+  "threshold_computation": {
+    "delta_star_numerical_Ck": 0.24885017939630094,
+    "delta_star_conservative_Ck_bound": 0.21421241387564788,
+    "interpretation": "For delta < delta_star, the resolvent ceiling B(delta) < center floor 12-8delta, contradicting the existence of a reflected free-OT approximate Einstein connector with controlled exits."
+  },
+  "detail_table": [
+    {
+      "delta": 0.0,
+      "kappa": 6.0,
+      "f0": 0.0,
+      "C_kappa_numerical": 1.135182,
+      "C_kappa_bound": 1.431575,
+      "alpha": 6.0,
+      "beta": 0.0,
+      "ceiling_B_numerical": 6.0,
+      "ceiling_B_bound": 6.0,
+      "center_floor": 12.0,
+      "gap_numerical": -6.0,
+      "gap_bound": -6.0
+    },
+    {
+      "delta": 0.05,
+      "kappa": 6.1,
+      "f0": 0.1,
+      "C_kappa_numerical": 1.125839,
+      "C_kappa_bound": 1.419792,
+      "alpha": 6.103279,
+      "beta": 0.225168,
+      "ceiling_B_numerical": 6.685479,
+      "ceiling_B_bound": 6.846267,
+      "center_floor": 11.6,
+      "gap_numerical": -4.914521,
+      "gap_bound": -4.753733
+    },
+    {
+      "delta": 0.1,
+      "kappa": 6.2,
+      "f0": 0.2,
+      "C_kappa_numerical": 1.116722,
+      "C_kappa_bound": 1.408296,
+      "alpha": 6.212903,
+      "beta": 0.446689,
+      "ceiling_B_numerical": 7.430533,
+      "ceiling_B_bound": 7.784613,
+      "center_floor": 11.2,
+      "gap_numerical": -3.769467,
+      "gap_bound": -3.415387
+    },
+    {
+      "delta": 0.15,
+      "kappa": 6.3,
+      "f0": 0.3,
+      "C_kappa_numerical": 1.107824,
+      "C_kappa_bound": 1.397074,
+      "alpha": 6.328571,
+      "beta": 0.664694,
+      "ceiling_B_numerical": 8.236159,
+      "ceiling_B_bound": 8.817707,
+      "center_floor": 10.8,
+      "gap_numerical": -2.563841,
+      "gap_bound": -1.982293
+    },
+    {
+      "delta": 0.2,
+      "kappa": 6.4,
+      "f0": 0.4,
+      "C_kappa_numerical": 1.099135,
+      "C_kappa_bound": 1.386117,
+      "alpha": 6.45,
+      "beta": 0.879308,
+      "ceiling_B_numerical": 9.102972,
+      "ceiling_B_bound": 9.947392,
+      "center_floor": 10.4,
+      "gap_numerical": -1.297028,
+      "gap_bound": -0.452608
+    },
+    {
+      "delta": 0.25,
+      "kappa": 6.5,
+      "f0": 0.5,
+      "C_kappa_numerical": 1.090648,
+      "C_kappa_bound": 1.375413,
+      "alpha": 6.576923,
+      "beta": 1.090648,
+      "ceiling_B_numerical": 10.031236,
+      "ceiling_B_bound": 11.174741,
+      "center_floor": 10.0,
+      "gap_numerical": 0.031236,
+      "gap_bound": 1.174741
+    },
+    {
+      "delta": 0.24885,
+      "kappa": 6.4977,
+      "f0": 0.4977,
+      "C_kappa_numerical": 1.090841,
+      "C_kappa_bound": 1.375656,
+      "alpha": 6.573944,
+      "beta": 1.085823,
+      "ceiling_B_numerical": 10.009199,
+      "ceiling_B_bound": 11.145415,
+      "center_floor": 10.009199,
+      "gap_numerical": 0.0,
+      "gap_bound": 1.136217
+    },
+    {
+      "delta": 0.3,
+      "kappa": 6.6,
+      "f0": 0.6,
+      "C_kappa_numerical": 1.082354,
+      "C_kappa_bound": 1.364953,
+      "alpha": 6.709091,
+      "beta": 1.298824,
+      "ceiling_B_numerical": 11.020892,
+      "ceiling_B_bound": 12.500126,
+      "center_floor": 9.6,
+      "gap_numerical": 1.420892,
+      "gap_bound": 2.900126
+    },
+    {
+      "delta": 0.375,
+      "kappa": 6.75,
+      "f0": 0.75,
+      "C_kappa_numerical": 1.07026,
+      "C_kappa_bound": 1.349702,
+      "alpha": 6.916667,
+      "beta": 1.60539,
+      "ceiling_B_numerical": 12.619684,
+      "ceiling_B_bound": 14.671352,
+      "center_floor": 9.0,
+      "gap_numerical": 3.619684,
+      "gap_bound": 5.671352
+    },
+    {
+      "delta": 0.5,
+      "kappa": 7.0,
+      "f0": 1.0,
+      "C_kappa_numerical": 1.050974,
+      "C_kappa_bound": 1.325381,
+      "alpha": 7.285714,
+      "beta": 2.101949,
+      "ceiling_B_numerical": 15.583301,
+      "ceiling_B_bound": 18.769956,
+      "center_floor": 8.0,
+      "gap_numerical": 7.583301,
+      "gap_bound": 10.769956
+    }
+  ],
+  "algebraic_verification": {
+    "alpha_expression": "8*delta**2/(2*delta + 6) + 2*delta + 6",
+    "beta_expression": "4*C_kappa*delta",
+    "B_ceiling_series": "6 + delta*(4*sqrt(6)*C + 2) + delta**2*(4*C**2 + 6*(sqrt(6)*C/3 + 1/6)**2 + 7/6) + O(delta**3)",
+    "gap_series": "-6 + delta*(4*sqrt(6)*C + 10) + delta**2*(4*C**2 + 6*(sqrt(6)*C/3 + 1/6)**2 + 7/6) + O(delta**3)",
+    "leading_gap": "-6 + (2 + 4*sqrt(6)*C)*delta + O(delta^2)",
+    "threshold_formula": "delta_0 = 6/(2 + 4*sqrt(6)*C) to leading order",
+    "leading_C_value": 1.135182,
+    "leading_threshold": 0.457231
+  },
+  "cusp_benchmark": {
+    "metric": "gamma=dr^2+e^{2r}dz^2, sigma=2r",
+    "operator": "L = d_rr + 3d_r + e^{-2r}d_zz",
+    "Ric_f4": "diag(-1,-3), satisfying CD(-3,4)",
+    "spectral_gap": "lambda_1(-L) = 9/4 (from Step 86)",
+    "massive_resolvent_bound": "C_6 <= 1.431575 (bound), 1.135182 (numerical)",
+    "stochastic_completeness": "V_mu(B_R) ~ e^{3R}, integral r/log V dr = integral 1/3 dr = infty -> complete"
+  },
+  "theorem": {
+    "statement": "THEOREM (Forced reflected OT connector obstruction). On a complete 2D weighted base satisfying CD(-(3+delta),4) from the Einstein base equation, if e=|dU|^2 with weighted tension |tau_sigma(U)|<=2delta and e->0 at infinity, then sup e <= B(delta) where B is the solution of B=alpha+beta*sqrt(B) with alpha=kappa+2f0^2/kappa, beta=2*C_kappa*f0, kappa=6+2delta, f0=2delta, and C_kappa is the Li-Yau resolvent constant. For delta < delta_0, B(delta) < 12-8delta, contradicting the reflected center identity.",
+    "delta_0_numerical": 0.24885,
+    "delta_0_conservative": 0.214212,
+    "proof_chain": [
+      "1. Bochner: (1/2)Le >= (1/2)e^2-(3+delta)e-f0^2+div_sigma V  [Steps 85-86]",
+      "2. Massive comparison: (-L+kappa)e <= kappa^2+2f0^2-2div_sigma V  [since 2kappa*e-e^2<=kappa^2]",
+      "3. Li-Yau: I(t)<=N/(2t)+NK/2 under CD(-K,N), hence C_kappa<infty  [standard, verified]",
+      "4. Maximum principle: e <= R_kappa[source] on complete manifold  [Omori-Yau + kappa>0]",
+      "5. Resolvent decomposition: B <= kappa+2f0^2/kappa+2C_kappa*f0*sqrt(B)  [integration by parts]",
+      "6. Quadratic closure + center floor 12-8delta: delta >= delta_0  [arithmetic]"
+    ],
+    "scope": "This obstructs reflected, free-T^2, orthogonally transitive connectors with exits extending to exact cusp ends. It does not address approximate twist, singular T^2 orbits, non-OT graph metrics, N#N S^3 necks, or the positive branch."
+  }
+}

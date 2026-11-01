@@ -1,0 +1,2215 @@
+{
+  "scope": "sector denominator ledger for P=1/2 rough - Rcirc on product S^2(unit)xS^2(unit)",
+  "formulas": {
+    "scalar_eigenvalue": "lambda_l=l(l+1)",
+    "oneform_rough": "lambda_l-1 for l>=1 (exact or coexact)",
+    "S2_symmetric_trace_rough_Rcirc": "rough=lambda_l, Rcirc=+1 on f*g_factor",
+    "S2_symmetric_TF_rough_Rcirc": "rough=lambda_l-4 for l>=2 on scalar-TF-Hessian and vector-TF sectors, Rcirc=-1",
+    "AA_or_BB_P_eigenvalue": "0.5*(lambda_A+lambda_B)-1 for trace and TF tensor sectors after valid l restrictions",
+    "AB_P_eigenvalue": "0.5*(lambda_A+lambda_B-2) for oneform x oneform, lA,lB>=1"
+  },
+  "zero_modes_l_le_5": [
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 0,
+      "lB": 1,
+      "valid": true,
+      "rough": 2,
+      "Rcirc": 1,
+      "P": 0.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 0,
+      "lB": 1,
+      "valid": true,
+      "rough": 2,
+      "Rcirc": 1,
+      "P": 0.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 1,
+      "lB": 0,
+      "valid": true,
+      "rough": 2,
+      "Rcirc": 1,
+      "P": 0.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 1,
+      "lB": 0,
+      "valid": true,
+      "rough": 2,
+      "Rcirc": 1,
+      "P": 0.0
+    }
+  ],
+  "negative_modes_l_le_5": [
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 0,
+      "lB": 0,
+      "valid": true,
+      "rough": 0,
+      "Rcirc": 1,
+      "P": -1.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 0,
+      "lB": 0,
+      "valid": true,
+      "rough": 0,
+      "Rcirc": 1,
+      "P": -1.0
+    }
+  ],
+  "lowest_positive_l_le_5": [
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 1,
+      "lB": 1,
+      "valid": true,
+      "rough": 4,
+      "Rcirc": 1,
+      "P": 1.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 1,
+      "lB": 1,
+      "valid": true,
+      "rough": 4,
+      "Rcirc": 1,
+      "P": 1.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 1,
+      "lB": 1,
+      "valid": true,
+      "rough": 2,
+      "Rcirc": 0,
+      "P": 1.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 0,
+      "lB": 2,
+      "valid": true,
+      "rough": 6,
+      "Rcirc": 1,
+      "P": 2.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 0,
+      "lB": 2,
+      "valid": true,
+      "rough": 6,
+      "Rcirc": 1,
+      "P": 2.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 0,
+      "lB": 2,
+      "valid": true,
+      "rough": 2,
+      "Rcirc": -1,
+      "P": 2.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 0,
+      "lB": 2,
+      "valid": true,
+      "rough": 2,
+      "Rcirc": -1,
+      "P": 2.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 2,
+      "lB": 0,
+      "valid": true,
+      "rough": 6,
+      "Rcirc": 1,
+      "P": 2.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 2,
+      "lB": 0,
+      "valid": true,
+      "rough": 6,
+      "Rcirc": 1,
+      "P": 2.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 2,
+      "lB": 0,
+      "valid": true,
+      "rough": 2,
+      "Rcirc": -1,
+      "P": 2.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 2,
+      "lB": 0,
+      "valid": true,
+      "rough": 2,
+      "Rcirc": -1,
+      "P": 2.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 1,
+      "lB": 2,
+      "valid": true,
+      "rough": 8,
+      "Rcirc": 1,
+      "P": 3.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 1,
+      "lB": 2,
+      "valid": true,
+      "rough": 8,
+      "Rcirc": 1,
+      "P": 3.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 1,
+      "lB": 2,
+      "valid": true,
+      "rough": 4,
+      "Rcirc": -1,
+      "P": 3.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 1,
+      "lB": 2,
+      "valid": true,
+      "rough": 4,
+      "Rcirc": -1,
+      "P": 3.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 1,
+      "lB": 2,
+      "valid": true,
+      "rough": 6,
+      "Rcirc": 0,
+      "P": 3.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 2,
+      "lB": 1,
+      "valid": true,
+      "rough": 8,
+      "Rcirc": 1,
+      "P": 3.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 2,
+      "lB": 1,
+      "valid": true,
+      "rough": 8,
+      "Rcirc": 1,
+      "P": 3.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 2,
+      "lB": 1,
+      "valid": true,
+      "rough": 4,
+      "Rcirc": -1,
+      "P": 3.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 2,
+      "lB": 1,
+      "valid": true,
+      "rough": 4,
+      "Rcirc": -1,
+      "P": 3.0
+    }
+  ],
+  "interpretation": {
+    "four_scalar_kernel_modes": "AA/BB trace sectors with (lA,lB)=(1,0) or (0,1): u_A g_A, u_B g_A, u_A g_B, u_B g_B all have P=0.",
+    "negative_shape_and_scale_modes": "constant trace blocks have P=-1; linear combinations include g_A-g_B and g_A+g_B in the fixed-Einstein-constant operator.",
+    "mixed_oneform_gap": "AB lA=lB=1 has P=1, matching the corrected mixed 1-form spectral gap \u039b for unit spheres.",
+    "why_Cab_not_enough": "The pointwise C_ab matrices split into AA, BB, and AB pieces; global propagation uses these sector denominators and derived-harmonic source factors, not one common 9D TT eigenvalue."
+  },
+  "rows_l_le_5": [
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 0,
+      "lB": 0,
+      "valid": true,
+      "rough": 0,
+      "Rcirc": 1,
+      "P": -1.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 0,
+      "lB": 0,
+      "valid": true,
+      "rough": 0,
+      "Rcirc": 1,
+      "P": -1.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 0,
+      "lB": 1,
+      "valid": true,
+      "rough": 2,
+      "Rcirc": 1,
+      "P": 0.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 0,
+      "lB": 1,
+      "valid": true,
+      "rough": 2,
+      "Rcirc": 1,
+      "P": 0.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 0,
+      "lB": 2,
+      "valid": true,
+      "rough": 6,
+      "Rcirc": 1,
+      "P": 2.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 0,
+      "lB": 2,
+      "valid": true,
+      "rough": 6,
+      "Rcirc": 1,
+      "P": 2.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 0,
+      "lB": 2,
+      "valid": true,
+      "rough": 2,
+      "Rcirc": -1,
+      "P": 2.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 0,
+      "lB": 2,
+      "valid": true,
+      "rough": 2,
+      "Rcirc": -1,
+      "P": 2.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 0,
+      "lB": 3,
+      "valid": true,
+      "rough": 12,
+      "Rcirc": 1,
+      "P": 5.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 0,
+      "lB": 3,
+      "valid": true,
+      "rough": 12,
+      "Rcirc": 1,
+      "P": 5.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 0,
+      "lB": 3,
+      "valid": true,
+      "rough": 8,
+      "Rcirc": -1,
+      "P": 5.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 0,
+      "lB": 3,
+      "valid": true,
+      "rough": 8,
+      "Rcirc": -1,
+      "P": 5.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 0,
+      "lB": 4,
+      "valid": true,
+      "rough": 20,
+      "Rcirc": 1,
+      "P": 9.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 0,
+      "lB": 4,
+      "valid": true,
+      "rough": 20,
+      "Rcirc": 1,
+      "P": 9.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 0,
+      "lB": 4,
+      "valid": true,
+      "rough": 16,
+      "Rcirc": -1,
+      "P": 9.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 0,
+      "lB": 4,
+      "valid": true,
+      "rough": 16,
+      "Rcirc": -1,
+      "P": 9.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 0,
+      "lB": 5,
+      "valid": true,
+      "rough": 30,
+      "Rcirc": 1,
+      "P": 14.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 0,
+      "lB": 5,
+      "valid": true,
+      "rough": 30,
+      "Rcirc": 1,
+      "P": 14.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 0,
+      "lB": 5,
+      "valid": true,
+      "rough": 26,
+      "Rcirc": -1,
+      "P": 14.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 0,
+      "lB": 5,
+      "valid": true,
+      "rough": 26,
+      "Rcirc": -1,
+      "P": 14.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 1,
+      "lB": 0,
+      "valid": true,
+      "rough": 2,
+      "Rcirc": 1,
+      "P": 0.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 1,
+      "lB": 0,
+      "valid": true,
+      "rough": 2,
+      "Rcirc": 1,
+      "P": 0.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 1,
+      "lB": 1,
+      "valid": true,
+      "rough": 4,
+      "Rcirc": 1,
+      "P": 1.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 1,
+      "lB": 1,
+      "valid": true,
+      "rough": 4,
+      "Rcirc": 1,
+      "P": 1.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 1,
+      "lB": 1,
+      "valid": true,
+      "rough": 2,
+      "Rcirc": 0,
+      "P": 1.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 1,
+      "lB": 2,
+      "valid": true,
+      "rough": 8,
+      "Rcirc": 1,
+      "P": 3.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 1,
+      "lB": 2,
+      "valid": true,
+      "rough": 8,
+      "Rcirc": 1,
+      "P": 3.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 1,
+      "lB": 2,
+      "valid": true,
+      "rough": 4,
+      "Rcirc": -1,
+      "P": 3.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 1,
+      "lB": 2,
+      "valid": true,
+      "rough": 4,
+      "Rcirc": -1,
+      "P": 3.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 1,
+      "lB": 2,
+      "valid": true,
+      "rough": 6,
+      "Rcirc": 0,
+      "P": 3.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 1,
+      "lB": 3,
+      "valid": true,
+      "rough": 14,
+      "Rcirc": 1,
+      "P": 6.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 1,
+      "lB": 3,
+      "valid": true,
+      "rough": 14,
+      "Rcirc": 1,
+      "P": 6.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 1,
+      "lB": 3,
+      "valid": true,
+      "rough": 10,
+      "Rcirc": -1,
+      "P": 6.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 1,
+      "lB": 3,
+      "valid": true,
+      "rough": 10,
+      "Rcirc": -1,
+      "P": 6.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 1,
+      "lB": 3,
+      "valid": true,
+      "rough": 12,
+      "Rcirc": 0,
+      "P": 6.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 1,
+      "lB": 4,
+      "valid": true,
+      "rough": 22,
+      "Rcirc": 1,
+      "P": 10.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 1,
+      "lB": 4,
+      "valid": true,
+      "rough": 22,
+      "Rcirc": 1,
+      "P": 10.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 1,
+      "lB": 4,
+      "valid": true,
+      "rough": 18,
+      "Rcirc": -1,
+      "P": 10.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 1,
+      "lB": 4,
+      "valid": true,
+      "rough": 18,
+      "Rcirc": -1,
+      "P": 10.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 1,
+      "lB": 4,
+      "valid": true,
+      "rough": 20,
+      "Rcirc": 0,
+      "P": 10.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 1,
+      "lB": 5,
+      "valid": true,
+      "rough": 32,
+      "Rcirc": 1,
+      "P": 15.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 1,
+      "lB": 5,
+      "valid": true,
+      "rough": 32,
+      "Rcirc": 1,
+      "P": 15.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 1,
+      "lB": 5,
+      "valid": true,
+      "rough": 28,
+      "Rcirc": -1,
+      "P": 15.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 1,
+      "lB": 5,
+      "valid": true,
+      "rough": 28,
+      "Rcirc": -1,
+      "P": 15.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 1,
+      "lB": 5,
+      "valid": true,
+      "rough": 30,
+      "Rcirc": 0,
+      "P": 15.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 2,
+      "lB": 0,
+      "valid": true,
+      "rough": 6,
+      "Rcirc": 1,
+      "P": 2.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 2,
+      "lB": 0,
+      "valid": true,
+      "rough": 6,
+      "Rcirc": 1,
+      "P": 2.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 2,
+      "lB": 0,
+      "valid": true,
+      "rough": 2,
+      "Rcirc": -1,
+      "P": 2.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 2,
+      "lB": 0,
+      "valid": true,
+      "rough": 2,
+      "Rcirc": -1,
+      "P": 2.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 2,
+      "lB": 1,
+      "valid": true,
+      "rough": 8,
+      "Rcirc": 1,
+      "P": 3.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 2,
+      "lB": 1,
+      "valid": true,
+      "rough": 8,
+      "Rcirc": 1,
+      "P": 3.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 2,
+      "lB": 1,
+      "valid": true,
+      "rough": 4,
+      "Rcirc": -1,
+      "P": 3.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 2,
+      "lB": 1,
+      "valid": true,
+      "rough": 4,
+      "Rcirc": -1,
+      "P": 3.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 2,
+      "lB": 1,
+      "valid": true,
+      "rough": 6,
+      "Rcirc": 0,
+      "P": 3.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 2,
+      "lB": 2,
+      "valid": true,
+      "rough": 12,
+      "Rcirc": 1,
+      "P": 5.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 2,
+      "lB": 2,
+      "valid": true,
+      "rough": 12,
+      "Rcirc": 1,
+      "P": 5.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 2,
+      "lB": 2,
+      "valid": true,
+      "rough": 8,
+      "Rcirc": -1,
+      "P": 5.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 2,
+      "lB": 2,
+      "valid": true,
+      "rough": 8,
+      "Rcirc": -1,
+      "P": 5.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 2,
+      "lB": 2,
+      "valid": true,
+      "rough": 8,
+      "Rcirc": -1,
+      "P": 5.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 2,
+      "lB": 2,
+      "valid": true,
+      "rough": 8,
+      "Rcirc": -1,
+      "P": 5.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 2,
+      "lB": 2,
+      "valid": true,
+      "rough": 10,
+      "Rcirc": 0,
+      "P": 5.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 2,
+      "lB": 3,
+      "valid": true,
+      "rough": 18,
+      "Rcirc": 1,
+      "P": 8.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 2,
+      "lB": 3,
+      "valid": true,
+      "rough": 18,
+      "Rcirc": 1,
+      "P": 8.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 2,
+      "lB": 3,
+      "valid": true,
+      "rough": 14,
+      "Rcirc": -1,
+      "P": 8.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 2,
+      "lB": 3,
+      "valid": true,
+      "rough": 14,
+      "Rcirc": -1,
+      "P": 8.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 2,
+      "lB": 3,
+      "valid": true,
+      "rough": 14,
+      "Rcirc": -1,
+      "P": 8.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 2,
+      "lB": 3,
+      "valid": true,
+      "rough": 14,
+      "Rcirc": -1,
+      "P": 8.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 2,
+      "lB": 3,
+      "valid": true,
+      "rough": 16,
+      "Rcirc": 0,
+      "P": 8.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 2,
+      "lB": 4,
+      "valid": true,
+      "rough": 26,
+      "Rcirc": 1,
+      "P": 12.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 2,
+      "lB": 4,
+      "valid": true,
+      "rough": 26,
+      "Rcirc": 1,
+      "P": 12.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 2,
+      "lB": 4,
+      "valid": true,
+      "rough": 22,
+      "Rcirc": -1,
+      "P": 12.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 2,
+      "lB": 4,
+      "valid": true,
+      "rough": 22,
+      "Rcirc": -1,
+      "P": 12.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 2,
+      "lB": 4,
+      "valid": true,
+      "rough": 22,
+      "Rcirc": -1,
+      "P": 12.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 2,
+      "lB": 4,
+      "valid": true,
+      "rough": 22,
+      "Rcirc": -1,
+      "P": 12.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 2,
+      "lB": 4,
+      "valid": true,
+      "rough": 24,
+      "Rcirc": 0,
+      "P": 12.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 2,
+      "lB": 5,
+      "valid": true,
+      "rough": 36,
+      "Rcirc": 1,
+      "P": 17.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 2,
+      "lB": 5,
+      "valid": true,
+      "rough": 36,
+      "Rcirc": 1,
+      "P": 17.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 2,
+      "lB": 5,
+      "valid": true,
+      "rough": 32,
+      "Rcirc": -1,
+      "P": 17.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 2,
+      "lB": 5,
+      "valid": true,
+      "rough": 32,
+      "Rcirc": -1,
+      "P": 17.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 2,
+      "lB": 5,
+      "valid": true,
+      "rough": 32,
+      "Rcirc": -1,
+      "P": 17.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 2,
+      "lB": 5,
+      "valid": true,
+      "rough": 32,
+      "Rcirc": -1,
+      "P": 17.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 2,
+      "lB": 5,
+      "valid": true,
+      "rough": 34,
+      "Rcirc": 0,
+      "P": 17.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 3,
+      "lB": 0,
+      "valid": true,
+      "rough": 12,
+      "Rcirc": 1,
+      "P": 5.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 3,
+      "lB": 0,
+      "valid": true,
+      "rough": 12,
+      "Rcirc": 1,
+      "P": 5.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 3,
+      "lB": 0,
+      "valid": true,
+      "rough": 8,
+      "Rcirc": -1,
+      "P": 5.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 3,
+      "lB": 0,
+      "valid": true,
+      "rough": 8,
+      "Rcirc": -1,
+      "P": 5.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 3,
+      "lB": 1,
+      "valid": true,
+      "rough": 14,
+      "Rcirc": 1,
+      "P": 6.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 3,
+      "lB": 1,
+      "valid": true,
+      "rough": 14,
+      "Rcirc": 1,
+      "P": 6.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 3,
+      "lB": 1,
+      "valid": true,
+      "rough": 10,
+      "Rcirc": -1,
+      "P": 6.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 3,
+      "lB": 1,
+      "valid": true,
+      "rough": 10,
+      "Rcirc": -1,
+      "P": 6.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 3,
+      "lB": 1,
+      "valid": true,
+      "rough": 12,
+      "Rcirc": 0,
+      "P": 6.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 3,
+      "lB": 2,
+      "valid": true,
+      "rough": 18,
+      "Rcirc": 1,
+      "P": 8.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 3,
+      "lB": 2,
+      "valid": true,
+      "rough": 18,
+      "Rcirc": 1,
+      "P": 8.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 3,
+      "lB": 2,
+      "valid": true,
+      "rough": 14,
+      "Rcirc": -1,
+      "P": 8.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 3,
+      "lB": 2,
+      "valid": true,
+      "rough": 14,
+      "Rcirc": -1,
+      "P": 8.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 3,
+      "lB": 2,
+      "valid": true,
+      "rough": 14,
+      "Rcirc": -1,
+      "P": 8.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 3,
+      "lB": 2,
+      "valid": true,
+      "rough": 14,
+      "Rcirc": -1,
+      "P": 8.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 3,
+      "lB": 2,
+      "valid": true,
+      "rough": 16,
+      "Rcirc": 0,
+      "P": 8.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 3,
+      "lB": 3,
+      "valid": true,
+      "rough": 24,
+      "Rcirc": 1,
+      "P": 11.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 3,
+      "lB": 3,
+      "valid": true,
+      "rough": 24,
+      "Rcirc": 1,
+      "P": 11.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 3,
+      "lB": 3,
+      "valid": true,
+      "rough": 20,
+      "Rcirc": -1,
+      "P": 11.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 3,
+      "lB": 3,
+      "valid": true,
+      "rough": 20,
+      "Rcirc": -1,
+      "P": 11.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 3,
+      "lB": 3,
+      "valid": true,
+      "rough": 20,
+      "Rcirc": -1,
+      "P": 11.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 3,
+      "lB": 3,
+      "valid": true,
+      "rough": 20,
+      "Rcirc": -1,
+      "P": 11.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 3,
+      "lB": 3,
+      "valid": true,
+      "rough": 22,
+      "Rcirc": 0,
+      "P": 11.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 3,
+      "lB": 4,
+      "valid": true,
+      "rough": 32,
+      "Rcirc": 1,
+      "P": 15.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 3,
+      "lB": 4,
+      "valid": true,
+      "rough": 32,
+      "Rcirc": 1,
+      "P": 15.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 3,
+      "lB": 4,
+      "valid": true,
+      "rough": 28,
+      "Rcirc": -1,
+      "P": 15.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 3,
+      "lB": 4,
+      "valid": true,
+      "rough": 28,
+      "Rcirc": -1,
+      "P": 15.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 3,
+      "lB": 4,
+      "valid": true,
+      "rough": 28,
+      "Rcirc": -1,
+      "P": 15.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 3,
+      "lB": 4,
+      "valid": true,
+      "rough": 28,
+      "Rcirc": -1,
+      "P": 15.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 3,
+      "lB": 4,
+      "valid": true,
+      "rough": 30,
+      "Rcirc": 0,
+      "P": 15.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 3,
+      "lB": 5,
+      "valid": true,
+      "rough": 42,
+      "Rcirc": 1,
+      "P": 20.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 3,
+      "lB": 5,
+      "valid": true,
+      "rough": 42,
+      "Rcirc": 1,
+      "P": 20.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 3,
+      "lB": 5,
+      "valid": true,
+      "rough": 38,
+      "Rcirc": -1,
+      "P": 20.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 3,
+      "lB": 5,
+      "valid": true,
+      "rough": 38,
+      "Rcirc": -1,
+      "P": 20.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 3,
+      "lB": 5,
+      "valid": true,
+      "rough": 38,
+      "Rcirc": -1,
+      "P": 20.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 3,
+      "lB": 5,
+      "valid": true,
+      "rough": 38,
+      "Rcirc": -1,
+      "P": 20.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 3,
+      "lB": 5,
+      "valid": true,
+      "rough": 40,
+      "Rcirc": 0,
+      "P": 20.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 4,
+      "lB": 0,
+      "valid": true,
+      "rough": 20,
+      "Rcirc": 1,
+      "P": 9.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 4,
+      "lB": 0,
+      "valid": true,
+      "rough": 20,
+      "Rcirc": 1,
+      "P": 9.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 4,
+      "lB": 0,
+      "valid": true,
+      "rough": 16,
+      "Rcirc": -1,
+      "P": 9.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 4,
+      "lB": 0,
+      "valid": true,
+      "rough": 16,
+      "Rcirc": -1,
+      "P": 9.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 4,
+      "lB": 1,
+      "valid": true,
+      "rough": 22,
+      "Rcirc": 1,
+      "P": 10.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 4,
+      "lB": 1,
+      "valid": true,
+      "rough": 22,
+      "Rcirc": 1,
+      "P": 10.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 4,
+      "lB": 1,
+      "valid": true,
+      "rough": 18,
+      "Rcirc": -1,
+      "P": 10.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 4,
+      "lB": 1,
+      "valid": true,
+      "rough": 18,
+      "Rcirc": -1,
+      "P": 10.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 4,
+      "lB": 1,
+      "valid": true,
+      "rough": 20,
+      "Rcirc": 0,
+      "P": 10.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 4,
+      "lB": 2,
+      "valid": true,
+      "rough": 26,
+      "Rcirc": 1,
+      "P": 12.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 4,
+      "lB": 2,
+      "valid": true,
+      "rough": 26,
+      "Rcirc": 1,
+      "P": 12.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 4,
+      "lB": 2,
+      "valid": true,
+      "rough": 22,
+      "Rcirc": -1,
+      "P": 12.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 4,
+      "lB": 2,
+      "valid": true,
+      "rough": 22,
+      "Rcirc": -1,
+      "P": 12.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 4,
+      "lB": 2,
+      "valid": true,
+      "rough": 22,
+      "Rcirc": -1,
+      "P": 12.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 4,
+      "lB": 2,
+      "valid": true,
+      "rough": 22,
+      "Rcirc": -1,
+      "P": 12.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 4,
+      "lB": 2,
+      "valid": true,
+      "rough": 24,
+      "Rcirc": 0,
+      "P": 12.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 4,
+      "lB": 3,
+      "valid": true,
+      "rough": 32,
+      "Rcirc": 1,
+      "P": 15.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 4,
+      "lB": 3,
+      "valid": true,
+      "rough": 32,
+      "Rcirc": 1,
+      "P": 15.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 4,
+      "lB": 3,
+      "valid": true,
+      "rough": 28,
+      "Rcirc": -1,
+      "P": 15.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 4,
+      "lB": 3,
+      "valid": true,
+      "rough": 28,
+      "Rcirc": -1,
+      "P": 15.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 4,
+      "lB": 3,
+      "valid": true,
+      "rough": 28,
+      "Rcirc": -1,
+      "P": 15.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 4,
+      "lB": 3,
+      "valid": true,
+      "rough": 28,
+      "Rcirc": -1,
+      "P": 15.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 4,
+      "lB": 3,
+      "valid": true,
+      "rough": 30,
+      "Rcirc": 0,
+      "P": 15.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 4,
+      "lB": 4,
+      "valid": true,
+      "rough": 40,
+      "Rcirc": 1,
+      "P": 19.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 4,
+      "lB": 4,
+      "valid": true,
+      "rough": 40,
+      "Rcirc": 1,
+      "P": 19.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 4,
+      "lB": 4,
+      "valid": true,
+      "rough": 36,
+      "Rcirc": -1,
+      "P": 19.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 4,
+      "lB": 4,
+      "valid": true,
+      "rough": 36,
+      "Rcirc": -1,
+      "P": 19.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 4,
+      "lB": 4,
+      "valid": true,
+      "rough": 36,
+      "Rcirc": -1,
+      "P": 19.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 4,
+      "lB": 4,
+      "valid": true,
+      "rough": 36,
+      "Rcirc": -1,
+      "P": 19.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 4,
+      "lB": 4,
+      "valid": true,
+      "rough": 38,
+      "Rcirc": 0,
+      "P": 19.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 4,
+      "lB": 5,
+      "valid": true,
+      "rough": 50,
+      "Rcirc": 1,
+      "P": 24.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 4,
+      "lB": 5,
+      "valid": true,
+      "rough": 50,
+      "Rcirc": 1,
+      "P": 24.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 4,
+      "lB": 5,
+      "valid": true,
+      "rough": 46,
+      "Rcirc": -1,
+      "P": 24.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 4,
+      "lB": 5,
+      "valid": true,
+      "rough": 46,
+      "Rcirc": -1,
+      "P": 24.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 4,
+      "lB": 5,
+      "valid": true,
+      "rough": 46,
+      "Rcirc": -1,
+      "P": 24.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 4,
+      "lB": 5,
+      "valid": true,
+      "rough": 46,
+      "Rcirc": -1,
+      "P": 24.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 4,
+      "lB": 5,
+      "valid": true,
+      "rough": 48,
+      "Rcirc": 0,
+      "P": 24.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 5,
+      "lB": 0,
+      "valid": true,
+      "rough": 30,
+      "Rcirc": 1,
+      "P": 14.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 5,
+      "lB": 0,
+      "valid": true,
+      "rough": 30,
+      "Rcirc": 1,
+      "P": 14.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 5,
+      "lB": 0,
+      "valid": true,
+      "rough": 26,
+      "Rcirc": -1,
+      "P": 14.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 5,
+      "lB": 0,
+      "valid": true,
+      "rough": 26,
+      "Rcirc": -1,
+      "P": 14.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 5,
+      "lB": 1,
+      "valid": true,
+      "rough": 32,
+      "Rcirc": 1,
+      "P": 15.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 5,
+      "lB": 1,
+      "valid": true,
+      "rough": 32,
+      "Rcirc": 1,
+      "P": 15.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 5,
+      "lB": 1,
+      "valid": true,
+      "rough": 28,
+      "Rcirc": -1,
+      "P": 15.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 5,
+      "lB": 1,
+      "valid": true,
+      "rough": 28,
+      "Rcirc": -1,
+      "P": 15.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 5,
+      "lB": 1,
+      "valid": true,
+      "rough": 30,
+      "Rcirc": 0,
+      "P": 15.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 5,
+      "lB": 2,
+      "valid": true,
+      "rough": 36,
+      "Rcirc": 1,
+      "P": 17.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 5,
+      "lB": 2,
+      "valid": true,
+      "rough": 36,
+      "Rcirc": 1,
+      "P": 17.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 5,
+      "lB": 2,
+      "valid": true,
+      "rough": 32,
+      "Rcirc": -1,
+      "P": 17.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 5,
+      "lB": 2,
+      "valid": true,
+      "rough": 32,
+      "Rcirc": -1,
+      "P": 17.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 5,
+      "lB": 2,
+      "valid": true,
+      "rough": 32,
+      "Rcirc": -1,
+      "P": 17.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 5,
+      "lB": 2,
+      "valid": true,
+      "rough": 32,
+      "Rcirc": -1,
+      "P": 17.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 5,
+      "lB": 2,
+      "valid": true,
+      "rough": 34,
+      "Rcirc": 0,
+      "P": 17.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 5,
+      "lB": 3,
+      "valid": true,
+      "rough": 42,
+      "Rcirc": 1,
+      "P": 20.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 5,
+      "lB": 3,
+      "valid": true,
+      "rough": 42,
+      "Rcirc": 1,
+      "P": 20.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 5,
+      "lB": 3,
+      "valid": true,
+      "rough": 38,
+      "Rcirc": -1,
+      "P": 20.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 5,
+      "lB": 3,
+      "valid": true,
+      "rough": 38,
+      "Rcirc": -1,
+      "P": 20.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 5,
+      "lB": 3,
+      "valid": true,
+      "rough": 38,
+      "Rcirc": -1,
+      "P": 20.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 5,
+      "lB": 3,
+      "valid": true,
+      "rough": 38,
+      "Rcirc": -1,
+      "P": 20.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 5,
+      "lB": 3,
+      "valid": true,
+      "rough": 40,
+      "Rcirc": 0,
+      "P": 20.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 5,
+      "lB": 4,
+      "valid": true,
+      "rough": 50,
+      "Rcirc": 1,
+      "P": 24.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 5,
+      "lB": 4,
+      "valid": true,
+      "rough": 50,
+      "Rcirc": 1,
+      "P": 24.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 5,
+      "lB": 4,
+      "valid": true,
+      "rough": 46,
+      "Rcirc": -1,
+      "P": 24.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 5,
+      "lB": 4,
+      "valid": true,
+      "rough": 46,
+      "Rcirc": -1,
+      "P": 24.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 5,
+      "lB": 4,
+      "valid": true,
+      "rough": 46,
+      "Rcirc": -1,
+      "P": 24.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 5,
+      "lB": 4,
+      "valid": true,
+      "rough": 46,
+      "Rcirc": -1,
+      "P": 24.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 5,
+      "lB": 4,
+      "valid": true,
+      "rough": 48,
+      "Rcirc": 0,
+      "P": 24.0
+    },
+    {
+      "block": "AA",
+      "sector": "trace",
+      "lA": 5,
+      "lB": 5,
+      "valid": true,
+      "rough": 60,
+      "Rcirc": 1,
+      "P": 29.0
+    },
+    {
+      "block": "BB",
+      "sector": "trace",
+      "lA": 5,
+      "lB": 5,
+      "valid": true,
+      "rough": 60,
+      "Rcirc": 1,
+      "P": 29.0
+    },
+    {
+      "block": "AA",
+      "sector": "scalar_TF_Hessian",
+      "lA": 5,
+      "lB": 5,
+      "valid": true,
+      "rough": 56,
+      "Rcirc": -1,
+      "P": 29.0
+    },
+    {
+      "block": "BB",
+      "sector": "scalar_TF_Hessian",
+      "lA": 5,
+      "lB": 5,
+      "valid": true,
+      "rough": 56,
+      "Rcirc": -1,
+      "P": 29.0
+    },
+    {
+      "block": "AA",
+      "sector": "vector_TF",
+      "lA": 5,
+      "lB": 5,
+      "valid": true,
+      "rough": 56,
+      "Rcirc": -1,
+      "P": 29.0
+    },
+    {
+      "block": "BB",
+      "sector": "vector_TF",
+      "lA": 5,
+      "lB": 5,
+      "valid": true,
+      "rough": 56,
+      "Rcirc": -1,
+      "P": 29.0
+    },
+    {
+      "block": "AB",
+      "sector": "oneform_x_oneform (exact/coexact variants)",
+      "lA": 5,
+      "lB": 5,
+      "valid": true,
+      "rough": 58,
+      "Rcirc": 0,
+      "P": 29.0
+    }
+  ]
+}

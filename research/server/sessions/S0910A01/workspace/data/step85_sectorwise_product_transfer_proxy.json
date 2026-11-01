@@ -1,0 +1,2117 @@
+{
+  "scope": "sectorwise product P denominator proxy; not Ozuch full coefficient",
+  "sector_weights": {
+    "W_diag_matrix": [
+      [
+        4.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        4.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        4.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        4.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        4.0
+      ]
+    ],
+    "W_AB_matrix": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        4.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        4.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        4.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        4.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "W_total_equals_C_gram_maxerr": 0.0,
+    "pure_sector_classification": {
+      "C11": "AA/BB",
+      "C12": "AB",
+      "C13": "AB",
+      "C21": "AB",
+      "C22": "AA/BB",
+      "C23": "AA/BB",
+      "C31": "AB",
+      "C32": "AA/BB",
+      "C33": "AA/BB"
+    }
+  },
+  "denominator_model": {
+    "AA_BB": "0.5*(l1(l1+1)+l2(l2+1))-1; zero modes (1,0),(0,1) skipped; (0,0) negative retained",
+    "AB": "0.5*(l1(l1+1)+l2(l2+1)-2), l1,l2>=1",
+    "source_receiver_derivative": "same quadrupole/second-jet derivative tensor as scalar proxy; only component propagation denominators changed"
+  },
+  "mode_ledger_example": {
+    "skipped_zero_modes": [
+      {
+        "sector": "AA/BB",
+        "l1": 0,
+        "l2": 1
+      },
+      {
+        "sector": "AA/BB",
+        "l1": 1,
+        "l2": 0
+      }
+    ],
+    "negative_denominator_modes": [
+      {
+        "sector": "AA/BB",
+        "l1": 0,
+        "l2": 0,
+        "denom": -1.0
+      }
+    ]
+  },
+  "representative": {
+    "adjacent_NS_heat001_L120_ambient": {
+      "coeffs": [
+        1.5988265758038107,
+        0.3997066439506124,
+        -1.1991199318531982
+      ],
+      "stats": {
+        "fro_norm": 2.0904763033930935,
+        "diag_fro_norm": 2.090476303393093,
+        "offdiag_fro_norm": 0.0,
+        "offdiag_over_total": 0.0,
+        "max_abs": 1.0838741396832543,
+        "max_offdiag_abs": 0.0
+      },
+      "top_entries": [
+        {
+          "receiver": "C11",
+          "source": "C11",
+          "value": 1.0838741396832543
+        },
+        {
+          "receiver": "C12",
+          "source": "C12",
+          "value": 0.799413287902586
+        },
+        {
+          "receiver": "C13",
+          "source": "C13",
+          "value": 0.799413287902586
+        },
+        {
+          "receiver": "C21",
+          "source": "C21",
+          "value": 0.799413287902586
+        },
+        {
+          "receiver": "C31",
+          "source": "C31",
+          "value": 0.799413287902586
+        },
+        {
+          "receiver": "C22",
+          "source": "C22",
+          "value": 0.3997066439506124
+        },
+        {
+          "receiver": "C23",
+          "source": "C23",
+          "value": 0.3997066439506124
+        },
+        {
+          "receiver": "C32",
+          "source": "C32",
+          "value": 0.3997066439506124
+        },
+        {
+          "receiver": "C33",
+          "source": "C33",
+          "value": 0.3997066439506124
+        }
+      ]
+    },
+    "diagonal_SS_heat001_L120_ambient": {
+      "coeffs": [
+        0.5958893387036164,
+        0.07259666458548077,
+        -0.5232926741181356
+      ],
+      "stats": {
+        "fro_norm": 1.320735227682394,
+        "diag_fro_norm": 1.3207352276823943,
+        "offdiag_fro_norm": 0.0,
+        "offdiag_over_total": 0.0,
+        "max_abs": 0.9543337292430161,
+        "max_offdiag_abs": 0.0
+      },
+      "top_entries": [
+        {
+          "receiver": "C11",
+          "source": "C11",
+          "value": 0.9543337292430161
+        },
+        {
+          "receiver": "C12",
+          "source": "C12",
+          "value": 0.4506960095326549
+        },
+        {
+          "receiver": "C13",
+          "source": "C13",
+          "value": 0.4506960095326549
+        },
+        {
+          "receiver": "C21",
+          "source": "C21",
+          "value": 0.4506960095326549
+        },
+        {
+          "receiver": "C31",
+          "source": "C31",
+          "value": 0.4506960095326549
+        },
+        {
+          "receiver": "C22",
+          "source": "C22",
+          "value": 0.07259666458548077
+        },
+        {
+          "receiver": "C23",
+          "source": "C23",
+          "value": 0.07259666458548077
+        },
+        {
+          "receiver": "C32",
+          "source": "C32",
+          "value": 0.07259666458548077
+        },
+        {
+          "receiver": "C33",
+          "source": "C33",
+          "value": 0.07259666458548077
+        }
+      ]
+    }
+  },
+  "runs": [
+    {
+      "relation": "adjacent_NS",
+      "frame_transport_model": "ambient",
+      "heat_tau": 0.08,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": 1.3899530479750903,
+          "c_opp_proxy": 0.3474882614102886,
+          "diff_opp_minus_same_proxy": -1.0424647865648018,
+          "matrix_stats": {
+            "fro_norm": 1.8173727876622652,
+            "diag_fro_norm": 1.8173727876622652,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9422749068080748,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": 1.389953047974062,
+          "c_opp_proxy": 0.3474882614097467,
+          "diff_opp_minus_same_proxy": -1.0424647865643153,
+          "matrix_stats": {
+            "fro_norm": 1.8173727876614008,
+            "diag_fro_norm": 1.8173727876614008,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9422749068070433,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": 1.389953047974062,
+          "c_opp_proxy": 0.3474882614097467,
+          "diff_opp_minus_same_proxy": -1.0424647865643153,
+          "matrix_stats": {
+            "fro_norm": 1.8173727876614008,
+            "diag_fro_norm": 1.8173727876614008,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9422749068070433,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": 1.389953047974062,
+          "c_opp_proxy": 0.3474882614097467,
+          "diff_opp_minus_same_proxy": -1.0424647865643153,
+          "matrix_stats": {
+            "fro_norm": 1.8173727876614008,
+            "diag_fro_norm": 1.8173727876614008,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9422749068070433,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "relation": "adjacent_NS",
+      "frame_transport_model": "ambient",
+      "heat_tau": 0.04,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": 1.5058898246712527,
+          "c_opp_proxy": 0.37652523310900515,
+          "diff_opp_minus_same_proxy": -1.1293645915622474,
+          "matrix_stats": {
+            "fro_norm": 1.9688689310489864,
+            "diag_fro_norm": 1.9688689310489869,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.0209267674195142,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": 1.5057181644444835,
+          "c_opp_proxy": 0.3764295411111145,
+          "diff_opp_minus_same_proxy": -1.129288623333369,
+          "matrix_stats": {
+            "fro_norm": 1.9687364408339338,
+            "diag_fro_norm": 1.9687364408339336,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.0207542236233103,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": 1.5057181644444835,
+          "c_opp_proxy": 0.3764295411111145,
+          "diff_opp_minus_same_proxy": -1.129288623333369,
+          "matrix_stats": {
+            "fro_norm": 1.9687364408339338,
+            "diag_fro_norm": 1.9687364408339336,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.0207542236233103,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": 1.5057181644444835,
+          "c_opp_proxy": 0.3764295411111145,
+          "diff_opp_minus_same_proxy": -1.129288623333369,
+          "matrix_stats": {
+            "fro_norm": 1.9687364408339338,
+            "diag_fro_norm": 1.9687364408339336,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.0207542236233103,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "relation": "adjacent_NS",
+      "frame_transport_model": "ambient",
+      "heat_tau": 0.02,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": 4.027732616379198,
+          "c_opp_proxy": 1.9277548666294653,
+          "diff_opp_minus_same_proxy": -2.0999777497497325,
+          "matrix_stats": {
+            "fro_norm": 5.244023809996597,
+            "diag_fro_norm": 5.244023809996597,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 3.537822427804405,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": 1.5671676887585733,
+          "c_opp_proxy": 0.3917919222757086,
+          "diff_opp_minus_same_proxy": -1.1753757664828646,
+          "matrix_stats": {
+            "fro_norm": 2.049082099421362,
+            "diag_fro_norm": 2.049082099421362,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.062411994057493,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": 1.5671676884508954,
+          "c_opp_proxy": 0.3917919221126485,
+          "diff_opp_minus_same_proxy": -1.175375766338247,
+          "matrix_stats": {
+            "fro_norm": 2.049082099165139,
+            "diag_fro_norm": 2.049082099165139,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.0624119937494356,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": 1.5671676884508954,
+          "c_opp_proxy": 0.3917919221126485,
+          "diff_opp_minus_same_proxy": -1.175375766338247,
+          "matrix_stats": {
+            "fro_norm": 2.049082099165139,
+            "diag_fro_norm": 2.049082099165139,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.0624119937494356,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "relation": "adjacent_NS",
+      "frame_transport_model": "ambient",
+      "heat_tau": 0.01,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": 330.4153861989205,
+          "c_opp_proxy": 253.14664158172553,
+          "diff_opp_minus_same_proxy": -77.26874461719495,
+          "matrix_stats": {
+            "fro_norm": 700.4164767836868,
+            "diag_fro_norm": 700.4164767836869,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 332.4427978028435,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": 1.6127668479865411,
+          "c_opp_proxy": 0.4075470327412131,
+          "diff_opp_minus_same_proxy": -1.205219815245328,
+          "matrix_stats": {
+            "fro_norm": 2.101129443083001,
+            "diag_fro_norm": 2.101129443083001,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.0978338349742125,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": 1.5988265758038107,
+          "c_opp_proxy": 0.3997066439506124,
+          "diff_opp_minus_same_proxy": -1.1991199318531982,
+          "matrix_stats": {
+            "fro_norm": 2.0904763033930935,
+            "diag_fro_norm": 2.090476303393093,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.0838741396832543,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": 1.5988265758038107,
+          "c_opp_proxy": 0.3997066439506124,
+          "diff_opp_minus_same_proxy": -1.1991199318531982,
+          "matrix_stats": {
+            "fro_norm": 2.0904763033930935,
+            "diag_fro_norm": 2.090476303393093,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.0838741396832543,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "relation": "adjacent_NS",
+      "frame_transport_model": "ambient",
+      "heat_tau": 0.005,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": 4087.7057441148736,
+          "c_opp_proxy": 4090.456776416342,
+          "diff_opp_minus_same_proxy": 2.7510323014685127,
+          "matrix_stats": {
+            "fro_norm": 12287.981985171571,
+            "diag_fro_norm": 12287.981985171571,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 4129.134781959258,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": 114.42166073097812,
+          "c_opp_proxy": 71.83533305293909,
+          "diff_opp_minus_same_proxy": -42.58632767803903,
+          "matrix_stats": {
+            "fro_norm": 192.55817575710225,
+            "diag_fro_norm": 192.55817575710225,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 114.08493980325632,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": 1.6148950760883334,
+          "c_opp_proxy": 0.40372377634957307,
+          "diff_opp_minus_same_proxy": -1.2111712997387603,
+          "matrix_stats": {
+            "fro_norm": 2.1114859611426677,
+            "diag_fro_norm": 2.1114859611426677,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.094767281952382,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": 1.6148950500292174,
+          "c_opp_proxy": 0.4037237625059982,
+          "diff_opp_minus_same_proxy": -1.2111712875232192,
+          "matrix_stats": {
+            "fro_norm": 2.111485939529687,
+            "diag_fro_norm": 2.111485939529687,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.0947672558849313,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "relation": "adjacent_NS",
+      "frame_transport_model": "ambient",
+      "heat_tau": 0.0025,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": 14850.655938395452,
+          "c_opp_proxy": 18409.827844978958,
+          "diff_opp_minus_same_proxy": 3559.171906583506,
+          "matrix_stats": {
+            "fro_norm": 59265.79762576402,
+            "diag_fro_norm": 59265.79762576402,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 21968.999751562464,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": 11780.37959937577,
+          "c_opp_proxy": 9232.701587069028,
+          "diff_opp_minus_same_proxy": -2547.678012306742,
+          "matrix_stats": {
+            "fro_norm": 25672.38220830548,
+            "diag_fro_norm": 25672.38220830548,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 11804.318408334377,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": 2.2959409538374578,
+          "c_opp_proxy": 0.785732367762983,
+          "diff_opp_minus_same_proxy": -1.5102085860744747,
+          "matrix_stats": {
+            "fro_norm": 2.7774242770975834,
+            "diag_fro_norm": 2.7774242770975834,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.7734489100094362,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": 1.6229897491963676,
+          "c_opp_proxy": 0.4057474384233243,
+          "diff_opp_minus_same_proxy": -1.2172423107730435,
+          "matrix_stats": {
+            "fro_norm": 2.122069810225974,
+            "diag_fro_norm": 2.1220698102259736,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.100254803636229,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "relation": "adjacent_NS",
+      "frame_transport_model": "antipodal_derivative",
+      "heat_tau": 0.08,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": -2.3339359334073606e-09,
+          "c_opp_proxy": 0.3474882614102886,
+          "diff_opp_minus_same_proxy": 0.34748826374422453,
+          "matrix_stats": {
+            "fro_norm": 1.8173727876622652,
+            "diag_fro_norm": 1.8173727876622652,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9422749068080748,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": -2.3350751332529285e-09,
+          "c_opp_proxy": 0.3474882614097467,
+          "diff_opp_minus_same_proxy": 0.34748826374482183,
+          "matrix_stats": {
+            "fro_norm": 1.8173727876614008,
+            "diag_fro_norm": 1.8173727876614008,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9422749068070433,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": -2.3350751332529285e-09,
+          "c_opp_proxy": 0.3474882614097467,
+          "diff_opp_minus_same_proxy": 0.34748826374482183,
+          "matrix_stats": {
+            "fro_norm": 1.8173727876614008,
+            "diag_fro_norm": 1.8173727876614008,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9422749068070433,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": -2.3350751332529285e-09,
+          "c_opp_proxy": 0.3474882614097467,
+          "diff_opp_minus_same_proxy": 0.34748826374482183,
+          "matrix_stats": {
+            "fro_norm": 1.8173727876614008,
+            "diag_fro_norm": 1.8173727876614008,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9422749068070433,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "relation": "adjacent_NS",
+      "frame_transport_model": "antipodal_derivative",
+      "heat_tau": 0.04,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": 0.00021110776476807036,
+          "c_opp_proxy": 0.37652523310900515,
+          "diff_opp_minus_same_proxy": 0.3763141253442371,
+          "matrix_stats": {
+            "fro_norm": 1.9688689310489864,
+            "diag_fro_norm": 1.9688689310489869,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.0209267674195142,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": -2.55351295663786e-14,
+          "c_opp_proxy": 0.3764295411111145,
+          "diff_opp_minus_same_proxy": 0.37642954111114,
+          "matrix_stats": {
+            "fro_norm": 1.9687364408339338,
+            "diag_fro_norm": 1.9687364408339336,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.0207542236233103,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": -2.55351295663786e-14,
+          "c_opp_proxy": 0.3764295411111145,
+          "diff_opp_minus_same_proxy": 0.37642954111114,
+          "matrix_stats": {
+            "fro_norm": 1.9687364408339338,
+            "diag_fro_norm": 1.9687364408339336,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.0207542236233103,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": -2.55351295663786e-14,
+          "c_opp_proxy": 0.3764295411111145,
+          "diff_opp_minus_same_proxy": 0.37642954111114,
+          "matrix_stats": {
+            "fro_norm": 1.9687364408339338,
+            "diag_fro_norm": 1.9687364408339336,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.0207542236233103,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "relation": "adjacent_NS",
+      "frame_transport_model": "antipodal_derivative",
+      "heat_tau": 0.02,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": 3.6832868501386633,
+          "c_opp_proxy": 1.9277548666294653,
+          "diff_opp_minus_same_proxy": -1.755531983509198,
+          "matrix_stats": {
+            "fro_norm": 5.244023809996597,
+            "diag_fro_norm": 5.244023809996597,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 3.537822427804405,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": 3.4426095307793503e-10,
+          "c_opp_proxy": 0.3917919222757086,
+          "diff_opp_minus_same_proxy": 0.39179192193144763,
+          "matrix_stats": {
+            "fro_norm": 2.049082099421362,
+            "diag_fro_norm": 2.049082099421362,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.062411994057493,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": -3.0142555118573e-13,
+          "c_opp_proxy": 0.3917919221126485,
+          "diff_opp_minus_same_proxy": 0.39179192211294994,
+          "matrix_stats": {
+            "fro_norm": 2.049082099165139,
+            "diag_fro_norm": 2.049082099165139,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.0624119937494356,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": -3.0142555118573e-13,
+          "c_opp_proxy": 0.3917919221126485,
+          "diff_opp_minus_same_proxy": 0.39179192211294994,
+          "matrix_stats": {
+            "fro_norm": 2.049082099165139,
+            "diag_fro_norm": 2.049082099165139,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.0624119937494356,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "relation": "adjacent_NS",
+      "frame_transport_model": "antipodal_derivative",
+      "heat_tau": 0.01,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": 682.1711801279816,
+          "c_opp_proxy": 253.14664158172553,
+          "diff_opp_minus_same_proxy": -429.0245385462561,
+          "matrix_stats": {
+            "fro_norm": 700.4164767836868,
+            "diag_fro_norm": 700.4164767836869,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 332.4427978028435,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": 0.01742128297831147,
+          "c_opp_proxy": 0.4075470327412131,
+          "diff_opp_minus_same_proxy": 0.39012574976290165,
+          "matrix_stats": {
+            "fro_norm": 2.101129443083001,
+            "diag_fro_norm": 2.101129443083001,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.0978338349742125,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": -1.3612444504929044e-12,
+          "c_opp_proxy": 0.3997066439506124,
+          "diff_opp_minus_same_proxy": 0.39970664395197364,
+          "matrix_stats": {
+            "fro_norm": 2.0904763033930935,
+            "diag_fro_norm": 2.090476303393093,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.0838741396832543,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": -1.3612444504929044e-12,
+          "c_opp_proxy": 0.3997066439506124,
+          "diff_opp_minus_same_proxy": 0.39970664395197364,
+          "matrix_stats": {
+            "fro_norm": 2.0904763033930935,
+            "diag_fro_norm": 2.090476303393093,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.0838741396832543,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "relation": "adjacent_NS",
+      "frame_transport_model": "antipodal_derivative",
+      "heat_tau": 0.005,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": 12274.121361550495,
+          "c_opp_proxy": 4090.456776416342,
+          "diff_opp_minus_same_proxy": -8183.664585134153,
+          "matrix_stats": {
+            "fro_norm": 12287.981985171571,
+            "diag_fro_norm": 12287.981985171571,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 4129.134781959258,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": 172.91967148077825,
+          "c_opp_proxy": 71.83533305293909,
+          "diff_opp_minus_same_proxy": -101.08433842783916,
+          "matrix_stats": {
+            "fro_norm": 192.55817575710225,
+            "diag_fro_norm": 192.55817575710225,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 114.08493980325632,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": 2.930995890437771e-08,
+          "c_opp_proxy": 0.40372377634957307,
+          "diff_opp_minus_same_proxy": 0.40372374703961417,
+          "matrix_stats": {
+            "fro_norm": 2.1114859611426677,
+            "diag_fro_norm": 2.1114859611426677,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.094767281952382,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": -5.224598531583524e-12,
+          "c_opp_proxy": 0.4037237625059982,
+          "diff_opp_minus_same_proxy": 0.4037237625112228,
+          "matrix_stats": {
+            "fro_norm": 2.111485939529687,
+            "diag_fro_norm": 2.111485939529687,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.0947672558849313,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "relation": "adjacent_NS",
+      "frame_transport_model": "antipodal_derivative",
+      "heat_tau": 0.0025,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": 58788.65544152038,
+          "c_opp_proxy": 18409.827844978958,
+          "diff_opp_minus_same_proxy": -40378.82759654142,
+          "matrix_stats": {
+            "fro_norm": 59265.79762576402,
+            "diag_fro_norm": 59265.79762576402,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 21968.999751562464,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": 25150.426748900343,
+          "c_opp_proxy": 9232.701587069028,
+          "diff_opp_minus_same_proxy": -15917.725161831315,
+          "matrix_stats": {
+            "fro_norm": 25672.38220830548,
+            "diag_fro_norm": 25672.38220830548,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 11804.318408334377,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": 0.8469885172144742,
+          "c_opp_proxy": 0.785732367762983,
+          "diff_opp_minus_same_proxy": -0.06125614945149116,
+          "matrix_stats": {
+            "fro_norm": 2.7774242770975834,
+            "diag_fro_norm": 2.7774242770975834,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.7734489100094362,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": 4.496929495445556e-09,
+          "c_opp_proxy": 0.4057474384233243,
+          "diff_opp_minus_same_proxy": 0.4057474339263948,
+          "matrix_stats": {
+            "fro_norm": 2.122069810225974,
+            "diag_fro_norm": 2.1220698102259736,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.100254803636229,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame_transport_model": "ambient",
+      "heat_tau": 0.08,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": 0.5180413039891352,
+          "c_opp_proxy": 0.06311250822007963,
+          "diff_opp_minus_same_proxy": -0.45492879576905554,
+          "matrix_stats": {
+            "fro_norm": 1.0969329017118252,
+            "diag_fro_norm": 1.0969329017118252,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.7571321042776876,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": 0.5180413039891347,
+          "c_opp_proxy": 0.0631125082200794,
+          "diff_opp_minus_same_proxy": -0.4549287957690553,
+          "matrix_stats": {
+            "fro_norm": 1.0969329017118252,
+            "diag_fro_norm": 1.0969329017118252,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.757132104277688,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": 0.5180413039891347,
+          "c_opp_proxy": 0.0631125082200794,
+          "diff_opp_minus_same_proxy": -0.4549287957690553,
+          "matrix_stats": {
+            "fro_norm": 1.0969329017118252,
+            "diag_fro_norm": 1.0969329017118252,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.757132104277688,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": 0.5180413039891347,
+          "c_opp_proxy": 0.0631125082200794,
+          "diff_opp_minus_same_proxy": -0.4549287957690553,
+          "matrix_stats": {
+            "fro_norm": 1.0969329017118252,
+            "diag_fro_norm": 1.0969329017118252,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.757132104277688,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame_transport_model": "ambient",
+      "heat_tau": 0.04,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": 0.5611874451383145,
+          "c_opp_proxy": 0.06836896396470117,
+          "diff_opp_minus_same_proxy": -0.4928184811736134,
+          "matrix_stats": {
+            "fro_norm": 1.2197136274558402,
+            "diag_fro_norm": 1.2197136274558402,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.8650864126961786,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": 0.5611874451328922,
+          "c_opp_proxy": 0.0683689639633483,
+          "diff_opp_minus_same_proxy": -0.4928184811695439,
+          "matrix_stats": {
+            "fro_norm": 1.2197136274517577,
+            "diag_fro_norm": 1.2197136274517577,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.8650864126961818,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": 0.5611874451328922,
+          "c_opp_proxy": 0.0683689639633483,
+          "diff_opp_minus_same_proxy": -0.4928184811695439,
+          "matrix_stats": {
+            "fro_norm": 1.2197136274517577,
+            "diag_fro_norm": 1.2197136274517577,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.8650864126961818,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": 0.5611874451328922,
+          "c_opp_proxy": 0.0683689639633483,
+          "diff_opp_minus_same_proxy": -0.4928184811695439,
+          "matrix_stats": {
+            "fro_norm": 1.2197136274517577,
+            "diag_fro_norm": 1.2197136274517577,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.8650864126961818,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame_transport_model": "ambient",
+      "heat_tau": 0.02,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": 0.5844721010240695,
+          "c_opp_proxy": 0.07125438851638437,
+          "diff_opp_minus_same_proxy": -0.5132177125076852,
+          "matrix_stats": {
+            "fro_norm": 1.2864514835878795,
+            "diag_fro_norm": 1.2864514835878798,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9237544852829255,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": 0.5840899392355581,
+          "c_opp_proxy": 0.0711591543133378,
+          "diff_opp_minus_same_proxy": -0.5129307849222202,
+          "matrix_stats": {
+            "fro_norm": 1.28616726374973,
+            "diag_fro_norm": 1.28616726374973,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9237548565110691,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": 0.5840899392355492,
+          "c_opp_proxy": 0.07115915431333342,
+          "diff_opp_minus_same_proxy": -0.5129307849222158,
+          "matrix_stats": {
+            "fro_norm": 1.2861672637497243,
+            "diag_fro_norm": 1.2861672637497243,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9237548565110628,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": 0.5840899392355492,
+          "c_opp_proxy": 0.07115915431333342,
+          "diff_opp_minus_same_proxy": -0.5129307849222158,
+          "matrix_stats": {
+            "fro_norm": 1.2861672637497243,
+            "diag_fro_norm": 1.2861672637497243,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9237548565110628,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame_transport_model": "ambient",
+      "heat_tau": 0.01,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": 3.4595446591274097,
+          "c_opp_proxy": 0.7861069426583436,
+          "diff_opp_minus_same_proxy": -2.673437716469066,
+          "matrix_stats": {
+            "fro_norm": 4.198174017346003,
+            "diag_fro_norm": 4.198174017346004,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.8873307738107226,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": 0.5958893393296198,
+          "c_opp_proxy": 0.07259666474186395,
+          "diff_opp_minus_same_proxy": -0.5232926745877559,
+          "matrix_stats": {
+            "fro_norm": 1.3207352281442146,
+            "diag_fro_norm": 1.3207352281442144,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9543337292428404,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": 0.5958893387036164,
+          "c_opp_proxy": 0.07259666458548077,
+          "diff_opp_minus_same_proxy": -0.5232926741181356,
+          "matrix_stats": {
+            "fro_norm": 1.320735227682394,
+            "diag_fro_norm": 1.3207352276823943,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9543337292430161,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": 0.5958893387036164,
+          "c_opp_proxy": 0.07259666458548077,
+          "diff_opp_minus_same_proxy": -0.5232926741181356,
+          "matrix_stats": {
+            "fro_norm": 1.320735227682394,
+            "diag_fro_norm": 1.3207352276823943,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9543337292430161,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame_transport_model": "ambient",
+      "heat_tau": 0.005,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": 240.52669464082078,
+          "c_opp_proxy": 59.850536536951324,
+          "diff_opp_minus_same_proxy": -180.67615810386945,
+          "matrix_stats": {
+            "fro_norm": 269.6741683189856,
+            "diag_fro_norm": 269.6741683189856,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 120.82562156691813,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": 0.6158210387915952,
+          "c_opp_proxy": 0.07680893500692691,
+          "diff_opp_minus_same_proxy": -0.5390121037846684,
+          "matrix_stats": {
+            "fro_norm": 1.3486691923959868,
+            "diag_fro_norm": 1.3486691923959868,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9699397216413546,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": 0.6018781261131098,
+          "c_opp_proxy": 0.0733262731911603,
+          "diff_opp_minus_same_proxy": -0.5285518529219495,
+          "matrix_stats": {
+            "fro_norm": 1.3383643415476065,
+            "diag_fro_norm": 1.3383643415476065,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9699437239349544,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": 0.6018781261135009,
+          "c_opp_proxy": 0.07332627319132828,
+          "diff_opp_minus_same_proxy": -0.5285518529221727,
+          "matrix_stats": {
+            "fro_norm": 1.3383643415478523,
+            "diag_fro_norm": 1.3383643415478523,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9699437239351393,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame_transport_model": "ambient",
+      "heat_tau": 0.0025,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": 2178.4888087051904,
+          "c_opp_proxy": 542.686178053935,
+          "diff_opp_minus_same_proxy": -1635.8026306512554,
+          "matrix_stats": {
+            "fro_norm": 2440.8297236826597,
+            "diag_fro_norm": 2440.8297236826597,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1093.1164525973204,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": 64.43452006283812,
+          "c_opp_proxy": 16.016903036631007,
+          "diff_opp_minus_same_proxy": -48.41761702620711,
+          "matrix_stats": {
+            "fro_norm": 72.29321828767422,
+            "diag_fro_norm": 72.29321828767422,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 32.400713989576104,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": 0.6048950766502963,
+          "c_opp_proxy": 0.07369382863644203,
+          "diff_opp_minus_same_proxy": -0.5312012480138543,
+          "matrix_stats": {
+            "fro_norm": 1.3472664574835258,
+            "diag_fro_norm": 1.347266457483526,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9778300623330733,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": 0.6048950527695361,
+          "c_opp_proxy": 0.07369382266729634,
+          "diff_opp_minus_same_proxy": -0.5312012301022399,
+          "matrix_stats": {
+            "fro_norm": 1.347266439957587,
+            "diag_fro_norm": 1.347266439957587,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9778300623356501,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame_transport_model": "antipodal_derivative",
+      "heat_tau": 0.08,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": 0.5180413039891352,
+          "c_opp_proxy": 0.06311250822007963,
+          "diff_opp_minus_same_proxy": -0.45492879576905554,
+          "matrix_stats": {
+            "fro_norm": 1.0969329017118252,
+            "diag_fro_norm": 1.0969329017118252,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.7571321042776876,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": 0.5180413039891347,
+          "c_opp_proxy": 0.0631125082200794,
+          "diff_opp_minus_same_proxy": -0.4549287957690553,
+          "matrix_stats": {
+            "fro_norm": 1.0969329017118252,
+            "diag_fro_norm": 1.0969329017118252,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.757132104277688,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": 0.5180413039891347,
+          "c_opp_proxy": 0.0631125082200794,
+          "diff_opp_minus_same_proxy": -0.4549287957690553,
+          "matrix_stats": {
+            "fro_norm": 1.0969329017118252,
+            "diag_fro_norm": 1.0969329017118252,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.757132104277688,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": 0.5180413039891347,
+          "c_opp_proxy": 0.0631125082200794,
+          "diff_opp_minus_same_proxy": -0.4549287957690553,
+          "matrix_stats": {
+            "fro_norm": 1.0969329017118252,
+            "diag_fro_norm": 1.0969329017118252,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.757132104277688,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame_transport_model": "antipodal_derivative",
+      "heat_tau": 0.04,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": 0.5611874451383145,
+          "c_opp_proxy": 0.06836896396470117,
+          "diff_opp_minus_same_proxy": -0.4928184811736134,
+          "matrix_stats": {
+            "fro_norm": 1.2197136274558402,
+            "diag_fro_norm": 1.2197136274558402,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.8650864126961786,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": 0.5611874451328922,
+          "c_opp_proxy": 0.0683689639633483,
+          "diff_opp_minus_same_proxy": -0.4928184811695439,
+          "matrix_stats": {
+            "fro_norm": 1.2197136274517577,
+            "diag_fro_norm": 1.2197136274517577,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.8650864126961818,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": 0.5611874451328922,
+          "c_opp_proxy": 0.0683689639633483,
+          "diff_opp_minus_same_proxy": -0.4928184811695439,
+          "matrix_stats": {
+            "fro_norm": 1.2197136274517577,
+            "diag_fro_norm": 1.2197136274517577,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.8650864126961818,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": 0.5611874451328922,
+          "c_opp_proxy": 0.0683689639633483,
+          "diff_opp_minus_same_proxy": -0.4928184811695439,
+          "matrix_stats": {
+            "fro_norm": 1.2197136274517577,
+            "diag_fro_norm": 1.2197136274517577,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.8650864126961818,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame_transport_model": "antipodal_derivative",
+      "heat_tau": 0.02,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": 0.5844721010240695,
+          "c_opp_proxy": 0.07125438851638437,
+          "diff_opp_minus_same_proxy": -0.5132177125076852,
+          "matrix_stats": {
+            "fro_norm": 1.2864514835878795,
+            "diag_fro_norm": 1.2864514835878798,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9237544852829255,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": 0.5840899392355581,
+          "c_opp_proxy": 0.0711591543133378,
+          "diff_opp_minus_same_proxy": -0.5129307849222202,
+          "matrix_stats": {
+            "fro_norm": 1.28616726374973,
+            "diag_fro_norm": 1.28616726374973,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9237548565110691,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": 0.5840899392355492,
+          "c_opp_proxy": 0.07115915431333342,
+          "diff_opp_minus_same_proxy": -0.5129307849222158,
+          "matrix_stats": {
+            "fro_norm": 1.2861672637497243,
+            "diag_fro_norm": 1.2861672637497243,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9237548565110628,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": 0.5840899392355492,
+          "c_opp_proxy": 0.07115915431333342,
+          "diff_opp_minus_same_proxy": -0.5129307849222158,
+          "matrix_stats": {
+            "fro_norm": 1.2861672637497243,
+            "diag_fro_norm": 1.2861672637497243,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9237548565110628,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame_transport_model": "antipodal_derivative",
+      "heat_tau": 0.01,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": 3.4595446591274097,
+          "c_opp_proxy": 0.7861069426583436,
+          "diff_opp_minus_same_proxy": -2.673437716469066,
+          "matrix_stats": {
+            "fro_norm": 4.198174017346003,
+            "diag_fro_norm": 4.198174017346004,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1.8873307738107226,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": 0.5958893393296198,
+          "c_opp_proxy": 0.07259666474186395,
+          "diff_opp_minus_same_proxy": -0.5232926745877559,
+          "matrix_stats": {
+            "fro_norm": 1.3207352281442146,
+            "diag_fro_norm": 1.3207352281442144,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9543337292428404,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": 0.5958893387036164,
+          "c_opp_proxy": 0.07259666458548077,
+          "diff_opp_minus_same_proxy": -0.5232926741181356,
+          "matrix_stats": {
+            "fro_norm": 1.320735227682394,
+            "diag_fro_norm": 1.3207352276823943,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9543337292430161,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": 0.5958893387036164,
+          "c_opp_proxy": 0.07259666458548077,
+          "diff_opp_minus_same_proxy": -0.5232926741181356,
+          "matrix_stats": {
+            "fro_norm": 1.320735227682394,
+            "diag_fro_norm": 1.3207352276823943,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9543337292430161,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame_transport_model": "antipodal_derivative",
+      "heat_tau": 0.005,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": 240.52669464082078,
+          "c_opp_proxy": 59.850536536951324,
+          "diff_opp_minus_same_proxy": -180.67615810386945,
+          "matrix_stats": {
+            "fro_norm": 269.6741683189856,
+            "diag_fro_norm": 269.6741683189856,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 120.82562156691813,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": 0.6158210387915952,
+          "c_opp_proxy": 0.07680893500692691,
+          "diff_opp_minus_same_proxy": -0.5390121037846684,
+          "matrix_stats": {
+            "fro_norm": 1.3486691923959868,
+            "diag_fro_norm": 1.3486691923959868,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9699397216413546,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": 0.6018781261131098,
+          "c_opp_proxy": 0.0733262731911603,
+          "diff_opp_minus_same_proxy": -0.5285518529219495,
+          "matrix_stats": {
+            "fro_norm": 1.3383643415476065,
+            "diag_fro_norm": 1.3383643415476065,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9699437239349544,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": 0.6018781261135009,
+          "c_opp_proxy": 0.07332627319132828,
+          "diff_opp_minus_same_proxy": -0.5285518529221727,
+          "matrix_stats": {
+            "fro_norm": 1.3383643415478523,
+            "diag_fro_norm": 1.3383643415478523,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9699437239351393,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame_transport_model": "antipodal_derivative",
+      "heat_tau": 0.0025,
+      "Lmax_sequence": [
+        {
+          "Lmax": 20,
+          "c_same_proxy": 2178.4888087051904,
+          "c_opp_proxy": 542.686178053935,
+          "diff_opp_minus_same_proxy": -1635.8026306512554,
+          "matrix_stats": {
+            "fro_norm": 2440.8297236826597,
+            "diag_fro_norm": 2440.8297236826597,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 1093.1164525973204,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 40,
+          "c_same_proxy": 64.43452006283812,
+          "c_opp_proxy": 16.016903036631007,
+          "diff_opp_minus_same_proxy": -48.41761702620711,
+          "matrix_stats": {
+            "fro_norm": 72.29321828767422,
+            "diag_fro_norm": 72.29321828767422,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 32.400713989576104,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 80,
+          "c_same_proxy": 0.6048950766502963,
+          "c_opp_proxy": 0.07369382863644203,
+          "diff_opp_minus_same_proxy": -0.5312012480138543,
+          "matrix_stats": {
+            "fro_norm": 1.3472664574835258,
+            "diag_fro_norm": 1.347266457483526,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9778300623330733,
+            "max_offdiag_abs": 0.0
+          }
+        },
+        {
+          "Lmax": 120,
+          "c_same_proxy": 0.6048950527695361,
+          "c_opp_proxy": 0.07369382266729634,
+          "diff_opp_minus_same_proxy": -0.5312012301022399,
+          "matrix_stats": {
+            "fro_norm": 1.347266439957587,
+            "diag_fro_norm": 1.347266439957587,
+            "offdiag_fro_norm": 0.0,
+            "offdiag_over_total": 0.0,
+            "max_abs": 0.9778300623356501,
+            "max_offdiag_abs": 0.0
+          }
+        }
+      ]
+    }
+  ],
+  "trend_L120": [
+    {
+      "relation": "adjacent_NS",
+      "frame": "ambient",
+      "heat_tau": 0.08,
+      "Lmax": 120,
+      "c_same": 1.389953047974062,
+      "c_opp": 0.3474882614097467,
+      "diff": -1.0424647865643153
+    },
+    {
+      "relation": "adjacent_NS",
+      "frame": "ambient",
+      "heat_tau": 0.04,
+      "Lmax": 120,
+      "c_same": 1.5057181644444835,
+      "c_opp": 0.3764295411111145,
+      "diff": -1.129288623333369
+    },
+    {
+      "relation": "adjacent_NS",
+      "frame": "ambient",
+      "heat_tau": 0.02,
+      "Lmax": 120,
+      "c_same": 1.5671676884508954,
+      "c_opp": 0.3917919221126485,
+      "diff": -1.175375766338247
+    },
+    {
+      "relation": "adjacent_NS",
+      "frame": "ambient",
+      "heat_tau": 0.01,
+      "Lmax": 120,
+      "c_same": 1.5988265758038107,
+      "c_opp": 0.3997066439506124,
+      "diff": -1.1991199318531982
+    },
+    {
+      "relation": "adjacent_NS",
+      "frame": "ambient",
+      "heat_tau": 0.005,
+      "Lmax": 120,
+      "c_same": 1.6148950500292174,
+      "c_opp": 0.4037237625059982,
+      "diff": -1.2111712875232192
+    },
+    {
+      "relation": "adjacent_NS",
+      "frame": "ambient",
+      "heat_tau": 0.0025,
+      "Lmax": 120,
+      "c_same": 1.6229897491963676,
+      "c_opp": 0.4057474384233243,
+      "diff": -1.2172423107730435
+    },
+    {
+      "relation": "adjacent_NS",
+      "frame": "antipodal_derivative",
+      "heat_tau": 0.08,
+      "Lmax": 120,
+      "c_same": -2.3350751332529285e-09,
+      "c_opp": 0.3474882614097467,
+      "diff": 0.34748826374482183
+    },
+    {
+      "relation": "adjacent_NS",
+      "frame": "antipodal_derivative",
+      "heat_tau": 0.04,
+      "Lmax": 120,
+      "c_same": -2.55351295663786e-14,
+      "c_opp": 0.3764295411111145,
+      "diff": 0.37642954111114
+    },
+    {
+      "relation": "adjacent_NS",
+      "frame": "antipodal_derivative",
+      "heat_tau": 0.02,
+      "Lmax": 120,
+      "c_same": -3.0142555118573e-13,
+      "c_opp": 0.3917919221126485,
+      "diff": 0.39179192211294994
+    },
+    {
+      "relation": "adjacent_NS",
+      "frame": "antipodal_derivative",
+      "heat_tau": 0.01,
+      "Lmax": 120,
+      "c_same": -1.3612444504929044e-12,
+      "c_opp": 0.3997066439506124,
+      "diff": 0.39970664395197364
+    },
+    {
+      "relation": "adjacent_NS",
+      "frame": "antipodal_derivative",
+      "heat_tau": 0.005,
+      "Lmax": 120,
+      "c_same": -5.224598531583524e-12,
+      "c_opp": 0.4037237625059982,
+      "diff": 0.4037237625112228
+    },
+    {
+      "relation": "adjacent_NS",
+      "frame": "antipodal_derivative",
+      "heat_tau": 0.0025,
+      "Lmax": 120,
+      "c_same": 4.496929495445556e-09,
+      "c_opp": 0.4057474384233243,
+      "diff": 0.4057474339263948
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame": "ambient",
+      "heat_tau": 0.08,
+      "Lmax": 120,
+      "c_same": 0.5180413039891347,
+      "c_opp": 0.0631125082200794,
+      "diff": -0.4549287957690553
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame": "ambient",
+      "heat_tau": 0.04,
+      "Lmax": 120,
+      "c_same": 0.5611874451328922,
+      "c_opp": 0.0683689639633483,
+      "diff": -0.4928184811695439
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame": "ambient",
+      "heat_tau": 0.02,
+      "Lmax": 120,
+      "c_same": 0.5840899392355492,
+      "c_opp": 0.07115915431333342,
+      "diff": -0.5129307849222158
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame": "ambient",
+      "heat_tau": 0.01,
+      "Lmax": 120,
+      "c_same": 0.5958893387036164,
+      "c_opp": 0.07259666458548077,
+      "diff": -0.5232926741181356
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame": "ambient",
+      "heat_tau": 0.005,
+      "Lmax": 120,
+      "c_same": 0.6018781261135009,
+      "c_opp": 0.07332627319132828,
+      "diff": -0.5285518529221727
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame": "ambient",
+      "heat_tau": 0.0025,
+      "Lmax": 120,
+      "c_same": 0.6048950527695361,
+      "c_opp": 0.07369382266729634,
+      "diff": -0.5312012301022399
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame": "antipodal_derivative",
+      "heat_tau": 0.08,
+      "Lmax": 120,
+      "c_same": 0.5180413039891347,
+      "c_opp": 0.0631125082200794,
+      "diff": -0.4549287957690553
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame": "antipodal_derivative",
+      "heat_tau": 0.04,
+      "Lmax": 120,
+      "c_same": 0.5611874451328922,
+      "c_opp": 0.0683689639633483,
+      "diff": -0.4928184811695439
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame": "antipodal_derivative",
+      "heat_tau": 0.02,
+      "Lmax": 120,
+      "c_same": 0.5840899392355492,
+      "c_opp": 0.07115915431333342,
+      "diff": -0.5129307849222158
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame": "antipodal_derivative",
+      "heat_tau": 0.01,
+      "Lmax": 120,
+      "c_same": 0.5958893387036164,
+      "c_opp": 0.07259666458548077,
+      "diff": -0.5232926741181356
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame": "antipodal_derivative",
+      "heat_tau": 0.005,
+      "Lmax": 120,
+      "c_same": 0.6018781261135009,
+      "c_opp": 0.07332627319132828,
+      "diff": -0.5285518529221727
+    },
+    {
+      "relation": "diagonal_SS",
+      "frame": "antipodal_derivative",
+      "heat_tau": 0.0025,
+      "Lmax": 120,
+      "c_same": 0.6048950527695361,
+      "c_opp": 0.07369382266729634,
+      "diff": -0.5312012301022399
+    }
+  ],
+  "scientific_interpretation": {
+    "established_by_this_proxy": [
+      "The full product operator already separates C_ab components into AA/BB and AB sectors with different denominators; scalar-pole and common-shift recipes suppress this information.",
+      "The four scalar kernel modes appear exactly as AA/BB trace l=1 with one factor constant and are removed by pseudo-inverse skipping; the negative constant trace modes are retained.",
+      "The mixed one-form AB l1=l2=1 denominator is 1, matching the corrected spectral gap for the product mixed sector.",
+      "The tested sectorwise proxy still gives a nonzero same/opposite difference, but the values remain regularization- and frame-sensitive, especially for adjacent pairs."
+    ],
+    "not_established": [
+      "The Bianchi-corrected source S_j^epsilon may have scalar/vector-derived content not equal to the raw H^4 sector decomposition.",
+      "The true receiver L_i is a curvature-jet/radial functional, not merely the same second-jet tensor family used here.",
+      "Inter-sector coupling through gauge fixing, kernel projection, and local singular subtraction is not represented."
+    ]
+  }
+}

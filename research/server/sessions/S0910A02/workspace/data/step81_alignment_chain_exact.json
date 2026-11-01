@@ -1,0 +1,126 @@
+{
+  "conventions": {
+    "Weitzenbock": "(d+d*)^2 w = nabla*nabla w - 2W^+(w) + (s/3) w",
+    "Wnorm": "|W^+|^2 = alpha^2+beta^2+gamma^2 (endomorphism of Lambda^+)",
+    "CGB": "2chi+3tau = (1/4pi^2) int (2|W^+|^2 + s^2/24 - |E|^2/2)",
+    "normalization": "Ric = 3g, s = 12, V <= 8pi^2/3 (Bishop)"
+  },
+  "convention_checks": {
+    "S4_CGB": {
+      "2chi+3tau": 4,
+      "formula": 4.0,
+      "ok": true
+    },
+    "CP2_volume": {
+      "V": 19.739208802178716,
+      "int_Wplus2_from_CGB": 118.43525281307231,
+      "int_Wplus2_from_Kahler": 118.4352528130723,
+      "ok": true,
+      "bishop_ok": true
+    },
+    "CP2_Weitzenbock_pointwise": {
+      "-2W(w,w)+(s/3)|w|^2": 0.0,
+      "ok": true
+    }
+  },
+  "C_theta_at_0": {
+    "value": 0.8164965809277261,
+    "argmax_beta_over_alpha": -0.5,
+    "sqrt_2_over_3": 0.816496580927726,
+    "matches_WuLeBrun_Lemma2": true,
+    "extremal_pattern": "beta = -alpha/2 (Kaehler eigenvalue pattern)"
+  },
+  "chain_equals_GurskyLeBrun": {
+    "statement": "with theta=0, kappa=1 the chain is exactly int|W^+|^2 >= 6V = int s^2/24, i.e. Gursky-LeBrun",
+    "threshold_A": 5.999999999999999,
+    "s2_over_24": 6.0,
+    "ok": true
+  },
+  "rows": {
+    "mixed_row_chi8_tau0": {
+      "chi": 8,
+      "tau": 0,
+      "int_Wplus2_at_Vmax": 236.8705056261446,
+      "A_min_at_Bishop_Vmax": 9.0,
+      "deficit_factor_sqrt_A_over_6": 1.224744871391589,
+      "V_needed_for_A_below_6": 35.09192675942883,
+      "V_needed_exceeds_Bishop": true
+    },
+    "row_tau_plus2": {
+      "chi": 8,
+      "tau": 2,
+      "int_Wplus2_at_Vmax": 355.3057584392169,
+      "A_min_at_Bishop_Vmax": 13.5,
+      "deficit_factor_sqrt_A_over_6": 1.5,
+      "V_needed_for_A_below_6": 48.251399294214636,
+      "V_needed_exceeds_Bishop": true
+    },
+    "row_tau_minus2": {
+      "chi": 8,
+      "tau": -2,
+      "int_Wplus2_at_Vmax": 118.43525281307231,
+      "A_min_at_Bishop_Vmax": 4.5,
+      "deficit_factor_sqrt_A_over_6": 0.8660254037844386,
+      "V_needed_for_A_below_6": 21.93245422464302,
+      "V_needed_exceeds_Bishop": false
+    },
+    "CP2_KE_control": {
+      "chi": 3,
+      "tau": 1,
+      "int_Wplus2_at_Vmax": 98.69604401089359,
+      "A_min_at_Bishop_Vmax": 3.75,
+      "deficit_factor_sqrt_A_over_6": 0.7905694150420949,
+      "V_needed_for_A_below_6": 19.739208802178716,
+      "V_needed_exceeds_Bishop": false,
+      "A_at_actual_V": 6.000000000000001,
+      "chain_is_equality_at_actual_V": true
+    }
+  },
+  "theta_thresholds": {
+    "A=6 (Kahler critical), kappa=1": {
+      "A": 6.0,
+      "kappa": 1.0,
+      "theta_star": 3.729655473350135e-17,
+      "theta_max_possible": 0.3333333333333333
+    },
+    "A=9 (chi=8,tau=0 at Bishop Vmax), kappa=1": {
+      "A": 9.0,
+      "kappa": 1.0,
+      "theta_star": 0.12732200365180826,
+      "theta_max_possible": 0.3333333333333333
+    },
+    "A=9, kappa=1.2": {
+      "A": 9.0,
+      "kappa": 1.2,
+      "theta_star": 0.23356491527788478,
+      "theta_max_possible": 0.3333333333333333
+    },
+    "A=12, kappa=1": {
+      "A": 12.0,
+      "kappa": 1.0,
+      "theta_star": 0.21132486540496864,
+      "theta_max_possible": 0.3333333333333333
+    },
+    "A=18, kappa=1": {
+      "A": 18.0,
+      "kappa": 1.0,
+      "theta_star": 0.33333333317708136,
+      "theta_max_possible": 0.3333333333333333
+    },
+    "A=30, kappa=1": {
+      "A": 30.0,
+      "kappa": 1.0,
+      "theta_star": null,
+      "theta_max_possible": 0.3333333333333333
+    }
+  },
+  "verdict": {
+    "b_plus_cancels": true,
+    "theta0_kappa1_chain_is_exactly_GurskyLeBrun": true,
+    "A_min_for_chi8_tau0": 9.0,
+    "irreducible_deficit_factor": 1.224744871391589,
+    "sqrt_3_over_2": 1.224744871391589,
+    "closure_requires": "theta-bar >= theta_star(A,kappa) AND kappa near 1 AND A near its Bishop minimum; theta_star is the only b_+-sensitive quantity in the whole chain",
+    "three_lump_configuration": "drives theta -> 0 and kappa -> infinity simultaneously, defeating both requirements"
+  }
+}

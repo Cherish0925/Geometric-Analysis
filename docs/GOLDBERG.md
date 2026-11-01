@@ -31,11 +31,11 @@ $$
 \eta=W^+\Omega-t\Omega\in\Lambda_J^-,\qquad v=\eta/\sqrt2.
 $$
 
-这里 $\Lambda_J^-$ 是实 $J$-反不变二形式丛，$B$ 是 $n^\perp$ 上的无迹对称块，通常记为 $W_3^+$。以下内容按完备非紧构造、扭率零集、曲率刚性和整体约束组织；每一结论均附证明原稿。
+这里 $\Lambda_J^-$ 是实 $J$-反不变二形式丛，$B$ 是 $n^\perp$ 上的无迹对称块，通常记为 $W_3^+$。闭情形的共同约束是扭率、Weyl 曲率和归一化 Einstein 作用量之间的恒等式；非紧构造则说明这些局部方程允许怎样的严格非可积几何。
 
 ## 完备非紧构造与 Fino 的存在性问题
 
-[显式构造与验证](../archive/originals/2026-10-08/Q4_Complete_Example_and_Fino_Question.tex)给出微分同胚于 $\mathbb R^4$ 的完备度量与相容二形式，满足
+[显式构造](../archive/originals/2026-10-08/Q4_Complete_Example_and_Fino_Question.tex)给出微分同胚于 $\mathbb R^4$ 的完备度量与相容二形式，满足
 
 $$
 \operatorname{Ric}=-3g,\qquad W^-=0,\qquad d\Omega=0,\qquad
@@ -50,7 +50,41 @@ d\sigma_2=2\sigma_3\wedge\sigma_1,\qquad
 d\sigma_3=2\sigma_1\wedge\sigma_2.
 $$
 
-在 $1/3<x<1$ 上定义的显式系数光滑延拓到平面丛
+令 $D=1+3x^2$。对 $1/3<x<1$，取
+
+$$
+\begin{aligned}
+G&=\frac{4D}{(1-x^2)^2(9x^2-1)},\\
+A_1&=\frac{4(3x-1)D}{3(1-x)(1+x)^2},&
+A_2&=\frac{4(3x+1)D}{3(1-x)^2(1+x)},\\
+A_3&=\frac{64x^2}{(1-x^2)D},&
+X_1&=\frac{(1-x)^3(3x+1)}{16x^3},\quad
+X_2=\frac{(1+x)^3(3x-1)}{16x^3}.
+\end{aligned}
+$$
+
+定义
+
+$$
+g=G\,dx^2+\sum_{i=1}^3A_i\sigma_i^2,\qquad
+e^0=\sqrt G\,dx,\quad e^i=\sqrt{A_i}\sigma_i,
+$$
+$$
+\omega_i=e^0\wedge e^i+e^j\wedge e^k,\qquad
+\Omega=\sqrt{X_1}\,\omega_1+\sqrt{X_2}\,\omega_2,
+$$
+
+其中 $(i,j,k)$ 循环排列。$X_1+X_2=1$ 给出 $|\Omega|^2=2$。令 $dr=\sqrt G\,dx$、$h_i=d\log\sqrt{A_i}/dr$，并按上述结构方程写 $de^i=h_i e^{0i}+2w_i e^{jk}$，则
+
+$$
+d(f_i\omega_i)
+=\bigl(f_i'+(h_j+h_k-2w_i)f_i\bigr)e^{0jk}=0,
+\qquad f_i=\sqrt{X_i}.
+$$
+
+这直接验证闭性。由同一标架的 Koszul 公式计算，曲率算子的混合块为零，$\mathcal R^-=-I$，$\operatorname{tr}\mathcal R^+=-3$，从而 $\operatorname{Ric}=-3g$、$W^-=0$。
+
+该结构光滑延拓到平面丛
 
 $$
 \mathrm{SL}(2,\mathbb R)\times_{\mathrm{SO}(2)}\mathbb R^2
@@ -63,9 +97,36 @@ $$
 |\nabla\Omega|^2=\frac{36(1-x^2)^3}{(1+3x^2)^3}.
 $$
 
-零截面处该值为 $32/3$；$x\to1$ 时径向距离趋于无穷。原稿分别证明零截面的光滑性、度量完备性及曲率不变量的非恒定性，因此所得度量非齐性。全部曲率计算另附[精确代数程序](../archive/originals/2026-10-08/Q4_independent_cartan.py)。构造的来源为研究系统 A01；对应原稿补充曲率计算、完备延拓和文献联系。
+**光滑性与完备性。** 将 $r=0$ 置于 $x=1/3$，有
 
-Fino 的 *Almost Kähler 4-dimensional Lie groups with $J$-invariant Ricci tensor*（2005）在 Corollary 2.1 之后询问：实四维 Lie 群上是否存在非不变、非 Ricci 平坦的严格几乎 Kähler–Einstein 度量。将上述结构拉回 $(\mathbb R^4,+)$，即给出这一存在性问句的肯定例子，并具有完备性。原稿对该问句的回答与历史优先权作分别处理。该例非紧且体积无限；闭负 Goldberg 研究所需的进一步条件来自整体紧致几何。
+$$
+x-\tfrac13=\tfrac29r^2+O(r^4),\qquad
+A_1=r^2+O(r^4),\qquad A_2=A_3=6+7r^2+O(r^4),
+$$
+$$
+A_2-A_3=\tfrac{10}{3}r^4+O(r^6),\qquad X_2=\tfrac83r^2+O(r^4).
+$$
+
+圆周参数取周期 $2\pi$。在局部纤维坐标 $z=re^{i\psi}$ 下，法向度量首项为 $|dz+iz\beta|^2$；水平余标架的权为二，其权四非等向项由 $r^4$ 的消失阶保证光滑。$\Omega$ 的混合项分别写成 $zF(r^2)$ 和 $z^3H(r^2)$ 乘以光滑形式，因而也穿过零截面。此处 $q=32/3$。
+
+当 $x\uparrow1$，$G\sim[2(1-x)^2]^{-1}$，所以 $r\to\infty$。在每个有界径向区间，$A_2,A_3$ 有正下界，故
+
+$$
+g\ge dr^2+c_R\pi^*g_{\mathbb H^2}\quad(0\le r\le R).
+$$
+
+有限长度曲线同时具有有界径向坐标和有界底空间距离，不能逃离紧集。双曲平面可缩，平面丛平凡，故总空间为 $\mathbb R^4$，并且度量完备。
+
+**非齐性。** 曲率不变量 $|W^+|^2$ 在零截面等于 $2/3$，在无穷端趋于 $6$，因而度量本身非齐性。此外
+
+$$
+\left|\operatorname{pr}_{n^\perp}(W^+n)\right|^2
+=\frac{9(1-x^2)^3(9x^2-1)}{(1+3x^2)^4}>0
+$$
+
+在正则区域成立：相容形式不是 Weyl 特征形式。完整曲率表达式与光滑延拓见[构造正文](../archive/originals/2026-10-08/Q4_Complete_Example_and_Fino_Question.tex)，其[精确代数程序](../archive/originals/2026-10-08/Q4_independent_cartan.py)从标架括号计算全部曲率分量。
+
+Fino 的 *Almost Kähler 4-dimensional Lie groups with $J$-invariant Ricci tensor*（2005）在 Corollary 2.1 之后询问：实四维 Lie 群上是否存在非不变、非 Ricci 平坦的严格几乎 Kähler–Einstein 度量。将上述结构拉回 $(\mathbb R^4,+)$，即给出这一存在性问句的肯定例子，并具有完备性。这里不主张历史上的首次解答。该例非紧且体积无限；闭负 Goldberg 问题仍涉及紧致性带来的整体条件。
 
 ## 扭率零点及零曲线
 
@@ -144,7 +205,14 @@ $$
 
 其中 $D$ 为诱导的典范 Hermitian 联络，$r$ 是横向曲率分量的法向导数。方程保留这一非齐次项，容许秩下降及负指数。
 
-同一批原稿还构造了实解析相容度量的有限阶模型，满足 $\operatorname{Ric}+g=O(|x|^6)$，且扭率具有孤立横截零点。该计算确立所列 Taylor 阶的相容性；精确 Einstein 局部解的存在性仍是独立问题。
+有限阶模型说明上述正指数与 Einstein 方程的低阶相容条件并不矛盾。在 Darboux 坐标中固定 $\Omega_0=dx_1\wedge dx_2+dx_3\wedge dx_4$，取对称矩阵多项式 $H=H_2+H_4+H_6$，使 $H\Omega_0+\Omega_0H=0$，并令 $g=e^H$。则 $g\Omega_0g=\Omega_0$，所以正定性和几乎 Kähler 相容性精确成立。所给有理系数满足
+
+$$
+\operatorname{Ric}(g)+g=O(|x|^6),\qquad
+\vartheta(x)=(x_1-x_4,-x_2-x_3,x_2/2,x_1/2)+O(|x|^3),
+$$
+
+故 $\det D\vartheta(0)=1/4>0$。完整系数及计算见[零点与 Weyl 方程正文](../archive/originals/2026-10-15/Goldberg_Torsion_Zeros_and_Weyl_Equation_20261015.tex) §3。更高阶的浮点重构保留了非退化零点，但未给出精确的全阶形式解。已成立的结论是显示 Taylor 阶内的相容性，不能由此推出精确 Einstein 局部解或闭流形上的实现。
 
 ## 行列式与 Green 势刚性
 
@@ -253,20 +321,49 @@ X\in\ker\mathsf C_g,\qquad X\succeq0,\qquad
 \operatorname{tr}X=1,\qquad\operatorname{rank}X=1.
 $$
 
-相应形式平行当且仅当 $\operatorname{tr}(HX)=0$。若 $\ker H\ne0$ 且度量负 Einstein，di Scala–Nagy 的唯一性定理保证全部相容形式平行。
+这里 $X=uu^T$、$|u|=1$ 对应 $\Omega=\sqrt2\sum_i u_i\psi_i$。因为
+
+$$
+\langle\mathsf C_g(X),X\rangle
+=\fint\langle B_g(x),X\rangle^2,
+$$
+
+核条件恰好表示 $|\Omega|^2\equiv2$；闭性来自各 $\psi_i$ 的调和性。并且
+
+$$
+\fint|\nabla\Omega|^2=2\operatorname{tr}(HX),
+$$
+
+所以相应形式平行当且仅当 $\operatorname{tr}(HX)=0$。若 $\ker H\ne0$ 且度量负 Einstein，di Scala–Nagy 的唯一性定理保证全部相容形式平行。
 
 [调和乘积原稿](../archive/originals/2026-10-13/Q4_Harmonic_Product_Reduction.tex)还计算了 Kähler 方向附近的范数方差：沿非平行调和方向，其阶为四阶，而导数能量为二阶。一般负 Einstein 度量的剩余问题是确定其调和乘积核中的秩一正矩阵是否均来自平行形式。
 
-### Einstein 路径与联络变分
+### 负 Kähler–Einstein 背景上的长度缺陷
 
-由 Sekigawa 恒等式和 Chern–Weil 公式，闭几乎 Kähler–Einstein 四维流形满足
+固定紧负 Kähler–Einstein 曲面或紧轨形 $(V,g,J,\omega)$，则
 
 $$
-s^2\operatorname{Vol}_g(M)-32\pi^2(2\chi+3\tau)
-=\frac32\int_Mq^2\,dV_g+16\int_M|B|^2\,dV_g.
+H_g^+=\mathbb R\omega\oplus\operatorname{Re}H^{2,0}(V).
 $$
 
-沿归一化为 $\operatorname{Ric}=-g$ 的光滑 Einstein 路径，体积不变。若路径起点为同取向 Kähler–Einstein 度量，则路径中每个承载相容几乎 Kähler 结构的成员均为 Kähler。
+对 $\beta\in\operatorname{Re}H^{2,0}(V)$，有精确的点态分解
+
+$$
+|b\omega+\beta|^2=2b^2+|\beta|^2.
+$$
+
+若 $\beta=\operatorname{Re}\theta$ 具有非零常模长，则全纯典范形式 $\theta$ 无零点，因而平凡化 $K_V$；这与 $c_1(V)=[\rho/(2\pi)]\ne0$ 矛盾。故常模长自对偶调和形式只能是 $\omega$ 的常数倍。
+
+令 $Q_0(\beta)=|\beta|^2-\fint|\beta|^2$。有限维空间 $\operatorname{Re}H^{2,0}(V)$ 的 $L^2$ 单位球面紧，且 $Q_0$ 在其上无零点，因此存在依赖该背景的 $c_V>0$，使
+
+$$
+\|Q_0(\beta)\|_{L^2}\ge c_V\|\beta\|_{L^2}^2.
+\tag{L}
+$$
+
+长度缺陷是二次的，其平方为四次；导数能量则仍为二次。这解释了为什么在 Kähler 方向附近，范数方差与扭率能量不能直接用同阶常数互相控制。
+
+### 联络变分
 
 对于 $\Lambda^+=\mathbb Rn\oplus n^\perp$ 上的 Levi-Civita 联络，写 $\mathcal A=D_0+C$，其中 $D_0$ 保持分裂，$C$ 为非对角部分。固定丛上的联络路径 $\mathcal A_t=D_0+tC$ 满足
 
@@ -276,7 +373,220 @@ $$
 +2(1-t^2)^2\|F_{D_0}^-\|_2^2.
 $$
 
-这是联络变分公式；度量变分还要求路径中的联络由相应度量的 Levi-Civita 联络诱导。两项结论的推导见[整体联系原稿](../archive/originals/2026-10-15/Goldberg_Global_Connections_20261015.tex)。
+这是固定丛上的联络变分公式。用于度量极值时，还须证明所选联络路径确实由度量的 Levi-Civita 联络诱导；单独改变分裂联络不提供度量下降方向。推导见[整体联系正文](../archive/originals/2026-10-15/Goldberg_Global_Connections_20261015.tex)。
+
+## Einstein 作用量、扭率能量与模空间
+
+对闭定向 Einstein 四维流形定义
+
+$$
+\widehat S(g)=V_g^{-1/2}\int_Ms_g\,dV_g,\qquad
+D_W(g)=\int_M\left(\frac{s_g^2}{24}-|W_g^+|^2\right)dV_g.
+$$
+
+Chern–Weil 恒等式给出
+
+$$
+D_W(g)=\frac{\widehat S(g)^2}{16}-2\pi^2T_+(M),
+\qquad T_+(M)=2\chi(M)+3\tau(M).
+\tag{A}
+$$
+
+若另有相容几乎 Kähler 形式，Sekigawa 型积分恒等式给出
+
+$$
+D_W(g)=\mathcal T(g,\Omega),\qquad
+\mathcal T(g,\Omega):=\int_M\left(|B|^2+\frac{3q^2}{32}\right)dV_g\ge0.
+\tag{T}
+$$
+
+等号恰好表示 $\nabla\Omega=0$。因而
+
+$$
+\widehat S(g)^2
+=32\pi^2T_+(M)+16\mathcal T(g,\Omega).
+$$
+
+这将非可积性写成可由度量本身计算的作用量超额。它同时说明，$D_W$ 的非负性依赖实际相容闭形式；一般 Einstein 度量不必具有该符号。恒等式的局部计算见[整体联系正文](../archive/originals/2026-10-15/Goldberg_Global_Connections_20261015.tex)。
+
+**命题：作用量在光滑 Einstein 模空间上局部常数。** 取保取向微分同胚和正缩放的商。$\widehat S$ 在该模空间的每个连通分支上为常数，并在每个紧子集上只有有限多个值。
+
+证明中须处理模空间的奇点，不能只考虑预先给定的光滑路径。Einstein 度量恰为 $\widehat S$ 的临界点。由 Koiso 的局部形变理论，在规范切片中 Einstein 解集是有限维实解析集；缩小邻域后，每一点可由有限段可微的次解析路径连接到基点。沿每一段，$d\widehat S/dt=0$，故 $\widehat S$ 局部常数。该结论下降到商空间；连通性和紧性分别给出上述两个推论。这里使用的是解析临界集的局部结构，无须假定所有无穷小 Einstein 形变可积。参见 Koiso 的[形变理论](https://www.i-repository.net/contents/osakacu/sugaku/111F0000002-01903-9.pdf)及 Besse，*Einstein Manifolds*，§12.G。
+
+若一个分支含有同取向负 Kähler–Einstein 度量，则该分支上 $D_W=0$；其中任何相容几乎 Kähler 结构均由式 (T) 得到可积性。若相容形式诱导相反取向，则同一分支上的扭率能量被固定为
+
+$$
+\mathcal T_-=12\pi^2\tau(M).
+$$
+
+因此 $\tau<0$ 时不存在这样的反取向结构，$\tau=0$ 时它必为 Kähler；$\tau>0$ 时等式只规定扭率能量，尚不给出矛盾。这是固定分支的结论，不把整个 Einstein 模空间假定为连通。
+
+## 非塌缩退化中的能量传递
+
+固定闭定向光滑四流形 $M$。设 $g_j$ 为 Einstein 度量，标量曲率统一为 $s_0<0$，体积有正下界、直径有上界。取一个收敛子列，其极限为具有有限奇点集 $S$ 的紧 Einstein 轨形 $(V,g_V)$，并在 $V\setminus S$ 上光滑收敛。这是四维 Einstein 轨形紧性所给的情形；几何背景见 [Ozuch 的非塌缩退化研究](https://arxiv.org/abs/1909.12957)。
+
+记 $m_+\ge0$ 为奇点处集中的自对偶 Weyl 总能量。它包括所有核心和颈部，无须先把集中分解为完整气泡树。标量固定和体积收敛给出
+
+$$
+D_W(V)=\lim_jD_W(g_j)+m_+.
+\tag{D}
+$$
+
+这里轨形的拓扑量采用曲率定义
+
+$$
+T_+^{\mathrm{curv}}(V)
+=\frac1{4\pi^2}\int_V\left(2|W^+|^2+\frac{s_0^2}{24}\right)dV,
+$$
+
+所以
+
+$$
+T_+(M)=T_+^{\mathrm{curv}}(V)+\frac{m_+}{2\pi^2}.
+$$
+
+$T_+^{\mathrm{curv}}$ 不应替换成轨形底空间的 $2\chi+3\tau$。
+
+### 自对偶 Weyl 与扭率不集中
+
+**定理。** 若每个 $g_j$ 还携带同取向相容几乎 Kähler 形式 $\Omega_j$，则极限携带光滑轨形几乎 Kähler 形式 $\Omega_V$，且
+
+$$
+\boxed{m_+=0,\qquad
+\mathcal T(g_j,\Omega_j)\longrightarrow\mathcal T(g_V,\Omega_V).}
+\tag{NC}
+$$
+
+证明有两个环节。首先，$d\Omega_j=d^*\Omega_j=0$ 和 $|\Omega_j|^2=2$ 使椭圆估计可在正则部分使用，得到光滑极限。提升到轨形奇点的穿孔四球后，用截断函数检验 $d+d^*$：因形式有界，截止误差由 $\|d\chi_\epsilon\|_{L^1}=O(\epsilon^3)$ 控制而趋零。弱方程因此穿过原点，椭圆正则性给出群不变的光滑延拓。闭性、自对偶性和常模长随之保留。
+
+其次，设 $m_{\mathcal T}\ge0$ 为扭率密度 $|B|^2+3q^2/32$ 的集中质量。两种密度的总质量有界：$B$ 是 $W^+$ 的块，而 $q=4t-2s_0/3$。在光滑流形与极限轨形上分别使用式 (T)，再与式 (D) 比较，得到
+
+$$
+\mathcal T(V)+m_{\mathcal T}
+=\lim_j\mathcal T(g_j)
+=\lim_jD_W(g_j)
+=D_W(V)-m_+
+=\mathcal T(V)-m_+.
+$$
+
+两项集中质量非负，故同时为零。这个证明依赖实际闭形式的可去奇点性质，以及两种集中质量在同一恒等式中的相反符号。
+
+在任意光滑曲率尺度极限上，缩放后的 Einstein 常数趋零；由 (NC) 其 $W^+$ 为零。相容形式的缩放极限仍闭、自对偶且长为 $\sqrt2$，Weitzenböck 公式进一步给出它平行。因此，实际出现的 ALE 核心在继承取向下为 Ricci-flat Kähler。反自对偶 Weyl 能量仍可集中；结论没有排除 Ricci-flat 气泡，也没有给出塌缩序列的紧性。
+
+### Kähler 轨形端点与小扭率序列
+
+设 $\mathcal C$ 是光滑 Einstein 模空间的连通子集，并有上述类型的序列趋于同取向 Kähler–Einstein 轨形。式 (A) 与作用量局部常数使 $D_W$ 在 $\mathcal C$ 上恒定，而式 (D) 给出
+
+$$
+D_W|_{\mathcal C}=-m_+\le0.
+$$
+
+于是 $\mathcal C$ 中每个几乎 Kähler–Einstein 度量必为 Kähler；若其中存在此类度量，则还必有 $m_+=0$。这是对一个具有指定端点的整个连通分支的限制。
+
+若严格几乎 Kähler–Einstein 度量序列满足 $\mathcal T_j\to0$，它必须离开光滑 Einstein 模空间的每个紧子集。若同时满足上述非塌缩和直径条件，则极限为 Kähler–Einstein 轨形，且至少有一个奇点。不同成员可能处于不同连通分支；作用量局部常数本身不排除这种序列。若能另证该轨形的充分小邻域只含有限个 Einstein 连通分支，则各分支的常作用量与极限连续性相结合，才排除严格正的扭率趋零。
+
+相同传递公式也限制一般型吹起流形的 Einstein 极限。对 $M=X\#k\overline{\mathbb{CP}}^{,2}$、$A=c_1^2(X)>0$，经典 Ricci 积分下界给出
+
+$$
+\widehat S(g)^2\ge32\pi^2(A+k),\qquad D_W(g)\ge4\pi^2k.
+$$
+
+故在上述非塌缩 Einstein 退化中
+
+$$
+D_W(V)\ge4\pi^2k+m_+.
+$$
+
+当 $k>0$ 时，极限主体不能是继承取向下的 Kähler 轨形。这限制了可能的退化几何；它不排除所有小吹起上的 Einstein 度量。
+
+## 负 Kähler–Einstein 端点附近的耦合形变
+
+### 二阶长度障碍
+
+设 $\operatorname{Ric}_g=Eg$、$E<0$，考虑满足耦合 Einstein、闭性、自对偶与常长度方程至二阶的形式展开
+
+$$
+g^{-1}g_t=I+tH_1+\frac{t^2}{2}H_2+O(t^3),\qquad
+\omega_t=\omega+t\beta_1+\frac{t^2}{2}\beta_2+O(t^3).
+$$
+
+在同时作用于度量与形式的规范变换后，$H_1$ 为反 $J$ 不变的 Kodaira–Spencer 方向，$\beta_1\in\operatorname{Re}H^{2,0}$。负 KE 的二阶 Einstein 正规形给出 $H_2^+=H_1^2$；这里上标 $+$ 表示 $J$-不变部分，而非 Hodge 自对偶部分。该输入及二阶 Einstein 可解性见 [Nagy，Theorem 1.6](https://arxiv.org/html/2603.09028)。
+
+形式与度量混合项可用全纯二形式的一级运输处理。若 $\beta_1=\operatorname{Re}\theta$，则 Kodaira–Spencer 闭性及 $\partial\bar\partial$ 引理产生一个闭形式变分 $\beta'$，满足
+
+$$
+(\beta')^-=-DP_g^-[H_1]\beta_1,\qquad
+\langle\omega,\beta'\rangle=0.
+$$
+
+因此，二阶闭性与自对偶方程的全部解为 $\beta_2=2\beta'+\gamma$，其中 $\gamma\in H_g^+$。反 $J$ 不变张量与 $\omega,\beta_1$ 的交叉收缩为零，度量二阶项又由 $H_2^+=H_1^2$ 抵消。长度方程遂化为
+
+$$
+|\beta_1|^2+\langle\omega,\gamma\rangle=0.
+$$
+
+后项为常数，所以唯一剩余的函数障碍是
+
+$$
+\operatorname{Ob}_2(H_1,\beta_1)
+=|\beta_1|^2-\fint|\beta_1|^2=Q_0(\beta_1).
+$$
+
+由式 (L)，它只能在 $\beta_1=0$ 时消失。故单独旋转相容形式或加入混合的一阶形变，不能产生严格几乎 Kähler 的二阶方向。纯度量方向仍需研究更高阶 Einstein 方程；二阶结论并未证明所有邻近 Einstein 度量都属于同一个 Kähler 族。
+
+### 自对偶调和形式的颈部迹
+
+对一个既定的轨形—ALE 退化，进一步假设每个核心为渐近 $\mathbb C^2/\Gamma$、$\Gamma\subset\mathrm{SU}(2)$ 的 Ricci-flat Kähler ALE 空间，且在继承取向下 $\Lambda^+$ 有全局平行标架。假设各颈部在共同平行标架中为平坦圆锥加误差 $e_j$，满足
+
+$$
+r^k|\nabla^ke_j|\le\delta_jw_j(r),\qquad
+\int_{\mathrm{neck}}w_j(r)\frac{dr}{r}\le C,\qquad\delta_j\to0.
+\tag{N}
+$$
+
+在 $A_1$ 圆锥上，闭自对偶齐次二形式的次数为
+
+$$
+\{\ldots,-6,-4\}\cup\{0\}\cup\{2,4,\ldots\}.
+$$
+
+次数零是孤立常模态。将闭自对偶方程投影到这一模态后，其穿越颈部的变化由 $C\delta_j\int w_j\,dr/r$ 控制，故同一常形式连接外部的 $\omega_V(p)$ 与核心无穷远的平行形式。核心上有界自对偶调和形式的系数是有界调和函数，由 Ricci 非负的 Liouville 定理为常数。由最大值点的吹起论证还得到
+
+$$
+\|\omega\|_{L^\infty(g_j)}\le C\|\omega\|_{L^2(g_j)},\qquad
+H^+_{g_j}\longrightarrow H^+_{g_V}.
+$$
+
+ALE 的 $L^2$ 上同调在反自对偶侧，故不增加自对偶调和维数。该估计使 (L) 的常数在这样的 KE 退化中保持正下界。若出现多个尺度，需要在每条颈部验证 (N)；扭率能量不集中本身并不提供这个带导数的匹配条件。
+
+### 常标量 Kähler 比较族的法向费用
+
+设光滑化中的消失类 $\delta$ 满足 $\delta^2=-2$、$c_1\cdot\delta=0$。对标量曲率 $s=4E<0$ 的 Kähler 比较度量，令 $\rho$ 为 Ricci 形式，$\rho_0=\rho-E\omega$。它闭、原始且反自对偶，因而调和，并有
+
+$$
+P(g)=2\|\rho_0\|_2^2
+=-2\bigl(2\pi c_1-E[\omega]\bigr)^2,\qquad
+\int_\delta\rho_0=-E\zeta_r,\quad \zeta_r:=\int_\delta\omega.
+\tag{C}
+$$
+
+若 $\theta=\delta^{1,1}$、$\theta^2\to-2$，且比较类写成
+$[\omega]=\lambda(2\pi c_1/E+\epsilon\theta)$，由常标量归一化求出 $\lambda$ 后，得到
+
+$$
+\frac{P(g)}{E^2\zeta_r^2}
+=-\frac2{\theta^2}-\frac{E^2\epsilon^2}{2\pi^2c_1^2}\longrightarrow1.
+$$
+
+这给出真实比较族的二次法向费用。对谐和原始 $(1,1)$ 形式 $\theta$，对应 Hermitian 无迹无散张量满足 $\Delta_EH_\theta=-2EH_\theta$；若线性化取 $\tfrac12\Delta_E$，相应特征值为 $-E$。该正下界只属于 Hermitian 扇区，不能代替反 Hermitian 核补空间的统一谱估计。
+
+要由 (C) 排除节点端点附近的所有非 Kähler Einstein 度量，还须在同一个有限维约化中建立：统一的补空间逆；所有实际局部周期方向上的比较族；比较度量与约化度量之间的加权 $o(|\zeta_r|)$ 误差；以及覆盖全部约化参数的相对 $C^0$ 匹配。满足这些条件时，单位 $L^2$ 法向测试下的约化障碍为
+
+$$
+\Lambda_I=E\zeta_r+o(|\zeta_r|).
+$$
+
+拓扑度保证比较族覆盖目标参数，Einstein 方程 $\Lambda_I=0$ 随即强迫 $\zeta_r=0$，再由 $[\rho_0]=0$ 和调和性得到 KE。一般多尺度节点、局部周期不能独立实现或补空间估计退化时，尚未建立这条全覆盖连接。公式 (C) 是精确结论；邻域内所有 Einstein 解的分类仍以这些匹配条件为前提。
 
 ## 完整 Weyl 耦合与开放部分
 
@@ -301,10 +611,17 @@ D^*DB+\left(\frac{3s}{2}+2q\right)B
 +2(vv^T)_0,
 $$
 
-其中 $[\cdot]_0$ 表示二维块的无迹部分。该方程光滑穿过扭率零集，并保留 $B$、$v$ 与几乎复结构导数之间的耦合；证明见[完整 Weyl 方程原稿](../archive/originals/2026-10-15/Goldberg_Torsion_Zeros_and_Weyl_Equation_20261015.tex) §5。
+其中 $[\cdot]_0$ 表示二维块的无迹部分。该方程光滑穿过扭率零集。与 $B$ 配对并分部积分，得到
 
-闭负 Goldberg 的一般情形仍开放于这些原稿。当前条件刚性定理说明，非 Kähler 候选须同时具有非空扭率零集、零点处严格为正的行列式 Green 势，以及符合上述微分方程的横向 Weyl 分量。零曲线的秩下降和孤立零点仍属于待处理的几何情形。
+$$
+\int_M\left[|DB|^2+\left(\frac{3s}{2}+2q\right)|B|^2
++4\sum_i\langle(D_iB)p_i,v\rangle-10\langle Bv,v\rangle\right]dV=0.
+$$
+
+在扭率零点，零阶系数 $3s/2$ 为负，源项仍耦合 $v$ 及其导数，因而这个恒等式并不具有直接迫使 $B=0$ 的正性。推导见[完整 Weyl 方程正文](../archive/originals/2026-10-15/Goldberg_Torsion_Zeros_and_Weyl_Equation_20261015.tex) §5。
+
+上述结果尚未解决闭负 Goldberg 的一般情形。严格非 Kähler 候选须同时具有非空扭率零集、零点处严格为正的行列式 Green 势、正的作用量超额，以及满足上述微分方程的横向 Weyl 分量。它所属的 Einstein 连通分支不含同取向 KE 度量，也不能以同取向 KE 轨形为非塌缩端点。不同分支之间的极限、塌缩与直径发散仍可能发生。
 
 沿 Green 势方法，需由原始 Einstein–几乎 Kähler 系统进一步控制零点处的整体曲率配对；沿调和乘积方法，需限制负 Einstein 度量所实现的秩一核；构造方向则需得到闭的精确 Einstein 相容结构。这些是同一闭问题的不同表述与研究入口。
 
-最新的公式衔接与来源对应见[10 月 15 日合并稿](../research/packages/Goldberg_Two_Conversations_Merged_20261015--5a0ab1f2/Goldberg_Two_Conversations_Merged_20261015.tex)。Armstrong 的零点存在性、Derdziński 的 Weyl 方程、Sekigawa 恒等式、第三 Gray 定理、di Scala–Nagy 唯一性及 Watson 的浸没刚性在各原稿中保留为经典输入。
+零点、Green 势与完整 Weyl 方程的连续证明见[合并正文](../research/packages/Goldberg_Two_Conversations_Merged_20261015--5a0ab1f2/Goldberg_Two_Conversations_Merged_20261015.tex)。Armstrong 的零点存在性、Derdziński 的 Weyl 方程、Sekigawa 恒等式、第三 Gray 定理、di Scala–Nagy 唯一性及 Watson 的浸没刚性作为经典输入保留各自出处。

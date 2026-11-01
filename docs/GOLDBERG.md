@@ -171,7 +171,7 @@ Z_i=\frac{f_i}{f_jf_k}.
 ```
 
 ```math
-\sum_{i<j}H_iH_j+\sum_iZ_i^2-2\sum_{i<j}Z_iZ_j-3u=0.
+\sum_{i\lt j}H_iH_j+\sum_i Z_i^2-2\sum_{i\lt j}Z_iZ_j-3u=0.
 ```
 
 初项为 $`f_i=1+(1/6+d_i)u+\cdots`$、$`\sum_i d_i=0`$。写 $`\Omega=\sum_i x_i\omega_i`$、$`X_i=x_i^2`$，闭性及常长度条件恰为

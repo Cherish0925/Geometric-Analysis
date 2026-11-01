@@ -456,7 +456,7 @@ $`\varepsilon_N-(T_+/A-2/3)_+`$。
 \boxed{\mathcal J(g)+\left(\frac{T_+}{A}-\frac23\right)_+
 \ge\frac{c_*}{1+\nu/(2\pi^2)},\qquad
 c_*=\min\{1,4c_{8,\mathrm{raw}}/27\}.}
-\tag{N1-\nu}
+\tag{N1-ν}
 ```
 
 因此 $`a^2\ge0`$ 已足以使这条临界间隙不损失常数，包括 $`0\le a^2<T_+`$ 的情形。

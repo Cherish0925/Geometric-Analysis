@@ -43,11 +43,11 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-We study normalized Einstein defects on closed oriented four-manifolds carrying actual Seiberg--Witten fields. The central estimates compare the covariant derivatives of the field with the curvature of the same metric; the resulting coercivity is stronger than the corresponding scalar Chern--Weil budgets. A finite-parameter estimate gives a uniform trace-free Ricci gap at the classical topological ratio $2/3$, with quantitative extensions for negative class square and class-square shortfall. A calibrated estimate controls scalar excess linearly and produces a linear obstruction in a balanced topological regime. For structures admitting solutions throughout a conformal class, a fifth-power determinant line bundle yields the parameter endpoint estimate under any fixed finite Euler density. We explain the logarithmic regularization underlying its topological contradiction, derive two uniform families of endpoint estimates, and give the two-orientation deduction for surface bundles and Kodaira slopes. Static gaps also imply quantitative scalar-curvature growth along normalized Ricci flow. The distinction between one-solution and full-conformal inputs is maintained throughout. The unrestricted-density endpoint and the determination of optimal variational constants remain separate questions. Detailed field calculations are collected in the companion proofs cited at the points where they enter.
+We study normalized Einstein defects on closed oriented four-manifolds admitting solutions of the Seiberg--Witten equations. The central estimates compare the covariant derivatives of the field with the curvature of the same metric; the resulting coercivity is stronger than the corresponding scalar Chern--Weil inequalities. A finite-parameter estimate gives a uniform trace-free Ricci gap at the classical topological ratio $2/3$, with quantitative extensions for negative class square and class-square shortfall. A calibrated estimate controls scalar excess linearly and produces a linear obstruction in a balanced topological regime. For structures admitting solutions throughout a conformal class, a fifth-power determinant line bundle yields the parameter endpoint estimate under any fixed finite Euler density. We explain the logarithmic regularization underlying its topological contradiction, derive two uniform families of endpoint estimates, and give the two-orientation deduction for surface bundles and Kodaira slopes. Static gaps also imply quantitative scalar-curvature growth along normalized Ricci flow. The critical-ratio estimates require a solution on the negative Yamabe representative, whereas the endpoint estimates require solvability throughout the conformal class. The unrestricted-density endpoint and the determination of optimal variational constants remain separate questions. Detailed field calculations are collected in the companion proofs cited at the points where they enter.
 \end{abstract}
 \tableofcontents
 
-\section{Geometric problem and actual field input}
+\section{Geometric problem and Seiberg--Witten hypotheses}
 Let $M$ be a closed, connected, oriented smooth four-manifold. For a smooth Riemannian metric $g$, set
 \begin{gather}
  T_\pm=2\chi(M)\pm3\tau(M),\qquad V_g=\Vol_g(M),\qquad
@@ -74,8 +74,8 @@ Our principal scale-invariant functionals are
 \end{equation}
 The first is defined when $R(g)>0$. Their infima measure approximation to the Einstein equation in an integral sense. They do not, by definition, assert convergence to an Einstein metric in a geometric topology.
 
-\begin{definition}[One-solution input]\label{def:one}
-A conformal class $[g]$ has one-solution input with budget $A>0$ if its Yamabe constant is negative and its constant-scalar-curvature representative $\widehat g$, normalized by $s_{\widehat g}=-4$, carries an unperturbed Seiberg--Witten solution for a $\Sc$ structure with determinant line bundle $L$. In the normalization used here,
+\begin{definition}[Solvability on the Yamabe representative]\label{def:one}
+A conformal class $[g]$ satisfies the single-solution hypothesis with projection bound $A>0$ if its Yamabe constant is negative and its constant-scalar-curvature representative $\widehat g$, normalized by $s_{\widehat g}=-4$, carries an unperturbed Seiberg--Witten solution for a $\Sc$ structure with determinant line bundle $L$. In the normalization used here,
 \begin{equation}
  D_{\Acal}\Phi=0,\qquad F_{\Acal}^+=2i\sigma(\Phi),\qquad
  p=(a_g^+)^2=(a_{\widehat g}^+)^2\ge A,
@@ -85,15 +85,15 @@ A conformal class $[g]$ has one-solution input with budget $A>0$ if its Yamabe c
 The quadratic map $\sigma$ has the normalization in the companion field calculations \cite{Parameter}. The symbol $A$ is a real lower bound and is distinct from the connection $\Acal$.
 \end{definition}
 
-\begin{definition}[Full-conformal input]\label{def:full}
-Full-conformal input means that the same $\Sc$ structure has an actual unperturbed solution for every smooth metric in the specified conformal class, with $p\ge A>0$. A statement for all metrics on $M$ requires the relevant input in every conformal class, with uniform numerical budgets. The chosen structure may vary between classes.
+\begin{definition}[Solvability throughout a conformal class]\label{def:full}
+The conformal solvability hypothesis means that the same $\Sc$ structure has an unperturbed solution for every smooth metric in the specified conformal class, with $p\ge A>0$. A statement for all metrics on $M$ requires the relevant solvability hypothesis in every conformal class, with uniform bounds on the projected class squares. The chosen structure may vary between classes.
 \end{definition}
 
-Full-conformal input implies negativity of the Yamabe class: an unperturbed solution at a nonnegative constant-scalar-curvature representative has vanishing spinor by the integrated Weitzenb\"ock identity. Then $F^+_{\Acal}=0$, contradicting $p>0$. This is also the reason that Ricci-flat metrics are excluded in the all-metric applications below. One must not instead set $\J=0$ at a Ricci-flat metric: there $R=0$ and $\J$ is undefined, whereas $\E=4$.
+Conformal solvability implies negativity of the Yamabe class: an unperturbed solution at a nonnegative constant-scalar-curvature representative has vanishing spinor by the integrated Weitzenb\"ock identity. Then $F^+_{\Acal}=0$, contradicting $p>0$. This is also the reason that Ricci-flat metrics are excluded in the all-metric applications below. One must not instead set $\J=0$ at a Ricci-flat metric: there $R=0$ and $\J$ is undefined, whereas $\E=4$.
 
-The distinction between Definitions~\ref{def:one} and \ref{def:full} is substantive. The critical-ratio and linear estimates below use Definition~\ref{def:one}. The finite-density endpoint and the topological-ratio endpoint use Definition~\ref{def:full}. Ordinary monopole classes, special monopole classes, Bauer--Furuta nonvanishing, and $\operatorname{Pin}^{-}(2)$ nonvanishing supply fields in their respective ranges \cite{LeBrun2001,Kotschick2003,IshidaLeBrun,Pin}. The analytical conclusions do not by themselves establish these nonvanishing hypotheses.
+The distinction between Definitions~\ref{def:one} and \ref{def:full} is substantive. The critical-ratio and linear estimates below use Definition~\ref{def:one}. The finite-density endpoint and the topological-ratio endpoint use Definition~\ref{def:full}. Ordinary monopole classes, special monopole classes, Bauer--Furuta nonvanishing, and $\operatorname{Pin}^{-}(2)$ nonvanishing establish solvability in their respective ranges \cite{LeBrun2001,Kotschick2003,IshidaLeBrun,Pin}. Each application uses the corresponding nonvanishing theorem.
 
-Classical gauge-theoretic estimates already give sharp integral curvature inequalities without assumed diameter, noncollapse, or Sobolev bounds \cite{LeBrun2001,LeBrunConvex}. The issue considered here is the persistence of separation where their numerical lower bounds degenerate, and the additional restrictions imposed by the differential compatibility of an actual field with its metric.
+Classical gauge-theoretic estimates already give sharp integral curvature inequalities without assumed diameter, noncollapse, or Sobolev bounds \cite{LeBrun2001,LeBrunConvex}. The issue considered here is the persistence of separation where their numerical lower bounds degenerate, and the additional restrictions imposed by the differential compatibility of a Seiberg--Witten solution with its metric.
 
 \section{Exact conformal reduction}
 Let $I(g)=\int_Ms_g\,dV_g$. Completing the square in $1/\lambda$ gives
@@ -143,8 +143,8 @@ The lower bound follows from \eqref{eq:Jconformal}. If $\J(\widehat g)>1$, choos
 
 When $\J(\widehat g)<1$, equality in the first assertion occurs precisely for constant conformal factors. When $\J(\widehat g)=1$, the whole conformal class has $\J=1$. No compactness of minimizing sequences is involved. These comparisons are developed in \cite{Conformal,N1source}.
 
-\section{Classical budgets and the finite-parameter estimate}
-Under the appropriate actual monopole input, the classical scalar and mixed estimates are
+\section{Classical curvature inequalities and the finite-parameter estimate}
+Under the appropriate monopole solvability hypothesis, the classical scalar and mixed estimates are
 \begin{equation}
  S\ge32\pi^2p,\qquad \sqrt S+\sqrt{6W_+}\ge6\sqrt2\pi\sqrt p.
  \label{eq:classical}
@@ -154,9 +154,9 @@ In particular, for $\beta>0$ define
  D_\beta=(1+\beta^{-1})S+6(\beta+1)W_+-72\pi^2p\ge0.
  \label{eq:Dbeta}
 \end{equation}
-The negativity and full-conformal statements of Section~1 ensure the classical all-metric estimates wherever they are used. On the negative Yamabe representative, the one-solution decomposition below supplies the required nonnegativity directly; conformal invariance of $W_+$ and $p$, together with \eqref{eq:delta}, then transfers it to the class.
+The negativity and conformal solvability statements of Section~1 ensure the classical all-metric estimates wherever they are used. On the negative Yamabe representative, the single-solution decomposition below gives the required nonnegativity directly; conformal invariance of $W_+$ and $p$, together with \eqref{eq:delta}, then transfers it to the class.
 
-\subsection{What follows from the numerical budgets}
+\subsection{Consequences of the classical curvature inequalities}
 Combining \eqref{eq:CW} and \eqref{eq:Dbeta} gives the exact identity
 \begin{equation}
  D_\beta=(\beta+1)\left\{\frac{8-\beta}{8\beta}S+\frac32P+12\pi^2T_+\right\}-72\pi^2p.
@@ -169,7 +169,7 @@ If $t=T_+/A\in(0,2/3)$, take $\beta+1=6/t$. The topological term is at most $72\
 \]
 If $T_+\le0$, letting $\beta\to\infty$ gives $P\ge S/12$ and $\J\ge1$. In contrast, the displayed positive lower bound tends to zero as $t\uparrow2/3$.
 
-\subsection{An exact decomposition for one actual solution}
+\subsection{An exact decomposition for a single solution}
 On $s=-4$, put $\rho=|\Phi|^2$, $\psi=2\sqrt2\sigma(\Phi)$, and $\zeta=\langle\Phi,\nabla_{\Acal}\Phi\rangle$. The maximum principle gives $0\le\rho\le2$. Let
 \begin{gather}
  c_\beta=\frac{4(\beta+1)}{3\beta},\qquad
@@ -195,7 +195,7 @@ Here $C_\beta(0)=2/3$ and $C_\beta$ is increasing on $[0,2]$. This identity is p
 \end{equation}
 
 \begin{theorem}[Finite-parameter analytical estimate]\label{thm:parameter}
-There is a universal $c_{\rm raw}>0$ such that, under the one-solution input, on $s=-4$,
+There is a universal $c_{\rm raw}>0$ such that, under the single-solution hypothesis, on $s=-4$,
 \begin{equation}
  (1+b_a)\left(r+\frac{D_\beta}{\beta V}\right)
  \ge c_{\rm raw}\frac{(\beta-2)^2}{\beta^4},\qquad
@@ -218,7 +218,7 @@ The connection on $\Lambda^+$ involves the self-dual curvature block and trace-f
  \norm{\nabla u}_4^2\le4\norm{u}_\infty\norm{\nabla^2u}_2,
  \label{eq:interpolation}
 \end{equation}
-this permits weak Bianchi testing against the curvature model selected by the actual solution. The calibration is essential: the background curvature annihilates the appropriate spinor, so it is not estimated as an arbitrary error.
+this permits weak Bianchi testing against the curvature model selected by the solution. The calibration is essential: the background curvature annihilates the appropriate spinor, so it is not estimated as an arbitrary error.
 
 More precisely, write $t=1/\beta$, $d_\beta=D_\beta/V$ and $\omega=\sqrt2\psi/c_\beta$. Then
 \[
@@ -240,7 +240,7 @@ On $r\le1$ the factor is bounded universally; on $r>1$ the asserted lower bound 
 
 \section{A critical-ratio gap and class-square dependence}
 \begin{theorem}[Critical-ratio gap]\label{thm:N1}
-Under the one-solution input and $a^2\ge T_+$, there is a universal $\varepsilon_N>0$ such that every $g$ in the class satisfies
+Under the single-solution hypothesis and $a^2\ge T_+$, there is a universal $\varepsilon_N>0$ such that every $g$ in the class satisfies
 \begin{equation}
  \J(g)+\left(\frac{T_+}{A}-\frac23\right)_+\ge\varepsilon_N.
  \label{eq:N1}
@@ -254,7 +254,7 @@ Set $d=(T_+/A-2/3)_+$. At $\beta=8$, \eqref{eq:D-CW} becomes
  D_8=108\pi^2(T_+-2p/3)+\frac{27}{2}P.
  \label{eq:D8}
 \end{equation}
-The scalar budget on $s=-4$ gives $A/V\le1/(2\pi^2)$. Since $p\ge A$,
+The scalar-curvature estimate on $s=-4$ gives $A/V\le1/(2\pi^2)$. Since $p\ge A$,
 \[
  r+\frac{D_8}{8V}\le\frac{43}{16}r+\frac{27}{4}d.
 \]
@@ -273,9 +273,9 @@ This gives the stated constant.
 
 This argument identifies the parameter $8$ intrinsically: the ratio of the Weyl and scalar coefficients in $D_\beta$ is $6\beta$, while the corresponding ratio in \eqref{eq:CW} is $48$. The finite-parameter theorem therefore controls the classical critical ratio itself. The connection and applications are developed in \cite{N1source}.
 
-The class-square assumption can also be retained as an explicit cost, instead of imposed as a sign restriction.
+The next estimate expresses the dependence on the class square without a sign restriction.
 \begin{theorem}[Negative square and shortfall]\label{thm:shortfall}
-Under the one-solution input, without $a^2\ge T_+$, put
+Under the single-solution hypothesis, without $a^2\ge T_+$, put
 \[
  \nu=\frac{(-a^2)_+}{A},\qquad y=\frac{(T_+-a^2)_+}{A}.
 \]
@@ -293,7 +293,7 @@ Let $c_{8,\rm raw}=9c_{\rm raw}/1024$. In the branch $\J(g)<1$, the previous pro
 \[
  (1+b_a)(\J(g)+d)\ge4c_{8,\rm raw}/27.
 \]
-The scalar budget gives $b_a\le\nu/(2\pi^2)$, proving \eqref{eq:N1nu} after inclusion of $\J\ge1$. For the second version, \eqref{eq:CW} yields
+The scalar-curvature estimate gives $b_a\le\nu/(2\pi^2)$, proving \eqref{eq:N1nu} after inclusion of $\J\ge1$. For the second version, \eqref{eq:CW} yields
 \[
  (-a^2)_+\le\frac{P}{8\pi^2}+(T_+-a^2)_+.
 \]
@@ -311,7 +311,7 @@ For a blow-up of an admissible minimal general-type surface with $A=c_1^2(X)>0$ 
 \[
  \J(g)+(1/3-k/A)_+\ge\varepsilon_N.
 \]
-Thus the analytical estimate extends the classical threshold into a neighborhood below $k/A=1/3$. This application retains the nonvanishing and positive-budget hypotheses of the surface theory. Zero-budget cases, including Ricci-flat examples, are not included by substitution $A=0$.
+Thus the analytical estimate extends the classical threshold into a neighborhood below $k/A=1/3$. This application retains the nonvanishing and positive projection-bound hypotheses of the surface theory. The condition $A>0$ excludes cases with a zero projection bound, including Ricci-flat examples.
 
 \section{Calibrated linear coercivity}
 Define the scalar excess and the class-square shortfall by
@@ -320,7 +320,7 @@ Define the scalar excess and the class-square shortfall by
  \label{eq:I41notation}
 \end{equation}
 \begin{theorem}[Linear coercivity]\label{thm:I41}
-There are universal constants $C,C_T>0$ such that the one-solution input implies
+There are universal constants $C,C_T>0$ such that the single-solution hypothesis implies
 \begin{equation}
  \Sigma\le C\bigl(\Pi+\sqrt{\Pi Y}\bigr),\qquad
  (p-T_+)_+\le C_T\bigl(\Pi+\sqrt{\Pi Y}\bigr).
@@ -412,7 +412,7 @@ For $L_h=1+(1+c')h$ and $U>0$, elimination of $e$ proves
 Indeed, when $\J<1$, divide \eqref{eq:lowerenergy} by $1+\J/18$ and \eqref{eq:upperenergy} by $1-\J$, and cross multiply. If $\J\ge1$, the displayed bound is automatic. If $U\le0$, \eqref{eq:upperenergy} itself implies $\J\ge1$.
 
 \begin{corollary}[Balanced linear gap]\label{cor:linear}
-Under the one-solution input, $a^2\ge T_+$, and $0<h\le1/3$, there is a universal $c>0$ such that
+Under the single-solution hypothesis, $a^2\ge T_+$, and $0<h\le1/3$, there is a universal $c>0$ such that
 \begin{equation}
  \J+(U-1-h)_+\ge ch.
  \label{eq:linearwindow}
@@ -423,9 +423,9 @@ If $y=Y/A$ is retained, the analogous lower bound has the form $ch^2/(h+y)$.
 If $(U-1-h)_+\ge c'h/2$, the first assertion is immediate. Otherwise $L_h-U\ge c'h/2$ and the denominator in \eqref{eq:linear-explicit} is uniformly bounded for $h\le1/3$. For the shortfall version, apply the second part of \eqref{eq:I41} to $A(h+z)$ and solve the inequality $h+z\le C(x+\sqrt{xy})$, where $x=\Pi/A$. It gives $x\ge c(h+z)^2/(h+z+y)$. Substitution into \eqref{eq:energyalgebra}, followed by the same two-orientation comparison, proves the asserted scale; see \cite{Conformal} for its detailed constants.
 \end{proof}
 
-Thus $U_j=1+h_j+O(h_j^2)$ with $h_j\downarrow0$ forces $\inf\J\ge c_2h_j$. This is a different parameter range from the critical-ratio gap: it concerns $T_+/A\to1$ together with a balanced opposite-orientation budget. Matching the order in such a family does not determine its best coefficient. In particular, a standard upper construction with coefficient $4$ does not establish optimality, and the strict improvements obtained in the construction manuscripts must be retained.
+Thus $U_j=1+h_j+O(h_j^2)$ with $h_j\downarrow0$ forces $\inf\J\ge c_2h_j$. This is a different parameter range from the critical-ratio gap: it concerns $T_+/A\to1$ together with a balanced curvature bound in the opposite orientation. Matching the order in such a family does not determine its best coefficient. In particular, a standard upper construction with coefficient $4$ does not establish optimality, and the companion constructions give strictly smaller upper bounds in the specified families.
 
-\subsection{A precise distinction from scalar budget optimization}
+\subsection{Comparison with optimization of the scalar curvature bounds}
 The following formal data satisfy the classical integral constraints but fail linear coercivity. For $0<h\le1/4$, set
 \begin{gather*}
  p=A,\quad T_+=A(1-h),\quad T_-=A(1+h)/3,\\
@@ -443,7 +443,7 @@ For the strict inequality one uses
  4X^2Z^2-(9-X^2-Z^2)^2
  =\frac94h^2(32-40h-25h^2)>0.
 \]
-Nevertheless $\J=4h^2/(1+h+3h^2)$, $D_2=108\pi^2Ah^2$, while $\Sigma=32\pi^2A(h+2h^2)$. Hence $\Sigma\le C(P+D_2)$ fails uniformly. These data are not a construction of metrics. They show exactly why the displayed numerical budgets alone cannot imply the linear theorem.
+Nevertheless $\J=4h^2/(1+h+3h^2)$, $D_2=108\pi^2Ah^2$, while $\Sigma=32\pi^2A(h+2h^2)$. Hence $\Sigma\le C(P+D_2)$ fails uniformly. These data are not a construction of metrics. They show exactly why the displayed numerical inequalities alone cannot imply the linear theorem.
 
 \section{Finite Euler density and the parameter endpoint}
 The endpoint functional is
@@ -454,7 +454,7 @@ The endpoint functional is
 It differs from $P/V+D_\beta/(\beta V)$ in Theorem~\ref{thm:parameter}. On $s=-4$, its first term is $P/V$.
 
 \begin{theorem}[Finite-density endpoint]\label{thm:FD}
-Assume full-conformal input, $p\ge A>0$, and $a^2\ge T_+$. For each fixed $B\ge0$ there exists $c_{\rm FD}(B)>0$ such that
+Assume conformal solvability, $p\ge A>0$, and $a^2\ge T_+$. For each fixed $B\ge0$ there exists $c_{\rm FD}(B)>0$ such that
 \begin{equation}
  \frac{\chi(M)}A\le B
  \quad\Longrightarrow\quad
@@ -479,7 +479,7 @@ when the denominator is positive. Thus it suffices to consider $s_j=-4$ and
  \frac{P_j+D_{\beta_j}}{V_j}\longrightarrow0.
  \label{eq:zeroend}
 \end{equation}
-The scalar budget gives $A_j/V_j\le1/(2\pi^2)$. Gauss--Bonnet gives
+The scalar-curvature estimate gives $A_j/V_j\le1/(2\pi^2)$. Gauss--Bonnet gives
 \begin{equation}
  \av{|W_j^-|^2}\le\frac{8\pi^2\chi(M_j)}{V_j}-\frac23+\frac{P_j}{2V_j}
  \le4B-\frac23+o(1).
@@ -487,7 +487,7 @@ The scalar budget gives $A_j/V_j\le1/(2\pi^2)$. Gauss--Bonnet gives
 \end{equation}
 Consequently this sequence has a bounded averaged opposite-orientation Weyl energy.
 
-The actual-field estimates of \cite{FDstrong,FDresolvent,FDweak} have the following precise role. Let $\mathfrak t_j\in\Gamma(S^-\otimes L)$ be the cubic torsion of the positive solution. A fixed smooth bounded radial truncation $\mathcal T$, equal to the identity near the limiting amplitude, defines a section of the \emph{same} bundle by
+The Seiberg--Witten estimates of \cite{FDstrong,FDresolvent,FDweak} have the following precise role. Let $\mathfrak t_j\in\Gamma(S^-\otimes L)$ be the cubic torsion of the positive solution. A fixed smooth bounded radial truncation $\mathcal T$, equal to the identity near the limiting amplitude, defines a section of the \emph{same} bundle by
 \[
  (4+\nabla^*\nabla)v_j=6\mathcal T(\mathfrak t_j).
 \]
@@ -575,16 +575,16 @@ On the nonzero set of $u_j$, its unit normalization defines a real connection fo
 For the first term, pair the bounded model with the $L^2$ curvature on the set $Z_j$ of vanishing measure, and pair $e_j$ with the bounded $L^2$ curvature. For the second, use \eqref{eq:transition} for the bounded model, and the second estimate of \eqref{eq:transition} for the error. Both terms tend to zero.
 \end{proof}
 
-Apply the lemma to $K_j=L_j^5$ and $\omega_j=F_j$. The actual curvature fitting supplies the required decomposition of $F_j$, so its Chern square divided by volume tends to zero, contradicting \eqref{eq:positivechern}. This proves the finite-density exclusion, and \eqref{eq:kappaconformal} completes the passage to the original metrics.
+Apply the lemma to $K_j=L_j^5$ and $\omega_j=F_j$. The approximation of the connection curvature gives the required decomposition of $F_j$, so its Chern square divided by volume tends to zero, contradicting \eqref{eq:positivechern}. This proves the finite-density exclusion, and \eqref{eq:kappaconformal} completes the passage to the original metrics.
 
-There is a second completion using the weak Cauchy--Riemann equation of the remaining $L^5$ component and the positive operator $\nabla^*\nabla+10/3$ \cite{FDfifth}. It uses the same field prerequisites. The two arguments should therefore be regarded as two proofs of the final exclusion, not as independent sources of the preceding strong-field estimates.
+There is a second completion using the weak Cauchy--Riemann equation of the remaining $L^5$ component and the positive operator $\nabla^*\nabla+10/3$ \cite{FDfifth}. It uses the same field prerequisites. Both arguments use the preceding estimates for the same solution.
 
-The polynomial dependence in Theorem~\ref{thm:FD} requires a quantitative version of those estimates. In the notation of \cite{FDrates}, if $x=\kappa_\beta+\beta^{-2}$ and $\gamma>0$ is a fixed exponent, the actual-field error obeys $\mathfrak e_D\le Cx^{\gamma/16}$. The fifth-line estimate excludes a sequence with $\mathfrak e_D(1+b)^{3/2}\to0$, $b=\av{|W^-|^2}$. This implies $x\ge c(1+b)^{-24/\gamma}$ by contradiction, and then the stated polynomial density bound using \eqref{eq:WminusB} and the finite-parameter estimate. Its exponent is not asserted to be optimal.
+The polynomial dependence in Theorem~\ref{thm:FD} requires a quantitative version of those estimates. In the notation of \cite{FDrates}, if $x=\kappa_\beta+\beta^{-2}$ and $\gamma>0$ is a fixed exponent, the error in the field estimates satisfies $\mathfrak e_D\le Cx^{\gamma/16}$. The fifth-line estimate excludes a sequence with $\mathfrak e_D(1+b)^{3/2}\to0$, $b=\av{|W^-|^2}$. This implies $x\ge c(1+b)^{-24/\gamma}$ by contradiction, and then the stated polynomial density bound using \eqref{eq:WminusB} and the finite-parameter estimate. Its exponent is not asserted to be optimal.
 
 \section{Uniform endpoint families beyond a fixed density statement}
 \subsection{A fixed topological ratio below three quarters}
 \begin{theorem}\label{thm:Lprime}
-Under full-conformal input, $p\ge A>0$, $a^2\ge T_+$, and
+Under conformal solvability, $p\ge A>0$, $a^2\ge T_+$, and
 $T_+/A\le\theta<3/4$, there exists $c_L(\theta)>0$ such that
 \begin{equation}
  \kappa_\beta(g)\ge c_L(\theta)\qquad(\beta\ge2)
@@ -617,9 +617,9 @@ $\lim_{\beta\to\infty}a=1/12-\theta/9>0$. Thus, for $\theta<2/3$, this bound is 
 \end{proof}
 The numbers $2/3$, $8$, and $3/4$ arise respectively from the discriminant, its double root, and the leading coefficient. This is an estimate for \eqref{eq:kappa}; its $D_\beta/V$ term cannot be deleted to claim a pure Ricci gap in this entire range.
 
-\subsection{A geographical partition}
+\subsection{An estimate in terms of characteristic numbers}
 \begin{corollary}\label{cor:GEO}
-Suppose a family satisfies the full-conformal hypotheses of Theorem~\ref{thm:FD} and
+Suppose a family satisfies the conformal solvability hypotheses of Theorem~\ref{thm:FD} and
 \[
  Q=A-T_+\ge0,\qquad \chi(M)\le CA+Q,
 \]
@@ -643,14 +643,14 @@ If $A=1$, integrality gives $p_g\le2$ and $\chi(X)\le35$. If $A\ge2$, then $\chi
  M=X\#k\overline{\mathbb{CP}}^{\,2}\#\ell(S^1\times S^3),
  \qquad Q=k+4\ell,
 \]
-one has $\chi(M)\le35A+Q$. Whenever the stated actual-field supply holds, Corollary~\ref{cor:GEO} gives the single constant
+one has $\chi(M)\le35A+Q$. Whenever the stated Seiberg--Witten solvability hypothesis holds, Corollary~\ref{cor:GEO} gives the single constant
 \[
  \min\{\varepsilon_N,c_{\rm FD}(106/3)\}
 \]
 independently of the surface and surgery numbers. With several positive-square general-type summands, replace $A$ by their total square and $Q$ by $k+4\ell+4(r-1)$; the same conclusion holds when the corresponding nonvanishing theorem supplies the required classes. This geographical argument, proved in \cite{GEO}, allows unbounded $\chi/A$ in parts of the family. It does not remove every topological condition from the endpoint problem.
 
 \section{Two orientations and surface-bundle slopes}
-We now give a global application in which the fixed value $B=2$ of the finite-density theorem suffices. This section is a deduction from Theorem~\ref{thm:FD}; its field-theoretic foundation is therefore the finite-density proof package, not an additional independent analytical theorem.
+For surface bundles, the finite-density theorem applies with the fixed value $B=2$. We combine Theorem~\ref{thm:FD} with the Hodge pairing between the two orientations.
 
 \begin{theorem}[Surface-bundle gap]\label{thm:SB}
 Let $\Sigma_f\to M\to\Sigma_b$ be a smooth oriented surface bundle with $f,b\ge2$. Then
@@ -672,14 +672,14 @@ The canonical classes provided by the symplectic structures in the two orientati
  a^2=e(2+t),\qquad b^2[M]=-e(2-t),\qquad a\cdot b=-et.
  \label{eq:bundleclasses}
 \end{equation}
-The symplectic construction and its actual monopole supply are the classical inputs described in \cite{Kotschick1999,TwoOrientation}. Here $b_1(M)\ge2b\ge4$, and the positive orientation has $b_2^+>1$. The inequalities below imply $t<2$ in the only small-defect range that needs proof, giving the same condition in the opposite orientation.
+The symplectic construction and the resulting existence of monopole solutions are the classical inputs described in \cite{Kotschick1999,TwoOrientation}. Here $b_1(M)\ge2b\ge4$, and the positive orientation has $b_2^+>1$. The inequalities below imply $t<2$ in the only small-defect range that needs proof, giving the same condition in the opposite orientation.
 
 Use $s_{\widehat g}=-4$ and set
 \[
  j=\J(\widehat g),\qquad u=V/(2\pi^2e),\qquad
  r=P/V=4j/(4-j),\qquad w=W_-/V.
 \]
-The positive-orientation scalar budget and \eqref{eq:CW} give
+The scalar-curvature estimate in the positive orientation and \eqref{eq:CW} give
 \begin{equation}
  2+t\le U:=\frac{(a^+)^2}{e}\le u,\qquad
  w=\frac{2-t}{u}-\frac13+\frac{j}{4-j}\ge0.
@@ -691,7 +691,7 @@ For $j<1$, these imply
  t\le1+\frac{9j}{16-7j}\le1+j.
 \]
 Set $Z=\norm{b^-}^2/e$, $X=\norm{a^-}^2/e=U-(2+t)$ and
-$Y=\norm{b^+}^2/e=Z-(2-t)$. The opposite-orientation scalar budget and Hodge Cauchy--Schwarz yield
+$Y=\norm{b^+}^2/e=Z-(2-t)$. The scalar-curvature estimate in the opposite orientation and Hodge Cauchy--Schwarz yield
 \begin{equation}
  2-t\le Z\le u,\qquad t\le\sqrt{UY}+\sqrt{XZ}.
  \label{eq:cross}
@@ -707,7 +707,7 @@ Thus \eqref{eq:cross} gives
  \ge\frac49-2\sqrt d.
  \label{eq:Zlower}
 \end{equation}
-For the negative orientation, take $A_-=e(2-t)$. Its actual class $b$ has square exactly $T_- = A_-$, $p_b=eZ\ge A_-$, and $\chi/A_-=1/(2-t)<2$. On the same metric,
+For the negative orientation, take $A_-=e(2-t)$. Its monopole class $b$ has square exactly $T_- = A_-$, $p_b=eZ\ge A_-$, and $\chi/A_-=1/(2-t)<2$. On the same metric,
 \[
  \overline\kappa_\beta
  =r+16(1+1/\beta)+6(\beta+1)w-36Z/u.
@@ -747,22 +747,22 @@ The Hodge step has the following extension \cite{PairGap}. Let $M$ be closed and
 \[
  a\in\operatorname{conv}(\mathcal C_+),\qquad a^2[M]\ge T_+,
 \]
-and let $b$ be an actual monopole class on $\overline M$ with $b^2[\overline M]\ge T_-$. Then, with $t=3\tau/\chi$ and $z=|a\cdot b|/\chi$,
+and let $b$ be a monopole class on $\overline M$ with $b^2[\overline M]\ge T_-$. Then, with $t=3\tau/\chi$ and $z=|a\cdot b|/\chi$,
 \begin{equation}
  \J+(1-t)_++(t-z)_+\ge\varepsilon_{\rm SB}.
  \label{eq:pairgap}
 \end{equation}
-To see the change in the proof, set $d=j+(1-t)_++(t-z)_+$. Convexity gives the same scalar upper bound for $\norm{a^+}$; the class-square inequalities give $X\le U-(2+t)$ and $Y\le Z-(2-t)$. The mixed pairing now gives $z\le\sqrt{UY}+\sqrt{XZ}$, while $z\ge1-d$. These replace the corresponding equalities in the surface-bundle proof and give the same estimate $Z/u\ge4/9-2\sqrt d$. The FD2 argument is unchanged. The convex class is used only in the scalar and Hodge inequalities; the endpoint theorem is applied to the actual opposite-orientation class $b$. Replacing that class by an arbitrary formal convex class would not supply the differential input required for the proof.
+To see the change in the proof, set $d=j+(1-t)_++(t-z)_+$. Convexity gives the same scalar upper bound for $\norm{a^+}$; the class-square inequalities give $X\le U-(2+t)$ and $Y\le Z-(2-t)$. The mixed pairing now gives $z\le\sqrt{UY}+\sqrt{XZ}$, while $z\ge1-d$. These replace the corresponding equalities in the surface-bundle proof and give the same estimate $Z/u\ge4/9-2\sqrt d$. The finite-density argument with $B=2$ is unchanged. The convex class is used only in the scalar and Hodge inequalities; the endpoint theorem is applied to the monopole class $b$ in the opposite orientation. Replacing that class by an arbitrary formal convex class would not establish the differential equations required for the proof.
 
-\section{Supply, covers, and the scope of classical comparisons}
-The estimates above have a common analytical input, but their topological applications retain different sources of actual solutions. On a finite cover $\pi:\widetilde M\to M$ of degree $d$, a lifted metric has
+\section{Monopole classes, finite covers, and classical curvature inequalities}
+The estimates above have a common analytical input, but their topological applications retain different nonvanishing theorems for the Seiberg--Witten equations. On a finite cover $\pi:\widetilde M\to M$ of degree $d$, a lifted metric has
 \[
  \widetilde P=dP,\quad\widetilde S=dS,\quad\widetilde R=dR,\quad
  \widetilde V=dV,\quad\widetilde T_\pm=dT_\pm.
 \]
-With the correspondingly lifted budget, $\widetilde A=dA$, both $\J$, $\E$ and $T_+/A$ are unchanged. The lift of a normalized negative Yamabe representative still has scalar curvature $-4$. Thus the $\operatorname{Pin}^{-}(2)$ double-cover application descends without a loss in these constants when the twisted solution lifts to the ordinary system. The argument only asks for solutions on lifted metrics, not for all noninvariant metrics on the cover \cite{Pin,N1source}.
+With the correspondingly lifted projection bound, $\widetilde A=dA$, both $\J$, $\E$ and $T_+/A$ are unchanged. The lift of a normalized negative Yamabe representative still has scalar curvature $-4$. Thus the $\operatorname{Pin}^{-}(2)$ double-cover application descends without a loss in these constants when the twisted solution lifts to the ordinary system. The argument only asks for solutions on lifted metrics, not for all noninvariant metrics on the cover \cite{Pin,N1source}.
 
-For completeness, consider a BF-supplied collection of sign classes
+For completeness, consider a collection of sign classes obtained from Bauer--Furuta nonvanishing
 \[
  \mathcal C_0=\left\{\sum_{i=1}^r\epsilon_ic_i+\sum_{j=1}^k\eta_jE_j:
  \epsilon_i,\eta_j\in\{\pm1\}\right\},
@@ -774,13 +774,13 @@ $E_j\cdot E_l=-\delta_{jl}$. Put $A=\sum_iA_i>0$. Then
  =\inf_H\max_{a\in\mathcal C_0}(a_H^+)^2=A,
  \label{eq:BFbudget}
 \end{equation}
-where $H$ ranges over maximal positive subspaces of the intersection form. Indeed, a convex combination has the form $v=\sum t_ic_i+\sum u_jE_j$ with coefficients in $[-1,1]$, so $v^2\le A$, and averaging exceptional signs achieves $\sum c_i$. For the projection budget, independent sign averaging gives the lower bound $A$; choose $H$ containing all $c_i$ and orthogonal to the $E_j$ to obtain equality. This is an optimization over abstract positive subspaces and does not assert that the optimizing subspace is realized by a metric.
+where $H$ ranges over maximal positive subspaces of the intersection form. Indeed, a convex combination has the form $v=\sum t_ic_i+\sum u_jE_j$ with coefficients in $[-1,1]$, so $v^2\le A$, and averaging exceptional signs achieves $\sum c_i$. For the projected class-square bound, independent sign averaging gives the lower bound $A$; choose $H$ containing all $c_i$ and orthogonal to the $E_j$ to obtain equality. This is an optimization over abstract positive subspaces and does not assert that the optimizing subspace is realized by a metric.
 
-Equation~\eqref{eq:BFbudget} concerns the classes actually supplied by the specified nonvanishing theorem \cite{BFbudget}. It does not enumerate every monopole class on the manifold. If the full collection has budget $A(1+\delta)$, the classical Ricci estimate and the opposite-orientation Einstein constraint require
+Equation~\eqref{eq:BFbudget} concerns the classes obtained from the specified nonvanishing theorem \cite{BFbudget}. It does not enumerate every monopole class on the manifold. If the full collection has projected class-square bound $A(1+\delta)$, the classical Ricci estimate and the opposite-orientation Einstein constraint require
 \[
  1+h+2\delta\le U
 \]
-for an Einstein candidate. Thus an unaccounted $O(Ah)$ increase can matter to a comparison of exclusion ranges in a balanced family. It does not alter the proof of the coercive estimate for an actual selected class. This separates three logically different statements: a new analytical inequality, its application to supplied classes, and exclusion of every possible stronger classical budget.
+for an Einstein candidate. Thus an unaccounted $O(Ah)$ increase can matter to a comparison of exclusion ranges in a balanced family. It does not alter the proof of the coercive estimate for the selected monopole class. This separates three logically different statements: a new analytical inequality, its application to the specified monopole classes, and comparison with the optimal classical bound from all monopole classes.
 
 \section{Consequences for normalized Ricci flow}
 A metric-independent bound $P(g)\ge p_0>0$ converts into a scalar-curvature growth estimate. For example, $\J\ge j_0>0$ and $S\ge32\pi^2A$ imply $P\ge2\pi^2Aj_0$ by the definition of $\J$.
@@ -826,15 +826,15 @@ The estimate itself requires no extension theorem. To infer that a prescribed th
 \section{The unrestricted endpoint and remaining variational questions}
 The finite-density theorem has quantifiers $\forall B<\infty\;\exists c_{\rm FD}(B)>0$. The unrestricted endpoint asks for a single constant valid on the full allowed collection:
 \begin{problem}\label{prob:O10}
-Under full-conformal input, $p\ge A>0$ and $a^2\ge T_+$, does there exist a universal $c>0$ such that
+Under conformal solvability, $p\ge A>0$ and $a^2\ge T_+$, does there exist a universal $c>0$ such that
 \[
  \kappa_\beta(g)\ge c(\beta-2)^2/\beta^2\qquad(\beta\ge2)
 \]
-without any Euler-density or geographical restriction? Alternatively, does a sequence of closed manifolds and actual fields satisfying all these assumptions violate such a bound?
+without any Euler-density bound or additional characteristic-number restriction? Alternatively, does a sequence of closed manifolds and Seiberg--Witten solutions satisfying all these assumptions violate such a bound?
 \end{problem}
-Any counterexample sequence not already covered by the preceding theorems must have diverging Euler density and averaged $W^-$ energy. The unresolved step is not the final line-bundle test in Lemma~\ref{lem:chern}; it is the joint survival of its positive section amplitude and its weak field equation when the derivative budget for $v$ is unbounded.
+Any counterexample sequence not already covered by the preceding theorems must have diverging Euler density and averaged $W^-$ energy. The unresolved step is not the final line-bundle test in Lemma~\ref{lem:chern}; it is the joint survival of its positive section amplitude and its weak field equation when the derivative norms of $v$ are unbounded.
 
-Some estimates remain available without that budget. If $|v|+|\nabla^*\nabla v|\le C$, testing with $e^2v$ gives
+Some estimates remain available without uniform control of those norms. If $|v|+|\nabla^*\nabla v|\le C$, testing with $e^2v$ gives
 \begin{equation}
  \norm{e\nabla v}_2\le C\norm e_{H^1}.
  \label{eq:weighted}
@@ -921,19 +921,19 @@ The curvature term must be restored before estimating the physical residual. Mor
  =\frac{12}{L^3}\left|u_1-u_0-\frac L2(p_0+p_1)\right|^2
  +\frac1L|p_1-p_0|^2.
 \]
-It follows by cubic Hermite interpolation and orthogonality to the homogeneous-boundary remainder. It quantifies the cost of independently resetting a first jet; it does not supply a geometric gluing theorem.
+It follows by cubic Hermite interpolation and orthogonality to the homogeneous-boundary remainder. It gives the minimum of this quadratic integral for prescribed first-order boundary data. A geometric gluing theorem additionally requires compatibility with the curvature and field equations.
 
-Finally, actual curvature fitting $F_{\Acal}=F_0+e$, with bounded $F_0$ and $\norm e_{2,\mathrm{av}}\to0$, implies
+Finally, the curvature approximation $F_{\Acal}=F_0+e$, with bounded $F_0$ and $\norm e_{2,\mathrm{av}}\to0$, implies
 \[
  \left|\frac1V\int_UF_{\Acal}\wedge F_{\Acal}\right|
  \le2\norm{F_0}_\infty^2\frac{\Vol(U)}V+2\norm e_{2,\mathrm{av}}^2.
 \]
-Thus negligible-volume cores cannot carry a nonzero limiting determinant Chern density. The opposite-orientation Weyl concentration and the determinant Chern number require distinct global accounting. Deciding whether their field-matching conditions rule out every such sequence, or admit a closed construction, remains part of Problem~\ref{prob:O10}.
+Thus negligible-volume cores cannot carry a nonzero limiting determinant Chern density. The opposite-orientation Weyl concentration and the determinant Chern number require separate global estimates. Deciding whether their field-matching conditions rule out every such sequence, or admit a closed construction, remains part of Problem~\ref{prob:O10}.
 
 Finally, the endpoint problem does not determine the optimal value of $\inf_gP(g)$ or $\inf_g\E(g)$ in a prescribed surgery family. The analytical results in this paper yield positive and, in balanced ranges, linear lower bounds. Genuine metric constructions give upper bounds and can improve the standard surgery coefficient. A complete extremal answer requires a lower bound matching the best construction over all admitted metrics. Smooth attainment, equality geometry, and exact Einstein existence are further assertions, not consequences of a positive defect estimate or of a minimizing sequence alone.
 
-\section*{Sources and proof organization}
-The connecting proofs in this manuscript use three analytical inputs with different scopes: the one-solution finite-parameter estimate, calibrated linear coercivity, and the full-conformal finite-density endpoint. Their detailed field calculations are in \cite{Parameter,AnalyticCore,SingleLinear,Linear,FDcomplete}. The conformal identities, critical-ratio and shortfall deductions, energy comparison, line-bundle localization, geographical partition, two-orientation deduction, and flow estimate are written here in the common normalization. Repository links in the bibliography identify the companion proofs and the current mathematical synthesis. Classical nonvanishing and curvature theorems retain their original sources.
+\section*{Companion proofs}
+The connecting proofs in this manuscript use three analytical inputs with different scopes: the finite-parameter estimate under the single-solution hypothesis, calibrated linear coercivity, and the finite-density endpoint under conformal solvability. Their detailed field calculations are in \cite{Parameter,AnalyticCore,SingleLinear,Linear,FDcomplete}. The conformal identities, critical-ratio and shortfall deductions, energy comparison, line-bundle localization, characteristic-number decomposition, two-orientation deduction, and flow estimate are written here in the common normalization. Repository links in the bibliography identify the companion proofs and the current mathematical synthesis. Classical nonvanishing and curvature theorems retain their original sources.
 
 \begin{thebibliography}{99}
 \bibitem{LeBrun2001} C. LeBrun, \emph{Ricci curvature, minimal volumes, and Seiberg--Witten theory}, Invent. Math. \textbf{145} (2001), 279--316. \href{https://arxiv.org/abs/math/0003068}{arXiv:math/0003068}.

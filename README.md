@@ -1,67 +1,51 @@
 # Einstein Geometry on Four-Manifolds: Gaps, Curvature Extremals, and Realization
 
-**Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen<sup>*</sup>, Yihao Yang<sup>*</sup>**  
+<strong>Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen<sup>&#42;</sup>, Yihao Yang<sup>&#42;</sup></strong>  
 College of Information Science and Electronic Engineering, Zhejiang University  
 Qiushi Engine Team
 
-*Corresponding authors: Hongsheng Chen ([hansomchen@zju.edu.cn](mailto:hansomchen@zju.edu.cn)) and Yihao Yang ([yangyihao@zju.edu.cn](mailto:yangyihao@zju.edu.cn)).*
+<sup>&#42;</sup> Corresponding authors: [Hongsheng Chen](mailto:hansomchen@zju.edu.cn) and [Yihao Yang](mailto:yangyihao@zju.edu.cn).
 
-**[English working manuscripts — PDF and LaTeX](manuscripts/README.md)** · **[Authors](AUTHORS.md)** · **[Citation](CITATION.cff)** · **[BibTeX](CITATION.bib)**
+[Manuscripts](manuscripts/README.md) · [Mathematical overview](docs/RESEARCH_MAP.md) · [Methods and references](docs/METHODS_AND_LITERATURE.md) · [BibTeX](CITATION.bib)
 
-Version 1.0 · 1 November 2026. Repository: `Cherish0925/Geometric-Analysis`.
+## Research
 
-四维 Einstein 几何：积分间隙、曲率变分、几何退化与几乎 Kähler 刚性。
+This collection studies Einstein metrics on smooth four-manifolds: their existence, approximation, curvature extrema, and degeneration. It relates integral curvature estimates to topology and Seiberg–Witten theory, develops geometric constructions for variational upper bounds, and investigates the integrability of almost-Kähler Einstein structures.
 
-本研究讨论光滑四维流形上 Einstein 度量的存在与逼近，以及拓扑、规范结构和相容闭二形式对曲率极值与刚性的限制。
+For a closed oriented smooth four-manifold, one of the central variational problems is
 
-设 $M$ 为闭、定向、连通的光滑四维流形，$\mathscr G(M)$ 为其全部光滑 Riemannian 度量。记
-$$
-P(g)=\int_M|\operatorname{Ric}^{\circ}_g|_g^2\,dV_g,
-\qquad \operatorname{Ric}^{\circ}_g=\operatorname{Ric}_g-\frac{s_g}{4}g,
-$$
-$$
-\mathcal E(g)=\inf_{\lambda\in\mathbb R\setminus\{0\}}
-\frac{\int_M|\operatorname{Ric}_g-\lambda g|_g^2\,dV_g}
-{\lambda^2\operatorname{Vol}_g(M)},\qquad
-P_*(M)=\inf_{g\in\mathscr G(M)}P(g),\quad
-\alpha(M)=\inf_{g\in\mathscr G(M)}\mathcal E(g).
-$$
-$P(g)=0$ 等价于 $g$ 为 Einstein 度量。$\mathcal E$ 采用非零 Einstein 常数归一化；Ricci-flat 度量满足 $P=0$、$\mathcal E=4$。
+```math
+P_*(M)=\inf_{g\in\mathcal G(M)}\int_M\left|\operatorname{Ric}_g-\frac{s_g}{4}g\right|_g^2\,dV_g,
+```
 
-主要问题是确定这些泛函的正下界、匹配上界、下确界的取得性及近极小序列的退化结构。分析部分利用规范场方程与曲率微分恒等式之间的相容性；构造部分研究轨形解消、拓扑手术及背景曲率的相互作用；几乎 Kähler 分支研究 Einstein 条件下相容辛结构的可积性。
+where the infimum is taken over all smooth Riemannian metrics. The research concerns positive lower bounds, sharp upper bounds, smooth attainment, and the geometry of minimizing sequences. Normalized Einstein defects additionally describe separation from Einstein metrics with nonzero Einstein constant.
 
-## 研究内容
+The analytic arguments use the differential compatibility of curvature and gauge fields. The constructions examine how background curvature interacts with blow-ups, orbifold resolutions, and collapsing regions. In almost-Kähler geometry, the Einstein equation is studied together with the equations for a compatible closed two-form.
 
-| 主题 | 原稿中的主要结论 | 进一步问题 |
+## Manuscripts
+
+| Title | Contents | Files |
 |---|---|---|
-| 积分间隙 | 单解参数估计、N1 无迹 Ricci 间隙、类平方短缺估计、I40/I41 线性强制及规范理论应用 | 弱化解存在性条件、确定最佳常数依赖、扩大适用流形类 |
-| 参数端点 | 对每个固定有限 $B$，在 $\chi/A\le B$ 下得到 $c(B)>0$；由拓扑数关系进一步得到所列手术族的统一常数 | 一般无密度条件下的统一估计或闭流形反例 |
-| 双取向应用 | 固定密度端点 FD2 与交叉配对给出曲面丛间隙及 Kodaira 斜率分离；推广至一侧凸包与配对短缺 | 最佳分离常数及更一般的双取向规范结构 |
-| 曲率极值 | 背景曲率作用产生严格较低的手术上界；Weyl–Yamabe 精确归约；指定成对 $A_1$ 轨形上的精确值与非取得性 | 一般吹起与平衡族的全度量最优值 |
-| 极小值取得性 | 共形 Kähler 类的能量分离、候选度量的下降方向与临界点排除、谐和秩刚性及部分 AE/ALE 退化分析 | 非 Bach-flat 光滑全局极小元的存在 |
-| 点态逼近与精确实现 | 固定轨形与剪切流形上的逼近；循环覆盖完整核修复、增长—强制条件下的无直径修复；闭路变形及完整填充条件下的精确实现 | 固定对象的全部 Einstein 存在性及一般退化下的实现 |
-| 几何退化与实际场 | ALE 混合曲率转移、根格限制及补域电荷；Wahl 收缩中的实际场、局部字符和形式延拓 | 将局部拓扑与场信息转为统一全局障碍 |
-| 几乎 Kähler–Einstein 几何 | 完备非紧严格例子、Green 势刚性、调和秩条件、模空间作用量及非塌缩退化中的能量传递 | 闭四维负 Goldberg 猜想 |
+| **Einstein Gaps on Four-Manifolds** | Trace-free Ricci estimates, parameter endpoints, two-orientation inequalities, Kodaira slopes, and Ricci flow. | [PDF](manuscripts/einstein_gaps.pdf) · [LaTeX](manuscripts/einstein_gaps.tex) |
+| **Curvature Extremals on Four-Manifolds: Surgery, Orbifolds, and Attainment** | Strict surgery upper bounds, variational estimates, orbifold extrema, ALE degeneration, and smooth attainment. | [PDF](manuscripts/curvature_extremals.pdf) · [LaTeX](manuscripts/curvature_extremals.tex) |
+| **Approximate Einstein Metrics and Geometric Realization in Dimension Four** | Fixed-manifold constructions, deformation theory, small eigenvalues, nonlinear correction, and geometric limits. | [PDF](manuscripts/einstein_realization.pdf) · [LaTeX](manuscripts/einstein_realization.tex) |
+| **Almost-Kähler Einstein Four-Manifolds: Constructions and Rigidity** | Complete examples, torsion zeros, curvature identities, conditional rigidity, and the closed Goldberg problem. | [PDF](manuscripts/almost_kahler_einstein.pdf) · [LaTeX](manuscripts/almost_kahler_einstein.tex) |
 
-各专题以定义、命题、推导与构造组织，注明实际供给、取向、归一化和常数依赖。Kodaira 斜率分离由 FD2 与双取向配对推出；Fino 的非不变存在性问句由完备非紧实例回答。一般吹起极值、光滑取得性和闭负 Goldberg 保留各自尚未解决的部分。
+## Mathematical exposition
 
-## 阅读顺序
+Detailed expositions in Chinese provide the statements, proofs, constructions, and references for each subject:
 
-1. [研究结构与定理关系](docs/RESEARCH_MAP.md)：问题之间的联系、定理依赖与未完成命题。
-2. [方法与文献](docs/METHODS_AND_LITERATURE.md)：相容性估计、变分、构造、极限方法及其文献基础。
-3. [间隙与端点](docs/GAPS_AND_ENDPOINTS.md)：N1、I40/I41、O10、双取向与 Kodaira 应用。
-4. [点态构造与精确实现](docs/CONSTRUCTIONS_AND_REALIZATION.md)：解消、固定流形、周期、慢模态及存在性。
-5. [曲率变分](docs/CURVATURE_VARIATION.md)：O11、严格上界、Q1–Q3 与极小值取得性。
-6. [几乎 Kähler–Einstein 几何](docs/GOLDBERG.md)：Fino 存在性问题、零点结构与闭负 Goldberg。
-7. [研究沿革](docs/RESEARCH_HISTORY.md)：从曲率预算到微分强制、从标准核心费用到背景相互作用，以及研究方向改变的数学原因。
+- [Einstein gaps and parameter endpoints](docs/GAPS_AND_ENDPOINTS.md)
+- [Curvature variation and extremal geometry](docs/CURVATURE_VARIATION.md)
+- [Approximation and exact Einstein metrics](docs/CONSTRUCTIONS_AND_REALIZATION.md)
+- [Almost-Kähler Einstein geometry](docs/GOLDBERG.md)
 
-早期连续文稿见 [10月7日研究总稿](archive/originals/2026-10-07/00_All_Recent_Research.tex)、[四题综述](archive/originals/2026-10-08/01_Research_Synthesis.tex)、[后续数学进展](archive/originals/2026-10-08/03_Subsequent_Mathematical_Developments.tex) 及 [Goldberg 合并稿](research/packages/Goldberg_Two_Conversations_Merged_20261015--5a0ab1f2/Goldberg_Two_Conversations_Merged_20261015.tex)。
+The [mathematical overview](docs/RESEARCH_MAP.md) explains the relations among these subjects and formulates the remaining problems. These include endpoint estimates without a topological density bound, sharp curvature extrema on smooth blow-ups, smooth attainment by non-Bach-flat metrics, Einstein existence on specified manifolds, and the closed negative Goldberg conjecture.
 
-## 原稿与程序
+## Sources and computations
 
-`archive/originals/` 保存原始文稿和资料包；`research/packages/` 保存展开后的证明、笔记、程序、计算数据与文献。各版本及其修正同时保留。全部文件见[来源索引](catalog/README.md)，材料范围见[收录说明](docs/COVERAGE.md)。
+[Supplementary notes](research/notes/) and [computational programs](research/computations/) accompany the manuscripts. The [source guide](docs/COVERAGE.md) links the supporting mathematical texts; the [archive catalogue](catalog/README.md) contains earlier manuscripts, source packages, and their bibliographic records.
 
+## Citation
 
-## Authorship and citation
-
-The maintained research and the current manuscripts use the author order stated above. Cite an individual paper for a specific result or the collection for its broader mathematical development. Original literature and third-party source materials retain their own authorship. See [authorship](AUTHORS.md) and [reuse information](RIGHTS.md).
+Cite the relevant manuscript using [CITATION.bib](CITATION.bib). A citation for the collection is available in [CITATION.cff](CITATION.cff). See [authors and affiliation](AUTHORS.md), [edition information](manuscripts/VERSION.md), and [rights and permissions](RIGHTS.md).

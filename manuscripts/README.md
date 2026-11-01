@@ -1,33 +1,39 @@
-# Working manuscripts
+# Manuscripts
 
-**Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen<sup>*</sup>, Yihao Yang<sup>*</sup>**  
+<strong>Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen<sup>&#42;</sup>, Yihao Yang<sup>&#42;</sup></strong>  
 College of Information Science and Electronic Engineering, Zhejiang University  
 Qiushi Engine Team
 
-*Corresponding authors: Hongsheng Chen (hansomchen@zju.edu.cn) and Yihao Yang (yangyihao@zju.edu.cn).*
+<sup>&#42;</sup> Corresponding authors: Hongsheng Chen ([hansomchen@zju.edu.cn](mailto:hansomchen@zju.edu.cn)) and Yihao Yang ([yangyihao@zju.edu.cn](mailto:yangyihao@zju.edu.cn)).
 
-Version 1.0, 1 November 2026. These working manuscripts organize the current research into four complementary papers. Each includes definitions, principal statements, mathematical arguments, references, and its remaining questions. Detailed source proofs and computations are linked at the point of use. The repository also retains the underlying research manuscripts.
+Four working manuscripts on Einstein geometry, curvature functionals, and almost-Kähler structures in dimension four.
 
-| Manuscript | Files | Pages | Scope |
+| Title | Files | Pages | Contents |
 |---|---|---:|---|
-| **Einstein Gaps on Four-Manifolds** | [PDF](einstein_gaps.pdf) · [LaTeX](einstein_gaps.tex) | 20 | Gauge-field compatibility, normalized gaps, finite-density endpoints, two-orientation applications, and Ricci flow consequences. |
-| **Curvature Extremals on Four-Manifolds: Surgery, Orbifolds, and Attainment** | [PDF](curvature_extremals.pdf) · [LaTeX](curvature_extremals.tex) | 19 | Strict surgery bounds, variational selection, orbifold extrema, ALE transfer, and attainment. |
-| **Approximate Einstein Metrics and Geometric Realization in Dimension Four** | [PDF](einstein_realization.pdf) · [LaTeX](einstein_realization.tex) | 17 | Pointwise approximation, fixed-manifold constructions, slow modes, nonlinear repair, and marked fillings. |
-| **Almost-Kähler Einstein Four-Manifolds: Constructions and Rigidity** | [PDF](almost_kahler_einstein.pdf) · [LaTeX](almost_kahler_einstein.tex) | 19 | Complete noncompact examples, torsion zeros, Green potentials, moduli, degeneration, and the closed Goldberg problem. |
+| **Einstein Gaps on Four-Manifolds** | [PDF](einstein_gaps.pdf) · [LaTeX](einstein_gaps.tex) | 21 | Gauge equations and curvature compatibility; normalized Einstein gaps; endpoint estimates with bounded Euler density; two-orientation applications. |
+| **Curvature Extremals on Four-Manifolds: Surgery, Orbifolds, and Attainment** | [PDF](curvature_extremals.pdf) · [LaTeX](curvature_extremals.tex) | 19 | Curvature bounds from surgery; almost-minimizing sequences; exact orbifold infima; asymptotically locally Euclidean degeneration and attainment. |
+| **Approximate Einstein Metrics and Geometric Realization in Dimension Four** | [PDF](einstein_realization.pdf) · [LaTeX](einstein_realization.tex) | 17 | Approximation on fixed manifolds; Teichmüller deformations; nonlinear correction of approximate metrics; orbifold resolutions and fillings. |
+| **Almost-Kähler Einstein Four-Manifolds: Constructions and Rigidity** | [PDF](almost_kahler_einstein.pdf) · [LaTeX](almost_kahler_einstein.tex) | 18 | Complete noncompact constructions; torsion zeros and Green potentials; deformation and degeneration; rigidity on closed manifolds. |
 
-## Relation to the mathematical sources
+## Supplementary exposition
 
-The four papers respectively develop the analytic obstruction, variational, realization, and almost-Kähler branches of a common research programme on four-dimensional Einstein geometry. A shared geometric question does not identify the hypotheses of the four branches: every use of a gap estimate, a compactness theorem, a reconstruction theorem, or a curvature identity retains its stated assumptions.
+The following expository chapters contain additional derivations and links to source proofs and computations:
 
-- [Einstein Gaps on Four-Manifolds](../docs/GAPS_AND_ENDPOINTS.md): maintained detailed exposition and source references.
-- [Curvature Extremals on Four-Manifolds: Surgery, Orbifolds, and Attainment](../docs/CURVATURE_VARIATION.md): maintained detailed exposition and source references.
-- [Approximate Einstein Metrics and Geometric Realization in Dimension Four](../docs/CONSTRUCTIONS_AND_REALIZATION.md): maintained detailed exposition and source references.
-- [Almost-Kähler Einstein Four-Manifolds: Constructions and Rigidity](../docs/GOLDBERG.md): maintained detailed exposition and source references.
+- [Einstein gaps and endpoint estimates](../docs/GAPS_AND_ENDPOINTS.md).
+- [Curvature extrema, constructions, and attainment](../docs/CURVATURE_VARIATION.md).
+- [Approximation and exact Einstein metrics](../docs/CONSTRUCTIONS_AND_REALIZATION.md).
+- [Almost-Kähler Einstein geometry](../docs/GOLDBERG.md).
 
-Classical results retain their original citations. Open statements, including the unrestricted endpoint problem, general smooth curvature extrema and attainment, and the closed negative Goldberg conjecture, are stated as questions rather than theorem conclusions.
+The [research overview](../docs/RESEARCH_MAP.md) describes the relations among the results and the remaining open problems. The [source guide](../docs/COVERAGE.md) indexes the supplementary manuscripts.
 
-## Citation and compilation
+## Citation
 
-Use the individual BibTeX entry in [CITATION.bib](../CITATION.bib) when citing one paper. Use the collection entry for the research programme as a whole. Authorship and correspondence are listed in [AUTHORS.md](../AUTHORS.md).
+[CITATION.bib](../CITATION.bib) contains an entry for each manuscript and one for the collection. See [authors and correspondence](../AUTHORS.md) and the [version record](VERSION.md).
 
-Each source is standalone and uses an inline bibliography. Run `make -C manuscripts` with a standard LaTeX installation to regenerate the PDFs. The papers are working manuscripts; no journal publication or arXiv identifier is assigned in this version.
+## Compilation
+
+Each LaTeX source includes its bibliography and can be compiled independently. To regenerate all four PDFs, run:
+
+```sh
+make -C manuscripts
+```

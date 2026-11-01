@@ -11,7 +11,7 @@
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{inputtheorem}[theorem]{Inherited input}
+\newtheorem{inputtheorem}[theorem]{Theorem}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{question}[theorem]{Question}
@@ -56,7 +56,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-We study the interaction between the Einstein equation, a compatible symplectic form, and the self-dual curvature operator in dimension four. An explicit complete noncompact strictly almost-K\"ahler metric with negative Einstein constant illustrates the distinction between local integrability and the closed problem. On closed manifolds, torsion zeros lead to a Green-potential criterion for integrability: a nonpositive potential of the determinant of the self-dual curvature block at one torsion zero forces the structure to be K\"ahler. Further formulations use canonical-class orthogonality, products of harmonic forms, the normalized Einstein action, and actual pseudoholomorphic canonical curves. We prove an energy-transfer statement for noncollapsed Einstein degeneration and describe the second-order obstruction to coupled almost-K\"ahler deformations of a negative K\"ahler--Einstein structure. The local Darboux system and its compatibility conditions are separated from these global arguments. The general closed negative Goldberg problem remains open; the results identify geometric conditions under which it has an affirmative answer and explain which degeneration mechanisms are not covered.
+We study the interaction between the Einstein equation, a compatible symplectic form, and the self-dual curvature operator in dimension four. An explicit complete noncompact strictly almost-K\"ahler metric with negative Einstein constant illustrates the distinction between local integrability and the closed problem. On closed manifolds, torsion zeros lead to a Green-potential criterion for integrability: a nonpositive potential of the determinant of the self-dual curvature block at one torsion zero forces the structure to be K\"ahler. Further formulations use canonical-class orthogonality, products of harmonic forms, the normalized Einstein action, and pseudoholomorphic representatives of the canonical class. We prove an energy-transfer statement for noncollapsed Einstein degeneration and describe the second-order obstruction to coupled almost-K\"ahler deformations of a negative K\"ahler--Einstein structure. The local Darboux system and its compatibility conditions are separated from these global arguments. The general closed negative Goldberg problem remains open; the results identify geometric conditions under which it has an affirmative answer and explain which degeneration mechanisms are not covered.
 \end{abstract}
 \tableofcontents
 
@@ -97,7 +97,7 @@ Here $n^\perp=\Lambda_J^-$, the real bundle of $J$-anti-invariant two-forms. The
 
 The closed Goldberg question asks whether every closed Einstein \AK\ manifold is K\"ahler. Sekigawa's theorem settles the nonnegative scalar-curvature case \cite{Sekigawa}. We address the negative four-dimensional case. A complete noncompact example is compatible with this question; conversely, local calculations alone cannot decide a theorem whose essential hypothesis is closedness.
 
-The manuscript collects the constructive and rigidity results of \cite{Repository}. Long local calculations are identified as inherited inputs with their original proofs. The statements below retain the hypotheses needed by each argument; in particular, an orbifold limit, a canonical current, and an Einstein deformation are introduced only where their existence has been established or explicitly assumed.
+The local curvature calculations used below are given in \cite{Repository,CompleteSource,ZeroSource,ZeroCurves}. The global arguments concern canonical currents, Einstein deformations, and noncollapsed orbifold limits under the hypotheses stated in the corresponding sections.
 
 \section{A complete strictly almost-K\"ahler negative Einstein metric}
 \subsection{The formula}
@@ -198,7 +198,7 @@ The higher recurrence has eigenvalues $4(n+2)(n-1)$ and $2(n+2)(2n+1)$ for $n\ge
  a_1=\frac{\sinh(\sqrt2t)}{\sqrt2},\qquad
  a_2=a_3=\sqrt2\sinh(t/\sqrt2),\qquad \Omega=\pm\omega_1.
 \]
-The finite algebra is retained in \path{research/computations/bianchi_ix_nut.py}. The theorem concerns symmetry of the pair, not merely symmetry of its metric.
+The algebraic computation is given in \href{https://github.com/Cherish0925/Geometric-Analysis/blob/main/research/computations/bianchi_ix_nut.py}{Computation}. The theorem concerns symmetry of the pair, not merely symmetry of its metric.
 
 A different obstruction concerns closing hyperbolic bolts. If a closed manifold is assembled from two-disk bundles over surfaces $\Sigma_i$ and product collars, additivity of Euler characteristic gives $\chi(M)=\sum_i\chi(\Sigma_i)$. When all bolts have genus greater than one, this is negative, contradicting \eqref{eq:gb}. An orbit space that is a circle and has no bolts gives $\chi=0$, which forces a closed Einstein metric to be flat. These topological observations rule out these particular completions of noncompact models.
 
@@ -337,7 +337,7 @@ the second summand is zero for $n=0$. Unitary transformations generate all $h_0$
 \]
 The Fischer adjoint of $(\mathscr B,\mathscr P)$ is multiplication by its symbol. Proposition \ref{prop:symbol} gives rank five at each nonzero real covector; hence this adjoint has zero polynomial kernel. The dimension count proves \eqref{eq:polyexact}.
 
-Even after Hamiltonian gauge is removed, the torsion-free part of the kernel has dimension $(n+1)(n+5)$. Its five dimensions at $n=0$ are genuine anti-self-dual curvature freedom. At each nonlinear order the previously chosen coefficients determine the source; \eqref{eq:polyexact} tests whether that source can be lifted. It neither proves that every nonlinear source passes the test nor gives convergence of an infinite formal series.
+Even after Hamiltonian gauge is removed, the torsion-free part of the kernel has dimension $(n+1)(n+5)$. Its five dimensions at $n=0$ represent anti-self-dual curvature freedom. At each nonlinear order the previously chosen coefficients determine the source; \eqref{eq:polyexact} tests whether that source can be lifted. It neither proves that every nonlinear source passes the test nor gives convergence of an infinite formal series.
 
 \section{A determinant potential and integrability}
 Set
@@ -487,13 +487,13 @@ For a closed Einstein \AK\ four-manifold in the conventions above, the integrate
  D_W=\cT,\qquad
  \cT=\int_M\left(|B|^2+\frac{3q^2}{32}\right)\dd\ge0.
 \end{equation}
-It is the Einstein specialization of the Sekigawa identities, with the block conventions \eqref{eq:block}; the derivation used here is retained in \cite{GlobalSource,Repository}. In particular $\cT=0$ if and only if $\Omega$ is parallel.
+It is the Einstein specialization of the Sekigawa identities, with the block conventions \eqref{eq:block}; the derivation is given in \cite{GlobalSource,Repository}. In particular $\cT=0$ if and only if $\Omega$ is parallel.
 \end{inputtheorem}
 Combining \eqref{eq:action} and \eqref{eq:sekidentity} yields
 \begin{equation}\label{eq:actiontorsion}
  \widehat S^2=32\pi^2T_++16\cT.
 \end{equation}
-This compares topology with a genuine nonnegative torsion integral.
+This compares topology with a nonnegative torsion integral.
 
 \begin{proposition}\label{prop:actionconstant}
 The normalized Einstein action $\widehat S$ is locally constant on the moduli space of Einstein metrics modulo orientation-preserving diffeomorphisms and scale. It is constant on every connected component and assumes only finitely many values on each compact subset.
@@ -523,7 +523,7 @@ For $\Ric=Eg$, constant rescaling
 \]
 remains $I$-K\"ahler, has the same Ricci form, and has Ricci eigenvalues $E/a,E/b$. This is the relation with constant Ricci-eigenvalue geometry studied in \cite{ADM}. If $x=c_1(D_+^{1,0})$ and $y=c_1(D_-^{1,0})$, then $xy=\chi$ and $x^2+y^2=3\tau$; the cross pairing of the two canonical classes involves $x^2-y^2$, which is not determined by those two characteristic numbers alone.
 
-\section{Actual canonical curves and integrated inequalities}
+\section{Pseudoholomorphic canonical curves and integrated inequalities}
 The first canonical curvature has, on an oriented unit $J$-complex plane $\Pi$, the formula
 \begin{equation}\label{eq:canonicalplane}
  \gamma(\Pi)=\frac s4+|\vartheta_{\Pi^\perp}|^2.
@@ -549,20 +549,20 @@ Cohomology and $c_1^2=T_+$ therefore give
  &=-4\pi^2c_1^2+\frac{s^2V}{8}+\frac{sQ_\vartheta}{16}\\
  &=\cT-\int|v|^2\dd.
 \end{align*}
-Evaluating \eqref{eq:canonicalplane} on the actual current proves the formula. Multiplicities are included in the current integral.
+Evaluating \eqref{eq:canonicalplane} on the current proves the formula. Multiplicities are included in the current integral.
 \end{proof}
-Existence of the current is a substantive hypothesis. It is supplied in the appropriate $b_2^+>1$ or chamber setting by Taubes's theory, not by the cohomology class alone. The use of pseudoholomorphic curves in Einstein obstructions has a classical precedent in LeBrun \cite{LeBrunCurves}.
+Existence of the current is a substantive hypothesis. Taubes's theory establishes it under the appropriate $b_2^+>1$ or chamber hypotheses; the cohomology class alone does not imply existence. The use of pseudoholomorphic curves in Einstein obstructions has a classical precedent in LeBrun \cite{LeBrunCurves}.
 
-If $K=K_0+\sum_{i=1}^r e_i$, $e_i\cdot e_j=-\delta_{ij}$, and $K_0\cdot e_i=0$, and if actual currents represent $K_0$ and the exceptional classes, the same pairing yields
+If $K=K_0+\sum_{i=1}^r e_i$, $e_i\cdot e_j=-\delta_{ij}$, and $K_0\cdot e_i=0$, and if pseudoholomorphic currents represent $K_0$ and the exceptional classes, the same pairing yields
 \begin{align}
  \cT-\int|v|^2\dd&\ge4\pi^2r+\frac{\pi|s|}{2}\sum_i\operatorname{Area}(E_i),\label{eq:excT}\\
  s^2V&\ge32\pi^2K_0^2+32\pi^2r+8\pi|s|\sum_i\operatorname{Area}(E_i).\label{eq:excaction}
 \end{align}
-For any actual $J$-holomorphic current $C$ with $c_1\cdot C=d>0$, \eqref{eq:canonicalplane} and $q=4|\vartheta|^2$ also give
+For any $J$-holomorphic current $C$ with $c_1\cdot C=d>0$, \eqref{eq:canonicalplane} and $q=4|\vartheta|^2$ also give
 \[
  \int_Cq\,dA\ge8\pi d+|s|\operatorname{Area}(C).
 \]
-These are constraints on the curvature of the same metric and the geometry of its actual curves.
+These are constraints on the curvature of the same metric and the geometry of its pseudoholomorphic curves.
 
 A separate topological consequence of \eqref{eq:sekidentity} is
 \begin{equation}\label{eq:chimintau}
@@ -691,7 +691,7 @@ The corresponding Hermitian transverse-traceless mode satisfies $\Delta_EH_\thet
 A local Einstein exclusion theorem would additionally require a uniform inverse on the complement, comparison families spanning all local period directions, an error $o(|\zeta|)$ in the relevant weighted norms, and coverage of all reduced parameters. Under those hypotheses the normal obstruction is $E\zeta+o(|\zeta|)$; degree then forces $\zeta=0$, and the harmonic class $[\rho_0]$ vanishes. This describes a conditional completion of the local argument. The comparison identity \eqref{eq:ricperiod} alone supplies none of those uniform analytic hypotheses.
 
 \section{Low-energy symplectic modifications and normalization}
-The rigidity statements should be read together with actual non-K\"ahler constructions. The repository contains exact-collar low-energy metrics on an exceptional disk bundle for which
+The following non-K\"ahler constructions complement the rigidity statements. The repository contains exact-collar low-energy metrics on an exceptional disk bundle for which
 \[
  J_6(g)=\int|\Ric_g+6g|^2\,dV_g<8\pi^2.
 \]
@@ -703,7 +703,7 @@ Solving the closed self-dual transport equation from the outer K\"ahler form giv
 \[
  p'(0)=-\pi\int\chi'(r)\Phi(r)\,dr>0,\qquad \Phi>0.
 \]
-Near the bolt the rotation is constant and extends smoothly; outside it is the identity. ODE uniqueness rules out a simultaneous zero on regular orbits, and the nonzero period removes the bolt zero. For sufficiently small $\varepsilon$ the form is symplectic and $J_6<8\pi^2$ persists. The complete construction and its source dependencies are in \cite{Repository}, section ``Symplectic closure of a low-cost block.''
+Near the bolt the rotation is constant and extends smoothly; outside it is the identity. ODE uniqueness rules out a simultaneous zero on regular orbits, and the nonzero period removes the bolt zero. For sufficiently small $\varepsilon$ the form is symplectic and $J_6<8\pi^2$ persists. The construction is given in \cite{Repository}, section ``Symplectic closure of a low-cost block.''
 
 This gives a globally conformally \AK\ metric after insertion into the stated compact negative \KE\ backgrounds. It is not a construction of an Einstein metric. It also illustrates a significant normalization effect. Write
 \[
@@ -755,7 +755,7 @@ These equations are derived in \cite{GlobalSource}. Because $s<0$, the zeroth-or
 \begin{question}[Closed negative Goldberg problem in dimension four]
 Does every closed connected \AK\ four-manifold with $\Ric=-ag$, $a>0$, satisfy $\nabla\Omega=0$?
 \end{question}
-A proof must impose a global restriction not already supplied by the local models; a counterexample must satisfy closedness as well as the full coupled differential equations. The current results settle the determinant-potential case, the stated curvature and canonical-orthogonality cases, and the same-orientation Einstein-component cases. They also supply an explicit complete strict example, exact linear compatibility conditions, and energy identities that remain valid under the specified noncollapsed degeneration. They do not settle the unrestricted closed question.
+The integrability theorems above apply under the determinant-potential, curvature, canonical-orthogonality, or Einstein-component hypotheses. The complete noncompact example, linear compatibility conditions, and energy identities for noncollapsed degeneration describe complementary aspects of the problem. The general closed case remains open.
 
 \begin{thebibliography}{99}
 \bibitem{Sekigawa} K.~Sekigawa, On some compact Einstein almost K\"ahler manifolds, \emph{J. Math. Soc. Japan} \textbf{39} (1987), 677--684.
@@ -773,12 +773,12 @@ A proof must impose a global restriction not already supplied by the local model
 \bibitem{Besse} A.~L.~Besse, \emph{Einstein Manifolds}, Springer, 1987, Section 12.G.
 \bibitem{Anderson} M.~T.~Anderson, Ricci curvature bounds and Einstein metrics on compact manifolds, \emph{J. Amer. Math. Soc.} \textbf{2} (1989), 455--490.
 \bibitem{Nagy} P.-A.~Nagy, Einstein deformations of K\"ahler Einstein metrics, arXiv:2603.09028 (2026), Theorem 1.6. \url{https://arxiv.org/abs/2603.09028}.
-\bibitem{Repository} S.~Yang, J.~Wu, R.~Zhao, H.~Chen and Y.~Yang, \emph{Geometric Analysis}, Qiushi Engine Team research repository, current mathematical chapter \path{docs/GOLDBERG.md}, version consulted 1 November 2026. This chapter contains the current polynomial exactness, action, canonical-current, noncollapse, and coupled-deformation formulations and their source links.
-\bibitem{CompleteSource} Qiushi Engine Team, \emph{A complete negative Einstein strictly almost-K\"ahler four-manifold: verification and a connection to Fino's existence question}, 8 October 2026. \path{archive/originals/2026-10-08/Q4_Complete_Example_and_Fino_Question.tex}. Cartan calculation: \path{archive/originals/2026-10-08/Q4_independent_cartan.py}.
-\bibitem{ZeroSource} Qiushi Engine Team, \emph{Torsion-zero structure}, 9 October 2026. \path{archive/originals/2026-10-09/Q4_Torsion_Zero_Structure.tex}.
-\bibitem{ZeroCurves} Qiushi Engine Team, \emph{Goldberg torsion zeros and the Weyl equation}, 15 October 2026. \path{archive/originals/2026-10-15/Goldberg_Torsion_Zeros_and_Weyl_Equation_20261015.tex}.
-\bibitem{GreenSource} Qiushi Engine Team, \emph{Green-potential rigidity}, 14 October 2026. \path{archive/originals/2026-10-14/Q4_Green_Potential_Rigidity.tex}. Determinant-sign precursor: \path{archive/originals/2026-10-13/Q4_Determinant_Sign_Rigidity.tex}.
-\bibitem{OrthogonalitySource} Qiushi Engine Team, \emph{Canonical orthogonality}, 12 October 2026. \path{archive/originals/2026-10-12/Q4_Canonical_Orthogonality.tex}. Harmonic products: \path{archive/originals/2026-10-13/Q4_Harmonic_Product_Reduction.tex}.
-\bibitem{GlobalSource} Qiushi Engine Team, \emph{Global connections in the Goldberg problem}, 15 October 2026. \path{archive/originals/2026-10-15/Goldberg_Global_Connections_20261015.tex}. Continuous merged proof: \path{research/packages/Goldberg_Two_Conversations_Merged_20261015--5a0ab1f2/Goldberg_Two_Conversations_Merged_20261015.tex}.
+\bibitem{Repository} S.~Yang, J.~Wu, R.~Zhao, H.~Chen and Y.~Yang, \emph{Geometric Analysis}, Qiushi Engine Team research repository, current mathematical chapter \href{https://github.com/Cherish0925/Geometric-Analysis/blob/main/docs/GOLDBERG.md}{Mathematical exposition}, version consulted 1 November 2026. This chapter contains the current polynomial exactness, action, canonical-current, noncollapse, and coupled-deformation formulations and their source links.
+\bibitem{CompleteSource} Qiushi Engine Team, \emph{A complete negative Einstein strictly almost-K\"ahler four-manifold: verification and a connection to Fino's existence question}, 8 October 2026. \href{https://github.com/Cherish0925/Geometric-Analysis/blob/main/archive/originals/2026-10-08/Q4_Complete_Example_and_Fino_Question.tex}{Manuscript}. Cartan calculation: \href{https://github.com/Cherish0925/Geometric-Analysis/blob/main/archive/originals/2026-10-08/Q4_independent_cartan.py}{Computation}.
+\bibitem{ZeroSource} Qiushi Engine Team, \emph{Torsion-zero structure}, 9 October 2026. \href{https://github.com/Cherish0925/Geometric-Analysis/blob/main/archive/originals/2026-10-09/Q4_Torsion_Zero_Structure.tex}{Manuscript}.
+\bibitem{ZeroCurves} Qiushi Engine Team, \emph{Goldberg torsion zeros and the Weyl equation}, 15 October 2026. \href{https://github.com/Cherish0925/Geometric-Analysis/blob/main/archive/originals/2026-10-15/Goldberg_Torsion_Zeros_and_Weyl_Equation_20261015.tex}{Manuscript}.
+\bibitem{GreenSource} Qiushi Engine Team, \emph{Green-potential rigidity}, 14 October 2026. \href{https://github.com/Cherish0925/Geometric-Analysis/blob/main/archive/originals/2026-10-14/Q4_Green_Potential_Rigidity.tex}{Manuscript}. Determinant-sign precursor: \href{https://github.com/Cherish0925/Geometric-Analysis/blob/main/archive/originals/2026-10-13/Q4_Determinant_Sign_Rigidity.tex}{Manuscript}.
+\bibitem{OrthogonalitySource} Qiushi Engine Team, \emph{Canonical orthogonality}, 12 October 2026. \href{https://github.com/Cherish0925/Geometric-Analysis/blob/main/archive/originals/2026-10-12/Q4_Canonical_Orthogonality.tex}{Manuscript}. Harmonic products: \href{https://github.com/Cherish0925/Geometric-Analysis/blob/main/archive/originals/2026-10-13/Q4_Harmonic_Product_Reduction.tex}{Manuscript}.
+\bibitem{GlobalSource} Qiushi Engine Team, \emph{Global connections in the Goldberg problem}, 15 October 2026. \href{https://github.com/Cherish0925/Geometric-Analysis/blob/main/archive/originals/2026-10-15/Goldberg_Global_Connections_20261015.tex}{Manuscript}. Continuous merged proof: \href{https://github.com/Cherish0925/Geometric-Analysis/blob/main/research/packages/Goldberg_Two_Conversations_Merged_20261015--5a0ab1f2/Goldberg_Two_Conversations_Merged_20261015.tex}{Manuscript}.
 \end{thebibliography}
 \end{document}

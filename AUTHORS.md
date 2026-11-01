@@ -1,22 +1,21 @@
 # Authors and affiliation
 
-## Einstein Geometry on Four-Manifolds: Gaps, Curvature Extremals, and Realization
-
-**Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen<sup>*</sup>, Yihao Yang<sup>*</sup>**
+<strong>Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen<sup>&#42;</sup>, Yihao Yang<sup>&#42;</sup></strong>
 
 College of Information Science and Electronic Engineering, Zhejiang University  
 Qiushi Engine Team
 
-**Corresponding authors**  
-Hongsheng Chen: [hansomchen@zju.edu.cn](mailto:hansomchen@zju.edu.cn)  
-Yihao Yang: [yangyihao@zju.edu.cn](mailto:yangyihao@zju.edu.cn)
+Shuxing Yang is the first author. The author order above applies to the research collection and its four manuscripts.
 
-Shuxing Yang is the first author. Hongsheng Chen and Yihao Yang are the corresponding authors, indicated by an asterisk. This author order applies to the maintained research collection and its four current working manuscripts.
+## Correspondence
 
-Junyao Wu and Rui Zhao contributed to the mathematical research, derivations, computation, and verification. The research is presented as work of the Qiushi Engine Team at Zhejiang University.
+<sup>&#42;</sup> Hongsheng Chen — [hansomchen@zju.edu.cn](mailto:hansomchen@zju.edu.cn)  
+<sup>&#42;</sup> Yihao Yang — [yangyihao@zju.edu.cn](mailto:yangyihao@zju.edu.cn)
 
-## Attribution within the collection
+## Contributions
 
-The current manuscripts identify the project's results, their analytic and geometric prerequisites, and the classical results used in their proofs. Bibliographic references, reproduced literature, external programs, and historical source documents retain their original authorship and notices. The project author line does not replace those credits.
+Junyao Wu and Rui Zhao contributed to the mathematical research, derivations, computation, and verification.
 
-For citation of the collection or an individual manuscript, see [CITATION.cff](CITATION.cff), [CITATION.bib](CITATION.bib), and the [manuscript index](manuscripts/README.md).
+## Citation
+
+Individual manuscript and collection entries are provided in [CITATION.bib](CITATION.bib) and [CITATION.cff](CITATION.cff). References to earlier mathematical work appear in the manuscripts and supporting texts.

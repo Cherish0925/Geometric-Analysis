@@ -246,7 +246,7 @@ When the canonical bundle is ample, use the negative Kähler--Einstein metric an
 For a general minimal surface of general type use the negative Kähler--Einstein orbifold metric on its canonical model. Choose the insertion points in its regular part. Fix a sufficiently small insertion parameter so that its total saving is a positive number. Only then resolve the canonical ADE singularities by shrinking Ricci-flat ALE metrics. The curvature error in these subsequent resolutions tends to zero; it can be made smaller than half the already fixed saving. The resulting smooth manifold is the required blow-up of $X$.
 \end{proof}
 
-\subsection{Coverage and the order of limits}
+\subsection{Covering families and the order of limits}
 Let $X_0$ be a fixed compact complex hyperbolic surface and let $X_j\to X_0$ be any finite unbranched covers whose degrees tend to infinity. Set $A_j=c_1^2(X_j)$ and
 \[
  M_j=X_j\#k_j\overline\CP^{\,2}\#\ell_j(S^1\times S^3),\quad
@@ -256,17 +256,17 @@ Assume $Q_j\to\infty$, $h_j\to0$, and
 \begin{equation}\label{eq:balance}
  k_j/Q_j\to2/9,\qquad \ell_j/Q_j\to7/36.
 \end{equation}
-There is a fixed radius, depending on $X_0$, with linearly many disjoint embedded model balls on every cover. Since $Q_j=o(A_j)$, all required insertions fit for large $j$. Choose the local scale in \eqref{eq:log} once, before letting $j\to\infty$, to obtain a fixed saving $\delta_{X_0}>0$ per blow-up. The scalar-flat conformally flat handle model has cost $32\pi^2$ and can be matched with error $o(Q_j)$. Hence
+There is a fixed radius, depending on $X_0$, with linearly many disjoint embedded model balls on every cover. Since $Q_j=o(A_j)$, all required insertions fit for large $j$. Choose the local scale in \eqref{eq:log} once, before letting $j\to\infty$, to obtain a fixed saving $\delta_{X_0}>0$ per blow-up. The scalar-flat conformally flat handle model has energy $32\pi^2$ and can be matched with error $o(Q_j)$. Hence
 \begin{equation}\label{eq:subfour}
  \limsup_j\frac{\alpha(M_j)}{h_j}\le4-\frac89\delta_{X_0}<4.
 \end{equation}
-The actual closed recovery metrics have scalar variance $o(Q_j)$, so the normalization follows from \eqref{eq:EJ}, rather than from a comparison of $P$ alone. Formula \eqref{eq:subfour} holds for the covers just specified; a numerical bound obtained from a particular finite-scale cell and its placement certificate has its own coverage hypotheses.
+The closed recovery metrics have scalar variance $o(Q_j)$, so the normalization follows from \eqref{eq:EJ}, rather than from a comparison of $P$ alone. Formula \eqref{eq:subfour} holds for the covers just specified; a numerical bound obtained from a particular finite-scale cell and the required disjoint embeddings has the corresponding covering hypotheses.
 
-More generally, if a cell has cost $8\pi^2p_c<8\pi^2$, the balanced combination of $8n$ blow-ups and $7n$ handles has $Q=36n$. With $C_c=28/9+8p_c/9$, the recovery construction gives
+More generally, if a surgery region has energy $8\pi^2p_c<8\pi^2$, the balanced combination of $8n$ blow-ups and $7n$ handles has $Q=36n$. With $C_c=28/9+8p_c/9$, the recovery construction gives
 \begin{equation}\label{eq:finiteh}
  \frac{\alpha}{h}\le\frac{C_c}{1+C_ch/4}+o(1).
 \end{equation}
-The error refers to the explicitly constructed family and its matching limits. The marked mixed-cell infima also satisfy subadditivity: if $\mathfrak P_{8n,7n}$ denotes the complete cost with the fixed matching convention, then
+The error refers to the explicitly constructed family and its matching limits. The marked mixed-cell infima also satisfy subadditivity: if $\mathfrak P_{8n,7n}$ denotes the total curvature energy with the fixed matching convention, then
 \[
  \gamma_{\mathrm{bal}}=\lim_{n\to\infty}\frac{\mathfrak P_{8n,7n}}{72\pi^2n}
  =\inf_{n\ge1}\frac{\mathfrak P_{8n,7n}}{72\pi^2n},\qquad
@@ -293,7 +293,7 @@ For a fixed blow-up complex structure the Kähler infimum is $8\pi^2k$ and is no
 \]
 The scalar bound in that class is therefore strict. Shrinking exceptional areas gives the reverse limiting inequality.
 
-\section{Complete cells, genuine variations, and smooth attainment}
+\section{Complete surgery regions, metric variations, and smooth attainment}
 \subsection{Constant scalar curvature on a complex hyperbolic end}
 For a complete marked cell equal to the complex hyperbolic metric outside a compact set, $\Ric=-6g$ on the end, the equation
 \begin{equation}\label{eq:Ycell}
@@ -328,7 +328,7 @@ one has
 \end{equation}
 \end{proposition}
 \begin{proof}
-Choose the initial metrics to the stated accuracy and perform Yamabe replacement, which decreases $P$. For $|t|$ in a fixed small interval, $g_j+tH$ remains positive definite. The exact difference of Levi-Civita connections bounds the second and third derivatives of $F(t)=P(g_j+tH)$ by $C_KA_j$: curvature terms use the $L^2$ curvature budget; differentiated metric terms use \eqref{eq:testnorm}. No Sobolev estimate enters this calculation. Since $F(\pm t)\ge F(0)-\delta_j$, Taylor expansion gives
+Choose the initial metrics to the stated accuracy and perform Yamabe replacement, which decreases $P$. For $|t|$ in a fixed small interval, $g_j+tH$ remains positive definite. The exact difference of Levi-Civita connections bounds the second and third derivatives of $F(t)=P(g_j+tH)$ by $C_KA_j$: curvature terms use the $L^2$ curvature bound; differentiated metric terms use \eqref{eq:testnorm}. No Sobolev estimate enters this calculation. Since $F(\pm t)\ge F(0)-\delta_j$, Taylor expansion gives
 \[
  |F'(0)|\le\delta_j/t+C_KA_jt,
  \qquad F''(0)\ge-2\delta_j/t^2-C_KA_jt.
@@ -584,8 +584,8 @@ For these Kronheimer cores the contributions to \eqref{eq:rootcost} are
  c(D_2)=1,\quad c(D_3)=3/4,\quad
  c(D_a)=1-[4(a-2)]^{-1}\quad(a\ge4).
 \]
-Every component of rank at most five has cost greater than its rank divided by six. Thus full absorption requires $k\ge6$. At $k=6$, the only numerically possible type is $D_6$, and its cost $15/16$ requires
-$A\ge3675/64$. Since $A\in9\Z$ for a compact complex hyperbolic surface, the first numerical possibility is $A=63$. These are necessary restrictions; they do not supply embeddings or an Einstein orbifold realizing them.
+Every component of rank at most five has curvature contribution greater than its rank divided by six. Thus full absorption requires $k\ge6$. At $k=6$, the only numerically possible type is $D_6$, and its curvature contribution $15/16$ requires
+$A\ge3675/64$. Since $A\in9\Z$ for a compact complex hyperbolic surface, the first numerical possibility is $A=63$. These are necessary restrictions; they do not establish embeddings or an Einstein orbifold realizing them.
 
 \subsection{The Eguchi--Hanson obstruction as an approximation rate}
 For an Einstein orbifold with $\Ric=\Lambda g$ and an $A_1$ point $p$, let $a$ be the resolution scale and $\zeta\in\Lambda_p^+$ a unit gluing direction. The three Eguchi--Hanson cokernel tensors $o_i=\Omega\circ\omega_i$ satisfy
@@ -723,8 +723,8 @@ $(\log v)'=\tfrac32\lambda_a+\tfrac12(\lambda_a+2\lambda_c)>0$, contrary to $v\t
 \end{proof}
 These statements use a specified end structure. They do not assert that an arbitrary minimizing sequence has a fixed-base cusp or a biaxial lift.
 
-\section{Actual fields under Wahl degeneration}
-The energy transfer of Section~6 can be strengthened to transfer actual Seiberg--Witten fields for a Wahl rational-ball collapse. This is useful because a curvature inequality alone does not retain the local equivariant character of its supplying field. We use the conventions and detailed analytical transfer in \cite{RepoWahl}.
+\section{Seiberg--Witten solutions under Wahl degeneration}
+The energy transfer of Section~6 can be strengthened to transfer Seiberg--Witten solutions for a Wahl rational-ball collapse. This is useful because a curvature inequality alone does not retain the local equivariant character of the underlying solution. We use the conventions and detailed analytical transfer in \cite{RepoWahl}.
 
 \subsection{A field and energy transfer theorem}
 Let $V$ have one singularity of type $\frac1{n^2}(1,n-1)$, $n\ge2$, and let $M$ be its smoothing by a Wahl rational ball $B_{n,1}$. Use the Ricci-flat Kähler ALE metric on this smoothing supplied by \cite{Suvaina}. At scale $\eps$, take transition radius $\rho=\eps^{2/3}$. For a fixed orbifold metric, the resulting recovery metrics have uniformly bounded scalar curvature and
@@ -740,8 +740,8 @@ Assume a finite set of Spin$^c$ structures on $M$ supplies, for every metric in 
  \quad4\nabla_A^*\nabla_A\Phi+s\Phi+|\Phi|^2\Phi=0.
 \end{equation}
 
-\begin{proposition}[Transfer of actual fields]\label{prop:Wahlfield}
-After a subsequence the supplying Spin$^c$ structure is fixed. Its solutions converge modulo gauge on $V^{\mathrm{reg}}$, extend smoothly as orbifold fields, and satisfy
+\begin{proposition}[Convergence of Seiberg--Witten solutions]\label{prop:Wahlfield}
+After a subsequence the Spin$^c$ structure carrying the solutions is fixed. Its solutions converge modulo gauge on $V^{\mathrm{reg}}$, extend smoothly as orbifold fields, and satisfy
 \begin{align*}
  a_V^2&=a_M^2,&
  \int_M|\Phi_\eps|^4&\longrightarrow\int_V|\Phi_\infty|^4\ge32\pi^2A_0,\\
@@ -765,7 +765,7 @@ The rational ball, the cone, and their common boundary have the vanishing real c
 $4\int|\nabla_A\Phi|^2=-\int s|\Phi|^2-\int|\Phi|^4$
 transfers derivative energy.
 \end{proof}
-To use this statement for every orbifold metric, its supply hypothesis must hold for the recovery family of each such metric. The unperturbed equations themselves are not simply conformally covariant.
+To use this statement for every orbifold metric, its solvability hypothesis must hold for the recovery family of each such metric. The unperturbed equations themselves are not simply conformally covariant.
 
 \subsection{Characters, chirality, and forced zeros}
 Put $d=1-n^{-2}$. Relative characteristic numbers give
@@ -773,7 +773,7 @@ Put $d=1-n^{-2}$. Relative characteristic numbers give
  \chi_\orb(V)=\chi(M)-d,\quad\tau_{\rm CW}(V)=\tau(M)+2d/3,
  \qquad T_+^\orb=T_+(M),\quad T_-^\orb=T_-(M)-4d.
 \end{equation}
-Thus the positive-chirality budget survives while the opposite one changes.
+Thus the positive-chirality curvature bound is preserved while the opposite one changes.
 Relative to the canonical lift, boundary twists are $m\in\Z/n^2\Z$; exactly $m=nj$ extend over the rational ball. Their orbifold and smooth Dirac indices agree. One can see the local index distinction explicitly by putting $p=n^2$, $\zeta=e^{2\pi i/p}$ and
 \[
  \delta(m)=\frac1p\sum_{r=1}^{p-1}
@@ -786,12 +786,12 @@ Finite Fourier summation gives
 \]
 This equality is an index statement, not an identification of complete moduli spaces or invariants.
 
-For odd $n\ge3$ and $2\le j\le n-1$, the two positive-spinor weights are $nj,n(j-1)$. Neither an invariant constant spinor nor an invariant first derivative is possible. Every actual solution in that character therefore has
+For odd $n\ge3$ and $2\le j\le n-1$, the two positive-spinor weights are $nj,n(j-1)$. Neither an invariant constant spinor nor an invariant first derivative is possible. Every solution in that character therefore has
 \begin{equation}\label{eq:Wahlzeros}
  \Phi(p_0)=0,\qquad\nabla_A\Phi(p_0)=0.
 \end{equation}
 For $n\ge3$, invariance also forces
-$W^+(p_0)=\mu\operatorname{diag}(2,-1,-1)$ in an adapted basis. It does not determine $\mu$ from the scalar curvature. In a marked construction whose supplied character subset both forces \eqref{eq:Wahlzeros} and retains projection budget $A_0$, the scalar estimate is pointwise in the space of metrics strictly improved:
+$W^+(p_0)=\mu\operatorname{diag}(2,-1,-1)$ in an adapted basis. It does not determine $\mu$ from the scalar curvature. In a marked construction whose chosen character subset both forces \eqref{eq:Wahlzeros} and retains the projected class-square bound $A_0$, the scalar estimate is pointwise in the space of metrics strictly improved:
 \[
  \int_V(s^-)^2>32\pi^2A_0.
 \]
@@ -830,18 +830,18 @@ This construction concerns a fixed metric and auxiliary equations. It does not i
  0\le U\le\lambda,\qquad
  \lambda^2V-\int U^2=8\int|\nabla_A\Phi|^2+\int(\lambda-U)^2.
 \]
-A global exclusion would need to compare this positive remainder with the same field's Weyl and projection budgets on a controlled geometric scale.
+A global exclusion would need to compare this positive remainder with the Weyl-curvature and projected class-square bounds associated with the same solution on a controlled geometric scale.
 
 \section{The remaining extremal and attainment questions}\label{sec:questions}
 The constructions and exact formulas above determine several distinct variational phenomena. Smooth blow-up metrics can lie strictly below the standard $8\pi^2$ per exceptional class, while paired-$A_1$ orbifolds retain exactly that infimum. Ricci-flat resolution preserves Ricci energy but can retain substantial Weyl energy and topology. Finite-volume complements may carry a nonzero limiting curvature quantity even when their volume vanishes. These facts identify the information required by a general lower-bound or attainment argument.
 
 \begin{question}[Smooth optimal value]
-For a minimal surface of general type $X$ and $k\ge1$, determine $P_*(X\#k\overline\CP^{\,2})$. In particular, determine its scale as $k/c_1^2(X)\to0$ in specified families, and obtain lower bounds matching genuine smooth constructions.
+For a minimal surface of general type $X$ and $k\ge1$, determine $P_*(X\#k\overline\CP^{\,2})$. In particular, determine its scale as $k/c_1^2(X)\to0$ in specified families, and obtain lower bounds matching smooth constructions.
 \end{question}
 \begin{question}[Balanced asymptotics]
 For the fixed-base covering families satisfying \eqref{eq:balance}, determine the limit, or exact lower and upper limits, of $\alpha(M_j)/h_j$. Does the marked-cell infimum $\gamma_{\mathrm{bal}}$ equal the global asymptotic value?
 \end{question}
-The strict upper bound \eqref{eq:subfour} excludes the value four for these families. A lower bound based on independently summing standard cell costs would therefore require a premise incompatible with the constructed competitors.
+The strict upper bound \eqref{eq:subfour} excludes the value four for these families. A lower bound based on adding the energies of independent standard surgery regions would therefore require a premise incompatible with the constructed competitors.
 
 \begin{question}[Einstein existence on small blow-ups]
 For $0<k<c_1^2(X)/3$, determine whether the indicated smooth blow-ups admit Einstein metrics. The necessary Weyl threshold \eqref{eq:Einthreshold} must be tested against the actual Einstein equation, rather than against the same classical scalar inequalities again.
@@ -855,7 +855,7 @@ When $k=A/3$ in Theorem~\ref{thm:orbifold}, does $V_m$ admit a negative constant
 A general compactification of the smooth problem would have to justify which ALE configurations, finite-volume domains, and collapsed complements actually occur, and preserve the characteristic boundary data used above. Such a theorem is stronger than the local inequalities for an already identified component. Conversely, a construction or a direct global inequality can determine a particular extremal value without first classifying every possible degeneration.
 
 \appendix
-\section{Research sources and analytical dependencies}
+\section{Companion proofs}
 This manuscript develops the continuous variational argument from the repository's curvature-extremal chapter \cite{RepoVariation}. Classical scalar and mixed inequalities are used in their original four-dimensional conventions. The logarithmic insertion estimates, complete-cell conformal analysis, and the weighted Eguchi--Hanson neighborhood estimate are analytical inputs whose detailed local expansions are retained in the cited source files. The normalized reduction, comparisons, exact paired-$A_1$ proof, mixed transfer, root restrictions, and complementary-domain deductions are given in the body of this manuscript. Unrestricted smooth attainment, the small-blow-up Einstein problem, and the global balanced optimal coefficient remain the questions stated in Section~\ref{sec:questions}.
 
 \begin{thebibliography}{99}

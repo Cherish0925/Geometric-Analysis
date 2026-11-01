@@ -1,46 +1,38 @@
-# 材料范围与版本说明
+# 数学文稿与资料索引
 
-*Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen, Yihao Yang · Qiushi Engine Team, Zhejiang University. [Authors and correspondence](../AUTHORS.md).*
+Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen, Yihao Yang  
+Qiushi Engine Team, Zhejiang University · [作者与通讯信息](../AUTHORS.md)
 
-数学正文按间隙与端点、曲率变分、构造与实现、几乎 Kähler 几何组织。它综合早期原稿、后续资料包及服务器上的独立推导；相同命题合并，后续修正落实到当前陈述。研究的演变见[研究沿革](RESEARCH_HISTORY.md)，依赖关系见[研究结构](RESEARCH_MAP.md)。
+[英文论文](../manuscripts/README.md)按四个数学主题组织。中文专题提供补充推导、文献联系与原始证明出处。
 
-## 内容范围
+## 专题
 
-| 阶段 | 纳入正文的数学内容 |
+| 主题 | 内容与阅读入口 |
 |---|---|
-| 初始问题与构造 | 正负 Einstein 逼近、积分障碍、固定轨形解消、固定剪切流形、边界模型及相对曲率—体积恒等式 |
-| 共同分析 | 单解参数理论、N1、I40/I41、实际规范供给、线性尺度、周期、完整慢模态修复、增长—强制条件下的局部一致逆 |
-| 端点与变分 | 同丛辅助截面、第五幂线丛、有限密度端点、带权测试、变分选择及完整类预算 |
-| 上界与应用 | 严格次四构造、解析负对数节省、覆盖恢复、双取向间隙及 Kodaira 斜率应用 |
-| 全局极值与退化 | Weyl–Yamabe 归约、成对轨形精确值、ALE 混合转移、根格限制、有限体积补域电荷、指定尖点的 Einstein 限制及 cscK 鞍点 |
-| 实际场与奇点 | Wahl 场转移、可延拓字符、指标、强迫零点及等变形式延拓 |
-| 几乎 Kähler 几何 | 完备非紧例子、对称局部刚性、扭率零点与典范曲线费用、线性相容结构、Green 势、耦合形变、能量不集中及相容辛低成本构造 |
+| [Einstein 积分间隙](GAPS_AND_ENDPOINTS.md) | 单极子方程与曲率的相容性、无迹 Ricci 强制估计、参数端点、双取向配对与 Kodaira 斜率应用。 |
+| [曲率极值与退化](CURVATURE_VARIATION.md) | 曲率下确界、局部插入与覆盖构造、Weyl–Yamabe 归约、轨形极值、渐近局部欧氏极限及光滑取得性。 |
+| [逼近与精确 Einstein 度量](CONSTRUCTIONS_AND_REALIZATION.md) | 固定流形构造、周期与 Teichmüller 变形、非线性校正、连接区域及奇点填充。 |
+| [几乎 Kähler–Einstein 几何](GOLDBERG.md) | 完备非紧构造、扭率零集、典范联络、Green 势、模空间及闭流形刚性。 |
+| [方法与文献](METHODS_AND_LITERATURE.md) | 场方程、曲率恒等式、变分与拼接方法，以及相应经典文献。 |
+| [定理关系](RESEARCH_MAP.md) | 定理的假设、推导关系、应用范围与开放问题。 |
+| [数学发展与证明关系](RESEARCH_HISTORY.md) | 强制估计、极值构造和刚性论证之间的联系。 |
 
-正文给出数学内容及证明关系。原始会话、调度信息、模型评分和重复进度汇报不作为本轮新增资料上传。
+## 补充文稿与计算
 
-## 连续性与补入内容
+- [积分间隙与曲率变分论文集](../archive/originals/2026-10-07/00_All_Recent_Research.tex)：端点分析、极小化、构造与应用的补充证明。
+- [Einstein 存在性、曲率极值与几乎 Kähler 几何](../archive/originals/2026-10-08/01_Research_Synthesis.tex)：四类问题的数学陈述与相关推导。
+- [曲率变分与局部 Einstein 构造](../archive/originals/2026-10-08/03_Subsequent_Mathematical_Developments.tex)：谐和通量、变分、精确局部构造及相容性。
+- [几乎 Kähler–Einstein 几何补充论证](../research/packages/Goldberg_Two_Conversations_Merged_20261015--5a0ab1f2/Goldberg_Two_Conversations_Merged_20261015.tex)：扭率零集、Weyl 方程与整体刚性。
+- [Wahl 奇点上的单极子场与形式延拓](../research/notes/Wahl_Fields_and_Formal_Completion.md)。
+- [Taub–NUT 度量上的端点场](../research/notes/taub_nut_endpoint_fields.md)。
+- [计算程序](../research/computations/)：Bianchi IX 曲率与 Eguchi–Hanson 配对计算。
 
-本地材料按早期点态与全局构造、后续规范场分析、曲率变分、几乎 Kähler 几何以及独立推导逐项对应到专题。原稿已经收录而正文没有展开的结论，现补入其假设、证明要点与直接链接；后期独立结果则重写为相应章节中的数学陈述。
+## 原始资料
 
-此次补入包括：Yamabe 归约的正则性与点态反例、变振幅 Weyl 的有源相容式、Ricci 能量极小序列的余项控制、相容辛形式的低成本插入、cscK 的条件性局部强制与精确鞍点，以及尖点、连接器和无直径修复的独立结论。它们扩充现有证明关系，不重复计作新的发现。
+[原始文稿](../archive/originals/)保存各版论文、补充证明及资料包；[展开的资料包](../research/packages/)包含对应的证明、程序、计算数据和参考文献。专题在使用处链接相应来源。
 
-有效的失败分析也在对应命题旁保留。例如，局部自由环面作用不决定闭完成的 Euler 数；四节点首阶谱计算尚不包含完整非线性障碍；存在零空间时 cscK 局部正强制仍需上同调条件。这样可以从数学原因识别哪些路线仍有未完成连接。
-
-## 原稿与引用
-
-既有原件保留在 archive/originals，展开的证明、程序和数据保留在 research/packages。专题在使用处链接相应原稿；后期独立推导已写入专题或数学附录，无需按会话重新阅读。
-
-先前未定位的两项历史材料已找到：9 月 28 日完整续研包对应已存的[归档原件](../archive/originals/2026-09-28/8f121eef-4045-4b73-a442-bccba42aa584.zip)；10 月 1 日整合稿位于服务器原研究工程，其独特内容已与前后稿合并使用，不另复制一份重叠总稿。三个网页会话的完整逐字导出仍未取得；已获得的数学文稿和资料包独立保存。
-
-来源日期表示材料版本，不表示数学发现或文献优先权。原始稿保留历史表述；当前专题采用后续订正后的公式和适用范围。
-
-## 索引
-
-- [原件来源](../catalog/sources.json)：名称、日期及仓库路径。
-- [资料包](../catalog/packages.json)：压缩原件与展开位置。
-- [包内原始成员](../catalog/archive_members.json)：原始文件对应关系。
-- [文件目录](../catalog/files.json)：路径、大小和文件类型。
-- [可浏览的来源索引](../catalog/README.md)。
-
-日常维护以 Git 记录正文修改。目录更新使用 python3 tools/build_catalog.py；原始材料的内容核验工具保留供需要核对具体原件时使用。
-
+- [资料目录](../catalog/README.md)。
+- [原始文件索引](../catalog/sources.json)。
+- [压缩包与展开目录](../catalog/packages.json)。
+- [包内文件对应表](../catalog/archive_members.json)。
+- [全部文件目录](../catalog/files.json)。

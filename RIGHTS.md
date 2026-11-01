@@ -1,11 +1,7 @@
-# Authorship, citation, and reuse
+# Rights and permissions
 
-The original research in the maintained manuscripts and expository documents is attributed to Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen, and Yihao Yang, Qiushi Engine Team, Zhejiang University.
+The team's original research is attributed to Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen, and Yihao Yang, Qiushi Engine Team, Zhejiang University.
 
-When discussing or building on a result, cite the relevant manuscript and its version, and identify the theorem, proposition, construction, or computation used. Classical results and external materials should also be cited at their original sources. Citation records are provided in `CITATION.cff` and `CITATION.bib`.
+Please cite the relevant manuscript and result using [CITATION.bib](CITATION.bib). Third-party publications and programs retain their original authorship and license terms.
 
-This version does not introduce a repository-wide software or document license. Existing licenses and notices on individual files continue to govern those files. Any additional permission to reproduce or adapt project material should be requested from the corresponding authors.
-
-The archive includes third-party publications and source materials. Their authorship and applicable terms remain with their respective authors and rights holders; the project author statement is limited to the team's own contributions.
-
-Correspondence: Hongsheng Chen <hansomchen@zju.edu.cn>; Yihao Yang <yangyihao@zju.edu.cn>.
+No repository-wide reuse license has been granted. Permissions stated in individual files remain applicable. For additional permission to reproduce or adapt the team's material, contact [Hongsheng Chen](mailto:hansomchen@zju.edu.cn) or [Yihao Yang](mailto:yangyihao@zju.edu.cn).

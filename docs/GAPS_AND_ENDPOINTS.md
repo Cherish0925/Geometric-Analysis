@@ -7,19 +7,19 @@ Qiushi Engine Team, Zhejiang University · [作者与通讯信息](../AUTHORS.md
 
 ## 1. 几何对象与单极子解存在性
 
-设 $`M`$ 为闭、连通、定向光滑四流形，$`g`$ 为光滑黎曼度量。记 $`\chi(M)`$ 为 Euler 示性数，$`\tau(M)`$ 为签名，$`s_g`$ 为标量曲率，$`\operatorname{Ric}^{\circ}_g=\operatorname{Ric}_g-s_gg/4`$，$`V_g=\operatorname{Vol}_g(M)`$。省略测度的积分均相对于 $`dV_g`$，$`x_+=\max\{x,0\}`$，$`\fint f=V_g^{-1}\int_M f\,dV_g`$。定义
+设 $`M`$ 为闭、连通、定向光滑四流形，$`g`$ 为光滑黎曼度量。记 $`\chi(M)`$ 为 Euler 示性数，$`\tau(M)`$ 为签名，$`s_g`$ 为标量曲率，$`\mathop{\mathrm{Ric}}\nolimits^{\circ}_g=\mathop{\mathrm{Ric}}\nolimits_g-s_gg/4`$，$`V_g=\mathop{\mathrm{Vol}}\nolimits_g(M)`$。省略测度的积分均相对于 $`dV_g`$，$`x_+=\max\{x,0\}`$，$`\mathop{\rlap{-}\int}\nolimits f=V_g^{-1}\int_M f\,dV_g`$。定义
 
 ```math
 T_+=2\chi(M)+3\tau(M),\quad
-P(g)=\int_M|\operatorname{Ric}^{\circ}_g|^2,\quad
-R(g)=\int_M|\operatorname{Ric}_g|^2,
+P(g)=\int_M|\mathop{\mathrm{Ric}}\nolimits^{\circ}_g|^2,\quad
+R(g)=\int_M|\mathop{\mathrm{Ric}}\nolimits_g|^2,
 ```
 
 ```math
 \mathcal J(g)=\frac{4P(g)}{R(g)},\qquad
 \mathcal E(g)=\inf_{\lambda\ne0}
-\frac{\int_M|\operatorname{Ric}_g-\lambda g|^2}
-{\lambda^2\operatorname{Vol}_g(M)}.
+\frac{\int_M|\mathop{\mathrm{Ric}}\nolimits_g-\lambda g|^2}
+{\lambda^2\mathop{\mathrm{Vol}}\nolimits_g(M)}.
 ```
 
 $`W^+`$、$`W^-`$ 分别为自对偶和反自对偶 Weyl 曲率，采用其在二形式空间上作用的 Hilbert–Schmidt 范数；Ricci 使用二张量范数。下文所有曲率常数均采用这一约定。
@@ -110,7 +110,7 @@ R(g)=R(\widehat g)+\delta/3,
 共形比较还保留一个不使用规范场的定量结论。若闭四维度量满足
 
 ```math
-\delta_-(g):=\|g^{-1}\operatorname{Ric}_g+I\|_{\infty,\mathrm{op}}
+\delta_-(g):=\|g^{-1}\mathop{\mathrm{Ric}}\nolimits_g+I\|_{\infty,\mathrm{op}}
 \le\epsilon\le\tfrac14,
 ```
 
@@ -127,7 +127,7 @@ R(g)=R(\widehat g)+\delta/3,
 ```
 
 ```math
-\int_{\widehat g}|\operatorname{Ric}_{\widehat g}+\widehat g|^2
+\int_{\widehat g}|\mathop{\mathrm{Ric}}\nolimits_{\widehat g}+\widehat g|^2
 \le P(g)\le4\epsilon^2V_g.
 ```
 
@@ -145,7 +145,7 @@ R(g)=R(\widehat g)+\delta/3,
 (\Delta_g+4/3)v=F,\qquad \|F\|_\infty\le2\epsilon.
 ```
 
-在 $`\operatorname{Ric}\ge-Kg`$ 下，热半群给
+在 $`\mathop{\mathrm{Ric}}\nolimits\ge-Kg`$ 下，热半群给
 
 ```math
 \|\nabla(\Delta_g+m)^{-1}f\|_\infty
@@ -268,8 +268,8 @@ A_\psi=\frac q{24}I-\frac18\psi\otimes\psi,
 ```
 
 ```math
-d=\fint\bigl(|\operatorname{Ric}+g|^2+|W^+-A_\psi|^2+(q-2)^2\bigr),
-\qquad B=\fint|\Delta_H\psi|^2.
+d=\mathop{\rlap{-}\int}\nolimits\bigl(|\mathop{\mathrm{Ric}}\nolimits+g|^2+|W^+-A_\psi|^2+(q-2)^2\bigr),
+\qquad B=\mathop{\rlap{-}\int}\nolimits|\Delta_H\psi|^2.
 ```
 
 有界二形式定理给出
@@ -286,8 +286,8 @@ $`\|\nabla u\|_4^2\le4\|u\|_\infty\|\nabla^2u\|_2`$。先交换 Hessian 两槽�
 
 ```math
 \begin{aligned}
-\int|\nabla^2u|^2={}&\int|\operatorname{tr}\nabla^2u|^2
--\int\operatorname{Ric}_{ij}\langle\nabla_i u,\nabla_j u\rangle\\
+\int|\nabla^2u|^2={}&\int|\mathop{\mathrm{tr}}\nolimits\nabla^2u|^2
+-\int\mathop{\mathrm{Ric}}\nolimits_{ij}\langle\nabla_i u,\nabla_j u\rangle\\
 &+\sum_{ij}\int\langle F_{ij}\nabla_j u,\nabla_i u\rangle
 +\frac12\sum_{ij}\int|F_{ij}u|^2.
 \end{aligned}
@@ -297,20 +297,20 @@ $`\|\nabla u\|_4^2\le4\|u\|_\infty\|\nabla^2u\|_2`$。先交换 Hessian 两槽�
 $`F`$ 为丛联络曲率。式中没有曲率导数。对 $`\Lambda^+`$ 联络，$`F`$ 只涉及 $`W^+`$、标量曲率和无迹 Ricci；$`W^-`$ 不作用于此丛。由 (11) 和 Hodge–Weitzenböck 公式，若 $`d\le1`$，则
 
 ```math
-\fint\bigl(|\nabla^2\psi|^2+|\nabla\psi|^4
+\mathop{\rlap{-}\int}\nolimits\bigl(|\nabla^2\psi|^2+|\nabla\psi|^4
 +|\nabla^2A_\psi|^2+|\Delta q|^2\bigr)
 \le C_K(1+B+d),
 ```
 
 ```math
-\fint|dq|^2\le C_K\sqrt{d(1+B+d)}.
+\mathop{\rlap{-}\int}\nolimits|dq|^2\le C_K\sqrt{d(1+B+d)}.
 \tag{12}
 ```
 
-其次，令 $`J_\psi=\operatorname{div}W(A_\psi)`$，其中 $`W(A_\psi)`$ 是对应的代数 Weyl 四张量。弱 Bianchi 恒等式在同一 $`J_\psi`$ 上测试给
+其次，令 $`J_\psi=\mathop{\mathrm{div}}\nolimitsW(A_\psi)`$，其中 $`W(A_\psi)`$ 是对应的代数 Weyl 四张量。弱 Bianchi 恒等式在同一 $`J_\psi`$ 上测试给
 
 ```math
-\fint|J_\psi|^2\le C_K\sqrt{d(1+B+d)}.
+\mathop{\rlap{-}\int}\nolimits|J_\psi|^2\le C_K\sqrt{d(1+B+d)}.
 \tag{13}
 ```
 
@@ -326,7 +326,7 @@ $`F`$ 为丛联络曲率。式中没有曲率导数。对 $`\Lambda^+`$ 联络�
 \tag{14}
 ```
 
-$`s=-4,q=2,W^+=A_\psi`$ 时代数项等于 $`1/16`$；交叉项由正的 $`q|d\psi|^2`$ 与 (12) 控制。因此 $`\fint|J_\psi|^2\ge1/16-C_K\sqrt{d(1+B+d)}`$，与 (13) 合并即得 (10)。全式对 $`\psi`$ 为多项式，跨零点无需除以模长。
+$`s=-4,q=2,W^+=A_\psi`$ 时代数项等于 $`1/16`$；交叉项由正的 $`q|d\psi|^2`$ 与 (12) 控制。因此 $`\mathop{\rlap{-}\int}\nolimits|J_\psi|^2\ge1/16-C_K\sqrt{d(1+B+d)}`$，与 (13) 合并即得 (10)。全式对 $`\psi`$ 为多项式，跨零点无需除以模长。
 
 证明见[有界自对偶二形式定理](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/mathematics/current/round21_analytic.md) §§1–3。将该定理用于新几何对象时，需实际提供有界二形式及 Hodge 源项估计；单有上同调类不提供这些条件。
 
@@ -383,7 +383,7 @@ W_0=\frac{9\beta}{8(\beta+1)^2}
 ```
 
 其参数依赖来自如下计算。置 $`t=1/\beta`$、$`d_\beta=D_\beta/V`$、$`\omega=\sqrt2\psi/c_\beta`$，则
-$`W_0=t(|\omega|^2I/3-\omega\otimes\omega)`$。若 $`J_t=\operatorname{div}W(W_0)`$、$`X=\fint|J_t|^2`$，同场测试给
+$`W_0=t(|\omega|^2I/3-\omega\otimes\omega)`$。若 $`J_t=\mathop{\mathrm{div}}\nolimitsW(W_0)`$、$`X=\mathop{\rlap{-}\int}\nolimits|J_t|^2`$，同场测试给
 
 ```math
 X\le Ct\sqrt{(r+td_\beta)(1+r+d_\beta+b_a)}.
@@ -520,7 +520,7 @@ $`\mathcal J\ge c/(1+L)-(T_+/A-2/3)_+`$；只有右端为正时才能排除 Eins
 $`\eta=|\Psi|^2`$、$`\eta_0=4/\sqrt6`$、$`U_0=-4+\sqrt6\eta`$、
 $`K=\int|\nabla_{\mathcal A}\Psi|^2`$。联络和曲率模型保持不变，方程为
 $`4\nabla^*\nabla\Psi+U_0\Psi=0`$。上述分解控制
-$`\int(|\eta-\eta_0|^2+|U_0|^2+|d\eta|^2+|\operatorname{Im}\langle\Psi,\nabla\Psi\rangle|^2+|W^+-W_0|^2)+J_F\le CD_2`$。
+$`\int(|\eta-\eta_0|^2+|U_0|^2+|d\eta|^2+|\mathop{\mathrm{Im}}\nolimits\langle\Psi,\nabla\Psi\rangle|^2+|W^+-W_0|^2)+J_F\le CD_2`$。
 
 以固定低模长截断乘 $`\Psi`$ 测试方程，得到
 $`\int_{\{\eta\le1\}}|\nabla\Psi|^2\le CD_2`$。积分旋量方程和调和投影又给
@@ -679,7 +679,7 @@ $`c_i\cdot c_j=\delta_{ij}A_i`$、$`c_i\cdot E_j=0`$、$`E_i\cdot E_j=-\delta_{i
 对这组单极子类，凸包平方的最大值和正投影平方的极小极大值均为 $`A`$：
 
 ```math
-\max_{v\in\operatorname{conv}(\mathcal C_0)}v^2
+\max_{v\in\mathop{\mathrm{conv}}\nolimits(\mathcal C_0)}v^2
 =\inf_H\max_{a\in\mathcal C_0}(a_H^+)^2=A,
 ```
 
@@ -701,10 +701,10 @@ $`R\ge8\pi^2(2p-T_+)`$ 与 Einstein 的另一手性约束共同要求
 
 ## 3. 任意固定有限 Euler 密度的端点
 
-端点问题研究下列参数缺陷；其中 $`V_g=\operatorname{Vol}_g(M)`$：
+端点问题研究下列参数缺陷；其中 $`V_g=\mathop{\mathrm{Vol}}\nolimits_g(M)`$：
 
 ```math
-\kappa_\beta(g)=\fint_M|\operatorname{Ric}_g+g|^2
+\kappa_\beta(g)=\mathop{\rlap{-}\int}\nolimits_M|\mathop{\mathrm{Ric}}\nolimits_g+g|^2
  +\frac{D_\beta(g)}{V_g}.
 ```
 
@@ -735,7 +735,7 @@ $`R\ge8\pi^2(2p-T_+)`$ 与 Einstein 的另一手性约束共同要求
 
 得到 $`|v|+|\nabla^*\nabla v|\le C`$、$`v-\mathfrak t\to0`$ 于 $`H^1(dV/V)`$，以及 $`(\nabla^*\nabla-2)v\to0`$ 于 $`L^2(dV/V)`$。辅助截面 $`v`$ 仅由该线性方程定义。
 
-**有限密度导数估计。** $`b=\fint|W^-|^2\le C_B`$ 给 $`\|\nabla v\|_4+\|\nabla^2v\|_2\le C_B`$。模长、相位与 Dirac 方程的约化只留下一个复导数分量；协方差测试给 $`q=|\nabla v|^2\to2m_*`$ 于测度，$`m_*=128/81`$。见 [弱 Bianchi 估计与旋量导数分解](../archive/originals/2026-09-29/O10_Weak_Bianchi.md)。这条直接证明避免了早期 Nijenhuis 括号的伴随测试，保留早期 [预解算子与旋量方程的延拓](../archive/originals/2026-09-29/O10_Resolvent_Prolongation.md) 作为另一条推导记录。
+**有限密度导数估计。** $`b=\mathop{\rlap{-}\int}\nolimits|W^-|^2\le C_B`$ 给 $`\|\nabla v\|_4+\|\nabla^2v\|_2\le C_B`$。模长、相位与 Dirac 方程的约化只留下一个复导数分量；协方差测试给 $`q=|\nabla v|^2\to2m_*`$ 于测度，$`m_*=128/81`$。见 [弱 Bianchi 估计与旋量导数分解](../archive/originals/2026-09-29/O10_Weak_Bianchi.md)。这条直接证明避免了早期 Nijenhuis 括号的伴随测试，保留早期 [预解算子与旋量方程的延拓](../archive/originals/2026-09-29/O10_Resolvent_Prolongation.md) 作为另一条推导记录。
 
 **第五幂线丛。** 构造
 
@@ -752,7 +752,7 @@ t(v)=\sum_{i=1}^4c^-(e^i)v\otimes(v\wedge\nabla_i v)
 ```
 
 $`c^-`$ 是负到正手性的 Clifford 乘法；$`|\Phi|^2\to\rho_*`$、$`|v|^2\to m_*`$。由于 $`|\sigma|\le C|\nabla v|`$，以及
-$`|\nabla\sigma|\le C(|\nabla^2v|+|\nabla v|^2+|\nabla\Phi||\nabla v|)`$，有限密度估计给 $`\fint|\nabla\sigma|^2\le C_B`$。线丛次数来自 $`\det S^+=L`$，而非把一个局部系数当成全局标量。
+$`|\nabla\sigma|\le C(|\nabla^2v|+|\nabla v|^2+|\nabla\Phi||\nabla v|)`$，有限密度估计给 $`\mathop{\rlap{-}\int}\nolimits|\nabla\sigma|^2\le C_B`$。线丛次数来自 $`\det S^+=L`$，而非把一个局部系数当成全局标量。
 
 **全局矛盾。** 线丛的对数预解算子正则化与 Chern–Weil 转移公式给
 
@@ -784,7 +784,7 @@ c_1(L^5)^2[M]/V=25a^2[M]/V\to25/(6\pi^2)>0.
 上一证明使用的线丛引理具有独立的分析意义。设 $`K_j`$ 为闭四流形上的 Hermitian 线丛，实曲率为 $`F_j`$；全部范数采用 $`dV_j/V_j`$。假设
 
 ```math
-\|\operatorname{Ric}_{g_j}\|_2+\|F_j\|_2+\|\nabla\sigma_j\|_2\le C,
+\|\mathop{\mathrm{Ric}}\nolimits_{g_j}\|_2+\|F_j\|_2+\|\nabla\sigma_j\|_2\le C,
 \qquad |\sigma_j|\longrightarrow\ell>0\quad\text{依测度},
 ```
 
@@ -811,12 +811,12 @@ $`u_{j,\epsilon}=(I+\epsilon\mathscr L_j)^{-1}s_j`$。最大值原理与谱分�
 ```
 
 式 (11) 的线丛版本给
-$`\fint(|\nabla^2u_j|^2+|\nabla u_j|^4)\le C(1+\|\mathscr L_ju_j\|_2^2)`$。
+$`\mathop{\rlap{-}\int}\nolimits(|\nabla^2u_j|^2+|\nabla u_j|^4)\le C(1+\|\mathscr L_ju_j\|_2^2)`$。
 对固定 $`0<\ell_0<\ell_1<\ell`$，低模长集 $`Z_j=\{|u_j|\le\ell_1\}`$ 的测度为 $`O(\epsilon_j)`$。因此
 
 ```math
-\fint_{Z_j}|\nabla u_j|^2\to0,
-\qquad \|e_j\|_2\left(\fint|\nabla u_j|^4\right)^{1/2}\to0.
+\mathop{\rlap{-}\int}\nolimits_{Z_j}|\nabla u_j|^2\to0,
+\qquad \|e_j\|_2\left(\mathop{\rlap{-}\int}\nolimits|\nabla u_j|^4\right)^{1/2}\to0.
 ```
 
 在 $`u_j\ne0`$ 处，单位截面 $`u_j/|u_j|`$ 给实联络形式 $`\alpha_j`$，满足
@@ -824,9 +824,9 @@ $`d\alpha_j=F_j`$、$`|\alpha_j|\le C|\nabla u_j|/|u_j|`$。
 令 $`\chi_j=\chi(|u_j|)`$ 从 $`\ell_0`$ 以下的 $`0`$ 过渡到 $`\ell_1`$ 以上的 $`1`$。则 $`\chi_j\alpha_j`$ 光滑延拓到全流形，Stokes 公式给
 
 ```math
-\fint F_j\wedge\omega_j
-=\fint(1-\chi_j)F_j\wedge\omega_j
--\fint d\chi_j\wedge\alpha_j\wedge\omega_j\longrightarrow0.
+\mathop{\rlap{-}\int}\nolimits F_j\wedge\omega_j
+=\mathop{\rlap{-}\int}\nolimits(1-\chi_j)F_j\wedge\omega_j
+-\mathop{\rlap{-}\int}\nolimits d\chi_j\wedge\alpha_j\wedge\omega_j\longrightarrow0.
 ```
 
 第一项由 $`Z_j`$ 的小测度、$`F_j`$ 的 $`L^2`$ 界和 $`e_j\to0`$ 控制；第二项由刚取得的两条导数估计控制。取 $`\omega_j=F_j`$ 就得到第五线丛所需的陈数矛盾。关键是选择使 $`\epsilon_j\|\mathscr L_ju_j\|_2^2=o(1)`$ 的尺度；任意平滑尺度通常只能给 $`O(1)`$，不足以消去过渡能量。
@@ -903,7 +903,7 @@ $`a>0`$ 时，逐点最小化 $`as^2+(s+4)^2/4`$ 给
 $`\kappa_\beta\ge16a/(1+4a)`$。多项式满足
 
 ```math
-\operatorname{disc}N_\theta
+\mathop{\mathrm{disc}}\nolimitsN_\theta
 =\frac{57}{16}(\theta-2/3)(\theta+142/19),
 \quad N_{2/3}(\beta)=\frac{(\beta-8)^2}{12},
 \quad \lim_{\beta\to\infty}a=\frac1{12}-\frac\theta9.
@@ -968,8 +968,8 @@ c_* =\min\{\varepsilon_N,c_{\rm FD}(106/3)\}.
 
 ```math
 \int e^2|\nabla v|^2
-=\operatorname{Re}\int e^2\langle\nabla^*\nabla v,v\rangle
--2\operatorname{Re}\int e\langle de\otimes v,\nabla v\rangle.
+=\mathop{\mathrm{Re}}\nolimits\int e^2\langle\nabla^*\nabla v,v\rangle
+-2\mathop{\mathrm{Re}}\nolimits\int e\langle de\otimes v,\nabla v\rangle.
 ```
 
 吸收最后一项并用 Kato 不等式，可分别对标量和张量误差取得
@@ -983,25 +983,25 @@ c_* =\min\{\varepsilon_N,c_{\rm FD}(106/3)\}.
 $`|\mathcal C|\le C`$、$`|\nabla\mathcal C|\le C(1+|\nabla\Phi|+|\nabla v|)`$，则
 
 ```math
-\left|\fint\zeta*\mathcal C*(\nabla^2v)*(\nabla w)\right|
+\left|\mathop{\rlap{-}\int}\nolimits\zeta*\mathcal C*(\nabla^2v)*(\nabla w)\right|
 \le C\|\zeta\|_{H^1}.
 ```
 
-证明只把 Hessian 的一个导数移到另外三个因子，不交换协变导数；常数不依赖 $`\|\nabla^2v\|_2`$ 或 $`\fint|W^-|^2`$。固定模长截断所产生的张量须满足上述全局性和导数条件。它控制的是明确的一类弱配对，不能把仅有界的径向系数变成小量。
+证明只把 Hessian 的一个导数移到另外三个因子，不交换协变导数；常数不依赖 $`\|\nabla^2v\|_2`$ 或 $`\mathop{\rlap{-}\int}\nolimits|W^-|^2`$。固定模长截断所产生的张量须满足上述全局性和导数条件。它控制的是明确的一类弱配对，不能把仅有界的径向系数变成小量。
 
 [低幅度能量估计](../archive/originals/2026-09-29/O10_Low_Amplitude_Energy_and_O11_Scope.md) 进一步给出如下结论。令 $`d\mu_j=dV_j/V_j`$、$`\mathscr L_j=\nabla_j^*\nabla_j`$；假设 $`|v_j|+|\mathscr L_jv_j|\le C`$、$`m_j=|v_j|^2\to m_*`$ 于 $`L^2(d\mu_j)`$、$`(\mathscr L_j-2)v_j\to0`$ 于 $`L^2(d\mu_j)`$。另假设区域 $`G_j`$ 上的一个正交复类型投影 $`\mathsf P_j`$ 满足 $`\int_{G_j}|\mathsf P_j\nabla v_j|^2d\mu_j\to0`$，且 $`\int_{M_j\setminus G_j}|\nabla v_j|^2d\mu_j\to0`$。记 $`q_j=|\nabla v_j|^2`$，则对固定 $`0<\theta<1`$、$`\varepsilon>0`$ 有
 
 ```math
-\limsup_j\fint\frac{q_j}{(m_j+\varepsilon)^\theta}
+\limsup_j\mathop{\rlap{-}\int}\nolimits\frac{q_j}{(m_j+\varepsilon)^\theta}
 \le\frac{2m_*}{(1-\theta)(m_*+\varepsilon)^\theta},
 ```
 
 ```math
-\limsup_j\fint_{\{m_j\le t\}}q_j
+\limsup_j\mathop{\rlap{-}\int}\nolimits_{\{m_j\le t\}}q_j
 \le2\mathrm e\,t\log(m_*/t),\qquad0<t<m_*/\mathrm e.
 ```
 
-这里 $`\mathrm e=\exp(1)`$。因此 $`\lim_{t\downarrow0}\limsup_j\fint_{\{m_j\le t\}}q_j=0`$。估计不要求 $`\fint|W^-|^2`$ 有统一上界；极限次序为先固定 $`\theta,\varepsilon`$，再令 $`j\to\infty`$。
+这里 $`\mathrm e=\exp(1)`$。因此 $`\lim_{t\downarrow0}\limsup_j\mathop{\rlap{-}\int}\nolimits_{\{m_j\le t\}}q_j=0`$。估计不要求 $`\mathop{\rlap{-}\int}\nolimits|W^-|^2`$ 有统一上界；极限次序为先固定 $`\theta,\varepsilon`$，再令 $`j\to\infty`$。
 
 ### 5.2 中间幅度集中
 
@@ -1016,7 +1016,7 @@ d=-\frac{m_3+i m_4}{2m},
 
 这里 $`\mathfrak b`$ 是局部旋量联络的非对角一形式，$`\theta_1=e^1-ie^2`$、$`\theta_2=e^3-ie^4`$ 来自适配正交余标架，$`m_i=e_i(m)`$，$`c,d`$ 为复系数。正手性非对角曲率中的径向项精确相消。标量矩恒等式与定义在 $`[0,m_*]`$ 上的形式能量测度 $`d\nu_q=2dt`$、$`d\nu_R=4t\,dt`$ 相容；这些测度也满足逆幅度矩估计。尚无使这些形式测度由完整闭流形场方程实现的构造。
 
-[局部几乎 Kähler 模型与延拓条件](../archive/originals/2026-09-29/O10_Local_Model_And_Prolongation_Audit.md) 指出：由 Armstrong 的局部结果，不存在同时满足 $`\operatorname{Ric}=-g`$、$`W^+=0`$、$`d\omega=0`$、$`|\omega|^2=2`$ 的几乎 Kähler 局部解，其中取向由 $`\omega`$ 决定。原稿在缩小双曲球上构造的实际 SW 解并不提供常模长闭相容形式，因而属于另一类局部对象；其闭流形延拓仍需验证全部过渡条件。
+[局部几乎 Kähler 模型与延拓条件](../archive/originals/2026-09-29/O10_Local_Model_And_Prolongation_Audit.md) 指出：由 Armstrong 的局部结果，不存在同时满足 $`\mathop{\mathrm{Ric}}\nolimits=-g`$、$`W^+=0`$、$`d\omega=0`$、$`|\omega|^2=2`$ 的几乎 Kähler 局部解，其中取向由 $`\omega`$ 决定。原稿在缩小双曲球上构造的实际 SW 解并不提供常模长闭相容形式，因而属于另一类局部对象；其闭流形延拓仍需验证全部过渡条件。
 
 开放问题是证明完整径向、相位和曲率方程排除上述集中，或构造满足全部原假设的闭流形端点序列。FD 的量词为 $`\forall B<\infty\ \exists c(B)>0`$；一般端点问题要求 $`\exists c>0`$ 对全部允许对象成立。
 
@@ -1029,11 +1029,11 @@ d=-\frac{m_3+i m_4}{2m},
 \quad\sum_i c(e^i)P_i=0,\quad |P|^2=4/9.
 ```
 
-这是一条 $`\operatorname{Spin}^c(4)`$ 轨道。固定 $`\Phi\parallel e_1`$ 后，$`P_i=\theta_i e_2`$；Dirac 关系使 $`\theta`$ 具有形式 $`e_2\otimes s^-`$，且 $`|s^-|`$ 固定。$`SU(2)_-`$ 对该球传递作用，故轨道实维数为 $`3+3=6`$。其圆稳定子可写为
+这是一条 $`\mathop{\mathrm{Spin}}\nolimits^c(4)`$ 轨道。固定 $`\Phi\parallel e_1`$ 后，$`P_i=\theta_i e_2`$；Dirac 关系使 $`\theta`$ 具有形式 $`e_2\otimes s^-`$，且 $`|s^-|`$ 固定。$`SU(2)_-`$ 对该球传递作用，故轨道实维数为 $`3+3=6`$。其圆稳定子可写为
 
 ```math
-\left[\operatorname{diag}(\bar\lambda,\lambda),
-\operatorname{diag}(\bar\lambda^3,\lambda^3),\lambda\right],
+\left[\mathop{\mathrm{diag}}\nolimits(\bar\lambda,\lambda),
+\mathop{\mathrm{diag}}\nolimits(\bar\lambda^3,\lambda^3),\lambda\right],
 \qquad |\lambda|=1,
 ```
 
@@ -1235,7 +1235,7 @@ $`A_-=e(4-r_K)`$，所以 $`\chi/A_-=1/(4-r_K)\le1`$，FD 始终使用同一个�
 [曲率间隙与双取向配对](../archive/originals/2026-10-08/00_Results_and_Proof.md) §1 与 [双取向配对间隙与曲率夹逼例子](../archive/originals/2026-10-08/Pair_Gap_and_Pinched_Example.tex) 将 SB 推广到一般闭四流形。令 $`e=\chi>0`$，选取 $`\tau\ge0`$。设 $`\mathcal C_+`$ 是正取向有限组全度量单极子类，
 
 ```math
-a\in\operatorname{Hull}(\mathcal C_+),\quad a^2\ge T_+;
+a\in\mathop{\mathrm{Hull}}\nolimits(\mathcal C_+),\quad a^2\ge T_+;
 ```
 
 反取向有实际单极子类 $`b`$，满足 $`b^2[\bar M]\ge T_-=2e-3\tau`$。记 $`t=3\tau/e`$、$`z=|ab|/e`$。应用 Euler 密度不超过二的端点估计后，
@@ -1261,31 +1261,31 @@ a\in\operatorname{Hull}(\mathcal C_+),\quad a^2\ge T_+;
 考虑体积保持的 Ricci 流
 
 ```math
-\partial_tg=-2\operatorname{Ric}+\tfrac12\bar s\,g,
-\qquad \bar s=\fint s,\qquad V=\operatorname{Vol}(g(0)).
+\partial_tg=-2\mathop{\mathrm{Ric}}\nolimits+\tfrac12\bar s\,g,
+\qquad \bar s=\mathop{\rlap{-}\int}\nolimits s,\qquad V=\mathop{\mathrm{Vol}}\nolimits(g(0)).
 ```
 
 取 $`a>0`$ 使 $`\mathcal Y(M)\le-a\sqrt V`$，并记
-$`m(t)=\min s_{g(t)}`$、$`b_0=-m(0)>0`$。Yamabe 变分原理给 $`m(t)\le-a`$。采用 $`\Delta=\operatorname{div}\nabla`$ 写流方程，有
+$`m(t)=\min s_{g(t)}`$、$`b_0=-m(0)>0`$。Yamabe 变分原理给 $`m(t)\le-a`$。采用 $`\Delta=\mathop{\mathrm{div}}\nolimits\nabla`$ 写流方程，有
 
 ```math
-\partial_ts=\Delta s+2|\operatorname{Ric}^{\circ}|^2
+\partial_ts=\Delta s+2|\mathop{\mathrm{Ric}}\nolimits^{\circ}|^2
 +\tfrac12s(s-\bar s),
 ```
 
 ```math
 m'\ge\tfrac{-m}{2}(\bar s-m)\ge0,
 \qquad
-\bar s'=\frac{2P}{V}-\frac12\operatorname{Var}(s).
+\bar s'=\frac{2P}{V}-\frac12\mathop{\mathrm{Var}}\nolimits(s).
 \tag{28}
 ```
 
 前式在 $`m`$ 几乎处处可微时成立。若 $`s\le K`$ 于光滑时间区间 $`[0,t]`$，$`K\ge0`$，点态 $`(s-m)(K-s)\ge0`$ 给
 
 ```math
-\operatorname{Var}(s)\le(K-m)(\bar s-m),
+\mathop{\mathrm{Var}}\nolimits(s)\le(K-m)(\bar s-m),
 \qquad
-\frac12\operatorname{Var}(s)
+\frac12\mathop{\mathrm{Var}}\nolimits(s)
 \le\left(1+\frac K{-m}\right)m'.
 ```
 

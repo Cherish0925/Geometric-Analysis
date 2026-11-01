@@ -22,7 +22,7 @@ dV=H\,dx_1dx_2dx_3d\psi,\qquad
 \Delta_g=H^{-1}\Delta_{\mathbb R^3},
 ```
 
-这里 $`\Delta=\operatorname{div}\nabla`$。选择平行正旋量 $`e_1,e_2`$，使 $`e_2`$ 对应所选复结构 $`I_3`$ 的 $`(0,2)`$ 方向，$`f=x_1+ix_2`$ 为全纯函数。置
+这里 $`\Delta=\mathop{\mathrm{div}}\nolimits\nabla`$。选择平行正旋量 $`e_1,e_2`$，使 $`e_2`$ 对应所选复结构 $`I_3`$ 的 $`(0,2)`$ 方向，$`f=x_1+ix_2`$ 为全纯函数。置
 
 ```math
 \rho_*=\frac43,\qquad m_* =\frac{128}{81},\qquad a=\frac{\sqrt2}{3},
@@ -52,8 +52,8 @@ v:=t(\Phi_\ell)=\sqrt2\rho_*a\,d\bar f
 在正交标架 $`e^i=H^{1/2}dx_i`$、$`e^4=H^{-1/2}\eta`$ 中，直接计算联络得
 
 ```math
-|\operatorname{Hess}\bar f|^2=\frac{2\ell^2}{(r+\ell)^4},\qquad
-|\nabla\operatorname{Hess}\bar f|^2
+|\mathop{\mathrm{Hess}}\nolimits\bar f|^2=\frac{2\ell^2}{(r+\ell)^4},\qquad
+|\nabla\mathop{\mathrm{Hess}}\nolimits\bar f|^2
 =\frac{12\ell^2r}{(r+\ell)^7}.
 ```
 
@@ -88,14 +88,14 @@ q=\frac{m_*\ell^2}{(r+\ell)^4}
 所以小核的正旋量 Hessian 能量趋于零，负旋量的四次梯度和二阶能量却不趋于零。若取截断半径 $`R_\ell\sim(3\ell/4)^{1/3}`$，则
 
 ```math
-\operatorname{Vol}(r\le R_\ell)
+\mathop{\mathrm{Vol}}\nolimits(r\le R_\ell)
 =16\pi^2\ell\left(\frac{R_\ell^3}{3}+\frac{\ell R_\ell^2}{2}\right)
 \sim4\pi^2\ell^2.
 ```
 
 此时核的 $`\int q`$ 与块体积之比趋于 $`2m_*`$，正好等于闭端点序列中由
 $`(\nabla^*\nabla-2)u\to0`$、$`|u|^2\to m_*`$ 推出的平均值
-$`\fint|\nabla u|^2\to2m_*`$。另一方面，负 Weyl 平均能量为 $`2\ell^{-2}+o(\ell^{-2})`$。这说明上述平均值不排除这种集中尺度；它没有构造满足全部方程的闭序列。
+$`\mathop{\rlap{-}\int}\nolimits|\nabla u|^2\to2m_*`$。另一方面，负 Weyl 平均能量为 $`2\ell^{-2}+o(\ell^{-2})`$。这说明上述平均值不排除这种集中尺度；它没有构造满足全部方程的闭序列。
 
 ## 3. 第五张量幂线丛截面的偶极表达式
 
@@ -145,7 +145,7 @@ $`\int_0^\infty t^3(1+t)^{-5}dt=1/4`$。
 ```
 
 在 $`R_\ell\asymp\ell^{1/3}`$ 的块上，对每个固定 $`b>0`$ 有
-$`\operatorname{Vol}\{|\sigma_\ell|>b\}/\operatorname{Vol}(B_{R_\ell})=O_b(\ell^{1/2})`$。
+$`\mathop{\mathrm{Vol}}\nolimits\{|\sigma_\ell|>b\}/\mathop{\mathrm{Vol}}\nolimits(B_{R_\ell})=O_b(\ell^{1/2})`$。
 因而此模型的第五张量幂线丛截面依测度趋零，且每个核上模长导数的能量保持尺度不变；它不提供有限密度证明要求的正常数模长。
 
 ## 4. 原度量的曲率项与全局拼接条件
@@ -168,8 +168,8 @@ $`\operatorname{Vol}\{|\sigma_\ell|>b\}/\operatorname{Vol}(B_{R_\ell})=O_b(\ell^
 ```
 
 由 $`d\eta=*_3dH`$ 可知 $`d\beta_h^-=0`$ 等价于
-$`\operatorname{div}(H^2\nabla h)=0`$。取 $`h=x_3/H`$，则
-$`\operatorname{div}(H^2\nabla(x_3/H))=H\Delta x_3-x_3\Delta H=0`$。
+$`\mathop{\mathrm{div}}\nolimits(H^2\nabla h)=0`$。取 $`h=x_3/H`$，则
+$`\mathop{\mathrm{div}}\nolimits(H^2\nabla(x_3/H))=H\Delta x_3-x_3\Delta H=0`$。
 故 $`i(\tfrac23\omega_3+\tfrac13\beta^-_{x_3/H})`$ 给闭曲率模型，其正手性部分匹配极限常旋量。它尚不等于非恒定 $`\Phi_\ell`$ 的完整非线性曲率方程。
 
 场的共同一阶数据又限制块之间的拼接。对向量值函数 $`u`$，固定端值和一阶导数，三次 Hermite 插值精确给出
@@ -194,7 +194,7 @@ $`F_{\mathcal A}=F_0+e`$、$`|F_0|\le C`$、$`\|e\|_{2,\mathrm{av}}\to0`$ 给
 
 ```math
 \left|V^{-1}\int_U F_{\mathcal A}\wedge F_{\mathcal A}\right|
-\le2C^2\frac{\operatorname{Vol}(U)}V+2\|e\|_{2,\mathrm{av}}^2\to0
+\le2C^2\frac{\mathop{\mathrm{Vol}}\nolimits(U)}V+2\|e\|_{2,\mathrm{av}}^2\to0
 ```
 
 对归一化体积趋零的 $`U`$ 成立。反自对偶 Weyl 能量的集中区域与第五张量幂线丛陈数的分布因而受到不同的限制。

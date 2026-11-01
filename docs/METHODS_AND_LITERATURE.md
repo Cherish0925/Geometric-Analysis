@@ -7,10 +7,10 @@ Qiushi Engine Team, Zhejiang University · [作者与通讯信息](../AUTHORS.md
 
 ## 1. 几何对象与基本假设
 
-设 $`M`$ 为闭、连通、定向光滑四流形，$`g`$ 为光滑黎曼度量；$`\chi`$、$`\tau`$ 分别为 Euler 示性数和签名。记 $`s`$ 为标量曲率，$`\operatorname{Ric}^{\circ}=\operatorname{Ric}-sg/4`$，$`W^\pm`$ 为两手性 Weyl 算子，$`V=\operatorname{Vol}_g(M)`$。未标明测度的积分均相对于 $`dV_g`$，Weyl 算子采用 Hilbert–Schmidt 范数。定义
+设 $`M`$ 为闭、连通、定向光滑四流形，$`g`$ 为光滑黎曼度量；$`\chi`$、$`\tau`$ 分别为 Euler 示性数和签名。记 $`s`$ 为标量曲率，$`\mathop{\mathrm{Ric}}\nolimits^{\circ}=\mathop{\mathrm{Ric}}\nolimits-sg/4`$，$`W^\pm`$ 为两手性 Weyl 算子，$`V=\mathop{\mathrm{Vol}}\nolimits_g(M)`$。未标明测度的积分均相对于 $`dV_g`$，Weyl 算子采用 Hilbert–Schmidt 范数。定义
 
 ```math
-P(g)=\int|\operatorname{Ric}^{\circ}|^2,\quad R(g)=\int|\operatorname{Ric}|^2,\quad T_\pm=2\chi\pm3\tau.
+P(g)=\int|\mathop{\mathrm{Ric}}\nolimits^{\circ}|^2,\quad R(g)=\int|\mathop{\mathrm{Ric}}\nolimits|^2,\quad T_\pm=2\chi\pm3\tau.
 ```
 
 四维 Chern–Weil 恒等式为
@@ -86,7 +86,7 @@ D_\beta=(1+\beta^{-1})\int s^2+6(\beta+1)\int|W^+|^2-72\pi^2p,
 这里 $`S^-`$ 是负旋量丛，$`t(v)`$ 是原稿定义的一阶三次旋量表达式。在固定 Euler 密度 $`\chi/A\le B<\infty`$ 下，$`|\sigma|`$ 趋于正常数，且 $`\int|\nabla\sigma|^2/V`$ 有界。线丛引理给 $`c_1(L^5)^2[M]/V\to0`$，同一实际曲率恒等式则给极限 $`25/(6\pi^2)`$。由此得到有限密度命题
 
 ```math
-\kappa_\beta:=\fint|\operatorname{Ric}+g|^2+D_\beta/V
+\kappa_\beta:=\mathop{\rlap{-}\int}\nolimits|\mathop{\mathrm{Ric}}\nolimits+g|^2+D_\beta/V
 \ge c_{\rm FD}(B)\frac{(\beta-2)^2}{\beta^2}.
 ```
 
@@ -106,7 +106,7 @@ D_\beta=(1+\beta^{-1})\int s^2+6(\beta+1)\int|W^+|^2-72\pi^2p,
 
 对 $`\|H\|_\infty\le1`$、$`\int(|\nabla^2H|^2+|\nabla H|^4)\le A_j`$ 的光滑对称二张量一致成立。导数沿 $`g_j+tH`$ 定义。这些估计为近极小序列提供变分条件；匹配下界仍需由这些条件及场方程推出。
 
-固定复双曲领口半径 $`R_0>0`$、背景归一化 $`\operatorname{Ric}=-6g`$，插入构造给出
+固定复双曲领口半径 $`R_0>0`$、背景归一化 $`\mathop{\mathrm{Ric}}\nolimits=-6g`$，插入构造给出
 
 ```math
 \frac{P(g_\epsilon)}{8\pi^2}=1-9\epsilon^2\log(1/\epsilon)+O_{R_0}(\epsilon^2).
@@ -117,22 +117,22 @@ D_\beta=(1+\beta^{-1})\int s^2+6(\beta+1)\int|W^+|^2-72\pi^2p,
 在闭几乎 Kähler 流形且 Ricci 张量 $`J`$-不变的条件下，原稿证明
 
 ```math
-DP_g[\operatorname{Ric}^{\circ}]=\frac18\int|ds|^2-\frac12\int s|\operatorname{Ric}^{\circ}|^2.
+DP_g[\mathop{\mathrm{Ric}}\nolimits^{\circ}]=\frac18\int|ds|^2-\frac12\int s|\mathop{\mathrm{Ric}}\nolimits^{\circ}|^2.
 ```
 
-若 $`s`$ 为非零常数且 $`\operatorname{Ric}^{\circ}\not\equiv0`$，则取 $`\operatorname{Ric}^{\circ}`$ 或其负值给出下降方向。因此该类中的非 Einstein 常标量度量不是 $`P`$ 的临界点。光滑全局极小元的存在性还要求处理极小序列的退化。
+若 $`s`$ 为非零常数且 $`\mathop{\mathrm{Ric}}\nolimits^{\circ}\not\equiv0`$，则取 $`\mathop{\mathrm{Ric}}\nolimits^{\circ}`$ 或其负值给出下降方向。因此该类中的非 Einstein 常标量度量不是 $`P`$ 的临界点。光滑全局极小元的存在性还要求处理极小序列的退化。
 
 原稿：[近极小度量的变分选择](../archive/originals/2026-09-29/02_O11_Variational_Selection.md) §§2–3；[固定领口下的对数项插入构造](../archive/originals/2026-10-07/O11_Arbitrary_Collar_Logarithmic_Construction.md)；[Einstein 存在性、曲率极值与几乎 Kähler 几何](../archive/originals/2026-10-08/01_Research_Synthesis.tex) §3；[下降方向与通量等号](../archive/originals/2026-10-08/Q3_Descent_and_Flux_Equality.tex)；[调和形式的秩约束与刚性](../archive/originals/2026-10-08/Q3_Harmonic_Rank_Rigidity.tex)。
 
 ### 2.3 扭率零点与 Green 势
 
-设 $`(M,g,J,\Omega)`$ 为闭、连通几乎 Kähler 四流形，取 $`J`$ 诱导的取向，并假设 $`\operatorname{Ric}=-a_Eg`$、$`a_E>0`$。于是 $`s=-4a_E`$。记
+设 $`(M,g,J,\Omega)`$ 为闭、连通几乎 Kähler 四流形，取 $`J`$ 诱导的取向，并假设 $`\mathop{\mathrm{Ric}}\nolimits=-a_Eg`$、$`a_E>0`$。于是 $`s=-4a_E`$。记
 
 ```math
 q=|\nabla\Omega|^2,\quad n=\Omega/\sqrt2,\quad t=\langle W^+n,n\rangle=s/6+q/4,\quad \eta=W^+\Omega-t\Omega.
 ```
 
-采用 $`\Delta=-\operatorname{div}\nabla`$，定义
+采用 $`\Delta=-\mathop{\mathrm{div}}\nolimits\nabla`$，定义
 
 ```math
 \mathcal R_+=W^+-a_EI/3,\quad \mathsf A=-\mathcal R_+,\quad
@@ -159,7 +159,7 @@ L_{a_E}=\Delta+2a_E,\quad
 
 ```math
 \|g-H_m(k)\|_{C^{3,\alpha}_{\rm uloc}}
-\le Cm^2\|\operatorname{Ric}_g+g\|_{C^{1,\alpha}_{\rm uloc}}
+\le Cm^2\|\mathop{\mathrm{Ric}}\nolimits_g+g\|_{C^{1,\alpha}_{\rm uloc}}
 ```
 
 及 $`cm^{-2}`$ 的修复邻域。增长因子来自小特征值对应的变形方向；统一投影估计处理核维数的增长。慢模态构造达到这一损失，因而它同时说明修复结果的尺度。
@@ -201,13 +201,13 @@ D_W(V)=\lim D_W(g_j)+m_+,\qquad
 
 ```math
 \mathsf A=t\left(\frac23I-\omega\otimes\omega\right),\qquad
-Z_W=W^+-\mathsf A,\qquad E=\operatorname{Ric}-\sigma g,\quad \sigma\in\{-1,1\}.
+Z_W=W^+-\mathsf A,\qquad E=\mathop{\mathrm{Ric}}\nolimits-\sigma g,\quad \sigma\in\{-1,1\}.
 ```
 
 令 $`\mathcal W(\mathsf A)`$ 为相应四指标 Weyl 张量，故 $`|\mathcal W(\mathsf A)|^2=4|\mathsf A|^2`$；记
 
 ```math
-\mathfrak j=\operatorname{div}\mathcal W(\mathsf A),\quad
+\mathfrak j=\mathop{\mathrm{div}}\nolimits\mathcal W(\mathsf A),\quad
 v=\frac13\log|t|,\quad \widehat g=e^{2v}g,\quad\widehat\omega=e^{2v}\omega,
 ```
 
@@ -217,7 +217,7 @@ Q_X=\nabla_X\omega-dv\wedge\iota_X\omega
 \mathfrak p=d\omega+2dv\wedge\omega.
 ```
 
-共形联络公式给 $`Q=e^{-2v}\widehat\nabla\widehat\omega`$、$`\mathfrak p=\operatorname{Alt}Q`$。在自对偶正交标架中展开 $`\nabla\mathsf A`$，振幅导数与这两个表达式中的 $`dv`$ 项精确合并，得到
+共形联络公式给 $`Q=e^{-2v}\widehat\nabla\widehat\omega`$、$`\mathfrak p=\mathop{\mathrm{Alt}}\nolimitsQ`$。在自对偶正交标架中展开 $`\nabla\mathsf A`$，振幅导数与这两个表达式中的 $`dv`$ 项精确合并，得到
 
 ```math
 \boxed{|\mathfrak j|^2=2t^2|Q|^2+4t^2|\mathfrak p|^2,}
@@ -234,10 +234,10 @@ Q_X=\nabla_X\omega-dv\wedge\iota_X\omega
 进一步记
 
 ```math
-d_0=\fint(|E|^2+|Z_W|^2),\quad
-H_2=\fint|\nabla^2\mathsf A|^2,\quad
+d_0=\mathop{\rlap{-}\int}\nolimits(|E|^2+|Z_W|^2),\quad
+H_2=\mathop{\rlap{-}\int}\nolimits|\nabla^2\mathsf A|^2,\quad
 \phi=\sqrt{|t|}\,\omega,\quad
-B_\phi=\fint|\Delta_H\phi|^2.
+B_\phi=\mathop{\rlap{-}\int}\nolimits|\Delta_H\phi|^2.
 ```
 
 弱 Bianchi 测试给
@@ -250,14 +250,14 @@ B_\phi=\fint|\Delta_H\phi|^2.
 取 $`Z=\mathfrak j`$，再使用有界截面的 Hessian 估计，得到
 
 ```math
-\fint|\mathfrak j|^2\le C\sqrt{d_0H_2},\qquad
+\mathop{\rlap{-}\int}\nolimits|\mathfrak j|^2\le C\sqrt{d_0H_2},\qquad
 H_2\le C_{T_0}(1+B_\phi+d_0),
 ```
 
 因而
 
 ```math
-\boxed{\fint(|Q|^2+2|\mathfrak p|^2)
+\boxed{\mathop{\rlap{-}\int}\nolimits(|Q|^2+2|\mathfrak p|^2)
 \le C_{\tau_0,T_0}\sqrt{d_0(1+B_\phi+d_0)}.}
 ```
 
@@ -301,16 +301,16 @@ V(u)=u(u^3-u_0^3)(u-u_0).
 上述精确平衡控制其余联络项，从而
 
 ```math
-\fint\bigl(|du|^2+|\nabla\omega|^2+V(u)\bigr)
-\le C_{m,\theta}\fint\bigl(b^2+(s+4)^2\bigr).
+\mathop{\rlap{-}\int}\nolimits\bigl(|du|^2+|\nabla\omega|^2+V(u)\bigr)
+\le C_{m,\theta}\mathop{\rlap{-}\int}\nolimits\bigl(b^2+(s+4)^2\bigr).
 ```
 
 此式无需 $`t`$ 的上界。若另有 $`t\le M_0`$，则
 
 ```math
 \boxed{
-\fint\bigl(|dt|^2+(t-\tfrac12)^2+|\nabla\omega|^2\bigr)
-\le C_{m,M_0,\theta}\fint\bigl(b^2+(s+4)^2\bigr).}
+\mathop{\rlap{-}\int}\nolimits\bigl(|dt|^2+(t-\tfrac12)^2+|\nabla\omega|^2\bigr)
+\le C_{m,M_0,\theta}\mathop{\rlap{-}\int}\nolimits\bigl(b^2+(s+4)^2\bigr).}
 ```
 
 这在精确调和 Weyl 范畴内去除了独立二阶导数界。零分裂、$`s=-4`$ 时给出 $`t=1/2`$ 和平行特征形式；小 Ricci 残差不能替代 $`\delta W^+=0`$。
@@ -319,11 +319,11 @@ V(u)=u(u^3-u_0^3)(u-u_0).
 
 ### 2.9 局部谱排除与全局标量乘子的限制
 
-本节单独采用 $`\Delta=\operatorname{tr}_g\nabla^2`$，故 $`\int f\Delta f=-\int|df|^2`$。在 $`s=-4`$、$`\delta W^+=0`$ 时，令
+本节单独采用 $`\Delta=\mathop{\mathrm{tr}}\nolimits_g\nabla^2`$，故 $`\int f\Delta f=-\int|df|^2`$。在 $`s=-4`$、$`\delta W^+=0`$ 时，令
 
 ```math
 \mathsf A=W^+,\quad x=|\mathsf A|^2,\quad y=\det\mathsf A,\quad
-\mathsf A_0=\operatorname{diag}(-1/6,1/12,1/12).
+\mathsf A_0=\mathop{\mathrm{diag}}\nolimits(-1/6,1/12,1/12).
 ```
 
 调和 Weyl 方程为
@@ -357,7 +357,7 @@ M_0=\begin{pmatrix}8&-8&-2\\-8&32&-8\\-2&-8&8\end{pmatrix}>I,\qquad
 
 $`M_0-I`$ 的顺序主子式为 $`7,153,243`$。逐项估计表明，三个有序特征值均距目标值不超过 $`10^{-4}`$ 时，$`M\ge I/2`$ 且 $`\mathcal P>1/32`$。于是 $`\Delta f\ge1/32`$，与闭流形上积分为零矛盾。故每个闭的 $`s=-4`$、调和 $`W^+`$ 四流形都必须在某一点离开该谱盒。这是点态谱排除；小的平均谱误差并不保证处处处于谱盒中。
 
-上述局部乘子不存在满足以下非负性要求的全局推广。具体地，设 $`F`$ 是整个 $`\operatorname{Sym}^2_0(\mathbb R^3)`$ 上的 $`C^2`$ 正交不变函数，并写
+上述局部乘子不存在满足以下非负性要求的全局推广。具体地，设 $`F`$ 是整个 $`\mathop{\mathrm{Sym}}\nolimits^2_0(\mathbb R^3)`$ 上的 $`C^2`$ 正交不变函数，并写
 
 ```math
 \Delta F(\mathsf A)=\mathcal Q_F(\nabla\mathsf A)+
@@ -373,7 +373,7 @@ $`M_0-I`$ 的顺序主子式为 $`7,153,243`$。逐项估计表明，三个有�
 证明只需限制到
 
 ```math
-\mathsf A(u)=\frac u{\sqrt6}\operatorname{diag}(-2,1,1),\qquad
+\mathsf A(u)=\frac u{\sqrt6}\mathop{\mathrm{diag}}\nolimits(-2,1,1),\qquad
 \psi(u)=F(\mathsf A(u)).
 ```
 
@@ -392,17 +392,17 @@ $`\mathcal P_F(\mathsf A_0)=-3u_0\psi'(u_0)/2\le0`$。这排除所述全局标�
 
 ### 2.10 Ricci 残差与 Cotton 张量的弱估计
 
-令 $`E=\operatorname{Ric}+g`$、$`e=\operatorname{tr}E=s+4`$，采用 Cotton 约定
+令 $`E=\mathop{\mathrm{Ric}}\nolimits+g`$、$`e=\mathop{\mathrm{tr}}\nolimitsE=s+4`$，采用 Cotton 约定
 
 ```math
 C_{ijk}=\nabla_kE_{ij}-\nabla_jE_{ik}
 -\frac16\bigl((\nabla_ke)g_{ij}-(\nabla_je)g_{ik}\bigr).
 ```
 
-相应有 $`\operatorname{div}\mathcal W(W^+)=-C^+/2`$。以归一化 $`H^1`$ 范数的对偶定义 $`H^{-1}_{\rm av}`$，分部积分直接给出
+相应有 $`\mathop{\mathrm{div}}\nolimits\mathcal W(W^+)=-C^+/2`$。以归一化 $`H^1`$ 范数的对偶定义 $`H^{-1}_{\rm av}`$，分部积分直接给出
 
 ```math
-\|\operatorname{div}\mathcal W(W^+)\|_{H^{-1}_{\rm av}}
+\|\mathop{\mathrm{div}}\nolimits\mathcal W(W^+)\|_{H^{-1}_{\rm av}}
 \le C\|E\|_{L^2_{\rm av}},
 ```
 
@@ -423,7 +423,7 @@ g_{\epsilon,k}=g_0+\epsilon k^{-2}\chi\sin(k\theta)\,q.
 二阶 Ricci 主符号与三阶 Cotton 主符号分别给
 
 ```math
-\operatorname{Ric}_{g_{\epsilon,k}}+g_{\epsilon,k}
+\mathop{\mathrm{Ric}}\nolimits_{g_{\epsilon,k}}+g_{\epsilon,k}
 =\frac{\epsilon}{2}|d\theta|^2\chi\sin(k\theta)\,q
 +O(\epsilon/k+\epsilon^2/k^2),
 ```
@@ -436,8 +436,8 @@ C^+_{g_{\epsilon,k}}=\epsilon k\cos(k\theta)\,\mathcal T
 其中固定张量 $`\mathcal T`$ 在一个开集上非零。取 $`\epsilon_j=j^{-1}`$、$`k_j=j^2`$，便有同一闭流形上的实际度量序列
 
 ```math
-\|\operatorname{Ric}_{g_j}+g_j\|_\infty\to0,\qquad
-\sup_j\|\operatorname{Rm}_{g_j}\|_\infty<\infty,\qquad
+\|\mathop{\mathrm{Ric}}\nolimits_{g_j}+g_j\|_\infty\to0,\qquad
+\sup_j\|\mathop{\mathrm{Rm}}\nolimits_{g_j}\|_\infty<\infty,\qquad
 \int|C^+_{g_j}|^2\to\infty.
 ```
 
@@ -445,7 +445,7 @@ C^+_{g_{\epsilon,k}}=\epsilon k\cos(k\theta)\,\mathcal T
 
 ```math
 0=\int\left(
-|\nabla W^+|^2-|\operatorname{div}\mathcal W(W^+)|^2
+|\nabla W^+|^2-|\mathop{\mathrm{div}}\nolimits\mathcal W(W^+)|^2
 +\frac s2|W^+|^2-18\det W^+\right);
 ```
 
@@ -467,11 +467,11 @@ Q(\phi)=-\frac12(\Theta\wedge\Theta^*)^+,\qquad
 \end{pmatrix}.
 ```
 
-$`\mathbb D`$ 保持不定 Hermitian 形式 $`h_{W^-}-h_E`$。取 $`\Gamma=\operatorname{diag}(I,-I)`$，定义分次 Hodge 算子 $`*_\Gamma B=\Gamma(*B)\Gamma`$。在 Einstein 度量上，直接计算块曲率得：$`\mathbb D`$ 的迹零曲率分次反自对偶，当且仅当
+$`\mathbb D`$ 保持不定 Hermitian 形式 $`h_{W^-}-h_E`$。取 $`\Gamma=\mathop{\mathrm{diag}}\nolimits(I,-I)`$，定义分次 Hodge 算子 $`*_\Gamma B=\Gamma(*B)\Gamma`$。在 Einstein 度量上，直接计算块曲率得：$`\mathbb D`$ 的迹零曲率分次反自对偶，当且仅当
 
 ```math
 D_{A,C}\phi=0,\qquad
-F_A^+=Q(\phi)+\frac12\operatorname{tr}Q(\phi)I_E+\frac12F_C^+I_E.
+F_A^+=Q(\phi)+\frac12\mathop{\mathrm{tr}}\nolimitsQ(\phi)I_E+\frac12F_C^+I_E.
 ```
 
 其中源旋量联络的中心曲率为 $`F_CI/2`$，不能由二次映射的整体缩放消除。
@@ -479,13 +479,13 @@ F_A^+=Q(\phi)+\frac12\operatorname{tr}Q(\phi)I_E+\frac12F_C^+I_E.
 若 $`E\cong W^+`$，取迹后两边的行列式曲率代表同一上同调类，因此
 
 ```math
-\operatorname{tr}F_A^+-F_C^+=2\operatorname{tr}Q(\phi)
+\mathop{\mathrm{tr}}\nolimitsF_A^+-F_C^+=2\mathop{\mathrm{tr}}\nolimitsQ(\phi)
 \quad\Longrightarrow\quad
-\mathcal H_g^+(\operatorname{tr}Q(\phi))=0.
+\mathcal H_g^+(\mathop{\mathrm{tr}}\nolimitsQ(\phi))=0.
 ```
 
 若 $`\phi`$ 的像落在目标线丛 $`R_0\subset E`$，则对应普通旋量属于 $`(W^+)^*\otimes R_0`$，其行列式为 $`B=L^{-1}\otimes R_0^2`$。按原稿明确的对偶 Clifford 约定，
-$`\operatorname{tr}Q(\phi)=4q_{\rm std}(\phi)`$。普通方程 $`F_B^+=q_{\rm std}(\phi)`$ 因而只有在 $`c_1(B)_g^+=0`$ 时才能原样嵌入该块系统。特别地，正平方普通单极子类不能这样提供非阿贝尔解。
+$`\mathop{\mathrm{tr}}\nolimitsQ(\phi)=4q_{\rm std}(\phi)`$。普通方程 $`F_B^+=q_{\rm std}(\phi)`$ 因而只有在 $`c_1(B)_g^+=0`$ 时才能原样嵌入该块系统。特别地，正平方普通单极子类不能这样提供非阿贝尔解。
 
 该系统本身还有精确等号分类。令 $`V=W^-\oplus E`$，$`F_0`$ 为 $`\mathbb D`$ 的迹零曲率；分次反自对偶性给正能量恒等式
 
@@ -499,7 +499,7 @@ $`c_1(W^+)^2-4c_2(W^+)=0`$，与 $`2\chi>0`$ 矛盾；秩二的平行极分解�
 
 因此，该明确辅助系统在上述零签名范畴可解，当且仅当度量具有常负截面曲率。这个结论限定于所写出的丛、二次映射和分次方程；普通 Seiberg–Witten 方程的可解性因而不直接蕴含这一非阿贝尔系统的可解性。
 
-完整 Clifford 代数、特征类计算及等号分类见[辅助 Clifford 块系统及其可解性障碍](../archive/originals/2026-09-29/27b3cef6-aeed-442c-9e66-fef1a757828e.tex)，标签 $`\texttt{sec:clifford-block}`$。
+完整 Clifford 代数、特征类计算及等号分类见[辅助 Clifford 块系统及其可解性障碍](../archive/originals/2026-09-29/27b3cef6-aeed-442c-9e66-fef1a757828e.tex)，第 `sec:clifford-block` 节。
 
 ## 3. 经典结果与本项目推导的关系
 

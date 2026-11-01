@@ -18,7 +18,7 @@ Qiushi Engine Team, Zhejiang University · [作者与通讯信息](../../AUTHORS
 ```math
 g_\epsilon=g\quad(r\ge2\rho),\qquad
 \sup|s_{g_\epsilon}|\le C_g,\qquad
-\operatorname{Vol}_{g_\epsilon}\{r<R\}\le C_g(\rho^4+R^4).
+\mathop{\mathrm{Vol}}\nolimits_{g_\epsilon}\{r<R\}\le C_g(\rho^4+R^4).
 \tag{1}
 ```
 
@@ -171,10 +171,10 @@ b[(n+1)b+2na-n(n-1)],&b\le c,\\
 \tag{11}
 ```
 
-局部群还限制曲率的代数形式。对 $`n\ge3`$，$`\Lambda^+_0`$ 分成权为 $`0,\pm n`$ 的实线与复线；$`\operatorname{Sym}^2_0\Lambda^+_0`$ 的非零权为 $`\pm n,\pm2n`$。因此在适配基下
+局部群还限制曲率的代数形式。对 $`n\ge3`$，$`\Lambda^+_0`$ 分成权为 $`0,\pm n`$ 的实线与复线；$`\mathop{\mathrm{Sym}}\nolimits^2_0\Lambda^+_0`$ 的非零权为 $`\pm n,\pm2n`$。因此在适配基下
 
 ```math
-W^+(p_0)=\mu\,\operatorname{diag}(2,-1,-1),
+W^+(p_0)=\mu\,\mathop{\mathrm{diag}}\nolimits(2,-1,-1),
 ```
 
 所有不变自对偶二形式均沿零权方向。这个点态结论没有规定 $`\mu`$ 与标量曲率的关系，也不蕴含邻域可积性。$`n=2`$ 时权 $`2n`$ 已为零，不适用该一维不变子空间结论。
@@ -261,7 +261,7 @@ D_0^+(D_0^+)^*=\tfrac14\Delta_0,
 Fischer 分解给齐次多项式上 $`\Delta_0:\mathcal P_{k+1}\to\mathcal P_{k-1}`$ 的右逆 $`G`$。故（17）有右逆
 
 ```math
-\mathcal L_0^*\operatorname{diag}(4G,G,G).
+\mathcal L_0^*\mathop{\mathrm{diag}}\nolimits(4G,G,G).
 ```
 
 在有限群上平均可使其等变，保留实联络条件。逐阶施加右逆并加入自由核，便完成递归。Borel 引理再给出使方程残差在原点无限阶消失的光滑等变场。$`\square`$

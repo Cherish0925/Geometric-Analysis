@@ -10,13 +10,13 @@ Qiushi Engine Team, Zhejiang University · [作者与通讯信息](../AUTHORS.md
 设 $`M`$ 为闭连通定向光滑四维流形。Ricci 使用张量范数；Weyl 和完整曲率作为二形式上的自伴算子，使用 Hilbert–Schmidt 范数。记
 
 ```math
-P=\int_M|\operatorname{Ric}^{\circ}|^2,\quad S=\int_Ms^2,\quad
+P=\int_M|\mathop{\mathrm{Ric}}\nolimits^{\circ}|^2,\quad S=\int_Ms^2,\quad
 I_\pm=\int_M|W^\pm|^2,\quad W=I_++I_-,\quad
-R=\int_M|\operatorname{Ric}|^2=P+S/4,
+R=\int_M|\mathop{\mathrm{Ric}}\nolimits|^2=P+S/4,
 ```
 
 ```math
-V=\operatorname{Vol}(M,g),\quad T_s=\int_Ms,\quad
+V=\mathop{\mathrm{Vol}}\nolimits(M,g),\quad T_s=\int_Ms,\quad
 L_s=S-T_s^2/V,\quad T_\pm=2\chi(M)\pm3\tau(M).
 ```
 
@@ -24,7 +24,7 @@ L_s=S-T_s^2/V,\quad T_\pm=2\chi(M)\pm3\tau(M).
 
 ```math
 \mathcal E(g)=\inf_{\lambda\ne0}
-\frac{\int|\operatorname{Ric}_g-\lambda g|^2}{\lambda^2V},\qquad
+\frac{\int|\mathop{\mathrm{Ric}}\nolimits_g-\lambda g|^2}{\lambda^2V},\qquad
 P_*(M)=\inf_gP(g),\qquad\alpha(M)=\inf_g\mathcal E(g).
 ```
 
@@ -40,7 +40,7 @@ Ricci-flat 度量满足 $`\mathcal E=4`$，此时 $`\mathcal J`$ 不定义。四
 ```math
 4\pi^2T_\pm=\frac S{24}+2I_\pm-\frac P2,
 \qquad
-\int|\operatorname{Rm}_{\rm op}|^2=8\pi^2\chi+P.
+\int|\mathop{\mathrm{Rm}}\nolimits_{\rm op}|^2=8\pi^2\chi+P.
 \tag{1.2}
 ```
 
@@ -100,7 +100,7 @@ P=S/12-2d,\quad R=S/3-2d,\quad
 \tag{1.7}
 ```
 
-公式中的上界 $`\alpha\le1`$ 可独立构造：在一个正规点插入长度 $`L`$ 的单位圆柱 $`S^3\times[0,L]`$，两端采用固定过渡。圆柱上 $`s=6`$、$`|\operatorname{Ric}|^2=12`$、$`|\operatorname{Ric}^{\circ}|^2=3`$，故 $`4P,R`$ 均为 $`24\pi^2L+O(1)`$，而 $`L_s=O(1)`$。于是 $`\mathcal E\to1`$。同一构造适用于有孤立奇点的紧轨形的正规点。
+公式中的上界 $`\alpha\le1`$ 可独立构造：在一个正规点插入长度 $`L`$ 的单位圆柱 $`S^3\times[0,L]`$，两端采用固定过渡。圆柱上 $`s=6`$、$`|\mathop{\mathrm{Ric}}\nolimits|^2=12`$、$`|\mathop{\mathrm{Ric}}\nolimits^{\circ}|^2=3`$，故 $`4P,R`$ 均为 $`24\pi^2L+O(1)`$，而 $`L_s=O(1)`$。于是 $`\mathcal E\to1`$。同一构造适用于有孤立奇点的紧轨形的正规点。
 
 因此
 
@@ -117,7 +117,7 @@ W_*(M):=\inf_gW(g)<8\pi^2\chi(M).
 \tag{1.9}
 ```
 
-严格小于时不取得；等号时，取得要求相应手性的 Weyl 张量消失且标量为非零常数。例如 $`\operatorname{MinVol}(M)=0`$ 给出 $`P_*=0`$，同时 $`\chi=\tau=0`$，所以 $`\alpha=1`$。零绝对能量下确界与零相对缺陷下确界在没有 (1.4) 的输入时可以完全不同。
+严格小于时不取得；等号时，取得要求相应手性的 Weyl 张量消失且标量为非零常数。例如 $`\mathop{\mathrm{MinVol}}\nolimits(M)=0`$ 给出 $`P_*=0`$，同时 $`\chi=\tau=0`$，所以 $`\alpha=1`$。零绝对能量下确界与零相对缺陷下确界在没有 (1.4) 的输入时可以完全不同。
 
 连通和的 Weyl 恢复给 $`W_*(M\#N)\le W_*(M)+W_*(N)`$。若 $`d_*=8\pi^2\chi-W_*`$，则
 
@@ -177,7 +177,7 @@ $`j\ge(\sqrt{C^2+4H^2}-C)/2`$：任何 Einstein 候选必须偏离该绝对 Ricc
 
 ### 2.1 固定复双曲领口内的吹起构造
 
-区间积分给出有限尺度光滑单元的严格上界。解析构造进一步证明：每个固定半径 $`R_0>0`$ 的复双曲领口内，都存在普通负单吹起单元，在外部精确等于 $`\operatorname{Ric}=-6g`$，并满足
+区间积分给出有限尺度光滑单元的严格上界。解析构造进一步证明：每个固定半径 $`R_0>0`$ 的复双曲领口内，都存在普通负单吹起单元，在外部精确等于 $`\mathop{\mathrm{Ric}}\nolimits=-6g`$，并满足
 
 ```math
 \frac{P(g_\epsilon)}{8\pi^2}
@@ -187,7 +187,7 @@ $`j\ge(\sqrt{C^2+4H^2}-C)/2`$：任何 Einstein 候选必须偏离该绝对 Ricc
 =1-9\epsilon^2\log(1/\epsilon)+O_{R_0}(\epsilon^2),
 ```
 
-其中 $`J_6(g)=\int|\operatorname{Ric}_g+6g|^2`$。两式均包括 Burns 核心、颈部和外过渡；内外过渡的总误差为 $`O_{R_0}(\epsilon^2)`$。因此充分小的正 $`\epsilon`$ 给出 $`P,J_6<8\pi^2`$。
+其中 $`J_6(g)=\int|\mathop{\mathrm{Ric}}\nolimits_g+6g|^2`$。两式均包括 Burns 核心、颈部和外过渡；内外过渡的总误差为 $`O_{R_0}(\epsilon^2)`$。因此充分小的正 $`\epsilon`$ 给出 $`P,J_6<8\pi^2`$。
 
 来源：[固定复双曲领口内的对数渐近展开](../archive/originals/2026-10-07/O11_Arbitrary_Collar_Logarithmic_Construction.md) §§0–6。颈部推导及符号计算程序见该文 §8。
 
@@ -253,7 +253,7 @@ P(g_\epsilon)=P(g)+8\pi^2-8\pi^2\epsilon R^+_p(\zeta,\zeta)
  +4\pi^2\Phi\epsilon^2\log(1/\epsilon)+O(\epsilon^2).
 ```
 
-当 $`\operatorname{Ric}^{\circ}_p=0`$、$`R^+\zeta=\mu\zeta`$ 时，优化系数为
+当 $`\mathop{\mathrm{Ric}}\nolimits^{\circ}_p=0`$、$`R^+\zeta=\mu\zeta`$ 时，优化系数为
 
 ```math
 \Phi=-\mu(\mu-s/8)-|T|^2,\qquad
@@ -375,7 +375,7 @@ d_*(Y\#k\overline{\mathbb{CP}}^{\,2})
 
 所以 $`k<A/3+\eta n`$ 已保证 $`\alpha<1`$。这改善了只由 Kähler 恢复看到的 $`k<A/3`$ 区域。
 
-该结论取决于能够同时选取的不相交插入球的数目。在 $`\operatorname{Ric}=-g`$ 的复双曲归一化中，令 $`X_R=\sinh^2(R/\sqrt6)`$。若整体注入半径大于 $`2R`$，最大不相交 $`R`$-球族满足
+该结论取决于能够同时选取的不相交插入球的数目。在 $`\mathop{\mathrm{Ric}}\nolimits=-g`$ 的复双曲归一化中，令 $`X_R=\sinh^2(R/\sqrt6)`$。若整体注入半径大于 $`2R`$，最大不相交 $`R`$-球族满足
 
 ```math
 \frac{1}{9[4X_R(1+X_R)]^2}\le\frac NA\le\frac1{9X_R^2}.
@@ -385,13 +385,13 @@ d_*(Y\#k\overline{\mathbb{CP}}^{\,2})
 
 ### 2.6 无对称限制的完整单元共形归约
 
-令完整光滑单元在紧集外精确等于 $`\operatorname{Ric}=-6g`$ 的复双曲端，并固定端部识别。存在唯一正函数 $`u\to1`$ 满足
+令完整光滑单元在紧集外精确等于 $`\mathop{\mathrm{Ric}}\nolimits=-6g`$ 的复双曲端，并固定端部识别。存在唯一正函数 $`u\to1`$ 满足
 
 ```math
 -6\Delta_gu+s_gu+24u^3=0,\qquad \widehat g=u^2g,\quad s_{\widehat g}=-24,
 ```
 
-其中 $`\Delta=\operatorname{div}\nabla`$。不要求原度量的标量处处为负，也不要求任何对称性。证明在精确端上用 $`1-e^{-a(r-R)}`$ 与 $`1+(M-1)e^{-a(r-R)}`$ 作上下屏障，在核心内分别延为零和足够大的常数，随后作穷竭并使用强最大值原理。线性化 $`-6\Delta+48`$ 给出
+其中 $`\Delta=\mathop{\mathrm{div}}\nolimits\nabla`$。不要求原度量的标量处处为负，也不要求任何对称性。证明在精确端上用 $`1-e^{-a(r-R)}`$ 与 $`1+(M-1)e^{-a(r-R)}`$ 作上下屏障，在核心内分别延为零和足够大的常数，随后作穷竭并使用强最大值原理。线性化 $`-6\Delta+48`$ 给出
 
 ```math
 |\nabla^j(u-1)|=O(e^{-mr}),\qquad 4<m<2+2\sqrt3,
@@ -415,28 +415,28 @@ J_6(g)-J_6(\widehat g)
 若单元有 $`k`$ 个吹起和 $`\ell`$ 个柄，相对模型球的 Weyl 差为 $`\Delta I_+`$，则
 
 ```math
-P(\widehat g)-8\pi^2(k+4\ell)=4\Delta I_++48\operatorname{RV}(\widehat g).
+P(\widehat g)-8\pi^2(k+4\ell)=4\Delta I_++48\mathop{\mathrm{RV}}\nolimits(\widehat g).
 \tag{2.6}
 ```
 
-相对体积 $`\operatorname{RV}`$ 包含匹配截面的原体积差及完整单元上的 $`\int(u^4-1)dV_g`$。改变截面但保持端部识别不改变它。Weyl 能量的减少必须与这同一个常标量代表的相对体积共同计算；单独一个负 Weyl 差不能给出 $`P`$ 的最优值。
+相对体积 $`\mathop{\mathrm{RV}}\nolimits`$ 包含匹配截面的原体积差及完整单元上的 $`\int(u^4-1)dV_g`$。改变截面但保持端部识别不改变它。Weyl 能量的减少必须与这同一个常标量代表的相对体积共同计算；单独一个负 Weyl 差不能给出 $`P`$ 的最优值。
 
 来源：[完整复双曲端的共形归约与证明](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A01/workspace/notes/step22_exact_CH_conformal_reduction.md)；[相对曲率恒等式](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/notes/step23_yamabe_identity_hyperbolic_sharp_gap_and_cell_channels.md) §1。
 
 ### 2.7 领口的约束分解与标准端截断
 
-对一般 Gaussian 领口 $`g=dt^2+h_t`$，令 $`K=\frac12\partial_th_t`$、$`\Theta=\operatorname{tr}_{h_t}K`$。Gauss–Codazzi 及切向演化方程把无迹 Ricci 分为
+对一般 Gaussian 领口 $`g=dt^2+h_t`$，令 $`K=\frac12\partial_th_t`$、$`\Theta=\mathop{\mathrm{tr}}\nolimits_{h_t}K`$。Gauss–Codazzi 及切向演化方程把无迹 Ricci 分为
 
 ```math
 \mathcal C=\tfrac12(\Theta^2-|K|^2-R_h)+s/4,
-\quad\mathcal M=\operatorname{div}_hK-d\Theta,
-\quad\mathcal S=(\operatorname{Ric}^{h_t}-\partial_tK-\Theta K+2K^2)^{\circ_h},
+\quad\mathcal M=\mathop{\mathrm{div}}\nolimits_hK-d\Theta,
+\quad\mathcal S=(\mathop{\mathrm{Ric}}\nolimits^{h_t}-\partial_tK-\Theta K+2K^2)^{\circ_h},
 ```
 
 并给精确正交恒等式
 
 ```math
-|\operatorname{Ric}^{\circ}|^2=\frac43\mathcal C^2+2|\mathcal M|^2+|\mathcal S|^2.
+|\mathop{\mathrm{Ric}}\nolimits^{\circ}|^2=\frac43\mathcal C^2+2|\mathcal M|^2+|\mathcal S|^2.
 \tag{2.17}
 ```
 
@@ -462,7 +462,7 @@ $`y_i=a_i'/a_i`$、$`\mathcal V=a_fa_ga_h`$、$`\kappa=a_f/(a_ga_h)`$、$`q=\log
 追踪，其精确方程为
 
 ```math
-\Phi'=F-\frac14(\operatorname{Ric}^{\circ}_{gg}-\operatorname{Ric}^{\circ}_{hh}),
+\Phi'=F-\frac14(\mathop{\mathrm{Ric}}\nolimits^{\circ}_{gg}-\mathop{\mathrm{Ric}}\nolimits^{\circ}_{hh}),
 \tag{2.19}
 ```
 
@@ -498,7 +498,7 @@ P(g_R)\longrightarrow P(g).
 H(z)=\left(\sqrt{1+z}+\frac1{\sqrt{1+z}},\sqrt{1+z},\sqrt{1+z},\sqrt{1+z},0,z\right)
 ```
 
-的切向。扣除同 $`\zeta`$ 的 $`H`$ 后，$`P<\infty`$ 给加权残差 $`e^{2t}e\in L^2`$，其中 $`e_i=\operatorname{Ric}_{ii}+6`$。稳定方向用 Duhamel 公式，出射方向用有界终端条件，零速率方向用 (2.20)；余项吸收遂给所有物理偏差 $`o(e^{-2t})`$。将相位匹配后的 $`D_i=\log a_i-\log a_i^{\rm CH}`$ 在 $`[R,R+1]`$ 截断，附加能量不超过
+的切向。扣除同 $`\zeta`$ 的 $`H`$ 后，$`P<\infty`$ 给加权残差 $`e^{2t}e\in L^2`$，其中 $`e_i=\mathop{\mathrm{Ric}}\nolimits_{ii}+6`$。稳定方向用 Duhamel 公式，出射方向用有界终端条件，零速率方向用 (2.20)；余项吸收遂给所有物理偏差 $`o(e^{-2t})`$。将相位匹配后的 $`D_i=\log a_i-\log a_i^{\rm CH}`$ 在 $`[R,R+1]`$ 截断，附加能量不超过
 
 ```math
 C\int_R^{R+1}\mathcal V|e|^2dt
@@ -509,7 +509,7 @@ C\int_R^{R+1}\mathcal V|e|^2dt
 
 来源：[无对称约束分解](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/notes/step34_characteristic_constraint_calculus_and_N_probe.md) §2；[CR 输运与标准端截断](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/notes/step26_truncation_flux_and_branch_completeness.md) §§1–2。
 
-非标准 Rossi 无穷远的 $`\mathcal O(-1)`$ Einstein 填充分支尚未完成：其目标是对角方程 $`\operatorname{Ric}=-6g`$、光滑 bolt 与非标准 CR 端。现有解析级数、区间输运和末端块将问题缩到初始包围与后续输运的衔接；[初始 Fuchs 程序](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/scripts/ach_bolt_fuchs.py) 的状态次序 $`(\sigma,\delta,\gamma,D\sigma,D\delta,D\gamma)`$ 与按 $`(\sigma,D\sigma,\delta,D\delta,\gamma,D\gamma)`$ 分配的余项半径没有一致置换。因此尚缺有效的分量余项界及其向输运初始盒的包含；同起始盒上的 Weyl 判别也依赖这一步。上述领口恒等式与截断结论不依赖这项填充存在性。已成立的完整 $`\mathbb R^4`$ almost-Kähler Einstein 构造见 [Goldberg 专题](GOLDBERG.md)，两者的拓扑与边界问题不同。
+非标准 Rossi 无穷远的 $`\mathcal O(-1)`$ Einstein 填充分支尚未完成：其目标是对角方程 $`\mathop{\mathrm{Ric}}\nolimits=-6g`$、光滑 bolt 与非标准 CR 端。现有解析级数、区间输运和末端块将问题缩到初始包围与后续输运的衔接；[初始 Fuchs 程序](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/scripts/ach_bolt_fuchs.py) 的状态次序 $`(\sigma,\delta,\gamma,D\sigma,D\delta,D\gamma)`$ 与按 $`(\sigma,D\sigma,\delta,D\delta,\gamma,D\gamma)`$ 分配的余项半径没有一致置换。因此尚缺有效的分量余项界及其向输运初始盒的包含；同起始盒上的 Weyl 判别也依赖这一步。上述领口恒等式与截断结论不依赖这项填充存在性。已成立的完整 $`\mathbb R^4`$ almost-Kähler Einstein 构造见 [Goldberg 专题](GOLDBERG.md)，两者的拓扑与边界问题不同。
 
 ## 3. 全度量曲率估计与近极小序列的变分
 
@@ -598,7 +598,7 @@ p_*\ge p_{\rm flat}:=\frac{A-k-\sqrt{A^2-2Ak}}2
 \qquad \delta_j=o(Q_j^3/A_j^2),
 ```
 
-并作负 Yamabe 替换、归一化至 $`s=-4`$。在该族已有的全曲率积分上界 $`\int|\operatorname{Rm}|^2\le KA_j`$ 下，考虑所有满足
+并作负 Yamabe 替换、归一化至 $`s=-4`$。在该族已有的全曲率积分上界 $`\int|\mathop{\mathrm{Rm}}\nolimits|^2\le KA_j`$ 下，考虑所有满足
 
 ```math
 \|H\|_\infty\le1,\qquad
@@ -614,10 +614,10 @@ D^2P_{g_j}[H,H]\ge-C_KA_j^{2/3}\delta_j^{1/3}=-o(Q_j).
 \tag{3.7}
 ```
 
-估计对 (3.6) 的全部测试同时成立；对不相交支撑测试，也可控制其一阶绝对值之和及二阶负部之和。它不要求统一 Sobolev 常数。常标量下，$`DS[H]=8\int\langle\operatorname{Ric}^{\circ},H\rangle`$，所以
+估计对 (3.6) 的全部测试同时成立；对不相交支撑测试，也可控制其一阶绝对值之和及二阶负部之和。它不要求统一 Sobolev 常数。常标量下，$`DS[H]=8\int\langle\mathop{\mathrm{Ric}}\nolimits^{\circ},H\rangle`$，所以
 
 ```math
-4DI_+[H]+\frac23\int\langle\operatorname{Ric}^{\circ},H\rangle=o(Q_j).
+4DI_+[H]+\frac23\int\langle\mathop{\mathrm{Ric}}\nolimits^{\circ},H\rangle=o(Q_j).
 ```
 
 这些变分估计在所选极小化序列上达到 $`o(Q_j)`$ 精度。颈部收敛、气泡能量恒等式和光滑取得性需要进一步的几何控制。
@@ -657,7 +657,7 @@ D^2P_{g_j}[H,H]\ge-C_KA_j^{2/3}\delta_j^{1/3}=-o(Q_j).
 
 ```math
 C_+=\frac{I_+}{2\pi^2}+\frac{S}{96\pi^2},\qquad
-\varphi=\frac{\operatorname{Vol}\{s^*\ge0\}}V<1.
+\varphi=\frac{\mathop{\mathrm{Vol}}\nolimits\{s^*\ge0\}}V<1.
 ```
 
 Blair 恒等式给 $`\int(-2s-\delta)=\ell`$，而
@@ -716,12 +716,12 @@ f(W,r,n)=-r^2W(n,n)-4|W|^2-r^3+\frac73r^2-\frac43.
 \Psi=3(x-2/3)^2+4\sigma^2\quad(x\ge2/3).
 ```
 
-所以 $`\Psi\ge(10/9)\operatorname{dist}(W,\mathcal K)^2`$。将这一点态界代回实际场等式，保留非正余项，再用 $`4D_W-4\Delta V`$ 消去 $`D_W`$，得
+所以 $`\Psi\ge(10/9)\mathop{\mathrm{dist}}\nolimits(W,\mathcal K)^2`$。将这一点态界代回实际场等式，保留非正余项，再用 $`4D_W-4\Delta V`$ 消去 $`D_W`$，得
 
 ```math
 \boxed{8\pi^2k-P(g)\le
 4\Delta V-2\int\Psi(W^+_{\widehat g})
-\le4\Delta V-\frac{20}{9}\int\operatorname{dist}(W^+_{\widehat g},\mathcal K)^2.}
+\le4\Delta V-\frac{20}{9}\int\mathop{\mathrm{dist}}\nolimits(W^+_{\widehat g},\mathcal K)^2.}
 \tag{3.9}
 ```
 
@@ -757,15 +757,19 @@ $`\Delta V_{\rm free}=\Delta V-2\pi^2\Pi_g\ge0`$，便有
 ```
 
 若实际自对偶类写成 $`c=K-\sum\sigma_iE_i`$，则直接用 (3.9a) 得
-$\Pi_g\ge(A+\|\sigma\|_1)^2/(A-\|\sigma\|_2^2)-A
-\ge2\|\sigma\|_1+\|\sigma\|_2^2$。
+
+```math
+\Pi_g\ge\frac{(A+\|\sigma\|_1)^2}{A-\|\sigma\|_2^2}-A
+\ge2\|\sigma\|_1+\|\sigma\|_2^2.
+```
+
 这保留了旋转单元的周期信息，无须假设 $`\|e\|_1\ge\|\sigma\|_1`$。因而使 $`P`$ 低于标准插入能量所需的体积超额还须满足这些周期约束。
 
 这里使用的经典标量及混合曲率估计见 [统一间隙专题](GAPS_AND_ENDPOINTS.md)；(3.9a)–(3.9b) 保留了对全部实际符号类取最大值所产生的周期项。
 
 ### 3.6 靠近复双曲主体时的局部化
 
-在 $`\operatorname{Ric}_{g_0}=-6g_0`$ 的紧复双曲商上，Bianchi 规范下的 Einstein 线性化为
+在 $`\mathop{\mathrm{Ric}}\nolimits_{g_0}=-6g_0`$ 的紧复双曲商上，Bianchi 规范下的 Einstein 线性化为
 
 ```math
 L=\tfrac12(\nabla^*\nabla-2\mathring R).
@@ -781,7 +785,7 @@ Koiso 恒等式在无迹横截张量上给 $`L\ge1`$；规范与迹部分由 Hod
 
 ```math
 \|g-g_0\|_{H^2(d\ge T)}
-\le C\left(\|\operatorname{Ric}^{\circ}_g\|_{L^2(d\ge1)}+e^{-aT}\Lambda\right),
+\le C\left(\|\mathop{\mathrm{Ric}}\nolimits^{\circ}_g\|_{L^2(d\ge1)}+e^{-aT}\Lambda\right),
 \qquad \Lambda=\|g-g_0\|_{H^1(1\le d\le2)}.
 \tag{3.10}
 ```
@@ -795,7 +799,7 @@ P(g)\ge\frac{8\pi^2k-4\Delta V_U-C\Lambda^2}{1+C}.
 
 这说明在明确的近复双曲范围内，固定比例的能量下降要求核心相对体积超额或界面误差具有相应下界。一般极小化序列是否具有这样的主体、规范和小邻域仍未建立；四维 $`H^2`$ 控制本身不能替代所需的 $`C^{2,\gamma}`$ 假设。
 
-在同一小邻域内，可以同时控制实际规范场，而不限于度量。对任意紧复双曲商 $`(X_\Gamma,g_\Gamma)`$，取 $`\operatorname{Ric}=-6g`$ 的典范 Seiberg–Witten 解 $`(A_0,\Phi_0)`$，满足 $`\nabla_{A_0}\Phi_0=0`$、$`|\Phi_0|^2=24`$。其规范固定线性化 $`\mathcal L`$ 的正规算子精确分裂为
+在同一小邻域内，可以同时控制实际规范场，而不限于度量。对任意紧复双曲商 $`(X_\Gamma,g_\Gamma)`$，取 $`\mathop{\mathrm{Ric}}\nolimits=-6g`$ 的典范 Seiberg–Witten 解 $`(A_0,\Phi_0)`$，满足 $`\nabla_{A_0}\Phi_0=0`$、$`|\Phi_0|^2=24`$。其规范固定线性化 $`\mathcal L`$ 的正规算子精确分裂为
 
 ```math
 \mathcal L^*\mathcal L
@@ -855,7 +859,7 @@ $`36\pi^2(p-T_+)=\frac92P+\frac98\Sigma-D_2`$，
 $`uP+\frac32vS+9vW+108\pi^2v\tau`$。这使线性强制进入一族正耦合二次曲率作用，未声称其常数最优。
 
 若某流形已有全度量 $`P\ge p_0>0`$，则曲率算子的混合块满足 $`4\int|B|^2=P\ge p_0`$。对实际满足
-$`\operatorname{Ric}-\frac12sg+\Lambda g=\varkappa T`$
+$`\mathop{\mathrm{Ric}}\nolimits-\frac12sg+\Lambda g=\varkappa T`$
 的度量与场，取无迹部分给
 
 ```math
@@ -904,12 +908,12 @@ p=q^2(1-\delta)^2+L,\qquad L\ge0,
 对真实度量变分有如下公式。在闭 almost-Kähler 结构 $`(g,J,\Omega)`$、Ricci 为 $`J`$-不变的类别，
 
 ```math
-DP_g[\operatorname{Ric}^{\circ}]
-=\frac18\int|ds|^2-\frac12\int s|\operatorname{Ric}^{\circ}|^2.
+DP_g[\mathop{\mathrm{Ric}}\nolimits^{\circ}]
+=\frac18\int|ds|^2-\frac12\int s|\mathop{\mathrm{Ric}}\nolimits^{\circ}|^2.
 ```
 
 常非零标量时，每个非 Einstein 度量均有保体积形式的下降方向。负标量下进一步的精确谐和秩对齐条件
-$`\operatorname{im}B_x\subset\mathbb Rh_x`$
+$`\mathop{\mathrm{im}}\nolimitsB_x\subset\mathbb Rh_x`$
 给出局部化下降，无须对零集上的商另加有界假设。因此负标量 Einstein–Maxwell 非 Einstein 度量也不可能成为 $`P`$-临界点。
 
 来源：[曲率通量等号与下降方向](../archive/originals/2026-10-08/Q3_Descent_and_Flux_Equality.tex) §§2–3；[谐和方向约束下的下降变分](../archive/originals/2026-10-08/Q3_Harmonic_Alignment_Descent.tex) §§2–5；[谐和秩条件与刚性](../archive/originals/2026-10-08/Q3_Harmonic_Rank_Rigidity.tex) §§1、4。完整点态方程允许两个幅度同时变化。
@@ -936,10 +940,10 @@ $`\mathcal S=\{k:\beta_{g_0}k=0,\ s'_0(k)\text{ 为常数}\}`$ 上，令 $`d_2,\
 ```
 
 若 $`k\in\ker\ell_2`$，对齐方程必须微分为
-$`B'_0=\dot\Phi\otimes h_0+\Phi_0\otimes\dot h`$，而非固定 $`h_0`$。线性化 Bianchi 恒等式和幅度条件使相应 $`\Omega_t`$ 满足 $`d\Omega_t=O(t^2)`$、$`(\operatorname{Ric}'')'_0=0`$。能否将它与一阶 Kähler 变分比较，还取决于周期障碍
+$`B'_0=\dot\Phi\otimes h_0+\Phi_0\otimes\dot h`$，而非固定 $`h_0`$。线性化 Bianchi 恒等式和幅度条件使相应 $`\Omega_t`$ 满足 $`d\Omega_t=O(t^2)`$、$`(\mathop{\mathrm{Ric}}\nolimits'')'_0=0`$。能否将它与一阶 Kähler 变分比较，还取决于周期障碍
 
 ```math
-\Xi(k)=[\dot\Omega_k]^{0,2}\pmod{\operatorname{im}\mathcal P_\omega},
+\Xi(k)=[\dot\Omega_k]^{0,2}\pmod{\mathop{\mathrm{im}}\nolimits\mathcal P_\omega},
 \qquad
 \mathcal P_\omega:H^{0,1}(T^{1,0}M)\longrightarrow H^{0,2}(M),
 \quad[\mu]\longmapsto[\mu\mathbin{\lrcorner}\omega].
@@ -947,10 +951,10 @@ $`B'_0=\dot\Phi\otimes h_0+\Phi_0\otimes\dot h`$，而非固定 $`h_0`$。线性
 ```
 
 增广对齐、标量和 Bianchi 系统的主符号是单射：其核满足
-$`k^\circ=\sigma\circ h_0`$、$`\sigma\perp\omega`$、$`\operatorname{tr}k=0`$、$`(\sigma\circ h_0)\xi=0`$，而相反手性的二形式给
+$`k^\circ=\sigma\circ h_0`$、$`\sigma\perp\omega`$、$`\mathop{\mathrm{tr}}\nolimitsk=0`$、$`(\sigma\circ h_0)\xi=0`$，而相反手性的二形式给
 $`(\sigma\circ h_0)^2=|\sigma|^2|h_0|^2I/4`$。因此 $`K=\ker\ell_2\cap\mathcal S`$ 有限维，且
 $`\ell_2(k)\ge c\|k-\pi_Kk\|_{H^2}^2`$。若另有 $`\Xi|_K=0`$，先扣除同周期的一阶 Kähler 变分，再用 Moser 修正消去恰当部分；固定辛形式下的 Blair–Ianus 恒等式
-$`\operatorname{Hess}\int|\nabla\omega|^2=2\|(\nabla\omega)'\|_2^2`$
+$`\mathop{\mathrm{Hess}}\nolimits\int|\nabla\omega|^2=2\|(\nabla\omega)'\|_2^2`$
 遂将 $`K`$ 放入 $`d_2`$ 的根空间。由 $`d_2\le C\ell_2`$ 得 $`c_K>0`$，并对 $`0<c<c_K`$ 有
 
 ```math
@@ -970,9 +974,9 @@ g_t=g_1(e^{tf g_1^{-1}Q}\,\cdot,\cdot)\oplus g_2
 保持两个面积形式，故 $`q_t^2=|c_1^-|_{g_t}^2`$ 不变；其切向量 $`k=fQ`$ 横截无迹且 $`s'_0=0`$。直接计算两个 Ricci 块，若 $`G_t`$ 为第一块、$`K_t`$ 为其纤维 Gaussian 曲率，则
 
 ```math
-\operatorname{Ric}_V=K_tG_t+\frac{t\mu f}{2}G_tg_1^{-1}Q,
+\mathop{\mathrm{Ric}}\nolimits_V=K_tG_t+\frac{t\mu f}{2}G_tg_1^{-1}Q,
 \qquad
-\operatorname{Ric}_H=K_2g_2-\frac{t^2}{4}|Q|^2df\otimes df,
+\mathop{\mathrm{Ric}}\nolimits_H=K_2g_2-\frac{t^2}{4}|Q|^2df\otimes df,
 ```
 
 混合块没有一阶项。Gauss–Bonnet 与面积不变消去 $`K_t-K_1`$ 的积分二次贡献，$`\int|df|^2=\mu\int f^2`$ 因而给
@@ -1129,14 +1133,14 @@ h=(1+r^{-2})^2\delta.
 
 ```math
 P(h)=32\pi^2,\qquad
-\int_{r>L}|\operatorname{Ric}^{\circ}_h|^2
+\int_{r>L}|\mathop{\mathrm{Ric}}\nolimits^{\circ}_h|^2
 =\frac{\pi^2(96L^2+32)}{(1+L^2)^3}.
 ```
 
 等距对合
 
 ```math
-\iota(x)=\operatorname{diag}(-1,-1,-1,1)x/|x|^2
+\iota(x)=\mathop{\mathrm{diag}}\nolimits(-1,-1,-1,1)x/|x|^2
 ```
 
 交换两端，在 $`\pm e_4`$ 的微分均为 $`-I`$。商空间有两个 $`A_1`$ 点和一个普通 AE 端，$`P`$ 能量恰为 $`16\pi^2`$。
@@ -1155,10 +1159,10 @@ W\to4\pi^2A/3,\qquad L_s\to0,
 若某度量达到 $`P=8\pi^2k`$，则 (5.2) 强迫 $`\sigma=w=0`$，并达到全度量的 $`S`$ 下界。对 $`S`$ 作共形变分得到 $`\Delta s=0`$；负标量曲率积分下界使 $`s`$ 为非零常数。再作无迹变分，
 
 ```math
-DS[H]=-2s\int\langle\operatorname{Ric}^{\circ},H\rangle=0
+DS[H]=-2s\int\langle\mathop{\mathrm{Ric}}\nolimits^{\circ},H\rangle=0
 ```
 
-强迫 $`\operatorname{Ric}^{\circ}=0`$，与 $`P=8\pi^2k>0`$ 矛盾。
+强迫 $`\mathop{\mathrm{Ric}}\nolimits^{\circ}=0`$，与 $`P=8\pi^2k>0`$ 矛盾。
 
 令 $`q=4k/(A+k)`$、$`B=8\pi^2(A+k)`$，有
 
@@ -1190,7 +1194,7 @@ DS[H]=-2s\int\langle\operatorname{Ric}^{\circ},H\rangle=0
 \tag{6.1}
 ```
 
-于是非零 Einstein 轨形的这种解消满足 $`P_*=\alpha=0`$，不必另外假设标量方差消失。若主体 Ricci-flat，则只能直接推出 $`P_*=0`$；上述简单截断族反而 $`\mathcal E\to4`$，因为标量仅支撑在体积趋零的过渡区，$`T_s^2\le4\operatorname{Vol}(\operatorname{supp}s)R`$。
+于是非零 Einstein 轨形的这种解消满足 $`P_*=\alpha=0`$，不必另外假设标量方差消失。若主体 Ricci-flat，则只能直接推出 $`P_*=0`$；上述简单截断族反而 $`\mathcal E\to4`$，因为标量仅支撑在体积趋零的过渡区，$`T_s^2\le4\mathop{\mathrm{Vol}}\nolimits(\mathop{\mathrm{supp}}\nolimitss)R`$。
 
 若填充仅标量平坦，令 $`Q=\sum_jP(N_j)`$，同一计算给
 
@@ -1323,7 +1327,7 @@ A\ge\frac{3675}{64}.
 
 ### 6.5 Eguchi–Hanson 障碍与逼近速率
 
-ALE 解消的首项还可精确到一个局部二次能量项。设 Einstein 轨形 $`(V,g_V)`$ 在 $`p`$ 有 $`\mathbb R^4/\mathbb Z_2`$ 奇点，$`\operatorname{Ric}=\Lambda g`$，$`\mathbf R^+=W^++\frac{s}{12}I`$。用尺度 $`a`$、方向 $`\zeta\in\Lambda_p^+`$、$`|\zeta|=1`$ 的 Eguchi–Hanson 空间解消。其三个 $`L^2`$ 余核张量为 $`o_i=\Omega\circ\omega_i`$，其中 $`\omega_i`$ 为平行超 Kähler 形式，$`\Omega`$ 为相反手性的调和二形式。外部可写 $`\Omega=-\frac14d(\sigma_3/r^2)`$，但其 bolt 周期非零，故这不是全局恰当形式。范数为
+ALE 解消的首项还可精确到一个局部二次能量项。设 Einstein 轨形 $`(V,g_V)`$ 在 $`p`$ 有 $`\mathbb R^4/\mathbb Z_2`$ 奇点，$`\mathop{\mathrm{Ric}}\nolimits=\Lambda g`$，$`\mathbf R^+=W^++\frac{s}{12}I`$。用尺度 $`a`$、方向 $`\zeta\in\Lambda_p^+`$、$`|\zeta|=1`$ 的 Eguchi–Hanson 空间解消。其三个 $`L^2`$ 余核张量为 $`o_i=\Omega\circ\omega_i`$，其中 $`\omega_i`$ 为平行超 Kähler 形式，$`\Omega`$ 为相反手性的调和二形式。外部可写 $`\Omega=-\frac14d(\sigma_3/r^2)`$，但其 bolt 周期非零，故这不是全局恰当形式。范数为
 
 ```math
 \langle o_i,o_j\rangle=\frac{4\delta_{ij}}{r^8},
@@ -1336,7 +1340,7 @@ ALE 解消的首项还可精确到一个局部二次能量项。设 Einstein 轨
 将轨形的二次度量 jet $`h_2`$ 延拓到单位 Eguchi–Hanson 空间，线性化 Ricci 与余核的配对是无穷远通量，精确为
 
 ```math
-\int\langle D\operatorname{Ric}_{\rm EH}[\widehat h_2],o_i\rangle
+\int\langle D\mathop{\mathrm{Ric}}\nolimits_{\rm EH}[\widehat h_2],o_i\rangle
 =\pi^2(\mathbf R_p^+\zeta)_i.
 \tag{6.11}
 ```
@@ -1413,7 +1417,7 @@ ALE 轨形解消不是所有退化的统一模型。完备有限体积 Einstein 
 设 $`M=X\#k\overline{\mathbb{CP}}^{\,2}`$ 上一列度量具有下列实际极限：
 
 - 在开集 $`\Omega`$ 上，经微分同胚后 $`C^2_{\rm loc}`$ 收敛到完备有限体积、标量常数 $`s_\infty<0`$ 的 Einstein 度量；
-- $`P(g_i)\to0`$、$`L_s(g_i)\to0`$、$`\bar s_i\to s_\infty`$，且总体积收敛到 $`\operatorname{Vol}(\Omega,g_\infty)`$；
+- $`P(g_i)\to0`$、$`L_s(g_i)\to0`$、$`\bar s_i\to s_\infty`$，且总体积收敛到 $`\mathop{\mathrm{Vol}}\nolimits(\Omega,g_\infty)`$；
 - $`\Omega_\rho\uparrow\Omega`$ 是嵌套紧穷竭，其补域各连通分支 $`C_j^{(\rho)}`$ 的拓扑和所接端的集合固定。
 
 则各补域有非负极限曲率积分
@@ -1437,7 +1441,7 @@ q_j=(2\chi+3\tau)(C_j)
 证明在每个固定 $`\rho`$ 上使用 (7.1)、局部收敛和 $`P(C_j)\to0`$，再由非负密度和嵌套性取得外层极限。标量部分消失的关键为
 
 ```math
-\int_{C_j}s_i^2\le2L_s(g_i)+2\bar s_i^2\operatorname{Vol}(C_j,g_i).
+\int_{C_j}s_i^2\le2L_s(g_i)+2\bar s_i^2\mathop{\mathrm{Vol}}\nolimits(C_j,g_i).
 ```
 
 无体积损失使全部补域体积的上极限不超过 Einstein 域的尾部体积，后者随 $`\rho\to0`$ 趋零。因此补域的 Weyl 极限为 $`\int_{C_j}|W^+|^2\to2\pi^2q_j`$，但并不要求该能量为零。
@@ -1472,8 +1476,8 @@ q_j=(2\chi+3\tau)(C_j)
 若端部满足 Dai–Wei 的圆纤维尖点渐近，链接作为 $`\partial\overline\Omega`$ 的 Euler 数为 $`e`$，其边界公式为
 
 ```math
-\mathscr Q_+^\infty=-e+3\operatorname{sign}e,\qquad
-\mathscr Q_-^\infty=e-3\operatorname{sign}e.
+\mathscr Q_+^\infty=-e+3\mathop{\mathrm{sign}}\nolimitse,\qquad
+\mathscr Q_-^\infty=e-3\mathop{\mathrm{sign}}\nolimitse.
 ```
 
 所用渐近条件及绝热 eta 公式见 Dai–Wei，[Hitchin–Thorpe inequality for noncompact Einstein 4-manifolds](https://web.math.ucsb.edu/~dai/paper/dwAIM.pdf)，Theorems 3.5、5.1。
@@ -1481,7 +1485,7 @@ q_j=(2\chi+3\tau)(C_j)
 对作为补域边界的 $`e_{\rm out}=-e`$，
 
 ```math
-q_+=(2\chi+3\tau)(C)+e_{\rm out}-3\operatorname{sign}e_{\rm out}.
+q_+=(2\chi+3\tau)(C)+e_{\rm out}-3\mathop{\mathrm{sign}}\nolimitse_{\rm out}.
 \tag{7.4}
 ```
 
@@ -1516,8 +1520,8 @@ g_0=dr^2+\pi^*g_B+e^{-2\kappa r}f^2\eta^2,
 \tag{7.6}
 ```
 
-其中 $`B`$ 为闭曲面或轨形曲面，$`\eta`$ 为联络。若 $`\operatorname{Ric}_g=\lambda g`$，且在 $`g_0`$ 正交标架中
-$`g-g_0=o(1)`$、$`\operatorname{Ric}_g-\operatorname{Ric}_{g_0}=o(1)`$，则
+其中 $`B`$ 为闭曲面或轨形曲面，$`\eta`$ 为联络。若 $`\mathop{\mathrm{Ric}}\nolimits_g=\lambda g`$，且在 $`g_0`$ 正交标架中
+$`g-g_0=o(1)`$、$`\mathop{\mathrm{Ric}}\nolimits_g-\mathop{\mathrm{Ric}}\nolimits_{g_0}=o(1)`$，则
 
 ```math
 \boxed{\lambda=-\kappa^2,\qquad df=0,\qquad K_B=\lambda<0.}
@@ -1525,8 +1529,8 @@ $`g-g_0=o(1)`$、$`\operatorname{Ric}_g-\operatorname{Ric}_{g_0}=o(1)`$，则
 ```
 
 证明直接来自径向和混合 Ricci 分量：
-$`\operatorname{Ric}_{g_0}(\partial_r,\partial_r)=-\kappa^2`$，
-$`\operatorname{Ric}_{g_0}(\partial_r,\widehat Y)=\kappa Y(f)/f`$。
+$`\mathop{\mathrm{Ric}}\nolimits_{g_0}(\partial_r,\partial_r)=-\kappa^2`$，
+$`\mathop{\mathrm{Ric}}\nolimits_{g_0}(\partial_r,\widehat Y)=\kappa Y(f)/f`$。
 于是 Einstein 方程先给 $`\lambda=-\kappa^2`$、$`df=0`$；联络曲率的 O'Neill 项为 $`O(e^{-2\kappa r})`$，水平分量遂给 $`K_B=\lambda`$，最后 Gauss–Bonnet 给 $`\chi^{\rm orb}(B)<0`$。
 
 相对 $`C^2`$ 收敛足以保证这里的两个收敛条件；仅有纤维尖点重标切丛上的光滑延拓并不足够。例如扰动 $`xq(\theta)dy^2`$ 沿单位竖直向量 $`x^{-1}\partial_\theta`$ 的导数不趋零。因此 (7.7) 排除的是所述相对渐近范围内的 $`S^2`$ 或 $`T^2`$ 固定基底端；实、复双曲的缩小基底尖点不在此模型中。
@@ -1549,7 +1553,7 @@ d\sigma_i=2\sigma_j\wedge\sigma_k,
 \tag{7.9}
 ```
 
-并可下降至 $`S^3/\Gamma`$，其中 $`\Gamma\subset SU(2)`$ 有限。若 $`|\operatorname{Rm}|`$ 有界，且 Einstein 张量满足
+并可下降至 $`S^3/\Gamma`$，其中 $`\Gamma\subset SU(2)`$ 有限。若 $`|\mathop{\mathrm{Rm}}\nolimits|`$ 有界，且 Einstein 张量满足
 $`G(\partial_t,\partial_t)\ge0`$（特别是 Einstein 常数 $`\lambda\le0`$），则该端的体积必为无穷。
 
 为证明，先对一般对角形式置 $`a_i'/a_i=\lambda_i`$、$`x_i=a_i^2`$。径向 Riccati 方程
@@ -1574,7 +1578,7 @@ Gauss 方程给 $`r_i`$ 有界；排序 $`x_1\ge x_2\ge x_3`$ 后，$`r_1+r_2\ge
 因此 $`\lambda_a`$ 最终符号固定。正号使
 $`(\log v)'=\frac32\lambda_a+\frac12(\lambda_a+2\lambda_c)>0`$，与 $`v\to0`$ 矛盾；负号使 $`a`$ 递减，(7.11) 的右端继而有正下界，故 $`\lambda_a`$ 一致为负，迫使 $`a\to0`$，又与 $`a\ge b_0`$ 矛盾。此证明覆盖所有双轴剖面；有限商不正规时，只需球面提升的双轴性质，不要求全局 $`U(2)`$ 作用下降。
 
-一般三轴端也可在 $`\liminf\sigma_2>0`$ 下排除有限体积，其中 $`\sigma_2=\sum_{i<j}\lambda_i\lambda_j`$。因为 $`H^2\ge3\sigma_2`$，体积收缩分支具有 $`H<0`$；任意对和 $`u=\lambda_i+\lambda_j\ge0`$ 会给 $`\sigma_2\le Hu-3u^2/4\le0`$，故所有对和都一致为负，使所有 $`a_ia_j\to0`$，违反第二大尺度的正下界。对 $`\operatorname{Ric}=-3g`$，一个充分条件为
+一般三轴端也可在 $`\liminf\sigma_2>0`$ 下排除有限体积，其中 $`\sigma_2=\sum_{i<j}\lambda_i\lambda_j`$。因为 $`H^2\ge3\sigma_2`$，体积收缩分支具有 $`H<0`$；任意对和 $`u=\lambda_i+\lambda_j\ge0`$ 会给 $`\sigma_2\le Hu-3u^2/4\le0`$，故所有对和都一致为负，使所有 $`a_ia_j\to0`$，违反第二大尺度的正下界。对 $`\mathop{\mathrm{Ric}}\nolimits=-3g`$，一个充分条件为
 
 ```math
 \liminf s_\Sigma>-6,

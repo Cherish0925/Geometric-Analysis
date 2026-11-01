@@ -10,7 +10,7 @@ Qiushi Engine Team, Zhejiang University · [作者与通讯信息](../AUTHORS.md
 点态逼近使用缺陷
 
 ```math
-\delta_\sigma(g)=\|\operatorname{Ric}_g-\sigma g\|_{L^\infty(g)},\qquad \sigma=\pm1.
+\delta_\sigma(g)=\|\mathop{\mathrm{Ric}}\nolimits_g-\sigma g\|_{L^\infty(g)},\qquad \sigma=\pm1.
 ```
 
 固定轨形的 ALE 解消与固定剪切曲面丛上的慢变形提供两类逼近：前者集中在收缩核心，后者沿越来越长的区域分散误差。它们表明，局部方程误差可以趋零而全局几何仍发生显著变化。
@@ -18,8 +18,8 @@ Qiushi Engine Team, Zhejiang University · [作者与通讯信息](../AUTHORS.md
 积分问题使用
 
 ```math
-P(g)=\int|\operatorname{Ric}^{\circ}|^2,\qquad
-\mathcal E(g)=\inf_{\lambda\ne0}\frac{\int|\operatorname{Ric}-\lambda g|^2}{\lambda^2V}.
+P(g)=\int|\mathop{\mathrm{Ric}}\nolimits^{\circ}|^2,\qquad
+\mathcal E(g)=\inf_{\lambda\ne0}\frac{\int|\mathop{\mathrm{Ric}}\nolimits-\lambda g|^2}{\lambda^2V}.
 ```
 
 四维中的整体缩放不改变这两个量。点态误差、体积和集中尺度共同决定积分缺陷，因而点态构造不能省略体积信息直接转为归一化极值结论。
@@ -50,7 +50,7 @@ D_8=108\pi^2(T-2p/3)+\frac{27}{2}P,\qquad T=2\chi+3\tau.
 
 ## 3. 共形归约与更自然的类平方条件
 
-令 $`R=\int|\operatorname{Ric}|^2`$、$`\mathcal J=4P/R`$。精确恒等式
+令 $`R=\int|\mathop{\mathrm{Ric}}\nolimits|^2`$、$`\mathcal J=4P/R`$。精确恒等式
 
 ```math
 \mathcal E=\mathcal J+\frac{\int s^2-(\int s)^2/V}{R}
@@ -144,7 +144,7 @@ a^2=2\chi+3\tau,\qquad b^2[M]=-2\chi+3\tau,\qquad a\cdot b=-3\tau.
 
 ## 8. 负 Einstein 几何中的可积性与退化
 
-显式非紧模型经零截面延拓，给出 $`\mathbb R^4`$ 上完备、非齐性的严格几乎 Kähler–Einstein 度量，满足 $`\operatorname{Ric}=-3g`$、$`W^-=0`$。它回答 Fino 所述允许非紧底空间的非不变存在性问题。闭流形上的负 Goldberg 猜想另要求紧致性。
+显式非紧模型经零截面延拓，给出 $`\mathbb R^4`$ 上完备、非齐性的严格几乎 Kähler–Einstein 度量，满足 $`\mathop{\mathrm{Ric}}\nolimits=-3g`$、$`W^-=0`$。它回答 Fino 所述允许非紧底空间的非不变存在性问题。闭流形上的负 Goldberg 猜想另要求紧致性。
 
 闭流形上的分析涉及扭率零点的局部结构、典范联络正交、调和形式乘积及 Weyl 方程。Green 势方法将一个扭率零点处的势符号变为全局刚性；调和秩一矩阵将相容结构问题写成有限维二次约束；固定负 Kähler–Einstein 度量上的长度缺陷给出相容结构的局部孤立性。
 

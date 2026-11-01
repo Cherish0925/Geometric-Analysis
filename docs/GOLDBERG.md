@@ -9,12 +9,12 @@ Qiushi Engine Team, Zhejiang University · [作者与通讯信息](../AUTHORS.md
 
 ```math
 \Omega(X,Y)=g(JX,Y),\qquad d\Omega=0,\qquad
-\operatorname{Ric}_g=-ag,\quad a>0.
+\mathop{\mathrm{Ric}}\nolimits_g=-ag,\quad a>0.
 ```
 
 取向由 $`\Omega^2`$ 决定，故 $`*\Omega=\Omega`$、$`|\Omega|^2=2`$，标量曲率为 $`s=-4a`$。负 Goldberg 问题是：上述条件是否蕴含 $`\nabla\Omega=0`$？等价地，是否存在闭的非 Kähler 几乎 Kähler–Einstein 四维流形，且 Einstein 常数为负？
 
-下文采用非负 Laplace 算子 $`\Delta=-\operatorname{div}\nabla`$ 与 $`\nabla^*\nabla`$。曲率算子作用在二形式上，Weyl 算子的范数为 Hilbert–Schmidt 范数。令
+下文采用非负 Laplace 算子 $`\Delta=-\mathop{\mathrm{div}}\nolimits\nabla`$ 与 $`\nabla^*\nabla`$。曲率算子作用在二形式上，Weyl 算子的范数为 Hilbert–Schmidt 范数。令
 
 ```math
 q=|\nabla\Omega|^2,\qquad n=\Omega/\sqrt2,\qquad
@@ -25,7 +25,7 @@ Z=\{x\in M:q(x)=0\}.
 
 ```math
 W^+=\begin{pmatrix}t&v^*\\v&-tI/2+B\end{pmatrix},\qquad
-t=\frac{s}{6}+\frac q4,\qquad \operatorname{tr}B=0,
+t=\frac{s}{6}+\frac q4,\qquad \mathop{\mathrm{tr}}\nolimitsB=0,
 ```
 
 其中
@@ -41,7 +41,7 @@ t=\frac{s}{6}+\frac q4,\qquad \operatorname{tr}B=0,
 [显式构造](../archive/originals/2026-10-08/Q4_Complete_Example_and_Fino_Question.tex)给出微分同胚于 $`\mathbb R^4`$ 的完备度量与相容二形式，满足
 
 ```math
-\operatorname{Ric}=-3g,\qquad W^-=0,\qquad d\Omega=0,\qquad
+\mathop{\mathrm{Ric}}\nolimits=-3g,\qquad W^-=0,\qquad d\Omega=0,\qquad
 |\Omega|^2=2,\qquad |\nabla\Omega|^2>0.
 ```
 
@@ -86,7 +86,7 @@ d(f_i\omega_i)
 \qquad f_i=\sqrt{X_i}.
 ```
 
-这直接验证闭性。由同一标架的 Koszul 公式计算，曲率算子的混合块为零，$`\mathcal R^-=-I`$，$`\operatorname{tr}\mathcal R^+=-3`$，从而 $`\operatorname{Ric}=-3g`$、$`W^-=0`$。
+这直接验证闭性。由同一标架的 Koszul 公式计算，曲率算子的混合块为零，$`\mathcal R^-=-I`$，$`\mathop{\mathrm{tr}}\nolimits\mathcal R^+=-3`$，从而 $`\mathop{\mathrm{Ric}}\nolimits=-3g`$、$`W^-=0`$。
 
 该结构光滑延拓到平面丛
 
@@ -125,7 +125,7 @@ g\ge dr^2+c_R\pi^*g_{\mathbb H^2}\quad(0\le r\le R).
 **非齐性。** 曲率不变量 $`|W^+|^2`$ 在零截面等于 $`2/3`$，在无穷端趋于 $`6`$，因而度量本身非齐性。此外
 
 ```math
-\left|\operatorname{pr}_{n^\perp}(W^+n)\right|^2
+\left|\mathop{\mathrm{pr}}\nolimits_{n^\perp}(W^+n)\right|^2
 =\frac{9(1-x^2)^3(9x^2-1)}{(1+3x^2)^4}>0
 ```
 
@@ -137,7 +137,7 @@ Fino 的 *Almost Kähler 4-dimensional Lie groups with $`J`$-invariant Ricci ten
 
 ### 正则 nut 点的刚性
 
-设一个光滑 Einstein–几乎 Kähler 对 $`(g,\Omega)`$ 在一个孤立固定点附近同时具有完整的 $`\mathrm{SU}(2)`$ 不变性，正则轨道为三维球面，固定点为光滑 nut。取 $`\operatorname{Ric}=-3g`$，并取在 nut 处允许非零不变自对偶二形式的手性，则该局部对只能是复双曲 Kähler 对。
+设一个光滑 Einstein–几乎 Kähler 对 $`(g,\Omega)`$ 在一个孤立固定点附近同时具有完整的 $`\mathrm{SU}(2)`$ 不变性，正则轨道为三维球面，固定点为光滑 nut。取 $`\mathop{\mathrm{Ric}}\nolimits=-3g`$，并取在 nut 处允许非零不变自对偶二形式的手性，则该局部对只能是复双曲 Kähler 对。
 
 首先，无须预先假定度量对角。沿法向测地线写
 
@@ -146,7 +146,7 @@ g=dt^2+H_{ij}(t)\sigma_i\sigma_j,\qquad
  d\sigma_i=2\sigma_j\wedge\sigma_k.
 ```
 
-在某一正则轨道上对角化 $`H=\operatorname{diag}(a_i^2)`$，混合 Einstein 方程为
+在某一正则轨道上对角化 $`H=\mathop{\mathrm{diag}}\nolimits(a_i^2)`$，混合 Einstein 方程为
 
 ```math
 (n_k-n_j)K_{jk}=0,\qquad
@@ -219,12 +219,12 @@ Einstein 度量及其调和形式的解析正则性将形式唯一性提升为�
 
 ## 严格低于标准插入能量的辛构造与共形归一化
 
-[曲率变分中的严格上界构造](CURVATURE_VARIATION.md)还具有一个结构性质：无迹 Ricci 能量严格低于标准吹起能量的度量，可以同时承载与外部形式精确匹配的无零自对偶闭二形式。本节记 $`P(g)=\int|\operatorname{Ric}^{\circ}|^2`$、$`S(g)=\int s^2`$。
+[曲率变分中的严格上界构造](CURVATURE_VARIATION.md)还具有一个结构性质：无迹 Ricci 能量严格低于标准吹起能量的度量，可以同时承载与外部形式精确匹配的无零自对偶闭二形式。本节记 $`P(g)=\int|\mathop{\mathrm{Ric}}\nolimits^{\circ}|^2`$、$`S(g)=\int s^2`$。
 
-以 $`\operatorname{Ric}_{\mathrm{CH}}=-6g`$ 归一化，固定一个精确复双曲领口的光滑 $`\mathcal O(-1)`$ 单元 $`g_*`$，使
+以 $`\mathop{\mathrm{Ric}}\nolimits_{\mathrm{CH}}=-6g`$ 归一化，固定一个精确复双曲领口的光滑 $`\mathcal O(-1)`$ 单元 $`g_*`$，使
 
 ```math
-J_6(g_*):=\int|\operatorname{Ric}_{g_*}+6g_*|^2<8\pi^2.
+J_6(g_*):=\int|\mathop{\mathrm{Ric}}\nolimits_{g_*}+6g_*|^2<8\pi^2.
 ```
 
 其从外领口向内传输的自对偶闭形式在 bolt 上为零。取单调截断 $`\chi`$，在 bolt 邻域等于一，在外领口等于零，并在塌缩方向与纤维方向的平面内旋转轨道度量：
@@ -260,7 +260,7 @@ f_p^2=a_0^2p^2+\kappa^2r^2+O(p^2r^2+r^4),\qquad
 a_0=(\pi b^2)^{-1},\quad\kappa>0.
 ```
 
-故归一化层的尺度为 $`r\asymp|p|`$。在这一层，若 $`\mathscr D=\operatorname{div}\nabla=-\Delta`$，则
+故归一化层的尺度为 $`r\asymp|p|`$。在这一层，若 $`\mathscr D=\mathop{\mathrm{div}}\nolimits\nabla=-\Delta`$，则
 
 ```math
 \frac{\mathscr Dv_p}{v_p}
@@ -294,10 +294,10 @@ P(\widehat g_p)-P(g_p)
 
 原度量 $`g_p`$ 光滑收敛并保持严格能量上界；发散发生在将相容形式归一到常长度的代表上。因此，共形 Kähler 类的能量下界不能推广为共形几乎 Kähler 类的同一下界。
 
-整体周期也随之变化。在外部 $`\operatorname{Ric}=-g`$ 归一化下，令 $`A=K_X^2>0`$，用拉回的主体典范类 $`K_X`$ 写
+整体周期也随之变化。在外部 $`\mathop{\mathrm{Ric}}\nolimits=-g`$ 归一化下，令 $`A=K_X^2>0`$，用拉回的主体典范类 $`K_X`$ 写
 
 ```math
-[\psi]=\pm2\pi K_X-\sum_i s_i\operatorname{PD}(E_i),\qquad
+[\psi]=\pm2\pi K_X-\sum_i s_i\mathop{\mathrm{PD}}\nolimits(E_i),\qquad
 [\psi]^2=4\pi^2A-\sum_i s_i^2.
 ```
 
@@ -325,7 +325,7 @@ P(\widehat g_p)-P(g_p)
 
 ```math
 L(z)=cz+Q\bar z,\qquad c\in\mathbb C,\quad Q\in M_2(\mathbb C),
-\qquad \operatorname{tr}(Q\bar Q)=-8|c|^2,
+\qquad \mathop{\mathrm{tr}}\nolimits(Q\bar Q)=-8|c|^2,
 ```
 
 ```math
@@ -375,7 +375,7 @@ c_2(\mathcal N)[M]=5\chi(M)+6\tau(M).
 对于闭光滑 $`J`$-全纯零曲线，若 $`DN_J`$ 的秩二点在曲线上稠密，则 $`C`$ 全测地。其法向扭率导数为线丛
 
 ```math
-\operatorname{Hom}_{\mathbb C}
+\mathop{\mathrm{Hom}}\nolimits_{\mathbb C}
 (\bar\nu_C,T^{1,0}C\otimes\bar K|_C)
 \simeq\bar K^{\otimes2}|_C
 ```
@@ -384,7 +384,7 @@ c_2(\mathcal N)[M]=5\chi(M)+6\tau(M).
 
 ```math
 \deg(\bar K^{\otimes2}|_C)
-=\frac{s}{4\pi}\operatorname{Area}_g(C)<0.
+=\frac{s}{4\pi}\mathop{\mathrm{Area}}\nolimits_g(C)<0.
 ```
 
 故 $`\xi`$ 必有零点。其[切向微分方程](../archive/originals/2026-10-15/Goldberg_Global_Connections_20261015.tex)为
@@ -417,21 +417,21 @@ f_m=z\,h(\bar z)+g(\bar z),\qquad
 
 ```math
 \|C_a\|^2-\|C_s\|^2-8|h|^2
--6\operatorname{Re}\sum_j\overline{f_{m,j}}\,\partial_{w_j}h=0.
+-6\mathop{\mathrm{Re}}\nolimits\sum_j\overline{f_{m,j}}\,\partial_{w_j}h=0.
 ```
 
 最后一项来自 $`\nabla W^+`$ 与 $`\nabla\Omega`$ 的乘积，不能删去。Euler 齐次公式将其改写为
 
 ```math
-\operatorname{tr}(\overline{Dg}Dg)+(m+1)(m+3)|h|^2
-+2(m+3)\operatorname{Re}\sum_j\overline{g_j}\,\partial_{w_j}h=0.
+\mathop{\mathrm{tr}}\nolimits(\overline{Dg}Dg)+(m+1)(m+3)|h|^2
++2(m+3)\mathop{\mathrm{Re}}\nolimits\sum_j\overline{g_j}\,\partial_{w_j}h=0.
 ```
 
 前两项与最后一对共轭项具有不同复双次数，故分别为零。若 $`g_1,g_2`$ 作为多项式线性独立，则 $`Dh=0`$；若 $`g=vG`$ 取值于固定复直线，则
-$`\operatorname{tr}(\overline{Dg}Dg)=|\sum\bar v_i\partial_{w_i}G|^2\ge0`$，同样得到 $`h=0`$。
+$`\mathop{\mathrm{tr}}\nolimits(\overline{Dg}Dg)=|\sum\bar v_i\partial_{w_i}G|^2\ge0`$，同样得到 $`h=0`$。
 
 在矩阵空间上，Hermitian 形式
-$`\mathcal H(U,V)=\operatorname{tr}(\bar U V)`$ 的符号为 $`(3,1)`$。恒等式 $`\mathcal H(Dg,Dg)=0`$ 表明 $`Dg`$ 的各多项式系数张成全迷向子空间，故维数至多一。写 $`Dg=M p(w)`$，混合偏导相等迫使 $`M=v\otimes\ell`$ 为秩一，$`p`$ 为 $`(\ell\cdot w)^{m-1}`$ 的倍数；迷向性又给出 $`\ell\cdot\bar v=0`$。一次相容的酉标架变换即得式 (Z)。
+$`\mathcal H(U,V)=\mathop{\mathrm{tr}}\nolimits(\bar U V)`$ 的符号为 $`(3,1)`$。恒等式 $`\mathcal H(Dg,Dg)=0`$ 表明 $`Dg`$ 的各多项式系数张成全迷向子空间，故维数至多一。写 $`Dg=M p(w)`$，混合偏导相等迫使 $`M=v\otimes\ell`$ 为秩一，$`p`$ 为 $`(\ell\cdot w)^{m-1}`$ 的倍数；迷向性又给出 $`\ell\cdot\bar v=0`$。一次相容的酉标架变换即得式 (Z)。
 
 沿零曲线，这个首项使异常点处横向 Weyl 截面的切向一次项消失，却不决定绕数。例如 $`z|z|^2`$ 与 $`\bar z|z|^2`$ 都没有一次项，绕数分别为 $`+1`$ 和 $`-1`$。上述非齐次传输方程仍保留法向源 $`r`$；仅对标量恒等式继续微分，尚不能将 $`r`$ 写成对 $`\xi,\bar\xi`$ 的有界零阶作用。
 
@@ -440,7 +440,7 @@ $`\mathcal H(U,V)=\operatorname{tr}(\bar U V)`$ 的符号为 $`(3,1)`$。恒等�
 有限阶模型说明上述正指数与 Einstein 方程的低阶相容条件并不矛盾。在 Darboux 坐标中固定 $`\Omega_0=dx_1\wedge dx_2+dx_3\wedge dx_4`$，取对称矩阵多项式 $`H=H_2+H_4+H_6`$，使 $`H\Omega_0+\Omega_0H=0`$，并令 $`g=e^H`$。则 $`g\Omega_0g=\Omega_0`$，所以正定性和几乎 Kähler 相容性精确成立。所给有理系数满足
 
 ```math
-\operatorname{Ric}(g)+g=O(|x|^6),\qquad
+\mathop{\mathrm{Ric}}\nolimits(g)+g=O(|x|^6),\qquad
 \vartheta(x)=(x_1-x_4,-x_2-x_3,x_2/2,x_1/2)+O(|x|^3),
 ```
 
@@ -453,31 +453,31 @@ $`\mathcal H(U,V)=\operatorname{tr}(\bar U V)`$ 的符号为 $`(3,1)`$。恒等�
 ```math
 L_nh=\frac12\left(\partial_k\partial_i h_{kj}
 +\partial_k\partial_jh_{ki}+\Delta_0h_{ij}\right),\qquad
-h\in\mathcal P_{n+2}\otimes\operatorname{Sym}^2_{\mathrm{anti}\text{-}J}.
+h\in\mathcal P_{n+2}\otimes\mathop{\mathrm{Sym}}\nolimits^2_{\mathrm{anti}\text{-}J}.
 ```
 
 除了线性收缩 Bianchi 方程，还恰好有一个标量微分相容式：
 
 ```math
-\mathscr B(E)_j=\partial_iE_{ij}-\frac12\partial_j\operatorname{tr}E,
+\mathscr B(E)_j=\partial_iE_{ij}-\frac12\partial_j\mathop{\mathrm{tr}}\nolimitsE,
 \qquad
 \mathscr P(E)=J_{ia}J_{jb}\partial_a\partial_bE_{ij}
-+\frac12\Delta_0\operatorname{tr}E.
++\frac12\Delta_0\mathop{\mathrm{tr}}\nolimitsE.
 ```
 
 对所有 $`n\ge0`$，有齐次多项式空间上的正合关系
 
 ```math
-\boxed{\operatorname{im}L_n
+\boxed{\mathop{\mathrm{im}}\nolimitsL_n
 =\ker(\mathscr B,\mathscr P),\qquad
-\dim\operatorname{coker}L_n
+\dim\mathop{\mathrm{coker}}\nolimitsL_n
 =4\binom{n+2}{3}+\binom{n+1}{3}.}
 \tag{F}
 ```
 
 负次数空间及相应二项式系数取零。这一结论同时给出常系数算法：给定次数 $`n`$ 的源，先计算其 Bianchi 四分量与标量 $`\mathscr P`$；两者消失时，线性度量修正存在。
 
-**证明结构。** 反 $`J`$ 不变性给出 $`\operatorname{tr}h=0`$、$`J^ThJ=-h`$。代入 $`L_n`$ 可直接验证 $`\mathscr B L_n=\mathscr P L_n=0`$。为证明没有遗漏相容条件，写
+**证明结构。** 反 $`J`$ 不变性给出 $`\mathop{\mathrm{tr}}\nolimitsh=0`$、$`J^ThJ=-h`$。代入 $`L_n`$ 可直接验证 $`\mathscr B L_n=\mathscr P L_n=0`$。为证明没有遗漏相容条件，写
 
 ```math
 h=\mu_{ab}\,dz_a dz_b+\nu_{ab}\,d\bar z_a d\bar z_b,
@@ -503,7 +503,7 @@ h=\mu_{ab}\,dz_a dz_b+\nu_{ab}\,d\bar z_a d\bar z_b,
 
 $`n=0`$ 时第二项取零。直接代入得到 $`L_nh=0`$、$`v=zw_1^n`$；酉群作用张成全部次数 $`n`$ 的 $`h_0`$。
 
-若 $`v=0`$，则 $`\nu=\bar\partial\bar\partial\phi`$，剩余方程为 $`\partial\bar\partial(\sum\partial_z\partial_{\bar z}\operatorname{Re}\phi)=0`$。虚部给出 Hamiltonian 规范方向；扣除势的冗余后得到
+若 $`v=0`$，则 $`\nu=\bar\partial\bar\partial\phi`$，剩余方程为 $`\partial\bar\partial(\sum\partial_z\partial_{\bar z}\mathop{\mathrm{Re}}\nolimits\phi)=0`$。虚部给出 Hamiltonian 规范方向；扣除势的冗余后得到
 
 ```math
 \dim\ker L_n=\binom{n+7}{3}+(n+5)^2+2n-10,
@@ -609,36 +609,36 @@ d\eta=\vartheta_\eta\wedge\eta.
 G_{ij}(x)=\langle\psi_i(x),\psi_j(x)\rangle,
 \qquad B_g(x)=G(x)-I,
 \qquad
-H_{ij}=\fint_M\langle\nabla\psi_i,\nabla\psi_j\rangle\,dV_g,
+H_{ij}=\mathop{\rlap{-}\int}\nolimits_M\langle\nabla\psi_i,\nabla\psi_j\rangle\,dV_g,
 ```
 
 并在实对称矩阵空间上定义
 
 ```math
-\mathsf C_g(X)=\fint_M\langle B_g(x),X\rangle B_g(x)\,dV_g.
+\mathsf C_g(X)=\mathop{\rlap{-}\int}\nolimits_M\langle B_g(x),X\rangle B_g(x)\,dV_g.
 ```
 
 相容几乎 Kähler 形式（模去符号）精确对应
 
 ```math
 X\in\ker\mathsf C_g,\qquad X\succeq0,\qquad
-\operatorname{tr}X=1,\qquad\operatorname{rank}X=1.
+\mathop{\mathrm{tr}}\nolimitsX=1,\qquad\mathop{\mathrm{rank}}\nolimitsX=1.
 ```
 
 这里 $`X=uu^T`$、$`|u|=1`$ 对应 $`\Omega=\sqrt2\sum_i u_i\psi_i`$。因为
 
 ```math
 \langle\mathsf C_g(X),X\rangle
-=\fint\langle B_g(x),X\rangle^2,
+=\mathop{\rlap{-}\int}\nolimits\langle B_g(x),X\rangle^2,
 ```
 
 核条件恰好表示 $`|\Omega|^2\equiv2`$；闭性来自各 $`\psi_i`$ 的调和性。并且
 
 ```math
-\fint|\nabla\Omega|^2=2\operatorname{tr}(HX),
+\mathop{\rlap{-}\int}\nolimits|\nabla\Omega|^2=2\mathop{\mathrm{tr}}\nolimits(HX),
 ```
 
-所以相应形式平行当且仅当 $`\operatorname{tr}(HX)=0`$。若 $`\ker H\ne0`$ 且度量负 Einstein，di Scala–Nagy 的唯一性定理保证全部相容形式平行。
+所以相应形式平行当且仅当 $`\mathop{\mathrm{tr}}\nolimits(HX)=0`$。若 $`\ker H\ne0`$ 且度量负 Einstein，di Scala–Nagy 的唯一性定理保证全部相容形式平行。
 
 [调和乘积原稿](../archive/originals/2026-10-13/Q4_Harmonic_Product_Reduction.tex)还计算了 Kähler 方向附近的范数方差：沿非平行调和方向，其阶为四阶，而导数能量为二阶。一般负 Einstein 度量的剩余问题是确定其调和乘积核中的秩一正矩阵是否均来自平行形式。
 
@@ -647,18 +647,18 @@ X\in\ker\mathsf C_g,\qquad X\succeq0,\qquad
 固定紧负 Kähler–Einstein 曲面或紧轨形 $`(V,g,J,\omega)`$，则
 
 ```math
-H_g^+=\mathbb R\omega\oplus\operatorname{Re}H^{2,0}(V).
+H_g^+=\mathbb R\omega\oplus\mathop{\mathrm{Re}}\nolimitsH^{2,0}(V).
 ```
 
-对 $`\beta\in\operatorname{Re}H^{2,0}(V)`$，有精确的点态分解
+对 $`\beta\in\mathop{\mathrm{Re}}\nolimitsH^{2,0}(V)`$，有精确的点态分解
 
 ```math
 |b\omega+\beta|^2=2b^2+|\beta|^2.
 ```
 
-若 $`\beta=\operatorname{Re}\theta`$ 具有非零常模长，则全纯典范形式 $`\theta`$ 无零点，因而平凡化 $`K_V`$；这与 $`c_1(V)=[\rho/(2\pi)]\ne0`$ 矛盾。故常模长自对偶调和形式只能是 $`\omega`$ 的常数倍。
+若 $`\beta=\mathop{\mathrm{Re}}\nolimits\theta`$ 具有非零常模长，则全纯典范形式 $`\theta`$ 无零点，因而平凡化 $`K_V`$；这与 $`c_1(V)=[\rho/(2\pi)]\ne0`$ 矛盾。故常模长自对偶调和形式只能是 $`\omega`$ 的常数倍。
 
-令 $`Q_0(\beta)=|\beta|^2-\fint|\beta|^2`$。有限维空间 $`\operatorname{Re}H^{2,0}(V)`$ 的 $`L^2`$ 单位球面紧，且 $`Q_0`$ 在其上无零点，因此存在依赖该背景的 $`c_V>0`$，使
+令 $`Q_0(\beta)=|\beta|^2-\mathop{\rlap{-}\int}\nolimits|\beta|^2`$。有限维空间 $`\mathop{\mathrm{Re}}\nolimitsH^{2,0}(V)`$ 的 $`L^2`$ 单位球面紧，且 $`Q_0`$ 在其上无零点，因此存在依赖该背景的 $`c_V>0`$，使
 
 ```math
 \|Q_0(\beta)\|_{L^2}\ge c_V\|\beta\|_{L^2}^2.
@@ -669,7 +669,7 @@ H_g^+=\mathbb R\omega\oplus\operatorname{Re}H^{2,0}(V).
 
 ### Kähler 背景的反取向结构
 
-同取向的长度论证对任意紧 Kähler 曲面同样成立：相容自对偶调和形式写为 $`b\omega_I+\operatorname{Re}\theta`$，常长度迫使典范形式 $`\theta`$ 具有常模长，从而平行；非 Ricci 平坦时只能是 $`\pm\omega_I`$。
+同取向的长度论证对任意紧 Kähler 曲面同样成立：相容自对偶调和形式写为 $`b\omega_I+\mathop{\mathrm{Re}}\nolimits\theta`$，常长度迫使典范形式 $`\theta`$ 具有常模长，从而平行；非 Ricci 平坦时只能是 $`\pm\omega_I`$。
 
 反取向则出现不同的几何。两个正交复结构 $`I,J`$ 此时交换，$`-IJ`$ 为对称对合，给出正交的 $`I`$-不变二平面丛 $`D_+\oplus D_-`$。若
 
@@ -680,7 +680,7 @@ H_g^+=\mathbb R\omega\oplus\operatorname{Re}H^{2,0}(V).
 
 则 $`d\omega_\pm=0`$，故它们的核为可积平面分布，叶为极小复曲线。两组叶都全测地恰好等价于 $`\nabla J=0`$。这些是光滑复线分布，不能自动当作全纯线子丛；正交投影若全纯，Hermitian 自伴性已经迫使它平行。
 
-当 $`g`$ 为 KE、$`\operatorname{Ric}=Eg`$ 时，按两个分布作常数伸缩
+当 $`g`$ 为 KE、$`\mathop{\mathrm{Ric}}\nolimits=Eg`$ 时，按两个分布作常数伸缩
 
 ```math
 g_{a,b}=a\,g|_{D_+}+b\,g|_{D_-},\qquad a,b>0,
@@ -695,8 +695,8 @@ g_{a,b}=a\,g|_{D_+}+b\,g|_{D_-},\qquad a,b>0,
 对于 $`\Lambda^+=\mathbb Rn\oplus n^\perp`$ 上的 Levi-Civita 联络，写 $`\mathcal A=D_0+C`$，其中 $`D_0`$ 保持分裂，$`C`$ 为非对角部分。固定丛上的联络路径 $`\mathcal A_t=D_0+tC`$ 满足
 
 ```math
-\operatorname{YM}(\mathcal A_t)
-=\operatorname{YM}(\mathcal A)
+\mathop{\mathrm{YM}}\nolimits(\mathcal A_t)
+=\mathop{\mathrm{YM}}\nolimits(\mathcal A)
 +2(1-t^2)^2\|F_{D_0}^-\|_2^2.
 ```
 
@@ -767,7 +767,7 @@ D_W(g)=\mathcal T(g,\Omega),\qquad
 
 是闭二形式，且在每个 $`J`$-复二平面上非负。故 $`\beta(C)\ge0`$ 对所有 $`J`$-全纯流 $`C`$ 成立；同时 $`\Omega+t\beta`$ 对每个 $`t\ge0`$ 均驯服同一个 $`J`$。因而典范曲率在 $`J`$-全纯曲线生成的锥上满足同一非负性。
 
-令 $`K=-c_1(M,J)`$。只要 $`\operatorname{PD}(K)`$ 由 $`J`$-全纯流 $`C_K`$ 表示，就有精确等式
+令 $`K=-c_1(M,J)`$。只要 $`\mathop{\mathrm{PD}}\nolimits(K)`$ 由 $`J`$-全纯流 $`C_K`$ 表示，就有精确等式
 
 ```math
 \boxed{\mathcal T-\int_M|v|^2
@@ -793,7 +793,7 @@ D_W(g)=\mathcal T(g,\Omega),\qquad
 
 再用 (K1) 即得 (K2)。$`v`$ 是本文的单位自对偶标架分量，即 $`|v|^2=|\eta|^2/2`$。这里要求相应类具有 $`J`$-全纯流代表：$`b^+>1`$ 时可使用相应 Taubes 理论；$`b^+=1`$ 时须另核对 chamber 和所用类。
 
-进一步设 $`b^+>1`$、$`K=K_0+\sum_{i=1}^r e_i`$ 为已确定的吹起典范类分解，$`e_i\cdot e_j=-\delta_{ij}`$、$`K_0\cdot e_i=0`$，并且 $`\operatorname{PD}(K_0)`$ 及每个异常类 $`E_i=\operatorname{PD}(e_i)`$ 都具有相对于这个 $`J`$ 的全纯流代表。在适用的非有理、非直纹曲面吹起范畴中，可由经典带符号基本类及 Taubes 理论得到这些代表。由
+进一步设 $`b^+>1`$、$`K=K_0+\sum_{i=1}^r e_i`$ 为已确定的吹起典范类分解，$`e_i\cdot e_j=-\delta_{ij}`$、$`K_0\cdot e_i=0`$，并且 $`\mathop{\mathrm{PD}}\nolimits(K_0)`$ 及每个异常类 $`E_i=\mathop{\mathrm{PD}}\nolimits(e_i)`$ 都具有相对于这个 $`J`$ 的全纯流代表。在适用的非有理、非直纹曲面吹起范畴中，可由经典带符号基本类及 Taubes 理论得到这些代表。由
 
 ```math
 [\beta]\cdot K_0\ge0,\qquad
@@ -911,16 +911,16 @@ D_W(V)\ge4\pi^2k+m_+.
 
 ### 二阶长度障碍
 
-设 $`\operatorname{Ric}_g=Eg`$、$`E<0`$，考虑满足耦合 Einstein、闭性、自对偶与常长度方程至二阶的形式展开
+设 $`\mathop{\mathrm{Ric}}\nolimits_g=Eg`$、$`E<0`$，考虑满足耦合 Einstein、闭性、自对偶与常长度方程至二阶的形式展开
 
 ```math
 g^{-1}g_t=I+tH_1+\frac{t^2}{2}H_2+O(t^3),\qquad
 \omega_t=\omega+t\beta_1+\frac{t^2}{2}\beta_2+O(t^3).
 ```
 
-在同时作用于度量与形式的规范变换后，$`H_1`$ 为反 $`J`$ 不变的 Kodaira–Spencer 方向，$`\beta_1\in\operatorname{Re}H^{2,0}`$。负 KE 的二阶 Einstein 正规形给出 $`H_2^+=H_1^2`$；这里上标 $`+`$ 表示 $`J`$-不变部分，而非 Hodge 自对偶部分。该输入及二阶 Einstein 可解性见 [Nagy，Theorem 1.6](https://arxiv.org/html/2603.09028)。
+在同时作用于度量与形式的规范变换后，$`H_1`$ 为反 $`J`$ 不变的 Kodaira–Spencer 方向，$`\beta_1\in\mathop{\mathrm{Re}}\nolimitsH^{2,0}`$。负 KE 的二阶 Einstein 正规形给出 $`H_2^+=H_1^2`$；这里上标 $`+`$ 表示 $`J`$-不变部分，而非 Hodge 自对偶部分。该输入及二阶 Einstein 可解性见 [Nagy，Theorem 1.6](https://arxiv.org/html/2603.09028)。
 
-形式与度量混合项可用全纯二形式的一级运输处理。若 $`\beta_1=\operatorname{Re}\theta`$，则 Kodaira–Spencer 闭性及 $`\partial\bar\partial`$ 引理产生一个闭形式变分 $`\beta'`$，满足
+形式与度量混合项可用全纯二形式的一级运输处理。若 $`\beta_1=\mathop{\mathrm{Re}}\nolimits\theta`$，则 Kodaira–Spencer 闭性及 $`\partial\bar\partial`$ 引理产生一个闭形式变分 $`\beta'`$，满足
 
 ```math
 (\beta')^-=-DP_g^-[H_1]\beta_1,\qquad
@@ -936,8 +936,8 @@ g^{-1}g_t=I+tH_1+\frac{t^2}{2}H_2+O(t^3),\qquad
 后项为常数，所以唯一剩余的函数障碍是
 
 ```math
-\operatorname{Ob}_2(H_1,\beta_1)
-=|\beta_1|^2-\fint|\beta_1|^2=Q_0(\beta_1).
+\mathop{\mathrm{Ob}}\nolimits_2(H_1,\beta_1)
+=|\beta_1|^2-\mathop{\rlap{-}\int}\nolimits|\beta_1|^2=Q_0(\beta_1).
 ```
 
 由式 (L)，它只能在 $`\beta_1=0`$ 时消失。故单独旋转相容形式或加入混合的一阶形变，不能产生严格几乎 Kähler 的二阶方向。纯度量方向仍需研究更高阶 Einstein 方程；二阶结论并未证明所有邻近 Einstein 度量都属于同一个 Kähler 族。

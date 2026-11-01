@@ -1,5 +1,7 @@
 # 研究结构与定理关系
 
+*Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen, Yihao Yang · Qiushi Engine Team, Zhejiang University. [Authors and correspondence](../AUTHORS.md).*
+
 共同问题是：光滑四维流形的拓扑与相容几何结构如何限制 Einstein 度量的存在、逼近和曲率极值？积分间隙、极值构造与几乎 Kähler 刚性分别研究这一问题的不同方面。以下依赖关系均在相应定理的假设下成立；符号、常数及原始证明见各专题。
 
 ## 积分间隙与参数端点
@@ -102,3 +104,4 @@ $Q$ 是原平衡族的手术参数，$Q=Ah$。在已获得严格次四构造的�
 主要定理的先后关系、构造适用范围的扩大及已订正的结论见[研究沿革](RESEARCH_HISTORY.md)；共同方法和经典来源见[方法与文献](METHODS_AND_LITERATURE.md)。
 
 早期材料另收录四维 Pontryagin 形式的局部实现与障碍，以及 K3／Kummer 修正的显式化方案，分别对应原任务中的 Yau19、Yau23。现存材料记录其研究计划与方法，见 [9月9日交接稿](../archive/originals/2026-09-09/yau_problem_set_handoff.md)及[9月15日交接稿](../archive/originals/2026-09-15/yau_problem_set_ai_research_handoff.md)。
+

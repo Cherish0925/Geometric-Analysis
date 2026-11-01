@@ -1,0 +1,895 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{lmodern,mathrsfs,microtype,booktabs,array}
+\usepackage[T1]{fontenc}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{url}
+\emergencystretch=1.5em
+\allowdisplaybreaks
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{question}[theorem]{Question}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\RP}{\mathbb{RP}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\E}{\mathcal E}
+\newcommand{\J}{\mathcal J}
+\newcommand{\orb}{\mathrm{orb}}
+\newcommand{\CH}{\mathbb{CH}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\dd}{\,dV}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\repo}{\url{https://github.com/Cherish0925/Geometric-Analysis}}
+\title{Curvature Extremals on Four-Manifolds:\\Surgery, Orbifolds, and Attainment}
+\author{\normalsize Shuxing Yang, Junyao Wu, Rui Zhao,\\[3pt]
+\normalsize Hongsheng Chen$^{*}$, Yihao Yang$^{*}$\\[9pt]
+\small College of Information Science and Electronic Engineering,\\
+\small Zhejiang University\\
+\small Qiushi Engine Team\\[8pt]
+\footnotesize $^{*}$Corresponding authors:\\
+\footnotesize Hongsheng Chen (\href{mailto:hansomchen@zju.edu.cn}{hansomchen@zju.edu.cn})\\
+\footnotesize Yihao Yang (\href{mailto:yangyihao@zju.edu.cn}{yangyihao@zju.edu.cn})}
+\date{\small Working manuscript, version 1.0\\1 November 2026}
+\hypersetup{pdfauthor={Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen, Yihao Yang},pdfsubject={Qiushi Engine Team, Zhejiang University; working manuscript version 1.0}}
+\hypersetup{linkcolor=black}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study the infimum of the squared trace-free Ricci curvature and a scale-invariant Einstein defect on closed four-manifolds and on a fixed class of four-orbifolds. An exact conformal reduction identifies the normalized problem with a joint Weyl--Yamabe optimization. Logarithmic Burns insertion gives strict improvements over the standard blow-up energy, whereas a family with paired $A_1$ singularities has explicitly computable infima and nonattainment away from a critical wall. We prove these orbifold formulas by transferring the scalar estimate through Ricci-flat resolution and by constructing an explicit quotient recovery sequence. The comparison distinguishes finite-scale smooth interaction from a singular limiting energy. Further results retain mixed curvature under ALE resolution, restrict exceptional root configurations, and quantify curvature retained by complements of finite-volume Einstein domains. We separate exact extremal formulas, analytical insertion results, and conditional descriptions of general minimizing sequences. The remaining smooth attainment and unrestricted optimality problems are stated in the same normalization.
+\end{abstract}
+\tableofcontents
+
+\section{The variational problem and its normalizations}
+Let $M$ be a closed, connected, oriented smooth four-manifold. For a smooth Riemannian metric $g$, set
+\begin{align*}
+ P(g)&=\int_M|\Ric_g^\circ|^2\dd_g,& S(g)&=\int_Ms_g^2\dd_g,&
+ I_\pm(g)&=\int_M|W_g^\pm|^2\dd_g,\\
+ R(g)&=\int_M|\Ric_g|^2\dd_g=P(g)+\tfrac14S(g),&
+ W(g)&=I_+(g)+I_-(g).
+\end{align*}
+We use the tensor norm for Ricci and the curvature-operator norm for Weyl and full Riemann curvature. Write $V=\Vol_gM$, $T_s=\int_Ms_g\dd_g$, and
+\[
+ L_s(g)=S(g)-T_s(g)^2/V(g)\ge0,\qquad T_\pm(M)=2\chi(M)\pm3\tau(M).
+\]
+Our two extremal quantities are
+\begin{equation}\label{eq:definitions}
+ P_*(M)=\inf_g P(g),\qquad
+ \alpha(M)=\inf_g\E(g),\qquad
+ \E(g)=\inf_{\lambda\ne0}\frac{\int_M|\Ric_g-\lambda g|^2\dd_g}{\lambda^2V(g)}.
+\end{equation}
+All infima in this paper range over all smooth metrics on the indicated fixed smooth manifold, unless another class is specified. The same definitions apply to smooth orbifold metrics with isolated quotient singularities. No volume normalization is necessary in dimension four.
+
+\begin{proposition}[Exact normalization]\label{prop:normalization}
+If $R(g)>0$, then
+\begin{equation}\label{eq:EJ}
+ \E(g)=4-\frac{T_s(g)^2}{V(g)R(g)}
+ =\J(g)+\frac{L_s(g)}{R(g)},\qquad \J(g)=\frac{4P(g)}{R(g)}.
+\end{equation}
+If $g$ is Ricci-flat, $\E(g)=4$ and $\J(g)$ is undefined. Moreover,
+\begin{equation}\label{eq:CW}
+ 4\pi^2T_\pm=\frac{S}{24}+2I_\pm-\frac P2,
+ \qquad \int_M|\Rm_{\mathrm{op}}|^2\dd=8\pi^2\chi+P.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Put $z=\lambda^{-1}$. The expression in \eqref{eq:definitions} is
+$4-2zT_s/V+z^2R/V$. Its infimum over $z\ne0$ is $4-T_s^2/(VR)$, including the case $T_s=0$ by a limiting choice of $z$. Since $4R=4P+S$, this proves \eqref{eq:EJ}. When $R=0$, the expression is identically $4$. Formula \eqref{eq:CW} is the four-dimensional Gauss--Bonnet and signature identity in the stated norm convention.
+\end{proof}
+
+An Einstein metric with nonzero Einstein constant has $\E=0$. The exclusion of $\lambda=0$ in \eqref{eq:definitions} explains the different value at a Ricci-flat metric. In particular, $P_*=0$ and $\alpha=0$ are distinct assertions.
+
+\subsection{Conformal transfer}
+In a negative Yamabe conformal class let $\widehat g$ denote its constant scalar curvature representative. It minimizes $S$ in that class. If
+$\delta=S(g)-S(\widehat g)\ge0$, conformal invariance of $I_+$ and \eqref{eq:CW} imply
+\begin{equation}\label{eq:conformal}
+ P(g)=P(\widehat g)+\delta/12,\qquad
+ R(g)=R(\widehat g)+\delta/3.
+\end{equation}
+Consequently
+\begin{equation}\label{eq:convexJ}
+ \J(g)=\frac{R(\widehat g)}{R(\widehat g)+\delta/3}\J(\widehat g)
+ +\frac{\delta/3}{R(\widehat g)+\delta/3}.
+\end{equation}
+Thus $\J(g)$ lies between $\J(\widehat g)$ and $1$; it is not in general monotone under arbitrary conformal changes. If all conformal classes are negative and $\alpha<1$, then
+\begin{equation}\label{eq:infEJ}
+ \inf_g\E(g)=\inf_g\J(g),\qquad
+ \E(\widehat g)=\frac{16P(\widehat g)}{4P(\widehat g)+Y([g])^2}.
+\end{equation}
+Indeed, a metric with $\J<1$ has a Yamabe representative with no larger $\J$, and $L_s(\widehat g)=0$.
+
+\begin{proposition}[Comparison with the unnormalized infimum]\label{prop:comparison}
+Suppose every metric satisfies $S\ge32\pi^2A>0$, all conformal classes are negative, $T_+>0$, and $\alpha<1$. Put $p_*=P_*/(8\pi^2)$. Then
+\begin{equation}\label{eq:comparison}
+ \frac{p_*}{p_*+3T_+/4}\le\alpha\le\frac{4p_*}{A+p_*}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+The scalar bound gives $R\ge P+8\pi^2A$. From $I_+\ge0$ and \eqref{eq:CW}, $S\le12P+96\pi^2T_+$, hence $R\le4P+24\pi^2T_+$. Apply these inequalities to $4P/R$. For the upper bound choose $P$-minimizing metrics and replace them by their negative Yamabe representatives, which cannot increase $P$. Then use \eqref{eq:infEJ}.
+\end{proof}
+
+\section{The exact Weyl--Yamabe reduction}
+For a conformal class $c$, define
+\[
+ d(c)=8\pi^2\chi(M)-W(c),\qquad W_* =\inf_c W(c).
+\]
+The quantity $d$ depends on the conformal class, whereas $Y(c)$ is its Yamabe constant. A direct rearrangement of Gauss--Bonnet gives
+\begin{equation}\label{eq:WYidentity}
+ P=\frac S{12}-2d,\qquad R=\frac S3-2d,\qquad
+ \E-1=\frac{L_s-6d}{R}.
+\end{equation}
+
+\begin{theorem}[Global reduction]\label{thm:WY}
+For every closed smooth four-manifold,
+\begin{equation}\label{eq:WY}
+ \alpha(M)=1-6\sup\left(\{0\}\cup
+ \left\{\frac{d(c)}{Y(c)^2/3-2d(c)}:d(c)>0\right\}\right).
+\end{equation}
+In particular,
+\begin{equation}\label{eq:Wcriterion}
+ \alpha(M)\le1,\qquad
+ \alpha(M)<1\ \Longleftrightarrow\ W_*<8\pi^2\chi(M).
+\end{equation}
+If $2\chi\le3|\tau|$, then $\alpha=1$.
+\end{theorem}
+\begin{proof}
+First construct a metric containing a round unit $S^3$ cylinder of length $L$ with two transition regions independent of $L$. On the cylinder $s=6$, $|\Ric|^2=12$, and $|\Ric^\circ|^2=3$. Thus
+\[
+ 4P=24\pi^2L+O(1),\quad R=24\pi^2L+O(1),\quad L_s=O(1),
+\]
+so $\E\to1$.
+
+If $d\le0$, \eqref{eq:WYidentity} gives $\E\ge1$, including the Ricci-flat case separately. If $d>0$, $Y(c)\ne0$: otherwise there are representatives with $S\to0$, contradicting $P=S/12-2d\ge0$. In each such class $S\ge Y(c)^2$, with equality at a Yamabe metric. Therefore
+\[
+ \E(g)\ge1-\frac{6d(c)}{S(g)/3-2d(c)}
+ \ge1-\frac{6d(c)}{Y(c)^2/3-2d(c)},
+\]
+and equality holds at the Yamabe representative. The denominator is positive because $Y(c)^2\ge24d(c)$. This proves \eqref{eq:WY} and \eqref{eq:Wcriterion}. Finally the signature identity gives $W\ge12\pi^2|\tau|\ge8\pi^2\chi$ when $2\chi\le3|\tau|$.
+\end{proof}
+
+If $2\chi<3|\tau|$, the value $\alpha=1$ is not attained. At equality, attainment requires the appropriate half-conformal flatness and nonzero constant scalar curvature. Formula \eqref{eq:WY} also shows why separate knowledge of $\inf S$ and $\inf W$ generally does not determine $P_*$: the two values must occur in the same conformal class.
+
+\subsection{Classical Ricci minimization and its stability}
+The classical estimates of LeBrun \cite{LeBrunRicci,LeBrunYamabe} include sharp Ricci-energy infima and recovery sequences. We record a quantitative consequence that retains the same metric throughout.
+
+\begin{proposition}\label{prop:Ricmin}
+Assume $T_+=A-d$ with $A>0$, $d\ge0$, and that every metric has the monopole scalar and mixed estimates with a self-dual projection square $p\ge A$. Set
+\[
+ C=8\pi^2A,\quad H=8\pi^2d,\quad j=R-C-H.
+\]
+Then
+\begin{equation}\label{eq:Ricmin}
+ j\ge0,\qquad H-\sqrt{j(C+j)}\le P\le H+j.
+\end{equation}
+Thus $R_i\to C+H$ implies $P_i\to H$ and $S_i\to4C$.
+\end{proposition}
+\begin{proof}
+Define the nonnegative mixed excess
+\[
+ D=\frac1{4\pi^2}\int\left(\frac{s^2}{24}+\frac{|W^+|^2}{2}\right)-\frac p2,
+ \qquad B_p=S-32\pi^2p\ge0.
+\]
+Chern--Weil gives $j=16\pi^2(p-A)+32\pi^2D\ge0$ and
+$P=H+j-8\pi^2(p-A)-B_p/4$, proving the upper bound. Put
+$q=-s+\sqrt6|W^+|$, $t=s+2\sqrt6|W^+|$. Then
+\[
+ 144\pi^2D=\left(\int q^2-72\pi^2p\right)+\tfrac12\int t^2,
+ \qquad s=(t-2q)/3.
+\]
+The mixed monopole inequality makes the first parenthesis nonnegative. Put
+$a=\norm q_2/3$ and $b=\norm t_2/3$. The displayed identity gives
+$2a^2+b^2=2C+j$, while $a^2\ge C+8\pi^2(p-A)$, so $b^2\le j$.
+Cauchy--Schwarz gives $S\le(2a+b)^2$, hence
+\[
+ P-H\ge C+j-(a+b/2)^2
+ =j/2+b^2/4-ab\ge-\sqrt{j(C+j)}.
+\]
+Here $a^2=C+j/2-b^2/2\le C+j$, which proves the last step and the required bound.
+\end{proof}
+For Einstein competitors this entails
+$j\ge(\sqrt{C^2+4H^2}-C)/2$. The conclusion concerns the Ricci-energy level and does not alone decide the minimum of $P$.
+
+\section{Strict smooth insertion and its global consequences}
+The analytical construction used in this section is the Burns insertion developed in \cite{RepoInsertion,RepoFour}. We state its complete metric conclusions as inputs and give the global deductions explicitly.
+
+\begin{proposition}[Logarithmic insertion]\label{prop:log}
+Fix a complex hyperbolic ball with collar radius $R_0>0$, normalized by $\Ric=-6g$. For all sufficiently small $\eps>0$ there is a smooth metric on its one-point blow-up, identical to the original metric on the outer collar, such that
+\begin{equation}\label{eq:log}
+ \frac{P(g_\eps)}{8\pi^2}
+ =1-9\eps^2\log(1/\eps)+O_{R_0}(\eps^2),\qquad
+ \frac{\int|\Ric_{g_\eps}+6g_\eps|^2}{8\pi^2}
+ =1-9\eps^2\log(1/\eps)+O_{R_0}(\eps^2).
+\end{equation}
+The integrals include the entire inner core, neck, and outer matching region.
+\end{proposition}
+\begin{proof}[Analytical input and origin of the term]
+The inner model is the scalar-flat Burns metric. Its leading potential correction is $\partial\bar\partial_\zeta\log r^2$. On the annulus between the core scale and a fixed collar, the second-order interaction with the background has radial density $-9\eps^2/r$ after normalization by $8\pi^2$. Its integral gives the logarithmic term. The inner region and outer cutoff have $O_{R_0}(\eps^2)$ total contribution. The full angular correction, curvature expansion, and bounds for the first two cutoff derivatives are proved in \cite{RepoInsertion}; those estimates establish both equalities in \eqref{eq:log}.
+\end{proof}
+
+For a general smooth background, with exceptional area $\pi x$ and cutoff radius $x^{1/5}$, the corresponding first-order formula is
+\begin{equation}\label{eq:generalBurns}
+ P(g_x)=P(g)+8\pi^2\bigl(1-x\mathbf R_p^+(\zeta,\zeta)\bigr)+O(x^{6/5}).
+\end{equation}
+Here $\mathbf R^+=W^++sI/12$. At a $P$-critical background near the insertion, the corrected second-order expression is
+\begin{equation}\label{eq:Burns2}
+ P(g_\eps)=P(g)+8\pi^2-8\pi^2\eps\mathbf R_p^+(\zeta,\zeta)
+ +4\pi^2\Phi\eps^2\log(1/\eps)+O(\eps^2).
+\end{equation}
+If $\Ric^\circ(p)=0$ and $\mathbf R^+\zeta=\mu\zeta$, then
+\[
+ \Phi=-\mu(\mu-s/8)-|T|^2,\qquad T=(\mathbf R^+|_{\zeta^\perp})^\circ.
+\]
+For a negative Kähler--Einstein background choose a kernel direction of $\mathbf R^+$. Then $|T|^2=s^2/32$ and the logarithmic term is strictly negative.
+
+\begin{theorem}[Strict blow-up upper bound]\label{thm:strict}
+Let $X$ be a minimal complex surface of general type and let $k\ge1$. With its complex orientation,
+\begin{equation}\label{eq:strict}
+ P_*(X\#k\overline\CP^{\,2})<8\pi^2k.
+\end{equation}
+\end{theorem}
+\begin{proof}
+When the canonical bundle is ample, use the negative Kähler--Einstein metric and insert $k$ disjoint copies of \eqref{eq:Burns2}. This gives
+\[
+ \frac{P(g_\eps)}{8\pi^2}
+ =k-\frac{ks^2}{64}\eps^2\log(1/\eps)+O(\eps^2)<k.
+\]
+For a general minimal surface of general type use the negative Kähler--Einstein orbifold metric on its canonical model. Choose the insertion points in its regular part. Fix a sufficiently small insertion parameter so that its total saving is a positive number. Only then resolve the canonical ADE singularities by shrinking Ricci-flat ALE metrics. The curvature error in these subsequent resolutions tends to zero; it can be made smaller than half the already fixed saving. The resulting smooth manifold is the required blow-up of $X$.
+\end{proof}
+
+\subsection{Coverage and the order of limits}
+Let $X_0$ be a fixed compact complex hyperbolic surface and let $X_j\to X_0$ be any finite unbranched covers whose degrees tend to infinity. Set $A_j=c_1^2(X_j)$ and
+\[
+ M_j=X_j\#k_j\overline\CP^{\,2}\#\ell_j(S^1\times S^3),\quad
+ Q_j=k_j+4\ell_j,quad h_j=Q_j/A_j.
+\]
+Assume $Q_j\to\infty$, $h_j\to0$, and
+\begin{equation}\label{eq:balance}
+ k_j/Q_j\to2/9,\qquad \ell_j/Q_j\to7/36.
+\end{equation}
+There is a fixed radius, depending on $X_0$, with linearly many disjoint embedded model balls on every cover. Since $Q_j=o(A_j)$, all required insertions fit for large $j$. Choose the local scale in \eqref{eq:log} once, before letting $j\to\infty$, to obtain a fixed saving $\delta_{X_0}>0$ per blow-up. The scalar-flat conformally flat handle model has cost $32\pi^2$ and can be matched with error $o(Q_j)$. Hence
+\begin{equation}\label{eq:subfour}
+ \limsup_j\frac{\alpha(M_j)}{h_j}\le4-\frac89\delta_{X_0}<4.
+\end{equation}
+The actual closed recovery metrics have scalar variance $o(Q_j)$, so the normalization follows from \eqref{eq:EJ}, rather than from a comparison of $P$ alone. Formula \eqref{eq:subfour} holds for the covers just specified; a numerical bound obtained from a particular finite-scale cell and its placement certificate has its own coverage hypotheses.
+
+More generally, if a cell has cost $8\pi^2p_c<8\pi^2$, the balanced combination of $8n$ blow-ups and $7n$ handles has $Q=36n$. With $C_c=28/9+8p_c/9$, the recovery construction gives
+\begin{equation}\label{eq:finiteh}
+ \frac{\alpha}{h}\le\frac{C_c}{1+C_ch/4}+o(1).
+\end{equation}
+The error refers to the explicitly constructed family and its matching limits. The marked mixed-cell infima also satisfy subadditivity: if $\mathfrak P_{8n,7n}$ denotes the complete cost with the fixed matching convention, then
+\[
+ \gamma_{\mathrm{bal}}=\lim_{n\to\infty}\frac{\mathfrak P_{8n,7n}}{72\pi^2n}
+ =\inf_{n\ge1}\frac{\mathfrak P_{8n,7n}}{72\pi^2n},\qquad
+ \limsup_j\alpha(M_j)/h_j\le\gamma_{\mathrm{bal}}.
+\]
+A reverse inequality requires information about arbitrary minimizing geometries.
+
+\subsection{Separation from the entire conformally Kähler class}
+\begin{proposition}\label{prop:Ksep}
+For $M=X\#k\overline\CP^{\,2}$ as in Theorem~\ref{thm:strict}, let $h$ be any Kähler metric for any complex structure inducing the original orientation, and let $g=u^2h$. Then
+\begin{equation}\label{eq:Ksep}
+ P(g)-8\pi^2k
+ =\frac{S(g)-32\pi^2A}{12}+\frac{S(h)-32\pi^2A}{6}\ge0,
+ \qquad A=c_1^2(X).
+\end{equation}
+Thus no minimizing sequence for $P_*(M)$ is eventually contained in this entire conformally Kähler class.
+\end{proposition}
+\begin{proof}
+The global scalar estimate is $S\ge32\pi^2A$; a Kähler surface has $I_+(h)=S(h)/24$. Since $I_+(g)=I_+(h)$ and $T_+=A-k$, substitute into \eqref{eq:CW}. The strict inequality \eqref{eq:strict} completes the proof.
+\end{proof}
+For a fixed blow-up complex structure the Kähler infimum is $8\pi^2k$ and is not attained. Indeed, for a Kähler class $\pi^*a-\sum e_iE_i$ with $e_i>0$, the Hodge index theorem yields
+\[
+ \frac{(K_X\cdot a+\sum e_i)^2}{a^2-\sum e_i^2}>A.
+\]
+The scalar bound in that class is therefore strict. Shrinking exceptional areas gives the reverse limiting inequality.
+
+\section{Complete cells, genuine variations, and smooth attainment}
+\subsection{Constant scalar curvature on a complex hyperbolic end}
+For a complete marked cell equal to the complex hyperbolic metric outside a compact set, $\Ric=-6g$ on the end, the equation
+\begin{equation}\label{eq:Ycell}
+ -6\Delta_g u+s_gu+24u^3=0,\qquad u\to1
+\end{equation}
+has a positive solution with $\widehat g=u^2g$, $s_{\widehat g}=-24$. Here $\Delta=\operatorname{div}\nabla$. The detailed exhaustion and barrier proof is given in \cite{RepoCells}. It provides, for every fixed derivative order,
+$|\nabla^j(u-1)|=O(e^{-mr})$ for $4<m<2+2\sqrt3$. Boundary terms then vanish in conformal transgression, giving
+\begin{align}
+ P(g)-P(\widehat g)&=24\int|\nabla u|^2+3\int(\Delta u/u)^2,\label{eq:cellconformal}\\
+ J_6(g)-J_6(\widehat g)&=P(g)-P(\widehat g)+\tfrac14\int(s_g+24)^2.
+\end{align}
+Conversely an end with decay rate $\mu>2$ can be cut back to the exact model with error $O(e^{(4-2\mu)R})$. Therefore the exact-end $P$ and $J_6$ infima agree with the constant-scalar asymptotic infimum. For $k$ blow-ups and $\ell$ handles, the relative Chern--Weil formula is
+\begin{equation}\label{eq:relativecell}
+ P(\widehat g)-8\pi^2(k+4\ell)=4\Delta I_++48\operatorname{RV}(\widehat g).
+\end{equation}
+The relative volume and Weyl difference use the same matching identification. This is an equality of infima and relative energies, not an attainment theorem.
+
+\subsection{A uniform choice of almost stationary minimizing metrics}
+\begin{proposition}\label{prop:selection}
+Suppose $M_j$ is a family for which negative Yamabe replacement is available and selected minimizing metrics satisfy $\int|\Rm|^2\le KA_j$. Let $Q_j/A_j\to0$. One can choose constant-scalar metrics $g_j$, normalized by $s=-4$, with
+\[
+ 0\le P(g_j)-P_*(M_j)\le\delta_j,qquad \delta_j=o(Q_j^3/A_j^2),
+\]
+such that, simultaneously for every smooth symmetric tensor $H$ satisfying
+\begin{equation}\label{eq:testnorm}
+ \norm H_\infty\le1,\qquad\int(|\nabla^2H|^2+|\nabla H|^4)\le A_j,
+\end{equation}
+one has
+\begin{equation}\label{eq:variation}
+ |DP_{g_j}[H]|\le C_K\sqrt{A_j\delta_j}=o(Q_j),\qquad
+ D^2P_{g_j}[H,H]\ge-C_KA_j^{2/3}\delta_j^{1/3}=-o(Q_j).
+\end{equation}
+\end{proposition}
+\begin{proof}
+Choose the initial metrics to the stated accuracy and perform Yamabe replacement, which decreases $P$. For $|t|$ in a fixed small interval, $g_j+tH$ remains positive definite. The exact difference of Levi-Civita connections bounds the second and third derivatives of $F(t)=P(g_j+tH)$ by $C_KA_j$: curvature terms use the $L^2$ curvature budget; differentiated metric terms use \eqref{eq:testnorm}. No Sobolev estimate enters this calculation. Since $F(\pm t)\ge F(0)-\delta_j$, Taylor expansion gives
+\[
+ |F'(0)|\le\delta_j/t+C_KA_jt,
+ \qquad F''(0)\ge-2\delta_j/t^2-C_KA_jt.
+\]
+Optimize the two inequalities at $t\asymp(\delta_j/A_j)^{1/2}$ and $t\asymp(\delta_j/A_j)^{1/3}$ respectively. The smallness condition on $\delta_j$ yields \eqref{eq:variation}.
+\end{proof}
+At $s=-4$, $DS[H]=8\int\ip{\Ric^\circ}{H}$ and consequently
+\[
+ 4DI_+[H]+\frac23\int\ip{\Ric^\circ}{H}=o(Q_j).
+\]
+These are weak variational estimates in the test class \eqref{eq:testnorm}; they do not assert an $L^2$ bound on the Euler--Lagrange tensor or compactness of all minimizing sequences.
+
+\subsection{The joint feasible region and Einstein candidates}
+On a negative Yamabe representative of $X\#k\overline\CP^{\,2}$ define
+\[
+ \kappa=\frac A2-\frac{3I_+}{8\pi^2},\quad
+ \upsilon=\frac{Y([g])^2}{32\pi^2}-A\ge0,\quad p=\frac P{8\pi^2}.
+\]
+Then
+\begin{equation}\label{eq:feasible}
+ p=k-\frac43\kappa+\frac13\upsilon,qquad
+ 2\sqrt{A+\upsilon}+\sqrt{A-2\kappa}\ge3\sqrt A.
+\end{equation}
+For $0\le\kappa\le A/2$ this entails
+\[
+ p\ge k-\kappa+\frac{A-\kappa-\sqrt{A^2-2A\kappa}}2.
+\]
+For an Einstein candidate with $0<k<A/3$ it gives the exact necessary threshold
+\begin{equation}\label{eq:Einthreshold}
+ \kappa\ge k+\frac{k^2}{A(1+\sqrt{1-3k/A})^2}>k.
+\end{equation}
+This follows by solving the equality in \eqref{eq:feasible} with $p=0$. A proof that every such Einstein candidate violates \eqref{eq:Einthreshold} would settle its existence question without determining $P_*$ for all metrics. The classical feasible region alone does not provide that proof.
+
+\subsection{A concrete attainment problem}
+Consider the smooth weighted hypersurface
+\[
+ X=\{w^2+z^5+x^{10}+y^{10}=0\}\subset\mathbb P(1,1,2,5),
+ \qquad M=X\#\overline\CP^{\,2}.
+\]
+The affine cone is nonsingular away from the origin; $X$ avoids the ambient isolated quotient points. Adjunction gives $K_X=\mathcal O_X(1)$, $K_X^2=1$, $p_g=2$, $q=0$, and hence
+$\chi(X)=35$, $\tau(X)=-23$. Therefore $\chi(M)=36$, $\tau(M)=-24$, $T_+(M)=0$. The classical mixed estimate yields $P\ge16\pi^2/3$, while Theorem~\ref{thm:strict} gives
+\begin{equation}\label{eq:Horikawa}
+ \frac{16\pi^2}{3}\le P_*(M)<8\pi^2.
+\end{equation}
+Every conformal class is negative, and Einstein metrics are excluded by the positive lower bound.
+
+\begin{proposition}\label{prop:nonBach}
+If the infimum in \eqref{eq:Horikawa} is attained by a smooth metric, that metric is not Bach-flat.
+\end{proposition}
+\begin{proof}
+Conformal invariance of $I_+$ and \eqref{eq:CW} show that a $P$-critical metric satisfies $\Delta s=0$, hence has constant scalar curvature. It is negative here. Bach-flatness makes the first variation of $I_+$ vanish. Thus $DP=DS/12=0$. At nonzero constant $s$, trace-free variations give
+$DS[H]=-2s\int\ip{\Ric^\circ}{H}$, forcing $\Ric^\circ=0$, contrary to \eqref{eq:Horikawa}.
+\end{proof}
+A second candidate has smaller Euler characteristic. Let
+\[
+ X_G=\{z_1^5+z_2^5+z_3^5+z_4^5=0\}/\Z_5\subset\mathbb P^3/\Z_5,
+\]
+where a generator acts with distinct weights $1,2,3,4$. Every nonidentity element has only coordinate fixed points in $\mathbb P^3$, none lying on the Fermat quintic; hence the action is free. The quotient is a classical Godeaux surface with ample canonical bundle, $K_{X_G}^2=1$, $p_g=q=0$, $\chi=11$, and $\tau=-7$. Its one-point blow-up has $(\chi,\tau)=(12,-8)$ and satisfies the same interval \eqref{eq:Horikawa}. Proposition~\ref{prop:nonBach} consequently applies to this distinct smooth topology as well.
+
+Attainment is not implied by the sub-$8\pi^2$ upper bound. Ricci-flat Eguchi--Hanson bubbles carry nonzero second homology but no $P$ energy, and collapsing regions also remain possible. Anderson's ideal minimizing structures \cite{Anderson} therefore require further topological and regularity information before they yield a smooth minimizer of this particular functional.
+
+\section{Exact extremals for paired \texorpdfstring{$A_1$}{A1} orbifolds}
+Let $X$ be a compact complex hyperbolic surface, with complex orientation and
+\[
+ A=c_1^2(X),\qquad\chi(X)=A/3,\qquad\tau(X)=A/9.
+\]
+Let $O=S^4/\Z_2$, where $(t,w)\mapsto(t,-w)$ on $S^4\subset\R\times\mathbb C^2$. It has two $A_1$ points. Form connected sums at regular points and put
+\[
+ V_m=X\#mO,\qquad k=2m>0.
+\]
+
+\begin{theorem}[Exact orbifold values]\label{thm:orbifold}
+For the fixed orbifold $V_m$, taking infima over all smooth orbifold metrics,
+\begin{equation}\label{eq:orbexact}
+ P_{*,\orb}(V_m)=8\pi^2k,\qquad
+ \alpha_\orb(V_m)=\min\left\{1,\frac{4k}{A+k}\right\}.
+\end{equation}
+Every individual metric satisfies $P>8\pi^2k$. If $k\ne A/3$, the normalized infimum is also not attained. At $k=A/3$, its attainment is equivalent to the existence of a smooth orbifold metric with $W^-=0$ and negative constant scalar curvature.
+\end{theorem}
+
+\subsection{Smooth resolution and transfer of the scalar estimate}
+\begin{lemma}\label{lem:resolution}
+The complex-oriented Eguchi--Hanson resolution of $O$ is diffeomorphic to $\overline\CP^{\,2}\#\overline\CP^{\,2}$. Consequently $V_m$ resolves to $X\#k\overline\CP^{\,2}$. Every smooth orbifold metric on $V_m$ satisfies
+\begin{equation}\label{eq:orbscalar}
+ \int_{V_m}(s^-)^2\dd\ge32\pi^2A.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The coordinate torus action on $S^4/\Z_2$ extends over its two $\mathcal O(-2)$ resolution pieces. The resolved space is simply connected; the plumbing calculation gives intersection form $-I_2$, and its torus orbit space is a disk with four sides. The smooth torus-action classification of Orlik--Raymond \cite{OrlikRaymond} identifies this action with that on $\overline\CP^{\,2}\#\overline\CP^{\,2}$. This classification supplies the smooth identification, rather than an inference from the intersection form alone.
+
+For an arbitrary orbifold metric, use equivariant normal coordinates at each singular point and insert a scaled Eguchi--Hanson end. Choose the transition radius so that both the quadratic normal-coordinate error and the decaying ALE error tend to zero together with their first two scaled derivatives. Curvature on the annulus is bounded while its volume tends to zero. The core is Ricci-flat. The resulting smooth metrics $g_\eps$ therefore satisfy
+\[
+ S(g_\eps)\to S(g),\quad P(g_\eps)\to P(g),\quad
+ \int(s^-_{g_\eps})^2\to\int(s^-_g)^2.
+\]
+Apply the general-type blow-up scalar estimate \cite{LeBrunYamabe} to each $g_\eps$ and pass to the limit. This argument also covers $b^+=1$: it uses the smooth curvature bound, not a prescribed limiting orbifold monopole.
+\end{proof}
+
+The orbifold Euler and signature numbers are
+\[
+ \chi_\orb(V_m)=A/3-m,\qquad\tau_\orb(V_m)=A/9.
+\]
+For example $\chi_\orb(O)=\chi(S^4)/2=1$, and regular-point connected sum subtracts $2$. The oriented $A_1$ signature eta correction is zero. Define
+\[
+ \sigma=S-32\pi^2A\ge0,\qquad
+ w=W-4\pi^2A/3=2I_-\ge0.
+\]
+Orbifold Chern--Weil now gives the exact identities
+\begin{equation}\label{eq:orbdecomp}
+ P=8\pi^2k+\frac\sigma{12}+2w,
+ \qquad R=8\pi^2(A+k)+\frac\sigma3+2w.
+\end{equation}
+In particular, $P\ge8\pi^2k$. Set $q=4k/(A+k)$, $B=8\pi^2(A+k)$. Then $\J$ is the weighted mean of $q,1,4$, with weights $B,\sigma/3,2w$. Since $\E\ge\J$, this proves both lower bounds in \eqref{eq:orbexact}.
+
+\subsection{An explicit recovery metric}
+On $\R^4\setminus\{0\}$ consider
+\begin{equation}\label{eq:bridge}
+ h=(1+r^{-2})^2\delta.
+\end{equation}
+The conformal factor is harmonic, so $s_h=0$; the metric is conformally flat and has two AE ends. In a Euclidean orthonormal radial frame the covariant Ricci tensor has radial component
+$-12/(1+r^2)^2$ and three tangential components $4/(1+r^2)^2$. In dimension four the conformal volume and tensor norm factors cancel, yielding
+\[
+ |\Ric_h|_h^2\dd_h=\frac{192r^3}{(1+r^2)^4}\,dr\,d\omega.
+\]
+Integration over the unit sphere of volume $2\pi^2$ gives
+\begin{equation}\label{eq:bridgeenergy}
+ P(h)=32\pi^2,\qquad
+ \int_{r>L}|\Ric_h|^2\dd_h
+ =\frac{\pi^2(96L^2+32)}{(1+L^2)^3}.
+\end{equation}
+The metric has the isometric involution
+\[
+ \iota(x)=\operatorname{diag}(-1,-1,-1,1)x/|x|^2.
+\]
+It interchanges the ends, fixes precisely $\pm e_4$, and has derivative $-I$ at both fixed points. The quotient consequently has two $A_1$ points, one ordinary AE end, and $P=16\pi^2$.
+
+Insert $m$ copies of this quotient, scaled by $\eps$, at distinct regular points of $X$. Take transition radius $\rho=\sqrt\eps$. The background error is $O(\rho^2)$ and the ALE error is $O(\eps^2\rho^{-2})$, including the corresponding scaled derivatives. Thus the transition curvature is bounded and its energy is $O(\eps^2)$. By \eqref{eq:bridgeenergy}, the discarded tail also has energy $O((\eps/\rho)^4)=O(\eps^2)$. The resulting metrics on the fixed orbifold satisfy
+\begin{equation}\label{eq:orbrecovery}
+ P\to8\pi^2k,\quad S\to32\pi^2A,\quad
+ W\to4\pi^2A/3,\quad L_s\to0.
+\end{equation}
+The final assertion follows since the core and transition volumes vanish and the background has constant scalar curvature. Hence $\E\to q$. A long round cylinder inserted in the regular locus gives the alternative upper bound $1$. This proves \eqref{eq:orbexact}.
+
+\subsection{Nonattainment and the comparison with smooth resolution}
+If $P=8\pi^2k$, \eqref{eq:orbdecomp} forces $\sigma=w=0$. In particular, the metric minimizes $S$ among all orbifold metrics. Conformal variation gives $\Delta s=0$. By \eqref{eq:orbscalar}, $s$ is a negative constant. Trace-free variation then gives
+\[
+ 0=DS[H]=-2s\int\ip{\Ric^\circ}{H}
+\]
+for every orbifold tensor $H$, implying Einstein and contradicting $P>0$.
+
+For the normalized functional the exact differences are
+\begin{align}
+ \E-q&=\frac{(1-q)\sigma/3+2(4-q)w+L_s}{R},\label{eq:orbdiff1}\\
+ \E-1&=\frac{(q-1)B+6w+L_s}{R}.\label{eq:orbdiff2}
+\end{align}
+If $q<1$, equality requires $\sigma=w=L_s=0$, already excluded. If $q>1$, \eqref{eq:orbdiff2} is strictly positive. If $q=1$, equality is exactly $w=L_s=0$, and \eqref{eq:orbscalar} makes the constant scalar negative. Necessarily $\sigma>0$. This completes the proof of Theorem~\ref{thm:orbifold}.
+
+\begin{corollary}\label{cor:excludedlimit}
+A $P$-minimizing sequence on the smooth resolution $M_k=X\#k\overline\CP^{\,2}$ cannot converge in $C^2_{\mathrm{loc}}$ on the regular locus to a smooth orbifold metric on $V_m$.
+\end{corollary}
+\begin{proof}
+Theorem~\ref{thm:strict} gives $P_*(M_k)<8\pi^2k$. Local convergence, exhaustion, and nonnegativity give
+$\liminf P(g_i)\ge P(V_m)>8\pi^2k$, a contradiction. No bubble energy identity is needed.
+\end{proof}
+The fixed-orbifold lower bound is therefore compatible with a smaller smooth infimum. The limiting operation removes the finite-scale interaction responsible for \eqref{eq:log}.
+
+\section{ALE transfer and exceptional root configurations}
+\subsection{Which quantities survive resolution}
+Let an isolated singularity be resolved using an ALE metric whose metric error has decay $O(r^{-\tau})$ with two derivatives, $\tau>0$. At scale $\eps$, choose $\rho=\eps^{\tau/(\tau+2)}$. Then the transition metric error is
+$O(\rho^2+(\eps/\rho)^\tau)=O(\rho^2)$, so its curvature energy tends to zero.
+
+If every inserted ALE metric is Ricci-flat and the compact orbifold metric has $R>0$, this proves
+\begin{equation}\label{eq:transfer}
+ (V,T_s,S,P,R,L_s)(g_\eps)\to(V,T_s,S,P,R,L_s)(g),\qquad
+ \E(g_\eps)\to\E(g).
+\end{equation}
+A nonzero Einstein orbifold with such a resolution therefore gives $P_*=\alpha=0$ on its smooth resolution. For a Ricci-flat orbifold only $P_*=0$ follows: the elementary cutoff metrics have scalar curvature supported in a set of vanishing volume, and
+$T_s^2\le4\Vol(\operatorname{supp}s)R$ implies $\E\to4$.
+For scalar-flat ALE cores with $Q=\sum P(N_j)$, the corresponding formula is
+\begin{equation}\label{eq:scalarflattransfer}
+ \E(g_\eps)\to\frac{4P(g)+L_s(g)+4Q}{R(g)+Q},\qquad R(g)+Q>0.
+\end{equation}
+These are limits of the constructed gluing families, not identities for every degenerating sequence.
+
+\subsection{Mixed curvature, with both chiralities retained}
+For an oriented one-ended ALE space $N$ with end group $\Gamma$, define
+\[
+ a_\pm(N)=\frac2{|\Gamma|}-2\chi(N)\mp3\tau(N)\mp3\eta_\Gamma.
+\]
+The signature eta convention is the one for which the relative Chern--Weil formula reads
+\begin{equation}\label{eq:relativeALE}
+ P(N)=4I_\pm(N)+S(N)/12+8\pi^2a_\pm(N).
+\end{equation}
+In particular $a_\pm\le0$ for Ricci-flat $N$. For complex-oriented Ricci-flat Kähler $N$,
+\begin{equation}\label{eq:Kale}
+ a_+=0,\qquad a_-=-4\bigl(\chi(N)-|\Gamma|^{-1}\bigr).
+\end{equation}
+
+\begin{proposition}[Mixed inequality under resolution]\label{prop:mixedtransfer}
+Suppose a compact orbifold $V$ is resolved by scalar-flat ALE spaces $N_j$ with the preceding decay to a smooth general-type blow-up $M=X\#k\overline\CP^{\,2}$, $A=c_1^2(X)>0$. Then
+\begin{equation}\label{eq:mixedtransfer}
+ \int_V(s-\sqrt6|W^+|)^2+6\sum_j I_+(N_j)\ge72\pi^2A.
+\end{equation}
+For Ricci-flat cores, writing $A_\pm=\sum_j a_\pm(N_j)$, this becomes
+$\int_V(s-\sqrt6|W^+|)^2\ge72\pi^2A+12\pi^2A_+$.
+\end{proposition}
+\begin{proof}
+Apply the smooth mixed monopole estimate \cite{LeBrunRicci} to each resolved metric. On the core $s=0$, so its contribution is exactly $6I_+$. The transition energy tends to zero and the integral on the regular part converges by exhaustion. Formula \eqref{eq:relativeALE} gives the Ricci-flat specialization. Each smooth metric may use its own available monopole class; convergence to one predetermined orbifold class is unnecessary.
+\end{proof}
+
+If the orbifold metric is Einstein, put $x=S(V)/(96\pi^2)$. Its characteristic numbers and the mixed estimate imply
+\begin{align}
+ T_+^\orb&=A-k+A_+,& T_-^\orb&=4c_2(X)-A+5k+A_-,\label{eq:orbT}\\
+ A/3&\le x\le\min(T_+^\orb,T_-^\orb),&
+ (\sqrt{8x}+\sqrt{T_+^\orb-x})^2&\ge6A+A_+.\label{eq:ALEfeasible}
+\end{align}
+The scalar is negative by the transferred negative-scalar estimate. The last inequality follows from Cauchy--Schwarz on the mixed term and \eqref{eq:mixedtransfer}. Since
+\[
+ 9x+3T-(\sqrt{8x}+\sqrt{T-x})^2
+ =2(\sqrt{T-x}-\sqrt{2x})^2,
+\]
+substitution of $x\le T_-^\orb$ gives the necessary condition
+\begin{equation}\label{eq:linearALE}
+ 9A_-+2A_++42k+12(3c_2(X)-A)\ge0.
+\end{equation}
+
+For complex hyperbolic $X$ with complex-oriented Ricci-flat Kähler cores, $A_+=0$, $k\le A/3$, and
+\begin{equation}\label{eq:xmin}
+ x\ge x_{\min}=\frac A{27}(4-\sqrt{1-3k/A})^2,
+ \qquad
+ \sum_j\left(\chi(N_j)-\frac1{|\Gamma_j|}\right)
+ \le\frac{A/3+5k-x_{\min}}4.
+\end{equation}
+For Kronheimer cores with total root rank $k-k_b$, writing $y=\sqrt{1-3k/A}$, this is
+\begin{equation}\label{eq:rootcost}
+ \sum_j(1-|\Gamma_j|^{-1})\le k_b+\beta(k,A),\qquad
+ \beta(k,A)=\frac{k(5y+1)}{18(1+y)}<\frac k6.
+\end{equation}
+Here $k_b$ denotes only the rank not carried by these cores.
+
+\begin{proposition}[Roots in a blow-up of an aspherical manifold]\label{prop:roots}
+If $X$ is aspherical, every embedded $(-2)$-sphere in $X\#k\overline\CP^{\,2}$ represents a root $\pm E_i\pm E_j$ in the exceptional lattice. An embedded ADE root configuration is consequently a root subsystem of $D_k$ and has no exceptional $E$-type component. Full-rank absorption has the form
+\[
+ D_{a_1}\oplus\cdots\oplus D_{a_q},\qquad a_i\ge2,\quad\sum a_i=k.
+\]
+The inclusion in $-\Z^k$ has index $2^q$.
+\end{proposition}
+\begin{proof}
+The blow-down sends every sphere to a null-homotopic map into $X$, so its homology component in $H_2(X)$ is zero. Square $-2$ in the diagonal exceptional lattice gives exactly two coefficients equal to $\pm1$. Represent the support of each root by a signed edge on the coordinate set. On a connected component change coordinate signs so a spanning tree consists of difference roots. Reflections in these roots generate the coordinate permutations. With no sum root the generated root system is $A_{v-1}$; the presence of one sum root generates $D_v$. This proves the classification and excludes $E$ types. Full rank excludes the rank-deficient $A_{v-1}$ coordinate components. Each $D_v$ lattice is the even-coordinate-sum sublattice, of index two; the product index follows. Here $D_2=A_1\oplus A_1$ and $D_3=A_3$.
+\end{proof}
+For these Kronheimer cores the contributions to \eqref{eq:rootcost} are
+\[
+ c(D_2)=1,\quad c(D_3)=3/4,\quad
+ c(D_a)=1-[4(a-2)]^{-1}\quad(a\ge4).
+\]
+Every component of rank at most five has cost greater than its rank divided by six. Thus full absorption requires $k\ge6$. At $k=6$, the only numerically possible type is $D_6$, and its cost $15/16$ requires
+$A\ge3675/64$. Since $A\in9\Z$ for a compact complex hyperbolic surface, the first numerical possibility is $A=63$. These are necessary restrictions; they do not supply embeddings or an Einstein orbifold realizing them.
+
+\subsection{The Eguchi--Hanson obstruction as an approximation rate}
+For an Einstein orbifold with $\Ric=\Lambda g$ and an $A_1$ point $p$, let $a$ be the resolution scale and $\zeta\in\Lambda_p^+$ a unit gluing direction. The three Eguchi--Hanson cokernel tensors $o_i=\Omega\circ\omega_i$ satisfy
+\[
+ \ip{o_i}{o_j}=4\delta_{ij}/r^8,\qquad\norm{o_i}_2^2=\pi^2/a^4,
+ \qquad
+ \int\ip{D\Ric_{\rm EH}[\widehat h_2]}{o_i}
+ =\pi^2(\mathbf R_p^+\zeta)_i.
+\]
+Here $h_2$ is the quadratic orbifold metric jet and $\Omega$ has nonzero bolt period; its exterior exact expression is not a global primitive. For metrics in the weighted $C^2$ resolution neighborhood
+\[
+ |\nabla^j(a^{-2}g-a^{-2}\widetilde g_a)|
+ \le\delta a^2(1+|y|)^{w-j},\qquad j\le2,\quad0\le w<2,
+\]
+with the corresponding outer bounds, the flux pairing and Cauchy--Schwarz give
+\begin{equation}\label{eq:EHrate}
+ P(g)\ge\pi^2a^4(|\mathbf R_p^+\zeta|-\eps_w(a,\delta))_+^2,
+ \qquad\eps_w(a,\delta)\to0.
+\end{equation}
+The adapted construction modulo the cokernel gives
+$P(g_a^*)=\pi^2a^4|\mathbf R_p^+\zeta|^2+O(a^6)$; when $\mathbf R_p^+\zeta=0$, it gives $O(a^8\log(1/a))$. These are neighborhood statements using the gluing analysis of \cite{Ozuch}; the rate is not a scale-independent obstruction.
+If the other eigenvalues are $u,v$ with $u+v=\Lambda$, the optimized Burns coefficient is
+\[
+ \Phi_{\rm opt}=-(u-v)^2/2=-\Lambda^2/2+2\det(\mathbf R^+|_{\zeta^\perp}).
+\]
+Thus the first and second insertion terms involve the same local curvature data as the corresponding desingularization obstructions, with their respective analytical hypotheses retained.
+
+\section{Finite-volume Einstein domains and their complements}
+\subsection{Boundary characteristic numbers}
+For a compact domain $D$ set
+\[
+ \mathscr C_\pm(g;D)=\frac1{2\pi^2}\int_D|W^\pm|^2+\frac1{96\pi^2}\int_Ds^2,
+ \qquad\widehat P(g;D)=P(g;D)/(8\pi^2).
+\]
+Use boundary conventions
+$\chi(D)=\int_De+\mathscr E$ and $\int_DL=\tau(D)+\mathscr H$,
+where $\mathscr H$ contains signature eta and transgression. Then
+\begin{equation}\label{eq:boundary}
+ \widehat P=\mathscr C_\pm-(2\chi\pm3\tau)(D)+\mathscr Q_\pm(\partial D),
+ \qquad\mathscr Q_\pm=2\mathscr E\mp3\mathscr H.
+\end{equation}
+The contributions from opposite orientations of a common boundary cancel.
+
+\begin{theorem}[Complement curvature and the mixed bound]\label{thm:complements}
+Let $M=X\#k\overline\CP^{\,2}$, $A=c_1^2(X)>0$, satisfy the global scalar and mixed estimates. Suppose metrics $g_i$ converge in $C^2_{\mathrm{loc}}$, modulo diffeomorphisms on an open set $\Omega$, to a complete finite-volume Einstein metric with constant scalar curvature $s_\infty<0$. Assume
+\[
+ P(g_i)\to0,\quad L_s(g_i)\to0,\quad\bar s_i\to s_\infty,\quad
+ V(g_i)\to\Vol(\Omega,g_\infty).
+\]
+Suppose a nested compact exhaustion of $\Omega$ has finitely many complementary components $C_j$ with fixed topology and fixed attached end sets. Then their limiting quantities $q_j\ge0$ satisfy
+\begin{align}
+ q_j&=(2\chi+3\tau)(C_j)+\lim\sum_{L\subset\partial\Omega_\rho}\mathscr Q_+(L;g_\infty),\label{eq:charges}\\
+ \mathscr C_+(g_\infty;\Omega)&=A-k-\sum_jq_j,\qquad
+ 9k+8\sum_jq_j\le3A.\label{eq:complementbound}
+\end{align}
+Here the sum in \eqref{eq:charges} uses the links attached to $C_j$, oriented as boundaries of the main domain.
+\end{theorem}
+\begin{proof}
+For a fixed exhaustion domain, apply \eqref{eq:boundary} on each complement and use $P(C_j)\to0$. Local convergence determines the common boundary terms. Nonnegativity and nestedness give the outer limits defining $q_j=\lim\mathscr C_+(C_j)\ge0$. No volume loss and
+\[
+ \int_{C_j}s_i^2\le2L_s(g_i)+2\bar s_i^2\Vol(C_j,g_i)
+\]
+show that complementary scalar energy vanishes in the iterated limit. Therefore $I_+(C_j)\to2\pi^2q_j$. Summing \eqref{eq:boundary} gives the first equality in \eqref{eq:complementbound}.
+
+Put $x=S(\Omega)/(96\pi^2)$, $y=I_+(\Omega)/(2\pi^2)$. On the Einstein part, Cauchy--Schwarz gives
+\[
+ \int_\Omega(s-\sqrt6|W^+|)^2
+ \le12\pi^2(\sqrt{8x}+\sqrt y)^2\le108\pi^2(x+y).
+\]
+Here $x+y=A-k-\sum q_j$. The complementary mixed integral tends to $12\pi^2\sum q_j$. Apply the global mixed lower bound before taking limits:
+\[
+ 72\pi^2A\le108\pi^2(A-k-\sum q_j)+12\pi^2\sum q_j.
+\]
+Rearrangement proves the final inequality.
+\end{proof}
+
+\subsection{Circle-fibered ends}
+Under the circle-fibered cusp hypotheses of Dai--Wei \cite{DaiWei}, the asymptotic boundary terms are
+\[
+ \mathscr Q_+^\infty=-e+3\operatorname{sign}e,
+ \qquad\mathscr Q_-^\infty=e-3\operatorname{sign}e.
+\]
+If $e_{\rm out}=-e$ denotes the complementary boundary orientation, then
+\begin{equation}\label{eq:circlecharge}
+ q_+(C)=2\chi(C)+3\tau(C)+e_{\rm out}-3\operatorname{sign}e_{\rm out}.
+\end{equation}
+For a component with boundary $S^3$, $b_1=b_3=b_2^+=0$, $b_2^-=r\ge1$, the two Hopf orientations give $q_+=4-r$ and $q_+=-r$. Nonnegativity permits only the former and $r\le4$. If $N$ such components carry total rank $k$, and $B$ further ball components have charge four, \eqref{eq:complementbound} becomes
+\[
+ k+32N+32B\le3A.
+\]
+A four-rank component has $q_+=0$ but $q_-=20$, hence $I_-\to40\pi^2$. Vanishing positive-chirality charge is consequently compatible with nonzero total curvature.
+
+\begin{proposition}[Fixed-base cusp restriction]\label{prop:cusp}
+Let $Y\to B$ be a circle bundle over a closed surface or orbifold surface and
+\[
+ g_0=dr^2+\pi^*g_B+e^{-2\kappa r}f^2\eta^2,\qquad\kappa>0,\quad f>0.
+\]
+Suppose $\Ric_g=\lambda g$, and in a $g_0$-orthonormal frame both $g-g_0=o(1)$ and $\Ric_g-\Ric_{g_0}=o(1)$. Then
+\[
+ \lambda=-\kappa^2,\qquad df=0,\qquad K_B=\lambda<0.
+\]
+\end{proposition}
+\begin{proof}
+The limiting radial and mixed Ricci components are $-\kappa^2$ and $\kappa Y(f)/f$. The Einstein equation gives the first two assertions. The connection-curvature terms in the horizontal O'Neill formula are $O(e^{-2\kappa r})$, leaving $K_B=\lambda$. Gauss--Bonnet also gives $\chi^\orb(B)<0$.
+\end{proof}
+Relative $C^2$ convergence suffices for these assumptions; weaker regularity in a rescaled cusp tangent bundle need not suffice. Thus fixed spherical or torus bases are excluded in this range, but shrinking-base real or complex hyperbolic cusps are different models.
+
+For a disk-bundle complement $D_e(\Sigma_g)$, $g\ge2$, \eqref{eq:circlecharge} gives $q_+=4-4g+e$, so $e\ge4g-4$. If the embedded zero-section satisfies the Seiberg--Witten adjunction inequality for the available basic class, then
+$2g-2\ge e+|a\cdot\Sigma_g|\ge e$, a contradiction. The basic-class and, when necessary, chamber hypotheses are part of this exclusion.
+
+\subsection{Bounded-curvature biaxial ends}
+\begin{proposition}\label{prop:biaxial}
+A complete end with spherical lift
+\[
+ g=dt^2+a(t)^2(\sigma_1^2+\sigma_2^2)+c(t)^2\sigma_3^2,
+ \quad t\in[t_0,\infty),\quad d\sigma_i=2\sigma_j\wedge\sigma_k,
+\]
+has infinite volume if $|\Rm|$ is bounded and its Einstein tensor satisfies $G(\partial_t,\partial_t)\ge0$. In particular this holds for an Einstein end with Einstein constant at most zero. The conclusion is unchanged by a finite spherical quotient.
+\end{proposition}
+\begin{proof}
+For a general diagonal lift write $\lambda_i=a_i'/a_i$, $x_i=a_i^2$. The radial Riccati equations and completeness give bounded $\lambda_i$. The intrinsic Ricci curvatures of a slice are
+\[
+ r_i=\frac{2[x_i^2-(x_j-x_k)^2]}{x_1x_2x_3},\qquad
+ r_i+r_j=\frac{4(x_i+x_j-x_k)}{x_ix_j}.
+\]
+They are bounded by the Gauss equations. Ordering $x_1\ge x_2\ge x_3$ yields $r_1+r_2\ge4/x_2$, so the second largest scale is bounded below. Finite volume and the bounded logarithmic derivative of $v=a^2c$ would imply $v\to0$. Thus in the biaxial case $a\ge b_0>0$ and $c\to0$.
+The Hamilton constraint is
+\[
+ \lambda_a(\lambda_a+2\lambda_c)
+ =\tfrac12s_\Sigma+G(\partial_t,\partial_t)
+ \ge4/a^2-c^2/a^4>0
+\]
+for large $t$. Hence $\lambda_a$ has a fixed sign. If positive, then
+$(\log v)'=\tfrac32\lambda_a+\tfrac12(\lambda_a+2\lambda_c)>0$, contrary to $v\to0$. If negative, $a$ decreases, so the right side has a positive lower bound. Boundedness of the other logarithmic derivatives then implies $\lambda_a\le-\eps$, forcing $a\to0$, also a contradiction.
+\end{proof}
+These statements use a specified end structure. They do not assert that an arbitrary minimizing sequence has a fixed-base cusp or a biaxial lift.
+
+\section{Actual fields under Wahl degeneration}
+The energy transfer of Section~6 can be strengthened to transfer actual Seiberg--Witten fields for a Wahl rational-ball collapse. This is useful because a curvature inequality alone does not retain the local equivariant character of its supplying field. We use the conventions and detailed analytical transfer in \cite{RepoWahl}.
+
+\subsection{A field and energy transfer theorem}
+Let $V$ have one singularity of type $\frac1{n^2}(1,n-1)$, $n\ge2$, and let $M$ be its smoothing by a Wahl rational ball $B_{n,1}$. Use the Ricci-flat Kähler ALE metric on this smoothing supplied by \cite{Suvaina}. At scale $\eps$, take transition radius $\rho=\eps^{2/3}$. For a fixed orbifold metric, the resulting recovery metrics have uniformly bounded scalar curvature and
+\[
+ \Vol_{g_\eps}\{r<R\}\le C_g(\rho^4+R^4).
+\]
+Indeed the transition curvature is bounded by
+$\rho^{-2}[\rho^2+(\eps/\rho)^4]=O(1)$.
+
+Assume a finite set of Spin$^c$ structures on $M$ supplies, for every metric in this recovery family, an unperturbed solution with projection square $p_\eps\ge A_0>0$. In this subsection use
+\begin{equation}\label{eq:WahlSW}
+ D_A\Phi=0,\quad F_A^+=q(\Phi),\quad |q(\Phi)|^2=|\Phi|^4/8,
+ \quad4\nabla_A^*\nabla_A\Phi+s\Phi+|\Phi|^2\Phi=0.
+\end{equation}
+
+\begin{proposition}[Transfer of actual fields]\label{prop:Wahlfield}
+After a subsequence the supplying Spin$^c$ structure is fixed. Its solutions converge modulo gauge on $V^{\mathrm{reg}}$, extend smoothly as orbifold fields, and satisfy
+\begin{align*}
+ a_V^2&=a_M^2,&
+ \int_M|\Phi_\eps|^4&\longrightarrow\int_V|\Phi_\infty|^4\ge32\pi^2A_0,\\
+ \int_M|F_{A_\eps}|^2&\longrightarrow\int_V|F_{A_\infty}|^2,&
+ \int_M|\nabla_{A_\eps}\Phi_\eps|^2&\longrightarrow\int_V|\nabla_{A_\infty}\Phi_\infty|^2.
+\end{align*}
+\end{proposition}
+\begin{proof}
+Finiteness fixes the structure. The maximum principle in \eqref{eq:WahlSW} bounds $|\Phi|^2$ by a constant depending only on the fixed background. The volume estimate therefore gives
+$\limsup_{\eps\to0}\int_{r<R}|\Phi_\eps|^4\le C_gR^4$.
+Hodge projection and Chern--Weil yield
+\[
+ \int|\Phi|^4=8\int|F_A^+|^2\ge32\pi^2p_\eps,
+ \qquad\int|F_A^-|^2=\int|F_A^+|^2-4\pi^2a_M^2.
+\]
+The integrated Weitzenböck identity bounds the spinor derivative. Abelian local Coulomb gauge and elliptic regularity give smooth convergence on the regular part.
+
+On a uniformizing punctured ball, the limiting curvature lies in $L^2$. A cutoff with $\norm{d\chi_\delta}_2=O(\delta)$ extends its closedness distributionally across the origin. Coulomb gauge produces a $W^{1,2}$ potential on the whole ball. The bounded spinor and the Dirac equation first give $\Phi\in W^{1,4}$, and the curvature equation gives the potential in $W^{2,4}$. Bootstrap then gives smoothness. Finite-group averaging preserves the equivariant lift, including the full Spin$^c$ lift when the determinant character alone is insufficient.
+
+The rational ball, the cone, and their common boundary have the vanishing real cohomology required to identify the relative degree-two pairing; hence $a_V^2=a_M^2$. The local mass bound transfers positive-chirality energy, and the displayed Chern--Weil identity transfers total curvature energy. Finally
+$4\int|\nabla_A\Phi|^2=-\int s|\Phi|^2-\int|\Phi|^4$
+transfers derivative energy.
+\end{proof}
+To use this statement for every orbifold metric, its supply hypothesis must hold for the recovery family of each such metric. The unperturbed equations themselves are not simply conformally covariant.
+
+\subsection{Characters, chirality, and forced zeros}
+Put $d=1-n^{-2}$. Relative characteristic numbers give
+\begin{equation}\label{eq:WahlT}
+ \chi_\orb(V)=\chi(M)-d,\quad\tau_{\rm CW}(V)=\tau(M)+2d/3,
+ \qquad T_+^\orb=T_+(M),\quad T_-^\orb=T_-(M)-4d.
+\end{equation}
+Thus the positive-chirality budget survives while the opposite one changes.
+Relative to the canonical lift, boundary twists are $m\in\Z/n^2\Z$; exactly $m=nj$ extend over the rational ball. Their orbifold and smooth Dirac indices agree. One can see the local index distinction explicitly by putting $p=n^2$, $\zeta=e^{2\pi i/p}$ and
+\[
+ \delta(m)=\frac1p\sum_{r=1}^{p-1}
+ \frac{\zeta^{rm}}{(1-\zeta^{-r})(1-\zeta^{-r(n-1)})}.
+\]
+Finite Fourier summation gives
+\[
+ \delta(m)=\delta(0)\ \Longleftrightarrow\ m\in n\Z/n^2\Z,
+ \qquad \delta(0)=\frac{1-n^{-2}}{12}.
+\]
+This equality is an index statement, not an identification of complete moduli spaces or invariants.
+
+For odd $n\ge3$ and $2\le j\le n-1$, the two positive-spinor weights are $nj,n(j-1)$. Neither an invariant constant spinor nor an invariant first derivative is possible. Every actual solution in that character therefore has
+\begin{equation}\label{eq:Wahlzeros}
+ \Phi(p_0)=0,\qquad\nabla_A\Phi(p_0)=0.
+\end{equation}
+For $n\ge3$, invariance also forces
+$W^+(p_0)=\mu\operatorname{diag}(2,-1,-1)$ in an adapted basis. It does not determine $\mu$ from the scalar curvature. In a marked construction whose supplied character subset both forces \eqref{eq:Wahlzeros} and retains projection budget $A_0$, the scalar estimate is pointwise in the space of metrics strictly improved:
+\[
+ \int_V(s^-)^2>32\pi^2A_0.
+\]
+Equality would force a parallel spinor, hence by \eqref{eq:Wahlzeros} the zero spinor, contradicting Proposition~\ref{prop:Wahlfield}. The conclusion is strict for every fixed metric; its proof does not produce a metric-independent separation.
+
+\subsection{Formal completion of the auxiliary field equations}
+Local forced zeros do not constitute a finite-order obstruction to the auxiliary equations on a fixed metric. In equivariant normal coordinates the flat Dirac operator is
+\[
+ D_0^+=\begin{pmatrix}\partial_{z_1}&\partial_{\bar z_2}\\
+ -\partial_{z_2}&\partial_{\bar z_1}\end{pmatrix}.
+\]
+For the characters above, the lowest degree of a nonzero equivariant monogenic homogeneous spinor is
+\[
+ \ell_{\min}=2\min(j-1,n-j).
+\]
+The degree is achieved by $(0,(z_1z_2)^{j-1})$ or $((\bar z_1\bar z_2)^{n-j},0)$. To see minimality, write a monomial weight as $P-Q+nQ$, with $P=a-c$, $Q=b-d$. In degree less than $n$, divisibility of the weight by $n$ forces $P=Q$; its degree is at least twice the absolute value of that common integer. The two component characters give precisely the stated minimum.
+
+\begin{proposition}[Formal auxiliary-field completion]\label{prop:formal}
+Fix any allowed smooth invariant metric jet and an allowed nonzero homogeneous leading spinor $P_\ell\in\ker D_0^+$. The auxiliary Seiberg--Witten equations have an equivariant formal solution starting at $P_\ell$, in Coulomb gauge. At each order one may add the corresponding homogeneous Dirac and anti-self-dual connection kernels.
+\end{proposition}
+\begin{proof}
+At degree $k-1$, the new degree-$k$ coefficients enter only through
+\[
+ \mathcal L_0(\Phi_k,a_k)
+ =\bigl(D_0^+\Phi_k,d_0^*a_k\oplus\sqrt2d_0^+a_k\bigr).
+\]
+Normal coordinates give $g=\delta+O(r^2)$; all metric corrections and nonlinear products at this order are already determined by lower degrees. For the nonnegative Euclidean Laplacian,
+\[
+ D_0^+(D_0^+)^*=\tfrac14\Delta_0,
+ \quad(d^*\oplus\sqrt2d^+)(d^*\oplus\sqrt2d^+)^*=\Delta_0.
+\]
+Fischer decomposition supplies a right inverse $G$ from degree $k-1$ to degree $k+1$ for $\Delta_0$. Therefore $\mathcal L_0^*\operatorname{diag}(4G,G,G)$ is a right inverse. Average over the finite group to preserve equivariance and the real connection condition, solve recursively, and add any permitted kernel terms. Equivariant Borel extension then gives smooth fields whose residual vanishes to infinite order at the origin.
+\end{proof}
+This construction concerns a fixed metric and auxiliary equations. It does not imply convergence of the series, an exact local solution, or a solution of the coupled Einstein--almost-Kähler equations. For a negative Einstein candidate with $s=-\lambda$ and $U=|\Phi|^2$, the surviving exact identity is
+\[
+ 0\le U\le\lambda,\qquad
+ \lambda^2V-\int U^2=8\int|\nabla_A\Phi|^2+\int(\lambda-U)^2.
+\]
+A global exclusion would need to compare this positive remainder with the same field's Weyl and projection budgets on a controlled geometric scale.
+
+\section{The remaining extremal and attainment questions}\label{sec:questions}
+The constructions and exact formulas above determine several distinct variational phenomena. Smooth blow-up metrics can lie strictly below the standard $8\pi^2$ per exceptional class, while paired-$A_1$ orbifolds retain exactly that infimum. Ricci-flat resolution preserves Ricci energy but can retain substantial Weyl energy and topology. Finite-volume complements may carry a nonzero limiting curvature quantity even when their volume vanishes. These facts identify the information required by a general lower-bound or attainment argument.
+
+\begin{question}[Smooth optimal value]
+For a minimal surface of general type $X$ and $k\ge1$, determine $P_*(X\#k\overline\CP^{\,2})$. In particular, determine its scale as $k/c_1^2(X)\to0$ in specified families, and obtain lower bounds matching genuine smooth constructions.
+\end{question}
+\begin{question}[Balanced asymptotics]
+For the fixed-base covering families satisfying \eqref{eq:balance}, determine the limit, or exact lower and upper limits, of $\alpha(M_j)/h_j$. Does the marked-cell infimum $\gamma_{\mathrm{bal}}$ equal the global asymptotic value?
+\end{question}
+The strict upper bound \eqref{eq:subfour} excludes the value four for these families. A lower bound based on independently summing standard cell costs would therefore require a premise incompatible with the constructed competitors.
+
+\begin{question}[Einstein existence on small blow-ups]
+For $0<k<c_1^2(X)/3$, determine whether the indicated smooth blow-ups admit Einstein metrics. The necessary Weyl threshold \eqref{eq:Einthreshold} must be tested against the actual Einstein equation, rather than against the same classical scalar inequalities again.
+\end{question}
+\begin{question}[A non-Bach-flat smooth global minimizer]
+Does a closed four-manifold admit a smooth, non-Bach-flat metric attaining $P_*$? The concrete manifold in \eqref{eq:Horikawa} reduces this to smooth attainment at a positive energy level for a fixed smooth topology.
+\end{question}
+\begin{question}[The critical orbifold wall]
+When $k=A/3$ in Theorem~\ref{thm:orbifold}, does $V_m$ admit a negative constant-scalar metric with $W^-=0$? This is precisely the remaining attainment question for its normalized infimum.
+\end{question}
+A general compactification of the smooth problem would have to justify which ALE configurations, finite-volume domains, and collapsed complements actually occur, and preserve the characteristic boundary data used above. Such a theorem is stronger than the local inequalities for an already identified component. Conversely, a construction or a direct global inequality can determine a particular extremal value without first classifying every possible degeneration.
+
+\appendix
+\section{Research sources and analytical dependencies}
+This manuscript develops the continuous variational argument from the repository's curvature-extremal chapter \cite{RepoVariation}. Classical scalar and mixed inequalities are used in their original four-dimensional conventions. The logarithmic insertion estimates, complete-cell conformal analysis, and the weighted Eguchi--Hanson neighborhood estimate are analytical inputs whose detailed local expansions are retained in the cited source files. The normalized reduction, comparisons, exact paired-$A_1$ proof, mixed transfer, root restrictions, and complementary-domain deductions are given in the body of this manuscript. Unrestricted smooth attainment, the small-blow-up Einstein problem, and the global balanced optimal coefficient remain the questions stated in Section~\ref{sec:questions}.
+
+\begin{thebibliography}{99}
+\bibitem{LeBrunRicci}
+C. LeBrun, \emph{Ricci curvature, minimal volumes, and Seiberg--Witten theory}, Invent. Math. \textbf{145} (2001), 279--316. \href{https://doi.org/10.1007/s002220100148}{doi:10.1007/s002220100148}; \href{https://arxiv.org/abs/math/0003068}{arXiv:math/0003068}.
+\bibitem{LeBrunYamabe}
+C. LeBrun, \emph{Kodaira dimension and the Yamabe problem}, Comm. Anal. Geom. \textbf{7} (1999), 133--156. \href{https://doi.org/10.4310/cag.1999.v7.n1.a5}{doi:10.4310/cag.1999.v7.n1.a5}.
+\bibitem{Anderson}
+M. T. Anderson, \emph{Canonical metrics on 3-manifolds and 4-manifolds}, Asian J. Math. \textbf{10} (2006), 127--163. \href{https://arxiv.org/abs/math/0511034}{arXiv:math/0511034}.
+\bibitem{OrlikRaymond}
+P. Orlik and F. Raymond, \emph{Actions of the torus on 4-manifolds. I}, Trans. Amer. Math. Soc. \textbf{152} (1970), 531--559. \href{https://www.ams.org/tran/1970-152-02/S0002-9947-1970-0268911-3/}{Publisher's version}.
+\bibitem{Kronheimer}
+P. B. Kronheimer, \emph{The construction of ALE spaces as hyper-Kähler quotients}, J. Differential Geom. \textbf{29} (1989), 665--683.
+\bibitem{Ozuch}
+T. Ozuch, \emph{Higher order obstructions to the desingularization of Einstein metrics}, \href{https://arxiv.org/abs/2012.13316v3}{arXiv:2012.13316v3}, especially Lemma 2.3 and Section 2.1.
+\bibitem{DaiWei}
+X. Dai and G. Wei, \emph{Hitchin--Thorpe inequality for noncompact Einstein 4-manifolds}. \url{https://web.math.ucsb.edu/~dai/paper/dwAIM.pdf}.
+\bibitem{RepoVariation}
+S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Curvature variation and extremal geometry}, Geometric-Analysis research repository, current mathematical chapter. \url{https://github.com/Cherish0925/Geometric-Analysis/blob/main/docs/CURVATURE_VARIATION.md}.
+\bibitem{RepoInsertion}
+S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Arbitrary-collar logarithmic construction}, research source, 7 October 2026. \url{https://github.com/Cherish0925/Geometric-Analysis/blob/main/archive/originals/2026-10-07/O11_Arbitrary_Collar_Logarithmic_Construction.md}.
+\bibitem{RepoFour}
+S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Four-problem research synthesis and direct connections}, research sources, 8 October 2026. \url{https://github.com/Cherish0925/Geometric-Analysis/blob/main/archive/originals/2026-10-08/01_Research_Synthesis.tex}; \url{https://github.com/Cherish0925/Geometric-Analysis/blob/main/archive/originals/2026-10-08/Four_Problems_Direct_Connections.tex}.
+\bibitem{RepoSelection}
+S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Variational selection and energy selection}, research sources, 29 September--7 October 2026. \url{https://github.com/Cherish0925/Geometric-Analysis/blob/main/archive/originals/2026-09-29/02_O11_Variational_Selection.md}. The complete Ricci-energy calculation is linked in Section 1 of \cite{RepoVariation}.
+\bibitem{RepoCells}
+S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Exact complex hyperbolic conformal reduction and relative cell identities}, research sources, October 2026. Complete source links appear in Section 2.6 of \cite{RepoVariation}.
+\bibitem{RepoDevelopments}
+S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Subsequent mathematical developments}, research source, 8 October 2026. \url{https://github.com/Cherish0925/Geometric-Analysis/blob/main/archive/originals/2026-10-08/03_Subsequent_Mathematical_Developments.tex}.
+\bibitem{Suvaina}
+I. \c{S}uvaina, \emph{ALE Ricci-flat Kähler metrics and deformations of quotient surface singularities}, \href{https://arxiv.org/abs/1102.2672}{arXiv:1102.2672}.
+\bibitem{RepoWahl}
+S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Actual fields and formal completion in Wahl degeneration}, research note. \url{https://github.com/Cherish0925/Geometric-Analysis/blob/main/research/notes/Wahl_Fields_and_Formal_Completion.md}.
+\bibitem{RepoAttainment}
+S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Global attainment and scalar curvature}, research sources. \url{https://github.com/Cherish0925/Geometric-Analysis/blob/main/archive/originals/2026-10-08/Q3_Global_Attainment.tex}; \url{https://github.com/Cherish0925/Geometric-Analysis/blob/main/archive/originals/2026-10-12/Scalar_Curvature_and_Global_Attainment_20261012.tex}.
+\end{thebibliography}
+\end{document}

@@ -1,5 +1,7 @@
 # 方法、文献与共同数学结构
 
+*Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen, Yihao Yang · Qiushi Engine Team, Zhejiang University. [Authors and correspondence](../AUTHORS.md).*
+
 本文组织本项目采用的场方程、曲率恒等式、变分方法与构造，并说明它们对相应研究问题给出的结论。下文公式来自所链接的研究原稿；经典文献与本项目推导分列于第 3 节。
 
 ## 1. 研究对象与输入
@@ -430,3 +432,4 @@ $c_1(W^+)^2-4c_2(W^+)=0$，与 $2\chi>0$ 矛盾；秩二的平行极分解使 $\
 - 闭负 Goldberg：由闭 Einstein–几乎 Kähler 条件推出所需全局可积性约束，例如上述扭率零点处的 Green 势符号。
 
 各自条件、已得结论与源稿索引见 [间隙与端点](GAPS_AND_ENDPOINTS.md)、[曲率变分](CURVATURE_VARIATION.md)、[几乎 Kähler–Einstein 几何](GOLDBERG.md)；证明依赖见 [研究图谱](RESEARCH_MAP.md)。
+

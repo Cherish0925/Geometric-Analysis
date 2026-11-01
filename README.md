@@ -1,4 +1,14 @@
-# Geometric Analysis
+# Einstein Geometry on Four-Manifolds: Gaps, Curvature Extremals, and Realization
+
+**Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen<sup>*</sup>, Yihao Yang<sup>*</sup>**  
+College of Information Science and Electronic Engineering, Zhejiang University  
+Qiushi Engine Team
+
+*Corresponding authors: Hongsheng Chen ([hansomchen@zju.edu.cn](mailto:hansomchen@zju.edu.cn)) and Yihao Yang ([yangyihao@zju.edu.cn](mailto:yangyihao@zju.edu.cn)).*
+
+**[English working manuscripts — PDF and LaTeX](manuscripts/README.md)** · **[Authors](AUTHORS.md)** · **[Citation](CITATION.cff)** · **[BibTeX](CITATION.bib)**
+
+Version 1.0 · 1 November 2026. Repository: `Cherish0925/Geometric-Analysis`.
 
 四维 Einstein 几何：积分间隙、曲率变分、几何退化与几乎 Kähler 刚性。
 
@@ -50,3 +60,8 @@ $P(g)=0$ 等价于 $g$ 为 Einstein 度量。$\mathcal E$ 采用非零 Einstein 
 ## 原稿与程序
 
 `archive/originals/` 保存原始文稿和资料包；`research/packages/` 保存展开后的证明、笔记、程序、计算数据与文献。各版本及其修正同时保留。全部文件见[来源索引](catalog/README.md)，材料范围见[收录说明](docs/COVERAGE.md)。
+
+
+## Authorship and citation
+
+The maintained research and the current manuscripts use the author order stated above. Cite an individual paper for a specific result or the collection for its broader mathematical development. Original literature and third-party source materials retain their own authorship. See [authorship](AUTHORS.md) and [reuse information](RIGHTS.md).

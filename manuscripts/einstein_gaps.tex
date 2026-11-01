@@ -1,0 +1,970 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{lmodern,mathrsfs,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{enumitem}
+\emergencystretch=1.5em
+\allowdisplaybreaks
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{problem}[theorem]{Problem}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\Sc}{\operatorname{Spin}^{c}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diver}{\operatorname{div}}
+\newcommand{\J}{\mathcal J}
+\newcommand{\E}{\mathcal E}
+\newcommand{\Acal}{\mathcal A}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\av}[1]{\left\langle#1\right\rangle}
+\newcommand{\repo}[2]{\href{https://github.com/Cherish0925/Geometric-Analysis/blob/main/#1}{#2}}
+\title{Einstein Gaps on Four-Manifolds}
+\author{\normalsize Shuxing Yang, Junyao Wu, Rui Zhao,\\[3pt]
+\normalsize Hongsheng Chen$^{*}$, Yihao Yang$^{*}$\\[9pt]
+\small College of Information Science and Electronic Engineering,\\
+\small Zhejiang University\\
+\small Qiushi Engine Team\\[8pt]
+\footnotesize $^{*}$Corresponding authors:\\
+\footnotesize Hongsheng Chen (\href{mailto:hansomchen@zju.edu.cn}{hansomchen@zju.edu.cn})\\
+\footnotesize Yihao Yang (\href{mailto:yangyihao@zju.edu.cn}{yangyihao@zju.edu.cn})}
+\date{\small Working manuscript, version 1.0\\1 November 2026}
+\hypersetup{pdftitle={Einstein Gaps on Four-Manifolds},pdfauthor={Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen, Yihao Yang},pdfsubject={Qiushi Engine Team, Zhejiang University; working manuscript version 1.0}}
+\hypersetup{pdfauthor={Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen, Yihao Yang},pdfsubject={Qiushi Engine Team, Zhejiang University; working manuscript version 1.0}}
+\hypersetup{linkcolor=black}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study normalized Einstein defects on closed oriented four-manifolds carrying actual Seiberg--Witten fields. The central estimates compare the covariant derivatives of the field with the curvature of the same metric; the resulting coercivity is stronger than the corresponding scalar Chern--Weil budgets. A finite-parameter estimate gives a uniform trace-free Ricci gap at the classical topological ratio $2/3$, with quantitative extensions for negative class square and class-square shortfall. A calibrated estimate controls scalar excess linearly and produces a linear obstruction in a balanced topological regime. For structures admitting solutions throughout a conformal class, a fifth-power determinant line bundle yields the parameter endpoint estimate under any fixed finite Euler density. We explain the logarithmic regularization underlying its topological contradiction, derive two uniform families of endpoint estimates, and give the two-orientation deduction for surface bundles and Kodaira slopes. Static gaps also imply quantitative scalar-curvature growth along normalized Ricci flow. The distinction between one-solution and full-conformal inputs is maintained throughout. The unrestricted-density endpoint and the determination of optimal variational constants remain separate questions. Detailed field calculations are collected in the companion proofs cited at the points where they enter.
+\end{abstract}
+\tableofcontents
+
+\section{Geometric problem and actual field input}
+Let $M$ be a closed, connected, oriented smooth four-manifold. For a smooth Riemannian metric $g$, set
+\begin{gather}
+ T_\pm=2\chi(M)\pm3\tau(M),\qquad V_g=\Vol_g(M),\qquad
+ \Ric^\circ_g=\Ric_g-\frac{s_g}{4}g,\label{eq:notation}\\
+ P(g)=\int_M|\Ric^\circ_g|^2\,dV_g,\quad
+ S(g)=\int_Ms_g^2\,dV_g,\quad
+ R(g)=\int_M|\Ric_g|^2\,dV_g,\label{eq:energydefs}\\
+ W_\pm(g)=\int_M|W_g^\pm|^2\,dV_g.\nonumber
+\end{gather}
+The Weyl norm is the Hilbert--Schmidt norm of its action on $\Lambda^\pm$; the Ricci norm is the norm of a symmetric two-tensor. Thus
+\begin{equation}
+ R=P+\frac S4,\qquad
+ 4\pi^2T_\pm=\frac S{24}+2W_\pm-\frac P2.
+ \label{eq:CW}
+\end{equation}
+Write $x_+=\max(x,0)$ and $\av{f}_g=V_g^{-1}\int_Mf\,dV_g$. When the metric is fixed its subscript is omitted.
+
+Our principal scale-invariant functionals are
+\begin{equation}
+ \J(g)=\frac{4P(g)}{R(g)},\qquad
+ \E(g)=\inf_{\lambda\in\mathbb R\setminus\{0\}}
+ \frac{\int_M|\Ric_g-\lambda g|^2\,dV_g}{\lambda^2V_g}.
+ \label{eq:defects}
+\end{equation}
+The first is defined when $R(g)>0$. Their infima measure approximation to the Einstein equation in an integral sense. They do not, by definition, assert convergence to an Einstein metric in a geometric topology.
+
+\begin{definition}[One-solution input]\label{def:one}
+A conformal class $[g]$ has one-solution input with budget $A>0$ if its Yamabe constant is negative and its constant-scalar-curvature representative $\widehat g$, normalized by $s_{\widehat g}=-4$, carries an unperturbed Seiberg--Witten solution for a $\Sc$ structure with determinant line bundle $L$. In the normalization used here,
+\begin{equation}
+ D_{\Acal}\Phi=0,\qquad F_{\Acal}^+=2i\sigma(\Phi),\qquad
+ p=(a_g^+)^2=(a_{\widehat g}^+)^2\ge A,
+ \quad a=c_1(L).
+ \label{eq:SW}
+\end{equation}
+The quadratic map $\sigma$ has the normalization in the companion field calculations \cite{Parameter}. The symbol $A$ is a real lower bound and is distinct from the connection $\Acal$.
+\end{definition}
+
+\begin{definition}[Full-conformal input]\label{def:full}
+Full-conformal input means that the same $\Sc$ structure has an actual unperturbed solution for every smooth metric in the specified conformal class, with $p\ge A>0$. A statement for all metrics on $M$ requires the relevant input in every conformal class, with uniform numerical budgets. The chosen structure may vary between classes.
+\end{definition}
+
+Full-conformal input implies negativity of the Yamabe class: an unperturbed solution at a nonnegative constant-scalar-curvature representative has vanishing spinor by the integrated Weitzenb\"ock identity. Then $F^+_{\Acal}=0$, contradicting $p>0$. This is also the reason that Ricci-flat metrics are excluded in the all-metric applications below. One must not instead set $\J=0$ at a Ricci-flat metric: there $R=0$ and $\J$ is undefined, whereas $\E=4$.
+
+The distinction between Definitions~\ref{def:one} and \ref{def:full} is substantive. The critical-ratio and linear estimates below use Definition~\ref{def:one}. The finite-density endpoint and the topological-ratio endpoint use Definition~\ref{def:full}. Ordinary monopole classes, special monopole classes, Bauer--Furuta nonvanishing, and $\operatorname{Pin}^{-}(2)$ nonvanishing supply fields in their respective ranges \cite{LeBrun2001,Kotschick2003,IshidaLeBrun,Pin}. The analytical conclusions do not by themselves establish these nonvanishing hypotheses.
+
+Classical gauge-theoretic estimates already give sharp integral curvature inequalities without assumed diameter, noncollapse, or Sobolev bounds \cite{LeBrun2001,LeBrunConvex}. The issue considered here is the persistence of separation where their numerical lower bounds degenerate, and the additional restrictions imposed by the differential compatibility of an actual field with its metric.
+
+\section{Exact conformal reduction}
+Let $I(g)=\int_Ms_g\,dV_g$. Completing the square in $1/\lambda$ gives
+\begin{equation}
+ \E(g)=4-\frac{I(g)^2}{V_gR(g)}
+ =\J(g)+\frac{S(g)-I(g)^2/V_g}{R(g)}\ge\J(g).
+ \label{eq:EJ}
+\end{equation}
+If $I=0$, the displayed value is an infimum and is not attained at a finite $\lambda$.
+
+\begin{proposition}[Conformal comparison]\label{prop:conformal}
+Suppose $[g]$ is negative Yamabe and $s_{\widehat g}=-4$. If $g=u^2\widehat g$, $u>0$, then
+\begin{align}
+ \delta&:=S(g)-S(\widehat g)
+ =48\int_Mu^{-2}|du|^2\,dV_{\widehat g}
+ +36\int_M(u^{-1}\Delta_{\widehat g}u)^2\,dV_{\widehat g}\ge0,\label{eq:delta}\\
+ P(g)&=P(\widehat g)+\frac{\delta}{12},\qquad
+ R(g)=R(\widehat g)+\frac{\delta}{3},\label{eq:PRconformal}\\
+ \J(g)&=\frac{R(\widehat g)\J(\widehat g)+\delta/3}
+ {R(\widehat g)+\delta/3}.\label{eq:Jconformal}
+\end{align}
+Here $\Delta=d^*d$ is nonnegative. In particular, if $\J(g)<1$, then
+\begin{equation}
+ \E(\widehat g)=\J(\widehat g)\le\J(g)\le\E(g).
+ \label{eq:smallconformal}
+\end{equation}
+\end{proposition}
+\begin{proof}
+The scalar transformation law is $s_gu^3=6\Delta u-4u$. Squaring and using $dV_g=u^4dV_{\widehat g}$ gives
+\[
+ S(g)=16V_{\widehat g}-48\int_Mu^{-1}\Delta u
+       +36\int_M(u^{-1}\Delta u)^2.
+\]
+Integration by parts gives $\int u^{-1}\Delta u=-\int u^{-2}|du|^2$, proving \eqref{eq:delta}. Weyl energy is conformally invariant in dimension four, so \eqref{eq:CW} proves \eqref{eq:PRconformal}. The quotient \eqref{eq:Jconformal} is a weighted average of $\J(\widehat g)$ and $1$. Its being less than $1$ forces $\J(\widehat g)<1$ and proves \eqref{eq:smallconformal}.
+\end{proof}
+
+\begin{corollary}\label{cor:infima}
+Within a negative Yamabe class,
+\[
+ \inf_{g\in[g_0]}\J(g)=\min\{\J(\widehat g),1\}.
+\]
+For a collection of negative Yamabe classes, with all their metrics admitted as competitors, $\inf\J<1$ implies $\inf\E=\inf\J$.
+\end{corollary}
+\begin{proof}
+The lower bound follows from \eqref{eq:Jconformal}. If $\J(\widehat g)>1$, choose a positive conformal factor $u_n=1+\epsilon\chi\sin(nx^1)$ in a coordinate ball, with fixed sufficiently small $\epsilon$ and nonzero compactly supported $\chi$. The last integral in \eqref{eq:delta} tends to infinity, so \eqref{eq:Jconformal} tends to $1$. For the second statement, apply \eqref{eq:smallconformal} to a minimizing sequence with $\J<1$, and use $\E\ge\J$.
+\end{proof}
+
+When $\J(\widehat g)<1$, equality in the first assertion occurs precisely for constant conformal factors. When $\J(\widehat g)=1$, the whole conformal class has $\J=1$. No compactness of minimizing sequences is involved. These comparisons are developed in \cite{Conformal,N1source}.
+
+\section{Classical budgets and the finite-parameter estimate}
+Under the appropriate actual monopole input, the classical scalar and mixed estimates are
+\begin{equation}
+ S\ge32\pi^2p,\qquad \sqrt S+\sqrt{6W_+}\ge6\sqrt2\pi\sqrt p.
+ \label{eq:classical}
+\end{equation}
+In particular, for $\beta>0$ define
+\begin{equation}
+ D_\beta=(1+\beta^{-1})S+6(\beta+1)W_+-72\pi^2p\ge0.
+ \label{eq:Dbeta}
+\end{equation}
+The negativity and full-conformal statements of Section~1 ensure the classical all-metric estimates wherever they are used. On the negative Yamabe representative, the one-solution decomposition below supplies the required nonnegativity directly; conformal invariance of $W_+$ and $p$, together with \eqref{eq:delta}, then transfers it to the class.
+
+\subsection{What follows from the numerical budgets}
+Combining \eqref{eq:CW} and \eqref{eq:Dbeta} gives the exact identity
+\begin{equation}
+ D_\beta=(\beta+1)\left\{\frac{8-\beta}{8\beta}S+\frac32P+12\pi^2T_+\right\}-72\pi^2p.
+ \label{eq:D-CW}
+\end{equation}
+If $t=T_+/A\in(0,2/3)$, take $\beta+1=6/t$. The topological term is at most $72\pi^2p$, and hence
+\[
+ \frac PS\ge\frac{\beta-8}{12\beta},\qquad
+ \J\ge\frac{2-3t}{2-t}.
+\]
+If $T_+\le0$, letting $\beta\to\infty$ gives $P\ge S/12$ and $\J\ge1$. In contrast, the displayed positive lower bound tends to zero as $t\uparrow2/3$.
+
+\subsection{An exact decomposition for one actual solution}
+On $s=-4$, put $\rho=|\Phi|^2$, $\psi=2\sqrt2\sigma(\Phi)$, and $\zeta=\langle\Phi,\nabla_{\Acal}\Phi\rangle$. The maximum principle gives $0\le\rho\le2$. Let
+\begin{gather}
+ c_\beta=\frac{4(\beta+1)}{3\beta},\qquad
+ J_F=\norm{F^+_{\Acal}-(F^+_{\Acal})_H}_2^2,\nonumber\\
+ C_\beta(\rho)=\rho+\frac{c_\beta}{2}
+ -\frac{(\rho+c_\beta)^2}{2c_\beta(\beta+1)},\qquad
+ W_0=\frac{9\beta}{8(\beta+1)^2}
+       \left(\frac{\rho^2}{3}I-\psi\otimes\psi\right).
+ \label{eq:calibration}
+\end{gather}
+The subscript $H$ denotes harmonic projection. For $\beta\ge2$ the same-solution identity is
+\begin{equation}
+ \frac{D_\beta}{18}=J_F+\frac4{c_\beta}\int|\zeta|^2
+ +\frac{\beta+1}{3}\int|W^+-W_0|^2
+ +\frac1{c_\beta}\int C_\beta(\rho)(\rho-c_\beta)^2.
+ \label{eq:decomposition}
+\end{equation}
+Here $C_\beta(0)=2/3$ and $C_\beta$ is increasing on $[0,2]$. This identity is proved by the spinor Weitzenb\"ock formula, the quadratic-map derivative identity, and completion of the Weyl square; the full normalization calculation is in \cite[Section 2]{Parameter}. It also yields, for the harmonic curvature $F_H$,
+\begin{equation}
+ \norm{F_{\Acal}-F_H}_2^2=2J_F\le D_\beta/9,
+ \qquad \norm{\delta F_{\Acal}}_2^2\le D_\beta/9.
+ \label{eq:curvaturefit}
+\end{equation}
+
+\begin{theorem}[Finite-parameter analytical estimate]\label{thm:parameter}
+There is a universal $c_{\rm raw}>0$ such that, under the one-solution input, on $s=-4$,
+\begin{equation}
+ (1+b_a)\left(r+\frac{D_\beta}{\beta V}\right)
+ \ge c_{\rm raw}\frac{(\beta-2)^2}{\beta^4},\qquad
+ r=\frac PV,\quad b_a=\frac{(-a^2)_+}{V},\quad\beta\ge2.
+ \label{eq:parameter}
+\end{equation}
+If $a^2\ge T_+$, the factor $1+b_a$ may be removed after replacing the universal constant by $c_0>0$.
+\end{theorem}
+
+We recall the analytical content of this estimate, because it is the input to the gap theorems, rather than a consequence of their algebraic deductions. The complete proof is in \cite{Parameter,AnalyticCore}. A bounded self-dual form $u$ admits a Hessian identity in which derivatives of connection curvature do not occur:
+\begin{align}
+ \int|\nabla^2u|^2={}&\int|\tr\nabla^2u|^2
+ -\int\Ric_{ij}\langle\nabla_i u,\nabla_j u\rangle\nonumber\\
+ &+\sum_{i,j}\int\langle F_{ij}\nabla_j u,\nabla_i u\rangle
+ +\frac12\sum_{i,j}\int|F_{ij}u|^2.
+ \label{eq:hessian}
+\end{align}
+The connection on $\Lambda^+$ involves the self-dual curvature block and trace-free Ricci, but not an uncontrolled full $W^-$ block. Together with the covariant interpolation inequality
+\begin{equation}
+ \norm{\nabla u}_4^2\le4\norm{u}_\infty\norm{\nabla^2u}_2,
+ \label{eq:interpolation}
+\end{equation}
+this permits weak Bianchi testing against the curvature model selected by the actual solution. The calibration is essential: the background curvature annihilates the appropriate spinor, so it is not estimated as an arbitrary error.
+
+More precisely, write $t=1/\beta$, $d_\beta=D_\beta/V$ and $\omega=\sqrt2\psi/c_\beta$. Then
+\[
+ W_0=t\left(\frac{|\omega|^2}{3}I-\omega\otimes\omega\right).
+\]
+The same-field Bianchi upper estimate controls the averaged square of $\diver_W W_0$ by
+\[
+ Ct\sqrt{(r+td_\beta)(1+r+d_\beta+b_a)}.
+\]
+Its exact contraction has principal term $\frac{16}{3}t^2(1-2t)$, with error bounded by
+\[
+ Ct^2\left(\sqrt{d_\beta}+d_\beta+\sqrt{td_\beta}\right).
+\]
+The combination yields \eqref{eq:parameter}. These two estimates require the precise field identities in \eqref{eq:decomposition}; they are not estimates for arbitrary formal scalar and Weyl energy data. Finally, if $a^2\ge T_+$, \eqref{eq:CW} gives
+\[
+ (-a^2)_+\le(-T_+)_+\le P/(8\pi^2).
+\]
+On $r\le1$ the factor is bounded universally; on $r>1$ the asserted lower bound follows immediately after decreasing $c_0$.
+
+\section{A critical-ratio gap and class-square dependence}
+\begin{theorem}[Critical-ratio gap]\label{thm:N1}
+Under the one-solution input and $a^2\ge T_+$, there is a universal $\varepsilon_N>0$ such that every $g$ in the class satisfies
+\begin{equation}
+ \J(g)+\left(\frac{T_+}{A}-\frac23\right)_+\ge\varepsilon_N.
+ \label{eq:N1}
+\end{equation}
+With the constant in Theorem~\ref{thm:parameter}, one may take
+$\varepsilon_N=\min\{1,c_0/768\}$.
+\end{theorem}
+\begin{proof}
+Set $d=(T_+/A-2/3)_+$. At $\beta=8$, \eqref{eq:D-CW} becomes
+\begin{equation}
+ D_8=108\pi^2(T_+-2p/3)+\frac{27}{2}P.
+ \label{eq:D8}
+\end{equation}
+The scalar budget on $s=-4$ gives $A/V\le1/(2\pi^2)$. Since $p\ge A$,
+\[
+ r+\frac{D_8}{8V}\le\frac{43}{16}r+\frac{27}{4}d.
+\]
+Theorem~\ref{thm:parameter} bounds the left side below by $c_8=9c_0/1024$. If $\J(g)\ge1$, there is nothing to prove. Otherwise Proposition~\ref{prop:conformal} gives $\J(\widehat g)\le\J(g)<1$. On $\widehat g$,
+\[
+ \J(\widehat g)=\frac{4r}{r+4},\qquad
+ r=\frac{4\J(\widehat g)}{4-\J(\widehat g)}\le\frac43\J(g).
+\]
+It follows that
+\[
+ c_8\le\frac{43}{12}\J(g)+\frac{27}{4}d
+ \le\frac{27}{4}(\J(g)+d).
+\]
+This gives the stated constant.
+\end{proof}
+
+This argument identifies the parameter $8$ intrinsically: the ratio of the Weyl and scalar coefficients in $D_\beta$ is $6\beta$, while the corresponding ratio in \eqref{eq:CW} is $48$. The finite-parameter theorem therefore controls the classical critical ratio itself. The connection and applications are developed in \cite{N1source}.
+
+The class-square assumption can also be retained as an explicit cost, instead of imposed as a sign restriction.
+\begin{theorem}[Negative square and shortfall]\label{thm:shortfall}
+Under the one-solution input, without $a^2\ge T_+$, put
+\[
+ \nu=\frac{(-a^2)_+}{A},\qquad y=\frac{(T_+-a^2)_+}{A}.
+\]
+There are universal positive constants $c_*,c$ such that
+\begin{align}
+ \J(g)+\left(\frac{T_+}{A}-\frac23\right)_+
+ &\ge\frac{c_*}{1+\nu/(2\pi^2)},\label{eq:N1nu}\\
+ \J(g)+\left(\frac{T_+}{A}-\frac23\right)_+
+ &\ge\frac{c}{1+y}.\label{eq:N1y}
+\end{align}
+In particular, nonnegative class square suffices for a universal version of \eqref{eq:N1nu}, even when $a^2<T_+$.
+\end{theorem}
+\begin{proof}
+Let $c_{8,\rm raw}=9c_{\rm raw}/1024$. In the branch $\J(g)<1$, the previous proof with the factor retained gives
+\[
+ (1+b_a)(\J(g)+d)\ge4c_{8,\rm raw}/27.
+\]
+The scalar budget gives $b_a\le\nu/(2\pi^2)$, proving \eqref{eq:N1nu} after inclusion of $\J\ge1$. For the second version, \eqref{eq:CW} yields
+\[
+ (-a^2)_+\le\frac{P}{8\pi^2}+(T_+-a^2)_+.
+\]
+Consequently $b_a\le r/(8\pi^2)+y/(2\pi^2)$. Since $r<4/3$ in the branch under consideration,
+\[
+ \left(1+\frac1{6\pi^2}+\frac y{2\pi^2}\right)(\J(g)+d)
+ \ge4c_{8,\rm raw}/27.
+\]
+Decreasing a universal constant gives \eqref{eq:N1y} in both branches.
+\end{proof}
+
+These two bounds distinguish negative square from shortfall relative to $T_+$. Neither determines the optimal dependence on that shortfall. For example, if a family has $y\le L$, a positive Einstein obstruction follows only when $c/(1+L)-(T_+/A-2/3)_+>0$.
+
+For a blow-up of an admissible minimal general-type surface with $A=c_1^2(X)>0$ and $T_+=A-k$, \eqref{eq:N1} reads
+\[
+ \J(g)+(1/3-k/A)_+\ge\varepsilon_N.
+\]
+Thus the analytical estimate extends the classical threshold into a neighborhood below $k/A=1/3$. This application retains the nonvanishing and positive-budget hypotheses of the surface theory. Zero-budget cases, including Ricci-flat examples, are not included by substitution $A=0$.
+
+\section{Calibrated linear coercivity}
+Define the scalar excess and the class-square shortfall by
+\begin{equation}
+ \Sigma=S-32\pi^2p,\qquad \Pi=P+D_2,\qquad Y=(T_+-a^2)_+.
+ \label{eq:I41notation}
+\end{equation}
+\begin{theorem}[Linear coercivity]\label{thm:I41}
+There are universal constants $C,C_T>0$ such that the one-solution input implies
+\begin{equation}
+ \Sigma\le C\bigl(\Pi+\sqrt{\Pi Y}\bigr),\qquad
+ (p-T_+)_+\le C_T\bigl(\Pi+\sqrt{\Pi Y}\bigr).
+ \label{eq:I41}
+\end{equation}
+These inequalities hold throughout the negative Yamabe conformal class.
+\end{theorem}
+
+The detailed calibrated Hessian and weak Bianchi estimates are proved in \cite{Linear,SingleLinear}. We give the reduction from that estimate to \eqref{eq:I41}, including the identities that preserve its linear order. At $\beta=2$, \eqref{eq:decomposition} becomes
+\[
+ \frac{D_2}{18}=J_F+2\int|\zeta|^2+\int|W^+-W_0|^2
+ +\frac12\int C_2(\rho)(\rho-2)^2,
+ \qquad C_2\ge\frac23.
+\]
+Rescale $\Psi=(2/\sqrt6)^{1/2}\Phi$ and put
+\[
+ \eta=|\Psi|^2,\quad\eta_0=4/\sqrt6,\quad
+ U_0=-4+\sqrt6\eta,\quad K=\int|\nabla_{\Acal}\Psi|^2.
+\]
+The spinor equation is $4\nabla^*\nabla\Psi+U_0\Psi=0$. The decomposition controls the squared errors in $\eta$, $U_0$, $d\eta$, the phase current, and $W^+-W_0$, together with $J_F$, by $CD_2$. Testing the equation with a fixed low-amplitude cutoff gives
+\[
+ \int_{\{\eta\le1\}}|\nabla\Psi|^2\le CD_2.
+\]
+The integrated field equation and harmonic projection give
+\begin{gather}
+ 4K-4\int\eta+\sqrt6\int\eta^2=0,\qquad
+ 6\int\eta^2=32\pi^2p+8J_F,\nonumber\\
+ \Sigma=8\sqrt6K+\int|U_0|^2+8J_F.
+ \label{eq:excess-exact}
+\end{gather}
+The calibrated curvature action vanishes on the reference spinor. The remaining determinant curvature satisfies
+\[
+ \norm{F^-_{\Acal}}_2^2
+ =4\pi^2(p-a^2)+J_F
+ \le\sqrt6K+C\Pi+4\pi^2Y.
+\]
+Thus the Hessian identity and interpolation yield
+\[
+ \norm{\nabla^2\Psi}_2^2+\norm{\nabla\Psi}_4^4
+ \le C(K+\Pi+Y).
+\]
+The same-field weak Bianchi estimate of \cite{Linear,SingleLinear} is
+\begin{equation}
+ K\le C\Pi+C\sqrt{\Pi(K+\Pi+Y)}.
+ \label{eq:Kcoercivity}
+\end{equation}
+Young's inequality absorbs the $\sqrt{\Pi K}$ term, giving
+$K\le C'(\Pi+\sqrt{\Pi Y})$. Equation~\eqref{eq:excess-exact} proves the first assertion. This is the low-defect argument $\Pi/V\le1$; its complement follows from $0\le\Sigma\le16V<16\Pi$.
+
+To transfer to $g=u^2\widehat g$, observe that
+\[
+ \Sigma(g)=\Sigma(\widehat g)+\delta,\qquad
+ \Pi(g)=\Pi(\widehat g)+\frac{19}{12}\delta.
+\]
+All added terms have the favorable sign. Finally the exact identity
+\begin{equation}
+ 36\pi^2(p-T_+)=\frac92P+\frac98\Sigma-D_2
+ \label{eq:class-excess}
+\end{equation}
+proves the second assertion of \eqref{eq:I41}.
+
+\subsection{Two-orientation energy constraints and a linear window}
+Let
+\[
+ h=1-T_+/A,\qquad z=p/A-1\ge0,\qquad
+ e=R/(8\pi^2A),\qquad U=3\min(T_+,T_-)/A.
+\]
+Then
+\begin{equation}
+ D_2/A=36\pi^2(e-1-h-2z),\qquad
+ P/A=2\pi^2e\J.
+ \label{eq:energyalgebra}
+\end{equation}
+If $Y=0$, the second part of \eqref{eq:I41} and \eqref{eq:energyalgebra} give, for a universal $c'>0$,
+\begin{equation}
+ e(1+\J/18)\ge1+(1+c')h+(2+c')z.
+ \label{eq:lowerenergy}
+\end{equation}
+On the other hand \eqref{eq:CW} for both orientations gives
+\begin{equation}
+ e(1-\J)\le U.
+ \label{eq:upperenergy}
+\end{equation}
+For $L_h=1+(1+c')h$ and $U>0$, elimination of $e$ proves
+\begin{equation}
+ \J\ge\frac{(L_h-U)_+}{L_h+U/18}.
+ \label{eq:linear-explicit}
+\end{equation}
+Indeed, when $\J<1$, divide \eqref{eq:lowerenergy} by $1+\J/18$ and \eqref{eq:upperenergy} by $1-\J$, and cross multiply. If $\J\ge1$, the displayed bound is automatic. If $U\le0$, \eqref{eq:upperenergy} itself implies $\J\ge1$.
+
+\begin{corollary}[Balanced linear gap]\label{cor:linear}
+Under the one-solution input, $a^2\ge T_+$, and $0<h\le1/3$, there is a universal $c>0$ such that
+\begin{equation}
+ \J+(U-1-h)_+\ge ch.
+ \label{eq:linearwindow}
+\end{equation}
+If $y=Y/A$ is retained, the analogous lower bound has the form $ch^2/(h+y)$.
+\end{corollary}
+\begin{proof}
+If $(U-1-h)_+\ge c'h/2$, the first assertion is immediate. Otherwise $L_h-U\ge c'h/2$ and the denominator in \eqref{eq:linear-explicit} is uniformly bounded for $h\le1/3$. For the shortfall version, apply the second part of \eqref{eq:I41} to $A(h+z)$ and solve the inequality $h+z\le C(x+\sqrt{xy})$, where $x=\Pi/A$. It gives $x\ge c(h+z)^2/(h+z+y)$. Substitution into \eqref{eq:energyalgebra}, followed by the same two-orientation comparison, proves the asserted scale; see \cite{Conformal} for its detailed constants.
+\end{proof}
+
+Thus $U_j=1+h_j+O(h_j^2)$ with $h_j\downarrow0$ forces $\inf\J\ge c_2h_j$. This is a different parameter range from the critical-ratio gap: it concerns $T_+/A\to1$ together with a balanced opposite-orientation budget. Matching the order in such a family does not determine its best coefficient. In particular, a standard upper construction with coefficient $4$ does not establish optimality, and the strict improvements obtained in the construction manuscripts must be retained.
+
+\subsection{A precise distinction from scalar budget optimization}
+The following formal data satisfy the classical integral constraints but fail linear coercivity. For $0<h\le1/4$, set
+\begin{gather*}
+ p=A,\quad T_+=A(1-h),\quad T_-=A(1+h)/3,\\
+ P=8\pi^2Ah^2,\quad S=32\pi^2A(1+h+2h^2),\\
+ W_-=(2/3)\pi^2Ah^2,\quad
+ W_+=(4/3)\pi^2A(1-2h)+(2/3)\pi^2Ah^2.
+\end{gather*}
+Both Chern--Weil identities hold. If $X=2\sqrt{1+h+2h^2}$ and $Z=\sqrt{1-2h+h^2/2}$, then
+\[
+ \frac{D_\beta}{8\pi^2A}
+ =\left(X/\sqrt\beta-\sqrt\beta Z\right)^2+(X+Z)^2-9>0.
+\]
+For the strict inequality one uses
+\[
+ 4X^2Z^2-(9-X^2-Z^2)^2
+ =\frac94h^2(32-40h-25h^2)>0.
+\]
+Nevertheless $\J=4h^2/(1+h+3h^2)$, $D_2=108\pi^2Ah^2$, while $\Sigma=32\pi^2A(h+2h^2)$. Hence $\Sigma\le C(P+D_2)$ fails uniformly. These data are not a construction of metrics. They show exactly why the displayed numerical budgets alone cannot imply the linear theorem.
+
+\section{Finite Euler density and the parameter endpoint}
+The endpoint functional is
+\begin{equation}
+ \kappa_\beta(g)=\av{|\Ric_g+g|^2}_g+\frac{D_\beta(g)}{V_g}.
+ \label{eq:kappa}
+\end{equation}
+It differs from $P/V+D_\beta/(\beta V)$ in Theorem~\ref{thm:parameter}. On $s=-4$, its first term is $P/V$.
+
+\begin{theorem}[Finite-density endpoint]\label{thm:FD}
+Assume full-conformal input, $p\ge A>0$, and $a^2\ge T_+$. For each fixed $B\ge0$ there exists $c_{\rm FD}(B)>0$ such that
+\begin{equation}
+ \frac{\chi(M)}A\le B
+ \quad\Longrightarrow\quad
+ \kappa_\beta(g)\ge c_{\rm FD}(B)\frac{(\beta-2)^2}{\beta^2},
+ \qquad \beta\ge2.
+ \label{eq:FD}
+\end{equation}
+The constant requires no diameter, pointwise Ricci, noncollapse, injectivity-radius, or Sobolev hypothesis. The quantitative field estimates in \cite{FDrates} give universal $c_0>0$ and finite $N$ with $c_{\rm FD}(B)\ge c_0(1+B)^{-N}$.
+\end{theorem}
+
+The complete analytical proof and its direct prerequisites are in \cite{FDcomplete,FD,FDstrong,FDresolvent,FDweak}. We give the argument from those estimates to the topological contradiction and prove the line-bundle localization step explicitly.
+
+\subsection{Reduction to a forbidden sequence}
+The finite-parameter estimate excludes any bounded parameter interval away from $2$; its quadratic vanishing also gives the required control near $2$. For a hypothetical failure of \eqref{eq:FD}, one therefore obtains $\beta_j\to\infty$ and $\kappa_{\beta_j}\to0$. The conformal estimate proved in \cite{FDcomplete} is
+\begin{equation}
+ \widehat\kappa_\beta\le
+ \frac{\kappa_\beta}{1-\sqrt{\kappa_\beta}-\kappa_\beta/16}
+ \label{eq:kappaconformal}
+\end{equation}
+when the denominator is positive. Thus it suffices to consider $s_j=-4$ and
+\begin{equation}
+ \frac{P_j+D_{\beta_j}}{V_j}\longrightarrow0.
+ \label{eq:zeroend}
+\end{equation}
+The scalar budget gives $A_j/V_j\le1/(2\pi^2)$. Gauss--Bonnet gives
+\begin{equation}
+ \av{|W_j^-|^2}\le\frac{8\pi^2\chi(M_j)}{V_j}-\frac23+\frac{P_j}{2V_j}
+ \le4B-\frac23+o(1).
+ \label{eq:WminusB}
+\end{equation}
+Consequently this sequence has a bounded averaged opposite-orientation Weyl energy.
+
+The actual-field estimates of \cite{FDstrong,FDresolvent,FDweak} have the following precise role. Let $\mathfrak t_j\in\Gamma(S^-\otimes L)$ be the cubic torsion of the positive solution. A fixed smooth bounded radial truncation $\mathcal T$, equal to the identity near the limiting amplitude, defines a section of the \emph{same} bundle by
+\[
+ (4+\nabla^*\nabla)v_j=6\mathcal T(\mathfrak t_j).
+\]
+The strong-field estimates give
+\begin{gather}
+ |v_j|+|\nabla^*\nabla v_j|\le C,\qquad
+ v_j-\mathfrak t_j\to0\quad\text{in normalized }H^1,\nonumber\\
+ (\nabla^*\nabla-2)v_j\to0\quad\text{in normalized }L^2,
+ \qquad |\Phi_j|^2\to\rho_*=4/3,\quad |v_j|^2\to m_*=128/81.
+ \label{eq:vlimits}
+\end{gather}
+The bound \eqref{eq:WminusB} supplies $\norm{\nabla v_j}_{4,\mathrm{av}}+\norm{\nabla^2v_j}_{2,\mathrm{av}}\le C_B$. The complete modulus, phase, and Dirac reduction leaves one complex derivative component; its covariance identity gives $|\nabla v_j|^2\to2m_*$ in measure. These statements use the actual field equations, not merely the scalar amplitude equation.
+
+Define the globally invariant expression
+\begin{equation}
+ t(v)=\sum_{i=1}^4c^-(e^i)v\otimes(v\wedge\nabla_i v)
+ \in\Gamma(S^+\otimes L^4),\qquad
+ \sigma=\Phi\wedge t(v)\in\Gamma(L^5).
+ \label{eq:fifthline}
+\end{equation}
+Here $c^-$ is negative-to-positive Clifford multiplication. The degree $5$ follows from $\det S^+=L$; it is not a choice of local phase. The reduction proves
+\begin{equation}
+ |\sigma_j|^2\to4\rho_*m_*^3>0\quad\text{in measure},\qquad
+ \av{|\nabla\sigma_j|^2}\le C_B.
+ \label{eq:sigmalimits}
+\end{equation}
+For the derivative bound use $|\sigma|\le C|\nabla v|$ and
+\[
+ |\nabla\sigma|\le C\bigl(|\nabla^2v|+|\nabla v|^2+|\nabla\Phi||\nabla v|\bigr).
+\]
+The curvature fitting estimates also show that the real curvature of $L^5$ has a uniformly bounded model with an averaged $L^2$ error tending to zero, and that
+\begin{equation}
+ \frac{c_1(L^5)^2[M_j]}{V_j}
+ =25\frac{a_j^2[M_j]}{V_j}\longrightarrow\frac{25}{6\pi^2}.
+ \label{eq:positivechern}
+\end{equation}
+These are the field-specific inputs needed below.
+
+\subsection{A line-bundle localization lemma}
+\begin{lemma}\label{lem:chern}
+Let $K_j$ be Hermitian line bundles on closed four-manifolds with real curvature $F_j$, and use $d\mu_j=dV_j/V_j$. Suppose
+\[
+ \norm{\Ric_{g_j}}_{2,\mathrm{av}}+\norm{F_j}_{2,\mathrm{av}}
+ +\norm{\nabla\sigma_j}_{2,\mathrm{av}}\le C,
+ \qquad |\sigma_j|\to\ell>0\quad\text{in measure}.
+\]
+Let $\omega_j$ be closed two-forms with $\omega_j=\omega_{0,j}+e_j$,
+$\norm{\omega_{0,j}}_\infty\le C$ and $\norm{e_j}_{2,\mathrm{av}}\to0$.
+Then $V_j^{-1}\int F_j\wedge\omega_j\to0$.
+\end{lemma}
+\begin{proof}
+First make a fixed bounded equivariant radial truncation $s_j$ of $\sigma_j$, preserving its limiting amplitude and a uniform Dirichlet bound $E_0$. Set $\mathscr L_j=\nabla_j^*\nabla_j$ and $u_{j,\epsilon}=(I+\epsilon\mathscr L_j)^{-1}s_j$. The maximum principle and the spectral theorem give
+\begin{gather*}
+ |u_{j,\epsilon}|\le C,\qquad
+ \norm{u_{j,\epsilon}-s_j}_{2,\mathrm{av}}^2\le\epsilon E_0,\\
+ \int_0^\infty\norm{\mathscr L_j u_{j,\epsilon}}_{2,\mathrm{av}}^2\,d\epsilon
+ \le E_0.
+\end{gather*}
+Put $\delta_j=\norm{|s_j|-\ell}_{2,\mathrm{av}}^2+\norm{e_j}_{2,\mathrm{av}}^2+j^{-1}$. Average with respect to $d\epsilon/\epsilon$ on $[\delta_j^{1/2},\delta_j^{1/4}]$ to choose $\epsilon_j$ with
+\begin{equation}
+ \epsilon_j\norm{\mathscr L_j u_j}_{2,\mathrm{av}}^2
+ \le\frac{4E_0}{|\log\delta_j|}\to0,
+ \qquad \norm{e_j}_{2,\mathrm{av}}^2/\epsilon_j\to0.
+ \label{eq:logscale}
+\end{equation}
+The line-bundle version of \eqref{eq:hessian}, with bounded $u_j$ and \eqref{eq:interpolation}, yields
+\[
+ \av{|\nabla^2u_j|^2+|\nabla u_j|^4}
+ \le C\left(1+\norm{\mathscr L_j u_j}_{2,\mathrm{av}}^2\right).
+\]
+The curvature terms are controlled by the assumed $L^2$ norms of Ricci and $F_j$; no derivative of either curvature is used.
+
+Fix $0<\ell_0<\ell_1<\ell$. For $Z_j=\{|u_j|\le\ell_1\}$, Chebyshev's inequality and the resolvent approximation give $\mu_j(Z_j)=O(\epsilon_j)$. Cauchy--Schwarz and \eqref{eq:logscale} therefore give
+\begin{equation}
+ \int_{Z_j}|\nabla u_j|^2\,d\mu_j\to0,\qquad
+ \norm{e_j}_{2,\mathrm{av}}\norm{\nabla u_j}_{4,\mathrm{av}}^2\to0.
+ \label{eq:transition}
+\end{equation}
+On the nonzero set of $u_j$, its unit normalization defines a real connection form $\alpha_j$ with $d\alpha_j=F_j$ and $|\alpha_j|\le C|\nabla u_j|/|u_j|$. Take $\chi_j=\chi(|u_j|)$ equal to $0$ below $\ell_0$ and $1$ above $\ell_1$. Then $\chi_j\alpha_j$ extends smoothly over $M_j$. Since $d\omega_j=0$, Stokes' theorem gives
+\[
+ \frac1{V_j}\int F_j\wedge\omega_j
+ =\frac1{V_j}\int(1-\chi_j)F_j\wedge\omega_j
+  -\frac1{V_j}\int d\chi_j\wedge\alpha_j\wedge\omega_j.
+\]
+For the first term, pair the bounded model with the $L^2$ curvature on the set $Z_j$ of vanishing measure, and pair $e_j$ with the bounded $L^2$ curvature. For the second, use \eqref{eq:transition} for the bounded model, and the second estimate of \eqref{eq:transition} for the error. Both terms tend to zero.
+\end{proof}
+
+Apply the lemma to $K_j=L_j^5$ and $\omega_j=F_j$. The actual curvature fitting supplies the required decomposition of $F_j$, so its Chern square divided by volume tends to zero, contradicting \eqref{eq:positivechern}. This proves the finite-density exclusion, and \eqref{eq:kappaconformal} completes the passage to the original metrics.
+
+There is a second completion using the weak Cauchy--Riemann equation of the remaining $L^5$ component and the positive operator $\nabla^*\nabla+10/3$ \cite{FDfifth}. It uses the same field prerequisites. The two arguments should therefore be regarded as two proofs of the final exclusion, not as independent sources of the preceding strong-field estimates.
+
+The polynomial dependence in Theorem~\ref{thm:FD} requires a quantitative version of those estimates. In the notation of \cite{FDrates}, if $x=\kappa_\beta+\beta^{-2}$ and $\gamma>0$ is a fixed exponent, the actual-field error obeys $\mathfrak e_D\le Cx^{\gamma/16}$. The fifth-line estimate excludes a sequence with $\mathfrak e_D(1+b)^{3/2}\to0$, $b=\av{|W^-|^2}$. This implies $x\ge c(1+b)^{-24/\gamma}$ by contradiction, and then the stated polynomial density bound using \eqref{eq:WminusB} and the finite-parameter estimate. Its exponent is not asserted to be optimal.
+
+\section{Uniform endpoint families beyond a fixed density statement}
+\subsection{A fixed topological ratio below three quarters}
+\begin{theorem}\label{thm:Lprime}
+Under full-conformal input, $p\ge A>0$, $a^2\ge T_+$, and
+$T_+/A\le\theta<3/4$, there exists $c_L(\theta)>0$ such that
+\begin{equation}
+ \kappa_\beta(g)\ge c_L(\theta)\qquad(\beta\ge2)
+ \label{eq:Lprime}
+\end{equation}
+throughout the conformal class. No Euler-density bound is required.
+\end{theorem}
+\begin{proof}
+Put $Q_s=\int(s+4)^2/4$. Chern--Weil gives
+\[
+ V_g\kappa_\beta=(13/12+1/\beta)S+(6\beta+10)W_+
+ +Q_s-8\pi^2T_+-72\pi^2p.
+\]
+For $T_+>0$, use \eqref{eq:Dbeta} with the auxiliary parameter
+$\gamma=(9\beta-\theta+6)/(9+\theta)$ and eliminate the Weyl term. The result is
+\begin{gather*}
+ V_g\kappa_\beta\ge a(\theta,\beta)S+Q_s,\qquad
+ a(\theta,\beta)=\frac{N_\theta(\beta)}{\beta(9\beta-\theta+6)},\\
+ N_\theta(\beta)=(3/4-\theta)\beta^2+(1/2-11\theta/4)\beta+6-\theta.
+\end{gather*}
+If $a>0$, pointwise minimization of $as^2+(s+4)^2/4$ gives
+$\kappa_\beta\ge16a/(1+4a)$. The discriminant is
+\[
+ \operatorname{disc}N_\theta
+ =\frac{57}{16}(\theta-2/3)(\theta+142/19),\quad
+ N_{2/3}(\beta)=\frac{(\beta-8)^2}{12}.
+\]
+Also $N_\theta(2)=10-21\theta/2>0$ and
+$\lim_{\beta\to\infty}a=1/12-\theta/9>0$. Thus, for $\theta<2/3$, this bound is uniformly positive. For $2/3\le\theta<3/4$, the possibly nonpositive region is a bounded parameter interval separated from $2$. There Theorem~\ref{thm:parameter}, with $a^2\ge T_+>0$, gives a positive bound on the Yamabe representative. A small-defect contradiction transfers it by \eqref{eq:kappaconformal}; the complementary large-defect branch needs no transfer. If $T_+\le0$, the calculation with $\theta=0$ gives $\kappa_\beta\ge1$. These bounds cover all parameters.
+\end{proof}
+The numbers $2/3$, $8$, and $3/4$ arise respectively from the discriminant, its double root, and the leading coefficient. This is an estimate for \eqref{eq:kappa}; its $D_\beta/V$ term cannot be deleted to claim a pure Ricci gap in this entire range.
+
+\subsection{A geographical partition}
+\begin{corollary}\label{cor:GEO}
+Suppose a family satisfies the full-conformal hypotheses of Theorem~\ref{thm:FD} and
+\[
+ Q=A-T_+\ge0,\qquad \chi(M)\le CA+Q,
+\]
+with fixed $C\ge0$. Then
+\begin{equation}
+ \kappa_\beta\ge c_{\rm geo}(C)\frac{(\beta-2)^2}{\beta^2},\qquad
+ c_{\rm geo}(C)=\min\{\varepsilon_N,c_{\rm FD}(C+1/3)\}.
+ \label{eq:GEO}
+\end{equation}
+\end{corollary}
+\begin{proof}
+If $Q/A\ge1/3$, Theorem~\ref{thm:N1} gives $\J\ge\varepsilon_N$. Since $\J\le\E\le\av{|\Ric+g|^2}$ by choosing $\lambda=-1$ in \eqref{eq:defects}, and $D_\beta\ge0$, the result follows. If $Q/A<1/3$, then $\chi/A\le C+1/3$ and Theorem~\ref{thm:FD} applies.
+\end{proof}
+
+For a minimal complex surface of general type with $A=c_1^2(X)>0$, Noether's inequality and formula give
+\[
+ p_g\le A/2+2,\qquad\chi(X)=12(1-q_{\rm hol}+p_g)-A.
+\]
+If $A=1$, integrality gives $p_g\le2$ and $\chi(X)\le35$. If $A\ge2$, then $\chi(X)\le5A+36\le23A$. Hence $\chi(X)\le35A$ uniformly. For
+\[
+ M=X\#k\overline{\mathbb{CP}}^{\,2}\#\ell(S^1\times S^3),
+ \qquad Q=k+4\ell,
+\]
+one has $\chi(M)\le35A+Q$. Whenever the stated actual-field supply holds, Corollary~\ref{cor:GEO} gives the single constant
+\[
+ \min\{\varepsilon_N,c_{\rm FD}(106/3)\}
+\]
+independently of the surface and surgery numbers. With several positive-square general-type summands, replace $A$ by their total square and $Q$ by $k+4\ell+4(r-1)$; the same conclusion holds when the corresponding nonvanishing theorem supplies the required classes. This geographical argument, proved in \cite{GEO}, allows unbounded $\chi/A$ in parts of the family. It does not remove every topological condition from the endpoint problem.
+
+\section{Two orientations and surface-bundle slopes}
+We now give a global application in which the fixed value $B=2$ of the finite-density theorem suffices. This section is a deduction from Theorem~\ref{thm:FD}; its field-theoretic foundation is therefore the finite-density proof package, not an additional independent analytical theorem.
+
+\begin{theorem}[Surface-bundle gap]\label{thm:SB}
+Let $\Sigma_f\to M\to\Sigma_b$ be a smooth oriented surface bundle with $f,b\ge2$. Then
+\begin{equation}
+ \J(g)+\left(1-\frac{3|\tau(M)|}{\chi(M)}\right)_+
+ \ge\varepsilon_{\rm SB},\qquad
+ \varepsilon_{\rm SB}=\left(\frac{\min\{1,c_{\rm FD}(2)\}}{200}\right)^2
+ \label{eq:SB}
+\end{equation}
+for every smooth metric.
+\end{theorem}
+\begin{proof}
+Orient $M$ so that $\tau\ge0$, and write $e=\chi(M)>0$, $t=3\tau/e$. The horizontal and vertical Euler classes $x,y$ satisfy
+\[
+ x^2=0,\qquad xy=e,\qquad y^2=3\tau.
+\]
+The canonical classes provided by the symplectic structures in the two orientations can be chosen as $a=x+y$ and $b=x-y$, up to harmless overall signs. Thus
+\begin{equation}
+ a^2=e(2+t),\qquad b^2[M]=-e(2-t),\qquad a\cdot b=-et.
+ \label{eq:bundleclasses}
+\end{equation}
+The symplectic construction and its actual monopole supply are the classical inputs described in \cite{Kotschick1999,TwoOrientation}. Here $b_1(M)\ge2b\ge4$, and the positive orientation has $b_2^+>1$. The inequalities below imply $t<2$ in the only small-defect range that needs proof, giving the same condition in the opposite orientation.
+
+Use $s_{\widehat g}=-4$ and set
+\[
+ j=\J(\widehat g),\qquad u=V/(2\pi^2e),\qquad
+ r=P/V=4j/(4-j),\qquad w=W_-/V.
+\]
+The positive-orientation scalar budget and \eqref{eq:CW} give
+\begin{equation}
+ 2+t\le U:=\frac{(a^+)^2}{e}\le u,\qquad
+ w=\frac{2-t}{u}-\frac13+\frac{j}{4-j}\ge0.
+ \label{eq:surfacebudgets}
+\end{equation}
+For $j<1$, these imply
+\[
+ u\le\frac{3(4-j)(2-t)}{4(1-j)},\qquad
+ t\le1+\frac{9j}{16-7j}\le1+j.
+\]
+Set $Z=\norm{b^-}^2/e$, $X=\norm{a^-}^2/e=U-(2+t)$ and
+$Y=\norm{b^+}^2/e=Z-(2-t)$. The opposite-orientation scalar budget and Hodge Cauchy--Schwarz yield
+\begin{equation}
+ 2-t\le Z\le u,\qquad t\le\sqrt{UY}+\sqrt{XZ}.
+ \label{eq:cross}
+\end{equation}
+Take $d=j+(1-t)_+$. If $0<d\le1/256$, direct use of \eqref{eq:surfacebudgets} gives
+\[
+ 1-d\le t\le1+d,\quad 3-d\le u\le3+5d<4,
+ \quad X\le4d,\quad w\le d,\quad r\le4d/3.
+\]
+Thus \eqref{eq:cross} gives
+\begin{equation}
+ \frac Zu\ge\frac{2-t}{u}+\frac{(t-4\sqrt d)^2}{u^2}
+ \ge\frac49-2\sqrt d.
+ \label{eq:Zlower}
+\end{equation}
+For the negative orientation, take $A_-=e(2-t)$. Its actual class $b$ has square exactly $T_- = A_-$, $p_b=eZ\ge A_-$, and $\chi/A_-=1/(2-t)<2$. On the same metric,
+\[
+ \overline\kappa_\beta
+ =r+16(1+1/\beta)+6(\beta+1)w-36Z/u.
+\]
+Choose $\beta=d^{-1/2}\ge16$. The preceding bounds give $\overline\kappa_\beta<100\sqrt d$, whereas Theorem~\ref{thm:FD} gives
+$\overline\kappa_\beta\ge\min\{1,c_{\rm FD}(2)\}/2$.
+Hence $d\ge\varepsilon_{\rm SB}$. If $d=0$, the same formulas give $\overline\kappa_\beta\le16/\beta$ for all finite $\beta$, again contradicting that theorem as $\beta\to\infty$. The complementary branch $d>1/256$ is automatic for the stated constant. Finally, if $\J(g)<1$, Proposition~\ref{prop:conformal} gives $j\le\J(g)$; the branch $\J(g)\ge1$ is immediate.
+\end{proof}
+
+\begin{corollary}[Kodaira slope separation]\label{cor:Kodaira}
+For a Kodaira fibration whose canonical bundle is ample, the preceding theorem gives
+\begin{equation}
+ \frac{c_1^2(M)}{c_2(M)}\le3-\varepsilon_{\rm SB}.
+ \label{eq:Kodaira}
+\end{equation}
+\end{corollary}
+\begin{proof}
+The negative K\"ahler--Einstein metric supplied by the ample canonical bundle has $\J=0$. In its complex orientation, $c_1^2=2\chi+3\tau$ and $c_2=\chi$. If $\tau\ge0$, \eqref{eq:SB} directly gives $3\tau/\chi\le1-\varepsilon_{\rm SB}$. If $\tau<0$, the same stated bound is weaker than $c_1^2/c_2<2$.
+\end{proof}
+
+The distinction between strict inequality for each individual fibration and a uniform separation over the entire class is the issue discussed in \cite{CataneseRollenske,Catanese}. Equation~\eqref{eq:Kodaira} is the conclusion of the displayed FD--surface-bundle chain. It does not determine the optimal slope or assert that the largest presently constructed slope is optimal. The two orientations were already essential in classical Einstein obstruction arguments \cite{Kotschick1999}; here their Hodge pairing is combined with the quantitative endpoint.
+
+For an alternative direct check at a negative K\"ahler--Einstein metric, write $r_K=c_1^2/e$. The classes in \eqref{eq:bundleclasses} give
+\[
+ p_b=\frac{4e^2}{c_1^2},\qquad V=2\pi^2c_1^2,\qquad
+ W_-/V=\frac{4(3-r_K)}{3r_K}.
+\]
+Hence
+\[
+ \overline\kappa_\beta
+ =16(1+1/\beta)+\frac{8(\beta+1)(3-r_K)}{r_K}-\frac{144}{r_K^2}.
+\]
+If $r_K\to3$, choosing $\beta=(3-r_K)^{-1/2}$ makes this tend to zero, although $A_-=e(4-r_K)$ has bounded Euler density. This is precisely the endpoint sequence prohibited by Theorem~\ref{thm:FD}.
+
+\subsection{A pairing-deficit variant}
+The Hodge step has the following extension \cite{PairGap}. Let $M$ be closed and oriented, $\chi(M)>0$, and $\tau(M)\ge0$. Let $\mathcal C_+$ be a finite nonempty collection of classes whose fixed $\Sc$ structures have an unperturbed solution for every smooth metric. Suppose
+\[
+ a\in\operatorname{conv}(\mathcal C_+),\qquad a^2[M]\ge T_+,
+\]
+and let $b$ be an actual monopole class on $\overline M$ with $b^2[\overline M]\ge T_-$. Then, with $t=3\tau/\chi$ and $z=|a\cdot b|/\chi$,
+\begin{equation}
+ \J+(1-t)_++(t-z)_+\ge\varepsilon_{\rm SB}.
+ \label{eq:pairgap}
+\end{equation}
+To see the change in the proof, set $d=j+(1-t)_++(t-z)_+$. Convexity gives the same scalar upper bound for $\norm{a^+}$; the class-square inequalities give $X\le U-(2+t)$ and $Y\le Z-(2-t)$. The mixed pairing now gives $z\le\sqrt{UY}+\sqrt{XZ}$, while $z\ge1-d$. These replace the corresponding equalities in the surface-bundle proof and give the same estimate $Z/u\ge4/9-2\sqrt d$. The FD2 argument is unchanged. The convex class is used only in the scalar and Hodge inequalities; the endpoint theorem is applied to the actual opposite-orientation class $b$. Replacing that class by an arbitrary formal convex class would not supply the differential input required for the proof.
+
+\section{Supply, covers, and the scope of classical comparisons}
+The estimates above have a common analytical input, but their topological applications retain different sources of actual solutions. On a finite cover $\pi:\widetilde M\to M$ of degree $d$, a lifted metric has
+\[
+ \widetilde P=dP,\quad\widetilde S=dS,\quad\widetilde R=dR,\quad
+ \widetilde V=dV,\quad\widetilde T_\pm=dT_\pm.
+\]
+With the correspondingly lifted budget, $\widetilde A=dA$, both $\J$, $\E$ and $T_+/A$ are unchanged. The lift of a normalized negative Yamabe representative still has scalar curvature $-4$. Thus the $\operatorname{Pin}^{-}(2)$ double-cover application descends without a loss in these constants when the twisted solution lifts to the ordinary system. The argument only asks for solutions on lifted metrics, not for all noninvariant metrics on the cover \cite{Pin,N1source}.
+
+For completeness, consider a BF-supplied collection of sign classes
+\[
+ \mathcal C_0=\left\{\sum_{i=1}^r\epsilon_ic_i+\sum_{j=1}^k\eta_jE_j:
+ \epsilon_i,\eta_j\in\{\pm1\}\right\},
+\]
+where $c_i\cdot c_l=\delta_{il}A_i$, $c_i\cdot E_j=0$, and
+$E_j\cdot E_l=-\delta_{jl}$. Put $A=\sum_iA_i>0$. Then
+\begin{equation}
+ \max_{v\in\operatorname{conv}\mathcal C_0}v^2
+ =\inf_H\max_{a\in\mathcal C_0}(a_H^+)^2=A,
+ \label{eq:BFbudget}
+\end{equation}
+where $H$ ranges over maximal positive subspaces of the intersection form. Indeed, a convex combination has the form $v=\sum t_ic_i+\sum u_jE_j$ with coefficients in $[-1,1]$, so $v^2\le A$, and averaging exceptional signs achieves $\sum c_i$. For the projection budget, independent sign averaging gives the lower bound $A$; choose $H$ containing all $c_i$ and orthogonal to the $E_j$ to obtain equality. This is an optimization over abstract positive subspaces and does not assert that the optimizing subspace is realized by a metric.
+
+Equation~\eqref{eq:BFbudget} concerns the classes actually supplied by the specified nonvanishing theorem \cite{BFbudget}. It does not enumerate every monopole class on the manifold. If the full collection has budget $A(1+\delta)$, the classical Ricci estimate and the opposite-orientation Einstein constraint require
+\[
+ 1+h+2\delta\le U
+\]
+for an Einstein candidate. Thus an unaccounted $O(Ah)$ increase can matter to a comparison of exclusion ranges in a balanced family. It does not alter the proof of the coercive estimate for an actual selected class. This separates three logically different statements: a new analytical inequality, its application to supplied classes, and exclusion of every possible stronger classical budget.
+
+\section{Consequences for normalized Ricci flow}
+A metric-independent bound $P(g)\ge p_0>0$ converts into a scalar-curvature growth estimate. For example, $\J\ge j_0>0$ and $S\ge32\pi^2A$ imply $P\ge2\pi^2Aj_0$ by the definition of $\J$.
+
+\begin{theorem}[Historical scalar-curvature growth]\label{thm:flow}
+Assume $P(g)\ge p_0>0$ for every smooth metric on $M$, and $Y(M)<0$. Let
+\[
+ \partial_tg=-2\Ric+\frac{\overline s}{2}g
+\]
+be a smooth volume-normalized Ricci flow of fixed volume $V$. Choose $a>0$ with $Y(M)\le-a\sqrt V$, let $m(t)=\min_Ms(t)$, and put $b_0=-m(0)$. If $s\le K$, $K\ge0$, on $M\times[0,t]$, then
+\begin{equation}
+ \frac{2p_0}{V}t
+ \le K\left(1+\log\frac{b_0}{a}\right)-\overline s(0)+b_0-a.
+ \label{eq:flowbound}
+\end{equation}
+Consequently the historical nonnegative maximum $K(t)=\max\{0,\sup_{M\times[0,t]}s\}$ grows at least linearly according to the rearrangement of \eqref{eq:flowbound}, for all times of smooth existence.
+\end{theorem}
+\begin{proof}
+The Yamabe bound gives $m(t)\le-a$. With the Laplacian in this paragraph taken as $\Delta=\diver\nabla$, scalar evolution is
+\[
+ \partial_ts=\Delta s+2|\Ric^\circ|^2+\frac{s(s-\overline s)}2.
+\]
+The maximum principle and differentiation of the average yield, at almost every time,
+\[
+ m'\ge\frac{-m}{2}(\overline s-m)\ge0,\qquad
+ \overline s'=\frac{2P}{V}-\frac12\operatorname{Var}(s).
+\]
+For a function taking values in $[m,K]$,
+$\operatorname{Var}(s)\le(K-m)(\overline s-m)$. Therefore
+\[
+ \frac12\operatorname{Var}(s)\le\left(1+\frac K{-m}\right)m'.
+\]
+Integrating, and using $-m(t)\ge a$, gives
+\[
+ \frac12\int_0^t\operatorname{Var}(s)\,du
+ \le b_0-a+K\log(b_0/a).
+\]
+Integration of the average evolution and $\overline s(t)\le K$ proves \eqref{eq:flowbound}.
+\end{proof}
+
+The estimate itself requires no extension theorem. To infer that a prescribed threshold must be reached before a stated finite time, rather than allowing the smooth flow to terminate earlier, one additionally needs a smooth-extension result under bounded absolute scalar curvature. The companion flow manuscript \cite{Flow} formulates this consequence using a specified 2026 extension theorem. Under that additional hypothesis, the lower scalar bound $m(t)\ge m(0)$ and the upper threshold bound control absolute scalar curvature, so \eqref{eq:flowbound} gives the threshold time. This is not a claim that the static gap alone forces a finite-time singularity.
+
+\section{The unrestricted endpoint and remaining variational questions}
+The finite-density theorem has quantifiers $\forall B<\infty\;\exists c_{\rm FD}(B)>0$. The unrestricted endpoint asks for a single constant valid on the full allowed collection:
+\begin{problem}\label{prob:O10}
+Under full-conformal input, $p\ge A>0$ and $a^2\ge T_+$, does there exist a universal $c>0$ such that
+\[
+ \kappa_\beta(g)\ge c(\beta-2)^2/\beta^2\qquad(\beta\ge2)
+\]
+without any Euler-density or geographical restriction? Alternatively, does a sequence of closed manifolds and actual fields satisfying all these assumptions violate such a bound?
+\end{problem}
+Any counterexample sequence not already covered by the preceding theorems must have diverging Euler density and averaged $W^-$ energy. The unresolved step is not the final line-bundle test in Lemma~\ref{lem:chern}; it is the joint survival of its positive section amplitude and its weak field equation when the derivative budget for $v$ is unbounded.
+
+Some estimates remain available without that budget. If $|v|+|\nabla^*\nabla v|\le C$, testing with $e^2v$ gives
+\begin{equation}
+ \norm{e\nabla v}_2\le C\norm e_{H^1}.
+ \label{eq:weighted}
+\end{equation}
+This follows by integrating by parts and absorbing the cross term
+$2\operatorname{Re}\int e\langle de\otimes v,\nabla v\rangle$; it does not commute derivatives or use $W^-$. A sharper low-amplitude statement is as follows \cite{LowAmplitude}.
+
+\begin{proposition}\label{prop:low}
+Suppose the bounded sections in \eqref{eq:vlimits} satisfy $m_j=|v_j|^2\to m_*$ in normalized $L^2$, and their appropriate first-order complex-type projection tends to zero in normalized $L^2$ on a set whose complement has vanishing gradient energy. Write $q_j=|\nabla v_j|^2$. For fixed $0<\theta<1$ and $\epsilon>0$,
+\begin{equation}
+ \limsup_j\av{q_j/(m_j+\epsilon)^\theta}
+ \le\frac{2m_*}{(1-\theta)(m_*+\epsilon)^\theta}.
+ \label{eq:inverseamplitude}
+\end{equation}
+Consequently, for $0<t<m_*/\mathrm e$,
+\begin{equation}
+ \limsup_j\av{\boldsymbol1_{\{m_j\le t\}}q_j}
+ \le2\mathrm e\,t\log(m_*/t).
+ \label{eq:lowenergy}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Testing $Lv$ against $(m+\epsilon)^{-\theta}v$ gives the exact identity
+\[
+ \av{q/(m+\epsilon)^\theta}
+ =\operatorname{Re}\av{\langle Lv,v\rangle/(m+\epsilon)^\theta}
+ +\frac\theta2\av{|dm|^2/(m+\epsilon)^{\theta+1}}.
+\]
+The complex-type decomposition improves the usual radial bound to
+\[
+ |dm|^2\le2(1+\delta)mq+C_\delta m|N|^2,
+\]
+where $N$ is the type projection tending to zero. The complementary-set assumption permits its removal for each fixed weight. First fix $\theta,\epsilon,\delta$ with $\theta(1+\delta)<1$, pass to $j\to\infty$ using $Lv-2v\to0$ and $m\to m_*$, then let $\delta\downarrow0$. Absorption proves \eqref{eq:inverseamplitude}. On $m_j\le t$, compare the weights, let $\epsilon\downarrow0$, and choose $1-\theta=1/\log(m_*/t)$ to obtain \eqref{eq:lowenergy}.
+\end{proof}
+
+This excludes a fixed amount of gradient energy concentrated at arbitrarily small amplitude. It does not exclude energy in a shrinking region where the amplitude stays in a fixed intermediate interval. Indeed, the formal amplitude measures
+\[
+ d\nu_q=2\,dt,\qquad d\nu_R=4t\,dt,\qquad0\le t\le m_*
+\]
+obey the scalar moment identities and saturate the limiting inverse-amplitude bound. They are not actual solutions, but show which information those scalar tests do not supply. The full radial, phase, and curvature equations must decide whether such concentration can occur on a closed manifold \cite{Alternative}.
+
+There is also a representation-theoretic restriction on replacing the fifth-line construction by a first-order one. At the ideal endpoint, the positive spinor and its first derivative form a single $\Sc(4)$ orbit with circle stabilizer acting on $L$ with weight $\lambda^2$. Every continuous equivariant $L^m$-valued first-order construction, $m\ne0$, therefore vanishes on that orbit. The extra derivative of $v$ in \eqref{eq:fifthline} supplies a nonzero weight-five component. This explains the role of that construction without excluding nonlocal alternatives; the orbit calculation and concentrated model comparisons are recorded in \cite{GapMap}.
+
+\subsection*{A concentrated Taub--NUT model and the matching problem}
+The recent calculation \cite{TaubNUT} makes the derivative-scale obstruction explicit. On the hyper-K\"ahler Taub--NUT metric
+\[
+ g_\ell=H\,dx^2+H^{-1}\eta^2,\qquad H=1+\ell/r,
+\]
+with circle period $4\pi\ell$, choose parallel positive spinors and the holomorphic function $f=x_1+ix_2$. The Dirac field
+\[
+ \Phi_\ell=\sqrt{4/3}\,e_1+(\sqrt2/3)\bar f e_2
+\]
+has cubic torsion $v=\sqrt{m_*/2}\,d\bar f$. Direct calculation gives
+\begin{gather*}
+ |v|^2=\frac{m_*r}{r+\ell},\qquad
+ |\nabla v|^2=\frac{m_*\ell^2}{(r+\ell)^4},\\
+ \int|\nabla v|^2=8\pi^2m_*\ell^2,\qquad
+ \int|\nabla v|^4=\frac{8\pi^2}{15}m_*^2,\qquad
+ \int|\nabla^2v|^2=\frac{16\pi^2}{5}m_*.
+\end{gather*}
+For cutoff radius $R_\ell\sim(3\ell/4)^{1/3}$ the volume is asymptotic to $4\pi^2\ell^2$. The averaged quadratic energy then tends to $2m_*$, while the averaged fourth-order and Hessian energies grow as $\ell^{-2}$. Thus the quadratic mean required by \eqref{eq:vlimits} alone does not exclude this concentration scale.
+
+The fifth-line expression is the dipole
+\[
+ \sigma_\ell=C_\sigma\frac{\ell\bar f}{(r+\ell)^3},\qquad
+ C_\sigma=2^{11}\sqrt6/3^7.
+\]
+Its modulus obeys
+\[
+ \int|d|\sigma_\ell||^2=\frac{8\pi^2}{21}C_\sigma^2,
+ \qquad\int|\sigma_\ell|^2=\frac{8\pi^2}{3}C_\sigma^2\ell^2.
+\]
+On the stated blocks it tends to zero in measure. It therefore supplies neither the positive limiting amplitude nor the bounded normalized derivative energy used in \eqref{eq:sigmalimits}. The Kato lower bound from its modulus remains valid for every choice of unitary line connection.
+
+These fields solve the Dirac equation in a Ricci-flat tangent model, not the complete physical equations at scalar curvature $-4$. In the physical negative spinor bundle the determinant connection is $3\Acal$, and
+\[
+ (\mathscr L_{3\Acal}-2)\mathfrak t
+ =D_{3\Acal}^{-*}D_{3\Acal}^-\mathfrak t
+ -\left(1+\tfrac12c(F^-_{3\Acal})\right)\mathfrak t.
+\]
+The curvature term must be restored before estimating the physical residual. Moreover, neighboring blocks must match the same positive-spinor first jet, determinant connection, and boundary flux. For prescribed end values and derivatives, the exact one-dimensional matching energy is
+\[
+ \inf\int_0^L|u''|^2
+ =\frac{12}{L^3}\left|u_1-u_0-\frac L2(p_0+p_1)\right|^2
+ +\frac1L|p_1-p_0|^2.
+\]
+It follows by cubic Hermite interpolation and orthogonality to the homogeneous-boundary remainder. It quantifies the cost of independently resetting a first jet; it does not supply a geometric gluing theorem.
+
+Finally, actual curvature fitting $F_{\Acal}=F_0+e$, with bounded $F_0$ and $\norm e_{2,\mathrm{av}}\to0$, implies
+\[
+ \left|\frac1V\int_UF_{\Acal}\wedge F_{\Acal}\right|
+ \le2\norm{F_0}_\infty^2\frac{\Vol(U)}V+2\norm e_{2,\mathrm{av}}^2.
+\]
+Thus negligible-volume cores cannot carry a nonzero limiting determinant Chern density. The opposite-orientation Weyl concentration and the determinant Chern number require distinct global accounting. Deciding whether their field-matching conditions rule out every such sequence, or admit a closed construction, remains part of Problem~\ref{prob:O10}.
+
+Finally, the endpoint problem does not determine the optimal value of $\inf_gP(g)$ or $\inf_g\E(g)$ in a prescribed surgery family. The analytical results in this paper yield positive and, in balanced ranges, linear lower bounds. Genuine metric constructions give upper bounds and can improve the standard surgery coefficient. A complete extremal answer requires a lower bound matching the best construction over all admitted metrics. Smooth attainment, equality geometry, and exact Einstein existence are further assertions, not consequences of a positive defect estimate or of a minimizing sequence alone.
+
+\section*{Sources and proof organization}
+The connecting proofs in this manuscript use three analytical inputs with different scopes: the one-solution finite-parameter estimate, calibrated linear coercivity, and the full-conformal finite-density endpoint. Their detailed field calculations are in \cite{Parameter,AnalyticCore,SingleLinear,Linear,FDcomplete}. The conformal identities, critical-ratio and shortfall deductions, energy comparison, line-bundle localization, geographical partition, two-orientation deduction, and flow estimate are written here in the common normalization. Repository links in the bibliography identify the companion proofs and the current mathematical synthesis. Classical nonvanishing and curvature theorems retain their original sources.
+
+\begin{thebibliography}{99}
+\bibitem{LeBrun2001} C. LeBrun, \emph{Ricci curvature, minimal volumes, and Seiberg--Witten theory}, Invent. Math. \textbf{145} (2001), 279--316. \href{https://arxiv.org/abs/math/0003068}{arXiv:math/0003068}.
+\bibitem{LeBrunConvex} C. LeBrun, \emph{Four-manifolds, curvature bounds, and convex geometry}, \href{https://arxiv.org/abs/math/0611450}{arXiv:math/0611450}.
+\bibitem{Kotschick2003} D. Kotschick, \emph{Monopole classes and Einstein metrics}, \href{https://arxiv.org/abs/math/0306022}{arXiv:math/0306022}.
+\bibitem{IshidaLeBrun} M. Ishida and C. LeBrun, \emph{Curvature, connected sums, and Seiberg--Witten theory}, \href{https://arxiv.org/abs/math/0111228}{arXiv:math/0111228}.
+\bibitem{Pin} M. Ishida, S. Matsuo, and N. Nakamura, \emph{Yamabe invariants and the $\operatorname{Pin}^{-}(2)$-monopole equations}, \href{https://arxiv.org/abs/1505.05948}{arXiv:1505.05948}.
+\bibitem{Kotschick1999} D. Kotschick, \emph{On regularly fibered complex surfaces}, Geom. Topol. Monogr. \textbf{2} (1999), 291--298. \href{https://arxiv.org/abs/math/9911255}{arXiv:math/9911255}.
+\bibitem{CataneseRollenske} F. Catanese and S. Rollenske, \emph{Double Kodaira fibrations}, \href{https://arxiv.org/abs/math/0611428}{arXiv:math/0611428}.
+\bibitem{Catanese} F. Catanese, \emph{Kodaira fibrations and beyond: methods for moduli theory}, \href{https://arxiv.org/abs/1611.06617}{arXiv:1611.06617}.
+\bibitem{GapMap} S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Integral Einstein gaps, endpoints, and two-orientation applications}, current mathematical synthesis, \repo{docs/GAPS_AND_ENDPOINTS.md}{docs/GAPS\_AND\_ENDPOINTS.md}.
+\bibitem{Parameter} S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Constant-weight parameter analysis and global curvature fitting}, companion proof, \repo{research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/continuation/20260927_constant_weight_and_global_fit.md}{27 September parameter manuscript}, Sections 2--2.4.
+\bibitem{AnalyticCore} S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Bounded self-dual forms, Hessian estimates, and weak Bianchi testing}, \repo{research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/mathematics/current/round21_analytic.md}{analytical companion}.
+\bibitem{Conformal} S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Conformal separation and the zero endpoint}, \repo{research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/continuation/20260927_conformal_separation_and_zero_end.md}{27 September conformal companion}.
+\bibitem{N1source} S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Complete inheritance of the single-solution critical gap}, \repo{archive/originals/2026-09-28/03_N1_Complete_Inheritance.md}{28 September inheritance manuscript}.
+\bibitem{SingleLinear} S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Coercivity from one Yamabe monopole}, \repo{research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/paper/sections/single_solution_coercivity.tex}{single-solution coercivity proof}.
+\bibitem{Linear} S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Calibrated linear coercivity}, \repo{research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/paper/sections/linear_coercivity.tex}{linear coercivity proof}.
+\bibitem{FDcomplete} S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Finite-density endpoint: complete proof and prerequisites}, \repo{archive/originals/2026-09-29/O10_Finite_Density_Complete_Proof.tex}{29 September complete endpoint proof}.
+\bibitem{FD} S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{All finite Euler densities}, \repo{archive/originals/2026-09-29/O10_All_Finite_Density.md}{finite-density manuscript}.
+\bibitem{FDstrong} S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Strong actual-field estimates at the endpoint}, \repo{archive/originals/2026-09-29/O10_Strong_Current_Prerequisite.md}{strong-field prerequisite}.
+\bibitem{FDresolvent} S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{The same-bundle bounded resolvent}, \repo{archive/originals/2026-09-29/O10_Direct_Resolvent_Prerequisite.md}{resolvent prerequisite}.
+\bibitem{FDweak} S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Weak Bianchi and modulus--phase reduction}, \repo{archive/originals/2026-09-29/O10_Weak_Bianchi.md}{weak Bianchi companion}.
+\bibitem{FDfifth} S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Finite-density exclusion through the fifth line bundle}, \repo{archive/originals/2026-09-29/O10_Finite_Density_Fifth_Line.md}{fifth-line proof}.
+\bibitem{FDrates} S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Primitive-error rates for the endpoint}, \repo{docs/GAPS_AND_ENDPOINTS.md}{current synthesis}, Section 3.4, and its cited quantitative companion estimates.
+\bibitem{GEO} S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Uniform endpoints and residual-tower recovery}, \repo{archive/originals/2026-10-07/Line1_Uniform_Endpoint_and_Residual_Tower_Recovery.md}{7 October geographical endpoint proof}.
+\bibitem{TwoOrientation} S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{The two-orientation global gap}, \repo{archive/originals/2026-10-07/Line1_Two_Orientation_Global_Gap.md}{7 October two-orientation manuscript}.
+\bibitem{PairGap} S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Pairing gaps and pinched examples}, \repo{archive/originals/2026-10-08/Pair_Gap_and_Pinched_Example.tex}{8 October pairing manuscript}.
+\bibitem{BFbudget} S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Two budgets for the supplied Bauer--Furuta classes}, \repo{research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/paper/sections/bf_budget_comparison.tex}{BF budget comparison}.
+\bibitem{Flow} S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Quantitative Ricci-flow consequences}, \repo{archive/originals/2026-10-07/03_Quantitative_Ricci_Flow.tex}{7 October Ricci-flow manuscript}, including the exact external extension theorem used for the conditional threshold-time conclusion.
+\bibitem{LowAmplitude} S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Low-amplitude energy and the scope of extremal conclusions}, \repo{archive/originals/2026-09-29/O10_Low_Amplitude_Energy_and_O11_Scope.md}{low-amplitude proof}.
+\bibitem{TaubNUT} S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{Torsion carriers, fifth-line projection, and field matching on Taub--NUT}, \repo{research/notes/taub_nut_endpoint_fields.md}{Taub--NUT endpoint fields}.
+\bibitem{Alternative} S. Yang, J. Wu, R. Zhao, H. Chen, and Y. Yang, \emph{The full radial system and alternative global estimates}, \repo{archive/originals/2026-09-29/O10_Alternative_Global.md}{radial and phase companion}.
+\end{thebibliography}
+\end{document}

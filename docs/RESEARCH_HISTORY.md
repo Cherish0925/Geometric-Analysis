@@ -1,5 +1,7 @@
 # 研究沿革：从积分障碍到极值与几何实现
 
+*Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen, Yihao Yang · Qiushi Engine Team, Zhejiang University. [Authors and correspondence](../AUTHORS.md).*
+
 研究围绕三个相联系的问题展开：Einstein 方程能否任意逼近，逼近的最小曲率代价是多少，以及近似解何时能修正为精确解。以下按改变命题或证明方式的数学转折组织；完整假设和推导分别见专题正文。
 
 ## 1. 点态逼近、积分逼近与精确存在
@@ -150,3 +152,4 @@ $$
 | 非紧存在性与闭刚性 | 完整非紧严格例子回答相应存在问题，不构成闭 Goldberg 反例 |
 
 这些区别决定当前定理的范围及后续问题。原件和历史版本保留在[来源索引](../catalog/README.md)；本页采用对应专题中的最终表述。
+

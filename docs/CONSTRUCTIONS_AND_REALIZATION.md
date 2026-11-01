@@ -1,5 +1,7 @@
 # 点态逼近、全局构造与精确 Einstein 实现
 
+*Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen, Yihao Yang · Qiushi Engine Team, Zhejiang University. [Authors and correspondence](../AUTHORS.md).*
+
 本文研究固定光滑流形上的 Einstein 方程、点态逼近及其退化。构造与精确实现同 [积分间隙](GAPS_AND_ENDPOINTS.md)、[曲率变分](CURVATURE_VARIATION.md)、[几乎 Kähler 刚性](GOLDBERG.md) 通过实际场和曲率方程相联系。
 
 主要来源是 [9月29日整合数学稿](../archive/originals/2026-09-29/27b3cef6-aeed-442c-9e66-fef1a757828e.tex)，以下以章节标题或 `sec:` 标签定位，并在相应章节链接独立分卷。
@@ -531,3 +533,4 @@ $$
 这里还须区分两个尺度不变量。体积塌缩构造若使 $P\to0$，只决定 $P_*=0$；它并不自动使 $\alpha=\inf\mathcal E$ 为零。例如 $\chi=\tau=0$ 时，长圆柱上界与 Chern–Weil 下界给 $\alpha=1$。由非零 Einstein 主体取得 $\alpha=0$，还需控制标量平均、方差和完整恢复积分，见[曲率变分](CURVATURE_VARIATION.md)。
 
 尚未解决的全局目标包括 $E_D$ 的负 Einstein 存在性、一般退化下的精确实现、目标流形的全度量最优曲率值以及闭负 Goldberg 问题。
+

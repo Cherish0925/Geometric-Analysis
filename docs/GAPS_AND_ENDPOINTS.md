@@ -1,5 +1,7 @@
 # 积分 Einstein 间隙、端点与双取向应用
 
+*Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen, Yihao Yang · Qiushi Engine Team, Zhejiang University. [Authors and correspondence](../AUTHORS.md).*
+
 整体交叉形式限制曲率积分；一个实际规范场还把曲率与同一度量下的协变导数联系起来。以下先建立共同的归一化和相容性估计，再推导临界间隙、线性强制、有限密度端点及双取向应用。N1、I40/I41、FD 等标签沿用证明原稿的编号。
 
 ## 1. 共同对象与实际输入
@@ -1292,3 +1294,4 @@ $$
 一般无密度端点尚需控制 §5 的中间模长集中，或构造满足完整闭流形方程的反例。多个实际类的配对提供另一种信息：若 $a_1,\ldots,a_m$ 在同一度量下具有实际供给，则交叉矩阵满足 $Q=G^+-G^-$，其中 $G^\pm$ 是正半定 Hodge Gram 矩阵。现有双取向定理使用其中一个混合配对；任意多场矩阵的统一锐利估计尚未建立。
 
 曲率最优值则还要把这些全度量下界与实际恢复构造匹配。严格低于标准手术费用的构造已表明首项 $4$ 在所列族上不最优；其精确极值与光滑取得性见[曲率变分](CURVATURE_VARIATION.md)。同一研究中的点态逼近、周期与精确实现见[构造与实现](CONSTRUCTIONS_AND_REALIZATION.md)。
+

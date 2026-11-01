@@ -1,5 +1,7 @@
 # 材料范围与版本说明
 
+*Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen, Yihao Yang · Qiushi Engine Team, Zhejiang University. [Authors and correspondence](../AUTHORS.md).*
+
 数学正文按间隙与端点、曲率变分、构造与实现、几乎 Kähler 几何组织。它综合早期原稿、后续资料包及服务器上的独立推导；相同命题合并，后续修正落实到当前陈述。研究的演变见[研究沿革](RESEARCH_HISTORY.md)，依赖关系见[研究结构](RESEARCH_MAP.md)。
 
 ## 内容范围
@@ -41,3 +43,4 @@
 - [可浏览的来源索引](../catalog/README.md)。
 
 日常维护以 Git 记录正文修改。目录更新使用 python3 tools/build_catalog.py；原始材料的内容核验工具保留供需要核对具体原件时使用。
+

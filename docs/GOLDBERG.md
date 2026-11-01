@@ -1,5 +1,7 @@
 # 负 Einstein 几乎 Kähler 四维几何
 
+*Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen, Yihao Yang · Qiushi Engine Team, Zhejiang University. [Authors and correspondence](../AUTHORS.md).*
+
 ## 问题与规范
 
 设 $(M^4,g,J,\Omega)$ 为闭、连通的几乎 Kähler 四维流形，
@@ -1024,3 +1026,4 @@ $$
 沿 Green 势方法，需由原始 Einstein–几乎 Kähler 系统进一步控制零点处的整体曲率配对；沿调和乘积方法，需限制负 Einstein 度量所实现的秩一核；构造方向则需得到闭的精确 Einstein 相容结构。这些是同一闭问题的不同表述与研究入口。
 
 零点、Green 势与完整 Weyl 方程的连续证明见[合并正文](../research/packages/Goldberg_Two_Conversations_Merged_20261015--5a0ab1f2/Goldberg_Two_Conversations_Merged_20261015.tex)。Armstrong 的零点存在性、Derdziński 的 Weyl 方程、Sekigawa 恒等式、第三 Gray 定理、di Scala–Nagy 唯一性及 Watson 的浸没刚性作为经典输入保留各自出处。
+

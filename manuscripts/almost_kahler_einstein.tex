@@ -1,0 +1,784 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,mathrsfs,microtype}
+\usepackage{xurl,hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\emergencystretch=1.5em
+\allowdisplaybreaks
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{inputtheorem}[theorem]{Inherited input}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{question}[theorem]{Question}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Rm}{\operatorname{Rm}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\Rea}{\operatorname{Re}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\dd}{\,dV_g}
+\newcommand{\avint}{\mathop{\int\!\!\!-}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\Hh}{\mathbb H}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\p}{\partial}
+\newcommand{\bpartial}{\bar\partial}
+\newcommand{\AK}{almost-K\"ahler}
+\newcommand{\KE}{K\"ahler--Einstein}
+\title{Almost-K\"ahler Einstein Four-Manifolds:\\Constructions and Rigidity}
+\author{\normalsize Shuxing Yang, Junyao Wu, Rui Zhao,\\[3pt]
+\normalsize Hongsheng Chen$^{*}$, Yihao Yang$^{*}$\\[9pt]
+\small College of Information Science and Electronic Engineering,\\
+\small Zhejiang University\\
+\small Qiushi Engine Team\\[8pt]
+\footnotesize $^{*}$Corresponding authors:\\
+\footnotesize Hongsheng Chen (\href{mailto:hansomchen@zju.edu.cn}{hansomchen@zju.edu.cn})\\
+\footnotesize Yihao Yang (\href{mailto:yangyihao@zju.edu.cn}{yangyihao@zju.edu.cn})}
+\date{\small Working manuscript, version 1.0\\1 November 2026}
+\hypersetup{pdftitle={Almost-Kahler Einstein Four-Manifolds: Constructions and Rigidity},pdfauthor={Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen, Yihao Yang},pdfsubject={Qiushi Engine Team, Zhejiang University; working manuscript version 1.0}}
+\hypersetup{pdfauthor={Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen, Yihao Yang},pdfsubject={Qiushi Engine Team, Zhejiang University; working manuscript version 1.0}}
+\hypersetup{linkcolor=black}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study the interaction between the Einstein equation, a compatible symplectic form, and the self-dual curvature operator in dimension four. An explicit complete noncompact strictly almost-K\"ahler metric with negative Einstein constant illustrates the distinction between local integrability and the closed problem. On closed manifolds, torsion zeros lead to a Green-potential criterion for integrability: a nonpositive potential of the determinant of the self-dual curvature block at one torsion zero forces the structure to be K\"ahler. Further formulations use canonical-class orthogonality, products of harmonic forms, the normalized Einstein action, and actual pseudoholomorphic canonical curves. We prove an energy-transfer statement for noncollapsed Einstein degeneration and describe the second-order obstruction to coupled almost-K\"ahler deformations of a negative K\"ahler--Einstein structure. The local Darboux system and its compatibility conditions are separated from these global arguments. The general closed negative Goldberg problem remains open; the results identify geometric conditions under which it has an affirmative answer and explain which degeneration mechanisms are not covered.
+\end{abstract}
+\tableofcontents
+
+\section{The geometric problem and curvature conventions}
+An almost-Hermitian four-manifold consists of a Riemannian metric $g$ and an orthogonal almost-complex structure $J$. Its fundamental form is
+\[
+ \Omega(X,Y)=g(JX,Y).
+\]
+The structure is \AK\ if $d\Omega=0$, and is K\"ahler if $\nabla\Omega=0$. We use the orientation determined by $\Omega\wedge\Omega$. Thus
+\begin{equation}\label{eq:normalization}
+ *\Omega=\Omega,\qquad |\Omega|^2=2,\qquad \Omega\wedge\Omega=2\,dV_g.
+\end{equation}
+A constant-length self-dual harmonic two-form satisfying \eqref{eq:normalization} conversely determines an \AK\ structure.
+
+Throughout the closed negative Einstein discussion,
+\begin{equation}\label{eq:einstein}
+ \Ric=-ag,\qquad a>0,\qquad s=-4a.
+\end{equation}
+The scalar Laplacian is $\Delta=-\operatorname{div}\nabla$, so that it is nonnegative. Norms of $W^\pm$ are Hilbert--Schmidt norms of endomorphisms of $\Lambda^\pm$. The self-dual curvature block is
+\[
+ \cR_+=W^++\frac{s}{12}\Id=W^+-\frac a3\Id.
+\]
+We write $V=\Vol_g(M)$, $\chi=\chi(M)$, $\tau=\tau(M)$, and $T_+=2\chi+3\tau$. The relevant Chern--Weil identities for an Einstein metric are
+\begin{align}
+ 8\pi^2\chi&=\int_M\left(|W^+|^2+|W^-|^2+\frac{s^2}{24}\right)\dd,\label{eq:gb}\\
+ 12\pi^2\tau&=\int_M\left(|W^+|^2-|W^-|^2\right)\dd,\label{eq:signature}\\
+ 4\pi^2T_+&=\int_M\left(2|W^+|^2+\frac{s^2}{24}\right)\dd.\label{eq:chern}
+\end{align}
+
+Set $q=|\nabla\Omega|^2$, $n=\Omega/\sqrt2$, and $Z=\{q=0\}$. Relative to $\Lambda^+=\R n\oplus n^\perp$, write
+\begin{equation}\label{eq:block}
+ W^+=\begin{pmatrix}t&v^*\\v&-t\Id/2+B\end{pmatrix},\qquad
+ \tr B=0,\qquad
+ t=\frac s6+\frac q4,\qquad
+ \eta=W^+\Omega-t\Omega=\sqrt2\,v.
+\end{equation}
+Here $n^\perp=\Lambda_J^-$, the real bundle of $J$-anti-invariant two-forms. The identity for $t$ follows by pairing the harmonic-form Weitzenb\"ock equation with $\Omega$.
+
+The closed Goldberg question asks whether every closed Einstein \AK\ manifold is K\"ahler. Sekigawa's theorem settles the nonnegative scalar-curvature case \cite{Sekigawa}. We address the negative four-dimensional case. A complete noncompact example is compatible with this question; conversely, local calculations alone cannot decide a theorem whose essential hypothesis is closedness.
+
+The manuscript collects the constructive and rigidity results of \cite{Repository}. Long local calculations are identified as inherited inputs with their original proofs. The statements below retain the hypotheses needed by each argument; in particular, an orbifold limit, a canonical current, and an Einstein deformation are introduced only where their existence has been established or explicitly assumed.
+
+\section{A complete strictly almost-K\"ahler negative Einstein metric}
+\subsection{The formula}
+Let $\sigma_1,\sigma_2,\sigma_3$ be a left-invariant coframe on $\mathrm{SL}(2,\R)$ satisfying
+\begin{equation}\label{eq:sl2}
+ d\sigma_1=-2\sigma_2\wedge\sigma_3,\qquad
+ d\sigma_2=2\sigma_3\wedge\sigma_1,\qquad
+ d\sigma_3=2\sigma_1\wedge\sigma_2.
+\end{equation}
+For $1/3<x<1$, put $D=1+3x^2$ and
+\begin{align*}
+ G&=\frac{4D}{(1-x^2)^2(9x^2-1)},\\
+ A_1&=\frac{4(3x-1)D}{3(1-x)(1+x)^2},&
+ A_2&=\frac{4(3x+1)D}{3(1-x)^2(1+x)},&
+ A_3&=\frac{64x^2}{(1-x^2)D},\\
+ X_1&=\frac{(1-x)^3(3x+1)}{16x^3},&
+ X_2&=\frac{(1+x)^3(3x-1)}{16x^3}.
+\end{align*}
+Define
+\begin{equation}\label{eq:modelmetric}
+ g=G\,dx^2+A_1\sigma_1^2+A_2\sigma_2^2+A_3\sigma_3^2.
+\end{equation}
+With $e^0=\sqrt G\,dx$, $e^i=\sqrt{A_i}\sigma_i$, let
+\[
+ \omega_i=e^0\wedge e^i+e^j\wedge e^k
+ \quad ((i,j,k)\text{ cyclic}),\qquad
+ \Omega=\sqrt{X_1}\,\omega_1+\sqrt{X_2}\,\omega_2.
+\]
+Since $X_1+X_2=1$, this form has norm $\sqrt2$.
+
+\begin{theorem}\label{thm:complete}
+The pair \eqref{eq:modelmetric}, $\Omega$ extends smoothly to the total space of
+\[
+ \mathrm{SL}(2,\R)\times_{\mathrm{SO}(2)}\R^2\longrightarrow\Hh^2,
+\]
+which is diffeomorphic to $\R^4$. The extended metric is complete and satisfies
+\[
+ \Ric=-3g,\qquad W^-=0,\qquad d\Omega=0,\qquad
+ |\nabla\Omega|^2=\frac{36(1-x^2)^3}{(1+3x^2)^3}>0.
+\]
+\end{theorem}
+\begin{proof}
+Here are the differential and extension calculations. Their full curvature expansion is recorded in \cite{CompleteSource}, together with an independent Cartan calculation.
+Let $dr=\sqrt G\,dx$ and $h_i=(\log\sqrt{A_i})'$. The structure equations take the form
+\[
+ de^i=h_i e^0\wedge e^i+2w_i e^j\wedge e^k.
+\]
+The signs of $w_i$ are determined by \eqref{eq:sl2}. Consequently,
+\[
+ d(f_i\omega_i)=\bigl(f_i'+(h_j+h_k-2w_i)f_i\bigr)e^0\wedge e^j\wedge e^k.
+\]
+Substitution of $f_1=\sqrt{X_1}$, $f_2=\sqrt{X_2}$, $f_3=0$ makes each coefficient zero. The Levi-Civita connection obtained from these equations has zero mixed curvature block, $\cR_-=-\Id$, and $\cR_+=\operatorname{diag}(r_1,r_2,r_3)$, where
+\begin{align*}
+ r_1&=-\frac{3(x-1)^2(21x^4+18x^3+12x^2-2x-1)}{D^3},\\
+ r_2&=-\frac{3(x+1)^2(21x^4-18x^3+12x^2+2x-1)}{D^3},\\
+ r_3&=\frac{9(x-1)^2(x+1)^2(5x^2-1)}{D^3}.
+\end{align*}
+Their sum is $-3$. These equalities give $\Ric=-3g$ and $W^-=0$. The same connection gives the displayed value of $q$.
+
+Choose $r=0$ at $x=1/3$. Taylor expansion yields
+\begin{align*}
+ x-\tfrac13&=\tfrac29r^2+O(r^4),& A_1&=r^2+O(r^4),\\
+ A_2=A_3+O(r^4)&=6+7r^2+O(r^4),& A_2-A_3&=\tfrac{10}{3}r^4+O(r^6),\\
+ X_2&=\tfrac83r^2+O(r^4),& q(0)&=\tfrac{32}{3}.
+\end{align*}
+Take the collapsing circle to have period $2\pi$. In a local normal coordinate $z=re^{i\psi}$, the normal metric has the smooth expression $|dz+iz\beta|^2$ to leading order. The horizontal frame has weight two under this circle; its anisotropic weight-four coefficient vanishes to order $r^4$. The mixed coefficients of $\Omega$ have the forms $zF(r^2)$ and $z^3H(r^2)$, with smooth $F,H$. These expressions give the smooth extension across the zero section.
+
+As $x\to1$,
+\[
+ G(x)\sim\frac1{2(1-x)^2},
+\]
+so the radial distance is infinite. On every bounded radial interval, the extended metric dominates $dr^2+c_R\pi^*g_{\Hh^2}$ for some $c_R>0$. A finite-length escaping curve therefore cannot have unbounded $r$ or escape in the complete hyperbolic base. The circle fibers and the normal disk over a bounded base set are compact. Thus every finite-length curve remains in a compact set, proving completeness.
+\end{proof}
+
+The example is nonhomogeneous: $|W^+|^2$ equals $2/3$ on the zero section and tends to $6$ at infinity. Moreover,
+\begin{equation}\label{eq:modeleta}
+ |\operatorname{pr}_{n^\perp}(W^+n)|^2
+ =\frac{9(1-x^2)^3(9x^2-1)}{(1+3x^2)^4}.
+\end{equation}
+Thus the compatible form is not a Weyl eigenform on the regular region. Pulling the pair back to the additive Lie group $(\R^4,+)$ gives a complete noninvariant, non-Ricci-flat strictly \AK\ Einstein structure, of the type asked about after Corollary 2.1 of Fino \cite{Fino}. This is a concrete affirmative example for that existence question. The ansatz of Armstrong \cite{ArmstrongAnsatz} treats related local geometry; equation \eqref{eq:modeleta} shows that this example lies outside its weakly star-Einstein subclass. No historical first-solution assertion is needed here. Its infinite volume and noncompactness distinguish it from the closed problem.
+
+\subsection{Two restrictions on symmetric completions}
+The following local classification records a complementary result in a more symmetric class.
+\begin{inputtheorem}[Invariant nut classification]\label{input:nut}
+Suppose a smooth four-dimensional \AK\ Einstein pair has $\Ric=-3g$, a smooth nut, regular three-sphere orbits, and a full $\mathrm{SU}(2)$ action preserving both $g$ and $\Omega$. In the chirality admitting a nonzero invariant self-dual form at the nut, the pair is locally complex hyperbolic and K\"ahler.
+\end{inputtheorem}
+The proof in \cite{Repository} uses the momentum constraint to diagonalize the invariant metric in a constant frame. If $a_i=t f_i(t^2)$ and
+\[
+ f_i(u)=1+(\tfrac16+d_i)u+\cdots,\qquad \sum_i d_i=0,
+\]
+the closed-form and unit-length equations force, up to permutation,
+\[
+ (d_1,d_2,d_3)=(\tfrac16,-\tfrac1{12},-\tfrac1{12}),\qquad
+ (X_1(0),X_2(0),X_3(0))=(1,0,0).
+\]
+The higher recurrence has eigenvalues $4(n+2)(n-1)$ and $2(n+2)(2n+1)$ for $n\ge2$, hence is unique. The resulting solution is
+\[
+ a_1=\frac{\sinh(\sqrt2t)}{\sqrt2},\qquad
+ a_2=a_3=\sqrt2\sinh(t/\sqrt2),\qquad \Omega=\pm\omega_1.
+\]
+The finite algebra is retained in \path{research/computations/bianchi_ix_nut.py}. The theorem concerns symmetry of the pair, not merely symmetry of its metric.
+
+A different obstruction concerns closing hyperbolic bolts. If a closed manifold is assembled from two-disk bundles over surfaces $\Sigma_i$ and product collars, additivity of Euler characteristic gives $\chi(M)=\sum_i\chi(\Sigma_i)$. When all bolts have genus greater than one, this is negative, contradicting \eqref{eq:gb}. An orbit space that is a circle and has no bolts gives $\chi=0$, which forces a closed Einstein metric to be flat. These topological observations rule out these particular completions of noncompact models.
+
+\section{Torsion zeros and their curvature constraints}
+Choose a local frame $\phi,J\phi$ for $\Lambda_J^-$, each of norm $\sqrt2$. The torsion is expressed by a real one-form $\vartheta$:
+\begin{equation}\label{eq:torsion}
+ \nabla\Omega=\vartheta\otimes\phi-J\vartheta\otimes J\phi,
+ \qquad q=4|\vartheta|^2,
+ \qquad J\vartheta(X)=-\vartheta(JX).
+\end{equation}
+Changing the unitary frame changes $\vartheta$ equivariantly; its zero set is intrinsic.
+
+\begin{inputtheorem}[The torsion-zero equations]\label{input:zeros}
+For an Einstein \AK\ four-manifold, at a point of $Z$ the real-linear map $L=(\nabla\vartheta)^\sharp$ has a unitary-coordinate expression
+\begin{equation}\label{eq:zeroL}
+ L(z)=cz+Q\bar z,\qquad
+ \tr(Q\bar Q)=-8|c|^2,\qquad
+ \det_{\R}L=9|c|^4+|\det_{\C}Q|^2\ge0.
+\end{equation}
+The bar on $Q$ denotes entrywise conjugation. A nontransverse zero has rank zero or two. At every torsion zero,
+\begin{equation}\label{eq:zerohessian}
+ |\nabla^2\Omega|^2=4|B|^2-6|\eta|^2.
+\end{equation}
+These are the local curvature and differentiated closedness equations proved in \cite{ZeroSource}.
+\end{inputtheorem}
+
+\begin{proposition}\label{prop:zeroexist}
+Every closed negative Einstein \AK\ four-manifold has a torsion zero. If all torsion zeros are transverse, their number is $5\chi+6\tau$, and each has index $+1$.
+\end{proposition}
+\begin{proof}
+The Nijenhuis tensor is a section of the complex rank-two bundle
+\[
+ \cN=T^{1,0}M\otimes\bar K,
+\]
+where $K$ is the canonical bundle. If $x_1,x_2$ are the Chern roots of $T^{1,0}M$, those of $\cN$ are $2x_1+x_2,x_1+2x_2$. Consequently,
+\[
+ c_2(\cN)[M]=2c_1^2+c_2=5\chi+6\tau.
+\]
+Using \eqref{eq:gb}--\eqref{eq:signature},
+\[
+ 5\chi+6\tau=\frac1{8\pi^2}\int_M
+ \left(9|W^+|^2+|W^-|^2+\frac{5s^2}{24}\right)\dd>0.
+\]
+A nowhere-zero section would give a trivial complex line subbundle and make the top Chern number zero. Thus $Z\ne\varnothing$, as in Armstrong's argument \cite{ArmstrongThesis}. At a transverse zero \eqref{eq:zeroL} makes the real determinant positive. The index formula gives the count.
+\end{proof}
+
+\begin{corollary}\label{cor:curvaturezero}
+At a torsion zero,
+\[
+ \lambda_{\min}(W^+)\le\frac s6,\qquad |W^+|^2\ge\frac{s^2}{24}.
+\]
+A closed negative Einstein metric with $\lambda_{\min}(W^+)>s/6$ everywhere admits no compatible \AK\ form in that orientation. In particular this holds when $W^+=0$.
+\end{corollary}
+\begin{proof}
+At a zero, $\langle W^+n,n\rangle=s/6$. The eigenvalue bound is the Rayleigh inequality. Since $W^+$ is trace free, the least possible squared norm of a symmetric matrix with this prescribed diagonal entry is $3(s/6)^2/2=s^2/24$.
+\end{proof}
+These pointwise bounds do not give a lower bound for the volume of the corresponding curvature region.
+
+\subsection{Zero curves and leading jets}
+The zero-set analysis in \cite{ZeroCurves} yields further necessary conditions. There is no compact boundaryless embedded component $C\subset Z$ with $\ker DN_J=TC$ everywhere. More generally, if $C$ is a closed $J$-holomorphic zero curve and rank-two points are dense, it is totally geodesic. The normal derivative of the torsion is a section
+\[
+ \xi\in\operatorname{Hom}_{\C}(\bar\nu_C,T^{1,0}C\otimes\bar K|_C)
+ \cong\bar K^2|_C,
+\]
+whose degree in the stated convention is $s\operatorname{Area}(C)/(4\pi)<0$. Thus it must vanish somewhere. The differentiated equations have the form
+\[
+ D^{1,0}\xi=r,\qquad D^{1,0}r=0,
+\]
+where $r$ is a normal derivative of transverse curvature. Their inhomogeneous first equation does not imply that one torsion zero propagates to all of $M$.
+
+If a torsion zero has finite order $m\ge2$, the first nonzero homogeneous term necessarily has, in unitary coordinates, the form
+\begin{equation}\label{eq:leadingjet}
+ f_m(z)=\kappa(\bar z_2)^m e_1.
+\end{equation}
+One obtains this by writing $f_m=z h(\bar z)+g(\bar z)$, with degrees $m-1,m$, and imposing the first differentiated curvature compatibility. Its distinct bidegrees force $h=0$. The coefficient matrices of $Dg$ span an isotropic subspace for the Hermitian form $\tr(\bar U V)$ of signature $(3,1)$, so this span has dimension at most one. Integrability gives a rank-one matrix $v\otimes\ell$ with $\ell\cdot\bar v=0$, which is \eqref{eq:leadingjet}. This is a necessary leading-jet classification, not an existence theorem for its nonlinear extension.
+
+\section{Darboux coordinates and the linear compatibility complex}
+Fix the standard symplectic form on $\C^2$. Symmetric tensors satisfying $HJ+JH=0$ describe infinitesimal compatible metrics. The nonlinear parameterization
+\begin{equation}\label{eq:expmetric}
+ G=e^H,\qquad H^T=H,\qquad HJ+JH=0
+\end{equation}
+ensures $G>0$, $\det G=1$, and $GJG=J$. It removes these algebraic constraints from the Einstein equations.
+
+For a nonzero real covector $\xi$, use the Ricci principal symbol
+\begin{equation}\label{eq:symbol}
+ S_\xi(H)=\frac12\left(\xi\otimes H\xi+H\xi\otimes\xi-|\xi|^2H\right).
+\end{equation}
+The sign of the Fourier convention has no effect on its kernel and image.
+\begin{proposition}\label{prop:symbol}
+On the six-dimensional space of anti-$J$ symmetric tensors,
+\begin{align*}
+ \ker S_\xi&=\R(\xi\otimes J\xi+J\xi\otimes\xi),\\
+ \operatorname{im}S_\xi&=\left\{K:K\xi-\tfrac12(\tr K)\xi=0,\quad
+ K(J\xi,J\xi)-\tfrac12|\xi|^2\tr K=0\right\}.
+\end{align*}
+Moreover,
+\begin{equation}\label{eq:symbolbound}
+ |S_\xi(H)|^2+\frac14|H(\xi,J\xi)|^2\ge\frac18|\xi|^4|H|^2.
+\end{equation}
+\end{proposition}
+\begin{proof}
+By unitary invariance and homogeneity take $\xi=e_1$, $Je_1=e_2$, $Je_3=e_4$. Then
+\[
+ H=\begin{pmatrix}a&b&c&d\\b&-a&d&-c\\c&d&e&f\\d&-c&f&-e\end{pmatrix},\qquad
+ S_{e_1}H=\frac12\begin{pmatrix}a&0&0&0\\0&a&-d&c\\0&-d&-e&-f\\0&c&-f&e\end{pmatrix}.
+\]
+The kernel is the $b$ direction, the five displayed image conditions are independent, and direct comparison of the squared norms gives \eqref{eq:symbolbound}. Setting $b=0$ gives an explicit right inverse on the image. The kernel is the principal Hamiltonian coordinate-change direction.
+\end{proof}
+
+For the polynomial prolongation, let $\mathcal P_n$ denote homogeneous real polynomials of degree $n$ in four variables and $\Delta_0=-\sum\p_i^2$. Define
+\begin{align*}
+ (L_nh)_{ij}&=\frac12(\p_k\p_i h_{kj}+\p_k\p_jh_{ki}+\Delta_0h_{ij}),\\
+ \mathscr B(E)_j&=\p_iE_{ij}-\tfrac12\p_j\tr E,\\
+ \mathscr P(E)&=J_{ia}J_{jb}\p_a\p_bE_{ij}+\tfrac12\Delta_0\tr E.
+\end{align*}
+\begin{inputtheorem}[Homogeneous polynomial exactness]\label{input:polynomial}
+For every $n\ge0$,
+\begin{equation}\label{eq:polyexact}
+ \operatorname{im}L_n=\ker(\mathscr B,\mathscr P),\qquad
+ \dim\operatorname{coker}L_n=4\binom{n+2}{3}+\binom{n+1}{3}.
+\end{equation}
+Negative-degree polynomial spaces and their binomial coefficients are zero. The exact calculation and polynomial lifts are recorded in \cite{Repository}, section ``Darboux representation and linear compatibility.''
+\end{inputtheorem}
+For clarity, the dimension calculation uses the torsion map on $\ker L_n$. In complex notation its image is
+\[
+ \{z h_0(\bar z)+g_0(\bar z):\deg h_0=n,\ \deg g_0=n+1\},
+\]
+of real dimension $6n+10$. For $h_0=w_1^n$, a lift is
+\[
+ \nu_{11}=-w_1^nw_2z_1-\frac n2w_1^{n-1}w_2^2z_2,\quad
+ \nu_{12}=-w_1^nw_2z_2,\quad \nu_{22}=0;
+\]
+the second summand is zero for $n=0$. Unitary transformations generate all $h_0$, and the polynomial Poincar\'e lemma generates $g_0$. The resulting kernel dimension is
+\[
+ \dim\ker L_n=\binom{n+7}{3}+(n+5)^2+2n-10.
+\]
+The Fischer adjoint of $(\mathscr B,\mathscr P)$ is multiplication by its symbol. Proposition \ref{prop:symbol} gives rank five at each nonzero real covector; hence this adjoint has zero polynomial kernel. The dimension count proves \eqref{eq:polyexact}.
+
+Even after Hamiltonian gauge is removed, the torsion-free part of the kernel has dimension $(n+1)(n+5)$. Its five dimensions at $n=0$ are genuine anti-self-dual curvature freedom. At each nonlinear order the previously chosen coefficients determine the source; \eqref{eq:polyexact} tests whether that source can be lifted. It neither proves that every nonlinear source passes the test nor gives convergence of an infinite formal series.
+
+\section{A determinant potential and integrability}
+Set
+\begin{equation}\label{eq:U}
+ A=-\cR_+,
+ \qquad U=\sigma_2(A)=\frac{a^2}{3}-\frac12|W^+|^2.
+\end{equation}
+The classical Einstein Weyl equation \cite{Derdzinski} is
+\begin{equation}\label{eq:weyl}
+ \nabla^*\nabla W^++\frac s2W^+-6(W^+)^2+2|W^+|^2\Id=0.
+\end{equation}
+\begin{lemma}\label{lem:scalarpotential}
+On an Einstein four-manifold satisfying \eqref{eq:einstein},
+\begin{equation}\label{eq:potential}
+ (\Delta+2a)U=|\nabla A|^2-18\det\cR_+.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Pair \eqref{eq:weyl} with $W^+$, use $\tr W^+=0$ and $\tr((W^+)^3)=3\det W^+$, and apply
+\[
+ \tfrac12\Delta|W^+|^2=\langle\nabla^*\nabla W^+,W^+\rangle-|\nabla W^+|^2.
+\]
+For a trace-free three-by-three matrix $W$,
+\[
+ \det(W-a\Id/3)=\det W+\frac a6|W|^2-\frac{a^3}{27}.
+\]
+Substitution in $\Delta U=-\tfrac12\Delta|W^+|^2$ gives \eqref{eq:potential}.
+\end{proof}
+On a closed connected manifold, $L_a=\Delta+2a$ has a strictly positive Green kernel $G_a$. Define
+\[
+ \Psi=L_a^{-1}(\det\cR_+),\qquad
+ \cD=L_a^{-1}(|\nabla A|^2)\ge0.
+\]
+Then $U=\cD-18\Psi$.
+
+\begin{theorem}[Green-potential rigidity]\label{thm:green}
+Let $(M,g,J,\Omega)$ be closed, connected, and \AK\ with $\Ric=-ag$, $a>0$. At every $p\in Z$,
+\begin{equation}\label{eq:zeroGreen}
+ 18\Psi(p)=\cD(p)+\frac18|\nabla^2\Omega(p)|^2+\frac54|\eta(p)|^2.
+\end{equation}
+If $\Psi(p)\le0$ at one torsion zero, then $\nabla\Omega=0$. In particular, the same conclusion holds under the metric condition $\det\cR_+\le0$ everywhere.
+\end{theorem}
+\begin{proof}
+At $p\in Z$, \eqref{eq:block} gives $t=-2a/3$, and hence
+\[
+ U(p)=-\tfrac12\bigl(|\eta(p)|^2+|B(p)|^2\bigr).
+\]
+Using \eqref{eq:zerohessian} gives
+\[
+ U(p)=-\tfrac18|\nabla^2\Omega(p)|^2-\tfrac54|\eta(p)|^2,
+\]
+which proves \eqref{eq:zeroGreen}. If its left side is nonpositive, every term on the right vanishes. Strict positivity of $G_a$ then forces $\nabla A\equiv0$. At $p$, $\eta=B=0$, so $|W^+|^2=2a^2/3=s^2/24$. Parallel curvature makes this equality global.
+
+The integrated almost-K\"ahler Einstein identity stated in \eqref{eq:sekidentity} below now has zero left side, hence $q\equiv0$. Equivalently $A=a,n\otimes n$ and $\Omega$ is parallel. For the final assertion, positivity preservation of $L_a^{-1}$ makes $\Psi\le0$, and Proposition \ref{prop:zeroexist} supplies a torsion zero.
+\end{proof}
+
+The proof is the combination of a scalar elliptic equation and the local zero identity, rather than a pointwise sign conclusion about all Einstein metrics. For a strictly \AK\ closed candidate it requires
+\[
+ \Psi(p)>0\quad(p\in Z),\qquad \det\cR_+>0\text{ on some open set}.
+\]
+Let $\Sigma=\{\lambda_1(W^+)=\lambda_2(W^+)\}$, where eigenvalues are ordered decreasingly. The local equations also give
+\[
+ Z\cap\Sigma=\{\nabla\Omega=0,\ \nabla^2\Omega=0\}.
+\]
+At such a point $\eta=0$, and \eqref{eq:zeroGreen} reduces to
+\[
+ 18\Psi(p)=\int_MG_a(p,y)|\nabla A(y)|^2\,dV_y.
+\]
+Thus even a degenerate zero measures the global variation of curvature through the Green kernel. The detailed original proof is \cite{GreenSource}.
+
+\section{Canonical orthogonality and harmonic products}
+\subsection{A global orthogonality relation}
+The first canonical Hermitian connection has real curvature form $\gamma$ with $[\gamma]=2\pi c_1(M,J)$. For an Einstein \AK\ surface its decomposition gives
+\begin{equation}\label{eq:canonicalbeta}
+ \beta=\gamma-\frac s4\Omega,\qquad d\beta=0,\qquad \beta^{J,-}=\eta.
+\end{equation}
+\begin{lemma}\label{lem:canonicalpair}
+If $\alpha$ is a closed real $J$-anti-invariant two-form on a closed almost-complex four-manifold, then $K\cdot[\alpha]=0$.
+\end{lemma}
+\begin{proof}
+If $\alpha$ is nowhere zero, it trivializes the complex line underlying $\Lambda_J^-$, so the real canonical class vanishes. Otherwise the canonical-divisor theorem of Bonthrone--Zhang \cite{BZ} represents $K$ by a $J$-holomorphic one-subvariety supported on the zero set of $\alpha$. Evaluation of $\alpha$ on this current is zero. The assertion is also immediate when $\alpha\equiv0$.
+\end{proof}
+\begin{proposition}\label{prop:orthogonality}
+For the closed Einstein \AK\ data above,
+\[
+ \int_M\langle\eta,\alpha\rangle\dd=0
+ \quad\text{for every closed real }\alpha\in\Gamma(\Lambda_J^-).
+\]
+If a smooth positive function $f$ satisfies $d(f\eta)=0$, then $J$ is integrable.
+\end{proposition}
+\begin{proof}
+Pointwise $\Omega\wedge\alpha=0$ and $\beta\wedge\alpha=\langle\eta,\alpha\rangle dV_g$. Thus \eqref{eq:canonicalbeta} and Lemma \ref{lem:canonicalpair} give the integral. Taking $\alpha=f\eta$ makes $\int f|\eta|^2=0$. Hence $\eta=0$. For an Einstein metric this is the third Gray curvature condition; the compact integrability theorem of Apostolov--Armstrong--Dr\u aghici \cite{AAD} gives $\nabla\Omega=0$.
+\end{proof}
+On $\{\eta\ne0\}$ write $d\eta=\vartheta_\eta\wedge\eta$. An integrating factor requires $d\log f=-\vartheta_\eta$. Thus closedness of $\vartheta_\eta$ is a local requirement, and its periods and extension across zeros are global requirements. The complete metric in Section 2 has $d\vartheta_\eta\ne0$ on an open set \cite{OrthogonalitySource}; such a factor is not an automatic consequence of the local Einstein equations.
+
+\subsection{A finite-dimensional formulation for a fixed metric}
+For a fixed closed oriented metric, choose an average-orthonormal basis $\psi_1,\ldots,\psi_m$ of $\mathcal H_g^+$, where $m=b_2^+(M)$. Put
+\begin{align*}
+ G_{ij}(x)&=\langle\psi_i(x),\psi_j(x)\rangle,& B_g(x)&=G(x)-I,\\
+ H_{ij}&=\avint_M\langle\nabla\psi_i,\nabla\psi_j\rangle\dd,&
+ \mathsf C_g(X)&=\avint_M\langle B_g(x),X\rangle B_g(x)\dd.
+\end{align*}
+\begin{proposition}[Harmonic product criterion]\label{prop:harmonic}
+Compatible \AK\ forms for $g$, modulo sign, correspond exactly to matrices
+\begin{equation}\label{eq:rankone}
+ X\in\ker\mathsf C_g,\qquad X\succeq0,\qquad \tr X=1,\qquad \rank X=1.
+\end{equation}
+Under this correspondence,
+\[
+ \avint_M|\nabla\Omega|^2\dd=2\tr(HX).
+\]
+\end{proposition}
+\begin{proof}
+Write $X=uu^T$, $|u|=1$, and set $\Omega=\sqrt2\sum u_i\psi_i$. It is closed and self-dual. Furthermore,
+\[
+ \langle\mathsf C_g(X),X\rangle=\avint_M\langle B_g(x),X\rangle^2\dd.
+\]
+Its vanishing is precisely the constant-length identity $|\Omega|^2=2$. Every compatible form is harmonic and has such an expansion. The derivative identity follows by bilinearity.
+\end{proof}
+The positivity and rank-one requirement in \eqref{eq:rankone} are essential: an arbitrary matrix in the linear kernel need not define a form. For a negative Einstein metric admitting a parallel self-dual form, the uniqueness theorem of Di Scala--Nagy \cite{DSN} makes every compatible form in that orientation parallel. The remaining fixed-metric question is whether the rank-one positive part of $\ker\mathsf C_g$ can meet directions with $\tr(HX)>0$.
+
+\subsection{Length defect on a negative K\"ahler--Einstein background}
+Let $(V,g,J,\omega)$ be a compact negative \KE\ surface or orbifold. Hodge theory gives
+\[
+ \mathcal H_g^+=\R\omega\oplus\Rea H^{2,0}(V),\qquad
+ |b\omega+\beta|^2=2b^2+|\beta|^2.
+\]
+A nonzero holomorphic canonical form of constant norm would trivialize the canonical orbifold line bundle. This contradicts $c_1(V)=[\rho/(2\pi)]\ne0$. Therefore $Q_0(\beta)=|\beta|^2-\avint|\beta|^2$ is nonzero whenever $0\ne\beta\in\Rea H^{2,0}(V)$. Compactness of the unit sphere of this finite-dimensional space proves
+\begin{equation}\label{eq:lengthcoercivity}
+ \|Q_0(\beta)\|_{L^2}\ge c_V\|\beta\|_{L^2}^2
+\end{equation}
+for some $c_V>0$. This is quadratic coercivity of the length defect. Its squared variance is quartic in $\beta$, whereas the derivative energy is quadratic; the two cannot be compared by a uniform linear bound near the K\"ahler direction. The constant here depends on the fixed background.
+
+\section{Einstein action, torsion energy, and connected components}
+Define
+\[
+ \widehat S(g)=V^{-1/2}\int_Ms\dd,\qquad
+ D_W(g)=\int_M\left(\frac{s^2}{24}-|W^+|^2\right)\dd.
+\]
+For an Einstein metric, \eqref{eq:chern} gives
+\begin{equation}\label{eq:action}
+ D_W=\frac{\widehat S^2}{16}-2\pi^2T_+.
+\end{equation}
+\begin{inputtheorem}[Integrated almost-K\"ahler Einstein identity]\label{input:sek}
+For a closed Einstein \AK\ four-manifold in the conventions above, the integrated curvature identity is
+\begin{equation}\label{eq:sekidentity}
+ D_W=\cT,\qquad
+ \cT=\int_M\left(|B|^2+\frac{3q^2}{32}\right)\dd\ge0.
+\end{equation}
+It is the Einstein specialization of the Sekigawa identities, with the block conventions \eqref{eq:block}; the derivation used here is retained in \cite{GlobalSource,Repository}. In particular $\cT=0$ if and only if $\Omega$ is parallel.
+\end{inputtheorem}
+Combining \eqref{eq:action} and \eqref{eq:sekidentity} yields
+\begin{equation}\label{eq:actiontorsion}
+ \widehat S^2=32\pi^2T_++16\cT.
+\end{equation}
+This compares topology with a genuine nonnegative torsion integral.
+
+\begin{proposition}\label{prop:actionconstant}
+The normalized Einstein action $\widehat S$ is locally constant on the moduli space of Einstein metrics modulo orientation-preserving diffeomorphisms and scale. It is constant on every connected component and assumes only finitely many values on each compact subset.
+\end{proposition}
+\begin{proof}
+Einstein metrics are critical points of $\widehat S$. Koiso's local deformation theorem gives a finite-dimensional real-analytic Kuranishi model in a slice for the diffeomorphism action \cite{Koiso,Besse}. In a sufficiently small neighborhood, points in the local analytic set can be joined to the base point by finitely many differentiable subanalytic arcs. Along each arc the derivative of $\widehat S$ vanishes, because every metric on it is critical. Hence the action is locally constant. It descends to the quotient because it is invariant under diffeomorphism and scale. A locally constant function is constant on connected components, and a finite subcover of a compact subset proves the final assertion. No integrability assumption on all infinitesimal Einstein deformations is used.
+\end{proof}
+
+\begin{corollary}\label{cor:component}
+If a connected Einstein component contains a negative \KE\ metric in a fixed orientation, every \AK\ structure carried by a metric in that component in the same orientation is K\"ahler.
+\end{corollary}
+\begin{proof}
+At the \KE\ metric, $|W^+|^2=s^2/24$ and $D_W=0$. Equations \eqref{eq:action} and Proposition \ref{prop:actionconstant} make $D_W=0$ throughout the component. Apply \eqref{eq:sekidentity}.
+\end{proof}
+For the opposite orientation, \eqref{eq:signature} gives instead $D_W^-=D_W^++12\pi^2\tau$. Thus the corresponding torsion integral is $12\pi^2\tau$. A negative signature excludes an oppositely oriented compatible form; zero signature forces it to be parallel. Positive signature does not yield a contradiction.
+
+\subsection{Opposite orientations on a K\"ahler background}
+If $I$ is K\"ahler and $J$ induces the opposite orientation, then $I,J$ commute. The symmetric involution $-IJ$ splits $TM=D_+\oplus D_-$ into orthogonal $I$-complex lines. Writing
+\[
+ \omega_I=\omega_++\omega_-,\qquad \Omega_J=\omega_+-\omega_-,
+\]
+closedness gives $d\omega_\pm=0$. Their kernels are integrable, with minimal complex leaves. Both foliations are totally geodesic exactly when $J$ is parallel. They are smooth complex distributions; holomorphicity of the subbundles is additional information.
+
+For $\Ric=Eg$, constant rescaling
+\[
+ g_{a,b}=a,g|_{D_+}+b,g|_{D_-},\qquad a,b>0,
+\]
+remains $I$-K\"ahler, has the same Ricci form, and has Ricci eigenvalues $E/a,E/b$. This is the relation with constant Ricci-eigenvalue geometry studied in \cite{ADM}. If $x=c_1(D_+^{1,0})$ and $y=c_1(D_-^{1,0})$, then $xy=\chi$ and $x^2+y^2=3\tau$; the cross pairing of the two canonical classes involves $x^2-y^2$, which is not determined by those two characteristic numbers alone.
+
+\section{Actual canonical curves and integrated inequalities}
+The first canonical curvature has, on an oriented unit $J$-complex plane $\Pi$, the formula
+\begin{equation}\label{eq:canonicalplane}
+ \gamma(\Pi)=\frac s4+|\vartheta_{\Pi^\perp}|^2.
+\end{equation}
+Thus $\beta=\gamma-s\Omega/4$ is closed and $J$-semipositive, and $\Omega+t\beta$ tames $J$ for $t\ge0$. Let $K=-c_1(M,J)$.
+
+\begin{proposition}\label{prop:canonicalcurrent}
+Suppose a $J$-holomorphic current $C_K$ represents $\operatorname{PD}(K)$. Then
+\begin{equation}\label{eq:canonicalinequality}
+ \cT-\int_M|v|^2\dd
+ =2\pi\int_{C_K}|\vartheta_{\Pi^\perp}|^2\,dA\ge0.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Write $Q_\vartheta=\int q\dd$. The same curvature identities that yield \eqref{eq:sekidentity} give
+\begin{equation}\label{eq:auxcanonical}
+ \frac{|s|}{16}Q_\vartheta=\cT+\int|v|^2\dd,\qquad
+ 2\pi c_1\cdot[\Omega]=\frac{sV}{2}+\frac{Q_\vartheta}{4}.
+\end{equation}
+Cohomology and $c_1^2=T_+$ therefore give
+\begin{align*}
+ 2\pi[\beta]\cdot K
+ &=-4\pi^2c_1^2+\frac{s^2V}{8}+\frac{sQ_\vartheta}{16}\\
+ &=\cT-\int|v|^2\dd.
+\end{align*}
+Evaluating \eqref{eq:canonicalplane} on the actual current proves the formula. Multiplicities are included in the current integral.
+\end{proof}
+Existence of the current is a substantive hypothesis. It is supplied in the appropriate $b_2^+>1$ or chamber setting by Taubes's theory, not by the cohomology class alone. The use of pseudoholomorphic curves in Einstein obstructions has a classical precedent in LeBrun \cite{LeBrunCurves}.
+
+If $K=K_0+\sum_{i=1}^r e_i$, $e_i\cdot e_j=-\delta_{ij}$, and $K_0\cdot e_i=0$, and if actual currents represent $K_0$ and the exceptional classes, the same pairing yields
+\begin{align}
+ \cT-\int|v|^2\dd&\ge4\pi^2r+\frac{\pi|s|}{2}\sum_i\operatorname{Area}(E_i),\label{eq:excT}\\
+ s^2V&\ge32\pi^2K_0^2+32\pi^2r+8\pi|s|\sum_i\operatorname{Area}(E_i).\label{eq:excaction}
+\end{align}
+For any actual $J$-holomorphic current $C$ with $c_1\cdot C=d>0$, \eqref{eq:canonicalplane} and $q=4|\vartheta|^2$ also give
+\[
+ \int_Cq\,dA\ge8\pi d+|s|\operatorname{Area}(C).
+\]
+These are constraints on the curvature of the same metric and the geometry of its actual curves.
+
+A separate topological consequence of \eqref{eq:sekidentity} is
+\begin{equation}\label{eq:chimintau}
+ 8\pi^2(\chi-3\tau)=\cT+3\int|W^-|^2\dd.
+\end{equation}
+If $b_2^-=0$ and $b_2^+\ge1$, then $\chi-3\tau=2-2b_1-2b_2^+\le0$. All terms in \eqref{eq:chimintau} vanish; the structure is K\"ahler. A closed strict candidate must therefore have $b_2^-\ge1$ and $\chi>3\tau$.
+
+\section{Noncollapsed degeneration and transfer of energy}
+Fix a closed oriented smooth four-manifold $M$. Consider Einstein metrics $g_j$ satisfying
+\begin{equation}\label{eq:noncollapse}
+ s_{g_j}=s_0<0,\qquad \Vol(M,g_j)\ge v_0>0,\qquad
+ \operatorname{diam}(M,g_j)\le D.
+\end{equation}
+The upper volume bound follows from the Ricci lower bound and diameter bound. Equation \eqref{eq:gb} supplies the curvature integral bound. The Einstein orbifold compactness theorem \cite{Anderson} gives a subsequence converging smoothly on the regular set of a compact Einstein orbifold $(V,g_\infty)$, with finitely many singular points; volumes converge.
+
+Write $m_+\ge0$ for the total lost $W^+$ energy, including every concentration scale and intervening neck. Then
+\begin{equation}\label{eq:DWlimit}
+ D_W(V)=\lim_jD_W(g_j)+m_+.
+\end{equation}
+Equivalently, if
+\[
+ T_+^{\rm curv}(V)=\frac1{4\pi^2}\int_V\left(2|W^+|^2+\frac{s_0^2}{24}\right)dV,
+\]
+then $T_+(M)=T_+^{\rm curv}(V)+m_+/(2\pi^2)$.
+
+\begin{theorem}[Almost-K\"ahler energy transfer]\label{thm:transfer}
+Assume \eqref{eq:noncollapse}, and suppose each $g_j$ has a compatible \AK\ form $\Omega_j$ inducing the fixed orientation. Then the limiting orbifold has a smooth compatible \AK\ form $\Omega_\infty$ and
+\begin{equation}\label{eq:nolossplus}
+ m_+=0,\qquad \cT(g_j,\Omega_j)\longrightarrow\cT(g_\infty,\Omega_\infty).
+\end{equation}
+Every Ricci-flat ALE curvature limit is anti-self-dual in this orientation and has a parallel compatible K\"ahler form.
+\end{theorem}
+\begin{proof}
+The harmonic forms $\Omega_j$ have constant norm. Elliptic estimates on each compact regular subset yield smooth convergence to a harmonic self-dual form of norm $\sqrt2$. Near an orbifold point, lift to a punctured ball. A cutoff at radius $\varepsilon$ has $\|d\chi_\varepsilon\|_{L^1}=O(\varepsilon^3)$; boundedness of the form removes the point from the weak first-order equations. Elliptic regularity then gives a smooth invariant form on the ball. Thus the limit is an orbifold \AK\ structure.
+
+The torsion density $|B|^2+3q^2/32$ is bounded by a constant times $|W^+|^2+s_0^2$, by \eqref{eq:block}. Let $m_{\cT}\ge0$ be its lost integral. The integrated identity \eqref{eq:sekidentity} also holds on the compact orbifold: it follows by invariant local charts and cutoff integration. Hence
+\[
+ \cT(V)+m_{\cT}=\lim_j\cT(g_j)=\lim_jD_W(g_j)=D_W(V)-m_+=\cT(V)-m_+.
+\]
+Nonnegativity forces both losses to vanish. At any blow-up scale the Einstein constant tends to zero. A nonzero $W^+$ curvature contribution would yield positive $m_+$, so every such ALE limit has $W^+=0$. The limiting compatible form satisfies the Ricci-flat harmonic-form equation $\nabla^*\nabla\Omega=0$ and has constant norm, hence is parallel.
+\end{proof}
+Anti-self-dual curvature can still concentrate. In particular, the theorem does not eliminate Ricci-flat ALE bubbles or prove compactness without collapse.
+
+\begin{corollary}\label{cor:orbcomponent}
+Suppose a connected Einstein component has a noncollapsed same-orientation \KE\ orbifold limit. Every compatible \AK\ structure on that component is K\"ahler.
+\end{corollary}
+\begin{proof}
+At the endpoint $D_W(V)=0$. The constant action on the component and \eqref{eq:DWlimit} give $D_W=-m_+\le0$. At any \AK\ metric $D_W=\cT\ge0$. Thus both vanish.
+\end{proof}
+A sequence of strict \AK\ Einstein structures with $\cT_j\to0$ leaves every compact subset of the smooth Einstein moduli space. Under \eqref{eq:noncollapse}, its limit is a \KE\ orbifold and must have a singular point. Different connected components may be involved; local finiteness of components at such an orbifold endpoint is a separate issue.
+
+For a general-type blowup $M=X\#k\overline{\CP}^{\,2}$, let $A=c_1^2(X)>0$. The classical Ricci integral bound \cite{LeBrunRicci}, when evaluated on an Einstein metric, gives
+\[
+ \widehat S^2\ge32\pi^2(A+k),\qquad D_W\ge4\pi^2k.
+\]
+Together with \eqref{eq:DWlimit} this excludes a same-orientation \KE\ orbifold main limit when $k>0$. It is a restriction on that degeneration, not a nonexistence theorem for every Einstein metric on the blowup.
+
+\section{Coupled deformations of a negative K\"ahler--Einstein pair}
+\subsection{The second-order length obstruction}
+Let $(M,g,J,\omega)$ be negative \KE\ with $\Ric=Eg$, $E<0$. Consider second-order expansions
+\begin{align*}
+ g^{-1}g_t&=I+tH_1+\tfrac12t^2H_2+O(t^3),\\
+ \omega_t&=\omega+t\beta_1+\tfrac12t^2\beta_2+O(t^3).
+\end{align*}
+Use a joint diffeomorphism gauge for the metric and form. Assume $H_1$ is an anti-$J$ Kodaira--Spencer direction and $\beta_1\in\Rea H^{2,0}$. The Einstein second-order normal form used here is
+\begin{equation}\label{eq:secondmetric}
+ H_2^+=H_1^2,
+\end{equation}
+where the superscript means the $J$-invariant symmetric part, not Hodge self-duality. This is the specific second-order input of Nagy \cite[Theorem 1.6]{Nagy}; its solvability hypotheses are required.
+
+Transporting the closed self-dual form produces a closed correction $\beta'$ with
+\[
+ (\beta')^-=-D P_g^-[H_1]\beta_1,\qquad \langle\omega,\beta'\rangle=0.
+\]
+Here $P_g^-$ is the anti-self-dual projection, and the second equality fixes the K\"ahler component. The general remaining second-order choice is $\beta_2=2\beta'+\gamma$, $\gamma\in\mathcal H_g^+$. Expanding the compatibility length with \eqref{eq:secondmetric} gives
+\begin{equation}\label{eq:secondlength}
+ |\beta_1|^2+\langle\omega,\gamma\rangle=0.
+\end{equation}
+The second term is constant, since $\gamma$ is self-dual harmonic on a K\"ahler surface. Consequently the mean-zero obstruction is precisely $Q_0(\beta_1)$.
+
+\begin{proposition}\label{prop:secondorder}
+Under the joint gauge, Einstein normal form, and closed-form transport assumptions above, a second-order compatible \AK\ deformation has $\beta_1=0$.
+\end{proposition}
+\begin{proof}
+Subtract the average from \eqref{eq:secondlength} to obtain $Q_0(\beta_1)=0$. Equation \eqref{eq:lengthcoercivity} gives $\beta_1=0$.
+\end{proof}
+The conclusion concerns the independent first-order non-K\"ahler harmonic component. It does not exclude all metric deformations, or all higher-order emergence of nonintegrability, without further nonlinear analysis.
+
+\subsection{Uniformity along controlled ALE degeneration}
+Uniform length coercivity requires control beyond ordinary integral nonconcentration. One sufficient matching setting is the following: the curvature limits are Ricci-flat K\"ahler ALE spaces with groups in $\mathrm{SU}(2)$; on each neck the difference from the flat cone satisfies
+\[
+ r^k|\nabla^ke_j|\le\delta_j w_j(r),\qquad
+ \int_{\mathrm{neck}}w_j(r)\frac{dr}{r}\le C,\qquad \delta_j\to0,
+\]
+for the derivatives needed in the harmonic transfer equation; and the boundary traces of the forms match the orbifold and ALE limits. In the $A_1$ cone the homogeneous closed self-dual degrees are
+\[
+ \{\ldots,-6,-4\}\ \cup\ \{0\}\ \cup\ \{2,4,\ldots\}.
+\]
+The zero mode is isolated. Integration of its perturbed equation changes it by at most $C\delta_j\int w_j(r)dr/r=o(1)$. Bounded harmonic coefficients on the complete Ricci-flat ALE limits are constant, while their $L^2$ cohomology is anti-self-dual. A blow-up argument at a maximum therefore yields
+\[
+ \|\psi\|_\infty\le C\|\psi\|_2,\qquad \mathcal H_{g_j}^+\longrightarrow\mathcal H_{g_\infty}^+.
+\]
+Under these matching assumptions the compactness proof of \eqref{eq:lengthcoercivity} is uniform. The original conditional formulation and transfer estimates are recorded in \cite{Repository}, section ``Coupled K\"ahler--Einstein deformations.''
+
+\subsection{The normal period and a cscK comparison}
+A useful comparison separates a positive normal eigenvalue from the anti-Hermitian deformation kernel. For a cscK surface with scalar curvature $4E$, let
+\[
+ \rho_0=\rho-E\omega.
+\]
+It is closed, primitive, anti-self-dual, and harmonic. Thus
+\begin{equation}\label{eq:ricperiod}
+ P(g):=\int|\Ric^\circ|^2\dd
+ =2\|\rho_0\|_2^2=-2(2\pi c_1-E[\omega])^2.
+\end{equation}
+For a vanishing class $\delta^2=-2$, $c_1\cdot\delta=0$, write $\zeta=\int_\delta\omega$. Then $\int_\delta\rho_0=-E\zeta$. If $\theta=\delta^{1,1}$, $\theta^2\to-2$, and the comparison classes take the normalized form
+\[
+ [\omega]=\lambda(2\pi c_1/E+\varepsilon\theta),
+\]
+the cohomological calculation gives
+\[
+ \frac{P(g)}{E^2\zeta^2}
+ =-\frac2{\theta^2}-\frac{E^2\varepsilon^2}{2\pi^2c_1^2}\longrightarrow1.
+\]
+The corresponding Hermitian transverse-traceless mode satisfies $\Delta_EH_\theta=-2EH_\theta$. Its linearized Einstein eigenvalue is $-E>0$, not a Kodaira--Spencer zero mode.
+
+A local Einstein exclusion theorem would additionally require a uniform inverse on the complement, comparison families spanning all local period directions, an error $o(|\zeta|)$ in the relevant weighted norms, and coverage of all reduced parameters. Under those hypotheses the normal obstruction is $E\zeta+o(|\zeta|)$; degree then forces $\zeta=0$, and the harmonic class $[\rho_0]$ vanishes. This describes a conditional completion of the local argument. The comparison identity \eqref{eq:ricperiod} alone supplies none of those uniform analytic hypotheses.
+
+\section{Low-energy symplectic modifications and normalization}
+The rigidity statements should be read together with actual non-K\"ahler constructions. The repository contains exact-collar low-energy metrics on an exceptional disk bundle for which
+\[
+ J_6(g)=\int|\Ric_g+6g|^2\,dV_g<8\pi^2.
+\]
+The initially transmitted closed self-dual form vanishes on the bolt. A compactly supported rotation of the orbit metric creates a nonzero exceptional period while preserving the outer collar. More precisely, if $H_*$ is the orbit metric matrix and $\chi$ is one near the bolt and zero at the collar, use
+\[
+ H_\varepsilon=R(\varepsilon\chi)H_*R(\varepsilon\chi)^T.
+\]
+Solving the closed self-dual transport equation from the outer K\"ahler form gives an exceptional period $p$ satisfying
+\[
+ p'(0)=-\pi\int\chi'(r)\Phi(r)\,dr>0,\qquad \Phi>0.
+\]
+Near the bolt the rotation is constant and extends smoothly; outside it is the identity. ODE uniqueness rules out a simultaneous zero on regular orbits, and the nonzero period removes the bolt zero. For sufficiently small $\varepsilon$ the form is symplectic and $J_6<8\pi^2$ persists. The complete construction and its source dependencies are in \cite{Repository}, section ``Symplectic closure of a low-cost block.''
+
+This gives a globally conformally \AK\ metric after insertion into the stated compact negative \KE\ backgrounds. It is not a construction of an Einstein metric. It also illustrates a significant normalization effect. Write
+\[
+ f_p=\frac{|\Omega_p|_{g_p}}{\sqrt2},\qquad
+ \widehat g_p=f_pg_p=v_p^2g_p,\qquad v_p=\sqrt{f_p}.
+\]
+If the normal bolt distance is $r$ and its area is $\pi b^2$, the local expansion is
+\[
+ f_p^2=a_0^2p^2+\kappa^2r^2+O(p^2r^2+r^4),\qquad a_0=(\pi b^2)^{-1}.
+\]
+With $D=\operatorname{div}\nabla=-\Delta$,
+\[
+ \frac{Dv_p}{v_p}=
+ \frac{\kappa^2(4a_0^2p^2+\kappa^2r^2)}{4(a_0^2p^2+\kappa^2r^2)^2}+O(1).
+\]
+The scalar conformal formula and $dV=2\pi^2b^2r\,dr+O(r^3)dr$ yield
+\[
+ \int s_{\widehat g_p}^2dV_{\widehat g_p}\sim\frac{C_E}{p^2},\qquad
+ C_E=36(2\pi^2b^2)\frac{7\kappa^2}{32a_0^2}.
+\]
+By conformal invariance of the Weyl integral,
+\[
+ P(\widehat g_p)-P(g_p)=\frac1{12}
+ \left(\int s_{\widehat g_p}^2dV_{\widehat g_p}-\int s_{g_p}^2dV_{g_p}\right)
+ \sim\frac{C_E}{12p^2}.
+\]
+Thus the smooth low-energy metrics and their constant-length \AK\ representatives have very different curvature energies as the exceptional period tends to zero. Conformal availability of a symplectic structure does not preserve an Einstein defect estimate.
+
+\section{The remaining closed problem}
+The preceding results impose simultaneous restrictions on a closed strict negative Einstein \AK\ structure: it has torsion zeros; the determinant potential is positive at every such zero; the action defect $D_W=\cT$ is positive; it is not in a same-orientation Einstein component containing a \KE\ metric or a noncollapsed \KE\ orbifold endpoint; and any available canonical currents satisfy \eqref{eq:canonicalinequality}--\eqref{eq:excaction}. None of these restrictions is, by itself, a contradiction.
+
+The differential obstruction still involves the transverse Weyl block and its coupling to the moving \AK\ line. Write $\nabla=D+C$ on $\R n\oplus n^\perp$, with
+\[
+ C_i=\begin{pmatrix}0&-p_i^T\\p_i&0\end{pmatrix},\qquad
+ \sum_i p_ip_i^T=\frac q4\Id,\qquad D^*p=2v.
+\]
+The projected Einstein Weyl equation is
+\begin{equation}\label{eq:transverse}
+ D^*DB+\left(\frac{3s}{2}+2q\right)B
+ =2\sum_i[p_i(D_iv)^T+(D_iv)p_i^T]_0+2(vv^T)_0.
+\end{equation}
+After integration by parts it gives
+\begin{equation}\label{eq:integratedB}
+ \int_M\left(|DB|^2+\left(\frac{3s}{2}+2q\right)|B|^2
+ +4\sum_i\langle(D_iB)p_i,v\rangle-10\langle Bv,v\rangle\right)\dd=0.
+\end{equation}
+These equations are derived in \cite{GlobalSource}. Because $s<0$, the zeroth-order coefficient is negative near torsion zeros. Neither discarding the mixed terms nor estimating them independently creates a positive identity. This is consistent with the complete noncompact example and with the permitted leading jets.
+
+\begin{question}[Closed negative Goldberg problem in dimension four]
+Does every closed connected \AK\ four-manifold with $\Ric=-ag$, $a>0$, satisfy $\nabla\Omega=0$?
+\end{question}
+A proof must impose a global restriction not already supplied by the local models; a counterexample must satisfy closedness as well as the full coupled differential equations. The current results settle the determinant-potential case, the stated curvature and canonical-orthogonality cases, and the same-orientation Einstein-component cases. They also supply an explicit complete strict example, exact linear compatibility conditions, and energy identities that remain valid under the specified noncollapsed degeneration. They do not settle the unrestricted closed question.
+
+\begin{thebibliography}{99}
+\bibitem{Sekigawa} K.~Sekigawa, On some compact Einstein almost K\"ahler manifolds, \emph{J. Math. Soc. Japan} \textbf{39} (1987), 677--684.
+\bibitem{Derdzinski} A.~Derdzi\'nski, Self-dual K\"ahler manifolds and Einstein manifolds of dimension four, \emph{Compositio Math.} \textbf{49} (1983), 405--433. \url{https://archive.numdam.org/item/CM_1983__49_3_405_0/}.
+\bibitem{ArmstrongThesis} J.~Armstrong, \emph{Almost-K\"ahler Geometry}, D.Phil. thesis, University of Oxford, 1998, Theorem 2.2.4. \url{https://johnarmstrongmaths.com/publications/resources/thesis.pdf}.
+\bibitem{ArmstrongAnsatz} J.~Armstrong, An ansatz for almost-K\"ahler, Einstein 4-manifolds, \emph{J. Reine Angew. Math.} \textbf{542} (2002), 53--84. \url{https://doi.org/10.1515/crll.2002.009}.
+\bibitem{Fino} A.~Fino, Almost K\"ahler 4-dimensional Lie groups with $J$-invariant Ricci tensor, \emph{Differential Geom. Appl.} \textbf{23} (2005), 26--37. \url{https://doi.org/10.1016/j.difgeo.2005.03.003}.
+\bibitem{AAD} V.~Apostolov, J.~Armstrong and T.~Dr\u aghici, Local models and integrability of certain almost K\"ahler four-manifolds, \emph{Math. Ann.} \textbf{323} (2002), 633--666. \url{https://arxiv.org/abs/math/0109098}.
+\bibitem{DSN} A.~J.~Di Scala and P.-A.~Nagy, On the uniqueness of almost-K\"ahler structures, \emph{C. R. Math. Acad. Sci. Paris} \textbf{348} (2010), 423--425. \url{https://doi.org/10.1016/j.crma.2010.01.005}.
+\bibitem{BZ} L.~Bonthrone and W.~Zhang, $J$-holomorphic curves from closed $J$-anti-invariant forms, arXiv:1808.09356, Theorem 1.1. \url{https://arxiv.org/abs/1808.09356}.
+\bibitem{LeBrunCurves} C.~LeBrun, Einstein metrics, symplectic minimality, and pseudo-holomorphic curves, arXiv:math/0409290 (2004). \url{https://arxiv.org/abs/math/0409290}.
+\bibitem{LeBrunRicci} C.~LeBrun, Ricci curvature, minimal volumes, and Seiberg--Witten theory, \emph{Invent. Math.} \textbf{145} (2001), 279--316. \url{https://arxiv.org/abs/math/0003068}.
+\bibitem{ADM} V.~Apostolov, T.~Dr\u aghici and A.~Moroianu, A splitting theorem for K\"ahler manifolds whose Ricci tensors have constant eigenvalues, \emph{Internat. J. Math.} \textbf{12} (2001), 769--789. \url{https://arxiv.org/abs/math/0007122}.
+\bibitem{Koiso} N.~Koiso, Einstein metrics and complex structures, \emph{Invent. Math.} \textbf{73} (1983), 71--106.
+\bibitem{Besse} A.~L.~Besse, \emph{Einstein Manifolds}, Springer, 1987, Section 12.G.
+\bibitem{Anderson} M.~T.~Anderson, Ricci curvature bounds and Einstein metrics on compact manifolds, \emph{J. Amer. Math. Soc.} \textbf{2} (1989), 455--490.
+\bibitem{Nagy} P.-A.~Nagy, Einstein deformations of K\"ahler Einstein metrics, arXiv:2603.09028 (2026), Theorem 1.6. \url{https://arxiv.org/abs/2603.09028}.
+\bibitem{Repository} S.~Yang, J.~Wu, R.~Zhao, H.~Chen and Y.~Yang, \emph{Geometric Analysis}, Qiushi Engine Team research repository, current mathematical chapter \path{docs/GOLDBERG.md}, version consulted 1 November 2026. This chapter contains the current polynomial exactness, action, canonical-current, noncollapse, and coupled-deformation formulations and their source links.
+\bibitem{CompleteSource} Qiushi Engine Team, \emph{A complete negative Einstein strictly almost-K\"ahler four-manifold: verification and a connection to Fino's existence question}, 8 October 2026. \path{archive/originals/2026-10-08/Q4_Complete_Example_and_Fino_Question.tex}. Cartan calculation: \path{archive/originals/2026-10-08/Q4_independent_cartan.py}.
+\bibitem{ZeroSource} Qiushi Engine Team, \emph{Torsion-zero structure}, 9 October 2026. \path{archive/originals/2026-10-09/Q4_Torsion_Zero_Structure.tex}.
+\bibitem{ZeroCurves} Qiushi Engine Team, \emph{Goldberg torsion zeros and the Weyl equation}, 15 October 2026. \path{archive/originals/2026-10-15/Goldberg_Torsion_Zeros_and_Weyl_Equation_20261015.tex}.
+\bibitem{GreenSource} Qiushi Engine Team, \emph{Green-potential rigidity}, 14 October 2026. \path{archive/originals/2026-10-14/Q4_Green_Potential_Rigidity.tex}. Determinant-sign precursor: \path{archive/originals/2026-10-13/Q4_Determinant_Sign_Rigidity.tex}.
+\bibitem{OrthogonalitySource} Qiushi Engine Team, \emph{Canonical orthogonality}, 12 October 2026. \path{archive/originals/2026-10-12/Q4_Canonical_Orthogonality.tex}. Harmonic products: \path{archive/originals/2026-10-13/Q4_Harmonic_Product_Reduction.tex}.
+\bibitem{GlobalSource} Qiushi Engine Team, \emph{Global connections in the Goldberg problem}, 15 October 2026. \path{archive/originals/2026-10-15/Goldberg_Global_Connections_20261015.tex}. Continuous merged proof: \path{research/packages/Goldberg_Two_Conversations_Merged_20261015--5a0ab1f2/Goldberg_Two_Conversations_Merged_20261015.tex}.
+\end{thebibliography}
+\end{document}

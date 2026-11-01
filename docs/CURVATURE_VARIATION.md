@@ -1,5 +1,7 @@
 # 曲率极值、几何构造与退化
 
+*Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen, Yihao Yang · Qiushi Engine Team, Zhejiang University. [Authors and correspondence](../AUTHORS.md).*
+
 无迹 Ricci 能量研究一个光滑流形能否在积分意义下逼近 Einstein 方程。全局下界限制所有竞争度量；插入和恢复构造给出可实现的上界；取得性则要求理解极小化序列的集中、塌缩和光滑极限。以下统一这些问题的泛函、构造和变分关系，并分别处理光滑流形、固定轨形及完备 Einstein 域。
 
 ## 1. 泛函与共形归约
@@ -1598,3 +1600,4 @@ $$
 | 有限体积 Einstein 域 | 非负补域电荷、$9k+8\sum q_j\le3A$；固定基底与双轴端的限制 | 一般序列的结构提取及未排除补域的几何实现 |
 
 不存在精确 Einstein 度量、$P_*>0$、$\alpha>0$ 和极小值能否光滑取得是不同断言。Ricci-flat 核心可有非零二阶拓扑而不支付 $P$；塌缩也可使下确界不取得。因此，构造越过标准局部费用以后，决定全局最优值的关键在于实际竞争几何如何同时实现主体、核心、边界配对与规范场，而不在于继续把标准核心费用独立相加。
+

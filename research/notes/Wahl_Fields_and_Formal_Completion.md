@@ -1,5 +1,7 @@
 # Wahl 退化中的实际规范场与形式延拓
 
+*Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen, Yihao Yang · Qiushi Engine Team, Zhejiang University. [Authors and correspondence](../../AUTHORS.md).*
+
 本节研究光滑四流形上的实际 Seiberg–Witten 解在有理球收缩中的极限，以及奇点处的等变字符能够强迫什么。结论分为场与能量的转移、局部指标、强迫零点和形式延拓。最后的形式结论针对给定度量上的辅助场方程。
 
 ## 1. 几何、规范与供给条件
@@ -227,3 +229,4 @@ $$
 - I. Şuvaina, [*ALE Ricci-flat Kähler metrics and deformations of quotient surface singularities*](https://arxiv.org/abs/1102.2672)：有理平滑的 Ricci-flat Kähler ALE 模型及有限商结构。
 - H. Park, J. Park and D. Shin, [*Smoothly embedded rational homology balls*](https://arxiv.org/abs/1508.03724)：指定有理球嵌入、相对标记及复模型。
 - 本节的实际类供给、归一化曲率估计及其共形量词见[间隙与端点](../../docs/GAPS_AND_ENDPOINTS.md)；曲率积分在解消中的手性变化及全局极值见[曲率变分](../../docs/CURVATURE_VARIATION.md)。
+

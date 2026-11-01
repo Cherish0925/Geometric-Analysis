@@ -1,0 +1,721 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,esint}
+\usepackage{microtype,booktabs,longtable,array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\setlist{itemsep=2pt,topsep=4pt}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\DeclareMathOperator{\Ric}{Ric}
+\DeclareMathOperator{\Rm}{Rm}
+\DeclareMathOperator{\Vol}{Vol}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\sys}{sys}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Mod}{Mod}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\ind}{ind}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\HH}{\mathbb H}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\avint}{\mathop{\fint}}
+\newcommand{\uloc}{\mathrm{uloc}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\dd}{\,d\mu_g}
+\newcommand{\Riczero}{\Ric^{\circ}}
+\newcommand{\Ecal}{\mathcal E}
+\newcommand{\repo}[2]{\href{https://github.com/Cherish0925/Geometric-Analysis/blob/main/#1}{#2}}
+\title{Approximate Einstein Metrics and Geometric Realization in Dimension Four}
+\author{\normalsize Shuxing Yang, Junyao Wu, Rui Zhao,\\[3pt]
+\normalsize Hongsheng Chen$^{*}$, Yihao Yang$^{*}$\\[9pt]
+\small College of Information Science and Electronic Engineering,\\
+\small Zhejiang University\\
+\small Qiushi Engine Team\\[8pt]
+\footnotesize $^{*}$Corresponding authors:\\
+\footnotesize Hongsheng Chen (\href{mailto:hansomchen@zju.edu.cn}{hansomchen@zju.edu.cn})\\
+\footnotesize Yihao Yang (\href{mailto:yangyihao@zju.edu.cn}{yangyihao@zju.edu.cn})}
+\date{\small Working manuscript, version 1.0\\1 November 2026}
+\hypersetup{pdftitle={Approximate Einstein Metrics and Geometric Realization in Dimension Four},pdfauthor={Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen, Yihao Yang},pdfsubject={Qiushi Engine Team, Zhejiang University; working manuscript version 1.0}}
+\hypersetup{pdfauthor={Shuxing Yang, Junyao Wu, Rui Zhao, Hongsheng Chen, Yihao Yang},pdfsubject={Qiushi Engine Team, Zhejiang University; working manuscript version 1.0}}
+\hypersetup{linkcolor=black}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study the distinction between small Einstein residual, perturbative repair, and the existence of an Einstein metric on a prescribed smooth four-manifold. Fixed-resolution and surface-bundle constructions exhibit pointwise approximation with geometric degeneration. Slow Teichm\"uller modes identify a quantitative obstruction to uniform repair, while a full-kernel theorem on cyclic covers gives the precise quadratic inverse loss and a corresponding shrinking repair neighbourhood. Two complementary realization mechanisms retain global information: positive coercivity combined with controlled ball-volume growth yields a uniformly local inverse without a diameter bound, and an accumulated conformal variation along closed base curves detects finite surface-bundle monodromy and produces an exact bidisk metric. We also describe relative connector identities, scale-dependent exclusion of zeros of harmonic forms, and the role of marked fillings in passage from orbifold limits to smooth Einstein metrics. The large gluing and compactness inputs are stated with their hypotheses and linked to their complete proofs; the normalization, coercivity, monodromy, and local-to-global reductions are proved here. These results distinguish approximation and existence without identifying the disappearance of an integral obstruction with solvability of the Einstein equation.
+\end{abstract}
+\tableofcontents
+
+\section{Normalization, approximation, and existence}
+Let $M$ be a closed connected smooth manifold. We distinguish three questions: whether a prescribed metric can be corrected to an Einstein metric; whether a sequence of metrics has vanishing Einstein residual; and whether the underlying smooth manifold admits any Einstein metric. The last question imposes neither proximity to a prescribed metric nor a prescribed Einstein constant.
+
+For $\sigma\in\{-1,1\}$ define
+\begin{equation}\label{eq:delta}
+ \delta_\sigma(g)=\|g^{-1}\Ric_g-\sigma I\|_{L^\infty,\op}.
+\end{equation}
+In dimension four put
+\begin{equation}\label{eq:energies}
+ V(g)=\Vol_g(M),\quad P(g)=\int_M|\Riczero_g|^2\dd,
+ \quad R(g)=\int_M|\Ric_g|^2\dd,
+ \quad S(g)=\int_Ms_g^2\dd,
+\end{equation}
+where $\Riczero=\Ric-sg/4$. The normalized integral defect is
+\begin{equation}\label{eq:integral-defect}
+ \Ecal(g)=\inf_{\lambda\ne0}
+ \frac{\int_M|\Ric_g-\lambda g|^2\dd}{\lambda^2 V(g)}.
+\end{equation}
+All tensor norms in these definitions are taken using $g$. For Weyl curvature we use the Hilbert--Schmidt norm as an endomorphism of $\Lambda^\pm$.
+
+\begin{proposition}[Scaling reduction]\label{prop:normalization}
+Fix $n$. Let $Q_n$ assert that some real numbers $a_n<b_n$, depending only on $n$, have the following property: every closed $n$-manifold carrying a metric with $a_ng\le\Ric_g\le b_ng$ carries an Einstein metric. Let $P_n^\sigma$ assert the analogous existence conclusion whenever $\delta_\sigma(g)<\varepsilon_n^\sigma$, for a positive dimension-dependent constant. Then
+\[
+ Q_n\quad\Longleftrightarrow\quad P_n^+\ \text{or}\ P_n^-.
+\]
+In dimension four,
+\begin{equation}\label{eq:point-to-integral}
+ \Ecal(g)\le\avint_M|\Ric_g-\sigma g|^2\dd
+                \le4\delta_\sigma(g)^2.
+\end{equation}
+\end{proposition}
+\begin{proof}
+If $P_n^\sigma$ holds, choose a closed interval strictly inside $(\sigma-\varepsilon_n^\sigma,\sigma+\varepsilon_n^\sigma)$ to obtain $Q_n$. Conversely, choose a nonzero $c\in(a_n,b_n)$ and set $\sigma=\operatorname{sign}c$. Since $\Ric_{tg}=\Ric_g$ as a covariant tensor, the eigenvalues of $(tg)^{-1}\Ric_{tg}$ equal $t^{-1}$ times those of $g^{-1}\Ric_g$. With $t=|c|^{-1}$, eigenvalues sufficiently close to $\sigma$ are carried into $(a_n,b_n)$. Apply $Q_n$ to $tg$. The existence conclusion concerns the same smooth manifold and does not constrain the sign of the output Einstein constant. The first inequality in \eqref{eq:point-to-integral} uses $\lambda=\sigma$; the second sums the squares of four eigenvalue errors.
+\end{proof}
+Thus a counterexample to one normalized sign branch is not by itself a counterexample to $Q_n$. It must also exclude every Einstein metric on each approximating smooth manifold, rather than only metrics close to the displayed approximation.
+
+If $R(g)>0$, completing the square in $\lambda^{-1}$ gives
+\begin{equation}\label{eq:E-formula}
+ \Ecal(g)=4-\frac{\bigl(\int_Ms_g\dd\bigr)^2}{V(g)R(g)}.
+\end{equation}
+When the scalar integral is zero, the infimum is approached as $|\lambda|\to\infty$. If $g$ is Ricci-flat, the definition gives $\Ecal(g)=4$. Accordingly, \eqref{eq:integral-defect} is not a defect vanishing at Ricci-flat metrics. In contrast, $P$ vanishes at every Einstein metric. These different zero sets must be retained when transferring conclusions between variational problems.
+
+The inequalities \eqref{eq:point-to-integral} pass from a pointwise approximation to an integral approximation. They have no converse without additional hypotheses: an integral residual can concentrate on sets of small volume. Likewise, scale invariance of $P$ does not identify $\inf P$ with $\inf\Ecal$.
+
+\section{A strict topological boundary for Ricci pinching}
+For a closed oriented four-manifold, Chern--Weil theory gives
+\begin{equation}\label{eq:CW}
+ 4\pi^2(2\chi\pm3\tau)
+ =\int_M\left(2|W^\pm|^2+\frac{s^2}{24}
+                                      -\frac{|\Riczero|^2}{2}\right)\dd.
+\end{equation}
+The following endpoint statement uses the correlation among all four Ricci eigenvalues.
+
+\begin{proposition}[Strict ratio-three inequality]\label{prop:pinching}
+Suppose $\sigma\Ric_g$ is positive definite and
+\[
+ \lambda_{\max}(\sigma g^{-1}\Ric_g)
+       \le3\lambda_{\min}(\sigma g^{-1}\Ric_g)
+\]
+at every point. Then $2\chi(M)>3|\tau(M)|$. In particular this holds if $\delta_\sigma(g)\le1/2$.
+\end{proposition}
+\begin{proof}
+Write $r_i>0$ for the eigenvalues of $\sigma g^{-1}\Ric$, and let $a=\min r_i$, $\mathsf S=\sum r_i$, $\mathsf Q=\sum r_i^2$. The inequality $(r_i-a)(r_i-3a)\le0$ yields
+\[
+ \mathsf Q\le4a\mathsf S-12a^2,\qquad
+ F:=\frac{s^2}{24}-\frac{|\Riczero|^2}{2}
+ =\frac{\mathsf S^2-3\mathsf Q}{6}
+ \ge\frac{(\mathsf S-6a)^2}{6}\ge0.
+\]
+Equality holds precisely for a permutation of $(3a,a,a,a)$. Equation \eqref{eq:CW} first gives the weak topological inequality.
+
+If equality held, $F$ and one Weyl half would vanish identically. The simple Ricci eigenvalue defines a smooth real line bundle. On its orientation cover choose a unit section $V$, with dual one-form $\theta$. The cover has a nowhere-zero vector field, so its Euler characteristic, and hence $\chi(M)$, is zero. Equality then forces $\tau(M)=0$, and \eqref{eq:CW} makes the other Weyl half zero as well. On the cover,
+\[
+ \Ric=\sigma a(g+2\theta\otimes\theta),\quad s=6\sigma a,
+ \quad \mathsf P=\tfrac12(\Ric-sg/6)=\sigma a\theta\otimes\theta.
+\]
+Since $W=0$, the Schouten tensor $\mathsf P$ is Codazzi. For $X,Y\perp V$, comparison of $(\nabla_X\mathsf P)(V,Y)$ with $(\nabla_V\mathsf P)(X,Y)$ gives $\nabla_XV=0$. Writing $B=\nabla_VV$, we obtain
+\[
+ \nabla V=\theta\otimes B,\qquad
+ d\theta=\theta\wedge B^\flat,\qquad
+ d^*\theta=0,\qquad |d\theta|^2=|\nabla\theta|^2.
+\]
+The integrated Bochner formula implies $\int\Ric(V,V)=0$, contrary to $\Ric(V,V)=3\sigma a$, which has a fixed nonzero sign. Finally $\delta_\sigma\le1/2$ places every $r_i$ in $[1/2,3/2]$.
+\end{proof}
+For comparison of curvature energies, the full curvature operator and the four-index tensor satisfy $|\Rm_{(0,4)}|^2=4|\Rm_\op|^2$. At an Einstein metric,
+\[
+ \int|\Rm_\op|^2=8\pi^2\chi(M),\qquad
+ \int|\Rm_{(0,4)}|^2=32\pi^2\chi(M).
+\]
+The normalization is consequential in gluing and in comparison of variational infima.
+
+\section{Approximation on fixed smooth manifolds}
+\subsection{Marked resolutions of Einstein orbifolds}
+Fix a closed Einstein four-orbifold $(M_0,g_0)$ with $\Ric_{g_0}=\sigma g_0$ and finitely many $A_1$ singularities. At each singular point fix equivariant coordinates, an orientation of an Eguchi--Hanson filling, and a smooth boundary marking. The resolution is then a specified smooth manifold $M$, rather than an unspecified member of a diffeomorphism class of fillings.
+
+We use the fixed-resolution construction of \cite{source-integrated,source-construction}: it supplies smooth metrics $g_a$ on $M$ such that
+\begin{equation}\label{eq:orbifold-approx}
+ \delta_\sigma(g_a)\le\frac{C}{|\log a|}\longrightarrow0.
+\end{equation}
+The metrics converge to $(M_0,g_0)$ in the Gromov--Hausdorff sense, and their rescaled cores converge to Eguchi--Hanson. This statement is about approximation; it does not assert an exact Einstein desingularization.
+
+The analytic distinction begins in the core. A bare scaled Ricci-flat metric $a^2g_{\rm EH}$ has endomorphism residual $-\sigma I$, independent of its scale. The construction instead uses a smooth correction satisfying
+\begin{equation}\label{eq:EH-correction}
+ D\Ric_{g_{\rm EH}}\widetilde h=g_{\rm EH},\qquad
+ \widetilde h=H_*+O_2(\rho^{-2}).
+\end{equation}
+Here $O_2$ includes the first two derivatives. The correction is obtained by differentiating the exact biaxial Einstein core family and matching its quadratic asymptotics to the exterior jet in a common radial gauge.
+
+The remaining quadratic mismatch is a pure Weyl jet
+\[
+ K_{ij}=-\tfrac13 C_{ikjl}x^kx^l.
+\]
+For $t=\log r$, the flat linearized Ricci operator obeys
+\begin{equation}\label{eq:logcutoff}
+ D\Ric_e[\eta(\log r)K]
+       =-\frac{\eta_{tt}+6\eta_t}{2r^2}K.
+\end{equation}
+This identity holds for every algebraic Weyl tensor $C$, not merely a symmetry-restricted family. Since $|K|=O(r^2)$, spreading the cutoff over an interval of logarithmic length comparable to $|\log a|$ makes its contribution $O(|\log a|^{-1})$. The core, ALE tail, and exterior normal-coordinate remainder estimates in \cite{source-construction} complete \eqref{eq:orbifold-approx}. The possibility of exact Einstein gluing has additional period and cokernel equations; \eqref{eq:logcutoff} does not remove them.
+
+\subsection{A fixed Dehn-twist surface bundle}
+Let $F=\Sigma_p$ and $B=\Sigma_q$, where $p,q\ge2$. Fix a nonseparating Dehn twist $D$ of $F$ and an epimorphism $u:\pi_1(B)\to\Z$. Define
+\begin{equation}\label{eq:ED}
+ E_D=(\widetilde B\times F)/\pi_1(B),\qquad
+ \gamma(x,y)=(\gamma x,D^{u(\gamma)}y).
+\end{equation}
+Its topological invariants are
+\begin{equation}\label{eq:ED-top}
+ \chi(E_D)=4(p-1)(q-1),\qquad \tau(E_D)=0,
+ \qquad b_1(E_D)=2p+2q-1.
+\end{equation}
+For example, the last equality follows from a section and the fact that a nonseparating twist induces a rank-one transvection on $H_1(F;\R)$. The odd first Betti number excludes K\"ahler metrics on $E_D$; it does not exclude arbitrary Einstein metrics.
+
+Choose a hyperbolic path $h_z$ on the fixed fiber with a fixed pointwise area form, $h_1=D^*h_0$. On a long hyperbolic collar in the base set
+\begin{equation}\label{eq:slow-shear}
+ G_\ell=dt^2+\ell^2\cosh^2t\,d\theta^2+
+               h_{\eta(t/L_\ell)}.
+\end{equation}
+The endpoint marking closes this metric on the same bundle \eqref{eq:ED} for all $\ell$. The complete mixed Ricci calculation in \cite{source-construction,source-cycles} gives
+\begin{equation}\label{eq:ED-approx}
+ V(G_\ell)=4\pi^2\chi(E_D),\quad
+ \delta_-(G_\ell)\longrightarrow0,\quad
+ \|\nabla^j\Rm(G_\ell)\|_\infty\le C_j
+\end{equation}
+for every fixed $j$. Nevertheless the injectivity radius tends to zero and the diameter tends to infinity.
+
+The horizontal and vertical area forms $\alpha_\ell,\beta$ are globally closed, so
+\[
+ \omega_{\pm,\ell}=\alpha_\ell\pm\beta,
+ \qquad *\omega_{\pm,\ell}=\pm\omega_{\pm,\ell},
+ \qquad |\omega_{\pm,\ell}|^2=2
+\]
+are harmonic and symplectic in opposite orientations. Their covariant derivatives tend uniformly to zero. Thus even two globally defined, nowhere-zero, nearly parallel forms do not alone imply a global K\"ahler realization on the original smooth manifold. Closed-curve information is missing; Section~\ref{sec:cycles} identifies it precisely.
+
+\subsection{Sheared assemblies and their variational limits}
+The marked construction extends to the specified multiblock families in \cite{source-construction}. Boundary identifications have the form
+\[
+ \Psi_e(\varphi,x)=(-\varphi+u_e(x),f_e(x)),
+\]
+where $u_e$ is circle-valued and $f_e$ is a fixed diffeomorphism. With all gluing data held fixed, the constructed metrics satisfy
+\[
+ \|G_\ell^{-1}\Ric_{G_\ell}+3I\|_\infty
+       \le C\bigl(|\log\ell|^{-1}+\ell\bigr),
+ \qquad V(G_\ell)=\frac{4\pi^2\chi}{9}.
+\]
+Rescaling by $3$ gives the normalization $\Ric\simeq-g$.
+
+For the specified nonzero-shear families whose finite covers are all non-K\"ahler, the variational conclusions proved in \cite{source-integrated} are
+\begin{align}
+ Y(M)&=-8\pi\sqrt{\chi(M)},\label{eq:yamabe-shear}\\
+ \inf_{\Ric_g\ge-g}V(g)&=4\pi^2\chi(M),&
+ \inf_g S(g)&=64\pi^2\chi(M),\label{eq:var-shear}\\
+ \inf_g R(g)&=16\pi^2\chi(M),&
+ \inf_g\int_M|\Rm_{(0,4)}|^2\dd&=32\pi^2\chi(M).
+ \nonumber
+\end{align}
+Here $Y(M)$ is the Yamabe invariant. The first four extrema displayed in \eqref{eq:yamabe-shear}--\eqref{eq:var-shear}, counting the Yamabe invariant, are not attained in the stated families. Attainment of the full curvature infimum is equivalent to existence of an Einstein metric and remains undecided there. The curvature identity underlying the last assertion is
+\[
+ \int|\Rm_{(0,4)}|^2=32\pi^2\chi+4P.
+\]
+In particular, a sequence with $P\to0$ does not settle attainment.
+
+For the fixed bundle with $p=q=2$, the approximating volume is $16\pi^2$. The inherited global estimates place any normalized negative Einstein metric $h$ on this manifold, if one exists, in the strict window
+\begin{equation}\label{eq:ED-window}
+ 16\pi^2<V(h)<48\pi^2,\qquad \Ric_h=-h.
+\end{equation}
+The construction of \eqref{eq:ED-approx} does not close this window.
+
+\section{Slow moduli and the complete infinitesimal kernel}
+\subsection{An exact identity for variable hyperbolic fibers}
+Let $h_v$ be a horizontal path of hyperbolic metrics on a fixed surface $F$, with pointwise fixed area and unit $L^2$ speed. Write
+\[
+ k_v=\partial_vh_v,\qquad N_v=\partial_vk_v-k_vh_v^{-1}k_v,
+ \qquad G=\gamma+h_{v(x)}.
+\]
+For the product horizontal distribution, the Ricci computation in \cite{source-slow} yields
+\begin{align}
+ (\Ric_G+G)_{HH}&=(K_\gamma+1)\gamma-
+                         \tfrac14|k_v|^2\,dv\otimes dv,\label{eq:slow-Ric}\\
+ (\Ric_G+G)_{HV}&=0,\nonumber\\
+ (\Ric_G+G)_{VV}&=\tfrac12k_v\Delta_\gamma v-
+                              \tfrac12N_v|dv|^2,\nonumber
+\end{align}
+with $\Delta=-\operatorname{div}\operatorname{grad}$. If $K_\gamma=-1$, fiber integration gives the exact identity
+\begin{equation}\label{eq:slow-energy}
+ \int_M|\Ric_G+G|^2
+   =\frac14\int_B(\Delta v)^2+
+                    \int_B\Xi(v)|dv|^4,
+\end{equation}
+where
+\begin{equation}\label{eq:Xi}
+ \Xi(v)=\frac1{16}\int_F|k_v|^4+
+                  \frac14\int_F|N_v|^2
+       \ge\frac1{16V_F}.
+\end{equation}
+For completeness, the mixed term in the square of the vertical component vanishes because
+$\int_F\langle k_v,N_v\rangle=\tfrac12\partial_v\int_F|k_v|^2=0$.
+The horizontal square supplies $\int_F|k_v|^4/16$ and the vertical square supplies the other two terms. Cauchy--Schwarz and $\int_F|k_v|^2=1$ give \eqref{eq:Xi}.
+
+On a cyclic cover of degree $m$, take a fixed-amplitude periodic modulation $v_m=a\cos(2\pi z/m)$, where $z$ is a harmonic coordinate on the infinite cyclic cover. Then $|dv_m|=O(m^{-1})$, $\Delta v_m=O(m^{-2})$, and the total volume is of order $m$. Equation \eqref{eq:slow-energy} gives an integrated residual of order $m^{-3}$, while the pointwise residual is of order $m^{-2}$. The amplitude in Teichm\"uller space does not tend to zero.
+
+The actual classes in the two orientations admit the deficits
+\[
+ q_\pm=\frac1V\left[\frac32\int(s^2+12|W^\pm|^2)
+                                     -72\pi^2p_\pm\right],
+\]
+where $p_\pm$ is the positive projection square in the corresponding orientation. In this family the inherited identity is
+\begin{equation}\label{eq:slow-deficits}
+ q_+=q_-=\frac9{4V}\int_B|dv|^2+
+                      \frac92\avint_M|\Ric+G|^2.
+\end{equation}
+Periods and normalized harmonic representatives can therefore remain controlled while the slow moduli vary nontrivially. Period information alone does not give compactness of the entire positive cohomology plane. The underlying manifolds in this example already admit product Einstein metrics.
+
+\subsection{Cyclic-cover repair retaining all Teichm\"uller directions}
+Fix closed hyperbolic surfaces $(B,b),(F,f)$ and a primitive epimorphism $\pi_1(B)\to\Z$. Let $B_m$ be the degree-$m$ cyclic cover and put
+\[
+ M_m=B_m\times F,\qquad h_m=b_m+f.
+\]
+In a uniformly lifted atlas use the supremum norms
+\[
+ X_m=C^{3,\alpha}_{\uloc},\qquad Y_m=C^{1,\alpha}_{\uloc}.
+\]
+The harmonic-map gauge relative to $h_m$ is
+\[
+ W_m(g)^k=g^{ij}\bigl(\Gamma(g)^k_{ij}-\Gamma(h_m)^k_{ij}\bigr),\qquad
+ \Phi_m(g)=\Ric_g+g-\tfrac12\mathcal L_{W_m(g)}g.
+\]
+At $h_m$ its linearization is $L_m=\tfrac12\nabla^*\nabla-\mathring R$. The full kernel is
+\begin{equation}\label{eq:full-kernel}
+ K_m=T_{B_m}\oplus T_F,
+\end{equation}
+where $T_\Sigma$ denotes the transverse-traceless tensors on the hyperbolic surface. Its dimension grows with $m$.
+
+The analytic ingredients established in \cite{source-kernel} are the following uniform statements. The $L^2$ projection $\Pi_m$ onto $K_m$ is bounded in the displayed local norms; on its orthogonal complement,
+\begin{equation}\label{eq:kernel-inverse}
+ \|u\|_{X_m}\le Cm^2\|L_mu\|_{Y_m},\qquad \Pi_mu=0;
+\end{equation}
+and the whole kernel integrates to a uniformly defined family of exact Einstein metrics in harmonic gauge,
+\begin{equation}\label{eq:integrated-kernel}
+ H_m(k)=h_m+k+R_m(k),\quad \Pi_mR_m(k)=0,
+ \quad\|R_m(k)\|_{X_m}\le C\|k\|_{X_m}^2.
+\end{equation}
+Also $\|DR_m(k)\|\le C\|k\|_{X_m}$ on a fixed-radius ball. The complement estimate follows by splitting all tensor sectors: the base scalar channel has inverse of order $m^2$; the other channels have a fixed positive potential. Uniform transverse-traceless projection estimates are needed because the dimension of \eqref{eq:full-kernel} is unbounded. Integration of the kernel follows from surface uniformization, harmonic gauge, and uniform local elliptic estimates, as detailed in \cite{source-kernel}.
+
+\begin{theorem}[Full-kernel repair]\label{thm:kernelrepair}
+There are $c,C>0$, independent of $m$, such that every metric $g$ satisfying $W_m(g)=0$ and $\|g-h_m\|_{X_m}<cm^{-2}$ satisfies
+\begin{equation}\label{eq:kernelrepair}
+ \bigl\|g-H_m(\Pi_m(g-h_m))\bigr\|_{X_m}
+              \le Cm^2\|\Ric_g+g\|_{Y_m}.
+\end{equation}
+Every normalized Einstein metric in this gauge neighbourhood belongs to the family \eqref{eq:integrated-kernel}.
+\end{theorem}
+\begin{proof}
+Set $k=\Pi_m(g-h_m)$ and $u=g-H_m(k)$; then $\Pi_mu=0$. Taylor expansion at $h_m$, using $\Phi_m(H_m(k))=0$, gives
+\[
+ \Phi_m(g)=L_mu+\mathcal N_m(g-h_m)-\mathcal N_m(H_m(k)-h_m).
+\]
+Uniform local H\"older product estimates bound the difference of nonlinear terms by $Cr\|u\|_{X_m}$ when both arguments lie in an $X_m$ ball of radius $r$. Applying \eqref{eq:kernel-inverse},
+\[
+ \|u\|_{X_m}\le Cm^2\|\Phi_m(g)\|_{Y_m}
+                         +Cm^2r\|u\|_{X_m}.
+\]
+Choose $r\le cm^{-2}$ so that the last coefficient is at most $1/2$ and absorb. Harmonic gauge identifies $\Phi_m(g)$ with $\Ric_g+g$. If this residual vanishes, then $u=0$. There is no unsolved finite-dimensional reduced equation: $k$ parametrizes the already constructed exact family.
+\end{proof}
+
+The nonlinear examples in \cite{source-kernel} show that the inverse loss is realized. They satisfy
+\begin{equation}\label{eq:sharp-kernel}
+ \|g_m-h_m\|_{X_m}\le Cm^{-2},\qquad
+ \|\Ric_{g_m}+g_m\|_{Y_m}\le Cm^{-4},\qquad
+ \inf_{h:\,\Ric_h=-h}\|h-g_m\|_{X_m}\ge cm^{-2}.
+\end{equation}
+The infimum includes diffeomorphic pullbacks of all normalized Einstein metrics. Their construction begins with a fiber transverse-traceless tensor $q$ multiplied by $\cos(2\pi z/m)$, which is orthogonal to the full kernel, and includes a quadratic gauge correction. Consequently no uniform estimate of distance by residual to a power $\theta>1/2$ can hold on this family. This is a failure of uniform proximity estimates, not of Einstein existence: each $M_m$ carries $h_m$.
+
+\section{Closed-curve deformation and exact surface-bundle realization}\label{sec:cycles}
+The following criterion uses the actual accumulated deformation around generators of the base fundamental group. It requires no small Einstein residual.
+
+Let $F_f\to M\xrightarrow{\pi}B_b$ be an oriented smooth bundle of closed surfaces with $f,b\ge2$. Given any metric $g$ on $M$, use the orthogonal Ehresmann connection. For a based loop $\gamma:[0,1]\to B$, let $\Phi_t:F_0\to F_{\gamma(t)}$ be horizontal transport and define
+\[
+ h_t=\Phi_t^*(g|_{F_{\gamma(t)}}),\qquad
+ A_t=h_t^{-1}\dot h_t,\qquad
+ A_t^0=A_t-\tfrac12\tr(A_t)I.
+\]
+Its conformal cycle variation is
+\begin{equation}\label{eq:cycle}
+ \mathcal C_g(\gamma)=\frac12\int_0^1
+               \sup_{F_0}\|A_t^0\|_\op\,dt.
+\end{equation}
+Let $x_0$ be the marked conformal class of $h_0$ and let $\rho$ be the mapping-class monodromy.
+
+\begin{lemma}\label{lem:displacement}
+For the Teichm\"uller metric normalized by $d_T=\tfrac12\inf\log K$,
+\[
+ d_T(x_0,\rho(\gamma)x_0)\le\mathcal C_g(\gamma).
+\]
+\end{lemma}
+\begin{proof}
+For two nonzero tangent vectors $v,w$ at the same point,
+\[
+ \left|\frac d{dt}\log\frac{h_t(v,v)}{h_t(w,w)}\right|
+                          \le2\|A_t^0\|_\op.
+\]
+Integrate and maximize the length distortion. The logarithm of the quasiconformal dilatation of the identity from $h_0$ to $h_1$ is at most $\int\sup\|A_t^0\|_\op$. The endpoint metric is the pullback by the actual return map, which represents $\rho(\gamma)$. Divide by two. No commutativity of the matrices $A_t$ is required.
+\end{proof}
+
+\begin{lemma}[Uniform finite-isotropy neighbourhood]\label{lem:thick}
+For fixed $f\ge2$ and $\iota>0$, there is $\varepsilon_{f,\iota}>0$ such that, if $\sys(x)\ge\iota$ and every member of a set $S\subset\Mod(F_f)$ moves $x$ by less than $\varepsilon_{f,\iota}$, the subgroup generated by $S$ is finite.
+\end{lemma}
+\begin{proof}
+Mumford compactness supplies a compact subset of Teichm\"uller space meeting every orbit in the fixed thick part \cite{Mumford}. If the assertion failed, conjugate so that $x_j$ belongs to this compact set and pass to $x_j\to x$, with all generators in $S_j$ moving $x_j$ by less than $1/j$. Uniformly for $s\in S_j$,
+\[
+ d_T(x,sx)\le2d_T(x,x_j)+1/j\longrightarrow0.
+\]
+Properness of the mapping-class action implies that only finitely many group elements move $x$ a distance at most one. Their nonzero displacements have a positive minimum. Thus eventually $S_j$ lies in the finite stabilizer of $x$, contradicting infinitude of the generated subgroup.
+\end{proof}
+
+\begin{theorem}[Cycle criterion for bidisk realization]\label{thm:cycles}
+Let $\gamma_1,\ldots,\gamma_N$ be loops at a common base point which generate $\pi_1(B)$. If the hyperbolic representative of $x_0$ has systole at least $\iota$ and
+\[
+ \max_i\mathcal C_g(\gamma_i)<\varepsilon_{f,\iota},
+\]
+then $M$ carries a metric $h$ with $\Ric_h=-h$ whose universal cover is $\HH^2_{-1}\times\HH^2_{-1}$. It has global parallel complex structures for both orientations. The threshold is independent of base genus, number of generators, diameter, volume, and the order of the finite monodromy group.
+\end{theorem}
+\begin{proof}
+Lemmas~\ref{lem:displacement} and \ref{lem:thick} imply that the monodromy has finite image $G$. Nielsen realization \cite{Kerckhoff} realizes $G$ by orientation-preserving isometries of a hyperbolic metric on $F$. Let $\widehat B\to B$ be the regular cover determined by the kernel. Equip it with the lift of any hyperbolic metric on $B$. The diagonal action of $G$ on $\widehat B\times F$ is free because its first component is a deck action. Its product metric descends to an Einstein metric.
+
+The identity component $\Diff_0^+(F)$ is contractible \cite{EarleEells}. Thus oriented smooth surface bundles are classified by their mapping-class monodromy, and the constructed suspension is smoothly bundle-isomorphic to the given $M$. Pull back its metric. Both product complex structures are preserved by the diagonal action and descend.
+\end{proof}
+
+The common base point is essential: it gives a single Teichm\"uller point at which all generators have small displacement. Individual finite-order generators alone would not imply finite monodromy.
+
+For a horizontal vector $X$, write $S_X$ for the vertical shape endomorphism, so that $g(S_XY,Z)=g((\nabla_YZ)^H,X)$. Metric compatibility gives
+\[
+ (\mathcal L_Xg)|_{V\times V}=-2g(S_X\cdot,\cdot).
+\]
+Therefore \eqref{eq:cycle} equals the integral of $\sup\|S_X^0\|_\op$ along horizontal lifts. In a Riemannian submersion it is bounded by the loop length times the maximum local deformation. Long essential loops can retain a nonzero accumulated deformation even when the latter maximum tends to zero.
+
+Both hypotheses of Theorem~\ref{thm:cycles} have independent geometric content. In the fixed-fiber construction \eqref{eq:slow-shear}, fiber conformal structures stay in a thick compact path, but a loop crossing the twist collar retains positive cycle variation. Alternatively, pinch the twisting curve in the fiber to length $\lambda$, keeping the base collar fixed. The explicit shear construction in \cite{source-cycles} gives
+\[
+ \delta_-(g_\lambda)=O(\lambda),\quad
+ \|\nabla\omega_{\pm,\lambda}\|_\infty=O(\lambda),\quad
+ \max_i\mathcal C_{g_\lambda}(\gamma_i)=O(\lambda),
+\]
+but the monodromy remains the infinite cyclic group generated by $D$. In this second construction the thickness hypothesis fails. Neither construction rules out an arbitrary non-K\"ahler Einstein metric on the underlying bundle.
+
+\section{Uniformly local repair without a diameter bound}\label{sec:weighted}
+The preceding result produces an Einstein metric by identifying the smooth bundle. A separate analytic mechanism corrects the input metric itself. Its hypotheses concern the full tensor operator and the propagation of its inverse.
+
+Suppose a family of closed $n$-manifolds, $n\ge3$, has uniform $C^{2,\alpha}$ harmonic-coordinate control at a fixed positive radius. The corresponding uniformly local norm is the supremum over these coordinate balls, not the sum. Consider the complete Bianchi-gauged Einstein linearization
+\[
+ L_g=\tfrac12\nabla^*\nabla+V_g
+\]
+with uniformly bounded $C^{0,\alpha}$ coefficients. Assume
+\begin{equation}\label{eq:positive}
+ \int\langle L_gu,u\rangle\dd\ge\lambda\int|u|^2\dd
+ \quad\text{for all smooth symmetric two-tensors }u,
+\end{equation}
+and, on the actual closed manifolds,
+\begin{equation}\label{eq:growth}
+ \Vol B_R(x)\le C_G(1+R)^d e^{HR},\qquad H^2<8\lambda.
+\end{equation}
+No tensor sector or kernel has been removed in \eqref{eq:positive}.
+
+\begin{theorem}[Growth--coercivity inverse]\label{thm:weighted}
+Under these hypotheses,
+\begin{equation}\label{eq:weighted-inverse}
+ \|L_g^{-1}f\|_{C^{2,\alpha}_{\uloc}}
+                   \le C\|f\|_{C^{0,\alpha}_{\uloc}},
+\end{equation}
+where $C$ depends on the local-coordinate bounds and the constants in \eqref{eq:positive}--\eqref{eq:growth}, but not on diameter or total volume.
+\end{theorem}
+\begin{proof}
+Choose $H/2<a<\sqrt{2\lambda}$ and let $\phi_x(y)=e^{-ad_g(x,y)}$. The quadratic-form identity for the leading coefficient $1/2$ is
+\begin{equation}\label{eq:IMS}
+ \langle L_g(\phi_xu),\phi_xu\rangle_{L^2}
+ =\int\phi_x^2\langle L_gu,u\rangle\dd
+                          +\tfrac12\int|d\phi_x|^2|u|^2\dd.
+\end{equation}
+The function $\phi_x$ is Lipschitz, and approximation in $H^1$ justifies the identity across the cut locus. Applying \eqref{eq:positive} to $\phi_xu$ and using $|d\phi_x|\le a\phi_x$, for $L_gu=f$ we obtain
+\begin{equation}\label{eq:weightedL2}
+ (\lambda-a^2/2)\|\phi_xu\|_2
+                             \le\|\phi_xf\|_2.
+\end{equation}
+Unit annuli and \eqref{eq:growth} give
+\[
+ \int\phi_x^2\dd\le C_Ge^H\sum_{j=0}^{\infty}
+                      (j+2)^d e^{-(2a-H)j}=:J_a<\infty.
+\]
+Thus
+\[
+ \|u\|_{L^2(B_1(x))}
+ \le e^a(\lambda-a^2/2)^{-1}\sqrt{J_a}\,\|f\|_\infty.
+\]
+Local estimates for a connection Laplacian with bounded potential give a uniform $C^0$ bound from this local $L^2$ bound and $\|f\|_\infty$. Schauder estimates on the fixed-radius charts then give \eqref{eq:weighted-inverse}. Positive coercivity and elliptic Fredholm theory provide existence and uniqueness on each closed manifold.
+\end{proof}
+
+\begin{corollary}[Nonlinear repair]\label{cor:repair}
+For metrics in the above family with $\Ric_g$ sufficiently close to $-g$, there are $\varepsilon,C>0$ such that
+\[
+ \|\Ric_g+g\|_{C^{0,\alpha}_{\uloc}}<\varepsilon
+ \quad\Longrightarrow\quad
+ \Ric_h=-h,\qquad
+ \|h-g\|_{C^{2,\alpha}_{\uloc}}
+                \le C\|\Ric_g+g\|_{C^{0,\alpha}_{\uloc}}
+\]
+for a smooth metric $h$ on the same manifold.
+\end{corollary}
+\begin{proof}
+Use $\Phi_g(h)=\Ric_h+h+\delta_h^*(B_gh)$, where $B_gu=\delta_gu+\tfrac12d\tr_gu$. At $g$, write
+\[
+ \Phi_g(g+u)=E+L_gu+N_g(u),\qquad E=\Ric_g+g.
+\]
+Uniform local product estimates imply
+\[
+ \|N_g(u)-N_g(v)\|_{C^{0,\alpha}_{\uloc}}
+ \le C_N(\|u\|_{C^{2,\alpha}_{\uloc}}+\|v\|_{C^{2,\alpha}_{\uloc}})
+                         \|u-v\|_{C^{2,\alpha}_{\uloc}}.
+\]
+By Theorem~\ref{thm:weighted}, the map $u\mapsto-L_g^{-1}(E+N_g(u))$ is a contraction in the ball of radius $2C\|E\|_{C^{0,\alpha}_{\uloc}}$ for sufficiently small $E$. The resulting positive-definite metric $h=g+u$ has negative Ricci tensor. Applying $B_h$ to its gauged equation gives, for $b=B_gh$,
+\[
+ \nabla_h^*\nabla_hb-\Ric_h(b)=0.
+\]
+Integration forces $b=0$. Hence $h$ is Einstein; elliptic regularity gives smoothness.
+\end{proof}
+If $\|\nabla\Ric\|_\infty\le K_1$, interpolation bounds the local H\"older residual by $C\delta_-^{1-\alpha}$. In dimension four, the preceding construction can be combined with the local regularity input of \cite{source-local}: $\pi_2(M)=0$, a uniform unit-ball volume lower bound, bounded $\nabla\Ric$, and sufficiently small $\delta_-$ supply the required uniform harmonic charts. These topological and local-volume assumptions are unnecessary when the charts are supplied directly.
+
+The growth condition concerns every finite-radius ball of the actual manifold, not the universal-cover entropy alone. An infinite cyclic cover of a fixed compact manifold with cocompact deck group $\Z$ has linear ball-volume growth by fundamental-domain counting; the same upper bound passes to its finite cyclic quotients. For the negatively curved families of \cite{source-local}, positive coercivity persists under sufficiently small local perturbations. Distributed perturbations may have global $L^2$ residual growing like $\sqrt m$ while their uniformly local residual stays small. Corollary~\ref{cor:repair} continues to apply. Products of hyperbolic surfaces have the genuine kernel \eqref{eq:full-kernel}, so they require Theorem~\ref{thm:kernelrepair} instead.
+
+An absolute spectral gap is not a substitute for \eqref{eq:positive}; negative eigenvalues invalidate \eqref{eq:weightedL2}. The sufficient comparison $H^2<8\lambda$ is the threshold of this weighted proof, not a claimed necessary condition for Einstein repair.
+
+\section{Connectors, boundary data, and complete noncompact models}
+\subsection{A normal Riccati identity}
+For a Gaussian connector $g=dr^2+q(r)$ in dimension four, set
+\[
+ B=\tfrac12q^{-1}q',\qquad H=\tr B,\qquad E=\Ric_g+3g.
+\]
+The normal Ricci equation is
+\begin{equation}\label{eq:Riccati}
+ H'+H^2/3+|B^0|^2=3-E_{rr}.
+\end{equation}
+If $H(0)=0$, write $H=3\tanh r+u$. Multiplication by $\cosh^2r$ gives
+\[
+ (\cosh^2r\,u)'=\cosh^2r\left(-E_{rr}-|B^0|^2-u^2/3\right).
+\]
+Consequently the endpoint condition $H(R)=3$ implies the exact identity
+\begin{equation}\label{eq:connector-integral}
+ \int_0^R\cosh^2r(-E_{rr})\,dr
+ =3\cosh^2R(1-\tanh R)
+  +\int_0^R\cosh^2r\left(|B^0|^2+u^2/3\right)dr.
+\end{equation}
+If $|E|_\op\le\delta$, scalar Riccati comparison gives
+\[
+ H(r)\le3k\tanh(kr),\qquad k=\sqrt{1+\delta/3},
+\]
+so necessarily
+\begin{equation}\label{eq:connector-lower}
+ 1\le k\tanh(kR).
+\end{equation}
+For large $R$, the smallest permitted $\delta$ is asymptotic to $12e^{-2R}$. Thus a fixed finite connector has a quantitative normal residual, but that lower bound decays with connector length. The identity retains the trace-free second fundamental form and does not assume a diagonal ansatz.
+
+\subsection{Relative Chern--Gauss--Bonnet}
+Suppose a closed assembly is exactly hyperbolic with sectional curvature $-1$ outside its connector regions $N$. Let $V_{\rm rem}$ be the volume of the hyperbolic cusp tails removed from the reference pieces. Assume the specified topology makes Euler characteristic additive and all boundary metric germs match, so that the boundary transgression terms cancel in the relative formula. Put $e=\tr E$, so $s=-12+e$ and $\Riczero=E^0$. Subtracting Chern--Gauss--Bonnet for the reference pieces gives
+\begin{equation}\label{eq:relative-CGB}
+ 2\int_N|W|^2+12(V_N-V_{\rm rem})
+ =\int_N\left(|E^0|^2+2e-\frac{e^2}{12}\right).
+\end{equation}
+Indeed the scalar term in twice the Euler formula is $s^2/12=12-2e+e^2/12$, and the exact hyperbolic reference density is $12$. If $|E|_\op\le\delta$, the absolute value of the right side is at most $(8\delta+4\delta^2)V_N$. In particular,
+\begin{equation}\label{eq:relative-volume}
+ V_{\rm rem}-V_N=\tfrac16\int_N|W|^2+O(\delta V_N).
+\end{equation}
+A change of volume can therefore compensate the Weyl term. Nonnegativity of Weyl energy alone gives no uniform positive connector cost.
+
+For a cusp $dt^2+e^{-2t}q_*$, its cross-sectional volume $A(T)$ and tail volume satisfy $V_{\rm tail}(T)=A(T)/3$. In an $N$-fold cyclic cover, cutting at $T_N=\log N+T_0$ makes both quantities proportional to $N^{-2}$. Matching lattice-quotient connectors have the same factor in their volume, Weyl energy, and residual integral. This common factor leaves the dimensionless relation \eqref{eq:relative-CGB} unchanged. The full relative proof and the necessary boundary assumptions are given in \cite{source-connectors}.
+
+\subsection{Exterior response and the reduced equation}
+The noncompact constructions in \cite{source-construction} include complete Einstein models with fixed angular periods and marked boundary data. Their use in a closed gluing problem requires the exterior response, all low modes, and the gauge equation. If a decomposition of the linearized equation has blocks
+\[
+ \begin{pmatrix}L_{00}&L_{01}\\L_{10}&L_{11}\end{pmatrix}
+ \begin{pmatrix}x\\y\end{pmatrix}
+ =\begin{pmatrix}f_0\\f_1\end{pmatrix},
+\]
+solving the complement gives the effective operator
+\begin{equation}\label{eq:Schur}
+ L_{00}-L_{01}L_{11}^{-1}L_{10},
+ \qquad f_0-L_{01}L_{11}^{-1}f_1.
+\end{equation}
+A nonzero local core term does not settle the full equation if the other terms in \eqref{eq:Schur} are omitted. The same applies to nonlinear remainders and to the variation of the projections defining the decomposition.
+
+One explicit four-node model on $(S^2\times S^2)/\Z_2$ illustrates this issue. For two tensor polarizations $D=\operatorname{diag}(1,-1)$ and $O=\bigl(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\bigr)$, the same-chirality bilinear maps satisfy
+\[
+ R_+(D,D)=-D/2,\quad R_+(O,O)=D/2,\quad
+ R_+(D,O)=R_+(O,D)=-O/2,\qquad S_+=R_+/2.
+\]
+With the actual node signs, the tensor--scalar sectors cancel at every fixed spectral degree, whereas a cross-chirality sign change makes the corresponding contributions add. The finite-dimensional cancellation in \cite{source-nodes} is exact. The one-form sectors, self-interaction, complement response, moving projections, and nonlinear remainder remain part of the complete Einstein problem.
+
+\section{Compactness-based realization and marked fillings}
+\subsection{Realization under bounded geometry}
+The compactness theorem established in \cite{source-integrated} has the following form. For fixed $D,v>0$, sufficiently small $\delta_\sigma$ on a closed oriented four-manifold satisfying
+\begin{equation}\label{eq:boundedgeometry}
+ \pi_2(M)=0,\qquad \diam_gM\le D,\qquad V(g)\ge v
+\end{equation}
+produces a smooth metric $h$ on the same manifold with $\Ric_h=\sigma h$. The analytic input is harmonic-coordinate compactness after exclusion of a nonflat Ricci-flat ALE bubble by its embedding in the stated topology. That exclusion replaces the Weyl bounds used in earlier forms of the theorem. The diameter and volume assumptions in \eqref{eq:boundedgeometry} remain substantive.
+
+There are refined realization statements when an actual Seiberg--Witten field supplies the curvature structure. For a fixed Spin$^c$ structure with real first Chern class $a$, let
+\[
+ p=(a_g^+)^2,\qquad T_\pm=2\chi\pm3\tau,
+ \qquad\mathfrak D_2=\tfrac32\int(s^2+12|W^+|^2)-72\pi^2p.
+\]
+The conformal field hypothesis below means that the unperturbed equations for the fixed structure have a solution for every metric in the input conformal class. The source proves these three statements with their respective analytic inputs \cite{source-integrated}:
+\begin{enumerate}
+\item On an aspherical manifold, with $\diam g\le D$ and $p\ge A_0>0$, small $\delta_-+\mathfrak D_2/V$ produces a negative K\"ahler--Einstein metric.
+\item With conformal field supply in both orientations, $p_\pm>0$, at least one $p_\pm\ge A_0$, and $\diam g\le D$, small $\delta_-+q_++q_-$ produces a locally bidisk metric with two global parallel complex structures.
+\item At $T_+=3T_->0$, with the stated conformal field supply and $p\ge T_+$, a sufficiently small $\delta_-$ and $\diam g\le D$ produce a complex-hyperbolic metric.
+\end{enumerate}
+The thresholds in the first two statements depend on $D,A_0$; that in the third depends on $D$. In the virtual versions, normalized integral estimates descend from a finite cover and compactness is performed on the base. The local symmetric Riemannian metric descends; a complex structure on the cover need not do so.
+
+These are existence results on the original smooth manifold. They use global compactness or filling information in addition to an integral obstruction. Removing a diameter bound from an integral gap does not automatically remove it from these realization theorems.
+
+\subsection{Harmonic zeros and their geometric scale}
+\begin{lemma}[Local zero estimate]\label{lem:zero}
+Fix a uniformly elliptic $C^{1,\alpha}$ coordinate class on the unit ball. There is $c>0$ such that, on a coordinate neighbourhood $U_{x,\rho}$ whose rescaled metric belongs to this class, every harmonic two-form $\Omega$ satisfying $\Omega(x)=0$ obeys
+\begin{equation}\label{eq:zero-cost}
+ \int_{U_{x,\rho}}(|\Omega|-\sqrt2)^2\dd\ge c\rho^4.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Rescale to the unit ball, rescaling the two-form simultaneously so that its pointwise norm is unchanged. If the amplitude integral is already bounded below by a fixed number, there is nothing to prove. Otherwise it gives a uniform $L^2$ bound for the form. Interior estimates for the first-order elliptic system $(d+d^*)\Omega=0$, followed by Sobolev bootstrapping on smaller balls, yield a uniform H\"older bound. Since $\Omega(0)=0$, its norm is at most $\sqrt2/2$ on a ball of fixed positive radius. Uniform ellipticity gives a positive volume lower bound for that ball. Integrating there proves the unit-scale assertion. Scaling back multiplies the integral by $\rho^4$.
+\end{proof}
+
+The actual harmonic representative $\Omega=-2\pi H_a$ supplied in the small-defect regime of \cite{source-zeros} satisfies
+\begin{equation}\label{eq:amplitude}
+ \int_M(|\Omega|-\sqrt2)^2\dd\le818\kappa V,
+ \qquad \kappa=\avint_M|\Ric+g|^2\dd+D_2/V.
+\end{equation}
+Thus a zero at $x$ implies
+\begin{equation}\label{eq:zero-scale}
+ r_{\alpha,Q}(x)^4\le C\kappa V,
+\end{equation}
+where $r_{\alpha,Q}$ is a coordinate radius with the fixed ellipticity and regularity bounds. This is a scale comparison, not just a bound on the total number of zeros.
+
+Suppose a near-saturation sequence has an orbifold limit and each complete filling has coordinate scale at least $\rho_j$. If
+\[
+ \kappa_jV_j<c_0\rho_j^4,
+\]
+then \eqref{eq:zero-scale} excludes zeros throughout every filling. In the specified $A_1$, $b_2=1$ or rational-homology-ball categories of \cite{source-zeros}, the contact filling classification together with the relative boundary marking identifies the relevant Milnor fiber. Passage to a global negative K\"ahler--Einstein metric further uses projective $\mathbb Q$-Gorenstein smoothability and an ample canonical class, followed by the Aubin--Yau theorem \cite{Aubin,Yau}. Local identification of fillings and global complex smoothability are two separate hypotheses in this route.
+
+The scale $\rho^4$ is indispensable. A rescaled near-symplectic zero-circle model can be inserted into a Darboux ball, preserving the cohomology class and the exterior form. An adapted metric makes the resulting global closed form self-dual and hence harmonic. Its amplitude error is $O(\rho^4)$ and its gradient energy is $O(\rho^2)$, while the zero circle persists. Its pointwise Ricci residual may grow like $\rho^{-2}$. This model demonstrates the limitation of average form estimates, not the existence of a pointwise near-Einstein counterexample.
+
+\subsection{Wahl degenerations and actual fields}
+For the marked Wahl replacement of a rational ball by a singularity of type $\frac1{n^2}(1,n-1)$, \cite{source-wahl} proves field transfer under the stated scalar-controlled recovery and Spin$^c$ extension hypotheses. Uniform scalar control bounds the actual spinor; its fourth-power mass in the shrinking filling tends to zero. Abelian removability and preservation of the real cohomology square then transfer the solution and its energy to the orbifold. The retained quantities are
+\[
+ a^2,\qquad T_+,\qquad\ind D,
+\]
+whereas the opposite topological combination changes by
+\begin{equation}\label{eq:Wahl}
+ T_-^{\rm orb}=T_-(M)-4\sum_\nu(1-n_\nu^{-2}).
+\end{equation}
+The two chiralities therefore cannot be treated by the same unchanged budget.
+
+For the specified canonical markings, some extendible characters force $\Phi(p)=\nabla_A\Phi(p)=0$. Sign-class averaging can retain a positive projected budget within this zero-forcing family, giving a strict inequality for each individual metric. A uniform geometric gap still requires a lower bound for the scale of the forced zeros and control of the same field's curvature and projection defects. Formal prolongation does not supply those data: for a fixed allowed equivariant metric jet, the flat principal operators permit completion of the prescribed Dirac leading term to every finite order, but convergence, global solvability, and amplitude at degenerating scales are independent issues.
+
+\section{The remaining global distinctions}
+The results above supply several concrete routes from approximate data to exact geometry, and several examples separating those routes.
+
+First, the fixed resolutions and the fixed Dehn-twist bundle support arbitrarily accurate pointwise Einstein approximation. Deciding whether they admit an arbitrary Einstein metric is a global problem. Neither failure of one exact gluing scheme nor nonattainment of a different curvature functional excludes such a metric. The volume window \eqref{eq:ED-window} is one remaining formulation for the fixed bundle.
+
+Second, slow Teichm\"uller modes explain why local smallness does not give a uniform inverse. Keeping the entire kernel yields the sharp $m^2$ loss and the $m^{-2}$ neighbourhood in Theorem~\ref{thm:kernelrepair}; imposing genuine positive coercivity and sufficiently slow ball growth instead gives Theorem~\ref{thm:weighted}. These alternatives concern distinct spectral regimes.
+
+Third, closed-curve deformation provides information that pointwise control of forms misses. Theorem~\ref{thm:cycles} constructs exact geometry after finite monodromy has been detected. The examples following it identify two independent escapes: accumulation along long loops and approach to the thin part of fiber moduli.
+
+Fourth, harmonic nonvanishing in a collapsing filling requires a comparison between the global error and the filling scale. Even nonvanishing and a local marked filling theorem must be joined to a global smoothing or deformation theorem. The complex-hyperbolic boundary $\chi=3\tau>0$ without a diameter bound is not settled by the shear examples, which belong to the bidisk regime.
+
+A further consequence of the bounded-geometry theory concerns the specified nonzero-shear families of \cite{source-spectral}. For a normalized Einstein metric on such a manifold, order the eigenvalues of $W^+$ and put
+\[
+ t=-\tfrac34\lambda_1(W^+),\qquad b=\lambda_3(W^+)-\lambda_2(W^+).
+\]
+For fixed $\theta<1/\sqrt3$, the relative pinching $b\le4\theta t$ and $\diam g\le D$ imply
+\[
+ \avint b^2\ge\varepsilon(D,\theta)>0.
+\]
+The source first bounds $t$ by $[2(1-3\theta^2)]^{-1}$, then excludes ALE bubbling in the stated aspherical topology. A zero-splitting limit would either be K\"ahler after a finite cover or real hyperbolic. The first alternative contradicts the non-virtual-K\"ahler topology and the second contradicts $\Z^2\subset\pi_1$. This gives diameter escape within that spectral region, not exclusion of Einstein metrics outside it.
+
+The common problem is consequently the passage from differential approximation to global realizability on a fixed smooth object. The necessary additional information has explicit forms in the theorems here: inverse bounds for slow modes, accumulated deformation around closed curves, positive coercivity compared with volume growth, or nonvanishing and marking on complete fillings. None of these is replaced by the vanishing of an integral residual alone.
+
+\section*{Source organization}
+The proofs reproduced here are the normalization and strict pinching arguments, the energy reduction for slow fibers, the full-kernel absorption step, the closed-curve realization theorem, the growth--coercivity inverse and nonlinear correction, the connector identities, and the local harmonic-zero estimate. The fixed-resolution, fixed-bundle, tensor-sector, compactness, and filling analyses are used in the precise forms recorded in the cited sources. In particular, the full-kernel sharpness theorem and the marked-filling realization statements retain their analytic and topological hypotheses.
+
+The research collection is entitled \emph{Einstein Geometry on Four-Manifolds: Gaps, Curvature Extremals, and Realization}. This manuscript belongs to the research collection of the Qiushi Engine Team, Zhejiang University. The companion papers treat integral gaps, curvature variation, and almost-K\"ahler Einstein rigidity. The existence questions remaining in this manuscript are not asserted to follow from the companion obstruction theorems.
+
+\begin{thebibliography}{99}
+\bibitem{Besse}
+A.~L.~Besse, \emph{Einstein Manifolds}, Springer, 1987.
+
+\bibitem{Aubin}
+T.~Aubin, \emph{\'Equations du type Monge--Amp\`ere sur les vari\'et\'es k\"ahl\'eriennes compactes}, Bull. Sci. Math. (2) \textbf{102} (1978), 63--95.
+
+\bibitem{Yau}
+S.-T.~Yau, \emph{On the Ricci curvature of a compact K\"ahler manifold and the complex Monge--Amp\`ere equation, I}, Comm. Pure Appl. Math. \textbf{31} (1978), 339--411.
+
+\bibitem{Koiso}
+N.~Koiso, \emph{Rigidity and infinitesimal deformability of Einstein metrics}, Osaka J. Math. \textbf{19} (1982), 643--668.
+
+\bibitem{Kroncke}
+K.~Kr\"oncke, \emph{On infinitesimal Einstein deformations}, Differential Geom. Appl. \textbf{38} (2015), 41--57. \href{https://arxiv.org/abs/1508.00721}{arXiv:1508.00721}. The product-operator decomposition is used through the detailed formulation in \cite{source-kernel}.
+
+\bibitem{Mumford}
+D.~Mumford, \emph{A remark on Mahler's compactness theorem}, Proc. Amer. Math. Soc. \textbf{28} (1971), 289--294. \href{https://doi.org/10.2307/2037802}{doi:10.2307/2037802}.
+
+\bibitem{Kerckhoff}
+S.~P.~Kerckhoff, \emph{The Nielsen realization problem}, Ann. of Math. (2) \textbf{117} (1983), 235--265. \href{https://annals.math.princeton.edu/1983/117-2/p02}{Primary article}.
+
+\bibitem{EarleEells}
+C.~J.~Earle and J.~Eells, \emph{A fibre bundle description of Teichm\"uller theory}, J. Differential Geom. \textbf{3} (1969), 19--43. \href{https://doi.org/10.4310/jdg/1214428816}{doi:10.4310/jdg/1214428816}.
+
+\bibitem{source-integrated}
+S.~Yang, J.~Wu, R.~Zhao, H.~Chen and Y.~Yang, \emph{Integrated manuscript on Einstein gaps and geometric realization}, research manuscript, 29 September 2026. \repo{archive/originals/2026-09-29/27b3cef6-aeed-442c-9e66-fef1a757828e.tex}{Complete source}. Relevant section labels: \texttt{sec:normalized-existence}, \texttt{sec:early-pointwise-rigidity}, \texttt{sec:fixed-bundle-geometry}, \texttt{sec:shear-variational}, \texttt{sec:compact-realization}, \texttt{sec:ale-boundary}, \texttt{sec:gauge-ke}, \texttt{sec:bilateral}, \texttt{sec:chern-boundary}, and \texttt{sec:virtual-realization}.
+
+\bibitem{source-construction}
+S.~Yang, J.~Wu, R.~Zhao, H.~Chen and Y.~Yang, \emph{Pointwise near-Einstein constructions, marked topology, and full-mode correction}, research manuscripts, 16--21 September 2026. Complete proofs are incorporated in \cite{source-integrated}; \repo{docs/CONSTRUCTIONS_AND_REALIZATION.md}{construction and realization index}, Sections 3--5 and 7, links the original volumes and exact core proofs.
+
+\bibitem{source-slow}
+S.~Yang, J.~Wu, R.~Zhao, H.~Chen and Y.~Yang, \emph{Periods, slow moduli, and moduli gauge}, research chapters in \cite{source-integrated}. Section labels: \texttt{sec:period-inertia}, \texttt{sec:periods}, \texttt{sec:positive-planes}, \texttt{sec:slow-moduli}, and \texttt{sec:moduli-gauge}.
+
+\bibitem{source-kernel}
+S.~Yang, J.~Wu, R.~Zhao, H.~Chen and Y.~Yang, \emph{Einstein repair with an integrable kernel: a sharp cyclic-cover theorem}, 24 September 2026. \repo{research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/continuation/20260924_integrable_kernel_cyclic_repair.md}{Complete tensor decomposition, kernel integration, repair, and nonlinear sharpness proof}.
+
+\bibitem{source-cycles}
+S.~Yang, J.~Wu, R.~Zhao, H.~Chen and Y.~Yang, \emph{Cycle deformation, monodromy detection, and exact bidisk realization}, 24 September 2026. \repo{research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/continuation/20260924_cycle_holonomy_realization.md}{Complete proof and both sharpness constructions}.
+
+\bibitem{source-local}
+S.~Yang, J.~Wu, R.~Zhao, H.~Chen and Y.~Yang, \emph{From weighted coercivity to uniformly local Einstein repair}, 24 September 2026. \repo{research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/continuation/20260924_uniformly_local_repair.md}{Four-dimensional proof and cyclic-cover applications}. The companion \repo{research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/continuation/20260924_higher_dimensional_local_repair.md}{higher-dimensional formulation} assumes the corresponding uniform local coordinate bounds.
+
+\bibitem{source-connectors}
+S.~Yang, J.~Wu, R.~Zhao, H.~Chen and Y.~Yang, \emph{Raychaudhuri comparison and relative Chern--Gauss--Bonnet for connectors}, 23 September 2026. \repo{research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/archive/sources/20260923/v08_S0910A03/workspace/notes/step100_relative_cgb_graph_budget.md}{Relative formula and complete boundary assumptions}. See also the preceding \texttt{step99\_raychaudhuri\_cgb\_and\_cost\_structure.md} in the same directory for the normal Riccati comparison.
+
+\bibitem{source-nodes}
+S.~Yang, J.~Wu, R.~Zhao, H.~Chen and Y.~Yang, \emph{Chirality cancellation in the four-node product model}, 23 September 2026. \repo{research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/archive/sources/20260923/v08_S0910A01/workspace/notes/step100_chirality_cancellation_proof.md}{Polarization identities and spectral-degree cancellation}.
+
+\bibitem{source-zeros}
+S.~Yang, J.~Wu, R.~Zhao, H.~Chen and Y.~Yang, \emph{Harmonic zero scales and geometric realization}, 24 September 2026. \repo{research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/continuation/20260924_harmonic_zero_scale.md}{Local estimate, marked fillings, and scaled zero-circle construction}.
+
+\bibitem{source-wahl}
+S.~Yang, J.~Wu, R.~Zhao, H.~Chen and Y.~Yang, \emph{Actual gauge fields in Wahl degenerations and formal completion}, research manuscript. \repo{research/notes/Wahl_Fields_and_Formal_Completion.md}{Field transfer, character restrictions, and formal prolongation}.
+
+\bibitem{source-spectral}
+S.~Yang, J.~Wu, R.~Zhao, H.~Chen and Y.~Yang, \emph{Aspherical bubble exclusion and spectral escape}, research manuscript. \repo{research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/mathematics/current/line1_aspherical_no_bubbles.md}{Specified shear topology and compactness argument}, Sections 2--3.
+\end{thebibliography}
+\end{document}

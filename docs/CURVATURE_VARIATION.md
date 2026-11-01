@@ -126,6 +126,50 @@ $$
 
 来源：[相对缺陷与联合共形极值](../archive/originals/2026-10-08/03_Subsequent_Mathematical_Developments.tex) §§1、5–6。
 
+### 1.3 绝对 Ricci 能量的全部近极小序列
+
+设 $T_+=A-d$，$A>0,d\ge0$；对所考虑的每个共形类，实际单极子供给保证经典标量及混合曲率估计，且所选投影平方 $p\ge A$。令
+
+$$
+C=8\pi^2A,\qquad H=8\pi^2d,\qquad j=R-C-H.
+$$
+
+则对每个这样的度量，
+
+$$
+j\ge0,\qquad H-\sqrt{j(C+j)}\le P\le H+j.
+\tag{1.10}
+$$
+
+这一选择结论适用于所有接近经典 Ricci 能量下界的度量。证明令
+
+$$
+D=\frac1{4\pi^2}\int\left(\frac{s^2}{24}+\frac{|W^+|^2}{2}\right)-\frac p2\ge0,
+\qquad B_p=S-32\pi^2p\ge0.
+$$
+
+Chern–Weil 给 $j=16\pi^2(p-A)+32\pi^2D$。再写 $q=-s+\sqrt6|W^+|$、$t=s+2\sqrt6|W^+|$，有
+
+$$
+144\pi^2D=\left(\int q^2-72\pi^2p\right)+\tfrac12\int t^2,
+\qquad s=(t-2q)/3.
+$$
+
+括号内非负；展开 $S$ 并对 $\int qt$ 使用 Cauchy–Schwarz，得到
+$0\le B_p\le2j+4\sqrt{j(C+j)}$。代入
+$P=H+j-8\pi^2(p-A)-B_p/4$ 即得 (1.10)。因此固定 $A,d$ 时，$j_i\to0$ 强迫
+
+$$
+P_i\to H,\quad S_i\to4C,\quad
+\mathcal E(g_i)=\frac{4H}{C+H}+\frac{L_s(g_i)}{C+H}+o(1).
+\tag{1.11}
+$$
+
+标量方差是原度量上独立的余项；负 Yamabe 替换使它消失并保持 $0\le\widehat j\le j$。若 $P=0$，则 (1.10) 还给
+$j\ge(\sqrt{C^2+4H^2}-C)/2$：任何 Einstein 候选必须偏离该绝对 Ricci 能量极小值。这里没有将两个独立下确界相减。
+
+来源：[Ricci 能量选择及完整证明](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/sources/mathematics/current/line1_energy_selection.md) §§2–5。
+
 ## 2. 低成本手术与真实上界
 
 ### 2.1 从有限尺度证书到任意固定复双曲领口
@@ -272,6 +316,45 @@ $$
 
 这不自动把原平衡族的线性下界推广到所有 KE 背景。非复双曲背景的 $3c_2-c_1^2$ 在有限覆盖下同比例增长，其原有 Weyl 余量可能使指定的平衡小 $h$ 条件无法实现。
 
+允许主体自身变化时，可以明确计算这一余量的作用。设负 KE 主体 $X_j$ 有 $A_j=c_1^2(X_j)$、$\Delta_j=3c_2(X_j)-A_j\ge0$，并有足够多彼此分离、在 $C^2$ 中趋近固定复双曲模型球的插入位置。取
+
+$$
+Q_j=k_j+4\ell_j=o(A_j),\quad h_j=Q_j/A_j,\quad
+\vartheta_j=k_j/Q_j\to\vartheta,\quad r_j=\Delta_j/Q_j\to r,
+\quad\sigma=4r+18\vartheta.
+$$
+
+在逐共形类实际供给和类平方条件下，已有线性强制常数 $c_0>0$ 给出
+
+$$
+\liminf_j\frac{\alpha(M_j)}{h_j}
+\ge\max\left\{\frac43(3-\sigma)_+,\frac{18}{19}(4+c_0-\sigma)_+\right\},
+\qquad
+\limsup_j\frac{\alpha(M_j)}{h_j}\le4(1-\eta\vartheta),
+\tag{2.3a}
+$$
+
+其中 $8\pi^2(1-\eta)$ 是实际插入单元的完整残差成本。下界来自精确式
+$3T_-/A=1+(\sigma_j-3)h_j$ 及
+
+$$
+P=\frac{S-32\pi^2A}{12}+4I_-+\frac{8\pi^2Q}{3}(3-\sigma_j).
+$$
+
+上界的 KE 主体残差为零，故只含吹起比例 $\vartheta$。分歧 Picard 覆盖构造满足 $A_n\asymp p^{8n}$、$\Delta_n\asymp p^{6n}$，且提供所需的正比例模型位置：对 $r>0$ 取 $Q_n\sim\Delta_n/r$，对 $r=0$ 取 $Q_n\sim p^n\Delta_n$，均有 $h_n\to0$。这实现了上述两参数窗口中的真实几何族。
+
+主体的反手性能量恰为 $I_-^{\rm KE}=8\pi^2\Delta/3$。若某竞争族保留它至 $o(Q)$，同一恒等式给 $\mathcal E\ge4h(1-6\vartheta)+o(h)$；要突破此界，必须改变主体的反手性能量。在环面上的精确 cusp-closing 模型
+
+$$
+g=t(dx^2+dy^2)+\frac{dt^2}{\Theta(t)}+\Theta(t)\eta^2,
+\quad d\eta=dx\wedge dy,\quad
+\Theta(t)=\tfrac23t^2-c/t,
+$$
+
+有 $s=-4$、$|W^+|^2=2/3$、$|W^-|^2=6c^2/t^6$。在平滑闭合截面 $t_0=(3c/2)^{1/3}$ 取所需圆周期，若该截面的自交为 $-e$，直接积分得 $I_-=8\pi^2e/3$。这明确了该构造中反手性余量的几何位置。
+
+来源：[分歧 KE 族的两参数曲率律](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A01/workspace/notes/step33_surgery_slope_law_and_ASD_retention.md) §§0–4。
+
 ### 2.5 Weyl 上界越过三分之一边界
 
 固定外领口的复双曲单元满足相对恒等式
@@ -338,6 +421,94 @@ $$
 
 来源：[完整复双曲端的共形归约与证明](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A01/workspace/notes/step22_exact_CH_conformal_reduction.md)；[相对曲率恒等式](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/notes/step23_yamabe_identity_hyperbolic_sharp_gap_and_cell_channels.md) §1。
 
+### 2.7 领口的约束分解与标准端截断
+
+对一般 Gaussian 领口 $g=dt^2+h_t$，令 $K=\frac12\partial_th_t$、$\Theta=\operatorname{tr}_{h_t}K$。Gauss–Codazzi 及切向演化方程把无迹 Ricci 分为
+
+$$
+\mathcal C=\tfrac12(\Theta^2-|K|^2-R_h)+s/4,
+\quad\mathcal M=\operatorname{div}_hK-d\Theta,
+\quad\mathcal S=(\operatorname{Ric}^{h_t}-\partial_tK-\Theta K+2K^2)^{\circ_h},
+$$
+
+并给精确正交恒等式
+
+$$
+|\operatorname{Ric}^{\circ}|^2=\frac43\mathcal C^2+2|\mathcal M|^2+|\mathcal S|^2.
+\tag{2.17}
+$$
+
+因此任一真实输运公式
+$\mathcal A_b-\mathcal A_a-\mathcal F=\int_C(f\mathcal C+\langle X,\mathcal M\rangle+\langle T,\mathcal S\rangle)$
+都给
+
+$$
+P(C)\ge\frac{|\mathcal A_b-\mathcal A_a-\mathcal F|^2}
+{\int_C(\frac34f^2+\frac12|X|^2+|T|^2)}.
+\tag{2.18}
+$$
+
+$\mathcal F$ 是参考几何自身的演化，不能省去。不同输运量若使用相同残差分量，其下界一般只能取最大值；只有支撑或正交分量分离时才能相加。式 (2.17) 也没有单独控制 $K$、$R_h$ 或领口半径，因而不替代领口的提取定理。
+
+在 $g=dt^2+\sum_{i=f,g,h}a_i^2\sigma_i^2$、$d\sigma_i=2\sigma_j\wedge\sigma_k$ 的对角领口，置
+$y_i=a_i'/a_i$、$\mathcal V=a_fa_ga_h$、$\kappa=a_f/(a_ga_h)$、$q=\log(a_g/a_h)$、$\zeta=1/(a_ga_h)$。CR 形变可由
+
+$$
+\Phi=q+\frac{y_g-y_h}{4}-\zeta\sinh q
+$$
+
+追踪，其精确方程为
+
+$$
+\Phi'=F-\frac14(\operatorname{Ric}^{\circ}_{gg}-\operatorname{Ric}^{\circ}_{hh}),
+\tag{2.19}
+$$
+
+$$
+F=(y_g-y_h)\left(1-\frac{y_f+y_g+y_h}{4}-\zeta\cosh q\right)
++\zeta\sinh q\,(y_g+y_h-2)
++\frac{2\zeta^2}{\kappa^2}\sinh(2q).
+$$
+
+于是
+
+$$
+\left|\Delta\Phi-\int_I F\,dt\right|
+\le\left(\frac{P(I)}{16\pi^2}\right)^{1/2}
+\left(\int_I\frac{dt}{\mathcal V}\right)^{1/2}.
+\tag{2.20}
+$$
+
+在规定的小渐近复双曲块内，横向变量为 $O(\zeta)$，从而 $F=\zeta^2G$、$G$ 有界；这项估计不对任意对角几何成立。若 $\mathcal V\ge ce^{4t}/16$，将漂移尾积分记作 $\delta_T$，则将无穷远 CR 数据改回标准值至少支付
+$P([T,\infty))/(8\pi^2)\ge(c/2)e^{4T}(|\Phi(T)|-\delta_T)_+^2$。
+系数 $1/2$ 是标准端线性问题的最优值。因此在已经展开的大体积非标准 CR 端，恢复标准无穷远一般不可能成为零费用操作。
+
+反之，若完整对角端始终处于一个充分小的标准渐近复双曲块，$s=-24$、$P<\infty$ 且 $\Phi(t)\to0$，则存在保持任意给定内部紧集、外部精确复双曲的 $g_R$，满足
+
+$$
+P(g_R)\longrightarrow P(g).
+\tag{2.21}
+$$
+
+证明需先匹配径向相位。在状态 $(y_f,y_g,y_h,\kappa,q,\zeta)$ 中，线性速率为 $2,0,-2,-4,-6,-8$；$-2$ 模态正是精确复双曲曲线
+
+$$
+H(z)=\left(\sqrt{1+z}+\frac1{\sqrt{1+z}},\sqrt{1+z},\sqrt{1+z},\sqrt{1+z},0,z\right)
+$$
+
+的切向。扣除同 $\zeta$ 的 $H$ 后，$P<\infty$ 给加权残差 $e^{2t}e\in L^2$，其中 $e_i=\operatorname{Ric}_{ii}+6$。稳定方向用 Duhamel 公式，出射方向用有界终端条件，零速率方向用 (2.20)；余项吸收遂给所有物理偏差 $o(e^{-2t})$。将相位匹配后的 $D_i=\log a_i-\log a_i^{\rm CH}$ 在 $[R,R+1]$ 截断，附加能量不超过
+
+$$
+C\int_R^{R+1}\mathcal V|e|^2dt
++C\mathcal V(R)\sup_{[R,R+1]}(|D|+|D'|)^2=o(1).
+$$
+
+同法对 $J_6<\infty$ 给 $J_6$ 的截断收敛。若完整标准端类的下确界为零，仍需取得性才能得到 Einstein 填充；(2.21) 本身仅连接两个极值域。
+
+来源：[无对称约束分解](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/notes/step34_characteristic_constraint_calculus_and_N_probe.md) §2；[CR 输运与标准端截断](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/notes/step26_truncation_flux_and_branch_completeness.md) §§1–2。
+
+非标准 Rossi 无穷远的 $\mathcal O(-1)$ Einstein 填充分支尚未完成：其目标是对角方程 $\operatorname{Ric}=-6g$、光滑 bolt 与非标准 CR 端。现有解析级数、区间输运和末端块将问题缩到初始包围与后续输运的衔接；[初始 Fuchs 程序](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/scripts/ach_bolt_fuchs.py) 的状态次序 $(\sigma,\delta,\gamma,D\sigma,D\delta,D\gamma)$ 与按 $(\sigma,D\sigma,\delta,D\delta,\gamma,D\gamma)$ 分配的余项半径没有一致置换。因此尚缺有效的分量余项界及其向输运初始盒的包含；同起始盒上的 Weyl 判别也依赖这一步。上述领口恒等式与截断结论不依赖这项填充存在性。已成立的完整 $\mathbb R^4$ almost-Kähler Einstein 构造见 [Goldberg 专题](GOLDBERG.md)，两者的拓扑与边界问题不同。
+
 ## 3. 全部竞争者上的约束与近极小变分
 
 ### 3.1 Kähler 类与低成本竞争者分离
@@ -352,6 +523,8 @@ P(g)-8\pi^2k
 $$
 
 结合 (2.1)，全局共形 Kähler 类不能包含 $P$ 的极小化序列。$\tau(M)\ge0$ 时，相反取向的共形 Kähler 度量也受相应比较限制。
+
+共形 almost-Kähler 类却可以包含严格低成本竞争者：精确复双曲领口中的旋转单元具有无零闭自对偶二形式，其 almost-Kähler 归一化伴随一个随异常周期趋零而发散的标量平方层。这并不增加原度量的 $P$。构造及两种泛函的换算见 [低成本单元的辛形式与共形归一化](GOLDBERG.md#低成本单元的辛形式与共形归一化)。
 
 对固定吹起复结构，还可以看出下界的严格性。写 Kähler 类为 $\pi^*a-\sum e_iE_i$，$e_i>0$，令 $q=K_X\cdot a$。Hodge 指标定理给 $q^2\ge Aa^2$，故
 
@@ -478,6 +651,34 @@ $$
 
 异常类的固定配对因此可以主要由反自对偶曲率承担。相对线丛的第一 Chern 类是 $(a-a')/2=\pm E_i$；旋量内积为零也可能只表示正交，不能据此给每个异常类指定一个独立正涡旋费用。全局最优性必须控制这些场的联合实现，而非只把局部标准费用相加。
 
+在实际 almost-Kähler 结构上，还可保留扭率的完整积分轮廓。设 $|\omega|^2=2$，$\delta=|\nabla\omega|^2=s^*-s$，$\ell=8\pi K_\omega\cdot[\omega]>0$，$\theta=\int\delta/\ell$，并令
+
+$$
+C_+=\frac{I_+}{2\pi^2}+\frac{S}{96\pi^2},\qquad
+\varphi=\frac{\operatorname{Vol}\{s^*\ge0\}}V<1.
+$$
+
+Blair 恒等式给 $\int(-2s-\delta)=\ell$，而
+$W^+(\omega/\sqrt2,\omega/\sqrt2)=s/6+\delta/4$。无迹性及两区域 Jensen 不等式因此给
+
+$$
+C_+\ge\frac{\ell^2}{128\pi^2V}
+\left[3\theta^2-2\theta+1+
+\frac{\varphi}{1-\varphi}(1-\theta)_+^2\right]
+\ge\frac{\ell^2}{128\pi^2V}\frac2{3-2\varphi}.
+\tag{3.8a}
+$$
+
+具体地，写 $\sigma=-s$，点态下界为
+$G(\sigma,\delta)=[2\sigma^2+(3\delta-2\sigma)^2]/(192\pi^2)$。
+整体均值为 $\bar\sigma=(1+\theta)\ell/(2V)$、$\bar\delta=\theta\ell/V$；将 $\{\delta\ge\sigma\}$ 与补集分别取均值，额外代价由
+$\min_{y-x=D}[2x^2+(3y-2x)^2]=6D^2$ 算出。这也解释了为何出现 $\varphi/(1-\varphi)$。
+
+把 $\ell$ 改写成异常周期需要额外拓扑信息。若主体的全部基本类恰为 $\pm K_X$，Taubes 的符号翻转论证给
+$K_\omega\cdot[\omega]=|K_X\cdot[\omega]|+\sum_i|E_i\cdot[\omega]|$，且每个异常周期严格为正。不过 $b^+>1$ 时，$|K_X\cdot[\omega]|^2\ge A[\omega]^2$ 并非一般成立；这一 Hodge 指标型条件必须另行提供。式 (3.8a) 保留 $\ell$ 时不需要它。与 §2.3 合并，沿 $\omega$ 方向的 Burns 首项节省发生于 $s^*>0$ 区域，而 (3.8a) 量化该区域对总曲率的代价。
+
+来源：[almost-Kähler 扭率轮廓](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/notes/step42_ak_torsion_profile_taubes_goldberg.md) §§1–2；[正星标量区域的估计](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Sessions/S1003A02/workspace/notes/step44_perturbative_ke_coercivity_and_pocket_price.md) §3。
+
 ### 3.5 节省量的 Yamabe 代价与 Weyl 谱余项
 
 仍假设完整符号类族的实际供给，取 $s=-4$ 的 Yamabe 代表。令
@@ -524,6 +725,42 @@ $$
 
 因此 $P(g)\le8\pi^2ck$ 要求 $Y([g])^2\ge32\pi^2(A+(1-c)k)$，并支付额外的谱偏离项。经典混合估计已经给出“节省至多为四倍 Yamabe 体积超额”的首项；本式另外控制重特征值的分裂。两者可同时使用，不能把首项重新计为独立结果。其限制仍由 (3.2) 表达：尚无全局估计将 $D_W-\Delta V$ 压到匹配构造的最佳值。
 
+完整符号类族还有一个线性的周期费用。令
+$\Pi_g=\max_\varepsilon(a_\varepsilon^+)^2-A$。
+对任意正平方的自对偶谐和类 $c$，投影到 $\mathbb Rc$ 并逐项选择符号，给
+
+$$
+\Pi_g\ge\frac{(|K\cdot c|+\sum_i|E_i\cdot c|)^2}{c^2}-A.
+\tag{3.9a}
+$$
+
+取 $c=K^+$、$e_i=E_i\cdot K^+$，则
+$\Pi_g\ge|K^-|^2+2\sum|e_i|+(\sum|e_i|)^2/(K^+)^2$。
+另按符号平均有 $\Pi_g\ge|K^-|^2+\sum|E_i^+|^2$；两者应取较大者，前者不在所有度量上支配后者。
+经典混合估计在 $s=-4$ 代表上精确写为
+
+$$
+8\pi^2k-P\le4\Delta V-\frac49\int(\sqrt6|W^+|-2)^2-16\pi^2\Pi_g,
+\qquad\Delta V\ge2\pi^2\Pi_g.
+$$
+
+因此扣除周期强迫的体积超额，置
+$\Delta V_{\rm free}=\Delta V-2\pi^2\Pi_g\ge0$，便有
+
+$$
+\boxed{P(g)\ge8\pi^2\left(k+2\sum_i|e_i|\right)
+-4\Delta V_{\rm free}+\frac49\int(\sqrt6|W^+|-2)^2,
+\quad\Delta V\ge4\pi^2\sum_i|e_i|.}
+\tag{3.9b}
+$$
+
+若实际自对偶类写成 $c=K-\sum\sigma_iE_i$，则直接用 (3.9a) 得
+$\Pi_g\ge(A+\|\sigma\|_1)^2/(A-\|\sigma\|_2^2)-A
+\ge2\|\sigma\|_1+\|\sigma\|_2^2$。
+这保留了旋转单元的周期信息，无须假设 $\|e\|_1\ge\|\sigma\|_1$。只有超过周期要求的自由体积超额可以用于降低标准费用。
+
+这里使用的经典标量及混合曲率估计见 [统一间隙专题](GAPS_AND_ENDPOINTS.md)；(3.9a)–(3.9b) 保留了对全部实际符号类取最大值所产生的周期项。
+
 ### 3.6 靠近复双曲主体时的局部化
 
 在 $\operatorname{Ric}_{g_0}=-6g_0$ 的紧复双曲商上，Bianchi 规范下的 Einstein 线性化为
@@ -555,6 +792,82 @@ P(g)\ge\frac{8\pi^2k-4\Delta V_U-C\Lambda^2}{1+C}.
 $$
 
 这说明在明确的近复双曲范围内，固定比例节省需要核心相对体积超额或界面误差承担相应规模。一般极小化序列是否具有这样的主体、规范和小邻域仍未建立；四维 $H^2$ 控制本身不能替代所需的 $C^{2,\gamma}$ 假设。
+
+在同一小邻域内，可以同时控制实际规范场，而不限于度量。对任意紧复双曲商 $(X_\Gamma,g_\Gamma)$，取 $\operatorname{Ric}=-6g$ 的典范 Seiberg–Witten 解 $(A_0,\Phi_0)$，满足 $\nabla_{A_0}\Phi_0=0$、$|\Phi_0|^2=24$。其规范固定线性化 $\mathcal L$ 的正规算子精确分裂为
+
+$$
+\mathcal L^*\mathcal L
+=B_1\oplus(\Delta+12)\oplus(\Delta+6)\oplus\nabla^*\nabla_{K^{-1}},
+\qquad B_1=dd^*+\tfrac12d^*d+6
+=\tfrac12\nabla^*\nabla+3+\tfrac12dd^*.
+\tag{3.12}
+$$
+
+这一算子具有与商群无关的一致局部 Hölder 逆估计。关键是万有覆盖上的 Green 核及所需一阶导数可积。正质量标量块由 Kato 控制；$K^{-1}$ 块在径向规范下的方程为
+
+$$
+-f''-(3\coth r+\tanh r)f'+9\tanh^2r\,f=0.
+$$
+
+零能量衰减解为 $O(e^{-(2+\sqrt{13})r})$，快于体积壳的 $e^{4r}$ 增长；原点处 Green 核和导数分别为 $O(r^{-2})$、$O(r^{-3})$，也可积。一形式块则有
+
+$$
+B_1^{-1}=2(\nabla^*\nabla+6)^{-1}
+-\frac16d\bigl[(\Delta+6)^{-1}-(\Delta+12)^{-1}\bigr]d^*.
+\tag{3.13}
+$$
+
+两个标量核的主奇性相消，混合二阶导数仅为 $O(r^{-2})$，尾部仍可积。绝对收敛的周期化于是给所有紧商同一个 $L^\infty$ 界；万有覆盖单位球上的内点估计提升到一致局部 $C^{2,\gamma}$。这里没有使用商空间的单射半径下界。
+
+因此存在模型常数 $\varepsilon_0,C>0$：若经一次整体缩放与微分同胚后，$g$ 与 $g_\Gamma$ 的一致局部 $C^{2,\gamma}$ 距离不超过 $\varepsilon_0$，则其负 Yamabe 代表 $\widehat g$ 有唯一邻近的典范解分支（模规范），场方向 $n$ 满足
+
+$$
+\int|\nabla n|^2\le C P(\widehat g)\le C P(g).
+\tag{3.14}
+$$
+
+证明先以 $6(\Delta+8)$ 求 Yamabe 修正，以 $\nabla^*\nabla+6$ 固定 DeTurck 规范，再用 Koiso 估计及二次余项吸收得到 $\|g'-g_\Gamma\|_{H^2}^2\le CP(\widehat g)$。式 (3.12) 的逆和双线性非线性项给典范解的收缩映射；其 $H^1$ 估计控制 $\nabla n$，得到 (3.14)。该结果只控制邻近的典范分支；吹起外部的符号类解是否属于这个分支，仍须单独证明。
+
+### 3.7 正耦合曲率作用与耦合场
+
+共同强制估计还有不依赖极小值取得性的直接应用。设 $T_+=A(1-h)$、$h>0$，并在每个所考虑共形类中有固定 Spin$^c$ 结构的实际供给，满足 $p\ge A>0$、$a^2\ge T_+$。记
+
+$$
+D_2=\frac32S+18I_+-72\pi^2p\ge0,
+\quad\Sigma=S-32\pi^2p\ge0,
+\quad\Sigma\le C(P+D_2).
+$$
+
+对任意 $u,v>0$，作用量
+$\mathscr I_{u,v}=uP+v(\frac32S+18I_+)$ 满足
+
+$$
+\boxed{\mathscr I_{u,v}-72\pi^2vA
+\ge\frac{36\pi^2\min(u,v)}{\frac92+\frac98C}\,Ah.}
+\tag{3.15}
+$$
+
+事实上 Chern–Weil 给
+$36\pi^2(p-T_+)=\frac92P+\frac98\Sigma-D_2$，
+故右侧不超过 $(\frac92+\frac98C)(P+D_2)$；而作用量超额至少为 $\min(u,v)(P+D_2)$。签名公式又将同一作用写成
+$uP+\frac32vS+9vW+108\pi^2v\tau$。这使线性强制进入一族正耦合二次曲率作用，未声称其常数最优。
+
+若某流形已有全度量 $P\ge p_0>0$，则曲率算子的混合块满足 $4\int|B|^2=P\ge p_0$。对实际满足
+$\operatorname{Ric}-\frac12sg+\Lambda g=\varkappa T$
+的度量与场，取无迹部分给
+
+$$
+\int|T^\circ|^2\ge\frac{p_0}{\varkappa^2}.
+\tag{3.16}
+$$
+
+对四维 Euclidean Maxwell 张量
+$T_{ij}=F_{ik}F_j{}^k-\frac14g_{ij}F_{kl}F^{kl}$，二形式范数下有
+$|T|^2=4|F^+|^2|F^-|^2$，从而
+$\int|F^+|^2|F^-|^2\ge p_0/(4\varkappa^2)$。
+这是已存在耦合解必须承担的双手性重叠，不提供耦合方程的存在性。
+
+来源：[二次曲率作用与耦合场](../research/packages/20261007_Einstein_Gaps_Two_Sessions--9d4f2de3/20261007_Einstein_Gaps_Two_Sessions/sources/Skills/geometric-analysis/research/paper/sections/quadratic_and_matter.tex)。
 
 ## 4. 光滑全局极小元与临界点
 
@@ -601,6 +914,86 @@ $\operatorname{im}B_x\subset\mathbb Rh_x$
 
 因此非 Einstein、负标量的光滑极小元若存在，对每个非零谐和反自对偶形式均有严格正的对齐余项；这一正数允许依赖度量。
 
+上述通量分解还区分了常标量 Kähler 几何的驻定性与稳定性。令 $a=c_1(J_0)$，随度量取 $h=a_g^-/|a_g^-|$，并写
+
+$$
+\mathscr D_a(g)=\frac{P(g)}{8\pi^2}-|a_g^-|^2
+=L-2q_g^2\delta+q_g^2\delta^2.
+\tag{4.1a}
+$$
+
+每个常标量 Kähler 度量均满足 $D\mathscr D_a=0$；非 Einstein 情形还满足 $D\delta=DL=0$。证明是对任意双向变分 $g_t$ 正交化原复结构，使内蕴扭率为 $O(t)$，从而通量的扭率误差给 $\delta(g_t)\le Ct^2$。双向可微性迫使 $D\delta=0$；$L\ge0$ 且 $L(g_0)=0$ 给 $DL=0$。Kähler–Einstein 情形的 $P$ 和 $|a^-|^2$ 均在零处取极小值，仍给 $D\mathscr D_a=0$。这里驻定的泛函是 $\mathscr D_a$；非 Einstein 的常标量 Kähler 度量通常不使 $P$ 驻定。
+
+局部强制需要保留变化中的谐和方向及其周期。设 $a_{g_0}^-$ 无零点，在 Bianchi 规范和线性常标量空间
+$\mathcal S=\{k:\beta_{g_0}k=0,\ s'_0(k)\text{ 为常数}\}$ 上，令 $d_2,\ell_2$ 为 $\delta(g_0+tk),L(g_0+tk)$ 的二次系数。则
+
+$$
+(\mathscr D_a)_2=\ell_2-2q_0^2d_2,
+\qquad c_K=\inf_{d_2(k)>0}\frac{\ell_2(k)}{q_0^2d_2(k)}.
+\tag{4.1b}
+$$
+
+若 $k\in\ker\ell_2$，对齐方程必须微分为
+$B'_0=\dot\Phi\otimes h_0+\Phi_0\otimes\dot h$，而非固定 $h_0$。线性化 Bianchi 恒等式和幅度条件使相应 $\Omega_t$ 满足 $d\Omega_t=O(t^2)$、$(\operatorname{Ric}'')'_0=0$。能否将它与一阶 Kähler 变分比较，还取决于周期障碍
+
+$$
+\Xi(k)=[\dot\Omega_k]^{0,2}\pmod{\operatorname{im}\mathcal P_\omega},
+\qquad
+\mathcal P_\omega:H^{0,1}(T^{1,0}M)\longrightarrow H^{0,2}(M),
+\quad[\mu]\longmapsto[\mu\mathbin{\lrcorner}\omega].
+\tag{4.1c}
+$$
+
+增广对齐、标量和 Bianchi 系统的主符号是单射：其核满足
+$k^\circ=\sigma\circ h_0$、$\sigma\perp\omega$、$\operatorname{tr}k=0$、$(\sigma\circ h_0)\xi=0$，而相反手性的二形式给
+$(\sigma\circ h_0)^2=|\sigma|^2|h_0|^2I/4$。因此 $K=\ker\ell_2\cap\mathcal S$ 有限维，且
+$\ell_2(k)\ge c\|k-\pi_Kk\|_{H^2}^2$。若另有 $\Xi|_K=0$，先扣除同周期的一阶 Kähler 变分，再用 Moser 修正消去恰当部分；固定辛形式下的 Blair–Ianus 恒等式
+$\operatorname{Hess}\int|\nabla\omega|^2=2\|(\nabla\omega)'\|_2^2$
+遂将 $K$ 放入 $d_2$ 的根空间。由 $d_2\le C\ell_2$ 得 $c_K>0$，并对 $0<c<c_K$ 有
+
+$$
+L(g_0+k)\ge c q_0^2\delta(g_0+k)-C\|k\|_{C^{2,\gamma}}^3,
+\qquad k\in\mathcal S.
+\tag{4.1d}
+$$
+
+这是带周期前提的局部结论。一般的 $\Xi|_K=0$ 尚未证明，$\mathcal S$ 也只是线性切片；不能据此断言所有常标量 Kähler 度量都是局部极小元。
+
+曲面乘积给出一个显式鞍点机制。取 $M=\Sigma_1(K_1)\times\Sigma_2(K_2)$，$K_1<K_2<0$，令 $Q$ 为第一因子的非零全纯二次微分的实部，$\Delta_2f=\mu f$、$\mu>0$。实际度量族
+
+$$
+g_t=g_1(e^{tf g_1^{-1}Q}\,\cdot,\cdot)\oplus g_2
+$$
+
+保持两个面积形式，故 $q_t^2=|c_1^-|_{g_t}^2$ 不变；其切向量 $k=fQ$ 横截无迹且 $s'_0=0$。直接计算两个 Ricci 块，若 $G_t$ 为第一块、$K_t$ 为其纤维 Gaussian 曲率，则
+
+$$
+\operatorname{Ric}_V=K_tG_t+\frac{t\mu f}{2}G_tg_1^{-1}Q,
+\qquad
+\operatorname{Ric}_H=K_2g_2-\frac{t^2}{4}|Q|^2df\otimes df,
+$$
+
+混合块没有一阶项。Gauss–Bonnet 与面积不变消去 $K_t-K_1$ 的积分二次贡献，$\int|df|^2=\mu\int f^2$ 因而给
+
+$$
+\boxed{8\pi^2(\mathscr D_a)_2=
+\frac\mu4(\mu+K_1-K_2)\|fQ\|_2^2.}
+\tag{4.1e}
+$$
+
+$0<\mu<K_2-K_1$ 时存在严格下降。由于 $s_0<0$，$6\Delta-2s_0$ 可逆，可作 $O(t^2)$ 共形修正使标量精确为常数；(4.1a) 的驻定性保持二次系数，二形式的 Hodge 分解也不变。分开的通量系数为
+
+$$
+\ell_2=\frac{\mu^2}{32\pi^2}\|k\|_2^2,
+\qquad q_0^2d_2=\frac{(K_2-K_1)\mu}{64\pi^2}\|k\|_2^2,
+\qquad c_K\le\frac{2\lambda_1(\Sigma_2)}{K_2-K_1}.
+\tag{4.1f}
+$$
+
+夹缩分离闭测地线可令 $\lambda_1(\Sigma_2)\to0$，所以即使拓扑和两个曲率尺度固定，也没有跨背景的统一正 $c_K$。这些模式满足 $\ell_2>0$，未决定核上的周期障碍；而低于 $|c_1^-|^2$ 也不等于低于吹起费用 $k$，后者另有 $|c_1^-|^2=k+\Pi$ 的投影超额。
+
+完整推导见 [常标量驻定、周期障碍与乘积 Hessian](../archive/originals/2026-10-08/03_Subsequent_Mathematical_Developments.tex) §3。
+
 ### 4.2 次标准能量子水平集中的退化
 
 [Q3_Global_Attainment.tex](../archive/originals/2026-10-08/Q3_Global_Attainment.tex) §§2–5 构造一个显式节点 Godeaux 退化，配合固定严格插入得到 $P<8\pi^2$ 的退化序列，其缩放核心为 Ricci-flat Eguchi–Hanson。因此次 $8\pi^2$ 子水平集可非紧。该构造未确定退化序列是否极小，光滑取得性仍为独立问题。
@@ -622,6 +1015,23 @@ $$
 替换定理以完整核心的光滑缩放收敛为输入。一般极小化序列的轨形、中间尺度、多端及塌缩分支仍待分析；边界为 $S^3/Q_8$ 的正能量核心属于非平凡端群分支。
 
 [标量曲率与全局取得性](../archive/originals/2026-10-12/Scalar_Curvature_and_Global_Attainment_20261012.tex) §4 的双曲尖点加倍例说明另一个独立现象：可有闭 aspherical 流形上 $P_* =0$ 而不取得，曲率一致有界、退化来自塌缩环面颈。取得性因而同时涉及曲率集中和塌缩退化。
+
+对紧复双曲主体还可在明确的气泡分解范围内限制异常拓扑的去向。设 $b^+(X)\ge3$，$M_k=X\#k\overline{\mathbb{CP}}^{\,2}$，且一个 $P$ 极小化序列具有有限主体—气泡图分解：所有锥群平凡，缩放气泡标量平坦、完整 AE，并有使边界 Chern–Weil 项收敛的导数衰减；各分离尺度的能量满足下半连续性。则每个加帽气泡 $\widehat N_i$ 的 $b^+$ 为零，并且
+
+$$
+\sum_i\bigl[4(e_i-1)+4b_1(\widehat N_i)+b_2(\widehat N_i)\bigr]<k,
+\tag{4.3}
+$$
+
+其中 $e_i$ 为气泡端数。
+
+证明先确定承载基本群的主体。$\Gamma=\pi_1X$ 是单端、自由不可分解的四维 Poincaré 对偶群；连通和图因而只有一个顶点 $Y$ 承载 $\Gamma$，其余顶点单连通且图没有环。吹降的分类映射经 $Y$ 分解并有度一，故 $b^+(Y)\ge b^+(X)$。$Y$ 不可能是气泡帽：标量平坦 AE 的各端共形紧化给正标量曲率，而有度一映射到闭负截面曲率流形的必要流形不能承载正标量曲率。于是每个气泡补集都含有 $b^+\ge3$ 的 $Y$；Seiberg–Witten 连通和消失与实际非零不变量迫使每个气泡帽 $b^+=0$。
+
+对这类 AE 气泡，边界曲率恒等式给
+$P(N_i)\ge8\pi^2[4(e_i-1)+4b_1+b_2]$。
+再用真实单元给出的 $P_*(M_k)<8\pi^2k$ 和下半连续性即得 (4.3)。因此异常拓扑不能全部逃入光滑 AE 气泡。特别 $k=1$ 时每个气泡单端且帽为同伦四维球面，主体连通，并有 $M_1\cong V\#\Sigma$，$\Sigma$ 为同伦球面，故 $V$ 与 $M_1$ 同胚。
+
+若再有能量恒等式、平凡锥点的光滑可去性及极限的局部极小性，则主体达到 $P_*(V)$。其标量是负常数：正标量由上述必要性排除；零标量连同无正标量度量会迫使 Ricci-flat，从而基本群虚交换，与 $\Gamma$ 矛盾。常非零标量的 Bach-flat $P$-临界点必为 Einstein，所以主体极小元或者 Einstein，或者给出非 Bach-flat 全局极小元。在本节更强的完整核心替换条件下，还可删除正能量的平凡端群气泡。一般极小化序列是否进入这些分解与可去性假设，仍是这项条件性取得结论的前提。
 
 ### 4.4 实双曲吹起：一个取决于 Yamabe 值的精确问题
 
@@ -909,6 +1319,64 @@ $$
 
 复双曲曲面的 $A\in9\mathbb Z$，第一个数值允许值因而是 $A=63$。这些是拓扑与能量的必要条件；仍须有实际嵌入、正确边界识别以及负 Einstein 主体。通过数值条件没有构造这些对象。
 
+### 6.5 Eguchi–Hanson 障碍与逼近速率
+
+ALE 解消的首项还可精确到一个局部二次费用。设 Einstein 轨形 $(V,g_V)$ 在 $p$ 有 $\mathbb R^4/\mathbb Z_2$ 奇点，$\operatorname{Ric}=\Lambda g$，$\mathbf R^+=W^++\frac{s}{12}I$。用尺度 $a$、方向 $\zeta\in\Lambda_p^+$、$|\zeta|=1$ 的 Eguchi–Hanson 空间解消。其三个 $L^2$ 余核张量为 $o_i=\Omega\circ\omega_i$，其中 $\omega_i$ 为平行超 Kähler 形式，$\Omega$ 为相反手性的调和二形式。外部可写 $\Omega=-\frac14d(\sigma_3/r^2)$，但其 bolt 周期非零，故这不是全局恰当形式。范数为
+
+$$
+\langle o_i,o_j\rangle=\frac{4\delta_{ij}}{r^8},
+\qquad
+\|o_i\|_2^2=\pi^2\int_a^\infty\frac4{r^5}\,dr
+=\frac{\pi^2}{a^4}.
+\tag{6.10}
+$$
+
+将轨形的二次度量 jet $h_2$ 延拓到单位 Eguchi–Hanson 空间，线性化 Ricci 与余核的配对是无穷远通量，精确为
+
+$$
+\int\langle D\operatorname{Ric}_{\rm EH}[\widehat h_2],o_i\rangle
+=\pi^2(\mathbf R_p^+\zeta)_i.
+\tag{6.11}
+$$
+
+角向配对与余核范数的精确核算见 [Eguchi–Hanson 配对程序](../research/computations/eguchi_hanson_pairing.py)。重标 $y=x/a$ 后，配对乘以 $a^2$。若度量在 jet 延拓的解消中心 $\widetilde g_a$ 的加权 $C^2$ 邻域内，即
+
+$$
+|\nabla^j(a^{-2}g-a^{-2}\widetilde g_a)|
+\le\delta a^2(1+|y|)^{w-j},
+\quad 0\le j\le2,\quad0\le w<2,
+\tag{6.12}
+$$
+
+并在固定外部半径处具有相应界，则对固定有界 $\delta$ 有
+
+$$
+P(g)\ge\pi^2a^4\bigl(|\mathbf R_p^+\zeta|-\varepsilon_w(a,\delta)\bigr)_+^2,
+\qquad\varepsilon_w(a,\delta)\longrightarrow0.
+\tag{6.13}
+$$
+
+取截断的 $\sum_i(\mathbf R^+\zeta)_io_i$ 作测试，Cauchy–Schwarz 和 (6.10)–(6.11) 给主项。背景的 Einstein jet 方程消去原本不衰减的二次余项；余核衰减 $r^{-4}$、$w<2$ 使扰动通量和非线性项均为 $o(a^2)$。因此此处限制的是规定解消邻域中的逼近速率，并非尺度无关的正间隙。
+
+若背景全局 Einstein，Biquard–Ozuch 的模余核线性解给适配的解消度量
+
+$$
+P(g_a^*)=\pi^2a^4|\mathbf R_p^+\zeta|^2+O(a^6).
+\tag{6.14}
+$$
+
+取包含该一阶修正的邻域，(6.13) 与 (6.14) 匹配；不能要求它位于任意缩小的原始中心邻域。若 $\mathbf R^+\zeta=0$，同一构造给 $P(g_a^*)=O(a^8\log(1/a))$，但该阶的最优系数尚未决定。若背景只在奇点附近 Einstein，上界须另加 $P(g_V)$。近等号时 Cauchy–Schwarz 还迫使无迹 Ricci 的主要部分集中于三个余核方向。
+
+这里的经典输入为 Ozuch，[Higher order obstructions to the desingularization of Einstein metrics](https://arxiv.org/abs/2012.13316v3)，Lemma 2.3 及 §2.1。该文在相应稳定性与可积性条件下给出一阶障碍消失后的二阶分量 $C\det(\mathbf R^+|_{\zeta^\perp})$。若其余两个特征值为 $u,v$、$u+v=\Lambda$，§2.3 的优化 Burns 二阶系数同时满足
+
+$$
+\Phi_{\rm opt}=-\frac{(u-v)^2}{2}
+=-\frac{\Lambda^2}{2}+2\det(\mathbf R^+|_{\zeta^\perp}).
+\tag{6.15}
+$$
+
+于是两种 ALE 插入读取相同的局部不变量：一阶看 $\mathbf R^+$ 的核，二阶看其余二维空间的行列式。该关系没有把 Ozuch 的二阶障碍转成无条件充分条件，也没有使任意近极小序列自动满足 (6.12)。
+
 ## 7. 完备有限体积 Einstein 域与塌缩补域
 
 ALE 轨形解消不是所有退化的统一模型。完备有限体积 Einstein 域可能留下塌缩或尖点补域；这些区域的可见曲率量由边界特征数决定。
@@ -1032,7 +1500,89 @@ $$
 
 它对混合正手性预算不可见，却仍具有固定全曲率。相符的拓扑组合是秩四 $D_4$ ALF 核心与穿孔 $\mathbb{RP}^2$ 二维实向量丛，其同调包含指数二扩张 $-D_4\subset-I_4$；相对光滑识别及匹配的低能量过渡尚未构造。
 
+这一拓扑组合可说得更精确。令 $N$ 为秩四 $D_4$ ALF 核心，$\partial N=S^3/Q_8$、$\pi_1N=1$、$(\chi,\tau)=(5,-4)$；令 $W$ 为边界取相反取向的 $\mathbb{RP}^2$ 实二维圆盘丛，$\pi_1W=\mathbb Z_2$。由于 $Q_8\to\mathbb Z_2$ 满射，$N\cup W$ 单连通，具有 $\chi=6,\tau=-4$。Donaldson 与 Freedman 定理分别给交形式 $-I_4$ 和到 $\#4\overline{\mathbb{CP}}^{\,2}$ 的同胚；微分同胚及边界相对识别仍未确定。$W\cup c(S^3/Q_8)$ 的底空间单连通、$H_2=\mathbb Z_2$，故只是有理同调四维球面。过渡域 $W\setminus B^4$ 的 $\chi=\tau=0$，两种手性的边界费用均相消；这允许曲率能量趋零，却尚未给出这样的度量。
+
 这些结论以本节明确的 Einstein 域收敛和无体积损失为前提。一般极小化序列尚未自动产生这些条件。紧复双曲基本群不含 $\mathbb Z^2$，只能排除尖点链接群的某些单射；若链接到主体的映射有核，就不能据此排除尖点或塌缩。
+
+### 7.4 Einstein 方程进一步限制尖点
+
+边界费用允许的补域还须匹配真实 Einstein 端。考虑圆纤维束 $Y\to B$ 上的固定基底模型
+
+$$
+g_0=dr^2+\pi^*g_B+e^{-2\kappa r}f^2\eta^2,
+\qquad \kappa>0,\quad f>0,
+\tag{7.6}
+$$
+
+其中 $B$ 为闭曲面或轨形曲面，$\eta$ 为联络。若 $\operatorname{Ric}_g=\lambda g$，且在 $g_0$ 正交标架中
+$g-g_0=o(1)$、$\operatorname{Ric}_g-\operatorname{Ric}_{g_0}=o(1)$，则
+
+$$
+\boxed{\lambda=-\kappa^2,\qquad df=0,\qquad K_B=\lambda<0.}
+\tag{7.7}
+$$
+
+证明直接来自径向和混合 Ricci 分量：
+$\operatorname{Ric}_{g_0}(\partial_r,\partial_r)=-\kappa^2$，
+$\operatorname{Ric}_{g_0}(\partial_r,\widehat Y)=\kappa Y(f)/f$。
+于是 Einstein 方程先给 $\lambda=-\kappa^2$、$df=0$；联络曲率的 O'Neill 项为 $O(e^{-2\kappa r})$，水平分量遂给 $K_B=\lambda$，最后 Gauss–Bonnet 给 $\chi^{\rm orb}(B)<0$。
+
+相对 $C^2$ 收敛足以保证这里的两个收敛条件；仅有纤维尖点重标切丛上的光滑延拓并不足够。例如扰动 $xq(\theta)dy^2$ 沿单位竖直向量 $x^{-1}\partial_\theta$ 的导数不趋零。因此 (7.7) 排除的是所述相对渐近范围内的 $S^2$ 或 $T^2$ 固定基底端；实、复双曲的缩小基底尖点不在此模型中。
+
+对尚允许的光滑基底 $\Sigma_g$，$g\ge2$，单个圆盘丛补域 $C=D_e(\Sigma_g)$ 的 (7.4) 化为
+
+$$
+q_+(C)=4-4g+e.
+\tag{7.8}
+$$
+
+非负性要求 $e\ge4g-4$。若嵌入的零截面具有相应 Seiberg–Witten 基本类供给（$b^+>1$，或另给适用的腔室数据），伴随不等式又给 $2g-2\ge e+|L\cdot\Sigma_g|\ge e$，两式矛盾。故这种单曲面圆盘丛补域被排除；多类补域及轨形基底仍须分别研究。§7.3 的 Hopf 费用与 $A/11$ 阈值是正确的条件性计算，但其 $S^2$ 固定基底 Einstein 端已经被 (7.7) 排除。
+
+另有不依赖指定尖点剖面的排除。设端部的球面提升为双轴形式
+
+$$
+g=dt^2+a(t)^2(\sigma_1^2+\sigma_2^2)+c(t)^2\sigma_3^2,
+\quad t\in[t_0,\infty),\quad
+d\sigma_i=2\sigma_j\wedge\sigma_k,
+\tag{7.9}
+$$
+
+并可下降至 $S^3/\Gamma$，其中 $\Gamma\subset SU(2)$ 有限。若 $|\operatorname{Rm}|$ 有界，且 Einstein 张量满足
+$G(\partial_t,\partial_t)\ge0$（特别是 Einstein 常数 $\lambda\le0$），则该端的体积必为无穷。
+
+为证明，先对一般对角形式置 $a_i'/a_i=\lambda_i$、$x_i=a_i^2$。径向 Riccati 方程
+$\lambda_i'=-\lambda_i^2-K(\partial_t,e_i)$
+与端部完整性使 $|\lambda_i|$ 有界。截面的内蕴 Ricci 满足
+
+$$
+r_i=\frac{2[x_i^2-(x_j-x_k)^2]}{x_1x_2x_3},
+\qquad r_i+r_j=\frac{4(x_i+x_j-x_k)}{x_ix_j}.
+\tag{7.10}
+$$
+
+Gauss 方程给 $r_i$ 有界；排序 $x_1\ge x_2\ge x_3$ 后，$r_1+r_2\ge4/x_2$，所以第二大尺度有正下界。若双轴端体积有限，有界对数体积导数使 $v=a^2c\to0$，继而 $a\ge b_0$、$c\to0$。Hamilton 约束却给
+
+$$
+\lambda_a(\lambda_a+2\lambda_c)
+=\tfrac12s_\Sigma+G(\partial_t,\partial_t)
+\ge\frac4{a^2}-\frac{c^2}{a^4}>0.
+\tag{7.11}
+$$
+
+因此 $\lambda_a$ 最终符号固定。正号使
+$(\log v)'=\frac32\lambda_a+\frac12(\lambda_a+2\lambda_c)>0$，与 $v\to0$ 矛盾；负号使 $a$ 递减，(7.11) 的右端继而有正下界，故 $\lambda_a$ 一致为负，迫使 $a\to0$，又与 $a\ge b_0$ 矛盾。此证明覆盖所有双轴剖面；有限商不正规时，只需球面提升的双轴性质，不要求全局 $U(2)$ 作用下降。
+
+一般三轴端也可在 $\liminf\sigma_2>0$ 下排除有限体积，其中 $\sigma_2=\sum_{i<j}\lambda_i\lambda_j$。因为 $H^2\ge3\sigma_2$，体积收缩分支具有 $H<0$；任意对和 $u=\lambda_i+\lambda_j\ge0$ 会给 $\sigma_2\le Hu-3u^2/4\le0$，故所有对和都一致为负，使所有 $a_ia_j\to0$，违反第二大尺度的正下界。对 $\operatorname{Ric}=-3g$，一个充分条件为
+
+$$
+\liminf s_\Sigma>-6,
+\qquad\text{例如}\quad
+\limsup\frac{(a_1^2-a_2^2)^2}{a_1^2a_2^2a_3^2}<3
+\quad(a_3\text{ 为最小尺度}).
+\tag{7.12}
+$$
+
+这些端部约束使用完整的 Einstein 方程，因而比补域特征数条件更强。没有固定基底渐近、双轴提升或 (7.12) 的一般塌缩端仍未被排除；也尚未从任意极小化序列提取本节所需的端部结构。
 
 ## 8. 极值与取得性分别还需要什么
 
@@ -1045,6 +1595,6 @@ $$
 | 非 Bach-flat 光滑极小元 | 明确正能量候选、下降方向、退化例和部分气泡替换 | 至少一个符合全部条件的光滑取得实例 |
 | 固定成对 $A_1$ 轨形 | 精确下确界及除临界壁外的不取得性 | $k=A/3$ 壁上的常负标量自对偶度量是否存在 |
 | Ricci-flat ALE 解消的 Einstein 主体 | 标量、混合曲率和根格的有限参数必要条件 | 相容的实际嵌入、Einstein 主体与完整拼接 |
-| 有限体积 Einstein 域 | 非负补域电荷、$9k+8\sum q_j\le3A$、Hopf 拓扑代价 | 一般序列的结构提取及未排除补域的几何实现 |
+| 有限体积 Einstein 域 | 非负补域电荷、$9k+8\sum q_j\le3A$；固定基底与双轴端的限制 | 一般序列的结构提取及未排除补域的几何实现 |
 
 不存在精确 Einstein 度量、$P_*>0$、$\alpha>0$ 和极小值能否光滑取得是不同断言。Ricci-flat 核心可有非零二阶拓扑而不支付 $P$；塌缩也可使下确界不取得。因此，构造越过标准局部费用以后，决定全局最优值的关键在于实际竞争几何如何同时实现主体、核心、边界配对与规范场，而不在于继续把标准核心费用独立相加。
